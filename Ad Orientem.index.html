@@ -1,0 +1,4977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ad Orientem | High Mass (1962)</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  
+  <style>
+    @property --liturgical {
+      syntax: "<color>";
+      inherits: true;
+      initial-value: #10b981;
+    }
+
+   :root{
+  --bg: #0b0f16;
+  --panel: rgba(10,18,32,0.72);
+  --panel-solid: rgba(10,15,22,0.88);
+  --border: rgba(255,255,255,0.12);
+  --shadow: rgba(0,0,0,0.45);
+
+  --text: #e6eef6;
+  --muted: rgba(255,255,255,0.70);
+  --muted2: rgba(255,255,255,0.50);
+
+  --rubric: #ef4444;
+  --liturgical: #10b981;
+
+  --safe-top: env(safe-area-inset-top, 12px);
+  --safe-bottom: env(safe-area-inset-bottom, 12px);
+
+  --radius: 16px;
+ --ui-font: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  /* ADD THESE */
+  --glass: rgba(10,18,32,0.72);
+  --glass-border: rgba(255,255,255,0.12);
+}
+
+
+    *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    .hidden{ display:none !important; }
+
+    body{
+      margin:0;
+      height:100vh;
+      height:100dvh;
+      overflow:hidden;
+      background: var(--bg);
+      color:var(--text);
+      font-family:'EB Garamond', serif;
+      transition: --liturgical 1.2s ease-in-out;
+      user-select:none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      position: relative;
+    }
+
+    /* Fullscreen background image */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background-image: url("mass-bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: grayscale(0.18) contrast(1.05) brightness(0.70);
+      transform: scale(1.02);
+      z-index: -2;
+    }
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  /* dark at top and bottom, clearer in the middle */
+  background:
+    linear-gradient(180deg,
+      rgba(0,0,0,0.72) 0%,
+      rgba(0,0,0,0.30) 28%,
+      rgba(0,0,0,0.18) 58%,
+      rgba(0,0,0,0.78) 100%
+    ),
+    radial-gradient(closest-side at 50% 40%,
+      rgba(0,0,0,0.06),
+      rgba(0,0,0,0.36) 72%
+    );
+  z-index:-1;
+}
+
+    h1,h2,h3,.royal{
+      font-family:'Cinzel', serif;
+      letter-spacing:0.06em;
+    }
+
+    /* App container */
+    .app{
+      width:100%;
+      max-width:720px;
+      height:100%;
+      margin:0 auto;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* =========================
+       HOME
+    ========================= */
+    .home{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:center;
+      padding: calc(18px + var(--safe-top)) 18px calc(18px + var(--safe-bottom));
+      gap: 14px;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .homeHeader{
+      width:100%;
+      max-width:560px;
+      padding: 6px 4px 0;
+    }
+
+    .brandRow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-bottom: 10px;
+    }
+
+  .brandMark{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Cinzel', serif;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  color: var(--liturgical);
+  transition: color 1.2s ease;
+  box-shadow: 0 14px 34px var(--shadow);
+  user-select:none;
+}
+
+    .brandText{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      text-align:left;
+      gap:2px;
+    }
+
+    .brandName{
+      font-family:'Cinzel', serif;
+      font-weight: 800;
+      letter-spacing:0.14em;
+      font-size: 0.92rem;
+      color: var(--liturgical);
+      transition: color 1.2s ease;
+      text-transform: uppercase;
+    }
+
+    .brandSub{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--muted2);
+    }
+
+    .homeFeast{
+      margin: 10px 0 6px;
+      font-family:'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      line-height: 1.12;
+      letter-spacing:0.04em;
+      color: var(--text);
+      text-shadow: 0 12px 28px rgba(0,0,0,0.40);
+    }
+
+    .homeMetaLine{
+      margin: 0 auto 10px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .homeMetaDot{ opacity: 0.55; }
+    .homeMetaPlain{ color: var(--muted); }
+
+    /* Cards */
+    .card{
+      width:100%;
+      max-width:560px;
+      background: var(--glass);
+  border: 1px solid var(--glass-border);
+      box-shadow: 0 14px 34px var(--shadow);
+      border-radius: var(--radius);
+      padding: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .datePickerTitle{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-align:center;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    .dateStrip{
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      padding: 4px 2px 10px;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      justify-content: flex-start;
+      mask-image: linear-gradient(to right, transparent, black 18px, black calc(100% - 18px), transparent);
+    }
+
+    .dayPill{
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      min-width: 92px;
+      padding: 10px 10px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      cursor:pointer;
+      text-align:center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      transition: transform 0.08s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .dayPill:active{ transform: scale(0.99); }
+
+    .dayPill .dow{
+      font-size: 0.78rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .dayPill .dom{
+      font-size: 1.12rem;
+      font-weight: 850;
+      color: var(--text);
+      margin-top: 2px;
+    }
+    .dayPill .mon{
+      font-size: 0.78rem;
+      opacity: 0.80;
+      margin-top: 2px;
+    }
+
+    .dayPill.active{
+      border-color: color-mix(in srgb, var(--liturgical) 55%, rgba(255,255,255,0.18));
+      background: color-mix(in srgb, var(--liturgical) 18%, rgba(255,255,255,0.06));
+      color: var(--text);
+    }
+
+    .dateActions{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .softBtn{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 14px;
+      cursor:pointer;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .softBtn.primary{
+      color: #06101a;
+      background: var(--liturgical);
+      border: none;
+      font-weight: 850;
+    }
+
+    .hiddenDateInput{
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .btn{
+      width:100%;
+      max-width:560px;
+      border:none;
+      cursor:pointer;
+      border-radius: 14px;
+      padding: 15px 16px;
+      font-family:'Cinzel', serif;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #06101a;
+      background: var(--liturgical);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.32);
+      transition: transform 0.08s ease, background 1.2s ease;
+    }
+    .btn:active{ transform: scale(0.985); }
+
+    .status{
+      margin-top: 6px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      min-height: 1.2rem;
+      width:100%;
+      max-width:560px;
+      text-align:center;
+    }
+
+    /* =========================
+       PLAYER
+    ========================= */
+    .player{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      padding-top: var(--safe-top);
+      padding-bottom: var(--safe-bottom);
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .topbar{
+      height: 60px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 10px 14px;
+      background: var(--panel-solid);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      flex-shrink:0;
+    }
+
+    .topbar-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 0;
+    }
+
+    .back{
+      width:40px; height:40px;
+      display:flex; align-items:center; justify-content:center;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      cursor:pointer;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .modeTitle{
+      display:flex; flex-direction:column;
+      line-height:1.1;
+      min-width: 0;
+    }
+
+    .modeTitle .main{
+      font-family:'Cinzel', serif;
+      font-weight: 850;
+      font-size: 0.95rem;
+      color: var(--liturgical);
+      transition: color 1.2s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .modeTitle .sub{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted2);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .topbar-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 0;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      max-width: 46vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rosary{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding: 10px 14px;
+      overflow-x:auto;
+      overflow-y:hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .bead{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background: rgba(255,255,255,0.18);
+      transition: 0.3s;
+      cursor:pointer;
+      flex: 0 0 auto;
+    }
+
+    .bead.active{ background: var(--liturgical); transform: scale(1.3); }
+    .bead.past{ background: var(--liturgical); opacity: 0.35; }
+    .bead.major{ width:12px; height:12px; }
+
+    .stepHead{
+      padding: 14px 14px 8px;
+      text-align:center;
+      flex-shrink:0;
+    }
+    .stepHead .title{
+      font-family:'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 750;
+      color: var(--text);
+    }
+    .stepHead .subtitle{
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    .metaBar{
+      padding: 8px 14px 10px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      flex-shrink:0;
+    }
+
+    .meta{
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      font-size: 0.82rem;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+    
+    /* Meta pill icons */
+.metaIcon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-right: 6px;
+  opacity: 0.92;
+  transform: translateY(1px);
+  line-height: 1;
+}
+
+/* Support BOTH inline SVGs and Font Awesome <i> tags */
+.metaIcon svg,
+.metaIcon i{
+  width: 18px;
+  height: 18px;
+  display:block;
+}
+
+/* Font Awesome uses font-size (not width/height) */
+.metaIcon i{
+  font-size: 18px;
+}
+
+.meta.metaBell{
+  color: rgba(255,255,255,0.78);
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+}
+
+
+/* Rubric badge icon support (SVG or FA) */
+.rubricBadge svg,
+.rubricBadge i{
+  width: 14px;
+  height: 14px;
+  display:block;
+}
+
+.rubricBadge i{
+  font-size: 14px;
+}
+
+
+.metaArrow{
+  opacity: 0.65;
+  margin: 0 6px;
+  transform: translateY(1px);
+}
+
+/* Posture pill styling (rubric color) */
+.meta.metaRubric{
+  color: var(--rubric);
+  border-color: rgba(239,68,68,0.35);
+  background: rgba(239,68,68,0.10);
+}
+
+
+    .scroller{
+      flex:1;
+      min-height:0;
+      overflow-y:auto;
+      overflow-x:hidden;
+      padding: 12px 14px 14px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .prayerCard{
+      padding: 16px;
+      padding-bottom: 40px;
+    }
+
+    .divider{
+      font-family:'Cinzel', serif;
+      text-align:center;
+      color: var(--muted2);
+      margin: 20px 0 10px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      line-height: 0.1em;
+    }
+
+    .divider span{ background: rgba(5,8,12,0.65); padding: 0 10px; }
+
+   .bilingual{
+  display:grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+}
+
+.english{
+  font-family:'EB Garamond', serif;
+  font-size: 0.96rem;
+  line-height: 1.35;
+  color: var(--muted);
+  font-style: normal; /* upright English */
+  word-break: break-word;
+}
+
+.latin{
+  font-family:'EB Garamond', serif;
+  font-size: 1.06rem;
+  line-height: 1.35;
+  color: var(--text);
+  font-style: italic; /* italic Latin */
+  white-space: normal;
+  word-break: break-word;
+}
+
+
+
+  .rubricLine{
+  display:block;
+  color: rgba(239,68,68,0.85);
+  font-size: 0.76rem;
+  margin: 6px 0 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  opacity: 0.85;
+}
+
+
+    .sectionTitle{
+      font-family:'Cinzel', serif;
+      font-weight: 750;
+      margin: 12px 0 6px;
+      color: var(--liturgical);
+      transition: color 1.2s ease;
+    }
+
+    .footerNav{
+      flex-shrink:0;
+      padding: 10px 14px;
+      display:flex;
+      gap:10px;
+      border-top: 1px solid var(--border);
+      background: var(--panel-solid);
+      backdrop-filter: blur(10px);
+    }
+
+    .navBtn{
+      flex:1;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 650;
+      cursor: pointer;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    .navBtn.next{
+      background: var(--liturgical);
+      color: #06101a;
+      border: none;
+      font-family:'Cinzel', serif;
+      letter-spacing: 0.08em;
+      font-weight: 850;
+    }
+
+    .dualToggle{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      margin-bottom: 10px;
+    }
+
+    .dualToggle button{
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    .dualToggle button.activeA,
+    .dualToggle button.activeB{
+      background: rgba(255,255,255,0.12);
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .actionRow{ display:flex; flex-direction:column; gap:8px; margin-top: 10px; }
+
+    .actionBtn{
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      font-weight: 650;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    .actionBtn.primary{ background: rgba(255,255,255,0.08); }
+
+    .actionBtn.warn{
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    /* Reduce motion preference */
+    @media (prefers-reduced-motion: reduce){
+      *{ transition:none !important; scroll-behavior:auto !important; }
+    }
+    
+    .rubric-symbol{
+  color: var(--rubric);
+  font-weight: 850;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.rubric-inline{
+  color: var(--rubric);
+  font-weight: 850;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.note{
+  text-align:center;
+  color: var(--muted);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  margin: 0.4rem 0 0;
+}
+
+.stepDivider{
+  margin: 8px 0 10px;
+}
+
+.rubricBadge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(239,68,68,0.45);
+  background: rgba(239,68,68,0.14);
+  color: #fca5a5;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  line-height: 1;
+  margin: 0 6px;
+  vertical-align: baseline;
+}
+
+.rubricBadge svg{
+  width: 14px;
+  height: 14px;
+  display:block;
+  opacity: 0.95;
+}
+
+.priestDetails{
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  overflow: hidden;
+}
+
+.priestDetails > summary{
+  cursor: pointer;
+  padding: 10px 12px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  user-select: none;
+}
+
+.priestDetailsBody{
+  padding: 10px 12px 12px;
+}
+
+
+
+
+/* =========================
+   MODULES (clean, fixed)
+========================= */
+
+.subhead{
+  font-family: var(--ui-font);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--muted2);
+}
+
+.tinyNote,
+.instruction{
+  font-family: var(--ui-font);
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.instruction{ text-align:center; margin: 0.4rem 0 0; }
+
+.moduleWindow{
+  margin: 8px 14px 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  user-select:none;
+}
+
+.moduleName{
+  font-family:'Cinzel', serif;
+  letter-spacing: 0.06em;
+  font-weight: 850;
+  font-size: 0.95rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.moduleMeta{
+  margin-top: 3px;
+  font-family: var(--ui-font);
+  font-size: 0.80rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 2 columns for module “chips” */
+.moduleStepper{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 8px 12px 4px;
+}
+
+.moduleChip{
+  width: 100%;
+  padding: 8px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  font-family: var(--ui-font);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.82);
+  cursor: pointer;
+  user-select: none;
+
+  /* 2-line clamp, but readable */
+  white-space: normal;
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.moduleChip.done{ opacity: 0.55; }
+
+.moduleChip.active{
+  opacity: 1;
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--liturgical) 55%, rgba(255,255,255,0.18));
+  background: color-mix(in srgb, var(--liturgical) 18%, rgba(255,255,255,0.06));
+}
+
+/* Dock */
+.moduleDock{
+  margin: 8px 14px 0;
+  padding: 8px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.moduleDockBtn{
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  cursor:pointer;
+  font-family: var(--ui-font);
+  font-weight: 750;
+  font-size: 0.86rem;
+}
+
+.moduleDockText{
+  flex: 1;
+  min-width: 0;
+  color: rgba(255,255,255,0.78);
+  font-family: var(--ui-font);
+  font-size: 0.86rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Modal overlay */
+.moduleModal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 9999;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding: 14px;
+}
+
+.moduleSheet{
+  width: min(720px, 100%);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(10,15,22,0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.55);
+  overflow:hidden;
+}
+
+.moduleSheetHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.moduleSheetTitle{
+  font-family:'Cinzel', serif;
+  letter-spacing: 0.06em;
+  font-weight: 850;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.moduleSheetClose{
+  width: 40px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  cursor:pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* 2 rows × 3 columns (6 modules) */
+.moduleGrid{
+  padding: 12px 14px 14px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.moduleGridBtn{
+  width:100%;
+  padding: 12px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.82);
+  cursor:pointer;
+  font-family: var(--ui-font);
+  font-weight: 800;
+  font-size: 0.88rem;
+  text-align:center;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+
+.moduleGridBtn.active{
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--liturgical) 55%, rgba(255,255,255,0.18));
+  background: color-mix(in srgb, var(--liturgical) 18%, rgba(255,255,255,0.06));
+}
+
+.moduleGridBtn.done{ opacity: 0.55; }
+
+/* Consolidated mobile tweaks */
+@media (max-width: 420px){
+  .latin{ font-size: 0.98rem; }
+  .english{ font-size: 0.90rem; }
+  .bilingual{ gap: 12px; }
+  .moduleChip{ font-size: 0.86rem; }
+}
+
+.rowBetween{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:12px;
+}
+
+.segmented{
+  margin-top:10px;
+  display:flex;
+  gap:8px;
+  padding:8px;
+  border-radius:18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.segBtn{
+  flex:1;
+  border:0;
+  border-radius:14px;
+  padding:12px 10px;
+  background: transparent;
+  color: rgba(255,255,255,.90);
+  text-align:left;
+  transition: transform 120ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.segBtn[aria-selected="true"]{
+  background: rgba(255,255,255,.16);
+  box-shadow: 0 10px 26px rgba(0,0,0,.28);
+}
+
+.segBtn:active{ transform: scale(.98); }
+
+.segTitle{
+  font-weight:700;
+  font-size:16px;
+  letter-spacing:.2px;
+}
+.segSub{
+  margin-top:3px;
+  font-size:12px;
+  color: rgba(255,255,255,.70);
+}
+
+.homeActions{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+
+.chipBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.chipBtn i{ opacity:.92; }
+.chipBtn:active{ transform: scale(.985); }
+
+.sheet{ position:fixed; inset:0; z-index:999; }
+.sheetBackdrop{
+  position:absolute; inset:0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+}
+.sheetPanel{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  border-radius: 22px 22px 0 0;
+  background: rgba(10,12,16,.88);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 -18px 60px rgba(0,0,0,.55);
+  padding-bottom: env(safe-area-inset-bottom);
+  transform: translateY(18px);
+  animation: sheetUp 220ms ease forwards;
+}
+@keyframes sheetUp{ to{ transform: translateY(0); } }
+
+.sheetHeader{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 14px 16px 10px 16px;
+}
+.sheetTitle{ font-weight:800; letter-spacing:.2px; }
+.sheetBody{ padding: 0 16px 16px 16px; }
+
+.hidden{ display:none !important; }
+
+.iconBtn{
+  border:0;
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.92);
+  width:38px; height:38px;
+  border-radius:12px;
+}
+
+/* Home fades, background subtly zooms */
+body.entering::before{
+  transform: scale(1.06);
+  filter: saturate(1.05) contrast(1.08) brightness(.95);
+  transition: transform 680ms cubic-bezier(.2,.85,.2,1), filter 680ms cubic-bezier(.2,.85,.2,1);
+}
+
+.app.entering #screen-home{
+  opacity:0;
+  transform: translateY(-10px) scale(.99);
+  filter: blur(6px);
+  transition: opacity 320ms ease, transform 320ms ease, filter 320ms ease;
+  pointer-events:none;
+}
+
+@keyframes playerIntro{
+  from{ opacity:0; transform: translateY(14px) scale(.985); filter: blur(10px); }
+  to{ opacity:1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.app.playerIntro #screen-player{
+  animation: playerIntro 520ms cubic-bezier(.2,.85,.2,1) both;
+}
+
+@media (prefers-reduced-motion: reduce){
+  body.entering::before, .app.entering #screen-home{ transition:none; }
+  .app.playerIntro #screen-player{ animation:none; }
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- =========================
+         HOME
+    ========================= -->
+    <section id="screen-home" class="home">
+      <div class="homeHeader">
+       <div class="brandRow">
+  <div class="brandMark" aria-hidden="true">AO</div>
+
+  <div class="brandText">
+    <div class="brandName">Ad Orientem</div>
+    <div class="brandSub">Tridentine Mass (1962)</div>
+  </div>
+</div>
+
+        <div id="home-feast" class="homeFeast">Consulting the Ordo…</div>
+
+        <!-- Clean meta line, no icons -->
+        <div class="homeMetaLine" aria-live="polite">
+          <span id="home-date-text" class="homeMetaPlain">—</span>
+          <span class="homeMetaDot">•</span>
+          <span id="home-rank-text" class="homeMetaPlain">Rank: —</span>
+          <span class="homeMetaDot">•</span>
+          <span id="home-vestments-text" class="homeMetaPlain">Vestments: —</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="datePickerTitle">Choose a date</div>
+
+        <div id="date-strip" class="dateStrip" role="list"></div>
+
+        <div class="dateActions">
+          <button id="btn-today" class="softBtn" type="button">Today</button>
+          <button id="btn-next-sunday" class="softBtn" type="button">Next Sunday</button>
+          <button id="btn-pick" class="softBtn primary" type="button">Pick another date</button>
+        </div>
+
+        <input id="date-picker" type="date" class="hiddenDateInput" aria-hidden="true" />
+      </div>
+      
+     <div class="card" id="massTypeCard" style="margin-top:12px;">
+  <div class="rowBetween">
+    <div class="subhead">Mass type</div>
+    <div class="tinyNote" id="massTypeHint">Choir track appears only for Sung Mass.</div>
+  </div>
+
+  <div class="segmented" role="tablist" aria-label="Mass type">
+    <button class="segBtn" id="segSung" type="button"
+      role="tab" aria-selected="true"
+      onclick="setMassMode('SUNG')">
+      <div class="segTitle">Sung</div>
+      <div class="segSub">High Mass</div>
+    </button>
+
+    <button class="segBtn" id="segLow" type="button"
+      role="tab" aria-selected="false"
+      onclick="setMassMode('LOW')">
+      <div class="segTitle">Low</div>
+      <div class="segSub">Spoken</div>
+    </button>
+  </div>
+</div>
+      <button class="btn" type="button" onclick="enterMass()">Enter Sanctuary</button>
+
+      <div class="status" id="home-status"></div>
+
+<div class="homeActions">
+  <button class="chipBtn" type="button" onclick="openSheet('preferences')">
+    <i class="fa-solid fa-sliders"></i><span>Preferences</span>
+  </button>
+  <button class="chipBtn" type="button" onclick="openSheet('options')">
+    <i class="fa-solid fa-toggle-on"></i><span>Options</span>
+  </button>
+  <button class="chipBtn" type="button" onclick="openSheet('about')">
+    <i class="fa-solid fa-circle-info"></i><span>About</span>
+  </button>
+</div>
+
+<div id="sheet" class="sheet hidden" aria-hidden="true">
+  <div class="sheetBackdrop" onclick="closeSheet()"></div>
+
+  <div class="sheetPanel" role="dialog" aria-modal="true">
+    <div class="sheetHeader">
+      <div class="sheetTitle" id="sheetTitle">Options</div>
+      <button class="iconBtn" type="button" onclick="closeSheet()" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="sheetBody" id="sheetBody"></div>
+  </div>
+</div>
+
+
+    </section>
+
+    <!-- =========================
+         PLAYER
+    ========================= -->
+    <section id="screen-player" class="player hidden">
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="back" role="button" tabindex="0" onclick="goHome()" title="Back" aria-label="Back">←</div>
+          <div class="modeTitle">
+            <div class="main">High Mass</div>
+            <div class="sub" id="mode-sub">1962 Roman Rite</div>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="pill" id="player-date"><span>—</span></div>
+          <div class="pill" id="player-feast"><span>—</span></div>
+        </div>
+      </div>
+      
+<div class="moduleDock">
+  <button id="btn-modules" class="moduleDockBtn" type="button">
+    Modules
+  </button>
+  <div class="moduleDockText" id="module-dock-text">—</div>
+</div>
+
+<div id="moduleModal" class="moduleModal hidden" role="dialog" aria-modal="true">
+  <div class="moduleSheet" role="document">
+    <div class="moduleSheetHead">
+      <div class="moduleSheetTitle">Jump to module</div>
+      <button class="moduleSheetClose" type="button" onclick="closeModuleModal()">×</button>
+    </div>
+    <div id="module-grid" class="moduleGrid"></div>
+  </div>
+</div>
+
+<div class="rosary" id="rosary"></div>
+
+
+      <div class="stepHead">
+  <div class="divider stepDivider"><span id="step-title">Loading…</span></div>
+  <div class="subtitle" id="step-subtitle">—</div>
+</div>
+
+
+      <div class="metaBar" id="meta-bar"></div>
+
+      <div class="scroller" id="scroller">
+        <div class="prayerCard" id="card"></div>
+      </div>
+
+      <div class="footerNav">
+        <button id="btn-prev" class="navBtn prev" type="button" onclick="prevStep()">Back</button>
+        <button id="btn-next" class="navBtn next" type="button" onclick="nextStep()">Next</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+      
+      
+      
+      /* =========================
+   REQUIRED RENDER HELPERS
+   (Put near top of <script>)
+========================= */
+
+function escapeHtml(s){
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function nl2br(s){
+  return String(s ?? "").replace(/\n/g, "<br>");
+}
+
+function roleLabel(role){
+  const r = String(role ?? "").toLowerCase();
+  if (r === "choir")  return "CHOIR";
+  if (r === "priest") return "PRIEST";
+  if (r === "people") return "FAITHFUL";
+  if (r === "silent") return "SILENT";
+  return r ? r.toUpperCase() : "";
+}
+
+function rubric(text){
+  const t = String(text ?? "").trim();
+  if (!t) return "";
+  return `<div class="rubricLine">${escapeHtml(t)}</div>`;
+}
+
+function title(text){
+  const t = String(text ?? "").trim();
+  if (!t) return "";
+  return `<div class="sectionTitle">${escapeHtml(t)}</div>`;
+}
+
+/**
+ * bilingual(lat, eng, role)
+ * - Normalizes <br> into \n, escapes, converts \n -> <br>
+ * - Then runs formatLiturgicalText() which injects rubric badges, ℣/℟ styling, etc.
+ */
+function bilingual(lat, eng, role){
+  const latNorm = nl2br(escapeHtml(normalizeLiturgicalString(lat)));
+  const engNorm = nl2br(escapeHtml(normalizeLiturgicalString(eng)));
+
+  const latHtml = (typeof formatLiturgicalText === "function") ? formatLiturgicalText(latNorm) : latNorm;
+  const engHtml = (typeof formatLiturgicalText === "function") ? formatLiturgicalText(engNorm) : engNorm;
+
+  const who = roleLabel(role);
+  const whoLine = who ? `<div class="rubricLine">${escapeHtml(who)}</div>` : "";
+
+  // English left, Latin right (your CSS expects .english/.latin)
+  return `
+    ${whoLine}
+    <div class="bilingual">
+      <div class="english">${engHtml}</div>
+      <div class="latin">${latHtml}</div>
+    </div>
+  `;
+}
+
+function proper(label, p, role, opts = {}){
+  const showLabel = opts.showLabel !== false;
+  const lat = p?.lat ?? "";
+  const eng = p?.eng ?? "";
+  return `${showLabel ? title(label) : ""}${bilingual(lat, eng, role)}`;
+}
+
+
+
+function updateMassModeUI(){
+  const sung = document.getElementById("segSung");
+  const low  = document.getElementById("segLow");
+  const hint = document.getElementById("massTypeHint");
+
+  const isLow = (massMode === "LOW");
+
+  if (sung) sung.setAttribute("aria-selected", String(!isLow));
+  if (low)  low.setAttribute("aria-selected", String(isLow));
+
+  // Optional: also reflect via classes (visual state)
+  if (sung) sung.classList.toggle("activeA", !isLow);
+  if (low)  low.classList.toggle("activeB", isLow);
+
+  if (hint){
+    hint.textContent = isLow
+      ? "Low Mass: spoken (no choir track)."
+      : "Sung Mass: choir track available.";
+  }
+}
+
+
+  
+   const STORAGE_KEY = "adorientem:selectedDate";
+
+function formatDateInput(d){
+  const x = startOfDay(d);
+  const yyyy = String(x.getFullYear());
+  const mm = String(x.getMonth() + 1).padStart(2, "0");
+  const dd = String(x.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+function parseDateInput(v){
+  if (!v || typeof v !== "string") return null;
+  const parts = v.split("-");
+  if (parts.length !== 3) return null;
+  const y = Number(parts[0]);
+  const m = Number(parts[1]);
+  const d = Number(parts[2]);
+  if (!y || !m || !d) return null;
+  const dt = new Date(y, m - 1, d);
+  dt.setHours(0,0,0,0);
+  return dt;
+}
+
+function safeLocalStorageGet(key){
+  try { return localStorage.getItem(key); } catch(_) { return null; }
+}
+function safeLocalStorageSet(key, value){
+  try { localStorage.setItem(key, value); } catch(_) {}
+}
+
+function setCurrentDate(d, {syncPicker = true, scrollIntoView = true} = {}){
+  const next = startOfDay(d || new Date());
+  currentDate = next;
+
+  safeLocalStorageSet(STORAGE_KEY, formatDateInput(currentDate));
+
+  // Keep the <input type="date"> in sync in a timezone-safe way.
+  const picker = document.getElementById("date-picker");
+  if (picker && syncPicker){
+    picker.value = formatDateInput(currentDate);
+  }
+
+  buildDateStrip({scrollIntoView});
+}
+
+function nextSundayFrom(d){
+  const x = startOfDay(d || new Date());
+  const dow = x.getDay(); // 0=Sun
+  const delta = (7 - dow) % 7;
+  const add = (delta === 0) ? 7 : delta;
+  x.setDate(x.getDate() + add);
+  return x;
+}
+
+function buildDateStrip({range = 4, scrollIntoView = true} = {}){
+  const strip = document.getElementById("date-strip");
+  if (!strip) return;
+
+  strip.innerHTML = "";
+
+  const anchor = startOfDay(currentDate);
+  const fmtDow = new Intl.DateTimeFormat(undefined, { weekday: "short" });
+  const fmtMon = new Intl.DateTimeFormat(undefined, { month: "short" });
+
+  // Build pills from (anchor - range) to (anchor + range)
+  const dates = [];
+  for (let i = -range; i <= range; i++){
+    const dt = new Date(anchor);
+    dt.setDate(anchor.getDate() + i);
+    dates.push(dt);
+  }
+
+  let activeEl = null;
+
+  for (const dt of dates){
+    const pill = document.createElement("button");
+    pill.type = "button";
+    pill.className = "dayPill" + (sameDay(dt, anchor) ? " active" : "");
+    pill.setAttribute("role", "listitem");
+
+    pill.innerHTML = `
+      <div class="dow">${escapeHtml(fmtDow.format(dt))}</div>
+      <div class="dom">${escapeHtml(String(dt.getDate()))}</div>
+      <div class="mon">${escapeHtml(fmtMon.format(dt))}</div>
+    `;
+
+    pill.addEventListener("click", async () => {
+      setCurrentDate(dt, {syncPicker: true, scrollIntoView: true});
+      await refreshPropersAndHome();
+    });
+
+    strip.appendChild(pill);
+
+    if (sameDay(dt, anchor)) activeEl = pill;
+  }
+
+  // Scroll active into view for a better mobile feel.
+  if (scrollIntoView && activeEl && typeof activeEl.scrollIntoView === "function"){
+    activeEl.scrollIntoView({behavior: "smooth", inline: "center", block: "nearest"});
+  }
+}
+
+   
+ /* =========================================================
+   STATE
+========================================================= */
+let currentDate = new Date();
+let currentPropers = null;
+let steps = [];
+let idx = 0;
+let followMode = 'choir';           // 'choir' | 'priest'
+let paxMode = 'kneel_after_pax';    // keep state if needed for posture logic; do not display it
+
+
+
+// =========================
+// MODULES (global)
+// =========================
+const SEC = Object.freeze({
+  BEFORE:   "Before Mass",
+  CAT_PREP: "Mass of the Catechumens — The Preparation",
+  CAT_INST: "Mass of the Catechumens — The Instruction",
+  OFF:      "Mass of the Faithful — The Offertory",
+  CANON:    "Mass of the Faithful — The Canon",
+  COMM:     "Mass of the Faithful — The Communion",
+  END:      "Conclusion"
+});
+
+const MODULE_ORDER = [
+  SEC.BEFORE,
+  SEC.CAT_PREP,
+  SEC.CAT_INST,
+  SEC.OFF,
+  SEC.CANON,
+  SEC.COMM,
+  SEC.END
+];
+
+// Keep this as the “full title” function used by dock + modal
+function moduleLabel(sectionTitle){
+  return String(sectionTitle || "—");
+}
+
+
+
+/* =========================================================
+   FIXED TEXTS (Latin + literal English)
+   - Prefer "\n" line breaks; renderer should map "\n" => "<br>"
+   - No duplicate keys (prevents overwrites)
+   - Avoid inline styling; use rubric markers like [GENUFLECT]
+========================================================= */
+const FIXED = {
+  /* =========================
+     ORDER OF MASS — SPRINKLING
+  ========================= */
+
+  orderOfMassIntro: {
+    lat: "Ordo Missæ",
+    eng: "Order of Mass"
+  },
+
+  aspergesTitle: {
+    lat: "Aspérges",
+    eng: "Asperges"
+  },
+
+  aspergesIntro: {
+    lat: "Diebus Dominicis, præsertim tempore Paschali, benedictio aquæ et aspersio ea fieri potest in memoriam baptismi.",
+    eng: "On Sundays, especially in Eastertide, the blessing of holy water and sprinkling with it may be carried out in memory of baptism."
+  },
+
+  asperges: {
+    eng:
+      "Ps 50:9\n" +
+      "Thou shalt sprinkle me, O Lord, with hyssop, and I shall be cleansed; Thou shalt wash me, and I shall become whiter than snow.\n" +
+      "Ps 50:3\n" +
+      "Have mercy on me, O God, according to Thy great mercy.\n" +
+      "℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n" +
+      "℟. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n" +
+      "Thou shalt sprinkle me, O Lord, with hyssop, and I shall be cleansed; Thou shalt wash me, and I shall become whiter than snow.",
+    lat:
+      "Ps 50:9\n" +
+      "Aspérges me, Dómine, hyssópo, et mundábor: lavábis me, et super nivem dealbábor.\n" +
+      "Ps 50:3\n" +
+      "Miserére mei, Deus, secúndum magnam misericórdiam tuam.\n" +
+      "℣. Glória Patri, et Fílio, et Spirítui Sancto.\n" +
+      "℟. Sicut erat in princípio, et nunc, et semper: et in saecula sæculórum. Amen.\n" +
+      "Aspérges me, Dómine, hyssópo, et mundábor: lavábis me, et super nivem dealbábor."
+  },
+
+  vidiAquamIntro: {
+    lat: "Tempore Paschali, cantus Vidi Aquam loco Asperges Me adhibetur.",
+    eng: "In Eastertide, the Vidi Aquam chant replaces the Asperges Me."
+  },
+
+  vidiAquam: {
+    eng:
+      "Ez 47:1-2; 47:9\n" +
+      "I saw water flowing from the right side of the temple, alleluia; and all they to whom that water came were saved; and they shall say: alleluia, alleluia.\n" +
+      "Ps 135:1\n" +
+      "Praise the Lord, because He is good; because His mercy endureth forever.\n" +
+      "℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n" +
+      "℟. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n" +
+      "I saw water flowing from the right side of the temple, alleluia; and all they to whom that water came were saved; and they shall say: alleluia, alleluia.",
+    lat:
+      "Ez 47:1-2; 47:9\n" +
+      "Vidi aquam egrediéntem de templo, a látere dextro, allelúia: et omnes, ad quos pervénit aqua ista, salvi facti sunt, et dicent, allelúia, allelúia.\n" +
+      "Ps 135:1\n" +
+      "Confitemini Dómino quóniam bonus: quóniam in saeculum misericórdia eius.\n" +
+      "℣. Glória Patri, et Fílio, et Spirítui Sancto.\n" +
+      "℟. Sicut erat in princípio, et nunc, et semper: et in saecula sæculórum. Amen.\n" +
+      "Vidi aquam egrediéntem de templo, a látere dextro, allelúia: et omnes, ad quos pervénit aqua ista, salvi facti sunt, et dicent, allelúia, allelúia."
+  },
+
+  aspergesVers: {
+    eng:
+      "℣. Show us, O Lord, Thy mercy.\n" +
+      "℟. And grant us Thy salvation.\n" +
+      "℣. O Lord, hear my prayer.\n" +
+      "℟. And let my cry come unto Thee.\n" +
+      "℣. The Lord be with you.\n" +
+      "℟. And with thy spirit.\n" +
+      "Let us pray.\n" +
+      "Hear us, O holy Lord, almighty Father, everlasting God, and vouchsafe to send Thy holy Angel from heaven, to guard, cherish, protect, visit and defend all that are assembled in this place: Through Christ our Lord.\n" +
+      "℟. Amen.",
+    lat:
+      "℣. Osténde nobis, Dómine, misericórdiam tuam.\n" +
+      "℟. Et salutáre tuum da nobis.\n" +
+      "℣. Dómine, exáudi oratiónem meam.\n" +
+      "℟. Et clamor meus ad te véniat.\n" +
+      "℣. Dóminus vobíscum.\n" +
+      "℟. Et cum spíritu tuo.\n" +
+      "Orémus.\n" +
+      "Exáudi nos, Dómine sancte, Pater omnípotens, ætérne Deus, et míttere dignéris sanctum Angelum tuum de cælis, qui custódiat, fóveat, prótegat, vísitet, atque deféndat omnes habitántes in hoc habitáculo. Per Christum Dóminum nostrum.\n" +
+      "℟. Amen."
+  },
+
+  /* =========================
+     PRAYERS AT THE FOOT OF THE ALTAR (FIXED)
+  ========================= */
+
+  prayersAtFootTitle: {
+    lat: "Orationes ad gradus altaris",
+    eng: "Prayers at the Foot of the Altar"
+  },
+
+  prayersAtFootIntro: {
+    lat: "In Missa solemni sacerdos recitat orationes ad gradus altaris, dum schola cantat Antiphonam ad introitum (Introitus).",
+    eng: "In solemn Masses the celebrant recites the prayers at the foot of the altar, while the choir chants the entering antiphon (Introit)."
+  },
+
+  judicaMeIntro: {
+    lat: "Sacerdos ad gradus altaris genuflectit et recitat Iúdica me (Ps. 42). Iúdica me omittitur a Dominica Passionis usque ad Sabbatum Sanctum inclusive, et in Missis pro defunctis.",
+    eng: "The priest genuflects at the foot of the Altar and recites the Júdica Me (Psalm 42). The Júdica Me is omitted from Passion Sunday to Holy Saturday inclusive and in Masses for the Dead."
+  },
+
+  signCross: {
+    lat: "In nómine Patris, ✠ et Fílii, et Spíritus Sancti. Amen.",
+    eng: "In the Name of the Father, ✠ and of the Son, and of the Holy Ghost. Amen."
+  },
+
+  judicaAntiphon: {
+    eng: "Ant. I will go in unto the Altar of God. To God, Who giveth joy to my youth.",
+    lat: "Ant. Introíbo ad altáre Dei. Ad Deum, qui lætíficat iuventútem meam."
+  },
+
+  judicaPsalm42: {
+    eng:
+      "Ps 42, 1-5\n" +
+      "S. Judge me, O God, and distinguish my cause from the nation that is not holy: deliver me from the unjust and deceitful man.\n" +
+      "M. For Thou, O God, art my strength: why hast Thou cast me off? and why do I go sorrowful whilst the enemy afflictech me?\n" +
+      "S. Send forth Thy light and Thy truth: they have led me and brought me unto Thy holy hill, and into Thy tabernacles.\n" +
+      "M. And I will go in unto the Altar of God: unto God, Who giveth joy to my youth.\n" +
+      "S. I will praise Thee upon the harp, O God, my God: why art thou sad, O my soul? and why dost thou disquiet me?\n" +
+      "M. Hope thou in God, for I will yet praise Him: Who is the salvation of my countenance, and my God.\n" +
+      "S. Glory be to the Father, and to the Son, and to the Holy Ghost.\n" +
+      "M. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+    lat:
+      "Ps 42, 1-5\n" +
+      "S. Iúdica me, Deus, et discérne causam meam de gente non sancta: ab hómine iníquo et dolóso érue me.\n" +
+      "M. Quia tu es, Deus, fortitudo mea: quare me reppulísti, et quare tristis incédo, dum afflígit me inimícus?\n" +
+      "S. Emítte lucem tuam et veritátem tuam: ipsa me deduxérunt, et adduxérunt in montem sanctum tuum et in tabernácula tua.\n" +
+      "M. Et introíbo ad altáre Dei: ad Deum, qui lætíficat iuventútem meam.\n" +
+      "S. Confitébor tibi in cíthara, Deus, Deus meus: quare tristis es, ánima mea, et quare contúrbas me?\n" +
+      "M. Spera in Deo, quóniam adhuc confitébor illi: salutáre vultus mei, et Deus meus.\n" +
+      "S. Glória Patri, et Fílio, et Spirítui Sancto.\n" +
+      "M. Sicut erat in princípio, et nunc, et semper: et in saecula sæculórum. Amen."
+  },
+
+  judicaAntiphonRepeat: {
+    eng: "Ant. I will go in unto the Altar of God. Unto God, Who giveth joy to my youth.",
+    lat: "Ant. Introíbo ad altáre Dei. Ad Deum, qui lætíficat iuventútem meam."
+  },
+
+  adjutorium: {
+    eng: "℣. Our help ✠ is in the Name of the Lord.\n℟. Who hath made heaven and earth.",
+    lat: "℣. Adiutórium nostrum ✠ in nómine Dómini.\n℟. Qui fecit coelum et terram."
+  },
+
+  confiteorIntro: {
+    eng: "Then he will say the Confiteor, confessing and begging God's forgiveness for his sins. The server, speaking for the people then says the Confiteor on our behalf as we mentally accuse ourselves of our sins and ask the Saints to pray for us. The priest then absolves us.",
+    lat: "Deinde dicitur Confíteor; minister etiam, pro populo, Confíteor dicit; sacerdos absolvit."
+  },
+
+  confiteorShort: {
+    eng: "I confess to Almighty God...",
+    lat: "Confíteor Deo omnipoténti..."
+  },
+
+  misereaturTui: {
+    eng: "May Almighty God have mercy upon you, forgive you your sins, and bring you to life everlasting.",
+    lat: "Misereátur tui omnípotens Deus, et, dimíssis peccátis tuis, perdúcat te ad vitam ætérnam."
+  },
+
+  priestAmen: {
+    eng: "Amen.",
+    lat: "Amen."
+  },
+
+  confiteorFull: {
+    eng:
+      "I confess to Almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, to all the Saints, and to you Father, that I have sinned exceedingly, in thought, word and deed: through my fault, through my fault, through my most grievous fault. Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and Thee Father, to pray to the Lord our God for me.\n\nAmen.",
+    lat:
+      "Confíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Ioánni Baptístæ, sanctis Apóstolis Petro et Paulo, ómnibus Sanctis, et tibi, pater: quia peccávi nimis cogitatióne, verbo et opere: mea culpa, mea culpa, mea máxima culpa. Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, orare pro me ad Dóminum, Deum nostrum.\n\nAmen."
+  },
+
+  misereaturVestri: {
+    eng: "S. May Almighty God have mercy upon you, forgive you your sins and bring you to life everlasting.\n℟. Amen.",
+    lat: "S. Misereátur vestri omnípotens Deus, et, dimíssis peccátis vestris, perdúcat vos ad vitam ætérnam.\n℟. Amen."
+  },
+
+  indulgentiam: {
+    eng: "S. May the Almighty and merciful God grant us pardon, + absolution, and remission of our sins.\n℟. Amen.",
+    lat: "S. Indulgéntiam, + absolutionem et remissiónem peccatórum nostrórum tríbuat nobis omnípotens et miséricors Dóminus.\n℟. Amen."
+  },
+
+  versiclesAfterConfiteor: {
+    eng:
+      "℣. Thou wilt turn, O God, and bring us to life.\n" +
+      "℟. And Thy people shall rejoice in Thee.\n" +
+      "℣. Show us, O Lord, Thy mercy.\n" +
+      "℟. And grant us Thy salvation.\n" +
+      "℣. O Lord, hear my prayer.\n" +
+      "℟. And let my cry come unto Thee.\n" +
+      "℣. The Lord be with you.\n" +
+      "℟. And with thy spirit.\n" +
+      "Let us pray.",
+    lat:
+      "℣. Deus, tu convérsus vivificábis nos.\n" +
+      "℟. Et plebs tua lætábitur in te.\n" +
+      "℣. Osténde nobis, Dómine, misericórdiam tuam.\n" +
+      "℟. Et salutáre tuum da nobis.\n" +
+      "℣. Dómine, exáudi oratiónem meam.\n" +
+      "℟. Et clamor meus ad te véniat.\n" +
+      "℣. Dóminus vobíscum.\n" +
+      "℟. Et cum spíritu tuo.\n" +
+      "Orémus."
+  },
+
+  auferANobis: {
+    eng:
+      "Take away from us our iniquities, we entreat Thee, O Lord, that with pure minds we may worthily enter into the Holy of Holies. Through Christ our Lord. Amen.",
+    lat:
+      "Aufer a nobis, quaesumus, Dómine, iniquitátes nostras: ut ad Sancta sanctórum puris mereámur méntibus introíre. Per Christum, Dóminum nostrum. Amen."
+  },
+
+  oramusTe: {
+    eng:
+      "We beseech Thee, O Lord, by the merits of Thy Saints, whose relics are here and of all the Saints, that Thou wilt deign to pardon me all my sins. Amen.",
+    lat:
+      "Orámus te, Dómine, per mérita Sanctórum tuórum, quorum relíquiæ hic sunt, et ómnium Sanctórum: ut indulgére dignéris ómnia peccáta mea. Amen."
+  },
+
+  /* =========================
+     OTHER FIXED PARTS YOU ALREADY HAD
+  ========================= */
+
+  prefaceDialogue: {
+    lat:
+      "℣. Dóminus vobíscum.\n" +
+      "℟. Et cum spíritu tuo.\n" +
+      "℣. Sursum corda.\n" +
+      "℟. Habémus ad Dóminum.\n" +
+      "℣. Grátias agámus Dómino Deo nostro.\n" +
+      "℟. Dignum et iustum est.",
+    eng:
+      "℣. The Lord be with you.\n" +
+      "℟. And with thy spirit.\n" +
+      "℣. Lift up your hearts.\n" +
+      "℟. We have lifted them up to the Lord.\n" +
+      "℣. Let us give thanks to the Lord our God.\n" +
+      "℟. It is right and just."
+  },
+
+  sanctus: {
+    lat:
+      "Sanctus, Sanctus, Sanctus Dóminus, Deus Sábaoth. " +
+      "Pleni sunt cæli et terra glória tua. Hosánna in excélsis. " +
+      "Benedíctus qui venit in nómine Dómini. Hosánna in excélsis.",
+    eng:
+      "Holy, Holy, Holy, Lord God of Hosts. Heaven and earth are full of Thy glory. " +
+      "Hosanna in the highest. Blessed is He who comes in the name of the Lord. Hosanna in the highest."
+  },
+
+  paterNoster: {
+    lat:
+      "℣.Orémus. Præcéptis salutáribus móniti, et divína institutione formáti, audémus dícere:\n\n" +
+      "Pater noster, qui es in cælis: sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. " +
+      "Panem nostrum cotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris: et ne nos indúcas in tentatiónem.\n" +
+      "℟. Sed líbera nos a malo.",
+    eng:
+      "℣.Let us pray. Admonished by saving precepts, and formed by divine teaching, we dare to say:\n\n" +
+      "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. " +
+      "Give us this day our daily bread; and forgive us our debts as we also forgive our debtors; and lead us not into temptation.\n" +
+      "℟. But deliver us from evil."
+  },
+
+  agnusCommon: {
+    lat:
+      "Agnus Dei, qui tollis peccáta mundi: miserére nobis.\n" +
+      "Agnus Dei, qui tollis peccáta mundi: miserére nobis.\n" +
+      "Agnus Dei, qui tollis peccáta mundi: dona nobis pacem.",
+    eng:
+      "Lamb of God, who takest away the sins of the world: have mercy on us.\n" +
+      "Lamb of God, who takest away the sins of the world: have mercy on us.\n" +
+      "Lamb of God, who takest away the sins of the world: grant us peace."
+  },
+
+  iteMissaEst: {
+    lat: "℣. Ite, Missa est.\n℟. Deo grátias.",
+    eng: "℣. Go, the Mass is ended.\n℟. Thanks be to God."
+  },
+
+  blessing: {
+    lat: "Benedícat vos omnípotens Deus, Pater, et Fílius, + et Spíritus Sanctus.\n℟. Amen.",
+    eng: "May almighty God bless you: the Father, + the Son, and the Holy Ghost.\n℟. Amen."
+  },
+
+  lastGospelIntro: {
+    lat:
+      "℣. Dóminus vobíscum.\n" +
+      "℟. Et cum spíritu tuo.\n" +
+      "Initium + sancti Evangélii secúndum Ioánnem.\n" +
+      "℟. Glória tibi, Dómine.",
+    eng:
+      "℣. The Lord be with you.\n" +
+      "℟. And with thy spirit.\n" +
+      "The beginning + of the holy Gospel according to Saint John.\n" +
+      "℟. Glory be to Thee, O Lord."
+  },
+
+  lastGospel: {
+    lat:
+      "In princípio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum. Hoc erat in princípio apud Deum. " +
+      "Omnia per ipsum facta sunt: et sine ipso factum est nihil, quod factum est: in ipso vita erat, et vita erat lux hóminum: " +
+      "et lux in ténebris lucet, et ténebræ eam non comprehendérunt.\n\n" +
+      "[KNEEL]\n" +
+      "ET VERBUM CARO FACTUM EST\n" +
+      "[RISE]\n\n" +
+      "Et habitávit in nobis: et vídimus glóriam eius, glóriam quasi Unigéniti a Patre, plenum grátiæ et veritatis.",
+    eng:
+      "In the beginning was the Word, and the Word was with God, and the Word was God. This was in the beginning with God. " +
+      "All things were made by Him, and without Him was made nothing that was made. In Him was life, and the life was the Light of men; " +
+      "and the Light shineth in darkness, and the darkness did not comprehend it.\n\n" +
+      "[KNEEL]\n" +
+      "AND THE WORD WAS MADE FLESH\n" +
+      "[RISE]\n\n" +
+      "And dwelt among us, and we saw His glory, the glory as of the Only-begotten of the Father, full of grace and truth."
+  }
+};
+
+
+const LEONINE_TEXTS = {
+  ave: {
+    lat: "Ave María, grátia plena, Dóminus tecum; benedícta tu in muliéribus, et benedíctus fructus ventris tui, Iesus.<br><br>Sancta María, Mater Dei, ora pro nobis peccatóribus, nunc et in hora mortis nostræ. Amen. (3×)",
+    eng: "Hail Mary, full of grace; The Lord is with thee; Blessed art thou amongst women, And blessed is the fruit of thy womb, Jesus.<br><br>Holy Mary, Mother of God, Pray for us sinners, now and at the hour of our death. Amen. (3 times)"
+  },
+  salve: {
+    lat: "Salve Regína, Mater misericórdiæ, vita, dulcédo, et spes nostra, salve. Ad te clamámus, éxsules fílii Evæ. Ad te suspirámus geméntes et flentes in hac lacrymárum valle. Eia ergo, Advocáta nostra, illos tuos misericórdes óculos ad nos convérte. Et Iesum, benedíctum fructum ventris tui, nobis, post hoc exsílium, osténde. O clemens, o pia, o dulcis Virgo María.<br><br>℣. Ora pro nobis, sancta Dei Génitrix.<br>℟. Ut digni efficiámur promissiónibus Christi.",
+    eng: "Hail, holy Queen, Mother of mercy, our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious Advocate, thine eyes of mercy towards us. And after this our exile, show unto us the blessed Fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.<br><br>℣. Pray for us, O Holy Mother of God.<br>℟. That we may be made worthy of the promises of Christ."
+  },
+  oremus: {
+    lat: "Orémus. Deus, refúgium nostrum et virtus, pópulum ad te clamántem propítius réspice; et intercedénte gloriósa, et immaculáta Vírgine Dei Genitríce María, cum beáto Ioseph, eius Sponso, ac beátis Apóstolis tuis Petro et Paulo, et ómnibus Sanctis, quas pro conversióne peccatórum, pro libertáte et exaltatióne sanctæ Matris Ecclésiæ, preces effúndimus, miséricors et benígnus exáudi. Per eúndem Christum Dóminum nostrum. Amen.",
+    eng: "Let us pray. O God, our refuge and our strength, look down in mercy on Thy people who cry to Thee; and by the intercession of the glorious and immaculate Virgin Mary, Mother of God, of St. Joseph her Spouse, of Thy blessed Apostles Peter and Paul, and of all the Saints, in mercy and goodness hear our prayers for the conversion of sinners, and for the liberty and exaltation of our holy Mother and Church. Through the same Christ our Lord. Amen."
+  },
+  michael: {
+    lat: "Sancte Michaël Archángele, defénde nos in prœlio; contra nequítiam et insídias diáboli esto præsídium. Ímperet illi Deus, súpplices deprecámur: tuque, Princeps milítiæ Cæléstis, sátanam aliósque spíritus malígnos, qui ad perditiónem animárum pervagántur in mundo, divína virtúte in inférnum detrúde. Amen.",
+    eng: "Holy Michael Archangel, defend us in the day of battle; be our safeguard against the wickedness and snares of the devil. May God rebuke him, we humbly pray: and do thou, Prince of the heavenly host, by the power of God thrust down to hell Satan and all wicked spirits, who wander through the world for the ruin of souls. Amen."
+  },
+  corJesu: {
+    lat: "℣. Cor Iesu sacratíssimum.<br>℟. Miserére nobis. (3×)",
+    eng: "℣. Most Sacred Heart of Jesus.<br>℟. Have mercy upon us. (3 times)"
+  }
+};
+
+/* =========================================================
+   OFFLINE FALLBACK PROPERS
+========================================================= */
+const offlinePropers = {
+  name: "Feria (Offline Mode)",
+  rank: "Network Unavailable",
+  color: "Green",
+  introit: { lat: "Dicit Dóminus…", eng: "The Lord saith…" },
+  collect: { lat: "Excíta, Dómine…", eng: "Stir up, O Lord…" },
+  epistle: { lat: "Fratres…", eng: "Brethren…" },
+  gradual: { lat: "Liberásti nos…", eng: "Thou hast delivered us…" },
+  gospel: { lat: "In illo témpore…", eng: "At that time…" },
+  offertory: { lat: "De profúndis…", eng: "Out of the depths…" },
+  secret: { lat: "Hæc sacra…", eng: "May these holy mysteries…" },
+  preface: null,
+  communion: { lat: "Amen dico vobis…", eng: "Amen I say to you…" },
+  postcommunion: { lat: "Quǽsumus…", eng: "We beseech Thee…" }
+};
+
+/* =========================================================
+   INIT (kept minimal; ensure correct syntax if used)
+========================================================= */
+window.addEventListener("load", () => {
+  // Optional CSS.registerProperty guard (keep yours if you like)
+  try{
+    if (CSS && CSS.registerProperty){
+      CSS.registerProperty({
+        name: '--liturgical',
+        syntax: '<color>',
+        inherits: true,
+        initialValue: '#10b981'
+      });
+    }
+  } catch(e){}
+  
+    // Restore Mass mode UI
+  setMassMode(massMode);
+
+
+  // Restore last selected date (timezone-safe)
+  const stored = safeLocalStorageGet(STORAGE_KEY);
+  const restored = parseDateInput(stored);
+  setCurrentDate(restored || new Date(), {syncPicker: true, scrollIntoView: false});
+
+  // Wire date picker
+  const picker = document.getElementById("date-picker");
+  if (picker){
+    // Ensure it has a proper initial value
+    picker.value = formatDateInput(currentDate);
+
+    picker.addEventListener("change", async () => {
+      const chosen = parseDateInput(picker.value);
+      setCurrentDate(chosen || new Date(), {syncPicker: false, scrollIntoView: true});
+      await refreshPropersAndHome();
+    });
+  }
+
+  // Wire buttons
+  const btnToday = document.getElementById("btn-today");
+  if (btnToday){
+    btnToday.addEventListener("click", async () => {
+      setCurrentDate(new Date(), {syncPicker: true, scrollIntoView: true});
+      await refreshPropersAndHome();
+    });
+  }
+
+  const btnNextSunday = document.getElementById("btn-next-sunday");
+  if (btnNextSunday){
+    btnNextSunday.addEventListener("click", async () => {
+      setCurrentDate(nextSundayFrom(currentDate), {syncPicker: true, scrollIntoView: true});
+      await refreshPropersAndHome();
+    });
+  }
+
+  const btnPick = document.getElementById("btn-pick");
+  if (btnPick && picker){
+    btnPick.addEventListener("click", () => {
+      // Best effort: showPicker (Chromium), otherwise focus+click (Safari)
+      if (typeof picker.showPicker === "function") picker.showPicker();
+      else { picker.focus(); picker.click(); }
+    });
+  }
+
+  // Initial render
+  buildDateStrip({scrollIntoView: false});
+  refreshPropersAndHome();
+});
+
+
+
+/* =========================================================
+   SETTINGS UI (guard missing elements)
+========================================================= */
+
+function setPaxMode(mode){
+  paxMode = mode;
+  const a = document.getElementById('pax-kneel-after');
+  const b = document.getElementById('pax-kneel-agnus');
+  if (a) a.classList.toggle('active', mode === 'kneel_after_pax');
+  if (b) b.classList.toggle('active', mode === 'kneel_at_agnus');
+}
+
+/* =========================================================
+   HOME refresh (icons removed; text-only IDs supported)
+========================================================= */
+async function refreshPropersAndHome(){
+  const picker = document.getElementById("date-picker");
+  if (picker) picker.value = formatDateInput(currentDate);
+
+  buildDateStrip({scrollIntoView: false});
+  updateDateBadges();
+  
+  const homeFeast = document.getElementById('home-feast');
+  const homeStatus = document.getElementById('home-status');
+
+  const homeRankText = document.getElementById('home-rank-text') || document.getElementById('home-rank');
+  const homeVestText = document.getElementById('home-vestments-text') || document.getElementById('home-vestments');
+
+  if (homeFeast) homeFeast.textContent = "Consulting the Ordo…";
+  if (homeRankText) homeRankText.textContent = "Rank: —";
+  if (homeVestText) homeVestText.textContent = "Vestments: —";
+  if (homeStatus) homeStatus.textContent = "";
+
+  try{
+    const data = await fetchPropers(currentDate);
+    const seasonColor = calculateLiturgicalSeason(currentDate);
+    if ((data.color || "Green") === "Green" && seasonColor !== "Green") data.color = seasonColor;
+
+    currentPropers = data;
+    setLiturgicalTheme(data.color);
+
+    if (homeFeast) homeFeast.textContent = (data.name || "Feria");
+    if (homeRankText) homeRankText.textContent = "Rank: " + (data.rank || "—");
+    if (homeVestText) homeVestText.textContent = "Vestments: " + (data.color || "Green");
+  } catch(e){
+    currentPropers = { ...offlinePropers };
+    currentPropers.color = calculateLiturgicalSeason(currentDate);
+    setLiturgicalTheme(currentPropers.color);
+
+    if (homeFeast) homeFeast.textContent = "Offline Mode";
+    if (homeRankText) homeRankText.textContent = "Rank: Network Unavailable";
+    if (homeVestText) homeVestText.textContent = "Vestments: " + (currentPropers.color || "Green");
+    if (homeStatus) homeStatus.textContent = "Using offline fallback propers.";
+  }
+}
+
+function updateDateBadges(){
+  const fmt = currentDate.toLocaleDateString(undefined, {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+
+  const hdText = document.getElementById('home-date-text');
+  if (hdText) hdText.textContent = fmt;
+  else {
+    const hd = document.getElementById('home-date');
+    if (hd) hd.textContent = fmt;
+  }
+
+  const pd = document.getElementById('player-date');
+  if (pd){
+    const span = pd.querySelector('span');
+    if (span) span.textContent = fmt;
+    else pd.textContent = fmt;
+  }
+}
+
+const PRAYER_STUBS = {
+  
+  iube_domine_benedicere: { title: "Iube, Domine, benedicere", role: "silent", lat: "Iube, Dómine, benedícere. Dóminus sit in corde meo et in lábiis meis: ut digne et competénter annúntiem Evangélium suum. Amen.", eng: "Grant, O Lord, Thy blessing. May the Lord be in my heart and on my lips that I may worthily and fittingly proclaim His Gospel. Amen." },
+
+  suscipe_sancte_pater:   { title: "Offering the Host", role: "silent", lat: "Suscipe, sancte Pater, omnipotens ætérne Deus, hanc immaculátam hóstiam, quam ego indígnus fámulus tuus óffero tibi Deo meo vivo et vero, pro innumerabílibus peccátis, et offensiónibus, et neglegéntiis meis, et pro ómnibus circumstántibus, sed et pro ómnibus fidélibus christiánis vivis atque defúnctis: ut mihi, et illis profíciat ad salútem in vitam ætérnam. Amen.", eng: "Accept, O Holy father, Almighty and Eternal God, this spotless host, which I, Your unworthy servant, offer to You, my living and true God, to atone for my numberless sins, offences, and negligences; on behalf of all here present and likewise for all faithful Christians living and dead, that it may profit me and them as a means of salvation to life everlasting. Amen." },
+  deus_qui_humanae:       { title: "Filling the Chalice with Wine and Water", role: "silent", lat: "Deus, qui humánæ substántiæ dignitátem mirabíliter condidísti, et mirabílius reformásti: da nobis per huius aquæ et vini mystérium, eius divinitátis esse consórtes, qui humanitátis nostræ fíeri dignátus est párticeps, Iesus Christus, Fílius tuus, Dóminus noster: Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus: per ómnia saecula sæculórum. Amen.", eng: "O God, who in creating man didst exalt his nature very wonderfully and yet more wonderfully didst establish it anew; by the Mystery signified in the mingling of this water and wine, grant us to have part in the Godhead of Him Who hath deigned to become a partaker of our humanity, Jesus Christ, Thy Son our Lord; Who liveth and reigneth with Thee, in the unity of the Holy Ghost, God. World without end. Amen." },
+  offerimus_tibi_domine:  { title: "Offering the Chalice", role: "silent", lat: "Offérimus tibi, Dómine, cálicem salutáris, tuam deprecántes cleméntiam: ut in conspéctu divínæ maiestátis tuæ, pro nostra et totíus mundi salute, cum odóre suavitátis ascéndat. Amen.", eng: "We offer unto Thee, O Lord, the chalice of salvation, entreating Thy mercy that our offering may ascend with a sweet fragrance in the sight of Thy divine Majesty, for our own salvation, and for that of the whole world. Amen." },
+  in_spiritu_humilitatis: { title: "Offering of priest and people", role: "silent", lat: "In spíritu humilitátis et in ánimo contríto suscipiámur a te, Dómine: et sic fiat sacrifícium nostrum in conspéctu tuo hódie, ut pláceat tibi, Dómine Deus.", eng: "Humbled in spirit and contrite of heart, may we find favor with Thee, O Lord: and may our sacrifice be so offered this day in Thy sight as to be pleasing to Thee, O Lord God." },
+  veni_sanctificator:     { title: "Invocation of the Holy Spirit", role: "silent", lat: "Veni, sanctificátor omnípotens ætérne Deus: et bene ✠ dic hoc sacrifícium, tuo sancto nómini præparátum.", eng: "Come Thou, the Sanctifier, Almighty and Everlasting God, and bless ✠ this sacrifice which is prepared for the glory of Thy holy Name." },
+
+  lavabo_ps25: {
+    title: "Lavabo (Psalm 25)",
+    role: "silent",
+    lat: `Ps 25, 6–12
+Lavábo inter innocéntes manus meas: et circúmdabo altáre tuum, Dómine:
+Ut áudiam vocem laudis, et enárrem univérsa mirabília tua.
+Dómine, diléxi decórem domus tuæ et locum habitatiónis glóriæ tuæ.
+Ne perdas cum ímpiis, Deus, ánimam meam, et cum viris sánguinum vitam meam:
+In quorum mánibus iniquitátes sunt: déxtera eórum repléta est munéribus.
+Ego autem in innocéntia mea ingréssus sum: rédime me et miserére mei.
+Pes meus stetit in dirécto: in ecclésiis benedícam te, Dómine.
+℣. Glória Patri.`,
+    eng: `Ps 25, 6–12
+I will wash my hands among the innocent, and I will encompass Thine Altar, O Lord.
+That I may hear the voice of praise, and tell of all Thy wondrous works.
+I have loved, O Lord, the beauty of Thy house, and the place where Thy glory dwelleth.
+Take not away my soul, O God, with the wicked, nor my life with men of blood.
+In whose hands are iniquities, their right hand is filled with gifts.
+But as for me, I have walked in my innocence; redeem me, and have mercy on me.
+My foot hath stood in the right way; in the churches I will bless Thee, O Lord.
+℣. Glory be to the Father.`
+  },
+  suscipe_sancta_trinitas:{ title: "Prayer to Holy Trinity", role: "silent", lat: "Súscipe, sancta Trinitas, hanc oblatiónem, quam tibi offérimus ob memóriam passiónis, resurrectiónis, et ascensiónis Iesu Christi, Dómini nostri: et in honórem beátæ Maríæ semper Vírginis, et beáti Ioannis Baptistæ, et sanctórum Apostolórum Petri et Pauli, et istórum et ómnium Sanctórum: ut illis profíciat ad honórem, nobis autem ad salútem: et illi pro nobis intercédere dignéntur in coelis, quorum memóriam ágimus in terris. Per eúndem Christum, Dóminum nostrum. Amen.", eng: "Receive, O Holy Trinity, this oblation which we make to Thee in memory of the Passion, Resurrection and Ascension of our Lord Jesus Christ; and in honor of Blessed Mary ever Virgin, of blessed John the Baptist, the holy Apostles Peter and Paul, of these and of all the Saints. To them let it bring honor, and to us salvation, and may they whom we are commemorating here on earth deign to plead for us in heaven. Through the same Christ our Lord. Amen." },
+
+  orate_fratres_merged: {
+    title: "Orate, fratres",
+    role: "priest",
+    lat: `℣. Oráte, fratres: ut meum ac vestrum sacrifícium acceptábile fiat apud Deum Patrem omnipoténtem.
+℟. Suscípiat Dóminus sacrifícium de mánibus tuis ad laudem et glóriam nominis sui, ad utilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ.
+℣. Amen.`,
+    eng: `℣. Pray, brethren, that my Sacrifice and yours may be acceptable to God the Father Almighty.
+℟. May the Lord accept the Sacrifice from thy hands, to the praise and glory of His Name, for our benefit and for that of all His holy Church.
+℣. Amen.`
+  },
+  
+  per_intercessionem_michaelis: {
+    title: "Blessing of Incense (St Michael)",
+    role: "priest",
+    lat: `Per intercessiónem beáti Michaélis Archángeli, stantis a dextris altáris incénsi, et ómnium electórum suórum, incénsum istud dignétur Dóminus bene ✠ dícere, et in odórem suavitátis accípere. Per Christum, Dóminum nostrum. Amen.`,
+    eng: `Through the intercession of blessed Michael the Archangel, standing at the right hand of the altar of incense, and of all His elect, may the Lord vouchsafe to bless ✠ this incense and to receive it in the odor of sweetness. Through Christ our Lord. Amen.`
+  },
+
+  incensum_istud_benedictum: {
+    title: "Incensing (Offerings)",
+    role: "silent",
+    lat: `Incénsum istud a te benedíctum ascéndat ad te, Dómine: et descéndat super nos misericórdia tua.`,
+    eng: `May this incense blessed by You, arise before You, O Lord, and may Your mercy come down upon us.`
+  },
+
+  dirigatur_ps140: {
+    title: "Incensing (Crucifix & Altar)",
+    role: "silent",
+    lat: `Ps 140, 2–4
+Dirigátur, Dómine, orátio mea, sicut incénsum, in conspéctu tuo: elevátio mánuum meárum sacrifícium vespertínum.
+Pone, Dómine, custódiam ori meo, et óstium circumstántiæ lábiis meis:
+ut non declínet cor meum in verba malítiæ, ad excusándas excusatiónes in peccátis.`,
+    eng: `Ps 140, 2–4
+Let my prayer, O Lord, like incense before You; the lifting up of my hands, like the evening sacrifice.
+O Lord, set a watch before my mouth, a guard at the door of my lips.
+Let not my heart incline to the evil of engaging in deeds of wickedness.`
+  },
+
+  accendat_in_nobis: {
+    title: "Incensing (Priest & Faithful)",
+    role: "silent",
+    lat: `Accéndat in nobis Dóminus ignem sui amóris, et flammam ætérnæ caritátis. Amen.`,
+    eng: `May the Lord enkindle in us the fire of His love and the flame of everlasting charity. Amen.`
+  },
+  
+    te_igitur: {
+    title: "Te igitur",
+    role: "silent",
+    lat: "Te igitur, clementíssime Pater, per Iesum Christum, Fílium tuum, Dóminum nostrum, súpplices rogámus, ac pétimus, uti accepta habeas et benedícas, hæc ✠ dona, hæc ✠ múnera, hæc ✠ sancta sacrifícia illibáta.",
+    eng: "Most merciful Father, we humbly pray and beseech Thee, through Jesus Christ Thy Son, Our Lord, to accept and to bless these ✠ gifts, these ✠ presents, these ✠ holy unspotted Sacrifices,"
+  },
+
+  te_igitur_for_church: {
+    title: "For the Church",
+    role: "silent",
+    lat: "In primis, quæ tibi offérimus pro Ecclésia tua sancta cathólica: quam pacificáre, custodíre, adunáre et régere dignéris toto orbe terrárum: una cum fámulo tuo Papa nostro N. et Antístite nostro et ómnibus orthodóxis, atque cathólicæ et apostólicae fídei cultóribus.",
+    eng: "We offer them up to Thee, in the first place, for Thy Holy Catholic Church, that it may please Thee to grant her peace, to preserve, unite, and govern her throughout the world; as also for Thy servant N. our Pope, and N. our Bishop, and for all orthodox believers and all who profess the Catholic and Apostolic faith."
+  },
+
+  memento_living: {
+    title: "Commemoration of the living",
+    role: "silent",
+    lat: "Meménto, Dómine, famulórum famularúmque tuarum N. et N. et ómnium circumstántium, quorum tibi fides cógnita est et nota devótio, pro quibus tibi offérimus: vel qui tibi ófferunt hoc sacrifícium laudis, pro se suísque ómnibus: pro redemptióne animárum suárum, pro spe salútis et incolumitátis suæ: tibíque reddunt vota sua ætérno Deo, vivo et vero.",
+    eng: "Be mindful, O Lord, of Thy servants and handmaids N. and N. and of all here present, whose faith and devotion are known to Thee, for whom we offer, or who offer up to Thee this Sacrifice of praise for themselves and all those dear to them, for the redemption of their souls and the hope of their safety and salvation: who now pay their vows to Thee, the everlasting, living and true God."
+  },
+
+  communicantes: {
+    title: "Prayer in honour of the Saints",
+    role: "silent",
+    lat: "Communicántes, et memóriam venerántes, in primis gloriósæ semper Vírginis Maríæ, Genetrícis Dei et Dómini nostri Iesu Christi: sed et beati Ioseph, eiusdem Virginis Sponsi, et beatórum Apostolórum ac Mártyrum tuórum, Petri et Pauli, Andréæ, Iacóbi, Ioánnis, Thomæ, Iacóbi, Philíppi, Bartholomaei, Matthaei, Simónis et Thaddaei: Lini, Cleti, Cleméntis, Xysti, Cornélii, Cypriáni, Lauréntii, Chrysógoni, Ioánnis et Pauli, Cosmæ et Damiáni: et ómnium Sanctórum tuórum; quorum méritis precibúsque concédas, ut in ómnibus protectiónis tuæ muniámur auxílio. Per eúndem Christum, Dóminum nostrum. Amen.",
+    eng: "In communion with, and honoring the memory in the first place of the glorious ever Virgin Mary Mother of our God and Lord Jesus Christ; also of blessed Joseph, her Spouse; and likewise of Thy blessed Apostles and Martyrs, Peter and Paul, Andrew, James, John, Thomas, James, Philip, Bartholomew, Matthew, Simon and Thaddeus, Linus, Cletus, Clement, Sixtus, Cornelius, Cyprian, Lawrence, Chrysogonus, John and Paul, Cosmas and Damian, and of all Thy Saints. Grant for the sake of their merits and prayers that in all things we may be guarded and helped by Thy protection. Through the same Christ our Lord. Amen."
+  },
+
+  hanc_igitur: {
+    title: "Hanc igitur",
+    role: "silent",
+    lat: "Hanc igitur oblatiónem servitutis nostræ, sed et cunctae famíliæ tuæ, quaesumus, Dómine, ut placátus accípias: diésque nostros in tua pace dispónas, atque ab ætérna damnatióne nos éripi, et in electórum tuórum iúbeas grege numerári. Per Christum, Dóminum nostrum. Amen.",
+    eng: "O Lord, we beseech Thee, graciously to accept this oblation of our service and that of Thy whole household. Order our days in Thy peace, and command that we be rescued from eternal damnation and numbered in the flock of Thine elect. Through Christ our Lord. Amen."
+  },
+
+  quam_oblationem: {
+    title: "Quam oblationem",
+    role: "silent",
+    lat: "Quam oblatiónem tu, Deus, in ómnibus, quaesumus, bene ✠ díctam, adscríp ✠ tam, ra ✠ tam, rationábilem, acceptabilémque fácere dignéris: ut nobis Cor ✠ pus, et San ✠ guis fiat dilectíssimi Fílii tui, Dómini nostri Iesu Christi.",
+    eng: "Humbly we pray Thee, O God, be pleased to make this same offering wholly blessed ✠, to consecrate ✠ it and approve ✠ it, making it reasonable and acceptable, so that it may become for us the Body ✠ and Blood ✠ of Thy dearly beloved Son, our Lord Jesus Christ."
+  },
+
+  qui_pridie: {
+    title: "Qui pridie",
+    role: "silent",
+    lat: "Qui prídie quam paterétur, accépit panem in sanctas ac venerábiles manus suas, elevátis óculis in coelum ad te Deum, Patrem suum omnipoténtem, tibi grátias agens, bene ✠ dixit, fregit, dedítque discípulis suis, dicens: Accípite, et manducáte ex hoc omnes.",
+    eng: "Who, the day before He suffered, took bread into His Holy and venerable hands, and having lifted up His eyes to heaven, to Thee, God, His Almighty Father, giving thanks to Thee, blessed it ✠, broke it, and gave it to His disciples, saying: Take and eat ye all of this."
+  },
+
+  simili_modo: {
+    title: "Simili modo",
+    role: "silent",
+    lat: "Símili modo postquam coenátum est, accípiens et hunc præclárum Cálicem in sanctas ac venerábiles manus suas: item tibi grátias agens, bene ✠ dixit, dedítque discípulis suis, dicens: Accípite, et bíbite ex eo omnes.",
+    eng: "Taking also into His holy and venerable hands this goodly chalice, again giving thanks to Thee, He blessed it ✠, and gave it to His disciples, saying: Take and drink ye all of this."
+  },
+
+  haec_quotienscumque: {
+    title: "Haec quotiescumque",
+    role: "silent",
+    lat: "Hæc quotiescúmque fecéritis, in mei memóriam faciétis.",
+    eng: "As often as ye shall do these things, ye shall do them in remembrance of Me."
+  },
+
+  unde_et_memores: {
+    title: "Unde et memores",
+    role: "silent",
+    lat: "Unde et mémores, Dómine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Fílii tui, Dómini nostri, tam beátæ passiónis, nec non et ab ínferis resurrectiónis, sed et in coelos gloriósæ ascensiónis: offérimus præcláræ maiestáti tuæ de tuis donis ac datis, hóstiam ✠ puram, hóstiam ✠ sanctam, hóstiam ✠ immaculátam, Panem ✠ sanctum vitæ ætérnæ, et Calicem ✠ salútis perpétuæ.",
+    eng: "And now, O Lord, we, Thy servants, and with us all Thy holy people, calling to mind the blessed Passion of this same Christ, Thy Son, our Lord, likewise His Resurrection from the grave, and also His glorious Ascension into heaven, do offer unto Thy most sovereign Majesty out of the gifts Thou hast bestowed upon us a Victim ✠ which is pure, a Victim ✠ which is holy, a Victim ✠ which is spotless, the holy Bread ✠ of life eternal, and the Chalice ✠ of everlasting Salvation."
+  },
+
+  supra_quae: {
+    title: "Supra quae",
+    role: "silent",
+    lat: "Supra quæ propítio ac seréno vultu respícere dignéris: et accépta habére, sicúti accépta habére dignátus es múnera púeri tui iusti Abel, et sacrifícium Patriárchæ nostri Abrahæ: et quod tibi óbtulit summus sacérdos tuus Melchísedech, sanctum sacrifícium, immaculátam hóstiam.",
+    eng: "Deign to look upon them with a favorable and gracious countenance, and to accept them as Thou didst accept the offerings of Thy just servant Abel, and the sacrifice of our Patriarch Abraham, and that which Thy high priest Melchisedech offered up to Thee, a holy Sacrifice, an immaculate Victim."
+  },
+
+  supplices_te_rogamus: {
+    title: "Supplices te rogamus",
+    role: "silent",
+    lat: "Súpplices te rogámus, omnípotens Deus: iube hæc perférri per manus sancti Angeli tui in sublíme altáre tuum, in conspéctu divínæ maiestátis tuæ: ut, quotquot ex hac altáris participatióne sacrosánctum Fílii tui Cor ✠ pus, et Sán ✠ guinem sumpsérimus, omni benedictióne coelésti et grátia repleámur. Per eúndem Christum, Dóminum nostrum. Amen.",
+    eng: "Humbly we beseech Thee, almighty God, to command that these our offerings be carried by the hands of Thy holy Angel to Thine Altar on high, in the sight of Thy divine Majesty, so that those of us who shall receive the most sacred Body ✠ and Blood ✠ of Thy Son by partaking thereof from this Altar may be filled with every grace and heavenly blessing: Through the same Christ our Lord. Amen."
+  },
+
+  memento_dead: {
+    title: "Memento (for the dead)",
+    role: "silent",
+    lat: "Meménto étiam, Dómine, famulórum famularúmque tuárum N. et N., qui nos præcessérunt cum signo fídei, et dórmiunt in somno pacis. Ipsis, Dómine, et ómnibus in Christo quiescéntibus locum refrigérii, lucis pacis ut indúlgeas, deprecámur. Per eúndem Christum, Dóminum nostrum. Amen.",
+    eng: "Be mindful, also, O Lord, of Thy servants and handmaids N. and N. who are gone before us with the sign of faith and who sleep the sleep of peace. To these, O Lord, and to all who rest in Christ, grant, we beseech Thee, a place of refreshment, light and peace. Through the same Christ our Lord. Amen."
+  },
+
+  nobis_quoque: {
+    title: "Nobis quoque peccatoribus",
+    role: "silent",
+    lat: "Nobis quoque peccatóribus fámulis tuis, de multitúdine miseratiónum tuárum sperántibus, partem áliquam et societátem donáre dignéris, cum tuis sanctis Apóstolis et Martýribus: cum Ioánne, Stéphano, Matthía, Bárnaba, Ignátio, Alexándro, Marcellíno, Petro, Felicitáte, Perpétua, Agatha, Lúcia, Agnéte, Cæcília, Anastásia, et ómnibus Sanctis tuis: intra quorum nos consórtium, non æstimátor mériti, sed véniæ, quaesumus, largítor admítte. Per Christum, Dóminum nostrum.",
+    eng: "To us also Thy sinful servants, who put our trust in the multitude of Thy mercies, vouchsafe to grant some part and fellowship with Thy holy Apostles and Martyrs: with John, Stephen, Matthias, Barnabas, Ignatius, Alexander, Marcellinus, Peter, Felicitas, Perpetua, Agatha, Lucy, Agnes, Cecilia, Anastasia, and all Thy Saints. Into their company we beseech Thee admit us, not considering our merits, but freely pardoning our offenses. Through Christ our Lord."
+  },
+
+  per_quem: {
+    title: "Per quem haec omnia",
+    role: "silent",
+    lat: "Per quem hæc ómnia, Dómine, semper bona creas, sancti ✠ ficas, viví ✠ ficas, bene ✠ dícis et præstas nobis.",
+    eng: "By whom, O Lord, Thou dost always create, sanctify ✠, quicken ✠, bless ✠, and bestow upon us all these good things."
+  },
+
+  per_ipsum: {
+    title: "Per ipsum",
+    role: "priest",
+    lat: "Per ip ✠ sum, et cum ip ✠ so, et in ip ✠ so, est tibi Deo Patri + omnipotenti, in unitáte Spíritus + Sancti, omnis honor, et glória.\n℣. Per omnia saecula saecolorum.\n℟. Amen.",
+    eng: "Through Him ✠, and with Him ✠, and in Him ✠, is unto Thee, God the Father ✠ Almighty, in the unity of the Holy ✠ Ghost, all honor and glory.\n℣. World without end.\n℟. Amen."
+  },
+
+};
+
+
+function stepFromStub(stepId, section, stubKey, meta = {}) {
+  const p = PRAYER_STUBS[stubKey];
+  if (!p) throw new Error("Unknown PRAYER_STUBS key: " + stubKey);
+
+  const skippable = ("skippable" in meta) ? meta.skippable : true;
+
+  return {
+  id: stepId,
+  section: section,
+  title: meta.titleOverride || p.title,
+  sub: meta.sub || "",
+  priestLocation: meta.priestLocation || "CENTER",
+  posture: meta.posture || "S",
+  skippable: skippable,
+  bells: meta.bells || 0,
+  html: (meta.noteHtml || "") + title(meta.titleOverride || p.title) + bilingual(p.lat, p.eng, meta.roleOverride || p.role)
+};
+
+}
+
+function stepFromStubsCombined(stepId, section, meta, stubKeys){
+  const skippable = ("skippable" in meta) ? meta.skippable : true;
+
+  const blocks = stubKeys.map((k) => {
+    const p = PRAYER_STUBS[k];
+    if (!p) throw new Error("Unknown PRAYER_STUBS key: " + k);
+
+    // Use a local sub-heading per prayer (nice scannability)
+    return title(p.title) + bilingual(p.lat, p.eng, p.role);
+  }).join("");
+
+  return {
+    id: stepId,
+    section,
+    title: meta.title || "—",
+    sub: meta.sub || "",
+    priestLocation: meta.priestLocation || "CENTER",
+    posture: meta.posture || "S",
+    skippable,
+    bells: meta.bells || 0,
+    html: (meta.noteHtml || "") + blocks
+  };
+}
+
+
+/* =========================================================
+   ENTER PLAYER (no icons)
+========================================================= */
+
+// Build one "Leonine Prayers" step (Low Mass only)
+function buildLeonineStep() {
+  // Defensive: if texts missing, do nothing
+  if (!LEONINE_TEXTS) return null;
+
+  const blocks = [
+    { key: "ave",     label: "Ave Maria (3×)" },
+    { key: "salve",   label: "Salve Regina" },
+    { key: "oremus",  label: "Orémus" },
+    { key: "michael", label: "Sancte Michaël Archángele" },
+    { key: "corJesu", label: "Cor Iesu sacratíssimum (3×)" }
+  ];
+
+  const html =
+    rubric("Kneel") +
+    title("Leonine Prayers") +
+    `<p class="instruction">After Low Mass (custom varies by place).</p>` +
+    blocks.map(b => {
+      const t = LEONINE_TEXTS[b.key] || {};
+      return title(b.label) + bilingual(t.lat || "", t.eng || "", "");
+    }).join("");
+
+  return {
+    id: "LP_LEONINE",
+    section: SEC.END,
+    title: "Leonine Prayers",
+    sub: "After Low Mass",
+    priestLocation: "FOOT",
+    posture: "K",
+    skippable: true,
+    bells: 0,
+    html
+  };
+}
+
+/* =========================================================
+   POSTURE BLUEPRINTS (SUNG vs LOW)
+   - SUNG: use step.posture / rubrics as you already authored.
+   - LOW: default kneel, with targeted overrides.
+========================================================= */
+
+const LOW_POSTURE = {
+  // Stand at these moments in Low Mass
+  standIds: new Set([
+    "HM_010", // Asperges/Vidi aquam (if present)
+    "HM_190", // Gospel
+    "HM_620"  // Last Gospel
+  ]),
+
+  // Sit at these moments in Low Mass
+  sitIds: new Set([
+    "HM_170", // Epistle
+    "HM_180", // Gradual/Alleluia/Tract (often listened seated)
+    "HM_200"  // Homily
+  ]),
+
+  // Optional multi-stage flows (for the posture pill)
+  flows: {
+    // Credo: stand; kneel at Et incarnatus est; rise
+    "HM_210": ["ST", "K", "ST"],
+
+    // Last Gospel: stand; genuflect at Et Verbum caro factum est; rise
+    "HM_620": ["ST", "GEN", "ST"]
+  }
+};
+
+function applyLowMassPosture(step){
+  if (!step || !step.id) return step;
+
+  // Prefer explicit flow if present
+  const flow = LOW_POSTURE.flows[step.id];
+  if (flow && flow.length){
+    step.postureFlow = flow.slice();
+    step.posture = flow[0]; // base posture for fallback logic
+    return step;
+  }
+
+  // Default Low Mass: kneel, with targeted sit/stand overrides
+  if (LOW_POSTURE.standIds.has(step.id)) {
+    step.posture = "ST";
+    delete step.postureFlow;
+    return step;
+  }
+
+  if (LOW_POSTURE.sitIds.has(step.id)) {
+    step.posture = "S";
+    delete step.postureFlow;
+    return step;
+  }
+
+  step.posture = "K";
+  delete step.postureFlow;
+  return step;
+}
+
+function applyMassModeToSteps(arr) {
+  const input = Array.isArray(arr) ? arr : [];
+
+  // Sung: keep exactly as-is
+  if (massMode !== "LOW") return input;
+
+  // Low Mass: remove incense-only items (optional but sensible)
+  const removedIds = new Set([
+    "HM_316", // Incense Prayers
+    "HM_330"  // Incensing of the faithful
+  ]);
+
+  const outSteps = input
+    .filter(s => s && !removedIds.has(s.id))
+    .map(s => {
+      if (!s || !s.dual) return s;
+
+      // Low Mass: pick B if it exists, else A
+      const a = s.dual?.A;
+      const b = s.dual?.B;
+
+      const out = { ...s };
+      out.html =
+        (b && b.html) ? b.html :
+        (a && a.html) ? a.html :
+        (out.html || "");
+
+      delete out.dual;
+      return out;
+    });
+
+  // >>> ADD THIS: apply Low Mass posture blueprint <<<
+  outSteps.forEach(applyLowMassPosture);
+
+  // Leonine step insertion (your existing code)
+  const lp = buildLeonineStep();
+  if (lp && !outSteps.some(s => s && s.id === lp.id)) {
+    const afterMassIdx = outSteps.findIndex(s => s && s.id === "HM_630");
+    const lastGospelIdx = outSteps.findIndex(s => s && s.id === "HM_620");
+
+    if (afterMassIdx >= 0) outSteps.splice(afterMassIdx, 0, lp);
+    else if (lastGospelIdx >= 0) outSteps.splice(lastGospelIdx + 1, 0, lp);
+    else outSteps.push(lp);
+  }
+
+  return outSteps;
+}
+
+
+
+async function enterHighMass() {
+  if (!currentPropers) await refreshPropersAndHome();
+
+  steps = applyMassModeToSteps(
+    buildHighMassSteps(currentPropers || offlinePropers, currentDate)
+  );
+
+  const feast = (currentPropers && currentPropers.name) ? currentPropers.name : "Feria";
+  const pf = document.getElementById("player-feast");
+  if (pf) {
+    const span = pf.querySelector("span");
+    if (span) span.textContent = feast;
+    else pf.textContent = feast;
+  }
+
+  const modeMain = document.querySelector(".modeTitle .main");
+  if (modeMain){
+    modeMain.textContent = (massMode === "LOW") ? "Low Mass" : "High Mass";
+  }
+
+  idx = 0;
+  showScreen("screen-player");
+  render();
+}
+
+function goHome() { showScreen("screen-home"); }
+
+function showScreen(id) {
+  const home = document.getElementById("screen-home");
+  const player = document.getElementById("screen-player");
+  if (home) home.classList.toggle("hidden", id !== "screen-home");
+  if (player) player.classList.toggle("hidden", id !== "screen-player");
+}
+
+/* =========================================================
+   HELPERS used below (your code already has these; included for safety)
+   - cleanPreface: avoid preface header noise
+========================================================= */
+const cleanPreface = (t) => {
+  if (!t) return "";
+  const m = t.match(/\bVere dignum\b|\bIt is (truly|meet)\b/i);
+  return m ? t.slice(m.index).trim() : t.trim();
+};
+
+function getLiturgicalFlags(p, date){
+  const name = String(p?.name || "").toLowerCase();
+  const season = String(p?.season || p?.tempora || "").toLowerCase();
+  const dow = (date instanceof Date) ? date.getDay() : new Date().getDay();
+  const isSunday = dow === 0;
+
+  const isAdvent = season.includes("advent");
+  const isLent =
+    season.includes("lent") ||
+    season.includes("quadragesima") ||
+    season.includes("passion");
+
+  const isRequiem =
+    /requiem|defunct|dead/.test(name) ||
+    !!p?.isRequiem;
+
+  // Try to infer class/rank from whatever your propers source provides.
+  // Accepts: p.class, p.rank, p.litClass, etc. Returns 1..4 or null.
+  const classNum = (() => {
+    const raw = String(p?.class ?? p?.rank ?? p?.litClass ?? "").toLowerCase();
+    if (!raw) return null;
+
+    // Common formats: "I class", "II class", "III class", "IV class", "1", "2", "3", "4"
+    if (raw.includes("iv") || raw.includes("4")) return 4;
+    if (raw.includes("iii") || raw.includes("3")) return 3;
+    if (raw.includes("ii") || raw.includes("2")) return 2;
+    if (raw.includes("i") || raw.includes("1")) return 1;
+
+    return null;
+  })();
+
+  // Some propers sources provide explicit toggles; respect them if present.
+  const explicitGloria = (typeof p?.hasGloria === "boolean") ? p.hasGloria : null;
+  const explicitCredo  = (typeof p?.hasCredo  === "boolean") ? p.hasCredo  : null;
+
+  // Feria heuristic (if your source doesn't expose it explicitly).
+  const isFeria =
+    !!p?.isFeria ||
+    name.includes("feria") ||
+    (classNum === 4 && !isSunday && !name.includes("feast"));
+
+  // --- GLORIA (1962 simplified rules for your use-case) ---
+  // - never in Requiem
+  // - Sundays: yes, except Advent/Lent
+  // - Feasts: generally yes for I–III class (even in Advent/Lent)
+  // - Ferias: no (this fixes “Gloria in Advent/Lent weekdays”)
+  let showGloria;
+  if (explicitGloria !== null) {
+    showGloria = explicitGloria && !isRequiem;
+  } else if (isRequiem) {
+    showGloria = false;
+  } else if (isSunday) {
+    showGloria = !(isAdvent || isLent);
+  } else if (classNum && classNum <= 3) {
+    showGloria = true;
+  } else if (isFeria) {
+    showGloria = false;
+  } else {
+    showGloria = false;
+  }
+
+  // --- CREDO (1962 simplified rules for your use-case) ---
+  // - Sundays: yes
+  // - Weekdays: only on major feasts (I–II class) unless explicitly indicated by propers
+  //   (this fixes “Credo during the week”)
+  let showCredo;
+  if (explicitCredo !== null) {
+    showCredo = explicitCredo;
+  } else if (isSunday) {
+    showCredo = true;
+  } else if (classNum && classNum <= 2) {
+    showCredo = true;
+  } else {
+    showCredo = false;
+  }
+
+  return { showGloria, showCredo, isSunday, isAdvent, isLent, isRequiem, classNum, isFeria };
+}
+
+
+
+/* =========================================================
+   STEP BUILD (High Mass)
+   FIXES APPLIED IN REMAINING SECTIONS:
+   - Remove the "Setting currently: ..." Pax paragraph (UI noise).
+   - Keep Pax posture *logic* if you later want it; currently step 510 remains Stand.
+   - Ensure all bilingual strings use <br>, not "< br >".
+   - Remove any inline <span style=...> blocks that you were seeing printed as text.
+========================================================= */
+function buildHighMassSteps(p, date){
+  const isSunday = (new Date(date)).getDay() === 0;
+  const inEastertide = isEastertide(date);
+
+    const flags = getLiturgicalFlags({
+    name: p?.name,
+    rank: p?.rank,
+    color: p?.color,
+    isSunday
+  });
+
+  const showGloria = flags.showGloria;
+  const showCredo  = flags.showCredo;
+
+  const arr = [];
+  const push = (s) => arr.push(s);
+
+ 
+  
+
+  /* ===== BEFORE MASS (Sundays) ===== */
+  if (isSunday) {
+  // 1. Pre-calculate the variables based on the season
+  const aspTitle = inEastertide ? "Vidi aquam" : "Asperges me";
+  const aspIntro = inEastertide ? FIXED.vidiAquamIntro : FIXED.aspergesIntro;
+  const aspChant = inEastertide ? FIXED.vidiAquam : FIXED.asperges;
+
+  push({
+    id: "HM_010",
+    section: SEC.BEFORE,
+    title: aspTitle,
+    sub: "Sprinkling with holy water",
+    priestLocation: "NAVE",
+    posture: "ST",
+    dual: {
+      A: {
+        name: "Listen (Choir)",
+        html:
+          rubric("Stand; bow if sprinkled") +
+          title(FIXED.orderOfMassIntro.eng) +
+          // Intro Rubric
+          bilingual(aspIntro.lat, aspIntro.eng, "silent") +
+          // The Chant
+          title(aspTitle) +
+          bilingual(aspChant.lat, aspChant.eng, "choir") +
+          // Priest's Prayer
+          title("Versicles & Prayer") +
+          bilingual(FIXED.aspergesVers.lat, FIXED.aspergesVers.eng, "priest"),
+        syncTo: "HM_130"
+      },
+      B: {
+        name: "Follow the priest",
+        html:
+          rubric("Stand") +
+          `<p style="text-align:center; color:var(--muted); font-family:system-ui, sans-serif; margin:0.4rem 0 0;">
+            The priest sprinkles the altar and the faithful.
+          </p>`
+      }
+    }
+  });
+
+    push({
+      id: "HM_020",
+      section: SEC.BEFORE,
+      title: "Vesting in the sacristy",
+      sub: "Brief pause (custom varies)",
+      priestLocation: "SACRISTY",
+      posture: "S",
+      skippable: true,
+      html:
+        rubric("Sit") +
+        title("Quiet recollection") +
+        bilingual("In silentio et spe erit fortitudo vestra.", "In silence and in hope shall be your strength.", "silent")
+    });
+
+    push({
+      id: "HM_030",
+      section: SEC.BEFORE,
+      title: "Return to the altar",
+      sub: "Mass begins",
+      priestLocation: "NAVE",
+      posture: "ST",
+      skippable: true,
+      html:
+        rubric("Stand") +
+        title("Begin Mass") +
+        `<p style="text-align:center; color:var(--muted); font-family:system-ui, sans-serif; margin:0.4rem 0 0;">
+          The priest approaches the foot of the altar.
+        </p>`
+    });
+  }
+
+  /* ===== CATECHUMENS — PREPARATION ===== */
+  push({
+    id: "HM_100",
+    section: SEC.CAT_PREP,
+    title: "Sign of the Cross",
+    sub: "At the foot of the altar",
+    priestLocation: "FOOT",
+    posture: "K",
+    html: rubric("Kneel") + bilingual(FIXED.signCross.lat, FIXED.signCross.eng, "priest")
+  });
+
+  // HM_110: Psalm 42 (Judica Me)
+push({
+  id: "HM_110",
+  section: SEC.CAT_PREP,
+  title: "Psalm 42",
+  sub: "Judica me",
+  priestLocation: "FOOT",
+  posture: "K",
+  dual: {
+    A: {
+      name: "Listen (Choir sings Introit)",
+      html: rubric("Kneel") + 
+            `<p class="instruction">The Choir continues the Introit while the Priest begins the prayers at the foot of the altar.</p>`,
+      syncTo: "HM_130" // Jump to Introit text
+    },
+    B: {
+      name: "Pray with Priest",
+      html: rubric("Kneel") + 
+            title("Judica me") + 
+            bilingual(FIXED.judicaAntiphon.lat, FIXED.judicaAntiphon.eng, "priest") +
+            bilingual(FIXED.judicaPsalm42.lat, FIXED.judicaPsalm42.eng, "priest") +
+            bilingual(FIXED.judicaAntiphonRepeat.lat, FIXED.judicaAntiphonRepeat.eng, "priest")
+    }
+  }
+});
+
+// HM_120: Confiteor
+push({
+  id: "HM_120",
+  section: SEC.CAT_PREP,
+  title: "Confiteor",
+  sub: "Public Confession",
+  priestLocation: "FOOT",
+  posture: "K",
+  dual: {
+    A: {
+      name: "Listen (Choir)",
+      html: rubric("Kneel") + `<p class="instruction">The Priest and servers exchange the Confiteor and Absolution.</p>`,
+      syncTo: "HM_130"
+    },
+    B: {
+      name: "Pray with Priest",
+      html: rubric("Kneel") + 
+            title("Confiteor") + 
+            bilingual(FIXED.confiteorFull.lat, FIXED.confiteorFull.eng, "priest") +
+            title("Absolution") +
+            bilingual(FIXED.misereaturVestri.lat, FIXED.misereaturVestri.eng, "priest") +
+            bilingual(FIXED.indulgentiam.lat, FIXED.indulgentiam.eng, "priest")
+    }
+  }
+});
+
+  push({
+    id: "HM_130",
+    section: SEC.CAT_PREP,
+    title: "Introit",
+    sub: "Proper (Choir)",
+    priestLocation: "EPISTLE",
+    posture: "ST",
+    dual: {
+      A: { name: "Listen (Choir)", html: rubric("Stand") + proper("Introitus", p.introit, "choir"), syncTo: "HM_140" },
+     
+    }
+  });
+
+  push({
+  id: "HM_140",
+  section: SEC.CAT_PREP,
+  title: "Kyrie",
+  sub: "Lord, have mercy",
+  priestLocation: "EPISTLE",
+  posture: "ST",
+  dual: {
+    A: {
+      name: "Listen (Choir)",
+      html:
+        rubric("Stand") +
+        title("Kyrie eleison") +
+        bilingual(
+          "Kýrie, eléison. (3×)<br>Christe, eléison. (3×)<br>Kýrie, eléison. (3×)",
+          "Lord, have mercy. (3×)<br>Christ, have mercy. (3×)<br>Lord, have mercy. (3×)",
+          "choir"
+        )
+    },
+
+  }
+});
+
+
+  if (showGloria){
+    push({
+      id: "HM_150",
+      section: SEC.CAT_PREP,
+      title: "Gloria",
+      sub: "Hymn of praise",
+      priestLocation: "CENTER",
+      posture: "ST",
+      dual: {
+        A: {
+          name: "Choir (Sit if priest sits)",
+          html:
+            rubric("Stand; then sit if the priest sits during singing") +
+            title("Gloria in excelsis Deo") +
+            bilingual(
+              "Glória in excélsis Deo. Et in terra pax homínibus bonæ voluntátis. Laudámus te. Benedícimus te. Adorámus te. Glorificámus te. Grátias ágimus tibi propter magnam glóriam tuam. Dómine Deus, Rex cæléstis, Deus Pater omnípotens. Dómine Fili unigénite, Iesu Christe. Dómine Deus, Agnus Dei, Fílius Patris. Qui tollis peccáta mundi, miserére nobis. Qui tollis peccáta mundi, súscipe deprecatiónem nostram. Qui sedes ad déxteram Patris, miserére nobis. Quóniam tu solus Sanctus. Tu solus Dóminus. Tu solus Altíssimus, Iesu Christe. Cum Sancto Spíritu ✠ in glória Dei Patris. Amen.",
+              "Glory to God in the highest. And on earth peace to men of good will. We praise Thee; we bless Thee; we adore Thee; we glorify Thee; we give Thee thanks for Thy great glory. Lord God, heavenly King, God the Father almighty. Lord Jesus Christ, only-begotten Son. Lord God, Lamb of God, Son of the Father. Thou who takest away the sins of the world, have mercy on us. Thou who takest away the sins of the world, receive our prayer. Thou who sittest at the right hand of the Father, have mercy on us. For Thou alone art holy; Thou alone art Lord; Thou alone art the Most High, Jesus Christ. With the Holy Ghost ✠ in the glory of God the Father. Amen.",
+              "choir"
+            ),
+          syncTo: "HM_160"
+        },
+        B: {
+          name: "Priest (Quiet)",
+          html:
+            rubric("Stand") +
+            `<p style="text-align:center; color:var(--muted); font-family:system-ui, sans-serif; margin:0.4rem 0 0;">
+              The priest recites the Gloria quietly while the choir sings.
+            </p>`
+        }
+      }
+    });
+  }
+
+  /* ===== CATECHUMENS — INSTRUCTION ===== */
+  push({
+    id: "HM_160",
+    section: SEC.CAT_INST,
+    title: "Collect",
+    sub: "Proper",
+    priestLocation: "EPISTLE",
+    posture: "ST",
+    html: rubric("Stand") + proper("Collect", p.collect, "priest")
+  });
+
+  push({
+    id: "HM_170",
+    section: SEC.CAT_INST,
+    title: "Epistle",
+    sub: "Proper",
+    priestLocation: "EPISTLE",
+    posture: "S",
+    html: rubric("Sit") + proper("Epistle", p.epistle, "priest")
+  });
+
+  push({
+    id: "HM_180",
+    section: SEC.CAT_INST,
+    title: "Gradual / Alleluia / Tract",
+    sub: "Proper (Choir)",
+    priestLocation: "EPISTLE",
+    posture: "S",
+    dual: {
+      A: { name: "Listen (Choir)", html: rubric("Sit") + proper("Gradual / Alleluia / Tract", p.gradual, "choir"), syncTo: "HM_190" },
+     
+    }
+  });
+
+
+  push({
+    id: "HM_185",
+    section: SEC.CAT_INST,
+    title: "Munda cor meum",
+    sub: "Preparation for Gospel",
+    priestLocation: "CENTER",
+    posture: "S",
+    skippable: true,
+    html: rubric("Sit") + title("Munda cor meum") + bilingual("Munda cor meum, ac labia mea, omnípotens Deus, qui labia Isaíæ Prophétæ cálculo mundásti igníto: ita me tua grata miseratióne dignáre mundáre, ut sanctum Evangélium tuum digne váleam nuntiáre. Per Christum, Dóminum nostrum. Amen.", "Cleanse my heart and my lips, O Almighty God, Who didst cleanse the lips of the prophet Isaias with a burning coal; through Thy gracious mercy so purify me that I may worthily proclaim Thy holy Gospel. Through Christ our Lord. Amen.", "silent")
+  });
+
+  push({
+    id: "HM_190",
+    section: SEC.CAT_INST,
+    title: "Gospel",
+    sub: "Proper",
+    priestLocation: "GOSPEL",
+    posture: "ST",
+    html: rubric("Stand") + proper("Gospel", p.gospel, "priest", { showLabel: false })
+  });
+  
+
+  push({
+    id: "HM_200",
+    section: SEC.CAT_INST,
+    title: "Homily",
+    sub: "Sermon",
+    priestLocation: "PULPIT",
+    posture: "S",
+    skippable: true,
+    html: rubric("Sit") + title("Homily") + bilingual("Hic sacerdos concionatur.", "The priest preaches on the readings. Remain attentive.", "silent")
+  });
+
+ if (showCredo){
+  push({
+    id: "HM_210",
+    section: SEC.CAT_INST,
+    title: "Credo",
+    sub: "Profession of faith",
+    priestLocation: "CENTER",
+    posture: "ST",
+    dual: {
+      A: {
+        name: "Choir (Sit if priest sits)",
+        html:
+          rubric("Stand; kneel at Et incarnatus est; sit if priest sits during singing") +
+          title("Credo in unum Deum") +
+          bilingual(
+            `Credo in unum Deum, Patrem omnipoténtem, factórem coeli et terræ, visibílium ómnium et in visibílium. Et in unum Dóminum Iesum Christum, Fílium Dei unigénitum. Et ex Patre natum ante ómnia saecula. Deum de Deo, lumen de lúmine, Deum verum de Deo vero. Génitum, non factum, consubstantiálem Patri: per quem ómnia facta sunt.
+
+Qui propter nos hómines et propter nostram salútem descéndit de coelis.
+[KNEEL]
+Et incarnátus est de Spíritu Sancto ex María Vírgine: Et homo factus est.
+[RISE]
+Crucifíxus étiam pro nobis: sub Póntio Piláto passus, et sepúltus est. Et resurréxit tértia die, secúndum Scriptúras. Et ascéndit in coelum: sedet ad déxteram Patris. Et íterum ventúrus est cum glória iudicáre vivos et mórtuos: cuius regni non erit finis. Et in Spíritum Sanctum, Dóminum et vivificántem: qui ex Patre Filióque procédit. Qui cum Patre et Fílio simul adorátur et conglorificátur: qui locútus est per Prophétas. Et unam sanctam cathólicam et apostólicam Ecclésiam. Confíteor unum baptísma in remissiónem peccatórum. Et exspécto resurrectiónem mortuórum. Et vitam + ventúri saeculi. Amen.`,
+            `I believe in one God, the Father almighty, maker of heaven and earth, and of all things visible and invisible. And in one Lord Jesus Christ, the Only-begotten Son of God. Born of the Father before all ages. God of God, Light of Light, true God of true God. Begotten, not made: consubstantial with the Father; by Whom all things were made.
+
+Who for us men, and for our salvation, came down from heaven.
+[KNEEL]
+And was incarnate by the Holy Ghost of the Virgin Mary: and was made man.
+[RISE]
+He was crucified also for us, suffered under Pontius Pilate, and was buried. And on the third day He rose again according to the Scriptures. And He ascended into heaven, and sitteth at the right hand of the Father. And He shall come again with glory to judge the living and the dead: of Whose kingdom there shall be no end. And in the Holy Ghost, the Lord and Giver of Life: Who proceedeth from the Father and the Son. Who together with the Father and the Son is adored and glorified: Who spoke through the Prophets. And in One, Holy, Catholic and Apostolic Church. I confess one Baptism for the remission of sins. And I look for the resurrection of the dead, and the life of the world to come. Amen.`,
+            "choir"
+          ),
+        syncTo: "HM_300"
+      },
+      B: {
+        name: "Follow the priest",
+        html:
+          rubric("Stand; kneel at Et incarnatus est") +
+          `<p class="instruction">The priest recites the Credo while the choir sings.</p>`
+      }
+    }
+  });
+}
+
+
+  /* =========================================================
+     OFFERTORY
+  ========================================================= */
+  push({
+  id: "HM_300",
+  section: SEC.OFF,
+  title: "Offertory Verse",
+  sub: "Proper",
+  priestLocation: "EPISTLE",
+  posture: "S",
+  dual: {
+    A: {
+      name: "Listen (Choir)",
+      html: rubric("Sit") + proper("Offertorium", p.offertory, "choir"),
+      syncTo: "HM_360"
+    },
+    B: {
+      name: "Read (Missal)",
+      html: rubric("Sit") + proper("Offertorium", p.offertory, "priest")
+    }
+  }
+});
+
+
+
+push(stepFromStubsCombined("HM_313", SEC.OFF, {
+  title: "Offertory Prayers",
+  sub: "Offering of Host & Chalice (silent)",
+  priestLocation: "CENTER",
+  posture: "S",
+  skippable: true
+}, [
+    "suscipe_sancte_pater",
+    "deus_qui_humanae",
+  "offerimus_tibi_domine",
+  "in_spiritu_humilitatis",
+  "veni_sanctificator"
+]));
+
+
+
+// ===== INCENSING (if used) =====
+
+push(stepFromStubsCombined("HM_316", SEC.OFF, {
+  title: "Incense Prayers",
+  sub: "If incense is used",
+  priestLocation: "CENTER",
+  posture: "S",
+  skippable: true
+}, [
+  "per_intercessionem_michaelis",
+  "incensum_istud_benedictum",
+  "dirigatur_ps140",
+  "accendat_in_nobis"
+]));
+
+
+// Keep or adjust your existing “Incensing of the faithful” UI-only step if you like:
+push({
+  id: "HM_330",
+  section: SEC.OFF,
+  title: "Incensing of the faithful",
+  sub: "Customary (when done)",
+  priestLocation: "NAVE",
+  posture: "ST",
+  skippable: true,
+  html:
+    rubric("Stand") +
+    title("Incensing of the people") +
+    `<p style="text-align:center; color:var(--muted); font-family:system-ui, sans-serif; margin:0.4rem 0 0;">
+      Stand while the ministers incense the clergy and faithful.
+    </p>`
+});
+
+
+push(stepFromStub("HM_341", SEC.OFF, "lavabo_ps25", {
+  sub: "Washing of hands",
+  priestLocation: "EPISTLE",
+  posture: "S"
+}));
+
+push(stepFromStub("HM_345", SEC.OFF, "suscipe_sancta_trinitas", {
+  sub: "Prayer to the Holy Trinity",
+  priestLocation: "CENTER",
+  posture: "S"
+}));
+
+push(stepFromStub("HM_351", SEC.OFF, "orate_fratres_merged", {
+  sub: "Priest → Servers → Priest",
+  priestLocation: "CENTER",
+  posture: "S",
+  skippable: false
+}));
+
+
+
+ push({
+  id: "HM_350",
+  section: SEC.OFF,
+  title: "Secret",
+  sub: "Proper (silent) — ends aloud: Per omnia saecula saeculorum",
+  priestLocation: "CENTER",
+  posture: "S",
+  skippable: true,
+  html:
+    rubric("Sit") +
+    proper("Secreta", p.secret, "silent") +
+    title("Conclusion") +
+    bilingual(
+      "℣. Per ómnia saecula sæculórum.<br>℟. Amen.",
+      "℣. World without end.<br>℟. Amen.",
+      "priest"
+    )
+});
+
+
+ push({
+  id: "HM_360",
+  section: SEC.OFF,
+  title: "Preface",
+  sub: "Lift up your hearts",
+  priestLocation: "CENTER",
+  posture: "ST",
+  html:
+    rubric("Stand") +
+    title("Preface Dialogue") +
+    bilingual(FIXED.prefaceDialogue.lat, FIXED.prefaceDialogue.eng, "priest") +
+    (p.preface?.lat && p.preface?.eng // CHECK IF DATA EXISTS
+      ? (title("Proper Preface") +
+         bilingual(
+           stripSanctusFromPreface(cleanPreface(p.preface.lat ?? "")),
+           stripSanctusFromPreface(cleanPreface(p.preface.eng ?? "")),
+           "priest"
+         ))
+      : `<p style="text-align:center; color:var(--muted); font-style:italic;">(Preface proper not available for this day)</p>`)
+});
+
+  push({
+    id: "HM_370",
+    section: SEC.OFF,
+    title: "Sanctus",
+    sub: "Holy, Holy, Holy",
+    priestLocation: "CENTER",
+    posture: "K",
+    bells: 3,
+    dual: {
+      A: {
+        name: "Listen (Choir)",
+        // CHOIR: Sings only up to the first Hosanna. Stops for Consecration.
+        html: rubric("Kneel") + title("Sanctus") + bilingual(
+          "Sanctus, Sanctus, Sanctus Dóminus, Deus Sábaoth. Pleni sunt cæli et terra glória tua. Hosánna in excélsis. Benedíctus qui venit in nómine Dómini. Hosánna in excélsis.",
+          "Holy, Holy, Holy, Lord God of Hosts. Heaven and earth are full of Thy glory. Hosanna in the highest. Blessed is He who comes in the name of the Lord. Hosanna in the highest.",
+          "choir"
+        ),
+        syncTo: "HM_401"
+      },
+      B: {
+        name: "Follow the priest",
+        // PRIEST: Recites Sanctus AND Benedictus together silently.
+        html:
+          rubric("Kneel") +
+          title("Sanctus & Benedictus") +
+          bilingual(FIXED.sanctus.lat, FIXED.sanctus.eng, "silent")
+      }
+    }
+  });
+  
+ 
+  /* =========================================================
+   CANON — compact pages (silent), keep bell moments separate
+========================================================= */
+
+// Canon I: Te igitur → Communicantes (single page)
+push(stepFromStubsCombined("HM_401", SEC.CANON, {
+  title: "Canon (I)",
+  sub: "The Canon of the Mass is said silently by the priest",
+  priestLocation: "CENTER",
+  posture: "K",
+  skippable: true
+}, [
+  "te_igitur",
+  "te_igitur_for_church",
+  "memento_living",
+  "communicantes"
+]));
+
+// Hanc igitur (you already marked bells here — keep separate)
+push(stepFromStub("HM_405", SEC.CANON, "hanc_igitur", {
+  sub: "The priest extends hands over the oblation",
+  priestLocation: "CENTER",
+  posture: "K",
+  skippable: true,
+  bells: 1
+}));
+
+// Canon II: Quam oblationem + Qui pridie (single page)
+push(stepFromStubsCombined("HM_406", SEC.CANON, {
+  title: "Canon (II)",
+  sub: "Quam oblationem · Qui pridie (silent)",
+  priestLocation: "CENTER",
+  posture: "K",
+  skippable: true
+}, [
+  "quam_oblationem",
+  "qui_pridie"
+]));
+
+// Consecration — Host (standalone, bells)
+push({
+  id: "HM_408",
+  section: SEC.CANON,
+  title: "Consecration (Host)",
+  sub: "Hoc est enim Corpus meum",
+  priestLocation: "CENTER",
+  posture: "K",
+  bells: 3,
+  skippable: false,
+  html:
+      rubric("") +
+      `<div style="text-align:center; margin: 1.0rem 0 1.1rem; border:1px solid rgba(255,255,255,0.14); border-radius:12px; padding: 14px; background: rgba(255,255,255,0.03);">
+        <div class="royal" style="color:var(--rubric); font-weight:900; letter-spacing:0.16em;">HOC EST ENIM</div>
+        <div class="royal" style="color:var(--rubric); font-weight:900; font-size:1.35rem;">CORPUS MEUM</div>
+      </div>` +
+      `<p class="note">FOR THIS IS MY BODY.</p>`
+});
+
+
+// IMPORTANT: move Simili modo BEFORE the chalice consecration
+push(stepFromStub("HM_409", SEC.CANON, "simili_modo", {
+  sub: "Institution narrative (Chalice)",
+  priestLocation: "CENTER",
+  posture: "K",
+  skippable: true
+}));
+
+// Consecration — Chalice (standalone, bells)
+push({
+  id: "HM_410",
+  section: SEC.CANON,
+  title: "Consecration (Chalice)",
+  sub: "Hic est enim Calix Sanguinis mei",
+  priestLocation: "CENTER",
+  posture: "K",
+  bells: 3,
+  skippable: false,
+  html: 
+  rubric("") +
+      `<div style="text-align:center; margin: 1.0rem 0 1.1rem; border:1px solid rgba(255,255,255,0.14); border-radius:12px; padding: 14px; background: rgba(255,255,255,0.03);">
+        <div class="royal" style="color:var(--rubric); font-weight:900; letter-spacing:0.16em;">HIC EST ENIM CALIX SANGUINIS MEI, NOVI ET AETERNI TESTAMENTI: MYSTERIUM FIDEI: QUI PRO VOBIS ET PRO MULTIS EFFUNDETUR IN REMISSIONEM PECCATORUM.</div>
+      </div>` +
+      `<p class="note">FOR THIS IS THE CHALICE OF MY BLOOD, OF THE NEW AND ETERNAL TESTAMENT: THE MYSTERY OF FAITH: WHICH SHALL BE SHED FOR YOU AND FOR MANY UNTO THE REMISSION OF SINS. </p>`
+});
+
+// --- NEW STEP: Benedictus (Sung by Choir after Elevation) ---
+push({
+  id: "HM_410_BEN",
+  section: SEC.CANON,
+  title: "Benedictus",
+  sub: "Blessed is He who comes...",
+  priestLocation: "CENTER",
+  posture: "K",
+  dual: {
+    A: {
+      name: "Listen (Choir)",
+      html:
+        rubric("Kneel; adore the Real Presence") +
+        title("Benedictus") +
+        bilingual(
+          "Benedíctus qui venit in nómine Dómini. Hosánna in excélsis.",
+          "Blessed is He who comes in the name of the Lord. Hosanna in the highest.",
+          "choir"
+        )
+    },
+    B: {
+      name: "Priest (Silent)",
+      html:
+        rubric("Kneel") +
+        `<p class="instruction">The priest continues the Canon silently while the choir sings.</p>`
+    }
+  }
+});
+
+// ------------------------------------------------------------
+// Canon III: after consecration to Per quem (single page)
+push(stepFromStubsCombined("HM_411", SEC.CANON, {
+  title: "Canon (III)",
+  sub: "After the Consecration (silent)",
+  priestLocation: "CENTER",
+  posture: "K",
+  skippable: true
+}, [
+  "haec_quotienscumque",
+  "unde_et_memores",
+  "supra_quae",
+  "supplices_te_rogamus",
+  "memento_dead",
+  "nobis_quoque",
+  "per_quem"
+]));
+
+// Per ipsum (keep separate; audible conclusion)
+push(stepFromStub("HM_418", SEC.CANON, "per_ipsum", {
+  sub: "Minor elevation · audible conclusion",
+  priestLocation: "CENTER",
+  posture: "K",
+  skippable: false
+}));
+
+
+  
+  /* =========================================================
+     COMMUNION
+  ========================================================= */
+  push({
+    id: "HM_500",
+    section: SEC.COMM,
+    title: "Pater Noster",
+    sub: "Only the priest recites the Our Father",
+    priestLocation: "CENTER",
+    posture: "ST",
+    html: rubric("Stand") + title("Pater noster") + bilingual(FIXED.paterNoster.lat, FIXED.paterNoster.eng, "priest")
+  });
+  
+ push({
+    id: "HM_501",
+    section: SEC.COMM,
+    title: "Only the priest recites the Pater Noster",
+    sub: "Our Father",
+    priestLocation: "CENTER",
+    posture: "ST",
+    html:
+      rubric("Stand") +
+      title("Pax Domini") +
+      bilingual(
+        "Líbera nos, quaesumus, Dómine, ab ómnibus malis, prætéritis, præséntibus et futúris: et intercedénte beáta et gloriósa semper Vírgine Dei Genetríce María, cum beátis Apóstolis tuis Petro et Paulo, atque Andréa, et ómnibus Sanctis, da propítius pacem in diébus nostris: ut, ope misericórdiæ tuæ adiúti, et a peccáto simus semper líberi et ab omni perturbatióne secúri. Per eúndem Dóminum nostrum Iesum Christum, Fílium tuum. Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus. <br>℣. Per omnia saecula saeculorum.<br>℟. Amen.",
+        "Deliver us, we beseech Thee, O Lord, from all evils, past, present and to come, and by the intercession of the Blessed and glorious ever Virgin Mary, Mother of God, together with Thy blessed apostles Peter and Paul, and Andrew, and all the Saints, + mercifully grant peace in our days, that through the bounteous help of Thy mercy we may be always free from sin, and safe from all disquiet. Through the same Jesus Christ, Thy Son our Lord, who is God living and reigning with Thee in the unity of the Holy Ghost. ℣. World without end. ℟. Amen.",
+        "priest"
+      )
+  });
+
+  // NOTE: You can later vary posture based on paxMode here if desired.
+  // For now: keep consistent and silent; DO NOT show the paxMode setting to the user.
+  push({
+    id: "HM_510",
+    section: SEC.COMM,
+    title: "Pax / Fraction / Commixture",
+    sub: "Breaking of the Host",
+    priestLocation: "CENTER",
+    posture: "ST",
+    html:
+      rubric("Stand") +
+      title("Pax Domini") +
+      bilingual(
+        "℣. Pax ✠ Dómini sit ✠ semper vobíscum.<br>℟. Et cum spíritu tuo.",
+        "℣. May the peace ✠ of the Lord be ✠ always with you.<br>℟. And with thy spirit.",
+        "priest"
+      ) +
+      bilingual(
+        "Haec commíxtio, et consecrátio Córporis et Sánguinis Dómini nostri Iesu Christi, fiat accipiéntibus nobis in vitam ætérnam. Amen.",
+        "May this mingling and consecration of the Body and Blood of our Lord Jesus Christ be for us who receive it unto life everlasting. Amen.",
+        "silent"
+      )
+  });
+
+  push({
+    id: "HM_520",
+    section: SEC.COMM,
+    title: "Agnus Dei",
+    sub: "Lamb of God",
+    priestLocation: "CENTER",
+    posture: "K",
+    dual: {
+      A: {
+        name: "Listen (Choir)",
+        html: rubric("Kneel") + title("Agnus Dei") + bilingual(FIXED.agnusCommon.lat, FIXED.agnusCommon.eng, "choir"),
+        syncTo: "HM_540"
+      },
+      B: {
+        name: "Follow the priest",
+        html: rubric("Kneel") + title("Agnus Dei") + bilingual(FIXED.agnusCommon.lat, FIXED.agnusCommon.eng, "people")
+      }
+    }
+  });
+
+  push({
+    id: "HM_530",
+    section: SEC.COMM,
+    title: "Prayers at Communion",
+    sub: "Silent preparation",
+    priestLocation: "CENTER",
+    posture: "K",
+    skippable: true,
+    html:
+      rubric("Kneel") +
+      title("Preparation") +
+      bilingual("Dómine Iesu Christe… Percéptio Córporis tui…",
+               "Lord Jesus Christ… Let not the partaking of Thy Body…",
+               "silent")
+  });
+
+push({
+  id: "HM_535",
+  section: SEC.COMM,
+  title: "Ecce Agnus Dei",
+  sub: "Domine, non sum dignus (3×)",
+  priestLocation: "CENTER",
+  posture: "K",
+  bells: 3,
+  skippable: false,
+  html:
+    rubric("Kneel") +
+    title("Ecce Agnus Dei") +
+    bilingual(
+      "Ecce Agnus Dei, ecce qui tollit peccáta mundi.<br>" +
+      "Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea. (3×)",
+      "Behold the Lamb of God, behold Him who taketh away the sins of the world.<br>" +
+      "Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed. (3×)",
+      "priest"
+    )
+});
+
+
+  push({
+    id: "HM_540",
+    section: SEC.COMM,
+    title: "Communion of the faithful",
+    sub: "At the rail",
+    priestLocation: "COMMUNION_RAIL",
+    posture: "K",
+    bells: 0,
+    html:
+      rubric("Kneel (stand only to approach/return)") +
+      title("Holy Communion") +
+      bilingual(
+        "Corpus Dómini nostri Iesu Christi custódiat ánimam tuam in vitam ætérnam. Amen.",
+        "May the Body of our Lord Jesus Christ preserve thy soul unto life everlasting. Amen.",
+        "priest"
+      )
+  });
+
+  push({
+  id: "HM_550",
+  section: SEC.COMM,
+  title: "Communion Antiphon",
+  sub: "Proper",
+  priestLocation: "EPISTLE",
+  posture: "K",
+  dual: {
+    A: { name: "Listen (Choir)", html: rubric("Kneel") + proper("Communio", p.communion, "choir") },
+    B: { name: "Read (Missal)",   html: rubric("Kneel") + proper("Communio", p.communion, "priest") }
+  }
+});
+
+
+  push({
+    id: "HM_560",
+    section: SEC.COMM,
+    title: "Ablutions",
+    sub: "Thanksgiving (silent)",
+    priestLocation: "CENTER",
+    posture: "K",
+    skippable: true,
+    html:
+      rubric("Kneel") +
+      title("Thanksgiving") +
+      bilingual("Quod ore súmpsimus, Dómine, pura mente capiámus: et de munere temporáli fiat nobis remédium sempitérnum.\n\n + Corpus tuum, Dómine, quod sumpsi, et Sanguis, quem potávi, adhaereat viscéribus meis: et præsta; ut in me non remáneat scélerum mácula, quem pura et sancta refecérunt sacraménta: Qui vivis et regnas in saecula sæculórum. Amen.",
+               "Grant, O Lord, that what we have taken with our mouth, we may receive with a pure mind; and that from a temporal gift it may become for us an everlasting remedy.\n\n +              May Thy Body, O Lord, which I have received and Thy Blood which I have drunk, cleave to my inmost parts, and grant that no stain of sin remain in me; whom these pure and holy Sacraments have refreshed. Who livest and reignest world without end. Amen.",
+               "silent")
+  });
+
+  push({
+    id: "HM_570",
+    section: SEC.COMM,
+    title: "Postcommunion",
+    sub: "Proper",
+    priestLocation: "EPISTLE",
+    posture: "ST",
+    html: rubric("Stand") + proper("Postcommunio", p.postcommunion, "priest")
+  });
+
+  /* =========================================================
+     CONCLUSION
+  ========================================================= */
+  push({
+    id: "HM_600",
+    section: SEC.END,
+    title: "Ite, Missa est",
+    sub: "Dismissal",
+    priestLocation: "CENTER",
+    posture: "ST",
+    html: rubric("Stand") + title("Dismissal") + bilingual(FIXED.iteMissaEst.lat, FIXED.iteMissaEst.eng, "priest")
+  });
+
+  push({
+    id: "HM_610",
+    section: SEC.END,
+    title: "Blessing",
+    sub: "Benediction",
+    priestLocation: "CENTER",
+    posture: "K",
+    html: rubric("Kneel") + title("Blessing") + bilingual(FIXED.blessing.lat, FIXED.blessing.eng, "priest")
+  });
+
+  push({
+    id: "HM_620",
+    section: SEC.END,
+    title: "Last Gospel",
+    sub: "In principio erat Verbum…",
+    priestLocation: "GOSPEL",
+    posture: "ST",
+    html:
+      rubric("Stand; genuflect at “Et Verbum caro factum est”") +
+      title("Initium Evangelii") +
+      bilingual(FIXED.lastGospelIntro.lat, FIXED.lastGospelIntro.eng, "priest") +
+      title("In principio") +
+      bilingual(FIXED.lastGospel.lat, FIXED.lastGospel.eng, "priest")
+  });
+
+  push({
+    id: "HM_630",
+    section: SEC.END,
+    title: "After Mass",
+    sub: "Private thanksgiving",
+    priestLocation: "NAVE",
+    posture: "K",
+    skippable: true,
+    html:
+      rubric("Kneel") +
+      title("Thanksgiving") +
+      `<p style="text-align:center; color:var(--muted); font-family:system-ui, sans-serif; margin:0.4rem 0 0;">
+        Remain in prayer for a time after Mass.
+      </p>`
+  });
+
+  return arr;
+}
+
+
+
+/* =========================================================
+   RENDERING
+   Fixes applied in this chunk:
+   - Remove all FontAwesome icon injection from meta pills and buttons.
+   - Remove accidental "undefined" strings caused by broken template literals.
+   - Make meta pills text-only (Location + Posture).
+   - Remove Pax “apply posture setting” UI + alert (keeps paxMode logic only for label).
+   - Fix stripSanctusFromPreface: remove stray "< br >" comment and broken regex.
+========================================================= */
+
+function render() {
+  // Guard: if steps not built yet
+  if (!Array.isArray(steps) || steps.length === 0) {
+    updateModuleDock(); // will show "—"
+    return;
+  }
+
+  // Clamp idx just in case
+  if (idx < 0) idx = 0;
+  if (idx > steps.length - 1) idx = steps.length - 1;
+
+  const s = steps[idx];
+  if (!s) {
+    updateModuleDock();
+    return;
+  }
+
+  // Header
+  const t = document.getElementById('step-title');
+  const sub = document.getElementById('step-subtitle');
+  if (t) t.textContent = s.title || "";
+  if (sub) sub.textContent = s.sub || "";
+
+  // Meta bar
+  const metaBar = document.getElementById('meta-bar');
+  if (metaBar) {
+    const pLabel = postureLabelEffective(s);
+    const locLabel = priestLocationLabel(s.priestLocation);
+
+    metaBar.innerHTML = `
+      <div class="meta">
+        <span class="metaIcon">${faIcon("priest")}</span>
+        <strong>${escapeHtml(locLabel)}</strong>
+      </div>
+
+      <div class="meta metaRubric">
+        ${postureIconHTML(pLabel)}
+        <strong>${escapeHtml(pLabel)}</strong>
+      </div>
+
+      ${bellPillHTML(s.bells)}
+    `;
+  }
+
+  // Content card
+  const card = document.getElementById('card');
+  if (card) card.innerHTML = renderStepBody(s);
+
+  // Scroll to top
+  const scroller = document.getElementById('scroller');
+  if (scroller) scroller.scrollTop = 0;
+
+  // Progress beads for current module
+  renderModuleBeads();
+
+  // Footer nav
+  const prev = document.getElementById('btn-prev');
+  if (prev) prev.disabled = idx === 0;
+
+  const next = document.getElementById('btn-next');
+  if (next) {
+    next.textContent = (idx === steps.length - 1) ? "Finish" : "Next";
+    next.onclick = (idx === steps.length - 1) ? goHome : nextStep;
+  }
+
+  // >>> PASTE the block you cut in Step 1 right here <<<
+  updateModuleDock();
+
+  const modal = document.getElementById("moduleModal");
+  if (modal && !modal.classList.contains("hidden")) {
+    renderModuleGrid();
+  }
+}
+
+
+
+function normalizeForCompare(html){
+  return String(html || "")
+    .replace(/<[^>]*>/g, " ")     // remove tags
+    .replace(/&nbsp;|&#160;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function renderStepBody(step) {
+  const actions = [];
+
+  // Default html if no dual
+  let mainHtml = step?.html || "";
+  let otherHtml = "";
+  let otherName = "";
+
+  // If dual exists, choose A or B based on followMode
+  if (step?.dual?.A || step?.dual?.B) {
+    const hasA = !!step.dual?.A?.html;
+    const hasB = !!step.dual?.B?.html;
+
+    // Preferred view: choir unless user chose priest and B exists
+    const wantB = (followMode === "priest") && hasB;
+
+    const primary = wantB ? (step.dual.B) : (step.dual.A || step.dual.B);
+    const secondary = wantB ? (step.dual.A) : (step.dual.B);
+
+    mainHtml = primary?.html || "";
+    otherHtml = secondary?.html || "";
+    otherName = secondary?.name || "";
+
+    // “Catch up” button only makes sense when primary is Choir(A) and syncTo exists
+    if (!wantB && step.dual?.A?.syncTo) {
+      actions.push(
+        `<button class="actionBtn primary" type="button" onclick="jumpToId('${step.dual.A.syncTo}')">
+          Choir finished? Catch up
+        </button>`
+      );
+    }
+  }
+
+  // Optional “other track” disclosure if it exists and is different
+  let otherDetails = "";
+  if (otherHtml) {
+    const aNorm = normalizeForCompare(mainHtml);
+    const bNorm = normalizeForCompare(otherHtml);
+
+    if (bNorm && bNorm !== aNorm) {
+      otherDetails = `
+        <details class="priestDetails">
+          <summary>${escapeHtml(otherName || "Other track")}</summary>
+          <div class="priestDetailsBody">
+            ${otherHtml}
+          </div>
+        </details>
+      `;
+    }
+  }
+
+  if (step?.skippable) {
+    actions.push(
+      `<button class="actionBtn warn" type="button" onclick="skipSilent()">Skip silent prayers</button>`
+    );
+  }
+
+  const actionRow = actions.length ? `<div class="actionRow">${actions.join("")}</div>` : "";
+  return `${mainHtml}${otherDetails}${actionRow}`;
+}
+
+
+function setFollowMode(mode){
+  followMode = (mode === "priest") ? "priest" : "choir";
+
+  const a = document.getElementById('follow-choir');
+  const b = document.getElementById('follow-priest');
+  if (a) a.classList.toggle('active', mode === 'choir');
+  if (b) b.classList.toggle('active', mode === 'priest');
+
+  // IMPORTANT: refresh current step view
+  render();
+}
+
+
+
+function shouldShowDivider(i) {
+  const prev = steps[i - 1];
+  const cur = steps[i];
+  if (!cur) return false;
+  if (!prev) return true;
+  return prev.section !== cur.section;
+}
+
+function renderProgress() {
+  const bar = document.getElementById('rosary');
+  if (!bar) return;
+
+  bar.innerHTML = '';
+  let lastSec = '';
+
+  steps.forEach((s, i) => {
+    const d = document.createElement('div');
+    const major = s.section !== lastSec;
+    d.className = `bead ${major ? "major" : ""} ${i === idx ? "active" : ""} ${i < idx ? "past" : ""}`;
+    d.title = s.title || "";
+    d.onclick = () => { idx = i; render(); };
+    bar.appendChild(d);
+    lastSec = s.section;
+  });
+}
+
+function getModuleOrder(){
+  // Only show modules that actually exist in the current steps array,
+  // but keep the canonical order from MODULE_ORDER.
+  const present = new Set();
+  for (const s of steps){
+    if (s?.section) present.add(s.section);
+  }
+  return MODULE_ORDER.filter(sec => present.has(sec));
+}
+
+
+function getModuleInfo(){
+  const cur = steps[idx];
+  const section = cur?.section || null;
+  const modules = getModuleOrder();
+  const moduleIndex = section ? modules.indexOf(section) : -1;
+
+  const moduleStepIndexes = [];
+  if (section){
+    for (let i = 0; i < steps.length; i++){
+      if (steps[i]?.section === section) moduleStepIndexes.push(i);
+    }
+  }
+
+  const posInModule = moduleStepIndexes.indexOf(idx);
+  return { modules, section, moduleIndex, moduleStepIndexes, posInModule };
+}
+
+function jumpToSection(section){
+  const i = steps.findIndex(s => s.section === section);
+  if (i >= 0){ idx = i; render(); }
+}
+
+const MODULE_SHORT = {
+  "Before Mass": "Before",
+  "Mass of the Catechumens — Preparation": "Preparation",
+  "Mass of the Catechumens — Instruction": "Instruction",
+  "Mass of the Faithful — Offertory": "Offertory",
+  "Mass of the Faithful — Canon": "Canon",
+  "Mass of the Faithful — Communion": "Communion",
+};
+
+
+function renderModuleStepper(){
+  const wrap = document.getElementById("module-stepper");
+  if (!wrap) return;
+
+  const info = getModuleInfo();
+  const { modules, moduleIndex } = info;
+
+  wrap.innerHTML = "";
+
+  modules.forEach((sec, i) => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "moduleChip" + (i < moduleIndex ? " done" : "") + (i === moduleIndex ? " active" : "");
+    chip.textContent = MODULE_SHORT[sec] || sec;
+chip.title = sec;
+    chip.onclick = () => jumpToSection(sec);
+    wrap.appendChild(chip);
+  });
+}
+
+
+function renderModuleBeads(){
+  const bar = document.getElementById('rosary');
+  if (!bar) return;
+
+  const modules = getModuleOrder();
+  const currentSection = steps[idx]?.section || null;
+  const currentModuleIndex = currentSection ? modules.indexOf(currentSection) : -1;
+
+  bar.innerHTML = '';
+
+  modules.forEach((sec, i) => {
+    const d = document.createElement('div');
+
+    // Use "major" styling so these feel like module markers
+    d.className = `bead major ${i === currentModuleIndex ? "active" : ""} ${i < currentModuleIndex ? "past" : ""}`;
+    d.title = moduleLabel(sec);
+
+    d.onclick = () => jumpToSection(sec);
+
+    bar.appendChild(d);
+  });
+}
+
+function updateModuleWindow(){
+  const nameEl = document.getElementById("module-name");
+  const metaEl = document.getElementById("module-meta");
+  if (!nameEl || !metaEl) return;
+
+  const info = getModuleInfo();
+  const { modules, section, moduleIndex, moduleStepIndexes, posInModule } = info;
+
+  const stepNum = (posInModule >= 0) ? (posInModule + 1) : 0;
+  const stepTotal = moduleStepIndexes.length;
+
+  nameEl.textContent = section || "—";
+  metaEl.textContent =
+    (section && stepTotal)
+      ? `Step ${stepNum} of ${stepTotal} • Module ${moduleIndex + 1} of ${modules.length}`
+      : "—";
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+function nextStep() {
+  if (idx < steps.length - 1) {
+    idx++;
+    render();
+  }
+}
+
+function prevStep() {
+  if (idx > 0) {
+    idx--;
+    render();
+  }
+}
+
+function jumpToId(stepId) {
+  const i = steps.findIndex(s => s.id === stepId);
+  if (i >= 0) {
+    idx = i;
+    render();
+  }
+}
+
+function skipSilent() {
+  for (let i = idx + 1; i < steps.length; i++) {
+    const s = steps[i];
+    if (!s) continue;
+
+    if (!s.skippable) {
+      idx = i;
+      render();
+      return;
+    }
+
+    if (followMode === 'choir' && s.dual && s.dual.A) {
+      idx = i;
+      render();
+      return;
+    }
+  }
+
+  idx = steps.length - 1;
+  render();
+}
+
+
+
+function openModuleModal(){
+  const m = document.getElementById("moduleModal");
+  if (!m) return;
+  m.classList.remove("hidden");
+  renderModuleGrid(); // ensure highlight is current
+}
+
+function closeModuleModal(){
+  const m = document.getElementById("moduleModal");
+  if (!m) return;
+  m.classList.add("hidden");
+}
+
+// close when tapping outside the sheet
+window.addEventListener("click", (e) => {
+  const m = document.getElementById("moduleModal");
+  if (!m || m.classList.contains("hidden")) return;
+  if (e.target === m) closeModuleModal();
+});
+
+// wire button once
+window.addEventListener("load", () => {
+  const btn = document.getElementById("btn-modules");
+  if (btn) btn.addEventListener("click", openModuleModal);
+});
+
+function updateModuleDock(){
+  const txt = document.getElementById("module-dock-text");
+  if (!txt) return;
+
+  const cur = steps[idx];
+  const section = cur?.section || null;
+
+  txt.textContent = section ? moduleLabel(section) : "—";
+}
+
+function renderModuleGrid(){
+  const wrap = document.getElementById("module-grid");
+  if (!wrap) return;
+
+  const modules = getModuleOrder();
+  const currentSection = steps[idx]?.section || null;
+  const currentIndex = currentSection ? modules.indexOf(currentSection) : -1;
+
+  wrap.innerHTML = "";
+
+  modules.forEach((sec, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className =
+      "moduleGridBtn" +
+      (i < currentIndex ? " done" : "") +
+      (i === currentIndex ? " active" : "");
+
+    b.textContent = moduleLabel(sec);
+    b.title = sec;
+
+    b.onclick = () => {
+      jumpToSection(sec);
+      closeModuleModal();
+    };
+
+    wrap.appendChild(b);
+  });
+}
+
+
+/* =========================================================
+   POSTURE + LOCATION (no icons)
+========================================================= */
+function postureLabelEffective(step) {
+  // If a flow exists (e.g. ["ST","K","ST"]), render it as a chain.
+  if (step?.postureFlow && Array.isArray(step.postureFlow) && step.postureFlow.length){
+    const chain = step.postureFlow.map(postureLabel);
+    return chain.join(" → ");
+  }
+
+  // Pax special-case (your existing logic)
+  if (step && step.id === "HM_510") {
+    return (paxMode === 'kneel_after_pax') ? "STAND → KNEEL" : "STAND";
+  }
+
+  return postureLabel(step?.posture);
+}
+
+
+function postureLabel(code) {
+  if (code === "K") return "KNEEL";
+  if (code === "ST") return "STAND";
+  if (code === "S") return "SIT";
+  if (code === "GEN") return "GENUFLECT";
+  return "—";
+}
+
+function priestLocationLabel(loc) {
+  switch (loc) {
+    case "FOOT": return "Foot of the altar";
+    case "EPISTLE": return "Epistle side (right)";
+    case "GOSPEL": return "Gospel side (left)";
+    case "CENTER": return "Center of the altar";
+    case "PULPIT": return "Pulpit / Ambo";
+    case "NAVE": return "In the nave";
+    case "COMMUNION_RAIL": return "At the Communion rail";
+    case "SACRISTY": return "Sacristy";
+    default: return "Altar";
+  }
+}
+
+function bellPillHTML(rings){
+  const n = Number(rings || 0);
+  if (!n) return "";
+
+  const label = (n === 1) ? "Bell" : `Bells ×${n}`;
+
+  return `
+    <div class="meta metaBell">
+      <span class="metaIcon">${faIcon("bell")}</span>
+      <strong>${escapeHtml(label)}</strong>
+    </div>
+  `;
+}
+
+function postureIconHTML(label){
+  const raw = String(label || "").toUpperCase().trim();
+  if (!raw || raw === "—") return "";
+
+  // Split multi-stage labels: "STAND → KNEEL → STAND"
+  const parts = raw.split("→").map(s => s.trim()).filter(Boolean);
+
+  const iconFor = (p) => {
+    if (p.includes("KNEEL")) return faIcon("kneel");
+    if (p.includes("GENUFLECT")) return faIcon("genuflect");
+    if (p.includes("SIT")) return faIcon("sit");
+    if (p.includes("STAND")) return faIcon("stand");
+    return "";
+  };
+
+  const nodes = [];
+  for (let i = 0; i < parts.length; i++){
+    const ic = iconFor(parts[i]);
+    if (ic) nodes.push(`<span class="metaIcon">${ic}</span>`);
+    if (i < parts.length - 1) nodes.push(`<span class="metaArrow">→</span>`);
+  }
+
+  return nodes.join("");
+}
+
+
+  
+  /* =========================================================
+   LITURGICAL COLOR / SEASON + PROPER FETCHING (Divinum Officium)
+   + TEXT CLEANING + RENDER HELPERS
+
+   Design goals:
+   - Deterministic, side-effect-free calculations (season + Easter).
+   - Robust network fetch through multiple CORS proxies.
+   - Aggressive sanitation to eliminate the recurring "undefined" artifacts.
+   - Parsing that is resilient to Divinum table/layout variations.
+   - Output strings safe for HTML insertion (escapeHtml + controlled <br> rendering).
+
+   Notes:
+   - This is a heuristic “season color” overlay. For strict 1962 rubrics across all feasts,
+     rely on the propers source when it provides the color explicitly.
+   - All date math is done at local midnight to avoid DST edge cases.
+========================================================= */
+
+/* ---------------------------
+   DATE HELPERS
+--------------------------- */
+
+function startOfDay(d) {
+  const x = new Date(d);
+  x.setHours(0, 0, 0, 0);
+  return x;
+}
+
+function sameDay(a, b) {
+  return startOfDay(a).getTime() === startOfDay(b).getTime();
+}
+
+/* ---------------------------
+   LITURGICAL THEME
+--------------------------- */
+
+function setLiturgicalTheme(colorName) {
+  const root = document.documentElement;
+  const c = String(colorName || "").toLowerCase();
+
+  // Default: green
+  let hex = "#10b981";
+
+  if (c.includes("red")) hex = "#ef4444";
+  else if (c.includes("white") || c.includes("gold")) hex = "#e2e8f0";
+  else if (c.includes("violet") || c.includes("purple")) hex = "#a855f7";
+  else if (c.includes("rose") || c.includes("pink")) hex = "#fb7185";
+  else if (c.includes("black")) hex = "#64748b";
+
+  root.style.setProperty("--liturgical", hex);
+}
+
+/* ---------------------------
+   EASTER (Meeus/Jones/Butcher, Gregorian)
+--------------------------- */
+
+function easterSunday(year) {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+
+  const month = Math.floor((h + l - 7 * m + 114) / 31) - 1; // 0=Jan
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+
+  return startOfDay(new Date(year, month, day));
+}
+
+/* ---------------------------
+   SEASON COLOR HEURISTIC
+   - Advent: 1st Sunday of Advent through Dec 24 inclusive
+   - Christmas: Dec 25 – Jan 13
+   - Lent: Ash Wednesday through Holy Saturday
+   - Eastertide: Easter through Saturday after Pentecost inclusive
+   - Pentecost Sunday: Red
+   - Otherwise: Green
+
+   This is intentionally simple and stable.
+--------------------------- */
+
+function calculateLiturgicalSeason(date) {
+  const dt = startOfDay(date);
+  const year = dt.getFullYear();
+
+  // Christmas: Dec 25 – Jan 13
+  const month = dt.getMonth();
+  const day = dt.getDate();
+  if ((month === 11 && day >= 25) || (month === 0 && day <= 13)) return "White";
+
+  // Advent:
+  // Compute 4th Sunday of Advent = Sunday on/before Dec 24 (effectively Sunday before Christmas week),
+  // then back up 21 days to get 1st Sunday of Advent.
+  const xmas = startOfDay(new Date(year, 11, 25));
+  const dec24 = startOfDay(new Date(year, 11, 24));
+  const fourthAdvent = new Date(dec24);
+  fourthAdvent.setDate(dec24.getDate() - dec24.getDay()); // Sunday on/before Dec 24
+  const firstAdvent = new Date(fourthAdvent);
+  firstAdvent.setDate(fourthAdvent.getDate() - 21);
+  if (dt >= firstAdvent && dt < xmas) return "Violet";
+
+  // Lent / Easter / Pentecost
+  const easter = easterSunday(year);
+  const ashWed = new Date(easter);
+  ashWed.setDate(easter.getDate() - 46);
+  ashWed.setHours(0, 0, 0, 0);
+
+  const pentecost = new Date(easter);
+  pentecost.setDate(easter.getDate() + 49);
+  pentecost.setHours(0, 0, 0, 0);
+
+  // Lent (Ash Wed up to but not including Easter)
+  if (dt >= ashWed && dt < easter) return "Violet";
+
+  // Eastertide (Easter up to but not including Pentecost) = White
+  if (dt >= easter && dt < pentecost) return "White";
+
+  // Pentecost Sunday = Red
+  if (sameDay(dt, pentecost)) return "Red";
+
+  // Ordinary time heuristic
+  return "Green";
+}
+
+function isEastertide(date) {
+  const dt = startOfDay(date);
+  const easter = easterSunday(dt.getFullYear());
+  const pentecost = new Date(easter);
+  pentecost.setDate(easter.getDate() + 49);
+  pentecost.setHours(0, 0, 0, 0);
+  return dt >= easter && dt <= pentecost;
+}
+
+/* =========================================================
+   NETWORK: Divinum Officium propers (with CORS proxies)
+========================================================= */
+
+async function fetchPropers(date) {
+  const dt = startOfDay(date);
+  const d = String(dt.getDate()).padStart(2, "0");
+  const m = String(dt.getMonth() + 1).padStart(2, "0");
+  const y = dt.getFullYear();
+
+  const targetUrl =
+    `https://divinumofficium.com/cgi-bin/missa/missa.pl?command=praySanctaMissa&date=${m}-${d}-${y}&lang1=Latin&lang2=English`;
+
+  // CORS proxy strategies:
+  // 1) allorigins: JSON wrapper { contents: "<html...>" }
+  // 2) corsproxy.io: raw HTML
+  // 3) thingproxy: raw HTML
+  const proxies = [
+    (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+    (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+    (url) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(url)}`
+  ];
+
+  let lastError = null;
+
+  for (let i = 0; i < proxies.length; i++) {
+    try {
+      const res = await fetchWithTimeout(proxies[i](targetUrl), 9000);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      let html = "";
+
+      if (i === 0) {
+        const json = await res.json();
+        html = (json && typeof json.contents === "string") ? json.contents : "";
+      } else {
+        html = await res.text();
+      }
+
+      // A small minimum threshold to avoid parsing proxy “error pages”.
+      if (html && html.length > 800) {
+        const parsed = parseDivinum(html);
+
+        // Ensure we actually got content (not just empty defaults).
+        const hasPayload =
+          (parsed?.name && parsed.name.trim().length > 2) ||
+          (parsed?.introit?.lat && parsed.introit.lat.trim().length > 30) ||
+          (parsed?.gospel?.lat && parsed.gospel.lat.trim().length > 30);
+
+        if (hasPayload) return parsed;
+      }
+    } catch (e) {
+      lastError = e;
+      // Try next proxy
+    }
+  }
+
+  throw new Error("All proxies failed" + (lastError ? (": " + lastError.message) : ""));
+}
+
+function fetchWithTimeout(resource, timeout = 8500) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+
+  return fetch(resource, { signal: controller.signal })
+    .then((r) => {
+      clearTimeout(id);
+      return r;
+    })
+    .catch((err) => {
+      clearTimeout(id);
+      throw err;
+    });
+}
+
+/* =========================================================
+   TEXT NORMALIZATION (critical to remove "undefined" pollution)
+========================================================= */
+
+function normalizeLiturgicalString(s) {
+  if (s == null) return "";
+
+  return String(s)
+    // kill injected artifact tokens
+    .replace(/undefined/g, "")
+    // normalize encoded and actual <br> to \n
+    .replace(/&lt;br\s*\/?&gt;/gi, "\n")
+    .replace(/<br\s*\/?>/gi, "\n")
+    // nbsp variants
+    .replace(/&nbsp;|&#160;/gi, " ")
+    .replace(/\u00a0/g, " ")
+    // newlines
+    .replace(/\r\n?/g, "\n")
+    // trim trailing spaces on lines
+    .replace(/[ \t]+\n/g, "\n")
+    // collapse excessive blank lines
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+/* Removes leading dialogue (versicles/responses etc.) often embedded in Secret blocks. */
+function stripLeadingDialogueBlock(t) {
+  if (!t) return "";
+  const s = normalizeLiturgicalString(t);
+  const lines = s.split("\n");
+
+  const looksDialoguelike = (ln) =>
+    /^\s*(?:[℣℟]|[PVSRM]\.)\s+/i.test(ln) ||
+    /^\s*Oráte,\s*fratres/i.test(ln) ||
+    /^\s*Pray,\s*brethren/i.test(ln);
+
+  let i = 0;
+  let sawDialogue = false;
+
+  // Strip initial dialogue lines (and leading blank lines).
+  while (i < lines.length) {
+    const ln = lines[i].trim();
+    if (!ln) { i++; continue; }
+    if (looksDialoguelike(ln)) { sawDialogue = true; i++; continue; }
+    break;
+  }
+
+  // If the block didn’t look like dialogue, return original.
+  if (!sawDialogue) return s.trim();
+
+  const out = lines.slice(i).join("\n").trim();
+  return out || s.trim();
+}
+
+/* Preface blocks often contain seasonal label lines and dialogue remnants. */
+function cleanPrefaceBlock(t, lang /* "lat" | "eng" */) {
+  if (!t) return "";
+  let s = normalizeLiturgicalString(t);
+
+  // Remove standalone season labels that sometimes appear as separate lines.
+  const dropLine =
+    /^(advent|lent|easter|christmas|epiphany|passiontide|septuagesima|sexagesima|quinquagesima|ascension|pentecost|whitsuntide)$/i;
+
+  s = s
+    .split("\n")
+    .map((x) => x.trim())
+    .filter(Boolean)
+    .filter((line) => !dropLine.test(line))
+    .join("\n");
+
+  // Prefer starting at the “proper” opening (to avoid duplicated dialogue).
+  if (lang === "lat") {
+    const k = s.search(/\bVere dignum\b/i);
+    if (k !== -1) s = s.slice(k);
+  } else {
+    // Many English renders include "It is meet and just." which you likely already show elsewhere.
+    // Prefer to start at “It is truly...” when present.
+    const k = s.search(/\bIt is truly\b/i);
+    if (k !== -1) s = s.slice(k);
+    s = s.replace(/^\s*It is (meet|right) and just\.\s*/i, "");
+  }
+
+  return s.trim();
+}
+
+/* Secret blocks can include the Orate fratres response; strip it when present. */
+function stripOrateFromSecret(t, lang /* "lat" | "eng" */) {
+  if (!t) return "";
+  const s = normalizeLiturgicalString(t);
+
+  if (lang === "lat") {
+    // Cut after "Suscipiat..." response line
+    const i = s.search(/\bSuscipiat\b/i);
+    if (i !== -1) {
+      const after = s.slice(i);
+      const nl = after.indexOf("\n");
+      return (nl !== -1 ? after.slice(nl + 1) : "").trim();
+    }
+  } else {
+    const i = s.search(/\bMay the Lord receive\b/i);
+    if (i !== -1) {
+      const after = s.slice(i);
+      const nl = after.indexOf("\n");
+      return (nl !== -1 ? after.slice(nl + 1) : "").trim();
+    }
+  }
+
+  return s.trim();
+}
+
+/* Remove Sanctus text from a Preface block (you render Sanctus separately). */
+function stripSanctusFromPreface(t) {
+  if (!t) return "";
+  let s = normalizeLiturgicalString(t);
+
+  // Stop at Sanctus (Latin or English) if present.
+  const stop = s.search(/(^|\n)\s*(Sanctus,\s*Sanctus|\bHoly,\s*Holy,\s*Holy)\b/i);
+  if (stop !== -1) s = s.slice(0, stop);
+
+  // Remove dangling “dicentes:” / “saying …:” at end.
+  s = s.replace(/\b(dicentes:|saying without ceasing:)\s*$/i, "");
+  return s.trim();
+}
+
+/* Used on Gospel extraction to remove preface/intro noise before the first real marker. */
+function cutToFirstGospelMarker(t) {
+  if (!t) return "";
+  const s = normalizeLiturgicalString(t);
+
+  const markers = [
+    /\b℣\.\s*Dóminus vobíscum\./i,
+    /\bThe Lord be with you\./i,
+    /\bSequéntia\b/i,
+    /\bSequentia\b/i,
+    /\bInitium\b/i,
+    /\bIn illo témpore\b/i,
+    /\bIn illo tempore\b/i,
+    /\bAt that time\b/i
+  ];
+
+  for (const re of markers) {
+    const m = s.match(re);
+    if (m && typeof m.index === "number") return s.slice(m.index).trim();
+  }
+
+  return s.trim();
+}
+
+/* =========================================================
+   DIVINUM OFFICIUM PARSER
+   - Extracts bilingual propers from the table rows.
+   - Uses robust heading detection + payload scoring.
+========================================================= */
+
+function parseDivinum(htmlString) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(String(htmlString || ""), "text/html");
+
+  const normHeader = (s) =>
+    String(s || "")
+      .replace(/undefined/g, "")
+      .replace(/\u00a0/g, " ")
+      .replace(/æ/g, "ae")
+      .replace(/Æ/g, "ae")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // strip accents
+      .replace(/\s+/g, " ")
+      .replace(/[.:;]+$/g, "")
+      .trim()
+      .toLowerCase();
+
+  const HEADING_SET = new Set([
+    "introitus", "introit",
+    "oratio", "collect",
+    "epistola", "epistle", "lectio", "lesson",
+    "graduale", "gradual",
+    "alleluia",
+    "tractus", "tract",
+    "evangelium", "gospel",
+    "offertorium", "offertory",
+    "secreta", "secret",
+    "praefatio", "preface",
+    "communio", "communion",
+    "postcommunio", "postcommunion"
+  ]);
+
+  function cleanCell(td) {
+    if (!td) return "";
+
+    const clone = td.cloneNode(true);
+
+    // Remove navigation links.
+    clone.querySelectorAll("a").forEach((a) => a.remove());
+
+    // Remove heading-ish nodes near the top of the cell to keep only the content.
+    const nodes = Array.from(clone.querySelectorAll("b, strong, font"));
+    nodes.slice(0, 10).forEach((n) => {
+      const h = normHeader(n.textContent);
+      if (HEADING_SET.has(h)) n.remove();
+    });
+
+    // Convert BR to newlines, drop all tags, normalize whitespace.
+    let html = String(clone.innerHTML || "").replace(/undefined/g, "");
+    html = html
+      .replace(/&lt;br\s*\/?&gt;/gi, "\n")
+      .replace(/<br\s*\/?>/gi, "\n");
+
+    let text = html
+      .replace(/&nbsp;|&#160;/gi, " ")
+      .replace(/<[^>]+>/g, "");
+
+    text = normalizeLiturgicalString(text);
+
+    // Drop digit-only artifact lines (Divinum sometimes leaks row numbers).
+    text = text.replace(/^\s*\d+\s*$/gm, "").trim();
+    // Tighten spacing again after deletions.
+    text = text.replace(/\n{3,}/g, "\n\n").trim();
+
+    // Remove occasional cruft.
+    text = text.replace(/^Top\s+Next\s*/i, "").trim();
+
+    return text;
+  }
+
+  function extractSection(headings) {
+    const keys = (Array.isArray(headings) ? headings : [headings]).map(normHeader);
+
+    let best = null;
+
+    for (const row of Array.from(doc.querySelectorAll("tr"))) {
+      const tds = row.querySelectorAll("td");
+      if (tds.length < 2) continue;
+
+      const left = tds[0];               // Latin column
+      const right = tds[tds.length - 1]; // English column
+
+      const rowText = (row.textContent || "").toLowerCase();
+      // Skip large “banner”/navigation sections.
+      if (rowText.includes("mass of the faithful") || rowText.includes("mass of the catechumens")) continue;
+
+      // Find a header-like element in the left cell.
+      const headingNodes = Array.from(left.querySelectorAll("b, strong, font"));
+      if (!headingNodes.length) continue;
+
+      const firstHeaderNode = headingNodes.find((el) => {
+        const h = normHeader(el.textContent);
+        return keys.some((k) => h === k || h.startsWith(k + ":") || h.startsWith(k + " "));
+      });
+      if (!firstHeaderNode) continue;
+
+      const latText = cleanCell(left);
+      const engText = cleanCell(right);
+
+      // Minimum payload threshold avoids header/anchor-only rows.
+      const payloadLen = (latText.length + engText.length);
+      if (payloadLen < 120) continue;
+
+      // Prefer headings that appear early in the cell.
+      const headerPos = (left.textContent || "").indexOf(firstHeaderNode.textContent || "");
+      const nearTop = headerPos >= 0 && headerPos < 80;
+
+      const score = payloadLen + (nearTop ? 250 : 0);
+
+      if (!best || score > best.score) {
+        best = { score, lat: latText, eng: engText };
+      }
+    }
+
+    return best ? { lat: best.lat, eng: best.eng } : null;
+  }
+
+ /* ---------- Metadata (name / rank) ---------- */
+let name = "Feria";
+let rank = "";
+
+// Pull the first meaningful lines from the very top of the page text.
+// On Divinum Officium, the feast line typically appears before "Sancta Missa Rubrics …".
+const bodyText = (doc.body && doc.body.textContent) ? doc.body.textContent : "";
+const topLines = String(bodyText)
+  .replace(/\u00a0/g, " ")
+  .replace(/\r\n?/g, "\n")
+  .split("\n")
+  .map(s => s.trim())
+  .filter(Boolean)
+  .slice(0, 40);
+
+// Lines we never want to treat as the feast title.
+const isNoiseLine = (s) => {
+  const t = s.toLowerCase();
+  return (
+    t.startsWith("sancta missa") ||                 // "Sancta Missa Rubrics 1960 - 1960"
+    t.includes("rubrics 1960") ||
+    t.startsWith("compare") ||
+    t.startsWith("divinum officium") ||
+    t.startsWith("date") ||
+    t.startsWith("ordo") ||
+    t.startsWith("options") ||
+    t.startsWith("rubrics :") ||
+    t === "top" || t === "next"
+  );
+};
+
+// Heuristic: feast lines often contain these tokens (Latin/English), and frequently “~ … classis”.
+const looksLikeFeastLine = (s) => {
+  const t = s.toLowerCase();
+  if (isNoiseLine(s)) return false;
+
+  // Strong signal: rank marker
+  if (t.includes("classis") || t.includes("class")) return true;
+
+  // Common feast/day words
+  return (
+    t.startsWith("feria") ||
+    t.startsWith("dominica") ||
+    t.startsWith("festum") ||
+    t.startsWith("vigil") ||
+    t.includes("infra hebdomadam") ||
+    t.includes("hebdomadam") ||
+    t.includes("adventus") ||
+    t.includes("quadragesim") ||
+    t.includes("lent") ||
+    t.includes("post") ||
+    t.includes("octav")
+  );
+};
+
+const feastLine = topLines.find(looksLikeFeastLine);
+
+if (feastLine) {
+  // Typical format: "Feria II … ~ II. classis"
+  if (feastLine.includes("~")) {
+    const [left, right] = feastLine.split("~");
+    name = (left || "").trim() || name;
+    rank = (right || "").trim();
+  } else {
+    name = feastLine.trim();
+
+    // Try to extract a rank if embedded
+    const m = feastLine.match(/\b([IVX]+)\.\s*classis\b/i) || feastLine.match(/\b(\d+(st|nd|rd|th))\s+class\b/i);
+    if (m) rank = m[0].trim();
+  }
+} else {
+  // Fallback to your previous approach
+  const titles = doc.querySelectorAll('font[size="+1"]');
+  if (titles.length > 0) name = String(titles[0].textContent || "").replace(/undefined/g, "").trim() || name;
+  if (titles.length > 1) rank = String(titles[1].textContent || "").replace(/undefined/g, "").trim();
+}
+
+  /* ---------- Color heuristic (fallback) ---------- */
+  let color = "Green";
+  const textBody = (doc.body?.textContent || "").toLowerCase();
+  const n = (name || "").toLowerCase();
+
+  if (textBody.includes("red vestments") || n.includes("martyr") || n.includes("pentecost") || n.includes("passion")) color = "Red";
+  else if (textBody.includes("white vestments") || n.includes("virgin") || n.includes("confessor") || n.includes("nativity")) color = "White";
+  else if (textBody.includes("violet vestments") || n.includes("advent") || n.includes("quadragesim") || n.includes("lent") || n.includes("vigil")) color = "Violet";
+  else if (textBody.includes("black vestments") || n.includes("requiem")) color = "Black";
+  else if (textBody.includes("rose vestments") || n.includes("gaudete") || n.includes("laetare")) color = "Rose";
+
+  /* ---------- Gradual merge (Gradual + Alleluia + Tract) ---------- */
+  const gradual = extractSection("Graduale");
+  const alleluia = extractSection("Alleluia");
+  const tract = extractSection("Tractus");
+
+  const mergedGradual = {
+    lat: [gradual?.lat, alleluia?.lat, tract?.lat].filter(Boolean).join("\n\n").trim(),
+    eng: [gradual?.eng, alleluia?.eng, tract?.eng].filter(Boolean).join("\n\n").trim()
+  };
+
+  /* ---------- Build propers object ---------- */
+  const introit = extractSection("Introitus") || { lat: "", eng: "" };
+  const collect = extractSection("Oratio") || { lat: "", eng: "" };
+  const epistle = extractSection("Epistola") || extractSection("Lectio") || { lat: "", eng: "" };
+
+  const rawGospel = extractSection("Evangelium") || { lat: "", eng: "" };
+  const gospel = {
+    lat: cutToFirstGospelMarker(rawGospel.lat),
+    eng: cutToFirstGospelMarker(rawGospel.eng)
+  };
+
+  const offertory = extractSection("Offertorium") || { lat: "", eng: "" };
+
+  const sec = extractSection("Secreta");
+  const secret = sec
+    ? { lat: stripLeadingDialogueBlock(sec.lat), eng: stripLeadingDialogueBlock(sec.eng) }
+    : { lat: "", eng: "" };
+
+  const rawPref = extractSection("Praefatio");
+  const preface = rawPref
+    ? {
+        lat: stripSanctusFromPreface(cleanPrefaceBlock(rawPref.lat, "lat")),
+        eng: stripSanctusFromPreface(cleanPrefaceBlock(rawPref.eng, "eng"))
+      }
+    : null;
+
+  const communion = extractSection("Communio") || { lat: "", eng: "" };
+  const postcommunion = extractSection("Postcommunio") || { lat: "", eng: "" };
+
+  return {
+    name,
+    rank,
+    color,
+    introit,
+    collect,
+    epistle,
+    gradual: (mergedGradual.lat || mergedGradual.eng) ? mergedGradual : { lat: "", eng: "" },
+    gospel,
+    offertory,
+    secret,
+    preface,
+    communion,
+    postcommunion
+  };
+}
+
+/* =========================================================
+   RENDER-FACING TEXT FORMATTER
+   - Input: HTML-safe string (already escaped) that uses <br> tags for line breaks.
+   - Output: HTML-safe string with rubric symbols injected.
+========================================================= */
+
+function formatLiturgicalText(htmlSafeTextWithBr) {
+  if (!htmlSafeTextWithBr) return "";
+
+  let out = String(htmlSafeTextWithBr)
+    .replace(/undefined/g, "")
+    .replace(/&nbsp;|&#160;/gi, " ");
+
+  // ---------------------------------------------------------
+  // 1) Convert posture cues to rubric badges (NO inline HTML in source text)
+  //    Supports both (kneel) and [KNEEL] styles.
+  // ---------------------------------------------------------
+
+  // Convert parenthetical cues to bracket tokens
+  out = out.replace(/\((genuflect|kneel|stand|sit|rise)\)/gi, (_, w) => `[${w.toUpperCase()}]`);
+
+  // Convert bracket tokens into rubric badges
+  out = out.replace(/\[(KNEEL|STAND|SIT|GENUFLECT|RISE)\]/g, (_, w) => {
+    const kind = w.toLowerCase();   // kneel / stand / sit / genuflect / rise
+    return rubricBadge(kind, w);    // label stays uppercase
+  });
+
+  // ---------------------------------------------------------
+  // 2) Speaker markers (℣/℟) styling
+  // ---------------------------------------------------------
+  out = out.replace(/(^|<br\s*\/?>)\s*(P\.|V\.|℣\.)/gi, '$1<span class="rubric-symbol">℣.</span>');
+  out = out.replace(/(^|<br\s*\/?>)\s*(S\.|R\.|M\.|℟\.)/gi, '$1<span class="rubric-symbol">℟.</span>');
+
+  out = out.replace(/([.?!:;])\s*(P\.|V\.|℣\.)/gi, '$1<br><span class="rubric-symbol">℣.</span>');
+  out = out.replace(/([.?!:;])\s*(S\.|R\.|M\.|℟\.)/gi, '$1<br><span class="rubric-symbol">℟.</span>');
+
+  // ---------------------------------------------------------
+  // 3) Optional spacing before common cues
+  // ---------------------------------------------------------
+  const cues = [
+    "Orémus", "Oremus", "Let us pray",
+    "In illo témpore", "In illo tempore", "At that time",
+    "Sequéntia", "Sequentia", "Continuation"
+  ];
+
+  for (const cue of cues) {
+    const re = new RegExp(`([^>])\\s*(${cue})`, "gi");
+    out = out.replace(re, '$1<br><br><strong>$2</strong>');
+  }
+
+  return out;
+}
+
+
+function svgIcon(kind){
+  // Tiny simple icons (no libraries). Uses currentColor.
+  switch (kind) {
+    case "stand":
+      return `<svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 2a2.2 2.2 0 1 0 0 4.4A2.2 2.2 0 0 0 12 2Zm-1 6h2v6l2 8h-2l-1-4h-2l-1 4H7l2-8V8Z"/>
+      </svg>`;
+    case "kneel":
+      return `<svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 2a2.2 2.2 0 1 0 0 4.4A2.2 2.2 0 0 0 12 2Zm-2 6h4l1 5 2 2-1.4 1.4-2.6-2.6-.7-3.2h-1l-1.2 4.6L7 22H5l3.2-7.8L10 8Z"/>
+      </svg>`;
+     
+      case "priest":
+  return `<svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    <path fill="currentColor" opacity="0.35" d="M12 14c-1.5 0-2.8.5-3.5 1.2V19h7v-3.8c-.7-.7-2-1.2-3.5-1.2z"/>
+  </svg>`;
+
+    case "genuflect":
+      return `<svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 2a2.2 2.2 0 1 0 0 4.4A2.2 2.2 0 0 0 12 2Zm-2 6h4l.8 4.2 1.8 1.6-1.3 1.5-2.5-2.1L12 10h-1l-1.3 4.7L7.6 22H5.6l3-7.4L10 8Z"/>
+      </svg>`;
+    case "sit":
+      return `<svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 2a2.2 2.2 0 1 0 0 4.4A2.2 2.2 0 0 0 12 2Zm-3 6h6l1 5h-2l-.6-3h-1.2v4h4v2h-6v-6H9V8Z"/>
+      </svg>`;
+    case "rise":
+      return `<svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 2l6 6h-4v8h-4V8H6l6-6Zm-7 18h14v2H5v-2Z"/>
+      </svg>`;
+    default:
+      return "";
+  }
+}
+
+function rubricBadge(kind, label){
+  return `<span class="rubricBadge">${faIcon(kind)}${escapeHtml(label)}</span>`;
+}
+
+
+function faIcon(kind){
+  const map = {
+    bell:      "fa-solid fa-bell",
+    priest:    "fa-solid fa-hands-praying",
+    stand:     "fa-solid fa-person",
+    kneel:     "fa-solid fa-person-praying",
+    genuflect: "fa-solid fa-person-praying",
+    sit:       "fa-solid fa-chair",
+    rise:      "fa-solid fa-arrow-up"
+  };
+
+  const cls = map[kind] || "fa-solid fa-circle";
+  return `<i class="${cls}" aria-hidden="true"></i>`;
+}
+
+
+/* -----------------------------
+   SETTINGS (persisted)
+------------------------------ */
+const SETTINGS_KEY = "ao:settings:v1";
+const DEFAULT_SETTINGS = {
+  massMode: "SUNG",           // "SUNG" | "LOW"
+  cinematic: true,
+  showSaintCard: true,
+  showFastingCard: true,
+  bgDim: 52,                  // 35..85 (UI)
+};
+
+let settings = loadSettings();
+let massMode = settings.massMode || "SUNG";
+
+function loadSettings(){
+  try{
+    const raw = localStorage.getItem(SETTINGS_KEY);
+    const obj = raw ? JSON.parse(raw) : {};
+    return { ...DEFAULT_SETTINGS, ...obj };
+  }catch(e){
+    return { ...DEFAULT_SETTINGS };
+  }
+}
+function saveSettings(patch){
+  settings = { ...settings, ...patch };
+  try{ localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings)); }catch(e){}
+  applySettings();
+}
+
+/* Apply (dim + visibility) */
+function applySettings(){
+  // dim: map 35..85 -> 0.35..0.85
+  const d = Math.max(35, Math.min(85, settings.bgDim || 52));
+  const dim = (d/100).toFixed(2);
+  document.documentElement.style.setProperty("--bg-dim", dim);
+  document.documentElement.style.setProperty("--bg-dim-strong", (Math.min(0.92, (+dim + 0.26))).toFixed(2));
+
+  
+  updateMassModeUI();
+}
+
+/* -----------------------------
+   MASS MODE UI
+------------------------------ */
+function setMassMode(mode){
+  massMode = (mode === "LOW") ? "LOW" : "SUNG";
+  saveSettings({ massMode });
+}
+
+function updateMassModeUI(){
+  const sung = document.getElementById("segSung");
+  const low  = document.getElementById("segLow");
+  const hint = document.getElementById("massTypeHint");
+
+  const isLow = (massMode === "LOW");
+
+  if (sung) sung.setAttribute("aria-selected", String(!isLow));
+  if (low)  low.setAttribute("aria-selected", String(isLow));
+
+  if (hint){
+    hint.textContent = isLow
+      ? "Low Mass selected. Choir track is hidden; steps follow the priest text."
+      : "Choir track appears only for Sung Mass.";
+  }
+}
+
+
+/* -----------------------------
+   BOTTOM SHEET (Preferences / Options / About)
+------------------------------ */
+function openSheet(kind){
+  const sheet = document.getElementById("sheet");
+  const title = document.getElementById("sheetTitle");
+  const body  = document.getElementById("sheetBody");
+  if (!sheet || !title || !body) return;
+
+  if (kind === "preferences"){
+    title.textContent = "Preferences";
+    body.innerHTML = `
+      <div class="tinyNote" style="margin:8px 0 10px 0;">
+        Defaults that shape the home experience.
+      </div>
+
+      <div class="card" style="margin-top:10px;">
+        <div class="subhead">Default Mass type</div>
+        <div class="segmented" style="margin-top:10px;">
+          <button class="segBtn" type="button" aria-selected="${massMode !== 'LOW'}"
+            onclick="setMassMode('SUNG'); openSheet('preferences');">
+            <div class="segTitle">Sung</div><div class="segSub">High Mass</div>
+          </button>
+          <button class="segBtn" type="button" aria-selected="${massMode === 'LOW'}"
+            onclick="setMassMode('LOW'); openSheet('preferences');">
+            <div class="segTitle">Low</div><div class="segSub">Spoken</div>
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  if (kind === "options"){
+    title.textContent = "Options";
+    body.innerHTML = `
+      <div class="tinyNote" style="margin:8px 0 10px 0;">
+        Turn features on/off for your preferred home screen.
+      </div>
+
+      <div class="card" style="margin-top:10px;">
+        <div class="subhead">Cinematic entrance</div>
+        <label style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+          <span>Enable animation</span>
+          <input type="checkbox" ${settings.cinematic ? "checked":""}
+            onchange="saveSettings({ cinematic: this.checked })">
+        </label>
+      </div>
+
+      <div class="card" style="margin-top:10px;">
+        <div class="subhead">Home cards</div>
+        <label style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+          <span>Saint of the day</span>
+          <input type="checkbox" ${settings.showSaintCard ? "checked":""}
+            onchange="saveSettings({ showSaintCard: this.checked })">
+        </label>
+        <label style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+          <span>Fasting reminder</span>
+          <input type="checkbox" ${settings.showFastingCard ? "checked":""}
+            onchange="saveSettings({ showFastingCard: this.checked })">
+        </label>
+      </div>
+
+      <div class="card" style="margin-top:10px;">
+        <div class="subhead">Background visibility</div>
+        <div class="tinyNote" style="margin-top:6px;">Lower dim = more of your image shows through.</div>
+        <input type="range" min="35" max="85" value="${settings.bgDim || 52}"
+          style="width:100%; margin-top:10px;"
+          oninput="saveSettings({ bgDim: Number(this.value) })">
+      </div>
+    `;
+  }
+
+ if (kind === "about"){
+  title.textContent = "About";
+  body.innerHTML = `
+    <div class="card" style="margin-top:10px;">
+      <div class="subhead">Purpose</div>
+      <div style="margin-top:10px; line-height:1.45; color: rgba(255,255,255,.88);">
+        <strong>Ad Orientem</strong> is a mobile companion for the 1962 Roman Rite (Missale Romanum, 1962).
+        It provides:
+        <ul style="margin:8px 0 0 18px; padding:0;">
+          <li>Propers (Latin/English) for the selected date</li>
+          <li>Step-by-step Ordinary for Sung and Low Mass modes</li>
+          <li>Quick module navigation</li>
+        </ul>
+      </div>
+
+      <div class="tinyNote" style="margin-top:12px;">
+        Texts are for devotional use. Always follow the rubrics and local custom.
+      </div>
+    </div>
+  `;
+}
+
+
+  sheet.classList.remove("hidden");
+  sheet.setAttribute("aria-hidden","false");
+}
+
+function closeSheet(){
+  const sheet = document.getElementById("sheet");
+  if (!sheet) return;
+  sheet.classList.add("hidden");
+  sheet.setAttribute("aria-hidden","true");
+}
+
+
+/* -----------------------------
+   ENTER MASS (cinematic)
+   IMPORTANT: ensures enterMass() exists.
+------------------------------ */
+function enterMass(){
+  const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const doCinematic = !!settings.cinematic && !prefersReduced;
+
+  const app = document.querySelector(".app") || document.body;
+
+  const start = () => {
+    // If you already have distinct enterLowMass(), call it here.
+    // Otherwise, keep using your existing enterHighMass() but set mode flags.
+    if (massMode === "LOW"){
+      // LOW MASS: force priest-follow if your renderer supports it
+      try{ followMode = "priest"; }catch(e){}
+    } else {
+      try{ followMode = "choir"; }catch(e){}
+    }
+
+    // Use your existing function that builds steps + opens player
+    if (typeof enterHighMass === "function"){
+      enterHighMass();
+    }
+
+    // Player intro animation hook
+    app.classList.add("playerIntro");
+    setTimeout(()=> app.classList.remove("playerIntro"), 650);
+  };
+
+  if (!doCinematic){
+    start();
+    return;
+  }
+
+  document.body.classList.add("entering");
+  app.classList.add("entering");
+  setTimeout(()=>{
+    document.body.classList.remove("entering");
+    app.classList.remove("entering");
+    start();
+  }, 360);
+}
+
+
+function updateHomeExtras() {
+  // Safe no-op unless you add actual home “extras” logic.
+  // Keep it defensive so missing elements don’t throw.
+  const el = document.querySelector("#homeExtras");
+  if (!el) return;
+
+  // Example placeholder content:
+  // el.textContent = "…";
+}
+
+/* Run once on load */
+applySettings();
+setTimeout(updateHomeExtras, 0);
+
+
+
+</script>
+</body>
+</html>
