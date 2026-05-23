@@ -1503,27 +1503,36 @@ function stripGospelDialogues(gospelProper) {
   let lat = normalizeLiturgicalString(gospelProper?.lat || "");
   let eng = normalizeLiturgicalString(gospelProper?.eng || "");
 
-  // Remove opening dialogue if Divinum already supplied it.
+  // Remove any opening Gospel dialogue that Divinum may have included.
+  // The app renders the dialogue itself, so the proper should contain only the Gospel text.
   lat = lat
-    .replace(/^℣\.\s*Dóminus vobíscum\.\s*℟\.\s*Et cum spíritu tuo\.\s*/i, "")
+    .replace(/^℣\.\s*Dóminus\s+vobíscum\.?\s*/i, "")
+    .replace(/^℟\.\s*Et\s+cum\s+spíritu\s+tuo\.?\s*/i, "")
     .replace(/^Sequéntia\s+sancti\s+Evangélii\s+secúndum\s+[A-ZÁÉÍÓÚÆŒa-záéíóúæœ]+\.?\s*/i, "")
-    .replace(/^℟\.\s*Glória\s+tibi,\s*Dómine\.?\s*/i, "");
+    .replace(/^Initium\s+sancti\s+Evangélii\s+secúndum\s+[A-ZÁÉÍÓÚÆŒa-záéíóúæœ]+\.?\s*/i, "")
+    .replace(/^℟\.\s*Glória\s+tibi,\s*Dómine\.?\s*/i, "")
+    .trim();
 
   eng = eng
-    .replace(/^℣\.\s*The Lord be with you\.\s*℟\.\s*And with thy spirit\.\s*/i, "")
+    .replace(/^℣\.\s*The\s+Lord\s+be\s+with\s+you\.?\s*/i, "")
+    .replace(/^℟\.\s*And\s+with\s+(thy|your)\s+spirit\.?\s*/i, "")
     .replace(/^Continuation\s+of\s+the\s+holy\s+Gospel\s+according\s+to\s+[A-Za-z]+\.?\s*/i, "")
-    .replace(/^The continuation\s+of\s+the\s+holy\s+Gospel\s+according\s+to\s+[A-Za-z]+\.?\s*/i, "")
-    .replace(/^℟\.\s*Glory\s+be\s+to\s+Thee,\s*O Lord\.?\s*/i, "")
-    .replace(/^℟\.\s*Glory\s+to\s+Thee,\s*O Lord\.?\s*/i, "");
+    .replace(/^The\s+continuation\s+of\s+the\s+holy\s+Gospel\s+according\s+to\s+[A-Za-z]+\.?\s*/i, "")
+    .replace(/^Beginning\s+of\s+the\s+holy\s+Gospel\s+according\s+to\s+[A-Za-z]+\.?\s*/i, "")
+    .replace(/^The\s+beginning\s+of\s+the\s+holy\s+Gospel\s+according\s+to\s+[A-Za-z]+\.?\s*/i, "")
+    .replace(/^℟\.\s*Glory\s+be\s+to\s+Thee,\s*O\s+Lord\.?\s*/i, "")
+    .replace(/^℟\.\s*Glory\s+to\s+Thee,\s*O\s+Lord\.?\s*/i, "")
+    .trim();
 
-  // Remove closing formula if it accidentally came in with the proper.
+  // Remove any closing Gospel formula that Divinum may have included.
   lat = lat
     .replace(/℟\.\s*Laus\s+tibi,\s*Christe\.?\s*$/i, "")
     .replace(/Per\s+evangélica\s+dicta\s+deleántur\s+nostra\s+delícta\.?\s*$/i, "")
     .trim();
 
   eng = eng
-    .replace(/℟\.\s*Praise\s+be\s+to\s+Thee,\s*O Christ\.?\s*$/i, "")
+    .replace(/℟\.\s*Praise\s+be\s+to\s+Thee,\s*O\s+Christ\.?\s*$/i, "")
+    .replace(/℟\.\s*Praise\s+to\s+Thee,\s*O\s+Christ\.?\s*$/i, "")
     .replace(/By\s+the\s+words\s+of\s+the\s+Gospel\s+may\s+our\s+sins\s+be\s+blotted\s+out\.?\s*$/i, "")
     .trim();
 
