@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1174,6 +1175,58 @@ body.entering::before{
   .app.playerIntro #screen-player{ animation:none; }
 }
 
+/* =========================
+   FOCUS MODE: LATIN DEFAULT, HOLD FOR ENGLISH
+========================= */
+
+body.focus-mode {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body.focus-mode .bilingual {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+body.focus-mode .english,
+body.focus-mode .latin {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  transition: opacity 0.18s ease, filter 0.18s ease;
+}
+
+/* Default: Latin visible */
+body.focus-mode .latin {
+  opacity: 1;
+  filter: blur(0);
+  z-index: 2;
+}
+
+/* Default: English hidden */
+body.focus-mode .english {
+  opacity: 0;
+  filter: blur(5px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Holding screen: English appears */
+body.focus-mode.revealing .english {
+  opacity: 1;
+  filter: blur(0);
+  z-index: 2;
+}
+
+/* Holding screen: Latin fades */
+body.focus-mode.revealing .latin {
+  opacity: 0;
+  filter: blur(5px);
+  z-index: 1;
+}
 
   </style>
 </head>
@@ -1411,7 +1464,19 @@ function proper(label, p, role, opts = {}){
   return `${showLabel ? title(label) : ""}${bilingual(lat, eng, role)}`;
 }
 
+function ordinaryStubHtml(stubKey, fallbackTitle = "") {
+  const s = PRAYER_STUBS?.[stubKey] || {
+    title: fallbackTitle || stubKey,
+    lat: "",
+    eng: "",
+    role: "silent"
+  };
 
+  return (
+    title(s.title || fallbackTitle || stubKey) +
+    bilingual(s.lat || "", s.eng || "", s.role || "silent")
+  );
+}
 
 function updateMassModeUI(){
   const sung = document.getElementById("segSung");
@@ -1863,6 +1928,11 @@ const FIXED = {
       "Lamb of God, who takest away the sins of the world: have mercy on us.\n" +
       "Lamb of God, who takest away the sins of the world: grant us peace."
   },
+  
+  prayersAtCommunion: {
+    lat: "Dómine Iesu Christe, qui dixísti Apóstolis tuis: Pacem relínquo vobis, pacem meam do vobis: ne respícias peccáta mea, sed fidem Ecclésiæ tuæ: eámque secúndum voluntátem tuam pacificáre et coadunáre dignéris: Qui vivis et regnas Deus per ómnia sǽcula sæculórum. Amen.\n\nDómine Iesu Christe, Fili Dei vivi, qui ex voluntáte Patris, cooperánte Spíritu Sancto, per mortem tuam mundum vivificásti: líbera me per hoc sacrosánctum Corpus et Sánguinem tuum ab ómnibus iniquitátibus meis, et univérsis malis: et fac me tuis semper inhærére mandátis, et a te numquám separári permíttas: Qui cum eódem Deo Patre et Spíritu Sancto vivis et regnas Deus in sǽcula sæculórum. Amen.\n\nPercéptio Córporis tui, Dómine Iesu Christe, quod ego indígnus súmere præsúmo, non mihi provéniat in iudícium et condemnatiónem: sed pro tua pietáte prosit mihi ad tutaméntum mentis et córporis, et ad medélam percipiéndam: Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. Amen.",
+    eng: "O Lord Jesus Christ, who didst say to Thine Apostles: Peace I leave you, My peace I give unto you: look not upon my sins, but upon the faith of Thy Church; and vouchsafe to grant her peace and unity according to Thy will: Who livest and reignest God, world without end. Amen.\n\nO Lord Jesus Christ, Son of the living God, who, by the will of the Father and the cooperation of the Holy Ghost, hast by Thy death given life to the world: deliver me by this, Thy most sacred Body and Blood, from all my iniquities, and from every evil; make me always cleave to Thy commandments, and suffer me never to be separated from Thee: Who with the same God the Father and the Holy Ghost livest and reignest God, world without end. Amen.\n\nLet not the partaking of Thy Body, O Lord Jesus Christ, which I, though unworthy, presume to receive, turn to my judgment and condemnation; but through Thy loving kindness let it be to me a safeguard and remedy for soul and body: Who livest and reignest with God the Father, in the unity of the Holy Ghost, God, world without end. Amen."
+  },
 
   iteMissaEst: {
     lat: "℣. Ite, Missa est.\n℟. Deo grátias.",
@@ -2291,6 +2361,81 @@ Let not my heart incline to the evil of engaging in deeds of wickedness.`
     eng: "Through Him ✠, and with Him ✠, and in Him ✠, is unto Thee, God the Father ✠ Almighty, in the unity of the Holy ✠ Ghost, all honor and glory.\n℣. World without end.\n℟. Amen."
   },
 
+prayersAtCommunion: {
+    lat: "Dómine Iesu Christe, qui dixísti Apóstolis tuis: Pacem relínquo vobis, pacem meam do vobis: ne respícias peccáta mea, sed fidem Ecclésiæ tuæ: eámque secúndum voluntátem tuam pacificáre et coadunáre dignéris: Qui vivis et regnas Deus per ómnia sǽcula sæculórum. Amen.\n\nDómine Iesu Christe, Fili Dei vivi, qui ex voluntáte Patris, cooperánte Spíritu Sancto, per mortem tuam mundum vivificásti: líbera me per hoc sacrosánctum Corpus et Sánguinem tuum ab ómnibus iniquitátes meis, et univérsis malis: et fac me tuis semper inhærére mandátis, et a te numquám separári permíttas: Qui cum eódem Deo Patre et Spíritu Sancto vivis et regnas Deus in sǽcula sæculórum. Amen.\n\nPercéptio Córporis tui, Dómine Iesu Christe, quod ego indígnus súmere præsúmo, non mihi provéniat in iudícium et condemnatiónem: sed pro tua pietáte prosit mihi ad tutaméntum mentis et córporis, et ad medélam percipiéndam: Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. Amen.",
+    eng: "O Lord Jesus Christ, who didst say to Thine Apostles: Peace I leave you, My peace I give unto you: look not upon my sins, but upon the faith of Thy Church; and vouchsafe to grant her peace and unity according to Thy will: Who livest and reignest God, world without end. Amen.\n\nO Lord Jesus Christ, Son of the living God, who, by the will of the Father and the cooperation of the Holy Ghost, hast by Thy death given life to the world: deliver me by this, Thy most sacred Body and Blood, from all my iniquities, and from every evil; make me always cleave to Thy commandments, and suffer me never to be separated from Thee: Who with the same God the Father and the Holy Ghost livest and reignest God, world without end. Amen.\n\nLet not the partaking of Thy Body, O Lord Jesus Christ, which I, though unworthy, presume to receive, turn to my judgment and condemnation; but through Thy loving kindness let it be to me a safeguard and remedy for soul and body: Who livest and reignest with God the Father, in the unity of the Holy Ghost, God, world without end. Amen."
+  },
+
+  priest_comm_prep_1: {
+    title: "Domine Iesu Christe, qui dixisti",
+    role: "silent",
+    lat: "",
+    eng: ""
+  },
+
+  priest_comm_prep_2: {
+    title: "Domine Iesu Christe, Fili Dei vivi",
+    role: "silent",
+    lat: "",
+    eng: ""
+  },
+
+  priest_comm_prep_3: {
+    title: "Perceptio Corporis tui",
+    role: "silent",
+    lat: "",
+    eng: ""
+  },
+
+  priest_comm_host_1: {
+    title: "Panem caelestem accipiam",
+    role: "silent",
+    lat: "",
+    eng: ""
+  },
+
+  priest_comm_host_2: {
+    title: "Domine, non sum dignus",
+    role: "silent",
+    lat: "",
+    eng: ""
+  },
+
+  priest_comm_host_3: {
+    title: "Corpus Domini nostri Iesu Christi",
+    role: "silent",
+    lat: "",
+    eng: ""
+  },
+
+  priest_comm_chalice_1: {
+    title: "Quid retribuam Domino",
+    role: "silent",
+    lat: "",
+    eng: ""
+  },
+
+  priest_comm_chalice_2: {
+    title: "Sanguis Domini nostri Iesu Christi",
+    role: "silent",
+    lat: "",
+    eng: ""
+  },
+
+  ecce_agnus_dei: {
+    title: "Ecce Agnus Dei",
+    role: "priest",
+    lat: "",
+    eng: ""
+  },
+
+  communion_faithful: {
+    title: "Communion of the Faithful",
+    role: "people",
+    lat: "",
+    eng: ""
+  },
+
 };
 
 
@@ -2377,50 +2522,204 @@ function buildLeonineStep() {
     html
   };
 }
-
 /* =========================================================
-   POSTURE BLUEPRINTS (SUNG vs LOW)
-   - SUNG: use step.posture / rubrics as you already authored.
-   - LOW: default kneel, with targeted overrides.
+   POSTURE BLUEPRINTS
+   Mass type and chapel custom are separate:
+   - massMode: "SUNG" | "LOW"
+   - postureCustom: "ICKSP_FRENCH" | "FSSP_IRELAND"
 ========================================================= */
 
-const LOW_POSTURE = {
-  // Stand at these moments in Low Mass
-  standIds: new Set([
-    "HM_010", // Asperges/Vidi aquam (if present)
-    "HM_190", // Gospel
-    "HM_620"  // Last Gospel
-  ]),
+const POSTURE_FLOW = {
+  "HM_210": ["ST", "K", "ST"],   // Credo: kneel/genuflect at Et incarnatus est
+  "HM_620": ["ST", "GEN", "ST"]  // Last Gospel: genuflect at Et Verbum caro factum est
+};
 
-  // Sit at these moments in Low Mass
-  sitIds: new Set([
-    "HM_170", // Epistle
-    "HM_180", // Gradual/Alleluia/Tract (often listened seated)
-    "HM_200"  // Homily
-  ]),
+const POSTURE_PROFILES = {
+  ICKSP_FRENCH: {
+    label: "French / ICKSP-style High Mass",
 
-  // Optional multi-stage flows (for the posture pill)
-  flows: {
-    // Credo: stand; kneel at Et incarnatus est; rise
-    "HM_210": ["ST", "K", "ST"],
+    sitIds: new Set([
+      "HM_170", // Epistle
+      "HM_180", // Gradual / Alleluia / Tract
+      "HM_200", // Homily
+      "HM_300", // Offertory antiphon
+      "HM_313", // Offertory prayers
+      "HM_316", // Incense prayers
+      "HM_341", // Lavabo
+      "HM_345", // Suscipe Sancta Trinitas
+      "HM_350", // Secret
+      "HM_351"  // Orate Fratres
+    ]),
 
-    // Last Gospel: stand; genuflect at Et Verbum caro factum est; rise
-    "HM_620": ["ST", "GEN", "ST"]
+    kneelIds: new Set([
+      "HM_370", // Sanctus
+      "HM_401", // Canon I
+      "HM_405", // Hanc igitur
+      "HM_406", // Canon II
+      "HM_408", // Consecration of Host
+      "HM_409", // Simili modo
+      "HM_410", // Consecration of Chalice
+      "HM_411", // Canon III
+      "HM_418", // Per ipsum
+      "HM_520", // Agnus Dei
+      "HM_530", // Private prayers before priest's Communion
+      "HM_532", // Priest's Communion: Host
+      "HM_534", // Priest's Communion: Chalice
+      "HM_535", // Ecce Agnus Dei
+      "HM_540", // Communion of faithful
+      "HM_550", // Communion antiphon
+      "HM_560", // Ablutions
+      "HM_610", // Blessing
+      "HM_630"  // After Mass thanksgiving
+    ]),
+
+    standIds: new Set([
+      "HM_010", // Asperges / Vidi Aquam
+      "HM_100", // Sign of Cross / beginning
+      "HM_110", // Psalm 42
+      "HM_115", // Adjutorium
+      "HM_120", // Confiteor
+      "HM_125", // Versicles and ascent
+      "HM_130", // Introit
+      "HM_140", // Kyrie
+      "HM_150", // Gloria
+      "HM_160", // Collect
+      "HM_190", // Gospel
+      "HM_210", // Credo
+      "HM_360", // Preface dialogue
+      "HM_500", // Pater Noster
+      "HM_501", // Libera nos
+      "HM_510", // Pax / Fraction / Commixture
+      "HM_570", // Postcommunion
+      "HM_600", // Dismissal
+      "HM_620"  // Last Gospel
+    ])
+  },
+
+  FSSP_IRELAND: {
+    label: "Irish / Dublin-style High Mass",
+
+    sitIds: new Set([
+      "HM_170", // Epistle
+      "HM_180", // Gradual / Alleluia / Tract
+      "HM_200", // Homily
+      "HM_300", // Offertory antiphon
+      "HM_313", // Offertory prayers
+      "HM_316", // Incense prayers
+      "HM_341", // Lavabo
+      "HM_345", // Suscipe Sancta Trinitas
+      "HM_350", // Secret
+      "HM_351"  // Orate Fratres
+    ]),
+
+    kneelIds: new Set([
+      "HM_100", // Sign of Cross / beginning
+      "HM_110", // Psalm 42
+      "HM_115", // Adjutorium
+      "HM_120", // Confiteor
+      "HM_125", // Versicles and ascent
+      "HM_160", // Collect
+      "HM_370", // Sanctus
+      "HM_401", // Canon I
+      "HM_405", // Hanc igitur
+      "HM_406", // Canon II
+      "HM_408", // Consecration of Host
+      "HM_409", // Simili modo
+      "HM_410", // Consecration of Chalice
+      "HM_411", // Canon III
+      "HM_418", // Per ipsum
+      "HM_500", // Pater Noster
+      "HM_501", // Libera nos
+      "HM_510", // Pax / Fraction / Commixture
+      "HM_520", // Agnus Dei
+      "HM_530", // Private prayers before priest's Communion
+      "HM_532", // Priest's Communion: Host
+      "HM_534", // Priest's Communion: Chalice
+      "HM_535", // Ecce Agnus Dei
+      "HM_540", // Communion of faithful
+      "HM_550", // Communion antiphon
+      "HM_560", // Ablutions
+      "HM_570", // Postcommunion
+      "HM_600", // Dismissal
+      "HM_610", // Blessing
+      "HM_630"  // After Mass thanksgiving
+    ]),
+
+    standIds: new Set([
+      "HM_010", // Asperges / Vidi Aquam
+      "HM_130", // Introit
+      "HM_140", // Kyrie
+      "HM_150", // Gloria
+      "HM_190", // Gospel
+      "HM_210", // Credo
+      "HM_360", // Preface dialogue
+      "HM_620"  // Last Gospel
+    ])
   }
 };
 
-function applyLowMassPosture(step){
+const LOW_POSTURE = {
+  standIds: new Set([
+    "HM_010",
+    "HM_190",
+    "HM_620"
+  ]),
+
+  sitIds: new Set([
+    "HM_170",
+    "HM_180",
+    "HM_200"
+  ]),
+
+  flows: POSTURE_FLOW
+};
+
+function applyPostureFromProfile(step, profileName) {
   if (!step || !step.id) return step;
 
-  // Prefer explicit flow if present
-  const flow = LOW_POSTURE.flows[step.id];
-  if (flow && flow.length){
+  const flow = POSTURE_FLOW[step.id];
+  if (flow && flow.length) {
     step.postureFlow = flow.slice();
-    step.posture = flow[0]; // base posture for fallback logic
+    step.posture = flow[0];
     return step;
   }
 
-  // Default Low Mass: kneel, with targeted sit/stand overrides
+  const profile = POSTURE_PROFILES[profileName] || POSTURE_PROFILES.ICKSP_FRENCH;
+
+  if (profile.sitIds.has(step.id)) {
+    step.posture = "S";
+    delete step.postureFlow;
+    return step;
+  }
+
+  if (profile.kneelIds.has(step.id)) {
+    step.posture = "K";
+    delete step.postureFlow;
+    return step;
+  }
+
+  if (profile.standIds.has(step.id)) {
+    step.posture = "ST";
+    delete step.postureFlow;
+    return step;
+  }
+
+  // Default for Sung Mass if not listed.
+  step.posture = "ST";
+  delete step.postureFlow;
+  return step;
+}
+
+function applyLowMassPosture(step) {
+  if (!step || !step.id) return step;
+
+  const flow = LOW_POSTURE.flows[step.id];
+  if (flow && flow.length) {
+    step.postureFlow = flow.slice();
+    step.posture = flow[0];
+    return step;
+  }
+
   if (LOW_POSTURE.standIds.has(step.id)) {
     step.posture = "ST";
     delete step.postureFlow;
@@ -2441,52 +2740,49 @@ function applyLowMassPosture(step){
 function applyMassModeToSteps(arr) {
   const input = Array.isArray(arr) ? arr : [];
 
-  // Sung: keep exactly as-is
-  if (massMode !== "LOW") return input;
+  if (massMode === "LOW") {
+    const removedIds = new Set([
+      "HM_316", // Incense Prayers
+      "HM_330"  // Incensing of the faithful
+    ]);
 
-  // Low Mass: remove incense-only items (optional but sensible)
-  const removedIds = new Set([
-    "HM_316", // Incense Prayers
-    "HM_330"  // Incensing of the faithful
-  ]);
+    const outSteps = input
+      .filter(s => s && !removedIds.has(s.id))
+      .map(s => {
+        if (!s || !s.dual) return { ...s };
 
-  const outSteps = input
-    .filter(s => s && !removedIds.has(s.id))
-    .map(s => {
-      if (!s || !s.dual) return s;
+        const a = s.dual?.A;
+        const b = s.dual?.B;
 
-      // Low Mass: pick B if it exists, else A
-      const a = s.dual?.A;
-      const b = s.dual?.B;
+        const out = { ...s };
+        out.html =
+          (b && b.html) ? b.html :
+          (a && a.html) ? a.html :
+          (out.html || "");
 
-      const out = { ...s };
-      out.html =
-        (b && b.html) ? b.html :
-        (a && a.html) ? a.html :
-        (out.html || "");
+        delete out.dual;
+        return out;
+      });
 
-      delete out.dual;
-      return out;
-    });
+    outSteps.forEach(applyLowMassPosture);
 
-  // >>> ADD THIS: apply Low Mass posture blueprint <<<
-  outSteps.forEach(applyLowMassPosture);
+    const lp = buildLeonineStep();
+    if (lp && !outSteps.some(s => s && s.id === lp.id)) {
+      const afterMassIdx = outSteps.findIndex(s => s && s.id === "HM_630");
+      const lastGospelIdx = outSteps.findIndex(s => s && s.id === "HM_620");
 
-  // Leonine step insertion (your existing code)
-  const lp = buildLeonineStep();
-  if (lp && !outSteps.some(s => s && s.id === lp.id)) {
-    const afterMassIdx = outSteps.findIndex(s => s && s.id === "HM_630");
-    const lastGospelIdx = outSteps.findIndex(s => s && s.id === "HM_620");
+      if (afterMassIdx >= 0) outSteps.splice(afterMassIdx, 0, lp);
+      else if (lastGospelIdx >= 0) outSteps.splice(lastGospelIdx + 1, 0, lp);
+      else outSteps.push(lp);
+    }
 
-    if (afterMassIdx >= 0) outSteps.splice(afterMassIdx, 0, lp);
-    else if (lastGospelIdx >= 0) outSteps.splice(lastGospelIdx + 1, 0, lp);
-    else outSteps.push(lp);
+    return outSteps;
   }
 
+  const outSteps = input.map(s => s ? { ...s } : s);
+  outSteps.forEach(s => applyPostureFromProfile(s, postureCustom));
   return outSteps;
 }
-
-
 
 async function enterHighMass() {
   if (!currentPropers) await refreshPropersAndHome();
@@ -2737,7 +3033,7 @@ push({
       name: "Listen (Choir sings Introit)",
       html: rubric("Kneel") + 
             `<p class="instruction">The Choir continues the Introit while the Priest begins the prayers at the foot of the altar.</p>`,
-      syncTo: "HM_130" // Jump to Introit text
+            syncTo: "HM_140"
     },
     B: {
       name: "Pray with Priest",
@@ -2748,6 +3044,19 @@ push({
             bilingual(FIXED.judicaAntiphonRepeat.lat, FIXED.judicaAntiphonRepeat.eng, "priest")
     }
   }
+});
+
+push({
+  id: "HM_115",
+  section: SEC.CAT_PREP,
+  title: "Adjutorium nostrum",
+  sub: "Our help is in the Name of the Lord",
+  priestLocation: "FOOT",
+  posture: "K",
+  html:
+    rubric("Kneel") +
+    title("Adjutorium nostrum") +
+    bilingual(FIXED.adjutorium.lat, FIXED.adjutorium.eng, "priest")
 });
 
 // HM_120: Confiteor
@@ -2762,7 +3071,7 @@ push({
     A: {
       name: "Listen (Choir)",
       html: rubric("Kneel") + `<p class="instruction">The Priest and servers exchange the Confiteor and Absolution.</p>`,
-      syncTo: "HM_130"
+      syncTo: "HM_140"
     },
     B: {
       name: "Pray with Priest",
@@ -2775,6 +3084,23 @@ push({
     }
   }
 });
+
+  push({
+    id: "HM_125",
+    section: SEC.CAT_PREP,
+    title: "Versicles and Ascent to the Altar",
+    sub: "After the Confiteor",
+    priestLocation: "FOOT_TO_ALTAR",
+    posture: "K",
+    html:
+      rubric("Kneel") +
+      title("Versicles after the Confiteor") +
+      bilingual(FIXED.versiclesAfterConfiteor.lat, FIXED.versiclesAfterConfiteor.eng, "priest") +
+      title("Aufer a nobis") +
+      bilingual(FIXED.auferANobis.lat, FIXED.auferANobis.eng, "silent") +
+      title("Oramus te, Domine") +
+      bilingual(FIXED.oramusTe.lat, FIXED.oramusTe.eng, "silent")
+  });
 
   push({
     id: "HM_130",
@@ -2972,7 +3298,7 @@ He was crucified also for us, suffered under Pontius Pilate, and was buried. And
     A: {
       name: "Listen (Choir)",
       html: rubric("Sit") + proper("Offertorium", p.offertory, "choir"),
-      syncTo: "HM_360"
+      syncTo: "HM_341"
     },
     B: {
       name: "Read (Missal)",
@@ -3130,28 +3456,39 @@ push(stepFromStub("HM_351", SEC.OFF, "orate_fratres_merged", {
    CANON — compact pages (silent), keep bell moments separate
 ========================================================= */
 
-// Canon I: Te igitur → Communicantes (single page)
-push(stepFromStubsCombined("HM_401", SEC.CANON, {
+// Canon I: Te igitur → Communicantes
+// Uses Divinum's parsed Communicantes when available; otherwise falls back to fixed stub.
+push({
+  id: "HM_401",
+  section: SEC.CANON,
   title: "Canon (I)",
   sub: "The Canon of the Mass is said silently by the priest",
   priestLocation: "CENTER",
   posture: "K",
-  skippable: true
-}, [
-  "te_igitur",
-  "te_igitur_for_church",
-  "memento_living",
-  "communicantes"
-]));
+  skippable: false,
+  html:
+    rubric("Kneel") +
+    canonStubBlock("te_igitur") +
+    canonStubBlock("te_igitur_for_church") +
+    canonStubBlock("memento_living") +
+    canonBlockFromProperOrStub("Communicantes", p?.communicantes, "communicantes")
+});
 
-// Hanc igitur (you already marked bells here — keep separate)
-push(stepFromStub("HM_405", SEC.CANON, "hanc_igitur", {
+// Hanc igitur
+// Uses Divinum's parsed Hanc igitur when available; otherwise falls back to fixed stub.
+push({
+  id: "HM_405",
+  section: SEC.CANON,
+  title: "Hanc igitur",
   sub: "The priest extends hands over the oblation",
   priestLocation: "CENTER",
   posture: "K",
-  skippable: true,
-  bells: 1
-}));
+  skippable: false,
+  bells: 1,
+  html:
+    rubric("Kneel") +
+    canonBlockFromProperOrStub("Hanc igitur", p?.hancIgitur, "hanc_igitur")
+});
 
 // Canon II: Quam oblationem + Qui pridie (single page)
 push(stepFromStubsCombined("HM_406", SEC.CANON, {
@@ -3266,11 +3603,11 @@ push(stepFromStub("HM_418", SEC.CANON, "per_ipsum", {
   skippable: false
 }));
 
-
-  
-  /* =========================================================
+/* =========================================================
      COMMUNION
   ========================================================= */
+  
+  // 1. Pater Noster
   push({
     id: "HM_500",
     section: SEC.COMM,
@@ -3281,47 +3618,33 @@ push(stepFromStub("HM_418", SEC.CANON, "per_ipsum", {
     html: rubric("Stand") + title("Pater noster") + bilingual(FIXED.paterNoster.lat, FIXED.paterNoster.eng, "priest")
   });
   
- push({
+  // 2. Libera nos
+  push({
     id: "HM_501",
     section: SEC.COMM,
-    title: "Only the priest recites the Pater Noster",
-    sub: "Our Father",
+    title: "Libera nos",
+    sub: "Embolism",
     priestLocation: "CENTER",
     posture: "ST",
-    html:
-      rubric("Stand") +
-      title("Pax Domini") +
-      bilingual(
-        "Líbera nos, quaesumus, Dómine, ab ómnibus malis, prætéritis, præséntibus et futúris: et intercedénte beáta et gloriósa semper Vírgine Dei Genetríce María, cum beátis Apóstolis tuis Petro et Paulo, atque Andréa, et ómnibus Sanctis, da propítius pacem in diébus nostris: ut, ope misericórdiæ tuæ adiúti, et a peccáto simus semper líberi et ab omni perturbatióne secúri. Per eúndem Dóminum nostrum Iesum Christum, Fílium tuum. Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus. <br>℣. Per omnia saecula saeculorum.<br>℟. Amen.",
-        "Deliver us, we beseech Thee, O Lord, from all evils, past, present and to come, and by the intercession of the Blessed and glorious ever Virgin Mary, Mother of God, together with Thy blessed apostles Peter and Paul, and Andrew, and all the Saints, + mercifully grant peace in our days, that through the bounteous help of Thy mercy we may be always free from sin, and safe from all disquiet. Through the same Jesus Christ, Thy Son our Lord, who is God living and reigning with Thee in the unity of the Holy Ghost. ℣. World without end. ℟. Amen.",
-        "priest"
-      )
+    html: rubric("Stand") + title("Libera nos") + bilingual(
+      "Líbera nos, quǽsumus, Dómine, ab ómnibus malis, prætéritis, præséntibus et futúris: et intercedénte beáta et gloriósa semper Vírgine Dei Genetríce María, cum beátis Apóstolis tuis Petro et Paulo, atque Andréa, et ómnibus Sanctis, da propítius pacem in diébus nostris: ut, ope misericórdiæ tuæ adiúti, et a peccáto simus semper líberi et ab omni perturbatióne secúri. Per eúndem Dóminum nostrum Iesum Christum, Fílium tuum. Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus. ℣. Per omnia saecula saeculorum. ℟. Amen.",
+      "Deliver us, we beseech Thee, O Lord, from all evils, past, present and to come, and by the intercession of the Blessed and glorious ever Virgin Mary, Mother of God, together with Thy blessed apostles Peter and Paul, and Andrew, and all the Saints, + mercifully grant peace in our days, that through the bounteous help of Thy mercy we may be always free from sin, and safe from all disquiet. Through the same Jesus Christ, Thy Son our Lord, who is God living and reigning with Thee in the unity of the Holy Ghost. ℣. World without end. ℟. Amen.",
+      "priest"
+    )
   });
 
-  // NOTE: You can later vary posture based on paxMode here if desired.
-  // For now: keep consistent and silent; DO NOT show the paxMode setting to the user.
+  // 3. Pax and Fraction
   push({
     id: "HM_510",
     section: SEC.COMM,
-    title: "Pax / Fraction / Commixture",
+    title: "Pax / Fraction",
     sub: "Breaking of the Host",
     priestLocation: "CENTER",
     posture: "ST",
-    html:
-      rubric("Stand") +
-      title("Pax Domini") +
-      bilingual(
-        "℣. Pax ✠ Dómini sit ✠ semper vobíscum.<br>℟. Et cum spíritu tuo.",
-        "℣. May the peace ✠ of the Lord be ✠ always with you.<br>℟. And with thy spirit.",
-        "priest"
-      ) +
-      bilingual(
-        "Haec commíxtio, et consecrátio Córporis et Sánguinis Dómini nostri Iesu Christi, fiat accipiéntibus nobis in vitam ætérnam. Amen.",
-        "May this mingling and consecration of the Body and Blood of our Lord Jesus Christ be for us who receive it unto life everlasting. Amen.",
-        "silent"
-      )
+    html: rubric("Stand") + title("Pax Domini") + bilingual(FIXED.paxDomini.lat + "\n" + "Haec commíxtio, et consecrátio Córporis et Sánguinis Dómini nostri Iesu Christi, fiat accipiéntibus nobis in vitam ætérnam. Amen.", FIXED.paxDomini.eng + "\n" + "May this mingling and consecration of the Body and Blood of our Lord Jesus Christ be for us who receive it unto life everlasting. Amen.", "priest")
   });
 
+  // 4. Agnus Dei
   push({
     id: "HM_520",
     section: SEC.COMM,
@@ -3330,113 +3653,122 @@ push(stepFromStub("HM_418", SEC.CANON, "per_ipsum", {
     priestLocation: "CENTER",
     posture: "K",
     dual: {
-      A: {
-        name: "Listen (Choir)",
-        html: rubric("Kneel") + title("Agnus Dei") + bilingual(FIXED.agnusCommon.lat, FIXED.agnusCommon.eng, "choir"),
-        syncTo: "HM_540"
-      },
-      B: {
-        name: "Follow the priest",
-        html: rubric("Kneel") + title("Agnus Dei") + bilingual(FIXED.agnusCommon.lat, FIXED.agnusCommon.eng, "people")
-      }
+      A: { name: "Listen (Choir)", html: rubric("Kneel") + title("Agnus Dei") + bilingual(FIXED.agnusCommon.lat, FIXED.agnusCommon.eng, "choir") },
+      B: { name: "Follow the priest", html: rubric("Kneel") + title("Agnus Dei") + bilingual(FIXED.agnusCommon.lat, FIXED.agnusCommon.eng, "people") }
     }
   });
 
+   // 5. Private prayers before the priest's Communion
   push({
     id: "HM_530",
     section: SEC.COMM,
-    title: "Prayers at Communion",
-    sub: "Silent preparation",
+    title: "Private Prayers before Priest’s Communion",
+    sub: "The priest prepares to receive Holy Communion",
     priestLocation: "CENTER",
     posture: "K",
-    skippable: true,
     html:
       rubric("Kneel") +
-      title("Preparation") +
-      bilingual("Dómine Iesu Christe… Percéptio Córporis tui…",
-               "Lord Jesus Christ… Let not the partaking of Thy Body…",
-               "silent")
+      ordinaryStubHtml("priest_comm_prep_1", "Domine Iesu Christe, qui dixisti") +
+      ordinaryStubHtml("priest_comm_prep_2", "Domine Iesu Christe, Fili Dei vivi") +
+      ordinaryStubHtml("priest_comm_prep_3", "Perceptio Corporis tui")
   });
 
-push({
-  id: "HM_535",
-  section: SEC.COMM,
-  title: "Ecce Agnus Dei",
-  sub: "Domine, non sum dignus (3×)",
-  priestLocation: "CENTER",
-  posture: "K",
-  bells: 3,
-  skippable: false,
-  html:
-    rubric("Kneel") +
-    title("Ecce Agnus Dei") +
-    bilingual(
-      "Ecce Agnus Dei, ecce qui tollit peccáta mundi.<br>" +
-      "Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea. (3×)",
-      "Behold the Lamb of God, behold Him who taketh away the sins of the world.<br>" +
-      "Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed. (3×)",
-      "priest"
-    )
-});
+  // 6. Priest's Communion: Host
+  push({
+    id: "HM_532",
+    section: SEC.COMM,
+    title: "Priest’s Communion: Host",
+    sub: "The priest receives the Sacred Host",
+    priestLocation: "CENTER",
+    posture: "K",
+    bells: 1,
+    html:
+      rubric("Kneel") +
+      ordinaryStubHtml("priest_comm_host_1", "Panem caelestem accipiam") +
+      ordinaryStubHtml("priest_comm_host_2", "Domine, non sum dignus") +
+      ordinaryStubHtml("priest_comm_host_3", "Corpus Domini nostri Iesu Christi")
+  });
 
+  // 7. Priest's Communion: Chalice
+  push({
+    id: "HM_534",
+    section: SEC.COMM,
+    title: "Priest’s Communion: Chalice",
+    sub: "The priest receives the Precious Blood",
+    priestLocation: "CENTER",
+    posture: "K",
+    html:
+      rubric("Kneel") +
+      ordinaryStubHtml("priest_comm_chalice_1", "Quid retribuam Domino") +
+      ordinaryStubHtml("priest_comm_chalice_2", "Sanguis Domini nostri Iesu Christi")
+  });
 
+  // 8. Ecce Agnus Dei
+  push({
+    id: "HM_535",
+    section: SEC.COMM,
+    title: "Ecce Agnus Dei",
+    sub: "Before the Communion of the faithful",
+    priestLocation: "CENTER",
+    posture: "K",
+    bells: 3,
+    html:
+      rubric("Kneel") +
+      ordinaryStubHtml("ecce_agnus_dei", "Ecce Agnus Dei")
+  });
+
+  // 9. Communion of the faithful
   push({
     id: "HM_540",
     section: SEC.COMM,
-    title: "Communion of the faithful",
-    sub: "At the rail",
+    title: "Communion of the Faithful",
+    sub: "If the faithful receive Holy Communion",
     priestLocation: "COMMUNION_RAIL",
     posture: "K",
-    bells: 0,
     html:
-      rubric("Kneel (stand only to approach/return)") +
-      title("Holy Communion") +
-      bilingual(
-        "Corpus Dómini nostri Iesu Christi custódiat ánimam tuam in vitam ætérnam. Amen.",
-        "May the Body of our Lord Jesus Christ preserve thy soul unto life everlasting. Amen.",
-        "priest"
-      )
+      rubric("Kneel at the altar rail or in place") +
+      ordinaryStubHtml("communion_faithful", "Communion of the Faithful")
   });
 
+  // 10. Communion Antiphon
   push({
-  id: "HM_550",
-  section: SEC.COMM,
-  title: "Communion Antiphon",
-  sub: "Proper",
-  priestLocation: "EPISTLE",
-  posture: "K",
-  dual: {
-    A: { name: "Listen (Choir)", html: rubric("Kneel") + proper("Communio", p.communion, "choir") },
-    B: { name: "Read (Missal)",   html: rubric("Kneel") + proper("Communio", p.communion, "priest") }
-  }
-});
+    id: "HM_550",
+    section: SEC.COMM,
+    title: "Communion Antiphon",
+    sub: "Proper",
+    priestLocation: "EPISTLE",
+    posture: "K",
+    dual: {
+      A: { name: "Listen (Choir)", html: rubric("Kneel") + proper("Communio", p.communion, "choir") },
+      B: { name: "Read (Missal)",   html: rubric("Kneel") + proper("Communio", p.communion, "priest") }
+    }
+  });
 
-
+  // 11. Ablutions + Thanksgiving
   push({
     id: "HM_560",
     section: SEC.COMM,
-    title: "Ablutions",
-    sub: "Thanksgiving (silent)",
+    title: "Ablutions & Thanksgiving",
+    sub: "Priest's private thanksgiving",
     priestLocation: "CENTER",
     posture: "K",
     skippable: true,
-    html:
-      rubric("Kneel") +
-      title("Thanksgiving") +
-      bilingual("Quod ore súmpsimus, Dómine, pura mente capiámus: et de munere temporáli fiat nobis remédium sempitérnum.\n\n + Corpus tuum, Dómine, quod sumpsi, et Sanguis, quem potávi, adhaereat viscéribus meis: et præsta; ut in me non remáneat scélerum mácula, quem pura et sancta refecérunt sacraménta: Qui vivis et regnas in saecula sæculórum. Amen.",
-               "Grant, O Lord, that what we have taken with our mouth, we may receive with a pure mind; and that from a temporal gift it may become for us an everlasting remedy.\n\n +              May Thy Body, O Lord, which I have received and Thy Blood which I have drunk, cleave to my inmost parts, and grant that no stain of sin remain in me; whom these pure and holy Sacraments have refreshed. Who livest and reignest world without end. Amen.",
-               "silent")
+    html: rubric("Kneel") +
+      title("Ablutions") + 
+      bilingual("Quod ore súmpsimus, Dómine, pura mente capiámus: et de munere temporáli fiat nobis remédium sempitérnum.\n\n + Corpus tuum, Dómine, quod sumpsi, et Sanguis, quem potávi, adhaereat viscéribus meis: et præsta; ut in me non remáneat scélerum mácula, quem pura et sancta refecérunt sacraménta: Qui vivis et regnas in saecula sæculórum. Amen.", "Grant, O Lord, that what we have taken with our mouth, we may receive with a pure mind; and that from a temporal gift it may become for us an everlasting remedy.\n\nMay Thy Body, O Lord, which I have received and Thy Blood which I have drunk, cleave to my inmost parts, and grant that no stain of sin remain in me; whom these pure and holy Sacraments have refreshed. Who livest and reignest world without end. Amen.", "silent")
   });
-
+  
   push({
-    id: "HM_570",
-    section: SEC.COMM,
-    title: "Postcommunion",
-    sub: "Proper",
-    priestLocation: "EPISTLE",
-    posture: "ST",
-    html: rubric("Stand") + proper("Postcommunio", p.postcommunion, "priest")
-  });
+  id: "HM_570",
+  section: SEC.COMM,
+  title: "Postcommunion",
+  sub: "Proper",
+  priestLocation: "EPISTLE",
+  posture: "ST",
+  html:
+    rubric("Stand") +
+    proper("Postcommunio", p.postcommunion, "priest")
+});
 
   /* =========================================================
      CONCLUSION
@@ -4656,20 +4988,19 @@ function formatLiturgicalText(htmlSafeTextWithBr) {
   // ---------------------------------------------------------
   // 2) Speaker markers (℣/℟) styling
   // ---------------------------------------------------------
-  out = out.replace(/(^|<br\s*\/?>)\s*(P\.|V\.|℣\.)/gi, '$1<span class="rubric-symbol">℣.</span>');
-  out = out.replace(/(^|<br\s*\/?>)\s*(S\.|R\.|M\.|℟\.)/gi, '$1<span class="rubric-symbol">℟.</span>');
+  out = out.replace(/(^|<br\s*\/?>)\s*(℣\.)/gi, '$1<span class="rubric-symbol">℣.</span>');
+out = out.replace(/(^|<br\s*\/?>)\s*(℟\.)/gi, '$1<span class="rubric-symbol">℟.</span>');
 
-  out = out.replace(/([.?!:;])\s*(P\.|V\.|℣\.)/gi, '$1<br><span class="rubric-symbol">℣.</span>');
-  out = out.replace(/([.?!:;])\s*(S\.|R\.|M\.|℟\.)/gi, '$1<br><span class="rubric-symbol">℟.</span>');
+out = out.replace(/([.?!:;])\s+(℣\.)/gi, '$1<br><span class="rubric-symbol">℣.</span>');
+out = out.replace(/([.?!:;])\s+(℟\.)/gi, '$1<br><span class="rubric-symbol">℟.</span>');
 
   // ---------------------------------------------------------
   // 3) Optional spacing before common cues
   // ---------------------------------------------------------
-  const cues = [
-    "Orémus", "Oremus", "Let us pray",
-    "In illo témpore", "In illo tempore", "At that time",
-    "Sequéntia", "Sequentia", "Continuation"
-  ];
+ const cues = [
+  "Orémus", "Oremus", "Let us pray",
+  "Sequéntia", "Sequentia", "Continuation"
+];
 
   for (const cue of cues) {
     const re = new RegExp(`([^>])\\s*(${cue})`, "gi");
@@ -4741,15 +5072,19 @@ function faIcon(kind){
 ------------------------------ */
 const SETTINGS_KEY = "ao:settings:v1";
 const DEFAULT_SETTINGS = {
-  massMode: "SUNG",           // "SUNG" | "LOW"
+  massMode: "SUNG",
+  postureCustom: "ICKSP_FRENCH", // "ICKSP_FRENCH" | "FSSP_IRELAND"
   cinematic: true,
   showSaintCard: true,
   showFastingCard: true,
-  bgDim: 52,                  // 35..85 (UI)
+  bgDim: 52,
+  focusMode: true
 };
 
 let settings = loadSettings();
 let massMode = settings.massMode || "SUNG";
+
+let postureCustom = settings.postureCustom || "ICKSP_FRENCH";
 
 function loadSettings(){
   try{
@@ -4766,17 +5101,31 @@ function saveSettings(patch){
   applySettings();
 }
 
-/* Apply (dim + visibility) */
 function applySettings(){
-  // dim: map 35..85 -> 0.35..0.85
-  const d = Math.max(35, Math.min(85, settings.bgDim || 52));
-  const dim = (d/100).toFixed(2);
-  document.documentElement.style.setProperty("--bg-dim", dim);
-  document.documentElement.style.setProperty("--bg-dim-strong", (Math.min(0.92, (+dim + 0.26))).toFixed(2));
+  // Text display mode
+  document.body.classList.toggle("focus-mode", !!settings.focusMode);
 
-  
+  if (!settings.focusMode) {
+    document.body.classList.remove("revealing");
+  }
+
+  // Keep globals synced with saved settings
+  massMode = settings.massMode || "SUNG";
+  postureCustom = settings.postureCustom || "ICKSP_FRENCH";
+
+  // Background dim
+  const d = Math.max(35, Math.min(85, settings.bgDim || 52));
+  const dim = (d / 100).toFixed(2);
+  document.documentElement.style.setProperty("--bg-dim", dim);
+  document.documentElement.style.setProperty(
+    "--bg-dim-strong",
+    (Math.min(0.92, (+dim + 0.26))).toFixed(2)
+  );
+
   updateMassModeUI();
 }
+
+
 
 /* -----------------------------
    MASS MODE UI
@@ -4784,6 +5133,16 @@ function applySettings(){
 function setMassMode(mode){
   massMode = (mode === "LOW") ? "LOW" : "SUNG";
   saveSettings({ massMode });
+}
+
+function setDisplayMode(mode){
+  const focusMode = (mode === "FOCUS");
+  saveSettings({ focusMode });
+}
+
+function setPostureCustom(custom){
+  postureCustom = (custom === "FSSP_IRELAND") ? "FSSP_IRELAND" : "ICKSP_FRENCH";
+  saveSettings({ postureCustom });
 }
 
 function updateMassModeUI(){
@@ -4814,28 +5173,72 @@ function openSheet(kind){
   if (!sheet || !title || !body) return;
 
   if (kind === "preferences"){
-    title.textContent = "Preferences";
-    body.innerHTML = `
-      <div class="tinyNote" style="margin:8px 0 10px 0;">
-        Defaults that shape the home experience.
+  title.textContent = "Preferences";
+  body.innerHTML = `
+    <div class="tinyNote" style="margin:8px 0 10px 0;">
+      Defaults that shape the home experience.
+    </div>
+
+    <div class="card" style="margin-top:10px;">
+      <div class="subhead">Default Mass type</div>
+      <div class="segmented" style="margin-top:10px;">
+        <button class="segBtn" type="button" aria-selected="${massMode !== 'LOW'}"
+          onclick="setMassMode('SUNG'); openSheet('preferences');">
+          <div class="segTitle">Sung</div>
+          <div class="segSub">High Mass</div>
+        </button>
+        
+        <div class="card" style="margin-top:10px;">
+  <div class="subhead">Text display</div>
+  <div class="tinyNote" style="margin-top:6px;">
+    Choose how Latin and English appear during Mass.
+  </div>
+
+  <div class="segmented" style="margin-top:10px;">
+    <button class="segBtn" type="button" aria-selected="${!!settings.focusMode}"
+      onclick="setDisplayMode('FOCUS'); openSheet('preferences');">
+      <div class="segTitle">Focus</div>
+      <div class="segSub">Latin only; hold for English</div>
+    </button>
+
+    <button class="segBtn" type="button" aria-selected="${!settings.focusMode}"
+      onclick="setDisplayMode('DUAL'); openSheet('preferences');">
+      <div class="segTitle">Dual</div>
+      <div class="segSub">Latin and English side by side</div>
+    </button>
+  </div>
+</div>
+
+        <button class="segBtn" type="button" aria-selected="${massMode === 'LOW'}"
+          onclick="setMassMode('LOW'); openSheet('preferences');">
+          <div class="segTitle">Low</div>
+          <div class="segSub">Spoken</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:10px;">
+      <div class="subhead">Posture custom for Sung Mass</div>
+      <div class="tinyNote" style="margin-top:6px;">
+        Use the custom of the chapel you are attending.
       </div>
 
-      <div class="card" style="margin-top:10px;">
-        <div class="subhead">Default Mass type</div>
-        <div class="segmented" style="margin-top:10px;">
-          <button class="segBtn" type="button" aria-selected="${massMode !== 'LOW'}"
-            onclick="setMassMode('SUNG'); openSheet('preferences');">
-            <div class="segTitle">Sung</div><div class="segSub">High Mass</div>
-          </button>
-          <button class="segBtn" type="button" aria-selected="${massMode === 'LOW'}"
-            onclick="setMassMode('LOW'); openSheet('preferences');">
-            <div class="segTitle">Low</div><div class="segSub">Spoken</div>
-          </button>
-        </div>
-      </div>
-    `;
-  }
+      <div class="segmented" style="margin-top:10px;">
+        <button class="segBtn" type="button" aria-selected="${postureCustom !== 'FSSP_IRELAND'}"
+          onclick="setPostureCustom('ICKSP_FRENCH'); openSheet('preferences');">
+          <div class="segTitle">French</div>
+          <div class="segSub">ICKSP / Mauritius style</div>
+        </button>
 
+        <button class="segBtn" type="button" aria-selected="${postureCustom === 'FSSP_IRELAND'}"
+          onclick="setPostureCustom('FSSP_IRELAND'); openSheet('preferences');">
+          <div class="segTitle">Irish</div>
+          <div class="segSub">Dublin / FSSP style</div>
+        </button>
+      </div>
+    </div>
+  `;
+}
   if (kind === "options"){
     title.textContent = "Options";
     body.innerHTML = `
@@ -4849,20 +5252,6 @@ function openSheet(kind){
           <span>Enable animation</span>
           <input type="checkbox" ${settings.cinematic ? "checked":""}
             onchange="saveSettings({ cinematic: this.checked })">
-        </label>
-      </div>
-
-      <div class="card" style="margin-top:10px;">
-        <div class="subhead">Home cards</div>
-        <label style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
-          <span>Saint of the day</span>
-          <input type="checkbox" ${settings.showSaintCard ? "checked":""}
-            onchange="saveSettings({ showSaintCard: this.checked })">
-        </label>
-        <label style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
-          <span>Fasting reminder</span>
-          <input type="checkbox" ${settings.showFastingCard ? "checked":""}
-            onchange="saveSettings({ showFastingCard: this.checked })">
         </label>
       </div>
 
@@ -4970,6 +5359,42 @@ function updateHomeExtras() {
 applySettings();
 setTimeout(updateHomeExtras, 0);
 
+
+/* =========================================================
+   PUSH-TO-TRANSLATE: HOLD SCREEN TO REVEAL ENGLISH
+========================================================= */
+
+function isInteractiveTarget(el) {
+  return !!(el && el.closest && el.closest(
+    "button, input, select, textarea, a, summary, details, .moduleModal, .sheet"
+  ));
+}
+
+function startReveal(e) {
+  if (!document.body.classList.contains("focus-mode")) return;
+  if (isInteractiveTarget(e.target)) return;
+
+  document.body.classList.add("revealing");
+
+  if (e.pointerType === "touch" && e.cancelable) {
+    e.preventDefault();
+  }
+}
+
+function endReveal() {
+  document.body.classList.remove("revealing");
+}
+
+document.body.addEventListener("contextmenu", (e) => {
+  if (document.body.classList.contains("focus-mode")) {
+    e.preventDefault();
+  }
+});
+
+document.body.addEventListener("pointerdown", startReveal, { passive: false });
+document.body.addEventListener("pointerup", endReveal);
+document.body.addEventListener("pointercancel", endReveal);
+document.body.addEventListener("pointerleave", endReveal);
 </script>
 </body>
 </html>
