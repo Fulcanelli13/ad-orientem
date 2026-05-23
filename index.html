@@ -1179,7 +1179,7 @@ body.entering::before{
 }
 
 /* =========================
-   FOCUS MODE: LATIN DEFAULT, HOLD FOR ENGLISH
+   FOCUS MODE: LATIN DEFAULT, HOLD PRAYER CARD FOR ENGLISH
 ========================= */
 
 body.focus-mode {
@@ -1188,10 +1188,13 @@ body.focus-mode {
   user-select: none;
 }
 
+/* Only prayer text participates in focus mode */
 body.focus-mode .bilingual {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body.focus-mode .english,
@@ -1199,36 +1202,40 @@ body.focus-mode .latin {
   grid-column: 1;
   grid-row: 1;
   position: relative;
-  transition: opacity 0.18s ease, filter 0.18s ease;
+  transition: none;
 }
 
 /* Default: Latin visible */
 body.focus-mode .latin {
   opacity: 1;
-  filter: blur(0);
   z-index: 2;
 }
 
 /* Default: English hidden */
 body.focus-mode .english {
   opacity: 0;
-  filter: blur(5px);
   z-index: 1;
   pointer-events: none;
 }
 
-/* Holding screen: English appears */
+/* Holding a prayer card: English visible */
 body.focus-mode.revealing .english {
   opacity: 1;
-  filter: blur(0);
   z-index: 2;
 }
 
-/* Holding screen: Latin fades */
+/* Holding a prayer card: Latin hidden */
 body.focus-mode.revealing .latin {
   opacity: 0;
-  filter: blur(5px);
   z-index: 1;
+}
+
+/* Prevent mobile tap pulse/highlight on the prayer card */
+body.focus-mode .prayerCard,
+body.focus-mode .bilingual,
+body.focus-mode .latin,
+body.focus-mode .english {
+  -webkit-tap-highlight-color: transparent;
 }
 
   </style>
@@ -5461,84 +5468,69 @@ applySettings();
 setTimeout(updateHomeExtras, 0);
 
 /* =========================================================
-   PUSH-TO-TRANSLATE: MOBILE-SAFE HOLD TO REVEAL ENGLISH
-   - Tap/scroll normally.
-   - Hold briefly on prayer text to reveal English.
-   - Moving finger cancels reveal, so scrolling is not blocked.
+   PUSH-TO-TRANSLATE: HOLD PRAYER TEXT TO REVEAL ENGLISH
+   Stable mobile version:
+   - no click/tap pulse
+   - no one-second timeout
+   - English stays visible while finger is held down
 ========================================================= */
 
-let revealTimer = null;
 let revealPointerId = null;
-let revealStartX = 0;
-let revealStartY = 0;
+let revealTarget = null;
 
-const REVEAL_HOLD_MS = 220;
-const REVEAL_MOVE_CANCEL_PX = 12;
-
-function isInteractiveTarget(el) {
-  return !!(el && el.closest && el.closest(
-    "button, input, select, textarea, a, summary, details, .moduleModal, .sheet, .footerNav, .topbar, .moduleDock, .rosary"
-  ));
-}
-
-function clearRevealTimer() {
-  if (revealTimer) {
-    clearTimeout(revealTimer);
-    revealTimer = null;
-  }
+function isFocusTextTarget(el) {
+  return !!(el && el.closest && el.closest(".bilingual"));
 }
 
 function startReveal(e) {
   if (!document.body.classList.contains("focus-mode")) return;
-  if (isInteractiveTarget(e.target)) return;
-
-  // Only activate from the prayer area, not random home/shell areas.
-  if (!(e.target && e.target.closest && e.target.closest(".prayerCard"))) return;
-
-  if (e.pointerType === "mouse" && e.button !== 0) return;
+  if (!isFocusTextTarget(e.target)) return;
 
   revealPointerId = e.pointerId;
-  revealStartX = e.clientX;
-  revealStartY = e.clientY;
+  revealTarget = e.currentTarget;
 
-  clearRevealTimer();
+  document.body.classList.add("revealing");
 
-  revealTimer = setTimeout(() => {
-    document.body.classList.add("revealing");
-  }, REVEAL_HOLD_MS);
-}
+  try {
+    e.currentTarget.setPointerCapture(e.pointerId);
+  } catch (_) {}
 
-function moveReveal(e) {
-  if (revealPointerId !== e.pointerId) return;
-
-  const dx = Math.abs(e.clientX - revealStartX);
-  const dy = Math.abs(e.clientY - revealStartY);
-
-  if (dx > REVEAL_MOVE_CANCEL_PX || dy > REVEAL_MOVE_CANCEL_PX) {
-    clearRevealTimer();
-    document.body.classList.remove("revealing");
+  if (e.cancelable) {
+    e.preventDefault();
   }
 }
 
 function endReveal(e) {
   if (revealPointerId !== null && e && e.pointerId !== revealPointerId) return;
 
-  clearRevealTimer();
-  revealPointerId = null;
   document.body.classList.remove("revealing");
+
+  try {
+    if (revealTarget && revealPointerId !== null) {
+      revealTarget.releasePointerCapture(revealPointerId);
+    }
+  } catch (_) {}
+
+  revealPointerId = null;
+  revealTarget = null;
+}
+
+function cancelReveal() {
+  document.body.classList.remove("revealing");
+  revealPointerId = null;
+  revealTarget = null;
 }
 
 document.body.addEventListener("contextmenu", (e) => {
-  if (document.body.classList.contains("focus-mode")) {
+  if (document.body.classList.contains("focus-mode") && isFocusTextTarget(e.target)) {
     e.preventDefault();
   }
 });
 
-document.body.addEventListener("pointerdown", startReveal);
-document.body.addEventListener("pointermove", moveReveal);
+document.body.addEventListener("pointerdown", startReveal, { passive: false });
 document.body.addEventListener("pointerup", endReveal);
-document.body.addEventListener("pointercancel", endReveal);
-document.body.addEventListener("pointerleave", endReveal);
+document.body.addEventListener("pointercancel", cancelReveal);
+document.body.addEventListener("lostpointercapture", cancelReveal);
 
 
 </script>
