@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <title>Ad Orientem | High Mass (1962)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
@@ -2785,28 +2785,84 @@ function applyMassModeToSteps(arr) {
 }
 
 async function enterHighMass() {
-  if (!currentPropers) await refreshPropersAndHome();
+  // Enter the sanctuary immediately.
+  showScreen("screen-player");
 
-  steps = applyMassModeToSteps(
-    buildHighMassSteps(currentPropers || offlinePropers, currentDate)
-  );
-
-  const feast = (currentPropers && currentPropers.name) ? currentPropers.name : "Feria";
-  const pf = document.getElementById("player-feast");
-  if (pf) {
-    const span = pf.querySelector("span");
-    if (span) span.textContent = feast;
-    else pf.textContent = feast;
-  }
-
-  const modeMain = document.querySelector(".modeTitle .main");
-  if (modeMain){
-    modeMain.textContent = (massMode === "LOW") ? "Low Mass" : "High Mass";
-  }
+  // Show an immediate loading step so the button feels responsive.
+  steps = [{
+    id: "LOADING",
+    section: SEC.BEFORE,
+    title: "Loading…",
+    sub: "Preparing Mass",
+    priestLocation: "CENTER",
+    posture: "ST",
+    bells: 0,
+    html: `<p class="instruction">Preparing the Mass text. If Divinum is slow, offline propers will be used.</p>`
+  }];
 
   idx = 0;
-  showScreen("screen-player");
   render();
+
+  try {
+    // Try to refresh propers, but do not block entrance anymore.
+    if (!currentPropers) {
+      await refreshPropersAndHome();
+    }
+
+    const activePropers = currentPropers || offlinePropers;
+
+    steps = applyMassModeToSteps(
+      buildHighMassSteps(activePropers, currentDate)
+    );
+
+    const feast = activePropers?.name || "Feria";
+
+    const pf = document.getElementById("player-feast");
+    if (pf) {
+      const span = pf.querySelector("span");
+      if (span) span.textContent = feast;
+      else pf.textContent = feast;
+    }
+
+    const modeMain = document.querySelector(".modeTitle .main");
+    if (modeMain){
+      modeMain.textContent = (massMode === "LOW") ? "Low Mass" : "High Mass";
+    }
+
+    idx = 0;
+    render();
+
+  } catch (e) {
+    console.error("[enterHighMass] Failed:", e);
+
+    const activePropers = currentPropers || offlinePropers;
+
+    try {
+      steps = applyMassModeToSteps(
+        buildHighMassSteps(activePropers, currentDate)
+      );
+
+      idx = 0;
+      render();
+
+    } catch (buildErr) {
+      console.error("[enterHighMass] Build failed:", buildErr);
+
+      steps = [{
+        id: "ERR",
+        section: SEC.BEFORE,
+        title: "Build Error",
+        sub: buildErr.message || "Unknown error",
+        priestLocation: "CENTER",
+        posture: "ST",
+        bells: 0,
+        html: `<p class="instruction">${escapeHtml(buildErr.message || "Unknown error")}</p>`
+      }];
+
+      idx = 0;
+      render();
+    }
+  }
 }
 
 function goHome() { showScreen("screen-home"); }
@@ -5359,29 +5415,71 @@ function updateHomeExtras() {
 applySettings();
 setTimeout(updateHomeExtras, 0);
 
-
 /* =========================================================
-   PUSH-TO-TRANSLATE: HOLD SCREEN TO REVEAL ENGLISH
+   PUSH-TO-TRANSLATE: MOBILE-SAFE HOLD TO REVEAL ENGLISH
+   - Tap/scroll normally.
+   - Hold briefly on prayer text to reveal English.
+   - Moving finger cancels reveal, so scrolling is not blocked.
 ========================================================= */
+
+let revealTimer = null;
+let revealPointerId = null;
+let revealStartX = 0;
+let revealStartY = 0;
+
+const REVEAL_HOLD_MS = 220;
+const REVEAL_MOVE_CANCEL_PX = 12;
 
 function isInteractiveTarget(el) {
   return !!(el && el.closest && el.closest(
-    "button, input, select, textarea, a, summary, details, .moduleModal, .sheet"
+    "button, input, select, textarea, a, summary, details, .moduleModal, .sheet, .footerNav, .topbar, .moduleDock, .rosary"
   ));
+}
+
+function clearRevealTimer() {
+  if (revealTimer) {
+    clearTimeout(revealTimer);
+    revealTimer = null;
+  }
 }
 
 function startReveal(e) {
   if (!document.body.classList.contains("focus-mode")) return;
   if (isInteractiveTarget(e.target)) return;
 
-  document.body.classList.add("revealing");
+  // Only activate from the prayer area, not random home/shell areas.
+  if (!(e.target && e.target.closest && e.target.closest(".prayerCard"))) return;
 
-  if (e.pointerType === "touch" && e.cancelable) {
-    e.preventDefault();
+  if (e.pointerType === "mouse" && e.button !== 0) return;
+
+  revealPointerId = e.pointerId;
+  revealStartX = e.clientX;
+  revealStartY = e.clientY;
+
+  clearRevealTimer();
+
+  revealTimer = setTimeout(() => {
+    document.body.classList.add("revealing");
+  }, REVEAL_HOLD_MS);
+}
+
+function moveReveal(e) {
+  if (revealPointerId !== e.pointerId) return;
+
+  const dx = Math.abs(e.clientX - revealStartX);
+  const dy = Math.abs(e.clientY - revealStartY);
+
+  if (dx > REVEAL_MOVE_CANCEL_PX || dy > REVEAL_MOVE_CANCEL_PX) {
+    clearRevealTimer();
+    document.body.classList.remove("revealing");
   }
 }
 
-function endReveal() {
+function endReveal(e) {
+  if (revealPointerId !== null && e && e.pointerId !== revealPointerId) return;
+
+  clearRevealTimer();
+  revealPointerId = null;
   document.body.classList.remove("revealing");
 }
 
@@ -5391,10 +5489,13 @@ document.body.addEventListener("contextmenu", (e) => {
   }
 });
 
-document.body.addEventListener("pointerdown", startReveal, { passive: false });
+document.body.addEventListener("pointerdown", startReveal);
+document.body.addEventListener("pointermove", moveReveal);
 document.body.addEventListener("pointerup", endReveal);
 document.body.addEventListener("pointercancel", endReveal);
 document.body.addEventListener("pointerleave", endReveal);
+
+
 </script>
 </body>
 </html>
