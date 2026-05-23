@@ -124,16 +124,19 @@ body::after{
        HOME
     ========================= */
     .home{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      align-items:center;
-      padding: calc(18px + var(--safe-top)) 18px calc(18px + var(--safe-bottom));
-      gap: 14px;
-      text-align:center;
-      overflow:hidden;
-    }
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  padding: calc(12px + var(--safe-top)) 14px calc(18px + var(--safe-bottom));
+  gap: 12px;
+  text-align:center;
+  overflow-y:auto;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling: touch;
+}
 
     .homeHeader{
       width:100%;
@@ -1477,7 +1480,40 @@ function ordinaryStubHtml(stubKey, fallbackTitle = "") {
     bilingual(s.lat || "", s.eng || "", s.role || "silent")
   );
 }
+function hasTextBlock(x) {
+  return !!(
+    (x?.lat && String(x.lat).trim()) ||
+    (x?.eng && String(x.eng).trim())
+  );
+}
 
+function canonStubBlock(stubKey) {
+  const s = PRAYER_STUBS?.[stubKey];
+
+  if (!s) {
+    console.warn("[canonStubBlock] Missing PRAYER_STUBS key:", stubKey);
+    return (
+      title(stubKey) +
+      bilingual("", "", "silent")
+    );
+  }
+
+  return (
+    title(s.title || stubKey) +
+    bilingual(s.lat || "", s.eng || "", s.role || "silent")
+  );
+}
+
+function canonBlockFromProperOrStub(labelText, properObj, stubKey) {
+  if (hasTextBlock(properObj)) {
+    return (
+      title(labelText) +
+      bilingual(properObj.lat || "", properObj.eng || "", "silent")
+    );
+  }
+
+  return canonStubBlock(stubKey);
+}
 function updateMassModeUI(){
   const sung = document.getElementById("segSung");
   const low  = document.getElementById("segLow");
