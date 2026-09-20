@@ -1,0 +1,21 @@
+/* Later layout rules had overridden the HTML hidden attribute on both languages. */
+#aoPrayerBookRoot [data-pb-latin][hidden],
+#aoPrayerBookRoot [data-pb-vern][hidden],
+#aoPrayerBookRoot .pbPrayerText > span[hidden],
+#aoPrayerBookRoot .lab-prayer-flip [hidden] { display:none !important; }
+
+/* A prose prayer is one column; only intrinsic versicle/response rows use a grid. */
+#aoPrayerBookRoot .lab-prayer-flip,
+#aoPrayerBookRoot .pbPrayerText,
+#aoPrayerBookRoot .lab-prayer-flip > [data-pb-latin]:not([hidden]),
+#aoPrayerBookRoot .lab-prayer-flip > [data-pb-vern]:not([hidden]) {
+  display:block !important; columns:auto !important; width:100% !important;
+  min-width:0 !important; box-sizing:border-box !important;
+}
+#aoPrayerBookRoot .aoPrayerDialogueLine > .aoPrayerRole { width:auto !important; }
+#aoPrayerBookRoot .aoPrayerDialogueBody { width:auto !important; }
+
+/* Keep the Mass follower's own Previous / Next / map and close controls. */
+html[data-ao-following-mass="true"] #ao-global-ribbon { display:none !important; }
+.liveScreen .swapSurface { cursor:default !important; }
+.liveScreen .liveNav button { min-height:48px; touch-action:manipulation; }
