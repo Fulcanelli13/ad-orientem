@@ -1,23 +1,45 @@
-name: Baseline integrity
+name: Baseline integrity and Pages deploy
 
 on:
   push:
     branches:
+      - main
       - migration/v43.33
     paths:
       - 'legacy/v43.33.parts/**'
       - 'tools/reassemble-v43.33.mjs'
+      - '.github/workflows/baseline-integrity.yml'
       - 'docs/CANONICAL-BASELINE.md'
   pull_request:
     paths:
       - 'legacy/v43.33.parts/**'
       - 'tools/reassemble-v43.33.mjs'
+      - '.github/workflows/baseline-integrity.yml'
       - 'docs/CANONICAL-BASELINE.md'
+
+permissions:
+  contents: write
 
 jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Reassemble and verify frozen v43.33
         run: node tools/reassemble-v43.33.mjs
+
+      - name: Publish verified v43.33 as Pages index
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          cp legacy/Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html index.html
+          if git diff --quiet -- index.html; then
+            echo "index.html already matches verified v43.33"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "deploy: publish verified v43.33 app"
+          git push origin HEAD:main
