@@ -1,0 +1,67 @@
+name: Apply emergency stable v43.33 hotfix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/apply_emergency_stable_v4333.py
+
+permissions:
+  contents: write
+
+jobs:
+  patch-production-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply guarded emergency patch
+        run: python tools/apply_emergency_stable_v4333.py
+
+      - name: Validate inline JavaScript
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const html = fs.readFileSync('index.html','utf8');
+          const re = /<script\b([^>]*)>([\s\S]*?)<\/script>/gi;
+          let m, compiled = 0, skipped = 0, failures = [];
+          while ((m = re.exec(html))) {
+            const attrs = m[1] || '';
+            const code = m[2] || '';
+            if (/\bsrc\s*=/.test(attrs) || /type\s*=\s*["'](?:application\/json|application\/ld\+json|text\/template)["']/i.test(attrs)) {
+              skipped++;
+              continue;
+            }
+            try { new Function(code); compiled++; }
+            catch (e) { failures.push({id:(attrs.match(/id=["']([^"']+)/i)||[])[1]||null,error:e.message}); }
+          }
+          console.log({compiled, skipped, failures});
+          if (failures.length) process.exit(1);
+          NODE
+
+      - name: Verify emergency invariants
+        shell: bash
+        run: |
+          grep -q 'ao-v4333-emergency-stable-js' index.html
+          grep -q 'cleanLiteralFragments();reconcileSurfaces();installSwipe();' index.html
+          grep -q 'overscroll-behavior-y:none!important' index.html
+          grep -q "let lastAt=0,lastSource='',enabled=false,installed=false;" index.html
+          grep -q 'lab-prayer-flip \[hidden\]{display:none!important}' index.html
+          git diff --check
+
+      - name: Commit production index
+        shell: bash
+        run: |
+          if git diff --quiet -- index.html; then
+            echo 'index.html already patched.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'hotfix: stabilize Mass interactions and Rosary rendering [skip ci]'
+          git push origin HEAD:main
