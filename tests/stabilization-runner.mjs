@@ -15,6 +15,7 @@ const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage({viewport:{width:1000,height:1000},hasTouch:true});
  page.on('pageerror',e=>console.error('Page error:',e.message));
+ page.on('console',m=>{if(m.text().startsWith('LAYOUT'))console.log(m.text())});
  await page.goto('http://127.0.0.1:8765/tests/stabilization-browser.html');
  await page.locator('#run').click();
  await page.waitForFunction(()=>/COMPLETE|ERROR/.test(document.querySelector('#results').textContent),{},{timeout:120000});

@@ -15,7 +15,10 @@ function snapshot(){
   record.scrollTop=pb.scrollTop;
   record.faces=[...pb.querySelectorAll('[data-pb-flip]')].filter(x=>x.dataset.face==='vernacular').map(x=>x.dataset.pbFlip);
  }else{
-  if(visible(document.getElementById('ao-v37-root')))record.domain=globalThis.AO_GLOBAL_RIBBON_V4323?.getActive?.();
+  if(visible(document.getElementById('ao-learn-root')))record.module={surface:'learn',state:globalThis.AO_UNDERSTAND_MASS?.getState?.()};
+  else if(visible(document.getElementById('ao-cate-root')))record.module={surface:'catechism',state:globalThis.AO_TRADITIONAL_CATECHISM?.getState?.()};
+  else if(visible(document.getElementById('ao-v354-root')))record.module=globalThis.AO_NAV_V362?.captureEucharisticContext?.();
+  else if(visible(document.getElementById('ao-v37-root')))record.domain=globalThis.AO_GLOBAL_RIBBON_V4323?.getActive?.();
  }
  try{sessionStorage.setItem(KEY,JSON.stringify(record))}catch{}
 }
@@ -46,7 +49,8 @@ async function install(){
     const pb=document.getElementById('aoPrayerBookRoot');
     for(const b of pb?.querySelectorAll('[data-pb-flip]')||[]){if(saved.faces?.includes(b.dataset.pbFlip)&&b.dataset.face!=='vernacular')b.click()}
     if(pb)requestAnimationFrame(()=>{pb.scrollTop=Math.max(0,Number(saved.scrollTop)||0)});
-   }else if(['pray','mass','learn','today'].includes(saved.domain))globalThis.AO_V37_SHELL?.openDomain?.(saved.domain);
+   }else if(['learn','catechism','eucharistic'].includes(saved.module?.surface))globalThis.AO_NAV_V362?.restore?.(saved.module);
+   else if(['pray','mass','learn','today'].includes(saved.domain))globalThis.AO_V37_SHELL?.openDomain?.(saved.domain);
   }
  }catch(error){console.warn('Reading position could not be restored',error)}
  restoring=false;sync();

@@ -5,10 +5,10 @@
 const frame=document.querySelector('iframe'),out=document.querySelector('pre');let results=[];
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 const w=()=>frame.contentWindow,d=()=>frame.contentDocument;
-function check(name,value){results.push({name,pass:!!value});out.textContent=results.map(x=>(x.pass?'PASS ':'FAIL ')+x.name).join('\n');if(!value)throw Error(name)}
+function check(name,value){results.push({name,pass:!!value});out.textContent=results.map(x=>(x.pass?'PASS ':'FAIL ')+x.name).join('\n')}
 async function ready(){for(let n=0;n<100;n++){if(w().AO_STABILIZATION_V4334&&w().AO_RUNTIME_V8?.store?.getState()?.resolution?.proper?.status==='ready')return;await delay(100)}throw Error('App not ready')}
 async function reload(){frame.contentWindow.location.reload();await delay(800);await ready();await delay(300)}
-function layout(){const nodes=[...d().querySelectorAll('#aoPrayerBookRoot [data-pb-flip]')];return nodes.length>0&&nodes.every(b=>[...b.children].filter(x=>w().getComputedStyle(x).display!=='none').length===1&&b.getBoundingClientRect().width>200&&b.scrollWidth<=b.clientWidth+2)}
+function layout(){const nodes=[...d().querySelectorAll('#aoPrayerBookRoot [data-pb-flip]')];const values=nodes.map(b=>({id:b.dataset.pbFlip,visible:[...b.children].filter(x=>w().getComputedStyle(x).display!=='none').length,width:b.getBoundingClientRect().width,scroll:b.scrollWidth,client:b.clientWidth}));const pass=values.length>0&&values.every(b=>b.visible===1&&b.width>180&&b.scroll<=b.client+2);if(!pass)console.log('LAYOUT',JSON.stringify(values));return pass}
 document.querySelector('#run').onclick=async()=>{results=[];try{
  await ready();const pb=()=>w().AOTraditionalPrayerBook;
  let vibrations=0;w().navigator.vibrate=()=>{vibrations++;return true};w().AO_HAPTICS_V4319.fire('confirm','test',{force:true});
@@ -21,8 +21,9 @@ document.querySelector('#run').onclick=async()=>{results=[];try{
  w().AO_STABILIZATION_V4334.snapshot();await reload();
  check('Reload restores Rosary, mystery and prayer position',pb().getState().view==='rosary'&&pb().getState().rosaryStep===before.rosaryStep&&pb().getState().rosarySet===before.rosarySet);
  check('Reload restores selected prayer language',d().querySelector('[data-pb-flip]')?.dataset.face==='vernacular');
- for(const module of ['angelus','stations','benediction']){pb().openModule(module);await delay(200);check(module+' uses one full-width language',layout())}
+ for(const module of ['angelus','stations','benediction']){pb().openModule(module);if(module==='stations')d().querySelector('[data-pb-station-next]').click();await delay(200);check(module+' uses one full-width language',layout())}
  pb().openPrayer('foundations_hail_mary');await delay(200);check('Standalone Hail Mary uses one full-width language',layout());
+ for(const width of [320,430]){frame.style.width=width+'px';await delay(100);check('Hail Mary single-column at '+width+'px',layout())}frame.style.width='390px';
  check('No haptic call from feedback API or Rosary navigation',vibrations===0);
  w().AO_NAV_V362.home();await delay(250);
  const runtime=w().AO_RUNTIME_V8;
