@@ -1,0 +1,43 @@
+<!doctype html><meta charset="utf-8"><title>Ad Orientem mobile stabilization checks</title>
+<style>body{font:16px system-ui}iframe{width:390px;height:844px;border:1px solid #777}pre{white-space:pre-wrap}button{padding:12px}</style>
+<h1>Mobile stabilization checks · 390 × 844</h1><button id="run">Run regression checks</button><pre id="results">Ready</pre><iframe id="app" src="../index.html"></iframe>
+<script>
+const frame=document.querySelector('iframe'),out=document.querySelector('pre');let results=[];
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+const w=()=>frame.contentWindow,d=()=>frame.contentDocument;
+function check(name,value){results.push({name,pass:!!value});out.textContent=results.map(x=>(x.pass?'PASS ':'FAIL ')+x.name).join('\n');if(!value)throw Error(name)}
+async function ready(){for(let n=0;n<100;n++){if(w().AO_STABILIZATION_V4334&&w().AO_RUNTIME_V8?.store?.getState()?.resolution?.proper?.status==='ready')return;await delay(100)}throw Error('App not ready')}
+async function reload(){frame.contentWindow.location.reload();await delay(800);await ready();await delay(300)}
+function layout(){const nodes=[...d().querySelectorAll('#aoPrayerBookRoot [data-pb-flip]')];return nodes.length>0&&nodes.every(b=>[...b.children].filter(x=>w().getComputedStyle(x).display!=='none').length===1&&b.getBoundingClientRect().width>200&&b.scrollWidth<=b.clientWidth+2)}
+document.querySelector('#run').onclick=async()=>{results=[];try{
+ await ready();const pb=()=>w().AOTraditionalPrayerBook;
+ let vibrations=0;w().navigator.vibrate=()=>{vibrations++;return true};w().AO_HAPTICS_V4319.fire('confirm','test',{force:true});
+ pb().openModule('rosary');await delay(250);
+ const set=d().querySelector('[data-lab-rosary-set],[data-pb-rosary-set]');check('Rosary mystery chooser available',set);set.click();await delay(250);
+ check('Rosary has one visible language and full-width prayer',layout());
+ let next=d().querySelector('[data-lab-rosary-next],[data-pb-rosary-next]');next.click();await delay(250);
+ const before=pb().getState();check('Rosary advances exactly once',before.rosaryStep===1);
+ const flip=d().querySelector('[data-pb-flip]');flip.click();check('Translation toggle still shows one language',layout());
+ w().AO_STABILIZATION_V4334.snapshot();await reload();
+ check('Reload restores Rosary, mystery and prayer position',pb().getState().view==='rosary'&&pb().getState().rosaryStep===before.rosaryStep&&pb().getState().rosarySet===before.rosarySet);
+ check('Reload restores selected prayer language',d().querySelector('[data-pb-flip]')?.dataset.face==='vernacular');
+ for(const module of ['angelus','stations','benediction']){pb().openModule(module);await delay(200);check(module+' uses one full-width language',layout())}
+ pb().openPrayer('foundations_hail_mary');await delay(200);check('Standalone Hail Mary uses one full-width language',layout());
+ check('No haptic call from feedback API or Rosary navigation',vibrations===0);
+ w().AO_NAV_V362.home();await delay(250);
+ const runtime=w().AO_RUNTIME_V8;
+ runtime.store.dispatch({type:'enter-live'});await delay(100);
+ const start=runtime.store.getState().live.stepIndex;
+ d().querySelector('[data-live-next]').click();await delay(150);
+ check('Mass Next advances exactly one step',runtime.store.getState().live.stepIndex===start+1);
+ const surface=d().querySelector('[data-live-swap-surface]');if(surface){surface.click();check('Tapping Mass text does not toggle language',!surface.classList.contains('showAlt'))}
+ check('Global navigation is hidden during Mass',w().getComputedStyle(d().querySelector('#ao-global-ribbon')).display==='none');
+ const live=d().querySelector('.liveScreen');for(const [type,x] of [['touchstart',300],['touchend',50]]){const e=new w().Event(type,{bubbles:true});Object.defineProperty(e,'touches',{value:[{clientX:x,clientY:300}]});Object.defineProperty(e,'changedTouches',{value:[{clientX:x,clientY:300}]});live.dispatchEvent(e)}
+ check('Swipe does not advance Mass',runtime.store.getState().live.stepIndex===start+1);
+ w().dispatchEvent(new w().PopStateEvent('popstate'));check('Browser back keeps current Mass',runtime.store.getState().route==='live');
+ runtime.store.dispatch({type:'live-form-session',form:'low'});runtime.store.dispatch({type:'live-follow-mode-session',mode:'missal'});
+ w().AO_STABILIZATION_V4334.snapshot();await reload();
+ const after=w().AO_RUNTIME_V8.store.getState();check('Reload restores active Mass and step',after.route==='live'&&after.live.stepIndex===start+1);check('Reload restores Mass mode',after.live.form==='low'&&after.live.followMode==='missal');
+ out.textContent+='\nCOMPLETE';
+}catch(e){out.textContent+='\nERROR '+e.message}finally{fetch('/test-results',{method:'POST',body:JSON.stringify(results)})}};
+</script>
