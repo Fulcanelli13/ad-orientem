@@ -1,0 +1,1000 @@
+    const order = [];
+    const priority = new Map();
+    let current = "__TOP__";
+    let concat = false;
+    map.set(current, []);
+    order.push(current);
+    priority.set(current, 1);
+    for (const raw of lines) {
+        const line = raw.trim();
+        if (line === "!")
+            continue;
+        const heading = sectionHeading(line);
+        if (heading) {
+            const canonical = canonicalHeading(heading.name, heading.modifier);
+            current = canonical.key;
+            concat = false;
+            if (!map.has(current)) {
+                map.set(current, []);
+                order.push(current);
+                priority.set(current, canonical.priority);
+            }
+            else if (canonical.canonical && canonical.priority > (priority.get(current) || 0)) {
+                map.set(current, []);
+                priority.set(current, canonical.priority);
+            }
+            continue;
+        }
+        if (!map.has(current)) {
+            map.set(current, []);
+            order.push(current);
+            priority.set(current, 1);
+        }
+        const body = map.get(current);
+        if (concat && body.length)
+            body[body.length - 1] += line.replace(/~$/, " ");
+        else
+            body.push(line.replace(/~$/, " "));
+        concat = line.endsWith("~");
+    }
+    for (const body of map.values()) {
+        while (body.length && !body[body.length - 1])
+            body.pop();
+        while (body.length && !body[0])
+            body.shift();
+    }
+    return { map, order };
+}
+function mergeMissing(primary, fallback) {
+    const map = new Map();
+    const order = [];
+    for (const key of fallback.order) {
+        map.set(key, [...(fallback.map.get(key) || [])]);
+        order.push(key);
+    }
+    for (const key of primary.order) {
+        if (!map.has(key))
+            order.push(key);
+        const body = primary.map.get(key) || [];
+        if (body.length)
+            map.set(key, [...body]);
+    }
+    return { map, order };
+}
+function parseReference(line, defaultSection) {
+    const value = String(line || "");
+    if (!value.startsWith("@"))
+        return null;
+    const match = value.match(/^@([^:]*)(?::([^:]*))?(?::(.*))?$/);
+    if (!match)
+        return null;
+    return { path: match[1] || "", section: match[2] || defaultSection || "", subs: match[3] || "" };
+}
+function parseSubstitutions(specification) {
+    const out = [];
+    let index = 0;
+    const text = String(specification || "");
+    while (index < text.length) {
+        while (text.slice(index, index + 2) === ":s")
+            index += 1;
+        while (text[index] === ":" || /\s/.test(text[index] || ""))
+            index += 1;
+        if (text.slice(index, index + 2) !== "s/")
+            break;
+        index += 2;
+        const part = () => {
+            let value = "", escaped = false;
+            for (; index < text.length; index += 1) {
+                const char = text[index];
+                if (escaped) {
+                    value += `\\${char}`;
+                    escaped = false;
+                    continue;
+                }
+                if (char === "\\") {
+                    escaped = true;
+                    continue;
+                }
+                if (char === "/") {
+                    index += 1;
+                    break;
+                }
+                value += char;
+            }
+            return value;
+        };
+        out.push({ from: part(), to: part() });
+    }
+    return out;
+}
+function applySubstitutions(lines, specification, diagnostic, context = "reference") {
+    let out = [...lines];
+    for (const substitution of parseSubstitutions(specification)) {
+        try {
+            const regex = new RegExp(substitution.from, "g");
+            out = out.map(line => line.replace(regex, substitution.to));
+        }
+        catch (error) {
+            diagnostic?.warnings.push(`Substitution skipped in ${context}: ${substitution.from} (${error instanceof Error ? error.message : String(error)})`);
+        }
+    }
+    return out;
+}
+function usableSourceText(text) {
+    return text != null && String(text).trim().length > 2;
+}
+function cloneParsed(parsed) {
+    const map = new Map();
+    for (const [key, value] of parsed.map)
+        map.set(key, [...value]);
+    return { map, order: [...parsed.order], source: parsed.source || null, requestedLanguage: parsed.requestedLanguage || null, translationMissing: !!parsed.translationMissing };
+}
+function structuralTranslationTemplate(parsed) {
+    // Preserve only language-neutral structure from the normalized Latin layer.
+    // Literal Latin liturgical prose is intentionally excluded. Reference lines are
+    // later resolved against the requested vernacular source; Rule metadata is safe.
+    const map = new Map(), order = [];
+    for (const key of parsed.order || []) {
+        const body = parsed.map.get(key) || [];
+        const kept = key === 'Rule' ? [...body] : body.filter(line => !!parseReference(line, key));
+        if (!kept.length) continue;
+        map.set(key, kept); order.push(key);
+    }
+    return { map, order, source: parsed.source || null, requestedLanguage: null, translationMissing: false };
+}
+// v42.3: exact vernacular text for the remaining source-verified votive gaps.
+// These strings are not generated translations. Each entry is copied from a named
+// traditional missal/prayer witness and is used only for the matching Latin formulary.
+const VOTIVE_EXTERNAL_VERIFIED_V423 = Object.freeze({
+    'Votive/Cross': Object.freeze({
+        en: Object.freeze({
+            Oratio: Object.freeze([
+                '! Outside Eastertide',
+                'O God, who didst vouchsafe to sanctify the standard of the life-giving cross by the precious blood of thy only-begotten Son; grant, we beseech thee, that those who rejoice in the honour of the same holy cross may also rejoice everywhere in thy protection. Through the same Lord.',
+                '! In Eastertide',
+                'O God, who didst will that thy Son should undergo for us the ignominy of the cross to deliver us from the power of the enemy: grant to us thy servants that we may obtain the grace of his resurrection. Through the same Lord.'
+            ]),
+            Tractus: Object.freeze([
+                'We adore thee, O Christ, and we bless thee: because by thy cross thou hast redeemed the world.',
+                'V. We adore thy cross, O Lord, we commemorate thy glorious passion: have mercy on us, thou who didst suffer for us.',
+                'V. O blessed cross, which alone wert worthy to bear the king of heaven and the Lord.'
+            ]),
+            Secreta: Object.freeze([
+                'May this oblation, we beseech thee, O Lord, cleanse us from all sins: even as on the altar of the cross it took away the sins of the whole world. Through the same Lord.'
+            ]),
+            Postcommunio: Object.freeze([
+                'Be nigh unto us, O Lord our God; and defend those by the perpetual defence of the cross whom thou makest to rejoice in its honour. Through our Lord.'
+            ])
+        }),
+        fr: Object.freeze({
+            Oratio: Object.freeze([
+                '! Extra tempus paschale',
+                "Ô Dieu, qui avez voulu rendre saint, par le précieux Sang de votre Fils Unique, l'étendard de la vivifiante Croix ; accordez-nous, nous vous en supplions, que ceux qui se réjouissent d'honorer cette même sainte Croix, puissent aussi partout se réjouir de votre protection.",
+                '$Per eundem',
+                '! Tempore paschali',
+                "Ô Dieu, qui avez voulu que votre Fils fût attaché pour nous au gibet de la Croix, afin de nous délivrer de la puissance de l'ennemi : accordez à nous, vos serviteurs, la grâce de parvenir à la gloire de la résurrection.",
+                '$Per eundem'
+            ]),
+            Tractus: Object.freeze([
+                '! Post Septuagesimam',
+                "Nous vous adorons, ô Christ. Et nous vous bénissons. Car par votre Croix, vous avez racheté le monde.",
+                "V. Nous adorons votre Croix, Seigneur, et nous honorons le souvenir de votre glorieuse passion. O vous ! qui avez souffert pour nous. Seigneur, ayez pitié de nous.",
+                "V. O Croix bénie, qui seule as été digne de porter le Roi des cieux, le Seigneur."
+            ]),
+            Secreta: Object.freeze([
+                "Que cette offrande, nous t’en supplions, Seigneur, nous purifie de toutes nos fautes, puisque sur l’autel de la croix le Christ a enlevé le péché du monde entier.",
+                '$Per eundem'
+            ]),
+            Postcommunio: Object.freeze([
+                "Soyez présent, Seigneur, notre Dieu : et ceux que vous avez rendu heureux par l’honneur de la sainte Croix, défendez-les aussi par ses secours perpétuels.",
+                '$Per Dominum'
+            ])
+        })
+    }),
+    'Votive/HolySpirit2': Object.freeze({
+        en: Object.freeze({
+            Secreta: Object.freeze([
+                'May this oblation, O Lord, wash away all stain of sin from our hearts, that they may become a worthy dwelling-place of the Holy Ghost. Through our Lord Jesus Christ, Thy Son, Who with Thee liveth and reigneth in the unity of the same Holy Ghost, God, world without end. Amen.'
+            ]),
+            Postcommunio: Object.freeze([
+                'Grant, we beseech Thee, Almighty God, that we may so please Thy Holy Spirit by our earnest entreaties, that we may by His grace both be freed from all temptations and merit to receive the forgiveness of our sins. Through Christ our Lord. Amen.'
+            ])
+        })
+    })
+});
+globalThis.AO_VOTIVE_EXTERNAL_VERIFIED_V423 = VOTIVE_EXTERNAL_VERIFIED_V423;
+
+// v17: same-language historical recovery for votive-specific vernacular gaps.
+// These recoveries never translate Latin prose. They reuse exact English/French
+// material already present in the pinned Divinum Officium corpus and apply only
+// structural/seasonal edits that are explicit in the normalized Latin votive source.
+const VOTIVE_SECTION_RECOVERY_V17 = Object.freeze({
+    'Votive/BlessedSacrament': Object.freeze({
+        Introitus: { kind: 'stripAlleluia', path: 'Tempora/Pent01-4', section: 'Introitus' },
+        Offertorium: { kind: 'stripAlleluia', path: 'Tempora/Pent01-4', section: 'Offertorium' },
+        Communio: { kind: 'stripAlleluia', path: 'Tempora/Pent01-4', section: 'Communio' },
+    }),
+    'Votive/HolySpirit': Object.freeze({
+        Oratio: { kind: 'holySpiritCollect' },
+        Graduale: { kind: 'holySpiritGradual' },
+        Tractus: { kind: 'holySpiritTract' },
+    }),
+    'Votive/HolySpirit2': Object.freeze({
+        Oratio: { kind: 'suffragiumExact', sourceSection: 'Oratio Spiritu', languages: ['en','fr'] },
+        Graduale: { kind: 'holySpiritGradual' },
+        Tractus: { kind: 'holySpiritTract' },
+        // French continues to use the pinned exact suffrage. English now uses separately
+        // verified traditional witnesses for these same Latin prayers (v42.3).
+        Secreta: { kind: 'externalVerifiedOrSuffragium', sourceSection: 'Secreta Spiritu', languages: ['en','fr'] },
+        Postcommunio: { kind: 'externalVerifiedOrSuffragium', sourceSection: 'Postcommunio Spiritu', languages: ['en','fr'] },
+    }),
+    'Votive/Apostles': Object.freeze({
+        Oratio: { kind: 'apostlesGeneric', sourceSection: 'Oratio' },
+        Tractus: { kind: 'apostlesTract' },
+        Offertorium: { kind: 'apostlesOffertory' },
+        Secreta: { kind: 'apostlesGeneric', sourceSection: 'Secreta' },
+        Communio: { kind: 'apostlesCommunion' },
+        Postcommunio: { kind: 'apostlesGeneric', sourceSection: 'Postcommunio' },
+    }),
+    'Votive/ApostlesP': Object.freeze({
+        Oratio: { kind: 'apostlesGeneric', sourceSection: 'Oratio' },
+        Graduale: { kind: 'apostlesPGradual' },
+        Offertorium: { kind: 'apostlesOffertory' },
+        Secreta: { kind: 'apostlesGeneric', sourceSection: 'Secreta' },
+        Communio: { kind: 'apostlesCommunion' },
+        Postcommunio: { kind: 'apostlesGeneric', sourceSection: 'Postcommunio' },
+    }),
+    // v18: the old Octave-Day source for Ss Peter and Paul preserves the exact
+    // three votive prayers in both English and French. The remaining literal
+    // sections of the ordinary form are likewise recovered from exact apostolic
+    // Mass sections already present in the same pinned language corpus.
+    'Votive/PeterPaul': Object.freeze({
+        Oratio: { kind: 'directSource', path: 'Sancti/07-06', section: 'Oratio' },
+        Graduale: { kind: 'directSource', path: 'Sancti/10-28', section: 'Graduale' },
+        Tractus: { kind: 'directSource', path: 'Sancti/08-08', section: 'Tractus' },
+        Offertorium: { kind: 'directSource', path: 'Sancti/07-04oct', section: 'Offertorium' },
+        Secreta: { kind: 'directSource', path: 'Sancti/07-06', section: 'Secreta' },
+        Communio: { kind: 'directSource', path: 'Sancti/02-24', section: 'Communio' },
+        Postcommunio: { kind: 'directSource', path: 'Sancti/07-06', section: 'Postcommunio' },
+    }),
+    'Votive/PeterPaulP': Object.freeze({
+        Oratio: { kind: 'directSource', path: 'Sancti/07-06', section: 'Oratio' },
+        Secreta: { kind: 'directSource', path: 'Sancti/07-06', section: 'Secreta' },
+        Postcommunio: { kind: 'directSource', path: 'Sancti/07-06', section: 'Postcommunio' },
+    }),
+    // Holy Cross: existing same-language recoveries are retained. v42.3 adds the
+    // exact English votive Collect(s), Tract, Secret and Postcommunion from the
+    // Saint John Fisher Missale. French remains fail-closed where an exact same-form
+    // traditional vernacular witness has not yet been established.
+    'Votive/Cross': Object.freeze({
+        Introitus: { kind: 'crossIntroit' },
+        Oratio: { kind: 'externalVerified', languages: ['en','fr'] },
+        Graduale: { kind: 'directSource', path: 'Sancti/09-14', section: 'Graduale' },
+        GradualeP: { kind: 'directSource', path: 'Sancti/05-03', section: 'Graduale' },
+        Tractus: { kind: 'externalVerified', languages: ['en','fr'] },
+        Evangelium: { kind: 'crossGospel' },
+        Offertorium: { kind: 'crossOffertory' },
+        Secreta: { kind: 'externalVerified', languages: ['en','fr'] },
+        Communio: { kind: 'crossCommunion' },
+        Postcommunio: { kind: 'externalVerifiedOrDirect', path: 'Sancti/09-14', sourceSection: 'Postcommunio', languages: ['en','fr'] },
+    }),
+});
+function stripSeasonalAlleluiaV17(lines, language) {
+    return lines.map(line => String(line)
+        .replace(/,\s*all[eé]luia\s*(?=[;:])/gi, language === 'fr' ? ' ' : '')
+        .replace(/,\s*all[eé]luia(?:\s*,\s*all[eé]luia)*\s*[.!]?\s*$/gi, '.')
+        .replace(/\s+all[eé]luia(?:\s*,\s*all[eé]luia)*\s*[.!]?\s*$/gi, '.'));
+}
+function stripAlleluiaAndKneelV17(line) {
+    return String(line || '')
+        .replace(/\s*all[eé]luia\.?\s*/gi, ' ')
+        .replace(/\s*\((?:kneel\.?|hic genuflectitur)\)\s*/gi, ' ')
+        .replace(/\s{2,}/g, ' ')
+        .replace(/\s+([,.;:!?])/g, '$1')
+        .trim();
+}
+
+// v16: public-domain Missa pro Sponsis corpus. Latin/English follow the fixed
+// traditional Nuptial Mass; French follows a pre-1900 French Catholic missal.
+// This is an explicit supplementary source because the pinned Missale Meum snapshot
+// defines Matrimonium but does not ship a normalized source file for it.
+const MATRIMONIUM_V16 = {
+la: `[Name]
+Missa pro Sponso et Sponsa
+
+[Rule]
+no Gloria
+no Credo
+Prefatio=Communis
+
+[Introitus]
+!Tob 7:15; 8:19
+Deus Israel conjungat vos: et ipse sit vobiscum, qui misertus est duobus unicis: et nunc, Domine, fac eos plenius benedicere te.
+!Ps 127:1
+Beati omnes qui timent Dominum: qui ambulant in viis ejus.
+&Gloria
+Deus Israel conjungat vos: et ipse sit vobiscum, qui misertus est duobus unicis: et nunc, Domine, fac eos plenius benedicere te.
+
+[Oratio]
+Exaudi nos, omnipotens et misericors Deus: ut, quod nostro ministratur officio, tua benedictione potius impleatur.
+$Per Dominum
+
+[Lectio]
+Lectio Epistolae beati Pauli Apostoli ad Ephesios.
+!Eph 5:22-33
+Fratres: Mulieres viris suis subditae sint, sicut Domino: quoniam vir caput est mulieris, sicut Christus caput est Ecclesiae: ipse salvator corporis ejus. Sed sicut Ecclesia subjecta est Christo, ita et mulieres viris suis in omnibus. Viri, diligite uxores vestras, sicut et Christus dilexit Ecclesiam, et seipsum tradidit pro ea, ut illam sanctificaret, mundans lavacro aquae in verbo vitae, ut exhiberet ipse sibi gloriosam Ecclesiam, non habentem maculam, aut rugam, aut aliquid hujusmodi, sed ut sit sancta et immaculata. Ita et viri debent diligere uxores suas ut corpora sua. Qui suam uxorem diligit, seipsum diligit. Nemo enim umquam carnem suam odio habuit: sed nutrit et fovet eam, sicut et Christus Ecclesiam: quia membra sumus corporis ejus, de carne ejus et de ossibus ejus. Propter hoc relinquet homo patrem et matrem suam, et adhaerebit uxori suae, et erunt duo in carne una. Sacramentum hoc magnum est, ego autem dico in Christo et in Ecclesia. Verumtamen et vos singuli, unusquisque uxorem suam sicut seipsum diligat: uxor autem timeat virum suum.
+
+[Graduale]
+!Ps 127:3
+Uxor tua sicut vitis abundans in lateribus domus tuae. V. Filii tui sicut novellae olivarum in circuitu mensae tuae. Alleluia, alleluia.
+!Ps 19:3
+V. Mittat vobis Dominus auxilium de sancto: et de Sion tueatur vos. Alleluia.
+
+[GradualeP]
+Alleluia, alleluia.
+!Ps 19:3
+V. Mittat vobis Dominus auxilium de sancto: et de Sion tueatur vos. Alleluia.
+!Ps 133:3
+V. Benedicat vobis Dominus ex Sion: qui fecit caelum et terram. Alleluia.
+
+[Tractus]
+!Ps 127:4-6
+Ecce sic benedicetur omnis homo, qui timet Dominum. V. Benedicat tibi Dominus ex Sion: et videas bona Jerusalem omnibus diebus vitae tuae. V. Et videas filios filiorum tuorum: pax super Israel.
+
+[Evangelium]
+Sequentia sancti Evangelii secundum Matthaeum.
+!Matt 19:3-6
+In illo tempore: Accesserunt ad Jesum Pharisaei tentantes eum, et dicentes: Si licet homini dimittere uxorem suam, quacumque ex causa? Qui respondens, ait eis: Non legistis, quia qui fecit hominem ab initio, masculum et feminam fecit eos? Et dixit: Propter hoc dimittet homo patrem et matrem, et adhaerebit uxori suae, et erunt duo in carne una. Itaque jam non sunt duo, sed una caro. Quod ergo Deus conjunxit, homo non separet.
+
+[Offertorium]
+!Ps 30:15-16
+In te speravi, Domine: dixi: Tu es Deus meus: in manibus tuis tempora mea.
+
+[Secreta]
+Suscipe, quaesumus, Domine, pro sacra connubii lege munus oblatum: et cujus largitor es operis, esto dispositor.
+$Per Dominum
+
+[Communio]
+!Ps 127:4; 127:6
+Ecce sic benedicetur omnis homo, qui timet Dominum: et videas filios filiorum tuorum: pax super Israel.
+
+[Postcommunio]
+Quaesumus, omnipotens Deus: instituta providentiae tuae pio favore comitare: ut quos legitima societate connectis, longaeva pace custodias.
+$Per Dominum
+
+[Benedictio Nuptialis 1]
+Propitiare, Domine, supplicationibus nostris: et institutis tuis, quibus propagationem humani generis ordinasti, benignus assiste: ut quod te auctore jungitur, te auxiliante servetur.
+$Per Dominum
+
+[Benedictio Nuptialis 2]
+Deus, qui potestate virtutis tuae de nihilo cuncta fecisti: qui, dispositis universitatis exordiis, homini ad imaginem Dei facto, ideo inseparabile mulieris adjutorium condidisti, ut femineo corpori de virili dares carne principium, docens quod ex uno placuisset institui numquam licere disjungi: Deus, qui tam excellenti mysterio conjugalem copulam consecrasti, ut Christi et Ecclesiae sacramentum praesignares in foedere nuptiarum: Deus, per quem mulier jungitur viro, et societas principaliter ordinata, ea benedictione donatur, quae sola nec per originalis peccati poenam, nec per diluvii est ablata sententiam: respice propitius super hanc famulam tuam, quae maritali jungenda consortio tua se expetit protectione muniri: sit in ea jugum dilectionis et pacis: fidelis et casta nubat in Christo, imitatrixque sanctarum permaneat feminarum: sit amabilis viro suo, ut Rachel: sapiens, ut Rebecca: longaeva et fidelis, ut Sara: nihil in ea ex actibus suis ille auctor praevaricationis usurpet: nexa fidei mandatisque permaneat: uni thoro juncta, contactus illicitos fugiat: muniat infirmitatem suam robore disciplinae: sit verecundia gravis, pudore venerabilis, doctrinis caelestibus erudita: sit fecunda in sobole, sit probata et innocens: et ad beatorum requiem atque ad caelestia regna perveniat: et videant ambo filios filiorum suorum usque in tertiam et quartam generationem, et ad optatam perveniant senectutem.
+Per eumdem Dominum nostrum Jesum Christum Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.
+
+[Benedictio Finalis]
+Deus Abraham, Deus Isaac, et Deus Jacob sit vobiscum: et ipse adimpleat benedictionem suam in vobis: ut videatis filios filiorum vestrorum usque ad tertiam et quartam generationem: et postea vitam aeternam habeatis sine fine: adjuvante Domino nostro Jesu Christo, qui cum Patre et Spiritu Sancto vivit et regnat Deus, per omnia saecula saeculorum. Amen.`,
+en: `[Name]
+Mass for Bridegroom and Bride
+
+[Rule]
+no Gloria
+no Credo
+Prefatio=Communis
+
+[Introitus]
+!Tob 7:15; 8:19
+May the God of Israel join you together: and may He be with you, who was merciful to two only children: and now, O Lord, make them bless Thee more fully.
+!Ps 127:1
+Blessed are all they that fear the Lord: that walk in His ways.
+&Gloria
+May the God of Israel join you together: and may He be with you, who was merciful to two only children: and now, O Lord, make them bless Thee more fully.
+
+[Oratio]
+Hear us, almighty and merciful God: that what is performed by our ministry may be abundantly fulfilled with Thy blessing.
+$Per Dominum
+
+[Lectio]
+Lesson from the Epistle of Blessed Paul the Apostle to the Ephesians.
+!Eph 5:22-33
+Brethren: Let women be subject to their husbands as to the Lord; for the husband is the head of the wife, as Christ is the head of the Church. He is the savior of His body. Therefore, as the Church is subject to Christ, so also let the wives be to their husbands in all things. Husbands, love your wives, as Christ also loved the Church, and delivered Himself up for it: that He might sanctify it, cleansing it by the laver of water in the word of life; that He might present it to Himself a glorious Church, not having spot or wrinkle, or any such thing, but that it should be holy and without blemish. So also ought men to love their wives as their own bodies. He that loveth his wife loveth himself: for no man ever hated his own flesh, but nourisheth and cherisheth it; as also Christ doth the Church: for we are members of His body, of His flesh, and of His bones. For this cause shall a man leave his father and mother, and shall cleave to his wife; and they shall be two in one flesh. This is a great Sacrament, but I speak in Christ and in the Church. Nevertheless, let every one of you in particular love his wife as himself, and let the wife fear her husband.
+
+[Graduale]
+!Ps 127:3
+Thy wife shall be as a fruitful vine on the sides of thy house. V. Thy children as olive plants round about thy table. Alleluia, alleluia.
+!Ps 19:3
+V. May the Lord send you help from the sanctuary, and defend you out of Sion. Alleluia.
+
+[GradualeP]
+Alleluia, alleluia.
+!Ps 19:3
+V. May the Lord send you help from the sanctuary, and defend you out of Sion. Alleluia.
+!Ps 133:3
+V. May the Lord out of Sion bless you: who hath made heaven and earth. Alleluia.
+
+[Tractus]
+!Ps 127:4-6
+Behold thus shall the man be blessed that feareth the Lord. V. May the Lord bless thee out of Sion; and mayest thou see the good things of Jerusalem all the days of thy life. V. And mayest thou see thy children's children: peace upon Israel.
+
+[Evangelium]
+Continuation of the holy Gospel according to St. Matthew.
+!Matt 19:3-6
+At that time: The Pharisees came to Jesus, tempting Him and saying: Is it lawful for a man to put away his wife for every cause? Who answering said to them: Have ye not read, that He who made man from the beginning, made them male and female? And He said: For this cause shall a man leave his father and mother, and shall cleave to his wife, and they two shall be in one flesh. Therefore, now they are not two but one flesh. What, therefore, God hath joined together, let no man put asunder.
+
+[Offertorium]
+!Ps 30:15-16
+In Thee, O Lord, have I hoped: I said, Thou art my God; my times are in Thy hands.
+
+[Secreta]
+Accept, we beseech Thee, O Lord, the gifts offered for the sacred law of marriage: and do Thou dispose according to Thy will, that which is instituted by Thy bounty.
+$Per Dominum
+
+[Communio]
+!Ps 127:4; 127:6
+Behold, thus shall every man be blessed that feareth the Lord; and mayest thou see thy children's children; peace upon Israel.
+
+[Postcommunio]
+We beseech Thee, almighty God, to accompany with Thy gracious favor the institution of Thy Providence, and keep in lasting peace those whom Thou dost join in lawful union.
+$Per Dominum
+
+[Benedictio Nuptialis 1]
+Be gracious, O Lord, to our humble supplications: and graciously assist this Thine institution, which Thou hast established for the increase of mankind: that what is joined together by Thine authority, may be preserved by Thine aid.
+$Per Dominum
+
+[Benedictio Nuptialis 2]
+O God, who by Thine own mighty power didst make all things out of nothing: who, having set in order the beginnings of the world, didst appoint woman to be an inseparable helpmate to man made like unto God, so that Thou didst give to woman's body its beginnings in man's flesh, thereby teaching that what it pleased Thee to form from one substance might never be lawfully separated: O God, who by so excellent a mystery hast consecrated the union of man and wife, as to foreshadow in this nuptial bond the union of Christ with His Church: O God, by whom woman is joined to man, and the partnership ordained from the beginning is endowed with such blessing that it alone was not withdrawn either by the punishment of original sin nor by the sentence of the flood: graciously look upon this Thy handmaid, who, about to be joined in wedlock, seeks Thy defence and protection. May it be to her a yoke of love and peace: faithful and chaste, may she be wedded in Christ, and let her ever be the imitator of holy women: let her be dear to her husband like Rachel, wise like Rebecca, long-lived and faithful like Sara. Let not the author of deceit work any of his evil deeds in her. May she continue clinging to the faith and to the commandments. Bound in one union, let her shun all unlawful contact. Let her protect her weakness by the strength of discipline; let her be grave in behavior, respected for modesty, well-instructed in heavenly doctrine. Let her be fruitful in offspring; be approved and innocent; and come to the repose of the blessed and the kingdom of heaven. May they both see their children's children to the third and fourth generation, and may they reach the old age which they desire.
+Through the same Lord Jesus Christ, Thy Son, who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.
+
+[Benedictio Finalis]
+May the God of Abraham, the God of Isaac, and the God of Jacob be with you: and Himself fulfill His blessing on you: that you may see your children's children even to the third and fourth generation: and thereafter possess life everlasting, by the aid of our Lord Jesus Christ. Amen.`,
+fr: `[Name]
+Messe pour un mariage
+
+[Rule]
+no Gloria
+no Credo
+Prefatio=Communis
+
+[Introitus]
+!Tob 7:15; 8:19
+Que le Dieu d'Israël vous unisse, et que lui-même soit avec vous, lui qui a eu pitié de deux enfants uniques: faites, Seigneur, qu'ils vous bénissent de plus en plus.
+!Ps 127:1
+Heureux ceux qui craignent le Seigneur et qui marchent dans ses voies.
+&Gloria
+Que le Dieu d'Israël vous unisse, et que lui-même soit avec vous, lui qui a eu pitié de deux enfants uniques: faites, Seigneur, qu'ils vous bénissent de plus en plus.
+
+[Oratio]
+Exaucez-nous, Dieu tout-puissant et miséricordieux, afin que ce qui se fait par notre ministère reçoive son accomplissement de votre bénédiction.
+$Per Dominum
+
+[Lectio]
+Leçon tirée de l'Épître de l'Apôtre saint Paul aux Éphésiens.
+!Eph 5:22-33
+Mes frères, que les femmes soient soumises à leurs maris comme au Seigneur; car le mari est le chef de la femme, comme Jésus-Christ est le chef de l'Église, qui est son corps, dont il est aussi le Sauveur. Comme donc l'Église est soumise à Jésus-Christ, les femmes doivent être soumises en tout à leurs maris. Et vous, maris, aimez vos femmes comme Jésus-Christ a aimé son Église et s'est livré lui-même à la mort pour elle, afin de la sanctifier en la purifiant dans le baptême de l'eau par la parole de vie, pour la faire paraître devant lui pleine de gloire, n'ayant ni tache, ni ride, ni rien de semblable, mais sainte et sans aucun défaut. Ainsi les maris doivent aimer leurs femmes comme leur propre corps. Celui qui aime sa femme s'aime lui-même, car nul ne hait sa propre chair; mais il la nourrit et l'entretient, comme Jésus-Christ agit envers l'Église, parce que nous sommes les membres de son corps, formés de sa chair et de ses os. C'est pourquoi l'homme abandonnera son père et sa mère, et s'attachera à sa femme, et ils seront tous deux une même chair. Ce sacrement est grand; je dis en Jésus-Christ et en l'Église. Que chacun de vous aime donc sa femme comme lui-même, et que la femme craigne et respecte son mari.
+
+[Graduale]
+!Ps 127:3
+Votre femme sera dans l'intérieur de votre maison comme une vigne fertile. V. Vos enfants seront autour de votre table comme de jeunes plantes d'oliviers. Alléluia, alléluia.
+!Ps 19:3
+V. Que le Seigneur vous envoie son secours de son sanctuaire, et qu'il veille sur vous du haut de Sion. Alléluia.
+
+[GradualeP]
+Alléluia, alléluia.
+!Ps 19:3
+V. Que le Seigneur vous envoie son secours de son sanctuaire, et qu'il veille sur vous du haut de Sion. Alléluia.
+!Ps 133:3
+V. Que le Seigneur vous bénisse du haut de Sion, lui qui a fait le ciel et la terre. Alléluia.
+
+[Tractus]
+!Ps 127:4-6
+Ainsi sera béni tout homme qui craint le Seigneur. V. Que le Seigneur répande de Sion ses bénédictions sur vous, et qu'il vous fasse voir tous les jours de votre vie la prospérité de Jérusalem. V. Et puissiez-vous voir les enfants de vos enfants et la paix dans Israël.
+
+[Evangelium]
+Suite du saint Évangile selon saint Matthieu.
+!Matt 19:3-6
+En ce temps-là, des Pharisiens vinrent à Jésus pour le tenter et lui dirent: Est-il permis à un homme de renvoyer sa femme, pour quelque cause que ce soit? Il leur répondit: N'avez-vous pas lu que celui qui a créé l'homme, créa au commencement l'homme et la femme, et qu'il dit: Pour cette raison, l'homme abandonnera son père et sa mère, s'attachera à sa femme, et ils seront tous deux une même chair? Ainsi ils ne sont plus deux, mais une seule chair. Que l'homme donc ne sépare pas ce que Dieu a uni.
+
+[Offertorium]
+!Ps 30:15-16
+J'ai espéré en vous, Seigneur; je vous ai dit: vous êtes mon Dieu; mon sort est entre vos mains.
+
+[Secreta]
+Daignez recevoir, Seigneur, les dons que nous vous offrons pour le bien sacré du mariage; et, comme vous êtes l'auteur de cette œuvre, soyez-en aussi l'arbitre.
+$Per Dominum
+
+[Communio]
+!Ps 127:4; 127:6
+Ainsi sera béni l'homme qui craint le Seigneur; puissiez-vous voir les enfants de vos enfants, et la paix dans Israël.
+
+[Postcommunio]
+Daignez, Dieu tout-puissant, accompagner des faveurs de votre bonté ce que vous avez établi par votre providence, et conserver dans une longue paix ceux que vous unissez par un lien légitime.
+$Per Dominum
+
+[Benedictio Nuptialis 1]
+Laissez-vous fléchir par nos prières, Seigneur, et accompagnez de votre grâce le sacrement que vous avez institué pour la propagation du genre humain, afin que votre assistance conserve ce qu'unit votre autorité.
+$Per Dominum
+
+[Benedictio Nuptialis 2]
+Ô Dieu, qui, par votre puissance, avez créé de rien tout l'univers; qui, dès le commencement du monde, après avoir fait l'homme à votre image, lui avez donné, pour être son aide inséparable, la femme que vous avez formée de lui-même, afin de nous apprendre qu'il n'est jamais permis de séparer ce qu'il vous a plu d'unir: ô Dieu, qui avez consacré le mariage par un mystère si précieux que l'alliance nuptiale est la figure de l'union sacrée de Jésus-Christ et de son Église; ô Dieu, par qui la femme est unie à l'homme, et qui donnez à leur union intime la seule bénédiction dont nous n'ayons été dépouillés ni par la punition du péché originel ni par la sentence du déluge, regardez d'un œil favorable votre servante qui, devant être unie à un époux, implore votre protection. Faites que son joug soit un joug d'amour et de paix; faites que, chaste et fidèle, elle se marie en Jésus-Christ, qu'elle suive toujours l'exemple des saintes femmes; qu'elle soit aimable pour son mari comme Rachel, sage comme Rebecca; qu'elle jouisse d'une longue vie et qu'elle soit fidèle comme Sara; que l'auteur du péché ne trouve rien en elle qui soit de lui; qu'elle demeure ferme dans la foi et dans l'observance de vos commandements, afin qu'uniquement attachée à son mari, elle ne souille le lit nuptial par aucun commerce illégitime; que, pour fortifier sa faiblesse, elle ait une vie toujours réglée; que sa pudeur lui mérite le respect; qu'elle s'instruise de ses devoirs dans la doctrine toute céleste de Jésus-Christ; qu'elle obtienne de vous une heureuse fécondité; que sa vie soit pure et irréprochable, et qu'elle parvienne au repos des saints dans le royaume du ciel. Faites, Seigneur, qu'ils voient tous deux les enfants de leurs enfants jusqu'à la troisième et à la quatrième génération, et qu'ils arrivent à une heureuse vieillesse.
+Par le même Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.
+
+[Benedictio Finalis]
+Que le Dieu d'Abraham, le Dieu d'Isaac et le Dieu de Jacob soit avec vous, et qu'il répande en vous sa bénédiction, afin que vous voyiez les enfants de vos enfants jusqu'à la troisième et à la quatrième génération, et que vous possédiez ensuite la vie éternelle, par la grâce de Notre-Seigneur Jésus-Christ. Ainsi soit-il.`
+};
+
+class ProperResolver {
+    fetcher;
+    parsedCache = new Map();
+    constructor(fetcher) {
+        this.fetcher = fetcher;
+    }
+    clear() { this.parsedCache.clear(); this.fetcher.clear?.(); }
+    upstreamUrls(path, language) {
+        const directory = source_config_1.LANGUAGE_DIR[language];
+        const urls = [`${source_config_1.DIVINUM_MISSA_BASE}/${directory}/${path}.txt`];
+        // v14: Missale Meum's normalized 1962 layer references a number of Mass Commons
+        // which were later moved out of Divinum Officium's live missa tree. Recover only
+        // Commune/* from the same pinned repository revision's historical Mass corpus.
+        // This is source recovery, not translation or generated text.
+        if (/^Commune\//.test(path)) {
+            const legacyDirectory = language === 'fr' ? 'French' : directory;
+            const legacyBase = source_config_1.DIVINUM_MISSA_BASE.replace('/web/www/missa', '/obsolete/missa');
+            urls.push(`${legacyBase}/${legacyDirectory}/${path}.txt`);
+        }
+        // v15: the normalized daily Requiem (Votive/Defunctorum) is source-equivalent
+        // to the historical Mass-of-the-Dead C9 corpus. Use the same pinned revision
+        // as an exact same-language recovery source; this is not generated translation.
+        if (path === 'Votive/Defunctorum') {
+            const legacyDirectory = language === 'fr' ? 'French' : directory;
+            const legacyBase = source_config_1.DIVINUM_MISSA_BASE.replace('/web/www/missa', '/obsolete/missa');
+            urls.push(`${legacyBase}/${legacyDirectory}/Commune/C9.txt`);
+        }
+        urls.push(`${source_config_1.DIVINUM_HORAS_BASE}/${directory}/${path}.txt`);
+        return urls;
+    }
+    async loadUpstreamParsed(path, language, diagnostic) {
+        const key = `up:${language}:${path}`;
+        const cached = this.parsedCache.get(key);
+        if (cached)
+            return cloneParsed(cached);
+        if (path === 'Votive/Matrimonium' && MATRIMONIUM_V16[language]) {
+            const parsed = parseSections(MATRIMONIUM_V16[language]);
+            parsed.source = `embedded:v16:MissaProSponsis:${language}`;
+            parsed.requestedLanguage = language;
+            parsed.translationMissing = false;
+            this.parsedCache.set(key, cloneParsed(parsed));
+            diagnostic?.warnings?.push(`Missa pro Sponsis loaded from the v16 sourced supplementary corpus (${language}).`);
+            return cloneParsed(parsed);
+        }
+        let text = null;
+        let source = null;
+        for (const url of this.upstreamUrls(path, language)) {
+            text = await this.fetcher.tryGet(url, diagnostic);
+            if (text != null) {
+                source = url;
+                break;
+            }
+        }
+        if (!usableSourceText(text)) {
+            if (language !== "la") {
+                diagnostic?.languageGaps?.push({ language, path, layer: "upstream", reason: "translation-source-missing" });
+                diagnostic?.warnings?.push(`Translation source missing: ${language}/${path}. Latin is retained separately and is not relabelled as ${language}.`);
+                const empty = { map: new Map(), order: [], source: null, requestedLanguage: language, translationMissing: true };
+                this.parsedCache.set(key, cloneParsed(empty));
+                return cloneParsed(empty);
+            }
+            throw new Error(`Source not found upstream: ${language}/${path}`);
+        }
+        const parsed = parseSections(text);
+        parsed.source = source;
+        if (source?.includes('/obsolete/missa/'))
+            diagnostic?.legacyCommonRecoveries?.push({ language, path, source });
+        parsed.requestedLanguage = language;
+        parsed.translationMissing = false;
+        this.parsedCache.set(key, cloneParsed(parsed));
+        return parsed;
+    }
+    async loadLocalRoot(path, language, diagnostic) {
+        const directory = source_config_1.LANGUAGE_DIR[language];
+        const url = `${source_config_1.MISSAL_BASE}/${directory}/${path}.txt`;
+        const text = await this.fetcher.tryGet(url, diagnostic);
+        const upstream = await this.loadUpstreamParsed(path, language, diagnostic);
+        if (language === 'la') {
+            if (!usableSourceText(text)) return upstream;
+            let parsed = parseSections(text);
+            if (upstream?.order?.length) parsed = mergeMissing(parsed, upstream);
+            parsed.source = url; parsed.requestedLanguage = language; parsed.translationMissing = false;
+            return parsed;
+        }
+
+        // v14: Missale Meum's normalized vernacular files may legitimately be empty or
+        // partial. In that case they inherit the normalized Latin *structure*, not Latin
+        // prose. We therefore merge only reference lines / Rule metadata from the Latin
+        // normalized file, then resolve every inherited reference in the requested language.
+        let parsed = usableSourceText(text) ? parseSections(text) : cloneParsed(upstream);
+        if (usableSourceText(text) && upstream?.order?.length) parsed = mergeMissing(parsed, upstream);
+        const latinUrl = `${source_config_1.MISSAL_BASE}/${source_config_1.LANGUAGE_DIR.la}/${path}.txt`;
+        const latinText = await this.fetcher.tryGet(latinUrl, diagnostic);
+        if (usableSourceText(latinText)) {
+            const template = structuralTranslationTemplate(parseSections(latinText));
+            if (template.order.length) {
+                parsed = mergeMissing(parsed, template);
+                diagnostic?.structuralInheritances?.push({ language, path, template: latinUrl, sections: template.order });
+            }
+        }
+        if (!usableSourceText(text))
+            diagnostic?.warnings?.push(`Local ${language} source empty for ${path}; inherited normalized Latin reference structure and resolved it only against ${language} sources.`);
+        parsed.source = usableSourceText(text) ? url : (upstream.source || null);
+        parsed.requestedLanguage = language;
+        parsed.translationMissing = !parsed.order.length;
+        return parsed;
+    }
+    async recoverVotiveSectionV17(path, section, language, diagnostic, visited, depth) {
+        if (language === 'la') return [];
+        const spec = VOTIVE_SECTION_RECOVERY_V17[path]?.[section];
+        if (!spec || (spec.languages && !spec.languages.includes(language))) return [];
+        const resolveSource = async (sourcePath, sourceSection) => {
+            const parsed = await this.loadUpstreamParsed(sourcePath, language, diagnostic);
+            const key = `v18-recovery|${language}|${sourcePath}|${sourceSection}`;
+            const next = new Set(visited || []);
+            if (next.has(key)) throw new Error(`Votive recovery cycle detected: ${key}`);
+            next.add(key);
+            return await this.resolveSection(parsed, sourceSection, sourcePath, language, 'upstream', diagnostic, next, depth + 1);
+        };
+        let out = [];
+        const externalExact = () => [...(VOTIVE_EXTERNAL_VERIFIED_V423?.[path]?.[language]?.[section] || [])];
+        if (spec.kind === 'externalVerified') {
+            out = externalExact();
+        } else if (spec.kind === 'externalVerifiedOrDirect') {
+            out = externalExact();
+            if (!out.length) out = await resolveSource(spec.path, spec.sourceSection || spec.section || section);
+        } else if (spec.kind === 'externalVerifiedOrSuffragium') {
+            out = externalExact();
+            if (!out.length) out = await resolveSource('Ordo/Suffragium', spec.sourceSection);
+        } else if (spec.kind === 'directSource') {
+            out = await resolveSource(spec.path, spec.section || section);
+        } else if (spec.kind === 'stripAlleluia') {
+            out = stripSeasonalAlleluiaV17(await resolveSource(spec.path, spec.section), language);
+        } else if (spec.kind === 'crossIntroit') {
+            out = await resolveSource('Sancti/09-14', 'Introitus');
+            const tp = language === 'fr' ? ' (T. P. Alléluia, alléluia.)' : ' (T. P. Alleluia, alleluia.)';
+            out = out.map(line => {
+                const s = String(line);
+                return /Cross of our Lord Jesus Christ|Croix de Notre-Seigneur Jésus-Christ/i.test(s) ? s.replace(/\s*$/, '') + tp : s;
+            });
+        } else if (spec.kind === 'crossGospel') {
+            out = await resolveSource('Tempora/Quad2-3', 'Evangelium');
+            out = out.map(line => String(line).replace(/^!Matt\s*20:17-28\.?/i, '!Matt 20:17-19'));
+            out = out.map(line => language === 'fr'
+                ? String(line).replace(/\s+Alors la mère des fils de Zébédée[\s\S]*$/i, '')
+                : String(line).replace(/\s+Then the mother of the sons of Zebedee[\s\S]*$/i, ''));
+        } else if (spec.kind === 'crossOffertory') {
+            out = await resolveSource('Sancti/09-14', 'Offertorium');
+            const tp = language === 'fr' ? ' (T. P. Alléluia.)' : ' (T. P. Alleluia.)';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()));
+            if (last >= 0) out[last] = String(out[last]).replace(/,\s*all[eé]luia\.\s*$/i, '').replace(/\s*$/, '') + tp;
+        } else if (spec.kind === 'crossCommunion') {
+            out = await resolveSource('Sancti/09-14', 'Communio');
+            const tp = language === 'fr' ? ' (T. P. Alléluia.)' : ' (T. P. Alleluia.)';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()));
+            if (last >= 0 && !/T\.\s*P\./i.test(String(out[last]))) out[last] = String(out[last]).replace(/\s*$/, '') + tp;
+        } else if (spec.kind === 'holySpiritCollect') {
+            out = await resolveSource('Tempora/Pasc7-0', 'Oratio');
+            out = out.map(line => language === 'fr'
+                ? String(line).replace(/,\s*aujourd'hui,\s*/i, ' ')
+                : String(line).replace(/\bon this day\s+/i, ''));
+        } else if (spec.kind === 'holySpiritGradual') {
+            const base = await resolveSource('Tempora/Pent17-0', 'Graduale');
+            let cut = base.findIndex(line => /^!Ps\s*101:2/i.test(String(line).trim()));
+            if (cut < 0) cut = Math.min(3, base.length);
+            const head = base.slice(0, cut);
+            const ember = await resolveSource('Tempora/Pasc7-5', 'Graduale');
+            let veni = [...ember].reverse().find(line => /^V\./i.test(String(line).trim())) || '';
+            if (veni && !/all[eé]luia/i.test(veni)) veni += language === 'fr' ? ' Alléluia.' : ' Alleluia.';
+            out = [...head, '! Hic genuflectitur', veni].filter(Boolean);
+        } else if (spec.kind === 'holySpiritTract') {
+            const pent = await resolveSource('Tempora/Pasc7-0', 'Graduale');
+            const pidx = pent.findIndex(line => /^!Ps\.?\s*103:30/i.test(String(line).trim()));
+            let emitte = pidx >= 0 ? pent[pidx + 1] : '';
+            emitte = stripAlleluiaAndKneelV17(emitte).replace(/^V\.\s*/i, '');
+            const ember = await resolveSource('Tempora/Pasc7-5', 'Graduale');
+            const eidx = ember.findIndex(line => /^!(?:Wis|Ps)\s*12:1/i.test(String(line).trim()));
+            let sweet = eidx >= 0 ? ember[eidx + 1] : '';
+            let veni = eidx >= 0 ? ember[eidx + 2] : ([...ember].reverse().find(line => /^V\./i.test(String(line).trim())) || '');
+            sweet = stripAlleluiaAndKneelV17(sweet);
+            if (sweet && !/^V\./i.test(sweet)) sweet = `V. ${sweet}`;
+            veni = stripAlleluiaAndKneelV17(veni);
+            if (veni && !/^V\./i.test(veni)) veni = `V. ${veni}`;
+            out = ['! Ps 103:30; Sap 12:1', emitte, sweet, '! Hic genuflectitur', veni].filter(Boolean);
+        } else if (spec.kind === 'suffragiumExact') {
+            out = await resolveSource('Ordo/Suffragium', spec.sourceSection);
+        } else if (spec.kind === 'apostlesGeneric') {
+            out = await resolveSource('Sancti/10-28', spec.sourceSection);
+            // The votive formulary is the same Simon-and-Jude prayer with the feast names omitted.
+            // Remove only the proper names; retain the pinned same-language syntax and vocabulary.
+            out = out.map(line => String(line).replace(/\s+Simon\s+(?:and|et)\s+Jude\b/gi, ''));
+        } else if (spec.kind === 'apostlesTract') {
+            out = await resolveSource('Sancti/08-08', 'Tractus');
+        } else if (spec.kind === 'apostlesOffertory') {
+            out = await resolveSource('Sancti/02-24', 'Offertorium');
+            const suffix = language === 'fr' ? ' Alléluia, alléluia.' : ' Alleluia, alleluia.';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()));
+            if (last >= 0) out[last] = String(out[last]).replace(/[.]?\s*$/, '') + suffix;
+        } else if (spec.kind === 'apostlesCommunion') {
+            out = await resolveSource('Sancti/07-04oct', 'Offertorium');
+            const suffix = language === 'fr' ? ' Alléluia, alléluia.' : ' Alleluia, alleluia.';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()));
+            if (last >= 0) out[last] = String(out[last]).replace(/[.]?\s*$/, '') + suffix;
+        } else if (spec.kind === 'apostlesPGradual') {
+            const martyrs = await resolveSource('Sancti/08-08', 'GradualeP');
+            const apostle = await resolveSource('Sancti/10-18', 'Graduale');
+            const psIdx = martyrs.findIndex(line => /!Ps\s*88:6/i.test(String(line)));
+            let psVerse = psIdx >= 0 ? martyrs[psIdx + 1] : ([...martyrs].reverse().find(line => /heavens|cieux/i.test(String(line))) || '');
+            psVerse = stripAlleluiaAndKneelV17(psVerse);
+            if (psVerse && !/^V\./i.test(psVerse)) psVerse = `V. ${psVerse}`;
+            psVerse = psVerse.replace(/[.]?\s*$/, '') + (language === 'fr' ? '. Alléluia, alléluia.' : '. Alleluia, alleluia.');
+            let chosen = [...apostle].reverse().find(line => /chosen you|choisis/i.test(String(line))) || '';
+            chosen = stripAlleluiaAndKneelV17(chosen).replace(/^!Joann?\s*15:16\.?\s*/i, '');
+            if (chosen && !/^V\./i.test(chosen)) chosen = `V. ${chosen}`;
+            out = [language === 'fr' ? 'Alléluia, alléluia.' : 'Alleluia, alleluia.', '!Ps 88:6', psVerse, '!Joann 15:16', chosen].filter(Boolean);
+        }
+        if (out.length) {
+            diagnostic?.votiveRecoveries?.push?.({ language, path, section, kind: spec.kind });
+            diagnostic?.warnings?.push?.(`v42.3 source-verified votive recovery: ${language}/${path}:${section} (${spec.kind}).`);
+        }
+        return out;
+    }
+    async resolveSection(parsed, section, path, language, layer, diagnostic, visited, depth) {
+        if (depth > 18)
+            throw new Error(`Reference recursion limit exceeded at ${path}:${section}`);
+        const body = parsed.map.get(section);
+        if (!body) {
+            const recovered = await this.recoverVotiveSectionV17(path, section, language, diagnostic, visited, depth);
+            if (recovered.length) return recovered;
+            return [];
+        }
+        const result = [];
+        for (const line of body) {
+            const reference = parseReference(line, section);
+            if (!reference) {
+                result.push(line);
+                continue;
+            }
+            const targetPath = reference.path || path;
+            const targetSection = reference.section || section;
+            const targetLayer = reference.path ? "upstream" : layer;
+            const visitKey = `${targetLayer}|${language}|${targetPath}|${targetSection}|${reference.subs}`;
+            if (visited.has(visitKey))
+                throw new Error(`Reference cycle detected: ${visitKey}`);
+            const next = new Set(visited);
+            next.add(visitKey);
+            const targetParsed = reference.path ? await this.loadUpstreamParsed(targetPath, language, diagnostic) : parsed;
+            let nested = await this.resolveSection(targetParsed, targetSection, targetPath, language, targetLayer, diagnostic, next, depth + 1);
+            nested = applySubstitutions(nested, reference.subs, diagnostic, `${targetPath}:${targetSection}`);
+            diagnostic.referencesResolved.push({ from: `${layer}:${path}:${section}`, to: `${targetLayer}:${targetPath}:${targetSection}`, substitution: reference.subs || null });
+            result.push(...nested);
+        }
+        return result;
+    }
+    async resolveSource(path, language, diagnostic) {
+        const root = await this.loadLocalRoot(path, language, diagnostic);
+        const map = new Map();
+        const order = [];
+        for (const section of root.order) {
+            if (section === "__TOP__")
+                continue;
+            const lines = await this.resolveSection(root, section, path, language, "root", diagnostic, new Set([`root|${language}|${path}|${section}|`]), 0);
+            map.set(section, lines);
+            order.push(section);
+        }
+        return { map, order };
+    }
+    async resolvePreface(key, diagnostic) {
+        const result = {};
+        for (const language of ["la", "en", "fr"]) {
+            const parsed = await this.loadUpstreamParsed("Ordo/Prefationes", language, diagnostic);
+            let lines = await this.resolveSection(parsed, key, "Ordo/Prefationes", language, "upstream", diagnostic, new Set(), 0);
+            if (!lines.length)
+                lines = await this.resolveSection(parsed, "Communis", "Ordo/Prefationes", language, "upstream", diagnostic, new Set(), 0);
+            result[language] = cleanLines(lines, language);
+        }
+        return result;
+    }
+    async resolveProper(meta, diagnostic) {
+        const sources = {};
+        for (const language of ["la", "en", "fr"])
+            sources[language] = await this.resolveSource(meta.path, language, diagnostic);
+        const rules = ruleInfo(sources);
+        const preface = await this.resolvePreface(meta.inherited ? meta.preface || "Communis" : rules.preface || meta.preface || "Communis", diagnostic);
+        return normalizeProper(meta, sources, preface, diagnostic);
+    }
+}
+exports.ProperResolver = ProperResolver;
+function cleanLines(lines, language) {
+    const out = [];
+    for (let line of lines || []) {
+        line = String(line).trim();
+        if (!line)
+            continue;
+        if (/^\(sed .*rubrica (1570|1910|1930|divino afflatu)/i.test(line))
+            continue;
+        if (line === "&Gloria") {
+            out.push(GLORIA[language]);
+            continue;
+        }
+        if (line === "$Per Dominum") {
+            out.push(PER_DOM[language]);
+            continue;
+        }
+        if (line === "$Deo gratias") {
+            out.push(language === "fr" ? "℟. Deo gratias — Rendons grâce à Dieu." : "℟. Deo gratias.");
+            continue;
+        }
+        if (/^!/.test(line)) {
+            out.push(line.slice(1).trim());
+            continue;
+        }
+        line = line.replace(/^[Vv]\.\s*/, "℣. ").replace(/^[Rr]\.\s*/, "℟. ").replace(/\+\+/g, "✠").replace(/✠|✚|✙|✛|✜|✝|✞/g, "✠").replace(/(^|\s)\+(?=($|\s|[,.\;:!?)]))/g, "$1✠");
+        out.push(line);
+    }
+    return out.join("\n").trim();
+}
+function textFrom(sources, section) {
+    return {
+        lat: cleanLines(sources.la.map.get(section) || [], "la"),
+        en: cleanLines(sources.en.map.get(section) || [], "en"),
+        fr: cleanLines(sources.fr.map.get(section) || [], "fr"),
+    };
+}
+function firstExisting(sources, ids) {
+    return ids.find(id => sources.la.map.has(id) || sources.en.map.has(id) || sources.fr.map.has(id)) || null;
+}
+function numbered(sources, base, includeBase = false) {
+    const ids = new Set();
+    for (const language of ["la", "en", "fr"]) {
+        for (const id of sources[language].order) {
+            if ((includeBase && id === base) || new RegExp(`^${base}\\d+$`).test(id))
+                ids.add(id);
+        }
+    }
+    if (includeBase && (sources.la.map.has(base) || sources.en.map.has(base) || sources.fr.map.has(base)))
+        ids.add(base);
+    return [...ids].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).map(id => textFrom(sources, id)).filter(value => value.lat || value.en || value.fr);
+}
+function ruleInfo(sources) {
+    const text = (sources.la.map.get("Rule") || []).join("\n");
+    const match = text.match(/Prefatio=([^\s;]+)/i);
+    return { raw: text, gloria: /^Gloria$/m.test(text), credo: /^Credo$/m.test(text), preface: match ? match[1] : "Communis" };
+}
+function normalizeProper(meta, sources, preface, diagnostic) {
+    const rules = ruleInfo(sources);
+    const normal = new Set(["Officium", "Rank", "Rule", "Introitus", "Oratio", "Lectio", "Graduale", "GradualeP", "Tractus", "Sequentia", "Evangelium", "Offertorium", "Secreta", "Communio", "Postcommunio"]);
+    const preparatoryLessons = [];
+    for (let n = 1; n <= 12; n += 1) {
+        const lessonId = `LectioL${n}`;
+        if (!(sources.la.map.has(lessonId) || sources.en.map.has(lessonId) || sources.fr.map.has(lessonId)))
+            continue;
+        const gradualId = firstExisting(sources, [`GradualeL${n}`, `TractusL${n}`, `AlleluiaL${n}`]);
+        const collectId = firstExisting(sources, [`OratioL${n}`]);
+        preparatoryLessons.push({ id: `preparatory-${n}`, lesson: textFrom(sources, lessonId), gradual: gradualId ? textFrom(sources, gradualId) : {}, collect: collectId ? textFrom(sources, collectId) : {} });
+        normal.add(lessonId);
+        if (gradualId)
+            normal.add(gradualId);
+        if (collectId)
+            normal.add(collectId);
+    }
+    const extraIds = [];
+    for (const id of [...sources.la.order, ...sources.en.order, ...sources.fr.order]) {
+        if (id === "__TOP__" || normal.has(id) || /^LectioL\d+$/.test(id) || /^GradualeL\d+$/.test(id) || /^OratioL\d+$/.test(id))
+            continue;
+        if (!extraIds.includes(id))
+            extraIds.push(id);
+    }
+    const specialSections = extraIds.map(id => ({ id, text: textFrom(sources, id) })).filter(value => value.text.lat || value.text.en || value.text.fr);
+    const gradualId = firstExisting(sources, ["Graduale", "GradualeP", "Tractus"]);
+    const proper = {
+        name: meta.name,
+        nameFr: meta.nameFr || meta.name,
+        rank: meta.rank,
+        color: meta.color,
+        properId: meta.properId,
+        sourcePath: meta.path,
+        riteProfile: meta.profile,
+        introit: textFrom(sources, "Introitus"),
+        collects: numbered(sources, "Oratio", true),
+        epistle: textFrom(sources, "Lectio"),
+        gradual: gradualId ? textFrom(sources, gradualId) : {},
+        preGospelChants: gradualId ? [{ kind: gradualId.toLowerCase(), text: textFrom(sources, gradualId) }] : [],
+        sequence: textFrom(sources, "Sequentia"),
+        gospel: textFrom(sources, "Evangelium"),
+        offertory: textFrom(sources, "Offertorium"),
+        secrets: numbered(sources, "Secreta"),
+        preface,
+        communion: textFrom(sources, "Communio"),
+        postcommunions: numbered(sources, "Postcommunio"),
+        preparatoryLessons,
+        specialSections,
+        showGloria: meta.gloria,
+        showCredo: meta.credo,
+        sourceRules: rules.raw,
+        sourceRevisions: source_config_1.SOURCE_REVISIONS,
+        hasGloria: meta.gloria,
+        hasCredo: meta.credo,
+    };
+    proper.collect = proper.collects[0] || {};
+    proper.secret = proper.secrets[0] || {};
+    proper.postcommunion = proper.postcommunions[0] || {};
+    const expected = [];
+    const pushExpected = (label, value) => { if (value?.lat) expected.push([label, value]); };
+    pushExpected("Introit", proper.introit);
+    proper.collects.forEach((v, i) => pushExpected(`Collect ${i + 1}`, v));
+    pushExpected("Epistle / Lesson", proper.epistle);
+    pushExpected("Gradual / Tract / Alleluia", proper.gradual);
+    pushExpected("Sequence", proper.sequence);
+    pushExpected("Gospel", proper.gospel);
+    pushExpected("Offertory", proper.offertory);
+    proper.secrets.forEach((v, i) => pushExpected(`Secret ${i + 1}`, v));
+    pushExpected("Preface", proper.preface);
+    pushExpected("Communion", proper.communion);
+    proper.postcommunions.forEach((v, i) => pushExpected(`Postcommunion ${i + 1}`, v));
+    proper.preparatoryLessons.forEach((row, i) => { pushExpected(`Preparatory lesson ${i + 1}`, row.lesson); pushExpected(`Preparatory chant ${i + 1}`, row.gradual); pushExpected(`Preparatory collect ${i + 1}`, row.collect); });
+    proper.languageCoverage = {};
+    for (const language of ["en", "fr"]) {
+        const missing = expected.filter(([, value]) => !String(value?.[language] || "").trim()).map(([label]) => label);
+        proper.languageCoverage[language] = { expected: expected.length, available: expected.length - missing.length, missing, complete: missing.length === 0 };
+    }
+    diagnostic.warnings.push(...(rules.gloria !== meta.gloria ? [`Gloria metadata (${meta.gloria}) differs from source Rule (${rules.gloria}).`] : []));
+    diagnostic.warnings.push(...(rules.credo !== meta.credo ? [`Credo metadata (${meta.credo}) differs from source Rule (${rules.credo}).`] : []));
+    return proper;
+}
+
+},9:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MapTextFetcher = exports.MemoryTextFetcher = void 0;
+exports.createDiagnostic = createDiagnostic;
+class MemoryTextFetcher {
+    fetchImpl;
+    timeoutMs;
+    memory = new Map();
+    constructor(fetchImpl, timeoutMs = 12000) {
+        this.fetchImpl = fetchImpl;
+        this.timeoutMs = timeoutMs;
+    }
+    async get(url, diagnostic) {
+        const cached = this.memory.get(url);
+        if (cached !== undefined) {
+            diagnostic?.cacheHits.push({ url, layer: "memory" });
+            return cached;
+        }
+        diagnostic?.requestedFiles.push(url);
+        const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error(`Source request timed out · ${url}`)), this.timeoutMs));
+        const request = this.fetchImpl(url, { cache: "no-cache", redirect: "follow" }).then(async (response) => {
+            if (!response.ok) {
+                const error = new Error(`HTTP ${response.status} · ${url}`);
+                error.status = response.status;
+                throw error;
+            }
+            return response.text();
+        });
+        const text = await Promise.race([request, timeout]);
+        this.memory.set(url, text);
+        return text;
+    }
+    async tryGet(url, diagnostic) {
+        try {
+            return await this.get(url, diagnostic);
+        }
+        catch (error) {
+            if (error.status === 404)
+                return null;
+            throw error;
+        }
+    }
+    clear() { this.memory.clear(); }
+}
+exports.MemoryTextFetcher = MemoryTextFetcher;
+class MapTextFetcher {
+    files;
+    constructor(files) {
+        this.files = files;
+    }
+    read(url) {
