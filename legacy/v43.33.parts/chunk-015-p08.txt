@@ -997,7 +997,8 @@ function inspect(){
   allSouls2:effectiveRow('Sancti/11-02m2')?.primaryArtId==='AO067',
   allSouls3:effectiveRow('Sancti/11-02m3')?.primaryArtId==='AO067',
   christmasDawn:effectiveRow('Sancti/12-25m2')?.primaryArtId==='AO135',
-  christmasDay:effectiveRow('Sancti/12-25m3')?.primaryArtId==='AO136',  priorAuditStillPasses:v427.inspect?.().pass===true
+  christmasDay:effectiveRow('Sancti/12-25m3')?.primaryArtId==='AO136',
+  priorAuditStillPasses:v427.inspect?.().pass===true
  };
  return {version:'calendar-art-gap-closure-v42.8',pass:Object.values(checks).every(Boolean),counts,checks};
 }
