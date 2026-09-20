@@ -13,7 +13,31 @@ def replace_once(text, old, new, label):
 
 s = PATH.read_text(encoding='utf-8')
 if SENTINEL in s:
-    print('Emergency stable patch already present; no changes required.')
+    changed = False
+    auto_resume = """    async start() {
+        await this.resolve(this.store.getState().selectedDate);
+        if (this.persistence.resumeRecord())
+            await this.resumeSavedMass();
+    }"""
+    normal_start = """    async start() {
+        await this.resolve(this.store.getState().selectedDate);
+    }"""
+    if auto_resume in s:
+        s = s.replace(auto_resume, normal_start, 1)
+        changed = True
+
+    hidden_context = """html.aoEmergencyLive .liveContextActions,
+body.aoEmergencyLive .liveContextActions{display:none!important}
+"""
+    if hidden_context in s:
+        s = s.replace(hidden_context, '', 1)
+        changed = True
+
+    if changed:
+        PATH.write_text(s, encoding='utf-8')
+        print('Repaired emergency wrapper: restored normal Proper resolution startup and live context actions.', hashlib.sha256(s.encode('utf-8')).hexdigest())
+    else:
+        print('Emergency repair already applied; no changes required.')
     sys.exit(0)
 
 sha = hashlib.sha256(s.encode('utf-8')).hexdigest()
