@@ -997,7 +997,8 @@ body{padding-bottom:calc(var(--ao-global-ribbon-h) + var(--safe-bottom,0px))}
  ]}
  function render(){
   let nav=document.getElementById('ao-global-ribbon');
-  if(!nav){nav=document.createElement('nav');nav.id='ao-global-ribbon';nav.className='aoGlobalRibbon';nav.setAttribute('aria-label',L('Main navigation','Navigation principale'));document.body.appendChild(nav)}  nav.innerHTML=`<div class="aoGlobalRibbonInner">${items().map(([id,label])=>`<button type="button" class="aoGlobalRibbonBtn ${active===id?'active':''}" data-ao-ribbon="${id}" aria-label="${label}" aria-current="${active===id?'page':'false'}">${icon(id)}<span>${label}</span></button>`).join('')}</div>`;
+  if(!nav){nav=document.createElement('nav');nav.id='ao-global-ribbon';nav.className='aoGlobalRibbon';nav.setAttribute('aria-label',L('Main navigation','Navigation principale'));document.body.appendChild(nav)}
+  nav.innerHTML=`<div class="aoGlobalRibbonInner">${items().map(([id,label])=>`<button type="button" class="aoGlobalRibbonBtn ${active===id?'active':''}" data-ao-ribbon="${id}" aria-label="${label}" aria-current="${active===id?'page':'false'}">${icon(id)}<span>${label}</span></button>`).join('')}</div>`;
  }
  function setActive(id){if(!['home','mass','pray','learn','calendar','settings'].includes(id)||active===id)return;active=id;render()}
  function homeFirst(){try{globalThis.AO_NAV_V362?.home?.()}catch{}}
