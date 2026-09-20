@@ -1,0 +1,23 @@
+name: Baseline integrity
+
+on:
+  push:
+    branches:
+      - migration/v43.33
+    paths:
+      - 'legacy/v43.33.parts/**'
+      - 'tools/reassemble-v43.33.mjs'
+      - 'docs/CANONICAL-BASELINE.md'
+  pull_request:
+    paths:
+      - 'legacy/v43.33.parts/**'
+      - 'tools/reassemble-v43.33.mjs'
+      - 'docs/CANONICAL-BASELINE.md'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble and verify frozen v43.33
+        run: node tools/reassemble-v43.33.mjs
