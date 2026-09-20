@@ -20,6 +20,14 @@ try{
  await page.locator('#run').click();
  await page.waitForFunction(()=>/COMPLETE|ERROR/.test(document.querySelector('#results').textContent),{},{timeout:120000});
  const result=await page.locator('#results').innerText();console.log(result);
+ if(result.includes('COMPLETE')){
+  const app=page.frames().find(f=>f.url().endsWith('/index.html'));
+  const before=await app.evaluate(()=>AO_RUNTIME_V8.store.getState().live.stepIndex);
+  await app.locator('[data-live-next]').tap();await app.locator('[data-live-next]').tap();
+  const after=await app.evaluate(()=>AO_RUNTIME_V8.store.getState().live.stepIndex);
+  console.log((after===before+1?'PASS':'FAIL')+' real touch double-tap advances only once');
+  if(after!==before+1)process.exitCode=1;
+ }
  await page.screenshot({path:'mobile-stabilization.png',fullPage:true});
  if(!result.includes('COMPLETE')||result.includes('FAIL'))process.exitCode=1;
 }finally{await browser.close();server.close()}

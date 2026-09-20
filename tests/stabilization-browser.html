@@ -33,12 +33,14 @@ document.querySelector('#run').onclick=async()=>{results=[];try{
  check('Mass Next advances exactly one step',runtime.store.getState().live.stepIndex===start+1);
  const surface=d().querySelector('[data-live-swap-surface]');if(surface){surface.click();check('Tapping Mass text does not toggle language',!surface.classList.contains('showAlt'))}
  check('Global navigation is hidden during Mass',w().getComputedStyle(d().querySelector('#ao-global-ribbon')).display==='none');
- const live=d().querySelector('.liveScreen');for(const [type,x] of [['touchstart',300],['touchend',50]]){const e=new w().Event(type,{bubbles:true});Object.defineProperty(e,'touches',{value:[{clientX:x,clientY:300}]});Object.defineProperty(e,'changedTouches',{value:[{clientX:x,clientY:300}]});live.dispatchEvent(e)}
+ const live=d().querySelector('.liveScreen');for(const [type,x] of [['touchstart',300],['touchend',50]]){const e=new (w().Event)(type,{bubbles:true});Object.defineProperty(e,'touches',{value:[{clientX:x,clientY:300}]});Object.defineProperty(e,'changedTouches',{value:[{clientX:x,clientY:300}]});live.dispatchEvent(e)}
  check('Swipe does not advance Mass',runtime.store.getState().live.stepIndex===start+1);
- w().dispatchEvent(new w().PopStateEvent('popstate'));check('Browser back keeps current Mass',runtime.store.getState().route==='live');
+ w().dispatchEvent(new (w().PopStateEvent)('popstate'));check('Browser back keeps current Mass',runtime.store.getState().route==='live');
  runtime.store.dispatch({type:'live-form-session',form:'low'});runtime.store.dispatch({type:'live-follow-mode-session',mode:'missal'});
+ const savedProper=JSON.stringify(runtime.store.getState().resolution.proper.data);
  w().AO_STABILIZATION_V4334.snapshot();await reload();
  const after=w().AO_RUNTIME_V8.store.getState();check('Reload restores active Mass and step',after.route==='live'&&after.live.stepIndex===start+1);check('Reload restores Mass mode',after.live.form==='low'&&after.live.followMode==='missal');
+ check('Reload retains the exact selected formulary',JSON.stringify(w().AO_ACTIVE_MASS_SESSION?.proper)===savedProper);
  out.textContent+='\nCOMPLETE';
 }catch(e){out.textContent+='\nERROR '+e.message}finally{fetch('/test-results',{method:'POST',body:JSON.stringify(results)})}};
 </script>
