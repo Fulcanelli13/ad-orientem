@@ -22,11 +22,13 @@ See:
 
 `Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html`
 
-SHA-256:
+Full SHA-256:
 
 `7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3`
 
-The baseline is being imported under `legacy/v43.33.parts/` in deterministic chunks because the connector cannot safely write the 37.9 MB monolith in a single contents-API call. `tools/reassemble-v43.33.mjs` reconstructs the byte-identical HTML and verifies the hash.
+The 37.9 MB legacy baseline is being imported under `legacy/v43.33.parts/` because the connector cannot safely write the monolith in one contents-API request. The import is currently **partial but byte-verified**: CI verifies that the committed chunks are an exact prefix of the frozen file. It will switch to the full-file SHA-256 gate only after the complete baseline is present.
+
+`legacy/v43.33.parts/IMPORT-STATUS.json` is the explicit authority for partial/full import state. The migration PR stays Draft until this bootstrap gate is complete.
 
 ## Migration principle
 
