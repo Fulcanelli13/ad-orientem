@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "CANONICAL_WAVE1_BASE",
+  "task": "B002",
+  "generatedOn": "2026-09-21",
+  "authority": {
+    "sourceOfTruth": {
+      "version": "SOT-2026-09-21.12",
+      "artifact": "Ad_Orientem_1962_Mass_Source_of_Truth_v12_ORGANISED.xlsx",
+      "sha256": "74ed3e95815b7eeff299da88588e482794b04873cb792f7a197819c39d8f9a3a"
+    },
+    "candidateDecompositionDonor": {
+      "artifact": "ad-orientem-canonical-event-schema-v1.2-traversal-correction.json",
+      "sha256": "60f8741fd798f44c5fb5dd24cdaee56e1eac3deed85a74647f6c6a18ec544646",
+      "authority": "DONOR_ONLY",
+      "note": "Event decomposition was reconciled against SOT12; donor metadata/form assumptions do not control this graph."
+    }
+  },
+  "identityPolicy": {
+    "researchTaxonomy": "E01–E71",
+    "runtimeIdentity": "MC-*",
+    "prototypeIdentity": "M001–M117 NON_CANONICAL",
+    "rule": "Every active canonical event has an MC-* ID and one or more SOT sourceMomentRefs. E and M IDs are never runtime identity."
+  },
+  "enabledCertifiedForms": ["LOW", "SOLEMN"],
+  "researchGatedForms": {
+    "MISSA_CANTATA": {
+      "status": "UNAVAILABLE",
+      "gapId": "RG-003",
+      "rule": "No inference from Solemn-minus-ministers."
+    },
+    "REQUIEM": {
+      "status": "UNAVAILABLE",
+      "gapId": "RG-004",
+      "rule": "Dedicated differential overlay audit required."
+    }
+  },
+  "researchGatedOverlays": {
+    "ASPERGES": {"status": "UNAVAILABLE", "gapId": "RG-005", "sourceMomentRefs": ["E02"]},
+    "NUPTIAL": {"status": "UNAVAILABLE", "gapId": "RG-006"},
+    "COMMUNITY_MASS_PROFILE": {"status": "UNAVAILABLE", "gapId": "RG-007"}
+  },
+  "invariants": {
+    "secondConfiteorNormative": false,
+    "actorPropagation": false,
+    "bellBoolean": false,
+    "consecrationAndElevationDistinct": true,
+    "lifecycleOutsideMCGraph": true,
+    "everyActiveEventTracesToSOT": true
+  },
+  "counts": {
+    "events": 178,
+    "sotSourceMoments": 71,
+    "certifiedSourceMomentsCovered": 68,
+    "certifiedSourceMomentsMissing": 0,
+    "suppressedDonorCandidates": 11
+  },
+  "suppressedDonorCandidates": [
+    {"candidateEventId": "MC-PREP-040", "reason": "ASPERGES_RESEARCH_GATED_RG005"},
+    {"candidateEventId": "MC-PREP-050", "reason": "ASPERGES_RESEARCH_GATED_RG005"},
+    {"candidateEventId": "MC-GSP-040", "reason": "HISTORICAL_PRIVATE_GOSPEL_SUPPRESSED_R012"},
+    {"candidateEventId": "MC-HOM-010", "reason": "NO_SOT_SOURCE_MOMENT_NON_OBJECTIVE_INTERSTITIAL"},
+    {"candidateEventId": "MC-HIST-010", "reason": "SECOND_CONFITEOR_SUPPRESSED_R001"},
+    {"candidateEventId": "MC-LOCAL-COM-010", "reason": "SECOND_CONFITEOR_SUPPRESSED_R001"},
+    {"candidateEventId": "MC-LOCAL-COM-020", "reason": "SECOND_CONFITEOR_SUPPRESSED_R001"},
+    {"candidateEventId": "MC-LOCAL-COM-030", "reason": "SECOND_CONFITEOR_SUPPRESSED_R001"},
+    {"candidateEventId": "MC-LOCAL-END-010", "reason": "LOCAL_CUSTOM_NOT_CANONICAL_CORE"},
+    {"candidateEventId": "MC-LOCAL-END-020", "reason": "LOCAL_CUSTOM_NOT_CANONICAL_CORE"},
+    {"candidateEventId": "MC-END-230", "reason": "APP_SESSION_BOUNDARY_NOT_MASS_EVENT"}
+  ],
+  "eventContractNotes": {
+    "actor": "Explicit actor for this objective event; never propagate to another actor.",
+    "forms": "Per-event LOW/SOLEMN availability. Other forms are globally research-gated.",
+    "voice": "Audibility/speech dimensions stay independent of participation.",
+    "concurrency": "Parallel choreography is not flattened into sequential meaning."
+  },
+  "storage": {
+    "eventFiles": [
+      {"path": "data/mass/mc-events-01.v1.json", "eventCount": 30, "firstEventId": "MC-PREP-010", "lastEventId": "MC-EPI-010", "sha256": "0d663cf85468630cbe1b34cdd2ad37ff66db405ac9a8479fbf0ec65a47886f84"},
+      {"path": "data/mass/mc-events-02.v1.json", "eventCount": 30, "firstEventId": "MC-EPI-020", "lastEventId": "MC-OFF-080", "sha256": "ebba0ce7cdf94c2326859dcf7db96f9dc9f48117ed29a7fe79448bab088d5b9c"},
+      {"path": "data/mass/mc-events-03.v1.json", "eventCount": 30, "firstEventId": "MC-OFF-090", "lastEventId": "MC-CAN-050", "sha256": "174c3557eaae74224bad05506428d5d125390b5ed9e3ffffb069d3ac13f1c8bf"},
+      {"path": "data/mass/mc-events-04.v1.json", "eventCount": 30, "firstEventId": "MC-CAN-060", "lastEventId": "MC-COM-060", "sha256": "c97f9aab79ab57786c5809221e94dc4d405bc586780e3c5c7651f136cd888ea7"},
+      {"path": "data/mass/mc-events-05.v1.json", "eventCount": 30, "firstEventId": "MC-COM-070", "lastEventId": "MC-ABL-010", "sha256": "ae6fca9daca127b06e322fbf525917f5ec23035a4027adbb53a469a0282b3bf1"},
+      {"path": "data/mass/mc-events-06.v1.json", "eventCount": 28, "firstEventId": "MC-ABL-020", "lastEventId": "MC-END-220", "sha256": "167c601714a846b90fe5458a1bf8fb1de3989077d1ddb0ed2de366a942de0e93"}
+    ],
+    "rule": "Files concatenate in listed order; canonical event order is the explicit order field."
+  }
+}
