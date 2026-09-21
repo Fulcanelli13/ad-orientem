@@ -1,0 +1,38 @@
+{
+  "profileVersion": "1.0.0",
+  "task": "B005",
+  "profileId": "LOW-1962-OBJECTIVE",
+  "form": "LOW",
+  "sourceOfTruth": "SOT-2026-09-21.12",
+  "graph": "mc-event-graph.v1",
+  "acceptance": {
+    "maximalCertifiedTraversalEventCount": 168,
+    "certifiedSourceMomentCount": 63,
+    "forbiddenOrUnavailableSourceMoments": [
+      "E02",
+      "E07",
+      "E17",
+      "E27",
+      "E33",
+      "E55",
+      "E60",
+      "E61"
+    ],
+    "secondConfiteor": "OMITTED_NORMATIVE_1962",
+    "oldPriestDNSDBellAsCommunionWarning": "FORBIDDEN",
+    "consecrationAndElevationDistinct": true
+  },
+  "maximalCoverageContext": {
+    "form": "LOW",
+    "incenseEnabled": false,
+    "gloriaPresent": true,
+    "sequencePresent": true,
+    "credoPresent": true,
+    "chantSetting": "GREGORIAN",
+    "faithfulCommunicantsPresent": true,
+    "oratioSuperPopulumPresent": true,
+    "blessingAllowed": true,
+    "normalLastGospel": true
+  },
+  "rule": "This profile controls objective Low-Mass traversal only. It does not add participation, Guide, PRAY or lifecycle content."
+}
