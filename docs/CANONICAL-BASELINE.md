@@ -1,29 +1,38 @@
-# Canonical migration baseline
+# Canonical implementation baseline
 
-## Frozen source of truth
+Frozen: 2026-09-21
+Status: Wave 0 / B001 frozen
 
-- Build: `Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html`
-- SHA-256: `7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3`
-- Frozen: 2026-09-20
-- Status: migration baseline
+The canonical baseline for new implementation decisions is docs/IMPLEMENTATION-MANIFEST.md.
 
-Do not edit the frozen baseline during normal migration work. Emergency corrections require a new documented baseline.
+## Research authority
 
-## Behaviour that must survive extraction
+- Mass SOT: SOT-2026-09-21.12
+- Before/After: PREPOST-2026-09-21.5
+- Modules/source architecture: MODULE-SOURCE-2026-09-21.7
 
-- one authoritative navigation owner and hard Home reset;
-- persistent Home / Mass / Pray / Learn / Calendar navigation;
-- one canonical icon registry and renderer ownership;
-- all 29 rich Lab-ora devotional symbols and all 20 Refined V4 symbols;
-- Ad Orientem emblem as Mass identity;
-- combined Adoration & Benediction top-level module;
-- exact Proper lookup and existing calendar behaviour;
-- Proper, saint, Rosary, Stations and devotional artwork decisions;
-- Schola/Missal role handling and deduplication;
-- Sunday Asperges / Vidi aquam behaviour;
-- icon-only Sign-of-the-Cross cues;
-- Live Mass sheet/Back ownership;
-- horizontal Live Mass swipe navigation;
-- current prayer, formation and catechism content.
+Research reopens only for an explicit item in MODULE v7 sheet 34_TRUE_RESEARCH_GAPS.
 
-Every extraction should be tested against this baseline before legacy ownership is removed.
+## Donor/reference implementation
+
+- Build: Ad-Orientem-2.0-v43.53-LIFECYCLE-RUNTIME-FREEZE.html
+- SHA-256: 3f25713c9f7de9707332ee39f971a4fcb82192f97bea89e2bf543cee39996cb5
+- Size: 39,366,971 bytes
+- Status: immutable donor/reference
+
+The donor is not evidence authority. Frozen research controls when donor behavior conflicts with it.
+
+## Historical v43.33 baseline
+
+The former v43.33 icon-ownership migration baseline remains a historical regression fixture. It is superseded as the global implementation baseline.
+
+Do not use M001–M117 or other prototype numbering to define canonical Mass identity.
+
+## Protected rules
+
+- E01–E71 are research taxonomy.
+- MC-* are canonical runtime IDs.
+- M001–M117 are non-canonical.
+- Before/After lifecycle stays outside the MC graph.
+- Low and certified Solemn are the source-closed core Mass forms for Wave 1.
+- Missa Cantata, Requiem, Asperges and Nuptial behavior remain feature-gated until their research gaps close.
