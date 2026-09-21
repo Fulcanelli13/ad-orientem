@@ -2,34 +2,38 @@
 
 A traditional Roman Mass companion focused on helping the faithful follow the 1962 Mass, pray, learn, and prepare for the liturgy.
 
-## Migration status
+## Controlled implementation status
 
-This repository is entering a controlled migration from the historical single-file application to a modular static/PWA architecture.
+Research convergence is complete. New implementation work is governed by SOT-2026-09-21.12, PREPOST-2026-09-21.5 and MODULE-SOURCE-2026-09-21.7.
 
-The frozen behavioural source of truth is **v43.33 — Icon Ownership Consolidation**. During migration, architectural extraction must not silently change liturgical texts, Proper resolution, calendar behaviour, navigation, artwork decisions, icon ownership, prayer content, or Live Mass behaviour.
+The implementation lane is now Wave 0 → Wave 1: freeze donor/contracts, build the canonical MC-* event graph, then repair objective Low and certified Solemn Mass against that graph.
 
-Work is isolated on the `migration/v43.33` branch until parity is demonstrated.
+See docs/IMPLEMENTATION-MANIFEST.md.
 
-See:
+## Identity policy
 
-- `docs/CANONICAL-BASELINE.md`
-- `docs/MIGRATION.md`
-- `docs/ARCHITECTURE.md`
-- `docs/ASSET-INVENTORY.md`
-- `docs/RELEASE-CHECKLIST.md`
+E01–E71 are research/evidence taxonomy only.
+MC-* are canonical runtime event identities.
+M001–M117 are disposable prototype traversal numbers and must not become persisted identity.
 
-## Canonical baseline
+## Donor monolith
 
-`Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html`
+Frozen donor/reference: Ad-Orientem-2.0-v43.53-LIFECYCLE-RUNTIME-FREEZE.html
+SHA-256: 3f25713c9f7de9707332ee39f971a4fcb82192f97bea89e2bf543cee39996cb5
 
-Full SHA-256:
+The donor preserves certified behavior but may not override the frozen research heads.
 
-`7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3`
+## Repository rule
 
-The 37.9 MB legacy baseline is being imported under `legacy/v43.33.parts/` because the connector cannot safely write the monolith in one contents-API request. The import is currently **partial but byte-verified**: CI verifies that the committed chunks are an exact prefix of the frozen file. It will switch to the full-file SHA-256 gate only after the complete baseline is present.
+Implementation work stays isolated from main until the acceptance gates pass. Current lane: implementation/wave-0-1-canonical-runtime.
 
-`legacy/v43.33.parts/IMPORT-STATUS.json` is the explicit authority for partial/full import state. The migration PR stays Draft until this bootstrap gate is complete.
+The earlier v43.33 migration material is historical regression evidence only, not authority for new implementation decisions.
 
-## Migration principle
+## Next gate
 
-**Preserve behaviour first. Refactor second. Improve features only after parity is demonstrated.**
+B001 — freeze heads/donor and manifest.
+B002 — canonical MC event graph.
+B003 — actor/form/voice/concurrency/event and projection contracts.
+B004 — pure Calendar/Proper contracts.
+
+Wave 2 Mass repair starts only after B002–B004 pass.
