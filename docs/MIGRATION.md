@@ -1,79 +1,54 @@
-# Migration plan
+# Controlled implementation / migration sequence
 
-The current application is a large single HTML document containing presentation, data, application state, artwork, devotional modules, Mass logic and compatibility layers. The migration must proceed in narrow gates.
+The application remains a donor monolith, but the next phase is not another patch layer and not a broad refactor. It is a source-controlled rebuild around canonical data ownership.
 
-## Phase 0 — freeze and repository bootstrap
+The governing sequence comes from MODULE v7 sheet 36_IMPLEMENTATION_SEQUENCE.
 
-1. Preserve v43.33 unchanged under `legacy/`.
-2. Record and verify its SHA-256.
-3. Keep migration work isolated from `main` until parity is demonstrated.
-4. Add regression documentation before extraction begins.
+## Wave 0 — freeze donor and contracts
 
-## Phase 1 — external assets
+Freeze SOT12, PREPOST5, MODULE7 and the v43.53 donor/reference. Generate one implementation manifest. Do not add UI features.
 
-Extract embedded images and reusable SVG assets without changing selectors or runtime semantics.
+Acceptance: no implementation uses superseded research IDs or a prototype as authority.
 
-Priorities:
+## Wave 1 — canonical runtime data model
 
-- Ad Orientem branding;
-- 49 canonical Lab-ora icons;
-- Tier-A UI icons;
-- Tier-B live participation cues;
-- Rosary artwork;
-- Stations cycle;
-- Proper artwork;
-- saint artwork;
-- devotional heroes.
+Build the stable MC-* runtime event graph from SOT evidence.
 
-Create mobile delivery derivatives rather than shipping museum-master images to normal cards.
+In parallel:
+- define actor/form/voice/concurrency/event contracts and projection interfaces;
+- extract/confirm pure Calendar + Proper data contracts.
 
-## Phase 2 — CSS
+Acceptance:
+- every enabled runtime event traces to SOT;
+- E01–E71 remain evidence taxonomy;
+- M001–M117 are absent from runtime identity;
+- Low/Solemn form scope is explicit;
+- unavailable overlays fail closed rather than being inferred;
+- actor scope is explicit;
+- there is no bell boolean;
+- Calendar and Proper have independent failure states;
+- no fake Feria Proper is generated.
 
-Move CSS into `styles/` while preserving the cascade deliberately. First reproduce the existing visual result, then simplify ownership.
+## Wave 2 — repair objective Mass core
 
-## Phase 3 — canonical registries and data
+Repair objective Low Mass and certified Solemn Mass against the MC graph and Calendar/Proper contracts.
 
-Extract stable registries and data from runtime logic:
+Do not infer Missa Cantata, Requiem, Asperges or Nuptial overlays.
 
-- icon registry;
-- artwork registry and Proper map;
-- calendar/liturgical-year data;
-- Mass step data;
-- prayers;
-- saints;
-- catechism/formation content.
+## Wave 3 — participation projection
 
-Do not introduce fuzzy Proper or art fallback matching.
+Add sparse faithful cues over the objective graph. Never copy priest/server/choir actions to the faithful without explicit evidence.
 
-## Phase 4 — state and navigation
+## Wave 4 — Guide / Understand the Mass
 
-Extract the current authoritative navigation/state ownership. Preserve v43.33's hard Home reset, sheet ordering, Back behaviour, persistent ribbon, and ghost-surface containment.
+Produce source-controlled formation keyed to stable MC/section IDs. Function, history, meaning, custom and private devotion remain distinct lanes.
 
-## Phase 5 — domain modules
+## Wave 5 — Before / After lifecycle
 
-Extract in this order, with a regression gate after each:
+Integrate the already-certified PREPOST lifecycle outside the MC graph.
 
-1. Home / Coming Up / Rule
-2. Mass shell and preflight
-3. Live Mass engine and guidance
-4. Pray modules
-5. Learn modules
-6. Calendar
-7. Settings / Sources / utility surfaces
+## Waves 6–10
 
-## Phase 6 — delete compatibility layers
+Shared Scripture/prayer/saint/provenance services → PRAY → LEARN/TODAY → source-closed special forms only → modular migration/PWA/release hardening.
 
-Only remove historical compatibility code after the extracted replacement is the sole tested owner of that behaviour.
-
-## Phase 7 — PWA and release
-
-After parity:
-
-- add final manifest/service worker structure;
-- add automated smoke/regression checks;
-- enable GitHub Pages deployment;
-- tag the first modular release candidate.
-
-## Rule
-
-Migration commits are not feature commits. New features belong in later, explicitly scoped work after parity.
+Historical v43.33 extraction work remains useful for regression and assets but cannot override this sequence or the frozen research heads.
