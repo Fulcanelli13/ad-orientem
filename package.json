@@ -5,6 +5,7 @@
   "scripts": {
     "test:wave1": "node tests/wave01-contracts.mjs",
     "test:b005": "node tests/b005-low-objective.mjs",
-    "test": "npm run test:wave1 && npm run test:b005"
+    "test:b006": "node tests/b006-solemn-objective.mjs",
+    "test": "npm run test:wave1 && npm run test:b005 && npm run test:b006"
   }
 }
