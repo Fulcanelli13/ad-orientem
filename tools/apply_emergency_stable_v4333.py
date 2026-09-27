@@ -202,6 +202,12 @@ function insertSermonPause(steps) {
             1
         )
 
+        s = replace_once(
+            s,
+            "/* mass-sot-field-hotfix-20260927 */",
+            "/* mass-sot-field-hotfix-20260927 */\n/* mass-sot-field-cues-20260927-v2 */",
+            'field-cue hotfix sentinel'
+        )
         if MASS_FIELD_CUES_SENTINEL not in s:
             raise RuntimeError('Field-cue hotfix marker missing after patch')
         changed = True
