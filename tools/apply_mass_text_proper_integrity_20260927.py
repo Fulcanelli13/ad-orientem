@@ -18,6 +18,7 @@ strip_core_block(r'\nreplace_once\(\n\s+\'    pushExpected\("Epistle / Lesson".+
 strip_core_block(r'\ncoverage_pattern = r\'\'\'.+?sub_once\(coverage_pattern, coverage_replacement, "LA/EN/FR Proper coverage"\)\n', 'LA/EN/FR Proper coverage rewrite')
 strip_core_block(r'\nreplace_once\(\n\s+"    if \(/\^Sancti.+?\n\s+"Requiem profile detection"\n\)\n', 'Requiem profile detection')
 strip_core_block(r'\nreplace_once\(\n\s+"        requiem_1962:.+?\n\s+"Requiem exceptional profile map"\n\)\n', 'Requiem exceptional profile map')
+strip_core_block(r'\nreplace_once\(\n\s+\'    steps = insertPreparatoryLessons.+?\n\s+"dynamic pre-Gospel sequence insertion"\n\)\n', 'dynamic pre-Gospel sequence insertion')
 
 replacement_code = '''
 pre_gospel_pattern = r'const gradualId = firstExisting\\(sources, (?:\\["Graduale", "GradualeP", "Tractus"\\]|"Graduale", "GradualeP", "Tractus")\\);\\n    const proper = \\{'

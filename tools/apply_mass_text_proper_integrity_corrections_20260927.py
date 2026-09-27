@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 p = Path('index.html')
 s = p.read_text(encoding='utf-8')
@@ -84,11 +85,17 @@ if old_project not in s:
     raise SystemExit('patched projectStep block not found')
 s = s.replace(old_project, new_project, 1)
 
-s = s.replace(
-    'if (proper?.riteProfile !== "requiem_mass_1962") return steps;',
-    'if (proper?.riteProfile !== "requiem_mass_1962" && !proper?.isRequiem) return steps;',
-    1,
-)
+s = s.replace('if (proper?.riteProfile !== "requiem_mass_1962") return steps;', 'if (proper?.riteProfile !== "requiem_mass_1962" && !proper?.isRequiem) return steps;', 1)
+
+if 'steps = insertPreGospelSequence(steps, proper, properAvailable);' not in s:
+    s, n = re.subn(
+        r'(\n\s*steps = insertPreparatoryLessons\(steps, proper, properAvailable\);)',
+        r'\1\n    steps = insertPreGospelSequence(steps, proper, properAvailable);',
+        s,
+        count=1,
+    )
+    if n != 1:
+        raise SystemExit(f'could not wire dynamic pre-Gospel sequence: {n}')
 
 p.write_text(s, encoding='utf-8')
-print('Applied text/Proper integrity corrections: multi-section interlection, Gospel conclusion, single-surface VOX projection, Requiem fallback.')
+print('Applied text/Proper integrity corrections: multi-section interlection, Gospel conclusion, single-surface VOX projection, Requiem fallback, dynamic chant wiring.')
