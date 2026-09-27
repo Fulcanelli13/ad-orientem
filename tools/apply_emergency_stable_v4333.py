@@ -6,6 +6,7 @@ BASE_SHA256 = '7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3'
 SENTINEL = 'ao-v4333-emergency-stable-js'
 MASS_SOT_SENTINEL = 'mass-sot-field-hotfix-20260927'
 MASS_FIELD_CUES_SENTINEL = 'mass-sot-field-cues-20260927-v2'
+MASS_FINAL_FIELD_SENTINEL = 'mass-sot-final-field-safe-20260927-v3'
 
 def replace_once(text, old, new, label):
     n = text.count(old)
@@ -210,6 +211,71 @@ function insertSermonPause(steps) {
         )
         if MASS_FIELD_CUES_SENTINEL not in s:
             raise RuntimeError('Field-cue hotfix marker missing after patch')
+        changed = True
+
+    # Final field-safe corrections before live use:
+    # complete missing French ordinary text and prevent a false post-Consecration
+    # "sacred silence" claim when a non-Gregorian Benedictus may legitimately resume.
+    if MASS_FINAL_FIELD_SENTINEL not in s:
+        sign_cross_fr_old = '''"fr":"Au nom du Père, ✠ et du Fils, et du Saint-Esprit. Ainsi soit-il."'''
+        sign_cross_fr_new = '''"fr":"Au nom du Père, ✠ et du Fils, et du Saint-Esprit. Ainsi soit-il.\\n\\n℣. J’irai à l’autel de Dieu.\\n℟. Vers Dieu qui réjouit ma jeunesse."'''
+        if s.count(sign_cross_fr_old) != 2:
+            raise RuntimeError(f'French Introibo: expected 2 incomplete matches, found {s.count(sign_cross_fr_old)}')
+        s = s.replace(sign_cross_fr_old, sign_cross_fr_new)
+
+        dnsd_fr_old = '''"fr":"[ROLE=PRIEST]\\n\\n[/ROLE]"'''
+        dnsd_fr_new = '''"fr":"[ROLE=PRIEST]\\nSeigneur, je ne suis pas digne que vous entriez sous mon toit ; mais dites seulement une parole, et mon âme sera guérie. (3×)\\n[/ROLE]"'''
+        if s.count(dnsd_fr_old) != 2:
+            raise RuntimeError(f'French Domine non sum dignus: expected 2 blank matches, found {s.count(dnsd_fr_old)}')
+        s = s.replace(dnsd_fr_old, dnsd_fr_new)
+
+        soundscape_old = '''function soundscape(step, events, language, form) {
+    const choir = events.some(event => isChoirProjectedEvent(event, form));
+    const altar = events.some(event => event.kind === 'altar' && !isChoirProjectedEvent(event, form));
+    if (choir && !altar && ['quiet', 'silent'].includes(step.audibility))
+        return (0, i18n_1.t)(language, 'choirContinues');
+    if (!choir && !altar && ['quiet', 'silent'].includes(step.audibility))
+        return (0, i18n_1.t)(language, 'sacredSilence');
+    if (/consecration-(host|chalice)/.test(step.id))
+        return (0, i18n_1.t)(language, 'sacredSilence');
+    return null;
+}'''
+        soundscape_new = '''function soundscape(step, events, language, form) {
+    const choir = events.some(event => isChoirProjectedEvent(event, form));
+    const altar = events.some(event => event.kind === 'altar' && !isChoirProjectedEvent(event, form));
+    // 1962 Sung Mass has two lawful post-Consecration soundscapes:
+    // normally sacred silence, but a non-Gregorian Benedictus may resume here.
+    // Until the runtime has an explicit music-style selector, never assert silence
+    // as a fact throughout this entire Canon segment.
+    if (form === 'sung' && step.section === 'Canon after Consecration' && !choir)
+        return language === 'fr'
+            ? 'Benedictus s’il reprend · sinon silence sacré'
+            : 'Benedictus if it resumes · otherwise sacred silence';
+    if (choir && !altar && ['quiet', 'silent'].includes(step.audibility))
+        return (0, i18n_1.t)(language, 'choirContinues');
+    if (!choir && !altar && ['quiet', 'silent'].includes(step.audibility))
+        return (0, i18n_1.t)(language, 'sacredSilence');
+    if (/consecration-(host|chalice)/.test(step.id))
+        return (0, i18n_1.t)(language, 'sacredSilence');
+    return null;
+}'''
+        s = replace_once(s, soundscape_old, soundscape_new, 'post-Consecration Benedictus runtime branch')
+
+        s = replace_once(
+            s,
+            "/* mass-sot-field-cues-20260927-v2 */",
+            "/* mass-sot-field-cues-20260927-v2 */\\n/* mass-sot-final-field-safe-20260927-v3 */",
+            'final field-safe sentinel'
+        )
+
+        if MASS_FINAL_FIELD_SENTINEL not in s:
+            raise RuntimeError('Final field-safe marker missing after patch')
+        if s.count("J’irai à l’autel de Dieu.") != 2:
+            raise RuntimeError('French Introibo text did not land twice')
+        if s.count("Seigneur, je ne suis pas digne que vous entriez sous mon toit") != 2:
+            raise RuntimeError('French Domine non sum dignus text did not land twice')
+        if "Benedictus if it resumes · otherwise sacred silence" not in s:
+            raise RuntimeError('Post-Consecration Benedictus runtime branch missing')
         changed = True
 
     if changed:
