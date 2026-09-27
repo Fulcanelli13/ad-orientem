@@ -24,6 +24,15 @@ strip_core_block(r'\nreplace_once\(\n\s+"        const priorEvents = .+?\n\s+"ca
 strip_core_block(r'\nreplace_once\(\n\s+"        soundscape: .+?\n\s+"live soundscape projection"\n\)\n', 'live soundscape projection')
 strip_core_block(r'\nreplace_once\(\n\s+"        textBlocks: events\.map.+?\n\s+"canonical reader text blocks"\n\)\n', 'canonical reader text blocks')
 
+for obsolete_required in [
+    '    "Dynamic pre-Gospel sequence": \'insertResolvedPreGospel(steps, proper, properAvailable, options.form)\',\n',
+    '    "Canonical reader projection": "projectStep)(step, \'missal\').events",\n',
+    '    "Requiem profile map": "requiem_mass_1962: \'requiem-1962\'",\n',
+]:
+    if obsolete_required not in core:
+        raise SystemExit('missing expected obsolete contract token: ' + obsolete_required.strip())
+    core = core.replace(obsolete_required, '', 1)
+
 replacement_code = '''
 pre_gospel_pattern = r'const gradualId = firstExisting\\(sources, (?:\\["Graduale", "GradualeP", "Tractus"\\]|"Graduale", "GradualeP", "Tractus")\\);\\n    const proper = \\{'
 pre_gospel_replacement = 'const preGospelChants = preGospelChantsFrom(sources);\\n    const proper = {'

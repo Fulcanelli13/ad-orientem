@@ -88,14 +88,20 @@ s = s.replace(old_project, new_project, 1)
 s = s.replace('if (proper?.riteProfile !== "requiem_mass_1962") return steps;', 'if (proper?.riteProfile !== "requiem_mass_1962" && !proper?.isRequiem) return steps;', 1)
 
 if 'steps = insertResolvedPreGospel(steps, proper, properAvailable, options.form);' not in s:
-    s, n = re.subn(
-        r'(\n\s*steps = steps\.map\(step => attachProper\(step, proper, properAvailable\)\);)',
-        r'\1\n    steps = insertResolvedPreGospel(steps, proper, properAvailable, options.form);',
-        s,
-        count=1,
-    )
+    s, n = re.subn(r'(\n\s*steps = steps\.map\(step => attachProper\(step, proper, properAvailable\)\);)', r'\1\n    steps = insertResolvedPreGospel(steps, proper, properAvailable, options.form);', s, count=1)
     if n != 1:
         raise SystemExit(f'could not wire dynamic pre-Gospel sequence: {n}')
 
+sung_strip = '''    if (form === 'sung') {
+        const gospel = out.find(step => step.id === 'gospel');
+        if (gospel) {
+            gospel.text = stripLausTibi(gospel.text);
+            gospel.variantNoteId = 'requiem-sung-no-laus-tibi';
+        }
+    }
+'''
+if sung_strip in s:
+    s = s.replace(sung_strip, '', 1)
+
 p.write_text(s, encoding='utf-8')
-print('Applied text/Proper integrity corrections: multi-section interlection, Gospel conclusion, single-surface VOX projection, Requiem fallback, dynamic chant wiring.')
+print('Applied text/Proper integrity corrections: multi-section interlection, Gospel conclusion, single-surface VOX projection, Requiem fallback, dynamic chant wiring, Gospel response retained.')
