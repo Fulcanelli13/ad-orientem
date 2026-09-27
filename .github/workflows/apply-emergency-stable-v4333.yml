@@ -21,6 +21,9 @@ jobs:
       - name: Apply guarded emergency patch
         run: python tools/apply_emergency_stable_v4333.py
 
+      - name: Extract Mass text/Proper diagnostic
+        run: python tools/diagnose_mass_text_proper.py
+
       - name: Validate inline JavaScript
         shell: bash
         run: |
@@ -53,15 +56,15 @@ jobs:
           grep -q 'lab-prayer-flip \[hidden\]{display:none!important}' index.html
           git diff --check
 
-      - name: Commit production index
+      - name: Commit production index and diagnostic
         shell: bash
         run: |
-          if git diff --quiet -- index.html; then
-            echo 'index.html already patched.'
+          if git diff --quiet -- index.html docs/MASS-TEXT-PROPER-DIAGNOSTIC.txt; then
+            echo 'Production index and diagnostic already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html
-          git commit -m 'hotfix: stabilize Mass interactions and Rosary rendering [skip ci]'
+          git add index.html docs/MASS-TEXT-PROPER-DIAGNOSTIC.txt
+          git commit -m 'diagnostic: refresh Mass text and Proper implementation [skip ci]'
           git push origin HEAD:main
