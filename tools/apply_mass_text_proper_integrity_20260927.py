@@ -15,6 +15,10 @@ core, n = re.subn(
 )
 if n != 1:
     raise SystemExit(f'could not bypass obsolete preparatory-section filtering patch: {n}')
+core = core.replace(
+    'firstExisting(sources, ["Graduale", "GradualeP", "Tractus"])',
+    'firstExisting(sources, "Graduale", "GradualeP", "Tractus")',
+)
 tmp = Path('/tmp/apply_mass_text_proper_integrity_core_runtime.py')
 tmp.write_text(core, encoding='utf-8')
 run_path(str(tmp), run_name='__main__')
