@@ -87,10 +87,10 @@ s = s.replace(old_project, new_project, 1)
 
 s = s.replace('if (proper?.riteProfile !== "requiem_mass_1962") return steps;', 'if (proper?.riteProfile !== "requiem_mass_1962" && !proper?.isRequiem) return steps;', 1)
 
-if 'steps = insertPreGospelSequence(steps, proper, properAvailable);' not in s:
+if 'steps = insertResolvedPreGospel(steps, proper, properAvailable, options.form);' not in s:
     s, n = re.subn(
-        r'(\n\s*steps = insertPreparatoryLessons\(steps, proper, properAvailable\);)',
-        r'\1\n    steps = insertPreGospelSequence(steps, proper, properAvailable);',
+        r'(\n\s*steps = steps\.map\(step => attachProper\(step, proper, properAvailable\)\);)',
+        r'\1\n    steps = insertResolvedPreGospel(steps, proper, properAvailable, options.form);',
         s,
         count=1,
     )

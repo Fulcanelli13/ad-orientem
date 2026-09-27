@@ -18,7 +18,11 @@ strip_core_block(r'\nreplace_once\(\n\s+\'    pushExpected\("Epistle / Lesson".+
 strip_core_block(r'\ncoverage_pattern = r\'\'\'.+?sub_once\(coverage_pattern, coverage_replacement, "LA/EN/FR Proper coverage"\)\n', 'LA/EN/FR Proper coverage rewrite')
 strip_core_block(r'\nreplace_once\(\n\s+"    if \(/\^Sancti.+?\n\s+"Requiem profile detection"\n\)\n', 'Requiem profile detection')
 strip_core_block(r'\nreplace_once\(\n\s+"        requiem_1962:.+?\n\s+"Requiem exceptional profile map"\n\)\n', 'Requiem exceptional profile map')
-strip_core_block(r'\nreplace_once\(\n\s+\'    steps = insertPreparatoryLessons.+?\n\s+"dynamic pre-Gospel sequence insertion"\n\)\n', 'dynamic pre-Gospel sequence insertion')
+strip_core_block(r'\nreplace_once\(\n\s+\'    steps = steps\.map\(step => attachProper.+?\n\s+"dynamic pre-Gospel sequence insertion"\n\)\n', 'dynamic pre-Gospel sequence insertion')
+strip_core_block(r'\nreplace_once\(\n\s+"    const rawEvents = .+?\n\s+"separate live projection from reader projection"\n\)\n', 'separate live projection from reader projection')
+strip_core_block(r'\nreplace_once\(\n\s+"        const priorEvents = .+?\n\s+"canonical continuation history"\n\)\n', 'canonical continuation history')
+strip_core_block(r'\nreplace_once\(\n\s+"        soundscape: .+?\n\s+"live soundscape projection"\n\)\n', 'live soundscape projection')
+strip_core_block(r'\nreplace_once\(\n\s+"        textBlocks: events\.map.+?\n\s+"canonical reader text blocks"\n\)\n', 'canonical reader text blocks')
 
 replacement_code = '''
 pre_gospel_pattern = r'const gradualId = firstExisting\\(sources, (?:\\["Graduale", "GradualeP", "Tractus"\\]|"Graduale", "GradualeP", "Tractus")\\);\\n    const proper = \\{'
