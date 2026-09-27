@@ -59,7 +59,7 @@ jobs:
       - name: Commit production index and diagnostic
         shell: bash
         run: |
-          if git diff --quiet -- index.html docs/MASS-TEXT-PROPER-DIAGNOSTIC.txt; then
+          if [ -z "$(git status --porcelain -- index.html docs/MASS-TEXT-PROPER-DIAGNOSTIC.txt)" ]; then
             echo 'Production index and diagnostic already current.'
             exit 0
           fi
