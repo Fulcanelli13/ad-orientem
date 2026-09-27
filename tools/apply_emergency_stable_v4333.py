@@ -168,7 +168,7 @@ function insertSermonPause(steps) {
             raise RuntimeError('Mass SOT hotfix did not produce both public Pater states')
         if 'if (options.form === "sung" && options.faithfulCommunion !== false)' not in s:
             raise RuntimeError('Communion timing branch missing after patch')
-        if s.count('"id":"sermon-pause"') != 1:
+        if s.count('id: "sermon-pause"') != 1:
             raise RuntimeError('Sermon pause insertion invalid')
         changed = True
 
