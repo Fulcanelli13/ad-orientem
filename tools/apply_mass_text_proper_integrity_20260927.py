@@ -13,18 +13,11 @@ def strip_core_block(pattern, label):
     if n != 1:
         raise SystemExit(f'could not bypass {label}: {n}')
 
-strip_core_block(
-    r'\nreplace_once\(\n\s+\'if \(id === "__TOP__".+?\n\s+"preparatory-section filtering"\n\)\n',
-    'preparatory-section filtering',
-)
-strip_core_block(
-    r'\nreplace_once\(\n\s+\'    pushExpected\("Epistle / Lesson".+?\n\s+"coverage for actual pre-Gospel chants"\n\)\n',
-    'coverage for actual pre-Gospel chants',
-)
-strip_core_block(
-    r'\ncoverage_pattern = r\'\'\'.+?sub_once\(coverage_pattern, coverage_replacement, "LA/EN/FR Proper coverage"\)\n',
-    'LA/EN/FR Proper coverage rewrite',
-)
+strip_core_block(r'\nreplace_once\(\n\s+\'if \(id === "__TOP__".+?\n\s+"preparatory-section filtering"\n\)\n', 'preparatory-section filtering')
+strip_core_block(r'\nreplace_once\(\n\s+\'    pushExpected\("Epistle / Lesson".+?\n\s+"coverage for actual pre-Gospel chants"\n\)\n', 'coverage for actual pre-Gospel chants')
+strip_core_block(r'\ncoverage_pattern = r\'\'\'.+?sub_once\(coverage_pattern, coverage_replacement, "LA/EN/FR Proper coverage"\)\n', 'LA/EN/FR Proper coverage rewrite')
+strip_core_block(r'\nreplace_once\(\n\s+"    if \(/\^Sancti.+?\n\s+"Requiem profile detection"\n\)\n', 'Requiem profile detection')
+strip_core_block(r'\nreplace_once\(\n\s+"        requiem_1962:.+?\n\s+"Requiem exceptional profile map"\n\)\n', 'Requiem exceptional profile map')
 
 replacement_code = '''
 pre_gospel_pattern = r'const gradualId = firstExisting\\(sources, (?:\\["Graduale", "GradualeP", "Tractus"\\]|"Graduale", "GradualeP", "Tractus")\\);\\n    const proper = \\{'

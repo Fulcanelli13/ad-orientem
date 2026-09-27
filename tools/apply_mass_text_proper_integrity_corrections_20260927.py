@@ -84,5 +84,11 @@ if old_project not in s:
     raise SystemExit('patched projectStep block not found')
 s = s.replace(old_project, new_project, 1)
 
+s = s.replace(
+    'if (proper?.riteProfile !== "requiem_mass_1962") return steps;',
+    'if (proper?.riteProfile !== "requiem_mass_1962" && !proper?.isRequiem) return steps;',
+    1,
+)
+
 p.write_text(s, encoding='utf-8')
-print('Applied text/Proper integrity corrections: multi-section interlection, Gospel conclusion, single-surface VOX projection.')
+print('Applied text/Proper integrity corrections: multi-section interlection, Gospel conclusion, single-surface VOX projection, Requiem fallback.')
