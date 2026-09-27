@@ -217,11 +217,11 @@ function insertSermonPause(steps) {
     # complete missing French ordinary text and prevent a false post-Consecration
     # "sacred silence" claim when a non-Gregorian Benedictus may legitimately resume.
     if MASS_FINAL_FIELD_SENTINEL not in s:
-        sign_cross_fr_old = '''"fr":"Au nom du Père, ✠ et du Fils, et du Saint-Esprit. Ainsi soit-il."'''
-        sign_cross_fr_new = '''"fr":"Au nom du Père, ✠ et du Fils, et du Saint-Esprit. Ainsi soit-il.\\n\\n℣. J’irai à l’autel de Dieu.\\n℟. Vers Dieu qui réjouit ma jeunesse."'''
-        if s.count(sign_cross_fr_old) != 2:
-            raise RuntimeError(f'French Introibo: expected 2 incomplete matches, found {s.count(sign_cross_fr_old)}')
-        s = s.replace(sign_cross_fr_old, sign_cross_fr_new)
+        sign_cross_text_old = '''"text":{"lat":"In nómine Patris, ✠ et Fílii, et Spíritus Sancti. Amen.\\n\\n℣. Introíbo ad altáre Dei.\\n℟. Ad Deum, qui lætíficat iuventútem meam.","en":"In the Name of the Father, ✠ and of the Son, and of the Holy Ghost. Amen.\\n\\n℣. I will go in unto the altar of God.\\n℟. Unto God, Who giveth joy to my youth.","fr":"Au nom du Père, ✠ et du Fils, et du Saint-Esprit. Ainsi soit-il."}'''
+        sign_cross_text_new = '''"text":{"lat":"In nómine Patris, ✠ et Fílii, et Spíritus Sancti. Amen.\\n\\n℣. Introíbo ad altáre Dei.\\n℟. Ad Deum, qui lætíficat iuventútem meam.","en":"In the Name of the Father, ✠ and of the Son, and of the Holy Ghost. Amen.\\n\\n℣. I will go in unto the altar of God.\\n℟. Unto God, Who giveth joy to my youth.","fr":"Au nom du Père, ✠ et du Fils, et du Saint-Esprit. Ainsi soit-il.\\n\\n℣. J’irai à l’autel de Dieu.\\n℟. Vers Dieu qui réjouit ma jeunesse."}'''
+        if s.count(sign_cross_text_old) != 2:
+            raise RuntimeError(f'French Introibo: expected 2 incomplete Mass-step matches, found {s.count(sign_cross_text_old)}')
+        s = s.replace(sign_cross_text_old, sign_cross_text_new)
 
         dnsd_fr_old = '''"fr":"[ROLE=PRIEST]\\n\\n[/ROLE]"'''
         dnsd_fr_new = '''"fr":"[ROLE=PRIEST]\\nSeigneur, je ne suis pas digne que vous entriez sous mon toit ; mais dites seulement une parole, et mon âme sera guérie. (3×)\\n[/ROLE]"'''
