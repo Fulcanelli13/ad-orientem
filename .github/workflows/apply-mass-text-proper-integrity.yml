@@ -1,0 +1,41 @@
+name: Apply Mass text and Proper integrity patch
+
+on:
+  push:
+    branches:
+      - fix/mass-text-proper-integrity-20260927-v1
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.event.head_commit.message == 'chore: add Mass text integrity workflow'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/mass-text-proper-integrity-20260927-v1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Apply checked patch
+        run: python tools/apply_mass_text_proper_integrity_20260927.py
+      - name: Verify contract
+        shell: bash
+        run: |
+          grep -F 'secrets: numbered(sources, "Secreta", true)' index.html
+          grep -F 'postcommunions: numbered(sources, "Postcommunio", true)' index.html
+          grep -F 'superPopulum: stripSuperPopulumHeading' index.html
+          grep -F 'insertResolvedPreGospel(steps, proper, properAvailable, options.form)' index.html
+          grep -F "requiem_mass_1962: 'requiem-1962'" index.html
+          grep -F 'dona eis réquiem sempitérnam' index.html
+          git diff --check
+      - name: Commit patched production monolith
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'fix: Mass text and Proper integrity pass'
+          git push origin HEAD:fix/mass-text-proper-integrity-20260927-v1
