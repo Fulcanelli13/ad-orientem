@@ -264,7 +264,7 @@ function insertSermonPause(steps) {
         s = replace_once(
             s,
             "/* mass-sot-field-cues-20260927-v2 */",
-            "/* mass-sot-field-cues-20260927-v2 */\\n/* mass-sot-final-field-safe-20260927-v3 */",
+            "/* mass-sot-field-cues-20260927-v2 */\n/* mass-sot-final-field-safe-20260927-v3 */",
             'final field-safe sentinel'
         )
 
