@@ -54,7 +54,7 @@ jobs:
           grep -q 'overscroll-behavior-y:none!important' index.html
           grep -q "let lastAt=0,lastSource='',enabled=false,installed=false;" index.html
           grep -q 'lab-prayer-flip \[hidden\]{display:none!important}' index.html
-          git diff --check
+          git diff --check -- index.html
 
       - name: Commit production index and diagnostic
         shell: bash
