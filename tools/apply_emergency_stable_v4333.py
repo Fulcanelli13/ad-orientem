@@ -4,6 +4,7 @@ import hashlib, re, sys
 PATH = Path('index.html')
 BASE_SHA256 = '7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3'
 SENTINEL = 'ao-v4333-emergency-stable-js'
+MASS_SOT_SENTINEL = 'mass-sot-field-hotfix-20260927'
 
 def replace_once(text, old, new, label):
     n = text.count(old)
@@ -31,6 +32,143 @@ body.aoEmergencyLive .liveContextActions{display:none!important}
 """
     if hidden_context in s:
         s = s.replace(hidden_context, '', 1)
+        changed = True
+
+    # 27 Sep 2026 field-safe Mass corrections derived from the authoritative 1962 SOT.
+    # Guarded as one atomic in-memory patch: if any expected source fragment is missing,
+    # abort before writing index.html.
+    if MASS_SOT_SENTINEL not in s:
+        # 1. Pater noster is a public/clear-spoken anchor in both Sung and Low Mass.
+        pater_old = """"id":"pater","phase":"Communion","section":"Pater & Fraction","title":{"en":"Pater noster","fr":"Pater noster"},"subtitle":{"en":"The Lord’s Prayer","fr":"La prière du Seigneur"},"actor":"celebrant","priestPosition":"Centre","audibility":"quiet","privateAction":true"""
+        pater_new = """"id":"pater","phase":"Communion","section":"Pater & Fraction","title":{"en":"Pater noster","fr":"Pater noster"},"subtitle":{"en":"The Lord’s Prayer","fr":"La prière du Seigneur"},"actor":"celebrant","priestPosition":"Centre","audibility":"audible","privateAction":false"""
+        if s.count(pater_old) != 2:
+            raise RuntimeError(f'Pater audibility: expected 2 legacy matches, found {s.count(pater_old)}')
+        s = s.replace(pater_old, pater_new)
+
+        # 2. Sung Communion chant timing branches on whether the faithful actually receive.
+        communion_branch_old = """    if (options.faithfulCommunion === false) {
+        out = out.filter(step => !["second-confiteor", "ecce", "domine-non-sum-dignus", "communion-faithful"].includes(step.id));
+    }
+    else if (options.secondConfiteor) {
+        const idx = out.findIndex(step => step.id === "ecce");
+        if (idx >= 0)
+            out = [...out.slice(0, idx), makeSecondConfiteor(!!options.joinConfiteor), ...out.slice(idx)];
+    }"""
+        communion_branch_new = """    if (options.faithfulCommunion === false) {
+        out = out.filter(step => !["second-confiteor", "ecce", "domine-non-sum-dignus", "communion-faithful"].includes(step.id));
+    }
+    else if (options.secondConfiteor) {
+        const idx = out.findIndex(step => step.id === "ecce");
+        if (idx >= 0)
+            out = [...out.slice(0, idx), makeSecondConfiteor(!!options.joinConfiteor), ...out.slice(idx)];
+    }
+    // 1962 SOT: at Sung Mass, if the faithful receive, the Communion chant begins
+    // with distribution after the communicants' triple Domine non sum dignus.
+    // If nobody receives, it begins during the priest's Communion.
+    if (options.form === "sung" && options.faithfulCommunion !== false) {
+        out = out.map(step => {
+            if (step.id !== "priest-communion" || !step.concurrentProperChoir)
+                return step;
+            const copy = { ...step };
+            delete copy.concurrentProperChoir;
+            return copy;
+        });
+    }"""
+        s = replace_once(s, communion_branch_old, communion_branch_new, 'Communion chant timing branch')
+
+        s = replace_once(
+            s,
+            "The celebrant communicates himself before Communion is distributed to the faithful. At an ordinary Sung Mass the Communion antiphon begins here and may continue through the Communion of the faithful.",
+            "The celebrant communicates himself before Communion is distributed to the faithful. At Sung Mass, if the faithful receive, the Communion antiphon begins when distribution begins after their triple Domine non sum dignus; if nobody receives, it begins during the priest’s Communion.",
+            'Sung priest Communion explanation'
+        )
+        # The same stale Sung-Mass explanation was accidentally embedded in the Low-Mass template.
+        s = replace_once(
+            s,
+            "The celebrant communicates himself before Communion is distributed to the faithful. At an ordinary Sung Mass the Communion antiphon begins here and may continue through the Communion of the faithful.",
+            "The celebrant communicates himself before Communion is distributed to the faithful. At Low Mass there is no liturgical Schola track; if the faithful receive, the next strong public cue is Ecce Agnus Dei and the communicants’ Domine non sum dignus.",
+            'Low priest Communion explanation'
+        )
+
+        sung_comm_old = """"id":"communion-faithful","phase":"Communion","section":"Holy Communion","title":{"en":"Communion of the Faithful","fr":"Communion des fidèles"},"subtitle":{"en":"Communion chant accompanies the distribution","fr":"Le chant de Communion accompagne la distribution"},"actor":"mixed","priestPosition":"Communion rail","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The Communion antiphon, already begun at the priest’s Communion, may continue during distribution to the faithful. The celebrant’s own recitation of that proper occurs after the ablutions.""""
+        sung_comm_new = """"id":"communion-faithful","phase":"Communion","section":"Holy Communion","title":{"en":"Communion of the Faithful","fr":"Communion des fidèles"},"subtitle":{"en":"Communion chant accompanies the distribution","fr":"Le chant de Communion accompagne la distribution"},"actor":"mixed","priestPosition":"Communion rail","audibility":"quiet","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"When the faithful receive at Sung Mass, the Communion antiphon begins as distribution starts, after the faithful’s triple Domine non sum dignus, and may continue through the distribution. The priest’s Corpus Domini formula is quiet at the rail.""""
+        s = replace_once(s, sung_comm_old, sung_comm_new, 'Sung faithful Communion timing/audibility')
+
+        low_comm_old = """"id":"communion-faithful","phase":"Communion","section":"Holy Communion","title":{"en":"Communion of the Faithful","fr":"Communion des fidèles"},"subtitle":{"en":"At the altar rail","fr":"À la table de Communion"},"actor":"celebrant","priestPosition":"Communion rail","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The Communion antiphon, already begun at the priest’s Communion, may continue during distribution to the faithful. The celebrant’s own recitation of that proper occurs after the ablutions.""""
+        low_comm_new = """"id":"communion-faithful","phase":"Communion","section":"Holy Communion","title":{"en":"Communion of the Faithful","fr":"Communion des fidèles"},"subtitle":{"en":"At the altar rail","fr":"À la table de Communion"},"actor":"celebrant","priestPosition":"Communion rail","audibility":"quiet","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"At Low Mass there is no liturgical Schola track. The priest distributes Communion using Corpus Domini quietly to each communicant; the proper Communion antiphon is read later at the Epistle side after the ablutions.""""
+        s = replace_once(s, low_comm_old, low_comm_new, 'Low faithful Communion audibility/explanation')
+
+        # 3. Add a harmless navigation pause after the ordinary Gospel. If no sermon is given,
+        # the user simply advances once; if preaching occurs, the Mass timeline no longer lies.
+        sermon_insert = """/* mass-sot-field-hotfix-20260927 */
+function insertSermonPause(steps) {
+    const idx = steps.findIndex(step => step.id === "gospel");
+    if (idx < 0 || steps.some(step => step.id === "sermon-pause"))
+        return steps;
+    const sermon = {
+        id: "sermon-pause",
+        phase: "Mass of the Catechumens",
+        section: "Gospel & Creed",
+        title: { en: "Sermon / Homily · if present", fr: "Sermon / Homélie · si présent" },
+        subtitle: { en: "If preaching occurs, stay here until it ends. If not, continue.", fr: "S’il y a une prédication, restez ici jusqu’à sa fin. Sinon, continuez." },
+        actor: "preacher",
+        priestPosition: "Preaching place",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "CUSTOM", policy: "local", source: "sermon" },
+        gestures: [],
+        explanation: "The sermon is a navigation pause, not a prayer-text step of the Ordo Missae. Do not advance the Mass timeline because of elapsed preaching time."
+    };
+    return [...steps.slice(0, idx + 1), sermon, ...steps.slice(idx + 1)];
+}
+"""
+        s = replace_once(s, "function buildMassSequence(options) {", sermon_insert + "function buildMassSequence(options) {", 'sermon pause helper')
+        s = replace_once(
+            s,
+            "    steps = insertSuperPopulum(steps, proper, properAvailable);\n    if (options.exceptionalProfile)",
+            "    steps = insertSuperPopulum(steps, proper, properAvailable);\n    if (!options.exceptionalProfile)\n        steps = insertSermonPause(steps);\n    if (options.exceptionalProfile)",
+            'insert ordinary sermon pause'
+        )
+
+        # 4. Sunday Asperges: Palm/other special rites keep their own rules, but Sunday
+        # Candlemas can have Asperges first. Passion Sunday omits Gloria Patri.
+        asperges_mode_old = """    // Exceptional rites with their own pre-Mass ceremonial (especially Palm Sunday) do not receive this generic prepend.
+    if (exceptionalProfile(inferredProfile)) return null;
+    const easter = aoGregorianEasterUtc(date.getUTCFullYear());
+    const pentecost = new Date(easter.getTime() + 49 * 86400000);
+    return { vidiAquam: date >= easter && date <= pentecost };"""
+        asperges_mode_new = """    // Exceptional rites with their own pre-Mass ceremonial normally do not receive this generic prepend.
+    // Candlemas is the exception: when 2 February is a Sunday, Asperges precedes the candle rite.
+    const exceptional = exceptionalProfile(inferredProfile);
+    if (exceptional && exceptional !== 'candlemas-1962') return null;
+    const easter = aoGregorianEasterUtc(date.getUTCFullYear());
+    const pentecost = new Date(easter.getTime() + 49 * 86400000);
+    const vidiAquam = date >= easter && date <= pentecost;
+    const passionSunday = new Date(easter.getTime() - 14 * 86400000);
+    return { vidiAquam, omitGloriaPatri: !vidiAquam && date >= passionSunday && date < easter };"""
+        s = replace_once(s, asperges_mode_old, asperges_mode_new, 'Sunday Asperges precedence/Passiontide')
+
+        asperges_step_old = """function aoAspergesSteps(sequence, mode) {
+    const chant = mode.vidiAquam ? AO_SUNDAY_ASPERGES_TEXT.vidiAquam : AO_SUNDAY_ASPERGES_TEXT.asperges;"""
+        asperges_step_new = """function aoAspergesSteps(sequence, mode) {
+    let chant = mode.vidiAquam ? AO_SUNDAY_ASPERGES_TEXT.vidiAquam : AO_SUNDAY_ASPERGES_TEXT.asperges;
+    if (mode.omitGloriaPatri && !mode.vidiAquam) {
+        chant = Object.fromEntries(Object.entries(chant).map(([lang, value]) => [
+            lang,
+            String(value || '').replace(/\\n℣\\.[^\\n]*\\n℟\\.[^\\n]*/, '')
+        ]));
+    }"""
+        s = replace_once(s, asperges_step_old, asperges_step_new, 'Passiontide Asperges Gloria Patri omission')
+
+        # Final guarded invariants before any write.
+        if MASS_SOT_SENTINEL not in s:
+            raise RuntimeError('Mass SOT hotfix marker missing after patch')
+        if s.count(pater_new) != 2:
+            raise RuntimeError('Mass SOT hotfix did not produce both public Pater states')
+        if 'if (options.form === "sung" && options.faithfulCommunion !== false)' not in s:
+            raise RuntimeError('Communion timing branch missing after patch')
+        if s.count('"id":"sermon-pause"') != 1:
+            raise RuntimeError('Sermon pause insertion invalid')
         changed = True
 
     if changed:
