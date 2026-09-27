@@ -1,0 +1,1539 @@
+
+====================================================================================================
+NORMALIZE PROPER
+====================================================================================================
+@ char 613466 line 2867
+turn ids.find(id => sources.la.map.has(id) || sources.en.map.has(id) || sources.fr.map.has(id)) || null;
+}
+function numbered(sources, base, includeBase = false) {
+    const ids = new Set();
+    for (const language of ["la", "en", "fr"]) {
+        for (const id of sources[language].order) {
+            if ((includeBase && id === base) || new RegExp(`^${base}\\d+$`).test(id))
+                ids.add(id);
+        }
+    }
+    if (includeBase && (sources.la.map.has(base) || sources.en.map.has(base) || sources.fr.map.has(base)))
+        ids.add(base);
+    return [...ids].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).map(id => textFrom(sources, id)).filter(value => value.lat || value.en || value.fr);
+}
+function ruleInfo(sources) {
+    const text = (sources.la.map.get("Rule") || []).join("\n");
+    const match = text.match(/Prefatio=([^\s;]+)/i);
+    return { raw: text, gloria: /^Gloria$/m.test(text), credo: /^Credo$/m.test(text), preface: match ? match[1] : "Communis" };
+}
+function normalizeProper(meta, sources, preface, diagnostic) {
+    const rules = ruleInfo(sources);
+    const normal = new Set(["Officium", "Rank", "Rule", "Introitus", "Oratio", "Lectio", "Graduale", "GradualeP", "Tractus", "Sequentia", "Evangelium", "Offertorium", "Secreta", "Communio", "Postcommunio"]);
+    const preparatoryLessons = [];
+    for (let n = 1; n <= 12; n += 1) {
+        const lessonId = `LectioL${n}`;
+        if (!(sources.la.map.has(lessonId) || sources.en.map.has(lessonId) || sources.fr.map.has(lessonId)))
+            continue;
+        const gradualId = firstExisting(sources, [`GradualeL${n}`, `TractusL${n}`, `AlleluiaL${n}`]);
+        const collectId = firstExisting(sources, [`OratioL${n}`]);
+        preparatoryLessons.push({ id: `preparatory-${n}`, lesson: textFrom(sources, lessonId), gradual: gradualId ? textFrom(sources, gradualId) : {}, collect: collectId ? textFrom(sources, collectId) : {} });
+        normal.add(lessonId);
+        if (gradualId)
+            normal.add(gradualId);
+        if (collectId)
+            normal.add(collectId);
+    }
+    const extraIds = [];
+    for (const id of [...sources.la.order, ...sources.en.order, ...sources.fr.order]) {
+        if (id === "__TOP__" || normal.has(id) || /^LectioL\d+$/.test(id) || /^GradualeL\d+$/.test(id) || /^OratioL\d+$/.test(id))
+            continue;
+        if (!extraIds.includes(id))
+            extraIds.push(id);
+    }
+    const specialSections = extraIds.map(id => ({ id, text: textFrom(sources, id) })).filter(value => value.text.lat || value.text.en || value.text.fr);
+    const gradualId = firstExisting(sources, ["Graduale", "GradualeP", "Tractus"]);
+    const proper = {
+        name: meta.name,
+        nameFr: meta.nameFr || meta.name,
+        rank: meta.rank,
+        color: meta.color,
+        properId: meta.properId,
+        sourcePath: meta.path,
+        riteProfile: meta.profile,
+        introit: textFrom(sources, "Introitus"),
+        collects: numbered(sources, "Oratio", true),
+        epistle: textFrom(sources, "Lectio"),
+        gradual: gradualId ? textFrom(sources, gradualId) : {},
+        preGospelChants: gradualId ? [{ kind: gradualId.toLowerCase(), text: textFrom(sources, gradualId) }] : [],
+        sequence: textFrom(sources, "Sequentia"),
+        gospel: textFrom(sources, "Evangelium"),
+        offertory: textFrom(sources, "Offertorium"),
+        secrets: numbered(sources, "Secreta"),
+        preface,
+        communion: textFrom(sources, "Communio"),
+        postcommunions: numbered(sources, "Postcommunio"),
+        preparatoryLessons,
+        specialSections,
+        showGloria: meta.gloria,
+        showCredo: meta.credo,
+        sourceRules: rules.raw,
+        sourceRevisions: source_config_1.SOURCE_REVISIONS,
+        hasGloria: meta.gloria,
+        hasCredo: meta.credo,
+    };
+    proper.collect = proper.collects[0] || {};
+    proper.secret = proper.secrets[0] || {};
+    proper.postcommunion = proper.postcommunions[0] || {};
+    const expected = [];
+    const pushExpected = (label, value) => { if (value?.lat) expected.push([label, value]); };
+    pushExpected("Introit", proper.introit);
+    proper.collects.forEach((v, i) => pushExpected(`Collect ${i + 1}`, v));
+    pushExpected("Epistle / Lesson", proper.epistle);
+    pushExpected("Gradual / Tract / Alleluia", proper.gradual);
+    pushExpected("Sequence", proper.sequence);
+    pushExpected("Gospel", proper.gospel);
+    pushExpected("Offertory", proper.offertory);
+    proper.secrets.forEach((v, i) => pushExpected(`Secret ${i + 1}`, v));
+    pushExpected("Preface", proper.preface);
+    pushExpected("Communion", proper.communion);
+    proper.postcommunions.forEach((v, i) => pushExpected(`Postcommunion ${i + 1}`, v));
+    proper.preparatoryLessons.forEach((row, i) => { pushExpected(`Preparatory lesson ${i + 1}`, row.lesson); pushExpected(`Preparatory chant ${i + 1}`, row.gradual); pushExpected(`Preparatory collect ${i + 1}`, row.collect); });
+    proper.languageCoverage = {};
+    for (const language of ["en", "fr"]) {
+        const missing = expected.filter(([, value]) => !String(value?.[language] || "").trim()).map(([label]) => label);
+        proper.languageCoverage[language] = { expected: expected.length, available: expected.length - missing.length, missing, complete: missing.length === 0 };
+    }
+    diagnostic.warnings.push(...(rules.gloria !== meta.gloria ? [`Gloria metadata (${meta.gloria}) differs from source Rule (${rules.gloria}).`] : []));
+    diagnostic.warnings.push(...(rules.credo !== meta.credo ? [`Credo metadata (${meta.credo}) differs from source Rule (${rules.credo}).`] : []));
+    return proper;
+}
+
+},9:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MapTextFetcher = exports.MemoryTextFetcher = void 0;
+exports.createDiagnostic = createDiagnostic;
+class MemoryTextFetcher {
+    fetchImpl;
+    timeoutMs;
+    memory = new Map();
+    constructor(fetchImpl, timeoutMs = 12000) {
+        this.fetchImpl = fetchImpl;
+        this.timeoutMs = timeoutMs;
+    }
+    async get(url, diagnostic) {
+        const cached = this.memory.get(url);
+        if (cached !== undefined) {
+            diagnostic?.cacheHits.push({ url, layer: "memory" });
+            return cached;
+        }
+        diagnostic?.requestedFiles.push(url);
+        const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error(`Source request timed out · ${url}`)), this.timeoutMs));
+        const request = this.fetchImpl(url, { cache: "no-cache", redirect: "follow" }).then(async (response) => {
+            if (!response.ok) {
+                const error = new Error(`HTTP ${response.status} · ${url}`);
+                error.status = response.status;
+                throw error;
+            }
+            return response.text();
+        });
+        const text = await Promise.race([request, timeout]);
+        this.memory.set(url, text);
+        return text;
+    }
+    async tryGet(url, diagnostic) {
+        try {
+            return await this.get(url, diagnostic);
+        }
+        catch (error) {
+            if (error.status === 404)
+                return null;
+            throw error;
+        }
+    }
+    clear() { this.memory.clear(); }
+}
+exports.MemoryTextFetcher = MemoryTextFetcher;
+class MapTextFetcher {
+    files;
+    constructor(files) {
+        this.files = files;
+    }
+    read(url) {
+        return this.files instanceof Map ? this.files.get(url) : this.files[url];
+    }
+    async get(url, diagnostic) {
+        diagnostic?.requestedFiles.push(url);
+        const text = this.read(url);
+        if (text === undefined) {
+            const error = new Error(`HTTP 404 · ${url}`);
+            error.status = 404;
+            throw error;
+        }
+        return text;
+    }
+    async tryGet(url, diagnostic) {
+        const value = this.read(url);
+        if (value === undefined)
+            return null;
+        diagnostic?.requestedFiles.push(url);
+        return value;
+    }
+}
+exports.MapTextFetcher = MapTextFetcher;
+function createDiagnostic() {
+    return { requestedFiles: [], cacheHits: [], referencesResolved: [], languageGaps: [], structuralInheritances: [], legacyCommonRecoveries: [], warnings: [], errors: [] };
+}
+
+},10:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScriptureService = void 0;
+const source_config_1 = require(11);
+const references_1 = require(12);
+function rowsOf(ch) { const v = Array.isArray(ch?.verses) ? ch.verses : Array.isArray(ch?.content) ? ch.content : []; return v.map((x, i) => ({ verse: +(x.verse ?? x.number ?? i + 1), text: String(x.text ?? x.content ?? ''), notes: Array.isArray(x.notes) ? x.notes : [] })).filter((x) => x.verse && x.text); }
+function chapterOf(data, n) { return (data?.chapters || []).find((c) => +c.chapter === n) || null; }
+function norm(s) { return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
+function cramponBook(data, ref) { const aliases = [ref.frLabel, ref.label].map(norm); return (data?.books || []).find((b) => aliases.some(a => norm(b?.name) === a || norm(b?.name).includes(a) || a.includes(norm(b?.name)))) || null; }
+const VULGATE_BOOK_NAME = Object.freeze({"genesis":"Genesis","exodus":"Exodus","leviticus":"Leviticus","numbers":"Numbers","deuteronomy":"Deuteronomy","josue":"Joshua","judges":"Judges","ruth":"Ruth","1-kings":"1 Samuel","2-kings":"2 Samuel","3-kings":"1 Kings","4-kings":"2 Kings","1-paralipomenon":"1 Chronicles","2-paralipomenon":"2 Chronicles","1-esdras":"Ezra","2-esdras":"Nehemiah","tobias":"Tobit","judith":"Judith","esther":"Esther","job":"Job","psalms":"Psalms","proverbs":"Proverbs","ecclesiastes":"Ecclesiastes","canticle-of-canticles":"Song of Solomon","wisdom":"Wisdom of Solomon","ecclesiasticus":"Sirach","isaias":"Isaiah","jeremias":"Jeremiah","lamentations":"Lamentations","baruch":"Baruch","ezechiel":"Ezekiel","daniel":"Daniel","osee":"Hosea","joel":"Joel","amos":"Amos","abdias":"Obadiah","jonas":"Jonah","micheas":"Micah","nahum":"Nahum","habacuc":"Habakkuk","sophonias":"Zephaniah","aggeus":"Haggai","zacharias":"Zechariah","malachias":"Malachi","1-machabees":"1 Maccabees","2-machabees":"2 Maccabees","matthew":"Matthew","mark":"Mark","luke":"Luke","john":"John","acts":"Acts","romans":"Romans","1-corinthians":"1 Corinthians","2-corinthians":"2 Corinthians","galatians":"Galatians","ephesians":"Ephesians","philippians":"Philippians","colossians":"Colossians","1-thessalonians":"1 Thessalonians","2-thessalonians":"2 Thessalonians","1-timothy":"1 Timothy","2-timothy":"2 Timothy","titus":"Titus","philemon":"Philemon","hebrews":"Hebrews","james":"James","1-peter":"1 Peter","2-peter":"2 Peter","1-john":"1 John","2-john":"2 John","3-john":"3 John","jude":"Jude","apocalypse":"Revelation of John"});
+function vulgateBook(data, ref) {
+    const target = VULGATE_BOOK_NAME[ref.slug] || ref.label;
+    const aliases = [target, ref.label, ref.frLabel].filter(Boolean).map(norm);
+    return (data?.books || []).find((b) => { const name=norm(b?.name || b?.title || b?.book || ''); return aliases.some(a => name===a || name.includes(a) || a.includes(name)); }) || null;
+}
+function range(node) { const m = String(node?.citation || '').match(/(\d{1,3})\s*:\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/); return m ? { chapter: +m[1], start: +m[2], end: +(m[3] || m[2]) } : null; }
+const ODR_SOURCE_SLUG = Object.freeze({ isaias:'isaie', jeremias:'jeremie', malachias:'malachie' });
+const HAYDOCK_BOOK_CODE = Object.freeze({
+    genesis:'GEN',exodus:'EXO',leviticus:'LEV',numbers:'NUM',deuteronomy:'DEU',josue:'JOS',judges:'JDG',ruth:'RUT',
+    '1-kings':'1SA','2-kings':'2SA','3-kings':'1KI','4-kings':'2KI','1-paralipomenon':'1CH','2-paralipomenon':'2CH','1-esdras':'EZR','2-esdras':'NEH',
+    tobias:'TOB',judith:'JDT',esther:'EST','1-machabees':'1MA','2-machabees':'2MA',job:'JOB',psalms:'PSA',proverbs:'PRO',ecclesiastes:'ECC','canticle-of-canticles':
+
+====================================================================================================
+MERGE COMMEMORATIONS
+====================================================================================================
+@ char 502858 line 924
+ output[language] = { map, order: [...source.order], source: source.source || null };
+    }
+    return output;
+}
+async function applyShiftedPostEpiphany(resolver, sources, date, path, diagnostic) {
+    if (date.getMonth() < 9 || !/^Tempora\/Epi[1-6]-0$/.test(path || ''))
+        return sources;
+    const output = cloneSources(sources);
+    for (const language of ['la', 'en', 'fr']) {
+        const donor = await resolver.resolveSource('Tempora/Pent23-0', language, diagnostic);
+        for (const section of ['Introitus', 'Graduale', 'Offertorium', 'Communio']) {
+            const body = donor.map.get(section);
+            if (body?.length) {
+                output[language].map.set(section, [...body]);
+                if (!output[language].order.includes(section))
+                    output[language].order.push(section);
+            }
+        }
+    }
+    diagnostic.warnings.push('Restored post-Epiphany Sunday composition applied from XXIII Sunday after Pentecost.');
+    return output;
+}
+async function mergeCommemorations(resolver, proper, day, diagnostic) {
+    proper.calendarCommemorations = [];
+    for (const commemoration of day.commemorations || []) {
+        if (!commemoration?.path)
+            continue;
+        try {
+            const sources = {};
+            for (const language of ['la', 'en', 'fr'])
+                sources[language] = await resolver.resolveSource(commemoration.path, language, diagnostic);
+            const collect = (0, proper_resolver_1.numbered)(sources, 'Oratio', true)[0];
+            const secret = (0, proper_resolver_1.numbered)(sources, 'Secreta')[0];
+            const postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio')[0];
+            if (collect)
+                proper.collects.push(collect);
+            if (secret)
+                proper.secrets.push(secret);
+            if (postcommunion)
+                proper.postcommunions.push(postcommunion);
+            proper.calendarCommemorations.push({ name: commemoration.title, path: commemoration.path, rank: (0, calendar_engine_1.classLabel)(commemoration.rank) });
+        }
+        catch (error) {
+            diagnostic.warnings.push(`Commemoration source failed ${commemoration.path}: ${error instanceof Error ? error.message : String(error)}`);
+        }
+    }
+    proper.collect = proper.collects[0] || proper.collect;
+    proper.secret = proper.secrets[0] || proper.secret;
+    proper.postcommunion = proper.postcommunions[0] || proper.postcommunion;
+    return proper;
+}
+class DayResolver {
+    properResolver;
+    calendarEngine;
+    formularies = new formulary_selection_1.FormularySelectionStore();
+    constructor(fetcher) {
+        this.properResolver = new proper_resolver_1.ProperResolver(fetcher);
+        this.calendarEngine = new calendar_engine_1.CalendarEngine(fetcher, this.properResolver);
+    }
+    clear() {
+        this.properResolver.clear();
+        this.calendarEngine.clear();
+        this.formularies.clear();
+    }
+    async resolveDay(dateInput, options = {}) {
+        const date = dateInput instanceof Date ? new Date(dateInput) : new Date(`${dateInput}T12:00:00`);
+        if (Number.isNaN(date.valueOf()))
+            throw new Error(`Invalid date: ${String(dateInput)}`);
+        const dateKey = (0, date_utils_1.iso)(date);
+        const diagnostic = (0, text_fetcher_1.createDiagnostic)();
+        let day = null;
+        try {
+            const desiredFormulary = options.formularyIndex ?? this.formularies.get(dateKey);
+            day = await this.calendarEngine.resolveCalendarDay(date, diagnostic, desiredFormulary);
+            if (day.massOptions.length > 1)
+                this.formularies.set(dateKey, day.formularyIndex);
+        }
+        catch (error) {
+            const message = error instanceof Error ? error.message : String(error);
+            diagnostic.errors.push(message);
+            return { status: 'failed', date: dateKey, day: null, proper: { status: 'idle', data: null, error: null }, colourPlan: null, error: message, diagnostic };
+        }
+        try {
+            const main = day.main;
+            let path = main?.path || null;
+            let inherited = false;
+            if (path && main.flexibility === 'tempora' && !(await this.calendarEngine.missaExists(path, diagnostic)))
+                path = null;
+            if (!path) {
+                const inheritedObservance = await this.calendarEngine.inferObservance(date, diagnostic);
+                if (!inheritedObservance?.path)
+                    throw new Error(`No inherited Proper could be inferred for ${dateKey}`);
+                path = inheritedObservance.path;
+                inherited = true;
+            }
+            let sources = {};
+            for (const language of ['la', 'en', 'fr'])
+                sources[language] = await this.properResolver.resolveSource(path, language, diagnostic);
+            sources = await applyShiftedPostEpiphany(this.properResolver, sources, date, path, diagnostic);
+            const rules = (0, proper_resolver_1.ruleInfo)(sources);
+            const meta = {
+                date: dateKey,
+                path,
+                properId: `calendar:${dateKey}:${path}`,
+                name: day.main.title || 'Feria',
+                nameFr: day.main.title || 'Férie',
+                rank: (0, calendar_engine_1.classLabel)(day.main.rank || 4),
+                color: day.main.color || 'White',
+                profile: 'ordinary_mass',
+                gloria: inherited ? false : rules.gloria,
+                credo: inherited ? false : rules.credo,
+                preface: inherited ? seasonalPreface(day) : (rules.preface || 'Communis'),
+                inherited,
+            };
+            const preface = await this.properResolver.resolvePreface(meta.preface || 'Communis', diagnostic);
+            let proper = (0, proper_resolver_1.normalizeProper)(meta, sources, preface, diagnostic);
+            proper = await mergeCommemorations(this.properResolver, proper, day, diagnostic);
+            proper.riteProfile = (0, liturgical_theme_1.riteProfileFor)(path, proper);
+            proper.sourcePath = path;
+            proper.inheritedProper = inherited;
+            proper.calendarDay = day;
+            proper.formularies = day.formularies || null;
+            proper.formularyIndex = day.formularyIndex || 0;
+            proper.canonicalColor = proper.color;
+            const colourPlan = (0, liturgical_theme_1.liturgicalColorPlan)(date, day, path, proper);
+            proper.liturgicalColorPlan = colourPlan;
+            proper.color = colourPlan.primary;
+            proper.vestmentsLabel = colourPlan.label;
+            proper.sourceRevisions = source_config_1.SOURCE_REVISIONS;
+            return { status: 'ready', date: dateKey, day, proper: { status: 'ready', data: proper, error: null }, colourPlan, error: null, diagnostic };
+        }
+        catch (error) {
+            const message = error instanceof Error ? error.message : String(error);
+            diagnostic.errors.push(message);
+            return { status: 'ready', date: dateKey, day, proper: { status: 'failed', data: null, error: message }, colourPlan: null, error: null, diagnostic };
+        }
+    }
+}
+exports.DayResolver = DayResolver;
+const createDayResolver = (fetcher) => new DayResolver(fetcher);
+exports.createDayResolver = createDayResolver;
+
+},2:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CalendarEngine = exports.classLabel = void 0;
+exports.colorLabel = colorLabel;
+const date_utils_1 = require(3);
+const source_config_1 = require(4);
+const source_parsers_1 = require(5);
+const ROMAN = ['', 'I', 'II', 'III', 'IV'];
+const classLabel = (rank) => `${ROMAN[rank] || rank} class`;
+exports.classLabel = classLabel;
+function colorLabel(code) {
+    const map = { w: 'White', r: 'Red', v: 'Violet', g: 'Green', b: 'Black', p: 'Rose' };
+    return [...new Set([...String(code || 'w')].map(char => map[char] || char))].join(' / ');
+}
+const PAT = {
+
+====================================================================================================
+PROPER TEXT + ATTACH PROPER
+====================================================================================================
+@ char 900367 line 5483
+', en: 'John', fr: 'Jean' },
+    };
+    return ref ? names[ref.slug] || null : null;
+}
+function gospelAnnouncementText(proper) {
+    const evangelist = gospelEvangelist(proper);
+    const title = evangelist
+        ? {
+            lat: `Sequéntia ✠ sancti Evangélii secúndum ${evangelist.lat}.`,
+            en: `Continuation ✠ of the Holy Gospel according to Saint ${evangelist.en}.`,
+            fr: `Suite ✠ du saint Évangile selon saint ${evangelist.fr}.`,
+        }
+        : {
+            lat: 'Sequéntia ✠ sancti Evangélii.',
+            en: 'Continuation ✠ of the Holy Gospel.',
+            fr: 'Suite ✠ du saint Évangile.',
+        };
+    return {
+        lat: `℣. Dóminus vobíscum.\n℟. Et cum spíritu tuo.\n\n${title.lat}\n\n℟. Glória tibi, Dómine.`,
+        en: `℣. The Lord be with you.\n℟. And with thy spirit.\n\n${title.en}\n\n℟. Glory be to Thee, O Lord.`,
+        fr: `℣. Le Seigneur soit avec vous.\n℟. Et avec votre esprit.\n\n${title.fr}\n\n℟. Gloire à vous, Seigneur.`,
+    };
+}
+function properText(proper, slot, stepId) {
+    if (!proper)
+        return undefined;
+    switch (slot) {
+        case "introit": return (0, ordinary_1.normaliseText3)(proper.introit);
+        case "collects": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.collectDialogue, ...normaliseList(proper.collects)]);
+        case "epistle": return (0, ordinary_1.concatText3)([(0, ordinary_1.normaliseText3)(proper.epistle), responseDeoGratias]);
+        case "preGospelChants": {
+            const chants = (proper.preGospelChants || []).filter(Boolean);
+            if (!chants.length)
+                return (0, ordinary_1.normaliseText3)(proper.gradual);
+            const exact = chants.find(ch => (ch.id || ch.kind || "").toLowerCase() === stepId.toLowerCase());
+            const stepKind = stepId.toLowerCase();
+            const semantic = chants.find(ch => (ch.kind || "").toLowerCase().includes(stepKind));
+            const byIndex = stepKind === "gradual" ? chants[0] : stepKind === "alleluia" ? chants.find(ch => /allel/i.test(ch.kind || "")) || chants[1] : undefined;
+            return (0, ordinary_1.normaliseText3)((exact || semantic || byIndex || chants[chants.length - 1])?.text);
+        }
+        case "sequence": return (0, ordinary_1.normaliseText3)(proper.sequence);
+        case "gospel": return (0, ordinary_1.normaliseText3)(proper.gospel);
+        case "offertory": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.offertoryDialogue, (0, ordinary_1.normaliseText3)(proper.offertory)]);
+        case "secrets": return (0, ordinary_1.concatText3)(normaliseList(proper.secrets));
+        case "preface": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.prefaceDialogue, (0, ordinary_1.normaliseText3)(proper.preface)]);
+        case "communion": return (0, ordinary_1.normaliseText3)(proper.communion);
+        case "postcommunions": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.postcommunionDialogue, ...normaliseList(proper.postcommunions)]);
+        case "superPopulum": return (0, ordinary_1.normaliseText3)(proper.superPopulum);
+        default: return undefined;
+    }
+}
+function properChoirText(proper, slot, stepId) {
+    if (!proper)
+        return undefined;
+    if (slot === "preGospelChants") {
+        const chants = (proper.preGospelChants || []);
+        if (!chants.length)
+            return (0, ordinary_1.normaliseText3)(proper.gradual);
+        if (stepId === "gospel-prep")
+            return (0, ordinary_1.normaliseText3)(chants[chants.length - 1]?.text);
+        return properText(proper, slot, stepId);
+    }
+    if (slot === "offertory")
+        return (0, ordinary_1.normaliseText3)(proper.offertory);
+    return properText(proper, slot, stepId);
+}
+function properSlotHasSource(proper, slot) {
+    if (!proper)
+        return false;
+    switch (slot) {
+        case "introit": return hasText((0, ordinary_1.normaliseText3)(proper.introit));
+        case "collects": return normaliseList(proper.collects).length > 0;
+        case "epistle": return hasText((0, ordinary_1.normaliseText3)(proper.epistle));
+        case "preGospelChants": return (proper.preGospelChants || []).some(ch => hasText((0, ordinary_1.normaliseText3)(ch?.text))) || hasText((0, ordinary_1.normaliseText3)(proper.gradual));
+        case "sequence": return hasText((0, ordinary_1.normaliseText3)(proper.sequence));
+        case "gospel": return hasText((0, ordinary_1.normaliseText3)(proper.gospel));
+        case "offertory": return hasText((0, ordinary_1.normaliseText3)(proper.offertory));
+        case "secrets": return normaliseList(proper.secrets).length > 0;
+        case "preface": return hasText((0, ordinary_1.normaliseText3)(proper.preface));
+        case "communion": return hasText((0, ordinary_1.normaliseText3)(proper.communion));
+        case "postcommunions": return normaliseList(proper.postcommunions).length > 0;
+        case "superPopulum": return hasText((0, ordinary_1.normaliseText3)(proper.superPopulum));
+        default: return false;
+    }
+}
+function attachProper(step, proper, properAvailable) {
+    const out = clone(step);
+    if (out.id === "gospel-announcement") {
+        out.text = gospelAnnouncementText(proper);
+        if (Array.isArray(out.gestures) && out.gestures[0]) {
+            out.gestures[0].anchorLat = 'Sequéntia ✠ sancti Evangélii';
+            out.gestures[0].anchorEng = 'Continuation ✠ of the Holy Gospel';
+        }
+    }
+    if (out.properSlot) {
+        const sourceReady = properAvailable && properSlotHasSource(proper, out.properSlot);
+        const resolved = sourceReady ? properText(proper, out.properSlot, out.id) : undefined;
+        out.properStatus = hasText(resolved) ? "ready" : "unavailable";
+        if (resolved)
+            out.text = resolved;
+        else
+            delete out.text;
+        if (out.id === "secret")
+            out.audibleFragment = secretConclusion;
+    }
+    if (out.concurrentProperChoir) {
+        const choirSourceReady = properAvailable && properSlotHasSource(proper, out.concurrentProperChoir);
+        const choirText = choirSourceReady ? properChoirText(proper, out.concurrentProperChoir, out.id) : undefined;
+        const dynamicEvent = {
+            id: `${out.id}-${out.concurrentProperChoir}-choir`,
+            role: "choir",
+            properSlot: out.concurrentProperChoir,
+            properStatus: hasText(choirText) ? "ready" : "unavailable",
+            ...(choirText ? { text: choirText } : {}),
+            continuation: true,
+        };
+        out.choir = [...(out.choir || []), dynamicEvent];
+    }
+    delete out.concurrentProperChoir;
+    return out;
+}
+function makeSecondConfiteor(joinConfiteor) {
+    return {
+        id: "second-confiteor",
+        phase: "Communion",
+        section: "Holy Communion",
+        title: { en: "Second Confiteor", fr: "Second Confiteor", lat: "Confíteor" },
+        subtitle: {
+            en: "Older custom before the Communion of the faithful",
+            fr: "Ancien usage avant la Communion des fidèles",
+        },
+        actor: joinConfiteor ? "mixed" : "ministers",
+        priestPosition: "Foot/centre of altar",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "KNEEL", policy: "custom", source: "local/custom" },
+        gestures: [
+            { kind: "action", status: "custom", label: "Strike the breast ×3 at mea culpa", anchorLat: "mea culpa, mea culpa, mea máxima culpa", before: true },
+            { kind: "cross", status: "custom", label: "Make the sign of the cross", anchorLat: "Indulgéntiam", before: true },
+        ],
+        text: (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.serverConfiteor, ordinary_1.fixedOrdinary.misereaturVestri, ordinary_1.fixedOrdinary.indulgentiam]),
+        customNote: "The 1962 Communion rubric omits this Confiteor and absolution within Mass. It is retained only as an explicitly enabled older custom.",
+        variantNoteId: "older-custom-second-confiteor",
+    };
+}
+function filterOrdinarySteps(steps, options, proper) {
+    let out = steps;
+    if (proper?.hasGloria === false)
+        out = out.filter(step => step.id !== "gloria");
+    if (proper?.hasCredo === false)
+        out = out.filter(step => step.id !== "credo");
+    if (options.form === "sung" && options.incenseSung === false) {
+        out = out.filter(step => step.id !== "incense-entrance" && step.id !== "incense-off");
+    }
+    if (options.omitJudica || proper?.isRequiem)
+        out = out.filter(step => step.id !== "judica");
+    if (options.faithfulCommunion === false) {
+        out = out.filter(step => !["second-confiteor", "ecce", "domine-non-sum-dignus", "communion-faithful"].includes(step.id));
+    }
+    else if (options.secondConfiteor) {
+        const idx = out.findIndex(step => step.id === "ecce");
+        if (idx >= 0)
+            out = [...out.slice(0, idx), makeSecondConfiteor(!!options.joinConfiteor), ...out.slice(idx)];
+    }
+    // 1962 SOT: at Sung Mass, if the faithful receive, the Communion chant begins
+    // with distribution after the communicants' triple Domine non sum dignus.
+    // If nobody receives, it begins during the priest's Communion.
+    if (options.form === "sung" && options.faithfulCommunion !== false) {
+        out = out.map(step => {
+            if (step.id !== "priest-communion" || !step.concurrentProperChoir)
+                return step;
+            const copy = { ...step };
+            delete copy.concurrentProperChoir;
+            return copy;
+        });
+    }
+    if (proper?.omitLastGospel || proper?.followedByLiturgicalAction) {
+        out = out.filter(step => step.id !== "last-gospel-announcement" && step.id !== "last-gospel");
+    }
+    return out;
+}
+function insertSuperPopulum(steps, proper, properAvailable) {
+    const text = properAvailable ? (0, ordinary_1.normaliseText3)(proper?.superPopulum) : undefined;
+    if (!text)
+        return steps;
+    const idx = steps.findIndex(step => step.id === "postcommunion");
+    if (idx < 0)
+        return steps;
+    const step = {
+        id: "super-populum",
+        phase: "Conclusion",
+        section: "Postcommunion",
+        title: { lat: "Oratio super populum", en: "Prayer over the People", fr: "Oraison sur le peuple" },
+        actor: "celebrant",
+        audibility: "audible",
+        privateAction: false,
+        text,
+        properSlot: "superPopulum",
+        properStatus: "ready",
+    };
+    return [...steps.slice(0, idx + 1), step, ...steps.slice(idx + 1)];
+}
+/* mass-sot-field-hotfix-20260927 */
+/* mass-sot-field-cues-20260927-v2 */
+/* mass-sot-final-field-safe-20260927-v3 */
+function insertSermonPause(steps) {
+    const idx = steps.findIndex(step => step.id === "gospel");
+    if (idx < 0 || steps.some(step => step.id === "sermon-pause"))
+        return steps;
+    const sermon = {
+        id: "sermon-pause",
+        phase: "Mass of the Catechumens",
+        section: "Gospel & Creed",
+        title: { en: "Sermon / Homily · if present", fr: "Sermon / Homélie · si présent" },
+        subtitle: { en: "If preaching occurs, stay here until it ends. If not, continue.", fr: "S’il y a une prédication, restez ici jusqu’à sa fin. Sinon, continuez." },
+        actor: "preacher",
+        priestPosition: "Preaching place",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "CUSTOM", policy: "local", source: "sermon" },
+        gestures: [],
+        explanation: "The sermon is a navigation pause, not a prayer-text step of the Ordo Missae. Do not advance the Mass timeline because of elapsed preaching time."
+    };
+    return [...steps.slice(0, idx + 1), sermon, ...steps.slice(idx + 1)];
+}
+function buildMassSequence(options) {
+    const proper = options.proper || null;
+    const properAvailable = options.properAvailable !== false && !!proper;
+    let steps = clone(options.form === "sung" ? sungTemplate : lowTemplate);
+    steps = filterOrdinarySteps(steps, options, proper);
+    steps = steps.map(step => attachProper(step, proper, properAvailable));
+    steps = insertSuperPopulum(steps, proper, properAvailable);
+    if (!options.exceptionalProfile)
+        steps = insertSermonPause(steps);
+    if (options.exceptionalProfile)
+        steps = (0, exceptional_days_1.applyExceptionalProfile)(steps, options.exceptionalProfile, options.form, proper);
+    return {
+        form: options.form,
+        properName: proper?.name,
+        properStatus: properAvailable ? "ready" : "unavailable",
+        steps,
+    };
+}
+function properUnavailableText() {
+    return clone(PROPER_UNAVAILABLE_TITLE);
+}
+
+},28:function(module,exports,require){module.exports=[{"id":"sign-cross","phase":"Mass of the Catechumens","section":"Prayers at the Foot","title":{"en":"Sign of the Cross · Introibo","fr":"Signe de la Croix · Introibo"},"subtitle":{"en":"At the foot of the altar","fr":"Au bas de l’autel"},"actor":"celebrant","priestPosition":"Foot of the altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"gestures":[{"kind":"cross","label":"Sign of the cross","anchorLat":"In nómine Patris","anchorEng":"In the Name of the Father","before":true,"status":"custom"}],"explanation":"The celebrant begins below the altar with the sign of the cross, then says Introibo ad altare Dei; the ministers answer Ad Deum qui laetificat iuventutem meam. At a Sung Mass the choir may already be singing the Introit.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"In nómine Patris, ✠ et Fílii, et Spíritus Sancti. Amen.\n\n℣. Introíbo ad altáre Dei.\n℟. Ad Deum, qui lætíficat iuventútem meam.","en":"In the Name of the Father, ✠ and of the Son, and of the Holy Ghost. Amen.\n\n℣. I will go in unto the altar of God.\n℟. Unto God, Who giveth joy to my youth.","fr":"Au nom du Père, ✠ et du Fils, et du Saint-Esprit. Ainsi soit-il.\n\n℣. J’irai à l’autel de Dieu.\n℟. Vers Dieu qui réjouit ma
+
+====================================================================================================
+BUILD MASS SEQUENCE
+====================================================================================================
+@ char 911045 line 5685
+uper populum", en: "Prayer over the People", fr: "Oraison sur le peuple" },
+        actor: "celebrant",
+        audibility: "audible",
+        privateAction: false,
+        text,
+        properSlot: "superPopulum",
+        properStatus: "ready",
+    };
+    return [...steps.slice(0, idx + 1), step, ...steps.slice(idx + 1)];
+}
+/* mass-sot-field-hotfix-20260927 */
+/* mass-sot-field-cues-20260927-v2 */
+/* mass-sot-final-field-safe-20260927-v3 */
+function insertSermonPause(steps) {
+    const idx = steps.findIndex(step => step.id === "gospel");
+    if (idx < 0 || steps.some(step => step.id === "sermon-pause"))
+        return steps;
+    const sermon = {
+        id: "sermon-pause",
+        phase: "Mass of the Catechumens",
+        section: "Gospel & Creed",
+        title: { en: "Sermon / Homily · if present", fr: "Sermon / Homélie · si présent" },
+        subtitle: { en: "If preaching occurs, stay here until it ends. If not, continue.", fr: "S’il y a une prédication, restez ici jusqu’à sa fin. Sinon, continuez." },
+        actor: "preacher",
+        priestPosition: "Preaching place",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "CUSTOM", policy: "local", source: "sermon" },
+        gestures: [],
+        explanation: "The sermon is a navigation pause, not a prayer-text step of the Ordo Missae. Do not advance the Mass timeline because of elapsed preaching time."
+    };
+    return [...steps.slice(0, idx + 1), sermon, ...steps.slice(idx + 1)];
+}
+function buildMassSequence(options) {
+    const proper = options.proper || null;
+    const properAvailable = options.properAvailable !== false && !!proper;
+    let steps = clone(options.form === "sung" ? sungTemplate : lowTemplate);
+    steps = filterOrdinarySteps(steps, options, proper);
+    steps = steps.map(step => attachProper(step, proper, properAvailable));
+    steps = insertSuperPopulum(steps, proper, properAvailable);
+    if (!options.exceptionalProfile)
+        steps = insertSermonPause(steps);
+    if (options.exceptionalProfile)
+        steps = (0, exceptional_days_1.applyExceptionalProfile)(steps, options.exceptionalProfile, options.form, proper);
+    return {
+        form: options.form,
+        properName: proper?.name,
+        properStatus: properAvailable ? "ready" : "unavailable",
+        steps,
+    };
+}
+function properUnavailableText() {
+    return clone(PROPER_UNAVAILABLE_TITLE);
+}
+
+},28:function(module,exports,require){module.exports=[{"id":"sign-cross","phase":"Mass of the Catechumens","section":"Prayers at the Foot","title":{"en":"Sign of the Cross · Introibo","fr":"Signe de la Croix · Introibo"},"subtitle":{"en":"At the foot of the altar","fr":"Au bas de l’autel"},"actor":"celebrant","priestPosition":"Foot of the altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"gestures":[{"kind":"cross","label":"Sign of the cross","anchorLat":"In nómine Patris","anchorEng":"In the Name of the Father","before":true,"status":"custom"}],"explanation":"The celebrant begins below the altar with the sign of the cross, then says Introibo ad altare Dei; the ministers answer Ad Deum qui laetificat iuventutem meam. At a Sung Mass the choir may already be singing the Introit.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"In nómine Patris, ✠ et Fílii, et Spíritus Sancti. Amen.\n\n℣. Introíbo ad altáre Dei.\n℟. Ad Deum, qui lætíficat iuventútem meam.","en":"In the Name of the Father, ✠ and of the Son, and of the Holy Ghost. Amen.\n\n℣. I will go in unto the altar of God.\n℟. Unto God, Who giveth joy to my youth.","fr":"Au nom du Père, ✠ et du Fils, et du Saint-Esprit. Ainsi soit-il.\n\n℣. J’irai à l’autel de Dieu.\n℟. Vers Dieu qui réjouit ma jeunesse."},"concurrentProperChoir":"introit"},{"id":"judica","phase":"Mass of the Catechumens","section":"Prayers at the Foot","title":{"en":"Psalm 42 · Judica me","fr":"Psaume 42 · Judica me"},"subtitle":{"en":"Priest and ministers alternate the psalm","fr":"Le prêtre et les ministres alternent le psaume"},"actor":"mixed","priestPosition":"Foot of the altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The priest and ministers alternate Psalm 42, then repeat Introibo / Ad Deum. The psalm is omitted in Masses for the Dead and from Passion Sunday through Holy Saturday.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Ps 42, 1-5\nS. Iúdica me, Deus, et discérne causam meam de gente non sancta: ab hómine iníquo et dolóso érue me.\nM. Quia tu es, Deus, fortitudo mea: quare me reppulísti, et quare tristis incédo, dum afflígit me inimícus?\nS. Emítte lucem tuam et veritátem tuam: ipsa me deduxérunt, et adduxérunt in montem sanctum tuum et in tabernácula tua.\nM. Et introíbo ad altáre Dei: ad Deum, qui lætíficat iuventútem meam.\nS. Confitébor tibi in cíthara, Deus, Deus meus: quare tristis es, ánima mea, et quare contúrbas me?\nM. Spera in Deo, quóniam adhuc confitébor illi: salutáre vultus mei, et Deus meus.\nS. Glória Patri, et Fílio, et Spirítui Sancto.\nM. Sicut erat in princípio, et nunc, et semper: et in saecula sæculórum. Amen.\n\n℣. Introíbo ad altáre Dei.\n℟. Ad Deum, qui lætíficat iuventútem meam.","en":"Ps 42, 1-5\nS. Judge me, O God, and distinguish my cause from the nation that is not holy: deliver me from the unjust and deceitful man.\nM. For Thou, O God, art my strength: why hast Thou cast me off? and why do I go sorrowful whilst the enemy afflicteth me?\nS. Send forth Thy light and Thy truth: they have led me and brought me unto Thy holy hill, and into Thy tabernacles.\nM. And I will go in unto the Altar of God: unto God, Who giveth joy to my youth.\nS. I will praise Thee upon the harp, O God, my God: why art thou sad, O my soul? and why dost thou disquiet me?\nM. Hope thou in God, for I will yet praise Him: Who is the salvation of my countenance, and my God.\nS. Glory be to the Father, and to the Son, and to the Holy Ghost.\nM. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n\n℣. I will go in unto the altar of God.\n℟. Unto God, Who giveth joy to my youth.","fr":"Ps 42, 1-5\nS. Jugez-moi, ô Dieu, et séparez ma cause de celle d’un peuple impie ; délivrez-moi de l’homme injuste et trompeur.\nM. Car vous êtes, ô Dieu, ma force : pourquoi m’avez-vous repoussé ? et pourquoi dois-je marcher dans la tristesse, tandis que l’ennemi m’afflige ?\nS. Envoyez votre lumière et votre vérité : elles m’ont conduit et amené à votre montagne sainte et dans vos tabernacles.\nM. Et j’irai vers l’autel de Dieu : vers Dieu qui réjouit ma jeunesse.\nS. Je vous louerai sur la harpe, ô Dieu, mon Dieu. Pourquoi es-tu triste, ô mon âme, et pourquoi me troubles-tu ?\nM. Espère en Dieu, car je le louerai encore : lui, le salut de mon visage et mon Dieu.\nS. Gloire au Père, et au Fils, et au Saint-Esprit.\nM. Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il."},"concurrentProperChoir":"introit"},{"id":"adjutorium","phase":"Mass of the Catechumens","section":"Prayers at the Foot","title":{"en":"Adjutorium nostrum","fr":"Adjutorium nostrum"},"subtitle":{"en":"Our help is in the Name of the Lord","fr":"Notre secours est dans le Nom du Seigneur"},"actor":"mixed","priestPosition":"Foot of the altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"gestures":[{"kind":"cross","label":"Sign of the cross","anchorLat":"Adiutórium nostrum ✠","anchorEng":"Our help ✠","before":true,"status":"custom"}],"explanation":"The priest says Adiutorium nostrum in nomine Domini and the ministers answer Qui fecit caelum et terram. The printed ✠ marks the traditional sign of the cross.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"℣. Adiutórium nostrum ✠ in nómine Dómini.\n℟. Qui fecit coelum et terram.","en":"℣. Our help ✠ is in the Name of the Lord.\n℟. Who hath made heaven and earth.","fr":"℣. Notre secours ✠ est dans le nom du Seigneur.\n℟. Qui a fait le ciel et la terre."},"concurrentProperChoir":"introit"},{"id":"priest-confiteor","phase":"Mass of the Catechumens","section":"Prayers at the Foot","title":{"en":"Confiteor of the Priest","fr":"Confiteor du prêtre"},"subtitle":{"en":"The celebrant confesses first","fr":"Le célébrant se confesse en premier"},"actor":"celebrant","priestPosition":"Foot of the altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The celebrant makes the first Confiteor, saying et vobis, fratres. The ministers answer Misereatur tui; the priest replies Amen.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"[ROLE=PRIEST]\nConfíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Ioánni Baptístæ,\nsanctis Apóstolis Petro et Paulo, ómnibus Sanctis, et vobis, fratres: quia peccávi nimis cogitatióne, verbo et opere:\nmea culpa, mea culpa, mea máxima culpa. Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum,\nbeátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et vos, fratres,\noráre pro me ad Dóminum Deum nostrum.\n[/ROLE]\n\n[ROLE=MINISTERS]\nMisereátur tui omnípotens Deus, et, dimíssis peccátis tuis, perdúcat te ad vitam ætérnam.\n[/ROLE]\n\n[ROLE=PRIEST]\nAmen.\n[/ROLE]","en":"[ROLE=PRIEST]\nI confess to almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist,\nto the holy Apostles Peter and Paul, to all the Saints, and to you, brethren, that I have sinned exceedingly in thought,\nword and deed: through my fault, through my fault, through my most grievous fault. Therefore I beseech blessed Mary ever Virgin,\nblessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and you, brethren,\nto pray to the Lord our God for me.\n[/ROLE]\n\n[ROLE=MINISTERS]\nMay Almighty God have mercy upon you, forgive you your sins, and bring you to life everlasting.\n[/ROLE]\n\n[ROLE=PRIEST]\nAmen.\n[/ROLE]","fr":"[ROLE=PRIEST]\nJe confesse à Dieu tout-puissant, à la bienheureuse Marie toujours Vierge, à saint Michel Archange, à saint Jean-Baptiste, aux saints Apôtres Pierre et Paul, à tous les saints, et à vous, mes frères, que j’ai beaucoup péché par pensée, par parole et par action : c’est ma faute, c’est ma faute, c’est ma très grande faute. C’est pourquoi je supplie la bienheureuse Marie toujours Vierge, saint Michel Archange, saint Jean-Baptiste, les saints Apôtres Pierre et Paul, tous les saints, et vous, mes frères, de prier pour moi le Seigneur notre Dieu.\n[/ROLE]\n\n[ROLE=MINISTERS]\nQue Dieu tout-puissant vous fasse miséricorde, qu’il vous pardonne vos péchés et vous conduise à la vie éternelle.\n[/ROLE]\n\n[ROLE=PRIEST]\nAinsi soit-il.\n[/ROLE]"},"concurrentProperChoir":"introit"},{"id":"ministers-confiteor","phase":"Mass of the Catechumens","section":"Prayers at the Foot","title":{"en":"Confiteor of the Ministers","fr":"Confiteor des ministres"},"subtitle":{"en":"The ministers confess before the priest","fr":"Les ministres se confessent devant le prêtre"},"actor":"mixed","priestPosition":"Foot of the altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"gestures":[{"kind":"action","label":"Strike breast ×3","anchorLat":"mea culpa, mea culpa, mea máxima culpa","anchorEng":"through my fault, through my fault, through my most grievous fault","before":true,"status":"custom"}],"explanation":"The ministers make the second Confiteor at the foot of the altar, using et tibi, pater. The priest then answers with the prayers of mercy in the following distinct moments.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"[ROLE=MINISTERS]\nConfíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Ioánni Baptístæ, sanctis Apóstolis Petro et Paulo, ómnibus Sanctis, et tibi, pater: quia peccávi nimis cogitatióne, verbo et opere: mea culpa, mea culpa, mea máxima culpa. Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, orare pro me ad Dóminum, Deum nostrum.\n[/ROLE]","en":"[ROLE=MINISTERS]\nI confess to Almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, to all the Saints, and to you Father, that I have sinned exceedingly, in thought, word and deed: through my fault, through my fault, through my most grievous fault. Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and Thee Father, to pray to the Lord our God for me.\n[/ROLE]","fr":"[ROLE=MINISTERS]\nJe confesse à Dieu tout-puissant, à la bienheureuse Marie toujours Vierge, à saint Michel Archange, à saint Jean-Baptiste, aux saints Apôtres Pierre et Paul, à tous les saints, et à vous, mon Père, que j’ai beaucoup péché par pensée, par parole et par action : c’est ma faute, c’est ma faute, c’est ma très grande faute. C’est pourquoi je supplie la bienheureuse Marie toujours Vierge, saint Michel Archange, saint Jean-Baptiste, les saints Apôtres Pierre et Paul, tous les saints, et vous, mon Père, de prier pour moi le Seigneur notre Dieu.\n[/ROLE]"},"concurrentProperChoir":"introit"},{"id":"misereatur-vestri","phase":"Mass of the Catechumens","section":"Preparation","title":{"en":"Misereatur vestri","fr":"Misereatur vestri"},"subtitle":{"en":"Prayer of mercy after the ministers’ Confiteor","fr":"Prière de miséricorde après le Confiteor des ministres"},"actor":"celebrant","priestPosition":"Foot of the altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The priest prays that Almighty God may have mercy, forgive sins and lead the ministers and faithful to everlasting life; the ministers answer Amen.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"[ROLE=PRIEST]\nMisereátur vestri omnípotens Deus, et, dimíssis peccátis vestris, perdúcat vos ad vitam ætérnam.\n[/ROLE]\n\n[ROLE=MINISTERS]\nAmen.\n[/ROLE]","en":"[ROLE=PRIEST]\nMay Almighty God have mercy upon you, forgive you your sins and bring you to life everlasting.\n[/ROLE]\n\n[ROLE=MINISTERS]\nAmen.\n[/ROLE]","fr":"[ROLE=PRIEST]\nQue Dieu tout-puissant vous fasse miséricorde, qu’il vous pardonne vos péchés et vous conduise à la vie éternelle.\n[/ROLE]\n\n[ROLE=MINISTERS]\nAinsi soit-il.\n[/ROLE]"},"concurrentProperChoir":"introit"},{"id":"indulgentiam-absolution","phase":"Mass of the Catechumens","section":"Preparation","title":{"en":"Indulgentiam · Absolution","fr":"Indulgentiam · Absolution"},"subtitle":{"en":"Pardon, absolution and remission of sins","fr":"Pardon, absolution et rémission de
+
+====================================================================================================
+PROJECT STEP
+====================================================================================================
+@ char 1361168 line 5939
+the week, they come to the tomb, the sun having now risen, alleluia.","fr":"Après la Communion, il n’y a pas d’antienne de Communion. À sa place, les Laudes sont chantées ; au Benedictus, on encense l’autel, les ministres, les servants et les fidèles."},"posture":{"value":"CUSTOM","policy":"local","source":"local"},"gestures":[],"explanation":"The Easter Vigil has no Communion antiphon. Lauds is sung in its place; at the Benedictus the altar, ministers, servers and faithful are incensed.","ritualActions":[],"exceptional":{"rite":"easter-vigil","phase":"Mass of the Faithful · Communion"}}]}};
+},35:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.projectStep = projectStep;
+exports.projectSequence = projectSequence;
+function unavailable(step, slot, actor) {
+    return {
+        stepId: step.id,
+        kind: "proper-unavailable",
+        actor,
+        properSlot: slot,
+        note: "Proper unavailable; the fixed Ordinary remains available.",
+    };
+}
+function choirEvents(step) {
+    return (step.choir || []).map(event => {
+        if (event.properStatus === "unavailable" || !event.text)
+            return unavailable(step, String(event.properSlot || "proper"), "choir");
+        return {
+            stepId: step.id,
+            kind: "choir",
+            actor: "choir",
+            text: event.text,
+            properSlot: event.properSlot,
+            continuation: !!event.continuation,
+        };
+    });
+}
+function projectStep(step, mode) {
+    const events = [];
+    const choir = choirEvents(step);
+    if (mode === "missal") {
+        if (step.properStatus === "unavailable" && step.properSlot)
+            events.push(unavailable(step, step.properSlot, step.actor));
+        else if (step.text)
+            events.push({ stepId: step.id, kind: "altar", actor: step.actor, text: step.text, properSlot: step.properSlot });
+        events.push(...choir);
+        return { mode, stepId: step.id, events };
+    }
+    // VOX: choir is always part of what is actually heard.
+    events.push(...choir);
+    if (step.properStatus === "unavailable" && step.properSlot && step.audibility !== "quiet" && step.audibility !== "silent") {
+        events.push(unavailable(step, step.properSlot, step.actor));
+        return { mode, stepId: step.id, events };
+    }
+    if (step.audibility === "audible") {
+        if (step.text)
+            events.push({ stepId: step.id, kind: "altar", actor: step.actor, text: step.text, properSlot: step.properSlot });
+    }
+    else if (step.audibility === "mixed") {
+        if (step.audibleFragment)
+            events.push({ stepId: step.id, kind: "altar", actor: step.actor, text: step.audibleFragment, properSlot: step.properSlot });
+        else if (step.text && !step.privateAction)
+            events.push({ stepId: step.id, kind: "altar", actor: step.actor, text: step.text, properSlot: step.properSlot });
+    }
+    else if (step.audibility === "choir") {
+        // Choir already emitted above.
+    }
+    return { mode, stepId: step.id, events };
+}
+function projectSequence(steps, mode) {
+    return steps.map(step => projectStep(step, mode));
+}
+
+},36:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.validateMassStep = validateMassStep;
+exports.validateMassSequence = validateMassSequence;
+const VALID_AUDIBILITY = new Set(["audible", "quiet", "silent", "mixed", "choir"]);
+function validateText3(value, path, issues) {
+    if (!value)
+        return;
+    for (const lang of ["lat", "en", "fr"]) {
+        const text = value[lang];
+        if (text !== undefined && typeof text !== "string")
+            issues.push({ path: `${path}.${lang}`, issue: "Must be a string" });
+        if (typeof text === "string" && /<\/?[a-z][^>]*>/i.test(text))
+            issues.push({ path: `${path}.${lang}`, issue: "HTML markup is not allowed in canonical liturgical data" });
+    }
+}
+function validateMassStep(step, index = 0) {
+    const issues = [];
+    const path = `steps[${index}]`;
+    if (!step || typeof step !== "object")
+        return [{ path, issue: "Step must be an object" }];
+    if (!step.id || typeof step.id !== "string")
+        issues.push({ path: `${path}.id`, issue: "Stable id is required" });
+    if (!step.phase || typeof step.phase !== "string")
+        issues.push({ path: `${path}.phase`, issue: "Phase is required" });
+    if (!step.section || typeof step.section !== "string")
+        issues.push({ path: `${path}.section`, issue: "Section is required" });
+    if (!step.title || typeof step.title !== "object")
+        issues.push({ path: `${path}.title`, issue: "Title object is required" });
+    validateText3(step.title, `${path}.title`, issues);
+    validateText3(step.subtitle, `${path}.subtitle`, issues);
+    validateText3(step.text, `${path}.text`, issues);
+    validateText3(step.audibleFragment, `${path}.audibleFragment`, issues);
+    if (!VALID_AUDIBILITY.has(step.audibility))
+        issues.push({ path: `${path}.audibility`, issue: `Unsupported audibility: ${String(step.audibility)}` });
+    if (step.choir) {
+        step.choir.forEach((event, eventIndex) => {
+            if (!event.id)
+                issues.push({ path: `${path}.choir[${eventIndex}].id`, issue: "Chant event id is required" });
+            validateText3(event.text, `${path}.choir[${eventIndex}].text`, issues);
+        });
+    }
+    return issues;
+}
+function validateMassSequence(sequence) {
+    const issues = [];
+    const ids = new Set();
+    sequence.steps.forEach((step, index) => {
+        issues.push(...validateMassStep(step, index));
+        if (ids.has(step.id))
+            issues.push({ path: `steps[${index}].id`, issue: `Duplicate step id: ${step.id}` });
+        ids.add(step.id);
+    });
+    return issues;
+}
+
+},37:function(module,exports,require){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NAV_ICON = exports.POSTURE_ICON = void 0;
+__exportStar(require(38), exports);
+exports.POSTURE_ICON = { KNEEL: 'ao-posture-kneel', STAND: 'ao-posture-stand', SIT: 'ao-posture-sit', BOW: 'ao-posture-bow', GENUFLECT: 'ao-posture-genuflect' };
+exports.NAV_ICON = { home: 'ao-nav-home', lost: 'ao-nav-im-lost', map: 'ao-nav-mass-map', settings: 'ao-nav-settings', info: 'ao-nav-info' };
+
+},38:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ICONS = void 0;
+exports.iconSrc = iconSrc;
+// Approved Ad Orientem Icon Asset Pack v1 — extracted from frozen donor pack.
+exports.ICONS = {
+    'ao-acolyte-cross': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAEAAElEQVR42uz9eZgk13UfiP7OufdGRK61V+8LGo2tARIkAS7i1qBEUeJij58+N+aNLdtjeR5lS6b8WbLHejOaaWA+z1jjJ8377LE1Yz3ZHtuPmmfCY8tjamRRlITmIhIkQIAAurE1Gt3ovaprz8zIiLj3nvdHRGZlZmVVN0CK4hI/fIXqyozMjOVmnN/ZfgcoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlSpQoUaJEiRIlvlVQeQpKlCjvAW8SUp6+EiVKAlCiRInv0HdV8j/ou+AeILdACEqSUKJESQBKlChxi99HGf1+njgBXlgAzc/nz5079wDnzzy14xvG8R/nd/wYAKBSOSP1+lZD/9BD8I8+ui1JoJIglChREoASJX4gv3MnT4LOnNn8+9w5MAA89RT8NkZTvgcMJg38Hvr3AwDqx4f3/9Qp+FuMJHwn7n8lGSnxAwVdnoISJf5kcOYMaGFh2AgVHjvtYBRp1FIRIAKh/N/0poyYiBT78Ujvt2z5+7GH86jDiWMCPCJ4pHjukUcFAB55JCc0x45BzpwBPfbY5vs/8ED+u9UCjUQLxkUCyuhAiRJlBKBEie/N71QvZN8zeoVnP+jFC7DF078FI/07wenHP2v+8Csvha/dWKWLKxXqtDYCrKRVgdVx7BlwuhN7nXjP3gt7n3HqRalMKPWiRCwPkQkBoSAQIiAoEKXwjpzLxGSGyDEHLtKaqhowVZXBqKwBnVUikzWnVXdmuppV5+r23nt3Zz/5k+9KgJ/LiMi/wfPGg5GDHmmo1yHz85DHHssJwcmTwCOPQIh2JAg73dukjACUKFESgBIl/li+SydO5OH8Y8eGjcpATrzn5cvJk/m2jz4KOXECvHv3Ub3y4oYW1VAcaZN5CSXVFU+22s1czfmskqRZzTofAaj41IeZp0hEQu/FeOcjCIzzogVQ4p32Ak0ELSJaxGuBkAcIvjD8+S5AAIaHkIgHQwjkmcgyccbMqRdKWVNiFCVMOjaaO6yppYyKjdax0YhDo1qBUR0dmo5RrrN7qhKntevppWbT4cy97tixYwPn5FH00iBFxKBPGk6e3DynRUShTwBGzuWbhexwDUsyUKIkACVKlBgCnziRh+5bLVAcg9IUdPYsqDBegz87efN8+vTD1X//6Rdqz5yNGwsLtr68nDbSTrcaZ91GEvt64lEjSIXIV7WlmiFVY4MqlGgWRM0KzdQj2u89fJxgyQNkNBliMoqECaxAwkRgJrBiYgDKQxRkKD8PKcydB9gLPAQSKlQjzdNEAi9A1+JaJ8MNATJFJOI5EUjiBLGHS72jxFkkTnws1ncdpO1E1gXU8g4dYYpJm40oCuJqNezUJsP2/JTZOHx4vvWJTxzufOQj/6pDdNMUhhqIFuDo0Xz/gwBSqUDqdcg2xYc7kYA3cx8sCUKJkgCUKPED9h2hngf6yCO5ERgNRRchdTz88MP82OnH1KEz4MPH5nTL6sjXwpoRXwt80rBIp5xgOnUy7SymvPMz1rmmuLTpPJrOoynkqywSsUOkhEIoaKOhDYNFEEOwHmhEUcgzRkFBkShF0AQoEBEAYohiQDERA+RpTBeheMmtGgFEDCF4J93UYlXEeysiINQhqAsgzpM4BzgRcV6sE++tg3hH3nmx4sU5SCJEbWZuESgGqE2K15h5nZRaZ80rRulFZXhJDK0or1YroV63ijrLy5LcuPF6cvXqUXf8+D4HAA89/pB/JPf9++F/KYgMEUQE9Mgj+d/fhuhASQBKlASgRIkfNPQMyeOPgxcXwe127m1euNDP23sAbvvXn4x++ic/O/Xiq9dnr69szN64ETfa67ZB5OeVob3seVKTr2uNeqCophVVlEIUGaqEAZkoIBMYCgKNUCloBrQGaUVQUJTVIwpqAeHKcvZ7//7J9Jc/eIe+774j4S/PNLmyHnshwKk83C8QATwEJJtuM+fEYNCMCUSIIAKykaaQCVhac1/68unk75+9jhsZgJ94D/3MVEP/pGHCeheZEyiIsPMQgcAJkQiLE8AJ4POHLIGs93DeS5p5iTNLSZJJ11rEiZNW6qXd9dJyljeck3XnZU2AdeFwUQXB8lQzWJmenlq97/CB1b/6t97avv/+X+kSkdshQpDXEhwFHcpAxkCCADI3B1/UErgR8lAa/hI/kCi7AEqUJHiEDD+Su5k4dQoOgN3GyPMdH/20WXtqzSwmSVAxJtoTUc2EMnHf3f9wRrzf463b47zdO1WlvVOR2mMtTVovdYg0AqJQKzKBAocGEmhILYKvRuTrFXa1EBIFoFARtCYXKPZGCbTmJAxY1SPGW48E13/rN/Y//9XfT6IXX++2mjUONmIfs5CHFyMkuV8vfStfHCRtMoDNp0AMYVCqmQyTwAst/8ov3PVS+LHj1wDgX/+tT19bazkXKEI79R0vokSgvPciAlhP5AVwHsi8UOpA3gs5iyCznjKLKLWodzNBu+uRZJDYQ7pWJMlgrZPUecQiaHnQGim5TsoukrWLK9eSxT+8dn3x8RNPrxH+xcaxO+bWKYg2bIB4d3M+nZhoJW+f2p3t/dSfc5984JOWiARngQvD15aPHwcVJAEPPdTXVfheaK8sUaKMAJQo8S2sdRn08gsjoBYXwXPtQ/xymrJSVwUALl2CA5CNGgYRoYXTP1v7b/7hE9PPPnt997XFeM/GamdPEifz8DJLjJlKQJOVkCaNolpkqNms8q5mXVWJBdbCagVVCYhCzQgVEBlCoCFRIBIF5EItXjNEw0MxQTORNkxGA0aTCwLWQaDZGL402TDPA5jsJP4doWHjhZwiEoCYiCAKICYQMVgIDOS+flFrTyN3AmbyJNAggJW6PtEIn1caCbxgda17V9yxt4ME1ovzzpN4gXMO1nmkqZB1DtZ66WZCaeaQZR5Z5mGdwHvxmYNYISSeKHNEiQd1U3CagZKMxHpx1nlrPdLMSiexiLuJ77S7vrvR9XG7S0mSYsMBSzowi2EYLU83gqWZiXDh8O6Z6w++d9e1n/s7f24F+Avj6gnMfkAnc3Nqbg7Yt49l797InT9/2D700EMeeLRHAPttjbeQSiiJQ4mSAJQo8V0OHvT2H3gg70c/daof1t9yI//MZ04E//gfnw5evmqj7sZGdariJpRPpwItc4pl3nrZL+L3uczts5mdFSdTTNIMNEUVQ9yoUlgPCKmXs17xc3MTvHu2ph5o1ghakQ0DpiggqhiW0JBoQ6QZ0AxhEsp3mIkUkdGKlCZoxaQNe2bNlVCZRlXBA+ik4onIacWkiPLsPxGhIABMDAb1IgD9cIBILhyQh/9BzID4/EmjoeohgfPt0EkEaeatF4GIMAQQ78V5gbMO1no46+GclzTzyKyTLMt/vPfeOS/ei88EcA5kIZI4oTQBd7vC3UyQOkE38ZxYQZx46aYO7a5QJxFaT4g6XaCbIcmE1jypJcV6VRGtMPOCEF0Rj9e7Tl2zlpeiiDb2RLw+daTR+dCH7m///M9/JsVQcSYhp0LH+YEHWhTHT9G99wJTU5CXXuq3Ht6slbEkACVKAlCixHcrREAPPww+dw68tnaUu90uZ1nGxhh/6dIlW3j6Q3jtD//S5N//Z8/ueebF63uvr8S71tfj3ZJlBxVhV8g0XwmkWQ2pUQ2pFhmuGsNGK6hQQYcsXAk4nW5wNQqAhRX7a7/+B93/9hf/TPUTMw39/5ltssmcdHTAHARKRwGLMQpaa9KKYTRLYBjGMCmtQKxIMYOUglYKSrOwMBGT0pohAJyIZ4InLlLalKf/898+N/29sMdmByLES6/+D2BAiAiUEwASKM15kTwB8J7gIY56kkNEgCBvyO8
+
+====================================================================================================
+FIXED GRADUAL / ALLELUIA / GOSPEL STEPS
+====================================================================================================
+@ char 939473 line 5707
+d Jesus Christ, only-begotten Son. Lord God, Lamb of God, Son of the Father. Thou who takest away the sins of the world, have mercy on us. Thou who takest away the sins of the world, receive our prayer. Thou who sittest at the right hand of the Father, have mercy on us. For Thou alone art holy; Thou alone art Lord; Thou alone art the Most High, Jesus Christ. With the Holy Ghost ✠ in the glory of God the Father. Amen.","fr":"GLOIRE À DIEU au plus haut des cieux. Et paix sur la terre aux hommes de bonne volonté. Nous vous louons. Nous vous bénissons. Nous vous adorons. Nous vous glorifions. Nous vous rendons grâces pour votre immense gloire. Seigneur Dieu, Roi du ciel, Dieu le Père tout-puissant. Seigneur Fils unique, Jésus-Christ. Seigneur Dieu, Agneau de Dieu, Fils du Père. Vous qui enlevez les péchés du monde, ayez pitié de nous. Vous qui enlevez les péchés du monde, accueillez notre prière. Vous qui êtes assis à la droite du Père, ayez pitié de nous. Car vous seul êtes Saint, vous seul êtes Seigneur, vous seul êtes le Très-Haut, Jésus-Christ, avec le Saint-Esprit ✠ dans la gloire de Dieu le Père. Ainsi soit-il."},"timing":"simultaneous"}]},{"id":"collect","phase":"Mass of the Catechumens","section":"Collect & Readings","title":{"en":"Collect","fr":"Collecte"},"subtitle":{"en":"Proper prayer","fr":"Prière propre"},"actor":"celebrant","priestPosition":"Epistle side","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"landmark":"Dóminus vobíscum","explanation":"The Collect gathers the Church’s prayer into the proper oration of the day; additional orations may be joined when commemorations are prescribed.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","properSlot":"collects"},{"id":"epistle","phase":"Mass of the Catechumens","section":"Collect & Readings","title":{"en":"Epistle or Lesson","fr":"Épître ou Lecture"},"subtitle":{"en":"Proper reading","fr":"Lecture propre"},"actor":"celebrant","priestPosition":"Epistle side","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The first scriptural reading. It may come from an Epistle or another book of Scripture. Deo gratias is the response.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","properSlot":"epistle"},{"id":"gradual","phase":"Mass of the Catechumens","section":"Collect & Readings","title":{"en":"Gradual","fr":"Graduel"},"subtitle":{"en":"Proper chant","fr":"Chant propre"},"actor":"choir","priestPosition":"Altar","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"This proper chant follows the Lesson in the order supplied by the 1962 Proper. At Low Mass it is read aloud by the celebrant; at Sung Mass the schola's chant provides the audible track.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","properSlot":"preGospelChants"},{"id":"alleluia","phase":"Mass of the Catechumens","section":"Collect & Readings","title":{"en":"Alleluia","fr":"Alleluia"},"subtitle":{"en":"Proper chant","fr":"Chant propre"},"actor":"choir","priestPosition":"Altar","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"This proper chant follows the Lesson in the order supplied by the 1962 Proper. At Low Mass it is read aloud by the celebrant; at Sung Mass the schola's chant provides the audible track.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","properSlot":"preGospelChants"},{"id":"gospel-prep","phase":"Mass of the Catechumens","section":"Gospel & Creed","title":{"en":"Preparation for the Gospel","fr":"Préparation à l’Évangile"},"subtitle":{"en":"Munda cor meum · Iube, Domine","fr":"Munda cor meum · Iube, Domine"},"actor":"mixed","priestPosition":"Centre","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The celebrant prepares for the Gospel while the chant may still be continuing.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Munda cor meum ac lábia mea, omnípotens Deus, qui lábia Isaíæ Prophétæ cálculo mundásti igníto:\nita me tua grata miseratióne dignáre mundáre, ut sanctum Evangélium tuum digne váleam nuntiáre.\nPer Christum Dóminum nostrum. Amen.\n\nIube, Dómine, benedícere. Dóminus sit in corde meo et in lábiis meis:\nut digne et competénter annúntiem Evangélium suum. Amen.","en":"Cleanse my heart and my lips, O almighty God, Who didst cleanse the lips of the prophet Isaias with a burning coal:\nthrough Thy gracious mercy so purify me that I may worthily proclaim Thy holy Gospel. Through Christ our Lord. Amen.\n\nGrant, O Lord, Thy blessing. May the Lord be in my heart and on my lips,\nthat I may worthily and fittingly proclaim His Gospel. Amen.","fr":"Purifiez mon cœur et mes lèvres, Dieu tout-puissant, qui avez purifié les lèvres du prophète Isaïe avec un charbon ardent ; daignez aussi me purifier par votre miséricordieuse bonté, afin que je puisse proclamer dignement votre saint Évangile. Par le Christ notre Seigneur. Ainsi soit-il.\n\nSeigneur, veuillez me bénir. Que le Seigneur soit dans mon cœur et sur mes lèvres, afin que j’annonce dignement et convenablement son Évangile. Ainsi soit-il."},"concurrentProperChoir":"preGospelChants"},{"id":"gospel-announcement","phase":"Mass of the Catechumens","section":"Gospel & Creed","title":{"en":"Gospel Announcement","fr":"Annonce de l’Évangile"},"subtitle":{"en":"Dominus vobiscum · Sequentia sancti Evangelii","fr":"Dominus vobiscum · Sequentia sancti Evangelii"},"actor":"celebrant","priestPosition":"Gospel side","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"gestures":[{"kind":"cross","label":"Forehead · lips · breast","anchorLat":"Sequéntia ✠ sancti Evangélii secúndum Lucam.","anchorEng":"Continuation ✠ of the Holy Gospel according to Luke","before":true,"status":"custom"}],"landmark":"Dóminus vobíscum","explanation":"The Gospel is announced with Dominus vobiscum, its title, and Gloria tibi, Domine before the text is proclaimed.","customNote":"The Pilgrim’s Booklet directs the faithful to make the three small Gospel crosses on forehead, lips and breast. Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"℣. Dóminus vobíscum.\n℟. Et cum spíritu tuo.\n\nSequéntia ✠ sancti Evangélii secúndum Lucam.\n\n℟. Glória tibi, Dómine.","en":"℣. The Lord be with you.\n℟. And with thy spirit.\n\nContinuation ✠ of the Holy Gospel according to Luke\n\n℟. Glory be to Thee, O Lord.","fr":"℣. Le Seigneur soit avec vous.\n℟. Et avec votre esprit.\n\nSequéntia ✠ sancti Evangélii secúndum Lucam."}},{"id":"gospel","phase":"Mass of the Catechumens","section":"Gospel & Creed","title":{"en":"Holy Gospel","fr":"Saint Évangile"},"subtitle":{"en":"Proper of the day","fr":"Propre du jour"},"actor":"celebrant","priestPosition":"Gospel side","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"Listen standing to the Gospel. At the end the response is Laus tibi, Christe; the celebrant kisses the book and says Per evangelica dicta.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","properSlot":"gospel"},{"id":"credo","phase":"Mass of the Catechumens","section":"Gospel & Creed","title":{"en":"Credo","fr":"Credo"},"subtitle":{"en":"Nicene Creed","fr":"Credo de Nicée"},"actor":"mixed","priestPosition":"Centre","audibility":"mixed","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"gestures":[{"kind":"genuflect","status":"custom","label":"Traditional/local genuflection","anchorLat":"Et incarnátus est","anchorEng":"And was incarnate","before":true},{"kind":"rise","status":"custom","label":"Rise","anchorLat":"et homo factus est.","anchorEng":"and was made man.","after":true},{"kind":"cross","status":"custom","label":"Traditional sign of the cross","anchorLat":"Et vitam ✠ ventúri sæculi","anchorEng":"the life ✠ of the world to come","before":true}],"explanation":"The Nicene Creed is professed at Masses where the rubrics prescribe it. The celebrant genuflects at Et incarnatus est; congregational imitation is a traditional/local practice.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Credo in unum Deum, Patrem omnipoténtem, factórem cæli et terræ, visibílium ómnium et invisibílium. Et in unum Dóminum Iesum Christum, Fílium Dei unigénitum. Et ex Patre natum ante ómnia sæcula. Deum de Deo, lumen de lúmine, Deum verum de Deo vero. Génitum, non factum, consubstantiálem Patri: per quem ómnia facta sunt. Qui propter nos hómines et propter nostram salútem descéndit de cælis. Et incarnátus est de Spíritu Sancto ex María Vírgine: et homo factus est. Crucifíxus étiam pro nobis: sub Póntio Piláto passus, et sepúltus est. Et resurréxit tértia die, secúndum Scriptúras. Et ascéndit in cælum: sedet ad déxteram Patris. Et íterum ventúrus est cum glória iudicáre vivos et mórtuos: cuius regni non erit finis. Et in Spíritum Sanctum, Dóminum et vivificántem: qui ex Patre Filióque procédit. Qui cum Patre et Fílio simul adorátur et conglorificátur: qui locútus est per Prophétas. Et unam sanctam cathólicam et apostólicam Ecclésiam. Confíteor unum baptísma in remissiónem peccatórum. Et exspécto resurrectiónem mortuórum. Et vitam ✠ ventúri sæculi. Amen.","en":"I believe in one God, the Father almighty, maker of heaven and earth, and of all things visible and invisible. And in one Lord Jesus Christ, the Only-begotten Son of God, born of the Father before all ages. God of God, Light of Light, true God of true God. Begotten, not made: consubstantial with the Father; by Whom all things were made. Who for us men, and for our salvation, came down from heaven. And was incarnate by the Holy Ghost of the Virgin Mary: and was made man. He was crucified also for us, suffered under Pontius Pilate, and was buried. And on the third day He rose again according to the Scriptures. And He ascended into heaven, and sitteth at the right hand of the Father. And He shall come again with glory to judge the living and the dead: of Whose kingdom there shall be no end. And in the Holy Ghost, the Lord and Giver of Life: Who proceedeth from the Father and the Son. Who together with the Father and the Son is adored and glorified: Who spoke through the Prophets. And in One, Holy, Catholic and Apostolic Church. I confess one Baptism for the remission of sins. And I look for the resurrection of the dead, and the life ✠ of the world to come. Amen.","fr":"JE CROIS en un seul Dieu, le Père tout-puissant, créateur du ciel et de la terre, de l’univers visible et invisible. Et en un seul Seigneur Jésus-Christ, le Fils unique de Dieu, né du Père avant tous les siècles. Dieu de Dieu, Lumière de Lumière, vrai Dieu de vrai Dieu. Engendré, non pas créé, consubstantiel au Père, et par qui tout a été fait. Pour nous les hommes et pour notre salut, il est descendu des cieux. Et il a pris chair de la Vierge Marie par le Saint-Esprit, et s’est fait homme. Crucifié aussi pour nous, il a souffert sous Ponce Pilate et a été enseveli. Il est ressuscité le troisième jour, conformément aux Écritures. Et il est monté au ciel : il siège à la droite du Père. Il reviendra dans la gloire pour juger les vivants et les morts ; et son règne n’aura pas de fin. Je crois en l’Esprit Saint, qui est Seigneur et qui donne la vie ; il procède du Père et du Fils. Avec le Père et le Fils, il reçoit même adoration et même gloire ; il a parlé par les prophètes. Je crois l’Église, une, sainte, catholique et apostolique. Je reconnais un seul baptême pour la rémission des péchés. J’attends la résurrection des morts et la vie ✠ du monde à venir. Ainsi soit-il."},"choir":[{"id":"credo-choir","text":{"lat":"Credo in unum Deum, Patrem omnipoténtem, factórem cæli et terræ, visibílium ómnium et invisibílium. Et in unum Dóminum Iesum Christum, Fílium Dei unigénitum. Et ex Patre natum ante ómnia sæcula. Deum de Deo, lumen de lúmine, Deum verum de Deo vero. Génitum, non factum, consubstantiálem Patri: per quem ómnia facta sunt. Qui propter nos hómines et propter nostram salútem descéndit de cælis. Et incarnátus est de Spíritu Sancto ex María Vírgine: et homo factus est. Crucifíxus étiam pro nobis: sub Póntio Piláto passus, et sepúltus est. Et resurréxit tértia die, secúndum Scriptúras. Et ascéndit in cælum: sedet ad déxteram Patris. Et íterum ventúrus est cum glória iudicáre vivos et mórtuos: cuius regni non erit finis. Et in Spíritum Sanctum, Dóminum et vivificántem: qui ex Patre Filióque procédit. Qui cum Patre et Fílio simul adorátur et conglorificátur: qui locútus est per Prophétas. Et unam sanctam cathólicam et apostólicam Ecclésiam. Confíteor unum baptísma in remissiónem peccatórum. Et exspécto resurrectiónem mortuórum. Et vitam ✠ ventúri sæculi. Amen.","en":"I believe in one God, the Father almighty, maker of heaven and earth, and of all things visible and invisible. And in one Lord Jesus Christ, the Only-begotten Son of God, born of the Father before all ages. God of God, Light of Light, true God of true God. Begotten, not made: consubstantial with the Father; by Whom all things were made. Who for us men, and for our salvation, came down from heaven. And was incarnate by the Holy Ghost of the Virgin Mary: and was made man. He was crucified also for us, suffered under Pontius Pilate, and was buried. And on the third day He rose again according to the Scriptures. And He ascended into heaven, and sitteth at the right hand of the Father. And He shall come again with glory to judge the living and the dead: of Whose kingdom there shall be no end. And in the Holy Ghost, the Lord and Giver of Life: Who proceedeth from the Father and the Son. Who together with the Father and the Son is ado
+
+====================================================================================================
+TODAYS MASS OVERVIEW
+====================================================================================================
+@ char 461363 line 812
+0CZHHZgALtV1r1MkT+iTQY2QspljBwB5FSCaU9Yz3AUBmSIHMEvPch+V9poF24AbN05jibeM552lu5RGK3+u5QWKe5kfqYM15AMmzoEiREoLGLCibBjK+hw2uxZDXkC/wlLBa/CstHO5mi7tVOSdYtkqhzOIB93ruw5e8c4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGMc4xjHOMYxjnGMYxzjGMc4xjGOcYxjHOMYxzjGMY5xjGN8MMb/H8TwZBOLMwQRAAAAAElFTkSuQmCC");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+@media (max-width: 350px) {
+  .brandRow { grid-template-columns: 44px minmax(0,1fr) auto; gap: 8px; }
+  .brandMark.aoBrandEmblem { width: 42px; height: 42px; }
+  .brandMark.aoBrandEmblem::before { width: 40px; height: 40px; }
+}
+@media (prefers-contrast: more) {
+  .brandMark.aoBrandEmblem::before {
+    filter: drop-shadow(0 0 0.35px currentColor);
+  }
+}
+</style>
+
+<style id="ao-v43-17-brand-presence">
+/* v43.17 — brand presence in home, cinematics and install surfaces. Presentation only. */
+.brandRow{grid-template-columns:60px minmax(0,1fr) auto;gap:11px;min-height:62px}
+.brandMark.aoBrandEmblem{width:58px;height:58px}
+.brandMark.aoBrandEmblem::before{width:56px;height:56px}
+
+/* Cinematic boot: the app emblem replaces the generic cross glyph. */
+.aoCinemaBootCross.brandMark.aoBrandEmblem{
+  width:112px;height:112px;margin:0 auto 18px;border:0;border-radius:0;background:transparent;
+  color:color-mix(in srgb,var(--liturgical) 78%,#efe9dd);
+  box-shadow:none;overflow:visible;
+}
+.aoCinemaBootCross.brandMark.aoBrandEmblem::before{
+  width:106px;height:106px;filter:drop-shadow(0 0 24px color-mix(in srgb,var(--liturgical) 24%,transparent));
+}
+
+/* Route-change cinematic: compact branded emblem. */
+.aoCinemaTransitionGlyph.brandMark.aoBrandEmblem{
+  width:48px;height:48px;margin:0 auto 13px;border:0;border-radius:0;background:transparent;color:var(--liturgical);box-shadow:none;
+}
+.aoCinemaTransitionGlyph.brandMark.aoBrandEmblem::before{width:46px;height:46px}
+
+/* Async-content loader: smaller but still recognisably the same mark. */
+.aoCinemaLoaderMark.brandMark.aoBrandEmblem{
+  width:32px;height:32px;border:0;border-radius:0;background:transparent;color:var(--liturgical);box-shadow:none;flex:0 0 32px;
+}
+.aoCinemaLoaderMark.brandMark.aoBrandEmblem::before{width:30px;height:30px}
+
+@media(max-width:520px){
+  .brandRow{grid-template-columns:56px minmax(0,1fr) auto;gap:9px;min-height:58px}
+  .brandMark.aoBrandEmblem{width:54px;height:54px}
+  .brandMark.aoBrandEmblem::before{width:52px;height:52px}
+  .aoCinemaBootCross.brandMark.aoBrandEmblem{width:100px;height:100px}
+  .aoCinemaBootCross.brandMark.aoBrandEmblem::before{width:94px;height:94px}
+  .aoCinemaTransitionGlyph.brandMark.aoBrandEmblem{width:44px;height:44px}
+  .aoCinemaTransitionGlyph.brandMark.aoBrandEmblem::before{width:42px;height:42px}
+  .aoCinemaLoaderMark.brandMark.aoBrandEmblem{width:30px;height:30px;flex-basis:30px}
+  .aoCinemaLoaderMark.brandMark.aoBrandEmblem::before{width:28px;height:28px}
+}
+@media(max-width:350px){
+  .brandRow{grid-template-columns:52px minmax(0,1fr) auto;gap:8px;min-height:54px}
+  .brandMark.aoBrandEmblem{width:50px;height:50px}
+  .brandMark.aoBrandEmblem::before{width:48px;height:48px}
+  .aoCinemaBootCross.brandMark.aoBrandEmblem{width:88px;height:88px}
+  .aoCinemaBootCross.brandMark.aoBrandEmblem::before{width:84px;height:84px}
+}
+</style>
+<script id="ao-v43-22-date-policy">
+(()=>{'use strict';
+ const pad=n=>String(n).padStart(2,'0');
+ function format(value){
+   if(value==null||value==='')return '';
+   if(value instanceof Date&&!Number.isNaN(value.getTime()))return `${pad(value.getDate())}/${pad(value.getMonth()+1)}/${value.getFullYear()}`;
+   const raw=String(value).trim();
+   const iso=raw.match(/^(\d{4})-(\d{2})-(\d{2})(?:$|T)/);
+   if(iso)return `${iso[3]}/${iso[2]}/${iso[1]}`;
+   const d=new Date(value);
+   if(!Number.isNaN(d.getTime()))return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
+   return raw;
+ }
+ globalThis.AO_DISPLAY_DATE=format;
+})();
+</script>
+</head><body>
+<div id="ao-cinema-boot" role="status" aria-live="polite" aria-label="Ad Orientem is loading">
+  <div class="aoCinemaBootAtmosphere" aria-hidden="true"></div>
+  <div class="aoCinemaBootInner">
+    <div class="aoCinemaBootCross brandMark aoBrandEmblem aoCinemaBootLogo" aria-hidden="true"></div>
+    <div class="aoCinemaBootKicker">Missale Romanum · 1962</div>
+    <div class="aoCinemaBootTitle">Ad Orientem</div>
+    <div class="aoCinemaBootSub">A traditional Roman Rite companion</div>
+    <div class="aoCinemaBootRule" aria-hidden="true"><i></i></div>
+    <div class="aoCinemaBootStatus" data-ao-cinema-boot-status>Preparing today’s Mass…</div>
+  </div>
+</div>
+<div id="ao-cinema-transition" aria-hidden="true"><div class="aoCinemaTransitionInner"><span class="aoCinemaTransitionGlyph brandMark aoBrandEmblem aoCinemaTransitionLogo" aria-hidden="true"></span><span class="aoCinemaTransitionKicker" data-ao-cinema-transition-kicker>AD ORIENTEM</span><span class="aoCinemaTransitionTitle" data-ao-cinema-transition-title></span><span class="aoCinemaTransitionLine"></span></div></div>
+<div id="ao-cinema-loader" role="status" aria-live="polite" aria-hidden="true"><div class="aoCinemaLoaderCard"><div class="aoCinemaLoaderHead"><span class="aoCinemaLoaderMark brandMark aoBrandEmblem aoCinemaLoaderLogo" aria-hidden="true"></span><span class="aoCinemaLoaderText"><b data-ao-cinema-loader-title>Loading…</b><small data-ao-cinema-loader-sub>Preparing the requested content</small></span></div><div class="aoCinemaSkeleton" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
+<div id="app"><div class="aoBootFallback" role="status">Loading Ad Orientem…</div></div>
+<style id="ao-phase1-proper-art-v1-css">
+
+.aoProperArt{margin:14px 0 2px;border:1px solid color-mix(in srgb,currentColor 16%,transparent);border-radius:18px;overflow:hidden;background:rgba(12,11,10,.94);box-shadow:0 10px 28px rgba(0,0,0,.14)}
+.aoProperArtMedia{display:flex;align-items:center;justify-content:center;min-height:150px;max-height:330px;background:rgba(0,0,0,.24)}
+.aoProperArt img{display:block;width:100%;height:auto;max-height:330px;object-fit:contain;object-position:center;opacity:.98}
+.aoProperArt.isPortrait .aoProperArtMedia,.aoProperArt.isPortrait img{max-height:min(440px,52vh)}
+.aoProperArt.isLandscape .aoProperArtMedia,.aoProperArt.isLandscape img{max-height:300px}
+.aoProperArt figcaption{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;padding:9px 12px 10px;font-size:11px;line-height:1.35;opacity:.86}
+.aoProperArt figcaption span{min-width:0}.aoProperArt figcaption strong{font-weight:700}.aoProperArt figcaption a{white-space:nowrap;color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+@media(max-width:560px){.aoProperArt{margin-top:12px;border-radius:15px}.aoProperArtMedia,.aoProperArt img{max-height:280px}.aoProperArt.isPortrait .aoProperArtMedia,.aoProperArt.isPortrait img{max-height:min(390px,49vh)}.aoProperArt.isLandscape .aoProperArtMedia,.aoProperArt.isLandscape img{max-height:250px}.aoProperArt figcaption{font-size:10px}}
+
+</style>
+<script id="ao-phase1-proper-art-v1-js">
+
+(()=>{
+'use strict';
+const DATA={"rows":{"Sancti/03-25":{"properPath":"Sancti/03-25","label":"Annunciation","status":"GREEN","relationship":"DAY_ART","decisionSource":"PM8 resolved for integration","primaryArtId":"AO001","note":"Fra Angelico selected as the single feast primary; Leonardo remains an unused alternate."},"Sancti/01-13":{"properPath":"Sancti/01-13","label":"Baptism of the Lord","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO005"},"Tempora/Quad1-0":{"properPath":"Tempora/Quad1-0","label":"First Sunday of Lent","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO110"},"Tempora/Quad2-0":{"properPath":"Tempora/Quad2-0","label":"Second Sunday of Lent","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO008"},"Tempora/Quad4-0":{"properPath":"Tempora/Quad4-0","label":"Laetare Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO010"},"Tempora/Quad6-0":{"properPath":"Tempora/Quad6-0","label":"Palm Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO103","note":"Van Dyck supersedes the older Giotto candidate."},"Tempora/Quad6-5":{"properPath":"Tempora/Quad6-5","label":"Good Friday","status":"GREEN","relationship":"DAY_ART","decisionSource":"PM8 resolved for integration","primaryArtId":"AO034","note":"Caravaggio Entombment/Deposition selected as primary; Taking of Christ remains unused alternate."},"Tempora/Quad6-6":{"properPath":"Tempora/Quad6-6","label":"Holy Saturday / Easter Vigil","status":"GREEN","relationship":"LESSON_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO096","note":"Poussin supersedes the earlier Mazzolino asset."},"Tempora/Pasc0-0":{"properPath":"Tempora/Pasc0-0","label":"Easter Sunday","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO099","note":"Rubens center panel supersedes the earlier Piero candidate."},"Tempora/Pasc1-0":{"properPath":"Tempora/Pasc1-0","label":"Low Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO012"},"Tempora/Pasc2-0":{"properPath":"Tempora/Pasc2-0","label":"Second Sunday after Easter / Good Shepherd Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO100","note":"Exact Mâcon Good Shepherd supersedes the earlier Murillo/mosaic candidates."},"Tempora/Pasc3-0":{"properPath":"Tempora/Pasc3-0","label":"Third Sunday after Easter","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO111"},"Tempora/Pasc5-4":{"properPath":"Tempora/Pasc5-4","label":"Ascension","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO101","note":"Tintoretto supersedes the earlier Perugino candidate."},"Tempora/Pasc6-0":{"properPath":"Tempora/Pasc6-0","label":"Sunday after Ascension","status":"GREEN","relationship":"PROPER_THEME","decisionSource":"later curator/asset pass","primaryArtId":"AO109"},"Tempora/Pasc7-0":{"properPath":"Tempora/Pasc7-0","label":"Pentecost","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO015"},"Tempora/Pent01-0":{"properPath":"Tempora/Pent01-0","label":"Trinity Sunday","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO105","note":"El Greco supersedes earlier Navarrete/Rublev candidates."},"Tempora/Pent01-4":{"properPath":"Tempora/Pent01-4","label":"Corpus Christi","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO095","note":"Rubens Eucharistic triumph supersedes earlier Poussin/Melchizedek options."},"Tempora/Pent02-5":{"properPath":"Tempora/Pent02-5","label":"Sacred Heart","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO019"},"Tempora/Pent04-0":{"properPath":"Tempora/Pent04-0","label":"Fourth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO073"},"Tempora/Pent07-0":{"properPath":"Tempora/Pent07-0","label":"Seventh Sunday after Pentecost","status":"HOLD","relationship":"DAY_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO086","note":"Exact Bassano work remains curator-locked but has no commercially reusable open delivery asset; render none."},"Tempora/Pent08-0":{"properPath":"Tempora/Pent08-0","label":"Eighth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO087"},"Tempora/Pent09-0":{"properPath":"Tempora/Pent09-0","label":"Ninth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO084"},"Tempora/Pent11-0":{"properPath":"Tempora/Pent11-0","label":"Eleventh Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO088"},"Tempora/Pent12-0":{"properPath":"Tempora/Pent12-0","label":"Twelfth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM8 preferred candidate frozen","primaryArtId":"AO106"},"Tempora/Pent13-0":{"properPath":"Tempora/Pent13-0","label":"Thirteenth Sunday after Pentecost","status":"GREEN","relationship":"TYPOLOGY_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO089"},"Tempora/Pent14-0":{"properPath":"Tempora/Pent14-0","label":"Fourteenth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO090"},"Tempora/Pent15-0":{"properPath":"Tempora/Pent15-0","label":"Fifteenth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO116"},"Tempora/Pent16-0":{"properPath":"Tempora/Pent16-0","label":"Sixteenth Sunday after Pentecost","status":"NO_ART","relationship":"DAY_ART","decisionSource":"PM7/PM8","note":"Intentional NO_ART: no painting cleared at the required standard; weak prints remain excluded."},"Tempora/Pent19-0":{"properPath":"Tempora/Pent19-0","label":"Nineteenth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO091"},"Tempora/Pent20-0":{"properPath":"Tempora/Pent20-0","label":"Twentieth Sunday after Pentecost","status":"GREEN","relationship":"PROPER_THEME","decisionSource":"PM6 hard lock","primaryArtId":"AO092"},"Tempora/Pent21-0":{"properPath":"Tempora/Pent21-0","label":"Twenty-First Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO093"},"Tempora/Pent22-0":{"properPath":"Tempora/Pent22-0","label":"Twenty-Second Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO085"},"Tempora/Pent23-0":{"properPath":"Tempora/Pent23-0","label":"Twenty-Third Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO094"},"Tempora/Pent24-0":{"properPath":"Tempora/Pent24-0","label":"Last Sunday after Pentecost","status":"GREEN","relationship":"DAY_ART","decisionSource":"PM8 preferred candidate frozen","primaryArtId":"AO107"},"Tempora/Epi1-0":{"properPath":"Tempora/Epi1-0","label":"Holy Family","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO098","note":"Veronese supersedes the earlier Dürer candidate."},"Tempora/Epi4-0":{"properPath":"Tempora/Epi4-0","label":"Fourth Sunday after Epiphany","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO082"},"Tempora/Adv4-0":{"properPath":"Tempora/Adv4-0","label":"Fourth Sunday of Advent","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM8 + path reconciliation","primaryArtId":"AO104","note":"Bruegel remains mapped to canonical Advent IV. A later “Advent III” label was a bookkeeping slip, not a Proper remap."},"Sancti/01-06":{"properPath":"Sancti/01-06","label":"Epiphany","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO097","note":"Rubens supersedes the earlier Gentile da Fabriano candidate."},"Sancti/02-02":{"properPath":"Sancti/02-02","label":"Presentation of the Lord / Purification of the BVM","status":"HOLD","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO112","note":"Technical master is adequate; reuse authority remains unresolved under Italian cultural-heritage rules. Render none."},"Sancti/02-22":{"properPath":"Sancti/02-22","label":"Chair of Saint Peter at Antioch","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO117"},"Sancti/05-31":{"properPath":"Sancti/05-31","label":"Queenship of the Blessed Virgin Mary","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO102","note":"Velázquez supersedes earlier Coronation candidates."},"Sancti/07-02":{"properPath":"Sancti/07-02","label":"Visitation of the Blessed Virgin Mary","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO113"},"Sancti/08-15":{"properPath":"Sancti/08-15","la
+
+====================================================================================================
+REQUIEM PROFILE
+====================================================================================================
+@ char 555357 line 1927
+mains legitimate.', special: true, rubric: '1960 General Rubrics 131' };
+    if (/^tempora:Quad4-0:/.test(id))
+        return { primary: 'Rose', massColor: 'Rose', label: 'Rose (or Violet)', sequence: [['Mass', 'Rose']], note: 'Laetare Sunday · rose vestments may be used; violet remains legitimate.', special: true, rubric: '1960 General Rubrics 131' };
+    if (path === 'Tempora/Quad6-0r')
+        return { primary: 'Red', massColor: 'Violet', label: 'Red → Violet', sequence: [['Blessing & procession', 'Red'], ['Mass', 'Violet']], note: 'Palm Sunday changes colour: red for the blessing of palms and procession; violet for the Mass.', special: true, rubric: '1960 General Rubrics 126, 128' };
+    if (path === 'Tempora/Quad6-4')
+        return { primary: 'White', massColor: 'White', label: 'White', sequence: [['Mass of the Lord’s Supper', 'White']], note: 'Holy Thursday uses white for the Mass of the Lord’s Supper.', special: true, rubric: '1960 General Rubrics 122' };
+    if (path === 'Tempora/Quad6-5')
+        return { primary: 'Black', massColor: 'Violet', label: 'Black → Violet', sequence: [['Passion · prayers · Cross', 'Black'], ['Holy Communion', 'Violet']], note: 'Good Friday uses black until Communion; violet is used for the Communion portion.', special: true, rubric: '1960 General Rubrics 130, 132' };
+    if (path === 'Tempora/Quad6-6')
+        return { primary: 'Violet', massColor: 'White', label: 'Violet → White', sequence: [['Opening rites & prophecies', 'Violet'], ['Exsultet / baptismal renewal', 'White'], ['Mass', 'White']], note: 'The Easter Vigil changes colour within the rite; the Mass itself is white.', special: true, rubric: '1960 General Rubrics 119, 122, 128' };
+    if (path === 'Tempora/Pasc6-6')
+        return { primary: 'Violet', massColor: 'Red', label: 'Violet → Red', sequence: [['Preparatory Vigil rites', 'Violet'], ['Mass', 'Red']], note: 'At the Vigil of Pentecost the preparatory rites are violet; the Mass is red.', special: true, rubric: '1960 General Rubrics 123, 128' };
+    if (path === 'Sancti/02-02')
+        return { primary: 'White', massColor: 'White', label: 'White', sequence: [['Candles · procession · Mass', 'White']], note: 'Candlemas uses white for the blessing of candles, procession and Mass.', special: true, rubric: '1960 General Rubrics 120' };
+    if (path === 'Tempora/Quadp3-3')
+        return { primary: 'Violet', massColor: 'Violet', label: 'Violet', sequence: [['Ashes & Mass', 'Violet']], note: 'Ash Wednesday uses violet, including the blessing and imposition of ashes.', special: true, rubric: '1960 General Rubrics 128, 130' };
+    if (/^Sancti\/11-02m/.test(path || '') || proper?.isRequiem)
+        return { primary: 'Black', massColor: 'Black', label: 'Black', sequence: [['Requiem Mass', 'Black']], note: 'Black is the Roman colour for Masses of the Dead, including All Souls.', special: true, rubric: '1960 General Rubrics 132' };
+    if (String(base).includes('/')) {
+        const sequence = String(base).split('/').map(value => value.trim()).filter(Boolean).map((color, index) => [`Liturgical phase ${index + 1}`, color]);
+        return { primary: sequence[0]?.[1] || base, massColor: sequence[sequence.length - 1]?.[1] || base, label: String(base).replace(/\s*\/\s*/g, ' → '), sequence, note: 'This source carries more than one liturgical colour; the rite itself determines the point of change.', special: true, rubric: '1960 General Rubrics 117–132' };
+    }
+    return normal;
+}
+function riteProfileFor(path, proper) {
+    if (path === 'Tempora/Quad6-5')
+        return 'good_friday_1962';
+    if (path === 'Tempora/Quad6-4')
+        return 'holy_thursday_1962';
+    if (path === 'Tempora/Quad6-6')
+        return 'easter_vigil_1962';
+    if (path === 'Tempora/Quad6-0r')
+        return 'palm_sunday_1962';
+    if (path === 'Sancti/02-02')
+        return 'candlemas_1962';
+    if (path === 'Tempora/Quadp3-3')
+        return 'ash_wednesday_1962';
+    if (/^Sancti\/11-02m/.test(path))
+        return 'requiem_mass_1962';
+    if ((proper?.preparatoryLessons?.length || 0) >= 5)
+        return 'ember_saturday_1962';
+    if (proper?.preparatoryLessons?.length)
+        return 'extended_readings_mass_1962';
+    return 'ordinary_mass';
+}
+
+},7:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormularySelectionStore = void 0;
+class FormularySelectionStore {
+    values = new Map();
+    get(date) { return this.values.get(date) || 0; }
+    set(date, index) { this.values.set(date, Math.max(0, Math.floor(Number(index) || 0))); }
+    clear(date) { if (date)
+        this.values.delete(date);
+    else
+        this.values.clear(); }
+    clamp(date, count) {
+        if (count <= 0)
+            return 0;
+        const value = Math.max(0, Math.min(this.get(date), count - 1));
+        if (value !== this.get(date))
+            this.values.set(date, value);
+        return value;
+    }
+}
+exports.FormularySelectionStore = FormularySelectionStore;
+
+},8:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProperResolver = void 0;
+exports.sectionHeading = sectionHeading;
+exports.parseSections = parseSections;
+exports.mergeMissing = mergeMissing;
+exports.parseReference = parseReference;
+exports.parseSubstitutions = parseSubstitutions;
+exports.applySubstitutions = applySubstitutions;
+exports.cleanLines = cleanLines;
+exports.textFrom = textFrom;
+exports.numbered = numbered;
+exports.ruleInfo = ruleInfo;
+exports.normalizeProper = normalizeProper;
+const source_config_1 = require(4);
+const PER_DOM = {
+    la: "Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+    en: "Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+    fr: "Par Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+const GLORIA = {
+    la: "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen.",
+    en: "Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+    fr: "Gloire au Père, au Fils et au Saint-Esprit. Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il.",
+};
+function sectionHeading(line) {
+    const match = String(line).match(/^\[([^\]]+)\]\s*(.*)$/);
+    return match ? { name: match[1].trim(), modifier: (match[2] || "").trim() } : null;
+}
+function canonicalHeading(name, modifier) {
+    const mod = String(modifier || "").toLowerCase();
+    if (!mod)
+        return { key: name, priority: 1, canonical: true };
+    if (mod.includes("sed non rubrica 196"))
+        return { key: `${name} ${modifier}`, priority: 0, canonical: false };
+    if (mod.includes("rubrica 196") || mod.includes("communi summorum pontificum") || mod.includes("ad missam"))
+        return { key: name, priority: 2, canonical: true };
+    return { key: `${name} ${modifier}`, priority: 0, canonical: false };
+}
+function parseSections(text) {
+    const lines = String(text || "").replace(/\r\n?/g, "\n").split("\n");
+    const map = new Map();
+    const order = [];
+    const priority = new Map();
+    let current = "__TOP__";
+    let concat = false;
+    map.set(current, []);
+    order.push(current);
+    priority.set(current, 1);
+    for (const raw of lines) {
+        const line = raw.trim();
+        if (line === "!")
+            continue;
+        const heading = sectionHeading(line);
+        if (heading) {
+            const canonical = canonicalHeading(heading.name, heading.modifier);
+            current = canonical.key;
+            concat = false;
+            if (!map.has(current)) {
+                map.set(current, []);
+                order.push(current);
+                priority.set(current, canonical.priority);
+            }
+            else if (canonical.canonical && canonical.priority > (priority.get(current) || 0)) {
+                map.set(current, []);
+                priority.set(current, canonical.priority);
+            }
+            continue;
+        }
+        if (!map.has(current)) {
+            map.set(current, []);
+            order.push(current);
+            priority.set(current, 1);
+        }
+        const body = map.get(current);
+        if (concat && body.length)
+            body[body.length - 1] += line.replace(/~$/, " ");
+        else
+            body.push(line.replace(/~$/, " "));
+        concat = line.endsWith("~");
+    }
+    for (const body of map.values()) {
+        while (body.length && !body[body.length - 1])
+            body.pop();
+        while (body.length && !body[0])
+            body.shift();
+    }
+    return { map, order };
+}
+function mergeMissing(primary, fallback) {
+    const map = new Map();
+    const order = [];
+    for (const key of fallback.order) {
+        map.set(key, [...(fallback.map.get(key) || [])]);
+        order.push(key);
+    }
+    for (const key of primary.order) {
+        if (!map.has(key))
+            order.push(key);
+        const body = primary.map.get(key) || [];
+        if (body.length)
+            map.set(key, [...body]);
+    }
+    return { map, order };
+}
+function parseReference(line, defaultSection) {
+    const value = String(line || "");
+    if (!value.startsWith("@"))
+        return null;
+    const match = value.match(/^@([^:]*)(?::([^:]*))?(?::(.*))?$/);
+    if (!match)
+        return null;
+    return { path: match[1] || "", section: match[2] || defaultSection || "", subs: match[3] || "" };
+}
+function parseSubstitutions(specification) {
+    const out = [];
+    let index = 0;
+    const text = String(specification || "");
+    while (index < text.length) {
+        while (text.slice(index, index + 2) === ":s")
+            index += 1;
+        while (text[index] === ":" || /\s/.test(text[index] || ""))
+            index += 1;
+        if (text.slice(index, index + 2) !== "s/")
+            break;
+        index += 2;
+        const part = () => {
+            let value = "", escaped = false;
+            for (; index < text.length; index += 1) {
+                const char = text[index];
+                if (escaped) {
+                    value += `\\${char}`;
+                    escaped = false;
+                    continue;
+                }
+                if (char === "\\") {
+                    escaped = true;
+                    continue;
+                }
+                if (char === "/") {
+                    index += 1;
+                    break;
+                }
+                value += char;
+            }
+            return value;
+        };
+        out.push({ from: part(), to: part() });
+    }
+    return out;
+}
+function applySubstitutions(lines, specification, diagnostic, context = "reference") {
+    let out = [...lines];
+    for (const substitution of parseSubstitutions(specification)) {
+        try {
+            const regex = new RegExp(substitution.from, "g");
+            out = out.map(line => line.replace(regex, substitution.to));
+        }
+        catch (error) {
+            diagnostic?.warnings.push(`Substitution skipped in ${context}: ${substitution.from} (${error instanceof Error ? error.message : String(error)})`);
+        }
+    }
+    return out;
+}
+function usableSourceText(text) {
+    return text != null && String(text).trim().length > 2;
+}
+function cloneParsed(parsed) {
+    const map = new Map();
+    for (const [key, value] of parsed.map)
+        map.set(key, [...value]);
+    return { map, order: [...parsed.order], source: parsed.source || null, requestedLanguage: parsed.requestedLanguage || null, translationMissing: !!parsed.translationMissing };
+}
+function structuralTranslationTemplate(parsed) {
+    // Preserve only language-neutral structure from the normalized Latin layer.
+    // Literal Latin liturgical prose is intentionally excluded. Reference lines are
+    // later resolved against the requested vernacular source; Rule metadata is safe.
+    const map = new Map(), order = [];
+    for (const key of parsed.order || []) {
+        const body = parsed.map.get(key) || [];
+        const kept = key === 'Rule' ? [...body] : body.filter(line => !!parseReference(line, key));
+        if (!kept.length) continue;
+        map.set(key, kept); order.push(key);
+    }
+    return { map, order, source: parsed.source || null, requestedLanguage: null, translationMissing: false };
+}
+// v42.3: exact vernacular text for the remaining source-verified votive gaps.
+// These strings are not generated translations. Each entry is copied from a named
+// traditional missal/prayer witness and is used only for the matching Latin formulary.
+const VOTIVE_EXTERNAL_VERIFIED_V423 = Object.freeze({
+    'Votive/Cross': Object.freeze({
+        en: Object.freeze({
+            Oratio: Object.freeze([
+                '! Outside Eastertide',
+                'O God, who didst vouchsafe to sanctify the standard of the life-giving cross by the precious blood of thy only-begotten Son; grant, we beseech thee, that those who rejoice in the honour of the same holy cross may also rejoice everywhere in thy protection. Through the same Lord.',
+                '! In Eastertide',
+                'O God, who didst will that thy Son should undergo for us the ignominy of the cross to deliver us from the power of the enemy: grant to us thy servants that we may obtain the grace of his resurrection. Through the same Lord.'
+            ]),
+            Tractus: Object.freeze([
+                'We adore thee, O Christ, and we bless thee: because by thy cross thou hast redeemed the world.',
+                'V. We adore thy cross, O Lord, we commemorate thy glorious passion: have mercy on us, thou who didst suffer for us.',
+                'V. O blessed cross, which alone wert worthy to bear the king of heaven and the Lord.'
+            ]),
+            Secreta: Object.freeze([
+                'May this oblation, we beseech thee, O Lord, cleanse us from all sins: even as on the altar of the cross it took away the sins of the whole world. Through the same Lord.'
+            ]),
+            Postcommunio: Object.freeze([
+                'Be nigh unto us, O Lord our God; and defend those by the perpetual defence of the cross whom thou makest to rejoice in its honour. Through our Lord.'
+            ])
+        }),
+        fr: Object.freeze({
+            Oratio: Object.freeze([
+                '! Extra tempus paschale',
+                "Ô Dieu, qui avez voulu rendre saint, par le précieux Sang de votre Fils Unique, l'étendard de la vivifiante Croix ; accordez-nous, nous vous en supplions, que ceux qui se réjouissent d'honorer cette même sainte Croix, puissent aussi partout se réjouir de votre protection.",
+                '$Per eundem',
+                '! Tempore paschali',
+                "Ô Dieu, qui avez voulu que votre Fils fût attaché pour nous au gibet de la Croix, afin de nous délivrer de la puissance de l'ennemi : accordez à nous, vos serviteurs, la grâce de parvenir à la gloire de la résurrection.",
+                '$Per eundem'
+            ]),
+            Tractus: Object.freeze([
+                '! Post Septuagesimam',
+                "Nous vous adorons, ô Christ. Et nous vous bénissons. Car par votre Croix, vous avez racheté le monde.",
+                "V. Nous adorons votre Croix, Seigneur, et nous honorons le souvenir de votre glorieuse passion. O vous ! qui avez souffert pour nous. Seigneur, ayez pitié de nous.",
+                "V. O Croix bénie, qui seule as été digne de porter le Roi des cieux, le Seigneur."
+            ]),
+            Secreta: Object.freeze([
+                "Que cette offrande, nous t’en supplions, Seigneur, nous purifie de toutes nos fautes, puisque sur l’autel de la croix le Christ a enlevé le péché du monde entier.",
+    
+
+====================================================================================================
+REQUIEM TEXT OVERRIDES
+====================================================================================================
+@ char 794379 line 4835
+as a direct preparation for sacramental reception of Christ.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Domine, non sum dignus exprime l’humilité du communiant avec les paroles du centurion dans l’Évangile. Cette prière précède immédiatement la réception de la sainte Communion.","meaning_fr":"L’Église reprend la confession du centurion comme préparation immédiate à la réception sacramentelle du Christ."},"communion-faithful":{"what":"The faithful who are properly disposed receive the Body of Christ. At Sung Mass the Communion chant may continue while Communion is distributed, so what is heard and what is happening at the altar or rail can overlap.","meaning":"Eucharistic Communion is sacramental reception of Christ Himself and the completion of participation in the sacrificial banquet.","sources":["mr1962","oconnell1964","mediatorDei","ccc"],"what_fr":"Les fidèles convenablement disposés reçoivent le Corps du Christ. À la Messe chantée, le chant de Communion peut se poursuivre pendant la distribution ; ce que l’on entend et ce qui se passe à l’autel ou à la sainte table peuvent donc se superposer.","meaning_fr":"La Communion eucharistique est la réception sacramentelle du Christ lui-même et l’accomplissement de la participation au banquet sacrificiel."},"communion-proper":{"what":"The Communion antiphon is the Proper chant appointed for this Mass. At a Sung Mass it may be heard during the distribution of Communion even while the celebrant is occupied with a different ceremonial action.","meaning":"This is another place where the Roman Mass has concurrent choir and altar tracks rather than a single linear audio sequence.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"L’antienne de Communion est le chant propre assigné à cette Messe. À la Messe chantée, elle peut être entendue pendant la distribution de la Communion alors même que le célébrant accomplit une autre action cérémonielle.","meaning_fr":"C’est un autre endroit où la Messe romaine comporte des actions simultanées du chœur et de l’autel plutôt qu’une unique séquence sonore linéaire."},"ablutions":{"what":"After Communion the priest purifies the Chalice and his fingers with wine and water according to the rite, consuming the ablutions. These actions ensure reverent treatment of any remaining particles or traces of the Precious Blood.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Après la Communion, le prêtre purifie le Calice et ses doigts avec du vin et de l’eau selon le rite, puis consomme les ablutions. Ces gestes assurent le traitement révérencieux de toute parcelle ou trace restante du Précieux Sang.","meaning":"The ablutions express reverent care for the sacred species and vessels after Communion and ensure that what has been consecrated is treated with due care.","meaning_fr":"Les ablutions expriment le soin révérencieux dû aux saintes espèces et aux vases après la Communion et veillent à ce que ce qui a été consacré soit traité avec le respect requis."},"postcommunion":{"what":"After returning to the Missal and the Proper Communion text, the priest greets the faithful and prays the Postcommunion. This proper oration asks that the sacrament just received bear its intended spiritual fruit.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Après être revenu au Missel et au texte propre de Communion, le prêtre salue les fidèles puis récite la Postcommunion. Cette oraison propre demande que le sacrement reçu porte en eux son fruit spirituel.","meaning":"The Postcommunion is the Church’s liturgical thanksgiving after reception, asking that the sacrament just received produce its spiritual fruit in those who have participated.","meaning_fr":"La Postcommunion est l’action de grâces liturgique de l’Église après la réception du sacrement ; elle demande que celui-ci produise son fruit spirituel chez ceux qui y ont participé."},"dismissal":{"what":"The final greeting is followed by Ite, missa est, Benedicamus Domino or, in a Requiem, Requiescant in pace, according to the rite. The form therefore changes with the liturgical context.","sources":["mr1962","oconnell1964"],"what_fr":"Après la salutation finale viennent, selon le rite, Ite, missa est, Benedicamus Domino ou, à la Messe de Requiem, Requiescant in pace. La formule varie donc selon le contexte liturgique.","meaning":"The dismissal gives the celebration a formal liturgical conclusion: the assembled faithful are released only after the sacrifice, Communion rites and final prayer have been completed.","meaning_fr":"Le renvoi donne à la célébration une conclusion liturgique formelle : les fidèles assemblés ne sont congédiés qu’après l’achèvement du sacrifice, des rites de Communion et de la prière finale."},"placeat":{"what":"Bowed before the altar, the priest privately asks that the sacrifice he has offered be pleasing to the Holy Trinity and beneficial to himself and those for whom it was offered.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Incliné devant l’autel, le prêtre demande en privé que le sacrifice qu’il vient d’offrir soit agréable à la Sainte Trinité et profitable à lui-même ainsi qu’à ceux pour lesquels il a été offert.","meaning":"The priest closes his altar prayer by entrusting the sacrifice to God despite his own unworthiness, keeping the efficacy of the sacred action distinct from personal self-confidence.","meaning_fr":"Le prêtre conclut sa prière à l’autel en confiant le sacrifice à Dieu malgré sa propre indignité, distinguant l’efficacité de l’action sacrée de toute confiance personnelle en soi."},"blessing":{"what":"When prescribed, the priest gives the final blessing after the Placeat. It is omitted in specified celebrations such as a Requiem and in other exceptional endings governed by their own rubrics.","sources":["mr1962","oconnell1964"],"what_fr":"Lorsqu’elle est prescrite, le prêtre donne la bénédiction finale après le Placeat. Elle est omise dans certaines célébrations, notamment à la Messe de Requiem, ainsi que dans d’autres conclusions exceptionnelles régies par leurs propres rubriques.","meaning":"The blessing places the departing faithful under God’s favour at the close of the rite, while the rubrics preserve important exceptions on particular days and forms.","meaning_fr":"La bénédiction place les fidèles qui repartent sous la faveur de Dieu à la fin du rite, tandis que les rubriques conservent d’importantes exceptions selon certains jours et certaines formes."},"last-gospel":{"what":"Ordinarily the Last Gospel is the Prologue of St John, In principio erat Verbum. It closes the Mass with the mystery of the eternal Word and His Incarnation; particular days may prescribe another Last Gospel or omit it.","history":"The Last Gospel is a later development of the Roman Mass that gradually became standard and was incorporated into the codified Roman Missal.","sources":["mr1962","oconnell1964","fortescueMass","jungmann"],"what_fr":"Normalement, le dernier Évangile est le Prologue de saint Jean, In principio erat Verbum. Il clôt la Messe par le mystère du Verbe éternel et de son Incarnation ; certains jours prescrivent un autre dernier Évangile ou l’omettent.","history_fr":"Le dernier Évangile est un développement plus tardif de la Messe romaine qui devint progressivement habituel avant d’être intégré au Missel romain codifié.","meaning":"The Prologue of St John gives the ordinary conclusion a final contemplation of the eternal Word and the Incarnation; it is a distinct concluding Gospel, not a repetition of the day’s principal Gospel.","meaning_fr":"Le Prologue de saint Jean donne à la conclusion ordinaire une contemplation finale du Verbe éternel et de l’Incarnation ; il s’agit d’un Évangile conclusif distinct, non d’une répétition de l’Évangile principal du jour."},"candlemas-blessing":{"what":"The candles are blessed before Mass with the appointed prayers, holy water and incense. The rite gives sacramental blessing to candles that will then be distributed and carried in procession.","meaning":"The feast’s biblical centre is Christ as the Light recognized by Simeon; the blessing and procession give that theme a public liturgical expression.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"Avant la Messe, les cierges sont bénis par les prières prescrites, l’eau bénite et l’encens. Le rite leur confère une bénédiction sacramentelle avant leur distribution et leur port en procession.","meaning_fr":"Le centre biblique de la fête est le Christ reconnu par Siméon comme Lumière ; la bénédiction et la procession donnent à ce thème une expression liturgique publique."},"candlemas-distribution":{"what":"The blessed candles are distributed according to the ceremonial order while appointed chants accompany the action. The distribution belongs to the preparatory Candlemas rite rather than to the ordinary structure of Mass.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"Les cierges bénits sont distribués selon l’ordre cérémoniel tandis que les chants prescrits accompagnent l’action. Cette distribution appartient au rite préparatoire de la Chandeleur et non à la structure ordinaire de la Messe.","meaning":"Receiving the blessed candles prepares clergy and faithful to take part bodily in the procession; the sacramental object is therefore ordered to the liturgical action that follows.","meaning_fr":"La réception des cierges bénits prépare clergé et fidèles à participer corporellement à la procession ; le sacramental est ainsi ordonné à l’action liturgique qui suit."},"candlemas-procession":{"what":"Clergy and faithful process carrying the blessed candles while the appointed processional chants are sung. Mass follows the completed procession.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"Clergé et fidèles avancent en procession en portant les cierges bénits tandis que sont chantées les pièces processionnelles prescrites. La Messe commence après le retour et l’achèvement de la procession.","meaning":"The procession turns the blessing into a communal liturgical movement: the faithful carry the blessed light before entering the Mass proper.","meaning_fr":"La procession transforme la bénédiction en mouvement liturgique communautaire : les fidèles portent la lumière bénite avant d’entrer dans la Messe proprement dite."},"ashes-antiphon":{"what":"The blessing of ashes occurs before Mass. The rite begins with its appointed chant and prayers rather than with the normal opening structure of the Mass.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"La bénédiction des cendres a lieu avant la Messe. Le rite commence par le chant et les prières qui lui sont propres plutôt que par l’ouverture habituelle de la Messe.","meaning":"The appointed chant frames the distribution of ashes within the Church’s liturgical prayer, rather than leaving the gesture as an isolated devotional act.","meaning_fr":"Le chant prescrit inscrit la distribution des cendres dans la prière liturgique de l’Église, au lieu de laisser le geste comme acte dévotionnel isolé."},"ashes-four-prayers":{"what":"Four prayers bless the ashes and ask that those who receive them may enter the Lenten discipline in a spirit of repentance and receive God’s protection.","sources":["mr1962","oconnell1964"],"what_fr":"Quatre oraisons bénissent les cendres et demandent que ceux qui les reçoivent entrent dans la discipline du Carême avec un esprit de pénitence et reçoivent la protection de Dieu.","meaning":"The prayers interpret the ashes as a sacramental sign ordered to repentance, Lenten discipline and divine protection, not as a merely cultural symbol.","meaning_fr":"Les oraisons interprètent les cendres comme un sacramental ordonné à la pénitence, à la discipline du Carême et à la protection divine, non comme un simple symbole culturel."},"ashes-sprinkle-incense":{"what":"The blessed ashes are sprinkled with holy water and incensed according to the rite before their imposition.","sources":["mr1962","oconnell1964"],"what_fr":"Avant leur imposition, les cendres bénites sont aspergées d’eau bénite et encensées selon le rite.","meaning":"The sprinkling and incensation mark the ashes as blessed matter set apart for a liturgical use and surround their imposition with the Church’s ceremonial reverence.","meaning_fr":"L’aspersion et l’encensement marquent les cendres comme matière bénite mise à part pour un usage liturgique et entourent leur imposition de la révérence cérémonielle de l’Église."},"ashes-imposition":{"what":"Ashes are imposed upon clergy and faithful as the penitential rite is carried out. The gesture visibly marks entry into the Lenten discipline of penance.","sources":["mr1962","oconnell1964"],"what_fr":"Les cendres sont imposées au clergé et aux fidèles dans le cadre du rite pénitentiel. Ce geste marque visiblement l’entrée dans la discipline pénitentielle du Carême.","meaning":"The bodily sign confronts the faithful with mortality and repentance and makes the beginning of Lenten conversion visible rather than purely interior.","meaning_fr":"Le signe corporel confronte les fidèles à la mortalité et à la pénitence et rend visible le commencement de la conversion quadragésimale au lieu de la laisser seulement intérieure."},"palms-blessing":{"what":"The palms or branches are blessed in the restored Palm Sunday rite before the procession. The ceremony commemorates Christ’s messianic entry into Jerusalem and prepares the faithful for the procession.","history":"Older pre-1955 Palm Sunday books describe a substantially different blessing and procession. Those procedural descriptions are not used for the 1962 live guide.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"],"what_fr":"Les rameaux sont bénis avant la procession selon le rite restauré du dimanche des Rameaux. La cérémonie commémore l’entrée messianique du Christ à Jérusalem et prépare les fidèles à la procession.","history_fr":"Les livres du dimanche des Rameaux antérieurs à 1955 décrivent une bénédiction et une procession sensiblement différentes. Ces descriptions procédurales ne sont pas utilisées pour le guide de 1962.","meaning":"The blessed branches direct the procession toward Christ the King entering Jerusalem while also opening the liturgical movement toward His Passion.","meaning_fr":"Les rameaux bénits orientent la procession vers le Christ Roi entrant à Jérusalem tout en ouvrant le mouvement liturgique vers sa Passion."},"palms-gospel":{"what":"The Gospel of Christ’s entry into Jerusalem is proclaimed before the procession, placing the procession directly within its biblical event.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"L’Évangile de l’entrée du Christ à Jérusalem est proclamé avant la procession, plaçant ainsi celle-ci directement dans son événement biblique.","meaning":"The Gospel grounds the procession in the biblical event itself: the ceremonial action follows from the proclaimed entry of Christ into Jerusalem.","meaning_fr":"L’Évangile fonde la procession dans l’événement biblique lui-même : l’action cérémonielle découle de l’entrée proclamée du Christ à Jérusalem."},"palms-procession":{"what":"The faithful process carrying blessed branches in commemoration of the Lord’s triumphal entry. The appointed antiphons give the procession its liturgical text.","history":"The 1955 restoration simplified and reshaped the older Palm Sunday ceremonial; the app follows the restored form received by the 1962 Missal.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"],"what_fr":"Les fidèles avancent en procession avec les rameaux bénis en commémoration de l’entrée triomphale du Seigneur. Les antiennes prescrites donnent à la procession son texte liturgique.","history_fr":"La restauration de 1955 a simplifié et remodelé l’ancien cérémonial du dimanche des Rameaux ; l’application suit la forme restaurée reçue par le Missel de 1962.","meaning":"By walking with blessed branches, the faithful ritually accompany 
+
+====================================================================================================
+COMMUNICANTES FIXED STEP
+====================================================================================================
+@ char 977737 line 5707
+t her peace, to preserve, unite, and govern her throughout the world; as also for Thy servant N. our Pope, and N. our Bishop, and for all orthodox believers and all who profess the Catholic and Apostolic faith.","fr":"Père très clément, nous vous supplions et vous demandons humblement, par Jésus-Christ votre Fils, notre Seigneur, d’accepter et de bénir ces ✠ dons, ces ✠ présents, ces ✠ sacrifices saints et sans tache,\n\nque nous vous offrons d’abord pour votre sainte Église catholique : daignez lui donner la paix, la garder, l’unir et la gouverner dans le monde entier, avec votre serviteur notre Pape N., notre évêque N., et tous ceux qui, fidèles à la foi catholique et apostolique, la professent et la défendent."}},{"id":"memento-living","phase":"Preface & Canon","section":"Canon before Consecration","title":{"en":"Memento of the Living","fr":"Mémento des vivants"},"subtitle":{"en":"Memento, Domine","fr":"Memento, Domine"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The living for whom the sacrifice is offered are remembered before God.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Meménto, Dómine, famulórum famularúmque tuarum N. et N. et ómnium circumstántium, quorum tibi fides cógnita est et nota devótio, pro quibus tibi offérimus: vel qui tibi ófferunt hoc sacrifícium laudis, pro se suísque ómnibus: pro redemptióne animárum suárum, pro spe salútis et incolumitátis suæ: tibíque reddunt vota sua ætérno Deo, vivo et vero.","en":"Be mindful, O Lord, of Thy servants and handmaids N. and N. and of all here present, whose faith and devotion are known to Thee, for whom we offer, or who offer up to Thee this Sacrifice of praise for themselves and all those dear to them, for the redemption of their souls and the hope of their safety and salvation: who now pay their vows to Thee, the everlasting, living and true God.","fr":"Souvenez-vous, Seigneur, de vos serviteurs et servantes N. et N., et de tous ceux qui nous entourent, dont vous connaissez la foi et la dévotion ; pour eux nous vous offrons, ou eux-mêmes vous offrent, ce sacrifice de louange, pour eux et pour tous les leurs, pour la rédemption de leurs âmes, l’espérance de leur salut et de leur conservation ; et ils acquittent leurs vœux envers vous, Dieu éternel, vivant et vrai."}},{"id":"communicantes","phase":"Preface & Canon","section":"Canon before Consecration","title":{"en":"Our Intercessors in Heaven","fr":"Nos intercesseurs au Ciel"},"subtitle":{"en":"Communicantes","fr":"Communicantes"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The earthly Church joins the Blessed Virgin, Saint Joseph, the Apostles, Martyrs and all the saints.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Communicántes, et memóriam venerántes, in primis gloriósæ semper Vírginis Maríæ, Genetrícis Dei et Dómini nostri Iesu Christi: sed et beati Ioseph, eiusdem Virginis Sponsi, et beatórum Apostolórum ac Mártyrum tuórum, Petri et Pauli, Andréæ, Iacóbi, Ioánnis, Thomæ, Iacóbi, Philíppi, Bartholomaei, Matthaei, Simónis et Thaddaei: Lini, Cleti, Cleméntis, Xysti, Cornélii, Cypriáni, Lauréntii, Chrysógoni, Ioánnis et Pauli, Cosmæ et Damiáni: et ómnium Sanctórum tuórum; quorum méritis precibúsque concédas, ut in ómnibus protectiónis tuæ muniámur auxílio. Per eúndem Christum, Dóminum nostrum. Amen.","en":"In communion with, and honoring the memory in the first place of the glorious ever Virgin Mary Mother of our God and Lord Jesus Christ; also of blessed Joseph, her Spouse; and likewise of Thy blessed Apostles and Martyrs, Peter and Paul, Andrew, James, John, Thomas, James, Philip, Bartholomew, Matthew, Simon and Thaddeus, Linus, Cletus, Clement, Sixtus, Cornelius, Cyprian, Lawrence, Chrysogonus, John and Paul, Cosmas and Damian, and of all Thy Saints. Grant for the sake of their merits and prayers that in all things we may be guarded and helped by Thy protection. Through the same Christ our Lord. Amen.","fr":"Unis dans une même communion et vénérant d’abord la mémoire de la glorieuse Marie toujours Vierge, Mère de notre Dieu et Seigneur Jésus-Christ, puis de saint Joseph son époux, de vos bienheureux Apôtres et Martyrs Pierre et Paul, André, Jacques, Jean, Thomas, Jacques, Philippe, Barthélemy, Matthieu, Simon et Thaddée, Lin, Clet, Clément, Sixte, Corneille, Cyprien, Laurent, Chrysogone, Jean et Paul, Côme et Damien, et de tous vos saints ; par leurs mérites et leurs prières, accordez-nous d’être toujours fortifiés par le secours de votre protection. Par le même Christ notre Seigneur. Ainsi soit-il."}},{"id":"hanc","phase":"Preface & Canon","section":"Canon before Consecration","title":{"en":"Prayer for the whole family of God","fr":"Prière pour toute la famille de Dieu"},"subtitle":{"en":"Hanc igitur","fr":"Hanc igitur"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The celebrant extends his hands over the offerings and asks God to accept the oblation of His whole household.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Hanc igitur oblatiónem servitutis nostræ, sed et cunctae famíliæ tuæ, quaesumus, Dómine, ut placátus accípias: diésque nostros in tua pace dispónas, atque ab ætérna damnatióne nos éripi, et in electórum tuórum iúbeas grege numerári. Per Christum, Dóminum nostrum. Amen.","en":"O Lord, we beseech Thee, graciously to accept this oblation of our service and that of Thy whole household. Order our days in Thy peace, and command that we be rescued from eternal damnation and numbered in the flock of Thine elect. Through Christ our Lord. Amen.","fr":"Cette offrande de notre servitude et de toute votre famille, nous vous en supplions, Seigneur, acceptez-la avec bienveillance ; disposez nos jours dans votre paix, arrachez-nous à la damnation éternelle et daignez nous compter au nombre de vos élus. Par le Christ notre Seigneur. Ainsi soit-il."}},{"id":"quam-oblationem","phase":"Preface & Canon","section":"Canon before Consecration","title":{"en":"Prayer immediately before the Consecration","fr":"Prière immédiatement avant la Consécration"},"subtitle":{"en":"Quam oblationem","fr":"Quam oblationem"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The offerings are blessed and commended immediately before the words of institution.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Quam oblatiónem tu, Deus, in ómnibus, quaesumus, bene ✠ díctam, adscríp ✠ tam, ra ✠ tam, rationábilem, acceptabilémque fácere dignéris: ut nobis Cor ✠ pus, et San ✠ guis fiat dilectíssimi Fílii tui, Dómini nostri Iesu Christi.","en":"Humbly we pray Thee, O God, be pleased to make this same offering wholly blessed ✠, to consecrate ✠ it and approve ✠ it, making it reasonable and acceptable, so that it may become for us the Body ✠ and Blood ✠ of Thy dearly beloved Son, our Lord Jesus Christ.","fr":"Daignez, ô Dieu, nous vous en supplions, rendre cette offrande pleinement bénie ✠, agréée ✠, ratifiée ✠, raisonnable et acceptable, afin qu’elle devienne pour nous le Corps ✠ et le Sang ✠ de votre Fils bien-aimé, notre Seigneur Jésus-Christ."}},{"id":"consecration-host","phase":"Preface & Canon","section":"Consecration","title":{"en":"Consecration of the Host","fr":"Consécration de l’Hostie"},"subtitle":{"en":"Hoc est enim Corpus meum","fr":"Hoc est enim Corpus meum"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"landmark":"BELLS · Elevation of the Host","explanation":"The bread is consecrated; the Sacred Host is elevated for adoration.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Qui prídie quam paterétur, accépit panem in sanctas ac venerábiles manus suas, elevátis óculis in coelum ad te Deum, Patrem suum omnipoténtem, tibi grátias agens, bene ✠ dixit, fregit, dedítque discípulis suis, dicens: Accípite, et manducáte ex hoc omnes.\n\nHOC EST ENIM CORPUS MEUM.","en":"Who, the day before He suffered, took bread into His Holy and venerable hands, and having lifted up His eyes to heaven, to Thee, God, His Almighty Father, giving thanks to Thee, blessed it ✠, broke it, and gave it to His disciples, saying: Take and eat ye all of this.\n\nFOR THIS IS MY BODY.","fr":"La veille de sa Passion, il prit le pain dans ses mains saintes et vénérables et, levant les yeux au ciel vers vous, Dieu, son Père tout-puissant, vous rendant grâces, il le bénit ✠, le rompit et le donna à ses disciples en disant : Prenez et mangez-en tous.\n\nCAR CECI EST MON CORPS."},"bells":[{"kind":"bell","label":"Bells · elevation","anchorLat":"HOC EST ENIM CORPUS MEUM.","anchorEng":"FOR THIS IS MY BODY.","after":true}]},{"id":"consecration-chalice","phase":"Preface & Canon","section":"Consecration","title":{"en":"Consecration of the Chalice","fr":"Consécration du Calice"},"subtitle":{"en":"Hic est enim Calix Sanguinis mei","fr":"Hic est enim Calix Sanguinis mei"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"landmark":"BELLS · Elevation of the Chalice","explanation":"After the words of consecration over the chalice, Haec quotiescumque is said and the chalice is elevated for adoration.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Símili modo postquam coenátum est, accípiens et hunc præclárum Cálicem in sanctas ac venerábiles manus suas: item tibi grátias agens, bene ✠ dixit, dedítque discípulis suis, dicens: Accípite, et bíbite ex eo omnes.\n\nHIC EST ENIM CALIX SÁNGUINIS MEI, NOVI ET ÆTÉRNI TESTAMÉNTI: MYSTÉRIUM FÍDEI: QUI PRO VOBIS ET PRO MULTIS EFFUNDÉTUR IN REMISSIÓNEM PECCATÓRUM.\n\nHæc quotiescúmque fecéritis, in mei memóriam faciétis.","en":"Taking also into His holy and venerable hands this goodly chalice, again giving thanks to Thee, He blessed it ✠, and gave it to His disciples, saying: Take and drink ye all of this.\n\nFOR THIS IS THE CHALICE OF MY BLOOD, OF THE NEW AND ETERNAL TESTAMENT: THE MYSTERY OF FAITH: WHICH SHALL BE SHED FOR YOU AND FOR MANY UNTO THE REMISSION OF SINS.\n\nAs often as ye shall do these things, ye shall do them in remembrance of Me.","fr":"De même, après le repas, prenant aussi ce précieux calice dans ses mains saintes et vénérables, vous rendant encore grâces, il le bénit ✠ et le donna à ses disciples en disant : Prenez et buvez-en tous.\n\nCAR CECI EST LE CALICE DE MON SANG, LE SANG DE L’ALLIANCE NOUVELLE ET ÉTERNELLE : MYSTÈRE DE FOI : QUI SERA RÉPANDU POUR VOUS ET POUR UN GRAND NOMBRE EN RÉMISSION DES PÉCHÉS
+
+====================================================================================================
+HANC FIXED STEP
+====================================================================================================
+@ char 980200 line 5707
+s, Dieu éternel, vivant et vrai."}},{"id":"communicantes","phase":"Preface & Canon","section":"Canon before Consecration","title":{"en":"Our Intercessors in Heaven","fr":"Nos intercesseurs au Ciel"},"subtitle":{"en":"Communicantes","fr":"Communicantes"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The earthly Church joins the Blessed Virgin, Saint Joseph, the Apostles, Martyrs and all the saints.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Communicántes, et memóriam venerántes, in primis gloriósæ semper Vírginis Maríæ, Genetrícis Dei et Dómini nostri Iesu Christi: sed et beati Ioseph, eiusdem Virginis Sponsi, et beatórum Apostolórum ac Mártyrum tuórum, Petri et Pauli, Andréæ, Iacóbi, Ioánnis, Thomæ, Iacóbi, Philíppi, Bartholomaei, Matthaei, Simónis et Thaddaei: Lini, Cleti, Cleméntis, Xysti, Cornélii, Cypriáni, Lauréntii, Chrysógoni, Ioánnis et Pauli, Cosmæ et Damiáni: et ómnium Sanctórum tuórum; quorum méritis precibúsque concédas, ut in ómnibus protectiónis tuæ muniámur auxílio. Per eúndem Christum, Dóminum nostrum. Amen.","en":"In communion with, and honoring the memory in the first place of the glorious ever Virgin Mary Mother of our God and Lord Jesus Christ; also of blessed Joseph, her Spouse; and likewise of Thy blessed Apostles and Martyrs, Peter and Paul, Andrew, James, John, Thomas, James, Philip, Bartholomew, Matthew, Simon and Thaddeus, Linus, Cletus, Clement, Sixtus, Cornelius, Cyprian, Lawrence, Chrysogonus, John and Paul, Cosmas and Damian, and of all Thy Saints. Grant for the sake of their merits and prayers that in all things we may be guarded and helped by Thy protection. Through the same Christ our Lord. Amen.","fr":"Unis dans une même communion et vénérant d’abord la mémoire de la glorieuse Marie toujours Vierge, Mère de notre Dieu et Seigneur Jésus-Christ, puis de saint Joseph son époux, de vos bienheureux Apôtres et Martyrs Pierre et Paul, André, Jacques, Jean, Thomas, Jacques, Philippe, Barthélemy, Matthieu, Simon et Thaddée, Lin, Clet, Clément, Sixte, Corneille, Cyprien, Laurent, Chrysogone, Jean et Paul, Côme et Damien, et de tous vos saints ; par leurs mérites et leurs prières, accordez-nous d’être toujours fortifiés par le secours de votre protection. Par le même Christ notre Seigneur. Ainsi soit-il."}},{"id":"hanc","phase":"Preface & Canon","section":"Canon before Consecration","title":{"en":"Prayer for the whole family of God","fr":"Prière pour toute la famille de Dieu"},"subtitle":{"en":"Hanc igitur","fr":"Hanc igitur"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The celebrant extends his hands over the offerings and asks God to accept the oblation of His whole household.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Hanc igitur oblatiónem servitutis nostræ, sed et cunctae famíliæ tuæ, quaesumus, Dómine, ut placátus accípias: diésque nostros in tua pace dispónas, atque ab ætérna damnatióne nos éripi, et in electórum tuórum iúbeas grege numerári. Per Christum, Dóminum nostrum. Amen.","en":"O Lord, we beseech Thee, graciously to accept this oblation of our service and that of Thy whole household. Order our days in Thy peace, and command that we be rescued from eternal damnation and numbered in the flock of Thine elect. Through Christ our Lord. Amen.","fr":"Cette offrande de notre servitude et de toute votre famille, nous vous en supplions, Seigneur, acceptez-la avec bienveillance ; disposez nos jours dans votre paix, arrachez-nous à la damnation éternelle et daignez nous compter au nombre de vos élus. Par le Christ notre Seigneur. Ainsi soit-il."}},{"id":"quam-oblationem","phase":"Preface & Canon","section":"Canon before Consecration","title":{"en":"Prayer immediately before the Consecration","fr":"Prière immédiatement avant la Consécration"},"subtitle":{"en":"Quam oblationem","fr":"Quam oblationem"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The offerings are blessed and commended immediately before the words of institution.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Quam oblatiónem tu, Deus, in ómnibus, quaesumus, bene ✠ díctam, adscríp ✠ tam, ra ✠ tam, rationábilem, acceptabilémque fácere dignéris: ut nobis Cor ✠ pus, et San ✠ guis fiat dilectíssimi Fílii tui, Dómini nostri Iesu Christi.","en":"Humbly we pray Thee, O God, be pleased to make this same offering wholly blessed ✠, to consecrate ✠ it and approve ✠ it, making it reasonable and acceptable, so that it may become for us the Body ✠ and Blood ✠ of Thy dearly beloved Son, our Lord Jesus Christ.","fr":"Daignez, ô Dieu, nous vous en supplions, rendre cette offrande pleinement bénie ✠, agréée ✠, ratifiée ✠, raisonnable et acceptable, afin qu’elle devienne pour nous le Corps ✠ et le Sang ✠ de votre Fils bien-aimé, notre Seigneur Jésus-Christ."}},{"id":"consecration-host","phase":"Preface & Canon","section":"Consecration","title":{"en":"Consecration of the Host","fr":"Consécration de l’Hostie"},"subtitle":{"en":"Hoc est enim Corpus meum","fr":"Hoc est enim Corpus meum"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"landmark":"BELLS · Elevation of the Host","explanation":"The bread is consecrated; the Sacred Host is elevated for adoration.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Qui prídie quam paterétur, accépit panem in sanctas ac venerábiles manus suas, elevátis óculis in coelum ad te Deum, Patrem suum omnipoténtem, tibi grátias agens, bene ✠ dixit, fregit, dedítque discípulis suis, dicens: Accípite, et manducáte ex hoc omnes.\n\nHOC EST ENIM CORPUS MEUM.","en":"Who, the day before He suffered, took bread into His Holy and venerable hands, and having lifted up His eyes to heaven, to Thee, God, His Almighty Father, giving thanks to Thee, blessed it ✠, broke it, and gave it to His disciples, saying: Take and eat ye all of this.\n\nFOR THIS IS MY BODY.","fr":"La veille de sa Passion, il prit le pain dans ses mains saintes et vénérables et, levant les yeux au ciel vers vous, Dieu, son Père tout-puissant, vous rendant grâces, il le bénit ✠, le rompit et le donna à ses disciples en disant : Prenez et mangez-en tous.\n\nCAR CECI EST MON CORPS."},"bells":[{"kind":"bell","label":"Bells · elevation","anchorLat":"HOC EST ENIM CORPUS MEUM.","anchorEng":"FOR THIS IS MY BODY.","after":true}]},{"id":"consecration-chalice","phase":"Preface & Canon","section":"Consecration","title":{"en":"Consecration of the Chalice","fr":"Consécration du Calice"},"subtitle":{"en":"Hic est enim Calix Sanguinis mei","fr":"Hic est enim Calix Sanguinis mei"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"landmark":"BELLS · Elevation of the Chalice","explanation":"After the words of consecration over the chalice, Haec quotiescumque is said and the chalice is elevated for adoration.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Símili modo postquam coenátum est, accípiens et hunc præclárum Cálicem in sanctas ac venerábiles manus suas: item tibi grátias agens, bene ✠ dixit, dedítque discípulis suis, dicens: Accípite, et bíbite ex eo omnes.\n\nHIC EST ENIM CALIX SÁNGUINIS MEI, NOVI ET ÆTÉRNI TESTAMÉNTI: MYSTÉRIUM FÍDEI: QUI PRO VOBIS ET PRO MULTIS EFFUNDÉTUR IN REMISSIÓNEM PECCATÓRUM.\n\nHæc quotiescúmque fecéritis, in mei memóriam faciétis.","en":"Taking also into His holy and venerable hands this goodly chalice, again giving thanks to Thee, He blessed it ✠, and gave it to His disciples, saying: Take and drink ye all of this.\n\nFOR THIS IS THE CHALICE OF MY BLOOD, OF THE NEW AND ETERNAL TESTAMENT: THE MYSTERY OF FAITH: WHICH SHALL BE SHED FOR YOU AND FOR MANY UNTO THE REMISSION OF SINS.\n\nAs often as ye shall do these things, ye shall do them in remembrance of Me.","fr":"De même, après le repas, prenant aussi ce précieux calice dans ses mains saintes et vénérables, vous rendant encore grâces, il le bénit ✠ et le donna à ses disciples en disant : Prenez et buvez-en tous.\n\nCAR CECI EST LE CALICE DE MON SANG, LE SANG DE L’ALLIANCE NOUVELLE ET ÉTERNELLE : MYSTÈRE DE FOI : QUI SERA RÉPANDU POUR VOUS ET POUR UN GRAND NOMBRE EN RÉMISSION DES PÉCHÉS.\n\nToutes les fois que vous ferez ces choses, vous les ferez en mémoire de moi."},"bells":[{"kind":"bell","label":"Bells · elevation","anchorLat":"Hæc quotiescúmque fecéritis","anchorEng":"As often as ye shall do these things","after":true}]},{"id":"unde-et-memores","phase":"Preface & Canon","section":"Canon after Consecration","title":{"en":"Memory of the Mysteries of Christ","fr":"Mémoire des mystères du Christ"},"subtitle":{"en":"Unde et memores","fr":"Unde et memores"},"actor":"celebrant","priestPosition":"Centre","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The Passion, Resurrection and Ascension are recalled as the holy Victim is offered to the Father. At Sung Mass, if a non-Gregorian Benedictus resumes after the Consecration, follow that public chant while the priest continues the silent Canon; otherwise remain in sacred silence.","customNote":"Congregational posture here is treated as local/traditional practice, not as a universal lay rubric of the 1962 Missal.","text":{"lat":"Unde et mémores, Dómine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Fílii tui, Dómini nostri, tam beátæ passiónis, nec non et ab ínferis resurrectiónis, sed et in coelos gloriósæ ascensiónis: offérimus præcláræ maiestáti tuæ de tuis donis ac datis, hóstiam ✠ puram, hóstiam ✠ sanctam, hóstiam ✠ immaculátam, Panem ✠ sanctum vitæ ætérnæ, et Calicem ✠ salútis perpétuæ.","en":"And now, O Lord, we, Thy servants, and with us all Thy holy people, calling to mind the blessed Passion of this same Christ, Thy Son, our Lord, likewise His Resurrection from the grave, and also His glorious Ascension into heaven, do offer unto Thy most sovereign Majesty out of the gifts Thou hast bestowed upon us a Victim ✠ which is pure, a Victim ✠ which is holy, a Victim ✠ which is spotless, the holy Bread ✠ of life eternal, and the Chalice ✠ of everlasting Salvation.","fr":"C’est pourquoi, Seigneur, nous vos serviteurs, et avec nous votre peuple saint, faisant mémoire de la bienheureuse Passion du Christ votre Fils, notre Seigneur, de sa Résurrection des enfers et de sa glorieuse Ascension dans les cieux, nous offrons à votre souveraine Majesté, parmi les dons que vous nous avez faits, l’Hostie ✠ pure, l’Hostie ✠ sainte, l’Hostie ✠ sans tache, le Pain ✠ sacré de la vie éternelle et le Calice ✠ du salut perpétuel."}},{"id":"supra-quae","phase":"Preface & Canon","section"
+
+====================================================================================================
+SUPER POPULUM
+====================================================================================================
+@ char 902401 line 5507
+;
+    return ref ? names[ref.slug] || null : null;
+}
+function gospelAnnouncementText(proper) {
+    const evangelist = gospelEvangelist(proper);
+    const title = evangelist
+        ? {
+            lat: `Sequéntia ✠ sancti Evangélii secúndum ${evangelist.lat}.`,
+            en: `Continuation ✠ of the Holy Gospel according to Saint ${evangelist.en}.`,
+            fr: `Suite ✠ du saint Évangile selon saint ${evangelist.fr}.`,
+        }
+        : {
+            lat: 'Sequéntia ✠ sancti Evangélii.',
+            en: 'Continuation ✠ of the Holy Gospel.',
+            fr: 'Suite ✠ du saint Évangile.',
+        };
+    return {
+        lat: `℣. Dóminus vobíscum.\n℟. Et cum spíritu tuo.\n\n${title.lat}\n\n℟. Glória tibi, Dómine.`,
+        en: `℣. The Lord be with you.\n℟. And with thy spirit.\n\n${title.en}\n\n℟. Glory be to Thee, O Lord.`,
+        fr: `℣. Le Seigneur soit avec vous.\n℟. Et avec votre esprit.\n\n${title.fr}\n\n℟. Gloire à vous, Seigneur.`,
+    };
+}
+function properText(proper, slot, stepId) {
+    if (!proper)
+        return undefined;
+    switch (slot) {
+        case "introit": return (0, ordinary_1.normaliseText3)(proper.introit);
+        case "collects": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.collectDialogue, ...normaliseList(proper.collects)]);
+        case "epistle": return (0, ordinary_1.concatText3)([(0, ordinary_1.normaliseText3)(proper.epistle), responseDeoGratias]);
+        case "preGospelChants": {
+            const chants = (proper.preGospelChants || []).filter(Boolean);
+            if (!chants.length)
+                return (0, ordinary_1.normaliseText3)(proper.gradual);
+            const exact = chants.find(ch => (ch.id || ch.kind || "").toLowerCase() === stepId.toLowerCase());
+            const stepKind = stepId.toLowerCase();
+            const semantic = chants.find(ch => (ch.kind || "").toLowerCase().includes(stepKind));
+            const byIndex = stepKind === "gradual" ? chants[0] : stepKind === "alleluia" ? chants.find(ch => /allel/i.test(ch.kind || "")) || chants[1] : undefined;
+            return (0, ordinary_1.normaliseText3)((exact || semantic || byIndex || chants[chants.length - 1])?.text);
+        }
+        case "sequence": return (0, ordinary_1.normaliseText3)(proper.sequence);
+        case "gospel": return (0, ordinary_1.normaliseText3)(proper.gospel);
+        case "offertory": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.offertoryDialogue, (0, ordinary_1.normaliseText3)(proper.offertory)]);
+        case "secrets": return (0, ordinary_1.concatText3)(normaliseList(proper.secrets));
+        case "preface": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.prefaceDialogue, (0, ordinary_1.normaliseText3)(proper.preface)]);
+        case "communion": return (0, ordinary_1.normaliseText3)(proper.communion);
+        case "postcommunions": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.postcommunionDialogue, ...normaliseList(proper.postcommunions)]);
+        case "superPopulum": return (0, ordinary_1.normaliseText3)(proper.superPopulum);
+        default: return undefined;
+    }
+}
+function properChoirText(proper, slot, stepId) {
+    if (!proper)
+        return undefined;
+    if (slot === "preGospelChants") {
+        const chants = (proper.preGospelChants || []);
+        if (!chants.length)
+            return (0, ordinary_1.normaliseText3)(proper.gradual);
+        if (stepId === "gospel-prep")
+            return (0, ordinary_1.normaliseText3)(chants[chants.length - 1]?.text);
+        return properText(proper, slot, stepId);
+    }
+    if (slot === "offertory")
+        return (0, ordinary_1.normaliseText3)(proper.offertory);
+    return properText(proper, slot, stepId);
+}
+function properSlotHasSource(proper, slot) {
+    if (!proper)
+        return false;
+    switch (slot) {
+        case "introit": return hasText((0, ordinary_1.normaliseText3)(proper.introit));
+        case "collects": return normaliseList(proper.collects).length > 0;
+        case "epistle": return hasText((0, ordinary_1.normaliseText3)(proper.epistle));
+        case "preGospelChants": return (proper.preGospelChants || []).some(ch => hasText((0, ordinary_1.normaliseText3)(ch?.text))) || hasText((0, ordinary_1.normaliseText3)(proper.gradual));
+        case "sequence": return hasText((0, ordinary_1.normaliseText3)(proper.sequence));
+        case "gospel": return hasText((0, ordinary_1.normaliseText3)(proper.gospel));
+        case "offertory": return hasText((0, ordinary_1.normaliseText3)(proper.offertory));
+        case "secrets": return normaliseList(proper.secrets).length > 0;
+        case "preface": return hasText((0, ordinary_1.normaliseText3)(proper.preface));
+        case "communion": return hasText((0, ordinary_1.normaliseText3)(proper.communion));
+        case "postcommunions": return normaliseList(proper.postcommunions).length > 0;
+        case "superPopulum": return hasText((0, ordinary_1.normaliseText3)(proper.superPopulum));
+        default: return false;
+    }
+}
+function attachProper(step, proper, properAvailable) {
+    const out = clone(step);
+    if (out.id === "gospel-announcement") {
+        out.text = gospelAnnouncementText(proper);
+        if (Array.isArray(out.gestures) && out.gestures[0]) {
+            out.gestures[0].anchorLat = 'Sequéntia ✠ sancti Evangélii';
+            out.gestures[0].anchorEng = 'Continuation ✠ of the Holy Gospel';
+        }
+    }
+    if (out.properSlot) {
+        const sourceReady = properAvailable && properSlotHasSource(proper, out.properSlot);
+        const resolved = sourceReady ? properText(proper, out.properSlot, out.id) : undefined;
+        out.properStatus = hasText(resolved) ? "ready" : "unavailable";
+        if (resolved)
+            out.text = resolved;
+        else
+            delete out.text;
+        if (out.id === "secret")
+            out.audibleFragment = secretConclusion;
+    }
+    if (out.concurrentProperChoir) {
+        const choirSourceReady = properAvailable && properSlotHasSource(proper, out.concurrentProperChoir);
+        const choirText = choirSourceReady ? properChoirText(proper, out.concurrentProperChoir, out.id) : undefined;
+        const dynamicEvent = {
+            id: `${out.id}-${out.concurrentProperChoir}-choir`,
+            role: "choir",
+            properSlot: out.concurrentProperChoir,
+            properStatus: hasText(choirText) ? "ready" : "unavailable",
+            ...(choirText ? { text: choirText } : {}),
+            continuation: true,
+        };
+        out.choir = [...(out.choir || []), dynamicEvent];
+    }
+    delete out.concurrentProperChoir;
+    return out;
+}
+function makeSecondConfiteor(joinConfiteor) {
+    return {
+        id: "second-confiteor",
+        phase: "Communion",
+        section: "Holy Communion",
+        title: { en: "Second Confiteor", fr: "Second Confiteor", lat: "Confíteor" },
+        subtitle: {
+            en: "Older custom before the Communion of the faithful",
+            fr: "Ancien usage avant la Communion des fidèles",
+        },
+        actor: joinConfiteor ? "mixed" : "ministers",
+        priestPosition: "Foot/centre of altar",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "KNEEL", policy: "custom", source: "local/custom" },
+        gestures: [
+            { kind: "action", status: "custom", label: "Strike the breast ×3 at mea culpa", anchorLat: "mea culpa, mea culpa, mea máxima culpa", before: true },
+            { kind: "cross", status: "custom", label: "Make the sign of the cross", anchorLat: "Indulgéntiam", before: true },
+        ],
+        text: (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.serverConfiteor, ordinary_1.fixedOrdinary.misereaturVestri, ordinary_1.fixedOrdinary.indulgentiam]),
+        customNote: "The 1962 Communion rubric omits this Confiteor and absolution within Mass. It is retained only as an explicitly enabled older custom.",
+        variantNoteId: "older-custom-second-confiteor",
+    };
+}
+function filterOrdinarySteps(steps, options, proper) {
+    let out = steps;
+    if (proper?.hasGloria === false)
+        out = out.filter(step => step.id !== "gloria");
+    if (proper?.hasCredo === false)
+        out = out.filter(step => step.id !== "credo");
+    if (options.form === "sung" && options.incenseSung === false) {
+        out = out.filter(step => step.id !== "incense-entrance" && step.id !== "incense-off");
+    }
+    if (options.omitJudica || proper?.isRequiem)
+        out = out.filter(step => step.id !== "judica");
+    if (options.faithfulCommunion === false) {
+        out = out.filter(step => !["second-confiteor", "ecce", "domine-non-sum-dignus", "communion-faithful"].includes(step.id));
+    }
+    else if (options.secondConfiteor) {
+        const idx = out.findIndex(step => step.id === "ecce");
+        if (idx >= 0)
+            out = [...out.slice(0, idx), makeSecondConfiteor(!!options.joinConfiteor), ...out.slice(idx)];
+    }
+    // 1962 SOT: at Sung Mass, if the faithful receive, the Communion chant begins
+    // with distribution after the communicants' triple Domine non sum dignus.
+    // If nobody receives, it begins during the priest's Communion.
+    if (options.form === "sung" && options.faithfulCommunion !== false) {
+        out = out.map(step => {
+            if (step.id !== "priest-communion" || !step.concurrentProperChoir)
+                return step;
+            const copy = { ...step };
+            delete copy.concurrentProperChoir;
+            return copy;
+        });
+    }
+    if (proper?.omitLastGospel || proper?.followedByLiturgicalAction) {
+        out = out.filter(step => step.id !== "last-gospel-announcement" && step.id !== "last-gospel");
+    }
+    return out;
+}
+function insertSuperPopulum(steps, proper, properAvailable) {
+    const text = properAvailable ? (0, ordinary_1.normaliseText3)(proper?.superPopulum) : undefined;
+    if (!text)
+        return steps;
+    const idx = steps.findIndex(step => step.id === "postcommunion");
+    if (idx < 0)
+        return steps;
+    const step = {
+        id: "super-populum",
+        phase: "Conclusion",
+        section: "Postcommunion",
+        title: { lat: "Oratio super populum", en: "Prayer over the People", fr: "Oraison sur le peuple" },
+        actor: "celebrant",
+        audibility: "audible",
+        privateAction: false,
+        text,
+        properSlot: "superPopulum",
+        properStatus: "ready",
+    };
+    return [...steps.slice(0, idx + 1), step, ...steps.slice(idx + 1)];
+}
+/* mass-sot-field-hotfix-20260927 */
+/* mass-sot-field-cues-20260927-v2 */
+/* mass-sot-final-field-safe-20260927-v3 */
+function insertSermonPause(steps) {
+    const idx = steps.findIndex(step => step.id === "gospel");
+    if (idx < 0 || steps.some(step => step.id === "sermon-pause"))
+        return steps;
+    const sermon = {
+        id: "sermon-pause",
+        phase: "Mass of the Catechumens",
+        section: "Gospel & Creed",
+        title: { en: "Sermon / Homily · if present", fr: "Sermon / Homélie · si présent" },
+        subtitle: { en: "If preaching occurs, stay here until it ends. If not, continue.", fr: "S’il y a une prédication, restez ici jusqu’à sa fin. Sinon, continuez." },
+        actor: "preacher",
+        priestPosition: "Preaching place",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "CUSTOM", policy: "local", source: "sermon" },
+        gestures: [],
+        explanation: "The sermon is a navigation pause, not a prayer-text step of the Ordo Missae. Do not advance the Mass timeline because of elapsed preaching time."
+    };
+    return [...steps.slice(0, idx + 1), sermon, ...steps.slice(idx + 1)];
+}
+function buildMassSequence(options) {
+    const proper = options.proper || null;
+    const properAvailable = options.properAvailable !== false && !!proper;
+    let steps = clone(options.form === "sung" ? sungTemplate : lowTemplate);
+    steps = filterOrdinarySteps(steps, options, proper);
+    steps = steps.map(step => attachProper(step, proper, properAvailable));
+    steps = insertSuperPopulum(steps, proper, properAvailable);
+    if (!options.exceptionalProfile)
+        steps = insertSermonPause(steps);
+    if (options.exceptionalProfile)
+        steps = (0, exceptional_days_1.applyExceptionalProfile)(steps, options.exceptionalProfile, options.form, proper);
+    return {
+        form: options.form,
+        properName: proper?.name,
+        properStatus: properAvailable ? "ready" : "unavailable",
+        steps,
+    };
+}
+function properUnavailableText() {
+    return clone(PROPER_UNAVAILABLE_TITLE);
+}
+
+},28:function(module,exports,require){module.exports=[{"id":"sign-cross","phase":"Mass of the Catechumens","section":"Prayers at the Foot","title":{"en":"Sign of the Cross · Introibo","fr":"Signe de la Croix · Introibo"},"subtitle":{"en":"At the foot of the altar","fr":"Au bas de l’autel"},"actor":"celebrant","priestPosition":"Foot of the altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"g
