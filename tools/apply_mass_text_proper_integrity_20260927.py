@@ -6,15 +6,25 @@ BUILD = "v43.59.31-TEXT-PROPER-INTEGRITY-V1"
 
 core_path = Path('tools/apply_mass_text_proper_integrity_20260927_core.py')
 core = core_path.read_text(encoding='utf-8')
-core, n = re.subn(
+
+def strip_core_block(pattern, label):
+    global core
+    core, n = re.subn(pattern, '\n# skipped obsolete ' + label + '\n', core, count=1, flags=re.S)
+    if n != 1:
+        raise SystemExit(f'could not bypass {label}: {n}')
+
+strip_core_block(
     r'\nreplace_once\(\n\s+\'if \(id === "__TOP__".+?\n\s+"preparatory-section filtering"\n\)\n',
-    '\n# preparatory-section filtering already equivalent in current production source; no rewrite required\n',
-    core,
-    count=1,
-    flags=re.S,
+    'preparatory-section filtering',
 )
-if n != 1:
-    raise SystemExit(f'could not bypass obsolete preparatory-section filtering patch: {n}')
+strip_core_block(
+    r'\nreplace_once\(\n\s+\'    pushExpected\("Epistle / Lesson".+?\n\s+"coverage for actual pre-Gospel chants"\n\)\n',
+    'coverage for actual pre-Gospel chants',
+)
+strip_core_block(
+    r'\ncoverage_pattern = r\'\'\'.+?sub_once\(coverage_pattern, coverage_replacement, "LA/EN/FR Proper coverage"\)\n',
+    'LA/EN/FR Proper coverage rewrite',
+)
 
 replacement_code = '''
 pre_gospel_pattern = r'const gradualId = firstExisting\\(sources, (?:\\["Graduale", "GradualeP", "Tractus"\\]|"Graduale", "GradualeP", "Tractus")\\);\\n    const proper = \\{'
