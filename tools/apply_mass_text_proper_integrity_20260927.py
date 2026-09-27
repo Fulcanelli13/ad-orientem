@@ -15,10 +15,23 @@ core, n = re.subn(
 )
 if n != 1:
     raise SystemExit(f'could not bypass obsolete preparatory-section filtering patch: {n}')
-core = core.replace(
-    'firstExisting(sources, ["Graduale", "GradualeP", "Tractus"])',
-    'firstExisting(sources, "Graduale", "GradualeP", "Tractus")',
+
+core, n = re.subn(
+    r'\nreplace_once\(\n\s+\'const gradualId = firstExisting\(sources, \["Graduale", "GradualeP", "Tractus"\]\);.+?\n\s+"pre-Gospel source resolver"\n\)\n',
+    '''\npre_gospel_pattern = r'const gradualId = firstExisting\\(sources, "Graduale", "GradualeP", "Tractus"\\);\\n    const proper = \\{'
+pre_gospel_replacement = 'const preGospelChants = preGospelChantsFrom(sources);\\n    const proper = {'
+s, count = re.subn(pre_gospel_pattern, pre_gospel_replacement, s, count=1)
+if count != 1:
+    raise SystemExit(f"pre-Gospel source resolver: expected exactly 1 match, found {count}")
+print("patched: pre-Gospel source resolver")
+''',
+    core,
+    count=1,
+    flags=re.S,
 )
+if n != 1:
+    raise SystemExit(f'could not replace obsolete pre-Gospel resolver patch: {n}')
+
 tmp = Path('/tmp/apply_mass_text_proper_integrity_core_runtime.py')
 tmp.write_text(core, encoding='utf-8')
 run_path(str(tmp), run_name='__main__')
