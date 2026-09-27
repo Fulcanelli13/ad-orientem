@@ -76,18 +76,19 @@ body.aoEmergencyLive .liveContextActions{display:none!important}
     }"""
         s = replace_once(s, communion_branch_old, communion_branch_new, 'Communion chant timing branch')
 
-        s = replace_once(
-            s,
-            "The celebrant communicates himself before Communion is distributed to the faithful. At an ordinary Sung Mass the Communion antiphon begins here and may continue through the Communion of the faithful.",
+        stale_priest_communion = "The celebrant communicates himself before Communion is distributed to the faithful. At an ordinary Sung Mass the Communion antiphon begins here and may continue through the Communion of the faithful."
+        if s.count(stale_priest_communion) != 2:
+            raise RuntimeError(f'Priest Communion explanations: expected 2 stale matches, found {s.count(stale_priest_communion)}')
+        # Module 28 (Sung) precedes module 29 (Low) in the frozen bundle.
+        s = s.replace(
+            stale_priest_communion,
             "The celebrant communicates himself before Communion is distributed to the faithful. At Sung Mass, if the faithful receive, the Communion antiphon begins when distribution begins after their triple Domine non sum dignus; if nobody receives, it begins during the priest’s Communion.",
-            'Sung priest Communion explanation'
+            1
         )
-        # The same stale Sung-Mass explanation was accidentally embedded in the Low-Mass template.
-        s = replace_once(
-            s,
-            "The celebrant communicates himself before Communion is distributed to the faithful. At an ordinary Sung Mass the Communion antiphon begins here and may continue through the Communion of the faithful.",
+        s = s.replace(
+            stale_priest_communion,
             "The celebrant communicates himself before Communion is distributed to the faithful. At Low Mass there is no liturgical Schola track; if the faithful receive, the next strong public cue is Ecce Agnus Dei and the communicants’ Domine non sum dignus.",
-            'Low priest Communion explanation'
+            1
         )
 
         sung_comm_old = '''"id":"communion-faithful","phase":"Communion","section":"Holy Communion","title":{"en":"Communion of the Faithful","fr":"Communion des fidèles"},"subtitle":{"en":"Communion chant accompanies the distribution","fr":"Le chant de Communion accompagne la distribution"},"actor":"mixed","priestPosition":"Communion rail","audibility":"audible","privateAction":false,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The Communion antiphon, already begun at the priest’s Communion, may continue during distribution to the faithful. The celebrant’s own recitation of that proper occurs after the ablutions."'''
