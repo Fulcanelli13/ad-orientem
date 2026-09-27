@@ -17,9 +17,9 @@ if n != 1:
     raise SystemExit(f'could not bypass obsolete preparatory-section filtering patch: {n}')
 
 replacement_code = '''
-pre_gospel_pattern = r'const gradualId = firstExisting\\(sources, "Graduale", "GradualeP", "Tractus"\\);\\n    const proper = \\{'
+pre_gospel_pattern = r'const gradualId = firstExisting\\(sources, (?:\\["Graduale", "GradualeP", "Tractus"\\]|"Graduale", "GradualeP", "Tractus")\\);\\n    const proper = \\{'
 pre_gospel_replacement = 'const preGospelChants = preGospelChantsFrom(sources);\\n    const proper = {'
-s, count = re.subn(pre_gospel_pattern, pre_gospel_replacement, s, count=1)
+text, count = re.subn(pre_gospel_pattern, pre_gospel_replacement, text, count=1)
 if count != 1:
     raise SystemExit(f"pre-Gospel source resolver: expected exactly 1 match, found {count}")
 print("patched: pre-Gospel source resolver")
