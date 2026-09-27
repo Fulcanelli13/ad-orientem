@@ -5,6 +5,7 @@ PATH = Path('index.html')
 BASE_SHA256 = '7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3'
 SENTINEL = 'ao-v4333-emergency-stable-js'
 MASS_SOT_SENTINEL = 'mass-sot-field-hotfix-20260927'
+MASS_FIELD_CUES_SENTINEL = 'mass-sot-field-cues-20260927-v2'
 
 def replace_once(text, old, new, label):
     n = text.count(old)
@@ -170,6 +171,39 @@ function insertSermonPause(steps) {
             raise RuntimeError('Communion timing branch missing after patch')
         if s.count('id: "sermon-pause"') != 1:
             raise RuntimeError('Sermon pause insertion invalid')
+        changed = True
+
+    # Low-risk field guidance hardening: do not invent whether incense is used,
+    # and make the Sanctus/Benedictus drift explicit without changing the Mass graph.
+    if MASS_FIELD_CUES_SENTINEL not in s:
+        incense_entrance_old = '''"id":"incense-entrance","phase":"Mass of the Catechumens","section":"Entrance","title":{"en":"Incensation of the Altar","fr":"Encensement de l’autel"},"subtitle":{"en":"At the beginning of Sung Mass","fr":"Au début de la Messe chantée"},"actor":"celebrant","priestPosition":"Altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"After kissing the altar, the celebrant blesses the incense and incenses the altar. The schola may still be singing the Introit."'''
+        incense_entrance_new = '''"id":"incense-entrance","phase":"Mass of the Catechumens","section":"Entrance","title":{"en":"Incensation of the Altar · if used","fr":"Encensement de l’autel · s’il a lieu"},"subtitle":{"en":"At Sung Mass when incense is being used","fr":"À la Messe chantée lorsque l’encens est employé"},"actor":"celebrant","priestPosition":"Altar","audibility":"quiet","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"If incense is being used at this Sung Mass, after kissing the altar the celebrant blesses the incense and incenses the altar while the schola may still be singing the Introit. If no incense is used, skip this step."'''
+        s = replace_once(s, incense_entrance_old, incense_entrance_new, 'conditional entrance incensation')
+
+        incense_off_old = '''"id":"incense-off","phase":"Offertory","section":"Altar Preparation","title":{"en":"Incensation","fr":"Encensement"},"subtitle":{"en":"Gifts · crucifix · altar · priest · faithful","fr":"Offrandes · crucifix · autel · prêtre · fidèles"},"actor":"celebrant","priestPosition":"Around the altar","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"The offerings and altar are incensed, followed by the celebrant, ministers and faithful."'''
+        incense_off_new = '''"id":"incense-off","phase":"Offertory","section":"Altar Preparation","title":{"en":"Incensation · if used","fr":"Encensement · s’il a lieu"},"subtitle":{"en":"Gifts · crucifix · altar · priest · faithful, when incense is used","fr":"Offrandes · crucifix · autel · prêtre · fidèles, lorsque l’encens est employé"},"actor":"celebrant","priestPosition":"Around the altar","audibility":"silent","privateAction":true,"posture":{"value":"custom","policy":"local","source":"local"},"explanation":"If incense is being used, the offerings and altar are incensed, followed by the celebrant, ministers and faithful. If no incense is used at this Mass, skip this step."'''
+        s = replace_once(s, incense_off_old, incense_off_new, 'conditional Offertory incensation')
+
+        sanctus_old = "The Sanctus concludes the Preface and leads into the Roman Canon; the altar bell commonly marks this transition."
+        if s.count(sanctus_old) != 2:
+            raise RuntimeError(f'Sanctus explanations: expected 2 legacy matches, found {s.count(sanctus_old)}')
+        s = s.replace(
+            sanctus_old,
+            "At Sung Mass the Schola’s Sanctus may overlap the priest’s entry into the silent Canon. Gregorian Sanctus and Benedictus form one chant; in non-Gregorian settings the Benedictus may resume only after the Consecration. All singing ceases for the Consecration itself.",
+            1
+        )
+
+        post_consecration_old = "The Passion, Resurrection and Ascension are recalled as the holy Victim is offered to the Father."
+        if s.count(post_consecration_old) != 2:
+            raise RuntimeError(f'Post-Consecration explanations: expected 2 legacy matches, found {s.count(post_consecration_old)}')
+        s = s.replace(
+            post_consecration_old,
+            "The Passion, Resurrection and Ascension are recalled as the holy Victim is offered to the Father. At Sung Mass, if a non-Gregorian Benedictus resumes after the Consecration, follow that public chant while the priest continues the silent Canon; otherwise remain in sacred silence.",
+            1
+        )
+
+        if MASS_FIELD_CUES_SENTINEL not in s:
+            raise RuntimeError('Field-cue hotfix marker missing after patch')
         changed = True
 
     if changed:
