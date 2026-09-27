@@ -270,10 +270,10 @@ function insertSermonPause(steps) {
 
         if MASS_FINAL_FIELD_SENTINEL not in s:
             raise RuntimeError('Final field-safe marker missing after patch')
-        if s.count("J’irai à l’autel de Dieu.") != 2:
-            raise RuntimeError('French Introibo text did not land twice')
-        if s.count("Seigneur, je ne suis pas digne que vous entriez sous mon toit") != 2:
-            raise RuntimeError('French Domine non sum dignus text did not land twice')
+        if s.count(sign_cross_text_new) != 2:
+            raise RuntimeError('French Introibo Mass-step blocks did not land twice')
+        if s.count(dnsd_fr_new) != 2:
+            raise RuntimeError('French Domine non sum dignus Mass-step blocks did not land twice')
         if "Benedictus if it resumes · otherwise sacred silence" not in s:
             raise RuntimeError('Post-Consecration Benedictus runtime branch missing')
         changed = True
