@@ -1,0 +1,32 @@
+name: Diagnose Mass text and Proper integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/diagnose_mass_text_proper.py
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extract target Mass implementation excerpts
+        run: python tools/diagnose_mass_text_proper.py
+      - name: Commit diagnostic report
+        shell: bash
+        run: |
+          if git diff --quiet -- docs/MASS-TEXT-PROPER-DIAGNOSTIC.txt; then
+            echo 'Diagnostic unchanged.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/MASS-TEXT-PROPER-DIAGNOSTIC.txt
+          git commit -m 'diagnostic: extract Mass text and Proper implementation [skip ci]'
+          git push origin HEAD:main
