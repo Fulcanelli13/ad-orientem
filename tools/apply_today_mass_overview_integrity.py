@@ -17,7 +17,7 @@ old = '''    if (state.homeSheet === 'mass') {
 new = '''    if (state.homeSheet === 'mass') {
         /* today-mass-overview-integrity-20260928-v1 */
         const p = state.resolution?.proper.status === 'ready' ? state.resolution.proper.data : null;
-        const slot = (label, v) => { const vern = (l === 'fr' ? v?.fr : v?.en) || ''; const latinOnly = !vern && !!v?.lat; return `<article><b>${esc(label)}</b><p>${esc(vern || (l === 'fr' ? 'Traduction française indisponible.' : 'English translation unavailable.'))}</p>${latinOnly ? `<small class="translationIntegrityNote">${l === 'fr' ? 'Le texte latin existe, mais il n’est pas affiché comme français.' : 'Latin exists, but is not displayed as English.'}</small>` : ''}</article>`; };
+        const slot = (label, v) => { const vern = (l === 'fr' ? v?.fr : v?.en) || ''; const lat = v?.lat || ''; const missing = !vern && !!lat; return `<article><b>${esc(label)}</b>${lat ? `<p class="latinPrayer">${esc(lat)}</p>` : ''}<p>${esc(vern || (l === 'fr' ? 'Traduction française indisponible.' : 'English translation unavailable.'))}</p>${missing ? `<small class="translationIntegrityNote">${l === 'fr' ? 'Le texte latin est disponible; la traduction française manque.' : 'Latin is available; the English translation is missing.'}</small>` : ''}</article>`; };
         const slots = [];
         const add = (label, text) => { if (text && (text.lat || text.en || text.fr)) slots.push(slot(label, text)); };
         const addSeries = (baseEn, baseFr, values) => (values || []).filter(Boolean).forEach((text, i, arr) => add(arr.length > 1 ? `${l === 'fr' ? baseFr : baseEn} ${i + 1}` : (l === 'fr' ? baseFr : baseEn), text));
@@ -51,6 +51,7 @@ s = s.replace(old, new, 1)
 
 for invariant in [
     SENTINEL,
+    'class="latinPrayer"',
     "addSeries('Collect', 'Collecte', p?.collects);",
     "p?.preGospelChants || []",
     "add(l === 'fr' ? 'Séquence' : 'Sequence', p?.sequence);",
@@ -63,7 +64,6 @@ for invariant in [
     if invariant not in s:
         raise RuntimeError(f"Today's Mass overview invariant missing: {invariant}")
 
-# Regression guard: the old six-slot projection must be gone.
 if "p?.collects?.[0]" in s:
     raise RuntimeError("Today's Mass still projects only the first Collect")
 
