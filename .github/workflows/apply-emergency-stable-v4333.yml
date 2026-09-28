@@ -12,6 +12,18 @@ on:
       - tools/extract_mass_proper_corpus.py
       - tools/select_mass_corpus_fixtures.py
       - tools/extract_mass_appointment_contract.py
+  pull_request:
+    branches: [main]
+    paths:
+      - tools/apply_emergency_stable_v4333.py
+      - tools/apply_*integrity.py
+      - tools/test_mass_text_proper_integrity.py
+      - tools/test_mass_liturgical_fixtures.py
+      - tools/test_mass_real_corpus_contract.py
+      - tools/extract_mass_proper_corpus.py
+      - tools/select_mass_corpus_fixtures.py
+      - tools/extract_mass_appointment_contract.py
+      - .github/workflows/apply-emergency-stable-v4333.yml
 
 permissions:
   contents: write
@@ -20,7 +32,7 @@ jobs:
   patch-production-index:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out main
+      - name: Check out branch under validation
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -82,6 +94,7 @@ jobs:
           git diff --check -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json
 
       - name: Commit production index, corpus fixtures, appointment evidence and diagnostic
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           if [ -z "$(git status --porcelain -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json docs/MASS-TEXT-PROPER-COMPACT.txt)" ]; then
