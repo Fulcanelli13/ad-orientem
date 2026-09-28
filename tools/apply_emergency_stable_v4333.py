@@ -19,6 +19,7 @@ for patch in [
     'tools/apply_gospel_text_integrity.py',
     'tools/apply_mass_reader_projection_integrity.py',
     'tools/apply_sequence_graph_integrity.py',
+    'tools/apply_pregospel_graph_integrity.py',
     'tools/apply_today_mass_overview_integrity.py',
 ]:
     run_guarded(patch)
