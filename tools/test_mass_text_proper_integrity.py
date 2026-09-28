@@ -43,9 +43,15 @@ require('commemoration Secret keeps unnumbered Secreta', r"numbered\)\(sources,\
 require('commemoration Postcommunion keeps unnumbered Postcommunio', r"numbered\)\(sources,\s*'Postcommunio',\s*true\)\[0\]")
 require('Super populum source bound to canonical field', r'superPopulum:\s*\(\(\) => \{ const id = firstExisting\(sources, \["Oratio super populum", "Super populum"\]\)')
 
-# Pre-Gospel complex must be source-driven and retain every supported chant family.
+# Pre-Gospel complex must be source-driven and retain the semantic chant sequence.
 require('pre-Gospel semantic splitter', r'const splitPreGospelLines = \(lines, defaultKind\) =>')
-require('embedded Tract splitter', r'\^!Tractus\
+require('embedded Tract splitter', r'raw\.findIndex\(line => /\^!Tractus\$/i\.test\(line\)\)')
+require('multiple Alleluia splitter', r'matches\.length >= 2')
+require('semantic pre-Gospel array', r'const preGospelChants = authority\.map')
+require('numbered chant resolver', r'const numberedMatch = numbered')
+require('data-driven pre-Gospel graph', r'function materializePreGospelSteps\(')
+require('pre-Gospel graph removes fixed two-slot pair', r'step\.id !== "gradual" && step\.id !== "alleluia"')
+
 # Sequence is conditional and graph-owned immediately before the Gospel announcement.
 require('Sequence conditional insert', r'function insertSequence\(')
 require('Sequence Gospel anchor', r'findIndex\(step => step\.id === "gospel-announcement"\)')
