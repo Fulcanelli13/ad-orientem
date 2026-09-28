@@ -33,6 +33,31 @@ s = replace_count(
     'primary Postcommunion base-section parsing',
 )
 
+# Lenten ferias use [Super populum] in the pinned source corpus. The graph and
+# Today overview already consume proper.superPopulum; bind the source spelling
+# (and the alternate explicit spelling) into that canonical field.
+s = replace_count(
+    s,
+    'const normal = new Set(["Officium", "Rank", "Rule", "Introitus", "Oratio", "Lectio", "Graduale", "GradualeP", "Tractus", "Sequentia", "Evangelium", "Offertorium", "Secreta", "Communio", "Postcommunio"]);',
+    'const normal = new Set(["Officium", "Rank", "Rule", "Introitus", "Oratio", "Lectio", "Graduale", "GradualeP", "Tractus", "Sequentia", "Evangelium", "Offertorium", "Secreta", "Communio", "Postcommunio", "Super populum", "Oratio super populum"]);',
+    1,
+    'Prayer over the People normal-section classification',
+)
+s = replace_count(
+    s,
+    '        postcommunions: numbered(sources, "Postcommunio", true),\n        preparatoryLessons,',
+    '        postcommunions: numbered(sources, "Postcommunio", true),\n        superPopulum: (() => { const id = firstExisting(sources, ["Oratio super populum", "Super populum"]); return id ? textFrom(sources, id) : {}; })(),\n        preparatoryLessons,',
+    1,
+    'Prayer over the People canonical binding',
+)
+s = replace_count(
+    s,
+    '    proper.postcommunions.forEach((v, i) => pushExpected(\`Postcommunion \${i + 1}\`, v));\n    proper.preparatoryLessons.forEach',
+    '    proper.postcommunions.forEach((v, i) => pushExpected(\`Postcommunion \${i + 1}\`, v));\n    pushExpected("Prayer over the People", proper.superPopulum);\n    proper.preparatoryLessons.forEach',
+    1,
+    'Prayer over the People language coverage',
+)
+
 # The commemoration merger had the identical asymmetry. Without this fix the
 # principal Mass works while commemorated Secret/Postcommunion texts vanish.
 s = replace_count(
@@ -66,5 +91,12 @@ for forbidden in (
     if forbidden in s:
         raise RuntimeError(f'legacy Proper parser survived patch: {forbidden}')
 
+for invariant in (
+    'superPopulum: (() => { const id = firstExisting(sources, ["Oratio super populum", "Super populum"]);',
+    'pushExpected("Prayer over the People", proper.superPopulum);',
+):
+    if invariant not in s:
+        raise RuntimeError(f'Prayer-over-the-People integrity invariant missing: {invariant}')
+
 PATH.write_text(s, encoding='utf-8')
-print('Applied TEXT_PROPER_INTEGRITY v1: Secret/Postcommunion + commemorations')
+print('Applied TEXT_PROPER_INTEGRITY v1: Secret/Postcommunion + commemorations + Super populum')
