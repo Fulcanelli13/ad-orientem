@@ -52,8 +52,8 @@ s = replace_count(
 )
 s = replace_count(
     s,
-    '    proper.postcommunions.forEach((v, i) => pushExpected(\`Postcommunion \${i + 1}\`, v));\n    proper.preparatoryLessons.forEach',
-    '    proper.postcommunions.forEach((v, i) => pushExpected(\`Postcommunion \${i + 1}\`, v));\n    pushExpected("Prayer over the People", proper.superPopulum);\n    proper.preparatoryLessons.forEach',
+    '    proper.postcommunions.forEach((v, i) => pushExpected(`Postcommunion ${i + 1}`, v));\n    proper.preparatoryLessons.forEach',
+    '    proper.postcommunions.forEach((v, i) => pushExpected(`Postcommunion ${i + 1}`, v));\n    pushExpected("Prayer over the People", proper.superPopulum);\n    proper.preparatoryLessons.forEach',
     1,
     'Prayer over the People language coverage',
 )
