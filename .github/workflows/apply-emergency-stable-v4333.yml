@@ -8,6 +8,7 @@ on:
       - tools/apply_*integrity.py
       - tools/test_mass_text_proper_integrity.py
       - tools/test_mass_liturgical_fixtures.py
+      - tools/test_mass_real_corpus_contract.py
       - tools/extract_mass_proper_corpus.py
       - tools/select_mass_corpus_fixtures.py
 
@@ -37,6 +38,9 @@ jobs:
 
       - name: Select real corpus regression fixtures
         run: python tools/select_mass_corpus_fixtures.py
+
+      - name: Cross-check real corpus against production resolver
+        run: python tools/test_mass_real_corpus_contract.py
 
       - name: Extract Mass text/Proper diagnostic
         run: python tools/diagnose_mass_text_proper.py
