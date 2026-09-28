@@ -9,6 +9,7 @@ on:
       - tools/test_mass_text_proper_integrity.py
       - tools/test_mass_liturgical_fixtures.py
       - tools/extract_mass_proper_corpus.py
+      - tools/select_mass_corpus_fixtures.py
 
 permissions:
   contents: write
@@ -33,6 +34,9 @@ jobs:
 
       - name: Extract embedded Proper corpus catalogue
         run: python tools/extract_mass_proper_corpus.py
+
+      - name: Select real corpus regression fixtures
+        run: python tools/select_mass_corpus_fixtures.py
 
       - name: Extract Mass text/Proper diagnostic
         run: python tools/diagnose_mass_text_proper.py
@@ -67,17 +71,17 @@ jobs:
           grep -q 'overscroll-behavior-y:none!important' index.html
           grep -q "let lastAt=0,lastSource='',enabled=false,installed=false;" index.html
           grep -q 'lab-prayer-flip \[hidden\]{display:none!important}' index.html
-          git diff --check -- index.html data/mass-proper-corpus.json
+          git diff --check -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json
 
-      - name: Commit production index, corpus catalogue and diagnostic
+      - name: Commit production index, corpus fixtures and diagnostic
         shell: bash
         run: |
-          if [ -z "$(git status --porcelain -- index.html data/mass-proper-corpus.json docs/MASS-TEXT-PROPER-COMPACT.txt)" ]; then
-            echo 'Production index, corpus catalogue and compact diagnostic already current.'
+          if [ -z "$(git status --porcelain -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json docs/MASS-TEXT-PROPER-COMPACT.txt)" ]; then
+            echo 'Production index, corpus fixtures and compact diagnostic already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html data/mass-proper-corpus.json docs/MASS-TEXT-PROPER-COMPACT.txt
-          git commit -m 'diagnostic: refresh Mass Proper corpus and implementation [skip ci]'
+          git add index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json docs/MASS-TEXT-PROPER-COMPACT.txt
+          git commit -m 'diagnostic: refresh Mass Proper corpus fixtures and implementation [skip ci]'
           git push origin HEAD:main
