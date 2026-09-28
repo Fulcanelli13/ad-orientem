@@ -1,87 +1,107 @@
-"""Extract the embedded Mass Proper corpus from the production monolith.
+"""Fetch representative real Proper records from the same pinned upstream corpus
+used by the production ProperResolver.
 
-This does not reinterpret liturgical data. It finds source records already embedded
-in index.html, preserves record IDs and section order, and emits a compact JSON
-catalogue for regression-fixture selection.
+The production app does not embed the daily Proper corpus. It loads pinned
+Divinum Officium sources at runtime, with Missale Meum used as a normalized
+local layer. This diagnostic therefore records real pinned upstream source
+records rather than pretending an embedded catalogue exists.
 """
 from pathlib import Path
-import json
-import re
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError
+import json, re
 
-SRC = Path('index.html')
+HTML = Path('index.html')
 OUT = Path('data/mass-proper-corpus.json')
-if not SRC.exists():
-    raise SystemExit('index.html missing')
-s = SRC.read_text(encoding='utf-8')
+s = HTML.read_text(encoding='utf-8')
 
-# Corpus records in the frozen bundle expose an id/path plus a sections object and
-# ordered section identifiers. Keep extraction deliberately conservative: only
-# objects that contain the canonical Proper section vocabulary are admitted.
-SECTION_WORDS = ('Introitus','Oratio','Lectio','Epistola','Graduale','Alleluia','Tractus','Sequentia','Evangelium','Offertorium','Secreta','Communio','Postcommunio')
+m = re.search(r'divinumOfficium:\s*"([0-9a-f]{40})"', s)
+if not m:
+    raise SystemExit('Pinned Divinum Officium revision not found in index.html')
+REV = m.group(1)
+BASE = f'https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/{REV}/web/www/missa'
+LANG_DIR = {'la':'Latin','en':'English','fr':'Francais'}
 
-# First collect candidate JSON-like object spans around explicit source IDs. The
-# embedded corpus is generated JS, so use balanced-brace scanning rather than a
-# regex pretending to parse arbitrary nested objects.
-def balanced_object(start):
-    depth = 0; quote = None; esc = False
-    for i in range(start, len(s)):
-        c = s[i]
-        if quote:
-            if esc: esc = False
-            elif c == '\\': esc = True
-            elif c == quote: quote = None
+# These are regression exemplars, not invented liturgical mappings. Each one is
+# admitted only if its fetched source itself proves the expected structural shape.
+CANDIDATES = [
+    'Tempora/Pent18-0',   # ordinary Sunday regression target
+    'Tempora/Quad1-0',    # Gradual + embedded Tract
+    'Tempora/Pasc1-0',    # Eastertide multiple Alleluias in one Graduale section
+    'Tempora/Pent01-4',   # appointed Sequence
+    'Tempora/Quad1-3',    # preparatory lesson / Ember-style structure
+    'Tempora/Quad1-1',    # Super populum
+]
+
+def fetch(url):
+    req = Request(url, headers={'User-Agent':'ad-orientem-integrity-test/1'})
+    try:
+        with urlopen(req, timeout=20) as r:
+            return r.read().decode('utf-8')
+    except HTTPError as exc:
+        if exc.code == 404:
+            return None
+        raise
+
+def parse_sections(text):
+    order=[]; sections={}; current='__TOP__'; sections[current]=[]
+    for raw in (text or '').splitlines():
+        mm=re.fullmatch(r'\s*\[([^\]]+)\]\s*', raw)
+        if mm:
+            current=mm.group(1).strip()
+            if current not in sections:
+                order.append(current); sections[current]=[]
             continue
-        if c in ('"', "'", '`'): quote = c; continue
-        if c == '{': depth += 1
-        elif c == '}':
-            depth -= 1
-            if depth == 0: return s[start:i+1]
-    return None
+        sections.setdefault(current,[]).append(raw.rstrip())
+    return {'order':order,'sections':{k:'\n'.join(v).strip() for k,v in sections.items() if k!='__TOP__'}}
 
-candidates = []
-for m in re.finditer(r'\{(?=[^{}]{0,500}(?:"(?:id|path|file|name)"\s*:))', s):
-    obj = balanced_object(m.start())
-    if not obj or not any(w in obj for w in SECTION_WORDS):
-        continue
-    if not re.search(r'\b(?:Introitus|Oratio|Evangelium|Secreta|Postcommunio)\b', obj):
-        continue
-    candidates.append(obj)
+ALLELUIA=re.compile(r'all[eé]l[uú](?:i|í|j)a', re.I)
+def semantic_signals(parsed):
+    order=parsed['order']; sections=parsed['sections']; grad=sections.get('Graduale','')
+    lines=[x.strip() for x in grad.splitlines() if x.strip() and x.strip()!='_']
+    double_line=next((i for i,x in enumerate(lines) if len(ALLELUIA.findall(x))>=2), None)
+    alleluia_groups=0
+    if double_line is not None:
+        # The initial double Alleluia is the incipit; each scripture-reference
+        # group that follows is one Alleluia chant in the pinned source grammar.
+        after=lines[double_line+1:]
+        refs=sum(1 for x in after if x.startswith('!'))
+        alleluia_groups=max(1,refs)
+    return {
+        'tractInGraduale': any(re.fullmatch(r'!Tractus',x,re.I) for x in lines),
+        'alleluiaGroups': alleluia_groups,
+        'hasSequence': 'Sequentia' in sections,
+        'preparatoryLessonCount': sum(1 for x in order if re.fullmatch(r'LectioL\d+',x,re.I)),
+        'hasSuperPopulum': any(x.lower() in ('super populum','oratio super populum') for x in order),
+    }
 
-# Extract only stable metadata and section identifiers/text. This intentionally
-# avoids eval/exec of bundle JavaScript.
-def string_field(obj, names):
-    for name in names:
-        m = re.search(r'["\']?' + re.escape(name) + r'["\']?\s*:\s*(["\'])(.*?)\1', obj, re.S)
-        if m: return m.group(2)
-    return None
+records=[]
+for path in CANDIDATES:
+    langs={}
+    for language,directory in LANG_DIR.items():
+        url=f'{BASE}/{directory}/{path}.txt'
+        text=fetch(url)
+        if text is None:
+            langs[language]={'source':url,'missing':True,'order':[],'sections':{}}
+        else:
+            parsed=parse_sections(text)
+            langs[language]={'source':url,'missing':False,**parsed}
+    if langs['la']['missing']:
+        raise SystemExit(f'Pinned Latin Proper source missing: {path}')
+    records.append({
+        'id':path,
+        'sectionOrder':langs['la']['order'],
+        'signals':semantic_signals(langs['la']),
+        'languages':langs,
+    })
 
-def section_keys(obj):
-    found = []
-    for m in re.finditer(r'["\']((?:Introitus|Oratio(?:\s+super\s+populum)?|Lectio|Epistola|GradualeP?|Alleluia|Tractus|Sequentia|Evangelium|Offertorium|Secreta|Communio|Postcommunio)\d*)["\']\s*:', obj, re.I):
-        key = m.group(1)
-        if key not in found: found.append(key)
-    return found
-
-records = []
-seen = set()
-for obj in candidates:
-    rid = string_field(obj, ('id','path','file','name','key'))
-    keys = section_keys(obj)
-    if not rid or len(keys) < 3: continue
-    sig = (rid, tuple(keys))
-    if sig in seen: continue
-    seen.add(sig)
-    records.append({'id': rid, 'sectionOrder': keys})
-
-records.sort(key=lambda r: r['id'])
-OUT.parent.mkdir(parents=True, exist_ok=True)
-payload = {
-    'schema': 'ad-orientem.mass-proper-corpus.v1',
-    'source': 'index.html embedded corpus',
-    'recordCount': len(records),
-    'records': records,
+payload={
+    'schema':'ad-orientem.mass-proper-corpus.v2',
+    'source':'pinned Divinum Officium runtime corpus',
+    'divinumOfficiumRevision':REV,
+    'recordCount':len(records),
+    'records':records,
 }
-OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-print(f'wrote {OUT}: {len(records)} records')
-if not records:
-    raise SystemExit('No Proper records extracted; bundle shape needs a source-specific extractor anchor.')
+OUT.parent.mkdir(parents=True,exist_ok=True)
+OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(f'wrote {OUT}: {len(records)} pinned real-source records at {REV[:12]}')
