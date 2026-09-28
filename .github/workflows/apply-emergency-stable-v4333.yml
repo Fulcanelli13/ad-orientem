@@ -93,6 +93,20 @@ jobs:
           grep -q 'lab-prayer-flip \[hidden\]{display:none!important}' index.html
           git diff --check -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json
 
+      - name: Upload testable PR preview build
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          path: |
+            index.html
+            data/mass-proper-corpus.json
+            data/mass-proper-fixtures.json
+            data/mass-appointment-contract.json
+            docs/MASS-TEXT-PROPER-COMPACT.txt
+          retention-days: 7
+          if-no-files-found: error
+
       - name: Commit production index, corpus fixtures, appointment evidence and diagnostic
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
