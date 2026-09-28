@@ -36,10 +36,10 @@ for marker in [
     require(f'marker {marker}', re.escape(marker))
 
 # Canonical prayer-series contract: unnumbered and numbered sections, including commemorations.
-require('base Secret parser accepts Secreta', r'collectSeries\(sources,\s*"Secreta"')
-require('base Postcommunion parser accepts Postcommunio', r'collectSeries\(sources,\s*"Postcommunio"')
-require('commemoration Secret merge present', r'proper\.secrets')
-require('commemoration Postcommunion merge present', r'proper\.postcommunions')
+require('base Secret parser keeps unnumbered Secreta', r'secrets:\s*numbered\(sources,\s*"Secreta",\s*true\)')
+require('base Postcommunion parser keeps unnumbered Postcommunio', r'postcommunions:\s*numbered\(sources,\s*"Postcommunio",\s*true\)')
+require('commemoration Secret keeps unnumbered Secreta', r"numbered\)\(sources,\s*'Secreta',\s*true\)\[0\]")
+require('commemoration Postcommunion keeps unnumbered Postcommunio', r"numbered\)\(sources,\s*'Postcommunio',\s*true\)\[0\]")
 
 # Pre-Gospel complex must be source-driven and retain every supported chant family.
 require('pre-Gospel ordered array', r'preGospelChants:\s*preGospelIds\.map')
