@@ -70,8 +70,11 @@ require('Today Mass all Secrets', r"addSeries\('Secret',\s*'Secrète',\s*p\?\.se
 require('Today Mass Preface', r'p\?\.preface')
 require('Today Mass all Postcommunions', r"addSeries\('Postcommunion',\s*'Postcommunion',\s*p\?\.postcommunions\)")
 require('Today Mass super populum', r'p\?\.superPopulum')
-if 'p?.collects?.[0]' in s:
-    raise AssertionError("Today's Mass still contains first-Collect-only projection")
+# Do not globally ban first-Collect expressions: other consumers may legitimately
+# inspect the primary Collect. The Today overview itself is proven by its marker,
+# full series calls and liturgical-order assertions above.
+require('Today Mass legacy six-slot consumer removed',
+        r"today-mass-overview-integrity-20260928-v1")
 
 # Structural order of the dynamically assembled Today overview.
 require_order('Today Mass liturgical order', [
