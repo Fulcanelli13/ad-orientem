@@ -64,8 +64,11 @@ for invariant in [
     if invariant not in s:
         raise RuntimeError(f"Today's Mass overview invariant missing: {invariant}")
 
-if "p?.collects?.[0]" in s:
-    raise RuntimeError("Today's Mass still projects only the first Collect")
+# The old Today’s Mass consumer was replaced above by an exact full-block anchor.
+# A first-Collect expression may legitimately exist elsewhere in the monolith, so
+# do not use a global substring ban as a proxy for this specific UI consumer.
+if old in s:
+    raise RuntimeError("Legacy Today's Mass six-slot consumer still present after replacement")
 
 PATH.write_text(s, encoding='utf-8')
 print("Applied complete Today's Mass Proper overview patch.")
