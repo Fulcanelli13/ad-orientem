@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - tools/apply_emergency_stable_v4333.py
+      - tools/apply_*integrity.py
+      - tools/test_mass_text_proper_integrity.py
 
 permissions:
   contents: write
@@ -20,6 +22,9 @@ jobs:
 
       - name: Apply guarded emergency patch
         run: python tools/apply_emergency_stable_v4333.py
+
+      - name: Run Mass text/Proper integrity harness
+        run: python tools/test_mass_text_proper_integrity.py
 
       - name: Extract Mass text/Proper diagnostic
         run: python tools/diagnose_mass_text_proper.py
