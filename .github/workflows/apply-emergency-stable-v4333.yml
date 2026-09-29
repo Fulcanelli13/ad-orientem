@@ -14,6 +14,8 @@ on:
       - tools/select_mass_corpus_fixtures.py
       - tools/extract_mass_appointment_contract.py
       - tools/extract_mass_source_loader_contract.py
+      - preview/START_PREVIEW.cmd
+      - preview/PREVIEW_SERVER.ps1
   pull_request:
     branches: [main]
     paths:
@@ -111,6 +113,8 @@ jobs:
             data/mass-appointment-contract.json
             data/mass-source-loader-contract.json
             docs/MASS-TEXT-PROPER-COMPACT.txt
+            preview/START_PREVIEW.cmd
+            preview/PREVIEW_SERVER.ps1
           retention-days: 7
           if-no-files-found: error
 
