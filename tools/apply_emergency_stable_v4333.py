@@ -14,6 +14,7 @@ def run_guarded(path):
 
 for patch in [
     'tools/apply_emergency_stable_v4333_core.py',
+    'tools/apply_mass_source_fetch_resilience.py',
     'tools/apply_text_proper_integrity.py',
     'tools/apply_mass_text_proper_integrity.py',
     'tools/apply_gospel_text_integrity.py',
