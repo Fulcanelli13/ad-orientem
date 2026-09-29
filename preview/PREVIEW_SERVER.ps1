@@ -28,7 +28,7 @@ $mime = @{
 
 function Send-Response($stream, [int]$status, [string]$reason, [byte[]]$body, [string]$contentType) {
     if ($null -eq $body) { $body = [byte[]]@() }
-    $nl = [Environment]::NewLine
+    $nl = [string][char]13 + [string][char]10
     $headers = "HTTP/1.1 $status $reason" + $nl +
                "Content-Type: $contentType" + $nl +
                "Content-Length: $($body.Length)" + $nl +
