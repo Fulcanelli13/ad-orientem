@@ -5,6 +5,32 @@ on:
     branches: [main]
     paths:
       - tools/apply_emergency_stable_v4333.py
+      - tools/apply_mass_source_fetch_resilience.py
+      - tools/apply_mass_source_loader_cleanup.py
+      - tools/apply_*integrity.py
+      - tools/test_mass_text_proper_integrity.py
+      - tools/test_mass_liturgical_fixtures.py
+      - tools/test_mass_real_corpus_contract.py
+      - tools/extract_mass_proper_corpus.py
+      - tools/select_mass_corpus_fixtures.py
+      - tools/extract_mass_appointment_contract.py
+      - tools/extract_mass_source_loader_contract.py
+      - preview/START_PREVIEW.cmd
+      - preview/PREVIEW_SERVER.ps1
+      - Ad-Orientem-v43.19.webmanifest
+  pull_request:
+    branches: [main]
+    paths:
+      - tools/apply_emergency_stable_v4333.py
+      - tools/apply_*integrity.py
+      - tools/test_mass_text_proper_integrity.py
+      - tools/test_mass_liturgical_fixtures.py
+      - tools/test_mass_real_corpus_contract.py
+      - tools/extract_mass_proper_corpus.py
+      - tools/select_mass_corpus_fixtures.py
+      - tools/extract_mass_appointment_contract.py
+      - tools/extract_mass_source_loader_contract.py
+      - .github/workflows/apply-emergency-stable-v4333.yml
 
 permissions:
   contents: write
@@ -13,13 +39,34 @@ jobs:
   patch-production-index:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out main
+      - name: Check out branch under validation
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Apply guarded emergency patch
         run: python tools/apply_emergency_stable_v4333.py
+
+      - name: Run Mass text/Proper integrity harness
+        run: python tools/test_mass_text_proper_integrity.py
+
+      - name: Run representative liturgical fixtures
+        run: python tools/test_mass_liturgical_fixtures.py
+
+      - name: Extract embedded Proper corpus catalogue
+        run: python tools/extract_mass_proper_corpus.py
+
+      - name: Select real corpus regression fixtures
+        run: python tools/select_mass_corpus_fixtures.py
+
+      - name: Cross-check real corpus against production resolver
+        run: python tools/test_mass_real_corpus_contract.py
+
+      - name: Extract Preface and Canon appointment evidence
+        run: python tools/extract_mass_appointment_contract.py
+
+      - name: Extract Mass source loader contract
+        run: python tools/extract_mass_source_loader_contract.py
 
       - name: Extract Mass text/Proper diagnostic
         run: python tools/diagnose_mass_text_proper.py
@@ -54,17 +101,60 @@ jobs:
           grep -q 'overscroll-behavior-y:none!important' index.html
           grep -q "let lastAt=0,lastSource='',enabled=false,installed=false;" index.html
           grep -q 'lab-prayer-flip \[hidden\]{display:none!important}' index.html
-          git diff --check -- index.html
+          git diff --check -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json data/mass-source-loader-contract.json
 
-      - name: Commit production index and diagnostic
+      - name: Smoke-test packaged preview server
         shell: bash
         run: |
-          if [ -z "$(git status --porcelain -- index.html docs/MASS-TEXT-PROPER-COMPACT.txt)" ]; then
-            echo 'Production index and compact diagnostic already current.'
+          pwsh -NoProfile -File preview/PREVIEW_SERVER.ps1 -Port 8765 >/tmp/ao-preview.log 2>&1 &
+          SERVER_PID=$!
+          cleanup() { kill "$SERVER_PID" >/dev/null 2>&1 || true; }
+          trap cleanup EXIT
+          OK=0
+          for i in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8765/index.html -o /tmp/ao-preview-index.html; then
+              OK=1
+              break
+            fi
+            sleep 0.5
+          done
+          if [ "$OK" != "1" ]; then
+            cat /tmp/ao-preview.log || true
+            exit 1
+          fi
+          test -s /tmp/ao-preview-index.html
+          grep -qi '<html' /tmp/ao-preview-index.html
+          curl --fail --silent http://127.0.0.1:8765/Ad-Orientem-v43.19.webmanifest -o /tmp/ao-preview-manifest.json
+          python -m json.tool /tmp/ao-preview-manifest.json >/dev/null
+
+      - name: Upload testable PR preview build
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          path: |
+            index.html
+            data/mass-proper-corpus.json
+            data/mass-proper-fixtures.json
+            data/mass-appointment-contract.json
+            data/mass-source-loader-contract.json
+            docs/MASS-TEXT-PROPER-COMPACT.txt
+            preview/START_PREVIEW.cmd
+            preview/PREVIEW_SERVER.ps1
+            Ad-Orientem-v43.19.webmanifest
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Commit production index, corpus fixtures, appointment evidence and diagnostic
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          if [ -z "$(git status --porcelain -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json data/mass-source-loader-contract.json docs/MASS-TEXT-PROPER-COMPACT.txt)" ]; then
+            echo 'Production Mass corpus, appointment evidence and diagnostic already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html docs/MASS-TEXT-PROPER-COMPACT.txt
-          git commit -m 'diagnostic: refresh compact Mass text and Proper implementation [skip ci]'
+          git add index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json data/mass-source-loader-contract.json docs/MASS-TEXT-PROPER-COMPACT.txt
+          git commit -m 'diagnostic: refresh Mass appointment evidence and implementation [skip ci]'
           git push origin HEAD:main
