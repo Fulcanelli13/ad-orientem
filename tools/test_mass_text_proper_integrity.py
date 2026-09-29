@@ -26,6 +26,7 @@ def require_order(name, patterns):
         raise AssertionError(f'{name}: wrong order {positions}')
 
 for marker in [
+    'mass-source-fetch-resilience-20260929-v1',
     'mass-text-proper-integrity-pregospel-20260927-v2',
     'mass-pregospel-graph-integrity-20260928-v1',
     'mass-text-proper-integrity-gospel-20260927-v1',
@@ -34,6 +35,13 @@ for marker in [
     'today-mass-overview-integrity-20260928-v1',
 ]:
     require(f'marker {marker}', re.escape(marker))
+
+
+# Proper source transport must survive a failed primary GitHub transport without
+# changing the pinned source revision or silently dropping the Proper.
+require('Mass source transport mirror', r'cdn\.jsdelivr\.net/gh/')
+require('Mass source fetcher uses resilient wrapper', r'MemoryTextFetcher\(sourceFetch\)')
+require('Mass source tryGet continues fallbacks', r'Source transport failed; trying fallback')
 
 # Prayer series and source bindings.
 require('base Secret parser keeps unnumbered Secreta', r'secrets:\s*numbered\(sources,\s*"Secreta",\s*true\)')
