@@ -1,12 +1,13 @@
 param([int]$Port = 8765)
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
-$listener = New-Object System.Net.HttpListener
-$listener.Prefixes.Add("http://127.0.0.1:$Port/")
+$root = [IO.Path]::GetFullPath($root)
+$listener = [System.Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, $Port)
+
 try {
     $listener.Start()
 } catch {
-    Write-Host "Could not start the preview server on port $Port." -ForegroundColor Red
+    Write-Host "Could not start the Ad Orientem preview server on port $Port." -ForegroundColor Red
     Write-Host $_.Exception.Message
     Read-Host "Press Enter to close"
     exit 1
@@ -25,30 +26,69 @@ $mime = @{
     ".ico"="image/x-icon"; ".txt"="text/plain; charset=utf-8"
 }
 
-while ($listener.IsListening) {
-    try {
-        $ctx = $listener.GetContext()
-        $relative = [Uri]::UnescapeDataString($ctx.Request.Url.AbsolutePath.TrimStart('/'))
-        if ([string]::IsNullOrWhiteSpace($relative)) { $relative = "index.html" }
-        $candidate = [IO.Path]::GetFullPath((Join-Path $root $relative))
-        if (-not $candidate.StartsWith([IO.Path]::GetFullPath($root), [StringComparison]::OrdinalIgnoreCase)) {
-            $ctx.Response.StatusCode = 403
-            $ctx.Response.Close()
-            continue
+function Send-Response($stream, [int]$status, [string]$reason, [byte[]]$body, [string]$contentType) {
+    if ($null -eq $body) { $body = [byte[]]@() }
+    $headers = "HTTP/1.1 $status $reason\`r\`nContent-Type: $contentType\`r\`nContent-Length: $($body.Length)\`r\`nCache-Control: no-store\`r\`nConnection: close\`r\`n\`r\`n"
+    $head = [Text.Encoding]::ASCII.GetBytes($headers)
+    $stream.Write($head, 0, $head.Length)
+    if ($body.Length -gt 0) { $stream.Write($body, 0, $body.Length) }
+    $stream.Flush()
+}
+
+try {
+    while ($true) {
+        $client = $listener.AcceptTcpClient()
+        try {
+            $stream = $client.GetStream()
+            $reader = New-Object IO.StreamReader($stream, [Text.Encoding]::ASCII, $false, 4096, $true)
+            $requestLine = $reader.ReadLine()
+
+            if ([string]::IsNullOrWhiteSpace($requestLine)) {
+                Send-Response $stream 400 "Bad Request" ([Text.Encoding]::UTF8.GetBytes("Bad Request")) "text/plain; charset=utf-8"
+                continue
+            }
+
+            while ($true) {
+                $line = $reader.ReadLine()
+                if ([string]::IsNullOrEmpty($line)) { break }
+            }
+
+            $parts = $requestLine.Split(' ')
+            if ($parts.Length -lt 2 -or $parts[0] -ne "GET") {
+                Send-Response $stream 405 "Method Not Allowed" ([Text.Encoding]::UTF8.GetBytes("Method Not Allowed")) "text/plain; charset=utf-8"
+                continue
+            }
+
+            $rawPath = ($parts[1] -split '\\?')[0]
+            $relative = [Uri]::UnescapeDataString($rawPath.TrimStart('/'))
+            if ([string]::IsNullOrWhiteSpace($relative)) { $relative = "index.html" }
+
+            $candidate = [IO.Path]::GetFullPath((Join-Path $root $relative))
+            if (-not $candidate.StartsWith($root, [StringComparison]::OrdinalIgnoreCase)) {
+                Send-Response $stream 403 "Forbidden" ([Text.Encoding]::UTF8.GetBytes("Forbidden")) "text/plain; charset=utf-8"
+                continue
+            }
+
+            if (-not (Test-Path -LiteralPath $candidate -PathType Leaf)) {
+                Send-Response $stream 404 "Not Found" ([Text.Encoding]::UTF8.GetBytes("Not Found")) "text/plain; charset=utf-8"
+                continue
+            }
+
+            $body = [IO.File]::ReadAllBytes($candidate)
+            $ext = [IO.Path]::GetExtension($candidate).ToLowerInvariant()
+            $contentType = if ($mime.ContainsKey($ext)) { $mime[$ext] } else { "application/octet-stream" }
+            Send-Response $stream 200 "OK" $body $contentType
         }
-        if (-not (Test-Path -LiteralPath $candidate -PathType Leaf)) {
-            $ctx.Response.StatusCode = 404
-            $ctx.Response.Close()
-            continue
+        catch {
+            try { Send-Response $stream 500 "Internal Server Error" ([Text.Encoding]::UTF8.GetBytes($_.Exception.Message)) "text/plain; charset=utf-8" } catch {}
         }
-        $bytes = [IO.File]::ReadAllBytes($candidate)
-        $ext = [IO.Path]::GetExtension($candidate).ToLowerInvariant()
-        if ($mime.ContainsKey($ext)) { $ctx.Response.ContentType = $mime[$ext] }
-        $ctx.Response.Headers["Cache-Control"] = "no-store"
-        $ctx.Response.ContentLength64 = $bytes.Length
-        $ctx.Response.OutputStream.Write($bytes,0,$bytes.Length)
-        $ctx.Response.OutputStream.Close()
-    } catch {
-        try { $ctx.Response.StatusCode = 500; $ctx.Response.Close() } catch {}
+        finally {
+            try { $reader.Dispose() } catch {}
+            try { $stream.Dispose() } catch {}
+            try { $client.Close() } catch {}
+        }
     }
+}
+finally {
+    $listener.Stop()
 }
