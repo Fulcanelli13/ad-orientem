@@ -13,10 +13,8 @@ if SENTINEL in s:
 #    Keep the same pinned repository/revision URL as authority; jsDelivr is only a
 #    transport mirror for the identical owner/repo/commit/path when raw GitHub is
 #    unavailable from a local preview/browser environment.
-boot_old = '''function boot(root, date = iso(new Date())) {
-    const fetcher = new text_fetcher_1.MemoryTextFetcher((url, init) => fetch(url, init));'''
-boot_new = '''function boot(root, date = iso(new Date())) {
-    /* mass-source-fetch-resilience-20260929-v1 */
+boot_old = 'const fetcher = new text_fetcher_1.MemoryTextFetcher((url, init) => fetch(url, init));'
+boot_new = '''/* mass-source-fetch-resilience-20260929-v1 */
     const sourceFetch = async (url, init) => {
         const primary = String(url || '');
         const rawGithub = /^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/i.exec(primary);
