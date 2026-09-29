@@ -12,6 +12,7 @@ on:
       - tools/extract_mass_proper_corpus.py
       - tools/select_mass_corpus_fixtures.py
       - tools/extract_mass_appointment_contract.py
+      - tools/extract_mass_source_loader_contract.py
   pull_request:
     branches: [main]
     paths:
@@ -23,6 +24,7 @@ on:
       - tools/extract_mass_proper_corpus.py
       - tools/select_mass_corpus_fixtures.py
       - tools/extract_mass_appointment_contract.py
+      - tools/extract_mass_source_loader_contract.py
       - .github/workflows/apply-emergency-stable-v4333.yml
 
 permissions:
@@ -58,6 +60,9 @@ jobs:
       - name: Extract Preface and Canon appointment evidence
         run: python tools/extract_mass_appointment_contract.py
 
+      - name: Extract Mass source loader contract
+        run: python tools/extract_mass_source_loader_contract.py
+
       - name: Extract Mass text/Proper diagnostic
         run: python tools/diagnose_mass_text_proper.py
 
@@ -91,7 +96,7 @@ jobs:
           grep -q 'overscroll-behavior-y:none!important' index.html
           grep -q "let lastAt=0,lastSource='',enabled=false,installed=false;" index.html
           grep -q 'lab-prayer-flip \[hidden\]{display:none!important}' index.html
-          git diff --check -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json
+          git diff --check -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json data/mass-source-loader-contract.json
 
       - name: Upload testable PR preview build
         if: github.event_name == 'pull_request'
@@ -103,6 +108,7 @@ jobs:
             data/mass-proper-corpus.json
             data/mass-proper-fixtures.json
             data/mass-appointment-contract.json
+            data/mass-source-loader-contract.json
             docs/MASS-TEXT-PROPER-COMPACT.txt
           retention-days: 7
           if-no-files-found: error
@@ -111,7 +117,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
-          if [ -z "$(git status --porcelain -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json docs/MASS-TEXT-PROPER-COMPACT.txt)" ]; then
+          if [ -z "$(git status --porcelain -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json data/mass-source-loader-contract.json docs/MASS-TEXT-PROPER-COMPACT.txt)" ]; then
             echo 'Production Mass corpus, appointment evidence and diagnostic already current.'
             exit 0
           fi
