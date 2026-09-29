@@ -101,6 +101,28 @@ jobs:
           grep -q 'lab-prayer-flip \[hidden\]{display:none!important}' index.html
           git diff --check -- index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json data/mass-source-loader-contract.json
 
+      - name: Smoke-test packaged preview server
+        shell: bash
+        run: |
+          pwsh -NoProfile -File preview/PREVIEW_SERVER.ps1 -Port 8765 >/tmp/ao-preview.log 2>&1 &
+          SERVER_PID=$!
+          cleanup() { kill "$SERVER_PID" >/dev/null 2>&1 || true; }
+          trap cleanup EXIT
+          OK=0
+          for i in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8765/index.html -o /tmp/ao-preview-index.html; then
+              OK=1
+              break
+            fi
+            sleep 0.5
+          done
+          if [ "$OK" != "1" ]; then
+            cat /tmp/ao-preview.log || true
+            exit 1
+          fi
+          test -s /tmp/ao-preview-index.html
+          grep -qi '<html' /tmp/ao-preview-index.html
+
       - name: Upload testable PR preview build
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
