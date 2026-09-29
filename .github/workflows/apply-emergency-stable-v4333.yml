@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - tools/apply_emergency_stable_v4333.py
+      - tools/apply_mass_source_fetch_resilience.py
       - tools/apply_*integrity.py
       - tools/test_mass_text_proper_integrity.py
       - tools/test_mass_liturgical_fixtures.py
@@ -123,6 +124,6 @@ jobs:
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json docs/MASS-TEXT-PROPER-COMPACT.txt
+          git add index.html data/mass-proper-corpus.json data/mass-proper-fixtures.json data/mass-appointment-contract.json data/mass-source-loader-contract.json docs/MASS-TEXT-PROPER-COMPACT.txt
           git commit -m 'diagnostic: refresh Mass appointment evidence and implementation [skip ci]'
           git push origin HEAD:main
