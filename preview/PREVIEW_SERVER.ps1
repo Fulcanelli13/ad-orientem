@@ -1,7 +1,7 @@
 param([int]$Port = 8765)
 
-$root = Split-Path -Parent $MyInvocation.MyCommand.Path
-$root = [IO.Path]::GetFullPath($root)
+$previewDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = [IO.Path]::GetFullPath((Split-Path -Parent $previewDir))
 $listener = [System.Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, $Port)
 
 try {
@@ -28,7 +28,12 @@ $mime = @{
 
 function Send-Response($stream, [int]$status, [string]$reason, [byte[]]$body, [string]$contentType) {
     if ($null -eq $body) { $body = [byte[]]@() }
-    $headers = "HTTP/1.1 $status $reason\`r\`nContent-Type: $contentType\`r\`nContent-Length: $($body.Length)\`r\`nCache-Control: no-store\`r\`nConnection: close\`r\`n\`r\`n"
+    $nl = [Environment]::NewLine
+    $headers = "HTTP/1.1 $status $reason" + $nl +
+               "Content-Type: $contentType" + $nl +
+               "Content-Length: $($body.Length)" + $nl +
+               "Cache-Control: no-store" + $nl +
+               "Connection: close" + $nl + $nl
     $head = [Text.Encoding]::ASCII.GetBytes($headers)
     $stream.Write($head, 0, $head.Length)
     if ($body.Length -gt 0) { $stream.Write($body, 0, $body.Length) }
@@ -38,6 +43,8 @@ function Send-Response($stream, [int]$status, [string]$reason, [byte[]]$body, [s
 try {
     while ($true) {
         $client = $listener.AcceptTcpClient()
+        $reader = $null
+        $stream = $null
         try {
             $stream = $client.GetStream()
             $reader = New-Object IO.StreamReader($stream, [Text.Encoding]::ASCII, $false, 4096, $true)
@@ -83,8 +90,8 @@ try {
             try { Send-Response $stream 500 "Internal Server Error" ([Text.Encoding]::UTF8.GetBytes($_.Exception.Message)) "text/plain; charset=utf-8" } catch {}
         }
         finally {
-            try { $reader.Dispose() } catch {}
-            try { $stream.Dispose() } catch {}
+            try { if ($reader) { $reader.Dispose() } } catch {}
+            try { if ($stream) { $stream.Dispose() } } catch {}
             try { $client.Close() } catch {}
         }
     }
