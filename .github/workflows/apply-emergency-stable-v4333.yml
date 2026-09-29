@@ -6,6 +6,7 @@ on:
     paths:
       - tools/apply_emergency_stable_v4333.py
       - tools/apply_mass_source_fetch_resilience.py
+      - tools/apply_mass_source_loader_cleanup.py
       - tools/apply_*integrity.py
       - tools/test_mass_text_proper_integrity.py
       - tools/test_mass_liturgical_fixtures.py
@@ -16,6 +17,7 @@ on:
       - tools/extract_mass_source_loader_contract.py
       - preview/START_PREVIEW.cmd
       - preview/PREVIEW_SERVER.ps1
+      - Ad-Orientem-v43.19.webmanifest
   pull_request:
     branches: [main]
     paths:
@@ -122,6 +124,8 @@ jobs:
           fi
           test -s /tmp/ao-preview-index.html
           grep -qi '<html' /tmp/ao-preview-index.html
+          curl --fail --silent http://127.0.0.1:8765/Ad-Orientem-v43.19.webmanifest -o /tmp/ao-preview-manifest.json
+          python -m json.tool /tmp/ao-preview-manifest.json >/dev/null
 
       - name: Upload testable PR preview build
         if: github.event_name == 'pull_request'
@@ -137,6 +141,7 @@ jobs:
             docs/MASS-TEXT-PROPER-COMPACT.txt
             preview/START_PREVIEW.cmd
             preview/PREVIEW_SERVER.ps1
+            Ad-Orientem-v43.19.webmanifest
           retention-days: 7
           if-no-files-found: error
 
