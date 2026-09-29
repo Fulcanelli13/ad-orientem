@@ -66,7 +66,7 @@ try {
                 continue
             }
 
-            $rawPath = ($parts[1] -split '\\?')[0]
+            $rawPath = ($parts[1] -split '\?')[0]
             $relative = [Uri]::UnescapeDataString($rawPath.TrimStart('/'))
             if ([string]::IsNullOrWhiteSpace($relative)) { $relative = "index.html" }
 
