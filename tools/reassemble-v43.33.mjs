@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const partsDir = new URL('../legacy/v43.33.parts/', import.meta.url);
 const statusUrl = new URL('../legacy/v43.33.parts/IMPORT-STATUS.json', import.meta.url);
@@ -13,7 +13,7 @@ const names = readdirSync(partsDir)
 
 if (!names.length) throw new Error('No v43.33 baseline chunks found.');
 
-const buffers = names.map(name => readFileSync(join(partsDir.pathname, name)));
+const buffers = names.map(name => readFileSync(fileURLToPath(new URL(name, partsDir))));
 const merged = Buffer.concat(buffers);
 const actual = createHash('sha256').update(merged).digest('hex');
 

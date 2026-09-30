@@ -8,12 +8,18 @@ on:
     paths:
       - 'legacy/v43.33.parts/**'
       - 'tools/reassemble-v43.33.mjs'
+      - 'tools/stabilize-v43.34.mjs'
+      - 'src/stabilization.*'
+      - 'tests/stabilization-*'
       - '.github/workflows/baseline-integrity.yml'
       - 'docs/CANONICAL-BASELINE.md'
   pull_request:
     paths:
       - 'legacy/v43.33.parts/**'
       - 'tools/reassemble-v43.33.mjs'
+      - 'tools/stabilize-v43.34.mjs'
+      - 'src/stabilization.*'
+      - 'tests/stabilization-*'
       - '.github/workflows/baseline-integrity.yml'
       - 'docs/CANONICAL-BASELINE.md'
 
@@ -29,17 +35,33 @@ jobs:
       - name: Reassemble and verify frozen v43.33
         run: node tools/reassemble-v43.33.mjs
 
-      - name: Publish verified v43.33 as Pages index
+      - name: Build and verify stabilization
+        run: |
+          node tools/stabilize-v43.34.mjs
+          node tests/stabilization-static.mjs
+
+      - name: Mobile browser regression checks
+        run: |
+          npm install --no-save --package-lock=false playwright@1.58.2
+          npx playwright install --with-deps chromium
+          node tests/stabilization-runner.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mobile-stabilization
+          path: mobile-stabilization.png
+
+      - name: Publish stabilized app as Pages index
         if: github.ref == 'refs/heads/main'
         shell: bash
         run: |
-          cp legacy/Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html index.html
           if git diff --quiet -- index.html; then
-            echo "index.html already matches verified v43.33"
+            echo "index.html already matches verified stabilization"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m "deploy: publish verified v43.33 app"
+          git commit -m "deploy: publish verified v43.34 stabilization"
           git push origin HEAD:main
