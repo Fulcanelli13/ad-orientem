@@ -63,8 +63,15 @@ for(const corpus of [low,sung]){
   for(const section of sections.sections){
     const card=buildReaderSectionCard({corpus,section,properSlots});
     assert.equal(card.sequence,section.sequence);
-    assert.ok(card.paragraphs.length>0,section.sectionId+" built a blank card");
-    assert.ok(card.paragraphs.every(p=>p.primary),section.sectionId+" has blank primary text");
+    if(section.sectionId==="AO.CARD.008"){
+      assert.equal(card.stateOnly,true,"Homily pause must be a titled state-only card");
+      assert.equal(card.title,"Sermon / Homily");
+      assert.equal(card.paragraphs.length,0);
+    }else{
+      assert.equal(card.stateOnly,false,section.sectionId+" unexpectedly became state-only");
+      assert.ok(card.paragraphs.length>0,section.sectionId+" built a blank card");
+      assert.ok(card.paragraphs.every(p=>p.primary),section.sectionId+" has blank primary text");
+    }
   }
 }
 
@@ -83,6 +90,21 @@ const lastGospel=buildReaderSectionCard({
 });
 assert.equal(lastGospel.title,"Last Gospel");
 assert.ok(lastGospel.paragraphs.length>0);
+
+const gloria=buildReaderSectionCard({
+  corpus:sung,
+  section:sections.sectionById("AO.CARD.003"),
+  properSlots,
+});
+assert.ok(!gloria.paragraphs.some(p=>["AO.SM.C0276","AO.SM.C0277"].includes(p.id)),
+  "Gloria state sentinels leaked into prayer text");
+const credo=buildReaderSectionCard({
+  corpus:sung,
+  section:sections.sectionById("AO.CARD.009"),
+  properSlots,
+});
+assert.ok(!credo.paragraphs.some(p=>["AO.SM.C0278","AO.SM.C0279"].includes(p.id)),
+  "Credo state sentinels leaked into prayer text");
 
 const t=(lat,en)=>({lat,en});
 const currentProper=properToReaderSlots({
