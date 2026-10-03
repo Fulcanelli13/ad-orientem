@@ -12,6 +12,7 @@ import { loadReaderCueRegistries, createReaderCueStateController } from "./reade
 import { installCueFocusTracker } from "./reader-cue-focus.js";
 import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
+import { loadGuideRegistry, guideForSequence } from "./reader-guide.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -147,16 +148,19 @@ export async function prepareNativeReaderPreview({
   loadEventData=loadCanonicalReaderEvents,
   cueRegistries=null,
   loadCueRegistries=loadReaderCueRegistries,
+  guideData=null,
+  loadGuideData=loadGuideRegistry,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
   if(!structuralSupport.supported){
     throw new Error(structuralSupport.reason || "R17 native reader structure is not certified");
   }
-  const [data,events,registries]=await Promise.all([
+  const [data,events,registries,guide]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
+    guideData ?? Promise.resolve(loadGuideData(prepared)),
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -170,7 +174,7 @@ export async function prepareNativeReaderPreview({
     sungCorpus:data?.sungCorpus,
     prepared,
   });
-  return Object.freeze({prepared,data,model,events,eventState,registries,cueState});
+  return Object.freeze({prepared,data,model,events,eventState,registries,cueState,guide});
 }
 
 export async function mountNativeReaderPreview({
@@ -182,6 +186,8 @@ export async function mountNativeReaderPreview({
   loadEventData=loadCanonicalReaderEvents,
   cueRegistries=null,
   loadCueRegistries=loadReaderCueRegistries,
+  guideData=null,
+  loadGuideData=loadGuideRegistry,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -191,7 +197,7 @@ export async function mountNativeReaderPreview({
   // Validate everything before adding a single preview node.
   const ready=await prepareNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
-    cueRegistries,loadCueRegistries,
+    cueRegistries,loadCueRegistries,guideData,loadGuideData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -284,6 +290,9 @@ export async function mountNativeReaderPreview({
       ownership,
     });
   }
+  function guideForCurrent(card=current){
+    return card ? guideForSequence(ready.guide.registry,card.sequence) : null;
+  }
   function showCard(card){
     if(!card) return null;
     const changed=Boolean(current?.sectionId && current.sectionId!==card.sectionId);
@@ -301,6 +310,7 @@ export async function mountNativeReaderPreview({
       cardUpdate:true,
       paragraphs:card.paragraphs,
       progress:card.sequence+" / "+ready.model.totalCards,
+      guide:guideForCurrent(card),
       ...state,
     });
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
@@ -336,6 +346,7 @@ export async function mountNativeReaderPreview({
       sectionTitle:current?.title ?? "",
       cardUpdate:false,
       progress:current ? current.sequence+" / "+ready.model.totalCards : null,
+      guide:guideForCurrent(current),
       ...state,
     });
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
@@ -414,6 +425,7 @@ export async function mountNativeReaderPreview({
       posture:"PROFILE_AWARE_R17_SOURCE_OR_LOCAL__FOLLOW_CONGREGATION_OBSERVED",
       priestPosition:"R17_CUE_SOURCE_PERSISTENT_ON_CERTIFIED_MISSA_CANTATA",
       schola:"LEGACY_TEMPORARY",
+      guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
       modeSwitch:"LOCKED_UNTIL_V1_83_READER_PARITY",
     }),
     showSection:(sectionId)=>{
