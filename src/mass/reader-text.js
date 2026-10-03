@@ -88,6 +88,7 @@ function ordinaryParagraphs(block){
 function properParagraphs(block,properSlots){
   const slot=block.Proper_Slot;
   const envelope=properSlots?.[slot] ?? null;
+  if(envelope?.status==="NOT_APPLICABLE") return [];
   if(!envelope || !ready(envelope.status)) {
     throw new Error(block.Block_ID+": Proper slot "+slot+" is unresolved; refusing stale donor text");
   }
