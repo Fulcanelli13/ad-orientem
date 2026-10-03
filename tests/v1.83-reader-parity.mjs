@@ -12,6 +12,10 @@ assert.equal(gate.reference.expectedCanonicalMacros,30);
 assert.equal(resolver.total,30);
 assert.equal(gate.currentR17.nativeReaderCards,30);
 assert.equal(gate.currentR17.status,"NOT_PARITY_COMPLETE");
+assert.equal(gate.recoveredV181Splits.length,8);
+assert.deepEqual(gate.unresolvedV181SplitAreas.map(x=>x.area).sort(),["CANON","OFFERTORY"]);
+assert.equal(Object.hasOwn(gate,"knownV181Splits"),false,
+  "Parity gate must not retain the stale six-split ledger after 8/10 recovery");
 assert.notEqual(resolver.total,gate.reference.expectedLiveCards,
   "Reader parity gate should not silently pass until authoritative 48-card map is recovered");
 assert.ok(gate.acceptance.some(x=>/48-card map/.test(x)));
