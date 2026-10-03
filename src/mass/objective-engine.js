@@ -12,8 +12,6 @@ const CONDITION = Object.freeze({
   ORATIO_SUPER_POPULUM_PRESENT: (ctx) => ctx.oratioSuperPopulumPresent === true,
   BLESSING_ALLOWED: (ctx) => ctx.blessingAllowed === true,
   NORMAL_LAST_GOSPEL: (ctx) => ctx.normalLastGospel === true,
-  ORDINARY_PEACE_PRAYER_ALLOWED: (ctx) => ctx.ordinaryPeacePrayerAllowed === true,
-  FORMAL_SOLEMN_PAX_ALLOWED: (ctx) => ctx.formalSolemnPaxAllowed === true,
 });
 
 export function normalizeObjectiveContext(input = {}) {
@@ -33,8 +31,6 @@ export function normalizeObjectiveContext(input = {}) {
     oratioSuperPopulumPresent: input.oratioSuperPopulumPresent === true,
     blessingAllowed: input.blessingAllowed !== false,
     normalLastGospel: input.normalLastGospel !== false,
-    ordinaryPeacePrayerAllowed: input.ordinaryPeacePrayerAllowed !== false,
-    formalSolemnPaxAllowed: input.formalSolemnPaxAllowed !== false,
   });
 }
 
@@ -63,6 +59,38 @@ export function buildObjectiveTraversal(events, input = {}) {
     lastOrder = event.order;
   }
   return Object.freeze(ordered.filter((event) => eventAvailableForObjectiveTraversal(event, context)));
+}
+
+export function objectiveInputFromMassPlan(input = {}, plan = null) {
+  if (!plan) return Object.freeze({ ...input });
+  if (plan.kind !== "MASS") {
+    throw new Error("Objective Mass traversal requires a MASS plan");
+  }
+  return Object.freeze({
+    ...input,
+    form: plan.form ?? input.form,
+    blessingAllowed: plan.blessingAllowed !== false,
+    normalLastGospel: plan.normalLastGospel !== false,
+  });
+}
+
+export function applyMassPlanTraversalDelta(events, plan = null) {
+  if (!Array.isArray(events)) throw new TypeError("Objective traversal array required");
+  if (!plan) return Object.freeze([...events]);
+  if (plan.kind !== "MASS") throw new Error("Mass plan traversal delta requires a MASS plan");
+
+  const suppressed = new Set();
+  // These two events are part of the frozen canonical graph and deliberately
+  // remain unchanged there. Their omission belongs to the composed Mass plan.
+  if (plan.ordinaryPeacePrayerAllowed === false) suppressed.add("MC-COM-150");
+  if (plan.formalSolemnPaxAllowed === false) suppressed.add("MC-COM-160");
+
+  return Object.freeze(events.filter(event => !suppressed.has(event.id)));
+}
+
+export function buildPlannedObjectiveTraversal(events, input = {}, plan = null) {
+  const context = objectiveInputFromMassPlan(input, plan);
+  return applyMassPlanTraversalDelta(buildObjectiveTraversal(events, context), plan);
 }
 
 export function sourceMomentCoverage(events) {
