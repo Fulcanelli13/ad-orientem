@@ -118,20 +118,24 @@ assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
 assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
+const nativePreludeMount=release.protectedInvariants.find(x=>x.id==="NATIVE_PRELUDE_PRODUCTION_MOUNT");
+assert.equal(nativePreludeMount?.status,"CERTIFIED","native prelude production mount certification disappeared");
+assert.deepEqual(nativePreludeMount?.rites,["ASPERGES","PALM","ASH"],"native prelude production scope changed");
+
 const ashPayload=release.protectedInvariants.find(x=>x.id==="ASH_NATIVE_PAYLOAD");
-assert.equal(ashPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Ash runtime certification disappeared");
+assert.equal(ashPayload?.status,"CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME","Ash runtime certification disappeared");
 assert.equal(ashPayload?.recoveredGraphRecords,8,"Ash source scope changed");
 assert.equal(ashPayload?.readerCards,5,"Ash reader-card contract changed");
 assert.match(String(ashPayload?.controller??""),/reader-ash\.js/,"Ash controller is not pinned");
 
 const palmPayload=release.protectedInvariants.find(x=>x.id==="PALM_NATIVE_PAYLOAD");
-assert.equal(palmPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Palm runtime certification disappeared");
+assert.equal(palmPayload?.status,"CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME","Palm runtime certification disappeared");
 assert.equal(palmPayload?.recoveredGraphRecords,12,"Palm source scope changed");
 assert.equal(palmPayload?.readerCards,7,"Palm reader-card contract changed");
 assert.match(String(palmPayload?.controller??""),/reader-palm\.js/,"Palm controller is not pinned");
 
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
-assert.equal(aspergesPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Asperges payload certification disappeared");
+assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME","Asperges payload certification disappeared");
 assert.match(String(aspergesPayload?.controller??""),/reader-asperges\.js/,"Asperges controller is not pinned");
 assert.equal(aspergesPayload?.recoveredGraphRecords,6,"Asperges six-record source scope changed");
 assert.equal(aspergesPayload?.readerCards,5,"Asperges reader-card contract changed");
