@@ -60,8 +60,8 @@
     ]
   },
   "currentBlockingFindings": [
-    "P1-008 legacy 4 Oct fixture remains quarantined until Secret/Communion/Postcommunion provenance is replaced with accepted witnesses",
-    "G6 v1.83 runtime/reader parity remains required before replacing the old Mass"
+    "P1-008 quarantined legacy fixture rows require authoritative source replacement before golden production certification",
+    "P2-008 Postcommunion exit ownership must defer B088 transition when Prayer over the People is inserted"
   ],
   "closedFindings": [
     "SRC-PARITY-001 AO.SM.B046/C0148 Benedictus printed cross — corrected on R17 canonical overlay",
@@ -70,6 +70,8 @@
     "P1-011 AO.SM.B007/C0023 Confiteor oráre normalization — corrected on R17 canonical overlay",
     "P1-007 Gloria/Credo gesture ownership — exact cue/profile adjudication certified on R17",
     "P2-001 PRE_GOSPEL_SEQUENCE source order — source-order compiler/provenance gate certified on R17",
-    "P1-008 defective categpt.chat fixture provenance — quarantined from production authority on R17; replacement witnesses still pending"
+    "P1-008 defective categpt.chat fixture provenance — quarantined from production authority on R17; replacement witnesses still pending",
+    "P1-007 Gloria/Credo faithful gesture ownership — adjudicated exact-cue/profile contract wired into R17 reader",
+    "P2-001 PRE_GOSPEL_SEQUENCE source-order compiler — certified against adversarial suffix mismatch"
   ]
 }
