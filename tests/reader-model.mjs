@@ -72,9 +72,15 @@ assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,proper:null},sectionMap,lowCorpus:low,sungCorpus:sung
 }),/READY resolved Proper/);
 
-assert.throws(()=>createMassReaderModel({
-  resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung
-}),/not yet certified for overlay REQUIEM/);
+const requiemModel=createMassReaderModel({
+  resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
+assert.equal(requiemModel.totalCards,39,"plan-owned Requiem overlay duplicated or removed Mass reader cards");
+const requiemAbsolutionModel=createMassReaderModel({
+  resolvedMass:{...base,overlays:["REQUIEM"],followingActions:["REQUIEM_ABSOLUTION"]},
+  sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
+assert.equal(requiemAbsolutionModel.totalCards,39,"Requiem Absolution following action mutated the Mass reader model");
 
 const aspergesModel=createMassReaderModel({
   resolvedMass:{...base,precedingRites:["ASPERGES"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
