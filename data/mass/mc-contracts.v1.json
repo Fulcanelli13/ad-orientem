@@ -1,0 +1,121 @@
+{
+  "contractVersion": "1.0.0",
+  "task": "B003",
+  "status": "CANONICAL_WAVE1_CONTRACT",
+  "runtimeIdentity": {
+    "pattern": "^MC-[A-Z0-9-]+$",
+    "forbiddenRuntimePrefixes": [
+      "E",
+      "M"
+    ]
+  },
+  "actors": {
+    "allowed": [
+      "PRIEST",
+      "SERVERS",
+      "SCHOLA",
+      "LITURGICAL_RESPONDERS",
+      "RESOLVED_READER",
+      "FAITHFUL",
+      "SYSTEM",
+      "SILENCE"
+    ],
+    "rule": "Actor scope is explicit. No action, gesture, posture, response or chant propagates between actors without a separate source-backed projection record."
+  },
+  "forms": {
+    "LOW": "CERTIFIED_BASE",
+    "SOLEMN": "CERTIFIED_BASE",
+    "MISSA_CANTATA": "UNAVAILABLE_RG-003",
+    "REQUIEM": "UNAVAILABLE_RG-004"
+  },
+  "formScopeStatuses": [
+    "CERTIFIED",
+    "NOT_APPLICABLE",
+    "SUPPRESSED_HISTORICAL",
+    "UNAVAILABLE_OVERLAY",
+    "UNAVAILABLE_UNCERTIFIED",
+    "UNAVAILABLE_RESEARCH_GATED",
+    "UNAVAILABLE_UNMAPPED"
+  ],
+  "voice": {
+    "dimensions": [
+      "audibility",
+      "speechAudibility"
+    ],
+    "rule": "Voice/audibility belongs to the acting event and is independent from faithful participation."
+  },
+  "concurrency": {
+    "fields": [
+      "lane",
+      "groupIds",
+      "traversalOnlyOrder"
+    ],
+    "rule": "Traversal order is not proof of sequential choreography. Parallel lanes may overlap."
+  },
+  "sound": {
+    "bellBooleanForbidden": true,
+    "requiredDimensions": [
+      "type",
+      "legal_status"
+    ],
+    "recommendedDimensions": [
+      "timing",
+      "purpose",
+      "permitted_patterns",
+      "pattern_options",
+      "authority"
+    ],
+    "rule": "Bell actions carry source-scoped legal status and purpose/pattern detail. Never reduce them to bell=true and never alias one bell purpose to another."
+  },
+  "eventRequiredFields": [
+    "id",
+    "order",
+    "phase",
+    "title",
+    "sourceMomentRefs",
+    "actor",
+    "voice",
+    "forms",
+    "concurrency",
+    "soundEvents",
+    "evidenceTier"
+  ],
+  "eventOptionalDimensions": [
+    "contentRef",
+    "conditions",
+    "position",
+    "orientation",
+    "gestureRefs"
+  ],
+  "projectionInterfaces": {
+    "FOLLOW": {
+      "purpose": "Objective Mass projection",
+      "input": "MCEvent[] + LiturgicalDay + Proper + form state",
+      "mayCreateCanonicalIdentity": false
+    },
+    "PARTICIPATE": {
+      "purpose": "Sparse faithful cue projection",
+      "key": "MC event ID + faithful actor/profile",
+      "noCueValue": "NO_NEW_CUE",
+      "mayInferFromMinisterAction": false
+    },
+    "GUIDE": {
+      "purpose": "Formation/source-controlled explanation",
+      "key": "MC event / section / topic",
+      "mayOmitAtomicEventCard": true,
+      "mayCreateRubricFromMystagogy": false
+    },
+    "PRAY": {
+      "purpose": "Optional devotional links",
+      "rule": "Never changes objective MC chronology."
+    }
+  },
+  "unavailableOverlayInterface": {
+    "requiredFields": [
+      "overlayId",
+      "status",
+      "gapId"
+    ],
+    "rule": "An unclosed form/overlay is explicit unavailable state, never an inferred runtime branch."
+  }
+}

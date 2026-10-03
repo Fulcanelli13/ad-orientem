@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "task": "B007",
+  "sourceOfTruth": "SOT-2026-09-21.12",
+  "status": "WAVE2_REGRESSION_CONTRACT",
+  "invariants": [
+    {
+      "id": "R001",
+      "name": "Second Confiteor omitted",
+      "assertion": "E61 and Second-Confiteor runtime events are absent from the normative 1962 MC graph."
+    },
+    {
+      "id": "R004",
+      "name": "Bell semantics stay structured",
+      "assertion": "No bell boolean exists; warning, elevation and Communion-warning events retain distinct purpose/legal status."
+    },
+    {
+      "id": "R007_R012",
+      "name": "Public Gospel is canonical",
+      "assertion": "The historical private celebrant Gospel is suppressed; the public Gospel owns the active Gospel sequence."
+    },
+    {
+      "id": "R008_R020",
+      "name": "Old priest-DNSD bell is not Communion warning",
+      "assertion": "The priest's Domine non sum dignus carries no Communion-warning bell; MC-COM-185 is the distinct conditional Solemn warning."
+    },
+    {
+      "id": "R015",
+      "name": "Consecration and Elevation are distinct",
+      "assertion": "Words of Consecration and subsequent elevations keep separate MC identities and chronological anchors."
+    },
+    {
+      "id": "ACTOR_SCOPE",
+      "name": "No actor propagation",
+      "assertion": "Every event has explicit actor scope and participation may not infer a faithful action from priest/server/choir action."
+    },
+    {
+      "id": "FINAL_RITES",
+      "name": "Final rites remain ordered",
+      "assertion": "Dismissal, Placeat, blessing and normal Last Gospel remain distinct and correctly ordered."
+    },
+    {
+      "id": "FORM_SCOPE",
+      "name": "Only certified core forms enabled",
+      "assertion": "LOW and SOLEMN are enabled; Missa Cantata and Requiem remain explicit unavailable research-gated forms."
+    }
+  ]
+}
