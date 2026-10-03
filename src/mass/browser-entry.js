@@ -104,7 +104,11 @@ export async function mountR17Preview({
   mirrorMount=mountReaderPreview,
 }={}) {
   try {
-    const preview=await Promise.resolve(nativeMount({doc,prepared}));
+    const preview=await Promise.resolve(nativeMount({
+      doc,
+      prepared,
+      readLegacyActive:()=>legacyBridge()?.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null,
+    }));
     return Object.freeze({
       preview,
       uiOwner:"R17_NATIVE_CARDS_OVER_LEGACY_STATE",
