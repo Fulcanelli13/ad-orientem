@@ -102,6 +102,8 @@ const requiem = compileMassPlan(makeResolvedMass({
 }));
 expect(requiem.blessingAllowed === false, "Requiem blessing not suppressed");
 expect(requiem.normalLastGospel === true, "Requiem alone incorrectly suppresses Last Gospel");
+expect(requiem.ordinaryPeacePrayerAllowed === false, "Requiem ordinary peace prayer not suppressed");
+expect(requiem.formalSolemnPaxAllowed === false, "Requiem formal Pax transmission not suppressed");
 
 const requiemAbs = compileMassPlan(makeResolvedMass({
   ...base,
@@ -130,6 +132,14 @@ const asperges = compileMassPlan(makeResolvedMass({
   precedingRites: ["ASPERGES"],
 }));
 expect(asperges.massEntry === "FOOT_CLUSTER", "Asperges incorrectly suppressed Prayers at the Foot");
+
+const holyThursdaySolemn = compileMassPlan(makeResolvedMass({
+  ...base,
+  form:"SOLEMN",
+  followingActions:["HOLY_THURSDAY_POST"],
+}));
+expect(holyThursdaySolemn.formalSolemnPaxAllowed === false,
+  "Holy Thursday post-Mass branch did not suppress formal Solemn Pax");
 
 const corpusDateOnly = compileMassPlan(makeResolvedMass({
   ...base,
