@@ -139,3 +139,32 @@ export function createPalmReaderController(args={}){
   }
   return freeze({schema:"ao-r22-palm-reader-controller-v1",supported:true,cards:built.cards,project:state,next,previous,goTo,setRecipientState});
 }
+
+
+async function readJson(fetchImpl,url,label){
+  const response=await fetchImpl(url);
+  if(!response?.ok)throw new Error("Unable to load "+label+" ("+(response?.status??"network")+")");
+  const data=await response.json();
+  if(!data || typeof data!=="object")throw new Error(label+" did not return JSON object");
+  return data;
+}
+
+export async function loadPalmReaderData({
+  fetchImpl=globalThis.fetch,
+  baseUrl=import.meta.url,
+}={}){
+  if(typeof fetchImpl!=="function")throw new TypeError("fetch implementation required");
+  const payloadUrl=new URL("../../data/presentation/reader-palm.v1.json",baseUrl);
+  const extensionUrl=new URL("../../data/mass/special-days-extension.v1.3.json",baseUrl);
+  const [payload,extension]=await Promise.all([
+    readJson(fetchImpl,payloadUrl,"Palm reader payload"),
+    readJson(fetchImpl,extensionUrl,"special-days extension"),
+  ]);
+  const graph=extension?.graphs?.PALM;
+  if(!Array.isArray(graph))throw new Error("Certified PALM graph unavailable");
+  return freeze({
+    payload,
+    graph:freeze([...graph]),
+    urls:freeze({payload:String(payloadUrl),extension:String(extensionUrl)}),
+  });
+}
