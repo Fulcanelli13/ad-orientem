@@ -6,6 +6,8 @@ const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8")
 const aspergesPayload=load("../data/presentation/reader-asperges.v1.json");
 const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
 const aspergesData=Object.freeze({payload:aspergesPayload,graph:Object.freeze([...specialExtension.graphs.ASP])});
+const palmPayload=load("../data/presentation/reader-palm.v1.json");
+const palmData=Object.freeze({payload:palmPayload,graph:Object.freeze([...specialExtension.graphs.PALM])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -106,6 +108,44 @@ assert.equal(aspergesRuntime.getCurrentSectionId(),"AO.CARD.001");
 aspergesRuntime.destroy();
 
 
+
+const palmRoot=rootFixture();
+const palmRuntime=createBrowserMassRuntime({
+  root:palmRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["palm"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Palm Sunday",proper,precedingRites:["PALM"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadPalmData:async()=>palmData,
+});
+const palmEntered=await palmRuntime.enter();
+assert.equal(palmEntered.session.plan.massEntry,"INTROIT");
+assert.equal(palmEntered.session.plan.normalLastGospel,false);
+assert.equal(palmRuntime.getCurrentSectionId(),null);
+assert.equal(palmRuntime.getReaderState().cardTitle,"Blessing of Palms");
+palmRuntime.next();
+assert.equal(palmRuntime.getPalmState().card.id,"PALM-R02");
+assert.equal(palmRuntime.getReaderState().posture,null);
+palmRuntime.setPalmRecipientState("RECEIVE_PALM");
+assert.equal(palmRuntime.getReaderState().posture.label,"KNEEL");
+palmRuntime.next();
+assert.equal(palmRuntime.getReaderState().gesture.label,"GOSPEL_CROSSES");
+palmRuntime.next();
+assert.equal(palmRuntime.getReaderState().posture.label,"PROCESSIONAL");
+while(!palmRuntime.getPalmState().atEnd)palmRuntime.next();
+palmRuntime.next();
+assert.equal(palmRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(palmRuntime.getReaderState().cardTitle,"Introit");
+assert.ok(palmRuntime.getReaderState().paragraphs.length>0);
+palmRuntime.previous();
+assert.equal(palmRuntime.getPalmState().card.id,"PALM-R07");
+palmRuntime.next();
+palmRuntime.showSection(29);
+const beforeLastGospel=palmRuntime.getCurrentSectionId();
+palmRuntime.next();
+assert.equal(palmRuntime.getCurrentSectionId(),beforeLastGospel);
+palmRuntime.destroy();
+
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({
   root:planAwareLowRoot,
@@ -164,4 +204,4 @@ const requiem=createBrowserMassRuntime({
 await assert.rejects(()=>requiem.enter(),/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/);
 assert.equal(requiemRoot.innerHTML,"");
 
-console.log("Browser Mass runtime PASS: ordinary 30-card flow plus explicit Asperges prelude/handoff; LIVE remains blocked behind v1.83 48-card parity.");
+console.log("Browser Mass runtime PASS: ordinary flow plus Asperges/Palm preludes and plan-aware ownership; LIVE remains source-first gated.");

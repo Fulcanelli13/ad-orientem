@@ -85,6 +85,12 @@ assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
 assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
+const palmPayload=release.protectedInvariants.find(x=>x.id==="PALM_NATIVE_PAYLOAD");
+assert.equal(palmPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Palm runtime certification disappeared");
+assert.equal(palmPayload?.recoveredGraphRecords,12,"Palm source scope changed");
+assert.equal(palmPayload?.readerCards,7,"Palm reader-card contract changed");
+assert.match(String(palmPayload?.controller??""),/reader-palm\.js/,"Palm controller is not pinned");
+
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Asperges payload certification disappeared");
 assert.match(String(aspergesPayload?.controller??""),/reader-asperges\.js/,"Asperges controller is not pinned");
@@ -140,6 +146,9 @@ assert.match(objectiveSource,/applyMassPlanTraversalDelta/);
 assert.match(readerObjectiveSource,/buildPlannedObjectiveTraversal/);
 assert.match(browserRuntimeSource,/createPlanAwareObjectiveRuntime/);
 assert.match(browserRuntimeSource,/objectiveRuntime\.allows/);
+assert.match(browserRuntimeSource,/createPalmReaderController/,"browser runtime lost Palm controller");
+assert.match(browserRuntimeSource,/setPalmRecipientState/,"browser runtime lost personal Palm recipient-state control");
+assert.match(browserRuntimeSource,/AO\.SM\.B014/,"Palm Introit-only handoff lost B014 boundary");
 assert.match(objectiveSource,/MC-COM-150/);
 assert.match(objectiveSource,/MC-COM-160/);
 
