@@ -12,8 +12,8 @@ assert.equal(gate.reference.expectedCanonicalMacros,30);
 assert.equal(resolver.total,30);
 assert.equal(gate.currentR17.nativeReaderCards,30);
 assert.equal(gate.currentR17.status,"NOT_PARITY_COMPLETE");
-assert.equal(gate.recoveredV181Splits.length,8);
-assert.deepEqual(gate.unresolvedV181SplitAreas.map(x=>x.area).sort(),["CANON","OFFERTORY"]);
+assert.equal(gate.recoveredV181Splits.length,9);
+assert.deepEqual(gate.unresolvedV181SplitAreas.map(x=>x.area).sort(),["CANON"]);
 assert.equal(Object.hasOwn(gate,"knownV181Splits"),false,
   "Parity gate must not retain the stale six-split ledger after 8/10 recovery");
 assert.notEqual(resolver.total,gate.reference.expectedLiveCards,
@@ -24,8 +24,8 @@ assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
 assert.equal(recovery.lineage.v180LiveCards,38);
 assert.equal(recovery.lineage.v181LiveCards,48);
 assert.equal(recovery.lineage.v183FrozenLiveCards,48);
-assert.equal(recovery.recoveredSemanticSplits.length,8);
-assert.equal(recovery.unresolvedSplitAreas.length,2);
+assert.equal(recovery.recoveredSemanticSplits.length,9);
+assert.equal(recovery.unresolvedSplitAreas.length,1);
 assert.equal(
   recovery.recoveredSemanticSplits.length+recovery.unresolvedSplitAreas.length,
   recovery.lineage.v181LiveCards-recovery.lineage.v180LiveCards,
@@ -39,10 +39,16 @@ const conclusionSplit=recovery.recoveredSemanticSplits.find(x=>x.label==="Placea
 assert.deepEqual(conclusionSplit?.anchorBlocks,["AO.SM.B091","AO.SM.B092"]);
 assert.deepEqual(conclusionSplit?.evidenceLiveCardIds,["LC-END-110","LC-END-120","LC-END-130","LC-END-140"]);
 
+const offertorySplit=recovery.recoveredSemanticSplits.find(x=>x.label==="Suscipe sancta Trinitas / Orate fratres");
+assert.deepEqual(offertorySplit?.anchorBlocks,["AO.SM.B038","AO.SM.B039"]);
+assert.equal(offertorySplit?.confidence,"TRIANGULATED_UNIQUE_FROM_V1_80_GROUPING_AND_V1_81_SPLIT_ACCOUNTING");
+assert.equal(offertorySplit?.evidence?.v180PreservedGrouping,"Suscipe/Orate");
+assert.equal(offertorySplit?.evidence?.remainingOffertorySplitCountBeforeThisRecovery,1);
+
 assert.deepEqual(
   recovery.unresolvedSplitAreas.map(x=>x.area).sort(),
-  ["CANON","OFFERTORY"],
-  "Only the still-unrecovered Offertory and Canon v1.81 decompression boundaries may remain area-only"
+  ["CANON"],
+  "Only the still-unrecovered Canon v1.81 decompression boundary may remain area-only"
 );
 
 assert.equal(Object.hasOwn(recovery,"cards"),false,
@@ -62,4 +68,4 @@ assert.deepEqual(recovery.recoveredRuntimeRepairs.v183MergeGate.parseQA,{
   errors:0
 });
 
-console.log("v1.83 reader parity gate: PASS — 30-card R17 surface remains blocked; 8/10 decompression splits are semantically recovered, 2/10 remain unresolved, and exact v1.83 elevation/pre-Gospel repairs are frozen.");
+console.log("v1.83 reader parity gate: PASS — 30-card R17 surface remains blocked; 9/10 decompression splits are semantically recovered, one Canon split remains unresolved, and exact v1.83 elevation/pre-Gospel repairs are frozen.");
