@@ -101,9 +101,13 @@ const palmPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{k
 assert.equal(structureSupport(palmPrepared).supported,true,"certified Palm prelude remained structurally blocked");
 const ashPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:["ASH"],followingGraphs:[],overlayGraphs:[]}}};
 assert.equal(structureSupport(ashPrepared).supported,true,"certified Ash prelude remained structurally blocked");
+for(const rite of ["CANDLEMAS","ROGATIONS"]){
+  const prepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:[rite],followingGraphs:[],overlayGraphs:[]}}};
+  assert.equal(structureSupport(prepared).supported,true,rite+" modular prelude remained structurally blocked");
+}
 
 for(const [label,plan] of [
-  ["preceding",{kind:"MASS",precedingGraphs:["CANDLEMAS"],followingGraphs:[],overlayGraphs:[]}],
+  ["preceding",{kind:"MASS",precedingGraphs:["EMBER_LESSONS"],followingGraphs:[],overlayGraphs:[]}],
   ["following",{kind:"MASS",precedingGraphs:[],followingGraphs:["CORPUS_CHRISTI_PROCESSION"],overlayGraphs:[]}],
   ["overlay",{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["REQUIEM"]}],
   ["distinct",{kind:"DISTINCT_RITE",precedingGraphs:[],followingGraphs:[],overlayGraphs:[]}],
