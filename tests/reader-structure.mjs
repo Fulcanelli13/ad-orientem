@@ -24,19 +24,19 @@ assert.equal(live[0].title,"Preparatory Rites");
 assert.equal(live.at(-1).id,"AO.R17.LIVE.C20");
 assert.deepEqual([...live[9].baseIds],["AO.SM.M10","AO.SM.M11"]);
 
-assert.equal(LIVE_STRUCTURE_STATUS,"PROVISIONAL_V1_65_DONOR_ONLY");
+assert.equal(LIVE_STRUCTURE_STATUS,"SOURCE_FIRST_CANON_CERTIFIED__FULL_LIVE_PENDING");
 assert.equal(structureSupport(ordinary).supported,false);
-assert.equal(structureSupport(ordinary).reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
+assert.equal(structureSupport(ordinary).reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
 
 const blockedLive=createReaderStructureController(ordinary);
 assert.equal(blockedLive.supported,false);
 let s=blockedLive.snapshot();
 assert.equal(s.mode,"LIVE");
 assert.equal(s.total,20);
-assert.equal(s.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
+assert.equal(s.reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
 const blockedBefore=s;
 blockedLive.next();
-assert.deepEqual(blockedLive.snapshot(),blockedBefore,"provisional LIVE donor navigated despite v1.83 gate");
+assert.deepEqual(blockedLive.snapshot(),blockedBefore,"provisional LIVE donor navigated despite source-first integration gate");
 
 const missalPrepared={
   ...ordinary,
@@ -63,7 +63,7 @@ const beforeLiveAttempt=s;
 ctrl.setMode("LIVE");
 s=ctrl.snapshot();
 assert.equal(s.mode,"MISSAL","unsupported LIVE request changed the active structure");
-assert.equal(s.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
+assert.equal(s.reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
 assert.equal(s.cardId,beforeLiveAttempt.cardId);
 
 const votive={
