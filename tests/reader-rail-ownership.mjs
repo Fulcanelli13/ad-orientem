@@ -52,6 +52,7 @@ for(const forbidden of ['"#stationText"','"#gestureText"','"#responseText"','"#v
 for(const dataset of [
   "r17OwnerGesture","r17OwnerResponse","r17OwnerPriestVoice",
   "r17OwnerPriestPosition","r17OwnerPosture","r17OwnerSchola",
+  "r17OwnerPriestAction","r17OwnerSacredMinister",
 ]){
   assert.ok(nativeSource.includes(dataset),"missing runtime ownership diagnostic "+dataset);
 }
