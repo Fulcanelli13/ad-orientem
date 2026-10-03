@@ -16,7 +16,8 @@ const expect=(x,m)=>{if(!x)throw new Error(m)};
 
 expect(contract.canonicalSungPayloadSha256==="050ce4b65918890a252078c9942f1dde282d2494dabe0e522bb842c03be20b28","Sung payload provenance changed");
 expect(contract.guide.certifiedEntryCount===32,"Guide entry contract changed");
-expect(contract.guide.registryPayloadStatus==="PENDING_EXACT_V1_79_REGISTRY_BYTES","Missing Guide payload must remain explicit");
+expect(contract.guide.registryPayloadStatus==="RECOVERED_CONTINUITY_CERTIFIED","Recovered Guide registry certification lost");
+expect(contract.guide.registryFile==="guide-registry.v1.json","Guide registry file binding lost");
 expect(HARDENED_CROSS_CUES.length===15,"v1.77 hardened cue set must remain 15");
 expect(HARDENED_CROSS_CUES.every(id=>contract.hardening.crossSourceMismatchCues.includes(id)),"Hardened cue coverage mismatch");
 expect(contract.ownershipRepairs.ordinaryIncarnatusPersistentKneel===false,"Persistent Incarnatus kneel reintroduced");
