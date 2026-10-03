@@ -103,9 +103,10 @@ export async function mountR17Preview({
   prepared,
   nativeMount=mountNativeReaderPreview,
   mirrorMount=mountReaderPreview,
+  iconAssets=globalThis.AO_R17_ICON_ASSETS??null,
 }={}) {
   try {
-    const assets=globalThis.AO_R17_ICON_ASSETS??null;
+    const assets=iconAssets;
     const iconAudit=auditHostIconBank(assets);
     if(!iconAudit.complete) throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
     const preview=await Promise.resolve(nativeMount({
