@@ -98,13 +98,13 @@ await assert.rejects(
       ...livePrepared,
       session:{
         ...livePrepared.session,
-        resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["PALM"]},
-        plan:{...livePrepared.session.plan,precedingGraphs:["PALM"]},
+        resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["CANDLEMAS"]},
+        plan:{...livePrepared.session.plan,precedingGraphs:["CANDLEMAS"]},
       },
     },
     presentationData:data,eventData,cueRegistries,guideData
   }),
-  /NATIVE_PREVIEW_PRECEDING_RITE_PENDING:PALM/,
+  /NATIVE_PREVIEW_PRECEDING_RITE_PENDING:CANDLEMAS/,
   "native preview silently skipped an unsupported preceding rite"
 );
 
@@ -314,8 +314,8 @@ const palmPrepared={
   ...prepared,
   session:{
     ...prepared.session,
-    resolvedMass:{...prepared.session.resolvedMass,precedingRites:["PALM"]},
-    plan:{kind:"MASS",precedingGraphs:["PALM"],followingGraphs:[],overlayGraphs:["VOTIVE_PROPER"],massEntry:"INTROIT",normalLastGospel:false},
+    resolvedMass:{...prepared.session.resolvedMass,precedingRites:["CANDLEMAS"]},
+    plan:{kind:"MASS",precedingGraphs:["CANDLEMAS"],followingGraphs:[],overlayGraphs:["VOTIVE_PROPER"],massEntry:"INTROIT",normalLastGospel:false},
   },
 };
 const palmReady=await prepareNativeReaderPreview({
