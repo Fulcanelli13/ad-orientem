@@ -150,8 +150,14 @@ try{
   const afterScroll=await card.evaluate(el=>el.scrollTop);
   assert.ok(afterScroll>beforeScroll,"real touch swipe did not scroll prayer card");
 
-  await page.locator('[data-cue-id="AO.SM.C0174"]').evaluate(el=>el.scrollIntoView({block:"end"}));
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174");
+  await card.evaluate(el=>{
+    const target=el.querySelector('[data-cue-id="AO.SM.C0174"]');
+    const cr=el.getBoundingClientRect();
+    const tr=target.getBoundingClientRect();
+    const absoluteCenter=(tr.top-cr.top+el.scrollTop)+(tr.height/2);
+    el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.46);
+  });
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:3000});
   const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
