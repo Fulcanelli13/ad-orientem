@@ -25,6 +25,7 @@
     "test:reader-native-preview": "node tests/reader-native-preview.mjs",
     "test:reader-structure": "node tests/reader-structure.mjs",
     "test:reader-view": "node tests/reader-view-model.mjs",
-    "test:reader-event-state": "node tests/reader-event-state.mjs"
+    "test:reader-event-state": "node tests/reader-event-state.mjs",
+    "test:proper": "node tests/proper-contracts.mjs"
   }
 }
