@@ -204,6 +204,35 @@
       ]
     },
     {
+      "id": "FORM_LIFECYCLE_PARITY",
+      "status": "CERTIFIED",
+      "controller": "src/mass/form-lifecycle.js",
+      "planOwner": "src/mass/session-engine.js#compileMassPlan",
+      "runtimeOwner": "src/mass/browser-runtime.js",
+      "recoveredLineage": [
+        "v43.68 B016 lifecycle completion contract",
+        "v1.2 R02_LOW_MASS_LEONINE resolver",
+        "v1.4 R04_SOLEMN_TOPOLOGY_RECOVERY"
+      ],
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "guarantees": [
+        "Mass completion is a boundary after the plan-defined ending and is not fabricated by early reader exit",
+        "Leonine Prayers remain outside the canonical Mass graph and outside personal thanksgiving",
+        "ordinary Low Mass may offer Leonine Prayers as an optional customary post-Mass route",
+        "Sung and Solemn forms never route to Leonine Prayers",
+        "explicit following actions preempt the Leonine offer and own the immediate post-Mass handoff",
+        "successive non-final Masses, immediate homily/function, specified Dialogue-Mass exception and local suppression are explicit Low resolver conditions",
+        "Mass completion record carries date, form, presentation mode, celebration identity, Proper source, Communion state, intention reference and ending state into Give Thanks",
+        "manual Give Thanks entry cannot fabricate a Mass completion record"
+      ],
+      "test": "tests/form-lifecycle.mjs"
+    },
+    {
       "id": "SPECIAL_STRUCTURE_PLAN_PROJECTION",
       "status": "CERTIFIED_COMPILED_PLAN_STRUCTURE",
       "controller": "src/mass/reader-special-structure.js",
@@ -314,11 +343,6 @@
       "id": "LIVE_SOURCE_STRUCTURE_INTEGRATION",
       "severity": "RELEASE_BLOCKER",
       "detail": "Canon source segmentation is certified independently of v1.83 card archaeology. The remaining reader-structure task is to integrate source-first LIVE navigation across the full Mass and certify it on phone; exact recovery of historical C01-C48 is not required."
-    },
-    {
-      "id": "FORM_LIFECYCLE_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Low/Solemn post-Mass and lifecycle composition is not yet modularly certified. Low-Mass Leonine-prayer applicability/branch ownership must be recovered as an explicit lifecycle contract rather than inferred inside the reader."
     },
     {
       "id": "SPECIAL_STRUCTURE_PARITY",

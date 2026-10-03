@@ -142,8 +142,10 @@ assert.equal(palmRuntime.getPalmState().card.id,"PALM-R07");
 palmRuntime.next();
 palmRuntime.showSection(29);
 const beforeLastGospel=palmRuntime.getCurrentSectionId();
-palmRuntime.next();
+const palmLifecycle=palmRuntime.next();
 assert.equal(palmRuntime.getCurrentSectionId(),beforeLastGospel);
+assert.equal(palmLifecycle.stage,"DEPARTURE","Palm last-Gospel suppression did not reach the post-Mass lifecycle");
+assert.equal(palmRuntime.getLifecycleState().contract.leonine.eligible,false);
 palmRuntime.destroy();
 
 const planAwareLowRoot=rootFixture();
@@ -169,6 +171,14 @@ assert.equal(planAwareLow.showCanonicalEvent("MC-OFF-110"),null,
   "Low browser runtime accepted Solemn offertory incensation outside its planned traversal");
 assert.ok(planAwareLow.showCanonicalEvent("MC-CNS-010"),
   "Low browser runtime rejected a certified planned canonical event");
+planAwareLow.showSection(30);
+const lowBoundary=planAwareLow.next();
+assert.equal(lowBoundary.stage,"LEONINE_OFFER","ordinary Low Mass did not route through the Leonine resolver");
+assert.equal(lowBoundary.massComplete,true);
+assert.equal(lowBoundary.completionRecord.form,"LOW");
+assert.equal(planAwareLow.chooseLeonine(false).stage,"DEPARTURE");
+assert.equal(planAwareLow.advanceLifecycle().stage,"GIVE_THANKS_HANDOFF");
+assert.equal(planAwareLow.getLifecycleState().handoff,"GIVE_THANKS");
 planAwareLow.destroy();
 
 const liveBlockedRoot=rootFixture();
@@ -204,4 +214,4 @@ const requiem=createBrowserMassRuntime({
 await assert.rejects(()=>requiem.enter(),/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/);
 assert.equal(requiemRoot.innerHTML,"");
 
-console.log("Browser Mass runtime PASS: ordinary flow plus Asperges/Palm preludes and plan-aware ownership; LIVE remains source-first gated.");
+console.log("Browser Mass runtime PASS: ordinary flow, Asperges/Palm preludes, plan-aware ownership and post-Mass lifecycle handoff; LIVE remains source-first gated.");

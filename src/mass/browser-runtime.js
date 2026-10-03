@@ -7,6 +7,7 @@ import { createAspergesReaderController, loadAspergesReaderData } from "./reader
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
+import { createFormLifecycleRuntime } from "./form-lifecycle.js";
 
 export function createBrowserMassRuntime({
   root, celebrationApi, resolveHostOptions, readReaderPreferences,
@@ -16,6 +17,7 @@ export function createBrowserMassRuntime({
   loadPalmData = loadPalmReaderData,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
+  onLifecycleHandoff = null,
 } = {}) {
   if (typeof loadPresentationData !== "function") throw new TypeError("loadPresentationData function required");
 
@@ -27,6 +29,8 @@ export function createBrowserMassRuntime({
   let inAsperges = false;
   let palmController = null;
   let inPalm = false;
+  let lifecycleRuntime = null;
+  let inLifecycle = false;
 
 
   function aspergesMoment(){
@@ -127,7 +131,28 @@ export function createBrowserMassRuntime({
     return showCard(card, extra);
   }
 
+  function notifyLifecycle(state){
+    onLifecycleHandoff?.(state,currentPrepared);
+    return state;
+  }
+
+  function enterLifecycleBoundary(){
+    if(!lifecycleRuntime)throw new Error("Form lifecycle runtime is not ready");
+    inLifecycle=true;
+    return notifyLifecycle(lifecycleRuntime.enterMassBoundary());
+  }
+
+  function advanceLifecycle(){
+    if(!lifecycleRuntime)return null;
+    inLifecycle=true;
+    return notifyLifecycle(lifecycleRuntime.advance());
+  }
+
   function move(direction) {
+    if(inLifecycle && lifecycleRuntime){
+      if(direction==="next")return advanceLifecycle();
+      return lifecycleRuntime.snapshot();
+    }
     if(direction==="next" && inPalm && palmController){
       const state=palmController.project();
       if(state.atEnd){
@@ -171,7 +196,10 @@ export function createBrowserMassRuntime({
       ? readerModel.previousCard(currentSectionId)
       : readerModel.nextCard(currentSectionId);
     if(direction==="next" && card?.sequence===30 && currentPrepared?.session?.plan?.normalLastGospel===false){
-      return readerModel.cards.find(x=>x.sectionId===currentSectionId)??null;
+      return enterLifecycleBoundary();
+    }
+    if(direction==="next" && !card){
+      return enterLifecycleBoundary();
     }
     return showCard(card);
   }
@@ -250,6 +278,8 @@ export function createBrowserMassRuntime({
 
       readerModel = model;
       objectiveRuntime = plannedObjective;
+      lifecycleRuntime = createFormLifecycleRuntime({prepared});
+      inLifecycle = false;
       currentPrepared = prepared;
       currentSectionId = null;
       aspergesController=hasAsperges ? createAspergesReaderController({graph:aspergesData?.graph,payload:aspergesData?.payload,riteContext:aspergesRiteContext??{}}) : null;
@@ -275,6 +305,8 @@ export function createBrowserMassRuntime({
     inAsperges = false;
     palmController = null;
     inPalm = false;
+    lifecycleRuntime = null;
+    inLifecycle = false;
   }
 
   return Object.freeze({
@@ -295,6 +327,23 @@ export function createBrowserMassRuntime({
     getCurrentSectionId: () => currentSectionId,
     getAspergesState: () => aspergesController?.project?.() ?? null,
     getPalmState: () => palmController?.project?.() ?? null,
+    getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
+    chooseLeonine: accept => {
+      if(!lifecycleRuntime)return null;
+      inLifecycle=true;
+      return notifyLifecycle(lifecycleRuntime.chooseLeonine(accept));
+    },
+    completeLeonine: () => {
+      if(!lifecycleRuntime)return null;
+      inLifecycle=true;
+      return notifyLifecycle(lifecycleRuntime.completeLeonine());
+    },
+    completeFollowingAction: () => {
+      if(!lifecycleRuntime)return null;
+      inLifecycle=true;
+      return notifyLifecycle(lifecycleRuntime.completeFollowingAction());
+    },
+    advanceLifecycle,
     setPalmRecipientState: value => { if(!palmController)return null; palmController.setRecipientState(value); return inPalm ? showPalm() : palmController.project(); },
     markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },
   });
