@@ -111,8 +111,8 @@ const liveBlocked=createBrowserMassRuntime({
   readReaderPreferences:()=>({mode:"live",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
 });
-await assert.rejects(()=>liveBlocked.enter(),/V1_83_48_CARD_LIVE_MAP_REQUIRED/,
-  "standalone 30-card runtime bypassed the frozen v1.83 LIVE gate");
+await assert.rejects(()=>liveBlocked.enter(),/SOURCE_FIRST_LIVE_STRUCTURE_PENDING/,
+  "standalone 30-card runtime bypassed the source-first LIVE integration gate");
 assert.equal(liveBlockedRoot.innerHTML,"");
 
 const missingRoot=rootFixture();
