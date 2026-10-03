@@ -71,9 +71,10 @@ assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung
 }),/not yet certified for overlay REQUIEM/);
 
-assert.throws(()=>createMassReaderModel({
+const aspergesModel=createMassReaderModel({
   resolvedMass:{...base,precedingRites:["ASPERGES"]},sectionMap,lowCorpus:low,sungCorpus:sung
-}),/preceding rite graph/);
+});
+assert.equal(aspergesModel.totalCards,30,"Asperges prelude mutated the ordinary Mass card model");
 
 assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung
