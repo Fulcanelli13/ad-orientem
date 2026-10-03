@@ -27,18 +27,12 @@ function textAt(doc,selector){
 }
 
 export function legacyReaderStateSnapshot(doc){
-  const scholaDock=doc?.querySelector?.("#scholaDock");
-  const scholaVisible=Boolean(scholaDock?.classList?.contains?.("show"));
   return Object.freeze({
     priestPosition:textAt(doc,"#stationText") ? {label:textAt(doc,"#stationText")} : null,
     posture:textAt(doc,"#postureText") ? {label:textAt(doc,"#postureText")} : null,
     gesture:textAt(doc,"#gestureText") ? {label:textAt(doc,"#gestureText")} : null,
     response:textAt(doc,"#responseText") ? {label:textAt(doc,"#responseText")} : null,
     priestVoice:textAt(doc,"#voiceText") ? {label:textAt(doc,"#voiceText")} : null,
-    schola:scholaVisible && textAt(doc,"#scholaStreamLine")
-      ? {label:textAt(doc,"#scholaStreamLine")}
-      : null,
-    sharedTextWithSchola:false,
   });
 }
 
