@@ -83,6 +83,16 @@
       "defect": "Pax Domini, the private peace prayer and the Solemn ministerial Pax transfer must not be conflated.",
       "invariant": "MC-COM-100 remains Pax Domini; plan projection may suppress MC-COM-150 and MC-COM-160 independently without mutating the frozen canonical graph.",
       "sourceStatus": "MC-COM-160 remains B/C_PENDING"
+    },
+    {
+      "id": "V183-NATIVE-LIVE-GATE-BYPASS",
+      "status": "FIXED_AND_TESTED_R17",
+      "defect": "The 30-card native reader model could still mount in LIVE preview even though the separate reader-structure controller correctly blocked provisional LIVE structure.",
+      "invariant": "Any native preview requested in LIVE must fail closed with V1_83_48_CARD_LIVE_MAP_REQUIRED until the authoritative 48-card map is certified.",
+      "tests": [
+        "tests/reader-native-preview.mjs",
+        "tests/reader-regression-lockdown.mjs"
+      ]
     }
   ]
 }
