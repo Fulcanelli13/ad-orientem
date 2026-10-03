@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "status": "CANONICAL_PATCH_CANDIDATES",
+  "runtimeReference": "v1.83 MERGE GATE",
+  "rule": "Apply to canonical text source first, then regenerate runtime projections. Do not patch renderer-only copies.",
+  "candidates": [
+    {
+      "id": "SRC-PARITY-001",
+      "blockId": "AO.SM.B046",
+      "cueId": "AO.SM.C0148",
+      "operation": "REPLACE_TEXT_FRAGMENT",
+      "from": "Benedíctus qui venit in nómine Dómini.",
+      "to": "Benedíctus ✠ qui venit in nómine Dómini.",
+      "preserve": [
+        "AO.SM.C0148",
+        "AO.SM.P0152",
+        "existing Sign-of-Cross gesture/action semantics"
+      ]
+    },
+    {
+      "id": "SRC-PARITY-002",
+      "blockId": "AO.SM.B047",
+      "cueId": "AO.SM.C0153",
+      "operation": "REPLACE_TEXT_FRAGMENT",
+      "from": "una cum fámulo tuo Papa nostro N. et Antístite nostro et ómnibus orthodóxis",
+      "to": "una cum fámulo tuo Papa nostro N. et Antístite nostro N. et ómnibus orthodóxis",
+      "preserve": [
+        "AO.SM.C0153",
+        "priest route/state"
+      ]
+    },
+    {
+      "id": "SRC-PARITY-003",
+      "blockId": "AO.SM.B057",
+      "cueId": "AO.SM.C0194",
+      "operation": "REPLACE_TEXT_FRAGMENT",
+      "from": "locum refrigérii, lucis pacis ut indúlgeas",
+      "to": "locum refrigérii, lucis et pacis ut indúlgeas",
+      "preserve": [
+        "AO.SM.C0194",
+        "priest route/state"
+      ]
+    }
+  ]
+}
