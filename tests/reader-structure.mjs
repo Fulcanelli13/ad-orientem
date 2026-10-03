@@ -67,13 +67,14 @@ assert.equal(s.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
 assert.equal(s.cardId,beforeLiveAttempt.cardId);
 
 const votive={
-  ...ordinary,
+  ...missalPrepared,
   session:{
-    ...ordinary.session,
+    ...missalPrepared.session,
     plan:{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["VOTIVE_PROPER"]},
   },
 };
-assert.equal(structureSupport(votive).supported,true);
+assert.equal(structureSupport(votive).supported,true,
+  "Votive Proper should remain structurally supported in certified MISSAL mode");
 
 for(const [label,plan] of [
   ["preceding",{kind:"MASS",precedingGraphs:["ASPERGES"],followingGraphs:[],overlayGraphs:[]}],
