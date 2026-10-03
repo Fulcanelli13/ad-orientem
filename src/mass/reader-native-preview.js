@@ -7,6 +7,7 @@ import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
+import { extractCanonicalCueId, GLORIA_CREDO_FAITHFUL_GESTURES, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -35,11 +36,19 @@ export function legacyReaderStateSnapshot(doc){
   });
 }
 
-export function resolveGestureProjection(eventState, legacyGesture) {
-  if(!eventState) return legacyGesture ?? null;
-  const owner=eventState.ownership?.gesture;
+export function resolveGestureProjection(eventState, legacyGesture, {
+  cueId=null,
+  gestureProfile="GUIDED_1962",
+  incarnatusAction="GENUFLECT",
+}={}) {
+  const owner=eventState?.ownership?.gesture ?? null;
   if(owner==="R17_NATIVE") return eventState.gesture ?? null;
-  if(owner==="R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION") return null;
+
+  const adjudicated=Boolean(cueId && GLORIA_CREDO_FAITHFUL_GESTURES[cueId]);
+  const cueGesture=cueId ? resolveFaithfulGestureForCue({cueId,gestureProfile,incarnatusAction}) : null;
+  if(cueGesture) return cueGesture;
+
+  if(adjudicated || owner==="R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION") return null;
   return legacyGesture ?? null;
 }
 
@@ -107,19 +116,29 @@ export async function mountNativeReaderPreview({
   function projectedState(){
     const legacy=legacyReaderStateSnapshot(doc);
     let eventState=null;
+    let cueId=null;
     if(typeof readLegacyActive==="function"){
       try{
-        const eventId=extractCanonicalEventId(readLegacyActive());
+        const active=readLegacyActive();
+        const eventId=extractCanonicalEventId(active);
+        cueId=extractCanonicalCueId(active);
         if(eventId)eventState=ready.eventState.project(eventId);
       }catch{}
     }
+
+    const gestureProfile=prepared?.readerPreferences?.gestureProfile ?? "GUIDED_1962";
+    const gesture=resolveGestureProjection(eventState,legacy.gesture,{cueId,gestureProfile});
+    const cueAdjudicated=Boolean(cueId && GLORIA_CREDO_FAITHFUL_GESTURES[cueId]);
+
     if(!eventState)return Object.freeze({
       ...legacy,
+      gesture,
       nativeEventId:null,
+      nativeCueId:cueId,
       ownership:Object.freeze({
         priestVoice:"LEGACY_FALLBACK",
         response:"LEGACY_FALLBACK",
-        gesture:"LEGACY_FALLBACK",
+        gesture:cueAdjudicated ? (gesture ? "R17_EXACT_CUE_PROFILE" : "R17_EXACT_CUE_SUPPRESSED_BY_PROFILE") : "LEGACY_FALLBACK",
         posture:"LEGACY_PENDING_SOURCE_EXTRACTION",
         priestPosition:"LEGACY_PENDING_SOURCE_EXTRACTION",
         schola:"LEGACY_TEMPORARY",
@@ -128,14 +147,20 @@ export async function mountNativeReaderPreview({
     return Object.freeze({
       priestPosition:legacy.priestPosition,
       posture:legacy.posture,
-      gesture:resolveGestureProjection(eventState,legacy.gesture),
+      gesture,
       response:eventState.ownership.response==="R17_NATIVE" ? eventState.response : legacy.response,
       priestVoice:eventState.ownership.priestVoice==="R17_NATIVE" ? eventState.priestVoice : legacy.priestVoice,
       schola:legacy.schola,
       sharedTextWithSchola:false,
       nativeEventId:eventState.canonicalEventId,
+      nativeCueId:cueId,
       ownership:Object.freeze({
         ...eventState.ownership,
+        gesture:eventState.ownership.gesture==="R17_NATIVE"
+          ? "R17_NATIVE"
+          : cueAdjudicated
+            ? (gesture ? "R17_EXACT_CUE_PROFILE" : "R17_EXACT_CUE_SUPPRESSED_BY_PROFILE")
+            : eventState.ownership.gesture,
         schola:"LEGACY_TEMPORARY",
       }),
     });
@@ -224,7 +249,7 @@ export async function mountNativeReaderPreview({
       liveState:"R17_PARTIAL_EVENT_STATE",
       priestVoice:"R17_WHEN_CANONICAL_EVENT_RESOLVES",
       response:"R17_WHEN_CANONICAL_RESPONSE_EVENT_RESOLVES",
-      gesture:"R17_CERTIFIED_INCARNATUS_ONLY",
+      gesture:"R17_EXACT_CUE_PROFILE_WITH_INCARNATUS_RUBRICAL",
       posture:"LEGACY_PENDING_SOURCE_EXTRACTION",
       priestPosition:"LEGACY_PENDING_SOURCE_EXTRACTION",
       schola:"LEGACY_TEMPORARY",
