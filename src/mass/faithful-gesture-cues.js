@@ -20,6 +20,19 @@ export const GLORIA_CREDO_FAITHFUL_GESTURES = Object.freeze({
   "AO.SM.C0104": Object.freeze({phase:"CREDO",action:"SIGN_OF_CROSS",anchorLat:"Et vitam ✠",minimumProfile:"TRADITIONAL"}),
 });
 
+export const GLORIA_CREDO_SOURCE_GESTURE_CUES=Object.freeze(new Set([
+  "AO.SM.C0055","AO.SM.C0056","AO.SM.C0057","AO.SM.C0058","AO.SM.C0059",
+  "AO.SM.C0060","AO.SM.C0061","AO.SM.C0062","AO.SM.C0063","AO.SM.C0064",
+  "AO.SM.C0066","AO.SM.C0067","AO.SM.C0068","AO.SM.C0069",
+  "AO.SM.C0089","AO.SM.C0090","AO.SM.C0092","AO.SM.C0093","AO.SM.C0094",
+  "AO.SM.C0096","AO.SM.C0097","AO.SM.C0100","AO.SM.C0101","AO.SM.C0102",
+  "AO.SM.C0104","AO.SM.C0105",
+]));
+
+export function isGloriaCredoGestureSourceCue(cueId){
+  return GLORIA_CREDO_SOURCE_GESTURE_CUES.has(String(cueId??""));
+}
+
 function normalizeProfile(value) {
   const profile=String(value ?? "GUIDED_1962").toUpperCase();
   if(!GESTURE_PROFILES.includes(profile)) throw new Error("Unknown gesture profile: "+profile);
