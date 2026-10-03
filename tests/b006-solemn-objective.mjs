@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   buildObjectiveTraversal,
+  buildPlannedObjectiveTraversal,
   sourceMomentCoverage,
 } from "../src/mass/objective-engine.js";
 
@@ -47,11 +48,18 @@ if (!deferred.some((event) => event.id === "MC-SAN-050") || deferred.some((event
   throw new Error("Deferred Benedictus branch is wrong");
 }
 
-const paxSuppressed=buildObjectiveTraversal(events,{
-  ...profile.maximalGregorianContext,
-  ordinaryPeacePrayerAllowed:false,
-  formalSolemnPaxAllowed:false,
-});
+const paxSuppressed=buildPlannedObjectiveTraversal(
+  events,
+  profile.maximalGregorianContext,
+  {
+    kind:"MASS",
+    form:"SOLEMN",
+    blessingAllowed:true,
+    normalLastGospel:true,
+    ordinaryPeacePrayerAllowed:false,
+    formalSolemnPaxAllowed:false,
+  }
+);
 if (paxSuppressed.some((event)=>event.id==="MC-COM-150")) {
   throw new Error("suppressed Solemn branch retained Domine Iesu Christe qui dixisti");
 }
