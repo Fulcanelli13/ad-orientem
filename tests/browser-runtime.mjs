@@ -6,6 +6,8 @@ const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8")
 const aspergesPayload=load("../data/presentation/reader-asperges.v1.json");
 const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
 const aspergesData=Object.freeze({payload:aspergesPayload,graph:Object.freeze([...specialExtension.graphs.ASP])});
+const palmPayload=load("../data/presentation/reader-palm.v1.json");
+const palmData=Object.freeze({payload:palmPayload,graph:Object.freeze([...specialExtension.graphs.PALM])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -130,6 +132,46 @@ assert.equal(planAwareLow.showCanonicalEvent("MC-OFF-110"),null,
 assert.ok(planAwareLow.showCanonicalEvent("MC-CNS-010"),
   "Low browser runtime rejected a certified planned canonical event");
 planAwareLow.destroy();
+
+
+const palmRoot=rootFixture();
+const palmRuntime=createBrowserMassRuntime({
+  root:palmRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["palm"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Palm Sunday",proper,precedingRites:["PALM"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadPalmData:async()=>palmData,
+});
+const palmEntered=await palmRuntime.enter();
+assert.equal(palmEntered.session.plan.massEntry,"INTROIT");
+assert.equal(palmEntered.session.plan.normalLastGospel,false);
+assert.equal(palmRuntime.getCurrentSectionId(),null,"Mass card became active before Palm rite completed");
+assert.equal(palmRuntime.getReaderState().cardTitle,"Blessing of Palms");
+palmRuntime.next();
+assert.equal(palmRuntime.getPalmState().card.id,"PALM-R02");
+assert.equal(palmRuntime.getReaderState().posture,null,"recipient posture leaked globally before personal state");
+palmRuntime.setPalmRecipientState("RECEIVE_PALM");
+assert.equal(palmRuntime.getReaderState().posture.label,"KNEEL");
+palmRuntime.next();
+assert.equal(palmRuntime.getReaderState().gesture.label,"GOSPEL_CROSSES");
+palmRuntime.next();
+assert.equal(palmRuntime.getReaderState().posture.label,"PROCESSIONAL");
+while(!palmRuntime.getPalmState().atEnd)palmRuntime.next();
+assert.equal(palmRuntime.getPalmState().card.id,"PALM-R07");
+palmRuntime.next();
+assert.equal(palmRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(palmRuntime.getReaderState().cardTitle,"Introit");
+assert.ok(palmRuntime.getReaderState().paragraphs.length>0);
+assert.ok(palmRuntime.getReaderState().paragraphs.every(p=>p.sourceCueIds?.some(id=>String(id).includes("B014")||String(id).includes("C004")) || p.primary.includes("Introit")));
+palmRuntime.previous();
+assert.equal(palmRuntime.getPalmState().card.id,"PALM-R07","Back from Palm Introit did not return to rite handoff");
+palmRuntime.next();
+palmRuntime.showSection(29);
+const beforeLastGospel=palmRuntime.getCurrentSectionId();
+palmRuntime.next();
+assert.equal(palmRuntime.getCurrentSectionId(),beforeLastGospel,"Palm branch navigated into suppressed Last Gospel");
+palmRuntime.destroy();
 
 const liveBlockedRoot=rootFixture();
 const liveBlocked=createBrowserMassRuntime({
