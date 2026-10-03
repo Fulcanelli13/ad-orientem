@@ -3,10 +3,12 @@ import { createReaderDomAdapter } from "./reader-dom.js";
 import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { structureSupport } from "./reader-structure.js";
+import { createAspergesReaderController, loadAspergesReaderData } from "./reader-asperges.js";
 
 export function createBrowserMassRuntime({
   root, celebrationApi, resolveHostOptions, readReaderPreferences,
   iconResolver = null, loadPresentationData = loadReaderPresentationData,
+  loadAspergesData = loadAspergesReaderData, aspergesRiteContext = null,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
 } = {}) {
@@ -15,6 +17,37 @@ export function createBrowserMassRuntime({
   let readerModel = null;
   let currentSectionId = null;
   let currentPrepared = null;
+  let aspergesController = null;
+  let inAsperges = false;
+
+
+  function aspergesMoment(){
+    const state=aspergesController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:"Asperges",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        sourceCueIds:[row.sourceRecordId].filter(Boolean),
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Asperges",
+      posture:card.posture && card.posture!=="INHERIT" ? {label:card.posture} : null,
+      gesture:state.faithfulGesture ? {label:state.faithfulGesture} : null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showAsperges(){
+    const moment=aspergesMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
 
   function cardMoment(card, extra = {}) {
     if (!card) throw new TypeError("Reader card required");
@@ -47,8 +80,27 @@ export function createBrowserMassRuntime({
   }
 
   function move(direction) {
-    if (!readerModel || !currentSectionId) return null;
-    const card = direction === "previous"
+    if(direction==="next" && inAsperges && aspergesController){
+      const state=aspergesController.project();
+      if(state.atEnd){
+        inAsperges=false;
+        return showCard(readerModel.cardBySequence(1));
+      }
+      aspergesController.next();
+      return showAsperges();
+    }
+    if(direction==="previous" && inAsperges && aspergesController){
+      const state=aspergesController.project();
+      if(!state.atStart)aspergesController.previous();
+      return showAsperges();
+    }
+    if(!readerModel || !currentSectionId)return null;
+    if(direction==="previous" && aspergesController && currentSectionId===readerModel.cardBySequence(1)?.sectionId){
+      inAsperges=true;
+      aspergesController.goTo("ASP-R05");
+      return showAsperges();
+    }
+    const card=direction==="previous"
       ? readerModel.previousCard(currentSectionId)
       : readerModel.nextCard(currentSectionId);
     return showCard(card);
@@ -105,7 +157,11 @@ export function createBrowserMassRuntime({
       if(!structuralSupport.supported){
         throw new Error(structuralSupport.reason || "R17 browser reader structure is not certified");
       }
-      const data = await Promise.resolve(loadPresentationData(prepared));
+      const hasAsperges=(prepared?.session?.plan?.precedingGraphs??[]).includes("ASPERGES");
+      const [data,aspergesData]=await Promise.all([
+        Promise.resolve(loadPresentationData(prepared)),
+        hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
+      ]);
       const model = createMassReaderModel({
         resolvedMass: prepared.session.resolvedMass,
         sectionMap: data?.sectionMap,
@@ -116,8 +172,10 @@ export function createBrowserMassRuntime({
       readerModel = model;
       currentPrepared = prepared;
       currentSectionId = null;
+      aspergesController=hasAsperges ? createAspergesReaderController({graph:aspergesData?.graph,payload:aspergesData?.payload,riteContext:aspergesRiteContext??{}}) : null;
+      inAsperges=Boolean(aspergesController);
       reader.mount(prepared);
-      showCard(model.cardBySequence(1));
+      if(inAsperges)showAsperges(); else showCard(model.cardBySequence(1));
       onReaderMounted?.(prepared, reader, model);
     },
   });
@@ -127,6 +185,8 @@ export function createBrowserMassRuntime({
     readerModel = null;
     currentSectionId = null;
     currentPrepared = null;
+    aspergesController = null;
+    inAsperges = false;
   }
 
   return Object.freeze({
@@ -144,5 +204,7 @@ export function createBrowserMassRuntime({
     getReaderModel: () => readerModel,
     getPreparedSession: () => currentPrepared,
     getCurrentSectionId: () => currentSectionId,
+    getAspergesState: () => aspergesController?.project?.() ?? null,
+    markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },
   });
 }
