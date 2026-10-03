@@ -5892,9 +5892,10 @@
         "actor": "DEACON → SUBDEACON",
         "label": "SOLEMN PAX",
         "action": "After the peace prayer, the celebrant gives the Pax to the deacon; it passes to the subdeacon and clergy.",
-        "canonicalMcEvent": "MC-0066",
-        "authority": "SOT12 / OC64 / v43.58 B006",
-        "authorityStatus": "MECHANICS_RECOVERED__TRANSFER_AUTHORITY_PENDING_CURRENT_GATE"
+        "canonicalMcEvent": "MC-COM-160",
+        "authority": "Missale Romanum 1962, Ritus servandus X.8; corroborated by O'Connell 1962",
+        "authorityStatus": "CERTIFIED_PRIMARY_1962_RUBRIC",
+        "authorityRef": "data/mass/solemn-pax-authority.v1.json"
       },
       {
         "id": "SMIN-014",
@@ -5966,6 +5967,6 @@
       "AO.SM.C0275"
     ],
     "paxTransferCue": "AO.SM.C0225",
-    "paxTransferAuthority": "INDEPENDENT_RELEASE_BLOCKER_FAIL_CLOSED"
+    "paxTransferAuthority": "CERTIFIED_PRIMARY_1962_RITUS_SERVANDUS_X_8"
   }
 }
