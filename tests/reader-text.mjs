@@ -174,4 +174,13 @@ const chantCard=buildReaderSectionCard({
 assert.ok(chantCard.paragraphs.some(p=>p.primary==="Gradual and Alleluia of the Rosary"));
 assert.ok(!chantCard.paragraphs.some(p=>p.primary==="Day of wrath"),"nonexistent Sequence was fabricated");
 
+for(const corpus of [low,sung]){
+  for(const cueId of ["AO.SM.C0023","AO.SM.C0237"]){
+    const hit=corpus.blocks.flatMap(b=>b.units??[]).find(u=>u.cue_id===cueId);
+    assert.ok(hit,corpus.form+" missing "+cueId);
+    assert.match(hit.latin,/oráre pro me/,"P1-011 Confiteor accent not normalized at "+cueId);
+    assert.doesNotMatch(hit.latin,/\borare pro me\b/,"unaccented orare remains at "+cueId);
+  }
+}
+
 console.log("reader text corpus: PASS — verified donors, Proper fail-closed, all 30 Low/Sung cards nonblank.");
