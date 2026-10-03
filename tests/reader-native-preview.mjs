@@ -286,6 +286,14 @@ const palmData=Object.freeze({
   payload:load("../data/presentation/reader-palm.v1.json"),
   graph:Object.freeze([...specialExtension.graphs.PALM]),
 });
+const ashData=Object.freeze({
+  payload:load("../data/presentation/reader-ash.v1.json"),
+  graph:Object.freeze([...specialExtension.graphs.ASH]),
+});
+const candlemasData=Object.freeze({
+  payload:load("../data/presentation/reader-candlemas.v1.json"),
+  graph:Object.freeze([...specialExtension.graphs.CND]),
+});
 
 function fakeElement(){
   return {
@@ -351,5 +359,52 @@ assert.equal(palmMounted.getPalmState().card.id,"PALM-R02");
 palmMounted.setPalmRecipientState("RECEIVE_PALM");
 assert.equal(palmMounted.getPalmState().recipientPosture,"KNEEL");
 palmMounted.destroy();
+
+
+const ashPrepared={
+  ...prepared,
+  session:{
+    ...prepared.session,
+    plan:{...prepared.session.plan,precedingGraphs:["ASH"],massEntry:"INTROIT"},
+  },
+};
+const ashReady=await prepareNativeReaderPreview({
+  prepared:ashPrepared,presentationData:data,eventData,cueRegistries,guideData,ashData,
+});
+assert.equal(ashReady.preludeController.project().rite,"ASH");
+assert.equal(ashReady.preludeController.project().card.id,"ASH-R01");
+const ashMounted=await mountNativeReaderPreview({
+  doc:fakeDocument(),prepared:ashPrepared,presentationData:data,eventData,cueRegistries,guideData,ashData,
+});
+assert.equal(ashMounted.root.dataset.r17SpecialStructure,"ASH");
+ashMounted.next();
+ashMounted.next();
+assert.equal(ashMounted.getPreludeState().card.id,"ASH-R03");
+ashMounted.setPreludePersonalState("RECEIVE_ASHES");
+assert.equal(ashMounted.getPreludeState().personalPosture,"KNEEL");
+ashMounted.destroy();
+
+const candlePrepared={
+  ...prepared,
+  session:{
+    ...prepared.session,
+    plan:{...prepared.session.plan,precedingGraphs:["CANDLEMAS"],massEntry:"INTROIT",objectStates:["BLESSED_CANDLE_RECEIVED"]},
+  },
+};
+const candleReady=await prepareNativeReaderPreview({
+  prepared:candlePrepared,presentationData:data,eventData,cueRegistries,guideData,candlemasData,
+});
+assert.equal(candleReady.preludeController.project().rite,"CANDLEMAS");
+assert.equal(candleReady.preludeController.project().massObjectStates.length,3);
+const candleMounted=await mountNativeReaderPreview({
+  doc:fakeDocument(),prepared:candlePrepared,presentationData:data,eventData,cueRegistries,guideData,candlemasData,
+});
+assert.equal(candleMounted.root.dataset.r17SpecialStructure,"CANDLEMAS");
+candleMounted.next();
+candleMounted.setPreludePersonalState("RECEIVE_CANDLE");
+assert.equal(candleMounted.getPreludeState().personalObjectState,"BLESSED_CANDLE_RECEIVED");
+candleMounted.next();
+assert.equal(candleMounted.getPreludeState().card.objectState,"CANDLE_LIT");
+candleMounted.destroy();
 
 console.log("native reader preview: PASS — source-first LIVE is native-owned; remaining rollback state is explicit.");
