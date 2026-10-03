@@ -7,6 +7,7 @@ import { createAspergesReaderController, loadAspergesReaderData } from "./reader
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { createAshesReaderController, loadAshesReaderData } from "./reader-ashes.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
+import { createRogationsReaderController, loadRogationsReaderData } from "./reader-rogations.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
@@ -19,6 +20,7 @@ export function createBrowserMassRuntime({
   loadPalmData = loadPalmReaderData,
   loadAshesData = loadAshesReaderData,
   loadCandlemasData = loadCandlemasReaderData,
+  loadRogationsData = loadRogationsReaderData,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -37,6 +39,8 @@ export function createBrowserMassRuntime({
   let inAshes = false;
   let candlemasController = null;
   let inCandlemas = false;
+  let rogationsController = null;
+  let inRogations = false;
   let lifecycleRuntime = null;
   let inLifecycle = false;
 
@@ -125,6 +129,18 @@ export function createBrowserMassRuntime({
   }
   function showCandlemas(){const moment=candlemasMoment();if(!moment)return null;currentSectionId=null;reader.renderMoment(moment);return moment;}
 
+  function rogationsMoment(){
+    const state=rogationsController?.project?.();const card=state?.card;if(!card)return null;
+    return {
+      id:card.id,sectionTitle:"Rogations",cardTitle:card.title,cardUpdate:true,
+      paragraphs:(card.paragraphs??[]).map(row=>({id:row.id,kind:row.kind,primary:row.latin,sourceCueIds:[row.sourceRecordId].filter(Boolean)})),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Rogations",
+      posture:state.participantPosture?{label:state.participantPosture}:card.posture&&!["LOCAL","ORDINARY_PROFILE"].includes(card.posture)?{label:card.posture}:null,
+      guide:card.guide?{registryAvailable:true,text:card.guide}:null,
+    };
+  }
+  function showRogations(){const moment=rogationsMoment();if(!moment)return null;currentSectionId=null;reader.renderMoment(moment);return moment;}
+
   function introitOnlyCard(){
     const card=readerModel?.cardBySequence?.(1);
     if(!card)return null;
@@ -186,6 +202,14 @@ export function createBrowserMassRuntime({
       if(direction==="next")return advanceLifecycle();
       return lifecycleRuntime.snapshot();
     }
+    if(direction==="next" && inRogations && rogationsController){
+      const state=rogationsController.project();
+      if(state.atEnd){inRogations=false;return showCard(introitOnlyCard());}
+      rogationsController.next();return showRogations();
+    }
+    if(direction==="previous" && inRogations && rogationsController){
+      const state=rogationsController.project();if(!state.atStart)rogationsController.previous();return showRogations();
+    }
     if(direction==="next" && inCandlemas && candlemasController){
       const state=candlemasController.project();
       if(state.atEnd){inCandlemas=false;return showCard(introitOnlyCard());}
@@ -231,6 +255,9 @@ export function createBrowserMassRuntime({
       return showAsperges();
     }
     if(!readerModel || !currentSectionId)return null;
+    if(direction==="previous" && rogationsController && currentSectionId===readerModel.cardBySequence(1)?.sectionId){
+      inRogations=true;rogationsController.goTo("ROG-R05");return showRogations();
+    }
     if(direction==="previous" && candlemasController && currentSectionId===readerModel.cardBySequence(1)?.sectionId){
       inCandlemas=true;candlemasController.goTo("CND-R04");return showCandlemas();
     }
@@ -315,14 +342,16 @@ export function createBrowserMassRuntime({
       const hasPalm=(prepared?.session?.plan?.precedingGraphs??[]).includes("PALM");
       const hasAshes=(prepared?.session?.plan?.precedingGraphs??[]).includes("ASH");
       const hasCandlemas=(prepared?.session?.plan?.precedingGraphs??[]).includes("CANDLEMAS");
+      const hasRogations=(prepared?.session?.plan?.precedingGraphs??[]).includes("ROGATIONS");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,palmData,ashesData,candlemasData,events]=await Promise.all([
+      const [data,aspergesData,palmData,ashesData,candlemasData,rogationsData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
         hasAshes ? Promise.resolve(loadAshesData(prepared)) : null,
         hasCandlemas ? Promise.resolve(loadCandlemasData(prepared)) : null,
+        hasRogations ? Promise.resolve(loadRogationsData(prepared)) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -350,9 +379,12 @@ export function createBrowserMassRuntime({
       inAshes=Boolean(ashesController);
       candlemasController=hasCandlemas ? createCandlemasReaderController({graph:candlemasData?.graph,payload:candlemasData?.payload}) : null;
       inCandlemas=Boolean(candlemasController);
-      if([inAsperges,inPalm,inAshes,inCandlemas].filter(Boolean).length>1)throw new Error("Multiple preceding rite readers are not yet composable");
+      rogationsController=hasRogations ? createRogationsReaderController({graph:rogationsData?.graph,payload:rogationsData?.payload}) : null;
+      inRogations=Boolean(rogationsController);
+      if([inAsperges,inPalm,inAshes,inCandlemas,inRogations].filter(Boolean).length>1)throw new Error("Multiple preceding rite readers are not yet composable");
       reader.mount(prepared);
-      if(inCandlemas)showCandlemas();
+      if(inRogations)showRogations();
+      else if(inCandlemas)showCandlemas();
       else if(inAshes)showAshes();
       else if(inPalm)showPalm();
       else if(inAsperges)showAsperges();
@@ -375,6 +407,8 @@ export function createBrowserMassRuntime({
     inAshes = false;
     candlemasController = null;
     inCandlemas = false;
+    rogationsController = null;
+    inRogations = false;
     lifecycleRuntime = null;
     inLifecycle = false;
   }
@@ -399,6 +433,7 @@ export function createBrowserMassRuntime({
     getPalmState: () => palmController?.project?.() ?? null,
     getAshesState: () => ashesController?.project?.() ?? null,
     getCandlemasState: () => candlemasController?.project?.() ?? null,
+    getRogationsState: () => rogationsController?.project?.() ?? null,
     projectCandlemasCue: cueId => candlemasController?.projectMassCue?.(cueId) ?? null,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
     chooseLeonine: accept => {
@@ -421,6 +456,7 @@ export function createBrowserMassRuntime({
     setAshRecipientState: value => { if(!ashesController)return null; ashesController.setRecipientState(value); return inAshes ? showAshes() : ashesController.project(); },
     setCandlemasRecipientState: value => { if(!candlemasController)return null; candlemasController.setRecipientState(value); return inCandlemas ? showCandlemas() : candlemasController.project(); },
     setHasBlessedCandle: value => { if(!candlemasController)return null; candlemasController.setHasBlessedCandle(value); return candlemasController.project(); },
+    setRogationsProcessionalState: value => { if(!rogationsController)return null; rogationsController.setProcessionalState(value); return inRogations ? showRogations() : rogationsController.project(); },
     markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },
   });
 }
