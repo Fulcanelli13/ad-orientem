@@ -20,6 +20,7 @@ import { createReaderTransientController, partTransitionCinematic } from "./read
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData } from "./reader-asperges.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
+import { createPreludeReaderController, loadPreludeReaderData } from "./reader-preludes.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -162,6 +163,9 @@ export async function prepareNativeReaderPreview({
   aspergesRiteContext=null,
   palmData=null,
   loadPalmData=loadPalmReaderData,
+  ashData=null,
+  candlemasData=null,
+  loadPreludeData=loadPreludeReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
@@ -173,8 +177,11 @@ export async function prepareNativeReaderPreview({
   const precedingGraphs=prepared?.session?.plan?.precedingGraphs??[];
   const hasAsperges=precedingGraphs.includes("ASPERGES");
   const hasPalm=precedingGraphs.includes("PALM");
-  if(hasAsperges && hasPalm)throw new Error("Multiple preceding rite readers are not yet composable");
-  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm]=await Promise.all([
+  const hasAsh=precedingGraphs.includes("ASH");
+  const hasCandlemas=precedingGraphs.includes("CANDLEMAS");
+  const preludeCount=[hasAsperges,hasPalm,hasAsh,hasCandlemas].filter(Boolean).length;
+  if(preludeCount>1)throw new Error("Multiple preceding rite readers are not yet composable");
+  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
@@ -182,6 +189,8 @@ export async function prepareNativeReaderPreview({
     needsFormState ? (formStateData ?? Promise.resolve(loadFormStateData(prepared))) : null,
     hasAsperges ? (aspergesData ?? Promise.resolve(loadAspergesData(prepared))) : null,
     hasPalm ? (palmData ?? Promise.resolve(loadPalmData(prepared))) : null,
+    hasAsh ? (ashData ?? Promise.resolve(loadPreludeData({rite:"ASH"}))) : null,
+    hasCandlemas ? (candlemasData ?? Promise.resolve(loadPreludeData({rite:"CANDLEMAS"}))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -207,7 +216,12 @@ export async function prepareNativeReaderPreview({
   const palmController=hasPalm
     ? createPalmReaderController({graph:loadedPalm?.graph,payload:loadedPalm?.payload})
     : null;
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController});
+  const preludeController=hasAsh
+    ? createPreludeReaderController({graph:loadedAsh?.graph,payload:loadedAsh?.payload})
+    : hasCandlemas
+      ? createPreludeReaderController({graph:loadedCandlemas?.graph,payload:loadedCandlemas?.payload})
+      : null;
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,preludeController});
 }
 
 export async function mountNativeReaderPreview({
@@ -228,6 +242,9 @@ export async function mountNativeReaderPreview({
   aspergesRiteContext=null,
   palmData=null,
   loadPalmData=loadPalmReaderData,
+  ashData=null,
+  candlemasData=null,
+  loadPreludeData=loadPreludeReaderData,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -239,6 +256,7 @@ export async function mountNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     aspergesData,loadAspergesData,aspergesRiteContext,palmData,loadPalmData,
+    ashData,candlemasData,loadPreludeData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -262,6 +280,7 @@ export async function mountNativeReaderPreview({
   let current=ready.model.cardBySequence(1);
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
+  let inPrelude=Boolean(ready.preludeController);
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
@@ -407,6 +426,7 @@ export async function mountNativeReaderPreview({
     if(!card) return null;
     inAsperges=false;
     inPalm=false;
+    inPrelude=false;
     root.dataset.r17SpecialStructure="MASS";
     delete root.dataset.r17SpecialCard;
     const previous=current;
@@ -458,7 +478,7 @@ export async function mountNativeReaderPreview({
     const card=ready.model.cardBySequence(1);
     if(!card)return null;
     const block=card.blocks?.find?.(x=>x.blockId==="AO.SM.B014");
-    if(!block || block.firstParagraphIndex==null || !block.paragraphCount)throw new Error("Palm Introit handoff cannot resolve AO.SM.B014");
+    if(!block || block.firstParagraphIndex==null || !block.paragraphCount)throw new Error("Special-rite Introit handoff cannot resolve AO.SM.B014");
     const paragraphs=card.paragraphs.slice(block.firstParagraphIndex,block.firstParagraphIndex+block.paragraphCount);
     return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),palmIntroitOnly:true});
   }
@@ -521,7 +541,39 @@ export async function mountNativeReaderPreview({
     return state;
   }
 
+  function showPrelude(){
+    const state=ready.preludeController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    inPrelude=true;
+    inPalm=false;
+    inAsperges=false;
+    activeCueId=null;
+    root.dataset.r17SpecialStructure=state.rite;
+    root.dataset.r17SpecialCard=card.id;
+    reader.renderMoment({
+      id:card.id,
+      sectionTitle:state.title,
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:specialParagraphs(card),
+      progress:String(state.index+1)+" / "+String(state.total)+" · "+state.title,
+      posture:state.personalPosture
+        ? {label:state.personalPosture}
+        : card.posture && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture) ? {label:card.posture} : null,
+      gesture:card.gesture ? {label:card.gesture} : null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    });
+    return state;
+  }
+
   function navigateNext(){
+    if(inPrelude && ready.preludeController){
+      const state=ready.preludeController.project();
+      if(state.atEnd)return showCard(introitOnlyCard());
+      ready.preludeController.next();
+      return showPrelude();
+    }
     if(inPalm && ready.palmController){
       const state=ready.palmController.project();
       if(state.atEnd)return showCard(introitOnlyCard());
@@ -538,6 +590,11 @@ export async function mountNativeReaderPreview({
   }
 
   function navigatePrevious(){
+    if(inPrelude && ready.preludeController){
+      const state=ready.preludeController.project();
+      if(!state.atStart)ready.preludeController.previous();
+      return showPrelude();
+    }
     if(inPalm && ready.palmController){
       const state=ready.palmController.project();
       if(!state.atStart)ready.palmController.previous();
@@ -557,6 +614,10 @@ export async function mountNativeReaderPreview({
         ready.aspergesController.goTo("ASP-R05");
         return showAsperges();
       }
+      if(ready.preludeController){
+        ready.preludeController.goTo(ready.preludeController.cards.at(-1)?.id);
+        return showPrelude();
+      }
     }
     return showCard(ready.model.previousCard(current.sectionId));
   }
@@ -571,7 +632,7 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
-    if(inAsperges||inPalm)return;
+    if(inAsperges||inPalm||inPrelude)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -624,7 +685,8 @@ export async function mountNativeReaderPreview({
   // Mount only after the model and any certified preceding-rite payload are complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
-  if(inPalm)showPalm();
+  if(inPrelude)showPrelude();
+  else if(inPalm)showPalm();
   else if(inAsperges)showAsperges();
   else showCard(current);
 
@@ -634,7 +696,7 @@ export async function mountNativeReaderPreview({
       container:readerScroll,
       win,
       onChange:(cueId)=>{
-        if(inAsperges||inPalm){activeCueId=null;return;}
+        if(inAsperges||inPalm||inPrelude){activeCueId=null;return;}
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -675,7 +737,7 @@ export async function mountNativeReaderPreview({
       cinematic:"R17_SINGLE_OWNER_TIMED_TRANSIENT",
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
       modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__UI_SWITCH_STILL_LOCKED_FOR_PHONE_ACCEPTANCE",
-      specialStructure:"R23_NATIVE_ASPERGES_PALM_PRECEDING_RITES",
+      specialStructure:"R24_NATIVE_ASPERGES_PALM_ASH_CANDLEMAS_PRECEDING_RITES",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -697,8 +759,10 @@ export async function mountNativeReaderPreview({
     getTransientTransitionPending:()=>transientGuard.pending,
     getAspergesState:()=>ready.aspergesController?.project?.()??null,
     getPalmState:()=>ready.palmController?.project?.()??null,
+    getPreludeState:()=>ready.preludeController?.project?.()??null,
     markActuallySprinkled:()=>{if(!ready.aspergesController)return null;ready.aspergesController.setActuallySprinkled(true);return inAsperges?showAsperges():ready.aspergesController.project();},
     setPalmRecipientState:value=>{if(!ready.palmController)return null;ready.palmController.setRecipientState(value);return inPalm?showPalm():ready.palmController.project();},
+    setPreludePersonalState:value=>{if(!ready.preludeController)return null;ready.preludeController.setPersonalState(value);return inPrelude?showPrelude():ready.preludeController.project();},
     next:navigateNext,
     previous:navigatePrevious,
   });

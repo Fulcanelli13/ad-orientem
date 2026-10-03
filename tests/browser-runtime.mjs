@@ -8,6 +8,8 @@ const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
 const aspergesData=Object.freeze({payload:aspergesPayload,graph:Object.freeze([...specialExtension.graphs.ASP])});
 const palmPayload=load("../data/presentation/reader-palm.v1.json");
 const palmData=Object.freeze({payload:palmPayload,graph:Object.freeze([...specialExtension.graphs.PALM])});
+const ashData=Object.freeze({payload:load("../data/presentation/reader-ash.v1.json"),graph:Object.freeze([...specialExtension.graphs.ASH])});
+const candlemasData=Object.freeze({payload:load("../data/presentation/reader-candlemas.v1.json"),graph:Object.freeze([...specialExtension.graphs.CND])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -148,6 +150,60 @@ assert.equal(palmRuntime.getCurrentSectionId(),beforeLastGospel);
 assert.equal(palmLifecycle.stage,"DEPARTURE","Palm last-Gospel suppression did not reach the post-Mass lifecycle");
 assert.equal(palmRuntime.getLifecycleState().contract.leonine.eligible,false);
 palmRuntime.destroy();
+
+
+const ashRoot=rootFixture();
+const ashRuntime=createBrowserMassRuntime({
+  root:ashRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["ash"]})},
+  resolveHostOptions:()=>({form:"low",celebrationTitle:"Ash Wednesday",proper,precedingRites:["ASH"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadPreludeData:async({rite})=>rite==="ASH"?ashData:null,
+  eventData,
+});
+const ashEntered=await ashRuntime.enter();
+assert.equal(ashEntered.session.plan.massEntry,"INTROIT");
+assert.equal(ashRuntime.getCurrentSectionId(),null);
+assert.equal(ashRuntime.getReaderState().cardTitle,"Blessing of the Ashes");
+ashRuntime.next();
+ashRuntime.next();
+assert.equal(ashRuntime.getPreludeState().card.id,"ASH-R03");
+ashRuntime.setPreludePersonalState("RECEIVE_ASHES");
+assert.equal(ashRuntime.getReaderState().posture.label,"KNEEL");
+while(!ashRuntime.getPreludeState().atEnd)ashRuntime.next();
+ashRuntime.next();
+assert.equal(ashRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(ashRuntime.getReaderState().cardTitle,"Introit");
+ashRuntime.previous();
+assert.equal(ashRuntime.getPreludeState().card.id,"ASH-R05");
+ashRuntime.destroy();
+
+const candleRoot=rootFixture();
+const candleRuntime=createBrowserMassRuntime({
+  root:candleRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["candlemas"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Purification of the Blessed Virgin Mary",proper,precedingRites:["CANDLEMAS"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadPreludeData:async({rite})=>rite==="CANDLEMAS"?candlemasData:null,
+});
+const candleEntered=await candleRuntime.enter();
+assert.equal(candleEntered.session.plan.massEntry,"INTROIT");
+assert.equal(candleRuntime.getReaderState().cardTitle,"Blessing of the Candles");
+candleRuntime.next();
+candleRuntime.setPreludePersonalState("RECEIVE_CANDLE");
+assert.equal(candleRuntime.getReaderState().posture.label,"KNEEL");
+assert.equal(candleRuntime.getPreludeState().personalObjectState,"BLESSED_CANDLE_RECEIVED");
+candleRuntime.next();
+assert.equal(candleRuntime.getPreludeState().card.objectState,"CANDLE_LIT");
+assert.equal(candleRuntime.getPreludeState().massObjectStates.length,3);
+while(!candleRuntime.getPreludeState().atEnd)candleRuntime.next();
+candleRuntime.next();
+assert.equal(candleRuntime.getReaderState().cardTitle,"Introit");
+candleRuntime.previous();
+assert.equal(candleRuntime.getPreludeState().card.id,"CND-R05");
+candleRuntime.destroy();
 
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({

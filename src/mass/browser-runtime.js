@@ -8,6 +8,7 @@ import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
+import { createPreludeReaderController, loadPreludeReaderData } from "./reader-preludes.js";
 
 export function createBrowserMassRuntime({
   root, celebrationApi, resolveHostOptions, readReaderPreferences,
@@ -15,6 +16,7 @@ export function createBrowserMassRuntime({
   eventData = null, loadEventData = loadCanonicalReaderEvents,
   loadAspergesData = loadAspergesReaderData, aspergesRiteContext = null,
   loadPalmData = loadPalmReaderData,
+  loadPreludeData = loadPreludeReaderData,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -29,6 +31,8 @@ export function createBrowserMassRuntime({
   let inAsperges = false;
   let palmController = null;
   let inPalm = false;
+  let preludeController = null;
+  let inPrelude = false;
   let lifecycleRuntime = null;
   let inLifecycle = false;
 
@@ -92,11 +96,41 @@ export function createBrowserMassRuntime({
     return moment;
   }
 
+  function preludeMoment(){
+    const state=preludeController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:state.title,
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,secondary:row.english??null,
+        sourceCueIds:[row.sourceRecordId].filter(Boolean),
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · "+state.title,
+      posture:state.personalPosture
+        ? {label:state.personalPosture}
+        : card.posture && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture) ? {label:card.posture} : null,
+      gesture:card.gesture ? {label:card.gesture} : null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showPrelude(){
+    const moment=preludeMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
   function introitOnlyCard(){
     const card=readerModel?.cardBySequence?.(1);
     if(!card)return null;
     const block=card.blocks?.find?.(x=>x.blockId==="AO.SM.B014");
-    if(!block || block.firstParagraphIndex==null || !block.paragraphCount)throw new Error("Palm Introit handoff cannot resolve AO.SM.B014");
+    if(!block || block.firstParagraphIndex==null || !block.paragraphCount)throw new Error("Special-rite Introit handoff cannot resolve AO.SM.B014");
     const paragraphs=card.paragraphs.slice(block.firstParagraphIndex,block.firstParagraphIndex+block.paragraphCount);
     return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),palmIntroitOnly:true});
   }
@@ -153,6 +187,20 @@ export function createBrowserMassRuntime({
       if(direction==="next")return advanceLifecycle();
       return lifecycleRuntime.snapshot();
     }
+    if(direction==="next" && inPrelude && preludeController){
+      const state=preludeController.project();
+      if(state.atEnd){
+        inPrelude=false;
+        return showCard(introitOnlyCard());
+      }
+      preludeController.next();
+      return showPrelude();
+    }
+    if(direction==="previous" && inPrelude && preludeController){
+      const state=preludeController.project();
+      if(!state.atStart)preludeController.previous();
+      return showPrelude();
+    }
     if(direction==="next" && inPalm && palmController){
       const state=palmController.project();
       if(state.atEnd){
@@ -191,6 +239,11 @@ export function createBrowserMassRuntime({
       inAsperges=true;
       aspergesController.goTo("ASP-R05");
       return showAsperges();
+    }
+    if(direction==="previous" && preludeController && currentSectionId===readerModel.cardBySequence(1)?.sectionId){
+      inPrelude=true;
+      preludeController.goTo(preludeController.cards.at(-1)?.id);
+      return showPrelude();
     }
     const card=direction==="previous"
       ? readerModel.previousCard(currentSectionId)
@@ -256,14 +309,20 @@ export function createBrowserMassRuntime({
       if(!structuralSupport.supported){
         throw new Error(structuralSupport.reason || "R17 browser reader structure is not certified");
       }
-      const hasAsperges=(prepared?.session?.plan?.precedingGraphs??[]).includes("ASPERGES");
-      const hasPalm=(prepared?.session?.plan?.precedingGraphs??[]).includes("PALM");
+      const precedingGraphs=prepared?.session?.plan?.precedingGraphs??[];
+      const hasAsperges=precedingGraphs.includes("ASPERGES");
+      const hasPalm=precedingGraphs.includes("PALM");
+      const hasAsh=precedingGraphs.includes("ASH");
+      const hasCandlemas=precedingGraphs.includes("CANDLEMAS");
+      const preludeCount=[hasAsperges,hasPalm,hasAsh,hasCandlemas].filter(Boolean).length;
+      if(preludeCount>1)throw new Error("Multiple preceding rite readers are not yet composable");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,palmData,events]=await Promise.all([
+      const [data,aspergesData,palmData,preludeData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
+        hasAsh ? Promise.resolve(loadPreludeData({rite:"ASH"})) : hasCandlemas ? Promise.resolve(loadPreludeData({rite:"CANDLEMAS"})) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -287,9 +346,11 @@ export function createBrowserMassRuntime({
       inAsperges=Boolean(aspergesController);
       palmController=hasPalm ? createPalmReaderController({graph:palmData?.graph,payload:palmData?.payload}) : null;
       inPalm=Boolean(palmController);
-      if(inAsperges && inPalm)throw new Error("Multiple preceding rite readers are not yet composable");
+      preludeController=(hasAsh||hasCandlemas) ? createPreludeReaderController({graph:preludeData?.graph,payload:preludeData?.payload}) : null;
+      inPrelude=Boolean(preludeController);
       reader.mount(prepared);
-      if(inPalm)showPalm();
+      if(inPrelude)showPrelude();
+      else if(inPalm)showPalm();
       else if(inAsperges)showAsperges();
       else showCard(model.cardBySequence(1));
       onReaderMounted?.(prepared, reader, model);
@@ -306,6 +367,8 @@ export function createBrowserMassRuntime({
     inAsperges = false;
     palmController = null;
     inPalm = false;
+    preludeController = null;
+    inPrelude = false;
     lifecycleRuntime = null;
     inLifecycle = false;
   }
@@ -328,6 +391,7 @@ export function createBrowserMassRuntime({
     getCurrentSectionId: () => currentSectionId,
     getAspergesState: () => aspergesController?.project?.() ?? null,
     getPalmState: () => palmController?.project?.() ?? null,
+    getPreludeState: () => preludeController?.project?.() ?? null,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
     chooseLeonine: accept => {
       if(!lifecycleRuntime)return null;
@@ -346,6 +410,7 @@ export function createBrowserMassRuntime({
     },
     advanceLifecycle,
     setPalmRecipientState: value => { if(!palmController)return null; palmController.setRecipientState(value); return inPalm ? showPalm() : palmController.project(); },
+    setPreludePersonalState: value => { if(!preludeController)return null; preludeController.setPersonalState(value); return inPrelude ? showPrelude() : preludeController.project(); },
     markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },
   });
 }
