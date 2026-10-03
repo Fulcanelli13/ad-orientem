@@ -15,7 +15,7 @@ assert.equal(gate.currentR17.status,"NOT_PARITY_COMPLETE");
 assert.equal(gate.recoveredV181Splits.length,9);
 assert.deepEqual(gate.unresolvedV181SplitAreas.map(x=>x.area).sort(),["CANON"]);
 assert.equal(Object.hasOwn(gate,"knownV181Splits"),false,
-  "Parity gate must not retain the stale six-split ledger after 8/10 recovery");
+  "Parity gate must not retain the stale six-split ledger after 9/10 recovery");
 assert.notEqual(resolver.total,gate.reference.expectedLiveCards,
   "Reader parity gate should not silently pass until authoritative 48-card map is recovered");
 assert.ok(gate.acceptance.some(x=>/48 LIVE cards/.test(x)), "Parity acceptance must require exact recovery of all 48 LIVE cards");
@@ -50,6 +50,19 @@ assert.deepEqual(
   ["CANON"],
   "Only the still-unrecovered Canon v1.81 decompression boundary may remain area-only"
 );
+
+assert.equal(recovery.remainingCanonRecovery?.status,"UNRESOLVED_DO_NOT_INFER");
+assert.equal(recovery.remainingCanonRecovery?.requiredSplitCount,1);
+assert.equal(recovery.remainingCanonRecovery?.directV181OrV183DonorBytesRecovered,false);
+assert.equal(recovery.remainingCanonRecovery?.exactV180CanonCombinedCardMapRecovered,false);
+assert.equal(recovery.remainingCanonRecovery?.exactV184ToV187CardDeltaRecovered,false);
+assert.ok(recovery.remainingCanonRecovery?.rejectedRecoveryMethods.some(x=>/v1\.87 51-card/.test(x)),
+  "Later 51-card subtraction must remain rejected without an exact lineage delta");
+for(const candidate of recovery.remainingCanonRecovery?.laterObservedBoundariesNotCertifiedAsV181??[]){
+  assert.ok(Array.isArray(candidate.blocks) && candidate.blocks.length===2);
+}
+assert.equal(recovery.recoveredSemanticSplits.length,9,
+  "Unproven later Canon granularity was accidentally promoted to the tenth v1.81 split");
 
 assert.equal(Object.hasOwn(recovery,"cards"),false,
   "Partial recovery evidence must not masquerade as an authoritative reader card map");
