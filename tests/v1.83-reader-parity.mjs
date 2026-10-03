@@ -8,10 +8,10 @@ const resolver=createReaderSectionResolver(map);
 
 assert.equal(gate.reference.expectedLiveCards,48);
 assert.equal(gate.reference.expectedCanonicalMacros,30);
-assert.equal(resolver.totalCards,30);
+assert.equal(resolver.total,30);
 assert.equal(gate.currentR17.nativeReaderCards,30);
 assert.equal(gate.currentR17.status,"NOT_PARITY_COMPLETE");
-assert.notEqual(resolver.totalCards,gate.reference.expectedLiveCards,
+assert.notEqual(resolver.total,gate.reference.expectedLiveCards,
   "Reader parity gate should not silently pass until authoritative 48-card map is recovered");
 assert.ok(gate.acceptance.some(x=>/48-card map/.test(x)));
 
