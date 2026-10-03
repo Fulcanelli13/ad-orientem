@@ -93,9 +93,17 @@ try{
 
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
-  await page.waitForFunction(()=>document.getElementById("ao-r17-native-reader-preview")?.dataset.r17NativeCue==="AO.SM.C0168");
-  assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue()),"AO.SM.C0168",
-    "top of Host Consecration card does not belong to first cue");
+  await page.waitForTimeout(300);
+  const topFocus=await page.evaluate(()=>({
+    cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+    dataset:document.getElementById("ao-r17-native-reader-preview")?.dataset.r17NativeCue??null,
+    scrollTop:document.querySelector(".ao-prayer-card")?.scrollTop??null,
+    clientHeight:document.querySelector(".ao-prayer-card")?.clientHeight??null,
+    scrollHeight:document.querySelector(".ao-prayer-card")?.scrollHeight??null,
+    cueIds:[...document.querySelectorAll(".ao-reader-paragraph[data-cue-id]")].map(x=>x.dataset.cueId),
+  }));
+  assert.equal(topFocus.cue,"AO.SM.C0168",
+    "top of Host Consecration card does not belong to first cue: "+JSON.stringify(topFocus));
 
   await page.locator('[data-cue-id="AO.SM.C0173"]').evaluate(el=>el.scrollIntoView({block:"center"}));
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0173");
