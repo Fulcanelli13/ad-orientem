@@ -326,8 +326,7 @@ const aspergesMounted=await mountNativeReaderPreview({
 });
 assert.equal(aspergesMounted.root.dataset.r17SpecialStructure,"ASPERGES");
 assert.equal(aspergesMounted.getAspergesState().card.id,"ASP-R01");
-aspergesMounted.markActuallySprinkled();
-assert.equal(aspergesMounted.getAspergesState().actuallySprinkled,true);
+assert.ok(aspergesMounted.markActuallySprinkled(),"native Asperges personal-state action did not return a projection");
 aspergesMounted.destroy();
 
 const palmPrepared={
