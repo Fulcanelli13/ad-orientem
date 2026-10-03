@@ -9,8 +9,11 @@ on:
     paths:
       - "src/mass/**"
       - "data/mass/**"
+      - "data/presentation/**"
       - "tests/**"
+      - "index.html"
       - "package.json"
+      - ".github/workflows/r17-mass-convergence.yml"
 
 jobs:
   test:
