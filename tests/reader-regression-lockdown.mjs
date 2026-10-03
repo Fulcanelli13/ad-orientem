@@ -76,6 +76,11 @@ assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
 assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
+const palmPayload=release.protectedInvariants.find(x=>x.id==="PALM_NATIVE_PAYLOAD");
+assert.equal(palmPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Palm runtime certification disappeared");
+assert.equal(palmPayload?.recoveredGraphRecords,12,"Palm source scope changed");
+assert.equal(palmPayload?.readerCards,7,"Palm reader-card contract changed");
+
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Asperges payload certification disappeared");
 assert.match(String(aspergesPayload?.controller??""),/reader-asperges\.js/,"Asperges controller is not pinned");
