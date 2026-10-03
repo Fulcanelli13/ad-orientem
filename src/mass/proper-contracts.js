@@ -1,4 +1,5 @@
 import { assertProperContainerCoverage } from "./proper-container-coverage.js";
+import { assertProductionSourceProvenance } from "./source-provenance.js";
 
 // Source-reconciliation contracts for Proper Resolver 2.0.
 // These contracts describe completeness and ordering; they do not contain liturgical text.
@@ -103,6 +104,8 @@ export function validateProperManifestV2(manifest) {
 
   const requirements = manifest.requirements ?? {};
   const orations = manifest.orations ?? {};
+
+  check("SOURCE_PROVENANCE", () => assertProductionSourceProvenance(manifest));
 
   for (const [setName, values] of Object.entries({
     collectSet: orations.collectSet ?? [],
