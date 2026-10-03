@@ -24,12 +24,30 @@ function freezeCard(card){
 }
 
 function normalizeReplacement(row){
+  const kind=upper(row.kind??"TEXT");
+  const latin=row.latin==null?null:String(row.latin);
+  const english=row.english==null?null:String(row.english);
+  const dialogue=kind==="RESPONSE" || kind==="VERSICLE";
+  if(!latin)throw new Error("Requiem replacement row requires Latin");
+  if(dialogue){
+    return freeze({
+      id:String(row.id),
+      kind:kind==="VERSICLE"?"TEXT":"RESPONSE",
+      primary:latin,
+      secondary:english,
+      alternate:null,
+      replaceOnToggle:false,
+      sourceCueIds:freeze([...arr(row.sourceCueIds).map(String)]),
+      requiemFixed:true,
+    });
+  }
+  if(!english)throw new Error("Requiem fixed text requires vernacular primary");
   return freeze({
     id:String(row.id),
-    kind:String(row.kind??"TEXT"),
-    primary:String(row.latin??""),
-    secondary:row.english==null?null:String(row.english),
-    alternate:row.latin==null?null:String(row.latin),
+    kind,
+    primary:english,
+    secondary:null,
+    alternate:latin,
     replaceOnToggle:true,
     sourceCueIds:freeze([...arr(row.sourceCueIds).map(String)]),
     requiemFixed:true,
