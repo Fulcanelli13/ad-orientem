@@ -1,5 +1,5 @@
 {
-  "release": "R18",
+  "release": "R19",
   "branch": "migration/mass-v1.76-r18",
   "base_branch": "migration/v43.33",
   "base_commit": "2a3ac224c409f8a069d425f6933833e53182add4",
@@ -9,17 +9,42 @@
   "production_index_switched": false,
   "modular_entry_staged": true,
   "modular_entry_runnable": false,
-  "blocking_reason": "Extracted source corpus and intact 6.5 MB reader-runtime-v1.76.js are not yet committed on this branch.",
+  "blocking_reason": "Objective/domain engine is ready and CI-certified. The v1.76 reader/presentation reference still requires exact import of its 57 embedded assets and reader runtime.",
   "required_before_runnable": [
-    "data/mass/v1.76/low-mass.json",
-    "data/mass/v1.76/sung-mass.json",
-    "migration/mass-v1.76/data-loaders/",
-    "src/mass/contracts/",
-    "src/mass/recovery/r07-r13-recovery-pack.js",
-    "src/mass/integration/",
-    "src/mass/diagnostics/",
-    "src/mass/ui/",
-    "src/mass/legacy/reader-runtime-v1.76.js"
+    "Exact v1.76 reader asset manifest + 57 asset payloads",
+    "Reader runtime reconstructed without embedded data URIs changing semantics",
+    "R17 modular bootstrap source-path reconciliation against canonical domain engine",
+    "Browser/device parity record"
   ],
-  "policy": "Do not wire repository root index.html to the modular Mass page until the missing corpus is committed and browser/device parity is recorded."
+  "policy": "Do not wire repository root index.html to the modular Mass page until the missing corpus is committed and browser/device parity is recorded.",
+  "objective_domain_engine": {
+    "status": "READY",
+    "source_branch": "implementation/r17-mass-convergence",
+    "canonical_core_events": 178,
+    "recovered_overlay_contracts": 13,
+    "ci_run": 37094461958,
+    "ci_conclusion": "success"
+  },
+  "missa_cantata_projection": {
+    "status": "READY",
+    "certificate": "MC-CERT-2026-09-22.1",
+    "bindings": 189,
+    "canonical_base_bindings": 178,
+    "certificate_only_states": 11,
+    "simple_default_projection_events": 161,
+    "incense_default_projection_events": 164,
+    "runtime_torchbearer_actor": false,
+    "sacred_ministers": false,
+    "ci_run": 37094461958,
+    "ci_conclusion": "success"
+  },
+  "reader_presentation_import": {
+    "status": "BLOCKED_EXACT_ASSET_IMPORT",
+    "reference": "v1.76",
+    "reader_runtime_bytes": 6579106,
+    "embedded_data_uri_count": 57,
+    "embedded_data_uri_text_chars": 6283178,
+    "approximate_non_asset_js_chars": 295385,
+    "rule": "Do not split ceremonial logic merely to satisfy upload transport. Extract/import the exact 57 assets and preserve the reader's behavior before enabling the modular parity entry."
+  }
 }
