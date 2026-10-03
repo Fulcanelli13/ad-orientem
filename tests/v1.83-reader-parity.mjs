@@ -30,4 +30,18 @@ assert.equal(
 assert.equal(Object.hasOwn(recovery,"cards"),false,
   "Partial recovery evidence must not masquerade as an authoritative reader card map");
 
-console.log("v1.83 reader parity gate: PASS — 30-card R17 surface remains blocked; 6/10 decompression splits are semantically recovered and 4/10 remain unresolved.");
+assert.equal(recovery.recoveredRuntimeRepairs.v183MergeGate.liveCards,48);
+assert.equal(recovery.recoveredRuntimeRepairs.v183MergeGate.canonicalMacros,30);
+assert.equal(recovery.recoveredRuntimeRepairs.v183MergeGate.hostElevationGate,"AO.SM.C0173 -> AO.SM.C0174");
+assert.equal(recovery.recoveredRuntimeRepairs.v183MergeGate.chaliceElevationGate,"AO.SM.C0180 -> AO.SM.C0181");
+assert.equal(recovery.recoveredRuntimeRepairs.v183MergeGate.gradualBlock,"AO.SM.B021");
+assert.equal(recovery.recoveredRuntimeRepairs.v183MergeGate.alleluiaTractBlock,"AO.SM.B022");
+assert.equal(recovery.recoveredRuntimeRepairs.v183MergeGate.mundaBlock,"AO.SM.B023");
+assert.equal(recovery.recoveredRuntimeRepairs.v183MergeGate.transientStateClearsAcrossCards,true);
+assert.deepEqual(recovery.recoveredRuntimeRepairs.v183MergeGate.parseQA,{
+  executableJsBlocks:23,
+  jsonBlocks:21,
+  errors:0
+});
+
+console.log("v1.83 reader parity gate: PASS — 30-card R17 surface remains blocked; 6/10 decompression splits are semantically recovered, 4/10 remain unresolved, and exact v1.83 elevation/pre-Gospel repairs are frozen.");
