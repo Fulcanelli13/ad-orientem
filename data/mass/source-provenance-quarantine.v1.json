@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "status": "P1_008_PROVENANCE_QUARANTINE",
+  "version": "1.1.0",
+  "status": "P1_008_REMEDIATED",
   "rule": "Legacy comparison text may be retained, but provenance from denied hosts cannot satisfy production source authority or Proper Resolver 2.0 readiness.",
   "deniedHosts": {
     "categpt.chat": {
@@ -9,19 +9,28 @@
       "affectedKnownFixtureRows": [
         {
           "slot": "SECRET_SET",
-          "blockId": "AO.SM.B040"
+          "blockId": "AO.SM.B040",
+          "replacementWitnessFile": "data/mass/golden-proper-witnesses.v1.json",
+          "replacementWitnessId": "MISSAL_ONLINE_XIX_SECRET",
+          "productionBlocker": false
         },
         {
           "slot": "COMMUNION",
-          "blockId": "AO.SM.B085"
+          "blockId": "AO.SM.B085",
+          "replacementWitnessFile": "data/mass/golden-proper-witnesses.v1.json",
+          "replacementWitnessId": "MISSAL_ONLINE_XIX_COMMUNION",
+          "productionBlocker": false
         },
         {
           "slot": "POSTCOMMUNION_SET",
-          "blockId": "AO.SM.B088"
+          "blockId": "AO.SM.B088",
+          "replacementWitnessFile": "data/mass/golden-proper-witnesses.v1.json",
+          "replacementWitnessId": "MISSAL_ONLINE_XIX_POSTCOMMUNION",
+          "productionBlocker": false
         }
       ]
     }
   },
   "knownLegacyFixture": "4 October 2026 / 19th Sunday after Pentecost",
-  "remediation": "Replace each quarantined row with a frozen witness accepted by the source hierarchy before using that fixture as golden production evidence."
+  "remediation": "CLOSED — all three quarantined 4 October 2026 fixture rows now have an accepted Missale Online witness pinned in data/mass/golden-proper-witnesses.v1.json."
 }
