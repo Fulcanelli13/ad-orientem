@@ -1,8 +1,84 @@
 {
-  "version": "1.0.0",
-  "status": "PENDING_SOURCE_AUDIT",
+  "version": "1.1.0",
+  "status": "SOURCE_AUDIT_IN_PROGRESS",
+  "runtimeReference": "v1.83 MERGE GATE",
   "authorityRule": "Typography is evidence only. Gesture/posture execution remains in canonical cue/state data.",
-  "acceptance": "reference cross count + exact position + section boundaries must match canonical data, or discrepancy must be explicitly reconciled.",
-  "entries": [],
-  "note": "Empty by design until the source-audit lane supplies reconciled block/cue rows. Runtime must not infer gestures from this register."
+  "acceptance": "Reference text, exact cross anchor/position and section boundaries must match canonical data, or the discrepancy remains a blocking correction candidate.",
+  "entries": [
+    {
+      "id": "SRC-PARITY-001",
+      "blockId": "AO.SM.B046",
+      "cueId": "AO.SM.C0148",
+      "title": "Sanctus / Benedictus — printed cross",
+      "canonicalTextFragment": "Benedíctus qui venit in nómine Dómini.",
+      "referenceTextFragment": "Benedíctus ✠ qui venit in nómine Dómini.",
+      "canonicalCrossAnchors": [],
+      "referenceCrossAnchors": [
+        "Benedíctus|qui venit"
+      ],
+      "canonicalSectionBoundaries": [
+        "BENEDICTUS"
+      ],
+      "referenceSectionBoundaries": [
+        "BENEDICTUS"
+      ],
+      "authorityVerdict": "CORRECTION_REQUIRED",
+      "action": "Restore the printed cross in the canonical text at Benedictus. Preserve existing gesture cue/action ownership; do not create a second gesture event.",
+      "runtimeImpact": "TEXT_ONLY_TRIGGER_NORMALIZATION",
+      "sourceRole": "1962_PRIMARY_PLUS_EDITORIAL_QA",
+      "unexplainedDiscrepancies": []
+    },
+    {
+      "id": "SRC-PARITY-002",
+      "blockId": "AO.SM.B047",
+      "cueId": "AO.SM.C0153",
+      "title": "Te igitur — bishop placeholder",
+      "canonicalTextFragment": "una cum fámulo tuo Papa nostro N. et Antístite nostro et ómnibus orthodóxis",
+      "referenceTextFragment": "una cum fámulo tuo Papa nostro N. et Antístite nostro N. et ómnibus orthodóxis",
+      "canonicalCrossAnchors": [],
+      "referenceCrossAnchors": [],
+      "canonicalSectionBoundaries": [
+        "TE_IGITUR_PRAYER_FOR_CHURCH"
+      ],
+      "referenceSectionBoundaries": [
+        "TE_IGITUR_PRAYER_FOR_CHURCH"
+      ],
+      "authorityVerdict": "CORRECTION_REQUIRED",
+      "action": "Restore the bishop placeholder N. after Antístite nostro in canonical Latin text. No ceremonial-state change.",
+      "runtimeImpact": "TEXT_ONLY",
+      "sourceRole": "1962_PRIMARY_PLUS_EDITORIAL_QA",
+      "unexplainedDiscrepancies": []
+    },
+    {
+      "id": "SRC-PARITY-003",
+      "blockId": "AO.SM.B057",
+      "cueId": "AO.SM.C0194",
+      "title": "Memento of the Dead — missing conjunction",
+      "canonicalTextFragment": "locum refrigérii, lucis pacis ut indúlgeas",
+      "referenceTextFragment": "locum refrigérii, lucis et pacis ut indúlgeas",
+      "canonicalCrossAnchors": [],
+      "referenceCrossAnchors": [],
+      "canonicalSectionBoundaries": [
+        "MEMENTO_DEAD_RESUMED_PRAYER"
+      ],
+      "referenceSectionBoundaries": [
+        "MEMENTO_DEAD_RESUMED_PRAYER"
+      ],
+      "authorityVerdict": "CORRECTION_REQUIRED",
+      "action": "Restore et between lucis and pacis in canonical Latin text. No ceremonial-state change.",
+      "runtimeImpact": "TEXT_ONLY",
+      "sourceRole": "1962_PRIMARY_PLUS_EDITORIAL_QA",
+      "unexplainedDiscrepancies": []
+    }
+  ],
+  "rangeFindings": [
+    {
+      "id": "SRC-CANON-CROSS-RANGE-001",
+      "scope": "Te igitur through Per ipsum",
+      "finding": "Cross counts were reported as matching the 1962 form in the active source-audit lane.",
+      "status": "COUNT_MATCH_REPORTED_POSITION_ROWS_PENDING",
+      "mergeEffect": "Does not close G1 until exact block/cue position rows are populated."
+    }
+  ],
+  "note": "Only reconciled findings with pinned canonical IDs are included. Runtime must not infer gestures from this register."
 }
