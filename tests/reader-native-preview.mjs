@@ -59,6 +59,24 @@ assert.equal(liveReady.model.cardForEvent("MC-CAN-180").card.sectionId,"AO.CANON
 assert.equal(liveReady.model.cards[18].guideSequence,15);
 assert.equal(liveReady.model.cards[27].sourceSequence,19);
 
+for(const rite of ["ASPERGES","PALM","ASH","CANDLEMAS"]){
+  await assert.rejects(
+    ()=>prepareNativeReaderPreview({
+      prepared:{
+        ...livePrepared,
+        session:{
+          ...livePrepared.session,
+          resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:[rite]},
+          plan:{...livePrepared.session.plan,precedingGraphs:[rite]},
+        },
+      },
+      presentationData:data,eventData,cueRegistries,guideData,
+    }),
+    new RegExp("SPECIAL_PRELUDE_NATIVE_PREVIEW_PENDING:"+rite),
+    rite+" silently bypassed native special-prelude mounting"
+  );
+}
+
 const prepared={
   ...livePrepared,
   session:{
