@@ -1,4 +1,5 @@
 import { assertProperManifestV2, validateProperManifestV2 } from "../src/mass/proper-contracts.js";
+import { makeResolvedMass } from "../src/mass/session-engine.js";
 
 const expect=(x,m)=>{if(!x)throw new Error(m)};
 
@@ -51,5 +52,33 @@ expect(validateProperManifestV2(ember).pass,"ordered interlection sequence did n
 const parityPending=structuredClone(ordinary);
 parityPending.crossParityStatus="PENDING";
 expect(!validateProperManifestV2(parityPending).pass,"required cross parity PENDING did not fail closed");
+
+let sessionBlocked=false;
+try {
+  makeResolvedMass({
+    date:"2026-10-04",
+    form:"low",
+    presentationMode:"live",
+    calendarCelebration:{id:"test",type:"CALENDAR"},
+    requestedCelebration:{id:"holy_thursday_fixture",type:"SPECIAL_FORMULARY"},
+    proper:{status:"READY",data:holyThursday},
+  });
+} catch { sessionBlocked=true; }
+expect(sessionBlocked===false,"valid Proper v2 was blocked by session boundary");
+
+const brokenAtBoundary=structuredClone(holyThursday);
+brokenAtBoundary.canonProperInserts.hancIgitur=null;
+let brokenBlocked=false;
+try {
+  makeResolvedMass({
+    date:"2026-10-04",
+    form:"low",
+    presentationMode:"live",
+    calendarCelebration:{id:"test",type:"CALENDAR"},
+    requestedCelebration:{id:"holy_thursday_fixture",type:"SPECIAL_FORMULARY"},
+    proper:{status:"READY",data:brokenAtBoundary},
+  });
+} catch { brokenBlocked=true; }
+expect(brokenBlocked,"invalid Proper v2 bypassed session boundary");
 
 console.log("Proper Resolver 2.0 source-reconciliation contracts PASS.");
