@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {
   createReaderStructureController,
+  LIVE_STRUCTURE_STATUS,
   makeStructureCards,
   structureSupport,
 } from "../src/mass/reader-structure.js";
@@ -23,43 +24,47 @@ assert.equal(live[0].title,"Preparatory Rites");
 assert.equal(live.at(-1).id,"AO.R17.LIVE.C20");
 assert.deepEqual([...live[9].baseIds],["AO.SM.M10","AO.SM.M11"]);
 
-const ctrl=createReaderStructureController(ordinary);
-assert.equal(ctrl.supported,true);
-let s=ctrl.snapshot();
+assert.equal(LIVE_STRUCTURE_STATUS,"PROVISIONAL_V1_65_DONOR_ONLY");
+assert.equal(structureSupport(ordinary).supported,false);
+assert.equal(structureSupport(ordinary).reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
+
+const blockedLive=createReaderStructureController(ordinary);
+assert.equal(blockedLive.supported,false);
+let s=blockedLive.snapshot();
 assert.equal(s.mode,"LIVE");
-assert.equal(s.localIndex,1);
-assert.equal(s.localTotal,1);
-assert.equal(s.title,"Preparatory Rites");
+assert.equal(s.total,20);
+assert.equal(s.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
+const blockedBefore=s;
+blockedLive.next();
+assert.deepEqual(blockedLive.snapshot(),blockedBefore,"provisional LIVE donor navigated despite v1.83 gate");
+
+const missalPrepared={
+  ...ordinary,
+  readerPreferences:{mode:"MISSAL"},
+  session:{
+    ...ordinary.session,
+    resolvedMass:{...ordinary.session.resolvedMass,presentationMode:"MISSAL"},
+  },
+};
+const ctrl=createReaderStructureController(missalPrepared);
+assert.equal(ctrl.supported,true);
+s=ctrl.snapshot();
+assert.equal(s.mode,"MISSAL");
+assert.equal(s.title,"Introit & Preparatory Prayers");
 
 ctrl.goToBase("AO.SM.M11");
 s=ctrl.snapshot();
-assert.equal(s.cardId,"AO.R17.LIVE.C10");
-assert.equal(s.sectionId,"offertory");
-assert.equal(s.localIndex,1);
-assert.equal(s.localTotal,2);
-
-ctrl.setMode("MISSAL");
-s=ctrl.snapshot();
-assert.equal(s.mode,"MISSAL");
 assert.equal(s.baseIds[0],"AO.SM.M11");
 assert.equal(s.title,"Orate fratres & Secret");
 assert.equal(s.localIndex,2);
 assert.equal(s.localTotal,4);
 
+const beforeLiveAttempt=s;
 ctrl.setMode("LIVE");
 s=ctrl.snapshot();
-assert.equal(s.cardId,"AO.R17.LIVE.C10");
-assert.equal(s.anchorBaseId,"AO.SM.M11");
-
-ctrl.goToBase("AO.SM.M09");
-s=ctrl.snapshot();
-assert.equal(s.sectionId,"catechumens");
-assert.equal(s.localIndex,8);
-assert.equal(s.localTotal,8);
-ctrl.next();
-s=ctrl.snapshot();
-assert.equal(s.cardId,"AO.R17.LIVE.C10");
-assert.equal(s.sectionId,"offertory");
+assert.equal(s.mode,"MISSAL","unsupported LIVE request changed the active structure");
+assert.equal(s.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
+assert.equal(s.cardId,beforeLiveAttempt.cardId);
 
 const votive={
   ...ordinary,
