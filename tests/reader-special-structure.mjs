@@ -48,7 +48,7 @@ assert.deepEqual([...p.objectStates],["CANDLE_STATE_OVERLAY"]);
 
 p=projectSpecialStructure(prepared({
   overlays:["REQUIEM"],
-  proper:{status:"READY",data:{schema:"ao-proper-manifest-v2",version:"2.0.0",identity:{},slots:{},orations:{},sourceChain:[]}},
+  proper:{status:"READY",data:{}},
 }),sources);
 assert.equal(p.ending.blessingAllowed,false);
 assert.equal(p.segments.some(x=>x.id==="REQUIEM"),true);
