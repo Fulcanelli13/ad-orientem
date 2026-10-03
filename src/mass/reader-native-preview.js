@@ -300,6 +300,12 @@ export async function mountNativeReaderPreview({
     });
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
     root.dataset.r17NativeCue=state.nativeCueId??"unresolved";
+    root.dataset.r17OwnerGesture=state.ownership?.gesture??"UNRESOLVED";
+    root.dataset.r17OwnerResponse=state.ownership?.response??"UNRESOLVED";
+    root.dataset.r17OwnerPriestVoice=state.ownership?.priestVoice??"UNRESOLVED";
+    root.dataset.r17OwnerPriestPosition=state.ownership?.priestPosition??"UNRESOLVED";
+    root.dataset.r17OwnerPosture=state.ownership?.posture??"UNRESOLVED";
+    root.dataset.r17OwnerSchola=state.ownership?.schola??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll){
@@ -329,6 +335,12 @@ export async function mountNativeReaderPreview({
     });
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
     root.dataset.r17NativeCue=state.nativeCueId??"unresolved";
+    root.dataset.r17OwnerGesture=state.ownership?.gesture??"UNRESOLVED";
+    root.dataset.r17OwnerResponse=state.ownership?.response??"UNRESOLVED";
+    root.dataset.r17OwnerPriestVoice=state.ownership?.priestVoice??"UNRESOLVED";
+    root.dataset.r17OwnerPriestPosition=state.ownership?.priestPosition??"UNRESOLVED";
+    root.dataset.r17OwnerPosture=state.ownership?.posture??"UNRESOLVED";
+    root.dataset.r17OwnerSchola=state.ownership?.schola??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
   }
 
