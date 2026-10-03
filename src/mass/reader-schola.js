@@ -1,9 +1,9 @@
-// Native Schola state for certified Missa Cantata.
+// Native Schola state for certified sung forms. Low Mass is a structural absence; Solemn shares the recovered sung Schola donor.
 // The Schola has its own progression clock. Reader card changes may select a
 // relevant track, but only exact Schola cues or explicit Schola navigation
 // advance within that track.
 
-const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"]);
+const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 
 const TRACK_SPECS=Object.freeze([
   {id:"INTROIT",kind:"PROPER",slot:"INTROIT",cards:[1]},
@@ -56,6 +56,9 @@ function properSegments(properSlots,slot){
 
 export function buildNativeScholaTracks({sungCorpus,properSlots,prepared}={}){
   const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
+  if(form==="LOW")return Object.freeze({
+    supported:true,structuralAbsence:true,reason:null,tracks:Object.freeze([])
+  });
   if(!SUPPORTED_FORMS.has(form))return Object.freeze({
     supported:false,reason:"SCHOLA_NOT_CERTIFIED_FOR_"+(form||"UNKNOWN_FORM"),tracks:Object.freeze([])
   });
@@ -72,6 +75,17 @@ export function buildNativeScholaTracks({sungCorpus,properSlots,prepared}={}){
 
 export function createNativeScholaController(args={}){
   const built=buildNativeScholaTracks(args);
+  if(built.structuralAbsence){
+    const state=()=>Object.freeze({
+      supported:true,structuralAbsence:true,reason:null,schola:null,
+      ownership:"R18_FORM_ABSENT_SCHOLA",trackId:null,index:0,total:0,complete:true,
+    });
+    return Object.freeze({
+      schema:"ao-r18-native-schola-absence-v1",supported:true,structuralAbsence:true,reason:null,
+      tracks:Object.freeze([]),trackIds:Object.freeze([]),project:state,
+      activateForCard:state,syncCue:state,next:state,previous:state,finish:state,selectTrack:state,
+    });
+  }
   if(!built.supported)return Object.freeze({
     schema:"ao-r17-native-schola-v1",supported:false,reason:built.reason,
     project:()=>Object.freeze({supported:false,reason:built.reason,schola:null,ownership:"LEGACY_FALLBACK"}),
