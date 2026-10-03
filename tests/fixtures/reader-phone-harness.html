@@ -27,6 +27,7 @@ const proper={
   communion:t("Floréte, flores","Send forth flowers"),
   postcommunions:[t("Sacratíssimæ Genetrícis tuæ","May the prayers of Thy most holy Mother")],
 };
+const withAsperges=new URLSearchParams(location.search).get("asperges")==="1";
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:"2026-10-04",
@@ -37,9 +38,10 @@ const resolvedMass={
   explicitlySelectedCelebration:true,
   proper:{status:"READY",data:proper,sourcePath:"Sancti/10-07"},
   overlays:["VOTIVE_PROPER"],
-  precedingRites:[],
+  precedingRites:withAsperges?["ASPERGES"]:[],
   followingActions:[],
   distinctRite:null,
+  provenance:{seasonalMode:null},
 };
 const prepared={
   schema:"ao-mass-entry-prepared-v1",
@@ -47,7 +49,7 @@ const prepared={
     resolvedMass,
     plan:{
       kind:"MASS",
-      precedingGraphs:[],
+      precedingGraphs:withAsperges?["ASPERGES"]:[],
       followingGraphs:[],
       overlayGraphs:["VOTIVE_PROPER"],
       normalLastGospel:true,
