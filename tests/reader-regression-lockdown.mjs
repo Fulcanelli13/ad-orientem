@@ -9,7 +9,7 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"BLOCKED_PENDING_SOURCE_FIRST_LIVE_INTEGRATION");
+assert.equal(release.status,"BLOCKED_PENDING_SPECIAL_STRUCTURE_AND_PHONE_ACCEPTANCE");
 assert.equal(release.productionDefault,"LEGACY");
 assert.equal(resolveReaderUiMode({}),"LEGACY","reader default changed before release certification");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
@@ -31,10 +31,10 @@ assert.equal(regressionById.get("V181-CARD-TRANSIENT-LEAK").status,"FIXED_AND_TE
 assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").fixedChannels,["gesture","response","bell","cinematic"]);
 assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").openChannels,[]);
 assert.equal(regressionById.get("V183-GRADUAL-COMPOSITION").status,"RECOVERED_AND_CONTRACT_LOCKED");
-assert.equal(regressionById.get("V181-PAX-OWNERSHIP").status,"MECHANICS_TESTED_SOURCE_CERTIFICATION_PENDING");
+assert.equal(regressionById.get("V181-PAX-OWNERSHIP").status,"CERTIFIED_PRIMARY_1962_RUBRIC");
 assert.equal(regressionById.get("V183-NATIVE-LIVE-GATE-BYPASS").status,"FIXED_AND_TESTED_R17");
 
-assert.equal(LIVE_STRUCTURE_STATUS,"SOURCE_FIRST_CANON_CERTIFIED__FULL_LIVE_PENDING");
+assert.equal(LIVE_STRUCTURE_STATUS,"SOURCE_FIRST_FULL_MASS_CERTIFIED");
 const livePrepared={
   readerPreferences:{mode:"LIVE"},
   session:{
@@ -43,12 +43,11 @@ const livePrepared={
   },
 };
 const support=structureSupport(livePrepared);
-assert.equal(support.supported,false);
-assert.equal(support.reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
+assert.equal(support.supported,true);
+assert.equal(support.reason,null);
 
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
-  "LIVE_SOURCE_STRUCTURE_INTEGRATION",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
@@ -59,6 +58,17 @@ for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NA
 const formSwitch=release.protectedInvariants.find(x=>x.id==="FORM_SWITCH_NO_LEGACY_FALLBACK");
 assert.ok(formSwitch?.channels?.includes("priestAction"),"priest-action ownership disappeared from form-switch gate");
 assert.match(String(formSwitch?.transientPolicy??""),/native-certified/i,"form transients lost native certification");
+
+const liveStructure=release.protectedInvariants.find(x=>x.id==="LIVE_SOURCE_STRUCTURE_INTEGRATION");
+assert.equal(liveStructure?.status,"CERTIFIED","LIVE blocker disappeared without source-first certification");
+assert.equal(liveStructure?.totalLiveSteps,39);
+assert.equal(liveStructure?.sourceFirstCanonSteps,14);
+assert.equal(liveStructure?.replacedCanonMacroSteps,5);
+assert.equal(liveStructure?.historical48RequiredForRelease,false);
+assert.equal(liveStructure?.historicalLive20ReleaseAuthority,false);
+const modeSwitch=release.protectedInvariants.find(x=>x.id==="NATIVE_MODE_SWITCH");
+assert.match(String(modeSwitch?.status??""),/SOURCE_FIRST_LIVE_CERTIFIED/);
+assert.match(String(modeSwitch?.status??""),/PHONE_ACCEPTANCE/);
 
 const plannedRuntime=release.protectedInvariants.find(x=>x.id==="PLAN_AWARE_OBJECTIVE_RUNTIME");
 assert.equal(plannedRuntime?.status,"CERTIFIED_LOW_SOLEMN_RUNTIME_OWNERSHIP",
@@ -93,7 +103,7 @@ assert.equal(solemnPaxSeparation?.peacePrayerEvent,"MC-COM-150");
 assert.equal(solemnPaxSeparation?.ministerialPaxEvent,"MC-COM-160");
 
 const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
-assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_SOURCE_FIRST_LIVE",
+assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__SOURCE_FIRST_LIVE_INTEGRATED",
   "Gradual architecture blocker disappeared without recovered contract lock");
 assert.equal(gradualArchitecture?.gradualBlock,"AO.SM.B021");
 assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
@@ -178,7 +188,8 @@ assert.match(objectiveSource,/MC-COM-160/);
 const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
 assert.match(nativeSource,/allowPresentationModeSwitch:false/);
 assert.match(nativeSource,/const structuralSupport=structureSupport\(prepared\)/);
-assert.match(nativeSource,/V1_83_48_CARD_LIVE_MAP_REQUIRED|structuralSupport\.reason/);
+assert.match(nativeSource,/structuralSupport\.reason/);
+assert.match(nativeSource,/canonSourceMap:data\?\.canonSourceMap/,"native reader lost certified Canon source-map input");
 assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
@@ -221,7 +232,7 @@ for(const name of readdirSync(massSourceDir)){
     name+" embedded an oversized image payload into modular Mass source");
 }
 
-console.log("reader regression lockdown: PASS — historical v1.83 invariants remain protected while release is governed by source-first LIVE certification.");
+console.log("reader regression lockdown: PASS — source-first LIVE is certified; historical v1.83 evidence remains non-authoritative.");
 
 const transientSource=readFileSync(new URL("../src/mass/reader-transients.js",import.meta.url),"utf8");
 assert.match(transientSource,/AO\.SM\.C0145/);
