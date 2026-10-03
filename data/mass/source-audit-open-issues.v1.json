@@ -11,8 +11,12 @@
       "finding": "B020 Epistle/lesson output may leak literal bilingual response debris around Deo gratias / Thanks be to God.",
       "blockId": "AO.V4.B020",
       "classification": "PROPER_CONTAINER_COMPOSITION",
-      "status": "PINNED_BLOCK_NEEDS_RUNTIME_PATH_TRACE",
-      "requiredAction": "Trace Proper-container composition and response ownership before proposing canonical/runtime patch. The fixed response itself is not presumed erroneous."
+      "status": "OWNERSHIP_PINNED_RUNTIME_COMPOSITION_PENDING",
+      "requiredAction": "Trace renderer/Proper composition. Preserve C0075 as Proper payload and C0076 as separate fixed response.",
+      "cueIds": [
+        "AO.SM.C0075",
+        "AO.SM.C0076"
+      ]
     },
     {
       "id": "P1-005",
@@ -22,8 +26,13 @@
       "finding": "B026 Gospel output may leak literal bilingual response debris around Laus tibi, Christe / Praise be to thee, O Christ.",
       "blockId": "AO.V4.B026",
       "classification": "PROPER_CONTAINER_COMPOSITION",
-      "status": "PINNED_BLOCK_NEEDS_RUNTIME_PATH_TRACE",
-      "requiredAction": "Trace Proper-container composition and response ownership before proposing canonical/runtime patch. The fixed response itself is not presumed erroneous."
+      "status": "OWNERSHIP_PINNED_RUNTIME_COMPOSITION_PENDING",
+      "requiredAction": "Trace renderer/Proper composition. Preserve C0086 as Proper payload, C0087 as fixed response, and C0088 as priest-private prayer.",
+      "cueIds": [
+        "AO.SM.C0086",
+        "AO.SM.C0087",
+        "AO.SM.C0088"
+      ]
     },
     {
       "id": "P1-006",
@@ -32,8 +41,9 @@
       ],
       "finding": "QA.016 passes falsely when whole Proper containers are excluded from completeness coverage.",
       "classification": "QA_COVERAGE_DEFECT",
-      "status": "QA_REPLACEMENT_REQUIRED",
-      "requiredAction": "Expand completeness QA to include every required Proper container and resolved subnode. Do not accept legacy QA.016 as a merge gate."
+      "status": "R17_REPLACEMENT_IMPLEMENTED_PENDING_CI",
+      "requiredAction": "Retire legacy QA.016 as a merge authority after replacement CI and fixture coverage are certified.",
+      "resolution": "src/mass/proper-container-coverage.js + data/mass/proper-container-ownership.v1.json + session-level Proper v2 gate"
     },
     {
       "id": "P1-007",
