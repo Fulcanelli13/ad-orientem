@@ -1,57 +1,90 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "SOURCE_AUDIT_OPEN_ISSUES",
   "rule": "This ledger tracks findings that must not be patched into runtime until exact ownership/source reconciliation is pinned. It is not executable liturgical data.",
   "issues": [
     {
-      "id": "SRC-OPEN-001",
-      "finding": "B020 Epistle/lesson output reportedly contains literal bilingual response debris around Deo gratias / Thanks be to God.",
+      "id": "P1-004",
+      "aliases": [
+        "SRC-OPEN-001"
+      ],
+      "finding": "B020 Epistle/lesson output may leak literal bilingual response debris around Deo gratias / Thanks be to God.",
       "blockId": "AO.V4.B020",
+      "classification": "PROPER_CONTAINER_COMPOSITION",
       "status": "PINNED_BLOCK_NEEDS_RUNTIME_PATH_TRACE",
-      "requiredAction": "Trace Proper-container composition and response ownership before proposing canonical/runtime patch."
+      "requiredAction": "Trace Proper-container composition and response ownership before proposing canonical/runtime patch. The fixed response itself is not presumed erroneous."
     },
     {
-      "id": "SRC-OPEN-002",
-      "finding": "B026 Gospel output reportedly contains literal bilingual response debris around Laus tibi, Christe / Praise be to thee, O Christ.",
+      "id": "P1-005",
+      "aliases": [
+        "SRC-OPEN-002"
+      ],
+      "finding": "B026 Gospel output may leak literal bilingual response debris around Laus tibi, Christe / Praise be to thee, O Christ.",
       "blockId": "AO.V4.B026",
+      "classification": "PROPER_CONTAINER_COMPOSITION",
       "status": "PINNED_BLOCK_NEEDS_RUNTIME_PATH_TRACE",
-      "requiredAction": "Trace Proper-container composition and response ownership before proposing canonical/runtime patch."
+      "requiredAction": "Trace Proper-container composition and response ownership before proposing canonical/runtime patch. The fixed response itself is not presumed erroneous."
     },
     {
-      "id": "SRC-OPEN-003",
-      "finding": "QA.016 reportedly passes falsely because Proper containers are excluded from its coverage.",
-      "status": "QA_DEFECT_NEEDS_TEST_OWNER_PIN",
-      "requiredAction": "Expand completeness QA to include Proper containers; do not use the current pass as a merge gate."
+      "id": "P1-006",
+      "aliases": [
+        "SRC-OPEN-003"
+      ],
+      "finding": "QA.016 passes falsely when whole Proper containers are excluded from completeness coverage.",
+      "classification": "QA_COVERAGE_DEFECT",
+      "status": "QA_REPLACEMENT_REQUIRED",
+      "requiredAction": "Expand completeness QA to include every required Proper container and resolved subnode. Do not accept legacy QA.016 as a merge gate."
     },
     {
-      "id": "SRC-OPEN-004",
-      "finding": "B016 English text reportedly duplicates 'to God'.",
-      "blockId": "AO.V4.B016",
-      "status": "PINNED_BLOCK_NEEDS_EXACT_FRAGMENT",
-      "requiredAction": "Pin exact source/canonical fragment before patch."
+      "id": "P1-007",
+      "aliases": [
+        "SRC-OPEN-007"
+      ],
+      "finding": "Gloria/Credo cue duplication or overstrong bow ownership has been reported.",
+      "classification": "EVENT_OWNERSHIP",
+      "status": "NEEDS_EVENT_OWNERSHIP_TRACE",
+      "requiredAction": "Separate textual cue ownership from posture/gesture state and identify duplicate canonical/runtime IDs before patching."
     },
     {
-      "id": "SRC-OPEN-005",
-      "finding": "B037 Lavabo doxology reportedly duplicates material.",
-      "blockId": "AO.V4.B037",
-      "status": "PINNED_BLOCK_NEEDS_EXACT_FRAGMENT",
-      "requiredAction": "Pin exact duplicated fragment and block ownership before patch."
+      "id": "P1-009",
+      "aliases": [
+        "SRC-OPEN-004"
+      ],
+      "finding": "B016 English assembly yields 'Glory to God in the highest to God.' because AO.SM.C0053 and AO.SM.C0054 are semantically split in English.",
+      "blockId": "AO.SM.B016",
+      "cueIds": [
+        "AO.SM.C0053",
+        "AO.SM.C0054"
+      ],
+      "classification": "CUE_SEGMENTATION_ASSEMBLY",
+      "status": "PINNED_CORRECTION_CLASS",
+      "requiredAction": "Repair English cue assembly/segmentation without altering the Latin Glória in excélsis Deo or unrelated cue timing."
     },
     {
-      "id": "SRC-OPEN-006",
+      "id": "P1-010",
+      "aliases": [
+        "SRC-OPEN-005"
+      ],
+      "finding": "B037 English Lavabo contains the doxology twice: once with V/R labels and again as duplicate plain text.",
+      "blockId": "AO.SM.B037",
+      "classification": "ENGLISH_BLOCK_DUPLICATION",
+      "status": "PINNED_BLOCK_NEEDS_CUE_OWNER_TRACE",
+      "requiredAction": "Identify the exact B037 English cue/unit ownership and remove only the duplicate projection; preserve the single canonical doxology."
+    },
+    {
+      "id": "P1-011",
+      "aliases": [
+        "SRC-OPEN-006"
+      ],
       "finding": "Confiteor accent discrepancy reported: orare vs oráre.",
+      "classification": "TEXT_ACCENT_PARITY",
       "status": "NEEDS_BLOCK_CUE_PIN",
       "requiredAction": "Locate exact canonical block/cue and source witness before patch."
     },
     {
-      "id": "SRC-OPEN-007",
-      "finding": "Gloria/Credo cue duplication and authority ownership issue reported.",
-      "status": "NEEDS_EVENT_OWNERSHIP_TRACE",
-      "requiredAction": "Separate textual cue ownership from posture/gesture state and identify duplicate canonical/runtime IDs."
-    },
-    {
       "id": "SRC-OPEN-008",
       "finding": "Fixture provenance defects reported in the source-audit lane.",
+      "classification": "FIXTURE_PROVENANCE",
       "status": "NEEDS_FIXTURE_IDS",
       "requiredAction": "Pin affected fixtures and provenance fields before changing source hierarchy."
     }
