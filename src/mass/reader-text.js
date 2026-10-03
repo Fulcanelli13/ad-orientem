@@ -77,12 +77,23 @@ export function selectReaderTextCorpus({form,lowCorpus,sungCorpus}={}){
 }
 
 function ordinaryParagraphs(block){
-  return (block.units??[]).map(unit=>({
-    id:unit.cue_id,
-    kind:unitKind(unit),
-    latin:unit.latin,
-    vernacular:unit.english,
-  }));
+  return (block.units??[])
+    .filter(unit=>Boolean(String(unit?.latin??"").trim() || String(unit?.english??"").trim()))
+    .map(unit=>({
+      id:unit.cue_id,
+      kind:unitKind(unit),
+      latin:unit.latin,
+      vernacular:unit.english,
+    }));
+}
+
+function stateOnlyBlock(block){
+  const units=block.units??[];
+  return units.length>0 && units.every(unit=>
+    !String(unit?.latin??"").trim() &&
+    !String(unit?.english??"").trim() &&
+    ["state","pause"].includes(String(unit?.type??"").toLowerCase())
+  );
 }
 
 function properParagraphs(block,properSlots){
@@ -135,7 +146,8 @@ export function buildReaderSectionCard({
     const raw=block.Proper_Slot
       ? properParagraphs(block,properSlots)
       : ordinaryParagraphs(block);
-    if(raw.length===0 && !explicitNotApplicable && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
+    const stateOnly=stateOnlyBlock(block);
+    if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");
     }
     const projected=raw.length ? projectResolvedReaderText({status:"READY",paragraphs:raw}) : [];
@@ -144,11 +156,13 @@ export function buildReaderSectionCard({
       blockId:block.Block_ID,
       title:block.Title,
       properSlot:block.Proper_Slot,
+      stateOnly,
       firstParagraphIndex:projected.length ? paragraphs.length-projected.length : null,
       paragraphCount:projected.length,
     }));
   }
-  if(paragraphs.length===0) throw new Error(section.sectionId+": refusing blank reader card");
+  const stateOnlyCard=paragraphs.length===0 && blockMeta.some(block=>block.stateOnly);
+  if(paragraphs.length===0 && !stateOnlyCard) throw new Error(section.sectionId+": refusing blank reader card");
 
   return Object.freeze({
     schema:"ao-reader-section-card-v1",
@@ -159,6 +173,7 @@ export function buildReaderSectionCard({
     rubricKey:section.rubricKey,
     macroId:mid,
     paragraphs:Object.freeze(paragraphs),
+    stateOnly:stateOnlyCard,
     blocks:Object.freeze(blockMeta),
     provenance:Object.freeze({
       textCorpusForm:corpus.form,
