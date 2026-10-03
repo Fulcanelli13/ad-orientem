@@ -47,6 +47,8 @@ assert.equal(support.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "G6_48_CARD_MAP",
+  "FORM_TRANSIENT_PARITY",
+  "FORM_LIFECYCLE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
@@ -56,6 +58,9 @@ assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker 
 for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
   assert.equal(release.protectedInvariants.find(x=>x.id===id)?.status,status,id+" release gate lost certification");
 }
+const formSwitch=release.protectedInvariants.find(x=>x.id==="FORM_SWITCH_NO_LEGACY_FALLBACK");
+assert.ok(formSwitch?.channels?.includes("priestAction"),"priest-action ownership disappeared from form-switch gate");
+assert.match(String(formSwitch?.transientPolicy??""),/fail closed/i,"uncertified form transients no longer fail closed");
 
 const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
 assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_G6",
@@ -116,6 +121,9 @@ assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
 assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
+assert.match(nativeSource,/postureOnly:ready\.cueState\.supported/,"native reader resumed reading legacy non-posture rails");
+assert.match(nativeSource,/r17OwnerPriestAction/,"native reader lost priest-action ownership diagnostics");
+assert.match(nativeSource,/r17OwnerSacredMinister/,"native reader lost sacred-minister ownership diagnostics");
 assert.match(nativeSource,/createReaderTransientController/,"native reader lost native bell\/cinematic controller");
 assert.match(nativeSource,/r17OwnerBell/,"native reader lost bell ownership diagnostics");
 assert.match(nativeSource,/r17OwnerCinematic/,"native reader lost cinematic ownership diagnostics");
@@ -157,6 +165,7 @@ assert.match(transientSource,/AO\.SM\.C0174/);
 assert.match(transientSource,/AO\.SM\.C0181/);
 assert.match(transientSource,/AO\.SM\.C0225/);
 assert.match(transientSource,/canonicalAuthority:false/,"cinematic presentation acquired canonical authority");
+assert.match(transientSource,/R18_FORM_TRANSIENT_FAIL_CLOSED/,"LOW/SOLEMN uncertified transients stopped failing closed");
 
 assert.match(transientSource,/AO\.SM\.C0204/,"minor elevation cinematic anchor lost");
 assert.match(transientSource,/AO\.SM\.C0242/,"Ecce Agnus Dei cinematic anchor lost");

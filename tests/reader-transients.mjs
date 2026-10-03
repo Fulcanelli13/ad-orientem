@@ -36,9 +36,12 @@ const noCommunion=createReaderTransientController({events,prepared:{session:{res
 assert.equal(noCommunion.project("AO.SM.C0225").bell,null,"conditional Communion warning fired without communicants");
 assert.equal(noCommunion.project("AO.SM.C0225").ownership.bell,"R17_CONDITION_FAIL_CLOSED");
 
-const unsupported=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"LOW",conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]}}}});
-assert.equal(unsupported.supported,false);
-assert.equal(unsupported.project("AO.SM.C0174").ownership.bell,"LEGACY_FALLBACK");
+for(const form of ["LOW","SOLEMN"]){
+  const unsupported=createReaderTransientController({events,prepared:{session:{resolvedMass:{form,conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]}}}});
+  assert.equal(unsupported.supported,false);
+  assert.equal(unsupported.project("AO.SM.C0174").ownership.bell,"R18_FORM_TRANSIENT_FAIL_CLOSED");
+  assert.equal(unsupported.project("AO.SM.C0174").ownership.cinematic,"R18_FORM_TRANSIENT_FAIL_CLOSED");
+}
 
 const partA={part:"Mass of the Catechumens",title:"Credo"},partB={part:"Mass of the Faithful",title:"Offertory"};
 assert.equal(partTransitionCinematic(partA,{...partA,title:"Collect"}),null,"same-part card change triggered part cinema");

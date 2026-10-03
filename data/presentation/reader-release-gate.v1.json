@@ -123,7 +123,8 @@
       "source": "v43.57 B005 / v1.74c R02 recovered Low donor",
       "canonicalCueStates": 275,
       "responseDefault": "MINISTER_OR_SERVER__FAITHFUL_LANE_SUPPRESSED",
-      "schola": "STRUCTURALLY_ABSENT"
+      "schola": "STRUCTURALLY_ABSENT",
+      "scope": "reader cue/rail state only; lifecycle and form-specific transients separately gated"
     },
     {
       "id": "SOLEMN_MASS_NATIVE_STATE",
@@ -131,7 +132,8 @@
       "controller": "src/mass/reader-form-state.js",
       "source": "shared Sung cue source + explicit v43.58 B006/R04 deltas",
       "sacredMinisterDeltas": 19,
-      "paxTransferAuthority": "INDEPENDENT_RELEASE_BLOCKER_FAIL_CLOSED"
+      "paxTransferAuthority": "INDEPENDENT_RELEASE_BLOCKER_FAIL_CLOSED",
+      "scope": "reader cue/rail state only; lifecycle, Pax authority and form-specific transients separately gated"
     },
     {
       "id": "FORM_SWITCH_NO_LEGACY_FALLBACK",
@@ -147,9 +149,11 @@
         "response",
         "priestVoice",
         "priestPosition",
-        "sacredMinister"
+        "sacredMinister",
+        "priestAction"
       ],
-      "postureException": "FOLLOW_CONGREGATION remains intentionally observational"
+      "postureException": "FOLLOW_CONGREGATION remains intentionally observational",
+      "transientPolicy": "LOW/SOLEMN bell and cinematic state fail closed until separately certified"
     },
     {
       "id": "FORM_PARITY_REGRESSION",
@@ -162,6 +166,16 @@
       "id": "G6_48_CARD_MAP",
       "severity": "RELEASE_BLOCKER",
       "detail": "Exact ordered v1.83 C01-C48 LIVE enumeration is still unrecovered. Nine of the ten historical v1.81 decompression splits are semantically recovered; exactly one remains unresolved: a Canon boundary."
+    },
+    {
+      "id": "FORM_TRANSIENT_PARITY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Low and Solemn bell/cinematic cue ownership is not yet independently certified. R18 fails these transient channels closed instead of borrowing Missa Cantata or legacy state."
+    },
+    {
+      "id": "FORM_LIFECYCLE_PARITY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Low/Solemn post-Mass and lifecycle composition is not yet modularly certified. Low-Mass Leonine-prayer applicability/branch ownership must be recovered as an explicit lifecycle contract rather than inferred inside the reader."
     },
     {
       "id": "SPECIAL_STRUCTURE_PARITY",

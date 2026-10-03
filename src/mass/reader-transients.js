@@ -4,6 +4,7 @@
 // they are presentation bindings only and never advance canonical state.
 
 const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"]);
+const FORM_NATIVE_FAIL_CLOSED=new Set(["LOW","SOLEMN"]);
 
 export const BELL_CUE_BINDINGS=Object.freeze([
   Object.freeze({cueId:"AO.SM.C0145",label:"SANCTUS BELL",detail:"Sanctus",canonicalEventIds:Object.freeze(["MC-SAN-020"])}),
@@ -118,11 +119,10 @@ export function createReaderTransientController({events,prepared}={}){
 
   function project(cueId){
     const id=String(cueId??"");
-    if(!supported)return Object.freeze({
-      supported:false,reason:"TRANSIENT_PROJECTION_NOT_CERTIFIED_FOR_"+(form||"UNKNOWN_FORM"),cueId:id||null,
-      bell:null,cinematic:null,
-      ownership:Object.freeze({bell:"LEGACY_FALLBACK",cinematic:"LEGACY_FALLBACK"}),
-    });
+    if(!supported){
+      const owner=FORM_NATIVE_FAIL_CLOSED.has(form) ? "R18_FORM_TRANSIENT_FAIL_CLOSED" : "LEGACY_FALLBACK";
+      return Object.freeze({supported:false,reason:"TRANSIENT_PROJECTION_NOT_CERTIFIED_FOR_"+(form||"UNKNOWN_FORM"),cueId:id||null,bell:null,cinematic:null,ownership:Object.freeze({bell:owner,cinematic:owner})});
+    }
 
     const binding=byCue.get(id)??null;
     const actionBinding=actionByCue.get(id)??null;

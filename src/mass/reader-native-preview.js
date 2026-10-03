@@ -29,10 +29,12 @@ function textAt(doc,selector){
   return cleanText(doc?.querySelector?.(selector)?.textContent);
 }
 
-export function legacyReaderStateSnapshot(doc){
+export function legacyReaderStateSnapshot(doc,{postureOnly=false}={}){
+  const postureText=textAt(doc,"#postureText");
+  if(postureOnly)return Object.freeze({priestPosition:null,posture:postureText?{label:postureText}:null,gesture:null,response:null,priestVoice:null});
   return Object.freeze({
     priestPosition:textAt(doc,"#stationText") ? {label:textAt(doc,"#stationText")} : null,
-    posture:textAt(doc,"#postureText") ? {label:textAt(doc,"#postureText")} : null,
+    posture:postureText ? {label:postureText} : null,
     gesture:textAt(doc,"#gestureText") ? {label:textAt(doc,"#gestureText")} : null,
     response:textAt(doc,"#responseText") ? {label:textAt(doc,"#responseText")} : null,
     priestVoice:textAt(doc,"#voiceText") ? {label:textAt(doc,"#voiceText")} : null,
@@ -274,7 +276,7 @@ export async function mountNativeReaderPreview({
   }
 
   function projectedState(){
-    const legacy=legacyReaderStateSnapshot(doc);
+    const legacy=legacyReaderStateSnapshot(doc,{postureOnly:ready.cueState.supported});
     let eventState=null;
     if(typeof readLegacyActive==="function"){
       try{
@@ -336,6 +338,8 @@ export async function mountNativeReaderPreview({
               : transientProjection.ownership.cinematic,
       posture:postureResolved.owner,
       schola:scholaProjection.ownership,
+      priestAction:cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED",
+      sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
 
     const iconKeys=iconKeysForReaderState({
@@ -350,6 +354,9 @@ export async function mountNativeReaderPreview({
       cinematic,
       priestVoice,
       schola:scholaProjection.schola,
+      priestAction:cueProjection?.priestAction??null,
+      sacredMinister:cueProjection?.sacredMinister??null,
+      sacredMinisterAdvisory:cueProjection?.sacredMinisterAdvisory??null,
       sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),
       ...iconKeys,
       nativeEventId:eventState?.canonicalEventId??null,
@@ -396,6 +403,8 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerPriestPosition=state.ownership?.priestPosition??"UNRESOLVED";
     root.dataset.r17OwnerPosture=state.ownership?.posture??"UNRESOLVED";
     root.dataset.r17OwnerSchola=state.ownership?.schola??"UNRESOLVED";
+    root.dataset.r17OwnerPriestAction=state.ownership?.priestAction??"UNRESOLVED";
+    root.dataset.r17OwnerSacredMinister=state.ownership?.sacredMinister??"UNRESOLVED";
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
@@ -434,6 +443,8 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerPriestPosition=state.ownership?.priestPosition??"UNRESOLVED";
     root.dataset.r17OwnerPosture=state.ownership?.posture??"UNRESOLVED";
     root.dataset.r17OwnerSchola=state.ownership?.schola??"UNRESOLVED";
+    root.dataset.r17OwnerPriestAction=state.ownership?.priestAction??"UNRESOLVED";
+    root.dataset.r17OwnerSacredMinister=state.ownership?.sacredMinister??"UNRESOLVED";
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;

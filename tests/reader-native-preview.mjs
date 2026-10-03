@@ -86,6 +86,12 @@ assert.equal(snapshot.gesture.label,"BOW");
 assert.equal(snapshot.response.label,"Amen");
 assert.equal(snapshot.priestVoice.label,"LOW VOICE");
 assert.equal(Object.hasOwn(snapshot,"schola"),false,"legacy snapshot still reads Schola");
+const postureOnly=legacyReaderStateSnapshot({querySelector:s=>nodes[s]??null},{postureOnly:true});
+assert.equal(postureOnly.posture.label,"KNEEL");
+assert.equal(postureOnly.priestPosition,null);
+assert.equal(postureOnly.gesture,null);
+assert.equal(postureOnly.response,null);
+assert.equal(postureOnly.priestVoice,null);
 
 const disputed={
   gesture:null,
