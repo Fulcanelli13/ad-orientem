@@ -7,7 +7,9 @@ import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
-import { extractCanonicalCueId, GLORIA_CREDO_FAITHFUL_GESTURES, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
+import { GLORIA_CREDO_FAITHFUL_GESTURES, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
+import { loadReaderCueRegistries, createReaderCueStateController } from "./reader-cue-state.js";
+import { installCueFocusTracker } from "./reader-cue-focus.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -58,11 +60,14 @@ export async function prepareNativeReaderPreview({
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
   loadEventData=loadCanonicalReaderEvents,
+  cueRegistries=null,
+  loadCueRegistries=loadReaderCueRegistries,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
-  const [data,events]=await Promise.all([
+  const [data,events,registries]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
+    cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -71,7 +76,12 @@ export async function prepareNativeReaderPreview({
     sungCorpus:data?.sungCorpus,
   });
   const eventState=createNativeEventStateController(events);
-  return Object.freeze({prepared,data,model,events,eventState});
+  const cueState=createReaderCueStateController({
+    registries,
+    sungCorpus:data?.sungCorpus,
+    prepared,
+  });
+  return Object.freeze({prepared,data,model,events,eventState,registries,cueState});
 }
 
 export async function mountNativeReaderPreview({
@@ -81,6 +91,8 @@ export async function mountNativeReaderPreview({
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
   loadEventData=loadCanonicalReaderEvents,
+  cueRegistries=null,
+  loadCueRegistries=loadReaderCueRegistries,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -88,7 +100,10 @@ export async function mountNativeReaderPreview({
   if(!doc?.body || !doc?.createElement) throw new TypeError("Document/body required");
 
   // Validate everything before adding a single preview node.
-  const ready=await prepareNativeReaderPreview({prepared,presentationData,loadPresentationData,eventData,loadEventData});
+  const ready=await prepareNativeReaderPreview({
+    prepared,presentationData,loadPresentationData,eventData,loadEventData,
+    cueRegistries,loadCueRegistries,
+  });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
 
@@ -110,62 +125,103 @@ export async function mountNativeReaderPreview({
 
   let current=ready.model.cardBySequence(1);
   let observer=null;
+  let cueTracker=null;
+  let activeCueId=null;
   let scheduled=false;
   const win=doc.defaultView ?? globalThis;
 
   function projectedState(){
     const legacy=legacyReaderStateSnapshot(doc);
     let eventState=null;
-    let cueId=null;
     if(typeof readLegacyActive==="function"){
       try{
-        const active=readLegacyActive();
-        const eventId=extractCanonicalEventId(active);
-        cueId=extractCanonicalCueId(active);
+        const eventId=extractCanonicalEventId(readLegacyActive());
         if(eventId)eventState=ready.eventState.project(eventId);
       }catch{}
     }
 
+    const cueProjection=activeCueId ? ready.cueState.project(activeCueId) : null;
+    const cueNative=Boolean(cueProjection?.supported && cueProjection?.reason==null);
     const gestureProfile=prepared?.readerPreferences?.gestureProfile ?? "GUIDED_1962";
-    const gesture=resolveGestureProjection(eventState,legacy.gesture,{cueId,gestureProfile});
-    const cueAdjudicated=Boolean(cueId && GLORIA_CREDO_FAITHFUL_GESTURES[cueId]);
 
-    if(!eventState)return Object.freeze({
-      ...legacy,
-      gesture,
-      nativeEventId:null,
-      nativeCueId:cueId,
-      ownership:Object.freeze({
-        priestVoice:"LEGACY_FALLBACK",
-        response:"LEGACY_FALLBACK",
-        gesture:cueAdjudicated ? (gesture ? "R17_EXACT_CUE_PROFILE" : "R17_EXACT_CUE_SUPPRESSED_BY_PROFILE") : "LEGACY_FALLBACK",
-        posture:"LEGACY_PENDING_SOURCE_EXTRACTION",
-        priestPosition:"LEGACY_PENDING_SOURCE_EXTRACTION",
-        schola:"LEGACY_TEMPORARY",
-      }),
+    let gesture=null;
+    if(cueNative){
+      // Source registry owns exact-cue absence as well as presence: no legacy text/phase inference.
+      if(gestureProfile==="TRADITIONAL" && cueProjection.gesture){
+        gesture=cueProjection.gesture;
+      }else{
+        gesture=resolveGestureProjection(eventState,null,{
+          cueId:activeCueId,
+          gestureProfile,
+        });
+      }
+    }else{
+      gesture=resolveGestureProjection(eventState,legacy.gesture,{
+        cueId:null,
+        gestureProfile,
+      });
+    }
+
+    const response=cueNative ? cueProjection.response : (
+      eventState?.ownership?.response==="R17_NATIVE" ? eventState.response : legacy.response
+    );
+    const priestVoice=cueNative && cueProjection.priestVoice
+      ? cueProjection.priestVoice
+      : eventState?.ownership?.priestVoice==="R17_NATIVE"
+        ? eventState.priestVoice
+        : legacy.priestVoice;
+    const priestPosition=cueNative && cueProjection.priestPosition
+      ? cueProjection.priestPosition
+      : legacy.priestPosition;
+
+    // Posture is intentionally still conservative. Only an explicitly satisfied
+    // source/profile posture transition may replace the rollback donor.
+    const posture=cueNative && cueProjection.posture
+      ? cueProjection.posture
+      : legacy.posture;
+
+    const ownership=Object.freeze({
+      priestVoice:cueNative && cueProjection.priestVoice
+        ? cueProjection.ownership.priestVoice
+        : eventState?.ownership?.priestVoice==="R17_NATIVE"
+          ? "R17_EVENT_NATIVE"
+          : "LEGACY_FALLBACK",
+      response:cueNative
+        ? cueProjection.ownership.response
+        : eventState?.ownership?.response==="R17_NATIVE"
+          ? "R17_EVENT_NATIVE"
+          : "LEGACY_FALLBACK",
+      gesture:cueNative
+        ? (
+          gesture
+            ? (gesture.owner==="R17_CUE_SOURCE" ? "R17_CUE_NATIVE_TRADITIONAL_PROFILE" : "R17_EXACT_CUE_PROFILE")
+            : cueProjection.ownership.gesture
+        )
+        : eventState?.ownership?.gesture ?? "LEGACY_FALLBACK",
+      posture:cueNative && cueProjection.posture
+        ? cueProjection.ownership.posture
+        : "LEGACY_PROFILE_FALLBACK",
+      priestPosition:cueNative && cueProjection.priestPosition
+        ? cueProjection.ownership.priestPosition
+        : "LEGACY_FALLBACK",
+      schola:"LEGACY_TEMPORARY",
     });
+
     return Object.freeze({
-      priestPosition:legacy.priestPosition,
-      posture:legacy.posture,
+      priestPosition,
+      posture,
       gesture,
-      response:eventState.ownership.response==="R17_NATIVE" ? eventState.response : legacy.response,
-      priestVoice:eventState.ownership.priestVoice==="R17_NATIVE" ? eventState.priestVoice : legacy.priestVoice,
+      response,
+      priestVoice,
       schola:legacy.schola,
       sharedTextWithSchola:false,
-      nativeEventId:eventState.canonicalEventId,
-      nativeCueId:cueId,
-      ownership:Object.freeze({
-        ...eventState.ownership,
-        gesture:eventState.ownership.gesture==="R17_NATIVE"
-          ? "R17_NATIVE"
-          : cueAdjudicated
-            ? (gesture ? "R17_EXACT_CUE_PROFILE" : "R17_EXACT_CUE_SUPPRESSED_BY_PROFILE")
-            : eventState.ownership.gesture,
-        schola:"LEGACY_TEMPORARY",
-      }),
+      nativeEventId:eventState?.canonicalEventId??null,
+      nativeCueId:activeCueId,
+      cueProjectionSupported:cueNative,
+      cueProjectionReason:cueProjection?.reason??null,
+      ownership,
     });
   }
-
   function showCard(card){
     if(!card) return null;
     current=card;
@@ -180,7 +236,13 @@ export async function mountNativeReaderPreview({
       ...state,
     });
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
+    root.dataset.r17NativeCue=state.nativeCueId??"unresolved";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    if(scroll){
+      scroll.scrollTop=0;
+      cueTracker?.refresh?.();
+    }
     return card;
   }
 
@@ -202,6 +264,7 @@ export async function mountNativeReaderPreview({
       ...state,
     });
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
+    root.dataset.r17NativeCue=state.nativeCueId??"unresolved";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
   }
 
@@ -216,6 +279,8 @@ export async function mountNativeReaderPreview({
   function destroy(){
     observer?.disconnect?.();
     observer=null;
+    cueTracker?.destroy?.();
+    cueTracker=null;
     root.remove?.();
     if(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root===root) {
       try{delete globalThis.AO_R17_NATIVE_READER_PREVIEW}catch{}
@@ -229,12 +294,26 @@ export async function mountNativeReaderPreview({
   reader.mount(prepared);
   showCard(current);
 
+  const readerScroll=host.querySelector?.(".ao-prayer-card");
+  if(readerScroll){
+    cueTracker=installCueFocusTracker({
+      container:readerScroll,
+      win,
+      onChange:(cueId)=>{
+        activeCueId=cueId;
+        root.dataset.r17NativeCue=cueId??"unresolved";
+        queue();
+      },
+    });
+    cueTracker.refresh();
+  }
+
   const MutationObserverImpl=win?.MutationObserver ?? globalThis.MutationObserver;
   if(typeof MutationObserverImpl==="function"){
     observer=new MutationObserverImpl(queue);
     const targets=[
-      "#stationText","#postureText","#gestureText","#responseText",
-      "#voiceText","#scholaDock","#scholaStreamLine"
+      // Posture and Schola remain rollback donors in this wave.
+      "#postureText","#scholaDock","#scholaStreamLine"
     ].map(selector=>doc.querySelector?.(selector)).filter(Boolean);
     for(const target of targets){
       observer.observe(target,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:["class","aria-hidden"]});
@@ -246,12 +325,12 @@ export async function mountNativeReaderPreview({
     ownership:Object.freeze({
       text:"R17_VERIFIED_CORPUS",
       cards:"R17_READER_MODEL",
-      liveState:"R17_PARTIAL_EVENT_STATE",
-      priestVoice:"R17_WHEN_CANONICAL_EVENT_RESOLVES",
-      response:"R17_WHEN_CANONICAL_RESPONSE_EVENT_RESOLVES",
-      gesture:"R17_EXACT_CUE_PROFILE_WITH_INCARNATUS_RUBRICAL",
-      posture:"LEGACY_PENDING_SOURCE_EXTRACTION",
-      priestPosition:"LEGACY_PENDING_SOURCE_EXTRACTION",
+      liveState:"R17_CUE_STATE_WITH_ROLLBACK_GAPS",
+      priestVoice:"R17_CUE_SOURCE_ON_CERTIFIED_MISSA_CANTATA",
+      response:"R17_EXACT_CUE_SOURCE_ON_CERTIFIED_MISSA_CANTATA",
+      gesture:"R17_EXACT_CUE_PROFILE_SOURCE_ON_CERTIFIED_MISSA_CANTATA",
+      posture:"R17_ONLY_WHEN_SOURCE_CONDITION_RESOLVES_ELSE_LEGACY",
+      priestPosition:"R17_CUE_SOURCE_PERSISTENT_ON_CERTIFIED_MISSA_CANTATA",
       schola:"LEGACY_TEMPORARY",
     }),
     showSection:(sectionId)=>{
@@ -263,6 +342,8 @@ export async function mountNativeReaderPreview({
     destroy,
     getCurrentCard:()=>current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
+    getActiveCue:()=>activeCueId,
+    getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
   });
   globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
   return api;
