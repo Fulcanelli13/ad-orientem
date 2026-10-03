@@ -201,6 +201,7 @@ export async function prepareNativeReaderPreview({
     lowCorpus:data?.lowCorpus,
     sungCorpus:data?.sungCorpus,
     canonSourceMap:data?.canonSourceMap,
+    requiemRules:data?.requiemRules,
   });
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
