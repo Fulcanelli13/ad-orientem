@@ -335,6 +335,7 @@ export function createBrowserMassRuntime({
         lowCorpus: data?.lowCorpus,
         sungCorpus: data?.sungCorpus,
         canonSourceMap: data?.canonSourceMap,
+        requiemRules: data?.requiemRules,
       });
 
       readerModel = model;
