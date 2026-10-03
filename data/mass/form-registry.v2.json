@@ -27,7 +27,8 @@
         "gospel": "CELEBRANT",
         "dismissal": "CELEBRANT",
         "formalPax": "SUPPRESSED"
-      }
+      },
+      "certificationProjection": "data/mass/missa-cantata-certification.v1.json"
     },
     "MISSA_CANTATA_INCENSE": {
       "status": "CERTIFIED",
@@ -38,13 +39,22 @@
       "certifiedBindings": 189,
       "incense": true,
       "sacredMinisters": false,
-      "staffing": ["MC", "THURIFER", "ACOLYTES", "TORCHBEARERS"],
+      "staffing": [
+        "MC",
+        "THURIFER",
+        "ACOLYTES"
+      ],
       "actorResolvers": {
         "epistle": "TONSURED_CLERIC_IF_PRESENT_ELSE_CELEBRANT",
         "gospel": "CELEBRANT",
         "dismissal": "CELEBRANT",
         "formalPax": "SUPPRESSED"
-      }
+      },
+      "optionalStaffing": [
+        "TORCHBEARERS"
+      ],
+      "runtimeTorchbearerActor": false,
+      "certificationProjection": "data/mass/missa-cantata-certification.v1.json"
     },
     "SOLEMN": {
       "status": "CERTIFIED",
@@ -52,7 +62,12 @@
       "certifiedSourceMoments": 68,
       "ministerDeltaEvents": 19,
       "sacredMinisters": true,
-      "staffing": ["DEACON", "SUBDEACON", "THURIFER", "TORCHBEARERS"]
+      "staffing": [
+        "DEACON",
+        "SUBDEACON",
+        "THURIFER",
+        "TORCHBEARERS"
+      ]
     }
   },
   "guards": [
