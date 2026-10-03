@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { legacyReaderStateSnapshot, prepareNativeReaderPreview } from "../src/mass/reader-native-preview.js";
+import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection } from "../src/mass/reader-native-preview.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -53,6 +53,19 @@ assert.equal(snapshot.gesture.label,"BOW");
 assert.equal(snapshot.response.label,"Amen");
 assert.equal(snapshot.priestVoice.label,"LOW VOICE");
 assert.equal(snapshot.schola.label,"Sanctus");
+
+const disputed={
+  gesture:null,
+  ownership:{gesture:"R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION"},
+};
+assert.equal(resolveGestureProjection(disputed,{label:"BOW"}),null,
+  "disputed legacy bow leaked into R17 Gloria/Credo");
+const certified={
+  gesture:{label:"GENUFLECT"},
+  ownership:{gesture:"R17_NATIVE"},
+};
+assert.equal(resolveGestureProjection(certified,{label:"BOW"}).label,"GENUFLECT",
+  "certified native gesture did not outrank legacy fallback");
 
 let blocked=false;
 try{
