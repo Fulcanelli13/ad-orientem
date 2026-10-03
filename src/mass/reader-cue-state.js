@@ -20,7 +20,7 @@ const EXPECTED=Object.freeze({
   voices:Object.freeze({schema:"ao-r17-reader-priest-voices-v1",count:126}),
 });
 
-const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"]);
+const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 
 function urlFor(file,baseUrl){
   return new URL("../../data/presentation/"+file,baseUrl);
@@ -130,7 +130,8 @@ export function cueProjectionConditions(prepared){
     else if(value?.id)active.add(String(value.id));
   }
   const form=String(resolved?.form??"").toUpperCase();
-  if(form==="MISSA_CANTATA_INCENSE")active.add("INCENSE_ENABLED");
+  if(form==="MISSA_CANTATA_INCENSE" || form==="SOLEMN")active.add("INCENSE_ENABLED");
+  if(form==="SOLEMN"){active.add("SOLEMN_MASS_PROFILE");active.add("SEDILIA_USED");}
   return active;
 }
 
