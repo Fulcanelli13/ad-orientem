@@ -51,10 +51,15 @@ for(const id of [
   "FORM_STATE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
-  "PROPER_FIXTURE_PROVENANCE",
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
   "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
+
+const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
+assert.equal(properProvenance?.status,"CERTIFIED_REPLACEMENT_WITNESS",
+  "Proper fixture provenance blocker disappeared without certified replacement witness");
+assert.match(String(properProvenance?.witnessFile??""),/golden-proper-witnesses\.v1\.json/,
+  "Proper fixture replacement witness file is not pinned");
 
 const icons=release.protectedInvariants.find(x=>x.id==="ICON_ASSET_BANK_NATIVE");
 assert.equal(icons?.status,"CERTIFIED_HOST_BANK_BRIDGE","icon blocker disappeared without native bank certification");
