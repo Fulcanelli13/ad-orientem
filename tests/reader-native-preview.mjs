@@ -314,8 +314,8 @@ const palmPrepared={
   ...prepared,
   session:{
     ...prepared.session,
-    resolvedMass:{...prepared.session.resolvedMass,precedingRites:["CANDLEMAS"]},
-    plan:{kind:"MASS",precedingGraphs:["CANDLEMAS"],followingGraphs:[],overlayGraphs:["VOTIVE_PROPER"],massEntry:"INTROIT",normalLastGospel:false},
+    resolvedMass:{...prepared.session.resolvedMass,precedingRites:["PALM"]},
+    plan:{kind:"MASS",precedingGraphs:["PALM"],followingGraphs:[],overlayGraphs:["VOTIVE_PROPER"],massEntry:"INTROIT",normalLastGospel:false},
   },
 };
 const palmReady=await prepareNativeReaderPreview({
