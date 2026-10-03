@@ -27,15 +27,32 @@ const eventData=[
   {id:"MC-INT-020",actor:"PRIEST",title:"Priest recites Introit",contentRef:"proper.introit",sourceMomentRefs:["E08"],voice:{audibility:"LOW_VOICE",speechAudibility:"LOW_VOICE"}},
   {id:"MC-CRD-025",actor:"PRIEST",title:"Priest reaches Et incarnatus",contentRef:"ordinary.credo",sourceMomentRefs:["E21"],voice:{audibility:"LOW_VOICE",speechAudibility:"LOW_VOICE"}},
 ];
-const prepared={
-  session:{resolvedMass:{
-    schema:"ao-resolved-mass-v2",date:"2026-10-04",form:"MISSA_CANTATA_INCENSE",
-    presentationMode:"LIVE",calendarCelebration:{id:"day",type:"CALENDAR"},
-    actualCelebration:{id:"holy_rosary",type:"VOTIVE",title:"Holy Rosary"},
-    explicitlySelectedCelebration:true,proper:{status:"READY",data:proper},
-    overlays:["VOTIVE_PROPER"],precedingRites:[],followingActions:[],distinctRite:null,
-  }},
+const livePrepared={
+  session:{
+    resolvedMass:{
+      schema:"ao-resolved-mass-v2",date:"2026-10-04",form:"MISSA_CANTATA_INCENSE",
+      presentationMode:"LIVE",calendarCelebration:{id:"day",type:"CALENDAR"},
+      actualCelebration:{id:"holy_rosary",type:"VOTIVE",title:"Holy Rosary"},
+      explicitlySelectedCelebration:true,proper:{status:"READY",data:proper},
+      overlays:["VOTIVE_PROPER"],precedingRites:[],followingActions:[],distinctRite:null,
+    },
+    plan:{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["VOTIVE_PROPER"]},
+  },
   readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"},
+};
+await assert.rejects(
+  ()=>prepareNativeReaderPreview({prepared:livePrepared,presentationData:data,eventData,cueRegistries}),
+  /V1_83_48_CARD_LIVE_MAP_REQUIRED/,
+  "30-card native preview bypassed the frozen v1.83 LIVE structure gate"
+);
+
+const prepared={
+  ...livePrepared,
+  session:{
+    ...livePrepared.session,
+    resolvedMass:{...livePrepared.session.resolvedMass,presentationMode:"SIMPLE"},
+  },
+  readerPreferences:{...livePrepared.readerPreferences,mode:"SIMPLE"},
 };
 const ready=await prepareNativeReaderPreview({prepared,presentationData:data,eventData,cueRegistries});
 assert.equal(ready.model.totalCards,30);
@@ -218,7 +235,11 @@ assert.equal(unsupportedOwned.ownership.priestPosition,"LEGACY_FALLBACK");
 let blocked=false;
 try{
   await prepareNativeReaderPreview({
-    prepared:{...prepared,session:{resolvedMass:{...prepared.session.resolvedMass,overlays:["REQUIEM"]}}},
+    prepared:{...prepared,session:{
+      ...prepared.session,
+      resolvedMass:{...prepared.session.resolvedMass,overlays:["REQUIEM"]},
+      plan:{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["REQUIEM"]},
+    }},
     presentationData:data,
     eventData,
     cueRegistries,
