@@ -279,7 +279,7 @@
     },
     {
       "id": "ASPERGES_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH",
       "controller": "src/mass/reader-asperges.js",
       "payload": "data/presentation/reader-asperges.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ASP",
@@ -298,11 +298,21 @@
       "runtime": "src/mass/browser-runtime.js",
       "runtimeGuarantees": [
         "explicit compiled Asperges enters before ordinary Mass",
-        "Back/Next traverses Asperges independently of 30 Mass cards",
         "ACTUALLY_SPRINKLED remains event/user-triggered and not card-visible",
         "completion hands off to AO.CARD.001 Foot cluster",
-        "Back from first Mass card returns to Asperges handoff card"
-      ]
+        "Back from first Mass card returns to Asperges handoff card",
+        "native preview starts on ASP-R01 when compiled plan explicitly contains ASPERGES",
+        "seasonal formula uses explicit host seasonalMode when available, with deterministic 1962 date fallback",
+        "4 October 2026 resolves ordinary Asperges me, not Vidi aquam",
+        "real touchscreen Back/Next traverses all five Asperges cards",
+        "ACTUALLY_SPRINKLED alone activates the faithful Sign of Cross",
+        "completion hands off to source-first AO.CARD.001 Foot cluster",
+        "Back from first Mass card returns to ASP-R05",
+        "unsupported native-preview preceding rites fail closed rather than being silently skipped"
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "formulaContext": "src/mass/reader-asperges.js#resolveAspergesRiteContext",
+      "phoneTest": "tests/reader-phone-acceptance.mjs"
     },
     {
       "id": "PLAN_AWARE_OBJECTIVE_RUNTIME",
@@ -461,7 +471,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Asperges, Palm and Ash Wednesday have source-pinned native payloads. Requiem Mass variance is certified plan-owned and no longer needs a duplicate reader surface. Candlemas, Rogations, explicit Requiem Absolution/funeral following actions, Holy Thursday post-Mass actions, Corpus procession/Benediction, Good Friday and Easter Vigil still require native payload/rendering."
+      "detail": "Asperges is now production-native-preview and phone-touch certified. Palm and Ash Wednesday have source-pinned modular payloads but still need production native-preview mounting. Candlemas work is in progress; Rogations, explicit Requiem Absolution/funeral following actions, Holy Thursday post-Mass actions, Corpus procession/Benediction, Good Friday and Easter Vigil still require native payload/rendering."
     }
   ],
   "certificationPolicy": {
