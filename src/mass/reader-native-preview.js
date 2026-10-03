@@ -54,6 +54,63 @@ export function resolveGestureProjection(eventState, legacyGesture, {
   return legacyGesture ?? null;
 }
 
+export function resolveCueOwnedChannels({
+  cueControllerSupported=false,
+  cueProjection=null,
+  eventState=null,
+  legacy={},
+  cueId=null,
+  gestureProfile="GUIDED_1962",
+}={}){
+  const cueNative=Boolean(cueProjection?.supported && cueProjection?.reason==null);
+
+  // Once the certified Sung cue controller owns these channels, absence is
+  // meaningful. Do not leak a stale legacy cue while focus is resolving.
+  if(cueControllerSupported){
+    let gesture=null;
+    if(cueNative){
+      if(gestureProfile==="TRADITIONAL" && cueProjection.gesture){
+        gesture=cueProjection.gesture;
+      }else{
+        gesture=resolveGestureProjection(eventState,null,{cueId,gestureProfile});
+      }
+    }
+    return Object.freeze({
+      gesture,
+      response:cueNative ? cueProjection.response : null,
+      priestVoice:cueNative ? cueProjection.priestVoice : null,
+      priestPosition:cueNative ? cueProjection.priestPosition : null,
+      cueNative,
+      ownership:Object.freeze({
+        gesture:cueNative
+          ? (
+            gesture
+              ? (gesture.owner==="R17_CUE_SOURCE" ? "R17_CUE_NATIVE_TRADITIONAL_PROFILE" : "R17_EXACT_CUE_PROFILE")
+              : cueProjection.ownership.gesture
+          )
+          : "R17_CUE_WAITING_FAIL_CLOSED",
+        response:cueNative ? cueProjection.ownership.response : "R17_CUE_WAITING_FAIL_CLOSED",
+        priestVoice:cueNative ? cueProjection.ownership.priestVoice : "R17_CUE_WAITING_FAIL_CLOSED",
+        priestPosition:cueNative ? cueProjection.ownership.priestPosition : "R17_CUE_WAITING_FAIL_CLOSED",
+      }),
+    });
+  }
+
+  return Object.freeze({
+    gesture:resolveGestureProjection(eventState,legacy.gesture,{cueId:null,gestureProfile}),
+    response:eventState?.ownership?.response==="R17_NATIVE" ? eventState.response : legacy.response ?? null,
+    priestVoice:eventState?.ownership?.priestVoice==="R17_NATIVE" ? eventState.priestVoice : legacy.priestVoice ?? null,
+    priestPosition:legacy.priestPosition ?? null,
+    cueNative:false,
+    ownership:Object.freeze({
+      gesture:eventState?.ownership?.gesture ?? "LEGACY_FALLBACK",
+      response:eventState?.ownership?.response==="R17_NATIVE" ? "R17_EVENT_NATIVE" : "LEGACY_FALLBACK",
+      priestVoice:eventState?.ownership?.priestVoice==="R17_NATIVE" ? "R17_EVENT_NATIVE" : "LEGACY_FALLBACK",
+      priestPosition:"LEGACY_FALLBACK",
+    }),
+  });
+}
+
 export async function prepareNativeReaderPreview({
   prepared,
   presentationData=null,
@@ -141,69 +198,29 @@ export async function mountNativeReaderPreview({
     }
 
     const cueProjection=activeCueId ? ready.cueState.project(activeCueId) : null;
-    const cueNative=Boolean(cueProjection?.supported && cueProjection?.reason==null);
     const gestureProfile=prepared?.readerPreferences?.gestureProfile ?? "GUIDED_1962";
+    const owned=resolveCueOwnedChannels({
+      cueControllerSupported:ready.cueState.supported,
+      cueProjection,
+      eventState,
+      legacy,
+      cueId:activeCueId,
+      gestureProfile,
+    });
+    const cueNative=owned.cueNative;
+    const {gesture,response,priestVoice,priestPosition}=owned;
 
-    let gesture=null;
-    if(cueNative){
-      // Source registry owns exact-cue absence as well as presence: no legacy text/phase inference.
-      if(gestureProfile==="TRADITIONAL" && cueProjection.gesture){
-        gesture=cueProjection.gesture;
-      }else{
-        gesture=resolveGestureProjection(eventState,null,{
-          cueId:activeCueId,
-          gestureProfile,
-        });
-      }
-    }else{
-      gesture=resolveGestureProjection(eventState,legacy.gesture,{
-        cueId:null,
-        gestureProfile,
-      });
-    }
-
-    const response=cueNative ? cueProjection.response : (
-      eventState?.ownership?.response==="R17_NATIVE" ? eventState.response : legacy.response
-    );
-    const priestVoice=cueNative && cueProjection.priestVoice
-      ? cueProjection.priestVoice
-      : eventState?.ownership?.priestVoice==="R17_NATIVE"
-        ? eventState.priestVoice
-        : legacy.priestVoice;
-    const priestPosition=cueNative && cueProjection.priestPosition
-      ? cueProjection.priestPosition
-      : legacy.priestPosition;
-
-    // Posture is intentionally still conservative. Only an explicitly satisfied
-    // source/profile posture transition may replace the rollback donor.
+    // Posture is intentionally still conservative. FOLLOW_CONGREGATION and
+    // unresolved profile/state anchors continue to use the visible rollback donor.
     const posture=cueNative && cueProjection.posture
       ? cueProjection.posture
       : legacy.posture;
 
     const ownership=Object.freeze({
-      priestVoice:cueNative && cueProjection.priestVoice
-        ? cueProjection.ownership.priestVoice
-        : eventState?.ownership?.priestVoice==="R17_NATIVE"
-          ? "R17_EVENT_NATIVE"
-          : "LEGACY_FALLBACK",
-      response:cueNative
-        ? cueProjection.ownership.response
-        : eventState?.ownership?.response==="R17_NATIVE"
-          ? "R17_EVENT_NATIVE"
-          : "LEGACY_FALLBACK",
-      gesture:cueNative
-        ? (
-          gesture
-            ? (gesture.owner==="R17_CUE_SOURCE" ? "R17_CUE_NATIVE_TRADITIONAL_PROFILE" : "R17_EXACT_CUE_PROFILE")
-            : cueProjection.ownership.gesture
-        )
-        : eventState?.ownership?.gesture ?? "LEGACY_FALLBACK",
+      ...owned.ownership,
       posture:cueNative && cueProjection.posture
         ? cueProjection.ownership.posture
         : "LEGACY_PROFILE_FALLBACK",
-      priestPosition:cueNative && cueProjection.priestPosition
-        ? cueProjection.ownership.priestPosition
-        : "LEGACY_FALLBACK",
       schola:"LEGACY_TEMPORARY",
     });
 
