@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard } from "../src/mass/reader-native-preview.js";
+import { legacyReaderStateSnapshot, prepareNativeReaderPreview, mountNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard } from "../src/mass/reader-native-preview.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -275,5 +275,80 @@ try{
   });
 }catch(error){blocked=/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/.test(String(error.message))}
 assert.equal(blocked,true,"unsupported special graph did not fail closed");
+
+
+const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
+const aspergesData=Object.freeze({
+  payload:load("../data/presentation/reader-asperges.v1.json"),
+  graph:Object.freeze([...specialExtension.graphs.ASP]),
+});
+const palmData=Object.freeze({
+  payload:load("../data/presentation/reader-palm.v1.json"),
+  graph:Object.freeze([...specialExtension.graphs.PALM]),
+});
+
+function fakeElement(){
+  return {
+    id:"",dataset:{},style:{cssText:""},innerHTML:"",children:[],
+    setAttribute(){},
+    append(...nodes){this.children.push(...nodes)},
+    appendChild(node){this.children.push(node);return node},
+    addEventListener(){},
+    remove(){this.removed=true},
+    querySelector(){return null},
+    querySelectorAll(){return []},
+  };
+}
+function fakeDocument(){
+  const body=fakeElement();
+  return {
+    body,
+    defaultView:{},
+    createElement(){return fakeElement()},
+    getElementById(){return null},
+    querySelector(){return null},
+  };
+}
+
+const aspergesPrepared={
+  ...prepared,
+  session:{
+    ...prepared.session,
+    plan:{...prepared.session.plan,precedingGraphs:["ASPERGES"]},
+  },
+};
+const aspergesReady=await prepareNativeReaderPreview({
+  prepared:aspergesPrepared,presentationData:data,eventData,cueRegistries,guideData,aspergesData,
+});
+assert.equal(aspergesReady.aspergesController.project().card.id,"ASP-R01");
+const aspergesMounted=await mountNativeReaderPreview({
+  doc:fakeDocument(),prepared:aspergesPrepared,presentationData:data,eventData,cueRegistries,guideData,aspergesData,
+});
+assert.equal(aspergesMounted.root.dataset.r17SpecialStructure,"ASPERGES");
+assert.equal(aspergesMounted.getAspergesState().card.id,"ASP-R01");
+aspergesMounted.markActuallySprinkled();
+assert.equal(aspergesMounted.getAspergesState().actuallySprinkled,true);
+aspergesMounted.destroy();
+
+const palmPrepared={
+  ...prepared,
+  session:{
+    ...prepared.session,
+    resolvedMass:{...prepared.session.resolvedMass,calendarCelebration:{id:"palm-sunday",type:"CALENDAR"}},
+    plan:{...prepared.session.plan,precedingGraphs:["PALM"],massEntry:"INTROIT",normalLastGospel:false},
+  },
+};
+const palmReady=await prepareNativeReaderPreview({
+  prepared:palmPrepared,presentationData:data,eventData,cueRegistries,guideData,palmData,
+});
+assert.equal(palmReady.palmController.project().card.id,"PALM-R01");
+const palmMounted=await mountNativeReaderPreview({
+  doc:fakeDocument(),prepared:palmPrepared,presentationData:data,eventData,cueRegistries,guideData,palmData,
+});
+assert.equal(palmMounted.root.dataset.r17SpecialStructure,"PALM");
+assert.equal(palmMounted.getPalmState().card.id,"PALM-R01");
+palmMounted.setPalmRecipientState("RECEIVE_PALM");
+assert.equal(palmMounted.getPalmState().recipientPosture,"KNEEL");
+palmMounted.destroy();
 
 console.log("native reader preview: PASS — source-first LIVE is native-owned; remaining rollback state is explicit.");
