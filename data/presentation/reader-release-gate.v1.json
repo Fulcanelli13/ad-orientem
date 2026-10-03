@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -95,27 +95,15 @@
         "bell",
         "cinematic"
       ],
-      "canonicalStateMutation": false,
-      "recoveredMajorActionCinematicCueCount": 5,
-      "recoveredMajorActionCinematicCueIds": [
-        "AO.SM.C0174",
-        "AO.SM.C0181",
-        "AO.SM.C0204",
-        "AO.SM.C0242",
-        "AO.SM.C0265"
-      ],
-      "recoveredActionOnlyCinematicCueIds": [
-        "AO.SM.C0204",
-        "AO.SM.C0242",
-        "AO.SM.C0265"
-      ],
-      "canonicalActionEventIds": [
-        "MC-CNS-040",
-        "MC-CNS-110",
-        "MC-CAN-180",
-        "MC-COM-270",
-        "MC-END-130"
-      ]
+      "canonicalStateMutation": false
+    },
+    {
+      "id": "PROPER_FIXTURE_PROVENANCE",
+      "status": "CERTIFIED_REPLACEMENT_WITNESS",
+      "fixture": "2026-10-04 / Dominica XIX Post Pentecosten",
+      "witnessFile": "data/mass/golden-proper-witnesses.v1.json",
+      "quarantinedHost": "categpt.chat",
+      "closed": "2026-10-03"
     }
   ],
   "openBlockers": [
@@ -143,11 +131,6 @@
       "id": "PHONE_BROWSER_ACCEPTANCE",
       "severity": "RELEASE_BLOCKER",
       "detail": "Real-browser phone-width/touch acceptance for focus, first/last cue ownership, Back/Next, translations and card transitions has not yet been recreated for R17."
-    },
-    {
-      "id": "PROPER_FIXTURE_PROVENANCE",
-      "severity": "PRODUCTION_GOLDEN_BLOCKER",
-      "detail": "The quarantined 4 October Secret/Communion/Postcommunion fixture still requires accepted replacement witnesses."
     },
     {
       "id": "SOLEMN_PAX_TRANSFER_AUTHORITY",
