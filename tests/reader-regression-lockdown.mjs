@@ -55,6 +55,7 @@ for(const id of [
   "PROPER_FIXTURE_PROVENANCE",
   "BELL_CINEMATIC_READER_PARITY",
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
+  "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
 
 const host=release.protectedInvariants.find(x=>x.id==="HOST_ELEVATION_GATE");
