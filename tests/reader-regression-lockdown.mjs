@@ -43,6 +43,8 @@ for(const id of [
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
   "PROPER_FIXTURE_PROVENANCE",
+  "BELL_CINEMATIC_READER_PARITY",
+  "SOLEMN_PAX_TRANSFER_AUTHORITY",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
 
 const host=release.protectedInvariants.find(x=>x.id==="HOST_ELEVATION_GATE");
@@ -55,6 +57,14 @@ assert.deepEqual(
   {wordsThrough:chalice.wordsThroughCue,action:chalice.actionCue},
   {wordsThrough:"AO.SM.C0180",action:"AO.SM.C0181"}
 );
+
+const communionEvents=JSON.parse(readFileSync(new URL("../data/mass/mc-events-05.v1.json",import.meta.url),"utf8")).events;
+const byId=new Map(communionEvents.map(event=>[event.id,event]));
+assert.ok(byId.get("MC-COM-150").conditions.includes("ORDINARY_PEACE_PRAYER_ALLOWED"));
+assert.ok(byId.get("MC-COM-160").conditions.includes("FORM_IS_SOLEMN"));
+assert.ok(byId.get("MC-COM-160").conditions.includes("FORMAL_SOLEMN_PAX_ALLOWED"));
+assert.ok(!byId.get("MC-COM-100").conditions.includes("FORMAL_SOLEMN_PAX_ALLOWED"),
+  "Pax Domini was conflated with ministerial Pax transfer");
 
 const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
 assert.match(nativeSource,/allowPresentationModeSwitch:false/);
