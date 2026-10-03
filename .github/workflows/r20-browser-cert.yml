@@ -1,0 +1,65 @@
+name: R20 Browser certification
+
+on:
+  push:
+    branches:
+      - migration/mass-v1.76-r18
+    paths:
+      - '.github/workflows/r20-browser-cert.yml'
+      - 'migration/mass-v1.76/**'
+      - 'src/mass/**'
+      - 'data/mass/**'
+      - 'scripts/**'
+      - 'tests/r20-browser-cert.mjs'
+      - 'package.json'
+  workflow_dispatch:
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Domain regression suite
+        run: npm test
+
+      - name: Reconstruct frozen v1.76 tree
+        run: python3 scripts/verify_mass_v176_r19_tree.py
+
+      - name: Install Chromium test runtime
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Serve staged modular build
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/r20-server.log 2>&1 &
+          echo $! > /tmp/r20-server.pid
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/migration/mass-v1.76/modular-index.html >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/r20-server.log
+          exit 1
+
+      - name: Browser and responsive scenario certification
+        env:
+          R20_BASE_URL: http://127.0.0.1:8765
+        run: node tests/r20-browser-cert.mjs
+
+      - name: Upload R20 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r20-browser-certification
+          if-no-files-found: ignore
+          path: |
+            R20_BROWSER_CERTIFICATION.json
+            r20-failure-*.png
