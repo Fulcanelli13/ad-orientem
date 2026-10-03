@@ -36,7 +36,8 @@ assert.equal(resolver.segmentForEvent("MC-CAN-180").title,"Per ipsum · Minor El
 assert.equal(release.certificationPolicy.requireAuthoritative48CardMap,false);
 assert.equal(release.certificationPolicy.requireSourceFirstCanonMap,true);
 assert.ok(!release.openBlockers.some(x=>x.id==="G6_48_CARD_MAP"));
-assert.ok(release.openBlockers.some(x=>x.id==="LIVE_SOURCE_STRUCTURE_INTEGRATION"));
+assert.ok(!release.openBlockers.some(x=>x.id==="LIVE_SOURCE_STRUCTURE_INTEGRATION"));
+assert.equal(release.protectedInvariants.find(x=>x.id==="LIVE_SOURCE_STRUCTURE_INTEGRATION")?.status,"CERTIFIED");
 assert.equal(historical.releaseAuthority,false);
 assert.equal(historical.status,"HISTORICAL_PARITY_REFERENCE_NON_BLOCKING");
 const live=makeStructureCards("LIVE",map);
