@@ -118,6 +118,25 @@ const gloria=buildReaderSectionCard({
 });
 assert.ok(!gloria.paragraphs.some(p=>["AO.SM.C0276","AO.SM.C0277"].includes(p.id)),
   "Gloria state sentinels leaked into prayer text");
+const gloriaOpening=gloria.paragraphs.find(p=>Array.isArray(p.sourceCueIds) && p.sourceCueIds.includes("AO.SM.C0053"));
+assert.ok(gloriaOpening,"Gloria opening composite was not built");
+assert.deepEqual(gloriaOpening.sourceCueIds,["AO.SM.C0053","AO.SM.C0054"],
+  "Gloria opening lost canonical cue provenance");
+assert.equal(gloriaOpening.primary,"Glory to God in the highest.",
+  "Gloria English opening still contains segmented 'to God' duplication");
+
+for(const corpus of [low,sung]){
+  const offertoryCard=buildReaderSectionCard({
+    corpus,
+    section:sections.sectionById("AO.CARD.010"),
+    properSlots,
+  });
+  const glory=offertoryCard.paragraphs.filter(p=>/Glory be to the Father, and to the Son, and to the Holy Ghost/.test(p.primary));
+  const sicut=offertoryCard.paragraphs.filter(p=>/As it was in the beginning, is now, and ever shall be/.test(p.primary));
+  assert.equal(glory.length,1,corpus.form+" Lavabo projects Glory be exactly once");
+  assert.equal(sicut.length,1,corpus.form+" Lavabo projects Sicut erat exactly once");
+}
+
 const credo=buildReaderSectionCard({
   corpus:sung,
   section:sections.sectionById("AO.CARD.009"),
