@@ -19,6 +19,8 @@ import { iconKeysForReaderState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
+import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
+import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -158,6 +160,10 @@ export async function prepareNativeReaderPreview({
   loadGuideData=loadGuideRegistry,
   aspergesData=null,
   loadAspergesData=loadAspergesReaderData,
+  palmData=null,
+  loadPalmData=loadPalmReaderData,
+  ashData=null,
+  loadAshData=loadAshReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
@@ -167,18 +173,23 @@ export async function prepareNativeReaderPreview({
   const resolvedForm=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
   const needsFormState=resolvedForm==="LOW" || resolvedForm==="SOLEMN";
   const preceding=[...(prepared?.session?.plan?.precedingGraphs??[])];
-  const unsupportedNativePreceding=preceding.filter(x=>x!=="ASPERGES");
+  const unsupportedNativePreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH"].includes(x));
   if(unsupportedNativePreceding.length){
     throw new Error("NATIVE_PREVIEW_PRECEDING_RITE_PENDING:"+unsupportedNativePreceding.join(","));
   }
   const hasAsperges=preceding.includes("ASPERGES");
-  const [data,events,registries,guide,formState,loadedAsperges]=await Promise.all([
+  const hasPalm=preceding.includes("PALM");
+  const hasAsh=preceding.includes("ASH");
+  if([hasAsperges,hasPalm,hasAsh].filter(Boolean).length>1)throw new Error("NATIVE_PREVIEW_MULTIPLE_PRELUDES_PENDING");
+  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
     guideData ?? Promise.resolve(loadGuideData(prepared)),
     needsFormState ? (formStateData ?? Promise.resolve(loadFormStateData(prepared))) : null,
     hasAsperges ? (aspergesData ?? Promise.resolve(loadAspergesData(prepared))) : null,
+    hasPalm ? (palmData ?? Promise.resolve(loadPalmData(prepared))) : null,
+    hasAsh ? (ashData ?? Promise.resolve(loadAshData(prepared))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -205,7 +216,13 @@ export async function prepareNativeReaderPreview({
         riteContext:resolveAspergesRiteContext(prepared),
       })
     : null;
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController});
+  const palmController=hasPalm
+    ? createPalmReaderController({graph:loadedPalm?.graph,payload:loadedPalm?.payload})
+    : null;
+  const ashController=hasAsh
+    ? createAshReaderController({graph:loadedAsh?.graph,payload:loadedAsh?.payload})
+    : null;
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,ashController});
 }
 
 export async function mountNativeReaderPreview({
@@ -223,6 +240,10 @@ export async function mountNativeReaderPreview({
   loadGuideData=loadGuideRegistry,
   aspergesData=null,
   loadAspergesData=loadAspergesReaderData,
+  palmData=null,
+  loadPalmData=loadPalmReaderData,
+  ashData=null,
+  loadAshData=loadAshReaderData,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -233,7 +254,7 @@ export async function mountNativeReaderPreview({
   const ready=await prepareNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
-    aspergesData,loadAspergesData,
+    aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -256,6 +277,8 @@ export async function mountNativeReaderPreview({
 
   let current=ready.model.cardBySequence(1);
   let inAsperges=Boolean(ready.aspergesController);
+  let inPalm=Boolean(ready.palmController);
+  let inAsh=Boolean(ready.ashController);
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
@@ -461,13 +484,108 @@ export async function mountNativeReaderPreview({
     return projected.state;
   }
 
+
+  function introitOnlyCard(){
+    const card=ready.model.cardBySequence(1);
+    if(!card)return null;
+    const block=card.blocks?.find?.(value=>value.blockId==="AO.SM.B014");
+    if(!block || block.firstParagraphIndex==null || !block.paragraphCount){
+      throw new Error("Native prelude Introit handoff cannot resolve AO.SM.B014");
+    }
+    const paragraphs=card.paragraphs.slice(block.firstParagraphIndex,block.firstParagraphIndex+block.paragraphCount);
+    return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),precedingRiteIntroitOnly:true});
+  }
+
+  function recipientPreludeMoment(kind,controller){
+    const state=controller?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return Object.freeze({
+      state,
+      moment:Object.freeze({
+        id:card.id,
+        sectionTitle:kind==="PALM"?"Palm Sunday":"Ash Wednesday",
+        cardTitle:card.title,
+        cardUpdate:true,
+        paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
+          id:row.id,kind:row.kind,primary:row.latin,
+          sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
+        }))),
+        progress:String(state.index+1)+" / "+String(state.total)+" · "+(kind==="PALM"?"Palm Rite":"Ash Rite"),
+        posture:state.recipientPosture
+          ? {label:state.recipientPosture}
+          : card.posture && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture)
+            ? {label:card.posture}
+            : null,
+        gesture:card.gesture ? {label:card.gesture} : null,
+        response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+      }),
+    });
+  }
+
+  function showRecipientPrelude(kind,controller){
+    const projected=recipientPreludeMoment(kind,controller);
+    if(!projected)return null;
+    inPalm=kind==="PALM";
+    inAsh=kind==="ASH";
+    inAsperges=false;
+    activeCueId=null;
+    clearEventCinematic({resetCue:true});
+    transientGuard.begin();
+    reader.renderMoment(projected.moment);
+    root.dataset.r17NativeEvent=kind.toLowerCase();
+    root.dataset.r17NativeCue="unresolved";
+    root.dataset.r17StateOwner="R23_"+kind+"_NATIVE";
+    root.dataset.r17OwnerGesture=projected.moment.gesture ? "R23_"+kind+"_PAYLOAD" : "R23_"+kind+"_EXACT_NONE";
+    root.dataset.r17OwnerResponse="R23_"+kind+"_PAYLOAD";
+    root.dataset.r17OwnerPriestVoice="R23_"+kind+"_NOT_APPLICABLE";
+    root.dataset.r17OwnerPriestPosition="R23_"+kind+"_NOT_APPLICABLE";
+    root.dataset.r17OwnerPosture="R23_"+kind+"_PERSONAL_OR_PAYLOAD";
+    root.dataset.r17OwnerSchola="R23_"+kind+"_PAYLOAD";
+    root.dataset.r17OwnerBell="R23_"+kind+"_EXACT_NONE";
+    root.dataset.r17OwnerCinematic="R23_"+kind+"_EXACT_NONE";
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+      specialRite:kind,
+      cardId:projected.state.card?.id??null,
+      posture:projected.moment.posture,
+      gesture:projected.moment.gesture,
+      handoff:projected.state.handoff??null,
+      recipientState:projected.state.recipientState??null,
+    });
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    if(scroll)scroll.scrollTop=0;
+    return projected.state;
+  }
+
+  function showPalm(){return showRecipientPrelude("PALM",ready.palmController)}
+  function showAsh(){return showRecipientPrelude("ASH",ready.ashController)}
+
   function previousReaderCard(){
+    if(inPalm && ready.palmController){
+      const state=ready.palmController.project();
+      if(!state.atStart)ready.palmController.previous();
+      return showPalm();
+    }
+    if(inAsh && ready.ashController){
+      const state=ready.ashController.project();
+      if(!state.atStart)ready.ashController.previous();
+      return showAsh();
+    }
     if(inAsperges && ready.aspergesController){
       const state=ready.aspergesController.project();
       if(!state.atStart)ready.aspergesController.previous();
       return showAsperges();
     }
     const first=ready.model.cardBySequence(1);
+    if(ready.palmController && current?.sectionId===first?.sectionId){
+      ready.palmController.goTo("PALM-R07");
+      return showPalm();
+    }
+    if(ready.ashController && current?.sectionId===first?.sectionId){
+      ready.ashController.goTo("ASH-R05");
+      return showAsh();
+    }
     if(ready.aspergesController && current?.sectionId===first?.sectionId){
       ready.aspergesController.goTo("ASP-R05");
       return showAsperges();
@@ -476,6 +594,24 @@ export async function mountNativeReaderPreview({
   }
 
   function nextReaderCard(){
+    if(inPalm && ready.palmController){
+      const state=ready.palmController.project();
+      if(state.atEnd){
+        inPalm=false;
+        return showCard(introitOnlyCard());
+      }
+      ready.palmController.next();
+      return showPalm();
+    }
+    if(inAsh && ready.ashController){
+      const state=ready.ashController.project();
+      if(state.atEnd){
+        inAsh=false;
+        return showCard(introitOnlyCard());
+      }
+      ready.ashController.next();
+      return showAsh();
+    }
     if(inAsperges && ready.aspergesController){
       const state=ready.aspergesController.project();
       if(state.atEnd){
@@ -490,6 +626,8 @@ export async function mountNativeReaderPreview({
   function showCard(card){
     if(!card) return null;
     inAsperges=false;
+    inPalm=false;
+    inAsh=false;
     root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
@@ -546,7 +684,7 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
-    if(inAsperges)return;
+    if(inAsperges || inPalm || inAsh)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -599,7 +737,9 @@ export async function mountNativeReaderPreview({
   // Mount only after the model is complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
-  if(inAsperges)showAsperges();
+  if(inPalm)showPalm();
+  else if(inAsh)showAsh();
+  else if(inAsperges)showAsperges();
   else showCard(current);
 
   const readerScroll=host.querySelector?.(".ao-prayer-card");
@@ -608,6 +748,7 @@ export async function mountNativeReaderPreview({
       container:readerScroll,
       win,
       onChange:(cueId)=>{
+        if(inAsperges || inPalm || inAsh)return;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -649,6 +790,8 @@ export async function mountNativeReaderPreview({
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
       modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__FIELD_SWITCH_LOCKED",
       asperges:ready.aspergesController ? "R20_NATIVE_PRELUDE" : "NOT_ACTIVE",
+      palm:ready.palmController ? "R22_NATIVE_PRELUDE" : "NOT_ACTIVE",
+      ash:ready.ashController ? "R23_NATIVE_PRELUDE" : "NOT_ACTIVE",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -657,7 +800,7 @@ export async function mountNativeReaderPreview({
     showSequence:sequence=>showCard(ready.model.cardBySequence(sequence)),
     syncState:queue,
     destroy,
-    getCurrentCard:()=>inAsperges ? ready.aspergesController?.project?.().card??null : current,
+    getCurrentCard:()=>inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
@@ -669,6 +812,10 @@ export async function mountNativeReaderPreview({
     selectScholaTrack:(trackId)=>{const value=ready.scholaState.selectTrack(trackId);queue();return value},
     getTransientTransitionPending:()=>transientGuard.pending,
     getAspergesState:()=>ready.aspergesController?.project?.()??null,
+    getPalmState:()=>ready.palmController?.project?.()??null,
+    getAshState:()=>ready.ashController?.project?.()??null,
+    setPalmRecipientState:value=>{if(!ready.palmController)return null;const result=ready.palmController.setRecipientState(value);return inPalm ? showPalm() : result},
+    setAshRecipientState:value=>{if(!ready.ashController)return null;const result=ready.ashController.setRecipientState(value);return inAsh ? showAsh() : result},
     markActuallySprinkled:()=>{
       if(!ready.aspergesController)return null;
       const value=ready.aspergesController.setActuallySprinkled(true);
