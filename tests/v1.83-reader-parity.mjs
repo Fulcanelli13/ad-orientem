@@ -20,13 +20,27 @@ assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
 assert.equal(recovery.lineage.v180LiveCards,38);
 assert.equal(recovery.lineage.v181LiveCards,48);
 assert.equal(recovery.lineage.v183FrozenLiveCards,48);
-assert.equal(recovery.recoveredSemanticSplits.length,6);
-assert.equal(recovery.unresolvedSplitAreas.length,4);
+assert.equal(recovery.recoveredSemanticSplits.length,8);
+assert.equal(recovery.unresolvedSplitAreas.length,2);
 assert.equal(
   recovery.recoveredSemanticSplits.length+recovery.unresolvedSplitAreas.length,
   recovery.lineage.v181LiveCards-recovery.lineage.v180LiveCards,
   "Recovery ledger must account for the ten historical decompression splits without pretending unresolved boundaries are known"
 );
+const communionPrep=recovery.recoveredSemanticSplits.find(x=>x.label==="Panem caelestem / Domine, non sum dignus — Priest");
+assert.deepEqual(communionPrep?.anchorBlocks,["AO.SM.B072","AO.SM.B073"]);
+assert.deepEqual(communionPrep?.evidenceLiveCardIds,["LC-COM-190","LC-COM-200-A","LC-COM-200-B","LC-COM-200-C"]);
+
+const conclusionSplit=recovery.recoveredSemanticSplits.find(x=>x.label==="Placeat tibi / Final Blessing sequence");
+assert.deepEqual(conclusionSplit?.anchorBlocks,["AO.SM.B091","AO.SM.B092"]);
+assert.deepEqual(conclusionSplit?.evidenceLiveCardIds,["LC-END-110","LC-END-120","LC-END-130","LC-END-140"]);
+
+assert.deepEqual(
+  recovery.unresolvedSplitAreas.map(x=>x.area).sort(),
+  ["CANON","OFFERTORY"],
+  "Only the still-unrecovered Offertory and Canon v1.81 decompression boundaries may remain area-only"
+);
+
 assert.equal(Object.hasOwn(recovery,"cards"),false,
   "Partial recovery evidence must not masquerade as an authoritative reader card map");
 
@@ -44,4 +58,4 @@ assert.deepEqual(recovery.recoveredRuntimeRepairs.v183MergeGate.parseQA,{
   errors:0
 });
 
-console.log("v1.83 reader parity gate: PASS — 30-card R17 surface remains blocked; 6/10 decompression splits are semantically recovered, 4/10 remain unresolved, and exact v1.83 elevation/pre-Gospel repairs are frozen.");
+console.log("v1.83 reader parity gate: PASS — 30-card R17 surface remains blocked; 8/10 decompression splits are semantically recovered, 2/10 remain unresolved, and exact v1.83 elevation/pre-Gospel repairs are frozen.");
