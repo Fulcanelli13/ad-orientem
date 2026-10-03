@@ -9,6 +9,7 @@ import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
 import { createPreludeReaderController, loadPreludeReaderData } from "./reader-preludes.js";
+import { createRequiemAbsolutionController, loadRequiemAbsolutionData } from "./reader-requiem.js";
 
 export function createBrowserMassRuntime({
   root, celebrationApi, resolveHostOptions, readReaderPreferences,
@@ -17,6 +18,8 @@ export function createBrowserMassRuntime({
   loadAspergesData = loadAspergesReaderData, aspergesRiteContext = null,
   loadPalmData = loadPalmReaderData,
   loadPreludeData = loadPreludeReaderData,
+  loadRequiemAbsolution = loadRequiemAbsolutionData,
+  requiemAbsolutionContext = null,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -33,6 +36,8 @@ export function createBrowserMassRuntime({
   let inPalm = false;
   let preludeController = null;
   let inPrelude = false;
+  let absolutionController = null;
+  let inAbsolution = false;
   let lifecycleRuntime = null;
   let inLifecycle = false;
 
@@ -126,6 +131,33 @@ export function createBrowserMassRuntime({
     return moment;
   }
 
+  function absolutionMoment(){
+    const state=absolutionController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:"Absolution after Mass",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,secondary:row.english??null,
+        sourceCueIds:[row.sourceRecordId].filter(Boolean),
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Absolution",
+      posture:card.posture && card.posture!=="LOCAL" ? {label:card.posture} : null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showAbsolution(){
+    const moment=absolutionMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
   function introitOnlyCard(){
     const card=readerModel?.cardBySequence?.(1);
     if(!card)return null;
@@ -183,6 +215,24 @@ export function createBrowserMassRuntime({
   }
 
   function move(direction) {
+    if(inAbsolution && absolutionController){
+      const state=absolutionController.project();
+      if(direction==="previous"){
+        if(state.atStart){
+          inAbsolution=false;
+          return showCard(readerModel.cardBySequence(readerModel.totalCards));
+        }
+        absolutionController.previous();
+        return showAbsolution();
+      }
+      if(state.atEnd){
+        inAbsolution=false;
+        inLifecycle=true;
+        return notifyLifecycle(lifecycleRuntime.completeFollowingAction());
+      }
+      absolutionController.next();
+      return showAbsolution();
+    }
     if(inLifecycle && lifecycleRuntime){
       if(direction==="next")return advanceLifecycle();
       return lifecycleRuntime.snapshot();
@@ -249,10 +299,14 @@ export function createBrowserMassRuntime({
       ? readerModel.previousCard(currentSectionId)
       : readerModel.nextCard(currentSectionId);
     if(direction==="next" && (card?.sourceSequence===30 || card?.sequence===30) && currentPrepared?.session?.plan?.normalLastGospel===false){
-      return enterLifecycleBoundary();
+      const boundary=enterLifecycleBoundary();
+      if(boundary.stage==="FOLLOWING_ACTION_HANDOFF" && absolutionController){inLifecycle=false;inAbsolution=true;return showAbsolution();}
+      return boundary;
     }
     if(direction==="next" && !card){
-      return enterLifecycleBoundary();
+      const boundary=enterLifecycleBoundary();
+      if(boundary.stage==="FOLLOWING_ACTION_HANDOFF" && absolutionController){inLifecycle=false;inAbsolution=true;return showAbsolution();}
+      return boundary;
     }
     return showCard(card);
   }
@@ -317,13 +371,16 @@ export function createBrowserMassRuntime({
       const hasRogations=precedingGraphs.includes("ROGATIONS");
       const preludeCount=[hasAsperges,hasPalm,hasAsh,hasCandlemas,hasRogations].filter(Boolean).length;
       if(preludeCount>1)throw new Error("Multiple preceding rite readers are not yet composable");
+      const followingGraphs=prepared?.session?.plan?.followingGraphs??[];
+      const hasRequiemAbsolution=followingGraphs.includes("REQUIEM_ABSOLUTION");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,palmData,preludeData,events]=await Promise.all([
+      const [data,aspergesData,palmData,preludeData,absolutionData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
         hasAsh ? Promise.resolve(loadPreludeData({rite:"ASH"})) : hasCandlemas ? Promise.resolve(loadPreludeData({rite:"CANDLEMAS"})) : hasRogations ? Promise.resolve(loadPreludeData({rite:"ROGATIONS"})) : null,
+        hasRequiemAbsolution ? Promise.resolve(loadRequiemAbsolution(prepared)) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -350,6 +407,13 @@ export function createBrowserMassRuntime({
       inPalm=Boolean(palmController);
       preludeController=(hasAsh||hasCandlemas||hasRogations) ? createPreludeReaderController({graph:preludeData?.graph,payload:preludeData?.payload}) : null;
       inPrelude=Boolean(preludeController);
+      const funeralContext=requiemAbsolutionContext ?? prepared?.session?.resolvedMass?.provenance?.funeral ?? null;
+      absolutionController=hasRequiemAbsolution ? createRequiemAbsolutionController({
+        graph:absolutionData?.graph,payload:absolutionData?.payload,
+        bodyPresent:funeralContext?.bodyPresent,
+        burialProcession:funeralContext?.burialProcession===true,
+      }) : null;
+      inAbsolution=false;
       reader.mount(prepared);
       if(inPrelude)showPrelude();
       else if(inPalm)showPalm();
@@ -371,6 +435,8 @@ export function createBrowserMassRuntime({
     inPalm = false;
     preludeController = null;
     inPrelude = false;
+    absolutionController = null;
+    inAbsolution = false;
     lifecycleRuntime = null;
     inLifecycle = false;
   }
@@ -394,6 +460,7 @@ export function createBrowserMassRuntime({
     getAspergesState: () => aspergesController?.project?.() ?? null,
     getPalmState: () => palmController?.project?.() ?? null,
     getPreludeState: () => preludeController?.project?.() ?? null,
+    getAbsolutionState: () => absolutionController?.project?.() ?? null,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
     chooseLeonine: accept => {
       if(!lifecycleRuntime)return null;
