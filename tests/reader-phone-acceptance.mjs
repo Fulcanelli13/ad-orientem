@@ -105,12 +105,15 @@ try{
   assert.equal(topFocus.cue,"AO.SM.C0168",
     "top of Host Consecration card does not belong to first cue: "+JSON.stringify(topFocus));
 
-  await page.locator('[data-cue-id="AO.SM.C0173"]').evaluate(el=>el.scrollIntoView({block:"center"}));
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0173");
+  const card=page.locator(".ao-prayer-card");
+  await card.evaluate(el=>{
+    const max=Math.max(0,el.scrollHeight-el.clientHeight);
+    el.scrollTop=Math.max(9,max-16);
+  });
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0173",null,{timeout:3000});
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell??null),null,
     "Host elevation bell fires on the words cue before the action cue");
 
-  const card=page.locator(".ao-prayer-card");
   const beforeScroll=await card.evaluate(el=>el.scrollTop);
   const cardBox=await card.boundingBox();
   const client=await context.newCDPSession(page);
