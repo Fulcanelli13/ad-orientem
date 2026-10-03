@@ -48,10 +48,24 @@ expect(!wrongBoundary.pass && !wrongBoundary.sectionBoundaryPass,"section bounda
 
 const registry=JSON.parse(fs.readFileSync(new URL("../data/mass/ordinary-parity-register.v1.json",import.meta.url),"utf8"));
 const audit=auditOrdinaryParity(registry.entries);
-expect(audit.total===3,"expected exactly three reconciled parity rows");
-expect(audit.failed===3 && audit.correctionRequired===3,"known source corrections must remain blocking until canonical payload is patched");
+expect(audit.total===4,"expected four reconciled normative parity rows");
+expect(audit.failed===0 && audit.correctionRequired===0 && audit.pass===true,
+  "reconciled source corrections did not close Ordinary parity");
 expect(registry.entries[0].cueId==="AO.SM.C0148","Benedictus cue pin changed");
 expect(registry.entries[1].cueId==="AO.SM.C0153","Te igitur cue pin changed");
 expect(registry.entries[2].cueId==="AO.SM.C0194","Memento-dead cue pin changed");
+expect(registry.entries[3].cueId==="AO.SM.C0023","Confiteor accent cue pin changed");
+assertCorrectionLayer(registry);
 
-console.log("Ordinary parity contracts PASS: 3 pinned source corrections remain blocking until canonical patch.");
+function assertCorrectionLayer(value){
+  if(value.correctionLayer!=="data/mass/canonical-text-corrections.v1.json"){
+    throw new Error("Ordinary parity correction layer changed");
+  }
+  for(const entry of value.entries){
+    if(entry.authorityVerdict!=="CORRECTED_ON_R17_CANONICAL_OVERLAY"){
+      throw new Error(entry.id+": parity row not marked corrected");
+    }
+  }
+}
+
+console.log("Ordinary parity contracts PASS: 4 reconciled rows corrected on R17 canonical overlay.");
