@@ -314,7 +314,8 @@ export function createBrowserMassRuntime({
       const hasPalm=precedingGraphs.includes("PALM");
       const hasAsh=precedingGraphs.includes("ASH");
       const hasCandlemas=precedingGraphs.includes("CANDLEMAS");
-      const preludeCount=[hasAsperges,hasPalm,hasAsh,hasCandlemas].filter(Boolean).length;
+      const hasRogations=precedingGraphs.includes("ROGATIONS");
+      const preludeCount=[hasAsperges,hasPalm,hasAsh,hasCandlemas,hasRogations].filter(Boolean).length;
       if(preludeCount>1)throw new Error("Multiple preceding rite readers are not yet composable");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
@@ -322,7 +323,7 @@ export function createBrowserMassRuntime({
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
-        hasAsh ? Promise.resolve(loadPreludeData({rite:"ASH"})) : hasCandlemas ? Promise.resolve(loadPreludeData({rite:"CANDLEMAS"})) : null,
+        hasAsh ? Promise.resolve(loadPreludeData({rite:"ASH"})) : hasCandlemas ? Promise.resolve(loadPreludeData({rite:"CANDLEMAS"})) : hasRogations ? Promise.resolve(loadPreludeData({rite:"ROGATIONS"})) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -346,7 +347,7 @@ export function createBrowserMassRuntime({
       inAsperges=Boolean(aspergesController);
       palmController=hasPalm ? createPalmReaderController({graph:palmData?.graph,payload:palmData?.payload}) : null;
       inPalm=Boolean(palmController);
-      preludeController=(hasAsh||hasCandlemas) ? createPreludeReaderController({graph:preludeData?.graph,payload:preludeData?.payload}) : null;
+      preludeController=(hasAsh||hasCandlemas||hasRogations) ? createPreludeReaderController({graph:preludeData?.graph,payload:preludeData?.payload}) : null;
       inPrelude=Boolean(preludeController);
       reader.mount(prepared);
       if(inPrelude)showPrelude();

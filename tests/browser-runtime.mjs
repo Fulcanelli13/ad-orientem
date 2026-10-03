@@ -10,6 +10,7 @@ const palmPayload=load("../data/presentation/reader-palm.v1.json");
 const palmData=Object.freeze({payload:palmPayload,graph:Object.freeze([...specialExtension.graphs.PALM])});
 const ashData=Object.freeze({payload:load("../data/presentation/reader-ash.v1.json"),graph:Object.freeze([...specialExtension.graphs.ASH])});
 const candlemasData=Object.freeze({payload:load("../data/presentation/reader-candlemas.v1.json"),graph:Object.freeze([...specialExtension.graphs.CND])});
+const rogationsData=Object.freeze({payload:load("../data/presentation/reader-rogations.v1.json"),graph:Object.freeze([...specialExtension.graphs.ROG])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -204,6 +205,37 @@ assert.equal(candleRuntime.getReaderState().cardTitle,"Introit");
 candleRuntime.previous();
 assert.equal(candleRuntime.getPreludeState().card.id,"CND-R05");
 candleRuntime.destroy();
+
+
+const rogationsRoot=rootFixture();
+const rogationsRuntime=createBrowserMassRuntime({
+  root:rogationsRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["rogations"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Rogation Mass",proper,precedingRites:["ROGATIONS"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadPreludeData:async({rite})=>rite==="ROGATIONS"?rogationsData:null,
+});
+const rogationsEntered=await rogationsRuntime.enter();
+assert.equal(rogationsEntered.session.plan.massEntry,"INTROIT");
+assert.equal(rogationsRuntime.getCurrentSectionId(),null);
+assert.equal(rogationsRuntime.getReaderState().cardTitle,"Litany · Invocation of God");
+assert.ok(rogationsRuntime.getReaderState().paragraphs.length>=9);
+rogationsRuntime.next();
+assert.equal(rogationsRuntime.getPreludeState().card.id,"ROG-R02");
+rogationsRuntime.next();
+rogationsRuntime.next();
+rogationsRuntime.next();
+assert.equal(rogationsRuntime.getPreludeState().card.id,"ROG-R05");
+assert.ok(rogationsRuntime.getReaderState().paragraphs.some(p=>/fructus terræ/.test(p.primary)),
+  "Rogations petition for the fruits of the earth missing from runtime");
+while(!rogationsRuntime.getPreludeState().atEnd)rogationsRuntime.next();
+rogationsRuntime.next();
+assert.equal(rogationsRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(rogationsRuntime.getReaderState().cardTitle,"Introit");
+rogationsRuntime.previous();
+assert.equal(rogationsRuntime.getPreludeState().card.id,"ROG-R08");
+rogationsRuntime.destroy();
 
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({

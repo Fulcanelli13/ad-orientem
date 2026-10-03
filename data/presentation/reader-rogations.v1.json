@@ -1,0 +1,1151 @@
+{
+  "schema": "ao-r25-rogations-payload-v1",
+  "rite": "ROGATIONS",
+  "title": "Greater and Lesser Litanies · Rogations",
+  "graphRecordCount": 6,
+  "source": {
+    "authority": "Traditional Roman Litany of the Saints and Rogation procession",
+    "primaryCorpus": {
+      "repository": "DivinumOfficium/divinum-officium",
+      "ref": "8e3a039ae34fcd0fd1583d68f78ac79947d3e8e2",
+      "path": "web/www/horas/Latin/Psalterium/Special/Preces.txt",
+      "blobSha": "aa8197cca3cbca14e7da11004a2111d58d49cf82",
+      "section": "Litania"
+    },
+    "psalm69": {
+      "repository": "DivinumOfficium/divinum-officium",
+      "ref": "8e3a039ae34fcd0fd1583d68f78ac79947d3e8e2",
+      "path": "web/www/horas/Latin/Psalterium/Psalmorum/Psalm69.txt",
+      "blobSha": "0b2b3c64b1ccb8637107f3c71100d583e111df24"
+    },
+    "massWitness": "Missale Romanum 1962 · Litaniae maiores/minores",
+    "completenessRule": "Full controlled litany corpus; never substitute an abridged donor."
+  },
+  "processionalRule": {
+    "calendarDateDoesNotActivateRite": true,
+    "participantPosture": "PROCESSIONAL",
+    "nonParticipantPosture": "LOCAL",
+    "invocationResponseRepeat": 2
+  },
+  "cards": [
+    {
+      "id": "ROG-R01",
+      "title": "Litany · Invocation of God",
+      "sourceRecordIds": [
+        "ROG-LIT-010"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ROG-LIT-010-001",
+          "kind": "VERSICLE",
+          "latin": "V. Kýrie, eléison.",
+          "sourceRecordId": "LIT-010"
+        },
+        {
+          "id": "ROG-LIT-010-002",
+          "kind": "TEXT",
+          "latin": "Christe, eléison.",
+          "sourceRecordId": "LIT-010"
+        },
+        {
+          "id": "ROG-LIT-010-003",
+          "kind": "TEXT",
+          "latin": "Kýrie, eléison.",
+          "sourceRecordId": "LIT-010"
+        },
+        {
+          "id": "ROG-LIT-010-004",
+          "kind": "TEXT",
+          "latin": "Christe, audi nos.",
+          "sourceRecordId": "LIT-010"
+        },
+        {
+          "id": "ROG-LIT-010-005",
+          "kind": "TEXT",
+          "latin": "Christe, exáudi nos.",
+          "sourceRecordId": "LIT-010"
+        },
+        {
+          "id": "ROG-LIT-010-006",
+          "kind": "TEXT",
+          "latin": "Pater de cælis, Deus, miserére nobis.",
+          "sourceRecordId": "LIT-010"
+        },
+        {
+          "id": "ROG-LIT-010-007",
+          "kind": "TEXT",
+          "latin": "Fili, Redémptor mundi, Deus, miserére nobis.",
+          "sourceRecordId": "LIT-010"
+        },
+        {
+          "id": "ROG-LIT-010-008",
+          "kind": "TEXT",
+          "latin": "Spíritus Sancte, Deus, miserére nobis.",
+          "sourceRecordId": "LIT-010"
+        },
+        {
+          "id": "ROG-LIT-010-009",
+          "kind": "TEXT",
+          "latin": "Sancta Trínitas, unus Deus, miserére nobis.",
+          "sourceRecordId": "LIT-010"
+        }
+      ],
+      "guide": "Join the appointed responses. If the procession is moving and you are participating, walk with it."
+    },
+    {
+      "id": "ROG-R02",
+      "title": "Litany · Our Lady, Angels and Apostles",
+      "sourceRecordIds": [
+        "ROG-LIT-020",
+        "ROG-PRC-010"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ROG-LIT-020-001",
+          "kind": "TEXT",
+          "latin": "Sancta María, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-002",
+          "kind": "TEXT",
+          "latin": "Sancta Dei Génetrix, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-003",
+          "kind": "TEXT",
+          "latin": "Sancta Virgo vírginum, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-004",
+          "kind": "TEXT",
+          "latin": "Sancte Míchaël, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-005",
+          "kind": "TEXT",
+          "latin": "Sancte Gábriel, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-006",
+          "kind": "TEXT",
+          "latin": "Sancte Ráphaël, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-007",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Ángeli et Archángeli, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-008",
+          "kind": "TEXT",
+          "latin": "Omnes sancti beatórum Spirítuum órdines, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-009",
+          "kind": "TEXT",
+          "latin": "Sancte Joánnes Baptísta, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-010",
+          "kind": "TEXT",
+          "latin": "Sancte Joseph, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-011",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Patriárchæ et Prophétæ, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-012",
+          "kind": "TEXT",
+          "latin": "Sancte Petre, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-013",
+          "kind": "TEXT",
+          "latin": "Sancte Paule, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-014",
+          "kind": "TEXT",
+          "latin": "Sancte Andréa, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-015",
+          "kind": "TEXT",
+          "latin": "Sancte Jacóbe, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-016",
+          "kind": "TEXT",
+          "latin": "Sancte Joánnes, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-017",
+          "kind": "TEXT",
+          "latin": "Sancte Thoma, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-018",
+          "kind": "TEXT",
+          "latin": "Sancte Jacóbe, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-019",
+          "kind": "TEXT",
+          "latin": "Sancte Philíppe, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-020",
+          "kind": "TEXT",
+          "latin": "Sancte Bartolomǽe, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-021",
+          "kind": "TEXT",
+          "latin": "Sancte Matthǽe, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-022",
+          "kind": "TEXT",
+          "latin": "Sancte Simon, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-023",
+          "kind": "TEXT",
+          "latin": "Sancte Thaddǽe, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-024",
+          "kind": "TEXT",
+          "latin": "Sancte Matthía, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-025",
+          "kind": "TEXT",
+          "latin": "Sancte Bárnaba, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-026",
+          "kind": "TEXT",
+          "latin": "Sancte Luca, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-027",
+          "kind": "TEXT",
+          "latin": "Sancte Marce, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-028",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Apóstoli et Evangelístæ, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-029",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Discípuli Dómini, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        }
+      ],
+      "guide": "Continue the Litany. Processional posture applies only to those actually taking part in the procession."
+    },
+    {
+      "id": "ROG-R03",
+      "title": "Litany · Martyrs, Confessors and Virgins",
+      "sourceRecordIds": [
+        "ROG-LIT-020"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ROG-LIT-020-001",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Innocéntes, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-002",
+          "kind": "TEXT",
+          "latin": "Sancte Stéphane, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-003",
+          "kind": "TEXT",
+          "latin": "Sancte Laurénti, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-004",
+          "kind": "TEXT",
+          "latin": "Sancte Vincénti, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-005",
+          "kind": "TEXT",
+          "latin": "Sancti Fabiáne et Sebastiáne, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-006",
+          "kind": "TEXT",
+          "latin": "Sancti Joánnes et Paule, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-007",
+          "kind": "TEXT",
+          "latin": "Sancti Cosma et Damiáne, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-008",
+          "kind": "TEXT",
+          "latin": "Sancti Gervási et Protási, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-009",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Mártyres, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-010",
+          "kind": "TEXT",
+          "latin": "Sancte Silvéster, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-011",
+          "kind": "TEXT",
+          "latin": "Sancte Gregóri, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-012",
+          "kind": "TEXT",
+          "latin": "Sancte Ambrósi, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-013",
+          "kind": "TEXT",
+          "latin": "Sancte Augustíne, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-014",
+          "kind": "TEXT",
+          "latin": "Sancte Hierónyme, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-015",
+          "kind": "TEXT",
+          "latin": "Sancte Martíne, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-016",
+          "kind": "TEXT",
+          "latin": "Sancte Nicoláe, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-017",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Pontífices et Confessóres,\toráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-018",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Doctóres, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-019",
+          "kind": "TEXT",
+          "latin": "Sancte Antóni, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-020",
+          "kind": "TEXT",
+          "latin": "Sancte Benedícte, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-021",
+          "kind": "TEXT",
+          "latin": "Sancte Bernárde, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-022",
+          "kind": "TEXT",
+          "latin": "Sancte Domínice, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-023",
+          "kind": "TEXT",
+          "latin": "Sancte Francísce, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-024",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Sacerdótes et Levítæ, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-025",
+          "kind": "TEXT",
+          "latin": "Omnes sancti Mónachi et Eremítæ, oráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-026",
+          "kind": "TEXT",
+          "latin": "Sancta María Magdaléna, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-027",
+          "kind": "TEXT",
+          "latin": "Sancta Agatha, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-028",
+          "kind": "TEXT",
+          "latin": "Sancta Lúcia, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-029",
+          "kind": "TEXT",
+          "latin": "Sancta Agnes, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-030",
+          "kind": "TEXT",
+          "latin": "Sancta Cæcília, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-031",
+          "kind": "TEXT",
+          "latin": "Sancta Catharína, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-032",
+          "kind": "TEXT",
+          "latin": "Sancta Anastásia, ora pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-033",
+          "kind": "TEXT",
+          "latin": "Omnes sanctæ Vírgines et Víduæ,\toráte pro nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-034",
+          "kind": "TEXT",
+          "latin": "Omnes Sancti et Sanctæ Dei, intercédite pro nobis.",
+          "sourceRecordId": "LIT-020"
+        }
+      ]
+    },
+    {
+      "id": "ROG-R04",
+      "title": "Litany · Deliverance",
+      "sourceRecordIds": [
+        "ROG-LIT-020"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ROG-LIT-020-001",
+          "kind": "TEXT",
+          "latin": "Propítius esto, parce nobis, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-002",
+          "kind": "TEXT",
+          "latin": "Propítius esto, exáudi nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-003",
+          "kind": "TEXT",
+          "latin": "Ab omni malo, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-004",
+          "kind": "TEXT",
+          "latin": "Ab omni peccáto, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-005",
+          "kind": "TEXT",
+          "latin": "Ab ira tua, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-006",
+          "kind": "TEXT",
+          "latin": "A subitánea et improvísa morte, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-007",
+          "kind": "TEXT",
+          "latin": "Ab insídiis diáboli, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-008",
+          "kind": "TEXT",
+          "latin": "Ab ira et ódio et omni mala voluntáte, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-009",
+          "kind": "TEXT",
+          "latin": "A spíritu fornicatiónis, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-010",
+          "kind": "TEXT",
+          "latin": "A fúlgure et tempestáte, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-011",
+          "kind": "TEXT",
+          "latin": "A flagéllo terræmótus, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-012",
+          "kind": "TEXT",
+          "latin": "A peste, fame et bello, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-013",
+          "kind": "TEXT",
+          "latin": "A morte perpétua, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-014",
+          "kind": "TEXT",
+          "latin": "Per mystérium sanctæ Incarnatiónis tuæ, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-015",
+          "kind": "TEXT",
+          "latin": "Per advéntum tuum, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-016",
+          "kind": "TEXT",
+          "latin": "Per nativitátem tuam, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-017",
+          "kind": "TEXT",
+          "latin": "Per baptísmum et sanctum jejúnium tuum, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-018",
+          "kind": "TEXT",
+          "latin": "Per crucem et passiónem tuam, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-019",
+          "kind": "TEXT",
+          "latin": "Per mortem et sepultúram tuam, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-020",
+          "kind": "TEXT",
+          "latin": "Per sanctam resurrectiónem tuam, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-021",
+          "kind": "TEXT",
+          "latin": "Per admirábilem ascensiónem tuam, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-022",
+          "kind": "TEXT",
+          "latin": "Per advéntum Spíritus Sancti Parácliti, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-023",
+          "kind": "TEXT",
+          "latin": "In die judícii, líbera nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        }
+      ]
+    },
+    {
+      "id": "ROG-R05",
+      "title": "Litany · Supplications",
+      "sourceRecordIds": [
+        "ROG-LIT-020"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ROG-LIT-020-001",
+          "kind": "TEXT",
+          "latin": "Peccatóres, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-002",
+          "kind": "TEXT",
+          "latin": "Ut nobis parcas, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-003",
+          "kind": "TEXT",
+          "latin": "Ut nobis indúlgeas, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-004",
+          "kind": "TEXT",
+          "latin": "Ut ad veram pœniténtiam nos perdúcere dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-005",
+          "kind": "TEXT",
+          "latin": "Ut Ecclésiam tuam sanctam régere et conserváre dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-006",
+          "kind": "TEXT",
+          "latin": "Ut domnum Apostólicum et omnes ecclesiásticos órdines in sancta religióne conserváre dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-007",
+          "kind": "TEXT",
+          "latin": "Ut inimícos sanctæ Ecclésiæ humiliáre dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-008",
+          "kind": "TEXT",
+          "latin": "Ut régibus et princípibus christiánis pacem et veram concórdiam donáre dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-009",
+          "kind": "TEXT",
+          "latin": "Ut cuncto pópulo christiáno pacem et unitátem largíri dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-010",
+          "kind": "TEXT",
+          "latin": "Ut omnes errántes ad unitátem Ecclésiæ revocáre, et infidéles univérsos ad Evangélii lumen perdúcere dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-011",
+          "kind": "TEXT",
+          "latin": "Ut nosmetípsos in tuo sancto servítio confortáre et conserváre dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-012",
+          "kind": "TEXT",
+          "latin": "Ut mentes nostras ad cæléstia desidéria érigas, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-013",
+          "kind": "TEXT",
+          "latin": "Ut ómnibus benefactóribus nostris sempitérna bona retríbuas, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-014",
+          "kind": "TEXT",
+          "latin": "Ut ánimas nostras, fratrum, propinquórum et benefactórum nostrórum ab ætérna damnatióne erípias, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-015",
+          "kind": "TEXT",
+          "latin": "Ut fructus terræ dare et conserváre dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-016",
+          "kind": "TEXT",
+          "latin": "Ut ómnibus fidélibus defúnctis réquiem ætérnam donáre dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-017",
+          "kind": "TEXT",
+          "latin": "Ut nos exaudíre dignéris, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-018",
+          "kind": "TEXT",
+          "latin": "Fili Dei, te rogámus, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-019",
+          "kind": "TEXT",
+          "latin": "Agnus Dei, qui tollis peccáta mundi, parce nobis, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-020",
+          "kind": "TEXT",
+          "latin": "Agnus Dei, qui tollis peccáta mundi, exáudi nos, Dómine.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-021",
+          "kind": "TEXT",
+          "latin": "Agnus Dei, qui tollis peccáta mundi, miserére nobis.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-022",
+          "kind": "TEXT",
+          "latin": "Christe, audi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-023",
+          "kind": "TEXT",
+          "latin": "Christe, exáudi nos.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-024",
+          "kind": "TEXT",
+          "latin": "Kýrie, eléison.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-025",
+          "kind": "TEXT",
+          "latin": "Christe, eléison.",
+          "sourceRecordId": "LIT-020"
+        },
+        {
+          "id": "ROG-LIT-020-026",
+          "kind": "TEXT",
+          "latin": "Kýrie, eléison.",
+          "sourceRecordId": "LIT-020"
+        }
+      ]
+    },
+    {
+      "id": "ROG-R06",
+      "title": "Pater noster · Psalm 69 · Versicles",
+      "sourceRecordIds": [
+        "ROG-PS-010"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ROG-PATER-01",
+          "kind": "TEXT",
+          "latin": "Pater noster, qui es in cælis: sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum cotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PATER-02",
+          "kind": "VERSICLE",
+          "latin": "V. Et ne nos indúcas in tentatiónem.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PATER-03",
+          "kind": "RESPONSE",
+          "latin": "R. Sed líbera nos a malo.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS69-01",
+          "kind": "TEXT",
+          "latin": "Deus, in adjutórium meum inténde: Dómine, ad adjuvándum me festína.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS69-02",
+          "kind": "TEXT",
+          "latin": "Confundántur et revereántur, qui quærunt ánimam meam.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS69-03",
+          "kind": "TEXT",
+          "latin": "Avertántur retrórsum, et erubéscant, qui volunt mihi mala.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS69-04",
+          "kind": "TEXT",
+          "latin": "Avertántur statim erubescéntes, qui dicunt mihi: Euge, euge.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS69-05",
+          "kind": "TEXT",
+          "latin": "Exsúltent et læténtur in te omnes qui quærunt te, et dicant semper: Magnificétur Dóminus: qui díligunt salutáre tuum.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS69-06",
+          "kind": "TEXT",
+          "latin": "Ego vero egénus, et pauper sum: Deus, ádjuva me.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS69-07",
+          "kind": "TEXT",
+          "latin": "Adjútor meus, et liberátor meus es tu: Dómine, ne moréris.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-001",
+          "kind": "VERSICLE",
+          "latin": "V. Salvos fac servos tuos.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-002",
+          "kind": "RESPONSE",
+          "latin": "R. Deus meus, sperántes in te.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-003",
+          "kind": "VERSICLE",
+          "latin": "V. Esto nobis, Dómine, turris fortitúdinis.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-004",
+          "kind": "RESPONSE",
+          "latin": "R. A fácie inimíci.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-005",
+          "kind": "VERSICLE",
+          "latin": "V. Nihil profíciat inimícus in nobis.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-006",
+          "kind": "RESPONSE",
+          "latin": "R. Et fílius iniquitátis non appónat nocére nobis.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-007",
+          "kind": "VERSICLE",
+          "latin": "V. Dómine, non secúndum peccáta nostra fácias nobis.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-008",
+          "kind": "RESPONSE",
+          "latin": "R. Neque secúndum iniquitátes nostras retríbuas nobis.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-009",
+          "kind": "VERSICLE",
+          "latin": "V. Orémus pro Pontífice nostro~",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-010",
+          "kind": "RESPONSE",
+          "latin": "R. N.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-011",
+          "kind": "RESPONSE",
+          "latin": "R. Dóminus consérvet eum, et vivíficet eum, et beátum fáciat eum in terra, et non tradat eum in ánimam inimicórum ejus.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-012",
+          "kind": "VERSICLE",
+          "latin": "V. Orémus pro benefactóribus nostris.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-013",
+          "kind": "RESPONSE",
+          "latin": "R. Retribúere dignáre, Dómine, ómnibus, nobis bona faciéntibus propter nomen tuum, vitam ætérnam. Amen.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-014",
+          "kind": "VERSICLE",
+          "latin": "V. Orémus pro fidélibus defúnctis.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-015",
+          "kind": "RESPONSE",
+          "latin": "R. Réquiem ætérnam dona eis, Dómine, et lux perpétua lúceat eis.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-016",
+          "kind": "VERSICLE",
+          "latin": "V. Requiéscant in pace.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-017",
+          "kind": "RESPONSE",
+          "latin": "R. Amen.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-018",
+          "kind": "VERSICLE",
+          "latin": "V. Pro frátribus nostris abséntibus.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-019",
+          "kind": "RESPONSE",
+          "latin": "R. Salvos fac servos tuos, Deus meus, sperántes in te.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-020",
+          "kind": "VERSICLE",
+          "latin": "V. Mitte eis, Dómine, auxílium de sancto.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-021",
+          "kind": "RESPONSE",
+          "latin": "R. Et de Sion tuére eos.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-010-022",
+          "kind": "VERSICLE",
+          "latin": "V. Dómine, exáudi oratiónem meam.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-VD-01",
+          "kind": "VERSICLE",
+          "latin": "V. Dóminus vobíscum.",
+          "sourceRecordId": "ROG-PS-010"
+        },
+        {
+          "id": "ROG-PS-VD-02",
+          "kind": "RESPONSE",
+          "latin": "R. Et cum spíritu tuo.",
+          "sourceRecordId": "ROG-PS-010"
+        }
+      ]
+    },
+    {
+      "id": "ROG-R07",
+      "title": "Concluding Prayers",
+      "sourceRecordIds": [
+        "ROG-END-010"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ROG-END-010-001",
+          "kind": "VERSICLE",
+          "latin": "V. Orémus",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-002",
+          "kind": "VERSICLE",
+          "latin": "V. Deus, cui próprium est miseréri semper et párcere: súscipe deprecatiónem nostram, ut nos, et omnes fámulos tuos, quos delictórum caténa constríngit, miserátio tuæ pietátis cleménter absólvat.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-003",
+          "kind": "VERSICLE",
+          "latin": "V. Exáudi, quǽsumus, Dómine, súpplicum preces, et confiténtium tibi parce peccátis: ut páriter nobis indulgéntiam tríbuas benígnus et pacem.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-004",
+          "kind": "VERSICLE",
+          "latin": "V. Ineffábilem nobis, Dómine, misericórdiam tuam cleménter osténde: ut simul nos et a peccátis ómnibus éxuas, et a pœnis, quas pro his merémur, erípias.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-005",
+          "kind": "VERSICLE",
+          "latin": "V. Deus, qui culpa offénderis, pœniténtia placáris: preces pópuli tui supplicántis propítius réspice; et flagélla tuæ iracúndiæ, quæ pro peccátis nostris merémur, avérte.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-006",
+          "kind": "VERSICLE",
+          "latin": "V. Omnípotens sempitérne Deus, miserére fámulo tuo Pontífici nostro~",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-007",
+          "kind": "RESPONSE",
+          "latin": "R. N., et dírige eum secúndum tuam cleméntiam in viam salútis ætérnæ: ut, te donánte, tibi plácita cúpiat, et tota virtúte perfíciat.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-008",
+          "kind": "VERSICLE",
+          "latin": "V. Deus, a quo sancta desidéria, recta consília et justa sunt ópera: da servis tuis illam, quam mundus dare non potest, pacem; ut et corda nostra mandátis tuis dédita, et, hóstium subláta formídine, témpora sint, tua protectióne, tranquílla.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-009",
+          "kind": "VERSICLE",
+          "latin": "V. Ure igne Sancti Spíritus renes nostros et cor nostrum, Dómine: ut tibi casto córpore serviámus, et mundo corde placeámus.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-010-010",
+          "kind": "VERSICLE",
+          "latin": "V. Fidélium, Deus, ómnium Cónditor et Redémptor, animábus famulórum famularúmque tuárum remissiónem cunctórum tríbue peccatórum: ut indulgéntiam, quam semper optavérunt, piis supplicatiónibus consequántur.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-PER",
+          "kind": "TEXT",
+          "latin": "Per Dóminum nostrum Jesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-VD-01",
+          "kind": "VERSICLE",
+          "latin": "V. Dóminus vobíscum.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-VD-02",
+          "kind": "RESPONSE",
+          "latin": "R. Et cum spíritu tuo.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-EX-01",
+          "kind": "VERSICLE",
+          "latin": "V. Exáudiat nos omnípotens et miséricors Dóminus.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-EX-02",
+          "kind": "RESPONSE",
+          "latin": "R. Amen.",
+          "sourceRecordId": "ROG-END-010"
+        },
+        {
+          "id": "ROG-END-FID",
+          "kind": "TEXT",
+          "latin": "Fidélium ánimæ per misericórdiam Dei requiéscant in pace. Amen.",
+          "sourceRecordId": "ROG-END-010"
+        }
+      ]
+    },
+    {
+      "id": "ROG-R08",
+      "title": "Mass begins at the Introit",
+      "sourceRecordIds": [
+        "ROG-MASS-010"
+      ],
+      "actorScope": "ALL",
+      "posture": "ORDINARY_PROFILE",
+      "paragraphs": [],
+      "handoff": "INTROIT",
+      "ordinaryOpeningSuppressed": true,
+      "guide": "When the Rogation rite immediately precedes Mass, the Prayers at the Foot are omitted and Mass begins at the Introit."
+    }
+  ]
+}

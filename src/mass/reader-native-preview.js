@@ -165,6 +165,7 @@ export async function prepareNativeReaderPreview({
   loadPalmData=loadPalmReaderData,
   ashData=null,
   candlemasData=null,
+  rogationsData=null,
   loadPreludeData=loadPreludeReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
@@ -179,9 +180,10 @@ export async function prepareNativeReaderPreview({
   const hasPalm=precedingGraphs.includes("PALM");
   const hasAsh=precedingGraphs.includes("ASH");
   const hasCandlemas=precedingGraphs.includes("CANDLEMAS");
-  const preludeCount=[hasAsperges,hasPalm,hasAsh,hasCandlemas].filter(Boolean).length;
+  const hasRogations=precedingGraphs.includes("ROGATIONS");
+  const preludeCount=[hasAsperges,hasPalm,hasAsh,hasCandlemas,hasRogations].filter(Boolean).length;
   if(preludeCount>1)throw new Error("Multiple preceding rite readers are not yet composable");
-  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas]=await Promise.all([
+  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas,loadedRogations]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
@@ -191,6 +193,7 @@ export async function prepareNativeReaderPreview({
     hasPalm ? (palmData ?? Promise.resolve(loadPalmData(prepared))) : null,
     hasAsh ? (ashData ?? Promise.resolve(loadPreludeData({rite:"ASH"}))) : null,
     hasCandlemas ? (candlemasData ?? Promise.resolve(loadPreludeData({rite:"CANDLEMAS"}))) : null,
+    hasRogations ? (rogationsData ?? Promise.resolve(loadPreludeData({rite:"ROGATIONS"}))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -220,7 +223,9 @@ export async function prepareNativeReaderPreview({
     ? createPreludeReaderController({graph:loadedAsh?.graph,payload:loadedAsh?.payload})
     : hasCandlemas
       ? createPreludeReaderController({graph:loadedCandlemas?.graph,payload:loadedCandlemas?.payload})
-      : null;
+      : hasRogations
+        ? createPreludeReaderController({graph:loadedRogations?.graph,payload:loadedRogations?.payload})
+        : null;
   return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,preludeController});
 }
 
@@ -244,6 +249,7 @@ export async function mountNativeReaderPreview({
   loadPalmData=loadPalmReaderData,
   ashData=null,
   candlemasData=null,
+  rogationsData=null,
   loadPreludeData=loadPreludeReaderData,
   readLegacyActive=null,
   iconResolver=null,
@@ -256,7 +262,7 @@ export async function mountNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     aspergesData,loadAspergesData,aspergesRiteContext,palmData,loadPalmData,
-    ashData,candlemasData,loadPreludeData,
+    ashData,candlemasData,rogationsData,loadPreludeData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -737,7 +743,7 @@ export async function mountNativeReaderPreview({
       cinematic:"R17_SINGLE_OWNER_TIMED_TRANSIENT",
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
       modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__UI_SWITCH_STILL_LOCKED_FOR_PHONE_ACCEPTANCE",
-      specialStructure:"R24_NATIVE_ASPERGES_PALM_ASH_CANDLEMAS_PRECEDING_RITES",
+      specialStructure:"R25_NATIVE_ASPERGES_PALM_ASH_CANDLEMAS_ROGATIONS_PRECEDING_RITES",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));

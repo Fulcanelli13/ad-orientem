@@ -294,6 +294,10 @@ const candlemasData=Object.freeze({
   payload:load("../data/presentation/reader-candlemas.v1.json"),
   graph:Object.freeze([...specialExtension.graphs.CND]),
 });
+const rogationsData=Object.freeze({
+  payload:load("../data/presentation/reader-rogations.v1.json"),
+  graph:Object.freeze([...specialExtension.graphs.ROG]),
+});
 
 function fakeElement(){
   return {
@@ -406,5 +410,29 @@ assert.equal(candleMounted.getPreludeState().personalObjectState,"BLESSED_CANDLE
 candleMounted.next();
 assert.equal(candleMounted.getPreludeState().card.objectState,"CANDLE_LIT");
 candleMounted.destroy();
+
+
+const rogationsPrepared={
+  ...prepared,
+  session:{
+    ...prepared.session,
+    plan:{...prepared.session.plan,precedingGraphs:["ROGATIONS"],massEntry:"INTROIT"},
+  },
+};
+const rogationsReady=await prepareNativeReaderPreview({
+  prepared:rogationsPrepared,presentationData:data,eventData,cueRegistries,guideData,rogationsData,
+});
+assert.equal(rogationsReady.preludeController.project().rite,"ROGATIONS");
+assert.equal(rogationsReady.preludeController.project().card.id,"ROG-R01");
+assert.equal(rogationsReady.preludeController.cards.length,8);
+const rogationsMounted=await mountNativeReaderPreview({
+  doc:fakeDocument(),prepared:rogationsPrepared,presentationData:data,eventData,cueRegistries,guideData,rogationsData,
+});
+assert.equal(rogationsMounted.root.dataset.r17SpecialStructure,"ROGATIONS");
+rogationsMounted.next();
+assert.equal(rogationsMounted.getPreludeState().card.id,"ROG-R02");
+rogationsMounted.showSequence(1);
+assert.equal(rogationsMounted.root.dataset.r17SpecialStructure,"MASS");
+rogationsMounted.destroy();
 
 console.log("native reader preview: PASS — source-first LIVE is native-owned; remaining rollback state is explicit.");
