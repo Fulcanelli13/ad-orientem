@@ -6,6 +6,7 @@ import {
   selectReaderTextCorpus,
   buildReaderSectionCard,
 } from "../src/mass/reader-text.js";
+import { properToReaderSlots } from "../src/mass/proper-reader-slots.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const low=load("../data/presentation/reader-text-low.v1.json");
@@ -82,5 +83,28 @@ const lastGospel=buildReaderSectionCard({
 });
 assert.equal(lastGospel.title,"Last Gospel");
 assert.ok(lastGospel.paragraphs.length>0);
+
+const t=(lat,en)=>({lat,en});
+const currentProper=properToReaderSlots({
+  sourcePath:"Sancti/10-07",
+  introit:t("Introitus Rosarii","Introit of the Rosary"),
+  collects:[t("Collecta Rosarii","Collect of the Rosary")],
+  epistle:t("Epistola Rosarii","Epistle of the Rosary"),
+  gradual:t("Graduale et Alleluia Rosarii","Gradual and Alleluia of the Rosary"),
+  sequence:{lat:"",en:""},
+  gospel:t("Evangelium Rosarii","Gospel of the Rosary"),
+  offertory:t("Offertorium Rosarii","Offertory of the Rosary"),
+  secrets:[t("Secreta Rosarii","Secret of the Rosary")],
+  preface:t("Praefatio","Preface"),
+  communion:t("Communio Rosarii","Communion of the Rosary"),
+  postcommunions:[t("Postcommunio Rosarii","Postcommunion of the Rosary")],
+});
+const chantCard=buildReaderSectionCard({
+  corpus:sung,
+  section:sections.sectionById("AO.CARD.006"),
+  properSlots:currentProper.slots,
+});
+assert.ok(chantCard.paragraphs.some(p=>p.primary==="Gradual and Alleluia of the Rosary"));
+assert.ok(!chantCard.paragraphs.some(p=>p.primary==="Day of wrath"),"nonexistent Sequence was fabricated");
 
 console.log("reader text corpus: PASS — verified donors, Proper fail-closed, all 30 Low/Sung cards nonblank.");
