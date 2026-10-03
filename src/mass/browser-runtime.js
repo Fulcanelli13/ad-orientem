@@ -135,7 +135,7 @@ export function createBrowserMassRuntime({
       id:card.id,sectionTitle:"Rogations",cardTitle:card.title,cardUpdate:true,
       paragraphs:(card.paragraphs??[]).map(row=>({id:row.id,kind:row.kind,primary:row.latin,sourceCueIds:[row.sourceRecordId].filter(Boolean)})),
       progress:String(state.index+1)+" / "+String(state.total)+" · Rogations",
-      posture:state.participantPosture?{label:state.participantPosture}:card.posture&&!["LOCAL","ORDINARY_PROFILE"].includes(card.posture)?{label:card.posture}:null,
+      posture:state.participantPosture&&state.participantPosture!=="LOCAL"?{label:state.participantPosture}:card.posture&&!["LOCAL","ORDINARY_PROFILE"].includes(card.posture)?{label:card.posture}:null,
       guide:card.guide?{registryAvailable:true,text:card.guide}:null,
     };
   }
