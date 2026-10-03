@@ -16,7 +16,9 @@ assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,tr
 assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,true);
 
 assert.equal(parity.reference.expectedLiveCards,48);
-assert.equal(parity.currentR17.status,"SOURCE_FIRST_RELEASE_POLICY");
+assert.equal(parity.currentR17.status,"SOURCE_FIRST_LIVE_INTEGRATED");
+assert.equal(parity.currentR17.nativeReaderCards,39);
+assert.equal(parity.currentR17.sourceFirstCanonSegments,14);
 assert.equal(parity.status,"HISTORICAL_PARITY_REFERENCE_NON_BLOCKING");
 assert.equal(parity.releaseAuthority,false);
 assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
