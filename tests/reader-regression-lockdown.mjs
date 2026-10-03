@@ -9,14 +9,16 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"BLOCKED_PENDING_V1_83_PARITY");
+assert.equal(release.status,"BLOCKED_PENDING_SOURCE_FIRST_LIVE_INTEGRATION");
 assert.equal(release.productionDefault,"LEGACY");
 assert.equal(resolveReaderUiMode({}),"LEGACY","reader default changed before release certification");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
 assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,true);
 
 assert.equal(parity.reference.expectedLiveCards,48);
-assert.equal(parity.currentR17.status,"NOT_PARITY_COMPLETE");
+assert.equal(parity.currentR17.status,"SOURCE_FIRST_RELEASE_POLICY");
+assert.equal(parity.status,"HISTORICAL_PARITY_REFERENCE_NON_BLOCKING");
+assert.equal(parity.releaseAuthority,false);
 assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
 assert.equal(recovery.lineage.v183FrozenLiveCards,48);
 assert.equal(Object.hasOwn(recovery,"cards"),false,"partial recovery evidence became a render map");
@@ -32,7 +34,7 @@ assert.equal(regressionById.get("V183-GRADUAL-COMPOSITION").status,"RECOVERED_AN
 assert.equal(regressionById.get("V181-PAX-OWNERSHIP").status,"MECHANICS_TESTED_SOURCE_CERTIFICATION_PENDING");
 assert.equal(regressionById.get("V183-NATIVE-LIVE-GATE-BYPASS").status,"FIXED_AND_TESTED_R17");
 
-assert.equal(LIVE_STRUCTURE_STATUS,"PROVISIONAL_V1_65_DONOR_ONLY");
+assert.equal(LIVE_STRUCTURE_STATUS,"SOURCE_FIRST_CANON_CERTIFIED__FULL_LIVE_PENDING");
 const livePrepared={
   readerPreferences:{mode:"LIVE"},
   session:{
@@ -42,11 +44,11 @@ const livePrepared={
 };
 const support=structureSupport(livePrepared);
 assert.equal(support.supported,false);
-assert.equal(support.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
+assert.equal(support.reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
 
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
-  "G6_48_CARD_MAP",
+  "LIVE_SOURCE_STRUCTURE_INTEGRATION",
   "FORM_TRANSIENT_PARITY",
   "FORM_LIFECYCLE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
@@ -69,7 +71,7 @@ assert.equal(plannedRuntime?.sourceGraphMutation,false);
 assert.deepEqual(plannedRuntime?.forms,["LOW","SOLEMN"]);
 
 const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
-assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_G6",
+assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_SOURCE_FIRST_LIVE",
   "Gradual architecture blocker disappeared without recovered contract lock");
 assert.equal(gradualArchitecture?.gradualBlock,"AO.SM.B021");
 assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
@@ -180,7 +182,7 @@ for(const name of readdirSync(massSourceDir)){
     name+" embedded an oversized image payload into modular Mass source");
 }
 
-console.log("reader regression lockdown: PASS — known v1.83 invariants are protected and release remains explicitly blocked.");
+console.log("reader regression lockdown: PASS — historical v1.83 invariants remain protected while release is governed by source-first LIVE certification.");
 
 const transientSource=readFileSync(new URL("../src/mass/reader-transients.js",import.meta.url),"utf8");
 assert.match(transientSource,/AO\.SM\.C0145/);
