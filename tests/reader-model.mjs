@@ -72,9 +72,12 @@ assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,proper:null},sectionMap,lowCorpus:low,sungCorpus:sung
 }),/READY resolved Proper/);
 
-assert.throws(()=>createMassReaderModel({
-  resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung
-}),/not yet certified for overlay REQUIEM/);
+const requiemModel=createMassReaderModel({
+  resolvedMass:{...base,overlays:["REQUIEM"]},
+  sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
+assert.equal(requiemModel.totalCards,39,"Requiem overlay mutated source-first LIVE card count");
+assert.equal(requiemModel.structureOwner,"SOURCE_FIRST_LIVE","Requiem overlay lost source-first LIVE structure");
 
 const aspergesModel=createMassReaderModel({
   resolvedMass:{...base,precedingRites:["ASPERGES"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
