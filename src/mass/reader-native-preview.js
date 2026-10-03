@@ -8,7 +8,8 @@ import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
 import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
-import { loadReaderCueRegistries, createReaderCueStateController } from "./reader-cue-state.js";
+import { loadReaderCueRegistries } from "./reader-cue-state.js";
+import { loadReaderFormStateData, createReaderFormCueStateController } from "./reader-form-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
 import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
@@ -147,6 +148,8 @@ export async function prepareNativeReaderPreview({
   loadEventData=loadCanonicalReaderEvents,
   cueRegistries=null,
   loadCueRegistries=loadReaderCueRegistries,
+  formStateData=null,
+  loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
 }={}){
@@ -155,11 +158,14 @@ export async function prepareNativeReaderPreview({
   if(!structuralSupport.supported){
     throw new Error(structuralSupport.reason || "R17 native reader structure is not certified");
   }
-  const [data,events,registries,guide]=await Promise.all([
+  const resolvedForm=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
+  const needsFormState=resolvedForm==="LOW" || resolvedForm==="SOLEMN";
+  const [data,events,registries,guide,formState]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
     guideData ?? Promise.resolve(loadGuideData(prepared)),
+    needsFormState ? (formStateData ?? Promise.resolve(loadFormStateData(prepared))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -168,14 +174,16 @@ export async function prepareNativeReaderPreview({
     sungCorpus:data?.sungCorpus,
   });
   const eventState=createNativeEventStateController(events);
-  const cueState=createReaderCueStateController({
+  const cueState=createReaderFormCueStateController({
+    formStateData:formState,
     registries,
+    lowCorpus:data?.lowCorpus,
     sungCorpus:data?.sungCorpus,
     prepared,
   });
   const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
   const transientState=createReaderTransientController({events,prepared});
-  return Object.freeze({prepared,data,model,events,eventState,registries,cueState,guide,scholaState,transientState});
+  return Object.freeze({prepared,data,model,events,eventState,registries,cueState,guide,scholaState,transientState,formState});
 }
 
 export async function mountNativeReaderPreview({
@@ -187,6 +195,8 @@ export async function mountNativeReaderPreview({
   loadEventData=loadCanonicalReaderEvents,
   cueRegistries=null,
   loadCueRegistries=loadReaderCueRegistries,
+  formStateData=null,
+  loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
   readLegacyActive=null,
@@ -198,7 +208,7 @@ export async function mountNativeReaderPreview({
   // Validate everything before adding a single preview node.
   const ready=await prepareNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
-    cueRegistries,loadCueRegistries,guideData,loadGuideData,
+    cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
