@@ -5,6 +5,46 @@
 function freeze(value){return Object.freeze(value)}
 function clean(value){const s=String(value??"").trim();return s||null}
 
+
+// Sunday Asperges formula context is derived from explicit host seasonalMode when
+// available, with a deterministic Gregorian-date fallback. This keeps Vidi aquam
+// and the Passiontide Gloria-Patri omission out of UI guesswork.
+function easterSundayUtc(year){
+  const a=year%19,b=Math.floor(year/100),cc=year%100,d=Math.floor(b/4),e=b%4;
+  const ff=Math.floor((b+8)/25),g=Math.floor((b-ff+1)/3);
+  const h=(19*a+b-d-g+15)%30,i=Math.floor(cc/4),k=cc%4;
+  const l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451);
+  const month=Math.floor((h+l-7*m+114)/31);
+  const day=((h+l-7*m+114)%31)+1;
+  return new Date(Date.UTC(year,month-1,day));
+}
+function addUtcDays(date,days){
+  return new Date(date.getTime()+Number(days)*86400000);
+}
+function isoUtcDate(value){
+  const m=String(value??"").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m)return null;
+  return new Date(Date.UTC(Number(m[1]),Number(m[2])-1,Number(m[3])));
+}
+export function resolveAspergesRiteContext(prepared={}){
+  const resolved=prepared?.session?.resolvedMass??prepared?.resolvedMass??prepared;
+  const explicit=String(resolved?.provenance?.seasonalMode??"").trim().toUpperCase().replace(/[ -]+/g,"_");
+  if(/PASCH|EASTER/.test(explicit))return freeze({paschaltide:true,omitGloriaPatri:false,source:"HOST_SEASONAL_MODE"});
+  if(/PASSION/.test(explicit))return freeze({paschaltide:false,omitGloriaPatri:true,source:"HOST_SEASONAL_MODE"});
+  if(explicit && !/^(ORDINARY|TEMPUS_PER_ANNUM|ADVENT|CHRISTMAS|EPIPHANY|SEPTUAGESIMA|LENT|PRE_LENT)$/.test(explicit)){
+    throw new Error("ASPERGES_SEASONAL_MODE_UNRECOGNIZED:"+explicit);
+  }
+
+  const date=isoUtcDate(resolved?.date);
+  if(!date)throw new Error("ASPERGES_DATE_REQUIRED_FOR_FORMULA");
+  const easter=easterSundayUtc(date.getUTCFullYear());
+  const passionSunday=addUtcDays(easter,-14);
+  const pentecost=addUtcDays(easter,49);
+  if(date>=easter && date<=pentecost)return freeze({paschaltide:true,omitGloriaPatri:false,source:"DATE_DERIVED_1962_SEASON"});
+  if(date>=passionSunday && date<easter)return freeze({paschaltide:false,omitGloriaPatri:true,source:"DATE_DERIVED_1962_SEASON"});
+  return freeze({paschaltide:false,omitGloriaPatri:false,source:explicit?"HOST_SEASONAL_MODE":"DATE_DERIVED_1962_SEASON"});
+}
+
 export function resolveAspergesFormula({paschaltide=false,omitGloriaPatri=false}={}){
   return freeze({
     formula:paschaltide?"PASCHAL":"ORDINARY",
