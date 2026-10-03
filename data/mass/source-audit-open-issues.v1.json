@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "status": "SOURCE_AUDIT_OPEN_ISSUES",
+  "status": "SOURCE_AUDIT_OPEN_ISSUES_WITH_RESOLVED_R17_ITEMS",
   "rule": "This ledger tracks findings that must not be patched into runtime until exact ownership/source reconciliation is pinned. It is not executable liturgical data.",
   "issues": [
     {
@@ -11,12 +11,13 @@
       "finding": "B020 Epistle/lesson output may leak literal bilingual response debris around Deo gratias / Thanks be to God.",
       "blockId": "AO.V4.B020",
       "classification": "PROPER_CONTAINER_COMPOSITION",
-      "status": "OWNERSHIP_PINNED_RUNTIME_COMPOSITION_PENDING",
+      "status": "RESOLVED_ON_R17",
       "requiredAction": "Trace renderer/Proper composition. Preserve C0075 as Proper payload and C0076 as separate fixed response.",
       "cueIds": [
         "AO.SM.C0075",
         "AO.SM.C0076"
-      ]
+      ],
+      "resolution": "B020 renderer composition now appends fixed C0076 only after resolved Proper C0075. Regression covered by tests/reader-text.mjs."
     },
     {
       "id": "P1-005",
@@ -26,13 +27,14 @@
       "finding": "B026 Gospel output may leak literal bilingual response debris around Laus tibi, Christe / Praise be to thee, O Christ.",
       "blockId": "AO.V4.B026",
       "classification": "PROPER_CONTAINER_COMPOSITION",
-      "status": "OWNERSHIP_PINNED_RUNTIME_COMPOSITION_PENDING",
+      "status": "RESOLVED_ON_R17",
       "requiredAction": "Trace renderer/Proper composition. Preserve C0086 as Proper payload, C0087 as fixed response, and C0088 as priest-private prayer.",
       "cueIds": [
         "AO.SM.C0086",
         "AO.SM.C0087",
         "AO.SM.C0088"
-      ]
+      ],
+      "resolution": "B026 renderer composition now appends fixed C0087 and priest-private C0088 only after resolved Proper C0086. Regression covered by tests/reader-text.mjs."
     },
     {
       "id": "P1-006",
@@ -67,8 +69,9 @@
         "AO.SM.C0054"
       ],
       "classification": "CUE_SEGMENTATION_ASSEMBLY",
-      "status": "PINNED_CORRECTION_CLASS",
-      "requiredAction": "Repair English cue assembly/segmentation without altering the Latin Glória in excélsis Deo or unrelated cue timing."
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "Repair English cue assembly/segmentation without altering the Latin Glória in excélsis Deo or unrelated cue timing.",
+      "resolution": "Display-only composite AO.SM.C0053+AO.SM.C0054 renders 'Glory to God in the highest.' while preserving sourceCueIds and canonical ritual timing."
     },
     {
       "id": "P1-010",
@@ -78,8 +81,9 @@
       "finding": "B037 English Lavabo contains the doxology twice: once with V/R labels and again as duplicate plain text.",
       "blockId": "AO.SM.B037",
       "classification": "ENGLISH_BLOCK_DUPLICATION",
-      "status": "PINNED_BLOCK_NEEDS_CUE_OWNER_TRACE",
-      "requiredAction": "Identify the exact B037 English cue/unit ownership and remove only the duplicate projection; preserve the single canonical doxology."
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "Identify the exact B037 English cue/unit ownership and remove only the duplicate projection; preserve the single canonical doxology.",
+      "resolution": "Lavabo English projection is deduplicated so the doxology appears once in both Low and Sung reader corpora; canonical ritual timing is unchanged."
     },
     {
       "id": "P1-011",
