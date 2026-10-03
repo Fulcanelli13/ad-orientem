@@ -91,6 +91,84 @@ assert.equal(resolveGestureProjection(null,{label:"LEGACY BOW"},{
 }),null,"known Credo cue fell back to legacy despite profile suppression");
 
 
+const guidedSource=resolveCueOwnedChannels({
+  cueControllerSupported:true,
+  cueProjection:{
+    supported:true,reason:null,
+    gesture:{label:"FOREHEAD · LIPS · BREAST",owner:"R17_CUE_SOURCE"},
+    response:null,priestVoice:null,priestPosition:null,
+    ownership:{gesture:"R17_CUE_NATIVE",response:"R17_EXACT_CUE_NONE",priestVoice:"R17_FAIL_CLOSED",priestPosition:"R17_FAIL_CLOSED"},
+  },
+  eventState:null,
+  legacy:{gesture:{label:"LEGACY"}},
+  cueId:"AO.SM.C0084",
+  gestureProfile:"GUIDED_1962",
+});
+assert.equal(guidedSource.gesture.label,"FOREHEAD · LIPS · BREAST",
+  "GUIDED_1962 suppressed a source-backed Gospel gesture");
+
+const guidedGloria=resolveCueOwnedChannels({
+  cueControllerSupported:true,
+  cueProjection:{
+    supported:true,reason:null,
+    gesture:{label:"EXTRACTED BOW",owner:"R17_CUE_SOURCE"},
+    response:null,priestVoice:null,priestPosition:null,
+    ownership:{gesture:"R17_CUE_NATIVE",response:"R17_EXACT_CUE_NONE",priestVoice:"R17_FAIL_CLOSED",priestPosition:"R17_FAIL_CLOSED"},
+  },
+  eventState:{ownership:{gesture:"R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION"}},
+  legacy:{gesture:{label:"LEGACY BOW"}},
+  cueId:"AO.SM.C0056",
+  gestureProfile:"GUIDED_1962",
+});
+assert.equal(guidedGloria.gesture,null,
+  "GUIDED_1962 leaked a customary Gloria bow from the raw source registry");
+
+const traditionalGloria=resolveCueOwnedChannels({
+  cueControllerSupported:true,
+  cueProjection:{
+    supported:true,reason:null,
+    gesture:{label:"EXTRACTED BOW",owner:"R17_CUE_SOURCE"},
+    response:null,priestVoice:null,priestPosition:null,
+    ownership:{gesture:"R17_CUE_NATIVE",response:"R17_EXACT_CUE_NONE",priestVoice:"R17_FAIL_CLOSED",priestPosition:"R17_FAIL_CLOSED"},
+  },
+  eventState:{ownership:{gesture:"R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION"}},
+  legacy:{},
+  cueId:"AO.SM.C0056",
+  gestureProfile:"TRADITIONAL",
+});
+assert.equal(traditionalGloria.gesture.type,"HEAD_BOW",
+  "TRADITIONAL profile lost the adjudicated Gloria bow");
+
+const essentialSource=resolveCueOwnedChannels({
+  cueControllerSupported:true,
+  cueProjection:{
+    supported:true,reason:null,
+    gesture:{label:"FOREHEAD · LIPS · BREAST",owner:"R17_CUE_SOURCE"},
+    response:null,priestVoice:null,priestPosition:null,
+    ownership:{gesture:"R17_CUE_NATIVE",response:"R17_EXACT_CUE_NONE",priestVoice:"R17_FAIL_CLOSED",priestPosition:"R17_FAIL_CLOSED"},
+  },
+  eventState:null,legacy:{},
+  cueId:"AO.SM.C0084",
+  gestureProfile:"ESSENTIAL",
+});
+assert.equal(essentialSource.gesture,null,
+  "ESSENTIAL unexpectedly inherited the full Guided source-gesture catalogue");
+
+const transitionGuard=createCardTransitionTransientGuard();
+assert.equal(transitionGuard.pending,false);
+assert.deepEqual(transitionGuard.filter({gesture:{label:"BOW"},response:{label:"AMEN"}}),{
+  gesture:{label:"BOW"},response:{label:"AMEN"}
+});
+transitionGuard.begin();
+assert.equal(transitionGuard.pending,true);
+assert.deepEqual(transitionGuard.filter({gesture:{label:"BOW"},response:{label:"AMEN"}}),{
+  gesture:null,response:null
+},"card transition leaked prior transient gesture/response");
+transitionGuard.resolveCue("AO.SM.C0100");
+assert.equal(transitionGuard.pending,false);
+assert.equal(transitionGuard.filter({gesture:{label:"NEW"}}).gesture.label,"NEW");
+
+
 const staleLegacy={
   priestPosition:{label:"STALE LEGACY POSITION"},
   priestVoice:{label:"STALE LEGACY VOICE"},
