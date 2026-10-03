@@ -115,4 +115,16 @@ try {
 } catch { brokenBlocked=true; }
 expect(brokenBlocked,"invalid Proper v2 bypassed session boundary");
 
+const coverageGate=structuredClone(ordinary);
+coverageGate.requirements={
+  ...coverageGate.requirements,
+  requiredContainers:["COLLECT_SET","GOSPEL","POSTCOMMUNION_SET"],
+};
+coverageGate.slots={gospel:{payloadRef:"GOSPEL-1"}};
+expect(validateProperManifestV2(coverageGate).pass,"valid required container coverage failed");
+
+const coverageBroken=structuredClone(coverageGate);
+delete coverageBroken.slots.gospel;
+expect(!validateProperManifestV2(coverageBroken).pass,"required container coverage was bypassed");
+
 console.log("Proper Resolver 2.0 source-reconciliation contracts PASS.");
