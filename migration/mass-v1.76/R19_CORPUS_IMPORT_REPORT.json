@@ -1,0 +1,49 @@
+{
+  "release": "R19",
+  "target_repo": "Fulcanelli13/ad-orientem",
+  "branch": "migration/mass-v1.76-r18",
+  "base_branch": "migration/v43.33",
+  "branch_ahead_by_before_report": 97,
+  "branch_behind_by": 0,
+  "production_index_unchanged": true,
+  "production_index_sha": "ff2e1942348ab65cf5b5d779fe5f2601b5f35a4e",
+  "frozen_v176": {
+    "chars": 8281987,
+    "bytes": 8297430,
+    "sha256": "511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99",
+    "script_blocks": 31
+  },
+  "parity_checks": {
+    "direct_source_blocks_1_16_except_reader": "15/15 exact",
+    "direct_source_blocks_17_31": "15/15 exact",
+    "reader_parts_0_9": "10/10 exact",
+    "reader_parts_10_19": "10/10 exact",
+    "shell_bundle": "32/32 exact",
+    "extraction_manifest": "PASS",
+    "reader_manifest": "PASS",
+    "modular_html_regenerated": true,
+    "modular_html_chars": 186961,
+    "logical_load_order": "1-31",
+    "external_script_dependencies": "31/31 resolve",
+    "r19_transport_loader_syntax": "8/8 PASS"
+  },
+  "reader_transport": {
+    "reason": "Connected GitHub writer rejected the intact 6.5 MB blob at HTTP/2 transport level.",
+    "source_semantics_changed": false,
+    "parts": 20,
+    "split_policy": "Exact UTF-16-safe source slices; concatenate with no separator.",
+    "parser_loader": "src/mass/legacy/reader-loader-v1.76.js",
+    "manifest": "src/mass/legacy/reader-runtime-v1.76.parts/MANIFEST.json",
+    "reassembly_script": "scripts/reassemble_mass_v176_reader.py"
+  },
+  "full_tree_verification": {
+    "shell_bundle": "migration/mass-v1.76/shell-bundle.json",
+    "extraction_manifest": "migration/mass-v1.76/extraction-manifest-r19.json",
+    "verifier": "scripts/verify_mass_v176_r19_tree.py",
+    "expected_full_sha256": "511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99",
+    "local_checkout_execution": "NOT_RUN — container DNS could not resolve github.com",
+    "connector_equivalent_parity": "PASS"
+  },
+  "browser_full_run": "NOT_CLAIMED",
+  "pass": true
+}
