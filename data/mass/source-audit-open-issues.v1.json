@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "status": "SOURCE_AUDIT_OPEN_ISSUES_WITH_R17_GUARDS",
+  "version": "1.2.0",
+  "status": "SOURCE_AUDIT_OPEN_ISSUES_WITH_R17_RESOLUTIONS",
   "rule": "This ledger tracks findings that must not be patched into runtime until exact ownership/source reconciliation is pinned. It is not executable liturgical data.",
   "issues": [
     {
@@ -54,9 +54,9 @@
       ],
       "finding": "Gloria/Credo cue duplication or overstrong bow ownership has been reported.",
       "classification": "EVENT_OWNERSHIP",
-      "status": "R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION",
-      "requiredAction": "Separate textual cue ownership from posture/gesture state and identify duplicate canonical/runtime IDs before patching.",
-      "resolution": "R17 suppresses legacy Gloria/Credo gesture fallback until exact faithful gesture anchors are adjudicated. Certified Incarnatus genuflection remains R17-native."
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "None on R17. Keep exact-cue ownership and gesture-profile gating in regression.",
+      "resolution": "Exact Gloria/Credo faithful gesture anchors are pinned to canonical cue IDs. Incarnatus remains rubrical/resolver-owned; other bows/crosses are shown only under the TRADITIONAL gesture profile. Broad phase fallback remains blocked."
     },
     {
       "id": "P1-009",
@@ -106,18 +106,38 @@
       "resolution": "Normalized orare → oráre in canonical correction layer and reader corpora; text-only change."
     },
     {
-      "id": "SRC-OPEN-008",
+      "id": "P1-008",
       "finding": "Fixture provenance defects reported in the source-audit lane.",
       "classification": "FIXTURE_PROVENANCE",
-      "status": "NEEDS_FIXTURE_IDS",
-      "requiredAction": "Pin affected fixtures and provenance fields before changing source hierarchy."
+      "status": "RESOLVED_BY_QUARANTINE_REPLACEMENT_WITNESSES_PENDING",
+      "requiredAction": "Replace quarantined categpt.chat provenance with accepted frozen witnesses before this legacy fixture can be promoted to production-golden evidence.",
+      "aliases": [
+        "SRC-OPEN-008"
+      ],
+      "affectedFixture": "4 October 2026 / 19th Sunday after Pentecost",
+      "affectedRows": [
+        {
+          "slot": "SECRET_SET",
+          "blockId": "AO.SM.B040"
+        },
+        {
+          "slot": "COMMUNION",
+          "blockId": "AO.SM.B085"
+        },
+        {
+          "slot": "POSTCOMMUNION_SET",
+          "blockId": "AO.SM.B088"
+        }
+      ],
+      "resolution": "R17 rejects categpt.chat recursively as production authority. Affected rows remain legacy comparison only and cannot make Proper Resolver 2.0 READY."
     },
     {
       "id": "P2-001",
       "finding": "Older extended-readings resolver can mispair OratioL[n] and LectioL[n] instead of preserving source order.",
       "classification": "PRE_GOSPEL_SOURCE_ORDER",
-      "status": "OPEN_COMPILER_BLOCKER",
-      "requiredAction": "Compile PRE_GOSPEL_SEQUENCE from source order with explicit ORATION/LESSON/CHANT nodes and reject index-pairing heuristics."
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "None on R17. Preserve source-order compiler and proof gate in CI.",
+      "resolution": "PRE_GOSPEL_SEQUENCE compiles directly from parsed source order, records SOURCE_ORDER provenance, rejects cross-language structural drift and deliberately rejects numeric-suffix pairing heuristics."
     }
   ]
 }
