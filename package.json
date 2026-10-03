@@ -54,6 +54,10 @@
     "test:reader-canon-source": "node tests/reader-canon-source-map.mjs",
     "test:reader-palm": "node tests/reader-palm.mjs",
     "test:form-lifecycle": "node tests/form-lifecycle.mjs",
-    "test:solemn-pax": "node tests/solemn-pax-authority.mjs"
+    "test:solemn-pax": "node tests/solemn-pax-authority.mjs",
+    "test:phone": "node tests/reader-phone-acceptance.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
   }
 }
