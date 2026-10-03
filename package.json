@@ -8,7 +8,7 @@
     "test:b006": "node tests/b006-solemn-objective.mjs",
     "test:b007": "node tests/b007-mass-invariants.mjs",
     "test:r17": "node tests/r17-convergence.mjs",
-    "test": "npm run test:wave1 && npm run test:b005 && npm run test:b006 && npm run test:b007 && npm run test:r17 && npm run test:reader && npm run test:host && npm run test:bootstrap && npm run test:reader-dom && npm run test:reader-projection && npm run test:reader-sections && npm run test:proper-reader-slots && npm run test:reader-text && npm run test:reader-model && npm run test:browser-runtime && npm run test:browser-entry && npm run test:reader-gate",
+    "test": "npm run test:wave1 && npm run test:b005 && npm run test:b006 && npm run test:b007 && npm run test:r17 && npm run test:reader && npm run test:host && npm run test:bootstrap && npm run test:reader-dom && npm run test:reader-projection && npm run test:reader-sections && npm run test:proper-reader-slots && npm run test:reader-text && npm run test:reader-model && npm run test:reader-data && npm run test:browser-runtime && npm run test:browser-entry && npm run test:reader-gate",
     "test:reader": "node tests/reader-contract.mjs",
     "test:host": "node tests/host-adapter.mjs",
     "test:bootstrap": "node tests/app-shell-bootstrap.mjs",
@@ -20,6 +20,7 @@
     "test:browser-entry": "node tests/browser-entry.mjs",
     "test:proper-reader-slots": "node tests/proper-reader-slots.mjs",
     "test:reader-model": "node tests/reader-model.mjs",
-    "test:reader-gate": "node tests/reader-gate.mjs"
+    "test:reader-gate": "node tests/reader-gate.mjs",
+    "test:reader-data": "node tests/reader-data.mjs"
   }
 }
