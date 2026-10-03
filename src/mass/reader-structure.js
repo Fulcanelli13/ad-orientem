@@ -6,7 +6,7 @@
 // expressed as an R17 projection over canonical source-moment ranges.
 
 export const STRUCTURE_VERSION="r17-reader-structure-v1";
-export const LIVE_STRUCTURE_STATUS="PROVISIONAL_V1_65_DONOR_ONLY";
+export const LIVE_STRUCTURE_STATUS="SOURCE_FIRST_CANON_CERTIFIED__FULL_LIVE_PENDING";
 
 const BASE_CARDS=Object.freeze([
   ["M01","Introit & Preparatory Prayers","prep",["E01","E03","E04","E05","E06","E07","E08"]],
@@ -112,7 +112,7 @@ export function structureSupport(prepared,modeOverride=null){
   const mode=normalizeMode(modeOverride??prepared?.readerPreferences?.mode??resolved?.presentationMode??"LIVE");
   if(mode==="LIVE")return Object.freeze({
     supported:false,
-    reason:"V1_83_48_CARD_LIVE_MAP_REQUIRED",
+    reason:"SOURCE_FIRST_LIVE_STRUCTURE_PENDING",
     donorStatus:LIVE_STRUCTURE_STATUS,
   });
   return Object.freeze({supported:true,reason:null,donorStatus:null});
