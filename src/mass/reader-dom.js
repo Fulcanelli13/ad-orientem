@@ -4,7 +4,7 @@ const SHELL_STYLE = `
 .ao-reader-shell{--ao-bg:#080c12;--ao-panel:#0d1218;--ao-line:rgba(189,161,108,.20);--ao-muted:#9a948c;--ao-text:#eee8de;--ao-accent:#bda16c;box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;height:100%;min-height:0;background:var(--ao-bg);color:var(--ao-text);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
 .ao-reader-shell *{box-sizing:border-box}
 .ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--ao-line);background:#0a0f15}
-.ao-mode-ribbon button{appearance:none;border:0;border-right:1px solid rgba(189,161,108,.10);background:transparent;color:var(--ao-muted);padding:.62rem .4rem;font:600 .72rem/1.1 system-ui,sans-serif;letter-spacing:.11em}
+.ao-mode-ribbon button{appearance:none;border:0;border-right:1px solid rgba(189,161,108,.10);background:transparent;color:var(--ao-muted);min-height:44px;padding:.62rem .4rem;font:600 .72rem/1.1 system-ui,sans-serif;letter-spacing:.11em}
 .ao-mode-ribbon button[aria-pressed="true"]{color:var(--ao-text);background:rgba(189,161,108,.07);box-shadow:inset 0 -2px 0 var(--ao-accent)}
 .ao-state-ribbon{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) 54px;min-height:46px;border-bottom:1px solid var(--ao-line);background:#0b1016}
 .ao-state-cell{min-width:0;display:flex;align-items:center;gap:.45rem;padding:.38rem .55rem;border-right:1px solid rgba(189,161,108,.10)}
@@ -31,7 +31,7 @@ const SHELL_STYLE = `
 .ao-line-primary{display:block}
 .ao-line-secondary{display:block;margin-top:.2rem;font:400 .78em/1.35 system-ui,sans-serif;color:#aaa39a}
 .ao-reader-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:46px;border-top:1px solid var(--ao-line);background:#0a0f15}
-.ao-reader-nav button{appearance:none;border:0;background:transparent;color:#d8d0c6;padding:.72rem .8rem;font:600 .72rem/1 system-ui,sans-serif}
+.ao-reader-nav button{appearance:none;border:0;background:transparent;color:#d8d0c6;min-height:46px;padding:.72rem .8rem;font:600 .72rem/1 system-ui,sans-serif}
 .ao-reader-nav button:last-child{text-align:right}
 .ao-reader-progress{font:600 .64rem/1 system-ui,sans-serif;color:var(--ao-muted)}
 .ao-cinematic{position:absolute;inset:0;z-index:8;display:grid;place-items:center;background:rgba(8,12,18,.88);pointer-events:none;text-align:center;padding:2rem}
