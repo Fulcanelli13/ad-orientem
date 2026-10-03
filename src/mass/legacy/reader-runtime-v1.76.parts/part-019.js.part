@@ -1,0 +1,956 @@
+ blockFirstCueSort=new Map(DATA.blocks.map(b=>[b.Block_ID,Math.min(...(b.units||[]).map(u=>Number(u.sort)).filter(Number.isFinite))]));
+function postureActivationSort(p){
+ if(p.Anchor_Type==='MASS_START')return -Infinity;
+ if(p.Anchor_Type==='BLOCK_START')return blockFirstCueSort.get(p.Anchor_Ref)??Infinity;
+ // Harmonized from v1.44: synthetic Gloria/Credo sedilia rows are not reliable public-time anchors.
+ if(['AO.SM.POST.005','AO.SM.POST.010'].includes(p.Posture_Event_ID))return Infinity;
+ const cue=POSTURE_ANCHOR_CUES[p.Anchor_Ref];if(cue)return cueSortMap.get(cue)??Infinity;
+ return Number(p.Sort_Key);
+}
+function findPosture(block,priest,sort){
+ const now=Number(sort);let best=null,bestAt=-Infinity,bestTie=-Infinity;
+ for(const p of DATA.postures){if(!cond(p.Condition))continue;const at=postureActivationSort(p),tie=Number(p.Sort_Key);if(!Number.isFinite(at)&&at!==-Infinity)continue;if(at>now)continue;if(at>bestAt||(at===bestAt&&tie>bestTie)){best=p;bestAt=at;bestTie=tie}}
+ if(block?.Block_ID==='AO.SM.B027'&&now===96){
+   if(flags.LOW_MASS_PROFILE)return best;
+   if(christmasOrAnnunciationIncarnatus())return {...(best||{}),Posture_Event_ID:'AO.RUNTIME.POST.INCARNATUS',New_Posture:'KNEEL',Runtime_Override:true,Notes:'Et incarnatus est … et homo factus est.'};
+ }
+ return best;
+}
+const GESTURE_SPECIAL_CUE={'AO.SM.G012':'AO.SM.C0090','AO.SM.G013':'AO.SM.C0096','AO.SM.G017':'AO.SM.C0097','AO.SM.G018':'AO.SM.C0124','AO.SM.G022':'AO.SM.C0174','AO.SM.G023':'AO.SM.C0181','AO.SM.G027':'AO.SM.C0246','AO.SM.G030':'AO.SM.C0273','AO.SM.G031':'AO.SM.C0274'};
+const gestureCueBindings=new Map();let gestureBindingsBuilt=false;
+function bindGestureCue(cue,g){if(!cue||!g)return;if(!gestureCueBindings.has(cue))gestureCueBindings.set(cue,[]);gestureCueBindings.get(cue).push(g)}
+function buildGestureBindings(){
+ if(gestureBindingsBuilt)return;gestureBindingsBuilt=true;const groups=new Map();
+ DATA.gestures.forEach(g=>{const key=`${g.Parent_Block_ID}::${norm(g.Latin_Anchor)}`;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(g)});
+ groups.forEach(gs=>{const b=DATA.blocks.find(x=>x.Block_ID===gs[0].Parent_Block_ID);if(!b)return;const units=b.units||[];const anchor=norm(gs[0].Latin_Anchor);
+   const specials=gs.filter(g=>GESTURE_SPECIAL_CUE[g.Gesture_ID]);specials.forEach(g=>bindGestureCue(GESTURE_SPECIAL_CUE[g.Gesture_ID],g));if(specials.length===gs.length)return;
+   const normalGs=gs.filter(g=>!GESTURE_SPECIAL_CUE[g.Gesture_ID]);const exact=units.filter(u=>anchor&&norm(u.latin).includes(anchor));
+   if(exact.length){if(normalGs.length>1){normalGs.forEach((g,i)=>bindGestureCue(exact[Math.min(i,exact.length-1)]?.cue_id,g))}else{const g=normalGs[0];const repeat=Number(g?.Count)>1&&exact.length>1?exact:[exact[0]];repeat.forEach(u=>bindGestureCue(u?.cue_id,g))}return;}
+   const words=anchor.split(' ').filter(Boolean);let best=-1,bestScore=0;units.forEach((u,i)=>{const t=norm(u.latin);for(let n=Math.min(6,words.length);n>=1;n--){if(t.includes(words.slice(0,n).join(' '))){if(n>bestScore){best=i;bestScore=n}break}}});
+   if(best>=0){const joined=norm(units.slice(best,best+5).map(u=>u.latin||'').join(' '));if(!anchor||joined.includes(anchor))normalGs.forEach(g=>bindGestureCue(units[best]?.cue_id,g));}
+ });
+}
+function gestureAllowed(g,el){const note=String(g?.Condition_Exception||'').toLowerCase();
+ if(g?.Gesture_ID==='AO.SM.G013')return !!flags.CREDO_APPOINTED&&!!flags.LOW_MASS_OCONNELL_PROFILE;
+ if(g?.Gesture_ID==='AO.SM.G017')return false;
+ if(g?.Gesture_ID==='AO.SM.G024')return !!flags.LAY_CUSTOM_NOBIS_BREAST_STRIKE;
+ if(g?.Gesture_ID==='AO.SM.G026')return !!flags.FAITHFUL_COMMUNION;
+ if(g?.Gesture_ID==='AO.SM.G027')return false;
+ if(['AO.SM.G022','AO.SM.G023'].includes(g?.Gesture_ID))return false;
+ if(note.includes('public/audible'))return !['PRIEST_PRIVATE','SILENT'].includes(el.dataset.clock||'');
+ if(g?.Gesture_ID==='AO.SM.G018')return !!flags.INCENSE_ENABLED;
+ if(note.includes('not at requiem'))return !flags.REQUIEM;
+ return true;
+}
+function findGesture(el){buildGestureBindings();const gs=gestureCueBindings.get(el.dataset.cue)||[];return gs.find(g=>gestureAllowed(g,el))||null}
+function gestureUnitForCue(cue){for(const b of DATA.blocks){const u=(b.units||[]).find(x=>x.cue_id===cue);if(u)return {block:b,unit:u}}return null}
+function scholaGesturesForCue(cue){
+ buildGestureBindings();const hit=gestureUnitForCue(cue);if(!hit||hit.unit.clock!=='SCHOLA_PUBLIC')return [];
+ const fake={dataset:{cue,clock:hit.unit.clock}};return (gestureCueBindings.get(cue)||[]).filter(g=>gestureAllowed(g,fake));
+}
+function gestureOccurrenceLabel(g,cue){
+ if(!g)return '—';const total=Number(g.Count)||0;if(total<=1)return g.Faithful_Action||'—';
+ buildGestureBindings();const cues=[];for(const [c,gs] of gestureCueBindings){if(gs.some(x=>x.Gesture_ID===g.Gesture_ID))cues.push(c)}cues.sort((a,b)=>(cueSortMap.get(a)||0)-(cueSortMap.get(b)||0));
+ const idx=Math.max(0,cues.indexOf(cue));const base=String(g.Faithful_Action||'').replace(/\s*[×x]\s*\d+\s*$/,'').trim();return `${base} · ${idx+1}/${Math.max(total,cues.length)}`;
+}
+function centreGestureForEl(el){const g=findGesture(el);if(!g)return null;if(mode!=='read'&&(el?.dataset?.clock||'')==='SCHOLA_PUBLIC')return null;return {gesture:g,cue:el.dataset.cue||''}}
+function effectiveGestureForEl(el){const centre=centreGestureForEl(el);if(centre)return centre;if(mode!=='read'&&SCHOLA_STREAM.presenting&&SCHOLA_STREAM.currentGesture)return {gesture:SCHOLA_STREAM.currentGesture,cue:SCHOLA_STREAM.currentGestureCue,source:'SCHOLA'};return null}
+const GESTURE_MOTION_STATE={activeKey:'',previewKey:'',postureKey:''};
+const GESTURE_POSTURE_STATE={incarnatusKneeling:false};
+function applyGestureOwnedPosture(g){
+ // v2.3: posture state is resolved by findPosture(); gesture motion must never overwrite the posture rail.
+ return;
+}
+
+
+
+function gestureMotionProfile(g){
+ const id=String(g?.Gesture_ID||''),a=String(g?.Faithful_Action||'').toLowerCase();
+ if(['AO.SM.G006','AO.SM.G014'].includes(id))return {kind:'doxology',label:'SIGN OF CROSS',context:'doxology'};
+ if(['AO.SM.G011','AO.SM.G029'].includes(id))return {kind:'gospel',label:'GOSPEL CROSSES',context:'gospel'};
+ if(['AO.SM.G003','AO.SM.G025'].includes(id))return {kind:'breast-triple',label:'BREAST STRIKE ×3',context:'penitential'};
+ if(['AO.SM.G024','AO.SM.G026'].includes(id))return {kind:'breast-single',label:'BREAST STRIKE',context:'penitential'};
+ if(id==='AO.SM.G018')return {kind:'incense',label:'BOW TO INCENSE',context:'incense'};
+ if(['AO.SM.G022','AO.SM.G023'].includes(id))return {kind:'elevation',label:'BOW · LOOK UP',context:'elevation'};
+ if(id==='AO.SM.G013'){const seated=String($('#postureText')?.textContent||'').toUpperCase()==='SIT'&&!christmasOrAnnunciationIncarnatus();return seated?{kind:'head',label:'HEAD BOW',context:'incarnatus'}:{kind:'genuflect',label:'KNEEL',context:'incarnatus'}}
+ if(id==='AO.SM.G030')return {kind:'genuflect',label:'GENUFLECT',context:'incarnatus'};
+ if(['AO.SM.G017','AO.SM.G031'].includes(id))return {kind:'rise',label:'RISE',context:'incarnatus'};
+ if(['AO.SM.G008','AO.SM.G009','AO.SM.G015','AO.SM.G027'].includes(id))return {kind:'head',label:'HEAD BOW',context:'holy-name'};
+ if(a.includes('profound bow'))return {kind:'profound',label:'PROFOUND BOW',context:'reverence'};
+ if(a.includes('bow head')||a.includes('bow the head'))return {kind:'head',label:'HEAD BOW',context:'reverence'};
+ if(a.includes('sign of the cross')||a.includes('begin the full sign'))return {kind:'cross',label:'SIGN OF CROSS',context:'cross'};
+ if(a.includes('bow'))return {kind:'bow',label:'BOW',context:'reverence'};
+ return {kind:'generic',label:(String(g?.Faithful_Action||'GESTURE').replace(/\s*[×x]\s*\d+\s*$/,'').toUpperCase().slice(0,24)||'GESTURE'),context:'generic'};
+}
+function gestureMotionKind(g){return gestureMotionProfile(g).kind}
+function gestureShortLabel(g){return gestureMotionProfile(g).label}
+function nextScholaGestureHit(){
+ if(mode==='read'||!SCHOLA_STREAM.presenting||!SCHOLA_STREAM.segments.length)return null;
+ for(let i=SCHOLA_STREAM.index+1;i<=Math.min(SCHOLA_STREAM.segments.length-1,SCHOLA_STREAM.index+1);i++){
+   const seg=SCHOLA_STREAM.segments[i];for(const c of (seg?.cues||[])){const gs=scholaGesturesForCue(c);if(gs.length)return {gesture:gs[0],cue:c,source:'SCHOLA_NEXT',segmentIndex:i};}
+ }
+ return null;
+}
+function nextGestureHit(el){
+ const scholaNext=nextScholaGestureHit();if(scholaNext)return scholaNext;
+ const els=flow(),i=els.indexOf(el);if(i<0)return null;
+ for(let j=i+1;j<=Math.min(els.length-1,i+1);j++){
+   const hit=centreGestureForEl(els[j]);
+   if(hit?.gesture)return {...hit,el:els[j]};
+ }
+ return null;
+}
+function resetGestureMotionClasses(card){
+ if(!card)return;card.classList.remove('gesture-motion-now','gesture-motion-preview','gesture-kind-head','gesture-kind-bow','gesture-kind-profound','gesture-kind-cross','gesture-kind-doxology','gesture-kind-gospel','gesture-kind-breast-single','gesture-kind-breast-triple','gesture-kind-incense','gesture-kind-elevation','gesture-kind-genuflect','gesture-kind-rise','gesture-kind-generic','gesture-context-doxology','gesture-context-holy-name','gesture-context-elevation');
+}
+function applyGestureMotion(card,g,cue,isPreview=false){
+ if(!card||!g)return;
+ const profile=gestureMotionProfile(g),kind=profile.kind,key=`${cue||''}:${g.Gesture_ID||g.Faithful_Action||''}:${isPreview?'preview':'now'}`;
+ resetGestureMotionClasses(card);card.classList.add(isPreview?'gesture-motion-preview':'gesture-motion-now',`gesture-kind-${kind}`);
+ if(profile.context==='doxology')card.classList.add('gesture-context-doxology');
+ if(profile.context==='holy-name')card.classList.add('gesture-context-holy-name');
+ if(profile.context==='elevation')card.classList.add('gesture-context-elevation');
+ if(!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches){
+   const stateKey=isPreview?'previewKey':'activeKey';
+   if(GESTURE_MOTION_STATE[stateKey]!==key){
+     GESTURE_MOTION_STATE[stateKey]=key;void card.offsetWidth;card.classList.add('gesture-motion-fire');
+     const ttl=isPreview?1100:(['doxology','incense','elevation'].includes(kind)?2050:1750);
+     setTimeout(()=>card.classList.remove('gesture-motion-fire'),ttl);
+   }
+ }
+}
+function faithfulGesturePresentation(g,cue){
+ if(!g)return {text:'—',key:''};
+ if(g.Gesture_ID==='AO.SM.G013'){
+   const p=String($('#postureText')?.textContent||'').toUpperCase();
+   if(p==='SIT'&&!christmasOrAnnunciationIncarnatus())return {text:'BOW HEAD · ET INCARNATUS',key:'SEM:GESTURE.HEAD_BOW'};
+   return {text:'KNEEL · THROUGH ET HOMO FACTUS EST',key:'SEM:POSTURE.KNEEL'};
+ }
+ if(g.Gesture_ID==='AO.SM.G018')return {text:'WHEN INCENSE REACHES YOU · BOW BEFORE / AFTER',key:'SEM:GESTURE.BOW'};
+ if(g.Gesture_ID==='AO.SM.G030')return {text:'GENUFLECT · ET VERBUM CARO FACTUM EST',key:'SEM:GESTURE.GENUFLECT'};
+ return {text:gestureOccurrenceLabel(g,cue),key:gestureAssetKey(g)};
+}
+function renderGestureRail(el){
+ const hit=effectiveGestureForEl(el),g=hit?.gesture||null,cue=hit?.cue||'';
+ const card=$('#gestureCard'),tag=card?.querySelector('.tag');
+ if(g){
+   card.classList.remove('off');card.classList.add('hot');card.dataset.gestureMotionManaged='1';
+   const label=gestureShortLabel(g);if(tag)tag.textContent=`${label} NOW`;
+   const gp=faithfulGesturePresentation(g,cue);$('#gestureText').textContent=gp.text;setIconHtml($('#gestureIcon'),gp.key,'');applyGestureMotion(card,g,cue,false);return g;
+ }
+ const next=nextGestureHit(el);
+ if(next?.gesture){
+   card.classList.remove('off','hot');card.dataset.gestureMotionManaged='1';
+   const label=gestureShortLabel(next.gesture);if(tag)tag.textContent='NEXT';
+   $('#gestureText').textContent=label;const gk=gestureAssetKey(next.gesture);setIconHtml($('#gestureIcon'),gk,'');applyGestureMotion(card,next.gesture,next.cue,true);return null;
+ }
+ card.classList.add('off');card.classList.remove('hot');delete card.dataset.gestureMotionManaged;resetGestureMotionClasses(card);if(tag)tag.textContent='GESTURE';$('#gestureText').textContent='—';setIconHtml($('#gestureIcon'),'','');return null;
+}
+
+function significantPriestAction(priest){
+ const raw=String(priest?.Action||'').trim(); if(!raw)return '';
+ const a=raw.toLowerCase();
+ const has=(...xs)=>xs.some(x=>a.includes(x));
+ if(has('elevates the sacred host','elevates the host'))return 'ELEVATES HOST';
+ if(has('elevates the chalice'))return 'ELEVATES CHALICE';
+ if(has('minor elevation','raises the host and chalice slightly'))return 'MINOR ELEVATION';
+ if(has('shows the sacred host'))return 'SHOWS SACRED HOST';
+ if(has('administers communion'))return 'GIVES COMMUNION';
+ if(has('receives')&&has('host'))return 'RECEIVES HOST';
+ if(has('receives')&&has('chalice'))return 'RECEIVES CHALICE';
+ if(has('incenses the cross and altar','incenses cross and altar','incenses the oblations'))return 'INCENSES ALTAR';
+ if(has('blesses incense','places incense in the thurible'))return 'BLESSES INCENSE';
+ if(has('is incensed','celebrant is incensed'))return 'RECEIVES INCENSE';
+ if(has('washes the prescribed fingers','ablution / purification'))return 'WASHES / PURIFIES';
+ if(has('breaks the sacred host'))return 'BREAKS HOST';
+ if(has('places particle in chalice'))return 'PLACES PARTICLE';
+ if(has('reads the gradual privately'))return 'READS GRADUAL';
+ if(has('reads the alleluia / tract / sequence privately'))return 'READS ALLELUIA';
+ if(has('reads the communion antiphon quietly'))return 'READS COMMUNION';
+ if(has('goes to the gospel-side missal','goes to the gospel side for the last gospel'))return 'GOES TO GOSPEL SIDE';
+ if(has('turns toward the people','turns toward people','faces people for dismissal'))return 'TURNS TO PEOPLE';
+ if(has('turns back to the altar','turn back to the altar','completes the turn back'))return 'TURNS TO ALTAR';
+ if(has('turns to missal','turns back to the missal'))return 'TURNS TO MISSAL';
+ if(has('ascends while praying'))return 'ASCENDS ALTAR';
+ if(has('returns from sedilia'))return 'RETURNS TO ALTAR';
+ if(has('go to the sedilia','may go to the sedilia'))return 'GOES TO SEDILIA';
+ if(has('genuflect'))return 'GENUFLECTS';
+ if(has('profound bow','bows profoundly','bows over altar'))return 'PROFOUND BOW';
+ if(has('kisses the altar'))return 'KISSES ALTAR';
+ if(has('kisses the gospel'))return 'KISSES GOSPEL';
+ if(has('signs book','signs altar/book'))return 'SIGNS BOOK';
+ if(has('sign of the cross over the people'))return 'BLESSES PEOPLE';
+ if(has('sign of the cross')&&has('paten'))return 'SIGNS WITH PATEN';
+ if(has('three signs of the cross over'))return 'THREE CROSSES';
+ if(has('sign of the cross over the host'))return 'SIGNS HOST';
+ if(has('sign of the cross over the chalice'))return 'SIGNS CHALICE';
+ if(has('sign of the cross upon himself','signs himself'))return 'SIGNS HIMSELF';
+ if(has('strikes his breast','strikes breast'))return 'STRIKES BREAST';
+ if(has('holds the paten with the host elevated'))return 'OFFERS HOST';
+ if(has('holds the uncovered chalice elevated'))return 'OFFERS CHALICE';
+ if(has('reads/chants the epistle','reads/chants the lesson'))return 'READS EPISTLE';
+ if(has('proclaims the gospel'))return 'PROCLAIMS GOSPEL';
+ if(has('intones credo'))return 'INTONES CREDO';
+ if(has('extends and elevates hands for the intonation'))return 'INTONES GLORIA';
+ if(has('orate, fratres'))return 'TURNS TO PEOPLE';
+ if(has('uncover')&&has('chalice'))return 'UNCOVERS CHALICE';
+ return '';
+}
+const LOW_MASS_ACTION_SURFACE=new Set(['OFFERS HOST','OFFERS CHALICE','WASHES / PURIFIES','ELEVATES HOST','ELEVATES CHALICE','MINOR ELEVATION','BREAKS HOST','PLACES PARTICLE','RECEIVES HOST','RECEIVES CHALICE','SHOWS SACRED HOST','GIVES COMMUNION','BLESSES PEOPLE']);
+const significantPriestAction_v28=significantPriestAction;
+significantPriestAction=function(priest){const a=significantPriestAction_v28(priest);if(!flags.LOW_MASS_PROFILE)return a;return LOW_MASS_ACTION_SURFACE.has(a)?a:''};
+function updateActionRibbon(priest){
+ const box=$('#sectionAction'),value=$('#actionDisplay');if(!box||!value)return;
+ if(priest?.Runtime_Route_Step){
+  const n=priest.Runtime_Route_Step,total=priest.Runtime_Route_Total||priestRouteSteps(priest).length,label=/INCENSATION/.test(priest.Priest_Route_ID||'')?'INCENSATION':'MOVEMENT';
+  value.textContent=`${label} · ${n}/${total}`;box.classList.remove('empty');box.classList.add('hot');box.dataset.routeStep='1';const ai=$('#priestActionIcon');if(ai){const rk=/INCENSATION/.test(priest.Priest_Route_ID||'')?'SEM:ACTOR.PRIEST.INCENSING_ALTAR':'SEM:POSITION.PROCESSION_TO_ALTAR';ai.innerHTML=assetImg(rk,'section-icon')}return;
+ }
+ delete box.dataset.routeStep;const txt=significantPriestAction(priest);value.textContent=txt||'—';box.classList.toggle('empty',!txt);box.classList.toggle('hot',!!txt);const ai=$('#priestActionIcon');if(ai){const k=actionAssetKey(txt);ai.innerHTML=k?assetImg(k,'section-icon'):'';}
+}
+function syncState(el){
+ const block=runtimeBlockById.get(el.dataset.block); if(!block)return; const macro=macroMap[block.Macro_ID]||{}; const sort=Number(el.dataset.sort)||Number(block.Display_Order); const cue=el.dataset.cue;const pre=!!block.RuntimeOverlay;
+ const priest=pre?runtimePriestForPreMass(el):runtimePriestForElement(el,sort); const posture=pre?runtimePostureForPreMass(el):findPosture(block,priest,sort); const resp=pre?runtimeResponseForPreMass(el):responseByCue.get(cue); const userResp=pre?!!resp:responseIsForUser(resp);
+ const liveCardLabel=mode==='live'?activeCard()?.getAttribute('aria-label'):'';$('#guideCopy').textContent=liveCardLabel||macro.Moment||block.Title;setIconHtml($('#sectionMomentIcon'),macroIconKey(macro),'');
+ $('#guideNext').textContent='';
+ const p=posture?.New_Posture||'STAND';const pk=postureAssetKey(p);setIconHtml($('#postureIcon'),pk,({STAND:'│',SIT:'┐'}[p]||'│'));$('#postureText').textContent=p;
+ $('#responseCard').classList.toggle('off',!userResp);const responseText=userResp?String(resp.Response_Text||'Respond').replace(/^℟\.\s*/,'').slice(0,52):'—';$('#responseText').textContent=responseText;setIconHtml($('#responseIcon'),userResp?responseAssetKey(responseText):'SEM:GESTURE.HANDS_JOINED','℟');
+ setIconHtml($('#voiceIcon'),voiceAssetKey(priest),'');updateBellRail(cue);
+ if(priest){$('#stationText').textContent=prettyStation(priest.Priest_Station);$('#voiceText').textContent=normalizedPriestVoice(priest);$('#facingText').textContent=(priest.Facing||'—').replaceAll('_',' ').toLowerCase();$('#actionText').textContent=(priest.Action||'—').slice(0,74);updatePriestPositionIcon(priest);updateActionRibbon(priest)}else{updatePriestPositionIcon(null);updateActionRibbon(null)};if(AO.SolemnMassRuntime?.decorateState)AO.SolemnMassRuntime.decorateState(el,priest,block)
+ updateSchola(block,el,macro);
+ const gesture=pre?null:renderGestureRail(el);if(pre){$('#gestureCard').classList.add('off');$('#gestureCard').classList.remove('hot');$('#gestureText').textContent='—';setIconHtml($('#gestureIcon'),'hands_joined','✦')}
+ const enabledBlocks=RUNTIME_BLOCKS.filter(runtimeBlockEnabled);const pos=enabledBlocks.findIndex(b=>b.Block_ID===block.Block_ID);$('#progress').style.width=`${Math.max(0,Math.min(100,(pos/Math.max(1,enabledBlocks.length-1))*100))}%`;
+ debug(block,el,priest,posture,gesture,resp);
+ try{window.__AO_FUNCTIONAL_MOTION?.(el,block,priest,resp,userResp)}catch(err){console.warn('Functional motion hook:',err)}
+}
+function properExcerpt(slot,n=125){const f=fixtureMap[slot];return f?(f.Latin_Text||'').replace(/\n/g,' ').slice(0,n)+(f.Latin_Text&&f.Latin_Text.length>n?'…':''):''}
+function liveConcurrentPriestTrack(block,el){
+ if(mode!=='live')return false;const cue=el?.dataset?.cue||'',sort=Number(el?.dataset?.sort)||Number(block?.Display_Order)||0,p=findPriest(cue,sort);
+ return !!p&&priestVoiceIsPrivate(p.Voice)&&!/LISTENS|NO COMPETING/i.test(String(p.Voice||''));
+}
+function scholaDuplicateOnMainText(block,el){if(mode==='live'&&el?.dataset?.owner==='SCHOLA_PUBLIC')return false;if((el?.dataset?.clock||'')==='SCHOLA_PUBLIC')return true;const properSlots=new Set(['INTROIT','GRADUAL','ALLELUIA_TRACT_SEQUENCE','OFFERTORY','COMMUNION']);if(properSlots.has(block?.Proper_Slot)){const live=norm(el?.dataset?.latin||el?.textContent||''),fixture=norm(fixtureMap[block?.Proper_Slot]?.Latin_Text||'');if(live.length>8&&fixture&&fixture.includes(live))return true}return false}
+function scholaLiveState(block,el){const id=block?.Block_ID||'',m=block?.Macro_ID||'',clock=el?.dataset?.clock||'';const silent=()=>({kind:'silent',program:'',label:''});if(flags.LOW_MASS_PROFILE)return silent();const singing=(program,label)=>({kind:'singing',program,label}),status=(program,label)=>({kind:'status',program,label});if(block?.RuntimeOverlay){const hit=scholaCanonicalEventAt(block,el);if(!hit)return silent();const label=hit.adapter?.label||'SCHOLA';return singing(`OVERLAY:${hit.adapter?.event||label}`,label)}if(m==='AO.SM.M01')return singing('INTROIT','INTROIT');if(m==='AO.SM.M02')return mode==='live'?singing('KYRIE','KYRIE'):{kind:'duplicate',program:'KYRIE',label:'KYRIE'};if(m==='AO.SM.M03'){if(clock==='PUBLIC_TEXT')return silent();if(clock==='SCHOLA_PUBLIC')return mode==='live'?singing('GLORIA','GLORIA'):{kind:'duplicate',program:'GLORIA',label:'GLORIA'};if(clock==='PRIEST_PRIVATE')return singing('GLORIA','GLORIA');return silent()}if(['AO.SM.M04','AO.SM.M05'].includes(m))return silent();if(m==='AO.SM.M06')return mode==='live'?singing('GRADUAL_ALLELUIA','GRADUAL · ALLELUIA'):{kind:'duplicate',program:'GRADUAL_ALLELUIA',label:'GRADUAL · ALLELUIA'};if(m==='AO.SM.M07')return id==='AO.SM.B023'?singing('GRADUAL_ALLELUIA','ALLELUIA · GOSPEL PREPARATION'):silent();if(m==='AO.SM.M08')return silent();if(m==='AO.SM.M09'){if(clock==='PUBLIC_TEXT')return silent();if(clock==='SCHOLA_PUBLIC')return mode==='live'?singing('CREDO','CREDO'):{kind:'duplicate',program:'CREDO',label:'CREDO'};if(clock==='PRIEST_PRIVATE')return singing('CREDO','CREDO');return silent()}if(m==='AO.SM.M10'){if(['AO.SM.B028','AO.SM.B029'].includes(id))return silent();if(Number(block.Display_Order)>=30)return singing('OFFERTORY','OFFERTORY');return silent()}if(m==='AO.SM.M11'){if(['AO.SM.B039','AO.SM.B040'].includes(id))return status('OFFERTORY','MUSIC CONTINUES');return silent()}if(m==='AO.SM.M12')return silent();if(m==='AO.SM.M13')return mode==='live'?singing('SANCTUS_BENEDICTUS','SANCTUS · BENEDICTUS'):{kind:'duplicate',program:'SANCTUS_BENEDICTUS',label:'SANCTUS · BENEDICTUS'};if(m==='AO.SM.M14')return singing('SANCTUS_BENEDICTUS','SANCTUS · BENEDICTUS');if(['AO.SM.M15','AO.SM.M16'].includes(m))return silent();if(m==='AO.SM.M17')return flags.SANCTUS_GREGORIAN?silent():singing('SANCTUS_BENEDICTUS','BENEDICTUS');if(['AO.SM.M18','AO.SM.M19'].includes(m))return silent();if(m==='AO.SM.M20')return id==='AO.SM.B067'?singing('AGNUS_DEI','AGNUS DEI'):silent();if(m==='AO.SM.M21')return mode==='live'?singing('AGNUS_DEI','AGNUS DEI'):{kind:'duplicate',program:'AGNUS_DEI',label:'AGNUS DEI'};if(!flags.FAITHFUL_COMMUNION&&['AO.SM.M22','AO.SM.M23'].includes(m))return singing('COMMUNION','COMMUNION');if(['AO.SM.M22','AO.SM.M23','AO.SM.M24'].includes(m))return silent();if(['AO.SM.M25','AO.SM.M26'].includes(m))return singing('COMMUNION','COMMUNION');return silent()}
+function scholaCanonicalUnitSegments(blockId,{clocks=null,skipFirst=0}={}){const b=DATA.blocks.find(x=>x.Block_ID===blockId);if(!b)return [];const units=(b.units||[]).filter(u=>u.type==='text'&&(!clocks||clocks.includes(u.clock||''))).slice(skipFirst);return units.map((u,i)=>({id:`${blockId}.U${i+skipFirst}`,latin:String(u.latin||'').trim(),english:String(u.english||'').trim(),cues:u.cue_id?[u.cue_id]:[]})).filter(x=>x.latin)}
+function scholaFixtureSegments(slot,prefix=slot){const f=fixtureMap[slot];if(!f)return [];const latin=String(f.Latin_Text||'').replace(/\r/g,'').split(/\n+/).map(x=>x.trim()).filter(Boolean),english=String(f.English_Text||'').replace(/\r/g,'').split(/\n+/).map(x=>x.trim()).filter(Boolean);if(latin.length===english.length)return latin.map((text,i)=>({id:`${prefix}.${i+1}`,latin:text,english:english[i]||'',cues:[]}));return latin.length?[{id:`${prefix}.1`,latin:latin.join(' '),english:english.join(' '),cues:[]}]:[]}
+function scholaAdapterSegments(a){if(!a?.source)return [];if(a.source.pairs)return a.source.pairs.map((p,i)=>({id:`${a.event||a.label}.${i+1}`,latin:String(p.latin||'').trim(),english:String(p.english||'').trim(),cues:[]})).filter(x=>x.latin);if(a.source.proper)return scholaFixtureSegments(a.source.proper,a.label||a.source.proper);if(a.source.block){const b=DATA.blocks.find(x=>x.Block_ID===a.source.block);if(!b)return [];let active=!a.source.startCue;const out=[];for(const u of (b.units||[])){if(a.source.startCue&&u.cue_id===a.source.startCue)active=true;if(active&&u.type==='text'&&u.latin)out.push({id:`${b.Block_ID}.${u.cue_id||out.length+1}`,latin:String(u.latin||'').trim(),english:String(u.english||'').trim(),cues:u.cue_id?[u.cue_id]:[]});if(a.source.endCue&&u.cue_id===a.source.endCue)break}return out}return []}
+function scholaProgramSegments(program){switch(program){case 'INTROIT':return scholaFixtureSegments('INTROIT','INTROIT');case 'KYRIE':return scholaCanonicalUnitSegments('AO.SM.B015',{clocks:['SCHOLA_PUBLIC']});case 'GLORIA':return scholaCanonicalUnitSegments('AO.SM.B016',{clocks:['SCHOLA_PUBLIC']});case 'GRADUAL_ALLELUIA':{const out=[...scholaFixtureSegments('GRADUAL','GRADUAL'),...scholaFixtureSegments('ALLELUIA_TRACT_SEQUENCE','ALLELUIA')];if(fixtureMap.SEQUENCE)out.push(...scholaFixtureSegments('SEQUENCE','SEQUENCE'));return out}case 'CREDO':return scholaCanonicalUnitSegments('AO.SM.B027',{clocks:['SCHOLA_PUBLIC']});case 'OFFERTORY':return scholaFixtureSegments('OFFERTORY','OFFERTORY');case 'SANCTUS_BENEDICTUS':return scholaCanonicalUnitSegments('AO.SM.B046',{clocks:['SCHOLA_PUBLIC']});case 'AGNUS_DEI':return scholaCanonicalUnitSegments('AO.SM.B068',{clocks:['SCHOLA_PUBLIC']});case 'COMMUNION':return scholaFixtureSegments('COMMUNION','COMMUNION');default:if(program.startsWith('OVERLAY:')){const key=program.slice(8),a=SCHOLA_RUNTIME_ADAPTER.find(x=>String(x.event||x.label)===key);return scholaAdapterSegments(a)}return []}}
+function prepareScholaProgram(program){if(!program)return [];if(SCHOLA_STREAM.cache.has(program))return SCHOLA_STREAM.cache.get(program);const segments=scholaProgramSegments(program);SCHOLA_STREAM.cache.set(program,segments);return segments}
+function programsForPart(part){const ids=new Set(part?.macros||[]),out=[],add=x=>{if(x&&!out.includes(x))out.push(x)};if(ids.has('AO.SM.M01'))add('INTROIT');if(ids.has('AO.SM.M02'))add('KYRIE');if(ids.has('AO.SM.M03'))add('GLORIA');if(ids.has('AO.SM.M06')||ids.has('AO.SM.M07'))add('GRADUAL_ALLELUIA');if(ids.has('AO.SM.M09'))add('CREDO');if(ids.has('AO.SM.M10')||ids.has('AO.SM.M11'))add('OFFERTORY');if(ids.has('AO.SM.M13')||ids.has('AO.SM.M14')||ids.has('AO.SM.M17'))add('SANCTUS_BENEDICTUS');if(ids.has('AO.SM.M20')||ids.has('AO.SM.M21'))add('AGNUS_DEI');if(ids.has('AO.SM.M25')||ids.has('AO.SM.M26'))add('COMMUNION');for(const a of SCHOLA_RUNTIME_ADAPTER){if(a?.windows?.some(w=>ids.has(w.macro))&&String(a.event||'').startsWith('AO.PRE.'))add(`OVERLAY:${a.event}`)}return out}
+function prepareScholaForPart(part){if(!part||SCHOLA_STREAM.preparedParts.has(part.id))return;programsForPart(part).forEach(prepareScholaProgram);SCHOLA_STREAM.preparedParts.add(part.id)}
+function stopScholaTicker(reset=false){if(SCHOLA_STREAM.animation){SCHOLA_STREAM.animation.onfinish=null;SCHOLA_STREAM.animation.cancel();SCHOLA_STREAM.animation=null}if(SCHOLA_STREAM.progressRaf){cancelAnimationFrame(SCHOLA_STREAM.progressRaf);SCHOLA_STREAM.progressRaf=0}if(reset){SCHOLA_STREAM.program='';SCHOLA_STREAM.label='';SCHOLA_STREAM.segments=[];SCHOLA_STREAM.index=0;SCHOLA_STREAM.completed=false}}
+function updateScholaContext(){const segs=SCHOLA_STREAM.segments,i=SCHOLA_STREAM.index,prev=$('#scholaContextPrev'),cur=$('#scholaContextCurrent'),next=$('#scholaContextNext'),count=$('#scholaPhraseCount');if(prev)prev.textContent=i>0?(segs[i-1]?.latin||''):'';if(cur)cur.textContent=segs[i]?.latin||'';if(next)next.textContent=i<segs.length-1?(segs[i+1]?.latin||''):'';if(count)count.textContent=segs.length?`${i+1}/${segs.length}`:'';const p=$('#scholaPrevPhrase'),n=$('#scholaNextPhrase');if(p)p.disabled=i<=0;if(n)n.disabled=i>=segs.length-1}
+function playScholaCinematic(kind='phrase'){const dock=$('#scholaDock');if(!dock||window.matchMedia?.('(prefers-reduced-motion: reduce)').matches)return;const cls=kind==='chant'?'chant-cinematic':'phrase-cinematic';dock.classList.remove(cls);void dock.offsetWidth;dock.classList.add(cls);setTimeout(()=>dock.classList.remove(cls),kind==='chant'?760:460)}
+function setScholaSegment(index,{animateIn=true}={}){const line=$('#scholaStreamLine'),counter=$('#scholaPageCounter'),progress=$('#scholaStreamProgress');if(!line||!SCHOLA_STREAM.segments.length)return;const previous=SCHOLA_STREAM.index;SCHOLA_STREAM.index=Math.max(0,Math.min(index,SCHOLA_STREAM.segments.length-1));SCHOLA_STREAM.completed=false;const segment=SCHOLA_STREAM.segments[SCHOLA_STREAM.index];line.textContent=segment?.latin||segment?.english||'';line.dataset.segmentId=segment?.id||'';line.dataset.language='latin';const tr=$('#scholaStreamTranslation');if(tr){tr.textContent=segment?.english||'';tr.dataset.segmentId=segment?.id||''}SCHOLA_STREAM.currentGesture=null;SCHOLA_STREAM.currentGestureCue='';for(const c of (segment?.cues||[])){const gs=scholaGesturesForCue(c);if(gs.length){SCHOLA_STREAM.currentGesture=gs[0];SCHOLA_STREAM.currentGestureCue=c;break}}if(activeEl)renderGestureRail(activeEl);line.classList.remove('enter','exit');if(animateIn){void line.offsetWidth;line.classList.add('enter')}if(counter)counter.textContent=`${SCHOLA_STREAM.index+1} / ${SCHOLA_STREAM.segments.length}`;if(progress)progress.style.width='0%';updateScholaContext();$('#scholaDock')?.classList.remove('stream-held');if(previous!==SCHOLA_STREAM.index||animateIn)playScholaCinematic('phrase');requestAnimationFrame(()=>startScholaTicker(0));requestAnimationFrame(updateScholaSafeArea)}
+function startScholaTicker(progressFraction=0){const line=$('#scholaStreamLine'),viewport=$('#scholaStreamViewport'),progress=$('#scholaStreamProgress');if(!line||!viewport||!SCHOLA_STREAM.segments.length||SCHOLA_STREAM.paused||SCHOLA_STREAM.transitionFrozen||SCHOLA_STREAM.completed)return;stopScholaTicker(false);const vw=viewport.clientWidth,lw=line.scrollWidth,travel=Math.max(vw+lw+80,260),baseSpeed=window.innerWidth<760?34:40,baseDuration=Math.max(7000,Math.min(70000,(travel/baseSpeed)*1000));SCHOLA_STREAM.baseDuration=baseDuration;const from=vw+24,to=-(lw+24),start=from+(to-from)*Math.max(0,Math.min(1,progressFraction));SCHOLA_STREAM.animation=line.animate([{transform:`translate3d(${start}px,-50%,0)`},{transform:`translate3d(${to}px,-50%,0)`}],{duration:baseDuration*(1-progressFraction),easing:'linear',fill:'forwards'});SCHOLA_STREAM.animation.playbackRate=SCHOLA_STREAM.speed;SCHOLA_STREAM.animation.onfinish=()=>{SCHOLA_STREAM.animation=null;if(SCHOLA_STREAM.paused||SCHOLA_STREAM.transitionFrozen)return;if(SCHOLA_STREAM.index<SCHOLA_STREAM.segments.length-1)setScholaSegment(SCHOLA_STREAM.index+1,{animateIn:false});else{SCHOLA_STREAM.completed=true;if(progress)progress.style.width='100%';$('#scholaDock')?.classList.add('stream-held');const p=$('#scholaStreamPause');if(p)p.textContent='HOLD'}};const tick=()=>{if(!SCHOLA_STREAM.animation||SCHOLA_STREAM.paused||SCHOLA_STREAM.transitionFrozen)return;const timing=SCHOLA_STREAM.animation.effect?.getComputedTiming?.(),pct=Math.max(0,Math.min(100,Number(timing?.progress||0)*100));if(progress)progress.style.width=`${pct}%`;if(pct<100)SCHOLA_STREAM.progressRaf=requestAnimationFrame(tick)};SCHOLA_STREAM.progressRaf=requestAnimationFrame(tick)}
+function ensureScholaProgram(program,label){if(!program)return;const segments=prepareScholaProgram(program);if(!segments.length)return;SCHOLA_STREAM.label=label||program;const dock=$('#scholaDock');if(dock)dock.classList.remove('status-only');if(SCHOLA_STREAM.program===program&&SCHOLA_STREAM.segments.length){updateScholaConsoleUI();return}stopScholaTicker(false);SCHOLA_STREAM.program=program;SCHOLA_STREAM.segments=segments;SCHOLA_STREAM.index=0;SCHOLA_STREAM.completed=false;SCHOLA_STREAM.paused=false;if(dock){dock.classList.remove('stream-held');dock.classList.toggle('translation-open',SCHOLA_STREAM.translationOpen);dock.dataset.view=SCHOLA_STREAM.view}setScholaSegment(0,{animateIn:true});updateScholaConsoleUI();playScholaCinematic('chant')}
+function pauseScholaTicker(paused){SCHOLA_STREAM.paused=!!paused;const dock=$('#scholaDock');if(dock)dock.classList.toggle('stream-paused',SCHOLA_STREAM.paused);const p=$('#scholaStreamPause');if(p&&!SCHOLA_STREAM.completed)p.textContent=SCHOLA_STREAM.paused?'PAUSED':'LIVE';if(SCHOLA_STREAM.animation){if(SCHOLA_STREAM.paused)SCHOLA_STREAM.animation.pause();else if(!SCHOLA_STREAM.transitionFrozen)SCHOLA_STREAM.animation.play()}else if(!SCHOLA_STREAM.paused&&!SCHOLA_STREAM.transitionFrozen&&SCHOLA_STREAM.segments.length&&!SCHOLA_STREAM.completed)requestAnimationFrame(()=>startScholaTicker(0));updateScholaSpeedUI()}
+function setScholaTransitionFreeze(on){SCHOLA_STREAM.transitionFrozen=!!on;if(SCHOLA_STREAM.animation){if(on)SCHOLA_STREAM.animation.pause();else if(!SCHOLA_STREAM.paused)SCHOLA_STREAM.animation.play()}else if(!on&&!SCHOLA_STREAM.paused&&SCHOLA_STREAM.segments.length&&!SCHOLA_STREAM.completed&&SCHOLA_STREAM.presenting){requestAnimationFrame(()=>startScholaTicker(0))}}
+function updateScholaConsoleUI(){const dock=$('#scholaDock'),v=$('#scholaSpeedValue'),range=$('#scholaSpeedRange'),pause=$('#scholaPauseBtn'),lang=$('#scholaTranslationToggle'),view=$('#scholaViewMode');if(v){v.textContent=`${SCHOLA_STREAM.speed.toFixed(2)}×`;v.setAttribute('aria-expanded',dock?.classList.contains('speed-open')?'true':'false')}if(range)range.value=String(SCHOLA_STREAM.speed);$$('#scholaSpeedPanel [data-schola-speed]').forEach(b=>b.classList.toggle('active',Math.abs(Number(b.dataset.scholaSpeed)-SCHOLA_STREAM.speed)<0.001));if(pause){pause.textContent=SCHOLA_STREAM.paused?'RESUME':'PAUSE';pause.classList.toggle('active',SCHOLA_STREAM.paused)}if(lang){lang.setAttribute('aria-pressed',SCHOLA_STREAM.translationOpen?'true':'false');lang.textContent=SCHOLA_STREAM.translationOpen?'EN✓':'EN'}if(dock){dock.dataset.view=SCHOLA_STREAM.view;dock.classList.toggle('translation-open',SCHOLA_STREAM.translationOpen)}if(view)view.textContent=SCHOLA_STREAM.view==='compact'?'CMP':SCHOLA_STREAM.view==='expanded'?'EXP':'STD';updateScholaContext();requestAnimationFrame(updateScholaSafeArea)}
+function updateScholaSpeedUI(){updateScholaConsoleUI()}
+function setScholaSpeed(value){const next=Math.round(Math.max(SCHOLA_SPEED_MIN,Math.min(SCHOLA_SPEED_MAX,Number(value)||SCHOLA_STREAM.speed))*100)/100;if(next===SCHOLA_STREAM.speed)return;SCHOLA_STREAM.speed=next;safeStorageSet('ao-schola-speed',String(next));if(SCHOLA_STREAM.animation)SCHOLA_STREAM.animation.playbackRate=next;updateScholaConsoleUI()}
+function changeScholaSpeed(direction){const s=SCHOLA_STREAM.speed,step=direction<0?(s<=1?0.10:0.25):(s<1?0.10:0.25);setScholaSpeed(s+(direction<0?-step:step))}
+function toggleScholaSpeedPanel(){const dock=$('#scholaDock');if(!dock)return;dock.classList.toggle('speed-open');updateScholaConsoleUI()}
+function toggleScholaTranslation(){const dock=$('#scholaDock');if(!dock||!SCHOLA_STREAM.segments.length||dock.classList.contains('status-only'))return;SCHOLA_STREAM.translationOpen=!SCHOLA_STREAM.translationOpen;safeStorageSet('ao-schola-translation',SCHOLA_STREAM.translationOpen?'1':'0');updateScholaConsoleUI()}
+function cycleScholaView(){const views=['compact','standard','expanded'],i=views.indexOf(SCHOLA_STREAM.view);SCHOLA_STREAM.view=views[(i+1)%views.length];safeStorageSet('ao-schola-view',SCHOLA_STREAM.view);updateScholaConsoleUI()}
+function stepScholaPhrase(delta){if(!SCHOLA_STREAM.segments.length)return;const target=Math.max(0,Math.min(SCHOLA_STREAM.segments.length-1,SCHOLA_STREAM.index+delta));if(target===SCHOLA_STREAM.index)return;setScholaSegment(target,{animateIn:true})}
+function scholaStageReady(program){return !!program&&SCHOLA_STREAM.program===program&&SCHOLA_STREAM.completed}
+function updateScholaSafeArea(){const dock=$('#scholaDock');if(!dock){document.documentElement.style.setProperty('--schola-safe','0px');return}const visible=dock.classList.contains('show')&&mode!=='read'&&!document.body.classList.contains('part-transition'),h=visible?Math.ceil(dock.getBoundingClientRect().height+18):0;document.documentElement.style.setProperty('--schola-safe',`${h}px`)}
+function updateSchola(block,el,macro){const state=scholaLiveState(block,el),silent=state.kind==='silent',singing=state.kind==='singing',statusOnly=state.kind==='status';const dock=$('#scholaDock');if(!dock)return;const show=(singing||statusOnly)&&mode!=='read';SCHOLA_STREAM.presenting=show;if(!show){SCHOLA_STREAM.currentGesture=null;SCHOLA_STREAM.currentGestureCue=''}dock.classList.toggle('show',show);dock.classList.toggle('status-only',statusOnly);dock.setAttribute('aria-hidden',show?'false':'true');const title=$('#scholaTitleText'),kind=$('#scholaStreamKind');if(singing){ensureScholaProgram(state.program,state.label);SCHOLA_STREAM.label=state.label;if(title)title.textContent=`SCHOLA · ${state.label}`;if(kind)kind.textContent=SCHOLA_STREAM.completed?'CHANT COMPLETE · HOLDING FINAL SEGMENT':'LATIN';if(!SCHOLA_STREAM.completed)pauseScholaTicker(false)}else if(statusOnly){SCHOLA_STREAM.label=state.label;if(title)title.textContent=`SCHOLA · ${state.label}`;if(kind)kind.textContent='STATUS ONLY · TEXT NOT ASSUMED';if(SCHOLA_STREAM.animation)SCHOLA_STREAM.animation.pause()}else{if(title)title.textContent='SCHOLA';if(kind)kind.textContent=silent?'SILENT':'';if(SCHOLA_STREAM.animation)SCHOLA_STREAM.animation.pause()}requestAnimationFrame(updateScholaSafeArea)}
+const scholaResizeObserver=window.ResizeObserver?new ResizeObserver(()=>updateScholaSafeArea()):null;if(scholaResizeObserver)scholaResizeObserver.observe($('#scholaDock'));window.addEventListener('resize',updateScholaSafeArea,{passive:true});
+function buildDrawer(){
+ $('#drawerIntro').textContent=`${DATA.meta.version} · Ultimate Mass v2.2 · V4.6 semantic assets · reconciled language/Schola runtime · single-owner event surfaces · gesture choreography · Canon + Gospel cinematic arcs · Offertory/Communion/Pater/Canon-hierarchy/Conclusion salience. Canonical Mass graph fingerprint: ${AO.BUILD.canonicalMassSha256.slice(0,12)}…`;
+ const stats=[['Blocks',DATA.blocks.length],['Cue events',DATA.priestEvents.length],['Posture',DATA.postures.length],['Gestures',DATA.gestures.length],['Responses',DATA.responses.length],['Low Mass','1962']];$('#stats').innerHTML=stats.map(([k,v])=>`<div class="stat"><b>${v}</b><span>${k}</span></div>`).join('');
+ const showFlags=['GLORIA_APPOINTED','CREDO_APPOINTED','INCENSE_ENABLED','SEDILIA_USED','FAITHFUL_COMMUNION','SECOND_CONFITEOR_LOCAL_CUSTOM_ENABLED','SANCTUS_GREGORIAN'];$('#branchGrid').innerHTML=showFlags.map(k=>`<span class="chip ${flags[k]?'on':'off'}">${escapeHtml(k.replaceAll('_',' '))}</span>`).join('');
+ const riteSummary=$('#riteContextSummary');if(riteSummary)riteSummary.innerHTML=`<strong>${escapeHtml(RITE_CONTEXT.date)}</strong> · ${RITE_CONTEXT.isSunday?'Sunday':'weekday'} · ${escapeHtml(RITE_CONTEXT.massType)} ${RITE_CONTEXT.principalMass?'· principal Mass':''}<br>Easter ${escapeHtml(RITE_CONTEXT.calendar.easter)} · Pentecost ${escapeHtml(RITE_CONTEXT.calendar.pentecost)} · ${PRE_MASS_VARIANT==='NONE'?'no implemented pre-Mass overlay':escapeHtml(PRE_MASS_VARIANT.replaceAll('_',' '))}`;
+ const riteFlags=$('#riteContextFlags');if(riteFlags){const vals=[['Paschaltide',RITE_CONTEXT.paschaltide],['Passion Sunday',RITE_CONTEXT.passionSunday],['Palm Sunday',RITE_CONTEXT.palmSunday],['Candlemas',RITE_CONTEXT.candlemas],['Ash Wednesday',RITE_CONTEXT.ashWednesday],['Nuptial',RITE_CONTEXT.nuptial],['Requiem',RITE_CONTEXT.requiem]];riteFlags.innerHTML=vals.map(([k,v])=>`<span class="rite-flag ${v?'on':''}">${escapeHtml(k)} ${v?'✓':'—'}</span>`).join('')+`<span class="rite-flag mass">${escapeHtml(PRE_MASS_VARIANT.replaceAll('_',' '))}</span>`;}
+ const sel=$('#jumpSelect');const jumpMacros=[...ACTIVE_OVERLAYS.map(x=>x.macro).filter(Boolean),...DATA.macros];sel.innerHTML='<option value="">Jump to a Mass moment…</option>'+jumpMacros.map(m=>`<option value="${m.Macro_ID}">${m.Sequence===0?'PRE':String(m.Sequence).padStart(2,'0')} · ${escapeHtml(m.Moment)}</option>`).join('');
+}
+function debug(block,el,priest,posture,gesture,resp){if($('#debugPanel')){const rows=[['Block',block.Block_ID],['Cue',el.dataset.cue||'synthetic'],['Clock',el.dataset.clock||'—'],['Priest',priest?.Priest_Event_ID||'—'],['Posture',posture?.Posture_Event_ID||'—'],['Gesture',gesture?.Gesture_ID||'—'],['Response',resp?.Response_Event_ID||'—']];$('#debugPanel').innerHTML=rows.map(([a,b])=>`<div class="debug-row"><b>${a}</b><span>${escapeHtml(b)}</span></div>`).join('')}qaContextUpdate()}
+function modeCueAnchor(){const cue=activeEl?.dataset?.cue||'',macro=activeEl?.dataset?.macro||cardSpecAt(PARTS[partIndex],cardIndex)?.macros?.[0]||'',sort=Number(activeEl?.dataset?.sort);return {cue,macro,sort:Number.isFinite(sort)?sort:null}}
+function scrollCardToCueAnchor(anchor){
+ const card=activeCard();if(!card||!anchor)return;const visible=x=>x&&getComputedStyle(x).display!=='none';
+ let target=anchor.cue?card.querySelector(`.flow-unit[data-cue="${anchor.cue}"]`):null;if(!visible(target))target=null;
+ if(!target){const candidates=Array.from(card.querySelectorAll('.flow-unit')).filter(x=>visible(x)&&(!anchor.macro||x.dataset.macro===anchor.macro));if(candidates.length){if(Number.isFinite(anchor.sort))target=candidates.reduce((best,x)=>Math.abs(Number(x.dataset.sort)-anchor.sort)<Math.abs(Number(best.dataset.sort)-anchor.sort)?x:best,candidates[0]);else target=candidates[0]}}
+ if(!target){scrollCardToMacro(anchor.macro);return}
+ const cr=card.getBoundingClientRect(),tr=target.getBoundingClientRect(),targetY=cr.top+cr.height*FLUID_FOCUS_RATIO;card.scrollTop=Math.max(0,card.scrollTop+(tr.top+Math.min(tr.height*.5,18)-targetY));activeEl=null;requestAnimationFrame(()=>updateActive(true));
+}
+function setMode(m){if(!['read','simple','live'].includes(m))return;const previous=mode,anchor=modeCueAnchor();if(previous===m){if(activeEl)syncState(activeEl);return}mode=m;safeStorageSet('ao-mode',m);document.body.dataset.mode=m;$$('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.modeBtn===m));if(partTrack){const pi=partIndex,ci=cardIndexForAnchor(PARTS[pi],anchor);mountPart(pi,ci,'top');setTimeout(()=>scrollCardToCueAnchor(anchor),90);return}if(activeEl)syncState(activeEl);}
+
+const QA_EXPECTED_DATA_SHA='2ed36ea25b00d515a9f4a6edd1e02da274ebb92c082ecaea4dfc73feade03044';
+const QA_EXPECTED_DATA_FNV1A='ac1d3e37';
+const QA_STORE_KEY='ao-mass-audit-v1';
+const QA={enabled:false,startedAt:0,marks:[],auto:[]};
+function qaLoad(){try{const v=JSON.parse(safeStorageGet(QA_STORE_KEY)||'[]');QA.marks=Array.isArray(v)?v:[]}catch{QA.marks=[]}qaRefreshCount()}
+function qaSave(){try{safeStorageSet(QA_STORE_KEY,JSON.stringify(QA.marks))}catch{}qaRefreshCount()}
+function qaRefreshCount(){const el=$('#qaCount');if(el)el.textContent=`${QA.marks.length} mark${QA.marks.length===1?'':'s'}`}
+function qaSnapshot(){
+ if(!activeEl)return {mode,part:PARTS[partIndex]?.id||'',card:cardIndex,macro:'',block:'',cue:'',text:''};
+ const block=runtimeBlockById.get(activeEl.dataset.block),macro=macroMap[block?.Macro_ID]||{};const sort=Number(activeEl.dataset.sort)||Number(block?.Display_Order)||0,cue=activeEl.dataset.cue||'';
+ const pre=!!block?.RuntimeOverlay,priest=pre?runtimePriestForPreMass(activeEl):runtimePriestForElement(activeEl,sort),posture=pre?runtimePostureForPreMass(activeEl):findPosture(block,priest,sort),gestureHit=pre?null:effectiveGestureForEl(activeEl),gesture=gestureHit?.gesture||null,resp=pre?runtimeResponseForPreMass(activeEl):responseByCue.get(cue),state=block?scholaLiveState(block,activeEl):{kind:'',label:''};
+ const surfaceCard=cardSpecAt(PARTS[partIndex],cardIndex);return {mode,part:PARTS[partIndex]?.id||'',partTitle:PARTS[partIndex]?.title||'',card:cardIndex,cardId:surfaceCard?.id||'',cardTitle:surfaceCard?.title||'',cardMacros:(surfaceCard?.macros||[]).join('|'),overlayId:block?.Overlay_ID||'',macro:block?.Macro_ID||'',moment:macro.Moment||'',block:block?.Block_ID||'',blockTitle:block?.Title||'',displayOrder:block?.Display_Order??'',cue,clock:activeEl.dataset.clock||'',text:String(activeEl.textContent||'').trim().slice(0,220),priestEvent:priest?.Priest_Event_ID||'',priestStation:priest?.Priest_Station||'',priestVoice:priest?.Voice||'',priestVoiceDisplay:normalizedPriestVoice(priest),priestFacing:priest?.Facing||'',priestAction:priest?.Action||'',priestRoute:priest?.Priest_Route_ID||'',priestRouteSteps:priestRouteSteps(priest).length,priestRouteStep:priest?.Runtime_Route_Step||0,priestRouteStepTotal:priest?.Runtime_Route_Total||0,priestRoutePattern:priest?.Runtime_Route_Pattern||'',posture:posture?.New_Posture||'',postureEvent:posture?.Posture_Event_ID||'',gesture:gesture?gestureOccurrenceLabel(gesture,gestureHit?.cue||cue):'',gestureId:gesture?.Gesture_ID||'',gestureCue:gestureHit?.cue||'',gestureSource:gestureHit?.source||'CENTRE',response:resp?.Response_Text||'',responseId:resp?.Response_Event_ID||'',responseForUser:pre?!!resp:responseIsForUser(resp),bell:bellAtCue(cue)?.label||'',scholaKind:state.kind||'',scholaLabel:state.label||'',scholaSegment:SCHOLA_STREAM.label===state.label?SCHOLA_STREAM.index+1:0,scholaSegments:SCHOLA_STREAM.label===state.label?SCHOLA_STREAM.segments.length:0};
+}
+function qaContextUpdate(){if(!QA.enabled)return;const s=qaSnapshot(),el=$('#qaContext');if(el)el.textContent=`${s.moment||s.macro} · ${s.block||'—'} · ${s.cue||'synthetic'} · ${s.priestStation||'—'} · ${s.posture||'—'} · Schola ${s.scholaKind||'—'}`}
+function qaSetEnabled(on){QA.enabled=!!on;document.body.classList.toggle('qa-mode',QA.enabled);$('#qaDock')?.setAttribute('aria-hidden',QA.enabled?'false':'true');if(QA.enabled&&!QA.startedAt)QA.startedAt=Date.now();const b=$('#qaLaunch');if(b)b.textContent=QA.enabled?'Exit Mass Audit Mode':'Enter Mass Audit Mode';qaContextUpdate();requestAnimationFrame(()=>{syncHeaderHeight();updateActive(true)})}
+function qaMark(verdict){const snap=qaSnapshot(),category=$('#qaCategory')?.value||'GENERAL',note=($('#qaNote')?.value||'').trim();const mark={id:`AO-QA-${Date.now()}-${QA.marks.length+1}`,timestamp:new Date().toISOString(),elapsedMs:QA.startedAt?Date.now()-QA.startedAt:0,verdict,category,note,...snap};QA.marks.push(mark);qaSave();const last=$('#qaLast');if(last)last.textContent=`${verdict} · ${snap.block||snap.macro||'current state'}${category!=='GENERAL'?' · '+category.replaceAll('_',' '):''}`;if($('#qaNote'))$('#qaNote').value=''}
+function qaDownload(name,mime,textValue){const blob=new Blob([textValue],{type:mime});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function qaExportJson(){qaDownload(`Ad_Orientem_Mass_Audit_${DATA.meta.date}.json`,'application/json',JSON.stringify({mass:DATA.meta,exportedAt:new Date().toISOString(),marks:QA.marks,autoAudit:QA.auto},null,2))}
+function qaCsvEscape(v){const s=String(v??'');return /[",\n]/.test(s)?`"${s.replaceAll('"','""')}"`:s}
+function qaExportCsv(){const cols=['timestamp','elapsedMs','verdict','category','note','mode','partTitle','cardId','cardTitle','cardMacros','moment','block','blockTitle','cue','clock','text','priestEvent','priestStation','priestVoice','priestFacing','priestAction','priestRoute','priestRouteSteps','priestRouteStep','priestRouteStepTotal','priestRoutePattern','posture','gesture','response','scholaKind','scholaLabel','scholaSegment','scholaSegments'];const rows=[cols.join(','),...QA.marks.map(m=>cols.map(k=>qaCsvEscape(m[k])).join(','))];qaDownload(`Ad_Orientem_Mass_Audit_${DATA.meta.date}.csv`,'text/csv;charset=utf-8',rows.join('\n'))}
+function qaCueTrace(){
+ buildGestureBindings();const rows=[];
+ for(const b of DATA.blocks){const activeBranch=blockEnabled(b);for(const u of (b.units||[])){if(!u.cue_id||String(u.cue_id).endsWith('.SYN'))continue;const cue=u.cue_id,sort=Number(u.sort),fake={dataset:{block:b.Block_ID,macro:b.Macro_ID,cue,sort:String(sort),clock:u.clock||''},textContent:u.latin||u.state_label||''};const priest=findPriest(cue,sort),posture=findPosture(b,priest,sort),gs=(gestureCueBindings.get(cue)||[]).filter(g=>gestureAllowed(g,fake)),resp=responseByCue.get(cue),sch=scholaCanonicalEventAt(b,fake);const part=PARTS.find(p=>p.macros.includes(b.Macro_ID)),liveSpec=part?(LIVE_CARD_LAYOUT[part.id]||[]).find(x=>x.macros.includes(b.Macro_ID)):null;rows.push({sort,cue,macro:b.Macro_ID,moment:macroMap[b.Macro_ID]?.Moment||'',block:b.Block_ID,blockTitle:b.Title||'',clock:u.clock||'',text:String(u.latin||u.state_label||'').replace(/\s+/g,' ').trim().slice(0,220),priestEvent:priest?.Priest_Event_ID||'',priestStation:priest?.Priest_Station||'',priestFacing:priest?.Facing||'',priestVoice:priest?.Voice||'',priestVoiceDisplay:normalizedPriestVoice(priest),priestAction:priest?.Action||'',priestRoute:priest?.Priest_Route_ID||'',priestRouteSteps:priestRouteSteps(priest).length,postureEvent:posture?.Posture_Event_ID||'',posture:posture?.New_Posture||'',gestureIds:gs.map(g=>g.Gesture_ID).join('|'),gestures:gs.map(g=>gestureOccurrenceLabel(g,cue)).join(' | '),responseId:resp?.Response_Event_ID||'',response:resp?.Response_Text||'',responseForUser:responseIsForUser(resp)?'YES':'NO',bell:bellAtCue(cue)?.label||'',scholaEvent:sch?.event?.Schola_Event_ID||'',scholaLabel:sch?.adapter?.label||'',activeBranch:activeBranch?'YES':'NO',simpleVisible:activeBranch&&simpleUnitVisible(b,u)?'YES':'NO',liveStage:liveSpec?.id||'',liveStageTitle:liveSpec?.title||''})}}
+ return rows.sort((a,b)=>a.sort-b.sort);
+}
+function qaExportTrace(){const trace=qaCueTrace(),cols=['sort','cue','macro','moment','block','blockTitle','clock','text','priestEvent','priestStation','priestFacing','priestVoice','priestVoiceDisplay','priestAction','priestRoute','priestRouteSteps','postureEvent','posture','gestureIds','gestures','responseId','response','responseForUser','bell','scholaEvent','scholaLabel','activeBranch','simpleVisible','liveStage','liveStageTitle'];const rows=[cols.join(','),...trace.map(r=>cols.map(k=>qaCsvEscape(r[k])).join(','))];qaDownload(`Ad_Orientem_Low_Mass_275_Cue_State_Trace_${DATA.meta.date}.csv`,'text/csv;charset=utf-8',rows.join('\n'))}
+async function qaSha256(textValue){try{if(!globalThis.crypto?.subtle)return '';const b=await globalThis.crypto.subtle.digest('SHA-256',new TextEncoder().encode(textValue));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')}catch(_){return ''}}
+function qaFnv1a(textValue){let h=0x811c9dc5;const bytes=new TextEncoder().encode(textValue);for(const b of bytes){h^=b;h=Math.imul(h,0x01000193)>>>0}return h.toString(16).padStart(8,'0')}
+function qaCheck(status,name,detail){return {status,name,detail}}
+async function runAutoAudit(){
+ const checks=[],raw=$('#mass-data')?.textContent||'';const sha=await qaSha256(raw),fnv=qaFnv1a(raw);const hashOk=sha?sha===QA_EXPECTED_DATA_SHA:fnv===QA_EXPECTED_DATA_FNV1A;checks.push(qaCheck(hashOk?'pass':'fail','Canonical payload',sha?(hashOk?'Low-Mass projected mass-data matches build fingerprint (SHA-256).':`SHA changed: ${sha}`):(hashOk?'Low-Mass projected mass-data matches build fingerprint (FNV-1a fallback).':`Fallback checksum changed: ${fnv}`)));
+ checks.push(qaCheck(DATA.blocks.length===96&&DATA.macros.length===30&&DATA.priestEvents.length===275&&DATA.postures.length===26&&DATA.gestures.length===31&&DATA.responses.length===33&&DATA.schola.length===16?'pass':'fail','Count contract',`${DATA.blocks.length} blocks · ${DATA.macros.length} macros · ${DATA.priestEvents.length} priest · ${DATA.postures.length} posture · ${DATA.gestures.length} gestures · ${DATA.responses.length} responses · ${DATA.schola.length} Schola`));
+ const macroIds=DATA.macros.map(x=>x.Macro_ID),canonicalParts=MASS_PARTS,partIds=canonicalParts.flatMap(p=>p.macros),macroOk=macroIds.length===partIds.length&&new Set(partIds).size===macroIds.length&&macroIds.every(x=>partIds.includes(x));checks.push(qaCheck(macroOk?'pass':'fail','Part/card coverage',macroOk?'All 30 canonical macros occur exactly once across Mass Parts; pre-Mass overlay is excluded from the canonical count.':'Missing or duplicated canonical macro in Part map.'));const liveSpecs=canonicalParts.flatMap(p=>LIVE_CARD_LAYOUT[p.id]||[]),liveMacroIds=liveSpecs.flatMap(x=>x.macros),liveUnique=new Set(liveMacroIds),liveCoverage=liveUnique.size===macroIds.length&&macroIds.every(x=>liveUnique.has(x)),liveAdjacent=liveSpecs.every(x=>x.macros.every((id,i)=>i===0||Number(macroMap[id]?.Sequence)===Number(macroMap[x.macros[i-1]]?.Sequence)+1));checks.push(qaCheck(liveCoverage&&liveAdjacent&&liveSpecs.length===28?'pass':'fail','Live stage layout',liveCoverage&&liveAdjacent&&liveSpecs.length===28?`28 perceptible Low-Mass reader stages cover all 30 canonical macros; ${liveMacroIds.length-macroIds.length} repeated macro references are intentional card splits within the same liturgical moment.`:`Stages ${liveSpecs.length} · unique macro coverage ${liveUnique.size}/30 · adjacent ${liveAdjacent}.`));
+ const enabled=DATA.blocks.filter(blockEnabled),empty=enabled.filter(b=>!(b.units||[]).length);checks.push(qaCheck(!empty.length?'pass':'fail','Renderable blocks',empty.length?`${empty.length} enabled blocks have no units.`:`${enabled.length} enabled blocks contain runtime units.`));
+ const literalDots=enabled.filter(b=>String(b.Latin_Text||'').includes('...')||String(b.English_Text||'').includes('...'));checks.push(qaCheck(!literalDots.length?'pass':'warn','Truncation markers',literalDots.length?`${literalDots.length} enabled blocks contain literal ... markers.`:'No literal ... truncation markers in enabled blocks.'));
+ const slots=['INTROIT','COLLECT_SET','EPISTLE_OR_LESSON','GRADUAL','ALLELUIA_TRACT_SEQUENCE','GOSPEL','OFFERTORY','SECRET_SET','PREFACE','COMMUNION','POSTCOMMUNION_SET'],missingSlots=slots.filter(x=>!fixtureMap[x]||!fixtureMap[x].Latin_Text);checks.push(qaCheck(!missingSlots.length?'pass':'fail','Proper resolver',missingSlots.length?`Missing: ${missingSlots.join(', ')}`:'Golden fixture resolves all required Proper slots.'));
+ const endIds=['AO.SM.B086','AO.SM.B087','AO.SM.B088','AO.SM.B089','AO.SM.B090'],endActual=enabled.slice().sort((a,b)=>Number(a.Display_Order)-Number(b.Display_Order)).map(b=>b.Block_ID),endAt=endActual.findIndex(x=>x==='AO.SM.B086'),endOk=endAt>=0&&endIds.every((x,i)=>endActual[endAt+i]===x);checks.push(qaCheck(endOk?'pass':'fail','Postcommunion → dismissal',endOk?'B086 → B087 → B088 → B089 → B090 adjacency intact.':'Closing sequence adjacency is broken.'));
+ const liveOnly=[...LIVE_SCHOLA_ONLY_MACROS],liveOnlyOk=!!flags.LOW_MASS_PROFILE&&liveOnly.length===0;checks.push(qaCheck(liveOnlyOk?'pass':'fail','Low-Mass Schola suppression',liveOnlyOk?'No canonical Low-Mass macro is delegated to a Schola-only stage.':`Unexpected Schola-only macros: ${liveOnly.join(', ')||'none'}`));
+ const handoffOk=ORDINARY_HANDOFFS.length===30&&ORDERED_MACROS.every(m=>handoffByMacro.get(m.Macro_ID));checks.push(qaCheck(handoffOk?'pass':'fail','Concurrency handoff map',handoffOk?'All 30 Mass moments bind to canonical H001–H030 handoff rows.':`Resolved ${ORDINARY_HANDOFFS.length} ordinary handoff rows.`));
+ const dormantScholaEvents=(DATA.schola||[]).filter(x=>x.Scope==='DORMANT_SUNG_REFERENCE');checks.push(qaCheck(dormantScholaEvents.length===DATA.schola.length?'pass':'fail','Dormant Sung reference data',`${dormantScholaEvents.length} Schola records are retained as non-runtime reference data for later forms.`));
+ const simplePrivateLeak=DATA.blocks.filter(blockEnabled).flatMap(b=>(b.units||[]).filter(u=>u.clock==='PRIEST_PRIVATE'&&simpleUnitVisible(b,u)));checks.push(qaCheck(!simplePrivateLeak.length?'pass':'fail','Simple mode contract',simplePrivateLeak.length?`${simplePrivateLeak.length} private priest units leak into Simple mode.`:'Simple mode excludes all PRIEST_PRIVATE units and delegates Schola text to the Schola channel.'));
+
+ buildGestureBindings();
+ const fullTrace=qaCueTrace();checks.push(qaCheck(fullTrace.length===275?'pass':'fail','Low-Mass cue trace',fullTrace.length===275?'275 canonical Low-Mass cue rows resolved; the synthetic sermon pause remains outside the canonical cue count.':`Resolved ${fullTrace.length} canonical cue rows; expected 275.`));const traceByCue=new Map(fullTrace.map(r=>[r.cue,r]));const priestSpatialExpected=[
+ ['AO.SM.C0071','ALTAR_CENTER','PEOPLE'],['AO.SM.C0077','ALTAR_EPISTLE_MISSAL','MISSAL'],['AO.SM.C0078','ALTAR_EPISTLE_MISSAL','MISSAL'],
+ ['AO.SM.C0081','ALTAR_GOSPEL_MISSAL','MISSAL'],['AO.SM.C0107','ALTAR_CENTER','PEOPLE'],
+ ['AO.SM.C0112','ALTAR_EPISTLE_SIDE','LITURGICAL_EAST'],['AO.SM.C0113','ALTAR_EPISTLE_SIDE','LITURGICAL_EAST'],
+ ['AO.SM.C0249','ALTAR_EPISTLE_MISSAL','MISSAL'],['AO.SM.C0250','ALTAR_CENTER','PEOPLE_DURING_TURN'],
+ ['AO.SM.C0252','ALTAR_CENTER','PEOPLE'],['AO.SM.C0256','ALTAR_CENTER','PEOPLE_DURING_TURN'],['AO.SM.C0267','ALTAR_GOSPEL_MISSAL','MISSAL']
+];
+const priestSpatialBad=priestSpatialExpected.filter(([c,s,f])=>{const r=traceByCue.get(c);return !r||(s&&r.priestStation!==s)||(f&&r.priestFacing!==f)});
+checks.push(qaCheck(!priestSpatialBad.length?'pass':'fail','Priest spatial corrections',priestSpatialBad.length?priestSpatialBad.map(([c,s,f])=>`${c}: ${traceByCue.get(c)?.priestStation||'none'} / ${traceByCue.get(c)?.priestFacing||'none'}; expected ${s||'*'} / ${f||'*'}`).join(' · '):'Greeting responses, Gospel transfer, water-cruet position, Communion/Postcommunion turns, dismissal return and Last Gospel movement resolve to source-verified Low-Mass spatial states.'));
+const activeSpatialAmbiguity=fullTrace.filter(r=>r.activeBranch==='YES'&&(r.priestStation==='PRIEST_TRACK_ASYNC'||['UNRESOLVED','PRIEST_TRACK_ASYNC'].includes(r.priestFacing)));
+checks.push(qaCheck(!activeSpatialAmbiguity.length?'pass':'fail','Active priest spatial certainty',activeSpatialAmbiguity.length?`${activeSpatialAmbiguity.length} active cues remain spatially unresolved: ${activeSpatialAmbiguity.slice(0,8).map(r=>r.cue).join(', ')}.`:'No active golden-fixture cue uses an unresolved or asynchronous placeholder as its displayed priest position/facing.'));
+const routeEvents=DATA.priestEvents.filter(p=>cond(p.Branch_Condition)&&p.Priest_Route_ID),routeMissing=routeEvents.filter(p=>!PRIEST_ROUTE_RUNTIME[p.Priest_Route_ID]?.length),routeStepTotal=Object.values(PRIEST_ROUTE_RUNTIME).reduce((n,a)=>n+a.length,0);
+checks.push(qaCheck(!routeMissing.length&&routeStepTotal===30?'pass':'fail','Priest route map',routeMissing.length?`Missing runtime routes: ${routeMissing.map(x=>x.Priest_Route_ID).join(', ')}.`:`All active route-controlled priest events resolve into the canonical 30-step route map.`));
+const multiRoutes=routeEvents.filter(p=>priestRouteSteps(p).length>1),microSteps=multiRoutes.reduce((n,p)=>n+priestRouteSteps(p).length,0),routeContinuityBad=multiRoutes.filter(p=>{const a=priestRouteSteps(p);return a.some((x,i)=>i<a.length-1&&x.after!==a[i+1].before)});
+const lowRouteContinuityOk=flags.LOW_MASS_PROFILE?!flags.INCENSE_ENABLED&&multiRoutes.length===0:microSteps===27&&!routeContinuityBad.length;
+checks.push(qaCheck(lowRouteContinuityOk?'pass':'fail','Route micro-step continuity',flags.LOW_MASS_PROFILE?(lowRouteContinuityOk?'No multi-step incensation route is active in Low Mass; dormant route geometry remains isolated for later forms.':`Unexpected active multi-step routes: ${multiRoutes.map(p=>p.Priest_Route_ID).join(', ')||'none'}.`):(routeContinuityBad.length?`Broken route chain: ${routeContinuityBad.map(p=>p.Priest_Route_ID).join(', ')}.`:`27 scroll-progressed incensation micro-steps resolve in continuous spatial order; 3 single-step movements remain ordinary cue transitions.`)));
+const postureCases=flags.LOW_MASS_PROFILE?[['AO.SM.C0001','AO.SM.POST.002'],['AO.SM.C0044','AO.SM.POST.003'],['AO.SM.C0075','AO.SM.POST.007'],['AO.SM.C0082','AO.SM.POST.008'],['AO.SM.C0089','AO.SM.POST.009'],['AO.SM.C0109','AO.SM.POST.012'],['AO.SM.C0134','AO.LM.POST.026'],['AO.SM.C0137','AO.SM.POST.016']]:[['AO.SM.C0001','AO.SM.POST.002'],['AO.SM.C0277','AO.SM.POST.005'],['AO.SM.C0279','AO.SM.POST.010']];const postureBad=postureCases.filter(([c,p])=>traceByCue.get(c)?.postureEvent!==p);checks.push(qaCheck(!postureBad.length?'pass':'fail','Posture persistence trace',postureBad.length?postureBad.map(([c,p])=>`${c}: expected ${p}, got ${traceByCue.get(c)?.postureEvent||'none'}`).join(' · '):(flags.LOW_MASS_PROFILE?'Opening kneel → Kyrie stand → Epistle sit → Gospel/Credo stand → Offertory sit → Orate stand → Secret sit → Preface stand resolve from the Low-Mass matrices.':'Foot-prayer kneel and Gloria/Credo sedilia sitting persist until their next canonical posture transition.')));
+ let sungGestureOccurrences=0,sungGestureUnbound=[];for(const [cue,gs] of gestureCueBindings){const hit=gestureUnitForCue(cue);if(hit?.unit?.clock!=='SCHOLA_PUBLIC')continue;const fake={dataset:{cue,clock:hit.unit.clock}};for(const g of gs.filter(x=>gestureAllowed(x,fake))){sungGestureOccurrences++;const a=SCHOLA_RUNTIME_ADAPTER.find(x=>adapterEnabled(x)&&x.source?.block===hit.block.Block_ID);if(!a)sungGestureUnbound.push(`${g.Gesture_ID}@${cue}`)}}const scholaGestureOk=flags.LOW_MASS_PROFILE?sungGestureOccurrences===0&&!sungGestureUnbound.length:!sungGestureUnbound.length&&sungGestureOccurrences===14;checks.push(qaCheck(scholaGestureOk?'pass':'fail','Schola-clock faithful gestures',flags.LOW_MASS_PROFILE?(scholaGestureOk?'Low Mass has zero Schola-clock faithful gesture occurrences; all gestures are tied to the recited/visible rite.':`${sungGestureOccurrences} unexpected Schola-clock occurrences.`):(!sungGestureUnbound.length&&sungGestureOccurrences===14?`All ${sungGestureOccurrences} active sung-word gesture occurrences are bound to the progressive Schola stream.`:`${sungGestureOccurrences} occurrences · unbound ${sungGestureUnbound.join(', ')||'none'}`)));
+ const streamStateOk=Array.isArray(SCHOLA_SPEEDS)&&SCHOLA_STREAM&&SCHOLA_STREAM.cache instanceof Map;checks.push(qaCheck(streamStateOk?'pass':'fail','Schola stream runtime state',streamStateOk?'Ticker state object and speed profile are explicitly defined.':'Schola stream state definition is missing or invalid.'));
+
+ const secondConf=!flags.SECOND_CONFITEOR_LOCAL_CUSTOM_ENABLED&&['AO.SM.B077','AO.SM.B078','AO.SM.B079'].every(id=>!enabled.some(b=>b.Block_ID===id));checks.push(qaCheck(secondConf?'pass':'fail','Second Confiteor branch',secondConf?'Local/older Communion Confiteor branch suppressed.':'Optional branch is unexpectedly active.'));
+ const cueRows=[];enabled.forEach(b=>(b.units||[]).forEach(u=>{if(u.cue_id)cueRows.push({cue:u.cue_id,block:b.Block_ID})}));const cueCount=new Map();cueRows.forEach(x=>cueCount.set(x.cue,(cueCount.get(x.cue)||0)+1));const duplicateCues=[...cueCount].filter(([,n])=>n>1);checks.push(qaCheck(!duplicateCues.length?'pass':'fail','Cue identity',duplicateCues.length?`${duplicateCues.length} duplicate cue IDs.`:`${cueRows.length} runtime cue IDs are unique.`));
+ const cueBlock=new Map(cueRows.map(x=>[x.cue,x.block]));const priestAnchorIssues=DATA.priestEvents.filter(p=>cond(p.Branch_Condition)&&p.Source_Cue_ID&&(!cueBlock.has(p.Source_Cue_ID)||cueBlock.get(p.Source_Cue_ID)!==p.Parent_Block_ID));checks.push(qaCheck(!priestAnchorIssues.length?'pass':'fail','Priest-event anchors',priestAnchorIssues.length?`${priestAnchorIssues.length} priest events have missing/mismatched cue anchors.`:'All priest events resolve to their canonical display block.'));
+ const responseAnchorIssues=DATA.responses.filter(r=>cond(r.Branch_Condition)&&r.Source_Cue_ID&&(!cueBlock.has(r.Source_Cue_ID)||cueBlock.get(r.Source_Cue_ID)!==r.Parent_Block_ID));checks.push(qaCheck(!responseAnchorIssues.length?'pass':'warn','Response anchors',responseAnchorIssues.length?`${responseAnchorIssues.length} active response cues do not resolve correctly.`:'All active response cue anchors resolve correctly.'));
+ buildGestureBindings();const boundGestureIds=new Set([...gestureCueBindings.values()].flat().map(g=>g.Gesture_ID));const unboundGestures=DATA.gestures.filter(g=>!boundGestureIds.has(g.Gesture_ID));checks.push(qaCheck(!unboundGestures.length?'pass':'fail','Gesture runtime bindings',unboundGestures.length?`${unboundGestures.length} gesture anchors cannot fire: ${unboundGestures.map(x=>x.Gesture_ID).join(', ')}`:'All 31 gestures have cue-level runtime bindings, including split-text and visible-action anchors.'));
+ const incenseBlock=DATA.blocks.find(b=>b.Block_ID==='AO.SM.B036'),lavaboBlock=DATA.blocks.find(b=>b.Block_ID==='AO.SM.B037'),incenseCue=incenseBlock?.units?.find(u=>u.cue_id==='AO.SM.C0124'),returnCue=lavaboBlock?.units?.find(u=>u.cue_id==='AO.SM.C0125'),incensePriest=incenseCue?findPriest(incenseCue.cue_id,Number(incenseCue.sort)):null,returnPriest=returnCue?findPriest(returnCue.cue_id,Number(returnCue.sort)):null,incensePosture=incenseCue?findPosture(incenseBlock,incensePriest,Number(incenseCue.sort)):null,returnPosture=returnCue?findPosture(lavaboBlock,returnPriest,Number(returnCue.sort)):null,incensePostureOk=flags.LOW_MASS_PROFILE?!flags.INCENSE_ENABLED&&!enabled.some(b=>b.Block_ID==='AO.SM.B036')&&incensePosture?.Posture_Event_ID==='AO.SM.POST.012':incensePosture?.Posture_Event_ID==='AO.SM.POST.013'&&returnPosture?.Posture_Event_ID==='AO.SM.POST.014';checks.push(qaCheck(incensePostureOk?'pass':'fail','People-incensation posture cues',flags.LOW_MASS_PROFILE?(incensePostureOk?'People-incensation is absent from Low Mass and the Offertory SIT state is not displaced by dormant incense data.':`Dormant incense data displaced Low-Mass posture: C0124 ${incensePosture?.Posture_Event_ID||'none'}.`):(incensePostureOk?'C0124 resolves STAND for people incensation; C0125 explicitly returns to the Offertory sitting posture.':`C0124 ${incensePosture?.Posture_Event_ID||'none'} · C0125 ${returnPosture?.Posture_Event_ID||'none'}.`)));
+ const synthetic=[];enabled.forEach(b=>(b.units||[]).forEach(u=>{if(String(u.cue_id||'').endsWith('.SYN'))synthetic.push({b,u,sort:runtimeUnitSort(b,u)})}));const synBad=synthetic.filter(x=>{const order=Number(x.b.Display_Order);let p=-Infinity,n=Infinity;enabled.forEach(b=>(b.units||[]).forEach(u=>{const v=Number(u.sort),bo=Number(b.Display_Order);if(!Number.isFinite(v))return;if(bo<order)p=Math.max(p,v);if(bo>order)n=Math.min(n,v)}));return Number.isFinite(p)&&Number.isFinite(n)&&!(x.sort>p&&x.sort<n)});checks.push(qaCheck(!synBad.length?'pass':'fail','Synthetic cue ordering',synBad.length?'Synthetic pause/event sort falls outside neighbouring canonical cues.':synthetic.length?`Synthetic cue normalized at runtime between its neighbouring cues (${synthetic.map(x=>x.sort).join(', ')}).`:'No synthetic cues.'));
+ const future=new Set(['REQUIEM_OMITS_WATER_CROSS','OMIT_GLORIA_PATRI_IN_REQUIEM_AND_PASCHALTIDE_PASSION_BRANCH_AS_PRESCRIBED','OMIT_WITH_GLORIA_PATRI_BRANCH_WHEN_PRESCRIBED']);const exprs=[];DATA.postures.forEach(x=>x.Condition&&exprs.push(x.Condition));DATA.priestEvents.forEach(x=>x.Branch_Condition&&exprs.push(x.Branch_Condition));DATA.responses.forEach(x=>x.Branch_Condition&&exprs.push(x.Branch_Condition));const tokens=new Set();exprs.forEach(e=>String(e).split('||').forEach(g=>g.split('&&').forEach(t=>{t=t.trim().replace(/^NOT_/,'');if(t)tokens.add(t)})));const unresolvedTokens=[...tokens].filter(t=>!Object.prototype.hasOwnProperty.call(flags,t)&&!Object.prototype.hasOwnProperty.call(RUNTIME_CONDITION_DEFAULTS,t)&&!future.has(t));checks.push(qaCheck(!unresolvedTokens.length&&!RUNTIME_UNKNOWN_CONDITIONS.size?'pass':'fail','Condition-token coverage',unresolvedTokens.length||RUNTIME_UNKNOWN_CONDITIONS.size?`Unresolved conditions: ${[...new Set([...unresolvedTokens,...RUNTIME_UNKNOWN_CONDITIONS])].join(', ')}.`:'Every runtime condition token has an explicit profile flag, strict default, or future-branch rule.'));
+ const exactPostureRefs=new Set(['PRIEST_AT_SEDILIA_GLORIA','PRIEST_AT_SEDILIA_CREDO','PEOPLE_INCENSATION_START','PEOPLE_INCENSATION_END']);const unresolvedPosture=DATA.postures.filter(p=>['VISIBLE_STATE','PRIEST_STATE'].includes(p.Anchor_Type)&&!exactPostureRefs.has(p.Anchor_Ref)&&!String(p.Anchor_Ref||'').startsWith('PRIEST_AT_FOOT'));checks.push(qaCheck(!unresolvedPosture.length?'pass':'warn','Exact posture timing',unresolvedPosture.length?`${unresolvedPosture.length} visible-state posture transitions still need exact runtime anchors: ${unresolvedPosture.map(x=>x.Anchor_Ref).join(', ')}.`:'Sedilia and people-incensation posture transitions have explicit runtime anchors.'));
+ const dormantSchola=DATA.schola.filter(x=>x.Scope==='DORMANT_SUNG_REFERENCE');checks.push(qaCheck(flags.LOW_MASS_PROFILE&&dormantSchola.length===DATA.schola.length?'pass':'fail','Dormant Sung reference data',flags.LOW_MASS_PROFILE?`${dormantSchola.length} Schola records retained only as dormant reference; none owns the Low-Mass runtime.`:'Low-Mass profile flag missing.'));
+ const lowPostureProfileOk=!!flags.LOW_MASS_PROFILE&&runtimeConditionDefault('LOCAL_PROFILE_SIT_AFTER_COMMUNION')&&runtimeConditionDefault('LOCAL_PROFILE_KNEEL_FOR_BLESSING');checks.push(qaCheck(lowPostureProfileOk?'pass':'warn','Low-Mass posture profile',lowPostureProfileOk?'Dedicated Low-Mass posture defaults are active and independent from the Sung-Mass profile.':'Low-Mass posture profile is incomplete.'));
+ const groupedRuntimeOk=liveSpecs.filter(x=>x.macros.length>1).every(x=>{const bs=enabled.filter(b=>x.macros.includes(b.Macro_ID)).sort((a,b)=>Number(a.Display_Order)-Number(b.Display_Order));return bs.length&&x.macros.every(m=>bs.some(b=>b.Macro_ID===m))&&bs.every((b,i)=>i===0||Number(b.Display_Order)>=Number(bs[i-1].Display_Order))});checks.push(qaCheck(groupedRuntimeOk?'pass':'fail','Grouped-stage runtime order',groupedRuntimeOk?'Every grouped Live stage contains each constituent macro and preserves canonical block order.':'A grouped Live stage has missing or out-of-order canonical blocks.'));
+ const overlayIds=new Set(ACTIVE_OVERLAYS.map(x=>x.Overlay_ID)),overlayMacroIds=new Set(ACTIVE_OVERLAYS.map(x=>x.macro?.Macro_ID).filter(Boolean)),overlayBlocks=RUNTIME_BLOCKS.filter(b=>b.RuntimeOverlay),preMassOk=!RITE_CONTEXT.principalMass&&!overlayIds.has('AO.OV.SUNDAY_ASPERSION');checks.push(qaCheck(preMassOk?'pass':'fail','Low-Mass pre-Mass isolation',preMassOk?'Low-Mass fixture does not assume the principal Sunday aspersion; the Mass begins at the Low-Mass entrance/opening sequence.':'Unexpected principal-Mass aspersion overlay is active.'));const overlayPartOk=ACTIVE_OVERLAYS.every(ov=>PARTS.some(p=>p.overlayId===ov.Overlay_ID&&p.macros.includes(ov.macro.Macro_ID)));checks.push(qaCheck(overlayPartOk?'pass':'fail','Overlay part injection',overlayPartOk?'Every active BEFORE/AFTER overlay is injected as its own Part without changing canonical Mass parts.':'An active overlay is not represented in the Part sequence.'));const registryOk=RITE_OVERLAY_REGISTRY.filter(r=>r.status==='SCHEMA_READY').every(r=>['BEFORE_MASS','AFTER_MASS','MASS_MODIFIER'].includes(r.placement));checks.push(qaCheck(registryOk?'pass':'fail','Overlay registry schema',registryOk?'Candlemas, Ash Wednesday, Palm Sunday, Nuptial and Requiem have typed registry slots but no invented runtime content.':'Overlay registry contains an invalid placement type.'));
+ const calendarFixtureOk=RITE_CONTEXT.date==='2026-10-04'&&RITE_CONTEXT.isSunday&&!RITE_CONTEXT.paschaltide&&!RITE_CONTEXT.palmSunday&&!RITE_CONTEXT.candlemas&&!RITE_CONTEXT.ashWednesday&&RITE_CONTEXT.calendar.easter==='2026-04-05'&&RITE_CONTEXT.calendar.pentecost==='2026-05-24';checks.push(qaCheck(calendarFixtureOk?'pass':'fail','Calendar-derived fixture',calendarFixtureOk?'4 Oct 2026 derives as an ordinary Sunday outside Paschaltide; Easter/Pentecost anchors resolve automatically.':'Golden-fixture calendar derivation is inconsistent.'));
+ const easterCtx=deriveRiteContext('2026-04-05',RITE_SELECTION),pentecostCtx=deriveRiteContext('2026-05-24',RITE_SELECTION),trinityCtx=deriveRiteContext('2026-05-31',RITE_SELECTION),passionCtx=deriveRiteContext('2026-03-22',RITE_SELECTION),palmCtx=deriveRiteContext('2026-03-29',RITE_SELECTION),ashCtx=deriveRiteContext('2026-02-18',RITE_SELECTION),candleCtx=deriveRiteContext('2026-02-02',RITE_SELECTION);const seasonBindingOk=easterCtx.paschaltide&&pentecostCtx.paschaltide&&!trinityCtx.paschaltide&&passionCtx.passionSunday&&palmCtx.palmSunday&&ashCtx.ashWednesday&&candleCtx.candlemas;checks.push(qaCheck(seasonBindingOk?'pass':'fail','Calendar season binding',seasonBindingOk?'Easter→Pentecost inclusive selects Paschaltide; Trinity resumes non-Paschal state; Passion/Palm/Ash Wednesday/Candlemas dates derive correctly.':'One or more movable/fixed rite dates derive incorrectly.'));
+ const easterAsp=buildSundayAspersionOverlay(easterCtx),trinityAsp=buildSundayAspersionOverlay(trinityCtx),passionAsp=buildSundayAspersionOverlay(passionCtx),palmAsp=buildActiveOverlays(palmCtx);const passionHasGloria=passionAsp.schola.source.pairs.some(x=>/Gl[oó]ria Patri|Sicut erat/i.test(x.latin||''));const aspersionBindingOk=easterAsp.variant==='VIDI_AQUAM'&&trinityAsp.variant==='ASPERGES'&&!passionHasGloria&&!palmAsp.some(x=>x.Overlay_ID==='AO.OV.SUNDAY_ASPERSION');checks.push(qaCheck(aspersionBindingOk?'pass':'fail','Sunday aspersion calendar binding',aspersionBindingOk?'Vidi aquam binds Easter–Pentecost; Asperges resumes at Trinity; Passion Sunday omits Gloria Patri; Palm Sunday suppresses the Sunday aspersion overlay.':'Sunday aspersion variant/suppression rules failed.'));
+ const explicitMassTypeOk=deriveRiteContext('2026-10-04',{principalMass:true,massType:'REQUIEM'}).requiem&&deriveRiteContext('2026-10-04',{principalMass:true,massType:'NUPTIAL'}).nuptial&&!deriveRiteContext('2026-10-04',RITE_SELECTION).requiem;checks.push(qaCheck(explicitMassTypeOk?'pass':'fail','Mass-type binding',explicitMassTypeOk?'Requiem and Nuptial remain explicit Mass-type selections rather than being guessed from the date.':'Explicit Mass-type selection is not isolated from calendar derivation.'));
+ const bellOk=[...BELL_RUNTIME.keys()].every(c=>cueBlock.has(c))&&BELL_RUNTIME.size===5;checks.push(qaCheck(bellOk?'pass':'fail','Bell cue overlay',bellOk?'Five runtime bell landmarks resolve to canonical cues: Sanctus, warning bell, both elevations, Communion warning.':'One or more bell overlay anchors do not resolve to canonical cues.'));
+ const userResponses=DATA.responses.filter(responseIsForUser),responseVoiceBad=userResponses.filter(r=>normalizedPriestVoice(findPriest(r.Source_Cue_ID,cueSortMap.get(r.Source_Cue_ID)))!=='LISTENING');const voiceLabels=new Set(DATA.priestEvents.filter(p=>cond(p.Branch_Condition)).map(p=>normalizedPriestVoice(runtimePriestEvent(p)))),allowedVoiceLabels=new Set(['AUDIBLE','CLEAR','CLEAR · LOCAL','LISTENING','QUIET','SECRET','SILENT','SUNG · CLEAR','MIXED · RAISED→SECRET']),unknownVoiceLabels=[...voiceLabels].filter(x=>!allowedVoiceLabels.has(x));const audibilityOk=!responseVoiceBad.length&&!unknownVoiceLabels.length;checks.push(qaCheck(audibilityOk?'pass':'fail','Audibility / response lane',audibilityOk?`${userResponses.length} active faithful responses resolve with the priest LISTENING; all active priest voice states normalize to the 8 display categories.`:`Response voice errors: ${responseVoiceBad.map(x=>x.Source_Cue_ID).join(', ')||'none'} · unknown voice labels: ${unknownVoiceLabels.join(', ')||'none'}.`));
+ const dialogueOff=DATA.responses.filter(r=>DIALOGUE_FOOT_RESPONSE_IDS.has(r.Response_Event_ID)).every(r=>!responseIsForUser(r));checks.push(qaCheck(dialogueOff?'pass':'warn','Dialogue-response profile',dialogueOff?'Foot-prayer responses remain server/choir responses because DIALOGUE_PEOPLE_AT_FOOT is off.':'Dialogue responses are active for the faithful profile.'));
+ const epistleResp=DATA.responses.find(r=>r.Response_Event_ID==='AO.SM.R010'),epistleBlock=DATA.blocks.find(b=>b.Block_ID==='AO.SM.B020'),epistleUnit=epistleBlock?.units?.find(u=>u.cue_id==='AO.SM.C0076'),epistlePriest=DATA.priestEvents.find(p=>p.Priest_Event_ID==='AO.SM.P0078'),epistleOwnershipOk=epistleResp?.Default_User_Response==='NO'&&epistleResp?.Owner==='MINISTER_OR_SERVER'&&epistleUnit?.clock==='MINISTER_RESPONSE'&&epistlePriest?.Trigger_Domain==='MINISTER_RESPONSE'&&!responseIsForUser(epistleResp);checks.push(qaCheck(epistleOwnershipOk?'pass':'fail','Epistle Deo gratias ownership',epistleOwnershipOk?'C0076 is minister/server-owned and cannot enter the faithful RESPOND lane.':'Epistle Deo gratias has regressed into the faithful response lane.'));
+ const incarnatusKneelCue=GESTURE_SPECIAL_CUE['AO.SM.G013'],incarnatusRiseCue=GESTURE_SPECIAL_CUE['AO.SM.G017'];
+ const seasonalBindingOk=incarnatusKneelCue==='AO.SM.C0096'&&incarnatusRiseCue==='AO.SM.C0097';
+ const ordinarySuppressed=!RITE_CONTEXT.christmas&&!RITE_CONTEXT.annunciation?!flags.CHRISTMAS_ANNUNCIATION_INCARNATUS:true;
+ checks.push(qaCheck(seasonalBindingOk&&ordinarySuppressed?'pass':'fail','Incarnatus seasonal precision',seasonalBindingOk?(flags.CHRISTMAS_ANNUNCIATION_INCARNATUS?'Seasonal branch active: kneel at C0096; rise as C0097 begins.':'Ordinary day: seasonal kneeling suppressed; Christmas/Annunciation bindings are prepared as C0096 → C0097.'):'Incarnatus gesture bindings are not separated correctly.'));
+ const lowMassIncarnatus=DATA.gestures.find(g=>g.Gesture_ID==='AO.SM.G013');
+ const lowMassIncarnatusOk=!!flags.LOW_MASS_OCONNELL_PROFILE&&/TRADITIONAL \/ 1962-ERA/.test(lowMassIncarnatus?.Authority||'')&&/not a universal persistent posture law/i.test(lowMassIncarnatus?.Notes||'');
+ checks.push(qaCheck(lowMassIncarnatusOk?'pass':'fail','Low-Mass Incarnatus gesture provenance',lowMassIncarnatusOk?'Et incarnatus remains a profile-gated customary genuflection while the faithful posture stays STAND; the sung Christmas/Annunciation kneeling rule remains separate.':'Credo Incarnatus has lost its customary/profile distinction or has leaked into a universal posture rule.'));
+
+ const lowEnabled=DATA.blocks.filter(blockEnabled),lowIds=new Set(lowEnabled.map(b=>b.Block_ID));
+ const lowCoreOk=!!flags.LOW_MASS_PROFILE&&!!flags.LOW_MASS_EXACT_STATE_AUDITED&&!flags.INCENSE_ENABLED&&!flags.SEDILIA_USED&&!flags.DEFAULT_SUNG_PROFILE&&!flags.AO_DEFAULT_1962_SUNG&&!flags.SECOND_CONFITEOR_LOCAL_CUSTOM_ENABLED&&['AO.SM.B013','AO.SM.B036','AO.SM.B077','AO.SM.B078','AO.SM.B079'].every(id=>!lowIds.has(id));
+ checks.push(qaCheck(lowCoreOk?'pass':'fail','Low-Mass form contract',lowCoreOk?'Incensation, sedilia, Sung profile and historical second Confiteor are all off; ordinary Low-Mass blocks remain active.':'One or more Sung/historical branches leaked into the Low-Mass runtime.'));
+ const lowSungLeak=DATA.priestEvents.filter(e=>lowIds.has(e.Parent_Block_ID)&&/(MISSA CANTATA|\bSUNG\b|SCHOLA)/i.test(`${e.Voice||''} ${e.Action||''}`));
+ checks.push(qaCheck(!lowSungLeak.length?'pass':'fail','Low-Mass priest-track vocabulary',lowSungLeak.length?`${lowSungLeak.length} active priest events still contain Sung/Schola language.`:'No active Low-Mass priest event contains Sung-Mass/Schola voice language.'));
+ const footVoiceEvents=DATA.priestEvents.filter(e=>['AO.SM.B001','AO.SM.B002','AO.SM.B003','AO.SM.B004','AO.SM.B005','AO.SM.B006','AO.SM.B007','AO.SM.B008','AO.SM.B009','AO.SM.B010'].includes(e.Parent_Block_ID)&&cond(e.Branch_Condition)),footVoiceBad=footVoiceEvents.filter(e=>e.Voice!=='LISTENS'&&normalizedPriestVoice(e)!=='QUIET');checks.push(qaCheck(!footVoiceBad.length?'pass':'fail','Low-Mass opening audibility',footVoiceBad.length?`${footVoiceBad.length} opening-prayer events are not QUIET/LISTENING: ${footVoiceBad.slice(0,8).map(e=>e.Priest_Event_ID).join(', ')}.`:'Prayers at the foot resolve as QUIET/LISTENING until the ascent; the Introit restores CLEAR spoken voice.'));
+ const serverDefaults=DATA.responses.every(r=>r.Default_User_Response==='NO'&&r.Owner==='MINISTER_OR_SERVER'),faithfulLeak=DATA.responses.filter(responseIsForUser);
+ const responseClockOk=DATA.responses.every(r=>{const hit=gestureUnitForCue(r.Source_Cue_ID);const pe=DATA.priestEvents.find(p=>p.Source_Cue_ID===r.Source_Cue_ID);return hit?.unit?.clock==='MINISTER_RESPONSE'&&pe?.Trigger_Domain==='MINISTER_RESPONSE'});
+ checks.push(qaCheck(serverDefaults&&!faithfulLeak.length&&responseClockOk?'pass':'fail','Low-Mass response ownership',serverDefaults&&!faithfulLeak.length&&responseClockOk?'Every fixed response is canonically minister/server-owned; all response cues use MINISTER_RESPONSE and the faithful RESPOND lane stays quiet until an explicit Dialogue profile is selected.':`Response ownership leak: ${faithfulLeak.map(x=>x.Response_Event_ID).join(', ')||'metadata/domain mismatch'}.`));
+ const lowDvBlocks=['AO.SM.B017','AO.SM.B024','AO.SM.B028','AO.SM.B042','AO.SM.B086','AO.SM.B089','AO.SM.B093'],lowDvOk=lowDvBlocks.every(id=>lowIds.has(id));
+ checks.push(qaCheck(lowDvOk?'pass':'fail','Dominus vobiscum landmarks',lowDvOk?'Collect, Gospel, Offertory, Preface, Postcommunion, dismissal and Last Gospel greetings are all present.':`Missing: ${lowDvBlocks.filter(x=>!lowIds.has(x)).join(', ')}`));
+ const lowProperPublic=['AO.SM.B014','AO.SM.B020','AO.SM.B021','AO.SM.B022','AO.SM.B026','AO.SM.B030','AO.SM.B085'].every(id=>DATA.blocks.find(b=>b.Block_ID===id)?.units?.some(u=>u.type==='text'&&u.clock==='PUBLIC_TEXT'));
+ checks.push(qaCheck(lowProperPublic?'pass':'fail','Low-Mass recited Propers',lowProperPublic?'Introit, Epistle, Gradual, Alleluia/Tract, Gospel, Offertory and Communion are centre-reader priest texts.':'One or more Low-Mass recited Proper/reading blocks remain delegated away from the centre reader.'));
+ const kyrieMarks=DATA.blocks.find(b=>b.Block_ID==='AO.SM.B015')?.units?.filter(u=>u.type==='text').map(u=>String(u.latin||'').trim().slice(0,2))||[],kyrieExpected=['S.','M.','S.','M.','S.','M.','S.','M.','S.'];
+ checks.push(qaCheck(kyrieMarks.join('|')===kyrieExpected.join('|')?'pass':'fail','Low-Mass Kyrie ownership',kyrieMarks.join('|')===kyrieExpected.join('|')?'Nine Kyrie invocations alternate S./M. correctly.':`Current markers: ${kyrieMarks.join(' ')}`));
+ const sermonBlock=DATA.blocks.find(b=>b.Block_ID==='AO.SM.B096'),sermonPost=DATA.postures.find(p=>p.Posture_Event_ID==='AO.LM.POST.025'),sermonOrderOk=Number(sermonBlock?.units?.[0]?.sort)>88&&Number(sermonBlock?.units?.[0]?.sort)<89&&sermonPost?.New_Posture==='SIT';
+ checks.push(qaCheck(sermonOrderOk?'pass':'fail','Low-Mass sermon chronology',sermonOrderOk?'Sermon sits chronologically between the Gospel and Credo and carries its own SIT posture event.':'Sermon chronology/posture is not canonically anchored.'));
+ const credoBlock=DATA.blocks.find(b=>b.Block_ID==='AO.SM.B027'),incUnit=credoBlock?.units?.find(u=>u.cue_id==='AO.SM.C0096'),incFake={dataset:{cue:'AO.SM.C0096',clock:incUnit?.clock||'',sort:String(incUnit?.sort||96)}},incPost=findPosture(credoBlock,findPriest('AO.SM.C0096',96),96),incGesture=findGesture(incFake);
+ const lowIncarnatusOk=incPost?.New_Posture==='STAND'&&incGesture?.Gesture_ID==='AO.SM.G013';
+ checks.push(qaCheck(lowIncarnatusOk?'pass':'fail','Low-Mass Incarnatus lanes',lowIncarnatusOk?'The faithful posture remains STAND while a momentary GENUFLECT cue fires at Et incarnatus est; no false persistent KNEEL state.':`Posture ${incPost?.New_Posture||'—'} · gesture ${incGesture?.Gesture_ID||'—'}.`));
+ const priestDnsd=DATA.blocks.find(b=>b.Block_ID==='AO.SM.B073'),priestDnsdMixed=priestDnsd?.units?.every(u=>u.clock==='PRIEST_MIXED')&&DATA.priestEvents.filter(p=>p.Parent_Block_ID==='AO.SM.B073').every(p=>/RAISED ENTRY/.test(p.Voice||'')&&/SECRET CONTINUATION/.test(p.Voice||''));
+ checks.push(qaCheck(priestDnsdMixed?'pass':'fail','Priest Domine non sum dignus voice',priestDnsdMixed?'All three repetitions preserve the 1962 mixed voice: opening words slightly raised, continuation secret.':'Priest Domine non sum dignus has lost its mixed-voice distinction.'));
+ const communionDnsd=DATA.blocks.find(b=>b.Block_ID==='AO.SM.B081'),communionOwnerOk=!/Faithful/i.test(communionDnsd?.Title||'')&&communionDnsd?.units?.every(u=>/^S\.\s/.test(u.latin||''));
+ checks.push(qaCheck(communionOwnerOk?'pass':'fail','Communion Domine non sum dignus ownership',communionOwnerOk?'The celebrant owns the triple Communion-preparation prayer; communicants may join without the app mislabelling it as a congregational response.':'Communion-preparation ownership is ambiguous.'));
+ const nobisCustomOff=!flags.LAY_CUSTOM_NOBIS_BREAST_STRIKE&&!gestureAllowed(DATA.gestures.find(g=>g.Gesture_ID==='AO.SM.G024'),{dataset:{clock:'PUBLIC_TEXT'}});
+ checks.push(qaCheck(nobisCustomOff?'pass':'fail','Nobis quoque lay-custom isolation',nobisCustomOff?'The priest’s prescribed breast strike does not auto-propagate to the faithful; the lay custom is off by default.':'Nobis quoque is incorrectly prompting a universal faithful breast strike.'));
+ const lowSectionVocabularyOk=DATA.blocks.filter(blockEnabled).every(b=>!/(Schola|Sung|\bChants?\b)/i.test(`${b.Section||''}`));
+ checks.push(qaCheck(lowSectionVocabularyOk?'pass':'fail','Low-Mass reader vocabulary',lowSectionVocabularyOk?'Active Low-Mass section names contain no Sung-Mass/Schola/chant terminology.':'A Sung-Mass term remains in an active Low-Mass section title.'));
+ QA.auto=checks;const pass=checks.filter(x=>x.status==='pass').length,warn=checks.filter(x=>x.status==='warn').length,fail=checks.filter(x=>x.status==='fail').length;const sum=$('#qaAutoSummary');if(sum)sum.textContent=`${pass} pass · ${warn} warning · ${fail} fail`;const box=$('#qaChecks');if(box)box.innerHTML=checks.map(x=>`<div class="qa-check ${x.status}"><b>${x.status.toUpperCase()}</b><span><strong>${escapeHtml(x.name)}</strong> · ${escapeHtml(x.detail)}</span></div>`).join('');const last=$('#qaLast');if(last)last.textContent=`Deep audit: ${pass} pass · ${warn} warning · ${fail} fail`;return checks;
+}
+
+$$('.mode-btn').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.modeBtn)));
+$('#scholaSlower')?.addEventListener('click',()=>changeScholaSpeed(-1));
+$('#scholaFaster')?.addEventListener('click',()=>changeScholaSpeed(1));
+$('#scholaSpeedValue')?.addEventListener('click',toggleScholaSpeedPanel);
+$('#scholaSpeedRange')?.addEventListener('input',e=>setScholaSpeed(e.target.value));
+$$('#scholaSpeedPanel [data-schola-speed]').forEach(b=>b.addEventListener('click',()=>setScholaSpeed(b.dataset.scholaSpeed)));
+$('#scholaTranslationToggle')?.addEventListener('click',toggleScholaTranslation);
+$('#scholaViewMode')?.addEventListener('click',cycleScholaView);
+$('#scholaPrevPhrase')?.addEventListener('click',()=>stepScholaPhrase(-1));
+$('#scholaNextPhrase')?.addEventListener('click',()=>stepScholaPhrase(1));
+$('#scholaPauseBtn')?.addEventListener('click',()=>pauseScholaTicker(!SCHOLA_STREAM.paused));
+$('#statusBtn').addEventListener('click',()=>$('#drawer').classList.toggle('open'));
+$('#jumpSelect').addEventListener('change',e=>{const m=e.target.value;if(!m)return;goToMacro(m);$('#drawer').classList.remove('open')});
+$('#cardPrev').addEventListener('click',()=>navigateCard(-1));$('#cardNext').addEventListener('click',()=>navigateCard(1));
+$('#qaLaunch')?.addEventListener('click',()=>qaSetEnabled(!QA.enabled));
+$('#qaExit')?.addEventListener('click',()=>qaSetEnabled(false));
+$$('.qa-verdict').forEach(b=>b.addEventListener('click',()=>qaMark(b.dataset.verdict)));
+$('#qaExportJson')?.addEventListener('click',qaExportJson);$('#qaExportCsv')?.addEventListener('click',qaExportCsv);$('#qaExportTrace')?.addEventListener('click',qaExportTrace);
+$('#qaClear')?.addEventListener('click',()=>{if(confirm('Clear all audit marks for this Mass?')){QA.marks=[];qaSave();$('#qaLast').textContent='Audit marks cleared.'}});
+$('#qaRunAuto')?.addEventListener('click',runAutoAudit);$('#qaRunFromDock')?.addEventListener('click',runAutoAudit);
+window.addEventListener('resize',()=>{if(!raf)raf=requestAnimationFrame(()=>updateActive(true))});
+document.addEventListener('keydown',e=>{if(['INPUT','SELECT','TEXTAREA'].includes(document.activeElement?.tagName))return;if(e.key==='1')setMode('read');if(e.key==='2')setMode('simple');if(e.key==='3')setMode('live');if(e.key.toLowerCase()==='t'&&activeEl)toggleTranslation(activeEl);if(e.key==='ArrowRight'){e.preventDefault();navigateCard(1);return}if(e.key==='ArrowLeft'){e.preventDefault();navigateCard(-1);return}if(['ArrowDown','j','J'].includes(e.key)){e.preventDefault();const els=flow();els[Math.min(els.length-1,activeIndex+1)]?.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'})}if(['ArrowUp','k','K'].includes(e.key)){e.preventDefault();const els=flow();els[Math.max(0,activeIndex-1)]?.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'})}});
+
+
+/* ===== AO Ultimate v2.1 selected salience reconciliation ===== */
+function clearCommunionPhase(){
+  document.body.classList.remove('communion-focus','communion-recollection','communion-priest','communion-preparation','communion-procession','communion-after');
+}
+function applyCommunionPhase(el){
+  clearCommunionPhase();
+  const macro=el?.dataset?.macro||'';
+  if(!['AO.SM.M22','AO.SM.M23','AO.SM.M24','AO.SM.M25','AO.SM.M26'].includes(macro))return;
+  document.body.classList.add('communion-focus');
+  if(macro==='AO.SM.M22')document.body.classList.add('communion-recollection');
+  else if(macro==='AO.SM.M23')document.body.classList.add('communion-priest');
+  else if(macro==='AO.SM.M24')document.body.classList.add('communion-preparation');
+  else if(macro==='AO.SM.M25')document.body.classList.add('communion-procession');
+  else if(macro==='AO.SM.M26')document.body.classList.add('communion-after');
+}
+const syncState_v132=syncState;
+syncState=function(el){syncState_v132(el);applyCommunionPhase(el)};
+
+
+
+/* v1.34 — Pater Noster / Fraction / Pax / Commingling presentation grammar. */
+const AO_RITE_TRANSITION={lastKey:''};
+const RITE_TRANSITION_CUES=new Map([
+  ['AO.SM.C0208',{phase:'pater'}],
+  ['AO.SM.C0209',{phase:'pater'}],
+  ['AO.SM.C0210',{phase:'pater'}],
+  ['AO.SM.C0211',{phase:'embolism'}],
+  ['AO.SM.C0212',{phase:'embolism'}],
+  ['AO.SM.C0213',{phase:'embolism'}],
+  ['AO.SM.C0214',{phase:'embolism'}],
+  ['AO.SM.C0215',{phase:'embolism'}],
+  ['AO.SM.C0216',{phase:'fraction',actionKey:'fraction'}],
+  ['AO.SM.C0217',{phase:'public-reset'}],
+  ['AO.SM.C0218',{phase:'public-reset'}],
+  ['AO.SM.C0219',{phase:'pax',actionKey:'cross'}],
+  ['AO.SM.C0220',{phase:'public-reset'}],
+  ['AO.SM.C0221',{phase:'commingling',actionKey:'commingling'}]
+]);
+function clearRiteTransition(){
+  document.body.classList.remove('rite-transition','rite-pater','rite-embolism','rite-fraction','rite-public-reset','rite-pax','rite-commingling');
+  const action=$('#sectionAction');if(action)action.classList.remove('rite-fraction-action','rite-pax-action','rite-commingling-action','rite-replay');
+  $$('.flow-unit.rite-pax-text').forEach(x=>x.classList.remove('rite-pax-text'));
+}
+function applyRiteTransition(el){
+  const cue=el?.dataset?.cue||'';
+  const p=RITE_TRANSITION_CUES.get(cue)||null;
+  const prior=AO_RITE_TRANSITION.lastKey;
+  clearRiteTransition();
+  if(!p){AO_RITE_TRANSITION.lastKey='';return}
+  const key=`${cue}|${mode}`;const replay=key!==prior;AO_RITE_TRANSITION.lastKey=key;
+  document.body.classList.add('rite-transition',`rite-${p.phase}`);
+  const action=$('#sectionAction'),icon=$('#priestActionIcon');
+  if(p.phase==='fraction'&&action){
+    action.classList.add('rite-fraction-action');
+    if(icon&&aoHasIcon('fraction'))icon.innerHTML=assetImg('fraction','section-icon');
+  }
+  if(p.phase==='pax'){
+    const target=document.querySelector(`.mass-card.is-active .flow-unit[data-cue="${cue}"]`)||document.querySelector(`.flow-unit[data-cue="${cue}"]`)||el;
+    if(target)target.classList.add('rite-pax-text');
+    if(action){action.classList.add('rite-pax-action');if(icon&&aoHasIcon('cross'))icon.innerHTML=assetImg('cross','section-icon')}
+  }
+  if(p.phase==='commingling'&&action){
+    action.classList.add('rite-commingling-action');
+    if(icon&&aoHasIcon('commingling'))icon.innerHTML=assetImg('commingling','section-icon');
+  }
+  if(replay&&action&&(p.phase==='fraction'||p.phase==='pax'||p.phase==='commingling')){
+    void action.offsetWidth;action.classList.add('rite-replay');
+  }
+}
+const syncState_v133=syncState;
+syncState=function(el){syncState_v133(el);applyRiteTransition(el)};
+
+
+
+/* v1.35 — Offertory / incensation salience controller. Presentation only. */
+const AO_OFFERTORY={lastKey:''};
+const OFFERTORY_CUES=new Map([
+  ['AO.SM.C0106',{phase:'public'}],
+  ['AO.SM.C0107',{phase:'public'}],
+  ['AO.SM.C0108',{phase:'public'}],
+  ['AO.SM.C0109',{phase:'public'}],
+  ['AO.SM.C0110',{phase:'offering',actionKey:'priest_elevate_host_rich'}],
+  ['AO.SM.C0111',{phase:'private'}],
+  ['AO.SM.C0112',{phase:'private'}],
+  ['AO.SM.C0113',{phase:'private'}],
+  ['AO.SM.C0114',{phase:'offering',actionKey:'priest_elevate_chalice_rich'}],
+  ['AO.SM.C0115',{phase:'private'}],
+  ['AO.SM.C0116',{phase:'private'}],
+  ['AO.SM.C0117',{phase:'private'}],
+  ['AO.SM.C0118',{phase:'private'}],
+  ['AO.SM.C0119',{phase:'private'}],
+  ['AO.SM.C0120',{phase:'incense-entry',actionKey:'priest_incense_altar_rich'}],
+  ['AO.SM.C0121',{phase:'incense-route',actionKey:'priest_incense_altar_rich'}],
+  ['AO.SM.C0122',{phase:'incense-route',actionKey:'priest_incense_altar_rich'}],
+  ['AO.SM.C0123',{phase:'incense-route',actionKey:'priest_incense_altar_rich'}],
+  ['AO.SM.C0124',{phase:'people-incense',actionKey:'priest_incense_people_rich'}],
+  ['AO.SM.C0125',{phase:'lavabo',actionKey:'lavabo'}],
+  ['AO.SM.C0126',{phase:'private'}],
+  ['AO.SM.C0127',{phase:'private'}],
+  ['AO.SM.C0128',{phase:'private'}],
+  ['AO.SM.C0129',{phase:'private'}],
+  ['AO.SM.C0130',{phase:'orate',actionKey:'priest_turn_people_rich'}],
+  ['AO.SM.C0131',{phase:'public'}],
+  ['AO.SM.C0132',{phase:'public'}],
+  ['AO.SM.C0133',{phase:'secret'}],
+  ['AO.SM.C0134',{phase:'secret'}],
+  ['AO.SM.C0135',{phase:'public-return'}],
+  ['AO.SM.C0136',{phase:'public-return'}]
+]);
+function clearOffertoryPresentation(){
+  document.body.classList.remove('offertory-focus','offertory-public','offertory-chant','offertory-private','offertory-offering','offertory-incense-entry','offertory-incense-route','offertory-people-incense','offertory-lavabo','offertory-orate','offertory-secret','offertory-public-return');
+  const action=$('#sectionAction');
+  if(action)action.classList.remove('offertory-action','offertory-offering-action','offertory-incense-entry','offertory-incense-route-action','offertory-lavabo-action','offertory-orate-action','offertory-replay');
+  $$('.priest-route-unit.offertory-route-active').forEach(x=>x.classList.remove('offertory-route-active'));
+  $$('.flow-unit.offertory-public-return').forEach(x=>x.classList.remove('offertory-public-return','offertory-replay'));
+}
+function offertoryTarget(cue,fallback){
+  return document.querySelector(`.mass-card.is-active .flow-unit[data-cue="${cue}"]`)||document.querySelector(`.flow-unit[data-cue="${cue}"]`)||fallback||null;
+}
+function applyOffertoryPresentation(el){
+  const macro=el?.dataset?.macro||'';
+  const cue=el?.dataset?.cue||'';
+  const prior=AO_OFFERTORY.lastKey;
+  clearOffertoryPresentation();
+  if(!['AO.SM.M10','AO.SM.M11'].includes(macro)){AO_OFFERTORY.lastKey='';return}
+  let p=OFFERTORY_CUES.get(cue)||{phase:macro==='AO.SM.M11'?'secret':'private'};
+  if(el?.dataset?.routeId&&Number(el?.dataset?.routeStep||0)>0)p={phase:'incense-route',actionKey:'priest_incense_altar_rich'};
+  const routeStep=el?.dataset?.routeStep||'';
+  const key=`${cue}|${routeStep}|${p.phase}|${mode}`;
+  const replay=key!==prior;AO_OFFERTORY.lastKey=key;
+  document.body.classList.add('offertory-focus',`offertory-${p.phase}`);
+  const action=$('#sectionAction'),icon=$('#priestActionIcon');
+  if(p.phase==='offering'&&action){
+    action.classList.add('offertory-action','offertory-offering-action');
+    if(icon&&p.actionKey&&aoHasIcon(p.actionKey))icon.innerHTML=assetImg(p.actionKey,'section-icon');
+    if(replay){void action.offsetWidth;action.classList.add('offertory-replay')}
+  }
+  if(p.phase==='incense-entry'&&action){
+    action.classList.add('offertory-action','offertory-incense-entry');
+    if(icon&&p.actionKey&&aoHasIcon(p.actionKey))icon.innerHTML=assetImg(p.actionKey,'section-icon');
+    if(replay){void action.offsetWidth;action.classList.add('offertory-replay')}
+  }
+  if(p.phase==='incense-route'){
+    if(action){action.classList.add('offertory-action','offertory-incense-route-action');if(icon&&aoHasIcon('priest_incense_altar_rich'))icon.innerHTML=assetImg('priest_incense_altar_rich','section-icon')}
+    if(el?.classList?.contains('priest-route-unit'))el.classList.add('offertory-route-active');
+  }
+  if(p.phase==='people-incense'){
+    if(action){action.classList.add('offertory-action');if(icon&&aoHasIcon('priest_incense_people_rich'))icon.innerHTML=assetImg('priest_incense_people_rich','section-icon')}
+  }
+  if(p.phase==='lavabo'&&action){
+    action.classList.add('offertory-action','offertory-lavabo-action');
+    if(icon&&aoHasIcon('lavabo'))icon.innerHTML=assetImg('lavabo','section-icon');
+    if(replay){void action.offsetWidth;action.classList.add('offertory-replay')}
+  }
+  if(p.phase==='orate'&&action){
+    action.classList.add('offertory-action','offertory-orate-action');
+    if(icon&&aoHasIcon('priest_turn_people_rich'))icon.innerHTML=assetImg('priest_turn_people_rich','section-icon');
+    const target=offertoryTarget(cue,el);if(target){target.classList.add('offertory-public-return');if(replay){void target.offsetWidth;target.classList.add('offertory-replay')}}
+    if(replay){void action.offsetWidth;action.classList.add('offertory-replay')}
+  }
+  if(p.phase==='public-return'){
+    const target=offertoryTarget(cue,el);if(target){target.classList.add('offertory-public-return');if(replay){void target.offsetWidth;target.classList.add('offertory-replay')}}
+  }
+}
+
+/* The people-incensation gesture is conditional on incense physically reaching the user's section.
+   Posture already owns STAND/SIT; keep only the unique bow instruction here. */
+const renderGestureRail_v134=renderGestureRail;
+renderGestureRail=function(el){
+  const g=renderGestureRail_v134(el);
+  if(g?.Gesture_ID==='AO.SM.G018'){
+    const card=$('#gestureCard'),txt=$('#gestureText');
+    if(txt)txt.textContent='WHEN INCENSE REACHES YOU · BOW BEFORE / AFTER';
+    if(card){card.setAttribute('aria-label','When incense reaches you: bow before and after');card.title='When incense reaches you: bow before and after'}
+    setIconHtml($('#gestureIcon'),'bow','✦');
+  }
+  return g;
+};
+
+const syncState_v134=syncState;
+syncState=function(el){syncState_v134(el);applyOffertoryPresentation(el)};
+
+
+
+/* v1.37 — Preface / Sanctus / Canon-entry presentation controller. */
+const AO_PREFACE_ARC={lastKey:'',sanctusToken:''};
+function clearPrefaceArc(){
+  document.body.classList.remove('preface-arc','preface-dialogue','preface-proclamation','sanctus-parallel','canon-entry','canon-entry-first');
+  const line=$('#scholaStreamLine');if(line)line.classList.remove('sanctus-entry-replay');
+  $$('.flow-unit.sanctus-entry-text').forEach(x=>x.classList.remove('sanctus-entry-text'));
+  $$('.flow-unit.canon-entry-text').forEach(x=>x.classList.remove('canon-entry-text'));
+}
+function prefaceCueTarget(cue,fallback){
+  return document.querySelector(`.mass-card.is-active .flow-unit[data-cue="${cue}"]`)||document.querySelector(`.flow-unit[data-cue="${cue}"]`)||fallback||null;
+}
+function applyPrefaceArc(el){
+  const macro=el?.dataset?.macro||'',cue=el?.dataset?.cue||'';
+  clearPrefaceArc();
+  /* v1.41: Preface/Sanctus owns M12–M13 only. M14 belongs exclusively to the
+     Canon hierarchy, preventing two atmospheric layers from stacking on Te igitur. */
+  if(macro!=='AO.SM.M13')AO_PREFACE_ARC.sanctusToken='';
+  if(!['AO.SM.M12','AO.SM.M13'].includes(macro)){AO_PREFACE_ARC.lastKey='';return}
+  let phase='';
+  if(macro==='AO.SM.M12') phase=(cue==='AO.SM.C0144')?'preface-proclamation':'preface-dialogue';
+  else phase='sanctus-parallel';
+  const key=`${cue}|${phase}|${mode}`,replay=key!==AO_PREFACE_ARC.lastKey;AO_PREFACE_ARC.lastKey=key;
+  document.body.classList.add('preface-arc',phase);
+  if(phase==='sanctus-parallel'){
+    const target=prefaceCueTarget(cue,el);if(cue==='AO.SM.C0145'&&target)target.classList.add('sanctus-entry-text');
+    const line=$('#scholaStreamLine');
+    if(cue==='AO.SM.C0145'&&line){
+      const token=`${cue}|${mode}`;
+      if(AO_PREFACE_ARC.sanctusToken!==token){AO_PREFACE_ARC.sanctusToken=token;void line.offsetWidth;line.classList.add('sanctus-entry-replay')}
+    }
+  }
+}
+const syncState_v136=syncState;
+syncState=function(el){syncState_v136(el);applyPrefaceArc(el)};
+
+
+
+
+/* v1.38 — Canon before the Consecration hierarchy controller. Presentation only. */
+const AO_CANON_PRE={lastKey:''};
+const CANON_PRE_CUES=new Map([
+  ['AO.SM.C0150',{phase:'entry'}],
+  ['AO.SM.C0151',{phase:'entry'}],
+  ['AO.SM.C0152',{phase:'crosses',actionKey:'cross',motion:'cross3',text:true}],
+  ['AO.SM.C0153',{phase:'prayer'}],
+  ['AO.SM.C0154',{phase:'memento',actionKey:'priest_centre_hands_rich'}],
+  ['AO.SM.C0155',{phase:'memento-pause',memory:true}],
+  ['AO.SM.C0156',{phase:'memento',actionKey:'priest_centre_arms_rich'}],
+  ['AO.SM.C0157',{phase:'communicantes'}],
+  ['AO.SM.C0158',{phase:'communicantes',actionKey:'head_bow',motion:'headbow',text:true}],
+  ['AO.SM.C0159',{phase:'communicantes'}],
+  ['AO.SM.C0160',{phase:'communicantes'}],
+  ['AO.SM.C0161',{phase:'hanc',actionKey:'priest_centre_arms_rich',motion:'hands-over',text:true}],
+  ['AO.SM.C0162',{phase:'hanc'}],
+  ['AO.SM.C0163',{phase:'quam'}],
+  ['AO.SM.C0164',{phase:'quam',actionKey:'cross',motion:'cross3',text:true}],
+  ['AO.SM.C0165',{phase:'quam',actionKey:'cross',motion:'cross1'}],
+  ['AO.SM.C0166',{phase:'quam',actionKey:'cross',motion:'cross1'}],
+  ['AO.SM.C0167',{phase:'quam',actionKey:'head_bow',motion:'headbow-l1'}]
+]);
+function clearCanonPre(){
+  document.body.classList.remove('canon-pre','canon-entry-continuing','canon-entry-first','canon-memento','canon-memento-pause','canon-communicantes','canon-hanc','canon-quam');
+  const action=$('#sectionAction');
+  if(action)action.classList.remove('canon-action-landmark','canon-cross3','canon-cross1','canon-headbow','canon-hands-over','canon-replay');
+  $$('.flow-unit.canon-pre-action-text').forEach(x=>x.classList.remove('canon-pre-action-text'));
+  $$('.flow-unit.canon-pre-memory-text').forEach(x=>x.classList.remove('canon-pre-memory-text'));
+}
+function canonPreTarget(cue,fallback){
+  return document.querySelector(`.mass-card.is-active .flow-unit[data-cue="${cue}"]`)||document.querySelector(`.flow-unit[data-cue="${cue}"]`)||fallback||null;
+}
+function applyCanonPre(el){
+  const macro=el?.dataset?.macro||'',cue=el?.dataset?.cue||'';
+  const p=CANON_PRE_CUES.get(cue)||null,prior=AO_CANON_PRE.lastKey;
+  clearCanonPre();
+  if(macro!=='AO.SM.M14'||!p){AO_CANON_PRE.lastKey='';return}
+  const key=`${cue}|${p.phase}|${mode}`,replay=key!==prior;AO_CANON_PRE.lastKey=key;
+  document.body.classList.add('canon-pre');
+  if(p.phase==='entry')document.body.classList.add('canon-entry-continuing');
+  if(cue==='AO.SM.C0150'&&replay)document.body.classList.add('canon-entry-first');
+  if(p.phase==='memento'||p.phase==='memento-pause')document.body.classList.add('canon-memento');
+  if(p.phase==='memento-pause')document.body.classList.add('canon-memento-pause');
+  if(p.phase==='communicantes')document.body.classList.add('canon-communicantes');
+  if(p.phase==='hanc')document.body.classList.add('canon-hanc');
+  if(p.phase==='quam')document.body.classList.add('canon-quam');
+
+  const target=canonPreTarget(cue,el);
+  if(p.text&&target)target.classList.add('canon-pre-action-text');
+  if(p.memory){
+    const memoryTarget=canonPreTarget('AO.SM.C0154',el);if(memoryTarget)memoryTarget.classList.add('canon-pre-memory-text');
+  }
+
+  const action=$('#sectionAction'),icon=$('#priestActionIcon');
+  if(p.actionKey&&action){
+    action.classList.add('canon-action-landmark');
+    if(icon&&aoHasIcon(p.actionKey))icon.innerHTML=assetImg(p.actionKey,'section-icon');
+    if(p.motion==='cross3')action.classList.add('canon-cross3');
+    else if(p.motion==='cross1')action.classList.add('canon-cross1');
+    else if(p.motion==='headbow')action.classList.add('canon-headbow');
+    else if(p.motion==='hands-over')action.classList.add('canon-hands-over');
+    /* headbow-l1 is intentionally visible but unanimated as the Consecration approaches. */
+    if(replay&&['cross3','headbow','hands-over'].includes(p.motion)){
+      void action.offsetWidth;action.classList.add('canon-replay');
+    }
+  }
+}
+const syncState_v137=syncState;
+syncState=function(el){syncState_v137(el);applyCanonPre(el)};
+
+
+
+/* v1.39 — Canon after the Consecration → Per ipsum hierarchy controller. Presentation only. */
+const AO_CANON_POST={lastKey:''};
+const CANON_POST_CUES=new Map([
+  ['AO.SM.C0182',{phase:'anamnesis'}],
+  ['AO.SM.C0183',{phase:'anamnesis'}],
+  ['AO.SM.C0184',{phase:'anamnesis',actionKey:'cross',motion:'cross3',text:true}],
+  ['AO.SM.C0185',{phase:'anamnesis',actionKey:'cross',motion:'cross-l1'}],
+  ['AO.SM.C0186',{phase:'anamnesis'}],
+  ['AO.SM.C0187',{phase:'supplices',actionKey:'priest_profound_bow_rich',motion:'profound',text:true}],
+  ['AO.SM.C0188',{phase:'supplices'}],
+  ['AO.SM.C0189',{phase:'supplices',actionKey:'cross',motion:'cross-l1'}],
+  ['AO.SM.C0190',{phase:'supplices',actionKey:'cross',motion:'cross-l1'}],
+  ['AO.SM.C0191',{phase:'supplices'}],
+  ['AO.SM.C0192',{phase:'dead'}],
+  ['AO.SM.C0193',{phase:'dead-pause',memory:true}],
+  ['AO.SM.C0194',{phase:'dead'}],
+  ['AO.SM.C0195',{phase:'dead'}],
+  ['AO.SM.C0196',{phase:'nobis',actionKey:'breast_strike',motion:'breast',text:true}],
+  ['AO.SM.C0197',{phase:'nobis'}],
+  ['AO.SM.C0198',{phase:'nobis'}],
+  ['AO.SM.C0199',{phase:'perquem'}],
+  ['AO.SM.C0200',{phase:'perquem',actionKey:'cross',motion:'cross-l1'}],
+  ['AO.SM.C0201',{phase:'peripsum'}],
+  ['AO.SM.C0202',{phase:'peripsum',actionKey:'cross',motion:'cross-l1',text:true}],
+  ['AO.SM.C0203',{phase:'peripsum',actionKey:'cross',motion:'cross-l1',text:true}],
+  ['AO.SM.C0204',{phase:'peripsum',motion:'minor-elevation',text:true}],
+  ['AO.SM.C0205',{phase:'peripsum'}],
+  ['AO.SM.C0206',{phase:'conclusion',text:true}],
+  ['AO.SM.C0207',{phase:'conclusion'}]
+]);
+function clearCanonPost(){
+  document.body.classList.remove('canon-post','canon-anamnesis','canon-supplices','canon-dead','canon-dead-pause','canon-nobis','canon-perquem','canon-peripsum','canon-conclusion-public');
+  const action=$('#sectionAction');
+  if(action)action.classList.remove('canon-post-action','canon-post-cross3','canon-post-cross-l1','canon-post-profound','canon-post-breast','canon-minor-elevation','canon-post-replay');
+  $$('.flow-unit.canon-post-action-text').forEach(x=>x.classList.remove('canon-post-action-text'));
+  $$('.flow-unit.canon-post-memory-text').forEach(x=>x.classList.remove('canon-post-memory-text'));
+  $$('.flow-unit.canon-post-nobis-text').forEach(x=>x.classList.remove('canon-post-nobis-text'));
+  $$('.flow-unit.canon-post-doxology-text').forEach(x=>x.classList.remove('canon-post-doxology-text'));
+  $$('.flow-unit.canon-conclusion-text').forEach(x=>x.classList.remove('canon-conclusion-text'));
+}
+function canonPostTarget(cue,fallback){
+  return document.querySelector(`.mass-card.is-active .flow-unit[data-cue="${cue}"]`)||document.querySelector(`.flow-unit[data-cue="${cue}"]`)||fallback||null;
+}
+function applyCanonPost(el){
+  const macro=el?.dataset?.macro||'',cue=el?.dataset?.cue||'';
+  const p=CANON_POST_CUES.get(cue)||null,prior=AO_CANON_POST.lastKey;
+  clearCanonPost();
+  if(!p||!['AO.SM.M17','AO.SM.M18'].includes(macro)){AO_CANON_POST.lastKey='';return}
+  const key=`${cue}|${p.phase}|${mode}`,replay=key!==prior;AO_CANON_POST.lastKey=key;
+
+  if(p.phase==='conclusion'){
+    document.body.classList.add('canon-conclusion-public');
+    const target=canonPostTarget(cue,el);if(p.text&&target)target.classList.add('canon-conclusion-text');
+    return;
+  }
+
+  document.body.classList.add('canon-post');
+  if(p.phase==='anamnesis')document.body.classList.add('canon-anamnesis');
+  if(p.phase==='supplices')document.body.classList.add('canon-supplices');
+  if(p.phase==='dead'||p.phase==='dead-pause')document.body.classList.add('canon-dead');
+  if(p.phase==='dead-pause')document.body.classList.add('canon-dead-pause');
+  if(p.phase==='nobis')document.body.classList.add('canon-nobis');
+  if(p.phase==='perquem')document.body.classList.add('canon-perquem');
+  if(p.phase==='peripsum')document.body.classList.add('canon-peripsum');
+
+  const target=canonPostTarget(cue,el);
+  if(p.text&&target){
+    target.classList.add('canon-post-action-text');
+    if(p.phase==='nobis')target.classList.add('canon-post-nobis-text');
+    if(p.phase==='peripsum')target.classList.add('canon-post-doxology-text');
+  }
+  if(p.memory){
+    const memoryTarget=canonPostTarget('AO.SM.C0192',el);if(memoryTarget)memoryTarget.classList.add('canon-post-memory-text');
+  }
+
+  const action=$('#sectionAction'),icon=$('#priestActionIcon');
+  if(action&&(p.actionKey||p.motion==='minor-elevation')){
+    action.classList.add('canon-post-action');
+    if(p.actionKey&&icon&&aoHasIcon(p.actionKey))icon.innerHTML=assetImg(p.actionKey,'section-icon');
+    if(p.motion==='cross3')action.classList.add('canon-post-cross3');
+    else if(p.motion==='cross-l1')action.classList.add('canon-post-cross-l1');
+    else if(p.motion==='profound')action.classList.add('canon-post-profound');
+    else if(p.motion==='breast')action.classList.add('canon-post-breast');
+    else if(p.motion==='minor-elevation')action.classList.add('canon-minor-elevation');
+    if(replay&&['cross3','profound','breast','minor-elevation'].includes(p.motion)){
+      void action.offsetWidth;action.classList.add('canon-post-replay');
+    }
+  }
+}
+const syncState_v138=syncState;
+syncState=function(el){syncState_v138(el);applyCanonPost(el)};
+
+
+
+/* v1.40 — Concluding rites → Blessing → Last Gospel hierarchy controller.
+   Presentation only; canonical Mass payload and event bindings remain untouched. */
+const AO_CONCLUSION={lastKey:''};
+const CONCLUSION_CUES=new Map([
+  ['AO.SM.C0251',{phase:'postcommunion',text:true}],
+  ['AO.SM.C0252',{phase:'postcommunion'}],
+  ['AO.SM.C0253',{phase:'postcommunion',text:true}],
+  ['AO.SM.C0254',{phase:'postcommunion',text:true}],
+  ['AO.SM.C0255',{phase:'postcommunion'}],
+  ['AO.SM.C0256',{phase:'postcommunion'}],
+  ['AO.SM.C0257',{phase:'dismissal',text:true}],
+  ['AO.SM.C0258',{phase:'dismissal'}],
+  ['AO.SM.C0259',{phase:'dismissal',text:true,dismissal:true}],
+  ['AO.SM.C0260',{phase:'dismissal'}],
+  ['AO.SM.C0261',{phase:'placeat',text:true}],
+  ['AO.SM.C0262',{phase:'placeat'}],
+  ['AO.SM.C0263',{phase:'blessing'}],
+  ['AO.SM.C0264',{phase:'blessing',text:true,gesture:'blessing'}],
+  ['AO.SM.C0265',{phase:'blessing',text:true,actionKey:'priest_blessing_rich',motion:'priest-blessing'}],
+  ['AO.SM.C0266',{phase:'blessing'}],
+  ['AO.SM.C0267',{phase:'lastgospel'}],
+  ['AO.SM.C0268',{phase:'lastgospel'}],
+  ['AO.SM.C0269',{phase:'lastgospel',text:true,gesture:'gospel-crosses'}],
+  ['AO.SM.C0270',{phase:'lastgospel'}],
+  ['AO.SM.C0271',{phase:'lastgospel-reading',text:true}],
+  ['AO.SM.C0272',{phase:'lastgospel-reading',text:true}],
+  ['AO.SM.C0273',{phase:'incarnation',text:true,gesture:'genuflect'}],
+  ['AO.SM.C0274',{phase:'lastgospel-reading',text:true,gesture:'rise'}],
+  ['AO.SM.C0275',{phase:'complete',text:true}]
+]);
+function clearConclusionArc(){
+  document.body.classList.remove('conclusion-arc','conclusion-postcommunion','conclusion-dismissal','conclusion-placeat','conclusion-blessing','conclusion-lastgospel','conclusion-lastgospel-reading','conclusion-incarnation','conclusion-complete');
+  const action=$('#sectionAction'),gesture=$('#gestureCard');
+  if(action)action.classList.remove('conclusion-priest-blessing','conclusion-replay');
+  if(gesture)gesture.classList.remove('conclusion-blessing-gesture','conclusion-gospel-crosses','conclusion-genuflect','conclusion-rise','conclusion-replay');
+  $$('.flow-unit.conclusion-public-text').forEach(x=>x.classList.remove('conclusion-public-text'));
+  $$('.flow-unit.conclusion-dismissal-text').forEach(x=>x.classList.remove('conclusion-dismissal-text'));
+  $$('.flow-unit.conclusion-placeat-text').forEach(x=>x.classList.remove('conclusion-placeat-text'));
+  $$('.flow-unit.conclusion-blessing-text').forEach(x=>x.classList.remove('conclusion-blessing-text'));
+  $$('.flow-unit.conclusion-gospel-text').forEach(x=>x.classList.remove('conclusion-gospel-text'));
+  $$('.flow-unit.conclusion-incarnation-text').forEach(x=>x.classList.remove('conclusion-incarnation-text'));
+  $$('.flow-unit.conclusion-final-text').forEach(x=>x.classList.remove('conclusion-final-text'));
+}
+function conclusionTarget(cue,fallback){
+  return document.querySelector(`.mass-card.is-active .flow-unit[data-cue="${cue}"]`)||document.querySelector(`.flow-unit[data-cue="${cue}"]`)||fallback||null;
+}
+function applyConclusionArc(el){
+  const macro=el?.dataset?.macro||'',cue=el?.dataset?.cue||'';
+  const p=CONCLUSION_CUES.get(cue)||null,prior=AO_CONCLUSION.lastKey;
+  clearConclusionArc();
+  if(!p||!['AO.SM.M27','AO.SM.M28','AO.SM.M29','AO.SM.M30'].includes(macro)){AO_CONCLUSION.lastKey='';return}
+  const key=`${cue}|${p.phase}|${mode}`,replay=key!==prior;AO_CONCLUSION.lastKey=key;
+  document.body.classList.add('conclusion-arc');
+
+  if(p.phase==='postcommunion')document.body.classList.add('conclusion-postcommunion');
+  if(p.phase==='dismissal')document.body.classList.add('conclusion-dismissal');
+  if(p.phase==='placeat')document.body.classList.add('conclusion-placeat');
+  if(p.phase==='blessing')document.body.classList.add('conclusion-blessing');
+  if(['lastgospel','lastgospel-reading','incarnation','complete'].includes(p.phase))document.body.classList.add('conclusion-lastgospel');
+  if(p.phase==='lastgospel-reading')document.body.classList.add('conclusion-lastgospel-reading');
+  if(p.phase==='incarnation')document.body.classList.add('conclusion-incarnation');
+  if(p.phase==='complete')document.body.classList.add('conclusion-complete');
+
+  const target=conclusionTarget(cue,el);
+  if(target&&p.text){
+    if(p.phase==='postcommunion'||p.phase==='dismissal')target.classList.add('conclusion-public-text');
+    if(p.dismissal)target.classList.add('conclusion-dismissal-text');
+    if(p.phase==='placeat')target.classList.add('conclusion-placeat-text');
+    if(p.phase==='blessing')target.classList.add('conclusion-blessing-text');
+    if(p.phase==='lastgospel'||p.phase==='lastgospel-reading')target.classList.add('conclusion-gospel-text');
+    if(p.phase==='incarnation')target.classList.add('conclusion-incarnation-text');
+    if(p.phase==='complete')target.classList.add('conclusion-final-text');
+  }
+
+  const gesture=$('#gestureCard');
+  if(gesture&&p.gesture){
+    if(p.gesture==='blessing')gesture.classList.add('conclusion-blessing-gesture');
+    if(p.gesture==='gospel-crosses')gesture.classList.add('conclusion-gospel-crosses');
+    if(p.gesture==='genuflect')gesture.classList.add('conclusion-genuflect');
+    if(p.gesture==='rise')gesture.classList.add('conclusion-rise');
+    if(replay&&p.gesture!=='rise'){void gesture.offsetWidth;gesture.classList.add('conclusion-replay')}
+  }
+
+  const action=$('#sectionAction'),icon=$('#priestActionIcon');
+  if(action&&p.motion==='priest-blessing'){
+    action.classList.add('conclusion-priest-blessing');
+    if(icon&&p.actionKey&&aoHasIcon(p.actionKey))icon.innerHTML=assetImg(p.actionKey,'section-icon');
+    if(replay){void action.offsetWidth;action.classList.add('conclusion-replay')}
+  }
+}
+const syncState_v139=syncState;
+syncState=function(el){syncState_v139(el);applyConclusionArc(el)};
+
+
+
+
+
+/* AO Ultimate v2.1 — salience/state integrity governor.
+   Keeps the clean v2.0 ownership model: bells remain events, response anticipation remains allowed,
+   and canonical SCHOLA_PUBLIC gestures fall back to the centre only when Schola is not presenting. */
+function resetUltimateSalienceReplayTokens(){
+  if(typeof AO_RITE_TRANSITION!=='undefined')AO_RITE_TRANSITION.lastKey='';
+  if(typeof AO_OFFERTORY!=='undefined')AO_OFFERTORY.lastKey='';
+  if(typeof AO_PREFACE_ARC!=='undefined'){AO_PREFACE_ARC.lastKey='';AO_PREFACE_ARC.sanctusToken='';}
+  if(typeof AO_CANON_PRE!=='undefined')AO_CANON_PRE.lastKey='';
+  if(typeof AO_CANON_POST!=='undefined')AO_CANON_POST.lastKey='';
+  if(typeof AO_CONCLUSION!=='undefined')AO_CONCLUSION.lastKey='';
+  GESTURE_MOTION_STATE.activeKey='';GESTURE_MOTION_STATE.previewKey='';
+}
+const effectiveGestureForEl_v21=effectiveGestureForEl;
+effectiveGestureForEl=function(el){
+  const hit=effectiveGestureForEl_v21(el);if(hit)return hit;
+  if(mode!=='read'&&el?.dataset?.clock==='SCHOLA_PUBLIC'&&!SCHOLA_STREAM.presenting){
+    const g=findGesture(el);if(g)return {gesture:g,cue:el.dataset.cue||'',source:'CENTRE'};
+  }
+  return null;
+};
+const syncState_v21_integrity=syncState;
+syncState=function(el){
+  syncState_v21_integrity(el);
+  if(!el)return;
+  const cue=el.dataset?.cue||'';
+  const block=runtimeBlockById.get(el.dataset?.block||'');
+  if(block?.RuntimeOverlay){
+    GESTURE_MOTION_STATE.activeKey='';GESTURE_MOTION_STATE.previewKey='';
+    const g=$('#gestureCard');if(g){g.classList.remove('gesture-motion-fire','gesture-motion-now','gesture-motion-preview');}
+  }
+  const response=$('#responseCard');if(response)response.dataset.ownerCue=response.classList.contains('off')?'':cue;
+  const gesture=$('#gestureCard');if(gesture)gesture.dataset.ownerCue=gesture.classList.contains('off')?'':(effectiveGestureForEl(el)?.cue||cue);
+  const voice=$('#voiceCard');if(voice)voice.dataset.ownerCue=cue;
+  const posture=$('#postureCard');if(posture)posture.dataset.ownerCue=cue;
+  const position=$('#priestPositionIcon');if(position)position.dataset.ownerCue=cue;
+};
+AO.Salience=Object.freeze({
+  version:'2.1',
+  modules:Object.freeze(['Communion','PaterFractionPax','OffertoryIncensation','PrefaceSanctus','CanonPre','CanonPostPerIpsum','ConclusionLastGospel']),
+  prayerTextMotion:false,
+  stateIntegrity:true
+});
+
+/* ===== end v2.1 salience reconciliation ===== */
+
+qaLoad(); render(); setMode(mode); updateScholaSpeedUI(); setTimeout(runAutoAudit,180);
+})();
