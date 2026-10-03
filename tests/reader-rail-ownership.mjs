@@ -45,8 +45,7 @@ assert.equal(plain.ownership.response,"R17_EXACT_CUE_NONE");
 const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
 const observerSlice=nativeSource.slice(nativeSource.indexOf("const targets=["));
 assert.ok(observerSlice.includes('"#postureText"'),"FOLLOW_CONGREGATION observation disappeared");
-assert.ok(observerSlice.includes('"#scholaDock"'),"temporary Schola donor disappeared");
-for(const forbidden of ['"#stationText"','"#gestureText"','"#responseText"','"#voiceText"']){
+for(const forbidden of ['"#stationText"','"#gestureText"','"#responseText"','"#voiceText"','"#scholaDock"','"#scholaStreamLine"']){
   assert.ok(!observerSlice.includes(forbidden),"native reader still observes legacy rail channel "+forbidden);
 }
 
@@ -57,4 +56,5 @@ for(const dataset of [
   assert.ok(nativeSource.includes(dataset),"missing runtime ownership diagnostic "+dataset);
 }
 
-console.log("reader rail ownership: PASS — Missa Cantata gesture/response/voice/position are native cue-owned; only posture observation and Schola remain explicit rollback channels.");
+assert.match(nativeSource,/R17_NATIVE_INDEPENDENT_SCHOLA_CLOCK/,"native Schola ownership marker missing");
+console.log("reader rail ownership: PASS — Missa Cantata gesture/response/voice/position/Schola are native-owned; only FOLLOW_CONGREGATION posture remains observational.");
