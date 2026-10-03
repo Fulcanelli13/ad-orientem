@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "status": "FIXTURE_MANIFEST_SCHEMA_ONLY",
+  "note": "Expected structural manifests only. No unsourced liturgical text is embedded.",
+  "fixtures": [
+    {
+      "id": "ordinary_sunday",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "multiple_commemorations",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "lent_weekday",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "ember_wednesday",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": true,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "ember_saturday",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": true,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "mass_with_sequence",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": true,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "christmas",
+      "requirements": {
+        "communicantes": true,
+        "hancIgitur": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "epiphany",
+      "requirements": {
+        "communicantes": true,
+        "hancIgitur": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "pentecost",
+      "requirements": {
+        "communicantes": true,
+        "hancIgitur": true,
+        "interlectionSequence": true,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "votive_manual",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "requiem",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "external_local_feast",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    }
+  ]
+}
