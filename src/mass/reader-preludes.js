@@ -19,7 +19,7 @@ function row(value,cardId,index){
 
 export function buildPreludePayload({graph,payload}={}){
   if(!Array.isArray(graph))throw new Error("Recovered prelude graph required");
-  if(payload?.schema!=="ao-r24-prelude-payload-v1")throw new Error("Pinned R24 prelude payload required");
+  if(!["ao-r24-prelude-payload-v1","ao-r25-rogations-payload-v1"].includes(payload?.schema))throw new Error("Pinned native prelude payload required");
   if(Number(payload.graphRecordCount)!==graph.length)throw new Error(payload.rite+" graph count mismatch");
   const graphIds=new Set(graph.map(x=>x.id));
   const cards=(payload.cards??[]).map((card,index)=>{
@@ -58,6 +58,7 @@ export function buildPreludePayload({graph,payload}={}){
     rite:payload.rite,
     title:payload.title,
     source:freeze({...payload.source}),
+    processionalRule:payload.processionalRule ? freeze({...payload.processionalRule}) : null,
     cards:freeze(cards),
     massObjectStates:freeze([...(payload.massObjectStates??[])]),
   });
@@ -119,6 +120,7 @@ async function readJson(fetchImpl,url,label){
 const CONFIG=freeze({
   ASH:freeze({file:"reader-ash.v1.json",graphKey:"ASH"}),
   CANDLEMAS:freeze({file:"reader-candlemas.v1.json",graphKey:"CND"}),
+  ROGATIONS:freeze({file:"reader-rogations.v1.json",graphKey:"ROG"}),
 });
 
 export async function loadPreludeReaderData({
