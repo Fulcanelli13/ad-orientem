@@ -302,7 +302,7 @@ export function createReaderDomAdapter({
           node.dataset.kind=p.kind;
           node.dataset.active=String(p.active);
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
-          const exactCueIds=(p.sourceCueIds??[]).filter(id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id)));
+          const exactCueIds=(p.sourceCueIds??[]).filter(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
           if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
           if(p.replaceOnToggle && p.alternate){
             node.dataset.translateToggle="true";
