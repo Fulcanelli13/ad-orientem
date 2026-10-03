@@ -68,6 +68,9 @@ export async function mountNativeReaderPreview({
   const root=doc.createElement("section");
   root.id=ROOT_ID;
   root.setAttribute("aria-label","R17 native Mass reader preview");
+  root.dataset.r17TextOwner="R17_VERIFIED_CORPUS";
+  root.dataset.r17CardOwner="R17_READER_MODEL";
+  root.dataset.r17StateOwner="LEGACY_TEMPORARY";
   root.style.cssText="position:fixed;inset:0;z-index:2147483100;background:#080c12;";
   const host=doc.createElement("div");
   host.style.cssText="position:absolute;inset:0;";
@@ -154,6 +157,11 @@ export async function mountNativeReaderPreview({
 
   const api=Object.freeze({
     root,reader,model:ready.model,
+    ownership:Object.freeze({
+      text:"R17_VERIFIED_CORPUS",
+      cards:"R17_READER_MODEL",
+      liveState:"LEGACY_TEMPORARY",
+    }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
       return showCard(card);
