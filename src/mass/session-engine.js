@@ -85,15 +85,17 @@ export function resolveActualCelebration({ calendarCelebration, requestedCelebra
   });
 }
 
+function properManifestV2(proper) {
+  if (!proper) return null;
+  if (proper.schema === "ao-proper-manifest-v2") return proper;
+  if (proper.data?.schema === "ao-proper-manifest-v2") return proper.data;
+  return null;
+}
+
 function properIsReady(proper) {
   if (!proper) return false;
 
-  const manifest =
-    proper.schema === "ao-proper-manifest-v2"
-      ? proper
-      : proper.data?.schema === "ao-proper-manifest-v2"
-        ? proper.data
-        : null;
+  const manifest = properManifestV2(proper);
 
   if (manifest && !validateProperManifestV2(manifest).pass) return false;
   if (proper.schema === "ao-proper-manifest-v2") return true;
@@ -214,6 +216,11 @@ export function compileMassPlan(resolvedMass) {
     if (["PALM", "ASH", "CANDLEMAS", "ROGATIONS"].includes(rite)) state.massEntry = "INTROIT";
     if (rite === "CANDLEMAS") state.objectStates.push("CANDLE_STATE_OVERLAY");
     // ASPERGES specifically hands off to ordinary Mass without suppressing Prayers at the Foot.
+  }
+
+  const properManifest = properManifestV2(resolvedMass.proper);
+  if (properManifest?.orations?.prayerOverPeople) {
+    state.insertions.push("PRAYER_OVER_PEOPLE_AFTER_POSTCOMMUNION_BEFORE_FINAL_DOMINUS_VOBISCUM");
   }
 
   for (const overlay of resolvedMass.overlays) {
