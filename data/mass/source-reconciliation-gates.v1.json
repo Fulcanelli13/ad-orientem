@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "SOURCE_RECONCILIATION_GATE",
   "runtimeReference": "v1.83 MERGE GATE",
   "rule": "source -> reconciliation decision -> canonical matrix -> runtime",
@@ -57,8 +57,13 @@
     "localProfile": "MAY_NOT_OVERRIDE_UNIVERSAL_RUBRIC_DATA"
   },
   "currentBlockingFindings": [
-    "SRC-PARITY-001 AO.SM.B046/C0148 Benedictus printed cross",
-    "SRC-PARITY-002 AO.SM.B047/C0153 Te igitur bishop placeholder N.",
-    "SRC-PARITY-003 AO.SM.B057/C0194 Memento Dead lucis et pacis"
+    "P1-007 Gloria/Credo faithful gesture anchors remain unadjudicated; R17 fails closed",
+    "P2-001 PRE_GOSPEL_SEQUENCE source-order compiler not yet certified"
+  ],
+  "closedFindings": [
+    "SRC-PARITY-001 AO.SM.B046/C0148 Benedictus printed cross — corrected on R17 canonical overlay",
+    "SRC-PARITY-002 AO.SM.B047/C0153 Te igitur bishop placeholder N. — corrected on R17 canonical overlay",
+    "SRC-PARITY-003 AO.SM.B057/C0194 Memento Dead lucis et pacis — corrected on R17 canonical overlay",
+    "P1-011 AO.SM.B007/C0023 Confiteor oráre normalization — corrected on R17 canonical overlay"
   ]
 }
