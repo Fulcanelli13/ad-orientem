@@ -1,0 +1,1893 @@
+{
+  "metadata": {
+    "version": "SPECIAL-DAYS-EXT-2026-09-22.2",
+    "runtime_version": "1.3",
+    "base_graph": "SPECIAL-DAYS-CANONICAL-GRAPH-1.1",
+    "base_app": "v43.72-SPECIAL-DAYS-EXPANSION-MERGE",
+    "ordinary_mc_nodes_expected": 87,
+    "status": "SPECIAL_DAYS_MAJOR_EXCEPTIONAL_RITES_CERTIFIED_WITH_OPTIONAL_RITE_GUARDS",
+    "missa_cantata_research": "RG-003_CLOSED_CERTIFIED_ORDINARY_FORM__MONOLITH_FORM_BINDING_SEPARATE",
+    "candlemas_french": "VERIFIED_LITURGICAL_WITNESS_NOT_1962_PRIMARY_FRENCH_EDITION",
+    "requiem_closure": "RG-004_CLOSED_PRIMARY_VARIANCE_RULE_PLUS_ERA_CEREMONIAL",
+    "asperges_closure": "RG-005_CLOSED_PRIMARY_RITE_PLUS_OC64_FAITHFUL_CUE",
+    "corpus_christi_closure": "SG-007_CLOSED_PROFILE_OPTIONAL_PROCESSION_NOT_INFERRED_FROM_DATE"
+  },
+  "graphs": {
+    "PALM": [
+      {
+        "id": "PALM-BLS-010",
+        "phase": "BLESSING",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PALM_RITE_START",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Attend blessing and make responses",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "Missale Romanum 1962 — Dominica II Passionis seu in Palmis",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Pre-Mass rite; red vestments. No ordinary MC event is consumed."
+      },
+      {
+        "id": "PALM-BLS-020",
+        "phase": "BLESSING",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "AFTER_BLESSING_PRAYER",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Observe; no lay imitation of celebrant's ritual gestures",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Palm Sunday restored rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Do not generate a generic holy-water Sign-of-Cross cue here."
+      },
+      {
+        "id": "PALM-DST-010",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "RECIPIENT_CALLED",
+        "actor_scope": "PALM_RECIPIENT",
+        "posture_state": "STAND / WALK",
+        "action_state": "Approach altar rail",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "HIGH_SECONDARY_ACTOR_STATE",
+        "source_locator": "1962 Ordo — Palm Sunday ceremonial distribution",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Personal recipient state."
+      },
+      {
+        "id": "PALM-DST-020",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "RECEIVE_PALM",
+        "actor_scope": "PALM_RECIPIENT",
+        "posture_state": "KNEEL",
+        "action_state": "Receive palm; ceremonial kisses only where the local/clerical form actually applies",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CLOSED_HIGH_SECONDARY",
+        "source_locator": "1962 Ordo — Palm Sunday distribution",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Freeze kneeling reception; do not universalize hand-kissing where not applicable."
+      },
+      {
+        "id": "PALM-DST-030",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "PALM_RECEIVED",
+        "actor_scope": "PALM_RECIPIENT",
+        "posture_state": "STAND / WALK",
+        "action_state": "Return to place holding palm",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "DERIVED_ACTOR_STATE",
+        "source_locator": "Recipient state transition",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "No global posture change."
+      },
+      {
+        "id": "PALM-GSP-010",
+        "phase": "GOSPEL",
+        "trigger_type": "TEXT_RUBRIC",
+        "trigger_key": "TEXT:SEQUENTIA_SANCTI_EVANGELII",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Make three small Gospel crosses",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "FROZEN_GUIDANCE_REUSE",
+        "source_locator": "Ordinary Gospel participation evidence + Palm proper",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Reuse semantic Gospel-cross cue; not a new special gesture."
+      },
+      {
+        "id": "PALM-GSP-020",
+        "phase": "GOSPEL",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "PALM_GOSPEL_BODY",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Listen",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "Matthew 21:1–9 in 1962 Palm rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Pre-procession Gospel."
+      },
+      {
+        "id": "PALM-PRC-010",
+        "phase": "PROCESSION",
+        "trigger_type": "TEXT_RUBRIC",
+        "trigger_key": "TEXT:PROCEDAMUS_IN_PACE",
+        "actor_scope": "FAITHFUL_PARTICIPATING",
+        "posture_state": "PROCESSIONAL",
+        "action_state": "Walk in procession carrying palm if participating",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Palm Sunday restored rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Actor resolver: those not processing remain local/inherit."
+      },
+      {
+        "id": "PALM-PRC-020",
+        "phase": "PROCESSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PALM_PROCESSION_ACTIVE",
+        "actor_scope": "FAITHFUL_PARTICIPATING",
+        "posture_state": "PROCESSIONAL",
+        "action_state": "Carry palm; join chant according to role",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "Gloria laus and appointed antiphons",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "No invented bow/genuflection cue."
+      },
+      {
+        "id": "PALM-RET-010",
+        "phase": "RETURN",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "INGREDIENTE_DOMINO / PROCESSION_RETURN",
+        "actor_scope": "FAITHFUL_PARTICIPATING",
+        "posture_state": "PROCESSIONAL / STAND",
+        "action_state": "Follow procession to conclusion",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Palm Sunday restored rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Transition into Mass."
+      },
+      {
+        "id": "PALM-MASS-010",
+        "phase": "MASS_BRIDGE",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "PALM_RITE_COMPLETE && MASS_FOLLOWS_IMMEDIATELY",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Set mass.opening_mode=FOOT_CLUSTER_OMITTED; enter ordinary Mass at Introit",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CONTROLLING_PRIMARY",
+        "source_locator": "RG60 §424",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Whole foot-of-altar cluster omitted only because the Palm rite immediately preceded Mass."
+      },
+      {
+        "id": "PALM-MASS-020",
+        "phase": "MASS_BRIDGE",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "MASS_END_RESOLVER",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Last Gospel omitted in branch with palm procession",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CONTROLLING_PRIMARY",
+        "source_locator": "RG60 §510",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "If no palm rite preceded Mass, use the separate PROPER_PALM Last Gospel branch instead."
+      }
+    ],
+    "ASH": [
+      {
+        "id": "ASH-BLS-010",
+        "phase": "BLESSING",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ASH_RITE_START",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Attend antiphon and opening",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "Missale Romanum 1962 — Feria IV Cinerum",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Pre-Mass rite."
+      },
+      {
+        "id": "ASH-BLS-020",
+        "phase": "BLESSING",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "ASH_FOUR_ORATIONS",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Stand and respond where applicable",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Ash Wednesday rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Keep four orations as distinct text segments even if UI groups them."
+      },
+      {
+        "id": "ASH-BLS-030",
+        "phase": "BLESSING",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "ASHES_SPRINKLED_INCIENSED",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Observe; no faithful gesture inferred",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Ash Wednesday rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Asperges me here is ritual action over ashes, not an Asperges branch for the congregation."
+      },
+      {
+        "id": "ASH-DST-010",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "RECIPIENT_CALLED",
+        "actor_scope": "ASH_RECIPIENT",
+        "posture_state": "STAND / WALK",
+        "action_state": "Approach altar rail",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "HIGH_SECONDARY_ACTOR_STATE",
+        "source_locator": "1962 Ordo — Ash Wednesday",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Personal recipient state."
+      },
+      {
+        "id": "ASH-DST-020",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "RECEIVE_ASHES",
+        "actor_scope": "ASH_RECIPIENT",
+        "posture_state": "KNEEL",
+        "action_state": "Kneel to receive ashes",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CLOSED_HIGH_SECONDARY",
+        "source_locator": "1962 Ordo — distribution of ashes",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Anchor on reception state, not merely on Memento homo text."
+      },
+      {
+        "id": "ASH-DST-030",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "ASHES_RECEIVED",
+        "actor_scope": "ASH_RECIPIENT",
+        "posture_state": "STAND / WALK",
+        "action_state": "Rise and return",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "DERIVED_ACTOR_STATE",
+        "source_locator": "Recipient state transition",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "No global posture change."
+      },
+      {
+        "id": "ASH-END-010",
+        "phase": "CONCLUSION",
+        "trigger_type": "TEXT_RUBRIC",
+        "trigger_key": "TEXT:CONCEDE_NOBIS_DOMINE",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Stand and respond",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Ash Wednesday rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Concluding pre-Mass prayer."
+      },
+      {
+        "id": "ASH-MASS-010",
+        "phase": "MASS_BRIDGE",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "ASH_RITE_COMPLETE && MASS_FOLLOWS_IMMEDIATELY",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Set mass.opening_mode=FOOT_CLUSTER_OMITTED; enter at Introit",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CONTROLLING_PRIMARY",
+        "source_locator": "RG60 §424",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "If user attends Mass without preceding ash rite, ordinary opening remains FULL unless another rule applies."
+      }
+    ],
+    "CND": [
+      {
+        "id": "CND-BLS-010",
+        "phase": "BLESSING",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "CANDLEMAS_RITE_START",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Attend blessing",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "Missale Romanum 1962 — Purificatio B.M.V.",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Five blessing orations; French corpus remains a translation-source gap."
+      },
+      {
+        "id": "CND-BLS-020",
+        "phase": "BLESSING",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "CANDLEMAS_FIVE_ORATIONS",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "Stand and respond where applicable",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Candlemas rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Latin/English structure can freeze independently of French translation completion."
+      },
+      {
+        "id": "CND-DST-010",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "RECIPIENT_CALLED",
+        "actor_scope": "CANDLE_RECIPIENT",
+        "posture_state": "STAND / WALK",
+        "action_state": "Approach altar rail",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "HIGH_SECONDARY_ACTOR_STATE",
+        "source_locator": "1962 Ordo — Candlemas",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Personal recipient state."
+      },
+      {
+        "id": "CND-DST-020",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "RECEIVE_CANDLE",
+        "actor_scope": "CANDLE_RECIPIENT",
+        "posture_state": "KNEEL",
+        "action_state": "Kneel to receive candle",
+        "object_state": "BLESSED_CANDLE_RECEIVED",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CLOSED_HIGH_SECONDARY",
+        "source_locator": "1962 Ordo — Candlemas distribution",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Reception cue is separate from candle-light state."
+      },
+      {
+        "id": "CND-DST-030",
+        "phase": "DISTRIBUTION",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "CANDLE_RECEIVED",
+        "actor_scope": "CANDLE_RECIPIENT",
+        "posture_state": "STAND / WALK",
+        "action_state": "Rise and return holding candle",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "DERIVED_ACTOR_STATE",
+        "source_locator": "Recipient state transition",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "No global posture change."
+      },
+      {
+        "id": "CND-PRC-010",
+        "phase": "PROCESSION",
+        "trigger_type": "TEXT_RUBRIC",
+        "trigger_key": "TEXT:PROCEDAMUS_IN_PACE",
+        "actor_scope": "FAITHFUL_WITH_CANDLE_PARTICIPATING",
+        "posture_state": "PROCESSIONAL",
+        "action_state": "Carry blessed candle lighted",
+        "object_state": "CANDLE_LIT",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CLOSED_HIGH_SECONDARY",
+        "source_locator": "1962 Ordo — Candle-use notes",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Prop state: CANDLE_LIGHTED=true."
+      },
+      {
+        "id": "CND-PRC-020",
+        "phase": "PROCESSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "CANDLEMAS_PROCESSION_ACTIVE",
+        "actor_scope": "FAITHFUL_WITH_CANDLE_PARTICIPATING",
+        "posture_state": "PROCESSIONAL",
+        "action_state": "Continue carrying lighted candle",
+        "object_state": "CANDLE_LIT",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE + HIGH_SECONDARY_PROP_STATE",
+        "source_locator": "1962 Candlemas procession",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "No extra body gesture."
+      },
+      {
+        "id": "CND-MASS-010",
+        "phase": "MASS_BRIDGE",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "CANDLE_RITE_COMPLETE && MASS_FOLLOWS_IMMEDIATELY",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Set mass.opening_mode=FOOT_CLUSTER_OMITTED; enter at Introit",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CONTROLLING_PRIMARY",
+        "source_locator": "RG60 §424",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Mass-only on 2 February does not trigger this omission."
+      },
+      {
+        "id": "CND-MASS-020",
+        "phase": "MASS_PROP_OVERLAY",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "MC_GOSPEL_START && has_blessed_candle",
+        "actor_scope": "FAITHFUL_WITH_BLESSED_CANDLE",
+        "posture_state": "STAND",
+        "action_state": "CANDLE_LIGHTED=true",
+        "object_state": "CANDLE_LIT",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CLOSED_HIGH_SECONDARY",
+        "source_locator": "1962 Ordo — Candle-use notes",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Prop state only; posture remains ordinary Gospel posture."
+      },
+      {
+        "id": "CND-MASS-030",
+        "phase": "MASS_PROP_OVERLAY",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "MC_SANCTUS_START && has_blessed_candle",
+        "actor_scope": "FAITHFUL_WITH_BLESSED_CANDLE",
+        "posture_state": "INHERIT_CANON_POSTURE",
+        "action_state": "CANDLE_LIGHTED=true",
+        "object_state": "CANDLE_LIT",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CLOSED_HIGH_SECONDARY",
+        "source_locator": "1962 Ordo — Candle-use notes",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Lighted from Sanctus through the interval ending at Pater."
+      },
+      {
+        "id": "CND-MASS-040",
+        "phase": "MASS_PROP_OVERLAY",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "PATER_NOSTER_COMPLETE",
+        "actor_scope": "FAITHFUL_WITH_BLESSED_CANDLE",
+        "posture_state": "INHERIT",
+        "action_state": "CANDLE_LIT_NOT_REQUIRED_AFTER_PATER",
+        "object_state": "CANDLE_STATE_UNCONSTRAINED_AFTER_PATER",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CLOSED_HIGH_SECONDARY_OBJECT_STATE",
+        "source_locator": "1962 Ordo — Candle-use notes",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Candle remains lit through the Pater. After the Pater the source no longer requires the lit state; do not force a universal extinguishing instant."
+      }
+    ],
+    "ROG": [
+      {
+        "id": "ROG-LIT-010",
+        "phase": "LITANY",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ROGATION_RITE_START",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "LOCAL / PROCESSIONAL",
+        "action_state": "Join Litany responses",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "Missale Romanum 1962 — Litaniae maiores/minores",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Separate pre-Mass rite."
+      },
+      {
+        "id": "ROG-LIT-020",
+        "phase": "LITANY",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "LITANY_ACTIVE",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "LOCAL / PROCESSIONAL",
+        "action_state": "Continue responses",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Rogation rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "No universal kneel/stand command frozen where local processional arrangement governs."
+      },
+      {
+        "id": "ROG-PS-010",
+        "phase": "SUPPLICATION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "AFTER_LITANY",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "LOCAL / STAND",
+        "action_state": "Join responses according to rite",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Rogation rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Text resolver must use full controlled corpus, not abridged donor prose."
+      },
+      {
+        "id": "ROG-PRC-010",
+        "phase": "PROCESSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ROGATION_PROCESSION_ACTIVE",
+        "actor_scope": "FAITHFUL_PARTICIPATING",
+        "posture_state": "PROCESSIONAL",
+        "action_state": "Walk in procession if participating",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Rogation rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Actor resolver for non-processors."
+      },
+      {
+        "id": "ROG-END-010",
+        "phase": "CONCLUSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ROGATION_RITE_COMPLETE",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "STAND / LOCAL",
+        "action_state": "Complete appointed prayers",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE",
+        "source_locator": "1962 Rogation rite",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Bridge only when Mass follows immediately."
+      },
+      {
+        "id": "ROG-MASS-010",
+        "phase": "MASS_BRIDGE",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "ROGATION_RITE_COMPLETE && MASS_FOLLOWS_IMMEDIATELY",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Set mass.opening_mode=FOOT_CLUSTER_OMITTED; enter at Introit",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CONTROLLING_PRIMARY",
+        "source_locator": "RG60 §424",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Do not infer this from Rogation date alone."
+      }
+    ],
+    "LECT": [
+      {
+        "id": "LECT-INS-010",
+        "phase": "INSERTED_LESSONS",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "PROPER_ADDITIONAL_LESSONS_PRESENT",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": "Listen to resolved Proper lesson",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_PROPER_RUNTIME",
+        "source_locator": "MR62/RG60 + day Proper",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Insert before ordinary Epistle; number of lessons comes from Proper."
+      },
+      {
+        "id": "LECT-INS-020",
+        "phase": "INSERTED_LESSONS",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "INSERTED_ORATION:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_PRESENT",
+        "posture_state": "KNEEL",
+        "action_state": "Kneel",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CONTROLLING_PRIMARY",
+        "source_locator": "Exact formula in applicable inserted oration",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Only emit where formula is actually present."
+      },
+      {
+        "id": "LECT-INS-030",
+        "phase": "INSERTED_LESSONS",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "INSERTED_ORATION:LEVATE",
+        "actor_scope": "ALL_PRESENT",
+        "posture_state": "STAND",
+        "action_state": "Rise",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CONTROLLING_PRIMARY",
+        "source_locator": "Exact formula in applicable inserted oration",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Only emit where formula is actually present."
+      },
+      {
+        "id": "LECT-INS-040",
+        "phase": "INSERTED_LESSONS",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "AFTER_INSERTED_ORATION",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "SIT / PROPER_RESOLVED",
+        "action_state": "Resume resolved lesson/canticle sequence",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "DERIVED_STATE_TRANSITION",
+        "source_locator": "Runtime Proper sequence",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Repeat block as many times as the Proper requires."
+      },
+      {
+        "id": "LECT-INS-050",
+        "phase": "INSERTED_LESSONS",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ADDITIONAL_LESSONS_COMPLETE",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Resume at ordinary Epistle/next canonical MC anchor",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "INTEGRATION_CONTRACT",
+        "source_locator": "MC graph + Proper insertion contract",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Do not renumber MC identities."
+      }
+    ],
+    "PROC": [
+      {
+        "id": "PROC-000-010",
+        "phase": "MASS_CONCLUSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "following_action.type=PROCESSION",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Resolve Mass ending before procession starts",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CONTROLLING_PRIMARY_STRUCTURE",
+        "source_locator": "RG60 §§507–510",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Following action is an independent axis, not a prose note."
+      },
+      {
+        "id": "PROC-000-020",
+        "phase": "MASS_CONCLUSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PROCESSION_FOLLOWS_IMMEDIATELY",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Use Benedicamus branch where the controlling rite requires it",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RULE_RESOLVER",
+        "source_locator": "RG60 §§507–510",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Exact feast/form condition remains profile-resolved."
+      },
+      {
+        "id": "PROC-000-030",
+        "phase": "MASS_CONCLUSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PROCESSION_FOLLOWS_IMMEDIATELY",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Suppress final blessing where prescribed by ending resolver",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RULE_RESOLVER",
+        "source_locator": "RG60 §§507–510",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Do not hard-code from procession presence alone unless profile says so."
+      },
+      {
+        "id": "PROC-000-040",
+        "phase": "MASS_CONCLUSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PROCESSION_FOLLOWS_IMMEDIATELY",
+        "actor_scope": "ALL",
+        "posture_state": "ORDINARY_PROFILE",
+        "action_state": "Resolve Last Gospel independently under §510",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RULE_RESOLVER",
+        "source_locator": "RG60 §510",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Some following actions suppress it; not every procession is identical."
+      },
+      {
+        "id": "PROC-100-010",
+        "phase": "PROCESSION",
+        "trigger_type": "MC_BOUNDARY",
+        "trigger_key": "MASS_END_COMPLETE && PROCESSION_START",
+        "actor_scope": "FAITHFUL_PARTICIPATING",
+        "posture_state": "PROCESSIONAL",
+        "action_state": "Enter following-action graph",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "STRUCTURAL_CONTRACT",
+        "source_locator": "Generic following-action processional contract",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "No feast-specific text or posture is invented here."
+      },
+      {
+        "id": "PROC-100-020",
+        "phase": "PROCESSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PROCESSION_ACTIVE",
+        "actor_scope": "FAITHFUL_PARTICIPATING",
+        "posture_state": "PROCESSIONAL / LOCAL",
+        "action_state": "Follow procession and profile-specific responses",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PROFILE_RESOLVED",
+        "source_locator": "Feast/procession proper required",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Corpus Christi proper remains a dedicated profile/source task."
+      },
+      {
+        "id": "PROC-100-030",
+        "phase": "PROCESSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PROCESSION_COMPLETE",
+        "actor_scope": "ALL",
+        "posture_state": "LOCAL",
+        "action_state": "Exit following-action graph",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "STRUCTURAL_CONTRACT",
+        "source_locator": "Generic following-action processional contract",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Return to lifecycle, not ordinary MC."
+      }
+    ],
+    "HT_POST": [
+      {
+        "id": "HT-TRN-010",
+        "phase": "TRANSLATION",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "SSMM_PASSES_PEWS",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "Kneel",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "HIGH_SECONDARY_DIRECT_GUIDANCE",
+        "source_locator": "O'Connell via ACSS HT pp.7,14",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "If joining, stand after It passes."
+      },
+      {
+        "id": "HT-TRN-020",
+        "phase": "TRANSLATION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "SSMM_HAS_PASSED && joining",
+        "actor_scope": "FAITHFUL_JOINING",
+        "posture_state": "STAND / WALK",
+        "action_state": "Follow behind",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "HIGH_SECONDARY_DIRECT_GUIDANCE",
+        "source_locator": "ACSS HT p.14",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "No extra altar reverence."
+      },
+      {
+        "id": "HT-TRN-030",
+        "phase": "TRANSLATION",
+        "trigger_type": "EVENT_STATE",
+        "trigger_key": "ARRIVE_ALTAR_OF_REPOSE",
+        "actor_scope": "FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "Kneel in place",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "HIGH_SECONDARY_DIRECT_GUIDANCE",
+        "source_locator": "ACSS HT pp.7,14",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Adoration state."
+      },
+      {
+        "id": "HT-TRN-040",
+        "phase": "TRANSLATION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "SSMM_RESERVED && SILENT_ADORATION_COMPLETE",
+        "actor_scope": "FAITHFUL_JOINING",
+        "posture_state": "STAND→DOUBLE_KNEE_GENUFLECTION→STAND",
+        "action_state": "Stand; double-knee genuflection; return",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "HIGH_SECONDARY_DIRECT_GUIDANCE",
+        "source_locator": "ACSS HT pp.7,14",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Specific to those who followed."
+      },
+      {
+        "id": "HT-STRIP-010",
+        "phase": "STRIPPING_OF_ALTARS",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "STRIPPING_OF_ALTARS_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "LOCAL_OR_INHERIT",
+        "action_state": "OBSERVE_AND_PRAY",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "AFTER_REPOSITION",
+        "evidence_status": "PRIMARY_RITE_NO_UNIVERSAL_FAITHFUL_POSTURE",
+        "source_locator": "Missale Romanum 1962 — Holy Thursday post-Mass stripping of altars / Psalm 21",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "First-class post-Mass state. Do not import older donor KNEEL/STAND as a universal faithful posture."
+      },
+      {
+        "id": "HT-POST-900",
+        "phase": "HOLY_THURSDAY_POST_MASS",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "STRIPPING_COMPLETE",
+        "actor_scope": "ALL",
+        "posture_state": "LOCAL_OR_INHERIT",
+        "action_state": "EXIT_SPECIAL_GRAPH_TO_LIFECYCLE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "STRUCTURAL_CONTRACT",
+        "source_locator": "Holy Thursday post-Mass graph boundary",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Post-Mass rite exits to lifecycle, never back into MC-*."
+      }
+    ],
+    "ASP": [
+      {
+        "id": "ASP-010",
+        "phase": "SUNDAY_ASPERGES",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ASPERGES_RITE_START",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "ATTEND_SUNDAY_SPRINKLING",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_RITE_PLUS_1962_ERA_FAITHFUL_GUIDANCE",
+        "source_locator": "MR62 Appendix II; O’Connell 1964 p.600",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "The celebrant/ministers kneel at the altar during their own preparation; do not propagate that minister posture to the faithful."
+      },
+      {
+        "id": "ASP-020",
+        "phase": "SUNDAY_ASPERGES",
+        "trigger_type": "ACTOR_STATE",
+        "trigger_key": "CELEBRANT_KNEELS_AT_ALTAR",
+        "actor_scope": "CELEBRANT_MINISTERS",
+        "posture_state": "KNEEL",
+        "action_state": "PREPARE_ASPERSORIUM",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Appendix II",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Actor-scoped minister choreography only."
+      },
+      {
+        "id": "ASP-030",
+        "phase": "SUNDAY_ASPERGES",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ASPERGES_ME_OR_VIDI_AQUAM_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "JOIN_CHANT_WHERE_SUNG",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Appendix II",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Vidi aquam replaces Asperges me in Paschaltide; Palm/Passion Sunday Gloria Patri omission is formula logic, not a posture trigger."
+      },
+      {
+        "id": "ASP-040",
+        "phase": "SUNDAY_ASPERGES",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "ACTUALLY_SPRINKLED",
+        "actor_scope": "FAITHFUL_RECIPIENT",
+        "posture_state": "STAND",
+        "action_state": "MAKE_FULL_SIGN_OF_CROSS",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "1962_ERA_FAITHFUL_GUIDANCE",
+        "source_locator": "O’Connell 1964 p.600",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Personal event trigger: never attach the sign of the cross to a chant word."
+      },
+      {
+        "id": "ASP-050",
+        "phase": "SUNDAY_ASPERGES",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "CELEBRANT_RETURNS_FOR_VERSICLES",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "MAKE_RESPONSES",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Appendix II",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Ostende nobis / Domine exaudi / Dominus vobiscum / Exaudi nos."
+      },
+      {
+        "id": "ASP-060",
+        "phase": "SUNDAY_ASPERGES",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "CONCLUDING_AMEN_COMPLETE",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "HANDOFF_TO_ORDINARY_MASS",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "STRUCTURAL_CONTRACT",
+        "source_locator": "MR62 Appendix II → Mass",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Asperges precedes Mass and does not itself suppress the Prayers at the Foot."
+      }
+    ],
+    "REQ": [
+      {
+        "id": "REQ-OPEN-010",
+        "phase": "REQUIEM_OPENING",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0004_JUDICA",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "SUPPRESS_JUDICA_RETAIN_INTROIBO_ADJUTORIUM_CONFESSION",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Everything not listed as different remains as in other Masses."
+      },
+      {
+        "id": "REQ-INT-010",
+        "phase": "REQUIEM_INTROIT",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0011_INTROIT",
+        "actor_scope": "CELEBRANT",
+        "posture_state": "INHERIT",
+        "action_state": "CROSS_OVER_BOOK_NOT_SELF__NO_GLORIA_PATRI",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-ORD-010",
+        "phase": "REQUIEM_ORDINARY",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0013_GLORIA",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "SUPPRESS_GLORIA",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-CHANT-010",
+        "phase": "REQUIEM_INTERLECTION",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0017_ALLELUIA",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "SUPPRESS_ALLELUIA_USE_REQUIEM_PROPER_GRADUAL_TRACT_SEQUENCE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-GSP-010",
+        "phase": "REQUIEM_GOSPEL",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0019_GOSPEL_PREPARATION",
+        "actor_scope": "SACRED_MINISTERS",
+        "posture_state": "INHERIT",
+        "action_state": "OMIT_JUBE_DOMINE_AND_DOMINUS_SIT_IN_CORDE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-GSP-020",
+        "phase": "REQUIEM_GOSPEL",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0021_GOSPEL",
+        "actor_scope": "SACRED_MINISTERS",
+        "posture_state": "INHERIT",
+        "action_state": "NO_BOOK_KISS_NO_PER_EVANGELICA",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-CRD-010",
+        "phase": "REQUIEM_CREDO",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0023_CREDO",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "SUPPRESS_CREDO",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-OFF-010",
+        "phase": "REQUIEM_OFFERTORY",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0028_WATER_WINE",
+        "actor_scope": "CELEBRANT",
+        "posture_state": "INHERIT",
+        "action_state": "DO_NOT_BLESS_WATER_PRAYER_RETAINED",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-LAV-010",
+        "phase": "REQUIEM_OFFERTORY",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0033_LAVABO",
+        "actor_scope": "CELEBRANT",
+        "posture_state": "INHERIT",
+        "action_state": "OMIT_GLORIA_PATRI",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-AGN-010",
+        "phase": "REQUIEM_COMMUNION",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0064_AGNUS",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "DONA_EIS_REQUIEM_X2__SEMPITERNAM_X1__NO_BREAST_STRIKE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-PAX-010",
+        "phase": "REQUIEM_COMMUNION",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0065_PEACE_PRAYER",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "SUPPRESS_DOMINE_IESU_QUI_DIXISTI_AND_PAX",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-END-010",
+        "phase": "REQUIEM_ENDING",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0079_DISMISSAL",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "REQUIESCANT_IN_PACE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-END-020",
+        "phase": "REQUIEM_ENDING",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0081_BLESSING",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "SUPPRESS_FINAL_BLESSING__RETAIN_PLACEAT_THEN_LAST_GOSPEL_UNLESS_FOLLOWING_ACTION",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.1; RG60 §510",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Absolution/following-action branch may independently suppress Last Gospel."
+      },
+      {
+        "id": "REQ-SOL-010",
+        "phase": "SOLEMN_REQUIEM",
+        "trigger_type": "FORM_VARIANCE",
+        "trigger_key": "SUNG_GOSPEL",
+        "actor_scope": "SACRED_MINISTERS",
+        "posture_state": "INHERIT",
+        "action_state": "NO_GOSPEL_LIGHTS_NO_GOSPEL_INCENSE_NO_CELEBRANT_INCENSE_NO_BOOK_KISS",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.2",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-SOL-020",
+        "phase": "SOLEMN_REQUIEM",
+        "trigger_type": "FORM_VARIANCE",
+        "trigger_key": "OFFERTORY_INCENSE",
+        "actor_scope": "SACRED_MINISTERS",
+        "posture_state": "INHERIT",
+        "action_state": "INCENSE_GIFTS_AND_ALTAR__CELEBRANT_ONLY_NOT_OTHERS",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.2",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-SOL-030",
+        "phase": "SOLEMN_REQUIEM",
+        "trigger_type": "FORM_VARIANCE",
+        "trigger_key": "ELEVATIONS",
+        "actor_scope": "SUBDEACON",
+        "posture_state": "KNEEL",
+        "action_state": "NO_PATEN_HOLDING__INCENSE_SACRAMENT_FROM_EPISTLE_SIDE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.2",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "REQ-CANDLE-010",
+        "phase": "SOLEMN_REQUIEM",
+        "trigger_type": "OBJECT_STATE",
+        "trigger_key": "AFTER_EPISTLE_IF_CANDLES_DISTRIBUTED",
+        "actor_scope": "FAITHFUL_RECIPIENTS",
+        "posture_state": "INHERIT",
+        "action_state": "RECEIVE_FUNERAL_CANDLE",
+        "object_state": "CANDLE_DISTRIBUTED",
+        "personal_state": null,
+        "branch_condition": "CANDLES_DISTRIBUTED",
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.3",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Conditional object state only."
+      },
+      {
+        "id": "REQ-CANDLE-020",
+        "phase": "SOLEMN_REQUIEM",
+        "trigger_type": "OBJECT_STATE",
+        "trigger_key": "GOSPEL_OR_ELEVATION_OR_POSTMASS_ABSOLUTION",
+        "actor_scope": "FAITHFUL_RECIPIENTS",
+        "posture_state": "INHERIT",
+        "action_state": "LIGHT_DISTRIBUTED_CANDLE",
+        "object_state": "CANDLE_LIT",
+        "personal_state": null,
+        "branch_condition": "CANDLES_DISTRIBUTED",
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Ritus XIII.3",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Lit at Gospel, Elevation, and after Mass if Absolution occurs."
+      }
+    ],
+    "ABS": [
+      {
+        "id": "ABS-010",
+        "phase": "ABSOLUTION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ABSOLUTION_START",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "LOCAL_OR_INHERIT",
+        "action_state": "MOVE_OR_REMAIN_AS_DIRECTED_NEAR_CATAFALQUE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CEREMONIAL_SEQUENCE_CERTIFIED",
+        "source_locator": "Rituale/Missal funeral rite; Terry pp.138–139",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Choir/participants may move in processional order or remain as directed; do not force a universal lay stand."
+      },
+      {
+        "id": "ABS-020",
+        "phase": "ABSOLUTION",
+        "trigger_type": "BRANCH_STATE",
+        "trigger_key": "BODY_PRESENT_NON_INTRES",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "LOCAL_OR_INHERIT",
+        "action_state": "RESPOND_AMEN_TO_NON_INTRES",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "BODY_PRESENT",
+        "evidence_status": "CEREMONIAL_SEQUENCE_CERTIFIED",
+        "source_locator": "Requiem Absolution rite; Terry p.138",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "ABS-030",
+        "phase": "ABSOLUTION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "LIBERA_ME",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "LOCAL_OR_INHERIT",
+        "action_state": "PRAY_LIBERA_ME",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CEREMONIAL_SEQUENCE_CERTIFIED",
+        "source_locator": "Requiem Absolution rite; Terry p.138",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "ABS-040",
+        "phase": "ABSOLUTION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "KYRIE_PATER_VERSICLES",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "LOCAL_OR_INHERIT",
+        "action_state": "MAKE_APPOINTED_RESPONSES",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CEREMONIAL_SEQUENCE_CERTIFIED",
+        "source_locator": "Requiem Absolution rite; Terry p.138",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Aspersion/incensation of the coffin/tumulus is celebrant choreography; no lay imitation cue."
+      },
+      {
+        "id": "ABS-050",
+        "phase": "FUNERAL_DEPARTURE",
+        "trigger_type": "BRANCH_STATE",
+        "trigger_key": "BURIAL_PROCESSION_FOLLOWS",
+        "actor_scope": "FAITHFUL_PARTICIPATING",
+        "posture_state": "PROCESSIONAL",
+        "action_state": "FOLLOW_PROCESSION_WITH_IN_PARADISUM",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "BODY_PRESENT_AND_BURIAL_PROCESSION",
+        "evidence_status": "CEREMONIAL_SEQUENCE_CERTIFIED",
+        "source_locator": "Requiem funeral rite; Terry pp.138–139",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      }
+    ],
+    "CORPUS": [
+      {
+        "id": "CORPUS-END-010",
+        "phase": "MASS_CONCLUSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "CORPUS_PROCESSION_FOLLOWS_IMMEDIATELY",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "DECLARE_FOLLOWING_EUCHARISTIC_PROCESSION",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_ENDING_RULE",
+        "source_locator": "RG60 §§507a, 508, 510a; Fortescue/O’Connell summarized by Romanitas Press",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Optional/local rite: date alone is insufficient."
+      },
+      {
+        "id": "CORPUS-END-020",
+        "phase": "MASS_CONCLUSION",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0079_DISMISSAL",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "BENEDICAMUS_DOMINO_REPLACES_ITE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_ENDING_RULE",
+        "source_locator": "RG60 §507a",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "CORPUS-END-030",
+        "phase": "MASS_CONCLUSION",
+        "trigger_type": "MC_VARIANCE",
+        "trigger_key": "MC-0081_AND_MC-0082",
+        "actor_scope": "ALL",
+        "posture_state": "INHERIT",
+        "action_state": "SUPPRESS_FINAL_BLESSING_AND_LAST_GOSPEL",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "PRIMARY_ENDING_RULE",
+        "source_locator": "RG60 §§508, 510a",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "CORPUS-EXP-010",
+        "phase": "EUCHARISTIC_PROCESSION",
+        "trigger_type": "SACRAMENTAL_STATE",
+        "trigger_key": "MONSTRANCE_PLACED_IN_CELEBRANT_HANDS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "LOCAL_OR_INHERIT",
+        "action_state": "BEGIN_PANGE_LINGUA_OMITTING_LAST_TWO_VERSES",
+        "object_state": "BLESSED_SACRAMENT_IN_PROCESSION",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "RITUALE_DERIVED_CEREMONIAL",
+        "source_locator": "Rituale Romanum Corpus Christi procession; Terry p.135",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "CORPUS-PRC-010",
+        "phase": "EUCHARISTIC_PROCESSION",
+        "trigger_type": "SACRAMENTAL_STATE",
+        "trigger_key": "PROCESSION_ACTIVE",
+        "actor_scope": "FAITHFUL_PARTICIPATING",
+        "posture_state": "PROCESSIONAL",
+        "action_state": "FOLLOW_PROCESSION_JOIN_EUCHARISTIC_HYMNS",
+        "object_state": "BLESSED_SACRAMENT_IN_PROCESSION",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "RITUALE_DERIVED_CEREMONIAL",
+        "source_locator": "Rituale Romanum Corpus Christi procession; Terry p.135",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Other approved Eucharistic hymns may fill a longer procession."
+      },
+      {
+        "id": "CORPUS-RET-010",
+        "phase": "BENEDICTION",
+        "trigger_type": "SACRAMENTAL_STATE",
+        "trigger_key": "BLESSED_SACRAMENT_REPLACED_ON_ALTAR",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "LOCAL_REVERENT",
+        "action_state": "BEGIN_TANTUM_ERGO",
+        "object_state": "BLESSED_SACRAMENT_EXPOSED_AT_ALTAR",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "RITUALE_DERIVED_CEREMONIAL",
+        "source_locator": "Rituale Romanum Corpus Christi procession; Terry pp.135–136",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "CORPUS-BEN-010",
+        "phase": "BENEDICTION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "TANTUM_ERGO_COMPLETE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "LOCAL_REVERENT",
+        "action_state": "RESPOND_PANEM_DE_CAELO_AND_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "RITUALE_DERIVED_CEREMONIAL",
+        "source_locator": "Rituale Romanum / Terry p.136",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "CORPUS-BEN-020",
+        "phase": "BENEDICTION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "BENEDICTION_COMPLETE",
+        "actor_scope": "ALL",
+        "posture_state": "LOCAL_OR_INHERIT",
+        "action_state": "EXIT_SPECIAL_GRAPH_TO_LIFECYCLE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "STRUCTURAL_CONTRACT",
+        "source_locator": "Corpus Christi procession / Benediction boundary",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      }
+    ]
+  },
+  "research_gates": {
+    "RG-004_REQUIEM": "CLOSED__MR62_RITUS_XIII_VARIANCE_OVERLAY",
+    "RG-005_ASPERGES": "CLOSED__MR62_APPENDIX_II_PLUS_OC64_FAITHFUL_CUE",
+    "SG-007_CORPUS_CHRISTI": "CLOSED__FEAST_SPECIFIC_PROCESSION_PROFILE__OPTIONAL_LOCAL_ACTION"
+  },
+  "integration_rules": [
+    "Never mutate or renumber MC-* identity.",
+    "A calendar day does not by itself prove an optional/local preceding or following rite occurred.",
+    "Personal reception/veneration actions remain actor-scoped.",
+    "Object states are independent from posture states.",
+    "Requiem is a variance overlay on the certified Mass form: MR62 Ritus XIII expressly states everything else is as in other Masses.",
+    "Asperges faithful Sign of Cross is a personal ACTUALLY_SPRINKLED cue, never a chant-word trigger.",
+    "Corpus Christi procession is optional/local and must be explicitly activated; the feast date alone does not assert that a procession follows."
+  ]
+}

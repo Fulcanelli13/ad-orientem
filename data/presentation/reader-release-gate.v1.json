@@ -1,0 +1,420 @@
+{
+  "schema": "ao-r17-reader-release-gate-v1",
+  "version": "2.4.0",
+  "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_AND_PHONE_ACCEPTANCE",
+  "productionDefault": "LEGACY",
+  "releaseRule": "R17 reader may not become the production default until special-structure parity and real-phone acceptance are closed. Source-first LIVE is integrated at 39 presentation steps; historical v1.83 C01-C48 remains compatibility evidence only.",
+  "protectedInvariants": [
+    {
+      "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
+      "expectedLiveCards": 48,
+      "canonicalMacros": 30,
+      "status": "NON_BLOCKING_COMPATIBILITY_EVIDENCE",
+      "releaseAuthority": false
+    },
+    {
+      "id": "HOST_ELEVATION_GATE",
+      "wordsCue": "AO.SM.C0173",
+      "actionCue": "AO.SM.C0174"
+    },
+    {
+      "id": "CHALICE_ELEVATION_GATE",
+      "wordsThroughCue": "AO.SM.C0180",
+      "actionCue": "AO.SM.C0181"
+    },
+    {
+      "id": "CARD_TRANSIENT_CLEAR",
+      "required": true,
+      "detail": "Card changes clear gesture, response, bell and cinematic transient state before the next cue owns the reader."
+    },
+    {
+      "id": "LIVE20_DONOR_ONLY",
+      "status": "HISTORICAL_V1_65_DONOR_ONLY__NON_AUTHORITATIVE",
+      "releaseAuthority": false
+    },
+    {
+      "id": "NATIVE_MODE_SWITCH",
+      "status": "SOURCE_FIRST_LIVE_CERTIFIED__UI_SWITCH_LOCKED_UNTIL_PHONE_ACCEPTANCE",
+      "reason": "Initial LIVE entry is certified; in-reader mode switching remains locked until touch/phone acceptance."
+    },
+    {
+      "id": "GLORIA_CREDO_PROFILE_ADJUDICATION",
+      "status": "CUSTOMARY_ONLY_TRADITIONAL__INCARNATUS_RUBRICAL"
+    },
+    {
+      "id": "DEPLOYMENT_ROLLBACK_PROTECTION",
+      "status": "LEGACY_BASELINE_MAY_NOT_OVERWRITE_R17_MOUNT"
+    },
+    {
+      "id": "SOLEMN_PAX_SEPARATION",
+      "status": "CERTIFIED_PRIMARY_1962_RUBRIC",
+      "paxDominiEvent": "MC-COM-100",
+      "peacePrayerEvent": "MC-COM-150",
+      "ministerialPaxEvent": "MC-COM-160",
+      "transferAuthority": "Missale Romanum 1962, Ritus servandus X.8",
+      "authorityFile": "data/mass/solemn-pax-authority.v1.json",
+      "readerCueId": "AO.SM.C0225",
+      "readerOwner": "R18_SOLEMN_PAX_PRIMARY_SOURCE"
+    },
+    {
+      "id": "GUIDE_REGISTRY_CONTINUITY",
+      "status": "RECOVERED_CONTINUITY_CERTIFIED",
+      "entryCount": 32,
+      "file": "data/presentation/guide-registry.v1.json"
+    },
+    {
+      "id": "SCHOLA_NATIVE_OWNERSHIP",
+      "status": "CERTIFIED_MISSA_CANTATA",
+      "controller": "src/mass/reader-schola.js",
+      "properties": [
+        "independent track/segment clock",
+        "exact SCHOLA_PUBLIC Ordinary cue ownership",
+        "resolved Proper track ownership",
+        "shared-text suppression",
+        "non-looping completion"
+      ]
+    },
+    {
+      "id": "ICON_ASSET_BANK_NATIVE",
+      "status": "CERTIFIED_HOST_BANK_BRIDGE",
+      "resolver": "src/mass/reader-icons.js",
+      "bridge": "globalThis.AO_R17_ICON_ASSETS",
+      "sourceBank": "existing host AO_ASSETS",
+      "failClosedOnMissingAssets": true
+    },
+    {
+      "id": "BELL_CINEMATIC_NATIVE_OWNERSHIP",
+      "status": "CERTIFIED_MISSA_CANTATA",
+      "controller": "src/mass/reader-transients.js",
+      "recoveredBellCueCount": 5,
+      "recoveredBellCueIds": [
+        "AO.SM.C0145",
+        "AO.SM.C0161",
+        "AO.SM.C0174",
+        "AO.SM.C0181",
+        "AO.SM.C0225"
+      ],
+      "canonicalSoundEventAuthority": true,
+      "partCinematicSource": "DISPLAY_GROUPING_ONLY reader section part",
+      "singleOwnerTimedCinematic": true,
+      "cardTransitionClears": [
+        "gesture",
+        "response",
+        "bell",
+        "cinematic"
+      ],
+      "canonicalStateMutation": false,
+      "forms": [
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "LOW",
+        "SOLEMN"
+      ],
+      "formParity": {
+        "low": {
+          "status": "CERTIFIED",
+          "bellCueCount": 4,
+          "certifiedAbsentCueIds": [
+            "AO.SM.C0225"
+          ]
+        },
+        "solemn": {
+          "status": "CERTIFIED",
+          "bellCueCount": 5,
+          "conditionalCueIds": [
+            "AO.SM.C0225"
+          ]
+        }
+      },
+      "formAuthority": "Canonical MC event forms/soundEvents + B005 Low and B006 Solemn objective profiles; cue identity remains the recovered reader binding."
+    },
+    {
+      "id": "PROPER_FIXTURE_PROVENANCE",
+      "status": "CERTIFIED_REPLACEMENT_WITNESS",
+      "fixture": "2026-10-04 / Dominica XIX Post Pentecosten",
+      "witnessFile": "data/mass/golden-proper-witnesses.v1.json",
+      "quarantinedHost": "categpt.chat",
+      "closed": "2026-10-03"
+    },
+    {
+      "id": "GRADUAL_LIVE_ARCHITECTURE",
+      "status": "RECOVERED_CONTRACT_LOCKED__SOURCE_FIRST_LIVE_INTEGRATED",
+      "contract": "src/mass/reader-live-pre-gospel.js",
+      "gradualBlock": "AO.SM.B021",
+      "gradualLane": "MAIN_READER",
+      "alleluiaTractBlock": "AO.SM.B022",
+      "alleluiaTractLane": "SCHOLA",
+      "mundaStartBlock": "AO.SM.B023",
+      "mergeB021B022Allowed": false
+    },
+    {
+      "id": "LOW_MASS_NATIVE_STATE",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-form-state.js",
+      "source": "v43.57 B005 / v1.74c R02 recovered Low donor",
+      "canonicalCueStates": 275,
+      "responseDefault": "MINISTER_OR_SERVER__FAITHFUL_LANE_SUPPRESSED",
+      "schola": "STRUCTURALLY_ABSENT",
+      "scope": "reader cue/rail state only; lifecycle and form-specific transients separately gated"
+    },
+    {
+      "id": "SOLEMN_MASS_NATIVE_STATE",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-form-state.js",
+      "source": "shared Sung cue source + explicit v43.58 B006/R04 deltas",
+      "sacredMinisterDeltas": 19,
+      "paxTransferAuthority": "INDEPENDENT_RELEASE_BLOCKER_FAIL_CLOSED",
+      "scope": "reader cue/rail state only; lifecycle, Pax authority and form-specific transients separately gated"
+    },
+    {
+      "id": "FORM_SWITCH_NO_LEGACY_FALLBACK",
+      "status": "CERTIFIED",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "channels": [
+        "gesture",
+        "response",
+        "priestVoice",
+        "priestPosition",
+        "sacredMinister",
+        "priestAction"
+      ],
+      "postureException": "FOLLOW_CONGREGATION remains intentionally observational",
+      "transientPolicy": "LOW/SOLEMN bell and cinematic state are native-certified; canonical events unavailable to a form project an explicit certified absence and never borrow another form or legacy state."
+    },
+    {
+      "id": "FORM_PARITY_REGRESSION",
+      "status": "PASS",
+      "test": "tests/reader-form-state-parity.mjs"
+    },
+    {
+      "id": "FORM_TRANSIENT_PARITY",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-transients.js",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "guarantees": [
+        "Low and Solemn bell/elevation/action cinematics use native canonical cue projection",
+        "Low Communion-warning bell AO.SM.C0225 is a certified absence because MC-COM-185 is unavailable for LOW",
+        "Solemn Communion-warning bell remains conditional on faithful communicants and retains canonical legal status",
+        "form-unavailable events never borrow another form or legacy state",
+        "unknown unsupported forms remain fail-closed to the rollback path"
+      ]
+    },
+    {
+      "id": "FORM_LIFECYCLE_PARITY",
+      "status": "CERTIFIED",
+      "controller": "src/mass/form-lifecycle.js",
+      "planOwner": "src/mass/session-engine.js#compileMassPlan",
+      "runtimeOwner": "src/mass/browser-runtime.js",
+      "recoveredLineage": [
+        "v43.68 B016 lifecycle completion contract",
+        "v1.2 R02_LOW_MASS_LEONINE resolver",
+        "v1.4 R04_SOLEMN_TOPOLOGY_RECOVERY"
+      ],
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "guarantees": [
+        "Mass completion is a boundary after the plan-defined ending and is not fabricated by early reader exit",
+        "Leonine Prayers remain outside the canonical Mass graph and outside personal thanksgiving",
+        "ordinary Low Mass may offer Leonine Prayers as an optional customary post-Mass route",
+        "Sung and Solemn forms never route to Leonine Prayers",
+        "explicit following actions preempt the Leonine offer and own the immediate post-Mass handoff",
+        "successive non-final Masses, immediate homily/function, specified Dialogue-Mass exception and local suppression are explicit Low resolver conditions",
+        "Mass completion record carries date, form, presentation mode, celebration identity, Proper source, Communion state, intention reference and ending state into Give Thanks",
+        "manual Give Thanks entry cannot fabricate a Mass completion record"
+      ],
+      "test": "tests/form-lifecycle.mjs"
+    },
+    {
+      "id": "SOLEMN_PAX_TRANSFER_AUTHORITY",
+      "status": "CERTIFIED",
+      "canonicalEventId": "MC-COM-160",
+      "sourceMoment": "E55",
+      "readerCueId": "AO.SM.C0225",
+      "authorityFile": "data/mass/solemn-pax-authority.v1.json",
+      "primaryAuthority": "Missale Romanum 1962, Ritus servandus X.8",
+      "authorityTier": "A",
+      "readerOwner": "R18_SOLEMN_PAX_PRIMARY_SOURCE",
+      "guarantees": [
+        "Pax Domini MC-COM-100 remains distinct from the peace prayer MC-COM-150 and ministerial transfer MC-COM-160",
+        "the celebrant-to-deacon-to-subdeacon transfer is primary-rubric certified",
+        "the subdeacon continuation to choir/acolytes is primary-rubric certified",
+        "Requiem suppression of both the peace prayer and ministerial Pax remains plan-owned",
+        "Low Mass does not inherit the Solemn ministerial Pax",
+        "reader cue AO.SM.C0225 is no longer advisory or fail-closed for ordinary Solemn Mass"
+      ],
+      "test": "tests/solemn-pax-authority.mjs"
+    },
+    {
+      "id": "SPECIAL_STRUCTURE_PLAN_PROJECTION",
+      "status": "CERTIFIED_COMPILED_PLAN_STRUCTURE",
+      "controller": "src/mass/reader-special-structure.js",
+      "sourceRegistry": "data/mass/rite-overlay-registry.v1.json",
+      "sourceGraphs": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/mass/special-days-extension.v1.3.json"
+      ],
+      "guarantees": [
+        "compiled plan order preserved",
+        "Palm/Ash/Candlemas/Rogations handoff to Introit preserved",
+        "Asperges handoff to Foot cluster preserved",
+        "Requiem/Corpus/Holy Thursday ending deltas preserved",
+        "optional rites/processions never inferred from calendar date",
+        "distinct rites never inherit ordinary Mass assumptions",
+        "missing reader payload fails closed"
+      ]
+    },
+    {
+      "id": "ASPERGES_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "controller": "src/mass/reader-asperges.js",
+      "payload": "data/presentation/reader-asperges.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#ASP",
+      "sourceAuthority": "Missale Romanum 1962 Appendix II",
+      "sourceWitness": "https://www.clerus.org/bibliaclerusonline/de/gmt.htm",
+      "recoveredGraphRecords": 6,
+      "readerCards": 5,
+      "guarantees": [
+        "ordinary Asperges and Paschaltide Vidi aquam formulas are separate",
+        "Passiontide Gloria Patri omission is explicit",
+        "minister kneeling remains actor-scoped",
+        "faithful Sign of Cross requires ACTUALLY_SPRINKLED personal state",
+        "handoff returns to ordinary Mass Foot cluster",
+        "canonical Mass identity is not renumbered or mutated"
+      ],
+      "runtime": "src/mass/browser-runtime.js",
+      "runtimeGuarantees": [
+        "explicit compiled Asperges enters before ordinary Mass",
+        "Back/Next traverses Asperges independently of 30 Mass cards",
+        "ACTUALLY_SPRINKLED remains event/user-triggered and not card-visible",
+        "completion hands off to AO.CARD.001 Foot cluster",
+        "Back from first Mass card returns to Asperges handoff card"
+      ]
+    },
+    {
+      "id": "PLAN_AWARE_OBJECTIVE_RUNTIME",
+      "status": "CERTIFIED_LOW_SOLEMN_RUNTIME_OWNERSHIP",
+      "controller": "src/mass/reader-objective-runtime.js",
+      "engine": "buildPlannedObjectiveTraversal",
+      "runtimeConsumers": [
+        "src/mass/browser-runtime.js",
+        "src/mass/reader-native-preview.js"
+      ],
+      "forms": [
+        "LOW",
+        "SOLEMN"
+      ],
+      "missaCantataPolicy": "NOT_APPLICABLE__SEPARATE_CERTIFIED_GRAPH_PATH",
+      "sourceGraphMutation": false,
+      "guarantees": [
+        "MassPlan owns resolved objective context",
+        "plan-disabled blessing and Last Gospel events cannot own runtime state",
+        "ordinary peace prayer and Solemn ministerial Pax are independently suppressible",
+        "Pax Domini remains independent",
+        "canonical MC event graph remains immutable"
+      ],
+      "test": "tests/reader-objective-runtime.mjs"
+    },
+    {
+      "id": "CANON_SOURCE_STRUCTURE",
+      "status": "CERTIFIED_SOURCE_FIRST",
+      "file": "data/presentation/reader-canon-source-map.v1.json",
+      "segments": 14,
+      "blocks": [
+        "AO.SM.B047",
+        "AO.SM.B060"
+      ],
+      "events": 29,
+      "historical48RequiredForRelease": false
+    },
+    {
+      "id": "LIVE_SOURCE_STRUCTURE_INTEGRATION",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-live-source.js",
+      "modelOwner": "src/mass/reader-model.js",
+      "browserOwner": "src/mass/browser-runtime.js",
+      "nativePreviewOwner": "src/mass/reader-native-preview.js",
+      "totalLiveSteps": 39,
+      "retainedMacroSteps": 25,
+      "sourceFirstCanonSteps": 14,
+      "replacedCanonMacroSteps": 5,
+      "sourceMap": "data/presentation/reader-canon-source-map.v1.json",
+      "historical48RequiredForRelease": false,
+      "historicalLive20ReleaseAuthority": false,
+      "guarantees": [
+        "ordinary macro presentation remains stable outside the Canon",
+        "five legacy Canon macro cards are replaced by fourteen certified source prayer units",
+        "Canon blocks B047-B060 appear once each with non-overlapping cue/event ownership",
+        "Host words/elevation and Chalice words/elevation boundaries remain exact",
+        "Guide and Schola clocks remain keyed to their original canonical macro ownership",
+        "LIVE navigation never derives a boundary from the unrecovered historical v1.83 Canon split",
+        "missing certified Canon source map fails closed",
+        "SIMPLE and MISSAL remain 30-card projections"
+      ],
+      "tests": [
+        "tests/reader-model.mjs",
+        "tests/reader-structure.mjs",
+        "tests/reader-native-preview.mjs",
+        "tests/browser-runtime.mjs",
+        "tests/reader-canon-source-map.mjs"
+      ]
+    },
+    {
+      "id": "PALM_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "controller": "src/mass/reader-palm.js",
+      "payload": "data/presentation/reader-palm.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#PALM",
+      "sourceAuthority": "Missale Romanum 1962 — Dominica II Passionis seu in Palmis",
+      "primaryWitness": "https://missale.online/proprium/en/tempore/dominica_in_palmis",
+      "processionWitness": "https://laudemus.org/?celebration_id=485&date=2032-03-21&place_id=2",
+      "recoveredGraphRecords": 12,
+      "readerCards": 7,
+      "runtime": "src/mass/browser-runtime.js",
+      "guarantees": [
+        "Palm rite cards remain outside ordinary Mass identity",
+        "distribution posture is personal recipient state",
+        "pre-procession Gospel carries Gospel-cross cue",
+        "procession posture applies only to participants",
+        "completion renders Introit-only slice of AO.CARD.001",
+        "Prayers at the Foot cannot leak through combined first card",
+        "Back from Introit returns to Palm handoff card",
+        "Last Gospel navigation is suppressed when compiled plan forbids it"
+      ]
+    }
+  ],
+  "openBlockers": [
+    {
+      "id": "SPECIAL_STRUCTURE_PARITY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Asperges and Palm have source-pinned native payloads plus modular-runtime traversal contracts. Production native-preview mounting remains pending for both. Ashes, Candlemas, Rogations, Requiem/following actions, Good Friday and Easter Vigil still require native payload/rendering."
+    },
+    {
+      "id": "PHONE_BROWSER_ACCEPTANCE",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Real-browser phone-width/touch acceptance for focus, first/last cue ownership, Back/Next, translations and card transitions has not yet been recreated for R17."
+    }
+  ],
+  "certificationPolicy": {
+    "greenUnitCIIsNotReleaseCertification": true,
+    "requireAllBlockersClosed": true,
+    "requireAuthoritative48CardMap": false,
+    "requireRealBrowserPhoneAcceptance": true,
+    "requireLegacyDefaultUntilCertified": true,
+    "requireSourceFirstCanonMap": true,
+    "requireSourceFirstLiveStructure": true
+  }
+}

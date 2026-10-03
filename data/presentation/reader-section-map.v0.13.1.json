@@ -1,0 +1,749 @@
+{
+  "contract": "AO_MASS_READER_V2_SECTION_MAP",
+  "version": "0.13.1-prep",
+  "authority": "DISPLAY_GROUPING_ONLY",
+  "invariant": "MC event identity remains canonical. Section IDs never replace or advance canonical liturgical state.",
+  "ordinarySungSections": [
+    {
+      "sectionId": "AO.CARD.001",
+      "sequence": 1,
+      "part": "Preparatory Rites",
+      "name": "Introit & Preparatory Prayers",
+      "rubricKey": "AO.CARD.001",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-FOOT-010",
+        "MC-FOOT-020",
+        "MC-FOOT-030",
+        "MC-FOOT-040",
+        "MC-FOOT-050",
+        "MC-FOOT-060",
+        "MC-FOOT-070",
+        "MC-ALT-010",
+        "MC-ALT-020",
+        "MC-ALT-030",
+        "MC-ALT-040",
+        "MC-INT-010",
+        "MC-INT-020",
+        "MC-INT-030"
+      ],
+      "entryEventId": "MC-FOOT-010",
+      "exitEventId": "MC-INT-030",
+      "canonicalOrderStart": 6,
+      "canonicalOrderEnd": 19,
+      "phases": [
+        "PRAYERS_AT_FOOT",
+        "ALTAR",
+        "INTROIT"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.002",
+      "sequence": 2,
+      "part": "Mass of the Catechumens",
+      "name": "Kyrie",
+      "rubricKey": "AO.CARD.002",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-KYR-010",
+        "MC-KYR-020",
+        "MC-KYR-030"
+      ],
+      "entryEventId": "MC-KYR-010",
+      "exitEventId": "MC-KYR-030",
+      "canonicalOrderStart": 20,
+      "canonicalOrderEnd": 22,
+      "phases": [
+        "KYRIE"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.003",
+      "sequence": 3,
+      "part": "Mass of the Catechumens",
+      "name": "Gloria",
+      "rubricKey": "AO.CARD.003",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-GLR-010",
+        "MC-GLR-020",
+        "MC-GLR-030",
+        "MC-GLR-040",
+        "MC-GLR-050",
+        "MC-GLR-060"
+      ],
+      "entryEventId": "MC-GLR-010",
+      "exitEventId": "MC-GLR-060",
+      "canonicalOrderStart": 23,
+      "canonicalOrderEnd": 28,
+      "phases": [
+        "GLORIA"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.004",
+      "sequence": 4,
+      "part": "Mass of the Catechumens",
+      "name": "Collect",
+      "rubricKey": "AO.CARD.004",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-COL-010",
+        "MC-COL-020",
+        "MC-COL-030"
+      ],
+      "entryEventId": "MC-COL-010",
+      "exitEventId": "MC-COL-030",
+      "canonicalOrderStart": 29,
+      "canonicalOrderEnd": 31,
+      "phases": [
+        "COLLECT"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.005",
+      "sequence": 5,
+      "part": "Mass of the Catechumens",
+      "name": "Epistle / Lesson",
+      "rubricKey": "AO.CARD.005",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-EPI-010",
+        "MC-EPI-020",
+        "MC-EPI-030"
+      ],
+      "entryEventId": "MC-EPI-010",
+      "exitEventId": "MC-EPI-030",
+      "canonicalOrderStart": 32,
+      "canonicalOrderEnd": 34,
+      "phases": [
+        "EPISTLE"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.006",
+      "sequence": 6,
+      "part": "Mass of the Catechumens",
+      "name": "Gradual · Alleluia / Tract / Sequence",
+      "rubricKey": "AO.CARD.006",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-CHANT-010",
+        "MC-CHANT-020",
+        "MC-CHANT-030",
+        "MC-CHANT-040",
+        "MC-CHANT-050"
+      ],
+      "entryEventId": "MC-CHANT-010",
+      "exitEventId": "MC-CHANT-050",
+      "canonicalOrderStart": 35,
+      "canonicalOrderEnd": 39,
+      "phases": [
+        "CHANT"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.007",
+      "sequence": 7,
+      "part": "Mass of the Catechumens",
+      "name": "Holy Gospel",
+      "rubricKey": "AO.CARD.007",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-GSP-010",
+        "MC-GSP-020",
+        "MC-GSP-030",
+        "MC-GSP-040",
+        "MC-GSP-050",
+        "MC-GSP-060",
+        "MC-GSP-070"
+      ],
+      "entryEventId": "MC-GSP-010",
+      "exitEventId": "MC-GSP-070",
+      "canonicalOrderStart": 40,
+      "canonicalOrderEnd": 46,
+      "phases": [
+        "GOSPEL"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.008",
+      "sequence": 8,
+      "part": "Mass of the Catechumens",
+      "name": "Sermon / Homily",
+      "rubricKey": "AO.CARD.008",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-HOM-010"
+      ],
+      "entryEventId": "MC-HOM-010",
+      "exitEventId": "MC-HOM-010",
+      "canonicalOrderStart": 47,
+      "canonicalOrderEnd": 47,
+      "phases": [
+        "HOMILY"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.009",
+      "sequence": 9,
+      "part": "Mass of the Catechumens",
+      "name": "Credo",
+      "rubricKey": "AO.CARD.009",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-CRD-010",
+        "MC-CRD-020",
+        "MC-CRD-025",
+        "MC-CRD-030",
+        "MC-CRD-040",
+        "MC-CRD-045",
+        "MC-CRD-050",
+        "MC-CRD-060",
+        "MC-CRD-070"
+      ],
+      "entryEventId": "MC-CRD-010",
+      "exitEventId": "MC-CRD-070",
+      "canonicalOrderStart": 48,
+      "canonicalOrderEnd": 56,
+      "phases": [
+        "CREDO"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.010",
+      "sequence": 10,
+      "part": "Mass of the Faithful",
+      "name": "Offertory",
+      "rubricKey": "AO.CARD.010",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-OFF-010",
+        "MC-OFF-020",
+        "MC-OFF-030",
+        "MC-OFF-040",
+        "MC-OFF-050",
+        "MC-OFF-060",
+        "MC-OFF-070",
+        "MC-OFF-080",
+        "MC-OFF-090",
+        "MC-OFF-100",
+        "MC-OFF-110",
+        "MC-OFF-120",
+        "MC-OFF-130",
+        "MC-OFF-140",
+        "MC-OFF-150"
+      ],
+      "entryEventId": "MC-OFF-010",
+      "exitEventId": "MC-OFF-150",
+      "canonicalOrderStart": 57,
+      "canonicalOrderEnd": 71,
+      "phases": [
+        "OFFERTORY"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.011",
+      "sequence": 11,
+      "part": "Mass of the Faithful",
+      "name": "Orate fratres & Secret",
+      "rubricKey": "AO.CARD.011",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-OFF-160",
+        "MC-OFF-170",
+        "MC-OFF-180",
+        "MC-SEC-010",
+        "MC-SEC-030",
+        "MC-SEC-040",
+        "MC-SEC-050"
+      ],
+      "entryEventId": "MC-OFF-160",
+      "exitEventId": "MC-SEC-050",
+      "canonicalOrderStart": 72,
+      "canonicalOrderEnd": 78,
+      "phases": [
+        "OFFERTORY",
+        "SECRET"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.012",
+      "sequence": 12,
+      "part": "Mass of the Faithful",
+      "name": "Preface",
+      "rubricKey": "AO.CARD.012",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-PREF-010",
+        "MC-PREF-020",
+        "MC-PREF-030",
+        "MC-PREF-040",
+        "MC-PREF-050"
+      ],
+      "entryEventId": "MC-PREF-010",
+      "exitEventId": "MC-PREF-050",
+      "canonicalOrderStart": 79,
+      "canonicalOrderEnd": 83,
+      "phases": [
+        "PREFACE"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.013",
+      "sequence": 13,
+      "part": "Canon of the Mass",
+      "name": "Sanctus · Benedictus",
+      "rubricKey": "AO.CARD.013",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-SAN-010",
+        "MC-SAN-020",
+        "MC-SAN-030",
+        "MC-SAN-040",
+        "MC-SAN-050",
+        "MC-SAN-060"
+      ],
+      "entryEventId": "MC-SAN-010",
+      "exitEventId": "MC-SAN-060",
+      "canonicalOrderStart": 84,
+      "canonicalOrderEnd": 89,
+      "phases": [
+        "SANCTUS"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.014",
+      "sequence": 14,
+      "part": "Canon of the Mass",
+      "name": "Canon before the Consecration",
+      "rubricKey": "AO.CARD.014",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-CAN-010",
+        "MC-CAN-020",
+        "MC-CAN-030",
+        "MC-CAN-040",
+        "MC-CAN-050",
+        "MC-CAN-060",
+        "MC-CAN-070",
+        "MC-CAN-080"
+      ],
+      "entryEventId": "MC-CAN-010",
+      "exitEventId": "MC-CAN-080",
+      "canonicalOrderStart": 90,
+      "canonicalOrderEnd": 97,
+      "phases": [
+        "CANON"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.015",
+      "sequence": 15,
+      "part": "Canon of the Mass",
+      "name": "Consecration of the Sacred Host",
+      "rubricKey": "AO.CARD.015",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-CNS-010",
+        "MC-CNS-020",
+        "MC-CNS-030",
+        "MC-CNS-040",
+        "MC-CNS-060"
+      ],
+      "entryEventId": "MC-CNS-010",
+      "exitEventId": "MC-CNS-060",
+      "canonicalOrderStart": 98,
+      "canonicalOrderEnd": 102,
+      "phases": [
+        "CONSECRATION"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.016",
+      "sequence": 16,
+      "part": "Canon of the Mass",
+      "name": "Consecration of the Chalice",
+      "rubricKey": "AO.CARD.016",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-CNS-080",
+        "MC-CNS-090",
+        "MC-CNS-100",
+        "MC-CNS-110",
+        "MC-CNS-130"
+      ],
+      "entryEventId": "MC-CNS-080",
+      "exitEventId": "MC-CNS-130",
+      "canonicalOrderStart": 103,
+      "canonicalOrderEnd": 107,
+      "phases": [
+        "CONSECRATION"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.017",
+      "sequence": 17,
+      "part": "Canon of the Mass",
+      "name": "Canon after the Consecration",
+      "rubricKey": "AO.CARD.017",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-CAN-100",
+        "MC-CAN-110",
+        "MC-CAN-120",
+        "MC-CAN-130",
+        "MC-CAN-140",
+        "MC-CAN-150",
+        "MC-CAN-160"
+      ],
+      "entryEventId": "MC-CAN-100",
+      "exitEventId": "MC-CAN-160",
+      "canonicalOrderStart": 108,
+      "canonicalOrderEnd": 114,
+      "phases": [
+        "CANON"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.018",
+      "sequence": 18,
+      "part": "Canon of the Mass",
+      "name": "Canon Conclusion · Minor Elevation",
+      "rubricKey": "AO.CARD.018",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-CAN-170",
+        "MC-CAN-180",
+        "MC-CAN-190",
+        "MC-CAN-200"
+      ],
+      "entryEventId": "MC-CAN-170",
+      "exitEventId": "MC-CAN-200",
+      "canonicalOrderStart": 115,
+      "canonicalOrderEnd": 118,
+      "phases": [
+        "CANON"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.019",
+      "sequence": 19,
+      "part": "Communion Rite",
+      "name": "Pater noster",
+      "rubricKey": "AO.CARD.019",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-COM-010",
+        "MC-COM-020",
+        "MC-COM-030",
+        "MC-COM-040"
+      ],
+      "entryEventId": "MC-COM-010",
+      "exitEventId": "MC-COM-040",
+      "canonicalOrderStart": 119,
+      "canonicalOrderEnd": 122,
+      "phases": [
+        "COMMUNION_RITE"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.020",
+      "sequence": 20,
+      "part": "Communion Rite",
+      "name": "Libera nos · Fraction · Pax Domini",
+      "rubricKey": "AO.CARD.020",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-COM-050",
+        "MC-COM-060",
+        "MC-COM-070",
+        "MC-COM-080",
+        "MC-COM-090",
+        "MC-COM-100",
+        "MC-COM-110",
+        "MC-COM-120"
+      ],
+      "entryEventId": "MC-COM-050",
+      "exitEventId": "MC-COM-120",
+      "canonicalOrderStart": 123,
+      "canonicalOrderEnd": 130,
+      "phases": [
+        "COMMUNION_RITE"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.021",
+      "sequence": 21,
+      "part": "Communion Rite",
+      "name": "Agnus Dei",
+      "rubricKey": "AO.CARD.021",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-COM-130",
+        "MC-COM-140"
+      ],
+      "entryEventId": "MC-COM-130",
+      "exitEventId": "MC-COM-140",
+      "canonicalOrderStart": 131,
+      "canonicalOrderEnd": 132,
+      "phases": [
+        "COMMUNION_RITE"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.022",
+      "sequence": 22,
+      "part": "Communion Rite",
+      "name": "Prayers before Communion",
+      "rubricKey": "AO.CARD.022",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-COM-150",
+        "MC-COM-160",
+        "MC-COM-170",
+        "MC-COM-180"
+      ],
+      "entryEventId": "MC-COM-150",
+      "exitEventId": "MC-COM-180",
+      "canonicalOrderStart": 133,
+      "canonicalOrderEnd": 136,
+      "phases": [
+        "COMMUNION_RITE"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.023",
+      "sequence": 23,
+      "part": "Communion Rite",
+      "name": "Communion of the Priest",
+      "rubricKey": "AO.CARD.023",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-COM-185",
+        "MC-COM-190",
+        "MC-COM-200",
+        "MC-COM-210",
+        "MC-COM-220",
+        "MC-COM-230",
+        "MC-COM-240",
+        "MC-COM-250"
+      ],
+      "entryEventId": "MC-COM-185",
+      "exitEventId": "MC-COM-250",
+      "canonicalOrderStart": 137,
+      "canonicalOrderEnd": 144,
+      "phases": [
+        "COMMUNION_RITE"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.024",
+      "sequence": 24,
+      "part": "Communion Rite",
+      "name": "Ecce Agnus Dei & Faithful Preparation",
+      "rubricKey": "AO.CARD.024",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-HIST-010",
+        "MC-LOCAL-COM-010",
+        "MC-LOCAL-COM-020",
+        "MC-LOCAL-COM-030",
+        "MC-COM-260",
+        "MC-COM-270",
+        "MC-COM-280",
+        "MC-COM-290"
+      ],
+      "entryEventId": "MC-HIST-010",
+      "exitEventId": "MC-COM-290",
+      "canonicalOrderStart": 145,
+      "canonicalOrderEnd": 152,
+      "phases": [
+        "COMMUNION_RITE",
+        "COMMUNION_OF_FAITHFUL"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.025",
+      "sequence": 25,
+      "part": "Communion Rite",
+      "name": "Communion of the Faithful",
+      "rubricKey": "AO.CARD.025",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-COM-300",
+        "MC-COM-305",
+        "MC-COM-310",
+        "MC-COM-315",
+        "MC-COM-320"
+      ],
+      "entryEventId": "MC-COM-300",
+      "exitEventId": "MC-COM-320",
+      "canonicalOrderStart": 153,
+      "canonicalOrderEnd": 157,
+      "phases": [
+        "COMMUNION_OF_FAITHFUL"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.026",
+      "sequence": 26,
+      "part": "Communion Rite",
+      "name": "Ablutions & Communion Antiphon",
+      "rubricKey": "AO.CARD.026",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-ABL-010",
+        "MC-ABL-020",
+        "MC-ABL-030",
+        "MC-ABL-040",
+        "MC-ABL-050",
+        "MC-ABL-060",
+        "MC-ABL-070",
+        "MC-END-010",
+        "MC-END-020"
+      ],
+      "entryEventId": "MC-ABL-010",
+      "exitEventId": "MC-END-020",
+      "canonicalOrderStart": 158,
+      "canonicalOrderEnd": 166,
+      "phases": [
+        "ABLUTIONS",
+        "CONCLUSION"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.027",
+      "sequence": 27,
+      "part": "Communion Rite",
+      "name": "Postcommunion",
+      "rubricKey": "AO.CARD.027",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-END-030",
+        "MC-END-040",
+        "MC-END-050",
+        "MC-END-060"
+      ],
+      "entryEventId": "MC-END-030",
+      "exitEventId": "MC-END-060",
+      "canonicalOrderStart": 167,
+      "canonicalOrderEnd": 170,
+      "phases": [
+        "CONCLUSION"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.028",
+      "sequence": 28,
+      "part": "Conclusion",
+      "name": "Dismissal",
+      "rubricKey": "AO.CARD.028",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-END-070",
+        "MC-END-080",
+        "MC-END-090",
+        "MC-END-100"
+      ],
+      "entryEventId": "MC-END-070",
+      "exitEventId": "MC-END-100",
+      "canonicalOrderStart": 171,
+      "canonicalOrderEnd": 174,
+      "phases": [
+        "CONCLUSION"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.029",
+      "sequence": 29,
+      "part": "Conclusion",
+      "name": "Placeat & Final Blessing",
+      "rubricKey": "AO.CARD.029",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-END-110",
+        "MC-END-120",
+        "MC-END-130",
+        "MC-END-140"
+      ],
+      "entryEventId": "MC-END-110",
+      "exitEventId": "MC-END-140",
+      "canonicalOrderStart": 175,
+      "canonicalOrderEnd": 178,
+      "phases": [
+        "CONCLUSION"
+      ]
+    },
+    {
+      "sectionId": "AO.CARD.030",
+      "sequence": 30,
+      "part": "Conclusion",
+      "name": "Last Gospel",
+      "rubricKey": "AO.CARD.030",
+      "canonicalAuthority": false,
+      "visibility": "ANY_ACTIVE_EVENT",
+      "eventIds": [
+        "MC-END-150",
+        "MC-LOCAL-END-010",
+        "MC-END-160",
+        "MC-END-170",
+        "MC-END-180",
+        "MC-END-190",
+        "MC-LOCAL-END-020",
+        "MC-END-200",
+        "MC-END-210",
+        "MC-END-220",
+        "MC-END-230"
+      ],
+      "entryEventId": "MC-END-150",
+      "exitEventId": "MC-END-230",
+      "canonicalOrderStart": 179,
+      "canonicalOrderEnd": 189,
+      "phases": [
+        "CONCLUSION"
+      ]
+    }
+  ],
+  "preMassOverlays": [
+    {
+      "sectionId": "AO.OVERLAY.ASP.001",
+      "rubricKey": "PRE.ASPERGES",
+      "runtimeBinding": "SPECIAL_OVERLAY",
+      "ordinaryRuntimeHints": [
+        "MC-PREP-040",
+        "MC-PREP-050"
+      ],
+      "note": "Production integration must bind the fuller Asperges special-overlay graph; the ordinary v0.35 runtime hints do not model the full concluding versicles/collect sequence."
+    }
+  ]
+}

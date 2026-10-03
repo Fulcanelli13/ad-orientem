@@ -33,6 +33,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         shell: bash
         run: |
+          if grep -q 'data-ao-r17-browser-entry' index.html 2>/dev/null; then
+            echo "R17 browser entry is mounted; refusing to overwrite migrated index.html with frozen v43.33"
+            exit 0
+          fi
           cp legacy/Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html index.html
           if git diff --quiet -- index.html; then
             echo "index.html already matches verified v43.33"

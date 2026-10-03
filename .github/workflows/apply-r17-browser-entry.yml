@@ -1,0 +1,39 @@
+name: Apply R17 browser entry
+
+on:
+  push:
+    branches:
+      - implementation/r17-mass-convergence-mainline
+    paths:
+      - "src/mass/browser-entry.js"
+      - "tools/apply-r17-browser-entry.py"
+      - ".github/workflows/apply-r17-browser-entry.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: implementation/r17-mass-convergence-mainline
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Inject R17 browser entry into monolith
+        run: python tools/apply-r17-browser-entry.py index.html
+      - name: Commit patched index if changed
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "index.html already patched"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "R17: mount browser entry in production monolith [skip ci]"
+          git pull --rebase origin implementation/r17-mass-convergence-mainline
+          git push origin HEAD:implementation/r17-mass-convergence-mainline

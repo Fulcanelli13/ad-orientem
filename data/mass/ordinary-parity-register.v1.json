@@ -1,0 +1,112 @@
+{
+  "version": "1.2.0",
+  "status": "R17_CANONICAL_CORRECTIONS_APPLIED",
+  "runtimeReference": "v1.83 MERGE GATE",
+  "authorityRule": "Typography is evidence only. Gesture/posture execution remains in canonical cue/state data.",
+  "acceptance": "Reference text, exact cross anchor/position and section boundaries must match canonical data, or the discrepancy remains a blocking correction candidate.",
+  "entries": [
+    {
+      "id": "SRC-PARITY-001",
+      "blockId": "AO.SM.B046",
+      "cueId": "AO.SM.C0148",
+      "title": "Sanctus / Benedictus — printed cross",
+      "canonicalTextFragment": "Benedíctus ✠ qui venit in nómine Dómini.",
+      "referenceTextFragment": "Benedíctus ✠ qui venit in nómine Dómini.",
+      "canonicalCrossAnchors": [
+        "Benedíctus|qui venit"
+      ],
+      "referenceCrossAnchors": [
+        "Benedíctus|qui venit"
+      ],
+      "canonicalSectionBoundaries": [
+        "BENEDICTUS"
+      ],
+      "referenceSectionBoundaries": [
+        "BENEDICTUS"
+      ],
+      "authorityVerdict": "CORRECTED_ON_R17_CANONICAL_OVERLAY",
+      "action": "Restore the printed cross in the canonical text at Benedictus. Preserve existing gesture cue/action ownership; do not create a second gesture event.",
+      "runtimeImpact": "TEXT_ONLY_TRIGGER_NORMALIZATION",
+      "sourceRole": "1962_PRIMARY_PLUS_EDITORIAL_QA",
+      "unexplainedDiscrepancies": [],
+      "correctionLayer": "data/mass/canonical-text-corrections.v1.json"
+    },
+    {
+      "id": "SRC-PARITY-002",
+      "blockId": "AO.SM.B047",
+      "cueId": "AO.SM.C0153",
+      "title": "Te igitur — bishop placeholder",
+      "canonicalTextFragment": "una cum fámulo tuo Papa nostro N. et Antístite nostro N. et ómnibus orthodóxis",
+      "referenceTextFragment": "una cum fámulo tuo Papa nostro N. et Antístite nostro N. et ómnibus orthodóxis",
+      "canonicalCrossAnchors": [],
+      "referenceCrossAnchors": [],
+      "canonicalSectionBoundaries": [
+        "TE_IGITUR_PRAYER_FOR_CHURCH"
+      ],
+      "referenceSectionBoundaries": [
+        "TE_IGITUR_PRAYER_FOR_CHURCH"
+      ],
+      "authorityVerdict": "CORRECTED_ON_R17_CANONICAL_OVERLAY",
+      "action": "Restore the bishop placeholder N. after Antístite nostro in canonical Latin text. No ceremonial-state change.",
+      "runtimeImpact": "TEXT_ONLY",
+      "sourceRole": "1962_PRIMARY_PLUS_EDITORIAL_QA",
+      "unexplainedDiscrepancies": [],
+      "correctionLayer": "data/mass/canonical-text-corrections.v1.json"
+    },
+    {
+      "id": "SRC-PARITY-003",
+      "blockId": "AO.SM.B057",
+      "cueId": "AO.SM.C0194",
+      "title": "Memento of the Dead — missing conjunction",
+      "canonicalTextFragment": "locum refrigérii, lucis et pacis ut indúlgeas",
+      "referenceTextFragment": "locum refrigérii, lucis et pacis ut indúlgeas",
+      "canonicalCrossAnchors": [],
+      "referenceCrossAnchors": [],
+      "canonicalSectionBoundaries": [
+        "MEMENTO_DEAD_RESUMED_PRAYER"
+      ],
+      "referenceSectionBoundaries": [
+        "MEMENTO_DEAD_RESUMED_PRAYER"
+      ],
+      "authorityVerdict": "CORRECTED_ON_R17_CANONICAL_OVERLAY",
+      "action": "Restore et between lucis and pacis in canonical Latin text. No ceremonial-state change.",
+      "runtimeImpact": "TEXT_ONLY",
+      "sourceRole": "1962_PRIMARY_PLUS_EDITORIAL_QA",
+      "unexplainedDiscrepancies": [],
+      "correctionLayer": "data/mass/canonical-text-corrections.v1.json"
+    },
+    {
+      "id": "P1-011",
+      "blockId": "AO.SM.B007",
+      "cueId": "AO.SM.C0023",
+      "title": "Confiteor of Ministers — accent normalization",
+      "canonicalTextFragment": "oráre pro me",
+      "referenceTextFragment": "oráre pro me",
+      "canonicalCrossAnchors": [],
+      "referenceCrossAnchors": [],
+      "canonicalSectionBoundaries": [
+        "CONFITEOR_MINISTERS"
+      ],
+      "referenceSectionBoundaries": [
+        "CONFITEOR_MINISTERS"
+      ],
+      "authorityVerdict": "CORRECTED_ON_R17_CANONICAL_OVERLAY",
+      "action": "Normalize orare to oráre; no ritual-state change.",
+      "runtimeImpact": "TEXT_NORMALIZATION",
+      "sourceRole": "1962_PRIMARY_PLUS_EDITORIAL_QA",
+      "correctionLayer": "data/mass/canonical-text-corrections.v1.json",
+      "unexplainedDiscrepancies": []
+    }
+  ],
+  "rangeFindings": [
+    {
+      "id": "SRC-CANON-CROSS-RANGE-001",
+      "scope": "Te igitur through Per ipsum",
+      "finding": "Cross counts were reported as matching the 1962 form in the active source-audit lane.",
+      "status": "COUNT_MATCH_REPORTED_POSITION_ROWS_PENDING",
+      "mergeEffect": "Does not close G1 until exact block/cue position rows are populated."
+    }
+  ],
+  "note": "Reconciled normative Ordinary rows represented here are corrected on the R17 canonical text overlay before reader projection. Optional/local B077 shares P1-011 normalization but is tracked outside normative G1.",
+  "correctionLayer": "data/mass/canonical-text-corrections.v1.json"
+}
