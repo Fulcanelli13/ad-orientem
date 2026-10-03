@@ -50,9 +50,12 @@ function graphRecords(id,sources){
   return freeze([...rows]);
 }
 
+const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM"]);
+
 function segment(id,lane,sources,extra={}){
   const meta=sources.registry?.overlays?.[id]??null;
   const records=graphRecords(id,sources);
+  const planOwned=lane==="MASS_OVERLAY" && PLAN_OWNED_MASS_OVERLAYS.has(id);
   return freeze({
     id,
     lane,
@@ -61,8 +64,9 @@ function segment(id,lane,sources,extra={}){
     registryStatus:meta?.status??null,
     recordCount:records.length,
     sourceIds:freeze(records.map(x=>x.id)),
-    readerPayload:"STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
-    renderable:false,
+    readerPayload:planOwned ? "PLAN_APPLIED_TO_ORDINARY_READER" : "STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
+    renderable:planOwned,
+    planOwned,
     ...extra,
   });
 }
@@ -154,6 +158,7 @@ export function projectSpecialStructure(prepared,{registry,extension,core}={}){
   ];
 
   const special=segments.filter(x=>x.id!=="ORDINARY_MASS");
+  const blockingSpecial=special.filter(x=>x.renderable!==true);
   return freeze({
     schema:"ao-r19-special-structure-projection-v1",
     audit,
@@ -161,9 +166,10 @@ export function projectSpecialStructure(prepared,{registry,extension,core}={}){
     ordinaryMassGraphActive:true,
     segments:freeze(segments),
     specialSegmentCount:special.length,
-    readerPayloadComplete:special.length===0,
-    releaseSupport:special.length===0,
-    reason:special.length?"SPECIAL_RITE_READER_PAYLOAD_REQUIRED":null,
+    blockingSpecialSegmentCount:blockingSpecial.length,
+    readerPayloadComplete:blockingSpecial.length===0,
+    releaseSupport:blockingSpecial.length===0,
+    reason:blockingSpecial.length?"SPECIAL_RITE_READER_PAYLOAD_REQUIRED":null,
     massEntry:plan.massEntry??"FOOT_CLUSTER",
     ending:freeze({
       dismissal:plan.dismissal??null,
