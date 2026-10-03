@@ -66,6 +66,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       alternate:p.alternate == null ? null : String(p.alternate),
       replaceOnToggle:p.replaceOnToggle === true && p.alternate != null,
       active:p.active === true,
+      sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
 
@@ -268,6 +269,7 @@ export function createReaderDomAdapter({
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
           node.dataset.active=String(p.active);
+          if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
           if(p.replaceOnToggle && p.alternate){
             node.dataset.translateToggle="true";
             node.dataset.primaryText=p.primary;
