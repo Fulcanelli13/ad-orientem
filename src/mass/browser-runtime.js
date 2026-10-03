@@ -4,6 +4,7 @@ import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { structureSupport } from "./reader-structure.js";
 import { createAspergesReaderController, loadAspergesReaderData } from "./reader-asperges.js";
+import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 
@@ -12,6 +13,7 @@ export function createBrowserMassRuntime({
   iconResolver = null, loadPresentationData = loadReaderPresentationData,
   eventData = null, loadEventData = loadCanonicalReaderEvents,
   loadAspergesData = loadAspergesReaderData, aspergesRiteContext = null,
+  loadPalmData = loadPalmReaderData,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
 } = {}) {
@@ -23,6 +25,8 @@ export function createBrowserMassRuntime({
   let objectiveRuntime = null;
   let aspergesController = null;
   let inAsperges = false;
+  let palmController = null;
+  let inPalm = false;
 
 
   function aspergesMoment(){
@@ -51,6 +55,46 @@ export function createBrowserMassRuntime({
     currentSectionId=null;
     reader.renderMoment(moment);
     return moment;
+  }
+
+
+  function palmMoment(){
+    const state=palmController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:"Palm Sunday",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        sourceCueIds:[row.sourceRecordId].filter(Boolean),
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Palm Rite",
+      posture:state.recipientPosture
+        ? {label:state.recipientPosture}
+        : card.posture && !["LOCAL","ORDINARY_PROFILE"].includes(card.posture) ? {label:card.posture} : null,
+      gesture:card.gesture ? {label:card.gesture} : null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showPalm(){
+    const moment=palmMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
+  function introitOnlyCard(){
+    const card=readerModel?.cardBySequence?.(1);
+    if(!card)return null;
+    const block=card.blocks?.find?.(x=>x.blockId==="AO.SM.B014");
+    if(!block || block.firstParagraphIndex==null || !block.paragraphCount)throw new Error("Palm Introit handoff cannot resolve AO.SM.B014");
+    const paragraphs=card.paragraphs.slice(block.firstParagraphIndex,block.firstParagraphIndex+block.paragraphCount);
+    return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),palmIntroitOnly:true});
   }
 
   function cardMoment(card, extra = {}) {
@@ -84,6 +128,20 @@ export function createBrowserMassRuntime({
   }
 
   function move(direction) {
+    if(direction==="next" && inPalm && palmController){
+      const state=palmController.project();
+      if(state.atEnd){
+        inPalm=false;
+        return showCard(introitOnlyCard());
+      }
+      palmController.next();
+      return showPalm();
+    }
+    if(direction==="previous" && inPalm && palmController){
+      const state=palmController.project();
+      if(!state.atStart)palmController.previous();
+      return showPalm();
+    }
     if(direction==="next" && inAsperges && aspergesController){
       const state=aspergesController.project();
       if(state.atEnd){
@@ -99,6 +157,11 @@ export function createBrowserMassRuntime({
       return showAsperges();
     }
     if(!readerModel || !currentSectionId)return null;
+    if(direction==="previous" && palmController && currentSectionId===readerModel.cardBySequence(1)?.sectionId){
+      inPalm=true;
+      palmController.goTo("PALM-R07");
+      return showPalm();
+    }
     if(direction==="previous" && aspergesController && currentSectionId===readerModel.cardBySequence(1)?.sectionId){
       inAsperges=true;
       aspergesController.goTo("ASP-R05");
@@ -107,6 +170,9 @@ export function createBrowserMassRuntime({
     const card=direction==="previous"
       ? readerModel.previousCard(currentSectionId)
       : readerModel.nextCard(currentSectionId);
+    if(direction==="next" && card?.sequence===30 && currentPrepared?.session?.plan?.normalLastGospel===false){
+      return readerModel.cards.find(x=>x.sectionId===currentSectionId)??null;
+    }
     return showCard(card);
   }
 
@@ -163,11 +229,13 @@ export function createBrowserMassRuntime({
         throw new Error(structuralSupport.reason || "R17 browser reader structure is not certified");
       }
       const hasAsperges=(prepared?.session?.plan?.precedingGraphs??[]).includes("ASPERGES");
+      const hasPalm=(prepared?.session?.plan?.precedingGraphs??[]).includes("PALM");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,events]=await Promise.all([
+      const [data,aspergesData,palmData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
+        hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -186,8 +254,13 @@ export function createBrowserMassRuntime({
       currentSectionId = null;
       aspergesController=hasAsperges ? createAspergesReaderController({graph:aspergesData?.graph,payload:aspergesData?.payload,riteContext:aspergesRiteContext??{}}) : null;
       inAsperges=Boolean(aspergesController);
+      palmController=hasPalm ? createPalmReaderController({graph:palmData?.graph,payload:palmData?.payload}) : null;
+      inPalm=Boolean(palmController);
+      if(inAsperges && inPalm)throw new Error("Multiple preceding rite readers are not yet composable");
       reader.mount(prepared);
-      if(inAsperges)showAsperges(); else showCard(model.cardBySequence(1));
+      if(inPalm)showPalm();
+      else if(inAsperges)showAsperges();
+      else showCard(model.cardBySequence(1));
       onReaderMounted?.(prepared, reader, model);
     },
   });
@@ -200,6 +273,8 @@ export function createBrowserMassRuntime({
     objectiveRuntime = null;
     aspergesController = null;
     inAsperges = false;
+    palmController = null;
+    inPalm = false;
   }
 
   return Object.freeze({
@@ -219,6 +294,8 @@ export function createBrowserMassRuntime({
     getObjectiveRuntime: () => objectiveRuntime,
     getCurrentSectionId: () => currentSectionId,
     getAspergesState: () => aspergesController?.project?.() ?? null,
+    getPalmState: () => palmController?.project?.() ?? null,
+    setPalmRecipientState: value => { if(!palmController)return null; palmController.setRecipientState(value); return inPalm ? showPalm() : palmController.project(); },
     markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },
   });
 }
