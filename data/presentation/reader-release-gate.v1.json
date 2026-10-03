@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -159,6 +159,25 @@
       "id": "FORM_PARITY_REGRESSION",
       "status": "PASS",
       "test": "tests/reader-form-state-parity.mjs"
+    },
+    {
+      "id": "SPECIAL_STRUCTURE_PLAN_PROJECTION",
+      "status": "CERTIFIED_COMPILED_PLAN_STRUCTURE",
+      "controller": "src/mass/reader-special-structure.js",
+      "sourceRegistry": "data/mass/rite-overlay-registry.v1.json",
+      "sourceGraphs": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/mass/special-days-extension.v1.3.json"
+      ],
+      "guarantees": [
+        "compiled plan order preserved",
+        "Palm/Ash/Candlemas/Rogations handoff to Introit preserved",
+        "Asperges handoff to Foot cluster preserved",
+        "Requiem/Corpus/Holy Thursday ending deltas preserved",
+        "optional rites/processions never inferred from calendar date",
+        "distinct rites never inherit ordinary Mass assumptions",
+        "missing reader payload fails closed"
+      ]
     }
   ],
   "openBlockers": [
@@ -180,7 +199,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Preceding rites, following actions, distinct rites and structural overlays are not yet native-reader certified."
+      "detail": "Compiled special-structure plan projection is certified. Remaining blocker is native reader payload/rendering for recovered preceding rites, overlays, following actions, and distinct rites; graph metadata may not be substituted for rite text."
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
