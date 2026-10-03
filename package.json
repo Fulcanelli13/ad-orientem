@@ -8,6 +8,7 @@
     "test:b006": "node tests/b006-solemn-objective.mjs",
     "test:b007": "node tests/b007-mass-invariants.mjs",
     "test:r17": "node tests/r17-convergence.mjs",
-    "test": "npm run test:wave1 && npm run test:b005 && npm run test:b006 && npm run test:b007 && npm run test:r17"
+    "test": "npm run test:wave1 && npm run test:b005 && npm run test:b006 && npm run test:b007 && npm run test:r17 && npm run test:reader",
+    "test:reader": "node tests/reader-contract.mjs"
   }
 }
