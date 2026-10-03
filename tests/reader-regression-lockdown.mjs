@@ -9,7 +9,7 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"BLOCKED_PENDING_SPECIAL_STRUCTURE_AND_PHONE_ACCEPTANCE");
+assert.equal(release.status,"BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY");
 assert.equal(release.productionDefault,"LEGACY");
 assert.equal(resolveReaderUiMode({}),"LEGACY","reader default changed before release certification");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
@@ -51,7 +51,6 @@ assert.equal(support.reason,null);
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "SPECIAL_STRUCTURE_PARITY",
-  "PHONE_BROWSER_ACCEPTANCE",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
 assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
 for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
@@ -68,6 +67,12 @@ assert.equal(liveStructure?.sourceFirstCanonSteps,14);
 assert.equal(liveStructure?.replacedCanonMacroSteps,5);
 assert.equal(liveStructure?.historical48RequiredForRelease,false);
 assert.equal(liveStructure?.historicalLive20ReleaseAuthority,false);
+const phoneAcceptance=release.protectedInvariants.find(x=>x.id==="PHONE_BROWSER_ACCEPTANCE");
+assert.equal(phoneAcceptance?.status,"CERTIFIED_CHROMIUM_TOUCH","phone acceptance certification disappeared");
+assert.match(String(phoneAcceptance?.test??""),/reader-phone-acceptance\.mjs/,"phone acceptance test is not pinned");
+assert.ok((phoneAcceptance?.guarantees??[]).some(x=>/AO\.SM\.C0173/.test(x)),"pre-elevation phone focus invariant disappeared");
+assert.ok((phoneAcceptance?.defectsClosed??[]).some(x=>/cue-id regex/i.test(x)),"browser cue-id regression closure disappeared");
+
 const modeSwitch=release.protectedInvariants.find(x=>x.id==="NATIVE_MODE_SWITCH");
 assert.match(String(modeSwitch?.status??""),/SOURCE_FIRST_LIVE_CERTIFIED/);
 assert.match(String(modeSwitch?.status??""),/PHONE_ACCEPTANCE/);
