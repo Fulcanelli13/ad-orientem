@@ -40,6 +40,27 @@
         "AO.SM.C0194",
         "priest route/state"
       ]
+    },
+    {
+      "id": "P1-011",
+      "blockIds": [
+        "AO.SM.B007",
+        "AO.SM.B077"
+      ],
+      "cueIds": [
+        "AO.SM.C0023",
+        "AO.SM.C0237"
+      ],
+      "operation": "NORMALIZE_LATIN_ACCENT",
+      "from": "orare pro me",
+      "to": "oráre pro me",
+      "preserve": [
+        "cue IDs",
+        "actor ownership",
+        "gesture/posture state",
+        "branch status"
+      ],
+      "sourceRole": "1962_PRIMARY_PLUS_EDITORIAL_QA"
     }
   ]
 }
