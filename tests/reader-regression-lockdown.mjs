@@ -9,7 +9,7 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY");
+assert.equal(release.status,"PILOT_READY_SUPPORTED_SCOPE");
 assert.equal(release.productionDefault,"LEGACY");
 assert.equal(resolveReaderUiMode({}),"LEGACY","reader default changed before release certification");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
@@ -50,7 +50,6 @@ assert.equal(support.reason,null);
 
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
-  "SPECIAL_STRUCTURE_PARITY",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
 assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
 for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
@@ -119,13 +118,13 @@ assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
 const ashPayload=release.protectedInvariants.find(x=>x.id==="ASH_NATIVE_PAYLOAD");
-assert.equal(ashPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Ash runtime certification disappeared");
+assert.equal(ashPayload?.status,"CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME","Ash runtime certification disappeared");
 assert.equal(ashPayload?.recoveredGraphRecords,8,"Ash source scope changed");
 assert.equal(ashPayload?.readerCards,5,"Ash reader-card contract changed");
 assert.match(String(ashPayload?.controller??""),/reader-ash\.js/,"Ash controller is not pinned");
 
 const palmPayload=release.protectedInvariants.find(x=>x.id==="PALM_NATIVE_PAYLOAD");
-assert.equal(palmPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Palm runtime certification disappeared");
+assert.equal(palmPayload?.status,"CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME","Palm runtime certification disappeared");
 assert.equal(palmPayload?.recoveredGraphRecords,12,"Palm source scope changed");
 assert.equal(palmPayload?.readerCards,7,"Palm reader-card contract changed");
 assert.match(String(palmPayload?.controller??""),/reader-palm\.js/,"Palm controller is not pinned");
@@ -141,7 +140,12 @@ assert.match(String(aspergesPayload?.phoneTest??""),/reader-phone-acceptance\.mj
 const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
-assert.ok(release.openBlockers.some(x=>x.id==="SPECIAL_STRUCTURE_PARITY"),"special-structure payload blocker disappeared before native rite payload exists");
+assert.equal(release.openBlockers.length,0,"pilot-supported scope unexpectedly regained a release blocker");
+const pilotScope=release.protectedInvariants.find(x=>x.id==="PILOT_SUPPORTED_SCOPE");
+assert.equal(pilotScope?.status,"CERTIFIED","pilot-supported scope certification disappeared");
+assert.deepEqual(pilotScope?.supportedPreludes,["ASPERGES","PALM","ASH"],"pilot prelude scope changed");
+const deferredSpecial=release.protectedInvariants.find(x=>x.id==="DEFERRED_SPECIAL_STRUCTURE_BACKLOG");
+assert.equal(deferredSpecial?.status,"NON_BLOCKING_FOR_PILOT__FAIL_CLOSED","deferred special-structure fail-closed policy disappeared");
 
 const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
 assert.equal(properProvenance?.status,"CERTIFIED_REPLACEMENT_WITNESS",
