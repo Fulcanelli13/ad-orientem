@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "status": "BLOCKED_PENDING_SOURCE_FIRST_LIVE_INTEGRATION",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the source-first LIVE presentation structure is integrated and phone-certified. Historical v1.83 card count is compatibility evidence only.",
@@ -284,6 +284,29 @@
       ],
       "events": 29,
       "historical48RequiredForRelease": false
+    },
+    {
+      "id": "PALM_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "controller": "src/mass/reader-palm.js",
+      "payload": "data/presentation/reader-palm.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#PALM",
+      "sourceAuthority": "Missale Romanum 1962 — Dominica II Passionis seu in Palmis",
+      "primaryWitness": "https://missale.online/proprium/en/tempore/dominica_in_palmis",
+      "processionWitness": "https://laudemus.org/?celebration_id=485&date=2032-03-21&place_id=2",
+      "recoveredGraphRecords": 12,
+      "readerCards": 7,
+      "runtime": "src/mass/browser-runtime.js",
+      "guarantees": [
+        "Palm rite cards remain outside ordinary Mass identity",
+        "distribution posture is personal recipient state",
+        "pre-procession Gospel carries Gospel-cross cue",
+        "procession posture applies only to participants",
+        "completion renders Introit-only slice of AO.CARD.001",
+        "Prayers at the Foot cannot leak through combined first card",
+        "Back from Introit returns to Palm handoff card",
+        "Last Gospel navigation is suppressed when compiled plan forbids it"
+      ]
     }
   ],
   "openBlockers": [
@@ -300,7 +323,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Compiled special-structure projection is certified. Asperges has a source-pinned payload and a green modular browser runtime switch/handoff. Remaining Asperges work is the production native-preview mount; other rites still require native payload/rendering."
+      "detail": "Asperges and Palm have source-pinned native payloads plus modular-runtime traversal contracts. Production native-preview mounting remains pending for both. Ashes, Candlemas, Rogations, Requiem/following actions, Good Friday and Easter Vigil still require native payload/rendering."
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
