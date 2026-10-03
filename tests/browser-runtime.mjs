@@ -12,6 +12,8 @@ const ashPayload=load("../data/presentation/reader-ash.v1.json");
 const ashData=Object.freeze({payload:ashPayload,graph:Object.freeze([...specialExtension.graphs.ASH])});
 const candlemasPayload=load("../data/presentation/reader-candlemas.v1.json");
 const candlemasData=Object.freeze({payload:candlemasPayload,graph:Object.freeze([...specialExtension.graphs.CND])});
+const rogationsPayload=load("../data/presentation/reader-rogations.v1.json");
+const rogationsData=Object.freeze({payload:rogationsPayload,graph:Object.freeze([...specialExtension.graphs.ROG])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -236,6 +238,37 @@ candlemasRuntime.previous();
 assert.equal(candlemasRuntime.getCandlemasState().card.id,"CND-R07");
 candlemasRuntime.destroy();
 
+const rogationsRoot=rootFixture();
+const rogationsRuntime=createBrowserMassRuntime({
+  root:rogationsRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["rogations"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Rogation Mass",proper,precedingRites:["ROGATIONS"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadRogationsData:async()=>rogationsData,
+});
+const rogationsEntered=await rogationsRuntime.enter();
+assert.equal(rogationsEntered.session.plan.massEntry,"INTROIT");
+assert.equal(rogationsRuntime.getCurrentSectionId(),null);
+assert.equal(rogationsRuntime.getReaderState().cardTitle,"Rogation Supplication");
+rogationsRuntime.next();
+assert.equal(rogationsRuntime.getRogationsState().card.id,"ROG-R02");
+assert.equal(rogationsRuntime.getReaderState().posture.label,"KNEEL");
+rogationsRuntime.next();
+assert.equal(rogationsRuntime.getRogationsState().card.id,"ROG-R03");
+assert.equal(rogationsRuntime.getReaderState().posture,null);
+rogationsRuntime.setRogationsProcessionalState("PARTICIPATING");
+assert.equal(rogationsRuntime.getReaderState().posture.label,"PROCESSIONAL");
+rogationsRuntime.setRogationsProcessionalState("NOT_PARTICIPATING");
+assert.equal(rogationsRuntime.getReaderState().posture,null,"non-participant inherited an app-imposed Rogation posture");
+while(!rogationsRuntime.getRogationsState().atEnd)rogationsRuntime.next();
+rogationsRuntime.next();
+assert.equal(rogationsRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(rogationsRuntime.getReaderState().cardTitle,"Introit");
+rogationsRuntime.previous();
+assert.equal(rogationsRuntime.getRogationsState().card.id,"ROG-R05");
+rogationsRuntime.destroy();
+
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({
   root:planAwareLowRoot,
@@ -319,4 +352,4 @@ const requiem=createBrowserMassRuntime({
 await assert.rejects(()=>requiem.enter(),/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/);
 assert.equal(requiemRoot.innerHTML,"");
 
-console.log("Browser Mass runtime PASS: ordinary flow, source-first LIVE, preludes, plan-aware ownership and lifecycle handoff.");
+console.log("Browser Mass runtime PASS: ordinary/LIVE flow, certified special preludes, plan-aware ownership and lifecycle handoff.");
