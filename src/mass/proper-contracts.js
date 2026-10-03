@@ -1,3 +1,5 @@
+import { assertProperContainerCoverage } from "./proper-container-coverage.js";
+
 // Source-reconciliation contracts for Proper Resolver 2.0.
 // These contracts describe completeness and ordering; they do not contain liturgical text.
 
@@ -134,6 +136,13 @@ export function validateProperManifestV2(manifest) {
   check("PRE_GOSPEL_SEQUENCE", () =>
     assertInterlectionSequence(preGospelSequence, { required: preGospelRequired })
   );
+
+  check("PROPER_CONTAINER_COVERAGE", () => {
+    const requiredContainers = requirements.requiredContainers ?? [];
+    if (!Array.isArray(requiredContainers)) throw new TypeError("requirements.requiredContainers must be an array");
+    if (requiredContainers.length === 0) return null;
+    return assertProperContainerCoverage(manifest, requiredContainers);
+  });
 
   check("CROSS_PARITY", () => {
     const status = String(manifest.crossParityStatus ?? "PENDING").toUpperCase();
