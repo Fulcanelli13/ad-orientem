@@ -1,0 +1,57 @@
+{
+  "schema": "ao-r23-ash-payload-v1",
+  "status": "SOURCE_PINNED_PARTIAL_TEXT__FOUR_ORATIONS_REQUIRE_HYDRATION",
+  "source": {
+    "authority": "Missale Romanum 1962 — Feria IV Cinerum",
+    "primaryWitness": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+    "corroboration": [
+      "https://missale.online/kalender/2026-02-18",
+      "https://usuarium.elte.hu/storagestate/pagefix/364"
+    ]
+  },
+  "opening": {
+    "antiphon": "Exáudi nos, Dómine, quóniam benígna est misericórdia tua: secúndum multitúdinem miseratiónum tuárum réspice nos, Dómine.",
+    "psalm": "Salvum me fac, Deus: quóniam intravérunt aquæ usque ad ánimam meam."
+  },
+  "blessingOrations": [
+    {
+      "id": "ASH-OR-01",
+      "incipit": "Omnípotens sempitérne Deus, parce metuéntibus…",
+      "fullText": null,
+      "source": "Missale Romanum 1962 — Feria IV Cinerum"
+    },
+    {
+      "id": "ASH-OR-02",
+      "incipit": "Deus, qui non mortem, sed pæniténtiam desíderas peccatórum…",
+      "fullText": null,
+      "source": "Missale Romanum 1962 — Feria IV Cinerum"
+    },
+    {
+      "id": "ASH-OR-03",
+      "incipit": "Deus, qui humiliatióne flécteris et satisfactióne placáris…",
+      "fullText": null,
+      "source": "Missale Romanum 1962 — Feria IV Cinerum"
+    },
+    {
+      "id": "ASH-OR-04",
+      "incipit": "Omnípotens sempitérne Deus, qui Ninivítis in cínere…",
+      "fullText": null,
+      "source": "Missale Romanum 1962 — Feria IV Cinerum"
+    }
+  ],
+  "distribution": {
+    "formula": "Meménto, homo, quia pulvis es, et in púlverem revertéris.",
+    "antiphons": [
+      "Immutémur hábitu, in cínere et cilício; jejunémus, et plorémus ante Dóminum.",
+      "Inter vestíbulum et altáre plorábunt sacerdótes minístri Dómini."
+    ]
+  },
+  "conclusion": {
+    "versicle": "Dóminus vobíscum.",
+    "response": "Et cum spíritu tuo.",
+    "oremus": "Orémus.",
+    "prayer": "Concéde nobis, Dómine, præsídia milítiæ christiánæ sanctis inchoáre jejúniis: ut contra spiritáles nequítias pugnatúri, continéntiæ muniámur auxíliis.",
+    "ending": "Per Christum Dóminum nostrum.",
+    "amen": "Amen."
+  }
+}
