@@ -7,7 +7,7 @@ import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
-import { GLORIA_CREDO_FAITHFUL_GESTURES, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
+import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
 import { loadReaderCueRegistries, createReaderCueStateController } from "./reader-cue-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
 
@@ -69,10 +69,15 @@ export function resolveCueOwnedChannels({
   if(cueControllerSupported){
     let gesture=null;
     if(cueNative){
-      if(gestureProfile==="TRADITIONAL" && cueProjection.gesture){
-        gesture=cueProjection.gesture;
-      }else{
+      if(isGloriaCredoGestureSourceCue(cueId)){
+        // Gloria/Credo are explicitly profile-adjudicated. This suppresses
+        // duplicate extracted bow/cross rows in ESSENTIAL/GUIDED while retaining
+        // the recovered Incarnatus rubrical cue and Traditional customary layer.
         gesture=resolveGestureProjection(eventState,null,{cueId,gestureProfile});
+      }else if(gestureProfile!=="ESSENTIAL"){
+        // Outside the adjudicated Gloria/Credo windows, the exact source cue
+        // registry owns GUIDED_1962 and TRADITIONAL gestures.
+        gesture=cueProjection.gesture??null;
       }
     }
     return Object.freeze({
@@ -108,6 +113,27 @@ export function resolveCueOwnedChannels({
       priestVoice:eventState?.ownership?.priestVoice==="R17_NATIVE" ? "R17_EVENT_NATIVE" : "LEGACY_FALLBACK",
       priestPosition:"LEGACY_FALLBACK",
     }),
+  });
+}
+
+export function createCardTransitionTransientGuard(){
+  let pending=false;
+  return Object.freeze({
+    begin(){
+      pending=true;
+      return pending;
+    },
+    resolveCue(cueId){
+      if(cueId)pending=false;
+      return pending;
+    },
+    filter({gesture=null,response=null}={}){
+      return Object.freeze({
+        gesture:pending ? null : gesture,
+        response:pending ? null : response,
+      });
+    },
+    get pending(){return pending;},
   });
 }
 
@@ -185,6 +211,7 @@ export async function mountNativeReaderPreview({
   let cueTracker=null;
   let activeCueId=null;
   let scheduled=false;
+  const transientGuard=createCardTransitionTransientGuard();
   const win=doc.defaultView ?? globalThis;
 
   function projectedState(){
@@ -208,7 +235,13 @@ export async function mountNativeReaderPreview({
       gestureProfile,
     });
     const cueNative=owned.cueNative;
-    const {gesture,response,priestVoice,priestPosition}=owned;
+    const transient=transientGuard.filter({
+      gesture:owned.gesture,
+      response:owned.response,
+    });
+    const gesture=transient.gesture;
+    const response=transient.response;
+    const {priestVoice,priestPosition}=owned;
 
     // Posture is intentionally still conservative. FOLLOW_CONGREGATION and
     // unresolved profile/state anchors continue to use the visible rollback donor.
@@ -218,6 +251,8 @@ export async function mountNativeReaderPreview({
 
     const ownership=Object.freeze({
       ...owned.ownership,
+      gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
+      response:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.response,
       posture:cueNative && cueProjection.posture
         ? cueProjection.ownership.posture
         : "LEGACY_PROFILE_FALLBACK",
@@ -241,6 +276,12 @@ export async function mountNativeReaderPreview({
   }
   function showCard(card){
     if(!card) return null;
+    const changed=Boolean(current?.sectionId && current.sectionId!==card.sectionId);
+    if(changed){
+      activeCueId=null;
+      transientGuard.begin();
+      root.dataset.r17NativeCue="unresolved";
+    }
     current=card;
     const state=projectedState();
     reader.renderMoment({
@@ -318,6 +359,7 @@ export async function mountNativeReaderPreview({
       win,
       onChange:(cueId)=>{
         activeCueId=cueId;
+        transientGuard.resolveCue(cueId);
         root.dataset.r17NativeCue=cueId??"unresolved";
         queue();
       },
@@ -361,6 +403,7 @@ export async function mountNativeReaderPreview({
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
+    getTransientTransitionPending:()=>transientGuard.pending,
   });
   globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
   return api;
