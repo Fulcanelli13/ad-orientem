@@ -1,0 +1,157 @@
+{
+  "schema": "ao-v1.83-reader-map-recovery-v1",
+  "version": "1.0.0",
+  "status": "PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER",
+  "lineage": {
+    "v180LiveCards": 38,
+    "v181LiveCards": 48,
+    "v183FrozenLiveCards": 48,
+    "v183CanonicalMacros": 30,
+    "authoritativeRuntimeLabel": "v1.83 MERGE GATE"
+  },
+  "purpose": "Preserve only recovered evidence needed to reconstruct the frozen v1.83 48-card LIVE reader. This file is not a reader map and must never be used to render or certify parity.",
+  "currentR17": {
+    "nativeSectionCards": 30,
+    "replacementStatus": "BLOCKED_UNTIL_AUTHORITATIVE_48_CARD_MAP"
+  },
+  "recoveredSemanticSplits": [
+    {
+      "label": "Chalice preparation / Offerimus tibi",
+      "confidence": "RECOVERED_FROM_V1_81_CHANGE_RECORD",
+      "anchorBlocks": [
+        "AO.SM.B032",
+        "AO.SM.B033"
+      ],
+      "anchorTitles": [
+        "Deus, qui humanae substantiae",
+        "Offerimus tibi, Domine"
+      ],
+      "note": "Anchors identify the recovered semantic split only; exact v1.83 card ranges/IDs remain unrecovered."
+    },
+    {
+      "label": "Incensation / Lavabo",
+      "confidence": "RECOVERED_FROM_V1_81_CHANGE_RECORD",
+      "anchorBlocks": [
+        "AO.SM.B036",
+        "AO.SM.B037"
+      ],
+      "anchorTitles": [
+        "Per intercessionem beati Michaelis · Incensation",
+        "Lavabo inter innocentes (Psalm 25)"
+      ],
+      "note": "Exact v1.83 card ranges/IDs remain unrecovered."
+    },
+    {
+      "label": "Te igitur / Memento",
+      "confidence": "RECOVERED_FROM_V1_81_CHANGE_RECORD",
+      "anchorBlocks": [
+        "AO.SM.B047",
+        "AO.SM.B048"
+      ],
+      "anchorTitles": [
+        "Te igitur",
+        "Memento, Domine — Living"
+      ],
+      "note": "Recovered change record also referred to the second surface as Memento/Communicantes; do not infer whether B049 belonged to that card until donor bytes are recovered."
+    },
+    {
+      "label": "Unde et memores / Supra quae",
+      "confidence": "RECOVERED_FROM_V1_81_CHANGE_RECORD",
+      "anchorBlocks": [
+        "AO.SM.B054",
+        "AO.SM.B055"
+      ],
+      "anchorTitles": [
+        "Unde et memores",
+        "Supra quae"
+      ],
+      "note": "Recovered change record also referred to Supra quae/Supplices; do not infer B056 ownership until donor bytes are recovered."
+    },
+    {
+      "label": "Libera nos / Pax Domini",
+      "confidence": "RECOVERED_FROM_V1_81_CHANGE_RECORD",
+      "anchorBlocks": [
+        "AO.SM.B064",
+        "AO.SM.B066"
+      ],
+      "anchorTitles": [
+        "Libera nos",
+        "Pax Domini"
+      ],
+      "adjacentBlocksRequiringExactRecovery": [
+        "AO.SM.B065",
+        "AO.SM.B067"
+      ],
+      "note": "Do not infer ownership of the Libera conclusion or Haec commixtio until donor bytes are recovered."
+    },
+    {
+      "label": "Priest Host Communion / Precious Blood Communion",
+      "confidence": "RECOVERED_FROM_V1_81_CHANGE_RECORD",
+      "anchorBlocks": [
+        "AO.SM.B074",
+        "AO.SM.B076"
+      ],
+      "anchorTitles": [
+        "Communion of the Priest — Sacred Host",
+        "Communion of the Priest — Precious Blood"
+      ],
+      "adjacentBlocksRequiringExactRecovery": [
+        "AO.SM.B075"
+      ],
+      "note": "Do not infer ownership of Quid retribuam Domino until donor bytes are recovered."
+    }
+  ],
+  "unresolvedSplitAreas": [
+    {
+      "area": "OFFERTORY",
+      "confidence": "AREA_ONLY",
+      "note": "One further v1.81 decompression split is known to be in the Offertory area; exact boundary/title pair is not recoverable from current evidence."
+    },
+    {
+      "area": "CANON",
+      "confidence": "AREA_ONLY",
+      "note": "One further v1.81 decompression split is known to be in the Canon area; exact boundary/title pair is not recoverable from current evidence."
+    },
+    {
+      "area": "COMMUNION_PREPARATION",
+      "confidence": "AREA_ONLY",
+      "note": "One further v1.81 decompression split is known to be in Communion preparation; exact boundary/title pair is not recoverable from current evidence."
+    },
+    {
+      "area": "PLACEAT_BLESSING_CONCLUSION",
+      "confidence": "AREA_ONLY",
+      "note": "One further v1.81 decompression split is known around Placeat/final blessing; exact boundary/title pair is not recoverable from current evidence."
+    }
+  ],
+  "exactCanonicalAnchors": {
+    "hostConsecration": {
+      "block": "AO.SM.B052",
+      "cueRange": [
+        "AO.SM.C0168",
+        "AO.SM.C0174"
+      ],
+      "elevationCue": "AO.SM.C0174"
+    },
+    "chaliceConsecration": {
+      "block": "AO.SM.B053",
+      "cueRange": [
+        "AO.SM.C0175",
+        "AO.SM.C0181"
+      ],
+      "elevationCue": "AO.SM.C0181"
+    }
+  },
+  "forbiddenReconstructions": [
+    "Do not synthesize 48 cards by arbitrarily subdividing the current 30 R17 cards.",
+    "Do not back-port the later v1.87 51-card architecture as though it were v1.83.",
+    "Do not assign v1.83 card IDs, full block ranges, or cue ranges that are not recovered from donor evidence.",
+    "Do not switch the reader gate away from LEGACY because this ledger exists."
+  ],
+  "recoveryAcceptance": [
+    "Recover v1.81 or v1.83 donor bytes, or an exact contemporaneous enumeration of all 48 cards.",
+    "Bind every recovered card to canonical macro/block/cue ownership.",
+    "Prove exactly 48 ordered LIVE cards with complete, non-overlapping coverage.",
+    "Keep Host and Chalice consecration/elevation independently testable.",
+    "Only after the exact map passes may R17 LIVE structure be replaced."
+  ]
+}
