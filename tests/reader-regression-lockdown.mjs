@@ -60,11 +60,16 @@ assert.deepEqual(
 
 const communionEvents=JSON.parse(readFileSync(new URL("../data/mass/mc-events-05.v1.json",import.meta.url),"utf8")).events;
 const byId=new Map(communionEvents.map(event=>[event.id,event]));
-assert.ok(byId.get("MC-COM-150").conditions.includes("ORDINARY_PEACE_PRAYER_ALLOWED"));
-assert.ok(byId.get("MC-COM-160").conditions.includes("FORM_IS_SOLEMN"));
-assert.ok(byId.get("MC-COM-160").conditions.includes("FORMAL_SOLEMN_PAX_ALLOWED"));
-assert.ok(!byId.get("MC-COM-100").conditions.includes("FORMAL_SOLEMN_PAX_ALLOWED"),
-  "Pax Domini was conflated with ministerial Pax transfer");
+assert.deepEqual(byId.get("MC-COM-150").conditions,[],
+  "frozen canonical peace-prayer event was mutated instead of plan-projected");
+assert.deepEqual(byId.get("MC-COM-160").conditions,["FORM_IS_SOLEMN"],
+  "frozen canonical ministerial Pax event was mutated instead of plan-projected");
+assert.deepEqual(byId.get("MC-COM-100").conditions,[],
+  "Pax Domini was conflated with a plan-specific Pax suppression");
+const objectiveSource=readFileSync(new URL("../src/mass/objective-engine.js",import.meta.url),"utf8");
+assert.match(objectiveSource,/applyMassPlanTraversalDelta/);
+assert.match(objectiveSource,/MC-COM-150/);
+assert.match(objectiveSource,/MC-COM-160/);
 
 const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
 assert.match(nativeSource,/allowPresentationModeSwitch:false/);
