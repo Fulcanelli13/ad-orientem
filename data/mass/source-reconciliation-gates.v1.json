@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "status": "SOURCE_RECONCILIATION_GATE",
+  "runtimeReference": "v1.83 MERGE GATE",
+  "rule": "source -> reconciliation decision -> canonical matrix -> runtime",
+  "gates": [
+    {
+      "id": "G1",
+      "name": "ORDINARY_PARITY",
+      "acceptance": "No unexplained text/cross/section discrepancy.",
+      "runtimeBlocking": true
+    },
+    {
+      "id": "G2",
+      "name": "PROPER_COMPLETENESS",
+      "acceptance": "Every required Proper slot populated; multiplicity exact; oration conclusions complete.",
+      "runtimeBlocking": true
+    },
+    {
+      "id": "G3",
+      "name": "SPECIAL_CANON_INTEGRITY",
+      "acceptance": "Required Communicantes/Hanc igitur/other Canon inserts are explicitly resolved.",
+      "runtimeBlocking": true
+    },
+    {
+      "id": "G4",
+      "name": "RITUAL_CUE_INTEGRITY",
+      "acceptance": "No gesture/posture is generated from typography alone; cue authority remains explicit.",
+      "runtimeBlocking": true
+    },
+    {
+      "id": "G5",
+      "name": "STRUCTURAL_FIXTURE_REGRESSION",
+      "acceptance": "Each fixture produces the expected ordered graph.",
+      "runtimeBlocking": true
+    },
+    {
+      "id": "G6",
+      "name": "RUNTIME_REGRESSION",
+      "acceptance": "v1.83-derived reader behavior remains correct after source changes.",
+      "runtimeBlocking": true
+    }
+  ],
+  "activeTargets": [
+    "ORDINARY_TEXT_CROSS_PARITY",
+    "ORATION_CONCLUSION_TYPES",
+    "SPECIAL_CANON_INSERTS",
+    "ORDERED_INTERLECTION_SEQUENCE",
+    "MULTI_FIXTURE_PROPER_REGRESSION"
+  ],
+  "sourcePolicy": {
+    "primary1962": "EXECUTABLE_AUTHORITY",
+    "misselBarroux": "EDITORIAL_QA_ONLY",
+    "internalFormation": "INTERNAL_ONLY_NOT_PRODUCTION_PROVENANCE",
+    "localProfile": "MAY_NOT_OVERRIDE_UNIVERSAL_RUBRIC_DATA"
+  }
+}
