@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "status": "P1_008_PROVENANCE_QUARANTINE",
+  "rule": "Legacy comparison text may be retained, but provenance from denied hosts cannot satisfy production source authority or Proper Resolver 2.0 readiness.",
+  "deniedHosts": {
+    "categpt.chat": {
+      "classification": "LEGACY_COMPARISON_ONLY",
+      "productionAuthority": false,
+      "affectedKnownFixtureRows": [
+        {
+          "slot": "SECRET_SET",
+          "blockId": "AO.SM.B040"
+        },
+        {
+          "slot": "COMMUNION",
+          "blockId": "AO.SM.B085"
+        },
+        {
+          "slot": "POSTCOMMUNION_SET",
+          "blockId": "AO.SM.B088"
+        }
+      ]
+    }
+  },
+  "knownLegacyFixture": "4 October 2026 / 19th Sunday after Pentecost",
+  "remediation": "Replace each quarantined row with a frozen witness accepted by the source hierarchy before using that fixture as golden production evidence."
+}
