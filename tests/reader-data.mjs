@@ -21,6 +21,7 @@ const data=await loadReaderPresentationData({
 assert.equal(data.sectionMap.contract,"AO_MASS_READER_V2_SECTION_MAP");
 assert.equal(data.lowCorpus.form,"LOW");
 assert.equal(data.sungCorpus.form,"SUNG");
+assert.equal(data.canonSourceMap.status,"CERTIFIED_SOURCE_FIRST");
 assert.deepEqual(new Set(requested),new Set(Object.values(READER_PRESENTATION_FILES)));
 assert.ok(data.urls.lowCorpus.endsWith("/data/presentation/reader-text-low.v1.json"));
 
@@ -33,4 +34,4 @@ try{
 }catch(error){failed=/Unable to load/.test(String(error.message))}
 assert.equal(failed,true,"missing reader data did not fail closed");
 
-console.log("reader presentation data loader: PASS — 3 modular JSON sources, fail-closed fetch.");
+console.log("reader presentation data loader: PASS — section/text/Canon sources load together and fail closed.");
