@@ -29,7 +29,7 @@
     "Focus geometry and horizontal navigation must pass on phone widths.",
     "No source correction may silently collapse the frozen 48-card concept."
   ],
-  "blockingReason": "R17 currently projects one native card per canonical macro. The frozen v1.83 LIVE reader requires 48 ordered semantic cards; 8/10 historical v1.81 decompression splits are semantically recovered, but the exact full C01–C48 enumeration and the remaining Offertory/Canon boundaries are still unrecovered.",
+  "blockingReason": "R17 currently projects one native card per canonical macro. The frozen v1.83 LIVE reader requires 48 ordered semantic cards; 9/10 historical v1.81 decompression splits are semantically recovered, but the exact full C01–C48 enumeration and one remaining Canon boundary are still unrecovered.",
   "recoveredV181Splits": [
     {
       "label": "Chalice preparation / Offerimus tibi",
@@ -86,13 +86,17 @@
         "AO.SM.B091",
         "AO.SM.B092"
       ]
+    },
+    {
+      "label": "Suscipe sancta Trinitas / Orate fratres",
+      "anchorBlocks": [
+        "AO.SM.B038",
+        "AO.SM.B039"
+      ],
+      "confidence": "TRIANGULATED_UNIQUE_FROM_V1_80_GROUPING_AND_V1_81_SPLIT_ACCOUNTING"
     }
   ],
   "unresolvedV181SplitAreas": [
-    {
-      "area": "OFFERTORY",
-      "status": "AREA_ONLY_EXACT_BOUNDARY_UNRECOVERED"
-    },
     {
       "area": "CANON",
       "status": "AREA_ONLY_EXACT_BOUNDARY_UNRECOVERED"
