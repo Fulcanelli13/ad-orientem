@@ -198,3 +198,25 @@ export function assertPreGospelSourceOrderProof(sequence,provenance){
   }
   return provenance;
 }
+
+export function withCompiledPreGospelSequence(manifest,{
+  sources,
+  sourcePath="DIVINUM",
+}={}){
+  if(!manifest || typeof manifest!=="object") throw new TypeError("Proper manifest object required");
+  const compiled=compilePreGospelSequenceFromSources({
+    sources,
+    sourcePath,
+    requireSequence:true,
+  });
+  const fields=preGospelManifestFields(compiled);
+  return Object.freeze({
+    ...manifest,
+    ...fields,
+    requirements:Object.freeze({
+      ...(manifest.requirements??{}),
+      preGospelSequence:true,
+      preGospelSourceOrder:true,
+    }),
+  });
+}
