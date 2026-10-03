@@ -58,6 +58,8 @@ const prepared={
 const ready=await prepareNativeReaderPreview({prepared,presentationData:data,eventData,cueRegistries,guideData});
 assert.equal(ready.guide.registry.entryCount,32);
 assert.equal(ready.guide.registry.entries["AO.CARD.001"].moment,"Introit & Preparatory Prayers");
+assert.equal(ready.scholaState.supported,true);
+assert.equal(ready.scholaState.activateForCard(2).schola.cueId,"AO.SM.C0044");
 assert.equal(ready.model.totalCards,30);
 assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
 assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
@@ -73,8 +75,6 @@ const nodes={
   "#gestureText":{textContent:"BOW"},
   "#responseText":{textContent:"Amen"},
   "#voiceText":{textContent:"LOW VOICE"},
-  "#scholaDock":{classList:{contains:x=>x==="show"}},
-  "#scholaStreamLine":{textContent:"Sanctus"},
 };
 const snapshot=legacyReaderStateSnapshot({querySelector:s=>nodes[s]??null});
 assert.equal(snapshot.priestPosition.label,"ALTAR");
@@ -82,7 +82,7 @@ assert.equal(snapshot.posture.label,"KNEEL");
 assert.equal(snapshot.gesture.label,"BOW");
 assert.equal(snapshot.response.label,"Amen");
 assert.equal(snapshot.priestVoice.label,"LOW VOICE");
-assert.equal(snapshot.schola.label,"Sanctus");
+assert.equal(Object.hasOwn(snapshot,"schola"),false,"legacy snapshot still reads Schola");
 
 const disputed={
   gesture:null,
