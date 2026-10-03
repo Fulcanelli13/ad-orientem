@@ -1,6 +1,6 @@
 {
   "schema": "ao-v1.83-regression-ledger-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "ACTIVE_REGRESSION_LOCKDOWN",
   "rule": "Recovered historical reader defects are acceptance tests or explicit blockers. A green unit suite does not close entries whose required runtime/browser evidence is still missing.",
   "entries": [
@@ -44,9 +44,15 @@
     },
     {
       "id": "V183-GRADUAL-COMPOSITION",
-      "status": "BLOCKED_ON_FINAL_48_CARD_ARCHITECTURE",
+      "status": "RECOVERED_AND_CONTRACT_LOCKED",
       "defect": "Earlier reader composition merged Gradual with Alleluia/Tract content.",
-      "invariant": "B021 is the Gradual reader surface; B022 is separate Alleluia/Tract Schola content; B023 begins Munda cor meum."
+      "invariant": "B021 is the Gradual main-reader surface; B022 is separate Schola-owned Alleluia/Tract content and may not merge into B021; B023 begins Munda cor meum.",
+      "tests": [
+        "tests/reader-live-pre-gospel.mjs",
+        "tests/reader-regression-lockdown.mjs",
+        "tests/reader-schola.mjs"
+      ],
+      "runtimeBoundary": "Native LIVE remains disabled until G6_48_CARD_MAP is certified."
     },
     {
       "id": "V181-PARAGRAPH-SYNC-STATE-OVERWRITE",
