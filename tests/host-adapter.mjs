@@ -85,6 +85,16 @@ const nuptial=prepareMassSessionFromV346({
 expect(nuptial.resolvedMass.overlays.includes("NUPTIAL"),"Nuptial overlay not inferred");
 expect(nuptial.plan.insertions.length===3,"Nuptial insertions not compiled");
 
+const lowLifecycle=prepareMassSessionFromV346(base,{
+  form:"low",
+  proper,
+  intentionRef:"INTENTION-REF-ONLY",
+  lifecycle:{successiveMassPosition:"NONFINAL"},
+});
+expect(lowLifecycle.resolvedMass.provenance.intentionRef==="INTENTION-REF-ONLY","Mass completion intention reference was not bridged");
+expect(lowLifecycle.plan.lifecycle.leonine.eligible===false,"explicit Low lifecycle exception was ignored");
+expect(lowLifecycle.plan.lifecycle.leonine.reasons.includes("SUCCESSIVE_MASS_DEFER_TO_FINAL"),"successive-Mass Leonine deferral was lost");
+
 const gf=prepareMassSessionFromV346({
   ...base,
   exceptionalProfile:"good-friday-1962",
