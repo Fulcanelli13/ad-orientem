@@ -46,9 +46,8 @@
    formRecoveryAuthority:'Ad_Orientem_Mass_Form_Recovery_Delta_Matrix_v1.1_R01_IDENTITY_FREEZE'
  });
  AO.LowMassB005=Object.freeze({...CONTRACT,certifiedSourceMoments:Object.freeze([...CONTRACT.certifiedSourceMoments]),exceptions:Object.freeze({...CONTRACT.exceptions}),runAudit:run});
- let lastAudit=null;
- AO.LowMassAudit=Object.freeze({run,get last(){return lastAudit}});
- function publish(){const a=run();lastAudit=a;document.documentElement.dataset.aoLowReconciliation=a.pass?'pass':'fail';
+ AO.LowMassAudit=Object.freeze({run});
+ function publish(){const a=run();AO.LowMassAudit.last=a;document.documentElement.dataset.aoLowReconciliation=a.pass?'pass':'fail';
    const dbg=document.querySelector('.debug-panel');if(dbg&&a.applicable&&!dbg.querySelector('[data-v174c-r02]')){const row=document.createElement('div');row.className='debug-row';row.dataset.v174cR02='';row.innerHTML=`<b>Low R02</b><span>${a.pass?'PASS':'FAIL'} · 275 cues · 63 B005 moments</span>`;dbg.append(row)}
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(publish,80),{once:true});else setTimeout(publish,80);
