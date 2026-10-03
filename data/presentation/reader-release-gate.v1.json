@@ -279,7 +279,7 @@
     },
     {
       "id": "ASPERGES_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME",
       "controller": "src/mass/reader-asperges.js",
       "payload": "data/presentation/reader-asperges.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ASP",
@@ -302,7 +302,8 @@
         "ACTUALLY_SPRINKLED remains event/user-triggered and not card-visible",
         "completion hands off to AO.CARD.001 Foot cluster",
         "Back from first Mass card returns to Asperges handoff card"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js"
     },
     {
       "id": "PLAN_AWARE_OBJECTIVE_RUNTIME",
@@ -374,7 +375,7 @@
     },
     {
       "id": "PALM_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME",
       "controller": "src/mass/reader-palm.js",
       "payload": "data/presentation/reader-palm.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#PALM",
@@ -393,11 +394,12 @@
         "Prayers at the Foot cannot leak through combined first card",
         "Back from Introit returns to Palm handoff card",
         "Last Gospel navigation is suppressed when compiled plan forbids it"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js"
     },
     {
       "id": "ASH_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME",
       "controller": "src/mass/reader-ash.js",
       "payload": "data/presentation/reader-ash.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ASH",
@@ -415,7 +417,8 @@
         "Prayers at the Foot cannot leak through the combined first Mass card",
         "Back from Introit returns to the Ash handoff card",
         "ordinary Last Gospel remains available after Ash Wednesday Mass"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js"
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
@@ -455,13 +458,33 @@
         "Last Gospel suppression is not inferred from Requiem identity alone"
       ],
       "test": "tests/reader-special-structure.mjs"
+    },
+    {
+      "id": "NATIVE_PRELUDE_PRODUCTION_MOUNT",
+      "status": "CERTIFIED",
+      "adapter": "src/mass/reader-prelude-runtime.js",
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "rites": [
+        "ASPERGES",
+        "PALM",
+        "ASH"
+      ],
+      "guarantees": [
+        "special prelude cards remain outside canonical Mass card identity",
+        "Asperges hands off to the Foot cluster",
+        "Palm and Ash hand off to an Introit-only slice",
+        "personal sprinkling/palm/ash recipient states remain personal",
+        "Back from the first Mass card returns to the final prelude handoff card",
+        "source-first LIVE and 30-card SIMPLE/MISSAL models are unchanged"
+      ],
+      "test": "tests/reader-prelude-runtime.mjs"
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Asperges, Palm and Ash Wednesday have source-pinned native payloads. Requiem Mass variance is certified plan-owned and no longer needs a duplicate reader surface. Candlemas, Rogations, explicit Requiem Absolution/funeral following actions, Holy Thursday post-Mass actions, Corpus procession/Benediction, Good Friday and Easter Vigil still require native payload/rendering."
+      "detail": "Asperges, Palm and Ash Wednesday are source-pinned and mounted in both modular runtime and native preview. Remaining unsupported special structures (Candlemas, Rogations, remaining Requiem/following actions, Good Friday and Easter Vigil) remain explicit fail-closed scope for later native payload/rendering."
     }
   ],
   "certificationPolicy": {
