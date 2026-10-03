@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -22,7 +22,8 @@
     },
     {
       "id": "CARD_TRANSIENT_CLEAR",
-      "required": true
+      "required": true,
+      "detail": "Card changes clear gesture, response, bell and cinematic transient state before the next cue owns the reader."
     },
     {
       "id": "LIVE20_DONOR_ONLY",
@@ -39,6 +40,13 @@
     {
       "id": "DEPLOYMENT_ROLLBACK_PROTECTION",
       "status": "LEGACY_BASELINE_MAY_NOT_OVERWRITE_R17_MOUNT"
+    },
+    {
+      "id": "SOLEMN_PAX_SEPARATION",
+      "status": "OBJECTIVE_GATED_SOURCE_CERTIFICATION_PENDING",
+      "paxDominiEvent": "MC-COM-100",
+      "peacePrayerEvent": "MC-COM-150",
+      "ministerialPaxEvent": "MC-COM-160"
     }
   ],
   "openBlockers": [
@@ -86,6 +94,16 @@
       "id": "PROPER_FIXTURE_PROVENANCE",
       "severity": "PRODUCTION_GOLDEN_BLOCKER",
       "detail": "The quarantined 4 October Secret/Communion/Postcommunion fixture still requires accepted replacement witnesses."
+    },
+    {
+      "id": "BELL_CINEMATIC_READER_PARITY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Canonical bell events are structured in the Mass graph, but the native reader has not yet converged bell/cinematic projection. Card transitions must clear any bell/cinematic transient exactly as v1.83 required."
+    },
+    {
+      "id": "SOLEMN_PAX_TRANSFER_AUTHORITY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "MC-COM-150 and MC-COM-160 are now independently suppressible and Pax Domini remains distinct, but MC-COM-160 still carries B/C_PENDING evidence. Accepted source authority and reader ownership for the Solemn ministerial Pax transfer must be pinned before release certification."
     }
   ],
   "certificationPolicy": {
