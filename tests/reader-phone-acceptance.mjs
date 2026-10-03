@@ -229,7 +229,50 @@ try{
     await phone.close();
   }
 
-  console.log("phone browser acceptance: PASS — 320/360/390/430px Chromium touch, translation, Back/Next, cue focus, elevation gate and transient clearing.");
+  const aspContext=await browser.newContext({
+    viewport:{width:390,height:844},
+    deviceScaleFactor:2,
+    isMobile:true,
+    hasTouch:true,
+  });
+  const asp=await aspContext.newPage();
+  await asp.goto("http://127.0.0.1:4173/tests/fixtures/reader-phone-harness.html?asperges=1",{waitUntil:"networkidle"});
+  await asp.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
+  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id),"ASP-R01",
+    "Asperges prelude lost first-card ownership");
+  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().formulaState.formula),"ORDINARY",
+    "4 October field session selected Vidi aquam instead of Asperges me");
+
+  const aspNext=asp.locator('[data-reader-nav="next"]');
+  for(const expected of ["ASP-R02","ASP-R03"]){
+    const hit=await aspNext.boundingBox();
+    await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+    await asp.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard().id===id,expected);
+  }
+  assert.equal(await asp.locator('[data-role="gesture"]').textContent(),"—",
+    "Asperges personal Sign of Cross fired before actual sprinkling");
+  await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.markActuallySprinkled());
+  await asp.waitForFunction(()=>document.querySelector('[data-role="gesture"]')?.textContent?.includes("MAKE_FULL_SIGN_OF_CROSS"));
+  for(const expected of ["ASP-R04","ASP-R05"]){
+    const hit=await aspNext.boundingBox();
+    await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+    await asp.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard().id===id,expected);
+  }
+  let hit=await aspNext.boundingBox();
+  await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+  await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
+  assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 39/,
+    "Asperges did not hand off to the first source-first Mass card");
+
+  const aspBack=asp.locator('[data-reader-nav="previous"]');
+  hit=await aspBack.boundingBox();
+  await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+  await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id==="ASP-R05");
+  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().handoff),"FOOT_CLUSTER",
+    "Back from Mass did not restore the Asperges handoff card");
+  await aspContext.close();
+
+  console.log("phone browser acceptance: PASS — 320/360/390/430px Chromium touch, translation, Back/Next, cue focus, elevation gate and transient clearing, plus native Asperges → Mass handoff.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
