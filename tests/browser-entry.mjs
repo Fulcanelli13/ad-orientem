@@ -60,6 +60,7 @@ const nativeChoice=await mountR17Preview({
   nativeMount:()=>({kind:"native"}),
   mirrorMount:()=>{mirrorCalls+=1;return {kind:"mirror"}},
   iconAssets,
+  iconAssets,
 });
 assert.equal(nativeChoice.uiOwner,"R17_NATIVE_CARDS_OVER_LEGACY_STATE");
 assert.equal(nativeChoice.preview.kind,"native");
@@ -71,6 +72,7 @@ const fallback=await mountR17Preview({
   prepared:{},
   nativeMount:()=>{throw new Error("native blocked")},
   mirrorMount:()=>{mirrorCalls+=1;return {kind:"mirror"}},
+  iconAssets,
   iconAssets,
 });
 assert.equal(fallback.uiOwner,"R17_MIRROR_FALLBACK");
