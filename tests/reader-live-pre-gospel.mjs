@@ -16,4 +16,4 @@ assert.match(scholaSource,/id:"ALLELUIA_TRACT_SEQUENCE".*canonicalBlockIds:\["AO
 assert.doesNotMatch(scholaSource,/id:"GRADUAL"[^\n]*AO\.SM\.B022/,
   "B022 leaked into the Gradual Schola ownership row");
 
-console.log("v1.83 Gradual LIVE architecture: PASS — B021 main reader, B022 Schola, B023 Munda; G6 still gates LIVE.");
+console.log("v1.83 Gradual LIVE architecture: PASS — B021 main reader, B022 Schola, B023 Munda; source-first LIVE integration still gates LIVE.");
