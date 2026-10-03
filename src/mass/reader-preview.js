@@ -145,7 +145,17 @@ export function mountReaderPreview({doc=globalThis.document,prepared=null,onClos
   });
 
   observer=new MutationObserver(queue);
-  observer.observe(doc.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:["class","aria-hidden"]});
+  const watchTargets=[
+    legacyReader,
+    "#stationText","#guideCopy","#actionDisplay",
+    "#postureText","#gestureText","#responseText",
+    "#voiceText","#bellText","#scholaDock",
+    "#scholaStreamLine","#scholaStreamTranslation",
+    "#cardCounter"
+  ].map(x=>typeof x==="string"?doc.querySelector(x):x).filter(Boolean);
+  for(const target of watchTargets){
+    observer.observe(target,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:["class","aria-hidden"]});
+  }
   legacyReader.addEventListener("scroll",queue,{passive:true});
   sync();
 
