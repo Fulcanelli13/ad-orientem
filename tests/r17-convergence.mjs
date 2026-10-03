@@ -12,6 +12,9 @@ const root = process.cwd();
 const forms = JSON.parse(fs.readFileSync(path.join(root, "data/mass/form-registry.v2.json"), "utf8"));
 const overlays = JSON.parse(fs.readFileSync(path.join(root, "data/mass/rite-overlay-registry.v1.json"), "utf8"));
 const graph = JSON.parse(fs.readFileSync(path.join(root, "data/mass/mc-event-graph.v1.json"), "utf8"));
+const mcCertified = JSON.parse(fs.readFileSync(path.join(root, "data/mass/missa-cantata-certified-profile.v1.json"), "utf8"));
+const specialCore = JSON.parse(fs.readFileSync(path.join(root, "data/mass/special-days-core.v1.1.json"), "utf8"));
+const specialExt = JSON.parse(fs.readFileSync(path.join(root, "data/mass/special-days-extension.v1.3.json"), "utf8"));
 const events = graph.storage.eventFiles.flatMap((ref) =>
   JSON.parse(fs.readFileSync(path.join(root, ref.path), "utf8")).events
 );
@@ -25,6 +28,13 @@ expect(forms.forms.MISSA_CANTATA_INCENSE.certifiedBindings === 189, "MC incense 
 expect(forms.forms.MISSA_CANTATA_SIMPLE.sacredMinisters === false, "MC simple sacred minister leak");
 expect(forms.forms.MISSA_CANTATA_INCENSE.sacredMinisters === false, "MC incense sacred minister leak");
 expect(forms.forms.SOLEMN.sacredMinisters === true, "Solemn sacred topology lost");
+expect(mcCertified.status === "RG003_CERTIFIED_ORDINARY_MISSA_CANTATA", "full MC certification status changed");
+expect(mcCertified.e_audit.length === 71, "full MC E-audit must remain 71/71");
+expect(mcCertified.mc_bindings.length === 189, "full MC binding map must remain 189/189");
+expect(mcCertified.form_contract.sacred_ministers.deacon === false, "full MC profile leaked deacon");
+expect(mcCertified.form_contract.sacred_ministers.subdeacon === false, "full MC profile leaked subdeacon");
+expect(specialCore.graphs.GF.length === 56, "Good Friday graph must remain 56 events");
+expect(specialCore.graphs.EV.length === 38, "Easter Vigil graph must remain 38 events");
 
 const expectedCounts = {
   REQUIEM: 18,
@@ -44,6 +54,13 @@ const expectedCounts = {
 for (const [id, count] of Object.entries(expectedCounts)) {
   expect(overlays.overlays[id]?.records === count, id + " recovery count changed");
 }
+const extCounts = { PALM:12, ASH:8, CND:11, ROG:6, LECT:5, PROC:7, HT_POST:6, ASP:6, REQ:18, ABS:5, CORPUS:8 };
+for (const [id, count] of Object.entries(extCounts)) {
+  expect(specialExt.graphs[id]?.length === count, id + " exact v43.73 payload count changed");
+}
+expect(String(specialExt.research_gates["RG-004_REQUIEM"]).startsWith("CLOSED"), "RG-004 closure lost");
+expect(String(specialExt.research_gates["RG-005_ASPERGES"]).startsWith("CLOSED"), "RG-005 closure lost");
+expect(String(specialExt.research_gates["SG-007_CORPUS_CHRISTI"]).startsWith("CLOSED"), "Corpus procession closure lost");
 
 const base = {
   date: "2026-10-04",
