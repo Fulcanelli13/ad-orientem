@@ -1,0 +1,139 @@
+{
+  "schema": "ao-r26-requiem-reader-rules-v1",
+  "version": "1.0.0",
+  "graphRecordCount": 18,
+  "source": {
+    "authority": "Missale Romanum 1962 — Ordo Missae / Missae Defunctorum",
+    "primaryCorpus": {
+      "repository": "DivinumOfficium/divinum-officium",
+      "ref": "8e3a039ae34fcd0fd1583d68f78ac79947d3e8e2",
+      "path": "web/www/missa/Latin/Ordo/Ordo.txt",
+      "blobSha": "dd6f29ff9f05699d04362b896c6d10245c548c73"
+    },
+    "missalWitness": "https://www.mercaba.org/LITURGIA/Tridentino/missale-romanum-1962.pdf"
+  },
+  "suppressSourceSequences": [
+    3,
+    9
+  ],
+  "suppressLastGospelWhenFollowingAction": "REQUIEM_ABSOLUTION",
+  "blockPolicies": {
+    "AO.SM.B003": {
+      "action": "DROP_BLOCK",
+      "reason": "REQ-OPEN-010"
+    },
+    "AO.SM.B023": {
+      "action": "DROP_CUES",
+      "cueIds": [
+        "AO.SM.C0080"
+      ],
+      "reason": "REQ-GSP-010"
+    },
+    "AO.SM.B026": {
+      "action": "DROP_CUES",
+      "cueIds": [
+        "AO.SM.C0088"
+      ],
+      "reason": "REQ-GSP-020"
+    },
+    "AO.SM.B037": {
+      "action": "DROP_CUES",
+      "cueIds": [
+        "AO.SM.C0126",
+        "AO.SM.C0127"
+      ],
+      "reason": "REQ-LAV-010"
+    },
+    "AO.SM.B068": {
+      "action": "REPLACE_PARAGRAPHS",
+      "reason": "REQ-AGN-010",
+      "paragraphs": [
+        {
+          "id": "AO.SM.C0222",
+          "kind": "TEXT",
+          "latin": "Agnus Dei, qui tollis peccáta mundi: dona eis réquiem.",
+          "english": "Lamb of God, who takest away the sins of the world: grant them rest.",
+          "sourceCueIds": [
+            "AO.SM.C0222"
+          ]
+        },
+        {
+          "id": "AO.SM.C0223",
+          "kind": "TEXT",
+          "latin": "Agnus Dei, qui tollis peccáta mundi: dona eis réquiem.",
+          "english": "Lamb of God, who takest away the sins of the world: grant them rest.",
+          "sourceCueIds": [
+            "AO.SM.C0223"
+          ]
+        },
+        {
+          "id": "AO.SM.C0224",
+          "kind": "TEXT",
+          "latin": "Agnus Dei, qui tollis peccáta mundi: dona eis réquiem sempitérnam.",
+          "english": "Lamb of God, who takest away the sins of the world: grant them eternal rest.",
+          "sourceCueIds": [
+            "AO.SM.C0224"
+          ]
+        }
+      ]
+    },
+    "AO.SM.B069": {
+      "action": "DROP_BLOCK",
+      "reason": "REQ-PAX-010"
+    },
+    "AO.SM.B090": {
+      "action": "REPLACE_PARAGRAPHS",
+      "reason": "REQ-END-010",
+      "paragraphs": [
+        {
+          "id": "AO.SM.C0259",
+          "kind": "TEXT",
+          "latin": "℣. Requiéscant in pace.",
+          "english": "℣. May they rest in peace.",
+          "sourceCueIds": [
+            "AO.SM.C0259"
+          ]
+        },
+        {
+          "id": "AO.SM.C0260",
+          "kind": "RESPONSE",
+          "latin": "℟. Amen.",
+          "english": "℟. Amen.",
+          "sourceCueIds": [
+            "AO.SM.C0260"
+          ]
+        }
+      ]
+    },
+    "AO.SM.B092": {
+      "action": "DROP_BLOCK",
+      "reason": "REQ-END-020"
+    }
+  },
+  "cuePolicies": {
+    "AO.SM.C0222": {
+      "suppressFaithfulGesture": true,
+      "reason": "REQ-AGN-010"
+    },
+    "AO.SM.C0223": {
+      "suppressFaithfulGesture": true,
+      "reason": "REQ-AGN-010"
+    },
+    "AO.SM.C0224": {
+      "suppressFaithfulGesture": true,
+      "reason": "REQ-AGN-010"
+    },
+    "AO.SM.C0112": {
+      "omitWaterCross": true,
+      "reason": "REQ-OFF-010"
+    },
+    "AO.SM.C0124": {
+      "solemnIncenseCelebrantOnly": true,
+      "reason": "REQ-SOL-020"
+    },
+    "AO.SM.C0084": {
+      "solemnGospelNoLightsOrIncense": true,
+      "reason": "REQ-SOL-010"
+    }
+  }
+}
