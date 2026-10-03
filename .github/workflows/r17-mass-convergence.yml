@@ -3,7 +3,7 @@ name: R17 Mass convergence
 on:
   push:
     branches:
-      - implementation/r17-mass-convergence
+      - migration/mass-v1.76-r18
   pull_request:
     paths:
       - "src/mass/**"
