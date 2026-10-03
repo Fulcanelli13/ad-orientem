@@ -136,7 +136,7 @@ export function structureSupport(prepared,modeOverride=null){
   if(unsupportedPreceding.length)return Object.freeze({supported:false,reason:"PRECEDING_RITE_PROJECTION_PENDING"});
   const unsupportedFollowing=[...(plan.followingGraphs??[])].filter(x=>x!=="REQUIEM_ABSOLUTION");
   if(unsupportedFollowing.length)return Object.freeze({supported:false,reason:"FOLLOWING_ACTION_PROJECTION_PENDING"});
-  const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>x!=="VOTIVE_PROPER");
+  const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>!["VOTIVE_PROPER","REQUIEM"].includes(x));
   if(structuralOverlays.length)return Object.freeze({supported:false,reason:"STRUCTURAL_OVERLAY_PROJECTION_PENDING"});
   const mode=normalizeMode(modeOverride??prepared?.readerPreferences?.mode??resolved?.presentationMode??"LIVE");
   if(mode==="LIVE")return Object.freeze({
