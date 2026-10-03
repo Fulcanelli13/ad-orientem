@@ -8,6 +8,7 @@ const data={
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
 };
+const guideData={registry:load("../data/presentation/guide-registry.v1.json"),url:"test://guide-registry"};
 const cueRegistries=Object.freeze({
   gestures:load("../data/presentation/reader-gestures.v1.json"),
   responses:load("../data/presentation/reader-responses.v1.json"),
@@ -41,7 +42,7 @@ const livePrepared={
   readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"},
 };
 await assert.rejects(
-  ()=>prepareNativeReaderPreview({prepared:livePrepared,presentationData:data,eventData,cueRegistries}),
+  ()=>prepareNativeReaderPreview({prepared:livePrepared,presentationData:data,eventData,cueRegistries,guideData}),
   /V1_83_48_CARD_LIVE_MAP_REQUIRED/,
   "30-card native preview bypassed the frozen v1.83 LIVE structure gate"
 );
@@ -54,7 +55,9 @@ const prepared={
   },
   readerPreferences:{...livePrepared.readerPreferences,mode:"SIMPLE"},
 };
-const ready=await prepareNativeReaderPreview({prepared,presentationData:data,eventData,cueRegistries});
+const ready=await prepareNativeReaderPreview({prepared,presentationData:data,eventData,cueRegistries,guideData});
+assert.equal(ready.guide.registry.entryCount,32);
+assert.equal(ready.guide.registry.entries["AO.CARD.001"].moment,"Introit & Preparatory Prayers");
 assert.equal(ready.model.totalCards,30);
 assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
 assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
@@ -243,6 +246,7 @@ try{
     presentationData:data,
     eventData,
     cueRegistries,
+    guideData,
   });
 }catch(error){blocked=/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/.test(String(error.message))}
 assert.equal(blocked,true,"unsupported special graph did not fail closed");
