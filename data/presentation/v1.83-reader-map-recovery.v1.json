@@ -52,7 +52,11 @@
         "Te igitur",
         "Memento, Domine — Living"
       ],
-      "note": "Recovered change record also referred to the second surface as Memento/Communicantes; do not infer whether B049 belonged to that card until donor bytes are recovered."
+      "note": "Recovered change record also referred to the second surface as Memento/Communicantes; do not infer whether B049 belonged to that card until donor bytes are recovered.",
+      "recoveredSecondSurfaceDescription": "Memento + Communicantes",
+      "adjacentBlocksRequiringExactRecovery": [
+        "AO.SM.B049"
+      ]
     },
     {
       "label": "Unde et memores / Supra quae",
@@ -65,7 +69,11 @@
         "Unde et memores",
         "Supra quae"
       ],
-      "note": "Recovered change record also referred to Supra quae/Supplices; do not infer B056 ownership until donor bytes are recovered."
+      "note": "Recovered change record also referred to Supra quae/Supplices; do not infer B056 ownership until donor bytes are recovered.",
+      "recoveredSecondSurfaceDescription": "Supra quae + Supplices",
+      "adjacentBlocksRequiringExactRecovery": [
+        "AO.SM.B056"
+      ]
     },
     {
       "label": "Libera nos / Pax Domini",
@@ -152,6 +160,52 @@
     "Bind every recovered card to canonical macro/block/cue ownership.",
     "Prove exactly 48 ordered LIVE cards with complete, non-overlapping coverage.",
     "Keep Host and Chalice consecration/elevation independently testable.",
-    "Only after the exact map passes may R17 LIVE structure be replaced."
-  ]
+    "Only after the exact map passes may R17 LIVE structure be replaced.",
+    "Preserve C0173→C0174 and C0180→C0181 as explicit elevation gates.",
+    "Preserve the v1.83 Gradual repair: B021 on the Gradual surface, B022 not merged into it, and B023 begins Munda cor meum."
+  ],
+  "recoveredRuntimeRepairs": {
+    "v181AuditFindings": [
+      {
+        "id": "HOST_ELEVATION_EARLY_TRIGGER",
+        "problem": "Host elevation fired while C0172 was still focused.",
+        "requiredGate": "AO.SM.C0173 -> AO.SM.C0174",
+        "wordsCue": "AO.SM.C0173",
+        "wordsText": "HOC EST ENIM CORPUS MEUM",
+        "actionCue": "AO.SM.C0174",
+        "action": "genuflection / Host elevation / replacement / genuflection"
+      },
+      {
+        "id": "CHALICE_ELEVATION_GATE",
+        "requiredGate": "AO.SM.C0180 -> AO.SM.C0181",
+        "actionCue": "AO.SM.C0181",
+        "action": "Chalice elevation action territory"
+      },
+      {
+        "id": "CROSS_CARD_TRANSIENT_LEAKAGE",
+        "problem": "Bell/cinematic/ritual transient state could survive a card change.",
+        "requiredBehavior": "Card changes cancel prior bell/cinematic/transient ritual state."
+      },
+      {
+        "id": "GRADUAL_COMPOSITION",
+        "problem": "C06A incorrectly retained B021+B022.",
+        "v183Repair": "Gradual card contains B021 only; Alleluia/Tract is separate Schola content; Munda cor meum begins with B023."
+      }
+    ],
+    "v183MergeGate": {
+      "liveCards": 48,
+      "canonicalMacros": 30,
+      "hostElevationGate": "AO.SM.C0173 -> AO.SM.C0174",
+      "chaliceElevationGate": "AO.SM.C0180 -> AO.SM.C0181",
+      "gradualBlock": "AO.SM.B021",
+      "alleluiaTractBlock": "AO.SM.B022",
+      "mundaBlock": "AO.SM.B023",
+      "transientStateClearsAcrossCards": true,
+      "parseQA": {
+        "executableJsBlocks": 23,
+        "jsonBlocks": 21,
+        "errors": 0
+      }
+    }
+  }
 }
