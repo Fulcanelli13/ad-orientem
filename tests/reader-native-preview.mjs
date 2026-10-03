@@ -30,6 +30,8 @@ const ready=await prepareNativeReaderPreview({prepared,presentationData:data});
 assert.equal(ready.model.totalCards,30);
 assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
 assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
+assert.ok(ready.model.cards[0].paragraphs.length>0);
+assert.ok(ready.model.cards.some(card=>card.paragraphs.some(p=>p.primary==="Introit")),"resolved Proper text never entered native card model");
 
 const nodes={
   "#stationText":{textContent:"ALTAR"},
