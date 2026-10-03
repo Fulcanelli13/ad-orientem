@@ -12,6 +12,8 @@ const CONDITION = Object.freeze({
   ORATIO_SUPER_POPULUM_PRESENT: (ctx) => ctx.oratioSuperPopulumPresent === true,
   BLESSING_ALLOWED: (ctx) => ctx.blessingAllowed === true,
   NORMAL_LAST_GOSPEL: (ctx) => ctx.normalLastGospel === true,
+  ORDINARY_PEACE_PRAYER_ALLOWED: (ctx) => ctx.ordinaryPeacePrayerAllowed === true,
+  FORMAL_SOLEMN_PAX_ALLOWED: (ctx) => ctx.formalSolemnPaxAllowed === true,
 });
 
 export function normalizeObjectiveContext(input = {}) {
@@ -31,6 +33,8 @@ export function normalizeObjectiveContext(input = {}) {
     oratioSuperPopulumPresent: input.oratioSuperPopulumPresent === true,
     blessingAllowed: input.blessingAllowed !== false,
     normalLastGospel: input.normalLastGospel !== false,
+    ordinaryPeacePrayerAllowed: input.ordinaryPeacePrayerAllowed !== false,
+    formalSolemnPaxAllowed: input.formalSolemnPaxAllowed !== false,
   });
 }
 
