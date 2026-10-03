@@ -51,6 +51,27 @@ ember.interlectionSequence=[
 ];
 expect(validateProperManifestV2(ember).pass,"ordered interlection sequence did not pass");
 
+const prayerOverPeople=structuredClone(ordinary);
+prayerOverPeople.orations.prayerOverPeople={
+  id:"POP-1",
+  bodyLat:"Prayer over the People body",
+  conclusionType:"PER_DOMINUM",
+  conclusionLat:"Per Dominum nostrum Iesum Christum.",
+  sourceRef:"PRIMARY_FIXTURE"
+};
+const popResolved=makeResolvedMass({
+  date:"2026-10-04",
+  form:"low",
+  presentationMode:"live",
+  calendarCelebration:{id:"lent_fixture",type:"CALENDAR"},
+  proper:prayerOverPeople,
+});
+const popPlan=(await import("../src/mass/session-engine.js")).compileMassPlan(popResolved);
+expect(
+  popPlan.insertions.includes("PRAYER_OVER_PEOPLE_AFTER_POSTCOMMUNION_BEFORE_FINAL_DOMINUS_VOBISCUM"),
+  "Prayer over the People insertion was not compiled at the session boundary"
+);
+
 const parityPending=structuredClone(ordinary);
 parityPending.crossParityStatus="PENDING";
 expect(!validateProperManifestV2(parityPending).pass,"required cross parity PENDING did not fail closed");
