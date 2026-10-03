@@ -7,44 +7,30 @@
   "mass_subsystem_baseline": "v1.76",
   "mass_baseline_sha256": "511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99",
   "production_index_switched": false,
-  "modular_entry_staged": true,
-  "modular_entry_runnable": false,
-  "blocking_reason": "Objective/domain engine is ready and CI-certified. The v1.76 reader/presentation reference still requires exact import of its 57 embedded assets and reader runtime.",
-  "required_before_runnable": [
-    "Exact v1.76 reader asset manifest + 57 asset payloads",
-    "Reader runtime reconstructed without embedded data URIs changing semantics",
-    "R17 modular bootstrap source-path reconciliation against canonical domain engine",
-    "Browser/device parity record"
-  ],
-  "policy": "Do not wire repository root index.html to the modular Mass page until the missing corpus is committed and browser/device parity is recorded.",
-  "objective_domain_engine": {
-    "status": "READY",
-    "source_branch": "implementation/r17-mass-convergence",
-    "canonical_core_events": 178,
-    "recovered_overlay_contracts": 13,
-    "ci_run": 37094461958,
-    "ci_conclusion": "success"
+  "production_index_blob_sha": "ff2e1942348ab65cf5b5d779fe5f2601b5f35a4e",
+  "corpus_import_complete": true,
+  "source_blocks_exact_against_frozen_v176": 31,
+  "reader_transport": {
+    "representation": "20 exact source parts + deterministic parser-time loader",
+    "original_chars": 6578563,
+    "original_bytes": 6579106,
+    "original_sha256": "93060f47a3a9b8f676b908a9067631c432029bc7280ceb7a3b49584aabdaf3a4",
+    "github_part_roundtrip_exact": true
   },
-  "missa_cantata_projection": {
-    "status": "READY",
-    "certificate": "MC-CERT-2026-09-22.1",
-    "bindings": 189,
-    "canonical_base_bindings": 178,
-    "certificate_only_states": 11,
-    "simple_default_projection_events": 161,
-    "incense_default_projection_events": 164,
-    "runtime_torchbearer_actor": false,
-    "sacred_ministers": false,
-    "ci_run": 37094461958,
-    "ci_conclusion": "success"
-  },
-  "reader_presentation_import": {
-    "status": "BLOCKED_EXACT_ASSET_IMPORT",
-    "reference": "v1.76",
-    "reader_runtime_bytes": 6579106,
-    "embedded_data_uri_count": 57,
-    "embedded_data_uri_text_chars": 6283178,
-    "approximate_non_asset_js_chars": 295385,
-    "rule": "Do not split ceremonial logic merely to satisfy upload transport. Extract/import the exact 57 assets and preserve the reader's behavior before enabling the modular parity entry."
-  }
+  "modular_entry": "migration/mass-v1.76/modular-index.html",
+  "modular_entry_runnable_candidate": true,
+  "modular_script_dependencies_resolved": "31/31",
+  "modular_logical_order": "1-31",
+  "full_reconstruction_contract_present": true,
+  "full_reconstruction_verifier": "scripts/verify_mass_v176_r19_tree.py",
+  "browser_certified": false,
+  "browser_status": "NOT_CLAIMED — container cannot resolve github.com for a checkout, and prior Chromium environment startup was unreliable.",
+  "production_promotion_blocked": true,
+  "required_before_production": [
+    "Run scripts/verify_mass_v176_r19_tree.py in a normal checkout / CI environment.",
+    "Serve migration/mass-v1.76/modular-index.html over HTTP(S) and complete browser/device smoke.",
+    "Run representative Low / MC Simple / MC Incense / Solemn / Requiem / Nuptial / Triduum / procession scenarios.",
+    "Confirm reader focus, MISSAL/SIMPLE/LIVE, rails, Schola, bells, translation and setup interactions.",
+    "Only then consider changing the repository root index.html or opening a promotion PR."
+  ]
 }
