@@ -65,6 +65,11 @@ assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
 assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
+const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
+assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
+assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
+assert.ok(release.openBlockers.some(x=>x.id==="SPECIAL_STRUCTURE_PARITY"),"special-structure payload blocker disappeared before native rite payload exists");
+
 const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
 assert.equal(properProvenance?.status,"CERTIFIED_REPLACEMENT_WITNESS",
   "Proper fixture provenance blocker disappeared without certified replacement witness");
