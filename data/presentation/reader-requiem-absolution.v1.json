@@ -1,0 +1,104 @@
+{
+  "schema": "ao-r25-requiem-absolution-payload-v1",
+  "status": "READY",
+  "source": {
+    "authority": "Traditional Roman funeral rite / Missale-Rituale 1962",
+    "primaryWitness": "https://www.latinmassfuneral.com/requiem-mass/",
+    "corroboration": [
+      "https://www.latinmassfuneral.com/rite-of-burial-for-adults/",
+      "https://www.newadvent.org/cathen/09214a.htm"
+    ],
+    "scope": "Post-Requiem Absolution at the bier/catafalque plus optional burial-procession In paradisum; activation remains explicit."
+  },
+  "nonIntres": {
+    "latin": "Non intres in judícium cum servo tuo, Dómine, quia nullus apud te justificábitur homo, nisi per te ómnium peccatórum ei tribuátur remíssio. Non ergo eum, quǽsumus, tua judiciális senténtia premat, quem tibi vera supplicátio fídei christiánæ comméndat: sed grátia tua illi succurrénte, mereátur evádere judícium ultiónis, qui, dum víveret, insignítus est signáculo sanctæ Trinitátis: Qui vivis et regnas in sǽcula sæculórum.",
+    "response": "Amen."
+  },
+  "liberaMe": [
+    {
+      "kind": "RESPONSE",
+      "latin": "Líbera me, Dómine, de morte ætérna, in die illa treménda: Quando cæli movéndi sunt et terra: Dum véneris judicáre sǽculum per ignem."
+    },
+    {
+      "kind": "VERSICLE",
+      "latin": "Tremens factus sum ego, et tímeo, dum discússio vénerit, atque ventúra ira."
+    },
+    {
+      "kind": "RESPONSE",
+      "latin": "Quando cæli movéndi sunt et terra: Dum véneris judicáre sǽculum per ignem."
+    },
+    {
+      "kind": "VERSICLE",
+      "latin": "Dies illa, dies iræ, calamitátis et misériæ: dies magna et amára valde."
+    },
+    {
+      "kind": "RESPONSE",
+      "latin": "Dum véneris judicáre sǽculum per ignem."
+    },
+    {
+      "kind": "VERSICLE",
+      "latin": "Réquiem ætérnam dona ei, Dómine, et lux perpétua lúceat ei."
+    },
+    {
+      "kind": "RESPONSE",
+      "latin": "Líbera me, Dómine, de morte ætérna, in die illa treménda: Quando cæli movéndi sunt et terra: Dum véneris judicáre sǽculum per ignem."
+    }
+  ],
+  "kyriePaterVersicles": {
+    "kyrie": [
+      "Kýrie, eléison.",
+      "Christe, eléison.",
+      "Kýrie, eléison."
+    ],
+    "pater": "Pater noster.",
+    "versicles": [
+      {
+        "kind": "VERSICLE",
+        "latin": "Et ne nos indúcas in tentatiónem."
+      },
+      {
+        "kind": "RESPONSE",
+        "latin": "Sed líbera nos a malo."
+      },
+      {
+        "kind": "VERSICLE",
+        "latin": "A porta ínferi."
+      },
+      {
+        "kind": "RESPONSE",
+        "latin": "Érue, Dómine, ánimam ejus."
+      },
+      {
+        "kind": "VERSICLE",
+        "latin": "Requiéscat in pace."
+      },
+      {
+        "kind": "RESPONSE",
+        "latin": "Amen."
+      },
+      {
+        "kind": "VERSICLE",
+        "latin": "Dómine, exáudi oratiónem meam."
+      },
+      {
+        "kind": "RESPONSE",
+        "latin": "Et clamor meus ad te véniat."
+      },
+      {
+        "kind": "VERSICLE",
+        "latin": "Dóminus vobíscum."
+      },
+      {
+        "kind": "RESPONSE",
+        "latin": "Et cum spíritu tuo."
+      }
+    ],
+    "prayerBodyPresent": "Deus, cui próprium est miseréri semper et párcere, te súpplices exorámus pro ánima fámuli tui N., quam hódie de hoc sǽculo migráre jussísti: ut non tradas eam in manus inimíci, neque obliviscáris in finem, sed júbeas eam a sanctis Ángelis súscipi, et ad pátriam paradísi perdúci; ut, quia in te sperávit et crédidit, non pœnas inférni sustíneat, sed gáudia ætérna possídeat. Per Christum Dóminum nostrum.",
+    "prayerBodyAbsent": "Absolve, quǽsumus, Dómine, ánimam fámuli tui N. ab omni vínculo delictórum: ut, in resurrectiónis glória, inter Sanctos et Eléctos tuos resuscitátus respíret. Per Christum Dóminum nostrum.",
+    "response": "Amen."
+  },
+  "departure": {
+    "inParadisum": "In paradísum dedúcant te Ángeli: in tuo advéntu suscípiant te Mártyres, et perdúcant te in civitátem sanctam Jerúsalem.",
+    "chorusAngelorum": "Chorus Angelórum te suscípiat, et cum Lázaro quondam páupere ætérnam hábeas réquiem."
+  }
+}
