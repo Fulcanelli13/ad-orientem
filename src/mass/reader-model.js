@@ -3,7 +3,7 @@ import { selectReaderTextCorpus, buildReaderSectionCard } from "./reader-text.js
 import { properToReaderSlots, assertReaderProperReady } from "./proper-reader-slots.js";
 import { projectSourceFirstLiveModel } from "./reader-live-source.js";
 
-const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER"]);
+const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM"]);
 
 function assertBaselineReaderGraph(resolvedMass){
   if(resolvedMass?.distinctRite) {
