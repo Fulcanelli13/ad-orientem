@@ -9,7 +9,7 @@ function assertBaselineReaderGraph(resolvedMass){
   if(resolvedMass?.distinctRite) {
     throw new Error("Reader card adapter not yet certified for distinct rite "+resolvedMass.distinctRite);
   }
-  const unsupportedPreceding=(resolvedMass?.precedingRites??[]).filter(x=>!["ASPERGES","PALM"].includes(x));
+  const unsupportedPreceding=(resolvedMass?.precedingRites??[]).filter(x=>!["ASPERGES","PALM","ASH"].includes(x));
   if(unsupportedPreceding.length) {
     throw new Error("Reader card adapter not yet certified for preceding rite graph "+unsupportedPreceding.join(", "));
   }
