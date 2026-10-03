@@ -1,7 +1,10 @@
 // Feature-gated R17 reader preview.
-// This deliberately mirrors the already-running legacy reader instead of
-// taking canonical text ownership. It lets us prove layout/navigation/state
-// parity without deleting or mutating the rollback reader.
+// Wave 2 ownership:
+// - R17 owns presentation mode, card identity, current section and navigation state.
+// - Legacy DOM remains the temporary text / rail / Schola donor underneath.
+// - Unsupported structural branches fail closed to legacy structure.
+
+import { createReaderStructureController } from "./reader-structure.js";
 
 const STYLE_ID="ao-r17-reader-preview-style";
 const ROOT_ID="ao-r17-reader-preview";
@@ -55,10 +58,12 @@ function ensureStyle(doc){
 #${ROOT_ID} .r17schola p{margin:0;font-size:16px;line-height:1.35}
 #${ROOT_ID} .r17nav{display:grid;grid-template-columns:54px 1fr 54px;align-items:center;gap:8px;padding:8px max(8px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 8px) max(8px,env(safe-area-inset-left,0px));background:#090e14;border-top:1px solid rgba(255,255,255,.07)}
 #${ROOT_ID} .r17nav button{min-width:44px;min-height:44px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:#0d141c;color:#eee;font-size:20px}
-#${ROOT_ID} .r17meta{text-align:center;font:600 9px/1.2 system-ui;letter-spacing:.08em;color:#8f948f}
+#${ROOT_ID} .r17nav button:disabled{opacity:.24}
+#${ROOT_ID} .r17meta{text-align:center;font:600 9px/1.25 system-ui;letter-spacing:.07em;color:#8f948f}
+#${ROOT_ID}[data-r17-structural-sync="mismatch"] .r17meta{color:#d7a38e}
 #${ROOT_ID} .r17close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 8px);right:8px;z-index:3;width:44px;height:44px;border:1px solid rgba(255,255,255,.11);border-radius:12px;background:#0d141c;color:#ddd;font:600 18px/1 system-ui}
 #${ROOT_ID} .r17badge{position:absolute;top:calc(env(safe-area-inset-top,0px) + 13px);left:8px;z-index:3;color:#8e958f;font:700 8px/1 system-ui;letter-spacing:.12em;writing-mode:vertical-rl}
-@media(max-width:520px){#${ROOT_ID} .r17modes,#${ROOT_ID} .r17state{padding-left:50px;padding-right:50px}#${ROOT_ID} .r17reader{inset-left:46px;inset-right:46px}}
+@media(max-width:520px){#${ROOT_ID} .r17modes,#${ROOT_ID} .r17state{padding-left:50px;padding-right:50px}#${ROOT_ID} .r17reader{left:46px;right:46px}}
 `;
   doc.head.appendChild(style);
 }
@@ -69,17 +74,40 @@ function modeButton(doc,mode,label){
   return b;
 }
 
+function legacyModeValue(mode){
+  if(mode==="MISSAL")return "read";
+  if(mode==="SIMPLE")return "simple";
+  return "live";
+}
+
+function readLegacyCounter(doc){
+  const raw=doc.querySelector("#cardCounter")?.textContent?.trim()||"";
+  const match=raw.match(/(\d+)\s*\/\s*(\d+)/);
+  return match?{localIndex:Number(match[1]),localTotal:Number(match[2])}:null;
+}
+
+function legacyActiveBaseId(doc){
+  const card=doc.querySelector("#reader .mass-card.is-active");
+  const raw=(card?.dataset?.macros||card?.dataset?.macro||"").split(",").map(x=>x.trim()).filter(Boolean);
+  return raw.find(x=>/^AO\.SM\.M\d{2}$/.test(x))||null;
+}
+
 export function mountReaderPreview({doc=globalThis.document,prepared=null,onClose=null}={}){
   if(!doc?.body)throw new TypeError("Document/body required");
   doc.getElementById(ROOT_ID)?.remove();
   ensureStyle(doc);
 
+  const structure=createReaderStructureController(prepared);
+
   const root=doc.createElement("section");
   root.id=ROOT_ID;
   root.setAttribute("aria-label","R17 Mass reader preview");
+  root.dataset.r17Structure=structure.supported?"native":"legacy-fallback";
+  if(!structure.supported)root.dataset.r17StructureReason=structure.reason||"UNSUPPORTED";
+
   root.innerHTML=`
     <div class="r17modes"></div>
-    <div class="r17state"><span data-r17-station>—</span><span data-r17-guide>—</span><span data-r17-action>—</span></div>
+    <div class="r17state"><span data-r17-station>—</span><span data-r17-section>—</span><span data-r17-action>—</span></div>
     <div class="r17stage">
       <aside class="r17rail left">
         <div class="r17cue" data-r17-posture>—</div>
@@ -98,22 +126,57 @@ export function mountReaderPreview({doc=globalThis.document,prepared=null,onClos
     <span class="r17badge">R17 PREVIEW</span>`;
 
   const modes=root.querySelector(".r17modes");
-  for(const [mode,label] of [["read","MISSAL"],["simple","SIMPLE"],["live","LIVE"]])modes.appendChild(modeButton(doc,mode,label));
+  for(const [mode,label] of [["MISSAL","MISSAL"],["SIMPLE","SIMPLE"],["LIVE","LIVE"]])modes.appendChild(modeButton(doc,mode,label));
   doc.body.appendChild(root);
 
   const legacyReader=doc.querySelector("#reader");
   if(!legacyReader)throw new Error("Legacy reader DOM unavailable for preview mirroring");
 
+  // One-time alignment only. After this, navigation/mode ownership is the R17 controller.
+  if(structure.supported){
+    const initialBase=legacyActiveBaseId(doc);
+    if(initialBase)structure.goToBase(initialBase);
+  }
+
   let observer=null,raf=0;
+
+  function structuralState(){
+    if(structure.supported)return structure.snapshot();
+    const legacyCounter=readLegacyCounter(doc);
+    const activeMode=doc.querySelector("[data-mode-btn].active")?.dataset.modeBtn||legacyModeValue(prepared?.readerPreferences?.mode||"LIVE");
+    const mode=activeMode==="read"?"MISSAL":activeMode==="simple"?"SIMPLE":"LIVE";
+    return {
+      supported:false,
+      reason:structure.reason,
+      mode,
+      title:textOf(doc,"#guideCopy"),
+      sectionTitle:"LEGACY STRUCTURE",
+      localIndex:legacyCounter?.localIndex??0,
+      localTotal:legacyCounter?.localTotal??0,
+      atStart:doc.querySelector("#cardPrev")?.style?.visibility==="hidden",
+      atEnd:doc.querySelector("#cardNext")?.style?.visibility==="hidden",
+      cardId:null,
+      baseIds:[],
+    };
+  }
+
   function queue(){if(!raf)raf=requestAnimationFrame(sync)}
+
   function sync(){
     raf=0;
     const mirror=root.querySelector(".r17mirror");
     mirror.replaceChildren(...[...legacyReader.children].map(sanitizeClone));
 
+    const state=structuralState();
+    root.dataset.r17CardId=state.cardId||"legacy";
+    root.dataset.r17Section=state.sectionId||"legacy";
+
+    // Wave 2: center ribbon is R17-native current section/card title when supported.
     root.querySelector("[data-r17-station]").textContent=textOf(doc,"#stationText");
-    root.querySelector("[data-r17-guide]").textContent=textOf(doc,"#guideCopy");
+    root.querySelector("[data-r17-section]").textContent=state.title||state.sectionTitle||"—";
     root.querySelector("[data-r17-action]").textContent=textOf(doc,"#actionDisplay");
+
+    // Rails remain legacy donors in this wave.
     root.querySelector("[data-r17-posture]").textContent=textOf(doc,"#postureText");
     root.querySelector("[data-r17-gesture]").textContent=textOf(doc,"#gestureText");
     root.querySelector("[data-r17-response]").textContent=textOf(doc,"#responseText");
@@ -126,28 +189,51 @@ export function mountReaderPreview({doc=globalThis.document,prepared=null,onClos
     root.querySelector("[data-r17-schola]").textContent=textOf(doc,"#scholaStreamLine","");
     root.querySelector("[data-r17-schola-translation]").textContent=textOf(doc,"#scholaStreamTranslation","");
 
-    const active=doc.querySelector("[data-mode-btn].active")?.dataset.modeBtn
-      ?? String(prepared?.readerPreferences?.mode??"LIVE").toLowerCase().replace("missal","read");
-    root.querySelectorAll("[data-r17-mode]").forEach(b=>b.classList.toggle("active",b.dataset.r17Mode===active));
+    root.querySelectorAll("[data-r17-mode]").forEach(b=>b.classList.toggle("active",b.dataset.r17Mode===state.mode));
 
-    root.querySelector(".r17meta").textContent=[
-      prepared?.session?.resolvedMass?.form??"MASS",
-      doc.querySelector("#cardCounter")?.textContent?.trim()||""
-    ].filter(Boolean).join(" · ");
+    const legacyCounter=readLegacyCounter(doc);
+    const parity=structure.supported&&legacyCounter
+      ? legacyCounter.localIndex===state.localIndex&&legacyCounter.localTotal===state.localTotal
+      : true;
+    root.dataset.r17StructuralSync=parity?"aligned":"mismatch";
+
+    root.querySelector("[data-r17-prev]").disabled=Boolean(state.atStart);
+    root.querySelector("[data-r17-next]").disabled=Boolean(state.atEnd);
+
+    const form=prepared?.session?.resolvedMass?.form??"MASS";
+    root.querySelector(".r17meta").textContent=structure.supported
+      ? [state.sectionTitle,`${state.localIndex} / ${state.localTotal}`,state.cardId,parity?"R17":"CHECK SYNC"].filter(Boolean).join(" · ")
+      : [form,"LEGACY STRUCTURE",structure.reason||""].filter(Boolean).join(" · ");
+
+    globalThis.AO_R17_READER_STRUCTURE_STATE=Object.freeze({...state,legacyCounter,aligned:parity});
+  }
+
+  function navigate(direction){
+    if(structure.supported){
+      direction>0?structure.next():structure.previous();
+    }
+    doc.querySelector(direction>0?"#cardNext":"#cardPrev")?.click();
+    setTimeout(queue,0);
+  }
+
+  function changeMode(mode){
+    if(structure.supported)structure.setMode(mode);
+    doc.querySelector(`[data-mode-btn="${legacyModeValue(mode)}"]`)?.click();
+    setTimeout(queue,0);
   }
 
   root.addEventListener("click",e=>{
     const mode=e.target.closest?.("[data-r17-mode]")?.dataset.r17Mode;
-    if(mode){doc.querySelector(`[data-mode-btn="${mode}"]`)?.click();setTimeout(queue,0);return}
-    if(e.target.closest?.("[data-r17-prev]")){doc.querySelector("#cardPrev")?.click();setTimeout(queue,0);return}
-    if(e.target.closest?.("[data-r17-next]")){doc.querySelector("#cardNext")?.click();setTimeout(queue,0);return}
+    if(mode){changeMode(mode);return}
+    if(e.target.closest?.("[data-r17-prev]")){navigate(-1);return}
+    if(e.target.closest?.("[data-r17-next]")){navigate(1);return}
     if(e.target.closest?.("[data-r17-close]")){destroy();onClose?.();return}
   });
 
   observer=new MutationObserver(queue);
   const watchTargets=[
     legacyReader,
-    "#stationText","#guideCopy","#actionDisplay",
+    "#stationText","#actionDisplay",
     "#postureText","#gestureText","#responseText",
     "#voiceText","#bellText","#scholaDock",
     "#scholaStreamLine","#scholaStreamTranslation",
@@ -165,6 +251,15 @@ export function mountReaderPreview({doc=globalThis.document,prepared=null,onClos
     root.remove();
   }
 
-  globalThis.AO_R17_READER_PREVIEW=Object.freeze({destroy,sync:queue,root});
+  globalThis.AO_R17_READER_PREVIEW=Object.freeze({
+    destroy,
+    sync:queue,
+    root,
+    structure,
+    state:()=>structuralState(),
+    next:()=>navigate(1),
+    previous:()=>navigate(-1),
+    setMode:changeMode,
+  });
   return globalThis.AO_R17_READER_PREVIEW;
 }
