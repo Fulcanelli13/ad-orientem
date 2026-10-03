@@ -120,7 +120,6 @@ export function createBrowserMassRuntime({
       paragraphs:(card.paragraphs??[]).map(row=>({id:row.id,kind:row.kind,primary:row.latin,sourceCueIds:[row.sourceRecordId].filter(Boolean)})),
       progress:String(state.index+1)+" / "+String(state.total)+" · Candlemas",
       posture:state.recipientPosture?{label:state.recipientPosture}:card.posture&&!["LOCAL","ORDINARY_PROFILE"].includes(card.posture)?{label:card.posture}:null,
-      priestAction:state.objectState?{label:state.objectState}:null,
       guide:card.guide?{registryAvailable:true,text:card.guide}:null,
     };
   }
@@ -130,9 +129,9 @@ export function createBrowserMassRuntime({
     const card=readerModel?.cardBySequence?.(1);
     if(!card)return null;
     const block=card.blocks?.find?.(x=>x.blockId==="AO.SM.B014");
-    if(!block || block.firstParagraphIndex==null || !block.paragraphCount)throw new Error("Palm Introit handoff cannot resolve AO.SM.B014");
+    if(!block || block.firstParagraphIndex==null || !block.paragraphCount)throw new Error("Special-prelude Introit handoff cannot resolve AO.SM.B014");
     const paragraphs=card.paragraphs.slice(block.firstParagraphIndex,block.firstParagraphIndex+block.paragraphCount);
-    return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),palmIntroitOnly:true});
+    return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),specialPreludeIntroitOnly:true});
   }
 
   function cardMoment(card, extra = {}) {
