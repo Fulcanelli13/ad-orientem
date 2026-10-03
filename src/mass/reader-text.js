@@ -1,4 +1,5 @@
 import { projectResolvedReaderText } from "./reader-projection.js";
+import { composeProperReaderParagraphs } from "./proper-reader-composition.js";
 
 const EXPECTED = Object.freeze({
   LOW:Object.freeze({
@@ -105,22 +106,23 @@ function properParagraphs(block,properSlots){
   }
   const data=envelope.data ?? envelope;
   if(Array.isArray(data.paragraphs) && data.paragraphs.length){
-    return data.paragraphs.map((p,index)=>({
+    const resolved=data.paragraphs.map((p,index)=>({
       id:String(p.id ?? block.Block_ID+".proper."+index),
       kind:String(p.kind ?? "TEXT").toUpperCase(),
       latin:p.latin ?? p.lat ?? null,
       vernacular:p.vernacular ?? p.english ?? p.en ?? null,
     }));
+    return composeProperReaderParagraphs(block.Block_ID,resolved);
   }
   const latin=data.latin ?? data.Latin_Text ?? null;
   const english=data.vernacular ?? data.english ?? data.English_Text ?? null;
   if(!latin || !english) throw new Error(block.Block_ID+": Proper slot "+slot+" lacks bilingual resolved text");
-  return [{
+  return composeProperReaderParagraphs(block.Block_ID,[{
     id:block.Block_ID+".proper",
     kind:"TEXT",
     latin,
     vernacular:english,
-  }];
+  }]);
 }
 
 export function buildReaderSectionCard({
