@@ -110,7 +110,24 @@ try{
     const max=Math.max(0,el.scrollHeight-el.clientHeight);
     el.scrollTop=Math.max(9,max-16);
   });
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0173",null,{timeout:3000});
+  await page.waitForTimeout(250);
+  const wordsFocus=await page.evaluate(()=>{
+    const card=document.querySelector(".ao-prayer-card");
+    const cr=card.getBoundingClientRect();
+    return {
+      cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+      scrollTop:card.scrollTop,
+      maxScroll:card.scrollHeight-card.clientHeight,
+      clientHeight:card.clientHeight,
+      scrollHeight:card.scrollHeight,
+      items:[...card.querySelectorAll(".ao-reader-paragraph[data-cue-id]")].map(el=>{
+        const r=el.getBoundingClientRect();
+        return {cue:el.dataset.cueId,top:r.top-cr.top+card.scrollTop,bottom:r.bottom-cr.top+card.scrollTop};
+      }),
+    };
+  });
+  assert.equal(wordsFocus.cue,"AO.SM.C0173",
+    "pre-elevation words cue has no phone focus territory: "+JSON.stringify(wordsFocus));
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell??null),null,
     "Host elevation bell fires on the words cue before the action cue");
 
