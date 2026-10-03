@@ -4,6 +4,9 @@
 // validates/compiles the session through R17, then delegates the current live renderer.
 
 import { createMassEntryController } from "./app-shell-bootstrap.js";
+import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPreview } from "./reader-gate.js";
+import { runReaderShadowAudit } from "./reader-shadow.js";
+import { mountReaderPreview } from "./reader-preview.js";
 
 export const VERSION = "r17-browser-entry-v1";
 const ACTIVE_KEY = "ao-r17-active-mass-v1";
@@ -95,17 +98,26 @@ function persistPrepared(prepared) {
 
 async function delegateLegacyRenderer(prepared) {
   persistPrepared(prepared);
+  const readerUiMode = readBrowserReaderUiMode(globalThis);
   const bridge = legacyBridge();
   if (typeof bridge?.startLive !== "function") {
     throw new Error("Legacy live renderer bridge is unavailable");
   }
   await Promise.resolve(bridge.startLive());
   const legacyActive = bridge.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null;
+  const shadowAudit = readerModeRunsShadowAudit(readerUiMode)
+    ? runReaderShadowAudit({ doc: document, prepared })
+    : null;
+  if (readerModeMountsPreview(readerUiMode)) {
+    mountReaderPreview({ doc: document, prepared });
+  }
   globalThis.AO_R17_MASS_RUNTIME = Object.freeze({
     version: VERSION,
     prepared,
     legacyActive,
-    uiOwner: "LEGACY_DOM_TEMPORARY",
+    readerUiMode,
+    shadowAudit,
+    uiOwner: readerModeMountsPreview(readerUiMode) ? "R17_PREVIEW_OVER_LEGACY" : "LEGACY_DOM_TEMPORARY",
     canonicalOwner: "R17_SESSION_ENGINE",
   });
 }
@@ -194,6 +206,9 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       legacyRenderer: Boolean(legacyBridge()?.startLive),
       runtime: Boolean(runtime()?.store),
       active: globalThis.AO_R17_ACTIVE_MASS ?? null,
+      readerUiMode: readBrowserReaderUiMode(globalThis),
+      shadow: globalThis.AO_R17_READER_SHADOW ?? null,
+      previewMounted: Boolean(globalThis.AO_R17_READER_PREVIEW?.root?.isConnected),
     }),
   });
 
