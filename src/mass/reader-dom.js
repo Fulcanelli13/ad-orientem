@@ -26,6 +26,8 @@ const SHELL_STYLE = `
 .ao-reader-paragraph{margin:0;font-size:clamp(1.02rem,3.7vw,1.28rem);line-height:1.52;color:#e8e1d8}
 .ao-reader-paragraph[data-active="true"]{color:#fffaf1}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:.72rem;border-left:2px solid var(--ao-accent)}
+.ao-reader-paragraph[data-translate-toggle="true"]{cursor:pointer}
+.ao-reader-paragraph[data-translate-toggle="true"]:focus-visible{outline:1px solid var(--ao-accent);outline-offset:4px;border-radius:4px}
 .ao-line-primary{display:block}
 .ao-line-secondary{display:block;margin-top:.2rem;font:400 .78em/1.35 system-ui,sans-serif;color:#aaa39a}
 .ao-reader-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:46px;border-top:1px solid var(--ao-line);background:#0a0f15}
@@ -55,15 +57,17 @@ function persist(next, previous){
 export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
   const paragraphs = Array.isArray(moment.paragraphs) ? moment.paragraphs.map((p, index) => {
-    if (typeof p === "string") return Object.freeze({id:String(index),kind:"TEXT",primary:p,secondary:null,active:false});
+    if (typeof p === "string") return Object.freeze({id:String(index),kind:"TEXT",primary:p,secondary:null,alternate:null,replaceOnToggle:false,active:false});
     return Object.freeze({
       id:String(p.id ?? index),
       kind:String(p.kind ?? (p.response ? "RESPONSE" : "TEXT")).toUpperCase(),
       primary:String(p.primary ?? p.text ?? ""),
       secondary:p.secondary == null ? null : String(p.secondary),
+      alternate:p.alternate == null ? null : String(p.alternate),
+      replaceOnToggle:p.replaceOnToggle === true && p.alternate != null,
       active:p.active === true,
     });
-  }) : Object.freeze([]);
+  }) : (previous.paragraphs ?? Object.freeze([]));
 
   const schola = persist(moment.schola, previous.schola);
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
@@ -74,7 +78,8 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
   return Object.freeze({
     id:String(moment.id ?? previous.id ?? ""),
     sectionTitle:String(moment.sectionTitle ?? previous.sectionTitle ?? ""),
-    cardTitle:String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? ""),
+    cardTitle:String(moment.cardUpdate === false ? (previous.cardTitle ?? "") : (moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "")),
+    cardUpdate:moment.cardUpdate !== false,
     paragraphs,
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
     posture:persist(moment.posture, previous.posture),
@@ -189,6 +194,16 @@ export function createReaderDomAdapter({
       const nav=event.target?.closest?.("[data-reader-nav]");
       if(nav?.dataset.readerNav==="previous"){onPrevious?.(current,prepared);return;}
       if(nav?.dataset.readerNav==="next"){onNext?.(current,prepared);return;}
+      const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
+      if(translatable){
+        const primary=translatable.querySelector?.(".ao-line-primary");
+        if(primary){
+          const showingAlt=translatable.dataset.showingAlt === "true";
+          primary.textContent=showingAlt ? translatable.dataset.primaryText : translatable.dataset.altText;
+          translatable.dataset.showingAlt=String(!showingAlt);
+        }
+        return;
+      }
       const guideButton=event.target?.closest?.('[data-role="guide-button"]');
       if(guideButton && !guideButton.disabled && current?.guide){
         const pop=root.querySelector('[data-role="guide-popover"]');
@@ -253,6 +268,13 @@ export function createReaderDomAdapter({
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
           node.dataset.active=String(p.active);
+          if(p.replaceOnToggle && p.alternate){
+            node.dataset.translateToggle="true";
+            node.dataset.primaryText=p.primary;
+            node.dataset.altText=p.alternate;
+            node.dataset.showingAlt="false";
+            node.tabIndex=0;
+          }
           const primary=doc.createElement("span");
           primary.className="ao-line-primary";
           primary.textContent=p.primary;
