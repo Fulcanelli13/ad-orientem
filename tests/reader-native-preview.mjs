@@ -244,7 +244,7 @@ try{
     eventData,
     cueRegistries,
   });
-}catch(error){blocked=/not yet certified for overlay REQUIEM/.test(String(error.message))}
+}catch(error){blocked=/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/.test(String(error.message))}
 assert.equal(blocked,true,"unsupported special graph did not fail closed");
 
 console.log("native reader preview: PASS — R17 owns cards; legacy state donation is explicit and temporary.");
