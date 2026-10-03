@@ -10,6 +10,9 @@ const data={
   canonSourceMap:load("../data/presentation/reader-canon-source-map.v1.json"),
 };
 const guideData={registry:load("../data/presentation/guide-registry.v1.json"),url:"test://guide-registry"};
+const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
+const palmData={payload:load("../data/presentation/reader-palm.v1.json"),graph:specialExtension.graphs.PALM};
+const ashData={payload:load("../data/presentation/reader-ash.v1.json"),graph:specialExtension.graphs.ASH};
 const cueRegistries=Object.freeze({
   gestures:load("../data/presentation/reader-gestures.v1.json"),
   responses:load("../data/presentation/reader-responses.v1.json"),
@@ -305,6 +308,37 @@ assert.equal(unsupportedOwned.priestPosition.label,"STALE LEGACY POSITION");
 assert.equal(unsupportedOwned.priestVoice.label,"STALE LEGACY VOICE");
 assert.equal(unsupportedOwned.response.label,"STALE LEGACY RESPONSE");
 assert.equal(unsupportedOwned.ownership.priestPosition,"LEGACY_FALLBACK");
+
+
+const palmPrepared={
+  ...prepared,
+  session:{
+    ...prepared.session,
+    resolvedMass:{...prepared.session.resolvedMass,precedingRites:["PALM"]},
+    plan:{kind:"MASS",precedingGraphs:["PALM"],followingGraphs:[],overlayGraphs:["VOTIVE_PROPER"],massEntry:"INTROIT",normalLastGospel:false},
+  },
+};
+const palmReady=await prepareNativeReaderPreview({
+  prepared:palmPrepared,presentationData:data,eventData,cueRegistries,guideData,palmData
+});
+assert.ok(palmReady.palmController,"Palm native preview controller missing");
+assert.equal(palmReady.palmController.project().card.id,"PALM-R01");
+assert.equal(palmReady.model.totalCards,30,"Palm prelude mutated Mass card identity");
+
+const ashPrepared={
+  ...prepared,
+  session:{
+    ...prepared.session,
+    resolvedMass:{...prepared.session.resolvedMass,precedingRites:["ASH"]},
+    plan:{kind:"MASS",precedingGraphs:["ASH"],followingGraphs:[],overlayGraphs:["VOTIVE_PROPER"],massEntry:"INTROIT",normalLastGospel:true},
+  },
+};
+const ashReady=await prepareNativeReaderPreview({
+  prepared:ashPrepared,presentationData:data,eventData,cueRegistries,guideData,ashData
+});
+assert.ok(ashReady.ashController,"Ash native preview controller missing");
+assert.equal(ashReady.ashController.project().card.id,"ASH-R01");
+assert.equal(ashReady.model.totalCards,30,"Ash prelude mutated Mass card identity");
 
 let blocked=false;
 try{
