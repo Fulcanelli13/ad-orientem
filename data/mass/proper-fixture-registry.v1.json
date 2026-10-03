@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "FIXTURE_MANIFEST_SCHEMA_ONLY",
   "note": "Expected structural manifests only. No unsourced liturgical text is embedded.",
   "fixtures": [
@@ -9,8 +9,8 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     },
     {
@@ -19,8 +19,8 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     },
     {
@@ -29,8 +29,8 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     },
     {
@@ -39,8 +39,8 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": true,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": true
       }
     },
     {
@@ -49,8 +49,8 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": true,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": true
       }
     },
     {
@@ -59,8 +59,8 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": true,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": true
       }
     },
     {
@@ -69,8 +69,8 @@
         "communicantes": true,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     },
     {
@@ -79,8 +79,8 @@
         "communicantes": true,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     },
     {
@@ -89,8 +89,8 @@
         "communicantes": true,
         "hancIgitur": true,
         "quiPridie": true,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     },
     {
@@ -99,8 +99,8 @@
         "communicantes": true,
         "hancIgitur": true,
         "quiPridie": false,
-        "interlectionSequence": true,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": true
       }
     },
     {
@@ -109,8 +109,8 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     },
     {
@@ -119,8 +119,8 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     },
     {
@@ -129,9 +129,17 @@
         "communicantes": false,
         "hancIgitur": false,
         "quiPridie": false,
-        "interlectionSequence": false,
-        "crossParity": true
+        "crossParity": true,
+        "preGospelSequence": false
       }
     }
-  ]
+  ],
+  "schemaNames": {
+    "preferredCanonField": "canonPackage",
+    "preferredPreGospelField": "preGospelSequence",
+    "compatibilityAliases": [
+      "canonProperInserts",
+      "interlectionSequence"
+    ]
+  }
 }
