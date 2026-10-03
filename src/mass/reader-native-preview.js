@@ -157,7 +157,7 @@ export async function prepareNativeReaderPreview({
   loadGuideData=loadGuideRegistry,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
-  const nativePendingPreludes=(prepared?.session?.plan?.precedingGraphs??[]).filter(x=>["ASPERGES","PALM","ASH","CANDLEMAS"].includes(x));
+  const nativePendingPreludes=(prepared?.session?.plan?.precedingGraphs??[]).filter(x=>["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"].includes(x));
   if(nativePendingPreludes.length)throw new Error("SPECIAL_PRELUDE_NATIVE_PREVIEW_PENDING:"+nativePendingPreludes.join(","));
   const structuralSupport=structureSupport(prepared);
   if(!structuralSupport.supported){
