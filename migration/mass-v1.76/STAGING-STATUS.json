@@ -1,0 +1,25 @@
+{
+  "release": "R18",
+  "branch": "migration/mass-v1.76-r18",
+  "base_branch": "migration/v43.33",
+  "base_commit": "2a3ac224c409f8a069d425f6933833e53182add4",
+  "whole_app_baseline": "v43.33",
+  "mass_subsystem_baseline": "v1.76",
+  "mass_baseline_sha256": "511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99",
+  "production_index_switched": false,
+  "modular_entry_staged": true,
+  "modular_entry_runnable": false,
+  "blocking_reason": "Extracted source corpus and intact 6.5 MB reader-runtime-v1.76.js are not yet committed on this branch.",
+  "required_before_runnable": [
+    "data/mass/v1.76/low-mass.json",
+    "data/mass/v1.76/sung-mass.json",
+    "migration/mass-v1.76/data-loaders/",
+    "src/mass/contracts/",
+    "src/mass/recovery/r07-r13-recovery-pack.js",
+    "src/mass/integration/",
+    "src/mass/diagnostics/",
+    "src/mass/ui/",
+    "src/mass/legacy/reader-runtime-v1.76.js"
+  ],
+  "policy": "Do not wire repository root index.html to the modular Mass page until the missing corpus is committed and browser/device parity is recorded."
+}
