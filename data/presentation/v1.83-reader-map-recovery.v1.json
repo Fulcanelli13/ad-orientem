@@ -107,6 +107,47 @@
         "AO.SM.B075"
       ],
       "note": "Do not infer ownership of Quid retribuam Domino until donor bytes are recovered."
+    },
+    {
+      "label": "Panem caelestem / Domine, non sum dignus — Priest",
+      "confidence": "RECOVERED_FROM_FROZEN_LIVE_BOUNDARY_LINEAGE",
+      "anchorBlocks": [
+        "AO.SM.B072",
+        "AO.SM.B073"
+      ],
+      "anchorTitles": [
+        "Panem caelestem accipiam",
+        "Domine, non sum dignus — Priest"
+      ],
+      "evidenceBaseline": "LIVE-TEXT-2026-09-21.3 — FROZEN",
+      "evidenceLiveCardIds": [
+        "LC-COM-190",
+        "LC-COM-200-A",
+        "LC-COM-200-B",
+        "LC-COM-200-C"
+      ],
+      "note": "The frozen LIVE master map already separates Panem caelestem from the priest's triple Domine non sum dignus. This recovers the semantic boundary for the formerly area-only Communion-preparation split. The LC-* identifiers are evidence lineage only: do not treat them as recovered v1.83 card IDs or infer the final v1.83 full card ranges."
+    },
+    {
+      "label": "Placeat tibi / Final Blessing sequence",
+      "confidence": "RECOVERED_FROM_FROZEN_LIVE_BOUNDARY_LINEAGE",
+      "anchorBlocks": [
+        "AO.SM.B091",
+        "AO.SM.B092"
+      ],
+      "anchorTitles": [
+        "Placeat tibi, sancta Trinitas",
+        "Benedicat vos omnipotens Deus"
+      ],
+      "evidenceBaseline": "LIVE-TEXT-2026-09-21.3 — FROZEN",
+      "evidenceLiveCardIds": [
+        "LC-END-110",
+        "LC-END-120",
+        "LC-END-130",
+        "LC-END-140"
+      ],
+      "recoveredSecondSurfaceDescription": "Altar kiss before blessing + Final Blessing + Amen",
+      "note": "The frozen LIVE master map separates Placeat from the subsequent blessing sequence. This recovers the semantic boundary for the formerly area-only conclusion split. The evidence map further atomizes altar kiss, blessing and Amen; do not infer that v1.83 preserved those internal LC-* subdivisions without its donor bytes."
     }
   ],
   "unresolvedSplitAreas": [
@@ -119,16 +160,6 @@
       "area": "CANON",
       "confidence": "AREA_ONLY",
       "note": "One further v1.81 decompression split is known to be in the Canon area; exact boundary/title pair is not recoverable from current evidence."
-    },
-    {
-      "area": "COMMUNION_PREPARATION",
-      "confidence": "AREA_ONLY",
-      "note": "One further v1.81 decompression split is known to be in Communion preparation; exact boundary/title pair is not recoverable from current evidence."
-    },
-    {
-      "area": "PLACEAT_BLESSING_CONCLUSION",
-      "confidence": "AREA_ONLY",
-      "note": "One further v1.81 decompression split is known around Placeat/final blessing; exact boundary/title pair is not recoverable from current evidence."
     }
   ],
   "exactCanonicalAnchors": {
