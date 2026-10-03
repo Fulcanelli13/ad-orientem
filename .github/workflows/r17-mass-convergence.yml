@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - implementation/r17-mass-convergence
+      - implementation/r17-mass-convergence-mainline
   pull_request:
     paths:
       - "src/mass/**"
