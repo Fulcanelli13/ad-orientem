@@ -1,5 +1,6 @@
 import { validateProperManifestV2 } from "./proper-contracts.js";
 import { compilePostcommunionExitDelta, assertPostcommunionExitOwnership } from "./postcommunion-exit.js";
+import { compileFormLifecycle } from "./form-lifecycle.js";
 
 // R17 convergence — session composition above the immutable canonical MC graph.
 // This module does not own text, DOM, storage, calendar fetching, or canonical event identity.
@@ -346,6 +347,7 @@ export function compileMassPlan(resolvedMass) {
   }
 
   state.objectiveContext = resolvedObjectiveContext(resolvedMass, state);
+  state.lifecycle = compileFormLifecycle(resolvedMass, state);
 
   return Object.freeze({
     ...state,
