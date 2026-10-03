@@ -1,0 +1,2202 @@
+{
+  "metadata": {
+    "version": "SPECIAL-DAYS-CANONICAL-GRAPH-1.1",
+    "date": "2026-09-22",
+    "target_head": "Ad Orientem v43.70",
+    "mc_graph_version": "1.3",
+    "mc_runtime_binding": "LOW_B005_PLUS_SOLEMN_B006",
+    "research_status": "FROZEN_FOR_GF_EV",
+    "github_touched": false,
+    "corrections": [
+      "Easter Vigil overlay suppresses MC-0065 Prayer for peace; MR62 Holy Saturday says omissa oratione Domine Iesu Christe, qui dixisti."
+    ]
+  },
+  "schema": [
+    "id",
+    "phase",
+    "trigger_type",
+    "trigger_key",
+    "actor_scope",
+    "posture_state",
+    "action_state",
+    "object_state",
+    "personal_state",
+    "branch_condition",
+    "evidence_status",
+    "source_locator",
+    "projection",
+    "notes"
+  ],
+  "graphs": {
+    "GF": [
+      {
+        "id": "GF-OPEN-010",
+        "phase": "OPENING",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "GOOD_FRIDAY_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era Good Friday ceremonial manual",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-OPEN-020",
+        "phase": "OPENING",
+        "trigger_type": "MINISTER_POSITION",
+        "trigger_key": "MINISTERS_AT_ALTAR_PROSTRATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL_PROFOUND_BOW",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday opening prostration",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-OPEN-030",
+        "phase": "OPENING",
+        "trigger_type": "MINISTER_ACTION",
+        "trigger_key": "MINISTERS_RISE_FROM_PROSTRATION",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL_UPRIGHT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday opening prostration",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-OPEN-040",
+        "phase": "OPENING",
+        "trigger_type": "PRAYER_COMPLETE",
+        "trigger_key": "OPENING_COLLECT_COMPLETE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era Good Friday ceremonial manual",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-LESS-110",
+        "phase": "LESSONS",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "FIRST_LESSON",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday first lesson",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-LESS-120",
+        "phase": "LESSONS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "OREMUS_AFTER_FIRST_LESSON",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday lesson/oration rubric",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-LESS-130",
+        "phase": "LESSONS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "FLECTAMUS_GENUA_AFTER_FIRST_LESSON",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Flectamus genua rubric",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-LESS-140",
+        "phase": "LESSONS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "LEVATE_AFTER_FIRST_LESSON",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Levate rubric",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-LESS-210",
+        "phase": "LESSONS",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "SECOND_LESSON",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday second lesson",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-PASS-310",
+        "phase": "PASSION",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "PASSION_PROCLAMATION",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era Good Friday ceremonial manual",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-PASS-320",
+        "phase": "PASSION",
+        "trigger_type": "TEXT_RUBRIC",
+        "trigger_key": "TRADIDIT_SPIRITUM_COMPLETED",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "PAUSE_BRIEFLY",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Passion rubric at tradidit spiritum",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Text trigger is legitimate because the rubric itself attaches the kneeling pause to this text."
+      },
+      {
+        "id": "GF-PASS-330",
+        "phase": "PASSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PASSION_NARRATIVE_RESUMES",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "DERIVED_STATE_TRANSITION",
+        "source_locator": "Derived restoration of pre-pause Passion posture",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-400",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "SECTION_TRANSITION",
+        "trigger_key": "PASSION_CONCLUDED_PRAYERS_PREPARE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era Good Friday ceremonial manual",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-410",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "SOLEMN_PRAYERS_BEGIN",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era Good Friday ceremonial manual",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-01-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "HOLY_CHURCH:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-01-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "HOLY_CHURCH:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-02-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "SUPREME_PONTIFF:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-02-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "SUPREME_PONTIFF:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-03-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "ALL_ORDERS_AND_DEGREES:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-03-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "ALL_ORDERS_AND_DEGREES:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-04-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "PUBLIC_OFFICIALS:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-04-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "PUBLIC_OFFICIALS:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-05-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "CATECHUMENS:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-05-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "CATECHUMENS:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-06-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "NEEDS_OF_FAITHFUL:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-06-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "NEEDS_OF_FAITHFUL:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-07-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "HERETICS_AND_SCHISMATICS:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-07-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "HERETICS_AND_SCHISMATICS:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-08-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "CONVERSION_OF_JEWS:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-08-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "CONVERSION_OF_JEWS:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-09-K",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "CONVERSION_OF_PAGANS:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-SOP-09-R",
+        "phase": "SOLEMN_PRAYERS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "CONVERSION_OF_PAGANS:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Solemn Prayers",
+        "projection": {
+          "simple": "GROUP:SOLEMN_PRAYERS",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-XPREP-500",
+        "phase": "CROSS",
+        "trigger_type": "SECTION_TRANSITION",
+        "trigger_key": "SOLEMN_PRAYERS_COMPLETE_CROSS_PREP",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era Good Friday ceremonial manual",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-X-510",
+        "phase": "CROSS",
+        "trigger_type": "OBJECT_MOVEMENT",
+        "trigger_key": "CROSS_ENTERS_OR_UNVEILING_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Cross unveiling",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-X-521",
+        "phase": "CROSS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "VENITE_ADOREMUS_1_COMPLETED",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "BRIEF_SILENT_ADORATION",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Cross unveiling",
+        "projection": {
+          "simple": "GROUP:UNVEILING",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-X-531",
+        "phase": "CROSS",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "UNVEILING_ADORATION_1_COMPLETE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CEREMONIAL_STATE",
+        "source_locator": "1962 Good Friday ceremonial implementation",
+        "projection": {
+          "simple": "GROUP:UNVEILING",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-X-522",
+        "phase": "CROSS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "VENITE_ADOREMUS_2_COMPLETED",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "BRIEF_SILENT_ADORATION",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Cross unveiling",
+        "projection": {
+          "simple": "GROUP:UNVEILING",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-X-532",
+        "phase": "CROSS",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "UNVEILING_ADORATION_2_COMPLETE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CEREMONIAL_STATE",
+        "source_locator": "1962 Good Friday ceremonial implementation",
+        "projection": {
+          "simple": "GROUP:UNVEILING",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-X-523",
+        "phase": "CROSS",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "VENITE_ADOREMUS_3_COMPLETED",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "BRIEF_SILENT_ADORATION",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Cross unveiling",
+        "projection": {
+          "simple": "GROUP:UNVEILING",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-X-533",
+        "phase": "CROSS",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "UNVEILING_ADORATION_3_COMPLETE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "CEREMONIAL_STATE",
+        "source_locator": "1962 Good Friday ceremonial implementation",
+        "projection": {
+          "simple": "GROUP:UNVEILING",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-VEN-600",
+        "phase": "CROSS_VENERATION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "WAITING_FOR_PERSONAL_TURN",
+        "actor_scope": "ORDINARY_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": "WAITING",
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday Cross veneration",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Improperia soundtrack position is not a trigger."
+      },
+      {
+        "id": "GF-VEN-610",
+        "phase": "CROSS_VENERATION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "PERSONAL_TURN_BEGINS",
+        "actor_scope": "ORDINARY_FAITHFUL",
+        "posture_state": null,
+        "action_state": "APPROACH_CROSS",
+        "object_state": null,
+        "personal_state": "APPROACHING",
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 ceremonial guides; faithful veneration",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-VEN-620",
+        "phase": "CROSS_VENERATION",
+        "trigger_type": "PERSONAL_POSITION",
+        "trigger_key": "AT_CROSS_IMMEDIATELY_BEFORE_VENERATION",
+        "actor_scope": "ORDINARY_FAITHFUL",
+        "posture_state": null,
+        "action_state": "ONE_SIMPLE_GENUFLECTION",
+        "object_state": null,
+        "personal_state": "GENUFLECTING",
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "Fortescue pp. 294/299; O’Connell p. 46",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Never inherit the ministers’ three-genuflection approach."
+      },
+      {
+        "id": "GF-VEN-630",
+        "phase": "CROSS_VENERATION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "GENUFLECTION_COMPLETE",
+        "actor_scope": "ORDINARY_FAITHFUL",
+        "posture_state": null,
+        "action_state": "KISS_OR_VENERATE_CROSS",
+        "object_state": null,
+        "personal_state": "VENERATING",
+        "branch_condition": null,
+        "evidence_status": "MR62_AND_MANUAL",
+        "source_locator": "MR62 + 1962 ceremonial manuals",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-VEN-640",
+        "phase": "CROSS_VENERATION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "PERSONAL_VENERATION_COMPLETE",
+        "actor_scope": "ORDINARY_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": "RETURN_TO_PLACE",
+        "object_state": null,
+        "personal_state": "COMPLETE",
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 ceremonial guides",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-VEN-650",
+        "phase": "CROSS_VENERATION",
+        "trigger_type": "BRANCH",
+        "trigger_key": "CORPORATE_SILENT_VENERATION_SELECTED",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": null,
+        "action_state": "SILENT_ADORATION_FROM_PLACE",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "CROSS_VENERATION_MODE=CORPORATE_SILENT",
+        "evidence_status": "MR62_BRANCH",
+        "source_locator": "MR62 Good Friday large-crowd veneration branch",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Does not inherit personal one-genuflection sequence."
+      },
+      {
+        "id": "GF-X-700",
+        "phase": "CROSS",
+        "trigger_type": "OBJECT_MOVEMENT",
+        "trigger_key": "CROSS_REPLACED_ON_ALTAR",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "Restored Holy Week ceremonial witness",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-COM-800",
+        "phase": "PRESANCTIFIED_COMMUNION",
+        "trigger_type": "SECTION_TRANSITION",
+        "trigger_key": "COMMUNION_PREPARATION_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era Good Friday ceremonial manual",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-COM-810",
+        "phase": "PRESANCTIFIED_COMMUNION",
+        "trigger_type": "SACRAMENTAL_STATE",
+        "trigger_key": "BLESSED_SACRAMENT_RETURNING_TO_HIGH_ALTAR",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": null,
+        "object_state": "BLESSED_SACRAMENT_RETURNING",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday return of Blessed Sacrament",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Never bind to an accompanying antiphon."
+      },
+      {
+        "id": "GF-COM-820",
+        "phase": "PRESANCTIFIED_COMMUNION",
+        "trigger_type": "SACRAMENTAL_STATE",
+        "trigger_key": "BLESSED_SACRAMENT_AT_ALTAR_PATER_PREP",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": "BLESSED_SACRAMENT_AT_ALTAR",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era ceremonial witness",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-COM-830",
+        "phase": "PRESANCTIFIED_COMMUNION",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "PRAECEPTIS_PATER_NOSTER",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "RECITE_PATER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "LOCKED_1962",
+        "source_locator": "Restored Holy Week liturgical book + 1962-era ceremonial witness",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-COM-840",
+        "phase": "PRESANCTIFIED_COMMUNION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "IMMEDIATE_COMMUNION_PREPARATION",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era ceremonial witness",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-COM-850",
+        "phase": "PRESANCTIFIED_COMMUNION",
+        "trigger_type": "PERSONAL_STATE",
+        "trigger_key": "PERSONAL_COMMUNION",
+        "actor_scope": "COMMUNICANT",
+        "posture_state": "KNEEL",
+        "action_state": "RECEIVE_COMMUNION",
+        "object_state": null,
+        "personal_state": "RECEIVING_COMMUNION",
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era Communion discipline",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-COM-860",
+        "phase": "PRESANCTIFIED_COMMUNION",
+        "trigger_type": "SACRAMENTAL_STATE",
+        "trigger_key": "COMMUNION_AND_RESERVATION_COMPLETE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962-era ceremonial witness",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-END-900",
+        "phase": "CONCLUSION",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "THREE_CONCLUDING_PRAYERS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "RESPOND_AMEN",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Good Friday concluding prayers",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "GF-END-910",
+        "phase": "CONCLUSION",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "MINISTERS_DEPART",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "STATE_CONTINUATION",
+        "source_locator": "State continuation from concluding prayers",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      }
+    ],
+    "EV": [
+      {
+        "id": "EV-FIRE-010",
+        "phase": "NEW_FIRE",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "NEW_FIRE_CEREMONY_ACTIVE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "McManus 1956 / restored Holy Week ceremonial guidance",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-FIRE-020",
+        "phase": "PASCHAL_CANDLE_PREP",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "PASCHAL_CANDLE_PREPARATION",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "OBSERVE_NO_LAY_IMITATION",
+        "object_state": "PASCHAL_CANDLE_PREPARED",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT_ACTOR_SCOPED",
+        "source_locator": "MR62 Holy Saturday Paschal candle preparation",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-PROC-100",
+        "phase": "PROCESSION",
+        "trigger_type": "PROCESSION_STATE",
+        "trigger_key": "PASCHAL_PROCESSION_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": null,
+        "action_state": "FOLLOW_PROCESSION_WHERE_APPLICABLE",
+        "object_state": "FAITHFUL_CANDLE_UNLIT",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 Easter Vigil ceremonial guidance",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LUM-110",
+        "phase": "PROCESSION",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "LUMEN_CHRISTI_1_COMPLETED",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": null,
+        "action_state": "GENUFLECT_TOWARD_PASCHAL_CANDLE_AND_RESPOND_DEO_GRATIAS",
+        "object_state": "FAITHFUL_CANDLE_UNLIT",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday Lumen Christi I",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LUM-120",
+        "phase": "PROCESSION",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "LUMEN_CHRISTI_2_COMPLETED",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": null,
+        "action_state": "GENUFLECT_TOWARD_PASCHAL_CANDLE_AND_RESPOND_DEO_GRATIAS",
+        "object_state": "CLERGY_CANDLES_LIT__FAITHFUL_CANDLE_UNLIT",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday Lumen Christi II",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LUM-130",
+        "phase": "PROCESSION",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "LUMEN_CHRISTI_3_COMPLETED",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": null,
+        "action_state": "GENUFLECT_TOWARD_PASCHAL_CANDLE_AND_RESPOND_DEO_GRATIAS",
+        "object_state": "FAITHFUL_CANDLES_LIT__CHURCH_LIGHTS_ON",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday Lumen Christi III",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-EXS-200",
+        "phase": "EXSULTET",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "PRAECONIUM_PASCHALE_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": "LIT_RECOMMENDED_BY_RUBRIC",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT_CONVENIT",
+        "source_locator": "MR62 Holy Saturday Exsultet rubric",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "convenit = recommended/fitting, not a universal mandatory state."
+      },
+      {
+        "id": "EV-EXS-210",
+        "phase": "EXSULTET",
+        "trigger_type": "SECTION_END",
+        "trigger_key": "PRAECONIUM_PASCHALE_ENDS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": null,
+        "action_state": null,
+        "object_state": "CANDLE_STATE_UNCONSTRAINED_NOT_PRESCRIBED",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "SOURCE_SILENT",
+        "source_locator": "MR62 does not prescribe a universal extinguishing instant",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-01-READ",
+        "phase": "PROPHECIES",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "GENESIS_LESSON_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 Easter Vigil ceremonial guidance",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-01-OREM",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "GENESIS:OREMUS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday prophecy oration",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-01-KNEEL",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "GENESIS:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Flectamus genua rubric",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-01-RISE",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "GENESIS:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Levate rubric",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-02-READ",
+        "phase": "PROPHECIES",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "EXODUS_LESSON_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 Easter Vigil ceremonial guidance",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-02-OREM",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "EXODUS:OREMUS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday prophecy oration",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-02-KNEEL",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "EXODUS:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Flectamus genua rubric",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-02-RISE",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "EXODUS:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Levate rubric",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-03-READ",
+        "phase": "PROPHECIES",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "ISAIAH_LESSON_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 Easter Vigil ceremonial guidance",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-03-OREM",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "ISAIAH:OREMUS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday prophecy oration",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-03-KNEEL",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "ISAIAH:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Flectamus genua rubric",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-03-RISE",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "ISAIAH:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Levate rubric",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-04-READ",
+        "phase": "PROPHECIES",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "DEUTERONOMY_LESSON_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 Easter Vigil ceremonial guidance",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-04-OREM",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "DEUTERONOMY:OREMUS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday prophecy oration",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-04-KNEEL",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "DEUTERONOMY:FLECTAMUS_GENUA",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "SILENT_PRAYER",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Flectamus genua rubric",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LESS-04-RISE",
+        "phase": "PROPHECIES",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "DEUTERONOMY:LEVATE",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62/RG60 Levate rubric",
+        "projection": {
+          "simple": "GROUP:PROPHECIES",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LIT1-400",
+        "phase": "BAPTISMAL_BRIDGE",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "LITANY_PART_I_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "RESPOND_LITANY",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday Litany I",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-FONT-410",
+        "phase": "BAPTISMAL_BRIDGE",
+        "trigger_type": "BRANCH",
+        "trigger_key": "NO_BAPTISMAL_FONT_BRANCH",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "FONT_MODE=NONE",
+        "evidence_status": "MR62_BRANCH",
+        "source_locator": "MR62 Holy Saturday no-font branch",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Proceed toward renewal without inventing an unsupported posture change."
+      },
+      {
+        "id": "EV-FONT-420",
+        "phase": "BAPTISMAL_BRIDGE",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "WATER_BLESSING_IN_CHURCH",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "FONT_MODE=IN_CHURCH",
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 Easter Vigil ceremonial guidance",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-BAPT-430",
+        "phase": "BAPTISMAL_BRIDGE",
+        "trigger_type": "OPTIONAL_SECTION",
+        "trigger_key": "BAPTISMS_IF_ANY",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "BAPTISM_PRESENT=true",
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 Easter Vigil ceremonial guidance",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-FONT-440",
+        "phase": "BAPTISMAL_BRIDGE",
+        "trigger_type": "BRANCH",
+        "trigger_key": "MINISTERS_GO_TO_SEPARATE_BAPTISTERY",
+        "actor_scope": "ALL_FAITHFUL_REMAINING_IN_CHURCH",
+        "posture_state": "KNEEL",
+        "action_state": "CONTINUE_LITANY",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "FONT_MODE=SEPARATE_BAPTISTERY",
+        "evidence_status": "MR62_EXPLICIT_STATE_CONTINUATION",
+        "source_locator": "MR62 Holy Saturday separate-baptistery branch",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-FONT-450",
+        "phase": "BAPTISMAL_BRIDGE",
+        "trigger_type": "PROCESSION_STATE",
+        "trigger_key": "MINISTERS_RETURN_FROM_FONT",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": "FONT_MODE!=NONE",
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "1962 Easter Vigil ceremonial guidance",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-REN-490",
+        "phase": "BAPTISMAL_RENEWAL",
+        "trigger_type": "PREPARATION",
+        "trigger_key": "RENEWAL_PREPARATION",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "SIT",
+        "action_state": "RELIGHT_CANDLE_IF_NOT_ALREADY_LIT",
+        "object_state": "CANDLE_RELIGHT_AVAILABLE",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MANUAL_LOCKED",
+        "source_locator": "McManus 1956 / restored Holy Week ceremonial guidance",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-REN-500",
+        "phase": "BAPTISMAL_RENEWAL",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "RENOVATIO_PROMISSIONUM_BAPTISMALIUM",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": null,
+        "object_state": "LIT_RECOMMENDED_BY_RUBRIC",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT_CONVENIT",
+        "source_locator": "MR62 Holy Saturday baptismal promises",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": "Lighted candle is fitting/recommended by rubric, not encoded as universal obligation."
+      },
+      {
+        "id": "EV-REN-510",
+        "phase": "BAPTISMAL_RENEWAL",
+        "trigger_type": "DIALOGUE",
+        "trigger_key": "RENUNCIATIONS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "RESPOND_ABRENUNTIAMUS",
+        "object_state": "LIT_RECOMMENDED_BY_RUBRIC",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday baptismal promises",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-REN-520",
+        "phase": "BAPTISMAL_RENEWAL",
+        "trigger_type": "DIALOGUE",
+        "trigger_key": "PROFESSIONS_OF_FAITH",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "RESPOND_CREDIMUS",
+        "object_state": "LIT_RECOMMENDED_BY_RUBRIC",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday baptismal promises",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-REN-530",
+        "phase": "BAPTISMAL_RENEWAL",
+        "trigger_type": "LITURGICAL_FORMULA",
+        "trigger_key": "COMMUNAL_PATER_NOSTER",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "RECITE_PATER",
+        "object_state": "LIT_RECOMMENDED_BY_RUBRIC",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday baptismal promises",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-REN-540",
+        "phase": "BAPTISMAL_RENEWAL",
+        "trigger_type": "RITE_STATE",
+        "trigger_key": "ASPERSION_AFTER_RENEWAL",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "STAND",
+        "action_state": "RECEIVE_ASPERSION",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "STATE_CONTINUATION",
+        "source_locator": "MR62 Holy Saturday aspersion after renewal",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-LIT2-600",
+        "phase": "BAPTISMAL_BRIDGE",
+        "trigger_type": "SECTION_START",
+        "trigger_key": "LITANY_PART_II_BEGINS",
+        "actor_scope": "ALL_FAITHFUL",
+        "posture_state": "KNEEL",
+        "action_state": "RESPOND_LITANY",
+        "object_state": null,
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday Litany II",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      },
+      {
+        "id": "EV-MASS-700",
+        "phase": "MASS_HANDOFF",
+        "trigger_type": "GRAPH_HANDOFF",
+        "trigger_key": "LITANY_REACHES_KYRIE_MASS_HANDOFF",
+        "actor_scope": "SYSTEM",
+        "posture_state": null,
+        "action_state": "HANDOFF_TO_MC",
+        "object_state": "MC_ENTRY=MC-0012",
+        "personal_state": null,
+        "branch_condition": null,
+        "evidence_status": "MR62_EXPLICIT",
+        "source_locator": "MR62 Holy Saturday special Mass beginning",
+        "projection": {
+          "simple": "SHOW",
+          "follow": "SHOW",
+          "live": "SHOW"
+        },
+        "notes": ""
+      }
+    ]
+  },
+  "mass_overlays": {
+    "EASTER_VIGIL": {
+      "id": "EV-MASS-OVERLAY-1962",
+      "entry_mc": "MC-0012",
+      "inherit_historical_exclusions": true,
+      "suppress_mc": [
+        "MC-0001",
+        "MC-0002",
+        "MC-0003",
+        "MC-0004",
+        "MC-0005",
+        "MC-0006",
+        "MC-0007",
+        "MC-0008",
+        "MC-0009",
+        "MC-0010",
+        "MC-0011",
+        "MC-0016",
+        "MC-0018",
+        "MC-0023",
+        "MC-0024",
+        "MC-0025",
+        "MC-0026",
+        "MC-0064",
+        "MC-0065",
+        "MC-0066",
+        "MC-0077",
+        "MC-0082"
+      ],
+      "modify_mc": {
+        "MC-0013": {
+          "insert_signal": "CHURCH_BELLS_AT_GLORIA",
+          "source": "MR62 Holy Saturday Gloria rubric"
+        },
+        "MC-0017": {
+          "mode": "EV_TRIPLE_ALLELUIA_PLUS_TRACT",
+          "response": "ALLELUIA_REPEATED_BY_ALL_X3",
+          "proper_payload": [
+            "Alleluia Confitemini Domino",
+            "Tract Laudate Dominum"
+          ],
+          "source": "MR62 Holy Saturday; chant concordance"
+        },
+        "MC-0079": {
+          "formula": "ITE_MISSA_EST_ALLELUIA_ALLELUIA",
+          "response": "DEO_GRATIAS_ALLELUIA_ALLELUIA",
+          "source": "MR62 Holy Saturday dismissal"
+        }
+      },
+      "insertions": [
+        {
+          "id": "EV-MASS-LAUDS-010",
+          "after_mc": "MC-0076",
+          "before_mc": "MC-0078",
+          "action": "LAUDS_PSALM_150",
+          "posture": "SIT",
+          "evidence": "MANUAL_LOCKED"
+        },
+        {
+          "id": "EV-MASS-LAUDS-020",
+          "after": "EV-MASS-LAUDS-010",
+          "before_mc": "MC-0078",
+          "action": "BENEDICTUS_WITH_ANTIPHON",
+          "posture": "STAND",
+          "evidence": "MANUAL_LOCKED"
+        }
+      ],
+      "retain_mc": [
+        "MC-0012",
+        "MC-0013",
+        "MC-0014",
+        "MC-0015",
+        "MC-0017",
+        "MC-0019",
+        "MC-0021",
+        "MC-0022",
+        "MC-0027",
+        "MC-0062",
+        "MC-0075",
+        "MC-0076",
+        "MC-0078",
+        "MC-0079",
+        "MC-0080",
+        "MC-0081",
+        "MC-0083"
+      ],
+      "notes": [
+        "Mass begins with Kyrie after Litany; no ordinary opening cluster or Introit.",
+        "No Gradual: special Alleluia/Tract occupies MC-0017.",
+        "No Credo, Offertory antiphon, Agnus Dei, Solemn Pax, Communion antiphon, or Last Gospel.",
+        "Lauds is inserted after ablutions and before Postcommunion.",
+        "Pax Domini remains; Agnus Dei, the prayer Domine Iesu Christe qui dixisti, the Solemn Pax, Communion antiphon, and Last Gospel are omitted."
+      ]
+    }
+  },
+  "optional_inserts": {
+    "HOLY_THURSDAY_MANDATUM": {
+      "id": "SP-HT-MANDATUM-1962",
+      "enabled_if": "HOLY_THURSDAY && MANDATUM_PASTORALLY_USED",
+      "insert_after": "SERMON_COMPLETE_AFTER_MC-0021",
+      "return_target": "MC-0026",
+      "events": [
+        {
+          "id": "SP-HT-MAND-010",
+          "phase": "MANDATUM",
+          "trigger_type": "SECTION_START",
+          "trigger_key": "MANDATUM_BEGINS",
+          "actor_scope": "CONGREGATION",
+          "posture_state": "SIT",
+          "action_state": null,
+          "object_state": null,
+          "personal_state": null,
+          "branch_condition": null,
+          "evidence_status": "MANUAL_LOCKED",
+          "source_locator": "1962 Holy Thursday ceremonial guidance",
+          "projection": {
+            "simple": "SHOW",
+            "follow": "SHOW",
+            "live": "SHOW"
+          },
+          "notes": ""
+        },
+        {
+          "id": "SP-HT-MAND-020",
+          "phase": "MANDATUM",
+          "trigger_type": "PERSONAL_STATE",
+          "trigger_key": "CELEBRANT_APPROACHES_SELECTED_PARTICIPANT",
+          "actor_scope": "MANDATUM_PARTICIPANT",
+          "posture_state": "SIT",
+          "action_state": "REMOVE_RIGHT_SHOE_AND_SOCK",
+          "object_state": null,
+          "personal_state": "READY_FOR_WASHING",
+          "branch_condition": null,
+          "evidence_status": "MANUAL_LOCKED",
+          "source_locator": "MR62 + McManus participant choreography",
+          "projection": {
+            "simple": "SHOW",
+            "follow": "SHOW",
+            "live": "SHOW"
+          },
+          "notes": ""
+        },
+        {
+          "id": "SP-HT-MAND-030",
+          "phase": "MANDATUM",
+          "trigger_type": "PERSONAL_STATE",
+          "trigger_key": "RIGHT_FOOT_WASHING",
+          "actor_scope": "MANDATUM_PARTICIPANT",
+          "posture_state": "SIT",
+          "action_state": "RIGHT_FOOT_WASHED_AND_DRIED",
+          "object_state": null,
+          "personal_state": "FOOT_WASHED",
+          "branch_condition": null,
+          "evidence_status": "MR62_EXPLICIT_ACTOR_SCOPED",
+          "source_locator": "MR62 Holy Thursday Mandatum",
+          "projection": {
+            "simple": "SHOW",
+            "follow": "SHOW",
+            "live": "SHOW"
+          },
+          "notes": ""
+        },
+        {
+          "id": "SP-HT-MAND-040",
+          "phase": "MANDATUM",
+          "trigger_type": "PERSONAL_STATE",
+          "trigger_key": "WASHING_COMPLETE",
+          "actor_scope": "MANDATUM_PARTICIPANT",
+          "posture_state": "SIT",
+          "action_state": "REPLACE_SOCK_AND_SHOE",
+          "object_state": null,
+          "personal_state": "COMPLETE",
+          "branch_condition": null,
+          "evidence_status": "MANUAL_LOCKED",
+          "source_locator": "McManus participant choreography",
+          "projection": {
+            "simple": "SHOW",
+            "follow": "SHOW",
+            "live": "SHOW"
+          },
+          "notes": ""
+        },
+        {
+          "id": "SP-HT-MAND-050",
+          "phase": "MANDATUM",
+          "trigger_type": "SECTION_TRANSITION",
+          "trigger_key": "CONCLUDING_VERSICLES_AND_PRAYER",
+          "actor_scope": "CONGREGATION",
+          "posture_state": "STAND",
+          "action_state": null,
+          "object_state": null,
+          "personal_state": null,
+          "branch_condition": null,
+          "evidence_status": "MANUAL_LOCKED",
+          "source_locator": "1962 Holy Thursday ceremonial guidance",
+          "projection": {
+            "simple": "SHOW",
+            "follow": "SHOW",
+            "live": "SHOW"
+          },
+          "notes": ""
+        },
+        {
+          "id": "SP-HT-MAND-060",
+          "phase": "MANDATUM",
+          "trigger_type": "GRAPH_HANDOFF",
+          "trigger_key": "MANDATUM_COMPLETE",
+          "actor_scope": "SYSTEM",
+          "posture_state": null,
+          "action_state": "RETURN_TO_MC",
+          "object_state": "MC_ENTRY=MC-0026",
+          "personal_state": null,
+          "branch_condition": null,
+          "evidence_status": "STRUCTURAL_LOCK",
+          "source_locator": "MR62 placement after sermon; Mass resumes",
+          "projection": {
+            "simple": "SHOW",
+            "follow": "SHOW",
+            "live": "SHOW"
+          },
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "preceding_rites": {
+    "CANDLEMAS": {
+      "id": "SP-CANDLEMAS-1962",
+      "classification": "PRECEDING_RITE_PLUS_MASS_OVERLAY",
+      "mass_entry": "MC-0011",
+      "suppress_before_entry": [
+        "MC-0001",
+        "MC-0002",
+        "MC-0003",
+        "MC-0004",
+        "MC-0005",
+        "MC-0006",
+        "MC-0007",
+        "MC-0008",
+        "MC-0009",
+        "MC-0010"
+      ],
+      "object_windows": [
+        {
+          "id": "SP-CANDLE-PROC",
+          "context": "PRE_MASS_PROCESSION",
+          "state": "CANDLE_LIT",
+          "evidence": "LOCKED"
+        },
+        {
+          "id": "SP-CANDLE-GOSPEL",
+          "start_mc": "MC-0021",
+          "end_after_mc": "MC-0022",
+          "state": "CANDLE_LIT",
+          "evidence": "LOCKED"
+        },
+        {
+          "id": "SP-CANDLE-CANON",
+          "start_mc": "MC-0040",
+          "end_after_mc": "MC-0059",
+          "state": "CANDLE_LIT",
+          "evidence": "LOCKED"
+        }
+      ],
+      "reception": {
+        "actor": "FAITHFUL_RECIPIENT",
+        "posture": "KNEEL_AT_ALTAR_RAIL",
+        "object_transition": "RECEIVE_BLESSED_CANDLE"
+      },
+      "text_layer": {
+        "latin": "READY",
+        "english": "READY",
+        "french": "VERIFIED_LITURGICAL_WITNESS",
+        "french_primary_1962_edition": false
+      }
+    }
+  },
+  "policies": {
+    "canonical_identity": "GF-* and EV-* are first-class runtime identities outside MC-*; MC-* is not regenerated.",
+    "actor_scope": "NO_AUTOPROPAGATION",
+    "text_trigger": "Allowed only when the rubric itself binds the action to the text.",
+    "personal_action": "Use PERSONAL_STATE/PERSONAL_POSITION; never chant soundtrack position.",
+    "sacramental_movement": "Use SACRAMENTAL_STATE; never antiphon timing.",
+    "object_state": "Candles and other objects are independent of posture.",
+    "projection": "Simple may group homologous canonical events but may not alter identity/state; Follow and Live preserve all relevant canonical transitions."
+  }
+}
