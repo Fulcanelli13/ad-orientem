@@ -44,13 +44,13 @@ export function projectPractice(events, { role, mode = "LEARN" } = {}) {
   const tokens = ROLE_TOKENS[normalizedRole];
 
   const projected = events
-    .filter((event) => event && event.id && actorMatches(event.actor, tokens))
+    .filter((event) => event && event.id && actorMatches(event.actorResolved ?? event.actor, tokens))
     .map((event) => Object.freeze({
       canonicalEventId: event.id,
       order: event.order ?? null,
       phase: event.phase ?? null,
       title: event.title ?? null,
-      actor: event.actor,
+      actor: event.actorResolved ?? event.actor,\n      objectiveActor: event.actor,
       position: event.position ?? null,
       voice: event.voice ?? null,
       conditions: Object.freeze([...(event.conditions ?? [])]),
