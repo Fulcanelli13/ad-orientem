@@ -51,7 +51,6 @@ for(const id of [
   "LIVE_SOURCE_STRUCTURE_INTEGRATION",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
-  "SOLEMN_PAX_TRANSFER_AUTHORITY",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
 assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
 for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
@@ -80,6 +79,18 @@ const formLifecycle=release.protectedInvariants.find(x=>x.id==="FORM_LIFECYCLE_P
 assert.equal(formLifecycle?.status,"CERTIFIED","form lifecycle blocker disappeared without certification");
 assert.match(String(formLifecycle?.controller??""),/form-lifecycle\.js/);
 assert.deepEqual(formLifecycle?.forms,["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+
+const solemnPax=release.protectedInvariants.find(x=>x.id==="SOLEMN_PAX_TRANSFER_AUTHORITY");
+assert.equal(solemnPax?.status,"CERTIFIED","Solemn Pax blocker disappeared without primary-source certification");
+assert.equal(solemnPax?.canonicalEventId,"MC-COM-160");
+assert.equal(solemnPax?.readerCueId,"AO.SM.C0225");
+assert.equal(solemnPax?.authorityTier,"A");
+assert.equal(solemnPax?.readerOwner,"R18_SOLEMN_PAX_PRIMARY_SOURCE");
+const solemnPaxSeparation=release.protectedInvariants.find(x=>x.id==="SOLEMN_PAX_SEPARATION");
+assert.equal(solemnPaxSeparation?.status,"CERTIFIED_PRIMARY_1962_RUBRIC");
+assert.equal(solemnPaxSeparation?.paxDominiEvent,"MC-COM-100");
+assert.equal(solemnPaxSeparation?.peacePrayerEvent,"MC-COM-150");
+assert.equal(solemnPaxSeparation?.ministerialPaxEvent,"MC-COM-160");
 
 const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
 assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_SOURCE_FIRST_LIVE",

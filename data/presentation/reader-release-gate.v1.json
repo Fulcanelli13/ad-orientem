@@ -45,10 +45,14 @@
     },
     {
       "id": "SOLEMN_PAX_SEPARATION",
-      "status": "OBJECTIVE_GATED_SOURCE_CERTIFICATION_PENDING",
+      "status": "CERTIFIED_PRIMARY_1962_RUBRIC",
       "paxDominiEvent": "MC-COM-100",
       "peacePrayerEvent": "MC-COM-150",
-      "ministerialPaxEvent": "MC-COM-160"
+      "ministerialPaxEvent": "MC-COM-160",
+      "transferAuthority": "Missale Romanum 1962, Ritus servandus X.8",
+      "authorityFile": "data/mass/solemn-pax-authority.v1.json",
+      "readerCueId": "AO.SM.C0225",
+      "readerOwner": "R18_SOLEMN_PAX_PRIMARY_SOURCE"
     },
     {
       "id": "GUIDE_REGISTRY_CONTINUITY",
@@ -233,6 +237,26 @@
       "test": "tests/form-lifecycle.mjs"
     },
     {
+      "id": "SOLEMN_PAX_TRANSFER_AUTHORITY",
+      "status": "CERTIFIED",
+      "canonicalEventId": "MC-COM-160",
+      "sourceMoment": "E55",
+      "readerCueId": "AO.SM.C0225",
+      "authorityFile": "data/mass/solemn-pax-authority.v1.json",
+      "primaryAuthority": "Missale Romanum 1962, Ritus servandus X.8",
+      "authorityTier": "A",
+      "readerOwner": "R18_SOLEMN_PAX_PRIMARY_SOURCE",
+      "guarantees": [
+        "Pax Domini MC-COM-100 remains distinct from the peace prayer MC-COM-150 and ministerial transfer MC-COM-160",
+        "the celebrant-to-deacon-to-subdeacon transfer is primary-rubric certified",
+        "the subdeacon continuation to choir/acolytes is primary-rubric certified",
+        "Requiem suppression of both the peace prayer and ministerial Pax remains plan-owned",
+        "Low Mass does not inherit the Solemn ministerial Pax",
+        "reader cue AO.SM.C0225 is no longer advisory or fail-closed for ordinary Solemn Mass"
+      ],
+      "test": "tests/solemn-pax-authority.mjs"
+    },
+    {
       "id": "SPECIAL_STRUCTURE_PLAN_PROJECTION",
       "status": "CERTIFIED_COMPILED_PLAN_STRUCTURE",
       "controller": "src/mass/reader-special-structure.js",
@@ -353,11 +377,6 @@
       "id": "PHONE_BROWSER_ACCEPTANCE",
       "severity": "RELEASE_BLOCKER",
       "detail": "Real-browser phone-width/touch acceptance for focus, first/last cue ownership, Back/Next, translations and card transitions has not yet been recreated for R17."
-    },
-    {
-      "id": "SOLEMN_PAX_TRANSFER_AUTHORITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "MC-COM-150 and MC-COM-160 are now independently suppressible and Pax Domini remains distinct, but MC-COM-160 still carries B/C_PENDING evidence. Accepted source authority and reader ownership for the Solemn ministerial Pax transfer must be pinned before release certification."
     }
   ],
   "certificationPolicy": {
