@@ -8,6 +8,8 @@ const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
 const aspergesData=Object.freeze({payload:aspergesPayload,graph:Object.freeze([...specialExtension.graphs.ASP])});
 const palmPayload=load("../data/presentation/reader-palm.v1.json");
 const palmData=Object.freeze({payload:palmPayload,graph:Object.freeze([...specialExtension.graphs.PALM])});
+const ashPayload=load("../data/presentation/reader-ash.v1.json");
+const ashData=Object.freeze({payload:ashPayload,graph:Object.freeze([...specialExtension.graphs.ASH])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -148,6 +150,46 @@ assert.equal(palmRuntime.getCurrentSectionId(),beforeLastGospel);
 assert.equal(palmLifecycle.stage,"DEPARTURE","Palm last-Gospel suppression did not reach the post-Mass lifecycle");
 assert.equal(palmRuntime.getLifecycleState().contract.leonine.eligible,false);
 palmRuntime.destroy();
+
+
+const ashRoot=rootFixture();
+const ashRuntime=createBrowserMassRuntime({
+  root:ashRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["ash"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Ash Wednesday",proper,precedingRites:["ASH"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadAshData:async()=>ashData,
+});
+const ashEntered=await ashRuntime.enter();
+assert.equal(ashEntered.session.plan.massEntry,"INTROIT");
+assert.equal(ashEntered.session.plan.normalLastGospel,true);
+assert.equal(ashRuntime.getCurrentSectionId(),null);
+assert.equal(ashRuntime.getReaderState().cardTitle,"Opening and Blessing of Ashes");
+assert.ok(ashRuntime.getReaderState().paragraphs.some(p=>p.primary.includes("Omnípotens sempitérne Deus")));
+ashRuntime.next();
+assert.equal(ashRuntime.getAshState().card.id,"ASH-R02");
+assert.equal(ashRuntime.getReaderState().gesture,null,"Ash blessing action fabricated a faithful gesture");
+ashRuntime.next();
+assert.equal(ashRuntime.getAshState().card.id,"ASH-R03");
+assert.equal(ashRuntime.getReaderState().posture,null,"Ash recipient posture leaked globally before personal state");
+ashRuntime.setAshRecipientState("RECEIVE_ASHES");
+assert.equal(ashRuntime.getReaderState().posture.label,"KNEEL");
+ashRuntime.setAshRecipientState("ASHES_RECEIVED");
+assert.equal(ashRuntime.getReaderState().posture.label,"STAND_WALK");
+ashRuntime.next();
+assert.equal(ashRuntime.getReaderState().cardTitle,"Concluding Prayer");
+ashRuntime.next();
+assert.equal(ashRuntime.getAshState().card.id,"ASH-R05");
+ashRuntime.next();
+assert.equal(ashRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(ashRuntime.getReaderState().cardTitle,"Introit");
+assert.ok(ashRuntime.getReaderState().paragraphs.length>0);
+ashRuntime.previous();
+assert.equal(ashRuntime.getAshState().card.id,"ASH-R05");
+ashRuntime.next();
+assert.equal(ashRuntime.getCurrentSectionId(),"AO.CARD.001");
+ashRuntime.destroy();
 
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({
