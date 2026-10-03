@@ -3,6 +3,7 @@ import {
   mapLegacyFollowMode,
   mapInsertedRites,
   deriveHostOptions,
+  mountR17Preview,
 } from "../src/mass/browser-entry.js";
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
@@ -44,3 +45,27 @@ assert.throws(
 );
 
 console.log("browser-entry contract: PASS");
+
+
+let mirrorCalls=0;
+const nativeChoice=await mountR17Preview({
+  doc:{},
+  prepared:{},
+  nativeMount:()=>({kind:"native"}),
+  mirrorMount:()=>{mirrorCalls+=1;return {kind:"mirror"}},
+});
+assert.equal(nativeChoice.uiOwner,"R17_NATIVE_CARDS_OVER_LEGACY_STATE");
+assert.equal(nativeChoice.preview.kind,"native");
+assert.equal(nativeChoice.fallbackReason,null);
+assert.equal(mirrorCalls,0);
+
+const fallback=await mountR17Preview({
+  doc:{},
+  prepared:{},
+  nativeMount:()=>{throw new Error("native blocked")},
+  mirrorMount:()=>{mirrorCalls+=1;return {kind:"mirror"}},
+});
+assert.equal(fallback.uiOwner,"R17_MIRROR_FALLBACK");
+assert.equal(fallback.preview.kind,"mirror");
+assert.match(fallback.fallbackReason,/native blocked/);
+assert.equal(mirrorCalls,1);
