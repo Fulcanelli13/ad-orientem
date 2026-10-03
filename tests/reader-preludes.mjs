@@ -6,6 +6,7 @@ const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const extension=load("../data/mass/special-days-extension.v1.3.json");
 const ashPayload=load("../data/presentation/reader-ash.v1.json");
 const candlePayload=load("../data/presentation/reader-candlemas.v1.json");
+const rogationsPayload=load("../data/presentation/reader-rogations.v1.json");
 
 const ashBuilt=buildPreludePayload({graph:extension.graphs.ASH,payload:ashPayload});
 assert.equal(ashBuilt.rite,"ASH");
@@ -40,7 +41,25 @@ candle.next();
 assert.equal(candle.project().card.objectState,"CANDLE_LIT");
 assert.equal(candle.project().massObjectStates[0].trigger,"MC_GOSPEL_START");
 
-for(const built of [ashBuilt,candleBuilt]){
+
+const rogationsBuilt=buildPreludePayload({graph:extension.graphs.ROG,payload:rogationsPayload});
+assert.equal(rogationsBuilt.rite,"ROGATIONS");
+assert.equal(rogationsBuilt.cards.length,8);
+assert.equal(rogationsBuilt.processionalRule.invocationResponseRepeat,2);
+assert.equal(rogationsBuilt.cards.at(-1).handoff,"INTROIT");
+assert.equal(rogationsBuilt.cards.at(-1).ordinaryOpeningSuppressed,true);
+assert.ok(rogationsBuilt.cards.reduce((n,c)=>n+c.paragraphs.length,0)>=170,
+  "Rogations payload regressed to an abridged litany");
+assert.ok(rogationsBuilt.cards.some(card=>card.paragraphs.some(row=>/Ut fructus terræ dare et conserváre dignéris/.test(row.latin))),
+  "Rogations agricultural petition missing");
+assert.ok(rogationsBuilt.cards.some(card=>card.paragraphs.some(row=>/Sancte Ioseph/.test(row.latin))),
+  "Rogations traditional saint invocation corpus incomplete");
+const rogations=createPreludeReaderController({graph:extension.graphs.ROG,payload:rogationsPayload});
+assert.equal(rogations.project().card.id,"ROG-R01");
+rogations.goTo("ROG-R08");
+assert.equal(rogations.project().handoff,"INTROIT");
+
+for(const built of [ashBuilt,candleBuilt,rogationsBuilt]){
   const ids=new Set();
   for(const card of built.cards){
     assert.ok(!ids.has(card.id),"duplicate prelude card id "+card.id);
