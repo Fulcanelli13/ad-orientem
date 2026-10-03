@@ -17,9 +17,19 @@ const response={
   voice:{audibility:"SPOKEN_AUDIBLE",speechAudibility:"SPOKEN_AUDIBLE"},
 };
 const incarnatus={
-  id:"MC-CRD-025",actor:"PRIEST",title:"Priest reaches Et incarnatus",
+  id:"MC-CRD-025",phase:"CREDO",actor:"PRIEST",title:"Priest reaches Et incarnatus",
   contentRef:"ordinary.credo",sourceMomentRefs:["E21"],
   voice:{audibility:"LOW_VOICE",speechAudibility:"LOW_VOICE"},
+};
+const gloria={
+  id:"MC-GLR-020",phase:"GLORIA",actor:"PRIEST",title:"Priest recites while Schola sings",
+  contentRef:"ordinary.gloria",sourceMomentRefs:["E10"],
+  voice:{audibility:"MIXED",speechAudibility:"MIXED"},
+};
+const credoGeneric={
+  id:"MC-CRD-020",phase:"CREDO",actor:"PRIEST",title:"Priest recites while Schola sings",
+  contentRef:"ordinary.credo",sourceMomentRefs:["E20"],
+  voice:{audibility:"MIXED",speechAudibility:"MIXED"},
 };
 
 assert.equal(buildCanonicalEventIndex([priest,response,incarnatus]).size,3);
@@ -41,6 +51,14 @@ const i=projectNativeEventChannels(incarnatus);
 assert.equal(i.gesture.type,"GENUFLECT");
 assert.equal(i.gesture.transient,true);
 assert.equal(i.ownership.gesture,"R17_NATIVE");
+
+const g=projectNativeEventChannels(gloria);
+assert.equal(g.gesture,null,"GLORIA must fail closed until faithful bows are adjudicated");
+assert.equal(g.ownership.gesture,"R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION");
+
+const cg=projectNativeEventChannels(credoGeneric);
+assert.equal(cg.gesture,null,"generic CREDO must fail closed until faithful bows are adjudicated");
+assert.equal(cg.ownership.gesture,"R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION");
 
 const ctrl=createNativeEventStateController([priest,response,incarnatus]);
 assert.equal(ctrl.count,3);
