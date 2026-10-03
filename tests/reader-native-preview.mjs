@@ -7,6 +7,7 @@ const data={
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
+  canonSourceMap:load("../data/presentation/reader-canon-source-map.v1.json"),
 };
 const guideData={registry:load("../data/presentation/guide-registry.v1.json"),url:"test://guide-registry"};
 const cueRegistries=Object.freeze({
@@ -41,11 +42,22 @@ const livePrepared={
   },
   readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"},
 };
-await assert.rejects(
-  ()=>prepareNativeReaderPreview({prepared:livePrepared,presentationData:data,eventData,cueRegistries,guideData}),
-  /SOURCE_FIRST_LIVE_STRUCTURE_PENDING/,
-  "native preview bypassed the source-first LIVE structure integration gate"
-);
+const liveReady=await prepareNativeReaderPreview({
+  prepared:livePrepared,presentationData:data,eventData,cueRegistries,guideData
+});
+assert.equal(liveReady.model.totalCards,39);
+assert.equal(liveReady.model.structureOwner,"SOURCE_FIRST_LIVE");
+assert.equal(liveReady.model.cards[13].sectionId,"AO.CANON.01");
+assert.equal(liveReady.model.cards[13].title,"Te igitur");
+assert.equal(liveReady.model.cards[18].sectionId,"AO.CANON.06");
+assert.equal(liveReady.model.cards[18].title,"Consecration of the Sacred Host");
+assert.equal(liveReady.model.cards[19].sectionId,"AO.CANON.07");
+assert.equal(liveReady.model.cards[26].sectionId,"AO.CANON.14");
+assert.equal(liveReady.model.cardForEvent("MC-CAN-060").card.sectionId,"AO.CANON.04");
+assert.equal(liveReady.model.cardForEvent("MC-CNS-040").card.sectionId,"AO.CANON.06");
+assert.equal(liveReady.model.cardForEvent("MC-CAN-180").card.sectionId,"AO.CANON.14");
+assert.equal(liveReady.model.cards[18].guideSequence,15);
+assert.equal(liveReady.model.cards[27].sourceSequence,19);
 
 const prepared={
   ...livePrepared,
@@ -264,4 +276,4 @@ try{
 }catch(error){blocked=/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/.test(String(error.message))}
 assert.equal(blocked,true,"unsupported special graph did not fail closed");
 
-console.log("native reader preview: PASS — R17 owns cards; legacy state donation is explicit and temporary.");
+console.log("native reader preview: PASS — source-first LIVE is native-owned; remaining rollback state is explicit.");
