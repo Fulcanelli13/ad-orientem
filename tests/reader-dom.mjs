@@ -48,8 +48,8 @@ expect(first.posture?.label==="STAND","persistent posture missing");
 const second=normalizeReaderMoment({
   id:"B",
   sectionTitle:"Credo",
+  cardUpdate:false,
   sharedTextWithSchola:true,
-  paragraphs:["Et incarnatus est"],
 },first);
 expect(second.posture?.label==="STAND","persistent posture did not carry");
 expect(second.priestPosition?.label==="CENTRE","persistent priest position did not carry");
@@ -58,6 +58,8 @@ expect(second.gesture===null,"transient gesture leaked into next moment");
 expect(second.response===null,"transient response leaked into next moment");
 expect(second.schola?.label==="CREDO","underlying Schola state did not persist");
 expect(second.scholaVisible===false,"shared text did not suppress duplicate Schola lane");
+expect(second.cardTitle==="Credo","action-only moment replaced the card title");
+expect(second.paragraphs[0].primary==="Credo in unum Deum","action-only moment cleared the prayer card");
 
 const third=normalizeReaderMoment({
   id:"C",
@@ -67,5 +69,12 @@ const third=normalizeReaderMoment({
 },second);
 expect(third.guide?.text==="Bow the head","verified Guide rubric was not retained");
 expect(third.schola===null && third.scholaVisible===false,"explicit Schola silence did not clear state");
+
+const translated=normalizeReaderMoment({
+  id:"D",
+  paragraphs:[{kind:"TEXT",primary:"I believe",alternate:"Credo",replaceOnToggle:true}]
+},third);
+expect(translated.paragraphs[0].alternate==="Credo","Latin alternate text was lost");
+expect(translated.paragraphs[0].replaceOnToggle===true,"replace-on-toggle flag was lost");
 
 console.log("Reader DOM contract PASS: shell channels, persistent/transient ownership, Guide fail-closed, Schola suppression.");
