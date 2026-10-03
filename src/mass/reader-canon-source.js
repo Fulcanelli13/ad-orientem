@@ -1,4 +1,17 @@
 export const CANON_SOURCE_SCHEMA="ao-reader-canon-source-map-v1";
+export const CANON_SOURCE_FILE="reader-canon-source-map.v1.json";
+
+function sourceUrl(baseUrl){return new URL("../../data/presentation/"+CANON_SOURCE_FILE,baseUrl);}
+
+export async function loadCanonSourceMap({fetchImpl=globalThis.fetch,baseUrl=import.meta.url}={}){
+  if(typeof fetchImpl!=="function")throw new TypeError("fetch implementation required");
+  const url=sourceUrl(baseUrl);
+  const response=await fetchImpl(url);
+  if(!response?.ok)throw new Error("Unable to load Canon source map ("+(response?.status??"network")+")");
+  const data=await response.json();
+  validateCanonSourceMap(data);
+  return Object.freeze({data,url:String(url)});
+}
 
 function freezeSegment(raw){
   return Object.freeze({
