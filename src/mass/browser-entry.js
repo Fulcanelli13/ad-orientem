@@ -8,6 +8,7 @@ import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPre
 import { runReaderShadowAudit } from "./reader-shadow.js";
 import { mountReaderPreview } from "./reader-preview.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
+import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 
 export const VERSION = "r17-browser-entry-v1";
 const ACTIVE_KEY = "ao-r17-active-mass-v1";
@@ -104,10 +105,14 @@ export async function mountR17Preview({
   mirrorMount=mountReaderPreview,
 }={}) {
   try {
+    const assets=globalThis.AO_R17_ICON_ASSETS??null;
+    const iconAudit=auditHostIconBank(assets);
+    if(!iconAudit.complete) throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
     const preview=await Promise.resolve(nativeMount({
       doc,
       prepared,
       readLegacyActive:()=>legacyBridge()?.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null,
+      iconResolver:createHostIconResolver({assets}),
     }));
     return Object.freeze({
       preview,
