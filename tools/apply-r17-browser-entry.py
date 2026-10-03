@@ -15,13 +15,17 @@ if missing:
 bridge = '<script data-ao-r17-icon-bridge>globalThis.AO_R17_ICON_ASSETS=(typeof AO_ASSETS!=="undefined"&&AO_ASSETS)||null;</script>'
 tag = '<script type="module" src="./src/mass/browser-entry.js" data-ao-r17-browser-entry></script>'
 if tag in text and bridge in text:
-    print("R17 browser entry already present; no change")
+    print("R17 browser entry and icon bridge already present; no change")
     raise SystemExit(0)
 
 if "</body>" not in text:
     raise SystemExit("index.html has no </body> marker")
 
-injection = bridge + "\n" + tag
-text = text.replace("</body>", injection + "\n</body>", 1)
+parts = []
+if bridge not in text:
+    parts.append(bridge)
+if tag not in text:
+    parts.append(tag)
+text = text.replace("</body>", "\n".join(parts) + "\n</body>", 1)
 path.write_text(text, encoding="utf-8")
 print("Injected R17 browser entry into index.html")
