@@ -210,7 +210,13 @@ async function setupGuards(browser) {
       gateOpen: document.getElementById('aoFormGate')?.classList.contains('open'),
       choicesDisplay: getComputedStyle(document.querySelector('.ao-form-choices')).display,
       noteDisplay: getComputedStyle(document.querySelector('.ao-r15-distinct-note')).display,
-      title: document.title
+      title: document.title,
+      href: location.href,
+      search: location.search,
+      massProfile: window.AO?.MassProfile || null,
+      calendarSelection: window.AO?.Calendar?.selection || null,
+      calendarContext: window.AO?.Calendar?.context || null,
+      bodyMassRite: document.body.dataset.massRite || null
     }));
     assert(s.gateOpen && s.choicesDisplay === 'none' && s.noteDisplay !== 'none', 'Good Friday setup did not present distinct-rite UI', s);
     checks.push({id:'good-friday-distinct-setup',pass:true,detail:s});
