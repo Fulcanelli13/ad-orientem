@@ -10,6 +10,7 @@ import { loadCanonicalReaderEvents, createNativeEventStateController, extractCan
 import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
 import { loadReaderCueRegistries, createReaderCueStateController } from "./reader-cue-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
+import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -243,19 +244,23 @@ export async function mountNativeReaderPreview({
     const response=transient.response;
     const {priestVoice,priestPosition}=owned;
 
-    // Posture is intentionally still conservative. FOLLOW_CONGREGATION and
-    // unresolved profile/state anchors continue to use the visible rollback donor.
-    const posture=cueNative && cueProjection.posture
-      ? cueProjection.posture
-      : legacy.posture;
+    // Posture ownership is profile-aware. FOLLOW_CONGREGATION remains an
+    // observed rollback channel; sourced/local profiles never silently inherit it.
+    const postureResolved=resolveReaderPostureChannel({
+      preferences:prepared.readerPreferences,
+      cueProjection:cueNative ? cueProjection : null,
+      legacyPosture:legacy.posture,
+      cueId:activeCueId,
+      sectionId:current?.sectionId??null,
+      macroId:current?.macroId??null,
+    });
+    const posture=postureResolved.posture;
 
     const ownership=Object.freeze({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
       response:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.response,
-      posture:cueNative && cueProjection.posture
-        ? cueProjection.ownership.posture
-        : "LEGACY_PROFILE_FALLBACK",
+      posture:postureResolved.owner,
       schola:"LEGACY_TEMPORARY",
     });
 
@@ -389,7 +394,7 @@ export async function mountNativeReaderPreview({
       priestVoice:"R17_CUE_SOURCE_ON_CERTIFIED_MISSA_CANTATA",
       response:"R17_EXACT_CUE_SOURCE_ON_CERTIFIED_MISSA_CANTATA",
       gesture:"R17_EXACT_CUE_PROFILE_SOURCE_ON_CERTIFIED_MISSA_CANTATA",
-      posture:"R17_ONLY_WHEN_SOURCE_CONDITION_RESOLVES_ELSE_LEGACY",
+      posture:"PROFILE_AWARE_R17_SOURCE_OR_LOCAL__FOLLOW_CONGREGATION_OBSERVED",
       priestPosition:"R17_CUE_SOURCE_PERSISTENT_ON_CERTIFIED_MISSA_CANTATA",
       schola:"LEGACY_TEMPORARY",
       modeSwitch:"LOCKED_UNTIL_V1_83_READER_PARITY",
