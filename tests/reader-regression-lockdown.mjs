@@ -7,6 +7,7 @@ const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8")
 const release=load("../data/presentation/reader-release-gate.v1.json");
 const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
+const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
 assert.equal(release.status,"BLOCKED_PENDING_V1_83_PARITY");
 assert.equal(release.productionDefault,"LEGACY");
@@ -19,6 +20,15 @@ assert.equal(parity.currentR17.status,"NOT_PARITY_COMPLETE");
 assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
 assert.equal(recovery.lineage.v183FrozenLiveCards,48);
 assert.equal(Object.hasOwn(recovery,"cards"),false,"partial recovery evidence became a render map");
+
+assert.equal(regressions.status,"ACTIVE_REGRESSION_LOCKDOWN");
+const regressionById=new Map(regressions.entries.map(entry=>[entry.id,entry]));
+assert.equal(regressionById.get("V181-HOST-ELEVATION-EARLY").status,"FIXED_AND_TESTED_R17");
+assert.equal(regressionById.get("V181-CHALICE-ELEVATION-EARLY").status,"FIXED_AND_TESTED_R17");
+assert.equal(regressionById.get("V181-CARD-TRANSIENT-LEAK").status,"PARTIALLY_FIXED");
+assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").openChannels,["bell","cinematic"]);
+assert.equal(regressionById.get("V183-GRADUAL-COMPOSITION").status,"BLOCKED_ON_FINAL_48_CARD_ARCHITECTURE");
+assert.equal(regressionById.get("V181-PAX-OWNERSHIP").status,"MECHANICS_TESTED_SOURCE_CERTIFICATION_PENDING");
 
 assert.equal(LIVE_STRUCTURE_STATUS,"PROVISIONAL_V1_65_DONOR_ONLY");
 const livePrepared={
@@ -87,5 +97,16 @@ assert.match(convergenceWorkflow,/index\.html/);
 const baselineWorkflow=readFileSync(new URL("../.github/workflows/baseline-integrity.yml",import.meta.url),"utf8");
 assert.match(baselineWorkflow,/data-ao-r17-browser-entry/);
 assert.match(baselineWorkflow,/refusing to overwrite migrated index\.html/);
+
+const { readdirSync } = await import("node:fs");
+const massSourceDir=new URL("../src/mass/",import.meta.url);
+for(const name of readdirSync(massSourceDir)){
+  if(!name.endsWith(".js")) continue;
+  const source=readFileSync(new URL(name,massSourceDir),"utf8");
+  assert.doesNotMatch(source,/document\.title\s*=/,
+    name+" reintroduced historical document.title mutation");
+  assert.doesNotMatch(source,/data:image\//,
+    name+" embedded an oversized image payload into modular Mass source");
+}
 
 console.log("reader regression lockdown: PASS — known v1.83 invariants are protected and release remains explicitly blocked.");
