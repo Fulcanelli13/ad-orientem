@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { buildAspergesPayload, createAspergesReaderController, resolveAspergesFormula } from "../src/mass/reader-asperges.js";
+import { buildAspergesPayload, createAspergesReaderController, resolveAspergesFormula, resolveAspergesRiteContext } from "../src/mass/reader-asperges.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const extension=load("../data/mass/special-days-extension.v1.3.json");
@@ -11,6 +11,20 @@ assert.equal(graph.length,6);
 assert.deepEqual(resolveAspergesFormula({}),{formula:"ORDINARY",paschaltide:false,omitGloriaPatri:false});
 assert.deepEqual(resolveAspergesFormula({omitGloriaPatri:true}),{formula:"ORDINARY",paschaltide:false,omitGloriaPatri:true});
 assert.deepEqual(resolveAspergesFormula({paschaltide:true,omitGloriaPatri:true}),{formula:"PASCHAL",paschaltide:true,omitGloriaPatri:false});
+assert.deepEqual(resolveAspergesRiteContext({session:{resolvedMass:{date:"2026-10-04",provenance:{seasonalMode:null}}}}),{
+  paschaltide:false,omitGloriaPatri:false,source:"DATE_DERIVED_1962_SEASON"
+});
+assert.deepEqual(resolveAspergesRiteContext({session:{resolvedMass:{date:"2026-04-12",provenance:{seasonalMode:null}}}}),{
+  paschaltide:true,omitGloriaPatri:false,source:"DATE_DERIVED_1962_SEASON"
+});
+assert.deepEqual(resolveAspergesRiteContext({session:{resolvedMass:{date:"2026-03-22",provenance:{seasonalMode:null}}}}),{
+  paschaltide:false,omitGloriaPatri:true,source:"DATE_DERIVED_1962_SEASON"
+});
+assert.deepEqual(resolveAspergesRiteContext({session:{resolvedMass:{date:"2026-10-04",provenance:{seasonalMode:"paschaltide"}}}}),{
+  paschaltide:true,omitGloriaPatri:false,source:"HOST_SEASONAL_MODE"
+});
+assert.throws(()=>resolveAspergesRiteContext({session:{resolvedMass:{date:"2026-10-04",provenance:{seasonalMode:"mystery-season"}}}}),/ASPERGES_SEASONAL_MODE_UNRECOGNIZED/);
+
 
 let built=buildAspergesPayload({graph,payload});
 assert.equal(built.cards.length,5);
