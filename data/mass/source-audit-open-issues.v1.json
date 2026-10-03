@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "status": "SOURCE_AUDIT_OPEN_ISSUES",
+  "rule": "This ledger tracks findings that must not be patched into runtime until exact ownership/source reconciliation is pinned. It is not executable liturgical data.",
+  "issues": [
+    {
+      "id": "SRC-OPEN-001",
+      "finding": "B020 Epistle/lesson output reportedly contains literal bilingual response debris around Deo gratias / Thanks be to God.",
+      "blockId": "AO.V4.B020",
+      "status": "PINNED_BLOCK_NEEDS_RUNTIME_PATH_TRACE",
+      "requiredAction": "Trace Proper-container composition and response ownership before proposing canonical/runtime patch."
+    },
+    {
+      "id": "SRC-OPEN-002",
+      "finding": "B026 Gospel output reportedly contains literal bilingual response debris around Laus tibi, Christe / Praise be to thee, O Christ.",
+      "blockId": "AO.V4.B026",
+      "status": "PINNED_BLOCK_NEEDS_RUNTIME_PATH_TRACE",
+      "requiredAction": "Trace Proper-container composition and response ownership before proposing canonical/runtime patch."
+    },
+    {
+      "id": "SRC-OPEN-003",
+      "finding": "QA.016 reportedly passes falsely because Proper containers are excluded from its coverage.",
+      "status": "QA_DEFECT_NEEDS_TEST_OWNER_PIN",
+      "requiredAction": "Expand completeness QA to include Proper containers; do not use the current pass as a merge gate."
+    },
+    {
+      "id": "SRC-OPEN-004",
+      "finding": "B016 English text reportedly duplicates 'to God'.",
+      "blockId": "AO.V4.B016",
+      "status": "PINNED_BLOCK_NEEDS_EXACT_FRAGMENT",
+      "requiredAction": "Pin exact source/canonical fragment before patch."
+    },
+    {
+      "id": "SRC-OPEN-005",
+      "finding": "B037 Lavabo doxology reportedly duplicates material.",
+      "blockId": "AO.V4.B037",
+      "status": "PINNED_BLOCK_NEEDS_EXACT_FRAGMENT",
+      "requiredAction": "Pin exact duplicated fragment and block ownership before patch."
+    },
+    {
+      "id": "SRC-OPEN-006",
+      "finding": "Confiteor accent discrepancy reported: orare vs oráre.",
+      "status": "NEEDS_BLOCK_CUE_PIN",
+      "requiredAction": "Locate exact canonical block/cue and source witness before patch."
+    },
+    {
+      "id": "SRC-OPEN-007",
+      "finding": "Gloria/Credo cue duplication and authority ownership issue reported.",
+      "status": "NEEDS_EVENT_OWNERSHIP_TRACE",
+      "requiredAction": "Separate textual cue ownership from posture/gesture state and identify duplicate canonical/runtime IDs."
+    },
+    {
+      "id": "SRC-OPEN-008",
+      "finding": "Fixture provenance defects reported in the source-audit lane.",
+      "status": "NEEDS_FIXTURE_IDS",
+      "requiredAction": "Pin affected fixtures and provenance fields before changing source hierarchy."
+    }
+  ]
+}
