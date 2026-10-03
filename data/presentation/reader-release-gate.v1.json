@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
@@ -440,13 +440,28 @@
         "over-escaped reader DOM cue-id regex that prevented all browser cue focus",
         "insufficient end-of-card runway that gave AO.SM.C0173 zero focus territory on phone"
       ]
+    },
+    {
+      "id": "REQUIEM_PLAN_OWNED_READER_OVERLAY",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-special-structure.js",
+      "sourceRegistry": "data/mass/rite-overlay-registry.v1.json#REQUIEM",
+      "graph": "data/mass/special-days-extension.v1.3.json#REQ",
+      "guarantees": [
+        "Requiem remains a variance overlay on the selected certified Mass form",
+        "ordinary reader text/Proper pipeline renders the Mass; no duplicate Requiem reader surface is created",
+        "plan-owned omissions/replacements govern Gloria, Credo, Alleluia, Agnus, Pax, blessing and ending",
+        "Requiem Absolution remains a separate explicit following action and still requires its own reader payload",
+        "Last Gospel suppression is not inferred from Requiem identity alone"
+      ],
+      "test": "tests/reader-special-structure.mjs"
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Asperges, Palm and Ash Wednesday now have source-pinned native payloads plus modular-runtime traversal contracts. Production native-preview mounting remains pending for these preludes. Candlemas, Rogations, Requiem/following actions, Good Friday and Easter Vigil still require native payload/rendering."
+      "detail": "Asperges, Palm and Ash Wednesday have source-pinned native payloads. Requiem Mass variance is certified plan-owned and no longer needs a duplicate reader surface. Candlemas, Rogations, explicit Requiem Absolution/funeral following actions, Holy Thursday post-Mass actions, Corpus procession/Benediction, Good Friday and Easter Vigil still require native payload/rendering."
     }
   ],
   "certificationPolicy": {
