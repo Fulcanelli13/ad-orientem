@@ -26,6 +26,11 @@ export function buildAshPayload({graph,payload}={}){
       paragraphs:freeze([
         freeze({id:"ASH-R01-A",kind:"TEXT",latin:clean(payload.opening?.antiphon),sourceRecordId:"ASH-BLS-010"}),
         freeze({id:"ASH-R01-P",kind:"TEXT",latin:clean(payload.opening?.psalm),sourceRecordId:"ASH-BLS-010"}),
+        ...(payload.blessingOrations??[]).flatMap((oratio,index)=>[
+          freeze({id:"ASH-R01-O"+String(index+1)+"-INTRO",kind:"TEXT",latin:"Orémus.",sourceRecordId:"ASH-BLS-020"}),
+          freeze({id:"ASH-R01-O"+String(index+1),kind:"TEXT",latin:clean(oratio.fullText),sourceRecordId:"ASH-BLS-020"}),
+          freeze({id:"ASH-R01-O"+String(index+1)+"-AMEN",kind:"RESPONSE",latin:"Amen.",sourceRecordId:"ASH-BLS-020"}),
+        ]),
       ]),
       blessingOrations:freeze((payload.blessingOrations??[]).map(x=>freeze({...x}))),
       complete:missingOrations.length===0,
@@ -114,4 +119,33 @@ export function createAshReaderController(args={}){
     recipientState=value;return state();
   }
   return freeze({schema:"ao-r23-ash-reader-controller-v1",supported:true,cards:built.cards,project:state,next,previous,goTo,setRecipientState});
+}
+
+
+async function readJson(fetchImpl,url,label){
+  const response=await fetchImpl(url);
+  if(!response?.ok)throw new Error("Unable to load "+label+" ("+(response?.status??"network")+")");
+  const data=await response.json();
+  if(!data || typeof data!=="object")throw new Error(label+" did not return JSON object");
+  return data;
+}
+
+export async function loadAshReaderData({
+  fetchImpl=globalThis.fetch,
+  baseUrl=import.meta.url,
+}={}){
+  if(typeof fetchImpl!=="function")throw new TypeError("fetch implementation required");
+  const payloadUrl=new URL("../../data/presentation/reader-ash.v1.json",baseUrl);
+  const extensionUrl=new URL("../../data/mass/special-days-extension.v1.3.json",baseUrl);
+  const [payload,extension]=await Promise.all([
+    readJson(fetchImpl,payloadUrl,"Ash reader payload"),
+    readJson(fetchImpl,extensionUrl,"special-days extension"),
+  ]);
+  const graph=extension?.graphs?.ASH;
+  if(!Array.isArray(graph))throw new Error("Certified ASH graph unavailable");
+  return freeze({
+    payload,
+    graph:freeze([...graph]),
+    urls:freeze({payload:String(payloadUrl),extension:String(extensionUrl)}),
+  });
 }
