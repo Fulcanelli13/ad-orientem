@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -53,7 +53,7 @@
     {
       "id": "G6_48_CARD_MAP",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Exact ordered v1.83 C01-C48 LIVE enumeration and four remaining decompression boundaries are not yet recovered."
+      "detail": "Exact ordered v1.83 C01-C48 LIVE enumeration is still unrecovered. Eight of the ten historical v1.81 decompression splits are semantically recovered; exactly two remain area-only and unresolved: one Offertory boundary and one Canon boundary."
     },
     {
       "id": "GRADUAL_LIVE_ARCHITECTURE",
