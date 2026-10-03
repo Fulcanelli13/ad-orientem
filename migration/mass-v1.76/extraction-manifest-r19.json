@@ -1,0 +1,260 @@
+{
+  "release": "R19",
+  "source": "Ad_Orientem_v1.76_R15_RELEASE_HARDENING.html",
+  "fullChars": 8281987,
+  "fullBytes": 8297430,
+  "fullSha256": "511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99",
+  "scriptCount": 31,
+  "shellBundle": "migration/mass-v1.76/shell-bundle.json",
+  "readerPartsManifest": "src/mass/legacy/reader-runtime-v1.76.parts/MANIFEST.json",
+  "records": [
+    {
+      "order": 1,
+      "script_id": "mass-data",
+      "script_type": "application/json",
+      "target_path": "data/mass/v1.76/low-mass.json",
+      "chars": 476029,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 2,
+      "script_id": "mass-data-sung",
+      "script_type": "application/json",
+      "target_path": "data/mass/v1.76/sung-mass.json",
+      "chars": 464375,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 3,
+      "script_id": "ao-r14-recovery-prelude",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/recovery/r07-r13-recovery-pack.js",
+      "chars": 308385,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 4,
+      "script_id": null,
+      "script_type": "text/javascript",
+      "target_path": "src/mass/legacy/reader-runtime-v1.76.js",
+      "chars": 6578563,
+      "transport": "READER_SOURCE_PARTS"
+    },
+    {
+      "order": 5,
+      "script_id": null,
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/attention-cues.js",
+      "chars": 6264,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 6,
+      "script_id": null,
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/attention-arbitration.js",
+      "chars": 3154,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 7,
+      "script_id": null,
+      "script_type": "text/javascript",
+      "target_path": "src/mass/diagnostics/icon-audit.js",
+      "chars": 731,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 8,
+      "script_id": "ao-v131-gesture-motion-audit",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/gesture-motion-audit.js",
+      "chars": 292,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 9,
+      "script_id": "ao-v46-bank-audit",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/diagnostics/asset-bank-audit.js",
+      "chars": 434,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 10,
+      "script_id": "ao-v132-declutter-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/declutter-runtime.js",
+      "chars": 5709,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 11,
+      "script_id": "ao-v133-canon-cinematic-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/canon-cinematic-runtime.js",
+      "chars": 3820,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 12,
+      "script_id": "ao-v134-gospel-cinematic-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/gospel-cinematic-runtime.js",
+      "chars": 3005,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 13,
+      "script_id": null,
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/salience-bridge.js",
+      "chars": 1379,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 14,
+      "script_id": "ao-v21-salience-audit",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/diagnostics/salience-audit.js",
+      "chars": 584,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 15,
+      "script_id": "ao-v22-text-declutter-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/text-declutter-runtime.js",
+      "chars": 1325,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 16,
+      "script_id": "ao-v23-harmonized-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/harmonized-runtime.js",
+      "chars": 10040,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 17,
+      "script_id": "ao-v24-personal-action-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/ui/personal-action-runtime.js",
+      "chars": 6060,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 18,
+      "script_id": "ao-v174e-unified-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/integration/unified-runtime.js",
+      "chars": 5274,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 19,
+      "script_id": "ao-v174b-diagnostic-bridge",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/diagnostics/reader-diagnostic-bridge.js",
+      "chars": 642,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 20,
+      "script_id": "ao-v174c-low-recovery-contract",
+      "script_type": "application/json",
+      "target_path": "src/mass/contracts/r02-low-contract.json",
+      "chars": 1847,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 21,
+      "script_id": "ao-v174c-low-b005-reconciliation",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/integration/r02-low-reconciliation.js",
+      "chars": 5470,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 22,
+      "script_id": "ao-v174d-mc-certification",
+      "script_type": "application/json",
+      "target_path": "src/mass/contracts/r03-missa-cantata-certification.json",
+      "chars": 128784,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 23,
+      "script_id": "ao-v174d-mc-certification-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/integration/r03-missa-cantata-runtime.js",
+      "chars": 4974,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 24,
+      "script_id": "ao-v174e-solemn-b006-contract",
+      "script_type": "application/json",
+      "target_path": "src/mass/contracts/r04-solemn-contract.json",
+      "chars": 24152,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 25,
+      "script_id": "ao-v174e-solemn-runtime",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/integration/r04-solemn-runtime.js",
+      "chars": 5627,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 26,
+      "script_id": "ao-v174f-r05-contract",
+      "script_type": "application/json",
+      "target_path": "src/mass/contracts/r05-cross-form-contract.json",
+      "chars": 2480,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 27,
+      "script_id": "ao-v174f-cross-form-invariant-suite",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/diagnostics/r05-cross-form-suite.js",
+      "chars": 14319,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 28,
+      "script_id": "ao-v174g-requiem-r06-contract",
+      "script_type": "application/json",
+      "target_path": "src/mass/contracts/r06-requiem-contract.json",
+      "chars": 8230,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 29,
+      "script_id": "ao-v174g-requiem-selector-audit",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/integration/r06-requiem-selector-audit.js",
+      "chars": 5329,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 30,
+      "script_id": "ao-r14-integration-ui",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/integration/r14-integration-ui.js",
+      "chars": 5090,
+      "transport": "DIRECT_FILE"
+    },
+    {
+      "order": 31,
+      "script_id": "ao-r15-release-hardening",
+      "script_type": "text/javascript",
+      "target_path": "src/mass/integration/r15-release-hardening.js",
+      "chars": 17424,
+      "transport": "DIRECT_FILE"
+    }
+  ]
+}
