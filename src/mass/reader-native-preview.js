@@ -699,6 +699,8 @@ export async function mountNativeReaderPreview({
     getPalmState:()=>ready.palmController?.project?.()??null,
     markActuallySprinkled:()=>{if(!ready.aspergesController)return null;ready.aspergesController.setActuallySprinkled(true);return inAsperges?showAsperges():ready.aspergesController.project();},
     setPalmRecipientState:value=>{if(!ready.palmController)return null;ready.palmController.setRecipientState(value);return inPalm?showPalm():ready.palmController.project();},
+    next:navigateNext,
+    previous:navigatePrevious,
   });
   globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
   return api;
