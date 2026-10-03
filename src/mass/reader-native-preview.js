@@ -18,6 +18,8 @@ import { createNativeScholaController } from "./reader-schola.js";
 import { iconKeysForReaderState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
+import { createAspergesReaderController, loadAspergesReaderData } from "./reader-asperges.js";
+import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -155,6 +157,11 @@ export async function prepareNativeReaderPreview({
   loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
+  aspergesData=null,
+  loadAspergesData=loadAspergesReaderData,
+  aspergesRiteContext=null,
+  palmData=null,
+  loadPalmData=loadPalmReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
@@ -163,12 +170,18 @@ export async function prepareNativeReaderPreview({
   }
   const resolvedForm=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
   const needsFormState=resolvedForm==="LOW" || resolvedForm==="SOLEMN";
-  const [data,events,registries,guide,formState]=await Promise.all([
+  const precedingGraphs=prepared?.session?.plan?.precedingGraphs??[];
+  const hasAsperges=precedingGraphs.includes("ASPERGES");
+  const hasPalm=precedingGraphs.includes("PALM");
+  if(hasAsperges && hasPalm)throw new Error("Multiple preceding rite readers are not yet composable");
+  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
     guideData ?? Promise.resolve(loadGuideData(prepared)),
     needsFormState ? (formStateData ?? Promise.resolve(loadFormStateData(prepared))) : null,
+    hasAsperges ? (aspergesData ?? Promise.resolve(loadAspergesData(prepared))) : null,
+    hasPalm ? (palmData ?? Promise.resolve(loadPalmData(prepared))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -188,7 +201,13 @@ export async function prepareNativeReaderPreview({
   });
   const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
   const transientState=createReaderTransientController({events,prepared});
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState});
+  const aspergesController=hasAsperges
+    ? createAspergesReaderController({graph:loadedAsperges?.graph,payload:loadedAsperges?.payload,riteContext:aspergesRiteContext??{}})
+    : null;
+  const palmController=hasPalm
+    ? createPalmReaderController({graph:loadedPalm?.graph,payload:loadedPalm?.payload})
+    : null;
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController});
 }
 
 export async function mountNativeReaderPreview({
@@ -204,6 +223,11 @@ export async function mountNativeReaderPreview({
   loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
+  aspergesData=null,
+  loadAspergesData=loadAspergesReaderData,
+  aspergesRiteContext=null,
+  palmData=null,
+  loadPalmData=loadPalmReaderData,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -214,6 +238,7 @@ export async function mountNativeReaderPreview({
   const ready=await prepareNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
+    aspergesData,loadAspergesData,aspergesRiteContext,palmData,loadPalmData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -235,6 +260,8 @@ export async function mountNativeReaderPreview({
   root.append(host,close);
 
   let current=ready.model.cardBySequence(1);
+  let inAsperges=Boolean(ready.aspergesController);
+  let inPalm=Boolean(ready.palmController);
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
@@ -378,6 +405,10 @@ export async function mountNativeReaderPreview({
   }
   function showCard(card){
     if(!card) return null;
+    inAsperges=false;
+    inPalm=false;
+    root.dataset.r17SpecialStructure="MASS";
+    delete root.dataset.r17SpecialCard;
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
     const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
@@ -423,16 +454,124 @@ export async function mountNativeReaderPreview({
     return card;
   }
 
+  function introitOnlyCard(){
+    const card=ready.model.cardBySequence(1);
+    if(!card)return null;
+    const block=card.blocks?.find?.(x=>x.blockId==="AO.SM.B014");
+    if(!block || block.firstParagraphIndex==null || !block.paragraphCount)throw new Error("Palm Introit handoff cannot resolve AO.SM.B014");
+    const paragraphs=card.paragraphs.slice(block.firstParagraphIndex,block.firstParagraphIndex+block.paragraphCount);
+    return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),palmIntroitOnly:true});
+  }
+
+  function specialParagraphs(card){
+    return (card?.paragraphs??[]).map(row=>({
+      id:row.id,
+      kind:row.kind,
+      primary:row.latin,
+      secondary:row.english??row.en??null,
+      sourceCueIds:[row.sourceRecordId].filter(Boolean),
+    }));
+  }
+
+  function showAsperges(){
+    const state=ready.aspergesController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    inAsperges=true;
+    inPalm=false;
+    activeCueId=null;
+    root.dataset.r17SpecialStructure="ASPERGES";
+    root.dataset.r17SpecialCard=card.id;
+    reader.renderMoment({
+      id:card.id,
+      sectionTitle:"Asperges",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:specialParagraphs(card),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Asperges",
+      posture:card.posture && card.posture!=="INHERIT" ? {label:card.posture} : null,
+      gesture:state.faithfulGesture ? {label:state.faithfulGesture} : null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    });
+    return state;
+  }
+
+  function showPalm(){
+    const state=ready.palmController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    inPalm=true;
+    inAsperges=false;
+    activeCueId=null;
+    root.dataset.r17SpecialStructure="PALM";
+    root.dataset.r17SpecialCard=card.id;
+    reader.renderMoment({
+      id:card.id,
+      sectionTitle:"Palm Sunday",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:specialParagraphs(card),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Palm Rite",
+      posture:state.recipientPosture
+        ? {label:state.recipientPosture}
+        : card.posture && !["LOCAL","ORDINARY_PROFILE"].includes(card.posture) ? {label:card.posture} : null,
+      gesture:card.gesture ? {label:card.gesture} : null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    });
+    return state;
+  }
+
+  function navigateNext(){
+    if(inPalm && ready.palmController){
+      const state=ready.palmController.project();
+      if(state.atEnd)return showCard(introitOnlyCard());
+      ready.palmController.next();
+      return showPalm();
+    }
+    if(inAsperges && ready.aspergesController){
+      const state=ready.aspergesController.project();
+      if(state.atEnd)return showCard(ready.model.cardBySequence(1));
+      ready.aspergesController.next();
+      return showAsperges();
+    }
+    return showCard(ready.model.nextCard(current.sectionId));
+  }
+
+  function navigatePrevious(){
+    if(inPalm && ready.palmController){
+      const state=ready.palmController.project();
+      if(!state.atStart)ready.palmController.previous();
+      return showPalm();
+    }
+    if(inAsperges && ready.aspergesController){
+      const state=ready.aspergesController.project();
+      if(!state.atStart)ready.aspergesController.previous();
+      return showAsperges();
+    }
+    if(current?.sectionId===ready.model.cardBySequence(1)?.sectionId){
+      if(ready.palmController){
+        ready.palmController.goTo("PALM-R07");
+        return showPalm();
+      }
+      if(ready.aspergesController){
+        ready.aspergesController.goTo("ASP-R05");
+        return showAsperges();
+      }
+    }
+    return showCard(ready.model.previousCard(current.sectionId));
+  }
+
   const reader=createReaderDomAdapter({
     root:host,
     iconResolver,
     allowPresentationModeSwitch:false,
-    onPrevious:()=>showCard(ready.model.previousCard(current.sectionId)),
-    onNext:()=>showCard(ready.model.nextCard(current.sectionId)),
+    onPrevious:navigatePrevious,
+    onNext:navigateNext,
   });
 
   function syncState(){
     scheduled=false;
+    if(inAsperges||inPalm)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -482,10 +621,12 @@ export async function mountNativeReaderPreview({
 
   close.addEventListener?.("click",()=>{destroy();onClose?.()});
 
-  // Mount only after the model is complete.
+  // Mount only after the model and any certified preceding-rite payload are complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
-  showCard(current);
+  if(inPalm)showPalm();
+  else if(inAsperges)showAsperges();
+  else showCard(current);
 
   const readerScroll=host.querySelector?.(".ao-prayer-card");
   if(readerScroll){
@@ -493,6 +634,7 @@ export async function mountNativeReaderPreview({
       container:readerScroll,
       win,
       onChange:(cueId)=>{
+        if(inAsperges||inPalm){activeCueId=null;return;}
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -533,6 +675,7 @@ export async function mountNativeReaderPreview({
       cinematic:"R17_SINGLE_OWNER_TIMED_TRANSIENT",
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
       modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__UI_SWITCH_STILL_LOCKED_FOR_PHONE_ACCEPTANCE",
+      specialStructure:"R23_NATIVE_ASPERGES_PALM_PRECEDING_RITES",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -552,6 +695,12 @@ export async function mountNativeReaderPreview({
     finishSchola:()=>{const value=ready.scholaState.finish();queue();return value},
     selectScholaTrack:(trackId)=>{const value=ready.scholaState.selectTrack(trackId);queue();return value},
     getTransientTransitionPending:()=>transientGuard.pending,
+    getAspergesState:()=>ready.aspergesController?.project?.()??null,
+    getPalmState:()=>ready.palmController?.project?.()??null,
+    markActuallySprinkled:()=>{if(!ready.aspergesController)return null;ready.aspergesController.setActuallySprinkled(true);return inAsperges?showAsperges():ready.aspergesController.project();},
+    setPalmRecipientState:value=>{if(!ready.palmController)return null;ready.palmController.setRecipientState(value);return inPalm?showPalm():ready.palmController.project();},
+    next:navigateNext,
+    previous:navigatePrevious,
   });
   globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
   return api;
