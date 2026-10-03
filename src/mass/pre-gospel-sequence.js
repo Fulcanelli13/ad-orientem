@@ -156,3 +156,45 @@ export function assertSourceOrderedPreGospelSequence(compiled){
   }
   return compiled;
 }
+
+export function preGospelManifestFields(compiled){
+  assertSourceOrderedPreGospelSequence(compiled);
+  return Object.freeze({
+    preGospelSequence:compiled.sequence,
+    preGospelSequenceProvenance:Object.freeze({
+      schema:compiled.schema,
+      orderAuthority:compiled.orderAuthority,
+      structuralLanguage:compiled.structuralLanguage,
+      sourcePath:compiled.sourcePath,
+      sourceOrder:compiled.sourceOrder,
+    }),
+  });
+}
+
+export function assertPreGospelSourceOrderProof(sequence,provenance){
+  if(!provenance || provenance.schema!=="ao-pre-gospel-source-order-v1"){
+    throw new Error("PRE_GOSPEL_SEQUENCE source-order provenance is required");
+  }
+  if(provenance.orderAuthority!=="SOURCE_ORDER"){
+    throw new Error("PRE_GOSPEL_SEQUENCE provenance lost SOURCE_ORDER authority");
+  }
+  if(!Array.isArray(sequence) || !Array.isArray(provenance.sourceOrder)){
+    throw new Error("PRE_GOSPEL_SEQUENCE and sourceOrder arrays required");
+  }
+  if(sequence.length!==provenance.sourceOrder.length){
+    throw new Error("PRE_GOSPEL_SEQUENCE source-order denominator mismatch");
+  }
+  for(let index=0;index<sequence.length;index++){
+    const node=sequence[index];
+    if(node?.orderAuthority!=="SOURCE_ORDER"){
+      throw new Error("PRE_GOSPEL_SEQUENCE["+index+"] lacks SOURCE_ORDER authority");
+    }
+    if(node?.sourceOrderIndex!==index){
+      throw new Error("PRE_GOSPEL_SEQUENCE["+index+"] sourceOrderIndex mismatch");
+    }
+    if(node?.sourceSectionId!==provenance.sourceOrder[index]){
+      throw new Error("PRE_GOSPEL_SEQUENCE["+index+"] does not preserve source order");
+    }
+  }
+  return provenance;
+}
