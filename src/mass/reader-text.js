@@ -1,6 +1,7 @@
 import { projectResolvedReaderText } from "./reader-projection.js";
 import { composeProperReaderParagraphs } from "./proper-reader-composition.js";
 import { composeOrdinaryReaderParagraphs } from "./ordinary-reader-composition.js";
+import { applyCanonicalTextCorrection } from "./canonical-text-corrections.js";
 
 const EXPECTED = Object.freeze({
   LOW:Object.freeze({
@@ -80,6 +81,7 @@ export function selectReaderTextCorpus({form,lowCorpus,sungCorpus}={}){
 
 function ordinaryParagraphs(block){
   const raw=(block.units??[])
+    .map(unit=>applyCanonicalTextCorrection(block.Block_ID,unit))
     .filter(unit=>Boolean(String(unit?.latin??"").trim() || String(unit?.english??"").trim()))
     .map(unit=>({
       id:unit.cue_id,
