@@ -2,6 +2,7 @@ import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
 import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
+import { structureSupport } from "./reader-structure.js";
 
 export function createBrowserMassRuntime({
   root, celebrationApi, resolveHostOptions, readReaderPreferences,
@@ -55,6 +56,7 @@ export function createBrowserMassRuntime({
 
   const reader = createReaderDomAdapter({
     root, iconResolver, onPresentationModeChange,
+    allowPresentationModeSwitch:false,
     onPrevious: (state, prepared) => {
       const card = move("previous");
       onPrevious?.(card, state, prepared, readerModel);
@@ -99,6 +101,10 @@ export function createBrowserMassRuntime({
   const entry = createMassEntryController({
     celebrationApi, resolveHostOptions, readReaderPreferences,
     openReader: async prepared => {
+      const structuralSupport=structureSupport(prepared);
+      if(!structuralSupport.supported){
+        throw new Error(structuralSupport.reason || "R17 browser reader structure is not certified");
+      }
       const data = await Promise.resolve(loadPresentationData(prepared));
       const model = createMassReaderModel({
         resolvedMass: prepared.session.resolvedMass,
