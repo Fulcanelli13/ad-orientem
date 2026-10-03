@@ -1,0 +1,67 @@
+{
+  "release": "R19",
+  "branch": "migration/mass-v1.76-r18",
+  "status": "DOMAIN_PARITY_PASS_READER_IMPORT_BLOCKED",
+  "whole_app_baseline": "v43.33",
+  "mass_presentation_reference": {
+    "build": "Ad_Orientem_v1.76_R15_RELEASE_HARDENING.html",
+    "sha256": "511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99"
+  },
+  "canonical_domain_engine": {
+    "source": "implementation/r17-mass-convergence",
+    "base_graph": {
+      "events": 178,
+      "native_certified_forms": [
+        "LOW",
+        "SOLEMN"
+      ]
+    },
+    "session_forms": [
+      "LOW",
+      "MISSA_CANTATA_SIMPLE",
+      "MISSA_CANTATA_INCENSE",
+      "SOLEMN"
+    ],
+    "recovered_graph_contracts": 13,
+    "rule": "The 178-event core remains immutable; later certified forms/overlays project over it."
+  },
+  "missa_cantata": {
+    "certificate": "MC-CERT-2026-09-22.1",
+    "bindings": 189,
+    "base_event_coverage": 178,
+    "certificate_only_states": 11,
+    "simple_projection_default": 161,
+    "incense_projection_default": 164,
+    "explicit_incense_only": [
+      "MC-ALT-040",
+      "MC-OFF-110",
+      "MC-OFF-120"
+    ],
+    "epistle_resolver_events": 3,
+    "sacred_ministers": false,
+    "runtime_torchbearer_actor": false
+  },
+  "github_ci": {
+    "workflow": "R17 Mass convergence",
+    "run_id": 37094461958,
+    "conclusion": "success",
+    "head_sha": "7273780136716ca6658285087f66de0dd5e6813b",
+    "assertions": [
+      "Wave 1: 178 events / 68 SOT moments",
+      "B005 Low PASS",
+      "B006 Solemn PASS",
+      "B007 invariants PASS",
+      "R17 convergence PASS",
+      "R19 MC projection PASS"
+    ]
+  },
+  "reader_import": {
+    "status": "BLOCKED_EXACT_ASSET_IMPORT",
+    "runtime_bytes": 6579106,
+    "embedded_data_uris": 57,
+    "embedded_data_uri_text_chars": 6283178,
+    "approximate_non_asset_js_chars": 295385,
+    "exact_reader_blob_preexisting_in_repo": false
+  },
+  "production_index_switched": false
+}
