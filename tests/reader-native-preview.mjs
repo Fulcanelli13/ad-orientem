@@ -8,6 +8,13 @@ const data={
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
 };
+const cueRegistries=Object.freeze({
+  gestures:load("../data/presentation/reader-gestures.v1.json"),
+  responses:load("../data/presentation/reader-responses.v1.json"),
+  postures:load("../data/presentation/reader-postures.v1.json"),
+  positions:load("../data/presentation/reader-priest-positions.v1.json"),
+  voices:load("../data/presentation/reader-priest-voices.v1.json"),
+});
 const t=(lat,en)=>({lat,en});
 const proper={
   sourcePath:"Sancti/10-07",
@@ -30,10 +37,13 @@ const prepared={
   }},
   readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"},
 };
-const ready=await prepareNativeReaderPreview({prepared,presentationData:data,eventData});
+const ready=await prepareNativeReaderPreview({prepared,presentationData:data,eventData,cueRegistries});
 assert.equal(ready.model.totalCards,30);
 assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
 assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
+assert.equal(ready.cueState.supported,true);
+assert.equal(ready.cueState.project("AO.SM.C0084").priestPosition.station,"ALTAR_GOSPEL_MISSAL");
+assert.equal(ready.cueState.project("AO.SM.C0071").response.text,"Et cum spíritu tuo.");
 assert.ok(ready.model.cards[0].paragraphs.length>0);
 assert.ok(ready.model.cards.some(card=>card.paragraphs.some(p=>p.primary==="Introit")),"resolved Proper text never entered native card model");
 
@@ -86,6 +96,7 @@ try{
     prepared:{...prepared,session:{resolvedMass:{...prepared.session.resolvedMass,overlays:["REQUIEM"]}}},
     presentationData:data,
     eventData,
+    cueRegistries,
   });
 }catch(error){blocked=/not yet certified for overlay REQUIEM/.test(String(error.message))}
 assert.equal(blocked,true,"unsupported special graph did not fail closed");
