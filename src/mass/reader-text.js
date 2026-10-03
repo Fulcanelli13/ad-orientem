@@ -129,10 +129,13 @@ export function buildReaderSectionCard({
   const paragraphs=[];
   const blockMeta=[];
   for(const block of blocks){
+    const explicitNotApplicable=Boolean(
+      block.Proper_Slot && properSlots?.[block.Proper_Slot]?.status==="NOT_APPLICABLE"
+    );
     const raw=block.Proper_Slot
       ? properParagraphs(block,properSlots)
       : ordinaryParagraphs(block);
-    if(raw.length===0 && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
+    if(raw.length===0 && !explicitNotApplicable && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");
     }
     const projected=raw.length ? projectResolvedReaderText({status:"READY",paragraphs:raw}) : [];
