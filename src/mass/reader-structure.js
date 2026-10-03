@@ -134,9 +134,13 @@ export function structureSupport(prepared,modeOverride=null){
   const preceding=[...(plan.precedingGraphs??[])];
   const unsupportedPreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"].includes(x));
   if(unsupportedPreceding.length)return Object.freeze({supported:false,reason:"PRECEDING_RITE_PROJECTION_PENDING"});
-  if((plan.followingGraphs??[]).length)return Object.freeze({supported:false,reason:"FOLLOWING_ACTION_PROJECTION_PENDING"});
-  const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>x!=="VOTIVE_PROPER");
+  const unsupportedFollowing=(plan.followingGraphs??[]).filter(x=>x!=="REQUIEM_ABSOLUTION");
+  if(unsupportedFollowing.length)return Object.freeze({supported:false,reason:"FOLLOWING_ACTION_PROJECTION_PENDING"});
+  const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>!["VOTIVE_PROPER","REQUIEM"].includes(x));
   if(structuralOverlays.length)return Object.freeze({supported:false,reason:"STRUCTURAL_OVERLAY_PROJECTION_PENDING"});
+  if((plan.followingGraphs??[]).includes("REQUIEM_ABSOLUTION") && !(plan.overlayGraphs??[]).includes("REQUIEM")){
+    return Object.freeze({supported:false,reason:"REQUIEM_ABSOLUTION_REQUIRES_REQUIEM_OVERLAY"});
+  }
   const mode=normalizeMode(modeOverride??prepared?.readerPreferences?.mode??resolved?.presentationMode??"LIVE");
   if(mode==="LIVE")return Object.freeze({
     supported:true,
