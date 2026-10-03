@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.6.1",
+  "version": "1.8.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -95,27 +95,66 @@
         "bell",
         "cinematic"
       ],
-      "canonicalStateMutation": false,
-      "recoveredMajorActionCinematicCueCount": 5,
-      "recoveredMajorActionCinematicCueIds": [
-        "AO.SM.C0174",
-        "AO.SM.C0181",
-        "AO.SM.C0204",
-        "AO.SM.C0242",
-        "AO.SM.C0265"
+      "canonicalStateMutation": false
+    },
+    {
+      "id": "PROPER_FIXTURE_PROVENANCE",
+      "status": "CERTIFIED_REPLACEMENT_WITNESS",
+      "fixture": "2026-10-04 / Dominica XIX Post Pentecosten",
+      "witnessFile": "data/mass/golden-proper-witnesses.v1.json",
+      "quarantinedHost": "categpt.chat",
+      "closed": "2026-10-03"
+    },
+    {
+      "id": "GRADUAL_LIVE_ARCHITECTURE",
+      "status": "RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_G6",
+      "contract": "src/mass/reader-live-pre-gospel.js",
+      "gradualBlock": "AO.SM.B021",
+      "gradualLane": "MAIN_READER",
+      "alleluiaTractBlock": "AO.SM.B022",
+      "alleluiaTractLane": "SCHOLA",
+      "mundaStartBlock": "AO.SM.B023",
+      "mergeB021B022Allowed": false
+    },
+    {
+      "id": "LOW_MASS_NATIVE_STATE",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-form-state.js",
+      "source": "v43.57 B005 / v1.74c R02 recovered Low donor",
+      "canonicalCueStates": 275,
+      "responseDefault": "MINISTER_OR_SERVER__FAITHFUL_LANE_SUPPRESSED",
+      "schola": "STRUCTURALLY_ABSENT"
+    },
+    {
+      "id": "SOLEMN_MASS_NATIVE_STATE",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-form-state.js",
+      "source": "shared Sung cue source + explicit v43.58 B006/R04 deltas",
+      "sacredMinisterDeltas": 19,
+      "paxTransferAuthority": "INDEPENDENT_RELEASE_BLOCKER_FAIL_CLOSED"
+    },
+    {
+      "id": "FORM_SWITCH_NO_LEGACY_FALLBACK",
+      "status": "CERTIFIED",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
       ],
-      "recoveredActionOnlyCinematicCueIds": [
-        "AO.SM.C0204",
-        "AO.SM.C0242",
-        "AO.SM.C0265"
+      "channels": [
+        "gesture",
+        "response",
+        "priestVoice",
+        "priestPosition",
+        "sacredMinister"
       ],
-      "canonicalActionEventIds": [
-        "MC-CNS-040",
-        "MC-CNS-110",
-        "MC-CAN-180",
-        "MC-COM-270",
-        "MC-END-130"
-      ]
+      "postureException": "FOLLOW_CONGREGATION remains intentionally observational"
+    },
+    {
+      "id": "FORM_PARITY_REGRESSION",
+      "status": "PASS",
+      "test": "tests/reader-form-state-parity.mjs"
     }
   ],
   "openBlockers": [
@@ -123,16 +162,6 @@
       "id": "G6_48_CARD_MAP",
       "severity": "RELEASE_BLOCKER",
       "detail": "Exact ordered v1.83 C01-C48 LIVE enumeration is still unrecovered. Nine of the ten historical v1.81 decompression splits are semantically recovered; exactly one remains unresolved: a Canon boundary."
-    },
-    {
-      "id": "GRADUAL_LIVE_ARCHITECTURE",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Final LIVE architecture must preserve v1.83 B021 Gradual ownership, separate B022 Alleluia/Tract Schola content, and B023 Munda cor meum start."
-    },
-    {
-      "id": "FORM_STATE_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Cue-state projection is not yet certified across LOW and SOLEMN; unsupported forms must remain fail-closed/legacy."
     },
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
@@ -143,11 +172,6 @@
       "id": "PHONE_BROWSER_ACCEPTANCE",
       "severity": "RELEASE_BLOCKER",
       "detail": "Real-browser phone-width/touch acceptance for focus, first/last cue ownership, Back/Next, translations and card transitions has not yet been recreated for R17."
-    },
-    {
-      "id": "PROPER_FIXTURE_PROVENANCE",
-      "severity": "PRODUCTION_GOLDEN_BLOCKER",
-      "detail": "The quarantined 4 October Secret/Communion/Postcommunion fixture still requires accepted replacement witnesses."
     },
     {
       "id": "SOLEMN_PAX_TRANSFER_AUTHORITY",
