@@ -56,6 +56,15 @@ assert.equal(recovery.remainingCanonRecovery?.requiredSplitCount,1);
 assert.equal(recovery.remainingCanonRecovery?.directV181OrV183DonorBytesRecovered,false);
 assert.equal(recovery.remainingCanonRecovery?.exactV180CanonCombinedCardMapRecovered,false);
 assert.equal(recovery.remainingCanonRecovery?.exactV184ToV187CardDeltaRecovered,false);
+assert.equal(
+  recovery.remainingCanonRecovery?.librarySearchAudit?.result,
+  "NO_CONTEMPORANEOUS_V1_80_V1_81_V1_83_CANON_BOUNDARY_RECOVERED"
+);
+assert.ok((recovery.remainingCanonRecovery?.librarySearchAudit?.checked??[]).length>=3);
+assert.match(
+  recovery.remainingCanonRecovery?.librarySearchAudit?.candidatePolicy??"",
+  /candidate-only|candidate/i
+);
 assert.ok(recovery.remainingCanonRecovery?.rejectedRecoveryMethods.some(x=>/v1\.87 51-card/.test(x)),
   "Later 51-card subtraction must remain rejected without an exact lineage delta");
 for(const candidate of recovery.remainingCanonRecovery?.laterObservedBoundariesNotCertifiedAsV181??[]){
