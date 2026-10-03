@@ -8,8 +8,9 @@ function assertBaselineReaderGraph(resolvedMass){
   if(resolvedMass?.distinctRite) {
     throw new Error("Reader card adapter not yet certified for distinct rite "+resolvedMass.distinctRite);
   }
-  if((resolvedMass?.precedingRites??[]).length) {
-    throw new Error("Reader card adapter not yet certified for preceding rite graph");
+  const unsupportedPreceding=(resolvedMass?.precedingRites??[]).filter(x=>x!=="ASPERGES");
+  if(unsupportedPreceding.length) {
+    throw new Error("Reader card adapter not yet certified for preceding rite graph "+unsupportedPreceding.join(", "));
   }
   if((resolvedMass?.followingActions??[]).length) {
     throw new Error("Reader card adapter not yet certified for following-action graph");
