@@ -1,5 +1,6 @@
 import { projectResolvedReaderText } from "./reader-projection.js";
 import { composeProperReaderParagraphs } from "./proper-reader-composition.js";
+import { composeOrdinaryReaderParagraphs } from "./ordinary-reader-composition.js";
 
 const EXPECTED = Object.freeze({
   LOW:Object.freeze({
@@ -78,14 +79,16 @@ export function selectReaderTextCorpus({form,lowCorpus,sungCorpus}={}){
 }
 
 function ordinaryParagraphs(block){
-  return (block.units??[])
+  const raw=(block.units??[])
     .filter(unit=>Boolean(String(unit?.latin??"").trim() || String(unit?.english??"").trim()))
     .map(unit=>({
       id:unit.cue_id,
       kind:unitKind(unit),
       latin:unit.latin,
       vernacular:unit.english,
+      sourceCueIds:Object.freeze([unit.cue_id]),
     }));
+  return composeOrdinaryReaderParagraphs(block,raw);
 }
 
 function stateOnlyBlock(block){
