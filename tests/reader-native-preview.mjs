@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection } from "../src/mass/reader-native-preview.js";
+import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels } from "../src/mass/reader-native-preview.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -89,6 +89,53 @@ assert.equal(resolveGestureProjection(disputed,{label:"LEGACY CROSS"},{
 assert.equal(resolveGestureProjection(null,{label:"LEGACY BOW"},{
   cueId:"AO.SM.C0090",gestureProfile:"GUIDED_1962"
 }),null,"known Credo cue fell back to legacy despite profile suppression");
+
+
+const staleLegacy={
+  priestPosition:{label:"STALE LEGACY POSITION"},
+  priestVoice:{label:"STALE LEGACY VOICE"},
+  gesture:{label:"STALE LEGACY GESTURE"},
+  response:{label:"STALE LEGACY RESPONSE"},
+};
+const waiting=resolveCueOwnedChannels({
+  cueControllerSupported:true,
+  cueProjection:null,
+  eventState:null,
+  legacy:staleLegacy,
+  cueId:null,
+  gestureProfile:"GUIDED_1962",
+});
+assert.equal(waiting.priestPosition,null,"certified cue owner leaked stale legacy priest position while focus was unresolved");
+assert.equal(waiting.priestVoice,null,"certified cue owner leaked stale legacy priest voice while focus was unresolved");
+assert.equal(waiting.gesture,null,"certified cue owner leaked stale legacy gesture while focus was unresolved");
+assert.equal(waiting.response,null,"certified cue owner leaked stale legacy response while focus was unresolved");
+assert.equal(waiting.ownership.priestPosition,"R17_CUE_WAITING_FAIL_CLOSED");
+
+const exactCue=ready.cueState.project("AO.SM.C0071");
+const exactOwned=resolveCueOwnedChannels({
+  cueControllerSupported:true,
+  cueProjection:exactCue,
+  eventState:null,
+  legacy:staleLegacy,
+  cueId:"AO.SM.C0071",
+  gestureProfile:"GUIDED_1962",
+});
+assert.equal(exactOwned.priestPosition.station,"ALTAR_CENTER");
+assert.equal(exactOwned.priestVoice.value,"LISTENS");
+assert.equal(exactOwned.response.text,"Et cum spíritu tuo.");
+assert.equal(exactOwned.gesture,null);
+
+const unsupportedOwned=resolveCueOwnedChannels({
+  cueControllerSupported:false,
+  cueProjection:null,
+  eventState:null,
+  legacy:staleLegacy,
+  gestureProfile:"GUIDED_1962",
+});
+assert.equal(unsupportedOwned.priestPosition.label,"STALE LEGACY POSITION");
+assert.equal(unsupportedOwned.priestVoice.label,"STALE LEGACY VOICE");
+assert.equal(unsupportedOwned.response.label,"STALE LEGACY RESPONSE");
+assert.equal(unsupportedOwned.ownership.priestPosition,"LEGACY_FALLBACK");
 
 let blocked=false;
 try{
