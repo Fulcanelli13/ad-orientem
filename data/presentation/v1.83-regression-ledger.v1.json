@@ -1,0 +1,88 @@
+{
+  "schema": "ao-v1.83-regression-ledger-v1",
+  "version": "1.0.0",
+  "status": "ACTIVE_REGRESSION_LOCKDOWN",
+  "rule": "Recovered historical reader defects are acceptance tests or explicit blockers. A green unit suite does not close entries whose required runtime/browser evidence is still missing.",
+  "entries": [
+    {
+      "id": "V181-HOST-ELEVATION-EARLY",
+      "status": "FIXED_AND_TESTED_R17",
+      "defect": "Host elevation state could fire on the words cue before the actual elevation action.",
+      "invariant": "AO.SM.C0173 is words only; AO.SM.C0174 owns Host elevation action.",
+      "tests": [
+        "tests/reader-cue-state.mjs",
+        "tests/reader-regression-lockdown.mjs"
+      ]
+    },
+    {
+      "id": "V181-CHALICE-ELEVATION-EARLY",
+      "status": "FIXED_AND_TESTED_R17",
+      "defect": "Chalice elevation state could fire before the actual elevation action.",
+      "invariant": "AO.SM.C0180 remains words; AO.SM.C0181 owns Chalice elevation action.",
+      "tests": [
+        "tests/reader-cue-state.mjs",
+        "tests/reader-regression-lockdown.mjs"
+      ]
+    },
+    {
+      "id": "V181-CARD-TRANSIENT-LEAK",
+      "status": "PARTIALLY_FIXED",
+      "defect": "Gesture/response/bell/cinematic state could survive a card change.",
+      "invariant": "No transient state from the prior card may render before the next exact cue owns the new card.",
+      "fixedChannels": [
+        "gesture",
+        "response"
+      ],
+      "openChannels": [
+        "bell",
+        "cinematic"
+      ],
+      "tests": [
+        "tests/reader-native-preview.mjs",
+        "tests/reader-regression-lockdown.mjs"
+      ]
+    },
+    {
+      "id": "V183-GRADUAL-COMPOSITION",
+      "status": "BLOCKED_ON_FINAL_48_CARD_ARCHITECTURE",
+      "defect": "Earlier reader composition merged Gradual with Alleluia/Tract content.",
+      "invariant": "B021 is the Gradual reader surface; B022 is separate Alleluia/Tract Schola content; B023 begins Munda cor meum."
+    },
+    {
+      "id": "V181-PARAGRAPH-SYNC-STATE-OVERWRITE",
+      "status": "FIXED_AT_CURRENT_NATIVE_BOUNDARY",
+      "defect": "Paragraph synchronization could overwrite transient action/gesture ownership.",
+      "invariant": "State-only updates do not rebuild prayer paragraphs and exact cue state remains channel-owned.",
+      "tests": [
+        "tests/reader-dom.mjs",
+        "tests/reader-native-preview.mjs",
+        "tests/reader-cue-focus.mjs"
+      ]
+    },
+    {
+      "id": "V181-DOCUMENT-TITLE-CORRUPTION",
+      "status": "GUARDED_R17_MODULAR_SOURCE",
+      "defect": "A prior reader build overwrote document.title with a stale prototype/version title.",
+      "invariant": "R17 modular Mass source must not mutate document.title."
+    },
+    {
+      "id": "V181-OVERSIZED-ICON-CLONE",
+      "status": "GUARDED_R17_MODULAR_SOURCE",
+      "defect": "Transient badges could clone oversized embedded icon/image payloads.",
+      "invariant": "R17 modular Mass/presentation source must not embed data:image payloads; approved icon assets must be referenced through the asset-bank resolver."
+    },
+    {
+      "id": "V181-STALE-PARTS-AUDIT",
+      "status": "NOT_APPLICABLE_TO_R17_MODULAR_ARCHITECTURE",
+      "defect": "A historical audit referenced stale rt.parts rather than the authoritative parts registry.",
+      "invariant": "R17 tests consume explicit modular contracts rather than a legacy rt.parts audit alias."
+    },
+    {
+      "id": "V181-PAX-OWNERSHIP",
+      "status": "MECHANICS_TESTED_SOURCE_CERTIFICATION_PENDING",
+      "defect": "Pax Domini, the private peace prayer and the Solemn ministerial Pax transfer must not be conflated.",
+      "invariant": "MC-COM-100 remains Pax Domini; plan projection may suppress MC-COM-150 and MC-COM-160 independently without mutating the frozen canonical graph.",
+      "sourceStatus": "MC-COM-160 remains B/C_PENDING"
+    }
+  ]
+}
