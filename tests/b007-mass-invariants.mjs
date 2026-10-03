@@ -44,13 +44,13 @@ if (communionWarning?.soundEvents?.[0]?.legal_status !== "PRESCRIBED_CONDITIONAL
 }
 if (byId.get("MC-COM-200")?.soundEvents?.length) fail("old priest-DNSD bell restored");
 
-// Peace prayer and ministerial Pax are distinct from Pax Domini and must be independently suppressible.
+// Peace prayer and ministerial Pax remain distinct frozen canonical events.
+// Session/overlay omission belongs to plan projection, never by mutating this graph.
 const peacePrayer=byId.get("MC-COM-150");
 const formalPax=byId.get("MC-COM-160");
-if (!peacePrayer?.conditions?.includes("ORDINARY_PEACE_PRAYER_ALLOWED")) fail("peace prayer suppression condition missing");
-if (!formalPax?.conditions?.includes("FORM_IS_SOLEMN")) fail("formal Pax lost Solemn form condition");
-if (!formalPax?.conditions?.includes("FORMAL_SOLEMN_PAX_ALLOWED")) fail("formal Pax suppression condition missing");
-if (byId.get("MC-COM-100")?.conditions?.includes("FORMAL_SOLEMN_PAX_ALLOWED")) fail("Pax Domini was conflated with formal Pax transmission");
+if (!peacePrayer || peacePrayer.conditions?.length !== 0) fail("frozen peace-prayer event was mutated");
+if (!formalPax || formalPax.conditions?.join(",") !== "FORM_IS_SOLEMN") fail("frozen formal Pax event was mutated");
+if (byId.get("MC-COM-100")?.conditions?.length) fail("Pax Domini acquired a plan-specific suppression condition");
 
 // R007 / R012 — no active private celebrant Gospel before the public Gospel.
 if (events.some((event) => event.sourceMomentRefs.includes("E17"))) fail("historical private Gospel E17 active");
