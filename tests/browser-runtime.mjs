@@ -3,6 +3,9 @@ import { readFileSync } from "node:fs";
 import { createBrowserMassRuntime } from "../src/mass/browser-runtime.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
+const aspergesPayload=load("../data/presentation/reader-asperges.v1.json");
+const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
+const aspergesData=Object.freeze({payload:aspergesPayload,graph:Object.freeze([...specialExtension.graphs.ASP])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -67,6 +70,39 @@ runtime.previous(); assert.equal(runtime.getCurrentSectionId(),"AO.CARD.015");
 runtime.next(); assert.equal(runtime.getCurrentSectionId(),"AO.CARD.016");
 runtime.destroy(); assert.equal(root.innerHTML,""); assert.equal(runtime.getReaderModel(),null);
 
+
+const aspergesRoot=rootFixture();
+const aspergesRuntime=createBrowserMassRuntime({
+  root:aspergesRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["asperges"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Holy Rosary",proper,precedingRites:["ASPERGES"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadAspergesData:async()=>aspergesData,
+});
+await aspergesRuntime.enter();
+assert.equal(aspergesRuntime.getCurrentSectionId(),null,"Mass card became active before Asperges completed");
+assert.equal(aspergesRuntime.getReaderState().cardTitle,"Sunday Aspersion");
+assert.equal(aspergesRuntime.getAspergesState().card.id,"ASP-R01");
+aspergesRuntime.next();
+assert.equal(aspergesRuntime.getReaderState().cardTitle,"Asperges me");
+aspergesRuntime.next();
+assert.equal(aspergesRuntime.getAspergesState().card.id,"ASP-R03");
+assert.equal(aspergesRuntime.getReaderState().gesture,null,"sprinkling gesture fired from card visibility");
+aspergesRuntime.markActuallySprinkled();
+assert.equal(aspergesRuntime.getReaderState().gesture.label,"MAKE_FULL_SIGN_OF_CROSS");
+aspergesRuntime.next();
+aspergesRuntime.next();
+assert.equal(aspergesRuntime.getAspergesState().card.id,"ASP-R05");
+aspergesRuntime.next();
+assert.equal(aspergesRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(aspergesRuntime.getReaderState().cardTitle,"Introit & Preparatory Prayers");
+aspergesRuntime.previous();
+assert.equal(aspergesRuntime.getAspergesState().card.id,"ASP-R05","Back from first Mass card did not return to Asperges handoff");
+aspergesRuntime.next();
+assert.equal(aspergesRuntime.getCurrentSectionId(),"AO.CARD.001");
+aspergesRuntime.destroy();
+
 const liveBlockedRoot=rootFixture();
 const liveBlocked=createBrowserMassRuntime({
   root:liveBlockedRoot,
@@ -100,4 +136,4 @@ const requiem=createBrowserMassRuntime({
 await assert.rejects(()=>requiem.enter(),/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/);
 assert.equal(requiemRoot.innerHTML,"");
 
-console.log("Browser Mass runtime PASS: 30-card MISSAL/SIMPLE path remains testable; LIVE is blocked behind v1.83 48-card parity.");
+console.log("Browser Mass runtime PASS: ordinary 30-card flow plus explicit Asperges prelude/handoff; LIVE remains blocked behind v1.83 48-card parity.");

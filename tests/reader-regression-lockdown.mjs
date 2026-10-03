@@ -71,7 +71,7 @@ assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
-assert.equal(aspergesPayload?.status,"CERTIFIED_PAYLOAD_RUNTIME_SWITCH_PENDING","Asperges payload certification disappeared");
+assert.equal(aspergesPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Asperges payload certification disappeared");
 assert.match(String(aspergesPayload?.controller??""),/reader-asperges\.js/,"Asperges controller is not pinned");
 assert.equal(aspergesPayload?.recoveredGraphRecords,6,"Asperges six-record source scope changed");
 assert.equal(aspergesPayload?.readerCards,5,"Asperges reader-card contract changed");

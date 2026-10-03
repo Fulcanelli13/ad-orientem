@@ -76,8 +76,11 @@ const votive={
 assert.equal(structureSupport(votive).supported,true,
   "Votive Proper should remain structurally supported in certified MISSAL mode");
 
+const aspergesPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:["ASPERGES"],followingGraphs:[],overlayGraphs:[]}}};
+assert.equal(structureSupport(aspergesPrepared).supported,true,"certified Asperges prelude remained structurally blocked");
+
 for(const [label,plan] of [
-  ["preceding",{kind:"MASS",precedingGraphs:["ASPERGES"],followingGraphs:[],overlayGraphs:[]}],
+  ["preceding",{kind:"MASS",precedingGraphs:["PALM"],followingGraphs:[],overlayGraphs:[]}],
   ["following",{kind:"MASS",precedingGraphs:[],followingGraphs:["CORPUS_CHRISTI_PROCESSION"],overlayGraphs:[]}],
   ["overlay",{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["REQUIEM"]}],
   ["distinct",{kind:"DISTINCT_RITE",precedingGraphs:[],followingGraphs:[],overlayGraphs:[]}],

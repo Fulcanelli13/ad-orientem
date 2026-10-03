@@ -105,7 +105,9 @@ export function structureSupport(prepared,modeOverride=null){
   const resolved=prepared?.session?.resolvedMass;
   if(!plan||!resolved)return Object.freeze({supported:false,reason:"MISSING_R17_SESSION"});
   if(plan.kind!=="MASS")return Object.freeze({supported:false,reason:"DISTINCT_RITE_REQUIRES_NATIVE_RITE_PROJECTION"});
-  if((plan.precedingGraphs??[]).length)return Object.freeze({supported:false,reason:"PRECEDING_RITE_PROJECTION_PENDING"});
+  const preceding=[...(plan.precedingGraphs??[])];
+  const unsupportedPreceding=preceding.filter(x=>x!=="ASPERGES");
+  if(unsupportedPreceding.length)return Object.freeze({supported:false,reason:"PRECEDING_RITE_PROJECTION_PENDING"});
   if((plan.followingGraphs??[]).length)return Object.freeze({supported:false,reason:"FOLLOWING_ACTION_PROJECTION_PENDING"});
   const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>x!=="VOTIVE_PROPER");
   if(structuralOverlays.length)return Object.freeze({supported:false,reason:"STRUCTURAL_OVERLAY_PROJECTION_PENDING"});
