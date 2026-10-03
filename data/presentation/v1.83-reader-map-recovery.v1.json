@@ -148,14 +148,33 @@
       ],
       "recoveredSecondSurfaceDescription": "Altar kiss before blessing + Final Blessing + Amen",
       "note": "The frozen LIVE master map separates Placeat from the subsequent blessing sequence. This recovers the semantic boundary for the formerly area-only conclusion split. The evidence map further atomizes altar kiss, blessing and Amen; do not infer that v1.83 preserved those internal LC-* subdivisions without its donor bytes."
+    },
+    {
+      "label": "Suscipe sancta Trinitas / Orate fratres",
+      "confidence": "TRIANGULATED_UNIQUE_FROM_V1_80_GROUPING_AND_V1_81_SPLIT_ACCOUNTING",
+      "anchorBlocks": [
+        "AO.SM.B038",
+        "AO.SM.B039"
+      ],
+      "anchorTitles": [
+        "Suscipe sancta Trinitas",
+        "Orate fratres"
+      ],
+      "evidence": {
+        "v180Report": "v1.80_eucharistic_card_architecture_report.json",
+        "v180PreservedGrouping": "Suscipe/Orate",
+        "v180LiveCards": 38,
+        "v181LiveCards": 48,
+        "alreadyRecoveredOffertorySplits": [
+          "Chalice preparation / Offerimus tibi",
+          "Incensation / Lavabo"
+        ],
+        "remainingOffertorySplitCountBeforeThisRecovery": 1
+      },
+      "note": "This is a uniquely determined semantic boundary from the preserved v1.80 combined-card grouping plus the v1.81 ten-split accounting. It is not direct recovery of v1.81 donor bytes, card IDs, or full card ranges; those remain unavailable."
     }
   ],
   "unresolvedSplitAreas": [
-    {
-      "area": "OFFERTORY",
-      "confidence": "AREA_ONLY",
-      "note": "One further v1.81 decompression split is known to be in the Offertory area; exact boundary/title pair is not recoverable from current evidence."
-    },
     {
       "area": "CANON",
       "confidence": "AREA_ONLY",
@@ -184,7 +203,8 @@
     "Do not synthesize 48 cards by arbitrarily subdividing the current 30 R17 cards.",
     "Do not back-port the later v1.87 51-card architecture as though it were v1.83.",
     "Do not assign v1.83 card IDs, full block ranges, or cue ranges that are not recovered from donor evidence.",
-    "Do not switch the reader gate away from LEGACY because this ledger exists."
+    "Do not switch the reader gate away from LEGACY because this ledger exists.",
+    "Do not treat triangulated semantic boundaries as recovered v1.83 card IDs or full ranges."
   ],
   "recoveryAcceptance": [
     "Recover v1.81 or v1.83 donor bytes, or an exact contemporaneous enumeration of all 48 cards.",
