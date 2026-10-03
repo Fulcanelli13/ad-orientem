@@ -1,6 +1,6 @@
 {
   "schema": "ao-v1.83-reader-map-recovery-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER",
   "lineage": {
     "v180LiveCards": 38,
@@ -204,7 +204,8 @@
     "Do not back-port the later v1.87 51-card architecture as though it were v1.83.",
     "Do not assign v1.83 card IDs, full block ranges, or cue ranges that are not recovered from donor evidence.",
     "Do not switch the reader gate away from LEGACY because this ledger exists.",
-    "Do not treat triangulated semantic boundaries as recovered v1.83 card IDs or full ranges."
+    "Do not treat triangulated semantic boundaries as recovered v1.83 card IDs or full ranges.",
+    "Do not mark the tenth Canon split recovered from later v1.87/v1.89/v0.x granularity without an exact lineage delta."
   ],
   "recoveryAcceptance": [
     "Recover v1.81 or v1.83 donor bytes, or an exact contemporaneous enumeration of all 48 cards.",
@@ -258,5 +259,56 @@
         "errors": 0
       }
     }
+  },
+  "remainingCanonRecovery": {
+    "status": "UNRESOLVED_DO_NOT_INFER",
+    "requiredSplitCount": 1,
+    "directV181OrV183DonorBytesRecovered": false,
+    "exactV180CanonCombinedCardMapRecovered": false,
+    "exactV184ToV187CardDeltaRecovered": false,
+    "searchedEvidence": [
+      "v1.77 static-integrity report — no card map",
+      "v1.78 state-ownership report — no card map",
+      "v1.79 Guide-rubric report — no card map",
+      "accessible v1.80/v1.80.1 form-engine reconstruction reports — no 38-card map",
+      "GitHub commit/history search for v1.81, 48-card, decompression and ELEVATION_TRIGGER — no historical donor commit",
+      "prior development record — only the two already recovered Canon decompressions are explicit"
+    ],
+    "rejectedRecoveryMethods": [
+      "Do not subtract v1.87 51-card or later maps from 48 unless the exact v1.84-v1.87 card delta is independently recovered.",
+      "Do not promote later fine-grained LIVE projection boundaries to v1.81 evidence.",
+      "Do not choose a liturgically plausible Canon boundary merely to make the historical split count reach ten."
+    ],
+    "laterObservedBoundariesNotCertifiedAsV181": [
+      {
+        "blocks": [
+          "AO.SM.B050",
+          "AO.SM.B051"
+        ],
+        "description": "Hanc igitur / Quam oblationem"
+      },
+      {
+        "blocks": [
+          "AO.SM.B057",
+          "AO.SM.B058"
+        ],
+        "description": "Memento of the Dead / Nobis quoque"
+      },
+      {
+        "blocks": [
+          "AO.SM.B058",
+          "AO.SM.B059"
+        ],
+        "description": "Nobis quoque / Per quem haec omnia"
+      },
+      {
+        "blocks": [
+          "AO.SM.B059",
+          "AO.SM.B060"
+        ],
+        "description": "Per quem haec omnia / Per ipsum"
+      }
+    ],
+    "promotionRule": "The tenth Canon split remains unresolved until contemporaneous v1.80/v1.81/v1.83 evidence identifies the boundary, or an exact version-to-version delta makes it uniquely derivable."
   }
 }
