@@ -3,7 +3,7 @@ import { V183_PRE_GOSPEL_LIVE_CONTRACT, assertV183PreGospelLiveContract } from "
 import { readFileSync } from "node:fs";
 
 const contract=assertV183PreGospelLiveContract();
-assert.equal(contract.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_G6");
+assert.equal(contract.status,"RECOVERED_CONTRACT_LOCKED__SOURCE_FIRST_LIVE_INTEGRATED");
 assert.deepEqual(contract.order,["AO.SM.B021","AO.SM.B022","AO.SM.B023"]);
 assert.equal(contract.gradual.ownership,"GRADUAL_ONLY");
 assert.equal(contract.alleluiaTract.ownership,"ALLELUIA_TRACT");
@@ -16,4 +16,4 @@ assert.match(scholaSource,/id:"ALLELUIA_TRACT_SEQUENCE".*canonicalBlockIds:\["AO
 assert.doesNotMatch(scholaSource,/id:"GRADUAL"[^\n]*AO\.SM\.B022/,
   "B022 leaked into the Gradual Schola ownership row");
 
-console.log("v1.83 Gradual LIVE architecture: PASS — B021 main reader, B022 Schola, B023 Munda; source-first LIVE integration still gates LIVE.");
+console.log("Gradual LIVE architecture: PASS — B021 main reader, B022 Schola, B023 Munda inside source-first LIVE.");
