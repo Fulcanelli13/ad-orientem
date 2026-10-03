@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "SOURCE_RECONCILIATION_GATE",
   "runtimeReference": "v1.83 MERGE GATE",
   "rule": "source -> reconciliation decision -> canonical matrix -> runtime",
@@ -44,14 +44,21 @@
   "activeTargets": [
     "ORDINARY_TEXT_CROSS_PARITY",
     "ORATION_CONCLUSION_TYPES",
-    "SPECIAL_CANON_INSERTS",
+    "SPECIAL_CANON_INSERTS_COMMUNICANTES_HANC_IGITUR_QUI_PRIDIE",
     "ORDERED_INTERLECTION_SEQUENCE",
-    "MULTI_FIXTURE_PROPER_REGRESSION"
+    "PRAYER_OVER_PEOPLE_BRANCH",
+    "MULTI_FIXTURE_PROPER_REGRESSION",
+    "V1_83_RUNTIME_PARITY"
   ],
   "sourcePolicy": {
     "primary1962": "EXECUTABLE_AUTHORITY",
     "misselBarroux": "EDITORIAL_QA_ONLY",
     "internalFormation": "INTERNAL_ONLY_NOT_PRODUCTION_PROVENANCE",
     "localProfile": "MAY_NOT_OVERRIDE_UNIVERSAL_RUBRIC_DATA"
-  }
+  },
+  "currentBlockingFindings": [
+    "SRC-PARITY-001 AO.SM.B046/C0148 Benedictus printed cross",
+    "SRC-PARITY-002 AO.SM.B047/C0153 Te igitur bishop placeholder N.",
+    "SRC-PARITY-003 AO.SM.B057/C0194 Memento Dead lucis et pacis"
+  ]
 }
