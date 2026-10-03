@@ -291,6 +291,7 @@ export function compileMassPlan(resolvedMass) {
   for (const rite of resolvedMass.precedingRites) {
     state.precedingGraphs.push(rite);
     if (["PALM", "ASH", "CANDLEMAS", "ROGATIONS"].includes(rite)) state.massEntry = "INTROIT";
+    if (rite === "PALM") state.normalLastGospel = false;
     if (rite === "CANDLEMAS") state.objectStates.push("CANDLE_STATE_OVERLAY");
     // ASPERGES specifically hands off to ordinary Mass without suppressing Prayers at the Foot.
   }
