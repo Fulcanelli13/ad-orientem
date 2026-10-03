@@ -167,6 +167,7 @@ export function createReaderDomAdapter({
   onPrevious = null,
   onNext = null,
   onGuide = null,
+  allowPresentationModeSwitch = true,
 } = {}) {
   if(!root || typeof root.querySelector !== "function") throw new TypeError("Reader root element required");
 
@@ -176,7 +177,9 @@ export function createReaderDomAdapter({
   let bound=false;
 
   function setMode(next){
-    mode=normalizePresentationMode(next);
+    const requested=normalizePresentationMode(next);
+    if(!allowPresentationModeSwitch && requested!==mode) return mode;
+    mode=requested;
     const shell=root.querySelector("[data-ao-reader-shell]");
     if(shell) shell.dataset.mode=mode;
     for(const button of root.querySelectorAll?.("[data-reader-mode]") ?? []){
@@ -223,6 +226,12 @@ export function createReaderDomAdapter({
     prepared=nextPrepared;
     mode=normalizePresentationMode(prepared.readerPreferences?.mode ?? prepared.session.resolvedMass.presentationMode);
     root.innerHTML=buildReaderShellMarkup(prepared);
+    if(!allowPresentationModeSwitch){
+      for(const button of root.querySelectorAll?.("[data-reader-mode]") ?? []){
+        button.disabled=true;
+        button.title="Mode switching is locked until v1.83 reader parity is certified";
+      }
+    }
     bound=false;
     bind();
     return prepared;
@@ -300,5 +309,10 @@ export function createReaderDomAdapter({
     prepared=null;current=null;bound=false;root.innerHTML="";
   }
 
-  return Object.freeze({mount,renderMoment,setMode,destroy,getState:()=>current,getMode:()=>mode});
+  return Object.freeze({
+    mount,renderMoment,setMode,destroy,
+    getState:()=>current,
+    getMode:()=>mode,
+    canSwitchPresentationMode:()=>allowPresentationModeSwitch,
+  });
 }
