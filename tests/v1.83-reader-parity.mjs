@@ -10,16 +10,18 @@ const resolver=createReaderSectionResolver(map);
 assert.equal(gate.reference.expectedLiveCards,48);
 assert.equal(gate.reference.expectedCanonicalMacros,30);
 assert.equal(resolver.total,30);
-assert.equal(gate.currentR17.nativeReaderCards,30);
-assert.equal(gate.currentR17.status,"SOURCE_FIRST_RELEASE_POLICY");
+assert.equal(gate.currentR17.nativeReaderCards,39);
+assert.equal(gate.currentR17.sourceFirstLiveCards,39);
+assert.equal(gate.currentR17.sourceFirstCanonSegments,14);
+assert.equal(gate.currentR17.status,"SOURCE_FIRST_LIVE_INTEGRATED");
 assert.equal(gate.status,"HISTORICAL_PARITY_REFERENCE_NON_BLOCKING");
 assert.equal(gate.releaseAuthority,false);
 assert.equal(gate.recoveredV181Splits.length,9);
 assert.deepEqual(gate.unresolvedV181SplitAreas.map(x=>x.area).sort(),["CANON"]);
 assert.equal(Object.hasOwn(gate,"knownV181Splits"),false,
   "Parity gate must not retain the stale six-split ledger after 9/10 recovery");
-assert.notEqual(resolver.total,gate.reference.expectedLiveCards,
-  "Reader parity gate should not silently pass until authoritative 48-card map is recovered");
+assert.notEqual(gate.currentR17.sourceFirstLiveCards,gate.reference.expectedLiveCards,
+  "Source-first LIVE must not masquerade as historical v1.83 C01-C48 parity");
 assert.ok(gate.acceptance.some(x=>/48 LIVE cards/.test(x)), "Parity acceptance must require exact recovery of all 48 LIVE cards");
 
 assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
