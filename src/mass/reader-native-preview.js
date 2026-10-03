@@ -35,6 +35,14 @@ export function legacyReaderStateSnapshot(doc){
   });
 }
 
+export function resolveGestureProjection(eventState, legacyGesture) {
+  if(!eventState) return legacyGesture ?? null;
+  const owner=eventState.ownership?.gesture;
+  if(owner==="R17_NATIVE") return eventState.gesture ?? null;
+  if(owner==="R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION") return null;
+  return legacyGesture ?? null;
+}
+
 export async function prepareNativeReaderPreview({
   prepared,
   presentationData=null,
@@ -120,7 +128,7 @@ export async function mountNativeReaderPreview({
     return Object.freeze({
       priestPosition:legacy.priestPosition,
       posture:legacy.posture,
-      gesture:eventState.ownership.gesture==="R17_NATIVE" ? eventState.gesture : legacy.gesture,
+      gesture:resolveGestureProjection(eventState,legacy.gesture),
       response:eventState.ownership.response==="R17_NATIVE" ? eventState.response : legacy.response,
       priestVoice:eventState.ownership.priestVoice==="R17_NATIVE" ? eventState.priestVoice : legacy.priestVoice,
       schola:legacy.schola,
