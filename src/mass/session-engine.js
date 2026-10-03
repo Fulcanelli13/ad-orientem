@@ -1,4 +1,5 @@
 import { validateProperManifestV2 } from "./proper-contracts.js";
+import { compilePostcommunionExitDelta, assertPostcommunionExitOwnership } from "./postcommunion-exit.js";
 
 // R17 convergence — session composition above the immutable canonical MC graph.
 // This module does not own text, DOM, storage, calendar fetching, or canonical event identity.
@@ -219,7 +220,12 @@ export function compileMassPlan(resolvedMass) {
   }
 
   const properManifest = properManifestV2(resolvedMass.proper);
-  if (properManifest?.orations?.prayerOverPeople) {
+  const prayerOverPeoplePresent = Boolean(properManifest?.orations?.prayerOverPeople);
+  const postcommunionExit = assertPostcommunionExitOwnership(
+    compilePostcommunionExitDelta({ prayerOverPeoplePresent })
+  );
+  state.postcommunionExit = postcommunionExit;
+  if (prayerOverPeoplePresent) {
     state.insertions.push("PRAYER_OVER_PEOPLE_AFTER_POSTCOMMUNION_BEFORE_FINAL_DOMINUS_VOBISCUM");
   }
 
