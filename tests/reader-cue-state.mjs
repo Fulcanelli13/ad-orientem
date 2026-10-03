@@ -61,13 +61,20 @@ state=ctrl.project("AO.SM.C0148");
 assert.match(state.gesture.action,/Sign of the Cross/i);
 
 state=ctrl.project("AO.SM.C0173");
+assert.equal(state.gesture,null,"Host elevation fired on the words of Consecration instead of the action cue");
+state=ctrl.project("AO.SM.C0174");
 assert.ok(state.gesture);
-assert.doesNotMatch(state.gesture.action,/Sign of the Cross/i,"elevation invented a cross");
+assert.doesNotMatch(state.gesture.action,/Sign of the Cross/i,"Host elevation invented a cross");
 assert.match(state.gesture.action,/Sacred Host/i);
 
 state=ctrl.project("AO.SM.C0179");
+assert.equal(state.gesture,null,"Chalice elevation fired on the consecration words");
+state=ctrl.project("AO.SM.C0180");
+assert.equal(state.gesture,null,"Chalice elevation fired before Hæc quotiescúmque completed");
+state=ctrl.project("AO.SM.C0181");
 assert.ok(state.gesture);
-assert.doesNotMatch(state.gesture.action,/Sign of the Cross/i,"chalice elevation invented a cross");
+assert.doesNotMatch(state.gesture.action,/Sign of the Cross/i,"Chalice elevation invented a cross");
+assert.match(state.gesture.action,/Chalice/i);
 
 state=ctrl.project("AO.SM.C0265");
 assert.match(state.gesture.action,/Sign of the Cross/i);
