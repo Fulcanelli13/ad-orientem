@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -115,6 +115,46 @@
       "alleluiaTractLane": "SCHOLA",
       "mundaStartBlock": "AO.SM.B023",
       "mergeB021B022Allowed": false
+    },
+    {
+      "id": "LOW_MASS_NATIVE_STATE",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-form-state.js",
+      "source": "v43.57 B005 / v1.74c R02 recovered Low donor",
+      "canonicalCueStates": 275,
+      "responseDefault": "MINISTER_OR_SERVER__FAITHFUL_LANE_SUPPRESSED",
+      "schola": "STRUCTURALLY_ABSENT"
+    },
+    {
+      "id": "SOLEMN_MASS_NATIVE_STATE",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-form-state.js",
+      "source": "shared Sung cue source + explicit v43.58 B006/R04 deltas",
+      "sacredMinisterDeltas": 19,
+      "paxTransferAuthority": "INDEPENDENT_RELEASE_BLOCKER_FAIL_CLOSED"
+    },
+    {
+      "id": "FORM_SWITCH_NO_LEGACY_FALLBACK",
+      "status": "CERTIFIED",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "channels": [
+        "gesture",
+        "response",
+        "priestVoice",
+        "priestPosition",
+        "sacredMinister"
+      ],
+      "postureException": "FOLLOW_CONGREGATION remains intentionally observational"
+    },
+    {
+      "id": "FORM_PARITY_REGRESSION",
+      "status": "PASS",
+      "test": "tests/reader-form-state-parity.mjs"
     }
   ],
   "openBlockers": [
@@ -122,11 +162,6 @@
       "id": "G6_48_CARD_MAP",
       "severity": "RELEASE_BLOCKER",
       "detail": "Exact ordered v1.83 C01-C48 LIVE enumeration is still unrecovered. Nine of the ten historical v1.81 decompression splits are semantically recovered; exactly one remains unresolved: a Canon boundary."
-    },
-    {
-      "id": "FORM_STATE_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Cue-state projection is not yet certified across LOW and SOLEMN; unsupported forms must remain fail-closed/legacy."
     },
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
