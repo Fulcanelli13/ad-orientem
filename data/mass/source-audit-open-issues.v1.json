@@ -143,8 +143,9 @@
       "id": "P2-008",
       "finding": "Postcommunion exit ownership conflicts when Prayer over the People is inserted before B089: the ordinary B088 close-Missal/return-centre transition must not execute before the inserted prayer.",
       "classification": "POSTCOMMUNION_EXIT_OWNERSHIP",
-      "status": "OPEN_RUNTIME_GRAPH_BLOCKER",
-      "requiredAction": "When Prayer over the People is present, suppress/defer B088 ordinary postcommunion exit ownership until the inserted prayer completes, then hand off to the final Dominus vobiscum path."
+      "status": "RESOLVED_ON_R17_EXIT_DELTA",
+      "requiredAction": "None on R17. Preserve the C0256 suppression/deferred-exit contract in CI.",
+      "resolution": "postcommunion-exit.js suppresses base AO.SM.C0256 when Prayer over the People is present, keeps the priest at the Epistle-side Missal for the inserted prayer, replays the C0256 route semantic as R17.POP.020 only afterward, then hands off to AO.SM.C0257. Session-level Proper tests and dedicated regression pass."
     }
   ]
 }
