@@ -12,14 +12,16 @@ if missing:
         "R17 browser-entry host contract missing from index.html: " + ", ".join(missing)
     )
 
+bridge = '<script data-ao-r17-icon-bridge>globalThis.AO_R17_ICON_ASSETS=(typeof AO_ASSETS!=="undefined"&&AO_ASSETS)||null;</script>'
 tag = '<script type="module" src="./src/mass/browser-entry.js" data-ao-r17-browser-entry></script>'
-if tag in text:
+if tag in text and bridge in text:
     print("R17 browser entry already present; no change")
     raise SystemExit(0)
 
 if "</body>" not in text:
     raise SystemExit("index.html has no </body> marker")
 
-text = text.replace("</body>", tag + "\n</body>", 1)
+injection = bridge + "\n" + tag
+text = text.replace("</body>", injection + "\n</body>", 1)
 path.write_text(text, encoding="utf-8")
 print("Injected R17 browser entry into index.html")
