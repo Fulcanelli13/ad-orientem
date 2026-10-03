@@ -49,7 +49,6 @@ assert.equal(support.reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "LIVE_SOURCE_STRUCTURE_INTEGRATION",
-  "FORM_TRANSIENT_PARITY",
   "FORM_LIFECYCLE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
@@ -61,7 +60,7 @@ for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NA
 }
 const formSwitch=release.protectedInvariants.find(x=>x.id==="FORM_SWITCH_NO_LEGACY_FALLBACK");
 assert.ok(formSwitch?.channels?.includes("priestAction"),"priest-action ownership disappeared from form-switch gate");
-assert.match(String(formSwitch?.transientPolicy??""),/fail closed/i,"uncertified form transients no longer fail closed");
+assert.match(String(formSwitch?.transientPolicy??""),/native-certified/i,"form transients lost native certification");
 
 const plannedRuntime=release.protectedInvariants.find(x=>x.id==="PLAN_AWARE_OBJECTIVE_RUNTIME");
 assert.equal(plannedRuntime?.status,"CERTIFIED_LOW_SOLEMN_RUNTIME_OWNERSHIP",
@@ -69,6 +68,14 @@ assert.equal(plannedRuntime?.status,"CERTIFIED_LOW_SOLEMN_RUNTIME_OWNERSHIP",
 assert.equal(plannedRuntime?.engine,"buildPlannedObjectiveTraversal");
 assert.equal(plannedRuntime?.sourceGraphMutation,false);
 assert.deepEqual(plannedRuntime?.forms,["LOW","SOLEMN"]);
+
+const formTransient=release.protectedInvariants.find(x=>x.id==="FORM_TRANSIENT_PARITY");
+assert.equal(formTransient?.status,"CERTIFIED","form transient parity blocker disappeared without certification");
+assert.deepEqual(formTransient?.forms,["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+const bellNative=release.protectedInvariants.find(x=>x.id==="BELL_CINEMATIC_NATIVE_OWNERSHIP");
+assert.equal(bellNative?.formParity?.low?.bellCueCount,4,"Low bell parity count changed");
+assert.deepEqual(bellNative?.formParity?.low?.certifiedAbsentCueIds,["AO.SM.C0225"]);
+assert.equal(bellNative?.formParity?.solemn?.bellCueCount,5,"Solemn bell parity count changed");
 
 const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
 assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_SOURCE_FIRST_LIVE",
@@ -191,7 +198,8 @@ assert.match(transientSource,/AO\.SM\.C0174/);
 assert.match(transientSource,/AO\.SM\.C0181/);
 assert.match(transientSource,/AO\.SM\.C0225/);
 assert.match(transientSource,/canonicalAuthority:false/,"cinematic presentation acquired canonical authority");
-assert.match(transientSource,/R18_FORM_TRANSIENT_FAIL_CLOSED/,"LOW/SOLEMN uncertified transients stopped failing closed");
+assert.match(transientSource,/R18_FORM_CERTIFIED_ABSENCE/,"form-specific certified transient absence disappeared");
+assert.match(transientSource,/MISSA_CANTATA_SIMPLE.*MISSA_CANTATA_INCENSE.*LOW.*SOLEMN/,"ordinary-form transient support set regressed");
 
 assert.match(transientSource,/AO\.SM\.C0204/,"minor elevation cinematic anchor lost");
 assert.match(transientSource,/AO\.SM\.C0242/,"Ecce Agnus Dei cinematic anchor lost");
