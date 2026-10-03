@@ -50,7 +50,7 @@ const model=runtime.getReaderModel();
 assert.equal(model.totalCards,30);
 assert.equal(model.properSource,"Sancti/10-07");
 assert.equal(runtime.getCurrentSectionId(),"AO.CARD.001");
-assert.equal(runtime.getReaderState().cardTitle,"Introit & Preparatory");
+assert.equal(runtime.getReaderState().cardTitle,"Introit & Preparatory Prayers");
 assert.ok(runtime.getReaderState().paragraphs.some(p=>p.primary==="Introit of the Rosary"));
 
 const host=runtime.showCanonicalEvent("MC-CNS-010",{priestPosition:{label:"ALTAR CENTER"},priestVoice:{label:"SILENT"}});
