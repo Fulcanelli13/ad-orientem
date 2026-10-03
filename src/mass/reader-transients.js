@@ -3,8 +3,8 @@
 // Exact AO.SM.C#### bindings are recovered from the v1.34 runtime donor;
 // they are presentation bindings only and never advance canonical state.
 
-const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"]);
-const FORM_NATIVE_FAIL_CLOSED=new Set(["LOW","SOLEMN"]);
+const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","LOW","SOLEMN"]);
+const FORM_NATIVE_FORMS=new Set(["LOW","SOLEMN"]);
 
 export const BELL_CUE_BINDINGS=Object.freeze([
   Object.freeze({cueId:"AO.SM.C0145",label:"SANCTUS BELL",detail:"Sanctus",canonicalEventIds:Object.freeze(["MC-SAN-020"])}),
@@ -59,6 +59,11 @@ function altarBellEvents(event){
 
 function eventConditionsPass(event,active){
   return (event?.conditions??[]).every(condition=>active.has(String(condition)));
+}
+
+function eventCertifiedForForm(event,form){
+  if(!FORM_NATIVE_FORMS.has(form))return true;
+  return String(event?.forms?.[form]??"")==="CERTIFIED";
 }
 
 export function validateReaderTransientBindings(events){
@@ -120,8 +125,7 @@ export function createReaderTransientController({events,prepared}={}){
   function project(cueId){
     const id=String(cueId??"");
     if(!supported){
-      const owner=FORM_NATIVE_FAIL_CLOSED.has(form) ? "R18_FORM_TRANSIENT_FAIL_CLOSED" : "LEGACY_FALLBACK";
-      return Object.freeze({supported:false,reason:"TRANSIENT_PROJECTION_NOT_CERTIFIED_FOR_"+(form||"UNKNOWN_FORM"),cueId:id||null,bell:null,cinematic:null,ownership:Object.freeze({bell:owner,cinematic:owner})});
+      return Object.freeze({supported:false,reason:"TRANSIENT_PROJECTION_NOT_CERTIFIED_FOR_"+(form||"UNKNOWN_FORM"),cueId:id||null,bell:null,cinematic:null,ownership:Object.freeze({bell:"LEGACY_FALLBACK",cinematic:"LEGACY_FALLBACK"})});
     }
 
     const binding=byCue.get(id)??null;
@@ -137,6 +141,11 @@ export function createReaderTransientController({events,prepared}={}){
     let cinematicOwner="R17_EXACT_CUE_NONE";
     if(binding){
       const canonicalEvents=binding.canonicalEventIds.map(eventId=>index.get(eventId));
+      const formCertified=canonicalEvents.every(event=>eventCertifiedForForm(event,form));
+      if(!formCertified)return Object.freeze({
+        supported:true,reason:"CANONICAL_EVENT_UNAVAILABLE_FOR_FORM",cueId:id,bell:null,cinematic:null,
+        ownership:Object.freeze({bell:"R18_FORM_CERTIFIED_ABSENCE",cinematic:"R18_FORM_CERTIFIED_ABSENCE"}),
+      });
       const active=canonicalEvents.every(event=>eventConditionsPass(event,activeConditions));
       if(!active)return Object.freeze({
         supported:true,reason:"CANONICAL_EVENT_CONDITION_INACTIVE",cueId:id,bell:null,cinematic:null,
@@ -170,6 +179,10 @@ export function createReaderTransientController({events,prepared}={}){
     let actionCinematic=null;
     if(actionBinding){
       const event=index.get(actionBinding.canonicalEventId);
+      if(!eventCertifiedForForm(event,form))return Object.freeze({
+        supported:true,reason:"CANONICAL_EVENT_UNAVAILABLE_FOR_FORM",cueId:id,bell:null,cinematic:null,
+        ownership:Object.freeze({bell:bellOwner,cinematic:"R18_FORM_CERTIFIED_ABSENCE"}),
+      });
       if(!eventConditionsPass(event,activeConditions))return Object.freeze({
         supported:true,reason:"CANONICAL_EVENT_CONDITION_INACTIVE",cueId:id,bell:null,cinematic:null,
         ownership:Object.freeze({bell:bellOwner,cinematic:"R17_CONDITION_FAIL_CLOSED"}),
