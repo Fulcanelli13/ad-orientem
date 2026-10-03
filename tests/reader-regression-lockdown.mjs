@@ -74,8 +74,9 @@ assert.ok((phoneAcceptance?.guarantees??[]).some(x=>/AO\.SM\.C0173/.test(x)),"pr
 assert.ok((phoneAcceptance?.defectsClosed??[]).some(x=>/cue-id regex/i.test(x)),"browser cue-id regression closure disappeared");
 
 const modeSwitch=release.protectedInvariants.find(x=>x.id==="NATIVE_MODE_SWITCH");
-assert.match(String(modeSwitch?.status??""),/SOURCE_FIRST_LIVE_CERTIFIED/);
-assert.match(String(modeSwitch?.status??""),/PHONE_ACCEPTANCE/);
+assert.equal(modeSwitch?.status,"INITIAL_MODE_PHONE_CERTIFIED__IN_READER_SWITCH_DEFERRED_NON_BLOCKING");
+assert.match(String(modeSwitch?.reason??""),/selected before Mass/i);
+assert.match(String(modeSwitch?.reason??""),/locked/i);
 
 const plannedRuntime=release.protectedInvariants.find(x=>x.id==="PLAN_AWARE_OBJECTIVE_RUNTIME");
 assert.equal(plannedRuntime?.status,"CERTIFIED_LOW_SOLEMN_RUNTIME_OWNERSHIP",
