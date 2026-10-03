@@ -91,7 +91,7 @@ export function resolveCueOwnedChannels({
         gesture:cueNative
           ? (
             gesture
-              ? (gesture.owner==="R17_CUE_SOURCE" ? "R17_CUE_NATIVE_TRADITIONAL_PROFILE" : "R17_EXACT_CUE_PROFILE")
+              ? (gesture.owner==="R17_CUE_SOURCE" ? "R17_CUE_NATIVE_SOURCE" : "R17_EXACT_CUE_PROFILE")
               : cueProjection.ownership.gesture
           )
           : "R17_CUE_WAITING_FAIL_CLOSED",
