@@ -52,7 +52,7 @@ assert.ok(rogationsBuilt.cards.reduce((n,c)=>n+c.paragraphs.length,0)>=170,
   "Rogations payload regressed to an abridged litany");
 assert.ok(rogationsBuilt.cards.some(card=>card.paragraphs.some(row=>/Ut fructus terræ dare et conserváre dignéris/.test(row.latin))),
   "Rogations agricultural petition missing");
-assert.ok(rogationsBuilt.cards.some(card=>card.paragraphs.some(row=>/Sancte Ioseph/.test(row.latin))),
+assert.ok(rogationsBuilt.cards.some(card=>card.paragraphs.some(row=>/Sancte Joseph/.test(row.latin))),
   "Rogations traditional saint invocation corpus incomplete");
 const rogations=createPreludeReaderController({graph:extension.graphs.ROG,payload:rogationsPayload});
 assert.equal(rogations.project().card.id,"ROG-R01");
