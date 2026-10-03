@@ -36,7 +36,7 @@ const runtime=createBrowserMassRuntime({
   root,
   celebrationApi:{getResolvedMass:()=>celebration()},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Holy Rosary",proper}),
-  readReaderPreferences:()=>({mode:"live",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>{loaded=true;return presentationData},
   onReaderMounted:()=>{mounted=true},
 });
@@ -45,7 +45,9 @@ assert.equal(loaded,true); assert.equal(mounted,true);
 assert.ok(root.innerHTML.includes('data-ao-reader-shell'));
 assert.ok(root.innerHTML.includes("Holy Rosary"));
 assert.equal(entered.session.resolvedMass.form,"MISSA_CANTATA_INCENSE");
-assert.equal(entered.session.resolvedMass.presentationMode,"LIVE");
+assert.equal(entered.session.resolvedMass.presentationMode,"SIMPLE");
+assert.equal(runtime.getReaderMode(),"SIMPLE");
+assert.equal(runtime.setMode("LIVE"),"SIMPLE","standalone runtime allowed an uncertified LIVE mode switch");
 const model=runtime.getReaderModel();
 assert.equal(model.totalCards,30);
 assert.equal(model.properSource,"Sancti/10-07");
@@ -65,11 +67,23 @@ runtime.previous(); assert.equal(runtime.getCurrentSectionId(),"AO.CARD.015");
 runtime.next(); assert.equal(runtime.getCurrentSectionId(),"AO.CARD.016");
 runtime.destroy(); assert.equal(root.innerHTML,""); assert.equal(runtime.getReaderModel(),null);
 
+const liveBlockedRoot=rootFixture();
+const liveBlocked=createBrowserMassRuntime({
+  root:liveBlockedRoot,
+  celebrationApi:{getResolvedMass:()=>celebration()},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Holy Rosary",proper}),
+  readReaderPreferences:()=>({mode:"live",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+});
+await assert.rejects(()=>liveBlocked.enter(),/V1_83_48_CARD_LIVE_MAP_REQUIRED/,
+  "standalone 30-card runtime bypassed the frozen v1.83 LIVE gate");
+assert.equal(liveBlockedRoot.innerHTML,"");
+
 const missingRoot=rootFixture();
 const missing=createBrowserMassRuntime({
   root:missingRoot, celebrationApi:{getResolvedMass:()=>celebration()},
   resolveHostOptions:()=>({form:"low",celebrationTitle:"Holy Rosary",proper}),
-  readReaderPreferences:()=>({mode:"live"}),
+  readReaderPreferences:()=>({mode:"simple"}),
   loadPresentationData:async()=>{throw new Error("reader data unavailable")},
 });
 await assert.rejects(()=>missing.enter(),/reader data unavailable/);
@@ -80,10 +94,10 @@ const requiem=createBrowserMassRuntime({
   root:requiemRoot,
   celebrationApi:{getResolvedMass:()=>celebration({requestedCelebrationId:"requiem",celebrationId:"requiem",celebrationType:"requiem",properSource:"Votive/Requiem"})},
   resolveHostOptions:()=>({form:"solemn",celebrationTitle:"Requiem",proper}),
-  readReaderPreferences:()=>({mode:"live"}),
+  readReaderPreferences:()=>({mode:"simple"}),
   loadPresentationData:async()=>presentationData,
 });
-await assert.rejects(()=>requiem.enter(),/not yet certified for overlay REQUIEM/);
+await assert.rejects(()=>requiem.enter(),/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/);
 assert.equal(requiemRoot.innerHTML,"");
 
-console.log("Browser Mass runtime PASS: atomic data-backed 30-card startup, Proper-safe navigation, canonical-event card routing.");
+console.log("Browser Mass runtime PASS: 30-card MISSAL/SIMPLE path remains testable; LIVE is blocked behind v1.83 48-card parity.");
