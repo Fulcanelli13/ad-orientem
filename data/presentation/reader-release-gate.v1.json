@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -104,6 +104,11 @@
       "id": "SOLEMN_PAX_TRANSFER_AUTHORITY",
       "severity": "RELEASE_BLOCKER",
       "detail": "MC-COM-150 and MC-COM-160 are now independently suppressible and Pax Domini remains distinct, but MC-COM-160 still carries B/C_PENDING evidence. Accepted source authority and reader ownership for the Solemn ministerial Pax transfer must be pinned before release certification."
+    },
+    {
+      "id": "PLAN_AWARE_OBJECTIVE_RUNTIME",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Plan-aware objective traversal now preserves the frozen graph while applying blessing/Last-Gospel and Pax-session deltas, but no non-test R17 runtime consumer owns that traversal yet. Native replacement must consume the planned traversal rather than raw buildObjectiveTraversal."
     }
   ],
   "certificationPolicy": {
