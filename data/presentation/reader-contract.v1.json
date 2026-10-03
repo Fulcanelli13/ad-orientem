@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "R17_READER_CONVERGENCE_CONTRACT",
   "sources": {
     "sungRuntimeHardening": "v1.77",
@@ -8,14 +8,33 @@
     "lowPractice": "Ad_Orientem_MASS_CORE_v2.0_LOW_RECONCILED / v2.15 donor"
   },
   "canonicalSungPayloadSha256": "050ce4b65918890a252078c9942f1dde282d2494dabe0e522bb842c03be20b28",
-  "presentationModes": ["MISSAL", "SIMPLE", "LIVE"],
+  "presentationModes": [
+    "MISSAL",
+    "SIMPLE",
+    "LIVE"
+  ],
   "ribbons": {
-    "mode": ["MISSAL", "SIMPLE", "LIVE"],
-    "state": ["PRIEST_POSITION", "CURRENT_SECTION", "GUIDE"]
+    "mode": [
+      "MISSAL",
+      "SIMPLE",
+      "LIVE"
+    ],
+    "state": [
+      "PRIEST_POSITION",
+      "CURRENT_SECTION",
+      "GUIDE"
+    ]
   },
   "rails": {
-    "faithful": ["POSTURE", "GESTURE", "RESPOND"],
-    "audio": ["PRIEST_VOICE", "SCHOLA"]
+    "faithful": [
+      "POSTURE",
+      "GESTURE",
+      "RESPOND"
+    ],
+    "audio": [
+      "PRIEST_VOICE",
+      "SCHOLA"
+    ]
   },
   "stateOwnership": {
     "posture": "PERSISTENT_UNTIL_TRANSITION",
@@ -67,8 +86,14 @@
     "required": true,
     "stateRibbonButton": true,
     "certifiedEntryCount": 32,
-    "registryPayloadStatus": "PENDING_EXACT_V1_79_REGISTRY_BYTES",
-    "failurePolicy": "DO_NOT_FABRICATE_MISSING_RUBRICS"
+    "registryPayloadStatus": "RECOVERED_CONTINUITY_CERTIFIED",
+    "failurePolicy": "FAIL_CLOSED_IF_REGISTRY_MISSING_OR_INVALID",
+    "registryFile": "guide-registry.v1.json",
+    "recoveryEvidence": [
+      "v0.11.1 exact 32-entry RUBRIC_COPY payload",
+      "v1.79 integrity report certifies 32 valid Guide entries",
+      "27 Sep CLEAN_FIELD_LOCK preserves the same 32-entry payload"
+    ]
   },
   "lowPractice": {
     "postureProfiles": [
@@ -99,6 +124,6 @@
     "A transient gesture may never become a persistent posture unless a separate posture transition exists.",
     "The ordinary Incarnatus uses a genuflection cue, not persistent kneeling.",
     "Local posture overrides are guidance profiles and never rewrite sourced ritual actions.",
-    "Guide rubrics must be sourced; missing exact v1.79 registry entries fail closed."
+    "Guide rubrics must resolve from the recovered continuity-certified registry; missing/invalid entries fail closed."
   ]
 }
