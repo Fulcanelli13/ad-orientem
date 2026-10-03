@@ -29,6 +29,7 @@ assert.equal(regressionById.get("V181-CARD-TRANSIENT-LEAK").status,"PARTIALLY_FI
 assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").openChannels,["bell","cinematic"]);
 assert.equal(regressionById.get("V183-GRADUAL-COMPOSITION").status,"BLOCKED_ON_FINAL_48_CARD_ARCHITECTURE");
 assert.equal(regressionById.get("V181-PAX-OWNERSHIP").status,"MECHANICS_TESTED_SOURCE_CERTIFICATION_PENDING");
+assert.equal(regressionById.get("V183-NATIVE-LIVE-GATE-BYPASS").status,"FIXED_AND_TESTED_R17");
 
 assert.equal(LIVE_STRUCTURE_STATUS,"PROVISIONAL_V1_65_DONOR_ONLY");
 const livePrepared={
@@ -84,6 +85,8 @@ assert.match(objectiveSource,/MC-COM-160/);
 
 const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
 assert.match(nativeSource,/allowPresentationModeSwitch:false/);
+assert.match(nativeSource,/const structuralSupport=structureSupport\(prepared\)/);
+assert.match(nativeSource,/V1_83_48_CARD_LIVE_MAP_REQUIRED|structuralSupport\.reason/);
 assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 
