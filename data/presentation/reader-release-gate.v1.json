@@ -1,0 +1,98 @@
+{
+  "schema": "ao-r17-reader-release-gate-v1",
+  "version": "1.0.0",
+  "status": "BLOCKED_PENDING_V1_83_PARITY",
+  "productionDefault": "LEGACY",
+  "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
+  "protectedInvariants": [
+    {
+      "id": "V183_CARD_COUNT",
+      "expectedLiveCards": 48,
+      "canonicalMacros": 30
+    },
+    {
+      "id": "HOST_ELEVATION_GATE",
+      "wordsCue": "AO.SM.C0173",
+      "actionCue": "AO.SM.C0174"
+    },
+    {
+      "id": "CHALICE_ELEVATION_GATE",
+      "wordsThroughCue": "AO.SM.C0180",
+      "actionCue": "AO.SM.C0181"
+    },
+    {
+      "id": "CARD_TRANSIENT_CLEAR",
+      "required": true
+    },
+    {
+      "id": "LIVE20_DONOR_ONLY",
+      "status": "PROVISIONAL_V1_65_DONOR_ONLY"
+    },
+    {
+      "id": "NATIVE_MODE_SWITCH",
+      "status": "LOCKED_UNTIL_V1_83_READER_PARITY"
+    },
+    {
+      "id": "GLORIA_CREDO_PROFILE_ADJUDICATION",
+      "status": "CUSTOMARY_ONLY_TRADITIONAL__INCARNATUS_RUBRICAL"
+    },
+    {
+      "id": "DEPLOYMENT_ROLLBACK_PROTECTION",
+      "status": "LEGACY_BASELINE_MAY_NOT_OVERWRITE_R17_MOUNT"
+    }
+  ],
+  "openBlockers": [
+    {
+      "id": "G6_48_CARD_MAP",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Exact ordered v1.83 C01-C48 LIVE enumeration and four remaining decompression boundaries are not yet recovered."
+    },
+    {
+      "id": "GRADUAL_LIVE_ARCHITECTURE",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Final LIVE architecture must preserve v1.83 B021 Gradual ownership, separate B022 Alleluia/Tract Schola content, and B023 Munda cor meum start."
+    },
+    {
+      "id": "GUIDE_REGISTRY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Exact v1.79 32-entry Guide registry bytes remain unrecovered; no fabricated Guide payload is permitted."
+    },
+    {
+      "id": "SCHOLA_NATIVE_PARITY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Schola remains a legacy temporary donor in native preview."
+    },
+    {
+      "id": "ICON_ASSET_INTEGRATION",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Native preview does not yet receive the approved icon-bank resolver from browser entry."
+    },
+    {
+      "id": "FORM_STATE_PARITY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Cue-state projection is not yet certified across LOW and SOLEMN; unsupported forms must remain fail-closed/legacy."
+    },
+    {
+      "id": "SPECIAL_STRUCTURE_PARITY",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Preceding rites, following actions, distinct rites and structural overlays are not yet native-reader certified."
+    },
+    {
+      "id": "PHONE_BROWSER_ACCEPTANCE",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Real-browser phone-width/touch acceptance for focus, first/last cue ownership, Back/Next, translations and card transitions has not yet been recreated for R17."
+    },
+    {
+      "id": "PROPER_FIXTURE_PROVENANCE",
+      "severity": "PRODUCTION_GOLDEN_BLOCKER",
+      "detail": "The quarantined 4 October Secret/Communion/Postcommunion fixture still requires accepted replacement witnesses."
+    }
+  ],
+  "certificationPolicy": {
+    "greenUnitCIIsNotReleaseCertification": true,
+    "requireAllBlockersClosed": true,
+    "requireAuthoritative48CardMap": true,
+    "requireRealBrowserPhoneAcceptance": true,
+    "requireLegacyDefaultUntilCertified": true
+  }
+}
