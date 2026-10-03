@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.6.0",
-  "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
+  "version": "2.7.0",
+  "status": "PILOT_READY_SUPPORTED_SCOPE",
   "productionDefault": "LEGACY",
-  "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
+  "releaseRule": "Pilot use may run the R17 PREVIEW reader within the certified supported scope. Unsupported special structures must fail closed to the existing fallback path. Public/default production remains LEGACY until a separate promotion decision.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -384,7 +384,7 @@
     },
     {
       "id": "PALM_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME",
       "controller": "src/mass/reader-palm.js",
       "payload": "data/presentation/reader-palm.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#PALM",
@@ -403,11 +403,12 @@
         "Prayers at the Foot cannot leak through combined first card",
         "Back from Introit returns to Palm handoff card",
         "Last Gospel navigation is suppressed when compiled plan forbids it"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js"
     },
     {
       "id": "ASH_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_NATIVE_PREVIEW_AND_MODULAR_RUNTIME",
       "controller": "src/mass/reader-ash.js",
       "payload": "data/presentation/reader-ash.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ASH",
@@ -425,7 +426,8 @@
         "Prayers at the Foot cannot leak through the combined first Mass card",
         "Back from Introit returns to the Ash handoff card",
         "ordinary Last Gospel remains available after Ash Wednesday Mass"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js"
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
@@ -491,15 +493,53 @@
         "tests/reader-candlemas.mjs",
         "tests/browser-runtime.mjs"
       ]
-    }
-  ],
-  "openBlockers": [
+    },
     {
-      "id": "SPECIAL_STRUCTURE_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Asperges, Palm, Ash Wednesday and Candlemas have source-pinned native payloads. Requiem Mass variance is certified plan-owned and no longer needs a duplicate reader surface. Rogations, explicit Requiem Absolution/funeral following actions, Holy Thursday post-Mass actions, Corpus procession/Benediction, Good Friday and Easter Vigil still require native payload/rendering."
+      "id": "PILOT_SUPPORTED_SCOPE",
+      "status": "CERTIFIED",
+      "uiMode": "PREVIEW",
+      "publicDefault": "LEGACY",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "presentationModes": [
+        "MISSAL",
+        "SIMPLE",
+        "LIVE"
+      ],
+      "supportedPreludes": [
+        "ASPERGES",
+        "PALM",
+        "ASH"
+      ],
+      "guarantees": [
+        "ordinary Mass path is native-reader certified across supported forms",
+        "source-first LIVE is certified",
+        "phone/touch acceptance is certified",
+        "Asperges, Palm and Ash are mounted in native preview",
+        "unsupported special structures fail closed to the existing fallback path",
+        "pilot certification does not claim universal special-rite parity"
+      ]
+    },
+    {
+      "id": "DEFERRED_SPECIAL_STRUCTURE_BACKLOG",
+      "status": "NON_BLOCKING_FOR_PILOT__FAIL_CLOSED",
+      "deferred": [
+        "CANDLEMAS_NATIVE_PREVIEW",
+        "ROGATIONS_NATIVE_PAYLOAD",
+        "REQUIEM_ABSOLUTION_PRODUCTION_READER",
+        "HOLY_THURSDAY_POST_MASS",
+        "CORPUS_PROCESSION_BENEDICTION",
+        "GOOD_FRIDAY_DISTINCT_RITE",
+        "EASTER_VIGIL_COMPOSITE_RITE"
+      ],
+      "policy": "These items may not silently enter the certified pilot reader. Unsupported structures must fail closed or use the existing fallback path."
     }
   ],
+  "openBlockers": [],
   "certificationPolicy": {
     "greenUnitCIIsNotReleaseCertification": true,
     "requireAllBlockersClosed": true,
@@ -507,6 +547,9 @@
     "requireRealBrowserPhoneAcceptance": true,
     "requireLegacyDefaultUntilCertified": true,
     "requireSourceFirstCanonMap": true,
-    "requireSourceFirstLiveStructure": true
+    "requireSourceFirstLiveStructure": true,
+    "pilotScopeCertified": true,
+    "publicDefaultPromotionSeparate": true,
+    "deferredSpecialStructuresMayFailClosed": true
   }
 }
