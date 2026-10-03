@@ -141,3 +141,7 @@ assert.match(transientSource,/AO\.SM\.C0174/);
 assert.match(transientSource,/AO\.SM\.C0181/);
 assert.match(transientSource,/AO\.SM\.C0225/);
 assert.match(transientSource,/canonicalAuthority:false/,"cinematic presentation acquired canonical authority");
+
+assert.match(transientSource,/AO\.SM\.C0204/,"minor elevation cinematic anchor lost");
+assert.match(transientSource,/AO\.SM\.C0242/,"Ecce Agnus Dei cinematic anchor lost");
+assert.match(transientSource,/AO\.SM\.C0265/,"final blessing cinematic anchor lost");
