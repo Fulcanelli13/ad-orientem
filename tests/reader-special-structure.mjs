@@ -52,7 +52,14 @@ p=projectSpecialStructure(prepared({
   proper:{status:"READY",data:{}},
 }),sources);
 assert.equal(p.ending.blessingAllowed,false);
-assert.equal(p.segments.some(x=>x.id==="REQUIEM"),true);
+const requiemSegment=p.segments.find(x=>x.id==="REQUIEM");
+assert.ok(requiemSegment);
+assert.equal(requiemSegment.planOwned,true);
+assert.equal(requiemSegment.renderable,true);
+assert.equal(requiemSegment.readerPayload,"PLAN_APPLIED_TO_ORDINARY_READER");
+assert.equal(p.blockingSpecialSegmentCount,0);
+assert.equal(p.releaseSupport,true);
+assert.equal(p.readerPayloadComplete,true);
 
 p=projectSpecialStructure(prepared({followingActions:["CORPUS_CHRISTI_PROCESSION"]}),sources);
 assert.equal(p.ending.dismissal,"BENEDICAMUS_DOMINO");
