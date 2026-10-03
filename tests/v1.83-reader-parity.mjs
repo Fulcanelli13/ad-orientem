@@ -11,7 +11,9 @@ assert.equal(gate.reference.expectedLiveCards,48);
 assert.equal(gate.reference.expectedCanonicalMacros,30);
 assert.equal(resolver.total,30);
 assert.equal(gate.currentR17.nativeReaderCards,30);
-assert.equal(gate.currentR17.status,"NOT_PARITY_COMPLETE");
+assert.equal(gate.currentR17.status,"SOURCE_FIRST_RELEASE_POLICY");
+assert.equal(gate.status,"HISTORICAL_PARITY_REFERENCE_NON_BLOCKING");
+assert.equal(gate.releaseAuthority,false);
 assert.equal(gate.recoveredV181Splits.length,9);
 assert.deepEqual(gate.unresolvedV181SplitAreas.map(x=>x.area).sort(),["CANON"]);
 assert.equal(Object.hasOwn(gate,"knownV181Splits"),false,
@@ -90,4 +92,4 @@ assert.deepEqual(recovery.recoveredRuntimeRepairs.v183MergeGate.parseQA,{
   errors:0
 });
 
-console.log("v1.83 reader parity gate: PASS — 30-card R17 surface remains blocked; 9/10 decompression splits are semantically recovered, one Canon split remains unresolved, and exact v1.83 elevation/pre-Gospel repairs are frozen.");
+console.log("v1.83 reader historical parity: PASS — 9/10 decompression splits remain recovered evidence, one Canon split remains historically unresolved, and the 48-card count no longer owns release certification.");
