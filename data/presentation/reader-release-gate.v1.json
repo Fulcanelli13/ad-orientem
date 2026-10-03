@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.4.0",
-  "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_AND_PHONE_ACCEPTANCE",
+  "version": "2.5.0",
+  "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
   "productionDefault": "LEGACY",
-  "releaseRule": "R17 reader may not become the production default until special-structure parity and real-phone acceptance are closed. Source-first LIVE is integrated at 39 presentation steps; historical v1.83 C01-C48 remains compatibility evidence only.",
+  "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -34,8 +34,8 @@
     },
     {
       "id": "NATIVE_MODE_SWITCH",
-      "status": "SOURCE_FIRST_LIVE_CERTIFIED__UI_SWITCH_LOCKED_UNTIL_PHONE_ACCEPTANCE",
-      "reason": "Initial LIVE entry is certified; in-reader mode switching remains locked until touch/phone acceptance."
+      "status": "INITIAL_MODE_PHONE_CERTIFIED__IN_READER_SWITCH_DEFERRED_NON_BLOCKING",
+      "reason": "MISSAL/SIMPLE/LIVE are selected before Mass; the field reader keeps in-reader mode switching locked to avoid structure churn during Mass."
     },
     {
       "id": "GLORIA_CREDO_PROFILE_ADJUDICATION",
@@ -416,6 +416,30 @@
         "Back from Introit returns to the Ash handoff card",
         "ordinary Last Gospel remains available after Ash Wednesday Mass"
       ]
+    },
+    {
+      "id": "PHONE_BROWSER_ACCEPTANCE",
+      "status": "CERTIFIED_CHROMIUM_TOUCH",
+      "test": "tests/reader-phone-acceptance.mjs",
+      "workflow": ".github/workflows/r17-mass-convergence.yml#phone-browser",
+      "viewport": "390x844 @ 2x DPR",
+      "engine": "Chromium mobile context with hasTouch=true",
+      "guarantees": [
+        "reader shell fits phone viewport without horizontal overflow",
+        "Back and Next have at least 44px real touch targets",
+        "vernacular/Latin translation toggles respond to touch",
+        "Back/Next card navigation responds to real touchscreen taps",
+        "first cue owns the top of a card",
+        "Host Consecration words cue AO.SM.C0173 has independent focus territory before AO.SM.C0174",
+        "real touch swipe scrolls the prayer card",
+        "Host elevation bell appears only at AO.SM.C0174",
+        "card transition clears the Host elevation bell before the Chalice card owns state"
+      ],
+      "defectsClosed": [
+        "undersized Back/Next clickable boxes inside the 46px navigation row",
+        "over-escaped reader DOM cue-id regex that prevented all browser cue focus",
+        "insufficient end-of-card runway that gave AO.SM.C0173 zero focus territory on phone"
+      ]
     }
   ],
   "openBlockers": [
@@ -423,11 +447,6 @@
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
       "detail": "Asperges, Palm and Ash Wednesday now have source-pinned native payloads plus modular-runtime traversal contracts. Production native-preview mounting remains pending for these preludes. Candlemas, Rogations, Requiem/following actions, Good Friday and Easter Vigil still require native payload/rendering."
-    },
-    {
-      "id": "PHONE_BROWSER_ACCEPTANCE",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Real-browser phone-width/touch acceptance for focus, first/last cue ownership, Back/Next, translations and card transitions has not yet been recreated for R17."
     }
   ],
   "certificationPolicy": {
