@@ -13,6 +13,7 @@ import { installCueFocusTracker } from "./reader-cue-focus.js";
 import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForSequence } from "./reader-guide.js";
+import { createNativeScholaController } from "./reader-schola.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -174,7 +175,8 @@ export async function prepareNativeReaderPreview({
     sungCorpus:data?.sungCorpus,
     prepared,
   });
-  return Object.freeze({prepared,data,model,events,eventState,registries,cueState,guide});
+  const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
+  return Object.freeze({prepared,data,model,events,eventState,registries,cueState,guide,scholaState});
 }
 
 export async function mountNativeReaderPreview({
@@ -267,12 +269,13 @@ export async function mountNativeReaderPreview({
     });
     const posture=postureResolved.posture;
 
+    const scholaProjection=ready.scholaState.project();
     const ownership=Object.freeze({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
       response:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.response,
       posture:postureResolved.owner,
-      schola:"LEGACY_TEMPORARY",
+      schola:scholaProjection.ownership,
     });
 
     return Object.freeze({
@@ -281,8 +284,8 @@ export async function mountNativeReaderPreview({
       gesture,
       response,
       priestVoice,
-      schola:legacy.schola,
-      sharedTextWithSchola:false,
+      schola:scholaProjection.schola,
+      sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),
       nativeEventId:eventState?.canonicalEventId??null,
       nativeCueId:activeCueId,
       cueProjectionSupported:cueNative,
@@ -302,6 +305,7 @@ export async function mountNativeReaderPreview({
       root.dataset.r17NativeCue="unresolved";
     }
     current=card;
+    ready.scholaState.activateForCard(card.sequence);
     const state=projectedState();
     reader.renderMoment({
       id:card.sectionId,
@@ -393,6 +397,7 @@ export async function mountNativeReaderPreview({
       win,
       onChange:(cueId)=>{
         activeCueId=cueId;
+        ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
         root.dataset.r17NativeCue=cueId??"unresolved";
         queue();
@@ -405,8 +410,8 @@ export async function mountNativeReaderPreview({
   if(typeof MutationObserverImpl==="function"){
     observer=new MutationObserverImpl(queue);
     const targets=[
-      // Posture and Schola remain rollback donors in this wave.
-      "#postureText","#scholaDock","#scholaStreamLine"
+      // FOLLOW_CONGREGATION posture remains the only DOM-observed rollback channel.
+      "#postureText"
     ].map(selector=>doc.querySelector?.(selector)).filter(Boolean);
     for(const target of targets){
       observer.observe(target,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:["class","aria-hidden"]});
@@ -424,7 +429,7 @@ export async function mountNativeReaderPreview({
       gesture:"R17_EXACT_CUE_PROFILE_SOURCE_ON_CERTIFIED_MISSA_CANTATA",
       posture:"PROFILE_AWARE_R17_SOURCE_OR_LOCAL__FOLLOW_CONGREGATION_OBSERVED",
       priestPosition:"R17_CUE_SOURCE_PERSISTENT_ON_CERTIFIED_MISSA_CANTATA",
-      schola:"LEGACY_TEMPORARY",
+      schola:"R17_NATIVE_INDEPENDENT_SCHOLA_CLOCK",
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
       modeSwitch:"LOCKED_UNTIL_V1_83_READER_PARITY",
     }),
@@ -439,6 +444,11 @@ export async function mountNativeReaderPreview({
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
+    getScholaState:()=>ready.scholaState.project(),
+    nextSchola:()=>{const value=ready.scholaState.next();queue();return value},
+    previousSchola:()=>{const value=ready.scholaState.previous();queue();return value},
+    finishSchola:()=>{const value=ready.scholaState.finish();queue();return value},
+    selectScholaTrack:(trackId)=>{const value=ready.scholaState.selectTrack(trackId);queue();return value},
     getTransientTransitionPending:()=>transientGuard.pending,
   });
   globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
