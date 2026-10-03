@@ -142,6 +142,26 @@ function exactByCue(items){
   return new Map(items.map(item=>[item.cueId,item]));
 }
 
+// v1.83 recovered runtime gates override ambiguous/duplicated gesture extraction
+// without mutating the frozen source registry. The words of Consecration and
+// the elevation action must remain distinct perceptible territories.
+const V183_GESTURE_SUPPRESS=new Set([
+  "AO.SM.C0173", // HOC EST ENIM CORPUS MEUM — words, not elevation
+  "AO.SM.C0179", // Chalice consecration words, not elevation
+  "AO.SM.C0180", // Hæc quotiescúmque — words, not elevation
+]);
+const V183_GESTURE_REANCHOR=Object.freeze({
+  "AO.SM.C0181":"AO.SM.C0179", // reuse extracted Chalice gesture text at actual action cue
+});
+
+function gestureItemForCue(cueId,gestureMap){
+  const id=String(cueId??"");
+  if(V183_GESTURE_SUPPRESS.has(id))return null;
+  const donorId=V183_GESTURE_REANCHOR[id]??id;
+  const item=gestureMap.get(donorId)??null;
+  return item && donorId!==id ? Object.freeze({...item,cueId:id}) : item;
+}
+
 function transitionList(items,sortIndex){
   return Object.freeze(items.map((item,index)=>Object.freeze({
     ...item,
@@ -282,7 +302,7 @@ export function createReaderCueStateController({
     const activeConditions=overrideConditions==null ? defaultConditions : conditionSet(overrideConditions);
     const activeSort=sortIndex.get(cueId);
 
-    const gestureItem=gestures.get(cueId);
+    const gestureItem=gestureItemForCue(cueId,gestures);
     const gestureAllowed=gestureItem && conditionPasses(gestureItem.condition,activeConditions);
     const gesture=gestureAllowed ? sourceGesture(gestureItem) : null;
 
