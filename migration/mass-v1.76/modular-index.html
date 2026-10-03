@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#111914" />
+<title>Ad Orientem · v1.74e · Solemn Mass R04 B006 Topology</title>
+<style>
+:root{
+  --ink:#eef1e9; --muted:#a9afa7; --dim:#6f766f; --deep:#0d120f; --panel:#141c17;
+  --panel2:#19231d; --line:rgba(238,241,233,.13); --green:#50785b; --green2:#6d9575;
+  --warm:#d6caa6; --response:#c8d9e9; --danger:#b7736b; --rail:62px;
+  --header-h:122px; --content-max:820px; --focus-y:46vh;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--deep)}
+body{margin:0;background:linear-gradient(180deg,#0c120e 0,#101711 100%);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+button,select{font:inherit}
+button{color:inherit}
+.top-shell{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,rgba(10,15,11,.985),rgba(10,15,11,.94));backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.identity{max-width:1160px;margin:auto;display:grid;grid-template-columns:1fr auto;gap:14px;padding:12px 18px 8px;align-items:end}
+.identity .latin-day{font-family:Georgia,"Times New Roman",serif;font-size:15px;letter-spacing:.045em;text-transform:uppercase;color:#f2f1e9}
+.identity .meta{font-size:11px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.modes{display:flex;gap:4px;background:#0b110d;border:1px solid var(--line);padding:3px;border-radius:10px}
+.mode-btn{border:0;background:transparent;color:#929a93;padding:7px 10px;border-radius:7px;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer}
+.mode-btn.active{background:#233029;color:#f4f4ed}
+.progress-track{height:2px;background:rgba(255,255,255,.05)}
+.progress{height:100%;width:0;background:var(--green2);transition:width .18s linear}
+.guide{max-width:1160px;margin:auto;padding:8px 18px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
+.guide-copy{font-size:12px;line-height:1.35;color:#d7ddd6;max-width:760px}
+.guide-copy strong{color:#fff;font-weight:680}
+.guide-next{font-size:10px;color:#89928a;text-align:right;max-width:240px}.guide-next b{color:#bdc6be}
+[data-mode="read"] .guide{display:none}
+.rail{position:fixed;z-index:23;top:calc(var(--header-h) + 16px);bottom:22px;width:var(--rail);display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.rail.left{left:max(8px,calc((100vw - 1080px)/2))}.rail.right{right:max(8px,calc((100vw - 1080px)/2))}
+.rail-card{pointer-events:auto;background:rgba(18,26,21,.93);border:1px solid var(--line);border-radius:12px;min-height:56px;padding:8px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.rail-card .ico{font-family:Georgia,serif;font-size:22px;line-height:1;color:#e8ebe4}.rail-card .tag{font-size:8px;text-transform:uppercase;letter-spacing:.08em;margin-top:5px;color:#8e978f;line-height:1.15}.rail-card .tiny{font-size:8px;color:#c0c7c1;line-height:1.15;margin-top:4px;max-width:52px;overflow-wrap:anywhere}
+.rail-card.hot{border-color:rgba(214,202,166,.45);background:rgba(49,43,29,.96)}
+.rail-card.response{border-color:rgba(200,217,233,.42);background:rgba(31,46,57,.96)}
+.rail-card.response .tag,.rail-card.response .tiny{color:var(--response)}
+.rail-card.off{opacity:.22}
+[data-mode="read"] .rail{display:none}
+[data-mode="simple"] .full-only{display:none!important}
+main{max-width:var(--content-max);margin:auto;padding:24vh calc(var(--rail) + 25px) 56vh;position:relative}
+.macro-break{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#738077;margin:44px 0 10px;padding-top:18px;border-top:1px solid rgba(255,255,255,.055)}
+.mass-block{margin:0 0 26px;scroll-margin-top:190px}.block-head{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7e8981;margin-bottom:8px;display:flex;align-items:baseline;gap:8px}.block-head .order{opacity:.48}.block-head .proper{color:#9bb4a2}
+.flow-unit{position:relative;font-family:Georgia,"Times New Roman",serif;font-size:clamp(19px,2.45vw,27px);line-height:1.62;color:var(--ink);opacity:.30;transition:opacity .16s ease,transform .16s ease,color .16s ease;cursor:pointer;outline:none;border-radius:6px;padding:2px 0;margin:0 0 2px;transform-origin:left center}
+.flow-unit.near{opacity:.62}.flow-unit.active{opacity:1;color:#fff;transform:translateX(2px)}
+.flow-unit.response-line{padding-left:14px;border-left:2px solid rgba(200,217,233,.45);color:#dbe5ee}.flow-unit.rubric-line{font-family:ui-sans-serif,system-ui,sans-serif;font-size:12px;line-height:1.45;color:#aab0a9;font-style:italic;letter-spacing:.01em}
+.flow-unit.state-unit{font-family:ui-sans-serif,system-ui,sans-serif;font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.09em;color:#a5afa7;border-left:2px solid #65756a;padding:8px 10px;margin:12px 0;background:rgba(255,255,255,.022)}
+[data-mode="read"] .state-unit{display:none}
+.flow-unit.pause-unit{font-family:ui-sans-serif,system-ui,sans-serif;font-size:13px;line-height:1.4;color:#bbc0bb;border:1px dashed rgba(255,255,255,.13);padding:12px;border-radius:10px;text-align:center;margin:18px 0 32px}
+.translation{display:none;font-family:ui-sans-serif,system-ui,sans-serif;font-size:13px;line-height:1.52;color:#aeb9af;padding:4px 0 10px 12px;border-left:1px solid rgba(255,255,255,.10);margin-top:3px}.flow-unit.show-translation + .translation{display:block}.tap-hint{font-size:9px;color:#5f6861;margin-top:2px;font-family:ui-sans-serif,system-ui,sans-serif}
+.schola-dock{position:fixed;z-index:28;bottom:max(9px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(140%);width:min(700px,calc(100vw - 150px));background:rgba(22,29,24,.965);border:1px solid rgba(109,149,117,.32);border-radius:14px;padding:10px 14px 11px;box-shadow:0 14px 44px rgba(0,0,0,.36);transition:transform .2s ease}
+.schola-dock.show{transform:translateX(-50%) translateY(0)}.schola-title{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#86a68d}.schola-text{font-family:Georgia,serif;font-size:14px;line-height:1.35;color:#e7eae4;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.schola-state{font-size:10px;color:#919a92;margin-top:3px}
+[data-mode="read"] .schola-dock{display:none}
+.status-drawer{position:fixed;right:14px;bottom:14px;z-index:40}.status-btn{width:39px;height:39px;border-radius:50%;border:1px solid var(--line);background:#18211b;color:#bfc6c0;cursor:pointer}.drawer{position:absolute;right:0;bottom:48px;width:min(360px,calc(100vw - 28px));max-height:70vh;overflow:auto;background:#111914;border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 20px 60px rgba(0,0,0,.45);display:none}.drawer.open{display:block}.drawer h3{font-family:Georgia,serif;font-weight:500;margin:0 0 4px;font-size:18px}.drawer p{font-size:11px;line-height:1.45;color:#aab2ab;margin:4px 0 12px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}.stat{border:1px solid var(--line);border-radius:9px;padding:8px}.stat b{display:block;font-size:16px}.stat span{font-size:9px;color:#879189;text-transform:uppercase;letter-spacing:.07em}.branch-grid{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}.chip{font-size:9px;border:1px solid var(--line);border-radius:99px;padding:4px 7px;color:#aeb5ae}.chip.on{color:#dce8dd;border-color:rgba(109,149,117,.45)}.chip.off{color:#8f9690;text-decoration:line-through}.jump{width:100%;margin-top:12px;background:#0d130f;color:#d7ddd7;border:1px solid var(--line);padding:8px;border-radius:8px;font-size:11px}
+.debug-panel{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.debug-row{display:grid;grid-template-columns:82px 1fr;gap:5px;font-size:10px;line-height:1.35;margin:4px 0}.debug-row b{color:#7f8b82}.debug-row span{color:#b8c0ba;overflow-wrap:anywhere}
+.rite-context{margin-top:10px;border:1px solid rgba(255,255,255,.065);border-radius:9px;padding:8px;background:rgba(255,255,255,.018)}.rite-context-head{font:500 11px Georgia,serif;color:#d8ded8;margin-bottom:5px}.rite-context-main{font-size:10px;line-height:1.4;color:#aeb7af}.rite-context-flags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}.rite-flag{font-size:8px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:3px 6px;color:#879087}.rite-flag.on{color:#d9e4da;border-color:rgba(110,153,119,.4)}.rite-flag.mass{color:#d7caa1;border-color:rgba(176,151,93,.36)}
+.empty-note{font-family:ui-sans-serif,system-ui,sans-serif;color:#899089;font-size:12px}
+@media(max-width:760px){
+ :root{--rail:52px;--header-h:136px}.identity{padding:10px 9px 6px;grid-template-columns:1fr}.identity .latin-day{font-size:12px}.identity .meta{font-size:9px}.modes{justify-self:start}.mode-btn{padding:6px 8px;font-size:9px}.guide{padding:7px 9px 8px;grid-template-columns:1fr}.guide-copy{font-size:10px}.guide-next{display:none}.rail{top:calc(var(--header-h) + 8px);gap:6px}.rail.left{left:5px}.rail.right{right:5px}.rail-card{min-height:49px;border-radius:10px;padding:6px 3px}.rail-card .ico{font-size:18px}.rail-card .tag{font-size:7px}.rail-card .tiny{font-size:7px;max-width:44px}main{padding-left:calc(var(--rail) + 12px);padding-right:calc(var(--rail) + 12px);padding-top:21vh}.flow-unit{font-size:19px;line-height:1.55}.block-head{font-size:9px}.schola-dock{width:calc(100vw - 124px);padding:8px 10px}.schola-text{font-size:12px}.status-drawer{right:8px;bottom:8px}.status-btn{width:34px;height:34px}.drawer{right:0}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* === UI SAFE PASS v1.1 =====================================================
+   Presentation only. No geometry, scroll, event, mode, cue, or state changes.
+   The recovered definitive v1 runtime remains authoritative.
+============================================================================ */
+.top-shell{
+  background:linear-gradient(180deg,rgba(9,14,10,.988),rgba(10,16,11,.948));
+  border-bottom-color:rgba(238,241,233,.095);
+  box-shadow:0 8px 28px rgba(0,0,0,.16);
+}
+.identity .latin-day{letter-spacing:.06em;color:#f5f3ea}
+.identity .meta{color:#939d95}
+.mode-btn{transition:background .16s ease,color .16s ease,opacity .16s ease}
+.mode-btn.active{background:#26342b;color:#fbfbf5}
+.guide-copy{color:#dde3dc}
+.guide-copy strong{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:.01em}
+.guide-next{color:#7f8a81}.guide-next b{color:#c6cec7}
+.rail-card{
+  background:rgba(16,24,19,.91);
+  border-color:rgba(238,241,233,.105);
+  box-shadow:0 9px 26px rgba(0,0,0,.16);
+}
+.rail-card .ico{color:#f0f2eb}
+.rail-card .tag{color:#939d95}
+.rail-card.hot{border-color:rgba(216,203,168,.47);background:rgba(46,40,28,.94)}
+.rail-card.response{border-color:rgba(198,217,232,.48);background:rgba(28,43,54,.94)}
+.macro-break{color:#7e8a81;border-top-color:rgba(255,255,255,.048)}
+.block-head{color:#818d84}.block-head .proper{color:#a0bba7}
+.flow-unit{color:#e9ece5}
+.flow-unit.near{opacity:.66}
+.flow-unit.active{color:#fff;text-shadow:0 0 18px rgba(255,255,255,.025)}
+.flow-unit.response-line{border-left-color:rgba(198,217,232,.60);color:#e0eaf2}
+.flow-unit.state-unit{background:rgba(255,255,255,.018);border-left-color:#718178;color:#adb7af}
+.translation{color:#b8c2b9;border-left-color:rgba(255,255,255,.09)}
+.schola-dock{
+  background:rgba(17,25,20,.968);
+  border-color:rgba(109,149,117,.38);
+  box-shadow:0 15px 46px rgba(0,0,0,.34);
+}
+.schola-title{color:#94b29b}.schola-text{color:#f0f1eb}
+.drawer{background:rgba(14,21,17,.985);border-color:rgba(238,241,233,.11)}
+
+/* === RIBBON / RAILS v1.2 ================================================
+   Runtime/event resolution remains unchanged. Information architecture only:
+   mode ribbon -> section ribbon; left faithful rail; right audio rail.
+============================================================================ */
+:root{--header-h:94px}
+.identity,.guide{display:none!important}
+.runtime-hidden{display:none!important}
+.mode-ribbon{max-width:1160px;margin:auto;display:flex;justify-content:center;align-items:center;padding:8px 14px 7px}
+.modes{justify-self:auto;background:rgba(9,14,10,.72);border-color:rgba(238,241,233,.11);padding:3px;border-radius:9px}
+.mode-btn{min-width:82px;padding:6px 14px;font-size:10px}
+.section-ribbon{max-width:1160px;margin:auto;min-height:42px;display:grid;grid-template-columns:minmax(145px,220px) minmax(0,1fr) minmax(145px,220px);align-items:center;gap:12px;padding:4px 18px 7px;border-top:1px solid rgba(255,255,255,.035)}
+.section-side{min-width:0;display:flex;align-items:center;gap:8px;color:#9ca69e;white-space:nowrap;overflow:hidden}
+.priest-mark{position:relative;width:16px;height:22px;flex:0 0 16px;opacity:.72}
+.priest-mark:before{content:"";position:absolute;left:5px;top:1px;width:6px;height:6px;border:1px solid #9eac9f;border-radius:50%}
+.priest-mark:after{content:"";position:absolute;left:3px;top:8px;width:10px;height:12px;border:1px solid #819083;border-top-width:2px;border-radius:5px 5px 2px 2px;transform:perspective(16px) rotateX(-2deg)}
+.section-copy{min-width:0;display:flex;flex-direction:column;gap:1px;overflow:hidden}
+.section-label{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#6f7d73;flex:0 0 auto}
+.section-value{font-size:10px;color:#c1c9c2;overflow:hidden;text-overflow:ellipsis}
+.section-action{justify-content:flex-end;text-align:right;transition:opacity .16s ease}
+.section-action.empty{opacity:.18}
+.section-action.empty .section-value{color:#657067}
+.section-action .section-value{font-size:9px;letter-spacing:.035em;text-transform:uppercase;color:#b8c7bb}
+.section-action.hot .section-value{color:#dbe5dc}
+.section-action.hot{opacity:1}
+.section-title{font-family:Georgia,"Times New Roman",serif;text-align:center;font-size:15px;line-height:1.2;color:#f0f1e9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.section-reserve{visibility:hidden}
+.schola-dock{display:none!important}
+.rail{top:calc(var(--header-h) + 14px)}
+/* v1.4.2: restore the actual bottom Schola text box. */
+.schola-dock{display:block!important;max-width:760px;padding:10px 16px 12px}
+.schola-dock:not(.show){pointer-events:none}
+.schola-text{white-space:normal;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;line-height:1.38}
+.schola-state{display:none}
+@media(max-width:760px){.schola-dock{width:calc(100vw - 126px);padding:8px 10px 9px}.schola-text{-webkit-line-clamp:2;font-size:12px}}
+/* v1.12 — Live-mode Schola-first policy */
+[data-mode="live"] .mass-card.schola-only-stage{position:relative;padding:0 max(18px,calc((100% - 760px)/2)) max(24vh,180px)!important;overflow-y:auto!important;overflow-x:hidden}
+[data-mode="live"] .mass-card.schola-only-stage .schola-only-sentinel{position:relative;width:1px;height:1px;margin-left:auto;margin-right:auto;opacity:0;pointer-events:none}
+[data-mode="live"] .mass-card.schola-only-stage:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 58%,rgba(72,93,76,.07),transparent 46%)}
+.schola-stage-shell{min-height:38vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;color:#7f8c83;pointer-events:none}.schola-stage-shell .asset-icon{width:34px;height:34px}.schola-stage-shell b{font-family:Georgia,serif;font-weight:400;font-size:15px;letter-spacing:.18em;color:#9ca79f}.schola-stage-shell span{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#68736b}.schola-stage-runway{height:55vh;min-height:360px;pointer-events:none}
+[data-mode="live"] .mass-card.schola-only-stage + *{}
+
+[data-mode="read"] .section-side{visibility:hidden}
+[data-mode="read"] .section-title{color:#d6dbd4}
+@media(max-width:760px){
+ :root{--header-h:91px}
+ .mode-ribbon{padding:7px 8px 6px}
+ .mode-btn{min-width:70px;padding:6px 9px;font-size:9px}
+ .section-ribbon{grid-template-columns:92px minmax(0,1fr) 92px;gap:5px;min-height:42px;padding:4px 7px 7px}
+ .section-label{display:none}
+ .priest-mark{display:none}
+ .section-value{font-size:8px;line-height:1.15;white-space:normal;max-height:2.3em}
+ .section-action .section-value{font-size:7.5px;line-height:1.12;white-space:normal;max-height:2.24em}
+ .section-title{font-size:12px;white-space:normal;line-height:1.12;max-height:2.24em}
+ .rail{top:calc(var(--header-h) + 8px)}
+}
+
+/* v1.5 — Part packages + horizontal cards + cinematic boundaries */
+body{overflow:hidden}
+main#reader{position:fixed;z-index:2;top:var(--header-h);bottom:0;left:calc(var(--rail) + 20px);right:calc(var(--rail) + 20px);max-width:none;margin:0;padding:0;overflow:hidden}
+.part-track{display:flex;width:100%;height:100%;transition:transform .46s cubic-bezier(.22,.72,.22,1);will-change:transform}
+.mass-card{flex:0 0 100%;height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none;scroll-behavior:auto;padding:clamp(34px,5.5vh,62px) max(18px,calc((100% - 760px)/2)) max(11vh,86px)}
+.mass-card::-webkit-scrollbar{display:none}.mass-card:not(.is-active){pointer-events:none}
+.card-heading{font-family:Georgia,"Times New Roman",serif;font-size:clamp(20px,2.3vw,28px);font-weight:400;color:#e8ece5;letter-spacing:.025em;margin:0 0 30px;padding-bottom:13px;border-bottom:1px solid rgba(255,255,255,.07)}
+.card-heading .card-seq{display:block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#6f7a72;margin-bottom:6px}
+.card-runway{height:42vh;min-height:250px;display:flex;align-items:flex-start;justify-content:center;padding-top:72px;color:#667169;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.card-runway span{display:flex;flex-direction:column;align-items:center;gap:8px}.card-runway b{font-family:Georgia,serif;font-size:22px;font-weight:400;color:#839087;line-height:1}
+.mass-block{scroll-margin-top:22vh}.macro-break{display:none!important}
+.card-arrow{position:fixed;z-index:24;top:52%;width:34px;height:50px;border:0;background:rgba(11,16,13,.34);color:#828d85;border-radius:10px;cursor:pointer;font-family:Georgia,serif;font-size:26px;line-height:1;opacity:.48;transition:opacity .16s ease,background .16s ease,color .16s ease}.card-arrow:hover,.card-arrow:focus-visible{opacity:1;background:rgba(23,32,26,.9);color:#e8ece7;outline:none}.card-arrow.prev{left:calc(var(--rail) + 25px)}.card-arrow.next{right:calc(var(--rail) + 25px)}
+.card-counter{position:fixed;z-index:24;left:50%;bottom:13px;transform:translateX(-50%);font-size:9px;letter-spacing:.12em;color:#69736c;background:rgba(10,15,12,.66);border:1px solid rgba(255,255,255,.055);border-radius:99px;padding:5px 9px;backdrop-filter:blur(7px)}
+.part-cinema{position:fixed;z-index:45;inset:0;background:radial-gradient(circle at 50% 42%,rgba(38,53,43,.96),rgba(8,12,9,.992) 58%);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}.part-cinema.show{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease}.part-cinema-inner{text-align:center;width:min(680px,82vw);transform:translateY(12px) scale(.985);opacity:.1;transition:transform .52s cubic-bezier(.2,.75,.2,1),opacity .5s ease}.part-cinema.show .part-cinema-inner{transform:translateY(0) scale(1);opacity:1}.part-cinema-mark{font-family:Georgia,serif;font-size:22px;color:var(--green2);margin-bottom:18px;opacity:.88}.part-cinema-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(27px,5vw,54px);font-weight:400;letter-spacing:.055em;text-transform:uppercase;color:#f0f2ec;line-height:1.06}.part-cinema-sub{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#849087;margin-top:16px}.part-cinema-line{height:1px;width:0;margin:26px auto 0;background:linear-gradient(90deg,transparent,var(--green2),transparent);transition:width .72s ease .08s}.part-cinema.show .part-cinema-line{width:min(340px,62vw)}.part-cinema.loading .part-cinema-line{animation:partPulse .78s ease-in-out infinite alternate}@keyframes partPulse{from{opacity:.35;transform:scaleX(.72)}to{opacity:1;transform:scaleX(1)}}
+body.part-transition .top-shell,body.part-transition .rail{filter:brightness(.42);transition:filter .22s ease}body:not(.part-transition) .top-shell,body:not(.part-transition) .rail{filter:none;transition:filter .28s ease}.schola-dock{z-index:48}
+@media(max-width:760px){main#reader{left:61px;right:61px}.mass-card{padding:30px 12px max(9vh,68px)}.card-heading{font-size:20px;margin-bottom:22px}.card-arrow{top:auto;bottom:15px;width:34px;height:34px;font-size:20px;border-radius:50%;background:rgba(11,16,13,.72)}.card-arrow.prev{left:67px}.card-arrow.next{right:67px}.card-counter{bottom:18px;font-size:8px;padding:4px 8px}.part-cinema-title{font-size:clamp(25px,8vw,38px)}}
+
+
+/* v1.6 — canonical asset-bank icons */
+.asset-icon{display:block;width:30px;height:30px;object-fit:contain;filter:none}
+.rail-card .asset-icon{width:29px;height:29px}
+.section-icon{width:32px;height:32px;object-fit:contain;flex:0 0 auto}
+.section-side.section-action .section-icon{width:31px;height:31px}
+.icon-fallback{font-family:Georgia,serif;font-size:22px;line-height:1;color:#e8ebe4}
+.section-icon-wrap{display:flex;align-items:center;justify-content:center;width:34px;min-width:34px}
+.rail-card .ico{display:flex;align-items:center;justify-content:center;min-height:30px}
+@media(max-width:760px){
+  .rail-card .asset-icon{width:25px;height:25px}
+  .section-icon{width:27px;height:27px}
+  .section-icon-wrap{width:29px;min-width:29px}
+}
+/* v1.8 — normalized icon system */
+.heading-icon,.block-icon,.mini-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.heading-icon img{width:34px;height:34px;object-fit:contain;display:block}
+.block-icon img{width:18px;height:18px;object-fit:contain;display:block;opacity:.98}
+.card-heading.with-icon{display:flex;align-items:flex-start;gap:12px}
+.card-heading-main{display:block;min-width:0}
+.block-head.with-icon{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.block-title-wrap{display:inline-flex;align-items:baseline;gap:8px;min-width:0}
+.part-cinema-mark{display:flex;align-items:center;justify-content:center;min-height:44px}
+.part-cinema-mark img{width:40px;height:40px;object-fit:contain;display:block;opacity:.92}
+.rail-card .ico img{display:block;margin-inline:auto}
+#responseCard.hot .ico,#voiceCard .ico{color:#e8ece5}
+@media(max-width:760px){.heading-icon img{width:28px;height:28px}.block-icon img{width:16px;height:16px}}
+
+
+/* v1.8 — normalized icon system */
+.ao-mask-icon{display:inline-block;background:currentColor;-webkit-mask-image:var(--ao-mask);mask-image:var(--ao-mask);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;vertical-align:middle}
+.asset-icon,.section-icon{object-fit:initial}
+.rail-card .asset-icon{width:27px;height:27px;color:#edf0e9}
+.rail-card.off .asset-icon{color:#747d76}
+.rail-card.hot .asset-icon{color:#c4d8c8}
+.section-icon-wrap{color:#a8b6aa}
+.section-action.hot .section-icon-wrap{color:#d3dfd5}
+.heading-icon{width:34px;height:34px;color:#9eb2a2;margin-top:1px}
+.heading-icon .section-icon{width:30px;height:30px}
+.block-icon{width:19px;height:19px;color:#77867b}
+.block-icon .asset-icon{width:16px;height:16px}
+.part-cinema-mark{color:#b7cdbb}
+.part-cinema-mark .section-icon{width:42px;height:42px}
+.section-title{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0}
+.section-moment-icon{display:inline-flex;width:25px;height:25px;color:#a7b9aa;flex:0 0 auto}
+.section-moment-icon .section-icon{width:25px;height:25px}
+.mode-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.mode-icon{display:inline-flex;width:16px;height:16px;color:currentColor;opacity:.82}
+.mode-icon .asset-icon{width:16px;height:16px}
+.schola-title{display:flex;align-items:center;gap:7px}
+.schola-title-icon{display:inline-flex;width:17px;height:17px;color:#a9c6b0}
+.schola-title-icon .asset-icon{width:17px;height:17px}
+#responseCard.hot .asset-icon{color:#d5e2d7}
+#voiceCard .asset-icon{color:#d7ded8}
+@media(max-width:760px){.rail-card .asset-icon{width:24px;height:24px}.heading-icon{width:29px;height:29px}.heading-icon .section-icon{width:26px;height:26px}.section-moment-icon,.section-moment-icon .section-icon{width:20px;height:20px}.mode-icon,.mode-icon .asset-icon{width:14px;height:14px}.mode-btn{gap:4px}}
+
+
+/* v1.9 — bank-rich icon hierarchy */
+.ao-rich-icon{display:block;object-fit:contain;object-position:center;filter:drop-shadow(0 1px 1px rgba(0,0,0,.28))}
+.section-icon.ao-rich-icon{width:46px;height:46px}
+.section-icon-wrap:has(.ao-rich-icon){width:49px;min-width:49px}
+.section-side.section-action .section-icon.ao-rich-icon{width:48px;height:48px}
+.rail-card .asset-icon.ao-rich-icon{width:30px;height:30px}
+@media(max-width:760px){.section-icon.ao-rich-icon{width:37px;height:37px}.section-icon-wrap:has(.ao-rich-icon){width:40px;min-width:40px}.section-side.section-action .section-icon.ao-rich-icon{width:39px;height:39px}}
+
+/* v1.10 — Schola Stream: progressive ticker/pages */
+.schola-dock{
+  width:min(940px,calc(100vw - 170px))!important;
+  max-width:none!important;
+  min-height:112px;
+  padding:11px 16px 13px!important;
+  border-radius:16px;
+  overflow:hidden;
+}
+.schola-title{display:flex;align-items:center;gap:8px;min-height:24px}
+.schola-title-icon{display:inline-flex;align-items:center;justify-content:center}
+.schola-title-icon img{width:25px;height:25px;object-fit:contain}
+.schola-title-main{display:flex;align-items:baseline;gap:8px;min-width:0}
+.schola-title-label{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#99b6a0;white-space:nowrap}
+.schola-page-counter{font-size:8px;letter-spacing:.12em;color:#6f8175;white-space:nowrap}
+.schola-stream-viewport{position:relative;height:58px;margin-top:6px;overflow:hidden;border-top:1px solid rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.045)}
+.schola-stream-line{position:absolute;left:0;top:50%;transform:translate3d(0,-50%,0);white-space:nowrap;font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.25;color:#f2f3ed;will-change:transform;backface-visibility:hidden}
+.schola-stream-line.enter{animation:scholaEnter .28s ease-out both}
+.schola-stream-line.exit{animation:scholaExit .28s ease-in both}
+@keyframes scholaEnter{from{opacity:0;transform:translate3d(42px,-50%,0)}to{opacity:1;transform:translate3d(0,-50%,0)}}
+@keyframes scholaExit{from{opacity:1}to{opacity:0}}
+.schola-stream-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:7px;min-height:12px}
+.schola-stream-kind{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#738278}
+.schola-stream-progress{height:2px;flex:1;max-width:220px;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px}
+.schola-stream-progress>span{display:block;height:100%;width:0;background:#8eae96;transition:width .18s linear}
+.schola-stream-pause{font-size:8px;letter-spacing:.09em;color:#677269}
+.schola-dock.stream-paused .schola-stream-pause{color:#b6c7ba}
+@media(max-width:760px){
+ .schola-dock{width:calc(100vw - 124px)!important;min-height:100px;padding:9px 11px 11px!important}
+ .schola-stream-viewport{height:50px}
+ .schola-stream-line{font-size:14px}
+ .schola-title-label{font-size:8px}
+ .schola-page-counter{font-size:7px}
+ .schola-stream-progress{max-width:120px}
+}
+
+/* v1.11 — Schola speed + tap translation */
+.schola-stream-translation{display:none;margin-top:7px;padding:8px 10px;border-radius:9px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.05);font-family:Georgia,"Times New Roman",serif;font-size:14px;line-height:1.42;color:#d8dfd8}
+.schola-dock.show-translation .schola-stream-translation{display:block}
+.schola-stream-viewport{cursor:pointer}
+.schola-stream-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.schola-control{appearance:none;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);color:#9eada2;border-radius:7px;min-height:28px;padding:4px 8px;font:700 8px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.schola-control:hover{border-color:rgba(142,174,150,.28);color:#c4d2c7}
+.schola-control.active{background:rgba(55,78,62,.6);color:#dce8df;border-color:rgba(142,174,150,.38)}
+.schola-speed-value{min-width:48px;text-align:center;color:#b8c8bc}
+.schola-stream-hint{font-size:8px;color:#637066;letter-spacing:.06em;white-space:nowrap}
+@media(max-width:760px){.schola-stream-translation{font-size:12px;padding:7px 8px}.schola-control{min-height:26px;padding:3px 6px;font-size:7px}.schola-stream-hint{display:none}}
+
+
+/* v1.13 — audited Schola layout/state repair */
+:root{--schola-reserve:0px}
+body.schola-visible{--schola-reserve:150px}
+body.schola-visible .mass-card{padding-bottom:calc(max(11vh,86px) + var(--schola-reserve))}
+body.schola-visible .card-arrow{transform:translateY(calc(var(--schola-reserve) * -.42))}
+body.schola-visible .card-counter{bottom:calc(13px + var(--schola-reserve))}
+@media(max-width:760px){
+ body.schola-visible{--schola-reserve:132px}
+ body.schola-visible .mass-card{padding-bottom:calc(max(9vh,68px) + var(--schola-reserve))}
+ body.schola-visible .card-arrow{bottom:calc(15px + var(--schola-reserve));transform:none}
+ body.schola-visible .card-counter{bottom:calc(18px + var(--schola-reserve))}
+}
+
+[data-mode="live"] .mass-card.schola-only-stage{min-height:100%;}
+[data-mode="live"] .mass-card.schola-only-stage::after{content:"SCHOLA";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:Georgia,serif;font-size:13px;letter-spacing:.22em;color:rgba(205,215,207,.18);}
+
+/* v1.16 — Simple mode + canonical concurrency/Schola runtime */
+[data-mode="simple"] .flow-unit.simple-hidden,
+[data-mode="simple"] .flow-unit.simple-hidden + .translation{display:none!important}
+[data-mode="simple"] .mass-block.simple-empty{display:none!important}
+[data-mode="simple"] .mass-card.simple-guide-stage{position:relative;padding:0 max(18px,calc((100% - 760px)/2)) max(22vh,170px)!important;overflow-y:auto!important;overflow-x:hidden}
+.simple-stage-shell{min-height:46vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;max-width:620px;margin:0 auto;color:#8d978f;pointer-events:none}
+.simple-stage-shell .section-icon{width:42px;height:42px}.simple-stage-shell b{font:400 clamp(18px,2.3vw,26px) Georgia,serif;letter-spacing:.055em;color:#e5e9e2}.simple-stage-shell span{max-width:540px;font-size:11px;line-height:1.52;color:#9ca69e}.simple-stage-shell em{font-style:normal;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:#69746c}
+.simple-stage-sentinel{position:relative;width:1px;height:1px;margin-left:auto;margin-right:auto;opacity:0;pointer-events:none}.simple-stage-runway{height:52vh;min-height:330px;pointer-events:none}
+[data-mode="simple"] .card-heading .simple-mode-chip{display:inline-block;margin-left:7px;font-family:ui-sans-serif,system-ui,sans-serif;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:#8fa195;vertical-align:middle}
+
+/* v1.14 — field audit + golden regression gate */
+:root{--qa-reserve:0px}
+.qa-launch{width:100%;margin-top:10px;border:1px solid rgba(197,165,93,.34);background:rgba(197,165,93,.08);color:#dfd6b9;border-radius:9px;padding:9px 10px;font-size:10px;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
+.qa-auto{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}.qa-auto-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.qa-auto h4{font:500 13px Georgia,serif;margin:0;color:#dfe4dd}.qa-run{border:1px solid var(--line);background:#101712;color:#cbd2cb;border-radius:7px;padding:6px 8px;font-size:9px;cursor:pointer}.qa-summary{font-size:10px;color:#9da69f;margin:7px 0}.qa-checks{display:grid;gap:4px}.qa-check{display:grid;grid-template-columns:48px 1fr;gap:7px;align-items:start;padding:5px 6px;border-radius:7px;background:rgba(255,255,255,.025);font-size:9px;line-height:1.35}.qa-check b{letter-spacing:.07em}.qa-check.pass b{color:#98bd9e}.qa-check.warn b{color:#c9ac6b}.qa-check.fail b{color:#d8958c}.qa-check span{color:#a9b1aa}
+.qa-dock{position:fixed;z-index:62;left:calc(var(--rail) + 20px);right:calc(var(--rail) + 20px);bottom:10px;background:rgba(11,16,13,.975);border:1px solid rgba(197,165,93,.30);border-radius:13px;padding:9px 10px 10px;box-shadow:0 12px 38px rgba(0,0,0,.36);display:none;backdrop-filter:blur(10px)}
+body.qa-mode{--qa-reserve:132px}.qa-mode .qa-dock{display:block}.qa-head{display:flex;align-items:center;gap:8px;min-width:0;margin-bottom:7px}.qa-badge{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:#d7bd7b;border:1px solid rgba(197,165,93,.34);border-radius:99px;padding:3px 6px;white-space:nowrap}.qa-context{font-size:10px;color:#c8cec8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}.qa-count{font-size:9px;color:#7f8b82;white-space:nowrap}.qa-exit{border:0;background:transparent;color:#919b93;font-size:16px;cursor:pointer;padding:2px 6px}.qa-verdicts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.qa-verdict{min-height:38px;border-radius:8px;border:1px solid var(--line);background:#151d18;color:#b8c0b9;font-size:9px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}.qa-verdict[data-verdict="CORRECT"]{border-color:rgba(109,149,117,.38)}.qa-verdict[data-verdict="EARLY"],.qa-verdict[data-verdict="LATE"]{border-color:rgba(197,165,93,.34)}.qa-verdict[data-verdict="WRONG"],.qa-verdict[data-verdict="MISSING"]{border-color:rgba(190,107,98,.34)}.qa-verdict:active{transform:translateY(1px)}
+.qa-detail{margin-top:7px;border-top:1px solid rgba(255,255,255,.06);padding-top:7px}.qa-detail summary{font-size:8px;letter-spacing:.11em;text-transform:uppercase;color:#7f8a82;cursor:pointer}.qa-fields{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px;margin-top:7px}.qa-select,.qa-note{background:#0d130f;color:#d7ddd7;border:1px solid var(--line);border-radius:7px;font-size:10px;padding:7px}.qa-note{width:100%}.qa-actions{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.qa-action{border:1px solid var(--line);background:#101712;color:#aeb7af;border-radius:7px;padding:6px 8px;font-size:8px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}.qa-last{font-size:9px;color:#7f8a82;margin-top:5px;min-height:1.3em}
+body.qa-mode .mass-card{padding-bottom:calc(max(11vh,86px) + var(--qa-reserve))}body.qa-mode.schola-visible .mass-card{padding-bottom:calc(max(11vh,86px) + var(--qa-reserve) + var(--schola-reserve))}body.qa-mode .card-counter{bottom:calc(13px + var(--qa-reserve))}body.qa-mode.schola-visible .card-counter{bottom:calc(13px + var(--qa-reserve) + var(--schola-reserve))}.qa-mode.schola-visible .qa-dock{bottom:calc(10px + var(--schola-reserve))}
+@media(max-width:760px){body.qa-mode{--qa-reserve:148px}.qa-dock{left:61px;right:61px;padding:7px}.qa-head{margin-bottom:5px}.qa-context{font-size:8px}.qa-verdicts{gap:4px}.qa-verdict{min-height:40px;font-size:7px;padding:3px}.qa-fields{grid-template-columns:1fr}.qa-detail{max-height:84px;overflow:auto}body.qa-mode .mass-card{padding-bottom:calc(max(9vh,68px) + var(--qa-reserve))}body.qa-mode.schola-visible .mass-card{padding-bottom:calc(max(9vh,68px) + var(--qa-reserve) + var(--schola-reserve))}body.qa-mode .card-arrow{bottom:calc(15px + var(--qa-reserve))}body.qa-mode.schola-visible .card-arrow{bottom:calc(15px + var(--qa-reserve) + var(--schola-reserve))}body.qa-mode .card-counter{bottom:calc(18px + var(--qa-reserve))}body.qa-mode.schola-visible .card-counter{bottom:calc(18px + var(--qa-reserve) + var(--schola-reserve))}.qa-mode.schola-visible .qa-dock{bottom:calc(8px + var(--schola-reserve))}}
+
+
+/* v1.17 — Live stage compression */
+[data-mode="live"] .mass-card.live-grouped-card .card-heading{margin-bottom:22px}
+.live-stage-span{display:inline-flex;align-items:center;gap:6px;margin-left:7px;padding:2px 7px;border:1px solid rgba(158,177,163,.14);border-radius:99px;font-family:ui-sans-serif,system-ui,sans-serif;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#819087;vertical-align:1px}
+.live-stage-divider{display:flex;align-items:center;gap:10px;margin:30px 0 18px;color:#7f8c83;font:9px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.live-stage-divider:before,.live-stage-divider:after{content:"";height:1px;flex:1;background:rgba(255,255,255,.06)}
+.live-stage-divider span{max-width:58%;text-align:center}
+@media(max-width:760px){.live-stage-span{display:none}.live-stage-divider{margin:24px 0 14px;font-size:8px}.live-stage-divider span{max-width:72%}}
+
+
+/* AO.PriestRoute — scroll-progressed route micro-steps (not timed). */
+.flow-unit.priest-route-unit{cursor:default;margin:clamp(18px,3.5vh,34px) 0;min-height:clamp(104px,17vh,154px);display:flex;align-items:center;padding:0;transform:none}
+.flow-unit.priest-route-unit.active{transform:none}
+.priest-route-card{width:min(100%,720px);border:1px solid rgba(214,196,143,.16);border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(180,160,108,.035));padding:13px 15px 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 13px;align-items:start}
+.priest-route-kicker{grid-column:1/-1;font-family:ui-sans-serif,system-ui,sans-serif;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:#8d978f;display:flex;justify-content:space-between;gap:12px}
+.priest-route-icon{grid-row:2/5;width:44px;height:54px;display:flex;align-items:center;justify-content:center;opacity:.92}
+.priest-route-icon .section-icon{width:44px;height:50px}
+.priest-route-place{font-family:ui-sans-serif,system-ui,sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#c1c9c2}
+.priest-route-action{font-family:Georgia,"Times New Roman",serif;font-size:clamp(15px,1.7vw,19px);line-height:1.36;color:#edf0ea}
+.priest-route-pattern{font-family:ui-sans-serif,system-ui,sans-serif;font-size:9px;line-height:1.35;color:#89948c}
+.priest-route-note{grid-column:1/-1;font-family:ui-sans-serif,system-ui,sans-serif;font-size:8px;letter-spacing:.06em;color:#626d65;border-top:1px solid rgba(255,255,255,.05);padding-top:7px;margin-top:1px}
+.section-action[data-route-step="1"] .section-label:after{content:" · ROUTE";color:#9a8e68}
+.section-action[data-route-step="1"] .section-value{white-space:normal;line-height:1.14}
+@media(max-width:760px){.flow-unit.priest-route-unit{min-height:118px;margin:20px 0}.priest-route-card{padding:11px 12px;grid-template-columns:36px minmax(0,1fr);gap:7px 10px}.priest-route-icon{width:36px;height:48px}.priest-route-icon .section-icon{width:36px;height:43px}.priest-route-action{font-size:15px}.priest-route-note{font-size:7px}}
+
+/* AO.Calendar + AO.EventSurfaces — Sunday aspersion and live audibility/response presentation. */
+.premass-transition-note{margin:24px 0 6px;padding:12px 14px;border:1px solid rgba(255,255,255,.06);border-radius:11px;color:#8d998f;font-size:10px;line-height:1.45;letter-spacing:.05em;text-align:center}
+body[data-mode="live"] .live-hidden{display:none!important}
+.premass-action{color:#cbd3cc;font-style:italic}
+@media(max-width:760px){.premass-transition-note{font-size:9px;padding:10px}}
+
+
+/* AO.Assets — V4.6 taxonomy-backed semantic asset bank; Mass runtime subset embedded. */
+.ao-mask-icon.ao-mirror-x{transform:scaleX(-1)}
+
+
+/* AO.Language + AO.ScholaConsole — reconciled language and chant console. */
+/* AO.ScholaState — Schola ownership and persistent chant state. */
+:root{--schola-safe:0px}
+[data-mode="live"] .flow-unit.live-schola-owned,
+[data-mode="live"] .flow-unit.live-schola-owned + .translation,
+[data-mode="live"] .mass-block.live-schola-owned-block{display:none!important}
+main#reader{bottom:var(--schola-safe);transition:bottom .18s ease}
+.card-counter{bottom:calc(13px + var(--schola-safe))}
+.status-drawer{bottom:calc(14px + var(--schola-safe))}
+.schola-dock{transition:transform .2s ease,opacity .18s ease;z-index:48}
+body.part-transition .schola-dock{z-index:44;opacity:.16;pointer-events:none}
+.schola-dock.status-only .schola-stream-viewport,
+.schola-dock.status-only .schola-stream-translation,
+.schola-dock.status-only .schola-stream-progress,
+.schola-dock.status-only .schola-stream-hint,
+.schola-dock.status-only .schola-control{display:none!important}
+.schola-dock.status-only .schola-stream-meta{justify-content:flex-start;margin-top:3px}
+.schola-dock.status-only .schola-stream-kind{font-size:10px;color:#b7c8bb}
+.schola-dock.stream-held .schola-stream-pause{color:#b7c8bb}
+.schola-stage-surface{height:100%;min-height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:10vh 8vw calc(10vh + var(--schola-safe));color:#829087;pointer-events:none}
+.schola-stage-inner{max-width:440px}
+.schola-stage-mark{width:42px;height:42px;margin:0 auto 16px;opacity:.7}
+.schola-stage-kicker{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#6f7e73}
+.schola-stage-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,4.2vw,40px);font-weight:400;letter-spacing:.04em;color:#dbe2da;margin-top:9px}
+.schola-stage-hint{font-size:9px;letter-spacing:.08em;color:#667169;margin-top:14px;line-height:1.45}
+[data-mode="live"] .card-counter{visibility:hidden!important}
+@media(max-width:760px){
+ .card-arrow{bottom:calc(15px + var(--schola-safe))}
+ .card-counter{bottom:calc(18px + var(--schola-safe))}
+ .status-drawer{bottom:calc(8px + var(--schola-safe))}
+ .schola-stage-surface{padding-left:16px;padding-right:16px}
+}
+
+
+/* v1.14 — vernacular-first / response-Latin language rule */
+.flow-unit.language-toggle{cursor:pointer}
+.flow-unit.language-toggle::after{content:attr(data-language-hint);display:block;margin-top:4px;font:700 8px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#59645c;opacity:.72}
+.flow-unit.response-latin{color:#eef2ed}
+.flow-unit.response-latin::after{color:#718076}
+.translation.response-vernacular{font-family:Georgia,"Times New Roman",serif;font-size:13px;line-height:1.5;color:#b7c2b9;padding:7px 0 10px 13px;border-left:1px solid rgba(200,217,233,.32);margin-top:4px}
+.block-head.expandable-prayer{cursor:pointer;user-select:none;position:relative;padding-right:24px}
+.block-head.expandable-prayer::after{content:'＋';position:absolute;right:2px;top:1px;font:400 16px/1 ui-sans-serif,system-ui,sans-serif;color:#7e9183;transition:transform .18s ease,color .18s ease}
+.mass-block.prayer-open>.block-head.expandable-prayer::after{content:'−';color:#b2c5b6}
+.suppressed-prayer-panel{display:none;margin:7px 0 18px 31px;padding:11px 13px;border-left:1px solid rgba(126,155,134,.24);background:rgba(255,255,255,.018);border-radius:0 9px 9px 0}
+.mass-block.prayer-open>.suppressed-prayer-panel{display:block}
+.suppressed-prayer-line{font-family:Georgia,"Times New Roman",serif;font-size:14px;line-height:1.5;color:#cdd5ce;padding:5px 0;cursor:pointer}
+.suppressed-prayer-line+.suppressed-prayer-line{border-top:1px solid rgba(255,255,255,.035)}
+.suppressed-prayer-line::after{content:attr(data-language-hint);display:block;margin-top:2px;font:700 7px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#657068}
+[data-mode="live"] .mass-block.live-schola-owned-block{display:block!important}
+[data-mode="live"] .mass-block.live-schola-owned-block:not(.prayer-open){margin-bottom:2px}
+.schola-stage-surface{pointer-events:auto}
+.schola-stage-title-button{appearance:none;border:0;background:transparent;color:inherit;font:inherit;letter-spacing:inherit;cursor:pointer;padding:0;margin:0;display:inline-flex;align-items:center;gap:9px}
+.schola-stage-title-button::after{content:'＋';font:400 18px/1 ui-sans-serif,system-ui,sans-serif;color:#809386}
+.schola-stage-surface.prayer-open .schola-stage-title-button::after{content:'−';color:#b5c8b9}
+.schola-stage-prayer-panel{display:none;width:min(620px,78vw);max-height:42vh;overflow:auto;margin:18px auto 0;padding:12px 15px;text-align:left;border-left:1px solid rgba(126,155,134,.28);background:rgba(11,18,13,.58);border-radius:0 10px 10px 0}
+.schola-stage-surface.prayer-open .schola-stage-prayer-panel{display:block}
+.schola-stage-prayer-line{font-family:Georgia,"Times New Roman",serif;font-size:14px;line-height:1.52;color:#d7ddd7;padding:5px 0;cursor:pointer}
+.schola-stage-prayer-line::after{content:attr(data-language-hint);display:block;margin-top:2px;font:700 7px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#69756c}
+.schola-stream-translation{display:none!important}
+.schola-stream-viewport{cursor:pointer}
+.schola-dock.latin-view .schola-stream-viewport{outline:1px solid rgba(142,174,150,.13);outline-offset:3px;border-radius:4px}
+@media(max-width:760px){.suppressed-prayer-panel{margin-left:20px}.schola-stage-prayer-panel{width:min(82vw,560px);max-height:38vh}.flow-unit.language-toggle::after{font-size:7px}}
+
+/* v1.15 — block-level language interaction; response cues remain line-level */
+.flow-unit.language-toggle::after,
+.suppressed-prayer-line::after,
+.schola-stage-prayer-line::after{content:none!important;display:none!important}
+.flow-unit[data-language-mode="swap"]{cursor:pointer}
+.flow-unit[data-language-mode="response"]{cursor:pointer}
+.mass-block[data-block-language="latin"] .flow-unit[data-language-mode="swap"]{color:#eef2ed}
+.suppressed-prayer-panel,.schola-stage-prayer-panel{position:relative;cursor:pointer}
+.suppressed-prayer-panel::before,.schola-stage-prayer-panel::before{content:attr(data-language-mark);position:sticky;float:right;top:0;margin:-3px -4px 6px 10px;padding:2px 5px;border:1px solid rgba(126,155,134,.22);border-radius:5px;background:rgba(11,18,13,.82);font:700 7px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;color:#7f9184}
+.schola-stage-hint{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#69756c}
+.schola-stream-hint{display:none!important}
+
+
+
+/* v1.18 — Schola Live Console: instant speed, persistent Latin, optional vernacular, three density modes */
+.schola-dock{width:min(760px,calc(100vw - 150px));overflow:visible}
+.schola-title{gap:8px}.schola-title-main{flex:1}.schola-quick-controls{display:flex;align-items:center;gap:5px;margin-left:auto;white-space:nowrap}
+.schola-speed-step{font-size:13px;min-width:29px;padding:3px 6px}.schola-speed-value{min-width:54px;text-transform:none;font-variant-numeric:tabular-nums;color:#d7e1d9}
+.schola-language-toggle[aria-pressed="true"]{background:rgba(55,78,62,.72);color:#edf5ef;border-color:rgba(142,174,150,.42)}
+.schola-view-toggle{min-width:38px}
+.schola-speed-panel{display:none;grid-template-columns:minmax(150px,1fr);gap:7px;margin:7px 0 2px;padding:8px 10px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.055);border-radius:10px}
+.schola-dock.speed-open .schola-speed-panel{display:grid}
+.schola-speed-panel input[type="range"]{width:100%;accent-color:#8eae96;cursor:pointer}
+.schola-speed-presets{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}.schola-speed-presets button{appearance:none;border:1px solid rgba(255,255,255,.065);background:rgba(255,255,255,.025);color:#7f8f84;border-radius:6px;padding:4px 2px;font:700 7px/1 ui-sans-serif,system-ui,sans-serif;cursor:pointer}.schola-speed-presets button.active{color:#e5eee7;border-color:rgba(142,174,150,.4);background:rgba(55,78,62,.52)}
+.schola-stream-viewport{cursor:default}.schola-stream-line{color:#f5f4ed}
+.schola-stream-translation{display:none!important;margin-top:5px;padding:6px 9px;font-size:13px;color:#b8c2ba;background:rgba(255,255,255,.018);border-color:rgba(255,255,255,.04)}
+.schola-dock.translation-open:not([data-view="compact"]) .schola-stream-translation{display:block!important}
+.schola-expanded-context{display:none;margin-top:7px;padding:5px 9px 6px;border-left:1px solid rgba(142,174,150,.16);background:rgba(255,255,255,.012)}
+.schola-dock[data-view="expanded"] .schola-expanded-context{display:block}.schola-context-line{font-family:Georgia,"Times New Roman",serif;line-height:1.38;padding:3px 0;white-space:normal}.schola-context-line.prev,.schola-context-line.next{font-size:12px;color:#77847b}.schola-context-line.current{font-size:14px;color:#dce4dd}.schola-context-line.prev{opacity:.64}.schola-context-line.next{opacity:.78}
+.schola-phrase-controls{display:flex;align-items:center;gap:5px}.schola-phrase-step{min-width:26px;font-size:12px;padding:3px 5px}.schola-phrase-count{min-width:34px;text-align:center;font:700 8px/1 ui-sans-serif,system-ui,sans-serif;color:#748078;font-variant-numeric:tabular-nums}
+.schola-dock[data-view="compact"]{min-height:0;padding:7px 10px 8px!important}.schola-dock[data-view="compact"] .schola-title-icon,.schola-dock[data-view="compact"] .schola-page-counter,.schola-dock[data-view="compact"] .schola-stream-meta,.schola-dock[data-view="compact"] .schola-speed-panel,.schola-dock[data-view="compact"] .schola-stream-translation,.schola-dock[data-view="compact"] .schola-expanded-context{display:none!important}.schola-dock[data-view="compact"] .schola-title{min-height:20px}.schola-dock[data-view="compact"] .schola-stream-viewport{height:38px;margin-top:3px;border-bottom:0}.schola-dock[data-view="compact"] .schola-stream-line{font-size:14px}.schola-dock[data-view="compact"] .schola-control{min-height:24px;padding:2px 6px}
+.schola-dock[data-view="expanded"]{width:min(820px,calc(100vw - 118px));padding-bottom:13px!important}.schola-dock[data-view="expanded"] .schola-stream-viewport{height:66px}.schola-dock[data-view="expanded"] .schola-stream-line{font-size:18px}.schola-dock[data-view="expanded"] .schola-stream-translation{font-size:14px}
+.schola-dock.phrase-cinematic .schola-stream-viewport{animation:scholaPhraseCinema .42s cubic-bezier(.2,.72,.2,1) both}.schola-dock.chant-cinematic .schola-title-label{animation:scholaChantTitle .72s ease-out both}.schola-dock.chant-cinematic .schola-stream-viewport{animation:scholaChantOpen .72s cubic-bezier(.16,.72,.18,1) both}
+@keyframes scholaPhraseCinema{0%{opacity:.2;filter:blur(3px);transform:translateY(8px)}55%{opacity:1;filter:blur(0);transform:translateY(-1px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes scholaChantTitle{0%{opacity:.15;letter-spacing:.22em}100%{opacity:1;letter-spacing:.13em}}
+@keyframes scholaChantOpen{0%{opacity:.16;clip-path:inset(48% 0 48% 0)}100%{opacity:1;clip-path:inset(0 0 0 0)}}
+.schola-dock.stream-held .schola-stream-progress>span{box-shadow:0 0 8px rgba(142,174,150,.28)}
+@media(max-width:760px){.schola-dock{width:calc(100vw - 112px)!important}.schola-title{flex-wrap:wrap}.schola-title-main{min-width:120px}.schola-quick-controls{gap:3px}.schola-control{padding:3px 5px}.schola-speed-presets{grid-template-columns:repeat(4,1fr)}.schola-dock[data-view="expanded"]{width:calc(100vw - 96px)!important}.schola-dock[data-view="expanded"] .schola-stream-line{font-size:15px}.schola-context-line.current{font-size:13px}.schola-context-line.prev,.schola-context-line.next{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.schola-dock.phrase-cinematic .schola-stream-viewport,.schola-dock.chant-cinematic .schola-title-label,.schola-dock.chant-cinematic .schola-stream-viewport{animation:none!important}}
+
+
+</style>
+
+<style>
+/* AO.Attention — functional live cues. Main Mass text is never animated. */
+#responseCard{transform-origin:left center;transition:opacity .16s ease,border-color .16s ease,background .16s ease,box-shadow .16s ease,width .18s ease}
+#responseCard.functional-response-ready{width:clamp(172px,22vw,286px);min-height:72px;padding:9px 11px;align-items:flex-start;text-align:left;background:rgba(24,39,49,.975);border-color:rgba(200,217,233,.62);box-shadow:0 10px 28px rgba(0,0,0,.32)}
+#responseCard.functional-response-now{border-color:rgba(220,233,243,.86);background:rgba(28,45,58,.985)}
+#responseCard.functional-response-ready .ico{position:absolute;right:9px;top:8px;min-height:0;opacity:.62}
+#responseCard.functional-response-ready .ico .asset-icon{width:20px;height:20px}
+#responseCard.functional-response-ready .tag{margin-top:0;padding-right:27px;color:#dfeaf2;font-size:8px;letter-spacing:.14em}
+#responseCard.functional-response-ready .tiny{max-width:none;width:100%;padding-right:22px;margin-top:6px;color:#f1f5f7;font-family:Georgia,"Times New Roman",serif;font-size:14px;line-height:1.28;letter-spacing:.005em;overflow-wrap:normal}
+#responseCard.functional-response-next .tag{color:#aebfca}
+#responseCard.functional-response-enter{animation:functionalResponseEnter .22s cubic-bezier(.2,.72,.2,1) both}
+.response-rail-translation{display:none;width:100%;margin-top:7px;padding-top:6px;border-top:1px solid rgba(200,217,233,.14);font-family:Georgia,"Times New Roman",serif;font-size:11px;line-height:1.35;color:#aebcc5}
+#responseCard.functional-response-ready.show-response-translation .response-rail-translation{display:block}
+@keyframes functionalResponseEnter{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+#sectionAction{transition:opacity .16s ease,border-color .16s ease,background .16s ease,transform .16s ease,box-shadow .16s ease}
+#sectionAction.functional-action-enter{animation:functionalActionEnter .24s cubic-bezier(.2,.72,.2,1) both}
+#sectionAction.functional-sacred-action{background:rgba(39,35,24,.96);border-color:rgba(216,203,168,.44);box-shadow:0 7px 22px rgba(0,0,0,.18)}
+#sectionAction.functional-sacred-action .section-value{color:#e9dfc1}
+@keyframes functionalActionEnter{from{opacity:.38;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+body.functional-sacred-focus .mode-ribbon,body.functional-sacred-focus .section-title,body.functional-sacred-focus .section-side.priest-position,body.functional-sacred-focus .rail.left,body.functional-sacred-focus #voiceCard{opacity:.34;transition:opacity .2s ease}
+body.functional-sacred-focus #sectionAction{opacity:1!important}
+#scholaDock.functional-handoff{border-color:rgba(166,196,174,.42);box-shadow:0 14px 38px rgba(0,0,0,.34)}
+#scholaDock.functional-handoff .schola-title-label{color:#d8e7da}
+#scholaDock.functional-handoff .schola-stream-kind{color:#c8d9cb;letter-spacing:.09em}
+body[data-live-focus="response"] #responseCard.functional-response-now{border-color:rgba(229,239,247,.96);box-shadow:0 12px 34px rgba(0,0,0,.38),0 0 0 1px rgba(220,233,243,.13) inset}
+body[data-live-focus="response"] #postureCard,body[data-live-focus="response"] #gestureCard,body[data-live-focus="response"] .rail.right,body[data-live-focus="response"] #sectionAction:not(.functional-sacred-action){opacity:.46}
+body[data-live-focus="sacred"] #sectionAction.functional-sacred-action{opacity:1!important;border-color:rgba(226,213,173,.72);box-shadow:0 9px 25px rgba(0,0,0,.24),0 0 0 1px rgba(226,213,173,.08) inset}
+body[data-live-focus="sacred"] #postureCard,body[data-live-focus="sacred"] #gestureCard,body[data-live-focus="sacred"] #responseCard:not(.functional-response-now),body[data-live-focus="sacred"] .rail.right{opacity:.38}
+body[data-live-focus="gesture"] #gestureCard:not(.off){opacity:1;border-color:rgba(218,226,218,.58);background:rgba(26,34,29,.97);box-shadow:0 9px 24px rgba(0,0,0,.24)}
+body[data-live-focus="gesture"] #postureCard,body[data-live-focus="gesture"] #responseCard:not(.functional-response-now),body[data-live-focus="gesture"] .rail.right{opacity:.58}
+body[data-live-focus="schola"] #scholaDock.show{border-color:rgba(166,196,174,.46);box-shadow:0 15px 38px rgba(0,0,0,.34),0 0 0 1px rgba(166,196,174,.06) inset}
+body[data-live-focus="schola"] #postureCard,body[data-live-focus="schola"] #gestureCard,body[data-live-focus="schola"] #responseCard:not(.functional-response-ready),body[data-live-focus="schola"] #voiceCard{opacity:.60}
+#responseCard.functional-response-next{border-color:rgba(190,207,219,.42);box-shadow:0 7px 20px rgba(0,0,0,.24)}
+#responseCard.functional-response-next .tag::after{content:" · NEXT";letter-spacing:.11em;color:#8fa6b5}
+#postureCard.orchestrated-cue-now,#gestureCard.orchestrated-cue-now,#sectionAction.orchestrated-cue-now{animation:orchestratedCueNow .72s ease-out both}
+@keyframes orchestratedCueNow{0%{filter:brightness(1);box-shadow:0 0 0 rgba(0,0,0,0)}28%{filter:brightness(1.24);box-shadow:0 0 0 1px rgba(224,232,225,.20) inset,0 8px 22px rgba(0,0,0,.22)}100%{filter:brightness(1);box-shadow:0 0 0 rgba(0,0,0,0)}}
+#postureCard,#gestureCard,#responseCard,.rail.right,#sectionAction,#scholaDock{transition:opacity .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease,filter .18s ease}
+@media(max-width:760px){#responseCard.functional-response-ready{width:min(208px,calc(100vw - 78px));min-height:68px;padding:8px 9px}#responseCard.functional-response-ready .tiny{font-size:12.5px;line-height:1.25;padding-right:18px}#responseCard.functional-response-ready .tag{font-size:7px}.response-rail-translation{font-size:10.5px}}
+@media(prefers-reduced-motion:reduce){#responseCard.functional-response-enter,#sectionAction.functional-action-enter,#postureCard.orchestrated-cue-now,#gestureCard.orchestrated-cue-now,#sectionAction.orchestrated-cue-now{animation:none!important}#postureCard,#gestureCard,#responseCard,.rail.right,#sectionAction,#scholaDock,body.functional-sacred-focus *{transition:none!important}}
+</style>
+
+<style id="ao-v131-gesture-choreography">
+/* AO.GestureMotion — cue-specific motion profiles; V4.6 semantic icon layer underneath. */
+#gestureCard,#postureCard{overflow:visible;transform-origin:center center}
+#gestureCard .ico,#postureCard .ico{position:relative;transform-origin:50% 58%}
+#gestureCard.gesture-motion-preview{opacity:.72!important;border-color:rgba(174,190,177,.22);background:rgba(19,27,22,.88)}
+#gestureCard.gesture-motion-preview .tag{color:#839187;letter-spacing:.13em}
+#gestureCard.gesture-motion-preview .tiny{color:#aab4ac}
+#gestureCard.gesture-motion-now{opacity:1!important;border-color:rgba(213,203,165,.58);background:rgba(28,34,28,.98);box-shadow:0 9px 25px rgba(0,0,0,.26),0 0 0 1px rgba(214,202,161,.07) inset}
+#gestureCard.gesture-motion-now .tag{color:#d8cda9;font-weight:800;letter-spacing:.105em}
+#gestureCard.gesture-motion-now .tiny{color:#eef0e8}
+#gestureCard.gesture-motion-now .ico:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid rgba(215,202,161,.0);pointer-events:none}
+#gestureCard.gesture-motion-fire.gesture-motion-now .ico:after{animation:aoGestureHalo 1.65s ease-out both}
+#gestureCard.gesture-motion-fire.gesture-motion-preview .ico{animation:aoGesturePreview .95s ease-out both}
+#gestureCard.gesture-motion-fire.gesture-kind-head .ao-mask-icon{animation:aoHeadBow 1.45s cubic-bezier(.22,.72,.24,1) both}
+#gestureCard.gesture-motion-fire.gesture-kind-bow .ao-mask-icon{animation:aoBow 1.6s cubic-bezier(.22,.72,.24,1) both}
+#gestureCard.gesture-motion-fire.gesture-kind-profound .ao-mask-icon{animation:aoProfoundBow 1.8s cubic-bezier(.2,.72,.2,1) both}
+#gestureCard.gesture-motion-fire.gesture-kind-cross .ao-mask-icon{animation:aoCrossReverence 1.45s ease-out both}
+#gestureCard.gesture-motion-fire.gesture-kind-doxology .ao-mask-icon{animation:aoDoxologyCross 1.85s cubic-bezier(.2,.72,.22,1) both}
+#gestureCard.gesture-motion-fire.gesture-kind-gospel .ao-mask-icon{animation:aoGospelCrosses 1.55s ease-in-out both}
+#gestureCard.gesture-motion-fire.gesture-kind-breast-single .ao-mask-icon{animation:aoBreastStrikeSingle 1.05s ease-in-out both}
+#gestureCard.gesture-motion-fire.gesture-kind-breast-triple .ao-mask-icon{animation:aoBreastStrikeTriple 1.45s ease-in-out both}
+#gestureCard.gesture-motion-fire.gesture-kind-incense .ao-mask-icon{animation:aoIncenseBows 1.9s cubic-bezier(.22,.72,.24,1) both}
+#gestureCard.gesture-motion-fire.gesture-kind-elevation .ao-mask-icon{animation:aoElevationReverence 1.85s cubic-bezier(.2,.7,.2,1) both}
+#gestureCard.gesture-motion-fire.gesture-kind-genuflect .ao-mask-icon{animation:aoGenuflect 1.7s cubic-bezier(.2,.7,.2,1) both}
+#gestureCard.gesture-motion-fire.gesture-kind-rise .ao-mask-icon{animation:aoRiseSettle 1.5s cubic-bezier(.2,.72,.22,1) both}
+#gestureCard.gesture-context-doxology.gesture-motion-now{border-color:rgba(221,208,164,.68);box-shadow:0 9px 25px rgba(0,0,0,.26),0 0 18px rgba(211,196,145,.08)}
+#gestureCard.gesture-context-holy-name.gesture-motion-now .tag{letter-spacing:.12em}
+#gestureCard.gesture-context-elevation.gesture-motion-now{background:rgba(25,30,27,.985)}
+#gestureCard.gesture-motion-now .ao-mask-icon{filter:brightness(1.17)}
+#postureCard.posture-motion-fire{border-color:rgba(213,203,165,.46);box-shadow:0 8px 22px rgba(0,0,0,.22)}
+#postureCard.posture-motion-fire.posture-motion-kneel .ao-mask-icon{animation:aoKneelSettle 1.65s cubic-bezier(.2,.72,.22,1) both}
+#postureCard.posture-motion-fire.posture-motion-genuflect .ao-mask-icon{animation:aoGenuflect 1.65s cubic-bezier(.2,.72,.22,1) both}
+#postureCard.posture-motion-fire.posture-motion-rise .ao-mask-icon{animation:aoRiseSettle 1.5s cubic-bezier(.2,.72,.22,1) both}
+#postureCard.posture-motion-fire.posture-motion-generic .ao-mask-icon{animation:aoPostureSettle 1.25s ease-out both}
+@keyframes aoGesturePreview{0%{opacity:.38;transform:scale(.94)}45%{opacity:.78;transform:scale(1.025)}100%{opacity:.68;transform:scale(1)}}
+@keyframes aoGestureHalo{0%{opacity:0;border-color:rgba(215,202,161,0);transform:scale(.74)}28%{opacity:1;border-color:rgba(215,202,161,.38)}100%{opacity:0;border-color:rgba(215,202,161,0);transform:scale(1.18)}}
+@keyframes aoHeadBow{0%{transform:translateY(0) scale(1)}28%{transform:translateY(4px) scale(.985)}70%{transform:translateY(4px) scale(.985)}100%{transform:translateY(0) scale(1)}}
+@keyframes aoBow{0%{transform:translateY(0) scale(1)}30%{transform:translateY(6px) scale(.96)}70%{transform:translateY(6px) scale(.96)}100%{transform:translateY(0) scale(1)}}
+@keyframes aoProfoundBow{0%{transform:translateY(0) scale(1)}30%{transform:translateY(8px) scale(.925)}72%{transform:translateY(8px) scale(.925)}100%{transform:translateY(0) scale(1)}}
+@keyframes aoCrossReverence{0%{opacity:.72;transform:scale(.95)}28%{opacity:1;transform:scale(1.07)}62%{opacity:.92;transform:scale(1.01)}100%{opacity:1;transform:scale(1)}}
+@keyframes aoDoxologyCross{0%{opacity:.72;transform:scale(.94)}22%{opacity:1;transform:scale(1.08)}58%{opacity:1;transform:scale(1.035)}82%{opacity:.92;transform:scale(1.015)}100%{opacity:1;transform:scale(1)}}
+@keyframes aoGospelCrosses{0%,100%{transform:scale(1);opacity:1}12%{transform:scale(1.07)}28%{transform:scale(.99)}44%{transform:scale(1.07)}60%{transform:scale(.99)}76%{transform:scale(1.07)}90%{transform:scale(1)}}
+@keyframes aoBreastStrikeSingle{0%,100%{transform:scale(1)}34%{transform:scale(1.11)}62%{transform:scale(.975)}}
+@keyframes aoBreastStrikeTriple{0%,100%{transform:scale(1)}13%,43%,73%{transform:scale(1.10)}25%,55%,85%{transform:scale(.975)}}
+@keyframes aoIncenseBows{0%{transform:translateY(0) scale(1)}20%{transform:translateY(6px) scale(.96)}38%{transform:translateY(0) scale(1)}62%{transform:translateY(6px) scale(.96)}80%,100%{transform:translateY(0) scale(1)}}
+@keyframes aoElevationReverence{0%{transform:translateY(0) scale(1)}28%{transform:translateY(5px) scale(.965)}58%{transform:translateY(5px) scale(.965)}78%{transform:translateY(-1px) scale(1.025)}100%{transform:translateY(0) scale(1)}}
+@keyframes aoGenuflect{0%{transform:translateY(0) scale(1)}34%{transform:translateY(7px) scale(.95)}74%{transform:translateY(7px) scale(.95)}100%{transform:translateY(0) scale(1)}}
+@keyframes aoKneelSettle{0%{transform:translateY(-3px) scale(1.03)}38%{transform:translateY(7px) scale(.95)}100%{transform:translateY(0) scale(1)}}
+@keyframes aoRiseSettle{0%{transform:translateY(7px) scale(.95)}42%{transform:translateY(-2px) scale(1.025)}100%{transform:translateY(0) scale(1)}}
+@keyframes aoPostureSettle{0%{opacity:.6;transform:scale(.95)}45%{opacity:1;transform:scale(1.04)}100%{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){#gestureCard .ao-mask-icon,#postureCard .ao-mask-icon,#gestureCard .ico:after{animation:none!important;transform:none!important}}
+</style>
+<style id="ao-v132-declutter-event-surfaces">
+/* AO.EventSurfaces — one state, one surface. Persistent only when continuously useful. */
+body[data-mode="live"] .section-side .section-label{display:none!important}
+body[data-mode="live"] #sectionAction.empty{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+body[data-mode="live"] #gestureCard.off,
+body[data-mode="live"] #responseCard.off,
+body[data-mode="live"] #voiceCard.declutter-normal-voice{display:none!important}
+body[data-mode="live"] #voiceCard .tag{display:none!important}
+body[data-mode="live"] #postureCard .tag{display:none}
+body[data-mode="live"] #postureCard.orchestrated-cue-now .tag,
+body[data-mode="live"] #postureCard.posture-motion-fire .tag{display:block}
+body[data-mode="live"] #gestureCard.gesture-motion-now .tag{font-size:8px;letter-spacing:.16em}
+body[data-mode="live"] #scholaPageCounter{display:none!important}
+body[data-mode="live"] #scholaStreamKind.declutter-redundant,
+body[data-mode="live"] #scholaStreamPause.declutter-redundant{display:none!important}
+body[data-mode="live"] #partCinemaSub{display:none!important}
+
+/* Cards that truly arrive are allowed one clean entrance; idle placeholders do not exist visually. */
+body[data-mode="live"] #gestureCard:not(.off),
+body[data-mode="live"] #responseCard:not(.off),
+body[data-mode="live"] #voiceCard:not(.declutter-normal-voice){animation:aoEventSurfaceEnter .34s cubic-bezier(.2,.78,.2,1) both}
+@keyframes aoEventSurfaceEnter{0%{opacity:0;transform:translateY(7px) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1)}}
+
+/* Transient ritual cinema — replaces permanent bell/event boxes. */
+.ritual-event-cinema{position:fixed;z-index:44;inset:0;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .24s ease,visibility 0s linear .24s}
+.ritual-event-cinema.show{opacity:1;visibility:visible;transition:opacity .24s ease}
+.ritual-event-veil{position:absolute;inset:0;background:radial-gradient(circle at 50% 27%,rgba(103,91,55,.13),rgba(8,12,9,0) 42%);opacity:0;transition:opacity .32s ease}
+.ritual-event-cinema.show .ritual-event-veil{opacity:1}
+.ritual-event-card{position:absolute;left:50%;top:calc(var(--header-h) + 24px);transform:translate(-50%,-8px) scale(.975);min-width:170px;max-width:min(460px,74vw);display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:11px;padding:9px 14px 10px;border:1px solid rgba(214,202,166,.20);border-radius:13px;background:rgba(15,21,17,.88);box-shadow:0 16px 42px rgba(0,0,0,.30);backdrop-filter:blur(10px);opacity:0;transition:transform .46s cubic-bezier(.2,.78,.2,1),opacity .34s ease}
+.ritual-event-cinema.show .ritual-event-card{opacity:1;transform:translate(-50%,0) scale(1)}
+.ritual-event-icon{width:42px;height:42px;display:grid;place-items:center;position:relative;color:#e7dfc3}
+.ritual-event-icon .ao-mask-icon,.ritual-event-icon img,.ritual-event-icon svg{width:38px!important;height:38px!important;max-width:38px!important;max-height:38px!important}
+.ritual-event-copy{min-width:0}
+.ritual-event-label{font-family:Georgia,"Times New Roman",serif;font-size:14px;letter-spacing:.04em;color:#f0efe6;line-height:1.12}
+.ritual-event-detail{margin-top:3px;font-size:8px;letter-spacing:.13em;text-transform:uppercase;color:#89958b;line-height:1.2}
+.ritual-event-cinema[data-kind="bell"] .ritual-event-card{left:auto;right:max(16px,calc((100vw - 1080px)/2));top:31vh;transform:translate(7px,0) scale(.97);grid-template-columns:40px minmax(0,1fr);min-width:154px;max-width:245px}
+.ritual-event-cinema[data-kind="bell"].show .ritual-event-card{transform:translate(0,0) scale(1)}
+.ritual-event-cinema[data-kind="bell"] .ritual-event-veil{background:radial-gradient(circle at 82% 37%,rgba(193,168,101,.11),rgba(8,12,9,0) 32%)}
+.ritual-event-cinema[data-kind="bell"].show .ritual-event-icon:before,
+.ritual-event-cinema[data-kind="bell"].show .ritual-event-icon:after{content:"";position:absolute;inset:2px;border:1px solid rgba(219,198,139,.42);border-radius:50%;animation:aoBellRing 1.25s ease-out both}
+.ritual-event-cinema[data-kind="bell"].show .ritual-event-icon:after{animation-delay:.18s}
+@keyframes aoBellRing{0%{transform:scale(.58);opacity:.72}100%{transform:scale(1.7);opacity:0}}
+.ritual-event-cinema[data-kind="elevation"] .ritual-event-veil{background:radial-gradient(circle at 50% 31%,rgba(214,202,166,.15),rgba(8,12,9,0) 46%)}
+.ritual-event-cinema[data-kind="elevation"] .ritual-event-card{border-color:rgba(214,202,166,.30);background:rgba(13,18,15,.92)}
+.ritual-event-cinema[data-kind="blessing"] .ritual-event-card{border-color:rgba(173,192,177,.26)}
+body.ritual-event-active .mode-ribbon,
+body.ritual-event-active .rail,
+body.ritual-event-active .status-drawer{opacity:.52;transition:opacity .24s ease}
+body.part-transition .ritual-event-cinema{opacity:0!important;visibility:hidden!important}
+
+@media(max-width:760px){
+ .ritual-event-card{top:calc(var(--header-h) + 12px);max-width:calc(100vw - 108px);padding:8px 10px;grid-template-columns:36px minmax(0,1fr)}
+ .ritual-event-icon{width:34px;height:34px}.ritual-event-icon .ao-mask-icon,.ritual-event-icon img,.ritual-event-icon svg{width:32px!important;height:32px!important}
+ .ritual-event-label{font-size:12px}.ritual-event-detail{font-size:7px}
+ .ritual-event-cinema[data-kind="bell"] .ritual-event-card{right:8px;top:29vh;max-width:176px;min-width:142px}
+}
+@media(prefers-reduced-motion:reduce){.ritual-event-cinema,.ritual-event-card,.ritual-event-veil{transition:none!important}.ritual-event-cinema[data-kind="bell"] .ritual-event-icon:before,.ritual-event-cinema[data-kind="bell"] .ritual-event-icon:after{animation:none!important}}
+</style>
+
+<style id="ao-v133-canon-cinematic-arc">
+/* AO.Cinematics.Canon — Sanctus → Canon → Consecration → Pater. Text remains still. */
+:root{--canon-transition:.72s cubic-bezier(.2,.72,.2,1)}
+body[data-mode="live"] .mode-ribbon,
+body[data-mode="live"] .section-ribbon,
+body[data-mode="live"] .rail,
+body[data-mode="live"] .card-arrow,
+body[data-mode="live"] .card-counter,
+body[data-mode="live"] .status-drawer,
+body[data-mode="live"] .progress-track,
+body[data-mode="live"] #scholaDock{transition:opacity var(--canon-transition),filter var(--canon-transition),transform var(--canon-transition),border-color var(--canon-transition),background var(--canon-transition)}
+
+/* Sanctus reaches its final held phrase: the chant settles rather than vanishing abruptly. */
+body.ao-sanctus-closing #scholaDock.show{opacity:.66;filter:saturate(.78);transform:translateX(-50%) translateY(3px) scale(.988)}
+body.ao-sanctus-closing .progress-track{opacity:.35}
+
+/* Canon: silence is represented by subtracting UI, never by animating the prayer. */
+body.ao-canon-silence .mode-ribbon{opacity:.20;filter:saturate(.65)}
+body.ao-canon-silence .progress-track{opacity:.10}
+body.ao-canon-silence .card-arrow,
+body.ao-canon-silence .card-counter,
+body.ao-canon-silence .status-drawer{opacity:.10;pointer-events:none}
+body.ao-canon-silence .section-ribbon{background:rgba(8,12,9,.92);border-color:rgba(214,202,166,.07)}
+body.ao-canon-silence .section-title{opacity:.62}
+body.ao-canon-silence .rail{opacity:.58;filter:saturate(.72)}
+body.ao-canon-silence #postureCard{opacity:1;filter:none}
+body.ao-canon-silence #voiceCard:not(.declutter-normal-voice){opacity:1;filter:none}
+body.ao-canon-silence #scholaDock{opacity:0!important;pointer-events:none!important;transform:translateX(-50%) translateY(135%) scale(.985)!important}
+
+/* Words of Institution: the text stays completely still while everything else becomes quieter. */
+body.ao-consecration-words .mode-ribbon{opacity:.07}
+body.ao-consecration-words .section-ribbon{opacity:.26}
+body.ao-consecration-words .rail{opacity:.18}
+body.ao-consecration-words #postureCard{opacity:.62}
+body.ao-consecration-words .card-arrow,
+body.ao-consecration-words .card-counter,
+body.ao-consecration-words .status-drawer,
+body.ao-consecration-words .progress-track{opacity:0!important;pointer-events:none}
+
+/* Elevation breaks the stillness through the ceremonial action surface only. */
+body.ao-elevation-window .mode-ribbon,
+body.ao-elevation-window .section-ribbon,
+body.ao-elevation-window .rail,
+body.ao-elevation-window .card-arrow,
+body.ao-elevation-window .card-counter,
+body.ao-elevation-window .status-drawer,
+body.ao-elevation-window .progress-track{opacity:.06!important}
+body.ao-elevation-window .ritual-event-veil{background:radial-gradient(circle at 50% 42%,rgba(214,202,166,.115),rgba(5,8,6,.52) 38%,rgba(5,8,6,.12) 70%)}
+body.ao-elevation-window .ritual-event-card{top:34%;grid-template-columns:70px minmax(0,1fr);gap:17px;padding:15px 21px 16px;border-color:rgba(214,202,166,.17);background:rgba(10,14,11,.84);box-shadow:0 22px 64px rgba(0,0,0,.42)}
+body.ao-elevation-window .ritual-event-icon{width:68px;height:68px}
+body.ao-elevation-window .ritual-event-icon .ao-mask-icon,
+body.ao-elevation-window .ritual-event-icon img,
+body.ao-elevation-window .ritual-event-icon svg{width:62px!important;height:62px!important;max-width:62px!important;max-height:62px!important}
+body.ao-elevation-window .ritual-event-label{font-size:10px;letter-spacing:.22em}
+body.ao-elevation-window .ritual-event-detail{font-family:Georgia,"Times New Roman",serif;font-size:17px;letter-spacing:.04em;color:#eee7d2}
+
+/* Post-consecration Canon remains recollected, but Benedictus may legitimately return. */
+body.ao-canon-after .mode-ribbon{opacity:.28}
+body.ao-canon-after .progress-track{opacity:.16}
+body.ao-canon-after .card-arrow,
+body.ao-canon-after .card-counter,
+body.ao-canon-after .status-drawer{opacity:.14}
+body.ao-canon-after .section-ribbon{background:rgba(9,13,10,.90)}
+body.ao-canon-after .section-title{opacity:.70}
+body.ao-canon-after .rail{opacity:.64}
+body.ao-canon-after #postureCard,
+body.ao-canon-after #voiceCard:not(.declutter-normal-voice){opacity:1}
+
+/* Canon conclusion begins to reopen the common timeline. */
+body.ao-canon-conclusion .mode-ribbon{opacity:.52}
+body.ao-canon-conclusion .progress-track{opacity:.45}
+body.ao-canon-conclusion .section-ribbon{opacity:.90}
+body.ao-canon-conclusion .rail{opacity:.78}
+body.ao-canon-conclusion .card-arrow,
+body.ao-canon-conclusion .card-counter{opacity:.46}
+
+/* Pater noster: public prayer resumes. Normal audible priest voice gets one brief return before decluttering again. */
+body.ao-pater-reopen .mode-ribbon,
+body.ao-pater-reopen .section-ribbon,
+body.ao-pater-reopen .rail,
+body.ao-pater-reopen .progress-track,
+body.ao-pater-reopen .card-arrow,
+body.ao-pater-reopen .card-counter{animation:aoCanonReopen .92s cubic-bezier(.2,.72,.2,1) both}
+body.ao-public-voice-return #voiceCard.declutter-normal-voice{display:flex!important;animation:aoCanonVoiceReturn 1.55s ease both}
+@keyframes aoCanonReopen{0%{opacity:.25;filter:saturate(.70)}100%{opacity:1;filter:none}}
+@keyframes aoCanonVoiceReturn{0%{opacity:0;transform:translateY(5px) scale(.97)}18%,78%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-2px) scale(.99)}}
+
+/* Dedicated phase cinema: spare, typographic, and structurally separate from prayer text. */
+.canon-arc-cinema{position:fixed;z-index:43;inset:0;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .34s ease,visibility 0s linear .34s}
+.canon-arc-cinema.show{opacity:1;visibility:visible;transition:opacity .34s ease}
+.canon-arc-veil{position:absolute;inset:0;background:radial-gradient(circle at 50% 44%,rgba(36,45,37,.52),rgba(5,8,6,.90) 64%);opacity:0;transition:opacity .65s ease}
+.canon-arc-cinema.show .canon-arc-veil{opacity:1}
+.canon-arc-inner{position:absolute;left:50%;top:48%;width:min(620px,78vw);transform:translate(-50%,-47%);text-align:center;color:#eceee7;opacity:0;transition:opacity .62s ease,transform .78s cubic-bezier(.2,.72,.2,1)}
+.canon-arc-cinema.show .canon-arc-inner{opacity:1;transform:translate(-50%,-50%)}
+.canon-arc-rule{height:1px;width:0;margin:0 auto 22px;background:linear-gradient(90deg,transparent,rgba(214,202,166,.52),transparent);transition:width .95s cubic-bezier(.2,.72,.2,1)}
+.canon-arc-cinema.show .canon-arc-rule{width:min(390px,70vw)}
+.canon-arc-kicker{font-size:9px;letter-spacing:.30em;text-transform:uppercase;color:#89968c;margin-bottom:12px}
+.canon-arc-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(25px,4.4vw,43px);font-weight:400;letter-spacing:.075em;text-transform:uppercase;color:#f0eee4;line-height:1.12}
+.canon-arc-sub{font-family:Georgia,"Times New Roman",serif;font-size:13px;letter-spacing:.04em;color:#aaaEaa;margin-top:13px}
+.canon-arc-cinema[data-phase="pater"] .canon-arc-veil{background:radial-gradient(circle at 50% 44%,rgba(54,72,58,.40),rgba(6,10,7,.84) 67%)}
+.canon-arc-cinema[data-phase="pater"] .canon-arc-rule{background:linear-gradient(90deg,transparent,rgba(109,149,117,.66),transparent)}
+
+@media(max-width:600px){
+  .canon-arc-inner{width:min(88vw,520px)}
+  .canon-arc-title{font-size:clamp(23px,8vw,35px)}
+  body.ao-elevation-window .ritual-event-card{top:31%;max-width:82vw;grid-template-columns:58px minmax(0,1fr);gap:12px;padding:13px 15px}
+  body.ao-elevation-window .ritual-event-icon{width:56px;height:56px}
+  body.ao-elevation-window .ritual-event-icon .ao-mask-icon,
+  body.ao-elevation-window .ritual-event-icon img,
+  body.ao-elevation-window .ritual-event-icon svg{width:52px!important;height:52px!important;max-width:52px!important;max-height:52px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .canon-arc-inner,.canon-arc-rule,.canon-arc-veil{transition:none!important}
+  body.ao-pater-reopen .mode-ribbon,body.ao-pater-reopen .section-ribbon,body.ao-pater-reopen .rail,body.ao-pater-reopen .progress-track,body.ao-pater-reopen .card-arrow,body.ao-pater-reopen .card-counter,
+  body.ao-public-voice-return #voiceCard.declutter-normal-voice{animation:none!important}
+}
+</style>
+
+
+<style id="ao-v134-gospel-cinematic-arc">
+/* AO.Cinematics.Gospel — preparation → Gospel side → announcement → proclamation → Homily release. Text remains still. */
+:root{--gospel-transition:.58s cubic-bezier(.2,.72,.2,1)}
+body[data-mode="live"] .section-ribbon,
+body[data-mode="live"] .mode-ribbon,
+body[data-mode="live"] .rail,
+body[data-mode="live"] #scholaDock,
+body[data-mode="live"] .mass-block[data-block="AO.SM.B026"]::before,
+body[data-mode="live"] .mass-block[data-block="AO.SM.B026"]::after{
+ transition:opacity var(--gospel-transition),filter var(--gospel-transition),background var(--gospel-transition),border-color var(--gospel-transition),transform var(--gospel-transition)
+}
+
+/* The Alleluia is still sounding while the celebrant prepares quietly. Preserve concurrency, but make the altar action perceptible. */
+body.ao-gospel-preparation .mode-ribbon{opacity:.58}
+body.ao-gospel-preparation .section-ribbon{background:rgba(9,14,10,.96);border-color:rgba(185,205,190,.09)}
+body.ao-gospel-preparation #scholaDock.show{opacity:.68;filter:saturate(.78);transform:translateX(-50%) translateY(2px) scale(.992)}
+body.ao-gospel-preparation #sectionAction,
+body.ao-gospel-preparation .section-side.priest-position,
+body.ao-gospel-preparation #voiceCard{opacity:1!important;filter:none!important}
+body.ao-gospel-preparation .rail.left{opacity:.52}
+
+/* Movement to the Gospel side: the position surface carries the transition, not the prayer text. */
+body.ao-gospel-move .section-side.priest-position{background:rgba(25,38,30,.96);border-color:rgba(170,201,178,.28);box-shadow:0 7px 22px rgba(0,0,0,.18)}
+body.ao-gospel-move #priestPositionIcon{animation:aoGospelPositionShift .72s cubic-bezier(.2,.72,.2,1) both}
+body.ao-gospel-move #stationText{color:#dbe8dd}
+@keyframes aoGospelPositionShift{0%{opacity:.3;transform:translateX(-8px)}55%{opacity:1;transform:translateX(2px)}100%{opacity:1;transform:translateX(0)}}
+
+/* Public threshold: standing, greeting and Gospel crosses become the active faithful grammar. */
+body.ao-gospel-threshold .mode-ribbon{opacity:.42}
+body.ao-gospel-threshold .section-ribbon{border-color:rgba(176,203,183,.14)}
+body.ao-gospel-threshold #postureCard{opacity:1!important;filter:none!important}
+body.ao-gospel-threshold #responseCard:not(.declutter-hidden),
+body.ao-gospel-announcement #gestureCard:not(.declutter-hidden){opacity:1!important;filter:none!important}
+
+/* A stable Gospel frame appears around the proclamation. It enters once; the words themselves do not animate. */
+body.ao-gospel-announcement main#reader,
+body.ao-gospel-reading main#reader{background:radial-gradient(ellipse at 50% 35%,rgba(109,149,117,.035),rgba(13,18,15,0) 60%)}
+body.ao-gospel-announcement .mass-block[data-block="AO.SM.B025"],
+body.ao-gospel-reading .mass-block[data-block="AO.SM.B026"]{position:relative}
+body.ao-gospel-announcement .mass-block[data-block="AO.SM.B025"]::before,
+body.ao-gospel-reading .mass-block[data-block="AO.SM.B026"]::before{
+ content:"";position:absolute;left:-18px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,rgba(180,207,187,.08),rgba(180,207,187,.58) 20%,rgba(180,207,187,.34) 82%,rgba(180,207,187,.04));transform-origin:top;animation:aoGospelRuleOpen .82s cubic-bezier(.18,.72,.2,1) both;pointer-events:none
+}
+body.ao-gospel-reading .mass-block[data-block="AO.SM.B026"]::after{
+ content:"HOLY GOSPEL";position:absolute;left:-17px;top:-22px;font-family:ui-sans-serif,system-ui,sans-serif;font-size:7px;letter-spacing:.22em;color:rgba(175,200,182,.54);white-space:nowrap;pointer-events:none;animation:aoGospelLabelOpen .75s ease-out both
+}
+@keyframes aoGospelRuleOpen{from{opacity:0;transform:scaleY(.08)}to{opacity:1;transform:scaleY(1)}}
+@keyframes aoGospelLabelOpen{from{opacity:0}to{opacity:1}}
+
+/* During the proclamation, orientation remains visible but secondary controls recede. */
+body.ao-gospel-reading .mode-ribbon{opacity:.30}
+body.ao-gospel-reading .section-ribbon{background:rgba(9,14,10,.94);border-color:rgba(170,201,178,.10)}
+body.ao-gospel-reading .section-title{opacity:.70}
+body.ao-gospel-reading .section-side.priest-position{opacity:1;filter:none}
+body.ao-gospel-reading #postureCard{opacity:.72}
+body.ao-gospel-reading #responseCard.declutter-hidden,
+body.ao-gospel-reading #gestureCard.declutter-hidden{display:none!important}
+body.ao-gospel-reading #scholaDock{opacity:0!important;pointer-events:none!important;transform:translateX(-50%) translateY(120%) scale(.99)!important}
+body.ao-gospel-reading .card-counter{opacity:.20}
+
+/* Gospel response breaks the stable reading frame through the existing response surface only. */
+body.ao-gospel-conclusion .mode-ribbon{opacity:.46}
+body.ao-gospel-conclusion #responseCard{opacity:1!important;filter:none!important}
+body.ao-gospel-kiss #sectionAction{opacity:1!important;filter:none!important}
+
+/* Homily is release, not another devotional reader state. */
+body.ao-homily-focus .mode-ribbon{opacity:.55}
+body.ao-homily-focus .section-ribbon{background:rgba(12,16,13,.90)}
+body.ao-homily-focus .rail{opacity:.38}
+body.ao-homily-focus #postureCard{opacity:.72}
+body.ao-homily-focus .mass-card.is-active{background:radial-gradient(ellipse at 50% 34%,rgba(255,255,255,.018),transparent 58%)}
+
+@media(max-width:760px){
+ body.ao-gospel-announcement .mass-block[data-block="AO.SM.B025"]::before,
+ body.ao-gospel-reading .mass-block[data-block="AO.SM.B026"]::before{left:-9px}
+ body.ao-gospel-reading .mass-block[data-block="AO.SM.B026"]::after{left:-8px;top:-18px;font-size:6px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.ao-gospel-move #priestPositionIcon,
+ body.ao-gospel-announcement .mass-block[data-block="AO.SM.B025"]::before,
+ body.ao-gospel-reading .mass-block[data-block="AO.SM.B026"]::before,
+ body.ao-gospel-reading .mass-block[data-block="AO.SM.B026"]::after{animation:none!important}
+}
+</style>
+
+
+<!-- AO Ultimate v2.1 · selected salience modules from the parallel v1.42 line -->
+<style id="ao-v133-communion-salience">
+
+/* v1.33 — COMMUNION RECOLLECTION / PROCESSIONAL SALIENCE
+   No new information surface. Breast strikes = L2 transient cue;
+   preparation/distribution = quieter ambient states; ablutions = gentle release.
+*/
+body.communion-focus #reader{transition:box-shadow .48s ease,filter .38s ease}
+body.communion-focus .mode-ribbon{transition:opacity .36s ease}
+body.communion-focus #voiceCard{transition:opacity .36s ease}
+body.communion-focus #sectionAction{transition:opacity .32s ease,transform .32s ease}
+
+/* Private preparation: the interface settles instead of printing another
+   'Sacred silence' instruction. Orientation remains in the top ribbon. */
+body.communion-recollection .mode-ribbon{opacity:.76}
+body.communion-recollection #voiceCard{opacity:.40}
+body.communion-recollection #reader{box-shadow:inset 0 0 150px rgba(3,7,5,.18),inset 0 0 48px rgba(169,187,174,.026)}
+body.communion-recollection #reader::after{content:"";position:absolute;inset:0;z-index:8;pointer-events:none;background:radial-gradient(ellipse at 50% 44%,transparent 0,transparent 48%,rgba(5,9,6,.07) 78%,rgba(5,9,6,.14) 100%);opacity:.76}
+
+/* Priest Communion remains visible but untheatrical. */
+body.communion-priest #reader{box-shadow:inset 0 0 132px rgba(4,8,6,.14),inset 0 0 44px rgba(177,193,181,.022)}
+body.communion-priest .mode-ribbon{opacity:.82}
+body.communion-priest #voiceCard{opacity:.48}
+body.communion-priest #sectionAction{opacity:.92}
+
+/* Public Ecce Agnus / Domine non sum dignus restores clarity around the
+   actual response while retaining the quieter Communion palette. */
+body.communion-preparation #reader{box-shadow:inset 0 0 105px rgba(5,10,7,.10)}
+body.communion-preparation .mode-ribbon{opacity:.88}
+
+/* Distribution: calm, processional, no fake 'your turn' animation. The Schola
+   remains fully legible because it is a genuine concurrent public clock. */
+body.communion-procession .mode-ribbon{opacity:.78}
+body.communion-procession #voiceCard{opacity:.38}
+body.communion-procession #reader{box-shadow:inset 0 0 160px rgba(3,7,5,.17),inset 0 0 58px rgba(152,177,158,.025)}
+body.communion-procession #reader::after{content:"";position:absolute;inset:0;z-index:8;pointer-events:none;background:linear-gradient(to bottom,rgba(5,9,6,.07),transparent 20%,transparent 80%,rgba(5,9,6,.08));opacity:.68}
+body.communion-procession #sectionAction{opacity:.88}
+body.communion-procession .schola-dock{filter:none!important;opacity:1!important}
+
+/* Ablutions / post-Communion recollection release the emphasis gradually. */
+body.communion-after .mode-ribbon{opacity:.84}
+body.communion-after #voiceCard{opacity:.50}
+body.communion-after #reader{box-shadow:inset 0 0 115px rgba(4,8,6,.105)}
+
+/* Three breast strikes: brief L2 presence, not a counter or extra label. */
+#gestureCard.salience-breast.salience-l2{transform:scale(1.10);border-color:rgba(205,218,208,.34)!important;background:rgba(31,41,34,.97)!important;box-shadow:0 9px 27px rgba(0,0,0,.20),0 0 0 1px rgba(202,217,205,.10),0 0 28px rgba(205,220,208,.12)!important}
+#gestureCard.salience-breast.salience-replay .ico{animation:aoBreastStrikeSalience .74s cubic-bezier(.20,.72,.22,1) both}
+@keyframes aoBreastStrikeSalience{0%{transform:scale(.98);opacity:.82}28%{transform:scale(1.14);opacity:1}52%{transform:scale(1.035);opacity:1}76%{transform:scale(1.10);opacity:1}100%{transform:scale(1.025);opacity:1}}
+.flow-unit.communion-salient-text{position:relative;z-index:9;opacity:1!important;color:#f7f8f3!important;transform:translateX(4px) scale(1.008)!important;text-shadow:0 0 17px rgba(214,225,216,.14)!important;transition:opacity .18s ease,transform .28s ease,color .18s ease,text-shadow .24s ease!important}
+.flow-unit.communion-salient-text::before{content:"";position:absolute;left:-13px;top:.28em;bottom:.28em;width:2px;border-radius:99px;background:currentColor;opacity:.20;pointer-events:none;animation:aoCommunionCueLine .72s ease-out both}
+@keyframes aoCommunionCueLine{0%{opacity:0;transform:scaleY(.30)}38%{opacity:.31;transform:scaleY(1)}100%{opacity:.17;transform:scaleY(.92)}}
+#scholaStreamLine.communion-salient-schola{text-shadow:0 0 17px rgba(214,225,216,.15);filter:brightness(1.07)}
+#scholaStreamLine.communion-salient-schola.salience-replay{animation:aoCommunionScholaCue .70s ease-out both}
+@keyframes aoCommunionScholaCue{0%{opacity:.70;filter:brightness(.98)}34%{opacity:1;filter:brightness(1.12)}100%{opacity:1;filter:brightness(1.05)}}
+body.communion-breast-active #reader{box-shadow:inset 0 0 118px rgba(92,121,100,.045)}
+
+@media(max-width:760px){
+  body.communion-recollection .mode-ribbon,body.communion-procession .mode-ribbon{opacity:.82}
+  #gestureCard.salience-breast.salience-l2{transform:scale(1.07)}
+  .flow-unit.communion-salient-text{transform:translateX(3px) scale(1.005)!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #gestureCard.salience-breast.salience-replay .ico,#scholaStreamLine.communion-salient-schola.salience-replay,.flow-unit.communion-salient-text::before{animation:none!important}
+  #gestureCard.salience-breast.salience-l2{transform:none}
+  .flow-unit.communion-salient-text{transform:translateX(2px)!important}
+}
+
+</style>
+<style id="ao-v134-pater-fraction-pax">
+
+/* v1.34 — PATER NOSTER → FRACTION → PAX DOMINI → COMMINGLING
+   Presentation only. One fact / one surface remains authoritative:
+   centre = public words or recollection; action ribbon = visible priest action;
+   left = faithful posture/response; right = audibility. */
+body.rite-transition #reader,
+body.rite-transition .mode-ribbon,
+body.rite-transition #voiceCard,
+body.rite-transition #sectionAction{transition:opacity .30s ease,transform .30s ease,box-shadow .42s ease,filter .32s ease}
+
+/* Public Pater: clean, stable, no theatrical animation. */
+body.rite-pater #reader{box-shadow:inset 0 0 70px rgba(126,153,134,.025)}
+body.rite-pater #voiceCard{opacity:1}
+body.rite-pater .mode-ribbon{opacity:1}
+
+/* Silent embolism: let the visible altar action become the landmark without
+   printing another instruction in the centre. */
+body.rite-embolism .mode-ribbon{opacity:.80}
+body.rite-embolism #voiceCard{opacity:.38}
+body.rite-embolism #reader{box-shadow:inset 0 0 145px rgba(3,7,5,.16),inset 0 0 52px rgba(154,177,160,.022)}
+body.rite-embolism #sectionAction{opacity:.94}
+
+/* Fraction: significant visible action, L2. The existing fraction master owns it. */
+#sectionAction.rite-fraction-action{
+  transform:scale(1.055);border-color:rgba(205,220,208,.28)!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.18),0 0 24px rgba(192,211,197,.08)
+}
+#sectionAction.rite-fraction-action.rite-replay #priestActionIcon .section-icon{animation:aoFractionFocus 1.05s cubic-bezier(.2,.72,.2,1) both}
+@keyframes aoFractionFocus{
+  0%{transform:scale(1);filter:brightness(1)}
+  34%{transform:scale(.94);filter:brightness(1.12)}
+  62%{transform:scale(1.10);filter:brightness(1.17)}
+  100%{transform:scale(1.03);filter:brightness(1.06)}
+}
+
+/* Public reset at Per omnia / Amen. Audibility and response rails already
+   contain the state; we simply release the preceding visual hush. */
+body.rite-public-reset #reader{box-shadow:inset 0 0 62px rgba(134,160,141,.028)}
+body.rite-public-reset .mode-ribbon{opacity:1}
+body.rite-public-reset #voiceCard{opacity:1}
+
+/* Pax Domini: the three crosses are a priest action, not a faithful gesture.
+   Animate only the action icon; the public text remains the centre authority. */
+body.rite-pax #reader{box-shadow:inset 0 0 84px rgba(142,165,149,.035)}
+.flow-unit.rite-pax-text{opacity:1!important;color:#fff!important;text-shadow:0 0 14px rgba(205,220,208,.13)!important}
+#sectionAction.rite-pax-action{transform:scale(1.045);border-color:rgba(205,220,208,.24)!important}
+#sectionAction.rite-pax-action.rite-replay #priestActionIcon .section-icon{animation:aoThreeCrosses 1.22s ease-out both}
+@keyframes aoThreeCrosses{
+  0%{transform:scale(1);filter:brightness(1)}
+  16%{transform:scale(1.12);filter:brightness(1.16)}
+  31%{transform:scale(1.02);filter:brightness(1.04)}
+  46%{transform:scale(1.12);filter:brightness(1.16)}
+  61%{transform:scale(1.02);filter:brightness(1.04)}
+  76%{transform:scale(1.12);filter:brightness(1.16)}
+  100%{transform:scale(1.03);filter:brightness(1.06)}
+}
+
+/* Commingling: return to quiet priest action. The particle moves downward and
+   settles once; no new textual card is introduced. */
+body.rite-commingling .mode-ribbon{opacity:.82}
+body.rite-commingling #voiceCard{opacity:.40}
+body.rite-commingling #reader{box-shadow:inset 0 0 132px rgba(3,7,5,.145)}
+#sectionAction.rite-commingling-action{transform:scale(1.045);border-color:rgba(205,220,208,.22)!important}
+#sectionAction.rite-commingling-action.rite-replay #priestActionIcon .section-icon{animation:aoComminglingSettle 1.18s cubic-bezier(.2,.72,.2,1) both}
+@keyframes aoComminglingSettle{
+  0%{transform:translateY(-2px) scale(1.06);filter:brightness(1.12)}
+  48%{transform:translateY(4px) scale(1.03);filter:brightness(1.08)}
+  72%{transform:translateY(3px) scale(1.03);filter:brightness(1.08)}
+  100%{transform:translateY(0) scale(1.01);filter:brightness(1.03)}
+}
+
+@media(max-width:760px){
+  #sectionAction.rite-fraction-action,#sectionAction.rite-pax-action,#sectionAction.rite-commingling-action{transform:scale(1.025)}
+}
+@media(prefers-reduced-motion:reduce){
+  #sectionAction.rite-fraction-action.rite-replay #priestActionIcon .section-icon,
+  #sectionAction.rite-pax-action.rite-replay #priestActionIcon .section-icon,
+  #sectionAction.rite-commingling-action.rite-replay #priestActionIcon .section-icon{animation:none!important}
+  #sectionAction.rite-fraction-action,#sectionAction.rite-pax-action,#sectionAction.rite-commingling-action{transform:none}
+}
+
+</style>
+<style id="ao-v135-offertory-incensation">
+
+/* v1.35 — Offertory / incensation presentation grammar.
+   No new information surface: Schola owns public chant; centre owns prayer/route detail;
+   action ribbon owns visible priest action; left rail owns faithful posture/gesture. */
+body.offertory-focus #reader,
+body.offertory-focus #voiceCard,
+body.offertory-focus #sectionAction,
+body.offertory-focus #postureCard{transition:opacity .24s ease,transform .24s ease,box-shadow .28s ease,border-color .28s ease}
+
+/* During the Offertory chant the public music remains the primary clock. */
+body.offertory-chant #voiceCard{opacity:.48}
+body.offertory-chant #sectionAction:not(.offertory-action){opacity:.58;transform:scale(.985)}
+
+/* Private altar prayers recede; visible action remains available without becoming another headline. */
+body.offertory-private #voiceCard,
+body.offertory-secret #voiceCard{opacity:.46}
+body.offertory-private #reader{box-shadow:inset 0 0 110px rgba(4,8,5,.09)}
+body.offertory-secret #reader{box-shadow:inset 0 0 132px rgba(4,8,5,.14)}
+body.offertory-secret #sectionAction{opacity:.64}
+
+/* Two actual offerings: one restrained lift, not an elevation-style cinematic. */
+#sectionAction.offertory-offering-action{opacity:1!important}
