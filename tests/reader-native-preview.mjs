@@ -16,6 +16,10 @@ const proper={
   offertory:t("O","Offertory"),secrets:[t("S","Secret")],preface:t("P","Preface"),
   communion:t("Cm","Communion"),postcommunions:[t("Pc","Postcommunion")],
 };
+const eventData=[
+  {id:"MC-INT-020",actor:"PRIEST",title:"Priest recites Introit",contentRef:"proper.introit",sourceMomentRefs:["E08"],voice:{audibility:"LOW_VOICE",speechAudibility:"LOW_VOICE"}},
+  {id:"MC-CRD-025",actor:"PRIEST",title:"Priest reaches Et incarnatus",contentRef:"ordinary.credo",sourceMomentRefs:["E21"],voice:{audibility:"LOW_VOICE",speechAudibility:"LOW_VOICE"}},
+];
 const prepared={
   session:{resolvedMass:{
     schema:"ao-resolved-mass-v2",date:"2026-10-04",form:"MISSA_CANTATA_INCENSE",
@@ -26,7 +30,7 @@ const prepared={
   }},
   readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"},
 };
-const ready=await prepareNativeReaderPreview({prepared,presentationData:data});
+const ready=await prepareNativeReaderPreview({prepared,presentationData:data,eventData});
 assert.equal(ready.model.totalCards,30);
 assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
 assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
@@ -55,6 +59,7 @@ try{
   await prepareNativeReaderPreview({
     prepared:{...prepared,session:{resolvedMass:{...prepared.session.resolvedMass,overlays:["REQUIEM"]}}},
     presentationData:data,
+    eventData,
   });
 }catch(error){blocked=/not yet certified for overlay REQUIEM/.test(String(error.message))}
 assert.equal(blocked,true,"unsupported special graph did not fail closed");
