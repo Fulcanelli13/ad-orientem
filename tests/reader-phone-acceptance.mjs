@@ -107,8 +107,11 @@ try{
 
   const card=page.locator(".ao-prayer-card");
   await card.evaluate(el=>{
-    const max=Math.max(0,el.scrollHeight-el.clientHeight);
-    el.scrollTop=Math.max(9,max-16);
+    const target=el.querySelector('[data-cue-id="AO.SM.C0173"]');
+    const cr=el.getBoundingClientRect();
+    const tr=target.getBoundingClientRect();
+    const absoluteCenter=(tr.top-cr.top+el.scrollTop)+(tr.height/2);
+    el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.46);
   });
   await page.waitForTimeout(250);
   const wordsFocus=await page.evaluate(()=>{
