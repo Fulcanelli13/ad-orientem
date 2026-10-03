@@ -4,7 +4,7 @@
 
 export const V183_PRE_GOSPEL_LIVE_CONTRACT=Object.freeze({
   version:"v1.83-recovered-pre-gospel-v1",
-  status:"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_G6",
+  status:"RECOVERED_CONTRACT_LOCKED__SOURCE_FIRST_LIVE_INTEGRATED",
   gradual:Object.freeze({
     blockId:"AO.SM.B021",
     lane:"MAIN_READER",
@@ -22,7 +22,7 @@ export const V183_PRE_GOSPEL_LIVE_CONTRACT=Object.freeze({
     ownership:"MUNDA_COR_MEUM_START",
   }),
   order:Object.freeze(["AO.SM.B021","AO.SM.B022","AO.SM.B023"]),
-  nativeLiveReleaseRequires:"G6_48_CARD_MAP",
+  nativeLiveReleaseRequires:"SOURCE_FIRST_LIVE_STRUCTURE",
 });
 
 export function assertV183PreGospelLiveContract(contract=V183_PRE_GOSPEL_LIVE_CONTRACT){
@@ -36,8 +36,8 @@ export function assertV183PreGospelLiveContract(contract=V183_PRE_GOSPEL_LIVE_CO
   if(JSON.stringify(contract?.order)!==JSON.stringify(["AO.SM.B021","AO.SM.B022","AO.SM.B023"])){
     throw new Error("v1.83 pre-Gospel ordering changed");
   }
-  if(contract?.nativeLiveReleaseRequires!=="G6_48_CARD_MAP"){
-    throw new Error("Gradual contract bypassed the 48-card LIVE release gate");
+  if(contract?.nativeLiveReleaseRequires!=="SOURCE_FIRST_LIVE_STRUCTURE"){
+    throw new Error("Gradual contract lost source-first LIVE ownership");
   }
   return contract;
 }
