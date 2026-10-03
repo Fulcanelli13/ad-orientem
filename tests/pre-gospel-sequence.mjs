@@ -2,6 +2,9 @@ import assert from "node:assert/strict";
 import {
   compilePreGospelSequenceFromSources,
   assertSourceOrderedPreGospelSequence,
+  preGospelManifestFields,
+  assertPreGospelSourceOrderProof,
+  withCompiledPreGospelSequence,
 } from "../src/mass/pre-gospel-sequence.js";
 
 const source=(order,ids=order)=>({
@@ -36,6 +39,12 @@ assert.deepEqual(compiled.sequence.map(x=>x.sourceOrderIndex),[0,1,2,3,4]);
 assert.ok(compiled.sequence.every(x=>x.orderAuthority==="SOURCE_ORDER"));
 assert.equal(compiled.sequence[0].sourceRef,"Tempora/Quad5-6:OratioL2");
 assertSourceOrderedPreGospelSequence(compiled);
+const manifestFields=preGospelManifestFields(compiled);
+assert.deepEqual(manifestFields.preGospelSequence.map(x=>x.sourceSectionId),mismatchedSuffixOrder);
+assertPreGospelSourceOrderProof(
+  manifestFields.preGospelSequence,
+  manifestFields.preGospelSequenceProvenance
+);
 
 // Ember-Saturday-shaped fixture: preserve all nodes, including Tract/Alleluia,
 // exactly in the order supplied by the source parser.
@@ -91,5 +100,25 @@ assert.throws(()=>compilePreGospelSequenceFromSources({
   sources:{la:{order:["Introitus","Lectio"],map:{Introitus:["x"],Lectio:["y"]}}},
   requireSequence:true,
 }),/required but no ordered extended-reading sections/);
+
+const attached=withCompiledPreGospelSequence({
+  schema:"ao-proper-manifest-v2",
+  requirements:{crossParity:true},
+  crossParityStatus:"PASS",
+  orations:{collectSet:[],secretSet:[],postcommunionSet:[]},
+  canonPackage:{},
+},{
+  sourcePath:"Tempora/Quad5-6",
+  sources:{la:source(mismatchedSuffixOrder),en:source(mismatchedSuffixOrder)},
+});
+assert.equal(attached.requirements.preGospelSourceOrder,true);
+assert.deepEqual(attached.preGospelSequenceProvenance.sourceOrder,mismatchedSuffixOrder);
+
+const reordered=structuredClone(attached);
+reordered.preGospelSequence.reverse();
+assert.throws(()=>assertPreGospelSourceOrderProof(
+  reordered.preGospelSequence,
+  reordered.preGospelSequenceProvenance
+),/does not preserve source order|sourceOrderIndex mismatch/);
 
 console.log("PRE_GOSPEL_SEQUENCE compiler: PASS — exact source order preserved; suffix pairing rejected.");
