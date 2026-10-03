@@ -7,6 +7,7 @@ import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPreview } from "./reader-gate.js";
 import { runReaderShadowAudit } from "./reader-shadow.js";
 import { mountReaderPreview } from "./reader-preview.js";
+import { mountNativeReaderPreview } from "./reader-native-preview.js";
 
 export const VERSION = "r17-browser-entry-v1";
 const ACTIVE_KEY = "ao-r17-active-mass-v1";
@@ -96,6 +97,30 @@ function persistPrepared(prepared) {
   document.documentElement.dataset.aoMassEngine = "r17-validated-legacy-ui";
 }
 
+export async function mountR17Preview({
+  doc,
+  prepared,
+  nativeMount=mountNativeReaderPreview,
+  mirrorMount=mountReaderPreview,
+}={}) {
+  try {
+    const preview=await Promise.resolve(nativeMount({doc,prepared}));
+    return Object.freeze({
+      preview,
+      uiOwner:"R17_NATIVE_CARDS_OVER_LEGACY_STATE",
+      fallbackReason:null,
+    });
+  } catch (error) {
+    const fallbackReason=String(error?.message ?? error ?? "Native reader preview unavailable");
+    const preview=mirrorMount({doc,prepared});
+    return Object.freeze({
+      preview,
+      uiOwner:"R17_MIRROR_FALLBACK",
+      fallbackReason,
+    });
+  }
+}
+
 async function delegateLegacyRenderer(prepared) {
   persistPrepared(prepared);
   const readerUiMode = readBrowserReaderUiMode(globalThis);
@@ -108,8 +133,9 @@ async function delegateLegacyRenderer(prepared) {
   const shadowAudit = readerModeRunsShadowAudit(readerUiMode)
     ? runReaderShadowAudit({ doc: document, prepared })
     : null;
+  let previewState=null;
   if (readerModeMountsPreview(readerUiMode)) {
-    mountReaderPreview({ doc: document, prepared });
+    previewState=await mountR17Preview({doc:document,prepared});
   }
   globalThis.AO_R17_MASS_RUNTIME = Object.freeze({
     version: VERSION,
@@ -117,7 +143,8 @@ async function delegateLegacyRenderer(prepared) {
     legacyActive,
     readerUiMode,
     shadowAudit,
-    uiOwner: readerModeMountsPreview(readerUiMode) ? "R17_PREVIEW_OVER_LEGACY" : "LEGACY_DOM_TEMPORARY",
+    previewFallbackReason: previewState?.fallbackReason ?? null,
+    uiOwner: previewState?.uiOwner ?? "LEGACY_DOM_TEMPORARY",
     canonicalOwner: "R17_SESSION_ENGINE",
   });
 }
@@ -208,7 +235,9 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       active: globalThis.AO_R17_ACTIVE_MASS ?? null,
       readerUiMode: readBrowserReaderUiMode(globalThis),
       shadow: globalThis.AO_R17_READER_SHADOW ?? null,
-      previewMounted: Boolean(globalThis.AO_R17_READER_PREVIEW?.root?.isConnected),
+      previewMounted: Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected || globalThis.AO_R17_READER_PREVIEW?.root?.isConnected),
+      previewOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
+      previewFallbackReason: globalThis.AO_R17_MASS_RUNTIME?.previewFallbackReason ?? null,
     }),
   });
 
