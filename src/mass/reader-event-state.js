@@ -11,6 +11,7 @@ export const READER_EVENT_FILES=Object.freeze([
 
 const RESPONSE_ACTORS=new Set(["LITURGICAL_RESPONDERS","SERVERS","FAITHFUL"]);
 const INCARNATUS_EVENTS=new Set(["MC-CRD-025","MC-CRD-045"]);
+const UNADJUDICATED_FAITHFUL_GESTURE_PHASES=new Set(["GLORIA","CREDO"]);
 
 function eventUrl(file,baseUrl){
   return new URL("../../data/mass/"+file,baseUrl);
@@ -109,6 +110,12 @@ export function projectNativeEventChannels(event){
     });
   }
 
+  const gestureOwnership = gesture
+    ? "R17_NATIVE"
+    : UNADJUDICATED_FAITHFUL_GESTURE_PHASES.has(String(event.phase??"").toUpperCase())
+      ? "R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION"
+      : "LEGACY_FALLBACK";
+
   return Object.freeze({
     canonicalEventId:event.id,
     priestVoice,
@@ -120,7 +127,7 @@ export function projectNativeEventChannels(event){
     ownership:Object.freeze({
       priestVoice:priestVoice ? "R17_NATIVE" : "LEGACY_FALLBACK",
       response:response ? "R17_NATIVE" : "LEGACY_FALLBACK",
-      gesture:gesture ? "R17_NATIVE" : "LEGACY_FALLBACK",
+      gesture:gestureOwnership,
       posture:"LEGACY_PENDING_SOURCE_EXTRACTION",
       priestPosition:"LEGACY_PENDING_SOURCE_EXTRACTION",
     }),
