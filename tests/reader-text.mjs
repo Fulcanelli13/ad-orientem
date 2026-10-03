@@ -88,16 +88,22 @@ const epistleCard=buildReaderSectionCard({
   section:sections.sectionById("AO.CARD.005"),
   properSlots,
 });
-assert.ok(epistleCard.paragraphs.some(p=>p.id==="AO.SM.C0076" && /Thanks be to God/.test(p.primary)),
-  "fixed Deo gratias follow-up disappeared behind Proper replacement");
+assert.ok(epistleCard.paragraphs.some(p=>
+  p.id==="AO.SM.C0076" &&
+  /Deo grátias/.test(p.primary) &&
+  /Thanks be to God/.test(p.secondary??"")
+), "fixed Deo gratias follow-up disappeared behind Proper replacement");
 
 const gospelCard=buildReaderSectionCard({
   corpus:sung,
   section:sections.sectionById("AO.CARD.007"),
   properSlots,
 });
-assert.ok(gospelCard.paragraphs.some(p=>p.id==="AO.SM.C0087" && /Praise be to Thee, O Christ/.test(p.primary)),
-  "fixed Laus tibi follow-up disappeared behind Proper replacement");
+assert.ok(gospelCard.paragraphs.some(p=>
+  p.id==="AO.SM.C0087" &&
+  /Laus tibi, Christe/.test(p.primary) &&
+  /Praise be to Thee, O Christ/.test(p.secondary??"")
+), "fixed Laus tibi follow-up disappeared behind Proper replacement");
 assert.ok(gospelCard.paragraphs.some(p=>p.id==="AO.SM.C0088" && /sins be blotted out/.test(p.primary)),
   "priest-private Per evangelica dicta disappeared behind Proper replacement");
 assert.equal(gospelCard.paragraphs.filter(p=>/ENGLISH GOSPEL/.test(p.primary)).length,1,
