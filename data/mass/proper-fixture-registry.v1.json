@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "FIXTURE_MANIFEST_SCHEMA_ONLY",
   "note": "Expected structural manifests only. No unsourced liturgical text is embedded.",
   "fixtures": [
@@ -8,6 +8,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": false,
         "crossParity": true
       }
@@ -17,6 +18,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": false,
         "crossParity": true
       }
@@ -26,6 +28,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": false,
         "crossParity": true
       }
@@ -35,6 +38,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": true,
         "crossParity": true
       }
@@ -44,6 +48,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": true,
         "crossParity": true
       }
@@ -53,6 +58,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": true,
         "crossParity": true
       }
@@ -62,6 +68,7 @@
       "requirements": {
         "communicantes": true,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": false,
         "crossParity": true
       }
@@ -71,6 +78,17 @@
       "requirements": {
         "communicantes": true,
         "hancIgitur": false,
+        "quiPridie": false,
+        "interlectionSequence": false,
+        "crossParity": true
+      }
+    },
+    {
+      "id": "holy_thursday",
+      "requirements": {
+        "communicantes": true,
+        "hancIgitur": true,
+        "quiPridie": true,
         "interlectionSequence": false,
         "crossParity": true
       }
@@ -80,6 +98,7 @@
       "requirements": {
         "communicantes": true,
         "hancIgitur": true,
+        "quiPridie": false,
         "interlectionSequence": true,
         "crossParity": true
       }
@@ -89,6 +108,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": false,
         "crossParity": true
       }
@@ -98,6 +118,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": false,
         "crossParity": true
       }
@@ -107,6 +128,7 @@
       "requirements": {
         "communicantes": false,
         "hancIgitur": false,
+        "quiPridie": false,
         "interlectionSequence": false,
         "crossParity": true
       }
