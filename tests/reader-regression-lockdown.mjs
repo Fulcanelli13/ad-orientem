@@ -47,7 +47,6 @@ const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "G6_48_CARD_MAP",
   "GRADUAL_LIVE_ARCHITECTURE",
-  "ICON_ASSET_INTEGRATION",
   "FORM_STATE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
@@ -56,6 +55,10 @@ for(const id of [
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
   "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
+
+const icons=release.protectedInvariants.find(x=>x.id==="ICON_ASSET_BANK_NATIVE");
+assert.equal(icons?.status,"CERTIFIED_HOST_BANK_BRIDGE","icon blocker disappeared without native bank certification");
+assert.equal(icons?.failClosedOnMissingAssets,true,"icon bank stopped failing closed");
 
 const schola=release.protectedInvariants.find(x=>x.id==="SCHOLA_NATIVE_OWNERSHIP");
 assert.equal(schola?.status,"CERTIFIED_MISSA_CANTATA","Schola blocker disappeared without native ownership certification");
@@ -98,6 +101,10 @@ assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
 assert.doesNotMatch(nativeSource,/#scholaDock|#scholaStreamLine/,"native reader reintroduced legacy Schola DOM donor");
+assert.match(nativeSource,/iconKeysForReaderState/,"native reader lost approved icon-key projection");
+const browserEntrySource=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
+assert.match(browserEntrySource,/createHostIconResolver/,"browser entry lost host icon resolver");
+assert.match(browserEntrySource,/R17_ICON_BANK_INCOMPLETE/,"browser entry stopped failing closed on incomplete icon bank");
 
 const cueSource=readFileSync(new URL("../src/mass/reader-cue-state.js",import.meta.url),"utf8");
 assert.match(cueSource,/V183_GESTURE_SUPPRESS/);
