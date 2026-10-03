@@ -47,6 +47,21 @@ if (!deferred.some((event) => event.id === "MC-SAN-050") || deferred.some((event
   throw new Error("Deferred Benedictus branch is wrong");
 }
 
+const paxSuppressed=buildObjectiveTraversal(events,{
+  ...profile.maximalGregorianContext,
+  ordinaryPeacePrayerAllowed:false,
+  formalSolemnPaxAllowed:false,
+});
+if (paxSuppressed.some((event)=>event.id==="MC-COM-150")) {
+  throw new Error("suppressed Solemn branch retained Domine Iesu Christe qui dixisti");
+}
+if (paxSuppressed.some((event)=>event.id==="MC-COM-160")) {
+  throw new Error("suppressed Solemn branch retained ministerial Pax transmission");
+}
+if (!paxSuppressed.some((event)=>event.id==="MC-COM-100")) {
+  throw new Error("Pax Domini was incorrectly suppressed with the separate peace prayer/Pax transfer");
+}
+
 const communionWarning = union.get("MC-COM-185");
 if (communionWarning.soundEvents?.[0]?.legal_status !== "PRESCRIBED_CONDITIONALLY_IF_FAITHFUL_COMMUNICATE") {
   throw new Error("Solemn Communion-warning bell lost its legal/status contract");
