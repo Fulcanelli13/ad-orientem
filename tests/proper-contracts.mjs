@@ -29,13 +29,15 @@ abbreviated.orations.collectSet[0].conclusionLat="Per Dominum...";
 expect(!validateProperManifestV2(abbreviated).pass,"abbreviated conclusion was accepted");
 
 const holyThursday=structuredClone(ordinary);
-holyThursday.requirements={...holyThursday.requirements,communicantes:true,hancIgitur:true};
+holyThursday.requirements={...holyThursday.requirements,communicantes:true,hancIgitur:true,quiPridie:true};
 expect(!validateProperManifestV2(holyThursday).pass,"missing special Canon inserts did not fail closed");
 holyThursday.canonProperInserts={
   communicantes:{variantId:"TEST-C",textLat:"Resolved Communicantes text",sourceRef:"PRIMARY_FIXTURE"},
   hancIgitur:{variantId:"TEST-H",textLat:"Resolved Hanc igitur text",sourceRef:"PRIMARY_FIXTURE"},
 };
-expect(validateProperManifestV2(holyThursday).pass,"resolved special Canon inserts did not pass");
+expect(!validateProperManifestV2(holyThursday).pass,"Holy Thursday without Qui pridie was accepted");
+holyThursday.canonProperInserts.quiPridie={variantId:"TEST-QP",textLat:"Resolved Qui pridie text",sourceRef:"PRIMARY_FIXTURE"};
+expect(validateProperManifestV2(holyThursday).pass,"resolved three-part Holy Thursday Canon insert set did not pass");
 
 const ember=structuredClone(ordinary);
 ember.requirements={...ember.requirements,interlectionSequence:true};
@@ -67,7 +69,7 @@ try {
 expect(sessionBlocked===false,"valid Proper v2 was blocked by session boundary");
 
 const brokenAtBoundary=structuredClone(holyThursday);
-brokenAtBoundary.canonProperInserts.hancIgitur=null;
+brokenAtBoundary.canonProperInserts.quiPridie=null;
 let brokenBlocked=false;
 try {
   makeResolvedMass({
