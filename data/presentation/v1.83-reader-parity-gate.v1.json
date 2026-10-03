@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "V1_83_READER_PARITY_GATE",
   "reference": {
     "runtimeHead": "v1.83 MERGE GATE",
@@ -20,20 +20,82 @@
     "canonicalMacros": 30,
     "status": "NOT_PARITY_COMPLETE"
   },
-  "knownV181Splits": [
-    "Chalice preparation / Offerimus",
-    "Incensation / Lavabo",
-    "Te igitur / Memento",
-    "Unde et memores / Supra quae",
-    "Libera nos / Pax Domini",
-    "Priest Host Communion / Precious Blood Communion"
-  ],
   "acceptance": [
-    "Recover or reconstruct the authoritative 48-card map without inventing card boundaries.",
+    "Recover v1.81/v1.83 donor bytes or an exact contemporaneous enumeration of all 48 LIVE cards; do not invent IDs or boundaries.",
     "Every v1.83 LIVE card must map to canonical macro/block/cue ownership.",
+    "Prove exactly 48 ordered LIVE cards with complete, non-overlapping coverage.",
     "Host and Chalice consecration/elevation timing must remain separately testable.",
+    "Preserve the v1.83 Gradual repair: B021 Gradual surface, B022 separate Alleluia/Tract Schola content, B023 begins Munda cor meum.",
     "Focus geometry and horizontal navigation must pass on phone widths.",
     "No source correction may silently collapse the frozen 48-card concept."
   ],
-  "blockingReason": "R17 currently projects one native card per canonical macro. This is structurally different from the frozen v1.83 LIVE reader and is therefore not yet a drop-in replacement."
+  "blockingReason": "R17 currently projects one native card per canonical macro. The frozen v1.83 LIVE reader requires 48 ordered semantic cards; 8/10 historical v1.81 decompression splits are semantically recovered, but the exact full C01–C48 enumeration and the remaining Offertory/Canon boundaries are still unrecovered.",
+  "recoveredV181Splits": [
+    {
+      "label": "Chalice preparation / Offerimus tibi",
+      "anchorBlocks": [
+        "AO.SM.B032",
+        "AO.SM.B033"
+      ]
+    },
+    {
+      "label": "Incensation / Lavabo",
+      "anchorBlocks": [
+        "AO.SM.B036",
+        "AO.SM.B037"
+      ]
+    },
+    {
+      "label": "Te igitur / Memento",
+      "anchorBlocks": [
+        "AO.SM.B047",
+        "AO.SM.B048"
+      ]
+    },
+    {
+      "label": "Unde et memores / Supra quae",
+      "anchorBlocks": [
+        "AO.SM.B054",
+        "AO.SM.B055"
+      ]
+    },
+    {
+      "label": "Libera nos / Pax Domini",
+      "anchorBlocks": [
+        "AO.SM.B064",
+        "AO.SM.B066"
+      ]
+    },
+    {
+      "label": "Priest Host Communion / Precious Blood Communion",
+      "anchorBlocks": [
+        "AO.SM.B074",
+        "AO.SM.B076"
+      ]
+    },
+    {
+      "label": "Panem caelestem / Domine, non sum dignus — Priest",
+      "anchorBlocks": [
+        "AO.SM.B072",
+        "AO.SM.B073"
+      ]
+    },
+    {
+      "label": "Placeat tibi / Final Blessing sequence",
+      "anchorBlocks": [
+        "AO.SM.B091",
+        "AO.SM.B092"
+      ]
+    }
+  ],
+  "unresolvedV181SplitAreas": [
+    {
+      "area": "OFFERTORY",
+      "status": "AREA_ONLY_EXACT_BOUNDARY_UNRECOVERED"
+    },
+    {
+      "area": "CANON",
+      "status": "AREA_ONLY_EXACT_BOUNDARY_UNRECOVERED"
+    }
+  ]
 }
