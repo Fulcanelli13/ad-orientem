@@ -229,6 +229,27 @@
         "canonical MC event graph remains immutable"
       ],
       "test": "tests/reader-objective-runtime.mjs"
+    },
+    {
+      "id": "PALM_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_PAYLOAD_RUNTIME_SWITCH_PENDING",
+      "controller": "src/mass/reader-palm.js",
+      "payload": "data/presentation/reader-palm.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#PALM",
+      "sourceAuthority": "Missale Romanum 1962 — Dominica II Passionis seu in Palmis",
+      "primaryWitness": "https://missale.online/proprium/en/tempore/dominica_in_palmis",
+      "processionWitness": "https://laudemus.org/?celebration_id=485&date=2032-03-21&place_id=2",
+      "recoveredGraphRecords": 12,
+      "readerCards": 7,
+      "guarantees": [
+        "Palm rite cards remain outside ordinary Mass identity",
+        "distribution posture is personal recipient state",
+        "pre-procession Gospel carries Gospel-cross cue",
+        "procession posture applies only to participants",
+        "Mass handoff begins at Introit",
+        "Prayers at the Foot are omitted only because Palm rite immediately preceded Mass",
+        "Last Gospel is suppressed in the Palm-procession branch"
+      ]
     }
   ],
   "openBlockers": [
@@ -250,7 +271,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Compiled special-structure projection is certified. Asperges has a source-pinned payload and a green modular browser runtime switch/handoff. Remaining Asperges work is the production native-preview mount; other rites still require native payload/rendering."
+      "detail": "Special-structure plan projection is certified. Asperges has native payload plus modular runtime switching. Palm Sunday now has a source-pinned native payload and corrected Introit/Last-Gospel plan handoff; Palm runtime switching plus remaining rites are still pending."
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
