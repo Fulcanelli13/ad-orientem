@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "status": "SOURCE_AUDIT_OPEN_ISSUES_WITH_RESOLVED_R17_ITEMS",
+  "status": "SOURCE_AUDIT_OPEN_ISSUES_WITH_R17_GUARDS",
   "rule": "This ledger tracks findings that must not be patched into runtime until exact ownership/source reconciliation is pinned. It is not executable liturgical data.",
   "issues": [
     {
@@ -54,8 +54,9 @@
       ],
       "finding": "Gloria/Credo cue duplication or overstrong bow ownership has been reported.",
       "classification": "EVENT_OWNERSHIP",
-      "status": "NEEDS_EVENT_OWNERSHIP_TRACE",
-      "requiredAction": "Separate textual cue ownership from posture/gesture state and identify duplicate canonical/runtime IDs before patching."
+      "status": "R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION",
+      "requiredAction": "Separate textual cue ownership from posture/gesture state and identify duplicate canonical/runtime IDs before patching.",
+      "resolution": "R17 suppresses legacy Gloria/Credo gesture fallback until exact faithful gesture anchors are adjudicated. Certified Incarnatus genuflection remains R17-native."
     },
     {
       "id": "P1-009",
@@ -92,8 +93,17 @@
       ],
       "finding": "Confiteor accent discrepancy reported: orare vs oráre.",
       "classification": "TEXT_ACCENT_PARITY",
-      "status": "NEEDS_BLOCK_CUE_PIN",
-      "requiredAction": "Locate exact canonical block/cue and source witness before patch."
+      "status": "RESOLVED_ON_R17_CANONICAL_OVERLAY",
+      "requiredAction": "Locate exact canonical block/cue and source witness before patch.",
+      "blockIds": [
+        "AO.SM.B007",
+        "AO.SM.B077"
+      ],
+      "cueIds": [
+        "AO.SM.C0023",
+        "AO.SM.C0237"
+      ],
+      "resolution": "Normalized orare → oráre in canonical correction layer and reader corpora; text-only change."
     },
     {
       "id": "SRC-OPEN-008",
@@ -101,6 +111,13 @@
       "classification": "FIXTURE_PROVENANCE",
       "status": "NEEDS_FIXTURE_IDS",
       "requiredAction": "Pin affected fixtures and provenance fields before changing source hierarchy."
+    },
+    {
+      "id": "P2-001",
+      "finding": "Older extended-readings resolver can mispair OratioL[n] and LectioL[n] instead of preserving source order.",
+      "classification": "PRE_GOSPEL_SOURCE_ORDER",
+      "status": "OPEN_COMPILER_BLOCKER",
+      "requiredAction": "Compile PRE_GOSPEL_SEQUENCE from source order with explicit ORATION/LESSON/CHANT nodes and reject index-pairing heuristics."
     }
   ]
 }
