@@ -307,6 +307,7 @@ export async function mountNativeReaderPreview({
   const reader=createReaderDomAdapter({
     root:host,
     iconResolver,
+    allowPresentationModeSwitch:false,
     onPrevious:()=>showCard(ready.model.previousCard(current.sectionId)),
     onNext:()=>showCard(ready.model.nextCard(current.sectionId)),
   });
@@ -391,6 +392,7 @@ export async function mountNativeReaderPreview({
       posture:"R17_ONLY_WHEN_SOURCE_CONDITION_RESOLVES_ELSE_LEGACY",
       priestPosition:"R17_CUE_SOURCE_PERSISTENT_ON_CERTIFIED_MISSA_CANTATA",
       schola:"LEGACY_TEMPORARY",
+      modeSwitch:"LOCKED_UNTIL_V1_83_READER_PARITY",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
