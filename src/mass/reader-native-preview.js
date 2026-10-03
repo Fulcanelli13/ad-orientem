@@ -18,6 +18,7 @@ import { createNativeScholaController } from "./reader-schola.js";
 import { iconKeysForReaderState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
+import { createNativePreludeRuntime } from "./reader-prelude-runtime.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -155,6 +156,10 @@ export async function prepareNativeReaderPreview({
   loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
+  aspergesData=null,
+  palmData=null,
+  ashData=null,
+  aspergesRiteContext=null,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
@@ -163,12 +168,13 @@ export async function prepareNativeReaderPreview({
   }
   const resolvedForm=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
   const needsFormState=resolvedForm==="LOW" || resolvedForm==="SOLEMN";
-  const [data,events,registries,guide,formState]=await Promise.all([
+  const [data,events,registries,guide,formState,prelude]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
     guideData ?? Promise.resolve(loadGuideData(prepared)),
     needsFormState ? (formStateData ?? Promise.resolve(loadFormStateData(prepared))) : null,
+    createNativePreludeRuntime({prepared,aspergesData,palmData,ashData,aspergesRiteContext}),
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -188,7 +194,7 @@ export async function prepareNativeReaderPreview({
   });
   const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
   const transientState=createReaderTransientController({events,prepared});
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState});
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,prelude});
 }
 
 export async function mountNativeReaderPreview({
@@ -204,6 +210,10 @@ export async function mountNativeReaderPreview({
   loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
+  aspergesData=null,
+  palmData=null,
+  ashData=null,
+  aspergesRiteContext=null,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -214,6 +224,7 @@ export async function mountNativeReaderPreview({
   const ready=await prepareNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
+    aspergesData,palmData,ashData,aspergesRiteContext,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -235,6 +246,7 @@ export async function mountNativeReaderPreview({
   root.append(host,close);
 
   let current=ready.model.cardBySequence(1);
+  let inPrelude=Boolean(ready.prelude);
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
@@ -276,6 +288,75 @@ export async function mountNativeReaderPreview({
     lastEventCinemaCue=cueId;
     eventCinematic=next;
     eventCinemaTimer=later(()=>{eventCinematic=null;eventCinemaTimer=null;queue();},next.durationMs??1350);
+  }
+
+
+  function introitOnlyCard(){
+    const card=ready.model.cardBySequence(1);
+    if(!card)return null;
+    const block=card.blocks?.find?.(value=>value.blockId==="AO.SM.B014");
+    if(!block || block.firstParagraphIndex==null || !block.paragraphCount){
+      throw new Error("Native prelude Introit handoff cannot resolve AO.SM.B014");
+    }
+    const paragraphs=card.paragraphs.slice(block.firstParagraphIndex,block.firstParagraphIndex+block.paragraphCount);
+    return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),precedingRiteIntroitOnly:true});
+  }
+
+  function showPrelude(){
+    if(!ready.prelude)return null;
+    const moment=ready.prelude.renderMoment();
+    if(!moment)return null;
+    activeCueId=null;
+    clearEventCinematic({resetCue:true});
+    armPartCinematic(null);
+    transientGuard.begin();
+    reader.renderMoment(moment);
+    root.dataset.r17SpecialRite=ready.prelude.kind;
+    root.dataset.r17SpecialCard=moment.id;
+    root.dataset.r17NativeCue="special-rite";
+    root.dataset.r17NativeEvent="special-rite";
+    root.dataset.r17OwnerGesture="R_RELEASE_PRELUDE";
+    root.dataset.r17OwnerResponse="R_RELEASE_PRELUDE";
+    root.dataset.r17OwnerPriestVoice="R_RELEASE_PRELUDE";
+    root.dataset.r17OwnerPriestPosition="R_RELEASE_PRELUDE";
+    root.dataset.r17OwnerPosture="R_RELEASE_PRELUDE";
+    root.dataset.r17OwnerSchola="R_RELEASE_PRELUDE";
+    root.dataset.r17OwnerPriestAction="R_RELEASE_PRELUDE";
+    root.dataset.r17OwnerSacredMinister="R_RELEASE_PRELUDE";
+    root.dataset.r17OwnerBell="R_RELEASE_PRELUDE_NONE";
+    root.dataset.r17OwnerCinematic="R_RELEASE_PRELUDE_NONE";
+    globalThis.AO_R17_NATIVE_READER_STATE=moment;
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    if(scroll)scroll.scrollTop=0;
+    return moment;
+  }
+
+  function nextReader(){
+    if(inPrelude && ready.prelude){
+      if(ready.prelude.atEnd){
+        inPrelude=false;
+        root.dataset.r17SpecialRite="";
+        root.dataset.r17SpecialCard="";
+        const handoff=ready.prelude.handoff;
+        return showCard(handoff==="INTROIT" ? introitOnlyCard() : ready.model.cardBySequence(1));
+      }
+      ready.prelude.next();
+      return showPrelude();
+    }
+    return showCard(ready.model.nextCard(current.sectionId));
+  }
+
+  function previousReader(){
+    if(inPrelude && ready.prelude){
+      if(!ready.prelude.atStart)ready.prelude.previous();
+      return showPrelude();
+    }
+    if(ready.prelude && current?.sequence===1){
+      inPrelude=true;
+      ready.prelude.goToEnd();
+      return showPrelude();
+    }
+    return showCard(ready.model.previousCard(current.sectionId));
   }
 
   function projectedState(){
@@ -427,12 +508,13 @@ export async function mountNativeReaderPreview({
     root:host,
     iconResolver,
     allowPresentationModeSwitch:false,
-    onPrevious:()=>showCard(ready.model.previousCard(current.sectionId)),
-    onNext:()=>showCard(ready.model.nextCard(current.sectionId)),
+    onPrevious:()=>previousReader(),
+    onNext:()=>nextReader(),
   });
 
   function syncState(){
     scheduled=false;
+    if(inPrelude){showPrelude();return;}
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -485,7 +567,8 @@ export async function mountNativeReaderPreview({
   // Mount only after the model is complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
-  showCard(current);
+  if(inPrelude)showPrelude();
+  else showCard(current);
 
   const readerScroll=host.querySelector?.(".ao-prayer-card");
   if(readerScroll){
@@ -493,6 +576,7 @@ export async function mountNativeReaderPreview({
       container:readerScroll,
       win,
       onChange:(cueId)=>{
+        if(inPrelude)return;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -535,13 +619,14 @@ export async function mountNativeReaderPreview({
       modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__UI_SWITCH_STILL_LOCKED_FOR_PHONE_ACCEPTANCE",
     }),
     showSection:(sectionId)=>{
+      inPrelude=false;
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
       return showCard(card);
     },
-    showSequence:sequence=>showCard(ready.model.cardBySequence(sequence)),
+    showSequence:sequence=>{inPrelude=false;return showCard(ready.model.cardBySequence(sequence))},
     syncState:queue,
     destroy,
-    getCurrentCard:()=>current,
+    getCurrentCard:()=>inPrelude ? ready.prelude?.project?.()?.card??current : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
@@ -552,6 +637,9 @@ export async function mountNativeReaderPreview({
     finishSchola:()=>{const value=ready.scholaState.finish();queue();return value},
     selectScholaTrack:(trackId)=>{const value=ready.scholaState.selectTrack(trackId);queue();return value},
     getTransientTransitionPending:()=>transientGuard.pending,
+    getPreludeState:()=>ready.prelude?.project?.()??null,
+    markActuallySprinkled:()=>{if(!ready.prelude)return null;const value=ready.prelude.markActuallySprinkled();if(inPrelude)showPrelude();return value},
+    setPreludeRecipientState:value=>{if(!ready.prelude)return null;const result=ready.prelude.setRecipientState(value);if(inPrelude)showPrelude();return result},
   });
   globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
   return api;
