@@ -998,3 +998,1306 @@ body.offertory-secret #sectionAction{opacity:.64}
 
 /* Two actual offerings: one restrained lift, not an elevation-style cinematic. */
 #sectionAction.offertory-offering-action{opacity:1!important}
+#sectionAction.offertory-offering-action.offertory-replay #priestActionIcon .section-icon{
+  animation:ao-offertory-offer 1050ms cubic-bezier(.22,.72,.2,1) both;
+  transform-origin:50% 78%;
+}
+@keyframes ao-offertory-offer{
+  0%{transform:translateY(1px) scale(.96);opacity:.72}
+  34%{transform:translateY(-4px) scale(1.075);opacity:1}
+  70%{transform:translateY(-2px) scale(1.035);opacity:1}
+  100%{transform:translateY(0) scale(1);opacity:1}
+}
+
+/* Incensation: stable route state; the active route card is the detailed surface. */
+body.offertory-incense-route #voiceCard{opacity:.40}
+body.offertory-incense-route #sectionAction{opacity:.94}
+body.offertory-incense-route #reader{box-shadow:inset 0 0 126px rgba(42,67,49,.035)}
+.priest-route-unit.offertory-route-active .priest-route-card{
+  border-color:rgba(109,149,117,.34)!important;
+  box-shadow:0 0 0 1px rgba(109,149,117,.055),0 10px 34px rgba(0,0,0,.16);
+}
+.priest-route-unit.offertory-route-active .priest-route-action{color:var(--ink)}
+.priest-route-unit.offertory-route-active .priest-route-pattern{color:var(--warm)}
+#sectionAction.offertory-incense-entry.offertory-replay #priestActionIcon .section-icon{
+  animation:ao-incense-entry 980ms ease-out both;
+}
+@keyframes ao-incense-entry{
+  0%{transform:scale(.94);opacity:.68}
+  46%{transform:scale(1.075);opacity:1}
+  100%{transform:scale(1);opacity:1}
+}
+
+/* People incensation: posture is salient, but no false 'your turn now' animation. */
+body.offertory-people-incense #postureCard{
+  border-color:rgba(109,149,117,.30);
+  box-shadow:0 0 0 1px rgba(109,149,117,.045),0 8px 24px rgba(0,0,0,.13);
+  transform:scale(1.025);
+}
+body.offertory-people-incense #gestureCard{opacity:.95}
+
+/* Lavabo is a quiet settling action. */
+#sectionAction.offertory-lavabo-action.offertory-replay #priestActionIcon .section-icon{
+  animation:ao-lavabo-settle 900ms cubic-bezier(.25,.7,.25,1) both;
+}
+@keyframes ao-lavabo-settle{
+  0%{transform:translateY(-2px) scale(1.035);opacity:.82}
+  48%{transform:translateY(3px) scale(1.06);opacity:1}
+  100%{transform:translateY(0) scale(1);opacity:1}
+}
+
+/* Orate fratres: public address returns; centre words and turn are briefly restored to full clarity. */
+body.offertory-orate #voiceCard{opacity:1}
+#sectionAction.offertory-orate-action.offertory-replay #priestActionIcon .section-icon{
+  animation:ao-orate-turn 860ms cubic-bezier(.22,.72,.2,1) both;
+}
+@keyframes ao-orate-turn{
+  0%{transform:translateX(-2px) scale(.97);opacity:.76}
+  48%{transform:translateX(4px) scale(1.065);opacity:1}
+  100%{transform:translateX(0) scale(1);opacity:1}
+}
+.flow-unit.offertory-public-return{color:var(--ink)!important;text-shadow:0 0 18px rgba(214,202,166,.08)}
+.flow-unit.offertory-public-return.offertory-replay{animation:ao-offertory-public 760ms ease-out both}
+@keyframes ao-offertory-public{
+  0%{filter:brightness(.9);transform:scale(.997)}
+  42%{filter:brightness(1.12);transform:scale(1.006)}
+  100%{filter:brightness(1);transform:scale(1)}
+}
+
+@media(max-width:760px){
+  body.offertory-people-incense #postureCard{transform:scale(1.015)}
+  .priest-route-unit.offertory-route-active .priest-route-card{box-shadow:0 7px 22px rgba(0,0,0,.14)}
+}
+@media(prefers-reduced-motion:reduce){
+  #sectionAction.offertory-offering-action.offertory-replay #priestActionIcon .section-icon,
+  #sectionAction.offertory-incense-entry.offertory-replay #priestActionIcon .section-icon,
+  #sectionAction.offertory-lavabo-action.offertory-replay #priestActionIcon .section-icon,
+  #sectionAction.offertory-orate-action.offertory-replay #priestActionIcon .section-icon,
+  .flow-unit.offertory-public-return.offertory-replay{animation:none!important}
+  body.offertory-people-incense #postureCard{transform:none}
+}
+
+</style>
+<style id="ao-v137-preface-sanctus-canon">
+
+/* v1.37 — Preface → Sanctus → secret Canon entry. Presentation only.
+   Public dialogue remains crisp; Sanctus exposes the real concurrent clocks;
+   Te igitur settles into the secret Canon without adding a new label or overlay. */
+body.preface-arc #reader,
+body.preface-arc .mode-ribbon,
+body.preface-arc #voiceCard,
+body.preface-arc #sectionAction,
+body.preface-arc #scholaDock{
+  transition:opacity .34s ease,box-shadow .46s ease,border-color .34s ease,filter .34s ease,background .34s ease;
+}
+body.preface-dialogue #reader{box-shadow:inset 0 0 66px rgba(147,171,153,.025)}
+body.preface-dialogue #voiceCard{opacity:1}
+body.preface-dialogue .mode-ribbon{opacity:1}
+body.preface-proclamation #reader{box-shadow:inset 0 0 78px rgba(149,173,154,.032)}
+body.preface-proclamation #voiceCard{opacity:1}
+body.preface-proclamation #sectionAction{opacity:.88}
+
+/* Sanctus: Schola is the public clock while the priest track is already quiet. */
+body.sanctus-parallel #voiceCard{opacity:.38}
+body.sanctus-parallel #sectionAction{opacity:.62}
+body.sanctus-parallel #reader{box-shadow:inset 0 0 102px rgba(7,12,8,.075),inset 0 0 34px rgba(178,197,182,.018)}
+body.sanctus-parallel #scholaDock.show{
+  border-color:rgba(139,176,148,.42);
+  box-shadow:0 16px 48px rgba(0,0,0,.38),0 0 0 1px rgba(139,176,148,.055),0 0 28px rgba(139,176,148,.075);
+}
+#scholaStreamLine.sanctus-entry-replay{animation:aoSanctusEntry .88s ease-out both}
+@keyframes aoSanctusEntry{
+  0%{filter:brightness(.94);opacity:.72}
+  38%{filter:brightness(1.14);opacity:1}
+  100%{filter:brightness(1.04);opacity:1}
+}
+.flow-unit.sanctus-entry-text{opacity:1!important;color:#f5f6f2!important;text-shadow:0 0 16px rgba(210,224,213,.12)!important}
+
+/* Te igitur: settle rather than announce another section.
+   Schola remains untouched if Benedictus/Hosanna is genuinely still active. */
+body.canon-entry .mode-ribbon{opacity:.82}
+body.canon-entry #voiceCard{opacity:.32}
+body.canon-entry #sectionAction{opacity:.86}
+body.canon-entry #reader{
+  box-shadow:inset 0 0 168px rgba(3,7,5,.18),inset 0 0 54px rgba(169,188,173,.018);
+}
+body.canon-entry.canon-entry-first #reader{animation:aoCanonEntrySettle .92s ease-out both}
+@keyframes aoCanonEntrySettle{
+  0%{filter:brightness(1);box-shadow:inset 0 0 70px rgba(3,7,5,.04)}
+  55%{filter:brightness(.96);box-shadow:inset 0 0 142px rgba(3,7,5,.15),inset 0 0 40px rgba(169,188,173,.016)}
+  100%{filter:brightness(.975);box-shadow:inset 0 0 168px rgba(3,7,5,.18),inset 0 0 54px rgba(169,188,173,.018)}
+}
+.flow-unit.canon-entry-text{opacity:.94!important;color:#e9ece6!important;text-shadow:none!important}
+body.canon-entry #scholaDock.show{opacity:1;filter:none}
+@media(prefers-reduced-motion:reduce){
+  #scholaStreamLine.sanctus-entry-replay,body.canon-entry.canon-entry-first #reader{animation:none!important}
+}
+
+</style>
+<style id="ao-v138-canon-preconsecration">
+
+/* v1.38 — CANON BEFORE THE CONSECRATION
+   Hierarchy, not spectacle: sustained recollection with only a few priest-action landmarks.
+   L3 remains reserved for the Consecration/elevations built in v1.32. */
+body.canon-pre #reader,
+body.canon-pre .mode-ribbon,
+body.canon-pre #voiceCard,
+body.canon-pre #sectionAction{
+  transition:opacity .34s ease,box-shadow .46s ease,filter .38s ease,transform .30s ease;
+}
+body.canon-pre .mode-ribbon{opacity:.78}
+body.canon-pre #voiceCard{opacity:.30}
+body.canon-pre #reader{
+  box-shadow:inset 0 0 158px rgba(3,7,5,.17),inset 0 0 48px rgba(170,188,174,.018);
+}
+/* v1.41: the Canon hierarchy alone owns the visible Te igitur entry settle. */
+body.canon-pre.canon-entry-first #reader{animation:aoCanonEntrySettle .92s ease-out both}
+body.canon-pre #sectionAction{opacity:.76}
+
+/* Memento: a pause in the visual field, not another notification. */
+body.canon-pre.canon-memento #reader{box-shadow:inset 0 0 176px rgba(2,6,4,.20),inset 0 0 52px rgba(169,187,173,.017)}
+body.canon-pre.canon-memento-pause .mode-ribbon{opacity:.70}
+body.canon-pre.canon-memento-pause #voiceCard{opacity:.22}
+body.canon-pre.canon-memento-pause #sectionAction{opacity:.48}
+body.canon-pre.canon-memento-pause #reader{
+  box-shadow:inset 0 0 202px rgba(2,5,3,.245),inset 0 0 62px rgba(170,188,174,.014);
+}
+
+/* Canon action landmarks. They use the existing top action surface only. */
+#sectionAction.canon-action-landmark{opacity:.94!important;transform-origin:right center}
+#sectionAction.canon-action-landmark #priestActionIcon .section-icon{
+  width:34px;height:34px;filter:drop-shadow(0 0 8px rgba(214,225,216,.10));
+}
+#sectionAction.canon-action-landmark.canon-replay.canon-cross3 #priestActionIcon .section-icon{
+  animation:aoCanonTripleCross 1.02s cubic-bezier(.22,.70,.24,1) both;
+}
+@keyframes aoCanonTripleCross{
+  0%{transform:scale(.98);opacity:.80}
+  20%{transform:scale(1.075);opacity:1}
+  36%{transform:scale(1.015);opacity:.96}
+  52%{transform:scale(1.07);opacity:1}
+  68%{transform:scale(1.015);opacity:.96}
+  84%{transform:scale(1.065);opacity:1}
+  100%{transform:scale(1.02);opacity:1}
+}
+#sectionAction.canon-action-landmark.canon-replay.canon-headbow #priestActionIcon .section-icon{
+  animation:aoCanonHeadBow .74s cubic-bezier(.24,.72,.24,1) both;
+}
+@keyframes aoCanonHeadBow{
+  0%{transform:translateY(0) rotate(0deg);opacity:.86}
+  42%{transform:translateY(3px) rotate(.7deg);opacity:1}
+  100%{transform:translateY(0) rotate(0deg);opacity:1}
+}
+#sectionAction.canon-action-landmark.canon-replay.canon-hands-over #priestActionIcon .section-icon{
+  animation:aoCanonHandsOver .92s cubic-bezier(.20,.72,.22,1) both;
+}
+@keyframes aoCanonHandsOver{
+  0%{transform:translateY(1px) scale(.98);opacity:.82}
+  44%{transform:translateY(-2px) scale(1.065);opacity:1}
+  100%{transform:translateY(0) scale(1.02);opacity:1}
+}
+
+/* Exact text may receive a little clarity, but never the L3 Consecration treatment. */
+.flow-unit.canon-pre-action-text{opacity:1!important;color:#ecefe9!important;text-shadow:0 0 13px rgba(211,224,214,.07)!important}
+.flow-unit.canon-pre-memory-text{opacity:.94!important;color:#e6eae3!important}
+body.canon-pre.canon-quam #reader{box-shadow:inset 0 0 172px rgba(2,6,4,.19),inset 0 0 50px rgba(171,190,175,.018)}
+
+/* The two single crosses following the triple-cross phrase stay L1: visible, not animated. */
+#sectionAction.canon-action-landmark.canon-cross1{opacity:.84!important;transform:scale(.99)}
+
+@media(max-width:760px){
+  body.canon-pre .mode-ribbon{opacity:.82}
+  #sectionAction.canon-action-landmark #priestActionIcon .section-icon{width:30px;height:30px}
+}
+@media(prefers-reduced-motion:reduce){
+  #sectionAction.canon-action-landmark.canon-replay #priestActionIcon .section-icon{animation:none!important}
+  #sectionAction.canon-action-landmark{transform:none!important}
+}
+
+</style>
+<style id="ao-v139-canon-postconsecration">
+
+/* v1.39 — CANON AFTER THE CONSECRATION → PER IPSUM
+   The Canon remains recollected. Repeated crosses are compressed into landmarks;
+   commemorations use stillness; the minor elevation closes the secret Canon without
+   borrowing the stronger L3 grammar of the major elevations. */
+body.canon-post #reader,
+body.canon-post .mode-ribbon,
+body.canon-post #voiceCard,
+body.canon-post #sectionAction{
+  transition:opacity .34s ease,box-shadow .46s ease,filter .38s ease,transform .34s ease;
+}
+body.canon-post .mode-ribbon{opacity:.78}
+body.canon-post #voiceCard{opacity:.29}
+body.canon-post #sectionAction{opacity:.73}
+body.canon-post #reader{
+  box-shadow:inset 0 0 162px rgba(3,7,5,.18),inset 0 0 50px rgba(170,188,174,.017);
+}
+
+/* Unde et memores / Supra quae: prayer dominates; repeated crosses do not. */
+body.canon-post.canon-anamnesis #reader{box-shadow:inset 0 0 166px rgba(3,7,5,.185),inset 0 0 50px rgba(170,188,174,.017)}
+#sectionAction.canon-post-action{transform-origin:right center}
+#sectionAction.canon-post-action #priestActionIcon .section-icon{
+  width:34px;height:34px;filter:drop-shadow(0 0 7px rgba(214,225,216,.08));
+}
+#sectionAction.canon-post-action.canon-post-cross-l1{opacity:.82!important;transform:scale(.99)}
+#sectionAction.canon-post-action.canon-post-cross3.canon-post-replay #priestActionIcon .section-icon{
+  animation:aoCanonPostTripleCross .96s cubic-bezier(.22,.70,.24,1) both;
+}
+@keyframes aoCanonPostTripleCross{
+  0%{transform:scale(.98);opacity:.80}
+  20%{transform:scale(1.065);opacity:1}
+  38%{transform:scale(1.012);opacity:.96}
+  55%{transform:scale(1.06);opacity:1}
+  72%{transform:scale(1.012);opacity:.96}
+  88%{transform:scale(1.055);opacity:1}
+  100%{transform:scale(1.018);opacity:1}
+}
+
+/* Supplices: the profound bow is the visual landmark; later kisses/crosses stay quiet. */
+body.canon-post.canon-supplices #reader{box-shadow:inset 0 0 178px rgba(2,6,4,.205),inset 0 0 54px rgba(170,188,174,.015)}
+#sectionAction.canon-post-action.canon-post-profound.canon-post-replay #priestActionIcon .section-icon{
+  animation:aoCanonPostProfoundBow 1.08s cubic-bezier(.20,.70,.22,1) both;
+}
+@keyframes aoCanonPostProfoundBow{
+  0%{transform:translateY(0) scale(.99);opacity:.82}
+  43%{transform:translateY(4px) scale(1.045);opacity:1}
+  70%{transform:translateY(4px) scale(1.035);opacity:1}
+  100%{transform:translateY(0) scale(1.01);opacity:1}
+}
+
+/* Memento of the Dead: visual pause, not animation. */
+body.canon-post.canon-dead #reader{box-shadow:inset 0 0 188px rgba(2,5,3,.22),inset 0 0 58px rgba(170,188,174,.014)}
+body.canon-post.canon-dead-pause .mode-ribbon{opacity:.68}
+body.canon-post.canon-dead-pause #voiceCard{opacity:.20}
+body.canon-post.canon-dead-pause #sectionAction{opacity:.43}
+body.canon-post.canon-dead-pause #reader{
+  box-shadow:inset 0 0 214px rgba(2,5,3,.265),inset 0 0 66px rgba(170,188,174,.012);
+}
+.flow-unit.canon-post-memory-text{opacity:.94!important;color:#e5e9e2!important}
+
+/* Nobis quoque: the rare audible/breast-strike landmark is briefly allowed forward. */
+body.canon-post.canon-nobis #voiceCard{opacity:.76}
+#sectionAction.canon-post-action.canon-post-breast{opacity:.96!important}
+#sectionAction.canon-post-action.canon-post-breast.canon-post-replay #priestActionIcon .section-icon{
+  animation:aoCanonPostBreast .72s cubic-bezier(.24,.72,.24,1) both;
+}
+@keyframes aoCanonPostBreast{
+  0%{transform:scale(.98);opacity:.82}
+  38%{transform:translateY(2px) scale(1.075);opacity:1}
+  100%{transform:translateY(0) scale(1.015);opacity:1}
+}
+.flow-unit.canon-post-nobis-text{opacity:1!important;color:#edf0ea!important;text-shadow:0 0 13px rgba(211,224,214,.07)!important}
+
+/* Per quem / Per ipsum: keep the many crosses legible but quiet. */
+body.canon-post.canon-peripsum #reader{box-shadow:inset 0 0 172px rgba(2,6,4,.195),inset 0 0 52px rgba(170,188,174,.016)}
+.flow-unit.canon-post-doxology-text{opacity:1!important;color:#edf0ea!important;text-shadow:0 0 15px rgba(211,224,214,.075)!important}
+
+/* Minor elevation: one slow closing landmark, less intense than the major elevations. */
+#sectionAction.canon-post-action.canon-minor-elevation{opacity:1!important}
+#sectionAction.canon-post-action.canon-minor-elevation #priestActionIcon .section-icon{
+  width:36px;height:36px;filter:drop-shadow(0 0 10px rgba(214,225,216,.12));
+}
+#sectionAction.canon-post-action.canon-minor-elevation.canon-post-replay #priestActionIcon .section-icon{
+  animation:aoCanonMinorElevation 1.34s cubic-bezier(.20,.70,.18,1) both;
+}
+@keyframes aoCanonMinorElevation{
+  0%{transform:translateY(2px) scale(.98);opacity:.80}
+  42%{transform:translateY(-5px) scale(1.075);opacity:1}
+  72%{transform:translateY(-5px) scale(1.07);opacity:1}
+  100%{transform:translateY(-1px) scale(1.025);opacity:1}
+}
+
+/* Canon conclusion: the return of the public voice is itself the transition. */
+body.canon-conclusion-public .mode-ribbon{opacity:1}
+body.canon-conclusion-public #voiceCard{opacity:1}
+body.canon-conclusion-public #sectionAction{opacity:.78}
+body.canon-conclusion-public #reader{box-shadow:inset 0 0 78px rgba(149,173,154,.03)}
+.flow-unit.canon-conclusion-text{opacity:1!important;color:#f2f4ef!important}
+
+@media(max-width:760px){
+  #sectionAction.canon-post-action #priestActionIcon .section-icon{width:30px;height:30px}
+  #sectionAction.canon-post-action.canon-minor-elevation #priestActionIcon .section-icon{width:32px;height:32px}
+}
+@media(prefers-reduced-motion:reduce){
+  #sectionAction.canon-post-action.canon-post-replay #priestActionIcon .section-icon{animation:none!important}
+  #sectionAction.canon-post-action{transform:none!important}
+}
+
+</style>
+<style id="ao-v140-conclusion-arc">
+
+/* v1.40 — CONCLUDING RITES → BLESSING → LAST GOSPEL
+   Public dismissal reopens the rite; Placeat recollects it; the blessing is the
+   principal concluding gesture; the Last Gospel becomes a final proclamation.
+   No new informational surface is introduced. */
+body.conclusion-arc #reader,
+body.conclusion-arc .mode-ribbon,
+body.conclusion-arc #voiceCard,
+body.conclusion-arc #sectionAction,
+body.conclusion-arc #gestureCard{
+  transition:opacity .34s ease,box-shadow .46s ease,filter .38s ease,transform .34s ease;
+}
+
+/* Postcommunion and dismissal: public clarity; no "finale" animation. */
+body.conclusion-postcommunion .mode-ribbon,
+body.conclusion-dismissal .mode-ribbon{opacity:1}
+body.conclusion-postcommunion #voiceCard,
+body.conclusion-dismissal #voiceCard{opacity:1}
+body.conclusion-postcommunion #reader,
+body.conclusion-dismissal #reader{
+  box-shadow:inset 0 0 74px rgba(149,173,154,.026);
+}
+.flow-unit.conclusion-public-text{
+  opacity:1!important;color:#f1f3ef!important;
+}
+.flow-unit.conclusion-dismissal-text{
+  opacity:1!important;color:#f3f4f0!important;
+  text-shadow:0 0 12px rgba(211,224,214,.055)!important;
+}
+
+/* Placeat: one quiet recollected pocket after Ite, not another transition card. */
+body.conclusion-placeat .mode-ribbon{opacity:.76}
+body.conclusion-placeat #voiceCard{opacity:.30}
+body.conclusion-placeat #sectionAction{opacity:.55}
+body.conclusion-placeat #reader{
+  box-shadow:inset 0 0 176px rgba(2,6,4,.205),inset 0 0 52px rgba(170,188,174,.014);
+}
+.flow-unit.conclusion-placeat-text{opacity:.94!important;color:#e4e8e1!important}
+
+/* Final blessing: faithful cross is primary; priest's blessing remains a distinct visible fact. */
+body.conclusion-blessing #reader{
+  box-shadow:inset 0 0 126px rgba(4,8,5,.12),inset 0 0 46px rgba(170,188,174,.022);
+}
+.flow-unit.conclusion-blessing-text{
+  opacity:1!important;color:#f4f5f1!important;
+  text-shadow:0 0 18px rgba(218,229,220,.09)!important;
+}
+#gestureCard.conclusion-blessing-gesture{opacity:1!important;transform-origin:center center}
+#gestureCard.conclusion-blessing-gesture.conclusion-replay .rail-symbol,
+#gestureCard.conclusion-blessing-gesture.conclusion-replay .rail-symbol img,
+#gestureCard.conclusion-blessing-gesture.conclusion-replay .rail-symbol .asset-icon{
+  animation:aoConclusionFaithfulCross .92s cubic-bezier(.22,.72,.24,1) both;
+}
+@keyframes aoConclusionFaithfulCross{
+  0%{transform:scale(.96);opacity:.82}
+  30%{transform:scale(1.11);opacity:1}
+  62%{transform:scale(1.055);opacity:1}
+  100%{transform:scale(1.015);opacity:1}
+}
+#sectionAction.conclusion-priest-blessing{opacity:1!important;transform-origin:right center}
+#sectionAction.conclusion-priest-blessing #priestActionIcon .section-icon{
+  width:36px;height:36px;filter:drop-shadow(0 0 10px rgba(214,225,216,.11));
+}
+#sectionAction.conclusion-priest-blessing.conclusion-replay #priestActionIcon .section-icon{
+  animation:aoConclusionPriestBlessing 1.02s cubic-bezier(.20,.70,.22,1) both;
+}
+@keyframes aoConclusionPriestBlessing{
+  0%{transform:translateY(-1px) scale(.98);opacity:.82}
+  35%{transform:translateY(1px) scale(1.075);opacity:1}
+  68%{transform:translateY(1px) scale(1.055);opacity:1}
+  100%{transform:translateY(0) scale(1.015);opacity:1}
+}
+
+/* Last Gospel: final proclamation. The opening gesture is brief; the text then owns the surface. */
+body.conclusion-lastgospel .mode-ribbon{opacity:.88}
+body.conclusion-lastgospel #voiceCard{opacity:.70}
+body.conclusion-lastgospel #sectionAction{opacity:.68}
+body.conclusion-lastgospel #reader{
+  box-shadow:inset 0 0 118px rgba(3,7,5,.105),inset 0 0 42px rgba(170,188,174,.018);
+}
+body.conclusion-lastgospel-reading .mode-ribbon{opacity:.80}
+body.conclusion-lastgospel-reading #voiceCard{opacity:.55}
+body.conclusion-lastgospel-reading #sectionAction{opacity:.50}
+.flow-unit.conclusion-gospel-text{
+  opacity:1!important;color:#eef1eb!important;
+}
+#gestureCard.conclusion-gospel-crosses{opacity:1!important}
+#gestureCard.conclusion-gospel-crosses.conclusion-replay .rail-symbol,
+#gestureCard.conclusion-gospel-crosses.conclusion-replay .rail-symbol img,
+#gestureCard.conclusion-gospel-crosses.conclusion-replay .rail-symbol .asset-icon{
+  animation:aoConclusionGospelCrosses 1.04s cubic-bezier(.22,.72,.24,1) both;
+}
+@keyframes aoConclusionGospelCrosses{
+  0%{transform:scale(.97);opacity:.82}
+  19%{transform:scale(1.085);opacity:1}
+  37%{transform:scale(1.01);opacity:.96}
+  55%{transform:scale(1.08);opacity:1}
+  72%{transform:scale(1.01);opacity:.96}
+  88%{transform:scale(1.075);opacity:1}
+  100%{transform:scale(1.015);opacity:1}
+}
+
+/* Et Verbum caro factum est: the major Last-Gospel landmark. */
+body.conclusion-incarnation .mode-ribbon{opacity:.69}
+body.conclusion-incarnation #voiceCard{opacity:.42}
+body.conclusion-incarnation #sectionAction{opacity:.40}
+body.conclusion-incarnation #reader{
+  box-shadow:inset 0 0 202px rgba(2,5,3,.245),inset 0 0 64px rgba(170,188,174,.014);
+}
+.flow-unit.conclusion-incarnation-text{
+  opacity:1!important;color:#f4f5f1!important;
+  text-shadow:0 0 21px rgba(220,231,222,.12)!important;
+}
+#gestureCard.conclusion-genuflect{opacity:1!important}
+#gestureCard.conclusion-genuflect.conclusion-replay .rail-symbol,
+#gestureCard.conclusion-genuflect.conclusion-replay .rail-symbol img,
+#gestureCard.conclusion-genuflect.conclusion-replay .rail-symbol .asset-icon{
+  animation:aoConclusionGenuflect 1.22s cubic-bezier(.18,.69,.20,1) both;
+}
+@keyframes aoConclusionGenuflect{
+  0%{transform:translateY(0) scale(.98);opacity:.82}
+  42%{transform:translateY(5px) scale(1.10);opacity:1}
+  72%{transform:translateY(5px) scale(1.075);opacity:1}
+  100%{transform:translateY(0) scale(1.018);opacity:1}
+}
+
+/* Rise is intentionally quiet; final Deo gratias settles rather than "celebrates completion". */
+#gestureCard.conclusion-rise{opacity:.82!important}
+body.conclusion-complete .mode-ribbon{opacity:.84}
+body.conclusion-complete #voiceCard{opacity:.65}
+body.conclusion-complete #sectionAction{opacity:.50}
+body.conclusion-complete #reader{
+  box-shadow:inset 0 0 108px rgba(3,7,5,.095);
+}
+.flow-unit.conclusion-final-text{opacity:1!important;color:#edf0ea!important}
+
+@media(max-width:760px){
+  #sectionAction.conclusion-priest-blessing #priestActionIcon .section-icon{width:32px;height:32px}
+}
+@media(prefers-reduced-motion:reduce){
+  #gestureCard.conclusion-blessing-gesture.conclusion-replay .rail-symbol,
+  #gestureCard.conclusion-blessing-gesture.conclusion-replay .rail-symbol img,
+  #gestureCard.conclusion-blessing-gesture.conclusion-replay .rail-symbol .asset-icon,
+  #sectionAction.conclusion-priest-blessing.conclusion-replay #priestActionIcon .section-icon,
+  #gestureCard.conclusion-gospel-crosses.conclusion-replay .rail-symbol,
+  #gestureCard.conclusion-gospel-crosses.conclusion-replay .rail-symbol img,
+  #gestureCard.conclusion-gospel-crosses.conclusion-replay .rail-symbol .asset-icon,
+  #gestureCard.conclusion-genuflect.conclusion-replay .rail-symbol,
+  #gestureCard.conclusion-genuflect.conclusion-replay .rail-symbol img,
+  #gestureCard.conclusion-genuflect.conclusion-replay .rail-symbol .asset-icon{animation:none!important}
+}
+
+</style>
+<style id="ao-v21-static-prayer-policy">
+/* Ultimate policy: semantic salience may frame/brighten text, but prayer text itself never moves. */
+.flow-unit.communion-salient-text,
+.flow-unit.offertory-public-return,
+.flow-unit.sanctus-entry-text,
+.flow-unit.canon-entry-text,
+.flow-unit.canon-pre-action-text,
+.flow-unit.canon-pre-memory-text,
+.flow-unit.canon-post-action-text,
+.flow-unit.canon-post-memory-text,
+.flow-unit.canon-post-nobis-text,
+.flow-unit.canon-post-doxology-text,
+.flow-unit.canon-conclusion-text,
+.flow-unit.conclusion-public-text,
+.flow-unit.conclusion-dismissal-text,
+.flow-unit.conclusion-placeat-text,
+.flow-unit.conclusion-blessing-text,
+.flow-unit.conclusion-gospel-text,
+.flow-unit.conclusion-incarnation-text,
+.flow-unit.conclusion-final-text,
+.flow-unit.rite-pax-text{transform:none!important;animation:none!important;}
+</style>
+
+<style id="ao-v22-text-declutter">
+/* AO.TextDeclutter — one textual owner per fact. Canonical Mass text is untouched. */
+
+/* Internal sequence/provenance belongs to Audit, not ordinary devotional reading. */
+body:not(.qa-mode) .block-head .order,
+body:not(.qa-mode) .block-head .proper,
+body:not(.qa-mode) .card-seq,
+body:not(.qa-mode) .live-stage-span,
+body:not(.qa-mode) .simple-mode-chip{display:none!important}
+
+/* LIVE already has an authoritative current-moment ribbon. Do not repeat the card title below it. */
+body[data-mode="live"] .card-heading{display:none!important}
+
+/* Group boundaries may remain as breathing-space rules, but not repeat the moment title. */
+body[data-mode="live"] .live-stage-divider{margin:22px 0 14px}
+body[data-mode="live"] .live-stage-divider span{display:none!important}
+
+/* Runway geometry is functional; repeated instructions are not. */
+body[data-mode="live"] .card-runway span{display:none!important}
+body[data-mode="live"] .premass-transition-note{display:none!important}
+
+/* The Schola console already states the active chant. The centre stage retains only the clickable prayer title. */
+body[data-mode="live"] .schola-stage-kicker,
+body[data-mode="live"] .schola-stage-hint,
+body[data-mode="live"] .schola-stage-mark{display:none!important}
+body[data-mode="live"] .schola-stage-inner{gap:0}
+
+/* Canonical action/rubric cues remain scroll anchors, but the action ribbon / cinematic owns their text. */
+body[data-mode="live"] .flow-unit.rubric-line{
+  min-height:clamp(28px,4.5vh,44px);margin:5px 0;padding:0;border:0;background:none;
+  color:transparent!important;font-size:0!important;line-height:0!important;opacity:0;pointer-events:none
+}
+/* Asynchronous priest-state markers are implementation anchors, not devotional copy. */
+body[data-mode="live"] .flow-unit.state-unit{
+  min-height:18px;margin:2px 0;padding:0;border:0;background:none;color:transparent!important;
+  font-size:0!important;line-height:0!important;opacity:0;pointer-events:none
+}
+/* Homily needs one instruction, not the section name plus a second explanation. */
+body[data-mode="live"] .flow-unit.pause-unit{
+  font-size:0!important;border:0;background:none;padding:20px 0;margin:18px 0 32px;color:transparent
+}
+body[data-mode="live"] .flow-unit.pause-unit::after{
+  content:"LISTEN";display:block;font:8px/1.2 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.22em;text-transform:uppercase;color:#78847b;text-align:center
+}
+
+/* Offertory route micro-steps remain scroll/cinematic anchors. Exact text is already in the priest ribbon. */
+body[data-mode="live"] .priest-route-card{
+  width:84px!important;margin-inline:auto!important;padding:4px!important;border-color:transparent!important;
+  background:transparent!important;box-shadow:none!important;grid-template-columns:1fr!important;place-items:center!important;gap:0!important
+}
+body[data-mode="live"] .priest-route-kicker,
+body[data-mode="live"] .priest-route-place,
+body[data-mode="live"] .priest-route-action,
+body[data-mode="live"] .priest-route-pattern,
+body[data-mode="live"] .priest-route-note{display:none!important}
+body[data-mode="live"] .priest-route-icon{grid-row:auto!important;width:64px!important;height:72px!important;opacity:.88}
+body[data-mode="live"] .priest-route-icon .section-icon{width:58px!important;height:66px!important}
+body[data-mode="live"] .priest-route-unit.offertory-route-active .priest-route-card{border-color:transparent!important;box-shadow:none!important}
+
+/* Gospel frame supplies the visual grammar; the ribbon already says Holy Gospel. */
+body[data-mode="live"] .mass-block[data-block="AO.SM.B026"]::before{content:none!important}
+
+/* NOW/NEXT is the response state; do not spell RESPOND twice beside the ℟ icon and response itself. */
+body[data-mode="live"] #responseCard.functional-response-next .tag::after{content:none!important}
+
+/* Incipit-like headings that merely repeat the first prayer line are removed in Live.
+   Expandable Schola prayer headings are excluded so their click target remains available. */
+body[data-mode="live"] .block-head.ao-redundant-title:not(.expandable-prayer){display:none!important}
+body.qa-mode .block-head.ao-redundant-title{display:flex!important}
+
+@media(max-width:760px){
+  body[data-mode="live"] .priest-route-card{width:68px!important}
+  body[data-mode="live"] .priest-route-icon{width:54px!important;height:62px!important}
+  body[data-mode="live"] .priest-route-icon .section-icon{width:50px!important;height:58px!important}
+}
+</style>
+
+
+<style id="ao-v23-harmonized-modern-ui">
+/* v2.3 harmonized — MODERN UI CONSOLIDATION
+   Presentation only. Canonical Mass/event data untouched.
+   Contract: centre = rite/text; edges = transient intelligence; chrome recedes while reading. */
+:root{
+  --header-h:76px;
+  --rail:52px;
+  --ui-glass:rgba(13,20,15,.72);
+  --ui-glass-strong:rgba(15,23,17,.93);
+  --ui-line:rgba(233,240,233,.075);
+  --ui-soft:rgba(180,202,185,.62);
+  --ui-ease:cubic-bezier(.22,.72,.22,1);
+}
+body{background:
+  radial-gradient(circle at 50% 18%,rgba(61,83,66,.07),transparent 34%),
+  linear-gradient(180deg,#090e0b 0%,#0d140f 48%,#09100c 100%);
+}
+/* --- shell: two light layers, not a dashboard header --- */
+.top-shell{
+  height:var(--header-h);background:linear-gradient(180deg,rgba(8,13,9,.94) 0%,rgba(8,13,9,.76) 72%,rgba(8,13,9,0) 100%);
+  border:0!important;backdrop-filter:blur(16px) saturate(112%);box-shadow:none!important;overflow:visible;
+}
+.mode-ribbon{height:30px;padding:4px 12px 0;transition:opacity .28s ease,transform .28s var(--ui-ease);}
+.modes{gap:1px;padding:2px;border:1px solid var(--ui-line);border-radius:999px;background:rgba(16,24,18,.62);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.mode-btn{min-width:66px;padding:4px 10px;border-radius:999px;font-size:8px;letter-spacing:.11em;color:#77827a;transition:background .18s ease,color .18s ease,transform .18s ease}
+.mode-btn:hover{color:#b7c0b9}.mode-btn:active{transform:scale(.97)}
+.mode-btn.active{background:rgba(82,111,90,.26);color:#edf1eb;box-shadow:inset 0 0 0 1px rgba(162,190,169,.08)}
+.mode-btn .mode-icon{display:none!important}
+.section-ribbon{
+  min-height:44px;height:44px;padding:3px max(12px,calc((100vw - 1120px)/2));gap:10px;border:0!important;
+  grid-template-columns:minmax(126px,210px) minmax(0,1fr) minmax(0,210px);background:transparent;
+}
+.section-title{font-size:clamp(13px,1.5vw,16px);letter-spacing:.018em;color:#eef1ec;text-shadow:0 1px 20px rgba(0,0,0,.34)}
+.section-moment-icon{opacity:.74}.section-moment-icon .asset-icon{width:24px!important;height:24px!important}
+.section-side{
+  width:max-content;max-width:210px;min-width:0;padding:4px 8px;border:1px solid transparent;border-radius:999px;
+  background:transparent;gap:5px;overflow:hidden;transition:opacity .25s ease,background .25s ease,border-color .25s ease,transform .25s var(--ui-ease);
+}
+.priest-position{justify-self:start}.section-action{justify-self:end;text-align:right}
+.section-label{display:none!important}.section-copy{display:block;min-width:0}.section-value{font-size:8px!important;letter-spacing:.055em!important;text-transform:uppercase;color:#8f9b92!important;white-space:nowrap;max-width:150px}
+.section-icon-wrap{width:22px!important;height:22px!important;display:grid!important;place-items:center;flex:0 0 22px!important;opacity:.66}
+.section-icon,.section-icon-wrap .asset-icon{width:22px!important;height:22px!important;max-width:22px!important;max-height:22px!important}
+.section-action.empty{display:none!important}.section-action:not(.empty){border-color:rgba(216,228,219,.07);background:rgba(20,29,22,.44)}
+.section-action.hot{border-color:rgba(171,197,178,.18);background:rgba(32,46,35,.58)}
+.priest-position.just-changed,.section-action.just-changed{opacity:1!important;background:rgba(31,44,34,.54);border-color:rgba(169,196,176,.14);transform:translateY(-1px)}
+.progress-track{height:1px;background:rgba(255,255,255,.025)}.progress{opacity:.68;box-shadow:0 0 12px rgba(130,172,141,.22)}
+body.chrome-idle .mode-ribbon{opacity:.12;transform:translateY(-5px)}
+body.chrome-idle .priest-position:not(.just-changed){opacity:.28}
+body.reading-motion .mode-ribbon{opacity:.06;transform:translateY(-6px)}
+body.reading-motion .section-side:not(.just-changed):not(.hot){opacity:.18}
+
+/* --- centre: less card, more reading surface --- */
+main#reader{left:calc(var(--rail) + 8px);right:calc(var(--rail) + 8px)}
+.mass-card{padding-top:clamp(28px,4.5vh,48px);padding-left:max(18px,calc((100% - 790px)/2));padding-right:max(18px,calc((100% - 790px)/2));}
+.card-heading{font-size:clamp(19px,2.1vw,26px);border-bottom-color:rgba(255,255,255,.045);margin-bottom:25px;padding-bottom:11px;color:#dde3dc}
+.flow-unit{line-height:1.66;transition:opacity .24s ease,transform .28s var(--ui-ease),color .24s ease,filter .24s ease}
+.flow-unit.near{opacity:.56}.flow-unit.active{transform:translateX(0);text-shadow:0 0 22px rgba(238,244,238,.045)}
+
+/* --- edge intelligence: dormant things do not occupy UI --- */
+.rail{width:44px;gap:9px;top:calc(var(--header-h) + 14px);bottom:22px;overflow:visible}
+.rail.left{left:max(8px,calc((100vw - 1120px)/2))}.rail.right{right:max(8px,calc((100vw - 1120px)/2))}
+.rail-card{
+  position:relative;width:42px;min-height:42px!important;padding:5px!important;border-radius:14px;
+  border:1px solid transparent!important;background:transparent!important;box-shadow:none!important;
+  transition:opacity .22s ease,transform .25s var(--ui-ease),background .22s ease,border-color .22s ease,box-shadow .22s ease,visibility .22s;
+}
+.rail-card .tag{display:none!important}.rail-card .ico{margin:0!important;display:grid;place-items:center;min-height:30px}.rail-card .asset-icon{width:28px!important;height:28px!important;opacity:.84}
+.rail-card .tiny{
+  position:absolute;top:50%;left:49px;transform:translateY(-50%) translateX(-5px);z-index:3;width:max-content;max-width:190px!important;
+  margin:0!important;padding:6px 9px;border:1px solid rgba(227,236,229,.09);border-radius:10px;background:rgba(11,18,13,.94);
+  box-shadow:0 10px 30px rgba(0,0,0,.26);color:#c8d1ca!important;font-size:8px!important;letter-spacing:.045em;line-height:1.25!important;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .2s var(--ui-ease),visibility .18s;
+}
+.rail.right .rail-card .tiny{left:auto;right:49px;transform:translateY(-50%) translateX(5px)}
+.rail-card.off{opacity:0!important;visibility:hidden!important;transform:scale(.76)!important;pointer-events:none!important}
+.rail-card:not(.off){opacity:.62}.rail-card.hot,.rail-card.just-changed{opacity:1!important;transform:scale(1.04);border-color:rgba(190,211,196,.16)!important;background:rgba(21,31,23,.74)!important;box-shadow:0 10px 30px rgba(0,0,0,.20)!important}
+.rail-card.just-changed .tiny,.rail-card.hot .tiny,.rail-card:focus-within .tiny,.rail-card:hover .tiny{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
+#postureCard{opacity:.42!important}#postureCard.just-changed{opacity:1!important}
+#postureCard.just-changed .tiny{display:block!important}
+#voiceCard{opacity:.26!important}#voiceCard.just-changed,#voiceCard.hot{opacity:.88!important}
+#voiceCard .tiny{display:block!important}
+#gestureCard:not(.off),#responseCard:not(.off){background:rgba(28,40,30,.80)!important;border-color:rgba(190,211,196,.15)!important;opacity:1!important}
+#responseCard:not(.off){background:rgba(29,42,51,.82)!important;border-color:rgba(192,216,233,.20)!important}
+{background:rgba(48,42,27,.84)!important;border-color:rgba(220,201,146,.23)!important}
+#scholaRailCard{display:none!important}
+body.chrome-idle #postureCard:not(.just-changed){opacity:.25!important}body.chrome-idle #voiceCard:not(.just-changed):not(.hot){opacity:.12!important}
+
+/* --- Schola: one authoritative live surface, controls on demand --- */
+.schola-dock{
+  width:min(720px,calc(100vw - 120px))!important;padding:10px 13px 9px!important;border-radius:16px!important;
+  background:rgba(13,20,15,.91)!important;border:1px solid rgba(166,197,175,.15)!important;
+  box-shadow:0 20px 70px rgba(0,0,0,.34)!important;backdrop-filter:blur(18px) saturate(110%);
+}
+.schola-title{margin-bottom:2px!important}.schola-title-label{font-size:8px!important;letter-spacing:.13em!important;color:#86a18c!important}.schola-title-icon .asset-icon{width:20px!important;height:20px!important;opacity:.82}
+.schola-stream-line{font-size:clamp(14px,1.7vw,17px)!important;line-height:1.42!important}.schola-stream-kind{display:none!important}.schola-stream-hint{display:none!important}.schola-stream-pause{display:none!important}.schola-dock.stream-paused .schola-stream-pause{display:inline!important;color:#bac8bd}
+.schola-stream-meta{margin-top:5px!important;min-height:8px!important}.schola-stream-progress{height:1px!important;opacity:.58!important}
+.schola-stream-controls{max-width:0;opacity:0;overflow:hidden;transform:translateX(7px);transition:max-width .3s var(--ui-ease),opacity .2s ease,transform .3s var(--ui-ease)}
+.schola-dock:hover .schola-stream-controls,.schola-dock:focus-within .schola-stream-controls,.schola-dock.stream-paused .schola-stream-controls{max-width:280px;opacity:1;transform:none}
+.schola-control{min-height:25px!important;border-radius:999px!important;background:rgba(255,255,255,.025)!important}
+
+/* --- navigation: scroll/swipe primary, controls emerge on intent --- */
+.card-arrow{opacity:0!important;pointer-events:none!important;width:38px;height:38px;border-radius:999px!important;background:rgba(15,23,17,.70)!important;backdrop-filter:blur(12px);transform:scale(.90);transition:opacity .2s ease,transform .24s var(--ui-ease),background .2s ease!important}
+body.nav-awake .card-arrow,.card-arrow:focus-visible{opacity:.34!important;pointer-events:auto!important;transform:scale(1)}
+.card-arrow:hover,.card-arrow:focus-visible{opacity:.9!important;background:rgba(28,40,31,.9)!important}
+.card-arrow.prev{left:calc(var(--rail) + 12px)}.card-arrow.next{right:calc(var(--rail) + 12px)}
+.card-counter{display:none!important}
+.card-runway{opacity:.12}
+
+/* --- development UI stays available in DOM but not in devotional reader --- */
+.status-drawer{display:none!important}
+body.qa-mode .status-drawer{display:block!important}
+
+/* --- cinematic consistency: composition, not pop-up card aesthetics --- */
+.part-cinema{background:radial-gradient(circle at 50% 46%,rgba(33,48,38,.88),rgba(6,10,7,.985) 64%)!important;backdrop-filter:blur(7px)}
+.part-cinema-mark{font-size:18px!important;opacity:.72!important;margin-bottom:15px!important}.part-cinema-title{font-size:clamp(25px,4.5vw,48px)!important;letter-spacing:.07em!important}.part-cinema-sub{opacity:.58}.part-cinema-line{opacity:.58!important}
+
+@media(max-width:760px){
+  :root{--header-h:70px;--rail:45px}
+  .mode-ribbon{height:28px;padding:3px 6px 0}.mode-btn{min-width:58px;padding:4px 7px;font-size:7px}
+  .section-ribbon{height:41px;min-height:41px;padding:2px 5px;grid-template-columns:86px minmax(0,1fr) 86px;gap:3px}
+  .section-title{font-size:11.5px}.section-side{padding:3px 5px;max-width:86px}.section-value{font-size:6.8px!important;max-width:57px}.section-icon-wrap,.section-icon,.section-icon-wrap .asset-icon{width:19px!important;height:19px!important;max-width:19px!important;max-height:19px!important}
+  main#reader{left:46px!important;right:46px!important}.mass-card{padding-left:12px!important;padding-right:12px!important;padding-top:24px!important}
+  .rail{width:38px;top:calc(var(--header-h) + 10px)}.rail.left{left:4px}.rail.right{right:4px}.rail-card{width:37px;min-height:38px!important;padding:4px!important}.rail-card .asset-icon{width:25px!important;height:25px!important}
+  .rail-card .tiny{left:42px;max-width:145px!important;font-size:7px!important}.rail.right .rail-card .tiny{right:42px}
+  .schola-dock{width:calc(100vw - 94px)!important;padding:8px 10px!important;border-radius:14px!important}.schola-stream-line{font-size:14px!important}.schola-stream-controls{max-width:none;opacity:1;transform:none}.schola-stream-controls #scholaSlower,.schola-stream-controls #scholaFaster,.schola-speed-value{display:none!important}
+  .card-arrow{bottom:11px!important;top:auto!important;width:34px;height:34px}.card-arrow.prev{left:49px!important}.card-arrow.next{right:49px!important}
+  body.nav-awake .card-arrow{opacity:.24!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .mode-ribbon,.section-side,.rail-card,.card-arrow,.schola-stream-controls{transition:none!important}
+}
+</style>
+
+<style id="ao-v23-fluid-focus-formation">
+:root{--ao-fluid-focus-ratio:.38;--ao-runway-height:62vh}
+/* A stable reading field: text never translates/scales merely because it is focused. */
+.flow-unit{opacity:.43!important;transform:none!important;filter:none!important;transition:opacity .22s ease,color .22s ease,background-color .22s ease!important}
+.flow-unit.focus-context{opacity:.56!important}
+.flow-unit.near{opacity:.72!important}
+.flow-unit.active{opacity:1!important;transform:none!important;filter:none!important}
+.mass-card .flow-unit[aria-hidden="true"]{opacity:0!important}
+.card-runway,.simple-stage-runway{height:var(--ao-runway-height)!important;min-height:280px!important}
+.card-runway span{display:none!important}
+.section-title{cursor:pointer;outline:none;border-radius:10px;transition:background .16s ease,box-shadow .16s ease}
+.section-title:hover,.section-title:focus-visible{background:rgba(255,255,255,.025);box-shadow:inset 0 0 0 1px rgba(202,218,207,.10)}
+.section-title::after{content:'CONTEXT';font:600 6px/1 system-ui,sans-serif;letter-spacing:.14em;color:rgba(182,204,188,.0);position:absolute;bottom:3px;left:50%;transform:translateX(-50%);transition:color .16s ease}
+.section-title:hover::after,.section-title:focus-visible::after{color:rgba(182,204,188,.42)}
+
+.formation-sheet{position:fixed;inset:0;z-index:1600;display:grid;place-items:center;padding:clamp(14px,4vw,42px);background:rgba(4,7,5,.70);backdrop-filter:blur(12px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,visibility .18s ease}
+.formation-sheet.open{opacity:1;visibility:visible;pointer-events:auto}
+.formation-panel{width:min(720px,100%);max-height:min(84vh,760px);overflow:auto;border:1px solid rgba(183,205,190,.16);border-radius:19px;background:linear-gradient(180deg,rgba(18,27,21,.985),rgba(9,14,11,.985));box-shadow:0 28px 100px rgba(0,0,0,.54);padding:clamp(20px,4vw,36px);color:#e8eee9;overscroll-behavior:contain}
+.formation-head{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;margin-bottom:22px}
+.formation-kicker{font:600 8px/1.2 system-ui,sans-serif;letter-spacing:.19em;color:#8fa497;text-transform:uppercase;margin-bottom:8px}
+.formation-title{font:600 clamp(21px,3.4vw,32px)/1.14 Cinzel,Georgia,serif;letter-spacing:.035em;color:#f0f3ef}
+.formation-close{width:34px;height:34px;border:1px solid rgba(198,215,202,.13);border-radius:999px;background:rgba(255,255,255,.025);color:#c5d0c8;font:400 20px/1 system-ui,sans-serif;cursor:pointer}
+.formation-close:hover,.formation-close:focus-visible{background:rgba(255,255,255,.06);outline:none;border-color:rgba(198,215,202,.26)}
+.formation-grid{display:grid;gap:18px}
+.formation-item{padding-top:16px;border-top:1px solid rgba(189,207,194,.10)}
+.formation-item:first-child{border-top:0;padding-top:0}
+.formation-label{font:650 8px/1.2 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#92aa99;margin-bottom:7px}
+.formation-copy{font:400 16px/1.58 Garamond,'EB Garamond',Georgia,serif;color:#d8e0da}
+.formation-copy strong{font-weight:600;color:#edf1ee}
+.formation-deeper{border-top:1px solid rgba(189,207,194,.10);padding-top:16px}
+.formation-deeper summary{cursor:pointer;list-style:none;font:650 8px/1.2 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9cb1a2}
+.formation-deeper summary::-webkit-details-marker{display:none}.formation-deeper summary::after{content:' +';opacity:.55}.formation-deeper[open] summary::after{content:' −'}
+.formation-deeper .formation-copy{margin-top:10px;color:#bfcac2;font-size:15px}
+body.formation-open .card-arrow{pointer-events:none!important}
+@media(max-width:760px){.formation-sheet{padding:10px}.formation-panel{max-height:90vh;border-radius:16px;padding:20px}.formation-copy{font-size:15.5px}.section-title::after{display:none}}
+@media(prefers-reduced-motion:reduce){.flow-unit,.formation-sheet,.section-title{transition:none!important}}
+</style>
+
+
+<style id="ao-v24-personal-action-communion">
+/* AO Ultimate v2.4 — PERSONAL ACTION / HOLY COMMUNION
+   Personal state overlays the universal Mass timeline; it never rewrites or pauses it. */
+.personal-action-prompt{
+  position:fixed;z-index:49;left:50%;
+  bottom:calc(56px + var(--schola-reserve));
+  transform:translate(-50%,14px);
+  min-width:min(330px,calc(100vw - 180px));
+  max-width:min(540px,calc(100vw - 150px));
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  padding:9px 14px;border-radius:999px;
+  border:1px solid rgba(142,174,150,.24);
+  background:rgba(13,19,15,.93);
+  color:#dfe6df;box-shadow:0 12px 34px rgba(0,0,0,.28);
+  backdrop-filter:blur(12px);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .22s ease,transform .28s cubic-bezier(.2,.72,.2,1),visibility 0s linear .22s,border-color .2s ease;
+  font:500 9px/1 system-ui,-apple-system,Segoe UI,sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;
+}
+.personal-action-prompt.show{
+  opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0);
+  transition:opacity .22s ease,transform .28s cubic-bezier(.2,.72,.2,1),visibility 0s;
+}
+.personal-action-prompt:hover,.personal-action-prompt:focus-visible{
+  outline:none;border-color:rgba(160,195,168,.46);background:rgba(17,25,19,.97)
+}
+.personal-action-prompt .personal-action-icon{width:20px;height:20px;display:grid;place-items:center;opacity:.88}
+.personal-action-prompt .personal-action-icon .asset-icon{width:20px!important;height:20px!important}
+.personal-action-prompt .personal-action-copy{display:flex;flex-direction:column;gap:3px;text-align:left}
+.personal-action-prompt .personal-action-kicker{font-size:6.7px;color:#829087;letter-spacing:.17em}
+.personal-action-prompt .personal-action-label{font-family:Georgia,"Times New Roman",serif;font-size:12px;letter-spacing:.025em;text-transform:none;color:#eef2ec}
+
+.personal-recollection-layer{
+  position:fixed;z-index:42;
+  top:var(--header-h);bottom:0;left:calc(var(--rail) + 20px);right:calc(var(--rail) + 20px);
+  display:grid;place-items:center;
+  padding:clamp(18px,4vw,52px) clamp(12px,5vw,72px) calc(78px + var(--schola-reserve));
+  background:
+    radial-gradient(ellipse at 50% 42%,rgba(18,29,21,.50),rgba(5,9,6,.79) 60%,rgba(4,7,5,.90) 100%);
+  backdrop-filter:blur(7px);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .34s ease,visibility 0s linear .34s;
+}
+.personal-recollection-layer.open{
+  opacity:1;visibility:visible;pointer-events:auto;
+  transition:opacity .34s ease,visibility 0s;
+}
+.personal-recollection-panel{
+  width:min(650px,88vw);
+  text-align:center;
+  color:#e8ece6;
+  transform:translateY(10px);
+  opacity:.2;
+  transition:transform .52s cubic-bezier(.18,.74,.2,1),opacity .42s ease;
+}
+.personal-recollection-layer.open .personal-recollection-panel{transform:none;opacity:1}
+.personal-recollection-mark{width:44px;height:44px;margin:0 auto 22px;display:grid;place-items:center;opacity:.76}
+.personal-recollection-mark .asset-icon{width:44px!important;height:44px!important}
+.personal-recollection-kicker{
+  font:500 7px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;
+  letter-spacing:.23em;text-transform:uppercase;color:#8da095;margin-bottom:13px
+}
+.personal-recollection-title{
+  margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;
+  font-size:clamp(30px,4.4vw,55px);line-height:1.05;letter-spacing:.018em;color:#f3f4ef
+}
+.personal-recollection-rule{
+  width:min(230px,38vw);height:1px;margin:22px auto;
+  background:linear-gradient(90deg,transparent,rgba(142,174,150,.42),transparent)
+}
+.personal-recollection-copy{
+  max-width:570px;margin:0 auto;
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(15px,1.7vw,19px);line-height:1.55;
+  color:#c9d0ca
+}
+.personal-recollection-instruction{
+  margin-top:18px;font:400 8px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;color:#7f8d83
+}
+.personal-recollection-actions{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:30px}
+.personal-recollection-return{
+  border:1px solid rgba(142,174,150,.25);background:rgba(16,23,18,.64);color:#dce4dc;
+  border-radius:999px;padding:9px 16px;cursor:pointer;
+  font:500 8px/1 system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  transition:border-color .18s ease,background .18s ease
+}
+.personal-recollection-return:hover,.personal-recollection-return:focus-visible{outline:none;border-color:rgba(159,194,167,.46);background:rgba(21,31,23,.84)}
+
+body.personal-recollection-open #reader{filter:brightness(.42) saturate(.76);transition:filter .32s ease}
+body.personal-recollection-open .rail{opacity:.28;transition:opacity .3s ease}
+body.personal-recollection-open .card-arrow,
+body.personal-recollection-open .card-counter{opacity:.08!important;pointer-events:none!important}
+body.personal-recollection-open .top-shell{filter:brightness(.72);transition:filter .3s ease}
+body.personal-recollection-open .schola-dock{z-index:48;opacity:1!important;filter:none!important}
+body.personal-recollection-open .personal-action-prompt{display:none!important}
+
+/* The Schola remains a genuine concurrent public clock; the recollection surface never covers it. */
+body.personal-recollection-open.schola-visible .personal-recollection-layer{
+  padding-bottom:calc(58px + var(--schola-reserve));
+}
+
+/* Attention ownership is state, not another visible ribbon. */
+body[data-attention-owner="PERSONAL_ACTION"] #reader{--ao-personal-action-active:1}
+
+@media(max-width:760px){
+  .personal-action-prompt{
+    min-width:0;width:calc(100vw - 116px);max-width:none;
+    bottom:calc(54px + var(--schola-reserve));padding:8px 11px
+  }
+  .personal-action-prompt .personal-action-label{font-size:11px}
+  .personal-recollection-layer{left:46px;right:46px;padding-left:16px;padding-right:16px}
+  .personal-recollection-mark{width:38px;height:38px;margin-bottom:18px}
+  .personal-recollection-mark .asset-icon{width:38px!important;height:38px!important}
+  .personal-recollection-copy{font-size:15px;line-height:1.5}
+}
+@media(prefers-reduced-motion:reduce){
+  .personal-action-prompt,.personal-recollection-layer,.personal-recollection-panel{transition:none!important}
+}
+</style>
+
+
+<style id="ao-v242-speaker-marker-typography">
+/* v2.4.2 — One typographic system for liturgical speaker markers V./R./M./S. */
+.ao-speaker-marker{
+  display:inline-block;
+  min-width:1.42em;
+  margin-right:.10em;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1em;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  font-variant-caps:normal;
+  letter-spacing:0;
+  line-height:inherit;
+  text-transform:none;
+  color:inherit;
+  vertical-align:baseline;
+}
+.flow-unit.response-latin .ao-speaker-marker,
+.translation .ao-speaker-marker,
+.suppressed-prayer-line .ao-speaker-marker,
+.schola-stage-prayer-line .ao-speaker-marker{color:inherit}
+</style>
+
+<style id="ao-v250-low-mass-contract">
+body[data-mass-form="low"] #scholaDock{display:none!important}
+body[data-mass-form="low"]{--schola-safe:0px}
+body[data-mass-form="low"] .schola-only-stage{display:block!important}
+</style>
+
+<style id="ao-v27-low-mass-reader-experience">
+:root{--ao-leadin-height:260px}
+body[data-mode="live"] .mass-card{padding-top:var(--ao-leadin-height)!important}
+body[data-mode="simple"] .mass-card:not(.simple-guide-stage){padding-top:var(--ao-leadin-height)!important}
+body[data-mode="live"] .flow-unit{opacity:.50!important;white-space:pre-line}
+body[data-mode="live"] .flow-unit.focus-context{opacity:.64!important}
+body[data-mode="live"] .flow-unit.near{opacity:.80!important}
+body[data-mode="live"] .flow-unit.active{opacity:1!important}
+body[data-mode="live"] .rubric-line{opacity:.58!important}
+body[data-mode="live"] .rubric-line.near{opacity:.74!important}
+body[data-mode="live"] .rubric-line.active{opacity:.92!important}
+@media(max-width:760px){body[data-mode="live"] .mass-card{padding-top:var(--ao-leadin-height)!important}}
+</style>
+
+<style id="ao-v174-unified-style">
+:root{--ao-shell-h:110px}
+/* v1.74b: one authoritative mobile shell geometry. */
+.top-shell{position:sticky!important;top:0!important;height:auto!important;min-height:0!important;display:grid!important;grid-template-rows:auto auto 2px!important;overflow:visible!important}
+.mode-ribbon,.section-ribbon{position:static!important;inset:auto!important;transform:none!important;width:auto!important;max-width:none!important}
+.mode-ribbon{min-height:50px!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:6px 8px!important}
+.section-ribbon{min-height:58px!important;display:grid!important;grid-template-columns:minmax(72px,.85fr) minmax(0,1.6fr) minmax(72px,.85fr)!important;gap:8px!important;padding:5px 8px 7px!important}
+.modes{display:flex!important;align-items:center!important;justify-content:center!important;gap:4px!important}
+.modes .mode-btn{display:flex!important;visibility:visible!important;opacity:1!important;min-width:0!important;min-height:44px!important;padding:8px 12px!important}
+.rail{top:calc(var(--header-h) + 8px)!important}
+@media(max-width:760px){
+  :root{--rail:52px}
+  .section-ribbon{grid-template-columns:minmax(68px,.8fr) minmax(0,1.6fr) minmax(68px,.8fr)!important}
+  .section-label{font-size:7px!important}.section-value{font-size:9px!important}
+  .schola-dock{left:calc(var(--rail) + 12px)!important;right:calc(var(--rail) + 12px)!important;width:auto!important;max-width:none!important;transform:translateY(140%)!important}
+  .schola-dock.show{transform:translateY(0)!important}
+  .schola-control,.schola-quick-controls button{min-width:44px!important;min-height:44px!important}
+}
+body[data-mass-form="low"] .schola-dock{display:none!important}
+/* Lifecycle: inactive cards are not merely visually displaced. */
+.mass-card[aria-hidden="true"]{pointer-events:none!important}
+/* Pre-Mass form chooser: Mass form is selected before entering the reader. */
+.ao-form-gate{position:fixed;inset:0;z-index:9999;display:none;place-items:center;background:rgba(7,10,8,.97);backdrop-filter:blur(12px);padding:24px}
+.ao-form-gate.open{display:grid}.ao-form-panel{width:min(440px,100%);border:1px solid rgba(238,241,233,.14);border-radius:18px;background:#111914;padding:24px;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.ao-form-kicker{font:600 10px/1.2 ui-sans-serif,system-ui;letter-spacing:.16em;text-transform:uppercase;color:#8fa097}.ao-form-title{font:500 27px/1.2 Georgia,serif;margin:8px 0 4px;color:#f3f2eb}.ao-form-sub{font:13px/1.5 ui-sans-serif,system-ui;color:#aab2ab;margin:0 0 18px}.ao-form-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ao-form-choice{min-height:84px;border:1px solid rgba(238,241,233,.13);border-radius:14px;background:#162019;color:#edf0e9;text-align:left;padding:13px;cursor:pointer}.ao-form-choice b{display:block;font:600 15px/1.2 Georgia,serif}.ao-form-choice span{display:block;margin-top:5px;font:11px/1.35 ui-sans-serif,system-ui;color:#98a29a}.ao-form-choice:hover,.ao-form-choice:focus-visible{border-color:rgba(109,149,117,.65);outline:none;background:#1b2820}
+.ao-profile-pill{position:fixed;z-index:60;left:50%;top:6px;transform:translateX(-50%);font:700 8px/1 ui-sans-serif,system-ui;letter-spacing:.12em;text-transform:uppercase;color:#9ba69d;pointer-events:none}
+</style>
+
+<style id="ao-v174b-reader-ownership-missal">
+/* v1.74b — MISSAL is a true two-column reading surface. */
+body[data-mode="read"] main#reader{left:10px!important;right:10px!important}
+body[data-mode="read"] .mass-card{padding:28px max(14px,calc((100% - 980px)/2)) max(10vh,76px)!important}
+body[data-mode="read"] .flow-unit.missal-pair{
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(14px,3vw,34px);
+  opacity:1!important;transform:none!important;cursor:default!important;align-items:start;
+  padding:8px 0 13px;margin:0;border-bottom:1px solid rgba(238,241,233,.065);
+}
+body[data-mode="read"] .flow-unit.missal-pair.active{background:rgba(255,255,255,.018);border-radius:8px}
+body[data-mode="read"] .missal-col{font-family:Georgia,"Times New Roman",serif;font-size:clamp(15px,1.9vw,21px);line-height:1.52;white-space:pre-line;color:#edf0e9;min-width:0}
+body[data-mode="read"] .missal-col.vernacular{color:#cdd5ce;border-left:1px solid rgba(238,241,233,.09);padding-left:clamp(10px,2vw,22px)}
+body[data-mode="read"] .missal-col .ao-speaker-marker{display:inline-block;margin-right:.28em;font-weight:600}
+body[data-mode="read"] .missal-language-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,34px);margin:0 0 8px;padding:0 0 7px;border-bottom:1px solid rgba(238,241,233,.10);font:700 8px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#69756d}
+body[data-mode="read"] .missal-language-head span:last-child{border-left:1px solid rgba(238,241,233,.09);padding-left:clamp(10px,2vw,22px)}
+body[data-mode="read"] .translation.response-vernacular{display:none!important}
+body[data-mode="read"] .priest-route-unit,body[data-mode="read"] .simple-stage-sentinel{display:none!important}
+body[data-mode="read"] .pause-unit.missal-interstitial{
+  display:block!important;opacity:1!important;transform:none!important;text-align:center!important;
+  margin:18px 0 22px!important;padding:28px 16px!important;border:1px solid rgba(238,241,233,.11)!important;
+  border-radius:12px!important;background:rgba(255,255,255,.018)!important;color:#e9ece5!important;
+}
+body[data-mode="read"] .missal-interstitial-latin{font:500 18px/1.25 Georgia,"Times New Roman",serif;letter-spacing:.12em;text-transform:uppercase;color:#f0f0e9}
+body[data-mode="read"] .missal-interstitial-vernacular{margin-top:7px;font:12px/1.4 ui-sans-serif,system-ui,sans-serif;color:#9da79f;letter-spacing:.04em}
+body[data-mode="read"] .card-arrow.prev{left:14px!important}body[data-mode="read"] .card-arrow.next{right:14px!important}
+/* Ownership is indicated by focus classes, not paragraph stretching. */
+.mass-card{--ao-focus-ratio:.38}
+.mass-card .flow-unit.focus-current{outline:none}
+@media(max-width:760px){
+  body[data-mode="read"] main#reader{left:4px!important;right:4px!important}
+  body[data-mode="read"] .mass-card{padding:22px 8px max(9vh,68px)!important}
+  body[data-mode="read"] .flow-unit.missal-pair{gap:10px;padding:7px 0 11px}
+  body[data-mode="read"] .missal-col{font-size:13.5px;line-height:1.48}
+  body[data-mode="read"] .missal-col.vernacular,body[data-mode="read"] .missal-language-head span:last-child{padding-left:8px}
+  body[data-mode="read"] .card-heading{font-size:18px}
+}
+</style>
+
+<style id="ao-v174d-mc-profile-ui">
+.ao-form-choices{grid-template-columns:1fr!important}.ao-form-choice{min-height:78px!important}.ao-form-choice b{font-size:16px!important}
+.ao-form-choice span{font-size:11.5px!important}.ao-form-cert{margin-top:14px;padding-top:12px;border-top:1px solid rgba(238,241,233,.09);font:700 8px/1.4 ui-sans-serif,system-ui;letter-spacing:.10em;text-transform:uppercase;color:#738078}
+.ao-profile-pill{pointer-events:auto!important;cursor:pointer;border:1px solid rgba(238,241,233,.10);background:rgba(9,14,10,.82);border-radius:999px;padding:5px 9px;min-height:26px;white-space:nowrap}
+body[data-mass-form="missa-cantata"] .ao-profile-pill{color:#a8b9ac;border-color:rgba(109,149,117,.25)}
+@media(max-width:520px){.ao-form-panel{padding:19px!important}.ao-form-title{font-size:24px!important}.ao-form-choice{min-height:72px!important}}
+</style>
+<style id="ao-v174e-solemn-ui">
+body[data-mass-form="solemn"] .ao-profile-pill{color:#dacda8;border-color:rgba(216,203,168,.34)}
+body[data-mass-form="solemn"] #sectionAction[data-solemn-minister="1"]{opacity:1!important;visibility:visible!important;background:rgba(39,35,24,.96);border-color:rgba(216,203,168,.48);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+body[data-mass-form="solemn"] #sectionAction[data-solemn-minister="1"] .section-label{color:#ad9e78}
+body[data-mass-form="solemn"] #sectionAction[data-solemn-minister="1"] .section-value{color:#eee4c7}
+</style>
+<style id="ao-v174g-requiem-ui">
+.ao-rite-heading{margin:4px 0 8px;font:700 8px/1.2 ui-sans-serif,system-ui;letter-spacing:.15em;text-transform:uppercase;color:#76847a}.ao-form-heading{margin-top:17px}
+.ao-rite-choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}.ao-rite-choice{min-height:62px;border:1px solid rgba(238,241,233,.12);border-radius:12px;background:#121b15;color:#e9ede7;text-align:left;padding:10px 12px;cursor:pointer}.ao-rite-choice b{display:block;font:600 13px/1.2 Georgia,serif}.ao-rite-choice span{display:block;margin-top:4px;font:10px/1.35 ui-sans-serif,system-ui;color:#89958c}.ao-rite-choice:hover,.ao-rite-choice:focus-visible,.ao-rite-choice.is-selected{outline:none;border-color:rgba(150,145,132,.62);background:#211f19}.ao-candle-option{display:none;align-items:flex-start;gap:8px;padding:9px 10px;margin:8px 0 2px;border:1px solid rgba(238,241,233,.09);border-radius:10px;background:rgba(255,255,255,.018);font:10px/1.35 ui-sans-serif,system-ui;color:#adb4ae}.ao-candle-option.show{display:flex}.ao-candle-option input{margin-top:2px}.ao-candle-option b{display:block;font-size:10px;color:#d6d9d3}.ao-candle-option small{display:block;margin-top:2px;color:#7f8981}
+body[data-mass-rite="requiem"]{--green:#625f59;--green2:#918b7e}body[data-mass-rite="requiem"] .ao-profile-pill{color:#d8d1c2;border-color:rgba(206,196,174,.32)}body[data-mass-rite="requiem"] .top-shell{border-bottom-color:rgba(205,196,177,.16)}
+body[data-mass-rite="requiem"] .mass-block[data-requiem-proper="unresolved"] .proper{color:#b59f7b}body[data-mass-rite="requiem"] .mass-block[data-requiem-proper="unresolved"] .flow-unit{font-style:italic;color:#b8b0a0}
+</style>
+<style id="ao-r14-ui-css">.ao-r14-advanced{margin-top:12px;padding:12px;border:1px solid rgba(192,166,118,.18);border-radius:12px;background:rgba(255,255,255,.018);display:grid;gap:8px}.ao-r14-advanced label{display:grid;gap:4px;font:11px/1.35 ui-sans-serif,system-ui;color:#c7cbc5}.ao-r14-advanced select,.ao-r14-advanced input[type=text],.ao-r14-advanced input:not([type]){width:100%;box-sizing:border-box;background:#0c1115;color:#e5e1d8;border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:8px}.ao-r14-advanced button{background:#151d1b;color:#d9ddd5;border:1px solid rgba(165,190,171,.25);border-radius:8px;padding:8px 10px}.ao-r14-inline{display:flex;gap:12px;flex-wrap:wrap}.ao-r14-inline label{display:flex;align-items:center;gap:5px}.ao-r14-personal{opacity:.84}#aoR14ProperStatus{font:10px/1.3 ui-sans-serif,system-ui;color:#aeb8ae}.ao-form-panel{max-height:88vh;overflow:auto}</style>
+\n<style id="ao-r15-release-hardening-css">
+/* R15 — release hardening: persistent setup session + progressive disclosure. */
+#aoFormGate .ao-r15-summary{margin:12px 0 14px;padding:11px 12px;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(255,255,255,.035);font-size:.82rem;line-height:1.4}
+#aoFormGate .ao-r15-summary b{font-family:Cinzel,serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+#aoFormGate .ao-r15-summary .ao-r15-line{margin-top:4px;opacity:.9}
+#aoFormGate .ao-r15-warning{margin-top:8px;color:#e8c78f;font-size:.78rem}
+#aoFormGate .ao-r15-error{margin-top:8px;color:#efb0a5;font-size:.78rem}
+#aoFormGate [data-r15-hidden="true"]{display:none!important}
+#aoFormGate .ao-r15-distinct-note{display:none;margin:8px 0 12px;padding:10px 12px;border-left:2px solid currentColor;background:rgba(255,255,255,.035);font-size:.8rem;opacity:.9}
+#aoFormGate.r15-good-friday .ao-r15-distinct-note{display:block}
+#aoFormGate.r15-good-friday .ao-form-heading,#aoFormGate.r15-good-friday .ao-form-choices{display:none!important}
+#aoFormGate .ao-r15-actions{position:sticky;bottom:-1px;display:flex;gap:8px;align-items:center;margin:16px -2px -2px;padding:12px 2px 2px;background:linear-gradient(to bottom,transparent 0,rgba(8,12,18,.95) 22%,#080c12 50%);z-index:3}
+#aoFormGate .ao-r15-actions button{min-height:38px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(255,255,255,.055);color:inherit;padding:8px 12px;font-family:inherit;cursor:pointer}
+#aoFormGate .ao-r15-actions .ao-r15-enter{margin-left:auto;background:rgba(255,255,255,.12);font-weight:700}
+#aoFormGate .ao-r15-actions .ao-r15-enter[disabled]{opacity:.42;cursor:not-allowed}
+#aoFormGate .ao-r15-proper-tools{display:flex;gap:8px;flex-wrap:wrap;margin:7px 0 3px}
+#aoFormGate .ao-r15-proper-tools button{font-size:.74rem;padding:6px 9px;border:1px solid rgba(255,255,255,.15);border-radius:7px;background:rgba(255,255,255,.04);color:inherit}
+#aoFormGate .ao-r15-selected{outline:1px solid currentColor;box-shadow:inset 0 0 0 1px currentColor}
+#aoFormGate .ao-r15-irrelevant{display:none!important}
+#aoFormGate .ao-r15-section-note{font-size:.75rem;opacity:.72;margin:-4px 0 8px}
+@media (max-width:520px){#aoFormGate .ao-r15-actions{gap:6px;flex-wrap:wrap}#aoFormGate .ao-r15-actions .ao-r15-enter{margin-left:0;flex:1 1 100%}}
+</style>\n</head>
+<body data-mode="live" data-mass-form="low" data-ao-build="v1.75-R14">
+<div class="ao-form-gate" id="aoFormGate" aria-hidden="true">
+  <div class="ao-form-panel" role="dialog" aria-modal="true" aria-labelledby="aoFormTitle">
+    <div class="ao-form-kicker">1962 MASS FORM</div>
+    <h2 class="ao-form-title" id="aoFormTitle">Prepare Mass</h2>
+    <p class="ao-form-sub">Choose the base Mass form, actual celebration, Proper source and any surrounding rite before entering the reader. Calendar date is a suggestion layer; explicit actual-rite state controls execution.</p>
+    <div class="ao-rite-heading">CELEBRATION</div>
+    <div class="ao-rite-choices" role="group" aria-label="Celebration type">
+      <button type="button" class="ao-rite-choice" data-ao-rite="ordinary"><b>Ordinary Mass</b><span>Calendar/default Proper or an explicitly selected Proper.</span></button>
+      <button type="button" class="ao-rite-choice" data-ao-rite="requiem"><b>Requiem</b><span>R06 variance overlay · optional R07 funeral Absolution.</span></button>
+      <button type="button" class="ao-rite-choice" data-ao-rite="nuptial"><b>Nuptial</b><span>Marriage rite before Mass + two certified in-Mass insertion boundaries.</span></button>
+      <button type="button" class="ao-rite-choice" data-ao-rite="holy-thursday"><b>Holy Thursday</b><span>Mass profile + optional Mandatum + explicit post-Mass reposition.</span></button>
+      <button type="button" class="ao-rite-choice" data-ao-rite="good-friday"><b>Good Friday</b><span>Distinct 56-record rite · ordinary Mass engine disabled.</span></button>
+      <button type="button" class="ao-rite-choice" data-ao-rite="easter-vigil"><b>Easter Vigil</b><span>38-record Vigil graph · Mass hands in at Kyrie.</span></button>
+    </div>
+    <label class="ao-candle-option" id="aoRequiemCandleOption"><input type="checkbox" id="aoRequiemCandles"> <span><b>Funeral candles distributed</b><small>Enable the conditional candle-receipt / candle-lighting state.</small></span></label>
+    <div class="ao-rite-heading ao-form-heading">BASE MASS FORM</div>
+    <div class="ao-form-choices">
+      <button type="button" class="ao-form-choice" data-ao-form="low"><b>Low Mass</b><span>Missa lecta · server responses · no Schola or incense.</span></button>
+      <button type="button" class="ao-form-choice" data-ao-form="mc-simple"><b>Missa Cantata</b><span>Simple profile · two servers · no incense.</span></button>
+      <button type="button" class="ao-form-choice" data-ao-form="mc-incense"><b>Missa Cantata</b><span>Solemnized profile · MC, thurifer, acolytes and incense; no sacred ministers.</span></button>
+      <button type="button" class="ao-form-choice" data-ao-form="solemn"><b>Solemn Mass</b><span>Deacon + subdeacon · MC · thurifer · acolytes · torchbearers · constitutive incense.</span></button>
+    </div>
+
+    <div class="ao-r14-advanced" id="aoR14Advanced">
+      <div class="ao-rite-heading">ACTUAL CELEBRATION / RITE STATE</div>
+      <label>Pre-Mass rite <select id="aoR14Pre"><option value="">None</option><option value="asperges">Asperges / Vidi aquam</option><option value="palm">Palm Sunday rite</option><option value="ash">Ash Wednesday rite</option><option value="candlemas">Candlemas rite</option><option value="rogation">Rogation / Litanies</option></select></label>
+      <label><input type="checkbox" id="aoR14PreDone"> This rite actually occurs immediately before this Mass</label>
+      <label>Following action <select id="aoR14Following"><option value="">None</option><option value="absolution">Funeral Absolution</option><option value="corpus">Corpus Christi procession</option><option value="procession">Other procession</option></select></label>
+      <label><input type="checkbox" id="aoR14Participating"> I am participating in the procession</label>
+      <label><input type="checkbox" id="aoR14PalmProcession"> Palm procession actually occurs</label>
+      <label><input type="checkbox" id="aoR14Body"> Body present (funeral branch)</label>
+      <label><input type="checkbox" id="aoR14Burial"> Burial procession actually follows</label>
+      <label><input type="checkbox" id="aoR14Mandatum"> Holy Thursday Mandatum is used</label>
+      <label><input type="checkbox" id="aoR14Reposition"> Holy Thursday reposition actually follows</label>
+      <label>Nuptial eligibility <select id="aoR14NuptialEligibility"><option value="UNRESOLVED">Unresolved</option><option value="PERMITTED">Permitted</option><option value="NOT_PERMITTED">Not permitted</option></select></label>
+      <div class="ao-rite-heading">PROPER SOURCE — R09</div>
+      <label>Proper path <input id="aoR14ProperPath" placeholder="e.g. Votive/Matrimonium or Sancti/MM-DD"></label>
+      <label>Celebration title <input id="aoR14ProperTitle" placeholder="What is actually being celebrated"></label>
+      <label>Celebration use <select id="aoR14ProperType"><option value="manual">Actual selected Mass</option><option value="votive">Votive</option><option value="sanctoral">Sanctoral</option><option value="temporal">Temporal</option><option value="requiem">Requiem</option><option value="nuptial">Nuptial</option></select></label>
+      <div class="ao-r14-inline"><label>Gloria <select id="aoR14GloriaMode"><option value="auto">Source rule</option><option value="on">Yes</option><option value="off">No</option></select></label><label>Credo <select id="aoR14CredoMode"><option value="auto">Source rule</option><option value="on">Yes</option><option value="off">No</option></select></label></div>
+      <button type="button" id="aoR14ResolveProper">Resolve & use Proper</button><span id="aoR14ProperStatus"></span>
+      <div class="ao-r14-inline ao-r14-personal"><label><input type="checkbox" id="aoR14Sprinkled"> actually sprinkled</label><label><input type="checkbox" id="aoR14PalmReceived"> received palm</label><label><input type="checkbox" id="aoR14AshReceived"> received ashes</label><label><input type="checkbox" id="aoR14HasCandle"> holding blessed candle</label></div>
+    </div>
+    <div class="ao-form-cert">R14 · recovery integration candidate · R07–R13 coordinator</div>
+  </div>
+</div>
+<button type="button" class="ao-profile-pill" id="aoProfilePill" aria-label="Change Mass form" title="Change Mass form"></button>
+
+<div class="top-shell">
+  <div class="mode-ribbon">
+    <div class="modes" role="group" aria-label="Reader mode">
+      <button class="mode-btn" data-mode-btn="read"><span class="mode-icon" id="modeIconRead"></span><span>MISSAL</span></button><button class="mode-btn" data-mode-btn="simple"><span class="mode-icon" id="modeIconSimple"></span><span>SIMPLE</span></button><button class="mode-btn active" data-mode-btn="live"><span class="mode-icon" id="modeIconLive"></span><span>LIVE</span></button>
+    </div>
+    <div class="runtime-hidden"><span id="dayLatin"></span><span id="dayMeta"></span></div>
+  </div>
+  <div class="section-ribbon" aria-live="polite">
+    <div class="section-side priest-position"><span class="section-icon-wrap" id="priestPositionIcon" aria-hidden="true"><span class="priest-mark"></span></span><span class="section-copy"><span class="section-label">PRIEST</span><span class="section-value" id="stationText">—</span></span></div>
+    <div class="section-title" id="formationTrigger" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="formationSheet" aria-label="Open context for this part of the Mass"><span class="section-moment-icon" id="sectionMomentIcon" aria-hidden="true"></span><span id="guideCopy"></span></div>
+    <div class="section-side section-action empty" id="sectionAction"><span class="section-icon-wrap" id="priestActionIcon" aria-hidden="true"></span><span class="section-copy"><span class="section-label">ACTION</span><span class="section-value" id="actionDisplay">—</span></span></div>
+    <div class="runtime-hidden"><span id="guideNext"></span><span id="facingText"></span><span id="actionText"></span></div>
+  </div>
+  <div class="progress-track"><div class="progress" id="progress"></div></div>
+</div>
+
+<aside class="rail left" aria-label="Faithful state">
+  <div class="rail-card" id="postureCard"><div class="ico" id="postureIcon"></div><div class="tag" id="postureTag">POSTURE</div><div class="tiny" id="postureText">—</div></div>
+  <div class="rail-card off" id="gestureCard"><div class="ico" id="gestureIcon"></div><div class="tag">GESTURE</div><div class="tiny" id="gestureText">—</div></div>
+  <div class="rail-card response off" id="responseCard" role="button" tabindex="0" aria-label="Faithful response"><div class="ico" id="responseIcon"></div><div class="tag" id="responseTag">RESPOND</div><div class="tiny" id="responseText">—</div><div class="response-rail-translation" id="responseRailTranslation" aria-hidden="true"></div></div>
+</aside>
+
+<aside class="rail right" aria-label="Live audio state">
+  <div class="rail-card" id="voiceCard"><div class="ico" id="voiceIcon"></div><div class="tag">PRIEST VOICE</div><div class="tiny" id="voiceText">—</div></div>
+</aside>
+
+<main id="reader" aria-label="Mass reader"></main>
+<button class="card-arrow prev" id="cardPrev" aria-label="Previous Mass card">‹</button>
+<button class="card-arrow next" id="cardNext" aria-label="Next Mass card">›</button>
+<div class="card-counter" id="cardCounter" aria-live="polite">1 / 1</div>
+<div class="part-cinema" id="partCinema" aria-hidden="true"><div class="part-cinema-inner"><div class="part-cinema-mark" id="partCinemaMark">✠</div><div class="part-cinema-title" id="partCinemaTitle">Preparatory Rites</div><div class="part-cinema-sub" id="partCinemaSub"></div><div class="part-cinema-line"></div></div></div>
+<div class="schola-dock" id="scholaDock" aria-hidden="true" data-view="standard">
+  <div class="schola-title" id="scholaTitle">
+    <span class="schola-title-icon" id="scholaDockIcon"></span>
+    <span class="schola-title-main"><span class="schola-title-label" id="scholaTitleText">SCHOLA LIVE</span><span class="schola-page-counter" id="scholaPageCounter"></span></span>
+    <span class="schola-quick-controls" aria-label="Schola live controls">
+      <button type="button" class="schola-control schola-speed-step" id="scholaSlower" aria-label="Slower Schola text">−</button>
+      <button type="button" class="schola-control schola-speed-value" id="scholaSpeedValue" aria-label="Open Schola speed control" aria-expanded="false">0.45×</button>
+      <button type="button" class="schola-control schola-speed-step" id="scholaFaster" aria-label="Faster Schola text">+</button>
+      <button type="button" class="schola-control schola-language-toggle" id="scholaTranslationToggle" aria-label="Show or hide vernacular translation" aria-pressed="false">EN</button>
+      <button type="button" class="schola-control schola-view-toggle" id="scholaViewMode" aria-label="Change Schola box size">STD</button>
+    </span>
+  </div>
+  <div class="schola-speed-panel" id="scholaSpeedPanel" aria-hidden="true">
+    <input id="scholaSpeedRange" type="range" min="0.20" max="2.00" step="0.05" value="0.45" aria-label="Schola text speed">
+    <div class="schola-speed-presets" aria-label="Schola speed presets">
+      <button type="button" data-schola-speed="0.20">0.20</button><button type="button" data-schola-speed="0.35">0.35</button><button type="button" data-schola-speed="0.50">0.50</button><button type="button" data-schola-speed="0.75">0.75</button><button type="button" data-schola-speed="1.00">1.0</button><button type="button" data-schola-speed="1.25">1.25</button><button type="button" data-schola-speed="1.50">1.5</button><button type="button" data-schola-speed="2.00">2.0</button>
+    </div>
+  </div>
+  <div class="schola-stream-viewport" id="scholaStreamViewport" aria-live="off"><div class="schola-stream-line" id="scholaStreamLine"></div></div>
+  <div class="schola-stream-translation" id="scholaStreamTranslation" aria-live="polite"></div>
+  <div class="schola-expanded-context" id="scholaExpandedContext" aria-hidden="true">
+    <div class="schola-context-line prev" id="scholaContextPrev"></div>
+    <div class="schola-context-line current" id="scholaContextCurrent"></div>
+    <div class="schola-context-line next" id="scholaContextNext"></div>
+  </div>
+  <div class="schola-stream-meta">
+    <span class="schola-stream-kind" id="scholaStreamKind">LATIN</span>
+    <span class="schola-stream-progress"><span id="scholaStreamProgress"></span></span>
+    <span class="schola-phrase-controls">
+      <button type="button" class="schola-control schola-phrase-step" id="scholaPrevPhrase" aria-label="Previous chant phrase">‹</button>
+      <span class="schola-phrase-count" id="scholaPhraseCount"></span>
+      <button type="button" class="schola-control schola-phrase-step" id="scholaNextPhrase" aria-label="Next chant phrase">›</button>
+    </span>
+    <button type="button" class="schola-control" id="scholaPauseBtn" aria-label="Pause Schola text">PAUSE</button>
+    <span class="schola-stream-pause" id="scholaStreamPause">LIVE</span>
+  </div>
+</div>
+
+<div class="ritual-event-cinema" id="ritualEventCinema" aria-hidden="true" data-kind="event">
+  <div class="ritual-event-veil"></div>
+  <div class="ritual-event-card">
+    <div class="ritual-event-icon" id="ritualEventIcon" aria-hidden="true"></div>
+    <div class="ritual-event-copy"><div class="ritual-event-label" id="ritualEventLabel"></div><div class="ritual-event-detail" id="ritualEventDetail"></div></div>
+  </div>
+</div>
+
+<div class="canon-arc-cinema" id="canonArcCinema" aria-hidden="true" data-phase="canon">
+  <div class="canon-arc-veil"></div>
+  <div class="canon-arc-inner">
+    <div class="canon-arc-rule"></div>
+    <div class="canon-arc-kicker" id="canonArcKicker"></div>
+    <div class="canon-arc-title" id="canonArcTitle"></div>
+    <div class="canon-arc-sub" id="canonArcSub"></div>
+  </div>
+</div>
+
+<div class="status-drawer">
+ <button class="status-btn" id="statusBtn" aria-label="Open source and QA panel">i</button>
+ <section class="drawer" id="drawer">
+  <h3 id="canonicalMassHeading">Canonical Mass</h3><p id="drawerIntro"></p>
+  <div class="stats" id="stats"></div>
+  <div class="branch-grid" id="branchGrid"></div>
+  <section class="rite-context" id="riteContextPanel"><div class="rite-context-head">Calendar / rite binding</div><div class="rite-context-main" id="riteContextSummary"></div><div class="rite-context-flags" id="riteContextFlags"></div></section>
+  <select class="jump" id="jumpSelect" aria-label="Jump to Mass moment"></select>
+  <div class="debug-panel" id="debugPanel"></div>
+  <button type="button" class="qa-launch" id="qaLaunch">Enter Mass Audit Mode</button>
+  <section class="qa-auto" id="qaAuto">
+    <div class="qa-auto-head"><h4>Golden regression gate</h4><button type="button" class="qa-run" id="qaRunAuto">Run audit</button></div>
+    <div class="qa-summary" id="qaAutoSummary">Not run yet.</div>
+    <div class="qa-checks" id="qaChecks"></div>
+  </section>
+ </section>
+</div>
+
+<section class="qa-dock" id="qaDock" aria-hidden="true">
+ <div class="qa-head"><span class="qa-badge">AUDIT</span><span class="qa-context" id="qaContext">Waiting for active cue…</span><span class="qa-count" id="qaCount">0 marks</span><button type="button" class="qa-exit" id="qaExit" aria-label="Exit audit mode">×</button></div>
+ <div class="qa-verdicts">
+  <button type="button" class="qa-verdict" data-verdict="CORRECT">Correct</button>
+  <button type="button" class="qa-verdict" data-verdict="EARLY">Early</button>
+  <button type="button" class="qa-verdict" data-verdict="LATE">Late</button>
+  <button type="button" class="qa-verdict" data-verdict="WRONG">Wrong</button>
+  <button type="button" class="qa-verdict" data-verdict="MISSING">Missing</button>
+ </div>
+ <details class="qa-detail"><summary>Issue type, note & export</summary>
+  <div class="qa-fields"><select class="qa-select" id="qaCategory" aria-label="Audit category">
+   <option value="GENERAL">General</option><option value="TEXT">Text / order</option><option value="PRIEST_POSITION">Priest position</option><option value="PRIEST_ACTION">Priest action</option><option value="PRIEST_VOICE">Priest voice</option><option value="POSTURE">Posture</option><option value="GESTURE">Gesture</option><option value="RESPONSE">Response</option><option value="SCHOLA">Schola</option><option value="SCROLL">Scroll / cards</option><option value="UI">UI / overlap</option>
+  </select><input class="qa-note" id="qaNote" type="text" placeholder="Optional note…" autocomplete="off"></div>
+  <div class="qa-actions"><button type="button" class="qa-action" id="qaExportJson">Export JSON</button><button type="button" class="qa-action" id="qaExportCsv">Export CSV</button><button type="button" class="qa-action" id="qaExportTrace">Export 275-cue trace</button><button type="button" class="qa-action" id="qaClear">Clear marks</button><button type="button" class="qa-action" id="qaRunFromDock">Run auto audit</button></div>
+  <div class="qa-last" id="qaLast"></div>
+ </details>
+</section>
+
+<script id="mass-data" type="application/json" data-r17-source="data/mass/v1.76/low-mass.json" data-r17-order="1"></script>
+<script src="data-loaders/01-mass-data.data.js" data-r17-loader-for="mass-data" data-r17-order="1"></script>
+<script id="mass-data-sung" type="application/json" data-r17-source="data/mass/v1.76/sung-mass.json" data-r17-order="2"></script>
+<script src="data-loaders/02-mass-data-sung.data.js" data-r17-loader-for="mass-data-sung" data-r17-order="2"></script>
+
+<script id="ao-r14-recovery-prelude" src="../../src/mass/recovery/r07-r13-recovery-pack.js" data-r17-order="3" data-r17-source-path="src/mass/recovery/r07-r13-recovery-pack.js"></script>
+<script src="../../src/mass/legacy/reader-loader-v1.76.js" data-r17-order="4" data-r17-source-path="src/mass/legacy/reader-runtime-v1.76.js"></script>
+
+<script src="../../src/mass/ui/attention-cues.js" data-r17-order="5" data-r17-source-path="src/mass/ui/attention-cues.js"></script>
+<script src="../../src/mass/ui/attention-arbitration.js" data-r17-order="6" data-r17-source-path="src/mass/ui/attention-arbitration.js"></script>
+<script src="../../src/mass/diagnostics/icon-audit.js" data-r17-order="7" data-r17-source-path="src/mass/diagnostics/icon-audit.js"></script>
+
+<script id="ao-v131-gesture-motion-audit" src="../../src/mass/ui/gesture-motion-audit.js" data-r17-order="8" data-r17-source-path="src/mass/ui/gesture-motion-audit.js"></script>
+
+<script id="ao-v46-bank-audit" src="../../src/mass/diagnostics/asset-bank-audit.js" data-r17-order="9" data-r17-source-path="src/mass/diagnostics/asset-bank-audit.js"></script>
+<script id="ao-v132-declutter-runtime" src="../../src/mass/ui/declutter-runtime.js" data-r17-order="10" data-r17-source-path="src/mass/ui/declutter-runtime.js"></script>
+
+<script id="ao-v133-canon-cinematic-runtime" src="../../src/mass/ui/canon-cinematic-runtime.js" data-r17-order="11" data-r17-source-path="src/mass/ui/canon-cinematic-runtime.js"></script>
+
+
+<script id="ao-v134-gospel-cinematic-runtime" src="../../src/mass/ui/gospel-cinematic-runtime.js" data-r17-order="12" data-r17-source-path="src/mass/ui/gospel-cinematic-runtime.js"></script>
+
+
+<script src="../../src/mass/ui/salience-bridge.js" data-r17-order="13" data-r17-source-path="src/mass/ui/salience-bridge.js"></script>
+
+<script id="ao-v21-salience-audit" src="../../src/mass/diagnostics/salience-audit.js" data-r17-order="14" data-r17-source-path="src/mass/diagnostics/salience-audit.js"></script>
+
+<script id="ao-v22-text-declutter-runtime" src="../../src/mass/ui/text-declutter-runtime.js" data-r17-order="15" data-r17-source-path="src/mass/ui/text-declutter-runtime.js"></script>
+
+
+
+<button class="personal-action-prompt" id="personalActionPrompt" type="button" aria-haspopup="dialog" aria-controls="personalRecollection" aria-hidden="true">
+  <span class="personal-action-icon" id="personalActionIcon" aria-hidden="true"></span>
+  <span class="personal-action-copy">
+    <span class="personal-action-kicker">Holy Communion</span>
+    <span class="personal-action-label">I have received Communion</span>
+  </span>
+</button>
+
+<div class="personal-recollection-layer" id="personalRecollection" role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="personalRecollectionTitle">
+  <div class="personal-recollection-panel">
+    <div class="personal-recollection-mark" id="personalRecollectionIcon" aria-hidden="true"></div>
+    <div class="personal-recollection-kicker">After Holy Communion</div>
+    <h2 class="personal-recollection-title" id="personalRecollectionTitle">Remain with Our Lord</h2>
+    <div class="personal-recollection-rule"></div>
+    <p class="personal-recollection-copy">There is no need to keep pace with the reader now. Remain in silence, adore Our Lord, give thanks, and make your own acts of love and petition.</p>
+    <div class="personal-recollection-instruction">The Mass continues underneath. The Communion chant remains visible when it is being sung.</div>
+    <div class="personal-recollection-actions">
+      <button class="personal-recollection-return" id="personalRecollectionReturn" type="button">Return to Mass</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="formation-sheet" id="formationSheet" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="formationTitle">
+  <div class="formation-panel" id="formationPanel">
+    <div class="formation-head">
+      <div><div class="formation-kicker">Context · one tap deeper</div><div class="formation-title" id="formationTitle">Mass context</div></div>
+      <button class="formation-close" id="formationClose" type="button" aria-label="Close context">×</button>
+    </div>
+    <div class="formation-grid">
+      <section class="formation-item"><div class="formation-label">What is happening</div><div class="formation-copy" id="formationWhat"></div></section>
+      <section class="formation-item"><div class="formation-label">What I should do</div><div class="formation-copy" id="formationDo"></div></section>
+      <section class="formation-item"><div class="formation-label">Why this moment matters</div><div class="formation-copy" id="formationWhy"></div></section>
+      <section class="formation-item"><div class="formation-label">Priest · Schola relationship</div><div class="formation-copy" id="formationActors"></div></section>
+      <details class="formation-deeper" id="formationDeeper"><summary>Historical / rubrical context</summary><div class="formation-copy" id="formationDeepCopy"></div></details>
+    </div>
+  </div>
+</div>
+
+
+<script id="ao-v23-harmonized-runtime" src="../../src/mass/ui/harmonized-runtime.js" data-r17-order="16" data-r17-source-path="src/mass/ui/harmonized-runtime.js"></script>
+
+
+<script id="ao-v24-personal-action-runtime" src="../../src/mass/ui/personal-action-runtime.js" data-r17-order="17" data-r17-source-path="src/mass/ui/personal-action-runtime.js"></script>
+
+
+<!-- v2.4.2: V/R/M/S speaker markers share one typography class; canonical Mass text/data unchanged. -->
+\n<script id="ao-v174e-unified-runtime" src="../../src/mass/integration/unified-runtime.js" data-r17-order="18" data-r17-source-path="src/mass/integration/unified-runtime.js"></script>\n
+<script id="ao-v174b-diagnostic-bridge" src="../../src/mass/diagnostics/reader-diagnostic-bridge.js" data-r17-order="19" data-r17-source-path="src/mass/diagnostics/reader-diagnostic-bridge.js"></script>
+
+<script id="ao-v174c-low-recovery-contract" type="application/json" data-r17-source="src/mass/contracts/r02-low-contract.json" data-r17-order="20"></script>
+<script src="data-loaders/20-ao-v174c-low-recovery-contract.data.js" data-r17-loader-for="ao-v174c-low-recovery-contract" data-r17-order="20"></script>
+<script id="ao-v174c-low-b005-reconciliation" src="../../src/mass/integration/r02-low-reconciliation.js" data-r17-order="21" data-r17-source-path="src/mass/integration/r02-low-reconciliation.js"></script>
+
+
+<script id="ao-v174d-mc-certification" type="application/json" data-r17-source="src/mass/contracts/r03-missa-cantata-certification.json" data-r17-order="22"></script>
+<script src="data-loaders/22-ao-v174d-mc-certification.data.js" data-r17-loader-for="ao-v174d-mc-certification" data-r17-order="22"></script>
+<script id="ao-v174d-mc-certification-runtime" src="../../src/mass/integration/r03-missa-cantata-runtime.js" data-r17-order="23" data-r17-source-path="src/mass/integration/r03-missa-cantata-runtime.js"></script>
+<script id="ao-v174e-solemn-b006-contract" type="application/json" data-r17-source="src/mass/contracts/r04-solemn-contract.json" data-r17-order="24"></script>
+<script src="data-loaders/24-ao-v174e-solemn-b006-contract.data.js" data-r17-loader-for="ao-v174e-solemn-b006-contract" data-r17-order="24"></script>
+<script id="ao-v174e-solemn-runtime" src="../../src/mass/integration/r04-solemn-runtime.js" data-r17-order="25" data-r17-source-path="src/mass/integration/r04-solemn-runtime.js"></script>
+<script id="ao-v174f-r05-contract" type="application/json" data-r17-source="src/mass/contracts/r05-cross-form-contract.json" data-r17-order="26"></script>
+<script src="data-loaders/26-ao-v174f-r05-contract.data.js" data-r17-loader-for="ao-v174f-r05-contract" data-r17-order="26"></script>
+<script id="ao-v174f-cross-form-invariant-suite" src="../../src/mass/diagnostics/r05-cross-form-suite.js" data-r17-order="27" data-r17-source-path="src/mass/diagnostics/r05-cross-form-suite.js"></script>
+
+<script id="ao-v174g-requiem-r06-contract" type="application/json" data-r17-source="src/mass/contracts/r06-requiem-contract.json" data-r17-order="28"></script>
+<script src="data-loaders/28-ao-v174g-requiem-r06-contract.data.js" data-r17-loader-for="ao-v174g-requiem-r06-contract" data-r17-order="28"></script>
+<script id="ao-v174g-requiem-selector-audit" src="../../src/mass/integration/r06-requiem-selector-audit.js" data-r17-order="29" data-r17-source-path="src/mass/integration/r06-requiem-selector-audit.js"></script>
+
+<script id="ao-r14-integration-ui" src="../../src/mass/integration/r14-integration-ui.js" data-r17-order="30" data-r17-source-path="src/mass/integration/r14-integration-ui.js"></script>
+\n<script id="ao-r15-release-hardening" src="../../src/mass/integration/r15-release-hardening.js" data-r17-order="31" data-r17-source-path="src/mass/integration/r15-release-hardening.js"></script>\n</body></html>
