@@ -230,7 +230,7 @@ assert.equal(rogationsRuntime.getReaderState().posture,null);
 rogationsRuntime.setRogationsProcessionalState("PARTICIPATING");
 assert.equal(rogationsRuntime.getReaderState().posture.label,"PROCESSIONAL");
 rogationsRuntime.setRogationsProcessionalState("NOT_PARTICIPATING");
-assert.equal(rogationsRuntime.getReaderState().posture.label,"LOCAL");
+assert.equal(rogationsRuntime.getReaderState().posture,null,"non-participant inherited an app-imposed Rogation posture");
 while(!rogationsRuntime.getRogationsState().atEnd)rogationsRuntime.next();
 rogationsRuntime.next();
 assert.equal(rogationsRuntime.getReaderState().cardTitle,"Introit");
