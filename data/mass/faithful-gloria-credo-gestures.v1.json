@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "status": "P1_007_ADJUDICATED",
+  "rule": "Faithful gestures attach only to exact canonical text cues. Priest rubrics do not automatically create faithful gestures. Customary/choir-derived gestures are profile-gated.",
+  "profiles": {
+    "ESSENTIAL": "Rubrical/resolver gestures only.",
+    "GUIDED_1962": "Rubrical/resolver gestures only in Gloria/Credo; customary bows remain hidden.",
+    "TRADITIONAL": "Rubrical/resolver gestures plus established traditional faithful/choir-derived bows and signs of the cross."
+  },
+  "cues": [
+    {
+      "cueId": "AO.SM.C0056",
+      "phase": "GLORIA",
+      "anchorLat": "Adorámus te",
+      "action": "HEAD_BOW",
+      "authorityClass": "ESTABLISHED_LAY_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0058",
+      "phase": "GLORIA",
+      "anchorLat": "Grátias ágimus tibi",
+      "action": "HEAD_BOW",
+      "authorityClass": "ESTABLISHED_LAY_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0061",
+      "phase": "GLORIA",
+      "anchorLat": "Iesu Christe",
+      "action": "HEAD_BOW",
+      "authorityClass": "HOLY_NAME_TRADITIONAL_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0064",
+      "phase": "GLORIA",
+      "anchorLat": "súscipe deprecatiónem nostram",
+      "action": "HEAD_BOW",
+      "authorityClass": "ESTABLISHED_LAY_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0067",
+      "phase": "GLORIA",
+      "anchorLat": "Iesu Christe",
+      "action": "HEAD_BOW",
+      "authorityClass": "HOLY_NAME_TRADITIONAL_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0068",
+      "phase": "GLORIA",
+      "anchorLat": "Cum Sancto Spíritu ✠",
+      "action": "SIGN_OF_CROSS",
+      "authorityClass": "ESTABLISHED_LAY_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0090",
+      "phase": "CREDO",
+      "anchorLat": "in unum Deum",
+      "action": "HEAD_BOW",
+      "authorityClass": "CHOIR_NORM_ESTABLISHED_LAY_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0093",
+      "phase": "CREDO",
+      "anchorLat": "Iesum Christum",
+      "action": "HEAD_BOW",
+      "authorityClass": "HOLY_NAME_TRADITIONAL_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0096",
+      "phase": "CREDO",
+      "anchorLat": "Et incarnátus est … et homo factus est",
+      "action": "INCARNATUS_RESOLVER",
+      "authorityClass": "1962_RULE_PLUS_1962_ERA_GUIDANCE",
+      "minimumProfile": "ESSENTIAL"
+    },
+    {
+      "cueId": "AO.SM.C0101",
+      "phase": "CREDO",
+      "anchorLat": "simul adorátur",
+      "action": "HEAD_BOW",
+      "authorityClass": "CHOIR_NORM_ESTABLISHED_LAY_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    },
+    {
+      "cueId": "AO.SM.C0104",
+      "phase": "CREDO",
+      "anchorLat": "Et vitam ✠",
+      "action": "SIGN_OF_CROSS",
+      "authorityClass": "ESTABLISHED_LAY_CUSTOM",
+      "minimumProfile": "TRADITIONAL"
+    }
+  ],
+  "sourceNotes": [
+    "Exact gesture/posture map v1.0: Credo G012-G018 and Incarnatus resolver.",
+    "1962 congregational cue source of truth: Gloria exact bows and concluding sign of cross.",
+    "Priest gesture rows remain priest-owned and are not promoted to faithful cues."
+  ]
+}
