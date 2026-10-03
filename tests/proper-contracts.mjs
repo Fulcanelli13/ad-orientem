@@ -1,5 +1,6 @@
 import { assertProperManifestV2, validateProperManifestV2 } from "../src/mass/proper-contracts.js";
 import { makeResolvedMass } from "../src/mass/session-engine.js";
+import { withCompiledPreGospelSequence } from "../src/mass/pre-gospel-sequence.js";
 
 const expect=(x,m)=>{if(!x)throw new Error(m)};
 
@@ -39,17 +40,35 @@ expect(!validateProperManifestV2(holyThursday).pass,"Holy Thursday without Qui p
 holyThursday.canonPackage.quiPridie={variantId:"TEST-QP",textLat:"Resolved Qui pridie text",sourceRef:"PRIMARY_FIXTURE"};
 expect(validateProperManifestV2(holyThursday).pass,"resolved three-part Holy Thursday Canon insert set did not pass");
 
-const ember=structuredClone(ordinary);
-ember.requirements={...ember.requirements,interlectionSequence:true};
-expect(!validateProperManifestV2(ember).pass,"required empty interlection sequence did not fail closed");
-ember.preGospelSequence=[
-  {id:"O1",type:"ORATION",payloadRef:"COLLECT-EMBER-1",sourceRef:"PRIMARY_FIXTURE"},
-  {id:"L1",type:"LESSON",payloadRef:"LESSON-1",sourceRef:"PRIMARY_FIXTURE"},
-  {id:"C1",type:"GRADUAL",payloadRef:"GRADUAL-1",sourceRef:"PRIMARY_FIXTURE"},
-  {id:"O2",type:"ORATION",payloadRef:"COLLECT-EMBER-2",sourceRef:"PRIMARY_FIXTURE"},
-  {id:"L2",type:"LESSON",payloadRef:"LESSON-2",sourceRef:"PRIMARY_FIXTURE"},
-];
-expect(validateProperManifestV2(ember).pass,"ordered pre-Gospel sequence did not pass");
+const emberBase=structuredClone(ordinary);
+emberBase.requirements={...emberBase.requirements,preGospelSequence:true,preGospelSourceOrder:true};
+expect(!validateProperManifestV2(emberBase).pass,
+  "required source-ordered pre-Gospel sequence did not fail closed");
+
+const emberSourceOrder=["OratioL2","LectioL1","GradualeL1","OratioL1","LectioL2"];
+const source=(order)=>({
+  order:["__TOP__",...order],
+  map:Object.fromEntries(order.map(id=>[id,[id+" text"]]))
+});
+const ember=withCompiledPreGospelSequence(emberBase,{
+  sourcePath:"Tempora/Ember-Test",
+  sources:{la:source(emberSourceOrder),en:source(emberSourceOrder),fr:source(emberSourceOrder)},
+});
+expect(validateProperManifestV2(ember).pass,"source-ordered pre-Gospel sequence did not pass");
+expect(
+  ember.preGospelSequence.map(x=>x.sourceSectionId).join("|")===emberSourceOrder.join("|"),
+  "Proper v2 reordered pre-Gospel nodes by numeric suffix"
+);
+
+const emberReordered=structuredClone(ember);
+emberReordered.preGospelSequence.reverse();
+expect(!validateProperManifestV2(emberReordered).pass,
+  "reordered pre-Gospel sequence bypassed source-order proof");
+
+const emberNoProof=structuredClone(ember);
+delete emberNoProof.preGospelSequenceProvenance;
+expect(!validateProperManifestV2(emberNoProof).pass,
+  "source-order requirement passed without provenance");
 
 const legacyAlias=structuredClone(ordinary);
 delete legacyAlias.canonPackage;
