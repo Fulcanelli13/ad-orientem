@@ -25,8 +25,9 @@ assert.equal(regressions.status,"ACTIVE_REGRESSION_LOCKDOWN");
 const regressionById=new Map(regressions.entries.map(entry=>[entry.id,entry]));
 assert.equal(regressionById.get("V181-HOST-ELEVATION-EARLY").status,"FIXED_AND_TESTED_R17");
 assert.equal(regressionById.get("V181-CHALICE-ELEVATION-EARLY").status,"FIXED_AND_TESTED_R17");
-assert.equal(regressionById.get("V181-CARD-TRANSIENT-LEAK").status,"PARTIALLY_FIXED");
-assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").openChannels,["bell","cinematic"]);
+assert.equal(regressionById.get("V181-CARD-TRANSIENT-LEAK").status,"FIXED_AND_TESTED_R17");
+assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").fixedChannels,["gesture","response","bell","cinematic"]);
+assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").openChannels,[]);
 assert.equal(regressionById.get("V183-GRADUAL-COMPOSITION").status,"BLOCKED_ON_FINAL_48_CARD_ARCHITECTURE");
 assert.equal(regressionById.get("V181-PAX-OWNERSHIP").status,"MECHANICS_TESTED_SOURCE_CERTIFICATION_PENDING");
 assert.equal(regressionById.get("V183-NATIVE-LIVE-GATE-BYPASS").status,"FIXED_AND_TESTED_R17");
@@ -51,7 +52,6 @@ for(const id of [
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
   "PROPER_FIXTURE_PROVENANCE",
-  "BELL_CINEMATIC_READER_PARITY",
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
   "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
@@ -100,6 +100,9 @@ assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
+assert.match(nativeSource,/createReaderTransientController/,"native reader lost native bell\/cinematic controller");
+assert.match(nativeSource,/r17OwnerBell/,"native reader lost bell ownership diagnostics");
+assert.match(nativeSource,/r17OwnerCinematic/,"native reader lost cinematic ownership diagnostics");
 assert.doesNotMatch(nativeSource,/#scholaDock|#scholaStreamLine/,"native reader reintroduced legacy Schola DOM donor");
 assert.match(nativeSource,/iconKeysForReaderState/,"native reader lost approved icon-key projection");
 const browserEntrySource=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
@@ -130,3 +133,11 @@ for(const name of readdirSync(massSourceDir)){
 }
 
 console.log("reader regression lockdown: PASS — known v1.83 invariants are protected and release remains explicitly blocked.");
+
+const transientSource=readFileSync(new URL("../src/mass/reader-transients.js",import.meta.url),"utf8");
+assert.match(transientSource,/AO\.SM\.C0145/);
+assert.match(transientSource,/AO\.SM\.C0161/);
+assert.match(transientSource,/AO\.SM\.C0174/);
+assert.match(transientSource,/AO\.SM\.C0181/);
+assert.match(transientSource,/AO\.SM\.C0225/);
+assert.match(transientSource,/canonicalAuthority:false/,"cinematic presentation acquired canonical authority");

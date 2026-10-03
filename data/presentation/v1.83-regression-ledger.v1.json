@@ -1,6 +1,6 @@
 {
   "schema": "ao-v1.83-regression-ledger-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "ACTIVE_REGRESSION_LOCKDOWN",
   "rule": "Recovered historical reader defects are acceptance tests or explicit blockers. A green unit suite does not close entries whose required runtime/browser evidence is still missing.",
   "entries": [
@@ -26,19 +26,19 @@
     },
     {
       "id": "V181-CARD-TRANSIENT-LEAK",
-      "status": "PARTIALLY_FIXED",
+      "status": "FIXED_AND_TESTED_R17",
       "defect": "Gesture/response/bell/cinematic state could survive a card change.",
       "invariant": "No transient state from the prior card may render before the next exact cue owns the new card.",
       "fixedChannels": [
         "gesture",
-        "response"
-      ],
-      "openChannels": [
+        "response",
         "bell",
         "cinematic"
       ],
+      "openChannels": [],
       "tests": [
         "tests/reader-native-preview.mjs",
+        "tests/reader-transients.mjs",
         "tests/reader-regression-lockdown.mjs"
       ]
     },

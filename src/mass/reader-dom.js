@@ -1,7 +1,7 @@
 import { normalizePresentationMode } from "./session-engine.js";
 
 const SHELL_STYLE = `
-.ao-reader-shell{--ao-bg:#080c12;--ao-panel:#0d1218;--ao-line:rgba(189,161,108,.20);--ao-muted:#9a948c;--ao-text:#eee8de;--ao-accent:#bda16c;box-sizing:border-box;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;height:100%;min-height:0;background:var(--ao-bg);color:var(--ao-text);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
+.ao-reader-shell{--ao-bg:#080c12;--ao-panel:#0d1218;--ao-line:rgba(189,161,108,.20);--ao-muted:#9a948c;--ao-text:#eee8de;--ao-accent:#bda16c;box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;height:100%;min-height:0;background:var(--ao-bg);color:var(--ao-text);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
 .ao-reader-shell *{box-sizing:border-box}
 .ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--ao-line);background:#0a0f15}
 .ao-mode-ribbon button{appearance:none;border:0;border-right:1px solid rgba(189,161,108,.10);background:transparent;color:var(--ao-muted);padding:.62rem .4rem;font:600 .72rem/1.1 system-ui,sans-serif;letter-spacing:.11em}
@@ -34,6 +34,12 @@ const SHELL_STYLE = `
 .ao-reader-nav button{appearance:none;border:0;background:transparent;color:#d8d0c6;padding:.72rem .8rem;font:600 .72rem/1 system-ui,sans-serif}
 .ao-reader-nav button:last-child{text-align:right}
 .ao-reader-progress{font:600 .64rem/1 system-ui,sans-serif;color:var(--ao-muted)}
+.ao-cinematic{position:absolute;inset:0;z-index:8;display:grid;place-items:center;background:rgba(8,12,18,.88);pointer-events:none;text-align:center;padding:2rem}
+.ao-cinematic[hidden]{display:none}
+.ao-cinematic-inner{display:grid;gap:.55rem;justify-items:center;max-width:88%}
+.ao-cinematic-mark{font-size:1.25rem;color:var(--ao-accent)}
+.ao-cinematic-title{font:600 clamp(1.05rem,4vw,1.7rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:.08em}
+.ao-cinematic-sub{font:600 .66rem/1.3 system-ui,sans-serif;letter-spacing:.08em;color:var(--ao-muted)}
 .ao-guide-popover{position:absolute;inset:auto 10px 56px 10px;z-index:3;max-height:42%;overflow:auto;padding:.8rem 1rem;border:1px solid var(--ao-line);border-radius:12px;background:#111820;box-shadow:0 14px 34px rgba(0,0,0,.45);font:500 .82rem/1.42 system-ui,sans-serif;color:#ddd6cd}
 .ao-guide-popover[hidden]{display:none}
 @media (min-width:700px){.ao-reader-stage{grid-template-columns:76px minmax(0,1fr) 76px}.ao-card-viewport{padding:.8rem}.ao-rail-copy{font-size:.62rem}}
@@ -86,6 +92,8 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     posture:persist(moment.posture, previous.posture),
     gesture:moment.gesture ?? null,
     response:moment.response ?? null,
+    bell:moment.bell ?? null,
+    cinematic:moment.cinematic ?? null,
     priestPosition:persist(moment.priestPosition, previous.priestPosition),
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
@@ -127,8 +135,12 @@ export function buildReaderShellMarkup(prepared = {}) {
     </main>
     <aside class="ao-rail ao-rail-right" aria-label="Audio">
       <div class="ao-rail-item" data-channel="priest-voice"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
+      <div class="ao-rail-item" data-channel="bell"><span class="ao-rail-copy" data-role="bell">—</span></div>
       <div class="ao-rail-item" data-channel="schola"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-rail-copy" data-role="schola">—</span></div>
     </aside>
+  </div>
+  <div class="ao-cinematic" data-role="cinematic" aria-live="polite" hidden>
+    <div class="ao-cinematic-inner"><div class="ao-cinematic-mark">✠</div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
   </div>
   <nav class="ao-reader-nav" aria-label="Prayer card navigation">
     <button type="button" data-reader-nav="previous">Back</button>
@@ -247,12 +259,14 @@ export function createReaderDomAdapter({
     setText(root,"posture",textValue(current.posture));
     setText(root,"gesture",textValue(current.gesture));
     setText(root,"response",textValue(current.response));
+    setText(root,"bell",current.bell ? [textValue(current.bell),current.bell.detail].filter(Boolean).join(" · ") : null);
     setText(root,"priest-voice",textValue(current.priestVoice));
     setText(root,"schola",current.scholaVisible ? textValue(current.schola) : null);
 
     setChannel(root,"posture",current.posture);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
+    setChannel(root,"bell",current.bell);
     setChannel(root,"priest-voice",current.priestVoice);
     setChannel(root,"schola",current.scholaVisible ? current.schola : null);
 
@@ -262,6 +276,15 @@ export function createReaderDomAdapter({
     applyIcon(root,"response",current.responseIconKey,iconResolver);
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
+
+    const cinematic=root.querySelector('[data-role="cinematic"]');
+    if(cinematic){
+      const visible=Boolean(current.cinematic);
+      cinematic.hidden=!visible;
+      cinematic.dataset.kind=visible ? String(current.cinematic.kind??"TRANSIENT") : "";
+      setText(root,"cinematic-title",visible ? current.cinematic.title : null);
+      setText(root,"cinematic-sub",visible ? current.cinematic.subtitle : null);
+    }
 
     const guideButton=root.querySelector('[data-role="guide-button"]');
     if(guideButton) guideButton.disabled=!current.guide;

@@ -43,7 +43,9 @@
     "priestPosition": "PERSISTENT_UNTIL_ROUTE_CHANGE",
     "priestVoice": "PERSISTENT_UNTIL_VOICE_CHANGE",
     "schola": "CONTINUOUS_WHEN_ACTIVE_EXCEPT_SHARED_TEXT_SUPPRESSION",
-    "guide": "CURRENT_RUBRIC_ONLY"
+    "guide": "CURRENT_RUBRIC_ONLY",
+    "bell": "TRANSIENT_EXACT_ANCHOR",
+    "cinematic": "TRANSIENT_SINGLE_OWNER_TIMED_PRESENTATION"
   },
   "hardening": {
     "crossSourceMismatchCues": [
@@ -124,6 +126,7 @@
     "A transient gesture may never become a persistent posture unless a separate posture transition exists.",
     "The ordinary Incarnatus uses a genuflection cue, not persistent kneeling.",
     "Local posture overrides are guidance profiles and never rewrite sourced ritual actions.",
-    "Guide rubrics must resolve from the recovered continuity-certified registry; missing/invalid entries fail closed."
+    "Guide rubrics must resolve from the recovered continuity-certified registry; missing/invalid entries fail closed.",
+    "Bell/cinematic presentation state is transient and may never advance canonical Mass state."
   ]
 }

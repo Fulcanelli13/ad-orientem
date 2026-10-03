@@ -25,9 +25,9 @@ const proper={
   communion:t("Cm","Communion"),postcommunions:[t("Pc","Postcommunion")],
 };
 const eventData=[
-  {id:"MC-INT-020",actor:"PRIEST",title:"Priest recites Introit",contentRef:"proper.introit",sourceMomentRefs:["E08"],voice:{audibility:"LOW_VOICE",speechAudibility:"LOW_VOICE"}},
-  {id:"MC-CRD-025",actor:"PRIEST",title:"Priest reaches Et incarnatus",contentRef:"ordinary.credo",sourceMomentRefs:["E21"],voice:{audibility:"LOW_VOICE",speechAudibility:"LOW_VOICE"}},
-];
+  "../data/mass/mc-events-01.v1.json","../data/mass/mc-events-02.v1.json","../data/mass/mc-events-03.v1.json",
+  "../data/mass/mc-events-04.v1.json","../data/mass/mc-events-05.v1.json","../data/mass/mc-events-06.v1.json",
+].flatMap(path=>load(path).events);
 const livePrepared={
   session:{
     resolvedMass:{
@@ -64,6 +64,9 @@ assert.equal(ready.model.totalCards,30);
 assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
 assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
 assert.equal(ready.cueState.supported,true);
+assert.equal(ready.transientState.supported,true);
+assert.equal(ready.transientState.audit.bellCueCount,5);
+assert.equal(ready.transientState.project("AO.SM.C0174").bell.label,"ELEVATION BELL");
 assert.equal(ready.cueState.project("AO.SM.C0084").priestPosition.station,"ALTAR_GOSPEL_MISSAL");
 assert.equal(ready.cueState.project("AO.SM.C0071").response.text,"Et cum spíritu tuo.");
 assert.ok(ready.model.cards[0].paragraphs.length>0);
@@ -176,14 +179,18 @@ assert.equal(essentialSource.gesture,null,
 
 const transitionGuard=createCardTransitionTransientGuard();
 assert.equal(transitionGuard.pending,false);
-assert.deepEqual(transitionGuard.filter({gesture:{label:"BOW"},response:{label:"AMEN"}}),{
-  gesture:{label:"BOW"},response:{label:"AMEN"}
+assert.deepEqual(transitionGuard.filter({
+  gesture:{label:"BOW"},response:{label:"AMEN"},bell:{label:"BELL"},cinematic:{title:"CINEMA"}
+}),{
+  gesture:{label:"BOW"},response:{label:"AMEN"},bell:{label:"BELL"},cinematic:{title:"CINEMA"}
 });
 transitionGuard.begin();
 assert.equal(transitionGuard.pending,true);
-assert.deepEqual(transitionGuard.filter({gesture:{label:"BOW"},response:{label:"AMEN"}}),{
-  gesture:null,response:null
-},"card transition leaked prior transient gesture/response");
+assert.deepEqual(transitionGuard.filter({
+  gesture:{label:"BOW"},response:{label:"AMEN"},bell:{label:"BELL"},cinematic:{title:"CINEMA"}
+}),{
+  gesture:null,response:null,bell:null,cinematic:null
+},"card transition leaked prior gesture/response/bell/cinematic transient");
 transitionGuard.resolveCue("AO.SM.C0100");
 assert.equal(transitionGuard.pending,false);
 assert.equal(transitionGuard.filter({gesture:{label:"NEW"}}).gesture.label,"NEW");

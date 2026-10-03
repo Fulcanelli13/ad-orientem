@@ -15,6 +15,7 @@ import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForSequence } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
 import { iconKeysForReaderState } from "./reader-icons.js";
+import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -126,10 +127,12 @@ export function createCardTransitionTransientGuard(){
       if(cueId)pending=false;
       return pending;
     },
-    filter({gesture=null,response=null}={}){
+    filter({gesture=null,response=null,bell=null,cinematic=null}={}){
       return Object.freeze({
         gesture:pending ? null : gesture,
         response:pending ? null : response,
+        bell:pending ? null : bell,
+        cinematic:pending ? null : cinematic,
       });
     },
     get pending(){return pending;},
@@ -171,7 +174,8 @@ export async function prepareNativeReaderPreview({
     prepared,
   });
   const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
-  return Object.freeze({prepared,data,model,events,eventState,registries,cueState,guide,scholaState});
+  const transientState=createReaderTransientController({events,prepared});
+  return Object.freeze({prepared,data,model,events,eventState,registries,cueState,guide,scholaState,transientState});
 }
 
 export async function mountNativeReaderPreview({
@@ -220,8 +224,44 @@ export async function mountNativeReaderPreview({
   let cueTracker=null;
   let activeCueId=null;
   let scheduled=false;
+  let initialCardRender=true;
+  let partCinematic=null;
+  let eventCinematic=null;
+  let partCinemaTimer=null;
+  let eventCinemaTimer=null;
+  let lastEventCinemaCue=null;
   const transientGuard=createCardTransitionTransientGuard();
   const win=doc.defaultView ?? globalThis;
+
+  function clearScheduledTimer(timer){
+    if(timer==null)return;
+    const clear=win?.clearTimeout ?? globalThis.clearTimeout;
+    if(typeof clear==="function")clear.call(win,timer);
+  }
+  function later(fn,ms){
+    const set=win?.setTimeout ?? globalThis.setTimeout;
+    return typeof set==="function" ? set.call(win,fn,ms) : null;
+  }
+  function armPartCinematic(next){
+    clearScheduledTimer(partCinemaTimer);
+    partCinemaTimer=null;
+    partCinematic=next??null;
+    if(partCinematic)partCinemaTimer=later(()=>{partCinematic=null;partCinemaTimer=null;queue();},partCinematic.durationMs??920);
+  }
+  function clearEventCinematic({resetCue=false}={}){
+    clearScheduledTimer(eventCinemaTimer);
+    eventCinemaTimer=null;
+    eventCinematic=null;
+    if(resetCue)lastEventCinemaCue=null;
+  }
+  function armEventCinematic(next,cueId){
+    if(!next){clearEventCinematic({resetCue:true});return;}
+    if(lastEventCinemaCue===cueId)return;
+    clearEventCinematic();
+    lastEventCinemaCue=cueId;
+    eventCinematic=next;
+    eventCinemaTimer=later(()=>{eventCinematic=null;eventCinemaTimer=null;queue();},next.durationMs??1350);
+  }
 
   function projectedState(){
     const legacy=legacyReaderStateSnapshot(doc);
@@ -244,12 +284,17 @@ export async function mountNativeReaderPreview({
       gestureProfile,
     });
     const cueNative=owned.cueNative;
+    const transientProjection=activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null);
     const transient=transientGuard.filter({
       gesture:owned.gesture,
       response:owned.response,
+      bell:transientProjection.bell,
+      cinematic:eventCinematic,
     });
     const gesture=transient.gesture;
     const response=transient.response;
+    const bell=transient.bell;
+    const cinematic=partCinematic ?? transient.cinematic;
     const {priestVoice,priestPosition}=owned;
 
     // Posture ownership is profile-aware. FOLLOW_CONGREGATION remains an
@@ -269,6 +314,16 @@ export async function mountNativeReaderPreview({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
       response:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.response,
+      bell:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : transientProjection.ownership.bell,
+      cinematic:partCinematic
+        ? partCinematic.owner
+        : transientGuard.pending
+          ? "V1_83_CARD_TRANSITION_CLEARED"
+          : eventCinematic
+            ? transientProjection.ownership.cinematic
+            : transientProjection.cinematic
+              ? "R17_CUE_CINEMATIC_CONSUMED"
+              : transientProjection.ownership.cinematic,
       posture:postureResolved.owner,
       schola:scholaProjection.ownership,
     });
@@ -281,6 +336,8 @@ export async function mountNativeReaderPreview({
       posture,
       gesture,
       response,
+      bell,
+      cinematic,
       priestVoice,
       schola:scholaProjection.schola,
       sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),
@@ -297,9 +354,14 @@ export async function mountNativeReaderPreview({
   }
   function showCard(card){
     if(!card) return null;
-    const changed=Boolean(current?.sectionId && current.sectionId!==card.sectionId);
+    const previous=current;
+    const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
+    const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
+    initialCardRender=false;
+    armPartCinematic(partCinema);
     if(changed){
       activeCueId=null;
+      clearEventCinematic({resetCue:true});
       transientGuard.begin();
       root.dataset.r17NativeCue="unresolved";
     }
@@ -324,6 +386,8 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerPriestPosition=state.ownership?.priestPosition??"UNRESOLVED";
     root.dataset.r17OwnerPosture=state.ownership?.posture??"UNRESOLVED";
     root.dataset.r17OwnerSchola=state.ownership?.schola??"UNRESOLVED";
+    root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
+    root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll){
@@ -360,6 +424,8 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerPriestPosition=state.ownership?.priestPosition??"UNRESOLVED";
     root.dataset.r17OwnerPosture=state.ownership?.posture??"UNRESOLVED";
     root.dataset.r17OwnerSchola=state.ownership?.schola??"UNRESOLVED";
+    root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
+    root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
   }
 
@@ -372,6 +438,10 @@ export async function mountNativeReaderPreview({
   }
 
   function destroy(){
+    clearScheduledTimer(partCinemaTimer);
+    clearScheduledTimer(eventCinemaTimer);
+    partCinemaTimer=null;
+    eventCinemaTimer=null;
     observer?.disconnect?.();
     observer=null;
     cueTracker?.destroy?.();
@@ -398,6 +468,8 @@ export async function mountNativeReaderPreview({
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
+        const transientProjection=cueId ? ready.transientState.project(cueId) : null;
+        armEventCinematic(transientProjection?.cinematic??null,cueId);
         root.dataset.r17NativeCue=cueId??"unresolved";
         queue();
       },
@@ -429,6 +501,8 @@ export async function mountNativeReaderPreview({
       posture:"PROFILE_AWARE_R17_SOURCE_OR_LOCAL__FOLLOW_CONGREGATION_OBSERVED",
       priestPosition:"R17_CUE_SOURCE_PERSISTENT_ON_CERTIFIED_MISSA_CANTATA",
       schola:"R17_NATIVE_INDEPENDENT_SCHOLA_CLOCK",
+      bell:"R17_RECOVERED_EXACT_CUE_CANONICAL_SOUND_EVENT",
+      cinematic:"R17_SINGLE_OWNER_TIMED_TRANSIENT",
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
       modeSwitch:"LOCKED_UNTIL_V1_83_READER_PARITY",
     }),
@@ -444,6 +518,7 @@ export async function mountNativeReaderPreview({
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
     getScholaState:()=>ready.scholaState.project(),
+    getTransientState:()=>activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null),
     nextSchola:()=>{const value=ready.scholaState.next();queue();return value},
     previousSchola:()=>{const value=ready.scholaState.previous();queue();return value},
     finishSchola:()=>{const value=ready.scholaState.finish();queue();return value},

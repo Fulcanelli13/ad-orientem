@@ -22,7 +22,9 @@ for(const token of [
   'data-channel="gesture"',
   'data-channel="response"',
   'data-channel="priest-voice"',
+  'data-channel="bell"',
   'data-channel="schola"',
+  'data-role="cinematic"',
   'data-reader-nav="previous"',
   'data-reader-nav="next"',
   'data-icon-slot="priest-action"'
@@ -35,6 +37,8 @@ const first=normalizeReaderMoment({
   posture:{label:"STAND"},
   gesture:{label:"BOW"},
   response:{label:"Et incarnatus est"},
+  bell:{label:"ELEVATION BELL",detail:"Sacred Host"},
+  cinematic:{kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST"},
   priestPosition:{label:"CENTRE"},
   priestVoice:{label:"AUDIBLE"},
   schola:{label:"CREDO"},
@@ -56,6 +60,8 @@ expect(second.priestPosition?.label==="CENTRE","persistent priest position did n
 expect(second.priestVoice?.label==="AUDIBLE","persistent priest voice did not carry");
 expect(second.gesture===null,"transient gesture leaked into next moment");
 expect(second.response===null,"transient response leaked into next moment");
+expect(second.bell===null,"transient bell leaked into next moment");
+expect(second.cinematic===null,"transient cinematic leaked into next moment");
 expect(second.schola?.label==="CREDO","underlying Schola state did not persist");
 expect(second.scholaVisible===false,"shared text did not suppress duplicate Schola lane");
 expect(second.cardTitle==="Credo","action-only moment replaced the card title");

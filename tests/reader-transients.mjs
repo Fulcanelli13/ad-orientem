@@ -1,0 +1,42 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { BELL_CUE_BINDINGS, createReaderTransientController, partTransitionCinematic, validateReaderTransientBindings } from "../src/mass/reader-transients.js";
+
+const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
+const events=["../data/mass/mc-events-01.v1.json","../data/mass/mc-events-02.v1.json","../data/mass/mc-events-03.v1.json","../data/mass/mc-events-04.v1.json","../data/mass/mc-events-05.v1.json","../data/mass/mc-events-06.v1.json"].flatMap(path=>load(path).events);
+
+const audit=validateReaderTransientBindings(events);
+assert.equal(audit.bellCueCount,5);
+assert.deepEqual(audit.cueIds,["AO.SM.C0145","AO.SM.C0161","AO.SM.C0174","AO.SM.C0181","AO.SM.C0225"]);
+assert.equal(BELL_CUE_BINDINGS.length,5);
+
+const controller=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]}}}});
+assert.equal(controller.supported,true);
+assert.equal(controller.project("AO.SM.C0145").bell.canonicalEventIds[0],"MC-SAN-020");
+assert.equal(controller.project("AO.SM.C0161").bell.canonicalEventIds[0],"MC-CAN-070");
+assert.deepEqual(controller.project("AO.SM.C0174").bell.canonicalEventIds,["MC-CNS-030","MC-CNS-040"]);
+assert.equal(controller.project("AO.SM.C0174").cinematic.kind,"ELEVATION");
+assert.deepEqual(controller.project("AO.SM.C0181").bell.canonicalEventIds,["MC-CNS-100","MC-CNS-110"]);
+assert.equal(controller.project("AO.SM.C0225").bell.canonicalEventIds[0],"MC-COM-185");
+assert.equal(controller.project("AO.SM.C0225").cinematic.kind,"BELL");
+assert.equal(controller.project("AO.SM.C0173").bell,null,"Host words cue acquired the elevation bell");
+assert.equal(controller.project("AO.SM.C0180").bell,null,"Chalice words cue acquired the elevation bell");
+
+const noCommunion=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_SIMPLE",conditions:[]}}}});
+assert.equal(noCommunion.project("AO.SM.C0225").bell,null,"conditional Communion warning fired without communicants");
+assert.equal(noCommunion.project("AO.SM.C0225").ownership.bell,"R17_CONDITION_FAIL_CLOSED");
+
+const unsupported=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"LOW",conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]}}}});
+assert.equal(unsupported.supported,false);
+assert.equal(unsupported.project("AO.SM.C0174").ownership.bell,"LEGACY_FALLBACK");
+
+const partA={part:"Mass of the Catechumens",title:"Credo"},partB={part:"Mass of the Faithful",title:"Offertory"};
+assert.equal(partTransitionCinematic(partA,{...partA,title:"Collect"}),null,"same-part card change triggered part cinema");
+const transition=partTransitionCinematic(partA,partB);
+assert.equal(transition.kind,"PART_TRANSITION");
+assert.equal(transition.owner,"R17_SECTION_MAP_DISPLAY_GROUPING");
+assert.equal(transition.canonicalAuthority,false);
+assert.equal(transition.durationMs,920);
+assert.equal(partTransitionCinematic(null,partA,{initial:true}).part,"Mass of the Catechumens");
+
+console.log("reader transients: PASS — five recovered bell anchors, canonical sound-event validation, condition fail-closed, elevation/part cinematic ownership.");

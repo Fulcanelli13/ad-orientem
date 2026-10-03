@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -73,6 +73,29 @@
       "bridge": "globalThis.AO_R17_ICON_ASSETS",
       "sourceBank": "existing host AO_ASSETS",
       "failClosedOnMissingAssets": true
+    },
+    {
+      "id": "BELL_CINEMATIC_NATIVE_OWNERSHIP",
+      "status": "CERTIFIED_MISSA_CANTATA",
+      "controller": "src/mass/reader-transients.js",
+      "recoveredBellCueCount": 5,
+      "recoveredBellCueIds": [
+        "AO.SM.C0145",
+        "AO.SM.C0161",
+        "AO.SM.C0174",
+        "AO.SM.C0181",
+        "AO.SM.C0225"
+      ],
+      "canonicalSoundEventAuthority": true,
+      "partCinematicSource": "DISPLAY_GROUPING_ONLY reader section part",
+      "singleOwnerTimedCinematic": true,
+      "cardTransitionClears": [
+        "gesture",
+        "response",
+        "bell",
+        "cinematic"
+      ],
+      "canonicalStateMutation": false
     }
   ],
   "openBlockers": [
@@ -105,11 +128,6 @@
       "id": "PROPER_FIXTURE_PROVENANCE",
       "severity": "PRODUCTION_GOLDEN_BLOCKER",
       "detail": "The quarantined 4 October Secret/Communion/Postcommunion fixture still requires accepted replacement witnesses."
-    },
-    {
-      "id": "BELL_CINEMATIC_READER_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Canonical bell events are structured in the Mass graph, but the native reader has not yet converged bell/cinematic projection. Card transitions must clear any bell/cinematic transient exactly as v1.83 required."
     },
     {
       "id": "SOLEMN_PAX_TRANSFER_AUTHORITY",
