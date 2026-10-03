@@ -78,6 +78,8 @@ assert.equal(structureSupport(votive).supported,true,
 
 const aspergesPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:["ASPERGES"],followingGraphs:[],overlayGraphs:[]}}};
 assert.equal(structureSupport(aspergesPrepared).supported,true,"certified Asperges prelude remained structurally blocked");
+const palmPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:["PALM"],followingGraphs:[],overlayGraphs:[]}}};
+assert.equal(structureSupport(palmPrepared).supported,true,"certified Palm prelude remained structurally blocked");
 
 for(const [label,plan] of [
   ["preceding",{kind:"MASS",precedingGraphs:["PALM"],followingGraphs:[],overlayGraphs:[]}],
