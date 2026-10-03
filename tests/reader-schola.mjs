@@ -36,6 +36,10 @@ assert.match(s.schola.latin,/Adorámus/);
 s=schola.activateForCard(6);
 assert.equal(s.trackId,"GRADUAL");
 assert.equal(s.schola.latin,"Graduale et Alleluia");
+const gradualTrack=schola.tracks.find(x=>x.id==="GRADUAL");
+const alleluiaTrack=schola.tracks.find(x=>x.id==="ALLELUIA_TRACT_SEQUENCE");
+assert.deepEqual(gradualTrack.canonicalBlockIds,["AO.SM.B021"]);
+assert.deepEqual(alleluiaTrack.canonicalBlockIds,["AO.SM.B022"]);
 s=schola.selectTrack("ALLELUIA_TRACT_SEQUENCE");
 assert.equal(s.schola.latin,"Sequentia");
 
