@@ -47,7 +47,6 @@ const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "G6_48_CARD_MAP",
   "GRADUAL_LIVE_ARCHITECTURE",
-  "SCHOLA_NATIVE_PARITY",
   "ICON_ASSET_INTEGRATION",
   "FORM_STATE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
@@ -57,6 +56,10 @@ for(const id of [
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
   "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
+
+const schola=release.protectedInvariants.find(x=>x.id==="SCHOLA_NATIVE_OWNERSHIP");
+assert.equal(schola?.status,"CERTIFIED_MISSA_CANTATA","Schola blocker disappeared without native ownership certification");
+assert.match(String(schola?.controller??""),/reader-schola\.js/,"Schola native controller invariant lost");
 
 const guide=release.protectedInvariants.find(x=>x.id==="GUIDE_REGISTRY_CONTINUITY");
 assert.equal(guide?.status,"RECOVERED_CONTINUITY_CERTIFIED","Guide blocker disappeared without continuity certification");
@@ -93,6 +96,8 @@ assert.match(nativeSource,/V1_83_48_CARD_LIVE_MAP_REQUIRED|structuralSupport\.re
 assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
+assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
+assert.doesNotMatch(nativeSource,/#scholaDock|#scholaStreamLine/,"native reader reintroduced legacy Schola DOM donor");
 
 const cueSource=readFileSync(new URL("../src/mass/reader-cue-state.js",import.meta.url),"utf8");
 assert.match(cueSource,/V183_GESTURE_SUPPRESS/);
