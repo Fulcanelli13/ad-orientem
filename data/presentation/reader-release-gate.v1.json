@@ -1,14 +1,16 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.0.0",
-  "status": "BLOCKED_PENDING_V1_83_PARITY",
+  "version": "2.1.0",
+  "status": "BLOCKED_PENDING_SOURCE_FIRST_LIVE_INTEGRATION",
   "productionDefault": "LEGACY",
-  "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
+  "releaseRule": "R17 reader may not become the production default until every blocker is closed and the source-first LIVE presentation structure is integrated and phone-certified. Historical v1.83 card count is compatibility evidence only.",
   "protectedInvariants": [
     {
-      "id": "V183_CARD_COUNT",
+      "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
       "expectedLiveCards": 48,
-      "canonicalMacros": 30
+      "canonicalMacros": 30,
+      "status": "NON_BLOCKING_COMPATIBILITY_EVIDENCE",
+      "releaseAuthority": false
     },
     {
       "id": "HOST_ELEVATION_GATE",
@@ -178,13 +180,25 @@
         "distinct rites never inherit ordinary Mass assumptions",
         "missing reader payload fails closed"
       ]
+    },
+    {
+      "id": "CANON_SOURCE_STRUCTURE",
+      "status": "CERTIFIED_SOURCE_FIRST",
+      "file": "data/presentation/reader-canon-source-map.v1.json",
+      "segments": 14,
+      "blocks": [
+        "AO.SM.B047",
+        "AO.SM.B060"
+      ],
+      "events": 29,
+      "historical48RequiredForRelease": false
     }
   ],
   "openBlockers": [
     {
-      "id": "G6_48_CARD_MAP",
+      "id": "LIVE_SOURCE_STRUCTURE_INTEGRATION",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Exact ordered v1.83 C01-C48 LIVE enumeration is still unrecovered. Nine of the ten historical v1.81 decompression splits are semantically recovered; exactly one remains unresolved: a Canon boundary."
+      "detail": "Canon source segmentation is now certified independently of v1.83 card archaeology. The remaining reader-structure task is to integrate source-first LIVE navigation across the full Mass and certify it on phone; exact recovery of historical C01-C48 is no longer required."
     },
     {
       "id": "FORM_TRANSIENT_PARITY",
@@ -220,8 +234,9 @@
   "certificationPolicy": {
     "greenUnitCIIsNotReleaseCertification": true,
     "requireAllBlockersClosed": true,
-    "requireAuthoritative48CardMap": true,
+    "requireAuthoritative48CardMap": false,
     "requireRealBrowserPhoneAcceptance": true,
-    "requireLegacyDefaultUntilCertified": true
+    "requireLegacyDefaultUntilCertified": true,
+    "requireSourceFirstCanonMap": true
   }
 }
