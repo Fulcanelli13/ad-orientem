@@ -346,6 +346,8 @@ const palmMounted=await mountNativeReaderPreview({
 });
 assert.equal(palmMounted.root.dataset.r17SpecialStructure,"PALM");
 assert.equal(palmMounted.getPalmState().card.id,"PALM-R01");
+palmMounted.next();
+assert.equal(palmMounted.getPalmState().card.id,"PALM-R02");
 palmMounted.setPalmRecipientState("RECEIVE_PALM");
 assert.equal(palmMounted.getPalmState().recipientPosture,"KNEEL");
 palmMounted.destroy();
