@@ -1,10 +1,13 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   createReaderStructureController,
   LIVE_STRUCTURE_STATUS,
   makeStructureCards,
   structureSupport,
 } from "../src/mass/reader-structure.js";
+
+const canonSourceMap=JSON.parse(readFileSync(new URL("../data/presentation/reader-canon-source-map.v1.json",import.meta.url),"utf8"));
 
 const ordinary={
   readerPreferences:{mode:"LIVE"},
@@ -16,27 +19,43 @@ const ordinary={
 
 assert.equal(makeStructureCards("MISSAL").length,30);
 assert.equal(makeStructureCards("SIMPLE").length,30);
-assert.equal(makeStructureCards("LIVE").length,20);
+assert.equal(makeStructureCards("LIVE",canonSourceMap).length,39);
 
-const live=makeStructureCards("LIVE");
-assert.equal(live[0].id,"AO.R17.LIVE.C01");
-assert.equal(live[0].title,"Preparatory Rites");
-assert.equal(live.at(-1).id,"AO.R17.LIVE.C20");
-assert.deepEqual([...live[9].baseIds],["AO.SM.M10","AO.SM.M11"]);
+const live=makeStructureCards("LIVE",canonSourceMap);
+assert.equal(live[0].id,"AO.R19.LIVE.M01");
+assert.equal(live[0].title,"Introit & Preparatory Prayers");
+assert.equal(live[13].id,"AO.CANON.01");
+assert.equal(live[13].title,"Te igitur");
+assert.equal(live[18].id,"AO.CANON.06");
+assert.equal(live[18].title,"Consecration of the Sacred Host");
+assert.equal(live[19].id,"AO.CANON.07");
+assert.equal(live[19].title,"Consecration of the Chalice");
+assert.equal(live[26].id,"AO.CANON.14");
+assert.equal(live[26].title,"Per ipsum · Minor Elevation");
+assert.equal(live.at(-1).id,"AO.R19.LIVE.M30");
+assert.equal(live.at(-1).title,"Last Gospel");
 
-assert.equal(LIVE_STRUCTURE_STATUS,"SOURCE_FIRST_CANON_CERTIFIED__FULL_LIVE_PENDING");
-assert.equal(structureSupport(ordinary).supported,false);
-assert.equal(structureSupport(ordinary).reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
+assert.equal(LIVE_STRUCTURE_STATUS,"SOURCE_FIRST_FULL_MASS_CERTIFIED");
+assert.equal(structureSupport(ordinary).supported,true);
+assert.equal(structureSupport(ordinary).reason,null);
 
-const blockedLive=createReaderStructureController(ordinary);
-assert.equal(blockedLive.supported,false);
-let s=blockedLive.snapshot();
+const liveCtrl=createReaderStructureController(ordinary,{canonSourceMap});
+assert.equal(liveCtrl.supported,true);
+let s=liveCtrl.snapshot();
 assert.equal(s.mode,"LIVE");
-assert.equal(s.total,20);
-assert.equal(s.reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
-const blockedBefore=s;
-blockedLive.next();
-assert.deepEqual(blockedLive.snapshot(),blockedBefore,"provisional LIVE donor navigated despite source-first integration gate");
+assert.equal(s.total,39);
+assert.equal(s.title,"Introit & Preparatory Prayers");
+liveCtrl.goToBase("AO.SM.M14");
+s=liveCtrl.snapshot();
+assert.equal(s.cardId,"AO.CANON.01");
+assert.equal(s.title,"Te igitur");
+liveCtrl.next();
+assert.equal(liveCtrl.snapshot().title,"Memento, Domine — Living");
+
+const missingCanon=createReaderStructureController(ordinary);
+assert.equal(missingCanon.supported,false);
+assert.equal(missingCanon.reason,"SOURCE_FIRST_LIVE_CANON_MAP_REQUIRED");
+assert.equal(missingCanon.snapshot().total,0);
 
 const missalPrepared={
   ...ordinary,
@@ -46,7 +65,7 @@ const missalPrepared={
     resolvedMass:{...ordinary.session.resolvedMass,presentationMode:"MISSAL"},
   },
 };
-const ctrl=createReaderStructureController(missalPrepared);
+const ctrl=createReaderStructureController(missalPrepared,{canonSourceMap});
 assert.equal(ctrl.supported,true);
 s=ctrl.snapshot();
 assert.equal(s.mode,"MISSAL");
@@ -59,12 +78,12 @@ assert.equal(s.title,"Orate fratres & Secret");
 assert.equal(s.localIndex,2);
 assert.equal(s.localTotal,4);
 
-const beforeLiveAttempt=s;
 ctrl.setMode("LIVE");
 s=ctrl.snapshot();
-assert.equal(s.mode,"MISSAL","unsupported LIVE request changed the active structure");
-assert.equal(s.reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
-assert.equal(s.cardId,beforeLiveAttempt.cardId);
+assert.equal(s.mode,"LIVE","certified LIVE request did not change active structure");
+assert.equal(s.total,39);
+assert.equal(s.baseIds[0],"AO.SM.M11");
+assert.equal(s.title,"Orate fratres & Secret");
 
 const votive={
   ...missalPrepared,
@@ -89,10 +108,10 @@ for(const [label,plan] of [
 ]){
   const prepared={...ordinary,session:{...ordinary.session,plan}};
   assert.equal(structureSupport(prepared).supported,false,label+" should fail closed");
-  const c=createReaderStructureController(prepared);
-  const before=c.snapshot();
-  c.next();
-  assert.deepEqual(c.snapshot(),before,label+" mutated unsupported structure");
+  const controller=createReaderStructureController(prepared,{canonSourceMap});
+  const before=controller.snapshot();
+  controller.next();
+  assert.deepEqual(controller.snapshot(),before,label+" mutated unsupported structure");
 }
 
-console.log("reader structure contract: PASS");
+console.log("reader structure contract: PASS — 39-step source-first LIVE replaces the old 20-group donor.");
