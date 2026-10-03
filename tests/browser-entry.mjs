@@ -46,6 +46,12 @@ assert.throws(
 
 console.log("browser-entry contract: PASS");
 
+const iconKeys=[
+  "stand","sit","kneel","genuflect","bow","cross","gospel_crosses","breast_strike","head_bow","profound_bow","hands_joined",
+  "response","schola","priest_audible","priest_silent","priest_foot","priest_steps","priest_centre","priest_epistle","priest_gospel","priest_sedilia","priest_rail","priest_people",
+];
+const iconAssets=Object.fromEntries(iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"]));
+
 
 let mirrorCalls=0;
 const nativeChoice=await mountR17Preview({
@@ -53,6 +59,7 @@ const nativeChoice=await mountR17Preview({
   prepared:{},
   nativeMount:()=>({kind:"native"}),
   mirrorMount:()=>{mirrorCalls+=1;return {kind:"mirror"}},
+  iconAssets,
 });
 assert.equal(nativeChoice.uiOwner,"R17_NATIVE_CARDS_OVER_LEGACY_STATE");
 assert.equal(nativeChoice.preview.kind,"native");
@@ -64,8 +71,17 @@ const fallback=await mountR17Preview({
   prepared:{},
   nativeMount:()=>{throw new Error("native blocked")},
   mirrorMount:()=>{mirrorCalls+=1;return {kind:"mirror"}},
+  iconAssets,
 });
 assert.equal(fallback.uiOwner,"R17_MIRROR_FALLBACK");
 assert.equal(fallback.preview.kind,"mirror");
 assert.match(fallback.fallbackReason,/native blocked/);
 assert.equal(mirrorCalls,1);
+
+const missingBank=await mountR17Preview({
+  doc:{},prepared:{},iconAssets:{},
+  nativeMount:()=>({kind:"should-not-mount"}),
+  mirrorMount:()=>({kind:"mirror"}),
+});
+assert.equal(missingBank.uiOwner,"R17_MIRROR_FALLBACK");
+assert.match(missingBank.fallbackReason,/R17_ICON_BANK_INCOMPLETE/);
