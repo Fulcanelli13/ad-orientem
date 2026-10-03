@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "status": "V1_83_READER_PARITY_GATE",
+  "version": "1.2.0",
+  "status": "HISTORICAL_PARITY_REFERENCE_NON_BLOCKING",
   "reference": {
     "runtimeHead": "v1.83 MERGE GATE",
     "expectedLiveCards": 48,
@@ -18,7 +18,7 @@
   "currentR17": {
     "nativeReaderCards": 30,
     "canonicalMacros": 30,
-    "status": "NOT_PARITY_COMPLETE"
+    "status": "SOURCE_FIRST_RELEASE_POLICY"
   },
   "acceptance": [
     "Recover v1.81/v1.83 donor bytes or an exact contemporaneous enumeration of all 48 LIVE cards; do not invent IDs or boundaries.",
@@ -29,7 +29,7 @@
     "Focus geometry and horizontal navigation must pass on phone widths.",
     "No source correction may silently collapse the frozen 48-card concept."
   ],
-  "blockingReason": "R17 currently projects one native card per canonical macro. The frozen v1.83 LIVE reader requires 48 ordered semantic cards; 9/10 historical v1.81 decompression splits are semantically recovered, but the exact full C01–C48 enumeration and one remaining Canon boundary are still unrecovered.",
+  "blockingReason": "No longer a release blocker. Exact v1.83 C01-C48 recovery remains useful for historical UI fidelity only; Canon release structure is certified separately from source-backed prayer blocks and canonical cue/event ownership.",
   "recoveredV181Splits": [
     {
       "label": "Chalice preparation / Offerimus tibi",
@@ -101,5 +101,6 @@
       "area": "CANON",
       "status": "AREA_ONLY_EXACT_BOUNDARY_UNRECOVERED"
     }
-  ]
+  ],
+  "releaseAuthority": false
 }
