@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -178,6 +178,25 @@
         "distinct rites never inherit ordinary Mass assumptions",
         "missing reader payload fails closed"
       ]
+    },
+    {
+      "id": "ASPERGES_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_PAYLOAD_RUNTIME_SWITCH_PENDING",
+      "controller": "src/mass/reader-asperges.js",
+      "payload": "data/presentation/reader-asperges.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#ASP",
+      "sourceAuthority": "Missale Romanum 1962 Appendix II",
+      "sourceWitness": "https://www.clerus.org/bibliaclerusonline/de/gmt.htm",
+      "recoveredGraphRecords": 6,
+      "readerCards": 5,
+      "guarantees": [
+        "ordinary Asperges and Paschaltide Vidi aquam formulas are separate",
+        "Passiontide Gloria Patri omission is explicit",
+        "minister kneeling remains actor-scoped",
+        "faithful Sign of Cross requires ACTUALLY_SPRINKLED personal state",
+        "handoff returns to ordinary Mass Foot cluster",
+        "canonical Mass identity is not renumbered or mutated"
+      ]
     }
   ],
   "openBlockers": [
@@ -199,7 +218,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Compiled special-structure plan projection is certified. Remaining blocker is native reader payload/rendering for recovered preceding rites, overlays, following actions, and distinct rites; graph metadata may not be substituted for rite text."
+      "detail": "Compiled special-structure plan projection is certified. Asperges now has a source-pinned native payload/controller; remaining work is browser/runtime switching into that payload plus native payload/rendering for Palm, Ashes, Candlemas, Rogations, Requiem branches, following actions, Good Friday and Easter Vigil."
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",

@@ -70,6 +70,12 @@ assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
 assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
+const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
+assert.equal(aspergesPayload?.status,"CERTIFIED_PAYLOAD_RUNTIME_SWITCH_PENDING","Asperges payload certification disappeared");
+assert.match(String(aspergesPayload?.controller??""),/reader-asperges\.js/,"Asperges controller is not pinned");
+assert.equal(aspergesPayload?.recoveredGraphRecords,6,"Asperges six-record source scope changed");
+assert.equal(aspergesPayload?.readerCards,5,"Asperges reader-card contract changed");
+
 const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
