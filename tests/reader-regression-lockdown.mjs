@@ -47,12 +47,15 @@ assert.equal(support.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "G6_48_CARD_MAP",
-  "FORM_STATE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
   "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
+assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
+for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
+  assert.equal(release.protectedInvariants.find(x=>x.id===id)?.status,status,id+" release gate lost certification");
+}
 
 const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
 assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_G6",
@@ -112,6 +115,7 @@ assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
+assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
 assert.match(nativeSource,/createReaderTransientController/,"native reader lost native bell\/cinematic controller");
 assert.match(nativeSource,/r17OwnerBell/,"native reader lost bell ownership diagnostics");
 assert.match(nativeSource,/r17OwnerCinematic/,"native reader lost cinematic ownership diagnostics");
