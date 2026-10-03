@@ -232,7 +232,7 @@
     },
     {
       "id": "PALM_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_PAYLOAD_RUNTIME_SWITCH_PENDING",
+      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
       "controller": "src/mass/reader-palm.js",
       "payload": "data/presentation/reader-palm.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#PALM",
@@ -249,6 +249,16 @@
         "Mass handoff begins at Introit",
         "Prayers at the Foot are omitted only because Palm rite immediately preceded Mass",
         "Last Gospel is suppressed in the Palm-procession branch"
+      ],
+      "runtime": "src/mass/browser-runtime.js",
+      "runtimeGuarantees": [
+        "explicit Palm rite enters before ordinary Mass",
+        "Palm cards remain outside 30-card Mass identity",
+        "recipient posture remains personal state",
+        "completion renders Introit-only slice of AO.CARD.001",
+        "Prayers at the Foot cannot leak through combined first card",
+        "Back from Introit returns to Palm handoff card",
+        "Last Gospel navigation is suppressed when compiled plan forbids it"
       ]
     }
   ],
@@ -271,7 +281,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Special-structure plan projection is certified. Asperges has native payload plus modular runtime switching. Palm Sunday now has a source-pinned native payload and corrected Introit/Last-Gospel plan handoff; Palm runtime switching plus remaining rites are still pending."
+      "detail": "Asperges and Palm now have source-pinned native payloads plus green modular-runtime traversal contracts; production native-preview mounting remains pending for both. Ashes, Candlemas, Rogations, Requiem/following actions, Good Friday and Easter Vigil still require native payload/rendering."
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
