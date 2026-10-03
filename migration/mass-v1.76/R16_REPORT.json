@@ -1,0 +1,21 @@
+{
+  "release": "R16",
+  "status": "PASS",
+  "target_repo": "Fulcanelli13/ad-orientem",
+  "observed_branch": "migration/v43.33",
+  "whole_app_baseline_replaced": false,
+  "mass_baseline_sha256": "511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99",
+  "mass_baseline_bytes": 8297430,
+  "script_blocks_extracted": 31,
+  "shell_segments": 32,
+  "reference_chunks": 17,
+  "exact_extraction_reconstruction": true,
+  "exact_chunk_reconstruction": true,
+  "hold_intact": [
+    "src/mass/legacy/reader-runtime-v1.76.js"
+  ],
+  "verification_output": [
+    "PASS: v1.76 extraction reconstructs exact baseline 511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99",
+    "PASS: wrote /mnt/data/Ad_Orientem_R16_GitHub_Migration_Pack/legacy/Ad_Orientem_v1.76_R15_RELEASE_HARDENING.html (8297430 bytes, 511145a0fc967abcc1f81504330a95a6242dece53ceb51105b7dc12a4d070c99)"
+  ]
+}
