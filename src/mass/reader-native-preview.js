@@ -11,6 +11,7 @@ import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveF
 import { loadReaderCueRegistries, createReaderCueStateController } from "./reader-cue-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
 import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
+import { structureSupport } from "./reader-structure.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -148,6 +149,10 @@ export async function prepareNativeReaderPreview({
   loadCueRegistries=loadReaderCueRegistries,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
+  const structuralSupport=structureSupport(prepared);
+  if(!structuralSupport.supported){
+    throw new Error(structuralSupport.reason || "R17 native reader structure is not certified");
+  }
   const [data,events,registries]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
