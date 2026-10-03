@@ -42,6 +42,7 @@ for(const rite of ["PALM","ASH","CANDLEMAS","ROGATIONS"]){
   p=projectSpecialStructure(prepared({precedingRites:[rite]}),sources);
   assert.equal(p.segments[0].id,rite);
   assert.equal(p.segments[1].massEntry,"INTROIT",rite+" did not hand Mass to Introit");
+  if(rite==="PALM")assert.equal(p.ending.normalLastGospel,false,"Palm procession failed to suppress Last Gospel");
 }
 p=projectSpecialStructure(prepared({precedingRites:["CANDLEMAS"]}),sources);
 assert.deepEqual([...p.objectStates],["CANDLE_STATE_OVERLAY"]);
