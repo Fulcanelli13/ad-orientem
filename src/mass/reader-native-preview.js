@@ -14,6 +14,7 @@ import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForSequence } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
+import { iconKeysForReaderState } from "./reader-icons.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -272,6 +273,9 @@ export async function mountNativeReaderPreview({
       schola:scholaProjection.ownership,
     });
 
+    const iconKeys=iconKeysForReaderState({
+      priestPosition,posture,gesture,response,priestVoice,schola:scholaProjection.schola
+    });
     return Object.freeze({
       priestPosition,
       posture,
@@ -280,6 +284,7 @@ export async function mountNativeReaderPreview({
       priestVoice,
       schola:scholaProjection.schola,
       sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),
+      ...iconKeys,
       nativeEventId:eventState?.canonicalEventId??null,
       nativeCueId:activeCueId,
       cueProjectionSupported:cueNative,
