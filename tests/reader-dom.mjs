@@ -1,4 +1,4 @@
-import { buildReaderShellMarkup, normalizeReaderMoment } from "../src/mass/reader-dom.js";
+import { buildReaderShellMarkup, createReaderDomAdapter, normalizeReaderMoment } from "../src/mass/reader-dom.js";
 
 const expect=(x,m)=>{if(!x)throw new Error(m)};
 
@@ -77,4 +77,17 @@ const translated=normalizeReaderMoment({
 expect(translated.paragraphs[0].alternate==="Credo","Latin alternate text was lost");
 expect(translated.paragraphs[0].replaceOnToggle===true,"replace-on-toggle flag was lost");
 
-console.log("Reader DOM contract PASS: shell channels, persistent/transient ownership, Guide fail-closed, Schola suppression.");
+const fakeRoot={
+  innerHTML:"",
+  querySelector(){return null;},
+  querySelectorAll(){return [];},
+  addEventListener(){},
+};
+const locked=createReaderDomAdapter({root:fakeRoot,allowPresentationModeSwitch:false});
+locked.mount(prepared);
+expect(locked.getMode()==="LIVE","locked adapter changed initial mode");
+expect(locked.canSwitchPresentationMode()===false,"native parity lock was not exposed");
+locked.setMode("MISSAL");
+expect(locked.getMode()==="LIVE","locked reader accepted cosmetic mode switch before v1.83 parity");
+
+console.log("Reader DOM contract PASS: shell channels, persistent/transient ownership, Guide fail-closed, Schola suppression, parity mode lock.");
