@@ -122,6 +122,11 @@ export function validateProperManifestV2(manifest) {
     if (requirements.hancIgitur === true && !value) throw new Error("required Hanc igitur variant is unresolved");
     return value;
   });
+  check("CANON_QUI_PRIDIE", () => {
+    const value = assertCanonInsert(canon.quiPridie ?? null, "canonProperInserts.quiPridie");
+    if (requirements.quiPridie === true && !value) throw new Error("required Qui pridie variant is unresolved");
+    return value;
+  });
 
   check("INTERLECTION_SEQUENCE", () =>
     assertInterlectionSequence(manifest.interlectionSequence, { required: requirements.interlectionSequence === true })
