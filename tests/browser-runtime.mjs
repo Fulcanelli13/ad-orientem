@@ -10,6 +10,8 @@ const palmPayload=load("../data/presentation/reader-palm.v1.json");
 const palmData=Object.freeze({payload:palmPayload,graph:Object.freeze([...specialExtension.graphs.PALM])});
 const ashPayload=load("../data/presentation/reader-ash.v1.json");
 const ashData=Object.freeze({payload:ashPayload,graph:Object.freeze([...specialExtension.graphs.ASH])});
+const candlemasPayload=load("../data/presentation/reader-candlemas.v1.json");
+const candlemasData=Object.freeze({payload:candlemasPayload,graph:Object.freeze([...specialExtension.graphs.CND])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -190,6 +192,49 @@ assert.equal(ashRuntime.getAshState().card.id,"ASH-R05");
 ashRuntime.next();
 assert.equal(ashRuntime.getCurrentSectionId(),"AO.CARD.001");
 ashRuntime.destroy();
+
+const candlemasRoot=rootFixture();
+const candlemasRuntime=createBrowserMassRuntime({
+  root:candlemasRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["candlemas"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Candlemas",proper,precedingRites:["CANDLEMAS"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadCandlemasData:async()=>candlemasData,
+});
+const candlemasEntered=await candlemasRuntime.enter();
+assert.equal(candlemasEntered.session.plan.massEntry,"INTROIT");
+assert.equal(candlemasRuntime.getCurrentSectionId(),null);
+assert.equal(candlemasRuntime.getReaderState().cardTitle,"Blessing of Candles");
+assert.equal(candlemasRuntime.getCandlemasState().card.id,"CND-R01");
+assert.equal(candlemasRuntime.getReaderState().paragraphs.filter(p=>p.primary?.includes("Orémus")).length,5);
+candlemasRuntime.next();
+assert.equal(candlemasRuntime.getCandlemasState().card.id,"CND-R02");
+assert.equal(candlemasRuntime.getReaderState().gesture,null);
+candlemasRuntime.next();
+assert.equal(candlemasRuntime.getCandlemasState().card.id,"CND-R03");
+assert.equal(candlemasRuntime.getReaderState().posture,null);
+candlemasRuntime.setCandlemasRecipientState("RECEIVE_CANDLE");
+assert.equal(candlemasRuntime.getReaderState().posture.label,"KNEEL");
+assert.equal(candlemasRuntime.getCandlemasState().hasBlessedCandle,true);
+candlemasRuntime.setCandlemasRecipientState("CANDLE_RECEIVED");
+candlemasRuntime.setCandlemasProcessionParticipant(true);
+candlemasRuntime.next();
+assert.equal(candlemasRuntime.getReaderState().cardTitle,"Prayer after Distribution");
+candlemasRuntime.next();
+assert.equal(candlemasRuntime.getCandlemasState().candleState,"CANDLE_LIT");
+assert.equal(candlemasRuntime.getReaderState().posture.label,"PROCESSIONAL");
+while(!candlemasRuntime.getCandlemasState().atEnd)candlemasRuntime.next();
+candlemasRuntime.next();
+assert.equal(candlemasRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(candlemasRuntime.getReaderState().cardTitle,"Introit");
+assert.equal(candlemasRuntime.getCandlemasMassState("MC-GSP-060").state,"CANDLE_LIT");
+assert.equal(candlemasRuntime.getCandlemasMassState("MC-SAN-010").state,"CANDLE_LIT");
+assert.equal(candlemasRuntime.getCandlemasMassState("MC-COM-030").state,"CANDLE_LIT");
+assert.equal(candlemasRuntime.getCandlemasMassState("MC-COM-040").state,null);
+candlemasRuntime.previous();
+assert.equal(candlemasRuntime.getCandlemasState().card.id,"CND-R07");
+candlemasRuntime.destroy();
 
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({
