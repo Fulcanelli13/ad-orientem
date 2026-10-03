@@ -26,6 +26,7 @@ const runtime=createBrowserMassRuntime({
   })},
   resolveHostOptions:()=>({
     form:"mc-incense",
+    celebrationTitle:"Holy Rosary",
     proper:{sourcePath:"Sancti/10-07",introit:{lat:"Gaudeamus"}},
   }),
   readReaderPreferences:()=>({
