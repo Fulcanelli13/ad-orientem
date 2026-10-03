@@ -394,13 +394,35 @@
         "Back from Introit returns to Palm handoff card",
         "Last Gospel navigation is suppressed when compiled plan forbids it"
       ]
+    },
+    {
+      "id": "ASH_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "controller": "src/mass/reader-ash.js",
+      "payload": "data/presentation/reader-ash.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#ASH",
+      "sourceAuthority": "Missale Romanum 1962 — Feria IV Cinerum",
+      "projectDonor": "Recovered Ad Orientem Ash Wednesday corpus",
+      "recoveredGraphRecords": 8,
+      "readerCards": 5,
+      "runtime": "src/mass/browser-runtime.js",
+      "guarantees": [
+        "four blessing orations remain distinct reader text segments",
+        "sprinkling/incensing of ashes never fabricates a faithful gesture",
+        "recipient approach, kneeling reception and return are personal states",
+        "Ash cards remain outside ordinary Mass identity",
+        "completion renders Introit-only slice of AO.CARD.001",
+        "Prayers at the Foot cannot leak through the combined first Mass card",
+        "Back from Introit returns to the Ash handoff card",
+        "ordinary Last Gospel remains available after Ash Wednesday Mass"
+      ]
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Asperges and Palm have source-pinned native payloads plus modular-runtime traversal contracts. Production native-preview mounting remains pending for both. Ashes, Candlemas, Rogations, Requiem/following actions, Good Friday and Easter Vigil still require native payload/rendering."
+      "detail": "Asperges, Palm and Ash Wednesday now have source-pinned native payloads plus modular-runtime traversal contracts. Production native-preview mounting remains pending for these preludes. Candlemas, Rogations, Requiem/following actions, Good Friday and Easter Vigil still require native payload/rendering."
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
