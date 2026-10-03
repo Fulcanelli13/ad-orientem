@@ -12,6 +12,7 @@ const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
+  canonSourceMap:load("../data/presentation/reader-canon-source-map.v1.json"),
 });
 const eventGraph=load("../data/mass/mc-event-graph.v1.json");
 const eventData=eventGraph.storage.eventFiles.flatMap(ref=>load("../"+ref.path).events);
@@ -181,17 +182,34 @@ assert.equal(planAwareLow.advanceLifecycle().stage,"GIVE_THANKS_HANDOFF");
 assert.equal(planAwareLow.getLifecycleState().handoff,"GIVE_THANKS");
 planAwareLow.destroy();
 
-const liveBlockedRoot=rootFixture();
-const liveBlocked=createBrowserMassRuntime({
-  root:liveBlockedRoot,
+const liveRoot=rootFixture();
+const liveRuntime=createBrowserMassRuntime({
+  root:liveRoot,
   celebrationApi:{getResolvedMass:()=>celebration()},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Holy Rosary",proper}),
   readReaderPreferences:()=>({mode:"live",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
 });
-await assert.rejects(()=>liveBlocked.enter(),/SOURCE_FIRST_LIVE_STRUCTURE_PENDING/,
-  "standalone 30-card runtime bypassed the source-first LIVE integration gate");
-assert.equal(liveBlockedRoot.innerHTML,"");
+await liveRuntime.enter();
+assert.equal(liveRuntime.getReaderMode(),"LIVE");
+assert.equal(liveRuntime.getReaderModel().totalCards,39);
+assert.equal(liveRuntime.getReaderModel().structureOwner,"SOURCE_FIRST_LIVE");
+let liveHit=liveRuntime.showCanonicalEvent("MC-CAN-060");
+assert.equal(liveHit.card.sectionId,"AO.CANON.04");
+assert.equal(liveRuntime.getReaderState().cardTitle,"Hanc igitur");
+liveHit=liveRuntime.showCanonicalEvent("MC-CAN-080");
+assert.equal(liveHit.card.sectionId,"AO.CANON.05");
+assert.equal(liveRuntime.getReaderState().cardTitle,"Quam oblationem");
+liveHit=liveRuntime.showCanonicalEvent("MC-CNS-040");
+assert.equal(liveHit.card.sectionId,"AO.CANON.06");
+assert.equal(liveRuntime.getReaderState().cardTitle,"Consecration of the Sacred Host");
+liveRuntime.next();
+assert.equal(liveRuntime.getCurrentSectionId(),"AO.CANON.07");
+liveRuntime.showSection(39);
+assert.equal(liveRuntime.getReaderState().cardTitle,"Last Gospel");
+assert.equal(liveRuntime.next().stage,"DEPARTURE");
+liveRuntime.destroy();
+assert.equal(liveRoot.innerHTML,"");
 
 const missingRoot=rootFixture();
 const missing=createBrowserMassRuntime({
@@ -214,4 +232,4 @@ const requiem=createBrowserMassRuntime({
 await assert.rejects(()=>requiem.enter(),/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/);
 assert.equal(requiemRoot.innerHTML,"");
 
-console.log("Browser Mass runtime PASS: ordinary flow, Asperges/Palm preludes, plan-aware ownership and post-Mass lifecycle handoff; LIVE remains source-first gated.");
+console.log("Browser Mass runtime PASS: ordinary flow, source-first LIVE, preludes, plan-aware ownership and lifecycle handoff.");

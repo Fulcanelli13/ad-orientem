@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.3.0",
-  "status": "BLOCKED_PENDING_SOURCE_FIRST_LIVE_INTEGRATION",
+  "version": "2.4.0",
+  "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_AND_PHONE_ACCEPTANCE",
   "productionDefault": "LEGACY",
-  "releaseRule": "R17 reader may not become the production default until every blocker is closed and the source-first LIVE presentation structure is integrated and phone-certified. Historical v1.83 card count is compatibility evidence only.",
+  "releaseRule": "R17 reader may not become the production default until special-structure parity and real-phone acceptance are closed. Source-first LIVE is integrated at 39 presentation steps; historical v1.83 C01-C48 remains compatibility evidence only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -29,11 +29,13 @@
     },
     {
       "id": "LIVE20_DONOR_ONLY",
-      "status": "PROVISIONAL_V1_65_DONOR_ONLY"
+      "status": "HISTORICAL_V1_65_DONOR_ONLY__NON_AUTHORITATIVE",
+      "releaseAuthority": false
     },
     {
       "id": "NATIVE_MODE_SWITCH",
-      "status": "LOCKED_UNTIL_V1_83_READER_PARITY"
+      "status": "SOURCE_FIRST_LIVE_CERTIFIED__UI_SWITCH_LOCKED_UNTIL_PHONE_ACCEPTANCE",
+      "reason": "Initial LIVE entry is certified; in-reader mode switching remains locked until touch/phone acceptance."
     },
     {
       "id": "GLORIA_CREDO_PROFILE_ADJUDICATION",
@@ -136,7 +138,7 @@
     },
     {
       "id": "GRADUAL_LIVE_ARCHITECTURE",
-      "status": "RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_SOURCE_FIRST_LIVE",
+      "status": "RECOVERED_CONTRACT_LOCKED__SOURCE_FIRST_LIVE_INTEGRATED",
       "contract": "src/mass/reader-live-pre-gospel.js",
       "gradualBlock": "AO.SM.B021",
       "gradualLane": "MAIN_READER",
@@ -339,6 +341,38 @@
       "historical48RequiredForRelease": false
     },
     {
+      "id": "LIVE_SOURCE_STRUCTURE_INTEGRATION",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-live-source.js",
+      "modelOwner": "src/mass/reader-model.js",
+      "browserOwner": "src/mass/browser-runtime.js",
+      "nativePreviewOwner": "src/mass/reader-native-preview.js",
+      "totalLiveSteps": 39,
+      "retainedMacroSteps": 25,
+      "sourceFirstCanonSteps": 14,
+      "replacedCanonMacroSteps": 5,
+      "sourceMap": "data/presentation/reader-canon-source-map.v1.json",
+      "historical48RequiredForRelease": false,
+      "historicalLive20ReleaseAuthority": false,
+      "guarantees": [
+        "ordinary macro presentation remains stable outside the Canon",
+        "five legacy Canon macro cards are replaced by fourteen certified source prayer units",
+        "Canon blocks B047-B060 appear once each with non-overlapping cue/event ownership",
+        "Host words/elevation and Chalice words/elevation boundaries remain exact",
+        "Guide and Schola clocks remain keyed to their original canonical macro ownership",
+        "LIVE navigation never derives a boundary from the unrecovered historical v1.83 Canon split",
+        "missing certified Canon source map fails closed",
+        "SIMPLE and MISSAL remain 30-card projections"
+      ],
+      "tests": [
+        "tests/reader-model.mjs",
+        "tests/reader-structure.mjs",
+        "tests/reader-native-preview.mjs",
+        "tests/browser-runtime.mjs",
+        "tests/reader-canon-source-map.mjs"
+      ]
+    },
+    {
       "id": "PALM_NATIVE_PAYLOAD",
       "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
       "controller": "src/mass/reader-palm.js",
@@ -364,11 +398,6 @@
   ],
   "openBlockers": [
     {
-      "id": "LIVE_SOURCE_STRUCTURE_INTEGRATION",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Canon source segmentation is certified independently of v1.83 card archaeology. The remaining reader-structure task is to integrate source-first LIVE navigation across the full Mass and certify it on phone; exact recovery of historical C01-C48 is not required."
-    },
-    {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
       "detail": "Asperges and Palm have source-pinned native payloads plus modular-runtime traversal contracts. Production native-preview mounting remains pending for both. Ashes, Candlemas, Rogations, Requiem/following actions, Good Friday and Easter Vigil still require native payload/rendering."
@@ -385,6 +414,7 @@
     "requireAuthoritative48CardMap": false,
     "requireRealBrowserPhoneAcceptance": true,
     "requireLegacyDefaultUntilCertified": true,
-    "requireSourceFirstCanonMap": true
+    "requireSourceFirstCanonMap": true,
+    "requireSourceFirstLiveStructure": true
   }
 }

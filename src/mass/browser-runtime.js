@@ -195,7 +195,7 @@ export function createBrowserMassRuntime({
     const card=direction==="previous"
       ? readerModel.previousCard(currentSectionId)
       : readerModel.nextCard(currentSectionId);
-    if(direction==="next" && card?.sequence===30 && currentPrepared?.session?.plan?.normalLastGospel===false){
+    if(direction==="next" && (card?.sourceSequence===30 || card?.sequence===30) && currentPrepared?.session?.plan?.normalLastGospel===false){
       return enterLifecycleBoundary();
     }
     if(direction==="next" && !card){
@@ -274,6 +274,7 @@ export function createBrowserMassRuntime({
         sectionMap: data?.sectionMap,
         lowCorpus: data?.lowCorpus,
         sungCorpus: data?.sungCorpus,
+        canonSourceMap: data?.canonSourceMap,
       });
 
       readerModel = model;

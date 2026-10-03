@@ -175,6 +175,7 @@ export async function prepareNativeReaderPreview({
     sectionMap:data?.sectionMap,
     lowCorpus:data?.lowCorpus,
     sungCorpus:data?.sungCorpus,
+    canonSourceMap:data?.canonSourceMap,
   });
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
@@ -373,7 +374,7 @@ export async function mountNativeReaderPreview({
     });
   }
   function guideForCurrent(card=current){
-    return card ? guideForSequence(ready.guide.registry,card.sequence) : null;
+    return card ? guideForSequence(ready.guide.registry,card.guideSequence??card.sourceSequence??card.sequence) : null;
   }
   function showCard(card){
     if(!card) return null;
@@ -389,7 +390,7 @@ export async function mountNativeReaderPreview({
       root.dataset.r17NativeCue="unresolved";
     }
     current=card;
-    ready.scholaState.activateForCard(card.sequence);
+    ready.scholaState.activateForCard(card.sourceSequence??card.guideSequence??card.sequence);
     const state=projectedState();
     reader.renderMoment({
       id:card.sectionId,
@@ -531,7 +532,7 @@ export async function mountNativeReaderPreview({
       bell:"R17_RECOVERED_EXACT_CUE_CANONICAL_SOUND_EVENT",
       cinematic:"R17_SINGLE_OWNER_TIMED_TRANSIENT",
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
-      modeSwitch:"LOCKED_UNTIL_V1_83_READER_PARITY",
+      modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__UI_SWITCH_STILL_LOCKED_FOR_PHONE_ACCEPTANCE",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));

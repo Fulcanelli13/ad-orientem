@@ -6,6 +6,7 @@ const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8")
 const low=load("../data/presentation/reader-text-low.v1.json");
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const sectionMap=load("../data/presentation/reader-section-map.v0.13.1.json");
+const canonSourceMap=load("../data/presentation/reader-canon-source-map.v1.json");
 const t=(lat,en)=>({lat,en});
 const proper={
   sourcePath:"Sancti/10-07",
@@ -36,28 +37,32 @@ const base={
   distinctRite:null,
 };
 
-const model=createMassReaderModel({resolvedMass:base,sectionMap,lowCorpus:low,sungCorpus:sung});
+const model=createMassReaderModel({resolvedMass:base,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap});
 assert.equal(model.schema,"ao-mass-reader-model-v1");
-assert.equal(model.totalCards,30);
+assert.equal(model.totalCards,39);
+assert.equal(model.structureOwner,"SOURCE_FIRST_LIVE");
 assert.equal(model.corpusFamily,"SUNG");
 assert.equal(model.actualCelebration.id,"holy_rosary");
 assert.equal(model.properSource,"Sancti/10-07");
-assert.equal(model.cards[14].title,"Consecration of the Sacred Host");
-assert.equal(model.cards[15].title,"Consecration of the Chalice");
-assert.equal(model.cards[20].title,"Agnus Dei");
-assert.equal(model.cards[29].title,"Last Gospel");
+assert.equal(model.cards[13].title,"Te igitur");
+assert.equal(model.cards[17].title,"Quam oblationem");
+assert.equal(model.cards[18].title,"Consecration of the Sacred Host");
+assert.equal(model.cards[19].title,"Consecration of the Chalice");
+assert.equal(model.cards[26].title,"Per ipsum · Minor Elevation");
+assert.equal(model.cards[29].title,"Agnus Dei");
+assert.equal(model.cards[38].title,"Last Gospel");
 assert.equal(model.cards[7].stateOnly,true,"Homily must stay state-only");
 
 const host=model.cardForEvent("MC-CNS-010");
-assert.equal(host.card.sectionId,"AO.CARD.015");
+assert.equal(host.card.sectionId,"AO.CANON.06");
 assert.equal(host.canonicalEventId,"MC-CNS-010");
-assert.equal(host.progress.label,"15 / 30");
-assert.equal(model.previousCard("AO.CARD.015").sectionId,"AO.CARD.014");
-assert.equal(model.nextCard("AO.CARD.015").sectionId,"AO.CARD.016");
+assert.equal(host.progress.label,"19 / 39");
+assert.equal(model.previousCard("AO.CANON.06").sectionId,"AO.CANON.05");
+assert.equal(model.nextCard("AO.CANON.06").sectionId,"AO.CANON.07");
 assert.equal(model.cardForEvent("MC-UNKNOWN"),null);
 
 const lowModel=createMassReaderModel({
-  resolvedMass:{...base,form:"LOW",overlays:[]},
+  resolvedMass:{...base,form:"LOW",presentationMode:"SIMPLE",overlays:[]},
   sectionMap,lowCorpus:low,sungCorpus:sung
 });
 assert.equal(lowModel.corpusFamily,"LOW");
@@ -72,11 +77,11 @@ assert.throws(()=>createMassReaderModel({
 }),/not yet certified for overlay REQUIEM/);
 
 const aspergesModel=createMassReaderModel({
-  resolvedMass:{...base,precedingRites:["ASPERGES"]},sectionMap,lowCorpus:low,sungCorpus:sung
+  resolvedMass:{...base,precedingRites:["ASPERGES"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 });
-assert.equal(aspergesModel.totalCards,30,"Asperges prelude mutated the ordinary Mass card model");
-const palmModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["PALM"]},sectionMap,lowCorpus:low,sungCorpus:sung});
-assert.equal(palmModel.totalCards,30,"Palm prelude mutated the ordinary Mass card model");
+assert.equal(aspergesModel.totalCards,39,"Asperges prelude mutated the LIVE Mass card model");
+const palmModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["PALM"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap});
+assert.equal(palmModel.totalCards,39,"Palm prelude mutated the LIVE Mass card model");
 
 assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung
@@ -86,4 +91,4 @@ assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,distinctRite:"GOOD_FRIDAY"},sectionMap,lowCorpus:low,sungCorpus:sung
 }),/distinct rite GOOD_FRIDAY/);
 
-console.log("Mass reader model: PASS — 30 prebuilt Proper-safe cards; unsupported special graphs fail closed.");
+console.log("Mass reader model: PASS — 39-step source-first LIVE and 30-card SIMPLE/MISSAL models remain Proper-safe.");

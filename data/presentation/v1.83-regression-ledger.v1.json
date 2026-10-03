@@ -85,10 +85,11 @@
     },
     {
       "id": "V181-PAX-OWNERSHIP",
-      "status": "MECHANICS_TESTED_SOURCE_CERTIFICATION_PENDING",
+      "status": "CERTIFIED_PRIMARY_1962_RUBRIC",
       "defect": "Pax Domini, the private peace prayer and the Solemn ministerial Pax transfer must not be conflated.",
       "invariant": "MC-COM-100 remains Pax Domini; plan projection may suppress MC-COM-150 and MC-COM-160 independently without mutating the frozen canonical graph.",
-      "sourceStatus": "MC-COM-160 remains B/C_PENDING"
+      "sourceStatus": "MC-COM-160 = Tier A, Missale Romanum 1962 Ritus servandus X.8",
+      "authorityFile": "data/mass/solemn-pax-authority.v1.json"
     },
     {
       "id": "V183-NATIVE-LIVE-GATE-BYPASS",

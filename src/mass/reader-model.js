@@ -1,6 +1,7 @@
 import { createReaderSectionResolver } from "./reader-sections.js";
 import { selectReaderTextCorpus, buildReaderSectionCard } from "./reader-text.js";
 import { properToReaderSlots, assertReaderProperReady } from "./proper-reader-slots.js";
+import { projectSourceFirstLiveModel } from "./reader-live-source.js";
 
 const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER"]);
 
@@ -33,6 +34,7 @@ export function createMassReaderModel({
   sectionMap,
   lowCorpus,
   sungCorpus,
+  canonSourceMap=null,
 }={}){
   if(!resolvedMass || resolvedMass.schema!=="ao-resolved-mass-v2") {
     throw new TypeError("ao-resolved-mass-v2 required");
@@ -82,7 +84,7 @@ export function createMassReaderModel({
     return delta ? cardBySequence(current.sequence+delta) : byId.get(current.sectionId);
   }
 
-  return Object.freeze({
+  const baseModel=Object.freeze({
     schema:"ao-mass-reader-model-v1",
     form:resolvedMass.form,
     presentationMode:resolvedMass.presentationMode,
@@ -94,9 +96,15 @@ export function createMassReaderModel({
     totalCards:cards.length,
     sectionResolver,
     properSlots:properMap,
+    structureOwner:"BASE_30_MACROS",
     cardBySequence,
     cardForEvent,
     previousCard:sectionId=>neighbor(sectionId,"previous"),
     nextCard:sectionId=>neighbor(sectionId,"next"),
   });
+  if(String(resolvedMass.presentationMode??"").toUpperCase()==="LIVE"){
+    if(!canonSourceMap)throw new Error("SOURCE_FIRST_LIVE_CANON_MAP_REQUIRED");
+    return projectSourceFirstLiveModel(baseModel,canonSourceMap);
+  }
+  return baseModel;
 }
