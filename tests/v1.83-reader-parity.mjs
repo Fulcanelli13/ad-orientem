@@ -18,7 +18,7 @@ assert.equal(Object.hasOwn(gate,"knownV181Splits"),false,
   "Parity gate must not retain the stale six-split ledger after 8/10 recovery");
 assert.notEqual(resolver.total,gate.reference.expectedLiveCards,
   "Reader parity gate should not silently pass until authoritative 48-card map is recovered");
-assert.ok(gate.acceptance.some(x=>/48-card map/.test(x)));
+assert.ok(gate.acceptance.some(x=>/48 LIVE cards/.test(x)), "Parity acceptance must require exact recovery of all 48 LIVE cards");
 
 assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
 assert.equal(recovery.lineage.v180LiveCards,38);
