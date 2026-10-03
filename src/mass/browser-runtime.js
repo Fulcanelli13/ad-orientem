@@ -6,6 +6,7 @@ import { structureSupport } from "./reader-structure.js";
 import { createAspergesReaderController, loadAspergesReaderData } from "./reader-asperges.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
+import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
@@ -17,6 +18,7 @@ export function createBrowserMassRuntime({
   loadAspergesData = loadAspergesReaderData, aspergesRiteContext = null,
   loadPalmData = loadPalmReaderData,
   loadAshData = loadAshReaderData,
+  loadCandlemasData = loadCandlemasReaderData,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -33,6 +35,8 @@ export function createBrowserMassRuntime({
   let inPalm = false;
   let ashController = null;
   let inAsh = false;
+  let candlemasController = null;
+  let inCandlemas = false;
   let lifecycleRuntime = null;
   let inLifecycle = false;
 
@@ -91,6 +95,36 @@ export function createBrowserMassRuntime({
 
   function showAsh(){
     const moment=ashMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
+  function candlemasMoment(){
+    const state=candlemasController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:"Candlemas",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        sourceCueIds:[row.sourceRecordId].filter(Boolean),
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Candlemas",
+      posture:state.recipientPosture
+        ? {label:state.recipientPosture}
+        : card.posture && !["LOCAL","ORDINARY_PROFILE"].includes(card.posture) ? {label:card.posture} : null,
+      gesture:null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showCandlemas(){
+    const moment=candlemasMoment();
     if(!moment)return null;
     currentSectionId=null;
     reader.renderMoment(moment);
@@ -188,6 +222,20 @@ export function createBrowserMassRuntime({
       if(direction==="next")return advanceLifecycle();
       return lifecycleRuntime.snapshot();
     }
+    if(direction==="next" && inCandlemas && candlemasController){
+      const state=candlemasController.project();
+      if(state.atEnd){
+        inCandlemas=false;
+        return showCard(introitOnlyCard());
+      }
+      candlemasController.next();
+      return showCandlemas();
+    }
+    if(direction==="previous" && inCandlemas && candlemasController){
+      const state=candlemasController.project();
+      if(!state.atStart)candlemasController.previous();
+      return showCandlemas();
+    }
     if(direction==="next" && inAsh && ashController){
       const state=ashController.project();
       if(state.atEnd){
@@ -231,6 +279,11 @@ export function createBrowserMassRuntime({
       return showAsperges();
     }
     if(!readerModel || !currentSectionId)return null;
+    if(direction==="previous" && candlemasController && currentSectionId===readerModel.cardBySequence(1)?.sectionId){
+      inCandlemas=true;
+      candlemasController.goTo("CND-R07");
+      return showCandlemas();
+    }
     if(direction==="previous" && ashController && currentSectionId===readerModel.cardBySequence(1)?.sectionId){
       inAsh=true;
       ashController.goTo("ASH-R05");
@@ -313,13 +366,15 @@ export function createBrowserMassRuntime({
       const hasAsperges=(prepared?.session?.plan?.precedingGraphs??[]).includes("ASPERGES");
       const hasPalm=(prepared?.session?.plan?.precedingGraphs??[]).includes("PALM");
       const hasAsh=(prepared?.session?.plan?.precedingGraphs??[]).includes("ASH");
+      const hasCandlemas=(prepared?.session?.plan?.precedingGraphs??[]).includes("CANDLEMAS");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,palmData,ashData,events]=await Promise.all([
+      const [data,aspergesData,palmData,ashData,candlemasData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
         hasAsh ? Promise.resolve(loadAshData(prepared)) : null,
+        hasCandlemas ? Promise.resolve(loadCandlemasData(prepared)) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -345,10 +400,13 @@ export function createBrowserMassRuntime({
       inPalm=Boolean(palmController);
       ashController=hasAsh ? createAshReaderController({graph:ashData?.graph,payload:ashData?.payload}) : null;
       inAsh=Boolean(ashController);
-      const activePreceding=[inAsperges,inPalm,inAsh].filter(Boolean).length;
+      candlemasController=hasCandlemas ? createCandlemasReaderController({graph:candlemasData?.graph,payload:candlemasData?.payload}) : null;
+      inCandlemas=Boolean(candlemasController);
+      const activePreceding=[inAsperges,inPalm,inAsh,inCandlemas].filter(Boolean).length;
       if(activePreceding>1)throw new Error("Multiple preceding rite readers are not yet composable");
       reader.mount(prepared);
-      if(inAsh)showAsh();
+      if(inCandlemas)showCandlemas();
+      else if(inAsh)showAsh();
       else if(inPalm)showPalm();
       else if(inAsperges)showAsperges();
       else showCard(model.cardBySequence(1));
@@ -368,6 +426,8 @@ export function createBrowserMassRuntime({
     inPalm = false;
     ashController = null;
     inAsh = false;
+    candlemasController = null;
+    inCandlemas = false;
     lifecycleRuntime = null;
     inLifecycle = false;
   }
@@ -391,6 +451,8 @@ export function createBrowserMassRuntime({
     getAspergesState: () => aspergesController?.project?.() ?? null,
     getPalmState: () => palmController?.project?.() ?? null,
     getAshState: () => ashController?.project?.() ?? null,
+    getCandlemasState: () => candlemasController?.project?.() ?? null,
+    getCandlemasMassState: eventId => candlemasController?.massCandleState?.(eventId) ?? null,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
     chooseLeonine: accept => {
       if(!lifecycleRuntime)return null;
@@ -410,6 +472,9 @@ export function createBrowserMassRuntime({
     advanceLifecycle,
     setPalmRecipientState: value => { if(!palmController)return null; palmController.setRecipientState(value); return inPalm ? showPalm() : palmController.project(); },
     setAshRecipientState: value => { if(!ashController)return null; ashController.setRecipientState(value); return inAsh ? showAsh() : ashController.project(); },
+    setCandlemasRecipientState: value => { if(!candlemasController)return null; candlemasController.setRecipientState(value); return inCandlemas ? showCandlemas() : candlemasController.project(); },
+    setCandlemasProcessionParticipant: value => { if(!candlemasController)return null; candlemasController.setProcessionParticipant(value); return inCandlemas ? showCandlemas() : candlemasController.project(); },
+    setCandlemasHasBlessedCandle: value => { if(!candlemasController)return null; candlemasController.setHasBlessedCandle(value); return inCandlemas ? showCandlemas() : candlemasController.project(); },
     markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },
   });
 }
