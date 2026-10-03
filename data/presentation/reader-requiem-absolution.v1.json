@@ -1,0 +1,208 @@
+{
+  "schema": "ao-r26-requiem-absolution-payload-v1",
+  "version": "1.0.0",
+  "graphRecordCount": 5,
+  "source": {
+    "authority": "Missale Romanum 1962 — Absolution after Mass for the Dead",
+    "missalWitness": "https://www.mercaba.org/LITURGIA/Tridentino/missale-romanum-1962.pdf",
+    "secondaryTextWitness": "https://www.latinmassfuneral.com/requiem-mass/",
+    "burialWitness": "https://www.latinmassfuneral.com/rite-of-burial-for-adults/",
+    "sourceRule": "Body-present Non intres and burial-procession In paradisum are conditional; no lay imitation of aspersion/incensation."
+  },
+  "cards": [
+    {
+      "id": "ABS-R01",
+      "title": "Non intres in judicium",
+      "sourceRecordIds": [
+        "ABS-010",
+        "ABS-020"
+      ],
+      "condition": "BODY_PRESENT",
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ABS-T001",
+          "kind": "TEXT",
+          "latin": "Non intres in judícium cum servo tuo, Dómine, quia nullus apud te justificábitur homo, nisi per te ómnium peccatórum ei tribuátur remíssio. Non ergo eum, quǽsumus, tua judiciális senténtia premat, quem tibi vera supplicátio fídei christiánæ comméndat: sed, grátia tua illi succurrénte, mereátur evádere judícium ultiónis, qui, dum víveret, insignítus est signáculo sanctæ Trinitátis: Qui vivis et regnas in sǽcula sæculórum.",
+          "sourceRecordId": "ABS-020"
+        },
+        {
+          "id": "ABS-T002",
+          "kind": "RESPONSE",
+          "latin": "℟. Amen.",
+          "sourceRecordId": "ABS-020"
+        }
+      ],
+      "guide": "Remain where directed around the coffin or catafalque. This prayer is used in the body-present branch."
+    },
+    {
+      "id": "ABS-R02",
+      "title": "Libera me, Domine",
+      "sourceRecordIds": [
+        "ABS-030"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ABS-T010",
+          "kind": "RESPONSE",
+          "latin": "℟. Líbera me, Dómine, de morte ætérna, in die illa treménda: Quando cæli movéndi sunt et terra: Dum véneris judicáre sǽculum per ignem.",
+          "sourceRecordId": "ABS-030"
+        },
+        {
+          "id": "ABS-T011",
+          "kind": "VERSICLE",
+          "latin": "℣. Tremens factus sum ego, et tímeo, dum discússio vénerit, atque ventúra ira.",
+          "sourceRecordId": "ABS-030"
+        },
+        {
+          "id": "ABS-T012",
+          "kind": "RESPONSE",
+          "latin": "℟. Quando cæli movéndi sunt et terra: Dum véneris judicáre sǽculum per ignem.",
+          "sourceRecordId": "ABS-030"
+        },
+        {
+          "id": "ABS-T013",
+          "kind": "VERSICLE",
+          "latin": "℣. Dies illa, dies iræ, calamitátis et misériæ: dies magna et amára valde.",
+          "sourceRecordId": "ABS-030"
+        },
+        {
+          "id": "ABS-T014",
+          "kind": "RESPONSE",
+          "latin": "℟. Dum véneris judicáre sǽculum per ignem.",
+          "sourceRecordId": "ABS-030"
+        },
+        {
+          "id": "ABS-T015",
+          "kind": "VERSICLE",
+          "latin": "℣. Réquiem ætérnam dona ei, Dómine, et lux perpétua lúceat ei.",
+          "sourceRecordId": "ABS-030"
+        },
+        {
+          "id": "ABS-T016",
+          "kind": "RESPONSE",
+          "latin": "℟. Líbera me, Dómine, de morte ætérna, in die illa treménda: Quando cæli movéndi sunt et terra: Dum véneris judicáre sǽculum per ignem.",
+          "sourceRecordId": "ABS-030"
+        }
+      ]
+    },
+    {
+      "id": "ABS-R03",
+      "title": "Kyrie · Pater noster · Absolution",
+      "sourceRecordIds": [
+        "ABS-040"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "id": "ABS-T020",
+          "kind": "TEXT",
+          "latin": "Kýrie, eléison. Christe, eléison. Kýrie, eléison.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T021",
+          "kind": "TEXT",
+          "latin": "Pater noster…",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T022",
+          "kind": "VERSICLE",
+          "latin": "℣. Et ne nos indúcas in tentatiónem.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T023",
+          "kind": "RESPONSE",
+          "latin": "℟. Sed líbera nos a malo.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T024",
+          "kind": "VERSICLE",
+          "latin": "℣. A porta ínferi.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T025",
+          "kind": "RESPONSE",
+          "latin": "℟. Erue, Dómine, ánimam ejus.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T026",
+          "kind": "VERSICLE",
+          "latin": "℣. Requiéscat in pace.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T027",
+          "kind": "RESPONSE",
+          "latin": "℟. Amen.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T028",
+          "kind": "VERSICLE",
+          "latin": "℣. Dómine, exáudi oratiónem meam.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T029",
+          "kind": "RESPONSE",
+          "latin": "℟. Et clamor meus ad te véniat.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T030",
+          "kind": "VERSICLE",
+          "latin": "℣. Dóminus vobíscum.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T031",
+          "kind": "RESPONSE",
+          "latin": "℟. Et cum spíritu tuo.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T032",
+          "kind": "TEXT",
+          "latin": "Orémus. Deus, cui próprium est miseréri semper et párcere: te súpplices exorámus pro ánima fámuli tui N., quam hódie de hoc sǽculo migráre jussísti: ut non tradas eam in manus inimíci, neque obliviscáris in finem, sed júbeas eam a sanctis Ángelis súscipi, et ad pátriam paradísi perdúci: ut, quia in te sperávit et crédidit, non pœnas inférni sustíneat, sed gáudia ætérna possídeat. Per Christum Dóminum nostrum.",
+          "sourceRecordId": "ABS-040"
+        },
+        {
+          "id": "ABS-T033",
+          "kind": "RESPONSE",
+          "latin": "℟. Amen.",
+          "sourceRecordId": "ABS-040"
+        }
+      ],
+      "guide": "During the Pater noster the celebrant performs the aspersion and incensation. These are celebrant actions; do not imitate them."
+    },
+    {
+      "id": "ABS-R04",
+      "title": "In paradisum",
+      "sourceRecordIds": [
+        "ABS-050"
+      ],
+      "condition": "BODY_PRESENT_AND_BURIAL_PROCESSION",
+      "actorScope": "FAITHFUL_PARTICIPATING",
+      "posture": "PROCESSIONAL",
+      "paragraphs": [
+        {
+          "id": "ABS-T040",
+          "kind": "TEXT",
+          "latin": "In paradísum dedúcant te Ángeli: in tuo advéntu suscípiant te Mártyres, et perdúcant te in civitátem sanctam Jerúsalem. Chorus Angelórum te suscípiat, et cum Lázaro quondam páupere ætérnam hábeas réquiem.",
+          "sourceRecordId": "ABS-050"
+        }
+      ],
+      "handoff": "BURIAL_PROCESSION"
+    }
+  ]
+}
