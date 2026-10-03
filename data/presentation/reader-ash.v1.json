@@ -1,0 +1,168 @@
+{
+  "schema": "ao-r24-prelude-payload-v1",
+  "rite": "ASH",
+  "title": "Blessing and Distribution of Ashes",
+  "graphRecordCount": 8,
+  "source": {
+    "authority": "Missale Romanum 1962 — Feria IV Cinerum",
+    "witnesses": [
+      "https://www.laudemus.org/?date=2026-02-18&place_id=2",
+      "https://www.liturgialatina.org/lityear/septuagesima/ash_wed.htm"
+    ],
+    "scope": "Latin blessing/distribution text; personal recipient and Mass-entry state come from recovered ASH graph."
+  },
+  "cards": [
+    {
+      "id": "ASH-R01",
+      "title": "Blessing of the Ashes",
+      "sourceRecordIds": [
+        "ASH-BLS-010",
+        "ASH-BLS-020"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "STAND",
+      "paragraphs": [
+        {
+          "kind": "TEXT",
+          "latin": "Orémus.",
+          "sourceRecordId": "ASH-BLS-010"
+        },
+        {
+          "kind": "TEXT",
+          "latin": "Omnípotens sempitérne Deus, parce metuéntibus, propitiáre supplícibus: et míttere dignéris sanctum Angelum tuum de cælis, qui benedícat et sanctíficet hos cíneres, ut sint remédium salúbre ómnibus nomen sanctum tuum humíliter implorántibus, et semetípsos pro consciéntia delictórum suórum accusántibus, et ante conspéctum divínæ cleméntiæ tuæ facínora sua deplorántibus, vel sereníssimam pietátem tuam supplíciter obnixéque flagitántibus: præsta, quǽsumus, per invocatiónem sanctíssimi nóminis tui; ut, quicúmque eos super se aspérserint pro redemptióne peccatórum suórum, córporis sanitátem et ánimæ tutélam percípiant. Per Christum Dóminum nostrum.",
+          "sourceRecordId": "ASH-BLS-020"
+        },
+        {
+          "kind": "RESPONSE",
+          "latin": "Amen.",
+          "sourceRecordId": "ASH-BLS-020"
+        },
+        {
+          "kind": "TEXT",
+          "latin": "Orémus. Deus, qui non mortem, sed pæniténtiam desíderas peccatórum: fragilitátem condiciónis humánæ benigníssime réspice; et hos cíneres, quos, causa proferéndæ humilitátis atque promeréndæ véniæ, capítibus nostris impóni decérnimus, benedícere pro tua pietáte dignáre: ut, qui nos cínerem esse, et ob pravitátis nostræ deméritum in púlverem reversúros cognóscimus; peccatórum ómnium véniam, et prǽmia pæniténtibus repromíssa, misericórditer cónsequi mereámur. Per Christum Dóminum nostrum.",
+          "sourceRecordId": "ASH-BLS-020"
+        },
+        {
+          "kind": "RESPONSE",
+          "latin": "Amen.",
+          "sourceRecordId": "ASH-BLS-020"
+        },
+        {
+          "kind": "TEXT",
+          "latin": "Orémus. Deus, qui humiliatióne flécteris, et satisfactióne placáris: aurem tuæ pietátis inclína précibus nostris; et capítibus servórum tuórum, horum cínerum aspersióne contáctis, effúnde propítius grátiam tuæ benedictiónis: ut eos et spíritu compunctiónis répleas et, quæ juste postuláverint, efficáciter tríbuas; et concéssa perpétuo stabilíta et intácta manére decérnas. Per Christum Dóminum nostrum.",
+          "sourceRecordId": "ASH-BLS-020"
+        },
+        {
+          "kind": "RESPONSE",
+          "latin": "Amen.",
+          "sourceRecordId": "ASH-BLS-020"
+        },
+        {
+          "kind": "TEXT",
+          "latin": "Orémus. Omnípotens sempitérne Deus, qui Ninivítis, in cínere et cilício pæniténtibus, indulgéntiæ tuæ remédia præstitísti: concéde propítius; ut sic eos imitémur hábitu, quaténus véniæ prosequámur obténtu. Per Christum Dóminum nostrum.",
+          "sourceRecordId": "ASH-BLS-020"
+        },
+        {
+          "kind": "RESPONSE",
+          "latin": "Amen.",
+          "sourceRecordId": "ASH-BLS-020"
+        }
+      ],
+      "guide": "Stand for the blessing. The sprinkling and incensing of the ashes are celebrant actions, not faithful gestures."
+    },
+    {
+      "id": "ASH-R02",
+      "title": "The Ashes are Sprinkled and Incensed",
+      "sourceRecordIds": [
+        "ASH-BLS-030"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "STAND",
+      "paragraphs": [
+        {
+          "kind": "TEXT",
+          "latin": "Aspérges me, Dómine, hyssópo, et mundábor: lavábis me, et super nivem dealbábor.",
+          "sourceRecordId": "ASH-BLS-030"
+        }
+      ],
+      "guide": "Observe. Do not make a Sign of the Cross merely because the ashes themselves are sprinkled."
+    },
+    {
+      "id": "ASH-R03",
+      "title": "Distribution of Ashes",
+      "sourceRecordIds": [
+        "ASH-DST-010",
+        "ASH-DST-020",
+        "ASH-DST-030"
+      ],
+      "actorScope": "ASH_RECIPIENT",
+      "posture": "LOCAL",
+      "paragraphs": [
+        {
+          "kind": "TEXT",
+          "latin": "Memento, homo, quia pulvis es, et in púlverem revertéris.",
+          "sourceRecordId": "ASH-DST-020"
+        },
+        {
+          "kind": "TEXT",
+          "latin": "Immutémur hábitu, in cínere et cilício: jejunémus, et plorémus ante Dóminum: quia multum miséricors est dimíttere peccáta nostra Deus noster.",
+          "sourceRecordId": "ASH-DST-010"
+        },
+        {
+          "kind": "TEXT",
+          "latin": "Inter vestíbulum et altáre plorábunt sacerdótes minístri Dómini, et dicent: Parce, Dómine, parce pópulo tuo: et ne claudas ora canéntium te, Dómine.",
+          "sourceRecordId": "ASH-DST-030"
+        }
+      ],
+      "personalStates": {
+        "RECIPIENT_CALLED": {
+          "posture": "STAND_WALK",
+          "action": "APPROACH_ALTAR_RAIL"
+        },
+        "RECEIVE_ASHES": {
+          "posture": "KNEEL",
+          "action": "RECEIVE_ASHES"
+        },
+        "ASHES_RECEIVED": {
+          "posture": "STAND_WALK",
+          "action": "RISE_AND_RETURN"
+        }
+      },
+      "guide": "Only the person currently receiving ashes follows the recipient posture."
+    },
+    {
+      "id": "ASH-R04",
+      "title": "Prayer after the Distribution",
+      "sourceRecordIds": [
+        "ASH-END-010"
+      ],
+      "actorScope": "FAITHFUL",
+      "posture": "STAND",
+      "paragraphs": [
+        {
+          "kind": "TEXT",
+          "latin": "Orémus. Concéde nobis, Dómine, præsídia milítiæ christiánæ sanctis inchoáre jejúniis: ut contra spiritáles nequítias pugnatúri, continéntiæ muniámur auxílio. Per Christum Dóminum nostrum.",
+          "sourceRecordId": "ASH-END-010"
+        },
+        {
+          "kind": "RESPONSE",
+          "latin": "Amen.",
+          "sourceRecordId": "ASH-END-010"
+        }
+      ]
+    },
+    {
+      "id": "ASH-R05",
+      "title": "Mass begins at the Introit",
+      "sourceRecordIds": [
+        "ASH-MASS-010"
+      ],
+      "actorScope": "ALL",
+      "posture": "ORDINARY_PROFILE",
+      "paragraphs": [],
+      "handoff": "INTROIT",
+      "ordinaryOpeningSuppressed": true,
+      "guide": "The preceding Ash rite is complete. When Mass follows immediately, the Prayers at the Foot are omitted and Mass begins at the Introit."
+    }
+  ]
+}
