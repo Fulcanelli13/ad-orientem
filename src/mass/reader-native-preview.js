@@ -6,6 +6,7 @@
 import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
+import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -38,16 +39,22 @@ export async function prepareNativeReaderPreview({
   prepared,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
+  eventData=null,
+  loadEventData=loadCanonicalReaderEvents,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
-  const data=presentationData ?? await Promise.resolve(loadPresentationData(prepared));
+  const [data,events]=await Promise.all([
+    presentationData ?? Promise.resolve(loadPresentationData(prepared)),
+    eventData ?? Promise.resolve(loadEventData(prepared)),
+  ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
     sectionMap:data?.sectionMap,
     lowCorpus:data?.lowCorpus,
     sungCorpus:data?.sungCorpus,
   });
-  return Object.freeze({prepared,data,model});
+  const eventState=createNativeEventStateController(events);
+  return Object.freeze({prepared,data,model,events,eventState});
 }
 
 export async function mountNativeReaderPreview({
@@ -55,13 +62,16 @@ export async function mountNativeReaderPreview({
   prepared,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
+  eventData=null,
+  loadEventData=loadCanonicalReaderEvents,
+  readLegacyActive=null,
   iconResolver=null,
   onClose=null,
 }={}){
   if(!doc?.body || !doc?.createElement) throw new TypeError("Document/body required");
 
   // Validate everything before adding a single preview node.
-  const ready=await prepareNativeReaderPreview({prepared,presentationData,loadPresentationData});
+  const ready=await prepareNativeReaderPreview({prepared,presentationData,loadPresentationData,eventData,loadEventData});
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
 
@@ -70,7 +80,7 @@ export async function mountNativeReaderPreview({
   root.setAttribute("aria-label","R17 native Mass reader preview");
   root.dataset.r17TextOwner="R17_VERIFIED_CORPUS";
   root.dataset.r17CardOwner="R17_READER_MODEL";
-  root.dataset.r17StateOwner="LEGACY_TEMPORARY";
+  root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
   root.style.cssText="position:fixed;inset:0;z-index:2147483100;background:#080c12;";
   const host=doc.createElement("div");
   host.style.cssText="position:absolute;inset:0;";
@@ -86,9 +96,47 @@ export async function mountNativeReaderPreview({
   let scheduled=false;
   const win=doc.defaultView ?? globalThis;
 
+  function projectedState(){
+    const legacy=legacyReaderStateSnapshot(doc);
+    let eventState=null;
+    if(typeof readLegacyActive==="function"){
+      try{
+        const eventId=extractCanonicalEventId(readLegacyActive());
+        if(eventId)eventState=ready.eventState.project(eventId);
+      }catch{}
+    }
+    if(!eventState)return Object.freeze({
+      ...legacy,
+      nativeEventId:null,
+      ownership:Object.freeze({
+        priestVoice:"LEGACY_FALLBACK",
+        response:"LEGACY_FALLBACK",
+        gesture:"LEGACY_FALLBACK",
+        posture:"LEGACY_PENDING_SOURCE_EXTRACTION",
+        priestPosition:"LEGACY_PENDING_SOURCE_EXTRACTION",
+        schola:"LEGACY_TEMPORARY",
+      }),
+    });
+    return Object.freeze({
+      priestPosition:legacy.priestPosition,
+      posture:legacy.posture,
+      gesture:eventState.ownership.gesture==="R17_NATIVE" ? eventState.gesture : legacy.gesture,
+      response:eventState.ownership.response==="R17_NATIVE" ? eventState.response : legacy.response,
+      priestVoice:eventState.ownership.priestVoice==="R17_NATIVE" ? eventState.priestVoice : legacy.priestVoice,
+      schola:legacy.schola,
+      sharedTextWithSchola:false,
+      nativeEventId:eventState.canonicalEventId,
+      ownership:Object.freeze({
+        ...eventState.ownership,
+        schola:"LEGACY_TEMPORARY",
+      }),
+    });
+  }
+
   function showCard(card){
     if(!card) return null;
     current=card;
+    const state=projectedState();
     reader.renderMoment({
       id:card.sectionId,
       sectionTitle:card.title,
@@ -96,8 +144,10 @@ export async function mountNativeReaderPreview({
       cardUpdate:true,
       paragraphs:card.paragraphs,
       progress:card.sequence+" / "+ready.model.totalCards,
-      ...legacyReaderStateSnapshot(doc),
+      ...state,
     });
+    root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
+    globalThis.AO_R17_NATIVE_READER_STATE=state;
     return card;
   }
 
@@ -110,13 +160,16 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
+    const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
       sectionTitle:current?.title ?? "",
       cardUpdate:false,
       progress:current ? current.sequence+" / "+ready.model.totalCards : null,
-      ...legacyReaderStateSnapshot(doc),
+      ...state,
     });
+    root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
+    globalThis.AO_R17_NATIVE_READER_STATE=state;
   }
 
   function queue(){
@@ -160,7 +213,13 @@ export async function mountNativeReaderPreview({
     ownership:Object.freeze({
       text:"R17_VERIFIED_CORPUS",
       cards:"R17_READER_MODEL",
-      liveState:"LEGACY_TEMPORARY",
+      liveState:"R17_PARTIAL_EVENT_STATE",
+      priestVoice:"R17_WHEN_CANONICAL_EVENT_RESOLVES",
+      response:"R17_WHEN_CANONICAL_RESPONSE_EVENT_RESOLVES",
+      gesture:"R17_CERTIFIED_INCARNATUS_ONLY",
+      posture:"LEGACY_PENDING_SOURCE_EXTRACTION",
+      priestPosition:"LEGACY_PENDING_SOURCE_EXTRACTION",
+      schola:"LEGACY_TEMPORARY",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -170,6 +229,7 @@ export async function mountNativeReaderPreview({
     syncState:queue,
     destroy,
     getCurrentCard:()=>current,
+    getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
   });
   globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
   return api;
