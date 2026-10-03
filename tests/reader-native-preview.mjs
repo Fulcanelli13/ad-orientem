@@ -67,6 +67,19 @@ const certified={
 assert.equal(resolveGestureProjection(certified,{label:"BOW"}).label,"GENUFLECT",
   "certified native gesture did not outrank legacy fallback");
 
+assert.equal(resolveGestureProjection(disputed,{label:"LEGACY BOW"},{
+  cueId:"AO.SM.C0056",gestureProfile:"GUIDED_1962"
+}),null,"customary Gloria cue leaked into GUIDED_1962");
+assert.equal(resolveGestureProjection(disputed,{label:"LEGACY BOW"},{
+  cueId:"AO.SM.C0056",gestureProfile:"TRADITIONAL"
+}).type,"HEAD_BOW","exact traditional Gloria cue did not resolve");
+assert.equal(resolveGestureProjection(disputed,{label:"LEGACY CROSS"},{
+  cueId:"AO.SM.C0104",gestureProfile:"TRADITIONAL"
+}).type,"SIGN_OF_CROSS","exact traditional Credo cross did not resolve");
+assert.equal(resolveGestureProjection(null,{label:"LEGACY BOW"},{
+  cueId:"AO.SM.C0090",gestureProfile:"GUIDED_1962"
+}),null,"known Credo cue fell back to legacy despite profile suppression");
+
 let blocked=false;
 try{
   await prepareNativeReaderPreview({
