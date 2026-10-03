@@ -172,7 +172,64 @@ try{
   assert.match(progress,/20 \/ 39/,"source-first LIVE card counter did not reach Chalice Consecration as 20 / 39");
 
   await context.close();
-  console.log("phone browser acceptance: PASS — 390px Chromium touch, translation, Back/Next, cue focus, elevation gate and transient clearing.");
+
+  for(const viewportSpec of [
+    {width:320,height:700},
+    {width:360,height:780},
+    {width:430,height:900},
+  ]){
+    const phone=await browser.newContext({
+      viewport:viewportSpec,
+      deviceScaleFactor:2,
+      isMobile:true,
+      hasTouch:true,
+    });
+    const p=await phone.newPage();
+    await p.goto("http://127.0.0.1:4173/tests/fixtures/reader-phone-harness.html",{waitUntil:"networkidle"});
+    await p.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
+
+    const fits=await p.evaluate(()=>({
+      horizontal:document.documentElement.scrollWidth<=window.innerWidth+1,
+      shell:(()=>{
+        const r=document.querySelector("[data-ao-reader-shell]")?.getBoundingClientRect();
+        return r ? {x:r.x,y:r.y,right:r.right,bottom:r.bottom,w:window.innerWidth,h:window.innerHeight} : null;
+      })(),
+    }));
+    assert.equal(fits.horizontal,true,viewportSpec.width+"px reader causes horizontal overflow");
+    assert.ok(fits.shell && fits.shell.x>=-0.5 && fits.shell.right<=fits.shell.w+0.5,
+      viewportSpec.width+"px reader shell does not fit viewport");
+
+    for(const selector of ['[data-reader-nav="previous"]','[data-reader-nav="next"]']){
+      const target=await p.locator(selector).boundingBox();
+      assert.ok(target && target.height>=44,viewportSpec.width+"px "+selector+" touch target is under 44px");
+    }
+
+    const translate=p.locator('[data-translate-toggle="true"]').first();
+    assert.ok(await translate.count(),viewportSpec.width+"px missing translation toggle");
+    const tbox=await translate.boundingBox();
+    const before=await translate.locator(".ao-line-primary").textContent();
+    await p.touchscreen.tap(tbox.x+tbox.width/2,tbox.y+Math.min(tbox.height/2,30));
+    await p.waitForFunction(previous=>{
+      const value=document.querySelector('[data-translate-toggle="true"] .ao-line-primary')?.textContent;
+      return value && value!==previous;
+    },before);
+
+    const initial=await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId);
+    const next=p.locator('[data-reader-nav="next"]');
+    const nbox=await next.boundingBox();
+    await p.touchscreen.tap(nbox.x+nbox.width/2,nbox.y+nbox.height/2);
+    await p.waitForFunction(previous=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId!==previous,initial);
+
+    await p.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
+    await p.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
+    await p.waitForTimeout(200);
+    const firstCue=await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue());
+    assert.equal(firstCue,"AO.SM.C0168",viewportSpec.width+"px top-of-card focus lost first cue ownership");
+
+    await phone.close();
+  }
+
+  console.log("phone browser acceptance: PASS — 320/360/390/430px Chromium touch, translation, Back/Next, cue focus, elevation gate and transient clearing.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
