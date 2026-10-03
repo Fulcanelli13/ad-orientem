@@ -566,7 +566,7 @@
         {
           "cue_id": "AO.SM.C0023",
           "sort": 23,
-          "latin": "Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, orare pro me ad Dóminum, Deum nostrum.",
+          "latin": "Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, oráre pro me ad Dóminum, Deum nostrum.",
           "english": "Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and thee Father, to pray to the Lord our God for me.",
           "type": "text",
           "clock": "PUBLIC_TEXT",
@@ -3531,7 +3531,7 @@
         {
           "cue_id": "AO.SM.C0237",
           "sort": 237,
-          "latin": "Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, orare pro me ad Dóminum, Deum nostrum.",
+          "latin": "Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, oráre pro me ad Dóminum, Deum nostrum.",
           "english": "Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and thee, Father, to pray to the Lord our God for me.",
           "type": "text",
           "clock": "PUBLIC_TEXT",
@@ -4140,6 +4140,19 @@
       "blockId": "AO.SM.B037",
       "scope": "DISPLAY_PROJECTION_ONLY",
       "note": "Removed duplicate English doxology from C0125; C0126/C0127 remain sole doxology projection owners."
+    },
+    {
+      "id": "P1-011",
+      "blockIds": [
+        "AO.SM.B007",
+        "AO.SM.B077"
+      ],
+      "cueIds": [
+        "AO.SM.C0023",
+        "AO.SM.C0237"
+      ],
+      "scope": "TEXT_NORMALIZATION",
+      "note": "Normalized Confiteor infinitive to accented oráre; no ritual-state change."
     }
   ]
 }
