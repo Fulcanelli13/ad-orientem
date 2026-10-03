@@ -17,6 +17,7 @@ function normalizeParagraphSource(paragraph, fallbackKind="TEXT"){
     latin:paragraph.latin ?? paragraph.lat ?? null,
     vernacular:paragraph.vernacular ?? paragraph.translation ?? paragraph.en ?? null,
     active:paragraph.active === true,
+    sourceCueIds:Object.freeze([...(paragraph.sourceCueIds ?? (paragraph.id ? [paragraph.id] : []))].map(String)),
   });
 }
 
@@ -46,6 +47,7 @@ export function projectResolvedReaderText(resolvedText){
         alternate:null,
         replaceOnToggle:false,
         active:p.active,
+        sourceCueIds:p.sourceCueIds,
       });
     }
     if(!p.vernacular) throw new Error("Vernacular primary text required for "+p.kind);
@@ -57,6 +59,7 @@ export function projectResolvedReaderText(resolvedText){
       alternate:p.latin == null ? null : String(p.latin),
       replaceOnToggle:Boolean(p.latin),
       active:p.active,
+      sourceCueIds:p.sourceCueIds,
     });
   }));
 }
