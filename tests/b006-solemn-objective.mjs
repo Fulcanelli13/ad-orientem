@@ -70,6 +70,14 @@ if (!paxSuppressed.some((event)=>event.id==="MC-COM-100")) {
   throw new Error("Pax Domini was incorrectly suppressed with the separate peace prayer/Pax transfer");
 }
 
+const ministerialPax=union.get("MC-COM-160");
+if (ministerialPax.evidenceTier !== "A") {
+  throw new Error("Solemn ministerial Pax lost primary 1962 rubric authority");
+}
+if (!ministerialPax.authorityRefs?.includes("data/mass/solemn-pax-authority.v1.json#primaryAuthority")) {
+  throw new Error("Solemn ministerial Pax lost pinned authority reference");
+}
+
 const communionWarning = union.get("MC-COM-185");
 if (communionWarning.soundEvents?.[0]?.legal_status !== "PRESCRIBED_CONDITIONALLY_IF_FAITHFUL_COMMUNICATE") {
   throw new Error("Solemn Communion-warning bell lost its legal/status contract");
