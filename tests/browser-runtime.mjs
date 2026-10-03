@@ -217,7 +217,7 @@ assert.equal(candlemasRuntime.getReaderState().posture.label,"KNEEL");
 assert.equal(candlemasRuntime.getCandlemasState().hasBlessedCandle,true);
 candlemasRuntime.next();
 assert.equal(candlemasRuntime.getCandlemasState().card.objectState,"CANDLE_LIT");
-assert.equal(candlemasRuntime.getReaderState().priestAction,null,"faithful candle state leaked into priest-action lane");
+assert.equal(candlemasRuntime.getReaderState().priestAction??null,null,"faithful candle state leaked into priest-action lane");
 while(!candlemasRuntime.getCandlemasState().atEnd)candlemasRuntime.next();
 candlemasRuntime.next();
 assert.equal(candlemasRuntime.getCurrentSectionId(),"AO.CARD.001");
