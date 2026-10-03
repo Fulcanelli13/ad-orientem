@@ -49,7 +49,6 @@ assert.equal(support.reason,"SOURCE_FIRST_LIVE_STRUCTURE_PENDING");
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "LIVE_SOURCE_STRUCTURE_INTEGRATION",
-  "FORM_LIFECYCLE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
@@ -76,6 +75,11 @@ const bellNative=release.protectedInvariants.find(x=>x.id==="BELL_CINEMATIC_NATI
 assert.equal(bellNative?.formParity?.low?.bellCueCount,4,"Low bell parity count changed");
 assert.deepEqual(bellNative?.formParity?.low?.certifiedAbsentCueIds,["AO.SM.C0225"]);
 assert.equal(bellNative?.formParity?.solemn?.bellCueCount,5,"Solemn bell parity count changed");
+
+const formLifecycle=release.protectedInvariants.find(x=>x.id==="FORM_LIFECYCLE_PARITY");
+assert.equal(formLifecycle?.status,"CERTIFIED","form lifecycle blocker disappeared without certification");
+assert.match(String(formLifecycle?.controller??""),/form-lifecycle\.js/);
+assert.deepEqual(formLifecycle?.forms,["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 
 const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
 assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_SOURCE_FIRST_LIVE",
@@ -142,6 +146,7 @@ assert.deepEqual(byId.get("MC-COM-100").conditions,[],
 const objectiveSource=readFileSync(new URL("../src/mass/objective-engine.js",import.meta.url),"utf8");
 const readerObjectiveSource=readFileSync(new URL("../src/mass/reader-objective-runtime.js",import.meta.url),"utf8");
 const browserRuntimeSource=readFileSync(new URL("../src/mass/browser-runtime.js",import.meta.url),"utf8");
+const lifecycleSource=readFileSync(new URL("../src/mass/form-lifecycle.js",import.meta.url),"utf8");
 assert.match(objectiveSource,/applyMassPlanTraversalDelta/);
 assert.match(readerObjectiveSource,/buildPlannedObjectiveTraversal/);
 assert.match(browserRuntimeSource,/createPlanAwareObjectiveRuntime/);
@@ -149,6 +154,13 @@ assert.match(browserRuntimeSource,/objectiveRuntime\.allows/);
 assert.match(browserRuntimeSource,/createPalmReaderController/,"browser runtime lost Palm controller");
 assert.match(browserRuntimeSource,/setPalmRecipientState/,"browser runtime lost personal Palm recipient-state control");
 assert.match(browserRuntimeSource,/AO\.SM\.B014/,"Palm Introit-only handoff lost B014 boundary");
+assert.match(browserRuntimeSource,/createFormLifecycleRuntime/,"browser runtime lost native form lifecycle");
+assert.match(browserRuntimeSource,/enterLifecycleBoundary/,"browser runtime stopped entering Mass completion boundary");
+assert.match(browserRuntimeSource,/chooseLeonine/,"browser runtime lost explicit Leonine decision handoff");
+assert.match(lifecycleSource,/LEONINE_NOT_INSIDE_CANONICAL_MASS_GRAPH/);
+assert.match(lifecycleSource,/manualEntryMayFabricateCompletion:false/);
+assert.match(lifecycleSource,/SUCCESSIVE_MASS_DEFER_TO_FINAL/);
+assert.match(lifecycleSource,/FORM_EXCLUDES_LEONINE/);
 assert.match(objectiveSource,/MC-COM-150/);
 assert.match(objectiveSource,/MC-COM-160/);
 
