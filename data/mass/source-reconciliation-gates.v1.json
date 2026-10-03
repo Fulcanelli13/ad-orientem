@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "SOURCE_RECONCILIATION_GATE",
   "runtimeReference": "v1.83 MERGE GATE",
   "rule": "source -> reconciliation decision -> canonical matrix -> runtime",
@@ -54,16 +54,22 @@
     "primary1962": "EXECUTABLE_AUTHORITY",
     "misselBarroux": "EDITORIAL_QA_ONLY",
     "internalFormation": "INTERNAL_ONLY_NOT_PRODUCTION_PROVENANCE",
-    "localProfile": "MAY_NOT_OVERRIDE_UNIVERSAL_RUBRIC_DATA"
+    "localProfile": "MAY_NOT_OVERRIDE_UNIVERSAL_RUBRIC_DATA",
+    "deniedProductionHosts": [
+      "categpt.chat"
+    ]
   },
   "currentBlockingFindings": [
-    "P1-007 Gloria/Credo faithful gesture anchors remain unadjudicated; R17 fails closed",
-    "P2-001 PRE_GOSPEL_SEQUENCE source-order compiler not yet certified"
+    "P1-008 legacy 4 Oct fixture remains quarantined until Secret/Communion/Postcommunion provenance is replaced with accepted witnesses",
+    "G6 v1.83 runtime/reader parity remains required before replacing the old Mass"
   ],
   "closedFindings": [
     "SRC-PARITY-001 AO.SM.B046/C0148 Benedictus printed cross — corrected on R17 canonical overlay",
     "SRC-PARITY-002 AO.SM.B047/C0153 Te igitur bishop placeholder N. — corrected on R17 canonical overlay",
     "SRC-PARITY-003 AO.SM.B057/C0194 Memento Dead lucis et pacis — corrected on R17 canonical overlay",
-    "P1-011 AO.SM.B007/C0023 Confiteor oráre normalization — corrected on R17 canonical overlay"
+    "P1-011 AO.SM.B007/C0023 Confiteor oráre normalization — corrected on R17 canonical overlay",
+    "P1-007 Gloria/Credo gesture ownership — exact cue/profile adjudication certified on R17",
+    "P2-001 PRE_GOSPEL_SEQUENCE source order — source-order compiler/provenance gate certified on R17",
+    "P1-008 defective categpt.chat fixture provenance — quarantined from production authority on R17; replacement witnesses still pending"
   ]
 }
