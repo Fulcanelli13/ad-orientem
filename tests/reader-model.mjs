@@ -82,6 +82,8 @@ const aspergesModel=createMassReaderModel({
 assert.equal(aspergesModel.totalCards,39,"Asperges prelude mutated the LIVE Mass card model");
 const palmModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["PALM"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap});
 assert.equal(palmModel.totalCards,39,"Palm prelude mutated the LIVE Mass card model");
+const ashModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["ASH"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap});
+assert.equal(ashModel.totalCards,39,"Ash prelude mutated the LIVE Mass card model");
 
 assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung
