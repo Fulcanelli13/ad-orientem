@@ -397,8 +397,100 @@ export async function mountNativeReaderPreview({
   function guideForCurrent(card=current){
     return card ? guideForSequence(ready.guide.registry,card.guideSequence??card.sourceSequence??card.sequence) : null;
   }
+
+  function aspergesMoment(){
+    const state=ready.aspergesController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return Object.freeze({
+      state,
+      moment:Object.freeze({
+        id:card.id,
+        sectionTitle:"Asperges",
+        cardTitle:card.title,
+        cardUpdate:true,
+        paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
+          id:row.id,
+          kind:row.kind,
+          primary:row.latin,
+          sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
+        }))),
+        progress:String(state.index+1)+" / "+String(state.total)+" · Asperges",
+        posture:card.posture && card.posture!=="INHERIT" ? {label:card.posture} : null,
+        gesture:state.faithfulGesture ? {label:state.faithfulGesture} : null,
+        response:null,
+        bell:null,
+        cinematic:null,
+        priestPosition:null,
+        priestVoice:null,
+        schola:null,
+        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+      }),
+    });
+  }
+
+  function showAsperges(){
+    const projected=aspergesMoment();
+    if(!projected)return null;
+    inAsperges=true;
+    activeCueId=null;
+    clearEventCinematic({resetCue:true});
+    transientGuard.begin();
+    reader.renderMoment(projected.moment);
+    root.dataset.r17NativeEvent="asperges";
+    root.dataset.r17NativeCue="unresolved";
+    root.dataset.r17StateOwner="R20_ASPERGES_NATIVE";
+    root.dataset.r17OwnerGesture=projected.state.faithfulGesture ? "R20_ASPERGES_PERSONAL_STATE" : "R20_ASPERGES_EXACT_NONE";
+    root.dataset.r17OwnerResponse="R20_ASPERGES_PAYLOAD";
+    root.dataset.r17OwnerPriestVoice="R20_ASPERGES_NOT_APPLICABLE";
+    root.dataset.r17OwnerPriestPosition="R20_ASPERGES_NOT_APPLICABLE";
+    root.dataset.r17OwnerPosture="R20_ASPERGES_PAYLOAD";
+    root.dataset.r17OwnerSchola="R20_ASPERGES_PAYLOAD";
+    root.dataset.r17OwnerBell="R20_ASPERGES_EXACT_NONE";
+    root.dataset.r17OwnerCinematic="R20_ASPERGES_EXACT_NONE";
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+      specialRite:"ASPERGES",
+      cardId:projected.state.card?.id??null,
+      posture:projected.moment.posture,
+      gesture:projected.moment.gesture,
+      handoff:projected.state.handoff??null,
+      formulaState:projected.state.formulaState,
+    });
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    if(scroll)scroll.scrollTop=0;
+    return projected.state;
+  }
+
+  function previousReaderCard(){
+    if(inAsperges && ready.aspergesController){
+      const state=ready.aspergesController.project();
+      if(!state.atStart)ready.aspergesController.previous();
+      return showAsperges();
+    }
+    const first=ready.model.cardBySequence(1);
+    if(ready.aspergesController && current?.sectionId===first?.sectionId){
+      ready.aspergesController.goTo("ASP-R05");
+      return showAsperges();
+    }
+    return showCard(ready.model.previousCard(current.sectionId));
+  }
+
+  function nextReaderCard(){
+    if(inAsperges && ready.aspergesController){
+      const state=ready.aspergesController.project();
+      if(state.atEnd){
+        inAsperges=false;
+        return showCard(ready.model.cardBySequence(1));
+      }
+      ready.aspergesController.next();
+      return showAsperges();
+    }
+    return showCard(ready.model.nextCard(current.sectionId));
+  }
   function showCard(card){
     if(!card) return null;
+    inAsperges=false;
+    root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
     const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
@@ -448,12 +540,13 @@ export async function mountNativeReaderPreview({
     root:host,
     iconResolver,
     allowPresentationModeSwitch:false,
-    onPrevious:()=>showCard(ready.model.previousCard(current.sectionId)),
-    onNext:()=>showCard(ready.model.nextCard(current.sectionId)),
+    onPrevious:previousReaderCard,
+    onNext:nextReaderCard,
   });
 
   function syncState(){
     scheduled=false;
+    if(inAsperges)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -506,7 +599,8 @@ export async function mountNativeReaderPreview({
   // Mount only after the model is complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
-  showCard(current);
+  if(inAsperges)showAsperges();
+  else showCard(current);
 
   const readerScroll=host.querySelector?.(".ao-prayer-card");
   if(readerScroll){
@@ -553,7 +647,8 @@ export async function mountNativeReaderPreview({
       bell:"R17_RECOVERED_EXACT_CUE_CANONICAL_SOUND_EVENT",
       cinematic:"R17_SINGLE_OWNER_TIMED_TRANSIENT",
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
-      modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__UI_SWITCH_STILL_LOCKED_FOR_PHONE_ACCEPTANCE",
+      modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__FIELD_SWITCH_LOCKED",
+      asperges:ready.aspergesController ? "R20_NATIVE_PRELUDE" : "NOT_ACTIVE",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -562,7 +657,7 @@ export async function mountNativeReaderPreview({
     showSequence:sequence=>showCard(ready.model.cardBySequence(sequence)),
     syncState:queue,
     destroy,
-    getCurrentCard:()=>current,
+    getCurrentCard:()=>inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
@@ -573,6 +668,12 @@ export async function mountNativeReaderPreview({
     finishSchola:()=>{const value=ready.scholaState.finish();queue();return value},
     selectScholaTrack:(trackId)=>{const value=ready.scholaState.selectTrack(trackId);queue();return value},
     getTransientTransitionPending:()=>transientGuard.pending,
+    getAspergesState:()=>ready.aspergesController?.project?.()??null,
+    markActuallySprinkled:()=>{
+      if(!ready.aspergesController)return null;
+      const value=ready.aspergesController.setActuallySprinkled(true);
+      return inAsperges ? showAsperges() : value;
+    },
   });
   globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
   return api;
