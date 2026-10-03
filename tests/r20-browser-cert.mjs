@@ -204,8 +204,18 @@ async function setupGuards(browser) {
   {
     const context = await browser.newContext({viewport:{width:390,height:844}});
     const page = await context.newPage();
+    const pageErrors = [];
+    const consoleErrors = [];
+    const localHttpErrors = [];
+    page.on('pageerror', e => pageErrors.push(String(e.stack || e.message || e)));
+    page.on('console', m => { if (m.type() === 'error') consoleErrors.push(m.text()); });
+    page.on('response', r => {
+      const u = r.url();
+      if (u.startsWith(origin) && r.status() >= 400) localHttpErrors.push({url:u,status:r.status()});
+    });
     await page.goto(BASE+ENTRY+'?form=low&rite=good-friday&setup=1', {waitUntil:'domcontentloaded', timeout:120000});
     await page.waitForFunction(() => window.AO?.R15Audit?.run && document.querySelector('[data-r15-enter]'), null, {timeout:120000});
+    await page.waitForTimeout(300);
     const s = await page.evaluate(() => ({
       gateOpen: document.getElementById('aoFormGate')?.classList.contains('open'),
       choicesDisplay: getComputedStyle(document.querySelector('.ao-form-choices')).display,
@@ -216,8 +226,13 @@ async function setupGuards(browser) {
       massProfile: window.AO?.MassProfile || null,
       calendarSelection: window.AO?.Calendar?.selection || null,
       calendarContext: window.AO?.Calendar?.context || null,
-      bodyMassRite: document.body.dataset.massRite || null
+      bodyMassRite: document.body.dataset.massRite || null,
+      reconstructedReaderTag: !!document.querySelector('script[data-r19-reconstructed-reader="v1.76"]'),
+      readerLoaderTag: !!document.querySelector('script[src*="reader-loader-v1.76.js"]')
     }));
+    s.pageErrors = pageErrors;
+    s.consoleErrors = consoleErrors;
+    s.localHttpErrors = localHttpErrors;
     assert(s.gateOpen && s.choicesDisplay === 'none' && s.noteDisplay !== 'none', 'Good Friday setup did not present distinct-rite UI', s);
     checks.push({id:'good-friday-distinct-setup',pass:true,detail:s});
     await context.close();
