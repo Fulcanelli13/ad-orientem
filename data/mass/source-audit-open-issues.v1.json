@@ -41,9 +41,9 @@
       ],
       "finding": "QA.016 passes falsely when whole Proper containers are excluded from completeness coverage.",
       "classification": "QA_COVERAGE_DEFECT",
-      "status": "R17_REPLACEMENT_IMPLEMENTED_PENDING_CI",
+      "status": "RESOLVED_ON_R17",
       "requiredAction": "Retire legacy QA.016 as a merge authority after replacement CI and fixture coverage are certified.",
-      "resolution": "src/mass/proper-container-coverage.js + data/mass/proper-container-ownership.v1.json + session-level Proper v2 gate"
+      "resolution": "Replacement Proper-container coverage is in CI and session-level Proper v2 validation; legacy QA.016 remains non-authoritative."
     },
     {
       "id": "P1-007",
