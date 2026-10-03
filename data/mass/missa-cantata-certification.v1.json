@@ -1,0 +1,91 @@
+{
+  "version": "1.0.0",
+  "certificate": "MC-CERT-2026-09-22.1",
+  "status": "RG003_CERTIFIED_ORDINARY_MISSA_CANTATA",
+  "source": "Ad_Orientem_1962_Missa_Cantata_Certification_v1.0.xlsx",
+  "profiles": {
+    "mc-simple": {
+      "id": "SIMPLE_NO_INCENSE",
+      "incense": false,
+      "staffing": [
+        "CELEBRANT",
+        "TWO_SERVERS"
+      ],
+      "label": "Missa Cantata · Simple"
+    },
+    "mc-incense": {
+      "id": "SOLEMNIZED_WITH_INCENSE",
+      "incense": true,
+      "staffing": [
+        "CELEBRANT",
+        "MC",
+        "THURIFER",
+        "TWO_ACOLYTES"
+      ],
+      "label": "Missa Cantata · Solemnized",
+      "optionalStaffing": [
+        "TORCHBEARERS"
+      ],
+      "runtimeTorchbearerActor": false
+    }
+  },
+  "bindingCount": 189,
+  "canonicalBaseEventCount": 178,
+  "excludedFromCanonicalCore": [
+    "MC-PREP-040",
+    "MC-PREP-050",
+    "MC-GSP-040",
+    "MC-HOM-010",
+    "MC-HIST-010",
+    "MC-LOCAL-COM-010",
+    "MC-LOCAL-COM-020",
+    "MC-LOCAL-COM-030",
+    "MC-LOCAL-END-010",
+    "MC-LOCAL-END-020",
+    "MC-END-230"
+  ],
+  "files": [
+    {
+      "path": "data/mass/missa-cantata-bindings-01.v1.json",
+      "count": 32,
+      "sha256": "559d1529946ed47e31d955f435641802713a74988d63f0a9e914cb32309b7e86",
+      "first": "MC-PREP-010",
+      "last": "MC-EPI-010"
+    },
+    {
+      "path": "data/mass/missa-cantata-bindings-02.v1.json",
+      "count": 32,
+      "sha256": "03a33d1a5cd4b64f45aecb2ccbccf1c8dbffa67758709cec36854bad7ee80fe1",
+      "first": "MC-EPI-020",
+      "last": "MC-OFF-080"
+    },
+    {
+      "path": "data/mass/missa-cantata-bindings-03.v1.json",
+      "count": 32,
+      "sha256": "b17e9f38c4182e59d825fe75f1f0ccbf4db22c2e9cba8ffb6b0b2a754872cf13",
+      "first": "MC-OFF-090",
+      "last": "MC-CAN-070"
+    },
+    {
+      "path": "data/mass/missa-cantata-bindings-04.v1.json",
+      "count": 32,
+      "sha256": "5ad53c6f78463e46ef67f457ccdd3b436525a85b79ed7cba135ee0dbc2c9ac5e",
+      "first": "MC-CAN-080",
+      "last": "MC-COM-100"
+    },
+    {
+      "path": "data/mass/missa-cantata-bindings-05.v1.json",
+      "count": 32,
+      "sha256": "ed719cbce944887a955122f6daade5263ce2b11011702c310685c8f1ce427579",
+      "first": "MC-COM-110",
+      "last": "MC-ABL-030"
+    },
+    {
+      "path": "data/mass/missa-cantata-bindings-06.v1.json",
+      "count": 29,
+      "sha256": "79722ae76f6543242ffc7292635e511ebc93612738c895835bc51f0993046eca",
+      "first": "MC-ABL-040",
+      "last": "MC-END-230"
+    }
+  ]
+}
