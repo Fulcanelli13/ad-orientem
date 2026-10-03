@@ -18,6 +18,7 @@ import { createNativeScholaController } from "./reader-schola.js";
 import { iconKeysForReaderState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
+import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -155,6 +156,8 @@ export async function prepareNativeReaderPreview({
   loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
+  aspergesData=null,
+  loadAspergesData=loadAspergesReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
@@ -163,12 +166,19 @@ export async function prepareNativeReaderPreview({
   }
   const resolvedForm=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
   const needsFormState=resolvedForm==="LOW" || resolvedForm==="SOLEMN";
-  const [data,events,registries,guide,formState]=await Promise.all([
+  const preceding=[...(prepared?.session?.plan?.precedingGraphs??[])];
+  const unsupportedNativePreceding=preceding.filter(x=>x!=="ASPERGES");
+  if(unsupportedNativePreceding.length){
+    throw new Error("NATIVE_PREVIEW_PRECEDING_RITE_PENDING:"+unsupportedNativePreceding.join(","));
+  }
+  const hasAsperges=preceding.includes("ASPERGES");
+  const [data,events,registries,guide,formState,loadedAsperges]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
     guideData ?? Promise.resolve(loadGuideData(prepared)),
     needsFormState ? (formStateData ?? Promise.resolve(loadFormStateData(prepared))) : null,
+    hasAsperges ? (aspergesData ?? Promise.resolve(loadAspergesData(prepared))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -188,7 +198,14 @@ export async function prepareNativeReaderPreview({
   });
   const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
   const transientState=createReaderTransientController({events,prepared});
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState});
+  const aspergesController=hasAsperges
+    ? createAspergesReaderController({
+        graph:loadedAsperges?.graph,
+        payload:loadedAsperges?.payload,
+        riteContext:resolveAspergesRiteContext(prepared),
+      })
+    : null;
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController});
 }
 
 export async function mountNativeReaderPreview({
@@ -204,6 +221,8 @@ export async function mountNativeReaderPreview({
   loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
+  aspergesData=null,
+  loadAspergesData=loadAspergesReaderData,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -214,6 +233,7 @@ export async function mountNativeReaderPreview({
   const ready=await prepareNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
+    aspergesData,loadAspergesData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -235,6 +255,7 @@ export async function mountNativeReaderPreview({
   root.append(host,close);
 
   let current=ready.model.cardBySequence(1);
+  let inAsperges=Boolean(ready.aspergesController);
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
