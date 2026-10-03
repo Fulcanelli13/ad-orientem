@@ -309,6 +309,25 @@
         "description": "Per quem haec omnia / Per ipsum"
       }
     ],
-    "promotionRule": "The tenth Canon split remains unresolved until contemporaneous v1.80/v1.81/v1.83 evidence identifies the boundary, or an exact version-to-version delta makes it uniquely derivable."
+    "promotionRule": "The tenth Canon split remains unresolved until contemporaneous v1.80/v1.81/v1.83 evidence identifies the boundary, or an exact version-to-version delta makes it uniquely derivable.",
+    "librarySearchAudit": {
+      "auditedAt": "2026-10-03",
+      "result": "NO_CONTEMPORANEOUS_V1_80_V1_81_V1_83_CANON_BOUNDARY_RECOVERED",
+      "checked": [
+        {
+          "artifact": "v1.80.1_WAVE1_R01_R05_reconstruction_report.json",
+          "finding": "Reconstruction report identifies the reconstructed build/base payload but contains no 38-card map and no Hanc igitur, Per ipsum, or other Canon split enumeration."
+        },
+        {
+          "artifact": "Ad_Orientem_Live_Text_Projection_Matrix_v0.1/v0.2/v0.3",
+          "finding": "Later projection/freeze artifacts expose fine-grained Canon boundaries but do not establish which boundary was the tenth v1.81 38→48 decompression."
+        },
+        {
+          "artifact": "later v0.24-v0.35 Mass prototypes",
+          "finding": "Contain later atomic/live Canon structure only; not admissible as direct v1.81/v1.83 card-boundary provenance."
+        }
+      ],
+      "candidatePolicy": "Later projection boundaries remain candidate-only until a contemporaneous v1.80/v1.81/v1.83 artifact or an exact version delta uniquely identifies the historical split."
+    }
   }
 }
