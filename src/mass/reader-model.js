@@ -2,8 +2,10 @@ import { createReaderSectionResolver } from "./reader-sections.js";
 import { selectReaderTextCorpus, buildReaderSectionCard } from "./reader-text.js";
 import { properToReaderSlots, assertReaderProperReady } from "./proper-reader-slots.js";
 import { projectSourceFirstLiveModel } from "./reader-live-source.js";
+import { projectRequiemReaderModel } from "./reader-requiem.js";
 
-const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER"]);
+const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM"]);
+const SUPPORTED_FOLLOWING=new Set(["REQUIEM_ABSOLUTION"]);
 
 function assertBaselineReaderGraph(resolvedMass){
   if(resolvedMass?.distinctRite) {
@@ -13,8 +15,12 @@ function assertBaselineReaderGraph(resolvedMass){
   if(unsupportedPreceding.length) {
     throw new Error("Reader card adapter not yet certified for preceding rite graph "+unsupportedPreceding.join(", "));
   }
-  if((resolvedMass?.followingActions??[]).length) {
-    throw new Error("Reader card adapter not yet certified for following-action graph");
+  const unsupportedFollowing=(resolvedMass?.followingActions??[]).filter(x=>!SUPPORTED_FOLLOWING.has(x));
+  if(unsupportedFollowing.length) {
+    throw new Error("Reader card adapter not yet certified for following-action graph "+unsupportedFollowing.join(", "));
+  }
+  if((resolvedMass?.followingActions??[]).includes("REQUIEM_ABSOLUTION") && !(resolvedMass?.overlays??[]).includes("REQUIEM")) {
+    throw new Error("REQUIEM_ABSOLUTION_REQUIRES_REQUIEM_OVERLAY");
   }
   const unsupported=(resolvedMass?.overlays??[]).filter(x=>!SUPPORTED_OVERLAYS.has(x));
   if(unsupported.length) {
@@ -35,6 +41,7 @@ export function createMassReaderModel({
   lowCorpus,
   sungCorpus,
   canonSourceMap=null,
+  requiemRules=null,
 }={}){
   if(!resolvedMass || resolvedMass.schema!=="ao-resolved-mass-v2") {
     throw new TypeError("ao-resolved-mass-v2 required");
@@ -102,9 +109,14 @@ export function createMassReaderModel({
     previousCard:sectionId=>neighbor(sectionId,"previous"),
     nextCard:sectionId=>neighbor(sectionId,"next"),
   });
+  let model=baseModel;
   if(String(resolvedMass.presentationMode??"").toUpperCase()==="LIVE"){
     if(!canonSourceMap)throw new Error("SOURCE_FIRST_LIVE_CANON_MAP_REQUIRED");
-    return projectSourceFirstLiveModel(baseModel,canonSourceMap);
+    model=projectSourceFirstLiveModel(baseModel,canonSourceMap);
   }
-  return baseModel;
+  if((resolvedMass.overlays??[]).includes("REQUIEM")){
+    if(!requiemRules)throw new Error("R26_REQUIEM_READER_RULES_REQUIRED");
+    model=projectRequiemReaderModel(model,requiemRules,{followingActions:resolvedMass.followingActions??[]});
+  }
+  return model;
 }
