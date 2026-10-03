@@ -111,25 +111,28 @@ export function validateProperManifestV2(manifest) {
     check("ORATIONS_" + setName.toUpperCase(), () => freezeArray(values).map((x, i) => assertResolvedOration(x, setName + "[" + i + "]")));
   }
 
-  const canon = manifest.canonProperInserts ?? {};
+  const canon = manifest.canonPackage ?? manifest.canonProperInserts ?? {};
   check("CANON_COMMUNICANTES", () => {
-    const value = assertCanonInsert(canon.communicantes ?? null, "canonProperInserts.communicantes");
+    const value = assertCanonInsert(canon.communicantes ?? null, "canonPackage.communicantes");
     if (requirements.communicantes === true && !value) throw new Error("required Communicantes variant is unresolved");
     return value;
   });
   check("CANON_HANC_IGITUR", () => {
-    const value = assertCanonInsert(canon.hancIgitur ?? null, "canonProperInserts.hancIgitur");
+    const value = assertCanonInsert(canon.hancIgitur ?? null, "canonPackage.hancIgitur");
     if (requirements.hancIgitur === true && !value) throw new Error("required Hanc igitur variant is unresolved");
     return value;
   });
   check("CANON_QUI_PRIDIE", () => {
-    const value = assertCanonInsert(canon.quiPridie ?? null, "canonProperInserts.quiPridie");
+    const value = assertCanonInsert(canon.quiPridie ?? null, "canonPackage.quiPridie");
     if (requirements.quiPridie === true && !value) throw new Error("required Qui pridie variant is unresolved");
     return value;
   });
 
-  check("INTERLECTION_SEQUENCE", () =>
-    assertInterlectionSequence(manifest.interlectionSequence, { required: requirements.interlectionSequence === true })
+  const preGospelSequence = manifest.preGospelSequence ?? manifest.interlectionSequence;
+  const preGospelRequired =
+    requirements.preGospelSequence === true || requirements.interlectionSequence === true;
+  check("PRE_GOSPEL_SEQUENCE", () =>
+    assertInterlectionSequence(preGospelSequence, { required: preGospelRequired })
   );
 
   check("CROSS_PARITY", () => {
