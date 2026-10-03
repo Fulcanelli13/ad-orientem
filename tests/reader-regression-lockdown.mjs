@@ -28,7 +28,7 @@ assert.equal(regressionById.get("V181-CHALICE-ELEVATION-EARLY").status,"FIXED_AN
 assert.equal(regressionById.get("V181-CARD-TRANSIENT-LEAK").status,"FIXED_AND_TESTED_R17");
 assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").fixedChannels,["gesture","response","bell","cinematic"]);
 assert.deepEqual(regressionById.get("V181-CARD-TRANSIENT-LEAK").openChannels,[]);
-assert.equal(regressionById.get("V183-GRADUAL-COMPOSITION").status,"BLOCKED_ON_FINAL_48_CARD_ARCHITECTURE");
+assert.equal(regressionById.get("V183-GRADUAL-COMPOSITION").status,"RECOVERED_AND_CONTRACT_LOCKED");
 assert.equal(regressionById.get("V181-PAX-OWNERSHIP").status,"MECHANICS_TESTED_SOURCE_CERTIFICATION_PENDING");
 assert.equal(regressionById.get("V183-NATIVE-LIVE-GATE-BYPASS").status,"FIXED_AND_TESTED_R17");
 
@@ -47,14 +47,34 @@ assert.equal(support.reason,"V1_83_48_CARD_LIVE_MAP_REQUIRED");
 const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "G6_48_CARD_MAP",
-  "GRADUAL_LIVE_ARCHITECTURE",
-  "FORM_STATE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
-  "PROPER_FIXTURE_PROVENANCE",
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
   "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
+assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
+for(const [id,status] of [
+  ["LOW_MASS_NATIVE_STATE","CERTIFIED"],
+  ["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],
+  ["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],
+  ["FORM_PARITY_REGRESSION","PASS"],
+]){
+  assert.equal(release.protectedInvariants.find(x=>x.id===id)?.status,status,id+" release gate lost certification");
+}
+
+const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
+assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_G6",
+  "Gradual architecture blocker disappeared without recovered contract lock");
+assert.equal(gradualArchitecture?.gradualBlock,"AO.SM.B021");
+assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
+assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
+assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
+
+const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
+assert.equal(properProvenance?.status,"CERTIFIED_REPLACEMENT_WITNESS",
+  "Proper fixture provenance blocker disappeared without certified replacement witness");
+assert.match(String(properProvenance?.witnessFile??""),/golden-proper-witnesses\.v1\.json/,
+  "Proper fixture replacement witness file is not pinned");
 
 const icons=release.protectedInvariants.find(x=>x.id==="ICON_ASSET_BANK_NATIVE");
 assert.equal(icons?.status,"CERTIFIED_HOST_BANK_BRIDGE","icon blocker disappeared without native bank certification");
@@ -103,6 +123,7 @@ assert.match(nativeSource,/createNativeScholaController/,"native reader lost nat
 assert.match(nativeSource,/createReaderTransientController/,"native reader lost native bell\/cinematic controller");
 assert.match(nativeSource,/r17OwnerBell/,"native reader lost bell ownership diagnostics");
 assert.match(nativeSource,/r17OwnerCinematic/,"native reader lost cinematic ownership diagnostics");
+assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
 assert.doesNotMatch(nativeSource,/#scholaDock|#scholaStreamLine/,"native reader reintroduced legacy Schola DOM donor");
 assert.match(nativeSource,/iconKeysForReaderState/,"native reader lost approved icon-key projection");
 const browserEntrySource=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
