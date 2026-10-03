@@ -101,6 +101,13 @@ expect(
   popPlan.insertions.includes("PRAYER_OVER_PEOPLE_AFTER_POSTCOMMUNION_BEFORE_FINAL_DOMINUS_VOBISCUM"),
   "Prayer over the People insertion was not compiled at the session boundary"
 );
+expect(popPlan.postcommunionExit?.mode==="PRAYER_OVER_PEOPLE",
+  "Prayer over the People did not take Postcommunion exit ownership");
+expect(popPlan.postcommunionExit?.suppressBaseCueIds?.includes("AO.SM.C0256"),
+  "B088/C0256 ordinary exit was not suppressed");
+expect(popPlan.postcommunionExit?.activeOrder?.join("|")===[
+  "AO.SM.C0254","AO.SM.C0255","R17.POP.010","R17.POP.020","AO.SM.C0257"
+].join("|"),"Postcommunion/Prayer-over-People handoff order changed");
 
 const parityPending=structuredClone(ordinary);
 parityPending.crossParityStatus="PENDING";
