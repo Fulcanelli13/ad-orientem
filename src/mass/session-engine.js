@@ -1,3 +1,5 @@
+import { validateProperManifestV2 } from "./proper-contracts.js";
+
 // R17 convergence — session composition above the immutable canonical MC graph.
 // This module does not own text, DOM, storage, calendar fetching, or canonical event identity.
 
@@ -85,6 +87,17 @@ export function resolveActualCelebration({ calendarCelebration, requestedCelebra
 
 function properIsReady(proper) {
   if (!proper) return false;
+
+  const manifest =
+    proper.schema === "ao-proper-manifest-v2"
+      ? proper
+      : proper.data?.schema === "ao-proper-manifest-v2"
+        ? proper.data
+        : null;
+
+  if (manifest && !validateProperManifestV2(manifest).pass) return false;
+  if (proper.schema === "ao-proper-manifest-v2") return true;
+
   return ["READY", "CACHED", "ready", "cached"].includes(proper.status);
 }
 
