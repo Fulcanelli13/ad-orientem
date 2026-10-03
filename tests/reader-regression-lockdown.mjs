@@ -47,7 +47,6 @@ const blockers=new Set(release.openBlockers.map(x=>x.id));
 for(const id of [
   "G6_48_CARD_MAP",
   "GRADUAL_LIVE_ARCHITECTURE",
-  "FORM_STATE_PARITY",
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
   "PROPER_FIXTURE_PROVENANCE",
@@ -55,6 +54,15 @@ for(const id of [
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
   "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
+assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
+for(const [id,status] of [
+  ["LOW_MASS_NATIVE_STATE","CERTIFIED"],
+  ["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],
+  ["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],
+  ["FORM_PARITY_REGRESSION","PASS"],
+]){
+  assert.equal(release.protectedInvariants.find(x=>x.id===id)?.status,status,id+" release gate lost certification");
+}
 
 const icons=release.protectedInvariants.find(x=>x.id==="ICON_ASSET_BANK_NATIVE");
 assert.equal(icons?.status,"CERTIFIED_HOST_BANK_BRIDGE","icon blocker disappeared without native bank certification");
