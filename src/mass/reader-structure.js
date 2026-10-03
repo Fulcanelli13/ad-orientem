@@ -243,9 +243,15 @@ export function createReaderStructureController(prepared,{canonSourceMap=null}={
       return snapshot();
     }
     const priorAnchor=anchorBaseId||current()?.baseIds?.[0];
+    let candidateCards;
+    try{candidateCards=makeStructureCards(candidateMode,canonSourceMap)}
+    catch(error){
+      support=Object.freeze({supported:false,reason:String(error.message),donorStatus:LIVE_STRUCTURE_STATUS});
+      return snapshot();
+    }
     mode=candidateMode;
     support=candidateSupport;
-    cards=makeStructureCards(mode,canonSourceMap);
+    cards=candidateCards;
     const found=cards.findIndex(card=>cardContainsBase(card,priorAnchor));
     index=found>=0?found:Math.min(index,cards.length-1);
     anchorBaseId=priorAnchor??current()?.baseIds?.[0]??"AO.SM.M01";
