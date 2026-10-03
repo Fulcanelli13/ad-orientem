@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -181,7 +181,7 @@
     },
     {
       "id": "ASPERGES_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_PAYLOAD_RUNTIME_SWITCH_PENDING",
+      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
       "controller": "src/mass/reader-asperges.js",
       "payload": "data/presentation/reader-asperges.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ASP",
@@ -196,6 +196,14 @@
         "faithful Sign of Cross requires ACTUALLY_SPRINKLED personal state",
         "handoff returns to ordinary Mass Foot cluster",
         "canonical Mass identity is not renumbered or mutated"
+      ],
+      "runtime": "src/mass/browser-runtime.js",
+      "runtimeGuarantees": [
+        "explicit compiled Asperges enters before ordinary Mass",
+        "Back/Next traverses Asperges independently of 30 Mass cards",
+        "ACTUALLY_SPRINKLED remains event/user-triggered and not card-visible",
+        "completion hands off to AO.CARD.001 Foot cluster",
+        "Back from first Mass card returns to Asperges handoff card"
       ]
     }
   ],
@@ -218,7 +226,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Compiled special-structure plan projection is certified. Asperges now has a source-pinned native payload/controller; remaining work is browser/runtime switching into that payload plus native payload/rendering for Palm, Ashes, Candlemas, Rogations, Requiem branches, following actions, Good Friday and Easter Vigil."
+      "detail": "Compiled special-structure projection is certified. Asperges has a source-pinned payload and a green modular browser runtime switch/handoff. Remaining Asperges work is the production native-preview mount; other rites still require native payload/rendering."
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
