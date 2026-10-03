@@ -36,12 +36,41 @@ const noCommunion=createReaderTransientController({events,prepared:{session:{res
 assert.equal(noCommunion.project("AO.SM.C0225").bell,null,"conditional Communion warning fired without communicants");
 assert.equal(noCommunion.project("AO.SM.C0225").ownership.bell,"R17_CONDITION_FAIL_CLOSED");
 
-for(const form of ["LOW","SOLEMN"]){
-  const unsupported=createReaderTransientController({events,prepared:{session:{resolvedMass:{form,conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]}}}});
-  assert.equal(unsupported.supported,false);
-  assert.equal(unsupported.project("AO.SM.C0174").ownership.bell,"R18_FORM_TRANSIENT_FAIL_CLOSED");
-  assert.equal(unsupported.project("AO.SM.C0174").ownership.cinematic,"R18_FORM_TRANSIENT_FAIL_CLOSED");
+const low=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"LOW",conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]},plan:{blessingAllowed:true}}}});
+assert.equal(low.supported,true);
+assert.equal(low.project("AO.SM.C0145").bell.canonicalEventIds[0],"MC-SAN-020");
+assert.equal(low.project("AO.SM.C0161").bell.canonicalEventIds[0],"MC-CAN-070");
+assert.equal(low.project("AO.SM.C0174").cinematic.kind,"ELEVATION");
+assert.equal(low.project("AO.SM.C0181").cinematic.kind,"ELEVATION");
+assert.equal(low.project("AO.SM.C0204").cinematic.title,"MINOR ELEVATION");
+assert.equal(low.project("AO.SM.C0242").cinematic.title,"ECCE AGNUS DEI");
+assert.equal(low.project("AO.SM.C0265").cinematic.title,"BLESSING");
+assert.equal(low.project("AO.SM.C0225").bell,null,"Low Mass acquired the unavailable Communion-warning bell");
+assert.equal(low.project("AO.SM.C0225").reason,"CANONICAL_EVENT_UNAVAILABLE_FOR_FORM");
+assert.equal(low.project("AO.SM.C0225").ownership.bell,"R18_FORM_CERTIFIED_ABSENCE");
+
+const solemn=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"SOLEMN",conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]},plan:{blessingAllowed:true}}}});
+assert.equal(solemn.supported,true);
+assert.equal(solemn.project("AO.SM.C0145").bell.canonicalEventIds[0],"MC-SAN-020");
+assert.equal(solemn.project("AO.SM.C0174").cinematic.kind,"ELEVATION");
+assert.equal(solemn.project("AO.SM.C0181").cinematic.kind,"ELEVATION");
+assert.equal(solemn.project("AO.SM.C0225").bell.canonicalEventIds[0],"MC-COM-185");
+assert.equal(solemn.project("AO.SM.C0225").bell.soundEvents[0].legalStatus,"PRESCRIBED_CONDITIONALLY_IF_FAITHFUL_COMMUNICATE");
+assert.equal(solemn.project("AO.SM.C0204").cinematic.title,"MINOR ELEVATION");
+assert.equal(solemn.project("AO.SM.C0242").cinematic.title,"ECCE AGNUS DEI");
+assert.equal(solemn.project("AO.SM.C0265").cinematic.title,"BLESSING");
+
+for(const controllerUnderTest of [low,solemn]){
+  for(const cueId of ["AO.SM.C0145","AO.SM.C0161","AO.SM.C0174","AO.SM.C0181","AO.SM.C0204","AO.SM.C0225","AO.SM.C0242","AO.SM.C0265"]){
+    const projected=controllerUnderTest.project(cueId);
+    assert.ok(!String(projected.ownership.bell).includes("LEGACY"),controllerUnderTest.form+" "+cueId+" bell fell back to legacy");
+    assert.ok(!String(projected.ownership.cinematic).includes("LEGACY"),controllerUnderTest.form+" "+cueId+" cinematic fell back to legacy");
+  }
 }
+
+const unknown=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"UNSUPPORTED"}}}});
+assert.equal(unknown.supported,false);
+assert.equal(unknown.project("AO.SM.C0174").ownership.bell,"LEGACY_FALLBACK");
 
 const partA={part:"Mass of the Catechumens",title:"Credo"},partB={part:"Mass of the Faithful",title:"Offertory"};
 assert.equal(partTransitionCinematic(partA,{...partA,title:"Collect"}),null,"same-part card change triggered part cinema");
@@ -52,4 +81,4 @@ assert.equal(transition.canonicalAuthority,false);
 assert.equal(transition.durationMs,920);
 assert.equal(partTransitionCinematic(null,partA,{initial:true}).part,"Mass of the Catechumens");
 
-console.log("reader transients: PASS — five bell anchors, five major-action cinematics, condition fail-closed, and part-transition ownership.");
+console.log("reader transients: PASS — Missa Cantata, Low and Solemn native transients, form-certified absence, condition gating, and part-transition ownership.");
