@@ -6,6 +6,7 @@
 // expressed as an R17 projection over canonical source-moment ranges.
 
 export const STRUCTURE_VERSION="r17-reader-structure-v1";
+export const LIVE_STRUCTURE_STATUS="PROVISIONAL_V1_65_DONOR_ONLY";
 
 const BASE_CARDS=Object.freeze([
   ["M01","Introit & Preparatory Prayers","prep",["E01","E03","E04","E05","E06","E07","E08"]],
@@ -99,7 +100,7 @@ function normalizeMode(value){
   return raw;
 }
 
-export function structureSupport(prepared){
+export function structureSupport(prepared,modeOverride=null){
   const plan=prepared?.session?.plan;
   const resolved=prepared?.session?.resolvedMass;
   if(!plan||!resolved)return Object.freeze({supported:false,reason:"MISSING_R17_SESSION"});
@@ -108,7 +109,13 @@ export function structureSupport(prepared){
   if((plan.followingGraphs??[]).length)return Object.freeze({supported:false,reason:"FOLLOWING_ACTION_PROJECTION_PENDING"});
   const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>x!=="VOTIVE_PROPER");
   if(structuralOverlays.length)return Object.freeze({supported:false,reason:"STRUCTURAL_OVERLAY_PROJECTION_PENDING"});
-  return Object.freeze({supported:true,reason:null});
+  const mode=normalizeMode(modeOverride??prepared?.readerPreferences?.mode??resolved?.presentationMode??"LIVE");
+  if(mode==="LIVE")return Object.freeze({
+    supported:false,
+    reason:"V1_83_48_CARD_LIVE_MAP_REQUIRED",
+    donorStatus:LIVE_STRUCTURE_STATUS,
+  });
+  return Object.freeze({supported:true,reason:null,donorStatus:null});
 }
 
 function cardsForMode(mode){
@@ -151,8 +158,8 @@ function cardContainsBase(card,baseId){
 }
 
 export function createReaderStructureController(prepared){
-  const support=structureSupport(prepared);
   let mode=normalizeMode(prepared?.readerPreferences?.mode??prepared?.session?.resolvedMass?.presentationMode??"LIVE");
+  let support=structureSupport(prepared,mode);
   let cards=makeStructureCards(mode);
   let index=0;
   let anchorBaseId=cards[0]?.baseIds?.[0]??"AO.SM.M01";
@@ -195,9 +202,15 @@ export function createReaderStructureController(prepared){
   function previous(){return go(index-1)}
 
   function setMode(nextMode){
-    if(!support.supported)return snapshot();
+    const candidateMode=normalizeMode(nextMode);
+    const candidateSupport=structureSupport(prepared,candidateMode);
+    if(!candidateSupport.supported){
+      support=candidateSupport;
+      return snapshot();
+    }
     const priorAnchor=anchorBaseId||current()?.baseIds?.[0];
-    mode=normalizeMode(nextMode);
+    mode=candidateMode;
+    support=candidateSupport;
     cards=makeStructureCards(mode);
     const found=cards.findIndex(card=>cardContainsBase(card,priorAnchor));
     index=found>=0?found:Math.min(index,cards.length-1);
