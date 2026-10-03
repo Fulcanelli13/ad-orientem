@@ -12,6 +12,8 @@ const ashPayload=load("../data/presentation/reader-ash.v1.json");
 const ashData=Object.freeze({payload:ashPayload,graph:Object.freeze([...specialExtension.graphs.ASH])});
 const candlemasPayload=load("../data/presentation/reader-candlemas.v1.json");
 const candlemasData=Object.freeze({payload:candlemasPayload,graph:Object.freeze([...specialExtension.graphs.CND])});
+const requiemAbsolutionPayload=load("../data/presentation/reader-requiem-absolution.v1.json");
+const requiemAbsolutionData=Object.freeze({payload:requiemAbsolutionPayload,graph:Object.freeze([...specialExtension.graphs.ABS])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -312,11 +314,37 @@ const requiemRoot=rootFixture();
 const requiem=createBrowserMassRuntime({
   root:requiemRoot,
   celebrationApi:{getResolvedMass:()=>celebration({requestedCelebrationId:"requiem",celebrationId:"requiem",celebrationType:"requiem",properSource:"Votive/Requiem"})},
-  resolveHostOptions:()=>({form:"solemn",celebrationTitle:"Requiem",proper}),
+  resolveHostOptions:()=>({form:"solemn",celebrationTitle:"Requiem",proper,followingActions:["REQUIEM_ABSOLUTION"]}),
   readReaderPreferences:()=>({mode:"simple"}),
   loadPresentationData:async()=>presentationData,
+  loadRequiemAbsolutionData:async()=>requiemAbsolutionData,
+  requiemAbsolutionContext:{bodyPresent:true,burialProcession:true},
 });
-await assert.rejects(()=>requiem.enter(),/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/);
+const requiemEntered=await requiem.enter();
+assert.equal(requiemEntered.session.plan.normalLastGospel,false);
+assert.equal(requiemEntered.session.plan.blessingAllowed,false);
+assert.deepEqual([...requiemEntered.session.plan.followingGraphs],["REQUIEM_ABSOLUTION"]);
+assert.equal(requiem.getReaderModel().totalCards,30,"Requiem variance duplicated the Mass reader surface");
+requiem.showSection(29);
+const requiemMassEnd=requiem.getCurrentSectionId();
+const absStart=requiem.next();
+assert.equal(requiem.getCurrentSectionId(),requiemMassEnd,"Absolution handoff fabricated a Last Gospel card");
+assert.equal(absStart.cardTitle,"At the Bier or Catafalque");
+assert.equal(requiem.getLifecycleState().stage,"FOLLOWING_ACTION_HANDOFF");
+assert.equal(requiem.getRequiemAbsolutionState().card.id,"ABS-R01");
+requiem.next();
+assert.equal(requiem.getReaderState().cardTitle,"Non intres in judicium");
+requiem.next();
+assert.equal(requiem.getReaderState().cardTitle,"Libera me, Domine");
+requiem.next();
+assert.equal(requiem.getReaderState().gesture,null,"coffin aspersion/incensation fabricated a faithful gesture");
+requiem.next();
+assert.equal(requiem.getReaderState().cardTitle,"In paradisum");
+const absDone=requiem.next();
+assert.equal(absDone.stage,"DEPARTURE");
+assert.equal(requiem.getLifecycleState().stage,"DEPARTURE");
+assert.equal(requiem.advanceLifecycle().stage,"GIVE_THANKS_HANDOFF");
+requiem.destroy();
 assert.equal(requiemRoot.innerHTML,"");
 
 console.log("Browser Mass runtime PASS: ordinary flow, source-first LIVE, preludes, plan-aware ownership and lifecycle handoff.");
