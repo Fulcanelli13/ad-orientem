@@ -87,10 +87,11 @@
     {
       "id": "V183-NATIVE-LIVE-GATE-BYPASS",
       "status": "FIXED_AND_TESTED_R17",
-      "defect": "The 30-card native reader model could still mount in LIVE preview even though the separate reader-structure controller correctly blocked provisional LIVE structure.",
-      "invariant": "Any native preview requested in LIVE must fail closed with V1_83_48_CARD_LIVE_MAP_REQUIRED until the authoritative 48-card map is certified.",
+      "defect": "A 30-card native reader path could mount in LIVE despite the frozen v1.83 48-card requirement.",
+      "invariant": "Every R17 native 30-card runtime/preview path must reject LIVE with V1_83_48_CARD_LIVE_MAP_REQUIRED until the authoritative 48-card map is certified.",
       "tests": [
         "tests/reader-native-preview.mjs",
+        "tests/browser-runtime.mjs",
         "tests/reader-regression-lockdown.mjs"
       ]
     }
