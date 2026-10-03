@@ -112,6 +112,12 @@ assert.equal(gradualArchitecture?.alleluiaTractBlock,"AO.SM.B022");
 assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
+const ashPayload=release.protectedInvariants.find(x=>x.id==="ASH_NATIVE_PAYLOAD");
+assert.equal(ashPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Ash runtime certification disappeared");
+assert.equal(ashPayload?.recoveredGraphRecords,8,"Ash source scope changed");
+assert.equal(ashPayload?.readerCards,5,"Ash reader-card contract changed");
+assert.match(String(ashPayload?.controller??""),/reader-ash\.js/,"Ash controller is not pinned");
+
 const palmPayload=release.protectedInvariants.find(x=>x.id==="PALM_NATIVE_PAYLOAD");
 assert.equal(palmPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Palm runtime certification disappeared");
 assert.equal(palmPayload?.recoveredGraphRecords,12,"Palm source scope changed");
@@ -176,6 +182,8 @@ assert.match(browserRuntimeSource,/createPlanAwareObjectiveRuntime/);
 assert.match(browserRuntimeSource,/objectiveRuntime\.allows/);
 assert.match(browserRuntimeSource,/createPalmReaderController/,"browser runtime lost Palm controller");
 assert.match(browserRuntimeSource,/setPalmRecipientState/,"browser runtime lost personal Palm recipient-state control");
+assert.match(browserRuntimeSource,/createAshReaderController/,"browser runtime lost Ash controller");
+assert.match(browserRuntimeSource,/setAshRecipientState/,"browser runtime lost personal Ash recipient-state control");
 assert.match(browserRuntimeSource,/AO\.SM\.B014/,"Palm Introit-only handoff lost B014 boundary");
 assert.match(browserRuntimeSource,/createFormLifecycleRuntime/,"browser runtime lost native form lifecycle");
 assert.match(browserRuntimeSource,/enterLifecycleBoundary/,"browser runtime stopped entering Mass completion boundary");
