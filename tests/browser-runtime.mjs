@@ -11,6 +11,8 @@ const presentationData=Object.freeze({
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
 });
+const eventGraph=load("../data/mass/mc-event-graph.v1.json");
+const eventData=eventGraph.storage.eventFiles.flatMap(ref=>load("../"+ref.path).events);
 const t=(lat,en)=>({lat,en});
 const proper={
   sourcePath:"Sancti/10-07",
@@ -102,6 +104,32 @@ assert.equal(aspergesRuntime.getAspergesState().card.id,"ASP-R05","Back from fir
 aspergesRuntime.next();
 assert.equal(aspergesRuntime.getCurrentSectionId(),"AO.CARD.001");
 aspergesRuntime.destroy();
+
+
+const planAwareLowRoot=rootFixture();
+const planAwareLow=createBrowserMassRuntime({
+  root:planAwareLowRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({
+    gloria:true,credo:true,faithfulCommunicantsPresent:true,
+  })},
+  resolveHostOptions:()=>({
+    form:"low",celebrationTitle:"Holy Rosary",
+    proper:{...proper,hasGloria:true,hasCredo:true},
+    faithfulCommunicantsPresent:true,
+    chantSetting:"GREGORIAN",
+  }),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  eventData,
+});
+await planAwareLow.enter();
+assert.equal(planAwareLow.getObjectiveRuntime().supported,true);
+assert.equal(planAwareLow.getObjectiveRuntime().owner,"R18_PLANNED_OBJECTIVE_TRAVERSAL");
+assert.equal(planAwareLow.showCanonicalEvent("MC-OFF-110"),null,
+  "Low browser runtime accepted Solemn offertory incensation outside its planned traversal");
+assert.ok(planAwareLow.showCanonicalEvent("MC-CNS-010"),
+  "Low browser runtime rejected a certified planned canonical event");
+planAwareLow.destroy();
 
 const liveBlockedRoot=rootFixture();
 const liveBlocked=createBrowserMassRuntime({

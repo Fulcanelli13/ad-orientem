@@ -93,6 +93,82 @@ function properManifestV2(proper) {
   return null;
 }
 
+function properData(proper) {
+  if (!proper) return null;
+  return proper.data ?? proper;
+}
+
+function booleanDecision(value) {
+  if (typeof value === "boolean") return value;
+  if (value == null) return null;
+  const raw=String(value).trim().toUpperCase();
+  if (["TRUE","YES","ON","PRESENT","1","GLORIA","CREDO"].includes(raw)) return true;
+  if (["FALSE","NO","OFF","ABSENT","0","OMIT","OMITTED","NONE"].includes(raw)) return false;
+  return null;
+}
+
+function hasResolvedText(value) {
+  if (!value) return false;
+  if (Array.isArray(value)) return value.some(hasResolvedText);
+  if (typeof value === "string") return value.trim().length > 0;
+  if (typeof value === "object") {
+    for (const key of ["lat","la","en","fr","textLat","bodyLat","payloadRef"]) {
+      if (typeof value[key] === "string" && value[key].trim()) return true;
+    }
+    return Object.values(value).some(hasResolvedText);
+  }
+  return false;
+}
+
+function resolvedObjectiveContext(resolvedMass, state) {
+  const form=resolvedMass.form;
+  if (!["LOW","SOLEMN"].includes(form)) return null;
+
+  const proper=properData(resolvedMass.proper);
+  const provenance=resolvedMass.provenance ?? {};
+  const conditions=new Set((provenance.conditions ?? []).map(x=>typeof x==="string"?x:x?.id).filter(Boolean));
+
+  const gloria=booleanDecision(provenance.gloria) ??
+    booleanDecision(proper?.hasGloria) ??
+    booleanDecision(proper?.showGloria) ??
+    conditions.has("GLORIA_PRESENT");
+
+  const credo=booleanDecision(provenance.credo) ??
+    booleanDecision(proper?.hasCredo) ??
+    booleanDecision(proper?.showCredo) ??
+    conditions.has("CREDO_PRESENT");
+
+  const sequence=booleanDecision(provenance.sequencePresent) ?? (
+    hasResolvedText(proper?.sequence) ||
+    (proper?.preGospelSequence ?? proper?.interlectionSequence ?? []).some(node=>
+      String(node?.type??"").toUpperCase()==="SEQUENCE"
+    ) ||
+    conditions.has("SEQUENCE_PRESENT")
+  );
+
+  const faithful=booleanDecision(provenance.faithfulCommunicantsPresent) ??
+    !conditions.has("NO_FAITHFUL_COMMUNICANTS");
+
+  const rawChant=String(provenance.chantSetting ?? "").trim().toUpperCase();
+  const chantSetting=rawChant==="NON_GREGORIAN_DEFERRED" ||
+    conditions.has("CHANT_SETTING_NON_GREGORIAN_DEFERRED")
+      ? "NON_GREGORIAN_DEFERRED"
+      : "GREGORIAN";
+
+  return Object.freeze({
+    form,
+    incenseEnabled: form==="SOLEMN",
+    gloriaPresent:Boolean(gloria),
+    sequencePresent:Boolean(sequence),
+    credoPresent:Boolean(credo),
+    chantSetting,
+    faithfulCommunicantsPresent:Boolean(faithful),
+    oratioSuperPopulumPresent:state.postcommunionExit?.mode==="PRAYER_OVER_PEOPLE",
+    blessingAllowed:state.blessingAllowed!==false,
+    normalLastGospel:state.normalLastGospel!==false,
+  });
+}
+
 function properIsReady(proper) {
   if (!proper) return false;
 
@@ -267,6 +343,8 @@ export function compileMassPlan(resolvedMass) {
       state.formalSolemnPaxAllowed = false;
     }
   }
+
+  state.objectiveContext = resolvedObjectiveContext(resolvedMass, state);
 
   return Object.freeze({
     ...state,

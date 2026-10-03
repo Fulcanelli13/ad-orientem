@@ -52,7 +52,6 @@ for(const id of [
   "SPECIAL_STRUCTURE_PARITY",
   "PHONE_BROWSER_ACCEPTANCE",
   "SOLEMN_PAX_TRANSFER_AUTHORITY",
-  "PLAN_AWARE_OBJECTIVE_RUNTIME",
 ]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
 assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
 for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
@@ -61,6 +60,13 @@ for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NA
 const formSwitch=release.protectedInvariants.find(x=>x.id==="FORM_SWITCH_NO_LEGACY_FALLBACK");
 assert.ok(formSwitch?.channels?.includes("priestAction"),"priest-action ownership disappeared from form-switch gate");
 assert.match(String(formSwitch?.transientPolicy??""),/fail closed/i,"uncertified form transients no longer fail closed");
+
+const plannedRuntime=release.protectedInvariants.find(x=>x.id==="PLAN_AWARE_OBJECTIVE_RUNTIME");
+assert.equal(plannedRuntime?.status,"CERTIFIED_LOW_SOLEMN_RUNTIME_OWNERSHIP",
+  "planned objective runtime blocker disappeared without runtime certification");
+assert.equal(plannedRuntime?.engine,"buildPlannedObjectiveTraversal");
+assert.equal(plannedRuntime?.sourceGraphMutation,false);
+assert.deepEqual(plannedRuntime?.forms,["LOW","SOLEMN"]);
 
 const gradualArchitecture=release.protectedInvariants.find(x=>x.id==="GRADUAL_LIVE_ARCHITECTURE");
 assert.equal(gradualArchitecture?.status,"RECOVERED_CONTRACT_LOCKED__RUNTIME_GATED_BY_G6",
@@ -119,7 +125,12 @@ assert.deepEqual(byId.get("MC-COM-160").conditions,["FORM_IS_SOLEMN"],
 assert.deepEqual(byId.get("MC-COM-100").conditions,[],
   "Pax Domini was conflated with a plan-specific Pax suppression");
 const objectiveSource=readFileSync(new URL("../src/mass/objective-engine.js",import.meta.url),"utf8");
+const readerObjectiveSource=readFileSync(new URL("../src/mass/reader-objective-runtime.js",import.meta.url),"utf8");
+const browserRuntimeSource=readFileSync(new URL("../src/mass/browser-runtime.js",import.meta.url),"utf8");
 assert.match(objectiveSource,/applyMassPlanTraversalDelta/);
+assert.match(readerObjectiveSource,/buildPlannedObjectiveTraversal/);
+assert.match(browserRuntimeSource,/createPlanAwareObjectiveRuntime/);
+assert.match(browserRuntimeSource,/objectiveRuntime\.allows/);
 assert.match(objectiveSource,/MC-COM-150/);
 assert.match(objectiveSource,/MC-COM-160/);
 
@@ -132,6 +143,8 @@ assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
 assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
+assert.match(nativeSource,/createPlanAwareObjectiveRuntime/,"native reader lost plan-aware objective runtime");
+assert.match(nativeSource,/objectiveRuntime\.allows/,"native reader stopped enforcing planned objective traversal");
 assert.match(nativeSource,/postureOnly:ready\.cueState\.supported/,"native reader resumed reading legacy non-posture rails");
 assert.match(nativeSource,/r17OwnerPriestAction/,"native reader lost priest-action ownership diagnostics");
 assert.match(nativeSource,/r17OwnerSacredMinister/,"native reader lost sacred-minister ownership diagnostics");

@@ -56,6 +56,8 @@ export function deriveHostOptions({ resolvedMass, assemblyStatus, arch, runtimeS
     presentationMode: mapLegacyFollowMode(arch?.followMode ?? runtimeState?.settings?.followMode),
     precedingRites: rites.precedingRites,
     followingActions: rites.followingActions,
+    chantSetting: arch?.chantSetting ?? runtimeState?.settings?.chantSetting ?? "GREGORIAN",
+    faithfulCommunicantsPresent: runtimeState?.settings?.faithfulCommunion ?? null,
     localProfile: runtimeState?.settings?.localMassProfile ?? null,
   });
 }

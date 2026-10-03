@@ -4,10 +4,13 @@ import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { structureSupport } from "./reader-structure.js";
 import { createAspergesReaderController, loadAspergesReaderData } from "./reader-asperges.js";
+import { loadCanonicalReaderEvents } from "./reader-event-state.js";
+import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 
 export function createBrowserMassRuntime({
   root, celebrationApi, resolveHostOptions, readReaderPreferences,
   iconResolver = null, loadPresentationData = loadReaderPresentationData,
+  eventData = null, loadEventData = loadCanonicalReaderEvents,
   loadAspergesData = loadAspergesReaderData, aspergesRiteContext = null,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
@@ -17,6 +20,7 @@ export function createBrowserMassRuntime({
   let readerModel = null;
   let currentSectionId = null;
   let currentPrepared = null;
+  let objectiveRuntime = null;
   let aspergesController = null;
   let inAsperges = false;
 
@@ -122,6 +126,7 @@ export function createBrowserMassRuntime({
 
   function showCanonicalEvent(eventId, state = {}) {
     if (!readerModel) throw new Error("Reader model is not ready");
+    if (objectiveRuntime?.supported && !objectiveRuntime.allows(eventId)) return null;
     const hit = readerModel.cardForEvent(eventId);
     if (!hit) return null;
 
@@ -158,10 +163,16 @@ export function createBrowserMassRuntime({
         throw new Error(structuralSupport.reason || "R17 browser reader structure is not certified");
       }
       const hasAsperges=(prepared?.session?.plan?.precedingGraphs??[]).includes("ASPERGES");
-      const [data,aspergesData]=await Promise.all([
+      const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
+      const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
+      const [data,aspergesData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
+        needsObjectiveRuntime
+          ? (eventData ?? Promise.resolve(loadEventData(prepared)))
+          : Promise.resolve([]),
       ]);
+      const plannedObjective=createPlanAwareObjectiveRuntime({events,prepared});
       const model = createMassReaderModel({
         resolvedMass: prepared.session.resolvedMass,
         sectionMap: data?.sectionMap,
@@ -170,6 +181,7 @@ export function createBrowserMassRuntime({
       });
 
       readerModel = model;
+      objectiveRuntime = plannedObjective;
       currentPrepared = prepared;
       currentSectionId = null;
       aspergesController=hasAsperges ? createAspergesReaderController({graph:aspergesData?.graph,payload:aspergesData?.payload,riteContext:aspergesRiteContext??{}}) : null;
@@ -185,6 +197,7 @@ export function createBrowserMassRuntime({
     readerModel = null;
     currentSectionId = null;
     currentPrepared = null;
+    objectiveRuntime = null;
     aspergesController = null;
     inAsperges = false;
   }
@@ -203,6 +216,7 @@ export function createBrowserMassRuntime({
     getReaderMode: reader.getMode,
     getReaderModel: () => readerModel,
     getPreparedSession: () => currentPrepared,
+    getObjectiveRuntime: () => objectiveRuntime,
     getCurrentSectionId: () => currentSectionId,
     getAspergesState: () => aspergesController?.project?.() ?? null,
     markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },

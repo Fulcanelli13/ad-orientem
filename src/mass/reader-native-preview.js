@@ -17,6 +17,7 @@ import { loadGuideRegistry, guideForSequence } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
 import { iconKeysForReaderState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
+import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -176,6 +177,7 @@ export async function prepareNativeReaderPreview({
     sungCorpus:data?.sungCorpus,
   });
   const eventState=createNativeEventStateController(events);
+  const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
   const cueState=createReaderFormCueStateController({
     formStateData:formState,
     registries,
@@ -185,7 +187,7 @@ export async function prepareNativeReaderPreview({
   });
   const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
   const transientState=createReaderTransientController({events,prepared});
-  return Object.freeze({prepared,data,model,events,eventState,registries,cueState,guide,scholaState,transientState,formState});
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState});
 }
 
 export async function mountNativeReaderPreview({
@@ -278,14 +280,18 @@ export async function mountNativeReaderPreview({
   function projectedState(){
     const legacy=legacyReaderStateSnapshot(doc,{postureOnly:ready.cueState.supported});
     let eventState=null;
+    let eventAllowed=true;
     if(typeof readLegacyActive==="function"){
       try{
         const eventId=extractCanonicalEventId(readLegacyActive());
-        if(eventId)eventState=ready.eventState.project(eventId);
+        if(eventId){
+          eventAllowed=!ready.objectiveRuntime.supported || ready.objectiveRuntime.allows(eventId);
+          if(eventAllowed)eventState=ready.eventState.project(eventId);
+        }
       }catch{}
     }
 
-    const cueProjection=activeCueId ? ready.cueState.project(activeCueId) : null;
+    const cueProjection=activeCueId && eventAllowed ? ready.cueState.project(activeCueId) : null;
     const gestureProfile=prepared?.readerPreferences?.gestureProfile ?? "GUIDED_1962";
     const owned=resolveCueOwnedChannels({
       cueControllerSupported:ready.cueState.supported,
@@ -314,7 +320,7 @@ export async function mountNativeReaderPreview({
     const postureResolved=resolveReaderPostureChannel({
       preferences:prepared.readerPreferences,
       cueProjection:cueNative ? cueProjection : null,
-      legacyPosture:legacy.posture,
+      legacyPosture:eventAllowed ? legacy.posture : null,
       cueId:activeCueId,
       sectionId:current?.sectionId??null,
       macroId:current?.macroId??null,
