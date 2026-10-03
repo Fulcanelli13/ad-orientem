@@ -49,7 +49,7 @@ assert.equal(model.cards[17].title,"Quam oblationem");
 assert.equal(model.cards[18].title,"Consecration of the Sacred Host");
 assert.equal(model.cards[19].title,"Consecration of the Chalice");
 assert.equal(model.cards[26].title,"Per ipsum · Minor Elevation");
-assert.equal(model.cards[30].title,"Agnus Dei");
+assert.equal(model.cards[29].title,"Agnus Dei");
 assert.equal(model.cards[38].title,"Last Gospel");
 assert.equal(model.cards[7].stateOnly,true,"Homily must stay state-only");
 
