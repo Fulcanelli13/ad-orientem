@@ -95,7 +95,30 @@
         "bell",
         "cinematic"
       ],
-      "canonicalStateMutation": false
+      "canonicalStateMutation": false,
+      "forms": [
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "LOW",
+        "SOLEMN"
+      ],
+      "formParity": {
+        "low": {
+          "status": "CERTIFIED",
+          "bellCueCount": 4,
+          "certifiedAbsentCueIds": [
+            "AO.SM.C0225"
+          ]
+        },
+        "solemn": {
+          "status": "CERTIFIED",
+          "bellCueCount": 5,
+          "conditionalCueIds": [
+            "AO.SM.C0225"
+          ]
+        }
+      },
+      "formAuthority": "Canonical MC event forms/soundEvents + B005 Low and B006 Solemn objective profiles; cue identity remains the recovered reader binding."
     },
     {
       "id": "PROPER_FIXTURE_PROVENANCE",
@@ -153,12 +176,30 @@
         "priestAction"
       ],
       "postureException": "FOLLOW_CONGREGATION remains intentionally observational",
-      "transientPolicy": "LOW/SOLEMN bell and cinematic state fail closed until separately certified"
+      "transientPolicy": "LOW/SOLEMN bell and cinematic state are native-certified; canonical events unavailable to a form project an explicit certified absence and never borrow another form or legacy state."
     },
     {
       "id": "FORM_PARITY_REGRESSION",
       "status": "PASS",
       "test": "tests/reader-form-state-parity.mjs"
+    },
+    {
+      "id": "FORM_TRANSIENT_PARITY",
+      "status": "CERTIFIED",
+      "controller": "src/mass/reader-transients.js",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "guarantees": [
+        "Low and Solemn bell/elevation/action cinematics use native canonical cue projection",
+        "Low Communion-warning bell AO.SM.C0225 is a certified absence because MC-COM-185 is unavailable for LOW",
+        "Solemn Communion-warning bell remains conditional on faithful communicants and retains canonical legal status",
+        "form-unavailable events never borrow another form or legacy state",
+        "unknown unsupported forms remain fail-closed to the rollback path"
+      ]
     },
     {
       "id": "SPECIAL_STRUCTURE_PLAN_PROJECTION",
@@ -236,11 +277,6 @@
       "id": "G6_48_CARD_MAP",
       "severity": "RELEASE_BLOCKER",
       "detail": "Exact ordered v1.83 C01-C48 LIVE enumeration is still unrecovered. Nine of the ten historical v1.81 decompression splits are semantically recovered; exactly one remains unresolved: a Canon boundary."
-    },
-    {
-      "id": "FORM_TRANSIENT_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Low and Solemn bell/cinematic cue ownership is not yet independently certified. R18 fails these transient channels closed instead of borrowing Missa Cantata or legacy state."
     },
     {
       "id": "FORM_LIFECYCLE_PARITY",
