@@ -44,6 +44,14 @@ if (communionWarning?.soundEvents?.[0]?.legal_status !== "PRESCRIBED_CONDITIONAL
 }
 if (byId.get("MC-COM-200")?.soundEvents?.length) fail("old priest-DNSD bell restored");
 
+// Peace prayer and ministerial Pax are distinct from Pax Domini and must be independently suppressible.
+const peacePrayer=byId.get("MC-COM-150");
+const formalPax=byId.get("MC-COM-160");
+if (!peacePrayer?.conditions?.includes("ORDINARY_PEACE_PRAYER_ALLOWED")) fail("peace prayer suppression condition missing");
+if (!formalPax?.conditions?.includes("FORM_IS_SOLEMN")) fail("formal Pax lost Solemn form condition");
+if (!formalPax?.conditions?.includes("FORMAL_SOLEMN_PAX_ALLOWED")) fail("formal Pax suppression condition missing");
+if (byId.get("MC-COM-100")?.conditions?.includes("FORMAL_SOLEMN_PAX_ALLOWED")) fail("Pax Domini was conflated with formal Pax transmission");
+
 // R007 / R012 — no active private celebrant Gospel before the public Gospel.
 if (events.some((event) => event.sourceMomentRefs.includes("E17"))) fail("historical private Gospel E17 active");
 if (byId.has("MC-GSP-040")) fail("private celebrant Gospel event active");
