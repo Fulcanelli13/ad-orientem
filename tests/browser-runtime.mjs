@@ -100,4 +100,4 @@ const requiem=createBrowserMassRuntime({
 await assert.rejects(()=>requiem.enter(),/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/);
 assert.equal(requiemRoot.innerHTML,"");
 
-console.log("Browser Mass runtime PASS: 30-card MISSAL/SIMPLE path remains testable; LIVE is blocked behind v1.83 48-card parity.");
+console.log("Browser Mass runtime PASS: 30-card MISSAL/SIMPLE path remains testable; LIVE is blocked behind source-first structure integration.");
