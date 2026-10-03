@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "status": "R17_CANONICAL_TEXT_CORRECTIONS",
+  "authorityRule": "Apply after frozen donor ingestion and before any reader/display composition. No correction may create ritual state.",
+  "donorPolicy": "Frozen donor hashes remain unchanged; this layer records adjudicated source corrections explicitly.",
+  "corrections": [
+    {
+      "id": "SRC-PARITY-001",
+      "blockId": "AO.SM.B046",
+      "cueId": "AO.SM.C0148",
+      "field": "latin",
+      "from": "Benedíctus qui venit",
+      "to": "Benedíctus ✠ qui venit",
+      "impact": "TEXT_ONLY"
+    },
+    {
+      "id": "SRC-PARITY-002",
+      "blockId": "AO.SM.B047",
+      "cueId": "AO.SM.C0153",
+      "field": "latin",
+      "from": "Antístite nostro et ómnibus",
+      "to": "Antístite nostro N. et ómnibus",
+      "impact": "TEXT_ONLY"
+    },
+    {
+      "id": "SRC-PARITY-003",
+      "blockId": "AO.SM.B057",
+      "cueId": "AO.SM.C0194",
+      "field": "latin",
+      "from": "lucis pacis",
+      "to": "lucis et pacis",
+      "impact": "TEXT_ONLY"
+    },
+    {
+      "id": "P1-011",
+      "blockId": "AO.SM.B007",
+      "cueId": "AO.SM.C0023",
+      "field": "latin",
+      "from": "orare pro me",
+      "to": "oráre pro me",
+      "impact": "TEXT_NORMALIZATION"
+    },
+    {
+      "id": "P1-011",
+      "blockId": "AO.SM.B077",
+      "cueId": "AO.SM.C0237",
+      "field": "latin",
+      "from": "orare pro me",
+      "to": "oráre pro me",
+      "impact": "TEXT_NORMALIZATION"
+    }
+  ]
+}
