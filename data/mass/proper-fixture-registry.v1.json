@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "FIXTURE_MANIFEST_SCHEMA_ONLY",
   "note": "Expected structural manifests only. No unsourced liturgical text is embedded.",
   "fixtures": [
@@ -40,7 +40,8 @@
         "hancIgitur": false,
         "quiPridie": false,
         "crossParity": true,
-        "preGospelSequence": true
+        "preGospelSequence": true,
+        "preGospelSourceOrder": true
       }
     },
     {
@@ -50,7 +51,19 @@
         "hancIgitur": false,
         "quiPridie": false,
         "crossParity": true,
-        "preGospelSequence": true
+        "preGospelSequence": true,
+        "preGospelSourceOrder": true
+      }
+    },
+    {
+      "id": "extended_readings_mass",
+      "requirements": {
+        "communicantes": false,
+        "hancIgitur": false,
+        "quiPridie": false,
+        "crossParity": true,
+        "preGospelSequence": true,
+        "preGospelSourceOrder": true
       }
     },
     {
@@ -158,5 +171,6 @@
   "responseOwnershipRule": {
     "EPISTLE_OR_LESSON": "Proper payload AO.SM.C0075; fixed response AO.SM.C0076 remains separate.",
     "GOSPEL": "Proper payload AO.SM.C0086; fixed response AO.SM.C0087 and priest-private AO.SM.C0088 remain separate."
-  }
+  },
+  "sourceOrderRule": "Ember/extended-reading fixtures require PRE_GOSPEL_SEQUENCE provenance with orderAuthority=SOURCE_ORDER. Numeric L-suffix pairing is forbidden."
 }
