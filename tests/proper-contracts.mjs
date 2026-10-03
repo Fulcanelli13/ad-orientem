@@ -121,6 +121,13 @@ coverageGate.requirements={
   requiredContainers:["COLLECT_SET","GOSPEL","POSTCOMMUNION_SET"],
 };
 coverageGate.slots={gospel:{payloadRef:"GOSPEL-1"}};
+coverageGate.orations.postcommunionSet=[{
+  id:"POSTCOMMUNION-1",
+  bodyLat:"Postcommunion body",
+  conclusionType:"PER_DOMINUM",
+  conclusionLat:"Per Dominum nostrum Iesum Christum.",
+  sourceRef:"FIXTURE"
+}];
 expect(validateProperManifestV2(coverageGate).pass,"valid required container coverage failed");
 
 const coverageBroken=structuredClone(coverageGate);
