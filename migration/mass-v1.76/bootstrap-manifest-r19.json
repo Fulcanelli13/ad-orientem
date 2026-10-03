@@ -1,0 +1,16 @@
+{
+  "release": "R19",
+  "reference": "v1.76",
+  "modularEntry": "migration/mass-v1.76/modular-index.html",
+  "logicalScriptCount": 31,
+  "dataNodes": 7,
+  "externalRuntimeScripts": 23,
+  "readerTransport": {
+    "logicalOrder": 4,
+    "loader": "src/mass/legacy/reader-loader-v1.76.js",
+    "partsManifest": "src/mass/legacy/reader-runtime-v1.76.parts/MANIFEST.json",
+    "frozenReaderSha256": "93060f47a3a9b8f676b908a9067631c432029bc7280ceb7a3b49584aabdaf3a4",
+    "frozenReaderChars": 6578563
+  },
+  "policy": "All logical blocks remain parser ordered. Reader order 4 is reconstructed synchronously from exact source parts and inserted as a classic parser script."
+}
