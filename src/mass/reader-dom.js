@@ -22,7 +22,7 @@ const SHELL_STYLE = `
 .ao-card-viewport{min-width:0;min-height:0;padding:.58rem;background:linear-gradient(180deg,#090e14,#080c12)}
 .ao-prayer-card{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:clamp(.9rem,3vw,1.35rem);border:1px solid var(--ao-line);border-radius:14px;background:linear-gradient(180deg,#10161d,#0d1218);box-shadow:0 12px 34px rgba(0,0,0,.22)}
 .ao-prayer-title{margin:0 0 .85rem;font-size:clamp(1.14rem,4.3vw,1.55rem);line-height:1.08;font-weight:600;letter-spacing:.01em;color:#f4eee4}
-.ao-prayer-body{display:flex;flex-direction:column;gap:.82rem;padding-bottom:28vh}
+.ao-prayer-body{display:flex;flex-direction:column;gap:.82rem;padding-bottom:42vh}
 .ao-reader-paragraph{margin:0;font-size:clamp(1.02rem,3.7vw,1.28rem);line-height:1.52;color:#e8e1d8}
 .ao-reader-paragraph[data-active="true"]{color:#fffaf1}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:.72rem;border-left:2px solid var(--ao-accent)}
