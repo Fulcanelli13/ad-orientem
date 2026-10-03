@@ -43,8 +43,8 @@ const livePrepared={
 };
 await assert.rejects(
   ()=>prepareNativeReaderPreview({prepared:livePrepared,presentationData:data,eventData,cueRegistries,guideData}),
-  /V1_83_48_CARD_LIVE_MAP_REQUIRED/,
-  "30-card native preview bypassed the frozen v1.83 LIVE structure gate"
+  /SOURCE_FIRST_LIVE_STRUCTURE_PENDING/,
+  "native preview bypassed the source-first LIVE structure integration gate"
 );
 
 const prepared={
