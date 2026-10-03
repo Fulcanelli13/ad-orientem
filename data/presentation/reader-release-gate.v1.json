@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -65,6 +65,14 @@
         "shared-text suppression",
         "non-looping completion"
       ]
+    },
+    {
+      "id": "ICON_ASSET_BANK_NATIVE",
+      "status": "CERTIFIED_HOST_BANK_BRIDGE",
+      "resolver": "src/mass/reader-icons.js",
+      "bridge": "globalThis.AO_R17_ICON_ASSETS",
+      "sourceBank": "existing host AO_ASSETS",
+      "failClosedOnMissingAssets": true
     }
   ],
   "openBlockers": [
@@ -77,11 +85,6 @@
       "id": "GRADUAL_LIVE_ARCHITECTURE",
       "severity": "RELEASE_BLOCKER",
       "detail": "Final LIVE architecture must preserve v1.83 B021 Gradual ownership, separate B022 Alleluia/Tract Schola content, and B023 Munda cor meum start."
-    },
-    {
-      "id": "ICON_ASSET_INTEGRATION",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Native preview does not yet receive the approved icon-bank resolver from browser entry."
     },
     {
       "id": "FORM_STATE_PARITY",
