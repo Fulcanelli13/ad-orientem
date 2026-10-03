@@ -1,16 +1,18 @@
 /* R20 browser-parity compatibility shim.
-   This file is intentionally outside the frozen v1.76 extraction manifest.
-   It repairs diagnostics object mutability only; no Mass data or ritual state is changed. */
+   Outside the frozen v1.76 extraction manifest.
+   Diagnostics-only: no Mass data, ritual state, text, routing or reader sequence changes. */
 (() => {
   'use strict';
   const AO = window.AO = window.AO || {};
   const audit = AO.LowMassAudit;
-  if (audit && typeof audit.run === 'function' && Object.isFrozen(audit) && !Object.prototype.hasOwnProperty.call(audit, 'last')) {
+  if (audit && typeof audit.run === 'function') {
     let lastAudit = null;
-    AO.LowMassAudit = Object.freeze({
+    const replacement = {
       run: audit.run,
       get last() { return lastAudit; },
       set last(value) { lastAudit = value; }
-    });
+    };
+    AO.LowMassAudit = Object.freeze(replacement);
   }
+  document.documentElement.dataset.r20Compat = 'loaded';
 })();
