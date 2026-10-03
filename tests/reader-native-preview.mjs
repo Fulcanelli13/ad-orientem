@@ -29,6 +29,11 @@ const eventData=[
   "../data/mass/mc-events-01.v1.json","../data/mass/mc-events-02.v1.json","../data/mass/mc-events-03.v1.json",
   "../data/mass/mc-events-04.v1.json","../data/mass/mc-events-05.v1.json","../data/mass/mc-events-06.v1.json",
 ].flatMap(path=>load(path).events);
+const aspergesExtension=load("../data/mass/special-days-extension.v1.3.json");
+const aspergesData=Object.freeze({
+  graph:aspergesExtension.graphs.ASP,
+  payload:load("../data/presentation/reader-asperges.v1.json"),
+});
 const livePrepared={
   session:{
     resolvedMass:{
@@ -58,6 +63,47 @@ assert.equal(liveReady.model.cardForEvent("MC-CNS-040").card.sectionId,"AO.CANON
 assert.equal(liveReady.model.cardForEvent("MC-CAN-180").card.sectionId,"AO.CANON.14");
 assert.equal(liveReady.model.cards[18].guideSequence,15);
 assert.equal(liveReady.model.cards[27].sourceSequence,19);
+
+const aspergesPrepared={
+  ...livePrepared,
+  session:{
+    ...livePrepared.session,
+    resolvedMass:{
+      ...livePrepared.session.resolvedMass,
+      precedingRites:["ASPERGES"],
+      provenance:{seasonalMode:null},
+    },
+    plan:{...livePrepared.session.plan,precedingGraphs:["ASPERGES"]},
+  },
+};
+const aspergesReady=await prepareNativeReaderPreview({
+  prepared:aspergesPrepared,presentationData:data,eventData,cueRegistries,guideData,aspergesData
+});
+assert.ok(aspergesReady.aspergesController,"native preview lost certified Asperges controller");
+assert.equal(aspergesReady.aspergesController.project().card.id,"ASP-R01");
+assert.equal(aspergesReady.aspergesController.project().formulaState.formula,"ORDINARY");
+aspergesReady.aspergesController.goTo("ASP-R03");
+assert.equal(aspergesReady.aspergesController.project().faithfulGesture,null);
+aspergesReady.aspergesController.setActuallySprinkled(true);
+assert.equal(aspergesReady.aspergesController.project().faithfulGesture,"MAKE_FULL_SIGN_OF_CROSS");
+aspergesReady.aspergesController.goTo("ASP-R05");
+assert.equal(aspergesReady.aspergesController.project().handoff,"FOOT_CLUSTER");
+
+await assert.rejects(
+  ()=>prepareNativeReaderPreview({
+    prepared:{
+      ...livePrepared,
+      session:{
+        ...livePrepared.session,
+        resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["PALM"]},
+        plan:{...livePrepared.session.plan,precedingGraphs:["PALM"]},
+      },
+    },
+    presentationData:data,eventData,cueRegistries,guideData
+  }),
+  /NATIVE_PREVIEW_PRECEDING_RITE_PENDING:PALM/,
+  "native preview silently skipped an unsupported preceding rite"
+);
 
 const prepared={
   ...livePrepared,
