@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "BLOCKED_PENDING_V1_83_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until every blocker is closed and the authoritative v1.83 48-card LIVE map is certified.",
@@ -53,6 +53,18 @@
       "status": "RECOVERED_CONTINUITY_CERTIFIED",
       "entryCount": 32,
       "file": "data/presentation/guide-registry.v1.json"
+    },
+    {
+      "id": "SCHOLA_NATIVE_OWNERSHIP",
+      "status": "CERTIFIED_MISSA_CANTATA",
+      "controller": "src/mass/reader-schola.js",
+      "properties": [
+        "independent track/segment clock",
+        "exact SCHOLA_PUBLIC Ordinary cue ownership",
+        "resolved Proper track ownership",
+        "shared-text suppression",
+        "non-looping completion"
+      ]
     }
   ],
   "openBlockers": [
@@ -65,11 +77,6 @@
       "id": "GRADUAL_LIVE_ARCHITECTURE",
       "severity": "RELEASE_BLOCKER",
       "detail": "Final LIVE architecture must preserve v1.83 B021 Gradual ownership, separate B022 Alleluia/Tract Schola content, and B023 Munda cor meum start."
-    },
-    {
-      "id": "SCHOLA_NATIVE_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Schola remains a legacy temporary donor in native preview."
     },
     {
       "id": "ICON_ASSET_INTEGRATION",
