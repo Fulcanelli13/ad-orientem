@@ -260,7 +260,7 @@ export function createReaderDomAdapter({
     if(pop){pop.hidden=true;pop.textContent="";}
 
     const body=root.querySelector('[data-role="paragraphs"]');
-    if(body){
+    if(body && current.cardUpdate){
       body.replaceChildren();
       const doc=body.ownerDocument ?? globalThis.document;
       if(doc?.createElement){
@@ -270,6 +270,8 @@ export function createReaderDomAdapter({
           node.dataset.kind=p.kind;
           node.dataset.active=String(p.active);
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
+          const exactCueIds=(p.sourceCueIds??[]).filter(id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id)));
+          if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
           if(p.replaceOnToggle && p.alternate){
             node.dataset.translateToggle="true";
             node.dataset.primaryText=p.primary;
