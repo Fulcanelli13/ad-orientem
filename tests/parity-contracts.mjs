@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import { auditOrdinaryParity, compareParityEntry } from "../src/mass/parity-contracts.js";
 
 const expect=(x,m)=>{if(!x)throw new Error(m)};
@@ -5,27 +6,39 @@ const expect=(x,m)=>{if(!x)throw new Error(m)};
 const ok=compareParityEntry({
   blockId:"BTEST",
   cueId:"AO.SM.TEST",
-  canonicalCrossPositions:[4,18],
-  referenceCrossPositions:[4,18],
+  canonicalCrossAnchors:["benedixit|host"],
+  referenceCrossAnchors:["benedixit|host"],
+  canonicalTextFragment:"abc",
+  referenceTextFragment:"abc",
   canonicalSectionBoundaries:["P1","P2"],
   referenceSectionBoundaries:["P1","P2"],
   unexplainedDiscrepancies:[],
 });
 expect(ok.pass,"exact parity entry should pass");
 
-const wrongPosition=compareParityEntry({
+const wrongAnchor=compareParityEntry({
   blockId:"BTEST2",
   cueId:"AO.SM.TEST2",
-  canonicalCrossPositions:[4,19],
-  referenceCrossPositions:[4,18],
+  canonicalCrossAnchors:[],
+  referenceCrossAnchors:["Benedíctus|qui venit"],
   canonicalSectionBoundaries:["P1"],
   referenceSectionBoundaries:["P1"],
 });
-expect(!wrongPosition.pass && !wrongPosition.crossPositionPass,"cross position mismatch was not detected");
+expect(!wrongAnchor.pass && !wrongAnchor.crossPositionPass && !wrongAnchor.crossCountPass,"cross anchor mismatch was not detected");
 
-const wrongBoundary=compareParityEntry({
+const wrongText=compareParityEntry({
   blockId:"BTEST3",
   cueId:"AO.SM.TEST3",
+  canonicalTextFragment:"lucis pacis",
+  referenceTextFragment:"lucis et pacis",
+  canonicalSectionBoundaries:["P1"],
+  referenceSectionBoundaries:["P1"],
+});
+expect(!wrongText.pass && !wrongText.textFragmentPass,"text fragment mismatch was not detected");
+
+const wrongBoundary=compareParityEntry({
+  blockId:"BTEST4",
+  cueId:"AO.SM.TEST4",
   canonicalCrossPositions:[],
   referenceCrossPositions:[],
   canonicalSectionBoundaries:["P1","P2"],
@@ -33,15 +46,12 @@ const wrongBoundary=compareParityEntry({
 });
 expect(!wrongBoundary.pass && !wrongBoundary.sectionBoundaryPass,"section boundary mismatch was not detected");
 
-const audit=auditOrdinaryParity([{
-  blockId:"B1",cueId:"C1",
-  canonicalCrossPositions:[1],referenceCrossPositions:[1],
-  canonicalSectionBoundaries:["A"],referenceSectionBoundaries:["A"],
-},{
-  blockId:"B2",cueId:"C2",
-  canonicalCrossPositions:[2],referenceCrossPositions:[3],
-  canonicalSectionBoundaries:["A"],referenceSectionBoundaries:["A"],
-}]);
-expect(audit.total===2 && audit.passed===1 && audit.failed===1 && audit.pass===false,"aggregate parity audit changed");
+const registry=JSON.parse(fs.readFileSync(new URL("../data/mass/ordinary-parity-register.v1.json",import.meta.url),"utf8"));
+const audit=auditOrdinaryParity(registry.entries);
+expect(audit.total===3,"expected exactly three reconciled parity rows");
+expect(audit.failed===3 && audit.correctionRequired===3,"known source corrections must remain blocking until canonical payload is patched");
+expect(registry.entries[0].cueId==="AO.SM.C0148","Benedictus cue pin changed");
+expect(registry.entries[1].cueId==="AO.SM.C0153","Te igitur cue pin changed");
+expect(registry.entries[2].cueId==="AO.SM.C0194","Memento-dead cue pin changed");
 
-console.log("Ordinary parity contracts PASS: exact cross positions and section boundaries enforced.");
+console.log("Ordinary parity contracts PASS: 3 pinned source corrections remain blocking until canonical patch.");
