@@ -1,0 +1,14 @@
+{
+  "release": "R17",
+  "attempted": true,
+  "url": "http://127.0.0.1:8765/migration/mass-v1.76/modular-index.html",
+  "command_family": "chromium --headless=new --dump-dom",
+  "timeout_seconds": 50,
+  "status": "NOT_CLAIMED",
+  "result": "HARNESS_TIMEOUT_BEFORE_DOM_OUTPUT",
+  "dom_bytes": 0,
+  "observed_environment_errors": [
+    "DBus connection unavailable in container"
+  ],
+  "interpretation": "This is not recorded as a browser pass or app failure. Deterministic R17 parity remains independently PASS."
+}
