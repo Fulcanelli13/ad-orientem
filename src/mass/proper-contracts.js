@@ -1,4 +1,5 @@
 import { assertProperContainerCoverage } from "./proper-container-coverage.js";
+import { assertPreGospelSourceOrderProof } from "./pre-gospel-sequence.js";
 import { assertProductionSourceProvenance } from "./source-provenance.js";
 
 // Source-reconciliation contracts for Proper Resolver 2.0.
@@ -139,6 +140,15 @@ export function validateProperManifestV2(manifest) {
   check("PRE_GOSPEL_SEQUENCE", () =>
     assertInterlectionSequence(preGospelSequence, { required: preGospelRequired })
   );
+
+  check("PRE_GOSPEL_SOURCE_ORDER", () => {
+    if (requirements.preGospelSourceOrder !== true) return null;
+    if (!preGospelRequired) throw new Error("preGospelSourceOrder requires preGospelSequence");
+    return assertPreGospelSourceOrderProof(
+      preGospelSequence,
+      manifest.preGospelSequenceProvenance
+    );
+  });
 
   check("PROPER_CONTAINER_COVERAGE", () => {
     const requiredContainers = requirements.requiredContainers ?? [];
