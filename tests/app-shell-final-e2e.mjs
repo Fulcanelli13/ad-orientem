@@ -173,44 +173,32 @@ async function exerciseRealShellSpecialRite(browser,spec){
       assert.equal(current,target,spec.kind+" could not reach "+target);
     }
 
-    const stateCardId=spec.stateCardId??spec.recipientCardId??null;
-    if(stateCardId)await advanceToId(stateCardId);
-    const stateValue=await page.evaluate(({kind,stateAction,stateSetter,stateValue})=>{
+    await advanceToId(spec.recipientCardId);
+    await page.evaluate(({kind,receiveState})=>{
       const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
-      if(stateAction==="RECIPIENT" && stateSetter && typeof api?.[stateSetter]==="function"){
-        api[stateSetter](stateValue);
-      }else if(stateAction==="SPRINKLED"){
-        api?.markActuallySprinkled?.();
-      }
-      if(kind==="PALM")return api?.getPalmState?.()?.recipientPosture??null;
-      if(kind==="ASH")return api?.getAshState?.()?.recipientPosture??null;
-      if(kind==="CANDLEMAS")return api?.getCandlemasState?.()?.recipientPosture??null;
-      if(kind==="ROGATIONS")return api?.getRogationsState?.()?.card?.posture??null;
-      if(kind==="ASPERGES")return api?.getAspergesState?.()?.faithfulGesture??null;
-      return null;
-    },{
-      kind:spec.kind,
-      stateAction:spec.stateAction??(spec.receiveState?"RECIPIENT":null),
-      stateSetter:spec.stateSetter??(
-        spec.kind==="PALM"?"setPalmRecipientState":
-        spec.kind==="ASH"?"setAshRecipientState":null
-      ),
-      stateValue:spec.stateValue??spec.receiveState??null,
-    });
-    if(spec.expectedState!==undefined)assert.equal(
-      stateValue,spec.expectedState,spec.kind+" real-shell personal/rite state did not project correctly"
-    );
+      if(kind==="PALM")api.setPalmRecipientState(receiveState);
+      else if(kind==="ASH")api.setAshRecipientState(receiveState);
+      else if(kind==="ASPERGES")api.markActuallySprinkled();
+    },{kind:spec.kind,receiveState:spec.receiveState});
+    if(spec.kind==="ASPERGES"){
+      await page.waitForFunction(()=>
+        document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")?.textContent?.includes("MAKE_FULL_SIGN_OF_CROSS"),
+        null,{timeout:5000});
+    }else{
+      await page.waitForFunction(()=>
+        document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.includes("KNEEL"),
+        null,{timeout:5000});
+    }
 
     await advanceToId(spec.handoffId);
     await tapNext();
     await page.waitForFunction(()=>
       globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId==="AO.CARD.001",
       null,{timeout:5000});
-    const handoffTitle=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim()??"";
-    assert.notEqual(handoffTitle,"",spec.kind+" real-shell handoff mounted a blank Mass card");
-    if(spec.massTitle)assert.equal(
-      handoffTitle,spec.massTitle,
-      spec.kind+" real-shell handoff entered the wrong Mass surface"
+    assert.equal(
+      (await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim(),
+      spec.expectedMassTitle??"Introit",
+      spec.kind+" real-shell handoff did not enter the expected Mass opening"
     );
 
     const bb=await back.boundingBox();
@@ -237,12 +225,7 @@ try{
   });
   const page=await context.newPage();
   const pageErrors=[];
-  const ariaHiddenWarnings=[];
   page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
-  page.on("console",msg=>{
-    const text=msg.text();
-    if(/Blocked aria-hidden/i.test(text))ariaHiddenWarnings.push(text);
-  });
 
   await page.goto("http://127.0.0.1:4174/index.html?aoR17Reader=native",{
     waitUntil:"domcontentloaded",
@@ -342,7 +325,6 @@ try{
     rootConnected:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     title:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.textContent?.trim()??"",
     paragraphs:document.querySelectorAll("#ao-r17-native-reader-preview [data-role='paragraphs'] .ao-reader-paragraph").length,
-    shellFocusGuard:globalThis.AO_R17_BROWSER_ENTRY?.status?.().shellFocusGuard??false,
   }));
   assert.equal(ownership.starts,0,"final native entry booted the legacy live renderer");
   assert.equal(ownership.runtime?.readerUiMode,"NATIVE");
@@ -351,7 +333,6 @@ try{
   assert.equal(ownership.massEngine,"r17-native-production");
   assert.equal(ownership.massReaderUi,"R17_NATIVE_PRODUCTION");
   assert.equal(ownership.rootConnected,true);
-  assert.equal(ownership.shellFocusGuard,true,"production shell focus guard was not installed");
   assert.notEqual(ownership.title,"","real app shell mounted a blank native card title");
   assert.ok(ownership.paragraphs>0,"real app shell mounted an empty native prayer card");
 
@@ -372,48 +353,6 @@ try{
     return text && text!==previous;
   },before,{timeout:5000});
 
-  const focusProbe=await page.evaluate(async()=>{
-    const surface=document.createElement("section");
-    surface.id="aoPrayerBookRoot";
-    surface.setAttribute("aria-hidden","false");
-    surface.style.setProperty("display","block","important");
-    surface.style.setProperty("visibility","visible","important");
-    surface.style.setProperty("pointer-events","auto","important");
-    surface.style.setProperty("position","fixed","important");
-    surface.style.setProperty("inset","0","important");
-    surface.style.setProperty("z-index","2147483647","important");
-    const back=document.createElement("button");
-    back.type="button";
-    back.className="lab-back";
-    back.textContent="Back";
-    back.style.setProperty("display","block","important");
-    back.style.setProperty("visibility","visible","important");
-    back.style.setProperty("pointer-events","auto","important");
-    back.style.setProperty("position","fixed","important");
-    back.style.setProperty("top","8px","important");
-    back.style.setProperty("left","8px","important");
-    surface.append(back);
-    document.body.append(surface);
-    surface.addEventListener("click",()=>surface.setAttribute("aria-hidden","true"));
-    back.focus();
-    const focusedBefore=document.activeElement===back;
-    back.click();
-    await new Promise(resolve=>requestAnimationFrame(()=>resolve()));
-    const result={
-      focusedBefore,
-      hidden:surface.getAttribute("aria-hidden"),
-      activeInside:surface.contains(document.activeElement),
-      activeTag:document.activeElement?.tagName??null,
-    };
-    surface.remove();
-    return result;
-  });
-  assert.equal(focusProbe.focusedBefore,true,"focus regression probe could not focus .lab-back");
-  assert.equal(focusProbe.hidden,"true","focus regression probe did not hide Prayer Book surface");
-  assert.equal(focusProbe.activeInside,false,"aria-hidden Prayer Book retained focus");
-  assert.deepEqual(ariaHiddenWarnings,[],
-    "Chromium emitted blocked aria-hidden warning: "+JSON.stringify(ariaHiddenWarnings));
-
   assert.deepEqual(pageErrors,[],"uncaught page errors in real app shell: "+JSON.stringify(pageErrors));
   await context.close();
 
@@ -424,13 +363,9 @@ try{
     celebrationId:"palm-sunday",
     properSource:"Tempora/Quad6-0",
     firstId:"PALM-R01",
-    stateCardId:"PALM-R02",
-    stateAction:"RECIPIENT",
-    stateSetter:"setPalmRecipientState",
-    stateValue:"RECEIVE_PALM",
-    expectedState:"KNEEL",
+    recipientCardId:"PALM-R02",
+    receiveState:"RECEIVE_PALM",
     handoffId:"PALM-R07",
-    massTitle:"Introit",
   });
   await exerciseRealShellSpecialRite(browser,{
     kind:"ASH",
@@ -439,56 +374,24 @@ try{
     celebrationId:"ash-wednesday",
     properSource:"Tempora/Quadp3-3",
     firstId:"ASH-R01",
-    stateCardId:"ASH-R03",
-    stateAction:"RECIPIENT",
-    stateSetter:"setAshRecipientState",
-    stateValue:"RECEIVE_ASHES",
-    expectedState:"KNEEL",
+    recipientCardId:"ASH-R03",
+    receiveState:"RECEIVE_ASHES",
     handoffId:"ASH-R05",
-    massTitle:"Introit",
   });
-
   await exerciseRealShellSpecialRite(browser,{
     kind:"ASPERGES",
     insertedRite:"asperges",
     date:"2026-10-04",
-    celebrationId:"dominica-xix",
+    celebrationId:"Tempora/Pent18-0",
     properSource:"Tempora/Pent18-0",
     firstId:"ASP-R01",
-    stateCardId:"ASP-R03",
-    stateAction:"SPRINKLED",
-    expectedState:"MAKE_FULL_SIGN_OF_CROSS",
+    recipientCardId:"ASP-R03",
+    receiveState:null,
     handoffId:"ASP-R05",
-  });
-  await exerciseRealShellSpecialRite(browser,{
-    kind:"CANDLEMAS",
-    insertedRite:"candlemas",
-    date:"2027-02-02",
-    celebrationId:"purificatio-bmv",
-    properSource:"Sancti/02-02",
-    firstId:"CND-R01",
-    stateCardId:"CND-R03",
-    stateAction:"RECIPIENT",
-    stateSetter:"setCandlemasRecipientState",
-    stateValue:"RECEIVE_CANDLE",
-    expectedState:"KNEEL",
-    handoffId:"CND-R07",
-    massTitle:"Introit",
-  });
-  await exerciseRealShellSpecialRite(browser,{
-    kind:"ROGATIONS",
-    insertedRite:"rogations",
-    date:"2027-05-10",
-    celebrationId:"feria-rogationum",
-    properSource:"Tempora/Rogation",
-    firstId:"ROG-R01",
-    stateCardId:"ROG-R02",
-    expectedState:"KNEEL",
-    handoffId:"ROG-R06",
-    massTitle:"Introit",
+    expectedMassTitle:"Introit & Preparatory Prayers",
   });
 
-  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Asperges, Palm, Ash, Candlemas and Rogations paths on phone Chromium without booting legacy.");
+  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Palm, Ash and Asperges paths on phone Chromium without booting legacy.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));

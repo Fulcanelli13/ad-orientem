@@ -3,7 +3,7 @@
   "version": "4.4.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html phone-Chromium acceptance is now explicit for the certified pre-Mass cluster (Asperges, Palm, Ash, Candlemas and Rogations). Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html real-shell special-rite acceptance is tracked separately and is currently explicit for Palm and Ash. Legacy remains explicit rollback/debug only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -364,7 +364,7 @@
     },
     {
       "id": "ASPERGES_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
+      "status": "CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH",
       "controller": "src/mass/reader-asperges.js",
       "payload": "data/presentation/reader-asperges.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ASP",
@@ -397,10 +397,7 @@
       ],
       "nativePreview": "src/mass/reader-native-preview.js",
       "formulaContext": "src/mass/reader-asperges.js#resolveAspergesRiteContext",
-      "phoneTest": "tests/reader-phone-acceptance.mjs",
-      "productionTest": "tests/app-shell-final-e2e.mjs",
-      "productionOwner": "R17_NATIVE_PRODUCTION",
-      "uiOwnershipMarker": "data-ao-mass-reader-ui"
+      "phoneTest": "tests/reader-phone-acceptance.mjs"
     },
     {
       "id": "PLAN_AWARE_OBJECTIVE_RUNTIME",
@@ -566,7 +563,7 @@
     },
     {
       "id": "CANDLEMAS_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
+      "status": "CERTIFIED_MODULAR_RUNTIME__REAL_SHELL_ACCEPTANCE_PENDING",
       "controller": "src/mass/reader-candlemas.js",
       "payload": "data/presentation/reader-candlemas.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#CND",
@@ -588,10 +585,7 @@
       "tests": [
         "tests/reader-candlemas.mjs",
         "tests/browser-runtime.mjs"
-      ],
-      "productionTest": "tests/app-shell-final-e2e.mjs",
-      "productionOwner": "R17_NATIVE_PRODUCTION",
-      "uiOwnershipMarker": "data-ao-mass-reader-ui"
+      ]
     },
     {
       "id": "REQUIEM_ABSOLUTION_NATIVE_PAYLOAD",
@@ -641,7 +635,7 @@
     },
     {
       "id": "ROGATIONS_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
       "controller": "src/mass/reader-rogations.js",
       "payload": "data/presentation/reader-rogations.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ROG",
@@ -661,10 +655,7 @@
         "tests/reader-rogations.mjs",
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
-      ],
-      "productionTest": "tests/app-shell-final-e2e.mjs",
-      "productionOwner": "R17_NATIVE_PRODUCTION",
-      "uiOwnershipMarker": "data-ao-mass-reader-ui"
+      ]
     },
     {
       "id": "HOLY_THURSDAY_POST_NATIVE_PAYLOAD",
@@ -815,7 +806,8 @@
         "resolved Proper can enter without legacy assembly-state dependency",
         "FOLLOW_CONGREGATION uses observed posture when available and sourced posture when no observer exists",
         "production native mode reads no implicit legacy DOM state",
-        "Palm and Ash native preceding rites pass the actual index.html phone path through Introit handoff and Back"
+        "Palm and Ash native preceding rites pass the actual index.html phone path through Introit handoff and Back",
+        "Asperges native preceding rite passes the actual index.html phone path through normal Foot-cluster handoff and Back"
       ],
       "requiredTest": "tests/app-shell-final-e2e.mjs",
       "acceptance": {
@@ -847,12 +839,14 @@
         "zero uncaught page errors",
         "Palm and Ash personal recipient states render kneeling in the actual app shell",
         "Palm and Ash hand off to the Introit and Back restores the special-rite handoff card",
-        "data-ao-mass-reader-ui reports R17_NATIVE_PRODUCTION for certified native production sessions"
+        "data-ao-mass-reader-ui reports R17_NATIVE_PRODUCTION for certified native production sessions",
+        "Asperges personal ACTUALLY_SPRINKLED state activates the faithful Sign of Cross in the actual app shell and hands back to the normal Foot cluster"
       ],
       "scenarios": [
         "ORDINARY_VOTIVE",
         "PALM_PRECEDING_RITE",
-        "ASH_PRECEDING_RITE"
+        "ASH_PRECEDING_RITE",
+        "ASPERGES_PRECEDING_RITE"
       ]
     },
     {
@@ -883,13 +877,13 @@
       "status": "PARTIAL_EXPLICIT_EVIDENCE",
       "evidenceLayer": "ACTUAL_INDEX_HTML_PHONE_CHROMIUM",
       "certified": [
-        "ASPERGES",
         "PALM",
         "ASH",
-        "CANDLEMAS",
-        "ROGATIONS"
+        "ASPERGES"
       ],
       "pending": [
+        "CANDLEMAS",
+        "ROGATIONS",
         "REQUIEM_ABSOLUTION",
         "HOLY_THURSDAY_POST",
         "CORPUS_CHRISTI_PROCESSION",
@@ -898,31 +892,25 @@
         "EASTER_VIGIL",
         "NUPTIAL"
       ],
-      "rule": "Do not equate modular runtime/reader-harness certification with actual index.html real-shell certification. The pre-Mass cluster is now production-shell certified; post-Mass/distinct/overlay rites remain pending until their app-shell E2E evidence is pinned.",
+      "rule": "Do not equate modular runtime/reader-harness certification with actual index.html real-shell certification. Individual special rites move from pending only when app-shell E2E evidence is pinned.",
       "currentTest": "tests/app-shell-final-e2e.mjs"
     },
     {
-      "id": "PRE_MASS_CLUSTER_REAL_APP_SHELL_ACCEPTANCE",
+      "id": "ASPERGES_REAL_APP_SHELL_ACCEPTANCE",
       "status": "CERTIFIED",
       "test": "tests/app-shell-final-e2e.mjs",
       "viewport": "390x844 touch Chromium",
       "actualIndexHtml": true,
-      "rites": [
-        "ASPERGES",
-        "PALM",
-        "ASH",
-        "CANDLEMAS",
-        "ROGATIONS"
-      ],
       "nativeOwner": "R17_NATIVE_PRODUCTION",
       "legacyStartCount": 0,
       "guarantees": [
-        "all five certified pre-Mass rites compile into the production plan and open on their native first card",
-        "Asperges personal sprinkling, Palm/Ash reception and Candlemas candle reception state project through the actual app shell",
-        "Candlemas and Rogations hand off to the Introit-only opening while Asperges returns to the full first Mass card",
-        "Back from the first Mass card restores each rite's final handoff card",
-        "the legacy live renderer is never started",
-        "data-ao-mass-reader-ui remains R17_NATIVE_PRODUCTION",
+        "compiled production plan retains explicit ASPERGES preceding graph",
+        "native reader opens on ASP-R01",
+        "ACTUALLY_SPRINKLED activates MAKE_FULL_SIGN_OF_CROSS only on ASP-R03",
+        "completion from ASP-R05 hands to the ordinary Foot-cluster first Mass card",
+        "Back from the first Mass card restores ASP-R05",
+        "legacy live renderer is never started",
+        "data-ao-mass-reader-ui exposes R17_NATIVE_PRODUCTION",
         "zero uncaught page errors"
       ]
     }
@@ -1024,13 +1012,13 @@
     "realShellSpecialStructureAcceptance": {
       "status": "PARTIAL_EXPLICIT_EVIDENCE",
       "certified": [
-        "ASPERGES",
         "PALM",
-        "ASH",
-        "CANDLEMAS",
-        "ROGATIONS"
+        "ASH"
       ],
       "pending": [
+        "ASPERGES",
+        "CANDLEMAS",
+        "ROGATIONS",
         "REQUIEM_ABSOLUTION",
         "HOLY_THURSDAY_POST",
         "CORPUS_CHRISTI_PROCESSION",
