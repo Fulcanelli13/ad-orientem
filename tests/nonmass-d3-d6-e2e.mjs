@@ -127,8 +127,9 @@ try{
   await page.waitForSelector("#aoPrayerBookRoot .aoD5PhaseRail [data-phase='prepare'].active",{timeout:5000});
   await page.locator("#aoPrayerBookRoot [data-pb-conf-next]").click();
   await page.waitForSelector("#aoPrayerBookRoot .aoD5PhaseRail [data-phase='examination'].active",{timeout:5000});
-  await page.waitForSelector("#aoPrayerBookRoot .pbInfoDetails:not([hidden])",{timeout:5000});
-  assert.equal(await page.locator("#aoPrayerBookRoot .pbInfoDetails input").count(),0,"Confession examination exposes stored/tickable sin controls");
+  await page.waitForSelector("#aoPrayerBookRoot [data-ao-d5-exam-surface]",{timeout:5000});
+  assert.ok(await page.locator("#aoPrayerBookRoot [data-ao-d5-exam-surface] details").count()>=10,"D5 read-only examination sections are incomplete");
+  assert.equal(await page.locator("#aoPrayerBookRoot [data-ao-d5-exam-surface] input").count(),0,"Confession examination exposes stored/tickable sin controls");
   const examText=await page.locator("#aoPrayerBookRoot").innerText();
   assert.match(examText,/not stored as a sin list|pas enregistr/i,"D5 privacy boundary is not visible");
   assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i,"marked-prompt score remains visible");
