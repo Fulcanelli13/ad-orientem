@@ -9,11 +9,13 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__R17_NATIVE_DEFAULT");
+assert.equal(release.status,"FINAL_NATIVE_CANDIDATE__REAL_SHELL_ACCEPTANCE_REQUIRED");
 assert.equal(release.productionDefault,"R17_NATIVE");
-assert.equal(resolveReaderUiMode({}),"PREVIEW","native reader is no longer the certified production default");
+assert.equal(resolveReaderUiMode({}),"NATIVE","native reader is no longer the certified production default");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
-assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,true);
+assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,false);
+assert.equal(release.certificationPolicy.requireRealAppShellAcceptance,true);
+assert.equal(release.certificationPolicy.legacyRollbackExplicitOnly,true);
 
 assert.equal(parity.reference.expectedLiveCards,48);
 assert.equal(parity.currentR17.status,"SOURCE_FIRST_LIVE_INTEGRATED");
@@ -49,7 +51,7 @@ assert.equal(support.supported,true);
 assert.equal(support.reason,null);
 
 const blockers=new Set(release.openBlockers.map(x=>x.id));
-assert.equal(blockers.size,0,"release gate still contains a blocker after full-year special-structure certification");
+assert.deepEqual([...blockers],["REAL_APP_SHELL_ACCEPTANCE"],"final release blocker changed unexpectedly");
 assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
 for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
   assert.equal(release.protectedInvariants.find(x=>x.id===id)?.status,status,id+" release gate lost certification");
@@ -66,12 +68,18 @@ assert.equal(liveStructure?.replacedCanonMacroSteps,5);
 assert.equal(liveStructure?.historical48RequiredForRelease,false);
 assert.equal(liveStructure?.historicalLive20ReleaseAuthority,false);
 const pilot=release.protectedInvariants.find(x=>x.id==="PILOT_VERTICAL_PATH");
-assert.equal(release.pilotRelease?.status,"CERTIFIED_PILOT_READY","pilot release certification disappeared");
+assert.equal(release.pilotRelease?.status,"SUPERSEDED_BY_FINAL_MAINLINE","pilot release still claims current authority");
 assert.equal(pilot?.status,"CERTIFIED_PILOT_READY","pilot vertical path certification disappeared");
 assert.equal(release.pilotRelease?.reader,"R17_NATIVE");
-assert.equal(release.pilotRelease?.productionDefaultUnchanged,"LEGACY");
+assert.equal(release.pilotRelease?.productionDefaultUnchanged,"SUPERSEDED");
 assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("PALM"));
 assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("ASH"));
+
+const productionCutover=release.protectedInvariants.find(x=>x.id==="PRODUCTION_NATIVE_CUTOVER");
+assert.equal(productionCutover?.status,"CANDIDATE_PENDING_REAL_SHELL_E2E");
+assert.equal(productionCutover?.productionDefault,"R17_NATIVE");
+assert.equal(productionCutover?.legacyPolicy,"EXPLICIT_ROLLBACK_OR_SHADOW_ONLY");
+assert.match(String(productionCutover?.rollbackQuery??""),/aoR17Reader=legacy/);
 
 const phoneAcceptance=release.protectedInvariants.find(x=>x.id==="PHONE_BROWSER_ACCEPTANCE");
 assert.equal(phoneAcceptance?.status,"CERTIFIED_CHROMIUM_TOUCH","phone acceptance certification disappeared");
@@ -241,7 +249,7 @@ assert.match(nativeSource,/createNativeScholaController/,"native reader lost nat
 assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
 assert.match(nativeSource,/createPlanAwareObjectiveRuntime/,"native reader lost plan-aware objective runtime");
 assert.match(nativeSource,/objectiveRuntime\.allows/,"native reader stopped enforcing planned objective traversal");
-assert.match(nativeSource,/postureOnly:ready\.cueState\.supported/,"native reader resumed reading legacy non-posture rails");
+assert.match(nativeSource,/typeof readLegacyActive==="function"/,"native reader no longer gates legacy observation explicitly");
 assert.match(nativeSource,/r17OwnerPriestAction/,"native reader lost priest-action ownership diagnostics");
 assert.match(nativeSource,/r17OwnerSacredMinister/,"native reader lost sacred-minister ownership diagnostics");
 assert.match(nativeSource,/createReaderTransientController/,"native reader lost native bell\/cinematic controller");
@@ -252,6 +260,9 @@ assert.match(nativeSource,/iconKeysForReaderState/,"native reader lost approved 
 const browserEntrySource=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
 assert.match(browserEntrySource,/createHostIconResolver/,"browser entry lost host icon resolver");
 assert.match(browserEntrySource,/R17_ICON_BANK_INCOMPLETE/,"browser entry stopped failing closed on incomplete icon bank");
+assert.doesNotMatch(browserEntrySource,/installFieldCelebrationOverrides|installFieldShellRecovery|resolveFieldReaderUiMode/,"field rescue logic leaked into final browser entry");
+assert.match(browserEntrySource,/R17_NATIVE_PRODUCTION/,"browser entry lost native production ownership");
+assert.doesNotMatch(browserEntrySource,/mirrorMount|R17_MIRROR_FALLBACK/,"final browser entry restored silent mirror fallback");
 
 const cueSource=readFileSync(new URL("../src/mass/reader-cue-state.js",import.meta.url),"utf8");
 assert.match(cueSource,/V183_GESTURE_SUPPRESS/);
