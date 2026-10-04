@@ -25,6 +25,22 @@ function initialSurface(win, host) {
   return surfaceForCoreRoute(host.currentCoreRoute?.(), "home");
 }
 
+function releaseBootInteractionShield(doc) {
+  const boot = doc?.getElementById?.("ao-cinema-boot");
+  if (!boot) return false;
+  try {
+    boot.style?.setProperty?.("pointer-events", "none", "important");
+    boot.inert = true;
+    if (boot.dataset) {
+      boot.dataset.aoInteractionOwner = "AO_APP_SHELL_V1";
+      boot.dataset.aoInteractionShield = "released";
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function installVisibleRibbonOwner(win, controller, state) {
   const doc = win?.document;
   if (!doc?.getElementById || !controller) return () => {};
@@ -64,6 +80,9 @@ function installVisibleRibbonOwner(win, controller, state) {
     }
 
     state.visibleOwner = adopted === APP_SURFACES.length;
+    if (state.visibleOwner) {
+      state.bootInteractionReleased = releaseBootInteractionShield(doc) || state.bootInteractionReleased;
+    }
     if (doc.documentElement?.dataset) {
       doc.documentElement.dataset.aoAppShellOwner = state.visibleOwner
         ? "AO_APP_SHELL_V1"
@@ -146,6 +165,7 @@ export function installAppShellBridge({
     host: null,
     blocked: false,
     visibleOwner: false,
+    bootInteractionReleased: false,
     disposeVisibleOwner: null,
   };
 
@@ -206,6 +226,7 @@ export function installAppShellBridge({
         installed: Boolean(state.controller),
         passive: false,
         visibleOwner: state.visibleOwner,
+        bootInteractionReleased: state.bootInteractionReleased,
         ribbonOwner: nav?.dataset?.aoOwner ?? null,
         legacyRibbonButtons: nav?.querySelectorAll?.("[data-ao-ribbon]")?.length ?? null,
         modularRibbonButtons: nav?.querySelectorAll?.("[data-ao-app-surface]")?.length ?? null,
