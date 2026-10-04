@@ -69,7 +69,7 @@
         "tests/app-shell-journey-e2e.mjs",
         ".github/workflows/app-convergence.yml"
       ],
-      "detail": "Actual index.html passes the required phone journey: cold Home → Calendar → Mass → native LIVE → cancelled leave retains Mass → confirmed leave preserves resumable record and opens Pray → Home → Settings → clean reload, with no legacy Mass start."
+      "detail": "Actual index.html phone-Chromium acceptance covers cold Home -> Calendar -> Mass -> native LIVE, cancelled leave/retention, confirmed leave to PRAY, Home, Settings, and clean reload without legacy Mass activation."
     },
     {
       "id": "EMERGENCY_RUNTIME_RETIREMENT",
@@ -104,9 +104,10 @@
       "classification": "MISSING_INTEGRATION",
       "status": "OPEN",
       "evidence": [
+        "tests/app-shell-journey-e2e.mjs",
         "docs/APP-CONVERGENCE.md"
       ],
-      "detail": "App-level certification still needs explicit fresh-state, interrupted-Mass, reload/resume and cross-module state-contamination coverage."
+      "detail": "Partial acceptance now proves cold launch and stale persisted-Mass records do not auto-reactivate native or legacy Mass after leaving. Still open: explicit reload while Mass is interrupted, return/resume behavior, saved form/language/mode/profile continuity, and cross-module local-state contamination."
     }
   ],
   "openBlockers": [
