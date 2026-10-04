@@ -592,7 +592,7 @@
     },
     {
       "id": "PILOT_VERTICAL_PATH",
-      "status": "CANDIDATE_CI_REQUIRED",
+      "status": "CERTIFIED_PILOT_READY",
       "reader": "R17_NATIVE",
       "guarantees": [
         "ordinary and votive Low/Sung Mass enter through the native reader",
@@ -608,7 +608,20 @@
         "tests/reader-native-preview.mjs",
         "tests/reader-phone-acceptance.mjs",
         "tests/reader-regression-lockdown.mjs"
-      ]
+      ],
+      "certifiedAtHead": "6e76823f2a7d378833bb49ca1694ad9906dd6276",
+      "certificationEvidence": {
+        "ordinaryConvergence": "PASS",
+        "phoneBrowser": "PASS",
+        "baselineIntegrity": "PASS",
+        "phoneWidths": [
+          320,
+          360,
+          390,
+          430
+        ],
+        "productionDefaultChanged": false
+      }
     }
   ],
   "openBlockers": [
@@ -628,7 +641,7 @@
     "requireSourceFirstLiveStructure": true
   },
   "pilotRelease": {
-    "status": "CANDIDATE_CI_REQUIRED",
+    "status": "CERTIFIED_PILOT_READY",
     "reader": "R17_NATIVE",
     "productionDefaultUnchanged": "LEGACY",
     "scope": {
