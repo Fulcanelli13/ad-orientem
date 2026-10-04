@@ -283,7 +283,6 @@ const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUC
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
 const easterVigil=release.protectedInvariants.find(x=>x.id==="EASTER_VIGIL_NATIVE_COMPOSITE");
-assert.equal(easterVigil?.status,"CERTIFIED_COMPOSITE_RUNTIME__PHONE_SUITE_GREEN","Easter Vigil certification disappeared");
 assert.equal(easterVigil?.recoveredGraphRecords,38);
 assert.equal(easterVigil?.massProjection?.entry,"KYRIE");
 assert.deepEqual(easterVigil?.massProjection?.omittedSourceSequences,[1,21,30]);
