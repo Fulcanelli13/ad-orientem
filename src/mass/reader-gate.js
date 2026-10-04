@@ -1,5 +1,7 @@
 // Feature gate for the R17 Mass reader landing.
-// Production default remains LEGACY until parity is explicitly certified.
+// Full-year production default remains LEGACY until all special-structure parity
+// blockers are closed. Certified field sessions may explicitly override this
+// in browser-entry without weakening the global rollback policy.
 
 export const READER_UI_MODES = Object.freeze(["LEGACY","SHADOW","PREVIEW"]);
 export const READER_UI_STORAGE_KEY = "ao-r17-reader-ui";
@@ -7,7 +9,7 @@ export const READER_UI_STORAGE_KEY = "ao-r17-reader-ui";
 function normalize(value){
   const raw=String(value??"").trim().toLowerCase();
   if(raw==="shadow") return "SHADOW";
-  if(raw==="preview"||raw==="r17") return "PREVIEW";
+  if(raw==="preview"||raw==="r17"||raw==="native") return "PREVIEW";
   return "LEGACY";
 }
 

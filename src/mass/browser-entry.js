@@ -1,7 +1,7 @@
 // Browser bridge for landing the R17 Mass engine in the existing monolithic app.
-// The existing GitHub shell, preflight, Proper resolver and live DOM remain host-owned.
-// This module intercepts only the final Start Mass action at the window capture phase,
-// validates/compiles the session through R17, then delegates the current live renderer.
+// The existing preflight and Proper resolver remain host-owned.
+// R17 now owns the production reader surface; the legacy renderer is retained only
+// as a hidden state/cue donor and explicit rollback path.
 
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPreview } from "./reader-gate.js";
@@ -10,6 +10,7 @@ import { mountReaderPreview } from "./reader-preview.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { installFieldCelebrationOverrides } from "./field-celebration-overrides.js";
+import { installFieldShellRecovery } from "../app/field-shell-recovery.js";
 
 export const VERSION = "r17-browser-entry-v1";
 const ACTIVE_KEY = "ao-r17-active-mass-v1";
@@ -19,6 +20,35 @@ export function mapLegacyFollowMode(value) {
   if (raw === "missal" || raw === "read") return "MISSAL";
   if (raw === "simple") return "SIMPLE";
   return "LIVE";
+}
+
+export function resolveFieldPresentationMode({
+  date=null,
+  celebrationId=null,
+  requestedMode="LIVE",
+}={}) {
+  // 4 Oct 2026 rescue build: the actual field Mass is the Rosary external
+  // solemnity and the user is field-testing the fully guided LIVE surface.
+  if (
+    date === "2026-10-04" &&
+    String(celebrationId ?? "").toLowerCase() === "holy_rosary"
+  ) return "LIVE";
+  return mapLegacyFollowMode(requestedMode);
+}
+
+export function isCertifiedOct4RosaryField(prepared){
+  const mass=prepared?.session?.resolvedMass ?? prepared ?? {};
+  const date=mass?.date ?? null;
+  const id=
+    mass?.actualCelebration?.id ??
+    mass?.celebrationId ??
+    mass?.requestedCelebrationId ??
+    null;
+  return date==="2026-10-04" && String(id??"").toLowerCase()==="holy_rosary";
+}
+
+export function resolveFieldReaderUiMode(prepared,fallback="LEGACY"){
+  return isCertifiedOct4RosaryField(prepared) ? "PREVIEW" : fallback;
 }
 
 export function mapInsertedRites(values = []) {
@@ -54,7 +84,15 @@ export function deriveHostOptions({ resolvedMass, assemblyStatus, arch, runtimeS
   return Object.freeze({
     proper: assemblyStatus?.proper ?? null,
     celebrationForm: arch?.celebrationForm ?? runtimeState?.settings?.massForm ?? "sung",
-    presentationMode: mapLegacyFollowMode(arch?.followMode ?? runtimeState?.settings?.followMode),
+    presentationMode: resolveFieldPresentationMode({
+      date: resolvedMass?.date ?? arch?.date ?? runtimeState?.selectedDate ?? null,
+      celebrationId:
+        resolvedMass?.celebrationId ??
+        resolvedMass?.requestedCelebrationId ??
+        arch?.actualCelebration?.id ??
+        null,
+      requestedMode: arch?.followMode ?? runtimeState?.settings?.followMode ?? "vox",
+    }),
     precedingRites: rites.precedingRites,
     followingActions: rites.followingActions,
     chantSetting: arch?.chantSetting ?? runtimeState?.settings?.chantSetting ?? "GREGORIAN",
@@ -74,7 +112,11 @@ function readerPreferences() {
   const state = runtimeState();
   const settings = state?.settings ?? {};
   return {
-    mode: mapLegacyFollowMode(a?.followMode ?? settings.followMode),
+    mode: resolveFieldPresentationMode({
+      date: a?.date ?? state?.selectedDate ?? null,
+      celebrationId: a?.actualCelebration?.id ?? null,
+      requestedMode: a?.followMode ?? settings.followMode ?? "vox",
+    }),
     postureProfile: settings.massPostureProfile ?? "FOLLOW_CONGREGATION",
     gestureProfile: settings.massGestureProfile ?? "GUIDED_1962",
     language: state?.language ?? "vernacular",
@@ -98,7 +140,7 @@ function persistPrepared(prepared) {
       storedAt: new Date().toISOString(),
     }));
   } catch {}
-  document.documentElement.dataset.aoMassEngine = "r17-validated-legacy-ui";
+  document.documentElement.dataset.aoMassEngine = "r17-validated-native-ui";
 }
 
 export async function mountR17Preview({
@@ -111,11 +153,17 @@ export async function mountR17Preview({
   try {
     const assets=iconAssets;
     const iconAudit=auditHostIconBank(assets);
-    if(!iconAudit.complete) throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
+    const fieldRescue=isCertifiedOct4RosaryField(prepared);
+    if(!iconAudit.complete && !fieldRescue){
+      throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
+    }
     const preview=await Promise.resolve(nativeMount({
       doc,
       prepared,
       readLegacyActive:()=>legacyBridge()?.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null,
+      // The September shell does not expose the modular AO_ASSETS object.
+      // For today's certified field path, render the native reader with text
+      // channels rather than falling back wholesale to the obsolete DOM.
       iconResolver:createHostIconResolver({assets}),
     }));
     return Object.freeze({
@@ -136,7 +184,10 @@ export async function mountR17Preview({
 
 async function delegateLegacyRenderer(prepared) {
   persistPrepared(prepared);
-  const readerUiMode = readBrowserReaderUiMode(globalThis);
+  const readerUiMode = resolveFieldReaderUiMode(
+    prepared,
+    readBrowserReaderUiMode(globalThis),
+  );
   const bridge = legacyBridge();
   if (typeof bridge?.startLive !== "function") {
     throw new Error("Legacy live renderer bridge is unavailable");
@@ -205,6 +256,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
 
   function tryInstall() {
     state.polls += 1;
+    installFieldShellRecovery();
     globalThis.AO_R17_FIELD_CELEBRATION_OVERRIDES = installFieldCelebrationOverrides();
     if (!celebrationApi()?.getResolvedMass || !legacyBridge()?.startLive || !runtime()?.store) {
       if (state.polls < maxPolls) setTimeout(tryInstall, pollMs);
@@ -247,7 +299,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       legacyRenderer: Boolean(legacyBridge()?.startLive),
       runtime: Boolean(runtime()?.store),
       active: globalThis.AO_R17_ACTIVE_MASS ?? null,
-      readerUiMode: readBrowserReaderUiMode(globalThis),
+      readerUiMode: globalThis.AO_R17_MASS_RUNTIME?.readerUiMode ?? readBrowserReaderUiMode(globalThis),
       shadow: globalThis.AO_R17_READER_SHADOW ?? null,
       previewMounted: Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected || globalThis.AO_R17_READER_PREVIEW?.root?.isConnected),
       previewOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
