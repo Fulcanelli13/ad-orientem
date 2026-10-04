@@ -110,6 +110,17 @@ export function adoptVisibleRibbon({
 
   function onClick(event) {
     const target = event?.target;
+    const nativeReaderRoot = win?.document?.getElementById?.("ao-r17-native-reader-preview") ?? null;
+    const nativeClose = target?.closest?.("[aria-label='Close Mass reader']");
+    if (nativeClose && nativeReaderRoot?.contains?.(nativeClose)) {
+      // The app shell owns explicit LIVE exit. Intercept before the reader's
+      // bubble listener so a cancelled leave cannot destroy the active reader.
+      event.preventDefault?.();
+      event.stopPropagation?.();
+      void Promise.resolve(navigate("home")).finally(syncActive);
+      return;
+    }
+
     const button = target?.closest?.(`[${APP_RIBBON_ATTR}]`);
     if (button && nav.contains?.(button)) {
       const surface = normalizeAppSurface(button.getAttribute?.(APP_RIBBON_ATTR));
