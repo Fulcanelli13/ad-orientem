@@ -64,8 +64,17 @@ function root(){return globalThis.document?.getElementById?.(ROOT_ID)??null}
 function paint(){const r=root();if(!r)return false;const body=r.querySelector("[data-cal-body]");if(!body)return false;body.innerHTML=bodyMarkup();r.dataset.aoCalendarOwner=VERSION;return true}
 function syncShell(surface){globalThis.AO_APP_SHELL_V1?.syncSurface?.(surface)}
 function close({surface="home"}={}){root()?.remove?.();try{unsub?.()}catch{}unsub=null;syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
+async function waitForCache({attempts=80,delay=50}={}){
+  for(let i=0;i<attempts;i+=1){
+    const A=cache();
+    if(typeof A?.revealDate==="function")return A;
+    await new Promise(resolve=>setTimeout(resolve,delay));
+  }
+  return null;
+}
 async function select(id,{closeAfter=false}={}){
-  const A=cache(),target=String(id||"");if(!A?.revealDate||!target)return false;
+  const target=String(id||"");if(!target)return false;
+  const A=await waitForCache();if(!A)return false;
   try{const ok=await A.revealDate(target,{forceLoader:true,prefetch:true});if(ok&&state()?.selectedDate===target){paint();if(closeAfter)close({surface:"home"});return true}return false}catch(error){console.error("Modular Calendar date navigation failed",error);return false}
 }
 function bind(r){
@@ -80,10 +89,10 @@ function bind(r){
   r.addEventListener("keydown",event=>{const input=event.target.closest?.("[data-cal-input]");if(input&&event.key==="Enter"){event.preventDefault();const id=parseDisplayDate(input.value);if(id)void select(id,{closeAfter:true})}});
 }
 function open(){
-  const doc=globalThis.document;if(!doc?.body||!cache()?.revealDate||!runtime()?.store)return false;
+  const doc=globalThis.document;if(!doc?.body||!runtime()?.store)return false;
   root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">←</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();return true;
+  const r=doc.createElement("section");r.id=ROOT_ID;r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">←</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));void waitForCache().then(A=>{if(A&&root()===r)paint()});r.querySelector("[data-cal-close]")?.focus?.();return true;
 }
-function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
+function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,dataServiceReady:typeof cache()?.revealDate==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
 export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,close,paint,status,select});win.AO_CALENDAR_APP_V1=api;return api}
 if(typeof window!=="undefined"&&typeof document!=="undefined")installCalendarBrowserOwner(window);
