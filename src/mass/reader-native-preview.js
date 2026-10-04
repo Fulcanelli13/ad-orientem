@@ -1,7 +1,6 @@
-// Native R17 reader preview.
-// R17 owns verified prayer-card text and 30-card navigation.
-// The legacy reader remains underneath as rollback and temporarily donates live
-// state channels until each channel is projected directly from canonical events.
+// Native production reader.
+// R17 owns verified prayer-card text, navigation and certified state channels.
+// Legacy DOM/state is consulted only when an explicit rollback/shadow donor is supplied.
 
 import { createMassReaderModel } from "./reader-model.js";
 import { loadReaderPresentationData } from "./reader-data.js";
@@ -198,7 +197,6 @@ export async function prepareNativeReaderPreview({
     sungCorpus:data?.sungCorpus,
     canonSourceMap:data?.canonSourceMap,
     nuptialData:data?.nuptialData,
-    vernacularLanguage:prepared?.readerPreferences?.language ?? "en",
   });
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
@@ -263,7 +261,7 @@ export async function mountNativeReaderPreview({
 
   const root=doc.createElement("section");
   root.id=ROOT_ID;
-  root.setAttribute("aria-label","R17 native Mass reader preview");
+  root.setAttribute("aria-label","Ad Orientem Mass reader");
   root.dataset.r17TextOwner="R17_VERIFIED_CORPUS";
   root.dataset.r17CardOwner="R17_READER_MODEL";
   root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
@@ -273,7 +271,7 @@ export async function mountNativeReaderPreview({
   const close=doc.createElement("button");
   close.type="button";
   close.textContent="×";
-  close.setAttribute("aria-label","Close R17 native preview");
+  close.setAttribute("aria-label","Close Mass reader");
   close.style.cssText="position:absolute;z-index:4;top:8px;right:8px;width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:#0d141c;color:#ddd;font-size:20px;";
   root.append(host,close);
 
@@ -325,7 +323,9 @@ export async function mountNativeReaderPreview({
   }
 
   function projectedState(){
-    const legacy=legacyReaderStateSnapshot(doc,{postureOnly:ready.cueState.supported});
+    const legacy=typeof readLegacyActive==="function"
+      ? legacyReaderStateSnapshot(doc,{postureOnly:ready.cueState.supported})
+      : Object.freeze({priestPosition:null,posture:null,gesture:null,response:null,priestVoice:null});
     let eventState=null;
     let eventAllowed=true;
     if(typeof readLegacyActive==="function"){
