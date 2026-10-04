@@ -88,3 +88,15 @@ Before calling app convergence complete:
 ## Regression gates
 
 The app-level gate must exercise cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings on real phone/touch geometry. The existing Mass convergence and phone suites remain mandatory and independent.
+
+
+## D3-D6 non-Mass behavioral convergence
+
+`src/app/nonmass-convergence.js` is a bounded compatibility layer over the locked PRAY/Settings donor while full donor extraction remains open.
+
+- D3 — Adoration / Visit: top-level choices are Visit, Adoration, Exposition & Benediction, and Eucharistic Treasury; Holy Hour and Four Ends remain nested guidance; exposed/reserved state is session-only.
+- D4 — Benediction: the public rite remains a live companion, Reposition is the terminal sacramental-state boundary, and minister/all role guidance stays explicit.
+- D5 — Confession: five canonical phases replace the old visible seven-step rail; examination prompts are read-only and no sin checklist/count is stored.
+- D6 — Sources / About: reader-facing source families and provenance labels replace component jargon; About reads canonical application release authority.
+
+This closes the bounded D3-D6 behavior finding only. `NON_MASS_DONOR_EXTRACTION` remains open until Home, Calendar, PRAY, Learn and Settings cease to depend on monolithic donor owners.
