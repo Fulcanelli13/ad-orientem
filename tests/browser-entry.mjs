@@ -8,6 +8,7 @@ import {
   ACTIVE_MASS_STORAGE_KEY,
   readPersistedActiveMass,
   persistedMassIsResumable,
+  resolveHostIconAssets,
 } from "../src/mass/browser-entry.js";
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
@@ -15,6 +16,12 @@ assert.equal(mapLegacyFollowMode("read"), "MISSAL");
 assert.equal(mapLegacyFollowMode("simple"), "SIMPLE");
 assert.equal(mapLegacyFollowMode("vox"), "LIVE");
 assert.equal(mapLegacyFollowMode(undefined), "LIVE");
+
+const bridgedIcons={stand:"data:image/svg+xml;base64,PHN2Zy8+"};
+assert.equal(resolveHostIconAssets({AO_R17_ICON_ASSETS:bridgedIcons}),bridgedIcons,
+  "explicit modular icon bank stopped taking precedence");
+assert.equal(resolveHostIconAssets({}),null,
+  "icon resolver invented a host bank when no bridge/global bank exists");
 
 const rites = mapInsertedRites([
   "asperges",
