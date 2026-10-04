@@ -39,6 +39,11 @@ try{
     return {
       emergencyPresent:Boolean(obj),
       emergency:describe(obj),
+      emergencyState:(()=>{try{return describe(obj?.getState?.())}catch(error){return {error:String(error)}}})(),
+      emergencySources:obj?Object.fromEntries(["sync","forceHapticsOff","getState"].map(key=>[
+        key,
+        typeof obj[key]==="function" ? Function.prototype.toString.call(obj[key]).slice(0,6000) : null
+      ])):null,
       scripts:[...document.scripts].map(s=>s.src).filter(Boolean).filter(src=>/browser-entry\.js/.test(src)),
       shell:{
         app:globalThis.AO_APP_SHELL_V1?.status?.()??null,
