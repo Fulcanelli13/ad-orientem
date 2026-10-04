@@ -31,6 +31,16 @@ for(const name of workflows){
     name+" references an obsolete mutator");
 }
 
+
+const productionIndex=readFileSync("index.html","utf8");
+const massBrowserEntryTags=productionIndex.match(
+  /<script\b[^>]*\bsrc=["']\.\/src\/mass\/browser-entry\.js["'][^>]*><\/script>/gi
+)??[];
+assert.equal(massBrowserEntryTags.length,1,
+  "production index must contain exactly one Mass browser-entry module include");
+assert.doesNotMatch(productionIndex,/data-ao-r17-icon-bridge/,
+  "obsolete inline R17 icon bridge returned; icon discovery belongs to the modular browser entry");
+
 const baseline=readFileSync(".github/workflows/baseline-integrity.yml","utf8");
 assert.match(baseline,/contents:\s*read/i,"baseline verification is not read-only");
 assert.match(baseline,/Frozen v43\.33 verified as historical baseline only/i,
@@ -42,4 +52,4 @@ assert.match(readme,/archive\/2026-10-04-pre-hygiene/,
 assert.doesNotMatch(readme,/retained under `field\/2026-10-04\/`/,
   "README still claims the field snapshot lives in production main");
 
-console.log("production tree hygiene: PASS — no write-capable legacy/field mutators remain on main.");
+console.log("production tree hygiene: PASS — no legacy mutators, duplicate Mass entry, or inline icon bridge remain.");
