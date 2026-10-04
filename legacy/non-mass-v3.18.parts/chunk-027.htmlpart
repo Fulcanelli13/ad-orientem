@@ -1,0 +1,500 @@
+/* ---------- Canonical UI tokens ---------- */
+:root{
+  --font-body:var(--font-liturgical);
+  --serif:var(--font-liturgical);
+  --display:var(--font-display);
+  --paper:var(--text);
+  --gold:var(--liturgical);
+  --night:var(--bg);
+  --deep:var(--surface-1);
+  --panel:var(--surface-1);
+  --silver:var(--muted);
+  --ink:var(--text);
+  --line:var(--border);
+  --ao-shell-reading:680px;
+  --ao-shell-standard:720px;
+  --ao-shell-study:900px;
+  --ao-control-radius:11px;
+  --ao-card-compact:60px;
+  --ao-card-standard:72px;
+}
+
+/* ---------- Typography contract ---------- */
+#aoPrayerBookRoot,
+#ao-v26-exercises,
+.rc2Sheet,
+.ao354Panel,
+.aoLearnShell,
+.aoCateShell{font-family:var(--font-liturgical)!important}
+
+/* Headings / navigation labels use Cinzel; content remains Garamond. */
+#aoPrayerBookRoot .lab-view-head h1,
+#aoPrayerBookRoot .lab-library-head h2,
+#aoPrayerBookRoot .lab-library-grid strong,
+#aoPrayerBookRoot .lab-practice-grid strong,
+#aoPrayerBookRoot .lab-practice-sheet h2,
+#aoPrayerBookRoot .lab-practice-sheet h3,
+#aoPrayerBookRoot .lab-prayer-sheet h2,
+#aoPrayerBookRoot .lab-prayer-sheet h3,
+.ao354Hero h1,
+.ao354Section h2,
+.ao354Card strong,
+.ao354Action strong,
+.rc2Sheet header strong,
+.rc2GuideSection h3,.rc2PrefSection h3{
+  font-family:var(--font-display)!important;
+}
+
+/* Prayer, Scripture and devotional text never use the display face. */
+.latinPrayer,
+.prayerFlip .latinFace,
+.prayerFlip .vernacularFace,
+#aoPrayerBookRoot .lab-practice-sheet p,
+#aoPrayerBookRoot .lab-practice-sheet li,
+#aoPrayerBookRoot .lab-prayer-sheet p,
+#ao-v26-exercises .aoV352Exact,
+#ao-v26-exercises .aoV26Step p,
+.aoSaintReaderBioText,
+.readerBody{font-family:var(--font-liturgical)!important}
+
+/* Compact navigation/tabs use the display face; reading text does not. */
+.aoLearnNav button,.aoCateNav button,.aoSaintReaderTabs button,.ao354MysteryGroups button{font-family:var(--font-display)!important;font-weight:600!important;letter-spacing:.025em!important}
+
+/* ---------- Common shell widths ---------- */
+.flowScreen,.readerBody{max-width:var(--ao-shell-reading)}
+.aoV25Panel,.rc2Sheet,.ao354Panel{width:min(100%,var(--ao-shell-standard))!important}
+#aoPrayerBookRoot .pbShell{max-width:var(--ao-shell-standard)!important}
+.aoV26Shell{width:min(var(--ao-shell-standard),100%)!important}
+.aoLearnWrap,.aoCateWrap{max-width:var(--ao-shell-study)!important}
+
+/* ---------- Preparation / Thanksgiving ---------- */
+.modeCards{gap:7px!important}
+.modeCards button{min-height:78px!important;padding:11px 10px!important;border-radius:12px!important}
+.modeCards b{font-size:.88rem!important}
+.modeCards span{font-size:.7rem!important}
+.binaryChoice button,.choiceRow button,.prayerTabs button{min-height:38px!important;border-radius:var(--ao-control-radius)!important;padding:8px 10px!important}
+.latinPrayer{font-size:1.05rem!important;line-height:1.62!important}
+
+/* ---------- Prayer Book: remove the inherited Lab-ora microsite theme ---------- */
+#aoPrayerBookRoot{
+  --night:var(--bg);--deep:var(--surface-1);--panel:var(--surface-1);--line:var(--border);
+  --silver:var(--muted);--paper:var(--text);--ink:var(--text);--gold:var(--liturgical);--muted:rgba(238,233,223,.68);
+  --serif:var(--font-liturgical);--display:var(--font-display);
+  background:var(--bg)!important;color:var(--text)!important;font-size:1rem!important;
+}
+#aoPrayerBookRoot .pbShell{padding:0 14px calc(76px + var(--safe-bottom))!important}
+#aoPrayerBookRoot .lab-view-head{padding-top:12px!important;margin-bottom:8px!important;gap:9px!important}
+#aoPrayerBookRoot .lab-view-head h1{font-size:clamp(1.45rem,5.8vw,1.95rem)!important;line-height:1.08!important;font-weight:600!important}
+#aoPrayerBookRoot .lab-view-head .eyebrow,#aoPrayerBookRoot .lab-lang{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-back,#aoPrayerBookRoot .lab-icon{width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;padding:0!important;border:1px solid var(--border)!important;border-radius:50%!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-library-section{padding:15px 0!important;border-top:1px solid var(--border)!important;background:transparent!important}
+#aoPrayerBookRoot .lab-library-section:first-of-type{border-top:0!important;padding-top:8px!important}
+#aoPrayerBookRoot .lab-library-head{margin-bottom:9px!important}
+#aoPrayerBookRoot .lab-library-head .eyebrow{color:var(--liturgical)!important;font-size:.58rem!important}
+#aoPrayerBookRoot .lab-library-head h2{font-size:1.05rem!important;line-height:1.2!important}
+#aoPrayerBookRoot .lab-library-grid{gap:7px!important}
+#aoPrayerBookRoot .lab-library-grid button{min-height:58px!important;padding:9px 30px 9px 11px!important;border:1px solid var(--border)!important;border-radius:12px!important;background:var(--surface-1)!important;color:var(--text)!important;box-shadow:none!important}
+#aoPrayerBookRoot .lab-library-grid button.featured{border-color:var(--liturgical-border)!important;background:linear-gradient(145deg,var(--liturgical-soft),var(--surface-1))!important}
+#aoPrayerBookRoot .lab-library-grid button:hover,#aoPrayerBookRoot .lab-library-grid button:focus-visible{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important}
+#aoPrayerBookRoot .lab-library-grid strong{font-size:.88rem!important;line-height:1.22!important}
+#aoPrayerBookRoot .lab-library-grid span{font-size:.72rem!important;line-height:1.26!important;color:var(--muted)!important}
+#aoPrayerBookRoot .lab-search{min-height:40px!important;border-radius:12px!important;background:var(--surface-1)!important;border-color:var(--border)!important;color:var(--text)!important}
+
+/* Practice chooser: navigation, not giant feature tiles. */
+#aoPrayerBookRoot .lab-practice-lead{font-size:.95rem!important;color:var(--muted)!important;margin-bottom:13px!important}
+#aoPrayerBookRoot .lab-practice-grid{gap:7px!important;margin:10px 0 16px!important}
+#aoPrayerBookRoot .lab-practice-grid button{min-height:70px!important;padding:11px!important;border:1px solid var(--border)!important;border-radius:12px!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-practice-grid .primary-practice{border-color:var(--liturgical-border)!important;background:linear-gradient(145deg,var(--liturgical-soft),var(--surface-1))!important}
+#aoPrayerBookRoot .lab-practice-grid button strong{font-size:.93rem!important;margin-bottom:2px!important}
+#aoPrayerBookRoot .lab-practice-grid button span{color:var(--muted)!important;font-size:.74rem!important}
+
+/* Prayer/practice sheets stay in the same dark application world. */
+#aoPrayerBookRoot .lab-practice-sheet,#aoPrayerBookRoot .lab-prayer-sheet{padding:16px!important;border:1px solid var(--border)!important;border-radius:var(--radius-m)!important;background:var(--surface-1)!important;color:var(--text)!important;box-shadow:none!important;margin-bottom:12px!important}
+#aoPrayerBookRoot .lab-practice-sheet h2,#aoPrayerBookRoot .lab-practice-sheet h3,#aoPrayerBookRoot .lab-prayer-sheet h2,#aoPrayerBookRoot .lab-prayer-sheet h3{color:var(--text)!important}
+#aoPrayerBookRoot .lab-practice-sheet details{border-color:var(--border)!important}
+#aoPrayerBookRoot .lab-practice-note{border-left:2px solid var(--liturgical)!important;background:var(--liturgical-soft)!important;color:var(--muted)!important}
+#aoPrayerBookRoot .lab-practice-status{padding:3px 6px!important;border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important;font-family:var(--font-display)!important;font-size:.56rem!important}
+#aoPrayerBookRoot .lab-practice-status.custom,#aoPrayerBookRoot .lab-practice-status.official{background:var(--liturgical-soft)!important;border-color:var(--liturgical-border)!important;color:var(--text)!important}
+
+/* ---------- RC2 guide/preferences: eliminate fixed blue/gold skin ---------- */
+.rc2ModuleTools{gap:6px!important;margin:-3px 0 12px!important;justify-content:flex-start!important}
+.rc2ModuleTools button,.rc2FlowPrefs{flex:0 0 auto!important;min-height:38px!important;padding:8px 10px!important;border:1px solid var(--border)!important;border-radius:10px!important;background:var(--surface-1)!important;color:var(--text)!important;font:600 .66rem/1 var(--font-display)!important;letter-spacing:.045em!important}
+.rc2ModuleTools .rc2ModePill{margin-right:auto!important;color:var(--liturgical)!important;border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;border-radius:999px!important;padding-inline:8px!important}
+.rc2SheetBackdrop{background:rgba(2,5,9,.78)!important;padding:0!important;backdrop-filter:blur(12px)!important}
+.rc2Sheet{max-height:92dvh!important;border:1px solid var(--border)!important;border-bottom:0!important;border-radius:22px 22px 0 0!important;background:var(--bg)!important;color:var(--text)!important;box-shadow:var(--shadow)!important}
+.rc2Sheet header{padding:14px 15px!important;border-color:var(--border)!important;background:color-mix(in srgb,var(--bg) 96%,transparent)!important}
+.rc2Sheet header small{color:var(--liturgical)!important;font:600 .6rem/1.2 var(--font-display)!important}
+.rc2Sheet header strong{font-size:1rem!important}
+.rc2SheetClose{width:42px!important;height:42px!important;border-color:var(--border)!important;background:var(--surface-1)!important;color:var(--text)!important}
+.rc2SheetBody{padding:15px!important}
+.rc2SheetIntro{color:var(--muted)!important;margin-bottom:14px!important}
+.rc2GuideSection,.rc2PrefSection{padding:13px!important;border-color:var(--border)!important;border-radius:14px!important;background:var(--surface-1)!important}
+.rc2GuideSection p,.rc2PrefSection p{color:var(--muted)!important}
+.rc2GuideSection a,.rc2SourceLinks a{color:var(--liturgical)!important}
+.rc2SourceLinks a{padding:5px 8px!important;border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;font-size:.72rem!important}
+.rc2Segments button{min-height:40px!important;border-color:var(--border)!important;border-radius:10px!important;background:var(--surface-1)!important;color:var(--muted)!important}
+.rc2Segments button.active{background:var(--liturgical-soft)!important;color:var(--text)!important;border-color:var(--liturgical-border)!important}
+.rc2Toggle{border-color:var(--border)!important}
+.rc2Toggle span span,.rc2FlowNote{color:var(--muted)!important}
+
+/* ---------- Traditional Exercises ---------- */
+#ao-v26-exercises{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font-liturgical)!important}
+.aoV26Shell{padding:0 14px max(72px,var(--safe-bottom,0px))!important}
+.aoV26Top{margin:0 -14px!important;padding:calc(9px + var(--safe-top,0px)) 12px 9px!important;gap:8px!important;background:color-mix(in srgb,var(--bg) 96%,transparent)!important;border-color:var(--border)!important}
+.aoV26Top>button{width:42px!important;height:42px!important;min-height:42px!important;padding:0!important;border-radius:50%!important;background:var(--surface-1)!important}
+.aoV26Btn{min-height:40px!important;padding:8px 11px!important;border-radius:10px!important;background:var(--surface-1)!important}
+.aoV26Hero{padding:19px 0 12px!important}
+.aoV26Hero h1{font-size:clamp(1.7rem,7vw,2.45rem)!important;line-height:1.08!important;font-weight:600!important}
+.aoV26Hero p{line-height:1.5!important}
+.aoV26Badge{padding:3px 6px!important;font-size:.58rem!important}
+.aoV26Section{margin:14px 0!important;padding:14px!important;border-radius:14px!important;background:var(--surface-1)!important}
+.aoV26Step{padding:12px!important;margin:8px 0!important}
+
+/* ---------- Understand the Mass ---------- */
+.aoLearnTop{gap:.55rem!important;padding:calc(.65rem + var(--safe-top)) .75rem .65rem!important}
+.aoLearnTop>button{width:42px!important;height:42px!important;min-width:42px!important;padding:0!important;border-radius:50%!important}
+.aoLearnLang button{min-width:36px!important;height:34px!important;padding:0 .45rem!important;border-radius:9px!important}
+.aoLearnWrap{padding:1rem .8rem 2.5rem!important}
+.aoLearnHero{padding:.8rem 0 1rem!important}
+.aoLearnHero h1{font-size:clamp(1.7rem,6.8vw,2.45rem)!important}
+.aoLearnHero p{font-size:1rem!important}
+.aoLearnNav{gap:.35rem!important;padding:0 0 .8rem!important}
+.aoLearnNav button{min-height:38px!important;padding:.5rem .65rem!important;border-radius:10px!important;font-size:.78rem!important}
+.aoLearnGrid{gap:.6rem!important}
+.aoLearnCard{min-height:94px!important;padding:.85rem!important;gap:.55rem!important}
+.aoLearnCard b{font-size:.95rem!important}
+.aoLessonCard{padding:.75rem!important}
+.aoLinkChips button{border-radius:10px!important;padding:.45rem .6rem!important}
+
+/* ---------- Catechism ---------- */
+.aoCateTop{gap:.55rem!important;padding:calc(.65rem + var(--safe-top)) .7rem .65rem!important}
+.aoCateTop>button{width:42px!important;height:42px!important;min-width:42px!important;padding:0!important;border-radius:50%!important}
+.aoCateLang button{min-width:36px!important;height:34px!important;padding:0 .45rem!important;border-radius:9px!important}
+.aoCateWrap{padding:.9rem .8rem 3rem!important}
+.aoCateHero h1{font-size:clamp(1.7rem,6.5vw,2.4rem)!important}
+.aoCateNav{gap:.35rem!important;padding:.45rem 0 .6rem!important}
+.aoCateNav button{min-height:38px!important;padding:.5rem .65rem!important;border-radius:10px!important;font-size:.78rem!important}
+.aoCateDashboard{gap:.6rem!important}
+.aoCateContinue,.aoCateUtility{min-height:94px!important;padding:.85rem!important;gap:.5rem!important}
+.aoCateGrid{gap:.6rem!important}
+.aoCatePartCard{min-height:100px!important;padding:.85rem!important;gap:.4rem!important}
+.aoCateToolbar{gap:.35rem!important}
+.aoCateToolbar button,.aoCateActions button,.aoCateActions a{min-height:38px!important;padding:.5rem .65rem!important;border-radius:10px!important;font-size:.78rem!important}
+.aoCateSearch input{border-radius:12px!important;padding:.68rem .85rem!important}
+.aoCateSearch button{border-radius:12px!important;min-width:42px!important}
+.aoFormationProgress button{border-radius:10px!important;padding:.5rem .7rem!important}
+.aoCateStudyCard{min-height:260px!important}
+/* Status chips remain true pills. */
+.aoCateStatus{padding:.35rem .55rem!important;font-size:.7rem!important}
+
+/* ---------- Saint reader ---------- */
+.aoSaintReader{border-radius:var(--radius-m)!important;background:var(--surface-1)!important}
+.aoSaintReaderTabs{gap:6px!important;padding:9px 10px!important}
+.aoSaintReaderTabs button{min-height:36px!important;padding:7px 9px!important;border-radius:10px!important;font-size:.7rem!important}
+.aoSaintReaderBio{padding:14px!important}
+.aoSaintReaderBio h3{font:600 1.08rem/1.25 var(--font-display)!important}
+.aoSaintReaderStatus{padding:4px 7px!important;font-size:.6rem!important}
+
+/* ---------- Scripture / Context / Commentary ---------- */
+.readerTop{padding:calc(9px + env(safe-area-inset-top)) 12px 9px!important}
+.readerTop>button{width:42px!important;height:42px!important;border:1px solid var(--border)!important;border-radius:50%!important;background:var(--surface-1)!important}
+.readerTabs{gap:6px!important;padding:9px 12px!important}
+.readerTabs button{min-height:38px!important;border-radius:10px!important;font-size:.62rem!important}
+.readerBody{padding:18px 14px 34px!important}
+.pericope{padding:15px!important;border-radius:14px!important}
+
+/* ---------- Eucharistic programmes ---------- */
+.ao354Panel{border-radius:22px 22px 0 0!important;padding-left:14px!important;padding-right:14px!important}
+.ao354Top{margin-left:-14px!important;margin-right:-14px!important;padding:11px 12px!important}
+.ao354Hero{padding:18px 1px 8px!important}
+.ao354Hero h1{font-family:var(--font-display)!important;font-size:clamp(1.6rem,6.5vw,2.2rem)!important;line-height:1.1!important}
+.ao354Grid{gap:7px!important;margin:10px 0 15px!important}
+.ao354Card,.ao354Action{min-height:72px!important;padding:11px!important;border-radius:13px!important}
+.ao354Card strong,.ao354Action strong{font-size:.9rem!important}
+.ao354Card span,.ao354Action span{font-size:.74rem!important}
+.ao354Section{margin:18px 0!important}
+.ao354Section h2{font-size:1rem!important}
+.ao354Primary,.ao354Secondary{min-height:44px!important;border-radius:11px!important;padding:9px 12px!important}
+/* Mystery family selectors are filters, so pills remain semantically appropriate. */
+.ao354MysteryGroups button{min-height:36px!important;padding:7px 10px!important}
+
+/* ---------- Generic source/provenance surfaces ---------- */
+.aoV25SourceGrid article,.aoV26Source,.ao354Sources,.provenance,.aoSourceCard,.aoCateSource{box-shadow:none!important}
+.aoV25SourceGrid article,.aoSourceCard,.aoCateSource{background:var(--surface-1)!important;border-color:var(--border)!important}
+
+/* ---------- Small-screen density ---------- */
+@media(max-width:470px){
+  .ao354Grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:560px){
+  .rc2ModuleTools{justify-content:flex-start!important}
+  .rc2ModuleTools button{flex:0 0 auto!important}
+  .rc2ModuleTools .rc2ModePill{flex:0 0 auto!important;margin-right:0!important}
+  #aoPrayerBookRoot .lab-library-grid{grid-template-columns:1fr 1fr!important}
+  #aoPrayerBookRoot .lab-practice-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:340px){
+  #aoPrayerBookRoot .lab-library-grid,.ao354Grid{grid-template-columns:1fr!important}
+  .phaseButton{min-height:66px!important}
+}</style>
+
+<style id="ao-v361-devotional-player-harmonization-css">
+/* Prayer Book reader actions and metadata */
+#aoPrayerBookRoot .lab-actions button{min-height:40px!important;border:1px solid var(--border)!important;border-radius:10px!important;background:var(--surface-2)!important;color:var(--text)!important;padding:8px 11px!important}
+#aoPrayerBookRoot .lab-actions .accent{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-prayer-flip{color:var(--text)!important;font-family:var(--font-liturgical)!important}
+#aoPrayerBookRoot .lab-flip-hint{border-color:var(--border)!important;color:var(--muted)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-reader-meta span{padding:3px 6px!important;border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important;font-size:.56rem!important}
+#aoPrayerBookRoot .lab-source-note,#aoPrayerBookRoot .lab-prayer-sheet .lab-source-note,#aoPrayerBookRoot .lab-practice-sheet .lab-source-note{color:var(--muted)!important}
+#aoPrayerBookRoot .lab-source-note a,#aoPrayerBookRoot .lab-prayer-sheet .lab-source-note a,#aoPrayerBookRoot .lab-practice-sheet .lab-source-note a{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-practice-sheet .lab-practice-note{background:var(--liturgical-soft)!important;color:var(--muted)!important;border-left-color:var(--liturgical)!important}
+
+/* Rosary: keep devotional structure, remove the Lab-ora blue/paper sub-theme. */
+#aoPrayerBookRoot .lab-rosary-hero{padding:15px!important;border-color:var(--liturgical-border)!important;border-radius:var(--radius-m)!important;background:linear-gradient(145deg,var(--liturgical-soft),var(--surface-1))!important;margin-bottom:12px!important}
+#aoPrayerBookRoot .lab-rosary-hero small{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-rosary-hero strong{font-family:var(--font-display)!important;font-size:clamp(1.45rem,5vw,1.9rem)!important}
+#aoPrayerBookRoot .lab-rosary-hero p{color:var(--muted)!important}
+#aoPrayerBookRoot .lab-rosary-hero button{min-height:42px!important;border-radius:10px!important;border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-mystery-grid{gap:8px!important}
+#aoPrayerBookRoot .lab-mystery-card{min-height:112px!important;padding:12px!important;border-color:var(--border)!important;border-radius:14px!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-mystery-card.recommended{border-color:var(--liturgical-border)!important;box-shadow:none!important;background:linear-gradient(145deg,var(--liturgical-soft),var(--surface-1))!important}
+#aoPrayerBookRoot .lab-mystery-card small{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-mystery-card strong{font-family:var(--font-display)!important;font-size:1.05rem!important}
+#aoPrayerBookRoot .lab-mystery-card ol{color:var(--muted)!important;font-size:.8rem!important}
+#aoPrayerBookRoot .lab-option-bar{gap:6px!important;margin:11px 0 13px!important}
+#aoPrayerBookRoot .lab-option-bar label{padding:6px 8px!important;border-color:var(--border)!important;background:var(--surface-1)!important;color:var(--muted)!important;font-size:.76rem!important}
+#aoPrayerBookRoot .lab-option-bar input{accent-color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-decade-bar i{background:var(--surface-2)!important}
+#aoPrayerBookRoot .lab-decade-bar i.done,#aoPrayerBookRoot .lab-decade-bar i.current{background:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-bead{background:var(--surface-2)!important;border-color:var(--border)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-bead.past{background:var(--liturgical-soft)!important;border-color:var(--liturgical-border)!important}
+#aoPrayerBookRoot .lab-bead.current{background:var(--liturgical)!important;border-color:var(--liturgical)!important;box-shadow:0 0 0 4px var(--liturgical-soft)!important}
+#aoPrayerBookRoot .lab-prayer-sheet>.rubric,#aoPrayerBookRoot .lab-prayer-count strong{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-prayer-count{color:var(--muted)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-scripture-cue{padding:12px 13px!important;border:1px solid var(--border)!important;background:var(--surface-2)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-scripture-cue strong{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-player-controls{gap:8px!important;margin-top:12px!important}
+#aoPrayerBookRoot .lab-player-controls button{min-height:44px!important;border-color:var(--border)!important;border-radius:11px!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-player-controls .primary{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-contemplation{padding:16px!important;border:1px solid var(--border)!important;border-radius:var(--radius-m)!important;background:var(--surface-1)!important;color:var(--text)!important;box-shadow:none!important}
+#aoPrayerBookRoot .lab-contemplation .kicker,#aoPrayerBookRoot .lab-contemplation .fruit{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-contemplation h2{color:var(--text)!important;font-family:var(--font-display)!important;font-size:clamp(1.45rem,5vw,1.9rem)!important}
+#aoPrayerBookRoot .lab-contemplation .principal{border-left-color:var(--liturgical)!important;background:var(--liturgical-soft)!important}
+#aoPrayerBookRoot .lab-contemplation a{color:var(--liturgical)!important}
+
+/* Stations */
+#aoPrayerBookRoot .lab-stations-hero{padding:15px!important;border-color:var(--liturgical-border)!important;border-radius:var(--radius-m)!important;background:linear-gradient(145deg,var(--liturgical-soft),var(--surface-1))!important;margin-bottom:12px!important}
+#aoPrayerBookRoot .lab-stations-hero strong{font-family:var(--font-display)!important;font-size:1.3rem!important}
+#aoPrayerBookRoot .lab-stations-hero p{color:var(--muted)!important}
+#aoPrayerBookRoot .lab-stations-settings{gap:7px!important;margin:11px 0!important}
+#aoPrayerBookRoot .lab-stations-settings button,#aoPrayerBookRoot .lab-stations-settings label{min-height:40px!important;border-color:var(--border)!important;border-radius:10px!important;background:var(--surface-1)!important;color:var(--text)!important;padding:8px 10px!important}
+#aoPrayerBookRoot .lab-stations-settings button.active{border-color:var(--liturgical-border)!important;box-shadow:none!important;background:var(--liturgical-soft)!important}
+#aoPrayerBookRoot .lab-stations-settings input{accent-color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-station-rail i{border-color:var(--border)!important;color:var(--muted)!important}
+#aoPrayerBookRoot .lab-station-rail i.done{background:var(--liturgical-soft)!important;border-color:var(--liturgical-border)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-station-rail i.current{background:var(--liturgical)!important;border-color:var(--liturgical)!important;color:var(--bg)!important}
+#aoPrayerBookRoot .lab-station-text h3{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-stabat{border-color:var(--border)!important}
+#aoPrayerBookRoot .lab-progress{height:5px!important;background:var(--surface-2)!important}
+#aoPrayerBookRoot .lab-progress i{background:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-source-row a{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-change{color:var(--liturgical)!important}
+
+/* Rosary recitation/depth surfaces */
+#aoPrayerBookRoot .lab-recitation-mode{padding:8px 10px!important;border-color:var(--border)!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-recitation-mode>span{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-recitation-mode>div{border-color:var(--border)!important}
+#aoPrayerBookRoot .lab-recitation-mode button{color:var(--muted)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-recitation-mode button.active{background:var(--liturgical-soft)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-recitation-mode small{color:var(--muted)!important}
+#aoPrayerBookRoot .lab-scripture-actions button{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+.ao-r-depth-modal{background:rgba(2,5,9,.78)!important;backdrop-filter:blur(12px)!important}
+.ao-r-depth-panel{width:min(var(--ao-shell-standard),100%)!important;background:var(--bg)!important;color:var(--text)!important;border-color:var(--border)!important;border-radius:22px 22px 0 0!important}
+.ao-r-depth-panel>header{border-color:var(--border)!important;background:color-mix(in srgb,var(--bg) 96%,transparent)!important}
+.ao-r-depth-panel header small,.ao-r-depth-panel footer button{color:var(--liturgical)!important}
+.ao-r-depth-panel header h2{font-family:var(--font-display)!important;font-size:1.15rem!important}
+.ao-r-depth-panel header p,.ao-r-depth-panel>footer,.ao-r-loading{color:var(--muted)!important}
+.ao-r-depth-panel>footer{border-color:var(--border)!important;background:var(--surface-1)!important}
+.ao-r-depth-panel>footer button{border-color:var(--liturgical-border)!important;border-radius:10px!important;background:var(--liturgical-soft)!important}
+.ao-r-verses p.current{background:var(--liturgical-soft)!important;box-shadow:inset 3px 0 0 var(--liturgical)!important}
+.ao-r-commentary{border-color:var(--border)!important;background:var(--surface-1)!important}
+.ao-r-commentary h3,.ao-r-commentary summary,.ao-r-commentary a{color:var(--liturgical)!important}
+.ao-r-commentary blockquote,.ao-r-lang-note{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--muted)!important}
+
+/* Newer pb* prayer-book surfaces: same geometry and typography contract. */
+.pbShell{max-width:var(--ao-shell-standard)!important;padding-left:14px!important;padding-right:14px!important}
+.pbHero{padding:15px!important;border-radius:var(--radius-m)!important}
+.pbSearch{border-radius:12px!important;padding:11px 13px!important;margin-bottom:13px!important}
+.pbModuleGrid,.pbPrayerGrid{gap:8px!important}
+.pbModule,.pbPrayerCard,.pbActionCard{min-height:72px!important;padding:12px!important;border-radius:14px!important}
+.pbModule strong,.pbPrayerCard strong,.pbActionCard strong{font-family:var(--font-display)!important;font-size:.94rem!important}
+.pbModule span,.pbPrayerCard span,.pbActionCard span{font-size:.78rem!important}
+.pbSection{margin:19px 0!important}
+.pbTag{padding:4px 7px!important;font-size:.6rem!important}
+.pbPrayerText{border-radius:14px!important;padding:18px!important;font-family:var(--font-liturgical)!important}
+.pbFlowCard{border-radius:14px!important;padding:15px!important}
+.pbChoiceRow button{min-height:38px!important;padding:7px 10px!important;border-radius:10px!important}
+.pbSourceRow a{border-radius:10px!important}
+
+@media(max-width:650px){
+ #aoPrayerBookRoot .lab-mystery-card{min-height:0!important}
+ .ao-r-depth-panel{border-radius:0!important}
+}
+</style>
+<script id="ao-v361-ui-harmonization-meta">
+window.AO_V361_UI_HARMONIZATION={
+ version:'36.1',
+ baseline:'Ad-Orientem-2.0-v36-HARMONIZED-MASTER.html',
+ scope:['typography','control geometry','pill discipline','card density','panel widths','Prayer Hub','RC2 sheets','Traditional Exercises','Learn','Catechism','Saint reader','Scripture shell','Eucharistic programmes'],
+ presentationOnly:true,
+ massEngineChanged:false,
+ calendarChanged:false,
+ prayerCorpusChanged:false,
+ devotionalContentChanged:false,
+ sourceDataChanged:false
+};
+try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title='Ad Orientem 2.0 · v36.1 UI Harmonized'}catch(e){}
+</script>
+
+
+<!-- ============================================================
+ AD ORIENTEM v36.2 · NAVIGATION & CONTROL INTEGRITY
+ Functional interaction layer over v36.1. No Mass/data/content rewrite.
+ ============================================================ -->
+
+<script id="ao-v362-navigation-control-js">
+
+(()=>{'use strict';
+const VERSION='36.2-navigation-control-integrity';
+let returnStack=[],lastCoreRoute=null,restoring=false,storeUnsub=null;
+const rt=()=>window.AO_RUNTIME_V8||null;
+const core=()=>rt()?.store?.getState?.()||null;
+const fr=()=>core()?.language==='fr';
+const L=(en,frs)=>fr()?frs:en;
+function peekReturn(){return returnStack.length?returnStack[returnStack.length-1]:null}
+function takeReturn(){return returnStack.length?returnStack.pop():null}
+function setExternalReturn(ctx){if(!ctx)return null;const top=peekReturn();const same=top&&JSON.stringify(top)===JSON.stringify(ctx);if(!same)returnStack.push(ctx);return peekReturn()}
+function clearExternalReturn(){returnStack=[]}
+function markCoreRoute(route){lastCoreRoute=route||null;return lastCoreRoute}
+function restoreTop(){const r=takeReturn();if(!r)return false;return restore(r)}
+function captureEucharisticContext(){
+ const r=document.getElementById('ao-v354-root');if(!r)return{surface:'eucharistic',route:'programmes'};
+ const ses=r.querySelector('[data-ao354-ador-next]');if(ses)return{surface:'eucharistic',route:'adoration-session',duration:Number(ses.dataset.duration)||15,index:Number(ses.dataset.step)||0};
+ if(r.querySelector('.ao354Timer'))return{surface:'eucharistic',route:'meditation'};
+ if(r.querySelector('[data-ao354-complete="firstFriday"]'))return{surface:'eucharistic',route:'first-friday'};
+ if(r.querySelector('[data-ao354-complete="firstSaturday"]'))return{surface:'eucharistic',route:'first-saturday'};
+ if(r.querySelector('[data-ao354-ador]'))return{surface:'eucharistic',route:'adoration'};
+ return{surface:'eucharistic',route:'programmes'}
+}
+function home(){
+ restoring=true;clearExternalReturn();
+ // v43.20: Home is a hard reset of transient presentation state.
+ try{window.AO_INLINE_CUES_V251?.closeGuide?.()}catch{}
+ try{window.AO_RULE_V411?.closeSheet?.()}catch{}
+ try{window.AO_CONTENT_V37?.closeDiagnostics?.()}catch{}
+ try{document.getElementById('ao-use-guide-v9')?.remove()}catch{}
+ try{document.querySelectorAll('.aoArtInfoBackdrop,.aoArtQaBackdrop').forEach(n=>n.remove())}catch{}
+ try{window.AOTraditionalPrayerBook?.close?.({silent:true})}catch{}
+ try{window.AO_UNDERSTAND_MASS?.close?.()}catch{}
+ try{window.AO_TRADITIONAL_CATECHISM?.close?.()}catch{}
+ try{window.AO_DAILY_CATECHISM?.close?.()}catch{}
+ try{window.AO_TRAD_V26?.close?.()}catch{}
+ try{window.AO_EUCHARISTIC_V354?.close?.()}catch{}
+ try{window.AO_V37_SHELL?.close?.()}catch{}
+ try{window.AO_NAV_V25?.closePanel?.()}catch{}
+ const s=core(),store=rt()?.store;if(s?.homeSheet)store?.dispatch({type:'home-sheet',sheet:null});
+ if(s?.route==='scripture')store?.dispatch({type:'scripture-close'});
+ const n=core();if(n?.route==='live')store?.dispatch({type:'leave-live'});else if(n?.route==='prepare')store?.dispatch({type:'leave-prepare'});else if(n?.route==='thanksgiving')store?.dispatch({type:'leave-thanksgiving'});
+ restoring=false;return true
+}
+function restore(ctx){if(!ctx||restoring)return false;restoring=true;try{
+ if(ctx.surface==='eucharistic'){
+   if(ctx.route==='adoration-session')window.AO_EUCHARISTIC_V354?.resumeAdoration?.(ctx.duration,ctx.index);
+   else window.AO_EUCHARISTIC_V354?.open?.(ctx.route||'programmes');return true
+ }
+ if(ctx.surface==='prayerbook'){window.AOTraditionalPrayerBook?.open?.();return true}
+ if(ctx.surface==='traditional-exercises'){window.AO_TRAD_V26?.open?.();return true}
+ if(ctx.surface==='learn'){if(ctx.state&&window.AO_UNDERSTAND_MASS?.restoreState)return window.AO_UNDERSTAND_MASS.restoreState(ctx.state);window.AO_UNDERSTAND_MASS?.open?.();if(ctx.lesson)window.AO_UNDERSTAND_MASS?.openLesson?.(ctx.lesson);return true}
+ if(ctx.surface==='catechism'){if(ctx.state&&window.AO_TRADITIONAL_CATECHISM?.restoreState)return window.AO_TRADITIONAL_CATECHISM.restoreState(ctx.state);window.AO_TRADITIONAL_CATECHISM?.open?.(ctx.options||{});return true}
+ if(ctx.surface==='domain'){window.AO_V37_SHELL?.openDomain?.(ctx.domain||'today');return true}
+ if(ctx.surface==='home'){home();return true}
+ }finally{restoring=false}return false}
+function openCore(action,returnContext){bindStore();const store=rt()?.store;if(!store)return false;setExternalReturn(returnContext||{surface:'home'});if(action==='prepare'){store.dispatch({type:'enter-prepare'});lastCoreRoute='prepare';return true}if(action==='thanks'||action==='thanksgiving'){store.dispatch({type:'enter-thanksgiving'});lastCoreRoute='thanksgiving';return true}if(action==='live'){store.dispatch({type:'enter-live'});lastCoreRoute='live';return true}return false}
+function laterOpen(){
+ // v43.20: Back must act on the visually topmost transient surface first.
+ const cue=document.getElementById('aoCueGuideSheet');if(cue&&!cue.hidden&&getComputedStyle(cue).display!=='none')return'cue-guide';
+ if(document.getElementById('ao-use-guide-v9'))return'use-guide';
+ const rule=document.getElementById('aoRuleSheet');if(rule&&!rule.hidden&&getComputedStyle(rule).display!=='none')return'rule';
+ const diag=document.getElementById('ao-content-v37-panel');if(diag&&getComputedStyle(diag).display!=='none')return'content-diagnostics';
+ if(document.querySelector('.aoArtInfoBackdrop'))return'art-info';
+ if(document.querySelector('.aoArtQaBackdrop'))return'art-qa';
+ const cs=core();if(cs?.route==='live'&&cs?.live?.sheet)return'live-sheet';
+ const dc=document.getElementById('ao-daily-cate-root');if(dc&&!dc.hidden&&dc.getAttribute('aria-hidden')!=='true'&&getComputedStyle(dc).display!=='none')return'daily-catechism';
+ const e=document.getElementById('ao-v354-root');if(e&&!e.hidden&&e.getAttribute('aria-hidden')!=='true'&&getComputedStyle(e).display!=='none')return'eucharistic';
+ const t=document.getElementById('ao-v26-exercises');if(t&&!t.hidden&&t.getAttribute('aria-hidden')!=='true')return'traditional';
+ // Catechism is checked first as a defensive fallback if a legacy conflict ever
+ // leaves both teaching roots mounted. The ownership fix prevents that normally.
+ const c=document.getElementById('ao-cate-root');if(c&&!c.hidden)return'catechism';
+ const l=document.getElementById('ao-learn-root');if(l&&!l.hidden)return'learn';
+ const d=document.getElementById('ao-v37-root');if(d&&!d.hidden&&document.body.classList.contains('aoV37ShellOpen'))return'domain';
+ return null
+}
+function back(){
+ const x=laterOpen(),ret=peekReturn();
+ if(x==='cue-guide'){window.AO_INLINE_CUES_V251?.closeGuide?.();return true}
+ if(x==='use-guide'){document.getElementById('ao-use-guide-v9')?.remove();return true}
+ if(x==='rule'){window.AO_RULE_V411?.closeSheet?.();return true}
+ if(x==='content-diagnostics'){window.AO_CONTENT_V37?.closeDiagnostics?.();return true}
+ if(x==='art-info'){document.querySelectorAll('.aoArtInfoBackdrop').forEach(n=>n.remove());return true}
+ if(x==='art-qa'){document.querySelectorAll('.aoArtQaBackdrop').forEach(n=>n.remove());return true}
+ if(x==='live-sheet'){rt()?.store?.dispatch({type:'live-sheet',sheet:null});return true}
+ if(x==='domain'){window.AO_V37_SHELL?.close?.();if(ret)queueMicrotask(restoreTop);return true}
+ if(x==='daily-catechism'){window.AO_DAILY_CATECHISM?.close?.();if(ret)queueMicrotask(restoreTop);return true}
+ if(x==='eucharistic'){
+   const r=document.getElementById('ao-v354-root'),dest=r?.dataset?.back||'';
+   if(ret&&(!dest||dest==='programmes')){window.AO_EUCHARISTIC_V354?.close?.();queueMicrotask(restoreTop);return true}
+   const b=r?.querySelector('[data-ao354-back]');if(b){b.click();return true}window.AO_EUCHARISTIC_V354?.close?.();if(ret)queueMicrotask(restoreTop);return true
+ }
+ if(x==='traditional'){if(ret){window.AO_TRAD_V26?.close?.();queueMicrotask(restoreTop);return true}return !!window.AO_TRAD_V26?.back?.()}
+ if(x==='learn'){const st=window.AO_UNDERSTAND_MASS?.getState?.();if(ret&&!st?.detail){window.AO_UNDERSTAND_MASS?.close?.();queueMicrotask(restoreTop);return true}return !!window.AO_UNDERSTAND_MASS?.back?.()}
+ if(x==='catechism'){const st=window.AO_TRADITIONAL_CATECHISM?.getState?.();if(ret&&!st?.detail){window.AO_TRADITIONAL_CATECHISM?.close?.();queueMicrotask(restoreTop);return true}return !!window.AO_TRADITIONAL_CATECHISM?.back?.()}
+ if(ret){
+   const v25=window.AO_NAV_V25?.getState?.();
+   if(v25?.panel){window.AO_NAV_V25?.closePanel?.();queueMicrotask(restoreTop);return true}
+   const mass=document.getElementById('ao-mass-flow-v1');if(mass&&!mass.hidden&&mass.getAttribute('aria-hidden')!=='true'&&getComputedStyle(mass).display!=='none'){const b=mass.querySelector('[data-ao-back]')||mass.querySelector('[data-ao-close]');b?.click();queueMicrotask(restoreTop);return true}
+   const s=core(),store=rt()?.store;
+   if(s?.homeSheet){store?.dispatch({type:'home-sheet',sheet:null});queueMicrotask(restoreTop);return true}
+   if(s?.route==='scripture'){lastCoreRoute=null;store?.dispatch({type:'scripture-close'});queueMicrotask(restoreTop);return true}
+   if(s?.route==='live'){const fr=s.language==='fr';const ok=window.confirm(fr?'La Messe est en cours. Quitter le suivi ? Votre place sera enregistrée.':'Mass is in progress. Leave the follower? Your place will be saved.');if(ok){lastCoreRoute=null;store?.dispatch({type:'leave-live'});queueMicrotask(restoreTop)}return true}
+   if(s?.route==='prepare'){lastCoreRoute=null;store?.dispatch({type:'leave-prepare'});queueMicrotask(restoreTop);return true}
+   if(s?.route==='thanksgiving'){lastCoreRoute=null;store?.dispatch({type:'leave-thanksgiving'});queueMicrotask(restoreTop);return true}
+ }
+ return false
+}
+document.addEventListener('click',e=>{const b=e.target.closest('button,[role="button"]');if(!b)return;
+ if(peekReturn()&&b.matches('[data-ao354-close]')){e.preventDefault();e.stopImmediatePropagation();window.AO_EUCHARISTIC_V354?.close?.();queueMicrotask(restoreTop);return}
+ if(peekReturn()&&b.matches('[data-ao354-open="programmes"]')){e.preventDefault();e.stopImmediatePropagation();window.AO_EUCHARISTIC_V354?.close?.();queueMicrotask(restoreTop);return}
+ if(peekReturn()&&b.matches('[data-dc-close]')){e.preventDefault();e.stopImmediatePropagation();window.AO_DAILY_CATECHISM?.close?.();queueMicrotask(restoreTop);return}
+ if(b.matches('[data-app-home]')){e.preventDefault();e.stopImmediatePropagation();home();return}
+ if(peekReturn()&&b.matches('[data-v352-home],[data-v352-close]')){e.preventDefault();e.stopImmediatePropagation();window.AO_TRAD_V26?.close?.();queueMicrotask(restoreTop);return}
+ if(b.matches('[data-open-mass-learn]')&&b.closest('#ao-cate-root')){e.preventDefault();e.stopImmediatePropagation();const st=window.AO_TRADITIONAL_CATECHISM?.getState?.();setExternalReturn({surface:'catechism',state:st});window.AO_TRADITIONAL_CATECHISM?.close?.();window.AO_UNDERSTAND_MASS?.open?.();return}
+ if(b.matches('[data-open-catechism]')&&b.closest('#ao-learn-root')){e.preventDefault();e.stopImmediatePropagation();const st=window.AO_UNDERSTAND_MASS?.getState?.();setExternalReturn({surface:'learn',state:st});window.AO_UNDERSTAND_MASS?.close?.();window.AO_TRADITIONAL_CATECHISM?.open?.();return}
+ if(peekReturn()&&b.matches('#ao-learn-root [data-learn-close]')){e.preventDefault();e.stopImmediatePropagation();window.AO_UNDERSTAND_MASS?.close?.();queueMicrotask(restoreTop);return}
+ if(peekReturn()&&b.matches('#ao-cate-root [data-cate-close]')){e.preventDefault();e.stopImmediatePropagation();window.AO_TRADITIONAL_CATECHISM?.close?.();queueMicrotask(restoreTop);return}
+},true);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&laterOpen()){if(back()){e.preventDefault();e.stopImmediatePropagation()}}},true);
+function bindStore(){if(storeUnsub)return true;const store=rt()?.store;if(!store?.subscribe)return false;storeUnsub=store.subscribe(()=>{const r=core()?.route||null;if(lastCoreRoute&&r!==lastCoreRoute){if(r==='home'&&peekReturn()){lastCoreRoute=null;queueMicrotask(restoreTop)}else if(!['prepare','thanksgiving','live','scripture'].includes(r))lastCoreRoute=null}});return true}
+bindStore();
+window.AO_NAV_V362={version:'40.8-navigation-coordinator',back,home,restore,openCore,setExternalReturn,clearExternalReturn,markCoreRoute,captureEucharisticContext,peekReturn,returnToCaller:restoreTop,qa(){return{version:'40.8-navigation-coordinator',laterSurface:laterOpen(),uiInjection:false,returnDepth:returnStack.length,returnStack:[...returnStack],prayerDirectApi:!!window.AOTraditionalPrayerBook?.openModule,learnBack:!!window.AO_UNDERSTAND_MASS?.back,cateBack:!!window.AO_TRADITIONAL_CATECHISM?.back,eucharisticManage:!!window.AO_EUCHARISTIC_V354?.resetSeries,deadActButtons:[...document.querySelectorAll('[data-v352-act]')].filter(x=>!x.hasAttribute('aria-pressed')).length}}};
+window.AO_V362_META={version:'v36.2',baseline:'Ad-Orientem-2.0-v36.1-GLOBAL-UI-HARMONIZATION.html',scope:['navigation stack bridge','return-context coordination','Back/Home semantics','direct cross-module routing'],massEngineChanged:false,calendarChanged:false,prayerTextChanged:false};
+})();
+
+</script>
+<script id="ao-v362-certification-meta">window.AO_COMPLETION_V362={version:'40.8-coordinator',navigationControlIntegrity:true,directPrayerRouting:true,timedDomClickRoutingRemovedFromPrimaryBridges:true,uiInjectionRemoved:true,moduleOwnedControls:true,massEngineChanged:false};</script>
+
+<style id="ao-v37-domain-shell-css">
+/* v37: one visible information architecture. Existing content/renderers remain canonical behind AO_MODULES. */
+body.aoV37ShellOpen{overflow:hidden}
+
+/* Retire competing Home navigation surfaces without deleting their engines. */
+.homeScreen .v25HomeExplore,
