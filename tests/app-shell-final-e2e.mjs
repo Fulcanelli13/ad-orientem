@@ -257,6 +257,213 @@ async function exerciseRealShellSpecialRite(browser,spec){
   }
 }
 
+
+async function exerciseRealShellRequiemAbsolution(browser){
+  const context=await browser.newContext({
+    viewport:{width:390,height:844},
+    deviceScaleFactor:2,
+    isMobile:true,
+    hasTouch:true,
+  });
+  const page=await context.newPage();
+  const pageErrors=[];
+  page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
+
+  try{
+    await page.goto("http://127.0.0.1:4174/index.html?aoR17Reader=native",{
+      waitUntil:"domcontentloaded",
+      timeout:90000,
+    });
+    await page.waitForTimeout(1200);
+
+    const setup=await page.evaluate(async(iconKeys)=>{
+      const t=(lat,en)=>({lat,en});
+      const proper={
+        sourcePath:"Votive/Requiem",
+        introit:t("Réquiem ætérnam","Eternal rest"),
+        collects:[t("Deus indulgentiárum","O God of forgiveness")],
+        epistle:t("Léctio libri Machabæórum","Lesson"),
+        gradual:t("Réquiem ætérnam","Eternal rest"),
+        sequence:t("Dies iræ","Day of wrath"),
+        gospel:t("Sequéntia sancti Evangélii","Gospel"),
+        offertory:t("Dómine Jesu Christe","Lord Jesus Christ"),
+        secrets:[t("Propitiáre","Be propitious")],
+        preface:t("Praefátio","Preface"),
+        communion:t("Lux ætérna","Eternal light"),
+        postcommunions:[t("Præsta quǽsumus","Grant, we beseech")],
+      };
+
+      globalThis.__AO_FINAL_LEGACY_STARTS=0;
+      globalThis.AO_SEQUENCE_BRIDGE_V23={
+        startLive(){globalThis.__AO_FINAL_LEGACY_STARTS+=1;},
+        getActive(){return null;},
+        getAssemblyStatus(){return null;},
+      };
+      globalThis.AO_SEQUENCE_BRIDGE_V22=null;
+      globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
+        iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
+      );
+      globalThis.AO_RUNTIME_V8={
+        store:{
+          getState:()=>({
+            selectedDate:"2026-11-02",
+            language:"en",
+            route:"live",
+            settings:{
+              massForm:"solemn",
+              followMode:"vox",
+              massPostureProfile:"TRADITIONAL_WALSH",
+              massGestureProfile:"GUIDED_1962",
+              faithfulCommunion:true,
+            },
+          }),
+          subscribe:()=>()=>{},
+        },
+      };
+      globalThis.AO_CELEBRATION_ARCH_V1={
+        date:"2026-11-02",
+        celebrationForm:"solemn",
+        followMode:"vox",
+        actualCelebration:{id:"requiem",type:"REQUIEM"},
+      };
+      globalThis.AO_CELEBRATION_API={
+        getResolvedMass:()=>({
+          canStart:true,
+          date:"2026-11-02",
+          calendarDay:{id:"Sancti/11-02",title:"Commemoration of All the Faithful Departed"},
+          requestedCelebrationId:"requiem",
+          celebrationId:"requiem",
+          celebrationType:"requiem",
+          proper,
+          properSource:"Votive/Requiem",
+          insertedRites:["requiem absolution"],
+          requiemAbsolution:{bodyPresent:true,burialProcession:true},
+          conditions:[],
+          rubricSources:["MR1962"],
+        }),
+      };
+
+      const mod=await import("/src/mass/browser-entry.js?final-shell-requiem=1");
+      const controller=mod.createBrowserMassController();
+      const prepared=await controller.enter();
+      return {
+        schema:prepared.schema,
+        form:prepared.session.resolvedMass.form,
+        overlays:[...(prepared.session.resolvedMass.overlays??[])],
+        followingGraphs:[...(prepared.session.plan.followingGraphs??[])],
+        blessingAllowed:prepared.session.plan.blessingAllowed,
+        normalLastGospel:prepared.session.plan.normalLastGospel,
+        requiemAbsolution:prepared.session.resolvedMass.provenance?.requiemAbsolution??null,
+      };
+    },iconKeys);
+
+    assert.equal(setup.schema,"ao-mass-entry-bootstrap-v1");
+    assert.equal(setup.form,"SOLEMN");
+    assert.ok(setup.overlays.includes("REQUIEM"),"Requiem overlay did not reach production session");
+    assert.deepEqual(setup.followingGraphs,["REQUIEM_ABSOLUTION"]);
+    assert.equal(setup.blessingAllowed,false);
+    assert.equal(setup.normalLastGospel,false);
+    assert.deepEqual(setup.requiemAbsolution,{bodyPresent:true,burialProcession:true},
+      "funeral branch context did not survive the production host adapter");
+
+    await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
+    const ownership=await page.evaluate(()=>({
+      starts:globalThis.__AO_FINAL_LEGACY_STARTS,
+      readerUiMode:globalThis.AO_R17_MASS_RUNTIME?.readerUiMode??null,
+      uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
+      marker:document.documentElement.dataset.aoMassReaderUi??null,
+    }));
+    assert.equal(ownership.starts,0,"Requiem real-shell path started legacy renderer");
+    assert.equal(ownership.readerUiMode,"NATIVE");
+    assert.equal(ownership.uiOwner,"R17_NATIVE_PRODUCTION");
+    assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION");
+
+    const massEnd=await page.evaluate(()=>{
+      const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+      const cards=api.model.cards;
+      const lastGospelIndex=cards.findIndex(card=>card.sourceSequence===30 || card.macroId==="AO.SM.M30");
+      if(lastGospelIndex<=0)throw new Error("Unable to locate Last Gospel boundary");
+      const preEnd=cards[lastGospelIndex-1];
+      const visible=api.showSequence(preEnd.sequence);
+      return {
+        baseSectionId:preEnd.sectionId,
+        baseSourceSequence:preEnd.sourceSequence??null,
+        visibleTitle:visible?.title??null,
+        filtered:[...(visible?.planFilteredBlocks??[])],
+        sources:(visible?.paragraphs??[]).flatMap(p=>p.sourceCueIds??[]),
+      };
+    });
+    assert.equal(massEnd.baseSourceSequence,29,"Requiem did not stop on the plan-defined M29 ending");
+    assert.equal(massEnd.visibleTitle,"Placeat tibi, sancta Trinitas");
+    assert.ok(massEnd.filtered.includes("AO.SM.B092"),"Requiem final blessing block was not plan-filtered");
+    assert.ok(massEnd.sources.includes("AO.SM.C0261"),"Requiem Placeat content disappeared");
+    assert.equal(massEnd.sources.includes("AO.SM.C0264"),false,"Requiem rendered the forbidden final blessing cue");
+
+    const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+    const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
+    async function tap(locator){
+      const box=await locator.boundingBox();
+      assert.ok(box && box.height>=44,"Requiem navigation target is too small");
+      await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+      await page.waitForTimeout(100);
+    }
+
+    await tap(next);
+    await page.waitForFunction(()=>
+      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ABS-R01",
+      null,{timeout:5000});
+    const start=await page.evaluate(()=>({
+      lifecycle:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getLifecycleState?.()??null,
+      abs:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getRequiemAbsolutionState?.()??null,
+      stage:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17LifecycleStage??null,
+    }));
+    assert.equal(start.lifecycle?.stage,"FOLLOWING_ACTION_HANDOFF");
+    assert.equal(start.lifecycle?.massComplete,true);
+    assert.deepEqual(start.lifecycle?.completionRecord?.ending?.followingGraphs,["REQUIEM_ABSOLUTION"]);
+    assert.equal(start.lifecycle?.completionRecord?.ending?.blessingAllowed,false);
+    assert.equal(start.lifecycle?.completionRecord?.ending?.normalLastGospel,false);
+    assert.equal(start.abs?.bodyPresent,true);
+    assert.equal(start.abs?.burialProcession,true);
+    assert.equal(start.abs?.card?.id,"ABS-R01");
+    assert.equal(start.stage,"FOLLOWING_ACTION_HANDOFF");
+
+    await tap(next);
+    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ABS-R02",null,{timeout:5000});
+    await tap(next);
+    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ABS-R03",null,{timeout:5000});
+    await tap(next);
+    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ABS-R04",null,{timeout:5000});
+    const absGesture=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getNativeEventState?.()?.gesture??null);
+    assert.equal(absGesture,null,"coffin aspersion/incensation fabricated a faithful gesture");
+
+    await tap(back);
+    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ABS-R03",null,{timeout:5000});
+    await tap(next);
+    await tap(next);
+    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ABS-R05",null,{timeout:5000});
+    assert.equal(
+      (await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim(),
+      "In paradisum",
+      "body-present burial branch lost In paradisum"
+    );
+
+    await tap(next);
+    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getLifecycleState?.()?.stage==="DEPARTURE",null,{timeout:5000});
+    const departure=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.getLifecycleState());
+    assert.equal(departure.massComplete,true);
+    assert.equal(departure.stage,"DEPARTURE");
+
+    const thanksgiving=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.advanceLifecycle());
+    assert.equal(thanksgiving.stage,"GIVE_THANKS_HANDOFF");
+    assert.equal(thanksgiving.handoff,"GIVE_THANKS");
+
+    assert.equal(await page.evaluate(()=>globalThis.__AO_FINAL_LEGACY_STARTS),0);
+    assert.deepEqual(pageErrors,[],"Requiem uncaught page errors: "+JSON.stringify(pageErrors));
+  }finally{
+    await context.close();
+  }
+}
+
 let browser;
 try{
   browser=await chromium.launch({headless:true});
@@ -519,7 +726,9 @@ try{
     massTitle:"Introit",
   });
 
-  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Asperges, Palm, Ash, Candlemas and Rogations paths on phone Chromium without booting legacy.");
+  await exerciseRealShellRequiemAbsolution(browser);
+
+  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, certified pre-Mass rites and Requiem Absolution lifecycle on phone Chromium without booting legacy.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
