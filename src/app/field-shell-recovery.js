@@ -47,11 +47,13 @@ export async function openOct4FieldStep(step,win=globalThis){
   const key=String(step??"").toLowerCase();
   if(key==="adoration"){
     const result=await win?.AO_MODULES?.open?.("pray.adoration");
-    return Boolean(result?.ok ?? result);
+    if(Boolean(result?.ok ?? result))return true;
+    return Boolean(win?.AO_EUCHARISTIC_V354?.open?.("adoration"));
   }
   if(key==="benediction"){
     const result=await win?.AO_MODULES?.open?.("pray.benediction");
-    return Boolean(result?.ok ?? result);
+    if(Boolean(result?.ok ?? result))return true;
+    return Boolean(win?.AOTraditionalPrayerBook?.openModule?.("benediction"));
   }
   if(key==="mass")return Boolean(win?.AO_CELEBRATION_API?.openPreflight?.());
   return false;
