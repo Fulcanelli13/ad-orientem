@@ -95,7 +95,7 @@ assert.equal(candlemasModel.totalCards,39,"Candlemas prelude mutated the LIVE Ma
 const rogationsModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["ROGATIONS"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap});
 assert.equal(rogationsModel.totalCards,39,"Rogations prelude mutated the LIVE Mass card model");
 const corpusModel=createMassReaderModel({
-  resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+  resolvedMass:{...base,followingActions:["UNSUPPORTED_TEST_ACTION"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,canonSourceMap
 });
 assert.equal(corpusModel.totalCards,39,"Corpus Christi following action mutated the LIVE Mass card model");
 
@@ -104,7 +104,7 @@ assert.throws(()=>createMassReaderModel({
 }),/following-action graph/);
 
 assert.throws(()=>createMassReaderModel({
-  resolvedMass:{...base,distinctRite:"GOOD_FRIDAY"},sectionMap,lowCorpus:low,sungCorpus:sung
-}),/distinct rite GOOD_FRIDAY/);
+  resolvedMass:{...base,distinctRite:"UNSUPPORTED_TEST_RITE"},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+}),/distinct rite UNSUPPORTED_TEST_RITE/);
 
 console.log("Mass reader model: PASS — 39-step source-first LIVE and 30-card SIMPLE/MISSAL models remain Proper-safe.");
