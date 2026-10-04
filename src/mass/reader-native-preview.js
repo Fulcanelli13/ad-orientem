@@ -379,6 +379,8 @@ export async function mountNativeReaderPreview({
   loadRogationsData=loadRogationsReaderData,
   goodFridayData=null,
   loadGoodFridayData=loadGoodFridayReaderData,
+  easterVigilData=null,
+  loadEasterVigilData=loadEasterVigilReaderData,
   requiemAbsolutionData=null,
   loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
   corpusChristiData=null,
