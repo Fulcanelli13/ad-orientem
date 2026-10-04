@@ -138,6 +138,13 @@ assert.equal(aspergesPayload?.readerCards,5,"Asperges reader-card contract chang
 assert.match(String(aspergesPayload?.nativePreview??""),/reader-native-preview\.js/,"Asperges native preview owner is not pinned");
 assert.match(String(aspergesPayload?.phoneTest??""),/reader-phone-acceptance\.mjs/,"Asperges phone acceptance is not pinned");
 
+const holyThursdayPost=release.protectedInvariants.find(x=>x.id==="HOLY_THURSDAY_POST_NATIVE_PAYLOAD");
+assert.equal(holyThursdayPost?.status,"CERTIFIED_MODULAR_RUNTIME","Holy Thursday post-Mass runtime certification disappeared");
+assert.equal(holyThursdayPost?.recoveredGraphRecords,6,"Holy Thursday post-Mass source scope changed");
+assert.equal(holyThursdayPost?.readerCards,6,"Holy Thursday post-Mass reader-card contract changed");
+assert.match(String(holyThursdayPost?.controller??""),/reader-holy-thursday-post\.js/,"Holy Thursday post-Mass controller is not pinned");
+assert.equal(holyThursdayPost?.sourceCorpus?.blobSha,"fc4dd294c86b1f3e6dd6938615fc6ffbc868f10b");
+
 const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
@@ -191,6 +198,9 @@ assert.match(browserRuntimeSource,/objectiveRuntime\.allows/);
 assert.match(browserRuntimeSource,/createPalmReaderController/,"browser runtime lost Palm controller");
 assert.match(browserRuntimeSource,/setPalmRecipientState/,"browser runtime lost personal Palm recipient-state control");
 assert.match(browserRuntimeSource,/createAshReaderController/,"browser runtime lost Ash controller");
+assert.match(browserRuntimeSource,/createHolyThursdayPostReaderController/,"browser runtime lost Holy Thursday post-Mass controller");
+assert.match(browserRuntimeSource,/setHolyThursdayJoining/,"browser runtime lost personal Holy Thursday translation-joining state");
+assert.match(browserRuntimeSource,/setHolyThursdayPostState/,"browser runtime lost Holy Thursday event-state control");
 assert.match(browserRuntimeSource,/setAshRecipientState/,"browser runtime lost personal Ash recipient-state control");
 assert.match(browserRuntimeSource,/AO\.SM\.B014/,"Palm Introit-only handoff lost B014 boundary");
 assert.match(browserRuntimeSource,/createFormLifecycleRuntime/,"browser runtime lost native form lifecycle");
