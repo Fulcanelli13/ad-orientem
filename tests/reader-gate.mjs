@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {
   resolveReaderUiMode,
+  readBrowserReaderUiOverride,
   readerModeAllowsLegacyDom,
   readerModeRunsShadowAudit,
   readerModeMountsPreview,
@@ -16,6 +17,19 @@ assert.equal(resolveReaderUiMode({stored:"preview"}), "PREVIEW");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=shadow",stored:"preview"}), "SHADOW");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=r17"}), "PREVIEW");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=unknown",stored:"preview"}), "LEGACY");
+
+assert.equal(readBrowserReaderUiOverride({
+  location:{search:""},
+  localStorage:{getItem:()=>null},
+}),null);
+assert.equal(readBrowserReaderUiOverride({
+  location:{search:"?aoR17Reader=legacy"},
+  localStorage:{getItem:()=>"preview"},
+}),"LEGACY");
+assert.equal(readBrowserReaderUiOverride({
+  location:{search:""},
+  localStorage:{getItem:()=>"native"},
+}),"PREVIEW");
 
 for (const mode of ["LEGACY","SHADOW","PREVIEW"]) assert.equal(readerModeAllowsLegacyDom(mode), true);
 assert.equal(readerModeRunsShadowAudit("LEGACY"), false);
