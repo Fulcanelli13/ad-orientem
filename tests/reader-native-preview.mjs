@@ -13,6 +13,7 @@ const guideData={registry:load("../data/presentation/guide-registry.v1.json"),ur
 const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
 const palmData={payload:load("../data/presentation/reader-palm.v1.json"),graph:specialExtension.graphs.PALM};
 const ashData={payload:load("../data/presentation/reader-ash.v1.json"),graph:specialExtension.graphs.ASH};
+const candlemasData={payload:load("../data/presentation/reader-candlemas.v1.json"),graph:specialExtension.graphs.CND};
 const cueRegistries=Object.freeze({
   gestures:load("../data/presentation/reader-gestures.v1.json"),
   responses:load("../data/presentation/reader-responses.v1.json"),
@@ -92,21 +93,30 @@ assert.equal(aspergesReady.aspergesController.project().faithfulGesture,"MAKE_FU
 aspergesReady.aspergesController.goTo("ASP-R05");
 assert.equal(aspergesReady.aspergesController.project().handoff,"FOOT_CLUSTER");
 
-await assert.rejects(
-  ()=>prepareNativeReaderPreview({
-    prepared:{
-      ...livePrepared,
-      session:{
-        ...livePrepared.session,
-        resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["CANDLEMAS"]},
-        plan:{...livePrepared.session.plan,precedingGraphs:["CANDLEMAS"]},
-      },
-    },
-    presentationData:data,eventData,cueRegistries,guideData
-  }),
-  /NATIVE_PREVIEW_PRECEDING_RITE_PENDING:CANDLEMAS/,
-  "native preview silently skipped an unsupported preceding rite"
-);
+const candlemasPrepared={
+  ...livePrepared,
+  session:{
+    ...livePrepared.session,
+    resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["CANDLEMAS"]},
+    plan:{...livePrepared.session.plan,precedingGraphs:["CANDLEMAS"],massEntry:"INTROIT"},
+  },
+};
+const candlemasReady=await prepareNativeReaderPreview({
+  prepared:candlemasPrepared,presentationData:data,eventData,cueRegistries,guideData,candlemasData
+});
+assert.ok(candlemasReady.candlemasController,"Candlemas native preview controller missing");
+assert.equal(candlemasReady.candlemasController.project().card.id,"CND-R01");
+candlemasReady.candlemasController.goTo("CND-R03");
+candlemasReady.candlemasController.setRecipientState("RECEIVE_CANDLE");
+assert.equal(candlemasReady.candlemasController.project().recipientPosture,"KNEEL");
+assert.equal(candlemasReady.candlemasController.project().hasBlessedCandle,true);
+candlemasReady.candlemasController.setProcessionParticipant(true);
+candlemasReady.candlemasController.goTo("CND-R05");
+assert.equal(candlemasReady.candlemasController.project().candleState,"CANDLE_LIT");
+assert.equal(candlemasReady.candlemasController.massCandleState("MC-GSP-060").state,"CANDLE_LIT");
+candlemasReady.candlemasController.goTo("CND-R07");
+assert.equal(candlemasReady.candlemasController.project().handoff,"INTROIT");
+assert.equal(candlemasReady.model.totalCards,39,"Candlemas prelude mutated source-first Mass card identity");
 
 const prepared={
   ...livePrepared,
