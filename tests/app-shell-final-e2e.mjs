@@ -676,6 +676,45 @@ try{
     timeout:90000,
   });
   await page.waitForTimeout(1200);
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.status?.().visibleRibbonOwned===true &&
+    globalThis.AO_APP_SHELL_V1?.status?.().legacyRibbonClickNeutralized===true,
+    null,{timeout:10000});
+
+  const navOwnership=await page.evaluate(()=>({
+    owner:document.getElementById("ao-global-ribbon")?.getAttribute("data-ao-app-owner")??null,
+    appButtons:document.querySelectorAll("#ao-global-ribbon [data-ao-app-surface]").length,
+    donorButtons:document.querySelectorAll("#ao-global-ribbon [data-ao-ribbon]").length,
+    shellOwner:document.documentElement.dataset.aoAppShellOwner??null,
+    passive:globalThis.AO_APP_SHELL_V1?.passive,
+  }));
+  assert.equal(navOwnership.owner,"modular","visible ribbon was not adopted by modular app shell");
+  assert.equal(navOwnership.shellOwner,"modular","document did not record modular shell ownership");
+  assert.equal(navOwnership.appButtons,6,"modular shell did not adopt all six top-level destinations");
+  assert.equal(navOwnership.donorButtons,0,"legacy ribbon click attributes remain live");
+  assert.equal(navOwnership.passive,false,"modular shell still reports passive ownership");
+
+  const prayRibbon=page.locator("#ao-global-ribbon [data-ao-app-surface='pray']");
+  const prayBox=await prayRibbon.boundingBox();
+  assert.ok(prayBox && prayBox.height>=44,"Pray ribbon target is not phone-safe");
+  await page.touchscreen.tap(prayBox.x+prayBox.width/2,prayBox.y+prayBox.height/2);
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:5000});
+  assert.equal(
+    await prayRibbon.getAttribute("aria-current"),
+    "page",
+    "modular ribbon did not project Pray active state"
+  );
+
+  const homeRibbon=page.locator("#ao-global-ribbon [data-ao-app-surface='home']");
+  const homeBox=await homeRibbon.boundingBox();
+  assert.ok(homeBox && homeBox.height>=44,"Home ribbon target is not phone-safe");
+  await page.touchscreen.tap(homeBox.x+homeBox.width/2,homeBox.y+homeBox.height/2);
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
+  assert.equal(
+    await homeRibbon.getAttribute("aria-current"),
+    "page",
+    "modular ribbon did not project Home active state"
+  );
 
   const setup=await page.evaluate(async(iconKeys)=>{
     const t=(lat,en)=>({lat,en});
@@ -774,6 +813,10 @@ try{
     appShell:globalThis.AO_APP_SHELL_V1?.status?.()??null,
     appShellContract:globalThis.AO_APP_SHELL_V1?.contract?.topLevel??null,
     appShellDataset:document.documentElement.dataset.aoAppShellBridge??null,
+    appShellOwner:document.documentElement.dataset.aoAppShellOwner??null,
+    ribbonOwner:document.getElementById("ao-global-ribbon")?.getAttribute("data-ao-app-owner")??null,
+    donorRibbonButtons:document.querySelectorAll("#ao-global-ribbon [data-ao-ribbon]").length,
+    modularRibbonButtons:document.querySelectorAll("#ao-global-ribbon [data-ao-app-surface]").length,
   }));
   assert.equal(ownership.starts,0,"final native entry booted the legacy live renderer");
   assert.equal(ownership.runtime?.readerUiMode,"NATIVE");
@@ -785,8 +828,14 @@ try{
   assert.equal(ownership.shellFocusGuard,true,"production shell focus guard was not installed");
   assert.equal(ownership.appShellBridge,true,"final app shell bridge was not installed beside Mass");
   assert.equal(ownership.appShell?.installed,true,"final app shell controller is not ready in actual index.html");
-  assert.equal(ownership.appShell?.passive,true,"phase-1 app shell unexpectedly took visual ownership");
+  assert.equal(ownership.appShell?.passive,false,"final app shell reverted to passive ownership");
+  assert.equal(ownership.appShell?.visibleRibbonOwned,true,"modular app shell lost visible ribbon ownership");
+  assert.equal(ownership.appShell?.legacyRibbonClickNeutralized,true,"legacy ribbon click path was reactivated");
   assert.equal(ownership.appShellDataset,"ready","actual index.html did not expose ready app-shell bridge state");
+  assert.equal(ownership.appShellOwner,"modular","document lost modular app-shell owner marker");
+  assert.equal(ownership.ribbonOwner,"modular","ribbon lost modular owner marker");
+  assert.equal(ownership.donorRibbonButtons,0,"legacy ribbon click attributes returned during Mass");
+  assert.equal(ownership.modularRibbonButtons,6,"modular ribbon surface contract lost buttons");
   assert.deepEqual(
     ownership.appShellContract,
     ["home","mass","pray","learn","calendar","settings"],
