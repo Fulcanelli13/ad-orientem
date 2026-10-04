@@ -464,6 +464,7 @@ async function exerciseRealShellFollowingAction(browser,spec){
           proper,
           properSource:spec.properSource,
           insertedRites:[spec.insertedRite],
+          requiemAbsolution:spec.requiemAbsolution??undefined,
           conditions:[],
           rubricSources:["MR1962"],
         }),
