@@ -92,6 +92,7 @@ export function createHomeOwner(win=globalThis){
     try{win?.AO_SETTINGS_V4356?.restoreHome?.();}catch{}
     attachPresentation();
     paint(state(win));
+    markOwner();
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("home");}catch{}
     return true;
   }
