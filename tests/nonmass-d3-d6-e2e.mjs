@@ -131,8 +131,9 @@ try{
   assert.ok(await page.locator("#aoPrayerBookRoot [data-ao-d5-exam-surface] details").count()>=10,"D5 read-only examination sections are incomplete");
   assert.equal(await page.locator("#aoPrayerBookRoot [data-ao-d5-exam-surface] input").count(),0,"Confession examination exposes stored/tickable sin controls");
   const examText=await page.locator("#aoPrayerBookRoot").innerText();
-  assert.match(examText,/not stored as a sin list|pas enregistr/i,"D5 privacy boundary is not visible");
+  assert.match(examText,/nothing is selected, scored or stored|no sin list|rien n[’']est sélectionné|pas enregistr/i,"D5 privacy boundary is not visible");
   assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i,"marked-prompt score remains visible");
+  assert.doesNotMatch(examText,/\b\d+\s*\/\s*8\b/,"legacy eight-step Confession counter remains visible");
 
   await page.evaluate(()=>{try{globalThis.AOTraditionalPrayerBook?.close?.({silent:true})}catch{}});
   const reopenedPray=await page.evaluate(async()=>
