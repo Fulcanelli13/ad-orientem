@@ -1,85 +1,79 @@
-# R17 Reader Parity Gate
+# R17 Reader Parity and Release Contract
 
-Date: 2026-10-03
+Date: 2026-10-04
 
-This landing is deliberately reversible. The production default remains the existing GitHub Mass reader.
+R17 has completed technical reader certification. The production default remains **LEGACY** until an explicit promotion decision changes the feature gate.
 
-## Donor / contract basis
+## Current authority
 
-Reader parity is checked against:
+The release architecture is source-first rather than a byte-for-byte recreation of the historical v1.83 card enumeration.
 
-1. `Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.65_MOBILE_NATIVE_V48.html`
-2. `data/presentation/reader-contract.v1.json`
-3. the R17 canonical/session engine already landed in this branch
+Authoritative runtime contracts:
 
-The v1.65 donor provides the proven mobile-native surface geometry and state surfaces. R17 owns canonical Mass/session state. The legacy GitHub reader remains the rollback DOM until parity is proven.
+1. `data/presentation/reader-release-gate.v1.json`
+2. `src/mass/reader-live-source.js`
+3. `data/presentation/reader-canon-source-map.v1.json`
+4. the canonical/session engine and form-specific reader controllers in `src/mass/**`
+
+Current LIVE structure:
+
+- 39 source-first LIVE steps
+- 25 retained non-Canon macro steps
+- 14 source-backed Canon prayer units covering `AO.SM.B047`–`AO.SM.B060`
+- SIMPLE and MISSAL remain 30-card projections
+
+The historical v1.83 48-card reader remains valuable compatibility evidence, but it is **not release authority** and is not required to certify the source-first runtime.
+
+## Historical donor role
+
+The v1.65 mobile-native donor remains evidence for geometry and surface behavior. The v1.83 recovery files remain evidence for historical reader behavior, including:
+
+- Host elevation gate: `AO.SM.C0173 → AO.SM.C0174`
+- Chalice elevation gate: `AO.SM.C0180 → AO.SM.C0181`
+- transient state clearing across card changes
+- Gradual ownership: `B021` main reader, `B022` Schola, `B023` Munda cor meum
+
+No historical donor may silently override certified source-first block/cue/event ownership.
+
+## Certified surfaces
+
+R17 certifies:
+
+- MISSAL, SIMPLE and LIVE as pre-Mass presentation selections
+- source-first LIVE navigation
+- phone/touch focus behavior
+- persistent posture and priest position ownership
+- exact transient gesture/response ownership
+- native Schola ownership for Missa Cantata
+- recovered 32-entry Guide continuity
+- host icon-bank bridge with fail-closed missing assets
+- native bell/cinematic ownership
+- LOW, Missa Cantata and SOLEMN form-state parity
+- plan-aware special structures and full-year special-day projection
+- Nuptial insertions
+- Asperges / Vidi aquam, Palm Sunday, Ash Wednesday and Easter Vigil native structures
+- Proper witness replacement and provenance guards
+- form lifecycle and Leonine-prayer separation
+
+## Mode switching
+
+MISSAL / SIMPLE / LIVE are presentation modes, never Mass forms.
+
+The initial mode is selected before Mass. In-reader mode switching remains intentionally locked to avoid structural churn during Mass. This is a field-use decision, not an unresolved release blocker.
 
 ## Feature gate
 
-Query string overrides storage.
+Production remains reversible:
 
 - default: `LEGACY`
-- `?aoR17Reader=shadow` — legacy reader remains visible; R17 audits required reader surfaces without DOM mutation
-- `?aoR17Reader=preview` — legacy reader still runs underneath; a new R17 shell is mounted over it and mirrors the current legacy content/state
-- `?aoR17Reader=r17` is currently an alias for `PREVIEW`, not a production switch
+- shadow/preview paths remain available for controlled comparison
+- R17 native reader is technically certified
+- production promotion requires an explicit feature-gate decision
 
-Storage key for controlled testing: `ao-r17-reader-ui`.
+The legacy reader must not be removed merely because the technical certification gate is green.
 
-There is intentionally no code path in this wave that deletes the legacy reader or makes the preview the default.
+## Historical 48-card recovery
 
-## Required parity surfaces
+`data/presentation/v1.83-reader-map-recovery.v1.json` is a historical audit ledger only.
 
-### Modes
-- MISSAL
-- SIMPLE
-- LIVE
-
-### Reader + navigation
-- reader surface
-- previous / next
-- card counter
-
-### State ribbon
-- priest position
-- current section / Guide copy
-- priest action
-
-### Faithful rail
-- persistent posture
-- transient gesture
-- response cue
-
-### Audio / Schola
-- priest voice
-- Schola live surface
-- Schola text
-- Schola translation
-- bell cue remains optional as a separate visual surface
-
-### Cinematic / Guide
-- part transition cinematic
-- Guide next/current-rubric state
-
-## Ownership rules
-
-- R17 canonical/session engine must never be mutated by the reader.
-- Posture is persistent until a sourced transition.
-- Gesture is transient at its exact anchor.
-- Incarnatus is a transient genuflection, never persistent kneeling.
-- MISSAL / SIMPLE / LIVE are presentation modes, never Mass forms.
-- Schola is continuous when active except when the public text is identical to the reader text.
-- Missing Guide rubric data fails closed; the reader does not invent rubric prose.
-- v4.8 icon semantics remain `currentColor`/mask compatible.
-
-## This wave
-
-Added:
-
-- `src/mass/reader-gate.js`
-- `src/mass/reader-parity.js`
-- `src/mass/reader-shadow.js`
-- `src/mass/reader-preview.js`
-
-The preview is intentionally a **mirror shell**. It reuses the legacy reader only as a temporary content/state donor while the new shell geometry is tested. Closing the preview immediately reveals the untouched legacy reader underneath.
-
-The next reader wave replaces individual mirrored state channels with R17-native projections one by one. The legacy reader is removed only after all required parity channels are independently sourced and tested.
+One v1.81 Canon decompression boundary remains unrecovered. It must not be guessed. Recovering it later may improve historical fidelity or provenance, but it must not re-block or replace the certified source-first LIVE runtime without a separate architecture decision.
