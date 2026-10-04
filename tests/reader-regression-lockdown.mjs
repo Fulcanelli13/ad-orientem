@@ -163,8 +163,17 @@ assert.equal(palmAshShell?.nativeOwner,"R17_NATIVE_PRODUCTION");
 assert.match(String(palmAshShell?.test??""),/app-shell-final-e2e\.mjs/);
 
 const candlemasPayload=release.protectedInvariants.find(x=>x.id==="CANDLEMAS_NATIVE_PAYLOAD");
-assert.equal(candlemasPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
-  "Candlemas was silently promoted to Palm/Ash production acceptance level");
+assert.equal(candlemasPayload?.status,"CERTIFIED_MODULAR_RUNTIME__REAL_SHELL_ACCEPTANCE_PENDING",
+  "Candlemas real-shell evidence scope changed without certification");
+
+const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
+assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
+assert.deepEqual(realShellScope?.certified,["PALM","ASH"]);
+assert.ok(realShellScope?.pending?.includes("CANDLEMAS"));
+assert.ok(realShellScope?.pending?.includes("EASTER_VIGIL"));
+assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
+assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
+assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"PARTIAL_EXPLICIT_EVIDENCE");
 
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Asperges native-preview certification disappeared");
