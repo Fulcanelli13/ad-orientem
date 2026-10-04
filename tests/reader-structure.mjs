@@ -109,8 +109,8 @@ const requiemAbsPrepared={...missalPrepared,session:{...missalPrepared.session,p
 assert.equal(structureSupport(requiemAbsPrepared).supported,true,"certified Requiem Absolution following action remained structurally blocked");
 
 for(const [label,plan] of [
-  ["preceding",{kind:"MASS",precedingGraphs:["ROGATIONS"],followingGraphs:[],overlayGraphs:[]}],
-  ["following",{kind:"MASS",precedingGraphs:[],followingGraphs:["CORPUS_CHRISTI_PROCESSION"],overlayGraphs:[]}],
+  ["preceding",{kind:"MASS",precedingGraphs:["UNSUPPORTED_TEST_PRECEDING"],followingGraphs:[],overlayGraphs:[]}],
+  ["following",{kind:"MASS",precedingGraphs:[],followingGraphs:["UNSUPPORTED_TEST_ACTION"],overlayGraphs:[]}],
   ["overlay",{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["NUPTIAL"]}],
   ["distinct",{kind:"DISTINCT_RITE",precedingGraphs:[],followingGraphs:[],overlayGraphs:[]}],
 ]){
