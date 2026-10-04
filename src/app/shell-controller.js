@@ -65,6 +65,11 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
         setActive("mass");
         return result(false, "mass", { reason: "LIVE_MASS_LEAVE_CANCELLED" });
       }
+      const exited = await host.leaveLiveMass?.();
+      if (exited === false) {
+        setActive("mass");
+        return result(false, "mass", { reason: "LIVE_MASS_EXIT_FAILED" });
+      }
     }
 
     if (target === "home") {
