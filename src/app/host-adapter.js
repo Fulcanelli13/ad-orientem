@@ -73,6 +73,13 @@ export function createAppHostAdapter(win = globalThis) {
           return Promise.resolve(mass.resume()).then((result) => result?.ok !== false);
         }
       }
+      if (domain === "pray") {
+        const modular = win?.AO_PRAY_APP_V1;
+        if (typeof modular?.open === "function") {
+          const opened = modular.open();
+          if (opened !== false) return true;
+        }
+      }
       const api = shell();
       if (typeof api?.openDomain !== "function") return false;
       return api.openDomain(domain) !== false;
