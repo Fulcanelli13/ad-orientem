@@ -75,18 +75,16 @@ try{
   assert.equal(boot.firstFriday,true,"D3 persistence scrub damaged unrelated programme state");
 
   await page.waitForFunction(()=>
-    Boolean(globalThis.AO_PRAY_V435930) &&
-    globalThis.AO_MODULES?.qa?.()?.v435930PrayAudit===true,
+    globalThis.AO_PRAY_V435930?.qa?.()?.version==="43.59.30-pray-acceptance",
     null,{timeout:30000}
   );
 
-  const openedAdoration=await page.evaluate(async()=>{
-    const modules=globalThis.AO_MODULES;
-    if(typeof modules?.open!=="function")return false;
-    const result=await modules.open("pray.adoration");
-    return result!==false && result?.ok!==false;
-  });
-  assert.equal(openedAdoration,true,"could not open canonical Adoration module");
+  const openedPray=await page.evaluate(()=>
+    globalThis.AO_V37_SHELL?.openDomain?.("pray")!==false
+  );
+  assert.equal(openedPray,true,"could not open canonical PRAY domain");
+  await page.waitForSelector("#aoPray435930.open .aoP435930Home",{timeout:15000});
+  await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
   await page.waitForSelector("#aoPray435930.open .aoP435930BigGrid",{timeout:15000});
   await page.waitForTimeout(100);
 
@@ -120,11 +118,12 @@ try{
   assert.equal(presence.persistent,null,"exposition state leaked back into persistent storage");
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.close?.({silent:true}));
-  const openedConfession=await page.evaluate(async()=>{
-    const result=await globalThis.AO_MODULES?.open?.("pray.confession");
-    return result!==false && result?.ok!==false;
-  });
-  assert.equal(openedConfession,true,"could not open canonical Confession module");
+  const reopenedPray=await page.evaluate(()=>
+    globalThis.AO_V37_SHELL?.openDomain?.("pray")!==false
+  );
+  assert.equal(reopenedPray,true,"could not reopen canonical PRAY domain");
+  await page.waitForSelector("#aoPray435930.open .aoP435930Home",{timeout:10000});
+  await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
   await page.waitForSelector("#aoPray435930.open .aoD5PhaseRail",{timeout:10000});
   assert.equal(await page.locator("#aoPray435930 .aoD5PhaseRail span").count(),5,"D5 did not expose five canonical phases");
   assert.equal(await page.locator("#aoPray435930 .aoP435930StageRail:visible").count(),0,"old seven-step rail remained visible");
