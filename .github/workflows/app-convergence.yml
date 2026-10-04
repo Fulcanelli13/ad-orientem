@@ -25,6 +25,7 @@ on:
       - "package.json"
       - "data/presentation/app-release-gate.v1.json"
       - "tests/app-release-gate.mjs"
+      - "tests/nonmass-d3-d6-*.mjs"
       - "tests/app-shell-*.mjs"
       - "tests/reader-phone-acceptance.mjs"
       - "tests/production-tree-hygiene.mjs"
