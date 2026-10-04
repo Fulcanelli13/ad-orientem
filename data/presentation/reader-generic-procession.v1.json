@@ -1,0 +1,36 @@
+{
+  "schema": "ao-r29-generic-procession-payload-v1",
+  "version": "1.0.0",
+  "status": "STRUCTURAL_NATIVE_NO_FEAST_TEXT",
+  "principle": "Generic procession reader renders only recovered following-action states. Feast/procession-specific texts must be supplied by a dedicated proper/profile and are never fabricated here.",
+  "source": {
+    "graph": "data/mass/special-days-extension.v1.3.json#PROC",
+    "authority": "RG60 §§507–510 + recovered generic following-action processional contract"
+  },
+  "massEndingRecords": [
+    "PROC-000-010",
+    "PROC-000-020",
+    "PROC-000-030",
+    "PROC-000-040"
+  ],
+  "readerSurfaces": [
+    {
+      "id": "PROC-R01",
+      "recordId": "PROC-100-010",
+      "title": "Procession begins",
+      "guide": "The Mass is complete. Join the following procession only if this procession is actually taking place and you are participating."
+    },
+    {
+      "id": "PROC-R02",
+      "recordId": "PROC-100-020",
+      "title": "During the procession",
+      "guide": "Follow the local procession and its proper texts. This generic reader deliberately does not invent feast-specific chants or responses."
+    },
+    {
+      "id": "PROC-R03",
+      "recordId": "PROC-100-030",
+      "title": "Procession complete",
+      "guide": "The following action is complete. Return to the post-Mass lifecycle."
+    }
+  ]
+}

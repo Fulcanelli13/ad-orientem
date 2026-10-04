@@ -13,7 +13,7 @@ function assertBaselineReaderGraph(resolvedMass){
   if(unsupportedPreceding.length) {
     throw new Error("Reader card adapter not yet certified for preceding rite graph "+unsupportedPreceding.join(", "));
   }
-  const unsupportedFollowing=(resolvedMass?.followingActions??[]).filter(x=>!["REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST"].includes(x));
+  const unsupportedFollowing=(resolvedMass?.followingActions??[]).filter(x=>!["REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GENERIC_PROCESSION"].includes(x));
   if(unsupportedFollowing.length) {
     throw new Error("Reader card adapter not yet certified for following-action graph "+unsupportedFollowing.join(", "));
   }
