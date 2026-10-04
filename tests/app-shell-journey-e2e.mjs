@@ -111,6 +111,7 @@ try{
     );
     globalThis.AO_RUNTIME_V8={
       store:{
+        dispatch(){ route="home"; return true; },
         getState:()=>({
           route,
           selectedDate:"2026-10-04",
