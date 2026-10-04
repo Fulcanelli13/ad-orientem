@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -80,12 +80,14 @@
     },
     {
       "id": "DUPLICATE_BROWSER_ENTRY_HYGIENE",
-      "classification": "REGRESSION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
-        "docs/APP-CONVERGENCE.md"
+        "index.html",
+        "src/mass/browser-entry.js",
+        "tests/production-tree-hygiene.mjs"
       ],
-      "detail": "Production index.html is documented as containing a duplicated Mass browser-entry include; it must be removed and regression-locked."
+      "detail": "Production index.html contains exactly one Mass browser-entry module include. The obsolete inline icon bridge is removed; the modular Mass browser entry resolves the host icon bank directly, and production-tree hygiene regression-locks both invariants."
     },
     {
       "id": "NON_MASS_DONOR_EXTRACTION",
@@ -122,7 +124,6 @@
   ],
   "openBlockers": [
     "EMERGENCY_RUNTIME_RETIREMENT",
-    "DUPLICATE_BROWSER_ENTRY_HYGIENE",
     "NON_MASS_DONOR_EXTRACTION"
   ],
   "regressionGates": {

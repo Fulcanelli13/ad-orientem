@@ -13,6 +13,15 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 export const VERSION = "final-browser-entry-v1";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
 
+export function resolveHostIconAssets(win=globalThis){
+  if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
+  try {
+    if(typeof AO_ASSETS!=="undefined" && AO_ASSETS) return AO_ASSETS;
+  } catch {}
+  return null;
+}
+
+
 export function mapLegacyFollowMode(value) {
   const raw = String(value ?? "vox").toLowerCase();
   if (raw === "missal" || raw === "read") return "MISSAL";
@@ -271,7 +280,7 @@ export async function mountR17Preview({
   doc,
   prepared,
   nativeMount=mountNativeReaderPreview,
-  iconAssets=globalThis.AO_R17_ICON_ASSETS??null,
+  iconAssets=resolveHostIconAssets(),
 }={}) {
   const assets=iconAssets;
   const iconAudit=auditHostIconBank(assets);
