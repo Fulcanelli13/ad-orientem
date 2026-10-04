@@ -187,3 +187,64 @@ export function installAppShellBridge({
     } catch {
       state.blocked = true;
       setDataset("blocked");
+    }
+  }
+
+  const api = Object.freeze({
+    version: VERSION,
+    passive: false,
+    contract: NON_MASS_DONOR_CONTRACT,
+    get installed() { return Boolean(state.controller); },
+    get polls() { return state.polls; },
+    navigate(surface) {
+      if (!state.controller) {
+        return Promise.resolve(Object.freeze({
+          ok: false,
+          surface: null,
+          reason: state.blocked ? "APP_SHELL_BLOCKED" : "APP_SHELL_NOT_READY",
+        }));
+      }
+      return state.controller.go(surface);
+    },
+    getActive() {
+      return state.controller?.getActive?.() ?? null;
+    },
+    status() {
+      const nav = win?.document?.getElementById?.("ao-global-ribbon");
+      return Object.freeze({
+        installed: Boolean(state.controller),
+        passive: false,
+        visibleOwner: state.visibleOwner,
+        ribbonOwner: nav?.dataset?.aoOwner ?? null,
+        legacyRibbonButtons: nav?.querySelectorAll?.("[data-ao-ribbon]")?.length ?? null,
+        modularRibbonButtons: nav?.querySelectorAll?.("[data-ao-app-surface]")?.length ?? null,
+        polls: state.polls,
+        blocked: state.blocked,
+        active: state.controller?.getActive?.() ?? null,
+        homeOwner: typeof win?.AO_NAV_V362?.home === "function",
+        domainOwner: typeof win?.AO_V37_SHELL?.openDomain === "function",
+        settingsOwner: Boolean(
+          win?.AO_SETTINGS_V4359 ??
+          win?.AO_SETTINGS_V4358 ??
+          win?.AO_SETTINGS_V4356
+        ),
+        prayerOwner: Boolean(win?.AO_PRAY_V435930),
+        massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
+        legacyRibbonPresent: Boolean(win?.AO_GLOBAL_RIBBON_V4323),
+      });
+    },
+  });
+
+  win.AO_APP_SHELL_V1 = api;
+  setDataset("installing");
+  tryInstall();
+  return api;
+}
+
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => installAppShellBridge(), { once: true });
+  } else {
+    installAppShellBridge();
+  }
+}
