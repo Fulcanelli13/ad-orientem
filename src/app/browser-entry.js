@@ -7,24 +7,8 @@ import {
 } from "./index.js";
 
 export const VERSION = "final-app-shell-bridge-v2";
-const RIBBON_SELECTOR = "[data-ao-ribbon]";
-
-function ribbonSurface(target) {
-  return normalizeAppSurface(target?.closest?.(RIBBON_SELECTOR)?.getAttribute?.("data-ao-ribbon"));
-}
-
-function renderRibbon(win, surface) {
-  const active=normalizeAppSurface(surface)??"home";
-  const buttons=win?.document?.querySelectorAll?.(RIBBON_SELECTOR)??[];
-  for(const button of buttons){
-    const value=normalizeAppSurface(button.getAttribute?.("data-ao-ribbon"));
-    const selected=value===active;
-    button.classList?.toggle?.("active",selected);
-    button.setAttribute?.("aria-current",selected?"page":"false");
-  }
-  try{ win?.AO_GLOBAL_RIBBON_V4323?.setActive?.(active); }catch{}
-  return active;
-}
+const DONOR_RIBBON_ATTR = "data-ao-ribbon";
+const APP_RIBBON_ATTR = "data-ao-app-surface";
 
 function ready(win) {
   return Boolean(
@@ -42,6 +26,120 @@ function initialSurface(win, host) {
   return surfaceForCoreRoute(host.currentCoreRoute?.(), "home");
 }
 
+function visibleRibbon(win) {
+  return win?.document?.getElementById?.("ao-global-ribbon") ?? null;
+}
+
+export function adoptVisibleRibbon({
+  win = globalThis,
+  navigate,
+  getActive,
+  observeSurface,
+} = {}) {
+  const nav = visibleRibbon(win);
+  if (!nav || typeof navigate !== "function") {
+    return Object.freeze({
+      owned: false,
+      neutralized: false,
+      syncActive() {},
+      dispose() {},
+    });
+  }
+
+  let disposed = false;
+  let observer = null;
+
+  function syncActive() {
+    if (disposed) return;
+    const active = normalizeAppSurface(getActive?.()) ?? "home";
+    for (const button of nav.querySelectorAll?.(`[${APP_RIBBON_ATTR}]`) ?? []) {
+      const surface = normalizeAppSurface(button.getAttribute?.(APP_RIBBON_ATTR));
+      const selected = surface === active;
+      button.classList?.toggle?.("active", selected);
+      button.setAttribute?.("aria-current", selected ? "page" : "false");
+    }
+  }
+
+  function adoptButtons() {
+    if (disposed) return 0;
+    let adopted = 0;
+    for (const button of nav.querySelectorAll?.(`[${DONOR_RIBBON_ATTR}]`) ?? []) {
+      const surface = normalizeAppSurface(button.getAttribute?.(DONOR_RIBBON_ATTR));
+      if (!surface) continue;
+      button.setAttribute?.(APP_RIBBON_ATTR, surface);
+      button.removeAttribute?.(DONOR_RIBBON_ATTR);
+      adopted += 1;
+    }
+    nav.setAttribute?.("data-ao-app-owner", "modular");
+    if (win?.document?.documentElement?.dataset) {
+      win.document.documentElement.dataset.aoAppShellOwner = "modular";
+    }
+    syncActive();
+    return adopted;
+  }
+
+  function onClick(event) {
+    const target = event?.target;
+    const button = target?.closest?.(`[${APP_RIBBON_ATTR}]`);
+    if (button && nav.contains?.(button)) {
+      const surface = normalizeAppSurface(button.getAttribute?.(APP_RIBBON_ATTR));
+      if (!surface) return;
+      event.preventDefault?.();
+      event.stopPropagation?.();
+      void Promise.resolve(navigate(surface)).finally(syncActive);
+      return;
+    }
+
+    // The donor still owns deep non-Mass presentation during extraction.
+    // Mirror its internal launcher/home signals into the modular shell state so
+    // a donor re-render cannot make the visible ribbon drift from app state.
+    const domain = target?.closest?.("[data-v37-domain]")?.getAttribute?.("data-v37-domain");
+    if (domain) {
+      observeSurface?.(domain === "today" ? "home" : domain);
+      return;
+    }
+    const moduleId = target?.closest?.("[data-v37-open]")?.getAttribute?.("data-v37-open");
+    if (moduleId === "today.calendar") {
+      observeSurface?.("calendar");
+      return;
+    }
+    if (moduleId === "utility.settings") {
+      observeSurface?.("settings");
+      return;
+    }
+    if (target?.closest?.("[data-app-home]")) observeSurface?.("home");
+  }
+
+  win?.addEventListener?.("click", onClick, { capture: true });
+
+  const MutationObserverCtor = win?.MutationObserver;
+  if (typeof MutationObserverCtor === "function") {
+    observer = new MutationObserverCtor(() => adoptButtons());
+    observer.observe(nav, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: [DONOR_RIBBON_ATTR],
+    });
+  }
+
+  adoptButtons();
+
+  return Object.freeze({
+    owned: true,
+    get neutralized() {
+      return !nav.querySelector?.(`[${DONOR_RIBBON_ATTR}]`);
+    },
+    syncActive,
+    dispose() {
+      if (disposed) return;
+      disposed = true;
+      observer?.disconnect?.();
+      win?.removeEventListener?.("click", onClick, { capture: true });
+    },
+  });
+}
+
 export function installAppShellBridge({
   win = globalThis,
   pollMs = 80,
@@ -54,12 +152,28 @@ export function installAppShellBridge({
     controller: null,
     host: null,
     blocked: false,
+    ribbonOwner: null,
+    unsubscribeSurface: null,
   };
 
   function setDataset(value) {
     if (win?.document?.documentElement?.dataset) {
       win.document.documentElement.dataset.aoAppShellBridge = value;
     }
+  }
+
+  function ownVisibleRibbon() {
+    state.ribbonOwner?.dispose?.();
+    state.ribbonOwner = adoptVisibleRibbon({
+      win,
+      navigate: (surface) => state.controller?.go?.(surface),
+      getActive: () => state.controller?.getActive?.(),
+      observeSurface: (surface) => state.controller?.setActive?.(surface),
+    });
+    state.unsubscribeSurface?.();
+    state.unsubscribeSurface = state.controller?.subscribe?.(() => {
+      state.ribbonOwner?.syncActive?.();
+    }) ?? null;
   }
 
   function tryInstall() {
@@ -80,28 +194,13 @@ export function installAppShellBridge({
         host: state.host,
         initialSurface: initialSurface(win, state.host),
       });
-      state.controller.subscribe?.((surface)=>renderRibbon(win,surface));
-      renderRibbon(win,state.controller.getActive?.());
-      if(win?.document?.documentElement?.dataset){
-        win.document.documentElement.dataset.aoAppShellOwner="modular";
-      }
+      ownVisibleRibbon();
       setDataset("ready");
     } catch {
       state.blocked = true;
       setDataset("blocked");
     }
   }
-
-  let clickOwnerInstalled=false;
-  const onRibbonClick=(event)=>{
-    const surface=ribbonSurface(event?.target);
-    if(!surface)return;
-    event.preventDefault?.();
-    event.stopImmediatePropagation?.();
-    void api.navigate(surface).then(result=>{
-      if(result?.surface)renderRibbon(win,result.surface);
-    });
-  };
 
   const api = Object.freeze({
     version: VERSION,
@@ -126,10 +225,11 @@ export function installAppShellBridge({
       return Object.freeze({
         installed: Boolean(state.controller),
         passive: false,
-        visibleRibbonOwner: clickOwnerInstalled ? "AO_APP_SHELL_V1" : null,
         polls: state.polls,
         blocked: state.blocked,
         active: state.controller?.getActive?.() ?? null,
+        visibleRibbonOwned: Boolean(state.ribbonOwner?.owned),
+        legacyRibbonClickNeutralized: Boolean(state.ribbonOwner?.neutralized),
         homeOwner: typeof win?.AO_NAV_V362?.home === "function",
         domainOwner: typeof win?.AO_V37_SHELL?.openDomain === "function",
         settingsOwner: Boolean(
@@ -145,10 +245,6 @@ export function installAppShellBridge({
   });
 
   win.AO_APP_SHELL_V1 = api;
-  if(typeof win?.addEventListener==="function"){
-    win.addEventListener("click",onRibbonClick,true);
-    clickOwnerInstalled=true;
-  }
   setDataset("installing");
   tryInstall();
   return api;
