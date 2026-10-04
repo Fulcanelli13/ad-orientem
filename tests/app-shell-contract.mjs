@@ -95,8 +95,17 @@ function host({ route = "home", confirm = true } = {}) {
 {
   const calls = [];
   const dataset = {};
+  let capturedClick=null;
+  const ribbonButtons=[
+    {value:"home",classList:{toggle(){}},getAttribute(){return this.value;},setAttribute(){}},
+    {value:"learn",classList:{toggle(){}},getAttribute(){return this.value;},setAttribute(){}},
+  ];
   const win = {
-    document: { documentElement: { dataset } },
+    document: {
+      documentElement: { dataset },
+      querySelectorAll:()=>ribbonButtons,
+    },
+    addEventListener(type,fn,capture){ if(type==="click"&&capture===true)capturedClick=fn; },
     AO_RUNTIME_V8: {
       store: {
         getState: () => ({ route: "home", language: "en" }),
@@ -112,10 +121,23 @@ function host({ route = "home", confirm = true } = {}) {
   };
   const bridge = installAppShellBridge({ win, pollMs: 0, maxPolls: 1 });
   assert.equal(bridge.installed, true);
-  assert.equal(bridge.passive, true);
+  assert.equal(bridge.passive, false);
   assert.equal(dataset.aoAppShellBridge, "ready");
   assert.equal((await bridge.navigate("learn")).ok, true);
-  assert.deepEqual(calls, ["home", "domain:learn"]);
+  assert.equal(bridge.status().visibleRibbonOwner,"AO_APP_SHELL_V1");
+  assert.equal(dataset.aoAppShellOwner,"modular");
+  assert.equal(typeof capturedClick,"function");
+  let prevented=false,stopped=false;
+  capturedClick({
+    target:{closest:()=>({getAttribute:()=> "learn"})},
+    preventDefault(){prevented=true;},
+    stopImmediatePropagation(){stopped=true;},
+  });
+  await Promise.resolve();
+  await Promise.resolve();
+  assert.equal(prevented,true);
+  assert.equal(stopped,true);
+  assert.deepEqual(calls, ["home", "domain:learn","dismiss-settings","home","domain:learn"]);
 }
 
 console.log("PASS app shell contract");
