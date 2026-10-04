@@ -12,22 +12,23 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080c12}
 <script type="module">
 import { mountNativeReaderPreview } from "../../src/mass/reader-native-preview.js";
 
-const t=(lat,en)=>({lat,en});
+const params=new URLSearchParams(location.search);
+const lang=params.get("lang")==="fr"?"fr":"en";
+const t=(lat,en,fr)=>lang==="fr"?({lat,en:"",fr}):({lat,en,fr:""});
 const proper={
   sourcePath:"Sancti/10-07",
-  introit:t("Gaudeámus omnes in Dómino","Let us all rejoice in the Lord"),
-  collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son")],
-  epistle:t("Ab inítio et ante sǽcula","From the beginning and before the world"),
-  gradual:t("Propter veritátem","Because of truth"),
-  sequence:{lat:"",en:""},
-  gospel:t("In illo témpore: Missus est Angelus","At that time the Angel was sent"),
-  offertory:t("In me grátia omnis viæ","In me is all grace of the way"),
-  secrets:[t("Fac nos, quǽsumus, Dómine","Grant us, we beseech Thee, O Lord")],
-  preface:t("Vere dignum et iustum est","It is truly meet and just"),
-  communion:t("Floréte, flores","Send forth flowers"),
-  postcommunions:[t("Sacratíssimæ Genetrícis tuæ","May the prayers of Thy most holy Mother")],
+  introit:t("Gaudeámus omnes in Dómino","Let us all rejoice in the Lord","Réjouissons-nous ensemble dans le Seigneur"),
+  collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son","Ô Dieu, dont le Fils unique")],
+  epistle:t("Ab inítio et ante sǽcula","From the beginning and before the world","Dès le commencement et avant les siècles"),
+  gradual:t("Propter veritátem","Because of truth","À cause de la vérité"),
+  sequence:{lat:"",en:"",fr:""},
+  gospel:t("In illo témpore: Missus est Angelus","At that time the Angel was sent","En ce temps-là, l’Ange fut envoyé"),
+  offertory:t("In me grátia omnis viæ","In me is all grace of the way","En moi est toute grâce"),
+  secrets:[t("Fac nos, quǽsumus, Dómine","Grant us, we beseech Thee, O Lord","Faites que nous, Seigneur")],
+  preface:t("Vere dignum et iustum est","It is truly meet and just","Il est vraiment juste et nécessaire"),
+  communion:t("Floréte, flores","Send forth flowers","Fleurissez, fleurs"),
+  postcommunions:[t("Sacratíssimæ Genetrícis tuæ","May the prayers of Thy most holy Mother","Que les prières de votre très sainte Mère")],
 };
-const params=new URLSearchParams(location.search);
 const rite=String(params.get("rite")??(params.get("asperges")==="1"?"asperges":"")).toLowerCase();
 const withAsperges=rite==="asperges";
 const withPalm=rite==="palm";
@@ -63,7 +64,7 @@ const prepared={
   },
   readerPreferences:{
     mode:"LIVE",
-    language:"vernacular",
+    language:lang,
     postureProfile:"FOLLOW_CONGREGATION",
     gestureProfile:"GUIDED_1962",
     localPostures:{},
