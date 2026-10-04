@@ -70,7 +70,7 @@ try{
   }));
   assert.equal(cold.active,"home","cold launch did not begin on Home");
   assert.equal(cold.status?.passive,false,"modular shell is still passive on cold launch");
-  assert.equal(cold.status?.visibleRibbonOwner,"AO_APP_SHELL_V1","modular shell does not own visible ribbon");
+  assert.equal(cold.status?.visibleRibbonOwned,true,"modular shell does not own visible ribbon");
   assert.equal(cold.owner,"modular","modular shell ownership marker missing");
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
 
@@ -115,7 +115,6 @@ try{
     );
     globalThis.AO_RUNTIME_V8={
       store:{
-        dispatch(){ route="home"; return true; },
         getState:()=>({
           route,
           selectedDate:"2026-10-04",
