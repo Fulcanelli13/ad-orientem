@@ -182,24 +182,33 @@ try{
   assert.equal(live.readerUiMode,"NATIVE");
   assert.equal(live.persisted,true,"active native Mass was not persisted");
 
-  const cancelled=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray"));
-  assert.equal(cancelled?.reason,"LIVE_MASS_LEAVE_CANCELLED");
+  const closeReader=page.locator("#ao-r17-native-reader-preview [aria-label='Close Mass reader']");
+  await closeReader.click();
   await page.waitForFunction(()=>globalThis.__AO_APP_JOURNEY_CONFIRMS===1,null,{timeout:5000});
   const retained=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     mounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+    route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
   }));
-  assert.equal(retained.active,"mass","cancelled leave did not retain Mass");
-  assert.equal(retained.mounted,true,"cancelled leave destroyed the native Mass surface");
+  assert.equal(retained.active,"mass","cancelled close did not retain Mass");
+  assert.equal(retained.mounted,true,"cancelled close destroyed the native Mass surface");
+  assert.equal(retained.route,"live","cancelled close changed the LIVE route");
 
-  const left=await page.evaluate(async()=>{
+  await page.evaluate(()=>{
     globalThis.confirm=()=>{globalThis.__AO_APP_JOURNEY_CONFIRMS+=1;return true;};
-    return globalThis.AO_APP_SHELL_V1.navigate("pray");
   });
-  assert.equal(left?.ok,true,"confirmed LIVE leave did not open Pray");
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
-  await page.evaluate(()=>{globalThis.__AO_APP_JOURNEY_ROUTE.value="home";});
+  await closeReader.click();
   await page.waitForFunction(()=>!document.getElementById("ao-r17-native-reader-preview")?.isConnected,null,{timeout:10000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:10000});
+  const exited=await page.evaluate(()=>({
+    active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+    route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+  }));
+  assert.equal(exited.active,"home","confirmed reader close did not return to Home");
+  assert.equal(exited.route,"home","confirmed reader close left runtime route in LIVE");
+
+  await page.locator("[data-ao-app-surface='pray']").click();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
 
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:10000});
