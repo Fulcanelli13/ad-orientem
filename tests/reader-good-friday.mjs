@@ -101,7 +101,7 @@ const end=communicant.steps.find(x=>x.recordId==="GF-END-900");
 assert.equal(end.paragraphs.length,3);
 assert.equal(end.posture,"STAND");
 assert.equal(communicant.steps.at(-1).recordId,"GF-END-910");
-assert.ok(!communicant.steps.some(x=>/BLESS|LAST_GOSPEL|ITE_MISSA/i.test(x.triggerKey)),"ordinary Mass ending leaked into Good Friday");
+assert.ok(!communicant.steps.some(x=>/FINAL_BLESSING|LAST_GOSPEL|ITE_MISSA/i.test(x.triggerKey)),"ordinary Mass ending leaked into Good Friday");
 
 const ctrl=createGoodFridayReaderController({graph,payload,willReceiveCommunion:true});
 assert.equal(ctrl.project().step.recordId,"GF-OPEN-010");
