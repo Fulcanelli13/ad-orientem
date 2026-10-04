@@ -99,9 +99,10 @@ const corpusModel=createMassReaderModel({
 });
 assert.equal(corpusModel.totalCards,39,"Corpus Christi following action mutated the LIVE Mass card model");
 
-assert.throws(()=>createMassReaderModel({
+const genericProcessionModel=createMassReaderModel({
   resolvedMass:{...base,followingActions:["GENERIC_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
-}),/following-action graph/);
+});
+assert.equal(genericProcessionModel.totalCards,39,"Generic Procession following action mutated the LIVE Mass card model");
 
 assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,distinctRite:"UNSUPPORTED_TEST_RITE"},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
