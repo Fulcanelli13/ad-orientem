@@ -177,10 +177,13 @@ assert.equal(candlemasPayload?.objectStateAcceptance?.postureOverride,null);
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
 assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
-assert.deepEqual(realShellScope?.certified,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"]);
+assert.deepEqual(realShellScope?.certified,[
+  "ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS",
+  "REQUIEM_ABSOLUTION","HOLY_THURSDAY_POST","CORPUS_CHRISTI_PROCESSION","GENERIC_PROCESSION"
+]);
+assert.deepEqual(realShellScope?.pending,["GOOD_FRIDAY","EASTER_VIGIL","NUPTIAL"]);
 assert.equal(realShellScope?.pending?.includes("CANDLEMAS"),false);
 assert.equal(realShellScope?.pending?.includes("ROGATIONS"),false);
-assert.ok(realShellScope?.pending?.includes("EASTER_VIGIL"));
 assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
 assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
 assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"PARTIAL_EXPLICIT_EVIDENCE");
@@ -199,6 +202,26 @@ const rogationsPayload=release.protectedInvariants.find(x=>x.id==="ROGATIONS_NAT
 assert.equal(rogationsPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE","Rogations real-shell production certification disappeared");
 assert.match(String(rogationsPayload?.productionTest??""),/app-shell-final-e2e\.mjs/);
 assert.equal(rogationsPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
+
+const followingIds=[
+  "REQUIEM_ABSOLUTION_NATIVE_PAYLOAD",
+  "CORPUS_CHRISTI_NATIVE_PAYLOAD",
+  "HOLY_THURSDAY_POST_NATIVE_PAYLOAD",
+  "GENERIC_PROCESSION_NATIVE_PAYLOAD",
+];
+for(const id of followingIds){
+  const item=release.protectedInvariants.find(x=>x.id===id);
+  assert.equal(item?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",id+" lost production real-shell certification");
+  assert.match(String(item?.productionTest??""),/app-shell-final-e2e\.mjs/,id+" lost production shell test");
+  assert.equal(item?.productionOwner,"R17_NATIVE_PRODUCTION",id+" lost production owner");
+}
+const followingShell=release.protectedInvariants.find(x=>x.id==="FOLLOWING_ACTION_CLUSTER_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(followingShell?.status,"CERTIFIED");
+assert.deepEqual(followingShell?.actions,[
+  "REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GENERIC_PROCESSION"
+]);
+assert.equal(followingShell?.actualIndexHtml,true);
+assert.equal(followingShell?.legacyStartCount,0);
 
 const preMassShell=release.protectedInvariants.find(x=>x.id==="PRE_MASS_CLUSTER_REAL_APP_SHELL_ACCEPTANCE");
 assert.equal(preMassShell?.status,"CERTIFIED");
@@ -304,6 +327,12 @@ assert.match(nativeSource,/getCandlemasMassState/,"native reader lost Candlemas 
 assert.match(nativeSource,/r17ObjectState/,"native reader lost Candlemas object-state observability");
 assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
 assert.match(nativeSource,/createPlanAwareObjectiveRuntime/,"native reader lost plan-aware objective runtime");
+assert.match(nativeSource,/createFormLifecycleRuntime/,"native reader lost form lifecycle runtime");
+assert.match(nativeSource,/createRequiemAbsolutionReaderController/,"native reader lost Requiem Absolution following action");
+assert.match(nativeSource,/createCorpusChristiProcessionReaderController/,"native reader lost Corpus Christi following action");
+assert.match(nativeSource,/createHolyThursdayPostReaderController/,"native reader lost Holy Thursday following action");
+assert.match(nativeSource,/createGenericProcessionReaderController/,"native reader lost Generic Procession following action");
+assert.match(nativeSource,/planAwareCard/,"native reader lost plan-aware ending filter");
 assert.match(nativeSource,/objectiveRuntime\.allows/,"native reader stopped enforcing planned objective traversal");
 assert.match(nativeSource,/typeof readLegacyActive==="function"/,"native reader no longer gates legacy observation explicitly");
 assert.match(nativeSource,/r17OwnerPriestAction/,"native reader lost priest-action ownership diagnostics");
