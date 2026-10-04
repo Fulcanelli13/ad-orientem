@@ -5,16 +5,15 @@ const calls=[];
 const root={dataset:{},classList:{contains:name=>name==="open"}};
 const win={
   document:{getElementById:id=>id==="aoPray435930"?root:null},
-  setTimeout(fn){fn();},
   AO_PRAY_V435930:{
-    open(id,options){calls.push(["open",id,options]);return true;},
+    open(id,options){calls.push(["open",id,options]);},
     close(){calls.push(["close"]);},
     state(){return {rosary:{recitation:"individual"}};},
   },
   AO_APP_SHELL_V1:{syncSurface(surface){calls.push(["surface",surface]);}},
 };
 const pray=createPrayOwner(win);
-assert.equal(await pray.open(),true);
+assert.equal(pray.open(),true);
 assert.deepEqual(calls[0],["open","pray.hub",{returnContext:null}]);
 assert.equal(root.dataset.aoPrayOwner,"modular-pray-v1");
 assert.deepEqual(calls[1],["surface","pray"]);
@@ -24,17 +23,28 @@ assert.equal(pray.status().donorAvailable,true);
 assert.equal(pray.close(),true);
 assert.deepEqual(calls[2],["close"]);
 
-let polls=0;
-const delayed={
-  document:{getElementById:()=>root},
-  setTimeout(fn){polls+=1;if(polls===2)delayed.AO_PRAY_V435930=win.AO_PRAY_V435930;fn();},
-  AO_APP_SHELL_V1:win.AO_APP_SHELL_V1,
+let delayedRoot=null;
+const delayedWin={
+  document:{getElementById:id=>id==="aoPray435930"?delayedRoot:null},
+  queueMicrotask(fn){queueMicrotask(fn);},
+  setTimeout(fn){setTimeout(fn,0);},
+  AO_PRAY_V435930:{
+    open(){
+      queueMicrotask(()=>{
+        delayedRoot={dataset:{},classList:{contains:name=>name==="open"}};
+      });
+      return true;
+    },
+    state(){return {};},
+  },
 };
-const delayedOwner=createPrayOwner(delayed,{pollMs:1,maxPolls:3});
-assert.equal(await delayedOwner.open(),true,"modular PRAY owner did not wait for donor installation");
-assert.ok(polls>=2);
+const delayed=createPrayOwner(delayedWin);
+assert.equal(delayed.open(),true);
+await new Promise(resolve=>setTimeout(resolve,5));
+assert.equal(delayedRoot?.dataset?.aoPrayOwner,"modular-pray-v1");
+assert.equal(delayed.status().visibleOwner,"modular-pray-v1");
 
-const absent=createPrayOwner({document:{getElementById:()=>null},setTimeout(fn){fn();}},{pollMs:1,maxPolls:1});
-assert.equal(await absent.open(),false);
+const absent=createPrayOwner({document:{getElementById:()=>null}});
+assert.equal(absent.open(),false);
 
 console.log("PASS modular PRAY navigation owner");
