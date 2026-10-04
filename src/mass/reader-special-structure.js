@@ -51,11 +51,14 @@ function graphRecords(id,sources){
 }
 
 const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM"]);
+const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","REQUIEM_ABSOLUTION"]);
 
 function segment(id,lane,sources,extra={}){
   const meta=sources.registry?.overlays?.[id]??null;
   const records=graphRecords(id,sources);
   const planOwned=lane==="MASS_OVERLAY" && PLAN_OWNED_MASS_OVERLAYS.has(id);
+  const nativeReader=NATIVE_READER_SEGMENTS.has(id);
+  const renderable=planOwned||nativeReader;
   return freeze({
     id,
     lane,
@@ -64,9 +67,10 @@ function segment(id,lane,sources,extra={}){
     registryStatus:meta?.status??null,
     recordCount:records.length,
     sourceIds:freeze(records.map(x=>x.id)),
-    readerPayload:planOwned ? "PLAN_APPLIED_TO_ORDINARY_READER" : "STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
-    renderable:planOwned,
+    readerPayload:planOwned ? "PLAN_APPLIED_TO_ORDINARY_READER" : nativeReader ? "NATIVE_READER_PAYLOAD" : "STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
+    renderable,
     planOwned,
+    nativeReader,
     ...extra,
   });
 }
