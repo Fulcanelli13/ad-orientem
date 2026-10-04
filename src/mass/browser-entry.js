@@ -162,6 +162,27 @@ export function checkpointPersistedMass({
   }, storage);
 }
 
+function installReaderCloseBridge(preview) {
+  const close = preview?.root?.querySelector?.("[aria-label='Close Mass reader']");
+  if (!close?.addEventListener) return null;
+
+  const onClick = (event) => {
+    const shell = globalThis.AO_APP_SHELL_V1;
+    if (typeof shell?.navigate !== "function") return;
+    event.preventDefault?.();
+    event.stopImmediatePropagation?.();
+    void Promise.resolve(shell.navigate("home")).catch((error) => {
+      console.error("R17 reader close navigation failed", error);
+    });
+  };
+  close.addEventListener("click", onClick, true);
+  return Object.freeze({
+    dispose() {
+      close.removeEventListener?.("click", onClick, true);
+    },
+  });
+}
+
 function installReaderCheckpoint(preview) {
   globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.();
   const root = preview?.root;
@@ -309,6 +330,7 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   const restoredSection = resumeRecord?.readerPosition?.sectionId ?? null;
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
   installReaderCheckpoint(previewState.preview);
+  installReaderCloseBridge(previewState.preview);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,prepared,readerUiMode,
