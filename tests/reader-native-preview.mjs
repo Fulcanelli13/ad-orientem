@@ -141,7 +141,7 @@ await assert.rejects(
     },
     presentationData:data,eventData,cueRegistries,guideData
   }),
-  /NATIVE_PREVIEW_PRECEDING_RITE_PENDING:UNSUPPORTED_RITE/,
+  /PRECEDING_RITE_PROJECTION_PENDING|NATIVE_PREVIEW_PRECEDING_RITE_PENDING:UNSUPPORTED_RITE/,
   "native preview stopped failing closed on an unsupported preceding rite"
 );
 
