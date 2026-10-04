@@ -1,0 +1,1583 @@
+{
+  "schema": "ao-r32-good-friday-payload-v1",
+  "rite": "GOOD_FRIDAY",
+  "title": "Good Friday · Solemn Liturgical Action",
+  "source": {
+    "authority": "Missale Romanum 1962 · Feria Sexta in Parasceve",
+    "repository": "DivinumOfficium/divinum-officium",
+    "ref": "8e3a039ae34fcd0fd1583d68f78ac79947d3e8e2",
+    "path": "web/www/missa/Latin/Tempora/Quad6-5.txt",
+    "blobSha": "608809d88d3b0d587e20e53d8ab22d4bde0c865e",
+    "sourceLineCount": 389,
+    "sourceCharacterCount": 32799,
+    "section": "Prelude"
+  },
+  "graph": {
+    "file": "data/mass/special-days-core.v1.1.json",
+    "key": "GF",
+    "recordCount": 56
+  },
+  "invariants": {
+    "distinctRite": true,
+    "ordinaryMassGraphActive": false,
+    "cardVisibilityMayNotFabricateState": true,
+    "passionDeathCue": "GF-PASS-320",
+    "personalVenerationStates": [
+      "GF-VEN-600",
+      "GF-VEN-610",
+      "GF-VEN-620",
+      "GF-VEN-630",
+      "GF-VEN-640"
+    ],
+    "corporateVenerationBranch": "GF-VEN-650",
+    "conclusionEvent": "GF-END-910"
+  },
+  "cards": [
+    {
+      "id": "GF-R01",
+      "title": "Opening · First Lesson",
+      "sourceLines": [
+        10,
+        33
+      ],
+      "graphPhases": [
+        "OPENING",
+        "LESSONS"
+      ],
+      "paragraphs": [
+        {
+          "id": "GF-R01-L015",
+          "kind": "TEXT",
+          "latin": "Hæc dicit Dóminus: In tribulatióne sua mane consúrgent ad me: Veníte, et revertámur ad Dóminum: quia ipse cepit, et sanábit nos: percútiet, et curábit nos. Vivificábit nos post duos dies: in die tértia suscitábit nos, et vivémus in conspéctu ejus. Sciémus, sequemúrque, ut cognoscámus Dóminum: quasi dilúculum præparátus est egréssus ejus, et véniet quasi imber nobis temporáneus et serótinus terræ. Quid fáciam tibi, Ephraim? Quid fáciam tibi, Juda? misericórdia vestra quasi nubes matutína: et quasi ros mane pertránsiens. Propter hoc dolávi in prophétis, occídi eos in verbis oris mei: et judícia tua quasi lux egrediéntur. Quia misericórdiam vólui, et non sacrifícium, et sciéntiam Dei, plus quam holocáusta.",
+          "sourceLine": 15
+        },
+        {
+          "id": "GF-R01-L020",
+          "kind": "VERSICLE",
+          "latin": "v. Dómine, audívi audítum tuum, et tímui: considerávi ópera tua, et expávi.",
+          "sourceLine": 20
+        },
+        {
+          "id": "GF-R01-L021",
+          "kind": "VERSICLE",
+          "latin": "V. In médio duórum animálium innotescéris: dum appropinquáverint anni, cognoscéris: dum advénerit tempus, osténdens,",
+          "sourceLine": 21
+        },
+        {
+          "id": "GF-R01-L022",
+          "kind": "VERSICLE",
+          "latin": "V. In eo, dum conturbáta fúerit ánima mea: in ira, misericórdiæ memor eris.",
+          "sourceLine": 22
+        },
+        {
+          "id": "GF-R01-L023",
+          "kind": "VERSICLE",
+          "latin": "V. Deus a Líbano véniet, et Sanctus de monte umbróso et condénso.",
+          "sourceLine": 23
+        },
+        {
+          "id": "GF-R01-L024",
+          "kind": "VERSICLE",
+          "latin": "V. Opéruit cœlos majéstas ejus: et laudis ejus plena est terra.",
+          "sourceLine": 24
+        },
+        {
+          "id": "GF-R01-L027",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus",
+          "sourceLine": 27
+        },
+        {
+          "id": "GF-R01-L028",
+          "kind": "VERSICLE",
+          "latin": "V. Flectámus génua.",
+          "sourceLine": 28
+        },
+        {
+          "id": "GF-R01-L029",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte.",
+          "sourceLine": 29
+        },
+        {
+          "id": "GF-R01-L030",
+          "kind": "TEXT",
+          "latin": "Deus, a quo et Judas reátus sui pœnam, et confessiónis suæ latro prǽmium sumpsit, concéde nobis tuæ propitiatiónis efféctum: ut, sicut in passióne sua Jesus Christus, Dóminus noster, divérsa utrísque íntulit stipéndia meritórum; ita nobis, abláto vetustátis erróre, resurrectiónis suæ grátiam largiátur:",
+          "sourceLine": 30
+        }
+      ]
+    },
+    {
+      "id": "GF-R02",
+      "title": "Second Lesson",
+      "sourceLines": [
+        34,
+        52
+      ],
+      "graphPhases": [
+        "LESSONS"
+      ],
+      "paragraphs": [
+        {
+          "id": "GF-R02-L036",
+          "kind": "TEXT",
+          "latin": "In diébus illis: Dixit Dóminus ad Móysen et Aaron in terra Ægýpti: Mensis iste vobis princípium ménsium primus erit in ménsibus anni. Loquímini ad univérsum cœtum filiórum Israël, et dícite eis: Décima die mensis hujus tollat unusquísque agnum per famílias et domos suas. Sin autem minor est númerus, ut suffícere possit ad vescéndum agnum, assúmet vicínum suum, qui junctus est dómui suæ, juxta númerum animárum, quæ suffícere possunt ad esum agni. Erit autem agnus absque mácula, másculus, annículus: juxta quem ritum tollétis et hædum. Et servábitis eum usque ad quartam décimam diem mensis hujus: immolabítque eum univérsa multitúdo filiórum Israël ad vésperam. Et sument de sánguine ejus, ac ponent super utrúmque postem et in superlimináribus domórum, in quibus cómedent illum. Et edent carnes nocte illa assas igni, et ázymos panes cum lactúcis agréstibus. Non comedétis ex eo crudum quid nec coctum aqua, sed tantum assum igni: caput cum pédibus ejus et intestínis vorábitis. Nec remanébit quidquam ex eo usque mane. Si quid resíduum fúerit, igne comburétis. Sic autem comedétis illum: Renes vestros accingétis, et calceaménta habébitis in pédibus, tenéntes báculos in mánibus, et comedétis festinánter: est enim Phase - id est tránsitus - Dómini.",
+          "sourceLine": 36
+        },
+        {
+          "id": "GF-R02-L040",
+          "kind": "VERSICLE",
+          "latin": "v. Eripe me, Dómine, ab hómine malo: a viro iníquo líbera me.",
+          "sourceLine": 40
+        },
+        {
+          "id": "GF-R02-L041",
+          "kind": "VERSICLE",
+          "latin": "V. Qui cogitavérunt malítias in corde: tota die constituébant prǽlia.",
+          "sourceLine": 41
+        },
+        {
+          "id": "GF-R02-L042",
+          "kind": "VERSICLE",
+          "latin": "V. Acuérunt linguas suas sicut serpéntis: venénum áspidum sub lábiis eórum.",
+          "sourceLine": 42
+        },
+        {
+          "id": "GF-R02-L043",
+          "kind": "VERSICLE",
+          "latin": "V. Custódi me, Dómine, de manu peccatóris: et ab homínibus iníquis líbera me.",
+          "sourceLine": 43
+        },
+        {
+          "id": "GF-R02-L044",
+          "kind": "VERSICLE",
+          "latin": "V. Qui cogitavérunt supplantáre gressus meos: abscondérunt supérbi láqueum mihi.",
+          "sourceLine": 44
+        },
+        {
+          "id": "GF-R02-L045",
+          "kind": "VERSICLE",
+          "latin": "V. Et funes extendérunt in láqueum pédibus meis: juxta iter scándalum posuérunt mihi.",
+          "sourceLine": 45
+        },
+        {
+          "id": "GF-R02-L046",
+          "kind": "VERSICLE",
+          "latin": "V. Dixi Dómino: Deus meus es tu: exáudi, Dómine, vocem oratiónis meæ.",
+          "sourceLine": 46
+        },
+        {
+          "id": "GF-R02-L047",
+          "kind": "VERSICLE",
+          "latin": "V. Dómine, Dómine, virtus salútis meæ: obúmbra caput meum in die belli.",
+          "sourceLine": 47
+        },
+        {
+          "id": "GF-R02-L048",
+          "kind": "VERSICLE",
+          "latin": "V. Ne tradas me a desidério meo peccatóri: cogitavérunt advérsus me: ne derelínquas me, ne umquam exalténtur.",
+          "sourceLine": 48
+        },
+        {
+          "id": "GF-R02-L049",
+          "kind": "VERSICLE",
+          "latin": "V. Caput circúitus eórum: labor labiórum ipsórum opériet eos.",
+          "sourceLine": 49
+        },
+        {
+          "id": "GF-R02-L050",
+          "kind": "VERSICLE",
+          "latin": "V. Verúmtamen justi confitebúntur nómini tuo: et habitábunt recti cum vultu tuo.",
+          "sourceLine": 50
+        }
+      ]
+    },
+    {
+      "id": "GF-R03",
+      "title": "Passion according to St John",
+      "sourceLines": [
+        53,
+        64
+      ],
+      "graphPhases": [
+        "PASSION"
+      ],
+      "paragraphs": [
+        {
+          "id": "GF-R03-L055",
+          "kind": "VERSICLE",
+          "latin": "v. Pássio Dómini nostri Jesu Christi secúndum Joánnem",
+          "sourceLine": 55
+        },
+        {
+          "id": "GF-R03-L057",
+          "kind": "VERSICLE",
+          "latin": "v. In illo témpore: Egréssus est Jesus cum discípulis suis trans torréntem Cedron, ubi erat hortus, in quem introívit ipse et discípuli ejus. Sciébat autem et Judas, qui tradébat eum, locum: quia frequénter Jesus convénerat illuc cum discípulis suis. Judas ergo cum accepísset cohórtem, et a pontifícibus et pharisǽis minístros, venit illuc cum latérnis et fácibus et armis. Jesus ítaque sciens ómnia, quæ ventúra erant super eum, procéssit, et dixit eis: J. Quem quǽritis? C. Respondérunt ei: S. Jesum Nazarénum. C. Dicit eis Jesus: J. Ego sum. C. Stabat autem et Judas, qui tradébat eum, cum ipsis. Ut ergo dixit eis: Ego sum: abiérunt retrórsum, et cecidérunt in terram. Iterum ergo interrogávit eos: J. Quem quǽritis? C. Illi autem dixérunt: S. Jesum Nazarénum. C. Respóndit Jesus: J. Dixi vobis, quia ego sum: si ergo me quǽritis, sínite hos abíre. C. Ut implerétur sermo, quem dixit: Quia quos dedísti mihi, non pérdidi ex eis quemquam. Simon ergo Petrus habens gládium edúxit eum: et percússit pontíficis servum: et abscídit aurículam ejus déxteram. Erat autem nomen servo Malchus. Dixit ergo Jesus Petro: J. Mitte gládium tuum in vagínam. Cálicem, quem dedit mihi Pater, non bibam illum? C. Cohors ergo et tribúnus et minístri Judæórum comprehendérunt Jesum, et ligavérunt eum: et adduxérunt eum ad Annam primum, erat enim socer Cáiphæ, qui erat póntifex anni illíus. Erat autem Cáiphas, qui consílium déderat Judǽis: Quia éxpedit, unum hóminem mori pro pópulo. Sequebátur autem Jesum Simon Petrus et álius discípulus. Discípulus autem ille erat notus pontífici, et introívit cum Jesu in átrium pontíficis. Petrus autem stabat ad óstium foris. Exívit ergo discípulus álius, qui erat notus pontífici, et dixit ostiáriæ: et introdúxit Petrum. Dicit ergo Petro ancílla ostiária: S. Numquid et tu ex discípulis es hóminis istíus? C. Dicit ille: S. Non sum. C. Stabant autem servi et minístri ad prunas, quia frigus erat, et calefaciébant se: erat autem cum eis et Petrus stans et calefáciens se. Póntifex ergo interrogávit Jesum de discípulis suis et de doctrína ejus. Respóndit ei Jesus: J. Ego palam locútus sum mundo: ego semper dócui in synagóga et in templo, quo omnes Judǽi convéniunt: et in occúlto locútus sum nihil. Quid me intérrogas? Intérroga eos, qui audiérunt, quid locútus sim ipsis: ecce, hi sciunt, quæ díxerim ego. C. Hæc autem cum dixísset, unus assístens ministrórum dedit álapam Jesu, dicens: S. Sic respóndes pontífici? C. Respóndit ei Jesus: J. Si male locútus sum, testimónium pérhibe de malo: si autem bene, quid me cædis? C. Et misit eum Annas ligátum ad Cáipham pontíficem. Erat autem Simon Petrus stans et calefáciens se. Dixérunt ergo ei: S. Numquid et tu ex discípulis ejus es? C. Negávit ille et dixit: S. Non sum. C. Dicit ei unus ex servis pontíficis, cognátus ejus, cujus abscídit Petrus aurículam: S. Nonne ego te vidi in horto cum illo? C. Iterum ergo negávit Petrus: et statim gallus cantávit. Addúcunt ergo Jesum a Cáipha in prætórium. Erat autem mane: et ipsi non introiérunt in prætórium, ut non contaminaréntur, sed ut manducárent pascha. Exívit ergo Pilátus ad eos foras et dixit: S. Quam accusatiónem affértis advérsus hóminem hunc? C. Respondérunt et dixérunt ei: S. Si non esset hic malefáctor, non tibi tradidissémus eum. C. Dixit ergo eis Pilátus: S. Accípite eum vos, et secúndum legem vestram judicáte eum. C. Dixérunt ergo ei Judǽi: S. Nobis non licet interfícere quemquam. C. Ut sermo Jesu implerétur, quem dixit, signíficans, qua morte esset moritúrus. Introívit ergo íterum in prætórium Pilátus, et vocávit Jesum et dixit ei: S. Tu es Rex Judæórum? C. Respóndit Jesus: J. A temetípso hoc dicis, an álii dixérunt tibi de me? C. Respóndit Pilátus: S. Numquid ego Judǽus sum? Gens tua et pontífices tradidérunt te mihi: quid fecísti? C. Respóndit Jesus: J. Regnum meum non est de hoc mundo. Si ex hoc mundo esset regnum meum, minístri mei útique decertárent, ut non tráderer Judǽis: nunc autem regnum meum non est hinc. C. Dixit ítaque ei Pilátus: S. Ergo Rex es tu? C. Respóndit Jesus: J. Tu dicis, quia Rex sum ego. Ego in hoc natus sum et ad hoc veni in mundum, ut testimónium perhíbeam veritáti: omnis, qui est ex veritáte, audit vocem meam. C. Dicit ei Pilátus: S. Quid est véritas? C. Et cum hoc dixísset, íterum exívit ad Judǽos, et dicit eis: S. Ego nullam invénio in eo causam. Est autem consuetúdo vobis, ut unum dimíttam vobis in Pascha: vultis ergo dimíttam vobis Regem Judæórum? C. Clamavérunt ergo rursum omnes, dicéntes: S. Non hunc, sed Barábbam. C. Erat autem Barábbas latro. Tunc ergo apprehéndit Pilátus Jesum et flagellávit. Et mílites plecténtes corónam de spinis, imposuérunt cápiti ejus: et veste purpúrea circumdedérunt eum. Et veniébant ad eum, et dicébant: S. Ave, Rex Judæórum. C. Et dabant ei álapas. Exívit ergo íterum Pilátus foras et dicit eis: S. Ecce, addúco vobis eum foras, ut cognoscátis, quia nullam invénio in eo causam. C. Exívit ergo Jesus portans corónam spíneam et purpúreum vestiméntum. Et dicit eis: S. Ecce homo. C. Cum ergo vidíssent eum pontífices et minístri, clamábant, dicéntes: S. Crucifíge, crucifíge eum. C. Dicit eis Pilátus: S. Accípite eum vos et crucifígite: ego enim non invénio in eo causam. C. Respondérunt ei Judǽi: S. Nos legem habémus, et secúndum legem debet mori, quia Fílium Dei se fecit. C. Cum ergo audísset Pilátus hunc sermónem, magis tímuit. Et ingréssus est prætórium íterum: et dixit ad Jesum: S. Unde es tu? C. Jesus autem respónsum non dedit ei. Dicit ergo ei Pilátus: S. Mihi non loquéris? Nescis, quia  potestátem hábeo crucifígere te, et potestátem hábeo dimíttere te? C. Respóndit Jesus: J. Non habéres potestátem advérsum me ullam, nisi tibi datum esset désuper. Proptérea, qui me trádidit tibi, majus peccátum habet. C. Et exínde quærébat Pilátus dimíttere eum. Judǽi autem clamábant dicéntes: S. Si hunc dimíttis, non es amícus Cǽsaris. Omnis enim, qui se regem facit, contradícit Cǽsari. C. Pilátus autem cum audísset hos sermónes, addúxit foras Jesum, et sedit pro tribunáli, in loco, qui dícitur Lithóstrotos, hebráice autem Gábbatha. Erat autem Parascéve Paschæ, hora quasi sexta, et dicit Judǽis: S. Ecce Rex vester. C. Illi autem clamábant: S. Tolle, tolle, crucifíge eum. C. Dicit eis Pilátus: S. Regem vestrum crucifígam? C. Respondérunt pontífices: S. Non habémus regem nisi Cǽsarem. C. Tunc ergo trádidit eis illum, ut crucifigerétur. Suscepérunt autem Jesum et eduxérunt. Et bájulans sibi crucem, exívit in eum, qui dícitur Calváriæ, locum, hebráice autem Gólgotha: ubi crucifixérunt eum, et cum eo álios duos, hinc et hinc, médium autem Jesum. Scripsit autem et títulum Pilátus: et pósuit super crucem. Erat autem scriptum: Jesus Nazarénus, Rex Judæórum. Hunc ergo títulum multi Judæórum legérunt, quia prope civitátem erat locus, ubi crucifíxus est Jesus. Et erat scriptum hebráice, græce et latíne. Dicébant ergo Piláto pontífices Judæórum: S. Noli scríbere Rex Judæórum, sed quia ipse dixit: Rex sum Judæórum. C. Respóndit Pilátus: S. Quod scripsi, scripsi. C. Mílites ergo cum crucifixíssent eum, accepérunt vestiménta ejus et fecérunt quátuor partes: unicuíque míliti partem, et túnicam. Erat autem túnica inconsútilis, désuper contéxta per totum. Dixérunt ergo ad ínvicem: S. Non scindámus eam, sed sortiámur de illa, cujus sit. C. Ut Scriptúra implerétur, dicens: Partíti sunt vestiménta mea sibi: et in vestem meam misérunt sortem. Et mílites quidem hæc fecérunt. Stabant autem juxta crucem Jesu Mater ejus et soror Matris ejus, María Cléophæ, et María Magdaléne. Cum vidísset ergo Jesus Matrem et discípulum stantem, quem diligébat, dicit Matri suæ: J. Múlier, ecce fílius tuus. C. Deínde dicit discípulo: J. Ecce mater tua. C. Et ex illa hora accépit eam discípulus in sua. Póstea sciens Jesus, quia ómnia consummáta sunt, ut consummarétur Scriptúra, dixit: J. Sítio. C. Vas ergo erat pósitum acéto plenum. Illi autem spóngiam plenam acéto, hyssópo circumponéntes, obtulérunt ori ejus. Cum ergo accepísset Jesus acétum, dixit: J. Consummátum est. C. Et inclináto cápite trádidit spíritum.",
+          "sourceLine": 57
+        },
+        {
+          "id": "GF-R03-L059",
+          "kind": "TEXT",
+          "latin": "C. Judǽi ergo - quóniam Parascéve erat - ut non remanérent in cruce córpora sábbato - erat enim magnus dies ille sábbati - rogavérunt Pilátum, ut frangeréntur eórum crura et tolleréntur. Venérunt ergo mílites: et primi quidem fregérunt crura et altérius, qui crucifíxus est cum eo. Ad Jesum autem cum veníssent, ut vidérunt eum jam mórtuum, non fregérunt ejus crura, sed unus mílitum láncea latus ejus apéruit, et contínuo exívit sanguis et aqua. Et qui vidit, testimónium perhíbuit: et verum est testimónium ejus. Et ille scit, quia vera dicit: ut et vos credátis. Facta sunt enim hæc, ut Scriptúra implerétur: Os non comminuétis ex eo. Et íterum ália Scriptúra dicit: Vidébunt in quem transfixérunt.",
+          "sourceLine": 59
+        },
+        {
+          "id": "GF-R03-L062",
+          "kind": "VERSICLE",
+          "latin": "v. Munda cor meum ac lábia mea, omnípotens Deus, qui lábia Isaíæ Prophétæ cálculo mundásti igníto: ita me tua grata miseratióne dignáre mundáre, ut sanctum Evangélium tuum digne váleam nuntiáre. Per Christum, Dóminum nostrum. Amen.",
+          "sourceLine": 62
+        },
+        {
+          "id": "GF-R03-L064",
+          "kind": "VERSICLE",
+          "latin": "v. Post hæc autem rogávit Pilátum Joseph ab Arimathǽa - eo quod esset discípulus Jesu - occúltus autem propter metum Judæórum, ut tólleret corpus Jesu. Et permísit Pilátus. Venit ergo et tulit corpus Jesu. Venit autem et Nicodémus, qui vénerat ad Jesum nocte primum, ferens mixtúram myrrhæ et áloës, quasi libras centum. Accepérunt ergo corpus Jesu, et ligavérunt illud línteis cum aromátibus, sicut mos est Judǽis sepelíre. Erat autem in loco, ubi crucifíxus est, hortus: et in horto monuméntum novum, in quo nondum quisquam pósitus erat. Ibi ergo propter Parascéven Judæórum, quia juxta erat monuméntum, posuérunt Jesum.",
+          "sourceLine": 64
+        }
+      ]
+    },
+    {
+      "id": "GF-R04",
+      "title": "Solemn Prayers",
+      "sourceLines": [
+        65,
+        156
+      ],
+      "graphPhases": [
+        "SOLEMN_PRAYERS"
+      ],
+      "paragraphs": [
+        {
+          "id": "GF-R04-L070",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus, dilectíssimi nobis, pro Ecclésia sancta Dei: ut eam Deus et Dóminus noster pacificáre, adunáre, et custodíre dignétur toto orbe terrárum: subjíciens ei principátus et potestátes: detque nobis quietam et tranquíllam vitam degentibus, glorificáre Deum, Patrem omnipoténtem.",
+          "sourceLine": 70
+        },
+        {
+          "id": "GF-R04-L072",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus.",
+          "sourceLine": 72
+        },
+        {
+          "id": "GF-R04-L073",
+          "kind": "VERSICLE",
+          "latin": "D. Flectámus génua.",
+          "sourceLine": 73
+        },
+        {
+          "id": "GF-R04-L074",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte.",
+          "sourceLine": 74
+        },
+        {
+          "id": "GF-R04-L075",
+          "kind": "VERSICLE",
+          "latin": "v. Omnípotens sempitérne Deus, qui glóriam tuam ómnibus in Christo géntibus revelásti: custódi ópera misericórdiæ tuæ; ut Ecclésia tua, toto orbe diffúsa, stábili fide in confessióne tui nóminis persevéret.",
+          "sourceLine": 75
+        },
+        {
+          "id": "GF-R04-L080",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus et pro beatíssimo Papa nostro N. . . . ut Deus et Dóminus noster, qui elégit eum in órdine episcopátus, salvum atque incólumem custódiat Ecclésiæ suæ sanctæ, ad regéndum pópulum sanctum Dei.",
+          "sourceLine": 80
+        },
+        {
+          "id": "GF-R04-L082",
+          "kind": "VERSICLE",
+          "latin": "v. Oremus",
+          "sourceLine": 82
+        },
+        {
+          "id": "GF-R04-L083",
+          "kind": "VERSICLE",
+          "latin": "D. Flectámus génua.",
+          "sourceLine": 83
+        },
+        {
+          "id": "GF-R04-L084",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte.",
+          "sourceLine": 84
+        },
+        {
+          "id": "GF-R04-L085",
+          "kind": "VERSICLE",
+          "latin": "v. Deus, cujus judício univérsa fundántur: réspice propítius ad preces nostras, et electum nobis Antístitem tua pietáte consérva; ut christiána plebs, quæ te gubernátur auctóre, sub tanto Pontífice, credulitátis suæ méritis augeátur.",
+          "sourceLine": 85
+        },
+        {
+          "id": "GF-R04-L090",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus et pro ómnibus Epíscopis, Presbýteris, Diacónibus, Subdiacónibus, Acólythis, Exorcístis, Lectóribus, Ostiáriis, Confessóribus, Virgínibus, Víduis: et pro omni pópulo sancto Dei.",
+          "sourceLine": 90
+        },
+        {
+          "id": "GF-R04-L092",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus.",
+          "sourceLine": 92
+        },
+        {
+          "id": "GF-R04-L093",
+          "kind": "VERSICLE",
+          "latin": "D. Flectámus génua.",
+          "sourceLine": 93
+        },
+        {
+          "id": "GF-R04-L094",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte.",
+          "sourceLine": 94
+        },
+        {
+          "id": "GF-R04-L095",
+          "kind": "VERSICLE",
+          "latin": "v. Deus, cujus Spíritu totum corpus Ecclésiæ sanctificátur et régitur: exáudi nos pro univérsis ordínibus supplicántes; ut, grátiæ tuæ múnere, ab ómnibus tibi grádibus fidéliter serviátur.",
+          "sourceLine": 95
+        },
+        {
+          "id": "GF-R04-L101",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus et pro Christianíssimo Imperatóre nostro N. ut Deus, et Dóminus noster súbditas illi fáciat omnes bárbaras natiónes, ad nostram perpétuam pacem.",
+          "sourceLine": 101
+        },
+        {
+          "id": "GF-R04-L103",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus.",
+          "sourceLine": 103
+        },
+        {
+          "id": "GF-R04-L104",
+          "kind": "VERSICLE",
+          "latin": "D. Flectámus génua.",
+          "sourceLine": 104
+        },
+        {
+          "id": "GF-R04-L105",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte.",
+          "sourceLine": 105
+        },
+        {
+          "id": "GF-R04-L106",
+          "kind": "VERSICLE",
+          "latin": "v. Omnípotens sempitérne Deus, in cujus manu sunt ómnium potestátes, et ómnium jura regnórum: réspice ad Románum benígnus Impérium; ut gentes, quæ in sua feritáte confídunt, poténtiæ tuæ déxtera comprimántur.",
+          "sourceLine": 106
+        },
+        {
+          "id": "GF-R04-L111",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus et pro catechúmenis nostris: ut Deus et Dóminus noster adapériat aures præcordiórum ipsórum januámque misericordiæ; ut, per lavácrum regeneratiónis accépta remissióne ómnium peccatórum, et ipsi inveniántur in Christo Jesu, Dómino nostro.",
+          "sourceLine": 111
+        },
+        {
+          "id": "GF-R04-L113",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus.",
+          "sourceLine": 113
+        },
+        {
+          "id": "GF-R04-L114",
+          "kind": "VERSICLE",
+          "latin": "D. Flectámus génua.",
+          "sourceLine": 114
+        },
+        {
+          "id": "GF-R04-L115",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte.",
+          "sourceLine": 115
+        },
+        {
+          "id": "GF-R04-L116",
+          "kind": "VERSICLE",
+          "latin": "v. Omnípotens sempitérne Deus, qui Ecclésiam tuam nova semper prole fecúndas: auge fidem et intellectum catechúmenis nostris; ut, renáti fonte baptismátis, adoptiónis tuæ fíliis aggregéntur.",
+          "sourceLine": 116
+        },
+        {
+          "id": "GF-R04-L121",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus, dilectíssimi nobis, Deum Patrem omnipoténtem, ut cunctis mundum purget erróribus: morbos áuferat: famem depéllat: apériat cárceres: víncula dissólvat: peregrinántibus réditum: infirmántibus sanitátem: navigántibus portum salútis indúlgeat.",
+          "sourceLine": 121
+        },
+        {
+          "id": "GF-R04-L123",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus.",
+          "sourceLine": 123
+        },
+        {
+          "id": "GF-R04-L124",
+          "kind": "VERSICLE",
+          "latin": "D. Flectámus génua.",
+          "sourceLine": 124
+        },
+        {
+          "id": "GF-R04-L125",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte.",
+          "sourceLine": 125
+        },
+        {
+          "id": "GF-R04-L126",
+          "kind": "VERSICLE",
+          "latin": "v. Omnípotens sempitérne Deus, mæstórum consolátio, laborántium fortitúdo: pervéniant ad te preces de quacúmque tribulatióne clamántium; ut omnes sibi in necessitátibus suis misericórdiam tuam gáudeant affuísse.",
+          "sourceLine": 126
+        },
+        {
+          "id": "GF-R04-L131",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus et pro hæréticis et schismáticis: ut Deus et Dóminus noster éruat eos ab erróribus univérsis; et ad sanctam matrem Ecclésiam Cathólicam atque Apostólicam revocáre dignétur.",
+          "sourceLine": 131
+        },
+        {
+          "id": "GF-R04-L133",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus.",
+          "sourceLine": 133
+        },
+        {
+          "id": "GF-R04-L134",
+          "kind": "VERSICLE",
+          "latin": "D. Flectámus génua.",
+          "sourceLine": 134
+        },
+        {
+          "id": "GF-R04-L135",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte",
+          "sourceLine": 135
+        },
+        {
+          "id": "GF-R04-L136",
+          "kind": "VERSICLE",
+          "latin": "v. Omnípotens sempitérne Deus, qui salvas omnes, et néminem vis períre: réspice ad ánimas diabólica fraude decéptas; ut, omni hærética pravitáte depósita, errántium corda resipíscant, et ad veritátis tuæ rédeant unitátem.",
+          "sourceLine": 136
+        },
+        {
+          "id": "GF-R04-L141",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus et pro pérfidis Judǽis: ut Deus et Dóminus noster áuferat velámen de córdibus eórum; ut et ipsi agnóscant Jesum Christum, Dóminum nostrum.",
+          "sourceLine": 141
+        },
+        {
+          "id": "GF-R04-L143",
+          "kind": "VERSICLE",
+          "latin": "v. Omnípotens sempitérne Deus, qui étiam judáicam perfídiam a tua misericórdia non repéllis: exáudi preces nostras, quas pro illíus pópuli obcæcatióne deférimus; ut, ágnita veritátis tuæ luce, quæ Christus est, a suis ténebris eruántur.",
+          "sourceLine": 143
+        },
+        {
+          "id": "GF-R04-L148",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus et pro pagánis: ut Deus omnípotens áuferat iniquitátem a córdibus eórum; ut, relíctis idólis suis, convertántur ad Deum vivum et verum, et únicum Fílium ejus Jesum Christum, Deum et Dóminum nostrum.",
+          "sourceLine": 148
+        },
+        {
+          "id": "GF-R04-L150",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus.",
+          "sourceLine": 150
+        },
+        {
+          "id": "GF-R04-L151",
+          "kind": "VERSICLE",
+          "latin": "D. Flectámus génua.",
+          "sourceLine": 151
+        },
+        {
+          "id": "GF-R04-L152",
+          "kind": "RESPONSE",
+          "latin": "R. Leváte.",
+          "sourceLine": 152
+        },
+        {
+          "id": "GF-R04-L153",
+          "kind": "VERSICLE",
+          "latin": "v. Omnípotens sempitérne Deus, qui non mortem peccatórum, sed vitam semper inquíris: súscipe propítius oratiónem nostram, et líbera eos ab idolórum cultúra; et ággrega Ecclésiæ tuæ sanctæ, ad laudem et glóriam nóminis tui.",
+          "sourceLine": 153
+        }
+      ]
+    },
+    {
+      "id": "GF-R05",
+      "title": "Unveiling of the Cross",
+      "sourceLines": [
+        157,
+        166
+      ],
+      "graphPhases": [
+        "CROSS"
+      ],
+      "paragraphs": [
+        {
+          "id": "GF-R05-L160",
+          "kind": "VERSICLE",
+          "latin": "v. Ecce lignum Crucis, in quo salus mundi pepéndit.",
+          "sourceLine": 160
+        },
+        {
+          "id": "GF-R05-L161",
+          "kind": "RESPONSE",
+          "latin": "R. Veníte, adorémus.",
+          "sourceLine": 161
+        },
+        {
+          "id": "GF-R05-L162",
+          "kind": "VERSICLE",
+          "latin": "v. Ecce lignum Crucis, in quo salus mundi pepéndit.",
+          "sourceLine": 162
+        },
+        {
+          "id": "GF-R05-L163",
+          "kind": "RESPONSE",
+          "latin": "R. Veníte, adorémus.",
+          "sourceLine": 163
+        },
+        {
+          "id": "GF-R05-L164",
+          "kind": "VERSICLE",
+          "latin": "v. Ecce lignum Crucis, in quo salus mundi pepéndit.",
+          "sourceLine": 164
+        },
+        {
+          "id": "GF-R05-L165",
+          "kind": "RESPONSE",
+          "latin": "R. Veníte, adorémus.",
+          "sourceLine": 165
+        }
+      ]
+    },
+    {
+      "id": "GF-R06",
+      "title": "Veneration of the Cross",
+      "sourceLines": [
+        167,
+        299
+      ],
+      "graphPhases": [
+        "CROSS_VENERATION",
+        "CROSS"
+      ],
+      "paragraphs": [
+        {
+          "id": "GF-R06-L168",
+          "kind": "VERSICLE",
+          "latin": "V. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 168
+        },
+        {
+          "id": "GF-R06-L169",
+          "kind": "VERSICLE",
+          "latin": "V. Quia edúxi te de terra Ægýpti: parásti Crucem Salvatóri tuo.",
+          "sourceLine": 169
+        },
+        {
+          "id": "GF-R06-L170",
+          "kind": "RESPONSE",
+          "latin": "R. Agios o Theós.",
+          "sourceLine": 170
+        },
+        {
+          "id": "GF-R06-L171",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus Deus.",
+          "sourceLine": 171
+        },
+        {
+          "id": "GF-R06-L172",
+          "kind": "RESPONSE",
+          "latin": "R. Agios ischyrós.",
+          "sourceLine": 172
+        },
+        {
+          "id": "GF-R06-L173",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus fortis.",
+          "sourceLine": 173
+        },
+        {
+          "id": "GF-R06-L174",
+          "kind": "RESPONSE",
+          "latin": "R. Agios athánatos, eléison imas.",
+          "sourceLine": 174
+        },
+        {
+          "id": "GF-R06-L175",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus immortális, miserére nobis.",
+          "sourceLine": 175
+        },
+        {
+          "id": "GF-R06-L177",
+          "kind": "VERSICLE",
+          "latin": "V. Quia edúxi te per desértum quadragínta annis, et manna cibávi te, et introdúxi te in terram satis bonam: parásti Crucem Salvatóri tuo.",
+          "sourceLine": 177
+        },
+        {
+          "id": "GF-R06-L178",
+          "kind": "RESPONSE",
+          "latin": "R. Agios o Theós.",
+          "sourceLine": 178
+        },
+        {
+          "id": "GF-R06-L179",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus Deus.",
+          "sourceLine": 179
+        },
+        {
+          "id": "GF-R06-L180",
+          "kind": "RESPONSE",
+          "latin": "R. Agios ischyrós.",
+          "sourceLine": 180
+        },
+        {
+          "id": "GF-R06-L181",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus fortis.",
+          "sourceLine": 181
+        },
+        {
+          "id": "GF-R06-L182",
+          "kind": "RESPONSE",
+          "latin": "R. Agios athánatos, eléison imas.",
+          "sourceLine": 182
+        },
+        {
+          "id": "GF-R06-L183",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus immortális, miserére nobis.",
+          "sourceLine": 183
+        },
+        {
+          "id": "GF-R06-L185",
+          "kind": "VERSICLE",
+          "latin": "V. Quid ultra débui fácere tibi, et non feci? Ego quidem plantávi te víneam meam speciosíssimam: et tu facta es mihi nimis amára: acéto namque sitim meam potásti: et láncea perforásti latus Salvatóri tuo.",
+          "sourceLine": 185
+        },
+        {
+          "id": "GF-R06-L186",
+          "kind": "RESPONSE",
+          "latin": "R. Agios o Theós.",
+          "sourceLine": 186
+        },
+        {
+          "id": "GF-R06-L187",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus Deus.",
+          "sourceLine": 187
+        },
+        {
+          "id": "GF-R06-L188",
+          "kind": "RESPONSE",
+          "latin": "R. Agios ischyrós.",
+          "sourceLine": 188
+        },
+        {
+          "id": "GF-R06-L189",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus fortis.",
+          "sourceLine": 189
+        },
+        {
+          "id": "GF-R06-L190",
+          "kind": "RESPONSE",
+          "latin": "R. Agios athánatos, eléison imas.",
+          "sourceLine": 190
+        },
+        {
+          "id": "GF-R06-L191",
+          "kind": "RESPONSE",
+          "latin": "R. Sanctus immortális, miserére nobis.",
+          "sourceLine": 191
+        },
+        {
+          "id": "GF-R06-L193",
+          "kind": "VERSICLE",
+          "latin": "V. Ego propter te flagellávi Ægýptum cum primogénitis suis: et tu me flagellátum tradidísti.",
+          "sourceLine": 193
+        },
+        {
+          "id": "GF-R06-L194",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 194
+        },
+        {
+          "id": "GF-R06-L195",
+          "kind": "VERSICLE",
+          "latin": "V. Ego edúxi te de Ægýpto, demérso Pharaóne in Mare Rubrum: et tu me tradidísti princípibus sacerdótum.",
+          "sourceLine": 195
+        },
+        {
+          "id": "GF-R06-L196",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 196
+        },
+        {
+          "id": "GF-R06-L197",
+          "kind": "VERSICLE",
+          "latin": "V. Ego ante te apérui mare: et tu aperuísti láncea latus meum.",
+          "sourceLine": 197
+        },
+        {
+          "id": "GF-R06-L198",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 198
+        },
+        {
+          "id": "GF-R06-L199",
+          "kind": "VERSICLE",
+          "latin": "V. Ego ante te præívi in colúmna nubis: et tu me duxísti ad prætórium Piláti.",
+          "sourceLine": 199
+        },
+        {
+          "id": "GF-R06-L200",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 200
+        },
+        {
+          "id": "GF-R06-L201",
+          "kind": "VERSICLE",
+          "latin": "V. Ego te pavi manna per desértum: et tu me cecidísti álapis et flagéllis.",
+          "sourceLine": 201
+        },
+        {
+          "id": "GF-R06-L202",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 202
+        },
+        {
+          "id": "GF-R06-L203",
+          "kind": "VERSICLE",
+          "latin": "V. Ego te potávi aqua salútis de petra: et tu me potásti felle et acéto.",
+          "sourceLine": 203
+        },
+        {
+          "id": "GF-R06-L204",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 204
+        },
+        {
+          "id": "GF-R06-L205",
+          "kind": "VERSICLE",
+          "latin": "V. Ego propter te Chananæórum reges percússi: et tu percussísti arúndine caput meum.",
+          "sourceLine": 205
+        },
+        {
+          "id": "GF-R06-L206",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 206
+        },
+        {
+          "id": "GF-R06-L207",
+          "kind": "VERSICLE",
+          "latin": "V. Ego dedi tibi sceptrum regale: et tu dedísti capiti meo spíneam coronam.",
+          "sourceLine": 207
+        },
+        {
+          "id": "GF-R06-L208",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 208
+        },
+        {
+          "id": "GF-R06-L209",
+          "kind": "VERSICLE",
+          "latin": "V. Ego te exaltávi magna virtúte: et tu me suspendísti in patíbulo Crucis.",
+          "sourceLine": 209
+        },
+        {
+          "id": "GF-R06-L210",
+          "kind": "RESPONSE",
+          "latin": "R. Pópule meus, quid feci tibi? aut in quo contristávi te? respónde mihi.",
+          "sourceLine": 210
+        },
+        {
+          "id": "GF-R06-L211",
+          "kind": "VERSICLE",
+          "latin": "V. Crucem tuam adorámus, Dómine: et sanctam resurrectiónem tuam laudámus et glorificámus: ecce enim, propter lignum venit gaudium in univérso mundo.",
+          "sourceLine": 211
+        },
+        {
+          "id": "GF-R06-L214",
+          "kind": "VERSICLE",
+          "latin": "V. Deus misereátur nostri et benedícat nobis: Illúminet vultum suum super nos et misereátur nostri.",
+          "sourceLine": 214
+        },
+        {
+          "id": "GF-R06-L215",
+          "kind": "RESPONSE",
+          "latin": "R. Crucem tuam adorámus, Dómine: et sanctam resurrectiónem tuam laudámus et glorificámus: ecce enim, propter lignum venit gáudium in univérso mundo.",
+          "sourceLine": 215
+        },
+        {
+          "id": "GF-R06-L219",
+          "kind": "TEXT",
+          "latin": "Ant. Crux fidélis, inter omnes arbor una nóbilis: nulla silva talem profert fronde, flore, gérmine. * Dulce lignum dulces clavos, dulce pondus sústinet.",
+          "sourceLine": 219
+        },
+        {
+          "id": "GF-R06-L220",
+          "kind": "VERSICLE",
+          "latin": "v. Pange, lingua, gloriósi",
+          "sourceLine": 220
+        },
+        {
+          "id": "GF-R06-L221",
+          "kind": "TEXT",
+          "latin": "láuream certáminis,",
+          "sourceLine": 221
+        },
+        {
+          "id": "GF-R06-L222",
+          "kind": "TEXT",
+          "latin": "et super Crucis trophæo",
+          "sourceLine": 222
+        },
+        {
+          "id": "GF-R06-L223",
+          "kind": "TEXT",
+          "latin": "dic triúmphum nóbilem:",
+          "sourceLine": 223
+        },
+        {
+          "id": "GF-R06-L224",
+          "kind": "TEXT",
+          "latin": "quáliter Redémptor orbis",
+          "sourceLine": 224
+        },
+        {
+          "id": "GF-R06-L225",
+          "kind": "TEXT",
+          "latin": "immolátus vícerit.",
+          "sourceLine": 225
+        },
+        {
+          "id": "GF-R06-L227",
+          "kind": "TEXT",
+          "latin": "Ant. Crux fidélis, inter omnes arbor una nóbilis: nulla silva talem profert fronde, flore, gérmine.",
+          "sourceLine": 227
+        },
+        {
+          "id": "GF-R06-L228",
+          "kind": "VERSICLE",
+          "latin": "v. De paréntis protoplásti",
+          "sourceLine": 228
+        },
+        {
+          "id": "GF-R06-L229",
+          "kind": "TEXT",
+          "latin": "fraude Factor cóndolens,",
+          "sourceLine": 229
+        },
+        {
+          "id": "GF-R06-L230",
+          "kind": "TEXT",
+          "latin": "quando pomi noxiális",
+          "sourceLine": 230
+        },
+        {
+          "id": "GF-R06-L231",
+          "kind": "TEXT",
+          "latin": "in necem morsu ruit:",
+          "sourceLine": 231
+        },
+        {
+          "id": "GF-R06-L232",
+          "kind": "TEXT",
+          "latin": "ipse lignum tunc notávit,",
+          "sourceLine": 232
+        },
+        {
+          "id": "GF-R06-L233",
+          "kind": "TEXT",
+          "latin": "damna ligni ut sólveret.",
+          "sourceLine": 233
+        },
+        {
+          "id": "GF-R06-L235",
+          "kind": "TEXT",
+          "latin": "Ant. Dulce lignum dulces clavos, dulce pondus sústinet.",
+          "sourceLine": 235
+        },
+        {
+          "id": "GF-R06-L236",
+          "kind": "VERSICLE",
+          "latin": "v. Hoc opus nostræ salútis",
+          "sourceLine": 236
+        },
+        {
+          "id": "GF-R06-L237",
+          "kind": "TEXT",
+          "latin": "ordo depopóscerat:",
+          "sourceLine": 237
+        },
+        {
+          "id": "GF-R06-L238",
+          "kind": "TEXT",
+          "latin": "multifórmis proditóris",
+          "sourceLine": 238
+        },
+        {
+          "id": "GF-R06-L239",
+          "kind": "TEXT",
+          "latin": "ars ut artem fálleret:",
+          "sourceLine": 239
+        },
+        {
+          "id": "GF-R06-L240",
+          "kind": "TEXT",
+          "latin": "et medélam ferret inde,",
+          "sourceLine": 240
+        },
+        {
+          "id": "GF-R06-L241",
+          "kind": "TEXT",
+          "latin": "hostis unde lǽserat.",
+          "sourceLine": 241
+        },
+        {
+          "id": "GF-R06-L243",
+          "kind": "TEXT",
+          "latin": "Ant. Crux fidélis, inter omnes arbor una nóbilis: nulla silva talem profert fronde, flore, gérmine.",
+          "sourceLine": 243
+        },
+        {
+          "id": "GF-R06-L244",
+          "kind": "VERSICLE",
+          "latin": "v. Quando venit ergo sacri",
+          "sourceLine": 244
+        },
+        {
+          "id": "GF-R06-L245",
+          "kind": "TEXT",
+          "latin": "plenitúdo témporis,",
+          "sourceLine": 245
+        },
+        {
+          "id": "GF-R06-L246",
+          "kind": "TEXT",
+          "latin": "missus est ab arce Patris",
+          "sourceLine": 246
+        },
+        {
+          "id": "GF-R06-L247",
+          "kind": "TEXT",
+          "latin": "Natus, orbis Cónditor:",
+          "sourceLine": 247
+        },
+        {
+          "id": "GF-R06-L248",
+          "kind": "TEXT",
+          "latin": "atque ventre virgináli",
+          "sourceLine": 248
+        },
+        {
+          "id": "GF-R06-L249",
+          "kind": "TEXT",
+          "latin": "carne amíctus pródiit.",
+          "sourceLine": 249
+        },
+        {
+          "id": "GF-R06-L251",
+          "kind": "TEXT",
+          "latin": "Ant. Dulce lignum dulces clavos, dulce pondus sústinet.",
+          "sourceLine": 251
+        },
+        {
+          "id": "GF-R06-L252",
+          "kind": "VERSICLE",
+          "latin": "v. Vagit Infans inter arcta",
+          "sourceLine": 252
+        },
+        {
+          "id": "GF-R06-L253",
+          "kind": "TEXT",
+          "latin": "cónditus præsépia:",
+          "sourceLine": 253
+        },
+        {
+          "id": "GF-R06-L254",
+          "kind": "TEXT",
+          "latin": "membra pannis involúta",
+          "sourceLine": 254
+        },
+        {
+          "id": "GF-R06-L255",
+          "kind": "TEXT",
+          "latin": "Virgo Mater álligat:",
+          "sourceLine": 255
+        },
+        {
+          "id": "GF-R06-L256",
+          "kind": "TEXT",
+          "latin": "et Dei manus pedésque",
+          "sourceLine": 256
+        },
+        {
+          "id": "GF-R06-L257",
+          "kind": "TEXT",
+          "latin": "stricta cingit fáscia.",
+          "sourceLine": 257
+        },
+        {
+          "id": "GF-R06-L259",
+          "kind": "TEXT",
+          "latin": "Ant. Crux fidélis, inter omnes arbor una nóbilis: nulla silva talem profert fronde, flore, gérmine.",
+          "sourceLine": 259
+        },
+        {
+          "id": "GF-R06-L260",
+          "kind": "VERSICLE",
+          "latin": "v. Lustra sex qui jam perégit,",
+          "sourceLine": 260
+        },
+        {
+          "id": "GF-R06-L261",
+          "kind": "TEXT",
+          "latin": "tempus implens córporis,",
+          "sourceLine": 261
+        },
+        {
+          "id": "GF-R06-L262",
+          "kind": "TEXT",
+          "latin": "sponte líbera Redémptor",
+          "sourceLine": 262
+        },
+        {
+          "id": "GF-R06-L263",
+          "kind": "TEXT",
+          "latin": "passióni déditus,",
+          "sourceLine": 263
+        },
+        {
+          "id": "GF-R06-L264",
+          "kind": "TEXT",
+          "latin": "Agnus in Crucis levátur",
+          "sourceLine": 264
+        },
+        {
+          "id": "GF-R06-L265",
+          "kind": "TEXT",
+          "latin": "immolándus stípite.",
+          "sourceLine": 265
+        },
+        {
+          "id": "GF-R06-L267",
+          "kind": "TEXT",
+          "latin": "Ant. Dulce lignum dulces claves, dulce pondus sústinet.",
+          "sourceLine": 267
+        },
+        {
+          "id": "GF-R06-L268",
+          "kind": "VERSICLE",
+          "latin": "v. Felle potus ecce languet:",
+          "sourceLine": 268
+        },
+        {
+          "id": "GF-R06-L269",
+          "kind": "TEXT",
+          "latin": "spina, clavi, láncea",
+          "sourceLine": 269
+        },
+        {
+          "id": "GF-R06-L270",
+          "kind": "TEXT",
+          "latin": "mite corpus perforárunt,",
+          "sourceLine": 270
+        },
+        {
+          "id": "GF-R06-L271",
+          "kind": "TEXT",
+          "latin": "unda manat et cruor:",
+          "sourceLine": 271
+        },
+        {
+          "id": "GF-R06-L272",
+          "kind": "TEXT",
+          "latin": "terra, pontus, astra, mundus,",
+          "sourceLine": 272
+        },
+        {
+          "id": "GF-R06-L273",
+          "kind": "TEXT",
+          "latin": "quo lavántur flúmine!",
+          "sourceLine": 273
+        },
+        {
+          "id": "GF-R06-L275",
+          "kind": "TEXT",
+          "latin": "Ant. Crux fidélis, inter omnes arbor una nóbilis: nulla silva talem profert fronde, flore, gérmine.",
+          "sourceLine": 275
+        },
+        {
+          "id": "GF-R06-L276",
+          "kind": "VERSICLE",
+          "latin": "v. Flecte ramos, arbor alta,",
+          "sourceLine": 276
+        },
+        {
+          "id": "GF-R06-L277",
+          "kind": "TEXT",
+          "latin": "tensa laxa víscera,",
+          "sourceLine": 277
+        },
+        {
+          "id": "GF-R06-L278",
+          "kind": "TEXT",
+          "latin": "et rigor lentéscat ille,",
+          "sourceLine": 278
+        },
+        {
+          "id": "GF-R06-L279",
+          "kind": "TEXT",
+          "latin": "quem dedit natívitas:",
+          "sourceLine": 279
+        },
+        {
+          "id": "GF-R06-L280",
+          "kind": "TEXT",
+          "latin": "et supérni membra Regis",
+          "sourceLine": 280
+        },
+        {
+          "id": "GF-R06-L281",
+          "kind": "TEXT",
+          "latin": "tende miti stípite.",
+          "sourceLine": 281
+        },
+        {
+          "id": "GF-R06-L283",
+          "kind": "TEXT",
+          "latin": "Ant. Dulce lignum dulces clavos, dulce pondus sústinet.",
+          "sourceLine": 283
+        },
+        {
+          "id": "GF-R06-L284",
+          "kind": "VERSICLE",
+          "latin": "v. Sola digna tu fuísti",
+          "sourceLine": 284
+        },
+        {
+          "id": "GF-R06-L285",
+          "kind": "TEXT",
+          "latin": "ferre mundi víctimam:",
+          "sourceLine": 285
+        },
+        {
+          "id": "GF-R06-L286",
+          "kind": "TEXT",
+          "latin": "atque portum præparáre",
+          "sourceLine": 286
+        },
+        {
+          "id": "GF-R06-L287",
+          "kind": "TEXT",
+          "latin": "arca mundo náufrago:",
+          "sourceLine": 287
+        },
+        {
+          "id": "GF-R06-L288",
+          "kind": "TEXT",
+          "latin": "quam sacer cruor perúnxit,",
+          "sourceLine": 288
+        },
+        {
+          "id": "GF-R06-L289",
+          "kind": "TEXT",
+          "latin": "fusus Agni córpore.",
+          "sourceLine": 289
+        },
+        {
+          "id": "GF-R06-L291",
+          "kind": "TEXT",
+          "latin": "Ant. Crux fidélis, inter omnes arbor una nóbilis: nulla silva talem profert fronde, flore, gérmine.",
+          "sourceLine": 291
+        },
+        {
+          "id": "GF-R06-L292",
+          "kind": "VERSICLE",
+          "latin": "v. Sempitérna sit beátæ",
+          "sourceLine": 292
+        },
+        {
+          "id": "GF-R06-L293",
+          "kind": "TEXT",
+          "latin": "Trinitáti glória:",
+          "sourceLine": 293
+        },
+        {
+          "id": "GF-R06-L294",
+          "kind": "TEXT",
+          "latin": "æqua Patri Filióque;",
+          "sourceLine": 294
+        },
+        {
+          "id": "GF-R06-L295",
+          "kind": "TEXT",
+          "latin": "par decus Paráclito:",
+          "sourceLine": 295
+        },
+        {
+          "id": "GF-R06-L296",
+          "kind": "TEXT",
+          "latin": "Uníus Triníque nomen",
+          "sourceLine": 296
+        },
+        {
+          "id": "GF-R06-L297",
+          "kind": "TEXT",
+          "latin": "laudet univérsitas.",
+          "sourceLine": 297
+        },
+        {
+          "id": "GF-R06-L298",
+          "kind": "TEXT",
+          "latin": "Amen.",
+          "sourceLine": 298
+        },
+        {
+          "id": "GF-R06-L299",
+          "kind": "TEXT",
+          "latin": "Ant. Dulce lignum dulces clavos, dulce pondus sústinet.",
+          "sourceLine": 299
+        }
+      ]
+    },
+    {
+      "id": "GF-R07",
+      "title": "Return of the Blessed Sacrament",
+      "sourceLines": [
+        300,
+        340
+      ],
+      "graphPhases": [
+        "PRESANCTIFIED_COMMUNION"
+      ],
+      "paragraphs": [
+        {
+          "id": "GF-R07-L304",
+          "kind": "VERSICLE",
+          "latin": "v. Vexílla Regis pródeunt;",
+          "sourceLine": 304
+        },
+        {
+          "id": "GF-R07-L305",
+          "kind": "TEXT",
+          "latin": "Fulget crucis mystérium,",
+          "sourceLine": 305
+        },
+        {
+          "id": "GF-R07-L306",
+          "kind": "TEXT",
+          "latin": "Qua vita mortem pértulit,",
+          "sourceLine": 306
+        },
+        {
+          "id": "GF-R07-L307",
+          "kind": "TEXT",
+          "latin": "Et morte vitam prótulit.",
+          "sourceLine": 307
+        },
+        {
+          "id": "GF-R07-L309",
+          "kind": "TEXT",
+          "latin": "Quæ vulneráta lánceæ",
+          "sourceLine": 309
+        },
+        {
+          "id": "GF-R07-L310",
+          "kind": "TEXT",
+          "latin": "Mucróne diro, críminum",
+          "sourceLine": 310
+        },
+        {
+          "id": "GF-R07-L311",
+          "kind": "TEXT",
+          "latin": "Ut nos laváret sórdibus,",
+          "sourceLine": 311
+        },
+        {
+          "id": "GF-R07-L312",
+          "kind": "TEXT",
+          "latin": "Manávit unda et sánguine.",
+          "sourceLine": 312
+        },
+        {
+          "id": "GF-R07-L314",
+          "kind": "TEXT",
+          "latin": "Impléta sunt quæ cóncinit",
+          "sourceLine": 314
+        },
+        {
+          "id": "GF-R07-L315",
+          "kind": "TEXT",
+          "latin": "David fidéli cármine,",
+          "sourceLine": 315
+        },
+        {
+          "id": "GF-R07-L316",
+          "kind": "TEXT",
+          "latin": "Dicéndo natiónibus:",
+          "sourceLine": 316
+        },
+        {
+          "id": "GF-R07-L317",
+          "kind": "TEXT",
+          "latin": "Regnávit a ligno Deus.",
+          "sourceLine": 317
+        },
+        {
+          "id": "GF-R07-L319",
+          "kind": "TEXT",
+          "latin": "Arbor decóra et fúlgida,",
+          "sourceLine": 319
+        },
+        {
+          "id": "GF-R07-L320",
+          "kind": "TEXT",
+          "latin": "Ornáta regis púrpura,",
+          "sourceLine": 320
+        },
+        {
+          "id": "GF-R07-L321",
+          "kind": "TEXT",
+          "latin": "Elécta digno stípite",
+          "sourceLine": 321
+        },
+        {
+          "id": "GF-R07-L322",
+          "kind": "TEXT",
+          "latin": "Tam sancta membra tángere.",
+          "sourceLine": 322
+        },
+        {
+          "id": "GF-R07-L324",
+          "kind": "TEXT",
+          "latin": "Beáta, cujus bráchiis",
+          "sourceLine": 324
+        },
+        {
+          "id": "GF-R07-L325",
+          "kind": "TEXT",
+          "latin": "Prétium pepéndit sǽculi,",
+          "sourceLine": 325
+        },
+        {
+          "id": "GF-R07-L326",
+          "kind": "TEXT",
+          "latin": "Statéra facta córporis,",
+          "sourceLine": 326
+        },
+        {
+          "id": "GF-R07-L327",
+          "kind": "TEXT",
+          "latin": "Tulítque prædam tártari.",
+          "sourceLine": 327
+        },
+        {
+          "id": "GF-R07-L329",
+          "kind": "TEXT",
+          "latin": "O Crux, ave, spes única,",
+          "sourceLine": 329
+        },
+        {
+          "id": "GF-R07-L330",
+          "kind": "TEXT",
+          "latin": "Paschále quæ fers gáudium,",
+          "sourceLine": 330
+        },
+        {
+          "id": "GF-R07-L331",
+          "kind": "TEXT",
+          "latin": "Piis adáuge grátiam,",
+          "sourceLine": 331
+        },
+        {
+          "id": "GF-R07-L332",
+          "kind": "TEXT",
+          "latin": "Reísque dele crímina.",
+          "sourceLine": 332
+        },
+        {
+          "id": "GF-R07-L334",
+          "kind": "TEXT",
+          "latin": "Te, fons salútis, Trínitas,",
+          "sourceLine": 334
+        },
+        {
+          "id": "GF-R07-L335",
+          "kind": "TEXT",
+          "latin": "Colláudet omnis spíritus:",
+          "sourceLine": 335
+        },
+        {
+          "id": "GF-R07-L336",
+          "kind": "TEXT",
+          "latin": "Quibus crucis victóriam",
+          "sourceLine": 336
+        },
+        {
+          "id": "GF-R07-L337",
+          "kind": "TEXT",
+          "latin": "Largíris, adde prǽmium.",
+          "sourceLine": 337
+        },
+        {
+          "id": "GF-R07-L338",
+          "kind": "TEXT",
+          "latin": "Amen.",
+          "sourceLine": 338
+        }
+      ]
+    },
+    {
+      "id": "GF-R08",
+      "title": "Communion",
+      "sourceLines": [
+        341,
+        387
+      ],
+      "graphPhases": [
+        "PRESANCTIFIED_COMMUNION"
+      ],
+      "paragraphs": [
+        {
+          "id": "GF-R08-L343",
+          "kind": "VERSICLE",
+          "latin": "V. Incénsum istud, a te bene + díctum, ascéndat ad te, Dómine: et descéndat super nos misericórdia tua.",
+          "sourceLine": 343
+        },
+        {
+          "id": "GF-R08-L347",
+          "kind": "VERSICLE",
+          "latin": "v. Dirigátur, Dómine, orátio mea, sicut incénsum in conspéctu tuo: elevátio mánuum meárum sacrifícium vespertínum. Pone, Dómine, custódiam ori meo, et óstium circumstántiæ lábiis meis: ut non declínet cor meum in verba malítiæ, ad excusándas excusatiónes in peccátis.",
+          "sourceLine": 347
+        },
+        {
+          "id": "GF-R08-L349",
+          "kind": "VERSICLE",
+          "latin": "v. Accéndat in nobis Dóminus ignem sui amóris, et flammam ætérnæ cantátis. Amen.",
+          "sourceLine": 349
+        },
+        {
+          "id": "GF-R08-L353",
+          "kind": "VERSICLE",
+          "latin": "v. In spíritu humilitátis et in ánimo contríto suscipiámur a te, Dómine: et sic fiat sacrifícium nostrum in conspéctu tuo hódie, ut pláceat tibi, Dómine Deus.",
+          "sourceLine": 353
+        },
+        {
+          "id": "GF-R08-L356",
+          "kind": "VERSICLE",
+          "latin": "v. Oráte, fratres, ut meum ac vestrum sacrifícium acceptábile fiat apud Deum Patrem omnipoténtem.",
+          "sourceLine": 356
+        },
+        {
+          "id": "GF-R08-L360",
+          "kind": "VERSICLE",
+          "latin": "v. Orémus:",
+          "sourceLine": 360
+        },
+        {
+          "id": "GF-R08-L361",
+          "kind": "TEXT",
+          "latin": "Præcéptis salutáribus móniti, et divína institutióne formáti, audémus dícere:",
+          "sourceLine": 361
+        },
+        {
+          "id": "GF-R08-L362",
+          "kind": "VERSICLE",
+          "latin": "v. Pater noster, qui es in cœlis: Sanctificétur nomen tuum: Advéniat regnum tuum: Fiat volúntas tua, sicut in cœlo, et in terra. Panem nostrum cotidiánum da nobis hódie: Et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem.",
+          "sourceLine": 362
+        },
+        {
+          "id": "GF-R08-L363",
+          "kind": "RESPONSE",
+          "latin": "R. Sed líbera nos a malo.",
+          "sourceLine": 363
+        },
+        {
+          "id": "GF-R08-L366",
+          "kind": "RESPONSE",
+          "latin": "S. Amen",
+          "sourceLine": 366
+        },
+        {
+          "id": "GF-R08-L368",
+          "kind": "VERSICLE",
+          "latin": "v. Líbera nos, quǽsumus, Dómine, ab ómnibus malis, prætéritis, præséntibus et futúris: et intercedénte beáta et gloriósa semper Vírgine Dei Genetríce María, cum beátis Apóstolis tuis Petro et Paulo, atque Andréa, et ómnibus Sanctis, (non signat se Patena) da propítius pacem in diébus nostris: ut, ope misericórdiæ tuæ adjúti, et a peccáto simus semper líberi et ab omni perturbatióne secúri. Per eúndem Dóminum nostrum Jesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.",
+          "sourceLine": 368
+        },
+        {
+          "id": "GF-R08-L369",
+          "kind": "RESPONSE",
+          "latin": "R. Amen.",
+          "sourceLine": 369
+        },
+        {
+          "id": "GF-R08-L372",
+          "kind": "VERSICLE",
+          "latin": "v. Percéptio Córporis tui, Dómine Jesu Christe, quod ego indígnus súmere præsúmo, non mihi provéniat in judícium et condemnatiónem: sed pro tua pietáte prosit mihi ad tutaméntum mentis et córporis, et ad medélam percipiéndam: Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum. Amen.",
+          "sourceLine": 372
+        },
+        {
+          "id": "GF-R08-L375",
+          "kind": "VERSICLE",
+          "latin": "v. Panem cœléstem accípiam, et nomen Dómini invocábo.",
+          "sourceLine": 375
+        },
+        {
+          "id": "GF-R08-L377",
+          "kind": "VERSICLE",
+          "latin": "v. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "sourceLine": 377
+        },
+        {
+          "id": "GF-R08-L378",
+          "kind": "VERSICLE",
+          "latin": "v. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "sourceLine": 378
+        },
+        {
+          "id": "GF-R08-L379",
+          "kind": "VERSICLE",
+          "latin": "v. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "sourceLine": 379
+        },
+        {
+          "id": "GF-R08-L382",
+          "kind": "VERSICLE",
+          "latin": "v. Corpus Dómini nostri Jesu Christi custódiat ánimam meam in vitam ætérnam. Amen.",
+          "sourceLine": 382
+        },
+        {
+          "id": "GF-R08-L386",
+          "kind": "VERSICLE",
+          "latin": "v. Quod ore súmpsimus, Dómine, pura mente capiámus: et de múnere temporáli fiat nobis remédium sempitérnum.",
+          "sourceLine": 386
+        }
+      ]
+    },
+    {
+      "id": "GF-R09",
+      "title": "Conclusion",
+      "sourceLines": [
+        388,
+        389
+      ],
+      "graphPhases": [
+        "CONCLUSION"
+      ],
+      "paragraphs": []
+    }
+  ]
+}
