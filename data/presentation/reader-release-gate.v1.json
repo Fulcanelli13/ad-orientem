@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.5.0",
+  "version": "4.7.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html phone-Chromium acceptance is now explicit for the certified pre-Mass cluster (Asperges, Palm, Ash, Candlemas and Rogations). Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native remains the production reader. Actual index.html phone-Chromium acceptance is explicit for the pre-Mass cluster, Good Friday, all four supported following-action lifecycles, and Nuptial insertions. Easter Vigil remains the only special-structure path without actual-index real-shell certification. Legacy remains explicit rollback/debug only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -306,7 +306,22 @@
         "tests/reader-nuptial.mjs",
         "tests/reader-model.mjs",
         "tests/reader-special-structure.mjs"
-      ]
+      ],
+      "realShellAcceptance": {
+        "status": "CERTIFIED",
+        "test": "tests/app-shell-nuptial-e2e.mjs",
+        "phoneSuite": "npm run test:phone",
+        "viewport": "390x844 touch Chromium",
+        "actualIndexHtml": true,
+        "nativeOwner": "R17_NATIVE_PRODUCTION",
+        "legacyStartCount": 0,
+        "liveCardCount": 42,
+        "insertedCards": [
+          "AO.NUPTIAL.01",
+          "AO.NUPTIAL.02",
+          "AO.NUPTIAL.03"
+        ]
+      }
     },
     {
       "id": "EASTER_VIGIL_NATIVE_COMPOSITE",
@@ -609,7 +624,7 @@
     },
     {
       "id": "REQUIEM_ABSOLUTION_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-requiem-absolution.js",
       "payload": "data/presentation/reader-requiem-absolution.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ABS",
@@ -621,17 +636,26 @@
         "body-present and body-absent branches remain distinct",
         "coffin aspersion/incensation never creates a faithful gesture",
         "In paradisum is limited to the body-present burial-procession branch",
-        "completion returns to the plan-owned post-Mass lifecycle"
+        "completion returns to the plan-owned post-Mass lifecycle",
+        "actual index.html phone acceptance traverses REQUIEM_ABSOLUTION through the plan-owned post-Mass lifecycle without booting legacy",
+        "production host adaptation preserves bodyPresent and burialProcession context",
+        "actual index.html phone acceptance traverses the body-present funeral branch through In paradisum",
+        "coffin aspersion/incensation does not create a faithful gesture in the production shell"
       ],
       "tests": [
         "tests/reader-requiem-absolution.mjs",
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui",
+      "lifecycleOwner": "src/mass/form-lifecycle.js"
     },
     {
       "id": "CORPUS_CHRISTI_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-corpus-christi.js",
       "payload": "data/presentation/reader-corpus-christi.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#CORPUS",
@@ -645,13 +669,19 @@
         "processional posture applies only to participating faithful",
         "Tantum ergo is tied to BLESSED_SACRAMENT_REPLACED_ON_ALTAR",
         "Panem de caelo, response and Deus qui nobis prayer are rendered before Benediction",
-        "completion returns to the post-Mass lifecycle"
+        "completion returns to the post-Mass lifecycle",
+        "actual index.html phone acceptance traverses CORPUS_CHRISTI_PROCESSION through the plan-owned post-Mass lifecycle without booting legacy"
       ],
       "tests": [
         "tests/reader-corpus-christi.mjs",
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui",
+      "lifecycleOwner": "src/mass/form-lifecycle.js"
     },
     {
       "id": "ROGATIONS_NATIVE_PAYLOAD",
@@ -682,7 +712,7 @@
     },
     {
       "id": "HOLY_THURSDAY_POST_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-holy-thursday-post.js",
       "payload": "data/presentation/reader-holy-thursday-post.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#HT_POST",
@@ -696,13 +726,19 @@
         "the post-reservation double-knee genuflection action applies only to faithful who joined",
         "the stripping-of-altars surface uses the source-pinned Pian Psalm 21 and repeats Dividunt sibi",
         "no universal faithful posture is fabricated for the stripping of the altars",
-        "completion returns to the existing post-Mass lifecycle"
+        "completion returns to the existing post-Mass lifecycle",
+        "actual index.html phone acceptance traverses HOLY_THURSDAY_POST through the plan-owned post-Mass lifecycle without booting legacy"
       ],
       "tests": [
         "tests/reader-holy-thursday-post.mjs",
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui",
+      "lifecycleOwner": "src/mass/form-lifecycle.js"
     },
     {
       "id": "PILOT_VERTICAL_PATH",
@@ -739,7 +775,7 @@
     },
     {
       "id": "GENERIC_PROCESSION_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-generic-procession.js",
       "payload": "data/presentation/reader-generic-procession.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#PROC",
@@ -753,13 +789,19 @@
         "post-Mass reader renders only PROC-100-010/020/030",
         "processional posture applies only when the user is actually participating",
         "feast/procession-specific chant text is never fabricated by the generic reader",
-        "completion returns to the post-Mass lifecycle"
+        "completion returns to the post-Mass lifecycle",
+        "actual index.html phone acceptance traverses GENERIC_PROCESSION through the plan-owned post-Mass lifecycle without booting legacy"
       ],
       "tests": [
         "tests/reader-generic-procession.mjs",
         "tests/reader-special-structure.mjs",
         "tests/browser-runtime.mjs"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui",
+      "lifecycleOwner": "src/mass/form-lifecycle.js"
     },
     {
       "id": "PRAYER_OVER_PEOPLE_READER_INSERTION",
@@ -829,7 +871,9 @@
         "resolved Proper can enter without legacy assembly-state dependency",
         "FOLLOW_CONGREGATION uses observed posture when available and sourced posture when no observer exists",
         "production native mode reads no implicit legacy DOM state",
-        "Palm and Ash native preceding rites pass the actual index.html phone path through Introit handoff and Back"
+        "Palm and Ash native preceding rites pass the actual index.html phone path through Introit handoff and Back",
+        "all four supported following actions are native real-shell certified",
+        "Nuptial source-pinned insertions are actual-index phone certified"
       ],
       "requiredTest": "tests/app-shell-final-e2e.mjs",
       "acceptance": {
@@ -841,11 +885,27 @@
         "uncaughtPageErrors": 0,
         "scenarios": [
           "ORDINARY_VOTIVE",
+          "ASPERGES_PRECEDING_RITE",
           "PALM_PRECEDING_RITE",
-          "ASH_PRECEDING_RITE"
+          "ASH_PRECEDING_RITE",
+          "CANDLEMAS_PRECEDING_RITE",
+          "ROGATIONS_PRECEDING_RITE",
+          "GOOD_FRIDAY_DISTINCT_RITE",
+          "REQUIEM_ABSOLUTION_FOLLOWING_ACTION",
+          "CORPUS_CHRISTI_PROCESSION_FOLLOWING_ACTION",
+          "HOLY_THURSDAY_POST_FOLLOWING_ACTION",
+          "GENERIC_PROCESSION_FOLLOWING_ACTION"
         ],
         "palmAshRealShell": true,
-        "readerOwnershipMarker": "data-ao-mass-reader-ui"
+        "readerOwnershipMarker": "data-ao-mass-reader-ui",
+        "supplementalScenarios": [
+          "NUPTIAL_INSERTIONS"
+        ],
+        "supplementalTest": "tests/app-shell-nuptial-e2e.mjs",
+        "goodFridayRealShell": true,
+        "followingActionClusterRealShell": true,
+        "requiemFuneralBranchRealShell": true,
+        "nuptialRealShell": true
       }
     },
     {
@@ -863,14 +923,25 @@
         "Palm and Ash hand off to the Introit and Back restores the special-rite handoff card",
         "data-ao-mass-reader-ui reports R17_NATIVE_PRODUCTION for certified native production sessions",
         "Candlemas object-state acceptance verifies processional candle light and Mass candle windows without posture mutation",
-        "Good Friday enters as a native distinct rite with no Ordinary Mass reader model and no legacy renderer boot"
+        "Good Friday enters as a native distinct rite with no Ordinary Mass reader model and no legacy renderer boot",
+        "all four supported following-action lifecycles traverse the actual production shell",
+        "Requiem funeral branch reaches In paradisum with host branch context preserved",
+        "Nuptial actual-index phone acceptance is run as a separate production-shell test"
       ],
       "scenarios": [
         "ORDINARY_VOTIVE",
+        "ASPERGES_PRECEDING_RITE",
         "PALM_PRECEDING_RITE",
         "ASH_PRECEDING_RITE",
-        "GOOD_FRIDAY_DISTINCT_RITE"
-      ]
+        "CANDLEMAS_PRECEDING_RITE",
+        "ROGATIONS_PRECEDING_RITE",
+        "GOOD_FRIDAY_DISTINCT_RITE",
+        "REQUIEM_ABSOLUTION_FOLLOWING_ACTION",
+        "CORPUS_CHRISTI_PROCESSION_FOLLOWING_ACTION",
+        "HOLY_THURSDAY_POST_FOLLOWING_ACTION",
+        "GENERIC_PROCESSION_FOLLOWING_ACTION"
+      ],
+      "supplementalTest": "tests/app-shell-nuptial-e2e.mjs"
     },
     {
       "id": "PALM_ASH_REAL_APP_SHELL_ACCEPTANCE",
@@ -905,18 +976,21 @@
         "ASH",
         "CANDLEMAS",
         "ROGATIONS",
-        "GOOD_FRIDAY"
-      ],
-      "pending": [
+        "GOOD_FRIDAY",
         "REQUIEM_ABSOLUTION",
-        "HOLY_THURSDAY_POST",
         "CORPUS_CHRISTI_PROCESSION",
+        "HOLY_THURSDAY_POST",
         "GENERIC_PROCESSION",
-        "EASTER_VIGIL",
         "NUPTIAL"
       ],
-      "rule": "Pre-Mass cluster and Good Friday distinct rite are actual-index phone certified; remaining post-Mass/composite/overlay structures stay pending until app-shell E2E evidence is pinned.",
-      "currentTest": "tests/app-shell-final-e2e.mjs"
+      "pending": [
+        "EASTER_VIGIL"
+      ],
+      "rule": "Every production special-structure path except Easter Vigil has actual-index phone-Chromium evidence. Easter Vigil remains pending until its composite rite is exercised through the production app shell.",
+      "currentTests": [
+        "tests/app-shell-final-e2e.mjs",
+        "tests/app-shell-nuptial-e2e.mjs"
+      ]
     },
     {
       "id": "PRE_MASS_CLUSTER_REAL_APP_SHELL_ACCEPTANCE",
@@ -965,6 +1039,76 @@
         "GF-END-910 remains terminal and cannot fabricate an Ordinary Mass handoff",
         "legacy live renderer is never started",
         "data-ao-mass-reader-ui exposes R17_NATIVE_PRODUCTION",
+        "zero uncaught page errors"
+      ]
+    },
+    {
+      "id": "FOLLOWING_ACTION_CLUSTER_REAL_APP_SHELL_ACCEPTANCE",
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-final-e2e.mjs",
+      "viewport": "390x844 touch Chromium",
+      "actualIndexHtml": true,
+      "rites": [
+        "REQUIEM_ABSOLUTION",
+        "CORPUS_CHRISTI_PROCESSION",
+        "HOLY_THURSDAY_POST",
+        "GENERIC_PROCESSION"
+      ],
+      "nativeOwner": "R17_NATIVE_PRODUCTION",
+      "legacyStartCount": 0,
+      "guarantees": [
+        "each following action is activated only by an explicit compiled following graph",
+        "plan-owned blessing and Last-Gospel policies are enforced before following-action entry",
+        "Back/Next are real touch navigation inside each following-action reader",
+        "Requiem body-present burial branch reaches In paradisum and preserves funeral context",
+        "Corpus Christi processional posture follows explicit sacramental and participant state",
+        "Holy Thursday joining state remains personal and reaches the source-pinned post-Mass sequence",
+        "generic procession participation becomes PROCESSIONAL without inventing feast-specific chant",
+        "each following action completes into DEPARTURE with the Mass completion record preserved",
+        "legacy live renderer is never started",
+        "zero uncaught page errors"
+      ]
+    },
+    {
+      "id": "REQUIEM_ABSOLUTION_REAL_APP_SHELL_ACCEPTANCE",
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-final-e2e.mjs",
+      "viewport": "390x844 touch Chromium",
+      "actualIndexHtml": true,
+      "rite": "REQUIEM_ABSOLUTION",
+      "nativeOwner": "R17_NATIVE_PRODUCTION",
+      "legacyStartCount": 0,
+      "branch": {
+        "bodyPresent": true,
+        "burialProcession": true
+      },
+      "guarantees": [
+        "Requiem overlay and explicit following action compile into the production plan",
+        "bodyPresent and burialProcession survive production host adaptation",
+        "the final blessing and Last Gospel are suppressed by the plan",
+        "ABS-R01 through ABS-R05 traverse in the actual app shell",
+        "coffin aspersion/incensation does not fabricate a faithful gesture",
+        "In paradisum is present on the body-present burial-procession branch",
+        "completion reaches the plan-owned DEPARTURE lifecycle",
+        "legacy live renderer is never started",
+        "zero uncaught page errors"
+      ]
+    },
+    {
+      "id": "NUPTIAL_REAL_APP_SHELL_ACCEPTANCE",
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-nuptial-e2e.mjs",
+      "phoneSuite": "npm run test:phone",
+      "viewport": "390x844 touch Chromium",
+      "actualIndexHtml": true,
+      "nativeOwner": "R17_NATIVE_PRODUCTION",
+      "legacyStartCount": 0,
+      "guarantees": [
+        "NUPTIAL overlay compiles three explicit plan insertions",
+        "LIVE native model contains 42 cards with AO.NUPTIAL.01/02/03 in source-owned positions",
+        "spouse-scoped insertions do not leak faithful posture or gesture state",
+        "touch navigation crosses Nuptial insertion cards in the actual app shell",
+        "legacy live renderer is never started",
         "zero uncaught page errors"
       ]
     }
@@ -1070,18 +1214,21 @@
         "PALM",
         "ASH",
         "CANDLEMAS",
-        "ROGATIONS"
-      ],
-      "pending": [
-        "REQUIEM_ABSOLUTION",
-        "HOLY_THURSDAY_POST",
-        "CORPUS_CHRISTI_PROCESSION",
-        "GENERIC_PROCESSION",
+        "ROGATIONS",
         "GOOD_FRIDAY",
-        "EASTER_VIGIL",
+        "REQUIEM_ABSOLUTION",
+        "CORPUS_CHRISTI_PROCESSION",
+        "HOLY_THURSDAY_POST",
+        "GENERIC_PROCESSION",
         "NUPTIAL"
       ],
-      "test": "tests/app-shell-final-e2e.mjs"
+      "pending": [
+        "EASTER_VIGIL"
+      ],
+      "tests": [
+        "tests/app-shell-final-e2e.mjs",
+        "tests/app-shell-nuptial-e2e.mjs"
+      ]
     }
   }
 }
