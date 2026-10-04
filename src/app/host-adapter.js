@@ -76,8 +76,12 @@ export function createAppHostAdapter(win = globalThis) {
       if (domain === "pray") {
         const modular = win?.AO_PRAY_APP_V1;
         if (typeof modular?.open === "function") {
-          const opened = modular.open();
-          if (opened !== false) return true;
+          return Promise.resolve(modular.open()).then((opened) => {
+            if (opened !== false) return true;
+            const fallback = shell();
+            if (typeof fallback?.openDomain !== "function") return false;
+            return fallback.openDomain(domain) !== false;
+          });
         }
       }
       const api = shell();
