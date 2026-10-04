@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.1.0",
-  "status": "FINAL_NATIVE_CANDIDATE__REAL_SHELL_ACCEPTANCE_REQUIRED",
+  "version": "4.2.0",
+  "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "The native R17 reader is the production candidate across the certified full-year scope. Merge to main requires real-shell browser acceptance against the actual index.html. Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native is the production reader across the certified full-year scope. Real-shell phone Chromium acceptance against index.html is certified. Legacy remains explicit rollback/debug only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -788,7 +788,7 @@
     },
     {
       "id": "PRODUCTION_NATIVE_CUTOVER",
-      "status": "CANDIDATE_PENDING_REAL_SHELL_E2E",
+      "status": "CERTIFIED_REAL_SHELL_E2E",
       "productionDefault": "R17_NATIVE",
       "browserEntry": "src/mass/browser-entry.js",
       "gate": "src/mass/reader-gate.js",
@@ -801,16 +801,31 @@
         "FOLLOW_CONGREGATION uses observed posture when available and sourced posture when no observer exists",
         "production native mode reads no implicit legacy DOM state"
       ],
-      "requiredTest": "tests/app-shell-final-e2e.mjs"
-    }
-  ],
-  "openBlockers": [
+      "requiredTest": "tests/app-shell-final-e2e.mjs",
+      "acceptance": {
+        "test": "tests/app-shell-final-e2e.mjs",
+        "viewport": "390x844 touch Chromium",
+        "actualIndexHtml": true,
+        "legacyStartCount": 0,
+        "nativeOwner": "R17_NATIVE_PRODUCTION",
+        "uncaughtPageErrors": 0
+      }
+    },
     {
       "id": "REAL_APP_SHELL_ACCEPTANCE",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Phone-sized Chromium must load the real index.html, enter Mass through the final browser bridge, mount native ownership without booting legacy, preserve touch navigation, and report no uncaught page errors."
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-final-e2e.mjs",
+      "guarantees": [
+        "actual repository index.html is loaded in phone-sized Chromium",
+        "native reader mounts through the production browser bridge",
+        "legacy startLive is not called",
+        "native card title and prayer body are nonblank",
+        "reader fits the phone viewport and touch Next advances",
+        "zero uncaught page errors"
+      ]
     }
   ],
+  "openBlockers": [],
   "certificationPolicy": {
     "greenUnitCIIsNotReleaseCertification": true,
     "requireAllBlockersClosed": true,
