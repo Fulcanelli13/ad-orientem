@@ -91,6 +91,8 @@ const ember=makeResolvedMass({
   overlays:["EMBER_LESSONS"],
 });
 projection=projectSpecialStructure({session:{resolvedMass:ember,plan:compileMassPlan(ember)}},sources);
-assert.equal(projection.releaseSupport,false,"Ember insertion work silently disappeared");
+assert.equal(projection.releaseSupport,true,"Ember source-order insertion lost certified modular support");
+assert.ok(gate.fieldRelease.requiredConditions.includes("no Ember-lessons insertion"),
+  "Oct-4 field-release scope silently widened to Ember lessons");
 
-console.log("Oct 4 field release: PASS — ordinary/Votive and Asperges path certified; unresolved full-year insertions remain fail-closed.");
+console.log("Oct 4 field release: PASS — pilot scope remains narrow while full-year modular capabilities may be certified independently.");

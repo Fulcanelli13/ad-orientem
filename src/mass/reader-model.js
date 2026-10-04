@@ -3,8 +3,9 @@ import { selectReaderTextCorpus, buildReaderSectionCard } from "./reader-text.js
 import { properToReaderSlots, assertReaderProperReady } from "./proper-reader-slots.js";
 import { projectSourceFirstLiveModel } from "./reader-live-source.js";
 import { augmentReaderCardsWithPrayerOverPeople } from "./reader-prayer-over-people.js";
+import { projectEmberInsertionModel } from "./reader-ember-lessons.js";
 
-const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM"]);
+const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS"]);
 
 function assertBaselineReaderGraph(resolvedMass){
   if(resolvedMass?.distinctRite) {
@@ -105,9 +106,10 @@ export function createMassReaderModel({
     previousCard:sectionId=>neighbor(sectionId,"previous"),
     nextCard:sectionId=>neighbor(sectionId,"next"),
   });
+  let projected=baseModel;
   if(String(resolvedMass.presentationMode??"").toUpperCase()==="LIVE"){
     if(!canonSourceMap)throw new Error("SOURCE_FIRST_LIVE_CANON_MAP_REQUIRED");
-    return projectSourceFirstLiveModel(baseModel,canonSourceMap);
+    projected=projectSourceFirstLiveModel(baseModel,canonSourceMap);
   }
-  return baseModel;
+  return projectEmberInsertionModel(projected,resolvedMass);
 }
