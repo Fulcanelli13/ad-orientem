@@ -75,9 +75,22 @@ try{
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
 
   await page.locator("[data-ao-app-surface='calendar']").click();
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar",null,{timeout:10000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
+    globalThis.AO_CALENDAR_APP_V1?.status?.().open===true &&
+    document.getElementById("ao-calendar-modular-root")?.isConnected,
+    null,{timeout:10000});
+  const calendarOwnership=await page.evaluate(()=>({
+    owner:document.getElementById("ao-calendar-modular-root")?.dataset?.aoCalendarOwner??null,
+    donorPanel:globalThis.AO_NAV_V25?.getState?.()?.panel??null,
+    shell:globalThis.AO_APP_SHELL_V1?.status?.().calendarOwner??false,
+  }));
+  assert.equal(calendarOwnership.owner,"modular-calendar-v1","Calendar did not mount the modular presentation owner");
+  assert.notEqual(calendarOwnership.donorPanel,"calendar","Calendar still opened the donor v25 panel");
+  assert.equal(calendarOwnership.shell,true,"app shell did not report the modular Calendar owner");
 
   await page.locator("[data-ao-app-surface='mass']").click();
+  await page.waitForFunction(()=>!document.getElementById("ao-calendar-modular-root"),null,{timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
 
   const setup=await page.evaluate(async(iconKeys)=>{
