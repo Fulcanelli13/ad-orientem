@@ -9,6 +9,7 @@ import {
 export const VERSION = "final-app-shell-bridge-v2";
 const DONOR_RIBBON_ATTR = "data-ao-ribbon";
 const APP_RIBBON_ATTR = "data-ao-app-surface";
+const LIVE_STRUCTURAL_SETTING_SELECTOR = "[data-live-form],[data-sunday-asperges],[data-setting-form]";
 
 function ready(win) {
   return Boolean(
@@ -28,6 +29,35 @@ function initialSurface(win, host) {
 
 function visibleRibbon(win) {
   return win?.document?.getElementById?.("ao-global-ribbon") ?? null;
+}
+
+export function installLiveStructuralSettingsGuard({ win = globalThis } = {}) {
+  const doc = win?.document;
+  if (!doc?.addEventListener) {
+    return Object.freeze({ installed: false, dispose() {} });
+  }
+
+  const onClick = (event) => {
+    if (win?.AO_RUNTIME_V8?.store?.getState?.()?.route !== "live") return;
+    const control = event?.target?.closest?.(LIVE_STRUCTURAL_SETTING_SELECTOR);
+    if (!control) return;
+    event.preventDefault?.();
+    event.stopImmediatePropagation?.();
+    const fr = win?.AO_RUNTIME_V8?.store?.getState?.()?.language === "fr";
+    win?.alert?.(
+      fr
+        ? "Ce réglage est verrouillé pendant la Messe. Quittez le suivi de la Messe pour le modifier."
+        : "This setting is locked while Mass is in progress. Exit Mass to change it.",
+    );
+  };
+
+  doc.addEventListener("click", onClick, true);
+  return Object.freeze({
+    installed: true,
+    dispose() {
+      doc.removeEventListener?.("click", onClick, true);
+    },
+  });
 }
 
 export function adoptVisibleRibbon({
@@ -154,6 +184,7 @@ export function installAppShellBridge({
     blocked: false,
     ribbonOwner: null,
     unsubscribeSurface: null,
+    liveStructuralSettingsGuard: null,
   };
 
   function setDataset(value) {
@@ -195,6 +226,8 @@ export function installAppShellBridge({
         initialSurface: initialSurface(win, state.host),
       });
       ownVisibleRibbon();
+      state.liveStructuralSettingsGuard?.dispose?.();
+      state.liveStructuralSettingsGuard = installLiveStructuralSettingsGuard({ win });
       setDataset("ready");
     } catch {
       state.blocked = true;
@@ -230,6 +263,7 @@ export function installAppShellBridge({
         active: state.controller?.getActive?.() ?? null,
         visibleRibbonOwned: Boolean(state.ribbonOwner?.owned),
         legacyRibbonClickNeutralized: Boolean(state.ribbonOwner?.neutralized),
+        liveStructuralSettingsGuard: Boolean(state.liveStructuralSettingsGuard?.installed),
         homeOwner: typeof win?.AO_NAV_V362?.home === "function",
         domainOwner: typeof win?.AO_V37_SHELL?.openDomain === "function",
         settingsOwner: Boolean(
