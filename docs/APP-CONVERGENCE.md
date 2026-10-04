@@ -43,7 +43,7 @@ The first post-reader audit found that the modular application shell was initial
 
 The production `index.html` also still contains two cleanup debts that must not become permanent architecture: the embedded `AO_EMERGENCY_STABLE_V4333` runtime and a duplicated `src/mass/browser-entry.js` module tag. These are app-shell convergence items, not Mass-engine blockers. The emergency runtime may only be removed after any still-required live-session locks are owned by the final modular shell/settings path.
 
-The existing real-shell browser tests prove native Mass ownership and phone geometry for certified Mass/special-rite paths, but they do not yet exercise the complete application journey through visible navigation. In particular, they do not currently prove cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings.
+`tests/app-shell-journey-e2e.mjs` now exercises the complete actual-index phone journey: cold launch → Home → Calendar → Mass selection → native LIVE → cancelled leave/resume → confirmed leave → PRAY → Home → Settings. It also reloads with the persisted Mass record still present and proves that stale persistence does not reactivate the native reader or contaminate the Home route.
 
 The app-convergence workflow therefore owns a stronger regression gate from Phase 2 onward: app-shell changes, production `index.html`, the browser entry, app-shell tests and package-script changes must run both the app-shell contract/tree-hygiene checks and the real phone/touch suite. This closes the previous gap where a pure `src/app/**` change could pass only the unit contract.
 
@@ -56,7 +56,12 @@ The first gate snapshot records three closed app-level findings: certified Mass 
 - retirement/decomposition of the emergency runtime;
 - removal and lockout of the duplicated browser-entry include;
 - non-Mass donor extraction/parity;
-- persistence/state-contamination acceptance across reload, interrupted Mass and module switching.
+
+## Phase 2.3: cross-domain journey and persistence closure
+
+The actual-index phone gate now proves modular navigation across Home, Calendar, native Mass, PRAY and Settings. While native LIVE owns the screen, leave/resume is coordinated through the modular shell rather than pretending the underlying ribbon remains tappable. Confirmed leave explicitly destroys the native reader surface through the app host adapter while retaining the persisted session record. A subsequent reload proves that the retained record does not auto-reactivate R17 or restore an obsolete route.
+
+This closes `CROSS_DOMAIN_PHONE_JOURNEY` and `PERSISTENCE_STATE_CONTAMINATION`. The whole application remains in convergence because emergency-runtime retirement, duplicate browser-entry hygiene and non-Mass donor extraction are still open.
 
 The app gate uses only the regression classifications `PASS`, `REGRESSION`, `STALE_SURFACE`, `MISSING_INTEGRATION` and `CRASH`. `tests/app-release-gate.mjs` ensures the listed open blockers exactly match the open findings while independently asserting that the Mass reader remains `FINAL_NATIVE_READY` with `R17_NATIVE` production default.
 
@@ -75,11 +80,11 @@ After host promotion, extract in this order: Home/Coming Up, Calendar dashboard 
 Before calling app convergence complete:
 
 1. The modular shell owns visible six-destination navigation and this is certified on actual index.html by `tests/app-shell-visible-owner-e2e.mjs`.
-2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings.
+2. The full phone journey is certified on actual index.html by `tests/app-shell-journey-e2e.mjs`, including cancelled/confirmed LIVE leave behavior.
 3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections.
 4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene.
 5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
-6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence must be regression-tested so historical local state cannot reactivate obsolete surfaces.
+6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence are regression-tested in `tests/app-shell-journey-e2e.mjs`; stale persisted Mass state does not reactivate obsolete surfaces.
 
 ## Regression gates
 
