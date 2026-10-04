@@ -1,0 +1,500 @@
+ policy:'Liturgical colour marks structure/current state; prayer prose remains normal text; rubric red remains semantically distinct.'
+};
+</script>
+
+<script id="ao-v372-meta">
+window.AO_COMPLETION_V37_2={
+ version:'37.2-group-responses-multilingual-search',
+ base:'v37.1-GUIDES-PRAYER-ROLES-HARMONIZATION',
+ scope:[
+  'Group-only highlighted response rows',
+  'restrained litany response bands',
+  'Roman before/after Mass group response styling',
+  'accent/ligature/punctuation-insensitive prayer search',
+  'simultaneous Latin-English-French indexing',
+  'prayer category and alias indexing',
+  'first-class practice/module search results',
+  'title/alias-first ranking'
+ ],
+ individualModeHighlighting:false,
+ newPrayerTextComposed:false,
+ massEngineChanged:false,
+ calendarEngineChanged:false,
+ prayerCorpusChanged:false,
+ saintArtChanged:false,
+ newMutationObserverAdded:false
+};
+</script>
+
+<style id="ao-v38-rosary-sacred-art-css">
+/* v38 Rosary Sacred Art Meditation — presentation/content-delivery only. */
+#aoPrayerBookRoot .aoRosaryArtMode{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0 14px;padding:8px 10px;border:1px solid var(--border,#304353);border-radius:13px;background:color-mix(in srgb,var(--surface-1,#0d1822) 92%,transparent)}
+#aoPrayerBookRoot .aoRosaryArtMode>span{font:600 .68rem var(--font-display,serif);letter-spacing:.07em;text-transform:uppercase;color:var(--muted,#91a0aa);margin-right:2px}
+#aoPrayerBookRoot .aoRosaryArtMode button{min-height:32px;padding:5px 10px;border:1px solid var(--border,#304353);border-radius:999px;background:transparent;color:var(--muted,#a8b1b8);font:600 .7rem var(--font-display,serif);cursor:pointer}
+#aoPrayerBookRoot .aoRosaryArtMode button.active{border-color:var(--liturgical-border,var(--liturgical,#c7ae6d));background:var(--liturgical-soft,rgba(199,174,109,.12));color:var(--text,#eee9df)}
+#aoPrayerBookRoot .aoRosaryArtHero{position:relative;margin:0 0 14px;border:1px solid var(--liturgical-border,var(--border));border-radius:20px;overflow:hidden;background:#05080b;box-shadow:0 16px 38px rgba(0,0,0,.28)}
+#aoPrayerBookRoot .aoRosaryArtHero img{display:block;width:100%;height:auto;max-height:min(58vh,560px);object-fit:contain;background:#03070a;opacity:0;transition:opacity .35s ease,filter .35s ease}
+#aoPrayerBookRoot .aoRosaryArtHero.ready img{opacity:1}
+#aoPrayerBookRoot .aoRosaryArtHero.subtle img{max-height:min(36vh,320px);opacity:.76;filter:saturate(.88) brightness(.88)}
+#aoPrayerBookRoot .aoRosaryArtHero figcaption{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 13px;background:linear-gradient(180deg,#0c1620,#081019);color:#ddd7ca;font-size:.78rem}
+#aoPrayerBookRoot .aoRosaryArtHero figcaption span:last-child{color:#9eaaaf;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em}
+#aoPrayerBookRoot .aoRosaryArtHero.unavailable{min-height:110px;display:grid;place-items:center;background:linear-gradient(145deg,#0c1c2a,#080d12)}
+#aoPrayerBookRoot .aoRosaryArtHero.unavailable img{display:none}
+#aoPrayerBookRoot .aoRosaryArtHero.unavailable figcaption{position:static;width:100%}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer{position:relative;isolation:isolate}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer::before{content:"";position:absolute;z-index:0;inset:70px 4px 74px;border-radius:24px;background-image:var(--ao-rosary-art-image);background-size:cover;background-position:center;opacity:.22;filter:saturate(.86) brightness(.58);transition:opacity .25s ease;pointer-events:none}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer.aoArtSubtle::before{opacity:.11;filter:saturate(.72) brightness(.55)}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer>*{position:relative;z-index:1}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet{background:rgba(241,238,229,.84);backdrop-filter:blur(1.5px);-webkit-backdrop-filter:blur(1.5px);border:1px solid rgba(255,255,255,.16)}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer.aoArtSubtle .lab-prayer-sheet{background:rgba(241,238,229,.91)}
+@media(max-width:520px){
+ #aoPrayerBookRoot .aoRosaryArtMode{gap:6px;padding:7px 8px}
+ #aoPrayerBookRoot .aoRosaryArtMode button{padding:5px 8px}
+ #aoPrayerBookRoot .pbShell.aoRosaryArtPrayer::before{inset:64px 0 72px;border-radius:18px}
+ #aoPrayerBookRoot .aoRosaryArtHero img{max-height:52vh}
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPrayerBookRoot .aoRosaryArtHero img,#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer::before{transition:none}
+}
+</style>
+
+<script id="ao-v38-rosary-sacred-art-js">
+(()=>{'use strict';
+const VERSION='38-rosary-sacred-art';
+const CACHE_NAME='ad-orientem-rosary-art-v1';
+const PREF_KEY='ao:rosary-art:mode:v1';
+const SET_KEY='ao:rosary-art:set:v1';
+const SETS={"joyful":[{"id":"joyful-1","index":1,"title_en":"The Annunciation","title_fr":"L’Annonciation","preview":"assets/rosary/joyful/01-preview.webp","image":"assets/rosary/joyful/01.webp","width":825,"height":1100},{"id":"joyful-2","index":2,"title_en":"The Visitation","title_fr":"La Visitation","preview":"assets/rosary/joyful/02-preview.webp","image":"assets/rosary/joyful/02.webp","width":825,"height":1100},{"id":"joyful-3","index":3,"title_en":"The Nativity","title_fr":"La Nativité","preview":"assets/rosary/joyful/03-preview.webp","image":"assets/rosary/joyful/03.webp","width":825,"height":1100},{"id":"joyful-4","index":4,"title_en":"The Presentation","title_fr":"La Présentation","preview":"assets/rosary/joyful/04-preview.webp","image":"assets/rosary/joyful/04.webp","width":825,"height":1100},{"id":"joyful-5","index":5,"title_en":"The Finding of Jesus in the Temple","title_fr":"Le Recouvrement de Jésus au Temple","preview":"assets/rosary/joyful/05-preview.webp","image":"assets/rosary/joyful/05.webp","width":825,"height":1100}],"sorrowful":[{"id":"sorrowful-1","index":1,"title_en":"The Agony in the Garden","title_fr":"L’Agonie au Jardin des Oliviers","preview":"assets/rosary/sorrowful/01-preview.webp","image":"assets/rosary/sorrowful/01.webp","width":1100,"height":825},{"id":"sorrowful-2","index":2,"title_en":"The Scourging at the Pillar","title_fr":"La Flagellation","preview":"assets/rosary/sorrowful/02-preview.webp","image":"assets/rosary/sorrowful/02.webp","width":1100,"height":825},{"id":"sorrowful-3","index":3,"title_en":"The Crowning with Thorns","title_fr":"Le Couronnement d’épines","preview":"assets/rosary/sorrowful/03-preview.webp","image":"assets/rosary/sorrowful/03.webp","width":1100,"height":825},{"id":"sorrowful-4","index":4,"title_en":"The Carrying of the Cross","title_fr":"Le Portement de la Croix","preview":"assets/rosary/sorrowful/04-preview.webp","image":"assets/rosary/sorrowful/04.webp","width":1100,"height":825},{"id":"sorrowful-5","index":5,"title_en":"The Crucifixion","title_fr":"La Crucifixion","preview":"assets/rosary/sorrowful/05-preview.webp","image":"assets/rosary/sorrowful/05.webp","width":1100,"height":825}],"glorious":[{"id":"glorious-1","index":1,"title_en":"The Resurrection","title_fr":"La Résurrection","preview":"assets/rosary/glorious/01-preview.webp","image":"assets/rosary/glorious/01.webp","width":1100,"height":825},{"id":"glorious-2","index":2,"title_en":"The Ascension","title_fr":"L’Ascension","preview":"assets/rosary/glorious/02-preview.webp","image":"assets/rosary/glorious/02.webp","width":1100,"height":825},{"id":"glorious-3","index":3,"title_en":"The Descent of the Holy Spirit","title_fr":"La Descente du Saint-Esprit","preview":"assets/rosary/glorious/03-preview.webp","image":"assets/rosary/glorious/03.webp","width":1100,"height":825},{"id":"glorious-4","index":4,"title_en":"The Assumption of Our Lady","title_fr":"L’Assomption de Notre-Dame","preview":"assets/rosary/glorious/04-preview.webp","image":"assets/rosary/glorious/04.webp","width":1100,"height":825},{"id":"glorious-5","index":5,"title_en":"The Coronation of Our Lady","title_fr":"Le Couronnement de Notre-Dame","preview":"assets/rosary/glorious/05-preview.webp","image":"assets/rosary/glorious/05.webp","width":1100,"height":825}],"luminous":[{"id":"luminous-1","index":1,"title_en":"The Baptism of Our Lord","title_fr":"Le Baptême de Notre-Seigneur","preview":"assets/rosary/luminous/01-preview.webp","image":"assets/rosary/luminous/01.webp","width":1100,"height":825},{"id":"luminous-2","index":2,"title_en":"The Wedding Feast at Cana","title_fr":"Les Noces de Cana","preview":"assets/rosary/luminous/02-preview.webp","image":"assets/rosary/luminous/02.webp","width":1100,"height":825},{"id":"luminous-3","index":3,"title_en":"The Proclamation of the Kingdom","title_fr":"L’Annonce du Royaume","preview":"assets/rosary/luminous/03-preview.webp","image":"assets/rosary/luminous/03.webp","width":1100,"height":825},{"id":"luminous-4","index":4,"title_en":"The Transfiguration","title_fr":"La Transfiguration","preview":"assets/rosary/luminous/04-preview.webp","image":"assets/rosary/luminous/04.webp","width":1100,"height":825},{"id":"luminous-5","index":5,"title_en":"The Institution of the Holy Eucharist","title_fr":"L’Institution de la Sainte Eucharistie","preview":"assets/rosary/luminous/05-preview.webp","image":"assets/rosary/luminous/05.webp","width":1100,"height":825}]};
+const MODES=new Set(['on','subtle','off']);
+const resolved=new Map();
+let scheduled=false,runId=0,lastSet='';
+const root=()=>document.getElementById('aoPrayerBookRoot');
+const isFr=r=>(r?.querySelector('.lab-lang')?.textContent||'').trim().toUpperCase()==='FR';
+function mode(){try{const x=localStorage.getItem(PREF_KEY);return MODES.has(x)?x:'on'}catch{return'on'}}
+function setMode(x){if(!MODES.has(x))return;try{localStorage.setItem(PREF_KEY,x)}catch{};runId++;schedule()}
+function rememberedSet(){if(lastSet)return lastSet;try{return sessionStorage.getItem(SET_KEY)||''}catch{return''}}
+function rememberSet(s){if(!SETS[s])return;lastSet=s;try{sessionStorage.setItem(SET_KEY,s)}catch{}}
+function forgetSet(){lastSet='';try{sessionStorage.removeItem(SET_KEY)}catch{}}
+function abs(path){try{return new URL(path,location.href).href}catch{return path}}
+async function resolveAsset(path){
+ if(!path)return'';
+ const url=abs(path);if(resolved.has(url))return resolved.get(url);
+ if(location.protocol==='file:'){resolved.set(url,url);return url}
+ if(!('caches'in window)){resolved.set(url,url);return url}
+ try{
+  const cache=await caches.open(CACHE_NAME),req=new Request(url,{cache:'force-cache'});
+  let res=await cache.match(req);
+  if(!res){res=await fetch(req);if(!res.ok)throw new Error('HTTP '+res.status);await cache.put(req,res.clone())}
+  const blob=await res.blob(),blobUrl=URL.createObjectURL(blob);resolved.set(url,blobUrl);return blobUrl
+ }catch(e){resolved.set(url,url);return url}
+}
+function art(set,index){return SETS[set]?.[index]||null}
+function currentIndex(r){
+ const bar=r.querySelector('.lab-decade-bar');if(!bar)return-1;
+ const cur=bar.querySelector('i.current');if(!cur)return-1;
+ return Array.from(bar.children).indexOf(cur)
+}
+function isRosary(r){return !!r&&!!r.querySelector('[data-pb-rosary-set],[data-lab-rosary-today],.lab-decade-bar,[data-pb-rosary-change],[data-lab-rosary-change]')}
+function modeControl(r){
+ if(r.querySelector('.aoRosaryArtMode'))return;
+ const fr=isFr(r),m=mode(),el=document.createElement('div');el.className='aoRosaryArtMode';el.setAttribute('role','group');el.setAttribute('aria-label',fr?'Art sacré du Rosaire':'Rosary sacred artwork');
+ el.innerHTML=`<span>${fr?'Œuvre':'Artwork'}</span>${[['on',fr?'Activé':'On'],['subtle',fr?'Discret':'Subtle'],['off',fr?'Désactivé':'Off']].map(([v,l])=>`<button type="button" data-ao-rosary-art-mode="${v}" class="${m===v?'active':''}" aria-pressed="${m===v}">${l}</button>`).join('')}`;
+ const a=r.querySelector('.lab-option-bar')||r.querySelector('.lab-decade-bar')||r.querySelector('.lab-view-head');a?.insertAdjacentElement('afterend',el)
+}
+function clearShellArt(r){
+ r.querySelectorAll('.pbShell.aoRosaryArtPrayer').forEach(x=>{x.classList.remove('aoRosaryArtPrayer','aoArtSubtle');x.style.removeProperty('--ao-rosary-art-image');delete x.dataset.aoArtSet;delete x.dataset.aoArtIndex})
+}
+function removeHeroes(r){r.querySelectorAll('.aoRosaryArtHero').forEach(x=>x.remove())}
+async function fillHero(hero,item,token){
+ const img=hero.querySelector('img');if(!img)return;
+ try{
+  const p=await resolveAsset(item.preview);if(token!==runId||mode()==='off')return;img.src=p;hero.classList.add('ready');
+  if(!navigator.connection?.saveData){const f=await resolveAsset(item.image);if(token!==runId||mode()==='off')return;img.src=f;hero.classList.add('ready')}
+ }catch(e){if(token===runId)hero.classList.add('unavailable')}
+}
+async function fillBackground(shell,item,token){
+ try{
+  const p=await resolveAsset(item.preview);if(token!==runId||mode()==='off')return;shell.style.setProperty('--ao-rosary-art-image',`url("${String(p).replace(/"/g,'%22')}")`);
+  if(!navigator.connection?.saveData){const f=await resolveAsset(item.image);if(token!==runId||mode()==='off')return;shell.style.setProperty('--ao-rosary-art-image',`url("${String(f).replace(/"/g,'%22')}")`)}
+ }catch(e){}
+}
+function preloadNext(set,index){
+ const n=art(set,index+1);if(!n||mode()==='off')return;
+ const paths=navigator.connection?.saveData?[n.preview]:[n.preview,n.image];
+ paths.forEach(p=>resolveAsset(p).catch(()=>{}))
+}
+function enhance(){
+ scheduled=false;const r=root();if(!isRosary(r))return;
+ modeControl(r);const m=mode();r.querySelectorAll('[data-ao-rosary-art-mode]').forEach(b=>{const a=b.dataset.aoRosaryArtMode===m;b.classList.toggle('active',a);b.setAttribute('aria-pressed',String(a))});
+ if(m==='off'){removeHeroes(r);clearShellArt(r);return}
+ const set=rememberedSet(),idx=currentIndex(r),item=art(set,idx);
+ if(!item){removeHeroes(r);clearShellArt(r);return}
+ const contemplation=r.querySelector('.lab-contemplation'),shell=r.querySelector('.pbShell');
+ if(contemplation){
+  clearShellArt(r);
+  let fig=r.querySelector('.aoRosaryArtHero');
+  const same=fig&&fig.dataset.aoArtSet===set&&fig.dataset.aoArtIndex===String(idx);
+  if(!same){removeHeroes(r);const fr=isFr(r),title=(contemplation.querySelector('h2')?.textContent|| (fr?item.title_fr:item.title_en)).trim();fig=document.createElement('figure');fig.className='aoRosaryArtHero';fig.dataset.aoArtSet=set;fig.dataset.aoArtIndex=String(idx);fig.innerHTML=`<img alt="${title.replace(/"/g,'&quot;')}" decoding="async"><figcaption><span>${title}</span><span>${fr?'Méditation par l’art sacré':'Sacred art meditation'}</span></figcaption>`;contemplation.insertAdjacentElement('beforebegin',fig);const token=++runId;fillHero(fig,item,token);preloadNext(set,idx)}
+  fig?.classList.toggle('subtle',m==='subtle');
+ }else if(shell&&r.querySelector('.lab-prayer-sheet')){
+  removeHeroes(r);
+  const same=shell.dataset.aoArtSet===set&&shell.dataset.aoArtIndex===String(idx);
+  shell.classList.add('aoRosaryArtPrayer');shell.classList.toggle('aoArtSubtle',m==='subtle');
+  if(!same){shell.dataset.aoArtSet=set;shell.dataset.aoArtIndex=String(idx);const token=++runId;fillBackground(shell,item,token);preloadNext(set,idx)}
+ }else{removeHeroes(r);clearShellArt(r)}
+}
+function schedule(){if(scheduled)return;scheduled=true;setTimeout(()=>{enhance();queueMicrotask(()=>globalThis.AO_ROSARY_V401?.enhance?.())},35)}
+document.addEventListener('click',e=>{
+ const pick=e.target.closest?.('[data-pb-rosary-set],[data-lab-rosary-today]');if(pick){const s=pick.dataset.pbRosarySet||pick.dataset.labRosaryToday;rememberSet(s)}
+ if(e.target.closest?.('[data-pb-rosary-change],[data-lab-rosary-change]'))forgetSet();
+ const b=e.target.closest?.('[data-ao-rosary-art-mode]');if(b){e.preventDefault();e.stopPropagation();setMode(b.dataset.aoRosaryArtMode)}
+},true);
+window.addEventListener('pageshow',schedule);setTimeout(schedule,120);
+window.AO_ROSARY_ART_V38={
+ version:VERSION,cacheName:CACHE_NAME,manifest:SETS,getMode:mode,setMode,sync:schedule,
+ status:()=>({mode:mode(),set:rememberedSet(),cacheSupported:'caches'in window,saveData:!!navigator.connection?.saveData,resolvedAssets:resolved.size}),
+ clearCache:async()=>{resolved.forEach(v=>{if(String(v).startsWith('blob:'))try{URL.revokeObjectURL(v)}catch{}});resolved.clear();if('caches'in window)try{await caches.delete(CACHE_NAME)}catch{};schedule()},
+ preload:(set,index=0)=>{const x=art(set,index);if(!x)return Promise.resolve(false);return Promise.allSettled([resolveAsset(x.preview),resolveAsset(x.image)]).then(()=>true)}
+};
+})();
+</script>
+
+<script id="ao-v38-rosary-sacred-art-meta">
+window.AO_V38_ROSARY_ART_META={version:'38',baseline:'v37-CONTENT-DELIVERY-ARCHITECTURE',feature:'Rosary Sacred Art Meditation',delivery:'lazy current mystery + next-mystery prefetch',artEmbedded:false,prayerCorpusChanged:false,massEngineChanged:false};
+</script>
+
+<style id="ao-v39-native-interior-shell-css">
+
+/* v39 Harmonized Master — native dark interior shell hardening.
+   Deep readers remain inside Ad Orientem's dark visual language. */
+:root{
+  --ao-v39-reader-bg:color-mix(in srgb,var(--bg) 96%,#18120a);
+  --ao-v39-reader-card:color-mix(in srgb,var(--surface-1) 94%,#1d160c);
+  --ao-v39-reader-card-2:color-mix(in srgb,var(--surface-2) 92%,#21180d);
+}
+
+/* Rosary art must not resurrect the old pale paper sheet over a dark app. */
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 86%,transparent)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer.aoArtSubtle .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 91%,transparent)!important;
+}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet h2,
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet p,
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet span{
+  color:inherit;
+}
+
+/* Commentary / Scripture depth sheet: native dark reader, not a white document. */
+.ao-r-depth-modal{background:rgba(2,5,9,.82)!important;backdrop-filter:blur(12px)!important}
+.ao-r-depth-panel{
+  background:var(--ao-v39-reader-bg)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+  box-shadow:0 26px 90px rgba(0,0,0,.52)!important;
+}
+.ao-r-depth-panel>header{
+  background:color-mix(in srgb,var(--bg) 94%,transparent)!important;
+  border-color:var(--border)!important;
+}
+.ao-r-depth-panel header small{color:var(--liturgical)!important}
+.ao-r-depth-panel header h2{color:var(--text)!important}
+.ao-r-depth-panel header p{color:var(--muted)!important}
+.ao-r-depth-scroll{background:transparent!important}
+.ao-r-depth-panel>footer{
+  background:var(--surface-1)!important;
+  color:var(--muted)!important;
+  border-color:var(--border)!important;
+}
+.ao-r-commentary{
+  background:var(--ao-v39-reader-card)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+.ao-r-commentary h3,.ao-r-commentary summary,.ao-r-commentary a{color:var(--liturgical)!important}
+.ao-r-commentary blockquote{
+  background:var(--liturgical-soft)!important;
+  color:var(--text)!important;
+  border-left-color:var(--liturgical)!important;
+}
+.ao-r-commentary details{border-color:var(--border)!important}
+.ao-r-commentary p{color:var(--text)!important}
+.ao-r-lang-note,.ao-r-error{
+  background:var(--ao-v39-reader-card-2)!important;
+  color:var(--muted)!important;
+  border-color:var(--border)!important;
+}
+.ao-r-error strong{color:var(--text)!important}
+
+/* Guides / preferences / diagnostics follow the same interior hierarchy. */
+.rc2Sheet,
+.aoContentV37Panel{
+  background:var(--ao-v39-reader-bg)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+.rc2Sheet header,
+.aoContentV37Panel>header{
+  background:color-mix(in srgb,var(--bg) 94%,transparent)!important;
+  border-color:var(--border)!important;
+}
+.rc2GuideSection,
+.rc2PrefSection,
+.aoContentV37Row,
+.aoV37SourcesCard{
+  background:var(--ao-v39-reader-card)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+
+/* Long reading surfaces use warm dark cards; rubric red stays semantic. */
+.scriptureScreen,.readerBody{background:var(--bg)!important;color:var(--text)!important}
+.pericope,.chapterSummary,.commentaryIntro,.note,.father,.provenance,.readerWarnings,.readerError{
+  background:var(--ao-v39-reader-card)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+.rubric{color:var(--rubric)!important}
+
+@media(max-width:650px){
+  .ao-r-depth-panel{border-radius:0!important}
+}
+
+</style>
+<script id="ao-v39-harmonized-master-meta">window.AO_V39_META={"version":"39","name":"Harmonized Master","base":"Ad-Orientem-2.0-v38-UNIVERSAL-TRADITION-PHASE1.html","mergedBranches":["Ad-Orientem-2.0-v37-TODAY-MASS-PRAY-LEARN-SHELL.html","Ad-Orientem-2.0-v37.2-GROUP-RESPONSES-MULTILINGUAL-SEARCH.html","Ad-Orientem-2.0-v38-ROSARY-SACRED-ART-MEDITATION.html"],"preserved":["Mass/calendar/rubrical protected layers from v38 Universal Tradition","v37 content-delivery architecture","v36 canonical module registry + launcher/navigation control","v35.7 audited prayer source/provenance layer","v38 Universal Tradition Phase 1"],"added":["TODAY/MASS/PRAY/LEARN visible shell","v37.1 guide/prayer-role harmonization","v37.2 Group responses + multilingual ranked search","v38 Rosary Sacred Art Meditation","v39 native dark interior shell hardening"],"massEngineChanged":false,"calendarEngineChanged":false,"regionalPackIncluded":false};window.AO_COMPLETION_V39={harmonizedMaster:true,version:"39"};try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title="Ad Orientem 2.0 · v39 Harmonized Master"}catch(e){}</script>
+
+
+<style id="ao-v391-prayer-visual-harmonization-css">
+/* v39.1 — Prayer visual harmonization.
+   Presentation-only. All prayer/devotional cards inherit the native Ad Orientem
+   dark surface hierarchy used by Mass; donor Lab-ora paper/blue styling is neutralized. */
+
+#aoPrayerBookRoot{
+  background:
+    radial-gradient(circle at 50% 12%,color-mix(in srgb,var(--liturgical) 9%,transparent),transparent 31rem),
+    linear-gradient(180deg,#0d121a 0%,#080b10 70%,#06080c 100%)!important;
+  color:var(--text)!important;
+  font-family:var(--font-liturgical)!important;
+}
+
+/* Common native surface grammar */
+#aoPrayerBookRoot .lab-library-section,
+#aoPrayerBookRoot .lab-practice-grid button,
+#aoPrayerBookRoot .lab-library-grid button,
+#aoPrayerBookRoot .lab-mystery-card,
+#aoPrayerBookRoot .lab-rosary-hero,
+#aoPrayerBookRoot .lab-stations-hero,
+#aoPrayerBookRoot .lab-stations-settings button,
+#aoPrayerBookRoot .lab-stations-settings label,
+#aoPrayerBookRoot .lab-practice-sheet,
+#aoPrayerBookRoot .lab-prayer-sheet,
+#aoPrayerBookRoot .lab-contemplation,
+#aoPrayerBookRoot .lab-recitation-mode,
+#aoPrayerBookRoot .lab-actions button,
+#aoPrayerBookRoot .lab-scripture-cue,
+#aoPrayerBookRoot .lab-practice-note,
+#aoPrayerBookRoot .lab-practice-sheet .lab-practice-note,
+#aoPrayerBookRoot .lab-contemplation .principal{
+  border-color:var(--border)!important;
+  color:var(--text)!important;
+  box-shadow:none!important;
+}
+
+#aoPrayerBookRoot .lab-library-section,
+#aoPrayerBookRoot .lab-practice-grid button,
+#aoPrayerBookRoot .lab-library-grid button,
+#aoPrayerBookRoot .lab-mystery-card,
+#aoPrayerBookRoot .lab-stations-settings button,
+#aoPrayerBookRoot .lab-stations-settings label{
+  background:var(--surface-1)!important;
+}
+
+#aoPrayerBookRoot .lab-practice-grid .primary-practice,
+#aoPrayerBookRoot .lab-library-grid button.featured,
+#aoPrayerBookRoot .lab-mystery-card.recommended,
+#aoPrayerBookRoot .lab-stations-settings button.active{
+  border-color:var(--liturgical-border)!important;
+  background:linear-gradient(180deg,var(--liturgical-soft),rgba(255,255,255,.02))!important;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--liturgical) 12%,transparent)!important;
+}
+
+/* Keep the Rosary/Stations hero hierarchy, but in the app's own palette. */
+#aoPrayerBookRoot .lab-rosary-hero,
+#aoPrayerBookRoot .lab-stations-hero{
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface-2) 92%,var(--liturgical) 8%),var(--surface-1))!important;
+  border-color:var(--liturgical-border)!important;
+}
+#aoPrayerBookRoot .lab-rosary-hero small,
+#aoPrayerBookRoot .lab-mystery-card small,
+#aoPrayerBookRoot .lab-view-head .eyebrow,
+#aoPrayerBookRoot .lab-lang,
+#aoPrayerBookRoot .lab-station-text h3,
+#aoPrayerBookRoot .lab-contemplation .kicker,
+#aoPrayerBookRoot .lab-contemplation .fruit,
+#aoPrayerBookRoot .lab-scripture-cue strong,
+#aoPrayerBookRoot .lab-prayer-count strong,
+#aoPrayerBookRoot .lab-source-note a,
+#aoPrayerBookRoot .lab-source-row a,
+#aoPrayerBookRoot .lab-change,
+#aoPrayerBookRoot .lab-scripture-actions button{
+  color:var(--liturgical)!important;
+}
+#aoPrayerBookRoot .lab-rosary-hero p,
+#aoPrayerBookRoot .lab-practice-lead,
+#aoPrayerBookRoot .lab-library-grid span,
+#aoPrayerBookRoot .lab-practice-grid button span,
+#aoPrayerBookRoot .lab-mystery-card ol,
+#aoPrayerBookRoot .lab-step-count,
+#aoPrayerBookRoot .lab-source-note,
+#aoPrayerBookRoot .lab-prayer-sheet .lab-source-note,
+#aoPrayerBookRoot .lab-practice-sheet .lab-source-note,
+#aoPrayerBookRoot .lab-prayer-count,
+#aoPrayerBookRoot .lab-recitation-mode small{
+  color:var(--muted)!important;
+}
+
+/* The former 'paper sheets' are now native reading cards. */
+#aoPrayerBookRoot .lab-practice-sheet,
+#aoPrayerBookRoot .lab-prayer-sheet,
+#aoPrayerBookRoot .lab-contemplation{
+  background:var(--surface-1)!important;
+  border:1px solid var(--border)!important;
+  border-radius:var(--radius-m)!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .lab-practice-sheet h2,
+#aoPrayerBookRoot .lab-practice-sheet h3,
+#aoPrayerBookRoot .lab-prayer-sheet>h2,
+#aoPrayerBookRoot .lab-contemplation h2,
+#aoPrayerBookRoot .lab-practice-sheet p,
+#aoPrayerBookRoot .lab-practice-sheet li,
+#aoPrayerBookRoot .lab-contemplation .commentary{
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .lab-practice-sheet details,
+#aoPrayerBookRoot .lab-stabat,
+#aoPrayerBookRoot .lab-flip-hint{
+  border-color:var(--border)!important;
+}
+#aoPrayerBookRoot .lab-practice-sheet summary{color:var(--liturgical)!important}
+
+/* Scripture/formation inset: same dark hierarchy, slightly stronger state accent. */
+#aoPrayerBookRoot .lab-scripture-cue,
+#aoPrayerBookRoot .lab-practice-note,
+#aoPrayerBookRoot .lab-practice-sheet .lab-practice-note,
+#aoPrayerBookRoot .lab-contemplation .principal{
+  background:var(--liturgical-soft)!important;
+  color:var(--text)!important;
+  border-left:2px solid var(--liturgical)!important;
+  border-radius:0 var(--radius-s) var(--radius-s) 0!important;
+}
+#aoPrayerBookRoot .lab-scripture-cue{border:1px solid var(--liturgical-border)!important;border-left-width:2px!important}
+
+/* Prayer text itself remains typographically prominent, never a light card. */
+#aoPrayerBookRoot .lab-prayer-flip{
+  color:var(--text)!important;
+  font-family:var(--font-liturgical)!important;
+}
+#aoPrayerBookRoot .lab-flip-hint{color:var(--muted-2)!important}
+#aoPrayerBookRoot .lab-prayer-sheet>.rubric{color:var(--rubric)!important}
+
+/* Status/meta chips use liturgical tint rather than beige/green donor badges. */
+#aoPrayerBookRoot .lab-practice-status,
+#aoPrayerBookRoot .lab-practice-status.custom,
+#aoPrayerBookRoot .lab-practice-status.official,
+#aoPrayerBookRoot .lab-reader-meta span{
+  color:var(--liturgical)!important;
+  background:var(--liturgical-soft)!important;
+  border-color:var(--liturgical-border)!important;
+}
+
+/* Actions and controls match Mass controls. */
+#aoPrayerBookRoot .lab-actions button,
+#aoPrayerBookRoot .lab-player-controls button,
+#aoPrayerBookRoot .lab-recitation-mode button,
+#aoPrayerBookRoot .lab-scripture-actions button{
+  border-color:var(--border)!important;
+  background:var(--surface-2)!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .lab-actions .accent,
+#aoPrayerBookRoot .lab-player-controls .primary,
+#aoPrayerBookRoot .lab-recitation-mode button.active{
+  background:var(--liturgical-soft)!important;
+  border-color:var(--liturgical-border)!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .lab-scripture-actions button{
+  background:transparent!important;
+  border:0!important;
+  color:var(--liturgical)!important;
+  text-decoration:none!important;
+}
+#aoPrayerBookRoot .lab-scripture-actions button:hover,
+#aoPrayerBookRoot .lab-scripture-actions button:focus-visible{
+  background:var(--liturgical-soft)!important;
+}
+
+/* Individual / Group selector is a native segmented control. */
+#aoPrayerBookRoot .lab-recitation-mode{
+  background:rgba(255,255,255,.025)!important;
+  padding:8px!important;
+}
+#aoPrayerBookRoot .lab-recitation-mode>span{color:var(--muted-2)!important}
+#aoPrayerBookRoot .lab-recitation-mode>div{
+  border-color:var(--border)!important;
+  background:rgba(0,0,0,.14)!important;
+}
+
+/* Progress and beads follow the current liturgical state. */
+#aoPrayerBookRoot .lab-progress{background:rgba(255,255,255,.07)!important}
+#aoPrayerBookRoot .lab-progress i,
+#aoPrayerBookRoot .lab-decade-bar i.done,
+#aoPrayerBookRoot .lab-decade-bar i.current{background:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-bead{
+  background:var(--surface-2)!important;
+  border-color:var(--border)!important;
+  color:transparent!important;
+}
+#aoPrayerBookRoot .lab-bead.past{
+  background:color-mix(in srgb,var(--liturgical) 38%,var(--surface-2))!important;
+  border-color:var(--liturgical-border)!important;
+}
+#aoPrayerBookRoot .lab-bead.current{
+  background:var(--liturgical)!important;
+  border-color:var(--liturgical)!important;
+  box-shadow:0 0 0 4px var(--liturgical-soft),0 0 16px var(--liturgical-glow)!important;
+}
+#aoPrayerBookRoot .lab-station-rail i{border-color:var(--border)!important;color:var(--muted)!important}
+#aoPrayerBookRoot .lab-station-rail i.done{background:var(--liturgical-soft)!important;border-color:var(--liturgical-border)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-station-rail i.current{background:var(--liturgical)!important;border-color:var(--liturgical)!important;color:var(--bg)!important}
+
+/* Native top controls. */
+#aoPrayerBookRoot .lab-back,
+#aoPrayerBookRoot .lab-icon{
+  border:1px solid var(--border)!important;
+  background:rgba(255,255,255,.025)!important;
+  color:var(--text)!important;
+  border-radius:12px!important;
+}
+#aoPrayerBookRoot .lab-view-head h1{font-family:var(--font-display)!important;color:var(--text)!important}
+
+/* RC2 guide/preferences chrome: eliminate the surviving navy/white control language. */
+.rc2ModuleTools button,.rc2FlowPrefs{
+  border-color:var(--border)!important;
+  background:var(--surface-1)!important;
+  color:var(--text)!important;
+}
+.rc2ModuleTools .rc2ModePill{
+  border-color:var(--liturgical-border)!important;
+  background:var(--liturgical-soft)!important;
+  color:var(--liturgical)!important;
+}
+.rc2SheetBackdrop{background:rgba(2,5,9,.82)!important;backdrop-filter:blur(12px)!important}
+.rc2Sheet{background:var(--bg)!important;color:var(--text)!important;border-color:var(--border)!important}
+.rc2Sheet header{background:color-mix(in srgb,var(--bg) 94%,transparent)!important;border-color:var(--border)!important}
