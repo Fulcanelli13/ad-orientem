@@ -327,16 +327,24 @@ try{
   assert.equal(exited.route,"home","confirmed reader close left runtime route in LIVE");
 
   await page.locator("[data-ao-app-surface='pray']").click();
-  await page.waitForFunction(()=>
-    globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray" &&
-    document.documentElement.dataset.aoPrayRouteOwner==="modular-pray-v1",
-    null,{timeout:10000});
+  await page.waitForTimeout(1500);
   const prayOwnership=await page.evaluate(()=>({
+    active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     routeOwner:document.documentElement.dataset.aoPrayRouteOwner??null,
     rootOwner:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
-    installed:globalThis.AO_PRAY_APP_V1?.status?.().installed??false,
-    presentationOwner:globalThis.AO_PRAY_APP_V1?.status?.().presentationOwner??null,
+    prayAppInstalled:Boolean(globalThis.AO_PRAY_APP_V1),
+    prayAppStatus:globalThis.AO_PRAY_APP_V1?.status?.()??null,
+    donor435930:Boolean(globalThis.AO_PRAY_V435930),
+    donor435930Open:typeof globalThis.AO_PRAY_V435930?.open,
+    domainShell:Boolean(globalThis.AO_V37_SHELL),
+    domainOpen:typeof globalThis.AO_V37_SHELL?.openDomain,
+    prayerBookRoot:Boolean(document.getElementById("aoPrayerBookRoot")),
+    prayRoot:Boolean(document.getElementById("aoPray435930")),
   }));
+  assert.equal(prayOwnership.active,"pray","PRAY navigation did not activate the app surface; diagnostic="+JSON.stringify(prayOwnership));
+  assert.equal(prayOwnership.routeOwner,"modular-pray-v1","production PRAY click did not use modular PRAY route owner; diagnostic="+JSON.stringify(prayOwnership));
+  assert.equal(prayOwnership.prayAppInstalled,true,"AO_PRAY_APP_V1 was not installed; diagnostic="+JSON.stringify(prayOwnership));
+  assert.equal(prayOwnership.prayAppStatus?.presentationOwner,"AO_PRAY_V435930","unexpected PRAY presentation authority; diagnostic="+JSON.stringify(prayOwnership));
   assert.equal(prayOwnership.routeOwner,"modular-pray-v1","production PRAY click did not use modular PRAY route owner");
   assert.equal(prayOwnership.installed,true);
   assert.equal(prayOwnership.presentationOwner,"AO_PRAY_V435930");
