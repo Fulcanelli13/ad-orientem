@@ -146,6 +146,14 @@ assert.equal(aspergesPayload?.readerCards,5,"Asperges reader-card contract chang
 assert.match(String(aspergesPayload?.nativePreview??""),/reader-native-preview\.js/,"Asperges native preview owner is not pinned");
 assert.match(String(aspergesPayload?.phoneTest??""),/reader-phone-acceptance\.mjs/,"Asperges phone acceptance is not pinned");
 
+const goodFriday=release.protectedInvariants.find(x=>x.id==="GOOD_FRIDAY_NATIVE_DISTINCT_RITE");
+assert.equal(goodFriday?.status,"CERTIFIED_MODULAR_RUNTIME","Good Friday distinct-rite runtime certification disappeared");
+assert.equal(goodFriday?.recoveredGraphRecords,56,"Good Friday source-state denominator changed");
+assert.equal(goodFriday?.readerSurfaces,9,"Good Friday reader-surface contract changed");
+assert.equal(goodFriday?.ordinaryMassGraphActive,false,"Good Friday re-entered the ordinary Mass graph");
+assert.match(String(goodFriday?.controller??""),/reader-good-friday\.js/,"Good Friday controller is not pinned");
+assert.equal(goodFriday?.sourceCorpus?.blobSha,"608809d88d3b0d587e20e53d8ab22d4bde0c865e");
+
 const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
