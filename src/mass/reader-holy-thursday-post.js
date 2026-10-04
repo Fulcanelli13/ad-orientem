@@ -50,7 +50,11 @@ export function buildHolyThursdayPostPayload({graph,payload}={}){
       id:"HT-R04",title:"After the Reservation",
       sourceRecordIds:freeze(["HT-TRN-040"]),
       actorScope:"FAITHFUL_JOINING",posture:"LOCAL_OR_INHERIT",paragraphs:freeze([]),
-      joiningAction:"STAND_DOUBLE_KNEE_GENUFLECTION_STAND_RETURN",
+      joiningState:freeze({
+        WAITING:freeze({posture:"LOCAL_OR_INHERIT",action:null}),
+        JOINING:freeze({posture:"STAND_DOUBLE_KNEE_GENUFLECTION_STAND",action:"STAND_DOUBLE_KNEE_GENUFLECTION_STAND_RETURN"}),
+        NOT_JOINING:freeze({posture:"LOCAL_OR_INHERIT",action:null}),
+      }),
       guide:"If you followed the procession, stand, make the appointed double-knee genuflection, and return. This is not imposed on those who did not join."
     }),
     freeze({
@@ -88,7 +92,7 @@ export function createHolyThursdayPostReaderController(args={}){
       atStart:index===0,atEnd:index===built.cards.length-1,
       card,joiningState,
       posture:personal?.posture??card?.posture??null,
-      action:personal?.action??card?.joiningAction??null,
+      action:personal?.action??null,
       handoff:card?.handoff??null,
     });
   }
