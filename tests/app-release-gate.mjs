@@ -33,8 +33,10 @@ assert.ok(app.openBlockers.length>0,"whole-app gate was closed without convergen
 assert.equal(findings.find(x=>x.id==="MASS_SUBSYSTEM_CERTIFIED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="SPECIAL_STRUCTURES_REAL_SHELL")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="ARIA_FOCUS_GUARD")?.classification,"PASS");
-assert.equal(findings.find(x=>x.id==="VISIBLE_SHELL_OWNERSHIP")?.classification,"MISSING_INTEGRATION");
+assert.equal(findings.find(x=>x.id==="VISIBLE_SHELL_OWNERSHIP")?.classification,"PASS");
+assert.equal(findings.find(x=>x.id==="VISIBLE_SHELL_OWNERSHIP")?.status,"CLOSED");
 assert.equal(findings.find(x=>x.id==="DUPLICATE_BROWSER_ENTRY_HYGIENE")?.classification,"REGRESSION");
+assert.equal(app.openBlockers.includes("VISIBLE_SHELL_OWNERSHIP"),false);
 assert.match(app.requiredPhoneJourney,/Home.*Calendar.*Mass.*LIVE.*leave\/resume.*PRAY.*Home.*Settings/i);
 
 assert.ok(app.regressionGates?.static?.includes("tests/app-release-gate.mjs"));
