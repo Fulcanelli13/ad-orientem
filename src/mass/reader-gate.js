@@ -1,5 +1,5 @@
 // Feature gate for the R17 Mass reader landing.
-// Production default remains LEGACY until parity is explicitly certified.
+// Explicit UI override parser. Production rollout policy is owned by browser-entry.
 
 export const READER_UI_MODES = Object.freeze(["LEGACY","SHADOW","PREVIEW"]);
 export const READER_UI_STORAGE_KEY = "ao-r17-reader-ui";
