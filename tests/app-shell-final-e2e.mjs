@@ -182,7 +182,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
     },{kind:spec.kind,receiveState:spec.receiveState});
     if(spec.kind==="ASPERGES"){
       await page.waitForFunction(()=>
-        document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")?.textContent?.toUpperCase().includes("SIGN OF CROSS"),
+        document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")?.textContent?.includes("MAKE_FULL_SIGN_OF_CROSS"),
         null,{timeout:5000});
     }else{
       await page.waitForFunction(()=>
