@@ -391,6 +391,7 @@ export async function mountNativeReaderPreview({
   loadGenericProcessionData=loadGenericProcessionReaderData,
   readLegacyActive=null,
   iconResolver=null,
+  beforeClose=null,
   onClose=null,
 }={}){
   if(!doc?.body || !doc?.createElement) throw new TypeError("Document/body required");
@@ -424,6 +425,16 @@ export async function mountNativeReaderPreview({
   close.setAttribute("aria-label","Close Mass reader");
   close.style.cssText="position:absolute;z-index:4;top:8px;right:8px;width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:#0d141c;color:#ddd;font-size:20px;";
   root.append(host,close);
+
+  async function guardedClose(destroy){
+    if(typeof beforeClose==="function"){
+      const allowed=await Promise.resolve(beforeClose());
+      if(allowed===false)return false;
+    }
+    destroy();
+    if(typeof onClose==="function")await Promise.resolve(onClose());
+    return true;
+  }
 
   if(ready.goodFridayController){
     const controller=ready.goodFridayController;
@@ -482,7 +493,7 @@ export async function mountNativeReaderPreview({
       }
     }
 
-    close.addEventListener?.("click",()=>{destroyGoodFriday();onClose?.()});
+    close.addEventListener?.("click",()=>{void guardedClose(destroyGoodFriday)});
     root.dataset.r17TextOwner="R28_GOOD_FRIDAY_SOURCE_PINNED";
     root.dataset.r17CardOwner="R28_GOOD_FRIDAY_DISTINCT_RITE";
     root.dataset.r17StateOwner="R28_GOOD_FRIDAY_GRAPH";
@@ -616,7 +627,7 @@ export async function mountNativeReaderPreview({
       }
     }
 
-    close.addEventListener?.("click",()=>{destroyEasterVigil();onClose?.()});
+    close.addEventListener?.("click",()=>{void guardedClose(destroyEasterVigil)});
     root.dataset.r17TextOwner="R33_EASTER_VIGIL_SOURCE_PINNED";
     root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
     root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
@@ -1441,7 +1452,7 @@ export async function mountNativeReaderPreview({
     }
   }
 
-  close.addEventListener?.("click",()=>{destroy();onClose?.()});
+  close.addEventListener?.("click",()=>{void guardedClose(destroy)});
 
   // Mount only after the model is complete.
   doc.body.appendChild(root);
