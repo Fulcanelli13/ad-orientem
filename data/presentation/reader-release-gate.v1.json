@@ -622,13 +622,44 @@
         ],
         "productionDefaultChanged": false
       }
+    },
+    {
+      "id": "GOOD_FRIDAY_NATIVE_DISTINCT_RITE",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "controller": "src/mass/reader-good-friday.js",
+      "payload": "data/presentation/reader-good-friday.v1.json",
+      "structuralSource": "data/mass/special-days-core.v1.1.json#graphs.GF",
+      "runtime": "src/mass/browser-runtime.js",
+      "payloadSchema": "ao-r28-good-friday-payload-v1",
+      "payloadStatus": "SOURCE_PINNED_1962_GOOD_FRIDAY_LATIN",
+      "recoveredGraphRecords": 56,
+      "ordinaryMassGraphActive": false,
+      "branchControls": [
+        "PRINTED_1962|HOLY_SEE_2008 Jewish-prayer variant",
+        "PERSONAL|CORPORATE_SILENT Cross veneration",
+        "willReceiveCommunion"
+      ],
+      "guarantees": [
+        "Good Friday bypasses the ordinary Mass structure/model/objective/form-lifecycle path",
+        "the recovered 56-record GF graph remains choreography authority",
+        "Passion death kneel/pause and restoration remain separately state-owned",
+        "Solemn Prayer Flectamus genua and Levate cycles remain record-owned",
+        "three Cross-unveiling adoration cycles remain record-owned",
+        "personal veneration states remain personal and corporate silent veneration remains an explicit branch",
+        "return of the Blessed Sacrament and Communion states remain distinct-rite owned",
+        "completion returns a distinct-rite handoff without fabricating a Mass completion record"
+      ],
+      "tests": [
+        "tests/reader-good-friday.mjs",
+        "tests/browser-runtime.mjs"
+      ]
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Prayer over the People insertion, Generic Procession, Good Friday and Easter Vigil."
+      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction, Holy Thursday post-Mass, and Good Friday. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Prayer over the People insertion, Generic Procession, and Easter Vigil."
     }
   ],
   "certificationPolicy": {
