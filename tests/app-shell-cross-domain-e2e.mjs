@@ -236,11 +236,31 @@ try{
     await locator.waitFor({state:"visible",timeout:10000});
     const box=await locator.boundingBox();
     assert.ok(box && box.width>=20 && box.height>=20,`visible ${surface} ribbon target is not tappable`);
-    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-    await page.waitForFunction(expected=>
-      globalThis.AO_APP_SHELL_V1?.getActive?.()===expected,
-      surface,{timeout:10000}
-    );
+    const point={x:box.x+box.width/2,y:box.y+box.height/2};
+    const hit=await page.evaluate(({x,y})=>{
+      const el=document.elementFromPoint(x,y);
+      return {
+        tag:el?.tagName??null,
+        surface:el?.closest?.("[data-ao-app-surface]")?.dataset?.aoAppSurface??null,
+        id:el?.id??null,
+        className:typeof el?.className==="string"?el.className:null,
+      };
+    },point);
+    await page.touchscreen.tap(point.x,point.y);
+    try{
+      await page.waitForFunction(expected=>
+        globalThis.AO_APP_SHELL_V1?.getActive?.()===expected,
+        surface,{timeout:10000}
+      );
+    }catch(error){
+      const state=await page.evaluate(()=>({
+        active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+        status:globalThis.AO_APP_SHELL_V1?.status?.()??null,
+        route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+        calls:[...(globalThis.__AO_JOURNEY_CALLS??[])],
+      }));
+      throw new Error(`tapSurface(${surface}) did not activate. hit=${JSON.stringify(hit)} state=${JSON.stringify(state)} cause=${String(error?.message??error)}`);
+    }
   }
 
   // Cold launch -> Home.
