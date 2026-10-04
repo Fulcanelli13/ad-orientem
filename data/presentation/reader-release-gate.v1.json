@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "3.2.0",
-  "status": "FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__LEGACY_DEFAULT_RETAINED",
-  "productionDefault": "LEGACY",
-  "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
+  "version": "4.0.0",
+  "status": "FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__R17_NATIVE_DEFAULT",
+  "productionDefault": "R17_NATIVE",
+  "releaseRule": "R17 native reader is the production default. LEGACY remains an explicit rollback path only; source-first LIVE, full-year special-structure parity and real-browser phone/touch acceptance are certified.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -827,7 +827,9 @@
     "exclusions": [
       "unsupported special rites and following actions remain fail-closed",
       "full production-default promotion waits for SPECIAL_STRUCTURE_PARITY"
-    ]
+    ],
+    "historical": true,
+    "releaseAuthority": false
   },
   "fieldRelease": {
     "schema": "ao-r17-field-release-v1",
@@ -863,5 +865,16 @@
       "tests/browser-runtime.mjs",
       "tests/reader-phone-acceptance.mjs"
     ]
+  },
+  "finalAppRelease": {
+    "schema": "ao-final-app-release-v1",
+    "status": "PRODUCTION_NATIVE_DEFAULT",
+    "reader": "R17_NATIVE",
+    "rollback": "LEGACY_EXPLICIT_ONLY",
+    "fullYearSpecialStructureParity": true,
+    "phoneTouchCertified": true,
+    "sourceFirstLiveCertified": true,
+    "historicalFieldRelease": "field/2026-10-04",
+    "fieldReleaseAuthority": false
   }
 }

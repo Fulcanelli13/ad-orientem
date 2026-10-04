@@ -1,11 +1,11 @@
-// Feature gate for the R17 Mass reader landing.
-// Production default remains LEGACY until parity is explicitly certified.
+// Final reader feature gate. R17 native is the production default; LEGACY remains an explicit rollback.
 
 export const READER_UI_MODES = Object.freeze(["LEGACY","SHADOW","PREVIEW"]);
 export const READER_UI_STORAGE_KEY = "ao-r17-reader-ui";
 
 function normalize(value){
   const raw=String(value??"").trim().toLowerCase();
+  if(raw==="legacy"||raw==="rollback") return "LEGACY";
   if(raw==="shadow") return "SHADOW";
   if(raw==="preview"||raw==="r17"||raw==="native") return "PREVIEW";
   return "LEGACY";
@@ -17,7 +17,8 @@ export function resolveReaderUiMode({search="",stored=null}={}){
     const p=new URLSearchParams(String(search||""));
     query=p.get("aoR17Reader");
   }catch{}
-  return normalize(query??stored);
+  const selected=query??stored;
+  return selected==null || String(selected).trim()==="" ? "PREVIEW" : normalize(selected);
 }
 
 export function readBrowserReaderUiMode(win=globalThis){
