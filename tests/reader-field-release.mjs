@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {makeResolvedMass,compileMassPlan} from "../src/mass/session-engine.js";
 import {projectSpecialStructure} from "../src/mass/reader-special-structure.js";
+import {installFieldCelebrationOverrides} from "../src/mass/field-celebration-overrides.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const gate=load("../data/presentation/reader-release-gate.v1.json");
@@ -9,6 +10,19 @@ const registry=load("../data/mass/rite-overlay-registry.v1.json");
 const extension=load("../data/mass/special-days-extension.v1.3.json");
 const core=load("../data/mass/special-days-core.v1.1.json");
 const sources={registry,extension,core};
+
+const hostCatalogue={};
+const fieldOverride=installFieldCelebrationOverrides(hostCatalogue);
+assert.equal(fieldOverride.installed,true);
+assert.deepEqual([...fieldOverride.added],["holy_rosary"]);
+assert.equal(hostCatalogue.holy_rosary?.type,"votive");
+assert.equal(hostCatalogue.holy_rosary?.group,"mary");
+assert.equal(hostCatalogue.holy_rosary?.path,"Sancti/10-07");
+assert.equal(hostCatalogue.holy_rosary?.title?.en,"Most Holy Rosary");
+assert.equal(hostCatalogue.holy_rosary?.title?.fr,"Très Saint Rosaire");
+assert.deepEqual([...installFieldCelebrationOverrides(hostCatalogue).added],[],
+  "field override must not replace an existing host celebration");
+
 
 assert.equal(gate.fieldRelease?.status,"READY");
 assert.equal(gate.fieldRelease?.target,"2026-10-04_ORDINARY_OR_VOTIVE_MASS");

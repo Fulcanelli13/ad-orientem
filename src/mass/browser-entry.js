@@ -9,6 +9,7 @@ import { runReaderShadowAudit } from "./reader-shadow.js";
 import { mountReaderPreview } from "./reader-preview.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
+import { installFieldCelebrationOverrides } from "./field-celebration-overrides.js";
 
 export const VERSION = "r17-browser-entry-v1";
 const ACTIVE_KEY = "ao-r17-active-mass-v1";
@@ -204,6 +205,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
 
   function tryInstall() {
     state.polls += 1;
+    globalThis.AO_R17_FIELD_CELEBRATION_OVERRIDES = installFieldCelebrationOverrides();
     if (!celebrationApi()?.getResolvedMass || !legacyBridge()?.startLive || !runtime()?.store) {
       if (state.polls < maxPolls) setTimeout(tryInstall, pollMs);
       return;
