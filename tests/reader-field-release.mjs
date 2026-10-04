@@ -66,7 +66,11 @@ for(const form of gate.fieldRelease.supportedForms){
 
 p=prepared({followingActions:["GENERIC_PROCESSION"]});
 projection=projectSpecialStructure(p,sources);
-assert.equal(projection.releaseSupport,false,"Generic Procession was silently certified by field release");
+assert.equal(projection.releaseSupport,true,"Generic Procession lost certified modular special-structure support");
+assert.ok(!gate.fieldRelease.supportedFollowingActions.includes("GENERIC_PROCESSION"),
+  "Oct-4 field-release scope silently widened to Generic Procession");
+assert.ok(gate.fieldRelease.requiredConditions.includes("no Generic Procession following action"),
+  "Oct-4 field-release guard for Generic Procession disappeared");
 
 const nuptial=makeResolvedMass({
   date:"2026-10-04",form:"SOLEMN",presentationMode:"LIVE",
