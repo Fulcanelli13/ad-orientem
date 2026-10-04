@@ -31,8 +31,9 @@ assert.equal(p.segments.length,1);
 assert.equal(p.segments[0].massEntry,"FOOT_CLUSTER");
 
 p=projectSpecialStructure(prepared({precedingRites:["ASPERGES"]}),sources);
-assert.equal(p.releaseSupport,false);
-assert.equal(p.reason,"SPECIAL_RITE_READER_PAYLOAD_REQUIRED");
+assert.equal(p.releaseSupport,true);
+assert.equal(p.reason,null);
+assert.equal(p.segments[0].readerPayload,"NATIVE_READER_PAYLOAD");
 assert.equal(p.segments[0].id,"ASPERGES");
 assert.equal(p.segments[0].handoff,"FOOT_CLUSTER");
 assert.equal(p.segments[1].id,"ORDINARY_MASS");
@@ -42,6 +43,12 @@ for(const rite of ["PALM","ASH","CANDLEMAS","ROGATIONS"]){
   p=projectSpecialStructure(prepared({precedingRites:[rite]}),sources);
   assert.equal(p.segments[0].id,rite);
   assert.equal(p.segments[1].massEntry,"INTROIT",rite+" did not hand Mass to Introit");
+  if(["PALM","ASH","CANDLEMAS"].includes(rite)){
+    assert.equal(p.segments[0].readerPayload,"NATIVE_READER_PAYLOAD");
+    assert.equal(p.releaseSupport,true,rite+" native reader was not release-supported");
+  }else{
+    assert.equal(p.releaseSupport,false,"Rogations became renderable without a native payload");
+  }
   if(rite==="PALM")assert.equal(p.ending.normalLastGospel,false,"Palm procession failed to suppress Last Gospel");
 }
 p=projectSpecialStructure(prepared({precedingRites:["CANDLEMAS"]}),sources);
@@ -60,6 +67,17 @@ assert.equal(requiemSegment.readerPayload,"PLAN_APPLIED_TO_ORDINARY_READER");
 assert.equal(p.blockingSpecialSegmentCount,0);
 assert.equal(p.releaseSupport,true);
 assert.equal(p.readerPayloadComplete,true);
+
+p=projectSpecialStructure(prepared({
+  overlays:["REQUIEM"],
+  proper:{status:"READY",data:{}},
+  followingActions:["REQUIEM_ABSOLUTION"],
+}),sources);
+const abs=p.segments.find(x=>x.id==="REQUIEM_ABSOLUTION");
+assert.ok(abs);
+assert.equal(abs.readerPayload,"NATIVE_READER_PAYLOAD");
+assert.equal(abs.renderable,true);
+assert.equal(p.releaseSupport,true);
 
 p=projectSpecialStructure(prepared({followingActions:["CORPUS_CHRISTI_PROCESSION"]}),sources);
 assert.equal(p.ending.dismissal,"BENEDICAMUS_DOMINO");
