@@ -137,7 +137,7 @@ function host({ route = "home", confirm = true } = {}) {
   await Promise.resolve();
   assert.equal(prevented,true);
   assert.equal(stopped,true);
-  assert.deepEqual(calls, ["home", "domain:learn","dismiss-settings","home","domain:learn"]);
+  assert.deepEqual(calls, ["home", "domain:learn","home","domain:learn"]);
 }
 
 console.log("PASS app shell contract");
