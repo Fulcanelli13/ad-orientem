@@ -19,8 +19,21 @@ function delay(win,ms){
 
 export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   async function resolveDonor(){
+    let api=donor(win);
+    if(typeof api?.open==="function")return api;
+
+    // AO_PRAY_V435930 is still a presentation donor behind the historical
+    // domain shell. During convergence, opening that domain is allowed only as
+    // a bootstrap step; AO_PRAY_APP_V1 remains the route/navigation owner.
+    const legacyShell=win?.AO_V37_SHELL;
+    if(typeof legacyShell?.openDomain==="function"){
+      try{await Promise.resolve(legacyShell.openDomain("pray"));}catch{}
+      api=donor(win);
+      if(typeof api?.open==="function")return api;
+    }
+
     for(let i=0;i<=maxPolls;i++){
-      const api=donor(win);
+      api=donor(win);
       if(typeof api?.open==="function")return api;
       if(i<maxPolls)await delay(win,pollMs);
     }
