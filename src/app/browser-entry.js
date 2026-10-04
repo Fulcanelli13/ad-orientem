@@ -34,6 +34,7 @@ export function adoptVisibleRibbon({
   win = globalThis,
   navigate,
   getActive,
+  observeSurface,
 } = {}) {
   const nav = visibleRibbon(win);
   if (!nav || typeof navigate !== "function") {
@@ -78,13 +79,35 @@ export function adoptVisibleRibbon({
   }
 
   function onClick(event) {
-    const button = event?.target?.closest?.(`[${APP_RIBBON_ATTR}]`);
-    if (!button || !nav.contains?.(button)) return;
-    const surface = normalizeAppSurface(button.getAttribute?.(APP_RIBBON_ATTR));
-    if (!surface) return;
-    event.preventDefault?.();
-    event.stopPropagation?.();
-    void Promise.resolve(navigate(surface)).finally(syncActive);
+    const target = event?.target;
+    const button = target?.closest?.(`[${APP_RIBBON_ATTR}]`);
+    if (button && nav.contains?.(button)) {
+      const surface = normalizeAppSurface(button.getAttribute?.(APP_RIBBON_ATTR));
+      if (!surface) return;
+      event.preventDefault?.();
+      event.stopPropagation?.();
+      void Promise.resolve(navigate(surface)).finally(syncActive);
+      return;
+    }
+
+    // The donor still owns deep non-Mass presentation during extraction.
+    // Mirror its internal launcher/home signals into the modular shell state so
+    // a donor re-render cannot make the visible ribbon drift from app state.
+    const domain = target?.closest?.("[data-v37-domain]")?.getAttribute?.("data-v37-domain");
+    if (domain) {
+      observeSurface?.(domain === "today" ? "home" : domain);
+      return;
+    }
+    const moduleId = target?.closest?.("[data-v37-open]")?.getAttribute?.("data-v37-open");
+    if (moduleId === "today.calendar") {
+      observeSurface?.("calendar");
+      return;
+    }
+    if (moduleId === "utility.settings") {
+      observeSurface?.("settings");
+      return;
+    }
+    if (target?.closest?.("[data-app-home]")) observeSurface?.("home");
   }
 
   win?.addEventListener?.("click", onClick, { capture: true });
@@ -145,6 +168,7 @@ export function installAppShellBridge({
       win,
       navigate: (surface) => state.controller?.go?.(surface),
       getActive: () => state.controller?.getActive?.(),
+      observeSurface: (surface) => state.controller?.setActive?.(surface),
     });
     state.unsubscribeSurface?.();
     state.unsubscribeSurface = state.controller?.subscribe?.(() => {
