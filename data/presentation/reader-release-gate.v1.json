@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.2.1",
+  "version": "4.3.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
   "releaseRule": "R17 native is the production reader across the certified full-year scope. Real-shell phone Chromium acceptance against index.html is certified. Legacy remains explicit rollback/debug only.",
@@ -469,7 +469,7 @@
     },
     {
       "id": "PALM_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-palm.js",
       "payload": "data/presentation/reader-palm.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#PALM",
@@ -490,11 +490,14 @@
         "Last Gospel navigation is suppressed when compiled plan forbids it"
       ],
       "nativePreview": "src/mass/reader-native-preview.js",
-      "phoneTest": "tests/reader-phone-acceptance.mjs"
+      "phoneTest": "tests/reader-phone-acceptance.mjs",
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui"
     },
     {
       "id": "ASH_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-ash.js",
       "payload": "data/presentation/reader-ash.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ASH",
@@ -514,7 +517,10 @@
         "ordinary Last Gospel remains available after Ash Wednesday Mass"
       ],
       "nativePreview": "src/mass/reader-native-preview.js",
-      "phoneTest": "tests/reader-phone-acceptance.mjs"
+      "phoneTest": "tests/reader-phone-acceptance.mjs",
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui"
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
@@ -799,7 +805,8 @@
         "native mount failures fail closed rather than silently falling back to the obsolete mirror",
         "resolved Proper can enter without legacy assembly-state dependency",
         "FOLLOW_CONGREGATION uses observed posture when available and sourced posture when no observer exists",
-        "production native mode reads no implicit legacy DOM state"
+        "production native mode reads no implicit legacy DOM state",
+        "Palm and Ash native preceding rites pass the actual index.html phone path through Introit handoff and Back"
       ],
       "requiredTest": "tests/app-shell-final-e2e.mjs",
       "acceptance": {
@@ -808,7 +815,14 @@
         "actualIndexHtml": true,
         "legacyStartCount": 0,
         "nativeOwner": "R17_NATIVE_PRODUCTION",
-        "uncaughtPageErrors": 0
+        "uncaughtPageErrors": 0,
+        "scenarios": [
+          "ORDINARY_VOTIVE",
+          "PALM_PRECEDING_RITE",
+          "ASH_PRECEDING_RITE"
+        ],
+        "palmAshRealShell": true,
+        "readerOwnershipMarker": "data-ao-mass-reader-ui"
       }
     },
     {
@@ -821,6 +835,37 @@
         "legacy startLive is not called",
         "native card title and prayer body are nonblank",
         "reader fits the phone viewport and touch Next advances",
+        "zero uncaught page errors",
+        "Palm and Ash personal recipient states render kneeling in the actual app shell",
+        "Palm and Ash hand off to the Introit and Back restores the special-rite handoff card",
+        "data-ao-mass-reader-ui reports R17_NATIVE_PRODUCTION for certified native production sessions"
+      ],
+      "scenarios": [
+        "ORDINARY_VOTIVE",
+        "PALM_PRECEDING_RITE",
+        "ASH_PRECEDING_RITE"
+      ]
+    },
+    {
+      "id": "PALM_ASH_REAL_APP_SHELL_ACCEPTANCE",
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-final-e2e.mjs",
+      "viewport": "390x844 touch Chromium",
+      "actualIndexHtml": true,
+      "rites": [
+        "PALM",
+        "ASH"
+      ],
+      "nativeOwner": "R17_NATIVE_PRODUCTION",
+      "legacyStartCount": 0,
+      "guarantees": [
+        "compiled production plans retain the explicit PALM or ASH preceding graph",
+        "the native reader opens on PALM-R01 or ASH-R01 respectively",
+        "RECEIVE_PALM and RECEIVE_ASHES produce the personal kneeling state",
+        "completion hands directly to AO.CARD.001 Introit without leaking preparatory prayers",
+        "Back from the Introit restores PALM-R07 or ASH-R05",
+        "the legacy live renderer is never started",
+        "data-ao-mass-reader-ui exposes R17_NATIVE_PRODUCTION",
         "zero uncaught page errors"
       ]
     }
