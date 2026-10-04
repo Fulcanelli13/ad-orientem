@@ -5,65 +5,45 @@ const calls=[];
 const root={dataset:{},classList:{contains:name=>name==="open"}};
 const documentElement={dataset:{}};
 const win={
-  document:{documentElement,getElementById:id=>id==="aoPray435930"?root:null},
+  document:{documentElement,getElementById:id=>id==="aoPrayerBookRoot"?root:null},
   setTimeout(fn){fn();},
-  queueMicrotask(fn){fn();},
-  AO_PRAY_V435930:{
-    open(id,options){calls.push(["open",id,options]);return true;},
-    close(){calls.push(["close"]);},
-    state(){return {rosary:{recitation:"individual"}};},
+  AOTraditionalPrayerBook:{
+    open(options){calls.push(["open",options]);},
+    close(options){calls.push(["close",options]);},
+    getState(){return {view:"hub"};},
   },
   AO_APP_SHELL_V1:{syncSurface(surface){calls.push(["surface",surface]);}},
 };
+
 const pray=createPrayOwner(win);
+assert.equal(pray.status().routeOwner,null,"status() must not fabricate route ownership");
 assert.equal(await pray.open(),true);
-assert.deepEqual(calls[0],["open","pray.hub",{returnContext:null}]);
+assert.deepEqual(calls[0],["open",{returnContext:null}]);
 assert.equal(documentElement.dataset.aoPrayRouteOwner,"modular-pray-v1");
-assert.equal(root.dataset.aoPrayOwner,"modular-pray-v1");
+assert.equal(root.dataset.aoPrayRouteOwner,"modular-pray-v1");
 assert.deepEqual(calls[1],["surface","pray"]);
 assert.equal(pray.status().routeOwner,"modular-pray-v1");
-assert.equal(pray.status().visibleOwner,"modular-pray-v1");
-assert.equal(pray.status().presentationOwner,"AO_PRAY_V435930");
+assert.equal(pray.status().rootOwner,"modular-pray-v1");
+assert.equal(pray.status().presentationOwner,"AOTraditionalPrayerBook");
+assert.equal(pray.status().presentationRoot,"aoPrayerBookRoot");
 assert.equal(pray.status().donorAvailable,true);
+assert.deepEqual(pray.status().donorState,{view:"hub"});
 assert.equal(pray.close(),true);
+assert.deepEqual(calls[2],["close",{silent:true}]);
 
 let polls=0;
-const delayedRoot={dataset:{},classList:{contains:name=>name==="open"}};
 const delayed={
-  document:{documentElement:{dataset:{}},getElementById:()=>delayedRoot},
+  document:{documentElement:{dataset:{}},getElementById:()=>root},
   setTimeout(fn){
     polls+=1;
-    if(polls===2)delayed.AO_PRAY_V435930=win.AO_PRAY_V435930;
+    if(polls===2)delayed.AOTraditionalPrayerBook=win.AOTraditionalPrayerBook;
     fn();
   },
-  queueMicrotask(fn){fn();},
   AO_APP_SHELL_V1:win.AO_APP_SHELL_V1,
 };
 const delayedOwner=createPrayOwner(delayed,{pollMs:1,maxPolls:3});
-assert.equal(await delayedOwner.open(),true,"modular PRAY owner did not wait for donor installation");
+assert.equal(await delayedOwner.open(),true,"modular PRAY owner did not wait for production Prayer Book owner");
 assert.ok(polls>=2);
-assert.equal(delayed.document.documentElement.dataset.aoPrayRouteOwner,"modular-pray-v1");
-
-const bootCalls=[];
-const bootRoot={dataset:{},classList:{contains:name=>name==="open"}};
-const boot={
-  document:{documentElement:{dataset:{}},getElementById:()=>bootRoot},
-  setTimeout(fn){fn();},
-  queueMicrotask(fn){fn();},
-  AO_APP_SHELL_V1:win.AO_APP_SHELL_V1,
-  AO_V37_SHELL:{
-    openDomain(domain){
-      bootCalls.push(domain);
-      boot.AO_PRAY_V435930=win.AO_PRAY_V435930;
-      return true;
-    },
-  },
-};
-const bootOwner=createPrayOwner(boot,{pollMs:1,maxPolls:1});
-assert.equal(await bootOwner.open(),true,"modular PRAY owner did not bootstrap its presentation donor");
-assert.deepEqual(bootCalls,["pray"]);
-assert.equal(boot.document.documentElement.dataset.aoPrayRouteOwner,"modular-pray-v1");
-assert.equal(bootRoot.dataset.aoPrayOwner,"modular-pray-v1");
 
 const absent=createPrayOwner({
   document:{documentElement:{dataset:{}},getElementById:()=>null},
