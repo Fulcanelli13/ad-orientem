@@ -1,0 +1,500 @@
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BELLARMINE_TRANSCRIPTION = exports.BELLARMINE_JINA_TRANSCRIPTION = exports.BELLARMINE_JINA_OCR = exports.BELLARMINE_IA_OCR = exports.BELLARMINE_SCAN = exports.BELLARMINE_SOURCE = exports.HAYDOCK_BASE = exports.PERONNE_BASE = exports.VULGATE_URL = exports.VULGATE_REVISION = exports.CRAMPON_URL = exports.CRAMPON_REVISION = exports.CATENA_BASE = exports.ODR_BASE = void 0;
+exports.ODR_BASE = 'https://raw.githubusercontent.com/janvier-s/original-douay-rheims/main/bible/raw/';
+exports.CATENA_BASE = 'https://raw.githubusercontent.com/AlvaroBalbin/catena/main/data/catena/';
+exports.HAYDOCK_BASE = 'https://raw.githubusercontent.com/ronaldoscotti/catholic-bible/v2.0.0/data/commentary/haydock/books/';
+// Bellarmine 1866 source chain. The Internet Archive scan is the edition-level source of truth.
+exports.BELLARMINE_SOURCE = 'https://archive.org/details/commentaryonbook0000bell';
+exports.BELLARMINE_SCAN = 'https://commons.wikimedia.org/wiki/File:Commentaryonbook0000bell.pdf';
+exports.BELLARMINE_IA_OCR = 'https://archive.org/download/commentaryonbook0000bell/commentaryonbook0000bell_djvu.txt';
+// Reader mirrors are retrieval fallbacks only; provenance remains the 1866 James Duffy edition/IA scan.
+exports.BELLARMINE_JINA_OCR = 'https://r.jina.ai/http://archive.org/download/commentaryonbook0000bell/commentaryonbook0000bell_djvu.txt';
+exports.BELLARMINE_JINA_TRANSCRIPTION = 'https://r.jina.ai/http://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml';
+exports.BELLARMINE_TRANSCRIPTION = 'https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml';
+exports.CRAMPON_REVISION = 'e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c';
+exports.CRAMPON_URL = `https://raw.githubusercontent.com/scrollmapper/bible_databases/${exports.CRAMPON_REVISION}/sources/fr/FreCrampon/FreCrampon.json`;
+exports.VULGATE_REVISION = exports.CRAMPON_REVISION;
+exports.VULGATE_URL = `https://raw.githubusercontent.com/scrollmapper/bible_databases/${exports.VULGATE_REVISION}/sources/la/VulgClementine/VulgClementine.json`;
+exports.PERONNE_BASE = 'https://www.apologetique.net/EvangilePere/EvangilePere.aspx?reference=';
+exports.PERONNE_WIKISOURCE_API = 'https://fr.wikisource.org/w/api.php';
+exports.PERONNE_BNF_CATALOG = 'https://catalogue.bnf.fr/ark:/12148/cb314619721';
+
+},12:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.parseScriptureReferences = parseScriptureReferences;
+exports.parseScriptureReference = parseScriptureReference;
+exports.cleanPericopeText = cleanPericopeText;
+const norm = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+// AO canonical identities remain traditional/Vulgate-facing. Modern names are accepted only as aliases.
+const books = [
+    [/^(?:mt|mat|matt|matthew|matthaeus|matthieu)$/, 'matthew', 'Matthew', 'Matthieu', 'gospel'],
+    [/^(?:mk|mc|marc|mark|marcus)$/, 'mark', 'Mark', 'Marc', 'gospel'],
+    [/^(?:lk|lc|luc|luke|lucas)$/, 'luke', 'Luke', 'Luc', 'gospel'],
+    [/^(?:jn|jo|john|jean|joann|ioann|joannes)$/, 'john', 'John', 'Jean', 'gospel'],
+    [/^(?:acts?|act|actus|actes)$/, 'acts', 'Acts', 'Actes', 'nt'],
+    [/^(?:rom|romans?|romains)$/, 'romans', 'Romans', 'Romains', 'nt'],
+    [/^(?:1 cor|1 corinthians?|i cor|1 corinthiens)$/, '1-corinthians', '1 Corinthians', '1 Corinthiens', 'nt'],
+    [/^(?:2 cor|2 corinthians?|ii cor|2 corinthiens)$/, '2-corinthians', '2 Corinthians', '2 Corinthiens', 'nt'],
+    [/^(?:gal|galatians?|galates)$/, 'galatians', 'Galatians', 'Galates', 'nt'],
+    [/^(?:eph|ephes|ephesians?|ephesiens)$/, 'ephesians', 'Ephesians', 'Éphésiens', 'nt'],
+    [/^(?:phil|philippians?|philippiens)$/, 'philippians', 'Philippians', 'Philippiens', 'nt'],
+    [/^(?:col|colossians?|colossiens)$/, 'colossians', 'Colossians', 'Colossiens', 'nt'],
+    [/^(?:1 thess|1 thessalonians?|i thess|1 thessaloniciens)$/, '1-thessalonians', '1 Thessalonians', '1 Thessaloniciens', 'nt'],
+    [/^(?:2 thess|2 thessalonians?|ii thess|2 thessaloniciens)$/, '2-thessalonians', '2 Thessalonians', '2 Thessaloniciens', 'nt'],
+    [/^(?:1 tim|1 timothy|i tim|1 timothee)$/, '1-timothy', '1 Timothy', '1 Timothée', 'nt'],
+    [/^(?:2 tim|2 timothy|ii tim|2 timothee)$/, '2-timothy', '2 Timothy', '2 Timothée', 'nt'],
+    [/^(?:tit|titus|tite)$/, 'titus', 'Titus', 'Tite', 'nt'],
+    [/^(?:philem|philemon)$/, 'philemon', 'Philemon', 'Philémon', 'nt'],
+    [/^(?:heb|hebrews?|hebreux)$/, 'hebrews', 'Hebrews', 'Hébreux', 'nt'],
+    [/^(?:jas|james|jac|jacques)$/, 'james', 'James', 'Jacques', 'nt'],
+    [/^(?:1 pet|1 peter|i pet|1 pierre)$/, '1-peter', '1 Peter', '1 Pierre', 'nt'],
+    [/^(?:2 pet|2 peter|ii pet|2 pierre)$/, '2-peter', '2 Peter', '2 Pierre', 'nt'],
+    [/^(?:1 jn|1 john|i jn|1 jean)$/, '1-john', '1 John', '1 Jean', 'nt'],
+    [/^(?:2 jn|2 john|ii jn|2 jean)$/, '2-john', '2 John', '2 Jean', 'nt'],
+    [/^(?:3 jn|3 john|iii jn|3 jean)$/, '3-john', '3 John', '3 Jean', 'nt'],
+    [/^(?:jude|jud)$/, 'jude', 'Jude', 'Jude', 'nt'],
+    [/^(?:apoc|apocalypse|rev|revelation)$/, 'apocalypse', 'Apocalypse', 'Apocalypse', 'nt'],
+
+    [/^(?:gen|genesis|genese)$/, 'genesis', 'Genesis', 'Genèse', 'ot'],
+    [/^(?:ex|exod|exodus|exode)$/, 'exodus', 'Exodus', 'Exode', 'ot'],
+    [/^(?:lev|leviticus|levitique)$/, 'leviticus', 'Leviticus', 'Lévitique', 'ot'],
+    [/^(?:num|numbers|nombres)$/, 'numbers', 'Numbers', 'Nombres', 'ot'],
+    [/^(?:deut|deuteronomy|deuteronome)$/, 'deuteronomy', 'Deuteronomy', 'Deutéronome', 'ot'],
+    [/^(?:jos|josue|joshua)$/, 'josue', 'Josue', 'Josué', 'ot'],
+    [/^(?:judg|judges|juges)$/, 'judges', 'Judges', 'Juges', 'ot'],
+    [/^(?:rut|ruth|rute)$/, 'ruth', 'Ruth', 'Ruth', 'ot'],
+    [/^(?:1 kings?|1 sam(?:uel)?|i kings?|i sam(?:uel)?)$/, '1-kings', '1 Kings', '1 Samuel', 'ot'],
+    [/^(?:2 kings?|2 sam(?:uel)?|ii kings?|ii sam(?:uel)?)$/, '2-kings', '2 Kings', '2 Samuel', 'ot'],
+    [/^(?:3 kings?|1 ki|1 rois?|iii kings?)$/, '3-kings', '3 Kings', '1 Rois', 'ot'],
+    [/^(?:4 kings?|2 ki|2 rois?|iv kings?)$/, '4-kings', '4 Kings', '2 Rois', 'ot'],
+    [/^(?:1 chron(?:icles)?|i chron(?:icles)?|1 paralip(?:omenon)?|i paralip(?:omenon)?)$/, '1-paralipomenon', '1 Paralipomenon', '1 Paralipomènes', 'ot'],
+    [/^(?:2 chron(?:icles)?|ii chron(?:icles)?|2 paralip(?:omenon)?|ii paralip(?:omenon)?)$/, '2-paralipomenon', '2 Paralipomenon', '2 Paralipomènes', 'ot'],
+    [/^(?:1 esdras|i esdras|ezra|esdras)$/, '1-esdras', '1 Esdras', '1 Esdras', 'ot'],
+    [/^(?:2 esdras|ii esdras|nehemias|nehemiah|nehemie)$/, '2-esdras', '2 Esdras', '2 Esdras', 'ot'],
+    [/^(?:tob|tobias|tobit|tobie)$/, 'tobias', 'Tobias', 'Tobie', 'ot'],
+    [/^(?:jdt|judith)$/, 'judith', 'Judith', 'Judith', 'ot'],
+    [/^(?:esth|esther|ester)$/, 'esther', 'Esther', 'Esther', 'ot'],
+    [/^(?:1 mach(?:abees)?|i mach(?:abees)?|1 macc(?:abees)?)$/, '1-machabees', '1 Machabees', '1 Machabées', 'ot'],
+    [/^(?:2 mach(?:abees)?|ii mach(?:abees)?|2 macc(?:abees)?)$/, '2-machabees', '2 Machabees', '2 Machabées', 'ot'],
+    [/^(?:job)$/, 'job', 'Job', 'Job', 'ot'],
+    [/^(?:ps|psa|psalm|psalms|psalmus|psalmi|psaume|psaumes)$/, 'psalms', 'Psalms', 'Psaumes', 'psalm'],
+    [/^(?:prov|proverbs|proverbes)$/, 'proverbs', 'Proverbs', 'Proverbes', 'ot'],
+    [/^(?:eccl|ecclesiastes|qohelet)$/, 'ecclesiastes', 'Ecclesiastes', 'Ecclésiaste', 'ot'],
+    [/^(?:cant|canticles|song(?: of songs)?|cantique(?: des cantiques)?)$/, 'canticle-of-canticles', 'Canticle of Canticles', 'Cantique des Cantiques', 'ot'],
+    [/^(?:wis|wisdom|sagesse)$/, 'wisdom', 'Wisdom', 'Sagesse', 'ot'],
+    [/^(?:ecclus|ecclesiasticus|sirach|siracide)$/, 'ecclesiasticus', 'Ecclesiasticus', 'Ecclésiastique', 'ot'],
+    [/^(?:is|isa|isaias|isaiah|isaie)$/, 'isaias', 'Isaias', 'Isaïe', 'ot'],
+    [/^(?:jer|jeremias|jeremiah|jeremie)$/, 'jeremias', 'Jeremias', 'Jérémie', 'ot'],
+    [/^(?:lam|lamentations)$/, 'lamentations', 'Lamentations', 'Lamentations', 'ot'],
+    [/^(?:bar|baruch)$/, 'baruch', 'Baruch', 'Baruch', 'ot'],
+    [/^(?:ez|ezech|ezechiel|ezekiel)$/, 'ezechiel', 'Ezechiel', 'Ézéchiel', 'ot'],
+    [/^(?:dan|daniel)$/, 'daniel', 'Daniel', 'Daniel', 'ot'],
+    [/^(?:os|osee|hosea)$/, 'osee', 'Osee', 'Osée', 'ot'],
+    [/^(?:joel)$/, 'joel', 'Joel', 'Joël', 'ot'],
+    [/^(?:amos)$/, 'amos', 'Amos', 'Amos', 'ot'],
+    [/^(?:abd|abdias|obadiah|obadie)$/, 'abdias', 'Abdias', 'Abdias', 'ot'],
+    [/^(?:jon|jonas|jonah)$/, 'jonas', 'Jonas', 'Jonas', 'ot'],
+    [/^(?:mic|micheas|micah|michee)$/, 'micheas', 'Micheas', 'Michée', 'ot'],
+    [/^(?:nah|nahum)$/, 'nahum', 'Nahum', 'Nahum', 'ot'],
+    [/^(?:hab|habacuc)$/, 'habacuc', 'Habacuc', 'Habacuc', 'ot'],
+    [/^(?:soph|sophonias|zephaniah|sophonie)$/, 'sophonias', 'Sophonias', 'Sophonie', 'ot'],
+    [/^(?:agg|aggeus|haggai|aggee)$/, 'aggeus', 'Aggeus', 'Aggée', 'ot'],
+    [/^(?:zach|zacharias|zechariah|zacharie)$/, 'zacharias', 'Zacharias', 'Zacharie', 'ot'],
+    [/^(?:mal|malachias|malachi|malachie)$/, 'malachias', 'Malachias', 'Malachie', 'ot'],
+
+    // Vulgate appendix: useful for traditional liturgical citations, but not routed to Haydock.
+    [/^(?:prayer of manasses|oratio manassae|manasses)$/, 'prayer-of-manasses', 'Prayer of Manasses', 'Prière de Manassé', 'vulgate-appendix'],
+    [/^(?:3 esdras|iii esdras)$/, '3-esdras', '3 Esdras', '3 Esdras', 'vulgate-appendix'],
+    [/^(?:4 esdras|iv esdras)$/, '4-esdras', '4 Esdras', '4 Esdras', 'vulgate-appendix']
+];
+function parseLineReference(line) {
+    const re = /^((?:(?:[1-4]|I{1,3}|IV)\s*)?[A-Za-zÀ-ÿÆæ.]+(?:\s+[A-Za-zÀ-ÿÆæ.]+){0,3})\s+(\d{1,3})\s*[:,.]\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/i;
+    const m = line.replace(/^IV\s+/i, '4 ').replace(/^III\s+/i, '3 ').replace(/^II\s+/i, '2 ').replace(/^I\s+/i, '1 ').match(re);
+    if (!m) return null;
+    const token = norm(m[1].replace(/\./g, ''));
+    const hit = books.find(([rx]) => rx.test(token));
+    if (!hit) return null;
+    const [, slug, label, frLabel, kind] = hit;
+    return { slug, label, frLabel, kind, chapter:+m[2], start:+m[3], end:+(m[4]||m[3]), display:`${label} ${m[2]}:${m[3]}${m[4]?'–'+m[4]:''}`, displayFr:`${frLabel} ${m[2]},${m[3]}${m[4]?'–'+m[4]:''}` };
+}
+function sourceLines(obj) {
+    // Parse one linguistic representation only, avoiding duplicate citations across EN/LA/FR.
+    const candidates = [obj?.en, obj?.eng, obj?.lat, obj?.fr].filter(Boolean);
+    let fallback = [];
+    for (const source of candidates) {
+        const lines = String(source || '').replace(/<br\s*\/?>/gi,'\n').replace(/<[^>]+>/g,' ').split(/\n+/).map(x=>x.replace(/\s+/g,' ').trim()).filter(Boolean);
+        if (!fallback.length) fallback = lines;
+        if (lines.some(line => !!parseLineReference(line))) return lines;
+    }
+    return fallback;
+}
+function parseScriptureReferences(obj) {
+    const lines = sourceLines(obj);
+    const refs=[];
+    for (const line of lines) {
+        const first=parseLineReference(line);
+        if (!first) continue;
+        refs.push(first);
+        // Additional citations on the same source line: ; Book 1:2 / + Book 1:2 / ; 1:2 (inherit book).
+        const tail=line.replace(/^.*?\d{1,3}\s*[:,.]\s*\d{1,3}(?:\s*[-–—]\s*\d{1,3})?/,'');
+        const pieces=tail.split(/\s*(?:;|\+)\s*/).filter(Boolean);
+        const sameChapter = [...tail.matchAll(/,\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/g)].map(m => ({start:+m[1],end:+(m[2]||m[1])}));
+        for (const sv of sameChapter) {
+            const r={...first,start:sv.start,end:sv.end,display:`${first.label} ${first.chapter}:${sv.start}${sv.end!==sv.start?'–'+sv.end:''}`,displayFr:`${first.frLabel} ${first.chapter},${sv.start}${sv.end!==sv.start?'–'+sv.end:''}`};
+            if (!refs.some(x=>x.slug===r.slug&&x.chapter===r.chapter&&x.start===r.start&&x.end===r.end)) refs.push(r);
+        }
+        for (const piece of pieces) {
+            let r=parseLineReference(piece);
+            if (!r) {
+                const m=piece.match(/^(\d{1,3})\s*[:,.]\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/);
+                if (m) r={...first,chapter:+m[1],start:+m[2],end:+(m[3]||m[2]),display:`${first.label} ${m[1]}:${m[2]}${m[3]?'–'+m[3]:''}`,displayFr:`${first.frLabel} ${m[1]},${m[2]}${m[3]?'–'+m[3]:''}`};
+            }
+            if (r && !refs.some(x=>x.slug===r.slug&&x.chapter===r.chapter&&x.start===r.start&&x.end===r.end)) refs.push(r);
+        }
+        break;
+    }
+    return { relationship: refs.length>1?'composite':refs.length===1?(refs[0].kind==='psalm'?'psalm_verse':'exact'):'unknown', refs };
+}
+function parseScriptureReference(obj) {
+    return parseScriptureReferences(obj).refs[0] || null;
+}
+function cleanPericopeText(obj, lang) { const raw = lang === 'en' ? (obj?.en || obj?.eng || '') : (obj?.[lang] || ''); const p = parseScriptureReference(obj); return String(raw).replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ' ').split(/\n+/).map(x => x.replace(/\s+/g, ' ').trim()).filter(Boolean).filter(x => !(p && /\d\s*[:,]\s*\d/.test(x))).filter(x => !/^(continuation|sequel|lectio|lesson|the holy gospel|the gospel|initium|sequéntia|in illo tempore|fratres|suite|lecture|evangile|évangile|en ce temps-la|en ce temps-là)\b/i.test(x)).join('\n').trim(); }
+
+},13:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AppStore = exports.DEFAULT_SETTINGS = void 0;
+exports.createInitialState = createInitialState;
+exports.reduceAppState = reduceAppState;
+exports.DEFAULT_SETTINGS = {
+    massForm: 'sung', followMode: 'vox', textMode: 'oriented', language: 'en', participationMode: 'quiet',
+    faithfulCommunion: true, secondConfiteor: false, joinSecondConfiteor: false, incenseSung: true, sanctusSetting: 'gregorian', epistleMinister: 'celebrant', longInterlectionSeating: false, sundayAsperges: true, reducedMotion: false, textScale: 'normal', localPostures: {}
+};
+function createInitialState(date, language = 'en') {
+    const settings = { ...exports.DEFAULT_SETTINGS, language, localPostures: {} };
+    return { route: 'home', language, selectedDate: date, resolution: null, resolving: false, lastAction: null, homeSheet: null, settings,
+        live: { form: settings.massForm, followMode: settings.followMode, textMode: settings.textMode, stepIndex: 0, sheet: null },
+        scripture: { kind: 'gospel', pane: 'reading', document: null, loading: false, error: null, returnRoute: 'home', returnStepIndex: 0 },
+        prepare: { stepIndex: 0, mode: 'standard', intention: '', intendsCommunion: true, graceStatus: 'unset', fastStatus: 'unset', silenceSeconds: null },
+        thanksgiving: { stepIndex: 0, mode: 'standard', prayerIndex: 0, receivedCommunion: true, personal: '', silenceSeconds: null, finalSilenceSeconds: null, fruit: '', completed: false },
+        resume: { available: false, savedAt: null, stepIndex: 0, date: null } };
+}
+const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+function mergeSettings(state, patch) {
+    const settings = { ...state.settings, ...patch, localPostures: patch.localPostures ? { ...patch.localPostures } : { ...state.settings.localPostures } };
+    return { ...state, settings, language: settings.language, live: { ...state.live, form: settings.massForm, followMode: settings.followMode, textMode: settings.textMode } };
+}
+function reduceAppState(state, action) {
+    switch (action.type) {
+        case 'set-language': return mergeSettings(state, { language: action.language });
+        case 'set-date': return { ...state, selectedDate: action.date, resolution: null, resolving: true, lastAction: null, live: { ...state.live, stepIndex: 0, sheet: null }, prepare: { ...state.prepare, stepIndex: 0, intention: '', graceStatus: 'unset', fastStatus: 'unset' }, thanksgiving: { ...state.thanksgiving, stepIndex: 0, completed: false }, resume: { ...state.resume, available: false } };
+        case 'resolve-start': return { ...state, resolution: null, resolving: true };
+        case 'resolve-complete': return { ...state, resolution: action.resolution, resolving: false };
+        case 'home-action': return { ...state, lastAction: action.action };
+        case 'home-sheet': return { ...state, homeSheet: action.sheet, lastAction: null };
+        case 'enter-prepare': return { ...state, route: 'prepare', lastAction: 'prepare', prepare: { ...state.prepare, stepIndex: 0, intendsCommunion: state.settings.faithfulCommunion } };
+        case 'prepare-step': return { ...state, prepare: { ...state.prepare, stepIndex: clamp(action.index, 0, 20) } };
+        case 'prepare-mode': return { ...state, prepare: { ...state.prepare, mode: action.mode, stepIndex: 0 } };
+        case 'prepare-intention': return { ...state, prepare: { ...state.prepare, intention: action.value } };
+        case 'prepare-communion': return { ...state, prepare: { ...state.prepare, intendsCommunion: !!action.value, graceStatus: action.value ? state.prepare.graceStatus : 'unset', fastStatus: action.value ? state.prepare.fastStatus : 'unset' } };
+        case 'prepare-grace': return { ...state, prepare: { ...state.prepare, graceStatus: action.value } };
+        case 'prepare-fast': return { ...state, prepare: { ...state.prepare, fastStatus: action.value } };
+        case 'prepare-silence': return { ...state, prepare: { ...state.prepare, silenceSeconds: action.seconds } };
+        case 'leave-prepare': return { ...state, route: 'home' };
+        case 'enter-live': return { ...state, route: 'live', lastAction: 'follow', live: { ...state.live, stepIndex: Math.max(0, action.resumeIndex ?? 0), sheet: null } };
+        case 'leave-live': return { ...state, route: 'home', live: { ...state.live, sheet: null } };
+        case 'finish-live': return { ...state, route: 'thanksgiving', live: { ...state.live, sheet: null }, thanksgiving: { ...state.thanksgiving, stepIndex: 0, prayerIndex: 0, receivedCommunion: state.settings.faithfulCommunion, personal: '', fruit: '', silenceSeconds: null, finalSilenceSeconds: null, completed: false } };
+        case 'live-next': return { ...state, live: { ...state.live, stepIndex: clamp(state.live.stepIndex + 1, 0, action.maxIndex), sheet: null } };
+        case 'live-previous': return { ...state, live: { ...state.live, stepIndex: clamp(state.live.stepIndex - 1, 0, Number.MAX_SAFE_INTEGER), sheet: null } };
+        case 'live-jump': return { ...state, live: { ...state.live, stepIndex: clamp(action.index, 0, action.maxIndex), sheet: null } };
+        case 'live-form-session': return { ...state, live: { ...state.live, form: action.form, stepIndex: 0, sheet: null } };
+        case 'live-follow-mode-session': return { ...state, live: { ...state.live, followMode: action.mode, sheet: null } };
+        case 'live-form': return mergeSettings({ ...state, live: { ...state.live, form: action.form, stepIndex: 0, sheet: null } }, { massForm: action.form });
+        case 'live-follow-mode': return mergeSettings({ ...state, live: { ...state.live, followMode: action.mode, sheet: null } }, { followMode: action.mode });
+        case 'live-text-mode': return mergeSettings({ ...state, live: { ...state.live, textMode: action.mode, sheet: null } }, { textMode: action.mode });
+        case 'live-sheet': return { ...state, live: { ...state.live, sheet: action.sheet } };
+        case 'set-participation': return mergeSettings(state, { participationMode: action.mode });
+        case 'set-faithful-communion': return mergeSettings(state, { faithfulCommunion: action.value });
+        case 'set-second-confiteor': return mergeSettings(state, { secondConfiteor: action.value });
+        case 'set-join-second-confiteor': return mergeSettings(state, { joinSecondConfiteor: action.value });
+        case 'set-incense-sung': return mergeSettings(state, { incenseSung: action.value });
+        case 'set-sanctus-setting': return mergeSettings(state, { sanctusSetting: action.value === 'divided' ? 'divided' : 'gregorian' });
+        case 'set-epistle-minister': return mergeSettings(state, { epistleMinister: action.value === 'lector' ? 'lector' : 'celebrant' });
+        case 'set-long-interlection-seating': return mergeSettings(state, { longInterlectionSeating: action.value === true });
+        case 'set-sunday-asperges': return mergeSettings({ ...state, live: { ...state.live, stepIndex: 0, sheet: null } }, { sundayAsperges: action.value });
+        case 'set-reduced-motion': return mergeSettings(state, { reducedMotion: action.value });
+        case 'set-text-scale': return mergeSettings(state, { textScale: action.value });
+        case 'set-local-posture': return mergeSettings(state, { localPostures: { ...state.settings.localPostures, [action.key]: action.value } });
+        case 'reset-local-postures': return mergeSettings(state, { localPostures: {} });
+        case 'scripture-open': return { ...state, route: 'scripture', scripture: { kind: action.kind, pane: 'reading', document: null, loading: true, error: null, returnRoute: action.returnRoute, returnStepIndex: action.returnStepIndex } };
+        case 'scripture-loading': return { ...state, scripture: { ...state.scripture, loading: true, error: null } };
+        case 'scripture-loaded': return { ...state, scripture: { ...state.scripture, loading: false, document: action.document, error: null } };
+        case 'scripture-failed': return { ...state, scripture: { ...state.scripture, loading: false, document: null, error: action.error } };
+        case 'scripture-pane': return { ...state, scripture: { ...state.scripture, pane: action.pane } };
+        case 'scripture-close': return { ...state, route: state.scripture.returnRoute, live: { ...state.live, stepIndex: state.scripture.returnStepIndex }, scripture: { ...state.scripture, loading: false, error: null } };
+        case 'enter-thanksgiving': return { ...state, route: 'thanksgiving', lastAction: 'thanks', thanksgiving: { ...state.thanksgiving, stepIndex: 0, prayerIndex: 0, receivedCommunion: state.settings.faithfulCommunion, silenceSeconds: null, finalSilenceSeconds: null, completed: false } };
+        case 'thanksgiving-step': return { ...state, thanksgiving: { ...state.thanksgiving, stepIndex: clamp(action.index, 0, 20) } };
+        case 'thanksgiving-mode': return { ...state, thanksgiving: { ...state.thanksgiving, mode: action.mode, stepIndex: 0 } };
+        case 'thanksgiving-received': return { ...state, thanksgiving: { ...state.thanksgiving, receivedCommunion: !!action.value } };
+        case 'thanksgiving-prayer': return { ...state, thanksgiving: { ...state.thanksgiving, prayerIndex: Math.max(0, action.index) } };
+        case 'thanksgiving-personal': return { ...state, thanksgiving: { ...state.thanksgiving, personal: action.value } };
+        case 'thanksgiving-fruit': return { ...state, thanksgiving: { ...state.thanksgiving, fruit: action.value } };
+        case 'thanksgiving-silence': return { ...state, thanksgiving: { ...state.thanksgiving, silenceSeconds: action.seconds } };
+        case 'thanksgiving-final-silence': return { ...state, thanksgiving: { ...state.thanksgiving, finalSilenceSeconds: action.seconds } };
+        case 'finish-thanksgiving': return { ...state, route: 'home', thanksgiving: { ...state.thanksgiving, stepIndex: 0, completed: true, silenceSeconds: null, finalSilenceSeconds: null } };
+        case 'leave-thanksgiving': return { ...state, route: 'home' };
+        case 'resume-available': return { ...state, resume: { available: true, savedAt: action.savedAt, date: action.date, stepIndex: action.stepIndex } };
+        case 'resume-clear': return { ...state, resume: { available: false, savedAt: null, date: null, stepIndex: 0 } };
+        case 'hydrate-settings': return mergeSettings(state, action.settings);
+        default: return state;
+    }
+}
+class AppStore {
+    state;
+    listeners = new Set();
+    constructor(initial) { this.state = initial; }
+    getState() { return this.state; }
+    dispatch(action) { this.state = reduceAppState(this.state, action); for (const l of this.listeners) l(this.state); }
+    subscribe(l) { this.listeners.add(l); return () => this.listeners.delete(l); }
+}
+exports.AppStore = AppStore;
+
+},14:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AppController = void 0;
+const home_controller_1 = require(15);
+const live_mass_controller_1 = require(22);
+const scripture_controller_1 = require(39);
+const prepare_controller_1 = require(42);
+const thanksgiving_controller_1 = require(46);
+const persistence_1 = require(48);
+class AppController {
+    home;
+    live;
+    scripture;
+    prepare;
+    thanksgiving;
+    persistence;
+    constructor(root, store, resolver, scriptureService, storage) {
+        this.persistence = new persistence_1.PersistenceController(store, storage);
+        this.home = new home_controller_1.HomeController({ root, store, resolver, persistence: this.persistence, onNavigate(action) { root.dispatchEvent(new CustomEvent('ao:navigate', { bubbles: true, detail: { action } })); } });
+        this.live = new live_mass_controller_1.LiveMassController(root, store, this.persistence);
+        this.scripture = new scripture_controller_1.ScriptureController(root, store, scriptureService);
+        this.prepare = new prepare_controller_1.PrepareController(root, store);
+        this.thanksgiving = new thanksgiving_controller_1.ThanksgivingController(root, store, this.persistence);
+    }
+    start() { return this.home.start(); }
+}
+exports.AppController = AppController;
+
+},15:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HomeController = void 0;
+const home_1 = require(16);
+const liturgical_theme_ui_1 = require(21);
+const live_mass_model_1 = require(24);
+function iso(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+function shift(dateIso, days) {
+    const date = new Date(`${dateIso}T12:00:00`);
+    date.setDate(date.getDate() + days);
+    return iso(date);
+}
+class HomeController {
+    root;
+    store;
+    resolver;
+    onNavigate;
+    persistence;
+    resolutionToken = 0;
+    constructor(options) {
+        this.root = options.root;
+        this.store = options.store;
+        this.resolver = options.resolver;
+        this.onNavigate = options.onNavigate;
+        this.persistence = options.persistence;
+        this.store.subscribe(state => this.paint(state));
+        this.root.addEventListener('click', event => this.handleClick(event));
+        this.paint(this.store.getState());
+    }
+    async start() {
+        await this.resolve(this.store.getState().selectedDate);
+        if (this.persistence.resumeRecord())
+            await this.resumeSavedMass();
+    }
+    paint(state = this.store.getState()) {
+        if (state.route !== 'home')
+            return;
+        (0, home_1.renderHome)(this.root, state);
+        (0, liturgical_theme_ui_1.applyTheme)(document.documentElement, (globalThis.AO_ACTIVE_MASS_SESSION?.date === state.selectedDate ? globalThis.AO_ACTIVE_MASS_SESSION?.themePlan : null) || state.resolution?.colourPlan || null);
+    }
+    async resolve(date) {
+        const token = ++this.resolutionToken;
+        this.store.dispatch({ type: 'resolve-start' });
+        const resolution = await this.resolver.resolveDay(date);
+        if (token !== this.resolutionToken)
+            return;
+        this.store.dispatch({ type: 'resolve-complete', resolution });
+    }
+    changeDate(date) {
+        this.store.dispatch({ type: 'set-date', date });
+        void this.resolve(date);
+    }
+    async resumeSavedMass() {
+        const record = this.persistence.resumeRecord();
+        if (!record)
+            return;
+        if (record.date !== this.store.getState().selectedDate) {
+            this.store.dispatch({ type: 'set-date', date: record.date });
+            await this.resolve(record.date);
+        }
+        this.store.dispatch({ type: 'set-language', language: (record.language === 'fr' ? 'fr' : 'en') });
+        this.store.dispatch({ type: 'live-form', form: (record.form === 'low' ? 'low' : 'sung') });
+        this.store.dispatch({ type: 'live-follow-mode', mode: (record.followMode === 'missal' ? 'missal' : 'vox') });
+        this.store.dispatch({ type: 'live-text-mode', mode: (record.textMode === 'parallel' ? 'parallel' : 'oriented') });
+        const sequence = (0, live_mass_model_1.buildLiveSequence)(this.store.getState());
+        let resumeIndex = Number.isInteger(record.stepIndex) ? record.stepIndex : 0;
+        if (record.stepId) {
+            const canonicalIndex = sequence.steps.findIndex(step => step.id === record.stepId);
+            if (canonicalIndex >= 0) resumeIndex = canonicalIndex;
+        }
+        resumeIndex = Math.max(0, Math.min(resumeIndex, Math.max(0, sequence.steps.length - 1)));
+        this.store.dispatch({ type: 'enter-live', resumeIndex });
+    }
+    handleClick(event) {
+        if (this.store.getState().route !== 'home')
+            return;
+        const target = event.target?.closest('button');
+        if (!target)
+            return;
+        const language = target.dataset.language;
+        if (language === 'en' || language === 'fr') {
+            this.store.dispatch({ type: 'set-language', language });
+            return;
+        }
+        if (target.dataset.date) {
+            this.changeDate(target.dataset.date);
+            return;
+        }
+        if (target.dataset.formulary !== undefined) {
+            const index = Number(target.dataset.formulary);
+            if (Number.isInteger(index) && index >= 0) {
+                this.resolver.formularies.set(this.store.getState().selectedDate, index);
+                void this.resolve(this.store.getState().selectedDate);
+            }
+            return;
+        }
+        if (target.dataset.resumeMass !== undefined) {
+            void this.resumeSavedMass();
+            return;
+        }
+        if (target.dataset.homeSheetClose !== undefined) {
+            this.store.dispatch({ type: 'home-sheet', sheet: null });
+            return;
+        }
+        if (target.dataset.homeOpenSettings !== undefined) {
+            this.store.dispatch({ type: 'home-sheet', sheet: 'settings' });
+            return;
+        }
+        if (target.dataset.settingForm) {
+            this.store.dispatch({ type: 'live-form', form: target.dataset.settingForm });
+            return;
+        }
+        if (target.dataset.settingFollow) {
+            this.store.dispatch({ type: 'live-follow-mode', mode: target.dataset.settingFollow });
+            return;
+        }
+        if (target.dataset.settingText) {
+            this.store.dispatch({ type: 'live-text-mode', mode: target.dataset.settingText });
+            return;
+        }
+        if (target.dataset.settingParticipation) {
+            this.store.dispatch({ type: 'set-participation', mode: target.dataset.settingParticipation });
+            return;
+        }
+        if (target.dataset.settingScale) {
+            this.store.dispatch({ type: 'set-text-scale', value: target.dataset.settingScale });
+            return;
+        }
+        if (target.dataset.settingMotion !== undefined) {
+            this.store.dispatch({ type: 'set-reduced-motion', value: target.dataset.settingMotion === '1' });
+            return;
+        }
+        if (target.dataset.resetPostures !== undefined) {
+            this.store.dispatch({ type: 'reset-local-postures' });
+            return;
+        }
+        const nav = target.dataset.nav;
+        if (nav === 'previous')
+            this.changeDate(shift(this.store.getState().selectedDate, -1));
+        else if (nav === 'next')
+            this.changeDate(shift(this.store.getState().selectedDate, 1));
+        else if (nav === 'today')
+            this.changeDate(iso(new Date()));
+        const action = target.dataset.action;
+        if (action) {
+            this.store.dispatch({ type: 'home-action', action });
+            if (action === 'follow')
+                this.store.dispatch({ type: 'enter-live' });
+            else if (action === 'prepare')
+                this.store.dispatch({ type: 'enter-prepare' });
+            else if (action === 'thanks')
+                this.store.dispatch({ type: 'enter-thanksgiving' });
+            else if (action === 'today-mass')
+                this.store.dispatch({ type: 'home-sheet', sheet: 'mass' });
+            else if (action === 'more')
+                this.store.dispatch({ type: 'home-sheet', sheet: 'more' });
+            else if (action === 'gospel')
+                this.root.dispatchEvent(new CustomEvent('ao:open-scripture', { bubbles: true, detail: { kind: 'gospel', returnRoute: 'home' } }));
+            this.onNavigate?.(action);
+        }
+    }
+}
+exports.HomeController = HomeController;
+
+},16:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.renderHomeToString = renderHomeToString;
+exports.renderHome = renderHome;
+const i18n_1 = require(17);
+const home_model_1 = require(20);
+function esc(value) {
+    return String(value || '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[char] || char));
+}
+function homeSettings(state) {
+    const l = state.language, s = state.settings;
+    const seg = (label, attr, items, active) => `<div class="homeSettingGroup"><label>${esc(label)}</label><div class="homeSegments">${items.map(([v, t]) => `<button ${attr}="${v}" class="${active === v ? 'active' : ''}">${esc(t)}</button>`).join('')}</div></div>`;
+    return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>${l === 'fr' ? 'Préférences' : 'Preferences'}</span><h2>${l === 'fr' ? 'Réglages' : 'Settings'}</h2></div><button data-home-sheet-close>×</button></header>${seg(l === 'fr' ? 'Forme de Messe' : 'Mass form', 'data-setting-form', [["sung", l === 'fr' ? 'Messe chantée' : 'Sung Mass'], ['low', l === 'fr' ? 'Messe basse' : 'Low Mass']], s.massForm)}${seg(l === 'fr' ? 'Suivre' : 'Follow', 'data-setting-follow', [["vox", 'VOX'], ['missal', l === 'fr' ? 'Missel' : 'Missal']], s.followMode)}${seg(l === 'fr' ? 'Texte' : 'Text', 'data-setting-text', [["oriented", l === 'fr' ? 'Orienté' : 'Oriented'], ['parallel', l === 'fr' ? 'Parallèle' : 'Parallel']], s.textMode)}${seg(l === 'fr' ? 'Participation' : 'Participation', 'data-setting-participation', [["quiet", l === 'fr' ? 'Discrète' : 'Quiet'], ['group', l === 'fr' ? 'Réponses' : 'Group']], s.participationMode)}${seg(l === 'fr' ? 'Taille du texte' : 'Text size', 'data-setting-scale', [["normal", l === 'fr' ? 'Normale' : 'Normal'], ['large', l === 'fr' ? 'Grande' : 'Large']], s.textScale)}<button class="homeToggle" data-setting-motion="${s.reducedMotion ? '0' : '1'}"><span><b>${l === 'fr' ? 'Réduire les animations' : 'Reduce motion'}</b><small>${l === 'fr' ? 'Limiter les transitions non essentielles.' : 'Limit non-essential transitions.'}</small></span><i class="${s.reducedMotion ? 'on' : ''}"></i></button><button class="resetPostureHome" data-reset-postures>${l === 'fr' ? 'Réinitialiser les postures locales' : 'Reset local postures'}</button></section></div>`;
+}
+function homeSheet(state) {
+    const l = state.language;
+    if (!state.homeSheet)
+        return '';
+    if (state.homeSheet === 'settings')
+        return homeSettings(state);
+    if (state.homeSheet === 'mass') {
+        const p = state.resolution?.proper.status === 'ready' ? state.resolution.proper.data : null;
+        const slot = (label, v) => { const vern = (l === 'fr' ? v?.fr : v?.en) || ''; const latinOnly = !vern && !!v?.lat; return `<article><b>${esc(label)}</b><p>${esc(vern || (l === 'fr' ? 'Traduction française indisponible.' : 'English translation unavailable.'))}</p>${latinOnly ? `<small class="translationIntegrityNote">${l === 'fr' ? 'Le texte latin existe, mais il n’est pas affiché comme français.' : 'Latin exists, but is not displayed as English.'}</small>` : ''}</article>`; };
+        return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>${l === 'fr' ? 'Aujourd’hui' : 'Today'}</span><h2>${l === 'fr' ? "Messe du jour" : "Today’s Mass"}</h2></div><button data-home-sheet-close>×</button></header><div class="homeMassOverview">${slot('Introit', p?.introit)}${slot(l === 'fr' ? 'Collecte' : 'Collect', p?.collects?.[0])}${slot(l === 'fr' ? 'Épître / Leçon' : 'Epistle / Lesson', p?.epistle)}${slot(l === 'fr' ? 'Saint Évangile' : 'Holy Gospel', p?.gospel)}${slot('Offertory', p?.offertory)}${slot('Communion', p?.communion)}</div></section></div>`;
+    }
+    return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>${l === 'fr' ? 'Ad Orientem' : 'Ad Orientem'}</span><h2>${l === 'fr' ? 'Plus' : 'More'}</h2></div><button data-home-sheet-close>×</button></header><div class="moreActions"><button data-home-open-settings><b>${l === 'fr' ? 'Réglages' : 'Settings'}</b><span>${l === 'fr' ? 'Messe, langue, participation, affichage et postures locales.' : 'Mass, language, participation, display and local postures.'}</span></button><button data-action="prepare"><b>${l === 'fr' ? 'Se préparer' : 'Prepare'}</b><span>${l === 'fr' ? 'Avant la Messe.' : 'Before Mass.'}</span></button><button data-action="thanks"><b>${l === 'fr' ? 'Action de grâces' : 'Give thanks'}</b><span>${l === 'fr' ? 'Après la Messe.' : 'After Mass.'}</span></button></div></section></div>`;
+}
+function renderHomeToString(state) {
+    const vm = (0, home_model_1.buildHomeViewModel)(state);
+    const tr = (key) => (0, i18n_1.t)(vm.language, key);
+    const status = vm.calendarFailed
+        ? `<div class="statusCard error"><strong>${esc(tr('calendarUnavailable'))}</strong><span>${esc(tr('calendarUnavailableBody'))}</span></div>`
+        : vm.properStatus === 'failed'
+            ? `<div class="statusCard warning"><strong>${esc(tr('properUnavailable'))}</strong><span>${esc(vm.properMessage)}</span></div>`
+            : '';
+    const currentProper = state.resolution?.proper.status === 'ready' ? state.resolution.proper.data : null;
+    const langCoverage = currentProper?.languageCoverage?.[vm.language];
+    const translationStatus = langCoverage && !langCoverage.complete
