@@ -600,15 +600,6 @@ export async function mountNativeReaderPreview({
       if(!state.atStart)ready.candlemasController.previous();
       return showCandlemas();
     }
-    if(inCandlemas && ready.candlemasController){
-      const state=ready.candlemasController.project();
-      if(state.atEnd){
-        inCandlemas=false;
-        return showCard(introitOnlyCard());
-      }
-      ready.candlemasController.next();
-      return showCandlemas();
-    }
     if(inAsperges && ready.aspergesController){
       const state=ready.aspergesController.project();
       if(!state.atStart)ready.aspergesController.previous();
@@ -652,6 +643,15 @@ export async function mountNativeReaderPreview({
       }
       ready.ashController.next();
       return showAsh();
+    }
+    if(inCandlemas && ready.candlemasController){
+      const state=ready.candlemasController.project();
+      if(state.atEnd){
+        inCandlemas=false;
+        return showCard(introitOnlyCard());
+      }
+      ready.candlemasController.next();
+      return showCandlemas();
     }
     if(inAsperges && ready.aspergesController){
       const state=ready.aspergesController.project();
