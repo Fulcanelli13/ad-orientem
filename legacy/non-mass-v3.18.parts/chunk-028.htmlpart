@@ -1,0 +1,500 @@
+.homeScreen .aoLearnHomeCard,
+.homeScreen .aoCateHomeCard:not(.aoDailyCateHome){display:none!important}
+
+/* Prayer Library is a corpus/search surface, not a competing module hub. */
+#aoPrayerBookRoot.aoV37CorpusOnly .pbModuleGrid,
+#aoPrayerBookRoot.aoV37CorpusOnly .ao354Guided{display:none!important}
+
+/* Home domain dock */
+.aoV37HomeNav{margin:16px 0 8px;padding:12px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.018));box-shadow:0 12px 34px rgba(0,0,0,.14)}
+.aoV37HomeNavLabel{margin:0 0 9px 2px;color:var(--muted-2);font:600 .62rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase}
+.aoV37DomainDock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.aoV37DomainDock button{min-width:0;min-height:48px;padding:7px 4px;border:1px solid var(--border);border-radius:13px;background:var(--surface-1);color:var(--muted);font:650 .68rem/1.1 var(--font-display);letter-spacing:.02em}
+.aoV37DomainDock button.active{border-color:var(--liturgical-border);background:var(--liturgical-soft);color:var(--text)}
+.aoV37DomainDock button b{display:block;font-size:.92rem;color:inherit}
+.aoV37DomainDock button span{display:block;margin-top:3px;font-size:.56rem;opacity:.78}
+.aoV37UtilityRail{display:flex;justify-content:center;gap:5px;margin-top:8px;flex-wrap:wrap}
+.aoV37UtilityRail button{border:0;background:transparent;color:var(--muted-2);padding:5px 7px;font-size:.66rem}
+.aoV37UtilityRail button:hover,.aoV37UtilityRail button:focus-visible{color:var(--liturgical);outline:none}
+
+/* Full domain shell */
+.aoV37Root{position:fixed;z-index:14900;inset:0;background:var(--bg);color:var(--text);overflow:auto;overscroll-behavior:contain;padding-bottom:max(88px,var(--safe-bottom))}
+.aoV37Root[hidden]{display:none!important}
+.aoV37Top{position:sticky;top:0;z-index:8;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px;padding:calc(10px + var(--safe-top)) 12px 10px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.aoV37Top button{width:42px;height:42px;border:1px solid var(--border);border-radius:50%;background:var(--surface-1);color:var(--text)}
+.aoV37TopTitle{min-width:0;text-align:center}.aoV37TopTitle small{display:block;color:var(--liturgical);font:650 .58rem/1.1 var(--font-display);letter-spacing:.12em;text-transform:uppercase}.aoV37TopTitle strong{display:block;margin-top:4px;font-family:var(--font-display);font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoV37Wrap{width:min(760px,100%);margin:0 auto;padding:20px 15px 34px}
+.aoV37Hero{padding:10px 2px 18px}.aoV37Hero .kicker{color:var(--liturgical);font:650 .63rem/1.1 var(--font-display);letter-spacing:.12em;text-transform:uppercase}.aoV37Hero h1{margin:7px 0 7px;font:500 clamp(1.85rem,8vw,2.65rem)/1.06 var(--font-display);letter-spacing:.015em}.aoV37Hero p{max-width:640px;margin:0;color:var(--muted);font-size:.94rem;line-height:1.5}.aoV37Context{margin-top:10px;color:var(--muted-2);font-size:.72rem}
+.aoV37Section{margin:8px 0 22px}.aoV37SectionHead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 2px 9px}.aoV37SectionHead h2{margin:0;color:var(--liturgical);font:650 .67rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase}.aoV37SectionHead span{color:var(--muted-2);font-size:.66rem}
+.aoV37Grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.aoV37Card{min-width:0;padding:0;border:1px solid var(--border);border-radius:16px;background:linear-gradient(180deg,var(--surface-1),rgba(255,255,255,.018));overflow:hidden}
+.aoV37Card.featured{border-color:var(--liturgical-border);background:linear-gradient(160deg,var(--liturgical-soft),var(--surface-1))}
+.aoV37CardMain{width:100%;min-height:104px;padding:14px;border:0;background:transparent;color:inherit;text-align:left}
+.aoV37CardMain .type{display:block;color:var(--liturgical);font:650 .56rem/1.1 var(--font-display);letter-spacing:.1em;text-transform:uppercase}
+.aoV37CardMain strong{display:block;margin-top:6px;font:600 .98rem/1.25 var(--font-display)}
+.aoV37CardMain p{margin:6px 0 0;color:var(--muted);font-size:.76rem;line-height:1.4}
+.aoV37CardMethods{display:flex;gap:5px;flex-wrap:wrap;padding:0 12px 12px}
+.aoV37CardMethods button{min-height:30px;padding:6px 8px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.025);color:var(--muted-2);font-size:.62rem}
+.aoV37CardMethods button:hover,.aoV37CardMethods button:focus-visible{border-color:var(--liturgical-border);color:var(--text);outline:none}
+.aoV37Bottom{position:fixed;z-index:14910;left:50%;bottom:0;transform:translateX(-50%);width:min(760px,100%);padding:7px 10px calc(7px + var(--safe-bottom));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(18px);border-top:1px solid var(--border)}
+.aoV37Bottom .aoV37DomainDock{max-width:560px;margin:0 auto}
+.aoV37Empty{padding:18px;border:1px dashed var(--border);border-radius:14px;color:var(--muted);text-align:center}
+.aoV37Error{margin:10px 0;padding:10px 12px;border:1px solid var(--liturgical-border);border-radius:12px;background:var(--liturgical-soft);color:var(--text);font-size:.78rem}
+
+@media(max-width:430px){
+  .aoV37Grid{grid-template-columns:1fr}
+  .aoV37CardMain{min-height:88px}
+  .aoV37Wrap{padding-left:12px;padding-right:12px}
+  .aoV37DomainDock button b{font-size:.82rem}
+  .aoV37DomainDock button span{font-size:.52rem}
+}
+@media(max-width:350px){
+  .aoV37HomeNav{padding:9px}
+  .aoV37DomainDock{gap:4px}
+  .aoV37DomainDock button{padding-left:2px;padding-right:2px}
+}
+</style>
+
+<style id="ao-v43-22-domain-nav-icons">
+.aoV37HomeNav{padding:10px 11px 9px}
+.aoV37DomainDock{gap:6px}
+.aoV37DomainDock button{
+ min-width:0;min-height:66px;padding:7px 3px 6px;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+ border-radius:13px;color:var(--muted);
+}
+.aoV37DomainDock button.active{border-color:var(--liturgical-border);background:var(--liturgical-soft);color:var(--text)}
+.aoV37DomainDock button .aoV37DomainIcon{
+ width:29px;height:29px;display:grid;place-items:center;flex:0 0 29px;
+ color:inherit;opacity:.9;line-height:0;margin:0;
+}
+.aoV37DomainDock button.active .aoV37DomainIcon{color:var(--liturgical);opacity:1}
+.aoV37DomainDock .aoV37DomainIcon svg{display:block;width:100%;height:100%;overflow:visible}
+.aoV37DomainDock .aoV37DomainIconPray svg{width:28px;height:28px}
+.aoV37DomainDock .aoV37DomainIconBrand.brandMark.aoBrandEmblem{
+ width:29px;height:29px;display:grid;margin:0;color:inherit;
+}
+.aoV37DomainDock .aoV37DomainIconBrand.brandMark.aoBrandEmblem::before{width:28px;height:28px}
+.aoV37DomainDock button b{
+ display:block;margin:0;color:inherit;font:650 .61rem/1 var(--font-display);
+ letter-spacing:.025em;white-space:nowrap;
+}
+.aoV37DomainDock button>span:not(.aoV37DomainIcon){display:none!important}
+@media (max-width:420px){
+ .aoV37DomainDock button{min-height:62px;padding:6px 2px 5px}
+ .aoV37DomainDock button .aoV37DomainIcon{width:27px;height:27px;flex-basis:27px}
+ .aoV37DomainDock .aoV37DomainIconBrand.brandMark.aoBrandEmblem{width:27px;height:27px}
+ .aoV37DomainDock .aoV37DomainIconBrand.brandMark.aoBrandEmblem::before{width:26px;height:26px}
+ .aoV37DomainDock button b{font-size:.58rem}
+}
+</style>
+<script id="ao-v37-domain-shell-js">
+
+(()=>{'use strict';
+const VERSION='37-today-mass-pray-learn-shell';
+const MOD=globalThis.AO_MODULES;
+if(!MOD?.open||!MOD?.get)return;
+
+const rt=()=>globalThis.AO_RUNTIME_V8||null;
+const appState=()=>rt()?.store?.getState?.()||null;
+const fr=()=>appState()?.language==='fr';
+const L=(en,frs)=>fr()?frs:en;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let state={open:false,domain:'mass',error:''};
+let subscribed=false,queued=false;
+
+const LABELS={
+ 'mass.current':{en:"Today’s Mass",fr:'Messe du jour',descEn:'Propers, readings and liturgical details for the selected day.',descFr:'Propres, lectures et informations liturgiques du jour sélectionné.'},
+ 'mass.follow':{en:'Follow Mass',fr:'Suivre la Messe',descEn:'Enter the live Low or Sung Mass companion.',descFr:'Ouvrir le compagnon en direct de la Messe basse ou chantée.'},
+ 'mass.change':{en:'Change Mass',fr:'Changer de Messe',descEn:'Choose another permitted Mass or formulary.',descFr:'Choisir une autre Messe ou un autre formulaire permis.'},
+ 'mass.prepare':{en:'Before Mass',fr:'Avant la Messe',descEn:'Prepare recollectedly before the Holy Sacrifice.',descFr:'Se préparer avec recueillement avant le Saint Sacrifice.'},
+ 'mass.intentions':{en:'Mass Intentions',fr:'Intentions de Messe',descEn:'Keep the people and intentions you wish to remember at Mass.',descFr:'Garder les personnes et intentions que vous souhaitez présenter à la Messe.'},
+ 'mass.communion_prepare':{en:'Prepare for Holy Communion',fr:'Préparation à la Sainte Communion',descEn:'Acts of faith, hope, charity, contrition, desire and humility.',descFr:'Actes de foi, d’espérance, de charité, de contrition, de désir et d’humilité.'},
+ 'mass.mystery':{en:'The Mystery of the Mass',fr:'Le Mystère de la Messe',descEn:'Study two traditional ways of reading the mysteries of Christ alongside the Mass.',descFr:'Étudier deux manières traditionnelles de lire les mystères du Christ à travers la Messe.'},
+ 'mass.thanksgiving':{en:'Thanksgiving after Mass',fr:'Action de grâces après la Messe',descEn:'Remain with Our Lord after Mass and Holy Communion.',descFr:'Demeurer avec Notre-Seigneur après la Messe et la Sainte Communion.'},
+ 'mass.leonine':{en:'Leonine Prayers',fr:'Prières léonines',descEn:'Traditional prayers after Low Mass where they are used.',descFr:'Prières traditionnelles après la Messe basse lorsqu’elles sont d’usage.'},
+ 'today.gospel':{en:'Today’s Gospel',fr:'Évangile du jour',descEn:'Read the appointed Gospel with context and commentary.',descFr:'Lire l’Évangile assigné avec contexte et commentaire.'},
+
+ 'pray.library':{en:'Prayer Library',fr:'Livre de prières',descEn:'Search the retained traditional prayer corpus.',descFr:'Rechercher dans le corpus traditionnel de prières.'},
+ 'pray.rosary':{en:'Holy Rosary',fr:'Saint Rosaire',descEn:'Traditional mysteries with guided decades.',descFr:'Mystères traditionnels avec dizaines guidées.'},
+ 'pray.confession':{en:'Confession',fr:'Confession',descEn:'Examination, contrition, confession and thanksgiving.',descFr:'Examen, contrition, confession et action de grâces.'},
+ 'pray.angelus_regina':{en:'Angelus / Regina Cæli',fr:'Angélus / Regina Cæli',descEn:'The traditional seasonal Marian prayer.',descFr:'La prière mariale traditionnelle selon le temps liturgique.'},
+ 'pray.stations':{en:'Stations of the Cross',fr:'Chemin de Croix',descEn:'The traditional fourteen Stations of St Alphonsus.',descFr:'Les quatorze Stations traditionnelles de saint Alphonse.'},
+ 'pray.benediction':{en:'Benediction',fr:'Bénédiction du Saint-Sacrement',descEn:'O Salutaris, Tantum Ergo and the Divine Praises.',descFr:'O Salutaris, Tantum Ergo et les Louanges divines.'},
+ 'pray.adoration':{en:'Adoration & Benediction',fr:'Adoration & Bénédiction',descEn:'Adoration before the Blessed Sacrament, with Benediction inside the same Eucharistic module.',descFr:'Adoration devant le Saint-Sacrement, avec la Bénédiction dans le même module eucharistique.'},
+ 'programme.first_friday':{en:'First Friday',fr:'Premier vendredi',descEn:'Nine First Fridays in honour of the Sacred Heart.',descFr:'Neuf premiers vendredis en l’honneur du Sacré-Cœur.'},
+ 'programme.first_saturday':{en:'First Saturday',fr:'Premier samedi',descEn:'Five First Saturdays in reparation to the Immaculate Heart.',descFr:'Cinq premiers samedis en réparation au Cœur Immaculé.'},
+
+ 'learn.mass':{en:'Understand the Mass',fr:'Comprendre la Messe',descEn:'A guided course through the order, meaning, history and roles of the Roman Mass.',descFr:'Un parcours guidé sur l’ordre, le sens, l’histoire et les rôles de la Messe romaine.'},
+ 'learn.catechism':{en:'Traditional Catechism',fr:'Catéchisme traditionnel',descEn:'The complete Catechism of St Pius X: browse, search and study.',descFr:'Le Catéchisme complet de saint Pie X : parcourir, rechercher et étudier.'},
+ 'learn.catechism.daily':{en:'Daily Formation',fr:'Formation quotidienne',descEn:'A short daily formation with St Pius X: new material, review and weak points.',descFr:'Une courte formation quotidienne avec saint Pie X : nouveautés, révision et points faibles.'},
+ 'today.saint':{en:'Saint of the Day',fr:'Saint du jour',descEn:'Identity, artwork, biography and sources for today’s observance.',descFr:'Identité, œuvre, biographie et sources de l’observance du jour.'},
+ 'today.calendar':{en:'Liturgical Calendar',fr:'Calendrier liturgique',descEn:'Browse the 1960 calendar around the selected date.',descFr:'Parcourir le calendrier de 1960 autour de la date sélectionnée.'},
+ 'utility.sources':{en:'Sources',fr:'Sources',descEn:'Editions and provenance used by the application.',descFr:'Éditions et provenance utilisées par l’application.'},
+ 'utility.settings':{en:'Settings',fr:'Réglages',descEn:'Language and application preferences.',descFr:'Langue et préférences de l’application.'}
+};
+
+const METHOD={
+ baltimore:'collection.baltimore_1888',
+ lasance:'collection.lasance_1911'
+};
+
+const LAYOUT={
+ mass:{
+   kicker:['THE HOLY MASS','LA SAINTE MESSE'],
+   title:['Mass','Messe'],
+   intro:['Everything immediately before, during and after the 1962 Roman Mass.','Tout ce qui entoure immédiatement la Messe romaine de 1962, avant, pendant et après.'],
+   sections:[
+     {title:['Today','Aujourd’hui'],hint:['The selected liturgical day','Le jour liturgique sélectionné'],items:[
+       {id:'mass.follow',featured:true},{id:'mass.current'},{id:'mass.change'},{id:'today.gospel'}
+     ]},
+     {title:['Before Mass','Avant la Messe'],items:[
+       {id:'mass.prepare',methods:[['Standard','Standard',null],['Baltimore 1888','Baltimore 1888',METHOD.baltimore]]},
+       {id:'mass.intentions'},
+       {id:'mass.communion_prepare',methods:[['Standard','Standard',null],['Lasance 1911','Lasance 1911',METHOD.lasance]]}
+     ]},
+     {title:['Study the Mass','Étudier la Messe'],hint:['Traditional interpretations and historical sources','Interprétations traditionnelles et sources historiques'],items:[
+       {id:'mass.mystery',featured:true}
+     ]},
+     {title:['After Mass','Après la Messe'],items:[
+       {id:'mass.thanksgiving',methods:[['Standard','Standard',null],['Lasance 1911','Lasance 1911',METHOD.lasance]]},
+       {id:'mass.leonine'}
+     ]}
+   ]
+ },
+ pray:{
+   kicker:['PRAYER & DEVOTION','PRIÈRE & DÉVOTION'],
+   title:['Pray','Prier'],
+   intro:['One devotional home. Programmes may use several modules, but each prayer or practice has one canonical home.','Un seul espace dévotionnel. Les parcours peuvent utiliser plusieurs modules, mais chaque prière ou pratique n’a qu’un seul emplacement canonique.'],
+   sections:[
+     {title:['Eucharistic','Eucharistique'],items:[
+       {id:'pray.adoration',featured:true}
+     ]},
+     {title:['Marian','Marial'],items:[
+       {id:'pray.rosary',featured:true},{id:'pray.angelus_regina'},{id:'programme.first_saturday'}
+     ]},
+     {title:['Sacred Heart & reparation','Sacré-Cœur & réparation'],items:[
+       {id:'programme.first_friday'}
+     ]},
+     {title:['Passion & Penance','Passion & pénitence'],items:[
+       {id:'pray.stations'},{id:'pray.confession',methods:[['Standard','Standard',null],['Lasance 1911','Lasance 1911',METHOD.lasance]]}
+     ]},
+     {title:['Prayer texts','Textes de prière'],items:[
+       {id:'pray.library'}
+     ]}
+   ]
+ },
+ learn:{
+   kicker:['FORMATION','FORMATION'],
+   title:['Learn','Apprendre'],
+   intro:['Formation is gathered here: daily recall, systematic Catechism study and understanding the Roman Mass.','La formation est rassemblée ici : rappel quotidien, étude systématique du Catéchisme et compréhension de la Messe romaine.'],
+   sections:[
+     {title:['Daily formation','Formation quotidienne'],hint:['St Pius X · a little each day','Saint Pie X · un peu chaque jour'],items:[
+       {id:'learn.catechism.daily',featured:true}
+     ]},
+     {title:['Courses & study','Parcours & étude'],items:[
+       {id:'learn.mass',featured:true},{id:'learn.catechism'}
+     ]},
+     {title:['Today in context','Le jour en contexte'],items:[
+       {id:'today.gospel'},{id:'today.saint'}
+     ]}
+   ]
+ }
+};
+
+function massContextId(){
+ try{return globalThis.AO_MASS_CONTINUITY_V4327?.context?.()?.id||''}catch{return ''}
+}
+function copy(id){
+ const x=LABELS[id]||{}, d=MOD.get(id)||{}, gf=massContextId()==='good_friday';
+ if(gf&&id==='mass.follow')return {title:L('Follow Liturgy','Suivre la liturgie'),desc:L('Follow the Good Friday liturgical action.','Suivre l’Action liturgique du Vendredi saint.'),type:d.type||'module'};
+ if(gf&&id==='mass.prepare')return {title:L('Before the Liturgy','Avant la liturgie'),desc:L('Prepare recollectedly for the Good Friday liturgical action.','Se préparer avec recueillement à l’Action liturgique du Vendredi saint.'),type:d.type||'module'};
+ if(gf&&id==='mass.thanksgiving')return {title:L('After Good Friday','Après le Vendredi saint'),desc:L('Remain in prayer after the liturgical action.','Demeurer en prière après l’Action liturgique.'),type:d.type||'module'};
+ return {title:fr()?(x.fr||d.title):(x.en||d.title),desc:fr()?x.descFr:x.descEn,type:d.type||'module'}
+}
+function sectionTitle(sec){
+ const normal=fr()?sec.title[1]:sec.title[0],gf=massContextId()==='good_friday';
+ if(!gf||state.domain!=='mass')return normal;
+ if(sec.title[0]==='Before Mass')return L('Before the Liturgy','Avant la liturgie');
+ if(sec.title[0]==='During Mass')return L('During the Liturgy','Pendant la liturgie');
+ if(sec.title[0]==='After Mass')return L('After the Liturgy','Après la liturgie');
+ return normal;
+}
+function domainLabel(id){
+ const x={today:['Home','Accueil'],mass:['Mass','Messe'],pray:['Pray','Prier'],learn:['Learn','Apprendre']}[id];
+ return fr()?x[1]:x[0]
+}
+function domainIcon(id){
+ if(id==='today')return `<span class="aoV37DomainIcon aoV37DomainIconBrand brandMark aoBrandEmblem" aria-hidden="true"></span>`;
+ if(id==='mass')return `<span class="aoV37DomainIcon aoV37DomainIconMass"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M29.5 6h5v8h6v5h-6v10h-5V19h-6v-5h6z"/><rect x="13" y="28" width="38" height="2.5" rx="1.25"/><rect x="10.5" y="32" width="43" height="2.75" rx="1.375"/><rect x="8" y="36.5" width="48" height="3" rx="1.5"/><path d="M6.5 40h51a1.5 1.5 0 0 1 1.5 1.5v3A1.5 1.5 0 0 1 57.5 46h-51A1.5 1.5 0 0 1 5 44.5v-3A1.5 1.5 0 0 1 6.5 40z"/><path d="M10 46h44v10H10z"/><path d="M8 56h48v3H8z"/><rect x="14" y="48" width="2.5" height="8" rx="1" opacity=".82"/><rect x="47.5" y="48" width="2.5" height="8" rx="1" opacity=".82"/><path d="M12 22.5h2v5.5h-2zM19 20.5h2v7.5h-2zM25 18.5h2v9.5h-2zM13 18.5c1.25 1.3 1.7 2.15 0 3.25-1.7-1.1-1.25-1.95 0-3.25zM20 16.5c1.25 1.3 1.7 2.15 0 3.25-1.7-1.1-1.25-1.95 0-3.25zM26 14.5c1.25 1.3 1.7 2.15 0 3.25-1.7-1.1-1.25-1.95 0-3.25z"/><g transform="translate(64 0) scale(-1 1)"><path d="M12 22.5h2v5.5h-2zM19 20.5h2v7.5h-2zM25 18.5h2v9.5h-2zM13 18.5c1.25 1.3 1.7 2.15 0 3.25-1.7-1.1-1.25-1.95 0-3.25zM20 16.5c1.25 1.3 1.7 2.15 0 3.25-1.7-1.1-1.25-1.95 0-3.25zM26 14.5c1.25 1.3 1.7 2.15 0 3.25-1.7-1.1-1.25-1.95 0-3.25z"/></g></g></svg></span>`;
+ if(id==='pray')return `<span class="aoV37DomainIcon aoV37DomainIconPray"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  
+  
+  <path d="M 66.609 12.000 L 65.118 13.491 L 65.118 15.728 L 65.864 15.355 L 67.728 15.355 L 69.591 17.219 L 69.964 17.964 L 69.964 18.710 L 70.337 19.082 L 70.337 19.828 L 71.082 21.319 L 71.082 22.437 L 71.455 22.810 L 71.455 23.556 L 71.828 23.928 L 71.828 24.674 L 72.573 26.165 L 72.573 27.283 L 73.319 28.774 L 73.319 29.892 L 73.692 30.265 L 73.692 31.011 L 74.065 31.384 L 74.065 32.129 L 74.437 32.502 L 74.437 33.247 L 75.183 34.738 L 75.183 35.857 L 75.556 36.229 L 75.556 36.975 L 75.928 37.348 L 76.301 39.211 L 75.928 39.584 L 74.810 37.720 L 74.810 36.602 L 73.692 34.366 L 73.692 33.620 L 73.319 33.247 L 73.319 32.502 L 72.946 32.129 L 72.946 31.384 L 72.573 31.011 L 72.573 30.265 L 72.201 29.892 L 72.201 29.147 L 71.828 28.774 L 71.828 28.029 L 71.082 26.538 L 71.082 25.419 L 70.337 24.301 L 70.337 23.556 L 69.964 23.183 L 69.964 22.437 L 69.591 22.065 L 69.591 21.319 L 69.219 20.946 L 68.846 19.082 L 68.100 17.591 L 66.609 16.846 L 65.118 17.964 L 65.118 29.892 L 65.491 30.265 L 66.237 29.520 L 66.982 29.147 L 67.728 29.147 L 69.219 30.265 L 69.591 30.265 L 70.337 31.011 L 71.082 32.502 L 71.082 33.247 L 71.455 33.620 L 71.455 34.738 L 71.828 35.111 L 71.828 36.229 L 72.201 36.602 L 72.201 37.720 L 72.573 38.093 L 72.573 39.211 L 72.946 39.584 L 72.946 40.703 L 73.319 41.075 L 73.319 42.194 L 73.692 42.566 L 73.692 43.685 L 74.065 44.057 L 74.065 45.548 L 74.437 45.921 L 74.437 47.039 L 74.810 47.412 L 74.810 48.903 L 75.183 49.276 L 75.183 50.022 L 75.556 50.767 L 74.810 51.513 L 74.065 51.513 L 73.319 50.394 L 73.319 49.649 L 72.946 49.276 L 72.946 48.158 L 72.573 47.785 L 72.573 46.294 L 72.201 45.921 L 72.201 44.430 L 71.828 44.057 L 71.828 42.939 L 71.455 42.566 L 71.455 41.448 L 71.082 41.075 L 71.082 39.584 L 70.710 39.211 L 70.710 38.093 L 70.337 37.720 L 70.337 36.602 L 69.964 36.229 L 69.964 34.738 L 69.591 34.366 L 69.591 33.247 L 69.219 32.502 L 67.728 31.011 L 66.609 31.011 L 65.118 32.502 L 65.118 40.330 L 65.491 40.703 L 65.491 79.097 L 65.864 79.470 L 65.864 80.588 L 66.237 80.961 L 66.237 81.706 L 66.609 82.452 L 68.846 85.061 L 68.846 85.434 L 71.082 87.670 L 71.082 88.043 L 72.573 89.534 L 72.573 89.907 L 76.674 94.380 L 76.674 94.753 L 78.910 96.989 L 78.910 97.362 L 82.638 101.462 L 82.638 101.835 L 84.129 103.326 L 84.129 103.699 L 86.738 106.308 L 86.738 106.681 L 88.602 108.545 L 88.602 108.918 L 89.348 109.290 L 89.348 109.663 L 93.075 113.763 L 93.075 114.136 L 94.566 115.627 L 94.939 115.627 L 96.057 114.509 L 96.057 114.136 L 100.158 110.036 L 100.158 109.663 L 105.376 104.444 L 105.376 104.072 L 111.341 98.108 L 111.341 97.735 L 110.968 97.735 L 107.240 94.007 L 106.867 94.007 L 106.122 93.262 L 106.122 92.889 L 105.749 92.889 L 92.703 80.215 L 92.330 80.215 L 84.502 72.760 L 83.756 71.269 L 83.756 70.523 L 83.384 70.151 L 83.384 68.287 L 83.011 67.914 L 83.011 66.050 L 82.638 65.677 L 82.638 63.814 L 82.265 63.441 L 82.265 60.832 L 81.892 60.459 L 81.892 58.595 L 81.520 58.222 L 81.520 55.986 L 81.147 55.613 L 81.147 53.376 L 80.774 53.004 L 80.774 50.767 L 80.401 50.394 L 80.401 48.530 L 80.029 48.158 L 80.029 47.412 L 79.656 47.039 L 79.656 46.294 L 79.283 45.921 L 79.283 45.176 L 78.910 44.803 L 78.910 44.057 L 78.538 43.685 L 78.538 42.939 L 78.165 42.566 L 78.165 41.821 L 77.792 41.448 L 77.792 40.703 L 77.419 40.330 L 77.419 39.584 L 77.047 39.211 L 77.047 38.466 L 76.674 38.093 L 76.674 37.348 L 75.928 35.857 L 75.928 34.738 L 75.556 34.366 L 75.556 33.620 L 74.810 32.129 L 74.810 31.011 L 74.065 29.520 L 74.065 28.401 L 73.692 28.029 L 73.692 27.283 L 73.319 26.910 L 73.319 26.165 L 72.573 24.674 L 72.201 22.065 L 71.828 21.692 L 71.828 20.946 L 71.082 19.455 L 71.082 18.337 L 70.710 17.964 L 70.710 16.846 L 69.964 15.355 L 69.964 14.237 L 69.591 13.864 L 69.591 13.118 L 68.100 12.000 Z M 61.391 12.000 L 59.900 12.000 L 59.154 12.373 L 58.036 13.491 L 58.036 14.982 L 57.290 16.473 L 56.918 19.082 L 56.545 19.455 L 56.545 20.201 L 56.172 20.573 L 56.172 21.692 L 55.799 22.065 L 55.799 22.810 L 55.054 24.301 L 55.054 25.419 L 54.681 25.792 L 54.681 26.538 L 54.308 26.910 L 54.308 27.656 L 53.935 28.029 L 53.935 28.774 L 53.190 30.265 L 53.190 31.384 L 52.817 31.756 L 52.817 32.502 L 52.072 33.993 L 52.072 35.111 L 51.326 36.229 L 51.326 37.348 L 50.953 37.720 L 50.953 38.466 L 50.581 38.839 L 50.581 39.584 L 50.208 39.957 L 50.208 40.703 L 49.835 41.075 L 49.835 41.821 L 49.462 42.194 L 49.462 42.939 L 49.090 43.312 L 49.090 44.057 L 48.717 44.430 L 48.344 46.294 L 47.226 48.530 L 47.226 51.140 L 46.853 51.513 L 46.853 53.749 L 46.480 54.122 L 46.480 56.358 L 46.108 56.731 L 46.108 59.341 L 45.735 59.713 L 45.735 61.577 L 45.362 61.950 L 45.362 63.441 L 44.989 63.814 L 44.989 66.050 L 44.616 66.423 L 44.616 68.287 L 44.244 68.659 L 44.244 70.151 L 43.871 70.523 L 43.871 71.642 L 43.498 72.387 L 33.806 81.706 L 33.434 81.706 L 27.842 87.297 L 27.470 87.297 L 21.878 92.889 L 21.505 92.889 L 16.287 98.108 L 25.606 107.799 L 25.606 108.172 L 30.824 113.391 L 30.824 113.763 L 31.943 114.509 L 31.943 114.882 L 32.688 115.627 L 33.434 115.627 L 33.434 115.254 L 35.670 113.018 L 35.670 112.645 L 38.280 110.036 L 38.280 109.663 L 40.143 107.799 L 40.143 107.427 L 42.007 105.563 L 42.007 105.190 L 44.244 102.953 L 44.244 102.581 L 48.344 98.108 L 48.344 97.735 L 50.208 95.871 L 50.208 95.498 L 52.072 93.634 L 52.072 93.262 L 54.308 91.025 L 54.308 90.652 L 56.172 88.789 L 56.172 88.416 L 58.036 86.552 L 58.036 86.179 L 60.272 83.943 L 60.272 83.570 L 61.018 82.824 L 61.763 81.333 L 61.763 79.842 L 62.136 79.470 L 62.136 60.832 L 62.509 60.459 L 62.136 59.713 L 62.136 58.222 L 62.509 57.849 L 62.509 32.502 L 61.391 31.384 L 59.900 31.384 L 58.781 32.502 L 58.409 33.247 L 58.409 34.738 L 58.036 35.111 L 58.036 36.229 L 57.663 36.602 L 57.663 37.720 L 57.290 38.093 L 57.290 39.584 L 56.918 39.957 L 56.918 41.075 L 56.545 41.448 L 56.545 42.566 L 56.172 42.939 L 56.172 44.430 L 55.799 44.803 L 55.799 45.921 L 55.427 46.294 L 55.427 47.412 L 55.054 47.785 L 55.054 49.276 L 54.681 49.649 L 54.681 50.767 L 53.935 51.513 L 53.190 51.513 L 52.444 50.767 L 52.444 50.394 L 53.190 48.903 L 53.563 45.548 L 53.935 45.176 L 53.935 44.057 L 54.308 43.685 L 54.308 42.566 L 54.681 42.194 L 54.681 40.703 L 55.054 40.330 L 55.054 39.584 L 55.427 39.211 L 55.427 38.093 L 55.799 37.720 L 55.799 36.229 L 56.172 35.857 L 56.545 33.247 L 57.290 31.756 L 59.527 29.520 L 61.391 29.520 L 62.509 30.265 L 62.509 22.437 L 62.882 22.065 L 62.882 18.337 L 62.136 17.219 L 60.272 17.219 L 59.154 18.337 L 59.154 19.082 L 58.781 19.455 L 58.781 20.201 L 58.409 20.573 L 58.409 21.319 L 58.036 21.692 L 58.036 22.437 L 57.663 22.810 L 57.663 23.556 L 57.290 23.928 L 57.290 24.674 L 56.918 25.047 L 56.918 25.792 L 56.545 26.165 L 56.545 26.910 L 55.799 28.401 L 55.799 29.520 L 55.054 30.638 L 55.054 31.756 L 54.681 32.129 L 54.681 32.875 L 54.308 33.247 L 54.308 33.993 L 53.935 34.366 L 53.935 35.111 L 53.563 35.484 L 53.190 37.348 L 52.444 38.466 L 52.072 38.093 L 52.072 36.602 L 52.444 36.229 L 52.444 35.484 L 53.190 33.993 L 53.190 32.875 L 53.563 32.502 L 53.563 31.756 L 53.935 31.384 L 53.935 30.638 L 54.681 29.147 L 55.054 26.538 L 55.427 26.165 L 55.427 25.419 L 56.172 23.928 L 56.172 22.810 L 56.545 22.437 L 56.545 21.692 L 57.290 20.201 L 57.290 19.082 L 57.663 18.710 L 57.663 17.964 L 58.036 17.219 L 59.900 15.355 L 61.763 15.355 L 62.509 16.100 L 62.509 13.118 Z M 52.072 38.093 L 52.444 38.466 L 52.444 39.584 L 52.072 39.957 L 51.699 39.584 L 51.699 38.466 Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
+</svg></span>`;
+ return `<span class="aoV37DomainIcon aoV37DomainIconLearn"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M15 7h34a5 5 0 0 1 5 5v39a6 6 0 0 1-6 6H15a5 5 0 0 1-5-5V12a5 5 0 0 1 5-5Z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/><path d="M17 9v46M18 52.5h31" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M29 17h6v8h7v6h-7v14h-6V31h-7v-6h7z" fill="currentColor"/><path d="M45 54v7l-4-2.8-4 2.8v-7" fill="currentColor"/></svg></span>`;
+}
+function dock(active='today'){
+ return `<nav class="aoV37DomainDock" aria-label="${esc(L('Main sections','Sections principales'))}">
+  ${['today','mass','pray','learn'].map(id=>`<button type="button" class="${active===id?'active':''}" data-v37-domain="${id}" aria-current="${active===id?'page':'false'}" aria-label="${esc(domainLabel(id))}">${domainIcon(id)}<b>${esc(domainLabel(id))}</b></button>`).join('')}
+ </nav>`
+}
+function currentContext(){
+ const s=appState();
+ const title=s?.resolution?.day?.main?.title||s?.resolution?.main?.title||'';
+ const rawDate=s?.selectedDate||'';
+ const date=rawDate?(globalThis.AO_DISPLAY_DATE?.(rawDate)||rawDate):'';
+ return [date,title].filter(Boolean).join(' · ')
+}
+function cardMarkup(item){
+ const c=copy(item.id),d=MOD.get(item.id)||{}, isProg=/^programme\./.test(item.id)||d.type==='programme';
+ const methods=item.methods?.length?`<div class="aoV37CardMethods">${item.methods.map(([en,frs,method])=>`<button type="button" data-v37-open="${esc(item.id)}"${method?` data-v37-method="${esc(method)}"`:''}>${esc(fr()?frs:en)}</button>`).join('')}</div>`:'';
+ const nativeIcon=globalThis.AO_ICON_REGISTRY_V4333?.iconForRoute?.(item.id,'aoV4333NativeIcon')||'';
+ const iconClass=nativeIcon?' aoV4333NativeIconized':'';
+ return `<article class="aoV37Card ${item.featured?'featured':''} ${isProg?'aoV37Programme':''}">
+   <button class="aoV37CardMain${iconClass}" type="button" data-v37-open="${esc(item.id)}">
+    ${nativeIcon}<span class="type">${esc(isProg?L('Guided','Guidé'):d.type==='reference'?L('Reference','Référence'):L('Module','Module'))}</span>
+    <strong>${esc(c.title)}</strong>
+    <p>${esc(c.desc||'')}</p>
+   </button>${methods}
+ </article>`
+}
+function root(){
+ let r=document.getElementById('ao-v37-root');
+ if(r)return r;
+ r=document.createElement('div');r.id='ao-v37-root';r.className='aoV37Root';r.hidden=true;document.body.appendChild(r);return r
+}
+function close(){
+ state.open=false;state.error='';const r=root();r.hidden=true;r.innerHTML='';document.body.classList.remove('aoV37ShellOpen');syncHome()
+}
+function render(){
+ if(!state.open)return;
+ const cfg=LAYOUT[state.domain]||LAYOUT.mass,r=root();r.hidden=false;
+ const settings=`<button type="button" data-v37-open="utility.settings" aria-label="${esc(L('Settings','Réglages'))}">⚙</button>`;
+ r.innerHTML=`<header class="aoV37Top"><button type="button" data-v37-domain="today" aria-label="${esc(L('Back to Today','Retour à Aujourd’hui'))}">←</button><div class="aoV37TopTitle"><small>AD ORIENTEM</small><strong>${esc(fr()?cfg.title[1]:cfg.title[0])}</strong></div>${settings}</header>
+ <main class="aoV37Wrap">
+  <section class="aoV37Hero"><div class="kicker">${esc(fr()?cfg.kicker[1]:cfg.kicker[0])}</div><h1>${esc(fr()?cfg.title[1]:cfg.title[0])}</h1><p>${esc(fr()?cfg.intro[1]:cfg.intro[0])}</p><div class="aoV37Context">${esc(currentContext())}</div></section>
+  ${state.error?`<div class="aoV37Error">${esc(state.error)}</div>`:''}
+  ${cfg.sections.map(sec=>`<section class="aoV37Section"><div class="aoV37SectionHead"><h2>${esc(sectionTitle(sec))}</h2>${sec.hint?`<span>${esc(fr()?sec.hint[1]:sec.hint[0])}</span>`:''}</div><div class="aoV37Grid">${sec.items.map(cardMarkup).join('')}</div></section>`).join('')}
+  <div class="aoV37UtilityRail"><button type="button" data-v37-open="utility.sources">${esc(L('Sources','Sources'))}</button><button type="button" data-v37-open="utility.settings">${esc(L('Settings','Réglages'))}</button></div>
+ </main>
+ <div class="aoV37Bottom">${dock(state.domain)}</div>`;
+}
+function openDomain(domain){
+ if(domain==='today'){close();return true}
+ if(!LAYOUT[domain])return false;
+ state.open=true;state.domain=domain;state.error='';document.body.classList.add('aoV37ShellOpen');render();return true
+}
+function prayerLibraryMode(){
+ const pb=document.getElementById('aoPrayerBookRoot');if(!pb)return;
+ pb.classList.add('aoV37CorpusOnly');
+ const hero=pb.querySelector('.pbHero h2');if(hero)hero.textContent=L('Prayer Library','Livre de prières');
+ const p=pb.querySelector('.pbHero p');if(p)p.textContent=L('Search and open traditional prayer texts. Devotional modules and guided programmes are organised under Pray.','Recherchez et ouvrez les textes de prière traditionnels. Les modules dévotionnels et les parcours guidés sont organisés sous Prier.');
+ const h=pb.querySelector('.lab-view-head h1');if(h)h.textContent=L('Prayer Library','Livre de prières');
+}
+async function openModule(id,method=null){
+ const domain=state.domain,wasOpen=state.open;
+ // v43.20: utilities opened from Home must return to Home, not to the shell's
+ // default Mass domain. Preserve domain return only when the shell was open.
+ const returnContext=wasOpen?{surface:'domain',domain}:{surface:'home'};
+ close();
+ if(id==='pray.library')prayerLibraryMode();
+ const result=await MOD.open(id,{...(method?{method}:{}),returnContext});
+ if(id==='pray.library'){setTimeout(prayerLibraryMode,60);setTimeout(prayerLibraryMode,180)}
+ if(!result?.ok){
+   state.open=true;state.domain=domain;state.error=L('This module could not be opened.','Ce module n’a pas pu être ouvert.');document.body.classList.add('aoV37ShellOpen');render()
+ }
+ return result
+}
+function ensureHomeNav(){
+ const home=document.querySelector('.homeScreen');if(!home)return false;
+ home.querySelectorAll('.aoV37HomeNav').forEach(n=>n.remove());
+ prayerLibraryMode();
+ return true
+}
+function syncHome(){
+ if(queued)return;queued=true;queueMicrotask(()=>{queued=false;ensureHomeNav()})
+}
+function install(){
+ if(subscribed)return;
+ const s=rt()?.store;
+ if(!s?.subscribe)return;
+ subscribed=true;s.subscribe(()=>{syncHome();if(state.open)render()});
+ syncHome();
+}
+document.addEventListener('click',e=>{
+ const d=e.target.closest?.('[data-v37-domain]');if(d){e.preventDefault();e.stopPropagation();openDomain(d.dataset.v37Domain);return}
+ const b=e.target.closest?.('[data-v37-open]');if(b){e.preventDefault();e.stopPropagation();openModule(b.dataset.v37Open,b.dataset.v37Method||null);return}
+},true);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&state.open){e.preventDefault();close()}},true);
+
+install();
+globalThis.AO_V37_SHELL={
+ version:VERSION,
+ openDomain,close,openModule,
+ layout:LAYOUT,
+ qa(){
+  const ids=[];for(const cfg of Object.values(LAYOUT))for(const sec of cfg.sections)for(const item of sec.items)ids.push(item.id);
+  const missing=[...new Set(ids)].filter(id=>!MOD.get(id));
+  const duplicatePlacements=ids.reduce((m,id)=>(m[id]=(m[id]||0)+1,m),{});
+  return {
+   version:VERSION,
+   domains:Object.keys(LAYOUT),
+   visibleTopLevel:['today','mass','pray','learn'],
+   referencedCanonicalIds:[...new Set(ids)],
+   missingCanonicalIds:missing,
+   duplicatePlacements:Object.entries(duplicatePlacements).filter(([,n])=>n>1).map(([id,count])=>({id,count})),
+   oldHomeExploreHidden:true,
+   standaloneUnderstandMassHomeCardHidden:true,
+   standaloneFullCatechismHomeCardHidden:true,
+   dailyCatechismHomeCardPreserved:true,
+   prayerLibraryCorpusOnly:true,
+   newMutationObserverAdded:false,
+   pass:missing.length===0
+  }
+ }
+};
+})();
+
+</script>
+
+<script id="ao-v37-meta">
+window.AO_V37_META={
+ version:'37',
+ baseline:'Ad-Orientem-2.0-v36.2-OWNERSHIP-VERIFICATION.html',
+ visibleArchitecture:['TODAY','MASS','PRAY','LEARN'],
+ registryAuthority:'AO_MODULES',
+ homeRole:'TODAY',
+ legacyHubsExposedAsTopLevel:false,
+ prayerBookRole:'underlying corpus / Prayer Library',
+ traditionalExercisesRole:'source methods / retained renderers',
+ eucharisticProgrammesRole:'programme renderers behind PRAY',
+ massEngineChanged:false,
+ calendarEngineChanged:false,
+ prayerCorpusChanged:false,
+ progressStorageChanged:false,
+ saintArtChanged:false,
+ newMutationObserverAdded:false
+};
+</script>
+
+<style id="ao-v371-devotional-liturgical-harmonization-css">
+/* v37.1 — outside-Mass modules inherit the exact same liturgical accent token as Mass. */
+#aoPrayerBookRoot{
+  --gold:var(--liturgical);
+  --line:var(--liturgical-border);
+}
+#aoPrayerBookRoot .lab-view-head .eyebrow,
+#aoPrayerBookRoot .lab-lang,
+#aoPrayerBookRoot .lab-library-head .eyebrow,
+#aoPrayerBookRoot .lab-rosary-hero small,
+#aoPrayerBookRoot .lab-mystery-card small,
+#aoPrayerBookRoot .pbKicker,
+#aoPrayerBookRoot .rc2Sheet header small,
+#aoPrayerBookRoot .rc2GuideSection h3,
+#aoPrayerBookRoot .rc2ModePill,
+#aoPrayerBookRoot .aoPrayerRole{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-library-grid button.featured,
+#aoPrayerBookRoot .lab-mystery-card.recommended,
+#aoPrayerBookRoot .lab-recitation-mode button.active,
+#aoPrayerBookRoot .rc2Segments button.active,
+#aoPrayerBookRoot .rc2ModuleTools button,
+#aoPrayerBookRoot .lab-option-bar button.active,
+#aoPrayerBookRoot .lab-option-bar label:has(input:checked){border-color:var(--liturgical-border)!important}
+#aoPrayerBookRoot .lab-progress i,
+#aoPrayerBookRoot .pbProgress span{background:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-actions .accent,
+#aoPrayerBookRoot .lab-player-controls .primary,
+#aoPrayerBookRoot .pbPrimary{background:var(--liturgical)!important;border-color:var(--liturgical-border)!important}
+#aoPrayerBookRoot .lab-reader-meta span{color:var(--liturgical);border-color:var(--liturgical-border);background:var(--liturgical-soft)}
+#aoPrayerBookRoot .lab-prayer-flip:focus-visible,
+#aoPrayerBookRoot .rc2Sheet button:focus-visible{outline:2px solid var(--liturgical);outline-offset:3px}
+#aoPrayerBookRoot .aoPrayerDialogueLine{display:grid;grid-template-columns:2.15rem minmax(0,1fr);gap:.35rem;align-items:start;margin:.22rem 0}
+#aoPrayerBookRoot .aoPrayerRole{font-family:var(--display);font-weight:700;letter-spacing:.02em}
+#aoPrayerBookRoot .aoLitanyLine{display:grid;grid-template-columns:minmax(0,1fr);gap:.28rem;margin:.34rem 0 .55rem}
+#aoPrayerBookRoot .aoLitanyCall,#aoPrayerBookRoot .aoLitanyResponse{display:grid;grid-template-columns:2.15rem minmax(0,1fr);gap:.35rem;align-items:start}
+#aoPrayerBookRoot .aoLitanyResponse{padding-left:.7rem;color:color-mix(in srgb,var(--ink) 82%,var(--liturgical))}
+/* Mass-adjacent Roman preparation/thanksgiving use the same structural marker token. */
+.prayerFlip .aoPrayerRole,.romanCorpus .aoPrayerRole{color:var(--liturgical);font-family:var(--font-display);font-weight:700}
+/* Preserve rubric semantics: .rubric remains its own rubric colour and is not remapped here. */
+</style>
+
+<style id="ao-v372-group-response-search-css">
+/* v37.2: Mass-follower grammar for Group prayer responses only. */
+#aoPrayerBookRoot .aoPrayerRole{color:var(--liturgical)}
+#aoPrayerBookRoot .aoPrayerDialogueBody{min-width:0}
+#aoPrayerBookRoot .aoPrayerDialogueLine.aoGroupResponse{
+ margin:.34rem 0;
+ padding:.42rem .55rem;
+ border-left:2px solid var(--liturgical-border);
+ border-top:1px solid color-mix(in srgb,var(--liturgical-border) 52%,transparent);
+ border-bottom:1px solid color-mix(in srgb,var(--liturgical-border) 52%,transparent);
+ border-radius:8px;
+ background:var(--liturgical-soft);
+ color:var(--text)
+}
+#aoPrayerBookRoot .aoPrayerDialogueLine.aoGroupResponse .aoPrayerRole{color:var(--liturgical)}
+#aoPrayerBookRoot .aoPrayerDialogueLine.aoGroupResponse .aoPrayerWords{color:var(--text)}
+#aoPrayerBookRoot .aoGroupResponseKicker{
+ display:block;
+ margin:0 0 .18rem;
+ color:var(--liturgical);
+ font:650 .55rem/1.1 var(--font-display);
+ letter-spacing:.11em;
+ text-transform:uppercase;
+ opacity:.9
+}
+/* Litanies intentionally use a shallower band to avoid visual fatigue over many responses. */
+#aoPrayerBookRoot .aoLitanyLine.aoGroupLitany .aoLitanyResponse{
+ padding:.24rem .38rem .24rem .48rem;
+ border-left:2px solid var(--liturgical-border);
+ border-radius:6px;
+ background:color-mix(in srgb,var(--liturgical-soft) 72%,transparent);
+ color:var(--text)
+}
+#aoPrayerBookRoot .aoLitanyLine.aoGroupLitany .aoLitanyResponse .aoPrayerRole{color:var(--liturgical)}
+/* Roman before/after-Mass prayer text: emitted only when the shared recitation mode is Group. */
+.prayerFlip .aoRomanDialogueLine{
+ display:grid;
+ grid-template-columns:2.05rem minmax(0,1fr);
+ gap:.36rem;
+ align-items:start;
+ margin:.22rem 0
+}
+.prayerFlip .aoRomanDialogueLine.aoGroupResponse{
+ padding:.38rem .5rem;
+ border-left:2px solid var(--liturgical-border);
+ border-top:1px solid color-mix(in srgb,var(--liturgical-border) 48%,transparent);
+ border-bottom:1px solid color-mix(in srgb,var(--liturgical-border) 48%,transparent);
+ border-radius:8px;
+ background:var(--liturgical-soft);
+ color:var(--text)
+}
+.prayerFlip .aoRomanDialogueLine.aoGroupResponse .aoPrayerRole{color:var(--liturgical)}
+/* Ranked multilingual search result hierarchy. */
+#aoPrayerBookRoot .pbSearchResults{margin-top:4px}
+#aoPrayerBookRoot .pbSearchResultGroup{margin-top:16px}
+#aoPrayerBookRoot .pbSearchResultGroup>h3{
+ margin:0 0 8px;
+ color:var(--liturgical);
+ font:650 .66rem/1.2 var(--font-display);
+ letter-spacing:.1em;
+ text-transform:uppercase
+}
+#aoPrayerBookRoot .pbSearchType{
+ display:block!important;
+ margin:0 0 5px!important;
+ color:var(--liturgical)!important;
+ font:650 .56rem/1.1 var(--font-display)!important;
+ letter-spacing:.08em;
+ text-transform:uppercase
+}
+#aoPrayerBookRoot .pbSearchModule{border-color:var(--liturgical-border)}
+</style>
+
+<script id="ao-v371-guide-prayer-role-meta">
+window.AO_COMPLETION_V37_1={
+ version:'37.1-guide-prayer-roles-harmonization',base:'v37-CONTENT-DELIVERY-ARCHITECTURE',
+ scope:['Guide consolidation','source-aware prayer roles','intrinsic V/R preserved in individual mode','explicit common-prayer group splits','litany call/response rendering','Roman before/after Mass V/R styling','liturgical-colour devotional harmonization','priest-only historical dialogue clarification'],
+ intrinsicPrayerRoles:['Angelus','Regina Caeli','Angelus appendix','Rosary Salve conclusion','Stations V/R','Benediction Panem de caelo','Leonine Prayers','Prayer for the Pope','De Profundis','Come Holy Spirit','Roman preparation versicles','Roman thanksgiving versicles'],
+ litanyRoles:['Litany of the Most Blessed Sacrament','Litany of Saint Joseph','Litany of Loreto 1962','Litany of Loreto current'],
