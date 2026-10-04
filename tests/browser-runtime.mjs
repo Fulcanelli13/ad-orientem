@@ -18,6 +18,8 @@ const requiemAbsolutionPayload=load("../data/presentation/reader-requiem-absolut
 const requiemAbsolutionData=Object.freeze({payload:requiemAbsolutionPayload,graph:Object.freeze([...specialExtension.graphs.ABS])});
 const corpusChristiPayload=load("../data/presentation/reader-corpus-christi.v1.json");
 const corpusChristiData=Object.freeze({payload:corpusChristiPayload,graph:Object.freeze([...specialExtension.graphs.CORPUS])});
+const holyThursdayPostPayload=load("../data/presentation/reader-holy-thursday-post.v1.json");
+const holyThursdayPostData=Object.freeze({payload:holyThursdayPostPayload,graph:Object.freeze([...specialExtension.graphs.HT_POST])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -419,5 +421,46 @@ assert.equal(corpusDone.stage,"DEPARTURE");
 assert.equal(corpus.advanceLifecycle().stage,"GIVE_THANKS_HANDOFF");
 corpus.destroy();
 assert.equal(corpusRoot.innerHTML,"");
+
+const holyThursdayRoot=rootFixture();
+const holyThursday=createBrowserMassRuntime({
+  root:holyThursdayRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({celebrationId:"holy-thursday",celebrationType:"calendar"})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Holy Thursday",proper,followingActions:["HOLY_THURSDAY_POST"]}),
+  readReaderPreferences:()=>({mode:"simple"}),
+  loadPresentationData:async()=>presentationData,
+  loadHolyThursdayPostData:async()=>holyThursdayPostData,
+});
+const holyThursdayEntered=await holyThursday.enter();
+assert.equal(holyThursdayEntered.session.plan.blessingAllowed,false);
+assert.equal(holyThursdayEntered.session.plan.normalLastGospel,false);
+assert.deepEqual([...holyThursdayEntered.session.plan.followingGraphs],["HOLY_THURSDAY_POST"]);
+holyThursday.showSection(29);
+const holyThursdayMassEnd=holyThursday.getCurrentSectionId();
+const htStart=holyThursday.next();
+assert.equal(holyThursday.getCurrentSectionId(),holyThursdayMassEnd,"Holy Thursday following action fabricated a Last Gospel card");
+assert.equal(htStart.cardTitle,"Translation of the Blessed Sacrament");
+assert.equal(holyThursday.getHolyThursdayPostState().card.id,"HT-R01");
+holyThursday.next();
+assert.equal(holyThursday.getReaderState().cardTitle,"Follow to the Altar of Repose");
+assert.equal(holyThursday.getReaderState().posture.label,"KNEEL");
+holyThursday.setHolyThursdayJoiningState("JOINING");
+assert.equal(holyThursday.getReaderState().posture.label,"STAND_WALK");
+holyThursday.next();
+assert.equal(holyThursday.getReaderState().cardTitle,"At the Altar of Repose");
+assert.equal(holyThursday.getReaderState().posture.label,"KNEEL");
+holyThursday.next();
+assert.equal(holyThursday.getReaderState().cardTitle,"After the Reservation");
+holyThursday.next();
+assert.equal(holyThursday.getReaderState().cardTitle,"Stripping of the Altars");
+assert.equal(holyThursday.getReaderState().posture,null,"stripping rite imposed a universal faithful posture");
+assert.ok(holyThursday.getReaderState().paragraphs.length>=15,"Pian Psalm 21 was truncated in browser runtime");
+holyThursday.next();
+assert.equal(holyThursday.getReaderState().cardTitle,"Holy Thursday Rites Complete");
+const htDone=holyThursday.next();
+assert.equal(htDone.stage,"DEPARTURE");
+assert.equal(holyThursday.advanceLifecycle().stage,"GIVE_THANKS_HANDOFF");
+holyThursday.destroy();
+assert.equal(holyThursdayRoot.innerHTML,"");
 
 console.log("Browser Mass runtime PASS: ordinary flow, source-first LIVE, preludes, plan-aware ownership and lifecycle handoff.");
