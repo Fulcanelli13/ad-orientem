@@ -150,4 +150,66 @@ function host({ route = "home", confirm = true } = {}) {
   assert.deepEqual(calls, ["home", "domain:learn"]);
 }
 
+
+{
+  const calls=[];
+  let ribbonHandler=null;
+  let observerCallback=null;
+  const buttons=[];
+  const makeButton=(surface)=>({
+    dataset:{aoRibbon:surface},
+    classList:{toggle(){}},
+    setAttribute(){},
+    removeAttribute(name){ if(name==="data-ao-ribbon")delete this.dataset.aoRibbon; },
+  });
+  const nav={
+    dataset:{},
+    querySelectorAll(selector){
+      if(selector==="[data-ao-ribbon], [data-ao-app-surface]")return buttons;
+      if(selector==="[data-ao-ribbon]")return buttons.filter(x=>x.dataset.aoRibbon);
+      if(selector==="[data-ao-app-surface]")return buttons.filter(x=>x.dataset.aoAppSurface);
+      return [];
+    },
+    addEventListener(type,fn){if(type==="click")ribbonHandler=fn;},
+    removeEventListener(){},
+    contains:button=>buttons.includes(button),
+  };
+  const win={
+    document:{
+      documentElement:{dataset:{}},
+      getElementById:id=>id==="ao-global-ribbon"?nav:null,
+      addEventListener(){},removeEventListener(){},
+    },
+    MutationObserver:class{
+      constructor(fn){observerCallback=fn;}
+      observe(){}
+      disconnect(){}
+    },
+    AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en"}),subscribe:()=>()=>{}}},
+    AO_NAV_V362:{home:()=>{calls.push("home");return true;}},
+    AO_V37_SHELL:{openDomain:id=>{calls.push("domain:"+id);return true;},openModule:async()=>({ok:true})},
+    setTimeout:fn=>{fn();return 1;},
+  };
+  installAppShellBridge({win,pollMs:0,maxPolls:1});
+  assert.equal(typeof ribbonHandler,"function","ribbon click listener was not bound while initial donor ribbon was incomplete");
+  for(const surface of APP_SURFACES){
+    const button=makeButton(surface);
+    button.dataset.aoAppSurface=surface;
+    delete button.dataset.aoRibbon;
+    buttons.push(button);
+  }
+  observerCallback?.();
+  assert.equal(win.AO_APP_SHELL_V1.status().visibleOwner,true,"late donor ribbon was not adopted");
+  let prevented=false;
+  ribbonHandler({
+    target:{closest:()=>buttons.find(x=>x.dataset.aoAppSurface==="learn")},
+    preventDefault(){prevented=true;},
+    stopPropagation(){},
+  });
+  await Promise.resolve();
+  await Promise.resolve();
+  assert.equal(prevented,true,"late donor ribbon click was not owned by modular shell");
+  assert.deepEqual(calls,["home","domain:learn"]);
+}
+
 console.log("PASS app shell contract");
