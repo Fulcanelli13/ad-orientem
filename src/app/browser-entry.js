@@ -1,3 +1,4 @@
+import { installNonMassConvergence } from "./nonmass-convergence.js";
 import {
   APP_SURFACES,
   NON_MASS_DONOR_CONTRACT,
@@ -149,6 +150,15 @@ export function installAppShellBridge({
 } = {}) {
   if (win?.AO_APP_SHELL_V1) return win.AO_APP_SHELL_V1;
 
+  // This reconciliation layer observes donor-rendered DOM and does not depend
+  // on the donor shell being ready. Install it during modular entry bootstrap
+  // so persistence hygiene applies before PRAY/Settings render.
+  try {
+    installNonMassConvergence({ win });
+  } catch (error) {
+    console.error("Non-Mass D3-D6 convergence install failed", error);
+  }
+
   const state = {
     polls: 0,
     controller: null,
@@ -231,6 +241,7 @@ export function installAppShellBridge({
         prayerOwner: Boolean(win?.AO_PRAY_V435930),
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
         legacyRibbonPresent: Boolean(win?.AO_GLOBAL_RIBBON_V4323),
+        nonMassConvergence: win?.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.() ?? null,
       });
     },
   });
