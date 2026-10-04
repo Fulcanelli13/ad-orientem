@@ -382,7 +382,7 @@ function installStyles(win) {
 }
 
 export function installNonMassConvergence({ win = globalThis } = {}) {
-  if (!win?.document) return null;
+  if (!win?.document?.getElementById || !win?.document?.createElement || typeof win?.MutationObserver !== "function") return null;
   if (win.AO_NON_MASS_D3_D6_CONVERGENCE) return win.AO_NON_MASS_D3_D6_CONVERGENCE;
 
   installStyles(win);
