@@ -61,13 +61,15 @@
     },
     {
       "id": "CROSS_DOMAIN_PHONE_JOURNEY",
-      "classification": "MISSING_INTEGRATION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
-        "docs/APP-CONVERGENCE.md",
-        ".github/workflows/app-convergence.yml"
+        "tests/app-shell-cross-domain-e2e.mjs",
+        "src/app/browser-entry.js",
+        "src/mass/browser-entry.js",
+        "src/mass/reader-native-preview.js"
       ],
-      "detail": "The full cold-launch Home/Calendar/Mass/leave-resume/PRAY/Home/Settings journey is not yet automated end to end."
+      "detail": "Actual index.html phone-Chromium journey is certified from cold Home through Calendar, resolved Mass selection, R17 native LIVE, cancelled and confirmed guarded reader exit, PRAY, Home and Settings. The modular shell also releases the boot interaction shield after adoption."
     },
     {
       "id": "EMERGENCY_RUNTIME_RETIREMENT",
@@ -108,7 +110,6 @@
     }
   ],
   "openBlockers": [
-    "CROSS_DOMAIN_PHONE_JOURNEY",
     "EMERGENCY_RUNTIME_RETIREMENT",
     "DUPLICATE_BROWSER_ENTRY_HYGIENE",
     "NON_MASS_DONOR_EXTRACTION",
@@ -124,7 +125,8 @@
       "tests/reader-phone-acceptance.mjs",
       "tests/app-shell-final-e2e.mjs",
       "tests/app-shell-nuptial-e2e.mjs",
-      "tests/app-shell-easter-vigil-e2e.mjs"
+      "tests/app-shell-easter-vigil-e2e.mjs",
+      "tests/app-shell-cross-domain-e2e.mjs"
     ]
   }
 }
