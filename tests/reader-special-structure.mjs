@@ -47,7 +47,7 @@ for(const rite of ["PALM","ASH","CANDLEMAS","ROGATIONS"]){
     assert.equal(p.segments[0].readerPayload,"NATIVE_READER_PAYLOAD");
     assert.equal(p.releaseSupport,true,rite+" native reader was not release-supported");
   }else{
-    assert.equal(p.releaseSupport,false,"Rogations became renderable without a native payload");
+    assert.equal(p.releaseSupport,false,"Structural projector remains payload-agnostic for Rogations; native runtime is certified separately");
   }
   if(rite==="PALM")assert.equal(p.ending.normalLastGospel,false,"Palm procession failed to suppress Last Gospel");
 }
