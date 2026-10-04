@@ -22,6 +22,7 @@ import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
 import { createRogationsReaderController, loadRogationsReaderData } from "./reader-rogations.js";
+import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
 import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
 import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
@@ -174,6 +175,8 @@ export async function prepareNativeReaderPreview({
   loadCandlemasData=loadCandlemasReaderData,
   rogationsData=null,
   loadRogationsData=loadRogationsReaderData,
+  goodFridayData=null,
+  loadGoodFridayData=loadGoodFridayReaderData,
   requiemAbsolutionData=null,
   loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
   corpusChristiData=null,
@@ -184,6 +187,24 @@ export async function prepareNativeReaderPreview({
   loadGenericProcessionData=loadGenericProcessionReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
+  const plan=prepared?.session?.plan;
+  if(plan?.kind==="DISTINCT_RITE" && plan?.rite==="GOOD_FRIDAY"){
+    const loadedGoodFriday=goodFridayData ?? await Promise.resolve(loadGoodFridayData(prepared));
+    const ctx=prepared?.session?.resolvedMass?.provenance?.goodFriday ?? {};
+    const goodFridayController=createGoodFridayReaderController({
+      graph:loadedGoodFriday?.graph,
+      payload:loadedGoodFriday?.payload,
+      jewishPrayerVariant:ctx.jewishPrayerVariant??"PRINTED_1962",
+      venerationMode:ctx.venerationMode??"PERSONAL",
+      willReceiveCommunion:ctx.willReceiveCommunion===true,
+    });
+    return Object.freeze({
+      prepared,
+      distinctRite:"GOOD_FRIDAY",
+      goodFridayController,
+      model:null,
+    });
+  }
   const structuralSupport=structureSupport(prepared);
   if(!structuralSupport.supported){
     throw new Error(structuralSupport.reason || "R17 native reader structure is not certified");
@@ -315,6 +336,8 @@ export async function mountNativeReaderPreview({
   loadCandlemasData=loadCandlemasReaderData,
   rogationsData=null,
   loadRogationsData=loadRogationsReaderData,
+  goodFridayData=null,
+  loadGoodFridayData=loadGoodFridayReaderData,
   requiemAbsolutionData=null,
   loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
   corpusChristiData=null,
@@ -335,6 +358,7 @@ export async function mountNativeReaderPreview({
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
     candlemasData,loadCandlemasData,rogationsData,loadRogationsData,
+    goodFridayData,loadGoodFridayData,
     requiemAbsolutionData,loadRequiemAbsolutionData,corpusChristiData,loadCorpusChristiData,
     holyThursdayPostData,loadHolyThursdayPostData,genericProcessionData,loadGenericProcessionData,
   });
@@ -356,6 +380,93 @@ export async function mountNativeReaderPreview({
   close.setAttribute("aria-label","Close Mass reader");
   close.style.cssText="position:absolute;z-index:4;top:8px;right:8px;width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:#0d141c;color:#ddd;font-size:20px;";
   root.append(host,close);
+
+
+  if(ready.goodFridayController){
+    const controller=ready.goodFridayController;
+    let reader=null;
+
+    function goodFridayMoment(){
+      const state=controller.project();
+      const card=state?.card;
+      const step=state?.step;
+      if(!card||!step)return null;
+      return Object.freeze({
+        id:step.recordId,
+        sectionTitle:"Good Friday",
+        cardTitle:card.title,
+        cardUpdate:card.cardUpdate!==false,
+        paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
+          id:row.id,
+          kind:row.kind,
+          primary:row.latin,
+          secondary:row.vernacular??row.english??null,
+          sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
+        }))),
+        progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
+        posture:state.posture ? Object.freeze({label:state.posture}) : null,
+        gesture:state.action ? Object.freeze({label:state.action}) : null,
+        guide:null,
+      });
+    }
+
+    function showGoodFriday(){
+      const moment=goodFridayMoment();
+      if(moment)reader.renderMoment(moment);
+      return controller.project().card??null;
+    }
+
+    function moveGoodFriday(direction){
+      const state=controller.project();
+      if(direction==="next" && !state.atEnd)controller.next();
+      else if(direction==="previous" && !state.atStart)controller.previous();
+      return showGoodFriday();
+    }
+
+    reader=createReaderDomAdapter({
+      root:host,
+      iconResolver,
+      allowPresentationModeSwitch:false,
+      onPrevious:()=>moveGoodFriday("previous"),
+      onNext:()=>moveGoodFriday("next"),
+    });
+
+    function destroyGoodFriday(){
+      reader.destroy?.();
+      root.remove?.();
+      if(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root===root){
+        try{delete globalThis.AO_R17_NATIVE_READER_PREVIEW}catch{}
+      }
+    }
+
+    close.addEventListener?.("click",()=>{destroyGoodFriday();onClose?.()});
+    root.dataset.r17TextOwner="R28_GOOD_FRIDAY_SOURCE_PINNED";
+    root.dataset.r17CardOwner="R28_GOOD_FRIDAY_DISTINCT_RITE";
+    root.dataset.r17StateOwner="R28_GOOD_FRIDAY_GRAPH";
+    doc.body.appendChild(root);
+    reader.mount(prepared);
+    showGoodFriday();
+
+    const api=Object.freeze({
+      root,
+      reader,
+      model:null,
+      ownership:Object.freeze({
+        text:"R28_GOOD_FRIDAY_SOURCE_PINNED",
+        cards:"R28_GOOD_FRIDAY_DISTINCT_RITE",
+        liveState:"R28_GOOD_FRIDAY_GRAPH",
+        ordinaryMassGraph:"INACTIVE",
+      }),
+      getCurrentCard:()=>controller.project().card??null,
+      getGoodFridayState:()=>controller.project(),
+      next:()=>moveGoodFriday("next"),
+      previous:()=>moveGoodFriday("previous"),
+      goToGoodFridayRecord:id=>{controller.goToRecord(id);return showGoodFriday();},
+      destroy:destroyGoodFriday,
+    });
+    globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
+    return api;
+  }
 
   let current=ready.model.cardBySequence(1);
   let inAsperges=Boolean(ready.aspergesController);
