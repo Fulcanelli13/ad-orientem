@@ -330,7 +330,17 @@ try{
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
 
   await page.locator("[data-ao-app-surface='home']").click();
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:10000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="home" &&
+    document.querySelector(".homeScreen")?.dataset?.aoHomeOwner==="modular-home-v1",
+    null,{timeout:10000});
+  const homeOwnership=await page.evaluate(()=>({
+    owner:document.querySelector(".homeScreen")?.dataset?.aoHomeOwner??null,
+    installed:globalThis.AO_HOME_APP_V1?.status?.().installed??false,
+    donorAvailable:globalThis.AO_HOME_APP_V1?.status?.().donorHomeAvailable??false,
+  }));
+  assert.equal(homeOwnership.owner,"modular-home-v1","production Home click did not use modular Home owner");
+  assert.equal(homeOwnership.installed,true);
 
   await page.locator("[data-ao-app-surface='settings']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
