@@ -39,7 +39,7 @@ No Mass reader/runtime file is modified by this phase. In particular, this work 
 
 ## Phase 2 audit: assembled-app regression gate
 
-The first post-reader audit found that the modular application shell is present but is still an adapter rather than the visible owner. `AO_APP_SHELL_V1` is explicitly passive, while the historical global ribbon still owns click navigation and the non-Mass surfaces remain monolith-owned.
+The first post-reader audit found that the modular application shell was initially only an adapter. Phase 2.2 now closes that shell-ownership gap: `AO_APP_SHELL_V1` owns capture-phase clicks on the existing visible six-destination ribbon, synchronizes its active/aria-current state, and prevents the historical ribbon listener from receiving those user clicks. The donor ribbon markup is retained as presentation while navigation authority is modular. Non-Mass surface contents are still donor-owned pending extraction.
 
 The production `index.html` also still contains two cleanup debts that must not become permanent architecture: the embedded `AO_EMERGENCY_STABLE_V4333` runtime and a duplicated `src/mass/browser-entry.js` module tag. These are app-shell convergence items, not Mass-engine blockers. The emergency runtime may only be removed after any still-required live-session locks are owned by the final modular shell/settings path.
 
@@ -53,7 +53,6 @@ The app-convergence workflow therefore owns a stronger regression gate from Phas
 
 The first gate snapshot records three closed app-level findings: certified Mass subsystem ownership, complete real-shell special-structure evidence, and the Prayer Book focus/aria guard. It keeps the following work explicitly open rather than allowing reader certification to imply application convergence:
 
-- visible modular shell ownership;
 - the full cross-domain phone journey;
 - retirement/decomposition of the emergency runtime;
 - removal and lockout of the duplicated browser-entry include;
@@ -70,7 +69,7 @@ After host promotion, extract in this order: Home/Coming Up, Calendar dashboard 
 
 Before calling app convergence complete:
 
-1. The modular shell must own visible six-destination navigation rather than merely observe/delegate it.
+1. The modular shell owns visible six-destination navigation and this is certified on actual index.html by `tests/app-shell-visible-owner-e2e.mjs`.
 2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings.
 3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections.
 4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene.
