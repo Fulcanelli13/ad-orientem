@@ -3,6 +3,9 @@ import {
   mapLegacyFollowMode,
   mapInsertedRites,
   deriveHostOptions,
+  fieldNativeDefaultEligible,
+  resolveProductionReaderUiMode,
+  stampMassReaderUi,
   mountR17Preview,
 } from "../src/mass/browser-entry.js";
 
@@ -34,6 +37,67 @@ assert.equal(options.celebrationForm, "low");
 assert.equal(options.presentationMode, "MISSAL");
 assert.deepEqual([...options.precedingRites], ["ASH"]);
 assert.equal(options.localProfile, "LOCAL");
+
+const fieldPrepared={
+  session:{
+    resolvedMass:{
+      form:"MISSA_CANTATA_INCENSE",
+      proper:{status:"READY"},
+      distinctRite:null,
+    },
+    plan:{
+      kind:"MASS",
+      precedingGraphs:[],
+      followingGraphs:[],
+      overlayGraphs:["VOTIVE_PROPER"],
+      insertions:[],
+    },
+  },
+};
+for(const precedingGraphs of [[],["ASPERGES"],["PALM"],["ASH"]]){
+  const candidate={
+    session:{
+      resolvedMass:{...fieldPrepared.session.resolvedMass},
+      plan:{...fieldPrepared.session.plan,precedingGraphs},
+    },
+  };
+  assert.equal(fieldNativeDefaultEligible(candidate),true,
+    "promoted preceding rite fell out of native-default scope: "+JSON.stringify(precedingGraphs));
+  assert.equal(resolveProductionReaderUiMode(candidate,{
+    location:{search:""},
+    localStorage:{getItem:()=>null},
+  }),"PREVIEW");
+}
+for(const unsafePlan of [
+  {...fieldPrepared.session.plan,precedingGraphs:["CANDLEMAS"]},
+  {...fieldPrepared.session.plan,followingGraphs:["GENERIC_PROCESSION"]},
+  {...fieldPrepared.session.plan,insertions:["RESOLVED_PREPARATORY_LESSONS"]},
+]){
+  const candidate={session:{resolvedMass:{...fieldPrepared.session.resolvedMass},plan:unsafePlan}};
+  assert.equal(fieldNativeDefaultEligible(candidate),false);
+  assert.equal(resolveProductionReaderUiMode(candidate,{
+    location:{search:""},
+    localStorage:{getItem:()=>null},
+  }),"LEGACY");
+}
+assert.equal(resolveProductionReaderUiMode(fieldPrepared,{
+  location:{search:"?aoR17Reader=legacy"},
+  localStorage:{getItem:()=>null},
+}),"LEGACY");
+assert.equal(resolveProductionReaderUiMode(fieldPrepared,{
+  location:{search:"?aoR17Reader=shadow"},
+  localStorage:{getItem:()=>null},
+}),"SHADOW");
+assert.equal(resolveProductionReaderUiMode({
+  session:{resolvedMass:{...fieldPrepared.session.resolvedMass},plan:{...fieldPrepared.session.plan,precedingGraphs:["CANDLEMAS"]}},
+},{
+  location:{search:"?aoR17Reader=native"},
+  localStorage:{getItem:()=>null},
+}),"PREVIEW");
+
+const uiDoc={documentElement:{dataset:{}}};
+assert.equal(stampMassReaderUi(uiDoc,"R17_NATIVE_CARDS_OVER_LEGACY_STATE"),"R17_NATIVE_CARDS_OVER_LEGACY_STATE");
+assert.equal(uiDoc.documentElement.dataset.aoMassReaderUi,"R17_NATIVE_CARDS_OVER_LEGACY_STATE");
 
 assert.throws(
   () => deriveHostOptions({
