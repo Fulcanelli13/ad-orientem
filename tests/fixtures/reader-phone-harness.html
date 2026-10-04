@@ -27,7 +27,12 @@ const proper={
   communion:t("Floréte, flores","Send forth flowers"),
   postcommunions:[t("Sacratíssimæ Genetrícis tuæ","May the prayers of Thy most holy Mother")],
 };
-const withAsperges=new URLSearchParams(location.search).get("asperges")==="1";
+const params=new URLSearchParams(location.search);
+const rite=String(params.get("rite")??(params.get("asperges")==="1"?"asperges":"")).toLowerCase();
+const withAsperges=rite==="asperges";
+const withPalm=rite==="palm";
+const withAsh=rite==="ash";
+const precedingRites=withAsperges?["ASPERGES"]:withPalm?["PALM"]:withAsh?["ASH"]:[];
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:"2026-10-04",
@@ -38,7 +43,7 @@ const resolvedMass={
   explicitlySelectedCelebration:true,
   proper:{status:"READY",data:proper,sourcePath:"Sancti/10-07"},
   overlays:["VOTIVE_PROPER"],
-  precedingRites:withAsperges?["ASPERGES"]:[],
+  precedingRites,
   followingActions:[],
   distinctRite:null,
   provenance:{seasonalMode:null},
@@ -49,10 +54,11 @@ const prepared={
     resolvedMass,
     plan:{
       kind:"MASS",
-      precedingGraphs:withAsperges?["ASPERGES"]:[],
+      precedingGraphs:precedingRites,
       followingGraphs:[],
       overlayGraphs:["VOTIVE_PROPER"],
-      normalLastGospel:true,
+      massEntry:(withPalm||withAsh)?"INTROIT":"FOOT_CLUSTER",
+      normalLastGospel:withPalm?false:true,
     },
   },
   readerPreferences:{
