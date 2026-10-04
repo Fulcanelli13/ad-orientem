@@ -62,6 +62,17 @@ The first gate snapshot records three closed app-level findings: certified Mass 
 
 The app gate uses only the regression classifications `PASS`, `REGRESSION`, `STALE_SURFACE`, `MISSING_INTEGRATION` and `CRASH`. `tests/app-release-gate.mjs` ensures the listed open blockers exactly match the open findings while independently asserting that the Mass reader remains `FINAL_NATIVE_READY` with `R17_NATIVE` production default.
 
+## Phase 2.2: D3-D6 non-Mass behavioral convergence
+
+`src/app/nonmass-convergence.js` is a temporary compatibility layer over the locked v43.59.30 PRAY/Settings donor. It closes the bounded D3-D6 behavioral work without claiming that donor extraction is complete:
+
+- D3 — Adoration / Visit: top-level entry is reduced to Visit, Adoration, Exposition & Benediction, and Eucharistic Treasury; Holy Hour and Four Ends are nested guidance; exposed/reserved state is session-only rather than persistent.
+- D4 — Benediction: the public rite remains a live companion, Reposition is the terminal sacramental-state boundary, and minister/all role guidance is explicit where the donor prayer block otherwise flattens actors.
+- D5 — Confession: the visible structure is five canonical phases; examination prompts are read-only rather than a temporary sin checklist; no prompt count or classifier is exposed; canonical app guidance corrects the kind-and-number wording.
+- D6 — Sources / About: reader-facing source families and provenance labels replace component/build jargon; About reads the canonical application release authority instead of the Settings component version.
+
+The compatibility layer is installed from `src/app/browser-entry.js` and is regression-locked by both a pure contract test and an actual-index phone Chromium test. It does not make `AO_APP_SHELL_V1` the visible owner and does not close `NON_MASS_DONOR_EXTRACTION`; PRAY, Settings, Home, Calendar and Learn remain donor-owned until modular extraction/parity is complete.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
