@@ -1,35 +1,48 @@
 # Ad Orientem
 
-A traditional Roman Mass companion focused on helping the faithful follow the 1962 Mass, pray, learn, and prepare for the liturgy.
+Ad Orientem is a traditional Roman Mass companion for the 1962 Roman Rite, with calendar/Proper resolution, Mass preparation, native MISSAL / SIMPLE / LIVE readers, posture and gesture guidance, Schola state, liturgical actions, special rites, and devotional modules.
 
-## Migration status
+## Production architecture
 
-This repository is entering a controlled migration from the historical single-file application to a modular static/PWA architecture.
+`main` is the application source of truth.
 
-The frozen behavioural source of truth is **v43.33 — Icon Ownership Consolidation**. During migration, architectural extraction must not silently change liturgical texts, Proper resolution, calendar behaviour, navigation, artwork decisions, icon ownership, prayer content, or Live Mass behaviour.
+The Mass stack is modular under `src/mass/` and its liturgical/source data under `data/mass/` and `data/presentation/`. The certified native R17 reader is the production reader UI.
 
-Work is isolated on the `migration/v43.33` branch until parity is demonstrated.
+The historical single-file application remains in the repository as migration evidence and an explicit rollback/compatibility donor where still required. It is not the normal visible Mass reader.
 
-See:
+## Reader policy
 
-- `docs/CANONICAL-BASELINE.md`
-- `docs/MIGRATION.md`
-- `docs/ARCHITECTURE.md`
-- `docs/ASSET-INVENTORY.md`
-- `docs/RELEASE-CHECKLIST.md`
+Production default:
 
-## Canonical baseline
+`R17_NATIVE`
 
-`Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html`
+Available presentation modes are selected before Mass:
 
-Full SHA-256:
+- MISSAL
+- SIMPLE
+- LIVE
 
-`7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3`
+The legacy reader can still be forced explicitly with:
 
-The 37.9 MB legacy baseline is being imported under `legacy/v43.33.parts/` because the connector cannot safely write the monolith in one contents-API request. The import is currently **partial but byte-verified**: CI verifies that the committed chunks are an exact prefix of the frozen file. It will switch to the full-file SHA-256 gate only after the complete baseline is present.
+`?aoR17Reader=legacy`
 
-`legacy/v43.33.parts/IMPORT-STATUS.json` is the explicit authority for partial/full import state. The migration PR stays Draft until this bootstrap gate is complete.
+That rollback path exists for diagnosis and recovery; it is not the product default.
 
-## Migration principle
+## Release state
 
-**Preserve behaviour first. Refactor second. Improve features only after parity is demonstrated.**
+The current release gate certifies:
+
+- source-first LIVE Canon structure;
+- Low, Missa Cantata and Solemn form state;
+- phone/touch reader acceptance;
+- full-year special-structure projection;
+- Proper readiness/fail-closed behavior;
+- native Schola, Guide, cue rails, bells/cinematics and plan-aware lifecycle.
+
+The former 4 October 2026 field build is retained under `field/2026-10-04/` as historical test evidence only. Date-specific rescue hooks are not part of the production runtime.
+
+## Development rule
+
+New work should converge on `main` and the modular source tree. Do not create another parallel Mass implementation, field copy, or standalone rescue runtime unless it is explicitly temporary and isolated.
+
+Preserve canonical source ownership, fail closed when a rite or Proper is unresolved, and regression-test changes against both the full Node suite and the phone-browser suite.
