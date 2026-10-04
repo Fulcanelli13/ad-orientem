@@ -84,6 +84,8 @@ assert.equal(p.ending.dismissal,"BENEDICAMUS_DOMINO");
 assert.equal(p.ending.blessingAllowed,false);
 assert.equal(p.ending.normalLastGospel,false);
 assert.equal(p.segments.at(-1).id,"CORPUS_CHRISTI_PROCESSION");
+assert.equal(p.segments.at(-1).readerPayload,"NATIVE_READER_PAYLOAD");
+assert.equal(p.releaseSupport,true,"Corpus procession remains blocked despite native payload");
 
 const gf=makeResolvedMass({...base,distinctRite:"GOOD_FRIDAY"});
 p=projectSpecialStructure({session:{resolvedMass:gf,plan:compileMassPlan(gf)}},sources);
