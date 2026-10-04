@@ -37,12 +37,30 @@ The v43.59.30 PRAY runtime remains the non-Mass prayer presentation donor: one s
 
 No Mass reader/runtime file is modified by this phase. In particular, this work must remain merge-disjoint from any native-reader cutover branch.
 
+## Phase 2 audit: assembled-app regression gate
+
+The first post-reader audit found that the modular application shell is present but is still an adapter rather than the visible owner. `AO_APP_SHELL_V1` is explicitly passive, while the historical global ribbon still owns click navigation and the non-Mass surfaces remain monolith-owned.
+
+The production `index.html` also still contains two cleanup debts that must not become permanent architecture: the embedded `AO_EMERGENCY_STABLE_V4333` runtime and a duplicated `src/mass/browser-entry.js` module tag. These are app-shell convergence items, not Mass-engine blockers. The emergency runtime may only be removed after any still-required live-session locks are owned by the final modular shell/settings path.
+
+The existing real-shell browser tests prove native Mass ownership and phone geometry for certified Mass/special-rite paths, but they do not yet exercise the complete application journey through visible navigation. In particular, they do not currently prove cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings.
+
+The app-convergence workflow therefore owns a stronger regression gate from Phase 2 onward: app-shell changes, production `index.html`, the browser entry, app-shell tests and package-script changes must run both the app-shell contract/tree-hygiene checks and the real phone/touch suite. This closes the previous gap where a pure `src/app/**` change could pass only the unit contract.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
 
 After host promotion, extract in this order: Home/Coming Up, Calendar dashboard and pre-Mass selection entry, PRAY, Learn, Settings. Each extraction replaces one donor owner only after parity tests pass; it must not create a second visible surface for the same state.
 
+Before calling app convergence complete:
+
+1. The modular shell must own visible six-destination navigation rather than merely observe/delegate it.
+2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings.
+3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections.
+4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene.
+5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
+
 ## Regression gates
 
-The app-level gate must eventually exercise cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings on real phone/touch geometry. The existing Mass convergence and phone suites remain mandatory and independent.
+The app-level gate must exercise cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings on real phone/touch geometry. The existing Mass convergence and phone suites remain mandatory and independent.
