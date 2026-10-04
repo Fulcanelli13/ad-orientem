@@ -1,4 +1,5 @@
 import {
+  APP_SURFACES,
   NON_MASS_DONOR_CONTRACT,
   createAppHostAdapter,
   createAppShellController,
@@ -6,7 +7,7 @@ import {
   surfaceForCoreRoute,
 } from "./index.js";
 
-export const VERSION = "final-app-shell-bridge-v1";
+export const VERSION = "final-app-shell-owner-v2";
 
 function ready(win) {
   return Boolean(
@@ -24,6 +25,114 @@ function initialSurface(win, host) {
   return surfaceForCoreRoute(host.currentCoreRoute?.(), "home");
 }
 
+function installVisibleRibbonOwner(win, controller, state) {
+  const doc = win?.document;
+  if (!doc?.getElementById || !controller) return () => {};
+
+  let nav = null;
+  let observer = null;
+  let disposed = false;
+  const cleanups = [];
+
+  function paintActive() {
+    if (!nav?.querySelectorAll) return;
+    const active = controller.getActive?.();
+    for (const button of nav.querySelectorAll("[data-ao-app-surface]")) {
+      const current = button.dataset?.aoAppSurface === active;
+      button.classList?.toggle?.("active", current);
+      button.setAttribute?.("aria-current", current ? "page" : "false");
+    }
+  }
+
+  function adopt() {
+    if (disposed) return false;
+    nav = doc.getElementById("ao-global-ribbon");
+    if (!nav?.querySelectorAll) return false;
+
+    nav.dataset.aoOwner = "AO_APP_SHELL_V1";
+    nav.dataset.aoVisibleShell = "modular";
+
+    let adopted = 0;
+    for (const button of nav.querySelectorAll("[data-ao-ribbon], [data-ao-app-surface]")) {
+      const surface = normalizeAppSurface(
+        button.dataset?.aoAppSurface ?? button.dataset?.aoRibbon
+      );
+      if (!surface) continue;
+      button.dataset.aoAppSurface = surface;
+      button.removeAttribute?.("data-ao-ribbon");
+      adopted += 1;
+    }
+
+    state.visibleOwner = adopted === APP_SURFACES.length;
+    if (doc.documentElement?.dataset) {
+      doc.documentElement.dataset.aoAppShellOwner = state.visibleOwner
+        ? "AO_APP_SHELL_V1"
+        : "partial";
+    }
+    paintActive();
+    return state.visibleOwner;
+  }
+
+  function onRibbonClick(event) {
+    const button = event.target?.closest?.("[data-ao-app-surface]");
+    if (!button || !nav?.contains?.(button)) return;
+    const surface = normalizeAppSurface(button.dataset?.aoAppSurface);
+    if (!surface) return;
+    event.preventDefault?.();
+    event.stopPropagation?.();
+    void controller.go(surface);
+  }
+
+  function syncExternalNavigation(event) {
+    const domain = event.target?.closest?.("[data-v37-domain]");
+    if (domain) {
+      controller.setActive?.(
+        domain.dataset?.v37Domain === "today" ? "home" : domain.dataset?.v37Domain
+      );
+      return;
+    }
+    const module = event.target?.closest?.("[data-v37-open]");
+    if (module?.dataset?.v37Open === "today.calendar") {
+      controller.setActive?.("calendar");
+      return;
+    }
+    if (module?.dataset?.v37Open === "utility.settings") {
+      controller.setActive?.("settings");
+      return;
+    }
+    if (event.target?.closest?.("[data-app-home]")) controller.setActive?.("home");
+  }
+
+  if (adopt()) {
+    nav.addEventListener?.("click", onRibbonClick);
+    cleanups.push(() => nav?.removeEventListener?.("click", onRibbonClick));
+  }
+
+  const unsubscribe = controller.subscribe?.(() => {
+    adopt();
+    paintActive();
+  });
+  if (typeof unsubscribe === "function") cleanups.push(unsubscribe);
+
+  doc.addEventListener?.("click", syncExternalNavigation, { capture: true });
+  cleanups.push(() => doc.removeEventListener?.("click", syncExternalNavigation, { capture: true }));
+
+  if (typeof win?.MutationObserver === "function" && nav) {
+    observer = new win.MutationObserver(() => {
+      adopt();
+    });
+    observer.observe(nav, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-ao-ribbon"] });
+    cleanups.push(() => observer?.disconnect?.());
+  }
+
+  return () => {
+    disposed = true;
+    for (const cleanup of cleanups.splice(0)) {
+      try { cleanup(); } catch {}
+    }
+  };
+}
+
 export function installAppShellBridge({
   win = globalThis,
   pollMs = 80,
@@ -36,6 +145,8 @@ export function installAppShellBridge({
     controller: null,
     host: null,
     blocked: false,
+    visibleOwner: false,
+    disposeVisibleOwner: null,
   };
 
   function setDataset(value) {
@@ -62,6 +173,7 @@ export function installAppShellBridge({
         host: state.host,
         initialSurface: initialSurface(win, state.host),
       });
+      state.disposeVisibleOwner = installVisibleRibbonOwner(win, state.controller, state);
       setDataset("ready");
     } catch {
       state.blocked = true;
@@ -71,7 +183,7 @@ export function installAppShellBridge({
 
   const api = Object.freeze({
     version: VERSION,
-    passive: true,
+    passive: false,
     contract: NON_MASS_DONOR_CONTRACT,
     get installed() { return Boolean(state.controller); },
     get polls() { return state.polls; },
@@ -89,9 +201,14 @@ export function installAppShellBridge({
       return state.controller?.getActive?.() ?? null;
     },
     status() {
+      const nav = win?.document?.getElementById?.("ao-global-ribbon");
       return Object.freeze({
         installed: Boolean(state.controller),
-        passive: true,
+        passive: false,
+        visibleOwner: state.visibleOwner,
+        ribbonOwner: nav?.dataset?.aoOwner ?? null,
+        legacyRibbonButtons: nav?.querySelectorAll?.("[data-ao-ribbon]")?.length ?? null,
+        modularRibbonButtons: nav?.querySelectorAll?.("[data-ao-app-surface]")?.length ?? null,
         polls: state.polls,
         blocked: state.blocked,
         active: state.controller?.getActive?.() ?? null,
