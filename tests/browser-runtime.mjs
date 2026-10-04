@@ -12,6 +12,7 @@ const ashPayload=load("../data/presentation/reader-ash.v1.json");
 const ashData=Object.freeze({payload:ashPayload,graph:Object.freeze([...specialExtension.graphs.ASH])});
 const candlemasPayload=load("../data/presentation/reader-candlemas.v1.json");
 const candlemasData=Object.freeze({payload:candlemasPayload,graph:Object.freeze([...specialExtension.graphs.CND])});
+const rogationsData=Object.freeze({payload:load("../data/presentation/reader-rogations.v1.json"),graph:Object.freeze([...specialExtension.graphs.ROG])});
 const requiemAbsolutionPayload=load("../data/presentation/reader-requiem-absolution.v1.json");
 const requiemAbsolutionData=Object.freeze({payload:requiemAbsolutionPayload,graph:Object.freeze([...specialExtension.graphs.ABS])});
 const presentationData=Object.freeze({
@@ -237,6 +238,35 @@ assert.equal(candlemasRuntime.getCandlemasMassState("MC-COM-040").state,null);
 candlemasRuntime.previous();
 assert.equal(candlemasRuntime.getCandlemasState().card.id,"CND-R07");
 candlemasRuntime.destroy();
+
+const rogationsRoot=rootFixture();
+const rogationsRuntime=createBrowserMassRuntime({
+  root:rogationsRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["rogations"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Rogation Mass",proper,precedingRites:["ROGATIONS"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadRogationsData:async()=>rogationsData,
+});
+const rogationsEntered=await rogationsRuntime.enter();
+assert.equal(rogationsEntered.session.plan.massEntry,"INTROIT");
+assert.equal(rogationsRuntime.getCurrentSectionId(),null);
+assert.equal(rogationsRuntime.getReaderState().cardTitle,"Litany · Invocation of God");
+assert.equal(rogationsRuntime.getRogationsState().faithfulPosture,null);
+rogationsRuntime.setRogationsProcessionParticipant(true);
+assert.equal(rogationsRuntime.getReaderState().posture,null,"participant flag alone fabricated Rogation procession");
+rogationsRuntime.setRogationsProcessionActive(true);
+assert.equal(rogationsRuntime.getReaderState().posture.label,"PROCESSIONAL");
+while(rogationsRuntime.getRogationsState().card.id!=="ROG-R05")rogationsRuntime.next();
+assert.ok(rogationsRuntime.getReaderState().paragraphs.some(p=>/fructus terræ/.test(p.primary)),
+  "Rogations agricultural petition missing from runtime");
+while(!rogationsRuntime.getRogationsState().atEnd)rogationsRuntime.next();
+rogationsRuntime.next();
+assert.equal(rogationsRuntime.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(rogationsRuntime.getReaderState().cardTitle,"Introit");
+rogationsRuntime.previous();
+assert.equal(rogationsRuntime.getRogationsState().card.id,"ROG-R08");
+rogationsRuntime.destroy();
 
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({
