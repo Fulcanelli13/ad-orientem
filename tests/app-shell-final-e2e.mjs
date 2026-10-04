@@ -386,10 +386,29 @@ async function exerciseRealShellFollowingAction(browser,spec){
       const card=api?.model?.cards?.find?.(x=>x.sourceSequence===exitSourceSequence);
       if(!card)throw new Error("Missing source-sequence exit card "+exitSourceSequence);
       const rendered=api.showSequence(card.sequence);
-      return {id:card.sectionId,renderedTitle:rendered?.title??null};
+      const root=document.getElementById("ao-r17-native-reader-preview");
+      return {
+        id:card.sectionId,
+        renderedTitle:rendered?.title??null,
+        domTitle:root?.querySelector?.("[data-role='card-title']")?.textContent?.trim()??null,
+        originalParagraphCount:card.paragraphs?.length??0,
+        renderedParagraphCount:rendered?.paragraphs?.length??0,
+        visibleParagraphCount:root?.querySelectorAll?.("[data-role='paragraphs'] .ao-reader-paragraph")?.length??0,
+        planFilteredBlocks:[...(rendered?.planFilteredBlocks??[])],
+      };
     },spec.exitSourceSequence);
-    if(spec.filteredExitTitle)assert.equal(exit.renderedTitle,spec.filteredExitTitle,
-      spec.kind+" production reader failed to suppress the final blessing surface");
+    if(spec.filteredExitTitle){
+      assert.equal(exit.renderedTitle,spec.filteredExitTitle,
+        spec.kind+" public reader API did not return the plan-filtered exit card");
+      assert.equal(exit.domTitle,spec.filteredExitTitle,
+        spec.kind+" actual DOM did not show the plan-filtered exit card title");
+      assert.ok(exit.planFilteredBlocks.includes("AO.SM.B092"),
+        spec.kind+" final-blessing block was not marked as plan-filtered");
+      assert.ok(exit.renderedParagraphCount<exit.originalParagraphCount,
+        spec.kind+" final blessing paragraphs were not removed from the rendered card");
+      assert.equal(exit.visibleParagraphCount,exit.renderedParagraphCount,
+        spec.kind+" DOM paragraph count diverged from the plan-filtered card");
+    }
 
     await tapNext();
     await page.waitForFunction(({getter,firstId})=>{
