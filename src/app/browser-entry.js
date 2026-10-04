@@ -1,3 +1,4 @@
+import "../home/browser-entry.js";
 import { installLiveSessionGuards } from "./live-session-guards.js";
 import "../calendar/browser-entry.js";
 import {

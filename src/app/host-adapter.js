@@ -52,6 +52,11 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     hardHome() {
+      const modular = win?.AO_HOME_APP_V1;
+      if (typeof modular?.open === "function") {
+        const opened = modular.open();
+        if (opened !== false) return true;
+      }
       try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       const nav = win?.AO_NAV_V362;
       if (typeof nav?.home !== "function") return false;

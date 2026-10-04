@@ -86,6 +86,12 @@ The guard recognizes the actual connected native reader, not only the historical
 
 This does **not** yet close `EMERGENCY_RUNTIME_RETIREMENT`: the historical v43.33 emergency layer is still physically embedded in `index.html`. Its required responsibilities have now been replaced; the next step is physical removal followed by the full assembled-app regression suite.
 
+## Phase 6: modular Home navigation ownership
+
+`AO_HOME_APP_V1` now owns the top-level Home reset/navigation path. The modular shell no longer needs to call `AO_NAV_V362.home()` when the modular Home owner is available; it directly closes transient surfaces, clears Home-sheet/scripture state, leaves historical prepare/live/thanksgiving routes where necessary, restores Settings' Home state, and marks the existing Home surface with `data-ao-home-owner="modular-home-v1"`.
+
+This is deliberately **not** recorded as full Home extraction yet. The visible Home card stack still contains donor-owned presentation, including Coming Up and Daily Catechism. The actual-index phone journey certifies modular Home navigation ownership while the app gate keeps Home presentation pending.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.

@@ -5,6 +5,7 @@ on:
     paths:
       - "src/app/**"
       - "src/calendar/**"
+      - "src/home/**"
       - "src/mass/browser-entry.js"
       - "index.html"
       - "package.json"
@@ -21,6 +22,7 @@ on:
     paths:
       - "src/app/**"
       - "src/calendar/**"
+      - "src/home/**"
       - "src/mass/browser-entry.js"
       - "index.html"
       - "package.json"
@@ -43,6 +45,7 @@ jobs:
       - run: npm run test:app-shell-contract
       - run: npm run test:tree-hygiene
       - run: npm run test:app-live-guards
+      - run: npm run test:home-owner
       - run: npm run check:app-release
 
   app-shell-phone:
