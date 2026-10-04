@@ -112,8 +112,9 @@ function host({ route = "home", confirm = true } = {}) {
   };
   const bridge = installAppShellBridge({ win, pollMs: 0, maxPolls: 1 });
   assert.equal(bridge.installed, true);
-  assert.equal(bridge.passive, true);
+  assert.equal(bridge.passive, false);
   assert.equal(dataset.aoAppShellBridge, "ready");
+  assert.equal(bridge.status().passive, false);
   assert.equal((await bridge.navigate("learn")).ok, true);
   assert.deepEqual(calls, ["home", "domain:learn"]);
 }
