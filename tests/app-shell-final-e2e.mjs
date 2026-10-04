@@ -775,6 +775,9 @@ try{
     appShellContract:globalThis.AO_APP_SHELL_V1?.contract?.topLevel??null,
     appShellDataset:document.documentElement.dataset.aoAppShellBridge??null,
     appShellOwner:document.documentElement.dataset.aoAppShellOwner??null,
+    ribbonOwner:document.getElementById("ao-global-ribbon")?.getAttribute("data-ao-app-owner")??null,
+    donorRibbonButtons:document.querySelectorAll("#ao-global-ribbon [data-ao-ribbon]").length,
+    modularRibbonButtons:document.querySelectorAll("#ao-global-ribbon [data-ao-app-surface]").length,
   }));
   assert.equal(ownership.starts,0,"final native entry booted the legacy live renderer");
   assert.equal(ownership.runtime?.readerUiMode,"NATIVE");
@@ -787,9 +790,13 @@ try{
   assert.equal(ownership.appShellBridge,true,"final app shell bridge was not installed beside Mass");
   assert.equal(ownership.appShell?.installed,true,"final app shell controller is not ready in actual index.html");
   assert.equal(ownership.appShell?.passive,false,"final modular app shell did not take visible ownership");
-  assert.equal(ownership.appShell?.visibleRibbonOwner,"AO_APP_SHELL_V1","visible ribbon is not owned by the modular app shell");
+  assert.equal(ownership.appShell?.visibleRibbonOwned,true,"visible ribbon is not owned by the modular app shell");
+  assert.equal(ownership.appShell?.legacyRibbonClickNeutralized,true,"historical ribbon click hook is still active");
   assert.equal(ownership.appShellDataset,"ready","actual index.html did not expose ready app-shell bridge state");
   assert.equal(ownership.appShellOwner,"modular","actual index.html did not expose modular shell ownership");
+  assert.equal(ownership.ribbonOwner,"modular","visible ribbon did not expose modular ownership");
+  assert.equal(ownership.donorRibbonButtons,0,"historical ribbon click attributes returned during Mass");
+  assert.equal(ownership.modularRibbonButtons,6,"modular shell lost one or more top-level ribbon buttons");
   assert.deepEqual(
     ownership.appShellContract,
     ["home","mass","pray","learn","calendar","settings"],
