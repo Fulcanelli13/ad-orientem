@@ -23,6 +23,7 @@ import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
 import { createRogationsReaderController, loadRogationsReaderData } from "./reader-rogations.js";
 import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
+import { createEasterVigilReaderController, loadEasterVigilReaderData, projectEasterVigilMassModel } from "./reader-easter-vigil.js";
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
 import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
 import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
@@ -177,6 +178,8 @@ export async function prepareNativeReaderPreview({
   loadRogationsData=loadRogationsReaderData,
   goodFridayData=null,
   loadGoodFridayData=loadGoodFridayReaderData,
+  easterVigilData=null,
+  loadEasterVigilData=loadEasterVigilReaderData,
   requiemAbsolutionData=null,
   loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
   corpusChristiData=null,
@@ -203,6 +206,44 @@ export async function prepareNativeReaderPreview({
       distinctRite:"GOOD_FRIDAY",
       goodFridayController,
       model:null,
+    });
+  }
+  if(plan?.kind==="COMPOSITE_DISTINCT_RITE" && plan?.rite==="EASTER_VIGIL"){
+    const [data,loadedEasterVigil]=await Promise.all([
+      presentationData ?? Promise.resolve(loadPresentationData(prepared)),
+      easterVigilData ?? Promise.resolve(loadEasterVigilData(prepared)),
+    ]);
+    const resolved=prepared.session.resolvedMass;
+    const ordinaryResolved=Object.freeze({
+      ...resolved,
+      distinctRite:null,
+      precedingRites:Object.freeze([]),
+      followingActions:Object.freeze([]),
+      overlays:Object.freeze([...(resolved.overlays??[])].filter(x=>x!=="EASTER_VIGIL")),
+    });
+    const baseModel=createMassReaderModel({
+      resolvedMass:ordinaryResolved,
+      sectionMap:data?.sectionMap,
+      lowCorpus:data?.lowCorpus,
+      sungCorpus:data?.sungCorpus,
+      canonSourceMap:data?.canonSourceMap,
+      nuptialData:data?.nuptialData,
+      properNotApplicableSlots:["INTROIT","COMMUNION"],
+      vernacularLanguage:prepared?.readerPreferences?.language??"en",
+    });
+    const model=projectEasterVigilMassModel(baseModel,loadedEasterVigil?.payload);
+    const ctx=resolved?.provenance?.easterVigil ?? {};
+    const easterVigilController=createEasterVigilReaderController({
+      graph:loadedEasterVigil?.graph,
+      payload:loadedEasterVigil?.payload,
+      fontMode:ctx.fontMode??"IN_CHURCH",
+      baptismPresent:ctx.baptismPresent===true,
+    });
+    return Object.freeze({
+      prepared,
+      distinctRite:"EASTER_VIGIL",
+      easterVigilController,
+      model,
     });
   }
   const structuralSupport=structureSupport(prepared);
@@ -338,6 +379,8 @@ export async function mountNativeReaderPreview({
   loadRogationsData=loadRogationsReaderData,
   goodFridayData=null,
   loadGoodFridayData=loadGoodFridayReaderData,
+  easterVigilData=null,
+  loadEasterVigilData=loadEasterVigilReaderData,
   requiemAbsolutionData=null,
   loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
   corpusChristiData=null,
@@ -359,6 +402,7 @@ export async function mountNativeReaderPreview({
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
     candlemasData,loadCandlemasData,rogationsData,loadRogationsData,
     goodFridayData,loadGoodFridayData,
+    easterVigilData,loadEasterVigilData,
     requiemAbsolutionData,loadRequiemAbsolutionData,corpusChristiData,loadCorpusChristiData,
     holyThursdayPostData,loadHolyThursdayPostData,genericProcessionData,loadGenericProcessionData,
   });
@@ -462,6 +506,142 @@ export async function mountNativeReaderPreview({
       previous:()=>moveGoodFriday("previous"),
       goToGoodFridayRecord:id=>{controller.goToRecord(id);return showGoodFriday();},
       destroy:destroyGoodFriday,
+    });
+    globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
+    return api;
+  }
+
+  if(ready.easterVigilController){
+    const controller=ready.easterVigilController;
+    const model=ready.model;
+    let reader=null;
+    let inVigil=true;
+    let currentMass=null;
+    let stage="VIGIL_ACTIVE";
+
+    function easterVigilMoment(){
+      const state=controller.project();
+      const card=state?.card;
+      const step=state?.step;
+      if(!card||!step)return null;
+      return Object.freeze({
+        id:step.recordId,
+        sectionTitle:"Easter Vigil",
+        cardTitle:card.title,
+        cardUpdate:card.cardUpdate!==false,
+        paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
+          id:row.id,
+          kind:row.kind,
+          primary:row.latin,
+          secondary:row.vernacular??row.english??null,
+          sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
+        }))),
+        progress:String(state.index+1)+" / "+String(state.total)+" · Easter Vigil",
+        posture:state.posture ? Object.freeze({label:state.posture}) : null,
+        gesture:state.action ? Object.freeze({label:state.action}) : null,
+        guide:null,
+      });
+    }
+
+    function showEasterVigil(){
+      inVigil=true;
+      stage="VIGIL_ACTIVE";
+      const moment=easterVigilMoment();
+      if(moment)reader.renderMoment(moment);
+      root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
+      root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
+      return controller.project().card??null;
+    }
+
+    function showVigilMass(card){
+      if(!card)return null;
+      inVigil=false;
+      stage="MASS_ACTIVE";
+      currentMass=card;
+      reader.renderMoment({
+        id:card.sectionId,
+        sectionTitle:card.title,
+        cardTitle:card.title,
+        cardUpdate:true,
+        paragraphs:card.paragraphs,
+        progress:String(card.sequence)+" / "+String(model.totalCards)+" · Easter Vigil Mass",
+        guide:null,
+      });
+      root.dataset.r17CardOwner="R33_EASTER_VIGIL_MASS_PROJECTION";
+      root.dataset.r17StateOwner="R33_EASTER_VIGIL_MASS";
+      return card;
+    }
+
+    function moveEasterVigil(direction){
+      if(inVigil){
+        const state=controller.project();
+        if(direction==="next"){
+          if(state.atEnd && state.handoffToMass){
+            return showVigilMass(model.cardBySequence(1));
+          }
+          if(!state.atEnd)controller.next();
+        }else if(direction==="previous" && !state.atStart){
+          controller.previous();
+        }
+        return showEasterVigil();
+      }
+      if(direction==="previous" && currentMass?.sectionId===model.cardBySequence(1)?.sectionId){
+        controller.goToRecord("EV-MASS-700");
+        return showEasterVigil();
+      }
+      const nextCard=direction==="previous"
+        ? model.previousCard(currentMass?.sectionId)
+        : model.nextCard(currentMass?.sectionId);
+      if(nextCard)return showVigilMass(nextCard);
+      if(direction==="next"){
+        stage="DEPARTURE";
+        return null;
+      }
+      return currentMass;
+    }
+
+    reader=createReaderDomAdapter({
+      root:host,
+      iconResolver,
+      allowPresentationModeSwitch:false,
+      onPrevious:()=>moveEasterVigil("previous"),
+      onNext:()=>moveEasterVigil("next"),
+    });
+
+    function destroyEasterVigil(){
+      reader.destroy?.();
+      root.remove?.();
+      if(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root===root){
+        try{delete globalThis.AO_R17_NATIVE_READER_PREVIEW}catch{}
+      }
+    }
+
+    close.addEventListener?.("click",()=>{destroyEasterVigil();onClose?.()});
+    root.dataset.r17TextOwner="R33_EASTER_VIGIL_SOURCE_PINNED";
+    root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
+    root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
+    doc.body.appendChild(root);
+    reader.mount(prepared);
+    showEasterVigil();
+
+    const api=Object.freeze({
+      root,
+      reader,
+      model,
+      ownership:Object.freeze({
+        text:"R33_EASTER_VIGIL_SOURCE_PINNED",
+        cards:"R33_EASTER_VIGIL_COMPOSITE",
+        liveState:"R33_EASTER_VIGIL_GRAPH",
+        ordinaryMassGraph:"VIGIL_PROJECTED_ONLY",
+      }),
+      getCurrentCard:()=>inVigil ? controller.project().card??null : currentMass,
+      getEasterVigilState:()=>controller.project(),
+      getCompositeStage:()=>stage,
+      next:()=>moveEasterVigil("next"),
+      previous:()=>moveEasterVigil("previous"),
+      goToEasterVigilRecord:id=>{controller.goToRecord(id);return showEasterVigil();},
+      showVigilMassSequence:sequence=>showVigilMass(model.cardBySequence(sequence)),
+      destroy:destroyEasterVigil,
     });
     globalThis.AO_R17_NATIVE_READER_PREVIEW=api;
     return api;
