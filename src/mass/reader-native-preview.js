@@ -22,6 +22,8 @@ import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
 import { createRogationsReaderController, loadRogationsReaderData } from "./reader-rogations.js";
+import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
+import { createFormLifecycleRuntime } from "./form-lifecycle.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -169,6 +171,9 @@ export async function prepareNativeReaderPreview({
   loadCandlemasData=loadCandlemasReaderData,
   rogationsData=null,
   loadRogationsData=loadRogationsReaderData,
+  requiemAbsolutionData=null,
+  loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
+  requiemAbsolutionContext=null,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
@@ -188,7 +193,14 @@ export async function prepareNativeReaderPreview({
   const hasCandlemas=preceding.includes("CANDLEMAS");
   const hasRogations=preceding.includes("ROGATIONS");
   if([hasAsperges,hasPalm,hasAsh,hasCandlemas,hasRogations].filter(Boolean).length>1)throw new Error("NATIVE_PREVIEW_MULTIPLE_PRELUDES_PENDING");
-  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas,loadedRogations]=await Promise.all([
+  const following=[...(prepared?.session?.plan?.followingGraphs??[])];
+  const unsupportedNativeFollowing=following.filter(x=>x!=="REQUIEM_ABSOLUTION");
+  if(unsupportedNativeFollowing.length){
+    throw new Error("NATIVE_PRODUCTION_FOLLOWING_ACTION_PENDING:"+unsupportedNativeFollowing.join(","));
+  }
+  const hasRequiemAbsolution=following.includes("REQUIEM_ABSOLUTION");
+  if(following.length>1)throw new Error("NATIVE_PRODUCTION_MULTIPLE_FOLLOWING_ACTIONS_PENDING");
+  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas,loadedRogations,loadedRequiemAbsolution]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
@@ -199,6 +211,7 @@ export async function prepareNativeReaderPreview({
     hasAsh ? (ashData ?? Promise.resolve(loadAshData(prepared))) : null,
     hasCandlemas ? (candlemasData ?? Promise.resolve(loadCandlemasData(prepared))) : null,
     hasRogations ? (rogationsData ?? Promise.resolve(loadRogationsData(prepared))) : null,
+    hasRequiemAbsolution ? (requiemAbsolutionData ?? Promise.resolve(loadRequiemAbsolutionData(prepared))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -239,7 +252,17 @@ export async function prepareNativeReaderPreview({
   const rogationsController=hasRogations
     ? createRogationsReaderController({graph:loadedRogations?.graph,payload:loadedRogations?.payload})
     : null;
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,ashController,candlemasController,rogationsController});
+  const absContext=requiemAbsolutionContext ?? prepared?.session?.resolvedMass?.provenance?.requiemAbsolution ?? {};
+  const requiemAbsolutionController=hasRequiemAbsolution
+    ? createRequiemAbsolutionReaderController({
+        graph:loadedRequiemAbsolution?.graph,
+        payload:loadedRequiemAbsolution?.payload,
+        bodyPresent:absContext?.bodyPresent===true,
+        burialProcession:absContext?.burialProcession===true,
+      })
+    : null;
+  const lifecycleRuntime=hasRequiemAbsolution ? createFormLifecycleRuntime({prepared}) : null;
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,ashController,candlemasController,rogationsController,requiemAbsolutionController,lifecycleRuntime});
 }
 
 export async function mountNativeReaderPreview({
@@ -265,6 +288,9 @@ export async function mountNativeReaderPreview({
   loadCandlemasData=loadCandlemasReaderData,
   rogationsData=null,
   loadRogationsData=loadRogationsReaderData,
+  requiemAbsolutionData=null,
+  loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
+  requiemAbsolutionContext=null,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -277,6 +303,7 @@ export async function mountNativeReaderPreview({
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
     candlemasData,loadCandlemasData,rogationsData,loadRogationsData,
+    requiemAbsolutionData,loadRequiemAbsolutionData,requiemAbsolutionContext,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -303,6 +330,8 @@ export async function mountNativeReaderPreview({
   let inAsh=Boolean(ready.ashController);
   let inCandlemas=Boolean(ready.candlemasController);
   let inRogations=Boolean(ready.rogationsController);
+  let inRequiemAbsolution=false;
+  let inLifecycle=false;
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
@@ -522,6 +551,23 @@ export async function mountNativeReaderPreview({
     return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),precedingRiteIntroitOnly:true});
   }
 
+  function planAwareCard(card){
+    if(!card)return null;
+    const plan=prepared?.session?.plan;
+    if(plan?.blessingAllowed!==false || card.macroId!=="AO.SM.M29")return card;
+    const blessing=card.blocks?.find?.(value=>value.blockId==="AO.SM.B092");
+    if(!blessing || blessing.firstParagraphIndex==null || !blessing.paragraphCount)return card;
+    const start=blessing.firstParagraphIndex;
+    const end=start+blessing.paragraphCount;
+    const paragraphs=card.paragraphs.filter((_,index)=>index<start||index>=end);
+    return Object.freeze({
+      ...card,
+      title:"Placeat tibi, sancta Trinitas",
+      paragraphs:Object.freeze(paragraphs),
+      planFilteredBlocks:Object.freeze(["AO.SM.B092"]),
+    });
+  }
+
   function recipientPreludeMoment(kind,controller){
     const state=controller?.project?.();
     const card=state?.card;
@@ -678,7 +724,7 @@ export async function mountNativeReaderPreview({
   function showRogations(){
     const projected=rogationsMoment();
     if(!projected)return null;
-    inRogations=true;inCandlemas=false;inPalm=false;inAsh=false;inAsperges=false;
+    inRogations=true;inCandlemas=false;inPalm=false;inAsh=false;inAsperges=false;inRequiemAbsolution=false;inLifecycle=false;
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
@@ -707,7 +753,104 @@ export async function mountNativeReaderPreview({
     return projected.state;
   }
 
+  function requiemAbsolutionMoment(){
+    const state=ready.requiemAbsolutionController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return Object.freeze({
+      state,
+      moment:Object.freeze({
+        id:card.id,
+        sectionTitle:"Requiem Absolution",
+        cardTitle:card.title,
+        cardUpdate:true,
+        paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
+          id:row.id,kind:row.kind,primary:row.latin,
+          sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
+        }))),
+        progress:String(state.index+1)+" / "+String(state.total)+" · Absolution",
+        posture:card.posture && !["LOCAL_OR_INHERIT","INHERIT"].includes(card.posture)
+          ? {label:card.posture}
+          : null,
+        gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+      }),
+    });
+  }
+
+  function showRequiemAbsolution(){
+    const projected=requiemAbsolutionMoment();
+    if(!projected)return null;
+    inRequiemAbsolution=true;inLifecycle=false;
+    inRogations=false;inCandlemas=false;inPalm=false;inAsh=false;inAsperges=false;
+    activeCueId=null;
+    clearEventCinematic({resetCue:true});
+    transientGuard.begin();
+    reader.renderMoment(projected.moment);
+    root.dataset.r17NativeEvent="requiem-absolution";
+    root.dataset.r17NativeCue="unresolved";
+    root.dataset.r17StateOwner="R25_REQUIEM_ABSOLUTION_NATIVE";
+    root.dataset.r17OwnerGesture="R25_REQUIEM_ABSOLUTION_EXACT_NONE";
+    root.dataset.r17OwnerResponse="R25_REQUIEM_ABSOLUTION_PAYLOAD";
+    root.dataset.r17OwnerPriestVoice="R25_REQUIEM_ABSOLUTION_NOT_APPLICABLE";
+    root.dataset.r17OwnerPriestPosition="R25_REQUIEM_ABSOLUTION_NOT_APPLICABLE";
+    root.dataset.r17OwnerPosture="R25_REQUIEM_ABSOLUTION_PAYLOAD_OR_LOCAL";
+    root.dataset.r17OwnerSchola="R25_REQUIEM_ABSOLUTION_PAYLOAD";
+    root.dataset.r17OwnerBell="R25_REQUIEM_ABSOLUTION_EXACT_NONE";
+    root.dataset.r17OwnerCinematic="R25_REQUIEM_ABSOLUTION_EXACT_NONE";
+    root.dataset.r17LifecycleStage=ready.lifecycleRuntime?.snapshot?.().stage??"FOLLOWING_ACTION_HANDOFF";
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+      specialRite:"REQUIEM_ABSOLUTION",
+      cardId:projected.state.card?.id??null,
+      posture:projected.moment.posture,
+      gesture:null,
+      handoff:projected.state.handoff??null,
+      bodyPresent:projected.state.bodyPresent,
+      burialProcession:projected.state.burialProcession,
+      lifecycle:ready.lifecycleRuntime?.snapshot?.()??null,
+    });
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    if(scroll)scroll.scrollTop=0;
+    return projected.state;
+  }
+
+  function exposeLifecycle(state){
+    root.dataset.r17LifecycleStage=state?.stage??"UNKNOWN";
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+      specialRite:null,
+      lifecycle:state??null,
+      massComplete:Boolean(state?.massComplete),
+      handoff:state?.handoff??null,
+    });
+    return state;
+  }
+
+  function enterLifecycleBoundary(){
+    if(!ready.lifecycleRuntime)throw new Error("Native Requiem lifecycle runtime is not ready");
+    const state=ready.lifecycleRuntime.enterMassBoundary();
+    root.dataset.r17LifecycleStage=state.stage;
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && ready.requiemAbsolutionController){
+      inLifecycle=false;
+      inRequiemAbsolution=true;
+      return showRequiemAbsolution();
+    }
+    inLifecycle=true;
+    return exposeLifecycle(state);
+  }
+
+  function advanceLifecycle(){
+    if(!ready.lifecycleRuntime)return null;
+    inLifecycle=true;
+    return exposeLifecycle(ready.lifecycleRuntime.advance());
+  }
+
   function previousReaderCard(){
+    if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      const state=ready.requiemAbsolutionController.project();
+      if(!state.atStart)ready.requiemAbsolutionController.previous();
+      return showRequiemAbsolution();
+    }
+    if(inLifecycle)return ready.lifecycleRuntime?.snapshot?.()??null;
     if(inRogations && ready.rogationsController){
       const state=ready.rogationsController.project();
       if(!state.atStart)ready.rogationsController.previous();
@@ -758,6 +901,17 @@ export async function mountNativeReaderPreview({
   }
 
   function nextReaderCard(){
+    if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      const state=ready.requiemAbsolutionController.project();
+      if(state.atEnd){
+        inRequiemAbsolution=false;
+        inLifecycle=true;
+        return exposeLifecycle(ready.lifecycleRuntime.completeFollowingAction());
+      }
+      ready.requiemAbsolutionController.next();
+      return showRequiemAbsolution();
+    }
+    if(inLifecycle)return advanceLifecycle();
     if(inRogations && ready.rogationsController){
       const state=ready.rogationsController.project();
       if(state.atEnd){
@@ -803,20 +957,30 @@ export async function mountNativeReaderPreview({
       ready.aspergesController.next();
       return showAsperges();
     }
-    return showCard(ready.model.nextCard(current.sectionId));
+    const next=ready.model.nextCard(current.sectionId);
+    if(ready.lifecycleRuntime && prepared?.session?.plan?.normalLastGospel===false
+      && (next?.sourceSequence===30 || next?.sequence===30)){
+      return enterLifecycleBoundary();
+    }
+    if(!next && ready.lifecycleRuntime)return enterLifecycleBoundary();
+    return showCard(next);
   }
   function showCard(card){
     if(!card) return null;
+    const visibleCard=planAwareCard(card);
     inAsperges=false;
     inPalm=false;
     inAsh=false;
     inCandlemas=false;
     inRogations=false;
+    inRequiemAbsolution=false;
+    inLifecycle=false;
     root.dataset.r17ObjectState="none";
+    root.dataset.r17LifecycleStage=ready.lifecycleRuntime?.snapshot?.().stage??"MASS_ACTIVE";
     root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
-    const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
+    const partCinema=partTransitionCinematic(initialCardRender ? null : previous,visibleCard,{initial:initialCardRender});
     initialCardRender=false;
     armPartCinematic(partCinema);
     if(changed){
@@ -829,13 +993,13 @@ export async function mountNativeReaderPreview({
     ready.scholaState.activateForCard(card.sourceSequence??card.guideSequence??card.sequence);
     const state=projectedState();
     reader.renderMoment({
-      id:card.sectionId,
-      sectionTitle:card.title,
-      cardTitle:card.title,
+      id:visibleCard.sectionId,
+      sectionTitle:visibleCard.title,
+      cardTitle:visibleCard.title,
       cardUpdate:true,
-      paragraphs:card.paragraphs,
-      progress:card.sequence+" / "+ready.model.totalCards,
-      guide:guideForCurrent(card),
+      paragraphs:visibleCard.paragraphs,
+      progress:visibleCard.sequence+" / "+ready.model.totalCards,
+      guide:guideForCurrent(visibleCard),
       ...state,
     });
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
@@ -856,7 +1020,7 @@ export async function mountNativeReaderPreview({
       scroll.scrollTop=0;
       cueTracker?.refresh?.();
     }
-    return card;
+    return visibleCard;
   }
 
   const reader=createReaderDomAdapter({
@@ -869,7 +1033,7 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
-    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations)return;
+    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inLifecycle)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -935,7 +1099,7 @@ export async function mountNativeReaderPreview({
       container:readerScroll,
       win,
       onChange:(cueId)=>{
-        if(inAsperges || inPalm || inAsh || inCandlemas || inRogations)return;
+        if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inLifecycle)return;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -981,6 +1145,8 @@ export async function mountNativeReaderPreview({
       ash:ready.ashController ? "R23_NATIVE_PRELUDE" : "NOT_ACTIVE",
       candlemas:ready.candlemasController ? "R24_NATIVE_PRELUDE" : "NOT_ACTIVE",
       rogations:ready.rogationsController ? "R25_NATIVE_PRELUDE" : "NOT_ACTIVE",
+      requiemAbsolution:ready.requiemAbsolutionController ? "R25_NATIVE_FOLLOWING_ACTION" : "NOT_ACTIVE",
+      lifecycle:ready.lifecycleRuntime ? "R18_FORM_LIFECYCLE" : "NOT_ACTIVE",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -989,7 +1155,7 @@ export async function mountNativeReaderPreview({
     showSequence:sequence=>showCard(ready.model.cardBySequence(sequence)),
     syncState:queue,
     destroy,
-    getCurrentCard:()=>inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
+    getCurrentCard:()=>inRequiemAbsolution ? ready.requiemAbsolutionController?.project?.().card??null : inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
@@ -1006,6 +1172,9 @@ export async function mountNativeReaderPreview({
     getCandlemasState:()=>ready.candlemasController?.project?.()??null,
     getCandlemasMassState:eventId=>ready.candlemasController?.massCandleState?.(eventId)??null,
     getRogationsState:()=>ready.rogationsController?.project?.()??null,
+    getRequiemAbsolutionState:()=>ready.requiemAbsolutionController?.project?.()??null,
+    getLifecycleState:()=>ready.lifecycleRuntime?.snapshot?.()??null,
+    advanceLifecycle,
     setPalmRecipientState:value=>{if(!ready.palmController)return null;const result=ready.palmController.setRecipientState(value);return inPalm ? showPalm() : result},
     setAshRecipientState:value=>{if(!ready.ashController)return null;const result=ready.ashController.setRecipientState(value);return inAsh ? showAsh() : result},
     setCandlemasRecipientState:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setRecipientState(value);return inCandlemas ? showCandlemas() : result},
