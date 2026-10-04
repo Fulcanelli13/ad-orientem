@@ -93,9 +93,14 @@ assert.equal(ashModel.totalCards,39,"Ash prelude mutated the LIVE Mass card mode
 const candlemasModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["CANDLEMAS"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap});
 assert.equal(candlemasModel.totalCards,39,"Candlemas prelude mutated the LIVE Mass card model");
 
-assert.throws(()=>createMassReaderModel({
-  resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung
-}),/following-action graph/);
+const corpusModel=createMassReaderModel({
+  resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
+assert.equal(corpusModel.totalCards,39,"Corpus following action mutated the LIVE Mass model");
+const holyThursdayModel=createMassReaderModel({
+  resolvedMass:{...base,followingActions:["HOLY_THURSDAY_POST"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
+assert.equal(holyThursdayModel.totalCards,39,"Holy Thursday post-Mass following action mutated the LIVE Mass model");
 
 assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,distinctRite:"GOOD_FRIDAY"},sectionMap,lowCorpus:low,sungCorpus:sung
