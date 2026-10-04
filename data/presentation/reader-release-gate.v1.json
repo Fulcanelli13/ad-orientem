@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
   "releaseRule": "R17 native is the production reader across the certified full-year scope. Real-shell phone Chromium acceptance against index.html is certified. Legacy remains explicit rollback/debug only.",
@@ -163,7 +163,7 @@
       "controller": "src/mass/reader-form-state.js",
       "source": "shared Sung cue source + explicit v43.58 B006/R04 deltas",
       "sacredMinisterDeltas": 19,
-      "paxTransferAuthority": "INDEPENDENT_RELEASE_BLOCKER_FAIL_CLOSED",
+      "paxTransferAuthority": "CERTIFIED_PRIMARY_1962_RUBRIC__SEE_SOLEMN_PAX_TRANSFER_AUTHORITY",
       "scope": "reader cue/rail state only; lifecycle, Pax authority and form-specific transients separately gated"
     },
     {
@@ -183,7 +183,7 @@
         "sacredMinister",
         "priestAction"
       ],
-      "postureException": "FOLLOW_CONGREGATION remains intentionally observational",
+      "postureException": "FOLLOW_CONGREGATION observes congregation posture when available and falls back to certified sourced posture when no observer exists",
       "transientPolicy": "LOW/SOLEMN bell and cinematic state are native-certified; canonical events unavailable to a form project an explicit certified absence and never borrow another form or legacy state."
     },
     {
@@ -867,7 +867,7 @@
     },
     "exclusions": [
       "unsupported special rites and following actions remain fail-closed",
-      "full production-default promotion waits for SPECIAL_STRUCTURE_PARITY"
+      "historical pilot snapshot only; final production-default promotion is already certified by finalAppRelease"
     ],
     "historical": true,
     "releaseAuthority": false
