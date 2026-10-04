@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
@@ -384,7 +384,7 @@
     },
     {
       "id": "PALM_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH",
       "controller": "src/mass/reader-palm.js",
       "payload": "data/presentation/reader-palm.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#PALM",
@@ -403,11 +403,13 @@
         "Prayers at the Foot cannot leak through combined first card",
         "Back from Introit returns to Palm handoff card",
         "Last Gospel navigation is suppressed when compiled plan forbids it"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "phoneTest": "tests/reader-phone-acceptance.mjs"
     },
     {
       "id": "ASH_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH",
       "controller": "src/mass/reader-ash.js",
       "payload": "data/presentation/reader-ash.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ASH",
@@ -425,7 +427,9 @@
         "Prayers at the Foot cannot leak through the combined first Mass card",
         "Back from Introit returns to the Ash handoff card",
         "ordinary Last Gospel remains available after Ash Wednesday Mass"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "phoneTest": "tests/reader-phone-acceptance.mjs"
     },
     {
       "id": "PHONE_BROWSER_ACCEPTANCE",
@@ -491,6 +495,26 @@
         "tests/reader-candlemas.mjs",
         "tests/browser-runtime.mjs"
       ]
+    },
+    {
+      "id": "PILOT_VERTICAL_PATH",
+      "status": "CANDIDATE_CI_REQUIRED",
+      "reader": "R17_NATIVE",
+      "guarantees": [
+        "ordinary and votive Low/Sung Mass enter through the native reader",
+        "MISSAL, SIMPLE and source-first LIVE remain available at Mass entry",
+        "resolved Proper content is required and fail-closed",
+        "real Chromium touch acceptance is green at phone widths",
+        "Asperges, Palm and Ash preceding rites traverse in native preview and hand off correctly",
+        "unsupported special structures fail closed rather than silently degrading",
+        "full production default remains LEGACY until SPECIAL_STRUCTURE_PARITY closes"
+      ],
+      "tests": [
+        "tests/browser-runtime.mjs",
+        "tests/reader-native-preview.mjs",
+        "tests/reader-phone-acceptance.mjs",
+        "tests/reader-regression-lockdown.mjs"
+      ]
     }
   ],
   "openBlockers": [
@@ -508,5 +532,37 @@
     "requireLegacyDefaultUntilCertified": true,
     "requireSourceFirstCanonMap": true,
     "requireSourceFirstLiveStructure": true
+  },
+  "pilotRelease": {
+    "status": "CANDIDATE_CI_REQUIRED",
+    "reader": "R17_NATIVE",
+    "productionDefaultUnchanged": "LEGACY",
+    "scope": {
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "presentationModes": [
+        "MISSAL",
+        "SIMPLE",
+        "LIVE"
+      ],
+      "celebrationKinds": [
+        "CALENDAR",
+        "VOTIVE"
+      ],
+      "certifiedPrecedingRites": [
+        "ASPERGES",
+        "PALM",
+        "ASH"
+      ],
+      "properRequirement": "READY_RESOLVED_PROPER",
+      "phoneAcceptance": "CERTIFIED_CHROMIUM_TOUCH"
+    },
+    "exclusions": [
+      "unsupported special rites and following actions remain fail-closed",
+      "full production-default promotion waits for SPECIAL_STRUCTURE_PARITY"
+    ]
   }
 }
