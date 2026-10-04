@@ -41,6 +41,172 @@ const iconKeys=[
   "response","schola","priest_audible","priest_silent","priest_foot","priest_steps","priest_centre","priest_epistle","priest_gospel","priest_sedilia","priest_rail","priest_people",
 ];
 
+async function exerciseRealShellSpecialRite(browser,spec){
+  const context=await browser.newContext({
+    viewport:{width:390,height:844},
+    deviceScaleFactor:2,
+    isMobile:true,
+    hasTouch:true,
+  });
+  const page=await context.newPage();
+  const pageErrors=[];
+  page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
+
+  try{
+    await page.goto("http://127.0.0.1:4174/index.html?aoR17Reader=native",{
+      waitUntil:"domcontentloaded",
+      timeout:90000,
+    });
+    await page.waitForTimeout(1200);
+
+    const setup=await page.evaluate(async({iconKeys,spec})=>{
+      const t=(lat,en)=>({lat,en});
+      const proper={
+        sourcePath:spec.properSource,
+        introit:t("Introitus "+spec.kind,"Introit of "+spec.kind),
+        collects:[t("Collecta "+spec.kind,"Collect of "+spec.kind)],
+        epistle:t("Epistola "+spec.kind,"Epistle of "+spec.kind),
+        gradual:t("Graduale "+spec.kind,"Gradual of "+spec.kind),
+        sequence:{lat:"",en:""},
+        gospel:t("Evangelium "+spec.kind,"Gospel of "+spec.kind),
+        offertory:t("Offertorium "+spec.kind,"Offertory of "+spec.kind),
+        secrets:[t("Secreta "+spec.kind,"Secret of "+spec.kind)],
+        preface:t("Praefatio","Preface"),
+        communion:t("Communio "+spec.kind,"Communion of "+spec.kind),
+        postcommunions:[t("Postcommunio "+spec.kind,"Postcommunion of "+spec.kind)],
+      };
+
+      globalThis.__AO_FINAL_LEGACY_STARTS=0;
+      globalThis.AO_SEQUENCE_BRIDGE_V23={
+        startLive(){globalThis.__AO_FINAL_LEGACY_STARTS+=1;},
+        getActive(){return null;},
+        getAssemblyStatus(){return null;},
+      };
+      globalThis.AO_SEQUENCE_BRIDGE_V22=null;
+      globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
+        iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
+      );
+      globalThis.AO_RUNTIME_V8={
+        store:{
+          getState:()=>({
+            selectedDate:spec.date,
+            language:"en",
+            settings:{
+              massForm:"mc-incense",
+              followMode:"vox",
+              massPostureProfile:"TRADITIONAL_WALSH",
+              massGestureProfile:"GUIDED_1962",
+              faithfulCommunion:true,
+            },
+          }),
+        },
+      };
+      globalThis.AO_CELEBRATION_ARCH_V1={
+        date:spec.date,
+        celebrationForm:"mc-incense",
+        followMode:"vox",
+        actualCelebration:{id:spec.celebrationId,type:"CALENDAR"},
+      };
+      globalThis.AO_CELEBRATION_API={
+        getResolvedMass:()=>({
+          canStart:true,
+          date:spec.date,
+          calendarDay:{id:spec.celebrationId,title:spec.kind},
+          celebrationId:spec.celebrationId,
+          celebrationType:"CALENDAR",
+          proper,
+          properSource:spec.properSource,
+          insertedRites:[spec.insertedRite],
+          conditions:[],
+          rubricSources:["MR1962"],
+        }),
+      };
+
+      const mod=await import("/src/mass/browser-entry.js?final-shell-special="+spec.kind.toLowerCase());
+      const controller=mod.createBrowserMassController();
+      const prepared=await controller.enter();
+      return {
+        schema:prepared.schema,
+        form:prepared.session.resolvedMass.form,
+        precedingGraphs:[...(prepared.session.plan.precedingGraphs??[])],
+      };
+    },{iconKeys,spec});
+
+    assert.equal(setup.schema,"ao-mass-entry-bootstrap-v1");
+    assert.equal(setup.form,"MISSA_CANTATA_INCENSE");
+    assert.deepEqual(setup.precedingGraphs,[spec.kind],
+      spec.kind+" did not reach the compiled production Mass plan");
+
+    await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
+    await page.waitForFunction(expected=>
+      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id===expected,
+      spec.firstId,{timeout:10000});
+
+    const ownership=await page.evaluate(()=>({
+      starts:globalThis.__AO_FINAL_LEGACY_STARTS,
+      readerUiMode:globalThis.AO_R17_MASS_RUNTIME?.readerUiMode??null,
+      uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
+      marker:document.documentElement.dataset.aoMassReaderUi??null,
+    }));
+    assert.equal(ownership.starts,0,spec.kind+" real-shell path started legacy renderer");
+    assert.equal(ownership.readerUiMode,"NATIVE");
+    assert.equal(ownership.uiOwner,"R17_NATIVE_PRODUCTION");
+    assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION",
+      spec.kind+" lost data-ao-mass-reader-ui ownership marker");
+
+    const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+    const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
+
+    async function tapNext(){
+      const b=await next.boundingBox();
+      assert.ok(b && b.height>=44,spec.kind+" Next target is too small");
+      await page.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+      await page.waitForTimeout(90);
+    }
+    async function advanceToId(target,max=16){
+      for(let i=0;i<max;i++){
+        const current=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id??null);
+        if(current===target)return;
+        await tapNext();
+      }
+      const current=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id??null);
+      assert.equal(current,target,spec.kind+" could not reach "+target);
+    }
+
+    await advanceToId(spec.recipientCardId);
+    await page.evaluate(({kind,receiveState})=>{
+      const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+      if(kind==="PALM")api.setPalmRecipientState(receiveState);
+      else api.setAshRecipientState(receiveState);
+    },{kind:spec.kind,receiveState:spec.receiveState});
+    await page.waitForFunction(()=>
+      document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.includes("KNEEL"),
+      null,{timeout:5000});
+
+    await advanceToId(spec.handoffId);
+    await tapNext();
+    await page.waitForFunction(()=>
+      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId==="AO.CARD.001",
+      null,{timeout:5000});
+    assert.equal(
+      (await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim(),
+      "Introit",
+      spec.kind+" real-shell handoff did not enter Mass at the Introit"
+    );
+
+    const bb=await back.boundingBox();
+    assert.ok(bb && bb.height>=44,spec.kind+" Back target is too small");
+    await page.touchscreen.tap(bb.x+bb.width/2,bb.y+bb.height/2);
+    await page.waitForFunction(expected=>
+      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id===expected,
+      spec.handoffId,{timeout:5000});
+
+    assert.deepEqual(pageErrors,[],spec.kind+" uncaught page errors: "+JSON.stringify(pageErrors));
+  }finally{
+    await context.close();
+  }
+}
+
 let browser;
 try{
   browser=await chromium.launch({headless:true});
@@ -147,6 +313,7 @@ try{
     starts:globalThis.__AO_FINAL_LEGACY_STARTS,
     runtime:globalThis.AO_R17_MASS_RUNTIME??null,
     massEngine:document.documentElement.dataset.aoMassEngine??null,
+    massReaderUi:document.documentElement.dataset.aoMassReaderUi??null,
     bridge:document.documentElement.dataset.aoR17MassBridge??null,
     rootConnected:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     title:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.textContent?.trim()??"",
@@ -157,6 +324,7 @@ try{
   assert.equal(ownership.runtime?.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(ownership.runtime?.legacyActive,null);
   assert.equal(ownership.massEngine,"r17-native-production");
+  assert.equal(ownership.massReaderUi,"R17_NATIVE_PRODUCTION");
   assert.equal(ownership.rootConnected,true);
   assert.notEqual(ownership.title,"","real app shell mounted a blank native card title");
   assert.ok(ownership.paragraphs>0,"real app shell mounted an empty native prayer card");
@@ -180,7 +348,31 @@ try{
 
   assert.deepEqual(pageErrors,[],"uncaught page errors in real app shell: "+JSON.stringify(pageErrors));
   await context.close();
-  console.log("final real-shell acceptance: PASS — actual index.html mounts native reader on phone Chromium without booting legacy.");
+
+  await exerciseRealShellSpecialRite(browser,{
+    kind:"PALM",
+    insertedRite:"palm",
+    date:"2027-03-21",
+    celebrationId:"palm-sunday",
+    properSource:"Tempora/Quad6-0",
+    firstId:"PALM-R01",
+    recipientCardId:"PALM-R02",
+    receiveState:"RECEIVE_PALM",
+    handoffId:"PALM-R07",
+  });
+  await exerciseRealShellSpecialRite(browser,{
+    kind:"ASH",
+    insertedRite:"ash",
+    date:"2027-02-10",
+    celebrationId:"ash-wednesday",
+    properSource:"Tempora/Quadp3-3",
+    firstId:"ASH-R01",
+    recipientCardId:"ASH-R03",
+    receiveState:"RECEIVE_ASHES",
+    handoffId:"ASH-R05",
+  });
+
+  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Palm and Ash paths on phone Chromium without booting legacy.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
