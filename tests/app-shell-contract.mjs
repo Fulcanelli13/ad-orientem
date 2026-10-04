@@ -5,7 +5,7 @@ import {
   createAppHostAdapter,
   createAppShellController,
 } from "../src/app/index.js";
-import { installAppShellBridge, installLiveStructuralSettingsGuard } from "../src/app/browser-entry.js";
+import { installAppShellBridge, installLiveStructuralSettingsGuard, installLiveSessionGuard } from "../src/app/browser-entry.js";
 
 assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "settings"]);
 assert.equal(APP_SURFACES.includes("sources"), false);
@@ -208,6 +208,54 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal(prevented,false);
   assert.equal(stopped,false);
   assert.equal(alerts.length,1);
+  guard.dispose();
+}
+
+{
+  let subscriber=null;
+  let route="home";
+  const classes=new Set();
+  const bodyClasses=new Set();
+  const attrs={};
+  const writes=[];
+  let hapticsEnabled=true;
+  let vibrate=null;
+  const ribbon={
+    hidden:false,
+    setAttribute(key,value){attrs[key]=value;},
+  };
+  const store={
+    getState:()=>({route}),
+    subscribe(fn){subscriber=fn;return ()=>{subscriber=null;};},
+  };
+  const win={
+    document:{
+      documentElement:{classList:{toggle(name,on){on?classes.add(name):classes.delete(name);}}},
+      body:{classList:{toggle(name,on){on?bodyClasses.add(name):bodyClasses.delete(name);}}},
+      getElementById:id=>id==="ao-global-ribbon"?ribbon:null,
+    },
+    AO_RUNTIME_V8:{store},
+    AO_HAPTICS_V4319:{setEnabled(value){hapticsEnabled=value;}},
+    localStorage:{setItem(key,value){writes.push([key,value]);}},
+    navigator:{vibrate(value){vibrate=value;}},
+  };
+  const guard=installLiveSessionGuard({win});
+  assert.equal(guard.installed,true);
+  assert.equal(ribbon.hidden,false);
+  route="live";
+  subscriber?.();
+  assert.equal(ribbon.hidden,true);
+  assert.equal(attrs["aria-hidden"],"true");
+  assert.equal(classes.has("aoAppLive"),true);
+  assert.equal(bodyClasses.has("aoAppLive"),true);
+  assert.equal(hapticsEnabled,false);
+  assert.deepEqual(writes.at(-1),["ao-haptics-enabled","0"]);
+  assert.equal(vibrate,0);
+  route="home";
+  subscriber?.();
+  assert.equal(ribbon.hidden,false);
+  assert.equal(attrs["aria-hidden"],"false");
+  assert.equal(classes.has("aoAppLive"),false);
   guard.dispose();
 }
 
