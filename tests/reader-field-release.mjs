@@ -8,6 +8,7 @@ import {
   isHolyRosaryExternalSolemnity,
   holyRosaryExternalSolemnityDecision,
   normalizeHolyRosaryResolvedMass,
+  primeHolyRosaryFieldCelebration,
 } from "../src/mass/field-celebration-overrides.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
@@ -30,6 +31,32 @@ assert.deepEqual([...installFieldCelebrationOverrides(hostCatalogue).added],[],
   "field override must not replace an existing host celebration");
 
 assert.equal(HOLY_ROSARY_FIELD_DATE,"2026-10-04");
+
+const initialFieldArch={
+  date:"2026-10-04",
+  actualCelebration:{id:"mass_of_day",type:"calendar"},
+  celebrationForm:"sung",
+  votiveBasis:"ordinary",
+  readiness:{loading:false},
+  resolvedProper:{sourcePath:"Tempora/Pent19-0"},
+  rubric:{status:"permitted"},
+  lastResolveToken:4,
+};
+assert.equal(primeHolyRosaryFieldCelebration(initialFieldArch,"2026-10-04"),true);
+assert.deepEqual(initialFieldArch.actualCelebration,{id:"holy_rosary",type:"votive"});
+assert.equal(initialFieldArch.votiveBasis,"special_occasion");
+assert.equal(initialFieldArch.readiness,null);
+assert.equal(initialFieldArch.resolvedProper,null);
+assert.equal(initialFieldArch.rubric,null);
+assert.equal(initialFieldArch.lastResolveToken,5);
+assert.equal(
+  primeHolyRosaryFieldCelebration(initialFieldArch,"2026-10-04"),
+  false,
+  "field priming must be one-way and must not overwrite an explicit celebration"
+);
+const offDateArch={date:"2026-10-05",actualCelebration:{id:"mass_of_day",type:"calendar"}};
+assert.equal(primeHolyRosaryFieldCelebration(offDateArch,"2026-10-05"),false);
+assert.equal(offDateArch.actualCelebration.id,"mass_of_day");
 const rosaryArch={
   date:"2026-10-04",
   actualCelebration:{id:"holy_rosary",type:"votive"},
