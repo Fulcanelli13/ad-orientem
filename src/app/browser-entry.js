@@ -1,3 +1,4 @@
+import { installLiveSessionGuards } from "./live-session-guards.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import {
   APP_SURFACES,
@@ -166,6 +167,7 @@ export function installAppShellBridge({
     blocked: false,
     visibleOwner: false,
     disposeVisibleOwner: null,
+    liveSessionGuards: null,
   };
 
   function setDataset(value) {
@@ -193,6 +195,8 @@ export function installAppShellBridge({
         initialSurface: initialSurface(win, state.host),
       });
       state.disposeVisibleOwner = installVisibleRibbonOwner(win, state.controller, state);
+      state.liveSessionGuards?.dispose?.();
+      state.liveSessionGuards = installLiveSessionGuards({ win });
       setDataset("ready");
     } catch {
       state.blocked = true;
