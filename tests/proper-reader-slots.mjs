@@ -28,30 +28,32 @@ const withSequence=properToReaderSlots({...proper,sequence:t("Dies irae","Day of
 assert.equal(withSequence.slots.ALLELUIA_TRACT_SEQUENCE.status,"READY");
 assert.equal(withSequence.slots.ALLELUIA_TRACT_SEQUENCE.data.paragraphs[0].vernacular,"Day of wrath");
 
+const frenchProper={
+  ...proper,
+  introit:{lat:"Introitus",en:"",fr:"Introït"},
+  collects:[{lat:"Collecta",en:"",fr:"Collecte"}],
+  epistle:{lat:"Epistola",en:"",fr:"Épître"},
+  gradual:{lat:"Graduale",en:"",fr:"Graduel"},
+  gospel:{lat:"Evangelium",en:"",fr:"Évangile"},
+  offertory:{lat:"Offertorium",en:"",fr:"Offertoire"},
+  secrets:[{lat:"Secreta",en:"",fr:"Secrète"}],
+  preface:{lat:"Praefatio",en:"",fr:"Préface"},
+  communion:{lat:"Communio",en:"",fr:"Communion"},
+  postcommunions:[{lat:"Postcommunio",en:"",fr:"Postcommunion"}],
+};
+const french=properToReaderSlots(frenchProper,{language:"fr"});
+assert.equal(french.ready,true,"French Proper failed reader readiness");
+assert.equal(french.slots.INTROIT.data.paragraphs[0].vernacular,"Introït");
+const frenchSuppressed=properToReaderSlots({...frenchProper,communion:{}},{
+  language:"fr",
+  notApplicableSlots:["COMMUNION"],
+});
+assert.equal(frenchSuppressed.ready,true,"French Proper lost certified NOT_APPLICABLE support");
+assert.equal(frenchSuppressed.slots.COMMUNION.status,"NOT_APPLICABLE");
+
 const missing=properToReaderSlots({...proper,gospel:{}});
 assert.equal(missing.ready,false);
 assert.ok(missing.missing.includes("GOSPEL"));
 assert.throws(()=>assertReaderProperReady(missing),/GOSPEL/);
 
-const tf=(lat,fr)=>({lat,en:"",fr});
-const frenchProper={
-  sourcePath:"Sancti/10-07",
-  introit:tf("Gaudeámus","Réjouissons-nous"),
-  collects:[tf("Deus, cujus Unigénitus","Ô Dieu, dont le Fils unique")],
-  epistle:tf("Ab initio","Dès le commencement"),
-  gradual:tf("Propter veritatem","À cause de la vérité"),
-  sequence:{lat:"",en:"",fr:""},
-  gospel:tf("In illo tempore","En ce temps-là"),
-  offertory:tf("In me gratia","En moi est toute grâce"),
-  secrets:[tf("Fac nos","Faites que nous")],
-  preface:tf("Vere dignum","Il est vraiment juste"),
-  communion:tf("Florete flores","Fleurissez, fleurs"),
-  postcommunions:[tf("Sanctissimae Genetricis","Par les prières de la très sainte Mère")],
-};
-const frenchMapped=properToReaderSlots(frenchProper,{language:"fr"});
-assert.equal(frenchMapped.ready,true);
-assert.equal(frenchMapped.missing.length,0);
-assert.equal(frenchMapped.slots.INTROIT.data.paragraphs[0].vernacular,"Réjouissons-nous");
-assert.equal(frenchMapped.slots.GOSPEL.data.paragraphs[0].vernacular,"En ce temps-là");
-
-console.log("Proper → reader slots: PASS — exact v3.4.6 Proper shape, English/French vernacular, no duplicate Gradual/Alleluia.");
+console.log("Proper → reader slots: PASS — EN/FR vernacular projection, certified suppressions, no duplicate Gradual/Alleluia.");

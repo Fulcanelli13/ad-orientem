@@ -1,0 +1,92 @@
+{
+  "schema": "ao-r32-reader-nuptial-v1",
+  "version": "1.0.0",
+  "status": "SOURCE_RECOVERED",
+  "source": {
+    "authority": "MR62-NUP",
+    "donor": "Ad-Orientem-2.0-v43.74-SPECIAL-DAYS-PRESENTATION-INTEGRATION.html",
+    "registry": "Blueprint v5 + v16 MATRIMONIUM",
+    "rule": "Presentation insertions only; canonical Mass event identity is unchanged."
+  },
+  "cards": [
+    {
+      "id": "AO.NUPTIAL.01",
+      "insertionId": "FIRST_NUPTIAL_BLESSING_AFTER_PATER",
+      "title": "Nuptial Blessing · First Prayer",
+      "anchorAfterSourceSectionId": "AO.CARD.019",
+      "actor": "PRIEST",
+      "spouseState": "KNEEL",
+      "faithfulPosture": null,
+      "paragraphs": [
+        {
+          "id": "AO.NUPTIAL.01.BODY",
+          "kind": "TEXT",
+          "lat": "Propitiare, Domine, supplicationibus nostris: et institutis tuis, quibus propagationem humani generis ordinasti, benignus assiste: ut quod te auctore jungitur, te auxiliante servetur.",
+          "en": "Be gracious, O Lord, to our humble supplications: and graciously assist this Thine institution, which Thou hast established for the increase of mankind: that what is joined together by Thine authority, may be preserved by Thine aid.",
+          "fr": "Laissez-vous fléchir par nos prières, Seigneur, et accompagnez de votre grâce le sacrement que vous avez institué pour la propagation du genre humain, afin que votre assistance conserve ce qu'unit votre autorité."
+        },
+        {
+          "id": "AO.NUPTIAL.01.CONCLUSION",
+          "kind": "TEXT",
+          "sourceDirective": "$Per Dominum",
+          "lat": "Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+          "en": "Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+          "fr": "Par Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il."
+        }
+      ]
+    },
+    {
+      "id": "AO.NUPTIAL.02",
+      "insertionId": "DEUS_QUI_POTESTATE_NUPTIAL_BLESSING",
+      "title": "Nuptial Blessing · Second Prayer",
+      "anchorAfterCardId": "AO.NUPTIAL.01",
+      "actor": "PRIEST",
+      "spouseState": "KNEEL",
+      "faithfulPosture": null,
+      "paragraphs": [
+        {
+          "id": "AO.NUPTIAL.02.BODY",
+          "kind": "TEXT",
+          "lat": "Deus, qui potestate virtutis tuae de nihilo cuncta fecisti: qui, dispositis universitatis exordiis, homini ad imaginem Dei facto, ideo inseparabile mulieris adjutorium condidisti, ut femineo corpori de virili dares carne principium, docens quod ex uno placuisset institui numquam licere disjungi: Deus, qui tam excellenti mysterio conjugalem copulam consecrasti, ut Christi et Ecclesiae sacramentum praesignares in foedere nuptiarum: Deus, per quem mulier jungitur viro, et societas principaliter ordinata, ea benedictione donatur, quae sola nec per originalis peccati poenam, nec per diluvii est ablata sententiam: respice propitius super hanc famulam tuam, quae maritali jungenda consortio tua se expetit protectione muniri: sit in ea jugum dilectionis et pacis: fidelis et casta nubat in Christo, imitatrixque sanctarum permaneat feminarum: sit amabilis viro suo, ut Rachel: sapiens, ut Rebecca: longaeva et fidelis, ut Sara: nihil in ea ex actibus suis ille auctor praevaricationis usurpet: nexa fidei mandatisque permaneat: uni thoro juncta, contactus illicitos fugiat: muniat infirmitatem suam robore disciplinae: sit verecundia gravis, pudore venerabilis, doctrinis caelestibus erudita: sit fecunda in sobole, sit probata et innocens: et ad beatorum requiem atque ad caelestia regna perveniat: et videant ambo filios filiorum suorum usque in tertiam et quartam generationem, et ad optatam perveniant senectutem.",
+          "en": "O God, who by Thine own mighty power didst make all things out of nothing: who, having set in order the beginnings of the world, didst appoint woman to be an inseparable helpmate to man made like unto God, so that Thou didst give to woman's body its beginnings in man's flesh, thereby teaching that what it pleased Thee to form from one substance might never be lawfully separated: O God, who by so excellent a mystery hast consecrated the union of man and wife, as to foreshadow in this nuptial bond the union of Christ with His Church: O God, by whom woman is joined to man, and the partnership ordained from the beginning is endowed with such blessing that it alone was not withdrawn either by the punishment of original sin nor by the sentence of the flood: graciously look upon this Thy handmaid, who, about to be joined in wedlock, seeks Thy defence and protection. May it be to her a yoke of love and peace: faithful and chaste, may she be wedded in Christ, and let her ever be the imitator of holy women: let her be dear to her husband like Rachel, wise like Rebecca, long-lived and faithful like Sara. Let not the author of deceit work any of his evil deeds in her. May she continue clinging to the faith and to the commandments. Bound in one union, let her shun all unlawful contact. Let her protect her weakness by the strength of discipline; let her be grave in behavior, respected for modesty, well-instructed in heavenly doctrine. Let her be fruitful in offspring; be approved and innocent; and come to the repose of the blessed and the kingdom of heaven. May they both see their children's children to the third and fourth generation, and may they reach the old age which they desire.",
+          "fr": "Ô Dieu, qui, par votre puissance, avez créé de rien tout l'univers; qui, dès le commencement du monde, après avoir fait l'homme à votre image, lui avez donné, pour être son aide inséparable, la femme que vous avez formée de lui-même, afin de nous apprendre qu'il n'est jamais permis de séparer ce qu'il vous a plu d'unir: ô Dieu, qui avez consacré le mariage par un mystère si précieux que l'alliance nuptiale est la figure de l'union sacrée de Jésus-Christ et de son Église; ô Dieu, par qui la femme est unie à l'homme, et qui donnez à leur union intime la seule bénédiction dont nous n'ayons été dépouillés ni par la punition du péché originel ni par la sentence du déluge, regardez d'un œil favorable votre servante qui, devant être unie à un époux, implore votre protection. Faites que son joug soit un joug d'amour et de paix; faites que, chaste et fidèle, elle se marie en Jésus-Christ, qu'elle suive toujours l'exemple des saintes femmes; qu'elle soit aimable pour son mari comme Rachel, sage comme Rebecca; qu'elle jouisse d'une longue vie et qu'elle soit fidèle comme Sara; que l'auteur du péché ne trouve rien en elle qui soit de lui; qu'elle demeure ferme dans la foi et dans l'observance de vos commandements, afin qu'uniquement attachée à son mari, elle ne souille le lit nuptial par aucun commerce illégitime; que, pour fortifier sa faiblesse, elle ait une vie toujours réglée; que sa pudeur lui mérite le respect; qu'elle s'instruise de ses devoirs dans la doctrine toute céleste de Jésus-Christ; qu'elle obtienne de vous une heureuse fécondité; que sa vie soit pure et irréprochable, et qu'elle parvienne au repos des saints dans le royaume du ciel. Faites, Seigneur, qu'ils voient tous deux les enfants de leurs enfants jusqu'à la troisième et à la quatrième génération, et qu'ils arrivent à une heureuse vieillesse."
+        },
+        {
+          "id": "AO.NUPTIAL.02.CONCLUSION",
+          "kind": "TEXT",
+          "lat": "Per eumdem Dominum nostrum Jesum Christum Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+          "en": "Through the same Lord Jesus Christ, Thy Son, who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+          "fr": "Par le même Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il."
+        }
+      ]
+    },
+    {
+      "id": "AO.NUPTIAL.03",
+      "insertionId": "FINAL_BLESSING_OVER_SPOUSES",
+      "title": "Final Blessing of the Spouses",
+      "anchorAfterSourceSectionId": "AO.CARD.028",
+      "actor": "PRIEST",
+      "spouseState": "ATTENTIVE",
+      "faithfulPosture": null,
+      "paragraphs": [
+        {
+          "id": "AO.NUPTIAL.03.BODY",
+          "kind": "TEXT",
+          "lat": "Deus Abraham, Deus Isaac, et Deus Jacob sit vobiscum: et ipse adimpleat benedictionem suam in vobis: ut videatis filios filiorum vestrorum usque ad tertiam et quartam generationem: et postea vitam aeternam habeatis sine fine: adjuvante Domino nostro Jesu Christo, qui cum Patre et Spiritu Sancto vivit et regnat Deus, per omnia saecula saeculorum. Amen.",
+          "en": "May the God of Abraham, the God of Isaac, and the God of Jacob be with you: and Himself fulfill His blessing on you: that you may see your children's children even to the third and fourth generation: and thereafter possess life everlasting, by the aid of our Lord Jesus Christ. Amen.",
+          "fr": "Que le Dieu d'Abraham, le Dieu d'Isaac et le Dieu de Jacob soit avec vous, et qu'il répande en vous sa bénédiction, afin que vous voyiez les enfants de vos enfants jusqu'à la troisième et à la quatrième génération, et que vous possédiez ensuite la vie éternelle, par la grâce de Notre-Seigneur Jésus-Christ. Ainsi soit-il."
+        }
+      ],
+      "followingActorAction": "PRIEST_ADMONISHES_AND_SPRINKLES_SPOUSES",
+      "faithfulGesture": null,
+      "admonitionTextPolicy": "DO_NOT_FABRICATE_UNIVERSAL_SCRIPT"
+    }
+  ],
+  "guards": {
+    "activation": "EXPLICIT_NUPTIAL_OVERLAY_ONLY",
+    "spousePostureActorScoped": true,
+    "faithfulPostureMutation": false,
+    "faithfulGestureMutation": false,
+    "ordinaryMassIdentityMutation": false
+  }
+}

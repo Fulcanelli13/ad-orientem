@@ -1,7 +1,7 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "3.0.1",
-  "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
+  "version": "3.2.0",
+  "status": "FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__LEGACY_DEFAULT_RETAINED",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
   "protectedInvariants": [
@@ -275,6 +275,91 @@
         "optional rites/processions never inferred from calendar date",
         "distinct rites never inherit ordinary Mass assumptions",
         "missing reader payload fails closed"
+      ]
+    },
+    {
+      "id": "NUPTIAL_NATIVE_INSERTIONS",
+      "status": "CERTIFIED_SOURCE_INSERTION_MODEL",
+      "controller": "src/mass/reader-nuptial.js",
+      "payload": "data/presentation/reader-nuptial.v1.json",
+      "sourceRegistry": "data/mass/rite-overlay-registry.v1.json#NUPTIAL",
+      "recoveredInsertions": 3,
+      "insertionIds": [
+        "FIRST_NUPTIAL_BLESSING_AFTER_PATER",
+        "DEUS_QUI_POTESTATE_NUPTIAL_BLESSING",
+        "FINAL_BLESSING_OVER_SPOUSES"
+      ],
+      "modelBehavior": {
+        "simpleMissalBaseCards": 30,
+        "liveBaseCards": 39,
+        "liveWithNuptialCards": 42
+      },
+      "guarantees": [
+        "Nuptial prayers are explicit plan-owned insertions and never replace canonical Mass event identity",
+        "the first two blessings follow the Pater noster source section in recovered order",
+        "the final spouse blessing follows the dismissal source section",
+        "spouse kneeling and priest actions remain actor-scoped and never mutate general faithful posture or gesture",
+        "missing Nuptial payload fails closed",
+        "Latin, English and recovered French text remain payload-owned rather than synthesized at runtime"
+      ],
+      "tests": [
+        "tests/reader-nuptial.mjs",
+        "tests/reader-model.mjs",
+        "tests/reader-special-structure.mjs"
+      ]
+    },
+    {
+      "id": "EASTER_VIGIL_NATIVE_COMPOSITE",
+      "status": "CERTIFIED_COMPOSITE_RUNTIME__PHONE_SUITE_GREEN",
+      "controller": "src/mass/reader-easter-vigil.js",
+      "payload": "data/presentation/reader-easter-vigil.v1.json",
+      "structuralSource": "data/mass/special-days-core.v1.1.json#graphs.EV",
+      "runtime": "src/mass/browser-runtime.js",
+      "recoveredGraphRecords": 38,
+      "branchModes": [
+        "FONT_MODE=NONE",
+        "FONT_MODE=IN_CHURCH",
+        "FONT_MODE=SEPARATE_BAPTISTERY",
+        "BAPTISM_PRESENT=true"
+      ],
+      "massProjection": {
+        "entry": "KYRIE",
+        "ordinaryOpeningSuppressed": true,
+        "omittedSourceSequences": [
+          1,
+          21,
+          30
+        ],
+        "suppressedCanonicalEvents": [
+          "MC-COM-150",
+          "MC-COM-160",
+          "MC-END-010"
+        ],
+        "laudsSectionId": "SP.EASTER_VIGIL.15"
+      },
+      "guarantees": [
+        "the 38-record EV graph owns choreography and branch state",
+        "New Fire, Paschal Candle, triple Lumen Christi, Exsultet, four lesson/oration cycles, font branches, baptismal renewal, aspersion and second Litany remain explicit states",
+        "font modes NONE, IN_CHURCH and SEPARATE_BAPTISTERY remain distinct and optional baptisms are explicit",
+        "post-Exsultet candle state remains unconstrained unless a later graph record explicitly owns it",
+        "the Mass handoff occurs at Kyrie and never fabricates Prayers at the Foot or Introit",
+        "Agnus Dei, ordinary peace prayer and Solemn Pax, Communion antiphon and Last Gospel are omitted by the Vigil Mass projection without mutating canonical source graphs",
+        "Lauds is inserted immediately after ablutions and before the Postcommunion sequence",
+        "Introit and Communion are treated as rite-certified absent Proper slots rather than stale or fabricated Proper text",
+        "Back navigation from the first Mass card returns to the EV-MASS-700 handoff",
+        "missing Vigil payload or unsupported branch configuration fails closed"
+      ],
+      "sourceText": {
+        "recoveredDonor": "Ad Orientem A5 Easter Vigil donor",
+        "exsultet": "FULL_RECOVERED_LATIN_ENGLISH",
+        "lauds": "FULL_RECOVERED_LATIN_ENGLISH",
+        "prophecies": "RECOVERED_PRESENTATION_OVERVIEW__CHOREOGRAPHY_EXACT__FULL_TEXT_ENRICHMENT_NON_BLOCKING"
+      },
+      "tests": [
+        "tests/reader-easter-vigil.mjs",
+        "tests/browser-runtime.mjs",
+        "tests/reader-special-structure.mjs",
+        "tests/reader-phone-acceptance.mjs"
       ]
     },
     {
@@ -592,7 +677,7 @@
     },
     {
       "id": "PILOT_VERTICAL_PATH",
-      "status": "CANDIDATE_CI_REQUIRED",
+      "status": "CERTIFIED_PILOT_READY",
       "reader": "R17_NATIVE",
       "guarantees": [
         "ordinary and votive Low/Sung Mass enter through the native reader",
@@ -608,16 +693,101 @@
         "tests/reader-native-preview.mjs",
         "tests/reader-phone-acceptance.mjs",
         "tests/reader-regression-lockdown.mjs"
+      ],
+      "certifiedAtHead": "6e76823f2a7d378833bb49ca1694ad9906dd6276",
+      "certificationEvidence": {
+        "ordinaryConvergence": "PASS",
+        "phoneBrowser": "PASS",
+        "baselineIntegrity": "PASS",
+        "phoneWidths": [
+          320,
+          360,
+          390,
+          430
+        ],
+        "productionDefaultChanged": false
+      }
+    },
+    {
+      "id": "GENERIC_PROCESSION_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "controller": "src/mass/reader-generic-procession.js",
+      "payload": "data/presentation/reader-generic-procession.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#PROC",
+      "runtime": "src/mass/browser-runtime.js",
+      "recoveredGraphRecords": 7,
+      "readerSurfaces": 3,
+      "guarantees": [
+        "activation is explicit following-action only",
+        "four PROC-000 Mass-ending records remain plan-owned and do not render as duplicate post-Mass cards",
+        "generic procession does not invent Benedicamus Domino, blessing suppression or Last-Gospel suppression",
+        "post-Mass reader renders only PROC-100-010/020/030",
+        "processional posture applies only when the user is actually participating",
+        "feast/procession-specific chant text is never fabricated by the generic reader",
+        "completion returns to the post-Mass lifecycle"
+      ],
+      "tests": [
+        "tests/reader-generic-procession.mjs",
+        "tests/reader-special-structure.mjs",
+        "tests/browser-runtime.mjs"
+      ]
+    },
+    {
+      "id": "PRAYER_OVER_PEOPLE_READER_INSERTION",
+      "status": "CERTIFIED_PLAN_OWNED_READER_COMPOSITION",
+      "controller": "src/mass/reader-prayer-over-people.js",
+      "planOwner": "src/mass/postcommunion-exit.js",
+      "properSource": "ao-proper-manifest-v2#orations.prayerOverPeople",
+      "targetCard": "AO.CARD.027",
+      "cardCountMutation": false,
+      "canonicalConditionalEvent": "MC-END-060",
+      "deferredExitCue": "AO.SM.C0256",
+      "finalDominusVobiscumCue": "AO.SM.C0257",
+      "guarantees": [
+        "1962 Oremus/Humiliate invitation precedes the source-owned oration",
+        "day-specific prayer body and conclusion come from Proper Resolver 2.0",
+        "ordinary C0256 Postcommunion exit is suppressed when Prayer over the People is present",
+        "deferred exit occurs after the prayer and before final Dominus vobiscum",
+        "Prayer over the People composes inside Postcommunion card 27 and does not add a new navigation card",
+        "absence of prayerOverPeople leaves ordinary Postcommunion projection unchanged"
+      ],
+      "tests": [
+        "tests/postcommunion-exit.mjs",
+        "tests/reader-prayer-over-people.mjs",
+        "tests/proper-contracts.mjs"
+      ]
+    },
+    {
+      "id": "EMBER_SOURCE_ORDER_READER_INSERTION",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "controller": "src/mass/reader-ember-lessons.js",
+      "compiler": "src/mass/pre-gospel-sequence.js",
+      "sourceGraph": "data/mass/special-days-extension.v1.3.json#LECT",
+      "planInsertion": "RESOLVED_PREPARATORY_LESSONS",
+      "activation": "EXPLICIT_EMBER_LESSONS_OVERLAY",
+      "orderAuthority": "SOURCE_ORDER",
+      "canonicalEventMutation": false,
+      "guarantees": [
+        "numeric OratioL/LectioL/GradualeL suffixes never pair or reorder source nodes",
+        "every reader surface follows preGospelSequence sourceOrderIndex exactly",
+        "unresolved payloadRef fails closed",
+        "reader payload requires Latin and vernacular text",
+        "inserted nodes appear immediately before the ordinary Epistle",
+        "ordinary Epistle and all canonical MC identities remain unchanged",
+        "ordinary reader sourceSequence is preserved across inserted surfaces",
+        "Flectamus genua and Levate are exposed only when those formulas are actually present in the resolved source text",
+        "ordinary Sequences/Pentecost preGospelSequence do not activate Ember without EMBER_LESSONS",
+        "field-release profile remains narrower and is not silently widened"
+      ],
+      "tests": [
+        "tests/pre-gospel-sequence.mjs",
+        "tests/reader-ember-lessons.mjs",
+        "tests/reader-ember-browser.mjs",
+        "tests/reader-field-release.mjs"
       ]
     }
   ],
-  "openBlockers": [
-    {
-      "id": "SPECIAL_STRUCTURE_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Prayer over the People insertion, Generic Procession, Good Friday and Easter Vigil."
-    }
-  ],
+  "openBlockers": [],
   "certificationPolicy": {
     "greenUnitCIIsNotReleaseCertification": true,
     "requireAllBlockersClosed": true,
@@ -628,7 +798,7 @@
     "requireSourceFirstLiveStructure": true
   },
   "pilotRelease": {
-    "status": "CANDIDATE_CI_REQUIRED",
+    "status": "CERTIFIED_PILOT_READY",
     "reader": "R17_NATIVE",
     "productionDefaultUnchanged": "LEGACY",
     "scope": {

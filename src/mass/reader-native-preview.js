@@ -197,6 +197,7 @@ export async function prepareNativeReaderPreview({
     lowCorpus:data?.lowCorpus,
     sungCorpus:data?.sungCorpus,
     canonSourceMap:data?.canonSourceMap,
+    nuptialData:data?.nuptialData,
     vernacularLanguage:prepared?.readerPreferences?.language ?? "en",
   });
   const eventState=createNativeEventStateController(events);
