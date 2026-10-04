@@ -94,7 +94,12 @@ const gf=makeResolvedMass({...base,distinctRite:"GOOD_FRIDAY"});
 p=projectSpecialStructure({session:{resolvedMass:gf,plan:compileMassPlan(gf)}},sources);
 assert.equal(p.kind,"DISTINCT_RITE");
 assert.equal(p.ordinaryMassGraphActive,false);
-assert.equal(p.reason,"DISTINCT_RITE_READER_PAYLOAD_REQUIRED");
+assert.equal(p.segments[0].id,"GOOD_FRIDAY");
+assert.equal(p.segments[0].readerPayload,"NATIVE_READER_PAYLOAD");
+assert.equal(p.segments[0].renderable,true);
+assert.equal(p.readerPayloadComplete,true);
+assert.equal(p.releaseSupport,true);
+assert.equal(p.reason,null);
 
 const ev=makeResolvedMass({...base,distinctRite:"EASTER_VIGIL"});
 p=projectSpecialStructure({session:{resolvedMass:ev,plan:compileMassPlan(ev)}},sources);
