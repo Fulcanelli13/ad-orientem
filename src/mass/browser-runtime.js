@@ -752,6 +752,7 @@ export function createBrowserMassRuntime({
         lowCorpus: data?.lowCorpus,
         sungCorpus: data?.sungCorpus,
         canonSourceMap: data?.canonSourceMap,
+        nuptialData: data?.nuptialData,
       });
 
       readerModel = model;
