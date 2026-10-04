@@ -13,6 +13,7 @@ import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcess
 import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
 import { createGenericProcessionReaderController, loadGenericProcessionReaderData } from "./reader-generic-procession.js";
 import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
+import { createEasterVigilReaderController, loadEasterVigilReaderData, projectEasterVigilMassModel } from "./reader-easter-vigil.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
@@ -32,6 +33,7 @@ export function createBrowserMassRuntime({
   loadHolyThursdayPostData = loadHolyThursdayPostReaderData,
   loadGenericProcessionData = loadGenericProcessionReaderData,
   loadGoodFridayData = loadGoodFridayReaderData, goodFridayContext = null,
+  loadEasterVigilData = loadEasterVigilReaderData, easterVigilContext = null,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -62,6 +64,8 @@ export function createBrowserMassRuntime({
   let inGenericProcession = false;
   let goodFridayController = null;
   let inGoodFriday = false;
+  let easterVigilController = null;
+  let inEasterVigil = false;
   let distinctRiteState = null;
   let lifecycleRuntime = null;
   let inLifecycle = false;
@@ -319,6 +323,36 @@ export function createBrowserMassRuntime({
     return moment;
   }
 
+  function easterVigilMoment(){
+    const state=easterVigilController?.project?.();
+    const card=state?.card;
+    const step=state?.step;
+    if(!card||!step)return null;
+    return {
+      id:step.recordId,
+      sectionTitle:"Easter Vigil",
+      cardTitle:card.title,
+      cardUpdate:card.cardUpdate!==false,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        secondary:row.vernacular??row.english??null,
+        sourceCueIds:[...(row.sourceIds??[])],
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Easter Vigil",
+      posture:state.posture ? {label:state.posture} : null,
+      gesture:state.action ? {label:state.action} : null,
+      guide:null,
+    };
+  }
+
+  function showEasterVigil(){
+    const moment=easterVigilMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
   function palmMoment(){
     const state=palmController?.project?.();
     const card=state?.card;
@@ -449,6 +483,29 @@ export function createBrowserMassRuntime({
   }
 
   function move(direction) {
+    if(inEasterVigil && easterVigilController){
+      if(direction==="next"){
+        const state=easterVigilController.project();
+        if(state.atEnd && state.handoffToMass){
+          inEasterVigil=false;
+          distinctRiteState=Object.freeze({
+            schema:"ao-r33-composite-rite-lifecycle-v1",
+            rite:"EASTER_VIGIL",stage:"MASS_ACTIVE",ordinaryMassGraphActive:true,
+          });
+          return showCard(readerModel.cardBySequence(1));
+        }
+        easterVigilController.next();
+        return showEasterVigil();
+      }
+      const state=easterVigilController.project();
+      if(!state.atStart)easterVigilController.previous();
+      return showEasterVigil();
+    }
+    if(direction==="previous" && easterVigilController && currentSectionId===readerModel?.cardBySequence?.(1)?.sectionId){
+      inEasterVigil=true;
+      easterVigilController.goToRecord("EV-MASS-700");
+      return showEasterVigil();
+    }
     if(inGoodFriday && goodFridayController){
       if(direction==="next"){
         const state=goodFridayController.project();
@@ -634,6 +691,14 @@ export function createBrowserMassRuntime({
     if(direction==="next" && (card?.sourceSequence===30 || card?.sequence===30) && currentPrepared?.session?.plan?.normalLastGospel===false){
       return enterLifecycleBoundary();
     }
+    if(direction==="next" && !card && currentPrepared?.session?.plan?.kind==="COMPOSITE_DISTINCT_RITE" && currentPrepared?.session?.plan?.rite==="EASTER_VIGIL"){
+      distinctRiteState=Object.freeze({
+        schema:"ao-r33-composite-rite-lifecycle-v1",
+        rite:"EASTER_VIGIL",stage:"DEPARTURE",ordinaryMassGraphActive:false,
+      });
+      onLifecycleHandoff?.(distinctRiteState,currentPrepared);
+      return distinctRiteState;
+    }
     if(direction==="next" && !card){
       return enterLifecycleBoundary();
     }
@@ -713,6 +778,49 @@ export function createBrowserMassRuntime({
         reader.mount(prepared);
         showGoodFriday();
         onReaderMounted?.(prepared,reader,null);
+        return;
+      }
+      if(plan?.kind==="COMPOSITE_DISTINCT_RITE" && plan?.rite==="EASTER_VIGIL"){
+        const [data,evData]=await Promise.all([
+          Promise.resolve(loadPresentationData(prepared)),
+          Promise.resolve(loadEasterVigilData(prepared)),
+        ]);
+        const evContext=easterVigilContext ?? prepared?.session?.resolvedMass?.provenance?.easterVigil ?? {};
+        const ordinaryResolved=Object.freeze({
+          ...prepared.session.resolvedMass,
+          distinctRite:null,
+          precedingRites:[],
+          followingActions:[],
+          overlays:(prepared.session.resolvedMass.overlays??[]).filter(x=>x!=="EASTER_VIGIL"),
+        });
+        const baseModel=createMassReaderModel({
+          resolvedMass:ordinaryResolved,
+          sectionMap:data?.sectionMap,
+          lowCorpus:data?.lowCorpus,
+          sungCorpus:data?.sungCorpus,
+          canonSourceMap:data?.canonSourceMap,
+          nuptialData:data?.nuptialData,
+        });
+        readerModel=projectEasterVigilMassModel(baseModel,evData?.payload);
+        objectiveRuntime=null;
+        lifecycleRuntime=null;
+        inLifecycle=false;
+        currentPrepared=prepared;
+        currentSectionId=null;
+        easterVigilController=createEasterVigilReaderController({
+          graph:evData?.graph,
+          payload:evData?.payload,
+          fontMode:evContext.fontMode??"IN_CHURCH",
+          baptismPresent:evContext.baptismPresent===true,
+        });
+        inEasterVigil=true;
+        distinctRiteState=Object.freeze({
+          schema:"ao-r33-composite-rite-lifecycle-v1",
+          rite:"EASTER_VIGIL",stage:"VIGIL_ACTIVE",ordinaryMassGraphActive:false,
+        });
+        reader.mount(prepared);
+        showEasterVigil();
+        onReaderMounted?.(prepared,reader,readerModel);
         return;
       }
       const structuralSupport=structureSupport(prepared);
@@ -833,6 +941,8 @@ export function createBrowserMassRuntime({
     inGenericProcession = false;
     goodFridayController = null;
     inGoodFriday = false;
+    easterVigilController = null;
+    inEasterVigil = false;
     distinctRiteState = null;
     lifecycleRuntime = null;
     inLifecycle = false;
@@ -865,6 +975,7 @@ export function createBrowserMassRuntime({
     getHolyThursdayPostState: () => holyThursdayPostController?.project?.() ?? null,
     getGenericProcessionState: () => genericProcessionController?.project?.() ?? null,
     getGoodFridayState: () => goodFridayController?.project?.() ?? null,
+    getEasterVigilState: () => easterVigilController?.project?.() ?? null,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? distinctRiteState,
 
     chooseLeonine: accept => {
