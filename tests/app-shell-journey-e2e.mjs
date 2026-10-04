@@ -177,7 +177,8 @@ try{
   assert.equal(live.readerUiMode,"NATIVE");
   assert.equal(live.persisted,true,"active native Mass was not persisted");
 
-  await page.locator("[data-ao-ribbon='pray']").click();
+  const cancelled=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray"));
+  assert.equal(cancelled?.reason,"LIVE_MASS_LEAVE_CANCELLED");
   await page.waitForFunction(()=>globalThis.__AO_APP_JOURNEY_CONFIRMS===1,null,{timeout:5000});
   const retained=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
@@ -186,12 +187,14 @@ try{
   assert.equal(retained.active,"mass","cancelled leave did not retain Mass");
   assert.equal(retained.mounted,true,"cancelled leave destroyed the native Mass surface");
 
-  await page.evaluate(()=>{
+  const left=await page.evaluate(async()=>{
     globalThis.confirm=()=>{globalThis.__AO_APP_JOURNEY_CONFIRMS+=1;return true;};
+    return globalThis.AO_APP_SHELL_V1.navigate("pray");
   });
-  await page.locator("[data-ao-ribbon='pray']").click();
+  assert.equal(left?.ok,true,"confirmed LIVE leave did not open Pray");
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
   await page.evaluate(()=>{globalThis.__AO_APP_JOURNEY_ROUTE.value="home";});
+  await page.waitForFunction(()=>!document.getElementById("ao-r17-native-reader-preview")?.isConnected,null,{timeout:10000});
 
   await page.locator("[data-ao-ribbon='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:10000});
