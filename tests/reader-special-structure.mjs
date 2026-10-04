@@ -43,12 +43,8 @@ for(const rite of ["PALM","ASH","CANDLEMAS","ROGATIONS"]){
   p=projectSpecialStructure(prepared({precedingRites:[rite]}),sources);
   assert.equal(p.segments[0].id,rite);
   assert.equal(p.segments[1].massEntry,"INTROIT",rite+" did not hand Mass to Introit");
-  if(["PALM","ASH","CANDLEMAS"].includes(rite)){
-    assert.equal(p.segments[0].readerPayload,"NATIVE_READER_PAYLOAD");
-    assert.equal(p.releaseSupport,true,rite+" native reader was not release-supported");
-  }else{
-    assert.equal(p.releaseSupport,false,"Rogations became renderable without a native payload");
-  }
+  assert.equal(p.segments[0].readerPayload,"NATIVE_READER_PAYLOAD");
+  assert.equal(p.releaseSupport,true,rite+" native reader was not release-supported");
   if(rite==="PALM")assert.equal(p.ending.normalLastGospel,false,"Palm procession failed to suppress Last Gospel");
 }
 p=projectSpecialStructure(prepared({precedingRites:["CANDLEMAS"]}),sources);
