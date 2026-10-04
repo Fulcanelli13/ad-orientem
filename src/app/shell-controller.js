@@ -52,10 +52,13 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
 
     host.dismissSettings?.();
     const route = host.currentCoreRoute?.();
+    const liveMass = route === "live" || Boolean(host.liveMassActive?.());
 
     // Preserve the field-proven live-session guard: changing app domains while
     // LIVE requires an explicit leave decision, while tapping Mass is a no-op.
-    if (route === "live") {
+    // Native-reader ownership is authoritative even if the historical route
+    // store has already reset to Home (for example after a reload/resume).
+    if (liveMass) {
       if (target === "mass") {
         setActive("mass");
         return result(true, "mass", { retainedLiveMass: true });
@@ -65,6 +68,20 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
         setActive("mass");
         return result(false, "mass", { reason: "LIVE_MASS_LEAVE_CANCELLED" });
       }
+      const exited = await host.leaveLiveMass?.();
+      if (exited === false) {
+        setActive("mass");
+        return result(false, "mass", { reason: "LIVE_MASS_EXIT_FAILED" });
+      }
+    }
+
+    if (target === "mass" && Boolean(host.hasResumableMass?.())) {
+      const opened = Boolean(
+        await (host.defer?.(() => host.openDomain?.("mass")) ?? host.openDomain?.("mass")),
+      );
+      if (!opened) return result(false, active, { reason: "DOMAIN_OWNER_UNAVAILABLE" });
+      setActive("mass");
+      return result(true, "mass", { resumedMass: true });
     }
 
     if (target === "home") {

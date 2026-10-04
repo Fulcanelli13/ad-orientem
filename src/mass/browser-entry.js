@@ -11,7 +11,7 @@ import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 
 export const VERSION = "final-browser-entry-v1";
-const ACTIVE_KEY = "ao-r17-active-mass-v1";
+export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
 
 export function mapLegacyFollowMode(value) {
   const raw = String(value ?? "vox").toLowerCase();
@@ -96,17 +96,175 @@ export function stampMassReaderUi(owner,doc=globalThis.document){
   return value;
 }
 
-function persistPrepared(prepared) {
-  globalThis.AO_R17_ACTIVE_MASS = prepared;
+function storageApi(storage = globalThis.localStorage) {
+  return storage ?? null;
+}
+
+export function readPersistedActiveMass(storage = globalThis.localStorage) {
   try {
-    localStorage.setItem(ACTIVE_KEY, JSON.stringify({
-      schema: prepared?.schema ?? null,
-      session: prepared?.session ?? null,
-      readerPreferences: prepared?.readerPreferences ?? null,
-      storedAt: new Date().toISOString(),
-    }));
-  } catch {}
+    const raw = storageApi(storage)?.getItem?.(ACTIVE_MASS_STORAGE_KEY);
+    if (!raw) return null;
+    const record = JSON.parse(raw);
+    if (!record || typeof record !== "object") return null;
+    if (!record.schema || !record.session?.resolvedMass || !record.readerPreferences) return null;
+    return record;
+  } catch {
+    return null;
+  }
+}
+
+export function persistedMassIsResumable(record) {
+  return Boolean(
+    record &&
+    (record.state === "active" || record.state === "suspended") &&
+    record.schema &&
+    record.session?.resolvedMass &&
+    record.readerPreferences
+  );
+}
+
+function writePersistedActiveMass(record, storage = globalThis.localStorage) {
+  try {
+    storageApi(storage)?.setItem?.(ACTIVE_MASS_STORAGE_KEY, JSON.stringify(record));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function preparedFromRecord(record) {
+  return Object.freeze({
+    schema: record.schema,
+    session: record.session,
+    readerPreferences: record.readerPreferences,
+  });
+}
+
+function readerPosition(preview = globalThis.AO_R17_NATIVE_READER_PREVIEW) {
+  const card = preview?.getCurrentCard?.() ?? null;
+  return Object.freeze({
+    sectionId: card?.sectionId ?? null,
+    sequence: card?.sequence ?? null,
+    activeCueId: preview?.getActiveCue?.() ?? null,
+  });
+}
+
+export function checkpointPersistedMass({
+  storage = globalThis.localStorage,
+  preview = globalThis.AO_R17_NATIVE_READER_PREVIEW,
+} = {}) {
+  const current = readPersistedActiveMass(storage);
+  if (!persistedMassIsResumable(current) || !preview) return false;
+  return writePersistedActiveMass({
+    ...current,
+    readerPosition: readerPosition(preview),
+    checkpointedAt: new Date().toISOString(),
+  }, storage);
+}
+
+function installReaderCloseBridge(preview) {
+  const close = preview?.root?.querySelector?.("[aria-label='Close Mass reader']");
+  if (!close?.addEventListener) return null;
+
+  const onClick = (event) => {
+    const shell = globalThis.AO_APP_SHELL_V1;
+    if (typeof shell?.navigate !== "function") return;
+    event.preventDefault?.();
+    event.stopImmediatePropagation?.();
+    void Promise.resolve(shell.navigate("home")).catch((error) => {
+      console.error("R17 reader close navigation failed", error);
+    });
+  };
+  close.addEventListener("click", onClick, true);
+  return Object.freeze({
+    dispose() {
+      close.removeEventListener?.("click", onClick, true);
+    },
+  });
+}
+
+function installReaderCheckpoint(preview) {
+  globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.();
+  const root = preview?.root;
+  if (!root?.addEventListener) return null;
+
+  let queued = false;
+  const save = () => checkpointPersistedMass({ preview });
+  const schedule = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      save();
+    });
+  };
+  root.addEventListener("click", schedule, true);
+
+  let observer = null;
+  const MutationObserverImpl = globalThis.MutationObserver;
+  if (typeof MutationObserverImpl === "function") {
+    observer = new MutationObserverImpl(schedule);
+    observer.observe(root, {
+      attributes: true,
+      attributeFilter: ["data-r17-native-cue", "data-r17-object-state"],
+    });
+  }
+
+  save();
+  const api = Object.freeze({
+    dispose() {
+      root.removeEventListener?.("click", schedule, true);
+      observer?.disconnect?.();
+      if (globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT === api) {
+        try { delete globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT; } catch {}
+      }
+    },
+  });
+  globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT = api;
+  return api;
+}
+
+function persistPrepared(prepared, { state = "active", resumeRecord = null } = {}) {
+  globalThis.AO_R17_ACTIVE_MASS = prepared;
+  writePersistedActiveMass({
+    schema: prepared?.schema ?? null,
+    session: prepared?.session ?? null,
+    readerPreferences: prepared?.readerPreferences ?? null,
+    state,
+    readerPosition: resumeRecord?.readerPosition ?? null,
+    storedAt: resumeRecord?.storedAt ?? new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  });
   document.documentElement.dataset.aoMassEngine = "r17-native-production";
+}
+
+export function hasResumableMass(storage = globalThis.localStorage) {
+  return persistedMassIsResumable(readPersistedActiveMass(storage));
+}
+
+export function suspendPersistedMass({
+  storage = globalThis.localStorage,
+  preview = globalThis.AO_R17_NATIVE_READER_PREVIEW,
+} = {}) {
+  if (preview) checkpointPersistedMass({ storage, preview });
+  const current = readPersistedActiveMass(storage);
+  if (persistedMassIsResumable(current)) {
+    writePersistedActiveMass({
+      ...current,
+      state: "suspended",
+      suspendedAt: new Date().toISOString(),
+    }, storage);
+  }
+
+  globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.();
+  preview?.destroy?.();
+  try { delete globalThis.AO_R17_ACTIVE_MASS; } catch {}
+  try { delete globalThis.AO_R17_MASS_RUNTIME; } catch {}
+  if (globalThis.document?.documentElement?.dataset) {
+    delete globalThis.document.documentElement.dataset.aoMassReaderUi;
+    globalThis.document.documentElement.dataset.aoMassEngine = "r17-suspended";
+  }
+  return !globalThis.document?.getElementById?.("ao-r17-native-reader-preview");
 }
 
 export async function mountR17Preview({
@@ -132,8 +290,8 @@ export async function mountR17Preview({
   });
 }
 
-async function openProductionReader(prepared) {
-  persistPrepared(prepared);
+async function openProductionReader(prepared, { resumeRecord = null } = {}) {
+  persistPrepared(prepared, { state: "active", resumeRecord });
   const readerUiMode=readBrowserReaderUiMode(globalThis);
   const bridge=legacyBridge();
 
@@ -169,6 +327,10 @@ async function openProductionReader(prepared) {
     throw new Error("Unsupported production reader mode: "+readerUiMode);
   }
   const previewState=await mountR17Preview({doc:document,prepared});
+  const restoredSection = resumeRecord?.readerPosition?.sectionId ?? null;
+  if (restoredSection) previewState.preview?.showSection?.(restoredSection);
+  installReaderCheckpoint(previewState.preview);
+  installReaderCloseBridge(previewState.preview);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,prepared,readerUiMode,
@@ -176,6 +338,29 @@ async function openProductionReader(prepared) {
     previewFallbackReason:null,
     uiOwner,
     canonicalOwner:"R17_SESSION_ENGINE",
+    resumed:Boolean(resumeRecord),
+    restoredSection,
+  });
+  return previewState.preview;
+}
+
+export async function resumePersistedMass({
+  storage = globalThis.localStorage,
+} = {}) {
+  const record = readPersistedActiveMass(storage);
+  if (!persistedMassIsResumable(record)) {
+    return Object.freeze({ ok: false, reason: "NO_RESUMABLE_MASS" });
+  }
+  if (globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected) {
+    return Object.freeze({ ok: true, retained: true, record });
+  }
+  const prepared = preparedFromRecord(record);
+  await openProductionReader(prepared, { resumeRecord: record });
+  return Object.freeze({
+    ok: true,
+    resumed: true,
+    prepared,
+    readerPosition: record.readerPosition ?? null,
   });
 }
 
@@ -257,6 +442,9 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     get polls() { return state.polls; },
     prepare: () => state.controller?.prepare?.(),
     enter: () => state.controller?.enter?.(),
+    hasResumable: () => hasResumableMass(),
+    resume: () => resumePersistedMass(),
+    suspend: () => suspendPersistedMass(),
     status: () => Object.freeze({
       installed: state.installed,
       polls: state.polls,
@@ -267,6 +455,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       readerUiMode: globalThis.AO_R17_MASS_RUNTIME?.readerUiMode ?? readBrowserReaderUiMode(globalThis),
       shadow: globalThis.AO_R17_READER_SHADOW ?? null,
       nativeMounted: Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected),
+      resumable: hasResumableMass(),
       uiOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
       fallbackReason: globalThis.AO_R17_MASS_RUNTIME?.previewFallbackReason ?? null,
       shellFocusGuard: shellFocusGuard?.installed === true,
