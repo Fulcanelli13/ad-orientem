@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard } from "../src/mass/reader-native-preview.js";
+import { makeResolvedMass, compileMassPlan } from "../src/mass/session-engine.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -15,6 +16,8 @@ const palmData={payload:load("../data/presentation/reader-palm.v1.json"),graph:s
 const ashData={payload:load("../data/presentation/reader-ash.v1.json"),graph:specialExtension.graphs.ASH};
 const candlemasData={payload:load("../data/presentation/reader-candlemas.v1.json"),graph:specialExtension.graphs.CND};
 const rogationsData={payload:load("../data/presentation/reader-rogations.v1.json"),graph:specialExtension.graphs.ROG};
+const requiemAbsolutionData={payload:load("../data/presentation/reader-requiem-absolution.v1.json"),graph:specialExtension.graphs.ABS};
+const formStateData=load("../data/presentation/reader-form-state.v1.json");
 const cueRegistries=Object.freeze({
   gestures:load("../data/presentation/reader-gestures.v1.json"),
   responses:load("../data/presentation/reader-responses.v1.json"),
@@ -151,6 +154,54 @@ await assert.rejects(
   }),
   /PRECEDING_RITE_PROJECTION_PENDING|NATIVE_PREVIEW_PRECEDING_RITE_PENDING:UNSUPPORTED_RITE/,
   "native preview stopped failing closed on an unsupported preceding rite"
+);
+
+const requiemResolved=makeResolvedMass({
+  date:"2026-10-04",
+  form:"SOLEMN",
+  presentationMode:"LIVE",
+  calendarCelebration:{id:"TEMP",type:"CALENDAR",title:"Sunday"},
+  requestedCelebration:{id:"requiem",type:"REQUIEM",title:"Requiem"},
+  proper:{status:"READY",data:{...proper,sourcePath:"Votive/Requiem"}},
+  overlays:["REQUIEM"],
+  followingActions:["REQUIEM_ABSOLUTION"],
+  provenance:{requiemAbsolution:{bodyPresent:true,burialProcession:true}},
+});
+const requiemPrepared={
+  session:{resolvedMass:requiemResolved,plan:compileMassPlan(requiemResolved)},
+  readerPreferences:{...livePrepared.readerPreferences,mode:"LIVE"},
+};
+const requiemReady=await prepareNativeReaderPreview({
+  prepared:requiemPrepared,
+  presentationData:data,eventData,cueRegistries,guideData,formStateData,requiemAbsolutionData
+});
+assert.ok(requiemReady.requiemAbsolutionController,"native production reader lost Requiem Absolution controller");
+assert.equal(requiemReady.requiemAbsolutionController.project().card.id,"ABS-R01");
+assert.equal(requiemReady.requiemAbsolutionController.project().bodyPresent,true);
+assert.equal(requiemReady.requiemAbsolutionController.project().burialProcession,true);
+assert.equal(requiemReady.requiemAbsolutionController.cards.length,5);
+assert.equal(requiemReady.lifecycleRuntime.snapshot().stage,"MASS_ACTIVE");
+assert.equal(requiemPrepared.session.plan.normalLastGospel,false);
+assert.equal(requiemPrepared.session.plan.blessingAllowed,false);
+
+const corpusResolved=makeResolvedMass({
+  date:"2026-10-04",
+  form:"MISSA_CANTATA_INCENSE",
+  presentationMode:"LIVE",
+  calendarCelebration:{id:"corpus",type:"CALENDAR"},
+  proper:{status:"READY",data:proper},
+  followingActions:["CORPUS_CHRISTI_PROCESSION"],
+});
+await assert.rejects(
+  ()=>prepareNativeReaderPreview({
+    prepared:{
+      session:{resolvedMass:corpusResolved,plan:compileMassPlan(corpusResolved)},
+      readerPreferences:{...livePrepared.readerPreferences,mode:"LIVE"},
+    },
+    presentationData:data,eventData,cueRegistries,guideData
+  }),
+  /NATIVE_PRODUCTION_FOLLOWING_ACTION_PENDING:CORPUS_CHRISTI_PROCESSION/,
+  "pending following action was silently ignored by the production native reader"
 );
 
 const prepared={
