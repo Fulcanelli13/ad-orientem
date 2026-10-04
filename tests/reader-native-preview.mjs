@@ -138,7 +138,7 @@ const followingFixtures=[
   ["REQUIEM_ABSOLUTION",requiemAbsolutionData,"requiemAbsolutionController","ABS-R01",{normalLastGospel:false,blessingAllowed:false}],
   ["CORPUS_CHRISTI_PROCESSION",corpusChristiData,"corpusChristiController","CORPUS-R01",{normalLastGospel:false,blessingAllowed:false}],
   ["HOLY_THURSDAY_POST",holyThursdayPostData,"holyThursdayPostController","HT-R01",{normalLastGospel:false,blessingAllowed:false}],
-  ["GENERIC_PROCESSION",genericProcessionData,"genericProcessionController","PROC-100-010",{normalLastGospel:true,blessingAllowed:true}],
+  ["GENERIC_PROCESSION",genericProcessionData,"genericProcessionController","PROC-R01",{normalLastGospel:true,blessingAllowed:true}],
 ];
 for(const [followingAction,fixture,controllerKey,firstId,ending] of followingFixtures){
   const followingPrepared={
