@@ -296,6 +296,23 @@ export function createBrowserMassRuntime({
     return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),precedingRiteIntroitOnly:true});
   }
 
+  function planAwareCard(card){
+    if(!card)return null;
+    const plan=currentPrepared?.session?.plan;
+    if(plan?.blessingAllowed!==false || card.macroId!=="AO.SM.M29")return card;
+    const blessing=card.blocks?.find?.(x=>x.blockId==="AO.SM.B092");
+    if(!blessing || blessing.firstParagraphIndex==null || !blessing.paragraphCount)return card;
+    const start=blessing.firstParagraphIndex;
+    const end=start+blessing.paragraphCount;
+    const paragraphs=card.paragraphs.filter((_,index)=>index<start||index>=end);
+    return Object.freeze({
+      ...card,
+      title:"Placeat tibi, sancta Trinitas",
+      paragraphs:Object.freeze(paragraphs),
+      planFilteredBlocks:Object.freeze(["AO.SM.B092"]),
+    });
+  }
+
   function cardMoment(card, extra = {}) {
     if (!card) throw new TypeError("Reader card required");
     return {
@@ -312,10 +329,11 @@ export function createBrowserMassRuntime({
   function showCard(card, extra = {}) {
     if (!readerModel) throw new Error("Reader model is not ready");
     if (!card) return null;
+    const visibleCard=planAwareCard(card);
     currentSectionId = card.sectionId;
-    const state = reader.renderMoment(cardMoment(card, extra));
-    onSectionChange?.(card, state, readerModel);
-    return card;
+    const state = reader.renderMoment(cardMoment(visibleCard, extra));
+    onSectionChange?.(visibleCard, state, readerModel);
+    return visibleCard;
   }
 
   function showSection(sectionOrSequence, extra = {}) {
