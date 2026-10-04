@@ -527,6 +527,12 @@ export function createBrowserMassRuntime({
     const card=direction==="previous"
       ? readerModel.previousCard(currentSectionId)
       : readerModel.nextCard(currentSectionId);
+    const followingGraphs=currentPrepared?.session?.plan?.followingGraphs??[];
+    if(direction==="next"
+      && followingGraphs.includes("CORPUS_CHRISTI_PROCESSION")
+      && (card?.sourceSequence===29 || card?.sequence===29)){
+      return enterLifecycleBoundary();
+    }
     if(direction==="next" && (card?.sourceSequence===30 || card?.sequence===30) && currentPrepared?.session?.plan?.normalLastGospel===false){
       return enterLifecycleBoundary();
     }
