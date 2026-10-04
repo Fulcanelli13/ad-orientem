@@ -75,6 +75,13 @@ assert.equal(abs.readerPayload,"NATIVE_READER_PAYLOAD");
 assert.equal(abs.renderable,true);
 assert.equal(p.releaseSupport,true);
 
+p=projectSpecialStructure(prepared({followingActions:["HOLY_THURSDAY_POST"]}),sources);
+const ht=p.segments.find(x=>x.id==="HOLY_THURSDAY_POST");
+assert.ok(ht);
+assert.equal(ht.readerPayload,"NATIVE_READER_PAYLOAD");
+assert.equal(ht.renderable,true);
+assert.equal(p.releaseSupport,true);
+
 p=projectSpecialStructure(prepared({followingActions:["CORPUS_CHRISTI_PROCESSION"]}),sources);
 assert.equal(p.ending.dismissal,"BENEDICAMUS_DOMINO");
 assert.equal(p.ending.blessingAllowed,false);
