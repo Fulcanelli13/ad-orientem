@@ -1,0 +1,45 @@
+import assert from "node:assert/strict";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+
+const forbiddenPaths=[
+  "field",
+  ".github/workflows/apply-emergency-stable-v4333.yml",
+  ".github/workflows/apply-r17-browser-entry.yml",
+  ".github/workflows/diagnose-mass-text-proper.yml",
+  "tools/apply_emergency_stable_v4333.py",
+  "tools/apply_emergency_stable_v4333_core.py",
+  "tools/apply-r17-browser-entry.py",
+];
+
+for(const path of forbiddenPaths){
+  assert.equal(existsSync(path),false,"obsolete production mutator returned: "+path);
+}
+
+const workflowDir=".github/workflows";
+const workflows=readdirSync(workflowDir).filter(name=>/\.ya?ml$/i.test(name));
+for(const name of workflows){
+  const path=join(workflowDir,name);
+  const source=readFileSync(path,"utf8");
+  assert.doesNotMatch(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
+    name+" regained contents: write");
+  assert.doesNotMatch(source,/git\s+push\b/i,
+    name+" can push repository mutations");
+  assert.doesNotMatch(source,/cp\s+legacy\/.*\s+index\.html/i,
+    name+" can replace production index.html from legacy baseline");
+  assert.doesNotMatch(source,/apply_emergency_stable|apply-r17-browser-entry/i,
+    name+" references an obsolete mutator");
+}
+
+const baseline=readFileSync(".github/workflows/baseline-integrity.yml","utf8");
+assert.match(baseline,/contents:\s*read/i,"baseline verification is not read-only");
+assert.match(baseline,/Frozen v43\.33 verified as historical baseline only/i,
+  "baseline workflow lost historical-only guard");
+
+const readme=readFileSync("README.md","utf8");
+assert.match(readme,/archive\/2026-10-04-pre-hygiene/,
+  "README does not point to the preserved pre-hygiene archive");
+assert.doesNotMatch(readme,/retained under `field\/2026-10-04\/`/,
+  "README still claims the field snapshot lives in production main");
+
+console.log("production tree hygiene: PASS — no write-capable legacy/field mutators remain on main.");

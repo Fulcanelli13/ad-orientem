@@ -307,7 +307,11 @@ assert.match(convergenceWorkflow,/index\.html/);
 
 const baselineWorkflow=readFileSync(new URL("../.github/workflows/baseline-integrity.yml",import.meta.url),"utf8");
 assert.match(baselineWorkflow,/data-ao-r17-browser-entry/);
-assert.match(baselineWorkflow,/refusing to overwrite migrated index\.html/);
+assert.match(baselineWorkflow,/contents:\s*read/,"frozen baseline workflow regained write permission");
+assert.doesNotMatch(baselineWorkflow,/contents:\s*write/,"frozen baseline workflow regained contents: write");
+assert.doesNotMatch(baselineWorkflow,/git\s+push|cp\s+legacy\/.*index\.html/i,
+  "frozen baseline workflow can mutate production again");
+assert.match(baselineWorkflow,/historical baseline only/,"frozen baseline lost historical-only policy");
 
 const { readdirSync } = await import("node:fs");
 const massSourceDir=new URL("../src/mass/",import.meta.url);
