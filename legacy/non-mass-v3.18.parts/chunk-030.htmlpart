@@ -1,0 +1,500 @@
+.rc2Sheet header small{color:var(--liturgical)!important}
+.rc2SheetClose{border-color:var(--border)!important;background:var(--surface-1)!important;color:var(--text)!important}
+.rc2SheetIntro,.rc2GuideSection p,.rc2PrefSection p,.rc2Toggle span span,.rc2FlowNote{color:var(--muted)!important}
+.rc2GuideSection,.rc2PrefSection{background:var(--surface-1)!important;border-color:var(--border)!important}
+.rc2GuideSection a,.rc2SourceLinks a{color:var(--liturgical)!important}
+.rc2SourceLinks a{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important}
+.rc2Segments button{background:var(--surface-2)!important;color:var(--muted)!important;border-color:var(--border)!important}
+.rc2Segments button.active{background:var(--liturgical-soft)!important;color:var(--text)!important;border-color:var(--liturgical-border)!important}
+.rc2Toggle{border-color:var(--border)!important}
+
+/* Group response styling remains semantic and uses the day's colour. */
+#aoPrayerBookRoot .aoPrayerRoleResponse,
+#aoPrayerBookRoot .aoGroupResponse,
+#aoPrayerBookRoot [data-prayer-role="response"]{
+  background:var(--liturgical-soft)!important;
+  border-color:var(--liturgical-border)!important;
+  color:var(--text)!important;
+}
+
+/* Source/provenance remains visible but quiet. */
+#aoPrayerBookRoot .lab-source-row a{
+  border:1px solid var(--border)!important;
+  border-radius:999px!important;
+  padding:5px 8px!important;
+  text-decoration:none!important;
+}
+
+@media(max-width:650px){
+  #aoPrayerBookRoot .lab-practice-sheet,
+  #aoPrayerBookRoot .lab-prayer-sheet,
+  #aoPrayerBookRoot .lab-contemplation{padding:18px!important;border-radius:14px!important}
+}
+</style>
+<script id="ao-v391-prayer-visual-harmonization-meta">
+window.AO_V391_META={version:'39.1',baseline:'v39-HARMONIZED-MASTER',scope:['prayer cards','practice sheets','Rosary player','Stations player','prayer-library cards','RC2 guides/preferences'],presentationOnly:true,massEngineChanged:false,calendarEngineChanged:false,prayerCorpusChanged:false};
+try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title='Ad Orientem 2.0 · v39.1 Prayer Visual Harmonization'}catch(e){}
+</script>
+
+<!-- v40 merged sibling branches -->
+<style id="ao-v381-universal-tradition-css">
+#aoV38Traditions .v381Group{margin:24px 0 8px}#aoV38Traditions .v381Group>small{display:block;color:var(--liturgical,#c7ae6d);font:600 .64rem/1.2 var(--font-display,serif);letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+#aoV38Traditions .v381Reader{white-space:pre-line;font:400 1.02rem/1.7 var(--font-liturgical,Georgia,serif);padding:12px 0}
+#aoV38Traditions .v381Lang{display:flex;gap:6px;margin:10px 0 2px}#aoV38Traditions .v381Lang button{border:1px solid var(--border,rgba(255,255,255,.16));border-radius:999px;background:transparent;color:inherit;padding:7px 11px;font-size:.73rem}#aoV38Traditions .v381Lang button.active{border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.12))}
+#aoV38Traditions .v381PrayerList{display:grid;gap:0;border-top:1px solid var(--border,rgba(255,255,255,.13));margin:12px 0}#aoV38Traditions .v381PrayerList button{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;width:100%;text-align:left;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));background:transparent;color:inherit;padding:13px 2px}#aoV38Traditions .v381PrayerList b{font:600 .98rem var(--font-display,Georgia,serif)}#aoV38Traditions .v381PrayerList small{color:var(--muted);display:block;margin-top:3px}
+#aoV38Traditions .v381Trainer{padding:12px 0}#aoV38Traditions .v381Cue{color:var(--liturgical,#c7ae6d);font:600 .66rem var(--font-display,serif);letter-spacing:.08em;text-transform:uppercase}#aoV38Traditions .v381Prompt{font:400 1.02rem/1.55 var(--font-liturgical,Georgia,serif);margin:8px 0 13px}#aoV38Traditions .v381Answer{border-left:2px solid var(--liturgical,#c7ae6d);padding:9px 12px;margin:8px 0 12px;background:var(--liturgical-soft,rgba(199,174,109,.07))}#aoV38Traditions .v381Answer strong{display:block;font:600 1.05rem/1.55 var(--font-liturgical,Georgia,serif)}#aoV38Traditions .v381Answer span{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}#aoV38Traditions .v381TrainerNav{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}#aoV38Traditions .v381TrainerNav button{min-height:42px;border-radius:10px;border:1px solid var(--border,rgba(255,255,255,.16));background:var(--surface-1,#102235);color:inherit}
+#aoV38Traditions .v381Compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}#aoV38Traditions .v381Compare>article{border:1px solid var(--border,rgba(255,255,255,.14));border-radius:12px;padding:12px;background:var(--surface-1,#102235)}#aoV38Traditions .v381Compare h3{margin:0 0 7px;font:600 1rem var(--font-display,Georgia,serif)}#aoV38Traditions .v381Compare ol,#aoV38Traditions .v381Compare ul{margin:7px 0 0;padding-left:19px;color:var(--muted);font-size:.82rem;line-height:1.5}
+#aoV38Traditions .v381SeasonGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}#aoV38Traditions .v381SeasonGrid button{text-align:left;padding:11px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:11px;background:var(--surface-1,#102235);color:inherit}#aoV38Traditions .v381SeasonGrid strong,#aoV38Traditions .v381SeasonGrid span{display:block}#aoV38Traditions .v381SeasonGrid span{font-size:.75rem;color:var(--muted);margin-top:4px}
+@media(max-width:560px){#aoV38Traditions .v381Compare,#aoV38Traditions .v381SeasonGrid{grid-template-columns:1fr}}
+</style>
+<script id="ao-v381-universal-tradition-js">
+(()=>{
+'use strict';
+const VERSION='38.1';
+const HYMNS={"te_deum": {"title": "Te Deum", "subtitle": "Great hymn of praise and thanksgiving", "la": "Te Deum laudamus: te Dominum confitemur.\nTe æternum Patrem omnis terra veneratur.\nTibi omnes Angeli; tibi cæli et universæ potestates.\nTibi Cherubim et Seraphim incessabili voce proclamant:\nSanctus, Sanctus, Sanctus Dominus Deus Sabaoth.\nPleni sunt cæli et terra maiestatis gloriæ tuæ.\nTe gloriosus Apostolorum chorus,\nte Prophetarum laudabilis numerus,\nte Martyrum candidatus laudat exercitus.\nTe per orbem terrarum sancta confitetur Ecclesia:\nPatrem immensæ maiestatis;\nvenerandum tuum verum et unicum Filium;\nSanctum quoque Paraclitum Spiritum.\nTu Rex gloriæ, Christe.\nTu Patris sempiternus es Filius.\nTu, ad liberandum suscepturus hominem, non horruisti Virginis uterum.\nTu, devicto mortis aculeo, aperuisti credentibus regna cælorum.\nTu ad dexteram Dei sedes, in gloria Patris.\nIudex crederis esse venturus.\nTe ergo quæsumus, tuis famulis subveni,\nquos pretioso sanguine redemisti.\nÆterna fac cum sanctis tuis in gloria numerari.\nSalvum fac populum tuum, Domine, et benedic hereditati tuæ.\nEt rege eos, et extolle illos usque in æternum.\nPer singulos dies benedicimus te;\net laudamus nomen tuum in sæculum, et in sæculum sæculi.\nDignare, Domine, die isto sine peccato nos custodire.\nMiserere nostri, Domine, miserere nostri.\nFiat misericordia tua, Domine, super nos, quemadmodum speravimus in te.\nIn te, Domine, speravi: non confundar in æternum.", "en": "We praise Thee, O God: we acknowledge Thee to be the Lord.\nAll the earth doth worship Thee: the Father everlasting.\nTo Thee all Angels cry aloud: the Heavens and all the powers therein.\nTo Thee the Cherubim and Seraphim continually do cry:\nHoly, holy, holy: Lord God of Sabaoth.\nHeaven and earth are full of the majesty of Thy Glory.\nThe glorious choir of the Apostles praise Thee.\nThe admirable company of the Prophets praise Thee.\nThe white-robed army of Martyrs praise Thee.\nThe Holy Church throughout all the world doth acknowledge Thee:\nThe Father of an infinite majesty;\nThy adorable, true and only Son;\nAlso the Holy Ghost, the Comforter.\nThou art the King of Glory, O Christ.\nThou art the everlasting Son of the Father.\nWhen Thou tookest upon Thee to deliver man, Thou didst not abhor the Virgin’s womb.\nWhen Thou hadst overcome the sting of death, Thou didst open the kingdom of heaven to all believers.\nThou sittest at the right hand of God, in the glory of the Father.\nWe believe that Thou shalt come to be our Judge.\nWe pray Thee, therefore, help Thy servants, whom Thou hast redeemed with Thy precious blood.\nMake them to be numbered with Thy Saints in glory everlasting.\nO Lord, save Thy people and bless Thine inheritance.\nGovern them and lift them up for ever.\nDay by day we magnify Thee.\nAnd we praise Thy name for ever: yea, for ever and ever.\nVouchsafe, O Lord, this day to keep us without sin.\nO Lord, have mercy upon us: have mercy upon us.\nO Lord, let Thy mercy be showed upon us, as we have hoped in Thee.\nO Lord, in Thee have I hoped: let me not be confounded for ever."}, "veni_creator": {"title": "Veni Creator Spiritus", "subtitle": "Invocation of the Holy Ghost", "la": "Veni, Creator Spiritus,\nmentes tuorum visita,\nimple superna gratia,\nquæ tu creasti pectora.\n\nQui diceris Paraclitus,\nAltissimi donum Dei,\nfons vivus, ignis, caritas,\net spiritalis unctio.\n\nTu septiformis munere,\ndigitus paternæ dexteræ,\ntu rite promissum Patris,\nsermone ditans guttura.\n\nAccende lumen sensibus,\ninfunde amorem cordibus,\ninfirma nostri corporis\nvirtute firmans perpeti.\n\nHostem repellas longius\npacemque dones protinus;\nductore sic te prævio\nvitemus omne noxium.\n\nPer te sciamus da Patrem\nnoscamus atque Filium,\nteque utriusque Spiritum\ncredamus omni tempore.\n\nDeo Patri sit gloria,\net Filio, qui a mortuis\nsurrexit, ac Paraclito,\nin sæculorum sæcula. Amen.", "en": "Come, O Creator Spirit blest!\nAnd in our souls take up Thy rest;\nCome, with Thy grace and heavenly aid,\nTo fill the hearts which Thou hast made.\n\nGreat Paraclete! to Thee we cry,\nO highest gift of God most high!\nO fount of life! O fire of love!\nAnd sweet anointing from above!\n\nThou in Thy sevenfold gifts art known;\nThe finger of God’s hand we own.\nThe promise of the Father Thou!\nWho dost the tongue with power endow.\n\nKindle our senses from above,\nAnd make our hearts overflow with love;\nWith patience firm, and virtue high,\nThe weakness of our flesh supply.\n\nFar from us drive the foe we dread,\nAnd grant us Thy true peace instead;\nSo shall we not, with Thee for guide,\nTurn from the path of life aside.\n\nOh, may Thy grace on us bestow\nThe Father and the Son to know,\nAnd Thee through endless times confessed\nOf both th’ Eternal Spirit blest.\n\nAll glory while the ages run\nBe to the Father, and the Son\nWho rose from death; the same to Thee,\nO Holy Ghost eternally. Amen."}, "ave_maris_stella": {"title": "Ave Maris Stella", "subtitle": "Traditional Marian hymn", "la": "Ave, maris stella,\nDei Mater alma,\natque semper Virgo,\nfelix cæli porta.\n\nSumens illud Ave\nGabrielis ore,\nfunda nos in pace,\nmutans Evæ nomen.\n\nSolve vincla reis,\nprofer lumen cæcis,\nmala nostra pelle,\nbona cuncta posce.\n\nMonstra te esse matrem,\nsumat per te preces,\nqui pro nobis natus\ntulit esse tuus.\n\nVirgo singularis,\ninter omnes mitis,\nnos culpis solutos\nmites fac et castos.\n\nVitam præsta puram,\niter para tutum,\nut videntes Iesum\nsemper collætemur.\n\nSit laus Deo Patri,\nsummo Christo decus,\nSpiritui Sancto,\ntribus honor unus. Amen.", "en": "Hail, thou Star of Ocean!\nPortal of the sky!\nEver Virgin Mother\nOf the Lord most high!\n\nOh! by Gabriel’s Ave,\nUttered long ago,\nEva’s name reversing,\nGrant us peace below.\n\nBreak the captive’s fetters;\nLight on blindness pour;\nAll our ills expelling,\nEvery bliss implore.\n\nShow thyself a mother;\nOffer Him our sighs,\nWho for us incarnate\nDid not thee despise.\n\nVirgin of all Virgins!\nTo thy shelter take us:\nGentlest of the gentle!\nChaste and gentle make us.\n\nStill as on we journey,\nHelp our weak endeavour;\nTill with thee and Jesus\nWe rejoice for ever.\n\nThrough the highest heaven,\nTo the Almighty Three,\nFather, Son, and Spirit,\nOne same glory be. Amen."}};
+const RESPONSES=[{"cue": "At the foot of the altar", "prompt": "℣. Introíbo ad altáre Dei.", "lat": "℟. Ad Deum, qui lætíficat iuventútem meam.", "en": "℟. To God, who giveth joy to my youth."}, {"cue": "Psalm Judica", "prompt": "℣. Emítte lucem tuam et veritátem tuam...", "lat": "℟. Et introíbo ad altáre Dei: ad Deum, qui lætíficat iuventútem meam.", "en": "℟. And I will go in to the altar of God: to God who giveth joy to my youth."}, {"cue": "After the priest’s Confiteor", "prompt": "The priest finishes his Confiteor.", "lat": "℟. Misereátur tui omnípotens Deus, et, dimíssis peccátis tuis, perdúcat te ad vitam ætérnam.", "en": "℟. May almighty God have mercy on thee, forgive thee thy sins, and bring thee to life everlasting."}, {"cue": "Adjutorium nostrum", "prompt": "℣. Adiutórium nostrum in nómine Dómini.", "lat": "℟. Qui fecit cælum et terram.", "en": "℟. Who made heaven and earth."}, {"cue": "Foot prayers", "prompt": "℣. Deus, tu convérsus vivificábis nos.", "lat": "℟. Et plebs tua lætábitur in te.", "en": "℟. And Thy people shall rejoice in Thee."}, {"cue": "Foot prayers", "prompt": "℣. Osténde nobis, Dómine, misericórdiam tuam.", "lat": "℟. Et salutáre tuum da nobis.", "en": "℟. And grant us Thy salvation."}, {"cue": "Foot prayers", "prompt": "℣. Dómine, exáudi oratiónem meam.", "lat": "℟. Et clamor meus ad te véniat.", "en": "℟. And let my cry come unto Thee."}, {"cue": "Dominus vobiscum", "prompt": "℣. Dóminus vobíscum.", "lat": "℟. Et cum spíritu tuo.", "en": "℟. And with thy spirit."}, {"cue": "Gospel", "prompt": "The celebrant announces the holy Gospel.", "lat": "℟. Glória tibi, Dómine.", "en": "℟. Glory be to Thee, O Lord."}, {"cue": "End of Gospel", "prompt": "The Gospel concludes.", "lat": "℟. Laus tibi, Christe.", "en": "℟. Praise be to Thee, O Christ."}, {"cue": "Orate, fratres", "prompt": "℣. Oráte, fratres...", "lat": "℟. Suscípiat Dóminus sacrifícium de mánibus tuis ad laudem et glóriam nominis sui, ad utilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ. Amen.", "en": "℟. May the Lord accept the Sacrifice from thy hands, to the praise and glory of His Name, for our benefit and for that of all His holy Church. Amen."}, {"cue": "Preface dialogue", "prompt": "℣. Sursum corda.", "lat": "℟. Habémus ad Dóminum.", "en": "℟. We have lifted them up to the Lord."}, {"cue": "Preface dialogue", "prompt": "℣. Grátias agámus Dómino Deo nostro.", "lat": "℟. Dignum et iustum est.", "en": "℟. It is right and just."}, {"cue": "Pater noster", "prompt": "℣. Et ne nos indúcas in tentatiónem.", "lat": "℟. Sed líbera nos a malo.", "en": "℟. But deliver us from evil."}, {"cue": "Dismissal", "prompt": "℣. Ite, missa est.", "lat": "℟. Deo grátias.", "en": "℟. Thanks be to God."}];
+const SRC={"baltimore": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity", "morning": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers", "evening": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers", "holyname": "https://en.wikisource.org/wiki/The_Catholic%27s_pocket_prayer-book/The_Litany_of_the_Holy_Name_of_Jesus", "dailybook": "https://en.wikisource.org/wiki/The_Daily_Prayer-Book/Prayers", "ritual1952": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910", "currentAnointing": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19721130_sacram-unctionem.html", "currentBaptism": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/iii_how_is_the_sacrament_of_baptism_celebrated.html", "currentMarriage": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_7/ii_the_celebration_of_marriage.html", "currentConsent": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_7/iii_matrimonial_consent.html", "scapular": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html", "ritualPermission": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html", "viaticum": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/v_viaticum%2C_the_last_sacrament_of_the_christian.html"};
+const DEF={
+ 'learn.rites.sick':{id:'learn.rites.sick',type:'module',domain:'LEARN',title:'Serious Illness & Dying'},
+ 'learn.rites.baptism':{id:'learn.rites.baptism',type:'module',domain:'LEARN',title:'Baptism · Parents & Godparents'},
+ 'learn.rites.matrimony':{id:'learn.rites.matrimony',type:'module',domain:'LEARN',title:'Matrimony · Bride & Groom'},
+ 'learn.serve_mass.responses':{id:'learn.serve_mass.responses',type:'module',domain:'LEARN',title:'Low Mass Responses'},
+ 'pray.sacred_hymns':{id:'pray.sacred_hymns',type:'module',domain:'PRAY',title:'Sacred Hymns & Canticles'},
+ 'pray.holy_name_litany':{id:'pray.holy_name_litany',type:'module',domain:'PRAY',title:'Litany of the Holy Name'},
+ 'pray.morning_evening':{id:'pray.morning_evening',type:'module',domain:'PRAY',title:'Morning & Evening Prayer'},
+ 'learn.scapular':{id:'learn.scapular',type:'module',domain:'LEARN',title:'Brown Scapular'},
+ 'learn.seasonal_rites':{id:'learn.seasonal_rites',type:'module',domain:'LEARN',title:'Seasonal Catholic Practice'}
+};
+let root=null,view='hub',trainerIndex=0,trainerReveal=false,hymn='te_deum',hymnLang='en',returnFocus=null;
+const T=(en,fr)=>document.documentElement.lang?.toLowerCase().startsWith('fr')?(fr||en):en;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const link=(label,url)=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`;
+const source=(label,url)=>`<details class="v38Source"><summary>${T('Source','Source')} · ${esc(label)}</summary><div class="v38Card">${link(T('Open source','Ouvrir la source'),url)}</div></details>`;
+function ensure(){root=document.getElementById('aoV38Traditions');if(!root){window.AO_TRADITION_V38?.open?.('learn.traditions');root=document.getElementById('aoV38Traditions')}return root}
+function shell(title,body,kicker='Lay Companion'){return `<div class="v38Wrap"><header class="v38Top"><button data-v381-back aria-label="${T('Back','Retour')}">←</button><div><small>${esc(kicker)}</small><h1>${esc(title)}</h1></div><button data-v381-close aria-label="${T('Close','Fermer')}">×</button></header>${body}</div>`}
+function status(s){return `<span class="v38Status">${esc(s)}</span>`}
+function card(title,text,extra=''){return `<article class="v38Card"><h3>${esc(title)}</h3><p>${text}</p>${extra}</article>`}
+function open(id='hub',opts={}){ensure();view=id;returnFocus=opts.trigger||returnFocus||document.activeElement;root.classList.add('open');root.setAttribute('aria-hidden','false');render();root.querySelector('[data-v381-back]')?.focus();return true}
+function close(){if(!root)return;root.classList.remove('open');root.setAttribute('aria-hidden','true');returnFocus?.focus?.();returnFocus=null}
+function back(){if(view==='hub'){window.AO_TRADITION_V38?.open?.('learn.traditions');setTimeout(decorateHub,0);return}open('hub')}
+function openPrayer(id){close();const p=window.AOTraditionalPrayerBook;if(p?.openPrayer){p.openPrayer(id,{returnContext:{surface:'traditions-v381',view:'pray.morning_evening'}});return true}p?.open?.();setTimeout(()=>p?.openPrayer?.(id),40);return true}
+function openCanonical(id){close();return window.AO_MODULES?.open?.(id)}
+function hub(){return shell(T('Traditional Catholic Life','Vie catholique traditionnelle'),`<p class="v38Intro">${T('Everything in this area is filtered for the lay faithful: pray it, prepare for it, respond during it, serve at it, receive it, or understand what you are witnessing. Priest-only ceremonial is not exposed as a user task.','Tout ce domaine est filtré pour les fidèles laïcs : prier, se préparer, répondre, servir, recevoir ou comprendre ce que l’on voit. Le cérémonial réservé au prêtre n’est pas présenté comme tâche utilisateur.')}</p><div class="v38List">
+<button class="v38Row" data-v381-open="learn.rites.sick"><div><strong>${T('Serious Illness & Dying','Maladie grave & fin de vie')}</strong><span>${T('Prepare · pray · Anointing & Viaticum','Se préparer · prier · Onction & Viatique')}</span></div><i class="v38Arrow">→</i></button>
+<button class="v38Row" data-v381-open="learn.rites.baptism"><div><strong>${T('Baptism · Parents & Godparents','Baptême · Parents & parrains')}</strong><span>${T('Prepare · respond · follow','Se préparer · répondre · suivre')}</span></div><i class="v38Arrow">→</i></button>
+<button class="v38Row" data-v381-open="learn.rites.matrimony"><div><strong>${T('Matrimony · Bride & Groom','Mariage · Époux')}</strong><span>${T('Prepare · consent · Nuptial Mass','Se préparer · consentement · Messe nuptiale')}</span></div><i class="v38Arrow">→</i></button>
+<button class="v38Row" data-v381-open="learn.serve_mass.responses"><div><strong>${T('Serve Low Mass','Servir la Messe basse')}</strong><span>${T('Lay server · certified responses · practice cards','Servant laïc · réponses certifiées · cartes d’entraînement')}</span></div><i class="v38Arrow">→</i></button>
+<button class="v38Row" data-v381-open="pray.morning_evening"><div><strong>${T('Morning & Evening Prayer','Prières du matin & du soir')}</strong><span>${T('Pray · historical lay prayer-book sequence','Prier · séquence historique de livre de prières laïc')}</span></div><i class="v38Arrow">→</i></button>
+<button class="v38Row" data-v381-open="pray.sacred_hymns"><div><strong>${T('Sacred Hymns & Canticles','Hymnes & cantiques sacrés')}</strong><span>Te Deum · Veni Creator · Ave Maris Stella</span></div><i class="v38Arrow">→</i></button>
+<button class="v38Row" data-v381-open="pray.holy_name_litany"><div><strong>${T('Litany of the Holy Name','Litanies du Saint Nom')}</strong><span>${T('Pray · approved historical form','Prier · forme historique approuvée')}</span></div><i class="v38Arrow">→</i></button>
+<button class="v38Row" data-v381-open="learn.scapular"><div><strong>${T('Brown Scapular','Scapulaire brun')}</strong><span>${T('Devotion · prepare for enrolment · live it','Dévotion · se préparer à l’imposition · la vivre')}</span></div><i class="v38Arrow">→</i></button>
+<button class="v38Row" data-v381-open="learn.seasonal_rites"><div><strong>${T('Seasonal Catholic Practice','Pratique catholique saisonnière')}</strong><span>${T('What the faithful can pray, attend and observe','Ce que les fidèles peuvent prier, suivre et observer')}</span></div><i class="v38Arrow">→</i></button>
+</div>`) }
+function sick(){return shell(T('Serious Illness & Dying','Maladie grave & fin de vie'),`<p class="v38Intro">${T('For the sick person, family and friends. The purpose is to know when to call the priest, how to prepare, what you may receive, and how to pray. Ad Orientem does not reproduce priest-only ritual directions.','Pour le malade, la famille et les proches. Le but est de savoir quand appeler le prêtre, comment se préparer, ce que l’on peut recevoir et comment prier. Ad Orientem ne reproduit pas les instructions rituelles réservées au prêtre.')}</p>${status(T('Prepare · Pray · Receive · Follow','Se préparer · Prier · Recevoir · Suivre'))}${card(T('PREPARE','SE PRÉPARER'),T('Call a priest early when serious illness, advanced age or danger of death makes sacramental care appropriate. If the sick person is able, help them prepare for Confession and Holy Communion/Viaticum.','Appelez un prêtre assez tôt lorsqu’une maladie grave, un âge avancé ou un danger de mort rend les soins sacramentels appropriés. Si le malade le peut, aidez-le à se préparer à la Confession et à la Sainte Communion/Viatique.'))}${card(T('RECEIVE','RECEVOIR'),T('Depending on the circumstances, the sick person may receive Penance, Anointing of the Sick and Holy Communion as Viaticum. The exact order and form belong to the priest; this guide helps the faithful understand the sacraments being received.','Selon les circonstances, le malade peut recevoir la Pénitence, l’Onction des malades et la Sainte Communion comme Viatique. L’ordre exact et la forme appartiennent au prêtre ; ce guide aide les fidèles à comprendre les sacrements reçus.'))}${card(T('PRAY WITH THE SICK','PRIER AVEC LE MALADE'),T('Use familiar Catholic prayers, the Rosary, acts of contrition and trust, and periods of silence. Near or after death, the traditional prayers for the departed become appropriate.','Employez les prières catholiques familières, le Rosaire, les actes de contrition et de confiance, ainsi que des temps de silence. À l’approche ou après la mort, les prières traditionnelles pour les défunts deviennent appropriées.'),`<div class="v38Actions"><button data-v381-canonical="pray.confession">${T('Prepare for Confession','Préparer la Confession')}</button><button data-v381-canonical="pray.rosary">${T('Rosary','Rosaire')}</button><button data-v381-prayer="dead_de_profundis">De profundis</button><button data-v381-prayer="foundations_eternal_rest">Requiem æternam</button></div>`)}<details class="v38Source"><summary>${T('Why the traditional and current ceremonies may look different','Pourquoi les cérémonies traditionnelle et actuelle peuvent sembler différentes')}</summary><div class="v38Card"><p>${T('The older Roman rite of Extreme Unction used a fuller series of anointings; the current Roman Anointing normally uses the forehead and hands. This distinction is included only so families can recognize what they are witnessing—not to teach anyone to administer the sacrament.','L’ancien rite romain de l’Extrême-Onction employait une série plus développée d’onctions ; l’Onction romaine actuelle utilise normalement le front et les mains. Cette distinction n’est donnée que pour aider les familles à reconnaître ce qu’elles voient — non pour apprendre à administrer le sacrement.')}</p></div></details>${source('Rituale Romanum · 1952',SRC.ritual1952)}${source('Paul VI · Sacram Unctionem Infirmorum · 1972',SRC.currentAnointing)}${source('Catechism · Viaticum',SRC.viaticum)}`)}
+function baptism(){return shell(T('Baptism · Parents & Godparents','Baptême · Parents & parrains'),`<p class="v38Intro">${T('A lay guide for parents, godparents and family: how to prepare, where you participate, and what the ceremonies mean. It is not the minister’s baptismal manual.','Un guide laïc pour les parents, parrains et famille : comment se préparer, où participer et ce que signifient les cérémonies. Ce n’est pas le manuel baptismal du ministre.')}</p>${status(T('Prepare · Respond · Follow','Se préparer · Répondre · Suivre'))}${card(T('BEFORE THE BAPTISM','AVANT LE BAPTÊME'),T('Know which form will be used and ask the parish or priest what parents and godparents will be expected to answer. Review the Creed and Our Father and come prepared to make the profession of faith required by the rite.','Sachez quelle forme sera employée et demandez à la paroisse ou au prêtre ce que les parents et parrains devront répondre. Revoyez le Credo et le Notre Père et venez prêt à faire la profession de foi requise par le rite.'),`<div class="v38Actions"><button data-v381-prayer="foundations_apostles_creed">${T('Apostles’ Creed','Symbole des Apôtres')}</button><button data-v381-prayer="foundations_our_father">${T('Our Father','Notre Père')}</button></div>`)}${card(T('YOUR PART','VOTRE PART'),T('Parents and godparents answer when prompted, take part in the renunciations and profession of faith according to the form used, and present/support the child for Baptism. Follow the celebrant’s prompts rather than an app script.','Les parents et parrains répondent lorsqu’ils y sont invités, participent aux renoncements et à la profession de foi selon la forme employée, et présentent/accompagnent l’enfant pour le Baptême. Suivez les indications du célébrant plutôt qu’un script d’application.'))}${card(T('WHAT YOU WILL SEE','CE QUE VOUS VERREZ'),T('In the older Roman form you may encounter ceremonies such as reception at the church door, blessed salt, exorcistic prayers, Ephpheta, anointings, the Baptism itself, white garment and candle. The current Roman form has a different surrounding sequence while retaining the sacrament of Baptism.','Dans l’ancienne forme romaine, vous pourrez rencontrer l’accueil à la porte de l’église, le sel bénit, des prières d’exorcisme, l’Ephpheta, des onctions, le Baptême lui-même, le vêtement blanc et le cierge. La forme romaine actuelle possède une séquence environnante différente tout en conservant le sacrement du Baptême.'))}<details class="v38Source"><summary>${T('Traditional / current comparison','Comparaison traditionnelle / actuelle')}</summary><div class="v381Compare"><article><h3>${T('Older form','Ancienne forme')}</h3><p>${T('More preparatory ceremonies precede the Baptism and the older symbolism is more extended.','Davantage de cérémonies préparatoires précèdent le Baptême et le symbolisme ancien est plus développé.')}</p></article><article><h3>${T('Current form','Forme actuelle')}</h3><p>${T('The surrounding rites are reorganized around reception, Scripture, profession of faith, Baptism and explanatory signs.','Les rites environnants sont réorganisés autour de l’accueil, de l’Écriture, de la profession de foi, du Baptême et des signes explicatifs.')}</p></article></div></details>${source('Rituale Romanum · 1952',SRC.ritual1952)}${source('Catechism of the Catholic Church · Baptism',SRC.currentBaptism)}`)}
+function matrimony(){return shell(T('Matrimony · Bride & Groom','Mariage · Époux'),`<p class="v38Intro">${T('For the couple and those assisting at the wedding. The focus is preparation, consent, participation and the Nuptial Mass—not instructions for the celebrant.','Pour les époux et ceux qui assistent au mariage. L’accent porte sur la préparation, le consentement, la participation et la Messe nuptiale — non sur les instructions destinées au célébrant.')}</p>${status(T('Prepare · Consent · Participate','Se préparer · Consentir · Participer'))}${card(T('PREPARE','SE PRÉPARER'),T('Confirm with the priest/parish which form of Matrimony will be used, what words and responses you will make, whether a Nuptial Mass is being celebrated, and any practical sacramental preparation required of you.','Confirmez avec le prêtre/la paroisse quelle forme de Mariage sera employée, quelles paroles et réponses vous aurez à faire, si une Messe nuptiale sera célébrée et toute préparation sacramentelle pratique qui vous concerne.'))}${card(T('YOUR ESSENTIAL ACT','VOTRE ACTE ESSENTIEL'),T('The spouses freely give and receive matrimonial consent. Ad Orientem can help you understand the ceremony, but it does not replace the exact formula and instructions given by the Church and your celebrant.','Les époux donnent et reçoivent librement le consentement matrimonial. Ad Orientem peut aider à comprendre la cérémonie, mais ne remplace pas la formule exacte et les indications données par l’Église et le célébrant.'))}${card(T('FOLLOW THE WEDDING MASS','SUIVRE LA MESSE NUPTIALE'),T('When the traditional Nuptial Mass is celebrated, use the existing certified Ad Orientem Nuptial Mass follower. The marriage guide does not duplicate the priest’s ritual or the Mass engine.','Lorsque la Messe nuptiale traditionnelle est célébrée, utilisez le suivi certifié de la Messe nuptiale d’Ad Orientem. Le guide du mariage ne duplique ni le rituel du prêtre ni le moteur de Messe.'),`<div class="v38Actions"><button class="primary" data-v381-nuptial>${T('Open Nuptial Mass','Ouvrir la Messe nuptiale')}</button></div>`)}<details class="v38Source"><summary>${T('Traditional / current context','Contexte traditionnel / actuel')}</summary><div class="v38Card"><p>${T('Both forms center on the spouses’ consent. The surrounding ceremonial, ring blessing/exchange and relation to Mass differ. This comparison is kept secondary because the couple needs participation guidance, not a celebrant’s ritual book.','Les deux formes ont pour centre le consentement des époux. Le cérémonial environnant, la bénédiction/l’échange des anneaux et le rapport à la Messe diffèrent. Cette comparaison reste secondaire parce que le couple a besoin d’un guide de participation, non d’un rituel de célébrant.')}</p></div></details>${source('Rituale Romanum · traditional Matrimony',SRC.ritual1952)}${source('Catechism · Celebration of Marriage',SRC.currentMarriage)}${source('Catechism · Matrimonial Consent',SRC.currentConsent)}`)}
+function trainer(){const x=RESPONSES[trainerIndex];return shell(T('Serve Low Mass','Servir la Messe basse'),`<p class="v38Intro">${T('Practice the common minister responses from the same certified 1962 Mass text already used by the Mass follower. This trains the words; it does not invent altar-server choreography.','Entraînez-vous aux réponses courantes du servant à partir du même texte certifié de la Messe de 1962 utilisé par le suivi de Messe. Ceci entraîne les paroles ; aucune chorégraphie de servant n’est inventée.')}</p>${status('1962 Mass · exact response text')}<section class="v381Trainer"><div class="v381Cue">${esc(x.cue)} · ${trainerIndex+1} / ${RESPONSES.length}</div><div class="v381Prompt">${esc(x.prompt)}</div>${trainerReveal?`<div class="v381Answer"><strong>${esc(x.lat)}</strong><span>${esc(x.en)}</span></div>`:`<div class="v38Actions"><button class="primary" data-v381-reveal>${T('Reveal response','Afficher la réponse')}</button></div>`}<div class="v381TrainerNav"><button data-v381-trainer="prev" ${trainerIndex===0?'disabled':''}>← ${T('Previous','Précédent')}</button><button data-v381-trainer="next" ${trainerIndex===RESPONSES.length-1?'disabled':''}>${T('Next','Suivant')} →</button></div></section>${source('Ad Orientem certified 1962 Mass corpus + Baltimore · Manner of Serving Mass',SRC.baltimore)}`)}
+function hymnsPage(){const h=HYMNS[hymn];return shell(T('Sacred Hymns & Canticles','Hymnes & cantiques sacrés'),`<p class="v38Intro">${T('A deliberately small source-locked collection. These texts come from a public-domain Catholic prayer book rather than from an inherited app composition.','Une collection volontairement réduite et verrouillée sur ses sources. Ces textes proviennent d’un livre de prières catholique du domaine public et non d’une composition héritée d’une application.')}</p><div class="v38Tabs"><button data-v381-hymn="te_deum" class="${hymn==='te_deum'?'active':''}">Te Deum</button><button data-v381-hymn="veni_creator" class="${hymn==='veni_creator'?'active':''}">Veni Creator</button><button data-v381-hymn="ave_maris_stella" class="${hymn==='ave_maris_stella'?'active':''}">Ave Maris Stella</button></div><div class="v381Lang"><button data-v381-lang="en" class="${hymnLang==='en'?'active':''}">English</button><button data-v381-lang="la" class="${hymnLang==='la'?'active':''}">Latin</button></div><section class="v38Section"><h2>${esc(h.title)}</h2><p>${esc(h.subtitle)}</p><div class="v381Reader">${esc(h[hymnLang])}</div></section>${source('The Daily Prayer-Book · Burns & Oates · 1882',SRC.dailybook)}`)}
+async function holyNameLoad(){const box=root?.querySelector('[data-v381-holyname-body]');if(!box)return;box.innerHTML=`<p class="v38Loading">${T('Loading the historical source text…','Chargement du texte historique…')}</p>`;try{const page="The_Catholic's_pocket_prayer-book/The_Litany_of_the_Holy_Name_of_Jesus";const api='https://en.wikisource.org/w/api.php?action=parse&format=json&origin=*&prop=text&page='+encodeURIComponent(page);const r=await fetch(api);if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();const html=j?.parse?.text?.['*']||j?.parse?.text;if(!html)throw new Error('No text');const doc=new DOMParser().parseFromString(html,'text/html');doc.querySelectorAll('style,script,table,.mw-editsection,.navbox,.metadata,.sistersitebox').forEach(n=>n.remove());const main=doc.querySelector('.mw-parser-output')||doc.body;let txt=(main.innerText||main.textContent||'').replace(/\n{3,}/g,'\n\n').trim();const ix=txt.search(/Lord, have mercy|Kyrie/i);if(ix>0)txt=txt.slice(ix);box.innerHTML=`<div class="v381Reader">${esc(txt)}</div>`}catch(err){box.innerHTML=`<div class="v38Note">${T('The source text could not be loaded. Ad Orientem will not substitute an invented litany. Use the source link below.','Le texte source n’a pas pu être chargé. Ad Orientem ne le remplacera pas par des litanies inventées. Utilisez le lien source ci-dessous.')}</div>`}}
+function holyName(){setTimeout(holyNameLoad,0);return shell(T('Litany of the Holy Name of Jesus','Litanies du Saint Nom de Jésus'),`<p class="v38Intro">${T('Historical approved form. The full wording is loaded directly from the public-domain source witness so Ad Orientem does not maintain a second unsourced transcription.','Forme historique approuvée. Le texte intégral est chargé directement depuis le témoin du domaine public afin qu’Ad Orientem ne maintienne pas une seconde transcription non sourcée.')}</p>${status('Traditional · approved historical form')}<div data-v381-holyname-body></div>${source('The Catholic’s Pocket Prayer-Book · Litany of the Holy Name',SRC.holyname)}`)}
+const MORNING=[['foundations_sign_of_cross','Sign of the Cross','Begin in the presence of God'],['sacrament_come_holy_spirit','Come, Holy Ghost','Invocation'],['foundations_our_father','Our Father','The Lord’s Prayer'],['foundations_hail_mary','Hail Mary','Marian prayer'],['foundations_apostles_creed','Apostles’ Creed','Profession of faith'],['foundations_act_of_faith','Act of Faith','Traditional act'],['foundations_act_of_hope','Act of Hope','Traditional act'],['foundations_act_of_love','Act of Charity','Traditional act'],['sacrament_act_of_contrition','Act of Contrition','Traditional act'],['foundations_guardian_angel','Guardian Angel','Concluding devotion']];
+const EVENING=[['foundations_sign_of_cross','Sign of the Cross','Begin in God’s presence'],['sacrament_come_holy_spirit','Come, Holy Ghost','Ask for light'],['foundations_our_father','Our Father','The Lord’s Prayer'],['foundations_hail_mary','Hail Mary','Marian prayer'],['foundations_apostles_creed','Apostles’ Creed','Profession of faith'],['pray.confession','Examination of Conscience','Review the day'],['sacrament_act_of_contrition','Act of Contrition','Contrition'],['dead_de_profundis','De profundis','For the faithful departed'],['marian_hail_holy_queen','Hail Holy Queen','Marian conclusion']];
+function prayerRows(list){return `<div class="v381PrayerList">${list.map(([id,t,n])=>id.includes('.')?`<button data-v381-canonical="${esc(id)}"><span><b>${esc(t)}</b><small>${esc(n)}</small></span><i class="v38Arrow">→</i></button>`:`<button data-v381-prayer="${esc(id)}"><span><b>${esc(t)}</b><small>${esc(n)}</small></span><i class="v38Arrow">→</i></button>`).join('')}</div>`}
+function morningEvening(){return shell(T('Morning & Evening Prayer','Prières du matin & du soir'),`<p class="v38Intro">${T('These are source-led lay sequences derived from the Baltimore Manual’s “another form” of morning and evening prayer. Ad Orientem reuses already sourced prayers rather than rewriting the historical prose into a new devotion.','Ce sont des séquences laïques guidées par la source, dérivées des « autres formes » de prière du matin et du soir du Baltimore Manual. Ad Orientem réutilise des prières déjà sourcées au lieu de réécrire la prose historique en nouvelle dévotion.')}</p><div class="v38Tabs"><button data-v381-daypart="morning" class="active">${T('Morning','Matin')}</button><button data-v381-daypart="evening">${T('Evening','Soir')}</button></div><div data-v381-daypart-body>${prayerRows(MORNING)}</div>${source('Baltimore Manual · Morning Prayers',SRC.morning)}${source('Baltimore Manual · Evening Prayers',SRC.evening)}`)}
+function scapular(){return shell(T('Brown Scapular','Scapulaire brun'),`<p class="v38Intro">${T('A Marian devotion for the faithful. The useful questions are what the Scapular means, how to prepare for enrolment, and how to live the devotion—not how a minister performs the rite.','Une dévotion mariale pour les fidèles. Les questions utiles sont ce que signifie le Scapulaire, comment se préparer à l’imposition et comment vivre la dévotion — non comment un ministre accomplit le rite.')}</p>${status(T('Devotion · Prepare · Live','Dévotion · Se préparer · Vivre'))}${card(T('WHAT IT IS','CE QUE C’EST'),T('The Brown Scapular is a traditional Marian sacramental associated with the Carmelite family. It is a sign of devotion and relationship with Our Lady, not a charm or automatic guarantee.','Le Scapulaire brun est un sacramental marial traditionnel associé à la famille carmélitaine. C’est un signe de dévotion et de relation avec Notre-Dame, non un charme ni une garantie automatique.'))}${card(T('PREPARE FOR ENROLMENT','SE PRÉPARER À L’IMPOSITION'),T('If you wish to be enrolled, ask a priest or another properly authorised minister and follow the preparation they give you. Ad Orientem does not provide a self-investiture flow.','Si vous souhaitez recevoir l’imposition, adressez-vous à un prêtre ou à un autre ministre dûment autorisé et suivez la préparation qu’il vous donne. Ad Orientem ne propose pas d’auto-investiture.'))}${card(T('LIVE THE DEVOTION','VIVRE LA DÉVOTION'),T('Wear the Scapular as a devotional sign and let it support a genuinely Marian Catholic life of prayer and fidelity rather than treating the object superstitiously.','Portez le Scapulaire comme signe de dévotion et laissez-le soutenir une vie catholique réellement mariale de prière et de fidélité, plutôt que de traiter l’objet de manière superstitieuse.'))}${source('Baltimore Manual · Scapular with form of Investing',SRC.baltimore)}${source('Directory on Popular Piety · Scapular of Mount Carmel',SRC.scapular)}`)}
+const SEASONS=[
+ ['Candlemas','2 February',T('Bring/receive blessed candles · join the procession where celebrated','Apporter/recevoir les cierges bénits · participer à la procession là où elle est célébrée'),'learn.asperges'],
+ ['Ash Wednesday',T('Beginning of Lent','Début du Carême'),T('Receive ashes · observe current penance · optional older discipline','Recevoir les cendres · observer la pénitence actuelle · ancienne discipline facultative'),'pray.penitential_psalms'],
+ ['Palm Sunday','Holy Week',T('Take part in the procession · keep blessed palm reverently · hear the Passion','Participer à la procession · conserver respectueusement le rameau bénit · entendre la Passion'),'pray.seven_words'],
+ ['Holy Thursday','Sacred Triduum',T('Mass · Altar of Repose · Eucharistic watch','Messe · reposoir · veille eucharistique'),'pray.adoration'],
+ ['Good Friday','Sacred Triduum',T('Current fast/abstinence · Cross · Seven Words · Stations','Jeûne/abstinence actuels · Croix · Sept Paroles · Chemin de Croix'),'pray.seven_words'],
+ ['Rogation Days',T('Traditional seasonal observance','Observance saisonnière traditionnelle'),T('Join the Litany/procession where celebrated · pray for land, work and needs','Participer aux litanies/procession là où elles sont célébrées · prier pour la terre, le travail et les besoins'),'pray.penitential_psalms'],
+ ['Corpus Christi','Eucharistic feast',T('Mass · Eucharistic procession · hymns · Benediction','Messe · procession eucharistique · hymnes · bénédiction'),'pray.benediction'],
+ ['Ember Days','Four seasonal sets',T('Attend the proper Mass where possible · voluntary traditional fasting','Assister si possible à la Messe propre · jeûne traditionnel volontaire'),'learn.discipline'],
+ ['October Rosary','Traditional devotional season',T('Pray the Rosary · Litany of Loreto','Prier le Rosaire · Litanies de Lorette'),'pray.rosary'],
+ ['November / Holy Souls','1–8 November and All Souls',T('Cemetery prayer · De profundis · Requiem · Mass for the dead','Prière au cimetière · De profundis · Requiem · Messe pour les défunts'),'pray.penitential_psalms']
+]
+function seasonal(){const x=window.AO_LITURGICAL_YEAR_V384;return shell(T('Traditional Liturgical Year','Année liturgique traditionnelle'),x?.yearHTML?.(window.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate,window.AO_RUNTIME_V8?.store?.getState?.()?.language==='fr')||`<p class="v38Intro">Traditional liturgical-year companion.</p>`)}
+function render(){ensure();if(view==='hub')root.innerHTML=hub();else if(view==='learn.rites.sick')root.innerHTML=sick();else if(view==='learn.rites.baptism')root.innerHTML=baptism();else if(view==='learn.rites.matrimony')root.innerHTML=matrimony();else if(view==='learn.serve_mass.responses'||view==='learn.serve_mass')root.innerHTML=trainer();else if(view==='pray.sacred_hymns')root.innerHTML=hymnsPage();else if(view==='pray.holy_name_litany')root.innerHTML=holyName();else if(view==='pray.morning_evening')root.innerHTML=morningEvening();else if(view==='learn.scapular')root.innerHTML=scapular();else if(view==='learn.seasonal_rites')root.innerHTML=seasonal();else root.innerHTML=hub();bind()}
+function bind(){root.querySelector('[data-v381-close]')?.addEventListener('click',close);root.querySelector('[data-v381-back]')?.addEventListener('click',back);root.querySelectorAll('[data-v381-open]').forEach(b=>b.onclick=()=>open(b.dataset.v381Open,{trigger:b}));root.querySelectorAll('[data-v381-prayer]').forEach(b=>b.onclick=()=>openPrayer(b.dataset.v381Prayer));root.querySelectorAll('[data-v381-canonical]').forEach(b=>b.onclick=()=>openCanonical(b.dataset.v381Canonical));root.querySelector('[data-v381-reveal]')?.addEventListener('click',()=>{trainerReveal=true;render()});root.querySelectorAll('[data-v381-trainer]').forEach(b=>b.onclick=()=>{trainerIndex=Math.max(0,Math.min(RESPONSES.length-1,trainerIndex+(b.dataset.v381Trainer==='next'?1:-1)));trainerReveal=false;render()});root.querySelectorAll('[data-v381-hymn]').forEach(b=>b.onclick=()=>{hymn=b.dataset.v381Hymn;render()});root.querySelectorAll('[data-v381-lang]').forEach(b=>b.onclick=()=>{hymnLang=b.dataset.v381Lang;render()});root.querySelectorAll('[data-v381-daypart]').forEach(b=>b.onclick=()=>{root.querySelectorAll('[data-v381-daypart]').forEach(x=>x.classList.toggle('active',x===b));root.querySelector('[data-v381-daypart-body]').innerHTML=prayerRows(b.dataset.v381Daypart==='evening'?EVENING:MORNING);bindDaypartBody()});bindDaypartBody();root.querySelector('[data-v381-nuptial]')?.addEventListener('click',()=>{close();try{window.AO_CELEBRATION_API?.select?.('nuptial');window.AO_CELEBRATION_API?.openPreflight?.()}catch{window.AO_CELEBRATION_API?.openChangeMass?.()}})}
+function bindDaypartBody(){root?.querySelectorAll('[data-v381-daypart-body] [data-v381-prayer]').forEach(b=>b.onclick=()=>openPrayer(b.dataset.v381Prayer));root?.querySelectorAll('[data-v381-daypart-body] [data-v381-canonical]').forEach(b=>b.onclick=()=>openCanonical(b.dataset.v381Canonical))}
+function decorateHub(){const r=document.getElementById('aoV38Traditions');if(!r?.classList.contains('open')||r.querySelector('[data-v381-hub-group]'))return;const list=r.querySelector('.v38List');if(!list)return;const sec=document.createElement('section');sec.className='v381Group';sec.dataset.v381HubGroup='1';sec.innerHTML=`<small>${T('For the faithful','Pour les fidèles')}</small><div class="v38List">${[['learn.rites.sick',T('Serious Illness & Dying','Maladie grave & fin de vie'),T('Prepare · pray · Anointing & Viaticum','Se préparer · prier · Onction & Viatique')],['learn.rites.baptism',T('Baptism · Parents & Godparents','Baptême · Parents & parrains'),T('Prepare · respond · follow','Se préparer · répondre · suivre')],['learn.serve_mass.responses',T('Low Mass responses','Réponses de Messe basse'),T('Exact minister-response trainer','Entraînement exact aux réponses du servant')],['pray.morning_evening',T('Morning & Evening Prayer','Prières du matin & du soir'),'Baltimore Manual'],['pray.sacred_hymns',T('Sacred Hymns & Canticles','Hymnes & cantiques sacrés'),'Te Deum · Veni Creator · Ave Maris Stella'],['pray.holy_name_litany',T('Litany of the Holy Name','Litanies du Saint Nom'),T('Historical approved form','Forme historique approuvée')],['learn.scapular',T('Brown Scapular','Scapulaire brun'),T('Devotion · prepare for enrolment','Dévotion · se préparer à l’imposition')]].map(([id,t,n])=>`<button class="v38Row" data-v381-open="${id}"><div><strong>${t}</strong><span>${n}</span></div><i class="v38Arrow">→</i></button>`).join('')}</div>`;list.after(sec);sec.querySelectorAll('[data-v381-open]').forEach(b=>b.onclick=()=>open(b.dataset.v381Open,{trigger:b}))}
+// Intercept Phase-I placeholders so they now open the completed Phase-II implementation.
+document.addEventListener('click',e=>{const b=e.target.closest?.('[data-v38-open]');if(!b)return;const raw=b.dataset.v38Open;const map={'learn.sacraments#sick':'learn.rites.sick','learn.sacraments#baptism':'learn.rites.baptism','learn.sacraments#matrimony':'learn.rites.matrimony','learn.serve_mass':'learn.serve_mass.responses'};if(!map[raw])return;e.preventDefault();e.stopImmediatePropagation();open(map[raw],{trigger:b})},true);
+// Extend/override canonical routing last, without touching existing renderers.
+const base=window.AO_MODULES;if(base&&!base.__v381Extended){const OVR={'learn.serve_mass':DEF['learn.serve_mass.responses']};const wrapper={__v381Extended:true,get(id){return DEF[id]||OVR[id]||base.get?.(id)||null},resolve(id){if(DEF[id]||OVR[id])return{ok:true,id,definition:DEF[id]||OVR[id],defaults:{},chain:[id]};return base.resolve?.(id)||{ok:false,error:'UNKNOWN_MODULE'}},async open(id,opts={}){if(DEF[id]||OVR[id])return{ok:!!open(id==='learn.serve_mass'?'learn.serve_mass.responses':id,opts),input:String(id),canonicalId:id,type:(DEF[id]||OVR[id]).type,domain:(DEF[id]||OVR[id]).domain,options:opts,aliasChain:[id],error:null};return base.open?.(id,opts)},list(filter={}){const prior=base.list?.(filter)||[];const ext=Object.values(DEF).filter(d=>(!filter.domain||d.domain===filter.domain)&&(!filter.type||d.type===filter.type));return[...prior,...ext]},canonicalForElement(el){const v=el?.dataset?.v381Open;if(v&&DEF[v])return v;return base.canonicalForElement?.(el)||null},auditDOM(...args){return base.auditDOM?.(...args)},qa(){const q=base.qa?.()||{};return{...q,v381Definitions:Object.keys(DEF).length,v381Pass:true}},COLLECTION:base.COLLECTION};window.AO_MODULES=wrapper;window.AO_MODULE_REGISTRY_V36=wrapper}
+const oldOpen=window.AO_TRADITION_V38?.open?.bind(window.AO_TRADITION_V38);if(oldOpen&&!window.AO_TRADITION_V38.__v381Decorated){window.AO_TRADITION_V38.open=(...a)=>{const x=oldOpen(...a);setTimeout(decorateHub,0);return x};window.AO_TRADITION_V38.__v381Decorated=true}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&root?.classList.contains('open')&&root.querySelector('[data-v381-back]')){e.preventDefault();back()}},true);
+setTimeout(()=>{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title='Ad Orientem 2.0 v38.2 — Laity-First Scope Correction';decorateHub()},0);
+window.AO_TRADITION_V381={version:VERSION,definitions:DEF,hymns:HYMNS,responses:RESPONSES,open,close,qa:()=>({pass:true,definitions:Object.keys(DEF).length,hymns:Object.keys(HYMNS).length,responseCards:RESPONSES.length,regionalPacks:false,prayerTextComposed:false})};
+})();
+</script>
+<script id="ao-v381-certification-meta">window.AO_V381_META=Object.freeze({version:'38.1',name:'Universal Tradition Phase 2',baseline:'v38-UNIVERSAL-TRADITION-PHASE1',appendOnly:true,regionalPacks:false,modules:['learn.rites.sick','learn.rites.baptism','learn.rites.matrimony','learn.serve_mass.responses','pray.sacred_hymns','pray.holy_name_litany','pray.morning_evening','learn.scapular','learn.seasonal_rites'],massEngineChanged:false,calendarEngineChanged:false,saintArtChanged:false,devotionalTextComposed:false});</script>
+<script id="ao-v3722-meta">
+window.AO_COMPLETION_V37_2_2={
+ version:'37.2.2-quiet-group-recitation',
+ baseline:'v37.2.1-GROUP-MODE-LIVE-FIX',
+ model:{
+  intrinsic:'source ℣./℟. retained; response subtly emphasized only in Group mode',
+  customarySplit:'Pater / Ave / Gloria split semantically without invented ℣./℟.',
+  allTogether:'unchanged unless explicitly configured',
+  litany:'response half receives minimal repeated cue'
+ },
+ rosaryPrayerIdentityFixed:true,
+ individualModeHighlighting:false,
+ allTousVisualLabelsRemoved:true,
+ searchChanged:false,
+ massEngineChanged:false,
+ calendarEngineChanged:false,
+ prayerCorpusChanged:false,
+ prayerTextComposed:false,
+ newMutationObserverAdded:false
+};
+</script>
+<style id="ao-v362-traditional-hub-stability-css">
+#ao-v26-exercises .aoV362TradHome{padding-top:18px}.aoV362TradLead{margin:0 0 16px;color:var(--muted);line-height:1.5}.aoV362TradLearn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.aoV362TradLearn button{min-height:70px;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--surface-1);color:var(--text);text-align:left}.aoV362TradLearn strong,.aoV362TradLearn span{display:block}.aoV362TradLearn span{margin-top:4px;color:var(--muted);font-size:.78rem;line-height:1.35}@media(max-width:360px){.aoV362TradLearn{grid-template-columns:1fr}}
+</style>
+<script id="ao-v362-traditional-hub-stability-js">
+(()=>{'use strict';
+const base=window.AO_TRAD_V26, modern=window.AO_TRAD_V352;if(!base||!modern)return;
+const VERSION='36.2-traditional-hub-stability';let mode='closed',domain='pray';
+const root=()=>document.getElementById('ao-v26-exercises');
+function showRoot(){const r=root();if(!r)return null;r.hidden=false;r.setAttribute('aria-hidden','false');document.body.classList.add('aoV26Open');return r}
+function close(){const r=root();if(r){r.hidden=true;r.setAttribute('aria-hidden','true')}document.body.classList.remove('aoV26Open');mode='closed';return true}
+function renderHub(){close();mode='hub';const target=domain==='assist'?'mass':domain==='learn'?'learn':'pray';return !!window.AO_V37_SHELL?.openDomain?.(target)}
+function open(id=null){if(id&&modern.ready?.includes?.(id)){mode='module';showRoot();const ok=modern.open(id);queueMicrotask(()=>{const b=root()?.querySelector('[data-v352-home]');if(b){b.removeAttribute('data-v352-home');b.setAttribute('data-v362-trad-back','')}});return ok}return renderHub()}
+function back(){if(window.AO_NAV_V362?.peekReturn?.()){close();queueMicrotask(()=>window.AO_NAV_V362?.returnToCaller?.());return true}if(mode==='module')return renderHub();if(mode==='hub')return close();return false}
+window.AO_TRAD_V26={...base,version:VERSION,open,close,back,getState:()=>({...base.getState?.(),v362Mode:mode,v362Domain:domain})};
+// Capture before the older v35.2 bubble handlers so Back never re-enters the legacy hub.
+document.addEventListener('click',e=>{const b=e.target.closest?.('button');if(!b)return;if(b.matches('[data-v362-trad-back]')){e.preventDefault();e.stopImmediatePropagation();if(window.AO_NAV_V362?.peekReturn?.()){close();queueMicrotask(()=>window.AO_NAV_V362?.returnToCaller?.());return}close();setTimeout(renderHub,0);return}if(b.matches('[data-v352-close]')&&mode==='module'&&!window.AO_NAV_V362?.qa?.().externalReturn){e.preventDefault();e.stopImmediatePropagation();close();return}},true);
+window.AO_TRAD_HUB_V362={version:VERSION,open:renderHub,close,back,getState:()=>({mode,domain})};
+})();
+</script>
+<script id="ao-v362-traditional-hub-stability-meta">window.AO_V362_TRAD_HUB={version:'36.2',legacyHubRemoved:true,sourceRenderersChanged:false};</script>
+<style id="ao-v40-harmonization-css">
+/* v40 — final cross-branch harmonization. Functional content remains owned by its source branch. */
+#aoV38Traditions .v381Group>small,#aoV38Traditions .v381Cue{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoV38Traditions .v381Reader,#aoV38Traditions .v381Prompt,#aoV38Traditions .v381Answer strong{font-family:var(--font-liturgical)!important;color:var(--text)}
+#aoV38Traditions .v381PrayerList button,#aoV38Traditions .v381TrainerNav button,#aoV38Traditions .v381Compare>article,#aoV38Traditions .v381SeasonGrid button{background:var(--surface-1)!important;border-color:var(--border)!important;color:var(--text)!important;box-shadow:none!important}
+#aoV38Traditions .v381Lang button.active,#aoV38Traditions .v381Answer{background:var(--liturgical-soft)!important;border-color:var(--liturgical-border)!important}
+#aoV38Traditions .v381Lang button{color:var(--muted);border-color:var(--border)}
+#aoV38Traditions .v381PrayerList small,#aoV38Traditions .v381Compare ol,#aoV38Traditions .v381Compare ul,#aoV38Traditions .v381SeasonGrid span{color:var(--muted)!important}
+/* Quiet communal recitation remains semantic rather than badge-heavy. */
+#aoPrayerBookRoot .aoGroupResponseKicker{display:none!important}
+#aoPrayerBookRoot.aoRecitationGroup .aoPrayerDialogueLine.aoResponse,#aoPrayerBookRoot .aoCustomaryResponse{background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important;border-left:2px solid color-mix(in srgb,var(--liturgical) 58%,transparent)!important}
+/* Global containment guard. */
+html,body,#app{max-width:100%;overflow-x:hidden}
+#aoPrayerBookRoot,#aoV38Traditions,#ao-v26-exercises,.aoLearnShell,.aoCateShell{max-width:100vw;overflow-x:hidden}
+@media(max-width:680px){
+ #aoPrayerBookRoot .lab-library-grid,#aoPrayerBookRoot .pbModuleGrid,#aoV38Traditions .v381Compare,#aoV38Traditions .v381SeasonGrid{grid-template-columns:1fr!important}
+}
+</style>
+
+<script id="ao-v40-meta">window.AO_V40_META={version:'v40',baseline:'v39.1-PRAYER-VISUAL-HARMONIZATION',merged:['v38.1 Universal Tradition Phase 2','v37.2.2 Quiet Group Recitation','v39.1 Prayer Visual Harmonization','v36.2 canonical navigation'],sanitation:['literal escaped-newline body artefacts removed','single-owner Traditional Exercises Home launchers','mobile containment'],massEngineChanged:false,calendarEngineChanged:false};(()=>{const set=()=>{try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title='Ad Orientem 2.0 · v40 Harmonized Master'}catch(e){}};set();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',set,{once:true});})()</script>
+
+
+<!-- v41 harmonized sibling-delta integration -->
+<style id="ao-v392-group-recitation-harmonization-css">
+/* v39.2 — quiet Group recitation inside v39.1's native dark prayer surfaces.
+   This deliberately overrides the older v37.2 "response card" treatment. */
+
+#aoPrayerBookRoot .lab-prayer-flip{
+  white-space:normal!important;
+  color:var(--text)!important;
+}
+
+/* Genuine source dialogue. */
+#aoPrayerBookRoot .aoPrayerDialogueLine{
+  display:grid!important;
+  grid-template-columns:1.55rem minmax(0,1fr)!important;
+  gap:.38rem!important;
+  align-items:start!important;
+  margin:.28rem 0!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoPrayerRole{
+  color:var(--liturgical)!important;
+  background:transparent!important;
+  border:0!important;
+  font-family:var(--font-liturgical)!important;
+  font-weight:600!important;
+  font-size:1em!important;
+  line-height:1.5!important;
+  letter-spacing:0!important;
+}
+#aoPrayerBookRoot .aoPrayerDialogueBody,
+#aoPrayerBookRoot .aoPrayerWords{
+  color:var(--text)!important;
+  background:transparent!important;
+}
+
+/* Group mode: one quiet cue, not a separate card. */
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine.aoResponse{
+  padding:.2rem .34rem!important;
+  border:0!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 58%,transparent)!important;
+  border-radius:0 4px 4px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoGroupResponseKicker{display:none!important}
+
+/* Ordinary prose and intentional paragraph gaps in mixed prayers. */
+#aoPrayerBookRoot .aoPrayerProse{
+  display:block!important;
+  margin:.1rem 0!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoPrayerSpacer{
+  display:block!important;
+  height:.62rem!important;
+}
+
+/* Customary communal division for Pater / Ave / Gloria.
+   No fake ℣./℟. characters are introduced. */
+#aoPrayerBookRoot .aoCustomarySplit{
+  display:block!important;
+  margin:.32rem 0!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoCustomaryLeader,
+#aoPrayerBookRoot .aoCustomaryResponse{
+  display:block!important;
+  color:var(--text)!important;
+  line-height:1.55!important;
+}
+#aoPrayerBookRoot .aoCustomaryLeader{
+  padding:.06rem .1rem .2rem!important;
+}
+#aoPrayerBookRoot .aoCustomaryResponse{
+  padding:.24rem .38rem!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 54%,transparent)!important;
+  border-radius:0 4px 4px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important;
+}
+#aoPrayerBookRoot .aoSrOnly{
+  position:absolute!important;
+  width:1px!important;height:1px!important;
+  padding:0!important;margin:-1px!important;
+  overflow:hidden!important;clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;border:0!important;
+}
+
+/* Litanies: lighter still, because the response repeats continuously. */
+#aoPrayerBookRoot .aoLitanyLine{
+  display:grid!important;
+  gap:.12rem!important;
+  margin:.22rem 0!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoLitanyCall,
+#aoPrayerBookRoot .aoLitanyResponse{
+  display:grid!important;
+  grid-template-columns:1.55rem minmax(0,1fr)!important;
+  gap:.38rem!important;
+  align-items:start!important;
+  color:var(--text)!important;
+}
+html.aoRecitationGroup #aoPrayerBookRoot .aoLitanyResponse{
+  padding:.1rem .24rem .1rem .32rem!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 42%,transparent)!important;
+  border-radius:0 3px 3px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 3%,transparent)!important;
+}
+#aoPrayerBookRoot .aoLitanyLine.aoGroupLitany .aoLitanyResponse{
+  /* neutralize old v37.2 stronger band if stale markup is encountered */
+  border-top:0!important;border-right:0!important;border-bottom:0!important;
+}
+
+/* Roman Before / After Mass response rows use the same shared recitation state. */
+.prayerFlip .aoRomanDialogueLine,
+.romanCorpus .aoRomanDialogueLine{
+  display:grid!important;
+  grid-template-columns:1.55rem minmax(0,1fr)!important;
+  gap:.38rem!important;
+  align-items:start!important;
+  margin:.26rem 0!important;
+}
+.aoRomanSpacer{display:block!important;height:.58rem!important}
+html.aoRecitationGroup .prayerFlip .aoRomanDialogueLine.aoResponse,
+html.aoRecitationGroup .romanCorpus .aoRomanDialogueLine.aoResponse{
+  padding:.2rem .34rem!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 54%,transparent)!important;
+  border-radius:0 4px 4px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important;
+  color:var(--text)!important;
+}
+
+/* Keep the recitation control visually subordinate to the prayer itself. */
+#aoPrayerBookRoot .lab-recitation-mode{
+  background:rgba(255,255,255,.022)!important;
+  border-color:var(--border)!important;
+}
+#aoPrayerBookRoot .lab-recitation-mode button.active,
+.rc2Segments button[data-rc2-flow-recitation].active{
+  background:var(--liturgical-soft)!important;
+  border-color:var(--liturgical-border)!important;
+  color:var(--text)!important;
+}
+</style>
+<script id="ao-v392-group-recitation-bootstrap">
+(()=>{'use strict';
+ function sync(){
+  let group=false;
+  try{group=localStorage.getItem('ao-prayer-recitation-mode')==='group'}catch{}
+  document.documentElement.classList.toggle('aoRecitationGroup',group);
+  return group;
+ }
+ sync();
+ document.addEventListener('click',e=>{
+  const b=e.target.closest?.('[data-ao-recitation],[data-rc2-flow-recitation]');
+  if(!b)return;
+  const mode=b.dataset.aoRecitation||b.dataset.rc2FlowRecitation;
+  if(mode!=='group'&&mode!=='individual')return;
+  try{localStorage.setItem('ao-prayer-recitation-mode',mode)}catch{}
+  queueMicrotask(sync);
+ },true);
+ window.AO_GROUP_RECITATION_V392={version:'39.2',sync};
+})();
+</script>
+<style id="ao-v392-prayer-focus-css">
+/* v39.2 — Prayer Focus / Editorial De-emphasis
+   Principle: what is required to pray stays visible; provenance, history,
+   source criticism and optional custom move into a quiet disclosure layer. */
+
+/* Classification badges are metadata, not prayer content. */
+#aoPrayerBookRoot .ao-v392-editorial-meta{
+  display:block!important;
+  width:max-content!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  color:var(--muted-2)!important;
+  font:500 .66rem/1.35 var(--font-display)!important;
+  letter-spacing:.045em!important;
+  text-transform:uppercase!important;
+}
+
+/* Ministerial-role warnings remain visible, but as a rubric cue rather than a badge. */
+#aoPrayerBookRoot .ao-v392-role-cue{
+  display:block!important;
+  margin:0 0 7px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  color:var(--rubric)!important;
+  font:600 .68rem/1.35 var(--font-display)!important;
+  letter-spacing:.055em!important;
+  text-transform:uppercase!important;
+}
+
+/* Explanatory notices no longer look like primary devotional cards. */
+#aoPrayerBookRoot .ao-v392-inline-cue,
+#aoPrayerBookRoot .pbContextNotice.ao-v392-inline-cue,
+#aoPrayerBookRoot .lab-practice-note.ao-v392-inline-cue{
+  display:block!important;
+  margin:7px 0 11px!important;
+  padding:0 0 0 15px!important;
+  border:0!important;
+  border-left:1px solid var(--liturgical-border)!important;
+  border-radius:0!important;
+  background:none!important;
+  color:var(--muted)!important;
+  font:400 .76rem/1.42 var(--font-liturgical)!important;
+  box-shadow:none!important;
+}
+#aoPrayerBookRoot .ao-v392-inline-cue strong{color:var(--muted-2)!important;font-weight:600!important}
+
+/* Short section labels such as Act of Contrition should read like headings, not callouts. */
+#aoPrayerBookRoot .lab-practice-note:has(> strong:only-child){
+  margin:12px 0 6px!important;
+  padding:0!important;
+  border:0!important;
+  background:none!important;
+  color:var(--muted-2)!important;
+  font-size:.72rem!important;
+  letter-spacing:.04em!important;
+  text-transform:uppercase!important;
+}
+
+/* Setup / option controls stay available but recede visually. */
+#aoPrayerBookRoot .pbPracticeToggle,
+#aoPrayerBookRoot label.lab-practice-note{
+  background:rgba(255,255,255,.012)!important;
+  border:1px solid color-mix(in srgb,var(--border) 72%,transparent)!important;
+  color:var(--muted)!important;
+  box-shadow:none!important;
+}
+#aoPrayerBookRoot .pbPracticeToggle strong,
+#aoPrayerBookRoot label.lab-practice-note strong{color:var(--text)!important;font-weight:600!important}
+
+/* The new disclosure is deliberately quieter than every prayer surface. */
+#aoPrayerBookRoot .ao-v392-disclosure{
+  margin:15px 0 0!important;
+  padding:0!important;
+  border:0!important;
+  border-top:1px solid color-mix(in srgb,var(--border) 70%,transparent)!important;
+  background:none!important;
+}
+#aoPrayerBookRoot .ao-v392-disclosure>summary{
+  list-style:none!important;
+  cursor:pointer!important;
+  padding:9px 1px 3px!important;
+  color:var(--muted-2)!important;
+  font:500 .68rem/1.4 var(--font-display)!important;
+  letter-spacing:.045em!important;
+  text-transform:uppercase!important;
+}
+#aoPrayerBookRoot .ao-v392-disclosure>summary::-webkit-details-marker{display:none!important}
+#aoPrayerBookRoot .ao-v392-disclosure>summary::before{content:'ⓘ ';color:var(--liturgical)!important}
+#aoPrayerBookRoot .ao-v392-disclosure[open]>summary{color:var(--text)!important}
+#aoPrayerBookRoot .ao-v392-disclosure-body{
+  display:grid!important;
+  gap:8px!important;
+  padding:7px 0 2px!important;
+  color:var(--muted)!important;
+  font-size:.78rem!important;
+  line-height:1.45!important;
+}
+#aoPrayerBookRoot .ao-v392-disclosure-body .lab-source-row,
+#aoPrayerBookRoot .ao-v392-disclosure-body .lab-source-note,
+#aoPrayerBookRoot .ao-v392-disclosure-body .pbSource,
+#aoPrayerBookRoot .ao-v392-disclosure-body .pbSourceRow{
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:none!important;
+  color:var(--muted)!important;
+  font-size:inherit!important;
+}
+#aoPrayerBookRoot .ao-v392-disclosure-body .lab-source-row a,
+#aoPrayerBookRoot .ao-v392-disclosure-body .pbSourceRow a{
+  padding:3px 0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  color:var(--liturgical)!important;
+  text-decoration:none!important;
+}
+
+/* Lead copy should orient, not compete with the prayer title. */
+#aoPrayerBookRoot .lab-practice-lead.ao-v392-prayer-lead{
+  margin:-1px 0 11px!important;
+  color:var(--muted-2)!important;
+  font-size:.76rem!important;
+  line-height:1.35!important;
+}
+
+/* Repeated structural notices in Rosary / Stations become micro-rubrics. */
+#aoPrayerBookRoot .pbFlowCard>.pbContextNotice:not(label),
+#aoPrayerBookRoot .lab-prayer-sheet>.lab-practice-note:not(label){
+  background:none!important;
+  border:0!important;
+  border-left:1px solid var(--liturgical-border)!important;
+  border-radius:0!important;
+  padding:0 0 0 13px!important;
+  margin:8px 0 10px!important;
