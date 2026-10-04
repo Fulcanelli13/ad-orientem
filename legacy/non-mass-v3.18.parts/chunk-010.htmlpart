@@ -1,0 +1,500 @@
+        ? `<div class="statusCard warning contentIntegrity"><strong>${vm.language === 'fr' ? 'Traduction du Propre incomplète' : 'Proper translation incomplete'}</strong><span>${esc(`${langCoverage.available}/${langCoverage.expected} · ${langCoverage.missing.join(', ')}`)}</span></div>`
+        : '';
+    const week = vm.week.map(cell => `<button class="dayCell${cell.selected ? ' selected' : ''}${cell.today ? ' today' : ''}" data-date="${esc(cell.date)}" aria-pressed="${cell.selected}"><span>${esc(cell.day)}</span><b>${esc(cell.number)}</b></button>`).join('');
+    const meta = [vm.rank, vm.colour ? `${tr('colour')} · ${vm.colour}` : '', vm.formularyLabel, vm.commemorationLabel].filter(Boolean)
+        .map(item => `<span>${esc(item)}</span>`).join('');
+    const formularyChooser = vm.formularies.length ? `<div class="formularyChooser" role="group" aria-label="${esc(tr('formulary'))}">${vm.formularies.map(item => `<button data-formulary="${item.index}" class="${item.selected ? 'selected' : ''}" aria-pressed="${item.selected}">${esc(item.label)}</button>`).join('')}</div>` : '';
+    const properArt = globalThis.AO_PHASE1_ART?.homeMarkup?.(state, vm.language) || '';
+    return `
+    <main class="homeScreen" data-home-language="${vm.language}">
+      <header class="homeHeader">
+        <div class="brandRow">
+          <div class="brandMark aoBrandEmblem" aria-hidden="true"></div>
+          <div class="brandText"><div class="brandName">${esc(tr('brand'))}</div><div class="brandSub">${esc(tr('subtitle'))}</div></div>
+          <div class="languageSwitch" role="group" aria-label="Language">
+            <button data-language="en" class="${vm.language === 'en' ? 'active' : ''}">${esc(tr('english'))}</button>
+            <button data-language="fr" class="${vm.language === 'fr' ? 'active' : ''}">${esc(tr('french'))}</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="celebrationBlock">
+        <div class="aoLiturgicalDayKicker">${vm.language === 'fr' ? 'JOUR LITURGIQUE' : 'LITURGICAL DAY'}</div>
+        <h1>${esc(vm.celebration)}</h1>
+        <div class="metaLine">${meta}</div>
+        ${formularyChooser}
+        ${properArt}
+        ${vm.loading ? `<div class="loadingLine"><span></span>${esc(tr('loading'))}</div>` : ''}
+      </section>
+
+      ${status}
+      ${translationStatus}
+      ${state.resume.available ? `<button class="resumeCard" data-resume-mass><span>${vm.language === 'fr' ? 'Messe en cours' : 'Mass in progress'}</span><b>${vm.language === 'fr' ? 'Reprendre' : 'Resume'}</b><small>${esc(globalThis.AO_DISPLAY_DATE?.(state.resume.date)||state.resume.date||'')} · ${state.resume.stepIndex + 1}</small></button>` : ''}
+
+      <section class="homeSection aroundMass">
+        <div class="sectionLabel">${esc(tr('aroundMass'))}</div>
+        <div class="phaseActions">
+          <button class="phaseButton secondary" data-action="prepare"><span>Ⅰ</span><b>${esc(tr('prepare'))}</b></button>
+          <button class="phaseButton primary" data-action="follow"><span>Ⅱ</span><b>${esc(tr('followMass'))}</b></button>
+          <button class="phaseButton secondary" data-action="thanks"><span>Ⅲ</span><b>${esc(tr('giveThanks'))}</b></button>
+        </div>
+      </section>
+
+      <section class="contentCard gospelCard">
+        <div class="cardKicker">${esc(tr('holyGospel'))}</div>
+        ${vm.gospelReference ? `<div class="scriptureRef">${esc(vm.gospelReference)}</div>` : ''}
+        <p>${esc(vm.gospelExcerpt)}</p>
+        <button class="textAction" data-action="gospel">${esc(tr('exploreGospel'))} <span>→</span></button>
+      </section>
+
+      <section class="contentCard aoComingUpV4323 aoHomeStablePlaceholder aoHomeComingUpSkeleton" id="aoComingUpCardV4323" aria-busy="true" data-ao-home-placeholder="coming-up" aria-label="${vm.language === 'fr' ? 'À venir' : 'Coming Up'}">
+        <div class="aoCU23Head"><div class="aoCU23Heading"><span class="aoHomeSkeletonIcon" aria-hidden="true"></span><b>${vm.language === 'fr' ? 'À venir' : 'Coming Up'}</b></div><span class="aoHomeSkeletonShort" aria-hidden="true"></span></div>
+        <div class="aoCU23Rows" aria-hidden="true">
+          <div class="aoCU23Row aoHomeSkeletonRow"><span></span><i></i><b></b><em></em><small></small></div>
+          <div class="aoCU23Row aoHomeSkeletonRow"><span></span><i></i><b></b><em></em><small></small></div>
+          <div class="aoCU23Row aoHomeSkeletonRow"><span></span><i></i><b></b><em></em><small></small></div>
+        </div>
+      </section>
+
+      <section class="contentCard aoCateHomeCard aoDailyCateHome aoHomeStablePlaceholder aoHomeFormationSkeleton" aria-busy="true" data-ao-home-placeholder="formation">
+        <div class="cateCardCopy"><div class="cardKicker">${vm.language === 'fr' ? 'FORMATION' : 'FORMATION'}</div><b>${vm.language === 'fr' ? 'Catéchisme quotidien' : 'Daily Catechism'}</b><span class="aoHomeSkeletonLine" aria-hidden="true"></span><span class="aoHomeSkeletonPill" aria-hidden="true"></span></div>
+        <span class="aoHomeFormationMediaSkeleton" aria-hidden="true"></span>
+      </section>
+
+
+      <div class="homeSpacer"></div>
+
+      ${homeSheet(state)}
+    </main>`;
+}
+function renderHome(root, state) {
+    root.innerHTML = renderHomeToString(state);
+}
+
+},17:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.t = t;
+const en_1 = require(18);
+const fr_1 = require(19);
+const dictionaries = { en: en_1.en, fr: fr_1.fr };
+function t(language, key) {
+    return dictionaries[language][key] || en_1.en[key];
+}
+
+},18:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.en = void 0;
+exports.en = {
+    brand: 'AD ORIENTEM',
+    subtitle: '1962 Roman Mass companion',
+    prepare: 'Prepare',
+    followMass: 'Follow Mass',
+    giveThanks: 'Give thanks',
+    aroundMass: 'Around the Mass',
+    holyGospel: 'Holy Gospel',
+    exploreGospel: 'Explore Gospel',
+    todaysMass: "Today’s Mass",
+    todaysMassHint: 'Propers · readings · liturgical information',
+    openMass: 'Open today’s Mass',
+    more: 'More',
+    moreHint: 'Search · Calendar · Companions · Settings',
+    openMore: 'Open more',
+    rank: 'Rank',
+    colour: 'Colour',
+    properReady: 'Proper ready',
+    properUnavailable: 'Proper unavailable',
+    properUnavailableBody: 'The fixed Ordinary remains available. Feast-specific texts could not be loaded.',
+    calendarUnavailable: 'Calendar unavailable',
+    calendarUnavailableBody: 'The liturgical day could not be resolved. Try again when a source connection is available.',
+    loading: 'Resolving the liturgical day…',
+    previousDay: 'Previous day',
+    nextDay: 'Next day',
+    today: 'Today',
+    english: 'EN',
+    french: 'FR',
+    sunday: 'Sunday', monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday', thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday',
+    noGospel: 'The appointed Gospel is unavailable.',
+    developmentAction: 'This destination will be connected in the next migration stage.',
+    formulary: 'Formulary',
+    liveMass: 'Mass',
+    backHome: 'Home',
+    imLost: "I’m Lost",
+    settings: 'Settings',
+    you: 'You',
+    priest: 'Priest',
+    followCongregation: 'Follow the congregation',
+    sacredSilence: 'Sacred silence',
+    choirContinues: 'The choir continues while the priest prays quietly.',
+    hearChoir: 'Choir',
+    properUnavailableShort: 'Proper unavailable',
+    previous: 'Back',
+    next: 'Next',
+    finish: 'Finish',
+    vox: 'VOX',
+    missal: 'MISSALE',
+    oriented: 'Oriented',
+    parallel: 'Parallel',
+    sungMass: 'Solemn',
+    lowMass: 'Low',
+    whyThis: 'Why this?',
+    whatHappening: 'What is happening?',
+    variantNote: 'Anything unusual?',
+    massMap: 'Mass Map',
+    jumpToSection: 'Jump to section',
+    recoveryTitle: 'Where are you in the Mass?',
+    recoveryHint: 'Choose what you can see or hear. This moves the guide to the nearest likely section.',
+    footAltar: 'At the foot of the altar',
+    readingsGospel: 'Readings / Gospel',
+    offertory: 'Offertory',
+    canonSilence: 'Canon / sacred silence',
+    communion: 'Communion',
+    conclusion: 'Conclusion',
+    textDisplay: 'Text',
+    followMode: 'Following',
+    massForm: 'Mass form',
+    close: 'Close',
+    bell: 'Bell',
+    currentStep: 'Current step',
+    of: 'of',
+    commemorations: 'Commemorations',
+};
+
+},19:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.fr = void 0;
+exports.fr = {
+    brand: 'AD ORIENTEM',
+    subtitle: 'Compagnon de la Messe romaine de 1962',
+    prepare: 'Se préparer',
+    followMass: 'Suivre la Messe',
+    giveThanks: 'Action de grâces',
+    aroundMass: 'Autour de la Messe',
+    holyGospel: 'Saint Évangile',
+    exploreGospel: 'Explorer l’Évangile',
+    todaysMass: 'Messe du jour',
+    todaysMassHint: 'Propres · lectures · informations liturgiques',
+    openMass: 'Ouvrir la Messe du jour',
+    more: 'Plus',
+    moreHint: 'Recherche · Calendrier · Compagnons · Réglages',
+    openMore: 'Ouvrir plus',
+    rank: 'Classe',
+    colour: 'Couleur',
+    properReady: 'Propre disponible',
+    properUnavailable: 'Propre indisponible',
+    properUnavailableBody: 'L’Ordinaire fixe reste disponible. Les textes propres à la fête n’ont pas pu être chargés.',
+    calendarUnavailable: 'Calendrier indisponible',
+    calendarUnavailableBody: 'Le jour liturgique n’a pas pu être résolu. Réessayez lorsqu’une source est disponible.',
+    loading: 'Résolution du jour liturgique…',
+    previousDay: 'Jour précédent',
+    nextDay: 'Jour suivant',
+    today: 'Aujourd’hui',
+    english: 'EN',
+    french: 'FR',
+    sunday: 'Dimanche', monday: 'Lundi', tuesday: 'Mardi', wednesday: 'Mercredi', thursday: 'Jeudi', friday: 'Vendredi', saturday: 'Samedi',
+    noGospel: 'L’Évangile assigné est indisponible.',
+    developmentAction: 'Cette destination sera raccordée à l’étape suivante de la migration.',
+    formulary: 'Formulaire',
+    liveMass: 'Messe',
+    backHome: 'Accueil',
+    imLost: 'Je suis perdu',
+    settings: 'Réglages',
+    you: 'Vous',
+    priest: 'Prêtre',
+    followCongregation: 'Suivez la pratique de l’assemblée',
+    sacredSilence: 'Silence sacré',
+    choirContinues: 'Le chœur continue tandis que le prêtre prie à voix basse.',
+    hearChoir: 'Chœur',
+    properUnavailableShort: 'Propre indisponible',
+    previous: 'Retour',
+    next: 'Suivant',
+    finish: 'Terminer',
+    vox: 'VOX',
+    missal: 'MISSALE',
+    oriented: 'Orienté',
+    parallel: 'Parallèle',
+    sungMass: 'Solennelle',
+    lowMass: 'Basse',
+    whyThis: 'Pourquoi ?',
+    whatHappening: 'Que se passe-t-il ?',
+    variantNote: 'Quelque chose d’inhabituel ?',
+    massMap: 'Plan de la Messe',
+    jumpToSection: 'Aller à une section',
+    recoveryTitle: 'Où en êtes-vous dans la Messe ?',
+    recoveryHint: 'Choisissez ce que vous voyez ou entendez. Le guide ira vers la section la plus probable.',
+    footAltar: 'Au bas de l’autel',
+    readingsGospel: 'Lectures / Évangile',
+    offertory: 'Offertoire',
+    canonSilence: 'Canon / silence sacré',
+    communion: 'Communion',
+    conclusion: 'Conclusion',
+    textDisplay: 'Texte',
+    followMode: 'Suivi',
+    massForm: 'Forme de Messe',
+    close: 'Fermer',
+    bell: 'Cloche',
+    currentStep: 'Étape',
+    of: 'sur',
+    commemorations: 'Commémorations',
+};
+
+},20:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.buildHomeViewModel = buildHomeViewModel;
+const i18n_1 = require(17);
+function parseIso(value) {
+    return new Date(`${value}T12:00:00`);
+}
+function iso(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+function localizedText(text, language) {
+    if (!text)
+        return '';
+    return (language === 'fr' ? text.fr : text.en) || '';
+}
+function gospelRef(text) {
+    const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+    const match = lines.find(line => /\b\d{1,3}:\d/.test(line));
+    return match || null;
+}
+function excerpt(text, reference, max = 220) {
+    const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean)
+        .filter(line => line !== reference)
+        .filter(line => !/^(Continuation|Suite|Sequéntia|Évangile)/i.test(line));
+    const joined = lines.join(' ').replace(/\s+/g, ' ').trim();
+    if (!joined)
+        return '';
+    if (joined.length <= max)
+        return joined;
+    const clipped = joined.slice(0, max).replace(/\s+\S*$/, '').trim();
+    return `${clipped}…`;
+}
+function weekCells(dateIso, language) {
+    const selected = parseIso(dateIso);
+    const todayIso = iso(new Date());
+    const formatter = new Intl.DateTimeFormat(language === 'fr' ? 'fr-FR' : 'en-GB', { weekday: 'short' });
+    const cells = [];
+    for (let offset = -3; offset <= 3; offset++) {
+        const d = new Date(selected);
+        d.setDate(d.getDate() + offset);
+        const key = iso(d);
+        cells.push({
+            date: key,
+            day: formatter.format(d).replace('.', ''),
+            number: String(d.getDate()),
+            selected: offset === 0,
+            today: key === todayIso,
+        });
+    }
+    return cells;
+}
+function buildHomeViewModel(state) {
+    const language = state.language;
+    const date = parseIso(state.selectedDate);
+    const locale = language === 'fr' ? 'fr-FR' : 'en-GB';
+    const weekday = new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(date);
+    const dateLong = globalThis.AO_DISPLAY_DATE?.(date) || new Intl.DateTimeFormat(locale, { day: '2-digit', month: '2-digit', year: 'numeric' }).format(date);
+    const resolution = state.resolution;
+    const day = resolution?.day || null;
+    const proper = resolution?.proper.status === 'ready' ? resolution.proper.data : null;
+    const calendarFailed = resolution?.status === 'failed';
+    const celebration = (proper
+        ? (language === 'fr' ? (proper.nameFr || proper.name || day?.main?.title) : (proper.name || day?.main?.title))
+        : day?.main?.title) || (calendarFailed ? (0, i18n_1.t)(language, 'calendarUnavailable') : (0, i18n_1.t)(language, 'loading'));
+    const rankValue = proper?.rank || (day?.main ? String(day.main.rank) : '');
+    const rank = rankValue ? `${(0, i18n_1.t)(language, 'rank')} · ${rankValue}` : '';
+    const rawColour = resolution?.colourPlan?.label || day?.main?.color || '';
+    const colourMapFr = { Green: 'Vert', Violet: 'Violet', Purple: 'Violet', Red: 'Rouge', White: 'Blanc', Black: 'Noir', Rose: 'Rose' };
+    const colour = language === 'fr' ? (colourMapFr[rawColour] || rawColour) : rawColour;
+    const gospelText = localizedText(proper?.gospel, language);
+    const reference = gospelRef(gospelText);
+    const gospelExcerpt = proper ? (excerpt(gospelText, reference) || (0, i18n_1.t)(language, 'noGospel')) : (0, i18n_1.t)(language, 'noGospel');
+    let properStatus = 'idle';
+    let properMessage = null;
+    if (resolution?.proper.status === 'ready')
+        properStatus = 'ready';
+    else if (resolution?.proper.status === 'failed') {
+        properStatus = 'failed';
+        properMessage = (0, i18n_1.t)(language, 'properUnavailableBody');
+    }
+    const formularies = day?.massOptions?.length && day.massOptions.length > 1
+        ? day.massOptions.map(option => ({ index: option.index, label: option.label || option.title || `${(0, i18n_1.t)(language, 'formulary')} ${option.index + 1}`, selected: option.index === day.formularyIndex }))
+        : [];
+    const formularyLabel = formularies.length ? `${(0, i18n_1.t)(language, 'formulary')} ${day.formularyIndex + 1}/${formularies.length}` : null;
+    const commemorationLabel = day?.commemorations?.length
+        ? `${(0, i18n_1.t)(language, 'commemorations')} · ${day.commemorations.map(item => item.title || item.name).join(' · ')}`
+        : null;
+    return {
+        language,
+        dateIso: state.selectedDate,
+        weekday,
+        dateLong,
+        celebration,
+        rank,
+        colour,
+        loading: state.resolving,
+        calendarFailed,
+        properStatus,
+        properMessage,
+        gospelReference: reference,
+        gospelExcerpt,
+        massHint: (0, i18n_1.t)(language, 'todaysMassHint'),
+        formularyLabel,
+        formularies,
+        commemorationLabel,
+        week: weekCells(state.selectedDate, language),
+    };
+}
+
+},21:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.colourHex = colourHex;
+exports.themeTokens = themeTokens;
+exports.applyTheme = applyTheme;
+const BASE = {
+    green: '#4f8f66',
+    violet: '#8065a6',
+    purple: '#8065a6',
+    red: '#a64f55',
+    white: '#d8d1be',
+    gold: '#c7ae7b',
+    black: '#77746f',
+    rose: '#b9788e',
+    pink: '#b9788e',
+};
+function normalize(input) {
+    return String(input || 'green').trim().toLowerCase();
+}
+function colourHex(input) {
+    return BASE[normalize(input)] || BASE.green;
+}
+function themeTokens(plan) {
+    const base = colourHex(plan?.primary || plan?.massColor || 'green');
+    return {
+        liturgical: base,
+        liturgicalSoft: `color-mix(in srgb, ${base} 17%, transparent)`,
+        liturgicalBorder: `color-mix(in srgb, ${base} 45%, rgba(255,255,255,.11))`,
+        liturgicalGlow: `color-mix(in srgb, ${base} 25%, transparent)`,
+    };
+}
+function applyTheme(root, plan) {
+    const tokens = themeTokens(plan);
+    root.style.setProperty('--liturgical', tokens.liturgical);
+    root.style.setProperty('--liturgical-soft', tokens.liturgicalSoft);
+    root.style.setProperty('--liturgical-border', tokens.liturgicalBorder);
+    root.style.setProperty('--liturgical-glow', tokens.liturgicalGlow);
+}
+
+},22:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LiveMassController = void 0;
+const live_mass_1 = require(23);
+const live_mass_model_1 = require(24);
+const liturgical_theme_ui_1 = require(21);
+class LiveMassController {
+    root;
+    store;
+    persistence;
+    constructor(root, store, persistence) {
+        this.root = root;
+        this.store = store;
+        this.persistence = persistence;
+        store.subscribe(state => this.paint(state));
+        root.addEventListener('click', event => this.click(event));
+    }
+    swapButton(event) { return event.target?.closest?.('[data-live-swap]') || null; }
+    setSwap(button, showAlt, held = false) {
+        const surface = button?.closest('.swapSurface');
+        if (!surface) return;
+        surface.classList.toggle('showAlt', !!showAlt);
+        if (!held) {
+            button.textContent = showAlt ? button.dataset.returnLabel : button.dataset.revealLabel;
+            button.setAttribute('aria-pressed', String(!!showAlt));
+        }
+    }
+    swapPointerDown(event) {
+        if (this.store.getState().route !== 'live') return;
+        const button = this.swapButton(event);
+        if (!button || button.dataset.pinned === '1') return;
+        if (button.__aoHoldTimer) clearTimeout(button.__aoHoldTimer);
+        button.__aoHoldTimer = setTimeout(() => {
+            button.dataset.holding = '1';
+            this.setSwap(button, true, true);
+        }, 320);
+    }
+    swapPointerUp(event) {
+        if (this.store.getState().route !== 'live') return;
+        const button = this.swapButton(event);
+        if (!button) return;
+        if (button.__aoHoldTimer) {
+            clearTimeout(button.__aoHoldTimer);
+            button.__aoHoldTimer = null;
+        }
+        if (button.dataset.holding === '1') {
+            delete button.dataset.holding;
+            this.setSwap(button, false, true);
+            button.dataset.suppressClick = '1';
+        }
+    }
+    toggleSwap(button) {
+        if (button.dataset.suppressClick === '1') { delete button.dataset.suppressClick; return; }
+        const pinned = button.dataset.pinned === '1';
+        button.dataset.pinned = pinned ? '0' : '1';
+        this.setSwap(button, !pinned, false);
+    }
+    dispatchPreservingMassMoment(action) {
+        const before = this.store.getState();
+        const beforeSeq = (0, live_mass_model_1.buildLiveSequence)(before);
+        const currentId = beforeSeq.steps[before.live.stepIndex]?.id || null;
+        const fallbackIndex = before.live.stepIndex;
+        this.store.dispatch(action);
+        const after = this.store.getState();
+        const afterSeq = (0, live_mass_model_1.buildLiveSequence)(after);
+        let nextIndex = currentId ? afterSeq.steps.findIndex(step => step.id === currentId) : -1;
+        if (nextIndex < 0) nextIndex = Math.max(0, Math.min(fallbackIndex, afterSeq.steps.length - 1));
+        if (afterSeq.steps.length) this.store.dispatch({ type: 'live-jump', index: nextIndex, maxIndex: afterSeq.steps.length - 1 });
+    }
+    paint(state = this.store.getState()) { if (state.route !== 'live')
+        return; const seq = (0, live_mass_model_1.buildLiveSequence)(state); if (state.live.stepIndex >= seq.steps.length)
+        this.store.dispatch({ type: 'live-jump', index: seq.steps.length - 1, maxIndex: seq.steps.length - 1 });
+    else {
+        (0, live_mass_1.renderLiveMass)(this.root, state);
+        (0, liturgical_theme_ui_1.applyTheme)(document.documentElement, state.resolution?.colourPlan || null);
+        document.documentElement.dataset.textScale = state.settings.textScale;
+        document.documentElement.dataset.reducedMotion = String(state.settings.reducedMotion);
+    } }
+    click(event) {
+        if (this.store.getState().route !== 'live')
+            return;
+        const target = event.target;
+        const swapSurface = target?.closest?.('[data-live-swap]')?.closest?.('[data-live-swap-surface]') || null;
+        const button = target?.closest?.('button');
+        const directBackdrop = target?.matches?.('[data-sheet-close]') ? target : null;
+        const el = button || directBackdrop;
+        if (swapSurface) {
+            const swapButton = swapSurface.querySelector('[data-live-swap]');
+            if (swapButton) this.toggleSwap(swapButton);
+            return;
+        }
+        if (!el)
+            return;
+        const state = this.store.getState(), seq = (0, live_mass_model_1.buildLiveSequence)(state), max = Math.max(0, seq.steps.length - 1);
+        if (el.dataset.liveSwap !== undefined) {
+            this.toggleSwap(el);
+            return;
+        }
+        if (el.hasAttribute('data-sheet-close')) {
+            this.store.dispatch({ type: 'live-sheet', sheet: null });
+            return;
+        }
+        if (el.dataset.liveHome !== undefined) {
+            const fr=this.store.getState().language==='fr';
