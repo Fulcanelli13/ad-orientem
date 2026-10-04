@@ -4,7 +4,7 @@
 // compatibility/state donor and explicit rollback path while the monolith is retired.
 
 import { createMassEntryController } from "./app-shell-bootstrap.js";
-import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPreview } from "./reader-gate.js";
+import { readBrowserReaderUiMode, readBrowserReaderUiOverride, readerModeRunsShadowAudit, readerModeMountsPreview } from "./reader-gate.js";
 import { runReaderShadowAudit } from "./reader-shadow.js";
 import { mountReaderPreview } from "./reader-preview.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
@@ -87,6 +87,37 @@ function statusSnapshot() {
   return null;
 }
 
+export function fieldNativeDefaultEligible(prepared){
+  const plan=prepared?.session?.plan;
+  const resolved=prepared?.session?.resolvedMass;
+  if(!plan || !resolved || plan.kind!=="MASS")return false;
+  const form=String(resolved.form??"").toUpperCase();
+  if(!["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(form))return false;
+  const properStatus=String(resolved?.proper?.status??"").toUpperCase();
+  if(!["READY","CACHED"].includes(properStatus))return false;
+
+  const promotedPreceding=new Set(["ASPERGES","PALM","ASH"]);
+  const preceding=[...(plan.precedingGraphs??[])];
+  if(preceding.some(id=>!promotedPreceding.has(String(id).toUpperCase())))return false;
+  if((plan.followingGraphs??[]).length)return false;
+
+  const overlays=[...(plan.overlayGraphs??[])].filter(id=>String(id).toUpperCase()!=="VOTIVE_PROPER");
+  if(overlays.length)return false;
+  if((plan.insertions??[]).length)return false;
+  if(resolved.distinctRite)return false;
+  return true;
+}
+
+export function resolveProductionReaderUiMode(prepared,win=globalThis){
+  return readBrowserReaderUiOverride(win)??(fieldNativeDefaultEligible(prepared)?"PREVIEW":"LEGACY");
+}
+
+export function stampMassReaderUi(doc,uiOwner){
+  const owner=String(uiOwner??"LEGACY_DOM_TEMPORARY");
+  if(doc?.documentElement?.dataset)doc.documentElement.dataset.aoMassReaderUi=owner;
+  return owner;
+}
+
 function persistPrepared(prepared) {
   globalThis.AO_R17_ACTIVE_MASS = prepared;
   try {
@@ -137,7 +168,7 @@ export async function mountR17Preview({
 
 async function delegateLegacyRenderer(prepared) {
   persistPrepared(prepared);
-  const readerUiMode = readBrowserReaderUiMode(globalThis);
+  const readerUiMode = resolveProductionReaderUiMode(prepared,globalThis);
   const bridge = legacyBridge();
   if (typeof bridge?.startLive !== "function") {
     throw new Error("Legacy live renderer bridge is unavailable");
@@ -151,6 +182,7 @@ async function delegateLegacyRenderer(prepared) {
   if (readerModeMountsPreview(readerUiMode)) {
     previewState=await mountR17Preview({doc:document,prepared});
   }
+  const uiOwner=stampMassReaderUi(document,previewState?.uiOwner ?? "LEGACY_DOM_TEMPORARY");
   globalThis.AO_R17_MASS_RUNTIME = Object.freeze({
     version: VERSION,
     prepared,
@@ -158,7 +190,7 @@ async function delegateLegacyRenderer(prepared) {
     readerUiMode,
     shadowAudit,
     previewFallbackReason: previewState?.fallbackReason ?? null,
-    uiOwner: previewState?.uiOwner ?? "LEGACY_DOM_TEMPORARY",
+    uiOwner,
     canonicalOwner: "R17_SESSION_ENGINE",
   });
 }
@@ -247,7 +279,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       legacyRenderer: Boolean(legacyBridge()?.startLive),
       runtime: Boolean(runtime()?.store),
       active: globalThis.AO_R17_ACTIVE_MASS ?? null,
-      readerUiMode: readBrowserReaderUiMode(globalThis),
+      readerUiMode: globalThis.AO_R17_MASS_RUNTIME?.readerUiMode ?? readBrowserReaderUiMode(globalThis),
       shadow: globalThis.AO_R17_READER_SHADOW ?? null,
       previewMounted: Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected || globalThis.AO_R17_READER_PREVIEW?.root?.isConnected),
       previewOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
