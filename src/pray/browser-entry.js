@@ -1,11 +1,13 @@
+import "./presentation-coherence.js";
+
 const VERSION="modular-pray-v1";
 
-function donor(win){return win?.AOTraditionalPrayerBook??null;}
-function root(win){return win?.document?.getElementById?.("aoPrayerBookRoot")??null;}
+function donor(win){return win?.AO_PRAY_V435930??null;}
+function root(win){return win?.document?.getElementById?.("aoPray435930")??null;}
 
 function stamp(win){
   const node=root(win);
-  if(node?.dataset)node.dataset.aoPrayRouteOwner=VERSION;
+  if(node?.dataset)node.dataset.aoPrayOwner=VERSION;
   if(win?.document?.documentElement?.dataset){
     win.document.documentElement.dataset.aoPrayRouteOwner=VERSION;
   }
@@ -32,7 +34,7 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   async function open(){
     const api=await resolveDonor();
     if(typeof api?.open!=="function")return false;
-    const opened=api.open({returnContext:null});
+    const opened=api.open("pray.hub",{returnContext:null});
     if(opened===false)return false;
     stamp(win);
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
@@ -42,24 +44,24 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   function close(){
     const api=donor(win);
     if(typeof api?.close!=="function")return false;
-    api.close({silent:true});
+    api.close();
     return true;
   }
 
   function status(){
     const node=root(win);
     let donorState=null;
-    try{donorState=donor(win)?.getState?.()??null;}catch{}
+    try{donorState=donor(win)?.state?.()??null;}catch{}
     return Object.freeze({
       version:VERSION,
       installed:true,
       donorAvailable:typeof donor(win)?.open==="function",
       routeOwner:win?.document?.documentElement?.dataset?.aoPrayRouteOwner??null,
-      rootOwner:node?.dataset?.aoPrayRouteOwner??null,
+      visibleOwner:node?.dataset?.aoPrayOwner??null,
       open:Boolean(node?.classList?.contains?.("open")),
       donorState,
-      presentationOwner:"AOTraditionalPrayerBook",
-      presentationRoot:"aoPrayerBookRoot",
+      presentationOwner:"AO_PRAY_V435930",
+      presentationRoot:"aoPray435930",
     });
   }
 
