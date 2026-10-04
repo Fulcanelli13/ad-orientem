@@ -22,9 +22,11 @@ assert.deepEqual(CONFESSION_PHASES, [
 assert.equal(confessionPhaseForStage(0), "doctrine");
 assert.equal(confessionPhaseForStage(1), "prepare");
 assert.equal(confessionPhaseForStage(2), "examination");
-assert.equal(confessionPhaseForStage(4), "examination");
+assert.equal(confessionPhaseForStage(3), "in-confessional");
+assert.equal(confessionPhaseForStage(4), "in-confessional");
 assert.equal(confessionPhaseForStage(5), "in-confessional");
-assert.equal(confessionPhaseForStage(6), "after");
+assert.equal(confessionPhaseForStage(6), "in-confessional");
+assert.equal(confessionPhaseForStage(7), "after");
 
 const original = {
   adoration: { presence: "exposed", mode: "open" },
