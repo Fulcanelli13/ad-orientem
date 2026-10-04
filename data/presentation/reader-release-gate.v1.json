@@ -671,13 +671,42 @@
         "tests/reader-prayer-over-people.mjs",
         "tests/proper-contracts.mjs"
       ]
+    },
+    {
+      "id": "EMBER_SOURCE_ORDER_READER_INSERTION",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "controller": "src/mass/reader-ember-lessons.js",
+      "compiler": "src/mass/pre-gospel-sequence.js",
+      "sourceGraph": "data/mass/special-days-extension.v1.3.json#LECT",
+      "planInsertion": "RESOLVED_PREPARATORY_LESSONS",
+      "activation": "EXPLICIT_EMBER_LESSONS_OVERLAY",
+      "orderAuthority": "SOURCE_ORDER",
+      "canonicalEventMutation": false,
+      "guarantees": [
+        "numeric OratioL/LectioL/GradualeL suffixes never pair or reorder source nodes",
+        "every reader surface follows preGospelSequence sourceOrderIndex exactly",
+        "unresolved payloadRef fails closed",
+        "reader payload requires Latin and vernacular text",
+        "inserted nodes appear immediately before the ordinary Epistle",
+        "ordinary Epistle and all canonical MC identities remain unchanged",
+        "ordinary reader sourceSequence is preserved across inserted surfaces",
+        "Flectamus genua and Levate are exposed only when those formulas are actually present in the resolved source text",
+        "ordinary Sequences/Pentecost preGospelSequence do not activate Ember without EMBER_LESSONS",
+        "field-release profile remains narrower and is not silently widened"
+      ],
+      "tests": [
+        "tests/pre-gospel-sequence.mjs",
+        "tests/reader-ember-lessons.mjs",
+        "tests/reader-ember-browser.mjs",
+        "tests/reader-field-release.mjs"
+      ]
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Easter Vigil."
+      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Easter Vigil."
     }
   ],
   "certificationPolicy": {
