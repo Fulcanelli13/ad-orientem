@@ -806,5 +806,6 @@ export function createBrowserMassRuntime({
     setCorpusChristiProcessionParticipant: value => { if(!corpusChristiController)return null; corpusChristiController.setProcessionParticipant(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setCorpusChristiSacramentalState: value => { if(!corpusChristiController)return null; corpusChristiController.setSacramentalState(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setHolyThursdayJoiningState: value => { if(!holyThursdayPostController)return null; holyThursdayPostController.setJoiningState(value); return inHolyThursdayPost ? showHolyThursdayPost() : holyThursdayPostController.project(); },
+    setGoodFridayEvent: value => { if(!goodFridayController)return null; goodFridayController.setEvent(value); return inGoodFriday ? showGoodFriday() : goodFridayController.project(); },
   });
 }
