@@ -92,6 +92,8 @@ const ashModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["ASH
 assert.equal(ashModel.totalCards,39,"Ash prelude mutated the LIVE Mass card model");
 const candlemasModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["CANDLEMAS"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap});
 assert.equal(candlemasModel.totalCards,39,"Candlemas prelude mutated the LIVE Mass card model");
+const rogationsModel=createMassReaderModel({resolvedMass:{...base,precedingRites:["ROGATIONS"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap});
+assert.equal(rogationsModel.totalCards,39,"Rogations prelude mutated the LIVE Mass card model");
 
 assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung
