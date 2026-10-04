@@ -1,0 +1,500 @@
+
+    async recoverVotiveSectionV17(path, section, language, diagnostic, visited, depth) {
+        if (language === 'la') return [];
+        const spec = VOTIVE_SECTION_RECOVERY_V17[path]?.[section];
+        const resolveSource = async (sourcePath, sourceSection) => {
+            const parsed = await this.loadUpstreamParsed(sourcePath, language, diagnostic);
+            const key = `v20-recovery|${language}|${sourcePath}|${sourceSection}`;
+            const next = new Set(visited || []);
+            if (next.has(key)) throw new Error(`Votive recovery cycle detected: ${key}`);
+            next.add(key);
+            return await this.resolveSection(parsed, sourceSection, sourcePath, language, 'upstream', diagnostic, next, depth + 1);
+        };
+        const v423Exact = language === 'en' ? [...(VOTIVE_EXTERNAL_VERIFIED_V423?.[path]?.en?.[section] || [])] : [];
+        if (v423Exact.length) {
+            diagnostic?.votiveRecoveries?.push?.({ language, path, section, kind: 'externalVerifiedV423' });
+            diagnostic?.warnings?.push?.(`v42.3 exact-source votive recovery: ${language}/${path}:${section}.`);
+            return v423Exact;
+        }
+        if (language === 'fr' && VOTIVE_FR_PATHS_V21.has(path)) {
+            const frOut = await this.buildFrenchVotiveSectionV21(path, section, resolveSource);
+            if (frOut.length) {
+                diagnostic?.votiveRecoveries?.push?.({ language, path, section, kind: 'frenchV21' });
+                diagnostic?.warnings?.push?.(`v21 sourced French votive recovery: ${language}/${path}:${section}.`);
+                return frOut;
+            }
+        }
+        if (!spec || (spec.languages && !spec.languages.includes(language))) return [];
+        let out = [];
+        if (spec.kind === 'directSource') {
+            out = await resolveSource(spec.path, spec.section || section);
+        } else if (spec.kind === 'embeddedV20') {
+            out = [...(VOTIVE_EMBEDDED_V20[language]?.[spec.corpus]?.[section] || [])];
+        } else if (spec.kind === 'crossGradualPV20') {
+            out = language === 'en'
+                ? [...(VOTIVE_EMBEDDED_V20.en?.Cross?.GradualeP || [])]
+                : await resolveSource('Sancti/05-03', 'Graduale');
+        } else if (spec.kind === 'crossPostcommunioV20') {
+            out = language === 'en'
+                ? [...(VOTIVE_EMBEDDED_V20.en?.Cross?.Postcommunio || [])]
+                : await resolveSource('Sancti/09-14', 'Postcommunio');
+        } else if (spec.kind === 'stripAlleluia') {
+            out = stripSeasonalAlleluiaV17(await resolveSource(spec.path, spec.section), language);
+        } else if (spec.kind === 'crossIntroit') {
+            out = await resolveSource('Sancti/09-14', 'Introitus');
+            const tp = language === 'fr' ? ' (T. P. Alléluia, alléluia.)' : ' (T. P. Alleluia, alleluia.)';
+            out = out.map(line => {
+                const s = String(line);
+                return /Cross of our Lord Jesus Christ|Croix de Notre-Seigneur Jésus-Christ/i.test(s) ? s.replace(/\s*$/, '') + tp : s;
+            });
+        } else if (spec.kind === 'crossGospel') {
+            out = await resolveSource('Tempora/Quad2-3', 'Evangelium');
+            out = out.map(line => String(line).replace(/^!Matt\s*20:17-28\.?/i, '!Matt 20:17-19'));
+            out = out.map(line => language === 'fr'
+                ? String(line).replace(/\s+Alors la mère des fils de Zébédée[\s\S]*$/i, '')
+                : String(line).replace(/\s+Then the mother of the sons of Zebedee[\s\S]*$/i, ''));
+        } else if (spec.kind === 'crossOffertory') {
+            out = await resolveSource('Sancti/09-14', 'Offertorium');
+            const tp = language === 'fr' ? ' (T. P. Alléluia.)' : ' (T. P. Alleluia.)';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()));
+            if (last >= 0) out[last] = String(out[last]).replace(/,\s*all[eé]luia\.\s*$/i, '').replace(/\s*$/, '') + tp;
+        } else if (spec.kind === 'crossCommunion') {
+            out = await resolveSource('Sancti/09-14', 'Communio');
+            const tp = language === 'fr' ? ' (T. P. Alléluia.)' : ' (T. P. Alleluia.)';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()));
+            if (last >= 0 && !/T\.\s*P\./i.test(String(out[last]))) out[last] = String(out[last]).replace(/\s*$/, '') + tp;
+        } else if (spec.kind === 'holySpiritCollect') {
+            out = await resolveSource('Tempora/Pasc7-0', 'Oratio');
+            out = out.map(line => language === 'fr'
+                ? String(line).replace(/,\s*aujourd'hui,\s*/i, ' ')
+                : String(line).replace(/\bon this day\s+/i, ''));
+        } else if (spec.kind === 'holySpiritGradual') {
+            const base = await resolveSource('Tempora/Pent17-0', 'Graduale');
+            let cut = base.findIndex(line => /^!Ps\s*101:2/i.test(String(line).trim()));
+            if (cut < 0) cut = Math.min(3, base.length);
+            const head = base.slice(0, cut);
+            const ember = await resolveSource('Tempora/Pasc7-5', 'Graduale');
+            let veni = [...ember].reverse().find(line => /^V\./i.test(String(line).trim())) || '';
+            if (veni && !/all[eé]luia/i.test(veni)) veni += language === 'fr' ? ' Alléluia.' : ' Alleluia.';
+            out = [...head, '! Hic genuflectitur', veni].filter(Boolean);
+        } else if (spec.kind === 'holySpiritTract') {
+            const pent = await resolveSource('Tempora/Pasc7-0', 'Graduale');
+            const pidx = pent.findIndex(line => /^!Ps\.?\s*103:30/i.test(String(line).trim()));
+            let emitte = pidx >= 0 ? pent[pidx + 1] : '';
+            emitte = stripAlleluiaAndKneelV17(emitte).replace(/^V\.\s*/i, '');
+            const ember = await resolveSource('Tempora/Pasc7-5', 'Graduale');
+            const eidx = ember.findIndex(line => /^!(?:Wis|Ps)\s*12:1/i.test(String(line).trim()));
+            let sweet = eidx >= 0 ? ember[eidx + 1] : '';
+            let veni = eidx >= 0 ? ember[eidx + 2] : ([...ember].reverse().find(line => /^V\./i.test(String(line).trim())) || '');
+            sweet = stripAlleluiaAndKneelV17(sweet);
+            if (sweet && !/^V\./i.test(sweet)) sweet = `V. ${sweet}`;
+            veni = stripAlleluiaAndKneelV17(veni);
+            if (veni && !/^V\./i.test(veni)) veni = `V. ${veni}`;
+            out = ['! Ps 103:30; Sap 12:1', emitte, sweet, '! Hic genuflectitur', veni].filter(Boolean);
+        } else if (spec.kind === 'suffragiumExact') {
+            out = await resolveSource('Ordo/Suffragium', spec.sourceSection);
+        } else if (spec.kind === 'holySpirit2PrayerV19') {
+            out = language === 'fr'
+                ? await resolveSource('Ordo/Suffragium', spec.sourceSection)
+                : [...(VOTIVE_EMBEDDED_V20.en?.HolySpirit2?.[section] || [])];
+        } else if (spec.kind === 'josephSeasonalV19') {
+            out = await resolveSource('Tempora/Pasc2-3', spec.sourceSection);
+            out = stripSeasonalAlleluiaV17(out, language);
+            const tp = ' (T. P. Alléluia.)';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()) && !/^&/.test(String(line).trim()));
+            if (last >= 0 && !/T\.\s*P\./i.test(String(out[last]))) out[last] = String(out[last]).replace(/[.]?\s*$/, '') + tp;
+            // The Introit repeats after Gloria; apply the explicit votive T.P. marker there too.
+            if (spec.sourceSection === 'Introitus') {
+                const prose = out.map((line, i) => ({line:String(line), i})).filter(x => !/^[!&]/.test(x.line.trim()));
+                if (prose.length > 1) {
+                    const firstText = prose[0].line.replace(/\s*\(T\.\s*P\.[^)]+\)\.?\s*$/i,'').trim();
+                    for (const x of prose) {
+                        if (x.line.replace(/[.]\s*$/,'').includes(firstText.replace(/[.]\s*$/,'')) && !/T\.\s*P\./i.test(x.line))
+                            out[x.i] = x.line.replace(/[.]?\s*$/, '') + tp;
+                    }
+                }
+            }
+        } else if (spec.kind === 'josephGradualV19') {
+            const feast = await resolveSource('Sancti/03-19', 'Graduale');
+            const patronage = await resolveSource('Tempora/Pasc2-3', 'Graduale');
+            const ps20 = feast.findIndex(line => /^!Ps\s*20:4-5/i.test(String(line).trim()));
+            const ps111 = feast.findIndex(line => /^!Ps\s*111:1-3/i.test(String(line).trim()));
+            const head = ps20 >= 0 ? feast.slice(ps20, ps111 > ps20 ? ps111 : ps20 + 3) : [];
+            if (head.length > 2) head[head.length - 1] = stripAlleluiaAndKneelV17(head[head.length - 1]).replace(/[.]?\s*$/, '') + '. Alléluia, alléluia.';
+            let josephVerse = patronage.find(line => /Faites-nous mener|vie sans tache/i.test(String(line))) || '';
+            josephVerse = stripAlleluiaAndKneelV17(josephVerse);
+            if (josephVerse && !/^V\./i.test(josephVerse)) josephVerse = `V. ${josephVerse}`;
+            out = [...head, josephVerse].filter(Boolean);
+        } else if (spec.kind === 'josephTractV19') {
+            const feast = await resolveSource('Sancti/03-19', 'Graduale');
+            const ps111 = feast.findIndex(line => /^!Ps\s*111:1-3/i.test(String(line).trim()));
+            out = ps111 >= 0 ? feast.slice(ps111, ps111 + 4) : [];
+        } else if (spec.kind === 'apostlesGeneric') {
+            out = await resolveSource('Sancti/10-28', spec.sourceSection);
+            // The votive formulary is the same Simon-and-Jude prayer with the feast names omitted.
+            // Remove only the proper names; retain the pinned same-language syntax and vocabulary.
+            out = out.map(line => String(line).replace(/\s+Simon\s+(?:and|et)\s+Jude\b/gi, ''));
+        } else if (spec.kind === 'apostlesTract') {
+            out = await resolveSource('Sancti/08-08', 'Tractus');
+        } else if (spec.kind === 'apostlesOffertory') {
+            out = await resolveSource('Sancti/02-24', 'Offertorium');
+            const suffix = language === 'fr' ? ' Alléluia, alléluia.' : ' Alleluia, alleluia.';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()));
+            if (last >= 0) out[last] = String(out[last]).replace(/[.]?\s*$/, '') + suffix;
+        } else if (spec.kind === 'apostlesCommunion') {
+            out = await resolveSource('Sancti/07-04oct', 'Offertorium');
+            const suffix = language === 'fr' ? ' Alléluia, alléluia.' : ' Alleluia, alleluia.';
+            const last = out.findLastIndex(line => !/^!/.test(String(line).trim()));
+            if (last >= 0) out[last] = String(out[last]).replace(/[.]?\s*$/, '') + suffix;
+        } else if (spec.kind === 'apostlesPGradual') {
+            const martyrs = await resolveSource('Sancti/08-08', 'GradualeP');
+            const apostle = await resolveSource('Sancti/10-18', 'Graduale');
+            const psIdx = martyrs.findIndex(line => /!Ps\s*88:6/i.test(String(line)));
+            let psVerse = psIdx >= 0 ? martyrs[psIdx + 1] : ([...martyrs].reverse().find(line => /heavens|cieux/i.test(String(line))) || '');
+            psVerse = stripAlleluiaAndKneelV17(psVerse);
+            if (psVerse && !/^V\./i.test(psVerse)) psVerse = `V. ${psVerse}`;
+            psVerse = psVerse.replace(/[.]?\s*$/, '') + (language === 'fr' ? '. Alléluia, alléluia.' : '. Alleluia, alleluia.');
+            let chosen = [...apostle].reverse().find(line => /chosen you|choisis/i.test(String(line))) || '';
+            chosen = stripAlleluiaAndKneelV17(chosen).replace(/^!Joann?\s*15:16\.?\s*/i, '');
+            if (chosen && !/^V\./i.test(chosen)) chosen = `V. ${chosen}`;
+            out = [language === 'fr' ? 'Alléluia, alléluia.' : 'Alleluia, alleluia.', '!Ps 88:6', psVerse, '!Joann 15:16', chosen].filter(Boolean);
+        }
+        if (out.length) {
+            diagnostic?.votiveRecoveries?.push?.({ language, path, section, kind: spec.kind });
+            diagnostic?.warnings?.push?.(`v21 same-language votive recovery: ${language}/${path}:${section} (${spec.kind}).`);
+        }
+        return out;
+    }
+    async resolveSection(parsed, section, path, language, layer, diagnostic, visited, depth) {
+        if (depth > 18)
+            throw new Error(`Reference recursion limit exceeded at ${path}:${section}`);
+        const body = parsed.map.get(section);
+        if (!body || !body.length) {
+            const recovered = await this.recoverVotiveSectionV17(path, section, language, diagnostic, visited, depth);
+            if (recovered.length) return recovered;
+            return [];
+        }
+        const result = [];
+        for (const line of body) {
+            const reference = parseReference(line, section);
+            if (!reference) {
+                result.push(line);
+                continue;
+            }
+            const targetPath = reference.path || path;
+            const targetSection = reference.section || section;
+            const targetLayer = reference.path ? "upstream" : layer;
+            const visitKey = `${targetLayer}|${language}|${targetPath}|${targetSection}|${reference.subs}`;
+            if (visited.has(visitKey))
+                throw new Error(`Reference cycle detected: ${visitKey}`);
+            const next = new Set(visited);
+            next.add(visitKey);
+            const targetParsed = reference.path ? await this.loadUpstreamParsed(targetPath, language, diagnostic) : parsed;
+            let nested = await this.resolveSection(targetParsed, targetSection, targetPath, language, targetLayer, diagnostic, next, depth + 1);
+            nested = applySubstitutions(nested, reference.subs, diagnostic, `${targetPath}:${targetSection}`);
+            diagnostic.referencesResolved.push({ from: `${layer}:${path}:${section}`, to: `${targetLayer}:${targetPath}:${targetSection}`, substitution: reference.subs || null });
+            result.push(...nested);
+        }
+        return result;
+    }
+    async resolveSource(path, language, diagnostic) {
+        const root = await this.loadLocalRoot(path, language, diagnostic);
+        const map = new Map();
+        const order = [];
+        for (const section of root.order) {
+            if (section === "__TOP__")
+                continue;
+            const lines = await this.resolveSection(root, section, path, language, "root", diagnostic, new Set([`root|${language}|${path}|${section}|`]), 0);
+            map.set(section, lines);
+            order.push(section);
+        }
+        return { map, order };
+    }
+    async resolvePreface(key, diagnostic) {
+        const result = {};
+        for (const language of ["la", "en", "fr"]) {
+            const parsed = await this.loadUpstreamParsed("Ordo/Prefationes", language, diagnostic);
+            let lines = await this.resolveSection(parsed, key, "Ordo/Prefationes", language, "upstream", diagnostic, new Set(), 0);
+            if (!lines.length)
+                lines = await this.resolveSection(parsed, "Communis", "Ordo/Prefationes", language, "upstream", diagnostic, new Set(), 0);
+            result[language] = cleanLines(lines, language);
+        }
+        return result;
+    }
+    async resolveProper(meta, diagnostic) {
+        const sources = {};
+        for (const language of ["la", "en", "fr"])
+            sources[language] = await this.resolveSource(meta.path, language, diagnostic);
+        const rules = ruleInfo(sources);
+        const preface = await this.resolvePreface(meta.inherited ? meta.preface || "Communis" : rules.preface || meta.preface || "Communis", diagnostic);
+        return normalizeProper(meta, sources, preface, diagnostic);
+    }
+}
+exports.ProperResolver = ProperResolver;
+function cleanLines(lines, language) {
+    const out = [];
+    for (let line of lines || []) {
+        line = String(line).trim();
+        if (!line)
+            continue;
+        if (/^\(sed .*rubrica (1570|1910|1930|divino afflatu)/i.test(line))
+            continue;
+        if (line === "&Gloria") {
+            out.push(GLORIA[language]);
+            continue;
+        }
+        if (line === "$Per Dominum") {
+            out.push(PER_DOM[language]);
+            continue;
+        }
+        if (line === "$Per eundem") {
+            out.push(PER_EUNDEM[language]);
+            continue;
+        }
+        if (line === "$Qui tecum") {
+            out.push(QUI_TECUM[language]);
+            continue;
+        }
+        if (line === "$Qui vivis") {
+            out.push(QUI_VIVIS[language]);
+            continue;
+        }
+        if (line === "$Qui cum eodem") {
+            out.push(QUI_CUM_EODEM[language]);
+            continue;
+        }
+        if (line === "$Deo gratias") {
+            out.push(language === "fr" ? "℟. Deo gratias — Rendons grâce à Dieu." : "℟. Deo gratias.");
+            continue;
+        }
+        if (/^!/.test(line)) {
+            out.push(line.slice(1).trim());
+            continue;
+        }
+        line = line.replace(/^[Vv]\.\s*/, "℣. ").replace(/^[Rr]\.\s*/, "℟. ").replace(/\+\+/g, "✠").replace(/✠|✚|✙|✛|✜|✝|✞/g, "✠").replace(/(^|\s)\+(?=($|\s|[,.\;:!?)]))/g, "$1✠");
+        out.push(line);
+    }
+    return out.join("\n").trim();
+}
+function textFrom(sources, section) {
+    return {
+        lat: cleanLines(sources.la.map.get(section) || [], "la"),
+        en: cleanLines(sources.en.map.get(section) || [], "en"),
+        fr: cleanLines(sources.fr.map.get(section) || [], "fr"),
+    };
+}
+function firstExisting(sources, ids) {
+    return ids.find(id => sources.la.map.has(id) || sources.en.map.has(id) || sources.fr.map.has(id)) || null;
+}
+function numbered(sources, base, includeBase = false) {
+    const ids = new Set();
+    for (const language of ["la", "en", "fr"]) {
+        for (const id of sources[language].order) {
+            if ((includeBase && id === base) || new RegExp(`^${base}\\d+$`).test(id))
+                ids.add(id);
+        }
+    }
+    if (includeBase && (sources.la.map.has(base) || sources.en.map.has(base) || sources.fr.map.has(base)))
+        ids.add(base);
+    return [...ids].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).map(id => textFrom(sources, id)).filter(value => value.lat || value.en || value.fr);
+}
+function ruleInfo(sources) {
+    const text = (sources.la.map.get("Rule") || []).join("\n");
+    const match = text.match(/Prefatio=([^\s;]+)/i);
+    return { raw: text, gloria: /^Gloria$/m.test(text), credo: /^Credo$/m.test(text), preface: match ? match[1] : "Communis" };
+}
+function normalizeProper(meta, sources, preface, diagnostic) {
+    const rules = ruleInfo(sources);
+    const normal = new Set(["Officium", "Rank", "Rule", "Introitus", "Oratio", "Lectio", "Graduale", "GradualeP", "Tractus", "Sequentia", "Evangelium", "Offertorium", "Secreta", "Communio", "Postcommunio"]);
+    const preparatoryLessons = [];
+    for (let n = 1; n <= 12; n += 1) {
+        const lessonId = `LectioL${n}`;
+        if (!(sources.la.map.has(lessonId) || sources.en.map.has(lessonId) || sources.fr.map.has(lessonId)))
+            continue;
+        const gradualId = firstExisting(sources, [`GradualeL${n}`, `TractusL${n}`, `AlleluiaL${n}`]);
+        const collectId = firstExisting(sources, [`OratioL${n}`]);
+        preparatoryLessons.push({ id: `preparatory-${n}`, lesson: textFrom(sources, lessonId), gradual: gradualId ? textFrom(sources, gradualId) : {}, collect: collectId ? textFrom(sources, collectId) : {} });
+        normal.add(lessonId);
+        if (gradualId)
+            normal.add(gradualId);
+        if (collectId)
+            normal.add(collectId);
+    }
+    const extraIds = [];
+    for (const id of [...sources.la.order, ...sources.en.order, ...sources.fr.order]) {
+        if (id === "__TOP__" || normal.has(id) || /^LectioL\d+$/.test(id) || /^GradualeL\d+$/.test(id) || /^OratioL\d+$/.test(id))
+            continue;
+        if (!extraIds.includes(id))
+            extraIds.push(id);
+    }
+    const specialSections = extraIds.map(id => ({ id, text: textFrom(sources, id) })).filter(value => value.text.lat || value.text.en || value.text.fr);
+    const gradualId = firstExisting(sources, ["Graduale", "GradualeP", "Tractus"]);
+    const proper = {
+        name: meta.name,
+        nameFr: meta.nameFr || meta.name,
+        rank: meta.rank,
+        color: meta.color,
+        properId: meta.properId,
+        sourcePath: meta.path,
+        riteProfile: meta.profile,
+        introit: textFrom(sources, "Introitus"),
+        collects: numbered(sources, "Oratio", true),
+        epistle: textFrom(sources, "Lectio"),
+        gradual: gradualId ? textFrom(sources, gradualId) : {},
+        preGospelChants: gradualId ? [{ kind: gradualId.toLowerCase(), text: textFrom(sources, gradualId) }] : [],
+        sequence: textFrom(sources, "Sequentia"),
+        gospel: textFrom(sources, "Evangelium"),
+        offertory: textFrom(sources, "Offertorium"),
+        secrets: numbered(sources, "Secreta"),
+        preface,
+        communion: textFrom(sources, "Communio"),
+        postcommunions: numbered(sources, "Postcommunio"),
+        preparatoryLessons,
+        specialSections,
+        showGloria: meta.gloria,
+        showCredo: meta.credo,
+        sourceRules: rules.raw,
+        sourceRevisions: source_config_1.SOURCE_REVISIONS,
+        hasGloria: meta.gloria,
+        hasCredo: meta.credo,
+    };
+    proper.collect = proper.collects[0] || {};
+    proper.secret = proper.secrets[0] || {};
+    proper.postcommunion = proper.postcommunions[0] || {};
+    const expected = [];
+    const pushExpected = (label, value) => { if (value?.lat) expected.push([label, value]); };
+    pushExpected("Introit", proper.introit);
+    proper.collects.forEach((v, i) => pushExpected(`Collect ${i + 1}`, v));
+    pushExpected("Epistle / Lesson", proper.epistle);
+    pushExpected("Gradual / Tract / Alleluia", proper.gradual);
+    pushExpected("Sequence", proper.sequence);
+    pushExpected("Gospel", proper.gospel);
+    pushExpected("Offertory", proper.offertory);
+    proper.secrets.forEach((v, i) => pushExpected(`Secret ${i + 1}`, v));
+    pushExpected("Preface", proper.preface);
+    pushExpected("Communion", proper.communion);
+    proper.postcommunions.forEach((v, i) => pushExpected(`Postcommunion ${i + 1}`, v));
+    proper.preparatoryLessons.forEach((row, i) => { pushExpected(`Preparatory lesson ${i + 1}`, row.lesson); pushExpected(`Preparatory chant ${i + 1}`, row.gradual); pushExpected(`Preparatory collect ${i + 1}`, row.collect); });
+    proper.languageCoverage = {};
+    for (const language of ["en", "fr"]) {
+        const missing = expected.filter(([, value]) => !String(value?.[language] || "").trim()).map(([label]) => label);
+        proper.languageCoverage[language] = { expected: expected.length, available: expected.length - missing.length, missing, complete: missing.length === 0 };
+    }
+    diagnostic.warnings.push(...(rules.gloria !== meta.gloria ? [`Gloria metadata (${meta.gloria}) differs from source Rule (${rules.gloria}).`] : []));
+    diagnostic.warnings.push(...(rules.credo !== meta.credo ? [`Credo metadata (${meta.credo}) differs from source Rule (${rules.credo}).`] : []));
+    return proper;
+}
+
+},9:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MapTextFetcher = exports.MemoryTextFetcher = void 0;
+exports.createDiagnostic = createDiagnostic;
+class MemoryTextFetcher {
+    fetchImpl;
+    timeoutMs;
+    memory = new Map();
+    constructor(fetchImpl, timeoutMs = 12000) {
+        this.fetchImpl = fetchImpl;
+        this.timeoutMs = timeoutMs;
+    }
+    async get(url, diagnostic) {
+        const cached = this.memory.get(url);
+        if (cached !== undefined) {
+            diagnostic?.cacheHits.push({ url, layer: "memory" });
+            return cached;
+        }
+        diagnostic?.requestedFiles.push(url);
+        const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error(`Source request timed out · ${url}`)), this.timeoutMs));
+        const request = this.fetchImpl(url, { cache: "no-cache", redirect: "follow" }).then(async (response) => {
+            if (!response.ok) {
+                const error = new Error(`HTTP ${response.status} · ${url}`);
+                error.status = response.status;
+                throw error;
+            }
+            return response.text();
+        });
+        const text = await Promise.race([request, timeout]);
+        this.memory.set(url, text);
+        return text;
+    }
+    async tryGet(url, diagnostic) {
+        try {
+            return await this.get(url, diagnostic);
+        }
+        catch (error) {
+            if (error.status === 404)
+                return null;
+            throw error;
+        }
+    }
+    clear() { this.memory.clear(); }
+}
+exports.MemoryTextFetcher = MemoryTextFetcher;
+class MapTextFetcher {
+    files;
+    constructor(files) {
+        this.files = files;
+    }
+    read(url) {
+        return this.files instanceof Map ? this.files.get(url) : this.files[url];
+    }
+    async get(url, diagnostic) {
+        diagnostic?.requestedFiles.push(url);
+        const text = this.read(url);
+        if (text === undefined) {
+            const error = new Error(`HTTP 404 · ${url}`);
+            error.status = 404;
+            throw error;
+        }
+        return text;
+    }
+    async tryGet(url, diagnostic) {
+        const value = this.read(url);
+        if (value === undefined)
+            return null;
+        diagnostic?.requestedFiles.push(url);
+        return value;
+    }
+}
+exports.MapTextFetcher = MapTextFetcher;
+function createDiagnostic() {
+    return { requestedFiles: [], cacheHits: [], referencesResolved: [], languageGaps: [], structuralInheritances: [], legacyCommonRecoveries: [], warnings: [], errors: [] };
+}
+
+},10:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScriptureService = void 0;
+const source_config_1 = require(11);
+const references_1 = require(12);
+function rowsOf(ch) { const v = Array.isArray(ch?.verses) ? ch.verses : Array.isArray(ch?.content) ? ch.content : []; return v.map((x, i) => ({ verse: +(x.verse ?? x.number ?? i + 1), text: String(x.text ?? x.content ?? ''), notes: Array.isArray(x.notes) ? x.notes : [] })).filter((x) => x.verse && x.text); }
+function chapterOf(data, n) { return (data?.chapters || []).find((c) => +c.chapter === n) || null; }
+function norm(s) { return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
+function cramponBook(data, ref) { const aliases = [ref.frLabel, ref.label].map(norm); return (data?.books || []).find((b) => aliases.some(a => norm(b?.name) === a || norm(b?.name).includes(a) || a.includes(norm(b?.name)))) || null; }
+const VULGATE_BOOK_NAME = Object.freeze({"genesis":"Genesis","exodus":"Exodus","leviticus":"Leviticus","numbers":"Numbers","deuteronomy":"Deuteronomy","josue":"Joshua","judges":"Judges","ruth":"Ruth","1-kings":"1 Samuel","2-kings":"2 Samuel","3-kings":"1 Kings","4-kings":"2 Kings","1-paralipomenon":"1 Chronicles","2-paralipomenon":"2 Chronicles","1-esdras":"Ezra","2-esdras":"Nehemiah","tobias":"Tobit","judith":"Judith","esther":"Esther","job":"Job","psalms":"Psalms","proverbs":"Proverbs","ecclesiastes":"Ecclesiastes","canticle-of-canticles":"Song of Solomon","wisdom":"Wisdom of Solomon","ecclesiasticus":"Sirach","isaias":"Isaiah","jeremias":"Jeremiah","lamentations":"Lamentations","baruch":"Baruch","ezechiel":"Ezekiel","daniel":"Daniel","osee":"Hosea","joel":"Joel","amos":"Amos","abdias":"Obadiah","jonas":"Jonah","micheas":"Micah","nahum":"Nahum","habacuc":"Habakkuk","sophonias":"Zephaniah","aggeus":"Haggai","zacharias":"Zechariah","malachias":"Malachi","1-machabees":"1 Maccabees","2-machabees":"2 Maccabees","matthew":"Matthew","mark":"Mark","luke":"Luke","john":"John","acts":"Acts","romans":"Romans","1-corinthians":"1 Corinthians","2-corinthians":"2 Corinthians","galatians":"Galatians","ephesians":"Ephesians","philippians":"Philippians","colossians":"Colossians","1-thessalonians":"1 Thessalonians","2-thessalonians":"2 Thessalonians","1-timothy":"1 Timothy","2-timothy":"2 Timothy","titus":"Titus","philemon":"Philemon","hebrews":"Hebrews","james":"James","1-peter":"1 Peter","2-peter":"2 Peter","1-john":"1 John","2-john":"2 John","3-john":"3 John","jude":"Jude","apocalypse":"Revelation of John"});
+function vulgateBook(data, ref) {
+    const target = VULGATE_BOOK_NAME[ref.slug] || ref.label;
+    const aliases = [target, ref.label, ref.frLabel].filter(Boolean).map(norm);
+    return (data?.books || []).find((b) => { const name=norm(b?.name || b?.title || b?.book || ''); return aliases.some(a => name===a || name.includes(a) || a.includes(name)); }) || null;
+}
+function range(node) { const m = String(node?.citation || '').match(/(\d{1,3})\s*:\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/); return m ? { chapter: +m[1], start: +m[2], end: +(m[3] || m[2]) } : null; }
+const ODR_SOURCE_SLUG = Object.freeze({ isaias:'isaie', jeremias:'jeremie', malachias:'malachie' });
+const HAYDOCK_BOOK_CODE = Object.freeze({
+    genesis:'GEN',exodus:'EXO',leviticus:'LEV',numbers:'NUM',deuteronomy:'DEU',josue:'JOS',judges:'JDG',ruth:'RUT',
+    '1-kings':'1SA','2-kings':'2SA','3-kings':'1KI','4-kings':'2KI','1-paralipomenon':'1CH','2-paralipomenon':'2CH','1-esdras':'EZR','2-esdras':'NEH',
+    tobias:'TOB',judith:'JDT',esther:'EST','1-machabees':'1MA','2-machabees':'2MA',job:'JOB',psalms:'PSA',proverbs:'PRO',ecclesiastes:'ECC','canticle-of-canticles':'SNG',wisdom:'WIS',ecclesiasticus:'SIR',
+    isaias:'ISA',jeremias:'JER',lamentations:'LAM',baruch:'BAR',ezechiel:'EZK',daniel:'DAN',osee:'HOS',joel:'JOL',amos:'AMO',abdias:'OBA',jonas:'JON',micheas:'MIC',nahum:'NAM',habacuc:'HAB',sophonias:'ZEP',aggeus:'HAG',zacharias:'ZEC',malachias:'MAL',
+    matthew:'MAT',mark:'MRK',luke:'LUK',john:'JHN',acts:'ACT',romans:'ROM','1-corinthians':'1CO','2-corinthians':'2CO',galatians:'GAL',ephesians:'EPH',philippians:'PHP',colossians:'COL','1-thessalonians':'1TH','2-thessalonians':'2TH','1-timothy':'1TI','2-timothy':'2TI',titus:'TIT',philemon:'PHM',hebrews:'HEB',james:'JAS','1-peter':'1PE','2-peter':'2PE','1-john':'1JN','2-john':'2JN','3-john':'3JN',jude:'JUD',apocalypse:'REV'
+});
+function odrSlug(ref){ return ODR_SOURCE_SLUG[ref.slug] || ref.slug; }
+function parseHaydockPoint(value){ const m=String(value||'').match(/^([A-Z0-9]+)\.(\d+)\.(\d+)$/); return m?{code:m[1],chapter:+m[2],verse:+m[3]}:null; }
+function haydockOverlap(entry, ref, code){ const a=parseHaydockPoint(entry?.start), b=parseHaydockPoint(entry?.end); return !!(a&&b&&a.code===code&&b.code===code&&a.chapter===ref.chapter&&b.chapter===ref.chapter&&a.verse<=ref.end&&b.verse>=ref.start); }
+function stripUnsafeHtml(html){ return String(html||'').replace(/<(?!\/?em\b)[^>]*>/gi,''); }
+function escapeCommentaryText(value){ return String(value||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function cleanBellarmineCorpus(raw){
+    return String(raw||'').replace(/\r/g,'').replace(/\u00ad/g,'').replace(/\u00a0/g,' ').replace(/[ \t]+\n/g,'\n');
+}
+function bellarmineRoman(n){
+    let value=Math.max(1,Math.min(150,Number(n)||1)), out='';
+    for(const [v,sym] of [[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']]){
