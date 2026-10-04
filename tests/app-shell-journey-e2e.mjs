@@ -57,8 +57,8 @@ try{
   });
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.installed===true &&
-    globalThis.AO_APP_SHELL_V1?.status?.().visibleRibbonOwned===true &&
-    globalThis.AO_APP_SHELL_V1?.status?.().legacyRibbonClickNeutralized===true,
+    globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner===true &&
+    globalThis.AO_APP_SHELL_V1?.status?.().legacyRibbonButtons===0,
     null,{timeout:30000});
   await page.waitForSelector("[data-ao-app-surface='home']",{state:"visible",timeout:30000});
 
@@ -70,8 +70,8 @@ try{
   }));
   assert.equal(cold.active,"home","cold launch did not begin on Home");
   assert.equal(cold.status?.passive,false,"modular shell is still passive on cold launch");
-  assert.equal(cold.status?.visibleRibbonOwned,true,"modular shell does not own visible ribbon");
-  assert.equal(cold.owner,"modular","modular shell ownership marker missing");
+  assert.equal(cold.status?.visibleOwner,true,"modular shell does not own visible ribbon");
+  assert.equal(cold.owner,"AO_APP_SHELL_V1","modular shell ownership marker missing");
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
 
   await page.locator("[data-ao-app-surface='calendar']").click();
@@ -314,7 +314,7 @@ try{
   }));
   assert.equal(end.active,"settings");
   assert.equal(end.confirms,2,"LIVE leave/resume guard did not run exactly twice");
-  assert.equal(end.owner,"modular");
+  assert.equal(end.owner,"AO_APP_SHELL_V1");
 
   const storedBeforeReload=await page.evaluate(()=>localStorage.getItem("ao-r17-active-mass-v1"));
   assert.ok(storedBeforeReload,"native Mass persistence record disappeared before reload");
@@ -340,7 +340,7 @@ try{
   assert.equal(reloaded.nativeRuntime,false,"stale persisted Mass recreated runtime state on reload");
   assert.equal(reloaded.persistedState,"suspended","intentional leave did not mark the persisted Mass suspended");
   assert.equal(reloaded.resumable,true,"suspended Mass is no longer available for an explicit return");
-  assert.equal(reloaded.owner,"modular","reload lost modular app-shell ownership");
+  assert.equal(reloaded.owner,"AO_APP_SHELL_V1","reload lost modular app-shell ownership");
   assert.equal(reloaded.probe,"calendar-state-ok","cross-module local state was contaminated");
 
   assert.deepEqual(pageErrors,[],"uncaught errors in cross-domain app journey: "+JSON.stringify(pageErrors));
