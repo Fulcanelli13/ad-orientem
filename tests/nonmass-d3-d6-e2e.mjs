@@ -76,20 +76,16 @@ try{
   assert.equal(boot.persistentPresence,null,"D3 left exposed/reserved state in persistent PRAY storage");
   assert.equal(boot.firstFriday,true,"D3 persistence scrub damaged unrelated programme state");
 
-  const openedPray=await page.evaluate(()=>
-    globalThis.AO_V37_SHELL?.openDomain?.("pray")!==false
+  const openedPray=await page.evaluate(async()=>
+    (await globalThis.AO_APP_SHELL_V1?.navigate?.("pray"))?.ok!==false
   );
-  await page.waitForFunction(()=>
-    typeof globalThis.AO_PRAY_V435930?.open==="function",
-    null,{timeout:30000}
-  );
-  assert.equal(
-    await page.evaluate(()=>globalThis.AO_PRAY_V435930?.version??null),
-    "43.59.30-pray-acceptance",
-    "unexpected PRAY donor version"
-  );
-  assert.equal(openedPray,true,"could not open canonical PRAY domain");
+  assert.equal(openedPray,true,"could not open canonical PRAY domain through app shell");
   await page.waitForSelector("#aoPray435930.open .aoP435930Home",{timeout:15000});
+  const praySignature=await page.evaluate(()=>({
+    id:document.querySelector("#aoPray435930")?.id??null,
+    home:Boolean(document.querySelector("#aoPray435930 .aoP435930Home")),
+  }));
+  assert.deepEqual(praySignature,{id:"aoPray435930",home:true},"locked PRAY donor DOM signature disappeared");
   await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
   await page.waitForSelector("#aoPray435930.open .aoP435930BigGrid",{timeout:15000});
   await page.waitForTimeout(100);
@@ -123,11 +119,12 @@ try{
   assert.equal(presence.session,"exposed");
   assert.equal(presence.persistent,null,"exposition state leaked back into persistent storage");
 
-  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.close?.({silent:true}));
-  const reopenedPray=await page.evaluate(()=>
-    globalThis.AO_V37_SHELL?.openDomain?.("pray")!==false
-  );
-  assert.equal(reopenedPray,true,"could not reopen canonical PRAY domain");
+  const reopenedPray=await page.evaluate(async()=>{
+    const home=await globalThis.AO_APP_SHELL_V1?.navigate?.("home");
+    const pray=await globalThis.AO_APP_SHELL_V1?.navigate?.("pray");
+    return home?.ok!==false && pray?.ok!==false;
+  });
+  assert.equal(reopenedPray,true,"could not reopen canonical PRAY domain through app shell");
   await page.waitForSelector("#aoPray435930.open .aoP435930Home",{timeout:10000});
   await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
   await page.waitForSelector("#aoPray435930.open .aoD5PhaseRail",{timeout:10000});
@@ -142,7 +139,8 @@ try{
   const examText=await page.locator("#aoPray435930 .aoP435930Body").innerText();
   assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i,"marked-prompt score remains visible");
 
-  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.close?.({silent:true}));
+  await page.evaluate(async()=>{ await globalThis.AO_APP_SHELL_V1?.navigate?.("settings"); });
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
   await page.evaluate(()=>globalThis.AO_SETTINGS_V4359?.open?.("/settings/about-sources"));
   await page.waitForSelector("#ao-settings-v4359 .aoD6Sources",{timeout:10000});
   const about=await page.evaluate(()=>({
