@@ -80,7 +80,7 @@ const nuptial=makeResolvedMass({
   overlays:["NUPTIAL"],
 });
 projection=projectSpecialStructure({session:{resolvedMass:nuptial,plan:compileMassPlan(nuptial)}},sources);
-assert.equal(projection.releaseSupport,false,"Nuptial insertion work silently disappeared");
+assert.equal(projection.releaseSupport,true,"Nuptial source insertions lost certified modular support");
 
 const emberProper=structuredClone(proper);
 emberProper.data.resolver2={};
