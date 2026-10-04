@@ -9,7 +9,7 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__LEGACY_DEFAULT_RETAINED");
+assert.equal(release.status,"READY");
 assert.equal(release.productionDefault,"LEGACY");
 assert.equal(resolveReaderUiMode({}),"LEGACY","reader default changed before release certification");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
@@ -21,9 +21,11 @@ assert.equal(parity.currentR17.nativeReaderCards,39);
 assert.equal(parity.currentR17.sourceFirstCanonSegments,14);
 assert.equal(parity.status,"HISTORICAL_PARITY_REFERENCE_NON_BLOCKING");
 assert.equal(parity.releaseAuthority,false);
-assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
+assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER__NON_BLOCKING_HISTORICAL_REFERENCE");
 assert.equal(recovery.lineage.v183FrozenLiveCards,48);
 assert.equal(Object.hasOwn(recovery,"cards"),false,"partial recovery evidence became a render map");
+assert.equal(recovery.releaseAuthority,false,"historical v1.83 recovery regained release authority");
+assert.equal(recovery.runtimePolicy?.historical48RequiredForRelease,false,"historical 48-card map silently became a release blocker again");
 
 assert.equal(regressions.status,"ACTIVE_REGRESSION_LOCKDOWN");
 const regressionById=new Map(regressions.entries.map(entry=>[entry.id,entry]));
