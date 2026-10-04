@@ -44,7 +44,7 @@ assert.ok(seg);
 assert.equal(seg.readerPayload,"NATIVE_READER_PAYLOAD");
 assert.equal(seg.renderable,true);
 assert.equal(projection.releaseSupport,true);
-assert.equal(plan.dismissal,"ITE_MISSA_EST","generic procession must not invent a Benedicamus ending");
+assert.equal(plan.dismissal,"ITE_OR_BENEDICAMUS_AS_RESOLVED","generic procession must preserve resolver-owned dismissal rather than forcing Benedicamus");
 assert.equal(plan.blessingAllowed,true,"generic procession must not invent blessing suppression");
 assert.equal(plan.normalLastGospel,true,"generic procession must not invent Last Gospel suppression");
 
