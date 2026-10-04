@@ -6,7 +6,25 @@ import {
   surfaceForCoreRoute,
 } from "./index.js";
 
-export const VERSION = "final-app-shell-bridge-v1";
+export const VERSION = "final-app-shell-bridge-v2";
+const RIBBON_SELECTOR = "[data-ao-ribbon]";
+
+function ribbonSurface(target) {
+  return normalizeAppSurface(target?.closest?.(RIBBON_SELECTOR)?.getAttribute?.("data-ao-ribbon"));
+}
+
+function renderRibbon(win, surface) {
+  const active=normalizeAppSurface(surface)??"home";
+  const buttons=win?.document?.querySelectorAll?.(RIBBON_SELECTOR)??[];
+  for(const button of buttons){
+    const value=normalizeAppSurface(button.getAttribute?.("data-ao-ribbon"));
+    const selected=value===active;
+    button.classList?.toggle?.("active",selected);
+    button.setAttribute?.("aria-current",selected?"page":"false");
+  }
+  try{ win?.AO_GLOBAL_RIBBON_V4323?.setActive?.(active); }catch{}
+  return active;
+}
 
 function ready(win) {
   return Boolean(
@@ -62,6 +80,11 @@ export function installAppShellBridge({
         host: state.host,
         initialSurface: initialSurface(win, state.host),
       });
+      state.controller.subscribe?.((surface)=>renderRibbon(win,surface));
+      renderRibbon(win,state.controller.getActive?.());
+      if(win?.document?.documentElement?.dataset){
+        win.document.documentElement.dataset.aoAppShellOwner="modular";
+      }
       setDataset("ready");
     } catch {
       state.blocked = true;
@@ -69,9 +92,20 @@ export function installAppShellBridge({
     }
   }
 
+  let clickOwnerInstalled=false;
+  const onRibbonClick=(event)=>{
+    const surface=ribbonSurface(event?.target);
+    if(!surface)return;
+    event.preventDefault?.();
+    event.stopImmediatePropagation?.();
+    void api.navigate(surface).then(result=>{
+      if(result?.surface)renderRibbon(win,result.surface);
+    });
+  };
+
   const api = Object.freeze({
     version: VERSION,
-    passive: true,
+    passive: false,
     contract: NON_MASS_DONOR_CONTRACT,
     get installed() { return Boolean(state.controller); },
     get polls() { return state.polls; },
@@ -91,7 +125,8 @@ export function installAppShellBridge({
     status() {
       return Object.freeze({
         installed: Boolean(state.controller),
-        passive: true,
+        passive: false,
+        visibleRibbonOwner: clickOwnerInstalled ? "AO_APP_SHELL_V1" : null,
         polls: state.polls,
         blocked: state.blocked,
         active: state.controller?.getActive?.() ?? null,
@@ -110,6 +145,10 @@ export function installAppShellBridge({
   });
 
   win.AO_APP_SHELL_V1 = api;
+  if(typeof win?.addEventListener==="function"){
+    win.addEventListener("click",onRibbonClick,true);
+    clickOwnerInstalled=true;
+  }
   setDataset("installing");
   tryInstall();
   return api;
