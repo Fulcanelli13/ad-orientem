@@ -163,17 +163,42 @@ assert.equal(palmAshShell?.nativeOwner,"R17_NATIVE_PRODUCTION");
 assert.match(String(palmAshShell?.test??""),/app-shell-final-e2e\.mjs/);
 
 const candlemasPayload=release.protectedInvariants.find(x=>x.id==="CANDLEMAS_NATIVE_PAYLOAD");
-assert.equal(candlemasPayload?.status,"CERTIFIED_MODULAR_RUNTIME__REAL_SHELL_ACCEPTANCE_PENDING",
-  "Candlemas real-shell evidence scope changed without certification");
+assert.equal(candlemasPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
+  "Candlemas real-shell production certification disappeared");
+assert.equal(candlemasPayload?.recoveredGraphRecords,11,"Candlemas source scope changed");
+assert.equal(candlemasPayload?.readerCards,7,"Candlemas reader-card contract changed");
+assert.match(String(candlemasPayload?.controller??""),/reader-candlemas\.js/,"Candlemas controller is not pinned");
+assert.match(String(candlemasPayload?.nativePreview??""),/reader-native-preview\.js/,"Candlemas native production integration is not pinned");
+assert.match(String(candlemasPayload?.productionTest??""),/app-shell-final-e2e\.mjs/,"Candlemas real-shell test is not pinned");
+assert.equal(candlemasPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
+
+const candlemasShell=release.protectedInvariants.find(x=>x.id==="CANDLEMAS_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(candlemasShell?.status,"CERTIFIED","Candlemas real-shell acceptance disappeared");
+assert.equal(candlemasShell?.rite,"CANDLEMAS");
+assert.equal(candlemasShell?.actualIndexHtml,true);
+assert.equal(candlemasShell?.legacyStartCount,0);
+assert.equal(candlemasShell?.nativeOwner,"R17_NATIVE_PRODUCTION");
+assert.match(String(candlemasShell?.test??""),/app-shell-final-e2e\.mjs/);
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
 assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
-assert.deepEqual(realShellScope?.certified,["PALM","ASH"]);
-assert.ok(realShellScope?.pending?.includes("CANDLEMAS"));
+assert.deepEqual(realShellScope?.certified,["PALM","ASH","CANDLEMAS"]);
+assert.equal(realShellScope?.pending?.includes("CANDLEMAS"),false);
+assert.ok(realShellScope?.pending?.includes("ROGATIONS"));
+assert.ok(realShellScope?.pending?.includes("REQUIEM_ABSOLUTION"));
 assert.ok(realShellScope?.pending?.includes("EASTER_VIGIL"));
 assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
 assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
 assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"PARTIAL_EXPLICIT_EVIDENCE");
+assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.certified,["PALM","ASH","CANDLEMAS"]);
+assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.pending?.includes("CANDLEMAS"),false);
+
+const rogationsPayload=release.protectedInvariants.find(x=>x.id==="ROGATIONS_NATIVE_PAYLOAD");
+assert.equal(rogationsPayload?.status,"CERTIFIED_MODULAR_RUNTIME",
+  "Rogations was silently promoted without real-shell evidence");
+const requiemAbsolutionPayload=release.protectedInvariants.find(x=>x.id==="REQUIEM_ABSOLUTION_NATIVE_PAYLOAD");
+assert.equal(requiemAbsolutionPayload?.status,"CERTIFIED_MODULAR_RUNTIME",
+  "Requiem Absolution was silently promoted without real-shell evidence");
 
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Asperges native-preview certification disappeared");
@@ -277,6 +302,10 @@ assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
+assert.match(nativeSource,/createCandlemasReaderController/,"native reader lost Candlemas controller integration");
+assert.match(nativeSource,/setCandlemasRecipientState/,"native reader lost Candlemas personal reception state");
+assert.match(nativeSource,/setCandlemasProcessionParticipant/,"native reader lost Candlemas procession state");
+assert.match(nativeSource,/getCandlemasMassState/,"native reader lost Candlemas Mass object-state projection");
 assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
 assert.match(nativeSource,/createPlanAwareObjectiveRuntime/,"native reader lost plan-aware objective runtime");
 assert.match(nativeSource,/objectiveRuntime\.allows/,"native reader stopped enforcing planned objective traversal");
