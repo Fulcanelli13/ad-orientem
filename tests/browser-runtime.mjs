@@ -23,6 +23,8 @@ const holyThursdayPostData=Object.freeze({payload:holyThursdayPostPayload,graph:
 const specialCore=load("../data/mass/special-days-core.v1.1.json");
 const goodFridayPayload=load("../data/presentation/reader-good-friday.v1.json");
 const goodFridayData=Object.freeze({payload:goodFridayPayload,graph:Object.freeze([...specialCore.graphs.GF])});
+const easterVigilPayload=load("../data/presentation/reader-easter-vigil.v1.json");
+const easterVigilData=Object.freeze({payload:easterVigilPayload,graph:Object.freeze([...specialCore.graphs.EV])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -402,6 +404,64 @@ assert.equal(goodFridayDone.ordinaryMassGraphActive,false);
 assert.equal(goodFriday.getReaderModel(),null);
 goodFriday.destroy();
 assert.equal(goodFridayRoot.innerHTML,"");
+
+const vigilRoot=rootFixture();
+const vigilProper={...proper,introit:null,communion:null,sourcePath:"Tempora/Pasc0-0"};
+const vigil=createBrowserMassRuntime({
+  root:vigilRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({
+    exceptionalProfile:"easter-vigil-1962",
+    requestedCelebrationId:"easter_vigil",
+    celebrationId:"easter_vigil",
+    celebrationType:"special_formulary",
+    properSource:"Tempora/Pasc0-0",
+  })},
+  resolveHostOptions:()=>({form:"solemn",celebrationTitle:"Easter Vigil",proper:vigilProper}),
+  readReaderPreferences:()=>({mode:"live",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadEasterVigilData:async()=>easterVigilData,
+  easterVigilContext:{fontMode:"SEPARATE_BAPTISTERY",baptismPresent:true},
+});
+const vigilEntered=await vigil.enter();
+assert.equal(vigilEntered.session.plan.kind,"COMPOSITE_DISTINCT_RITE");
+assert.equal(vigilEntered.session.plan.rite,"EASTER_VIGIL");
+assert.equal(vigilEntered.session.plan.massEntry,"VIGIL_DEFINED_MASS_ENTRY");
+assert.equal(vigil.getLifecycleState().stage,"VIGIL_ACTIVE");
+assert.equal(vigil.getEasterVigilState().step.recordId,"EV-FIRE-010");
+assert.equal(vigil.getReaderState().cardTitle,"Blessing of the New Fire");
+assert.equal(vigil.getReaderModel().structureOwner,"EASTER_VIGIL_COMPOSITE_MASS");
+assert.equal(vigil.getReaderModel().cardBySequence(1).title,"Kyrie");
+
+let evGuard=0;
+while(vigil.getEasterVigilState().step.recordId!=="EV-LUM-110" && evGuard++<80)vigil.next();
+assert.equal(vigil.getReaderState().gesture.label,"GENUFLECT_TOWARD_PASCHAL_CANDLE_AND_RESPOND_DEO_GRATIAS");
+evGuard=0;
+while(vigil.getEasterVigilState().step.recordId!=="EV-FONT-440" && evGuard++<80)vigil.next();
+assert.equal(vigil.getReaderState().posture.label,"KNEEL");
+assert.equal(vigil.getReaderState().gesture.label,"CONTINUE_LITANY");
+evGuard=0;
+while(vigil.getEasterVigilState().step.recordId!=="EV-REN-510" && evGuard++<80)vigil.next();
+assert.equal(vigil.getReaderState().gesture.label,"RESPOND_ABRENUNTIAMUS");
+evGuard=0;
+while(vigil.getEasterVigilState().step.recordId!=="EV-MASS-700" && evGuard++<80)vigil.next();
+assert.equal(vigil.getEasterVigilState().handoffToMass,true);
+vigil.next();
+assert.equal(vigil.getEasterVigilState().step.recordId,"EV-MASS-700");
+assert.equal(vigil.getCurrentSectionId(),vigil.getReaderModel().cardBySequence(1).sectionId);
+assert.equal(vigil.getReaderState().cardTitle,"Kyrie");
+vigil.previous();
+assert.equal(vigil.getEasterVigilState().step.recordId,"EV-MASS-700");
+vigil.next();
+assert.equal(vigil.getReaderState().cardTitle,"Kyrie");
+const laudsCard=vigil.getReaderModel().cards.find(x=>x.sectionId==="SP.EASTER_VIGIL.15");
+assert.ok(laudsCard);
+assert.ok(laudsCard.paragraphs[0].primary??laudsCard.paragraphs[0].latin);
+vigil.showSection(vigil.getReaderModel().totalCards);
+const vigilDone=vigil.next();
+assert.equal(vigilDone.rite,"EASTER_VIGIL");
+assert.equal(vigilDone.stage,"DEPARTURE");
+vigil.destroy();
+assert.equal(vigilRoot.innerHTML,"");
 
 const missingRoot=rootFixture();
 const missing=createBrowserMassRuntime({

@@ -1,7 +1,7 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "3.1.0",
-  "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
+  "version": "3.2.0",
+  "status": "FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__LEGACY_DEFAULT_RETAINED",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
   "protectedInvariants": [
@@ -306,6 +306,60 @@
         "tests/reader-nuptial.mjs",
         "tests/reader-model.mjs",
         "tests/reader-special-structure.mjs"
+      ]
+    },
+    {
+      "id": "EASTER_VIGIL_NATIVE_COMPOSITE",
+      "status": "CERTIFIED_COMPOSITE_RUNTIME__PHONE_SUITE_GREEN",
+      "controller": "src/mass/reader-easter-vigil.js",
+      "payload": "data/presentation/reader-easter-vigil.v1.json",
+      "structuralSource": "data/mass/special-days-core.v1.1.json#graphs.EV",
+      "runtime": "src/mass/browser-runtime.js",
+      "recoveredGraphRecords": 38,
+      "branchModes": [
+        "FONT_MODE=NONE",
+        "FONT_MODE=IN_CHURCH",
+        "FONT_MODE=SEPARATE_BAPTISTERY",
+        "BAPTISM_PRESENT=true"
+      ],
+      "massProjection": {
+        "entry": "KYRIE",
+        "ordinaryOpeningSuppressed": true,
+        "omittedSourceSequences": [
+          1,
+          21,
+          30
+        ],
+        "suppressedCanonicalEvents": [
+          "MC-COM-150",
+          "MC-COM-160",
+          "MC-END-010"
+        ],
+        "laudsSectionId": "SP.EASTER_VIGIL.15"
+      },
+      "guarantees": [
+        "the 38-record EV graph owns choreography and branch state",
+        "New Fire, Paschal Candle, triple Lumen Christi, Exsultet, four lesson/oration cycles, font branches, baptismal renewal, aspersion and second Litany remain explicit states",
+        "font modes NONE, IN_CHURCH and SEPARATE_BAPTISTERY remain distinct and optional baptisms are explicit",
+        "post-Exsultet candle state remains unconstrained unless a later graph record explicitly owns it",
+        "the Mass handoff occurs at Kyrie and never fabricates Prayers at the Foot or Introit",
+        "Agnus Dei, ordinary peace prayer and Solemn Pax, Communion antiphon and Last Gospel are omitted by the Vigil Mass projection without mutating canonical source graphs",
+        "Lauds is inserted immediately after ablutions and before the Postcommunion sequence",
+        "Introit and Communion are treated as rite-certified absent Proper slots rather than stale or fabricated Proper text",
+        "Back navigation from the first Mass card returns to the EV-MASS-700 handoff",
+        "missing Vigil payload or unsupported branch configuration fails closed"
+      ],
+      "sourceText": {
+        "recoveredDonor": "Ad Orientem A5 Easter Vigil donor",
+        "exsultet": "FULL_RECOVERED_LATIN_ENGLISH",
+        "lauds": "FULL_RECOVERED_LATIN_ENGLISH",
+        "prophecies": "RECOVERED_PRESENTATION_OVERVIEW__CHOREOGRAPHY_EXACT__FULL_TEXT_ENRICHMENT_NON_BLOCKING"
+      },
+      "tests": [
+        "tests/reader-easter-vigil.mjs",
+        "tests/browser-runtime.mjs",
+        "tests/reader-special-structure.mjs",
+        "tests/reader-phone-acceptance.mjs"
       ]
     },
     {
@@ -733,13 +787,7 @@
       ]
     }
   ],
-  "openBlockers": [
-    {
-      "id": "SPECIAL_STRUCTURE_PARITY",
-      "severity": "RELEASE_BLOCKER",
-      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction, Holy Thursday post-Mass and Nuptial insertions. Still unresolved for full-year production: Easter Vigil."
-    }
-  ],
+  "openBlockers": [],
   "certificationPolicy": {
     "greenUnitCIIsNotReleaseCertification": true,
     "requireAllBlockersClosed": true,

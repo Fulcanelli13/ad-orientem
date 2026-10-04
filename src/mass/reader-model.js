@@ -40,6 +40,7 @@ export function createMassReaderModel({
   sungCorpus,
   canonSourceMap=null,
   nuptialData=null,
+  properNotApplicableSlots=Object.freeze([]),
 }={}){
   if(!resolvedMass || resolvedMass.schema!=="ao-resolved-mass-v2") {
     throw new TypeError("ao-resolved-mass-v2 required");
@@ -49,7 +50,7 @@ export function createMassReaderModel({
   const proper=unwrapProper(resolvedMass.proper);
   if(!proper) throw new Error("Reader requires a READY resolved Proper before Mass opens");
 
-  const properMap=assertReaderProperReady(properToReaderSlots(proper));
+  const properMap=assertReaderProperReady(properToReaderSlots(proper,{notApplicableSlots:properNotApplicableSlots}));
   const sectionResolver=createReaderSectionResolver(sectionMap);
   const selected=selectReaderTextCorpus({
     form:resolvedMass.form,
