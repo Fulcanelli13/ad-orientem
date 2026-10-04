@@ -75,8 +75,14 @@ try{
   assert.equal(boot.firstFriday,true,"D3 persistence scrub damaged unrelated programme state");
 
   await page.waitForFunction(()=>
-    globalThis.AO_PRAY_V435930?.qa?.()?.version==="43.59.30-pray-acceptance",
+    typeof globalThis.AO_PRAY_V435930?.open==="function" &&
+    typeof globalThis.AO_V37_SHELL?.openDomain==="function",
     null,{timeout:30000}
+  );
+  assert.equal(
+    await page.evaluate(()=>globalThis.AO_PRAY_V435930?.version??null),
+    "43.59.30-pray-acceptance",
+    "unexpected PRAY donor version"
   );
 
   const openedPray=await page.evaluate(()=>
