@@ -67,6 +67,14 @@ assert.equal(liveStructure?.sourceFirstCanonSteps,14);
 assert.equal(liveStructure?.replacedCanonMacroSteps,5);
 assert.equal(liveStructure?.historical48RequiredForRelease,false);
 assert.equal(liveStructure?.historicalLive20ReleaseAuthority,false);
+const pilot=release.protectedInvariants.find(x=>x.id==="PILOT_VERTICAL_PATH");
+assert.equal(release.pilotRelease?.status,"CANDIDATE_CI_REQUIRED","pilot release gate changed before CI certification");
+assert.equal(pilot?.status,"CANDIDATE_CI_REQUIRED","pilot vertical path lost candidate status");
+assert.equal(release.pilotRelease?.reader,"R17_NATIVE");
+assert.equal(release.pilotRelease?.productionDefaultUnchanged,"LEGACY");
+assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("PALM"));
+assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("ASH"));
+
 const phoneAcceptance=release.protectedInvariants.find(x=>x.id==="PHONE_BROWSER_ACCEPTANCE");
 assert.equal(phoneAcceptance?.status,"CERTIFIED_CHROMIUM_TOUCH","phone acceptance certification disappeared");
 assert.match(String(phoneAcceptance?.test??""),/reader-phone-acceptance\.mjs/,"phone acceptance test is not pinned");
@@ -119,13 +127,13 @@ assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
 const ashPayload=release.protectedInvariants.find(x=>x.id==="ASH_NATIVE_PAYLOAD");
-assert.equal(ashPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Ash runtime certification disappeared");
+assert.equal(ashPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Ash native-preview certification disappeared");
 assert.equal(ashPayload?.recoveredGraphRecords,8,"Ash source scope changed");
 assert.equal(ashPayload?.readerCards,5,"Ash reader-card contract changed");
 assert.match(String(ashPayload?.controller??""),/reader-ash\.js/,"Ash controller is not pinned");
 
 const palmPayload=release.protectedInvariants.find(x=>x.id==="PALM_NATIVE_PAYLOAD");
-assert.equal(palmPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING","Palm runtime certification disappeared");
+assert.equal(palmPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Palm native-preview certification disappeared");
 assert.equal(palmPayload?.recoveredGraphRecords,12,"Palm source scope changed");
 assert.equal(palmPayload?.readerCards,7,"Palm reader-card contract changed");
 assert.match(String(palmPayload?.controller??""),/reader-palm\.js/,"Palm controller is not pinned");
