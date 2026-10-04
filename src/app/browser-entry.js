@@ -31,6 +31,49 @@ function visibleRibbon(win) {
   return win?.document?.getElementById?.("ao-global-ribbon") ?? null;
 }
 
+export function installLiveSessionGuard({ win = globalThis } = {}) {
+  const doc=win?.document;
+  const store=win?.AO_RUNTIME_V8?.store;
+  if(!doc?.documentElement || typeof store?.getState!=="function"){
+    return Object.freeze({installed:false,dispose(){}});
+  }
+
+  let disposed=false;
+  function forceHapticsOff(){
+    try{win?.AO_HAPTICS_V4319?.setEnabled?.(false)}catch{}
+    try{win?.localStorage?.setItem?.("ao-haptics-enabled","0")}catch{}
+    try{win?.navigator?.vibrate?.(0)}catch{}
+  }
+  function sync(){
+    if(disposed)return;
+    const live=store.getState?.()?.route==="live";
+    doc.documentElement.classList?.toggle?.("aoAppLive",live);
+    doc.body?.classList?.toggle?.("aoAppLive",live);
+    const ribbon=visibleRibbon(win);
+    if(ribbon){
+      ribbon.hidden=Boolean(live);
+      ribbon.setAttribute?.("aria-hidden",live?"true":"false");
+    }
+    if(live)forceHapticsOff();
+  }
+
+  const unsubscribe=typeof store.subscribe==="function"
+    ? store.subscribe(()=>sync())
+    : null;
+  sync();
+
+  return Object.freeze({
+    installed:true,
+    sync,
+    forceHapticsOff,
+    dispose(){
+      if(disposed)return;
+      disposed=true;
+      try{unsubscribe?.()}catch{}
+    },
+  });
+}
+
 export function installLiveStructuralSettingsGuard({ win = globalThis } = {}) {
   const doc = win?.document;
   if (!doc?.addEventListener) {
@@ -196,6 +239,7 @@ export function installAppShellBridge({
     ribbonOwner: null,
     unsubscribeSurface: null,
     liveStructuralSettingsGuard: null,
+    liveSessionGuard: null,
   };
 
   function setDataset(value) {
@@ -239,6 +283,8 @@ export function installAppShellBridge({
       ownVisibleRibbon();
       state.liveStructuralSettingsGuard?.dispose?.();
       state.liveStructuralSettingsGuard = installLiveStructuralSettingsGuard({ win });
+      state.liveSessionGuard?.dispose?.();
+      state.liveSessionGuard = installLiveSessionGuard({ win });
       setDataset("ready");
     } catch {
       state.blocked = true;
@@ -275,6 +321,7 @@ export function installAppShellBridge({
         visibleRibbonOwned: Boolean(state.ribbonOwner?.owned),
         legacyRibbonClickNeutralized: Boolean(state.ribbonOwner?.neutralized),
         liveStructuralSettingsGuard: Boolean(state.liveStructuralSettingsGuard?.installed),
+        liveSessionGuard: Boolean(state.liveSessionGuard?.installed),
         homeOwner: typeof win?.AO_NAV_V362?.home === "function",
         domainOwner: typeof win?.AO_V37_SHELL?.openDomain === "function",
         settingsOwner: Boolean(
