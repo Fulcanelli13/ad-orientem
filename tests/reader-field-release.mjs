@@ -14,8 +14,8 @@ assert.equal(gate.fieldRelease?.status,"SUPERSEDED_BY_FINAL_MAINLINE");
 assert.equal(gate.fieldRelease?.authority,"HISTORICAL_FIELD_SNAPSHOT_ONLY");
 assert.equal(gate.fieldRelease?.target,"2026-10-04_ORDINARY_OR_VOTIVE_MASS");
 assert.equal(gate.fieldRelease?.readerUiPolicy,"NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK");
-assert.deepEqual(gate.openBlockers.map(x=>x.id),["REAL_APP_SHELL_ACCEPTANCE"],
-  "historical field test changed the final release blocker");
+assert.deepEqual(gate.openBlockers,[],
+  "historical field snapshot reintroduced a final release blocker");
 assert.equal(gate.productionDefault,"R17_NATIVE",
   "final app no longer uses the certified native production reader");
 
