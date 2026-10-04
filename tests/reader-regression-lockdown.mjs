@@ -9,9 +9,9 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__LEGACY_DEFAULT_RETAINED");
-assert.equal(release.productionDefault,"LEGACY");
-assert.equal(resolveReaderUiMode({}),"LEGACY","reader default changed before release certification");
+assert.equal(release.status,"FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__R17_NATIVE_DEFAULT");
+assert.equal(release.productionDefault,"R17_NATIVE");
+assert.equal(resolveReaderUiMode({}),"PREVIEW","native reader is no longer the certified production default");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
 assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,true);
 
@@ -167,7 +167,7 @@ assert.deepEqual(easterVigil?.massProjection?.suppressedCanonicalEvents,["MC-COM
 assert.equal(easterVigil?.massProjection?.laudsSectionId,"SP.EASTER_VIGIL.15");
 assert.match(String(easterVigil?.controller??""),/reader-easter-vigil\.js/);
 assert.equal(easterVigil?.sourceText?.prophecies,"RECOVERED_PRESENTATION_OVERVIEW__CHOREOGRAPHY_EXACT__FULL_TEXT_ENRICHMENT_NON_BLOCKING");
-assert.equal(release.productionDefault,"LEGACY","full-year special-structure completion silently flipped the production feature gate");
+assert.equal(release.productionDefault,"R17_NATIVE","full-year release lost the native production default");
 
 const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
 assert.equal(properProvenance?.status,"CERTIFIED_REPLACEMENT_WITNESS",
