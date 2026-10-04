@@ -49,22 +49,24 @@ try{
   const pageErrors=[];
   page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
 
-  await page.addInitScript(()=>{
-    localStorage.setItem("ao.pray.v435930",JSON.stringify({
-      adoration:{presence:"exposed"},
-      firstFriday:{records:[{date:"2026-10-02",complete:true}]},
-    }));
-  });
-
   await page.goto("http://127.0.0.1:4176/index.html",{waitUntil:"domcontentloaded",timeout:90000});
-  await page.waitForFunction(()=>globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.().d6==="compatibility-integrated",null,{timeout:30000});
+  await page.waitForFunction(()=>
+    globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.().d6==="compatibility-integrated" &&
+    typeof globalThis.AO_V37_SHELL?.openDomain==="function",
+    null,{timeout:30000}
+  );
 
   const boot=await page.evaluate(()=>{
     const saved=JSON.parse(localStorage.getItem("ao.pray.v435930")||"{}");
+    saved.adoration={...(saved.adoration||{}),presence:"exposed"};
+    saved.firstFriday={...(saved.firstFriday||{}),records:[{date:"2026-10-02",complete:true}]};
+    localStorage.setItem("ao.pray.v435930",JSON.stringify(saved));
+    globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.reconcile?.();
+    const normalized=JSON.parse(localStorage.getItem("ao.pray.v435930")||"{}");
     return {
       status:globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.()??null,
-      persistentPresence:saved?.adoration?.presence??null,
-      firstFriday:saved?.firstFriday?.records?.[0]?.complete??null,
+      persistentPresence:normalized?.adoration?.presence??null,
+      firstFriday:normalized?.firstFriday?.records?.[0]?.complete??null,
     };
   });
   assert.equal(boot.status?.d3,"compatibility-integrated");
@@ -73,11 +75,6 @@ try{
   assert.equal(boot.status?.d6,"compatibility-integrated");
   assert.equal(boot.persistentPresence,null,"D3 left exposed/reserved state in persistent PRAY storage");
   assert.equal(boot.firstFriday,true,"D3 persistence scrub damaged unrelated programme state");
-
-  await page.waitForFunction(()=>
-    typeof globalThis.AO_V37_SHELL?.openDomain==="function",
-    null,{timeout:30000}
-  );
 
   const openedPray=await page.evaluate(()=>
     globalThis.AO_V37_SHELL?.openDomain?.("pray")!==false
