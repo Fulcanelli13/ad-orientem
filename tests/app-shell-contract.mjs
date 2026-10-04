@@ -95,8 +95,14 @@ function host({ route = "home", confirm = true } = {}) {
 {
   const calls = [];
   const dataset = {};
+  const eventTypes = [];
+  const doc = {
+    documentElement: { dataset },
+    addEventListener: (type) => eventTypes.push(type),
+    removeEventListener: () => {},
+  };
   const win = {
-    document: { documentElement: { dataset } },
+    document: doc,
     AO_RUNTIME_V8: {
       store: {
         getState: () => ({ route: "home", language: "en" }),
@@ -113,6 +119,10 @@ function host({ route = "home", confirm = true } = {}) {
   const bridge = installAppShellBridge({ win, pollMs: 0, maxPolls: 1 });
   assert.equal(bridge.installed, true);
   assert.equal(bridge.passive, true);
+  assert.equal(bridge.version, "final-app-shell-bridge-v2");
+  assert.equal(bridge.status().focusVisibilityGuard, true);
+  assert.equal(eventTypes.includes("pointerdown"), true);
+  assert.equal(eventTypes.includes("click"), true);
   assert.equal(dataset.aoAppShellBridge, "ready");
   assert.equal((await bridge.navigate("learn")).ok, true);
   assert.deepEqual(calls, ["home", "domain:learn"]);
