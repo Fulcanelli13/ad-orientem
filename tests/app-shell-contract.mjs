@@ -51,6 +51,18 @@ function host({ route = "home", confirm = true } = {}) {
 }
 
 {
+  const h = host({ route: "home", confirm: false });
+  h.liveMassActive = () => true;
+  const shell = createAppShellController({ host: h, initialSurface: "mass" });
+  const nav = await shell.go("pray");
+  assert.equal(nav.reason, "LIVE_MASS_LEAVE_CANCELLED");
+  assert.equal(shell.getActive(), "mass");
+  assert.deepEqual(h.calls, ["dismiss-settings", "confirm-live"]);
+}
+
+// native reader authority survives historical route reset
+
+{
   const h = host({ route: "live", confirm: true });
   const shell = createAppShellController({ host: h, initialSurface: "mass" });
   assert.equal((await shell.go("calendar")).ok, true);
@@ -66,6 +78,27 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal(shell.getActive(), "mass");
 }
 
+
+{
+  const calls=[];
+  const win={
+    AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en"}),subscribe:()=>()=>{}}},
+    AO_NAV_V362:{home:()=>true},
+    AO_V37_SHELL:{openDomain:(id)=>{calls.push("donor:"+id);return true;}},
+    AO_R17_BROWSER_ENTRY:{
+      hasResumable:()=>true,
+      resume:async()=>{calls.push("mass:resume");return {ok:true};},
+      suspend:()=>{calls.push("mass:suspend");return true;},
+    },
+  };
+  const adapter=createAppHostAdapter(win);
+  assert.equal(await adapter.openDomain("mass"),true);
+  assert.deepEqual(calls,["mass:resume"]);
+  assert.equal(adapter.leaveLiveMass(),true);
+  assert.deepEqual(calls,["mass:resume","mass:suspend"]);
+}
+
+// resumable Mass bypasses donor domain
 {
   const calls = [];
   let open = false;
