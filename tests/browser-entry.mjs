@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {
   mapLegacyFollowMode,
+  resolveFieldPresentationMode,
   mapInsertedRites,
   deriveHostOptions,
   mountR17Preview,
@@ -11,6 +12,12 @@ assert.equal(mapLegacyFollowMode("read"), "MISSAL");
 assert.equal(mapLegacyFollowMode("simple"), "SIMPLE");
 assert.equal(mapLegacyFollowMode("vox"), "LIVE");
 assert.equal(mapLegacyFollowMode(undefined), "LIVE");
+assert.equal(resolveFieldPresentationMode({
+  date:"2026-10-04",celebrationId:"holy_rosary",requestedMode:"simple",
+}),"LIVE");
+assert.equal(resolveFieldPresentationMode({
+  date:"2026-10-05",celebrationId:"holy_rosary",requestedMode:"simple",
+}),"SIMPLE");
 
 const rites = mapInsertedRites([
   "asperges",
