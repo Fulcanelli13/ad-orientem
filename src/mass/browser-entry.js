@@ -2,6 +2,7 @@
 // The host still owns calendar/celebration preflight and Proper resolution.
 // The native reader owns the production Mass surface. Legacy is explicit rollback only.
 
+import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPreview } from "./reader-gate.js";
 import { runReaderShadowAudit } from "./reader-shadow.js";
@@ -276,9 +277,13 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
 }
 
 if (typeof window !== "undefined" && typeof document !== "undefined") {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => installBrowserMassBridge(), { once: true });
-  } else {
+  const installFinalBrowserBridges = () => {
+    installAppShellBridge();
     installBrowserMassBridge();
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", installFinalBrowserBridges, { once: true });
+  } else {
+    installFinalBrowserBridges();
   }
 }
