@@ -341,7 +341,11 @@ try{
     prayerBookRoot:Boolean(document.getElementById("aoPrayerBookRoot")),
     prayRoot:Boolean(document.getElementById("aoPray435930")),
   }));
-  assert.equal(prayOwnership.active,"pray","PRAY navigation did not activate the app surface; diagnostic="+JSON.stringify(prayOwnership));
+  const prayerGlobals=await page.evaluate(()=>Object.keys(globalThis)
+    .filter(key=>/pray|prayer|rosary|confess|ador|bened|devot/i.test(key))
+    .sort()
+    .slice(0,160));
+  assert.equal(prayOwnership.active,"pray","PRAY navigation did not activate the app surface; diagnostic="+JSON.stringify({...prayOwnership,prayerGlobals}));
   assert.equal(prayOwnership.routeOwner,"modular-pray-v1","production PRAY click did not use modular PRAY route owner; diagnostic="+JSON.stringify(prayOwnership));
   assert.equal(prayOwnership.prayAppInstalled,true,"AO_PRAY_APP_V1 was not installed; diagnostic="+JSON.stringify(prayOwnership));
   assert.equal(prayOwnership.prayAppStatus?.presentationOwner,"AO_PRAY_V435930","unexpected PRAY presentation authority; diagnostic="+JSON.stringify(prayOwnership));
