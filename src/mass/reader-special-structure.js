@@ -50,8 +50,8 @@ function graphRecords(id,sources){
   return freeze([...rows]);
 }
 
-const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM"]);
-const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST"]);
+const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM","EMBER_LESSONS","NUPTIAL"]);
+const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GOOD_FRIDAY","GENERIC_PROCESSION","EASTER_VIGIL"]);
 
 function segment(id,lane,sources,extra={}){
   const meta=sources.registry?.overlays?.[id]??null;
@@ -83,44 +83,48 @@ export function projectSpecialStructure(prepared,{registry,extension,core}={}){
 
   if(plan.kind==="DISTINCT_RITE"){
     const rite=String(plan.rite??"");
+    const riteSegment=segment(rite,"DISTINCT_RITE",sources,{handoff:"NO_ORDINARY_MASS_ASSUMPTIONS"});
     return freeze({
       schema:"ao-r19-special-structure-projection-v1",
       audit,
       kind:plan.kind,
       ordinaryMassGraphActive:false,
-      segments:freeze([segment(rite,"DISTINCT_RITE",sources,{handoff:"NO_ORDINARY_MASS_ASSUMPTIONS"})]),
-      readerPayloadComplete:false,
-      releaseSupport:false,
-      reason:"DISTINCT_RITE_READER_PAYLOAD_REQUIRED",
+      segments:freeze([riteSegment]),
+      readerPayloadComplete:riteSegment.renderable===true,
+      releaseSupport:riteSegment.renderable===true,
+      reason:riteSegment.renderable===true?null:"DISTINCT_RITE_READER_PAYLOAD_REQUIRED",
     });
   }
 
   if(plan.kind==="COMPOSITE_DISTINCT_RITE"){
     const rite=String(plan.rite??"");
+    const riteSegment=segment(rite,"PRECEDING_COMPOSITE_RITE",sources,{handoff:plan.massEntry??null});
+    const easterVigil=rite==="EASTER_VIGIL" && riteSegment.renderable===true && plan.afterMass==="LAUDS";
     return freeze({
       schema:"ao-r19-special-structure-projection-v1",
       audit,
       kind:plan.kind,
       ordinaryMassGraphActive:Boolean(plan.canonicalMassGraphActive),
       segments:freeze([
-        segment(rite,"PRECEDING_COMPOSITE_RITE",sources,{handoff:plan.massEntry??null}),
+        riteSegment,
         freeze({
           id:"ORDINARY_MASS",
           lane:"MASS",
           massEntry:plan.massEntry??"VIGIL_DEFINED_MASS_ENTRY",
           renderable:true,
+          readerPayload:easterVigil?"EASTER_VIGIL_PROJECTED_MASS":"ORDINARY_READER",
           ordinaryOpeningSuppressed:Boolean(plan.ordinaryOpeningSuppressed),
         }),
         freeze({
           id:String(plan.afterMass??"AFTER_MASS"),
           lane:"FOLLOWING_ACTION",
-          renderable:false,
-          readerPayload:"STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
+          renderable:easterVigil,
+          readerPayload:easterVigil?"EASTER_VIGIL_LAUDS_INSERTION":"STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
         }),
       ]),
-      readerPayloadComplete:false,
-      releaseSupport:false,
-      reason:"COMPOSITE_DISTINCT_RITE_READER_PAYLOAD_REQUIRED",
+      readerPayloadComplete:easterVigil,
+      releaseSupport:easterVigil,
+      reason:easterVigil?null:"COMPOSITE_DISTINCT_RITE_READER_PAYLOAD_REQUIRED",
     });
   }
 
@@ -132,12 +136,25 @@ export function projectSpecialStructure(prepared,{registry,extension,core}={}){
   const overlays=arr(plan.overlayGraphs).filter(id=>id!=="VOTIVE_PROPER").map(id=>segment(id,"MASS_OVERLAY",sources,{
     massEntry:plan.massEntry,
   }));
-  const insertions=arr(plan.insertions).map(id=>freeze({
-    id,
-    lane:"MASS_INSERTION",
-    renderable:false,
-    readerPayload:"STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
-  }));
+  const insertions=arr(plan.insertions).map(id=>{
+    const prayerOverPeople=id==="PRAYER_OVER_PEOPLE_AFTER_POSTCOMMUNION_BEFORE_FINAL_DOMINUS_VOBISCUM";
+    const emberLessons=id==="RESOLVED_PREPARATORY_LESSONS";
+    const nuptial=["FIRST_NUPTIAL_BLESSING_AFTER_PATER","DEUS_QUI_POTESTATE_NUPTIAL_BLESSING","FINAL_BLESSING_OVER_SPOUSES"].includes(id);
+    const planOwned=prayerOverPeople||emberLessons||nuptial;
+    return freeze({
+      id,
+      lane:"MASS_INSERTION",
+      renderable:planOwned,
+      planOwned,
+      readerPayload:prayerOverPeople
+        ? "PLAN_APPLIED_TO_ORDINARY_READER"
+        : emberLessons
+          ? "SOURCE_ORDER_PRE_GOSPEL_READER"
+          : nuptial
+            ? "NUPTIAL_SOURCE_INSERTION_READER"
+            : "STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
+    });
+  });
   const following=arr(plan.followingGraphs).map(id=>segment(id,"FOLLOWING_ACTION",sources,{
     activation:"EXPLICIT_COMPILED_PLAN",
   }));

@@ -94,13 +94,26 @@ const gf=makeResolvedMass({...base,distinctRite:"GOOD_FRIDAY"});
 p=projectSpecialStructure({session:{resolvedMass:gf,plan:compileMassPlan(gf)}},sources);
 assert.equal(p.kind,"DISTINCT_RITE");
 assert.equal(p.ordinaryMassGraphActive,false);
-assert.equal(p.reason,"DISTINCT_RITE_READER_PAYLOAD_REQUIRED");
+assert.equal(p.segments[0].id,"GOOD_FRIDAY");
+assert.equal(p.segments[0].readerPayload,"NATIVE_READER_PAYLOAD");
+assert.equal(p.segments[0].renderable,true);
+assert.equal(p.readerPayloadComplete,true);
+assert.equal(p.releaseSupport,true);
+assert.equal(p.reason,null);
 
 const ev=makeResolvedMass({...base,distinctRite:"EASTER_VIGIL"});
 p=projectSpecialStructure({session:{resolvedMass:ev,plan:compileMassPlan(ev)}},sources);
 assert.equal(p.kind,"COMPOSITE_DISTINCT_RITE");
 assert.equal(p.ordinaryMassGraphActive,true);
+assert.equal(p.segments[0].id,"EASTER_VIGIL");
+assert.equal(p.segments[0].readerPayload,"NATIVE_READER_PAYLOAD");
 assert.equal(p.segments[1].id,"ORDINARY_MASS");
 assert.equal(p.segments[1].ordinaryOpeningSuppressed,true);
+assert.equal(p.segments[1].readerPayload,"EASTER_VIGIL_PROJECTED_MASS");
+assert.equal(p.segments[2].id,"LAUDS");
+assert.equal(p.segments[2].readerPayload,"EASTER_VIGIL_LAUDS_INSERTION");
+assert.equal(p.readerPayloadComplete,true);
+assert.equal(p.releaseSupport,true);
+assert.equal(p.reason,null);
 
 console.log("special structure projection: PASS — compiled rite plan is preserved; missing reader payload fails closed.");

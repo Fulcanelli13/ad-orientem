@@ -197,7 +197,7 @@ export async function prepareNativeReaderPreview({
     lowCorpus:data?.lowCorpus,
     sungCorpus:data?.sungCorpus,
     canonSourceMap:data?.canonSourceMap,
-    vernacularLanguage:prepared?.readerPreferences?.language ?? "en",
+    nuptialData:data?.nuptialData,
   });
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});

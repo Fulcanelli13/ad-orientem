@@ -8,26 +8,19 @@ export const READER_PROPER_SLOTS = Object.freeze([
   ...REQUIRED_SLOTS.slice(4),
 ]);
 
-function vernacularValue(value,language="en"){
-  if(!value || typeof value!=="object")return "";
-  const lang=String(language??"en").toLowerCase();
-  const preferred=lang.startsWith("fr") ? value.fr : value.en;
-  return String(preferred ?? value.en ?? value.fr ?? value.vernacular ?? value.translation ?? "").trim();
-}
-
-function usable(value,language="en"){
+function usable(value){
   return value && typeof value==="object" &&
-    Boolean(String(value.lat??value.la??"").trim()) &&
-    Boolean(vernacularValue(value,language));
+    Boolean(String(value.lat??"").trim()) &&
+    Boolean(String(value.en??"").trim());
 }
 
-function values(value,language="en"){
-  if(Array.isArray(value)) return value.filter(row=>usable(row,language));
-  return usable(value,language) ? [value] : [];
+function values(value){
+  if(Array.isArray(value)) return value.filter(usable);
+  return usable(value) ? [value] : [];
 }
 
-function readyEnvelope(slot,value,{language="en"}={}){
-  const rows=values(value,language);
+function readyEnvelope(slot,value){
+  const rows=values(value);
   if(!rows.length) return Object.freeze({status:"MISSING",slot,data:null});
   return Object.freeze({
     status:"READY",
@@ -36,36 +29,44 @@ function readyEnvelope(slot,value,{language="en"}={}){
       paragraphs:Object.freeze(rows.map((row,index)=>Object.freeze({
         id:slot+"."+(index+1),
         kind:"TEXT",
-        latin:String(row.lat??row.la),
-        vernacular:vernacularValue(row,language),
+        latin:String(row.lat),
+        vernacular:String(row.en),
       })))
     })
   });
 }
 
-export function properToReaderSlots(proper,{language="en"}={}){
+export function properToReaderSlots(proper,{notApplicableSlots=[]}={}){
   if(!proper || typeof proper!=="object") throw new TypeError("Resolved Proper object required");
-  const locale=String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
-  const opts={language:locale};
 
   const slots={
-    INTROIT:readyEnvelope("INTROIT",proper.introit,opts),
-    COLLECT_SET:readyEnvelope("COLLECT_SET",proper.collects?.length?proper.collects:proper.collect,opts),
-    EPISTLE_OR_LESSON:readyEnvelope("EPISTLE_OR_LESSON",proper.epistle,opts),
-    GRADUAL:readyEnvelope("GRADUAL",proper.gradual,opts),
-    GOSPEL:readyEnvelope("GOSPEL",proper.gospel,opts),
-    OFFERTORY:readyEnvelope("OFFERTORY",proper.offertory,opts),
-    SECRET_SET:readyEnvelope("SECRET_SET",proper.secrets?.length?proper.secrets:proper.secret,opts),
-    PREFACE:readyEnvelope("PREFACE",proper.preface,opts),
-    COMMUNION:readyEnvelope("COMMUNION",proper.communion,opts),
-    POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
+    INTROIT:readyEnvelope("INTROIT",proper.introit),
+    COLLECT_SET:readyEnvelope("COLLECT_SET",proper.collects?.length?proper.collects:proper.collect),
+    EPISTLE_OR_LESSON:readyEnvelope("EPISTLE_OR_LESSON",proper.epistle),
+    GRADUAL:readyEnvelope("GRADUAL",proper.gradual),
+    GOSPEL:readyEnvelope("GOSPEL",proper.gospel),
+    OFFERTORY:readyEnvelope("OFFERTORY",proper.offertory),
+    SECRET_SET:readyEnvelope("SECRET_SET",proper.secrets?.length?proper.secrets:proper.secret),
+    PREFACE:readyEnvelope("PREFACE",proper.preface),
+    COMMUNION:readyEnvelope("COMMUNION",proper.communion),
+    POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion),
   };
+
+  const explicitNA=new Set((notApplicableSlots??[]).map(String));
+  for(const slot of explicitNA){
+    if(!REQUIRED_SLOTS.includes(slot))throw new Error("Unknown not-applicable Proper slot: "+slot);
+    slots[slot]=Object.freeze({
+      status:"NOT_APPLICABLE",slot,
+      reason:"Explicitly suppressed by certified rite projection.",
+      data:null,
+    });
+  }
 
   // Divinum/Missale source normalization frequently carries Gradual/Tract/Alleluia
   // together in proper.gradual. Only a genuinely separate Sequence gets a second block.
-  const sequenceRows=values(proper.sequence,locale);
+  const sequenceRows=values(proper.sequence);
   slots.ALLELUIA_TRACT_SEQUENCE=sequenceRows.length
-    ? readyEnvelope("ALLELUIA_TRACT_SEQUENCE",proper.sequence,opts)
+    ? readyEnvelope("ALLELUIA_TRACT_SEQUENCE",proper.sequence)
     : Object.freeze({
         status:"NOT_APPLICABLE",
         slot:"ALLELUIA_TRACT_SEQUENCE",
@@ -73,7 +74,7 @@ export function properToReaderSlots(proper,{language="en"}={}){
         data:null,
       });
 
-  const missing=REQUIRED_SLOTS.filter(slot=>slots[slot].status!=="READY");
+  const missing=REQUIRED_SLOTS.filter(slot=>!["READY","NOT_APPLICABLE"].includes(slots[slot].status));
   return Object.freeze({
     schema:"ao-reader-proper-slots-v1",
     sourcePath:proper.sourcePath??null,

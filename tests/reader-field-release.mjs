@@ -2,14 +2,6 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {makeResolvedMass,compileMassPlan} from "../src/mass/session-engine.js";
 import {projectSpecialStructure} from "../src/mass/reader-special-structure.js";
-import {
-  HOLY_ROSARY_FIELD_DATE,
-  installFieldCelebrationOverrides,
-  isHolyRosaryExternalSolemnity,
-  holyRosaryExternalSolemnityDecision,
-  normalizeHolyRosaryResolvedMass,
-  primeHolyRosaryFieldCelebration,
-} from "../src/mass/field-celebration-overrides.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const gate=load("../data/presentation/reader-release-gate.v1.json");
@@ -18,94 +10,13 @@ const extension=load("../data/mass/special-days-extension.v1.3.json");
 const core=load("../data/mass/special-days-core.v1.1.json");
 const sources={registry,extension,core};
 
-const hostCatalogue={};
-const fieldOverride=installFieldCelebrationOverrides(hostCatalogue);
-assert.equal(fieldOverride.installed,true);
-assert.deepEqual([...fieldOverride.added],["holy_rosary"]);
-assert.equal(hostCatalogue.holy_rosary?.type,"votive");
-assert.equal(hostCatalogue.holy_rosary?.group,"mary");
-assert.equal(hostCatalogue.holy_rosary?.path,"Sancti/10-07");
-assert.equal(hostCatalogue.holy_rosary?.title?.en,"Most Holy Rosary");
-assert.equal(hostCatalogue.holy_rosary?.title?.fr,"Très Saint Rosaire");
-assert.deepEqual([...installFieldCelebrationOverrides(hostCatalogue).added],[],
-  "field override must not replace an existing host celebration");
-
-assert.equal(HOLY_ROSARY_FIELD_DATE,"2026-10-04");
-
-const initialFieldArch={
-  date:"2026-10-04",
-  actualCelebration:{id:"mass_of_day",type:"calendar"},
-  celebrationForm:"sung",
-  votiveBasis:"ordinary",
-  readiness:{loading:false},
-  resolvedProper:{sourcePath:"Tempora/Pent19-0"},
-  rubric:{status:"permitted"},
-  lastResolveToken:4,
-};
-assert.equal(primeHolyRosaryFieldCelebration(initialFieldArch,"2026-10-04"),true);
-assert.deepEqual(initialFieldArch.actualCelebration,{id:"holy_rosary",type:"votive"});
-assert.equal(initialFieldArch.votiveBasis,"special_occasion");
-assert.equal(initialFieldArch.readiness,null);
-assert.equal(initialFieldArch.resolvedProper,null);
-assert.equal(initialFieldArch.rubric,null);
-assert.equal(initialFieldArch.lastResolveToken,5);
-assert.equal(
-  primeHolyRosaryFieldCelebration(initialFieldArch,"2026-10-04"),
-  false,
-  "field priming must be one-way and must not overwrite an explicit celebration"
-);
-const offDateArch={date:"2026-10-05",actualCelebration:{id:"mass_of_day",type:"calendar"}};
-assert.equal(primeHolyRosaryFieldCelebration(offDateArch,"2026-10-05"),false);
-assert.equal(offDateArch.actualCelebration.id,"mass_of_day");
-const rosaryArch={
-  date:"2026-10-04",
-  actualCelebration:{id:"holy_rosary",type:"votive"},
-  celebrationForm:"sung",
-};
-assert.equal(isHolyRosaryExternalSolemnity(rosaryArch),true);
-assert.equal(isHolyRosaryExternalSolemnity({...rosaryArch,date:"2026-10-05"}),false);
-assert.equal(isHolyRosaryExternalSolemnity({
-  ...rosaryArch,
-  actualCelebration:{id:"mass_of_day",type:"calendar"},
-}),false);
-
-const rosaryDecision=holyRosaryExternalSolemnityDecision({form:"sung"});
-assert.equal(rosaryDecision.status,"permitted");
-assert.equal(rosaryDecision.code,"external-solemnity-holy-rosary");
-assert.equal(rosaryDecision.votiveClass,2);
-assert.equal(rosaryDecision.basis,"external_solemnity");
-assert.equal(rosaryDecision.gloria,true);
-assert.equal(rosaryDecision.credo,true);
-assert.equal(rosaryDecision.tone,"solemn");
-assert.deepEqual([...rosaryDecision.conditions],[]);
-assert.ok(rosaryDecision.sources.includes("RG 358b"));
-
-const normalizedRosary=normalizeHolyRosaryResolvedMass({
-  requestedCelebrationId:"holy_rosary",
-  celebrationId:"holy_rosary",
-  celebrationType:"votive",
-  properSource:"Sancti/10-07",
-  votiveClass:2,
-  conditions:["proxy permission condition"],
-  canStart:true,
-  sourceDiagnostics:{votiveBasis:"special_occasion"},
-},rosaryArch);
-assert.equal(normalizedRosary.votiveClass,2);
-assert.equal(normalizedRosary.canStart,true);
-assert.deepEqual([...normalizedRosary.conditions],[]);
-assert.ok(normalizedRosary.rubricSources.includes("RG 358b"));
-assert.equal(normalizedRosary.sourceDiagnostics.votiveBasis,"external_solemnity");
-assert.equal(
-  normalizedRosary.sourceDiagnostics.fieldBridge,
-  "HOLY_ROSARY_EXTERNAL_SOLEMNITY_2026_10_04",
-);
-
-
 assert.equal(gate.fieldRelease?.status,"READY");
 assert.equal(gate.fieldRelease?.target,"2026-10-04_ORDINARY_OR_VOTIVE_MASS");
 assert.equal(gate.fieldRelease?.readerUiPolicy,"NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK");
-assert.ok(gate.openBlockers.some(x=>x.id==="SPECIAL_STRUCTURE_PARITY"),
-  "field readiness accidentally cleared full-year special-structure blocker");
+assert.equal(gate.openBlockers.length,0,
+  "full-year special-structure certification still reports a release blocker");
+assert.equal(gate.productionDefault,"LEGACY",
+  "full-year structure certification silently widened deployment scope");
 
 const proper={status:"READY",data:{
   sourcePath:"Sancti/10-07",
@@ -157,7 +68,11 @@ for(const form of gate.fieldRelease.supportedForms){
 
 p=prepared({followingActions:["GENERIC_PROCESSION"]});
 projection=projectSpecialStructure(p,sources);
-assert.equal(projection.releaseSupport,false,"Generic Procession was silently certified by field release");
+assert.equal(projection.releaseSupport,true,"Generic Procession lost certified modular special-structure support");
+assert.ok(!gate.fieldRelease.supportedFollowingActions.includes("GENERIC_PROCESSION"),
+  "Oct-4 field-release scope silently widened to Generic Procession");
+assert.ok(gate.fieldRelease.requiredConditions.includes("no Generic Procession following action"),
+  "Oct-4 field-release guard for Generic Procession disappeared");
 
 const nuptial=makeResolvedMass({
   date:"2026-10-04",form:"SOLEMN",presentationMode:"LIVE",
@@ -167,7 +82,7 @@ const nuptial=makeResolvedMass({
   overlays:["NUPTIAL"],
 });
 projection=projectSpecialStructure({session:{resolvedMass:nuptial,plan:compileMassPlan(nuptial)}},sources);
-assert.equal(projection.releaseSupport,false,"Nuptial insertion work silently disappeared");
+assert.equal(projection.releaseSupport,true,"Nuptial source insertions lost certified modular support");
 
 const emberProper=structuredClone(proper);
 emberProper.data.resolver2={};
@@ -178,6 +93,8 @@ const ember=makeResolvedMass({
   overlays:["EMBER_LESSONS"],
 });
 projection=projectSpecialStructure({session:{resolvedMass:ember,plan:compileMassPlan(ember)}},sources);
-assert.equal(projection.releaseSupport,false,"Ember insertion work silently disappeared");
+assert.equal(projection.releaseSupport,true,"Ember source-order insertion lost certified modular support");
+assert.ok(gate.fieldRelease.requiredConditions.includes("no Ember-lessons insertion"),
+  "Oct-4 field-release scope silently widened to Ember lessons");
 
-console.log("Oct 4 field release: PASS — ordinary/Votive and Asperges path certified; unresolved full-year insertions remain fail-closed.");
+console.log("Oct 4 field release: PASS — full-year special structures are certified while the pilot scope and LEGACY production feature gate remain intentionally narrow.");
