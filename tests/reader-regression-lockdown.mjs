@@ -138,6 +138,15 @@ assert.equal(aspergesPayload?.readerCards,5,"Asperges reader-card contract chang
 assert.match(String(aspergesPayload?.nativePreview??""),/reader-native-preview\.js/,"Asperges native preview owner is not pinned");
 assert.match(String(aspergesPayload?.phoneTest??""),/reader-phone-acceptance\.mjs/,"Asperges phone acceptance is not pinned");
 
+const rogationsPayload=release.protectedInvariants.find(x=>x.id==="ROGATIONS_NATIVE_PAYLOAD");
+assert.equal(rogationsPayload?.status,"CERTIFIED_MODULAR_RUNTIME","Rogations runtime certification disappeared");
+assert.equal(rogationsPayload?.recoveredGraphRecords,6,"Rogations source scope changed");
+assert.equal(rogationsPayload?.readerCards,8,"Rogations reader-card contract changed");
+assert.equal(rogationsPayload?.textRows,171,"Rogations full Litany row denominator changed");
+assert.match(String(rogationsPayload?.controller??""),/reader-rogations\.js/,"Rogations controller is not pinned");
+assert.equal(rogationsPayload?.sourceCorpus?.precesBlobSha,"aa8197cca3cbca14e7da11004a2111d58d49cf82");
+assert.equal(rogationsPayload?.sourceCorpus?.psalm69BlobSha,"0b2b3c64b1ccb8637107f3c71100d583e111df24");
+
 const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
@@ -191,6 +200,9 @@ assert.match(browserRuntimeSource,/objectiveRuntime\.allows/);
 assert.match(browserRuntimeSource,/createPalmReaderController/,"browser runtime lost Palm controller");
 assert.match(browserRuntimeSource,/setPalmRecipientState/,"browser runtime lost personal Palm recipient-state control");
 assert.match(browserRuntimeSource,/createAshReaderController/,"browser runtime lost Ash controller");
+assert.match(browserRuntimeSource,/createRogationsReaderController/,"browser runtime lost Rogations controller");
+assert.match(browserRuntimeSource,/setRogationsProcessionActive/,"browser runtime lost explicit Rogations procession-state control");
+assert.match(browserRuntimeSource,/setRogationsProcessionParticipant/,"browser runtime lost participant-scoped Rogations state");
 assert.match(browserRuntimeSource,/setAshRecipientState/,"browser runtime lost personal Ash recipient-state control");
 assert.match(browserRuntimeSource,/AO\.SM\.B014/,"Palm Introit-only handoff lost B014 boundary");
 assert.match(browserRuntimeSource,/createFormLifecycleRuntime/,"browser runtime lost native form lifecycle");
