@@ -774,6 +774,7 @@ try{
     appShell:globalThis.AO_APP_SHELL_V1?.status?.()??null,
     appShellContract:globalThis.AO_APP_SHELL_V1?.contract?.topLevel??null,
     appShellDataset:document.documentElement.dataset.aoAppShellBridge??null,
+    appShellOwner:document.documentElement.dataset.aoAppShellOwner??null,
   }));
   assert.equal(ownership.starts,0,"final native entry booted the legacy live renderer");
   assert.equal(ownership.runtime?.readerUiMode,"NATIVE");
@@ -785,8 +786,10 @@ try{
   assert.equal(ownership.shellFocusGuard,true,"production shell focus guard was not installed");
   assert.equal(ownership.appShellBridge,true,"final app shell bridge was not installed beside Mass");
   assert.equal(ownership.appShell?.installed,true,"final app shell controller is not ready in actual index.html");
-  assert.equal(ownership.appShell?.passive,true,"phase-1 app shell unexpectedly took visual ownership");
+  assert.equal(ownership.appShell?.passive,false,"final modular app shell did not take visible ownership");
+  assert.equal(ownership.appShell?.visibleRibbonOwner,"AO_APP_SHELL_V1","visible ribbon is not owned by the modular app shell");
   assert.equal(ownership.appShellDataset,"ready","actual index.html did not expose ready app-shell bridge state");
+  assert.equal(ownership.appShellOwner,"modular","actual index.html did not expose modular shell ownership");
   assert.deepEqual(
     ownership.appShellContract,
     ["home","mass","pray","learn","calendar","settings"],
