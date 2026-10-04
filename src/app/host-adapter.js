@@ -101,6 +101,17 @@ export function createAppHostAdapter(win = globalThis) {
       return true;
     },
 
+    leaveLiveMass() {
+      const native = win?.AO_R17_NATIVE_READER_PREVIEW;
+      if (typeof native?.destroy === "function") {
+        native.destroy();
+        return true;
+      }
+      const root = win?.document?.getElementById?.("ao-r17-native-reader-preview") ?? null;
+      if (!root) return true;
+      return false;
+    },
+
     confirmLeaveLiveMass() {
       if (typeof win?.confirm !== "function") return false;
       const fr = language(win) === "fr";
