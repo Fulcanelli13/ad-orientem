@@ -41,7 +41,7 @@ No Mass reader/runtime file is modified by this phase. In particular, this work 
 
 The first post-reader audit found that the modular application shell was present only as an adapter. Phase 3 promotes `AO_APP_SHELL_V1` to the visible six-destination ribbon owner while retaining the final donor-backed destination renderers underneath. The historical ribbon still supplies the visual markup, but its `data-ao-ribbon` click ownership is stripped after render and replaced with modular `data-ao-app-surface` ownership.
 
-The production `index.html` also still contains two cleanup debts that must not become permanent architecture: the embedded `AO_EMERGENCY_STABLE_V4333` runtime and a duplicated `src/mass/browser-entry.js` module tag. These are app-shell convergence items, not Mass-engine blockers. The emergency runtime may only be removed after any still-required live-session locks are owned by the final modular shell/settings path.
+The production `index.html` still contains one cleanup debt that must not become permanent architecture: the embedded `AO_EMERGENCY_STABLE_V4333` runtime. The duplicated `src/mass/browser-entry.js` module tag has been removed and regression-locked at exactly one include; icon-bank discovery now belongs to the modular Mass browser entry. The emergency runtime may only be removed after any still-required live-session locks are owned by the final modular shell/settings path.
 
 The existing real-shell browser tests prove native Mass ownership and phone geometry for certified Mass/special-rite paths, but they do not yet exercise the complete application journey through visible navigation. In particular, they do not currently prove cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings.
 
@@ -56,7 +56,7 @@ The first gate snapshot records three closed app-level findings: certified Mass 
 - visible modular shell ownership;
 - the full cross-domain phone journey;
 - retirement/decomposition of the emergency runtime;
-- removal and lockout of the duplicated browser-entry include;
+- removal and lockout of the duplicated browser-entry include; **closed**
 - non-Mass donor extraction/parity;
 - persistence/state-contamination acceptance across reload, interrupted Mass and module switching.
 
@@ -81,7 +81,7 @@ Before calling app convergence complete:
 1. The modular shell must own visible six-destination navigation rather than merely observe/delegate it. **Closed in Phase 3.**
 2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings.
 3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections.
-4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene.
+4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene. **Closed.**
 5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
 6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence must be regression-tested so historical local state cannot reactivate obsolete surfaces.
 
