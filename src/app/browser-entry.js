@@ -1,4 +1,5 @@
 import "../home/browser-entry.js";
+import "../pray/browser-entry.js";
 import { installLiveSessionGuards } from "./live-session-guards.js";
 import "../calendar/browser-entry.js";
 import {
@@ -241,7 +242,8 @@ export function installAppShellBridge({
           win?.AO_SETTINGS_V4358 ??
           win?.AO_SETTINGS_V4356
         ),
-        prayerOwner: Boolean(win?.AO_PRAY_V435930),
+        prayerOwner: win?.AO_PRAY_APP_V1?.status?.()?.installed === true,
+        prayerPresentationDonor: Boolean(win?.AO_PRAY_V435930),
         calendarOwner: win?.AO_CALENDAR_APP_V1?.status?.()?.installed === true,
         calendarOpen: win?.AO_CALENDAR_APP_V1?.status?.()?.open === true,
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
