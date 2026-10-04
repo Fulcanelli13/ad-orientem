@@ -70,6 +70,14 @@ The adoption layer rewrites ribbon buttons from `data-ao-ribbon` to `data-ao-app
 
 Real-shell phone acceptance now requires all six modular ribbon buttons to be present, zero legacy ribbon click attributes to remain, and the document-level shell owner to report `AO_APP_SHELL_V1` while R17 remains the production Mass owner.
 
+## Phase 4: cross-domain phone journey
+
+`tests/app-shell-cross-domain-e2e.mjs` now certifies the actual `index.html` journey on 390x844 touch Chromium: cold Home → Calendar → Mass → resolved Holy Rosary selection → R17 native LIVE → cancelled guarded exit → confirmed guarded exit → PRAY → Home → Settings.
+
+The journey exposed and closed two integration defects that the earlier ownership-only test could not see. First, `#ao-cinema-boot` still intercepted touch input after modular shell adoption; the shell now releases that interaction shield once all six destinations are owned. Second, the native reader's visible close control bypassed the application LIVE leave guard; native reader close now supports a pre-close guard supplied by the browser bridge, so cancelling keeps the reader mounted and confirming performs the canonical shell Home transition before teardown.
+
+This phase changes app/reader handoff only. It does not alter Mass event ownership, liturgical structure, cue state or reader content.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
@@ -79,7 +87,7 @@ After host promotion, extract in this order: Home/Coming Up, Calendar dashboard 
 Before calling app convergence complete:
 
 1. The modular shell must own visible six-destination navigation rather than merely observe/delegate it. **Closed in Phase 3.**
-2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings.
+2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings. **Closed in Phase 4.**
 3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections.
 4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene.
 5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
