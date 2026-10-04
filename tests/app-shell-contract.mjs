@@ -154,7 +154,7 @@ function host({ route = "home", confirm = true } = {}) {
 {
   const calls=[];
   let ribbonHandler=null;
-  let observerCallback=null;
+  const observerCallbacks=[];
   const buttons=[];
   const makeButton=(surface)=>({
     dataset:{aoRibbon:surface},
@@ -181,7 +181,7 @@ function host({ route = "home", confirm = true } = {}) {
       addEventListener(){},removeEventListener(){},
     },
     MutationObserver:class{
-      constructor(fn){observerCallback=fn;}
+      constructor(fn){observerCallbacks.push(fn);}
       observe(){}
       disconnect(){}
     },
@@ -198,7 +198,7 @@ function host({ route = "home", confirm = true } = {}) {
     delete button.dataset.aoRibbon;
     buttons.push(button);
   }
-  observerCallback?.();
+  for(const fn of observerCallbacks)fn?.();
   assert.equal(win.AO_APP_SHELL_V1.status().visibleOwner,true,"late donor ribbon was not adopted");
   let prevented=false;
   ribbonHandler({
