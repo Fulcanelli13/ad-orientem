@@ -1,17 +1,16 @@
 // Feature gate for the R17 Mass reader landing.
-// 4 Oct 2026 rescue: native R17 is now the production default.
-// LEGACY remains an explicit rollback mode only.
+// Full-year production default remains LEGACY until all special-structure parity
+// blockers are closed. Certified field sessions may explicitly override this
+// in browser-entry without weakening the global rollback policy.
 
 export const READER_UI_MODES = Object.freeze(["LEGACY","SHADOW","PREVIEW"]);
 export const READER_UI_STORAGE_KEY = "ao-r17-reader-ui";
 
 function normalize(value){
   const raw=String(value??"").trim().toLowerCase();
-  if(raw==="legacy"||raw==="rollback") return "LEGACY";
   if(raw==="shadow") return "SHADOW";
   if(raw==="preview"||raw==="r17"||raw==="native") return "PREVIEW";
-  if(raw==="") return "PREVIEW";
-  return "PREVIEW";
+  return "LEGACY";
 }
 
 export function resolveReaderUiMode({search="",stored=null}={}){
@@ -20,8 +19,6 @@ export function resolveReaderUiMode({search="",stored=null}={}){
     const p=new URLSearchParams(String(search||""));
     query=p.get("aoR17Reader");
   }catch{}
-  // Query is authoritative. Otherwise an explicit stored rollback is honoured;
-  // absence of both now lands on the native R17 reader.
   return normalize(query??stored);
 }
 
