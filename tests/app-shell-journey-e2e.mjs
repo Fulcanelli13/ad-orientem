@@ -55,8 +55,12 @@ try{
     waitUntil:"domcontentloaded",
     timeout:90000,
   });
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true,null,{timeout:30000});
-  await page.waitForSelector("[data-ao-ribbon='home']",{state:"visible",timeout:30000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.installed===true &&
+    globalThis.AO_APP_SHELL_V1?.status?.().visibleRibbonOwned===true &&
+    globalThis.AO_APP_SHELL_V1?.status?.().legacyRibbonClickNeutralized===true,
+    null,{timeout:30000});
+  await page.waitForSelector("[data-ao-app-surface='home']",{state:"visible",timeout:30000});
 
   const cold=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
@@ -70,10 +74,10 @@ try{
   assert.equal(cold.owner,"modular","modular shell ownership marker missing");
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
 
-  await page.locator("[data-ao-ribbon='calendar']").click();
+  await page.locator("[data-ao-app-surface='calendar']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar",null,{timeout:10000});
 
-  await page.locator("[data-ao-ribbon='mass']").click();
+  await page.locator("[data-ao-app-surface='mass']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
 
   const setup=await page.evaluate(async(iconKeys)=>{
@@ -198,10 +202,10 @@ try{
   await page.evaluate(()=>{globalThis.__AO_APP_JOURNEY_ROUTE.value="home";});
   await page.waitForFunction(()=>!document.getElementById("ao-r17-native-reader-preview")?.isConnected,null,{timeout:10000});
 
-  await page.locator("[data-ao-ribbon='home']").click();
+  await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:10000});
 
-  await page.locator("[data-ao-ribbon='settings']").click();
+  await page.locator("[data-ao-app-surface='settings']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
 
   const end=await page.evaluate(()=>({
@@ -219,7 +223,7 @@ try{
   assert.ok(storedBeforeReload,"native Mass persistence record disappeared before reload");
   await page.reload({waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true,null,{timeout:30000});
-  await page.waitForSelector("[data-ao-ribbon='home']",{state:"visible",timeout:30000});
+  await page.waitForSelector("[data-ao-app-surface='home']",{state:"visible",timeout:30000});
   const reloaded=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     persisted:Boolean(localStorage.getItem("ao-r17-active-mass-v1")),
