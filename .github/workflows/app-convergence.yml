@@ -42,6 +42,7 @@ jobs:
           node-version: 22
       - run: npm run test:app-shell-contract
       - run: npm run test:tree-hygiene
+      - run: npm run test:app-live-guards
       - run: npm run check:app-release
 
   app-shell-phone:

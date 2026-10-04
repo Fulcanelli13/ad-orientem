@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -70,13 +70,27 @@
       "detail": "Actual index.html passes the required phone/touch journey from cold Home through Calendar and native LIVE, including interrupted reload at an active Mass, exact-section resume, cancelled and confirmed leave, PRAY, Home and Settings, with zero legacy Mass starts."
     },
     {
+      "id": "LIVE_SESSION_GUARDS_MODULARIZED",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "evidence": [
+        "src/app/live-session-guards.js",
+        "tests/app-live-session-guards.mjs",
+        "tests/app-shell-journey-e2e.mjs"
+      ],
+      "detail": "The modular app shell owns active-Mass ribbon suppression, forced haptics-off, structural-setting lockout, and focus-safe ribbon hiding using native-reader presence as well as the historical LIVE route."
+    },
+    {
       "id": "EMERGENCY_RUNTIME_RETIREMENT",
       "classification": "STALE_SURFACE",
       "status": "OPEN",
       "evidence": [
-        "docs/APP-CONVERGENCE.md"
+        "docs/APP-CONVERGENCE.md",
+        "src/app/live-session-guards.js",
+        "tests/app-live-session-guards.mjs",
+        "tests/app-shell-journey-e2e.mjs"
       ],
-      "detail": "The embedded v43.33 emergency runtime remains a cleanup debt until required live-session locks are owned by final modular shell/settings code."
+      "detail": "Required live-session protections are now owned and phone-tested by src/app/live-session-guards.js. The blocker remains open only until the embedded v43.33 emergency runtime is physically removed from production index.html and the assembled-app regression suite remains green."
     },
     {
       "id": "DUPLICATE_BROWSER_ENTRY_HYGIENE",
@@ -130,7 +144,8 @@
     "static": [
       "tests/app-release-gate.mjs",
       "tests/app-shell-contract.mjs",
-      "tests/production-tree-hygiene.mjs"
+      "tests/production-tree-hygiene.mjs",
+      "tests/app-live-session-guards.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
