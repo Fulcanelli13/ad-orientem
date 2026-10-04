@@ -5,7 +5,7 @@ const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.6.0");
+assert.equal(app.version,"1.7.0");
 assert.equal(app.status,"CONVERGENCE_IN_PROGRESS");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -44,7 +44,7 @@ assert.equal(findings.find(x=>x.id==="LIVE_SESSION_GUARDS_MODULARIZED")?.status,
 const nonMass=findings.find(x=>x.id==="NON_MASS_DONOR_EXTRACTION");
 assert.equal(nonMass?.status,"OPEN");
 assert.equal(nonMass?.progress?.calendar,"MODULAR_PHONE_CERTIFIED");
-assert.equal(nonMass?.progress?.home,"MODULAR_NAVIGATION_PHONE_CERTIFIED__PRESENTATION_PENDING");
+assert.equal(nonMass?.progress?.home,"MODULAR_BASE_PRESENTATION_PHONE_CERTIFIED__ENRICHERS_PENDING");
 assert.equal(nonMass?.progress?.pray,"PENDING");
 assert.equal(nonMass?.progress?.learn,"PENDING");
 assert.equal(nonMass?.progress?.settings,"PENDING");
@@ -57,6 +57,7 @@ assert.ok(app.regressionGates?.static?.includes("tests/app-shell-contract.mjs"))
 assert.ok(app.regressionGates?.static?.includes("tests/production-tree-hygiene.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/app-live-session-guards.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/home-owner.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/home-presentation.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-final-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-journey-e2e.mjs"));
 
