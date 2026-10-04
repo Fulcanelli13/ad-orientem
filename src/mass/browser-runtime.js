@@ -384,6 +384,9 @@ export function createBrowserMassRuntime({
       cardTitle: card.title,
       cardUpdate: true,
       paragraphs: card.paragraphs,
+      posture: extra.posture ?? (card.emberInsertion
+        ? {label:card.posture==="SIT" ? "SIT" : "STAND"}
+        : undefined),
       progress: String(card.sequence) + " / " + String(readerModel?.totalCards ?? 30),
     };
   }
