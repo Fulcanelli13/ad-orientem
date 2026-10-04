@@ -51,7 +51,7 @@ function graphRecords(id,sources){
 }
 
 const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM"]);
-const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST"]);
+const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GOOD_FRIDAY"]);
 
 function segment(id,lane,sources,extra={}){
   const meta=sources.registry?.overlays?.[id]??null;
@@ -83,15 +83,16 @@ export function projectSpecialStructure(prepared,{registry,extension,core}={}){
 
   if(plan.kind==="DISTINCT_RITE"){
     const rite=String(plan.rite??"");
+    const riteSegment=segment(rite,"DISTINCT_RITE",sources,{handoff:"NO_ORDINARY_MASS_ASSUMPTIONS"});
     return freeze({
       schema:"ao-r19-special-structure-projection-v1",
       audit,
       kind:plan.kind,
       ordinaryMassGraphActive:false,
-      segments:freeze([segment(rite,"DISTINCT_RITE",sources,{handoff:"NO_ORDINARY_MASS_ASSUMPTIONS"})]),
-      readerPayloadComplete:false,
-      releaseSupport:false,
-      reason:"DISTINCT_RITE_READER_PAYLOAD_REQUIRED",
+      segments:freeze([riteSegment]),
+      readerPayloadComplete:riteSegment.renderable===true,
+      releaseSupport:riteSegment.renderable===true,
+      reason:riteSegment.renderable===true?null:"DISTINCT_RITE_READER_PAYLOAD_REQUIRED",
     });
   }
 
