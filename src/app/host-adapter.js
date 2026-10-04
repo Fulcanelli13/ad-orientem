@@ -37,6 +37,14 @@ export function createAppHostAdapter(win = globalThis) {
       );
     },
 
+    hasResumableMass() {
+      const mass = win?.AO_R17_BROWSER_ENTRY;
+      return Boolean(
+        typeof mass?.hasResumable === "function" &&
+        mass.hasResumable()
+      );
+    },
+
     subscribeCoreRoute(listener) {
       const store = runtime()?.store;
       if (typeof store?.subscribe !== "function") return () => {};
