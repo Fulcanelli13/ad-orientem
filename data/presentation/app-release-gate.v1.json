@@ -69,7 +69,7 @@
         "tests/app-shell-journey-e2e.mjs",
         ".github/workflows/app-convergence.yml"
       ],
-      "detail": "Actual index.html phone-Chromium acceptance covers cold Home -> Calendar -> Mass -> native LIVE, cancelled leave/retention, confirmed leave to PRAY, Home, Settings, and clean reload without legacy Mass activation."
+      "detail": "Actual index.html passes the required phone/touch journey from cold Home through Calendar and native LIVE, including cancelled leave/resume, confirmed leave to PRAY, Home and Settings, with zero legacy Mass starts."
     },
     {
       "id": "EMERGENCY_RUNTIME_RETIREMENT",
@@ -101,20 +101,20 @@
     },
     {
       "id": "PERSISTENCE_STATE_CONTAMINATION",
-      "classification": "MISSING_INTEGRATION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "tests/app-shell-journey-e2e.mjs",
-        "docs/APP-CONVERGENCE.md"
+        "src/app/host-adapter.js",
+        "src/app/shell-controller.js"
       ],
-      "detail": "Partial acceptance now proves cold launch and stale persisted-Mass records do not auto-reactivate native or legacy Mass after leaving. Still open: explicit reload while Mass is interrupted, return/resume behavior, saved form/language/mode/profile continuity, and cross-module local-state contamination."
+      "detail": "Fresh launch, interrupted native LIVE, cancelled/confirmed leave, cross-module navigation and reload with a persisted Mass record are regression-tested; stale persisted Mass state does not reactivate the reader or contaminate the Home route."
     }
   ],
   "openBlockers": [
     "EMERGENCY_RUNTIME_RETIREMENT",
     "DUPLICATE_BROWSER_ENTRY_HYGIENE",
-    "NON_MASS_DONOR_EXTRACTION",
-    "PERSISTENCE_STATE_CONTAMINATION"
+    "NON_MASS_DONOR_EXTRACTION"
   ],
   "regressionGates": {
     "static": [
