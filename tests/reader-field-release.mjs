@@ -2,7 +2,13 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {makeResolvedMass,compileMassPlan} from "../src/mass/session-engine.js";
 import {projectSpecialStructure} from "../src/mass/reader-special-structure.js";
-import {installFieldCelebrationOverrides} from "../src/mass/field-celebration-overrides.js";
+import {
+  HOLY_ROSARY_FIELD_DATE,
+  installFieldCelebrationOverrides,
+  isHolyRosaryExternalSolemnity,
+  holyRosaryExternalSolemnityDecision,
+  normalizeHolyRosaryResolvedMass,
+} from "../src/mass/field-celebration-overrides.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const gate=load("../data/presentation/reader-release-gate.v1.json");
@@ -22,6 +28,50 @@ assert.equal(hostCatalogue.holy_rosary?.title?.en,"Most Holy Rosary");
 assert.equal(hostCatalogue.holy_rosary?.title?.fr,"Très Saint Rosaire");
 assert.deepEqual([...installFieldCelebrationOverrides(hostCatalogue).added],[],
   "field override must not replace an existing host celebration");
+
+assert.equal(HOLY_ROSARY_FIELD_DATE,"2026-10-04");
+const rosaryArch={
+  date:"2026-10-04",
+  actualCelebration:{id:"holy_rosary",type:"votive"},
+  celebrationForm:"sung",
+};
+assert.equal(isHolyRosaryExternalSolemnity(rosaryArch),true);
+assert.equal(isHolyRosaryExternalSolemnity({...rosaryArch,date:"2026-10-05"}),false);
+assert.equal(isHolyRosaryExternalSolemnity({
+  ...rosaryArch,
+  actualCelebration:{id:"mass_of_day",type:"calendar"},
+}),false);
+
+const rosaryDecision=holyRosaryExternalSolemnityDecision({form:"sung"});
+assert.equal(rosaryDecision.status,"permitted");
+assert.equal(rosaryDecision.code,"external-solemnity-holy-rosary");
+assert.equal(rosaryDecision.votiveClass,2);
+assert.equal(rosaryDecision.basis,"external_solemnity");
+assert.equal(rosaryDecision.gloria,true);
+assert.equal(rosaryDecision.credo,true);
+assert.equal(rosaryDecision.tone,"solemn");
+assert.deepEqual([...rosaryDecision.conditions],[]);
+assert.ok(rosaryDecision.sources.includes("RG 358b"));
+
+const normalizedRosary=normalizeHolyRosaryResolvedMass({
+  requestedCelebrationId:"holy_rosary",
+  celebrationId:"holy_rosary",
+  celebrationType:"votive",
+  properSource:"Sancti/10-07",
+  votiveClass:2,
+  conditions:["proxy permission condition"],
+  canStart:true,
+  sourceDiagnostics:{votiveBasis:"special_occasion"},
+},rosaryArch);
+assert.equal(normalizedRosary.votiveClass,2);
+assert.equal(normalizedRosary.canStart,true);
+assert.deepEqual([...normalizedRosary.conditions],[]);
+assert.ok(normalizedRosary.rubricSources.includes("RG 358b"));
+assert.equal(normalizedRosary.sourceDiagnostics.votiveBasis,"external_solemnity");
+assert.equal(
+  normalizedRosary.sourceDiagnostics.fieldBridge,
+  "HOLY_ROSARY_EXTERNAL_SOLEMNITY_2026_10_04",
+);
 
 
 assert.equal(gate.fieldRelease?.status,"READY");
