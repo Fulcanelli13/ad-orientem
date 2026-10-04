@@ -1,9 +1,6 @@
 import assert from "node:assert/strict";
 import {
   mapLegacyFollowMode,
-  resolveFieldPresentationMode,
-  isCertifiedOct4RosaryField,
-  resolveFieldReaderUiMode,
   mapInsertedRites,
   deriveHostOptions,
   mountR17Preview,
@@ -14,19 +11,6 @@ assert.equal(mapLegacyFollowMode("read"), "MISSAL");
 assert.equal(mapLegacyFollowMode("simple"), "SIMPLE");
 assert.equal(mapLegacyFollowMode("vox"), "LIVE");
 assert.equal(mapLegacyFollowMode(undefined), "LIVE");
-assert.equal(resolveFieldPresentationMode({
-  date:"2026-10-04",celebrationId:"holy_rosary",requestedMode:"simple",
-}),"LIVE");
-assert.equal(resolveFieldPresentationMode({
-  date:"2026-10-05",celebrationId:"holy_rosary",requestedMode:"simple",
-}),"SIMPLE");
-const fieldPrepared={session:{resolvedMass:{
-  date:"2026-10-04",
-  actualCelebration:{id:"holy_rosary",type:"VOTIVE"},
-}}};
-assert.equal(isCertifiedOct4RosaryField(fieldPrepared),true);
-assert.equal(resolveFieldReaderUiMode(fieldPrepared,"LEGACY"),"PREVIEW");
-assert.equal(resolveFieldReaderUiMode({session:{resolvedMass:{date:"2026-10-05",actualCelebration:{id:"holy_rosary"}}}},"LEGACY"),"LEGACY");
 
 const rites = mapInsertedRites([
   "asperges",
@@ -40,17 +24,24 @@ assert.deepEqual(
   ["CORPUS_CHRISTI_PROCESSION", "REQUIEM_ABSOLUTION", "GENERIC_PROCESSION"],
 );
 
-const options = deriveHostOptions({
-  resolvedMass: { insertedRites: ["ash"] },
-  assemblyStatus: { ok: true, proper: { id: "P" } },
+const resolvedProper={status:"READY",data:{id:"RESOLVED"}};
+let options = deriveHostOptions({
+  resolvedMass: { insertedRites: ["ash"], proper:resolvedProper },
+  assemblyStatus: null,
   arch: { celebrationForm: "low", followMode: "missal" },
   runtimeState: { settings: { localMassProfile: "LOCAL" } },
 });
-assert.equal(options.proper.id, "P");
+assert.equal(options.proper, resolvedProper,"final bridge still depended on legacy assembly status for Proper");
 assert.equal(options.celebrationForm, "low");
 assert.equal(options.presentationMode, "MISSAL");
 assert.deepEqual([...options.precedingRites], ["ASH"]);
 assert.equal(options.localProfile, "LOCAL");
+
+options = deriveHostOptions({
+  resolvedMass: { insertedRites: [], proper:resolvedProper },
+  assemblyStatus: { ok:true, proper:{id:"HOST"} },
+});
+assert.equal(options.proper.id,"HOST","available host preflight Proper stopped taking precedence");
 
 assert.throws(
   () => deriveHostOptions({
@@ -60,7 +51,7 @@ assert.throws(
   /blocked/,
 );
 
-console.log("browser-entry contract: PASS");
+console.log("browser-entry host mapping: PASS");
 
 const iconKeys=[
   "stand","sit","kneel","genuflect","bow","cross","gospel_crosses","breast_strike","head_bow","profound_bow","hands_joined",
@@ -68,52 +59,35 @@ const iconKeys=[
 ];
 const iconAssets=Object.fromEntries(iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"]));
 
-
-let mirrorCalls=0;
 const nativeChoice=await mountR17Preview({
   doc:{},
   prepared:{},
-  nativeMount:()=>({kind:"native"}),
-  mirrorMount:()=>{mirrorCalls+=1;return {kind:"mirror"}},
-  iconAssets,
+  nativeMount:({readLegacyActive})=>({kind:"native",hasLegacyDonor:typeof readLegacyActive==="function"}),
   iconAssets,
 });
-assert.equal(nativeChoice.uiOwner,"R17_NATIVE_CARDS_OVER_LEGACY_STATE");
+assert.equal(nativeChoice.uiOwner,"R17_NATIVE_PRODUCTION");
 assert.equal(nativeChoice.preview.kind,"native");
+assert.equal(nativeChoice.preview.hasLegacyDonor,false,"native production reader still received legacy-active donor");
 assert.equal(nativeChoice.fallbackReason,null);
-assert.equal(mirrorCalls,0);
 
-const fallback=await mountR17Preview({
-  doc:{},
-  prepared:{},
-  nativeMount:()=>{throw new Error("native blocked")},
-  mirrorMount:()=>{mirrorCalls+=1;return {kind:"mirror"}},
-  iconAssets,
-  iconAssets,
-});
-assert.equal(fallback.uiOwner,"R17_MIRROR_FALLBACK");
-assert.equal(fallback.preview.kind,"mirror");
-assert.match(fallback.fallbackReason,/native blocked/);
-assert.equal(mirrorCalls,1);
+await assert.rejects(
+  ()=>mountR17Preview({
+    doc:{},
+    prepared:{},
+    nativeMount:()=>{throw new Error("native blocked")},
+    iconAssets,
+  }),
+  /native blocked/,
+  "native failure silently fell back to the obsolete mirror reader"
+);
 
-const missingBank=await mountR17Preview({
-  doc:{},prepared:{},iconAssets:{},
-  nativeMount:()=>({kind:"should-not-mount"}),
-  mirrorMount:()=>({kind:"mirror"}),
-});
-assert.equal(missingBank.uiOwner,"R17_MIRROR_FALLBACK");
-assert.match(missingBank.fallbackReason,/R17_ICON_BANK_INCOMPLETE/);
+await assert.rejects(
+  ()=>mountR17Preview({
+    doc:{},prepared:{},iconAssets:{},
+    nativeMount:()=>({kind:"should-not-mount"}),
+  }),
+  /R17_ICON_BANK_INCOMPLETE/,
+  "missing icon bank silently degraded instead of failing closed"
+);
 
-let fieldMirrorCalls=0;
-const fieldMissingBank=await mountR17Preview({
-  doc:{},
-  prepared:fieldPrepared,
-  iconAssets:{},
-  nativeMount:({iconResolver})=>({kind:"native-field",missingIcon:iconResolver("stand")}),
-  mirrorMount:()=>{fieldMirrorCalls+=1;return {kind:"mirror"}},
-});
-assert.equal(fieldMissingBank.uiOwner,"R17_NATIVE_CARDS_OVER_LEGACY_STATE");
-assert.equal(fieldMissingBank.preview.kind,"native-field");
-assert.equal(fieldMissingBank.preview.missingIcon,null);
-assert.equal(fieldMissingBank.fallbackReason,null);
-assert.equal(fieldMirrorCalls,0);
+console.log("browser-entry native production cutover: PASS");
