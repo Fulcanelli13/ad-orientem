@@ -20,6 +20,9 @@ const corpusChristiPayload=load("../data/presentation/reader-corpus-christi.v1.j
 const corpusChristiData=Object.freeze({payload:corpusChristiPayload,graph:Object.freeze([...specialExtension.graphs.CORPUS])});
 const holyThursdayPostPayload=load("../data/presentation/reader-holy-thursday-post.v1.json");
 const holyThursdayPostData=Object.freeze({payload:holyThursdayPostPayload,graph:Object.freeze([...specialExtension.graphs.HT_POST])});
+const specialCore=load("../data/mass/special-days-core.v1.1.json");
+const goodFridayPayload=load("../data/presentation/reader-good-friday.v1.json");
+const goodFridayData=Object.freeze({payload:goodFridayPayload,graph:Object.freeze([...specialCore.graphs.GF])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -336,6 +339,69 @@ assert.equal(liveRuntime.getReaderState().cardTitle,"Last Gospel");
 assert.equal(liveRuntime.next().stage,"DEPARTURE");
 liveRuntime.destroy();
 assert.equal(liveRoot.innerHTML,"");
+
+const goodFridayRoot=rootFixture();
+let goodFridayPresentationLoaded=false;
+const goodFriday=createBrowserMassRuntime({
+  root:goodFridayRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({
+    exceptionalProfile:"good-friday-1962",
+    requestedCelebrationId:"good_friday",
+    celebrationId:"good_friday",
+    celebrationType:"special_formulary",
+    properSource:null,
+  })},
+  resolveHostOptions:()=>({form:"solemn",celebrationTitle:"Good Friday",proper:null}),
+  readReaderPreferences:()=>({mode:"live",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>{goodFridayPresentationLoaded=true;return presentationData},
+  loadGoodFridayData:async()=>goodFridayData,
+  goodFridayContext:{venerationMode:"PERSONAL",willReceiveCommunion:true},
+});
+const goodFridayEntered=await goodFriday.enter();
+assert.equal(goodFridayEntered.session.plan.kind,"DISTINCT_RITE");
+assert.equal(goodFridayEntered.session.plan.rite,"GOOD_FRIDAY");
+assert.equal(goodFridayEntered.session.plan.canonicalMassGraphActive,false);
+assert.equal(goodFridayPresentationLoaded,false,"Good Friday loaded ordinary Mass presentation data");
+assert.equal(goodFriday.getReaderModel(),null,"Good Friday instantiated an ordinary Mass reader model");
+assert.equal(goodFriday.getObjectiveRuntime(),null,"Good Friday instantiated Mass objective traversal");
+assert.equal(goodFriday.getLifecycleState().rite,"GOOD_FRIDAY");
+assert.equal(goodFriday.getLifecycleState().stage,"RITE_ACTIVE");
+assert.equal(goodFriday.getGoodFridayState().step.recordId,"GF-OPEN-010");
+assert.equal(goodFriday.getReaderState().posture.label,"STAND");
+
+goodFriday.next();
+assert.equal(goodFriday.getGoodFridayState().step.recordId,"GF-OPEN-020");
+assert.equal(goodFriday.getReaderState().posture.label,"KNEEL_PROFOUND_BOW");
+
+let gfGuard=0;
+while(goodFriday.getGoodFridayState().step.recordId!=="GF-PASS-320" && gfGuard++<80) goodFriday.next();
+assert.equal(goodFriday.getGoodFridayState().step.recordId,"GF-PASS-320");
+assert.equal(goodFriday.getReaderState().posture.label,"KNEEL");
+assert.equal(goodFriday.getReaderState().gesture.label,"PAUSE_BRIEFLY");
+goodFriday.next();
+assert.equal(goodFriday.getGoodFridayState().step.recordId,"GF-PASS-330");
+assert.equal(goodFriday.getReaderState().posture.label,"STAND");
+
+gfGuard=0;
+while(goodFriday.getGoodFridayState().step.recordId!=="GF-VEN-620" && gfGuard++<80) goodFriday.next();
+assert.equal(goodFriday.getGoodFridayState().personalOnly,true);
+assert.equal(goodFriday.getReaderState().gesture.label,"ONE_SIMPLE_GENUFLECTION");
+
+gfGuard=0;
+while(goodFriday.getGoodFridayState().step.recordId!=="GF-COM-850" && gfGuard++<80) goodFriday.next();
+assert.equal(goodFriday.getGoodFridayState().personalOnly,true);
+assert.equal(goodFriday.getReaderState().posture.label,"KNEEL");
+assert.equal(goodFriday.getReaderState().gesture.label,"RECEIVE_COMMUNION");
+
+gfGuard=0;
+while(!goodFriday.getGoodFridayState().atEnd && gfGuard++<80) goodFriday.next();
+assert.equal(goodFriday.getGoodFridayState().step.recordId,"GF-END-910");
+const goodFridayDone=goodFriday.next();
+assert.equal(goodFridayDone.stage,"DEPARTURE");
+assert.equal(goodFridayDone.ordinaryMassGraphActive,false);
+assert.equal(goodFriday.getReaderModel(),null);
+goodFriday.destroy();
+assert.equal(goodFridayRoot.innerHTML,"");
 
 const missingRoot=rootFixture();
 const missing=createBrowserMassRuntime({
