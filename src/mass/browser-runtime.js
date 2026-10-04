@@ -8,6 +8,7 @@ import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
+import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
@@ -22,6 +23,7 @@ export function createBrowserMassRuntime({
   loadCandlemasData = loadCandlemasReaderData,
   loadRequiemAbsolutionData = loadRequiemAbsolutionReaderData,
   requiemAbsolutionContext = null,
+  loadCorpusChristiData = loadCorpusChristiProcessionReaderData,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -42,6 +44,8 @@ export function createBrowserMassRuntime({
   let inCandlemas = false;
   let requiemAbsolutionController = null;
   let inRequiemAbsolution = false;
+  let corpusChristiController = null;
+  let inCorpusChristi = false;
   let lifecycleRuntime = null;
   let inLifecycle = false;
 
@@ -163,6 +167,33 @@ export function createBrowserMassRuntime({
     return moment;
   }
 
+  function corpusChristiMoment(){
+    const state=corpusChristiController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:"Corpus Christi Procession",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        sourceCueIds:[row.sourceRecordId].filter(Boolean),
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Corpus Christi",
+      posture:state.posture && !["INHERIT","LOCAL_OR_INHERIT","LOCAL_REVERENT"].includes(state.posture) ? {label:state.posture} : null,
+      gesture:null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showCorpusChristi(){
+    const moment=corpusChristiMoment();
+    if(!moment)return null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
   function palmMoment(){
     const state=palmController?.project?.();
     const card=state?.card;
@@ -246,6 +277,11 @@ export function createBrowserMassRuntime({
       inRequiemAbsolution=true;
       return showRequiemAbsolution();
     }
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && corpusChristiController){
+      inLifecycle=false;
+      inCorpusChristi=true;
+      return showCorpusChristi();
+    }
     inLifecycle=true;
     return state;
   }
@@ -257,6 +293,21 @@ export function createBrowserMassRuntime({
   }
 
   function move(direction) {
+    if(inCorpusChristi && corpusChristiController){
+      if(direction==="next"){
+        const state=corpusChristiController.project();
+        if(state.atEnd){
+          inCorpusChristi=false;
+          inLifecycle=true;
+          return notifyLifecycle(lifecycleRuntime.completeFollowingAction());
+        }
+        corpusChristiController.next();
+        return showCorpusChristi();
+      }
+      const state=corpusChristiController.project();
+      if(!state.atStart)corpusChristiController.previous();
+      return showCorpusChristi();
+    }
     if(inRequiemAbsolution && requiemAbsolutionController){
       if(direction==="next"){
         const state=requiemAbsolutionController.project();
@@ -422,15 +473,17 @@ export function createBrowserMassRuntime({
       const hasAsh=(prepared?.session?.plan?.precedingGraphs??[]).includes("ASH");
       const hasCandlemas=(prepared?.session?.plan?.precedingGraphs??[]).includes("CANDLEMAS");
       const hasRequiemAbsolution=(prepared?.session?.plan?.followingGraphs??[]).includes("REQUIEM_ABSOLUTION");
+      const hasCorpusChristi=(prepared?.session?.plan?.followingGraphs??[]).includes("CORPUS_CHRISTI_PROCESSION");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,palmData,ashData,candlemasData,requiemAbsolutionData,events]=await Promise.all([
+      const [data,aspergesData,palmData,ashData,candlemasData,requiemAbsolutionData,corpusChristiData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
         hasAsh ? Promise.resolve(loadAshData(prepared)) : null,
         hasCandlemas ? Promise.resolve(loadCandlemasData(prepared)) : null,
         hasRequiemAbsolution ? Promise.resolve(loadRequiemAbsolutionData(prepared)) : null,
+        hasCorpusChristi ? Promise.resolve(loadCorpusChristiData(prepared)) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -466,6 +519,11 @@ export function createBrowserMassRuntime({
         burialProcession:absContext.burialProcession===true,
       }) : null;
       inRequiemAbsolution=false;
+      corpusChristiController=hasCorpusChristi ? createCorpusChristiProcessionReaderController({
+        graph:corpusChristiData?.graph,
+        payload:corpusChristiData?.payload,
+      }) : null;
+      inCorpusChristi=false;
       const activePreceding=[inAsperges,inPalm,inAsh,inCandlemas].filter(Boolean).length;
       if(activePreceding>1)throw new Error("Multiple preceding rite readers are not yet composable");
       reader.mount(prepared);
@@ -494,6 +552,8 @@ export function createBrowserMassRuntime({
     inCandlemas = false;
     requiemAbsolutionController = null;
     inRequiemAbsolution = false;
+    corpusChristiController = null;
+    inCorpusChristi = false;
     lifecycleRuntime = null;
     inLifecycle = false;
   }
@@ -520,6 +580,7 @@ export function createBrowserMassRuntime({
     getCandlemasState: () => candlemasController?.project?.() ?? null,
     getCandlemasMassState: eventId => candlemasController?.massCandleState?.(eventId) ?? null,
     getRequiemAbsolutionState: () => requiemAbsolutionController?.project?.() ?? null,
+    getCorpusChristiState: () => corpusChristiController?.project?.() ?? null,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
     chooseLeonine: accept => {
       if(!lifecycleRuntime)return null;
@@ -543,5 +604,7 @@ export function createBrowserMassRuntime({
     setCandlemasProcessionParticipant: value => { if(!candlemasController)return null; candlemasController.setProcessionParticipant(value); return inCandlemas ? showCandlemas() : candlemasController.project(); },
     setCandlemasHasBlessedCandle: value => { if(!candlemasController)return null; candlemasController.setHasBlessedCandle(value); return inCandlemas ? showCandlemas() : candlemasController.project(); },
     markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },
+    setCorpusChristiProcessionParticipant: value => { if(!corpusChristiController)return null; corpusChristiController.setProcessionParticipant(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
+    setCorpusChristiSacramentalState: value => { if(!corpusChristiController)return null; corpusChristiController.setSacramentalState(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
   });
 }
