@@ -94,11 +94,11 @@ const candlemasModel=createMassReaderModel({resolvedMass:{...base,precedingRites
 assert.equal(candlemasModel.totalCards,39,"Candlemas prelude mutated the LIVE Mass card model");
 
 assert.throws(()=>createMassReaderModel({
-  resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung
+  resolvedMass:{...base,followingActions:["CORPUS_CHRISTI_PROCESSION"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 }),/following-action graph/);
 
 assert.throws(()=>createMassReaderModel({
-  resolvedMass:{...base,distinctRite:"GOOD_FRIDAY"},sectionMap,lowCorpus:low,sungCorpus:sung
+  resolvedMass:{...base,distinctRite:"GOOD_FRIDAY"},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 }),/distinct rite GOOD_FRIDAY/);
 
 console.log("Mass reader model: PASS — 39-step source-first LIVE and 30-card SIMPLE/MISSAL models remain Proper-safe.");
