@@ -168,6 +168,10 @@ try{
   assert.equal(setup.form,"MISSA_CANTATA_INCENSE");
   assert.equal(setup.mode,"LIVE");
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.status?.().liveSessionGuards?.live===true &&
+    document.getElementById("ao-global-ribbon")?.hidden===true,
+    null,{timeout:5000});
 
   const live=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
@@ -175,12 +179,18 @@ try{
     uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
     readerUiMode:globalThis.AO_R17_MASS_RUNTIME?.readerUiMode??null,
     persisted:Boolean(localStorage.getItem("ao-r17-active-mass-v1")),
+    liveGuard:globalThis.AO_APP_SHELL_V1?.status?.().liveSessionGuards??null,
+    ribbonHidden:document.getElementById("ao-global-ribbon")?.hidden??null,
+    haptics:localStorage.getItem("ao-haptics-enabled"),
   }));
   assert.equal(live.active,"mass");
   assert.equal(live.legacyStarts,0,"cross-domain journey booted legacy Mass");
   assert.equal(live.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(live.readerUiMode,"NATIVE");
   assert.equal(live.persisted,true,"active native Mass was not persisted");
+  assert.equal(live.liveGuard?.live,true,"modular live-session guard did not recognize native LIVE");
+  assert.equal(live.ribbonHidden,true,"global app ribbon remained visible over active Mass");
+  assert.equal(live.haptics,"0","active Mass did not force haptics off");
 
   await page.evaluate(()=>localStorage.setItem("ao-app-cross-module-probe","calendar-state-ok"));
   const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
