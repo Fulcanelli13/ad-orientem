@@ -14,6 +14,7 @@ function eventCardId(record){
   if(id.startsWith("GF-LESS-"))return "GF-R01";
   if(id.startsWith("GF-PASS-"))return "GF-R03";
   if(id.startsWith("GF-SOP-"))return "GF-R04";
+  if(id==="GF-XPREP-500")return "GF-R05";
   if(id==="GF-X-700")return "GF-R06";
   if(id.startsWith("GF-X-"))return "GF-R05";
   if(id.startsWith("GF-VEN-"))return "GF-R06";
