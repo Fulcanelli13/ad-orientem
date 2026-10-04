@@ -1,14 +1,15 @@
-// Final reader feature gate. R17 native is the production default; LEGACY remains an explicit rollback.
+// Final production feature gate for the native Mass reader.
+// Native is the default. Legacy is an explicit rollback/debug path only.
 
-export const READER_UI_MODES = Object.freeze(["LEGACY","SHADOW","PREVIEW"]);
+export const READER_UI_MODES = Object.freeze(["NATIVE","LEGACY","SHADOW"]);
 export const READER_UI_STORAGE_KEY = "ao-r17-reader-ui";
 
 function normalize(value){
   const raw=String(value??"").trim().toLowerCase();
   if(raw==="legacy"||raw==="rollback") return "LEGACY";
   if(raw==="shadow") return "SHADOW";
-  if(raw==="preview"||raw==="r17"||raw==="native") return "PREVIEW";
-  return "LEGACY";
+  if(raw==="preview"||raw==="r17"||raw==="native"||raw==="") return "NATIVE";
+  return "NATIVE";
 }
 
 export function resolveReaderUiMode({search="",stored=null}={}){
@@ -17,8 +18,7 @@ export function resolveReaderUiMode({search="",stored=null}={}){
     const p=new URLSearchParams(String(search||""));
     query=p.get("aoR17Reader");
   }catch{}
-  const selected=query??stored;
-  return selected==null || String(selected).trim()==="" ? "PREVIEW" : normalize(selected);
+  return normalize(query??stored);
 }
 
 export function readBrowserReaderUiMode(win=globalThis){
@@ -28,13 +28,13 @@ export function readBrowserReaderUiMode(win=globalThis){
 }
 
 export function readerModeAllowsLegacyDom(mode){
-  return ["LEGACY","SHADOW","PREVIEW"].includes(normalize(mode));
+  return ["LEGACY","SHADOW"].includes(normalize(mode));
 }
 
 export function readerModeRunsShadowAudit(mode){
-  return normalize(mode)==="SHADOW"||normalize(mode)==="PREVIEW";
+  return normalize(mode)==="SHADOW";
 }
 
 export function readerModeMountsPreview(mode){
-  return normalize(mode)==="PREVIEW";
+  return normalize(mode)==="NATIVE";
 }

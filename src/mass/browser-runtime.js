@@ -801,6 +801,7 @@ export function createBrowserMassRuntime({
           canonSourceMap:data?.canonSourceMap,
           nuptialData:data?.nuptialData,
           properNotApplicableSlots:["INTROIT","COMMUNION"],
+          vernacularLanguage:prepared?.readerPreferences?.language??"en",
         });
         readerModel=projectEasterVigilMassModel(baseModel,evData?.payload);
         objectiveRuntime=null;
@@ -862,6 +863,7 @@ export function createBrowserMassRuntime({
         sungCorpus: data?.sungCorpus,
         canonSourceMap: data?.canonSourceMap,
         nuptialData: data?.nuptialData,
+        vernacularLanguage: prepared?.readerPreferences?.language??"en",
       });
 
       readerModel = model;

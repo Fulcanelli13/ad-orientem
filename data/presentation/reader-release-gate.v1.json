@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.0.0",
-  "status": "FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__R17_NATIVE_DEFAULT",
+  "version": "4.2.0",
+  "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native reader is the production default. LEGACY remains an explicit rollback path only; source-first LIVE, full-year special-structure parity and real-browser phone/touch acceptance are certified.",
+  "releaseRule": "R17 native is the production reader across the certified full-year scope. Real-shell phone Chromium acceptance against index.html is certified. Legacy remains explicit rollback/debug only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -785,6 +785,44 @@
         "tests/reader-ember-browser.mjs",
         "tests/reader-field-release.mjs"
       ]
+    },
+    {
+      "id": "PRODUCTION_NATIVE_CUTOVER",
+      "status": "CERTIFIED_REAL_SHELL_E2E",
+      "productionDefault": "R17_NATIVE",
+      "browserEntry": "src/mass/browser-entry.js",
+      "gate": "src/mass/reader-gate.js",
+      "legacyPolicy": "EXPLICIT_ROLLBACK_OR_SHADOW_ONLY",
+      "rollbackQuery": "?aoR17Reader=legacy",
+      "guarantees": [
+        "native reader boots without starting the legacy live renderer",
+        "native mount failures fail closed rather than silently falling back to the obsolete mirror",
+        "resolved Proper can enter without legacy assembly-state dependency",
+        "FOLLOW_CONGREGATION uses observed posture when available and sourced posture when no observer exists",
+        "production native mode reads no implicit legacy DOM state"
+      ],
+      "requiredTest": "tests/app-shell-final-e2e.mjs",
+      "acceptance": {
+        "test": "tests/app-shell-final-e2e.mjs",
+        "viewport": "390x844 touch Chromium",
+        "actualIndexHtml": true,
+        "legacyStartCount": 0,
+        "nativeOwner": "R17_NATIVE_PRODUCTION",
+        "uncaughtPageErrors": 0
+      }
+    },
+    {
+      "id": "REAL_APP_SHELL_ACCEPTANCE",
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-final-e2e.mjs",
+      "guarantees": [
+        "actual repository index.html is loaded in phone-sized Chromium",
+        "native reader mounts through the production browser bridge",
+        "legacy startLive is not called",
+        "native card title and prayer body are nonblank",
+        "reader fits the phone viewport and touch Next advances",
+        "zero uncaught page errors"
+      ]
     }
   ],
   "openBlockers": [],
@@ -793,14 +831,17 @@
     "requireAllBlockersClosed": true,
     "requireAuthoritative48CardMap": false,
     "requireRealBrowserPhoneAcceptance": true,
-    "requireLegacyDefaultUntilCertified": true,
+    "requireLegacyDefaultUntilCertified": false,
     "requireSourceFirstCanonMap": true,
-    "requireSourceFirstLiveStructure": true
+    "requireSourceFirstLiveStructure": true,
+    "requireRealAppShellAcceptance": true,
+    "legacyRollbackExplicitOnly": true,
+    "productionNativeDefault": true
   },
   "pilotRelease": {
-    "status": "CERTIFIED_PILOT_READY",
+    "status": "SUPERSEDED_BY_FINAL_MAINLINE",
     "reader": "R17_NATIVE",
-    "productionDefaultUnchanged": "LEGACY",
+    "productionDefaultUnchanged": "SUPERSEDED",
     "scope": {
       "forms": [
         "LOW",
@@ -833,7 +874,7 @@
   },
   "fieldRelease": {
     "schema": "ao-r17-field-release-v1",
-    "status": "READY",
+    "status": "SUPERSEDED_BY_FINAL_MAINLINE",
     "target": "2026-10-04_ORDINARY_OR_VOTIVE_MASS",
     "readerUiPolicy": "NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK",
     "supportedForms": [
@@ -864,7 +905,8 @@
       "tests/reader-field-release.mjs",
       "tests/browser-runtime.mjs",
       "tests/reader-phone-acceptance.mjs"
-    ]
+    ],
+    "authority": "HISTORICAL_FIELD_SNAPSHOT_ONLY"
   },
   "finalAppRelease": {
     "schema": "ao-final-app-release-v1",

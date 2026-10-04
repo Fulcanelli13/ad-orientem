@@ -1,16 +1,14 @@
-// Browser bridge for landing the R17 Mass engine in the existing monolithic app.
-// The existing preflight and Proper resolver remain host-owned.
-// R17 owns the production reader surface. The legacy renderer remains only as a hidden
-// compatibility/state donor and explicit rollback path while the monolith is retired.
+// Final browser bridge for the modular Mass engine.
+// The host still owns calendar/celebration preflight and Proper resolution.
+// The native reader owns the production Mass surface. Legacy is explicit rollback only.
 
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPreview } from "./reader-gate.js";
 import { runReaderShadowAudit } from "./reader-shadow.js";
-import { mountReaderPreview } from "./reader-preview.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 
-export const VERSION = "r17-browser-entry-v1";
+export const VERSION = "final-browser-entry-v1";
 const ACTIVE_KEY = "ao-r17-active-mass-v1";
 
 export function mapLegacyFollowMode(value) {
@@ -44,16 +42,18 @@ export function mapInsertedRites(values = []) {
 
 export function deriveHostOptions({ resolvedMass, assemblyStatus, arch, runtimeState } = {}) {
   if (!resolvedMass || typeof resolvedMass !== "object") {
-    throw new TypeError("ResolvedMass required for R17 browser bridge");
+    throw new TypeError("ResolvedMass required for final browser bridge");
   }
   if (assemblyStatus && assemblyStatus.ok === false) {
-    throw new Error(assemblyStatus.reason || "Legacy preflight is not startable");
+    throw new Error(assemblyStatus.reason || "Host preflight is not startable");
   }
   const rites = mapInsertedRites(resolvedMass.insertedRites ?? []);
   return Object.freeze({
-    proper: assemblyStatus?.proper ?? null,
+    proper: assemblyStatus?.proper ?? resolvedMass?.proper ?? null,
     celebrationForm: arch?.celebrationForm ?? runtimeState?.settings?.massForm ?? "sung",
-    presentationMode: mapLegacyFollowMode(arch?.followMode ?? runtimeState?.settings?.followMode ?? "vox"),
+    presentationMode: mapLegacyFollowMode(
+      arch?.followMode ?? runtimeState?.settings?.followMode ?? "vox"
+    ),
     precedingRites: rites.precedingRites,
     followingActions: rites.followingActions,
     chantSetting: arch?.chantSetting ?? runtimeState?.settings?.chantSetting ?? "GREGORIAN",
@@ -97,69 +97,73 @@ function persistPrepared(prepared) {
       storedAt: new Date().toISOString(),
     }));
   } catch {}
-  document.documentElement.dataset.aoMassEngine = "r17-validated-native-ui";
+  document.documentElement.dataset.aoMassEngine = "r17-native-production";
 }
 
 export async function mountR17Preview({
   doc,
   prepared,
   nativeMount=mountNativeReaderPreview,
-  mirrorMount=mountReaderPreview,
   iconAssets=globalThis.AO_R17_ICON_ASSETS??null,
 }={}) {
-  try {
-    const assets=iconAssets;
-    const iconAudit=auditHostIconBank(assets);
-    if(!iconAudit.complete){
-      throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
-    }
-    const preview=await Promise.resolve(nativeMount({
-      doc,
-      prepared,
-      readLegacyActive:()=>legacyBridge()?.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null,
-      iconResolver:createHostIconResolver({assets}),
-    }));
-    return Object.freeze({
-      preview,
-      uiOwner:"R17_NATIVE_CARDS_OVER_LEGACY_STATE",
-      fallbackReason:null,
-    });
-  } catch (error) {
-    const fallbackReason=String(error?.message ?? error ?? "Native reader preview unavailable");
-    const preview=mirrorMount({doc,prepared});
-    return Object.freeze({
-      preview,
-      uiOwner:"R17_MIRROR_FALLBACK",
-      fallbackReason,
-    });
+  const assets=iconAssets;
+  const iconAudit=auditHostIconBank(assets);
+  if(!iconAudit.complete){
+    throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
   }
+  const preview=await Promise.resolve(nativeMount({
+    doc,
+    prepared,
+    iconResolver:createHostIconResolver({assets}),
+  }));
+  return Object.freeze({
+    preview,
+    uiOwner:"R17_NATIVE_PRODUCTION",
+    fallbackReason:null,
+  });
 }
 
-async function delegateLegacyRenderer(prepared) {
+async function openProductionReader(prepared) {
   persistPrepared(prepared);
-  const readerUiMode = readBrowserReaderUiMode(globalThis);
-  const bridge = legacyBridge();
-  if (typeof bridge?.startLive !== "function") {
-    throw new Error("Legacy live renderer bridge is unavailable");
+  const readerUiMode=readBrowserReaderUiMode(globalThis);
+  const bridge=legacyBridge();
+
+  if(readerUiMode==="LEGACY"){
+    if(typeof bridge?.startLive!=="function")throw new Error("Legacy rollback renderer is unavailable");
+    await Promise.resolve(bridge.startLive());
+    globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
+      version:VERSION,prepared,readerUiMode,
+      legacyActive:bridge.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null,
+      shadowAudit:null,previewFallbackReason:null,
+      uiOwner:"LEGACY_EXPLICIT_ROLLBACK",
+      canonicalOwner:"R17_SESSION_ENGINE",
+    });
+    return;
   }
-  await Promise.resolve(bridge.startLive());
-  const legacyActive = bridge.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null;
-  const shadowAudit = readerModeRunsShadowAudit(readerUiMode)
-    ? runReaderShadowAudit({ doc: document, prepared })
-    : null;
-  let previewState=null;
-  if (readerModeMountsPreview(readerUiMode)) {
-    previewState=await mountR17Preview({doc:document,prepared});
+
+  if(readerModeRunsShadowAudit(readerUiMode)){
+    if(typeof bridge?.startLive!=="function")throw new Error("Legacy shadow renderer is unavailable");
+    await Promise.resolve(bridge.startLive());
+    const legacyActive=bridge.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null;
+    const shadowAudit=runReaderShadowAudit({doc:document,prepared});
+    globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
+      version:VERSION,prepared,readerUiMode,legacyActive,shadowAudit,
+      previewFallbackReason:null,uiOwner:"LEGACY_SHADOW_AUDIT",
+      canonicalOwner:"R17_SESSION_ENGINE",
+    });
+    return;
   }
-  globalThis.AO_R17_MASS_RUNTIME = Object.freeze({
-    version: VERSION,
-    prepared,
-    legacyActive,
-    readerUiMode,
-    shadowAudit,
-    previewFallbackReason: previewState?.fallbackReason ?? null,
-    uiOwner: previewState?.uiOwner ?? "LEGACY_DOM_TEMPORARY",
-    canonicalOwner: "R17_SESSION_ENGINE",
+
+  if(!readerModeMountsPreview(readerUiMode)){
+    throw new Error("Unsupported production reader mode: "+readerUiMode);
+  }
+  const previewState=await mountR17Preview({doc:document,prepared});
+  globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
+    version:VERSION,prepared,readerUiMode,
+    legacyActive:null,shadowAudit:null,
+    previewFallbackReason:null,
+    uiOwner:previewState.uiOwner,
+    canonicalOwner:"R17_SESSION_ENGINE",
   });
 }
 
@@ -175,7 +179,7 @@ export function createBrowserMassController() {
       arch: arch(),
       runtimeState: runtimeState(),
     }),
-    openReader: delegateLegacyRenderer,
+    openReader: openProductionReader,
   });
 }
 
@@ -206,7 +210,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
 
   function tryInstall() {
     state.polls += 1;
-    if (!celebrationApi()?.getResolvedMass || !legacyBridge()?.startLive || !runtime()?.store) {
+    if (!celebrationApi()?.getResolvedMass || !runtime()?.store) {
       if (state.polls < maxPolls) setTimeout(tryInstall, pollMs);
       return;
     }
@@ -220,8 +224,8 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     }
   }
 
-  // Window capture runs before the legacy document-capture listener.
-  // We only take ownership of the final Start Mass button once the controller is ready.
+  // Capture before the historical document listener. The final bridge owns
+  // Start Mass whenever the modular controller is ready.
   window.addEventListener("click", (event) => {
     const button = event.target?.closest?.("[data-ao-start-live]");
     if (!button || !state.installed || !state.controller) return;
@@ -247,11 +251,11 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       legacyRenderer: Boolean(legacyBridge()?.startLive),
       runtime: Boolean(runtime()?.store),
       active: globalThis.AO_R17_ACTIVE_MASS ?? null,
-      readerUiMode: readBrowserReaderUiMode(globalThis),
+      readerUiMode: globalThis.AO_R17_MASS_RUNTIME?.readerUiMode ?? readBrowserReaderUiMode(globalThis),
       shadow: globalThis.AO_R17_READER_SHADOW ?? null,
-      previewMounted: Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected || globalThis.AO_R17_READER_PREVIEW?.root?.isConnected),
-      previewOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
-      previewFallbackReason: globalThis.AO_R17_MASS_RUNTIME?.previewFallbackReason ?? null,
+      nativeMounted: Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected),
+      uiOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
+      fallbackReason: globalThis.AO_R17_MASS_RUNTIME?.previewFallbackReason ?? null,
     }),
   });
 
