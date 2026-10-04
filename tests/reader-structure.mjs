@@ -103,13 +103,14 @@ const ashPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{ki
 assert.equal(structureSupport(ashPrepared).supported,true,"certified Ash prelude remained structurally blocked");
 const candlemasPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:["CANDLEMAS"],followingGraphs:[],overlayGraphs:[]}}};
 assert.equal(structureSupport(candlemasPrepared).supported,true,"certified Candlemas prelude remained structurally blocked");
+const rogationsPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:["ROGATIONS"],followingGraphs:[],overlayGraphs:[]}}};
+assert.equal(structureSupport(rogationsPrepared).supported,true,"certified Rogations prelude remained structurally blocked");
 const requiemPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["REQUIEM"]}}};
 assert.equal(structureSupport(requiemPrepared).supported,true,"certified plan-owned Requiem overlay remained structurally blocked");
 const requiemAbsPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:[],followingGraphs:["REQUIEM_ABSOLUTION"],overlayGraphs:["REQUIEM"]}}};
 assert.equal(structureSupport(requiemAbsPrepared).supported,true,"certified Requiem Absolution following action remained structurally blocked");
 
 for(const [label,plan] of [
-  ["preceding",{kind:"MASS",precedingGraphs:["ROGATIONS"],followingGraphs:[],overlayGraphs:[]}],
   ["following",{kind:"MASS",precedingGraphs:[],followingGraphs:["CORPUS_CHRISTI_PROCESSION"],overlayGraphs:[]}],
   ["overlay",{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["NUPTIAL"]}],
   ["distinct",{kind:"DISTINCT_RITE",precedingGraphs:[],followingGraphs:[],overlayGraphs:[]}],
