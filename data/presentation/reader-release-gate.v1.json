@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "3.2.0",
-  "status": "FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__LEGACY_DEFAULT_RETAINED",
+  "version": "3.3.0",
+  "status": "READY",
   "productionDefault": "LEGACY",
-  "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
+  "releaseRule": "R17 reader technical release certification is complete. Production remains LEGACY until an explicit promotion decision changes the feature gate; historical v1.83 C01-C48 remains non-blocking compatibility evidence.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -826,7 +826,7 @@
     },
     "exclusions": [
       "unsupported special rites and following actions remain fail-closed",
-      "full production-default promotion waits for SPECIAL_STRUCTURE_PARITY"
+      "production default remains LEGACY until an explicit promotion decision"
     ]
   },
   "fieldRelease": {
