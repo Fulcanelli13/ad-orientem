@@ -20,6 +20,7 @@ import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
+import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -163,6 +164,8 @@ export async function prepareNativeReaderPreview({
   loadPalmData=loadPalmReaderData,
   ashData=null,
   loadAshData=loadAshReaderData,
+  candlemasData=null,
+  loadCandlemasData=loadCandlemasReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
@@ -172,15 +175,16 @@ export async function prepareNativeReaderPreview({
   const resolvedForm=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
   const needsFormState=resolvedForm==="LOW" || resolvedForm==="SOLEMN";
   const preceding=[...(prepared?.session?.plan?.precedingGraphs??[])];
-  const unsupportedNativePreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH"].includes(x));
+  const unsupportedNativePreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH","CANDLEMAS"].includes(x));
   if(unsupportedNativePreceding.length){
     throw new Error("NATIVE_PREVIEW_PRECEDING_RITE_PENDING:"+unsupportedNativePreceding.join(","));
   }
   const hasAsperges=preceding.includes("ASPERGES");
   const hasPalm=preceding.includes("PALM");
   const hasAsh=preceding.includes("ASH");
-  if([hasAsperges,hasPalm,hasAsh].filter(Boolean).length>1)throw new Error("NATIVE_PREVIEW_MULTIPLE_PRELUDES_PENDING");
-  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh]=await Promise.all([
+  const hasCandlemas=preceding.includes("CANDLEMAS");
+  if([hasAsperges,hasPalm,hasAsh,hasCandlemas].filter(Boolean).length>1)throw new Error("NATIVE_PREVIEW_MULTIPLE_PRELUDES_PENDING");
+  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
@@ -189,6 +193,7 @@ export async function prepareNativeReaderPreview({
     hasAsperges ? (aspergesData ?? Promise.resolve(loadAspergesData(prepared))) : null,
     hasPalm ? (palmData ?? Promise.resolve(loadPalmData(prepared))) : null,
     hasAsh ? (ashData ?? Promise.resolve(loadAshData(prepared))) : null,
+    hasCandlemas ? (candlemasData ?? Promise.resolve(loadCandlemasData(prepared))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -223,7 +228,10 @@ export async function prepareNativeReaderPreview({
   const ashController=hasAsh
     ? createAshReaderController({graph:loadedAsh?.graph,payload:loadedAsh?.payload})
     : null;
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,ashController});
+  const candlemasController=hasCandlemas
+    ? createCandlemasReaderController({graph:loadedCandlemas?.graph,payload:loadedCandlemas?.payload})
+    : null;
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,ashController,candlemasController});
 }
 
 export async function mountNativeReaderPreview({
@@ -245,6 +253,8 @@ export async function mountNativeReaderPreview({
   loadPalmData=loadPalmReaderData,
   ashData=null,
   loadAshData=loadAshReaderData,
+  candlemasData=null,
+  loadCandlemasData=loadCandlemasReaderData,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -255,7 +265,7 @@ export async function mountNativeReaderPreview({
   const ready=await prepareNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
-    aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
+    aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,candlemasData,loadCandlemasData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -280,6 +290,7 @@ export async function mountNativeReaderPreview({
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
   let inAsh=Boolean(ready.ashController);
+  let inCandlemas=Boolean(ready.candlemasController);
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
@@ -503,18 +514,20 @@ export async function mountNativeReaderPreview({
     const state=controller?.project?.();
     const card=state?.card;
     if(!card)return null;
+    const title=kind==="PALM"?"Palm Sunday":kind==="ASH"?"Ash Wednesday":"Candlemas";
+    const progressLabel=kind==="PALM"?"Palm Rite":kind==="ASH"?"Ash Rite":"Candlemas";
     return Object.freeze({
       state,
       moment:Object.freeze({
         id:card.id,
-        sectionTitle:kind==="PALM"?"Palm Sunday":"Ash Wednesday",
+        sectionTitle:title,
         cardTitle:card.title,
         cardUpdate:true,
         paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
           id:row.id,kind:row.kind,primary:row.latin,
           sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
         }))),
-        progress:String(state.index+1)+" / "+String(state.total)+" · "+(kind==="PALM"?"Palm Rite":"Ash Rite"),
+        progress:String(state.index+1)+" / "+String(state.total)+" · "+progressLabel,
         posture:state.recipientPosture
           ? {label:state.recipientPosture}
           : card.posture && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture)
@@ -532,6 +545,7 @@ export async function mountNativeReaderPreview({
     if(!projected)return null;
     inPalm=kind==="PALM";
     inAsh=kind==="ASH";
+    inCandlemas=kind==="CANDLEMAS";
     inAsperges=false;
     activeCueId=null;
     clearEventCinematic({resetCue:true});
@@ -539,15 +553,17 @@ export async function mountNativeReaderPreview({
     reader.renderMoment(projected.moment);
     root.dataset.r17NativeEvent=kind.toLowerCase();
     root.dataset.r17NativeCue="unresolved";
-    root.dataset.r17StateOwner="R23_"+kind+"_NATIVE";
-    root.dataset.r17OwnerGesture=projected.moment.gesture ? "R23_"+kind+"_PAYLOAD" : "R23_"+kind+"_EXACT_NONE";
-    root.dataset.r17OwnerResponse="R23_"+kind+"_PAYLOAD";
-    root.dataset.r17OwnerPriestVoice="R23_"+kind+"_NOT_APPLICABLE";
-    root.dataset.r17OwnerPriestPosition="R23_"+kind+"_NOT_APPLICABLE";
-    root.dataset.r17OwnerPosture="R23_"+kind+"_PERSONAL_OR_PAYLOAD";
-    root.dataset.r17OwnerSchola="R23_"+kind+"_PAYLOAD";
-    root.dataset.r17OwnerBell="R23_"+kind+"_EXACT_NONE";
-    root.dataset.r17OwnerCinematic="R23_"+kind+"_EXACT_NONE";
+    const ownerPrefix=kind==="CANDLEMAS"?"R24_CANDLEMAS":"R23_"+kind;
+    root.dataset.r17StateOwner=ownerPrefix+"_NATIVE";
+    root.dataset.r17OwnerGesture=projected.moment.gesture ? ownerPrefix+"_PAYLOAD" : ownerPrefix+"_EXACT_NONE";
+    root.dataset.r17OwnerResponse=ownerPrefix+"_PAYLOAD";
+    root.dataset.r17OwnerPriestVoice=ownerPrefix+"_NOT_APPLICABLE";
+    root.dataset.r17OwnerPriestPosition=ownerPrefix+"_NOT_APPLICABLE";
+    root.dataset.r17OwnerPosture=ownerPrefix+"_PERSONAL_OR_PAYLOAD";
+    root.dataset.r17OwnerSchola=ownerPrefix+"_PAYLOAD";
+    root.dataset.r17OwnerBell=ownerPrefix+"_EXACT_NONE";
+    root.dataset.r17OwnerCinematic=ownerPrefix+"_EXACT_NONE";
+    root.dataset.r17ObjectState=projected.state.candleState??"none";
     globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
       specialRite:kind,
       cardId:projected.state.card?.id??null,
@@ -555,6 +571,9 @@ export async function mountNativeReaderPreview({
       gesture:projected.moment.gesture,
       handoff:projected.state.handoff??null,
       recipientState:projected.state.recipientState??null,
+      candleState:projected.state.candleState??null,
+      hasBlessedCandle:Boolean(projected.state.hasBlessedCandle),
+      processionParticipant:Boolean(projected.state.processionParticipant),
     });
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll)scroll.scrollTop=0;
@@ -563,6 +582,7 @@ export async function mountNativeReaderPreview({
 
   function showPalm(){return showRecipientPrelude("PALM",ready.palmController)}
   function showAsh(){return showRecipientPrelude("ASH",ready.ashController)}
+  function showCandlemas(){return showRecipientPrelude("CANDLEMAS",ready.candlemasController)}
 
   function previousReaderCard(){
     if(inPalm && ready.palmController){
@@ -574,6 +594,20 @@ export async function mountNativeReaderPreview({
       const state=ready.ashController.project();
       if(!state.atStart)ready.ashController.previous();
       return showAsh();
+    }
+    if(inCandlemas && ready.candlemasController){
+      const state=ready.candlemasController.project();
+      if(!state.atStart)ready.candlemasController.previous();
+      return showCandlemas();
+    }
+    if(inCandlemas && ready.candlemasController){
+      const state=ready.candlemasController.project();
+      if(state.atEnd){
+        inCandlemas=false;
+        return showCard(introitOnlyCard());
+      }
+      ready.candlemasController.next();
+      return showCandlemas();
     }
     if(inAsperges && ready.aspergesController){
       const state=ready.aspergesController.project();
@@ -588,6 +622,10 @@ export async function mountNativeReaderPreview({
     if(ready.ashController && current?.sectionId===first?.sectionId){
       ready.ashController.goTo("ASH-R05");
       return showAsh();
+    }
+    if(ready.candlemasController && current?.sectionId===first?.sectionId){
+      ready.candlemasController.goTo("CND-R07");
+      return showCandlemas();
     }
     if(ready.aspergesController && current?.sectionId===first?.sectionId){
       ready.aspergesController.goTo("ASP-R05");
@@ -631,6 +669,8 @@ export async function mountNativeReaderPreview({
     inAsperges=false;
     inPalm=false;
     inAsh=false;
+    inCandlemas=false;
+    root.dataset.r17ObjectState="none";
     root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
@@ -687,7 +727,7 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
-    if(inAsperges || inPalm || inAsh)return;
+    if(inAsperges || inPalm || inAsh || inCandlemas)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -742,6 +782,7 @@ export async function mountNativeReaderPreview({
   reader.mount(prepared);
   if(inPalm)showPalm();
   else if(inAsh)showAsh();
+  else if(inCandlemas)showCandlemas();
   else if(inAsperges)showAsperges();
   else showCard(current);
 
@@ -751,7 +792,7 @@ export async function mountNativeReaderPreview({
       container:readerScroll,
       win,
       onChange:(cueId)=>{
-        if(inAsperges || inPalm || inAsh)return;
+        if(inAsperges || inPalm || inAsh || inCandlemas)return;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -795,6 +836,7 @@ export async function mountNativeReaderPreview({
       asperges:ready.aspergesController ? "R20_NATIVE_PRELUDE" : "NOT_ACTIVE",
       palm:ready.palmController ? "R22_NATIVE_PRELUDE" : "NOT_ACTIVE",
       ash:ready.ashController ? "R23_NATIVE_PRELUDE" : "NOT_ACTIVE",
+      candlemas:ready.candlemasController ? "R24_NATIVE_PRELUDE" : "NOT_ACTIVE",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -803,7 +845,7 @@ export async function mountNativeReaderPreview({
     showSequence:sequence=>showCard(ready.model.cardBySequence(sequence)),
     syncState:queue,
     destroy,
-    getCurrentCard:()=>inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
+    getCurrentCard:()=>inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
@@ -817,8 +859,13 @@ export async function mountNativeReaderPreview({
     getAspergesState:()=>ready.aspergesController?.project?.()??null,
     getPalmState:()=>ready.palmController?.project?.()??null,
     getAshState:()=>ready.ashController?.project?.()??null,
+    getCandlemasState:()=>ready.candlemasController?.project?.()??null,
+    getCandlemasMassState:eventId=>ready.candlemasController?.massCandleState?.(eventId)??null,
     setPalmRecipientState:value=>{if(!ready.palmController)return null;const result=ready.palmController.setRecipientState(value);return inPalm ? showPalm() : result},
     setAshRecipientState:value=>{if(!ready.ashController)return null;const result=ready.ashController.setRecipientState(value);return inAsh ? showAsh() : result},
+    setCandlemasRecipientState:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setRecipientState(value);return inCandlemas ? showCandlemas() : result},
+    setCandlemasProcessionParticipant:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setProcessionParticipant(value);return inCandlemas ? showCandlemas() : result},
+    setCandlemasHasBlessedCandle:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setHasBlessedCandle(value);return inCandlemas ? showCandlemas() : result},
     markActuallySprinkled:()=>{
       if(!ready.aspergesController)return null;
       const value=ready.aspergesController.setActuallySprinkled(true);
