@@ -176,21 +176,22 @@ assert.equal(candlemasPayload?.objectStateAcceptance?.afterPaterWitnessEventId,"
 assert.equal(candlemasPayload?.objectStateAcceptance?.postureOverride,null);
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
-assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
+assert.equal(realShellScope?.status,"FULL_EXPLICIT_EVIDENCE");
 assert.deepEqual(realShellScope?.certified,[
   "ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","GOOD_FRIDAY",
   "REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST",
-  "GENERIC_PROCESSION","NUPTIAL"
+  "GENERIC_PROCESSION","NUPTIAL","EASTER_VIGIL"
 ]);
-assert.deepEqual(realShellScope?.pending,["EASTER_VIGIL"]);
+assert.deepEqual(realShellScope?.pending,[]);
 assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
 assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
-assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"PARTIAL_EXPLICIT_EVIDENCE");
+assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"FULL_EXPLICIT_EVIDENCE");
 assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.certified,realShellScope.certified);
-assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.pending,["EASTER_VIGIL"]);
+assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.pending,[]);
 assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.tests,[
-  "tests/app-shell-final-e2e.mjs","tests/app-shell-nuptial-e2e.mjs"
+  "tests/app-shell-final-e2e.mjs","tests/app-shell-nuptial-e2e.mjs","tests/app-shell-easter-vigil-e2e.mjs"
 ]);
+assert.equal(release.finalAppRelease?.fullRealShellSpecialStructureAcceptance,true);
 
 const goodFridayShell=release.protectedInvariants.find(x=>x.id==="GOOD_FRIDAY_REAL_APP_SHELL_ACCEPTANCE");
 assert.equal(goodFridayShell?.status,"CERTIFIED","Good Friday real-shell acceptance disappeared");
@@ -234,6 +235,15 @@ for(const id of [
   assert.match(String(item?.productionTest??""),/app-shell-final-e2e\.mjs/);
   assert.match(String(item?.lifecycleOwner??""),/form-lifecycle\.js/);
 }
+
+const easterVigil=release.protectedInvariants.find(x=>x.id==="EASTER_VIGIL_NATIVE_COMPOSITE");
+assert.equal(easterVigil?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE");
+assert.equal(easterVigil?.runtimeCertification,"CERTIFIED_COMPOSITE_RUNTIME__PHONE_SUITE_GREEN");
+assert.equal(easterVigil?.realShellAcceptance?.status,"CERTIFIED");
+assert.match(String(easterVigil?.productionMount??""),/reader-native-preview\.js/);
+assert.match(String(easterVigil?.productionTest??""),/app-shell-easter-vigil-e2e\.mjs/);
+assert.equal(easterVigil?.realShellAcceptance?.massEntry,"KYRIE");
+assert.equal(easterVigil?.realShellAcceptance?.backRestoresHandoff,true);
 
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE","Asperges real-shell production certification disappeared");
