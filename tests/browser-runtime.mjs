@@ -14,6 +14,8 @@ const candlemasPayload=load("../data/presentation/reader-candlemas.v1.json");
 const candlemasData=Object.freeze({payload:candlemasPayload,graph:Object.freeze([...specialExtension.graphs.CND])});
 const requiemAbsolutionPayload=load("../data/presentation/reader-requiem-absolution.v1.json");
 const requiemAbsolutionData=Object.freeze({payload:requiemAbsolutionPayload,graph:Object.freeze([...specialExtension.graphs.ABS])});
+const corpusChristiPayload=load("../data/presentation/reader-corpus-christi.v1.json");
+const corpusChristiData=Object.freeze({payload:corpusChristiPayload,graph:Object.freeze([...specialExtension.graphs.CORPUS])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -346,5 +348,43 @@ assert.equal(requiem.getLifecycleState().stage,"DEPARTURE");
 assert.equal(requiem.advanceLifecycle().stage,"GIVE_THANKS_HANDOFF");
 requiem.destroy();
 assert.equal(requiemRoot.innerHTML,"");
+
+const corpusRoot=rootFixture();
+const corpus=createBrowserMassRuntime({
+  root:corpusRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({celebrationId:"corpus-christi",celebrationType:"calendar"})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Corpus Christi",proper,followingActions:["CORPUS_CHRISTI_PROCESSION"]}),
+  readReaderPreferences:()=>({mode:"simple"}),
+  loadPresentationData:async()=>presentationData,
+  loadCorpusChristiData:async()=>corpusChristiData,
+});
+const corpusEntered=await corpus.enter();
+assert.equal(corpusEntered.session.plan.dismissal,"BENEDICAMUS_DOMINO");
+assert.equal(corpusEntered.session.plan.blessingAllowed,false);
+assert.equal(corpusEntered.session.plan.normalLastGospel,false);
+assert.deepEqual([...corpusEntered.session.plan.followingGraphs],["CORPUS_CHRISTI_PROCESSION"]);
+corpus.showSection(28);
+const corpusMassEnd=corpus.getCurrentSectionId();
+const corpusStart=corpus.next();
+assert.equal(corpus.getCurrentSectionId(),corpusMassEnd,"Corpus procession handoff fabricated a blessing/Last Gospel card");
+assert.equal(corpusStart.cardTitle,"Mass Ends for the Procession");
+assert.equal(corpus.getCorpusChristiState().card.id,"CORPUS-R01");
+corpus.setCorpusChristiSacramentalState("MONSTRANCE_PLACED_IN_CELEBRANT_HANDS");
+assert.equal(corpus.getReaderState().cardTitle,"Pange lingua");
+corpus.setCorpusChristiProcessionParticipant(true);
+corpus.setCorpusChristiSacramentalState("PROCESSION_ACTIVE");
+assert.equal(corpus.getReaderState().cardTitle,"Eucharistic Procession");
+assert.equal(corpus.getReaderState().posture.label,"PROCESSIONAL");
+corpus.setCorpusChristiSacramentalState("BLESSED_SACRAMENT_REPLACED_ON_ALTAR");
+assert.equal(corpus.getReaderState().cardTitle,"Tantum ergo");
+corpus.next();
+assert.equal(corpus.getReaderState().cardTitle,"Versicle and Prayer");
+corpus.setCorpusChristiSacramentalState("BENEDICTION_COMPLETE");
+assert.equal(corpus.getReaderState().cardTitle,"Benediction");
+const corpusDone=corpus.next();
+assert.equal(corpusDone.stage,"DEPARTURE");
+assert.equal(corpus.advanceLifecycle().stage,"GIVE_THANKS_HANDOFF");
+corpus.destroy();
+assert.equal(corpusRoot.innerHTML,"");
 
 console.log("Browser Mass runtime PASS: ordinary flow, source-first LIVE, preludes, plan-aware ownership and lifecycle handoff.");
