@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -112,12 +112,14 @@
         "src/app/host-adapter.js",
         "src/calendar/browser-entry.js",
         "tests/app-shell-contract.mjs",
-        "tests/app-shell-journey-e2e.mjs"
+        "tests/app-shell-journey-e2e.mjs",
+        "src/home/browser-entry.js",
+        "tests/home-owner.mjs"
       ],
-      "detail": "Calendar presentation ownership is extracted and actual-index phone-certified under AO_CALENDAR_APP_V1; the historical today.calendar/v25 Calendar presentation is no longer used when the modular owner is available. Home/Coming Up, PRAY, Learn and Settings still depend on non-Mass donor presentation owners.",
+      "detail": "Calendar presentation ownership is extracted and phone-certified. Home top-level navigation/reset ownership is now modular and actual-index phone-certified under AO_HOME_APP_V1; the remaining Home card presentation (including Coming Up, Daily Catechism and related donor cards), PRAY, Learn and Settings still depend on non-Mass donor presentation owners.",
       "progress": {
         "calendar": "MODULAR_PHONE_CERTIFIED",
-        "home": "PENDING",
+        "home": "MODULAR_NAVIGATION_PHONE_CERTIFIED__PRESENTATION_PENDING",
         "pray": "PENDING",
         "learn": "PENDING",
         "settings": "PENDING"
@@ -145,7 +147,8 @@
       "tests/app-release-gate.mjs",
       "tests/app-shell-contract.mjs",
       "tests/production-tree-hygiene.mjs",
-      "tests/app-live-session-guards.mjs"
+      "tests/app-live-session-guards.mjs",
+      "tests/home-owner.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
