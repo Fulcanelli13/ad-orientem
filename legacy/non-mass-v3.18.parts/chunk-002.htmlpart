@@ -1,0 +1,500 @@
+.aoProperArt{margin:14px 0 2px;border:1px solid color-mix(in srgb,currentColor 16%,transparent);border-radius:18px;overflow:hidden;background:rgba(12,11,10,.94);box-shadow:0 10px 28px rgba(0,0,0,.14)}
+.aoProperArtMedia{display:flex;align-items:center;justify-content:center;min-height:150px;max-height:330px;background:rgba(0,0,0,.24)}
+.aoProperArt img{display:block;width:100%;height:auto;max-height:330px;object-fit:contain;object-position:center;opacity:.98}
+.aoProperArt.isPortrait .aoProperArtMedia,.aoProperArt.isPortrait img{max-height:min(440px,52vh)}
+.aoProperArt.isLandscape .aoProperArtMedia,.aoProperArt.isLandscape img{max-height:300px}
+.aoProperArt figcaption{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;padding:9px 12px 10px;font-size:11px;line-height:1.35;opacity:.86}
+.aoProperArt figcaption span{min-width:0}.aoProperArt figcaption strong{font-weight:700}.aoProperArt figcaption a{white-space:nowrap;color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+@media(max-width:560px){.aoProperArt{margin-top:12px;border-radius:15px}.aoProperArtMedia,.aoProperArt img{max-height:280px}.aoProperArt.isPortrait .aoProperArtMedia,.aoProperArt.isPortrait img{max-height:min(390px,49vh)}.aoProperArt.isLandscape .aoProperArtMedia,.aoProperArt.isLandscape img{max-height:250px}.aoProperArt figcaption{font-size:10px}}
+
+</style>
+<script id="ao-phase1-proper-art-v1-js">
+
+(()=>{
+'use strict';
+const DATA={"rows":{"Sancti/03-25":{"properPath":"Sancti/03-25","label":"Annunciation","status":"GREEN","relationship":"DAY_ART","decisionSource":"PM8 resolved for integration","primaryArtId":"AO001","note":"Fra Angelico selected as the single feast primary; Leonardo remains an unused alternate."},"Sancti/01-13":{"properPath":"Sancti/01-13","label":"Baptism of the Lord","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO005"},"Tempora/Quad1-0":{"properPath":"Tempora/Quad1-0","label":"First Sunday of Lent","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO110"},"Tempora/Quad2-0":{"properPath":"Tempora/Quad2-0","label":"Second Sunday of Lent","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO008"},"Tempora/Quad4-0":{"properPath":"Tempora/Quad4-0","label":"Laetare Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO010"},"Tempora/Quad6-0":{"properPath":"Tempora/Quad6-0","label":"Palm Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO103","note":"Van Dyck supersedes the older Giotto candidate."},"Tempora/Quad6-5":{"properPath":"Tempora/Quad6-5","label":"Good Friday","status":"GREEN","relationship":"DAY_ART","decisionSource":"PM8 resolved for integration","primaryArtId":"AO034","note":"Caravaggio Entombment/Deposition selected as primary; Taking of Christ remains unused alternate."},"Tempora/Quad6-6":{"properPath":"Tempora/Quad6-6","label":"Holy Saturday / Easter Vigil","status":"GREEN","relationship":"LESSON_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO096","note":"Poussin supersedes the earlier Mazzolino asset."},"Tempora/Pasc0-0":{"properPath":"Tempora/Pasc0-0","label":"Easter Sunday","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO099","note":"Rubens center panel supersedes the earlier Piero candidate."},"Tempora/Pasc1-0":{"properPath":"Tempora/Pasc1-0","label":"Low Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO012"},"Tempora/Pasc2-0":{"properPath":"Tempora/Pasc2-0","label":"Second Sunday after Easter / Good Shepherd Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO100","note":"Exact Mâcon Good Shepherd supersedes the earlier Murillo/mosaic candidates."},"Tempora/Pasc3-0":{"properPath":"Tempora/Pasc3-0","label":"Third Sunday after Easter","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO111"},"Tempora/Pasc5-4":{"properPath":"Tempora/Pasc5-4","label":"Ascension","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO101","note":"Tintoretto supersedes the earlier Perugino candidate."},"Tempora/Pasc6-0":{"properPath":"Tempora/Pasc6-0","label":"Sunday after Ascension","status":"GREEN","relationship":"PROPER_THEME","decisionSource":"later curator/asset pass","primaryArtId":"AO109"},"Tempora/Pasc7-0":{"properPath":"Tempora/Pasc7-0","label":"Pentecost","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO015"},"Tempora/Pent01-0":{"properPath":"Tempora/Pent01-0","label":"Trinity Sunday","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO105","note":"El Greco supersedes earlier Navarrete/Rublev candidates."},"Tempora/Pent01-4":{"properPath":"Tempora/Pent01-4","label":"Corpus Christi","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO095","note":"Rubens Eucharistic triumph supersedes earlier Poussin/Melchizedek options."},"Tempora/Pent02-5":{"properPath":"Tempora/Pent02-5","label":"Sacred Heart","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO019"},"Tempora/Pent04-0":{"properPath":"Tempora/Pent04-0","label":"Fourth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO073"},"Tempora/Pent07-0":{"properPath":"Tempora/Pent07-0","label":"Seventh Sunday after Pentecost","status":"HOLD","relationship":"DAY_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO086","note":"Exact Bassano work remains curator-locked but has no commercially reusable open delivery asset; render none."},"Tempora/Pent08-0":{"properPath":"Tempora/Pent08-0","label":"Eighth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO087"},"Tempora/Pent09-0":{"properPath":"Tempora/Pent09-0","label":"Ninth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO084"},"Tempora/Pent11-0":{"properPath":"Tempora/Pent11-0","label":"Eleventh Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO088"},"Tempora/Pent12-0":{"properPath":"Tempora/Pent12-0","label":"Twelfth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM8 preferred candidate frozen","primaryArtId":"AO106"},"Tempora/Pent13-0":{"properPath":"Tempora/Pent13-0","label":"Thirteenth Sunday after Pentecost","status":"GREEN","relationship":"TYPOLOGY_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO089"},"Tempora/Pent14-0":{"properPath":"Tempora/Pent14-0","label":"Fourteenth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO090"},"Tempora/Pent15-0":{"properPath":"Tempora/Pent15-0","label":"Fifteenth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO116"},"Tempora/Pent16-0":{"properPath":"Tempora/Pent16-0","label":"Sixteenth Sunday after Pentecost","status":"NO_ART","relationship":"DAY_ART","decisionSource":"PM7/PM8","note":"Intentional NO_ART: no painting cleared at the required standard; weak prints remain excluded."},"Tempora/Pent19-0":{"properPath":"Tempora/Pent19-0","label":"Nineteenth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO091"},"Tempora/Pent20-0":{"properPath":"Tempora/Pent20-0","label":"Twentieth Sunday after Pentecost","status":"GREEN","relationship":"PROPER_THEME","decisionSource":"PM6 hard lock","primaryArtId":"AO092"},"Tempora/Pent21-0":{"properPath":"Tempora/Pent21-0","label":"Twenty-First Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO093"},"Tempora/Pent22-0":{"properPath":"Tempora/Pent22-0","label":"Twenty-Second Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO085"},"Tempora/Pent23-0":{"properPath":"Tempora/Pent23-0","label":"Twenty-Third Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM6 hard lock","primaryArtId":"AO094"},"Tempora/Pent24-0":{"properPath":"Tempora/Pent24-0","label":"Last Sunday after Pentecost","status":"GREEN","relationship":"DAY_ART","decisionSource":"PM8 preferred candidate frozen","primaryArtId":"AO107"},"Tempora/Epi1-0":{"properPath":"Tempora/Epi1-0","label":"Holy Family","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO098","note":"Veronese supersedes the earlier Dürer candidate."},"Tempora/Epi4-0":{"properPath":"Tempora/Epi4-0","label":"Fourth Sunday after Epiphany","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"phase1-freeze","primaryArtId":"AO082"},"Tempora/Adv4-0":{"properPath":"Tempora/Adv4-0","label":"Fourth Sunday of Advent","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM8 + path reconciliation","primaryArtId":"AO104","note":"Bruegel remains mapped to canonical Advent IV. A later “Advent III” label was a bookkeeping slip, not a Proper remap."},"Sancti/01-06":{"properPath":"Sancti/01-06","label":"Epiphany","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO097","note":"Rubens supersedes the earlier Gentile da Fabriano candidate."},"Sancti/02-02":{"properPath":"Sancti/02-02","label":"Presentation of the Lord / Purification of the BVM","status":"HOLD","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO112","note":"Technical master is adequate; reuse authority remains unresolved under Italian cultural-heritage rules. Render none."},"Sancti/02-22":{"properPath":"Sancti/02-22","label":"Chair of Saint Peter at Antioch","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO117"},"Sancti/05-31":{"properPath":"Sancti/05-31","label":"Queenship of the Blessed Virgin Mary","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO102","note":"Velázquez supersedes earlier Coronation candidates."},"Sancti/07-02":{"properPath":"Sancti/07-02","label":"Visitation of the Blessed Virgin Mary","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO113"},"Sancti/08-15":{"properPath":"Sancti/08-15","label":"Assumption of the Blessed Virgin Mary","status":"GREEN","relationship":"DAY_ART","decisionSource":"PM8 + production register","primaryArtId":"AO022"},"Sancti/09-08":{"properPath":"Sancti/09-08","label":"Nativity of the Blessed Virgin Mary","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO114"},"Sancti/09-14":{"properPath":"Sancti/09-14","label":"Exaltation of the Holy Cross","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO108","note":"Getty Valdés Leal finished oil supersedes the harder-to-source church version."},"Sancti/10-11":{"properPath":"Sancti/10-11","label":"Maternity of the Blessed Virgin Mary","status":"GREEN","relationship":"DAY_ART","decisionSource":"later curator/asset pass","primaryArtId":"AO115"},"Sancti/10-DU":{"properPath":"Sancti/10-DU","label":"Christ the King","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"PM8 preferred + asset pass","primaryArtId":"AO026","note":"Tintoretto selected; Pantocrator mosaic remains unused alternate."},"Sancti/11-02":{"properPath":"Sancti/11-02","label":"All Souls","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO067"},"Sancti/12-08":{"properPath":"Sancti/12-08","label":"Immaculate Conception","status":"GREEN","relationship":"DAY_ART","decisionSource":"PM8 resolved for integration","primaryArtId":"AO021","note":"Murillo selected as feast primary; Zurbarán remains unused alternate."},"Sancti/12-25m1":{"properPath":"Sancti/12-25m1","label":"Christmas — Midnight Mass","status":"GREEN","relationship":"DAY_ART","decisionSource":"phase1-freeze","primaryArtId":"AO003"}},"artworks":{"AO001":{"artId":"AO001","title":"The Annunciation","artist":"Fra Angelico","institution":"Museo Nacional del Prado","file":"La Anunciación (Fra Angelico-Prado).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:La_Anunciaci%C3%B3n_(Fra_Angelico-Prado).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3498,"height":2798,"notes":null},"AO003":{"artId":"AO003","title":"The Nativity","artist":"Piero della Francesca","institution":"National Gallery, London","file":"Piero della francesca, natività, 1470-75, 01.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Piero_della_francesca,_nativit%C3%A0,_1470-75,_01.jpg","license":"CC BY 3.0","rights":"CC BY 3.0; attribution required: Sailko","attribution":"Sailko","width":3344,"height":3512,"notes":null},"AO005":{"artId":"AO005","title":"The Baptism of Christ","artist":"Piero della Francesca","institution":"National Gallery, London","file":"Piero della Francesca - Battesimo di Cristo (National Gallery, London).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Piero_della_Francesca_-_Battesimo_di_Cristo_(National_Gallery,_London).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":4147,"height":5958,"notes":null},"AO008":{"artId":"AO008","title":"The Transfiguration","artist":"Raphael","institution":"Vatican Museums","file":"Transfiguration Raphael.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Transfiguration_Raphael.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":1067,"height":1608,"notes":null},"AO010":{"artId":"AO010","title":"The Miracle of the Loaves and Fishes","artist":"Giovanni Lanfranco","institution":"National Gallery of Ireland","file":"Giovanni Lanfranco - Miracle of the Bread and Fish - WGA12454.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg","license":"Public Domain","rights":"PDM","attribution":null,"width":1285,"height":683,"notes":null},"AO012":{"artId":"AO012","title":"The Incredulity of Saint Thomas","artist":"Caravaggio","institution":"Sanssouci Picture Gallery","file":"Caravaggio incredulity.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Caravaggio_incredulity.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":42558,"height":31589,"notes":null},"AO015":{"artId":"AO015","title":"Pentecost","artist":"El Greco","institution":"Museo Nacional del Prado","file":"Pentecostés (El Greco, 1597).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Pentecost%C3%A9s_(El_Greco,_1597).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":1365,"height":2964,"notes":null},"AO019":{"artId":"AO019","title":"The Sacred Heart of Jesus","artist":"Pompeo Batoni","institution":"Church of the Gesù, Rome","file":"Sacred Heart of Jesus, Gesu Church, Rome.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Sacred_Heart_of_Jesus,_Gesu_Church,_Rome.jpg","license":"Public Domain","rights":"PDM","attribution":null,"width":3543,"height":5231,"notes":null},"AO021":{"artId":"AO021","title":"The Immaculate Conception of Los Venerables","artist":"Bartolomé Esteban Murillo","institution":"Museo Nacional del Prado","file":"Murillo immaculate conception.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Murillo_immaculate_conception.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2012,"height":2952,"notes":null},"AO022":{"artId":"AO022","title":"Assumption of the Virgin","artist":"Titian","institution":"Santa Maria Gloriosa dei Frari, Venice","file":"Basilica di Santa Maria Gloriosa dei Frari - The Assumption.JPG","sourcePage":"https://commons.wikimedia.org/wiki/File:Basilica_di_Santa_Maria_Gloriosa_dei_Frari_-_The_Assumption.JPG","license":"Public Domain","rights":"photographer public-domain release","attribution":null,"width":2304,"height":3456,"notes":null},"AO026":{"artId":"AO026","title":"Christ before Pilate","artist":"Jacopo Tintoretto","institution":"Scuola Grande di San Rocco, Venice","file":"Jacopo tintoretto, cristo davanti a pilato, 1564-66, 01.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Jacopo_tintoretto,_cristo_davanti_a_pilato,_1564-66,_01.jpg","license":"CC BY 3.0","rights":"CC BY 3.0; attribution required: Sailko","attribution":"Sailko","width":2304,"height":3208,"notes":null},"AO034":{"artId":"AO034","title":"Deposition / Anointing Stone","artist":"Caravaggio","institution":"Vatican Museums","file":"The Entombment of Christ-Caravaggio (c.1602-3).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:The_Entombment_of_Christ-Caravaggio_(c.1602-3).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":8810,"height":13086,"notes":null},"AO067":{"artId":"AO067","title":"The Deliverance of the Souls from Purgatory","artist":"Peter Paul Rubens","institution":"Tournai Cathedral","file":"N-D de Tournai - Rubens JPG1.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:N-D_de_Tournai_-_Rubens_JPG1.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2386,"height":3351,"notes":null},"AO073":{"artId":"AO073","title":"The Miraculous Draught of Fishes","artist":"Jacopo Bassano","institution":"National Gallery of Art, Washington","file":"Jacopo Bassano, The Miraculous Draught of Fishes, 1545, NGA 96688.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Jacopo_Bassano,_The_Miraculous_Draught_of_Fishes,_1545,_NGA_96688.jpg","license":"CC0","rights":"CC0 1.0","attribution":null,"width":4000,"height":2318,"notes":null},"AO082":{"artId":"AO082","title":"Christ in the Storm on the Sea of Galilee","artist":"Rembrandt van Rijn","institution":"Isabella Stewart Gardner Museum","file":"Rembrandt Christ in the Storm on the Lake of Galilee.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3002,"height":3731,"notes":null},"AO084":{"artId":"AO084","title":"Christ Cleansing the Temple","artist":"El Greco","institution":"National Gallery of Art, Washington","file":"El Greco (Domenikos Theotokopoulos), Christ Cleansing the Temple, probably before 1570, NGA 43723.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:El_Greco_(Domenikos_Theotokopoulos),_Christ_Cleansing_the_Temple,_probably_before_1570,_NGA_43723.jpg","license":"CC0","rights":"CC0 1.0","attribution":null,"width":4000,"height":3109,"notes":null},"AO085":{"artId":"AO085","title":"The Tribute Money","artist":"Titian","institution":"National Gallery, London","file":"Titian - The Tribute Money - Google Art Project.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Titian_-_The_Tribute_Money_-_Google_Art_Project.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2766,"height":3000,"notes":null},"AO086":{"artId":"AO086","title":"The Three Youths in the Fiery Furnace","artist":"Jacopo Bassano","institution":"Museo Civico, Bassano del Grappa","file":null,"sourcePage":"https://www.christianiconography.info/Venice%202022/Bassano%20Museum/tresPueriBassano.html","license":null,"rights":null,"attribution":null,"width":null,"height":null,"notes":null},"AO087":{"artId":"AO087","title":"Parable of the Unjust Steward","artist":"attributed to Marinus van Reymerswaele","institution":"Kunsthistorisches Museum, Vienna","file":"Parable of the Unjust Steward Marinus van Reymerswaele.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Parable_of_the_Unjust_Steward_Marinus_van_Reymerswaele.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3754,"height":3018,"notes":null},"AO088":{"artId":"AO088","title":"Christ Healing the Deaf-Mute","artist":"Philippe de Champaigne","institution":"University of Michigan Museum of Art","file":"Philippe de Champaigne - Christ Healing the Deaf-Mute - Google Art Project.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_Christ_Healing_the_Deaf-Mute_-_Google_Art_Project.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3091,"height":2481,"notes":null},"AO089":{"artId":"AO089","title":"The Gathering of the Manna / The Jews in the Desert","artist":"Jacopo Tintoretto","institution":"San Giorgio Maggiore, Venice","file":"Tintoretto, raccolta della manna, 1594, 03.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Tintoretto,_raccolta_della_manna,_1594,_03.jpg","license":"CC BY 3.0","rights":"CC BY 3.0; attribution required: Sailko","attribution":"Sailko","width":3180,"height":2048,"notes":null},"AO090":{"artId":"AO090","title":"The Sermon on the Mount","artist":"Claude Lorrain","institution":"The Frick Collection","file":"Lorrain, Claude - The Sermon on the Mount (Frick Collection; c. 1656).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Lorrain,_Claude_-_The_Sermon_on_the_Mount_(Frick_Collection%3B_c._1656).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":6774,"height":4402,"notes":null},"AO091":{"artId":"AO091","title":"The Parable of the Unworthy Wedding Guest","artist":"attributed to Simon Kick","institution":"Rijksmuseum / loan to Museum Catharijneconvent","file":"De gelijkenis van de onwaardige bruiloftsgast. Rijksmuseum SK-A-157.jpeg","sourcePage":"https://commons.wikimedia.org/wiki/File:De_gelijkenis_van_de_onwaardige_bruiloftsgast._Rijksmuseum_SK-A-157.jpeg","license":"CC0 / Public Domain","rights":"Rijksmuseum API CC0 / PDM","attribution":null,"width":6018,"height":4306,"notes":null},"AO092":{"artId":"AO092","title":"The Mourning Jews in Exile","artist":"Eduard Bendemann","institution":"Wallraf-Richartz-Museum / known variants","file":"Eduard Bendemann- Die trauernden Juden im Exil um 1832.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Eduard_Bendemann-_Die_trauernden_Juden_im_Exil_um_1832.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":1706,"height":1130,"notes":null},"AO093":{"artId":"AO093","title":"The Parable of the Unmerciful Servant","artist":"Jan van Hemessen","institution":"University of Michigan Museum of Art","file":"Jan van Hemessen - The Parable of the Unmerciful Servant.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Jan_van_Hemessen_-_The_Parable_of_the_Unmerciful_Servant.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3709,"height":1905,"notes":null},"AO094":{"artId":"AO094","title":"The Raising of Jairus' Daughter","artist":"Paolo Veronese","institution":"Louvre Museum","file":"Veronese - La Résurrection de la fille de Jaïre, INV 141 ; MR 394.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Veronese_-_La_R%C3%A9surrection_de_la_fille_de_Ja%C3%AFre,_INV_141_%3B_MR_394.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":1316,"height":1500,"notes":null},"AO095":{"artId":"AO095","title":"Triumph of the Eucharist over Idolatry","artist":"Peter Paul Rubens","institution":"Museo Nacional del Prado","file":"Victory of the Eucharist over Paganism - modello.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Victory_of_the_Eucharist_over_Paganism_-_modello.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2953,"height":2126,"notes":null},"AO096":{"artId":"AO096","title":"The Crossing of the Red Sea","artist":"Nicolas Poussin","institution":"National Gallery of Victoria","file":"Nicolas Poussin - Le Passage de la mer Rouge.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_Le_Passage_de_la_mer_Rouge.jpg","license":"Public Domain","rights":"PD-old / PDM","attribution":null,"width":2024,"height":1453,"notes":null},"AO097":{"artId":"AO097","title":"Adoration of the Magi","artist":"Peter Paul Rubens","institution":"Museo Nacional del Prado","file":"La adoración de los Reyes Magos (Rubens, Prado).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens,_Prado).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3051,"height":2131,"notes":null},"AO098":{"artId":"AO098","title":"Christ Among the Doctors","artist":"Paolo Veronese","institution":"Museo Nacional del Prado","file":"Disputa con los doctores (El Veronés) grande.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Disputa_con_los_doctores_(El_Veron%C3%A9s)_grande.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3051,"height":1667,"notes":null},"AO099":{"artId":"AO099","title":"Resurrection of Christ — central panel","artist":"Peter Paul Rubens","institution":"Cathedral of Our Lady, Antwerp","file":"Peter Paul Rubens - Resurrection of Christ triptych (central panel).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2144,"height":3000,"notes":null},"AO100":{"artId":"AO100","title":"The Good Shepherd","artist":"Philippe de Champaigne","institution":"Musée des Ursulines de Mâcon","file":"Le Bon Pasteur Philippe de Champaigne.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Le_Bon_Pasteur_Philippe_de_Champaigne.jpg","license":"CC BY-SA 4.0","rights":"CC BY-SA 4.0","attribution":"Yelkrokoyade · CC BY-SA 4.0","width":2467,"height":2987,"notes":"Exact Mâcon inventory A.96; current French catalogue authority retained where Commons legacy attribution wording differs."},"AO101":{"artId":"AO101","title":"The Ascension","artist":"Jacopo Tintoretto","institution":"Scuola Grande di San Rocco, Venice","file":"Paintings by Tintoretto in Scuola Grande di San Rocco - The Ascension.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Paintings_by_Tintoretto_in_Scuola_Grande_di_San_Rocco_-_The_Ascension.jpg","license":"CC BY-SA 4.0","rights":"CC BY-SA 4.0","attribution":"Didier Descouens · CC BY-SA 4.0","width":2088,"height":3444,"notes":null},"AO102":{"artId":"AO102","title":"Coronation of the Virgin","artist":"Diego Velázquez","institution":"Museo Nacional del Prado","file":"Diego Velázquez - Coronation of the Virgin - Prado.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2292,"height":3051,"notes":null},"AO103":{"artId":"AO103","title":"Entry of Christ into Jerusalem","artist":"Anthony van Dyck","institution":"Indianapolis Museum of Art","file":"Entry of Christ into Jerusalem by Anthony van Dyck.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":5043,"height":3325,"notes":null},"AO104":{"artId":"AO104","title":"The Sermon of Saint John the Baptist","artist":"Pieter Bruegel the Elder","institution":"Museum of Fine Arts, Budapest","file":"Pieter Bruegel the Elder - The Sermon of Saint John the Baptist (1566) - Szépművészeti Múzeum.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Sermon_of_Saint_John_the_Baptist_(1566)_-_Sz%C3%A9pm%C5%B1v%C3%A9szeti_M%C3%BAzeum.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":12124,"height":7063,"notes":null},"AO105":{"artId":"AO105","title":"The Holy Trinity","artist":"El Greco","institution":"Museo Nacional del Prado","file":"La Trinidad (El Greco, 1577-1579).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:La_Trinidad_(El_Greco,_1577-1579).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":1759,"height":3051,"notes":null},"AO106":{"artId":"AO106","title":"Landscape with the Good Samaritan","artist":"Rembrandt van Rijn","institution":"Czartoryski Museum, Kraków","file":"Landscape with the Good Samaritan - Rembrandt.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Landscape_with_the_Good_Samaritan_-_Rembrandt.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":9484,"height":6675,"notes":null},"AO107":{"artId":"AO107","title":"The Great Last Judgement","artist":"Peter Paul Rubens","institution":"Alte Pinakothek, Munich","file":"Peter Paul Rubens - The Great Last Judgement (ca. 1617).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Great_Last_Judgement_(ca._1617).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3769,"height":5000,"notes":null},"AO108":{"artId":"AO108","title":"The Exaltation of the Cross","artist":"Juan de Valdés Leal","institution":"J. Paul Getty Museum","file":"Juan de Valdés Leal - The Exaltation of the Cross - 2006.20 - J. Paul Getty Museum.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Juan_de_Vald%C3%A9s_Leal_-_The_Exaltation_of_the_Cross_-_2006.20_-_J._Paul_Getty_Museum.jpg","license":"Public Domain / Getty Open Content","rights":"PDM / Getty Open Content","attribution":"J. Paul Getty Museum · Open Content","width":4911,"height":2811,"notes":null},"AO109":{"artId":"AO109","title":"Crucifixion of Saint Peter","artist":"Caravaggio","institution":"Santa Maria del Popolo, Rome","file":"Crucifixion of Saint Peter-Caravaggio (c.1600).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":8180,"height":10537,"notes":null},"AO110":{"artId":"AO110","title":"The Temptation of Christ","artist":"Jacopo Tintoretto","institution":"Scuola Grande di San Rocco, Venice","file":"Paintings by Tintoretto in Scuola Grande di San Rocco - Sala superiore - The Temptation of Christ.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Paintings_by_Tintoretto_in_Scuola_Grande_di_San_Rocco_-_Sala_superiore_-_The_Temptation_of_Christ.jpg","license":"CC BY-SA 4.0","rights":"CC BY-SA 4.0","attribution":"Didier Descouens · CC BY-SA 4.0","width":2790,"height":4303,"notes":null},"AO111":{"artId":"AO111","title":"Noli me tangere","artist":"Titian","institution":"National Gallery, London","file":"Noli-me-tangere-titien.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Noli-me-tangere-titien.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3520,"height":4225,"notes":null},"AO112":{"artId":"AO112","title":"Presentation of Jesus in the Temple","artist":"Romanino (Girolamo Romani)","institution":"Pinacoteca di Brera","file":"Romanino, presentazione di gesù al tempio, 1529, 01.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Romanino,_presentazione_di_ges%C3%B9_al_tempio,_1529,_01.jpg","license":"CC BY-SA 4.0 / Italian cultural-heritage restriction unresolved","rights":"DELIVERY_HOLD","attribution":null,"width":2236,"height":2884,"notes":"Exact work and sufficient pixels established; commercial/open reuse authority remains unresolved under Italian cultural-heritage rules."},"AO113":{"artId":"AO113","title":"The Visitation","artist":"Federico Barocci","institution":"Chiesa Nuova (Santa Maria in Vallicella), Rome","file":"Visitation - Chiesa Nuova - Rome 2015.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Visitation_-_Chiesa_Nuova_-_Rome_2015.jpg","license":"CC BY-SA 4.0","rights":"CC BY-SA 4.0","attribution":"José Luiz Bernardes Ribeiro · CC BY-SA 4.0","width":3376,"height":5136,"notes":null},"AO114":{"artId":"AO114","title":"The Birth of the Virgin","artist":"Francesco Solimena","institution":"Metropolitan Museum of Art","file":"The Birth of the Virgin MET DT11676.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:The_Birth_of_the_Virgin_MET_DT11676.jpg","license":"CC0","rights":"CC0 1.0 / Met Open Access","attribution":"The Metropolitan Museum of Art · CC0","width":3077,"height":3713,"notes":null},"AO115":{"artId":"AO115","title":"Madonna dei Palafrenieri","artist":"Caravaggio","institution":"Galleria Borghese, Rome","file":"Caravaggio - La Madonna dei Palafrenieri, 1605, 110.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Caravaggio_-_La_Madonna_dei_Palafrenieri,_1605,_110.jpg","license":"Public Domain","rights":"PDM","attribution":null,"width":1876,"height":2582,"notes":null},"AO116":{"artId":"AO116","title":"Raising the Young Man of Nain","artist":"Paolo Veronese","institution":"Kunsthistorisches Museum, Vienna","file":"Paolo Caliari, gen. Veronese, Kunsthistorisches Museum Wien, Gemäldegalerie - Erweckung des Jünglings zu Nain - GG 52 - Kunsthistorisches Museum.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Paolo_Caliari,_gen._Veronese,_Kunsthistorisches_Museum_Wien,_Gem%C3%A4ldegalerie_-_Erweckung_des_J%C3%BCnglings_zu_Nain_-_GG_52_-_Kunsthistorisches_Museum.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3000,"height":2232,"notes":null},"AO117":{"artId":"AO117","title":"Christ Giving the Keys of Heaven to Saint Peter","artist":"Peter Paul Rubens","institution":"Gemäldegalerie, Berlin","file":"Peter Paul Rubens (1577-1640) - Christ Giving the Keys of Heaven to Saint Peter - B.116 - Gemäldegalerie.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_(1577-1640)_-_Christ_Giving_the_Keys_of_Heaven_to_Saint_Peter_-_B.116_-_Gem%C3%A4ldegalerie.jpg","license":"Public Domain","rights":"PDM","attribution":null,"width":2300,"height":2634,"notes":null}},"delivery":{"provider":"Wikimedia Commons Special:Redirect/file","widths":[768,1280,1800],"defaultWidth":1280,"format":"source JPEG/Commons thumbnail","noZoom":true}};
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const normPath=raw=>{let p=String(raw||'').trim().replace(/\\/g,'/').replace(/^\.?\//,'').replace(/\.(txt|json|html)$/i,'');p=p.replace(/^tempora:/i,'Tempora/').replace(/^sancti:/i,'Sancti/');return p;};
+const properPath=state=>normPath(state?.resolution?.proper?.status==='ready'?(state.resolution.proper.data?.sourcePath||state.resolution.proper.data?.path):(state?.resolution?.day?.main?.path||''));
+const thumb=(file,width)=>file?`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(file)}?width=${width}`:'';
+const sourceLabel=lang=>lang==='fr'?'Source':'Source';
+function homeMarkup(state,lang='en'){
+ const path=properPath(state),r=DATA.rows[path];
+ if(!r||r.status!=='GREEN'||!r.primaryArtId)return '';
+ const a=DATA.artworks[r.primaryArtId];if(!a||!a.file||!a.sourcePage)return '';
+ const license=a.license||a.rights||'';
+ const attribution=a.attribution||'';
+ const attr=attribution&&/^CC BY/i.test(license)&&!attribution.toLowerCase().includes('cc by')?`${attribution} · ${license}`:(attribution||license);
+ const alt=`${a.artist||''} — ${a.title||r.label||''}`;
+ const ratio=(Number(a.width)||1)/(Number(a.height)||1);
+ const orientation=ratio<0.82?'isPortrait':ratio>1.22?'isLandscape':'isBalanced';
+ const src=thumb(a.file,1280),s800=thumb(a.file,768),s1800=thumb(a.file,1800);
+ return `<figure class="aoProperArt ${orientation}" data-ao-proper-art="${esc(r.primaryArtId)}" data-proper-path="${esc(path)}"><div class="aoProperArtMedia"><img src="${esc(src)}" srcset="${esc(s800)} 768w, ${esc(src)} 1280w, ${esc(s1800)} 1800w" sizes="(max-width:560px) 100vw, 720px" alt="${esc(alt)}" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('figure')?.remove()"></div><figcaption><span><strong>${esc(a.artist||'')}</strong>${a.title?` · ${esc(a.title)}`:''}${attr?`<br><small>${esc(attr)}</small>`:''}</span><a href="${esc(a.sourcePage)}" target="_blank" rel="noopener noreferrer">${sourceLabel(lang)} ↗</a></figcaption></figure>`;
+}
+function inspect(){const green=Object.values(DATA.rows).filter(x=>x.status==='GREEN').length,hold=Object.values(DATA.rows).filter(x=>x.status==='HOLD').length,noArt=Object.values(DATA.rows).filter(x=>x.status==='NO_ART').length;return{version:'phase1-proper-art-v1.2',green,hold,noArt,genericFallback:false,currentOnly:true,saintArtTouched:false,rosaryArtTouched:false,stationsArtTouched:false}}
+window.AO_PHASE1_ART={version:'phase1-proper-art-v1.2',data:DATA,homeMarkup,properPath,inspect};
+})();
+
+</script><script>
+(()=>{const modules={0:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.boot = boot;
+const day_resolver_1 = require(1);
+const text_fetcher_1 = require(9);
+const scripture_service_1 = require(10);
+const app_state_1 = require(13);
+const app_controller_1 = require(14);
+const persistence_1 = require(48);
+function iso(date) { const y = date.getFullYear(), m = String(date.getMonth() + 1).padStart(2, '0'), d = String(date.getDate()).padStart(2, '0'); return `${y}-${m}-${d}`; }
+function boot(root, date = iso(new Date())) { const fetcher = new text_fetcher_1.MemoryTextFetcher((url, init) => fetch(url, init)); const resolver = (0, day_resolver_1.createDayResolver)(fetcher); const store = new app_state_1.AppStore((0, app_state_1.createInitialState)(date, 'en')); const scriptureService = new scripture_service_1.ScriptureService(fetcher); const controller = new app_controller_1.AppController(root, store, resolver, scriptureService, (0, persistence_1.browserStorage)()); globalThis.AO_RUNTIME_V8={fetcher,resolver,store,controller,scriptureService}; void controller.start(); return controller; }
+
+},1:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createDayResolver = exports.DayResolver = void 0;
+exports.seasonalPreface = seasonalPreface;
+const calendar_engine_1 = require(2);
+const date_utils_1 = require(3);
+const liturgical_theme_1 = require(6);
+const formulary_selection_1 = require(7);
+const proper_resolver_1 = require(8);
+const source_config_1 = require(4);
+const text_fetcher_1 = require(9);
+function seasonalPreface(day) {
+    const id = day?.tempora?.[0]?.id || '';
+    if (/^tempora:Quad(p3-[3-6]|[1-4]-)/.test(id))
+        return 'Quad';
+    if (/^tempora:Pasc([0-4]|5-[0-3])/.test(id))
+        return 'Pasch';
+    if (/^tempora:Pasc(5-[4-6]|6-[0-5])/.test(id))
+        return 'Asc';
+    if (/^tempora:Pasc7/.test(id))
+        return 'Spiritu';
+    return 'Communis';
+}
+function cloneSources(sources) {
+    const output = {};
+    for (const language of ['la', 'en', 'fr']) {
+        const source = sources[language];
+        const map = new Map();
+        for (const [key, value] of source.map)
+            map.set(key, [...value]);
+        output[language] = { map, order: [...source.order], source: source.source || null };
+    }
+    return output;
+}
+async function applyShiftedPostEpiphany(resolver, sources, date, path, diagnostic) {
+    if (date.getMonth() < 9 || !/^Tempora\/Epi[1-6]-0$/.test(path || ''))
+        return sources;
+    const output = cloneSources(sources);
+    for (const language of ['la', 'en', 'fr']) {
+        const donor = await resolver.resolveSource('Tempora/Pent23-0', language, diagnostic);
+        for (const section of ['Introitus', 'Graduale', 'Offertorium', 'Communio']) {
+            const body = donor.map.get(section);
+            if (body?.length) {
+                output[language].map.set(section, [...body]);
+                if (!output[language].order.includes(section))
+                    output[language].order.push(section);
+            }
+        }
+    }
+    diagnostic.warnings.push('Restored post-Epiphany Sunday composition applied from XXIII Sunday after Pentecost.');
+    return output;
+}
+async function mergeCommemorations(resolver, proper, day, diagnostic) {
+    proper.calendarCommemorations = [];
+    for (const commemoration of day.commemorations || []) {
+        if (!commemoration?.path)
+            continue;
+        try {
+            const sources = {};
+            for (const language of ['la', 'en', 'fr'])
+                sources[language] = await resolver.resolveSource(commemoration.path, language, diagnostic);
+            const collect = (0, proper_resolver_1.numbered)(sources, 'Oratio', true)[0];
+            const secret = (0, proper_resolver_1.numbered)(sources, 'Secreta')[0];
+            const postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio')[0];
+            if (collect)
+                proper.collects.push(collect);
+            if (secret)
+                proper.secrets.push(secret);
+            if (postcommunion)
+                proper.postcommunions.push(postcommunion);
+            proper.calendarCommemorations.push({ name: commemoration.title, path: commemoration.path, rank: (0, calendar_engine_1.classLabel)(commemoration.rank) });
+        }
+        catch (error) {
+            diagnostic.warnings.push(`Commemoration source failed ${commemoration.path}: ${error instanceof Error ? error.message : String(error)}`);
+        }
+    }
+    proper.collect = proper.collects[0] || proper.collect;
+    proper.secret = proper.secrets[0] || proper.secret;
+    proper.postcommunion = proper.postcommunions[0] || proper.postcommunion;
+    return proper;
+}
+class DayResolver {
+    properResolver;
+    calendarEngine;
+    formularies = new formulary_selection_1.FormularySelectionStore();
+    constructor(fetcher) {
+        this.properResolver = new proper_resolver_1.ProperResolver(fetcher);
+        this.calendarEngine = new calendar_engine_1.CalendarEngine(fetcher, this.properResolver);
+    }
+    clear() {
+        this.properResolver.clear();
+        this.calendarEngine.clear();
+        this.formularies.clear();
+    }
+    async resolveDay(dateInput, options = {}) {
+        const date = dateInput instanceof Date ? new Date(dateInput) : new Date(`${dateInput}T12:00:00`);
+        if (Number.isNaN(date.valueOf()))
+            throw new Error(`Invalid date: ${String(dateInput)}`);
+        const dateKey = (0, date_utils_1.iso)(date);
+        const diagnostic = (0, text_fetcher_1.createDiagnostic)();
+        let day = null;
+        try {
+            const desiredFormulary = options.formularyIndex ?? this.formularies.get(dateKey);
+            day = await this.calendarEngine.resolveCalendarDay(date, diagnostic, desiredFormulary);
+            if (day.massOptions.length > 1)
+                this.formularies.set(dateKey, day.formularyIndex);
+        }
+        catch (error) {
+            const message = error instanceof Error ? error.message : String(error);
+            diagnostic.errors.push(message);
+            return { status: 'failed', date: dateKey, day: null, proper: { status: 'idle', data: null, error: null }, colourPlan: null, error: message, diagnostic };
+        }
+        try {
+            const main = day.main;
+            let path = main?.path || null;
+            let inherited = false;
+            if (path && main.flexibility === 'tempora' && !(await this.calendarEngine.missaExists(path, diagnostic)))
+                path = null;
+            if (!path) {
+                const inheritedObservance = await this.calendarEngine.inferObservance(date, diagnostic);
+                if (!inheritedObservance?.path)
+                    throw new Error(`No inherited Proper could be inferred for ${dateKey}`);
+                path = inheritedObservance.path;
+                inherited = true;
+            }
+            let sources = {};
+            for (const language of ['la', 'en', 'fr'])
+                sources[language] = await this.properResolver.resolveSource(path, language, diagnostic);
+            sources = await applyShiftedPostEpiphany(this.properResolver, sources, date, path, diagnostic);
+            const rules = (0, proper_resolver_1.ruleInfo)(sources);
+            const meta = {
+                date: dateKey,
+                path,
+                properId: `calendar:${dateKey}:${path}`,
+                name: day.main.title || 'Feria',
+                nameFr: day.main.title || 'Férie',
+                rank: (0, calendar_engine_1.classLabel)(day.main.rank || 4),
+                color: day.main.color || 'White',
+                profile: 'ordinary_mass',
+                gloria: inherited ? false : rules.gloria,
+                credo: inherited ? false : rules.credo,
+                preface: inherited ? seasonalPreface(day) : (rules.preface || 'Communis'),
+                inherited,
+            };
+            const preface = await this.properResolver.resolvePreface(meta.preface || 'Communis', diagnostic);
+            let proper = (0, proper_resolver_1.normalizeProper)(meta, sources, preface, diagnostic);
+            proper = await mergeCommemorations(this.properResolver, proper, day, diagnostic);
+            proper.riteProfile = (0, liturgical_theme_1.riteProfileFor)(path, proper);
+            proper.sourcePath = path;
+            proper.inheritedProper = inherited;
+            proper.calendarDay = day;
+            proper.formularies = day.formularies || null;
+            proper.formularyIndex = day.formularyIndex || 0;
+            proper.canonicalColor = proper.color;
+            const colourPlan = (0, liturgical_theme_1.liturgicalColorPlan)(date, day, path, proper);
+            proper.liturgicalColorPlan = colourPlan;
+            proper.color = colourPlan.primary;
+            proper.vestmentsLabel = colourPlan.label;
+            proper.sourceRevisions = source_config_1.SOURCE_REVISIONS;
+            return { status: 'ready', date: dateKey, day, proper: { status: 'ready', data: proper, error: null }, colourPlan, error: null, diagnostic };
+        }
+        catch (error) {
+            const message = error instanceof Error ? error.message : String(error);
+            diagnostic.errors.push(message);
+            return { status: 'ready', date: dateKey, day, proper: { status: 'failed', data: null, error: message }, colourPlan: null, error: null, diagnostic };
+        }
+    }
+}
+exports.DayResolver = DayResolver;
+const createDayResolver = (fetcher) => new DayResolver(fetcher);
+exports.createDayResolver = createDayResolver;
+
+},2:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CalendarEngine = exports.classLabel = void 0;
+exports.colorLabel = colorLabel;
+const date_utils_1 = require(3);
+const source_config_1 = require(4);
+const source_parsers_1 = require(5);
+const ROMAN = ['', 'I', 'II', 'III', 'IV'];
+const classLabel = (rank) => `${ROMAN[rank] || rank} class`;
+exports.classLabel = classLabel;
+function colorLabel(code) {
+    const map = { w: 'White', r: 'Red', v: 'Violet', g: 'Green', b: 'Black', p: 'Rose' };
+    return [...new Set([...String(code || 'w')].map(char => map[char] || char))].join(' / ');
+}
+const PAT = {
+    PATTERN_TEMPORA: /^tempora:.*/,
+    PATTERN_ADVENT: /^tempora:Adv\d/,
+    PATTERN_ADVENT_SUNDAY: /^tempora:Adv\d-0/,
+    PATTERN_LENT: /^tempora:Quad(p3-[3-6]|\d)/,
+    PATTERN_LENT_SUNDAY: /^tempora:Quad\d-0.*/,
+    PATTERN_EASTER: /^tempora:Pasc\d/,
+    PATTERN_TEMPORA_SUNDAY: /^tempora:.*-0r*:\d:\w{1,2}$/,
+    PATTERN_TEMPORA_SUNDAY_CLASS_2: /^tempora:(.*-0r*:2|Nat1-0):\w$/,
+    PATTERN_TEMPORA_CLASS_4: /^tempora:.*:4:\w$/,
+    PATTERN_SANCTI: /^sancti:/,
+    PATTERN_SANCTI_CLASS_1_OR_2: /^sancti:.*:[12]:\w$/,
+    PATTERN_SANCTI_CLASS_2: /^sancti:.*:2:\w$/,
+    PATTERN_SANCTI_CLASS_3: /^sancti:.*:3:\w$/,
+    PATTERN_SANCTI_CLASS_3_LOCAL: /^sancti:.*(?:en|pl):3:\w$/,
+    PATTERN_SANCTI_CLASS_4: /^sancti:.*:4c?:\w$/,
+    PATTERN_CLASS_1: /^[a-z]*:.*:1:\w$/,
+    PATTERN_CLASS_2: /^[a-z]*:.*:2:\w$/,
+    PATTERN_CLASS_3: /^[a-z]*:.*:3:\w$/,
+};
+function idMatches(id, matcher) {
+    if (!matcher)
+        return false;
+    if (matcher instanceof RegExp) {
+        matcher.lastIndex = 0;
+        return matcher.test(id);
+    }
+    if (Array.isArray(matcher))
+        return matcher.some(item => idMatches(id, item));
+    if (matcher instanceof Set)
+        return [...matcher].some(item => idMatches(id, item));
+    if (typeof matcher === 'string') {
+        try {
+            return new RegExp(`^${matcher}`).test(id);
+        }
+        catch {
+            return id === matcher;
+        }
+    }
+    return false;
+}
+function matchAll(observances, matcher) {
+    const list = Array.isArray(observances) ? observances : [observances];
+    return list.filter(Boolean).filter(obs => idMatches(obs.id, matcher));
+}
+function matchFirst(observances, matcher) {
+    return matchAll(observances, matcher)[0] || null;
+}
+function priorityFor(id, source) {
+    for (let i = 0; i < source.precedence.length; i += 1)
+        if (idMatches(id, source.precedence[i]))
+            return i;
+    return 9999;
+}
+function sourcePathFor(flexibility, name) {
+    if (flexibility === 'tempora')
+        return `Tempora/${name}`;
+    if (flexibility === 'sancti')
+        return `Sancti/${name}`;
+    if (flexibility === 'commune')
+        return `Commune/${name}`;
+    return null;
+}
+function makeObservance(raw, date, source) {
+    const parts = String(raw).split(':');
+    if (parts.length < 4)
+        throw new Error(`Bad observance ID: ${raw}`);
+    let [flexibility, name, rankString, colorCode] = parts;
+    let rank = Number(rankString);
+    if (flexibility === 'tempora' && /^Adv\d-[1-6]$/.test(name) && date.getMonth() === 11 && date.getDate() >= 17 && date.getDate() <= 23)
+        rank = 2;
+    const id = [flexibility, name, rank, colorCode].join(':');
+    return {
+        rawId: raw,
+        id,
+        flexibility,
+        name,
+        rank,
+        colorCode,
+        colors: [...colorCode],
+        color: colorLabel(colorCode),
+        path: sourcePathFor(flexibility, name),
+        title: source.titles.get(raw) || source.titles.get(id) || (flexibility === '' ? 'Feria' : undefined),
+        priority: priorityFor(id, source),
+    };
+}
+function newCalendar(year) {
+    const map = new Map();
+    let date = (0, date_utils_1.dUTC)(year, 1, 1), end = (0, date_utils_1.dUTC)(year, 12, 31);
+    while (date <= end) {
+        map.set((0, date_utils_1.iso)(date), { date: new Date(date), tempora: [], celebration: [], commemoration: [], displaced: [] });
+        date = (0, date_utils_1.addDays)(date, 1);
+    }
+    return map;
+}
+function getDay(calendar, date) { return calendar.get((0, date_utils_1.iso)(date)); }
+function dayAll(day) { return [...day.tempora, ...day.celebration, ...day.commemoration]; }
+function insertBlock(calendar, source, start, block, options = {}) {
+    const reverse = !!options.reverse;
+    const overwrite = options.overwrite !== false;
+    const stop = options.stopDate || null;
+    const rows = reverse ? [...block].reverse() : block;
+    for (let i = 0; i < rows.length; i += 1) {
+        const date = (0, date_utils_1.addDays)(start, reverse ? -i : i), row = rows[i];
+        if (!row?.length)
+            continue;
+        const day = getDay(calendar, date);
+        if (!day)
+            break;
+        if (day.celebration.length && !overwrite)
+            break;
+        if (stop && (0, date_utils_1.sameDay)(stop, (0, date_utils_1.addDays)(date, -1)))
+            break;
+        const observations = row.map(id => makeObservance(id, date, source));
+        day.tempora = observations;
+        day.celebration = [...observations];
+    }
+}
+function fillInitialCalendar(year, source) {
+    const calendar = newCalendar(year);
+    insertBlock(calendar, source, (0, date_utils_1.holyFamily)(year), source.blocks.POST_EPIPHANY);
+    insertBlock(calendar, source, (0, date_utils_1.septuagesima)(year), source.blocks.FROM_PRE_LENT_TO_POST_PENTECOST);
+    insertBlock(calendar, source, (0, date_utils_1.addDays)((0, date_utils_1.pent24Start)(year), -1), source.blocks.POST_EPIPHANY, { reverse: true, overwrite: false });
+    insertBlock(calendar, source, (0, date_utils_1.pent24Start)(year), source.blocks.WEEK_24_AFTER_PENTECOST);
+    insertBlock(calendar, source, (0, date_utils_1.firstAdvent)(year), source.blocks.ADVENT, { stopDate: (0, date_utils_1.dUTC)(year, 12, 23) });
+    insertBlock(calendar, source, (0, date_utils_1.emberSeptember)(year), source.blocks.EMBER_DAYS_SEPTEMBER);
+    let date = (0, date_utils_1.holyName)(year), day = getDay(calendar, date);
+    if (day)
+        day.celebration = [makeObservance(source.constants.TEMPORA_NAT2_0, date, source)];
+    date = (0, date_utils_1.christKing)(year);
+    day = getDay(calendar, date);
+    if (day)
+        day.celebration = [makeObservance(source.constants.SANCTI_10_DU, date, source)];
+    const octaveSunday = (0, date_utils_1.christmasOctaveSunday)(year);
+    if (octaveSunday)
+        insertBlock(calendar, source, octaveSunday, source.blocks.NATIVITY_OCTAVE_SUNDAY);
+    for (const n of [29, 30, 31])
+        insertBlock(calendar, source, (0, date_utils_1.dUTC)(year, 12, n), source.blocks.NATIVITY_OCTAVE_FERIA, { overwrite: false });
+    for (const rawDay of calendar.values()) {
+        const md = `${(0, date_utils_1.z)(rawDay.date.getMonth() + 1)}-${(0, date_utils_1.z)(rawDay.date.getDate())}`;
+        const ids = source.blocks.SANCTI.filter(id => id.startsWith(`sancti:${md}`));
+        if (ids.length) {
+            const observations = ids.map(id => makeObservance(id, rawDay.date, source)).sort((a, b) => a.rank - b.rank);
+            rawDay.celebration.push(...observations);
+            rawDay.celebration.sort((a, b) => a.rank - b.rank);
+        }
+    }
+    return calendar;
+}
+function sortGeneral(a, b) { return (a.priority - b.priority) || (a.rank - b.rank) || String(a.flexibility).localeCompare(String(b.flexibility)); }
+function nextFreeTransferDate(calendar, date) {
+    let target = new Date(date);
+    while (target.getFullYear() === date.getFullYear()) {
+        target = (0, date_utils_1.addDays)(target, 1);
+        const day = getDay(calendar, target);
+        if (!day)
+            return null;
+        const ranks = new Set(dayAll(day).map(obs => obs.rank));
+        if (!ranks.has(1) && !ranks.has(2))
+            return target;
+    }
+    return null;
+}
+function bmvObs(date, tempora, source) {
+    let id;
+    if (matchFirst(tempora, PAT.PATTERN_ADVENT))
+        id = source.constants.TEMPORA_C_10A;
+    else if (date >= (0, date_utils_1.dUTC)(date.getFullYear(), 12, 25) || date < (0, date_utils_1.dUTC)(date.getFullYear(), 2, 2))
+        id = source.constants.TEMPORA_C_10B;
+    else if (date >= (0, date_utils_1.dUTC)(date.getFullYear(), 2, 2) && date < (0, date_utils_1.addDays)((0, date_utils_1.easter)(date.getFullYear()), -4))
+        id = source.constants.TEMPORA_C_10C;
+    else if (matchFirst(tempora, PAT.PATTERN_EASTER))
+        id = source.constants.TEMPORA_C_10PASC;
+    else
+        id = source.constants.TEMPORA_C_10T;
+    return makeObservance(id, date, source);
+}
+function applyRules(calendar, source, date, shifted) {
+    const day = getDay(calendar, date);
+    const tempora = day.tempora, obs = [...day.celebration, ...shifted];
+    const C = source.constants, isSun = date.getDay() === 0, isSat = date.getDay() === 6;
+    const ret = (celebration, commemoration = [], shifts = [], displaced = null) => ({
+        celebration, commemoration, shifts,
+        displaced: displaced ?? obs.filter(o => o.flexibility === 'sancti' && !new Set(celebration.map(x => x.id)).has(o.id)),
+    });
+    let x, y, list;
+    if ((x = matchFirst(obs, C.SANCTI_12_24)) && isSun)
+        return ret([x]);
+    if (matchFirst(obs, C.SANCTI_12_25_1))
+        return ret(obs.filter(o => o.id.startsWith('sancti:12-25m')));
+    if (matchFirst(obs, C.SANCTI_11_02_1)) {
+        list = obs.filter(o => o.id.startsWith('sancti:11-02m'));
+        if (isSun) {
+            x = matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY);
+            return ret(x ? [x] : [], [], [[(0, date_utils_1.dUTC)(date.getFullYear(), 11, 3), list]]);
+        }
+        return ret(list);
+    }
+    if ((x = matchFirst(obs, C.SANCTI_02_24)) && date.getFullYear() % 4 === 0 && date.getDate() === 24) {
+        y = matchFirst(obs, PAT.PATTERN_TEMPORA);
+        return ret(y ? [y] : [], [], [[(0, date_utils_1.dUTC)(date.getFullYear(), 2, 25), [x]]]);
+    }
+    if ((x = matchFirst(obs, C.SANCTI_02_27)) && date.getFullYear() % 4 === 0 && date.getDate() === 27) {
+        y = matchFirst(obs, PAT.PATTERN_TEMPORA);
+        return ret(y ? [y] : [], [], [[(0, date_utils_1.dUTC)(date.getFullYear(), 2, 28), [x]]]);
+    }
+    if ((x = matchFirst(obs, C.SANCTI_08_09))) {
+        if (isSat) {
+            y = matchFirst(obs, C.SANCTI_08_09C);
+            return ret([bmvObs(date, tempora, source)], y ? [y] : []);
+        }
+        if (!isSun) {
+            y = matchFirst(obs, C.SANCTI_08_09C);
+            return ret([x], y ? [y] : []);
+        }
+    }
+    if ((x = matchFirst(obs, C.TEMPORA_QUAD5_5)) && (y = matchFirst(obs, C.TEMPORA_QUAD5_5C)))
+        return ret([x], [y]);
+    x = !isSun ? matchFirst(obs, [...source.ember, PAT.PATTERN_ADVENT]) : null;
+    if (x) {
+        y = matchFirst(obs, PAT.PATTERN_SANCTI);
+        if (!y)
+            return ret([x]);
+        if (x.rank === y.rank)
+            return ret([y], [x]);
+        if (x.rank < y.rank)
+            return ret([x], [y]);
+    }
+    if ((x = matchFirst(obs, PAT.PATTERN_LENT))) {
+        list = matchAll(obs, PAT.PATTERN_SANCTI).sort((a, b) => a.rank - b.rank);
+        if (!list.length)
+            return ret([x]);
+        const min = list[0].rank;
+        if (x.rank === min) {
+            if (min !== 1)
+                return ret([x], list);
+        }
+        else if (x.rank > min)
+            return ret([list[0]], [...list.slice(1), x]);
+    }
+    if (date.getMonth() === 11 && date.getDate() === 8 && isSun) {
+        x = matchFirst(obs, PAT.PATTERN_SANCTI);
+        y = matchFirst(obs, PAT.PATTERN_TEMPORA);
+        if (x)
+            return ret([x], y ? [y] : []);
+    }
+    list = obs.filter(o => o.rank === 1);
+    if (list.length > 1) {
+        list.sort((a, b) => a.priority - b.priority);
+        const target = nextFreeTransferDate(calendar, date);
+        return ret([list[0]], [], target ? [[target, [list[1]]]] : []);
+    }
+    if (matchFirst(obs, C.SANCTI_01_13) && matchFirst(obs, C.TEMPORA_EPI1_0)) {
+        x = matchFirst(obs, C.TEMPORA_EPI1_0);
+        return ret(x ? [x] : []);
+    }
+    if (matchFirst(obs, [...source.jesusFeasts]) && matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2)) {
+        x = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_1_OR_2);
+        if (x)
+            return ret([x]);
+    }
