@@ -177,14 +177,20 @@ assert.equal(candlemasPayload?.objectStateAcceptance?.postureOverride,null);
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
 assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
-assert.deepEqual(realShellScope?.certified,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","GOOD_FRIDAY"]);
-assert.equal(realShellScope?.pending?.includes("CANDLEMAS"),false);
-assert.equal(realShellScope?.pending?.includes("ROGATIONS"),false);
-assert.equal(realShellScope?.pending?.includes("GOOD_FRIDAY"),false);
-assert.ok(realShellScope?.pending?.includes("EASTER_VIGIL"));
+assert.deepEqual(realShellScope?.certified,[
+  "ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","GOOD_FRIDAY",
+  "REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST",
+  "GENERIC_PROCESSION","NUPTIAL"
+]);
+assert.deepEqual(realShellScope?.pending,["EASTER_VIGIL"]);
 assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
 assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
 assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"PARTIAL_EXPLICIT_EVIDENCE");
+assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.certified,realShellScope.certified);
+assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.pending,["EASTER_VIGIL"]);
+assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.tests,[
+  "tests/app-shell-final-e2e.mjs","tests/app-shell-nuptial-e2e.mjs"
+]);
 
 const goodFridayShell=release.protectedInvariants.find(x=>x.id==="GOOD_FRIDAY_REAL_APP_SHELL_ACCEPTANCE");
 assert.equal(goodFridayShell?.status,"CERTIFIED","Good Friday real-shell acceptance disappeared");
@@ -195,6 +201,39 @@ assert.match(String(goodFridayShell?.controller??""),/reader-good-friday\.js/);
 assert.match(String(goodFridayShell?.productionMount??""),/reader-native-preview\.js/);
 assert.match(String(goodFridayShell?.test??""),/app-shell-final-e2e\.mjs/);
 assert.match(String(goodFridayShell?.unitTest??""),/reader-native-good-friday\.mjs/);
+
+const followingShell=release.protectedInvariants.find(x=>x.id==="FOLLOWING_ACTION_CLUSTER_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(followingShell?.status,"CERTIFIED","following-action real-shell cluster disappeared");
+assert.equal(followingShell?.actualIndexHtml,true);
+assert.equal(followingShell?.legacyStartCount,0);
+assert.deepEqual(followingShell?.rites,[
+  "REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GENERIC_PROCESSION"
+]);
+assert.match(String(followingShell?.test??""),/app-shell-final-e2e\.mjs/);
+
+const reqPayload=release.protectedInvariants.find(x=>x.id==="REQUIEM_ABSOLUTION_NATIVE_PAYLOAD");
+assert.equal(reqPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE");
+assert.equal(reqPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
+assert.match(String(reqPayload?.productionTest??""),/app-shell-final-e2e\.mjs/);
+assert.match(String(reqPayload?.lifecycleOwner??""),/form-lifecycle\.js/);
+
+const reqShell=release.protectedInvariants.find(x=>x.id==="REQUIEM_ABSOLUTION_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(reqShell?.status,"CERTIFIED");
+assert.equal(reqShell?.actualIndexHtml,true);
+assert.equal(reqShell?.legacyStartCount,0);
+assert.deepEqual(reqShell?.branch,{bodyPresent:true,burialProcession:true});
+
+for(const id of [
+  "CORPUS_CHRISTI_NATIVE_PAYLOAD",
+  "HOLY_THURSDAY_POST_NATIVE_PAYLOAD",
+  "GENERIC_PROCESSION_NATIVE_PAYLOAD"
+]){
+  const item=release.protectedInvariants.find(x=>x.id===id);
+  assert.equal(item?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",id+" lost real-shell production certification");
+  assert.equal(item?.productionOwner,"R17_NATIVE_PRODUCTION");
+  assert.match(String(item?.productionTest??""),/app-shell-final-e2e\.mjs/);
+  assert.match(String(item?.lifecycleOwner??""),/form-lifecycle\.js/);
+}
 
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE","Asperges real-shell production certification disappeared");
@@ -227,6 +266,18 @@ assert.deepEqual(nuptial?.insertionIds,[
 ]);
 assert.equal(nuptial?.modelBehavior?.liveWithNuptialCards,42);
 assert.match(String(nuptial?.controller??""),/reader-nuptial\.js/);
+assert.equal(nuptial?.realShellAcceptance?.status,"CERTIFIED");
+assert.match(String(nuptial?.realShellAcceptance?.test??""),/app-shell-nuptial-e2e\.mjs/);
+assert.equal(nuptial?.realShellAcceptance?.actualIndexHtml,true);
+assert.equal(nuptial?.realShellAcceptance?.legacyStartCount,0);
+assert.equal(nuptial?.realShellAcceptance?.liveCardCount,42);
+
+const nuptialShell=release.protectedInvariants.find(x=>x.id==="NUPTIAL_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(nuptialShell?.status,"CERTIFIED");
+assert.match(String(nuptialShell?.test??""),/app-shell-nuptial-e2e\.mjs/);
+assert.equal(nuptialShell?.actualIndexHtml,true);
+assert.equal(nuptialShell?.legacyStartCount,0);
+
 
 const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
@@ -311,6 +362,16 @@ assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
+assert.match(nativeSource,/createRequiemAbsolutionReaderController/,"native reader lost Requiem Absolution controller");
+assert.match(nativeSource,/createCorpusChristiProcessionReaderController/,"native reader lost Corpus Christi following-action controller");
+assert.match(nativeSource,/createHolyThursdayPostReaderController/,"native reader lost Holy Thursday following-action controller");
+assert.match(nativeSource,/createGenericProcessionReaderController/,"native reader lost generic-procession following-action controller");
+assert.match(nativeSource,/createFormLifecycleRuntime/,"native reader lost following-action lifecycle runtime");
+assert.match(nativeSource,/getRequiemAbsolutionState/,"native reader lost Requiem production API");
+assert.match(nativeSource,/getCorpusChristiState/,"native reader lost Corpus Christi production API");
+assert.match(nativeSource,/getHolyThursdayPostState/,"native reader lost Holy Thursday production API");
+assert.match(nativeSource,/getGenericProcessionState/,"native reader lost generic procession production API");
+
 assert.match(nativeSource,/getCandlemasMassState/,"native reader lost Candlemas Mass object-state API");
 assert.match(nativeSource,/r17ObjectState/,"native reader lost Candlemas object-state observability");
 assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
@@ -324,6 +385,9 @@ assert.match(nativeSource,/r17OwnerBell/,"native reader lost bell ownership diag
 assert.match(nativeSource,/r17OwnerCinematic/,"native reader lost cinematic ownership diagnostics");
 assert.doesNotMatch(nativeSource,/#scholaDock|#scholaStreamLine/,"native reader reintroduced legacy Schola DOM donor");
 assert.match(nativeSource,/iconKeysForReaderState/,"native reader lost approved icon-key projection");
+const hostAdapterSource=readFileSync(new URL("../src/mass/host-adapter.js",import.meta.url),"utf8");
+assert.match(hostAdapterSource,/requiemAbsolution:options\.requiemAbsolution\?\?legacy\.requiemAbsolution/,
+  "production host adapter stopped preserving Requiem funeral branch context");
 const browserEntrySource=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
 assert.match(browserEntrySource,/createHostIconResolver/,"browser entry lost host icon resolver");
 assert.match(browserEntrySource,/R17_ICON_BANK_INCOMPLETE/,"browser entry stopped failing closed on incomplete icon bank");
@@ -337,6 +401,8 @@ const cueSource=readFileSync(new URL("../src/mass/reader-cue-state.js",import.me
 assert.match(cueSource,/V183_GESTURE_SUPPRESS/);
 assert.match(cueSource,/"AO\.SM\.C0181":"AO\.SM\.C0179"/);
 
+const packageSource=readFileSync(new URL("../package.json",import.meta.url),"utf8");
+assert.match(packageSource,/app-shell-nuptial-e2e\.mjs/,"phone suite lost Nuptial actual-shell acceptance");
 const convergenceWorkflow=readFileSync(new URL("../.github/workflows/r17-mass-convergence.yml",import.meta.url),"utf8");
 assert.match(convergenceWorkflow,/data\/presentation\/\*\*/);
 assert.match(convergenceWorkflow,/index\.html/);
