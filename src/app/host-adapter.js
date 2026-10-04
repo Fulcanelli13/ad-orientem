@@ -30,6 +30,13 @@ export function createAppHostAdapter(win = globalThis) {
       return runtime()?.store?.getState?.()?.route ?? null;
     },
 
+    liveMassActive() {
+      return Boolean(
+        runtime()?.store?.getState?.()?.route === "live" ||
+        win?.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected
+      );
+    },
+
     subscribeCoreRoute(listener) {
       const store = runtime()?.store;
       if (typeof store?.subscribe !== "function") return () => {};
@@ -45,6 +52,13 @@ export function createAppHostAdapter(win = globalThis) {
 
     openDomain(domain) {
       if (!new Set(["mass", "pray", "learn"]).has(domain)) return false;
+      if (domain === "mass") {
+        const mass = win?.AO_R17_BROWSER_ENTRY;
+        if (typeof mass?.hasResumable === "function" && mass.hasResumable()) {
+          if (typeof mass?.resume !== "function") return false;
+          return Promise.resolve(mass.resume()).then((result) => result?.ok !== false);
+        }
+      }
       const api = shell();
       if (typeof api?.openDomain !== "function") return false;
       return api.openDomain(domain) !== false;
@@ -102,6 +116,10 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     leaveLiveMass() {
+      const mass = win?.AO_R17_BROWSER_ENTRY;
+      if (typeof mass?.suspend === "function") {
+        return mass.suspend() !== false;
+      }
       const native = win?.AO_R17_NATIVE_READER_PREVIEW;
       if (typeof native?.destroy === "function") {
         native.destroy();
