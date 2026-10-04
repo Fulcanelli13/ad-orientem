@@ -80,6 +80,26 @@ try{
     (await globalThis.AO_APP_SHELL_V1?.navigate?.("pray"))?.ok!==false
   );
   assert.equal(openedPray,true,"could not open canonical PRAY domain through app shell");
+  await page.waitForTimeout(600);
+  const prayDiagnostic=await page.evaluate(()=>({
+    appActive:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+    route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+    shellKeys:Object.keys(globalThis.AO_V37_SHELL??{}),
+    prayerOwnerStatus:globalThis.AO_APP_SHELL_V1?.status?.().prayerOwner??null,
+    globals:Object.keys(globalThis).filter(k=>/PRAY|PRAYER|ADOR|CONFESS/i.test(k)).slice(0,80),
+    nodes:[...document.querySelectorAll("[id],[data-v37-domain],[data-v37-open]")].filter(el=>{
+      const sig=[el.id,el.className,el.getAttribute?.("data-v37-domain"),el.getAttribute?.("data-v37-open")].join(" ");
+      return /pray|prayer|ador|confess/i.test(sig);
+    }).slice(0,80).map(el=>({
+      tag:el.tagName,id:el.id||null,class:String(el.className||"").slice(0,160),
+      domain:el.getAttribute?.("data-v37-domain")??null,
+      open:el.getAttribute?.("data-v37-open")??null,
+      hidden:Boolean(el.hidden),
+      ariaHidden:el.getAttribute?.("aria-hidden")??null,
+      text:String(el.textContent||"").trim().replace(/\s+/g," ").slice(0,180)
+    }))
+  }));
+  console.log("D3D6_PRAY_DIAGNOSTIC",JSON.stringify(prayDiagnostic));
   await page.waitForSelector("#aoPray435930.open .aoP435930Home",{timeout:15000});
   const praySignature=await page.evaluate(()=>({
     id:document.querySelector("#aoPray435930")?.id??null,
