@@ -39,10 +39,10 @@ The current release gate certifies:
 - Proper readiness/fail-closed behavior;
 - native Schola, Guide, cue rails, bells/cinematics and plan-aware lifecycle.
 
-The former 4 October 2026 field build is retained under `field/2026-10-04/` as historical test evidence only. Date-specific rescue hooks are not part of the production runtime.
+The former 4 October 2026 field build is preserved on `archive/2026-10-04-pre-hygiene` and in Git history. It is not present in the production tree. Date-specific rescue hooks and automatic legacy-to-production patchers are forbidden on `main`.
 
 ## Development rule
 
-New work should converge on `main` and the modular source tree. Do not create another parallel Mass implementation, field copy, or standalone rescue runtime unless it is explicitly temporary and isolated.
+New work should converge on `main` and the modular source tree. Do not create another parallel Mass implementation, field copy, or standalone rescue runtime. Historical experiments belong on archive branches, never in the production tree.
 
 Preserve canonical source ownership, fail closed when a rite or Proper is unresolved, and regression-test changes against both the full Node suite and the phone-browser suite.
