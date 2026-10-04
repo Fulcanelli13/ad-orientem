@@ -114,6 +114,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       communionState:options.communionState??legacy.communionState??null,
       intentionRef:options.intentionRef??legacy.intentionRef??null,
       lifecycle:options.lifecycle??legacy.lifecycle??null,
+      requiemAbsolution:options.requiemAbsolution??legacy.requiemAbsolution??null,
       commemorations:[...(legacy.commemorations??[])],
       seasonalMode:legacy.seasonalMode??null,
       exceptionalProfile:legacy.exceptionalProfile??null,
