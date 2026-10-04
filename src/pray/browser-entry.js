@@ -2,11 +2,28 @@ const VERSION="modular-pray-v1";
 
 function donor(win){return win?.AO_PRAY_V435930??null;}
 
-export function createPrayOwner(win=globalThis){
-  function open(){
-    const api=donor(win);
+function wait(win,ms){
+  return new Promise(resolve=>{
+    if(typeof win?.setTimeout==="function")win.setTimeout(resolve,ms);
+    else setTimeout(resolve,ms);
+  });
+}
+
+export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
+  async function resolveDonor(){
+    for(let i=0;i<=maxPolls;i++){
+      const api=donor(win);
+      if(typeof api?.open==="function")return api;
+      if(i<maxPolls)await wait(win,pollMs);
+    }
+    return null;
+  }
+
+  async function open(){
+    const api=await resolveDonor();
     if(typeof api?.open!=="function")return false;
-    api.open("pray.hub",{returnContext:null});
+    const opened=api.open("pray.hub",{returnContext:null});
+    if(opened===false)return false;
     const root=win?.document?.getElementById?.("aoPray435930")??null;
     if(root?.dataset)root.dataset.aoPrayOwner=VERSION;
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
