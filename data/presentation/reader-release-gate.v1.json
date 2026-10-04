@@ -800,7 +800,7 @@
   "pilotRelease": {
     "status": "CERTIFIED_PILOT_READY",
     "reader": "R17_NATIVE",
-    "productionDefaultUnchanged": "LEGACY",
+    "productionDefaultUnchanged": "FIELD_NATIVE_PREVIEW",
     "scope": {
       "forms": [
         "LOW",
@@ -825,9 +825,10 @@
       "phoneAcceptance": "CERTIFIED_CHROMIUM_TOUCH"
     },
     "exclusions": [
-      "unsupported special rites and following actions remain fail-closed",
-      "full production-default promotion waits for SPECIAL_STRUCTURE_PARITY"
-    ]
+      "pilot scope remains historical certification evidence",
+      "current production rollout is governed by fieldRelease + rollout policy"
+    ],
+    "rolloutStatus": "SUPERSEDED_BY_R34_FIELD_NATIVE_DEFAULT"
   },
   "fieldRelease": {
     "schema": "ao-r17-field-release-v1",
