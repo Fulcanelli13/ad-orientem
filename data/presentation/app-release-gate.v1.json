@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -63,13 +63,13 @@
     },
     {
       "id": "CROSS_DOMAIN_PHONE_JOURNEY",
-      "classification": "MISSING_INTEGRATION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
-        "docs/APP-CONVERGENCE.md",
+        "tests/app-shell-journey-e2e.mjs",
         ".github/workflows/app-convergence.yml"
       ],
-      "detail": "The full cold-launch Home/Calendar/Mass/leave-resume/PRAY/Home/Settings journey is not yet automated end to end."
+      "detail": "Actual index.html passes the required phone journey: cold Home → Calendar → Mass → native LIVE → cancelled leave retains Mass → confirmed leave preserves resumable record and opens Pray → Home → Settings → clean reload, with no legacy Mass start."
     },
     {
       "id": "EMERGENCY_RUNTIME_RETIREMENT",
@@ -110,7 +110,6 @@
     }
   ],
   "openBlockers": [
-    "CROSS_DOMAIN_PHONE_JOURNEY",
     "EMERGENCY_RUNTIME_RETIREMENT",
     "DUPLICATE_BROWSER_ENTRY_HYGIENE",
     "NON_MASS_DONOR_EXTRACTION",
@@ -127,7 +126,8 @@
       "tests/app-shell-final-e2e.mjs",
       "tests/app-shell-nuptial-e2e.mjs",
       "tests/app-shell-easter-vigil-e2e.mjs",
-      "tests/app-shell-visible-owner-e2e.mjs"
+      "tests/app-shell-visible-owner-e2e.mjs",
+      "tests/app-shell-journey-e2e.mjs"
     ]
   }
 }
