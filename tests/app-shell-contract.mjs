@@ -27,6 +27,7 @@ function host({ route = "home", confirm = true } = {}) {
     openSettings() { calls.push("settings"); return true; },
     dismissSettings() { calls.push("dismiss-settings"); return true; },
     restoreSettingsHome() { calls.push("restore-settings-home"); return true; },
+    leaveLiveMass() { calls.push("leave-live"); return true; },
     confirmLeaveLiveMass() { calls.push("confirm-live"); return confirm; },
     defer(fn) { calls.push("defer"); return Promise.resolve(fn()); },
   };
@@ -53,7 +54,7 @@ function host({ route = "home", confirm = true } = {}) {
   const h = host({ route: "live", confirm: true });
   const shell = createAppShellController({ host: h, initialSurface: "mass" });
   assert.equal((await shell.go("calendar")).ok, true);
-  assert.deepEqual(h.calls, ["dismiss-settings", "confirm-live", "home", "defer", "calendar"]);
+  assert.deepEqual(h.calls, ["dismiss-settings", "confirm-live", "leave-live", "home", "defer", "calendar"]);
 }
 
 {
@@ -83,13 +84,15 @@ function host({ route = "home", confirm = true } = {}) {
     confirm: () => true,
     setTimeout: (fn) => { fn(); return 1; },
   };
+  win.AO_R17_NATIVE_READER_PREVIEW={destroy(){calls.push("mass:destroy");}};
   const adapter = createAppHostAdapter(win);
   assert.equal(adapter.hardHome(), true);
   assert.equal(adapter.openDomain("pray"), true);
   assert.equal(await adapter.openCalendar(), true);
   assert.equal(adapter.openSettings(), true);
   assert.equal(adapter.dismissSettings(), true);
-  assert.deepEqual(calls, ["home", "domain:pray", "module:today.calendar", "settings:open", "settings:dismiss"]);
+  assert.equal(adapter.leaveLiveMass(), true);
+  assert.deepEqual(calls, ["home", "domain:pray", "module:today.calendar", "settings:open", "settings:dismiss","mass:destroy"]);
 }
 
 {
