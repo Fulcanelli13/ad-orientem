@@ -177,13 +177,24 @@ assert.equal(candlemasPayload?.objectStateAcceptance?.postureOverride,null);
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
 assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
-assert.deepEqual(realShellScope?.certified,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"]);
+assert.deepEqual(realShellScope?.certified,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","GOOD_FRIDAY"]);
 assert.equal(realShellScope?.pending?.includes("CANDLEMAS"),false);
 assert.equal(realShellScope?.pending?.includes("ROGATIONS"),false);
+assert.equal(realShellScope?.pending?.includes("GOOD_FRIDAY"),false);
 assert.ok(realShellScope?.pending?.includes("EASTER_VIGIL"));
 assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
 assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
 assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"PARTIAL_EXPLICIT_EVIDENCE");
+
+const goodFridayShell=release.protectedInvariants.find(x=>x.id==="GOOD_FRIDAY_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(goodFridayShell?.status,"CERTIFIED","Good Friday real-shell acceptance disappeared");
+assert.equal(goodFridayShell?.actualIndexHtml,true);
+assert.equal(goodFridayShell?.legacyStartCount,0);
+assert.equal(goodFridayShell?.nativeOwner,"R17_NATIVE_PRODUCTION");
+assert.match(String(goodFridayShell?.controller??""),/reader-good-friday\.js/);
+assert.match(String(goodFridayShell?.productionMount??""),/reader-native-preview\.js/);
+assert.match(String(goodFridayShell?.test??""),/app-shell-final-e2e\.mjs/);
+assert.match(String(goodFridayShell?.unitTest??""),/reader-native-good-friday\.mjs/);
 
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE","Asperges real-shell production certification disappeared");

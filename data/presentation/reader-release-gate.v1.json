@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.4.1",
+  "version": "4.5.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
   "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html phone-Chromium acceptance is now explicit for the certified pre-Mass cluster (Asperges, Palm, Ash, Candlemas and Rogations). Legacy remains explicit rollback/debug only.",
@@ -862,12 +862,14 @@
         "Palm and Ash personal recipient states render kneeling in the actual app shell",
         "Palm and Ash hand off to the Introit and Back restores the special-rite handoff card",
         "data-ao-mass-reader-ui reports R17_NATIVE_PRODUCTION for certified native production sessions",
-        "Candlemas object-state acceptance verifies processional candle light and Mass candle windows without posture mutation"
+        "Candlemas object-state acceptance verifies processional candle light and Mass candle windows without posture mutation",
+        "Good Friday enters as a native distinct rite with no Ordinary Mass reader model and no legacy renderer boot"
       ],
       "scenarios": [
         "ORDINARY_VOTIVE",
         "PALM_PRECEDING_RITE",
-        "ASH_PRECEDING_RITE"
+        "ASH_PRECEDING_RITE",
+        "GOOD_FRIDAY_DISTINCT_RITE"
       ]
     },
     {
@@ -902,18 +904,18 @@
         "PALM",
         "ASH",
         "CANDLEMAS",
-        "ROGATIONS"
+        "ROGATIONS",
+        "GOOD_FRIDAY"
       ],
       "pending": [
         "REQUIEM_ABSOLUTION",
         "HOLY_THURSDAY_POST",
         "CORPUS_CHRISTI_PROCESSION",
         "GENERIC_PROCESSION",
-        "GOOD_FRIDAY",
         "EASTER_VIGIL",
         "NUPTIAL"
       ],
-      "rule": "Do not equate modular runtime/reader-harness certification with actual index.html real-shell certification. The pre-Mass cluster is now production-shell certified; post-Mass/distinct/overlay rites remain pending until their app-shell E2E evidence is pinned.",
+      "rule": "Pre-Mass cluster and Good Friday distinct rite are actual-index phone certified; remaining post-Mass/composite/overlay structures stay pending until app-shell E2E evidence is pinned.",
       "currentTest": "tests/app-shell-final-e2e.mjs"
     },
     {
@@ -941,6 +943,29 @@
         "zero uncaught page errors",
         "Candlemas processional CANDLE_LIT object state is exposed independently of posture",
         "Candlemas Mass candle policy is verified at Gospel, Pater completion and the first post-Pater witness event"
+      ]
+    },
+    {
+      "id": "GOOD_FRIDAY_REAL_APP_SHELL_ACCEPTANCE",
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-final-e2e.mjs",
+      "unitTest": "tests/reader-native-good-friday.mjs",
+      "viewport": "390x844 touch Chromium",
+      "actualIndexHtml": true,
+      "nativeOwner": "R17_NATIVE_PRODUCTION",
+      "legacyStartCount": 0,
+      "controller": "src/mass/reader-good-friday.js",
+      "productionMount": "src/mass/reader-native-preview.js",
+      "guarantees": [
+        "host exceptionalProfile good-friday-1962 compiles to DISTINCT_RITE / GOOD_FRIDAY",
+        "ordinary Mass reader model is never instantiated",
+        "native reader opens on GF-OPEN-010",
+        "Passion death record GF-PASS-320 renders KNEEL + PAUSE_BRIEFLY",
+        "personal veneration record GF-VEN-620 renders GENUFLECTING + ONE_SIMPLE_GENUFLECTION",
+        "GF-END-910 remains terminal and cannot fabricate an Ordinary Mass handoff",
+        "legacy live renderer is never started",
+        "data-ao-mass-reader-ui exposes R17_NATIVE_PRODUCTION",
+        "zero uncaught page errors"
       ]
     }
   ],
