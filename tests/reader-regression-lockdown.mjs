@@ -9,7 +9,7 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"FINAL_NATIVE_CANDIDATE__REAL_SHELL_ACCEPTANCE_REQUIRED");
+assert.equal(release.status,"FINAL_NATIVE_READY");
 assert.equal(release.productionDefault,"R17_NATIVE");
 assert.equal(resolveReaderUiMode({}),"NATIVE","native reader is no longer the certified production default");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
@@ -51,7 +51,7 @@ assert.equal(support.supported,true);
 assert.equal(support.reason,null);
 
 const blockers=new Set(release.openBlockers.map(x=>x.id));
-assert.deepEqual([...blockers],["REAL_APP_SHELL_ACCEPTANCE"],"final release blocker changed unexpectedly");
+assert.equal(blockers.size,0,"final native release still contains a blocker");
 assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
 for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
   assert.equal(release.protectedInvariants.find(x=>x.id===id)?.status,status,id+" release gate lost certification");
@@ -76,10 +76,16 @@ assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("PALM")
 assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("ASH"));
 
 const productionCutover=release.protectedInvariants.find(x=>x.id==="PRODUCTION_NATIVE_CUTOVER");
-assert.equal(productionCutover?.status,"CANDIDATE_PENDING_REAL_SHELL_E2E");
+assert.equal(productionCutover?.status,"CERTIFIED_REAL_SHELL_E2E");
 assert.equal(productionCutover?.productionDefault,"R17_NATIVE");
 assert.equal(productionCutover?.legacyPolicy,"EXPLICIT_ROLLBACK_OR_SHADOW_ONLY");
 assert.match(String(productionCutover?.rollbackQuery??""),/aoR17Reader=legacy/);
+
+const realShell=release.protectedInvariants.find(x=>x.id==="REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(realShell?.status,"CERTIFIED","real app-shell acceptance disappeared");
+assert.match(String(realShell?.test??""),/app-shell-final-e2e\.mjs/);
+assert.ok((realShell?.guarantees??[]).some(x=>/legacy startLive is not called/i.test(x)));
+assert.ok((realShell?.guarantees??[]).some(x=>/zero uncaught page errors/i.test(x)));
 
 const phoneAcceptance=release.protectedInvariants.find(x=>x.id==="PHONE_BROWSER_ACCEPTANCE");
 assert.equal(phoneAcceptance?.status,"CERTIFIED_CHROMIUM_TOUCH","phone acceptance certification disappeared");
