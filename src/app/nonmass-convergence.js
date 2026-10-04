@@ -134,6 +134,8 @@ function patchConfession(root, win) {
   const oldRail = root.querySelector(".aoP435930StageRail");
   if (oldRail && !root.querySelector("[data-ao-d5-phase-rail]")) {
     oldRail.hidden = true;
+    oldRail.style.display = "none";
+    oldRail.setAttribute("aria-hidden", "true");
     oldRail.insertAdjacentElement("afterend", phaseRail(win, stage));
   }
 
