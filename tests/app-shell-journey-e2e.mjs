@@ -124,6 +124,7 @@ try{
           },
         }),
         subscribe:()=>()=>{},
+        dispatch:(action)=>{ route="home"; return action; },
       },
     };
     globalThis.AO_CELEBRATION_ARCH_V1={
