@@ -148,7 +148,11 @@ export function projectEmberInsertionModel(model,resolvedMass){
   if(epistleIndex<0)throw new Error("Ordinary Epistle card unavailable for Ember insertion");
 
   const raw=[...model.cards.slice(0,epistleIndex),...inserts,...model.cards.slice(epistleIndex)];
-  const cards=freeze(raw.map((card,index)=>freeze({...card,sequence:index+1})));
+  const cards=freeze(raw.map((card,index)=>freeze({
+    ...card,
+    sourceSequence:card.emberInsertion ? null : (card.sourceSequence??card.sequence),
+    sequence:index+1,
+  })));
   const byId=new Map(cards.map(card=>[card.sectionId,card]));
 
   function cardBySequence(sequence){
