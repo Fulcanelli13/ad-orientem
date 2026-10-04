@@ -1,5 +1,6 @@
 import "../home/browser-entry.js";
 import { installLiveSessionGuards } from "./live-session-guards.js";
+import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
 import {
   APP_SURFACES,
@@ -186,6 +187,11 @@ export function installAppShellBridge({
         host: state.host,
         initialSurface: initialSurface(win, state.host),
       });
+      try {
+        installNonMassConvergence({ win });
+      } catch (error) {
+        console.error("Non-Mass D3-D6 convergence install failed", error);
+      }
       state.disposeVisibleOwner = installVisibleRibbonOwner(win, state.controller, state);
       state.liveSessionGuards?.dispose?.();
       state.liveSessionGuards = installLiveSessionGuards({ win });
@@ -247,6 +253,7 @@ export function installAppShellBridge({
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
         legacyRibbonPresent: Boolean(win?.AO_GLOBAL_RIBBON_V4323),
         liveSessionGuards: state.liveSessionGuards?.status?.() ?? null,
+        nonMassConvergence: win?.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.() ?? null,
       });
     },
   });
