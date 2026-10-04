@@ -1,0 +1,500 @@
+    PATTERN_TEMPORA_SUNDAY_CLASS_2: /^tempora:(.*-0r*:2|Nat1-0):\w$/,
+    PATTERN_TEMPORA_CLASS_4: /^tempora:.*:4:\w$/,
+    PATTERN_SANCTI: /^sancti:/,
+    PATTERN_SANCTI_CLASS_1_OR_2: /^sancti:.*:[12]:\w$/,
+    PATTERN_SANCTI_CLASS_2: /^sancti:.*:2:\w$/,
+    PATTERN_SANCTI_CLASS_3: /^sancti:.*:3:\w$/,
+    PATTERN_SANCTI_CLASS_3_LOCAL: /^sancti:.*(?:en|pl):3:\w$/,
+    PATTERN_SANCTI_CLASS_4: /^sancti:.*:4c?:\w$/,
+    PATTERN_CLASS_1: /^[a-z]*:.*:1:\w$/,
+    PATTERN_CLASS_2: /^[a-z]*:.*:2:\w$/,
+    PATTERN_CLASS_3: /^[a-z]*:.*:3:\w$/,
+};
+function matcherFromToken(token, constants) {
+    if (token === "WILDCARD")
+        return /.*/;
+    if (PATTERN_TOKENS[token])
+        return PATTERN_TOKENS[token];
+    if (constants[token])
+        return constants[token];
+    return null;
+}
+function parseCalendarSources(common, blocks, titles) {
+    const constants = parseStringConstants(common);
+    const parsedBlocks = {
+        POST_EPIPHANY: parseNestedRows(blocks, "POST_EPIPHANY", constants),
+        FROM_PRE_LENT_TO_POST_PENTECOST: parseNestedRows(blocks, "FROM_PRE_LENT_TO_POST_PENTECOST", constants),
+        EMBER_DAYS_SEPTEMBER: parseNestedRows(blocks, "EMBER_DAYS_SEPTEMBER", constants),
+        WEEK_24_AFTER_PENTECOST: parseNestedRows(blocks, "WEEK_24_AFTER_PENTECOST", constants),
+        ADVENT: parseNestedRows(blocks, "ADVENT", constants),
+        NATIVITY_OCTAVE_SUNDAY: parseNestedRows(blocks, "NATIVITY_OCTAVE_SUNDAY", constants),
+        NATIVITY_OCTAVE_FERIA: parseNestedRows(blocks, "NATIVITY_OCTAVE_FERIA", constants),
+        SANCTI: parseFlatBlock(blocks, "SANCTI", constants),
+    };
+    const source = {
+        constants,
+        blocks: parsedBlocks,
+        titles: parseTitles(titles, constants),
+        ember: new Set(parseTupleTokens(common, "EMBER_DAYS").map(key => constants[key]).filter(Boolean)),
+        fixedVigils: new Set(parseTupleTokens(common, "FIXED_VIGILS_SUPPRESSED_ON_SUNDAY").map(key => constants[key]).filter(Boolean)),
+        jesusFeasts: new Set(parseTupleTokens(common, "FEASTS_OF_JESUS_CLASS_1_AND_2").map(key => constants[key]).filter(Boolean)),
+        precedence: parseTupleTokens(common, "TABLE_OF_PRECEDENCE").map(token => matcherFromToken(token, constants)).filter((x) => !!x),
+    };
+    const problems = [];
+    if (constants.SANCTI_09_16 !== "sancti:09-16:3:r")
+        problems.push("SANCTI_09_16 canonical ID mismatch");
+    if (source.blocks.POST_EPIPHANY.length !== 42)
+        problems.push(`POST_EPIPHANY rows=${source.blocks.POST_EPIPHANY.length}, expected 42`);
+    if (source.blocks.FROM_PRE_LENT_TO_POST_PENTECOST.length < 270)
+        problems.push(`Easter/Pentecost block too short (${source.blocks.FROM_PRE_LENT_TO_POST_PENTECOST.length})`);
+    if (!source.blocks.SANCTI.includes(constants.SANCTI_09_16))
+        problems.push("SANCTI calendar block omits 09-16");
+    if (!source.precedence.length)
+        problems.push("TABLE_OF_PRECEDENCE did not parse");
+    if (problems.length)
+        throw new Error(`Missale Meum calendar source parse failed: ${problems.join("; ")}`);
+    return source;
+}
+
+},6:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.liturgicalColorPlan = liturgicalColorPlan;
+exports.riteProfileFor = riteProfileFor;
+function liturgicalColorPlan(date, day, path, proper) {
+    const id = String(day?.main?.id || '');
+    const base = proper?.canonicalColor || proper?.color || day?.main?.color || 'Green';
+    const normal = { primary: base, massColor: base, label: base, sequence: [], note: '', special: false, rubric: '1960 General Rubrics 117–132' };
+    if (/^tempora:Adv3-0:/.test(id))
+        return { primary: 'Rose', massColor: 'Rose', label: 'Rose (or Violet)', sequence: [['Mass', 'Rose']], note: 'Gaudete Sunday · rose vestments may be used; violet remains legitimate.', special: true, rubric: '1960 General Rubrics 131' };
+    if (/^tempora:Quad4-0:/.test(id))
+        return { primary: 'Rose', massColor: 'Rose', label: 'Rose (or Violet)', sequence: [['Mass', 'Rose']], note: 'Laetare Sunday · rose vestments may be used; violet remains legitimate.', special: true, rubric: '1960 General Rubrics 131' };
+    if (path === 'Tempora/Quad6-0r')
+        return { primary: 'Red', massColor: 'Violet', label: 'Red → Violet', sequence: [['Blessing & procession', 'Red'], ['Mass', 'Violet']], note: 'Palm Sunday changes colour: red for the blessing of palms and procession; violet for the Mass.', special: true, rubric: '1960 General Rubrics 126, 128' };
+    if (path === 'Tempora/Quad6-4')
+        return { primary: 'White', massColor: 'White', label: 'White', sequence: [['Mass of the Lord’s Supper', 'White']], note: 'Holy Thursday uses white for the Mass of the Lord’s Supper.', special: true, rubric: '1960 General Rubrics 122' };
+    if (path === 'Tempora/Quad6-5')
+        return { primary: 'Black', massColor: 'Violet', label: 'Black → Violet', sequence: [['Passion · prayers · Cross', 'Black'], ['Holy Communion', 'Violet']], note: 'Good Friday uses black until Communion; violet is used for the Communion portion.', special: true, rubric: '1960 General Rubrics 130, 132' };
+    if (path === 'Tempora/Quad6-6')
+        return { primary: 'Violet', massColor: 'White', label: 'Violet → White', sequence: [['Opening rites & prophecies', 'Violet'], ['Exsultet / baptismal renewal', 'White'], ['Mass', 'White']], note: 'The Easter Vigil changes colour within the rite; the Mass itself is white.', special: true, rubric: '1960 General Rubrics 119, 122, 128' };
+    if (path === 'Tempora/Pasc6-6')
+        return { primary: 'Violet', massColor: 'Red', label: 'Violet → Red', sequence: [['Preparatory Vigil rites', 'Violet'], ['Mass', 'Red']], note: 'At the Vigil of Pentecost the preparatory rites are violet; the Mass is red.', special: true, rubric: '1960 General Rubrics 123, 128' };
+    if (path === 'Sancti/02-02')
+        return { primary: 'White', massColor: 'White', label: 'White', sequence: [['Candles · procession · Mass', 'White']], note: 'Candlemas uses white for the blessing of candles, procession and Mass.', special: true, rubric: '1960 General Rubrics 120' };
+    if (path === 'Tempora/Quadp3-3')
+        return { primary: 'Violet', massColor: 'Violet', label: 'Violet', sequence: [['Ashes & Mass', 'Violet']], note: 'Ash Wednesday uses violet, including the blessing and imposition of ashes.', special: true, rubric: '1960 General Rubrics 128, 130' };
+    if (/^Sancti\/11-02m/.test(path || '') || proper?.isRequiem)
+        return { primary: 'Black', massColor: 'Black', label: 'Black', sequence: [['Requiem Mass', 'Black']], note: 'Black is the Roman colour for Masses of the Dead, including All Souls.', special: true, rubric: '1960 General Rubrics 132' };
+    if (String(base).includes('/')) {
+        const sequence = String(base).split('/').map(value => value.trim()).filter(Boolean).map((color, index) => [`Liturgical phase ${index + 1}`, color]);
+        return { primary: sequence[0]?.[1] || base, massColor: sequence[sequence.length - 1]?.[1] || base, label: String(base).replace(/\s*\/\s*/g, ' → '), sequence, note: 'This source carries more than one liturgical colour; the rite itself determines the point of change.', special: true, rubric: '1960 General Rubrics 117–132' };
+    }
+    return normal;
+}
+function riteProfileFor(path, proper) {
+    if (path === 'Tempora/Quad6-5')
+        return 'good_friday_1962';
+    if (path === 'Tempora/Quad6-4')
+        return 'holy_thursday_1962';
+    if (path === 'Tempora/Quad6-6')
+        return 'easter_vigil_1962';
+    if (path === 'Tempora/Quad6-0r')
+        return 'palm_sunday_1962';
+    if (path === 'Sancti/02-02')
+        return 'candlemas_1962';
+    if (path === 'Tempora/Quadp3-3')
+        return 'ash_wednesday_1962';
+    if (/^Sancti\/11-02m/.test(path))
+        return 'requiem_mass_1962';
+    if ((proper?.preparatoryLessons?.length || 0) >= 5)
+        return 'ember_saturday_1962';
+    if (proper?.preparatoryLessons?.length)
+        return 'extended_readings_mass_1962';
+    return 'ordinary_mass';
+}
+
+},7:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormularySelectionStore = void 0;
+class FormularySelectionStore {
+    values = new Map();
+    get(date) { return this.values.get(date) || 0; }
+    set(date, index) { this.values.set(date, Math.max(0, Math.floor(Number(index) || 0))); }
+    clear(date) { if (date)
+        this.values.delete(date);
+    else
+        this.values.clear(); }
+    clamp(date, count) {
+        if (count <= 0)
+            return 0;
+        const value = Math.max(0, Math.min(this.get(date), count - 1));
+        if (value !== this.get(date))
+            this.values.set(date, value);
+        return value;
+    }
+}
+exports.FormularySelectionStore = FormularySelectionStore;
+
+},8:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProperResolver = void 0;
+exports.sectionHeading = sectionHeading;
+exports.parseSections = parseSections;
+exports.mergeMissing = mergeMissing;
+exports.parseReference = parseReference;
+exports.parseSubstitutions = parseSubstitutions;
+exports.applySubstitutions = applySubstitutions;
+exports.cleanLines = cleanLines;
+exports.textFrom = textFrom;
+exports.numbered = numbered;
+exports.ruleInfo = ruleInfo;
+exports.normalizeProper = normalizeProper;
+const source_config_1 = require(4);
+const scripture_config_v21_1 = require(11);
+const scripture_refs_v21_1 = require(12);
+const PER_DOM = {
+    la: "Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+    en: "Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+    fr: "Par Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+const GLORIA = {
+    la: "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen.",
+    en: "Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+    fr: "Gloire au Père, au Fils et au Saint-Esprit. Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il.",
+};
+const PER_EUNDEM = {
+    la: "Per eúndem Dóminum nostrum Jesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+    en: "Through the same Jesus Christ, thy Son, Our Lord, Who liveth and reigneth with thee in the unity of the Holy Ghost, God, world without end. Amen.",
+    fr: "Par le même Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous, en l’unité du même Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+const QUI_TECUM = {
+    la: "Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus per ómnia sǽcula sæculórum. Amen.",
+    en: "Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+    fr: "Qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+const QUI_VIVIS = {
+    la: "Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+    en: "Who livest and reignest with God the Father, in the unity of the Holy Spirit, God, world without end. Amen.",
+    fr: "Vous qui, étant Dieu, vivez et régnez avec Dieu le Père, dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+const QUI_CUM_EODEM = {
+    la: "Qui cum eódem Deo Patre et Spíritu Sancto vivis et regnas Deus, per ómnia sǽcula sæculórum. Amen.",
+    en: "Who, with the same God the Father and the Holy Spirit, live and reign, God forever and ever. Amen.",
+    fr: "Vous qui, étant Dieu, vivez et régnez avec le même Dieu le Père et l’Esprit-Saint, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+function sectionHeading(line) {
+    const match = String(line).match(/^\[([^\]]+)\]\s*(.*)$/);
+    return match ? { name: match[1].trim(), modifier: (match[2] || "").trim() } : null;
+}
+function canonicalHeading(name, modifier) {
+    const mod = String(modifier || "").toLowerCase();
+    if (!mod)
+        return { key: name, priority: 1, canonical: true };
+    if (mod.includes("sed non rubrica 196"))
+        return { key: `${name} ${modifier}`, priority: 0, canonical: false };
+    if (mod.includes("rubrica 196") || mod.includes("communi summorum pontificum") || mod.includes("ad missam"))
+        return { key: name, priority: 2, canonical: true };
+    return { key: `${name} ${modifier}`, priority: 0, canonical: false };
+}
+function parseSections(text) {
+    const lines = String(text || "").replace(/\r\n?/g, "\n").split("\n");
+    const map = new Map();
+    const order = [];
+    const priority = new Map();
+    let current = "__TOP__";
+    let concat = false;
+    map.set(current, []);
+    order.push(current);
+    priority.set(current, 1);
+    for (const raw of lines) {
+        const line = raw.trim();
+        if (line === "!")
+            continue;
+        const heading = sectionHeading(line);
+        if (heading) {
+            const canonical = canonicalHeading(heading.name, heading.modifier);
+            current = canonical.key;
+            concat = false;
+            if (!map.has(current)) {
+                map.set(current, []);
+                order.push(current);
+                priority.set(current, canonical.priority);
+            }
+            else if (canonical.canonical && canonical.priority > (priority.get(current) || 0)) {
+                map.set(current, []);
+                priority.set(current, canonical.priority);
+            }
+            continue;
+        }
+        if (!map.has(current)) {
+            map.set(current, []);
+            order.push(current);
+            priority.set(current, 1);
+        }
+        const body = map.get(current);
+        if (concat && body.length)
+            body[body.length - 1] += line.replace(/~$/, " ");
+        else
+            body.push(line.replace(/~$/, " "));
+        concat = line.endsWith("~");
+    }
+    for (const body of map.values()) {
+        while (body.length && !body[body.length - 1])
+            body.pop();
+        while (body.length && !body[0])
+            body.shift();
+    }
+    return { map, order };
+}
+function mergeMissing(primary, fallback) {
+    const map = new Map();
+    const order = [];
+    for (const key of fallback.order) {
+        map.set(key, [...(fallback.map.get(key) || [])]);
+        order.push(key);
+    }
+    for (const key of primary.order) {
+        if (!map.has(key))
+            order.push(key);
+        const body = primary.map.get(key) || [];
+        if (body.length)
+            map.set(key, [...body]);
+    }
+    return { map, order };
+}
+function parseReference(line, defaultSection) {
+    const value = String(line || "");
+    if (!value.startsWith("@"))
+        return null;
+    const match = value.match(/^@([^:]*)(?::([^:]*))?(?::(.*))?$/);
+    if (!match)
+        return null;
+    return { path: match[1] || "", section: match[2] || defaultSection || "", subs: match[3] || "" };
+}
+function parseSubstitutions(specification) {
+    const out = [];
+    let index = 0;
+    const text = String(specification || "");
+    while (index < text.length) {
+        while (text.slice(index, index + 2) === ":s")
+            index += 1;
+        while (text[index] === ":" || /\s/.test(text[index] || ""))
+            index += 1;
+        if (text.slice(index, index + 2) !== "s/")
+            break;
+        index += 2;
+        const part = () => {
+            let value = "", escaped = false;
+            for (; index < text.length; index += 1) {
+                const char = text[index];
+                if (escaped) {
+                    value += `\\${char}`;
+                    escaped = false;
+                    continue;
+                }
+                if (char === "\\") {
+                    escaped = true;
+                    continue;
+                }
+                if (char === "/") {
+                    index += 1;
+                    break;
+                }
+                value += char;
+            }
+            return value;
+        };
+        out.push({ from: part(), to: part() });
+    }
+    return out;
+}
+function applySubstitutions(lines, specification, diagnostic, context = "reference") {
+    let out = [...lines];
+    for (const substitution of parseSubstitutions(specification)) {
+        try {
+            const regex = new RegExp(substitution.from, "g");
+            out = out.map(line => line.replace(regex, substitution.to));
+        }
+        catch (error) {
+            diagnostic?.warnings.push(`Substitution skipped in ${context}: ${substitution.from} (${error instanceof Error ? error.message : String(error)})`);
+        }
+    }
+    return out;
+}
+function usableSourceText(text) {
+    return text != null && String(text).trim().length > 2;
+}
+function cloneParsed(parsed) {
+    const map = new Map();
+    for (const [key, value] of parsed.map)
+        map.set(key, [...value]);
+    return { map, order: [...parsed.order], source: parsed.source || null, requestedLanguage: parsed.requestedLanguage || null, translationMissing: !!parsed.translationMissing };
+}
+function structuralTranslationTemplate(parsed) {
+    // Preserve only language-neutral structure from the normalized Latin layer.
+    // Literal Latin liturgical prose is intentionally excluded. Reference lines are
+    // later resolved against the requested vernacular source; Rule metadata is safe.
+    const map = new Map(), order = [];
+    for (const key of parsed.order || []) {
+        const body = parsed.map.get(key) || [];
+        const kept = key === 'Rule' ? [...body] : body.filter(line => !!parseReference(line, key));
+        if (!kept.length) continue;
+        map.set(key, kept); order.push(key);
+    }
+    return { map, order, source: parsed.source || null, requestedLanguage: null, translationMissing: false };
+}
+// v20: exact-source English residual recovery corpus. Scripture is public-domain Douay-Rheims/traditional psalter text;
+// proper prayers are taken from identified historical/traditional missal witnesses. No Latin prose is translated at runtime.
+const VOTIVE_EMBEDDED_V20 = Object.freeze({
+    "en": {
+        "HolySpirit2": {
+            "Secreta": [
+                "We beseech thee, O Lord, that this oblation may cleanse away the stains of our heart, that it may be made a worthy habitation of the Holy Ghost.",
+                "$Per Dominum"
+            ],
+            "Postcommunio": [
+                "Grant, we beseech Thee, Almighty God, that we may so please Thy Holy Spirit by our earnest entreaties, that we may by His grace both be freed from all temptations and merit to receive the forgiveness of our sins.",
+                "$Per Dominum"
+            ]
+        },
+        "Cross": {
+            "Oratio": [
+                "! Extra tempus paschale",
+                "O God, who didst vouchsafe to sanctify the standard of the life-giving cross by the precious blood of thy only-begotten Son; grant, we beseech thee, that those who rejoice in the honour of the same holy cross may also rejoice everywhere in thy protection.",
+                "$Per eundem",
+                "",
+                "! Tempore paschali",
+                "O God, who didst will that thy Son should undergo for us the ignominy of the cross to deliver us from the power of the enemy: grant to us thy servants that we may obtain the grace of his resurrection.",
+                "$Per eundem"
+            ],
+            "Lectio": [
+                "A lesson from the Epistle of St Paul the Apostle to the Philippians.",
+                "!Phil 2:8-11",
+                "Brethren: Christ became for us obedient unto death, even the death of the cross. Wherefore God also hath exalted him, and hath given him a name, which is above every name: (here all kneel), that in the name of Jesus every knee should bow, of those that are in heaven, on earth, and under the earth; and that every tongue should confess that the Lord Jesus Christ is in the glory of God the Father."
+            ],
+            "GradualeP": [
+                "! Tempore paschali",
+                "Alleluia, alleluia.",
+                "!Ps 95:10",
+                "V. Say ye among the gentiles, that the Lord hath reigned from the wood. Alleluia.",
+                "V. Sweet the wood, sweet the nails, sweet the load that hangs on thee: thou only wast worthy to bear the King and Lord of heaven. Alleluia."
+            ],
+            "Tractus": [
+                "We adore thee, O Christ, and we bless thee: because by thy cross thou hast redeemed the world.",
+                "V. We adore thy cross, O Lord, we commemorate thy glorious passion: have mercy on us, thou who didst suffer for us.",
+                "V. O blessed cross, which alone wert worthy to bear the king of heaven and the Lord."
+            ],
+            "Secreta": [
+                "May this oblation, we beseech thee, O Lord, cleanse us from all sins: even as on the altar of the cross it took away the sins of the whole world.",
+                "$Per eundem"
+            ],
+            "Postcommunio": [
+                "Be nigh unto us, O Lord our God; and defend those by the perpetual defence of the cross whom thou makest to rejoice in its honour.",
+                "$Per Dominum"
+            ]
+        },
+        "Propagation": {
+            "Introitus": [
+                "!Ps 66:2-3",
+                "May God have mercy upon us, and bless us: may He cause the light of His countenance to shine upon us, and may He have mercy upon us: that we may know Thy way upon earth, Thy salvation in all nations. (T. P. Alleluia, alleluia.)",
+                "!Ps 66:4",
+                "Let the people confess to Thee, O God: let all people give praise to Thee.",
+                "&Gloria",
+                "May God have mercy upon us, and bless us: may He cause the light of His countenance to shine upon us, and may He have mercy upon us: that we may know Thy way upon earth, Thy salvation in all nations. (T. P. Alleluia, alleluia.)"
+            ],
+            "Lectio": [
+                "Lesson from the book of Ecclesiasticus.",
+                "!Eccli 36:1-10,17-19",
+                "Have mercy upon us, O God of all, and behold us, and shew us the light of thy mercies: And send thy fear upon the nations, that have not sought after thee: that they may know that there is no God beside thee, and that they may shew forth thy wonders. Lift up thy hand over the strange nations, that they may see thy power. For as thou hast been sanctified in us in their sight, so thou shalt be magnified among them in our presence, That they may know thee, as we also have known thee, that there is no God beside thee, O Lord. Renew thy signs, and work new miracles. Glorify thy hand, and thy right arm. Raise up indignation, and pour out wrath. Take away the adversary, and crush the enemy. Hasten the time, and remember the end, that they may declare thy wonderful works. Give testimony to them that are thy creatures from the beginning, and raise up the prophecies which the former prophets spoke in thy name. Reward them that patiently wait for thee, that thy prophets may be found faithful: and hear the prayers of thy servants, According to the blessing of Aaron over thy people, and direct us into the way of justice, and let all know that dwell upon the earth, that thou art God the beholder of all ages."
+            ],
+            "Graduale": [
+                "!Ps 66:6-8",
+                "Let people confess to Thee, O God: let all people give praise to Thee: the earth hath yielded her fruit.",
+                "V. May God, our God, bless us, may God bless us: and all the ends of the earth fear Him. Alleluia, alleluia.",
+                "!Ps 99:1",
+                "V. Sing joyfully to God, all the earth: serve ye the Lord with gladness: come in before His presence with exceeding great joy. Alleluia."
+            ],
+            "GradualeP": [
+                "! Tempore paschali",
+                "Alleluia, alleluia.",
+                "!Ps 99:1-2",
+                "V. Sing joyfully to God, all the earth: serve ye the Lord with gladness: come in before His presence with exceeding great joy. Alleluia.",
+                "V. Know ye that the Lord He is God: He made us, and not we ourselves. Alleluia."
+            ],
+            "Tractus": [
+                "!Ps 95:3-5",
+                "Declare His glory among the Gentiles: His wonders among all people.",
+                "V. For the Lord is great, and exceedingly to be praised: He is to be feared above all gods.",
+                "V. For all the gods of the Gentiles are devils: but the Lord made the heavens."
+            ],
+            "Evangelium": [
+                "Continuation of the Holy Gospel according to Matthew.",
+                "!Matt 9:35-38",
+                "At that time, Jesus went about all the cities and towns, teaching in their synagogues, and preaching the gospel of the kingdom, and healing every disease, and every infirmity. And seeing the multitudes, He had compassion on them: because they were distressed, and lying like sheep that have no shepherd. Then He saith to His disciples: The harvest indeed is great, but the labourers are few. Pray ye therefore the Lord of the harvest, that He send forth labourers into His harvest."
+            ],
+            "Offertorium": [
+                "!Ps 95:7-9",
+                "Bring unto the Lord, O ye kindreds of the Gentiles, bring unto the Lord glory and honour, bring unto the Lord glory unto His name: bring up sacrifices, and come into His courts: adore ye the Lord in His holy court. (T. P. Alleluia.)"
+            ],
+            "Communio": [
+                "!Ps 116:1-2",
+                "Praise the Lord, all ye nations: praise Him, all ye people: for His mercy is confirmed upon us; and the truth of the Lord remaineth for ever. (T. P. Alleluia.)"
+            ]
+        },
+        "Passion": {
+            "Introitus": [
+                "!Phil 2:8-9",
+                "The Lord Jesus Christ humbled himself unto death, even the death of the cross; wherefore God also exalted him and hath given him a name which is above every name. (T. P. Alleluia, alleluia.)",
+                "!Ps 88:2",
+                "The mercies of the Lord I will sing for ever: to generation and generation.",
+                "&Gloria",
+                "The Lord Jesus Christ humbled himself unto death, even the death of the cross; wherefore God also exalted him and hath given him a name which is above every name. (T. P. Alleluia, alleluia.)"
+            ],
+            "Oratio": [
+                "O Lord Jesus Christ, who out of the bosom of the Father didst descend from heaven to earth, and didst shed Thy most precious blood for the remission of our sins; we humbly beseech Thee, that in the day of judgment we may be found worthy to stand at Thy right hand, and to hear Thee say unto us, Come, ye blessed.",
+                "$Qui cum eodem"
+            ],
+            "Lectio": [
+                "Lesson from the Prophet Zacharias.",
+                "!Zach 12:10-12; 13:6-7",
+                "Thus saith the Lord: I will pour out upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace, and of prayers: and they shall look upon me, whom they have pierced: and they shall mourn for him as one mourneth for an only son, and they shall grieve over him as the manner is to grieve for the death of the firstborn. In that day there shall be a great lamentation in Jerusalem, and it shall be said: What are these wounds in the midst of thy hands? And he shall say: With these I was wounded in the house of them that loved me. Awake, O sword, against my shepherd, and against the man that cleaveth to me, saith the Lord of hosts: strike the shepherd, and the sheep shall be scattered, saith the Lord Almighty."
+            ],
+            "Graduale": [
+                "!Ps 68:21-22",
+                "My heart hath expected reproach and misery: and I looked for one that would grieve together with me, and there was none: I sought one that would comfort me and I found none.",
+                "V. They gave me gall for my food, and in my thirst they gave me vinegar to drink. Alleluia, alleluia.",
+                "V. Hail, Thou our King: Thou alone hast had compassion on our errors; obedient to the Father, Thou wert led to be crucified like a meek lamb to the slaughter. Alleluia."
+            ],
+            "GradualeP": [
+                "! Tempore paschali",
+                "Alleluia, alleluia.",
+                "V. Hail, Thou our King: Thou alone hast had compassion on our errors; obedient to the Father, Thou wert led to be crucified like a meek lamb to the slaughter. Alleluia.",
+                "V. To Thee be glory, hosanna: to Thee be triumph and victory: to Thee a crown of highest praise and honour. Alleluia."
+            ],
+            "Tractus": [
+                "!Isa 53:4-5",
+                "Surely He hath borne our infirmities, and carried our sorrows.",
+                "V. And we have thought Him as it were a leper, and as one struck by God and afflicted.",
+                "V. But He was wounded for our iniquities, He was bruised for our sins.",
+                "V. The chastisement of our peace was upon Him: and by His bruises we are healed."
+            ],
+            "Evangelium": [
+                "Continuation of the Holy Gospel according to John.",
+                "!Joann 19:28-35",
+                "At that time, Jesus knowing that all things were now accomplished, that the scripture might be fulfilled, said: I thirst. Now there was a vessel set there full of vinegar. And they putting a sponge full of vinegar about hyssop, put it to his mouth. Jesus therefore when he had taken the vinegar said: It is consummated. And bowing his head, he gave up the ghost. Then the Jews, because it was the parasceve, that the bodies might not remain on the cross on the sabbath-day, for that was a great sabbath-day, besought Pilate that their legs might be broken, and that they might be taken away. The soldiers therefore came: and they broke the legs of the first, and of the other that was crucified with him. But after they were come to Jesus, when they saw that he was already dead, they did not break his legs. But one of the soldiers with a spear opened his side, and immediately there came out blood and water. And he that saw it hath given testimony, and his testimony is true."
+            ],
+            "Offertorium": [
+                "Wicked men rose up against me: without mercy they sought to kill me: and they did not spare to spit in my face: they wounded me with their spears, and all my bones were shaken. (T. P. Alleluia.)"
+            ],
+            "Secreta": [
+                "In virtue of the pleading of the Passion of thine only-begotten Son, may the sacrifice we offer to thee, O Lord, quicken us and strengthen us.",
+                "$Qui tecum"
+            ],
+            "Communio": [
+                "!Ps 21:17-18",
+                "They have dug my hands and feet; they have numbered all my bones. (T. P. Alleluia.)"
+            ],
+            "Postcommunio": [
+                "O Lord Jesus Christ, Son of the living God, who, at the sixth hour, didst mount the tree of the cross to redeem the world, and didst shed thy precious blood for the washing away of our sins, we humbly beseech thee that, after our death, it may be ours, with joy, to pass through the gates of paradise.",
