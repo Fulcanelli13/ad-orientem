@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
   "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html phone-Chromium acceptance is now explicit for the certified pre-Mass cluster (Asperges, Palm, Ash, Candlemas and Rogations). Legacy remains explicit rollback/debug only.",
@@ -583,7 +583,10 @@
         "the Candlemas rite hands off to an Introit-only Mass opening and cannot leak Prayers at the Foot",
         "Gospel and Sanctus-through-Pater candle requirements are object state only and never override Mass posture",
         "after Pater the reader does not invent an exact extinguishing instant",
-        "Candlemas is never inferred from the calendar date alone"
+        "Candlemas is never inferred from the calendar date alone",
+        "actual index.html phone acceptance verifies the blessed candle remains CANDLE_LIT for a participating faithful member in the procession",
+        "actual index.html phone acceptance verifies the Gospel and through-Pater candle windows without posture override",
+        "actual index.html phone acceptance verifies no candle requirement is fabricated after Pater"
       ],
       "tests": [
         "tests/reader-candlemas.mjs",
@@ -591,7 +594,18 @@
       ],
       "productionTest": "tests/app-shell-final-e2e.mjs",
       "productionOwner": "R17_NATIVE_PRODUCTION",
-      "uiOwnershipMarker": "data-ao-mass-reader-ui"
+      "uiOwnershipMarker": "data-ao-mass-reader-ui",
+      "objectStateAcceptance": {
+        "status": "CERTIFIED_REAL_SHELL_PHONE",
+        "test": "tests/app-shell-final-e2e.mjs",
+        "processionCardId": "CND-R05",
+        "processionState": "CANDLE_LIT",
+        "gospelEventId": "MC-GSP-060",
+        "paterCompletionEventId": "MC-COM-030",
+        "afterPaterWitnessEventId": "MC-COM-040",
+        "postureOverride": null,
+        "readerMarker": "data-r17-object-state"
+      }
     },
     {
       "id": "REQUIEM_ABSOLUTION_NATIVE_PAYLOAD",
@@ -847,7 +861,8 @@
         "zero uncaught page errors",
         "Palm and Ash personal recipient states render kneeling in the actual app shell",
         "Palm and Ash hand off to the Introit and Back restores the special-rite handoff card",
-        "data-ao-mass-reader-ui reports R17_NATIVE_PRODUCTION for certified native production sessions"
+        "data-ao-mass-reader-ui reports R17_NATIVE_PRODUCTION for certified native production sessions",
+        "Candlemas object-state acceptance verifies processional candle light and Mass candle windows without posture mutation"
       ],
       "scenarios": [
         "ORDINARY_VOTIVE",
@@ -923,7 +938,9 @@
         "Back from the first Mass card restores each rite's final handoff card",
         "the legacy live renderer is never started",
         "data-ao-mass-reader-ui remains R17_NATIVE_PRODUCTION",
-        "zero uncaught page errors"
+        "zero uncaught page errors",
+        "Candlemas processional CANDLE_LIT object state is exposed independently of posture",
+        "Candlemas Mass candle policy is verified at Gospel, Pater completion and the first post-Pater witness event"
       ]
     }
   ],
