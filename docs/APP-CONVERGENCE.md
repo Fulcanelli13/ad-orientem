@@ -92,11 +92,19 @@ This does **not** yet close `EMERGENCY_RUNTIME_RETIREMENT`: the historical v43.3
 
 This is deliberately **not** recorded as full Home extraction yet. The visible Home card stack still contains donor-owned presentation, including Coming Up and Daily Catechism. The actual-index phone journey certifies modular Home navigation ownership while the app gate keeps Home presentation pending.
 
+## Phase 7: modular Home base presentation
+
+`src/home/presentation.js` now owns the base Home markup and view-model projection. It reproduces the established bilingual Home contract from runtime state — liturgical date navigation, celebration metadata, formulary choice, Proper status, resume card, Around the Mass actions, Gospel preview, Today’s Mass and More — without importing the historical Mass renderer.
+
+`AO_HOME_APP_V1` subscribes after the core runtime and repaints Home with the modular renderer whenever the runtime is on the Home route. The existing core Home controller remains the temporary action/resolution owner, so date changes, formulary selection, scripture launch and Mass-phase actions continue through the already-proven store contract rather than being reimplemented.
+
+This is a partial but material Home extraction. The base presentation is now modular and phone-certified; donor enrichers such as Coming Up, Daily Catechism and related optional Home inserts are still rehydrated onto the modular base and remain part of the open non-Mass extraction blocker.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
 
-After host promotion, extract in this order: Home/Coming Up, Calendar dashboard and pre-Mass selection entry, PRAY, Learn, Settings. Calendar presentation is now modular and phone-certified; Home/Coming Up is the next extraction target. Each extraction replaces one donor owner only after parity tests pass; it must not create a second visible surface for the same state.
+After host promotion, extract in this order: Home/Coming Up, Calendar dashboard and pre-Mass selection entry, PRAY, Learn, Settings. Calendar presentation and the base Home presentation are now modular and phone-certified; Home enrichers/Coming Up are the next Home extraction target. Each extraction replaces one donor owner only after parity tests pass; it must not create a second visible surface for the same state.
 
 Before calling app convergence complete:
 
