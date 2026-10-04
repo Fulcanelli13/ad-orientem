@@ -5,7 +5,7 @@ import {
   createAppHostAdapter,
   createAppShellController,
 } from "../src/app/index.js";
-import { installAppShellBridge } from "../src/app/browser-entry.js";
+import { installAppShellBridge, installLiveStructuralSettingsGuard } from "../src/app/browser-entry.js";
 
 assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "settings"]);
 assert.equal(APP_SURFACES.includes("sources"), false);
@@ -169,5 +169,48 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal(stopped,true);
   assert.deepEqual(calls, ["home", "domain:learn","home","domain:learn"]);
 }
+
+{
+  let clickHandler=null;
+  let route="live";
+  const alerts=[];
+  const doc={
+    addEventListener(type,fn,capture){ if(type==="click"&&capture===true)clickHandler=fn; },
+    removeEventListener(){},
+  };
+  const win={
+    document:doc,
+    AO_RUNTIME_V8:{store:{getState:()=>({route,language:"en"})}},
+    alert:(message)=>alerts.push(message),
+  };
+  const guard=installLiveStructuralSettingsGuard({win});
+  assert.equal(guard.installed,true);
+  assert.equal(typeof clickHandler,"function");
+  let prevented=false,stopped=false;
+  clickHandler({
+    target:{closest:(selector)=>selector.includes("[data-live-form]")?{}:null},
+    preventDefault(){prevented=true;},
+    stopImmediatePropagation(){stopped=true;},
+  });
+  assert.equal(prevented,true);
+  assert.equal(stopped,true);
+  assert.equal(alerts.length,1);
+  assert.match(alerts[0],/locked while Mass is in progress/);
+
+  route="home";
+  prevented=false;
+  stopped=false;
+  clickHandler({
+    target:{closest:()=>({})},
+    preventDefault(){prevented=true;},
+    stopImmediatePropagation(){stopped=true;},
+  });
+  assert.equal(prevented,false);
+  assert.equal(stopped,false);
+  assert.equal(alerts.length,1);
+  guard.dispose();
+}
+
+// LIVE structural settings guard contract
 
 console.log("PASS app shell contract");
