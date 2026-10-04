@@ -107,11 +107,13 @@ const requiemPrepared={...missalPrepared,session:{...missalPrepared.session,plan
 assert.equal(structureSupport(requiemPrepared).supported,true,"certified plan-owned Requiem overlay remained structurally blocked");
 const requiemAbsPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:[],followingGraphs:["REQUIEM_ABSOLUTION"],overlayGraphs:["REQUIEM"]}}};
 assert.equal(structureSupport(requiemAbsPrepared).supported,true,"certified Requiem Absolution following action remained structurally blocked");
+const nuptialPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["NUPTIAL"]}}};
+assert.equal(structureSupport(nuptialPrepared).supported,true,"certified Nuptial overlay remained structurally blocked");
 
 for(const [label,plan] of [
   ["preceding",{kind:"MASS",precedingGraphs:["UNSUPPORTED_TEST_PRECEDING"],followingGraphs:[],overlayGraphs:[]}],
   ["following",{kind:"MASS",precedingGraphs:[],followingGraphs:["UNSUPPORTED_TEST_ACTION"],overlayGraphs:[]}],
-  ["overlay",{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["NUPTIAL"]}],
+  ["overlay",{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["UNSUPPORTED_TEST_OVERLAY"]}],
   ["distinct",{kind:"DISTINCT_RITE",precedingGraphs:[],followingGraphs:[],overlayGraphs:[]}],
 ]){
   const prepared={...ordinary,session:{...ordinary.session,plan}};

@@ -11,6 +11,9 @@ import { createRogationsReaderController, loadRogationsReaderData } from "./read
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
 import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
 import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
+import { createGenericProcessionReaderController, loadGenericProcessionReaderData } from "./reader-generic-procession.js";
+import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
+import { createEasterVigilReaderController, loadEasterVigilReaderData, projectEasterVigilMassModel } from "./reader-easter-vigil.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
@@ -28,6 +31,9 @@ export function createBrowserMassRuntime({
   requiemAbsolutionContext = null,
   loadCorpusChristiData = loadCorpusChristiProcessionReaderData,
   loadHolyThursdayPostData = loadHolyThursdayPostReaderData,
+  loadGenericProcessionData = loadGenericProcessionReaderData,
+  loadGoodFridayData = loadGoodFridayReaderData, goodFridayContext = null,
+  loadEasterVigilData = loadEasterVigilReaderData, easterVigilContext = null,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -54,6 +60,13 @@ export function createBrowserMassRuntime({
   let inCorpusChristi = false;
   let holyThursdayPostController = null;
   let inHolyThursdayPost = false;
+  let genericProcessionController = null;
+  let inGenericProcession = false;
+  let goodFridayController = null;
+  let inGoodFriday = false;
+  let easterVigilController = null;
+  let inEasterVigil = false;
+  let distinctRiteState = null;
   let lifecycleRuntime = null;
   let inLifecycle = false;
 
@@ -257,6 +270,89 @@ export function createBrowserMassRuntime({
     return moment;
   }
 
+  function genericProcessionMoment(){
+    const state=genericProcessionController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:"Procession",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:[],
+      progress:String(state.index+1)+" / "+String(state.total)+" · Procession",
+      posture:state.posture && state.posture!=="LOCAL" ? {label:state.posture} : null,
+      gesture:null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showGenericProcession(){
+    const moment=genericProcessionMoment();
+    if(!moment)return null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
+  function goodFridayMoment(){
+    const state=goodFridayController?.project?.();
+    const card=state?.card;
+    const step=state?.step;
+    if(!card||!step)return null;
+    return {
+      id:step.recordId,
+      sectionTitle:"Good Friday",
+      cardTitle:card.title,
+      cardUpdate:card.cardUpdate!==false,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        sourceCueIds:[...(row.sourceIds??[])],
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
+      posture:state.posture ? {label:state.posture} : null,
+      gesture:state.action ? {label:state.action} : null,
+      guide:null,
+    };
+  }
+
+  function showGoodFriday(){
+    const moment=goodFridayMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
+  function easterVigilMoment(){
+    const state=easterVigilController?.project?.();
+    const card=state?.card;
+    const step=state?.step;
+    if(!card||!step)return null;
+    return {
+      id:step.recordId,
+      sectionTitle:"Easter Vigil",
+      cardTitle:card.title,
+      cardUpdate:card.cardUpdate!==false,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        secondary:row.vernacular??row.english??null,
+        sourceCueIds:[...(row.sourceIds??[])],
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Easter Vigil",
+      posture:state.posture ? {label:state.posture} : null,
+      gesture:state.action ? {label:state.action} : null,
+      guide:null,
+    };
+  }
+
+  function showEasterVigil(){
+    const moment=easterVigilMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
   function palmMoment(){
     const state=palmController?.project?.();
     const card=state?.card;
@@ -322,6 +418,9 @@ export function createBrowserMassRuntime({
       cardTitle: card.title,
       cardUpdate: true,
       paragraphs: card.paragraphs,
+      posture: extra.posture ?? (card.emberInsertion
+        ? {label:card.posture==="SIT" ? "SIT" : "STAND"}
+        : undefined),
       progress: String(card.sequence) + " / " + String(readerModel?.totalCards ?? 30),
     };
   }
@@ -368,6 +467,11 @@ export function createBrowserMassRuntime({
       inHolyThursdayPost=true;
       return showHolyThursdayPost();
     }
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && genericProcessionController){
+      inLifecycle=false;
+      inGenericProcession=true;
+      return showGenericProcession();
+    }
     inLifecycle=true;
     return state;
   }
@@ -379,6 +483,63 @@ export function createBrowserMassRuntime({
   }
 
   function move(direction) {
+    if(inEasterVigil && easterVigilController){
+      if(direction==="next"){
+        const state=easterVigilController.project();
+        if(state.atEnd && state.handoffToMass){
+          inEasterVigil=false;
+          distinctRiteState=Object.freeze({
+            schema:"ao-r33-composite-rite-lifecycle-v1",
+            rite:"EASTER_VIGIL",stage:"MASS_ACTIVE",ordinaryMassGraphActive:true,
+          });
+          return showCard(readerModel.cardBySequence(1));
+        }
+        easterVigilController.next();
+        return showEasterVigil();
+      }
+      const state=easterVigilController.project();
+      if(!state.atStart)easterVigilController.previous();
+      return showEasterVigil();
+    }
+    if(direction==="previous" && easterVigilController && currentSectionId===readerModel?.cardBySequence?.(1)?.sectionId){
+      inEasterVigil=true;
+      easterVigilController.goToRecord("EV-MASS-700");
+      return showEasterVigil();
+    }
+    if(inGoodFriday && goodFridayController){
+      if(direction==="next"){
+        const state=goodFridayController.project();
+        if(state.atEnd){
+          inGoodFriday=false;
+          distinctRiteState=Object.freeze({
+            schema:"ao-r28-distinct-rite-lifecycle-v1",
+            rite:"GOOD_FRIDAY",stage:"DEPARTURE",ordinaryMassGraphActive:false,
+          });
+          onLifecycleHandoff?.(distinctRiteState,currentPrepared);
+          return distinctRiteState;
+        }
+        goodFridayController.next();
+        return showGoodFriday();
+      }
+      const state=goodFridayController.project();
+      if(!state.atStart)goodFridayController.previous();
+      return showGoodFriday();
+    }
+    if(inGenericProcession && genericProcessionController){
+      if(direction==="next"){
+        const state=genericProcessionController.project();
+        if(state.atEnd){
+          inGenericProcession=false;
+          inLifecycle=true;
+          return notifyLifecycle(lifecycleRuntime.completeFollowingAction());
+        }
+        genericProcessionController.next();
+        return showGenericProcession();
+      }
+      const state=genericProcessionController.project();
+      if(!state.atStart)genericProcessionController.previous();
+      return showGenericProcession();
+    }
     if(inHolyThursdayPost && holyThursdayPostController){
       if(direction==="next"){
         const state=holyThursdayPostController.project();
@@ -530,6 +691,14 @@ export function createBrowserMassRuntime({
     if(direction==="next" && (card?.sourceSequence===30 || card?.sequence===30) && currentPrepared?.session?.plan?.normalLastGospel===false){
       return enterLifecycleBoundary();
     }
+    if(direction==="next" && !card && currentPrepared?.session?.plan?.kind==="COMPOSITE_DISTINCT_RITE" && currentPrepared?.session?.plan?.rite==="EASTER_VIGIL"){
+      distinctRiteState=Object.freeze({
+        schema:"ao-r33-composite-rite-lifecycle-v1",
+        rite:"EASTER_VIGIL",stage:"DEPARTURE",ordinaryMassGraphActive:false,
+      });
+      onLifecycleHandoff?.(distinctRiteState,currentPrepared);
+      return distinctRiteState;
+    }
     if(direction==="next" && !card){
       return enterLifecycleBoundary();
     }
@@ -584,6 +753,77 @@ export function createBrowserMassRuntime({
   const entry = createMassEntryController({
     celebrationApi, resolveHostOptions, readReaderPreferences,
     openReader: async prepared => {
+      const plan=prepared?.session?.plan;
+      if(plan?.kind==="DISTINCT_RITE" && plan?.rite==="GOOD_FRIDAY"){
+        const gfData=await Promise.resolve(loadGoodFridayData(prepared));
+        const gfContext=goodFridayContext ?? prepared?.session?.resolvedMass?.provenance?.goodFriday ?? {};
+        readerModel=null;
+        objectiveRuntime=null;
+        lifecycleRuntime=null;
+        inLifecycle=false;
+        currentPrepared=prepared;
+        currentSectionId=null;
+        goodFridayController=createGoodFridayReaderController({
+          graph:gfData?.graph,
+          payload:gfData?.payload,
+          jewishPrayerVariant:gfContext.jewishPrayerVariant??"PRINTED_1962",
+          venerationMode:gfContext.venerationMode??"PERSONAL",
+          willReceiveCommunion:gfContext.willReceiveCommunion===true,
+        });
+        inGoodFriday=true;
+        distinctRiteState=Object.freeze({
+          schema:"ao-r28-distinct-rite-lifecycle-v1",
+          rite:"GOOD_FRIDAY",stage:"RITE_ACTIVE",ordinaryMassGraphActive:false,
+        });
+        reader.mount(prepared);
+        showGoodFriday();
+        onReaderMounted?.(prepared,reader,null);
+        return;
+      }
+      if(plan?.kind==="COMPOSITE_DISTINCT_RITE" && plan?.rite==="EASTER_VIGIL"){
+        const [data,evData]=await Promise.all([
+          Promise.resolve(loadPresentationData(prepared)),
+          Promise.resolve(loadEasterVigilData(prepared)),
+        ]);
+        const evContext=easterVigilContext ?? prepared?.session?.resolvedMass?.provenance?.easterVigil ?? {};
+        const ordinaryResolved=Object.freeze({
+          ...prepared.session.resolvedMass,
+          distinctRite:null,
+          precedingRites:[],
+          followingActions:[],
+          overlays:(prepared.session.resolvedMass.overlays??[]).filter(x=>x!=="EASTER_VIGIL"),
+        });
+        const baseModel=createMassReaderModel({
+          resolvedMass:ordinaryResolved,
+          sectionMap:data?.sectionMap,
+          lowCorpus:data?.lowCorpus,
+          sungCorpus:data?.sungCorpus,
+          canonSourceMap:data?.canonSourceMap,
+          nuptialData:data?.nuptialData,
+          properNotApplicableSlots:["INTROIT","COMMUNION"],
+        });
+        readerModel=projectEasterVigilMassModel(baseModel,evData?.payload);
+        objectiveRuntime=null;
+        lifecycleRuntime=null;
+        inLifecycle=false;
+        currentPrepared=prepared;
+        currentSectionId=null;
+        easterVigilController=createEasterVigilReaderController({
+          graph:evData?.graph,
+          payload:evData?.payload,
+          fontMode:evContext.fontMode??"IN_CHURCH",
+          baptismPresent:evContext.baptismPresent===true,
+        });
+        inEasterVigil=true;
+        distinctRiteState=Object.freeze({
+          schema:"ao-r33-composite-rite-lifecycle-v1",
+          rite:"EASTER_VIGIL",stage:"VIGIL_ACTIVE",ordinaryMassGraphActive:false,
+        });
+        reader.mount(prepared);
+        showEasterVigil();
+        onReaderMounted?.(prepared,reader,readerModel);
+        return;
+      }
       const structuralSupport=structureSupport(prepared);
       if(!structuralSupport.supported){
         throw new Error(structuralSupport.reason || "R17 browser reader structure is not certified");
@@ -596,9 +836,10 @@ export function createBrowserMassRuntime({
       const hasRequiemAbsolution=(prepared?.session?.plan?.followingGraphs??[]).includes("REQUIEM_ABSOLUTION");
       const hasCorpusChristi=(prepared?.session?.plan?.followingGraphs??[]).includes("CORPUS_CHRISTI_PROCESSION");
       const hasHolyThursdayPost=(prepared?.session?.plan?.followingGraphs??[]).includes("HOLY_THURSDAY_POST");
+      const hasGenericProcession=(prepared?.session?.plan?.followingGraphs??[]).includes("GENERIC_PROCESSION");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,palmData,ashData,candlemasData,rogationsData,requiemAbsolutionData,corpusChristiData,holyThursdayPostData,events]=await Promise.all([
+      const [data,aspergesData,palmData,ashData,candlemasData,rogationsData,requiemAbsolutionData,corpusChristiData,holyThursdayPostData,genericProcessionData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
@@ -608,6 +849,7 @@ export function createBrowserMassRuntime({
         hasRequiemAbsolution ? Promise.resolve(loadRequiemAbsolutionData(prepared)) : null,
         hasCorpusChristi ? Promise.resolve(loadCorpusChristiData(prepared)) : null,
         hasHolyThursdayPost ? Promise.resolve(loadHolyThursdayPostData(prepared)) : null,
+        hasGenericProcession ? Promise.resolve(loadGenericProcessionData(prepared)) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -619,6 +861,7 @@ export function createBrowserMassRuntime({
         lowCorpus: data?.lowCorpus,
         sungCorpus: data?.sungCorpus,
         canonSourceMap: data?.canonSourceMap,
+        nuptialData: data?.nuptialData,
       });
 
       readerModel = model;
@@ -655,6 +898,11 @@ export function createBrowserMassRuntime({
         payload:holyThursdayPostData?.payload,
       }) : null;
       inHolyThursdayPost=false;
+      genericProcessionController=hasGenericProcession ? createGenericProcessionReaderController({
+        graph:genericProcessionData?.graph,
+        payload:genericProcessionData?.payload,
+      }) : null;
+      inGenericProcession=false;
       const activePreceding=[inAsperges,inPalm,inAsh,inCandlemas,inRogations].filter(Boolean).length;
       if(activePreceding>1)throw new Error("Multiple preceding rite readers are not yet composable");
       reader.mount(prepared);
@@ -690,6 +938,13 @@ export function createBrowserMassRuntime({
     inCorpusChristi = false;
     holyThursdayPostController = null;
     inHolyThursdayPost = false;
+    genericProcessionController = null;
+    inGenericProcession = false;
+    goodFridayController = null;
+    inGoodFriday = false;
+    easterVigilController = null;
+    inEasterVigil = false;
+    distinctRiteState = null;
     lifecycleRuntime = null;
     inLifecycle = false;
   }
@@ -719,7 +974,11 @@ export function createBrowserMassRuntime({
     getRequiemAbsolutionState: () => requiemAbsolutionController?.project?.() ?? null,
     getCorpusChristiState: () => corpusChristiController?.project?.() ?? null,
     getHolyThursdayPostState: () => holyThursdayPostController?.project?.() ?? null,
-    getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
+    getGenericProcessionState: () => genericProcessionController?.project?.() ?? null,
+    getGoodFridayState: () => goodFridayController?.project?.() ?? null,
+    getEasterVigilState: () => easterVigilController?.project?.() ?? null,
+    getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? distinctRiteState,
+
     chooseLeonine: accept => {
       if(!lifecycleRuntime)return null;
       inLifecycle=true;
@@ -745,5 +1004,6 @@ export function createBrowserMassRuntime({
     setCorpusChristiProcessionParticipant: value => { if(!corpusChristiController)return null; corpusChristiController.setProcessionParticipant(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setCorpusChristiSacramentalState: value => { if(!corpusChristiController)return null; corpusChristiController.setSacramentalState(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setHolyThursdayJoiningState: value => { if(!holyThursdayPostController)return null; holyThursdayPostController.setJoiningState(value); return inHolyThursdayPost ? showHolyThursdayPost() : holyThursdayPostController.project(); },
+    setGenericProcessionParticipant: value => { if(!genericProcessionController)return null; genericProcessionController.setParticipating(value); return inGenericProcession ? showGenericProcession() : genericProcessionController.project(); },
   });
 }

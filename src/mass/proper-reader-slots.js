@@ -43,7 +43,7 @@ function readyEnvelope(slot,value,{language="en"}={}){
   });
 }
 
-export function properToReaderSlots(proper,{language="en"}={}){
+export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}={}){
   if(!proper || typeof proper!=="object") throw new TypeError("Resolved Proper object required");
   const locale=String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
   const opts={language:locale};
@@ -61,6 +61,16 @@ export function properToReaderSlots(proper,{language="en"}={}){
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
 
+  const explicitNA=new Set((notApplicableSlots??[]).map(String));
+  for(const slot of explicitNA){
+    if(!REQUIRED_SLOTS.includes(slot))throw new Error("Unknown not-applicable Proper slot: "+slot);
+    slots[slot]=Object.freeze({
+      status:"NOT_APPLICABLE",slot,
+      reason:"Explicitly suppressed by certified rite projection.",
+      data:null,
+    });
+  }
+
   // Divinum/Missale source normalization frequently carries Gradual/Tract/Alleluia
   // together in proper.gradual. Only a genuinely separate Sequence gets a second block.
   const sequenceRows=values(proper.sequence,locale);
@@ -73,7 +83,7 @@ export function properToReaderSlots(proper,{language="en"}={}){
         data:null,
       });
 
-  const missing=REQUIRED_SLOTS.filter(slot=>slots[slot].status!=="READY");
+  const missing=REQUIRED_SLOTS.filter(slot=>!["READY","NOT_APPLICABLE"].includes(slots[slot].status));
   return Object.freeze({
     schema:"ao-reader-proper-slots-v1",
     sourcePath:proper.sourcePath??null,

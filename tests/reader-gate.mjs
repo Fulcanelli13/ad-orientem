@@ -15,6 +15,7 @@ assert.equal(resolveReaderUiMode({stored:"shadow"}), "SHADOW");
 assert.equal(resolveReaderUiMode({stored:"preview"}), "PREVIEW");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=shadow",stored:"preview"}), "SHADOW");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=r17"}), "PREVIEW");
+assert.equal(resolveReaderUiMode({search:"?aoR17Reader=native"}), "PREVIEW");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=unknown",stored:"preview"}), "LEGACY");
 
 for (const mode of ["LEGACY","SHADOW","PREVIEW"]) assert.equal(readerModeAllowsLegacyDom(mode), true);

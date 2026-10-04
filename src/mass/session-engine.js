@@ -223,7 +223,9 @@ export function makeResolvedMass(input = {}) {
   }
 
   const proper = input.proper ?? null;
-  if (requiresProper(celebration.actual, overlays) && !properIsReady(proper)) {
+  // Distinct rites own their own source corpus and may not have an ordinary Mass Proper
+  // at entry (Good Friday is not a Mass; Easter Vigil is composite and separately gated).
+  if (!distinctRite && requiresProper(celebration.actual, overlays) && !properIsReady(proper)) {
     throw new Error("Resolved Mass requires a source-resolved Proper; fail closed");
   }
 
