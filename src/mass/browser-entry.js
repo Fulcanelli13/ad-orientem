@@ -36,6 +36,21 @@ export function resolveFieldPresentationMode({
   return mapLegacyFollowMode(requestedMode);
 }
 
+export function isCertifiedOct4RosaryField(prepared){
+  const mass=prepared?.session?.resolvedMass ?? prepared ?? {};
+  const date=mass?.date ?? null;
+  const id=
+    mass?.actualCelebration?.id ??
+    mass?.celebrationId ??
+    mass?.requestedCelebrationId ??
+    null;
+  return date==="2026-10-04" && String(id??"").toLowerCase()==="holy_rosary";
+}
+
+export function resolveFieldReaderUiMode(prepared,fallback="LEGACY"){
+  return isCertifiedOct4RosaryField(prepared) ? "PREVIEW" : fallback;
+}
+
 export function mapInsertedRites(values = []) {
   const precedingRites = [];
   const followingActions = [];
@@ -138,11 +153,17 @@ export async function mountR17Preview({
   try {
     const assets=iconAssets;
     const iconAudit=auditHostIconBank(assets);
-    if(!iconAudit.complete) throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
+    const fieldRescue=isCertifiedOct4RosaryField(prepared);
+    if(!iconAudit.complete && !fieldRescue){
+      throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
+    }
     const preview=await Promise.resolve(nativeMount({
       doc,
       prepared,
       readLegacyActive:()=>legacyBridge()?.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null,
+      // The September shell does not expose the modular AO_ASSETS object.
+      // For today's certified field path, render the native reader with text
+      // channels rather than falling back wholesale to the obsolete DOM.
       iconResolver:createHostIconResolver({assets}),
     }));
     return Object.freeze({
@@ -163,7 +184,10 @@ export async function mountR17Preview({
 
 async function delegateLegacyRenderer(prepared) {
   persistPrepared(prepared);
-  const readerUiMode = readBrowserReaderUiMode(globalThis);
+  const readerUiMode = resolveFieldReaderUiMode(
+    prepared,
+    readBrowserReaderUiMode(globalThis),
+  );
   const bridge = legacyBridge();
   if (typeof bridge?.startLive !== "function") {
     throw new Error("Legacy live renderer bridge is unavailable");
@@ -275,7 +299,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       legacyRenderer: Boolean(legacyBridge()?.startLive),
       runtime: Boolean(runtime()?.store),
       active: globalThis.AO_R17_ACTIVE_MASS ?? null,
-      readerUiMode: readBrowserReaderUiMode(globalThis),
+      readerUiMode: globalThis.AO_R17_MASS_RUNTIME?.readerUiMode ?? readBrowserReaderUiMode(globalThis),
       shadow: globalThis.AO_R17_READER_SHADOW ?? null,
       previewMounted: Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected || globalThis.AO_R17_READER_PREVIEW?.root?.isConnected),
       previewOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
