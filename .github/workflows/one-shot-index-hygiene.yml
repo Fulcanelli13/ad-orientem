@@ -1,0 +1,47 @@
+name: One-shot index hygiene
+
+on:
+  push:
+    branches:
+      - app/final-shell-convergence
+    paths:
+      - tools/run-index-cleanup.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  clean-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: app/final-shell-convergence
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Clean production index
+        run: node tools/cleanup-production-index.mjs
+      - name: Verify cleanup
+        run: |
+          node - <<'NODE'
+          const fs=require("fs");
+          const html=fs.readFileSync("index.html","utf8");
+          const entries=html.match(/<script\b[^>]*\bsrc=["']\.\/src\/mass\/browser-entry\.js["'][^>]*>\s*<\/script>/gi)||[];
+          if(entries.length!==1)throw new Error("expected one Mass browser-entry tag, found "+entries.length);
+          if(/AO_EMERGENCY_STABLE_V4333|ao-v4333-emergency-stable-js|aoEmergencyStable|aoEmergencyLive|ao-v4333-emergency-stable-css/.test(html))throw new Error("emergency runtime remains");
+          if(!/id=["']ao-shared-prayer-repairs-css["']/.test(html))throw new Error("shared prayer repairs missing");
+          console.log("index hygiene verification PASS");
+          NODE
+      - name: Commit cleaned index
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No index cleanup changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "app: retire emergency runtime and duplicate Mass entry"
+          git push origin HEAD:app/final-shell-convergence
