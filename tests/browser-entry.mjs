@@ -3,6 +3,7 @@ import {
   mapLegacyFollowMode,
   mapInsertedRites,
   deriveHostOptions,
+  stampMassReaderUi,
   mountR17Preview,
 } from "../src/mass/browser-entry.js";
 
@@ -42,6 +43,12 @@ options = deriveHostOptions({
   assemblyStatus: { ok:true, proper:{id:"HOST"} },
 });
 assert.equal(options.proper.id,"HOST","available host preflight Proper stopped taking precedence");
+
+const uiDoc={documentElement:{dataset:{}}};
+assert.equal(stampMassReaderUi("R17_NATIVE_PRODUCTION",uiDoc),"R17_NATIVE_PRODUCTION");
+assert.equal(uiDoc.documentElement.dataset.aoMassReaderUi,"R17_NATIVE_PRODUCTION");
+assert.equal(stampMassReaderUi("LEGACY_EXPLICIT_ROLLBACK",uiDoc),"LEGACY_EXPLICIT_ROLLBACK");
+assert.equal(uiDoc.documentElement.dataset.aoMassReaderUi,"LEGACY_EXPLICIT_ROLLBACK");
 
 assert.throws(
   () => deriveHostOptions({
