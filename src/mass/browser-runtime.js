@@ -10,6 +10,7 @@ import { createCandlemasReaderController, loadCandlemasReaderData } from "./read
 import { createRogationsReaderController, loadRogationsReaderData } from "./reader-rogations.js";
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
 import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
+import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
@@ -26,6 +27,7 @@ export function createBrowserMassRuntime({
   loadRequiemAbsolutionData = loadRequiemAbsolutionReaderData,
   requiemAbsolutionContext = null,
   loadCorpusChristiData = loadCorpusChristiProcessionReaderData,
+  loadHolyThursdayPostData = loadHolyThursdayPostReaderData,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -50,6 +52,8 @@ export function createBrowserMassRuntime({
   let inRequiemAbsolution = false;
   let corpusChristiController = null;
   let inCorpusChristi = false;
+  let holyThursdayPostController = null;
+  let inHolyThursdayPost = false;
   let lifecycleRuntime = null;
   let inLifecycle = false;
 
@@ -265,6 +269,33 @@ export function createBrowserMassRuntime({
     return Object.freeze({...card,title:"Introit",paragraphs:Object.freeze(paragraphs),precedingRiteIntroitOnly:true});
   }
 
+  function holyThursdayPostMoment(){
+    const state=holyThursdayPostController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:"Holy Thursday Post-Mass",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        sourceCueIds:[row.sourceRecordId].filter(Boolean),
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Holy Thursday",
+      posture:state.posture ? {label:state.posture} : null,
+      gesture:null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showHolyThursdayPost(){
+    const moment=holyThursdayPostMoment();
+    if(!moment)return null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
   function cardMoment(card, extra = {}) {
     if (!card) throw new TypeError("Reader card required");
     return {
@@ -314,6 +345,11 @@ export function createBrowserMassRuntime({
       inCorpusChristi=true;
       return showCorpusChristi();
     }
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && holyThursdayPostController){
+      inLifecycle=false;
+      inHolyThursdayPost=true;
+      return showHolyThursdayPost();
+    }
     inLifecycle=true;
     return state;
   }
@@ -325,6 +361,21 @@ export function createBrowserMassRuntime({
   }
 
   function move(direction) {
+    if(inHolyThursdayPost && holyThursdayPostController){
+      if(direction==="next"){
+        const state=holyThursdayPostController.project();
+        if(state.atEnd){
+          inHolyThursdayPost=false;
+          inLifecycle=true;
+          return notifyLifecycle(lifecycleRuntime.completeFollowingAction());
+        }
+        holyThursdayPostController.next();
+        return showHolyThursdayPost();
+      }
+      const state=holyThursdayPostController.project();
+      if(!state.atStart)holyThursdayPostController.previous();
+      return showHolyThursdayPost();
+    }
     if(inCorpusChristi && corpusChristiController){
       if(direction==="next"){
         const state=corpusChristiController.project();
@@ -526,9 +577,10 @@ export function createBrowserMassRuntime({
       const hasRogations=(prepared?.session?.plan?.precedingGraphs??[]).includes("ROGATIONS");
       const hasRequiemAbsolution=(prepared?.session?.plan?.followingGraphs??[]).includes("REQUIEM_ABSOLUTION");
       const hasCorpusChristi=(prepared?.session?.plan?.followingGraphs??[]).includes("CORPUS_CHRISTI_PROCESSION");
+      const hasHolyThursdayPost=(prepared?.session?.plan?.followingGraphs??[]).includes("HOLY_THURSDAY_POST");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,palmData,ashData,candlemasData,rogationsData,requiemAbsolutionData,corpusChristiData,events]=await Promise.all([
+      const [data,aspergesData,palmData,ashData,candlemasData,rogationsData,requiemAbsolutionData,corpusChristiData,holyThursdayPostData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
@@ -537,6 +589,7 @@ export function createBrowserMassRuntime({
         hasRogations ? Promise.resolve(loadRogationsData(prepared)) : null,
         hasRequiemAbsolution ? Promise.resolve(loadRequiemAbsolutionData(prepared)) : null,
         hasCorpusChristi ? Promise.resolve(loadCorpusChristiData(prepared)) : null,
+        hasHolyThursdayPost ? Promise.resolve(loadHolyThursdayPostData(prepared)) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -579,6 +632,11 @@ export function createBrowserMassRuntime({
         payload:corpusChristiData?.payload,
       }) : null;
       inCorpusChristi=false;
+      holyThursdayPostController=hasHolyThursdayPost ? createHolyThursdayPostReaderController({
+        graph:holyThursdayPostData?.graph,
+        payload:holyThursdayPostData?.payload,
+      }) : null;
+      inHolyThursdayPost=false;
       const activePreceding=[inAsperges,inPalm,inAsh,inCandlemas,inRogations].filter(Boolean).length;
       if(activePreceding>1)throw new Error("Multiple preceding rite readers are not yet composable");
       reader.mount(prepared);
@@ -612,6 +670,8 @@ export function createBrowserMassRuntime({
     inRequiemAbsolution = false;
     corpusChristiController = null;
     inCorpusChristi = false;
+    holyThursdayPostController = null;
+    inHolyThursdayPost = false;
     lifecycleRuntime = null;
     inLifecycle = false;
   }
@@ -640,6 +700,7 @@ export function createBrowserMassRuntime({
     getRogationsState: () => rogationsController?.project?.() ?? null,
     getRequiemAbsolutionState: () => requiemAbsolutionController?.project?.() ?? null,
     getCorpusChristiState: () => corpusChristiController?.project?.() ?? null,
+    getHolyThursdayPostState: () => holyThursdayPostController?.project?.() ?? null,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
     chooseLeonine: accept => {
       if(!lifecycleRuntime)return null;
@@ -665,5 +726,7 @@ export function createBrowserMassRuntime({
     markActuallySprinkled: () => { if(!aspergesController)return null; aspergesController.setActuallySprinkled(true); return inAsperges ? showAsperges() : aspergesController.project(); },
     setCorpusChristiProcessionParticipant: value => { if(!corpusChristiController)return null; corpusChristiController.setProcessionParticipant(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setCorpusChristiSacramentalState: value => { if(!corpusChristiController)return null; corpusChristiController.setSacramentalState(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
+    setHolyThursdayJoining: value => { if(!holyThursdayPostController)return null; holyThursdayPostController.setJoining(value); return inHolyThursdayPost ? showHolyThursdayPost() : holyThursdayPostController.project(); },
+    setHolyThursdayPostState: value => { if(!holyThursdayPostController)return null; holyThursdayPostController.setRiteState(value); return inHolyThursdayPost ? showHolyThursdayPost() : holyThursdayPostController.project(); },
   });
 }
