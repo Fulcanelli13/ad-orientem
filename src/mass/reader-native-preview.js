@@ -1134,7 +1134,7 @@ export async function mountNativeReaderPreview({
   function planAwareCard(card){
     if(!card)return null;
     const plan=prepared?.session?.plan;
-    if(plan?.blessingAllowed!==false || card.macroId!=="AO.SM.M29")return card;
+    if(plan?.blessingAllowed!==false)return card;
     const blessing=card.blocks?.find?.(value=>value.blockId==="AO.SM.B092");
     if(!blessing || blessing.firstParagraphIndex==null || !blessing.paragraphCount)return card;
     const start=blessing.firstParagraphIndex;
