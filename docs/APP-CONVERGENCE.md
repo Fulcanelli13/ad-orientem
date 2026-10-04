@@ -20,12 +20,12 @@ Legacy/current ownership during extraction:
 | --- | --- | --- |
 | Home | `AO_NAV_V362.home()` | `src/app` + `src/home` |
 | Mass | domain entry only | current `src/mass` R17 production stack |
-| Pray | `AOTraditionalPrayerBook.open()` / `#aoPrayerBookRoot` | locked v43.59.30 `AO_PRAY_V435930` presentation contract, then `src/pray` |
+| Pray | `AO_PRAY_APP_V1` + modularized locked v43.59.30 `AO_PRAY_V435930` presentation | `src/pray` |
 | Learn | domain shell | future `src/learn` |
 | Calendar | `today.calendar` | `src/calendar` |
 | Settings | `AO_SETTINGS_V4359` | future `src/settings` |
 
-The locked v43.59.30 PRAY runtime remains the target non-Mass prayer presentation contract: one shell, one interaction vocabulary and one recitation grammar over the canonical 48-prayer corpus. Current production still exposes `AOTraditionalPrayerBook`, so migration to the locked PRAY runtime is a distinct future presentation-extraction step rather than a fact that may be assumed by adapters. Neither prayer surface owns Mass.
+The locked v43.59.30 PRAY runtime is now extracted into `src/pray`: one shell, one interaction vocabulary and one recitation grammar over the canonical 48-prayer corpus. `AO_PRAY_APP_V1` owns app routing while `AO_PRAY_V435930` remains the presentation contract. The obsolete `AOTraditionalPrayerBook` may remain embedded temporarily as donor debt, but modular PRAY never falls back to it. Neither prayer surface owns Mass.
 
 ## Phase 1 landed here
 
@@ -66,7 +66,7 @@ The app gate uses only the regression classifications `PASS`, `REGRESSION`, `STA
 
 `src/app/browser-entry.js` now adopts the production `#ao-global-ribbon` as the visible modular navigation surface. It preserves the approved six-destination visual presentation while replacing the historical anonymous ribbon click owner with `AO_APP_SHELL_V1` routing.
 
-The adoption layer rewrites ribbon buttons from `data-ao-ribbon` to `data-ao-app-surface`, stamps `data-ao-owner="AO_APP_SHELL_V1"`, keeps active-state painting synchronized with the modular shell controller, and re-adopts after any historical ribbon re-render. The underlying Home, Calendar, PRAY, Learn and Settings renderers remain temporary donors; this phase changes navigation ownership only and does not revive or modify the historical Mass renderer.
+The adoption layer rewrites ribbon buttons from `data-ao-ribbon` to `data-ao-app-surface`, stamps `data-ao-owner="AO_APP_SHELL_V1"`, keeps active-state painting synchronized with the modular shell controller, and re-adopts after any historical ribbon re-render. The underlying Home, Learn and Settings renderers remain temporary donors at this phase. Calendar and PRAY presentation ownership are extracted in later phases. This phase changes navigation ownership only and does not revive or modify the historical Mass renderer.
 
 Real-shell phone acceptance now requires all six modular ribbon buttons to be present, zero legacy ribbon click attributes to remain, and the document-level shell owner to report `AO_APP_SHELL_V1` while R17 remains the production Mass owner.
 
@@ -76,7 +76,7 @@ Calendar presentation ownership is now extracted from the v43.59.30 donor into `
 
 The app host prefers `AO_CALENDAR_APP_V1` and only retains `today.calendar` as a fail-safe fallback. Actual-index phone acceptance requires `#ao-calendar-modular-root`, requires the app shell to report the modular Calendar owner, and rejects an active v25 donor Calendar panel. Calendar keeps the permanent six-destination app ribbon above its surface.
 
-This closes Calendar presentation extraction only. `NON_MASS_DONOR_EXTRACTION` remains open for Home/Coming Up, PRAY, Learn and Settings.
+This closes Calendar presentation extraction only. `NON_MASS_DONOR_EXTRACTION` remains open for Home/Coming Up, PRAY, Learn and Settings at this phase; PRAY is closed by Phase 7.
 
 ## Phase 5: modular live-session guards
 
@@ -92,17 +92,17 @@ This does **not** yet close `EMERGENCY_RUNTIME_RETIREMENT`: the historical v43.3
 
 This is deliberately **not** recorded as full Home extraction yet. The visible Home card stack still contains donor-owned presentation, including Coming Up and Daily Catechism. The actual-index phone journey certifies modular Home navigation ownership while the app gate keeps Home presentation pending.
 
-## Phase 7: modular PRAY navigation ownership
+## Phase 7: modular PRAY presentation ownership
 
-`AO_PRAY_APP_V1` now owns the top-level PRAY route against the prayer surface that production actually exposes: `AOTraditionalPrayerBook.open({returnContext:null})` and `#aoPrayerBookRoot`. The modular app shell therefore no longer needs `AO_V37_SHELL.openDomain("pray")` to enter the current Prayer Book.
+The locked v43.59.30 PRAY contract is now extracted into modular source rather than reached through the obsolete PrayerBook. `src/pray/canonical-data.js` carries the exact 48-prayer corpus from the locked non-Mass donor; `presentation-runtime.js` and `presentation-coherence.js` preserve the final v43.59.30 interaction/recitation contract; and `presentation-styles.js` preserves the approved presentation while integrating it with the persistent six-destination ribbon.
 
-This is deliberately not full PRAY presentation extraction. The current Prayer Book remains donor-rendered, and the locked v43.59.30 `AO_PRAY_V435930` contract remains the later presentation target with its 48-prayer corpus, recitation grammar and consolidated Rosary/Confession/Adoration/Benediction state. The actual-index phone journey certifies only modular route ownership over the existing production Prayer Book; it does not claim that the v43.59.30 presentation has already been promoted.
+`AO_PRAY_APP_V1` owns the application route. It opens only `AO_PRAY_V435930` / `#aoPray435930`, stamps stable modular ownership, and fails closed if the final presentation is unavailable. The host adapter does not fall back to `AOTraditionalPrayerBook`. Hard Home explicitly closes modular PRAY before mounting Home, and the persistent ribbon remains physically reachable while PRAY is open.
+
+Static regression locks verify the 48-record corpus and extracted presentation assets. Actual-index phone acceptance proves Home → PRAY → Home using the final v43.59.30 surface, verifies the obsolete `#aoPrayerBookRoot` is not open underneath it, and leaves the certified R17 Mass subsystem unchanged.
 
 ## Next promotion step
 
-Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
-
-After host promotion, extract in this order: Home/Coming Up, Calendar dashboard and pre-Mass selection entry, PRAY, Learn, Settings. Calendar presentation is now modular and phone-certified; Home/Coming Up is the next extraction target. Each extraction replaces one donor owner only after parity tests pass; it must not create a second visible surface for the same state.
+Continue donor retirement without replacing the production host wholesale. Calendar and PRAY presentation are now modular and phone-certified. The remaining non-Mass extraction order is Home/Coming Up presentation, Learn, then Settings. Each extraction replaces one donor owner only after parity tests pass and must not create a second visible surface for the same state. Do not copy any historical Mass renderer back into production.
 
 Before calling app convergence complete:
 
