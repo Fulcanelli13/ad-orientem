@@ -1098,7 +1098,7 @@ export async function mountNativeReaderPreview({
       scroll.scrollTop=0;
       cueTracker?.refresh?.();
     }
-    return card;
+    return visibleCard;
   }
 
   const reader=createReaderDomAdapter({
