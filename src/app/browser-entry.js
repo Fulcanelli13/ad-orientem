@@ -1,3 +1,4 @@
+import { installLiveSessionGuards } from "./live-session-guards.js";
 import "../calendar/browser-entry.js";
 import {
   APP_SURFACES,
@@ -157,6 +158,7 @@ export function installAppShellBridge({
     blocked: false,
     visibleOwner: false,
     disposeVisibleOwner: null,
+    liveSessionGuards: null,
   };
 
   function setDataset(value) {
@@ -184,6 +186,8 @@ export function installAppShellBridge({
         initialSurface: initialSurface(win, state.host),
       });
       state.disposeVisibleOwner = installVisibleRibbonOwner(win, state.controller, state);
+      state.liveSessionGuards?.dispose?.();
+      state.liveSessionGuards = installLiveSessionGuards({ win });
       setDataset("ready");
     } catch {
       state.blocked = true;
@@ -241,6 +245,7 @@ export function installAppShellBridge({
         calendarOpen: win?.AO_CALENDAR_APP_V1?.status?.()?.open === true,
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
         legacyRibbonPresent: Boolean(win?.AO_GLOBAL_RIBBON_V4323),
+        liveSessionGuards: state.liveSessionGuards?.status?.() ?? null,
       });
     },
   });
