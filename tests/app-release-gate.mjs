@@ -37,6 +37,10 @@ assert.equal(findings.find(x=>x.id==="VISIBLE_SHELL_OWNERSHIP")?.classification,
 assert.equal(findings.find(x=>x.id==="VISIBLE_SHELL_OWNERSHIP")?.status,"CLOSED");
 assert.equal(findings.find(x=>x.id==="CROSS_DOMAIN_PHONE_JOURNEY")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="CROSS_DOMAIN_PHONE_JOURNEY")?.status,"CLOSED");
+assert.equal(findings.find(x=>x.id==="PERSISTENCE_STATE_CONTAMINATION")?.classification,"PASS");
+assert.equal(findings.find(x=>x.id==="PERSISTENCE_STATE_CONTAMINATION")?.status,"CLOSED");
+assert.equal(findings.find(x=>x.id==="CROSS_DOMAIN_PHONE_JOURNEY")?.classification,"PASS");
+assert.equal(findings.find(x=>x.id==="CROSS_DOMAIN_PHONE_JOURNEY")?.status,"CLOSED");
 assert.equal(app.openBlockers.includes("CROSS_DOMAIN_PHONE_JOURNEY"),false);
 assert.equal(findings.find(x=>x.id==="DUPLICATE_BROWSER_ENTRY_HYGIENE")?.classification,"REGRESSION");
 assert.match(app.requiredPhoneJourney,/Home.*Calendar.*Mass.*LIVE.*leave\/resume.*PRAY.*Home.*Settings/i);
@@ -46,6 +50,7 @@ assert.ok(app.regressionGates?.static?.includes("tests/app-shell-contract.mjs"))
 assert.ok(app.regressionGates?.static?.includes("tests/production-tree-hygiene.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-final-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-visible-owner-e2e.mjs"));
+assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-journey-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-journey-e2e.mjs"));
 
 console.log("PASS app release gate: Mass remains certified; whole-app convergence remains explicitly gated.");
