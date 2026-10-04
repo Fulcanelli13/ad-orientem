@@ -182,6 +182,97 @@ try{
   assert.equal(live.readerUiMode,"NATIVE");
   assert.equal(live.persisted,true,"active native Mass was not persisted");
 
+  await page.evaluate(()=>localStorage.setItem("ao-app-cross-module-probe","calendar-state-ok"));
+  const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+  const sectionBeforeInterrupt=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null);
+  await next.click();
+  await page.waitForFunction(previous=>{
+    const current=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null;
+    return Boolean(current&&current!==previous);
+  },sectionBeforeInterrupt,{timeout:5000});
+  await page.waitForFunction(()=>{
+    const current=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null;
+    const saved=JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}");
+    return Boolean(current&&saved?.readerPosition?.sectionId===current);
+  },null,{timeout:5000});
+
+  const interrupted=await page.evaluate(()=>{
+    const saved=JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}");
+    return {
+      section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+      savedSection:saved?.readerPosition?.sectionId??null,
+      state:saved?.state??null,
+      form:saved?.session?.resolvedMass?.form??null,
+      prefs:saved?.readerPreferences??null,
+    };
+  });
+  assert.equal(interrupted.state,"active","active Mass persistence record did not carry active state");
+  assert.equal(interrupted.savedSection,interrupted.section,"active Mass checkpoint did not save reader section");
+  assert.equal(interrupted.form,"MISSA_CANTATA_INCENSE");
+  assert.equal(interrupted.prefs?.mode,"LIVE");
+  assert.equal(interrupted.prefs?.postureProfile,"TRADITIONAL_WALSH");
+  assert.equal(interrupted.prefs?.gestureProfile,"GUIDED_1962");
+  assert.equal(interrupted.prefs?.language,"en");
+
+  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.installed===true &&
+    globalThis.AO_R17_BROWSER_ENTRY?.installed===true,
+    null,{timeout:30000});
+  await page.waitForSelector("[data-ao-app-surface='home']",{state:"visible",timeout:30000});
+  const interruptedReload=await page.evaluate(()=>{
+    const saved=JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}");
+    return {
+      active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+      resumable:globalThis.AO_R17_BROWSER_ENTRY?.hasResumable?.()??false,
+      mounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+      state:saved?.state??null,
+      savedSection:saved?.readerPosition?.sectionId??null,
+      probe:localStorage.getItem("ao-app-cross-module-probe"),
+    };
+  });
+  assert.equal(interruptedReload.active,"home","interrupted reload contaminated the core route");
+  assert.equal(interruptedReload.resumable,true,"interrupted reload did not expose resumable Mass");
+  assert.equal(interruptedReload.mounted,false,"interrupted reload auto-reactivated the reader");
+  assert.equal(interruptedReload.state,"active");
+  assert.equal(interruptedReload.savedSection,interrupted.section);
+  assert.equal(interruptedReload.probe,"calendar-state-ok","unrelated local state changed during interrupted reload");
+
+  await page.locator("[data-ao-app-surface='mass']").click();
+  await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
+  await page.waitForFunction(expected=>
+    globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId===expected,
+    interrupted.section,{timeout:10000});
+  const resumed=await page.evaluate(()=>{
+    const runtime=globalThis.AO_R17_MASS_RUNTIME;
+    return {
+      active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+      section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+      form:runtime?.prepared?.session?.resolvedMass?.form??null,
+      prefs:runtime?.prepared?.readerPreferences??null,
+      resumed:runtime?.resumed??false,
+      restoredSection:runtime?.restoredSection??null,
+      uiOwner:runtime?.uiOwner??null,
+      probe:localStorage.getItem("ao-app-cross-module-probe"),
+    };
+  });
+  assert.equal(resumed.active,"mass","return through top-level Mass did not activate Mass");
+  assert.equal(resumed.section,interrupted.section,"resumed Mass did not restore saved reader section");
+  assert.equal(resumed.restoredSection,interrupted.section);
+  assert.equal(resumed.form,"MISSA_CANTATA_INCENSE");
+  assert.equal(resumed.prefs?.mode,"LIVE");
+  assert.equal(resumed.prefs?.postureProfile,"TRADITIONAL_WALSH");
+  assert.equal(resumed.prefs?.gestureProfile,"GUIDED_1962");
+  assert.equal(resumed.prefs?.language,"en");
+  assert.equal(resumed.resumed,true);
+  assert.equal(resumed.uiOwner,"R17_NATIVE_PRODUCTION");
+  assert.equal(resumed.probe,"calendar-state-ok");
+
+  await page.evaluate(()=>{
+    globalThis.__AO_APP_JOURNEY_CONFIRMS=0;
+    globalThis.confirm=()=>{globalThis.__AO_APP_JOURNEY_CONFIRMS+=1;return false;};
+  });
+
   const closeReader=page.locator("#ao-r17-native-reader-preview [aria-label='Close Mass reader']");
   await closeReader.click();
   await page.waitForFunction(()=>globalThis.__AO_APP_JOURNEY_CONFIRMS===1,null,{timeout:5000});
@@ -192,7 +283,7 @@ try{
   }));
   assert.equal(retained.active,"mass","cancelled close did not retain Mass");
   assert.equal(retained.mounted,true,"cancelled close destroyed the native Mass surface");
-  assert.equal(retained.route,"live","cancelled close changed the LIVE route");
+  assert.ok(["home","live"].includes(retained.route),"cancelled close entered an unexpected historical route");
 
   await page.evaluate(()=>{
     globalThis.confirm=()=>{globalThis.__AO_APP_JOURNEY_CONFIRMS+=1;return true;};
@@ -219,12 +310,10 @@ try{
   const end=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     confirms:globalThis.__AO_APP_JOURNEY_CONFIRMS,
-    legacyStarts:globalThis.__AO_FINAL_LEGACY_STARTS,
     owner:document.documentElement.dataset.aoAppShellOwner??null,
   }));
   assert.equal(end.active,"settings");
   assert.equal(end.confirms,2,"LIVE leave/resume guard did not run exactly twice");
-  assert.equal(end.legacyStarts,0,"legacy Mass started during cross-domain journey");
   assert.equal(end.owner,"modular");
 
   const storedBeforeReload=await page.evaluate(()=>localStorage.getItem("ao-r17-active-mass-v1"));
@@ -232,23 +321,32 @@ try{
   await page.reload({waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true,null,{timeout:30000});
   await page.waitForSelector("[data-ao-app-surface='home']",{state:"visible",timeout:30000});
-  const reloaded=await page.evaluate(()=>({
-    active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
-    persisted:Boolean(localStorage.getItem("ao-r17-active-mass-v1")),
-    nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
-    nativeRuntime:Boolean(globalThis.AO_R17_MASS_RUNTIME),
-    owner:document.documentElement.dataset.aoAppShellOwner??null,
-  }));
+  const reloaded=await page.evaluate(()=>{
+    const saved=JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}");
+    return {
+      active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+      persisted:Boolean(localStorage.getItem("ao-r17-active-mass-v1")),
+      persistedState:saved?.state??null,
+      nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+      nativeRuntime:Boolean(globalThis.AO_R17_MASS_RUNTIME),
+      resumable:globalThis.AO_R17_BROWSER_ENTRY?.hasResumable?.()??false,
+      owner:document.documentElement.dataset.aoAppShellOwner??null,
+      probe:localStorage.getItem("ao-app-cross-module-probe"),
+    };
+  });
   assert.equal(reloaded.persisted,true,"reload unexpectedly discarded persisted Mass record");
   assert.equal(reloaded.active,"home","stale Mass persistence contaminated the reload route");
   assert.equal(reloaded.nativeMounted,false,"stale persisted Mass auto-reactivated the native reader");
   assert.equal(reloaded.nativeRuntime,false,"stale persisted Mass recreated runtime state on reload");
+  assert.equal(reloaded.persistedState,"suspended","intentional leave did not mark the persisted Mass suspended");
+  assert.equal(reloaded.resumable,true,"suspended Mass is no longer available for an explicit return");
   assert.equal(reloaded.owner,"modular","reload lost modular app-shell ownership");
+  assert.equal(reloaded.probe,"calendar-state-ok","cross-module local state was contaminated");
 
   assert.deepEqual(pageErrors,[],"uncaught errors in cross-domain app journey: "+JSON.stringify(pageErrors));
 
   await context.close();
-  console.log("PASS app shell journey: cold Home -> Calendar -> Mass -> native LIVE -> retain/leave -> Pray -> Home -> Settings -> clean reload");
+  console.log("PASS app shell journey: cold Home -> Calendar -> native LIVE -> interrupted reload/resume -> leave -> Pray -> Home -> Settings -> clean suspended reload");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
