@@ -212,10 +212,29 @@ try{
   assert.equal(end.confirms,2,"LIVE leave/resume guard did not run exactly twice");
   assert.equal(end.legacyStarts,0,"legacy Mass started during cross-domain journey");
   assert.equal(end.owner,"modular");
+
+  const storedBeforeReload=await page.evaluate(()=>localStorage.getItem("ao-r17-active-mass-v1"));
+  assert.ok(storedBeforeReload,"native Mass persistence record disappeared before reload");
+  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true,null,{timeout:30000});
+  await page.waitForSelector("[data-ao-ribbon='home']",{state:"visible",timeout:30000});
+  const reloaded=await page.evaluate(()=>({
+    active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+    persisted:Boolean(localStorage.getItem("ao-r17-active-mass-v1")),
+    nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+    nativeRuntime:Boolean(globalThis.AO_R17_MASS_RUNTIME),
+    owner:document.documentElement.dataset.aoAppShellOwner??null,
+  }));
+  assert.equal(reloaded.persisted,true,"reload unexpectedly discarded persisted Mass record");
+  assert.equal(reloaded.active,"home","stale Mass persistence contaminated the reload route");
+  assert.equal(reloaded.nativeMounted,false,"stale persisted Mass auto-reactivated the native reader");
+  assert.equal(reloaded.nativeRuntime,false,"stale persisted Mass recreated runtime state on reload");
+  assert.equal(reloaded.owner,"modular","reload lost modular app-shell ownership");
+
   assert.deepEqual(pageErrors,[],"uncaught errors in cross-domain app journey: "+JSON.stringify(pageErrors));
 
   await context.close();
-  console.log("PASS app shell journey: cold Home -> Calendar -> Mass -> native LIVE -> retain/leave -> Pray -> Home -> Settings");
+  console.log("PASS app shell journey: cold Home -> Calendar -> Mass -> native LIVE -> retain/leave -> Pray -> Home -> Settings -> clean reload");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
