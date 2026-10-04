@@ -71,7 +71,7 @@ const resolved={
   explicitlySelectedCelebration:true,proper:{status:"READY",data:proper,sourcePath:"Tempora/Pasc0-0"},
   overlays:[],precedingRites:[],followingActions:[],distinctRite:null,
 };
-const base=createMassReaderModel({resolvedMass:resolved,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap:canon});
+const base=createMassReaderModel({resolvedMass:resolved,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap:canon,properNotApplicableSlots:["INTROIT","COMMUNION"]});
 assert.equal(base.totalCards,39);
 const vigilMass=projectEasterVigilMassModel(base,payload);
 assert.equal(vigilMass.structureOwner,"EASTER_VIGIL_COMPOSITE_MASS");
