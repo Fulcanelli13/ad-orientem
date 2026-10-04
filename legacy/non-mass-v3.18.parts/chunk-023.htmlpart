@@ -1,0 +1,500 @@
+}
+function queueHome(){if(homeQueued)return;homeQueued=true;queueMicrotask(()=>{homeQueued=false;ensureHome()})}
+function scheduleMidnight(){clearTimeout(midnightTimer);const now=new Date(),next=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,2);midnightTimer=setTimeout(()=>{queueHome();scheduleMidnight()},Math.max(1000,next-now))}
+function install(){if(storeHooked)return;const r=rt();if(!r?.store)return;storeHooked=true;r.store.subscribe(()=>{queueHome();if(openState.open&&openState.language!==lang()){openState.language=lang();openState.revealed=false;render()}});queueHome();scheduleMidnight()}
+document.addEventListener('click',e=>{const b=e.target.closest?.('button,[data-dc-open]');if(!b)return;if(b.matches('[data-dc-open]')||b.closest('.aoDailyCateHome')&&b.classList.contains('roundAction')){e.preventDefault();open();return}if(b.matches('[data-dc-back],[data-dc-close]')){close();return}if(b.matches('[data-dc-reveal]')){openState.revealed=true;render();return}if(b.dataset.dcOutcome){recordOutcome(Number(b.dataset.id),b.dataset.dcOutcome);return}if(b.dataset.dcStudy){const id=Number(b.dataset.dcStudy),ses=load().sessions?.[dateKey()],lg=ses?.contentLanguage||openState.contentLanguage||lang();close();api()?.open?.({lang:lg,question:id});return}if(b.matches('[data-dc-full]')){const lg=lang();close();api()?.open?.({lang:lg});return}},true)
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&openState.open)close()})
+install();
+window.AO_DAILY_CATECHISM={version:VERSION,open,close,ensureHome,hero:HOME_HERO,getState:()=>load(),resetToday(){const s=load();delete s.sessions[dateKey()];save(s);queueHome();return true},qa(){const s=load(),session=s.sessions?.[dateKey()];return {version:VERSION,date:dateKey(),sessionSize:session?.ids?.length||0,completed:!!session?.completedAt,encountered:stats(s).encountered,due:stats(s).due,month:stats(s).month,noDuplicateSessionIds:session?new Set(session.ids).size===session.ids.length:true,usesCanonicalCatechism:!!api()?.questions}}};
+})();
+</script>
+<script id="ao-v357-meta">window.AO_V357_META={version:'35.7',baseline:'Ad-Orientem-2.0-v35.6-FRONTEND-SANITATION.html',feature:'Daily Catechism',sessionSize:10,selection:'contextual slot when relevant + 5/3/2 new-review-weak target with automatic fill',sameDayPersistence:true,spacedReview:true,canonicalCorpusReused:true,homeStaticCatechismCardReplaced:true,massEngineChanged:false,prayerCorpusChanged:false};</script>
+<script id="ao-v357-prayer-source-audit-meta">
+window.AO_PRAYER_SOURCE_AUDIT_V357={
+  version:'35.7',
+  baseline:'v35.6-SOURCES-EXPLANATION-UX',
+  auditedPrayerRecords:38,
+  visibleAttributions:14,
+  hiddenButTraceable:24,
+  qualityCounts:{"VERIFIED_PRIMARY":32,"VERIFIED_SECONDARY":6},
+  textCorrections:["foundations_act_of_faith","foundations_act_of_hope","foundations_act_of_love","foundations_guardian_angel","marian_consecration_immaculate_heart","devotion_consecration_christ_king","devotion_st_anthony_lost_items","sacred_heart_short_prayer"],
+  languageWitnessPending:["foundations_morning_offering:la","marian_consecration_immaculate_heart:la","marian_consecration_immaculate_heart:fr","devotion_consecration_christ_king:la","devotion_consecration_christ_king:fr","devotion_st_anthony_lost_items:la","devotion_st_anthony_lost_items:fr","sacred_heart_short_prayer:la","sacred_heart_short_prayer:fr"],
+  rules:{
+    implementationOriginNeverRendered:true,
+    noLabOraAsContentSource:true,
+    familiarPrayerAttributionMayBeHidden:true,
+    unverifiedTranslationsMayBeWithheld:true,
+    sourceNamesOnlyAppliedToMatchingText:true
+  },
+  sourceStatus:'audited'
+};
+window.AO_CANONICAL_BASELINE='v35.7-PRAYER-SOURCE-AUDIT';
+
+(()=>{
+  function compactLegacySourceBoxes(){
+    document.querySelectorAll('#aoPrayerBookRoot .pbSource').forEach(el=>{
+      if(el.dataset.ao357Compact==='1') return;
+      const strong=el.querySelector('strong');
+      const label=(strong?.textContent||'Note').trim()||'Note';
+      if(strong) strong.remove();
+      while(el.firstChild && el.firstChild.nodeName==='BR') el.firstChild.remove();
+      const d=document.createElement('details');
+      d.className='aoSourceDisclosure pbSourceCompact ao357LegacySource';
+      const sm=document.createElement('summary'); sm.textContent=label;
+      const body=document.createElement('div'); body.className='aoSourceDetail';
+      while(el.firstChild) body.appendChild(el.firstChild);
+      d.append(sm,body); el.dataset.ao357Compact='1'; el.replaceWith(d);
+    });
+  }
+  window.AO_SOURCE_DISCLOSURE_V357={compact:compactLegacySourceBoxes};
+  compactLegacySourceBoxes();
+})();
+</script>
+<script id="ao-v360-canonical-module-registry-js">
+(()=>{'use strict';
+const VERSION='36.0-canonical-module-registry';
+const COLLECTION={
+  prayerBook:'collection.traditional_prayer_book',
+  baltimore:'collection.baltimore_1888',
+  lasance:'collection.lasance_1911',
+  piusX:'collection.pius_x_1912'
+};
+const DEFINITIONS={
+  'today.calendar':{id:'today.calendar',type:'reference',domain:'today',category:'liturgical-context',title:'Calendar',action:'nav.calendar',contexts:['today','reference']},
+  'today.saint':{id:'today.saint',type:'reference',domain:'today',category:'liturgical-context',title:'Saint of the Day',action:'nav.saint',contexts:['today','reference']},
+  'today.gospel':{id:'today.gospel',type:'reference',domain:'today',category:'scripture',title:'Gospel',action:'scripture.gospel',contexts:['today','mass','learn']},
+
+  'mass.current':{id:'mass.current',type:'module',domain:'mass',category:'today',title:'Today’s Mass',action:'nav.today-mass',contexts:['today','mass']},
+  'mass.follow':{id:'mass.follow',type:'module',domain:'mass',category:'during',phase:'during',title:'Follow Mass',action:'mass.follow-safe',contexts:['today','mass']},
+  'mass.change':{id:'mass.change',type:'module',domain:'mass',category:'today',title:'Change Mass',action:'celebration.change',contexts:['mass']},
+  'mass.prepare':{id:'mass.prepare',type:'module',domain:'mass',category:'before',phase:'before',title:'Before Mass',action:'mass.prepare',contexts:['today','mass','programme.first_friday','pray-link'],methods:['standard',COLLECTION.baltimore]},
+  'mass.intentions':{id:'mass.intentions',type:'module',domain:'mass',category:'before',phase:'before',title:'Mass Intentions',action:'trad.intentions',contexts:['mass','mass.prepare'],methods:[COLLECTION.baltimore]},
+  'mass.communion_prepare':{id:'mass.communion_prepare',type:'module',domain:'mass',category:'before',phase:'before',title:'Preparation for Holy Communion',action:'mass.communion-prepare',contexts:['mass','mass.prepare'],methods:['standard',COLLECTION.lasance]},
+  'mass.mystery':{id:'mass.mystery',type:'module',domain:'mass',category:'contemplation',title:'The Mystery of the Mass',action:'mass.mystery',contexts:['mass']},
+  'mass.thanksgiving':{id:'mass.thanksgiving',type:'module',domain:'mass',category:'after',phase:'after',title:'Thanksgiving after Mass',action:'mass.thanksgiving',contexts:['today','mass','programme.first_friday','pray-link'],methods:['standard',COLLECTION.lasance]},
+  'mass.leonine':{id:'mass.leonine',type:'module',domain:'mass',category:'after',phase:'after',title:'Leonine Prayers after Low Mass',action:'prayer.record',actionArg:'mass_devotion_leonine',contexts:['mass','pray-link'],sourceCollection:COLLECTION.prayerBook},
+
+  'pray.library':{id:'pray.library',type:'module',domain:'pray',category:'library',title:'Prayer Library',action:'prayerbook.open',contexts:['pray','search'],sourceCollection:COLLECTION.prayerBook},
+  'pray.rosary':{id:'pray.rosary',type:'module',domain:'pray',category:'marian',title:'Holy Rosary',action:'prayerbook.module',actionArg:'rosary',contexts:['pray','programme.first_saturday'],sourceCollection:COLLECTION.prayerBook},
+  'pray.confession':{id:'pray.confession',type:'module',domain:'pray',category:'confession',title:'Confession',action:'pray.confession',contexts:['pray','programme.first_saturday'],methods:['standard',COLLECTION.lasance],sourceCollection:COLLECTION.prayerBook},
+  'pray.angelus_regina':{id:'pray.angelus_regina',type:'module',domain:'pray',category:'daily-prayer',title:'Angelus / Regina Cæli',action:'prayerbook.module',actionArg:'angelus',contexts:['pray','today'],sourceCollection:COLLECTION.prayerBook},
+  'pray.stations':{id:'pray.stations',type:'module',domain:'pray',category:'passion',title:'Stations of the Cross',action:'prayerbook.module',actionArg:'stations',contexts:['pray'],sourceCollection:COLLECTION.prayerBook},
+  'pray.benediction':{id:'pray.benediction',type:'module',domain:'pray',category:'eucharistic',title:'Benediction',action:'prayerbook.module',actionArg:'benediction',contexts:['pray','pray.adoration'],sourceCollection:COLLECTION.prayerBook},
+  'pray.adoration':{id:'pray.adoration',type:'module',domain:'pray',category:'eucharistic',title:'Adoration',action:'eucharistic.open',actionArg:'adoration',contexts:['pray','today-recommendation','programme.first_friday']},
+
+  'programme.first_friday':{id:'programme.first_friday',type:'programme',domain:'pray',category:'sacred-heart-reparation',title:'First Friday',action:'eucharistic.open',actionArg:'first-friday',contexts:['pray','today-when-relevant'],uses:['mass.prepare','mass.follow','mass.thanksgiving','pray.adoration']},
+  'programme.first_saturday':{id:'programme.first_saturday',type:'programme',domain:'pray',category:'marian',title:'First Saturday',action:'eucharistic.open',actionArg:'first-saturday',contexts:['pray','today-when-relevant'],uses:['pray.confession','mass.follow','pray.rosary','programme.first_saturday_meditation']},
+  'programme.first_saturday_meditation':{id:'programme.first_saturday_meditation',type:'programme-step',domain:'pray',category:'marian',title:'First Saturday Meditation',action:'eucharistic.open',actionArg:'meditation',contexts:['programme.first_saturday']},
+
+  'learn.mass':{id:'learn.mass',type:'module',domain:'learn',category:'liturgy',title:'Understand the Mass',action:'learn.mass',contexts:['learn']},
+  'learn.catechism':{id:'learn.catechism',type:'module',domain:'learn',category:'catechism',title:'Traditional Catechism',action:'learn.catechism',contexts:['learn','learn.catechism.daily'],sourceCollection:COLLECTION.piusX},
+  'learn.catechism.daily':{id:'learn.catechism.daily',type:'programme',domain:'learn',category:'catechism',title:'Daily Catechism',action:'learn.daily-catechism',contexts:['today','learn'],uses:['learn.catechism'],ownsCorpus:false},
+
+  'utility.sources':{id:'utility.sources',type:'utility',domain:'utility',category:'about',title:'Sources',action:'nav.sources',contexts:['about']},
+  'utility.settings':{id:'utility.settings',type:'utility',domain:'utility',category:'settings',title:'Settings',action:'nav.settings',contexts:['utility']},
+
+  [COLLECTION.prayerBook]:{id:COLLECTION.prayerBook,type:'collection',domain:null,title:'Traditional Prayer Book',navigation:false,providesFor:['pray.library','pray.rosary','pray.confession','pray.angelus_regina','pray.stations','pray.benediction','mass.leonine']},
+  [COLLECTION.baltimore]:{id:COLLECTION.baltimore,type:'collection',domain:null,title:'Baltimore Manual 1888',navigation:false,providesFor:['mass.prepare','mass.intentions']},
+  [COLLECTION.lasance]:{id:COLLECTION.lasance,type:'collection',domain:null,title:'Lasance 1911',navigation:false,providesFor:['mass.communion_prepare','mass.thanksgiving','pray.confession']},
+  [COLLECTION.piusX]:{id:COLLECTION.piusX,type:'collection',domain:null,title:'Catechism of St Pius X 1912',navigation:false,providesFor:['learn.catechism','learn.catechism.daily']}
+};
+
+const ALIASES={
+  'today':'mass.current',
+  'today-mass':'mass.current','mass-current':'mass.current','mass-details':'mass.current',
+  'follow':'mass.follow','follow-mass':'mass.follow','mass-follow':'mass.follow',
+  'change-mass':'mass.change','mass-change':'mass.change',
+  'prepare':'mass.prepare','before-mass':'mass.prepare','mass-preparation':'mass.prepare',
+  'MASS_PREP_BALT_1888':{id:'mass.prepare',defaults:{method:COLLECTION.baltimore}},
+  'offer-this-mass':'mass.intentions','mass-intentions':'mass.intentions',
+  'MASS_OFFER_BALT_1888':{id:'mass.intentions',defaults:{method:COLLECTION.baltimore}},
+  'prepare-communion':'mass.communion_prepare','communion-preparation':'mass.communion_prepare',
+  'COMM_PREP_LAS_1911':{id:'mass.communion_prepare',defaults:{method:COLLECTION.lasance}},
+  'mystery-of-the-mass':'mass.mystery','mass-mystery':'mass.mystery','contemplative-mass':'mass.mystery',
+  'thanks':'mass.thanksgiving','after-mass':'mass.thanksgiving','mass-thanksgiving':'mass.thanksgiving',
+  'COMM_THANKS_LAS_1911':{id:'mass.thanksgiving',defaults:{method:COLLECTION.lasance}},
+  'leonine':'mass.leonine','leonine-prayers':'mass.leonine','mass_devotion_leonine':'mass.leonine',
+
+  'prayers':'pray.library','prayer-book':'pray.library','prayer-library':'pray.library',
+  'rosary':'pray.rosary','holy-rosary':'pray.rosary',
+  'confession':'pray.confession',
+  'CONFESSION_LAS_1911':{id:'pray.confession',defaults:{method:COLLECTION.lasance}},
+  'angelus':'pray.angelus_regina','regina-caeli':'pray.angelus_regina','angelus-regina':'pray.angelus_regina',
+  'stations':'pray.stations','stations-of-the-cross':'pray.stations',
+  'benediction':'pray.benediction',
+  'adoration':'pray.adoration',
+  'first-friday':'programme.first_friday','first-saturday':'programme.first_saturday','first-saturday-meditation':'programme.first_saturday_meditation',
+
+  'learn':'learn.mass','understand-mass':'learn.mass',
+  'catechism':'learn.catechism','traditional-catechism':'learn.catechism',
+  'daily-catechism':'learn.catechism.daily','today.daily-catechism':'learn.catechism.daily',
+
+  'calendar':'today.calendar','saint':'today.saint','saint-of-day':'today.saint','gospel':'today.gospel',
+  'sources':'utility.sources','settings':'utility.settings'
+};
+
+const cssEscape=value=>globalThis.CSS?.escape?CSS.escape(String(value)):String(value).replace(/[^a-zA-Z0-9_-]/g,c=>`\\${c}`);
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const runtime=()=>globalThis.AO_RUNTIME_V8||null;
+const store=()=>runtime()?.store||null;
+function dispatch(action){const s=store();if(!s?.dispatch)return false;s.dispatch(action);return true}
+function nav(dest){if(dest==='settings'&&globalThis.AO_SETTINGS_V4359?.open){globalThis.AO_SETTINGS_V4359.open();return true}return !!globalThis.AO_NAV_V25?.open?.(dest)}
+async function prayerBookModule(id,returnContext=null){return !!globalThis.AOTraditionalPrayerBook?.openModule?.(id,returnContext?{returnContext}:{})}
+async function prayerRecord(id,returnContext=null){return !!globalThis.AOTraditionalPrayerBook?.openPrayer?.(id,returnContext?{returnContext}:{})}
+function traditional(id,returnContext=null){if(returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(returnContext);if(globalThis.AO_TRAD_V352?.open)return !!globalThis.AO_TRAD_V352.open(id);if(globalThis.AO_TRAD_V26?.open)return !!globalThis.AO_TRAD_V26.open(id);return false}
+function eucharistic(id,returnContext=null){if(returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(returnContext);return !!globalThis.AO_EUCHARISTIC_V354?.open?.(id)}
+function scriptureGospel(returnContext=null){const root=document.getElementById('app');if(!root)return false;if(returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(returnContext);const route=store()?.getState?.()?.route||'home';root.dispatchEvent(new CustomEvent('ao:open-scripture',{bubbles:true,detail:{kind:'gospel',returnRoute:route==='scripture'?'home':route}}));globalThis.AO_NAV_V362?.markCoreRoute?.('scripture');return true}
+function navWithReturn(dest,returnContext=null){if(returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(returnContext);return nav(dest)}
+function openLearn(api,options={},returnContext=null){if(!api?.open)return false;if(returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(returnContext);const clean={...options};delete clean.returnContext;api.open(clean);return true}
+
+function normalizeAliasEntry(entry){return typeof entry==='string'?{id:entry,defaults:{}}:{id:entry?.id||'',defaults:{...(entry?.defaults||{})}}}
+function resolve(input){let id=String(input||'').trim(),defaults={},chain=[],seen=new Set();if(!id)return {ok:false,input,id:'',defaults,chain,error:'EMPTY_ID'};for(let depth=0;depth<16;depth++){
+  if(DEFINITIONS[id])return {ok:true,input:String(input),id,defaults,chain,definition:DEFINITIONS[id]};
+  const raw=ALIASES[id];if(!raw)return {ok:false,input:String(input),id,defaults,chain,error:'UNKNOWN_ID'};
+  if(seen.has(id))return {ok:false,input:String(input),id,defaults,chain,error:'ALIAS_CYCLE'};
+  seen.add(id);chain.push(id);const a=normalizeAliasEntry(raw);defaults={...a.defaults,...defaults};id=a.id;
+ }
+ return {ok:false,input:String(input),id,defaults,chain,error:'ALIAS_DEPTH'}
+}
+
+async function run(def,options={}){
+ const a=def.action,arg=def.actionArg;
+ switch(a){
+  case 'nav.calendar': return navWithReturn('calendar',options.returnContext);
+  case 'nav.saint': return navWithReturn('saint',options.returnContext);
+  case 'nav.sources': return navWithReturn('sources',options.returnContext);
+  case 'nav.settings': return navWithReturn('settings',options.returnContext);
+  case 'nav.today-mass': return navWithReturn('today-mass',options.returnContext)||!!globalThis.AO_CELEBRATION_API?.openPreflight?.();
+  case 'scripture.gospel': return scriptureGospel(options.returnContext);
+  case 'mass.follow-safe':
+    if(options.returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(options.returnContext);
+    return !!globalThis.AO_CELEBRATION_API?.openPreflight?.();
+  case 'store.enter-live':
+    /* Compatibility-only internal action. UI entry is fail-closed through mass.follow-safe. */
+    return false;
+  case 'celebration.change':
+    if(options.returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(options.returnContext);
+    return !!globalThis.AO_CELEBRATION_API?.openChangeMass?.();
+  case 'mass.prepare':
+    if(options.method===COLLECTION.baltimore)return traditional('MASS_PREP_BALT_1888',options.returnContext);
+    if(options.returnContext)return !!globalThis.AO_NAV_V362?.openCore?.('prepare',options.returnContext);
+    return dispatch({type:'enter-prepare'});
+  case 'trad.intentions': return traditional('MASS_OFFER_BALT_1888',options.returnContext);
+  case 'mass.communion-prepare':
+    if(options.method===COLLECTION.lasance)return traditional('COMM_PREP_LAS_1911',options.returnContext);
+    if(options.returnContext){if(!globalThis.AO_NAV_V362?.openCore?.('prepare',options.returnContext))return false;dispatch({type:'prepare-communion',value:true});return true}
+    if(!dispatch({type:'enter-prepare'}))return false;dispatch({type:'prepare-communion',value:true});return true;
+  case 'mass.mystery':
+    if(options.returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(options.returnContext);
+    return !!globalThis.AO_CONTEMPLATIVE_STUDY_V435930?.openHome?.('mass');
+  case 'mass.thanksgiving':
+    if(options.method===COLLECTION.lasance)return traditional('COMM_THANKS_LAS_1911',options.returnContext);
+    if(options.returnContext)return !!globalThis.AO_NAV_V362?.openCore?.('thanksgiving',options.returnContext);
+    return dispatch({type:'enter-thanksgiving'});
+  case 'prayer.record': return prayerRecord(arg,options.returnContext);
+  case 'prayerbook.open': {const fn=globalThis.AOTraditionalPrayerBook?.open;if(!fn)return false;const r=fn(options.returnContext?{returnContext:options.returnContext}:{});return r===false?false:true;}
+  case 'prayerbook.module': return prayerBookModule(arg,options.returnContext);
+  case 'pray.confession':
+    if(options.method===COLLECTION.lasance)return traditional('CONFESSION_LAS_1911',options.returnContext);
+    return prayerBookModule('confession',options.returnContext);
+  case 'eucharistic.open': return eucharistic(arg,options.returnContext);
+  case 'learn.mass': return openLearn(globalThis.AO_UNDERSTAND_MASS,{},options.returnContext);
+  case 'learn.catechism': return openLearn(globalThis.AO_TRADITIONAL_CATECHISM,options,options.returnContext);
+  case 'learn.daily-catechism':
+    if(options.returnContext)globalThis.AO_NAV_V362?.setExternalReturn?.(options.returnContext);
+    return !!globalThis.AO_DAILY_CATECHISM?.open?.();
+  default:return false;
+ }
+}
+
+async function open(input,options={}){
+ const r=resolve(input);if(!r.ok)return {ok:false,input:String(input||''),canonicalId:null,error:r.error,aliasChain:r.chain};
+ const def=r.definition;if(def.navigation===false||def.type==='collection')return {ok:false,input:String(input),canonicalId:r.id,error:'NON_NAVIGABLE_COLLECTION',aliasChain:r.chain};
+ const merged={...r.defaults,...options};
+ try{const opened=await run(def,merged);return {ok:!!opened,input:String(input),canonicalId:r.id,type:def.type,domain:def.domain,options:merged,aliasChain:r.chain,error:opened?null:'HANDLER_UNAVAILABLE'}}catch(error){return {ok:false,input:String(input),canonicalId:r.id,type:def.type,domain:def.domain,options:merged,aliasChain:r.chain,error:String(error?.message||error)}}
+}
+
+function aliasCycles(){const cycles=[];for(const start of Object.keys(ALIASES)){let id=start,seen=[];for(let i=0;i<20;i++){if(DEFINITIONS[id])break;const raw=ALIASES[id];if(!raw)break;const next=normalizeAliasEntry(raw).id;const pos=seen.indexOf(id);if(pos>=0){cycles.push([...seen.slice(pos),id]);break}seen.push(id);id=next}}return cycles}
+function duplicateRenderers(){const map=new Map();for(const d of Object.values(DEFINITIONS)){if(!d.action||d.type==='collection')continue;const key=`${d.action}:${d.actionArg||''}`;if(!map.has(key))map.set(key,[]);map.get(key).push(d.id)}return [...map.entries()].filter(([,ids])=>ids.length>1).map(([renderer,ids])=>({renderer,ids}))}
+function brokenReferences(){const out=[];for(const d of Object.values(DEFINITIONS)){for(const key of ['uses','providesFor'])for(const ref of d[key]||[])if(!DEFINITIONS[ref])out.push({from:d.id,field:key,to:ref});for(const m of d.methods||[])if(m!=='standard'&&!DEFINITIONS[m])out.push({from:d.id,field:'methods',to:m});if(d.sourceCollection&&!DEFINITIONS[d.sourceCollection])out.push({from:d.id,field:'sourceCollection',to:d.sourceCollection})}return out}
+function unresolvedAliases(){const out=[];for(const id of Object.keys(ALIASES)){const r=resolve(id);if(!r.ok)out.push({alias:id,error:r.error,chain:r.chain})}return out}
+function canonicalForElement(el){if(!el)return null;const d=el.dataset||{};
+ if(d.action){const map={prepare:'mass.prepare',follow:'mass.follow',thanks:'mass.thanksgiving','today-mass':'mass.current',gospel:'today.gospel'};if(map[d.action])return map[d.action]}
+
+
+ if(d.v261Adapter){const r=resolve(d.v261Adapter);if(r.ok)return r.id}
+ if(d.ao354Open){const map={adoration:'pray.adoration','first-friday':'programme.first_friday','first-saturday':'programme.first_saturday',meditation:'programme.first_saturday_meditation'};if(map[d.ao354Open])return map[d.ao354Open]}
+ if(d.ao354Launch){const map={adoration:'pray.adoration','first-friday':'programme.first_friday','first-saturday':'programme.first_saturday'};if(map[d.ao354Launch])return map[d.ao354Launch]}
+ if(d.v25Destination){const map={prayers:'pray.library',calendar:'today.calendar',saint:'today.saint',settings:'utility.settings',sources:'utility.sources','today-mass':'mass.current'};if(map[d.v25Destination])return map[d.v25Destination]}
+ if(d.dcOpen!==undefined)return 'learn.catechism.daily';
+ return null
+}
+function auditDOM(root=document){const selector='[data-action],[data-v261-adapter],[data-ao354-open],[data-ao354-launch],[data-v25-destination],[data-dc-open]';const nodes=[...root.querySelectorAll(selector)],mapped=[],unmapped=[];for(const el of nodes){const id=canonicalForElement(el),row={tag:el.tagName?.toLowerCase()||'',text:(el.textContent||'').trim().replace(/\s+/g,' ').slice(0,90),canonicalId:id};(id?mapped:unmapped).push(row)}return {launcherCount:nodes.length,mappedCount:mapped.length,unmappedCount:unmapped.length,mapped,unmapped}}
+function qa(){const defs=Object.values(DEFINITIONS),byType=defs.reduce((m,d)=>(m[d.type]=(m[d.type]||0)+1,m),{}),domains=defs.reduce((m,d)=>{if(d.domain)m[d.domain]=(m[d.domain]||0)+1;return m},{}),cycles=aliasCycles(),broken=brokenReferences(),badAliases=unresolvedAliases(),dupes=duplicateRenderers();return {version:VERSION,canonicalCount:defs.length,aliasCount:Object.keys(ALIASES).length,byType,domains,aliasCycles:cycles,brokenReferences:broken,unresolvedAliases:badAliases,duplicateRendererOwners:dupes,pass:!cycles.length&&!broken.length&&!badAliases.length}}
+
+const API={version:VERSION,definitions:Object.freeze({...DEFINITIONS}),aliases:Object.freeze({...ALIASES}),collections:Object.freeze({...COLLECTION}),get:id=>{const r=resolve(id);return r.ok?{...r.definition}:null},resolve,open,list:(filter={})=>Object.values(DEFINITIONS).filter(d=>(!filter.type||d.type===filter.type)&&(!filter.domain||d.domain===filter.domain)).map(d=>({...d})),canonicalForElement,auditDOM,qa};
+globalThis.AO_MODULES=API;
+globalThis.AO_MODULE_REGISTRY_V36=API;
+})();
+
+</script>
+<script id="ao-v360-meta">
+window.AO_V360_META={version:'36.0',baseline:'Ad-Orientem-2.0-v35.7-DAILY-CATECHISM.html',scope:['canonical module registry','legacy alias resolution','route adapters','module ownership diagnostics'],visibleNavigationChanged:false,contentChanged:false,progressStorageChanged:false,massEngineChanged:false,calendarEngineChanged:false,prayerCorpusChanged:false,newMutationObserverAdded:false};
+</script>
+<script id="ao-v361-launcher-migration">
+
+(()=>{'use strict';
+const VERSION='36.1-launcher-migration';
+const MOD=globalThis.AO_MODULES;
+if(!MOD?.open||!MOD?.resolve)return;
+
+let canonicalRoutingDepth=0;
+const baseOpen=MOD.open.bind(MOD);
+
+async function canonicalOpen(input,options={}){
+  canonicalRoutingDepth++;
+  try{return await baseOpen(input,options)}
+  finally{canonicalRoutingDepth=Math.max(0,canonicalRoutingDepth-1)}
+}
+MOD.open=canonicalOpen;
+
+const CAPABILITY_SELECTOR=[
+  '[data-pb-module]',
+  '[data-pb-existing]',
+  '[data-v26-module]',
+  '[data-v26-open]',
+  '[data-v261-adapter]',
+  '[data-v261-legacy-module]',
+  '[data-v352-adapter]',
+  '[data-v352-manage-intentions]',
+  '[data-ao354-open]',
+  '[data-ao354-launch]',
+  '[data-ao354-module]',
+  '[data-ao354-trad]',
+  '[data-v25-destination]',
+  '.aoLearnLaunch',
+  '.aoCateLaunch'
+].join(',');
+
+const ADAPTER_MAP={
+  prepare:'mass.prepare',
+  prepare_communion:'mass.communion_prepare',
+  thanks:'mass.thanksgiving',
+  confession:'pray.confession'
+};
+const PB_MODULE_MAP={
+  confession:'confession',
+  rosary:'rosary',
+  angelus:'angelus',
+  stations:'stations',
+  benediction:'benediction'
+};
+const PB_EXISTING_MAP={prepare:'prepare',thanks:'thanks'};
+const EUCHARISTIC_MAP={
+  adoration:'adoration',
+  'first-friday':'first-friday',
+  'first-saturday':'first-saturday',
+  meditation:'first-saturday-meditation'
+};
+const DESTINATION_MAP={
+  prayers:'prayers',
+  calendar:'calendar',
+  saint:'saint',
+  settings:'settings',
+  sources:'sources',
+  'today-mass':'today-mass'
+};
+
+function routeDescriptor(el){
+  if(!el)return null;
+  const d=el.dataset||{};
+
+  if(d.pbModule&&PB_MODULE_MAP[d.pbModule]) return {input:PB_MODULE_MAP[d.pbModule],origin:'data-pb-module'};
+  if(d.pbExisting&&PB_EXISTING_MAP[d.pbExisting]) return {input:PB_EXISTING_MAP[d.pbExisting],origin:'data-pb-existing'};
+
+  if(d.v26Module) return {input:d.v26Module,origin:'data-v26-module'};
+  if(d.v26Open) return {input:d.v26Open,origin:'data-v26-open'};
+  if(d.v261LegacyModule) return {input:d.v261LegacyModule,origin:'data-v261-legacy-module'};
+  if(d.v261Adapter&&ADAPTER_MAP[d.v261Adapter]) return {input:ADAPTER_MAP[d.v261Adapter],origin:'data-v261-adapter'};
+  if(d.v352Adapter&&ADAPTER_MAP[d.v352Adapter]) return {input:ADAPTER_MAP[d.v352Adapter],origin:'data-v352-adapter'};
+  if(d.v352ManageIntentions!==undefined) return {input:'mass.intentions',origin:'data-v352-manage-intentions'};
+
+  if(d.ao354Open&&EUCHARISTIC_MAP[d.ao354Open]) return {input:EUCHARISTIC_MAP[d.ao354Open],origin:'data-ao354-open'};
+  if(d.ao354Launch&&EUCHARISTIC_MAP[d.ao354Launch]) return {input:EUCHARISTIC_MAP[d.ao354Launch],origin:'data-ao354-launch'};
+  if(d.ao354Module&&PB_MODULE_MAP[d.ao354Module]) return {input:PB_MODULE_MAP[d.ao354Module],origin:'data-ao354-module'};
+  if(d.ao354Trad) return {input:d.ao354Trad,origin:'data-ao354-trad'};
+
+  if(d.v25Destination&&DESTINATION_MAP[d.v25Destination]) return {input:DESTINATION_MAP[d.v25Destination],origin:'data-v25-destination'};
+  if(el.classList?.contains('aoLearnLaunch')) return {input:'learn',origin:'aoLearnLaunch'};
+  if(el.classList?.contains('aoCateLaunch')) return {input:'catechism',origin:'aoCateLaunch'};
+  return null;
+}
+
+function explainElement(el){
+  const descriptor=routeDescriptor(el);
+  if(!descriptor)return {mapped:false,reason:'LOCAL_OR_NONCANONICAL_CONTROL'};
+  const resolved=MOD.resolve(descriptor.input);
+  return {
+    mapped:!!resolved.ok,
+    input:descriptor.input,
+    origin:descriptor.origin,
+    canonicalId:resolved.ok?resolved.id:null,
+    defaults:resolved.ok?resolved.defaults||{}:{},
+    error:resolved.ok?null:resolved.error
+  };
+}
+
+async function migrateClick(event){
+  if(canonicalRoutingDepth>0)return;
+  const raw=event.target;
+  if(!(raw instanceof Element))return;
+  const el=raw.closest(CAPABILITY_SELECTOR);
+  if(!el)return;
+  // v43.20: these controls have newer, surface-specific owners. Do not let the
+  // legacy Window-capture migration swallow their authoritative handlers.
+  const info=explainElement(el);
+  if(!info.mapped)return;
+
+  event.preventDefault();
+  event.stopPropagation();
+  event.stopImmediatePropagation();
+
+  el.dataset.aoCanonicalModule=info.canonicalId;
+  el.dataset.aoCanonicalOrigin=info.origin;
+
+  const result=await canonicalOpen(info.input,{launcherOrigin:info.origin});
+  try{
+    globalThis.dispatchEvent(new CustomEvent('ao:canonical-route',{
+      detail:{...info,result}
+    }));
+  }catch{}
+}
+
+function auditDOM(root=document){
+  const nodes=[...root.querySelectorAll(CAPABILITY_SELECTOR)];
+  const mapped=[],local=[],broken=[];
+  for(const el of nodes){
+    const info=explainElement(el);
+    const row={
+      tag:el.tagName?.toLowerCase()||'',
+      text:(el.textContent||'').trim().replace(/\s+/g,' ').slice(0,100),
+      ...info
+    };
+    if(info.mapped)mapped.push(row);
+    else if(info.error)broken.push(row);
+    else local.push(row);
+  }
+  return {
+    version:VERSION,
+    launcherCount:nodes.length,
+    mappedCount:mapped.length,
+    localControlCount:local.length,
+    brokenCount:broken.length,
+    mapped,local,broken
+  };
+}
+
+function qa(){
+  const base=MOD.qa?.()||{};
+  const required=[
+    'prepare','MASS_PREP_BALT_1888','COMM_PREP_LAS_1911','MASS_FOUR_ENDS_LAS_1911',
+    'COMM_THANKS_LAS_1911','CONFESSION_LAS_1911','rosary','confession','benediction',
+    'adoration','first-friday','first-saturday','daily-catechism','calendar','gospel',
+    'settings','sources'
+  ];
+  const routeChecks=required.map(input=>{
+    const r=MOD.resolve(input);
+    return {input,ok:!!r.ok,canonicalId:r.ok?r.id:null,error:r.ok?null:r.error};
+  });
+  return {
+    version:VERSION,
+    registryPass:!!base.pass,
+    routeChecks,
+    routeChecksPass:routeChecks.every(x=>x.ok),
+    captureLayer:'window-legacy-only',
+    newMutationObserverAdded:false,
+    visibleNavigationChanged:false,
+    localControlsDeliberatelyExcluded:[
+      'Home More disclosure',
+      'Prayer Book category/search controls',
+      'Traditional Exercises legacy hub controls',
+      'Eucharistic programmes internal back/programmes navigation',
+      'individual prayer-record links'
+    ],
+    pass:!!base.pass&&routeChecks.every(x=>x.ok)
+  };
+}
+
+globalThis.addEventListener('click',migrateClick,true);
+
+MOD.routeForElement=routeDescriptor;
+MOD.explainElement=explainElement;
+MOD.auditLaunchers=auditDOM;
+MOD.qaLaunchers=qa;
+
+globalThis.AO_LAUNCHER_MIGRATION_V361={
+  version:VERSION,
+  selector:CAPABILITY_SELECTOR,
+  explainElement,
+  auditDOM,
+  qa
+};
+})();
+
+</script>
+<script id="ao-v361-meta">
+window.AO_V361_META={
+ version:'36.1',
+ baseline:'Ad-Orientem-2.0-v36.0-CANONICAL-MODULE-REGISTRY.html',
+ scope:['canonical launcher interception','legacy launcher migration','DOM launcher diagnostics'],
+ registryChanged:false,
+ visibleNavigationChanged:false,
+ contentChanged:false,
+ progressStorageChanged:false,
+ massEngineChanged:false,
+ calendarEngineChanged:false,
+ prayerCorpusChanged:false,
+ newMutationObserverAdded:false
+};
+</script>
+<style id="ao-v37-content-delivery-css">
+body.aoContentV37Open{overflow:hidden}.aoContentV37Backdrop{position:fixed;inset:0;z-index:13050;background:rgba(3,6,10,.82);backdrop-filter:blur(10px);display:flex;align-items:flex-end;justify-content:center}.aoContentV37Panel{width:min(100%,760px);height:min(92dvh,900px);overflow:auto;background:var(--surface-1,#111820);color:var(--text,#f4efe4);border:1px solid var(--border,#29333d);border-radius:24px 24px 0 0;padding:18px 18px calc(30px + env(safe-area-inset-bottom));box-shadow:0 -20px 80px rgba(0,0,0,.45)}.aoContentV37Panel header{position:sticky;top:-18px;z-index:4;margin:-18px -18px 14px;padding:16px 18px 12px;background:color-mix(in srgb,var(--surface-1,#111820) 96%,transparent);border-bottom:1px solid var(--border,#29333d);display:flex;align-items:center;justify-content:space-between;gap:10px}.aoContentV37Panel header small,.aoContentV37Kicker{display:block;color:var(--muted,#9aa4ad);font-size:.67rem;letter-spacing:.12em;text-transform:uppercase}.aoContentV37Panel h2{margin:.15rem 0 0;font-family:var(--font-display,serif)}.aoContentV37Close{width:42px;height:42px;border-radius:50%;border:1px solid var(--border,#29333d);background:transparent;color:inherit;font-size:1.35rem}.aoContentV37Intro{margin:0 0 14px;padding:12px;border-left:3px solid var(--liturgical,#8e1d2c);background:var(--surface-2,#17212b);line-height:1.45}.aoContentV37Grid{display:grid;gap:9px}.aoContentV37Row{display:grid;grid-template-columns:minmax(0,1.5fr) auto;gap:10px;align-items:start;border:1px solid var(--border,#29333d);border-radius:14px;padding:12px;background:var(--surface-2,#17212b)}.aoContentV37Row b{display:block;margin-bottom:3px}.aoContentV37Row small{display:block;color:var(--muted,#9aa4ad);line-height:1.4}.aoContentV37Badge{white-space:nowrap;border:1px solid var(--border,#29333d);border-radius:999px;padding:4px 8px;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase}.aoContentV37Badge.ready,.aoContentV37Badge.cached{border-color:#587b63}.aoContentV37Badge.loading,.aoContentV37Badge.partial{border-color:#8b6d3f}.aoContentV37Badge.error,.aoContentV37Badge.unavailable{border-color:#8b4e56}.aoContentV37Section{margin:18px 0}.aoContentV37Section h3{font-family:var(--font-display,serif);margin:0 0 8px}.aoContentV37Actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.aoContentV37Actions button{min-height:42px;padding:0 12px;border:1px solid var(--border,#29333d);border-radius:11px;background:transparent;color:inherit}.aoContentV37Actions .primary{background:var(--liturgical,#8e1d2c);border-color:transparent}.aoContentV37Mono{font:11px ui-monospace,SFMono-Regular,Consolas,monospace;word-break:break-word;color:var(--muted,#9aa4ad)}.aoV37SourcesCard{margin:12px 0;padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--surface-1)}.aoV37SourcesCard button{min-height:42px;border-radius:11px;border:1px solid var(--liturgical-border);background:var(--liturgical-soft);color:var(--text);padding:0 12px;font-weight:700}.aoV37TerminalError{padding:12px;border:1px solid color-mix(in srgb,#9a4d59 55%,var(--border));border-radius:12px;background:color-mix(in srgb,#9a4d59 9%,var(--surface-1));line-height:1.45}
+</style>
+
+<!-- AO v43.33: canonical icon ownership registry. Renderers consume this directly; no timer/retry decorators. -->
+<style id="ao-v4333-native-icon-ownership-css">
+.aoV4333NativeIcon{width:38px;height:38px;display:block;flex:0 0 auto;overflow:visible;color:var(--liturgical,var(--gold,currentColor));margin:0 0 9px}
+.aoV37CardMain.aoV4333NativeIconized{display:grid;grid-template-columns:42px minmax(0,1fr);column-gap:10px;align-items:start}
+.aoV37CardMain.aoV4333NativeIconized>.aoV4333NativeIcon{grid-column:1;grid-row:1/5;margin:1px 0 0}
+.aoV37CardMain.aoV4333NativeIconized>.type,.aoV37CardMain.aoV4333NativeIconized>strong,.aoV37CardMain.aoV4333NativeIconized>p{grid-column:2}
+.aoGlobalRibbonIcon .aoRibbonSprite{width:31px;height:31px;display:block;overflow:visible}
+#ao-global-ribbon{z-index:15680!important}
+@media(max-width:430px){.aoV4333NativeIcon{width:34px;height:34px}.aoV37CardMain.aoV4333NativeIconized{grid-template-columns:38px minmax(0,1fr);column-gap:8px}}
+</style>
+<script id="ao-v4333-icon-registry-js">
+(()=>{'use strict';
+ const NS='http://www.w3.org/2000/svg';
+ const ROUTE_MAP=Object.freeze({"pray.adoration":"ao-rich-adoration","pray.rosary":"ao-rich-rosary","pray.angelus_regina":"ao-rich-angelus","programme.first_saturday":"ao-rich-immaculate-heart","programme.first_friday":"ao-rich-sacred-heart","pray.stations":"ao-rich-stations","pray.confession":"ao-rich-confession","pray.library":"ao-rich-prayer-library","mass.prepare":"ao-rich-mass-preparation-thanksgiving","mass.communion_prepare":"ao-rich-eucharistic-life","mass.thanksgiving":"ao-rich-mass-preparation-thanksgiving","learn.mass":"ao-rich-guides"});
+ const PB_MAP=Object.freeze({"confession":"ao-rich-confession","rosary":"ao-rich-rosary","angelus":"ao-rich-angelus","stations":"ao-rich-stations"});
+ const RIBBON_MAP=Object.freeze({"home":"ao-rich-recollection","pray":"ao-rich-prayer-library","learn":"ao-refined-study","calendar":"ao-refined-calendar-upcoming"});
+ const COMING_MAP=Object.freeze({"calendar":"ao-refined-calendar-upcoming","rosary":"ao-rich-rosary","mass":"ao-rich-mass-preparation-thanksgiving","angelus":"ao-rich-angelus","exam":"ao-rich-examination-of-conscience","heart":"ao-rich-sacred-heart","marian":"ao-rich-our-lady-marian-devotions","church":"ao-refined-church","prayer":"ao-refined-pray-now","morning":"ao-rich-morning-offering","evening":"ao-rich-night-prayer","stations":"ao-rich-stations"});
+ function symbolExists(id){return !!id&&!!document.getElementById(id)}
+ function markup(id,cls='aoV4333NativeIcon'){return id?`<svg class="${cls}" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><use href="#${id}"></use></svg>`:''}
+ function iconForRoute(route,cls='aoV4333NativeIcon'){const id=ROUTE_MAP[route];return id?markup(id,cls):''}
+ function svgNode(id,cls='aoV4333NativeIcon'){if(!id)return null;const svg=document.createElementNS(NS,'svg');svg.setAttribute('class',cls);svg.setAttribute('viewBox','0 0 128 128');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');const use=document.createElementNS(NS,'use');use.setAttribute('href','#'+id);svg.appendChild(use);return svg}
+ globalThis.AO_ICON_REGISTRY_V4333=Object.freeze({version:'43.33',routeMap:ROUTE_MAP,pbMap:PB_MAP,ribbonMap:RIBBON_MAP,comingMap:COMING_MAP,markup,iconForRoute,svgNode,symbolExists});
+})();
+</script>
+<script id="ao-v37-content-delivery-js">
+(()=>{'use strict';
+const VERSION='v37-content-delivery';
+const CACHE_PREFIX='ao2:content-v37:';
+const DAILY_TTL=48*60*60*1000;
+const MEMORY=new Map();
+const STATUS=new Map();
+const DAILY_DOCS=new Map();
+let currentDaily=null,lastDailyKey='',prefetchedTomorrow=null,storeUnsub=null,booted=false,diagOpen=false;
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const now=()=>Date.now();
+const state=()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()||null;
+const lang=()=>state()?.language==='fr'?'fr':'en';
