@@ -1,7 +1,7 @@
 {
   "schema": "ao-v1.83-reader-map-recovery-v1",
-  "version": "1.1.0",
-  "status": "PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER",
+  "version": "1.2.0",
+  "status": "PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER__NON_BLOCKING_HISTORICAL_REFERENCE",
   "lineage": {
     "v180LiveCards": 38,
     "v181LiveCards": 48,
@@ -9,10 +9,12 @@
     "v183CanonicalMacros": 30,
     "authoritativeRuntimeLabel": "v1.83 MERGE GATE"
   },
-  "purpose": "Preserve only recovered evidence needed to reconstruct the frozen v1.83 48-card LIVE reader. This file is not a reader map and must never be used to render or certify parity.",
+  "purpose": "Preserve recovered historical evidence about the frozen v1.83 48-card LIVE reader for compatibility and audit. This file is not a render map and is not release authority for the certified source-first LIVE runtime.",
   "currentR17": {
-    "nativeSectionCards": 30,
-    "replacementStatus": "BLOCKED_UNTIL_AUTHORITATIVE_48_CARD_MAP"
+    "nativeSectionCards": 39,
+    "canonicalMacros": 30,
+    "sourceFirstCanonSegments": 14,
+    "replacementStatus": "SOURCE_FIRST_LIVE_CERTIFIED__HISTORICAL_48_NON_BLOCKING"
   },
   "recoveredSemanticSplits": [
     {
@@ -203,18 +205,18 @@
     "Do not synthesize 48 cards by arbitrarily subdividing the current 30 R17 cards.",
     "Do not back-port the later v1.87 51-card architecture as though it were v1.83.",
     "Do not assign v1.83 card IDs, full block ranges, or cue ranges that are not recovered from donor evidence.",
-    "Do not switch the reader gate away from LEGACY because this ledger exists.",
     "Do not treat triangulated semantic boundaries as recovered v1.83 card IDs or full ranges.",
-    "Do not mark the tenth Canon split recovered from later v1.87/v1.89/v0.x granularity without an exact lineage delta."
+    "Do not mark the tenth Canon split recovered from later v1.87/v1.89/v0.x granularity without an exact lineage delta.",
+    "Do not use this historical ledger to demote, replace, or re-block the certified source-first LIVE runtime."
   ],
   "recoveryAcceptance": [
     "Recover v1.81 or v1.83 donor bytes, or an exact contemporaneous enumeration of all 48 cards.",
     "Bind every recovered card to canonical macro/block/cue ownership.",
     "Prove exactly 48 ordered LIVE cards with complete, non-overlapping coverage.",
     "Keep Host and Chalice consecration/elevation independently testable.",
-    "Only after the exact map passes may R17 LIVE structure be replaced.",
     "Preserve C0173→C0174 and C0180→C0181 as explicit elevation gates.",
-    "Preserve the v1.83 Gradual repair: B021 on the Gradual surface, B022 not merged into it, and B023 begins Munda cor meum."
+    "Preserve the v1.83 Gradual repair: B021 on the Gradual surface, B022 not merged into it, and B023 begins Munda cor meum.",
+    "Any future exact v1.83 48-card recovery remains compatibility evidence and must not override the certified source-first LIVE runtime without a separate architecture decision."
   ],
   "recoveredRuntimeRepairs": {
     "v181AuditFindings": [
@@ -329,5 +331,12 @@
       ],
       "candidatePolicy": "Later projection boundaries remain candidate-only until a contemporaneous v1.80/v1.81/v1.83 artifact or an exact version delta uniquely identifies the historical split."
     }
+  },
+  "releaseAuthority": false,
+  "runtimePolicy": {
+    "authoritativeLiveStructure": "SOURCE_FIRST_39_STEP_RUNTIME",
+    "historical48RequiredForRelease": false,
+    "exactHistorical48RecoveryMayInformCompatibilityOnly": true,
+    "mayOverrideCertifiedSourceFirstRuntime": false
   }
 }
