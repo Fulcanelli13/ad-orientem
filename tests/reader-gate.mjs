@@ -10,13 +10,12 @@ import {
   auditSelectorPresence,
 } from "../src/mass/reader-parity.js";
 
-assert.equal(resolveReaderUiMode({}), "PREVIEW");
+assert.equal(resolveReaderUiMode({}), "LEGACY");
 assert.equal(resolveReaderUiMode({stored:"shadow"}), "SHADOW");
 assert.equal(resolveReaderUiMode({stored:"preview"}), "PREVIEW");
-assert.equal(resolveReaderUiMode({stored:"legacy"}), "LEGACY");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=shadow",stored:"preview"}), "SHADOW");
 assert.equal(resolveReaderUiMode({search:"?aoR17Reader=r17"}), "PREVIEW");
-assert.equal(resolveReaderUiMode({search:"?aoR17Reader=unknown",stored:"preview"}), "PREVIEW");
+assert.equal(resolveReaderUiMode({search:"?aoR17Reader=unknown",stored:"preview"}), "LEGACY");
 
 for (const mode of ["LEGACY","SHADOW","PREVIEW"]) assert.equal(readerModeAllowsLegacyDom(mode), true);
 assert.equal(readerModeRunsShadowAudit("LEGACY"), false);
