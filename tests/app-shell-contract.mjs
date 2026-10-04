@@ -42,6 +42,22 @@ function host({ route = "home", confirm = true } = {}) {
 }
 
 {
+  const h = host();
+  h.hasResumableMass = () => true;
+  h.openDomain = (id) => { h.calls.push(`domain:${id}`); return true; };
+  const shell = createAppShellController({ host: h });
+  const nav = await shell.go("mass");
+  assert.equal(nav.ok, true);
+  assert.equal(nav.resumedMass, true);
+  assert.equal(shell.getActive(), "mass");
+  assert.deepEqual(
+    h.calls,
+    ["dismiss-settings", "defer", "domain:mass"],
+    "resumable Mass navigation must bypass destructive hard-Home reset",
+  );
+}
+
+{
   const h = host({ route: "live", confirm: false });
   const shell = createAppShellController({ host: h, initialSurface: "mass" });
   const nav = await shell.go("calendar");
