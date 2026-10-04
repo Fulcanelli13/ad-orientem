@@ -1,0 +1,500 @@
+  .replace(/\\[a-z0-9]+\*/gi,'').replace(/\\[a-z0-9]+\s+/gi,'').replace(/\s+/g,' ').trim();
+}
+function aoRParseUsfm(text,ch){
+ const v={};let c=null,n=null;
+ for(const raw of String(text||'').split(/\r?\n/)){
+   const line=raw.trim();let m=line.match(/^\\c\s+(\d+)/);
+   if(m){c=+m[1];n=null;continue} if(c!==ch)continue;
+   m=line.match(/^\\v\s+(\d+)[a-z]?\s+(.*)$/i);
+   if(m){n=+m[1];v[n]=aoRStripUsfm(m[2]);continue}
+   if(n&&line&&!line.startsWith('\\'))v[n]+=' '+aoRStripUsfm(line);
+ }
+ return v;
+}
+async function aoRLoadDrc(book,ch){
+ const key=`${book}:${ch}`;if(aoRDrcChapterCache.has(key))return aoRDrcChapterCache.get(key);
+ try{const j=JSON.parse(localStorage.getItem(AO_R_CACHE_PREFIX+'drc:'+key)||'null');if(j?.verses){aoRDrcChapterCache.set(key,j);return j}}catch{}
+ const file=AO_R_DRC_FILES[book];if(!file)throw new Error('No Douay-Rheims source configured for '+book);
+ let raw=aoRDrcBookCache.get(book);
+ if(!raw){const r=await fetch(AO_R_DRC_BASE+file.replaceAll('[','%5B').replaceAll(']','%5D'),{cache:'force-cache'});if(!r.ok)throw new Error('Scripture source '+r.status);raw=await r.text();aoRDrcBookCache.set(book,raw)}
+ const result={book,chapter:ch,verses:aoRParseUsfm(raw,ch),edition:'Douay-Rheims · Challoner'};
+ if(!Object.keys(result.verses).length)throw new Error('Chapter unavailable');
+ aoRDrcChapterCache.set(key,result);try{localStorage.setItem(AO_R_CACHE_PREFIX+'drc:'+key,JSON.stringify(result))}catch{}
+ return result;
+}
+async function aoREnsureFrChapters(){
+ if(aoRFrChapters?.chapters)return aoRFrChapters;
+ try{const j=JSON.parse(localStorage.getItem(AO_R_CACHE_PREFIX+'crampon-chapters')||'null');if(j?.chapters){aoRFrChapters=j;return j}}catch{}
+ const r=await fetch(AO_R_CRAMPTON_CHAPTERS,{cache:'force-cache'});if(!r.ok)throw new Error('Crampon source '+r.status);
+ const j=await r.json();if(!j?.chapters)throw new Error('Crampon corpus invalid');
+ aoRFrChapters=j;try{localStorage.setItem(AO_R_CACHE_PREFIX+'crampon-chapters',JSON.stringify(j))}catch{}return j;
+}
+async function aoRLoadFr(book,ch){
+ const c=await aoREnsureFrChapters();
+ if(book==='Judith'&&ch===13)throw new Error('Crampon context for this chapter is not normalized in the locked corpus.');
+ const sourceCh=(book==='Psalm'&&ch===44)?45:(book==='Psalm'&&ch===131)?132:ch;
+ const rows=c.chapters?.[book]?.[String(sourceCh)];if(!Array.isArray(rows))throw new Error('Crampon chapter unavailable');
+ const verses={};rows.forEach(r=>{const n=+r.verse;if(Number.isInteger(n)&&String(r.text||'').trim())verses[n]=String(r.text).trim()});
+ return {book,chapter:ch,verses,edition:'Crampon 1923'};
+}
+async function aoRLoadChapter(book,ch){const svc=window.AO_RUNTIME_V8?.scriptureService;if(svc){try{const ref=`${book} ${ch}:1`,d=await svc.load('scripture',{en:ref,fr:ref,lat:ref},{contextOnly:true}),vern=lang()==='fr'?(d?.frenchChapter||[]):(d?.englishChapter||[]),latin=d?.latinChapter||[],toMap=rows=>Object.fromEntries(rows.map(v=>[+v.verse,String(v.text||v.value||'')]));return {book,chapter:+ch,verses:toMap(vern),latinVerses:toMap(latin),edition:lang()==='fr'?'Crampon 1923':'Douay-Rheims',latinEdition:'Vulgata Clementina',errors:d?.errors||[]}}catch(e){}}return lang()==='fr'?aoRLoadFr(book,ch):aoRLoadDrc(book,ch)}
+async function aoREnsureFrCues(){
+ if(aoRFrCues?.cues)return aoRFrCues;
+ try{const j=JSON.parse(localStorage.getItem(AO_R_CACHE_PREFIX+'crampon-cues')||'null');if(j?.cues){aoRFrCues=j;return j}}catch{}
+ const r=await fetch(AO_R_CRAMPTON_CUES,{cache:'force-cache'});if(!r.ok)throw new Error('Crampon cue source '+r.status);
+ const j=await r.json();if(!j?.cues)throw new Error('Crampon cues invalid');
+ aoRFrCues=j;try{localStorage.setItem(AO_R_CACHE_PREFIX+'crampon-cues',JSON.stringify(j))}catch{}return j;
+}
+function aoRCueText(step){
+ const cue=step?.cue;if(!cue)return null;
+ if(lang()==='fr'&&aoRFrCues?.cues?.[step.id]?.[step.bead-1])return {...cue,excerpt:aoRFrCues.cues[step.id][step.bead-1],edition:'Crampon 1923'};
+ return {...cue,edition:'Douay-Rheims'};
+}
+function aoRModal(){
+ let m=document.getElementById('ao-r-depth-modal');if(m)return m;
+ m=document.createElement('div');m.id='ao-r-depth-modal';m.className='ao-r-depth-modal';m.setAttribute('aria-hidden','true');
+ m.innerHTML=`<section class="ao-r-depth-panel" role="dialog" aria-modal="true"><header><div><small id="ao-r-depth-kicker"></small><h2 id="ao-r-depth-title"></h2><p id="ao-r-depth-sub"></p></div><button type="button" data-ao-r-close aria-label="${t('Close','Fermer')}">×</button></header><div class="ao-r-depth-scroll" id="ao-r-depth-body"></div><footer id="ao-r-depth-footer"></footer></section>`;
+ document.body.appendChild(m);m.querySelector('[data-ao-r-close]').onclick=aoRCloseDepth;m.onclick=e=>{if(e.target===m)aoRCloseDepth()};return m;
+}
+let aoRDepthState=null;
+function aoROpenDepth(trigger){
+ const m=aoRModal();aoRDepthState=aoRDepthState||{};aoRDepthState.trigger=trigger||document.activeElement;
+ m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.classList.add('ao-r-depth-open');m.querySelector('[data-ao-r-close]')?.focus();
+}
+function aoRCloseDepth(){
+ const m=document.getElementById('ao-r-depth-modal');if(!m)return;
+ m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.classList.remove('ao-r-depth-open');
+ const f=aoRDepthState?.trigger;aoRDepthState=null;if(f&&document.contains(f))f.focus();
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('ao-r-depth-modal')?.classList.contains('open'))aoRCloseDepth()});
+async function aoROpenContext(mid,cue,trigger){
+ const ctx=aoRContextFor(mid,cue);if(!ctx)return;
+ const m=aoRModal(),body=m.querySelector('#ao-r-depth-body'),foot=m.querySelector('#ao-r-depth-footer');
+ m.querySelector('#ao-r-depth-kicker').textContent=t('Scripture in context','Écriture dans son contexte');
+ m.querySelector('#ao-r-depth-title').textContent=rosaryNames()[S.rosarySet]?.[Math.max(0,labRosaryIds(S.rosarySet).indexOf(mid))]||mid;
+ m.querySelector('#ao-r-depth-sub').textContent=cue.reference||'';
+ body.innerHTML=`<div class="ao-r-loading">${t('Opening the surrounding passage…','Ouverture du passage environnant…')}</div>`;foot.innerHTML='';
+ aoRDepthState={kind:'context',ctx,cue,trigger,full:false,chapter:null};aoROpenDepth(trigger);
+ try{
+   const ch=await aoRLoadChapter(ctx.book,ctx.chapter);if(!aoRDepthState||aoRDepthState.ctx!==ctx)return;
+   aoRDepthState.chapter=ch;aoRRenderContext();
+ }catch(e){
+   body.innerHTML=`<div class="ao-r-error"><strong>${t('Context is not available right now.','Le contexte n’est pas disponible pour le moment.')}</strong><span>${esc(String(e.message||e))}</span></div>`;
+ }
+}
+function aoRRenderContext(){
+ const st=aoRDepthState;if(!st?.chapter)return;
+ const {ctx,chapter}=st,nums=Object.keys(chapter.verses||{}).map(Number).sort((a,b)=>a-b),latNums=Object.keys(chapter.latinVerses||{}).map(Number).sort((a,b)=>a-b);
+ const start=st.full?nums[0]:ctx.start,end=st.full?nums.at(-1):ctx.end;
+ const vis=nums.filter(v=>v>=start&&v<=end),latStart=st.full?(latNums[0]??start):start,latEnd=st.full?(latNums.at(-1)??end):end,latVis=latNums.filter(v=>v>=latStart&&v<=latEnd),body=document.getElementById('ao-r-depth-body'),foot=document.getElementById('ao-r-depth-footer');
+ const verseBlock=(rows,data)=>`<div class="ao-r-verses">${rows.map(v=>`<p class="${v>=ctx.verseStart&&v<=ctx.verseEnd?'current':''}"><span>${v}</span>${esc(data[v]||'')}</p>`).join('')}</div>`;
+ body.innerHTML=`<div class="ao-r-context-lang">LATIN · ${esc(chapter.latinEdition||'Vulgata Clementina')}</div>${latVis.length?verseBlock(latVis,chapter.latinVerses):`<p class="ao-r-error">Latin context unavailable.</p>`}<div class="ao-r-context-lang">${lang()==='fr'?'FRANÇAIS':'ENGLISH'} · ${esc(chapter.edition||'')}</div>${verseBlock(vis,chapter.verses||{})}`;
+ foot.innerHTML=`<span>${esc(chapter.latinEdition||'Vulgata Clementina')} · ${esc(chapter.edition||'')}</span><button type="button" data-ao-r-full>${st.full?t('Return to passage','Retour au passage'):t('Read full chapter','Lire le chapitre entier')}</button>`;
+ foot.querySelector('[data-ao-r-full]').onclick=()=>{st.full=!st.full;aoRRenderContext()};
+}
+
+/* Per-bead commentary — mapped 200/200 in the Lab-ora source corpus. */
+function aoRCueKey(mid,cue){return cue&&+cue.bead?`${mid}.b${+cue.bead}`:''}
+function aoRCommentaryFor(mid,cue){return AO_R_COMMENTARY_MAP[aoRCueKey(mid,cue)]||null}
+function aoRCatenaCacheKey(id){return AO_R_CACHE_PREFIX+'catena:'+id}
+async function aoRLoadCatena(ids){
+ const out={},byGospel=new Map();
+ for(const id of ids){
+  if(aoRCatenaCache.has(id)){out[id]=aoRCatenaCache.get(id);continue}
+  try{const j=JSON.parse(localStorage.getItem(aoRCatenaCacheKey(id))||'null');if(j?.id){aoRCatenaCache.set(id,j);out[id]=j;continue}}catch{}
+  const meta=AO_R_CATENA_META[id];if(!meta)continue;
+  if(!byGospel.has(meta.gospel))byGospel.set(meta.gospel,[]);byGospel.get(meta.gospel).push(id);
+ }
+ for(const [gospel] of byGospel){
+   const needed=new Set(Object.entries(AO_R_CATENA_META).filter(([,m])=>m.gospel===gospel).map(([id])=>id));
+   const r=await fetch(AO_R_CATENA_BASE+gospel+'.jsonl',{cache:'force-cache'});if(!r.ok)throw new Error('Catena source '+r.status);
+   for(const line of (await r.text()).split(/\r?\n/)){if(!line.trim())continue;let n;try{n=JSON.parse(line)}catch{continue}if(!needed.has(n.id))continue;
+     const clean={id:n.id,citation:n.citation||AO_R_CATENA_META[n.id]?.citation||'',lemma:n.lemma||'',text:n.text||'',segments:Array.isArray(n.segments)?n.segments.map(s=>({father:s.father||'',text:s.text||''})):[]};
+     aoRCatenaCache.set(n.id,clean);out[n.id]=clean;try{localStorage.setItem(aoRCatenaCacheKey(n.id),JSON.stringify(clean))}catch{}
+   }
+ }
+ return ids.map(id=>out[id]).filter(Boolean);
+}
+function aoRRenderCatena(nodes){
+ const note=lang()==='fr'?`<p class="ao-r-lang-note">${t('The source identity is preserved. These first-hand Catena Aurea extracts are currently displayed in the public-domain English Newman/Oxford translation; the Rosary mystery commentary itself remains available in French.','L’identité de la source est conservée. Ces extraits de première main de la Catena Aurea sont actuellement affichés dans la traduction anglaise publique Newman/Oxford ; le commentaire général du mystère reste disponible en français.')}</p>`:'';
+ return note+nodes.map(n=>`<section class="ao-r-commentary"><h3>${esc(n.citation||'Catena Aurea')}</h3>${n.lemma?`<blockquote>${esc(n.lemma)}</blockquote>`:''}${(n.segments?.length?n.segments:[{father:'Catena Aurea',text:n.text||''}]).map((s,i)=>`<details ${i===0?'open':''}><summary>${esc(s.father||'Patristic source')}</summary><p>${esc(s.text||'')}</p></details>`).join('')}</section>`).join('');
+}
+async function aoROpenCommentary(mid,cue,trigger){
+ const map=aoRCommentaryFor(mid,cue);if(!map)return;
+ const m=aoRModal(),body=m.querySelector('#ao-r-depth-body'),foot=m.querySelector('#ao-r-depth-footer');
+ m.querySelector('#ao-r-depth-kicker').textContent=t('Traditional commentary','Commentaire traditionnel');
+ m.querySelector('#ao-r-depth-title').textContent=rosaryNames()[S.rosarySet]?.[Math.max(0,labRosaryIds(S.rosarySet).indexOf(mid))]||mid;
+ m.querySelector('#ao-r-depth-sub').textContent=cue.reference||'';
+ body.innerHTML=`<div class="ao-r-loading">${t('Opening commentary…','Ouverture du commentaire…')}</div>`;foot.innerHTML='';
+ aoRDepthState={kind:'commentary',mid,cue,map,trigger};aoROpenDepth(trigger);
+ try{
+   if(map.kind==='catena_aurea'){
+     const nodes=await aoRLoadCatena(map.pericope_ids||[]);
+     body.innerHTML=nodes.length?aoRRenderCatena(nodes):`<div class="ao-r-error">${t('No mapped commentary text was returned.','Aucun texte de commentaire cartographié n’a été renvoyé.')}</div>`;
+     foot.innerHTML='<span>Catena Aurea · Newman/Oxford 1841–45</span>';
+   }else{
+     const e=map.entry||{},meta=[e.work,e.locus].filter(Boolean).join(' · ');
+     body.innerHTML=`${lang()==='fr'?`<p class="ao-r-lang-note">${t('','Cet extrait de source de première main est conservé dans la langue disponible ; il n’est pas traduit silencieusement.')}</p>`:''}<article class="ao-r-commentary"><h3>${esc(e.author||map.source||t('Traditional Catholic commentary','Commentaire catholique traditionnel'))}</h3>${meta?`<small>${esc(meta)}</small>`:''}<p>${esc(e.verbatim_excerpt||'')}</p>${e.source_url?`<a href="${esc(e.source_url)}" target="_blank" rel="noopener">${t('Source provenance','Provenance de la source')} ↗</a>`:''}</article>`;
+     foot.innerHTML=`<span>${esc(map.source||'Traditional Catholic source')}</span>`;
+   }
+ }catch(e){body.innerHTML=`<div class="ao-r-error"><strong>${t('Commentary is not available right now.','Le commentaire n’est pas disponible pour le moment.')}</strong><span>${esc(String(e.message||e))}</span></div>`}
+}
+
+/* Upgrade the displayed cue and the mystery intro to expose Lab-ora's two depth actions. */
+labRosaryPrayer=function(step,idx,total){
+ const rp=D.rosaryPrayers,l=lang(),pair=rp[l][step.key],lapair=rp.la[step.key],title=pair?.[0]||step.key,text=pair?.[1]||'',la=lapair?.[1]||'';
+ const c=aoRCueText(step),cue=c?`<div class="lab-scripture-cue"><strong>${esc(c.reference||t('Scripture','Écriture'))} · ${esc(c.edition||'')}</strong>${esc(c.excerpt||'')}</div><div class="lab-scripture-actions"><button type="button" data-ao-r-context="${esc(step.id)}" data-ao-r-bead="${step.bead}">${t('Read passage','Lire le passage')}</button><button type="button" data-ao-r-commentary="${esc(step.id)}" data-ao-r-bead="${step.bead}">${t('Commentary','Commentaire')}</button></div>`:'';
+ const count=step.key==='ave'&&step.bead?`<div class="lab-prayer-count">${t('Hail Mary','Ave Maria')} <strong>${step.bead}</strong> / 10</div>`:'';
+ return `<article class="lab-prayer-sheet"><p class="rubric">${step.phase==='opening'?t('Opening prayers','Prières d’ouverture'):labRosarySetLabel(S.rosarySet)}</p><h2>${esc(title)}</h2>${count}${cue}${labFlip(la,text,'rosary-'+idx)}</article>`;
+};
+labRosaryContemplation=function(step){
+ const info=AO_ROSARY_DEPTH[step.id],l=lang(),names=rosaryNames()[S.rosarySet],name=names[step.mi],desc=l==='fr'?(info?.description_fr||info?.description):(info?.description||''),fruit=l==='fr'?(info?.fruit_fr||info?.fruit):(info?.fruit||''),comm=l==='fr'?(info?.commentary_fr||info?.commentary_en):(info?.commentary_en||''),cue=info?.cues?.[0];
+ const actions=cue?`<div class="lab-scripture-actions"><button type="button" data-ao-r-context="${esc(step.id)}" data-ao-r-bead="1">${t('Read passage','Lire le passage')}</button><button type="button" data-ao-r-commentary="${esc(step.id)}" data-ao-r-bead="1">${t('Commentary','Commentaire')}</button></div>`:'';
+ return `<article class="lab-contemplation"><div class="kicker">${t('Mystery','Mystère')} ${step.mi+1} / 5</div><h2>${esc(name)}</h2><div class="principal"><strong>${esc(info?.primary_passage||'')}</strong><br>${esc(desc)}</div>${actions}<div class="fruit">${t('Fruit / grace','Fruit / grâce')}: ${esc(fruit)}</div><p class="commentary">${esc(comm)}</p><div class="lab-source-row">${info?.source_url?`<a href="${esc(info.source_url)}" target="_blank" rel="noopener">${esc(info.source_label||t('Source','Source'))} ↗</a>`:''}${info?.traditional_commentary_url?`<a href="${esc(info.traditional_commentary_url)}" target="_blank" rel="noopener">${esc(info.traditional_commentary_label||t('Traditional commentary','Commentaire traditionnel'))} ↗</a>`:''}</div></article>`;
+};
+
+/* Keep the global mode visible in the prayer book and Rosary player. */
+const aoRRenderHubBase=renderHub,aoRRenderPrayerBase=renderPrayer,aoRRenderRosaryBase=renderRosary,aoRRenderAngelusBase=renderAngelus,aoRRenderStationsBase=renderStations,aoRRenderBenedictionBase=renderBenediction;
+renderHub=function(){return aoRInjectModeBar(aoRRenderHubBase())}
+renderPrayer=function(){return aoRInjectModeBar(aoRRenderPrayerBase())}
+renderRosary=function(){return aoRInjectModeBar(aoRRenderRosaryBase())}
+renderAngelus=function(){return aoRInjectModeBar(aoRRenderAngelusBase())}
+renderStations=function(){return aoRInjectModeBar(aoRRenderStationsBase())}
+renderBenediction=function(){return aoRInjectModeBar(aoRRenderBenedictionBase())}
+
+/* Add behaviour on top of the existing Lab-ora binder. */
+const aoRBindBase=bind;
+bind=function(){
+ aoRBindBase();
+ root.querySelectorAll('[data-ao-recitation]').forEach(b=>b.onclick=()=>aoRSetMode(b.dataset.aoRecitation));
+ root.querySelectorAll('[data-ao-r-context]').forEach(b=>b.onclick=()=>{
+   const mid=b.dataset.aoRContext,bead=+b.dataset.aoRBead,cue=AO_ROSARY_DEPTH[mid]?.cues?.[bead-1];if(cue)aoROpenContext(mid,cue,b);
+ });
+ root.querySelectorAll('[data-ao-r-commentary]').forEach(b=>b.onclick=()=>{
+   const mid=b.dataset.aoRCommentary,bead=+b.dataset.aoRBead,cue=AO_ROSARY_DEPTH[mid]?.cues?.[bead-1];if(cue)aoROpenCommentary(mid,cue,b);
+ });
+ /* In French, load the source-locked Crampon cue corpus as soon as a Rosary session exists. */
+ if(lang()==='fr'&&S.rosarySet&&!aoRFrCues)aoREnsureFrCues().then(()=>{if(S.view==='rosary')render()}).catch(()=>{});
+};
+
+/* ===== Unified RC2 — normalized module guides & preferences ===== */
+const RC2_PREF_KEY='ao-unified-rc2-module-prefs';
+function rc2ReadPrefs(){try{return JSON.parse(localStorage.getItem(RC2_PREF_KEY)||'{}')}catch{return {}}}
+function rc2WritePrefs(){try{localStorage.setItem(RC2_PREF_KEY,JSON.stringify({rosaryFatima:S.rosaryFatima!==false,rosaryScripture:S.rosaryScripture!==false,rosaryCommentary:S.rosaryCommentary!==false,stationMode:S.stationMode||'guided',stationStabat:!!S.stationStabat,angelusConclusion:!!S.angelusConclusion,angelusOverride:S.angelusOverride||null}))}catch{}}
+{
+ const p=rc2ReadPrefs();
+ if(typeof p.rosaryFatima==='boolean')S.rosaryFatima=p.rosaryFatima;
+ if(typeof p.rosaryScripture==='boolean')S.rosaryScripture=p.rosaryScripture;else if(S.rosaryScripture===undefined)S.rosaryScripture=true;
+ if(typeof p.rosaryCommentary==='boolean')S.rosaryCommentary=p.rosaryCommentary;else if(S.rosaryCommentary===undefined)S.rosaryCommentary=true;
+ if(p.stationMode==='guided'||p.stationMode==='simple')S.stationMode=p.stationMode;
+ if(typeof p.stationStabat==='boolean')S.stationStabat=p.stationStabat;
+ if(typeof p.angelusConclusion==='boolean')S.angelusConclusion=p.angelusConclusion;
+ if(['angelus','regina'].includes(p.angelusOverride))S.angelusOverride=p.angelusOverride;
+}
+const RC2_GUIDES={
+ rosary:{title:['Holy Rosary','Saint Rosaire'],intro:['A practical guide to the five-decade Rosary: order, contemplation, vocal prayer, source layers and group roles.','Guide pratique du Rosaire de cinq dizaines : ordre, contemplation, prière vocale, sources et rôles en groupe.'],sections:[
+  ['Complete order','Ordre complet','Begin with the Sign of the Cross, Apostles’ Creed, Our Father, three Hail Marys and Glory Be. For each mystery: announce it, pause to contemplate it, then pray one Our Father, ten Hail Marys and the Glory Be. Conclude with the Salve Regina, its versicle/response and the Rosary collect.','Commencez par le Signe de Croix, le Credo des Apôtres, le Notre Père, trois Je vous salue Marie et le Gloria Patri. Pour chaque mystère : annoncez-le, méditez-le brièvement, puis récitez un Notre Père, dix Je vous salue Marie et le Gloria Patri. Concluez par le Salve Regina, son verset/répons et l’oraison du Rosaire.'],
+  ['Traditional cycle and days','Cycle traditionnel et jours','Joyful, Sorrowful and Glorious form the classical fifteen-mystery cycle. The player suggests the inherited weekday pattern while allowing any set to be chosen. Luminous remains available as the optional 2002 addition.','Les mystères joyeux, douloureux et glorieux forment le cycle classique de quinze mystères. Le lecteur suggère l’usage traditionnel des jours de la semaine tout en laissant choisir librement une série. Les lumineux restent disponibles comme ajout facultatif de 2002.'],
+  ['Contemplation, beads and player','Contemplation, grains et lecteur','The screen separates mystery announcement, contemplation and the vocal decade. The ten-bead indicator is a visual aid only; it does not replace the contemplative character of the Rosary.','L’écran sépare l’annonce du mystère, la contemplation et la dizaine vocale. L’indicateur des dix grains est seulement une aide visuelle ; il ne remplace pas le caractère contemplatif du Rosaire.'],
+  ['Scripture and commentary','Écriture et commentaire','Each Hail Mary can carry a Scripture cue. Read passage opens biblical context; Commentary opens the mapped traditional source. These layers are optional and may be hidden for quieter prayer.','Chaque Ave Maria peut porter un repère scripturaire. « Lire le passage » ouvre le contexte biblique ; « Commentaire » ouvre la source traditionnelle cartographiée. Ces couches sont facultatives et peuvent être masquées pour une prière plus sobre.'],
+  ['Individual / Group and ℣./℟.','Individuel / Groupe et ℣./℟.','Intrinsic versicles and responses—especially the Salve Regina conclusion—remain visibly marked even when praying alone. In Group mode the leader/response roles are emphasized; common prayers divide only where the app explicitly defines a customary split.','Les versets et répons propres à la prière — notamment la conclusion du Salve Regina — restent visibles même en prière individuelle. En mode Groupe, les rôles meneur/réponse sont accentués ; les prières communes ne sont divisées que lorsqu’une répartition usuelle est explicitement définie.'],
+  ['Optional additions','Ajouts facultatifs','The Fatima prayer may follow each decade. The Litany of Loreto may be added after the Rosary. Neither is presented as necessary to the older five-decade structure.','La prière de Fatima peut suivre chaque dizaine. Les Litanies de Lorette peuvent être ajoutées après le Rosaire. Aucune n’est présentée comme nécessaire à la structure plus ancienne des cinq dizaines.'] ],sources:[[AO_LINKS.rosaryLeo,'Leo XIII · Iucunda Semper'],[AO_LINKS.rosaryRVM,'Rosarium Virginis Mariae'],[AO_LINKS.fatima,'Fatima Shrine']]},
+ confession:{title:['Confession','Confession'],intro:['This module prepares for the sacrament; it never simulates a confessor, absolution or sacramental judgment.','Ce module prépare au sacrement ; il ne simule jamais le confesseur, l’absolution ni le jugement sacramentel.'],sections:[
+  ['How to use the module','Comment utiliser le module','Use the examination before entering the confessional, then follow the practical sequence: begin simply, confess sins, listen to counsel, express contrition, receive absolution, and give thanks afterward. Marks in the historical examination are session-only.','Utilisez l’examen avant d’entrer au confessionnal, puis suivez la séquence pratique : commencer simplement, accuser les péchés, écouter le conseil, exprimer la contrition, recevoir l’absolution et rendre grâce ensuite. Les marques de l’examen historique restent uniquement en session.'],
+  ['Traditional manner','Manière traditionnelle','Older Roman prayer books commonly use formulas such as Benedic mihi, Pater, quia peccavi. They are venerable forms, not conditions for validity.','Les anciens livres romains emploient couramment des formules telles que Benedic mihi, Pater, quia peccavi. Ce sont des formes vénérables, non des conditions de validité.'],
+  ['Historical exercise vs current discipline','Exercice historique et discipline actuelle','The separate Lasance exercise preserves a historical devotional sequence. Current sacramental law governs what must be confessed and the app keeps those two layers explicitly distinct.','L’exercice séparé de Lasance conserve une séquence dévotionnelle historique. Le droit sacramentel actuel gouverne ce qui doit être confessé et l’application maintient explicitement ces deux couches distinctes.'],
+  ['Privacy','Confidentialité','The app does not transmit or cloud-sync a list of sins. Sensitive examination marks are intentionally temporary and are cleared from the session.','L’application ne transmet ni ne synchronise dans le cloud une liste de péchés. Les marques sensibles de l’examen sont volontairement temporaires et sont effacées de la session.'] ],sources:[[AO_LINKS.confession,'CIC 959–997']]},
+ angelus:{title:['Angelus / Regina Cæli','Angélus / Regina Cæli'],intro:['The module teaches the traditional daily devotion as an actual sequence of versicle, response and prayer, while keeping later customary appendices distinct.','Le module enseigne la dévotion quotidienne traditionnelle comme une véritable séquence de verset, répons et prière, tout en distinguant les appendices coutumiers ultérieurs.'],sections:[
+  ['Angelus order','Ordre de l’Angélus','Three versicle/response pairs are each followed by a Hail Mary; then Ora pro nobis / Ut digni and the concluding collect. The ℣./℟. markers belong to the prayer itself and remain visible in Individual mode.','Trois couples verset/répons sont chacun suivis d’un Je vous salue Marie ; viennent ensuite Ora pro nobis / Ut digni puis l’oraison finale. Les marques ℣./℟. appartiennent à la prière elle-même et restent visibles en mode Individuel.'],
+  ['Regina Cæli order','Ordre du Regina Cæli','In Paschaltide the Regina Cæli replaces the Angelus: two principal versicle/response pairs, Gaude et lætare / Quia surrexit Dominus vere, then the collect.','Au temps pascal, le Regina Cæli remplace l’Angélus : deux couples principaux verset/répons, Gaude et lætare / Quia surrexit Dominus vere, puis l’oraison.'],
+  ['Daily rhythm and season','Rythme quotidien et temps liturgique','The Angelus traditionally marks morning, noon and evening. Regina Cæli replaces it during Paschaltide. Automatic mode follows the app’s liturgical season; the user may override it when needed.','L’Angélus marque traditionnellement le matin, midi et le soir. Le Regina Cæli le remplace au temps pascal. Le mode automatique suit le temps liturgique de l’application ; l’utilisateur peut le modifier au besoin.'],
+  ['Posture and the Incarnation gesture','Posture et geste à l’Incarnation','Kneeling outside Sunday/Paschal exceptions and standing on Sundays or in Paschaltide are documented customs rather than universal liturgical rubrics. At Et Verbum caro factum est a profound bow is documented in papal practice; genuflection also exists in devotional usage.','S’agenouiller hors des exceptions dominicales/pascales et se tenir debout le dimanche ou au temps pascal sont des usages documentés, non des rubriques liturgiques universelles. À Et Verbum caro factum est, une profonde inclination est attestée dans la pratique pontificale ; la génuflexion existe aussi dans l’usage dévotionnel.'],
+  ['Traditional appendix','Appendice traditionnel','The three Gloria Patri, prayer for the faithful departed and Divinum auxilium are retained as a traditional prayer-book conclusion, not as the essential core of the Angelus.','Les trois Gloria Patri, la prière pour les fidèles défunts et Divinum auxilium sont conservés comme conclusion traditionnelle des livres de prières, non comme noyau essentiel de l’Angélus.'],
+  ['Individual / Group','Individuel / Groupe','When alone, pray both ℣. and ℟. yourself. In a group, the leader takes ℣. and the group answers ℟.; the wording and structure do not change between modes.','Seul, récitez vous-même ℣. et ℟. En groupe, le meneur prend ℣. et le groupe répond ℟. ; le texte et la structure ne changent pas selon le mode.'] ],sources:[[AO_LINKS.angelusDir,'Directory on Popular Piety'],[AO_LINKS.threeGlorias,'Raccolta · Pius VII 1815'],[AO_LINKS.angelusBow,'John Paul II · Angelus 1980']]},
+ stations:{title:['Stations of the Cross','Chemin de Croix'],intro:['The traditional XIV Stations use the St Alphonsus form already established in the app, with a choice between Guided and Simple prayer.','Les XIV Stations traditionnelles reprennent la forme de saint Alphonse déjà établie dans l’application, avec choix entre prière Guidée et Simple.'],sections:[
+  ['At each station','À chaque station','Name the station, then pray the fixed versicle and response Adoramus te, Christe / Quia per sanctam Crucem. Guided mode adds the St Alphonsus consideration and prayer; both modes then provide Pater, Ave and Gloria.','Nommez la station, puis récitez le verset et le répons fixes Adoramus te, Christe / Quia per sanctam Crucem. Le mode Guidé ajoute la considération et la prière de saint Alphonse ; les deux modes proposent ensuite Pater, Ave et Gloria.'],
+  ['Movement and posture','Déplacement et posture','In a public Way of the Cross, movement, kneeling and standing follow the actual service and local custom. When praying privately, move physically only when appropriate; the app does not turn local devotional custom into a universal rubric.','Dans un Chemin de Croix public, déplacements, agenouillements et station debout suivent le service réel et l’usage local. En prière privée, ne vous déplacez que si cela convient ; l’application ne transforme pas un usage dévotionnel local en rubrique universelle.'],
+  ['Individual / Group and ℣./℟.','Individuel / Groupe et ℣./℟.','The station versicle and response are intrinsic and remain marked when praying alone. In Group mode the leader takes ℣. and the group answers ℟.','Le verset et le répons de chaque station sont intrinsèques et restent marqués en prière individuelle. En mode Groupe, le meneur prend ℣. et le groupe répond ℟.'],
+  ['Stabat Mater','Stabat Mater','The Latin stanza between stations is optional in this app. It does not stack another required prayer onto the devotion.','La strophe latine entre les stations est facultative dans l’application. Elle n’ajoute pas une nouvelle prière obligatoire à la dévotion.'],  ['Scriptural status','Statut scripturaire','The three falls and Veronica belong principally to received devotional tradition and are not falsely labelled as explicit Gospel episodes.','Les trois chutes et Véronique appartiennent principalement à la tradition dévotionnelle reçue et ne sont pas faussement présentées comme épisodes évangéliques explicites.'] ],sources:[[AO_LINKS.stations,'Directory on Popular Piety']]},
+ benediction:{title:['Benediction','Bénédiction'],intro:['This is a companion to the public Eucharistic devotion actually being celebrated; it never lets a lay user imitate the priest or deacon.','Ceci accompagne la dévotion eucharistique publique réellement célébrée ; il ne permet jamais à un laïc d’imiter le prêtre ou le diacre.'],sections:[
+  ['Sequence','Séquence','The module distinguishes common exposition hymns, adoration and silence, Tantum Ergo, Panem de cælo with its response and collect, the ministerial Benediction itself, customary Divine Praises and reposition.','Le module distingue les hymnes usuels d’exposition, l’adoration et le silence, Tantum Ergo, Panem de cælo avec son répons et son oraison, la bénédiction ministérielle elle-même, les Louanges divines coutumières et la reposition.'],
+  ['What the faithful do','Ce que font les fidèles','Follow the actual service: sing or answer where appropriate, remain silent when the service is silent, and follow the church’s posture and ceremonial. The app is a companion, not an independent rite generator.','Suivez le service réel : chantez ou répondez lorsque cela convient, gardez le silence lorsque le service le demande et suivez la posture et le cérémonial de l’église. L’application est un compagnon, non un générateur de rite indépendant.'],
+  ['Panem de cælo · ℣./℟.','Panem de cælo · ℣./℟.','Panem de cælo praestitisti eis / Omne delectamentum in se habentem is genuine versicle/response structure. The markers remain visible in Individual mode; Group mode emphasizes leader and response.','Panem de cælo praestitisti eis / Omne delectamentum in se habentem forme un véritable verset/répons. Les marques restent visibles en mode Individuel ; le mode Groupe accentue meneur et réponse.'],
+  ['Ministerial action','Action du ministre','At the blessing step the priest or deacon performs the Benediction. The app describes what happens and never provides a control or formula pretending the lay user performs the blessing.','À l’étape de la bénédiction, le prêtre ou le diacre accomplit la bénédiction. L’application décrit ce qui se passe et ne fournit aucun contrôle ni formule laissant croire que l’utilisateur l’accomplit.'] ],sources:[[AO_LINKS.benediction,'Holy See · Eucharistic worship']]}
+};
+function rc2ModeLabel(){return aoRMode()==='group'?t('Group mode','Mode Groupe'):t('Individual mode','Mode Individuel')}
+function rc2Tools(module){return `<div class="rc2ModuleTools"><span class="rc2ModePill">${module==='confession'?t('Personal sacrament','Sacrement personnel'):rc2ModeLabel()}</span><button type="button" data-rc2-guide="${esc(module)}">${t('Guide','Guide')}</button><button type="button" data-rc2-prefs="${esc(module)}">${t('Preferences','Préférences')}</button></div>`}
+function rc2Decorate(markup,module){
+ let cls='rc2Module';if(module==='rosary'){if(S.rosaryScripture===false)cls+=' rc2-no-scripture';if(S.rosaryCommentary===false)cls+=' rc2-no-commentary'}
+ let s=String(markup||'').replace('<div class="pbShell"',`<div class="pbShell ${cls}" data-rc2-module="${esc(module)}"`);
+ const p=s.indexOf('</header>');if(p>=0)s=s.slice(0,p+9)+rc2Tools(module)+s.slice(p+9);return s;
+}
+function rc2CloseSheet(){document.getElementById('rc2-module-sheet')?.remove()}
+function rc2GuideHtml(module){const g=RC2_GUIDES[module];if(!g)return'';const fr=lang()==='fr';return `<p class="rc2SheetIntro">${esc(g.intro[fr?1:0])}</p>${g.sections.map(x=>`<section class="rc2GuideSection"><h3>${esc(x[fr?1:0])}</h3><p>${esc(x[fr?3:2])}</p></section>`).join('')}${g.sources?.length?`<div class="rc2SourceLinks">${g.sources.map(x=>`<a href="${esc(x[0])}" target="_blank" rel="noopener">${esc(x[1])} ↗</a>`).join('')}</div>`:''}`}
+function rc2ModePrefs(){const m=aoRMode();return `<section class="rc2PrefSection"><h3>${t('Recitation mode','Mode de récitation')}</h3><p>${t('Intrinsic ℣./℟. always remain visible. Individual means one person prays both roles; Group emphasizes leader and response. Common prayers divide only where explicitly configured.','Les ℣./℟. intrinsèques restent toujours visibles. Individuel signifie qu’une seule personne récite les deux rôles ; Groupe accentue meneur et réponse. Les prières communes ne sont divisées que lorsqu’elles sont explicitement configurées.')}</p><div class="rc2Segments"><button type="button" class="${m==='individual'?'active':''}" data-rc2-mode="individual">${t('Individual','Individuel')}</button><button type="button" class="${m==='group'?'active':''}" data-rc2-mode="group">${t('Group · ℣./℟.','Groupe · ℣./℟.')}</button></div></section>`}
+function rc2PrefsHtml(module){
+ if(module==='confession')return `<section class="rc2PrefSection"><h3>${t('No recitation mode','Pas de mode de récitation')}</h3><p>${t('Confession is a personal sacrament. Its guided preparation is intentionally not converted into a group prayer mode.','La confession est un sacrement personnel. Sa préparation guidée n’est donc pas transformée en mode de prière de groupe.')}</p></section>`;
+ let h=rc2ModePrefs();
+ if(module==='rosary')h+=`<section class="rc2PrefSection"><h3>${t('Rosary layers','Couches du Rosaire')}</h3><label class="rc2Toggle"><input type="checkbox" data-rc2-toggle="rosaryFatima" ${S.rosaryFatima!==false?'checked':''}><span><strong>${t('Fatima prayer','Prière de Fatima')}</strong><span>${t('Add it after each decade.','L’ajouter après chaque dizaine.')}</span></span></label><label class="rc2Toggle"><input type="checkbox" data-rc2-toggle="rosaryScripture" ${S.rosaryScripture!==false?'checked':''}><span><strong>${t('Scripture cues and passage button','Repères bibliques et bouton de contexte')}</strong><span>${t('Hide these for a quieter vocal-prayer screen.','Les masquer pour un écran de prière vocale plus sobre.')}</span></span></label><label class="rc2Toggle"><input type="checkbox" data-rc2-toggle="rosaryCommentary" ${S.rosaryCommentary!==false?'checked':''}><span><strong>${t('Traditional commentary','Commentaire traditionnel')}</strong><span>${t('Hide commentary controls while retaining the mystery itself.','Masquer les contrôles de commentaire tout en conservant le mystère.')}</span></span></label></section>`;
+ if(module==='stations')h+=`<section class="rc2PrefSection"><h3>${t('Stations presentation','Présentation du Chemin de Croix')}</h3><div class="rc2Segments"><button type="button" class="${S.stationMode==='guided'?'active':''}" data-rc2-station-mode="guided">${t('Guided','Guidé')}</button><button type="button" class="${S.stationMode==='simple'?'active':''}" data-rc2-station-mode="simple">${t('Simple','Simple')}</button></div><label class="rc2Toggle"><input type="checkbox" data-rc2-toggle="stationStabat" ${S.stationStabat?'checked':''}><span><strong>Stabat Mater</strong><span>${t('Optional Latin stanza between stations.','Strophe latine facultative entre les stations.')}</span></span></label></section>`;
+ if(module==='angelus')h+=`<section class="rc2PrefSection"><h3>${t('Angelus form','Forme de l’Angélus')}</h3><label class="rc2Toggle"><input type="checkbox" data-rc2-toggle="angelusConclusion" ${S.angelusConclusion?'checked':''}><span><strong>${t('Traditional three-Gloria conclusion','Conclusion traditionnelle des trois Gloria')}</strong><span>${t('Three Gloria Patri, prayer for the departed and Divinum auxilium.','Trois Gloria Patri, prière pour les défunts et Divinum auxilium.')}</span></span></label><p style="margin-top:12px">${t('Seasonal form','Forme saisonnière')}</p><div class="rc2Segments three"><button type="button" class="${!S.angelusOverride?'active':''}" data-rc2-angelus="auto">${t('Automatic','Automatique')}</button><button type="button" class="${S.angelusOverride==='angelus'?'active':''}" data-rc2-angelus="angelus">Angelus</button><button type="button" class="${S.angelusOverride==='regina'?'active':''}" data-rc2-angelus="regina">Regina Cæli</button></div></section>`;
+ if(module==='benediction')h+=`<p class="rc2FlowNote">${t('The sequence follows the actual public rite; there is deliberately no preference that allows a lay user to perform the ministerial blessing step.','La séquence suit le rite public réel ; aucune préférence ne permet volontairement à un laïc d’accomplir l’étape ministérielle de la bénédiction.')}</p>`;
+ return h;
+}
+function rc2OpenSheet(kind,module,trigger){rc2CloseSheet();const fr=lang()==='fr',g=RC2_GUIDES[module],title=kind==='guide'?(g?.title?.[fr?1:0]||module):t('Preferences','Préférences');const sheet=document.createElement('div');sheet.id='rc2-module-sheet';sheet.className='rc2SheetBackdrop';sheet.innerHTML=`<section class="rc2Sheet" role="dialog" aria-modal="true" aria-labelledby="rc2-sheet-title"><header><div><small>${kind==='guide'?t('Guide','Guide'):t('Module settings','Réglages du module')}</small><strong id="rc2-sheet-title">${esc(title)}</strong></div><button type="button" class="rc2SheetClose" data-rc2-close aria-label="${t('Close','Fermer')}">×</button></header><div class="rc2SheetBody">${kind==='guide'?rc2GuideHtml(module):rc2PrefsHtml(module)}</div></section>`;document.body.appendChild(sheet);sheet._returnFocus=trigger||null;sheet.querySelector('[data-rc2-close]')?.focus();sheet.addEventListener('click',e=>{if(e.target===sheet||e.target.closest?.('[data-rc2-close]')){const r=sheet._returnFocus;rc2CloseSheet();r?.focus?.();return}const b=e.target.closest?.('[data-rc2-mode],[data-rc2-station-mode],[data-rc2-angelus]');if(b){if(b.dataset.rc2Mode)aoRSetMode(b.dataset.rc2Mode);if(b.dataset.rc2StationMode){S.stationMode=b.dataset.rc2StationMode;rc2WritePrefs();render()}if(b.dataset.rc2Angelus){S.angelusOverride=b.dataset.rc2Angelus==='auto'?null:b.dataset.rc2Angelus;rc2WritePrefs();render()}rc2OpenSheet('prefs',module,trigger);return}});sheet.querySelectorAll('[data-rc2-toggle]').forEach(c=>c.onchange=()=>{const k=c.dataset.rc2Toggle;S[k]=c.checked;rc2WritePrefs();render();rc2OpenSheet('prefs',module,trigger)});}
+const rc2RenderRosaryBase=renderRosary,rc2RenderConfessionBase=renderConfession,rc2RenderAngelusBase=renderAngelus,rc2RenderStationsBase=renderStations,rc2RenderBenedictionBase=renderBenediction;
+renderRosary=function(){return rc2Decorate(rc2RenderRosaryBase(),'rosary')};
+renderConfession=function(){return rc2Decorate(rc2RenderConfessionBase(),'confession')};
+renderAngelus=function(){return rc2Decorate(rc2RenderAngelusBase(),'angelus')};
+renderStations=function(){return rc2Decorate(rc2RenderStationsBase(),'stations')};
+renderBenediction=function(){return rc2Decorate(rc2RenderBenedictionBase(),'benediction')};
+const rc2BindBase=bind;
+bind=function(){rc2BindBase();root.querySelectorAll('[data-rc2-guide]').forEach(b=>b.onclick=()=>rc2OpenSheet('guide',b.dataset.rc2Guide,b));root.querySelectorAll('[data-rc2-prefs]').forEach(b=>b.onclick=()=>rc2OpenSheet('prefs',b.dataset.rc2Prefs,b));root.querySelectorAll('[data-pb-fatima],[data-pb-angelus-conclusion],[data-pb-stabat]').forEach(x=>x.addEventListener('change',()=>setTimeout(rc2WritePrefs,0)));root.querySelectorAll('[data-pb-station-mode],[data-ao-recitation]').forEach(x=>x.addEventListener('click',()=>setTimeout(rc2WritePrefs,0)));};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('rc2-module-sheet'))rc2CloseSheet()});
+window.AO_RC2_MODULE_UX={version:'RC2',preferencesKey:RC2_PREF_KEY,openGuide:(m)=>rc2OpenSheet('guide',m),openPreferences:(m)=>rc2OpenSheet('prefs',m)};
+/* ===== End Unified RC2 module normalization ===== */
+
+/* ===== End Rosary depth + response restoration ===== */
+
+/* ===== End direct Lab-ora UI/UX port ===== */
+
+
+/* ===== v41 Rosary bounded interaction API ===== */
+window.AO_ROSARY_V381={
+ version:'41-bridge',
+ getForm:()=>S.rosaryForm==='devotional'?'devotional':'standard',
+ setForm:(v)=>{S.rosaryForm=v==='devotional'?'devotional':'standard';S.rosaryStep=0;render();return true},
+ steps:()=>S.rosarySet?labRosarySteps(S.rosarySet):[],
+ setStep:(n)=>{if(!S.rosarySet)return false;const xs=labRosarySteps(S.rosarySet),v=Math.max(0,Math.min(xs.length-1,Math.trunc(Number(n)||0)));S.rosaryStep=v;render();return true},
+ state:()=>({form:S.rosaryForm==='devotional'?'devotional':'standard',set:S.rosarySet,step:S.rosaryStep,scripture:S.rosaryScripture!==false,commentary:S.rosaryCommentary!==false,fatima:S.rosaryFatima!==false})
+};
+/* ===== end v41 Rosary bounded interaction API ===== */
+})();
+</script>
+<script id="ao-unified-rc2-flow-prefs-js">
+(()=>{'use strict';
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const rt=()=>window.AO_RUNTIME_V8;
+const state=()=>rt()?.store?.getState?.();
+const fr=()=>state()?.language==='fr';
+const tx=(a,b)=>fr()?b:a;
+function close(){document.getElementById('rc2-flow-sheet')?.remove()}
+function open(kind,trigger){close();const s=state();if(!s)return;const prep=kind==='prepare',x=prep?s.prepare:s.thanksgiving;const el=document.createElement('div');el.id='rc2-flow-sheet';el.className='rc2SheetBackdrop';const mode=x.mode||'standard';el.innerHTML=`<section class="rc2Sheet" role="dialog" aria-modal="true"><header><div><small>${tx('Module settings','Réglages du module')}</small><strong>${prep?tx('Before Mass','Avant la Messe'):tx('After Mass','Après la Messe')}</strong></div><button type="button" class="rc2SheetClose" data-rc2-flow-close>×</button></header><div class="rc2SheetBody"><section class="rc2PrefSection"><h3>${tx('Pace / depth','Rythme / profondeur')}</h3><p>${tx('This changes the guided sequence, not the underlying liturgy.','Cela modifie le parcours guidé, non la liturgie elle-même.')}</p><div class="rc2Segments three"><button type="button" class="${mode==='quick'?'active':''}" data-rc2-flow-mode="quick">${tx('Quick','Rapide')}</button><button type="button" class="${mode==='standard'?'active':''}" data-rc2-flow-mode="standard">Standard</button><button type="button" class="${mode==='full'?'active':''}" data-rc2-flow-mode="full">${tx('Full','Complet')}</button></div></section><section class="rc2PrefSection"><h3>${tx('Recitation','Récitation')}</h3><p>${tx('Group mode quietly distinguishes the people’s responses. Individual mode keeps the prayer visually continuous.','Le mode Groupe distingue discrètement les réponses des fidèles. Le mode Individuel garde la prière visuellement continue.')}</p><div class="rc2Segments"><button type="button" class="${localStorage.getItem('ao-prayer-recitation-mode')==='group'?'':'active'}" data-rc2-flow-recitation="individual">${tx('Individual','Individuel')}</button><button type="button" class="${localStorage.getItem('ao-prayer-recitation-mode')==='group'?'active':''}" data-rc2-flow-recitation="group">${tx('Group','Groupe')}</button></div></section><section class="rc2PrefSection"><h3>${prep?tx('Communion intention','Intention de communier'):tx('Communion received','Communion reçue')}</h3><p>${prep?tx('Record whether you presently intend to receive Holy Communion. The objective dispositions are checked separately in the guided flow.','Indiquez si vous comptez actuellement recevoir la sainte Communion. Les dispositions objectives sont vérifiées séparément dans le parcours guidé.'):tx('Record what actually happened so the thanksgiving sequence can adapt appropriately.','Indiquez ce qui s’est réellement passé afin que le parcours d’action de grâces s’adapte correctement.')}</p><div class="rc2Segments"><button type="button" class="${(prep?x.intendsCommunion:x.receivedCommunion)?'active':''}" data-rc2-flow-communion="1">${tx('Yes','Oui')}</button><button type="button" class="${!(prep?x.intendsCommunion:x.receivedCommunion)?'active':''}" data-rc2-flow-communion="0">${tx('No','Non')}</button></div></section><p class="rc2FlowNote">${tx('Guide explains sources and traditional/current distinctions; Preferences only changes how this session is presented.','Le Guide explique les sources et les distinctions traditionnelles/actuelles ; Préférences ne modifie que la présentation de cette session.')}</p></div></section>`;document.body.appendChild(el);el._returnFocus=trigger||null;el.querySelector('[data-rc2-flow-close]').onclick=()=>{const r=el._returnFocus;close();r?.focus?.()};el.onclick=e=>{if(e.target===el){close();return}const m=e.target.closest?.('[data-rc2-flow-mode]');if(m){rt().store.dispatch({type:prep?'prepare-mode':'thanksgiving-mode',mode:m.dataset.rc2FlowMode});open(kind,trigger);return}const c=e.target.closest?.('[data-rc2-flow-communion]');if(c){rt().store.dispatch({type:prep?'prepare-communion':'thanksgiving-received',value:c.dataset.rc2FlowCommunion==='1'});open(kind,trigger);return}const r=e.target.closest?.('[data-rc2-flow-recitation]');if(r){const mode=r.dataset.rc2FlowRecitation==='group'?'group':'individual';try{localStorage.setItem('ao-prayer-recitation-mode',mode)}catch{}document.documentElement.classList.toggle('aoRecitationGroup',mode==='group');open(kind,trigger)}}}
+document.addEventListener('click',e=>{const b=e.target.closest?.('[data-rc2-flow-prefs]');if(b){e.preventDefault();open(b.dataset.rc2FlowPrefs==='prepare'?'prepare':'thanks',b)}},true);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('rc2-flow-sheet'))close()});
+window.AO_RC2_FLOW_PREFS={open};
+})();
+</script>
+<script id="ao-v24-unified-meta">
+window.AO_V24_UNIFIED_META={version:"v24",massBaseline:"v23-live-sequence-certification",devotionalBaseline:"Unified RC2.2 prayer/devotional layer",scope:["Prayer Book","Rosary","Confession","Angelus-Regina Caeli","Stations","Benediction","Preparation-Thanksgiving module preferences"],massEngineChanged:false};
+</script>
+
+<style id="ao-v25-navigation-interaction-css">
+/* v25 is an interaction-layer patch over the byte-preserved v24 application. */
+
+.aoV25Backdrop{position:fixed;inset:0;z-index:15500;background:rgba(3,5,8,.82);backdrop-filter:blur(14px);display:flex;align-items:flex-end;justify-content:center}.aoV25Panel{width:min(100%,720px);max-height:min(92dvh,900px);overflow:auto;overscroll-behavior:contain;background:var(--bg);border:1px solid var(--border);border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 -24px 70px rgba(0,0,0,.42);padding-bottom:max(18px,var(--safe-bottom))}.aoV25Top{position:sticky;top:0;z-index:4;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px;padding:calc(12px + var(--safe-top)) 12px 11px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.aoV25Top button{height:40px;border:1px solid var(--border);background:var(--surface-1);color:var(--text);border-radius:999px}.aoV25Top div{text-align:center;min-width:0}.aoV25Top small{display:block;color:var(--liturgical);font:600 .62rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase}.aoV25Top strong{display:block;margin-top:3px;font-family:var(--font-display);font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.aoV25Body{padding:18px 15px 28px}.aoV25Hero{padding:16px;border:1px solid var(--liturgical-border);border-radius:16px;background:var(--liturgical-soft)}.aoV25Hero small{color:var(--liturgical);font:600 .62rem/1.2 var(--font-display);letter-spacing:.09em;text-transform:uppercase}.aoV25Hero h2{margin:7px 0 5px;font-family:var(--font-display);font-size:1.35rem}.aoV25Hero p{margin:0;color:var(--muted);line-height:1.45}.aoV25Meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.aoV25Meta span{border:1px solid var(--border);border-radius:999px;padding:5px 8px;color:var(--muted-2);font-size:.68rem}.aoV25Section{margin-top:17px}.aoV25Section>h3{margin:0 0 8px;color:var(--liturgical);font:600 .67rem/1.2 var(--font-display);letter-spacing:.09em;text-transform:uppercase}.aoV25List{display:grid;gap:8px}.aoV25List article,.aoV25List button{border:1px solid var(--border);border-radius:13px;background:var(--surface-1);color:var(--text);padding:12px;text-align:left}.aoV25List b{display:block;font-family:var(--font-display);font-size:.91rem}.aoV25List span,.aoV25List p{display:block;margin:4px 0 0;color:var(--muted);font-size:.78rem;line-height:1.4}.aoV25CalendarRail{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.aoV25CalendarRail button{min-width:0;padding:9px 3px;border:1px solid var(--border);border-radius:12px;background:var(--surface-1);color:var(--text);text-align:center}.aoV25CalendarRail button.active{border-color:var(--liturgical-border);background:var(--liturgical-soft)}.aoV25CalendarRail small{display:block;color:var(--muted);font-size:.58rem;text-transform:uppercase}.aoV25CalendarRail b{display:block;margin-top:3px;font-size:.86rem}.aoV25CalendarNav{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.aoV25CalendarNav button,.aoV25Primary{min-height:42px;border:1px solid var(--border);border-radius:12px;background:var(--surface-1);color:var(--text);font-weight:650}.aoV25Primary{width:100%;margin-top:10px;border-color:var(--liturgical-border);background:var(--liturgical);color:#0b0d11}.aoV25Note{margin-top:12px;padding:10px 12px;border-left:2px solid var(--liturgical-border);background:var(--liturgical-soft);color:var(--muted);font-size:.78rem;line-height:1.45}.aoV25SourceGrid{display:grid;gap:8px}.aoV25SourceGrid article{padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--surface-1)}.aoV25SourceGrid b{display:block;color:var(--liturgical);font-size:.72rem}.aoV25SourceGrid code{display:block;margin-top:5px;color:var(--muted-2);font-size:.7rem;white-space:normal;overflow-wrap:anywhere}</style>
+<script id="ao-v25-navigation-interaction-js">
+(()=>{'use strict';
+const VERSION='25-navigation-interaction-consolidation';
+const rt=()=>window.AO_RUNTIME_V8||null;
+const state=()=>rt()?.store?.getState?.()||null;
+const fr=()=>state()?.language==='fr';
+const L=(en,frText)=>fr()?frText:en;
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const V25={panel:null,historyArmed:false,initialised:false,qaRuns:0};
+function isoDate(d){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`}
+function currentResolution(s=state()){const r=s?.resolution;return !s?.resolving&&r?.date===s?.selectedDate?r:null}
+function dayTitle(s=state()){const r=currentResolution(s);return r?.day?.main?.title||r?.main?.title||L('Resolving liturgical day…','Résolution du jour liturgique…')}
+function rankText(s=state()){const r=currentResolution(s);return r?.day?.main?.rank||''}
+function colourText(s=state()){const r=currentResolution(s);return r?.day?.main?.color||r?.day?.main?.colour||r?.colourPlan?.name||''}
+function commemorationItems(s=state()){
+ const r=currentResolution(s);const raw=r?.day?.main?.commemorations||r?.day?.commemorations||r?.commemorations||[];
+ if(!Array.isArray(raw))return raw?[raw]:[];
+ return raw.map(x=>typeof x==='string'?x:(x?.title||x?.name||x?.label||'')).filter(Boolean);
+}
+function openPrayerBook(module=null){
+ if(!window.AOTraditionalPrayerBook?.open)return false;if(module&&window.AOTraditionalPrayerBook.openModule)window.AOTraditionalPrayerBook.openModule(module);else window.AOTraditionalPrayerBook.open();return true
+}
+function closePanel(){document.getElementById('ao-v25-panel')?.remove();V25.panel=null;document.body.classList.remove('ao-v25-panel-open')}
+function panelShell(title,kicker,body){return `<div class="aoV25Backdrop" id="ao-v25-panel" data-v25-backdrop><section class="aoV25Panel" role="dialog" aria-modal="true" aria-labelledby="ao-v25-panel-title"><header class="aoV25Top"><button type="button" data-v25-panel-back aria-label="${L('Back','Retour')}">←</button><div><small>${esc(kicker)}</small><strong id="ao-v25-panel-title">${esc(title)}</strong></div><button type="button" data-v25-panel-close aria-label="${L('Close','Fermer')}">×</button></header><div class="aoV25Body">${body}</div></section></div>`}
+function readerPanelShell(kind,title,kicker,body){
+ const P=globalThis.AO_PRESENTATION_SHELLS_V435920;
+ if(!P?.reader)return panelShell(title,kicker,body);
+ const reader=P.reader({
+  title,context:kicker,showLead:false,body,
+  backAttrs:'data-v25-panel-back',backLabel:L('Back','Retour'),
+  rightAttrs:'data-v25-panel-close',rightLabel:L('Close','Fermer'),rightIcon:'ao-ui-close'
+ });
+ return `<div class="aoV25Backdrop" id="ao-v25-panel" data-v25-backdrop data-v25-kind="${esc(kind)}"><section class="aoV25Panel aoV25ReaderPanel" role="dialog" aria-modal="true" aria-label="${esc(title)}"><div class="aoV25Body">${reader}</div></section></div>`
+}
+function displayDate(id){
+ const v=globalThis.AO_DISPLAY_DATE?.(id);if(v&&/^\d{2}\/\d{2}\/\d{4}$/.test(v))return v;
+ const m=String(id||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);return m?`${m[3]}/${m[2]}/${m[1]}`:String(id||'')
+}
+function parseDisplayDate(raw){
+ const m=String(raw||'').trim().match(/^(\d{1,2})\s*[\/.-]\s*(\d{1,2})\s*[\/.-]\s*(\d{4})$/);if(!m)return null;
+ const day=Number(m[1]),month=Number(m[2]),year=Number(m[3]);if(year<1000||year>9999||month<1||month>12||day<1||day>31)return null;
+ const d=new Date(year,month-1,day,12,0,0,0);if(d.getFullYear()!==year||d.getMonth()!==month-1||d.getDate()!==day)return null;return isoDate(d)
+}
+function renderCalendarBody(){
+ const s=state(),selected=s?.selectedDate||isoDate(new Date()),resolved=currentResolution(s);
+ if(!resolved)return `<div class="aoV25CalendarResolving" role="status"><span class="aoCinemaLoaderMark brandMark aoBrandEmblem" aria-hidden="true"></span><small>${L('LITURGICAL CALENDAR','CALENDRIER LITURGIQUE')}</small><h2>${L('Resolving the 1962 calendar…','Résolution du calendrier de 1962…')}</h2><p>${esc(displayDate(selected))}</p></div>`;
+ const base=new Date(`${selected}T12:00:00`),start=new Date(base);start.setDate(base.getDate()-base.getDay());
+ const days=Array.from({length:7},(_,i)=>{const d=new Date(start);d.setDate(start.getDate()+i);const id=isoDate(d);return `<button type="button" class="${id===selected?'active':''}" data-v25-calendar-date="${id}"><small>${d.toLocaleDateString(fr()?'fr-FR':'en-GB',{weekday:'short'})}</small><b>${d.getDate()}</b></button>`}).join('');
+ const jump=`<section class="aoV25Section aoV26DateJump"><h3>${L('Jump to date','Aller à une date')}</h3><div class="aoV26DateJumpRow"><label class="aoV26DateField"><span>${L('Date · DD/MM/YYYY','Date · JJ/MM/AAAA')}</span><input type="text" inputmode="numeric" autocomplete="off" enterkeyhint="go" value="${esc(displayDate(selected))}" placeholder="${fr()?'JJ/MM/AAAA':'DD/MM/YYYY'}" data-v26-calendar-input aria-label="${L('Date in DD/MM/YYYY format','Date au format JJ/MM/AAAA')}"></label><button type="button" class="aoV26PickerButton" data-v26-calendar-picker aria-label="${L('Open date picker','Ouvrir le sélecteur de date')}">▦</button><input class="aoV26NativeDate" type="date" value="${esc(selected)}" data-v26-calendar-native tabindex="-1" aria-hidden="true"></div><div class="aoV26DateJumpActions"><button type="button" data-v26-calendar-today>${L('Today','Aujourd’hui')}</button><button type="button" class="aoV26Go" data-v26-calendar-go>${L('Go','Aller')}</button></div><div class="aoV26DateError" data-v26-calendar-error aria-live="polite"></div></section>`;
+ const comm=commemorationItems(s);return `<div class="aoV25Hero"><small>${new Date(`${selected}T12:00:00`).toLocaleDateString(fr()?'fr-FR':'en-GB',{weekday:'long'})} · ${esc(displayDate(selected))}</small><h2>${esc(dayTitle(s))}</h2><div class="aoV25Meta">${rankText(s)?`<span>${esc(rankText(s))}</span>`:''}${colourText(s)?`<span>${esc(colourText(s))}</span>`:''}</div></div>${jump}<section class="aoV25Section"><h3>${L('Liturgical week','Semaine liturgique')}</h3><div class="aoV25CalendarRail">${days}</div><div class="aoV25CalendarNav"><button type="button" data-v25-calendar-shift="-7">← ${L('Previous week','Semaine précédente')}</button><button type="button" data-v25-calendar-shift="7">${L('Next week','Semaine suivante')} →</button></div></section>${comm.length?`<section class="aoV25Section"><h3>${L('Commemorations','Commémoraisons')}</h3><div class="aoV25List">${comm.map(x=>`<article><b>${esc(x)}</b></article>`).join('')}</div></section>`:''}<p class="aoV25Note">${L('Use the date field or picker for distant dates; the week controls remain for nearby navigation.','Utilisez le champ de date ou le sélecteur pour les dates éloignées ; les commandes hebdomadaires restent disponibles pour la navigation proche.')}</p>`}
+function renderSaintBody(){
+ const s=state(),comm=commemorationItems(s),title=dayTitle(s);return `<div class="aoV25Hero"><small>${L('Saint / observance','Saint / observance')}</small><h2>${esc(title)}</h2><div class="aoV25Meta">${rankText(s)?`<span>${esc(rankText(s))}</span>`:''}${colourText(s)?`<span>${esc(colourText(s))}</span>`:''}</div></div>${comm.length?`<section class="aoV25Section"><h3>${L('Commemorations','Commémoraisons')}</h3><div class="aoV25List">${comm.map(x=>`<article><b>${esc(x)}</b></article>`).join('')}</div></section>`:''}<section class="aoV25Section"><h3>${L('About this observance','À propos de cette observance')}</h3><div class="aoV25List"><article><p>${L('Biographical information and artwork are shown only when a sourced entry is available for this observance.','Les informations biographiques et l’œuvre sont affichées uniquement lorsqu’une entrée sourcée est disponible pour cette observance.')}</p></article></div><button class="aoV25Primary" type="button" data-v25-destination="today-mass">${L('Open Today’s Mass','Ouvrir la Messe du jour')}</button></section>`}
+function renderSourcesBody(){return `<div class="aoV25Hero"><small>Ad Orientem</small><h2>${L('Sources & provenance','Sources et provenance')}</h2><p>${L('Texts, formation material and artwork keep their source information so you can see where the app’s content comes from.','Les textes, le contenu de formation et les œuvres conservent leurs informations de source afin que vous puissiez voir d’où vient le contenu de l’application.')}</p></div><section class="aoV25Section"><h3>${L('Liturgical texts','Textes liturgiques')}</h3><div class="aoV25List"><article><p>${L('The Mass follows the traditional Roman liturgical books and rubrical sources used for the 1962 rite.','La Messe suit les livres liturgiques romains traditionnels et les sources rubricales utilisées pour le rite de 1962.')}</p></article></div></section><section class="aoV25Section"><h3>${L('Scripture & formation','Écriture et formation')}</h3><div class="aoV25List"><article><p>${L('Scripture, catechetical and devotional material identifies its edition or source where available.','Les textes scripturaires, catéchétiques et dévotionnels indiquent leur édition ou leur source lorsqu’elle est disponible.')}</p></article></div></section><section class="aoV25Section"><h3>${L('Artwork','Œuvres')}</h3><div class="aoV25List"><article><p>${L('Artwork provenance includes the artist, institution, licence and source link whenever those details are available.','La provenance des œuvres indique l’artiste, l’institution, la licence et le lien source lorsque ces informations sont disponibles.')}</p></article></div></section>`}
+function renderPanel(){
+ if(!V25.panel)return;document.getElementById('ao-v25-panel')?.remove();let title='',kicker='Ad Orientem',body='';
+ if(V25.panel==='calendar'){title=L('Calendar','Calendrier');kicker=L('Liturgical dates','Dates liturgiques');body=renderCalendarBody()}
+ else if(V25.panel==='saint'){title=L('Saint of the Day','Saint du jour');kicker=L('Today','Aujourd’hui');body=renderSaintBody()}
+ else if(V25.panel==='sources'){title=L('Sources','Sources');kicker=L('Provenance','Provenance');body=globalThis.AO_CONTENT_V37?.sourcePanelMarkup?.()||renderSourcesBody()}
+ else return;
+ const markup=V25.panel==='saint'?readerPanelShell('saint',title,kicker,body):panelShell(title,kicker,body);
+ document.body.insertAdjacentHTML('beforeend',markup);document.body.classList.add('ao-v25-panel-open');if(V25.panel==='saint')queueMicrotask(()=>globalThis.AO_SAINT_DAY_READER?.enhancePanel?.())
+}
+function openPanel(kind){if(!['calendar','saint','sources'].includes(kind))return false;V25.panel=kind;renderPanel();return true}
+function openTodayMass(){closePanel();const s=state();if(!s)return false;if(s.route!=='home')rt().store.dispatch({type:s.route==='live'?'leave-live':s.route==='prepare'?'leave-prepare':s.route==='thanksgiving'?'leave-thanksgiving':'scripture-close'});window.AO_CELEBRATION_ARCH_V1&&(window.AO_CELEBRATION_ARCH_V1.stage='details');return !!window.AO_CELEBRATION_API?.openPreflight?.()}
+async function changeCalendarDate(id){
+ const home=rt()?.controller?.home,st=rt()?.store;if(!st)return false;
+ if(home?.resolve){st.dispatch({type:'set-date',date:id});await home.resolve(id);const s=st.getState();return s?.selectedDate===id&&s?.resolution?.date===id&&!s?.resolving}
+ if(home?.changeDate){home.changeDate(id);for(let i=0;i<160;i++){await new Promise(r=>setTimeout(r,25));const s=st.getState();if(s?.selectedDate===id&&s?.resolution?.date===id&&!s?.resolving)return true}return false}
+ st.dispatch({type:'set-date',date:id});return false
+}
+async function resolveCalendarDate(id){const ok=await changeCalendarDate(id);if(V25.panel==='calendar')renderPanel();return ok}
+function shiftSelected(days){const s=state();if(!s)return;const d=new Date(`${s.selectedDate}T12:00:00`);d.setDate(d.getDate()+Number(days||0));void resolveCalendarDate(isoDate(d))}
+function openSettings(){closePanel();if(globalThis.AO_SETTINGS_V4359?.open){globalThis.AO_SETTINGS_V4359.open();return true}const s=state();if(!s)return false;if(s.route!=='home'){const type=s.route==='live'?'leave-live':s.route==='prepare'?'leave-prepare':s.route==='thanksgiving'?'leave-thanksgiving':s.route==='scripture'?'scripture-close':null;if(type)rt().store.dispatch({type})}setTimeout(()=>rt()?.store?.dispatch({type:'home-sheet',sheet:'settings'}),0);return true}
+function handleDestination(dest){
+ if(dest==='prayers')return openPrayerBook();if(dest==='calendar')return openPanel('calendar');if(dest==='saint')return openPanel('saint');if(dest==='sources')return openPanel('sources');if(dest==='settings')return openSettings();if(dest==='today-mass')return openTodayMass();return false
+}
+function prayerBack(){const root=document.getElementById('aoPrayerBookRoot');if(!root?.classList.contains('open'))return false;const back=root.querySelector('[data-pb-back]');if(back){back.click();return true}window.AOTraditionalPrayerBook?.close?.();return true}
+function appBack(){
+ if(window.AO_NAV_V362?.back?.({source:'v25'}))return true;
+ const rc=document.querySelector('#rc2-flow-sheet [data-rc2-flow-close],#rc2-module-sheet [data-rc2-close]');if(rc){rc.click();return true}
+ const depth=document.querySelector('#ao-r-depth-modal.open [data-ao-r-close]');if(depth){depth.click();return true}
+ if(V25.panel){closePanel();return true}
+ const mass=document.getElementById('ao-mass-flow-v1');if(mass){const b=mass.querySelector('[data-ao-back]')||mass.querySelector('[data-ao-close]');b?.click();return true}
+ if(document.getElementById('aoPrayerBookRoot')?.classList.contains('open'))return prayerBack();
+ const s=state();if(!s)return false;if(s.homeSheet){rt().store.dispatch({type:'home-sheet',sheet:null});return true}
+ if(s.route==='scripture'){rt().store.dispatch({type:'scripture-close'});return true}if(s.route==='live'){const fr=s.language==='fr';const ok=window.confirm(fr?'La Messe est en cours. Quitter le suivi ? Votre place sera enregistrée.':'Mass is in progress. Leave the follower? Your place will be saved.');if(ok)rt().store.dispatch({type:'leave-live'});return true}if(s.route==='prepare'){rt().store.dispatch({type:'leave-prepare'});return true}if(s.route==='thanksgiving'){rt().store.dispatch({type:'leave-thanksgiving'});return true}
+ return false
+}
+function armHistory(){
+ if(V25.historyArmed)return;try{history.replaceState({...history.state,aoV25Base:true},'',location.href);history.pushState({aoV25Guard:true},'',location.href);V25.historyArmed=true}catch{}
+}
+function rearmHistory(){try{history.pushState({aoV25Guard:true},'',location.href)}catch{}}
+function staticControllerIntegrity(){
+ const result={version:VERSION,inlineHandlers:{checked:0,missing:[]},expectedGlobals:{checked:0,missing:[]},duplicateIds:[],destinations:{checked:0,missing:[]},domTargets:{checked:0,missing:[]}};
+ document.querySelectorAll('[onclick]').forEach(el=>{const code=el.getAttribute('onclick')||'';for(const m of code.matchAll(/(?:^|[;\s])([A-Za-z_$][\w$]*)\s*\(/g)){result.inlineHandlers.checked++;if(typeof window[m[1]]!=='function'&&!['if','for','while','switch'].includes(m[1]))result.inlineHandlers.missing.push(m[1])}});
+ ['AO_RUNTIME_V8','AO_CELEBRATION_API','AOTraditionalPrayerBook','AO_SEQUENCE_BRIDGE_V23'].forEach(k=>{result.expectedGlobals.checked++;if(!window[k])result.expectedGlobals.missing.push(k)});
+ const counts={};document.querySelectorAll('[id]').forEach(el=>{counts[el.id]=(counts[el.id]||0)+1});result.duplicateIds=Object.entries(counts).filter(([,n])=>n>1).map(([id,count])=>({id,count}));
+ document.querySelectorAll('[data-v25-destination]').forEach(el=>{result.destinations.checked++;if(!['prayers','calendar','saint','settings','sources','today-mass'].includes(el.dataset.v25Destination))result.destinations.missing.push(el.dataset.v25Destination)});
+ [['app','#app'],['prayerbook','#aoPrayerBookRoot']].forEach(([name,sel])=>{result.domTargets.checked++;if(!document.querySelector(sel))result.domTargets.missing.push(name)});
+ result.pass=result.inlineHandlers.missing.length===0&&result.expectedGlobals.missing.length===0&&result.duplicateIds.length===0&&result.destinations.missing.length===0&&result.domTargets.missing.length===0;V25.qaRuns++;return result
+}
+function qaSnapshot(){const s=state();return{version:VERSION,route:s?.route||null,language:s?.language||null,date:s?.selectedDate||null,panel:V25.panel,prayerOpen:document.getElementById('aoPrayerBookRoot')?.classList.contains('open')||false,changeMassOpen:!!document.getElementById('ao-mass-flow-v1'),integrity:staticControllerIntegrity()}}
+function init(){
+ if(V25.initialised)return;const r=rt();if(!r?.store){setTimeout(init,60);return}V25.initialised=true;armHistory();
+ document.addEventListener('click',e=>{
+   const d=e.target.closest?.('[data-v25-destination]');if(d){e.preventDefault();e.stopPropagation();handleDestination(d.dataset.v25Destination);return}
+   if(e.target.matches?.('[data-v25-backdrop]')){closePanel();return}
+   const close=e.target.closest?.('[data-v25-panel-close],[data-v25-panel-back]');if(close){closePanel();return}
+   const cd=e.target.closest?.('[data-v25-calendar-date]');if(cd){void resolveCalendarDate(cd.dataset.v25CalendarDate);return}
+   const sh=e.target.closest?.('[data-v25-calendar-shift]');if(sh){shiftSelected(sh.dataset.v25CalendarShift);return}
+   const today=e.target.closest?.('[data-v26-calendar-today]');if(today){void resolveCalendarDate(isoDate(new Date()));return}
+   const picker=e.target.closest?.('[data-v26-calendar-picker]');if(picker){const native=document.querySelector('#ao-v25-panel [data-v26-calendar-native]');if(native){if(typeof native.showPicker==='function'){try{native.showPicker()}catch{native.focus({preventScroll:true});native.click()}}else{native.focus({preventScroll:true});native.click()}}return}
+   const go=e.target.closest?.('[data-v26-calendar-go]');if(go){const input=document.querySelector('#ao-v25-panel [data-v26-calendar-input]'),err=document.querySelector('#ao-v25-panel [data-v26-calendar-error]'),id=parseDisplayDate(input?.value);if(!id){if(input)input.setAttribute('aria-invalid','true');if(err)err.textContent=L('Enter a valid date as DD/MM/YYYY.','Saisissez une date valide au format JJ/MM/AAAA.');return}if(input)input.removeAttribute('aria-invalid');if(err)err.textContent='';void resolveCalendarDate(id);return}
+ },true);
+ document.addEventListener('change',e=>{const native=e.target.closest?.('[data-v26-calendar-native]');if(native&&native.value){void resolveCalendarDate(native.value)}},true);
+ document.addEventListener('keydown',e=>{const input=e.target.closest?.('[data-v26-calendar-input]');if(input&&e.key==='Enter'){e.preventDefault();document.querySelector('#ao-v25-panel [data-v26-calendar-go]')?.click()}},true);
+ window.addEventListener('popstate',()=>{if(appBack())setTimeout(rearmHistory,0)});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&appBack()){e.preventDefault();e.stopPropagation()}},true);
+}
+window.AO_NAV_V25={version:VERSION,open:handleDestination,back:appBack,openPrayerBook,openPanel,closePanel,getState:()=>({...V25,core:state()}),qa:qaSnapshot,staticControllerIntegrity};
+window.AO_V25_META={version:'v25',baseline:'Ad-Orientem-2.0-v24-UNIFIED-MASS-PRAYER.html',scope:['navigation','state coordination','controller wiring','information architecture','user-path QA'],massEngineChanged:false,prayerCorpusChanged:false,taxonomy:'presentation/reference only; no prayer data duplication'};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
+<script id="ao-v25-certification-meta">
+window.AO_COMPLETION_V25={version:'25',navigationInteractionConsolidation:true,protectedBaseline:'v24',massEngineChanged:false,prayerCorpusChanged:false,controllerIntegrityDiagnostic:true,browserBackGuard:true,canonicalPrayerEntryPoints:true,knownLimitations:['Saint biography panel remains identity/context only until a complete sourced biography corpus is exposed through a stable controller.','Prayer/devotion progress persistence remains as implemented by v24; v25 does not invent new persistence semantics.']};
+</script>
+<style id="ao-v251-inline-rubrical-cues-css">
+.massTexts>.liveOrientation.aoInlineOrientation{margin:8px 0 18px;padding:9px 0 12px;border-top:1px solid rgba(255,255,255,.055);border-bottom:1px solid rgba(255,255,255,.055)}
+.massTexts>.liveOrientation.aoInlineOrientation .liveOrientationItem{min-height:68px}.massTexts>.liveOrientation.aoInlineOrientation .orientationVisualWrap{height:42px}.massTexts>.liveOrientation.aoInlineOrientation .postureVisual{width:38px;height:38px}.massTexts>.liveOrientation.aoInlineOrientation .priestVisual{width:43px;height:43px}.massTexts>.liveOrientation.aoInlineOrientation .orientationKey{font-size:.46rem}
+.liveCues .gesture{display:none!important}
+.aoInlineCue{display:inline-flex;vertical-align:middle;align-items:center;gap:5px;margin:.18em .38em .18em 0;padding:4px 7px 4px 5px;border:1px solid color-mix(in srgb,var(--liturgical-border) 72%,transparent);border-radius:999px;background:color-mix(in srgb,var(--liturgical-soft) 62%,rgba(255,255,255,.018));color:var(--text);font:650 .56rem/1.1 var(--font-display);letter-spacing:.065em;text-transform:uppercase;white-space:nowrap}
+.aoInlineCue img{width:19px;height:19px;object-fit:contain;flex:none;filter:drop-shadow(0 1px 4px rgba(0,0,0,.25))}.aoInlineCue.aoCueLocal{border-style:dashed;color:color-mix(in srgb,var(--text) 88%,var(--muted))}.aoInlineCue.aoCueRitual{border-color:color-mix(in srgb,var(--liturgical-border) 88%,transparent)}.aoInlineCue.aoCueFallback{display:flex;width:max-content;max-width:100%;margin:8px 0;white-space:normal}.aoInlineCue.aoCueAction img{opacity:.82}.aoInlineCue.aoCueIconOnly{display:inline-grid;place-items:center;gap:0;margin:.08em .22em .08em 0;padding:0;border:0!important;border-radius:0;background:transparent!important;box-shadow:none;color:inherit;white-space:normal;vertical-align:-.22em}.aoInlineCue.aoCueIconOnly img{width:24px;height:24px;margin:0;filter:drop-shadow(0 1px 4px rgba(0,0,0,.24))}
+.aoPostureTimeline{margin:4px 0 18px;padding:10px 11px;border:1px solid rgba(255,255,255,.07);border-radius:12px;background:rgba(255,255,255,.018)}.aoPostureTimelineLabel{margin:0 0 8px;color:var(--muted);font:600 .48rem/1 var(--font-display);letter-spacing:.1em;text-transform:uppercase}.aoPostureTimelineFlow{display:flex;align-items:center;gap:5px;flex-wrap:wrap}.aoPostureTimeline .aoInlineCue{margin:0;padding:4px 7px 4px 5px}.aoPostureArrow{color:var(--muted-2);font-size:.75rem}.aoPostureTimelineNote{margin:7px 0 0;color:var(--muted);font-size:.67rem;line-height:1.35}
+@media(max-width:390px){.aoInlineCue{font-size:.52rem;padding-right:6px}.aoInlineCue img{width:18px;height:18px}.aoPostureTimeline{padding:9px}.massTexts>.liveOrientation.aoInlineOrientation{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<script id="ao-v251-inline-rubrical-cues-js">
+(()=>{
+'use strict';
+const VERSION='25.5';
+const PARTICIPATION_ENGINE_VERSION='1.0';
+const AUTHORITY=Object.freeze({
+ RUBRIC_1962:'RUBRIC_1962',PERIOD_1962_GUIDE:'PERIOD_1962_GUIDE',ESTABLISHED_LAY_CUSTOM:'ESTABLISHED_LAY_CUSTOM',LOCAL_CUSTOM:'LOCAL_CUSTOM',OPTIONAL_DEVOTION:'OPTIONAL_DEVOTION',PRE_1962_ONLY:'PRE_1962_ONLY',CLERGY_ONLY:'CLERGY_ONLY'
+});
+const SOURCE_REGISTRY=Object.freeze({
+ FORT_MASS:'Adrian Fortescue, The Mass: A Study of the Roman Liturgy',
+ ALPH_XIII:'St Alphonsus / Grimm, vol. XIII',
+ GUERANGER:'Dom Prosper Guéranger, Explanation of the Holy Mass',
+ FORT_CER:'Fortescue, Ceremonies of the Roman Rite Described',
+ GIHR:'Nicholas Gihr, The Holy Sacrifice of the Mass',
+ COCHEM:'Martin von Cochem, Explanation of the Holy Sacrifice of the Mass',
+ MULLER:'Michael Müller, The Holy Mass',
+ GAUME:'J.-J. Gaume, The Sign of the Cross',
+ SCR_1958:'Sacred Congregation of Rites, De musica sacra et sacra liturgia (1958)',
+ RGM_1960:'Rubricae Generales Missalis Romani (1960)',
+ OCONNELL_1962:'J. B. O’Connell, The Celebration of Mass (1962)',
+ MR_1962:'Missale Romanum (1962), Proper of Holy Week'
+});
+const GUIDE_VERSION='1.0';
+const GUIDE_CONTENT=Object.freeze({
+ full_cross:{
+  en:{title:'Sign of the Cross',action:'With the right hand, make the full Sign of the Cross: forehead, breast, left shoulder, then right shoulder.',why:'This traditional lay gesture accompanies specific invocations or conclusions of the Mass. It is not a cue to imitate every Sign of the Cross made by the priest.'},
+  fr:{title:'Signe de croix',action:'Avec la main droite, faites le signe de croix complet : front, poitrine, épaule gauche, puis épaule droite.',why:'Ce geste traditionnel des fidèles accompagne certaines invocations ou conclusions de la Messe. Il ne signifie pas qu’il faut imiter chaque signe de croix du prêtre.'}
+ },
+ gospel_cross:{
+  en:{title:'Three small Gospel crosses',action:'With the right thumb, trace a small cross on the forehead, then the lips, then the breast.',why:'This is the traditional Gospel gesture at the announcement of the Gospel. It is a distinct action from the full Sign of the Cross.'},
+  fr:{title:'Trois petites croix de l’Évangile',action:'Avec le pouce droit, tracez une petite croix sur le front, puis sur les lèvres, puis sur la poitrine.',why:'C’est le geste traditionnel à l’annonce de l’Évangile. Il est distinct du signe de croix complet.'}
+ },
+ breast_1:{
+  en:{title:'Strike the breast once',action:'Strike the breast once at these words.',why:'Breast-striking is a traditional penitential gesture expressing contrition or unworthiness at the text where the cue appears.'},
+  fr:{title:'Frapper la poitrine une fois',action:'Frappez la poitrine une fois à ces paroles.',why:'Le geste de se frapper la poitrine est un geste pénitentiel traditionnel exprimant la contrition ou l’indignité aux paroles indiquées.'}
+ },
+ breast_3:{
+  en:{title:'Strike the breast three times',action:'Strike the breast three times in time with the threefold penitential invocation or repetition.',why:'The repeated breast-striking is a traditional penitential gesture tied to the repeated text; the app shows it only where the lay practice applies.'},
+  fr:{title:'Frapper la poitrine trois fois',action:'Frappez la poitrine trois fois, au rythme de la triple invocation ou répétition pénitentielle.',why:'Les trois coups constituent un geste pénitentiel traditionnel lié au texte répété ; l’application ne l’affiche que là où cet usage concerne les fidèles.'}
+ },
+ genuflect:{
+  en:{title:'Genuflect',action:'Lower one knee briefly to the floor in reverence, then rise unless the next cue says otherwise.',why:'A genuflection is a brief bodily act of reverence used at particular sacred words or moments. It is distinct from remaining kneeling.'},
+  fr:{title:'Génuflexion',action:'Posez brièvement un genou à terre en signe de révérence, puis relevez-vous sauf indication contraire.',why:'La génuflexion est un acte bref de révérence accompli à certaines paroles ou à certains moments sacrés. Elle est distincte de la posture à genoux.'}
+ },
+ kneel:{
+  en:{title:'Kneel',action:'Kneel at this point and remain kneeling until the posture changes.',why:'Kneeling is a posture of adoration and humility. Whether it is universal, period practice, or local custom depends on the authority shown below.'},
+  fr:{title:'À genoux',action:'Mettez-vous à genoux à ce moment et restez ainsi jusqu’au prochain changement de posture.',why:'La posture à genoux exprime l’adoration et l’humilité. Son caractère universel, d’usage de l’époque ou local dépend de l’autorité indiquée ci-dessous.'}
+ },
+ stand:{
+  en:{title:'Stand',action:'Stand at this point and remain standing until the posture changes.',why:'Standing marks the appropriate congregational posture for this portion of the Mass; in some Low-Mass contexts the exact posture follows legitimate local custom.'},
+  fr:{title:'Debout',action:'Mettez-vous debout à ce moment et restez ainsi jusqu’au prochain changement de posture.',why:'La station debout est la posture des fidèles pour cette partie de la Messe ; dans certains contextes de Messe basse, la posture exacte suit légitimement l’usage local.'}
+ },
+ sit:{
+  en:{title:'Sit',action:'Sit at this point and remain seated until the posture changes.',why:'At Sung Mass, sitting during portions such as the lesson or chant is documented period practice; local custom still governs some transitions.'},
+  fr:{title:'Assis',action:'Asseyez-vous à ce moment et restez assis jusqu’au prochain changement de posture.',why:'À la Messe chantée, la position assise pendant certaines parties, comme la leçon ou le chant, est attestée par l’usage de l’époque ; certaines transitions restent régies par l’usage local.'}
+ },
+ bow_head:{
+  en:{title:'Bow the head',action:'Incline the head briefly at these words, then return upright.',why:'A head bow is a brief act of reverence attached to particular names or words. It is not the same action as a profound bow or a genuflection.'},
+  fr:{title:'Incliner la tête',action:'Inclinez brièvement la tête à ces paroles, puis redressez-vous.',why:'L’inclination de tête est un bref acte de révérence lié à certains noms ou certaines paroles. Elle se distingue de l’inclination profonde et de la génuflexion.'}
+ },
+ bow_profound:{
+  en:{title:'Bow profoundly',action:'Make a deeper bow from the upper body at this point, then return upright.',why:'A profound bow is a stronger bodily reverence than a simple head bow. The cue is shown only when the specific practice calls for it.'},
+  fr:{title:'Inclination profonde',action:'Faites ici une inclination plus profonde du haut du corps, puis redressez-vous.',why:'L’inclination profonde est une révérence corporelle plus marquée que la simple inclination de tête. Le signal n’apparaît que lorsque l’usage précis le demande.'}
+ },
+ adore:{
+  en:{title:'Adore',action:'Remain recollected in adoration at this moment; do not add another bodily gesture unless a separate cue appears.',why:'The cue identifies a moment for adoration without teaching the faithful to copy the priest’s ceremonial movements.'},
+  fr:{title:'Adorer',action:'Restez recueilli en adoration à ce moment ; n’ajoutez pas d’autre geste corporel sauf si un signal distinct apparaît.',why:'Le signal indique un moment d’adoration sans enseigner aux fidèles à reproduire les gestes cérémoniels du prêtre.'}
+ },
+ action:{
