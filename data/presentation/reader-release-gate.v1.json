@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.0.0",
-  "status": "FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__R17_NATIVE_DEFAULT",
-  "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native reader is the production default. LEGACY remains an explicit rollback path only; source-first LIVE, full-year special-structure parity and real-browser phone/touch acceptance are certified.",
+  "version": "4.1.0",
+  "status": "READY",
+  "productionDefault": "FIELD_NATIVE_PREVIEW",
+  "releaseRule": "Production defaults to the R17 native reader only inside explicitly promoted, user-visible certified scope. Full-year special-structure data/runtime parity does not itself promote a rite. Asperges, Palm and Ash are promoted; unpromoted special structures remain LEGACY-default unless explicitly overridden.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -793,7 +793,7 @@
     "requireAllBlockersClosed": true,
     "requireAuthoritative48CardMap": false,
     "requireRealBrowserPhoneAcceptance": true,
-    "requireLegacyDefaultUntilCertified": true,
+    "requireLegacyDefaultUntilCertified": false,
     "requireSourceFirstCanonMap": true,
     "requireSourceFirstLiveStructure": true
   },
@@ -868,13 +868,66 @@
   },
   "finalAppRelease": {
     "schema": "ao-final-app-release-v1",
-    "status": "PRODUCTION_NATIVE_DEFAULT",
+    "status": "SCOPED_NATIVE_ROLLOUT_ACTIVE",
     "reader": "R17_NATIVE",
     "rollback": "LEGACY_EXPLICIT_ONLY",
     "fullYearSpecialStructureParity": true,
     "phoneTouchCertified": true,
     "sourceFirstLiveCertified": true,
+    "specialRiteUiPromotionComplete": false,
+    "promotedPrecedingRites": [
+      "ASPERGES",
+      "PALM",
+      "ASH"
+    ],
     "historicalFieldRelease": "field/2026-10-04",
     "fieldReleaseAuthority": false
+  },
+  "rollout": {
+    "schema": "ao-r35-reader-rollout-v1",
+    "status": "ACTIVE_SCOPED_NATIVE_DEFAULT",
+    "defaultInsidePromotedScope": "PREVIEW",
+    "defaultOutsidePromotedScope": "LEGACY",
+    "promotedForms": [
+      "LOW",
+      "MISSA_CANTATA_SIMPLE",
+      "MISSA_CANTATA_INCENSE",
+      "SOLEMN"
+    ],
+    "promotedCelebrationLayers": [
+      "CALENDAR_MASS",
+      "VOTIVE_PROPER"
+    ],
+    "promotedPrecedingRites": [
+      "ASPERGES",
+      "PALM",
+      "ASH"
+    ],
+    "promotedFollowingActions": [],
+    "allowedOverlays": [
+      "VOTIVE_PROPER"
+    ],
+    "requiredProperStatuses": [
+      "READY",
+      "CACHED"
+    ],
+    "explicitOverrides": [
+      "LEGACY",
+      "SHADOW",
+      "PREVIEW"
+    ],
+    "overrideQuery": "aoR17Reader",
+    "storageKey": "ao-r17-reader-ui",
+    "rollback": "?aoR17Reader=legacy",
+    "implementation": "src/mass/browser-entry.js#resolveProductionReaderUiMode",
+    "observability": "data-ao-mass-reader-ui",
+    "guarantees": [
+      "explicit reader override always outranks rollout default",
+      "ordinary/votive READY or CACHED Proper sessions in certified forms default native",
+      "Asperges, Palm and Ash preceding rites default native and retain their native handoff behavior",
+      "following actions, insertions, distinct rites and unpromoted preceding rites remain legacy-default",
+      "full-year special-structure runtime/data parity is not treated as visible production promotion",
+      "native mount failure remains observable through data-ao-mass-reader-ui and runtime fallback diagnostics"
+    ]
   }
 }
