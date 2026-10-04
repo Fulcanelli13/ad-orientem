@@ -1,0 +1,213 @@
+{
+  "schema": "ao-r28-good-friday-payload-v1",
+  "version": "1.0.0",
+  "status": "SOURCE_PINNED_1962_GOOD_FRIDAY_LATIN",
+  "authority": {
+    "primary": "Missale Romanum 1962 — Feria VI in Passione et Morte Domini",
+    "textWitness": "Missale Meum 1962 Good Friday, 2026-04-03",
+    "graph": "data/mass/special-days-core.v1.1.json#graphs.GF",
+    "languagePolicy": "LATIN_CANONICAL_PAYLOAD__VERNACULAR_SEPARATE_LAYER",
+    "jewishPrayerPolicy": {
+      "defaultVariant": "PRINTED_1962",
+      "printed1962": "John XXIII 1959/1962 text: perfidis/perfidiam removed; conversion intention otherwise retained.",
+      "optionalLaterVariant": "HOLY_SEE_2008",
+      "rule": "Do not silently substitute the 2008 prayer for the printed 1962 text."
+    }
+  },
+  "opening": {
+    "collect": "Deus, qui peccati veteris hereditariam mortem, in qua posteritatis genus omne successerat, Christi tui, Domini nostri, passione solvisti: da, ut, conformes eidem facti; sicut imaginem terrenae naturae necessitate portavimus, ita imaginem caelestis gratiae sanctificatione portemus. Per eundem Christum Dominum nostrum. Amen."
+  },
+  "firstLesson": {
+    "citation": "Osee 6:1-6",
+    "text": "Haec dicit Dominus: In tribulatione sua mane consurgent ad me: Venite, et revertamur ad Dominum: quia ipse cepit, et sanabit nos: percutiet, et curabit nos. Vivificabit nos post duos dies: in die tertia suscitabit nos, et vivemus in conspectu eius. Sciemus, sequemurque, ut cognoscamus Dominum: quasi diluculum praeparatus est egressus eius, et veniet quasi imber nobis temporaneus, et serotinus terrae. Quid faciam tibi Ephraim? quid faciam tibi Iuda? Misericordia vestra quasi nubes matutina, et quasi ros mane pertransiens. Propter hoc dolavi in prophetis, occidi eos in verbis oris mei: et iudicia tua quasi lux egredientur. Quia misericordiam volui, et non sacrificium, et scientiam Dei plus quam holocausta.",
+    "responsory": [
+      "Domine, audivi auditum tuum, et timui: consideravi opera tua, et expavi.",
+      "In medio duorum animalium innotesceris: dum appropinquaverint anni cognosceris: dum advenerit tempus, ostenderis.",
+      "In eo, dum conturbata fuerit anima mea: in ira, misericordiae memor eris.",
+      "Deus a Libano veniet, et Sanctus de monte umbroso, et condenso.",
+      "Operuit caelos maiestas eius: et laudis eius plena est terra."
+    ],
+    "collect": "Deus, a quo et Iudas reatus sui poenam, et confessionis suae latro praemium sumpsit, concede novis tuae propitiationis effectum: ut sicut in passione sua Iesus Christus Dominus noster diversa utrisque intulit stipendia meritorum; ita nobis, ablato vetustatis errore, resurrectionis suae gratiam largiatur: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+  },
+  "secondLesson": {
+    "citation": "Exodus 12:1-11",
+    "text": "In diebus illis: Dixit Dominus ad Moysen et Aaron in terra Aegypti: Mensis iste vobis principium mensium: primus erit in mensibus anni. Loquimini ad universum coetum filiorum Israel, et dicite eis: Decima die mensis huius tollat unusquisque agnum per familias et domos suas. Sin autem minor est numerus, ut sufficere possit ad vescendum agnum, assumet vicinum suum qui iunctus est domui suae, iuxta numerum animarum quae sufficere possunt ad esum agni. Erit autem agnus absque macula, masculus, anniculus: iuxta quem ritum tolletis et haedum. Et servabitis eum usque ad quartamdecimam diem mensis huius: immolabitque eum universa multitudo filiorum Israel ad vesperam. Et sument de sanguine eius, ac ponent super utrumque postem, et in superliminaribus domorum, in quibus comedent illum. Et edent carnes nocte illa assas igni, et azymos panes cum lactucis agrestibus. Non comedetis ex eo crudum quid, nec coctum aqua, sed tantum assum igni: caput cum pedibus eius et intestinis vorabitis. Nec remanebit quidquam ex eo usque mane. Si quid residuum fuerit, igne comburetis. Sic autem comedetis illum: renes vestros accingetis, et calceamenta habebitis in pedibus, tenentes baculos in manibus, et comedetis festinanter: est enim Phase, id est transitus Domini.",
+    "responsory": [
+      "Eripe me, Domine, ab homine malo: a viro iniquo libera me.",
+      "Qui cogitaverunt malitias in corde: tota die constituebant praelia.",
+      "Acuerunt linguas suas sicut serpentis: venenum aspidum sub labiis eorum.",
+      "Custodi me, Domine, de manu peccatoris: et ab hominibus iniquis libera me.",
+      "Qui cogitaverunt supplantare gressus meos: absconderunt superbi laqueum mihi.",
+      "Et funes extenderunt in laqueum pedibus meis, iuxta iter scandalum posuerunt mihi.",
+      "Dixi Domino: Deus meus es tu: exaudi, Domine, vocem orationis meae.",
+      "Domine, Domine, virtus salutis meae: obumbra caput meum in die belli.",
+      "Ne tradas me a desiderio meo peccatori: cogitaverunt adversus me: ne derelinquas me, ne unquam exaltentur.",
+      "Caput circuitus eorum: labor labiorum ipsorum operiet eos.",
+      "Verumtamen iusti confitebuntur nomini tuo: et habitabunt recti cum vultu tuo."
+    ]
+  },
+  "passion": {
+    "citation": "Ioannes 18:1-40; 19:1-42",
+    "preDeath": [
+      "In illo tempore: Egressus est Iesus cum discipulis suis trans torrentem Cedron, ubi erat hortus, in quem introivit ipse, et discipuli eius. Sciebat autem et Iudas, qui tradebat eum, locum: quia frequenter Iesus convenerat illuc cum discipulis suis. Iudas ergo cum accepisset cohortem, et a pontificibus et pharisaeis ministros, venit illuc cum laternis, et facibus, et armis.",
+      "Iesus itaque sciens omnia quae ventura erant super eum, processit, et dixit eis: Quem quaeritis? Responderunt ei: Iesum Nazarenum. Dicit eis Iesus: Ego sum. Stabat autem et Iudas, qui tradebat eum, cum ipsis. Ut ergo dixit eis: Ego sum, abierunt retrorsum, et ceciderunt in terram. Iterum ergo interrogavit eos: Quem quaeritis? Illi autem dixerunt: Iesum Nazarenum. Respondit Iesus: Dixi vobis, quia ego sum: si ergo me quaeritis, sinite hos abire.",
+      "Simon ergo Petrus habens gladium eduxit eum: et percussit pontificis servum: et abscidit auriculam eius dexteram. Erat autem nomen servo Malchus. Dixit ergo Iesus Petro: Mitte gladium tuum in vaginam. Calicem, quem dedit mihi Pater, non bibam illum?",
+      "Cohors ergo, et tribunus, et ministri Iudaeorum comprehenderunt Iesum, et ligaverunt eum: et adduxerunt eum ad Annam primum; erat autem socer Caiphae, qui erat pontifex anni illius. Erat autem Caiphas, qui consilium dederat Iudaeis: Quia expedit unum hominem mori pro populo.",
+      "Sequebatur autem Iesum Simon Petrus, et alius discipulus. Discipulus autem ille erat notus pontifici, et introivit cum Iesu in atrium pontificis. Petrus autem stabat ad ostium foris. Exivit ergo discipulus alius, qui erat notus pontifici, et dixit ostiariae: et introduxit Petrum. Dicit ergo Petro ancilla ostiaria: Numquid et tu ex discipulis es hominis istius? Dicit ille: Non sum.",
+      "Stabant autem servi, et ministri ad prunas, quia frigus erat, et calefaciebant se. Erat autem cum eis et Petrus stans, et calefaciens se. Pontifex ergo interrogavit Iesum de discipulis suis, et de doctrina eius. Respondit ei Iesus: Ego palam locutus sum mundo: ego semper docui in synagoga, et in templo, quo omnes Iudaei conveniunt: et in occulto locutus sum nihil. Quid me interrogas? interroga eos, qui audierunt quid locutus sim ipsis: ecce hi sciunt quae dixerim ego.",
+      "Haec autem cum dixisset, unus assistens ministrorum dedit alapam Iesu, dicens: Sic respondes pontifici? Respondit ei Iesus: Si male locutus sum, testimonium perhibe de malo: si autem bene, quid me caedis? Et misit eum Annas ligatum ad Caipham pontificem.",
+      "Erat autem Simon Petrus stans, et calefaciens se. Dixerunt ergo ei: Numquid et tu ex discipulis eius es? Negavit ille, et dixit: Non sum. Dicit ei unus ex servis pontificis, cognatus eius, cuius abscidit Petrus auriculam: Nonne ego te vidi in horto cum illo? Iterum ergo negavit Petrus: et statim gallus cantavit.",
+      "Adducunt ergo Iesum a Caipha in praetorium. Erat autem mane: et ipsi non introierunt in praetorium, ut non contaminarentur, sed ut manducarent pascha. Exivit ergo Pilatus ad eos foras, et dixit: Quam accusationem affertis adversus hominem hunc? Responderunt, et dixerunt ei: Si non esset hic malefactor, non tibi tradidissemus eum.",
+      "Dixit ergo eis Pilatus: Accipite eum vos, et secundum legem vestram iudicate eum. Dixerunt ergo ei Iudaei: Nobis non licet interficere quemquam. Ut sermo Iesu impleretur, quem dixit, significans qua morte esset moriturus.",
+      "Introivit ergo iterum in praetorium Pilatus et vocavit Iesum, et dixit ei: Tu es Rex Iudaeorum? Respondit Iesus: A temetipso hoc dicis, an alii dixerunt tibi de me? Respondit Pilatus: Numquid ego Iudaeus sum? Gens tua, et pontifices tradiderunt te mihi: quid fecisti?",
+      "Respondit Iesus: Regnum meum non est de hoc mundo. Si ex hoc mundo esset regnum meum, ministri mei utique decertarent ut non traderer Iudaeis: nunc autem regnum meum non est hinc. Dixit itaque ei Pilatus: Ergo Rex es tu? Respondit Iesus: Tu dicis quia Rex sum ego. Ego in hoc natus sum, et ad hoc veni in mundum, ut testimonium perhibeam veritati: omnis, qui est ex veritate, audit vocem meam.",
+      "Dicit ei Pilatus: Quid est veritas? Et cum hoc dixisset, iterum exivit ad Iudaeos, et dicit eis: Ego nullam invenio in eo causam. Est autem consuetudo vobis ut unum dimittam vobis in Pascha: vultis ergo dimittam vobis Regem Iudaeorum? Clamaverunt ergo rursum omnes, dicentes: Non hunc, sed Barabbam. Erat autem Barabbas latro.",
+      "Tunc ergo apprehendit Pilatus Iesum, et flagellavit. Et milites plectentes coronam de spinis, imposuerunt capiti eius: et veste purpurea circumdederunt eum. Et veniebant ad eum, et dicebant: Ave Rex Iudaeorum. Et dabant ei alapas.",
+      "Exivit ergo iterum Pilatus foras, et dicit eis: Ecce adduco vobis eum foras, ut cognoscatis quia nullam invenio in eo causam. Exivit ergo Iesus portans coronam spineam, et purpureum vestimentum. Et dicit eis: Ecce homo. Cum ergo vidissent eum pontifices et ministri, clamabant, dicentes: Crucifige, crucifige eum.",
+      "Dicit eis Pilatus: Accipite eum vos, et crucifigite: ego enim non invenio in eo causam. Responderunt ei Iudaei: Nos legem habemus, et secundum legem debet mori, quia Filium Dei se fecit. Cum ergo audisset Pilatus hunc sermonem, magis timuit. Et ingressus est praetorium iterum: et dixit ad Iesum: Unde es tu? Iesus autem responsum non dedit ei.",
+      "Dicit ergo ei Pilatus: Mihi non loqueris? Nescis quia potestatem habeo crucifigere te, et potestatem habeo dimittere te? Respondit Iesus: Non haberes potestatem adversum me ullam, nisi tibi datum esset desuper. Propterea qui me tradidit tibi, maius peccatum habet.",
+      "Et exinde quaerebat Pilatus dimittere eum. Iudaei autem clamabant, dicentes: Si hunc dimittis, non es amicus Caesaris. Omnis enim qui se regem facit, contradicit Caesari. Pilatus autem cum audisset hos sermones, adduxit foras Iesum, et sedit pro tribunali, in loco qui dicitur Lithostrotos, hebraice autem Gabbatha.",
+      "Erat autem Parasceve Paschae, hora quasi sexta, et dicit Iudaeis: Ecce Rex vester. Illi autem clamabant: Tolle, tolle, crucifige eum. Dicit eis Pilatus: Regem vestrum crucifigam? Responderunt pontifices: Non habemus regem, nisi Caesarem. Tunc ergo tradidit eis illum ut crucifigeretur.",
+      "Susceperunt autem Iesum, et eduxerunt. Et baiulans sibi crucem, exivit in eum, qui dicitur Calvariae, locum, hebraice autem Golgotha: ubi crucifixerunt eum, et cum eo alios duos hinc et hinc, medium autem Iesum. Scripsit autem et titulum Pilatus: et posuit super crucem. Erat autem scriptum: Iesus Nazarenus, Rex Iudaeorum.",
+      "Hunc ergo titulum multi Iudaeorum legerunt, quia prope civitatem erat locus ubi crucifixus est Iesus. Et erat scriptum hebraice, graece et latine. Dicebant ergo Pilato pontifices Iudaeorum: Noli scribere, Rex Iudaeorum, sed quia ipse dixit: Rex sum Iudaeorum. Respondit Pilatus: Quod scripsi, scripsi.",
+      "Milites ergo cum crucifixissent eum, acceperunt vestimenta eius et fecerunt quatuor partes: unicuique militi partem, et tunicam. Erat autem tunica inconsutilis, desuper contexta per totum. Dixerunt ergo ad invicem: Non scindamus eam, sed sortiamur de illa cuius sit. Ut Scriptura impleretur, dicens: Partiti sunt vestimenta mea sibi: et in vestem meam miserunt sortem.",
+      "Stabant autem iuxta crucem Iesu mater eius, et soror matris eius Maria Cleophae, et Maria Magdalene. Cum vidisset ergo Iesus matrem, et discipulum stantem, quem diligebat, dicit matri suae: Mulier, ecce filius tuus. Deinde dicit discipulo: Ecce mater tua. Et ex illa hora accepit eam discipulus in sua.",
+      "Postea sciens Iesus quia omnia consummata sunt, ut consummaretur Scriptura, dixit: Sitio. Vas ergo erat positum aceto plenum. Illi autem spongiam plenam aceto, hyssopo circumponentes, obtulerunt ori eius. Cum ergo accepisset Iesus acetum, dixit: Consummatum est. Et inclinato capite, tradidit spiritum."
+    ],
+    "deathCue": "tradidit spiritum",
+    "postDeath": [
+      "Iudaei ergo quoniam Parasceve erat, ut non remanerent in cruce corpora sabbato — erat enim magnus dies ille sabbati — rogaverunt Pilatum, ut frangerentur eorum crura, et tollerentur. Venerunt ergo milites: et primi quidem fregerunt crura, et alterius qui crucifixus est cum eo. Ad Iesum autem cum venissent, ut viderunt eum iam mortuum, non fregerunt eius crura: sed unus militum lancea latus eius aperuit, et continuo exivit sanguis et aqua.",
+      "Et qui vidit, testimonium perhibuit: et verum est testimonium eius. Et ille scit, quia vera dicit: ut et vos credatis. Facta sunt enim haec ut Scriptura impleretur: Os non comminuetis ex eo. Et iterum alia Scriptura dicit: Videbunt in quem transfixerunt.",
+      "Post haec autem rogavit Pilatum Ioseph ab Arimathaea, eo quod esset discipulus Iesu, occultus autem propter metum Iudaeorum, ut tolleret corpus Iesu. Et permisit Pilatus. Venit ergo, et tulit corpus Iesu. Venit autem et Nicodemus, qui venerat ad Iesum nocte primum, ferens mixturam myrrhae et aloes, quasi libras centum.",
+      "Acceperunt ergo corpus Iesu, et ligaverunt illud linteis cum aromatibus, sicut mos est Iudaeis sepelire. Erat autem in loco, ubi crucifixus est, hortus: et in horto monumentum novum, in quo nondum quisquam positus erat. Ibi ergo propter Parasceven Iudaeorum, quia iuxta erat monumentum, posuerunt Iesum."
+    ]
+  },
+  "solemnPrayers": [
+    {
+      "key": "HOLY_CHURCH",
+      "title": "Pro Sancta Ecclesia",
+      "intention": "Oremus, dilectissimi nobis, pro Ecclesia sancta Dei: ut eam Deus et Dominus noster pacificare, adunare, et custodire dignetur toto orbe terrarum: subiiciens ei principatus, et potestates: detque nobis quietam et tranquillam vitam degentibus, glorificare Deum Patrem omnipotentem.",
+      "prayer": "Omnipotens sempiterne Deus, qui gloriam tuam omnibus in Christo gentibus revelasti: custodi opera misericordiae tuae; ut Ecclesia tua toto orbe diffusa, stabili fide in confessione tui nominis perseveret. Per eundem Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+    },
+    {
+      "key": "SUPREME_PONTIFF",
+      "title": "Pro Summo Pontifice",
+      "intention": "Oremus et pro beatissimo Papa nostro N., ut Deus et Dominus noster, qui elegit eum in ordine episcopatus, salvum atque incolumem custodiat Ecclesiae suae sanctae, ad regendum populum sanctum Dei.",
+      "prayer": "Omnipotens sempiterne Deus, cuius iudicio universa fundantur: respice propitius ad preces nostras, et electum nobis Antistitem tua pietate conserva; ut christiana plebs, quae te gubernatur auctore, sub tanto pontifice, credulitatis suae meritis augeatur. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+    },
+    {
+      "key": "ALL_ORDERS_AND_DEGREES",
+      "title": "Pro Clero et Fidelibus",
+      "intention": "Oremus et pro omnibus Episcopis, Presbyteris, Diaconibus, Subdiaconibus, Acolythis, Exorcistis, Lectoribus, Ostiariis, Confessoribus, Virginibus, Viduis: et pro omni populo sancto Dei.",
+      "prayer": "Omnipotens sempiterne Deus, cuius Spiritu totum corpus Ecclesiae sanctificatur et regitur: exaudi nos pro universis ordinibus supplicantes; ut gratiae tuae munere, ab omnibus tibi gradibus fideliter serviatur. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate eiusdem Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+    },
+    {
+      "key": "PUBLIC_OFFICIALS",
+      "title": "Pro omnibus res publicas moderantibus",
+      "intention": "Oremus et pro omnibus res publicas moderantibus, eorumque ministeriis et potestatibus: ut Deus et Dominus noster mentes et corda eorum secundum voluntatem suam dirigat ad nostram perpetuam pacem.",
+      "prayer": "Omnipotens sempiterne Deus, in cuius manu sunt omnium potestates et omnium iura populorum: respice benignus ad eos, qui nos in potestate regunt; ut ubique terrarum, dextera tua protegente, et religionis integritas, et patriae securitas indesinenter consistat. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+    },
+    {
+      "key": "CATECHUMENS",
+      "title": "Pro catechumenis",
+      "intention": "Oremus et pro catechumenis nostris: ut Deus et Dominus noster adaperiat aures praecordiorum ipsorum, ianuamque misericordiae; ut per lavacrum regenerationis accepta remissione omnium peccatorum, et ipsi inveniantur in Christo Iesu Domino nostro.",
+      "prayer": "Omnipotens sempiterne Deus, qui Ecclesiam tuam nova semper prole foecundas: auge fidem et intellectum catechumenis nostris; ut renati fonte baptismatis, adoptionis tuae filiis aggregentur. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+    },
+    {
+      "key": "NEEDS_OF_FAITHFUL",
+      "title": "Pro fidelium necessitatibus",
+      "intention": "Oremus, dilectissimi nobis, Deum Patrem omnipotentem, ut cunctis mundum purget erroribus: morbos auferat: famem depellat: aperiat carceres: vincula dissolvat: peregrinantibus reditum: infirmantibus sanitatem: navigantibus portum salutis indulgeat.",
+      "prayer": "Omnipotens sempiterne Deus, maestorum consolatio, laborantium fortitudo: perveniant ad te preces de quacumque tribulatione clamantium; ut omnes sibi in necessitatibus suis misericordiam tuam gaudeant affuisse. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+    },
+    {
+      "key": "HERETICS_AND_SCHISMATICS",
+      "title": "Pro unitate Ecclesiae",
+      "intention": "Oremus et pro haereticis et schismaticis: ut Deus et Dominus noster eruat eos ab erroribus universis; et ad sanctam matrem Ecclesiam Catholicam atque Apostolicam revocare dignetur.",
+      "prayer": "Omnipotens sempiterne Deus, qui salvas omnes, et neminem vis perire: respice ad animas diabolica fraude deceptas; ut omni haeretica pravitate deposita, errantium corda resipiscant, et ad veritatis tuae redeant unitatem. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+    },
+    {
+      "key": "CONVERSION_OF_JEWS",
+      "title": "Pro Iudaeis",
+      "variants": {
+        "PRINTED_1962": {
+          "intention": "Oremus et pro Iudaeis: ut Deus et Dominus noster auferat velamen de cordibus eorum; ut et ipsi agnoscant Iesum Christum Dominum nostrum.",
+          "prayer": "Omnipotens sempiterne Deus, qui Iudaeos etiam a tua misericordia non repellis: exaudi preces nostras, quas pro illius populi obcaecatione deferimus; ut, agnita veritatis tuae luce, quae Christus est, a suis tenebris eruantur. Per eundem Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+        },
+        "HOLY_SEE_2008": {
+          "intention": "Oremus et pro Iudaeis. Ut Deus et Dominus noster illuminet corda eorum, ut agnoscant Iesum Christum salvatorem omnium hominum.",
+          "prayer": "Omnipotens sempiterne Deus, qui vis ut omnes homines salvi fiant et ad agnitionem veritatis veniant, concede propitius, ut plenitudine gentium in Ecclesiam tuam intrante omnis Israel salvus fiat. Per eundem Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+        }
+      }
+    },
+    {
+      "key": "CONVERSION_OF_PAGANS",
+      "title": "Pro Paganis",
+      "intention": "Oremus et pro paganis: ut Deus omnipotens auferat iniquitatem a cordibus eorum; ut relictis idolis suis, convertantur ad Deum vivum et verum, et unicum Filium eius Iesum Christum Deum et Dominum nostrum.",
+      "prayer": "Omnipotens sempiterne Deus, qui non mortem peccatorum, sed vitam semper inquiris: suscipe propitius orationem nostram, et libera eos ab idolorum cultura; et aggrega Ecclesiae tuae sanctae ad laudem et gloriam nominis tui. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+    }
+  ],
+  "cross": {
+    "unveiling": {
+      "versicle": "Ecce lignum Crucis, in quo salus mundi pependit.",
+      "response": "Venite, adoremus.",
+      "repetitions": 3
+    },
+    "improperia": [
+      "Popule meus, quid feci tibi? aut in quo contristavi te? Responde mihi.",
+      "Quia eduxi te de terra Aegypti, parasti crucem Salvatori tuo.",
+      "Agios o Theos! Sanctus Deus! Agios ischyros! Sanctus fortis! Agios athanatos, eleison imas. Sanctus immortalis, miserere nobis.",
+      "Quia eduxi te per desertum quadraginta annis, et manna cibavi te, et introduxi te in terram satis bonam: parasti Crucem Salvatori tuo.",
+      "Quid ultra debui facere tibi, et non feci? Ego quidem plantavi te vineam meam speciosissimam: et tu facta es mihi nimis amara: aceto namque sitim meam potasti: et lancea perforasti latus Salvatori tuo.",
+      "Ego propter te flagellavi Aegyptum cum primogenitis suis: et tu me flagellatum tradidisti.",
+      "Ego eduxi te de Aegypto, demerso Pharaone in Mare Rubrum: et tu me tradidisti principibus sacerdotum.",
+      "Ego ante te aperui mare: et tu aperuisti lancea latus meum.",
+      "Ego ante te praeivi in columna nubis: et tu me duxisti ad praetorium Pilati.",
+      "Ego te pavi manna per desertum: et tu me cecidisti alapis et flagellis.",
+      "Ego te potavi aqua salutis de petra: et tu me potasti felle et aceto.",
+      "Ego propter te Chananaeorum reges percussi: et tu percussisti arundine caput meum.",
+      "Ego dedi tibi sceptrum regale: et tu dedisti capiti meo spineam coronam.",
+      "Ego te exaltavi magna virtute: et tu me suspendisti in patibulo Crucis."
+    ],
+    "crucemTuam": [
+      "Crucem tuam adoramus, Domine: et sanctam resurrectionem tuam laudamus, et glorificamus: ecce enim propter lignum venit gaudium in universo mundo.",
+      "Deus misereatur nostri, et benedicat nobis. Illuminet vultum suum super nos, et misereatur nostri.",
+      "Crucem tuam adoramus, Domine: et sanctam resurrectionem tuam laudamus, et glorificamus: ecce enim propter lignum venit gaudium in universo mundo."
+    ],
+    "cruxFidelis": [
+      "Crux fidelis, inter omnes Arbor una nobilis! Nulla silva talem profert, fronde, flore, germine. Dulce lignum, dulces clavos, dulce pondus sustinet.",
+      "Pange, lingua, gloriosi lauream certaminis, et super crucis trophaeo dic triumphum nobilem: qualiter Redemptor orbis immolatus vicerit.",
+      "De parentis protoplasti fraude Factor condolens, quando pomi noxialis in necem morsu ruit: ipse lignum tunc notavit, damna ligni ut solveret.",
+      "Hoc opus nostrae salutis ordo depoposcerat: multiformis proditoris ars ut artem falleret: et medelam ferret inde, hostis unde laeserat.",
+      "Quando venit ergo sacri plenitudo temporis, missus est ab arce Patris natus, orbis Conditor: atque ventre virginali carne amictus prodiit.",
+      "Vagit infans inter arcta conditus praesepia: membra pannis involuta Virgo Mater alligat: et Dei manus, pedesque stricta cingit fascia.",
+      "Lustra sex qui iam peregit, tempus implens corporis, sponte libera Redemptor passioni deditus, Agnus in Crucis levatur immolandus stipite.",
+      "Felle potus ecce languet: spina, clavi, lancea, mite corpus perforarunt, unda manat et cruor: terra, pontus, astra, mundus, quo lavantur flumine.",
+      "Flecte ramos, arbor alta, tensa laxa viscera, et rigor lentescat ille, quem dedit nativitas: et superni membra Regis tende miti stipite.",
+      "Sola digna tu fuisti ferre mundi victimam: atque portum praeparare arca mundo naufrago: quam sacer cruor perunxit, fusus Agni corpore.",
+      "Sempiterna sit beatae Trinitati gloria: aequa Patri, Filioque; par decus Paraclito: unius Trinique nomen laudet universitas. Amen."
+    ],
+    "returnAntiphons": [
+      "Adoramus te, Christe, et benedicimus tibi, quia per Crucem tuam redemisti mundum.",
+      "Per lignum servi facti sumus, et per sanctam Crucem liberati sumus: fructus arboris seduxit nos, Filius Dei redemit nos.",
+      "Salvator mundi, salva nos: qui per Crucem et Sanguinem tuum redemisti nos, auxiliare nobis, te deprecamur, Deus noster."
+    ]
+  },
+  "communion": {
+    "paterIntro": "Praeceptis salutaribus moniti, et divina institutione formati, audemus dicere:",
+    "pater": "Pater noster, qui es in caelis, sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua, sicut in caelo et in terra. Panem nostrum quotidianum da nobis hodie: et dimitte nobis debita nostra, sicut et nos dimittimus debitoribus nostris. Et ne nos inducas in tentationem; sed libera nos a malo. Amen.",
+    "libera": "Libera nos, quaesumus, Domine, ab omnibus malis, praeteritis, praesentibus, et futuris: et intercedente beata et gloriosa semper Virgine Dei Genetrice Maria, cum beatis Apostolis tuis Petro et Paulo, atque Andrea, et omnibus Sanctis, da propitius pacem in diebus nostris: ut ope misericordiae tuae adiuti, et a peccato simus semper liberi, et ab omni perturbatione securi. Per eundem Christum Dominum nostrum Iesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum.",
+    "amen": "Amen.",
+    "perceptio": "Perceptio Corporis tui, Domine Iesu Christe, quod ego indignus sumere praesumo, non mihi proveniat in iudicium et condemnationem: sed pro tua pietate prosit mihi ad tutamentum mentis et corporis, et ad medelam percipiendam. Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+    "priestDomineNonSumDignus": "Domine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanabitur anima mea.",
+    "priestCommunion": "Corpus Domini nostri Iesu Christi custodiat animam meam in vitam aeternam. Amen.",
+    "misereatur": "Misereatur vestri omnipotens Deus, et, dimissis peccatis vestris, perducat vos ad vitam aeternam.",
+    "indulgentiam": "Indulgentiam, absolutionem et remissionem peccatorum vestrorum tribuat vobis omnipotens et misericors Dominus.",
+    "ecce": "Ecce Agnus Dei, ecce qui tollit peccata mundi.",
+    "faithfulDomineNonSumDignus": "Domine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanabitur anima mea."
+  },
+  "conclusion": [
+    "Super populum tuum quaesumus, Domine, qui passionem et mortem Filii tui devota mente recoluit, benedictio copiosa descendat, indulgentia veniat, consolatio tribuatur, fides sancta succrescat, redemptio sempiterna firmetur. Per eundem Christum Dominum nostrum. Amen.",
+    "Omnipotens et misericors Deus, qui Christi tui beata passione et morte nos reparasti: conserva in nobis operam misericordiae tuae; ut huius mysterii participatione, perpetua devotione vivamus. Per eundem Christum Dominum nostrum. Amen.",
+    "Reminiscere miserationum tuarum, Domine, et famulos tuos aeterna protectione sanctifica, pro quibus Christus, Filius tuus, per suum cruorem instituit paschale mysterium. Per eundem Christum Dominum nostrum. Amen."
+  ]
+}
