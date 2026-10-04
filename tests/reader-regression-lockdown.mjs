@@ -177,9 +177,13 @@ assert.equal(candlemasPayload?.objectStateAcceptance?.postureOverride,null);
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
 assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
-assert.deepEqual(realShellScope?.certified,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"]);
+assert.deepEqual(realShellScope?.certified,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","REQUIEM_ABSOLUTION"]);
 assert.equal(realShellScope?.pending?.includes("CANDLEMAS"),false);
 assert.equal(realShellScope?.pending?.includes("ROGATIONS"),false);
+assert.equal(realShellScope?.pending?.includes("REQUIEM_ABSOLUTION"),false);
+assert.ok(realShellScope?.pending?.includes("HOLY_THURSDAY_POST"));
+assert.ok(realShellScope?.pending?.includes("CORPUS_CHRISTI_PROCESSION"));
+assert.ok(realShellScope?.pending?.includes("GENERIC_PROCESSION"));
 assert.ok(realShellScope?.pending?.includes("EASTER_VIGIL"));
 assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
 assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
@@ -205,6 +209,28 @@ assert.equal(preMassShell?.status,"CERTIFIED");
 assert.deepEqual(preMassShell?.rites,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"]);
 assert.equal(preMassShell?.actualIndexHtml,true);
 assert.equal(preMassShell?.legacyStartCount,0);
+
+const requiemAbsolutionPayload=release.protectedInvariants.find(x=>x.id==="REQUIEM_ABSOLUTION_NATIVE_PAYLOAD");
+assert.equal(requiemAbsolutionPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
+  "Requiem Absolution real-shell production certification disappeared");
+assert.match(String(requiemAbsolutionPayload?.controller??""),/reader-requiem-absolution\.js/);
+assert.match(String(requiemAbsolutionPayload?.nativePreview??""),/reader-native-preview\.js/);
+assert.match(String(requiemAbsolutionPayload?.productionTest??""),/app-shell-final-e2e\.mjs/);
+assert.equal(requiemAbsolutionPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
+assert.match(String(requiemAbsolutionPayload?.lifecycleOwner??""),/form-lifecycle\.js/);
+
+const requiemShell=release.protectedInvariants.find(x=>x.id==="REQUIEM_ABSOLUTION_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(requiemShell?.status,"CERTIFIED");
+assert.equal(requiemShell?.rite,"REQUIEM_ABSOLUTION");
+assert.equal(requiemShell?.actualIndexHtml,true);
+assert.equal(requiemShell?.legacyStartCount,0);
+assert.deepEqual(requiemShell?.branch,{bodyPresent:true,burialProcession:true});
+assert.equal(requiemShell?.nativeOwner,"R17_NATIVE_PRODUCTION");
+
+for(const id of ["HOLY_THURSDAY_POST_NATIVE_PAYLOAD","CORPUS_CHRISTI_NATIVE_PAYLOAD","GENERIC_PROCESSION_NATIVE_PAYLOAD"]){
+  const item=release.protectedInvariants.find(x=>x.id===id);
+  assert.equal(item?.status,"CERTIFIED_MODULAR_RUNTIME",id+" was silently promoted without real-shell evidence");
+}
 
 const nuptial=release.protectedInvariants.find(x=>x.id==="NUPTIAL_NATIVE_INSERTIONS");
 assert.equal(nuptial?.status,"CERTIFIED_SOURCE_INSERTION_MODEL","Nuptial insertions lost certification");
@@ -300,6 +326,13 @@ assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
+assert.match(nativeSource,/createRequiemAbsolutionReaderController/,"native reader lost Requiem Absolution controller");
+assert.match(nativeSource,/createFormLifecycleRuntime/,"native reader lost Requiem form lifecycle");
+assert.match(nativeSource,/NATIVE_PRODUCTION_FOLLOWING_ACTION_PENDING/,"native reader stopped failing closed on pending following actions");
+assert.match(nativeSource,/planAwareCard/,"native reader lost plan-aware ending projection");
+assert.match(nativeSource,/AO\.SM\.B092/,"native reader stopped suppressing forbidden final blessing blocks");
+assert.match(nativeSource,/getRequiemAbsolutionState/,"native reader lost Requiem Absolution production API");
+assert.match(nativeSource,/getLifecycleState/,"native reader lost post-Mass lifecycle observability");
 assert.match(nativeSource,/getCandlemasMassState/,"native reader lost Candlemas Mass object-state API");
 assert.match(nativeSource,/r17ObjectState/,"native reader lost Candlemas object-state observability");
 assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
@@ -313,6 +346,9 @@ assert.match(nativeSource,/r17OwnerBell/,"native reader lost bell ownership diag
 assert.match(nativeSource,/r17OwnerCinematic/,"native reader lost cinematic ownership diagnostics");
 assert.doesNotMatch(nativeSource,/#scholaDock|#scholaStreamLine/,"native reader reintroduced legacy Schola DOM donor");
 assert.match(nativeSource,/iconKeysForReaderState/,"native reader lost approved icon-key projection");
+const hostAdapterSource=readFileSync(new URL("../src/mass/host-adapter.js",import.meta.url),"utf8");
+assert.match(hostAdapterSource,/requiemAbsolution:options\.requiemAbsolution\?\?legacy\.requiemAbsolution/,
+  "production host adapter stopped preserving Requiem Absolution branch context");
 const browserEntrySource=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
 assert.match(browserEntrySource,/createHostIconResolver/,"browser entry lost host icon resolver");
 assert.match(browserEntrySource,/R17_ICON_BANK_INCOMPLETE/,"browser entry stopped failing closed on incomplete icon bank");
