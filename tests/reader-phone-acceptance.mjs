@@ -173,6 +173,34 @@ try{
 
   await context.close();
 
+  const frenchContext=await browser.newContext({
+    viewport:{width:390,height:844},
+    deviceScaleFactor:2,
+    isMobile:true,
+    hasTouch:true,
+  });
+  const french=await frenchContext.newPage();
+  french.on("console",msg=>{if(msg.type()==="error")console.error("french browser console:",msg.text())});
+  await french.goto("http://127.0.0.1:4173/tests/fixtures/reader-phone-harness.html?asperges=1&lang=fr",{waitUntil:"networkidle"});
+  await french.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
+  assert.equal(await french.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id),"ASP-R01",
+    "French Holy Rosary field path fell out of native reader before Asperges");
+  const frenchNext=french.locator('[data-reader-nav="next"]');
+  for(const expected of ["ASP-R02","ASP-R03","ASP-R04","ASP-R05"]){
+    const hit=await frenchNext.boundingBox();
+    await french.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+    await french.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard().id===id,expected);
+  }
+  let frenchHit=await frenchNext.boundingBox();
+  await french.touchscreen.tap(frenchHit.x+frenchHit.width/2,frenchHit.y+frenchHit.height/2);
+  await french.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
+  const frenchBody=await french.locator('[data-role="paragraphs"]').textContent();
+  assert.match(frenchBody,/Réjouissons-nous ensemble dans le Seigneur/,
+    "French-only resolved Proper did not reach the native Mass card");
+  assert.notEqual((await french.locator('[data-role="card-title"]').textContent())?.trim(),"",
+    "French native reader rendered a blank card title");
+  await frenchContext.close();
+
   for(const viewportSpec of [
     {width:320,height:700},
     {width:360,height:780},
