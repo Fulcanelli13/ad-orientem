@@ -27,6 +27,7 @@ function host({ route = "home", confirm = true } = {}) {
     openSettings() { calls.push("settings"); return true; },
     dismissSettings() { calls.push("dismiss-settings"); return true; },
     restoreSettingsHome() { calls.push("restore-settings-home"); return true; },
+    leaveLiveMass() { calls.push("leave-live"); return true; },
     confirmLeaveLiveMass() { calls.push("confirm-live"); return confirm; },
     defer(fn) { calls.push("defer"); return Promise.resolve(fn()); },
   };
@@ -38,6 +39,17 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal((await shell.go("pray")).ok, true);
   assert.equal(shell.getActive(), "pray");
   assert.deepEqual(h.calls, ["dismiss-settings", "home", "defer", "domain:pray"]);
+}
+
+{
+  const h = host();
+  h.hasResumableMass = () => true;
+  const shell = createAppShellController({ host: h });
+  const nav = await shell.go("mass");
+  assert.equal(nav.ok, true);
+  assert.equal(nav.resumedMass, true);
+  assert.equal(shell.getActive(), "mass");
+  assert.deepEqual(h.calls, ["dismiss-settings", "defer", "domain:mass"]);
 }
 
 {
@@ -53,7 +65,7 @@ function host({ route = "home", confirm = true } = {}) {
   const h = host({ route: "live", confirm: true });
   const shell = createAppShellController({ host: h, initialSurface: "mass" });
   assert.equal((await shell.go("calendar")).ok, true);
-  assert.deepEqual(h.calls, ["dismiss-settings", "confirm-live", "home", "defer", "calendar"]);
+  assert.deepEqual(h.calls, ["dismiss-settings", "confirm-live", "leave-live", "home", "defer", "calendar"]);
 }
 
 {
@@ -63,6 +75,25 @@ function host({ route = "home", confirm = true } = {}) {
   assert.deepEqual(h.calls, ["settings"]);
   h.pushRoute("prepare");
   assert.equal(shell.getActive(), "mass");
+}
+
+{
+  const calls=[];
+  const win={
+    AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en"}),subscribe:()=>()=>{}}},
+    AO_NAV_V362:{home:()=>true},
+    AO_V37_SHELL:{openDomain:(id)=>{calls.push("donor:"+id);return true;}},
+    AO_R17_BROWSER_ENTRY:{
+      hasResumable:()=>true,
+      resume:async()=>{calls.push("mass:resume");return {ok:true};},
+      suspend:()=>{calls.push("mass:suspend");return true;},
+    },
+  };
+  const adapter=createAppHostAdapter(win);
+  assert.equal(await adapter.openDomain("mass"),true);
+  assert.deepEqual(calls,["mass:resume"]);
+  assert.equal(adapter.leaveLiveMass(),true);
+  assert.deepEqual(calls,["mass:resume","mass:suspend"]);
 }
 
 {
