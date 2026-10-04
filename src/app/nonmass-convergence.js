@@ -581,6 +581,15 @@ function patchConfession(win) {
   root.dataset.aoD5Integrated = "1";
   root.querySelectorAll(".pbProgress").forEach(function (node) { node.hidden = true; node.setAttribute("aria-hidden", "true"); });
   root.querySelectorAll(".pbFlowCard .pbKicker").forEach(function (node) { node.hidden = true; });
+  // D5 owns the visible five-phase navigation. Hide any exact donor N / M counter
+  // so the old eight-step presentation cannot compete with the macro rail.
+  root.querySelectorAll(".pbFlowCard *").forEach(function (node) {
+    if (/^\s*\d+\s*\/\s*\d+\s*$/.test(String(node.textContent || ""))) {
+      node.hidden = true;
+      node.setAttribute("aria-hidden", "true");
+      node.dataset.aoD5LegacyCounter = "hidden";
+    }
+  });
   const existingRail = root.querySelector("[data-ao-d5-phase-rail]");
   if (existingRail) existingRail.remove();
   const anchor = root.querySelector(".pbHero") || root.querySelector(".lab-view-head,.pbTop");
