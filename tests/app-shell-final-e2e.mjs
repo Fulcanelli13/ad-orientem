@@ -257,6 +257,137 @@ async function exerciseRealShellSpecialRite(browser,spec){
   }
 }
 
+
+async function exerciseRealShellGoodFriday(browser){
+  const context=await browser.newContext({
+    viewport:{width:390,height:844},
+    deviceScaleFactor:2,
+    isMobile:true,
+    hasTouch:true,
+  });
+  const page=await context.newPage();
+  const pageErrors=[];
+  page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
+  try{
+    await page.goto("http://127.0.0.1:4174/index.html?aoR17Reader=native",{
+      waitUntil:"domcontentloaded",timeout:90000,
+    });
+    await page.waitForTimeout(1200);
+    const setup=await page.evaluate(async(iconKeys)=>{
+      globalThis.__AO_FINAL_LEGACY_STARTS=0;
+      globalThis.AO_SEQUENCE_BRIDGE_V23={
+        startLive(){globalThis.__AO_FINAL_LEGACY_STARTS+=1;},
+        getActive(){return null;},
+        getAssemblyStatus(){return null;},
+      };
+      globalThis.AO_SEQUENCE_BRIDGE_V22=null;
+      globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
+        iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
+      );
+      globalThis.AO_RUNTIME_V8={
+        store:{getState:()=>({
+          selectedDate:"2027-03-26",
+          language:"en",
+          settings:{
+            massForm:"solemn",
+            followMode:"vox",
+            massPostureProfile:"TRADITIONAL_WALSH",
+            massGestureProfile:"GUIDED_1962",
+            faithfulCommunion:false,
+          },
+        })},
+      };
+      globalThis.AO_CELEBRATION_ARCH_V1={
+        date:"2027-03-26",
+        celebrationForm:"solemn",
+        followMode:"vox",
+        actualCelebration:{id:"good-friday",type:"CALENDAR"},
+      };
+      globalThis.AO_CELEBRATION_API={
+        getResolvedMass:()=>({
+          canStart:true,
+          date:"2027-03-26",
+          calendarDay:{id:"good-friday",title:"Good Friday"},
+          celebrationId:"good-friday",
+          celebrationType:"CALENDAR",
+          exceptionalProfile:"good-friday-1962",
+          proper:null,
+          properSource:null,
+          insertedRites:[],
+          conditions:[],
+          rubricSources:["MR1962"],
+        }),
+      };
+      const mod=await import("/src/mass/browser-entry.js?final-shell-good-friday=1");
+      const controller=mod.createBrowserMassController();
+      const prepared=await controller.enter();
+      return {
+        schema:prepared.schema,
+        kind:prepared.session.plan.kind,
+        rite:prepared.session.plan.rite,
+        canonicalMassGraphActive:prepared.session.plan.canonicalMassGraphActive,
+      };
+    },iconKeys);
+
+    assert.equal(setup.schema,"ao-mass-entry-bootstrap-v1");
+    assert.equal(setup.kind,"DISTINCT_RITE");
+    assert.equal(setup.rite,"GOOD_FRIDAY");
+    assert.equal(setup.canonicalMassGraphActive,false);
+
+    await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
+    await page.waitForFunction(()=>
+      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getGoodFridayState?.()?.step?.recordId==="GF-OPEN-010",
+      null,{timeout:10000});
+
+    const ownership=await page.evaluate(()=>({
+      starts:globalThis.__AO_FINAL_LEGACY_STARTS,
+      readerUiMode:globalThis.AO_R17_MASS_RUNTIME?.readerUiMode??null,
+      uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
+      marker:document.documentElement.dataset.aoMassReaderUi??null,
+      modelIsNull:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model===null,
+      cardOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17CardOwner??null,
+    }));
+    assert.equal(ownership.starts,0,"Good Friday started legacy renderer");
+    assert.equal(ownership.readerUiMode,"NATIVE");
+    assert.equal(ownership.uiOwner,"R17_NATIVE_PRODUCTION");
+    assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION");
+    assert.equal(ownership.modelIsNull,true,"Good Friday fabricated an Ordinary Mass reader model");
+    assert.equal(ownership.cardOwner,"R28_GOOD_FRIDAY_DISTINCT_RITE");
+
+    await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToGoodFridayRecord("GF-PASS-320"));
+    await page.waitForFunction(()=>
+      document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.includes("KNEEL") &&
+      document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")?.textContent?.includes("PAUSE_BRIEFLY"),
+      null,{timeout:5000});
+
+    await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToGoodFridayRecord("GF-VEN-620"));
+    await page.waitForFunction(()=>
+      document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")?.textContent?.includes("ONE_SIMPLE_GENUFLECTION"),
+      null,{timeout:5000});
+    const veneration=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.getGoodFridayState());
+    assert.equal(veneration.personalOnly,true);
+    assert.equal(veneration.personalState,"GENUFLECTING");
+
+    await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToGoodFridayRecord("GF-END-910"));
+    let end=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.getGoodFridayState());
+    assert.equal(end.atEnd,true);
+    assert.equal(end.ordinaryMassGraphActive,false);
+
+    const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+    const box=await next.boundingBox();
+    assert.ok(box && box.height>=44,"Good Friday Next target is too small");
+    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+    await page.waitForTimeout(100);
+    end=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.getGoodFridayState());
+    assert.equal(end.step.recordId,"GF-END-910","Good Friday end fabricated an Ordinary Mass handoff");
+    assert.equal(end.ordinaryMassGraphActive,false);
+
+    assert.deepEqual(pageErrors,[],"Good Friday uncaught page errors: "+JSON.stringify(pageErrors));
+  }finally{
+    await context.close();
+  }
+}
+
 let browser;
 try{
   browser=await chromium.launch({headless:true});
@@ -532,7 +663,9 @@ try{
     massTitle:"Introit",
   });
 
-  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Asperges, Palm, Ash, Candlemas and Rogations paths on phone Chromium without booting legacy.");
+  await exerciseRealShellGoodFriday(browser);
+
+  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Asperges, Palm, Ash, Candlemas, Rogations and Good Friday paths on phone Chromium without booting legacy.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
