@@ -359,15 +359,18 @@ try{
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="home" &&
-    document.querySelector(".homeScreen")?.dataset?.aoHomeOwner==="modular-home-v1",
+    document.querySelector(".homeScreen")?.dataset?.aoHomeOwner==="modular-home-v1" &&
+    !document.getElementById("aoPray435930")?.classList?.contains("open"),
     null,{timeout:10000});
   const homeOwnership=await page.evaluate(()=>({
     owner:document.querySelector(".homeScreen")?.dataset?.aoHomeOwner??null,
     installed:globalThis.AO_HOME_APP_V1?.status?.().installed??false,
     donorAvailable:globalThis.AO_HOME_APP_V1?.status?.().donorHomeAvailable??false,
+    prayStillOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
   }));
   assert.equal(homeOwnership.owner,"modular-home-v1","production Home click did not use modular Home owner");
   assert.equal(homeOwnership.installed,true);
+  assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
 
   await page.locator("[data-ao-app-surface='settings']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
