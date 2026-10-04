@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.4.1",
+  "version": "4.5.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html phone-Chromium acceptance is now explicit for the certified pre-Mass cluster (Asperges, Palm, Ash, Candlemas and Rogations). Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html phone-Chromium acceptance is explicit for the pre-Mass cluster and for Requiem Absolution. Other post-Mass, distinct-rite and overlay paths remain pending until their real-shell evidence is pinned. Legacy remains explicit rollback/debug only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -609,7 +609,7 @@
     },
     {
       "id": "REQUIEM_ABSOLUTION_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-requiem-absolution.js",
       "payload": "data/presentation/reader-requiem-absolution.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ABS",
@@ -621,13 +621,22 @@
         "body-present and body-absent branches remain distinct",
         "coffin aspersion/incensation never creates a faithful gesture",
         "In paradisum is limited to the body-present burial-procession branch",
-        "completion returns to the plan-owned post-Mass lifecycle"
+        "completion returns to the plan-owned post-Mass lifecycle",
+        "actual index.html phone acceptance preserves body-present and burial-procession branch context through the production host adapter",
+        "actual index.html phone acceptance suppresses the final blessing and Last Gospel before entering Absolution",
+        "actual index.html phone acceptance reaches In paradisum only on the body-present burial-procession branch",
+        "actual index.html phone acceptance returns from Absolution to DEPARTURE and GIVE_THANKS_HANDOFF"
       ],
       "tests": [
         "tests/reader-requiem-absolution.mjs",
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
-      ]
+      ],
+      "nativePreview": "src/mass/reader-native-preview.js",
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui",
+      "lifecycleOwner": "src/mass/form-lifecycle.js"
     },
     {
       "id": "CORPUS_CHRISTI_NATIVE_PAYLOAD",
@@ -829,7 +838,9 @@
         "resolved Proper can enter without legacy assembly-state dependency",
         "FOLLOW_CONGREGATION uses observed posture when available and sourced posture when no observer exists",
         "production native mode reads no implicit legacy DOM state",
-        "Palm and Ash native preceding rites pass the actual index.html phone path through Introit handoff and Back"
+        "Palm and Ash native preceding rites pass the actual index.html phone path through Introit handoff and Back",
+        "Requiem Absolution enters from the plan-defined Mass boundary without rendering the suppressed Last Gospel",
+        "Requiem body/burial branch context survives the production host bridge and the legacy renderer remains unstarted"
       ],
       "requiredTest": "tests/app-shell-final-e2e.mjs",
       "acceptance": {
@@ -841,11 +852,16 @@
         "uncaughtPageErrors": 0,
         "scenarios": [
           "ORDINARY_VOTIVE",
+          "ASPERGES_PRECEDING_RITE",
           "PALM_PRECEDING_RITE",
-          "ASH_PRECEDING_RITE"
+          "ASH_PRECEDING_RITE",
+          "CANDLEMAS_PRECEDING_RITE",
+          "ROGATIONS_PRECEDING_RITE",
+          "REQUIEM_ABSOLUTION_FOLLOWING_ACTION"
         ],
         "palmAshRealShell": true,
-        "readerOwnershipMarker": "data-ao-mass-reader-ui"
+        "readerOwnershipMarker": "data-ao-mass-reader-ui",
+        "requiemAbsolutionRealShell": true
       }
     },
     {
@@ -862,12 +878,19 @@
         "Palm and Ash personal recipient states render kneeling in the actual app shell",
         "Palm and Ash hand off to the Introit and Back restores the special-rite handoff card",
         "data-ao-mass-reader-ui reports R17_NATIVE_PRODUCTION for certified native production sessions",
-        "Candlemas object-state acceptance verifies processional candle light and Mass candle windows without posture mutation"
+        "Candlemas object-state acceptance verifies processional candle light and Mass candle windows without posture mutation",
+        "Requiem Mass ending suppresses the forbidden blessing and Last Gospel in the actual app shell",
+        "Requiem Absolution body-present burial branch reaches In paradisum in the actual app shell",
+        "Requiem Absolution completion returns to the plan-owned Give Thanks lifecycle handoff"
       ],
       "scenarios": [
         "ORDINARY_VOTIVE",
+        "ASPERGES_PRECEDING_RITE",
         "PALM_PRECEDING_RITE",
-        "ASH_PRECEDING_RITE"
+        "ASH_PRECEDING_RITE",
+        "CANDLEMAS_PRECEDING_RITE",
+        "ROGATIONS_PRECEDING_RITE",
+        "REQUIEM_ABSOLUTION_FOLLOWING_ACTION"
       ]
     },
     {
@@ -902,10 +925,10 @@
         "PALM",
         "ASH",
         "CANDLEMAS",
-        "ROGATIONS"
+        "ROGATIONS",
+        "REQUIEM_ABSOLUTION"
       ],
       "pending": [
-        "REQUIEM_ABSOLUTION",
         "HOLY_THURSDAY_POST",
         "CORPUS_CHRISTI_PROCESSION",
         "GENERIC_PROCESSION",
@@ -913,7 +936,7 @@
         "EASTER_VIGIL",
         "NUPTIAL"
       ],
-      "rule": "Do not equate modular runtime/reader-harness certification with actual index.html real-shell certification. The pre-Mass cluster is now production-shell certified; post-Mass/distinct/overlay rites remain pending until their app-shell E2E evidence is pinned.",
+      "rule": "Do not equate modular runtime/reader-harness certification with actual index.html real-shell certification. The pre-Mass cluster and Requiem Absolution are production-shell certified; remaining post-Mass/distinct/overlay rites stay pending until their app-shell E2E evidence is pinned.",
       "currentTest": "tests/app-shell-final-e2e.mjs"
     },
     {
@@ -941,6 +964,33 @@
         "zero uncaught page errors",
         "Candlemas processional CANDLE_LIT object state is exposed independently of posture",
         "Candlemas Mass candle policy is verified at Gospel, Pater completion and the first post-Pater witness event"
+      ]
+    },
+    {
+      "id": "REQUIEM_ABSOLUTION_REAL_APP_SHELL_ACCEPTANCE",
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-final-e2e.mjs",
+      "viewport": "390x844 touch Chromium",
+      "actualIndexHtml": true,
+      "rite": "REQUIEM_ABSOLUTION",
+      "nativeOwner": "R17_NATIVE_PRODUCTION",
+      "legacyStartCount": 0,
+      "branch": {
+        "bodyPresent": true,
+        "burialProcession": true
+      },
+      "guarantees": [
+        "Requiem overlay and explicit REQUIEM_ABSOLUTION following action compile into the production plan",
+        "bodyPresent and burialProcession survive the production host adapter",
+        "the final blessing block AO.SM.B092 and Last Gospel are not rendered",
+        "Mass completion is recorded before ABS-R01 opens",
+        "ABS-R01 through ABS-R05 traverse in the actual app shell",
+        "coffin aspersion/incensation does not fabricate a faithful gesture",
+        "In paradisum appears only on the body-present burial-procession branch",
+        "Absolution completion reaches DEPARTURE and then GIVE_THANKS_HANDOFF",
+        "the legacy live renderer is never started",
+        "data-ao-mass-reader-ui remains R17_NATIVE_PRODUCTION",
+        "zero uncaught page errors"
       ]
     }
   ],
@@ -1045,10 +1095,10 @@
         "PALM",
         "ASH",
         "CANDLEMAS",
-        "ROGATIONS"
+        "ROGATIONS",
+        "REQUIEM_ABSOLUTION"
       ],
       "pending": [
-        "REQUIEM_ABSOLUTION",
         "HOLY_THURSDAY_POST",
         "CORPUS_CHRISTI_PROCESSION",
         "GENERIC_PROCESSION",
