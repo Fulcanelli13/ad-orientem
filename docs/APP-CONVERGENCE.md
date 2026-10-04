@@ -57,11 +57,11 @@ The first gate snapshot records three closed app-level findings: certified Mass 
 - removal and lockout of the duplicated browser-entry include;
 - non-Mass donor extraction/parity;
 
-## Phase 2.3: cross-domain journey and persistence closure
+## Phase 2.3: cross-domain journey and partial persistence acceptance
 
-The actual-index phone gate now proves modular navigation across Home, Calendar, native Mass, PRAY and Settings. While native LIVE owns the screen, leave/resume is coordinated through the modular shell rather than pretending the underlying ribbon remains tappable. Confirmed leave explicitly destroys the native reader surface through the app host adapter while retaining the persisted session record. A subsequent reload proves that the retained record does not auto-reactivate R17 or restore an obsolete route.
+The actual-index phone gate now proves modular navigation across Home, Calendar, native Mass, PRAY and Settings. While native LIVE owns the screen, a cancelled leave retains the active reader and a confirmed leave explicitly destroys the native reader surface through the app host adapter before opening PRAY. A subsequent reload proves that the retained persisted Mass record does not auto-reactivate R17 or restore an obsolete route.
 
-This closes `CROSS_DOMAIN_PHONE_JOURNEY` and `PERSISTENCE_STATE_CONTAMINATION`. The whole application remains in convergence because emergency-runtime retirement, duplicate browser-entry hygiene and non-Mass donor extraction are still open.
+This closes `CROSS_DOMAIN_PHONE_JOURNEY`. It does **not** yet close `PERSISTENCE_STATE_CONTAMINATION`: explicit reload while Mass is still interrupted, return/resume semantics, saved form/language/mode/profile continuity, and cross-module local-state isolation remain to be certified.
 
 The app gate uses only the regression classifications `PASS`, `REGRESSION`, `STALE_SURFACE`, `MISSING_INTEGRATION` and `CRASH`. `tests/app-release-gate.mjs` ensures the listed open blockers exactly match the open findings while independently asserting that the Mass reader remains `FINAL_NATIVE_READY` with `R17_NATIVE` production default.
 
@@ -84,7 +84,7 @@ Before calling app convergence complete:
 3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections.
 4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene.
 5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
-6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence are regression-tested in `tests/app-shell-journey-e2e.mjs`; stale persisted Mass state does not reactivate obsolete surfaces.
+6. Fresh-state and stale-record isolation are covered by `tests/app-shell-journey-e2e.mjs`; interrupted-Mass reload/resume, saved form/language/mode/profile continuity and cross-module local-state isolation remain open.
 
 ## Regression gates
 
