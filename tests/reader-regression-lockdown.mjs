@@ -9,7 +9,7 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY");
+assert.equal(release.status,"FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__LEGACY_DEFAULT_RETAINED");
 assert.equal(release.productionDefault,"LEGACY");
 assert.equal(resolveReaderUiMode({}),"LEGACY","reader default changed before release certification");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
@@ -49,9 +49,7 @@ assert.equal(support.supported,true);
 assert.equal(support.reason,null);
 
 const blockers=new Set(release.openBlockers.map(x=>x.id));
-for(const id of [
-  "SPECIAL_STRUCTURE_PARITY",
-]) assert.ok(blockers.has(id),"release blocker silently disappeared: "+id);
+assert.equal(blockers.size,0,"release gate still contains a blocker after full-year special-structure certification");
 assert.equal(blockers.has("FORM_STATE_PARITY"),false,"closed form-state blocker reappeared");
 for(const [id,status] of [["LOW_MASS_NATIVE_STATE","CERTIFIED"],["SOLEMN_MASS_NATIVE_STATE","CERTIFIED"],["FORM_SWITCH_NO_LEGACY_FALLBACK","CERTIFIED"],["FORM_PARITY_REGRESSION","PASS"]]){
   assert.equal(release.protectedInvariants.find(x=>x.id===id)?.status,status,id+" release gate lost certification");
@@ -160,7 +158,16 @@ assert.match(String(nuptial?.controller??""),/reader-nuptial\.js/);
 const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
-assert.ok(release.openBlockers.some(x=>x.id==="SPECIAL_STRUCTURE_PARITY"),"special-structure payload blocker disappeared before native rite payload exists");
+const easterVigil=release.protectedInvariants.find(x=>x.id==="EASTER_VIGIL_NATIVE_COMPOSITE");
+assert.equal(easterVigil?.status,"CERTIFIED_COMPOSITE_RUNTIME__PHONE_SUITE_GREEN","Easter Vigil certification disappeared");
+assert.equal(easterVigil?.recoveredGraphRecords,38);
+assert.equal(easterVigil?.massProjection?.entry,"KYRIE");
+assert.deepEqual(easterVigil?.massProjection?.omittedSourceSequences,[1,21,30]);
+assert.deepEqual(easterVigil?.massProjection?.suppressedCanonicalEvents,["MC-COM-150","MC-COM-160","MC-END-010"]);
+assert.equal(easterVigil?.massProjection?.laudsSectionId,"SP.EASTER_VIGIL.15");
+assert.match(String(easterVigil?.controller??""),/reader-easter-vigil\.js/);
+assert.equal(easterVigil?.sourceText?.prophecies,"RECOVERED_PRESENTATION_OVERVIEW__CHOREOGRAPHY_EXACT__FULL_TEXT_ENRICHMENT_NON_BLOCKING");
+assert.equal(release.productionDefault,"LEGACY","full-year special-structure completion silently flipped the production feature gate");
 
 const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
 assert.equal(properProvenance?.status,"CERTIFIED_REPLACEMENT_WITNESS",
