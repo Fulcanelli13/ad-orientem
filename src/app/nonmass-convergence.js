@@ -507,6 +507,69 @@ function makeMacroRail(win, labels, active, attr) {
   return rail;
 }
 
+function confessionExamData(win) {
+  if (isFrench(win)) {
+    return [
+      ["1 · Dieu d’abord", ["Ai-je négligé la prière ou rejeté sciemment la foi ?", "Ai-je placé la superstition, la divination, l’argent ou l’approbation humaine au-dessus de la confiance en Dieu ?"]],
+      ["2 · Révérence", ["Ai-je employé le nom de Dieu avec mépris ou fait un faux serment ?", "Ai-je traité les choses sacrées sans respect ?"]],
+      ["3 · Culte et repos", ["Ai-je manqué délibérément la Messe du dimanche ou un jour d’obligation sans raison grave ?", "Ai-je empêché sans nécessité d’autres personnes d’accomplir leur devoir religieux ou de prendre un repos raisonnable ?"]],
+      ["4 · Famille et autorité", ["Ai-je négligé le soin, le respect ou les responsabilités justes dans ma famille ?", "Ai-je abusé de mon autorité, manipulé quelqu’un ou exigé une obéissance injuste ?"]],
+      ["5 · Vie et charité", ["Ai-je volontairement fait du tort à quelqu’un, encouragé la violence ou choisi la vengeance ?", "Ai-je négligé le soin raisonnable de la vie et de la santé, ou l’aide que j’avais le devoir de donner ?"]],
+      ["6 · Chasteté et fidélité", ["Ai-je librement choisi des actes contraires à la chasteté, la pornographie ou l’infidélité ?", "Ai-je traité une personne comme un objet au lieu de respecter sa dignité ?"]],
+      ["7 · Justice", ["Ai-je volé, trompé, retenu un juste salaire ou mal employé un bien qui m’était confié ?", "Ai-je refusé de réparer un dommage matériel alors que je le pouvais ?"]],
+      ["8 · Vérité", ["Ai-je menti, calomnié, médit injustement ou trahi une confidence ?", "Ai-je omis de corriger une fausseté ou de réparer une réputation que j’avais lésée ?"]],
+      ["9 · Pureté du cœur", ["Ai-je volontairement entretenu des désirs contraires à la fidélité et à la chasteté ?", "Je distingue une pensée ou tentation non voulue du choix délibéré de l’entretenir."]],
+      ["10 · Détachement", ["Ai-je laissé l’envie ou l’avidité gouverner mes choix ?", "Ai-je regretté le bien d’autrui ou négligé la générosité selon mes moyens ?"]]
+    ];
+  }
+  return [
+    ["1 · God first", ["Have I neglected prayer or knowingly rejected the faith?", "Have I placed superstition, divination, money or approval above trust in God?"]],
+    ["2 · Reverence", ["Have I used God’s name contemptuously or sworn falsely?", "Have I treated sacred things irreverently?"]],
+    ["3 · Worship and rest", ["Have I deliberately missed Sunday Mass or a binding holy day without a serious reason?", "Have I needlessly prevented others from worship or reasonable rest?"]],
+    ["4 · Family and authority", ["Have I neglected care, respect or just responsibilities within my family?", "Have I misused authority, manipulated another person or demanded unjust obedience?"]],
+    ["5 · Life and charity", ["Have I deliberately harmed someone, encouraged violence or chosen revenge?", "Have I neglected reasonable care for life and health, or help I was responsible for giving?"]],
+    ["6 · Chastity and fidelity", ["Have I freely chosen sexual acts contrary to chastity, pornography or infidelity?", "Have I treated another person as an object rather than respected their dignity?"]],
+    ["7 · Justice", ["Have I stolen, cheated, withheld just payment or misused property entrusted to me?", "Have I refused to repair financial harm when able?"]],
+    ["8 · Truth", ["Have I lied, slandered, gossiped unjustly or betrayed a confidence?", "Have I failed to correct a falsehood or restore a reputation I harmed?"]],
+    ["9 · Purity of heart", ["Have I deliberately cultivated desires contrary to fidelity and chastity?", "Distinguish an unwanted thought or temptation from a deliberate choice to entertain it."]],
+    ["10 · Detachment", ["Have I allowed envy or greed to govern my choices?", "Have I resented another person’s good or neglected generosity within my means?"]]
+  ];
+}
+
+function buildConfessionExam(win) {
+  const surface = element(win, "section", "aoD5ExamSurface");
+  surface.dataset.aoD5ExamSurface = "1";
+  surface.appendChild(element(
+    win,
+    "p",
+    "aoD5ExamIntro",
+    L(
+      win,
+      "Review freely chosen actions and omissions since your last Confession. These prompts are for reflection only; nothing is selected, scored or stored.",
+      "Repassez devant Dieu les actes et omissions librement choisis depuis votre dernière confession. Ces questions servent seulement à la réflexion ; rien n’est sélectionné, noté ou enregistré."
+    )
+  ));
+  confessionExamData(win).forEach(function (section) {
+    const details = element(win, "details", "aoD5ExamSection");
+    details.appendChild(element(win, "summary", "", section[0]));
+    const list = element(win, "ul", "");
+    section[1].forEach(function (prompt) { list.appendChild(element(win, "li", "", prompt)); });
+    details.appendChild(list);
+    surface.appendChild(details);
+  });
+  surface.appendChild(element(
+    win,
+    "p",
+    "aoD5Privacy",
+    L(
+      win,
+      "Enough: when the examination is sufficient, stop examining and move to contrition. No sin list or certainty score is created.",
+      "Assez : lorsque l’examen est suffisant, cessez d’examiner et passez à la contrition. Aucune liste de péchés ni aucun score de certitude n’est créé."
+    )
+  ));
+  return surface;
+}
+
 function patchConfession(win) {
   const root = win.document.getElementById("aoPrayerBookRoot");
   const state = oldPrayerState(win);
@@ -530,9 +593,16 @@ function patchConfession(win) {
 
   const exam = root.querySelector(".pbInfoDetails");
   if (exam) {
-    exam.hidden = stage !== 2;
-    exam.open = stage === 2;
+    exam.hidden = true;
+    exam.setAttribute("aria-hidden", "true");
     exam.querySelectorAll("input").forEach(function (node) { node.remove(); });
+  }
+  root.querySelectorAll("[data-ao-d5-exam-surface]").forEach(function (node) { node.remove(); });
+  if (stage === 2) {
+    const examSurface = buildConfessionExam(win);
+    const rail = root.querySelector("[data-ao-d5-phase-rail]");
+    if (rail) rail.insertAdjacentElement("afterend", examSurface);
+    else (root.querySelector(".pbHero") || root.querySelector(".pbTop"))?.insertAdjacentElement("afterend", examSurface);
   }
 
   const card = root.querySelector(".pbFlowCard");
@@ -765,6 +835,7 @@ function installStyles(win) {
     ".aoD3TreasuryGroup{margin:0 0 20px}.aoD3TreasuryGroup h2{margin:0 0 9px;color:var(--liturgical,#c6a66b);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}",
     ".aoD4StageRail,.aoD5PhaseRail{display:grid;gap:5px;padding:9px 12px 0}.aoD4StageRail{grid-template-columns:repeat(4,minmax(0,1fr))}.aoD5PhaseRail{grid-template-columns:repeat(5,minmax(0,1fr))}.aoD4StageRail span,.aoD5PhaseRail span{padding:7px 4px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:999px;text-align:center;color:var(--muted,#b8c0c7);font-size:.59rem}.aoD4StageRail span.active,.aoD5PhaseRail span.active{border-color:var(--liturgical,#c6a66b);background:var(--liturgical-soft,rgba(198,166,107,.1));color:var(--text,#f3efe8)}",
     ".aoD4Note,.aoD5Privacy,.aoD5PutAway{margin:0 0 12px;padding:10px 11px;border-left:2px solid var(--liturgical,#c6a66b);background:var(--liturgical-soft,rgba(198,166,107,.08));color:var(--muted,#b8c0c7);font-size:.74rem;line-height:1.45}",
+    ".aoD5ExamSurface{margin:12px 13px 16px;padding:12px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:14px;background:var(--surface-1,#141a20)}.aoD5ExamIntro{margin:0 0 10px;color:var(--muted,#b8c0c7);font-size:.75rem;line-height:1.45}.aoD5ExamSection{margin:7px 0;border:1px solid var(--border,rgba(255,255,255,.1));border-radius:11px;padding:0 11px}.aoD5ExamSection summary{cursor:pointer;padding:10px 0;font-weight:650}.aoD5ExamSection ul{margin:0 0 11px;padding-left:20px}.aoD5ExamSection li{margin:5px 0;color:var(--muted,#b8c0c7);font-size:.76rem;line-height:1.4}",
     ".aoD6SourceFamily{padding:12px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09))}.aoD6SourceFamily:last-child{border-bottom:0}.aoD6SourceFamily summary{font-weight:650;cursor:pointer}.aoD6SourceFamily p{margin:8px 0 0;color:var(--muted,#b3bac0);font-size:.74rem;line-height:1.45}",
     ".aoD6Key p,.aoD6AboutRow{margin:0;padding:10px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09));font-size:.75rem}.aoD6Key p:last-child,.aoD6AboutRow:last-child{border-bottom:0}.aoD6AboutRow{display:grid;gap:4px}.aoD6AboutRow span{color:var(--muted,#b3bac0);line-height:1.4}",
     "@media(max-width:560px){.aoD3Grid{grid-template-columns:1fr}.aoD4StageRail span,.aoD5PhaseRail span{font-size:.52rem;padding:6px 2px}}"
