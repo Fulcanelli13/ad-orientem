@@ -133,7 +133,7 @@ try{
     const baseGetState=typeof baseStore?.getState==="function"
       ? ()=>baseStore.getState()
       : ()=>({});
-    let routeOverride=null;
+    let routeOverride="home";
 
     globalThis.AO_RUNTIME_V8={
       ...(baseRuntime??{}),
