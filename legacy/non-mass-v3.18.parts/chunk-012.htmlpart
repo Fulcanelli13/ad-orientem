@@ -1,0 +1,500 @@
+        good_friday_1962: 'good-friday-1962', good_friday: 'good-friday-1962',
+        candlemas_1962: 'candlemas-1962',
+        ash_wednesday_1962: 'ash-wednesday-1962',
+        ember_saturday_1962: 'ember-saturday-1962',
+        extended_readings_mass_1962: 'extended-readings-mass-1962',
+    };
+    return value ? map[value] : undefined;
+}
+function activeMassSession(state) {
+    const active = globalThis.AO_ACTIVE_MASS_SESSION;
+    if (!active || active.date !== state.selectedDate || !active.resolvedMass?.canStart || !active.proper)
+        return null;
+    return active;
+}
+function specialSectionText(proper, id) {
+    return (proper?.specialSections || []).find(section => section?.id === id)?.text || null;
+}
+function nuptialStep(id, title, subtitle, text) {
+    return {
+        id,
+        phase: "Communion",
+        section: "Nuptial Blessing",
+        title,
+        subtitle,
+        actor: "celebrant",
+        priestPosition: "Epistle side",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "CUSTOM", policy: "local", source: "nuptial-rite" },
+        gestures: [],
+        text,
+        exceptional: { rite: "nuptial-mass-1962", phase: "Nuptial Blessing" },
+    };
+}
+function insertNuptialRites(sequence, proper) {
+    const first = specialSectionText(proper, "Benedictio Nuptialis 1");
+    const second = specialSectionText(proper, "Benedictio Nuptialis 2");
+    const finalBlessing = specialSectionText(proper, "Benedictio Finalis");
+    let steps = sequence.steps.slice();
+    if (first && second) {
+        const pater = steps.findIndex(step => step.id === "pater");
+        if (pater >= 0) {
+            const inserted = [
+                nuptialStep("nuptial-blessing-1",
+                    { lat:"Benedictio nuptialis", en:"Nuptial Blessing · First Prayer", fr:"Bénédiction nuptiale · Première oraison" },
+                    { en:"After the Pater noster · the spouses kneel before the altar", fr:"Après le Pater noster · les époux s’agenouillent devant l’autel" }, first),
+                nuptialStep("nuptial-blessing-2",
+                    { lat:"Benedictio nuptialis", en:"Nuptial Blessing · Second Prayer", fr:"Bénédiction nuptiale · Deuxième oraison" },
+                    { en:"The celebrant continues the Nuptial Blessing before Libera nos", fr:"Le célébrant poursuit la bénédiction nuptiale avant le Libera nos" }, second)
+            ];
+            steps = [...steps.slice(0, pater + 1), ...inserted, ...steps.slice(pater + 1)];
+        }
+    }
+    if (finalBlessing) {
+        const dismissal = steps.findIndex(step => step.id === "dismissal");
+        if (dismissal >= 0) {
+            const finalStep = nuptialStep("nuptial-final-blessing",
+                { lat:"Benedictio finalis sponsorum", en:"Final Blessing of the Spouses", fr:"Bénédiction finale des époux" },
+                { en:"After the dismissal and before Placeat", fr:"Après le renvoi et avant le Placeat" }, finalBlessing);
+            finalStep.phase = "Conclusion";
+            finalStep.section = "Nuptial Blessing";
+            steps = [...steps.slice(0, dismissal + 1), finalStep, ...steps.slice(dismissal + 1)];
+        }
+    }
+    return { ...sequence, steps };
+}
+function supplementalCollectStep(kind, text) {
+    const nuptial = kind === "nuptial";
+    return {
+        id: nuptial ? "nuptial-collect-commemoration" : "impeded-votive-collect-commemoration",
+        phase: "Mass of the Catechumens",
+        section: "Collect",
+        title: nuptial
+            ? { lat:"Oratio pro sponsis", en:"Nuptial Collect", fr:"Collecte nuptiale" }
+            : { lat:"Oratio Missae votivae impeditae", en:"Collect of the impeded votive Mass", fr:"Collecte de la Messe votive empêchée" },
+        subtitle: nuptial
+            ? { en:"Added to the Collect of the Mass of the Day under one conclusion", fr:"Ajoutée à la Collecte de la Messe du jour sous une seule conclusion" }
+            : { en:"Retained with the Collect of the Mass of the Day under one conclusion", fr:"Conservée avec la Collecte de la Messe du jour sous une seule conclusion" },
+        actor: "celebrant",
+        priestPosition: "Epistle side",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "STAND", policy: "rubric", source: "resolved-mass-assembly" },
+        gestures: [],
+        text,
+        exceptional: { rite: "resolved-mass-addition", phase: nuptial ? "Nuptial Collect" : "Impeded Votive Collect" },
+    };
+}
+function insertSupplementalCollect(sequence, requestedProper, kind) {
+    const text = (requestedProper?.collects || [])[0] || requestedProper?.collect || null;
+    if (!text)
+        return sequence;
+    const steps = sequence.steps.slice();
+    const idx = steps.findIndex(step => step.id === "collect");
+    if (idx < 0)
+        return sequence;
+    return { ...sequence, steps: [...steps.slice(0, idx + 1), supplementalCollectStep(kind, text), ...steps.slice(idx + 1)] };
+}
+function applyResolvedAssembly(sequence, active) {
+    const plan = active?.assemblyPlan;
+    if (!plan)
+        return sequence;
+    const requestedProper = active.requestedProper || null;
+    let out = sequence;
+    if (plan.retainedCollect)
+        out = insertSupplementalCollect(out, requestedProper, plan.kind === "nuptial-mass-of-day" ? "nuptial" : "votive");
+    if (plan.nuptialBlessings)
+        out = insertNuptialRites(out, requestedProper);
+    return out;
+}
+const AO_SUNDAY_ASPERGES_TEXT = Object.freeze({
+    asperges: {
+        en: "Ps 50:9\nThou shalt sprinkle me, O Lord, with hyssop, and I shall be cleansed; Thou shalt wash me, and I shall become whiter than snow.\nPs 50:3\nHave mercy on me, O God, according to Thy great mercy.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen.\nThou shalt sprinkle me, O Lord, with hyssop, and I shall be cleansed; Thou shalt wash me, and I shall become whiter than snow.",
+        lat: "Ps 50:9\nAspérges me, Dómine, hyssópo, et mundábor: lavábis me, et super nivem dealbábor.\nPs 50:3\nMiserére mei, Deus, secúndum magnam misericórdiam tuam.\n℣. Glória Patri, et Fílio, et Spirítui Sancto.\n℟. Sicut erat in princípio, et nunc, et semper: et in saecula sæculórum. Amen.\nAspérges me, Dómine, hyssópo, et mundábor: lavábis me, et super nivem dealbábor.",
+        fr: "Ps 50, 9\nVous m’aspergerez, Seigneur, avec l’hysope, et je serai purifié ; vous me laverez, et je deviendrai plus blanc que la neige.\nPs 50, 3\nAyez pitié de moi, ô Dieu, selon votre grande miséricorde.\n℣. Gloire au Père, et au Fils, et au Saint-Esprit.\n℟. Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il.\nVous m’aspergerez, Seigneur, avec l’hysope, et je serai purifié ; vous me laverez, et je deviendrai plus blanc que la neige."
+    },
+    vidiAquam: {
+        en: "Ez 47:1-2; 47:9\nI saw water flowing from the right side of the temple, alleluia; and all they to whom that water came were saved; and they shall say: alleluia, alleluia.\nPs 135:1\nPraise the Lord, because He is good; because His mercy endureth forever.\n℣. Glory be to the Father, and to the Son, and to the Holy Ghost.\n℟. As it was in the beginning, is now, and ever shall be, world without end. Amen.\nI saw water flowing from the right side of the temple, alleluia; and all they to whom that water came were saved; and they shall say: alleluia, alleluia.",
+        lat: "Ez 47:1-2; 47:9\nVidi aquam egrediéntem de templo, a látere dextro, allelúia: et omnes, ad quos pervénit aqua ista, salvi facti sunt, et dicent, allelúia, allelúia.\nPs 135:1\nConfitemini Dómino quóniam bonus: quóniam in saeculum misericórdia eius.\n℣. Glória Patri, et Fílio, et Spirítui Sancto.\n℟. Sicut erat in princípio, et nunc, et semper: et in saecula sæculórum. Amen.\nVidi aquam egrediéntem de templo, a látere dextro, allelúia: et omnes, ad quos pervénit aqua ista, salvi facti sunt, et dicent, allelúia, allelúia.",
+        fr: "Ez 47, 1-2 ; 47, 9\nJ’ai vu l’eau jaillir du côté droit du Temple, alléluia ; et tous ceux que cette eau a atteints ont été sauvés, et ils chanteront : alléluia, alléluia.\nPs 135, 1\nLouez le Seigneur, car il est bon, car sa miséricorde est éternelle.\n℣. Gloire au Père, et au Fils, et au Saint-Esprit.\n℟. Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il.\nJ’ai vu l’eau jaillir du côté droit du Temple, alléluia ; et tous ceux que cette eau a atteints ont été sauvés, et ils chanteront : alléluia, alléluia."
+    },
+    versicles: {
+        en: "℣. Show us, O Lord, Thy mercy.\n℟. And grant us Thy salvation.\n℣. O Lord, hear my prayer.\n℟. And let my cry come unto Thee.\n℣. The Lord be with you.\n℟. And with thy spirit.\nLet us pray.\nHear us, O holy Lord, almighty Father, everlasting God, and vouchsafe to send Thy holy Angel from heaven, to guard, cherish, protect, visit and defend all that are assembled in this place: Through Christ our Lord.\n℟. Amen.",
+        lat: "℣. Osténde nobis, Dómine, misericórdiam tuam.\n℟. Et salutáre tuum da nobis.\n℣. Dómine, exáudi oratiónem meam.\n℟. Et clamor meus ad te véniat.\n℣. Dóminus vobíscum.\n℟. Et cum spíritu tuo.\nOrémus.\nExáudi nos, Dómine sancte, Pater omnípotens, ætérne Deus, et míttere dignéris sanctum Angelum tuum de cælis, qui custódiat, fóveat, prótegat, vísitet, atque deféndat omnes habitántes in hoc habitáculo. Per Christum Dóminum nostrum.\n℟. Amen.",
+        fr: "℣. Montrez-nous, Seigneur, votre miséricorde.\n℟. Et donnez-nous votre salut.\n℣. Seigneur, exaucez ma prière.\n℟. Et que mon cri parvienne jusqu’à vous.\n℣. Le Seigneur soit avec vous.\n℟. Et avec votre esprit.\nPrions.\nExaucez-nous, Seigneur saint, Père tout-puissant, Dieu éternel, et daignez envoyer du ciel votre saint Ange afin qu’il garde, soutienne, protège, visite et défende tous ceux qui sont rassemblés en ce lieu. Par le Christ notre Seigneur.\n℟. Ainsi soit-il."
+    }
+});
+function aoSelectedDateUtc(value) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || ''));
+    if (!m) return null;
+    return new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 12));
+}
+function aoGregorianEasterUtc(year) {
+    const a=year%19,b=Math.floor(year/100),c=year%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),month=Math.floor((h+l-7*m+114)/31),day=((h+l-7*m+114)%31)+1;
+    return new Date(Date.UTC(year, month - 1, day, 12));
+}
+function aoSundayAspergesMode(state, inferredProfile) {
+    if (state?.live?.form === 'sung') return null; // v43.58 B006: E02 Asperges remains research-gated until B039.
+    if (state?.live?.form !== 'sung' || state?.settings?.sundayAsperges === false) return null;
+    const date = aoSelectedDateUtc(state?.selectedDate);
+    if (!date || date.getUTCDay() !== 0) return null;
+    // Exceptional rites with their own pre-Mass ceremonial (especially Palm Sunday) do not receive this generic prepend.
+    if (exceptionalProfile(inferredProfile)) return null;
+    const easter = aoGregorianEasterUtc(date.getUTCFullYear());
+    const pentecost = new Date(easter.getTime() + 49 * 86400000);
+    return { vidiAquam: date >= easter && date <= pentecost };
+}
+function aoAspergesSteps(sequence, mode) {
+    const chant = mode.vidiAquam ? AO_SUNDAY_ASPERGES_TEXT.vidiAquam : AO_SUNDAY_ASPERGES_TEXT.asperges;
+    const introitSource = sequence.steps.find(step => step?.properSlot === 'introit' && step?.text)?.text || null;
+    const introitEvent = {
+        id: 'asperges-introit-start-choir', role: 'choir', properSlot: 'introit', sourceMomentRefs:['E02','E08'], canonicalEventRefs:['MC-PREP-050','MC-INT-010'],
+        canonicalIdentityPolicy:'E_SOURCE_MOMENT_TO_MC_EVENT_GRAPH', prototypeTraversalCanonical:false,
+        properStatus: introitSource ? 'ready' : 'unavailable', continuation: true,
+        ...(introitSource ? { text: introitSource } : {})
+    };
+    return [
+        {
+            id: 'asperges-chant', phase: 'Before Mass', section: 'Sunday Asperges', sourceMomentRefs:['E02'], canonicalEventRefs:['MC-PREP-040','MC-PREP-050'], canonicalIdentityPolicy:'E_SOURCE_MOMENT_TO_MC_EVENT_GRAPH', prototypeTraversalCanonical:false,
+            title: mode.vidiAquam ? {lat:'Vidi aquam',en:'Vidi aquam',fr:'Vidi aquam'} : {lat:'Aspérges me',en:'Asperges me',fr:'Asperges me'},
+            subtitle: mode.vidiAquam ? {en:'Paschaltide · sprinkling before the principal Sunday Mass',fr:'Temps pascal · aspersion avant la Messe principale du dimanche'} : {en:'Sunday sprinkling before the principal Mass',fr:'Aspersion dominicale avant la Messe principale'},
+            actor:'choir', priestPosition:'Altar and nave', audibility:'audible', privateAction:false,
+            posture:{value:'STAND',policy:'rubric',source:'1962-sunday-asperges'}, gestures:[], text:chant,
+            explanation: mode.vidiAquam ? 'The Schola sings Vidi aquam while the celebrant performs the Sunday sprinkling in Paschaltide.' : 'The Schola sings Asperges me while the celebrant performs the Sunday sprinkling before the principal Mass.'
+        },
+        {
+            id:'asperges-versicles', phase:'Before Mass', section:'Sunday Asperges', sourceMomentRefs:['E02'], canonicalEventRefs:['MC-PREP-050'], canonicalIdentityPolicy:'E_SOURCE_MOMENT_TO_MC_EVENT_GRAPH', prototypeTraversalCanonical:false,
+            title:{lat:'Versiculi et oratio',en:'Versicles & collect',fr:'Versets & oraison'},
+            subtitle:{en:'The sprinkling concludes before Mass begins',fr:'L’aspersion s’achève avant le commencement de la Messe'},
+            actor:'mixed', priestPosition:'Centre / foot of altar', audibility:'audible', privateAction:false,
+            posture:{value:'STAND',policy:'rubric',source:'1962-sunday-asperges'}, gestures:[], text:AO_SUNDAY_ASPERGES_TEXT.versicles,
+            explanation:'The Sunday sprinkling concludes with the appointed versicles and collect. The Mass itself has not yet begun.'
+        },
+        {
+            id:'asperges-transition', phase:'Before Mass', section:'Transition to Mass', sourceMomentRefs:['E02','E08'], canonicalEventRefs:['MC-PREP-050','MC-INT-010'], canonicalIdentityPolicy:'E_SOURCE_MOMENT_TO_MC_EVENT_GRAPH', prototypeTraversalCanonical:false,
+            title:{lat:'Ad Missam',en:'Transition to Mass',fr:'Transition vers la Messe'},
+            subtitle:{en:'After Amen: cope off · maniple and chasuble on · Introit begins',fr:'Après Amen : chape retirée · manipule et chasuble revêtus · l’Introït commence'},
+            actor:'celebrant', priestPosition:'Sedilia / foot of altar', audibility:'quiet', privateAction:true,
+            posture:{value:'STAND',policy:'rubric',source:'1962-sunday-asperges'}, gestures:[], choir:[introitEvent],
+            explanation:'After the concluding Amen, the celebrant changes from the cope to the maniple and chasuble. This is the boundary at which the Schola begins the Introit; the Prayers at the Foot follow while the Introit continues.'
+        }
+    ];
+}
+function aoStripCrossRedundancy(sequence) {
+    return { ...sequence, steps: sequence.steps.map(step => {
+        const next = { ...step };
+        if (next.id === 'sign-cross') next.title = { ...(next.title || {}), lat:'Introíbo', en:'Introibo', fr:'Introibo' };
+        if (Array.isArray(next.gestures)) next.gestures = next.gestures.map(g => /^cross$/i.test(String(g?.kind || '')) ? { ...g, label:'' } : g);
+        return next;
+    }) };
+}
+const AO_LOW_MC_BINDINGS_V4357 = Object.freeze({
+    'entrance-procession':['MC-0001'],
+    'sign-cross':['MC-0003'], 'judica':['MC-0004'], 'adjutorium':['MC-0004'],
+    'priest-confiteor':['MC-0005'], 'ministers-confiteor':['MC-0006'], 'misereatur-vestri':['MC-0006'],
+    'indulgentiam-absolution':['MC-0006'], 'foot-versicles':['MC-0006'],
+    'ascend':['MC-0007','MC-0008'], 'oramus-te':['MC-0009'],
+    'introit':['MC-0011'], 'kyrie':['MC-0012'], 'gloria':['MC-0013'], 'collect':['MC-0014'],
+    'epistle':['MC-0015'], 'gradual':['MC-0016'], 'alleluia':['MC-0017'], 'sequence':['MC-0018'],
+    'gospel-prep':['MC-0019'], 'gospel-prep-requiem':['MC-0019'],
+    'gospel-announcement':['MC-0021','MC-0022'], 'gospel':['MC-0021'],
+    'credo':['MC-0023','MC-0025'],
+    'offertory':['MC-0026'], 'offer-host':['MC-0027'], 'water-wine':['MC-0028'], 'offer-chalice':['MC-0029'],
+    'in-spiritu':['MC-0030'], 'veni-sanctificator':['MC-0031'], 'lavabo':['MC-0033'],
+    'suscipe-trinitas':['MC-0084'],
+    'orate-fratres':['MC-0034','MC-0035','MC-0036'], 'secret':['MC-0037','MC-0086'],
+    'preface':['MC-0038','MC-0039'], 'sanctus':['MC-0040','MC-0041'],
+    'te-igitur':['MC-0042'], 'memento-living':['MC-0043'], 'communicantes':['MC-0085'],
+    'hanc':['MC-0044','MC-0045'], 'quam-oblationem':['MC-0046'],
+    'consecration-host':['MC-0047','MC-0048','MC-0049','MC-0050'],
+    'consecration-chalice':['MC-0051','MC-0052','MC-0053','MC-0054'],
+    'unde-et-memores':['MC-0055'], 'supra-quae':['MC-0055'], 'supplices':['MC-0055'],
+    'memento-dead':['MC-0056'], 'nobis-quoque':['MC-0057'], 'canon-doxology':['MC-0058','MC-0087'],
+    'pater':['MC-0059'], 'libera-nos':['MC-0060'], 'fraction-pax':['MC-0061','MC-0062'],
+    'commingling':['MC-0063'], 'agnus':['MC-0064'], 'peace-prayer':['MC-0065'],
+    'communion-prep-fili':['MC-0067'], 'communion-prep-perceptio':['MC-0067'],
+    'priest-communion':['MC-0068','MC-0069','MC-0070'],
+    'communion-warning-bell':['MC-0071'], 'second-confiteor':['MC-0072'],
+    'ecce':['MC-0073'], 'domine-non-sum-dignus':['MC-0074'], 'communion-faithful':['MC-0075'],
+    'ablutions':['MC-0076'], 'communion-proper':['MC-0077'], 'postcommunion':['MC-0078'], 'super-populum':['MC-0078'],
+    'dismissal':['MC-0079'], 'placeat':['MC-0080'], 'blessing':['MC-0081'],
+    'last-gospel-announcement':['MC-0082'], 'last-gospel':['MC-0082']
+});
+const AO_LOW_MC_SOURCE_V4357 = Object.freeze({
+    'entrance-procession':['E01'], 'sign-cross':['E03'], 'judica':['E03'], 'adjutorium':['E03'],
+    'priest-confiteor':['E04'], 'ministers-confiteor':['E05'], 'misereatur-vestri':['E05'],
+    'indulgentiam-absolution':['E05'], 'foot-versicles':['E05','E06'], 'ascend':['E06'], 'oramus-te':['E06'],
+    'introit':['E08'], 'kyrie':['E09'], 'gloria':['E10'], 'collect':['E11'], 'epistle':['E12'],
+    'gradual':['E13'], 'alleluia':['E14'], 'sequence':['E15'], 'gospel-prep':['E16'], 'gospel-prep-requiem':['E16'],
+    'gospel-announcement':['E18','E19'], 'gospel':['E18'], 'credo':['E20','E21'],
+    'offertory':['E22'], 'offer-host':['E23'], 'water-wine':['E24'], 'offer-chalice':['E25'],
+    'in-spiritu':['E26'], 'veni-sanctificator':['E26'], 'lavabo':['E28'], 'suscipe-trinitas':['E29'],
+    'orate-fratres':['E29'], 'secret':['E30'], 'preface':['E31'], 'sanctus':['E32','E33'],
+    'te-igitur':['E34'], 'memento-living':['E35'], 'communicantes':['E35'], 'hanc':['E36'],
+    'quam-oblationem':['E37'], 'consecration-host':['E38','E39','E40','E41'],
+    'consecration-chalice':['E42','E43','E44','E45'], 'unde-et-memores':['E46'], 'supra-quae':['E46'],
+    'supplices':['E46'], 'memento-dead':['E47'], 'nobis-quoque':['E48'], 'canon-doxology':['E49'],
+    'pater':['E50'], 'libera-nos':['E51'], 'fraction-pax':['E52','E53'], 'commingling':['E53'],
+    'agnus':['E54'], 'peace-prayer':['E55'], 'communion-prep-fili':['E56'], 'communion-prep-perceptio':['E56'],
+    'priest-communion':['E57','E58','E59'], 'communion-warning-bell':['E60'], 'second-confiteor':['E61'],
+    'ecce':['E62'], 'domine-non-sum-dignus':['E63'], 'communion-faithful':['E64'], 'ablutions':['E65'],
+    'communion-proper':['E66'], 'postcommunion':['E67'], 'super-populum':['E67'], 'dismissal':['E68'],
+    'placeat':['E69'], 'blessing':['E69'], 'last-gospel-announcement':['E70'], 'last-gospel':['E70']
+});
+const AO_LOW_CERTIFIED_SOURCE_MOMENTS_V4357 = Object.freeze(['E01','E03','E04','E05','E06','E08','E09','E10','E11','E12','E13','E14','E15','E16','E18','E19','E20','E21','E22','E23','E24','E25','E26','E28','E29','E30','E31','E32','E34','E35','E36','E37','E38','E39','E40','E41','E42','E43','E44','E45','E46','E47','E48','E49','E50','E51','E52','E53','E54','E56','E57','E58','E59','E62','E63','E64','E65','E66','E67','E68','E69','E70','E71']);
+function aoBindLowObjectiveSequence(sequence,state) {
+    if (sequence?.form !== 'low') return sequence;
+    const specialProfile=String(state?.resolution?.day?.selectedMassOption?.path||'');
+    const steps=(sequence.steps||[]).map((step,index)=>{
+        const refs=AO_LOW_MC_BINDINGS_V4357[step.id]||null;
+        const sourceRefs=AO_LOW_MC_SOURCE_V4357[step.id]||step.sourceMomentRefs||[];
+        let next={...step};
+        if (refs) {
+            next={...next,
+                canonicalEventRefs:[...refs], sourceMomentRefs:[...sourceRefs],
+                canonicalIdentityPolicy:'MC_RUNTIME_IDENTITY_V1', prototypeTraversalCanonical:false,
+                objectiveMassForm:'LOW', objectiveMcStatus:step.id==='second-confiteor'?'HISTORICAL_OVERLAY':'BOUND_B005',
+                objectiveMcPrimary:refs[0], objectiveMcTimeline:[...refs], objectiveProjectionIndex:index
+            };
+        } else {
+            next={...next, objectiveMassForm:'LOW', objectiveMcStatus:'UNMAPPED_SPECIAL_OR_NONCORE_OVERLAY', prototypeTraversalCanonical:false};
+        }
+        // B005 objective corrections. Participation cues remain a later projection layer.
+        if(step.id==='entrance-procession') next={...next,audibility:'silent',privateAction:false,voiceAuthority:'SOT12_E01_PUBLIC_VISIBLE'};
+        if(step.id==='gospel-prep') next={...next,actor:'celebrant',audibility:'quiet',privateAction:true,voiceAuthority:'SOT12_E16_LOW_MUNDA_COR_MEUM'};
+        if(step.id==='ministers-confiteor') next={...next,actor:'server',voiceAuthority:'SOT12_E05_SERVER_CONFITEOR'};
+        if(step.id==='priest-communion') next={...next,actor:'celebrant',voiceAuthority:'RG60_511_LOW_MASS_CLEAR_DNSD_PLUS_SECRET_COMMUNION_FORMULAS'};
+        if(step.id==='communion-warning-bell') next={...next,actor:'server',audibility:'audible',privateAction:false,voiceAuthority:'MR62_E60_PRESCRIBED_MINISTER_WARNING'};
+        if(step.id==='domine-non-sum-dignus') next={...next,actor:'celebrant',audibility:'audible',privateAction:false,voiceAuthority:'MR62_RG60_E63_PRIEST_ALOUD_COMMUNICANTS_MAY_JOIN'};
+        if(step.id==='second-confiteor') next={...next,objectiveCanonical1962:false,objectiveMcStatus:'HISTORICAL_OVERLAY',historicalOnly:true};
+        return next;
+    });
+    const traversal=[];
+    for(const step of steps){
+        if(step.objectiveMcStatus==='HISTORICAL_OVERLAY') continue;
+        for(const id of step.canonicalEventRefs||[]) if(/^MC-\d{4}$/.test(id)&&!traversal.includes(id)) traversal.push(id);
+    }
+    return {...sequence,steps,
+        canonicalRuntimeIdentity:'MC-*', objectiveForm:'LOW', objectiveBindingVersion:'43.57-B005',
+        objectiveMcTraversal:traversal, objectivePostMassBoundary:'MC-0083',
+        objectiveResearchHead:'SOT12', objectiveCertifiedSourceMoments:[...AO_LOW_CERTIFIED_SOURCE_MOMENTS_V4357],
+        objectiveSpecialOverlayPolicy:specialProfile?'SPECIAL_DAY_REMAINS_SEPARATE_OVERLAY':'ORDINARY_LOW_CORE',
+        b005Status:'LOW_OBJECTIVE_BOUND_AND_REPAIRED'
+    };
+}
+globalThis.AO_LOW_MASS_BINDING_V4357=Object.freeze({version:'43.57',task:'B005',bindings:AO_LOW_MC_BINDINGS_V4357,sourceMoments:AO_LOW_MC_SOURCE_V4357,certifiedSourceMoments:AO_LOW_CERTIFIED_SOURCE_MOMENTS_V4357,boundaryAfterMass:'MC-0083'});
+
+
+const AO_SOLEMN_CERTIFIED_SOURCE_MOMENTS_V4358 = Object.freeze(Array.from({length:71},(_,i)=>`E${String(i+1).padStart(2,'0')}`).filter(e=>!['E02','E17','E61'].includes(e)));
+const AO_SOLEMN_MC_BINDINGS_V4358 = Object.freeze({
+    ...AO_LOW_MC_BINDINGS_V4357,
+    'incense-entrance':['MC-0010'],
+    'incense-off':['MC-0032'],
+    'solemn-pax':['MC-0066']
+});
+const AO_SOLEMN_MC_SOURCE_V4358 = Object.freeze({
+    ...AO_LOW_MC_SOURCE_V4357,
+    'incense-entrance':['E07'],
+    'incense-off':['E27'],
+    'solemn-pax':['E55']
+});
+function aoSolemnCue(actor,en,fr,authority='SOT12_OC64_SOLEMN'){
+    const labels={DEACON:{en:'Deacon',fr:'Diacre'},SUBDEACON:{en:'Subdeacon',fr:'Sous-diacre'},THURIFER:{en:'Thurifer',fr:'Thuriféraire'},TORCHBEARERS:{en:'Torchbearers',fr:'Céroféraires'},SACRED_MINISTERS:{en:'Sacred ministers',fr:'Ministres sacrés'}};
+    return {actor,actorLabel:labels[actor]||{en:actor,fr:actor},text:{en,fr},authority};
+}
+function aoInsertSolemnPax(steps){
+    if(steps.some(s=>s.id==='solemn-pax')) return steps;
+    const idx=steps.findIndex(s=>s.id==='peace-prayer');
+    if(idx<0) return steps;
+    const pax={
+        id:'solemn-pax',phase:'Communion',section:'Pax',
+        title:{lat:'Pax tecum',en:'The Pax',fr:'Le baiser de paix'},
+        subtitle:{en:'The celebrant gives the Pax to the deacon; it passes through the sacred ministers and clergy.',fr:'Le célébrant donne la paix au diacre ; elle se transmet ensuite aux ministres sacrés et au clergé.'},
+        actor:'sacred_ministers',priestPosition:'Centre of the altar',audibility:'audible',privateAction:false,
+        text:{lat:'℣. Pax tecum.\n℟. Et cum spíritu tuo.',en:'℣. Peace be with thee.\n℟. And with thy spirit.',fr:'℣. La paix soit avec vous.\n℟. Et avec votre esprit.'},
+        ceremonialCues:[
+            aoSolemnCue('DEACON','The deacon receives the Pax from the celebrant and gives it to the subdeacon.','Le diacre reçoit la paix du célébrant et la donne au sous-diacre.'),
+            aoSolemnCue('SUBDEACON','The subdeacon carries the Pax through the clergy in hierarchical order.','Le sous-diacre porte la paix au clergé selon l’ordre hiérarchique.')
+        ],
+        sourceMomentRefs:['E55'],canonicalEventRefs:['MC-0066'],canonicalIdentityPolicy:'MC_RUNTIME_IDENTITY_V1',prototypeTraversalCanonical:false
+    };
+    return [...steps.slice(0,idx+1),pax,...steps.slice(idx+1)];
+}
+function aoRepairSolemnStep(step){
+    let next={...step};
+    const cues=[...(next.ceremonialCues||[])];
+    const dropCue=(pred)=>{for(let i=cues.length-1;i>=0;i--)if(pred(cues[i]))cues.splice(i,1);};
+    if(step.id==='entrance-procession') next={...next,actor:'sacred_ministers',audibility:'silent',privateAction:false,voiceAuthority:'SOT12_E01_SOLEMN_PROCESSION'};
+    if(step.id==='ministers-confiteor') next={...next,actor:'sacred_ministers',voiceAuthority:'SOT12_E05_SACRED_MINISTERS'};
+    if(step.id==='incense-entrance') next={...next,actor:'sacred_ministers',audibility:'silent',privateAction:false,voiceAuthority:'SOT12_E07_NONVERBAL_SOLEMN_INCENSATION'};
+    if(step.id==='epistle'){
+        dropCue(c=>['LECTOR','PRIEST'].includes(c.actor));
+        next={...next,actor:'subdeacon',audibility:'audible',privateAction:false,priestPosition:'Celebrant seated · subdeacon at the Epistle place',epistleMinister:'SUBDEACON',voiceAuthority:'SOT12_OC64_E12_SUBDEACON_CHANTS_EPISTLE',executionState:{celebrant:['SEATED_LISTENS'],subdeacon:['CHANTS_EPISTLE','RETURNS_FOR_BLESSING'],completionTrigger:'SUBDEACON_EPISTLE_COMPLETE'}};
+        cues.push(aoSolemnCue('SUBDEACON','The subdeacon chants the Epistle at the appointed place, then returns for the celebrant’s blessing.','Le sous-diacre chante l’Épître au lieu prévu, puis revient recevoir la bénédiction du célébrant.'));
+    }
+    if(step.id==='gospel-prep') next={...next,actor:'deacon',audibility:'quiet',privateAction:true,priestPosition:'Altar / Gospel procession forming',voiceAuthority:'SOT12_OC64_E16_DEACON_MUNDA_COR_MEUM',executionState:{deacon:['CARRIES_EVANGELIARIUM_TO_ALTAR','ASSISTS_AT_INCENSE','KNEELS_FOR_MUNDA_COR_MEUM','RECEIVES_CELEBRANT_BLESSING','FORMS_GOSPEL_PROCESSION'],celebrant:['IMPOSES_INCENSE','BLESSES_DEACON'],subdeacon:['JOINS_GOSPEL_PROCESSION']}};
+    if(step.id==='gospel-announcement') next={...next,actor:'deacon',audibility:'audible',privateAction:false,priestPosition:'Gospel place',voiceAuthority:'SOT12_OC64_E18_DEACON_PUBLIC_PROCLAMATION'};
+    if(step.id==='gospel') next={...next,actor:'deacon',audibility:'audible',privateAction:false,priestPosition:'Gospel place',voiceAuthority:'SOT12_OC64_E18_DEACON_PUBLIC_PROCLAMATION'};
+    if(step.id==='incense-off') next={...next,actor:'sacred_ministers',audibility:'silent',privateAction:false,voiceAuthority:'SOT12_OC64_E27_NONVERBAL_SOLEMN_INCENSATION'};
+    if(step.id==='consecration-host'){
+        dropCue(c=>c.actor==='SERVER' || /server.*chasuble/i.test(String(c?.text?.en||'')));
+        cues.push(aoSolemnCue('DEACON','The deacon kneels close to the celebrant and raises the chasuble only while the Sacred Host is elevated.','Le diacre s’agenouille près du célébrant et soulève la chasuble seulement pendant l’élévation de la sainte Hostie.'));
+        cues.push(aoSolemnCue('SUBDEACON','The subdeacon kneels and looks upon the elevated Host as prescribed.','Le sous-diacre s’agenouille et regarde l’Hostie élevée selon le cérémonial prescrit.'));
+        cues.push(aoSolemnCue('TORCHBEARERS','Torchbearers kneel with lighted torches during the Elevation.','Les céroféraires s’agenouillent avec les cierges allumés pendant l’Élévation.'));
+    }
+    if(step.id==='consecration-chalice'){
+        dropCue(c=>c.actor==='SERVER' || /server.*chasuble/i.test(String(c?.text?.en||'')));
+        cues.push(aoSolemnCue('DEACON','The deacon kneels close to the celebrant and raises the chasuble only while the Chalice is elevated.','Le diacre s’agenouille près du célébrant et soulève la chasuble seulement pendant l’élévation du calice.'));
+        cues.push(aoSolemnCue('SUBDEACON','The subdeacon kneels and looks upon the elevated Chalice as prescribed.','Le sous-diacre s’agenouille et regarde le calice élevé selon le cérémonial prescrit.'));
+        cues.push(aoSolemnCue('TORCHBEARERS','Torchbearers remain kneeling with lighted torches through the Elevation.','Les céroféraires restent agenouillés avec les cierges allumés pendant l’Élévation.'));
+    }
+    if(step.id==='libera-nos'){
+        cues.push(aoSolemnCue('DEACON','The deacon receives the paten from the subdeacon and presents it to the celebrant.','Le diacre reçoit la patène du sous-diacre et la présente au célébrant.'));
+        cues.push(aoSolemnCue('SUBDEACON','The subdeacon hands the paten to the deacon for the celebrant.','Le sous-diacre remet la patène au diacre pour le célébrant.'));
+    }
+    if(step.id==='priest-communion'){
+        dropCue(c=>c.actor==='SERVER' || /server prepares/i.test(String(c?.text?.en||'')));
+        cues.push(aoSolemnCue('DEACON','The deacon prepares to assist at the Communion of the sacred ministers and faithful.','Le diacre se prépare à assister à la Communion des ministres sacrés et des fidèles.'));
+    }
+    if(step.id==='communion-faithful'){
+        dropCue(c=>c.actor==='SERVER' || /server accompanies/i.test(String(c?.text?.en||'')));
+        next={...next,actor:'sacred_ministers',voiceAuthority:'SOT12_OC64_E64_SOLEMN_COMMUNION'};
+        cues.push(aoSolemnCue('DEACON','The deacon assists the celebrant and holds the Communion paten during distribution.','Le diacre assiste le célébrant et tient le plateau de Communion pendant la distribution.'));
+        cues.push(aoSolemnCue('SUBDEACON','If communicating, the subdeacon receives before the clergy and faithful according to the Solemn order.','S’il communie, le sous-diacre reçoit avant le clergé et les fidèles selon l’ordre de la Messe solennelle.'));
+    }
+    if(step.id==='ablutions'){
+        dropCue(c=>['SERVER','SERVERS'].includes(c.actor));
+        next={...next,actor:'sacred_ministers',voiceAuthority:'SOT12_OC64_E65_SOLEMN_ABLUTIONS'};
+        cues.push(aoSolemnCue('SUBDEACON','The subdeacon ministers wine and water for the ablutions, then reassembles and veils the chalice.','Le sous-diacre sert le vin et l’eau pour les ablutions, puis remet le calice en ordre et le voile.'));
+        cues.push(aoSolemnCue('DEACON','The deacon transfers the Missal back to the Epistle side.','Le diacre reporte le Missel au côté de l’Épître.'));
+    }
+    if(step.id==='communion-proper') next={...next,actor:'mixed',audibility:'mixed',privateAction:false,voiceAuthority:'SOT12_E66_PARALLEL_CHOIR_CELEBRANT'};
+    if(step.id==='last-gospel-announcement'||step.id==='last-gospel'){
+        next={...next,actor:'celebrant',audibility:'quiet',privateAction:true,voiceAuthority:'SOT12_OC64_E70_SOLEMN_SECRET_WITH_SUBDEACON_RESPONSES'};
+        if(step.id==='last-gospel') cues.push(aoSolemnCue('SUBDEACON','The subdeacon gives the prescribed responses and joins the Gospel signs/genuflection when not holding the altar card.','Le sous-diacre donne les réponses prescrites et accomplit les signes de l’Évangile et la génuflexion lorsqu’il ne tient pas le carton d’autel.'));
+    }
+    if(cues.length) next.ceremonialCues=cues;
+    return next;
+}
+function aoBindSolemnObjectiveSequence(sequence,state){
+    if(sequence?.form!=='sung') return sequence;
+    let baseSteps=aoInsertSolemnPax(sequence.steps||[]);
+    const steps=baseSteps.map((step,index)=>{
+        const refs=AO_SOLEMN_MC_BINDINGS_V4358[step.id]||null;
+        const sourceRefs=AO_SOLEMN_MC_SOURCE_V4358[step.id]||step.sourceMomentRefs||[];
+        let next=aoRepairSolemnStep(step);
+        if(refs){
+            next={...next,canonicalEventRefs:[...refs],sourceMomentRefs:[...sourceRefs],canonicalIdentityPolicy:'MC_RUNTIME_IDENTITY_V1',prototypeTraversalCanonical:false,objectiveMassForm:'SOLEMN',objectiveMcStatus:step.id==='second-confiteor'?'HISTORICAL_OVERLAY':'BOUND_B006',objectiveMcPrimary:refs[0],objectiveMcTimeline:[...refs],objectiveProjectionIndex:index};
+        }else next={...next,objectiveMassForm:'SOLEMN',objectiveMcStatus:'UNMAPPED_SPECIAL_OR_NONCORE_OVERLAY',prototypeTraversalCanonical:false};
+        if(step.id==='second-confiteor') next={...next,objectiveCanonical1962:false,objectiveMcStatus:'HISTORICAL_OVERLAY',historicalOnly:true};
+        return next;
+    });
+    const traversal=[];for(const step of steps){if(step.objectiveMcStatus==='HISTORICAL_OVERLAY')continue;for(const id of step.canonicalEventRefs||[])if(/^MC-\d{4}$/.test(id)&&!traversal.includes(id))traversal.push(id);}
+    return {...sequence,steps,canonicalRuntimeIdentity:'MC-*',objectiveForm:'SOLEMN',objectiveBindingVersion:'43.58-B006',objectiveMcTraversal:traversal,objectivePostMassBoundary:'MC-0083',objectiveResearchHead:'SOT12',objectiveCertifiedSourceMoments:[...AO_SOLEMN_CERTIFIED_SOURCE_MOMENTS_V4358],objectiveUnsupportedForms:{missaCantata:'B037_RESEARCH_GATED',asperges:'B039_RESEARCH_GATED',requiem:'B038_RESEARCH_GATED',nuptial:'B040_RESEARCH_GATED'},objectiveSpecialOverlayPolicy:'SOURCE_CLOSED_CORE_ONLY',b006Status:'SOLEMN_OBJECTIVE_BOUND_AND_REPAIRED'};
+}
+globalThis.AO_SOLEMN_MASS_BINDING_V4358=Object.freeze({version:'43.58',task:'B006',internalFormValue:'sung',certifiedForm:'SOLEMN MASS',bindings:AO_SOLEMN_MC_BINDINGS_V4358,sourceMoments:AO_SOLEMN_MC_SOURCE_V4358,certifiedSourceMoments:AO_SOLEMN_CERTIFIED_SOURCE_MOMENTS_V4358,boundaryAfterMass:'MC-0083',missaCantata:'RESEARCH_GATED_B037',asperges:'RESEARCH_GATED_B039'});
+
+function buildLiveSequence(state) {
+    const resolution = state.resolution;
+    const active = activeMassSession(state);
+    const proper = active?.proper || (resolution?.proper.status === 'ready' ? resolution.proper.data : null);
+    const path = active?.resolvedMass?.properSource || proper?.sourcePath || resolution?.day?.selectedMassOption?.path || resolution?.day?.main?.path || '';
+    const bridgeProfile = active?.resolvedMass?.exceptionalProfile || (active?.resolvedMass?.celebrationType === 'requiem' ? 'requiem-1962' : null);
+    const inferredProfile = bridgeProfile || proper?.riteProfile || (path ? (0, liturgical_theme_1.riteProfileFor)(path, { preparatoryLessons: proper?.preparatoryLessons || [], isRequiem: proper?.isRequiem }) : 'ordinary_mass');
+    let sequence = (0, mass_engine_1.buildMassSequence)({
+        form: state.live.form,
+        proper,
+        properAvailable: !!proper,
+        faithfulCommunion: state.settings.faithfulCommunion,
+        secondConfiteor: state.settings.secondConfiteor,
+        joinConfiteor: state.settings.joinSecondConfiteor || state.settings.participationMode === 'group',
+        incenseSung: state.live.form === 'sung' ? true : state.settings.incenseSung !== false,
+        sanctusSetting: state.settings.sanctusSetting === 'divided' ? 'divided' : 'gregorian',
+        epistleMinister: state.live.form === 'sung' && state.settings.epistleMinister === 'lector' ? 'lector' : 'celebrant',
+        longInterlectionSeating: state.live.form === 'sung' && state.settings.longInterlectionSeating === true,
+        selectedDate: state.selectedDate,
+        exceptionalProfile: exceptionalProfile(inferredProfile),
+        votiveMass: active?.resolvedMass?.celebrationType === 'votive',
+    });
+    if (active?.resolvedMass?.requestedCelebrationId === 'nuptial' && active?.resolvedMass?.celebrationId === 'nuptial')
+        sequence = insertNuptialRites(sequence, proper);
+    sequence = applyResolvedAssembly(sequence, active);
+    const aspergesMode = aoSundayAspergesMode(state, inferredProfile);
+    if (aspergesMode) {
+        const massSteps = sequence.steps.filter(step => step.id !== 'entrance-procession');
+        sequence = { ...sequence, steps: [...aoAspergesSteps({ ...sequence, steps: massSteps }, aspergesMode), ...massSteps] };
+    }
+    sequence = aoStripCrossRedundancy(sequence);
+    sequence = aoBindLowObjectiveSequence(sequence, state);
+    sequence = aoBindSolemnObjectiveSequence(sequence, state);
+    return sequence;
+}
+function suggestedPostureValue(step, state) {
+    const canonical=globalThis.AO_MASS_GUIDANCE_V4313?.postureFor?.(step?.id)||null;
+    const action=String(canonical?.action||'').toUpperCase();
+    if(action){
+        if(action==='FOLLOW_LOCAL_CUSTOM') return null;
+        if(['KNEEL','STAND','SIT','BOW','GENUFLECT','RISE'].includes(action)) return action;
+    }
+    /* Fail closed when the canonical guidance registry is present. */
+    if(globalThis.AO_MASS_GUIDANCE_V4313) return null;
+    const raw = String(step?.posture?.value || '').trim().toUpperCase();
+    return raw && !/CUSTOM|LOCAL|FOLLOW/.test(raw) ? raw : null;
+}
+function postureLabel(step, language, state) {
+    const saved = state?.settings.localPostures?.[step.id];
+    const value = saved && saved !== 'follow' ? saved.toUpperCase() : suggestedPostureValue(step, state);
+    if (!value) return null;
+    const fr = { KNEEL: 'À genoux', STAND: 'Debout', SIT: 'Assis', BOW: 'Inclinaison', GENUFLECT: 'Génuflexion' };
+    const en = { KNEEL: 'Kneel', STAND: 'Stand', SIT: 'Sit', BOW: 'Bow', GENUFLECT: 'Genuflect' };
+    return language === 'fr' ? (fr[value] || value) : (en[value] || value);
+}
+function isChoirProjectedEvent(event, form) {
+    return form === 'sung' && (event?.kind === 'choir' || /^choir$/i.test(String(event?.actor || '')));
+}
+function projectedTextKey(text) {
+    if (!text) return '';
+    return ['lat','en','fr'].map(k => String(text?.[k] || '').replace(/\s+/g, ' ').trim()).join('||');
+}
+function dedupeProjectedEvents(events, form) {
+    const out = [], byText = new Map();
+    for (const original of events || []) {
+        // A Low Mass has no Schola track even if a shared canonical step carries actor=choir.
+        if (form !== 'sung' && original?.kind === 'choir') continue;
+        const event = { ...original };
+        if (event.kind === 'proper-unavailable') { out.push(event); continue; }
+        const key = projectedTextKey(event.text);
+        if (!key) { out.push(event); continue; }
+        const prior = byText.get(key);
+        if (!prior) { out.push(event); byText.set(key, event); continue; }
+        const priorChoir = isChoirProjectedEvent(prior, form);
+        const currentChoir = isChoirProjectedEvent(event, form);
+        // Same text + same projected moment is one visual text. If one copy is the Schola
+        // track, retain Schola identity so the surviving surface explains what is heard.
+        if (currentChoir && !priorChoir) {
+            prior.kind = 'choir';
+            prior.actor = 'choir';
+            prior.properSlot = event.properSlot || prior.properSlot;
+            prior.continuation = !!event.continuation;
+            prior.overlapStatus = event.overlapStatus || prior.overlapStatus || null;
+        } else if (currentChoir && priorChoir && event.overlapStatus) {
+            prior.overlapStatus = event.overlapStatus;
+        }
+        prior.mergedDuplicate = true;
+    }
+    return out;
+}
+function soundscape(step, events, language, form) {
+    if (step?.silenceGate === 'CONSECRATION' || /^consecration-(host|chalice)$/.test(String(step?.id || '')))
+        return (0, i18n_1.t)(language, 'sacredSilence');
+    const choir = events.some(event => isChoirProjectedEvent(event, form));
+    const altar = events.some(event => event.kind === 'altar' && !isChoirProjectedEvent(event, form));
+    if (choir && !altar && ['quiet', 'silent'].includes(step.audibility)) {
+        const possible = events.some(event => isChoirProjectedEvent(event, form) && event.overlapStatus === 'possible');
+        if (possible) return language === 'fr' ? 'La schola peut encore chanter' : 'The schola may still be singing';
+        return (0, i18n_1.t)(language, 'choirContinues');
+    }
+    if (!choir && !altar && ['quiet', 'silent'].includes(step.audibility))
+        return (0, i18n_1.t)(language, 'sacredSilence');
+    return null;
