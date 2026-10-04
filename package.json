@@ -55,7 +55,7 @@
     "test:reader-palm": "node tests/reader-palm.mjs",
     "test:form-lifecycle": "node tests/form-lifecycle.mjs",
     "test:solemn-pax": "node tests/solemn-pax-authority.mjs",
-    "test:phone": "node tests/reader-phone-acceptance.mjs && node tests/app-shell-final-e2e.mjs && node tests/app-shell-nuptial-e2e.mjs",
+    "test:phone": "node tests/reader-phone-acceptance.mjs && node tests/app-shell-final-e2e.mjs && node tests/app-shell-nuptial-e2e.mjs && node tests/app-shell-easter-vigil-e2e.mjs",
     "test:reader-ash": "node tests/reader-ash.mjs",
     "test:reader-candlemas": "node tests/reader-candlemas.mjs",
     "test:reader-requiem-absolution": "node tests/reader-requiem-absolution.mjs",
@@ -72,6 +72,7 @@
     "test:reader-easter-vigil": "node tests/reader-easter-vigil.mjs",
     "test:app-shell-final": "node tests/app-shell-final-e2e.mjs",
     "test:app-shell-nuptial": "node tests/app-shell-nuptial-e2e.mjs",
+    "test:app-shell-easter-vigil": "node tests/app-shell-easter-vigil-e2e.mjs",
     "test:tree-hygiene": "node tests/production-tree-hygiene.mjs",
     "test:app-shell-contract": "node tests/app-shell-contract.mjs",
     "test:reader-native-good-friday": "node tests/reader-native-good-friday.mjs"
