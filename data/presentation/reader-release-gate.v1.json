@@ -609,13 +609,47 @@
         "tests/reader-phone-acceptance.mjs",
         "tests/reader-regression-lockdown.mjs"
       ]
+    },
+    {
+      "id": "GOOD_FRIDAY_NATIVE_DISTINCT_RITE",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "controller": "src/mass/reader-good-friday.js",
+      "payload": "data/presentation/reader-good-friday.v1.json",
+      "structuralSource": "data/mass/special-days-core.v1.1.json#GF",
+      "runtime": "src/mass/browser-runtime.js",
+      "sourceAuthority": "Missale Romanum 1962 · Feria Sexta in Parasceve",
+      "sourceCorpus": {
+        "repository": "DivinumOfficium/divinum-officium",
+        "ref": "8e3a039ae34fcd0fd1583d68f78ac79947d3e8e2",
+        "path": "web/www/missa/Latin/Tempora/Quad6-5.txt",
+        "blobSha": "608809d88d3b0d587e20e53d8ab22d4bde0c865e",
+        "sourceLines": 389
+      },
+      "recoveredGraphRecords": 56,
+      "readerSurfaces": 9,
+      "ordinaryMassGraphActive": false,
+      "guarantees": [
+        "Good Friday bypasses ordinary Mass structure, text model, objective runtime and form lifecycle",
+        "all 56 recovered GF state records map to a native reader surface",
+        "Passion death kneeling and pause is owned by GF-PASS-320 and restores standing at GF-PASS-330",
+        "all Solemn Prayer Flectamus genua and Levate states remain event-owned",
+        "each of the three Ecce lignum/Venite adoremus adoration cycles owns its kneel/rise states",
+        "personal Cross veneration approach, genuflection, veneration and return remain personal-state owned",
+        "corporate silent veneration remains a distinct explicit branch",
+        "return of the Blessed Sacrament and Pater/Communion posture are sacramental/rite-state owned",
+        "completion produces a distinct-rite completion handoff and never fabricates a Mass completion record"
+      ],
+      "tests": [
+        "tests/reader-good-friday.mjs",
+        "tests/browser-runtime.mjs"
+      ]
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Prayer over the People insertion, Generic Procession, Good Friday and Easter Vigil."
+      "detail": "All recovered ordinary-Mass overlays, preceding rites, following actions, and the Good Friday distinct rite now have native/plan-owned reader support. Remaining special-structure work is limited to the Easter Vigil composite distinct rite."
     }
   ],
   "certificationPolicy": {
