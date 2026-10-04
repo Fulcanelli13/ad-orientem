@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "3.2.0",
-  "status": "FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__LEGACY_DEFAULT_RETAINED",
-  "productionDefault": "LEGACY",
-  "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
+  "version": "4.0.0",
+  "status": "FINAL_NATIVE_CANDIDATE__REAL_SHELL_ACCEPTANCE_REQUIRED",
+  "productionDefault": "R17_NATIVE",
+  "releaseRule": "The native R17 reader is the production candidate across the certified full-year scope. Merge to main requires real-shell browser acceptance against the actual index.html. Legacy is retained only as an explicit rollback/debug path.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -785,22 +785,48 @@
         "tests/reader-ember-browser.mjs",
         "tests/reader-field-release.mjs"
       ]
+    },
+    {
+      "id": "PRODUCTION_NATIVE_CUTOVER",
+      "status": "CANDIDATE_PENDING_REAL_SHELL_E2E",
+      "productionDefault": "R17_NATIVE",
+      "browserEntry": "src/mass/browser-entry.js",
+      "gate": "src/mass/reader-gate.js",
+      "legacyPolicy": "EXPLICIT_ROLLBACK_OR_SHADOW_ONLY",
+      "rollbackQuery": "?aoR17Reader=legacy",
+      "guarantees": [
+        "native reader boots without starting the legacy live renderer",
+        "field-specific 4 October rescue code is absent from the production entry path",
+        "native mount failures fail closed instead of silently showing the obsolete mirror reader",
+        "resolved Proper can enter the modular engine without legacy assembly-state dependency",
+        "FOLLOW_CONGREGATION uses observed posture when available and sourced posture when no observer exists"
+      ],
+      "requiredTest": "tests/app-shell-final-e2e.mjs"
     }
   ],
-  "openBlockers": [],
+  "openBlockers": [
+    {
+      "id": "REAL_APP_SHELL_ACCEPTANCE",
+      "severity": "RELEASE_BLOCKER",
+      "detail": "Run phone-sized Chromium against the real index.html, enter Mass through the final browser bridge, verify native ownership, no legacy boot, no page crash, touch navigation and nonblank content."
+    }
+  ],
   "certificationPolicy": {
     "greenUnitCIIsNotReleaseCertification": true,
     "requireAllBlockersClosed": true,
     "requireAuthoritative48CardMap": false,
     "requireRealBrowserPhoneAcceptance": true,
-    "requireLegacyDefaultUntilCertified": true,
+    "requireLegacyDefaultUntilCertified": false,
     "requireSourceFirstCanonMap": true,
-    "requireSourceFirstLiveStructure": true
+    "requireSourceFirstLiveStructure": true,
+    "requireRealAppShellAcceptance": true,
+    "legacyRollbackExplicitOnly": true,
+    "productionNativeDefault": true
   },
   "pilotRelease": {
-    "status": "CERTIFIED_PILOT_READY",
+    "status": "SUPERSEDED_BY_FINAL_MAINLINE",
     "reader": "R17_NATIVE",
-    "productionDefaultUnchanged": "LEGACY",
+    "productionDefaultUnchanged": "SUPERSEDED",
     "scope": {
       "forms": [
         "LOW",
@@ -831,7 +857,7 @@
   },
   "fieldRelease": {
     "schema": "ao-r17-field-release-v1",
-    "status": "READY",
+    "status": "SUPERSEDED_BY_FINAL_MAINLINE",
     "target": "2026-10-04_ORDINARY_OR_VOTIVE_MASS",
     "readerUiPolicy": "NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK",
     "supportedForms": [
@@ -862,6 +888,7 @@
       "tests/reader-field-release.mjs",
       "tests/browser-runtime.mjs",
       "tests/reader-phone-acceptance.mjs"
-    ]
+    ],
+    "authority": "HISTORICAL_FIELD_SNAPSHOT_ONLY"
   }
 }
