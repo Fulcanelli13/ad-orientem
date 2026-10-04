@@ -55,7 +55,7 @@
     "test:reader-palm": "node tests/reader-palm.mjs",
     "test:form-lifecycle": "node tests/form-lifecycle.mjs",
     "test:solemn-pax": "node tests/solemn-pax-authority.mjs",
-    "test:phone": "node tests/reader-phone-acceptance.mjs",
+    "test:phone": "node tests/reader-phone-acceptance.mjs && node tests/app-shell-final-e2e.mjs",
     "test:reader-ash": "node tests/reader-ash.mjs",
     "test:reader-candlemas": "node tests/reader-candlemas.mjs",
     "test:reader-requiem-absolution": "node tests/reader-requiem-absolution.mjs",
@@ -69,7 +69,8 @@
     "test:reader-ember-lessons": "node tests/reader-ember-lessons.mjs",
     "test:reader-ember-browser": "node tests/reader-ember-browser.mjs",
     "test:reader-nuptial": "node tests/reader-nuptial.mjs",
-    "test:reader-easter-vigil": "node tests/reader-easter-vigil.mjs"
+    "test:reader-easter-vigil": "node tests/reader-easter-vigil.mjs",
+    "test:app-shell-final": "node tests/app-shell-final-e2e.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
