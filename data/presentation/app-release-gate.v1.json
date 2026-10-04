@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -48,6 +48,17 @@
         "tests/app-shell-final-e2e.mjs"
       ],
       "detail": "The Prayer Book aria-hidden/focused-descendant regression is explicitly exercised without Chromium blocked-aria-hidden warnings."
+    },
+    {
+      "id": "NON_MASS_D3_D6_CONVERGENCE",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "evidence": [
+        "src/app/nonmass-convergence.js",
+        "tests/nonmass-d3-d6-convergence.mjs",
+        "tests/nonmass-d3-d6-e2e.mjs"
+      ],
+      "detail": "D3-D6 behavioral convergence is enforced over the locked PRAY/Settings donor: session-only exposition state, bounded Adoration/Benediction behavior, read-only Confession examination with five canonical phases, and reader-facing Sources/About with canonical app-version ownership. This does not close donor extraction."
     },
     {
       "id": "VISIBLE_SHELL_OWNERSHIP",
@@ -119,13 +130,15 @@
     "static": [
       "tests/app-release-gate.mjs",
       "tests/app-shell-contract.mjs",
-      "tests/production-tree-hygiene.mjs"
+      "tests/production-tree-hygiene.mjs",
+      "tests/nonmass-d3-d6-convergence.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
       "tests/app-shell-final-e2e.mjs",
       "tests/app-shell-nuptial-e2e.mjs",
-      "tests/app-shell-easter-vigil-e2e.mjs"
+      "tests/app-shell-easter-vigil-e2e.mjs",
+      "tests/nonmass-d3-d6-e2e.mjs"
     ]
   }
 }
