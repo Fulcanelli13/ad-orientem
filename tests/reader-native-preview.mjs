@@ -345,15 +345,15 @@ try{
   await prepareNativeReaderPreview({
     prepared:{...prepared,session:{
       ...prepared.session,
-      resolvedMass:{...prepared.session.resolvedMass,overlays:["REQUIEM"]},
-      plan:{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["REQUIEM"]},
+      resolvedMass:{...prepared.session.resolvedMass,overlays:["UNSUPPORTED_TEST_OVERLAY"]},
+      plan:{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["UNSUPPORTED_TEST_OVERLAY"]},
     }},
     presentationData:data,
     eventData,
     cueRegistries,
     guideData,
   });
-}catch(error){blocked=/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay REQUIEM/.test(String(error.message))}
+}catch(error){blocked=/STRUCTURAL_OVERLAY_PROJECTION_PENDING|not yet certified for overlay UNSUPPORTED_TEST_OVERLAY/.test(String(error.message))}
 assert.equal(blocked,true,"unsupported special graph did not fail closed");
 
 console.log("native reader preview: PASS — source-first LIVE is native-owned; remaining rollback state is explicit.");
