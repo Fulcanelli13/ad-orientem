@@ -132,7 +132,7 @@ export function structureSupport(prepared,modeOverride=null){
   if(!plan||!resolved)return Object.freeze({supported:false,reason:"MISSING_R17_SESSION"});
   if(plan.kind!=="MASS")return Object.freeze({supported:false,reason:"DISTINCT_RITE_REQUIRES_NATIVE_RITE_PROJECTION"});
   const preceding=[...(plan.precedingGraphs??[])];
-  const unsupportedPreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH","CANDLEMAS"].includes(x));
+  const unsupportedPreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"].includes(x));
   if(unsupportedPreceding.length)return Object.freeze({supported:false,reason:"PRECEDING_RITE_PROJECTION_PENDING"});
   const unsupportedFollowing=[...(plan.followingGraphs??[])].filter(x=>x!=="REQUIEM_ABSOLUTION");
   if(unsupportedFollowing.length)return Object.freeze({supported:false,reason:"FOLLOWING_ACTION_PROJECTION_PENDING"});
