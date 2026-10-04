@@ -99,16 +99,39 @@ function host({ route = "home", confirm = true } = {}) {
   const calls = [];
   const dataset = {};
   let capturedClick=null;
-  const ribbonButtons=[
-    {value:"home",classList:{toggle(){}},getAttribute(){return this.value;},setAttribute(){}},
-    {value:"learn",classList:{toggle(){}},getAttribute(){return this.value;},setAttribute(){}},
-  ];
+  function ribbonButton(value){
+    const attrs=new Map([["data-ao-ribbon",value]]);
+    return {
+      value,
+      classList:{toggle(){}},
+      getAttribute(name){return attrs.get(name)??null;},
+      setAttribute(name,next){attrs.set(name,String(next));},
+      removeAttribute(name){attrs.delete(name);},
+      has(name){return attrs.has(name);},
+    };
+  }
+  const ribbonButtons=[ribbonButton("home"),ribbonButton("learn")];
+  const nav={
+    attrs:new Map(),
+    querySelectorAll(selector){
+      if(selector==="[data-ao-ribbon]")return ribbonButtons.filter(button=>button.has("data-ao-ribbon"));
+      if(selector==="[data-ao-app-surface]")return ribbonButtons.filter(button=>button.has("data-ao-app-surface"));
+      return [];
+    },
+    querySelector(selector){return this.querySelectorAll(selector)[0]??null;},
+    setAttribute(name,value){this.attrs.set(name,String(value));},
+    getAttribute(name){return this.attrs.get(name)??null;},
+    contains(button){return ribbonButtons.includes(button);},
+  };
   const win = {
     document: {
       documentElement: { dataset },
-      querySelectorAll:()=>ribbonButtons,
+      getElementById:(id)=>id==="ao-global-ribbon"?nav:null,
     },
-    addEventListener(type,fn,capture){ if(type==="click"&&capture===true)capturedClick=fn; },
+    addEventListener(type,fn,options){
+      if(type==="click"&&(options===true||options?.capture===true))capturedClick=fn;
+    },
+    removeEventListener(){},
     AO_RUNTIME_V8: {
       store: {
         getState: () => ({ route: "home", language: "en" }),
@@ -126,15 +149,19 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal(bridge.installed, true);
   assert.equal(bridge.passive, false);
   assert.equal(dataset.aoAppShellBridge, "ready");
-  assert.equal((await bridge.navigate("learn")).ok, true);
-  assert.equal(bridge.status().visibleRibbonOwner,"AO_APP_SHELL_V1");
+  assert.equal(bridge.status().visibleRibbonOwned,true);
+  assert.equal(bridge.status().legacyRibbonClickNeutralized,true);
   assert.equal(dataset.aoAppShellOwner,"modular");
+  assert.equal(nav.getAttribute("data-ao-app-owner"),"modular");
+  assert.equal(nav.querySelectorAll("[data-ao-ribbon]").length,0);
+  assert.equal(nav.querySelectorAll("[data-ao-app-surface]").length,2);
+  assert.equal((await bridge.navigate("learn")).ok, true);
   assert.equal(typeof capturedClick,"function");
   let prevented=false,stopped=false;
   capturedClick({
-    target:{closest:()=>({getAttribute:()=> "learn"})},
+    target:{closest:(selector)=>selector==="[data-ao-app-surface]"?ribbonButtons[1]:null},
     preventDefault(){prevented=true;},
-    stopImmediatePropagation(){stopped=true;},
+    stopPropagation(){stopped=true;},
   });
   await Promise.resolve();
   await Promise.resolve();
