@@ -1,0 +1,500 @@
+ const wrap=document.createElement('div');wrap.innerHTML=homeCard(state).trim();
+ const card=wrap.firstElementChild;if(!card)return false;
+ old.replaceWith(card);return true;
+}
+
+document.addEventListener('click',e=>{
+ const t=e.target;
+ if(t.closest?.('[data-ao-rule-close]')){e.preventDefault();e.stopImmediatePropagation();closeSheet();return}
+ if(t.id==='aoRuleSheet'){closeSheet();return}
+ const st=t.closest?.('[data-ao-rule-toggle-static]');
+ if(st){e.preventDefault();e.stopImmediatePropagation();toggleStatic(st.dataset.aoRuleToggleStatic);return}
+ const dy=t.closest?.('[data-ao-rule-toggle-dynamic]');
+ if(dy){e.preventDefault();e.stopImmediatePropagation();toggleDynamic(dy.dataset.aoRuleToggleDynamic);return}
+ const so=t.closest?.('[data-ao-rule-open]');
+ if(so){e.preventDefault();e.stopImmediatePropagation();openStatic(so.dataset.aoRuleOpen);return}
+ const doo=t.closest?.('[data-ao-rule-dynamic]');
+ if(doo){e.preventDefault();e.stopImmediatePropagation();openDynamic(doo.dataset.aoRuleDynamic);return}
+ const head=t.closest?.('.aoRuleTitle');
+ if(head){openSheet();return}
+},true);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+window.addEventListener('storage',e=>{if(e.key===KEY){refreshHome();renderSheet()}});
+/* v43.59.17: retired obsolete 30s Rule Home refresh; the Rule Home card is superseded by Coming Up. */
+
+const API={
+ version:VERSION,load,save,homeCard,staticItems,schedulerItems,activeDynamic,
+ liturgicalContext,openStatic,openDynamic,toggleStatic,toggleDynamic,
+ openSheet,closeSheet,refreshHome,
+ qa(){
+  const state=currentState(),s=load();
+  return {
+   version:VERSION,
+   staticRule:['rosary','mass.obligation when applicable'],
+   internalSchedule:[
+    '04:30–05:45 morning prayers','05:45–06:15 Angelus/Regina Cæli',
+    '06:15–11:45 morning prayers if incomplete','11:45–12:15 Angelus/Regina Cæli',
+    '12:15–17:45 none','17:45–18:15 Angelus/Regina Cæli',
+    '18:15–20:30 Friday-in-Lent Stations only','20:30–22:30 evening prayers',
+    '22:30–04:30 examination of conscience'
+   ],
+   timetableVisible:false,
+   labOraPlanOfLife:false,
+   rosaryTimed:false,
+   ordinaryWeekdayMassSuggested:false,
+   pass:true
+  };
+ }
+};
+window.AO_RULE_V411=API;
+window.AO_RULE_V401=API; // compatibility for the inherited v41 shell
+})();
+</script>
+<script id="ao-v41-final-authority">(()=>{const set=()=>{try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title='Ad Orientem 2.0 · v41 Harmonized Master'}catch{}};set();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',set,{once:true});window.AO_V41_RULE_INTEGRATION={version:'41',source:'v40.1 Rule / Now',ruleNow:true,groupStatePreserved:true};})();</script>
+<script id="ao-v411-rule-home-bridge">
+(()=>{'use strict';
+/* v43.47 Home closure: the historical Rule Home card is superseded by Coming Up.
+   Keep the compatibility API but never inject another Home surface. */
+function inject(){document.querySelectorAll('#aoRuleCard,.aoRuleHomeV412').forEach(n=>n.remove());return true}
+function install(){const store=(window.AO_RUNTIME_V8||window.AdOrientemB1?.runtime)?.store;if(!store?.subscribe)return;store.subscribe(()=>queueMicrotask(inject));inject()}
+install();
+window.AO_RULE_HOME_V411={inject,qa:()=>({pass:!!window.AO_RULE_V411&&!document.getElementById('aoRuleCard'),cardPresent:false,observerAdded:false,supersededBy:'AO_COMING_UP_V4323'})};
+})();
+</script>
+<script id="ao-v41-final-title">(()=>{const set=()=>{try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title='Ad Orientem 2.0 · v41 Harmonized Master'}catch{}};set();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',set,{once:true});})();</script>
+
+<style id="ao-v402-permanent-rule-css">
+.aoRuleCardPermanent{
+  position:relative;
+  margin:14px 0 16px!important;
+  padding:11px 12px 12px!important;
+  border:1px solid color-mix(in srgb,var(--liturgical) 54%,var(--border))!important;
+  background:
+    linear-gradient(135deg,color-mix(in srgb,var(--liturgical) 9%,transparent),transparent 42%),
+    linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018))!important;
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.20),
+    inset 0 1px 0 rgba(255,255,255,.045)!important;
+  overflow:hidden
+}
+.aoRuleCardPermanent::before{
+  content:"";
+  position:absolute;left:0;right:0;top:0;height:2px;
+  background:var(--liturgical)
+}
+.aoRuleCardPermanent .aoRuleHead{
+  min-height:27px!important;margin-bottom:7px!important
+}
+.aoRuleCardPermanent .aoRuleHead button{
+  display:flex;align-items:center;gap:6px;
+  color:var(--text)!important;
+  font-size:.72rem!important
+}
+.aoRuleHeadMark{
+  color:var(--liturgical);
+  font-size:.72rem;line-height:1
+}
+.aoRuleCardPermanent .aoRuleCount{
+  padding:3px 7px;border:1px solid color-mix(in srgb,var(--liturgical) 30%,var(--border));
+  border-radius:999px;background:color-mix(in srgb,var(--liturgical) 6%,transparent);
+  color:var(--text)
+}
+.aoRuleTodayLabel{
+  margin:1px 0 5px;
+  color:var(--muted-2);
+  font:600 .56rem/1.1 var(--font-display);
+  letter-spacing:.1em;text-transform:uppercase
+}
+.aoRuleCardPermanent .aoRuleStatic{
+  min-height:28px!important;
+  padding-bottom:1px
+}
+.aoRuleCardPermanent .aoRulePill{
+  flex:0 0 auto;
+  border-color:rgba(255,255,255,.11)!important;
+  background:rgba(255,255,255,.028)!important
+}
+.aoRuleCardPermanent .aoRulePill.conditional{
+  border-color:color-mix(in srgb,var(--liturgical) 36%,var(--border))!important;
+  background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important
+}
+.aoRuleCardPermanent .aoRuleCheck{
+  color:var(--liturgical)!important
+}
+.aoRuleComplete{
+  border:0;background:transparent;color:var(--muted);
+  padding:3px 0;font-size:.72rem;text-align:left
+}
+.aoRuleCardPermanent .aoRuleNow{
+  margin-bottom:7px!important;
+  border-left-width:3px!important
+}
+@media(max-width:430px){
+  .aoRuleCardPermanent{margin:12px 0 14px!important;padding:10px 10px 11px!important}
+}
+</style>
+
+<style id="ao-v393-gesture-cues-css">
+/* v39.3 — source-led devotional gesture cues. Icons stay subordinate to prayer. */
+.ao-v393-gesture-rail{
+  display:flex!important;align-items:center!important;gap:6px!important;
+  min-height:24px!important;margin:5px 0 10px!important;
+  color:var(--muted-2)!important;
+}
+.ao-v393-gesture-cue{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  position:relative!important;vertical-align:-.24em!important;
+  width:23px!important;height:23px!important;min-width:23px!important;
+  margin:0 .18em!important;padding:0!important;
+  border:1px solid color-mix(in srgb,var(--liturgical) 30%,var(--border))!important;
+  border-radius:999px!important;background:color-mix(in srgb,var(--surface-2) 80%,transparent)!important;
+  color:var(--liturgical)!important;box-shadow:none!important;opacity:.84!important;
+  pointer-events:none!important;user-select:none!important;
+  font:600 .9rem/1 var(--font-display)!important;
+}
+.ao-v393-gesture-cue img{
+  width:15px!important;height:15px!important;object-fit:contain!important;
+  opacity:.86!important;filter:none!important;
+}
+.ao-v393-gesture-cue[data-authority="traditional_custom"],
+.ao-v393-gesture-cue[data-authority="office_tradition"]{opacity:.66!important;border-style:dashed!important}
+.ao-v393-gesture-cue.ao-v393-cross{
+  border:0!important;background:transparent!important;width:20px!important;min-width:20px!important;
+  height:20px!important;font:500 1.18rem/1 Georgia,serif!important;color:var(--liturgical)!important;opacity:.88!important;
+}
+.ao-v393-gesture-cue.ao-v393-breast{
+  width:auto!important;min-width:23px!important;padding:0 5px!important;
+  border:0!important;background:transparent!important;color:var(--rubric,#b65c55)!important;
+  font:600 .68rem/1 var(--font-display)!important;letter-spacing:.02em!important;
+}
+.ao-v393-gesture-cue .ao-v393-mult{
+  position:absolute!important;right:-3px!important;bottom:-3px!important;
+  min-width:13px!important;height:13px!important;padding:0 2px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  border:1px solid var(--border)!important;border-radius:999px!important;
+  background:var(--surface-1)!important;color:var(--muted-2)!important;
+  font:600 .48rem/1 var(--font-display)!important;
+}
+.ao-v393-inline-wrap{white-space:normal!important}
+.ao-v393-source-note{
+  padding:0!important;margin:0!important;color:var(--muted)!important;
+  font:400 .76rem/1.43 var(--font-liturgical)!important;
+}
+.ao-v393-source-note strong{color:var(--muted-2)!important;font-weight:600!important}
+.ao-v393-source-note a{color:var(--liturgical)!important;text-decoration:none!important}
+.ao-v393-disclosure{
+  margin:14px 0 0!important;padding:0!important;border:0!important;
+  border-top:1px solid color-mix(in srgb,var(--border) 70%,transparent)!important;background:none!important;
+}
+.ao-v393-disclosure>summary{
+  list-style:none!important;cursor:pointer!important;padding:8px 1px 2px!important;
+  color:var(--muted-2)!important;font:500 .66rem/1.4 var(--font-display)!important;
+  letter-spacing:.045em!important;text-transform:uppercase!important;
+}
+.ao-v393-disclosure>summary::-webkit-details-marker{display:none!important}
+.ao-v393-disclosure>summary::before{content:'ⓘ ';color:var(--liturgical)!important}
+.ao-v393-disclosure-body{display:grid!important;gap:7px!important;padding:7px 0 2px!important}
+.ao-v393-superseded{display:none!important}
+@media(max-width:650px){
+  .ao-v393-gesture-cue{width:22px!important;height:22px!important;min-width:22px!important}
+  .ao-v393-gesture-cue img{width:14px!important;height:14px!important}
+}
+</style>
+
+<script id="ao-v393-gesture-cues-js">
+(function(){
+  'use strict';
+  const ICON_IDS={kneel:'ao-posture-kneel',stand:'ao-posture-stand',bow:'ao-posture-bow',genuflect:'ao-posture-genuflect'};
+  const ICON_CACHE={};
+  const SOURCES={
+    baltimoreAngelus:{label:'Manual of Prayers for the Use of the Catholic Laity · Baltimore 1888',url:'https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers'},
+    baltimoreRosary:{label:'Manual of Prayers for the Use of the Catholic Laity · Rosary · 1888',url:'https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/The_Rosary_of_the_Blessed_Virgin_Mary'},
+    piusXConfession:{label:'Catechism of St Pius X · Sacrament of Penance',url:'https://www.catechism.cc/catechisms/Catechism_of_Pope_Saint_Pius_X.html'},
+    confiteor:{label:'Traditional Roman Confiteor practice',url:'https://www.newadvent.org/cathen/02751a.htm'},
+    baltimoreStations:{label:'Manual of Prayers for the Use of the Catholic Laity · Stations · 1888',url:'https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/The_Stations_of_the_Cross'},
+    moranStations:{label:'Patrick F. Moran · Catholic Prayer Book and Manual of Meditations · 1883',url:'https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Another_Devout_Method_of_the_Stations_of_the_Cross'},
+    baltimoreBenediction:{label:'Manual of Prayers for the Use of the Catholic Laity · Benediction · 1888',url:'https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Benediction_of_the_Blessed_Sacrament'},
+    lasanceBenediction:{label:'Francis Xavier Lasance · With God · Benediction',url:'https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament'},
+    lasanceAdoration:{label:'Francis Xavier Lasance · With God · Various Devotions',url:'https://en.wikisource.org/wiki/With_God/Various_Devotions'},
+    leonine:{label:'The Catholic’s Pocket Prayer-Book · Prayers after Low Mass',url:'https://en.wikisource.org/wiki/The_Catholic%27s_pocket_prayer-book/Prayers_after_Low-Mass'},
+    officeCross:{label:'Traditional Office practice · Magnificat / Benedictus',url:'https://www.newadvent.org/cathen/09534a.htm'},
+    incarnation:{label:'Traditional Roman Incarnation gesture',url:'https://www.newadvent.org/cathen/06423a.htm'}
+  };
+  const REGISTRY={
+    'angelus.posture.weekday':{action:'kneel',authority:'documented_traditional',confidence:'high',context:'either',source:'baltimoreAngelus',active:true},
+    'angelus.posture.sunday':{action:'stand',authority:'documented_traditional',confidence:'high',context:'either',source:'baltimoreAngelus',active:true},
+    'regina.posture.paschal':{action:'stand',authority:'documented_traditional',confidence:'high',context:'either',source:'baltimoreAngelus',active:true},
+    'angelus.et_verbum':{action:'genuflect',authority:'traditional_custom',confidence:'medium-high',context:'either',source:'incarnation',active:true,alternative:'profound bow'},
+    'angelus.collect.passion_cross':{action:null,authority:'blocked_no_source',confidence:'high',context:'either',source:'baltimoreAngelus',active:false,note:'Do not infer a Sign of the Cross merely from the words Passion and Cross.'},
+    'rosary.sign.opening':{action:'cross',authority:'documented_traditional',confidence:'high',context:'either',source:'baltimoreRosary',active:true},
+    'confession.reception.cross':{action:'cross',authority:'documented_traditional',confidence:'high',context:'either',source:'piusXConfession',active:true},
+    'confession.traditional.kneel':{action:'kneel',authority:'documented_traditional',confidence:'high',context:'either',source:'piusXConfession',active:true},
+    'confiteor.mea_culpa':{action:'breast',authority:'documented_traditional',confidence:'high',context:'either',source:'confiteor',active:true,mult:3},
+    'stations.opening.kneel':{action:'kneel',authority:'documented_traditional',confidence:'high',context:'either',source:'baltimoreStations',active:true},
+    'stations.adoramus.genuflect':{action:'genuflect',authority:'documented_traditional',confidence:'high',context:'either',source:'moranStations',active:true},
+    'stations.process':{action:'process',authority:'documented_traditional',confidence:'high',context:'church',source:'baltimoreStations',active:false,note:'Held until the app has an explicit church/home context.'},
+    'benediction.exposition.kneel':{action:'kneel',authority:'documented_traditional',confidence:'high',context:'church_exposition',source:'baltimoreBenediction',active:true},
+    'benediction.tantum.bow':{action:'bow',authority:'documented_traditional',confidence:'high',context:'church_exposition',source:'baltimoreBenediction',active:true},
+    'benediction.blessing.cross':{action:'cross',authority:'documented_traditional',confidence:'high',context:'church_exposition',source:'lasanceBenediction',active:true},
+    'benediction.reposal.rise':{action:'stand',authority:'documented_traditional',confidence:'high',context:'church_exposition',source:'baltimoreBenediction',active:true},
+    'adoration.exposed.double_genuflect':{action:'genuflect',authority:'documented_traditional',confidence:'high',context:'church_exposition',source:'lasanceAdoration',active:true,mult:2,conditional:true},
+    'forty_hours.double_genuflect':{action:'genuflect',authority:'documented_traditional',confidence:'high',context:'church_exposition',source:'lasanceAdoration',active:true,mult:2,conditional:true},
+    'leonine.posture.kneel':{action:'kneel',authority:'documented_traditional',confidence:'high',context:'after_low_mass',source:'leonine',active:true},
+    'magnificat.office.cross':{action:'cross',authority:'office_tradition',confidence:'high',context:'office',source:'officeCross',active:true},
+    'benedictus.office.cross':{action:'cross',authority:'office_tradition',confidence:'high',context:'office',source:'officeCross',active:true},
+    'de_profundis.evening.kneel':{action:'kneel',authority:'traditional_custom',confidence:'medium-high',context:'evening_bell',active:false,note:'Not imposed on standalone De Profundis.'},
+    'penitential_psalms.kneel':{action:'kneel',authority:'held_for_source',confidence:'low',context:'either',active:false},
+    'seven_words.adoramus':{action:null,authority:'blocked_no_source',confidence:'high',context:'either',active:false,note:'Do not copy the Stations genuflection into the Seven Words without a source rubric.'}
+  };
+  const APPLIED=new WeakMap();
+  function fr(){return (document.documentElement.lang||'').toLowerCase().startsWith('fr') || /\bRetour\b/.test(document.body?.innerText||'')}
+  function L(en,frText){return fr()?frText:en}
+  function iconUri(kind){
+    if(!ICON_IDS[kind]) return '';
+    if(ICON_CACHE[kind]!==undefined) return ICON_CACHE[kind];
+    const id=ICON_IDS[kind];
+    for(const sc of document.scripts){
+      const txt=sc.textContent||'';
+      if(!txt.includes('exports.ICONS') || !txt.includes(id)) continue;
+      const esc=id.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      const m=txt.match(new RegExp("['\\\"]"+esc+"['\\\"]\\s*:\\s*['\\\"](data:image\\/png;base64,[^'\\\"]+)['\\\"]"));
+      if(m){ICON_CACHE[kind]=m[1];return m[1]}
+    }
+    ICON_CACHE[kind]='';return '';
+  }
+  function mark(el,key){
+    if(!el) return false;
+    let set=APPLIED.get(el);if(!set){set=new Set();APPLIED.set(el,set)}
+    if(set.has(key))return false;set.add(key);return true;
+  }
+  function cue(kind,label,meta={},mult){
+    const s=document.createElement('span');
+    s.className='ao-v393-gesture-cue '+(kind==='cross'?'ao-v393-cross':kind==='breast'?'ao-v393-breast':'');
+    s.dataset.kind=kind;s.dataset.authority=meta.authority||'documented_traditional';s.setAttribute('role','img');s.setAttribute('aria-label',label);s.title=label;
+    if(kind==='cross')s.textContent='✠';
+    else if(kind==='breast')s.textContent=mult?'×'+mult:'×3';
+    else if(kind==='process')s.textContent='→';
+    else {const src=iconUri(kind); if(src){const img=document.createElement('img');img.src=src;img.alt='';img.setAttribute('aria-hidden','true');s.appendChild(img)}else{s.textContent=kind==='stand'?'↑':kind==='kneel'?'↓':kind==='bow'?'⌄':'⌟'}}
+    if(mult && kind!=='breast'){const m=document.createElement('span');m.className='ao-v393-mult';m.textContent='×'+mult;s.appendChild(m)}
+    return s;
+  }
+  function disclosure(container){
+    if(!container)return null;
+    let d=container.querySelector(':scope > details.ao-v392-disclosure, :scope > details.ao-v393-disclosure');
+    if(d){let b=d.querySelector('.ao-v392-disclosure-body,.ao-v393-disclosure-body');if(b)return b}
+    d=document.createElement('details');d.className='ao-v393-disclosure';
+    const sm=document.createElement('summary');sm.textContent=L('Practice & sources','Pratique & sources');
+    const b=document.createElement('div');b.className='ao-v393-disclosure-body';d.append(sm,b);container.appendChild(d);return b;
+  }
+  function sourceNote(container,key,text){
+    const meta=REGISTRY[key];if(!container||!meta||!mark(container,'src:'+key))return;
+    const b=disclosure(container);if(!b)return;
+    const d=document.createElement('div');d.className='ao-v393-source-note';d.dataset.aoV393Source=key;
+    const src=SOURCES[meta.source];
+    d.innerHTML='<strong>'+L('Gesture cue','Geste')+':</strong> '+text+(src?' · <a target="_blank" rel="noopener" href="'+src.url+'">'+src.label+' ↗</a>':'');
+    b.appendChild(d);
+  }
+  function rail(container,key,kind,label,mult){
+    if(!container||!mark(container,'rail:'+key))return null;
+    const r=document.createElement('div');r.className='ao-v393-gesture-rail';r.dataset.aoV393Key=key;r.appendChild(cue(kind,label,REGISTRY[key]||{},mult));
+    const anchor=container.querySelector('h2,.lab-prayer-flip,.pbPrayerText,.pbFlowCard,.lab-actions');
+    if(anchor)anchor.parentNode.insertBefore(r,anchor.nextSibling);else container.prepend(r);
+    return r;
+  }
+  function textNodes(scope){
+    const out=[];if(!scope)return out;
+    const w=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode(n){const p=n.parentElement;if(!p||p.closest('.ao-v393-gesture-cue,.ao-v392-inline-cue,.ao-v392-disclosure,.ao-v393-disclosure,script,style'))return NodeFilter.FILTER_REJECT;return n.nodeValue&&n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});let n;while(n=w.nextNode())out.push(n);return out;
+  }
+  function injectBefore(scope,patterns,key,kind,label,mult){
+    if(!scope)return 0;let count=0;
+    const pats=patterns.map(p=>p instanceof RegExp?p:new RegExp(p,'i'));
+    for(const n of textNodes(scope)){
+      let found=null,match=null;
+      for(const p of pats){p.lastIndex=0;const m=p.exec(n.nodeValue);if(m){found=p;match=m;break}}
+      if(!match)continue;
+      const parent=n.parentElement;if(!mark(parent,'inline:'+key))continue;
+      const before=n.nodeValue.slice(0,match.index),hit=n.nodeValue.slice(match.index,match.index+match[0].length),after=n.nodeValue.slice(match.index+match[0].length);
+      const frag=document.createDocumentFragment();if(before)frag.appendChild(document.createTextNode(before));frag.appendChild(cue(kind,label,REGISTRY[key]||{},mult));frag.appendChild(document.createTextNode(hit+after));n.parentNode.replaceChild(frag,n);count++;
+    }
+    return count;
+  }
+  function prependToFaces(container,key,kind,label,mult){
+    if(!container)return 0;let c=0;
+    const explicit=container.querySelectorAll('[data-pb-latin],[data-pb-vern]');
+    const faces=explicit.length?explicit:container.querySelectorAll('.pbPrayerText');
+    faces.forEach(f=>{if(mark(f,'prepend:'+key)){f.insertBefore(cue(kind,label,REGISTRY[key]||{},mult),f.firstChild);c++}});return c;
+  }
+  function currentPrayerContainer(root){return root.querySelector('.lab-practice-sheet,.lab-prayer-sheet,.pbReader,.pbFlowCard,.lab-station-text')||root.querySelector('.pbShell')||root}
+  function rootTitle(root){return (root.querySelector('.lab-view-head h1,.pbReader h1,.pbReader .pbTitle,.pbReader h2')?.textContent||'').trim()}
+  function hideOldAngelusCue(root){root.querySelectorAll('.ao-v392-inline-cue').forEach(x=>{if(/Et Verbum caro factum est|bow profoundly|inclinez-vous profondément/i.test(x.textContent||''))x.classList.add('ao-v393-superseded')})}
+  function angelus(root){
+    const title=rootTitle(root),txt=root.textContent||'';if(!/^(Angelus|Regina C[æa]li|Regina Coeli)$/i.test(title))return;
+    const c=root.querySelector('.lab-practice-sheet,.pbReader')||root;hideOldAngelusCue(root);
+    const regina=/Regina C[æa]li|Regina Coeli/i.test(title);
+    if(regina){rail(c,'regina.posture.paschal','stand',L('Stand · traditional Eastertide posture','Debout · posture traditionnelle du temps pascal'));sourceNote(c,'regina.posture.paschal',L('The traditional lay manual directs the Regina Cæli to be said standing in Eastertide.','Le manuel traditionnel des fidèles indique le Regina Cæli debout au temps pascal.'))}
+    else{
+      const d=new Date(),dow=d.getDay(),satEvening=dow===6&&d.getHours()>=18,stand=dow===0||satEvening,key=stand?'angelus.posture.sunday':'angelus.posture.weekday';
+      rail(c,key,stand?'stand':'kneel',stand?L('Stand · Sunday / Saturday evening traditional posture','Debout · posture traditionnelle du dimanche / samedi soir'):L('Kneel · traditional weekday posture','À genoux · posture traditionnelle en semaine'));
+      sourceNote(c,key,L('Older approved lay prayer books direct kneeling for the Angelus, except Saturday evening and Sunday.','Les anciens livres de prières approuvés indiquent l’Angélus à genoux, sauf le samedi soir et le dimanche.'));
+      const n=injectBefore(c,[/Et Verbum caro factum est/i,/And the Word was made flesh/i,/Et le Verbe s(?:’|')est fait chair/i],'angelus.et_verbum','genuflect',L('Genuflect or bow profoundly · traditional Incarnation custom','Génuflexion ou inclination profonde · usage traditionnel de l’Incarnation'));
+      if(n)sourceNote(c,'angelus.et_verbum',L('A genuflection at the Incarnation formula is a documented Roman tradition; in devotional Angelus use a profound bow is also found.','La génuflexion à la formule de l’Incarnation est une tradition romaine documentée ; dans l’Angélus dévotionnel, une inclination profonde est également attestée.'));
+    }
+  }
+  function rosary(root){
+    const txt=root.textContent||'',title=rootTitle(root);if(!/Rosary|Rosaire/i.test(txt+' '+title))return;
+    const c=currentPrayerContainer(root);
+    const n=injectBefore(c,[/In nomine Patris/i,/In the name of the Father/i,/Au nom du Père/i],'rosary.sign.opening','cross',L('Make the Sign of the Cross','Faites le signe de la Croix'));
+    if(n)sourceNote(c,'rosary.sign.opening',L('The traditional lay Rosary method explicitly begins with the Sign of the Cross.','La méthode traditionnelle du Rosaire commence explicitement par le signe de la Croix.'));
+  }
+  function confession(root){
+    const title=rootTitle(root),txt=root.textContent||'';if(!/Confession/i.test(title+' '+txt))return;
+    const c=currentPrayerContainer(root);
+    const n=injectBefore(c,[/make the Sign of the Cross as customary/i,/faites le signe de la Croix selon l[’']usage/i],'confession.reception.cross','cross',L('Make the Sign of the Cross','Faites le signe de la Croix'));
+    if(n)sourceNote(c,'confession.reception.cross',L('Traditional catechetical directions place the Sign of the Cross at the beginning of confession.','Les directives catéchétiques traditionnelles placent le signe de la Croix au début de la confession.'));
+    const k=injectBefore(c,[/When you kneel down/i,/Lorsque vous vous agenouillez/i],'confession.traditional.kneel','kneel',L('Kneel · traditional manner','À genoux · manière traditionnelle'));
+    if(k)sourceNote(c,'confession.traditional.kneel',L('Traditional confession instructions direct the penitent to kneel before beginning.','Les instructions traditionnelles de confession indiquent au pénitent de s’agenouiller avant de commencer.'));
+  }
+  function standalone(root){
+    const title=rootTitle(root),c=root.querySelector('.pbReader')||currentPrayerContainer(root);if(!c)return;
+    if(/^Confiteor$/i.test(title)){
+      const n=injectBefore(c,[/mea culpa,\s*mea culpa,\s*mea m[aá]xima culpa/i,/through my fault,\s*through my fault,\s*through my most grievous fault/i,/c[’']est ma faute,\s*c[’']est ma faute,\s*c[’']est ma très grande faute/i],'confiteor.mea_culpa','breast',L('Strike the breast three times','Frappez la poitrine trois fois'),3);
+      if(n)sourceNote(c,'confiteor.mea_culpa',L('Traditional Roman practice accompanies the three mea culpa phrases with three breast-strikes.','La pratique romaine traditionnelle accompagne les trois mea culpa de trois coups sur la poitrine.'));
+    }
+    if(/Leonine Prayers|Prières léonines/i.test(title)){
+      rail(c,'leonine.posture.kneel','kneel',L('Kneel · traditional Leonine posture','À genoux · posture traditionnelle des prières léonines'));
+      sourceNote(c,'leonine.posture.kneel',L('Traditional lay manuals direct the Leonine Prayers after Low Mass to be said kneeling.','Les manuels traditionnels des fidèles indiquent les prières léonines après la Messe basse à genoux.'));
+    }
+    if(/^Magnificat(?:\s|\(|$)/i.test(title)){
+      const n=prependToFaces(c,'magnificat.office.cross','cross',L('Make the Sign of the Cross · traditional Office practice','Faites le signe de la Croix · usage traditionnel de l’Office'));
+      if(n)sourceNote(c,'magnificat.office.cross',L('In the traditional Office the Sign of the Cross is made at the opening word of the Magnificat.','Dans l’Office traditionnel, on fait le signe de la Croix au premier mot du Magnificat.'));
+    }
+    if(/^Benedictus(?:\s|\(|$)/i.test(title)){
+      const n=prependToFaces(c,'benedictus.office.cross','cross',L('Make the Sign of the Cross · traditional Office practice','Faites le signe de la Croix · usage traditionnel de l’Office'));
+      if(n)sourceNote(c,'benedictus.office.cross',L('In the traditional Office the Sign of the Cross is made at the opening word of the Benedictus.','Dans l’Office traditionnel, on fait le signe de la Croix au premier mot du Benedictus.'));
+    }
+  }
+  function stations(root){
+    const title=rootTitle(root),txt=root.textContent||'';if(!root.querySelector('.lab-stations-hero,.lab-station-text') && !/Stations of the Cross|Chemin de Croix|Via Crucis/i.test(title))return;
+    if(root.querySelector('.lab-stations-hero')){
+      const c=root.querySelector('.lab-stations-hero')||root;
+      rail(c,'stations.opening.kneel','kneel',L('Kneel · opening Act of Contrition','À genoux · acte de contrition initial'));
+      sourceNote(c,'stations.opening.kneel',L('The St Alphonsus method in the 1888 lay manual begins kneeling before the altar.','La méthode de saint Alphonse dans le manuel de 1888 commence à genoux devant l’autel.'));
+    }
+    const s=root.querySelector('.lab-station-text,.pbFlowCard');if(s){
+      const n=injectBefore(s,[/We adore Thee, O Christ/i,/Nous vous adorons, ô Christ/i,/Adoramus te, Christe/i],'stations.adoramus.genuflect','genuflect',L('Genuflect','Génuflexion'));
+      if(n)sourceNote(s,'stations.adoramus.genuflect',L('A nineteenth-century approved prayer book explicitly marks a genuflection at this versicle.','Un livre de prières approuvé du XIXe siècle indique explicitement une génuflexion à ce verset.'));
+    }
+  }
+  function benediction(root){
+    const title=rootTitle(root),txt=root.textContent||'';if(!/^(Benediction|Bénédiction)$/i.test(title))return;
+    const c=root.querySelector('.lab-practice-sheet,.pbReader')||currentPrayerContainer(root);if(!c)return;
+    const final=/Psalm 116|Laudate Dominum|Adoremus in aeternum/i.test(txt);
+    if(final){rail(c,'benediction.reposal.rise','stand',L('Rise · after reposal','Levez-vous · après la reposition'));sourceNote(c,'benediction.reposal.rise',L('The traditional lay manual directs all to rise after the Blessed Sacrament has been replaced in the tabernacle.','Le manuel traditionnel des fidèles indique que tous se lèvent après la reposition du Saint-Sacrement.'))}
+    else {rail(c,'benediction.exposition.kneel','kneel',L('Kneel · traditional Benediction posture','À genoux · posture traditionnelle de la bénédiction'));sourceNote(c,'benediction.exposition.kneel',L('The traditional Benediction order describes the congregation as kneeling before the exposed Blessed Sacrament.','L’ordre traditionnel de la bénédiction décrit l’assemblée à genoux devant le Saint-Sacrement exposé.'))}
+    const b=injectBefore(c,[/Veneremur cernui/i,/Down in adoration falling/i,/Adorons.*prostern/i],'benediction.tantum.bow','bow',L('Bow profoundly','Inclinez-vous profondément'));
+    if(b)sourceNote(c,'benediction.tantum.bow',L('Traditional Benediction manuals direct a humble bow/prostration at the second line of Tantum Ergo.','Les manuels traditionnels de bénédiction indiquent une profonde inclination/prosternation à la deuxième ligne du Tantum Ergo.'));
+    if(/Benediction occurs here|La bénédiction a lieu ici/i.test(txt)){
+      const n=injectBefore(c,[/Benediction occurs here/i,/La bénédiction a lieu ici/i],'benediction.blessing.cross','cross',L('Make the Sign of the Cross as the Blessed Sacrament blesses the faithful','Faites le signe de la Croix lors de la bénédiction du Saint-Sacrement'));
+      if(n)sourceNote(c,'benediction.blessing.cross',L('Lasance’s traditional lay manual explicitly prints the Sign of the Cross for the faithful at Benediction.','Le manuel traditionnel de Lasance imprime explicitement le signe de la Croix pour les fidèles lors de la bénédiction.'));
+    }
+  }
+  function prayerBook(){const r=document.getElementById('aoPrayerBookRoot');if(!r)return;angelus(r);rosary(r);confession(r);stations(r);benediction(r);standalone(r)}
+  function adoration(){
+    const r=document.getElementById('ao-v354-root');if(!r||!r.querySelector('[data-ao354-ador-next]'))return;
+    const c=r.querySelector('article,.ao354Card,.ao354Session,.programCard')||r;
+    rail(c,'adoration.exposed.double_genuflect','genuflect',L('If the Blessed Sacrament is solemnly exposed: traditional double genuflection','Si le Saint-Sacrement est solennellement exposé : double génuflexion traditionnelle'),2);
+    sourceNote(c,'adoration.exposed.double_genuflect',L('Traditional practice distinguished a double genuflection before the Blessed Sacrament solemnly exposed. This cue is conditional, not a current universal rubric.','La pratique traditionnelle distinguait une double génuflexion devant le Saint-Sacrement solennellement exposé. Ce repère est conditionnel et non une rubrique universelle actuelle.'));
+  }
+  function traditions(){
+    const r=document.getElementById('aoV38Traditions');if(!r)return;const title=(r.querySelector('.v38Top h1')?.textContent||'').trim();if(!/^(Forty Hours|Quarante-Heures|Quarante Heures)$/i.test(title))return;
+    const c=r.querySelector('article,.v38TradCard,.v38TradDetail,.v38TraditionDetail')||r;
+    rail(c,'forty_hours.double_genuflect','genuflect',L('Traditional double genuflection before the exposed Blessed Sacrament','Double génuflexion traditionnelle devant le Saint-Sacrement exposé'),2);
+    sourceNote(c,'forty_hours.double_genuflect',L('Traditional exposition practice used a double genuflection before the Blessed Sacrament solemnly exposed.','La pratique traditionnelle de l’exposition employait une double génuflexion devant le Saint-Sacrement solennellement exposé.'));
+  }
+  function process(){try{prayerBook();adoration();traditions()}catch(e){console.warn('AO v39.3 gesture cue pass',e)}}
+  function start(){process()}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+  window.AO_DEVOTIONAL_GESTURES_V393={registry:REGISTRY,sources:SOURCES,process,qa:function(){const active=Object.entries(REGISTRY).filter(([,v])=>v.active),blocked=Object.entries(REGISTRY).filter(([,v])=>v.authority==='blocked_no_source');return{version:'39.3',entries:Object.keys(REGISTRY).length,active:active.length,blocked:blocked.map(([k])=>k),actions:[...new Set(active.map(([,v])=>v.action))],massScope:false}}};
+})();
+</script>
+
+<script id="ao-v41-final-sibling-authority">(()=>{const set=()=>{try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title='Ad Orientem 2.0 · v41 Harmonized Master'}catch{}};set();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',set,{once:true});window.AO_V41_LATEST={permanentRule:'v40.2',devotionalGestures:'v39.3'};})();</script>
+
+<script id="ao-v41-rosary-native-api-bridge">(()=>{'use strict';const install=()=>{const pb=window.AOTraditionalPrayerBook,r=window.AO_ROSARY_V381;if(!pb||!r)return;pb.getRosarySteps=()=>r.steps?.()||[];pb.setRosaryStep=n=>!!r.setStep?.(n);pb.setRosaryForm=f=>r.setForm?.(f);window.AO_ROSARY_NATIVE_BRIDGE_V41={pass:true};};install();})();</script>
+
+<style id="ao-v401-rosary-native-harmonization-css">
+/* v40.1 — Rosary native harmonization. Uses only the established v39.1/v40
+   surface, border, typography and liturgical-colour tokens. */
+
+/* Sacred-art choice belongs in Preferences, not the live prayer chrome. */
+#aoPrayerBookRoot .aoRosaryArtMode{display:none!important}
+/* The older v38 renderer may still populate these; v40.1 owns the visible art layer. */
+#aoPrayerBookRoot .aoRosaryArtHero{display:none!important}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer::before{display:none!important}
+
+/* Native mystery artwork. */
+#aoPrayerBookRoot .aoV401RosaryHero{
+  margin:0 0 14px;border:1px solid var(--liturgical-border);border-radius:var(--radius-m);
+  overflow:hidden;background:var(--surface-1);box-shadow:none
+}
+#aoPrayerBookRoot .aoV401RosaryHero img{
+  display:block;width:100%;height:auto;max-height:min(54vh,520px);object-fit:contain;background:var(--bg)
+}
+#aoPrayerBookRoot .aoV401RosaryHero figcaption{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;
+  border-top:1px solid var(--border);background:var(--surface-1);color:var(--text);
+  font:600 .76rem/1.35 var(--font-display)
+}
+#aoPrayerBookRoot .aoV401RosaryHero figcaption span:last-child{
+  color:var(--muted);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase
+}
+#aoPrayerBookRoot .aoV401RosaryHero.aoV401ArtSubtle img{filter:saturate(.82) brightness(.78);opacity:.86}
+
+/* During a decade the image remains legible behind the prayer rather than becoming
+   an almost-black wallpaper. The card stays native and readable, but is glassier. */
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer{position:relative;isolation:isolate;overflow:clip}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer::before{
+  content:"";display:block!important;position:absolute;z-index:0;inset:64px 0 70px;border-radius:var(--radius-l);
+  background-image:linear-gradient(180deg,rgba(3,8,12,.18),rgba(3,8,12,.30) 46%,rgba(3,8,12,.42)),var(--ao-v401-rosary-art);
+  background-size:cover;background-position:center 22%;opacity:1;filter:saturate(1.02) brightness(.88);pointer-events:none
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer.aoV401ArtSubtle::before{
+  background-image:linear-gradient(180deg,rgba(3,8,12,.46),rgba(3,8,12,.62)),var(--ao-v401-rosary-art);
+  filter:saturate(.78) brightness(.72)
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer>*{position:relative;z-index:1}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 62%,transparent)!important;
+  border-color:var(--border)!important;box-shadow:0 14px 34px rgba(0,0,0,.18)!important;
+  backdrop-filter:blur(2.5px) saturate(1.03)!important;-webkit-backdrop-filter:blur(2.5px) saturate(1.03)!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer.aoV401ArtSubtle .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 76%,transparent)!important
+}
+#aoPrayerBookRoot .pbShell.aoV401RosaryArtPrayer .lab-scripture-cue{
+  background:color-mix(in srgb,var(--surface-2) 67%,transparent)!important;
+  border-color:var(--liturgical-border)!important
+}
+
+/* Link/action colour follows the app's actual liturgical accent; no donor gold. */
+#aoPrayerBookRoot .lab-scripture-actions button,
+#aoPrayerBookRoot .lab-source-row a,
+#aoPrayerBookRoot .lab-source-note a,
+#aoPrayerBookRoot .lab-change{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-scripture-actions button:focus-visible,
+#aoPrayerBookRoot .lab-change:focus-visible{outline:2px solid var(--liturgical);outline-offset:3px}
+
+/* Direct decade navigation: visual bead stays compact, hit area is generous. */
+#aoPrayerBookRoot .lab-bead-stage.aoV401InteractiveBeads{
+  gap:5px;flex-wrap:nowrap;overflow-x:auto;overflow-y:visible;padding:8px 4px 10px;scrollbar-width:none;
+  overscroll-behavior-x:contain;touch-action:pan-x
+}
+#aoPrayerBookRoot .lab-bead-stage.aoV401InteractiveBeads::-webkit-scrollbar{display:none}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead{
+  appearance:none;-webkit-appearance:none;position:relative;flex:0 0 30px;width:30px;height:30px;min-width:30px;min-height:30px;
+  margin:0;padding:0;border-radius:50%;cursor:pointer;touch-action:manipulation;
+  transition:transform .11s ease,box-shadow .15s ease,background .15s ease,border-color .15s ease,filter .15s ease
+}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead::after{content:"";position:absolute;inset:-6px;border-radius:50%}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead:hover{filter:brightness(1.1)}
+#aoPrayerBookRoot button.lab-bead.aoV401Bead:active{transform:scale(.82)}
