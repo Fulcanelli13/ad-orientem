@@ -10,10 +10,10 @@ const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
 assert.equal(release.status,"READY");
-assert.equal(release.productionDefault,"LEGACY");
+assert.equal(release.productionDefault,"FIELD_NATIVE_PREVIEW");
 assert.equal(resolveReaderUiMode({}),"LEGACY","reader default changed before release certification");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
-assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,true);
+assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,false);
 
 assert.equal(parity.reference.expectedLiveCards,48);
 assert.equal(parity.currentR17.status,"SOURCE_FIRST_LIVE_INTEGRATED");
@@ -71,7 +71,8 @@ const pilot=release.protectedInvariants.find(x=>x.id==="PILOT_VERTICAL_PATH");
 assert.equal(release.pilotRelease?.status,"CERTIFIED_PILOT_READY","pilot release certification disappeared");
 assert.equal(pilot?.status,"CERTIFIED_PILOT_READY","pilot vertical path certification disappeared");
 assert.equal(release.pilotRelease?.reader,"R17_NATIVE");
-assert.equal(release.pilotRelease?.productionDefaultUnchanged,"LEGACY");
+assert.equal(release.pilotRelease?.productionDefaultUnchanged,"FIELD_NATIVE_PREVIEW");
+assert.equal(release.pilotRelease?.rolloutStatus,"SUPERSEDED_BY_R34_FIELD_NATIVE_DEFAULT");
 assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("PALM"));
 assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("ASH"));
 
@@ -169,7 +170,11 @@ assert.deepEqual(easterVigil?.massProjection?.suppressedCanonicalEvents,["MC-COM
 assert.equal(easterVigil?.massProjection?.laudsSectionId,"SP.EASTER_VIGIL.15");
 assert.match(String(easterVigil?.controller??""),/reader-easter-vigil\.js/);
 assert.equal(easterVigil?.sourceText?.prophecies,"RECOVERED_PRESENTATION_OVERVIEW__CHOREOGRAPHY_EXACT__FULL_TEXT_ENRICHMENT_NON_BLOCKING");
-assert.equal(release.productionDefault,"LEGACY","full-year special-structure completion silently flipped the production feature gate");
+assert.equal(release.productionDefault,"FIELD_NATIVE_PREVIEW","certified field-native rollout disappeared");
+assert.equal(release.rollout?.status,"ACTIVE_FIELD_NATIVE_DEFAULT");
+assert.equal(release.rollout?.defaultInsideCertifiedFieldScope,"PREVIEW");
+assert.equal(release.rollout?.defaultOutsideCertifiedFieldScope,"LEGACY");
+assert.equal(release.rollout?.rollback,"?aoR17Reader=legacy");
 
 const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
 assert.equal(properProvenance?.status,"CERTIFIED_REPLACEMENT_WITNESS",

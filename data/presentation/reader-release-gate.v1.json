@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "status": "READY",
-  "productionDefault": "LEGACY",
-  "releaseRule": "R17 reader technical release certification is complete. Production remains LEGACY until an explicit promotion decision changes the feature gate; historical v1.83 C01-C48 remains non-blocking compatibility evidence.",
+  "productionDefault": "FIELD_NATIVE_PREVIEW",
+  "releaseRule": "Certified field-scope Mass sessions default to the native source-first reader with explicit legacy rollback. Sessions outside the field rollout scope remain LEGACY until their native-preview surfaces are separately promoted; full-year special-structure data/runtime parity remains certified.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -793,14 +793,14 @@
     "requireAllBlockersClosed": true,
     "requireAuthoritative48CardMap": false,
     "requireRealBrowserPhoneAcceptance": true,
-    "requireLegacyDefaultUntilCertified": true,
+    "requireLegacyDefaultUntilCertified": false,
     "requireSourceFirstCanonMap": true,
     "requireSourceFirstLiveStructure": true
   },
   "pilotRelease": {
     "status": "CERTIFIED_PILOT_READY",
     "reader": "R17_NATIVE",
-    "productionDefaultUnchanged": "LEGACY",
+    "productionDefaultUnchanged": "FIELD_NATIVE_PREVIEW",
     "scope": {
       "forms": [
         "LOW",
@@ -825,15 +825,16 @@
       "phoneAcceptance": "CERTIFIED_CHROMIUM_TOUCH"
     },
     "exclusions": [
-      "unsupported special rites and following actions remain fail-closed",
-      "production default remains LEGACY until an explicit promotion decision"
-    ]
+      "pilot scope remains historical certification evidence",
+      "current production rollout is governed by fieldRelease + rollout policy"
+    ],
+    "rolloutStatus": "SUPERSEDED_BY_R34_FIELD_NATIVE_DEFAULT"
   },
   "fieldRelease": {
     "schema": "ao-r17-field-release-v1",
     "status": "READY",
     "target": "2026-10-04_ORDINARY_OR_VOTIVE_MASS",
-    "readerUiPolicy": "NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK",
+    "readerUiPolicy": "NATIVE_DEFAULT_WITH_EXPLICIT_LEGACY_ROLLBACK",
     "supportedForms": [
       "LOW",
       "MISSA_CANTATA_SIMPLE",
@@ -862,6 +863,30 @@
       "tests/reader-field-release.mjs",
       "tests/browser-runtime.mjs",
       "tests/reader-phone-acceptance.mjs"
+    ]
+  },
+  "rollout": {
+    "schema": "ao-r34-reader-rollout-v1",
+    "status": "ACTIVE_FIELD_NATIVE_DEFAULT",
+    "defaultInsideCertifiedFieldScope": "PREVIEW",
+    "defaultOutsideCertifiedFieldScope": "LEGACY",
+    "explicitOverrides": [
+      "LEGACY",
+      "SHADOW",
+      "PREVIEW"
+    ],
+    "overrideQuery": "aoR17Reader",
+    "storageKey": "ao-r17-reader-ui",
+    "rollback": "?aoR17Reader=legacy",
+    "scopeSource": "fieldRelease",
+    "implementation": "src/mass/browser-entry.js#resolveProductionReaderUiMode",
+    "guarantees": [
+      "explicit user override always outranks rollout default",
+      "ordinary/votive READY-Proper sessions in certified forms default to native preview",
+      "Asperges remains allowed inside field-native scope",
+      "other preceding rites, following actions, structural overlays and insertions remain legacy-default until explicitly promoted",
+      "legacy renderer remains available as rollback and state donor where still intentionally observed",
+      "native mount failure continues to fall back without corrupting the prepared R17 session"
     ]
   }
 }

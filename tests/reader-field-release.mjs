@@ -12,11 +12,13 @@ const sources={registry,extension,core};
 
 assert.equal(gate.fieldRelease?.status,"READY");
 assert.equal(gate.fieldRelease?.target,"2026-10-04_ORDINARY_OR_VOTIVE_MASS");
-assert.equal(gate.fieldRelease?.readerUiPolicy,"NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK");
+assert.equal(gate.fieldRelease?.readerUiPolicy,"NATIVE_DEFAULT_WITH_EXPLICIT_LEGACY_ROLLBACK");
 assert.equal(gate.openBlockers.length,0,
   "full-year special-structure certification still reports a release blocker");
-assert.equal(gate.productionDefault,"LEGACY",
-  "full-year structure certification silently widened deployment scope");
+assert.equal(gate.productionDefault,"FIELD_NATIVE_PREVIEW");
+assert.equal(gate.rollout?.status,"ACTIVE_FIELD_NATIVE_DEFAULT");
+assert.equal(gate.rollout?.defaultOutsideCertifiedFieldScope,"LEGACY");
+assert.equal(gate.rollout?.rollback,"?aoR17Reader=legacy");
 
 const proper={status:"READY",data:{
   sourcePath:"Sancti/10-07",
@@ -97,4 +99,4 @@ assert.equal(projection.releaseSupport,true,"Ember source-order insertion lost c
 assert.ok(gate.fieldRelease.requiredConditions.includes("no Ember-lessons insertion"),
   "Oct-4 field-release scope silently widened to Ember lessons");
 
-console.log("Oct 4 field release: PASS — full-year special structures are certified while the pilot scope and LEGACY production feature gate remain intentionally narrow.");
+console.log("Oct 4 field release: PASS — certified field scope defaults native with explicit legacy rollback; broader special scope remains policy-gated.");

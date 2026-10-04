@@ -3,6 +3,8 @@ import {
   mapLegacyFollowMode,
   mapInsertedRites,
   deriveHostOptions,
+  fieldNativeDefaultEligible,
+  resolveProductionReaderUiMode,
   mountR17Preview,
 } from "../src/mass/browser-entry.js";
 
@@ -35,6 +37,54 @@ assert.equal(options.celebrationForm, "low");
 assert.equal(options.presentationMode, "MISSAL");
 assert.deepEqual([...options.precedingRites], ["ASH"]);
 assert.equal(options.localProfile, "LOCAL");
+
+const fieldPrepared={
+  session:{
+    resolvedMass:{
+      form:"MISSA_CANTATA_INCENSE",
+      proper:{status:"READY"},
+      distinctRite:null,
+    },
+    plan:{
+      kind:"MASS",
+      precedingGraphs:["ASPERGES"],
+      followingGraphs:[],
+      overlayGraphs:["VOTIVE_PROPER"],
+      insertions:[],
+    },
+  },
+};
+assert.equal(fieldNativeDefaultEligible(fieldPrepared),true);
+assert.equal(resolveProductionReaderUiMode(fieldPrepared,{
+  location:{search:""},
+  localStorage:{getItem:()=>null},
+}),"PREVIEW");
+assert.equal(resolveProductionReaderUiMode(fieldPrepared,{
+  location:{search:"?aoR17Reader=legacy"},
+  localStorage:{getItem:()=>null},
+}),"LEGACY");
+assert.equal(resolveProductionReaderUiMode(fieldPrepared,{
+  location:{search:"?aoR17Reader=shadow"},
+  localStorage:{getItem:()=>null},
+}),"SHADOW");
+assert.equal(fieldNativeDefaultEligible({
+  session:{
+    resolvedMass:{...fieldPrepared.session.resolvedMass},
+    plan:{...fieldPrepared.session.plan,precedingGraphs:["CANDLEMAS"]},
+  },
+}),false);
+assert.equal(fieldNativeDefaultEligible({
+  session:{
+    resolvedMass:{...fieldPrepared.session.resolvedMass},
+    plan:{...fieldPrepared.session.plan,followingGraphs:["GENERIC_PROCESSION"]},
+  },
+}),false);
+assert.equal(fieldNativeDefaultEligible({
+  session:{
+    resolvedMass:{...fieldPrepared.session.resolvedMass},
+    plan:{...fieldPrepared.session.plan,insertions:["RESOLVED_PREPARATORY_LESSONS"]},
+  },
+}),false);
 
 assert.throws(
   () => deriveHostOptions({
