@@ -92,6 +92,12 @@ This does **not** yet close `EMERGENCY_RUNTIME_RETIREMENT`: the historical v43.3
 
 This is deliberately **not** recorded as full Home extraction yet. The visible Home card stack still contains donor-owned presentation, including Coming Up and Daily Catechism. The actual-index phone journey certifies modular Home navigation ownership while the app gate keeps Home presentation pending.
 
+## Phase 7: modular PRAY navigation ownership
+
+`AO_PRAY_APP_V1` now owns the top-level PRAY route and calls the locked final PRAY donor directly through its public `AO_PRAY_V435930.open("pray.hub")` contract. The modular app shell no longer needs the historical `AO_V37_SHELL.openDomain("pray")` forwarding path when the modular owner is available.
+
+This is deliberately not full PRAY extraction. The final v43.59.30 prayer presentation, 48-prayer corpus, recitation grammar, Rosary/Confession/Adoration/Benediction/programme state and related source/provenance handling remain donor-owned until they are extracted with parity tests. The actual-index phone journey now proves modular PRAY navigation ownership while keeping presentation ownership explicit.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
