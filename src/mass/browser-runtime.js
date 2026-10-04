@@ -800,6 +800,7 @@ export function createBrowserMassRuntime({
           sungCorpus:data?.sungCorpus,
           canonSourceMap:data?.canonSourceMap,
           nuptialData:data?.nuptialData,
+          properNotApplicableSlots:["INTROIT","COMMUNION"],
         });
         readerModel=projectEasterVigilMassModel(baseModel,evData?.payload);
         objectiveRuntime=null;
