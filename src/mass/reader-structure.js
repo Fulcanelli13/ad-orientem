@@ -134,7 +134,7 @@ export function structureSupport(prepared,modeOverride=null){
   const preceding=[...(plan.precedingGraphs??[])];
   const unsupportedPreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"].includes(x));
   if(unsupportedPreceding.length)return Object.freeze({supported:false,reason:"PRECEDING_RITE_PROJECTION_PENDING"});
-  const unsupportedFollowing=[...(plan.followingGraphs??[])].filter(x=>!["REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION"].includes(x));
+  const unsupportedFollowing=[...(plan.followingGraphs??[])].filter(x=>!["REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST"].includes(x));
   if(unsupportedFollowing.length)return Object.freeze({supported:false,reason:"FOLLOWING_ACTION_PROJECTION_PENDING"});
   const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>!["VOTIVE_PROPER","REQUIEM"].includes(x));
   if(structuralOverlays.length)return Object.freeze({supported:false,reason:"STRUCTURAL_OVERLAY_PROJECTION_PENDING"});
