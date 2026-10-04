@@ -392,12 +392,21 @@ async function exerciseRealShellFollowingAction(browser,spec){
       spec.kind+" production reader failed to suppress the final blessing surface");
 
     await tapNext();
-    await page.waitForFunction(({getter,firstId})=>{
+    await page.waitForTimeout(250);
+    const handoff=await page.evaluate(({getter})=>{
       const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
       const state=typeof api?.[getter]==="function" ? api[getter]() : null;
-      const id=state?.card?.id??state?.card?.recordId??null;
-      return id===firstId;
-    },{getter:spec.getter,firstId:spec.firstId},{timeout:8000});
+      const lifecycle=api?.getLifecycleState?.()??null;
+      const current=api?.getCurrentCard?.()??null;
+      return {
+        id:state?.card?.id??state?.card?.recordId??null,
+        lifecycleStage:lifecycle?.stage??null,
+        currentId:current?.id??current?.recordId??current?.sectionId??null,
+        nativeState:globalThis.AO_R17_NATIVE_READER_STATE??null,
+      };
+    },{getter:spec.getter});
+    assert.equal(handoff.id,spec.firstId,
+      spec.kind+" failed Mass→following-action handoff: "+JSON.stringify(handoff));
 
     // Prove Back/Next are real touch navigation inside the following-action reader.
     await tapNext();
