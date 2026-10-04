@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native is the production reader across the certified full-year scope. Real-shell phone Chromium acceptance against index.html is certified. Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html real-shell special-rite acceptance is tracked separately and is currently explicit for Palm and Ash. Legacy remains explicit rollback/debug only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -563,7 +563,7 @@
     },
     {
       "id": "CANDLEMAS_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+      "status": "CERTIFIED_MODULAR_RUNTIME__REAL_SHELL_ACCEPTANCE_PENDING",
       "controller": "src/mass/reader-candlemas.js",
       "payload": "data/presentation/reader-candlemas.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#CND",
@@ -868,6 +868,29 @@
         "data-ao-mass-reader-ui exposes R17_NATIVE_PRODUCTION",
         "zero uncaught page errors"
       ]
+    },
+    {
+      "id": "REAL_SHELL_SPECIAL_STRUCTURE_SCOPE",
+      "status": "PARTIAL_EXPLICIT_EVIDENCE",
+      "evidenceLayer": "ACTUAL_INDEX_HTML_PHONE_CHROMIUM",
+      "certified": [
+        "PALM",
+        "ASH"
+      ],
+      "pending": [
+        "ASPERGES",
+        "CANDLEMAS",
+        "ROGATIONS",
+        "REQUIEM_ABSOLUTION",
+        "HOLY_THURSDAY_POST",
+        "CORPUS_CHRISTI_PROCESSION",
+        "GENERIC_PROCESSION",
+        "GOOD_FRIDAY",
+        "EASTER_VIGIL",
+        "NUPTIAL"
+      ],
+      "rule": "Do not equate modular runtime/reader-harness certification with actual index.html real-shell certification. Individual special rites move from pending only when app-shell E2E evidence is pinned.",
+      "currentTest": "tests/app-shell-final-e2e.mjs"
     }
   ],
   "openBlockers": [],
@@ -962,6 +985,27 @@
     "phoneTouchCertified": true,
     "sourceFirstLiveCertified": true,
     "historicalFieldRelease": "field/2026-10-04",
-    "fieldReleaseAuthority": false
+    "fieldReleaseAuthority": false,
+    "fullYearParityEvidence": "MODULAR_RUNTIME_AND_READER_HARNESS",
+    "realShellSpecialStructureAcceptance": {
+      "status": "PARTIAL_EXPLICIT_EVIDENCE",
+      "certified": [
+        "PALM",
+        "ASH"
+      ],
+      "pending": [
+        "ASPERGES",
+        "CANDLEMAS",
+        "ROGATIONS",
+        "REQUIEM_ABSOLUTION",
+        "HOLY_THURSDAY_POST",
+        "CORPUS_CHRISTI_PROCESSION",
+        "GENERIC_PROCESSION",
+        "GOOD_FRIDAY",
+        "EASTER_VIGIL",
+        "NUPTIAL"
+      ],
+      "test": "tests/app-shell-final-e2e.mjs"
+    }
   }
 }
