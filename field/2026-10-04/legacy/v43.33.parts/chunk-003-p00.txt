@@ -1,0 +1,1000 @@
+        return this.files instanceof Map ? this.files.get(url) : this.files[url];
+    }
+    async get(url, diagnostic) {
+        diagnostic?.requestedFiles.push(url);
+        const text = this.read(url);
+        if (text === undefined) {
+            const error = new Error(`HTTP 404 · ${url}`);
+            error.status = 404;
+            throw error;
+        }
+        return text;
+    }
+    async tryGet(url, diagnostic) {
+        const value = this.read(url);
+        if (value === undefined)
+            return null;
+        diagnostic?.requestedFiles.push(url);
+        return value;
+    }
+}
+exports.MapTextFetcher = MapTextFetcher;
+function createDiagnostic() {
+    return { requestedFiles: [], cacheHits: [], referencesResolved: [], languageGaps: [], structuralInheritances: [], legacyCommonRecoveries: [], warnings: [], errors: [] };
+}
+
+},10:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScriptureService = void 0;
+const source_config_1 = require(11);
+const references_1 = require(12);
+function rowsOf(ch) { const v = Array.isArray(ch?.verses) ? ch.verses : Array.isArray(ch?.content) ? ch.content : []; return v.map((x, i) => ({ verse: +(x.verse ?? x.number ?? i + 1), text: String(x.text ?? x.content ?? ''), notes: Array.isArray(x.notes) ? x.notes : [] })).filter((x) => x.verse && x.text); }
+function chapterOf(data, n) { return (data?.chapters || []).find((c) => +c.chapter === n) || null; }
+function norm(s) { return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
+function cramponBook(data, ref) { const aliases = [ref.frLabel, ref.label].map(norm); return (data?.books || []).find((b) => aliases.some(a => norm(b?.name) === a || norm(b?.name).includes(a) || a.includes(norm(b?.name)))) || null; }
+const VULGATE_BOOK_NAME = Object.freeze({"genesis":"Genesis","exodus":"Exodus","leviticus":"Leviticus","numbers":"Numbers","deuteronomy":"Deuteronomy","josue":"Joshua","judges":"Judges","ruth":"Ruth","1-kings":"1 Samuel","2-kings":"2 Samuel","3-kings":"1 Kings","4-kings":"2 Kings","1-paralipomenon":"1 Chronicles","2-paralipomenon":"2 Chronicles","1-esdras":"Ezra","2-esdras":"Nehemiah","tobias":"Tobit","judith":"Judith","esther":"Esther","job":"Job","psalms":"Psalms","proverbs":"Proverbs","ecclesiastes":"Ecclesiastes","canticle-of-canticles":"Song of Solomon","wisdom":"Wisdom of Solomon","ecclesiasticus":"Sirach","isaias":"Isaiah","jeremias":"Jeremiah","lamentations":"Lamentations","baruch":"Baruch","ezechiel":"Ezekiel","daniel":"Daniel","osee":"Hosea","joel":"Joel","amos":"Amos","abdias":"Obadiah","jonas":"Jonah","micheas":"Micah","nahum":"Nahum","habacuc":"Habakkuk","sophonias":"Zephaniah","aggeus":"Haggai","zacharias":"Zechariah","malachias":"Malachi","1-machabees":"1 Maccabees","2-machabees":"2 Maccabees","matthew":"Matthew","mark":"Mark","luke":"Luke","john":"John","acts":"Acts","romans":"Romans","1-corinthians":"1 Corinthians","2-corinthians":"2 Corinthians","galatians":"Galatians","ephesians":"Ephesians","philippians":"Philippians","colossians":"Colossians","1-thessalonians":"1 Thessalonians","2-thessalonians":"2 Thessalonians","1-timothy":"1 Timothy","2-timothy":"2 Timothy","titus":"Titus","philemon":"Philemon","hebrews":"Hebrews","james":"James","1-peter":"1 Peter","2-peter":"2 Peter","1-john":"1 John","2-john":"2 John","3-john":"3 John","jude":"Jude","apocalypse":"Revelation of John"});
+function vulgateBook(data, ref) {
+    const target = VULGATE_BOOK_NAME[ref.slug] || ref.label;
+    const aliases = [target, ref.label, ref.frLabel].filter(Boolean).map(norm);
+    return (data?.books || []).find((b) => { const name=norm(b?.name || b?.title || b?.book || ''); return aliases.some(a => name===a || name.includes(a) || a.includes(name)); }) || null;
+}
+function range(node) { const m = String(node?.citation || '').match(/(\d{1,3})\s*:\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/); return m ? { chapter: +m[1], start: +m[2], end: +(m[3] || m[2]) } : null; }
+const ODR_SOURCE_SLUG = Object.freeze({ isaias:'isaie', jeremias:'jeremie', malachias:'malachie' });
+const HAYDOCK_BOOK_CODE = Object.freeze({
+    genesis:'GEN',exodus:'EXO',leviticus:'LEV',numbers:'NUM',deuteronomy:'DEU',josue:'JOS',judges:'JDG',ruth:'RUT',
+    '1-kings':'1SA','2-kings':'2SA','3-kings':'1KI','4-kings':'2KI','1-paralipomenon':'1CH','2-paralipomenon':'2CH','1-esdras':'EZR','2-esdras':'NEH',
+    tobias:'TOB',judith:'JDT',esther:'EST','1-machabees':'1MA','2-machabees':'2MA',job:'JOB',psalms:'PSA',proverbs:'PRO',ecclesiastes:'ECC','canticle-of-canticles':'SNG',wisdom:'WIS',ecclesiasticus:'SIR',
+    isaias:'ISA',jeremias:'JER',lamentations:'LAM',baruch:'BAR',ezechiel:'EZK',daniel:'DAN',osee:'HOS',joel:'JOL',amos:'AMO',abdias:'OBA',jonas:'JON',micheas:'MIC',nahum:'NAM',habacuc:'HAB',sophonias:'ZEP',aggeus:'HAG',zacharias:'ZEC',malachias:'MAL',
+    matthew:'MAT',mark:'MRK',luke:'LUK',john:'JHN',acts:'ACT',romans:'ROM','1-corinthians':'1CO','2-corinthians':'2CO',galatians:'GAL',ephesians:'EPH',philippians:'PHP',colossians:'COL','1-thessalonians':'1TH','2-thessalonians':'2TH','1-timothy':'1TI','2-timothy':'2TI',titus:'TIT',philemon:'PHM',hebrews:'HEB',james:'JAS','1-peter':'1PE','2-peter':'2PE','1-john':'1JN','2-john':'2JN','3-john':'3JN',jude:'JUD',apocalypse:'REV'
+});
+function odrSlug(ref){ return ODR_SOURCE_SLUG[ref.slug] || ref.slug; }
+function parseHaydockPoint(value){ const m=String(value||'').match(/^([A-Z0-9]+)\.(\d+)\.(\d+)$/); return m?{code:m[1],chapter:+m[2],verse:+m[3]}:null; }
+function haydockOverlap(entry, ref, code){ const a=parseHaydockPoint(entry?.start), b=parseHaydockPoint(entry?.end); return !!(a&&b&&a.code===code&&b.code===code&&a.chapter===ref.chapter&&b.chapter===ref.chapter&&a.verse<=ref.end&&b.verse>=ref.start); }
+function stripUnsafeHtml(html){ return String(html||'').replace(/<(?!\/?em\b)[^>]*>/gi,''); }
+function escapeCommentaryText(value){ return String(value||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function cleanBellarmineCorpus(raw){
+    return String(raw||'').replace(/\r/g,'').replace(/\u00ad/g,'').replace(/\u00a0/g,' ').replace(/[ \t]+\n/g,'\n');
+}
+function bellarmineRoman(n){
+    let value=Math.max(1,Math.min(150,Number(n)||1)), out='';
+    for(const [v,sym] of [[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']]){
+        while(value>=v){ out+=sym; value-=v; }
+    }
+    return out;
+}
+function bellarmineHeadingMatches(raw, psalm){
+    const text=cleanBellarmineCorpus(raw), n=String(psalm), roman=bellarmineRoman(psalm);
+    const patterns=[
+        new RegExp(`^#{1,4}\\s*Psalm\\s+${n}\\b.*$`,'gmi'),
+        new RegExp(`^\\s*PSALM\\s+${n}\\b[^\\n]*$`,'gmi'),
+        new RegExp(`^\\s*Psalm\\s+${n}\\b[^\\n]*$`,'gmi'),
+        new RegExp(`^\\s*PSALM\\s+${roman}\\.?\\s*$`,'gmi'),
+        new RegExp(`^\\s*Psalm\\s+${roman}\\.?\\s*$`,'gmi')
+    ];
+    const found=[];
+    for(const re of patterns){ let m; while((m=re.exec(text))) found.push({index:m.index,end:re.lastIndex,line:m[0]}); }
+    return found.sort((a,b)=>a.index-b.index).filter((x,i,a)=>!i || x.index!==a[i-1].index);
+}
+function extractBellarminePsalm(raw, psalm){
+    const text=cleanBellarmineCorpus(raw), starts=bellarmineHeadingMatches(text,psalm);
+    if(!starts.length) throw new Error(`Bellarmine OCR did not expose Psalm ${psalm}.`);
+    // TOC lines are short/bulleted. Prefer a heading followed by substantial prose or "Explanation".
+    let chosen=starts.find(x=>{ const probe=text.slice(x.end,x.end+1200); return /Explanation(?:\s+Of)?(?:\s+The)?\s+Psalm/i.test(probe) || probe.replace(/\s+/g,' ').trim().length>500; }) || starts[starts.length-1];
+    const next=bellarmineHeadingMatches(text,psalm+1).find(x=>x.index>chosen.index);
+    let section=text.slice(chosen.index,next?next.index:Math.min(text.length,chosen.index+60000));
+    section=section
+      .replace(/^\s*[-*]\s*Psalm\s+\d+[^\n]*$/gmi,'')
+      .replace(/^#{1,6}\s*/gm,'')
+      .replace(/\[[^\]]+\]\([^\)]+\)/g,'')
+      .replace(/https?:\/\/\S+/g,'')
+      .replace(/\bTable of Contents\b/gi,'')
+      .replace(/[ \t]{2,}/g,' ')
+      .replace(/\n{3,}/g,'\n\n')
+      .trim();
+    if(section.length<180) throw new Error(`Bellarmine Psalm ${psalm} section was too short after normalization.`);
+    return section;
+}
+function bellarmineVerseUnits(section, psalm){
+    const roman=bellarmineRoman(psalm);
+    let cleaned=String(section||'')
+      .replace(new RegExp(`^Psalm\\s+${psalm}\\b[^\\n]*\\n?`,'i'),'')
+      .replace(new RegExp(`^Psalm\\s+${roman}\\.?\\s*\\n?`,'i'),'')
+      .replace(/^#+\s*[^\n]*\n?/gm,'')
+      .trim();
+    const expl=cleaned.search(/Explanation(?:\s+Of)?(?:\s+The)?\s+Psalm/i);
+    if(expl>=0) cleaned=cleaned.slice(expl).replace(/^Explanation(?:\s+Of)?(?:\s+The)?\s+Psalm\s*/i,'');
+    cleaned=cleaned.replace(/\s+/g,' ').trim();
+    const re=/(^|\s)(\d{1,3})(?:\s*[–—-]\s*(\d{1,3}))?\s+(?=[A-Z“"‘])/g;
+    const bookWord=/^(?:Tim|Cor|Kings?|Mach|Macc|Psalm|John|Luke|Matt|Mark|Rom|Heb|Deut|Gen|Exod|Jer|Isa|Apoc|Rev|Acts|Pet|Thess|Phil|Gal|Eph|Col|Zach|Dan|Eccl|Wis|Prov|Num|Lev|Jos|Judg|Bar|Tob|Jas|Jude)\b/i;
+    const marks=[]; let m, expected=1;
+    while((m=re.exec(cleaned))){
+        const a=+m[2], b=+(m[3]||m[2]);
+        const following=cleaned.slice(re.lastIndex,re.lastIndex+16);
+        if(bookWord.test(following)) continue;
+        if(a!==expected || b<a || b>200) continue;
+        marks.push({start:a,end:b,markerStart:m.index+(m[1]?.length||0),contentStart:re.lastIndex});
+        expected=b+1;
+    }
+    if(!marks.length || marks[0].start!==1) throw new Error(`Bellarmine Psalm ${psalm} verse markers could not be segmented.`);
+    return marks.map((mark,i)=>{
+        const stop=i+1<marks.length?marks[i+1].markerStart:cleaned.length;
+        const text=cleaned.slice(mark.contentStart,stop).trim();
+        return {startVerse:mark.start,endVerse:mark.end,text};
+    }).filter(x=>x.text.length>20);
+}
+function bellarmineEntries(section, reference){
+    const units=bellarmineVerseUnits(section,reference.chapter);
+    const overlaps=units.filter(x=>x.startVerse<=reference.end && x.endVerse>=reference.start);
+    if(!overlaps.length) throw new Error(`Bellarmine Psalm ${reference.chapter} has no segmented commentary overlapping verses ${reference.start}–${reference.end}.`);
+    return overlaps.map(x=>({
+        label:`Psalm ${reference.chapter} · ${x.startVerse===x.endVerse?'v. '+x.startVerse:'vv. '+x.startVerse+'–'+x.endVerse}`,
+        start:`PSA.${reference.chapter}.${x.startVerse}`,
+        end:`PSA.${reference.chapter}.${x.endVerse}`,
+        html:escapeCommentaryText(x.text)
+    }));
+}
+async function loadBellarminePsalm(fetcher, reference){
+    const urls=[source_config_1.BELLARMINE_IA_OCR,source_config_1.BELLARMINE_JINA_OCR,source_config_1.BELLARMINE_JINA_TRANSCRIPTION];
+    const failures=[];
+    for(const url of urls){
+        try{
+            const raw=await fetcher.get(url);
+            const section=extractBellarminePsalm(raw,reference.chapter);
+            const entries=bellarmineEntries(section,reference);
+            if(entries.length) return { sourceId:'bellarmine-en', sourceLabel:'St Robert Bellarmine · Commentary on the Book of Psalms (1866)', entries, fallback:false, retrievalUrl:url, scope:'verse-range' };
+            failures.push(`${url}: no overlapping verse unit`);
+        }catch(e){ failures.push(`${url}: ${e instanceof Error?e.message:String(e)}`); }
+    }
+    const error=new Error(`Bellarmine Psalm ${reference.chapter}:${reference.start}–${reference.end} unavailable from all configured retrieval routes.`);
+    error.failures=failures;
+    throw error;
+}
+
+const PERONNE_GOSPEL_NAMES = { matthew:'Matthieu', mark:'Marc', luke:'Luc', john:'Jean' };
+function peronnePageTitle(reference) {
+    const name = PERONNE_GOSPEL_NAMES[reference.slug];
+    if (!name) return null;
+    return `Chaîne d’or sur l’évangile de saint ${name}/Chapitre ${reference.chapter}`;
+}
+function peronneWikiUrl(title) {
+    return 'https://fr.wikisource.org/wiki/' + String(title).split('/').map(encodeURIComponent).join('/');
+}
+function htmlEscapeText(value) {
+    return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+}
+function peronnePlainText(html) {
+    if (typeof DOMParser === 'undefined') throw new Error('DOMParser unavailable for Wikisource commentary parsing.');
+    const doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+    const root = doc.querySelector('.mw-parser-output') || doc.body;
+    root.querySelectorAll('script,style,table,.mw-editsection,.ws-noexport,.noprint,.navbox,sup.reference').forEach(el => el.remove());
+    return String(root.textContent || '').replace(/\u00a0/g,' ').replace(/\r/g,'');
+}
+function peronneSegments(text) {
+    const lines = String(text || '').split(/\n+/).map(x => x.replace(/[ \t]+/g,' ').trim()).filter(Boolean);
+    const segments=[];
+    let current=null;
+    const marker=/^(?:v(?:\.|ers(?:et)?s?)?\.?|versets?)\s*(\d+)(?:\s*(?:[-–—]|à)\s*(\d+))?\s*[.:]?\s*(.*)$/i;
+    const stop=/^(?:Récupérée de|Catégories\s*:|La dernière modification|Télécharger en|Navigation|Notes et références)$/i;
+    const push=()=>{ if(current && current.body.length){ segments.push({...current, text:current.body.join('\n').trim()}); } };
+    for(const line of lines){
+        if(current && stop.test(line)) break;
+        const m=line.match(marker);
+        if(m){
+            push();
+            current={start:+m[1],end:+(m[2]||m[1]),body:[]};
+            if(m[3]) current.body.push(m[3]);
+            continue;
+        }
+        if(current) current.body.push(line);
+    }
+    push();
+    return segments;
+}
+async function loadPeronneCatena(fetcher, reference) {
+    const title=peronnePageTitle(reference);
+    if(!title) throw new Error('No Péronne Wikisource route for this Gospel.');
+    const api=`${source_config_1.PERONNE_WIKISOURCE_API}?action=parse&format=json&origin=*&redirects=1&prop=text&page=${encodeURIComponent(title)}`;
+    const raw=await fetcher.get(api);
+    const data=JSON.parse(raw);
+    if(data?.error) throw new Error(data.error.info || data.error.code || 'Wikisource parse error.');
+    const html=typeof data?.parse?.text==='string'?data.parse.text:data?.parse?.text?.['*'];
+    if(!html) throw new Error('Wikisource returned no chapter transcription.');
+    const all=peronneSegments(peronnePlainText(html));
+    const chosen=all.filter(x=>x.start<=reference.end && x.end>=reference.start);
+    if(!chosen.length) throw new Error(`Péronne chapter loaded, but no verse markers overlap ${reference.displayFr}.`);
+    const sourceUrl=peronneWikiUrl(title);
+    const entries=chosen.map(x=>({
+        label:`${x.start===x.end?'v. '+x.start:'v. '+x.start+'–'+x.end}`,
+        start:x.start,end:x.end,
+        html:htmlEscapeText(x.text).replace(/\n/g,'<br>')
+    }));
+    return {sourceId:'catena-peronne-fr',sourceLabel:'Chaîne d’Or · Péronne (1868–1869)',entries,retrievalUrl:api,sourceUrl,scope:'verse-range',integrated:true};
+}
+
+function romanPsalm(n) {
+    const values=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
+    let v=Number(n), out='';
+    for(const [value,glyph] of values){ while(v>=value){ out+=glyph; v-=value; } }
+    return out;
+}
+function romanPsalmValue(value) {
+    const map={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};
+    let total=0, prev=0;
+    for(const ch of String(value||'').toUpperCase().split('').reverse()){
+        const n=map[ch]||0;
+        if(n<prev) total-=n; else { total+=n; prev=n; }
+    }
+    return total;
+}
+function augustinePsalmGroupTitle(reference) {
+    const n=Number(reference?.chapter);
+    if(reference?.slug!=='psalms' || !Number.isInteger(n) || n<1 || n>150) return null;
+    const start=Math.floor((n-1)/10)*10+1, end=Math.min(start+9,150);
+    return `Discours sur les psaumes (Augustin)/Psaumes ${romanPsalm(start)} à ${romanPsalm(end)}`;
+}
+function augustineWikiUrl(title) { return `https://fr.wikisource.org/wiki/${encodeURIComponent(title).replace(/%20/g,'_')}`; }
+function augustinePsalmHeading(line) {
+    const m=String(line||'').replace(/\s+/g,' ').trim().match(/^(?:(?:premier|deuxième|second|troisième|quatrième|cinquième|sixième|septième|huitième|neuvième|dixième|onzième|douzième|treizième|quatorzième|quinzième|seizième|dix-septième|dix-huitième|dix-neuvième|vingtième)\s+)?(?:discours|explication|sermon)\s+sur\s+le\s+psaume\s+([IVXLCDM]+)\b[. :—-]*(.*)$/i);
+    return m ? {psalm:romanPsalmValue(m[1]), label:String(line||'').replace(/\s+/g,' ').trim()} : null;
+}
+function augustinePsalmEntries(text, psalm) {
+    const lines=String(text||'').split(/\n+/).map(x=>x.replace(/[ \t]+/g,' ').trim()).filter(Boolean);
+    const entries=[];
+    let active=false,current=null;
+    const stop=/^(?:Récupérée de|Catégories\s*:|La dernière modification|Télécharger en|Navigation|Notes et références)$/i;
+    const push=()=>{ if(current?.body?.length){ entries.push({label:current.label,text:current.body.join('\n').trim()}); } current=null; };
+    for(const line of lines){
+        const h=augustinePsalmHeading(line);
+        if(h){
+            if(active && h.psalm!==psalm){ push(); break; }
+            if(h.psalm===psalm){
+                if(active) push();
+                active=true; current={label:h.label,body:[]};
+                continue;
+            }
+        }
+        if(active && stop.test(line)){ push(); break; }
+        if(active && current) current.body.push(line);
+    }
+    push();
+    return entries;
+}
+async function loadAugustinePsalmFr(fetcher, reference) {
+    const title=augustinePsalmGroupTitle(reference);
+    if(!title) throw new Error('No Augustine/Raulx Wikisource route for this Psalm.');
+    const api=`${source_config_1.PERONNE_WIKISOURCE_API}?action=parse&format=json&origin=*&redirects=1&prop=text&page=${encodeURIComponent(title)}`;
+    const raw=await fetcher.get(api), data=JSON.parse(raw);
+    if(data?.error) throw new Error(data.error.info || data.error.code || 'Wikisource parse error.');
+    const html=typeof data?.parse?.text==='string'?data.parse.text:data?.parse?.text?.['*'];
+    if(!html) throw new Error('Wikisource returned no Augustine Psalm transcription.');
+    const rawEntries=augustinePsalmEntries(peronnePlainText(html), Number(reference.chapter));
+    if(!rawEntries.length) throw new Error(`Augustine/Raulx page loaded, but Psalm ${reference.chapter} could not be isolated.`);
+    const sourceUrl=augustineWikiUrl(title);
+    const entries=rawEntries.map((x,i)=>({
+        label:rawEntries.length>1?x.label:`Psaume ${romanPsalm(reference.chapter)} · commentaire intégral`,
+        start:reference.start,end:reference.end,
+        html:htmlEscapeText(x.text).replace(/\\n/g,'<br>')
+    }));
+    return {sourceId:'augustin-raulx-fr',sourceLabel:'Saint Augustin · Discours sur les psaumes (éd. Raulx, 1864)',entries,retrievalUrl:api,sourceUrl,scope:'psalm-full',integrated:true};
+}
+
+
+const GLAIRE_VIGOUROUX_PAGE = {
+    'acts':'Actes des Apôtres','romans':'Romains','1-corinthians':'I Corinthiens','2-corinthians':'II Corinthiens',
+    'galatians':'Galates','ephesians':'Éphésiens','philippians':'Philippiens','colossians':'Colossiens',
+    '1-thessalonians':'I Thessaloniciens','2-thessalonians':'II Thessaloniciens','1-timothy':'I Timothée','2-timothy':'II Timothée',
+    'titus':'Tite','philemon':'Philémon','hebrews':'Hébreux','james':'Jacques','1-peter':'I Pierre','2-peter':'II Pierre',
+    '1-john':'I Jean','2-john':'II Jean','3-john':'III Jean','jude':'Jude','apocalypse':'Apocalypse',
+    'genesis':'Genèse','exodus':'Exode','leviticus':'Lévitique','numbers':'Nombres','deuteronomy':'Deutéronome',
+    'josue':'Josué','judges':'Juges','ruth':'Ruth','1-kings':'I Rois','2-kings':'II Rois','3-kings':'III Rois','4-kings':'IV Rois',
+    '1-paralipomenon':'I Paralipomènes','2-paralipomenon':'II Paralipomènes','1-esdras':'I Esdras','2-esdras':'II Esdras',
+    'tobias':'Tobie','judith':'Judith','esther':'Esther','1-machabees':'I Machabées','2-machabees':'II Machabées','job':'Job',
+    'proverbs':'Proverbes','ecclesiastes':'Ecclésiaste','canticle-of-canticles':'Cantique des Cantiques','wisdom':'Sagesse',
+    'ecclesiasticus':'Ecclésiastique','isaias':'Isaïe','jeremias':'Jérémie','lamentations':'Lamentations','baruch':'Baruch',
+    'ezechiel':'Ézéchiel','daniel':'Daniel','osee':'Osée','joel':'Joël','amos':'Amos','abdias':'Abdias','jonas':'Jonas',
+    'micheas':'Michée','nahum':'Nahum','habacuc':'Habacuc','sophonias':'Sophonie','aggeus':'Aggée','zacharias':'Zacharie','malachias':'Malachie'
+};
+function glaireVigourouxTitle(reference) {
+    const page=GLAIRE_VIGOUROUX_PAGE[reference?.slug];
+    return page ? `La sainte Bible selon la Vulgate (J.-B. Glaire)/${page}` : null;
+}
+function glaireVigourouxUrl(title) { return `https://fr.wikisource.org/wiki/${encodeURIComponent(title).replace(/%20/g,'_')}`; }
+function glaireChapterNumber(text) {
+    const t=String(text||'').replace(/\s+/g,' ').trim();
+    if(!/^CHAPITRE\b/i.test(t)) return null;
+    if(/^CHAPITRE\s+PREMIER\b/i.test(t)) return 1;
+    const a=t.match(/^CHAPITRE\s+(\d{1,3})\b/i); if(a) return +a[1];
+    const r=t.match(/^CHAPITRE\s+([IVXLCDM]+)\b/i); return r ? romanPsalmValue(r[1]) : null;
+}
+function glaireCleanNoteNode(node) {
+    if(!node) return '';
+    const clone=node.cloneNode(true);
+    clone.querySelectorAll?.('.mw-cite-backlink,.mw-cite-backlink a,.reference-accessdate,.noprint').forEach(x=>x.remove());
+    return String(clone.textContent||'').replace(/\s+/g,' ').trim();
+}
+function glaireParseBookHtml(html, reference) {
+    if(typeof DOMParser==='undefined') throw new Error('DOMParser unavailable in this runtime.');
+    const doc=new DOMParser().parseFromString(String(html||''),'text/html');
+    const root=doc.querySelector('.mw-parser-output') || doc.body;
+    const kids=[...root.children];
+    let start=-1,end=kids.length;
+    for(let i=0;i<kids.length;i++){
+        const n=glaireChapterNumber(kids[i].textContent);
+        if(n===reference.chapter){ start=i; break; }
+    }
+    if(start<0) throw new Error(`Glaire–Vigouroux chapter ${reference.chapter} not found.`);
+    for(let i=start+1;i<kids.length;i++){
+        if(glaireChapterNumber(kids[i].textContent)!=null){ end=i; break; }
+    }
+    let verse=null,lineStart=true,seenVerse=false;
+    const noteIdsByVerse=new Map(), overview=[];
+    const addNote=(v,id)=>{
+        if(!Number.isInteger(v)||v<reference.start||v>reference.end||!id) return;
+        if(!noteIdsByVerse.has(v)) noteIdsByVerse.set(v,[]);
+        const arr=noteIdsByVerse.get(v); if(!arr.includes(id)) arr.push(id);
+    };
+    const walk=(node)=>{
+        if(node.nodeType===3){
+            const txt=String(node.nodeValue||'');
+            const parts=txt.split(/(\n)/);
+            for(const part of parts){
+                if(part==='\n'){ lineStart=true; continue; }
+                if(lineStart){
+                    const m=part.match(/^\s*(\d{1,3})\.\s*/);
+                    if(m){ verse=+m[1]; seenVerse=true; lineStart=false; }
+                    else if(part.trim()) lineStart=false;
+                }
+            }
+            return;
+        }
+        if(node.nodeType!==1) return;
+        const el=node;
+        const tag=el.tagName;
+        if(tag==='BR'){ lineStart=true; return; }
+        if(tag==='SUP' && el.classList?.contains('reference')){
+            const a=el.querySelector('a[href^="#cite_note"]');
+            if(a) addNote(verse, decodeURIComponent(a.getAttribute('href').slice(1)));
+            return;
+        }
+        const block=/^(P|DIV|LI|BLOCKQUOTE|DD|DT)$/.test(tag);
+        if(block) lineStart=true;
+        for(const child of [...el.childNodes]) walk(child);
+        if(block) lineStart=true;
+    };
+    for(let i=start+1;i<end;i++){
+        const el=kids[i];
+        if(!seenVerse){
+            const txt=String(el.textContent||'').replace(/\s+/g,' ').trim();
+            if(txt && !/^\d{1,3}\.\s/.test(txt) && txt.length<1000 && !/^(modifier|Image:|Séparateur)$/i.test(txt)) overview.push(txt);
+        }
+        walk(el);
+    }
+    const entries=[];
+    for(const [v,ids] of [...noteIdsByVerse.entries()].sort((a,b)=>a[0]-b[0])){
+        let n=0;
+        for(const id of ids){
+            const li=doc.getElementById(id), body=li?.querySelector('.reference-text') || li;
+            const text=glaireCleanNoteNode(body);
+            if(!text) continue; n++;
+            entries.push({label:`v. ${v}${ids.length>1?' · note '+n:''}`,start:v,end:v,html:htmlEscapeText(text)});
+        }
+    }
+    const chapterSummary=overview.slice(0,2).join(' ').replace(/\s+/g,' ').trim();
+    return {entries,chapterSummary};
+}
+async function loadGlaireVigourouxFr(fetcher, reference) {
+    const title=glaireVigourouxTitle(reference);
+    if(!title) throw new Error('No Glaire–Vigouroux Wikisource route for this book.');
+    const api=`${source_config_1.PERONNE_WIKISOURCE_API}?action=parse&format=json&origin=*&redirects=1&prop=text&page=${encodeURIComponent(title)}`;
+    const raw=await fetcher.get(api), data=JSON.parse(raw);
+    if(data?.error) throw new Error(data.error.info || data.error.code || 'Wikisource parse error.');
+    const html=typeof data?.parse?.text==='string'?data.parse.text:data?.parse?.text?.['*'];
+    if(!html) throw new Error('Wikisource returned no Glaire–Vigouroux transcription.');
+    const parsed=glaireParseBookHtml(html,reference), sourceUrl=glaireVigourouxUrl(title);
+    return {
+        sourceId:'glaire-vigouroux-fr',sourceLabel:'Glaire–Vigouroux · Bible selon la Vulgate (1905)',
+        entries:parsed.entries,chapterSummary:parsed.chapterSummary,retrievalUrl:api,sourceUrl,
+        scope:parsed.entries.length?'verse-notes':'context-only',integrated:!!parsed.entries.length
+    };
+}
+
+class ScriptureService {
+    fetcher;
+    constructor(fetcher) {
+        this.fetcher = fetcher;
+    }
+    async load(kind, text, options = {}) {
+        const parsed = (0, references_1.parseScriptureReferences)(text);
+        const reference = parsed.refs[0] || null;
+        if (!reference)
+            throw new Error('Scripture reference could not be parsed.');
+        const pericope = { lat: (0, references_1.cleanPericopeText)(text, 'lat'), en: (0, references_1.cleanPericopeText)(text, 'en'), fr: (0, references_1.cleanPericopeText)(text, 'fr') };
+        const hasAppointedPericope = !!(pericope.lat || pericope.en || pericope.fr);
+        if (parsed.relationship === 'composite') {
+            const parts = [], compositeErrors = [];
+            for (const ref of parsed.refs) {
+                const synthetic = {
+                    lat: `${ref.display}\n${pericope.lat || ''}`,
+                    en: `${ref.display}\n${pericope.en || ''}`,
+                    fr: `${ref.displayFr}\n${pericope.fr || ''}`
+                };
+                try { parts.push(await this.load(kind, synthetic, options)); }
+                catch (e) { compositeErrors.push(`${ref.display}: ${e instanceof Error ? e.message : String(e)}`); }
+            }
+            if (!parts.length) throw new Error(`Composite Scripture could not be loaded. ${compositeErrors.join(' | ')}`);
+            const provenance = [];
+            const seen = new Set();
+            for (const part of parts) for (const source of (part.provenance || [])) {
+                const key = `${source.id || source.label}|${source.language || ''}|${source.url || ''}`;
+                if (!seen.has(key)) { seen.add(key); provenance.push(source); }
+            }
+            const first = parsed.refs[0];
+            return {
+                kind:'composite', relationship:'composite',
+                reference:{...first, kind:'composite', label:'Composite Scripture', frLabel:'Lecture composite', display:parsed.refs.map(r=>r.display).join(' + '), displayFr:parsed.refs.map(r=>r.displayFr).join(' + ')},
+                references:parsed.refs, parts, pericope,
+                englishChapter:[], latinChapter:[], frenchChapter:[], chapterSummary:'', frenchChapterSummary:'', englishNotes:[], englishCatena:[], englishCommentary:null, frenchCommentary:null,
+                frenchCatenaUrl:undefined, provenance,
+                errors:[...compositeErrors, ...parts.flatMap(p=>p.errors||[])]
+            };
+        }
+        const effectiveKind = reference.kind === 'gospel' ? 'gospel' : reference.kind === 'psalm' ? 'psalm' : reference.kind === 'vulgate-appendix' ? 'vulgate-appendix' : 'scripture';
+        const errors = [];
+        let englishChapter = [], latinChapter = [], frenchChapter = [], chapterSummary = '', frenchChapterSummary = '', englishNotes = [], englishCatena = [], englishCommentary = null, frenchCommentary = null;
+        try {
+            const raw = await this.fetcher.get(`${source_config_1.ODR_BASE}${encodeURIComponent(odrSlug(reference))}.json`);
+            const data = JSON.parse(raw);
+            const ch = chapterOf(data, reference.chapter);
+            if (!ch)
+                throw new Error('English chapter unavailable.');
+            englishChapter = rowsOf(ch);
+            if (!pericope.en)
+                pericope.en = englishChapter.filter(v => v.verse >= reference.start && v.verse <= reference.end).map(v => v.text).join('\n');
+            chapterSummary = String(ch.summary || '');
+            englishNotes = englishChapter.filter(v => v.verse >= reference.start && v.verse <= reference.end).flatMap(v => (v.notes || []).map(n => ({ verse: v.verse, text: n.text })));
+        }
+        catch (e) {
+            errors.push(`English Scripture: ${e instanceof Error ? e.message : String(e)}`);
+        }
+        try {
+            const data = JSON.parse(await this.fetcher.get(source_config_1.VULGATE_URL));
+            const b = vulgateBook(data, reference);
+            const ch = (b?.chapters || []).find((c) => +c.chapter === reference.chapter);
+            if (!ch)
+                throw new Error('Latin chapter unavailable.');
+            latinChapter = rowsOf(ch);
+            if (!pericope.lat)
+                pericope.lat = latinChapter.filter(v => v.verse >= reference.start && v.verse <= reference.end).map(v => v.text).join('\n');
+        }
+        catch (e) {
+            errors.push(`Latin Vulgate: ${e instanceof Error ? e.message : String(e)}`);
+        }
+        try {
+            const data = JSON.parse(await this.fetcher.get(source_config_1.CRAMPON_URL));
+            const b = cramponBook(data, reference);
+            const ch = (b?.chapters || []).find((c) => +c.chapter === reference.chapter);
+            if (!ch)
+                throw new Error('French chapter unavailable.');
+            frenchChapter = rowsOf(ch);
+            if (!pericope.fr)
+                pericope.fr = frenchChapter.filter(v => v.verse >= reference.start && v.verse <= reference.end).map(v => v.text).join('\n');
+        }
+        catch (e) {
+            errors.push(`French Scripture: ${e instanceof Error ? e.message : String(e)}`);
+        }
+        if (!options.contextOnly && effectiveKind === 'gospel') {
+            try {
+                const raw = await this.fetcher.get(`${source_config_1.CATENA_BASE}${reference.slug}.jsonl`);
+                const nodes = raw.split(/\r?\n/).filter(Boolean).map(line => { try { return JSON.parse(line); } catch { return null; } }).filter(Boolean);
+                let chosen = nodes.filter((n) => { const r = range(n); return r && r.chapter === reference.chapter && r.start <= reference.end && r.end >= reference.start; });
+                if (!chosen.length)
+                    chosen = nodes.filter((n) => { const m = String(n.id || '').match(/\.(\d+)\.(\d+)$/); return m && +m[1] === reference.chapter && +m[2] >= reference.start && +m[2] <= reference.end; });
+                englishCatena = chosen.flatMap((n) => (n.segments || []).filter((s) => s?.text).map((s) => ({ father: String(s.father || 'Traditional commentary'), text: String(s.text), citation: String(n.citation || reference.display), lemma: n.lemma ? String(n.lemma) : undefined })));
+            }
+            catch (e) { errors.push(`Catena Aurea: ${e instanceof Error ? e.message : String(e)}`); }
+            try { frenchCommentary = await loadPeronneCatena(this.fetcher, reference); }
+            catch (e) { errors.push(`Chaîne d’Or · Péronne: ${e instanceof Error ? e.message : String(e)}`); }
+        }
+        // Psalm commentary routing. English: Bellarmine primary, Haydock fallback. French: Augustine/Raulx, clearly Psalm-level rather than verse-exact.
+        if (!options.contextOnly && effectiveKind === 'psalm') {
+            try { englishCommentary = await loadBellarminePsalm(this.fetcher, reference); }
+            catch (e) {
+                const detail=e?.failures?.length?` (${e.failures.join(' | ')})`:'';
+                errors.push(`Bellarmine commentary: ${e instanceof Error ? e.message : String(e)}${detail}`);
+            }
+            try { frenchCommentary = await loadAugustinePsalmFr(this.fetcher, reference); }
+            catch (e) { errors.push(`Saint Augustin · Raulx: ${e instanceof Error ? e.message : String(e)}`); }
+        }
+        if (!options.contextOnly && effectiveKind !== 'gospel' && effectiveKind !== 'vulgate-appendix' && (!englishCommentary || effectiveKind !== 'psalm')) {
+            const code = HAYDOCK_BOOK_CODE[reference.slug];
+            if (code) try {
+                const raw = await this.fetcher.get(`${source_config_1.HAYDOCK_BASE}${code}.json`);
+                const data = JSON.parse(raw);
+                const entries = (data?.entries || []).filter((entry) => haydockOverlap(entry, reference, code)).map((entry) => ({ label:String(entry.label||''), start:String(entry.start||''), end:String(entry.end||''), html:stripUnsafeHtml(entry.body?.['en-US'] || '') }));
+                if (entries.length) englishCommentary = { sourceId:'haydock-en', sourceLabel:'Haydock Catholic Bible Commentary', entries, fallback: effectiveKind === 'psalm' };
+            }
+            catch (e) { errors.push(`Haydock commentary: ${e instanceof Error ? e.message : String(e)}`); }
+        }
+        if (!options.contextOnly && effectiveKind === 'scripture') {
+            try {
+                const gv = await loadGlaireVigourouxFr(this.fetcher, reference);
+                frenchChapterSummary = gv.chapterSummary || '';
+                if (gv.entries?.length) frenchCommentary = gv;
+            }
+            catch (e) { errors.push(`Glaire–Vigouroux: ${e instanceof Error ? e.message : String(e)}`); }
+        }
+        const srcMap = { matthew: 'Matthieu', mark: 'Marc', luke: 'Luc', john: 'Jean' };
+        const frenchCatenaUrl = effectiveKind === 'gospel' ? (frenchCommentary?.sourceUrl || (srcMap[reference.slug] ? source_config_1.PERONNE_BASE + encodeURIComponent(`${srcMap[reference.slug]}${reference.chapter},${reference.start}`) : undefined)) : undefined;
+        const provenance = [
+            ...(hasAppointedPericope ? [{ id:'proper', label:'1962 Proper', language:'la', kind:'proper', note:'Appointed liturgical pericope from the currently resolved 1962 Proper.' }] : []),
+            { id:'odr', label:'Original Douay-Rheims 1582/1609', language:'en', kind:'scripture', url:source_config_1.ODR_BASE, note:'Public-domain chapter context and historical notes.' },
+            { id:'vulgate-clementine', label:'Vulgata Clementina', language:'la', kind:'scripture', url:source_config_1.VULGATE_URL, note:`Clementine Vulgate corpus pinned at ${source_config_1.VULGATE_REVISION.slice(0, 7)}.` },
+            { id:'crampon', label:'Bible Crampon 1923', language:'fr', kind:'scripture', url:source_config_1.CRAMPON_URL, note:`Public-domain French Scripture corpus pinned at ${source_config_1.CRAMPON_REVISION.slice(0, 7)}.` }
+        ];
+        if (!options.contextOnly && effectiveKind === 'gospel') {
+            provenance.push({ id:'catena-en', label:'Catena Aurea · Newman/Oxford', language:'en', kind:'commentary', url:source_config_1.CATENA_BASE, note:'Complete overlapping attributed patristic extracts from the normalized public-domain English corpus.' });
+            if (frenchCommentary?.entries?.length) {
+                provenance.push({ id:'catena-fr', label:'Chaîne d’Or · Péronne 1868–1869', language:'fr', kind:'commentary', url:frenchCommentary.sourceUrl, note:'Integrated French public-domain transcription from Wikisource, segmented against the verse markers of Péronne’s edition. No machine translation from the English Catena.' });
+                provenance.push({ id:'catena-fr-edition', label:'BnF · Péronne edition record', language:'fr', kind:'source-catalogue', url:source_config_1.PERONNE_BNF_CATALOG, note:'Bibliographic control record for the 8-volume Paris, L. Vivès, 1868–1869 edition: Matthew I–III, Mark IV, Luke V–VI, John VII–VIII.' });
+            } else if (frenchCatenaUrl) provenance.push({ id:'catena-fr-link', label:'Chaîne d’Or · Péronne', language:'fr', kind:'commentary-link', url:frenchCatenaUrl, note:'Fallback historical French source link shown only when structured Wikisource ingestion is unavailable.' });
+        } else if (englishCommentary?.sourceId === 'bellarmine-en') {
+            provenance.push({ id:'bellarmine-en', label:'St Robert Bellarmine · Commentary on the Book of Psalms (1866)', language:'en', kind:'commentary', url:source_config_1.BELLARMINE_SOURCE, note:`Public-domain O’Sullivan translation, James Duffy 1866. Edition-level source: Internet Archive scan. Retrieval route: ${englishCommentary.retrievalUrl || source_config_1.BELLARMINE_IA_OCR}. Psalm numbering follows the traditional/Vulgate Psalter.` });
+            provenance.push({ id:'bellarmine-scan', label:'Bellarmine 1866 scan', language:'en', kind:'source-scan', url:source_config_1.BELLARMINE_SCAN, note:'Public-domain scan used to anchor edition provenance independently of any modern transcription layer.' });
+            if (frenchCommentary?.sourceId === 'augustin-raulx-fr') provenance.push({ id:'augustin-raulx-fr', label:'Saint Augustin · Discours sur les psaumes · Raulx 1864', language:'fr', kind:'commentary', url:frenchCommentary.sourceUrl, note:'French historical commentary integrated from the Raulx 1864 transcription on Wikisource. It is presented at Psalm/discourse level; the app does not claim one-to-one verse mapping.' });
+        } else if (englishCommentary?.sourceId === 'haydock-en') {
+            provenance.push({ id:'haydock-en', label:'Haydock Catholic Bible Commentary', language:'en', kind:'commentary', url:source_config_1.HAYDOCK_BASE, note:effectiveKind === 'psalm' ? 'Public-domain historical commentary shown only because the Bellarmine Psalm provider was unavailable for this request.' : 'Public-domain historical English Catholic commentary, pinned to donor corpus v2.0.0.' });
+            if (effectiveKind === 'psalm') provenance.push({ id:'bellarmine-source', label:'St Robert Bellarmine · Commentary on the Book of Psalms (1866)', language:'en', kind:'commentary-source', url:source_config_1.BELLARMINE_SOURCE, note:'Primary Psalm source; retrieval failed for this request, so Haydock is explicitly marked as fallback.' });
+            if (frenchCommentary?.sourceId === 'augustin-raulx-fr') provenance.push({ id:'augustin-raulx-fr', label:'Saint Augustin · Discours sur les psaumes · Raulx 1864', language:'fr', kind:'commentary', url:frenchCommentary.sourceUrl, note:'French historical commentary integrated from the Raulx 1864 transcription on Wikisource. It is presented at Psalm/discourse level; the app does not claim one-to-one verse mapping.' });
+        } else if (frenchCommentary?.sourceId === 'augustin-raulx-fr') {
+            provenance.push({ id:'augustin-raulx-fr', label:'Saint Augustin · Discours sur les psaumes · Raulx 1864', language:'fr', kind:'commentary', url:frenchCommentary.sourceUrl, note:'French historical commentary integrated from the Raulx 1864 transcription on Wikisource. It is presented at Psalm/discourse level; the app does not claim one-to-one verse mapping.' });
+        }
+        if (frenchCommentary?.sourceId === 'glaire-vigouroux-fr' || frenchChapterSummary) {
+            provenance.push({ id:'glaire-vigouroux-fr', label:'J.-B. Glaire / F. Vigouroux · La sainte Bible selon la Vulgate (1905)', language:'fr', kind:frenchCommentary?.entries?.length?'commentary':'context', url:frenchCommentary?.sourceUrl || glaireVigourouxUrl(glaireVigourouxTitle(reference)), note:'Public-domain French Catholic Bible edition on Wikisource. Verse-linked notes are shown only where the 1905 edition actually attaches them; chapter summaries may enrich Context but do not count as verse commentary.' });
+        }
+        return { kind:effectiveKind, relationship:parsed.relationship, reference, pericope, englishChapter, latinChapter, frenchChapter, chapterSummary, frenchChapterSummary, englishNotes, englishCatena, englishCommentary, frenchCommentary, frenchCatenaUrl, provenance, errors };
+    }
+}
+exports.ScriptureService = ScriptureService;
+
+},11:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BELLARMINE_TRANSCRIPTION = exports.BELLARMINE_JINA_TRANSCRIPTION = exports.BELLARMINE_JINA_OCR = exports.BELLARMINE_IA_OCR = exports.BELLARMINE_SCAN = exports.BELLARMINE_SOURCE = exports.HAYDOCK_BASE = exports.PERONNE_BASE = exports.VULGATE_URL = exports.VULGATE_REVISION = exports.CRAMPON_URL = exports.CRAMPON_REVISION = exports.CATENA_BASE = exports.ODR_BASE = void 0;
+exports.ODR_BASE = 'https://raw.githubusercontent.com/janvier-s/original-douay-rheims/main/bible/raw/';
+exports.CATENA_BASE = 'https://raw.githubusercontent.com/AlvaroBalbin/catena/main/data/catena/';
+exports.HAYDOCK_BASE = 'https://raw.githubusercontent.com/ronaldoscotti/catholic-bible/v2.0.0/data/commentary/haydock/books/';
+// Bellarmine 1866 source chain. The Internet Archive scan is the edition-level source of truth.
+exports.BELLARMINE_SOURCE = 'https://archive.org/details/commentaryonbook0000bell';
+exports.BELLARMINE_SCAN = 'https://commons.wikimedia.org/wiki/File:Commentaryonbook0000bell.pdf';
+exports.BELLARMINE_IA_OCR = 'https://archive.org/download/commentaryonbook0000bell/commentaryonbook0000bell_djvu.txt';
+// Reader mirrors are retrieval fallbacks only; provenance remains the 1866 James Duffy edition/IA scan.
+exports.BELLARMINE_JINA_OCR = 'https://r.jina.ai/http://archive.org/download/commentaryonbook0000bell/commentaryonbook0000bell_djvu.txt';
+exports.BELLARMINE_JINA_TRANSCRIPTION = 'https://r.jina.ai/http://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml';
+exports.BELLARMINE_TRANSCRIPTION = 'https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml';
+exports.CRAMPON_REVISION = 'e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c';
+exports.CRAMPON_URL = `https://raw.githubusercontent.com/scrollmapper/bible_databases/${exports.CRAMPON_REVISION}/sources/fr/FreCrampon/FreCrampon.json`;
+exports.VULGATE_REVISION = exports.CRAMPON_REVISION;
+exports.VULGATE_URL = `https://raw.githubusercontent.com/scrollmapper/bible_databases/${exports.VULGATE_REVISION}/sources/la/VulgClementine/VulgClementine.json`;
+exports.PERONNE_BASE = 'https://www.apologetique.net/EvangilePere/EvangilePere.aspx?reference=';
+exports.PERONNE_WIKISOURCE_API = 'https://fr.wikisource.org/w/api.php';
+exports.PERONNE_BNF_CATALOG = 'https://catalogue.bnf.fr/ark:/12148/cb314619721';
+
+},12:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.parseScriptureReferences = parseScriptureReferences;
+exports.parseScriptureReference = parseScriptureReference;
+exports.cleanPericopeText = cleanPericopeText;
+const norm = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+// AO canonical identities remain traditional/Vulgate-facing. Modern names are accepted only as aliases.
+const books = [
+    [/^(?:mt|mat|matt|matthew|matthaeus|matthieu)$/, 'matthew', 'Matthew', 'Matthieu', 'gospel'],
+    [/^(?:mk|mc|marc|mark|marcus)$/, 'mark', 'Mark', 'Marc', 'gospel'],
+    [/^(?:lk|lc|luc|luke|lucas)$/, 'luke', 'Luke', 'Luc', 'gospel'],
+    [/^(?:jn|jo|john|jean|joann|ioann|joannes)$/, 'john', 'John', 'Jean', 'gospel'],
+    [/^(?:acts?|act|actus|actes)$/, 'acts', 'Acts', 'Actes', 'nt'],
+    [/^(?:rom|romans?|romains)$/, 'romans', 'Romans', 'Romains', 'nt'],
+    [/^(?:1 cor|1 corinthians?|i cor|1 corinthiens)$/, '1-corinthians', '1 Corinthians', '1 Corinthiens', 'nt'],
+    [/^(?:2 cor|2 corinthians?|ii cor|2 corinthiens)$/, '2-corinthians', '2 Corinthians', '2 Corinthiens', 'nt'],
+    [/^(?:gal|galatians?|galates)$/, 'galatians', 'Galatians', 'Galates', 'nt'],
+    [/^(?:eph|ephes|ephesians?|ephesiens)$/, 'ephesians', 'Ephesians', 'Éphésiens', 'nt'],
+    [/^(?:phil|philippians?|philippiens)$/, 'philippians', 'Philippians', 'Philippiens', 'nt'],
+    [/^(?:col|colossians?|colossiens)$/, 'colossians', 'Colossians', 'Colossiens', 'nt'],
+    [/^(?:1 thess|1 thessalonians?|i thess|1 thessaloniciens)$/, '1-thessalonians', '1 Thessalonians', '1 Thessaloniciens', 'nt'],
+    [/^(?:2 thess|2 thessalonians?|ii thess|2 thessaloniciens)$/, '2-thessalonians', '2 Thessalonians', '2 Thessaloniciens', 'nt'],
+    [/^(?:1 tim|1 timothy|i tim|1 timothee)$/, '1-timothy', '1 Timothy', '1 Timothée', 'nt'],
+    [/^(?:2 tim|2 timothy|ii tim|2 timothee)$/, '2-timothy', '2 Timothy', '2 Timothée', 'nt'],
+    [/^(?:tit|titus|tite)$/, 'titus', 'Titus', 'Tite', 'nt'],
+    [/^(?:philem|philemon)$/, 'philemon', 'Philemon', 'Philémon', 'nt'],
+    [/^(?:heb|hebrews?|hebreux)$/, 'hebrews', 'Hebrews', 'Hébreux', 'nt'],
+    [/^(?:jas|james|jac|jacques)$/, 'james', 'James', 'Jacques', 'nt'],
+    [/^(?:1 pet|1 peter|i pet|1 pierre)$/, '1-peter', '1 Peter', '1 Pierre', 'nt'],
+    [/^(?:2 pet|2 peter|ii pet|2 pierre)$/, '2-peter', '2 Peter', '2 Pierre', 'nt'],
+    [/^(?:1 jn|1 john|i jn|1 jean)$/, '1-john', '1 John', '1 Jean', 'nt'],
+    [/^(?:2 jn|2 john|ii jn|2 jean)$/, '2-john', '2 John', '2 Jean', 'nt'],
+    [/^(?:3 jn|3 john|iii jn|3 jean)$/, '3-john', '3 John', '3 Jean', 'nt'],
+    [/^(?:jude|jud)$/, 'jude', 'Jude', 'Jude', 'nt'],
+    [/^(?:apoc|apocalypse|rev|revelation)$/, 'apocalypse', 'Apocalypse', 'Apocalypse', 'nt'],
+
+    [/^(?:gen|genesis|genese)$/, 'genesis', 'Genesis', 'Genèse', 'ot'],
+    [/^(?:ex|exod|exodus|exode)$/, 'exodus', 'Exodus', 'Exode', 'ot'],
+    [/^(?:lev|leviticus|levitique)$/, 'leviticus', 'Leviticus', 'Lévitique', 'ot'],
+    [/^(?:num|numbers|nombres)$/, 'numbers', 'Numbers', 'Nombres', 'ot'],
+    [/^(?:deut|deuteronomy|deuteronome)$/, 'deuteronomy', 'Deuteronomy', 'Deutéronome', 'ot'],
+    [/^(?:jos|josue|joshua)$/, 'josue', 'Josue', 'Josué', 'ot'],
+    [/^(?:judg|judges|juges)$/, 'judges', 'Judges', 'Juges', 'ot'],
+    [/^(?:rut|ruth|rute)$/, 'ruth', 'Ruth', 'Ruth', 'ot'],
+    [/^(?:1 kings?|1 sam(?:uel)?|i kings?|i sam(?:uel)?)$/, '1-kings', '1 Kings', '1 Samuel', 'ot'],
+    [/^(?:2 kings?|2 sam(?:uel)?|ii kings?|ii sam(?:uel)?)$/, '2-kings', '2 Kings', '2 Samuel', 'ot'],
+    [/^(?:3 kings?|1 ki|1 rois?|iii kings?)$/, '3-kings', '3 Kings', '1 Rois', 'ot'],
+    [/^(?:4 kings?|2 ki|2 rois?|iv kings?)$/, '4-kings', '4 Kings', '2 Rois', 'ot'],
+    [/^(?:1 chron(?:icles)?|i chron(?:icles)?|1 paralip(?:omenon)?|i paralip(?:omenon)?)$/, '1-paralipomenon', '1 Paralipomenon', '1 Paralipomènes', 'ot'],
+    [/^(?:2 chron(?:icles)?|ii chron(?:icles)?|2 paralip(?:omenon)?|ii paralip(?:omenon)?)$/, '2-paralipomenon', '2 Paralipomenon', '2 Paralipomènes', 'ot'],
+    [/^(?:1 esdras|i esdras|ezra|esdras)$/, '1-esdras', '1 Esdras', '1 Esdras', 'ot'],
+    [/^(?:2 esdras|ii esdras|nehemias|nehemiah|nehemie)$/, '2-esdras', '2 Esdras', '2 Esdras', 'ot'],
+    [/^(?:tob|tobias|tobit|tobie)$/, 'tobias', 'Tobias', 'Tobie', 'ot'],
+    [/^(?:jdt|judith)$/, 'judith', 'Judith', 'Judith', 'ot'],
+    [/^(?:esth|esther|ester)$/, 'esther', 'Esther', 'Esther', 'ot'],
+    [/^(?:1 mach(?:abees)?|i mach(?:abees)?|1 macc(?:abees)?)$/, '1-machabees', '1 Machabees', '1 Machabées', 'ot'],
+    [/^(?:2 mach(?:abees)?|ii mach(?:abees)?|2 macc(?:abees)?)$/, '2-machabees', '2 Machabees', '2 Machabées', 'ot'],
+    [/^(?:job)$/, 'job', 'Job', 'Job', 'ot'],
+    [/^(?:ps|psa|psalm|psalms|psalmus|psalmi|psaume|psaumes)$/, 'psalms', 'Psalms', 'Psaumes', 'psalm'],
+    [/^(?:prov|proverbs|proverbes)$/, 'proverbs', 'Proverbs', 'Proverbes', 'ot'],
+    [/^(?:eccl|ecclesiastes|qohelet)$/, 'ecclesiastes', 'Ecclesiastes', 'Ecclésiaste', 'ot'],
+    [/^(?:cant|canticles|song(?: of songs)?|cantique(?: des cantiques)?)$/, 'canticle-of-canticles', 'Canticle of Canticles', 'Cantique des Cantiques', 'ot'],
+    [/^(?:wis|wisdom|sagesse)$/, 'wisdom', 'Wisdom', 'Sagesse', 'ot'],
+    [/^(?:ecclus|ecclesiasticus|sirach|siracide)$/, 'ecclesiasticus', 'Ecclesiasticus', 'Ecclésiastique', 'ot'],
+    [/^(?:is|isa|isaias|isaiah|isaie)$/, 'isaias', 'Isaias', 'Isaïe', 'ot'],
+    [/^(?:jer|jeremias|jeremiah|jeremie)$/, 'jeremias', 'Jeremias', 'Jérémie', 'ot'],
+    [/^(?:lam|lamentations)$/, 'lamentations', 'Lamentations', 'Lamentations', 'ot'],
+    [/^(?:bar|baruch)$/, 'baruch', 'Baruch', 'Baruch', 'ot'],
+    [/^(?:ez|ezech|ezechiel|ezekiel)$/, 'ezechiel', 'Ezechiel', 'Ézéchiel', 'ot'],
+    [/^(?:dan|daniel)$/, 'daniel', 'Daniel', 'Daniel', 'ot'],
+    [/^(?:os|osee|hosea)$/, 'osee', 'Osee', 'Osée', 'ot'],
+    [/^(?:joel)$/, 'joel', 'Joel', 'Joël', 'ot'],
+    [/^(?:amos)$/, 'amos', 'Amos', 'Amos', 'ot'],
+    [/^(?:abd|abdias|obadiah|obadie)$/, 'abdias', 'Abdias', 'Abdias', 'ot'],
+    [/^(?:jon|jonas|jonah)$/, 'jonas', 'Jonas', 'Jonas', 'ot'],
+    [/^(?:mic|micheas|micah|michee)$/, 'micheas', 'Micheas', 'Michée', 'ot'],
+    [/^(?:nah|nahum)$/, 'nahum', 'Nahum', 'Nahum', 'ot'],
+    [/^(?:hab|habacuc)$/, 'habacuc', 'Habacuc', 'Habacuc', 'ot'],
+    [/^(?:soph|sophonias|zephaniah|sophonie)$/, 'sophonias', 'Sophonias', 'Sophonie', 'ot'],
+    [/^(?:agg|aggeus|haggai|aggee)$/, 'aggeus', 'Aggeus', 'Aggée', 'ot'],
+    [/^(?:zach|zacharias|zechariah|zacharie)$/, 'zacharias', 'Zacharias', 'Zacharie', 'ot'],
+    [/^(?:mal|malachias|malachi|malachie)$/, 'malachias', 'Malachias', 'Malachie', 'ot'],
+
+    // Vulgate appendix: useful for traditional liturgical citations, but not routed to Haydock.
+    [/^(?:prayer of manasses|oratio manassae|manasses)$/, 'prayer-of-manasses', 'Prayer of Manasses', 'Prière de Manassé', 'vulgate-appendix'],
+    [/^(?:3 esdras|iii esdras)$/, '3-esdras', '3 Esdras', '3 Esdras', 'vulgate-appendix'],
+    [/^(?:4 esdras|iv esdras)$/, '4-esdras', '4 Esdras', '4 Esdras', 'vulgate-appendix']
+];
+function parseLineReference(line) {
+    const re = /^((?:(?:[1-4]|I{1,3}|IV)\s*)?[A-Za-zÀ-ÿÆæ.]+(?:\s+[A-Za-zÀ-ÿÆæ.]+){0,3})\s+(\d{1,3})\s*[:,.]\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/i;
+    const m = line.replace(/^IV\s+/i, '4 ').replace(/^III\s+/i, '3 ').replace(/^II\s+/i, '2 ').replace(/^I\s+/i, '1 ').match(re);
+    if (!m) return null;
+    const token = norm(m[1].replace(/\./g, ''));
+    const hit = books.find(([rx]) => rx.test(token));
+    if (!hit) return null;
+    const [, slug, label, frLabel, kind] = hit;
+    return { slug, label, frLabel, kind, chapter:+m[2], start:+m[3], end:+(m[4]||m[3]), display:`${label} ${m[2]}:${m[3]}${m[4]?'–'+m[4]:''}`, displayFr:`${frLabel} ${m[2]},${m[3]}${m[4]?'–'+m[4]:''}` };
+}
+function sourceLines(obj) {
+    // Parse one linguistic representation only, avoiding duplicate citations across EN/LA/FR.
+    const candidates = [obj?.en, obj?.eng, obj?.lat, obj?.fr].filter(Boolean);
+    let fallback = [];
+    for (const source of candidates) {
+        const lines = String(source || '').replace(/<br\s*\/?>/gi,'\n').replace(/<[^>]+>/g,' ').split(/\n+/).map(x=>x.replace(/\s+/g,' ').trim()).filter(Boolean);
+        if (!fallback.length) fallback = lines;
+        if (lines.some(line => !!parseLineReference(line))) return lines;
+    }
+    return fallback;
+}
+function parseScriptureReferences(obj) {
+    const lines = sourceLines(obj);
+    const refs=[];
+    for (const line of lines) {
+        const first=parseLineReference(line);
+        if (!first) continue;
+        refs.push(first);
+        // Additional citations on the same source line: ; Book 1:2 / + Book 1:2 / ; 1:2 (inherit book).
+        const tail=line.replace(/^.*?\d{1,3}\s*[:,.]\s*\d{1,3}(?:\s*[-–—]\s*\d{1,3})?/,'');
+        const pieces=tail.split(/\s*(?:;|\+)\s*/).filter(Boolean);
+        const sameChapter = [...tail.matchAll(/,\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/g)].map(m => ({start:+m[1],end:+(m[2]||m[1])}));
+        for (const sv of sameChapter) {
+            const r={...first,start:sv.start,end:sv.end,display:`${first.label} ${first.chapter}:${sv.start}${sv.end!==sv.start?'–'+sv.end:''}`,displayFr:`${first.frLabel} ${first.chapter},${sv.start}${sv.end!==sv.start?'–'+sv.end:''}`};
+            if (!refs.some(x=>x.slug===r.slug&&x.chapter===r.chapter&&x.start===r.start&&x.end===r.end)) refs.push(r);
+        }
+        for (const piece of pieces) {
+            let r=parseLineReference(piece);
+            if (!r) {
+                const m=piece.match(/^(\d{1,3})\s*[:,.]\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/);
+                if (m) r={...first,chapter:+m[1],start:+m[2],end:+(m[3]||m[2]),display:`${first.label} ${m[1]}:${m[2]}${m[3]?'–'+m[3]:''}`,displayFr:`${first.frLabel} ${m[1]},${m[2]}${m[3]?'–'+m[3]:''}`};
+            }
+            if (r && !refs.some(x=>x.slug===r.slug&&x.chapter===r.chapter&&x.start===r.start&&x.end===r.end)) refs.push(r);
+        }
+        break;
+    }
+    return { relationship: refs.length>1?'composite':refs.length===1?(refs[0].kind==='psalm'?'psalm_verse':'exact'):'unknown', refs };
+}
+function parseScriptureReference(obj) {
+    return parseScriptureReferences(obj).refs[0] || null;
+}
+function cleanPericopeText(obj, lang) { const raw = lang === 'en' ? (obj?.en || obj?.eng || '') : (obj?.[lang] || ''); const p = parseScriptureReference(obj); return String(raw).replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ' ').split(/\n+/).map(x => x.replace(/\s+/g, ' ').trim()).filter(Boolean).filter(x => !(p && /\d\s*[:,]\s*\d/.test(x))).filter(x => !/^(continuation|sequel|lectio|lesson|the holy gospel|the gospel|initium|sequéntia|in illo tempore|fratres|suite|lecture|evangile|évangile|en ce temps-la|en ce temps-là)\b/i.test(x)).join('\n').trim(); }
+
+},13:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AppStore = exports.DEFAULT_SETTINGS = void 0;
+exports.createInitialState = createInitialState;
+exports.reduceAppState = reduceAppState;
+exports.DEFAULT_SETTINGS = {
+    massForm: 'sung', followMode: 'vox', textMode: 'oriented', language: 'en', participationMode: 'quiet',
+    faithfulCommunion: true, secondConfiteor: false, joinSecondConfiteor: false, sundayAsperges: true, reducedMotion: false, textScale: 'normal', localPostures: {}
+};
+function createInitialState(date, language = 'en') {
+    const settings = { ...exports.DEFAULT_SETTINGS, language, localPostures: {} };
+    return { route: 'home', language, selectedDate: date, resolution: null, resolving: false, lastAction: null, homeSheet: null, settings,
+        live: { form: settings.massForm, followMode: settings.followMode, textMode: settings.textMode, stepIndex: 0, sheet: null },
+        scripture: { kind: 'gospel', pane: 'reading', document: null, loading: false, error: null, returnRoute: 'home', returnStepIndex: 0 },
+        prepare: { stepIndex: 0, mode: 'standard', intention: '', intendsCommunion: true, graceStatus: 'unset', fastStatus: 'unset', silenceSeconds: null },
+        thanksgiving: { stepIndex: 0, mode: 'standard', prayerIndex: 0, receivedCommunion: true, personal: '', silenceSeconds: null, finalSilenceSeconds: null, fruit: '', completed: false },
+        resume: { available: false, savedAt: null, stepIndex: 0, date: null } };
+}
+const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+function mergeSettings(state, patch) {
+    const settings = { ...state.settings, ...patch, localPostures: patch.localPostures ? { ...patch.localPostures } : { ...state.settings.localPostures } };
+    return { ...state, settings, language: settings.language, live: { ...state.live, form: settings.massForm, followMode: settings.followMode, textMode: settings.textMode } };
+}
+function reduceAppState(state, action) {
+    switch (action.type) {
+        case 'set-language': return mergeSettings(state, { language: action.language });
+        case 'set-date': return { ...state, selectedDate: action.date, resolving: true, lastAction: null, live: { ...state.live, stepIndex: 0, sheet: null }, prepare: { ...state.prepare, stepIndex: 0, intention: '', graceStatus: 'unset', fastStatus: 'unset' }, thanksgiving: { ...state.thanksgiving, stepIndex: 0, completed: false }, resume: { ...state.resume, available: false } };
+        case 'resolve-start': return { ...state, resolving: true };
+        case 'resolve-complete': return { ...state, resolution: action.resolution, resolving: false };
+        case 'home-action': return { ...state, lastAction: action.action };
+        case 'home-sheet': return { ...state, homeSheet: action.sheet, lastAction: null };
+        case 'enter-prepare': return { ...state, route: 'prepare', lastAction: 'prepare', prepare: { ...state.prepare, stepIndex: 0, intendsCommunion: state.settings.faithfulCommunion } };
+        case 'prepare-step': return { ...state, prepare: { ...state.prepare, stepIndex: clamp(action.index, 0, 20) } };
+        case 'prepare-mode': return { ...state, prepare: { ...state.prepare, mode: action.mode, stepIndex: 0 } };
+        case 'prepare-intention': return { ...state, prepare: { ...state.prepare, intention: action.value } };
+        case 'prepare-communion': return { ...state, prepare: { ...state.prepare, intendsCommunion: !!action.value, graceStatus: action.value ? state.prepare.graceStatus : 'unset', fastStatus: action.value ? state.prepare.fastStatus : 'unset' } };
+        case 'prepare-grace': return { ...state, prepare: { ...state.prepare, graceStatus: action.value } };
+        case 'prepare-fast': return { ...state, prepare: { ...state.prepare, fastStatus: action.value } };
+        case 'prepare-silence': return { ...state, prepare: { ...state.prepare, silenceSeconds: action.seconds } };
+        case 'leave-prepare': return { ...state, route: 'home' };
+        case 'enter-live': return { ...state, route: 'live', lastAction: 'follow', live: { ...state.live, stepIndex: Math.max(0, action.resumeIndex ?? 0), sheet: null } };
+        case 'leave-live': return { ...state, route: 'home', live: { ...state.live, sheet: null } };
+        case 'finish-live': return { ...state, route: 'thanksgiving', live: { ...state.live, sheet: null }, thanksgiving: { ...state.thanksgiving, stepIndex: 0, prayerIndex: 0, receivedCommunion: state.settings.faithfulCommunion, personal: '', fruit: '', silenceSeconds: null, finalSilenceSeconds: null, completed: false } };
+        case 'live-next': return { ...state, live: { ...state.live, stepIndex: clamp(state.live.stepIndex + 1, 0, action.maxIndex), sheet: null } };
+        case 'live-previous': return { ...state, live: { ...state.live, stepIndex: clamp(state.live.stepIndex - 1, 0, Number.MAX_SAFE_INTEGER), sheet: null } };
+        case 'live-jump': return { ...state, live: { ...state.live, stepIndex: clamp(action.index, 0, action.maxIndex), sheet: null } };
+        case 'live-form-session': return { ...state, live: { ...state.live, form: action.form, stepIndex: 0, sheet: null } };
+        case 'live-follow-mode-session': return { ...state, live: { ...state.live, followMode: action.mode, sheet: null } };
+        case 'live-form': return mergeSettings({ ...state, live: { ...state.live, form: action.form, stepIndex: 0, sheet: null } }, { massForm: action.form });
+        case 'live-follow-mode': return mergeSettings({ ...state, live: { ...state.live, followMode: action.mode, sheet: null } }, { followMode: action.mode });
+        case 'live-text-mode': return mergeSettings({ ...state, live: { ...state.live, textMode: action.mode, sheet: null } }, { textMode: action.mode });
+        case 'live-sheet': return { ...state, live: { ...state.live, sheet: action.sheet } };
+        case 'set-participation': return mergeSettings(state, { participationMode: action.mode });
+        case 'set-faithful-communion': return mergeSettings(state, { faithfulCommunion: action.value });
+        case 'set-second-confiteor': return mergeSettings(state, { secondConfiteor: action.value });
+        case 'set-join-second-confiteor': return mergeSettings(state, { joinSecondConfiteor: action.value });
+        case 'set-sunday-asperges': return mergeSettings({ ...state, live: { ...state.live, stepIndex: 0, sheet: null } }, { sundayAsperges: action.value });
+        case 'set-reduced-motion': return mergeSettings(state, { reducedMotion: action.value });
+        case 'set-text-scale': return mergeSettings(state, { textScale: action.value });
+        case 'set-local-posture': return mergeSettings(state, { localPostures: { ...state.settings.localPostures, [action.key]: action.value } });
+        case 'reset-local-postures': return mergeSettings(state, { localPostures: {} });
+        case 'scripture-open': return { ...state, route: 'scripture', scripture: { kind: action.kind, pane: 'reading', document: null, loading: true, error: null, returnRoute: action.returnRoute, returnStepIndex: action.returnStepIndex } };
+        case 'scripture-loading': return { ...state, scripture: { ...state.scripture, loading: true, error: null } };
+        case 'scripture-loaded': return { ...state, scripture: { ...state.scripture, loading: false, document: action.document, error: null } };
+        case 'scripture-failed': return { ...state, scripture: { ...state.scripture, loading: false, document: null, error: action.error } };
+        case 'scripture-pane': return { ...state, scripture: { ...state.scripture, pane: action.pane } };
+        case 'scripture-close': return { ...state, route: state.scripture.returnRoute, live: { ...state.live, stepIndex: state.scripture.returnStepIndex }, scripture: { ...state.scripture, loading: false, error: null } };
+        case 'enter-thanksgiving': return { ...state, route: 'thanksgiving', lastAction: 'thanks', thanksgiving: { ...state.thanksgiving, stepIndex: 0, prayerIndex: 0, receivedCommunion: state.settings.faithfulCommunion, silenceSeconds: null, finalSilenceSeconds: null, completed: false } };
+        case 'thanksgiving-step': return { ...state, thanksgiving: { ...state.thanksgiving, stepIndex: clamp(action.index, 0, 20) } };
+        case 'thanksgiving-mode': return { ...state, thanksgiving: { ...state.thanksgiving, mode: action.mode, stepIndex: 0 } };
+        case 'thanksgiving-received': return { ...state, thanksgiving: { ...state.thanksgiving, receivedCommunion: !!action.value } };
+        case 'thanksgiving-prayer': return { ...state, thanksgiving: { ...state.thanksgiving, prayerIndex: Math.max(0, action.index) } };
+        case 'thanksgiving-personal': return { ...state, thanksgiving: { ...state.thanksgiving, personal: action.value } };
+        case 'thanksgiving-fruit': return { ...state, thanksgiving: { ...state.thanksgiving, fruit: action.value } };
+        case 'thanksgiving-silence': return { ...state, thanksgiving: { ...state.thanksgiving, silenceSeconds: action.seconds } };
+        case 'thanksgiving-final-silence': return { ...state, thanksgiving: { ...state.thanksgiving, finalSilenceSeconds: action.seconds } };
+        case 'finish-thanksgiving': return { ...state, route: 'home', thanksgiving: { ...state.thanksgiving, stepIndex: 0, completed: true, silenceSeconds: null, finalSilenceSeconds: null } };
+        case 'leave-thanksgiving': return { ...state, route: 'home' };
+        case 'resume-available': return { ...state, resume: { available: true, savedAt: action.savedAt, date: action.date, stepIndex: action.stepIndex } };
+        case 'resume-clear': return { ...state, resume: { available: false, savedAt: null, date: null, stepIndex: 0 } };
+        case 'hydrate-settings': return mergeSettings(state, action.settings);
+        default: return state;
+    }
+}
+class AppStore {
+    state;
+    listeners = new Set();
+    constructor(initial) { this.state = initial; }
+    getState() { return this.state; }
+    dispatch(action) { this.state = reduceAppState(this.state, action); for (const l of this.listeners) l(this.state); }
+    subscribe(l) { this.listeners.add(l); return () => this.listeners.delete(l); }
+}
+exports.AppStore = AppStore;
+
+},14:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AppController = void 0;
+const home_controller_1 = require(15);
+const live_mass_controller_1 = require(22);
+const scripture_controller_1 = require(39);
+const prepare_controller_1 = require(42);
+const thanksgiving_controller_1 = require(46);
+const persistence_1 = require(48);
+class AppController {
+    home;
+    live;
+    scripture;
+    prepare;
+    thanksgiving;
+    persistence;
+    constructor(root, store, resolver, scriptureService, storage) {
+        this.persistence = new persistence_1.PersistenceController(store, storage);
+        this.home = new home_controller_1.HomeController({ root, store, resolver, persistence: this.persistence, onNavigate(action) { root.dispatchEvent(new CustomEvent('ao:navigate', { bubbles: true, detail: { action } })); } });
+        this.live = new live_mass_controller_1.LiveMassController(root, store, this.persistence);
+        this.scripture = new scripture_controller_1.ScriptureController(root, store, scriptureService);
+        this.prepare = new prepare_controller_1.PrepareController(root, store);
+        this.thanksgiving = new thanksgiving_controller_1.ThanksgivingController(root, store, this.persistence);
+    }
+    start() { return this.home.start(); }
+}
+exports.AppController = AppController;
+
+},15:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HomeController = void 0;
+const home_1 = require(16);
+const liturgical_theme_ui_1 = require(21);
+function iso(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+function shift(dateIso, days) {
+    const date = new Date(`${dateIso}T12:00:00`);
+    date.setDate(date.getDate() + days);
+    return iso(date);
+}
+class HomeController {
+    root;
+    store;
+    resolver;
+    onNavigate;
+    persistence;
+    resolutionToken = 0;
+    constructor(options) {
+        this.root = options.root;
+        this.store = options.store;
+        this.resolver = options.resolver;
+        this.onNavigate = options.onNavigate;
+        this.persistence = options.persistence;
+        this.store.subscribe(state => this.paint(state));
+        this.root.addEventListener('click', event => this.handleClick(event));
+        this.paint(this.store.getState());
+    }
+    async start() {
+        await this.resolve(this.store.getState().selectedDate);
+    }
+    paint(state = this.store.getState()) {
+        if (state.route !== 'home')
+            return;
+        (0, home_1.renderHome)(this.root, state);
+        (0, liturgical_theme_ui_1.applyTheme)(document.documentElement, (globalThis.AO_ACTIVE_MASS_SESSION?.date === state.selectedDate ? globalThis.AO_ACTIVE_MASS_SESSION?.themePlan : null) || state.resolution?.colourPlan || null);
+    }
+    async resolve(date) {
+        const token = ++this.resolutionToken;
+        this.store.dispatch({ type: 'resolve-start' });
+        const resolution = await this.resolver.resolveDay(date);
+        if (token !== this.resolutionToken)
+            return;
+        this.store.dispatch({ type: 'resolve-complete', resolution });
+    }
+    changeDate(date) {
+        this.store.dispatch({ type: 'set-date', date });
+        void this.resolve(date);
+    }
+    async resumeSavedMass() {
+        const record = this.persistence.resumeRecord();
+        if (!record)
+            return;
+        if (record.date !== this.store.getState().selectedDate) {
+            this.store.dispatch({ type: 'set-date', date: record.date });
+            await this.resolve(record.date);
+        }
+        this.store.dispatch({ type: 'set-language', language: (record.language === 'fr' ? 'fr' : 'en') });
+        this.store.dispatch({ type: 'live-form', form: (record.form === 'low' ? 'low' : 'sung') });
+        this.store.dispatch({ type: 'live-follow-mode', mode: (record.followMode === 'missal' ? 'missal' : 'vox') });
+        this.store.dispatch({ type: 'live-text-mode', mode: (record.textMode === 'parallel' ? 'parallel' : 'oriented') });
+        this.store.dispatch({ type: 'enter-live', resumeIndex: record.stepIndex });
+    }
+    handleClick(event) {
+        if (this.store.getState().route !== 'home')
+            return;
+        const target = event.target?.closest('button');
+        if (!target)
+            return;
+        const language = target.dataset.language;
+        if (language === 'en' || language === 'fr') {
+            this.store.dispatch({ type: 'set-language', language });
+            return;
+        }
+        if (target.dataset.date) {
+            this.changeDate(target.dataset.date);
+            return;
+        }
+        if (target.dataset.formulary !== undefined) {
+            const index = Number(target.dataset.formulary);
+            if (Number.isInteger(index) && index >= 0) {
+                this.resolver.formularies.set(this.store.getState().selectedDate, index);
+                void this.resolve(this.store.getState().selectedDate);
+            }
+            return;
+        }
+        if (target.dataset.resumeMass !== undefined) {
+            void this.resumeSavedMass();
+            return;
+        }
+        if (target.dataset.homeSheetClose !== undefined) {
+            this.store.dispatch({ type: 'home-sheet', sheet: null });
+            return;
+        }
+        if (target.dataset.homeOpenSettings !== undefined) {
+            this.store.dispatch({ type: 'home-sheet', sheet: 'settings' });
+            return;
+        }
+        if (target.dataset.settingForm) {
+            this.store.dispatch({ type: 'live-form', form: target.dataset.settingForm });
+            return;
+        }
+        if (target.dataset.settingFollow) {
+            this.store.dispatch({ type: 'live-follow-mode', mode: target.dataset.settingFollow });
+            return;
+        }
+        if (target.dataset.settingText) {
+            this.store.dispatch({ type: 'live-text-mode', mode: target.dataset.settingText });
+            return;
+        }
+        if (target.dataset.settingParticipation) {
+            this.store.dispatch({ type: 'set-participation', mode: target.dataset.settingParticipation });
+            return;
+        }
+        if (target.dataset.settingScale) {
+            this.store.dispatch({ type: 'set-text-scale', value: target.dataset.settingScale });
+            return;
+        }
+        if (target.dataset.settingMotion !== undefined) {
+            this.store.dispatch({ type: 'set-reduced-motion', value: target.dataset.settingMotion === '1' });
+            return;
+        }
+        if (target.dataset.resetPostures !== undefined) {
+            this.store.dispatch({ type: 'reset-local-postures' });
+            return;
+        }
+        const nav = target.dataset.nav;
+        if (nav === 'previous')
+            this.changeDate(shift(this.store.getState().selectedDate, -1));
+        else if (nav === 'next')
+            this.changeDate(shift(this.store.getState().selectedDate, 1));
+        else if (nav === 'today')
+            this.changeDate(iso(new Date()));
+        const action = target.dataset.action;
+        if (action) {
+            this.store.dispatch({ type: 'home-action', action });
+            if (action === 'follow')
+                this.store.dispatch({ type: 'enter-live' });
+            else if (action === 'prepare')
+                this.store.dispatch({ type: 'enter-prepare' });
+            else if (action === 'thanks')
+                this.store.dispatch({ type: 'enter-thanksgiving' });
+            else if (action === 'today-mass')
+                this.store.dispatch({ type: 'home-sheet', sheet: 'mass' });
+            else if (action === 'more')
+                this.store.dispatch({ type: 'home-sheet', sheet: 'more' });

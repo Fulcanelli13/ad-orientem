@@ -1,0 +1,4122 @@
+{
+  "schema": "ao-reader-text-corpus-v1",
+  "form": "LOW",
+  "source": {
+    "donor": "Ad_Orientem_ULTIMATE_MASS_v2.10_LOW_MASS_PRIEST_GESTURE_RESPONSE_AUDIT.html",
+    "scriptId": "mass-data",
+    "rawSha256": "2ed36ea25b00d515a9f4a6edd1e02da274ebb92c082ecaea4dfc73feade03044",
+    "canonicalMacros": 30,
+    "canonicalBlocks": 96,
+    "canonicalPriestEvents": 275,
+    "extractionPolicy": "Ordinary text preserved verbatim from verified donor; Proper-controlled text removed and must be supplied by ResolvedMass.proper."
+  },
+  "macros": [
+    {
+      "Macro_ID": "AO.SM.M01",
+      "Sequence": 1,
+      "Moment": "Introit & Preparatory Prayers",
+      "Primary_Clock": "PRIEST+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M02",
+      "Sequence": 2,
+      "Moment": "Kyrie",
+      "Primary_Clock": "PRIEST+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M03",
+      "Sequence": 3,
+      "Moment": "Gloria",
+      "Primary_Clock": "PRIEST_PUBLIC",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M04",
+      "Sequence": 4,
+      "Moment": "Collect",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M05",
+      "Sequence": 5,
+      "Moment": "Epistle / Lesson",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M06",
+      "Sequence": 6,
+      "Moment": "Gradual · Alleluia / Tract / Sequence",
+      "Primary_Clock": "PRIEST_PUBLIC",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M07",
+      "Sequence": 7,
+      "Moment": "Holy Gospel",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER+VISIBLE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M08",
+      "Sequence": 8,
+      "Moment": "Sermon / Homily",
+      "Primary_Clock": "PRIEST_PUBLIC",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M09",
+      "Sequence": 9,
+      "Moment": "Credo",
+      "Primary_Clock": "PRIEST_PUBLIC+VISIBLE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M10",
+      "Sequence": 10,
+      "Moment": "Offertory",
+      "Primary_Clock": "PRIEST_PUBLIC→PRIEST_PRIVATE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M11",
+      "Sequence": 11,
+      "Moment": "Orate fratres & Secret",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER→PRIEST_PRIVATE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M12",
+      "Sequence": 12,
+      "Moment": "Preface",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M13",
+      "Sequence": 13,
+      "Moment": "Sanctus · Benedictus",
+      "Primary_Clock": "PRIEST_PUBLIC+BELL",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M14",
+      "Sequence": 14,
+      "Moment": "Canon before the Consecration",
+      "Primary_Clock": "PRIEST_PRIVATE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M15",
+      "Sequence": 15,
+      "Moment": "Consecration of the Sacred Host",
+      "Primary_Clock": "PRIEST_PRIVATE→CEREMONIAL",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M16",
+      "Sequence": 16,
+      "Moment": "Consecration of the Chalice",
+      "Primary_Clock": "PRIEST_PRIVATE→CEREMONIAL",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M17",
+      "Sequence": 17,
+      "Moment": "Canon after the Consecration",
+      "Primary_Clock": "PRIEST_PRIVATE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M18",
+      "Sequence": 18,
+      "Moment": "Canon Conclusion · Minor Elevation",
+      "Primary_Clock": "PRIEST_PRIVATE→PRIEST_PUBLIC",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M19",
+      "Sequence": 19,
+      "Moment": "Pater noster",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M20",
+      "Sequence": 20,
+      "Moment": "Libera nos · Fraction · Pax Domini",
+      "Primary_Clock": "PRIEST_PRIVATE→PRIEST_PUBLIC+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M21",
+      "Sequence": 21,
+      "Moment": "Agnus Dei",
+      "Primary_Clock": "PRIEST_PUBLIC",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M22",
+      "Sequence": 22,
+      "Moment": "Prayers before Communion",
+      "Primary_Clock": "PRIEST_PRIVATE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M23",
+      "Sequence": 23,
+      "Moment": "Communion of the Priest",
+      "Primary_Clock": "PRIEST_MIXED→CEREMONIAL/VISIBLE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M24",
+      "Sequence": 24,
+      "Moment": "Ecce Agnus Dei & Faithful Preparation",
+      "Primary_Clock": "PRIEST_PUBLIC+VISIBLE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M25",
+      "Sequence": 25,
+      "Moment": "Communion of the Faithful",
+      "Primary_Clock": "PERSONAL_ACTION+CEREMONIAL",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M26",
+      "Sequence": 26,
+      "Moment": "Ablutions & Communion Antiphon",
+      "Primary_Clock": "PRIEST_PRIVATE→PRIEST_PUBLIC",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M27",
+      "Sequence": 27,
+      "Moment": "Postcommunion",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M28",
+      "Sequence": 28,
+      "Moment": "Dismissal",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M29",
+      "Sequence": 29,
+      "Moment": "Placeat & Final Blessing",
+      "Primary_Clock": "PRIEST_PRIVATE→PRIEST_PUBLIC+VISIBLE",
+      "Mass_Form": "LOW_1962"
+    },
+    {
+      "Macro_ID": "AO.SM.M30",
+      "Sequence": 30,
+      "Moment": "Last Gospel",
+      "Primary_Clock": "PRIEST_PUBLIC+SERVER+VISIBLE",
+      "Mass_Form": "LOW_1962"
+    }
+  ],
+  "properBlocks": [
+    {
+      "blockId": "AO.SM.B014",
+      "properSlot": "INTROIT"
+    },
+    {
+      "blockId": "AO.SM.B019",
+      "properSlot": "COLLECT_SET"
+    },
+    {
+      "blockId": "AO.SM.B020",
+      "properSlot": "EPISTLE_OR_LESSON"
+    },
+    {
+      "blockId": "AO.SM.B021",
+      "properSlot": "GRADUAL"
+    },
+    {
+      "blockId": "AO.SM.B022",
+      "properSlot": "ALLELUIA_TRACT_SEQUENCE"
+    },
+    {
+      "blockId": "AO.SM.B026",
+      "properSlot": "GOSPEL"
+    },
+    {
+      "blockId": "AO.SM.B030",
+      "properSlot": "OFFERTORY"
+    },
+    {
+      "blockId": "AO.SM.B040",
+      "properSlot": "SECRET_SET"
+    },
+    {
+      "blockId": "AO.SM.B045",
+      "properSlot": "PREFACE"
+    },
+    {
+      "blockId": "AO.SM.B085",
+      "properSlot": "COMMUNION"
+    },
+    {
+      "blockId": "AO.SM.B088",
+      "properSlot": "POSTCOMMUNION_SET"
+    }
+  ],
+  "blocks": [
+    {
+      "Block_ID": "AO.SM.B001",
+      "Display_Order": 1,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "In nomine Patris",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0001",
+          "sort": 1,
+          "latin": "In nómine Patris, ✠ et Fílii, et Spíritus Sancti. Amen.",
+          "english": "In the Name of the Father, ✠ and of the Son, and of the Holy Ghost. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B002",
+      "Display_Order": 2,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Introibo ad altare Dei",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0002",
+          "sort": 2,
+          "latin": "℣. Introíbo ad altáre Dei.",
+          "english": "℣. I will go in unto the altar of God.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0003",
+          "sort": 3,
+          "latin": "℟. Ad Deum, qui lætíficat iuventútem meam.",
+          "english": "℟. Unto God, Who giveth joy to my youth.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B003",
+      "Display_Order": 3,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Judica me, Deus (Psalm 42)",
+      "Display_Style": "LITURGICAL_LINES",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0004",
+          "sort": 4,
+          "latin": "S. Iúdica me, Deus, et discérne causam meam de gente non sancta: ab hómine iníquo et dolóso érue me.",
+          "english": "Judge me, O God, and distinguish my cause from the nation that is not holy: deliver me from the unjust and deceitful man.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0005",
+          "sort": 5,
+          "latin": "M. Quia tu es, Deus, fortitudo mea: quare me reppulísti, et quare tristis incédo, dum afflígit me inimícus?",
+          "english": "For Thou, O God, art my strength: why hast Thou cast me off? and why do I go sorrowful whilst the enemy afflicteth me?",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0006",
+          "sort": 6,
+          "latin": "S. Emítte lucem tuam et veritátem tuam: ipsa me deduxérunt, et adduxérunt in montem sanctum tuum et in tabernácula tua.",
+          "english": "Send forth Thy light and Thy truth: they have led me and brought me unto Thy holy hill, and into Thy tabernacles.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0007",
+          "sort": 7,
+          "latin": "M. Et introíbo ad altáre Dei: ad Deum, qui lætíficat iuventútem meam.",
+          "english": "And I will go in unto the Altar of God: unto God, Who giveth joy to my youth.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0008",
+          "sort": 8,
+          "latin": "S. Confitébor tibi in cíthara, Deus, Deus meus: quare tristis es, ánima mea, et quare contúrbas me?",
+          "english": "I will praise Thee upon the harp, O God, my God: why art thou sad, O my soul? and why dost thou disquiet me?",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0009",
+          "sort": 9,
+          "latin": "M. Spera in Deo, quóniam adhuc confitébor illi: salutáre vultus mei, et Deus meus.",
+          "english": "Hope thou in God, for I will yet praise Him: Who is the salvation of my countenance, and my God.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0010",
+          "sort": 10,
+          "latin": "S. Glória Patri, et Fílio, et Spirítui Sancto.",
+          "english": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0011",
+          "sort": 11,
+          "latin": "M. Sicut erat in princípio, et nunc, et semper: et in saecula sæculórum. Amen.",
+          "english": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0012",
+          "sort": 12,
+          "latin": "℣. Introíbo ad altáre Dei.",
+          "english": "℣. I will go in unto the altar of God.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0013",
+          "sort": 13,
+          "latin": "℟. Ad Deum, qui lætíficat iuventútem meam.",
+          "english": "℟. Unto God, Who giveth joy to my youth.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B004",
+      "Display_Order": 4,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Adjutorium nostrum",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0014",
+          "sort": 14,
+          "latin": "℣. Adiutórium nostrum ✠ in nómine Dómini.",
+          "english": "℣. Our help ✠ is in the Name of the Lord.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0015",
+          "sort": 15,
+          "latin": "℟. Qui fecit coelum et terram.",
+          "english": "℟. Who hath made heaven and earth.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B005",
+      "Display_Order": 5,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Confiteor — Celebrant",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0016",
+          "sort": 16,
+          "latin": "S. Confíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Ioánni Baptístæ, sanctis Apóstolis Petro et Paulo, ómnibus Sanctis, et vobis, fratres: quia peccávi nimis cogitatióne, verbo et opere:",
+          "english": "S. I confess to almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, to all the Saints, and to you, brethren, that I have sinned exceedingly in thought, word and deed:",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0017",
+          "sort": 17,
+          "latin": "S. mea culpa, mea culpa, mea máxima culpa.",
+          "english": "S. through my fault, through my fault, through my most grievous fault.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0018",
+          "sort": 18,
+          "latin": "S. Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et vos, fratres, oráre pro me ad Dóminum Deum nostrum.",
+          "english": "S. Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and you, brethren, to pray to the Lord our God for me.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B006",
+      "Display_Order": 6,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Misereatur tui — response to celebrant",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0019",
+          "sort": 19,
+          "latin": "M. Misereátur tui omnípotens Deus, et, dimíssis peccátis tuis, perdúcat te ad vitam ætérnam.",
+          "english": "M. May Almighty God have mercy upon you, forgive you your sins, and bring you to life everlasting.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0020",
+          "sort": 20,
+          "latin": "S. Amen.",
+          "english": "S. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B007",
+      "Display_Order": 7,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Confiteor — Server / Minister",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0021",
+          "sort": 21,
+          "latin": "M. Confíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Ioánni Baptístæ, sanctis Apóstolis Petro et Paulo, ómnibus Sanctis, et tibi, pater: quia peccávi nimis cogitatióne, verbo et opere:",
+          "english": "M. I confess to Almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, to all the Saints, and to you Father, that I have sinned exceedingly, in thought, word and deed:",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0022",
+          "sort": 22,
+          "latin": "M. mea culpa, mea culpa, mea máxima culpa.",
+          "english": "M. through my fault, through my fault, through my most grievous fault.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0023",
+          "sort": 23,
+          "latin": "M. Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, oráre pro me ad Dóminum, Deum nostrum.",
+          "english": "M. Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and thee Father, to pray to the Lord our God for me.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B008",
+      "Display_Order": 8,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Misereatur vestri",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0024",
+          "sort": 24,
+          "latin": "S. Misereátur vestri omnípotens Deus, et, dimíssis peccátis vestris, perdúcat vos ad vitam ætérnam.",
+          "english": "S. May Almighty God have mercy upon you, forgive you your sins and bring you to life everlasting.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0025",
+          "sort": 25,
+          "latin": "M. Amen.",
+          "english": "M. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B009",
+      "Display_Order": 9,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Indulgentiam",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0026",
+          "sort": 26,
+          "latin": "S. Indulgéntiam, ✠ absolutionem et remissiónem peccatórum nostrórum tríbuat nobis omnípotens et miséricors Dóminus.",
+          "english": "S. May the Almighty and merciful God grant us pardon, ✠ absolution, and remission of our sins.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0027",
+          "sort": 27,
+          "latin": "M. Amen.",
+          "english": "M. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B010",
+      "Display_Order": 10,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Prayers at the Foot of the Altar",
+      "Title": "Versicles before the Ascent",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0028",
+          "sort": 28,
+          "latin": "℣. Deus, tu convérsus vivificábis nos.",
+          "english": "℣. Thou wilt turn, O God, and bring us to life.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0029",
+          "sort": 29,
+          "latin": "℟. Et plebs tua lætábitur in te.",
+          "english": "℟. And Thy people shall rejoice in Thee.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0030",
+          "sort": 30,
+          "latin": "℣. Osténde nobis, Dómine, misericórdiam tuam.",
+          "english": "℣. Show us, O Lord, Thy mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0031",
+          "sort": 31,
+          "latin": "℟. Et salutáre tuum da nobis.",
+          "english": "℟. And grant us Thy salvation.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0032",
+          "sort": 32,
+          "latin": "℣. Dómine, exáudi oratiónem meam.",
+          "english": "℣. O Lord, hear my prayer.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0033",
+          "sort": 33,
+          "latin": "℟. Et clamor meus ad te véniat.",
+          "english": "℟. And let my cry come unto Thee.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0034",
+          "sort": 34,
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0035",
+          "sort": 35,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0036",
+          "sort": 36,
+          "latin": "℣. Orémus.",
+          "english": "℣. Let us pray.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B011",
+      "Display_Order": 11,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Ascent and Altar Preparation",
+      "Title": "Aufer a nobis",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0037",
+          "sort": 37,
+          "latin": "Aufer a nobis, quaesumus, Dómine, iniquitátes nostras: ut ad Sancta sanctórum puris mereámur méntibus introíre. Per Christum, Dóminum nostrum. Amen.",
+          "english": "Take away from us our iniquities, we entreat Thee, O Lord, that with pure minds we may worthily enter into the Holy of Holies. Through Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B012",
+      "Display_Order": 12,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Ascent and Altar Preparation",
+      "Title": "Oramus te, Domine",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0038",
+          "sort": 38,
+          "latin": "Orámus te, Dómine, per mérita Sanctórum tuórum,",
+          "english": "We beseech thee, O Lord, by the merits of thy Saints",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0039",
+          "sort": 39,
+          "latin": "quorum relíquiæ hic sunt, et ómnium Sanctórum: ut indulgére dignéris ómnia peccáta mea. Amen.",
+          "english": "whose relics are here, and of all the Saints: that thou wouldst vouchsafe to forgive me all my sins. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B013",
+      "Display_Order": 13,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Preparatory Rites",
+      "Section": "Ascent and Altar Preparation",
+      "Title": "Ab illo benedicaris · Incensation",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "CONDITIONAL_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0040",
+          "sort": 40,
+          "latin": "Ab illo benedicáris, ✠ in cuius honóre cremáberis. Amen.",
+          "english": "May you be blessed ✠ by Him in whose honour you shall be burned. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0041",
+          "sort": 41,
+          "latin": "[INCENSES THE CROSS AND ALTAR]",
+          "english": "[Incenses the Cross and altar]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B014",
+      "Display_Order": 14,
+      "Macro_ID": "AO.SM.M01",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Entrance and Opening Rites",
+      "Section": "Introit, Kyrie, Gloria and Collect",
+      "Title": "INTROIT",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "INTROIT",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0042",
+          "sort": 42,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": "INTROIT"
+        },
+        {
+          "cue_id": "AO.SM.C0043",
+          "sort": 43,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": "INTROIT"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B015",
+      "Display_Order": 15,
+      "Macro_ID": "AO.SM.M02",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Entrance and Opening Rites",
+      "Section": "Introit, Kyrie, Gloria and Collect",
+      "Title": "Kyrie eleison",
+      "Display_Style": "LITURGICAL_LINES",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0044",
+          "sort": 44,
+          "latin": "S. Kýrie, eléison.",
+          "english": "S. Lord, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0045",
+          "sort": 45,
+          "latin": "M. Kýrie, eléison.",
+          "english": "M. Lord, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0046",
+          "sort": 46,
+          "latin": "S. Kýrie, eléison.",
+          "english": "S. Lord, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0047",
+          "sort": 47,
+          "latin": "M. Christe, eléison.",
+          "english": "M. Christ, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0048",
+          "sort": 48,
+          "latin": "S. Christe, eléison.",
+          "english": "S. Christ, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0049",
+          "sort": 49,
+          "latin": "M. Christe, eléison.",
+          "english": "M. Christ, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0050",
+          "sort": 50,
+          "latin": "S. Kýrie, eléison.",
+          "english": "S. Lord, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0051",
+          "sort": 51,
+          "latin": "M. Kýrie, eléison.",
+          "english": "M. Lord, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0052",
+          "sort": 52,
+          "latin": "S. Kýrie, eléison.",
+          "english": "S. Lord, have mercy.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B016",
+      "Display_Order": 16,
+      "Macro_ID": "AO.SM.M03",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Entrance and Opening Rites",
+      "Section": "Introit, Kyrie, Gloria and Collect",
+      "Title": "Gloria in excelsis Deo",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0053",
+          "sort": 53,
+          "latin": "Glória in excélsis",
+          "english": "Glory to God in the highest",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0054",
+          "sort": 54,
+          "latin": "Deo.",
+          "english": "to God.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0055",
+          "sort": 55,
+          "latin": "Et in terra pax homínibus bonæ voluntátis. Laudámus te. Benedícimus te.",
+          "english": "And on earth peace to men of good will. We praise thee. We bless thee.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0056",
+          "sort": 56,
+          "latin": "Adorámus te.",
+          "english": "We adore thee.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0057",
+          "sort": 57,
+          "latin": "Glorificámus te.",
+          "english": "We glorify thee.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0058",
+          "sort": 58,
+          "latin": "Grátias ágimus tibi",
+          "english": "We give thee thanks",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0059",
+          "sort": 59,
+          "latin": "propter magnam glóriam tuam. Dómine Deus, Rex cæléstis, Deus Pater omnípotens.",
+          "english": "for thy great glory. Lord God, heavenly King, God the Father almighty.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0060",
+          "sort": 60,
+          "latin": "Dómine Fili unigénite,",
+          "english": "O Lord, the only-begotten Son,",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0061",
+          "sort": 61,
+          "latin": "Iesu Christe.",
+          "english": "Jesus Christ.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0062",
+          "sort": 62,
+          "latin": "Dómine Deus, Agnus Dei, Fílius Patris.",
+          "english": "Lord God, Lamb of God, Son of the Father.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0063",
+          "sort": 63,
+          "latin": "Qui tollis peccáta mundi, miserére nobis. Qui tollis peccáta mundi,",
+          "english": "Thou who takest away the sins of the world, have mercy on us. Thou who takest away the sins of the world,",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0064",
+          "sort": 64,
+          "latin": "súscipe deprecatiónem nostram.",
+          "english": "receive our prayer.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0065",
+          "sort": 65,
+          "latin": "Qui sedes ad déxteram Patris, miserére nobis.",
+          "english": "Thou who sittest at the right hand of the Father, have mercy on us.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0066",
+          "sort": 66,
+          "latin": "Quóniam tu solus Sanctus. Tu solus Dóminus. Tu solus Altíssimus,",
+          "english": "For thou alone art holy. Thou alone art Lord. Thou alone art most high,",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0067",
+          "sort": 67,
+          "latin": "Iesu Christe.",
+          "english": "Jesus Christ.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0068",
+          "sort": 68,
+          "latin": "Cum Sancto Spíritu ✠",
+          "english": "With the Holy Ghost",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0069",
+          "sort": 69,
+          "latin": "in glória Dei Patris. Amen.",
+          "english": "in the glory of God the Father. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B017",
+      "Display_Order": 17,
+      "Macro_ID": "AO.SM.M04",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Entrance and Opening Rites",
+      "Section": "Introit, Kyrie, Gloria and Collect",
+      "Title": "Dominus vobiscum — before Collect",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0070",
+          "sort": 70,
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0071",
+          "sort": 71,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B018",
+      "Display_Order": 18,
+      "Macro_ID": "AO.SM.M04",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Entrance and Opening Rites",
+      "Section": "Introit, Kyrie, Gloria and Collect",
+      "Title": "Oremus — before Collect",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0072",
+          "sort": 72,
+          "latin": "Orémus.",
+          "english": "Let us pray.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B019",
+      "Display_Order": 19,
+      "Macro_ID": "AO.SM.M04",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Entrance and Opening Rites",
+      "Section": "Introit, Kyrie, Gloria and Collect",
+      "Title": "COLLECT_SET",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "COLLECT_SET",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0073",
+          "sort": 73,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": "COLLECT_SET"
+        },
+        {
+          "cue_id": "AO.SM.C0074",
+          "sort": 74,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": "COLLECT_SET"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B020",
+      "Display_Order": 20,
+      "Macro_ID": "AO.SM.M05",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Lessons and Interlection Chants",
+      "Section": "Epistle and Texts before the Gospel",
+      "Title": "EPISTLE_OR_LESSON",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "EPISTLE_OR_LESSON",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0075",
+          "sort": 75,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": "EPISTLE_OR_LESSON"
+        },
+        {
+          "cue_id": "AO.SM.C0076",
+          "sort": 76,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": "EPISTLE_OR_LESSON"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B021",
+      "Display_Order": 21,
+      "Macro_ID": "AO.SM.M06",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Lessons and Interlection Chants",
+      "Section": "Epistle and Texts before the Gospel",
+      "Title": "GRADUAL",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "GRADUAL",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0077",
+          "sort": 77,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": "GRADUAL"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B022",
+      "Display_Order": 22,
+      "Macro_ID": "AO.SM.M06",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Lessons and Interlection Chants",
+      "Section": "Epistle and Texts before the Gospel",
+      "Title": "ALLELUIA_TRACT_SEQUENCE",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "ALLELUIA_TRACT_SEQUENCE",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0078",
+          "sort": 78,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": "ALLELUIA_TRACT_SEQUENCE"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B023",
+      "Display_Order": 23,
+      "Macro_ID": "AO.SM.M07",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Gospel",
+      "Section": "Gospel Preparation and Proclamation",
+      "Title": "Munda cor meum",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0079",
+          "sort": 79,
+          "latin": "Munda cor meum ac lábia mea, omnípotens Deus, qui lábia Isaíæ Prophétæ cálculo mundásti igníto:\nita me tua grata miseratióne dignáre mundáre, ut sanctum Evangélium tuum digne váleam nuntiáre.\nPer Christum Dóminum nostrum. Amen.",
+          "english": "Cleanse my heart and my lips, O almighty God, Who didst cleanse the lips of the prophet Isaias with a burning coal:\nthrough Thy gracious mercy so purify me that I may worthily proclaim Thy holy Gospel. Through Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0080",
+          "sort": 80,
+          "latin": "Iube, Dómine, benedícere. Dóminus sit in corde meo et in lábiis meis:\nut digne et competénter annúntiem Evangélium suum. Amen.",
+          "english": "Grant, O Lord, Thy blessing. May the Lord be in my heart and on my lips,\nthat I may worthily and fittingly proclaim His Gospel. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0081",
+          "sort": 81,
+          "latin": "[GOES TO THE GOSPEL-SIDE MISSAL]",
+          "english": "[Goes to the Gospel-side Missal]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B024",
+      "Display_Order": 24,
+      "Macro_ID": "AO.SM.M07",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Gospel",
+      "Section": "Gospel Preparation and Proclamation",
+      "Title": "Dominus vobiscum — Gospel",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0082",
+          "sort": 82,
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0083",
+          "sort": 83,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B025",
+      "Display_Order": 25,
+      "Macro_ID": "AO.SM.M07",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Gospel",
+      "Section": "Gospel Preparation and Proclamation",
+      "Title": "Sequentia sancti Evangelii",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0084",
+          "sort": 84,
+          "latin": "Sequéntia ✠ sancti Evangélii secúndum Matthǽum",
+          "english": "Continuation ✠ of the Holy Gospel according to Matthew.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0085",
+          "sort": 85,
+          "latin": "℟. Glória tibi, Dómine.",
+          "english": "℟. Glory be to Thee, O Lord.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B026",
+      "Display_Order": 26,
+      "Macro_ID": "AO.SM.M07",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Gospel",
+      "Section": "Gospel Preparation and Proclamation",
+      "Title": "GOSPEL",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "GOSPEL",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0086",
+          "sort": 86,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": "GOSPEL"
+        },
+        {
+          "cue_id": "AO.SM.C0087",
+          "sort": 87,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": "GOSPEL"
+        },
+        {
+          "cue_id": "AO.SM.C0088",
+          "sort": 88,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": "GOSPEL"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B096",
+      "Display_Order": 26.5,
+      "Macro_ID": "AO.SM.M08",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Sermon",
+      "Section": "Optional Sermon",
+      "Title": "Sermon / Homily",
+      "Display_Style": "NON_LITURGICAL_PAUSE",
+      "Proper_Slot": null,
+      "Branch_Status": "BRANCH",
+      "units": [
+        {
+          "cue_id": "AO.SM.B096.SYN",
+          "sort": 88.5,
+          "latin": null,
+          "english": null,
+          "type": "pause",
+          "clock": "GUIDE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B027",
+      "Display_Order": 27,
+      "Macro_ID": "AO.SM.M09",
+      "Part": "Mass of the Catechumens",
+      "Subpart": "Creed",
+      "Section": "Credo",
+      "Title": "Credo in unum Deum",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0089",
+          "sort": 89,
+          "latin": "Credo",
+          "english": "I believe",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0090",
+          "sort": 90,
+          "latin": "in unum Deum.",
+          "english": "in one God.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0091",
+          "sort": 91,
+          "latin": "Patrem omnipoténtem, factórem cæli et terræ, visibílium ómnium et invisibílium.",
+          "english": "The Father almighty, maker of heaven and earth, and of all things visible and invisible.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0092",
+          "sort": 92,
+          "latin": "Et in unum Dóminum",
+          "english": "And in one Lord",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0093",
+          "sort": 93,
+          "latin": "Iesum Christum,",
+          "english": "Jesus Christ,",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0094",
+          "sort": 94,
+          "latin": "Fílium Dei unigénitum. Et ex Patre natum ante ómnia sæcula. Deum de Deo, lumen de lúmine, Deum verum de Deo vero. Génitum, non factum, consubstantiálem Patri: per quem ómnia facta sunt.",
+          "english": "the only-begotten Son of God; born of the Father before all ages. God of God, light of light, true God of true God. Begotten, not made, consubstantial with the Father: by whom all things were made.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0095",
+          "sort": 95,
+          "latin": "Qui propter nos hómines et propter nostram salútem descéndit de cælis.",
+          "english": "Who for us men, and for our salvation, came down from heaven.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0096",
+          "sort": 96,
+          "latin": "Et incarnátus est de Spíritu Sancto ex María Vírgine: et homo factus est.",
+          "english": "And was incarnate by the Holy Ghost of the Virgin Mary: and was made man.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0097",
+          "sort": 97,
+          "latin": "Crucifíxus étiam pro nobis: sub Póntio Piláto passus, et sepúltus est. Et resurréxit tértia die, secúndum Scriptúras. Et ascéndit in cælum: sedet ad déxteram Patris.",
+          "english": "He was crucified also for us, suffered under Pontius Pilate, and was buried. And on the third day He rose again according to the Scriptures. And He ascended into heaven, and sitteth at the right hand of the Father.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0098",
+          "sort": 98,
+          "latin": "Et íterum ventúrus est cum glória iudicáre vivos et mórtuos: cuius regni non erit finis.",
+          "english": "And He shall come again with glory to judge the living and the dead: of Whose kingdom there shall be no end.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0099",
+          "sort": 99,
+          "latin": "Et in Spíritum Sanctum, Dóminum et vivificántem: qui ex Patre Filióque procédit.",
+          "english": "And in the Holy Ghost, the Lord and Giver of Life: Who proceedeth from the Father and the Son.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0100",
+          "sort": 100,
+          "latin": "Qui cum Patre et Fílio",
+          "english": "Who together with the Father and the Son",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0101",
+          "sort": 101,
+          "latin": "simul adorátur",
+          "english": "is together adored",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0102",
+          "sort": 102,
+          "latin": "et conglorificátur: qui locútus est per Prophétas.",
+          "english": "and glorified: who spoke by the Prophets.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0103",
+          "sort": 103,
+          "latin": "Et unam sanctam cathólicam et apostólicam Ecclésiam. Confíteor unum baptísma in remissiónem peccatórum. Et exspécto resurrectiónem mortuórum.",
+          "english": "And in One, Holy, Catholic and Apostolic Church. I confess one Baptism for the remission of sins. And I look for the resurrection of the dead.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0104",
+          "sort": 104,
+          "latin": "Et vitam ✠",
+          "english": "And the life",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0105",
+          "sort": 105,
+          "latin": "ventúri sæculi. Amen.",
+          "english": "of the world to come. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B028",
+      "Display_Order": 28,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Offertory Proper",
+      "Title": "Dominus vobiscum — Offertory",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0106",
+          "sort": 106,
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0107",
+          "sort": 107,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B029",
+      "Display_Order": 29,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Offertory Proper",
+      "Title": "Oremus — Offertory",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0108",
+          "sort": 108,
+          "latin": "Orémus.",
+          "english": "Let us pray.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B030",
+      "Display_Order": 30,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Offertory Proper",
+      "Title": "OFFERTORY",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "OFFERTORY",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0109",
+          "sort": 109,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": "OFFERTORY"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B031",
+      "Display_Order": 31,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Preparation of the Oblations",
+      "Title": "Suscipe, sancte Pater",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0110",
+          "sort": 110,
+          "latin": "Suscipe, sancte Pater, omnipotens ætérne Deus, hanc immaculátam hóstiam, quam ego indígnus fámulus tuus óffero tibi Deo meo vivo et vero, pro innumerabílibus peccátis, et offensiónibus, et neglegéntiis meis, et pro ómnibus circumstántibus, sed et pro ómnibus fidélibus christiánis vivis atque defúnctis: ut mihi, et illis profíciat ad salútem in vitam ætérnam. Amen.",
+          "english": "Accept, O Holy father, Almighty and Eternal God, this spotless host, which I, Your unworthy servant, offer to You, my living and true God, to atone for my numberless sins, offences, and negligences; on behalf of all here present and likewise for all faithful Christians living and dead, that it may profit me and them as a means of salvation to life everlasting. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0111",
+          "sort": 111,
+          "latin": "[MAKES THE CROSS WITH THE PATEN — PLACES THE HOST — SETS THE PATEN ASIDE]",
+          "english": "[Makes the cross with the Paten — places the Host — sets the Paten aside]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B032",
+      "Display_Order": 32,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Preparation of the Oblations",
+      "Title": "Deus, qui humanae substantiae",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0112",
+          "sort": 112,
+          "latin": "Deus, qui humánæ substántiæ dignitátem mirabíliter condidísti, et mirabílius reformásti:",
+          "english": "O God, who wonderfully created the dignity of human nature and still more wonderfully restored it:",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0113",
+          "sort": 113,
+          "latin": "da nobis per huius aquæ et vini mystérium, eius divinitátis esse consórtes, qui humanitátis nostræ fíeri dignátus est párticeps, Iesus Christus, Fílius tuus, Dóminus noster: Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus: per ómnia saecula sæculórum. Amen.",
+          "english": "grant us by the mystery of this water and wine to be made partakers of his divinity, who vouchsafed to become partaker of our humanity, Jesus Christ thy Son our Lord: who liveth and reigneth with thee in the unity of the Holy Ghost, God, world without end. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B033",
+      "Display_Order": 33,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Preparation of the Oblations",
+      "Title": "Offerimus tibi, Domine",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0114",
+          "sort": 114,
+          "latin": "Offérimus tibi, Dómine, cálicem salutáris, tuam deprecántes cleméntiam: ut in conspéctu divínæ maiestátis tuæ, pro nostra et totíus mundi salute, cum odóre suavitátis ascéndat. Amen.",
+          "english": "We offer unto Thee, O Lord, the chalice of salvation, entreating Thy mercy that our offering may ascend with a sweet fragrance in the sight of Thy divine Majesty, for our own salvation, and for that of the whole world. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0115",
+          "sort": 115,
+          "latin": "[MAKES THE CROSS WITH THE CHALICE — PLACES AND COVERS IT]",
+          "english": "[Makes the cross with the Chalice — places and covers it]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B034",
+      "Display_Order": 34,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Preparation of the Oblations",
+      "Title": "In spiritu humilitatis",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0116",
+          "sort": 116,
+          "latin": "In spíritu humilitátis et in ánimo contríto suscipiámur a te, Dómine: et sic fiat sacrifícium nostrum in conspéctu tuo hódie, ut pláceat tibi, Dómine Deus.",
+          "english": "Humbled in spirit and contrite of heart, may we find favor with Thee, O Lord: and may our sacrifice be so offered this day in Thy sight as to be pleasing to Thee, O Lord God.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B035",
+      "Display_Order": 35,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Preparation of the Oblations",
+      "Title": "Veni, sanctificator",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0117",
+          "sort": 117,
+          "latin": "[STANDS ERECT — RAISES EYES AND HANDS — JOINS HANDS]",
+          "english": "[Stands erect — raises eyes and hands — joins hands]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0118",
+          "sort": 118,
+          "latin": "Veni, sanctificátor omnípotens ætérne Deus:",
+          "english": "Come, O Sanctifier, almighty eternal God:",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0119",
+          "sort": 119,
+          "latin": "et bene ✠ dic hoc sacrifícium, tuo sancto nómini præparátum.",
+          "english": "and bless this sacrifice prepared for thy holy name.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B036",
+      "Display_Order": 36,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Preparation of the Oblations",
+      "Title": "Per intercessionem beati Michaelis · Incensation",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "CONDITIONAL_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0120",
+          "sort": 120,
+          "latin": "Per intercessiónem beáti Michaélis Archángeli, stantis a dextris altáris incénsi, et ómnium electórum suórum, incénsum istud dignétur Dóminus bene ✠ dícere, et in odórem suavitátis accípere. Per Christum, Dóminum nostrum. Amen.",
+          "english": "Through the intercession of blessed Michael the Archangel, standing at the right hand of the altar of incense, and of all His elect, may the Lord vouchsafe to bless ✠ this incense and to receive it in the odor of sweetness. Through Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0121",
+          "sort": 121,
+          "latin": "Incénsum istud a te benedíctum ascéndat ad te, Dómine: et descéndat super nos misericórdia tua.",
+          "english": "May this incense blessed by You, arise before You, O Lord, and may Your mercy come down upon us.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0122",
+          "sort": 122,
+          "latin": "Ps 140, 2–4\nDirigátur, Dómine, orátio mea, sicut incénsum, in conspéctu tuo: elevátio mánuum meárum sacrifícium vespertínum.\nPone, Dómine, custódiam ori meo, et óstium circumstántiæ lábiis meis:\nut non declínet cor meum in verba malítiæ, ad excusándas excusatiónes in peccátis.",
+          "english": "Ps 140, 2–4\nLet my prayer, O Lord, like incense before You; the lifting up of my hands, like the evening sacrifice.\nO Lord, set a watch before my mouth, a guard at the door of my lips.\nLet not my heart incline to the evil of engaging in deeds of wickedness.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0123",
+          "sort": 123,
+          "latin": "Accéndat in nobis Dóminus ignem sui amóris, et flammam ætérnæ caritátis. Amen.",
+          "english": "May the Lord enkindle in us the fire of His love and the flame of everlasting charity. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0124",
+          "sort": 124,
+          "latin": "[CELEBRANT, CLERGY AND PEOPLE ARE INCENSED AS THE SUNG-MASS FORM REQUIRES]",
+          "english": "[Celebrant, clergy and people are incensed as required]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B037",
+      "Display_Order": 37,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Preparation of the Oblations",
+      "Title": "Lavabo inter innocentes (Psalm 25)",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0125",
+          "sort": 125,
+          "latin": "Ps 25, 6–12\nLavábo inter innocéntes manus meas: et circúmdabo altáre tuum, Dómine:\nUt áudiam vocem laudis, et enárrem univérsa mirabília tua.\nDómine, diléxi decórem domus tuæ et locum habitatiónis glóriæ tuæ.\nNe perdas cum ímpiis, Deus, ánimam meam, et cum viris sánguinum vitam meam:\nIn quorum mánibus iniquitátes sunt: déxtera eórum repléta est munéribus.\nEgo autem in innocéntia mea ingréssus sum: rédime me et miserére mei.\nPes meus stetit in dirécto: in ecclésiis benedícam te, Dómine.",
+          "english": "Ps 25, 6–12\nI will wash my hands among the innocent, and I will encompass Thine Altar, O Lord.\nThat I may hear the voice of praise, and tell of all Thy wondrous works.\nI have loved, O Lord, the beauty of Thy house, and the place where Thy glory dwelleth.\nTake not away my soul, O God, with the wicked, nor my life with men of blood.\nIn whose hands are iniquities, their right hand is filled with gifts.\nBut as for me, I have walked in my innocence; redeem me, and have mercy on me.\nMy foot hath stood in the right way; in the churches I will bless Thee, O Lord.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0126",
+          "sort": 126,
+          "latin": "Glória Patri, et Fílio, et Spirítui Sancto.",
+          "english": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0127",
+          "sort": 127,
+          "latin": "Sicut erat in princípio, et nunc, et semper: et in sǽcula sæculórum. Amen.",
+          "english": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B038",
+      "Display_Order": 38,
+      "Macro_ID": "AO.SM.M10",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Preparation of the Oblations",
+      "Title": "Suscipe, sancta Trinitas",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0128",
+          "sort": 128,
+          "latin": "Súscipe, sancta Trinitas, hanc oblatiónem, quam tibi offérimus ob memóriam passiónis, resurrectiónis, et ascensiónis Iesu Christi, Dómini nostri: et in honórem beátæ Maríæ semper Vírginis, et beáti Ioannis Baptistæ, et sanctórum Apostolórum Petri et Pauli, et istórum et ómnium Sanctórum: ut illis profíciat ad honórem, nobis autem ad salútem: et illi pro nobis intercédere dignéntur in coelis, quorum memóriam ágimus in terris. Per eúndem Christum, Dóminum nostrum. Amen.",
+          "english": "Receive, O Holy Trinity, this oblation which we make to Thee in memory of the Passion, Resurrection and Ascension of our Lord Jesus Christ; and in honor of Blessed Mary ever Virgin, of blessed John the Baptist, the holy Apostles Peter and Paul, of these and of all the Saints. To them let it bring honor, and to us salvation, and may they whom we are commemorating here on earth deign to plead for us in heaven. Through the same Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0129",
+          "sort": 129,
+          "latin": "[KISSES THE ALTAR — PREPARES TO TURN TO THE PEOPLE]",
+          "english": "[Kisses the altar — prepares to turn to the people]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B039",
+      "Display_Order": 39,
+      "Macro_ID": "AO.SM.M11",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Orate fratres and Secret",
+      "Title": "Orate, fratres",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0130",
+          "sort": 130,
+          "latin": "Oráte, fratres:",
+          "english": "Pray, brethren:",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0131",
+          "sort": 131,
+          "latin": "ut meum ac vestrum sacrifícium acceptábile fiat apud Deum Patrem omnipoténtem.",
+          "english": "that my sacrifice and yours may be acceptable to God the Father almighty.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0132",
+          "sort": 132,
+          "latin": "℟. Suscípiat Dóminus sacrifícium de mánibus tuis ad laudem et glóriam nóminis sui, ad utilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ.",
+          "english": "℟. May the Lord receive the sacrifice from thy hands, to the praise and glory of His name, to our benefit also, and that of all His holy Church.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0133",
+          "sort": 133,
+          "latin": "Amen.",
+          "english": "Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B040",
+      "Display_Order": 40,
+      "Macro_ID": "AO.SM.M11",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Orate fratres and Secret",
+      "Title": "SECRET_SET",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "SECRET_SET",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0134",
+          "sort": 134,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": "SECRET_SET"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B041",
+      "Display_Order": 41,
+      "Macro_ID": "AO.SM.M11",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Offertory",
+      "Section": "Orate fratres and Secret",
+      "Title": "Per omnia saecula saeculorum — Secret conclusion",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0135",
+          "sort": 135,
+          "latin": "Per ómnia sæcula sæculórum.",
+          "english": "World without end.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0136",
+          "sort": 136,
+          "latin": "℟. Amen.",
+          "english": "℟. Amen.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B042",
+      "Display_Order": 42,
+      "Macro_ID": "AO.SM.M12",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Preface",
+      "Section": "Preface and Sanctus",
+      "Title": "Dominus vobiscum — Preface",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0137",
+          "sort": 137,
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0138",
+          "sort": 138,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B043",
+      "Display_Order": 43,
+      "Macro_ID": "AO.SM.M12",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Preface",
+      "Section": "Preface and Sanctus",
+      "Title": "Sursum corda",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0139",
+          "sort": 139,
+          "latin": "℣. Sursum corda.",
+          "english": "℣. Lift up your hearts.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0140",
+          "sort": 140,
+          "latin": "℟. Habémus ad Dóminum.",
+          "english": "℟. We have them unto the Lord.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B044",
+      "Display_Order": 44,
+      "Macro_ID": "AO.SM.M12",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Preface",
+      "Section": "Preface and Sanctus",
+      "Title": "Gratias agamus Domino Deo nostro",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0141",
+          "sort": 141,
+          "latin": "℣. Grátias agámus Dómino",
+          "english": "Let us give thanks to the Lord",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0142",
+          "sort": 142,
+          "latin": "Deo nostro.",
+          "english": "our God.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0143",
+          "sort": 143,
+          "latin": "℟. Dignum et iustum est.",
+          "english": "℟. It is meet and just.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B045",
+      "Display_Order": 45,
+      "Macro_ID": "AO.SM.M12",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Preface",
+      "Section": "Preface and Sanctus",
+      "Title": "PREFACE",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "PREFACE",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0144",
+          "sort": 144,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": "PREFACE"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B046",
+      "Display_Order": 46,
+      "Macro_ID": "AO.SM.M13",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Preface",
+      "Section": "Preface and Sanctus",
+      "Title": "Sanctus · Benedictus",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0145",
+          "sort": 145,
+          "latin": "Sanctus, Sanctus, Sanctus Dóminus, Deus Sábaoth.",
+          "english": "Holy, Holy, Holy, Lord God of Hosts.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0146",
+          "sort": 146,
+          "latin": "Pleni sunt cæli et terra glória tua.",
+          "english": "Heaven and earth are full of Thy glory.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0147",
+          "sort": 147,
+          "latin": "Hosánna in excélsis.",
+          "english": "Hosanna in the highest.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0148",
+          "sort": 148,
+          "latin": "Benedíctus qui venit in nómine Dómini.",
+          "english": "Blessed is He who comes in the name of the Lord.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0149",
+          "sort": 149,
+          "latin": "Hosánna in excélsis.",
+          "english": "Hosanna in the highest.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B047",
+      "Display_Order": 47,
+      "Macro_ID": "AO.SM.M14",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon before the Consecration",
+      "Title": "Te igitur",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0150",
+          "sort": 150,
+          "latin": "Te igitur, clementíssime Pater, per Iesum Christum, Fílium tuum, Dóminum nostrum, súpplices rogámus, ac pétimus,",
+          "english": "Therefore, most merciful Father, through Jesus Christ thy Son our Lord, we humbly pray and beseech thee,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0151",
+          "sort": 151,
+          "latin": "uti accepta habeas et benedícas,",
+          "english": "that thou wouldst accept and bless,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0152",
+          "sort": 152,
+          "latin": "hæc ✠ dona, hæc ✠ múnera, hæc ✠ sancta sacrifícia illibáta.",
+          "english": "these gifts, these offerings, these holy and unspotted sacrifices.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0153",
+          "sort": 153,
+          "latin": "In primis, quæ tibi offérimus pro Ecclésia tua sancta cathólica: quam pacificáre, custodíre, adunáre et régere dignéris toto orbe terrárum: una cum fámulo tuo Papa nostro N. et Antístite nostro et ómnibus orthodóxis, atque cathólicæ et apostólicae fídei cultóribus.",
+          "english": "We offer them up to Thee, in the first place, for Thy Holy Catholic Church, that it may please Thee to grant her peace, to preserve, unite, and govern her throughout the world; as also for Thy servant N. our Pope, and N. our Bishop, and for all orthodox believers and all who profess the Catholic and Apostolic faith.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B048",
+      "Display_Order": 48,
+      "Macro_ID": "AO.SM.M14",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon before the Consecration",
+      "Title": "Memento, Domine — Living",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0154",
+          "sort": 154,
+          "latin": "Meménto, Dómine, famulórum famularúmque tuarum N. et N.",
+          "english": "Remember, O Lord, thy servants and handmaids N. and N.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0155",
+          "sort": 155,
+          "latin": "[SILENT COMMEMORATION OF THE LIVING]",
+          "english": "[Silent commemoration of the living]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0156",
+          "sort": 156,
+          "latin": "et ómnium circumstántium, quorum tibi fides cógnita est et nota devótio, pro quibus tibi offérimus: vel qui tibi ófferunt hoc sacrifícium laudis, pro se suísque ómnibus: pro redemptióne animárum suárum, pro spe salútis et incolumitátis suæ: tibíque reddunt vota sua ætérno Deo, vivo et vero.",
+          "english": "and of all here present, whose faith and devotion are known to Thee, for whom we offer, or who offer up to Thee this Sacrifice of praise for themselves and all those dear to them, for the redemption of their souls and the hope of their safety and salvation: who now pay their vows to Thee, the everlasting, living and true God.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B049",
+      "Display_Order": 49,
+      "Macro_ID": "AO.SM.M14",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon before the Consecration",
+      "Title": "Communicantes",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0157",
+          "sort": 157,
+          "latin": "Communicántes, et memóriam venerántes, in primis gloriósæ semper Vírginis Maríæ, Genetrícis Dei et Dómini nostri",
+          "english": "In communion with, and venerating the memory first of the glorious ever-Virgin Mary, Mother of our God and Lord",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0158",
+          "sort": 158,
+          "latin": "Iesu Christi:",
+          "english": "Jesus Christ:",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0159",
+          "sort": 159,
+          "latin": "sed et beati Ioseph, eiusdem Virginis Sponsi, et beatórum Apostolórum ac Mártyrum tuórum, Petri et Pauli, Andréæ, Iacóbi, Ioánnis, Thomæ, Iacóbi, Philíppi, Bartholomaei, Matthaei, Simónis et Thaddaei: Lini, Cleti, Cleméntis, Xysti, Cornélii, Cypriáni, Lauréntii, Chrysógoni, Ioánnis et Pauli, Cosmæ et Damiáni: et ómnium Sanctórum tuórum; quorum méritis precibúsque concédas, ut in ómnibus protectiónis tuæ muniámur auxílio.",
+          "english": "also of blessed Joseph, her Spouse; and likewise of Thy blessed Apostles and Martyrs, Peter and Paul, Andrew, James, John, Thomas, James, Philip, Bartholomew, Matthew, Simon and Thaddeus, Linus, Cletus, Clement, Sixtus, Cornelius, Cyprian, Lawrence, Chrysogonus, John and Paul, Cosmas and Damian, and of all Thy Saints. Grant for the sake of their merits and prayers that in all things we may be guarded and helped by Thy protection.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0160",
+          "sort": 160,
+          "latin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+          "english": "Through the same Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B050",
+      "Display_Order": 50,
+      "Macro_ID": "AO.SM.M14",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon before the Consecration",
+      "Title": "Hanc igitur",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0161",
+          "sort": 161,
+          "latin": "Hanc igitur oblatiónem servitutis nostræ, sed et cunctae famíliæ tuæ, quaesumus, Dómine, ut placátus accípias: diésque nostros in tua pace dispónas, atque ab ætérna damnatióne nos éripi, et in electórum tuórum iúbeas grege numerári.",
+          "english": "O Lord, we beseech Thee, graciously to accept this oblation of our service and that of Thy whole household. Order our days in Thy peace, and command that we be rescued from eternal damnation and numbered in the flock of Thine elect.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0162",
+          "sort": 162,
+          "latin": "Per Christum, Dóminum nostrum. Amen.",
+          "english": "Through Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B051",
+      "Display_Order": 51,
+      "Macro_ID": "AO.SM.M14",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon before the Consecration",
+      "Title": "Quam oblationem",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0163",
+          "sort": 163,
+          "latin": "Quam oblatiónem tu, Deus, in ómnibus, quaesumus,",
+          "english": "Which offering do thou, O God, we beseech thee,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0164",
+          "sort": 164,
+          "latin": "bene ✠ díctam, adscríp ✠ tam, ra ✠ tam, rationábilem, acceptabilémque fácere dignéris:",
+          "english": "make blessed, approved, ratified, reasonable and acceptable:",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0165",
+          "sort": 165,
+          "latin": "ut nobis Cor ✠ pus,",
+          "english": "that it may become for us the Body,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0166",
+          "sort": 166,
+          "latin": "et San ✠ guis fiat",
+          "english": "and Blood",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0167",
+          "sort": 167,
+          "latin": "dilectíssimi Fílii tui, Dómini nostri Iesu Christi.",
+          "english": "of thy most beloved Son, our Lord Jesus Christ.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B052",
+      "Display_Order": 52,
+      "Macro_ID": "AO.SM.M15",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Consecration",
+      "Title": "Qui pridie · Consecration of the Host",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0168",
+          "sort": 168,
+          "latin": "Qui prídie quam paterétur, accépit panem in sanctas ac venerábiles manus suas,",
+          "english": "Who, the day before he suffered, took bread into his holy and venerable hands,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0169",
+          "sort": 169,
+          "latin": "elevátis óculis in coelum ad te Deum, Patrem suum omnipoténtem,",
+          "english": "and with eyes lifted up to heaven unto thee, God, his almighty Father,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0170",
+          "sort": 170,
+          "latin": "tibi grátias agens,",
+          "english": "giving thanks to thee,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0171",
+          "sort": 171,
+          "latin": "bene ✠ dixit,",
+          "english": "he blessed it,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0172",
+          "sort": 172,
+          "latin": "fregit, dedítque discípulis suis, dicens: Accípite, et manducáte ex hoc omnes.",
+          "english": "broke it, and gave it to his disciples, saying: Take and eat ye all of this.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0173",
+          "sort": 173,
+          "latin": "HOC EST ENIM CORPUS MEUM.",
+          "english": "FOR THIS IS MY BODY.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0174",
+          "sort": 174,
+          "latin": "[GENUFLECTS — ELEVATES THE SACRED HOST — REPLACES IT — GENUFLECTS]",
+          "english": "[Genuflects — elevates the Sacred Host — replaces It — genuflects]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B053",
+      "Display_Order": 53,
+      "Macro_ID": "AO.SM.M16",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Consecration",
+      "Title": "Simili modo · Consecration of the Chalice",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0175",
+          "sort": 175,
+          "latin": "Símili modo postquam coenátum est, accípiens et hunc præclárum Cálicem in sanctas ac venerábiles manus suas:",
+          "english": "In like manner, after he had supped, taking also this excellent Chalice into his holy and venerable hands:",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0176",
+          "sort": 176,
+          "latin": "item tibi grátias agens,",
+          "english": "again giving thanks to thee,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0177",
+          "sort": 177,
+          "latin": "bene ✠ dixit,",
+          "english": "he blessed it,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0178",
+          "sort": 178,
+          "latin": "dedítque discípulis suis, dicens: Accípite, et bíbite ex eo omnes.",
+          "english": "and gave it to his disciples, saying: Take and drink ye all of this.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0179",
+          "sort": 179,
+          "latin": "HIC EST ENIM CALIX SÁNGUINIS MEI, NOVI ET ÆTÉRNI TESTAMÉNTI: MYSTÉRIUM FÍDEI: QUI PRO VOBIS ET PRO MULTIS EFFUNDÉTUR IN REMISSIÓNEM PECCATÓRUM.",
+          "english": "FOR THIS IS THE CHALICE OF MY BLOOD, OF THE NEW AND ETERNAL TESTAMENT: THE MYSTERY OF FAITH: WHICH SHALL BE SHED FOR YOU AND FOR MANY UNTO THE REMISSION OF SINS.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0180",
+          "sort": 180,
+          "latin": "Hæc quotiescúmque fecéritis, in mei memóriam faciétis.",
+          "english": "As often as ye shall do these things, ye shall do them in memory of me.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0181",
+          "sort": 181,
+          "latin": "[GENUFLECTS — ELEVATES THE PRECIOUS BLOOD — REPLACES/COVERS THE CHALICE — GENUFLECTS]",
+          "english": "[Genuflects — elevates the Precious Blood — replaces/covers the Chalice — genuflects]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B054",
+      "Display_Order": 54,
+      "Macro_ID": "AO.SM.M17",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon after the Consecration",
+      "Title": "Unde et memores",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0182",
+          "sort": 182,
+          "latin": "Unde et mémores, Dómine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Fílii tui, Dómini nostri, tam beátæ passiónis, nec non et ab ínferis resurrectiónis, sed et in coelos gloriósæ ascensiónis:",
+          "english": "Wherefore, O Lord, we Thy servants, and Thy holy people also, calling to mind the blessed Passion of the same Christ Thy Son our Lord, as also His Resurrection from the grave and glorious Ascension into heaven:",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0183",
+          "sort": 183,
+          "latin": "offérimus præcláræ maiestáti tuæ de tuis donis ac datis,",
+          "english": "offer unto thy excellent majesty of thy gifts and grants,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0184",
+          "sort": 184,
+          "latin": "hóstiam ✠ puram, hóstiam ✠ sanctam, hóstiam ✠ immaculátam,",
+          "english": "a pure victim, a holy victim, an immaculate victim,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0185",
+          "sort": 185,
+          "latin": "Panem ✠ sanctum vitæ ætérnæ, et Calicem ✠ salútis perpétuæ.",
+          "english": "the holy Bread of eternal life and the Chalice of everlasting salvation.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B055",
+      "Display_Order": 55,
+      "Macro_ID": "AO.SM.M17",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon after the Consecration",
+      "Title": "Supra quae",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0186",
+          "sort": 186,
+          "latin": "Supra quæ propítio ac seréno vultu respícere dignéris: et accépta habére, sicúti accépta habére dignátus es múnera púeri tui iusti Abel, et sacrifícium Patriárchæ nostri Abrahæ: et quod tibi óbtulit summus sacérdos tuus Melchísedech, sanctum sacrifícium, immaculátam hóstiam.",
+          "english": "Deign to look upon them with a favorable and gracious countenance, and to accept them as Thou didst accept the offerings of Thy just servant Abel, and the sacrifice of our Patriarch Abraham, and that which Thy high priest Melchisedech offered up to Thee, a holy Sacrifice, an immaculate Victim.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B056",
+      "Display_Order": 56,
+      "Macro_ID": "AO.SM.M17",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon after the Consecration",
+      "Title": "Supplices te rogamus",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0187",
+          "sort": 187,
+          "latin": "Súpplices te rogámus, omnípotens Deus: iube hæc perférri per manus sancti Angeli tui in sublíme altáre tuum, in conspéctu divínæ maiestátis tuæ:",
+          "english": "Humbly we beseech Thee, almighty God, to command that these our offerings be carried by the hands of Thy holy Angel to Thine Altar on high, in the sight of Thy divine Majesty:",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0188",
+          "sort": 188,
+          "latin": "ut, quotquot ex hac altáris participatióne sacrosánctum Fílii tui",
+          "english": "that as many of us as shall receive from this altar the most sacred",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0189",
+          "sort": 189,
+          "latin": "Cor ✠ pus, et Sán ✠ guinem sumpsérimus,",
+          "english": "Body and Blood of thy Son,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0190",
+          "sort": 190,
+          "latin": "omni benedictióne coelésti et grátia repleámur.",
+          "english": "may be filled with every heavenly blessing and grace.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0191",
+          "sort": 191,
+          "latin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+          "english": "Through the same Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B057",
+      "Display_Order": 57,
+      "Macro_ID": "AO.SM.M17",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon after the Consecration",
+      "Title": "Memento etiam, Domine — Dead",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0192",
+          "sort": 192,
+          "latin": "Meménto étiam, Dómine, famulórum famularúmque tuárum N. et N., qui nos præcessérunt cum signo fídei, et dórmiunt in somno pacis.",
+          "english": "Remember also, O Lord, thy servants and handmaids N. and N. who have gone before us with the sign of faith and sleep the sleep of peace.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0193",
+          "sort": 193,
+          "latin": "[SILENT COMMEMORATION OF THE DEAD]",
+          "english": "[Silent commemoration of the dead]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0194",
+          "sort": 194,
+          "latin": "Ipsis, Dómine, et ómnibus in Christo quiescéntibus locum refrigérii, lucis pacis ut indúlgeas, deprecámur.",
+          "english": "To these, O Lord, and to all who rest in Christ, grant, we beseech thee, a place of refreshment, light and peace.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0195",
+          "sort": 195,
+          "latin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+          "english": "Through the same Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B058",
+      "Display_Order": 58,
+      "Macro_ID": "AO.SM.M17",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon after the Consecration",
+      "Title": "Nobis quoque peccatoribus",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0196",
+          "sort": 196,
+          "latin": "Nobis quoque peccatóribus",
+          "english": "To us also, thy sinful servants",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0197",
+          "sort": 197,
+          "latin": "fámulis tuis, de multitúdine miseratiónum tuárum sperántibus, partem áliquam et societátem donáre dignéris, cum tuis sanctis Apóstolis et Martýribus: cum Ioánne, Stéphano, Matthía, Bárnaba, Ignátio, Alexándro, Marcellíno, Petro, Felicitáte, Perpétua, Agatha, Lúcia, Agnéte, Cæcília, Anastásia, et ómnibus Sanctis tuis: intra quorum nos consórtium, non æstimátor mériti, sed véniæ, quaesumus, largítor admítte.",
+          "english": "who put our trust in the multitude of Thy mercies, vouchsafe to grant some part and fellowship with Thy holy Apostles and Martyrs: with John, Stephen, Matthias, Barnabas, Ignatius, Alexander, Marcellinus, Peter, Felicitas, Perpetua, Agatha, Lucy, Agnes, Cecilia, Anastasia, and all Thy Saints. Into their company we beseech Thee admit us, not considering our merits, but freely pardoning our offenses.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0198",
+          "sort": 198,
+          "latin": "Per Christum, Dóminum nostrum.",
+          "english": "Through Christ our Lord.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B059",
+      "Display_Order": 59,
+      "Macro_ID": "AO.SM.M17",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon after the Consecration",
+      "Title": "Per quem haec omnia",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0199",
+          "sort": 199,
+          "latin": "Per quem hæc ómnia, Dómine, semper bona creas,",
+          "english": "By whom, O Lord, thou dost always create all these good things,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0200",
+          "sort": 200,
+          "latin": "sancti ✠ ficas, viví ✠ ficas, bene ✠ dícis et præstas nobis.",
+          "english": "dost sanctify, quicken, bless and bestow them upon us.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B060",
+      "Display_Order": 60,
+      "Macro_ID": "AO.SM.M18",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon after the Consecration",
+      "Title": "Per ipsum",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0201",
+          "sort": 201,
+          "latin": "[UNCOVERS CHALICE — GENUFLECTS — TAKES SACRED HOST]",
+          "english": "[Uncovers Chalice — genuflects — takes Sacred Host]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0202",
+          "sort": 202,
+          "latin": "Per ip ✠ sum, et cum ip ✠ so, et in ip ✠ so,",
+          "english": "Through him, and with him, and in him,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0203",
+          "sort": 203,
+          "latin": "est tibi Deo Patri ✠ omnipotenti, in unitáte Spíritus ✠ Sancti,",
+          "english": "is unto thee, God the Father almighty, in the unity of the Holy Ghost,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0204",
+          "sort": 204,
+          "latin": "omnis honor, et glória.",
+          "english": "all honour and glory.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0205",
+          "sort": 205,
+          "latin": "[REPLACES THE HOST — COVERS THE CHALICE — GENUFLECTS]",
+          "english": "[Replaces the Host — covers the Chalice — genuflects]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B061",
+      "Display_Order": 61,
+      "Macro_ID": "AO.SM.M18",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Canon of the Mass",
+      "Section": "Canon after the Consecration",
+      "Title": "Per omnia saecula saeculorum — Canon conclusion",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0206",
+          "sort": 206,
+          "latin": "℣. Per ómnia sǽcula sæculórum.",
+          "english": "℣. World without end.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0207",
+          "sort": 207,
+          "latin": "℟. Amen.",
+          "english": "℟. Amen.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B062",
+      "Display_Order": 62,
+      "Macro_ID": "AO.SM.M19",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Pater noster, Fraction and Pax",
+      "Title": "Praeceptis salutaribus moniti",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0208",
+          "sort": 208,
+          "latin": "Orémus. Præcéptis salutáribus móniti, et divína institutione formáti, audémus dícere:",
+          "english": "Let us pray. Admonished by saving precepts, and formed by divine teaching, we dare to say:",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B063",
+      "Display_Order": 63,
+      "Macro_ID": "AO.SM.M19",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Pater noster, Fraction and Pax",
+      "Title": "Pater noster",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0209",
+          "sort": 209,
+          "latin": "Pater noster, qui es in cælis: sanctificétur nomen tuum: advéniat regnum tuum: fiat volúntas tua, sicut in cælo et in terra. Panem nostrum cotidiánum da nobis hódie: et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris: et ne nos indúcas in tentatiónem.",
+          "english": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our debts as we also forgive our debtors; and lead us not into temptation.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0210",
+          "sort": 210,
+          "latin": "℟. Sed líbera nos a malo.",
+          "english": "℟. But deliver us from evil.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0211",
+          "sort": 211,
+          "latin": "Amen.",
+          "english": "Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B064",
+      "Display_Order": 64,
+      "Macro_ID": "AO.SM.M20",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Pater noster, Fraction and Pax",
+      "Title": "Libera nos",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0212",
+          "sort": 212,
+          "latin": "Líbera nos, quǽsumus, Dómine, ab ómnibus malis, prætéritis, præséntibus et futúris: et intercedénte beáta et gloriósa semper Vírgine Dei Genetríce María, cum beátis Apóstolis tuis Petro et Paulo, atque Andréa, et ómnibus Sanctis,",
+          "english": "Deliver us, we beseech thee, O Lord, from all evils, past, present and to come; and by the intercession of the blessed and glorious ever-Virgin Mary, Mother of God, with thy blessed Apostles Peter and Paul, Andrew, and all the saints,",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0213",
+          "sort": 213,
+          "latin": "da propítius pacem in diébus nostris:",
+          "english": "mercifully grant peace in our days:",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0214",
+          "sort": 214,
+          "latin": "ut, ope misericórdiæ tuæ adiúti, et a peccáto simus semper líberi et ab omni perturbatióne secúri.",
+          "english": "that, assisted by the help of thy mercy, we may always be free from sin and secure from all disturbance.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0215",
+          "sort": 215,
+          "latin": "Per eúndem Dóminum nostrum Iesum Christum Fílium tuum.",
+          "english": "Through the same Jesus Christ thy Son our Lord.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0216",
+          "sort": 216,
+          "latin": "Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus.",
+          "english": "Who with thee liveth and reigneth in the unity of the Holy Ghost, God.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B065",
+      "Display_Order": 65,
+      "Macro_ID": "AO.SM.M20",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Pater noster, Fraction and Pax",
+      "Title": "Per omnia saecula saeculorum — Libera nos conclusion",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0217",
+          "sort": 217,
+          "latin": "℣. Per ómnia sæcula sæculórum.",
+          "english": "℣. World without end.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0218",
+          "sort": 218,
+          "latin": "℟. Amen.",
+          "english": "℟. Amen.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B066",
+      "Display_Order": 66,
+      "Macro_ID": "AO.SM.M20",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Pater noster, Fraction and Pax",
+      "Title": "Pax Domini",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0219",
+          "sort": 219,
+          "latin": "℣. Pax ✠ Dómini sit ✠ semper ✠ vobíscum.",
+          "english": "℣. May the peace ✠ of the Lord be ✠ always ✠ with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0220",
+          "sort": 220,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B067",
+      "Display_Order": 67,
+      "Macro_ID": "AO.SM.M20",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Pater noster, Fraction and Pax",
+      "Title": "Haec commixtio",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0221",
+          "sort": 221,
+          "latin": "Hæc commíxtio et consecrátio Córporis et Sánguinis Dómini nostri Iesu Christi fiat accipiéntibus nobis in vitam ætérnam. Amen.",
+          "english": "May this mingling and consecration of the Body and Blood of our Lord Jesus Christ be for us who receive it unto life everlasting. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B068",
+      "Display_Order": 68,
+      "Macro_ID": "AO.SM.M21",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Agnus Dei",
+      "Display_Style": "LITURGICAL_LINES",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0222",
+          "sort": 222,
+          "latin": "Agnus Dei, qui tollis peccáta mundi: miserére nobis.",
+          "english": "Lamb of God, who takest away the sins of the world: have mercy on us.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0223",
+          "sort": 223,
+          "latin": "Agnus Dei, qui tollis peccáta mundi: miserére nobis.",
+          "english": "Lamb of God, who takest away the sins of the world: have mercy on us.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0224",
+          "sort": 224,
+          "latin": "Agnus Dei, qui tollis peccáta mundi: dona nobis pacem.",
+          "english": "Lamb of God, who takest away the sins of the world: grant us peace.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B069",
+      "Display_Order": 69,
+      "Macro_ID": "AO.SM.M22",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Domine Iesu Christe, qui dixisti Apostolis",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0225",
+          "sort": 225,
+          "latin": "Dómine Iesu Christe, qui dixísti Apóstolis tuis: Pacem relínquo vobis, pacem meam do vobis:\nne respícias peccáta mea, sed fidem Ecclésiæ tuæ; eámque secúndum voluntátem tuam pacificáre et coadunáre dignéris:\nQui vivis et regnas Deus per ómnia sæcula sæculórum. Amen.",
+          "english": "O Lord Jesus Christ, Who saidst to Thine Apostles: Peace I leave you, My peace I give you:\nregard not my sins, but the faith of Thy Church; and vouchsafe to grant her peace and unity according to Thy will:\nWho livest and reignest God, world without end. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B070",
+      "Display_Order": 70,
+      "Macro_ID": "AO.SM.M22",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Domine Iesu Christe, Fili Dei vivi",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0226",
+          "sort": 226,
+          "latin": "Dómine Iesu Christe, Fili Dei vivi, qui ex voluntáte Patris, cooperánte Spíritu Sancto, per mortem tuam mundum vivificásti: líbera me per hoc sacrosánctum Corpus et Sánguinem tuum ab ómnibus iniquitátibus meis, et univérsis malis: et fac me tuis semper inhærére mandátis, et a te numquam separári permíttas: Qui cum eódem Deo Patre et Spíritu Sancto vivis et regnas Deus in saecula sæculórum. Amen.",
+          "english": "O Lord Jesus Christ, Son of the living God, Who, by the will of the Father and the co-operation of the Holy Ghost, hast by Thy death given life to the world: deliver me by this, Thy most sacred Body and Blood, from all my iniquities and from every evil; make me cling always to Thy commandments, and permit me never to be separated from Thee. Who with the same God, the Father and the Holy Ghost, livest and reignest God, world without end. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B071",
+      "Display_Order": 71,
+      "Macro_ID": "AO.SM.M22",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Perceptio Corporis tui",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0227",
+          "sort": 227,
+          "latin": "Percéptio Córporis tui, Dómine Iesu Christe, quod ego indígnus súmere præsúmo, non mihi provéniat in iudícium et condemnatiónem: sed pro tua pietáte prosit mihi ad tutaméntum mentis et córporis, et ad medélam percipiéndam: Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti Deus, per ómnia saecula sæculórum. Amen.",
+          "english": "Let not the partaking of Thy Body, O Lord Jesus Christ, which I, though unworthy, presume to receive, turn to my judgment and condemnation; but through Thy mercy may it be unto me a safeguard and a healing remedy both of soul and body. Who livest and reignest with God the Father, in the unity of the Holy Ghost, God, world without end. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B072",
+      "Display_Order": 72,
+      "Macro_ID": "AO.SM.M22",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Panem caelestem accipiam",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0228",
+          "sort": 228,
+          "latin": "Panem cæléstem accípiam, et nomen Dómini invocábo.",
+          "english": "I will take the Bread of heaven and call upon the name of the Lord.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B073",
+      "Display_Order": 73,
+      "Macro_ID": "AO.SM.M22",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Domine, non sum dignus — Priest",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0229",
+          "sort": 229,
+          "latin": "S. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "english": "S. Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed.",
+          "type": "text",
+          "clock": "PRIEST_MIXED",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0230",
+          "sort": 230,
+          "latin": "S. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "english": "S. Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed.",
+          "type": "text",
+          "clock": "PRIEST_MIXED",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0231",
+          "sort": 231,
+          "latin": "S. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "english": "S. Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed.",
+          "type": "text",
+          "clock": "PRIEST_MIXED",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B074",
+      "Display_Order": 74,
+      "Macro_ID": "AO.SM.M23",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Communion of the Priest — Sacred Host",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0232",
+          "sort": 232,
+          "latin": "Corpus ✠ Dómini nostri Iesu Christi custódiat ánimam meam in vitam ætérnam. Amen.",
+          "english": "May the Body ✠ of our Lord Jesus Christ preserve my soul unto life everlasting. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B075",
+      "Display_Order": 75,
+      "Macro_ID": "AO.SM.M23",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Quid retribuam Domino",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0233",
+          "sort": 233,
+          "latin": "Quid retríbuam Dómino pro ómnibus quæ retríbuit mihi? Cálicem salutáris accípiam, et nomen Dómini invocábo. Laudans invocábo Dóminum, et ab inimícis meis salvus ero.",
+          "english": "What return shall I make to the Lord for all that He hath given me? I will take the chalice of salvation and call upon the name of the Lord. Praising I will call upon the Lord, and I shall be saved from my enemies.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B076",
+      "Display_Order": 76,
+      "Macro_ID": "AO.SM.M23",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Agnus Dei and Priest's Communion",
+      "Title": "Communion of the Priest — Precious Blood",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0234",
+          "sort": 234,
+          "latin": "Sanguis ✠ Dómini nostri Iesu Christi custódiat ánimam meam in vitam ætérnam. Amen.",
+          "english": "May the Blood ✠ of our Lord Jesus Christ preserve my soul unto life everlasting. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B077",
+      "Display_Order": 77,
+      "Macro_ID": "AO.SM.M24",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Communion of the Faithful",
+      "Title": "Second Confiteor before Communion — local/older custom",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0235",
+          "sort": 235,
+          "latin": "Confíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Ioánni Baptístæ, sanctis Apóstolis Petro et Paulo, ómnibus Sanctis, et tibi, pater: quia peccávi nimis cogitatióne, verbo et opere:",
+          "english": "I confess to Almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, to all the Saints, and to thee, Father, that I have sinned exceedingly in thought, word and deed:",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0236",
+          "sort": 236,
+          "latin": "mea culpa, mea culpa, mea máxima culpa.",
+          "english": "through my fault, through my fault, through my most grievous fault.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0237",
+          "sort": 237,
+          "latin": "Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, oráre pro me ad Dóminum, Deum nostrum.",
+          "english": "Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and thee, Father, to pray to the Lord our God for me.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B078",
+      "Display_Order": 78,
+      "Macro_ID": "AO.SM.M24",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Communion of the Faithful",
+      "Title": "Misereatur vestri — optional Communion Confiteor branch",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0238",
+          "sort": 238,
+          "latin": "Misereátur vestri omnípotens Deus, et, dimíssis peccátis vestris, perdúcat vos ad vitam ætérnam.",
+          "english": "May Almighty God have mercy upon you, forgive you your sins and bring you to life everlasting.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0239",
+          "sort": 239,
+          "latin": "℟. Amen.",
+          "english": "℟. Amen.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B079",
+      "Display_Order": 79,
+      "Macro_ID": "AO.SM.M24",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Communion of the Faithful",
+      "Title": "Indulgentiam — optional Communion Confiteor branch",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0240",
+          "sort": 240,
+          "latin": "Indulgéntiam, ✠ absolutiónem et remissiónem peccatórum nostrórum tríbuat nobis omnípotens et miséricors Dóminus.",
+          "english": "May the Almighty and merciful God grant us pardon, ✠ absolution, and remission of our sins.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0241",
+          "sort": 241,
+          "latin": "℟. Amen.",
+          "english": "℟. Amen.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B080",
+      "Display_Order": 80,
+      "Macro_ID": "AO.SM.M24",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Communion of the Faithful",
+      "Title": "Ecce Agnus Dei",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0242",
+          "sort": 242,
+          "latin": "Ecce Agnus Dei, ecce qui tollit peccáta mundi.",
+          "english": "Behold the Lamb of God, behold Him who taketh away the sins of the world.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B081",
+      "Display_Order": 81,
+      "Macro_ID": "AO.SM.M24",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Communion of the Faithful",
+      "Title": "Domine, non sum dignus — Communion preparation",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0243",
+          "sort": 243,
+          "latin": "S. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "english": "S. Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0244",
+          "sort": 244,
+          "latin": "S. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "english": "S. Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0245",
+          "sort": 245,
+          "latin": "S. Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea.",
+          "english": "S. Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B082",
+      "Display_Order": 82,
+      "Macro_ID": "AO.SM.M25",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Communion of the Faithful",
+      "Title": "Corpus Domini nostri Iesu Christi",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0246",
+          "sort": 246,
+          "latin": "Corpus ✠ Dómini nostri Iesu Christi custódiat ánimam tuam in vitam ætérnam. Amen.",
+          "english": "May the Body ✠ of our Lord Jesus Christ preserve thy soul unto life everlasting. Amen.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B083",
+      "Display_Order": 83,
+      "Macro_ID": "AO.SM.M26",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Ablutions and Communion Antiphon",
+      "Title": "Quod ore sumpsimus",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0247",
+          "sort": 247,
+          "latin": "Quod ore súmpsimus, Dómine, pura mente capiámus: et de múnere temporáli fiat nobis remédium sempitérnum.",
+          "english": "Grant, O Lord, that what we have taken with our mouth we may receive with a pure mind; and that from a temporal gift it may become for us an everlasting remedy.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B084",
+      "Display_Order": 84,
+      "Macro_ID": "AO.SM.M26",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Ablutions and Communion Antiphon",
+      "Title": "Corpus tuum, Domine",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0248",
+          "sort": 248,
+          "latin": "Corpus tuum, Dómine, quod sumpsi, et Sanguis, quem potávi, adhǽreat viscéribus meis: et præsta; ut in me non remáneat scélerum mácula, quem pura et sancta refecérunt sacraménta: Qui vivis et regnas in sæcula sæculórum. Amen.",
+          "english": "May Thy Body, O Lord, which I have received, and Thy Blood which I have drunk, cleave to my inmost parts; and grant that no stain of sin remain in me, whom these pure and holy mysteries have refreshed. Who livest and reignest world without end. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B085",
+      "Display_Order": 85,
+      "Macro_ID": "AO.SM.M26",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Communion Rite",
+      "Section": "Ablutions and Communion Antiphon",
+      "Title": "COMMUNION",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "COMMUNION",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0249",
+          "sort": 249,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": "COMMUNION"
+        },
+        {
+          "cue_id": "AO.SM.C0250",
+          "sort": 250,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": "COMMUNION"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B086",
+      "Display_Order": 86,
+      "Macro_ID": "AO.SM.M27",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Postcommunion",
+      "Title": "Dominus vobiscum — before Postcommunion",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0251",
+          "sort": 251,
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0252",
+          "sort": 252,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B087",
+      "Display_Order": 87,
+      "Macro_ID": "AO.SM.M27",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Postcommunion",
+      "Title": "Oremus — before Postcommunion",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0253",
+          "sort": 253,
+          "latin": "Orémus.",
+          "english": "Let us pray.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B088",
+      "Display_Order": 88,
+      "Macro_ID": "AO.SM.M27",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Postcommunion",
+      "Title": "POSTCOMMUNION_SET",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": "POSTCOMMUNION_SET",
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0254",
+          "sort": 254,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": "POSTCOMMUNION_SET"
+        },
+        {
+          "cue_id": "AO.SM.C0255",
+          "sort": 255,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": "POSTCOMMUNION_SET"
+        },
+        {
+          "cue_id": "AO.SM.C0256",
+          "sort": 256,
+          "latin": null,
+          "english": null,
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": "POSTCOMMUNION_SET"
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B089",
+      "Display_Order": 89,
+      "Macro_ID": "AO.SM.M28",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Dismissal and Blessing",
+      "Title": "Dominus vobiscum — before Dismissal",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0257",
+          "sort": 257,
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0258",
+          "sort": 258,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B090",
+      "Display_Order": 90,
+      "Macro_ID": "AO.SM.M28",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Dismissal and Blessing",
+      "Title": "Ite, missa est",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0259",
+          "sort": 259,
+          "latin": "℣. Ite, missa est.",
+          "english": "℣. Go, the Mass is ended.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0260",
+          "sort": 260,
+          "latin": "℟. Deo grátias.",
+          "english": "℟. Thanks be to God.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B091",
+      "Display_Order": 91,
+      "Macro_ID": "AO.SM.M29",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Dismissal and Blessing",
+      "Title": "Placeat tibi, sancta Trinitas",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0261",
+          "sort": 261,
+          "latin": "Pláceat tibi, sancta Trínitas, obséquium servitútis meæ: et præsta; ut sacrifícium,\nquod óculis tuæ maiestátis indígnus óbtuli, tibi sit acceptábile, mihíque et ómnibus,\npro quibus illud óbtuli, sit, te miseránte, propitiábile. Per Christum Dóminum nostrum. Amen.",
+          "english": "May the homage of my service be pleasing to Thee, O holy Trinity; and grant that the sacrifice which I,\nthough unworthy, have offered in the sight of Thy Majesty, may be acceptable to Thee, and through Thy mercy\nbe a propitiation for me and for all those for whom I have offered it. Through Christ our Lord. Amen.",
+          "type": "text",
+          "clock": "PRIEST_PRIVATE",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0262",
+          "sort": 262,
+          "latin": "[KISSES THE ALTAR — RISES FACING IT]",
+          "english": "[Kisses the altar — rises facing it]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B092",
+      "Display_Order": 92,
+      "Macro_ID": "AO.SM.M29",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Dismissal and Blessing",
+      "Title": "Benedicat vos omnipotens Deus",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0263",
+          "sort": 263,
+          "latin": "[ELEVATES EYES AND HANDS — JOINS HANDS — INCLINES HEAD TO THE CROSS]",
+          "english": "[Elevates eyes and hands — joins hands — inclines head to the Cross]",
+          "type": "text",
+          "clock": "PRIEST_ACTION",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0264",
+          "sort": 264,
+          "latin": "Benedícat vos omnípotens Deus",
+          "english": "May almighty God bless you",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0265",
+          "sort": 265,
+          "latin": "Pater, et Fílius, ✠ et Spíritus Sanctus.",
+          "english": "the Father, and the Son, ✠ and the Holy Ghost.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0266",
+          "sort": 266,
+          "latin": "℟. Amen.",
+          "english": "℟. Amen.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B093",
+      "Display_Order": 93,
+      "Macro_ID": "AO.SM.M30",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Last Gospel",
+      "Title": "Dominus vobiscum — Last Gospel",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0267",
+          "sort": 267,
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0268",
+          "sort": 268,
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B094",
+      "Display_Order": 94,
+      "Macro_ID": "AO.SM.M30",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Last Gospel",
+      "Title": "Initium sancti Evangelii secundum Ioannem",
+      "Display_Style": "PARAGRAPH_OR_DIALOGUE",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0269",
+          "sort": 269,
+          "latin": "Initium ✠ sancti Evangélii secúndum Ioánnem.",
+          "english": "The beginning ✠ of the holy Gospel according to Saint John.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0270",
+          "sort": 270,
+          "latin": "℟. Glória tibi, Dómine.",
+          "english": "℟. Glory be to Thee, O Lord.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    },
+    {
+      "Block_ID": "AO.SM.B095",
+      "Display_Order": 95,
+      "Macro_ID": "AO.SM.M30",
+      "Part": "Mass of the Faithful",
+      "Subpart": "Concluding Rites",
+      "Section": "Last Gospel",
+      "Title": "In principio erat Verbum · Last Gospel",
+      "Display_Style": "CONTINUOUS_PRAYER",
+      "Proper_Slot": null,
+      "Branch_Status": "NORMATIVE_1962",
+      "units": [
+        {
+          "cue_id": "AO.SM.C0271",
+          "sort": 271,
+          "latin": "In princípio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum. Hoc erat in princípio apud Deum.\nÓmnia per ipsum facta sunt: et sine ipso factum est nihil, quod factum est. In ipso vita erat, et vita erat lux hóminum:\net lux in ténebris lucet, et ténebræ eam non comprehendérunt.",
+          "english": "In the beginning was the Word, and the Word was with God, and the Word was God. The same was in the beginning with God.\nAll things were made by Him; and without Him was made nothing that was made. In Him was life, and the life was the light of men.\nAnd the light shineth in darkness, and the darkness did not comprehend it.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0272",
+          "sort": 272,
+          "latin": "Fuit homo missus a Deo, cui nomen erat Ioánnes. Hic venit in testimónium, ut testimónium perhibéret de lúmine,\nut omnes créderent per illum. Non erat ille lux, sed ut testimónium perhibéret de lúmine. Erat lux vera,\nquæ illúminat omnem hóminem veniéntem in hunc mundum. In mundo erat, et mundus per ipsum factus est,\net mundus eum non cognóvit. In própria venit, et sui eum non recepérunt. Quotquot autem recepérunt eum,\ndedit eis potestátem fílios Dei fíeri, his, qui credunt in nómine eius: qui non ex sanguínibus, neque ex voluntáte carnis,\nneque ex voluntáte viri, sed ex Deo nati sunt.",
+          "english": "There was a man sent from God, whose name was John. This man came for a witness, to give testimony of the light,\nthat all men might believe through him. He was not the light, but was to give testimony of the light. That was the true light,\nwhich enlighteneth every man that cometh into this world. He was in the world, and the world was made by Him, and the world knew Him not.\nHe came unto His own, and His own received Him not. But as many as received Him, He gave them power to be made the sons of God,\nto them that believe in His name: who are born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0273",
+          "sort": 273,
+          "latin": "ET VERBUM CARO FACTUM EST.",
+          "english": "AND THE WORD WAS MADE FLESH.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0274",
+          "sort": 274,
+          "latin": "Et habitávit in nobis: et vídimus glóriam eius, glóriam quasi Unigéniti a Patre, plenum grátiæ et veritátis.",
+          "english": "And dwelt among us; and we saw his glory, the glory as of the Only-begotten of the Father, full of grace and truth.",
+          "type": "text",
+          "clock": "PUBLIC_TEXT",
+          "proper_slot": null
+        },
+        {
+          "cue_id": "AO.SM.C0275",
+          "sort": 275,
+          "latin": "℟. Deo grátias.",
+          "english": "Thanks be to God.",
+          "type": "text",
+          "clock": "MINISTER_RESPONSE",
+          "proper_slot": null
+        }
+      ]
+    }
+  ],
+  "projectionCorrections": [
+    {
+      "id": "P1-010",
+      "blockId": "AO.SM.B037",
+      "scope": "DISPLAY_PROJECTION_ONLY",
+      "note": "Removed duplicate English doxology from C0125; C0126/C0127 remain sole doxology projection owners."
+    },
+    {
+      "id": "P1-011",
+      "blockIds": [
+        "AO.SM.B007",
+        "AO.SM.B077"
+      ],
+      "cueIds": [
+        "AO.SM.C0023",
+        "AO.SM.C0237"
+      ],
+      "scope": "TEXT_NORMALIZATION",
+      "note": "Normalized Confiteor infinitive to accented oráre; no ritual-state change."
+    }
+  ]
+}

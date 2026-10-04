@@ -1,0 +1,49 @@
+{
+  "profileVersion": "1.0.0",
+  "task": "B006",
+  "profileId": "SOLEMN-1962-OBJECTIVE",
+  "form": "SOLEMN",
+  "sourceOfTruth": "SOT-2026-09-21.12",
+  "graph": "mc-event-graph.v1",
+  "acceptance": {
+    "maximalSingleTraversalEventCount": 177,
+    "unionCertifiedEventCountAcrossChantBranches": 178,
+    "certifiedSourceMomentCount": 68,
+    "forbiddenSourceMoments": [
+      "E02",
+      "E17",
+      "E61"
+    ],
+    "secondConfiteor": "OMITTED_NORMATIVE_1962",
+    "privateCelebrantGospelBeforePublicGospel": "SUPPRESSED_HISTORICAL",
+    "missaCantata": "UNAVAILABLE_RG-003",
+    "requiem": "UNAVAILABLE_RG-004",
+    "consecrationAndElevationDistinct": true,
+    "communionWarningBell": "CERTIFIED_SOLEMN_CONDITIONAL"
+  },
+  "maximalGregorianContext": {
+    "form": "SOLEMN",
+    "incenseEnabled": true,
+    "gloriaPresent": true,
+    "sequencePresent": true,
+    "credoPresent": true,
+    "chantSetting": "GREGORIAN",
+    "faithfulCommunicantsPresent": true,
+    "oratioSuperPopulumPresent": true,
+    "blessingAllowed": true,
+    "normalLastGospel": true
+  },
+  "maximalDeferredBenedictusContext": {
+    "form": "SOLEMN",
+    "incenseEnabled": true,
+    "gloriaPresent": true,
+    "sequencePresent": true,
+    "credoPresent": true,
+    "chantSetting": "NON_GREGORIAN_DEFERRED",
+    "faithfulCommunicantsPresent": true,
+    "oratioSuperPopulumPresent": true,
+    "blessingAllowed": true,
+    "normalLastGospel": true
+  },
+  "rule": "SOLEMN is an explicit certified form identity. This profile must never be relabelled or used as evidence for Missa Cantata."
+}

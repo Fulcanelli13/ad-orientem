@@ -1,0 +1,362 @@
+{
+  "schema": "ao-r25-rogations-payload-v1",
+  "version": "1.0.0",
+  "status": "SOURCE_PINNED_1962_ROGATION_CORPUS",
+  "authority": {
+    "primary": "Missale Romanum 1962 — Litaniae maiores/minores; Rubricae generales 81–90",
+    "corroboration": [
+      "1962 Ordo — Greater/Minor Litanies: petitions not doubled; Rogation Mass follows procession/supplications",
+      "Traditional Rogation procession corpus: Exsurge Domine, Litany of Saints, Psalm 69, suffrages and concluding prayers"
+    ],
+    "rule": "The 1962 Litany petitions are not doubled: each invocation is rendered once; no pre-1962 duplication is encoded."
+  },
+  "opening": {
+    "antiphon": "Exsurge, Domine, adjuva nos, et libera nos propter nomen tuum.",
+    "psalm": "Deus, auribus nostris audivimus: patres nostri annuntiaverunt nobis.",
+    "gloria": "Gloria Patri, et Filio, et Spiritui Sancto: sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen.",
+    "repeat": "Exsurge, Domine, adjuva nos, et libera nos propter nomen tuum."
+  },
+  "litanyBeforeProcession": [
+    [
+      "VERSICLE",
+      "Kyrie, eleison."
+    ],
+    [
+      "RESPONSE",
+      "Kyrie, eleison."
+    ],
+    [
+      "VERSICLE",
+      "Christe, eleison."
+    ],
+    [
+      "RESPONSE",
+      "Christe, eleison."
+    ],
+    [
+      "VERSICLE",
+      "Kyrie, eleison."
+    ],
+    [
+      "RESPONSE",
+      "Kyrie, eleison."
+    ],
+    [
+      "VERSICLE",
+      "Christe, audi nos."
+    ],
+    [
+      "RESPONSE",
+      "Christe, audi nos."
+    ],
+    [
+      "VERSICLE",
+      "Christe, exaudi nos."
+    ],
+    [
+      "RESPONSE",
+      "Christe, exaudi nos."
+    ],
+    [
+      "VERSICLE",
+      "Pater de caelis, Deus."
+    ],
+    [
+      "RESPONSE",
+      "Miserere nobis."
+    ],
+    [
+      "VERSICLE",
+      "Fili, Redemptor mundi, Deus."
+    ],
+    [
+      "RESPONSE",
+      "Miserere nobis."
+    ],
+    [
+      "VERSICLE",
+      "Spiritus Sancte, Deus."
+    ],
+    [
+      "RESPONSE",
+      "Miserere nobis."
+    ],
+    [
+      "VERSICLE",
+      "Sancta Trinitas, unus Deus."
+    ],
+    [
+      "RESPONSE",
+      "Miserere nobis."
+    ]
+  ],
+  "processionLitany": [
+    "Sancta Maria, ora pro nobis.",
+    "Sancta Dei Genitrix, ora pro nobis.",
+    "Sancta Virgo virginum, ora pro nobis.",
+    "Sancte Michael, ora pro nobis.",
+    "Sancte Gabriel, ora pro nobis.",
+    "Sancte Raphael, ora pro nobis.",
+    "Omnes sancti Angeli et Archangeli, orate pro nobis.",
+    "Omnes sancti beatorum spirituum ordines, orate pro nobis.",
+    "Sancte Joannes Baptista, ora pro nobis.",
+    "Sancte Joseph, ora pro nobis.",
+    "Omnes sancti Patriarchae et Prophetae, orate pro nobis.",
+    "Sancte Petre, ora pro nobis.",
+    "Sancte Paule, ora pro nobis.",
+    "Sancte Andrea, ora pro nobis.",
+    "Sancte Jacobe, ora pro nobis.",
+    "Sancte Joannes, ora pro nobis.",
+    "Sancte Thoma, ora pro nobis.",
+    "Sancte Jacobe, ora pro nobis.",
+    "Sancte Philippe, ora pro nobis.",
+    "Sancte Bartholomaee, ora pro nobis.",
+    "Sancte Matthaee, ora pro nobis.",
+    "Sancte Simon, ora pro nobis.",
+    "Sancte Thaddaee, ora pro nobis.",
+    "Sancte Matthia, ora pro nobis.",
+    "Sancte Barnaba, ora pro nobis.",
+    "Sancte Luca, ora pro nobis.",
+    "Sancte Marce, ora pro nobis.",
+    "Omnes sancti Apostoli et Evangelistae, orate pro nobis.",
+    "Omnes sancti Discipuli Domini, orate pro nobis.",
+    "Omnes sancti Innocentes, orate pro nobis.",
+    "Sancte Stephane, ora pro nobis.",
+    "Sancte Laurenti, ora pro nobis.",
+    "Sancte Vincenti, ora pro nobis.",
+    "Sancti Fabiane et Sebastiane, orate pro nobis.",
+    "Sancti Joannes et Paule, orate pro nobis.",
+    "Sancti Cosma et Damiane, orate pro nobis.",
+    "Sancti Gervasi et Protasi, orate pro nobis.",
+    "Omnes sancti Martyres, orate pro nobis.",
+    "Sancte Silvester, ora pro nobis.",
+    "Sancte Gregori, ora pro nobis.",
+    "Sancte Ambrosi, ora pro nobis.",
+    "Sancte Augustine, ora pro nobis.",
+    "Sancte Hieronyme, ora pro nobis.",
+    "Sancte Martine, ora pro nobis.",
+    "Sancte Nicolae, ora pro nobis.",
+    "Omnes sancti Pontifices et Confessores, orate pro nobis.",
+    "Omnes sancti Doctores, orate pro nobis.",
+    "Sancte Antoni, ora pro nobis.",
+    "Sancte Benedicte, ora pro nobis.",
+    "Sancte Bernarde, ora pro nobis.",
+    "Sancte Dominice, ora pro nobis.",
+    "Sancte Francisce, ora pro nobis.",
+    "Omnes sancti Sacerdotes et Levitae, orate pro nobis.",
+    "Omnes sancti Monachi et Eremitae, orate pro nobis.",
+    "Sancta Maria Magdalena, ora pro nobis.",
+    "Sancta Agatha, ora pro nobis.",
+    "Sancta Lucia, ora pro nobis.",
+    "Sancta Agnes, ora pro nobis.",
+    "Sancta Caecilia, ora pro nobis.",
+    "Sancta Catharina, ora pro nobis.",
+    "Sancta Anastasia, ora pro nobis.",
+    "Omnes sanctae Virgines et Viduae, orate pro nobis.",
+    "Omnes Sancti et Sanctae Dei, intercedite pro nobis.",
+    "Propitius esto, parce nobis, Domine.",
+    "Propitius esto, exaudi nos, Domine.",
+    "Ab omni malo, libera nos, Domine.",
+    "Ab omni peccato, libera nos, Domine.",
+    "Ab ira tua, libera nos, Domine.",
+    "A subitanea et improvisa morte, libera nos, Domine.",
+    "Ab insidiis diaboli, libera nos, Domine.",
+    "Ab ira, et odio, et omni mala voluntate, libera nos, Domine.",
+    "A spiritu fornicationis, libera nos, Domine.",
+    "A fulgure et tempestate, libera nos, Domine.",
+    "A flagello terraemotus, libera nos, Domine.",
+    "A peste, fame, et bello, libera nos, Domine.",
+    "A morte perpetua, libera nos, Domine.",
+    "Per mysterium sanctae Incarnationis tuae, libera nos, Domine.",
+    "Per Adventum tuum, libera nos, Domine.",
+    "Per Nativitatem tuam, libera nos, Domine.",
+    "Per Baptismum et sanctum Jejunium tuum, libera nos, Domine.",
+    "Per Crucem et Passionem tuam, libera nos, Domine.",
+    "Per Mortem et Sepulturam tuam, libera nos, Domine.",
+    "Per sanctam Resurrectionem tuam, libera nos, Domine.",
+    "Per admirabilem Ascensionem tuam, libera nos, Domine.",
+    "Per adventum Spiritus Sancti Paracliti, libera nos, Domine.",
+    "In die judicii, libera nos, Domine.",
+    "Peccatores, te rogamus, audi nos.",
+    "Ut nobis parcas, te rogamus, audi nos.",
+    "Ut nobis indulgeas, te rogamus, audi nos.",
+    "Ut ad veram poenitentiam nos perducere digneris, te rogamus, audi nos.",
+    "Ut Ecclesiam tuam sanctam regere et conservare digneris, te rogamus, audi nos.",
+    "Ut domnum apostolicum et omnes ecclesiasticos ordines in sancta religione conservare digneris, te rogamus, audi nos.",
+    "Ut inimicos sanctae Ecclesiae humiliare digneris, te rogamus, audi nos.",
+    "Ut regibus et principibus christianis pacem et veram concordiam donare digneris, te rogamus, audi nos.",
+    "Ut cuncto populo christiano pacem et unitatem largiri digneris, te rogamus, audi nos.",
+    "Ut omnes errantes ad unitatem Ecclesiae revocare, et infideles universos ad Evangelii lumen perducere digneris, te rogamus, audi nos.",
+    "Ut nosmetipsos in tuo sancto servitio confortare et conservare digneris, te rogamus, audi nos.",
+    "Ut mentes nostras ad caelestia desideria erigas, te rogamus, audi nos.",
+    "Ut omnibus benefactoribus nostris sempiterna bona retribuas, te rogamus, audi nos.",
+    "Ut animas nostras, fratrum, propinquorum et benefactorum nostrorum ab aeterna damnatione eripias, te rogamus, audi nos.",
+    "Ut fructus terrae dare et conservare digneris, te rogamus, audi nos.",
+    "Ut omnibus fidelibus defunctis requiem aeternam donare digneris, te rogamus, audi nos.",
+    "Ut nos exaudire digneris, te rogamus, audi nos.",
+    "Fili Dei, te rogamus, audi nos.",
+    "Agnus Dei, qui tollis peccata mundi, parce nobis, Domine.",
+    "Agnus Dei, qui tollis peccata mundi, exaudi nos, Domine.",
+    "Agnus Dei, qui tollis peccata mundi, miserere nobis.",
+    "Christe, audi nos.",
+    "Christe, exaudi nos.",
+    "Kyrie, eleison.",
+    "Christe, eleison.",
+    "Kyrie, eleison."
+  ],
+  "postLitany": {
+    "pater": "Pater noster.",
+    "versicle": "Et ne nos inducas in tentationem.",
+    "response": "Sed libera nos a malo.",
+    "psalm69": [
+      "Deus, in adjutorium meum intende: Domine, ad adjuvandum me festina.",
+      "Confundantur et revereantur, qui quaerunt animam meam.",
+      "Avertantur retrorsum et erubescant, qui volunt mihi mala.",
+      "Avertantur statim erubescentes, qui dicunt mihi: Euge, euge.",
+      "Exsultent et laetentur in te omnes qui quaerunt te, et dicant semper: Magnificetur Dominus, qui diligunt salutare tuum.",
+      "Ego vero egenus et pauper sum: Deus, adjuva me.",
+      "Adjutor meus et liberator meus es tu: Domine, ne moreris.",
+      "Gloria Patri, et Filio, et Spiritui Sancto: sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen."
+    ],
+    "suffrages": [
+      [
+        "VERSICLE",
+        "Salvos fac servos tuos."
+      ],
+      [
+        "RESPONSE",
+        "Deus meus, sperantes in te."
+      ],
+      [
+        "VERSICLE",
+        "Esto nobis, Domine, turris fortitudinis."
+      ],
+      [
+        "RESPONSE",
+        "A facie inimici."
+      ],
+      [
+        "VERSICLE",
+        "Nihil proficiat inimicus in nobis."
+      ],
+      [
+        "RESPONSE",
+        "Et filius iniquitatis non apponat nocere nobis."
+      ],
+      [
+        "VERSICLE",
+        "Domine, non secundum peccata nostra facias nobis."
+      ],
+      [
+        "RESPONSE",
+        "Neque secundum iniquitates nostras retribuas nobis."
+      ],
+      [
+        "VERSICLE",
+        "Oremus pro Pontifice nostro N."
+      ],
+      [
+        "RESPONSE",
+        "Dominus conservet eum, et vivificet eum, et beatum faciat eum in terra, et non tradat eum in animam inimicorum ejus."
+      ],
+      [
+        "VERSICLE",
+        "Oremus pro benefactoribus nostris."
+      ],
+      [
+        "RESPONSE",
+        "Retribuere dignare, Domine, omnibus nobis bona facientibus propter nomen tuum vitam aeternam. Amen."
+      ],
+      [
+        "VERSICLE",
+        "Oremus pro fidelibus defunctis."
+      ],
+      [
+        "RESPONSE",
+        "Requiem aeternam dona eis, Domine, et lux perpetua luceat eis."
+      ],
+      [
+        "VERSICLE",
+        "Requiescant in pace."
+      ],
+      [
+        "RESPONSE",
+        "Amen."
+      ],
+      [
+        "VERSICLE",
+        "Pro fratribus nostris absentibus."
+      ],
+      [
+        "RESPONSE",
+        "Salvos fac servos tuos, Deus meus, sperantes in te."
+      ],
+      [
+        "VERSICLE",
+        "Mitte eis, Domine, auxilium de sancto."
+      ],
+      [
+        "RESPONSE",
+        "Et de Sion tuere eos."
+      ],
+      [
+        "VERSICLE",
+        "Domine, exaudi orationem meam."
+      ],
+      [
+        "RESPONSE",
+        "Et clamor meus ad te veniat."
+      ],
+      [
+        "VERSICLE",
+        "Dominus vobiscum."
+      ],
+      [
+        "RESPONSE",
+        "Et cum spiritu tuo."
+      ]
+    ],
+    "orations": [
+      "Deus, cui proprium est misereri semper et parcere: suscipe deprecationem nostram; ut nos, et omnes famulos tuos, quos delictorum catena constringit, miseratio tuae pietatis clementer absolvat.",
+      "Exaudi, quaesumus, Domine, supplicum preces, et confitentium tibi parce peccatis: ut pariter nobis indulgentiam tribuas benignus, et pacem.",
+      "Ineffabilem nobis, Domine, misericordiam tuam clementer ostende: ut simul nos et a peccatis omnibus exuas, et a poenis, quas pro his meremur, eripias.",
+      "Deus, qui culpa offenderis, poenitentia placaris: preces populi tui supplicantis propitius respice; et flagella tuae iracundiae, quae pro peccatis nostris meremur, averte.",
+      "Omnipotens sempiterne Deus, miserere famulo tuo Pontifici N., et dirige eum secundum tuam clementiam in viam salutis aeternae: ut, te donante, tibi placita cupiat, et tota virtute perficiat.",
+      "Deus, a quo sancta desideria, recta consilia et justa sunt opera: da servis tuis illam, quam mundus dare non potest, pacem; ut et corda nostra mandatis tuis dedita, et hostium sublata formidine, tempora sint tua protectione tranquilla.",
+      "Ure igne Sancti Spiritus renes nostros et cor nostrum, Domine: ut tibi casto corpore serviamus, et mundo corde placeamus.",
+      "Fidelium, Deus, omnium conditor et redemptor, animabus famulorum famularumque tuarum remissionem cunctorum tribue peccatorum: ut indulgentiam, quam semper optaverunt, piis supplicationibus consequantur.",
+      "Actiones nostras, quaesumus, Domine, aspirando praeveni, et adjuvando prosequere: ut cuncta nostra oratio et operatio a te semper incipiat, et per te coepta finiatur.",
+      "Omnipotens sempiterne Deus, qui vivorum dominaris simul et mortuorum, omniumque misereris, quos tuos fide et opere futuros esse praenoscis: te supplices exoramus; ut pro quibus effundere preces decrevimus, quosque vel praesens saeculum adhuc in carne retinet vel futurum jam exutos corpore suscepit, intercedentibus omnibus Sanctis tuis, pietatis tuae clementia omnium delictorum suorum veniam consequantur. Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum."
+    ],
+    "final": [
+      [
+        "RESPONSE",
+        "Amen."
+      ],
+      [
+        "VERSICLE",
+        "Dominus vobiscum."
+      ],
+      [
+        "RESPONSE",
+        "Et cum spiritu tuo."
+      ],
+      [
+        "VERSICLE",
+        "Exaudiat nos omnipotens et misericors Dominus."
+      ],
+      [
+        "RESPONSE",
+        "Amen."
+      ],
+      [
+        "VERSICLE",
+        "Et fidelium animae per misericordiam Dei requiescant in pace."
+      ],
+      [
+        "RESPONSE",
+        "Amen."
+      ]
+    ]
+  }
+}

@@ -1,0 +1,1000 @@
+            const rules = (0, proper_resolver_1.ruleInfo)(sources);
+            const meta = {
+                date: dateKey,
+                path,
+                properId: `calendar:${dateKey}:${path}`,
+                name: day.main.title || 'Feria',
+                nameFr: day.main.title || 'Férie',
+                rank: (0, calendar_engine_1.classLabel)(day.main.rank || 4),
+                color: day.main.color || 'White',
+                profile: 'ordinary_mass',
+                gloria: inherited ? false : rules.gloria,
+                credo: inherited ? false : rules.credo,
+                preface: inherited ? seasonalPreface(day) : (rules.preface || 'Communis'),
+                inherited,
+            };
+            const preface = await this.properResolver.resolvePreface(meta.preface || 'Communis', diagnostic);
+            let proper = (0, proper_resolver_1.normalizeProper)(meta, sources, preface, diagnostic);
+            proper = await mergeCommemorations(this.properResolver, proper, day, diagnostic);
+            proper.riteProfile = (0, liturgical_theme_1.riteProfileFor)(path, proper);
+            proper.sourcePath = path;
+            proper.inheritedProper = inherited;
+            proper.calendarDay = day;
+            proper.formularies = day.formularies || null;
+            proper.formularyIndex = day.formularyIndex || 0;
+            proper.canonicalColor = proper.color;
+            const colourPlan = (0, liturgical_theme_1.liturgicalColorPlan)(date, day, path, proper);
+            proper.liturgicalColorPlan = colourPlan;
+            proper.color = colourPlan.primary;
+            proper.vestmentsLabel = colourPlan.label;
+            proper.sourceRevisions = source_config_1.SOURCE_REVISIONS;
+            return { status: 'ready', date: dateKey, day, proper: { status: 'ready', data: proper, error: null }, colourPlan, error: null, diagnostic };
+        }
+        catch (error) {
+            const message = error instanceof Error ? error.message : String(error);
+            diagnostic.errors.push(message);
+            return { status: 'ready', date: dateKey, day, proper: { status: 'failed', data: null, error: message }, colourPlan: null, error: null, diagnostic };
+        }
+    }
+}
+exports.DayResolver = DayResolver;
+const createDayResolver = (fetcher) => new DayResolver(fetcher);
+exports.createDayResolver = createDayResolver;
+
+},2:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CalendarEngine = exports.classLabel = void 0;
+exports.colorLabel = colorLabel;
+const date_utils_1 = require(3);
+const source_config_1 = require(4);
+const source_parsers_1 = require(5);
+const ROMAN = ['', 'I', 'II', 'III', 'IV'];
+const classLabel = (rank) => `${ROMAN[rank] || rank} class`;
+exports.classLabel = classLabel;
+function colorLabel(code) {
+    const map = { w: 'White', r: 'Red', v: 'Violet', g: 'Green', b: 'Black', p: 'Rose' };
+    return [...new Set([...String(code || 'w')].map(char => map[char] || char))].join(' / ');
+}
+const PAT = {
+    PATTERN_TEMPORA: /^tempora:.*/,
+    PATTERN_ADVENT: /^tempora:Adv\d/,
+    PATTERN_ADVENT_SUNDAY: /^tempora:Adv\d-0/,
+    PATTERN_LENT: /^tempora:Quad(p3-[3-6]|\d)/,
+    PATTERN_LENT_SUNDAY: /^tempora:Quad\d-0.*/,
+    PATTERN_EASTER: /^tempora:Pasc\d/,
+    PATTERN_TEMPORA_SUNDAY: /^tempora:.*-0r*:\d:\w{1,2}$/,
+    PATTERN_TEMPORA_SUNDAY_CLASS_2: /^tempora:(.*-0r*:2|Nat1-0):\w$/,
+    PATTERN_TEMPORA_CLASS_4: /^tempora:.*:4:\w$/,
+    PATTERN_SANCTI: /^sancti:/,
+    PATTERN_SANCTI_CLASS_1_OR_2: /^sancti:.*:[12]:\w$/,
+    PATTERN_SANCTI_CLASS_2: /^sancti:.*:2:\w$/,
+    PATTERN_SANCTI_CLASS_3: /^sancti:.*:3:\w$/,
+    PATTERN_SANCTI_CLASS_3_LOCAL: /^sancti:.*(?:en|pl):3:\w$/,
+    PATTERN_SANCTI_CLASS_4: /^sancti:.*:4c?:\w$/,
+    PATTERN_CLASS_1: /^[a-z]*:.*:1:\w$/,
+    PATTERN_CLASS_2: /^[a-z]*:.*:2:\w$/,
+    PATTERN_CLASS_3: /^[a-z]*:.*:3:\w$/,
+};
+function idMatches(id, matcher) {
+    if (!matcher)
+        return false;
+    if (matcher instanceof RegExp) {
+        matcher.lastIndex = 0;
+        return matcher.test(id);
+    }
+    if (Array.isArray(matcher))
+        return matcher.some(item => idMatches(id, item));
+    if (matcher instanceof Set)
+        return [...matcher].some(item => idMatches(id, item));
+    if (typeof matcher === 'string') {
+        try {
+            return new RegExp(`^${matcher}`).test(id);
+        }
+        catch {
+            return id === matcher;
+        }
+    }
+    return false;
+}
+function matchAll(observances, matcher) {
+    const list = Array.isArray(observances) ? observances : [observances];
+    return list.filter(Boolean).filter(obs => idMatches(obs.id, matcher));
+}
+function matchFirst(observances, matcher) {
+    return matchAll(observances, matcher)[0] || null;
+}
+function priorityFor(id, source) {
+    for (let i = 0; i < source.precedence.length; i += 1)
+        if (idMatches(id, source.precedence[i]))
+            return i;
+    return 9999;
+}
+function sourcePathFor(flexibility, name) {
+    if (flexibility === 'tempora')
+        return `Tempora/${name}`;
+    if (flexibility === 'sancti')
+        return `Sancti/${name}`;
+    if (flexibility === 'commune')
+        return `Commune/${name}`;
+    return null;
+}
+function makeObservance(raw, date, source) {
+    const parts = String(raw).split(':');
+    if (parts.length < 4)
+        throw new Error(`Bad observance ID: ${raw}`);
+    let [flexibility, name, rankString, colorCode] = parts;
+    let rank = Number(rankString);
+    if (flexibility === 'tempora' && /^Adv\d-[1-6]$/.test(name) && date.getMonth() === 11 && date.getDate() >= 17 && date.getDate() <= 23)
+        rank = 2;
+    const id = [flexibility, name, rank, colorCode].join(':');
+    return {
+        rawId: raw,
+        id,
+        flexibility,
+        name,
+        rank,
+        colorCode,
+        colors: [...colorCode],
+        color: colorLabel(colorCode),
+        path: sourcePathFor(flexibility, name),
+        title: source.titles.get(raw) || source.titles.get(id) || (flexibility === '' ? 'Feria' : undefined),
+        priority: priorityFor(id, source),
+    };
+}
+function newCalendar(year) {
+    const map = new Map();
+    let date = (0, date_utils_1.dUTC)(year, 1, 1), end = (0, date_utils_1.dUTC)(year, 12, 31);
+    while (date <= end) {
+        map.set((0, date_utils_1.iso)(date), { date: new Date(date), tempora: [], celebration: [], commemoration: [], displaced: [] });
+        date = (0, date_utils_1.addDays)(date, 1);
+    }
+    return map;
+}
+function getDay(calendar, date) { return calendar.get((0, date_utils_1.iso)(date)); }
+function dayAll(day) { return [...day.tempora, ...day.celebration, ...day.commemoration]; }
+function insertBlock(calendar, source, start, block, options = {}) {
+    const reverse = !!options.reverse;
+    const overwrite = options.overwrite !== false;
+    const stop = options.stopDate || null;
+    const rows = reverse ? [...block].reverse() : block;
+    for (let i = 0; i < rows.length; i += 1) {
+        const date = (0, date_utils_1.addDays)(start, reverse ? -i : i), row = rows[i];
+        if (!row?.length)
+            continue;
+        const day = getDay(calendar, date);
+        if (!day)
+            break;
+        if (day.celebration.length && !overwrite)
+            break;
+        if (stop && (0, date_utils_1.sameDay)(stop, (0, date_utils_1.addDays)(date, -1)))
+            break;
+        const observations = row.map(id => makeObservance(id, date, source));
+        day.tempora = observations;
+        day.celebration = [...observations];
+    }
+}
+function fillInitialCalendar(year, source) {
+    const calendar = newCalendar(year);
+    insertBlock(calendar, source, (0, date_utils_1.holyFamily)(year), source.blocks.POST_EPIPHANY);
+    insertBlock(calendar, source, (0, date_utils_1.septuagesima)(year), source.blocks.FROM_PRE_LENT_TO_POST_PENTECOST);
+    insertBlock(calendar, source, (0, date_utils_1.addDays)((0, date_utils_1.pent24Start)(year), -1), source.blocks.POST_EPIPHANY, { reverse: true, overwrite: false });
+    insertBlock(calendar, source, (0, date_utils_1.pent24Start)(year), source.blocks.WEEK_24_AFTER_PENTECOST);
+    insertBlock(calendar, source, (0, date_utils_1.firstAdvent)(year), source.blocks.ADVENT, { stopDate: (0, date_utils_1.dUTC)(year, 12, 23) });
+    insertBlock(calendar, source, (0, date_utils_1.emberSeptember)(year), source.blocks.EMBER_DAYS_SEPTEMBER);
+    let date = (0, date_utils_1.holyName)(year), day = getDay(calendar, date);
+    if (day)
+        day.celebration = [makeObservance(source.constants.TEMPORA_NAT2_0, date, source)];
+    date = (0, date_utils_1.christKing)(year);
+    day = getDay(calendar, date);
+    if (day)
+        day.celebration = [makeObservance(source.constants.SANCTI_10_DU, date, source)];
+    const octaveSunday = (0, date_utils_1.christmasOctaveSunday)(year);
+    if (octaveSunday)
+        insertBlock(calendar, source, octaveSunday, source.blocks.NATIVITY_OCTAVE_SUNDAY);
+    for (const n of [29, 30, 31])
+        insertBlock(calendar, source, (0, date_utils_1.dUTC)(year, 12, n), source.blocks.NATIVITY_OCTAVE_FERIA, { overwrite: false });
+    for (const rawDay of calendar.values()) {
+        const md = `${(0, date_utils_1.z)(rawDay.date.getMonth() + 1)}-${(0, date_utils_1.z)(rawDay.date.getDate())}`;
+        const ids = source.blocks.SANCTI.filter(id => id.startsWith(`sancti:${md}`));
+        if (ids.length) {
+            const observations = ids.map(id => makeObservance(id, rawDay.date, source)).sort((a, b) => a.rank - b.rank);
+            rawDay.celebration.push(...observations);
+            rawDay.celebration.sort((a, b) => a.rank - b.rank);
+        }
+    }
+    return calendar;
+}
+function sortGeneral(a, b) { return (a.priority - b.priority) || (a.rank - b.rank) || String(a.flexibility).localeCompare(String(b.flexibility)); }
+function nextFreeTransferDate(calendar, date) {
+    let target = new Date(date);
+    while (target.getFullYear() === date.getFullYear()) {
+        target = (0, date_utils_1.addDays)(target, 1);
+        const day = getDay(calendar, target);
+        if (!day)
+            return null;
+        const ranks = new Set(dayAll(day).map(obs => obs.rank));
+        if (!ranks.has(1) && !ranks.has(2))
+            return target;
+    }
+    return null;
+}
+function bmvObs(date, tempora, source) {
+    let id;
+    if (matchFirst(tempora, PAT.PATTERN_ADVENT))
+        id = source.constants.TEMPORA_C_10A;
+    else if (date >= (0, date_utils_1.dUTC)(date.getFullYear(), 12, 25) || date < (0, date_utils_1.dUTC)(date.getFullYear(), 2, 2))
+        id = source.constants.TEMPORA_C_10B;
+    else if (date >= (0, date_utils_1.dUTC)(date.getFullYear(), 2, 2) && date < (0, date_utils_1.addDays)((0, date_utils_1.easter)(date.getFullYear()), -4))
+        id = source.constants.TEMPORA_C_10C;
+    else if (matchFirst(tempora, PAT.PATTERN_EASTER))
+        id = source.constants.TEMPORA_C_10PASC;
+    else
+        id = source.constants.TEMPORA_C_10T;
+    return makeObservance(id, date, source);
+}
+function applyRules(calendar, source, date, shifted) {
+    const day = getDay(calendar, date);
+    const tempora = day.tempora, obs = [...day.celebration, ...shifted];
+    const C = source.constants, isSun = date.getDay() === 0, isSat = date.getDay() === 6;
+    const ret = (celebration, commemoration = [], shifts = [], displaced = null) => ({
+        celebration, commemoration, shifts,
+        displaced: displaced ?? obs.filter(o => o.flexibility === 'sancti' && !new Set(celebration.map(x => x.id)).has(o.id)),
+    });
+    let x, y, list;
+    if ((x = matchFirst(obs, C.SANCTI_12_24)) && isSun)
+        return ret([x]);
+    if (matchFirst(obs, C.SANCTI_12_25_1))
+        return ret(obs.filter(o => o.id.startsWith('sancti:12-25m')));
+    if (matchFirst(obs, C.SANCTI_11_02_1)) {
+        list = obs.filter(o => o.id.startsWith('sancti:11-02m'));
+        if (isSun) {
+            x = matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY);
+            return ret(x ? [x] : [], [], [[(0, date_utils_1.dUTC)(date.getFullYear(), 11, 3), list]]);
+        }
+        return ret(list);
+    }
+    if ((x = matchFirst(obs, C.SANCTI_02_24)) && date.getFullYear() % 4 === 0 && date.getDate() === 24) {
+        y = matchFirst(obs, PAT.PATTERN_TEMPORA);
+        return ret(y ? [y] : [], [], [[(0, date_utils_1.dUTC)(date.getFullYear(), 2, 25), [x]]]);
+    }
+    if ((x = matchFirst(obs, C.SANCTI_02_27)) && date.getFullYear() % 4 === 0 && date.getDate() === 27) {
+        y = matchFirst(obs, PAT.PATTERN_TEMPORA);
+        return ret(y ? [y] : [], [], [[(0, date_utils_1.dUTC)(date.getFullYear(), 2, 28), [x]]]);
+    }
+    if ((x = matchFirst(obs, C.SANCTI_08_09))) {
+        if (isSat) {
+            y = matchFirst(obs, C.SANCTI_08_09C);
+            return ret([bmvObs(date, tempora, source)], y ? [y] : []);
+        }
+        if (!isSun) {
+            y = matchFirst(obs, C.SANCTI_08_09C);
+            return ret([x], y ? [y] : []);
+        }
+    }
+    if ((x = matchFirst(obs, C.TEMPORA_QUAD5_5)) && (y = matchFirst(obs, C.TEMPORA_QUAD5_5C)))
+        return ret([x], [y]);
+    x = !isSun ? matchFirst(obs, [...source.ember, PAT.PATTERN_ADVENT]) : null;
+    if (x) {
+        y = matchFirst(obs, PAT.PATTERN_SANCTI);
+        if (!y)
+            return ret([x]);
+        if (x.rank === y.rank)
+            return ret([y], [x]);
+        if (x.rank < y.rank)
+            return ret([x], [y]);
+    }
+    if ((x = matchFirst(obs, PAT.PATTERN_LENT))) {
+        list = matchAll(obs, PAT.PATTERN_SANCTI).sort((a, b) => a.rank - b.rank);
+        if (!list.length)
+            return ret([x]);
+        const min = list[0].rank;
+        if (x.rank === min) {
+            if (min !== 1)
+                return ret([x], list);
+        }
+        else if (x.rank > min)
+            return ret([list[0]], [...list.slice(1), x]);
+    }
+    if (date.getMonth() === 11 && date.getDate() === 8 && isSun) {
+        x = matchFirst(obs, PAT.PATTERN_SANCTI);
+        y = matchFirst(obs, PAT.PATTERN_TEMPORA);
+        if (x)
+            return ret([x], y ? [y] : []);
+    }
+    list = obs.filter(o => o.rank === 1);
+    if (list.length > 1) {
+        list.sort((a, b) => a.priority - b.priority);
+        const target = nextFreeTransferDate(calendar, date);
+        return ret([list[0]], [], target ? [[target, [list[1]]]] : []);
+    }
+    if (matchFirst(obs, C.SANCTI_01_13) && matchFirst(obs, C.TEMPORA_EPI1_0)) {
+        x = matchFirst(obs, C.TEMPORA_EPI1_0);
+        return ret(x ? [x] : []);
+    }
+    if (matchFirst(obs, [...source.jesusFeasts]) && matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2)) {
+        x = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_1_OR_2);
+        if (x)
+            return ret([x]);
+    }
+    if (matchFirst(obs, [C.SANCTI_09_29, C.SANCTI_06_29].filter(Boolean)) && matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2)) {
+        x = matchFirst(obs, PAT.PATTERN_CLASS_1);
+        y = matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2);
+        return ret(x ? [x] : [], y ? [y] : []);
+    }
+    if ((x = matchFirst([...obs].sort((a, b) => a.priority - b.priority), PAT.PATTERN_CLASS_1)))
+        return ret([x]);
+    if (matchFirst(obs, [C.SANCTI_09_14, C.SANCTI_11_09].filter(Boolean)) && isSun) {
+        x = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_2);
+        if (x)
+            return ret([x]);
+    }
+    if (isSun && matchFirst(obs, [...source.fixedVigils])) {
+        x = matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY);
+        if (x)
+            return ret([x]);
+    }
+    if (isSun && (x = matchFirst(obs, PAT.PATTERN_TEMPORA_SUNDAY_CLASS_2))) {
+        y = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_2);
+        return ret([x], y ? [y] : []);
+    }
+    if ((x = matchFirst(obs, [C.TEMPORA_QUAD6_1, C.TEMPORA_QUAD6_2, C.TEMPORA_QUAD6_3, C.TEMPORA_QUAD6_4, C.TEMPORA_QUAD6_5, C.TEMPORA_QUAD6_6, C.TEMPORA_PASC0_0, C.TEMPORA_QUADP3_3].filter(Boolean)))) {
+        y = matchFirst(obs, PAT.PATTERN_TEMPORA);
+        return ret(y ? [y] : [x]);
+    }
+    if (isSat) {
+        const ranks = new Set(obs.map(o => o.rank));
+        if (ranks.size === 0 || (ranks.size === 1 && ranks.has(4))) {
+            const bmv = bmvObs(date, tempora, source), saint = obs.filter(o => o.flexibility === 'sancti').slice(0, 1);
+            return ret([bmv], saint);
+        }
+    }
+    list = obs.filter(o => idMatches(o.id, PAT.PATTERN_SANCTI_CLASS_3_LOCAL));
+    if (list.length) {
+        const other = obs.filter(o => idMatches(o.id, [PAT.PATTERN_SANCTI_CLASS_3, PAT.PATTERN_SANCTI_CLASS_4]) && !idMatches(o.id, PAT.PATTERN_SANCTI_CLASS_3_LOCAL));
+        if (other.length)
+            return ret(list, other);
+    }
+    x = matchFirst(obs, PAT.PATTERN_TEMPORA_CLASS_4);
+    if (x) {
+        list = matchAll(obs, PAT.PATTERN_SANCTI_CLASS_4);
+        const higher = obs.filter(o => o.flexibility === 'sancti' && o.rank < 4).sort(sortGeneral);
+        if (higher.length)
+            return ret([higher[0]], list);
+        return ret([], list);
+    }
+    if ((x = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_4))) {
+        const rest = obs.filter(o => o !== x);
+        return ret(rest, [x]);
+    }
+    if (!obs.length)
+        return ret([]);
+    if (obs.length === 1)
+        return ret(obs);
+    list = [...obs].sort(sortGeneral);
+    x = list[0];
+    y = list[1];
+    if (idMatches(x.id, PAT.PATTERN_TEMPORA_SUNDAY) || (tempora.length && y.id === tempora[0].id))
+        return ret([x]);
+    return ret([x], [y]);
+}
+function resolveConcurrency(calendar, source) {
+    const shifted = new Map();
+    for (const day of calendar.values()) {
+        const key = (0, date_utils_1.iso)(day.date), extra = shifted.get(key) || [];
+        shifted.delete(key);
+        const result = applyRules(calendar, source, day.date, extra);
+        let celebration = result.celebration;
+        if (!celebration.length) {
+            const feria = makeObservance(source.constants.FERIA, day.date, source);
+            if (day.tempora[0]) {
+                feria.colors = [...day.tempora[0].colors];
+                feria.colorCode = day.tempora[0].colorCode;
+                feria.color = colorLabel(feria.colorCode);
+            }
+            celebration = [feria];
+        }
+        day.celebration = celebration;
+        day.commemoration = result.commemoration || [];
+        day.displaced = result.displaced || [];
+        for (const [targetDate, items] of result.shifts || []) {
+            const shiftedKey = (0, date_utils_1.iso)(targetDate);
+            shifted.set(shiftedKey, [...(shifted.get(shiftedKey) || []), ...items]);
+        }
+    }
+    return calendar;
+}
+function mainId(day) { return day?.celebration?.[0]?.id || null; }
+function regressionSelfTest2026(calendar, source) {
+    const anchors = {
+        '2026-01-04': 'TEMPORA_NAT2_0', '2026-01-06': 'SANCTI_01_06', '2026-01-11': 'TEMPORA_EPI1_0', '2026-02-15': 'TEMPORA_QUADP3_0', '2026-02-18': 'TEMPORA_QUADP3_3', '2026-02-24': 'SANCTI_02_24', '2026-03-25': 'SANCTI_03_25', '2026-03-29': 'TEMPORA_QUAD6_0', '2026-04-02': 'TEMPORA_QUAD6_4', '2026-04-03': 'TEMPORA_QUAD6_5', '2026-04-04': 'TEMPORA_QUAD6_6', '2026-04-05': 'TEMPORA_PASC0_0', '2026-04-12': 'TEMPORA_PASC1_0', '2026-05-14': 'TEMPORA_PASC5_4', '2026-05-24': 'TEMPORA_PASC7_0', '2026-05-31': 'TEMPORA_PENT01_0', '2026-06-04': 'TEMPORA_PENT01_4', '2026-06-12': 'TEMPORA_PENT02_5', '2026-07-26': 'TEMPORA_PENT09_0', '2026-08-09': 'TEMPORA_PENT11_0', '2026-08-15': 'SANCTI_08_15', '2026-09-16': 'SANCTI_09_16', '2026-09-23': 'TEMPORA_PENT_3', '2026-10-25': 'SANCTI_10_DU', '2026-11-01': 'SANCTI_11_01', '2026-11-02': 'SANCTI_11_02_1', '2026-11-08': 'TEMPORA_EPI5_0', '2026-11-15': 'TEMPORA_EPI6_0', '2026-11-22': 'TEMPORA_PENT24_0', '2026-11-29': 'TEMPORA_ADV1_0', '2026-12-08': 'SANCTI_12_08', '2026-12-16': 'TEMPORA_ADV3_3', '2026-12-25': 'SANCTI_12_25_1'
+    };
+    const sep = ['FERIA', 'SANCTI_09_02', 'SANCTI_09_03', 'FERIA', 'SANCTI_09_05', 'TEMPORA_PENT15_0', 'FERIA', 'SANCTI_09_08', 'FERIA', 'SANCTI_09_10', 'FERIA', 'SANCTI_09_12', 'TEMPORA_PENT16_0', 'SANCTI_09_14', 'SANCTI_09_15', 'SANCTI_09_16', 'FERIA', 'SANCTI_09_18', 'SANCTI_09_19', 'TEMPORA_PENT17_0', 'SANCTI_09_21', 'SANCTI_09_22', 'TEMPORA_PENT_3', 'FERIA', 'TEMPORA_PENT_5', 'TEMPORA_PENT_6', 'TEMPORA_PENT18_0', 'SANCTI_09_28', 'SANCTI_09_29', 'SANCTI_09_30'];
+    for (let i = 0; i < 30; i += 1)
+        anchors[`2026-09-${(0, date_utils_1.z)(i + 1)}`] = sep[i];
+    const failures = [];
+    for (const [date, constantName] of Object.entries(anchors)) {
+        const actual = mainId(calendar.get(date)), expected = source.constants[constantName];
+        if (!expected) {
+            failures.push({ date, constantName, actual, reason: 'expected constant missing from source' });
+            continue;
+        }
+        if (actual !== expected)
+            failures.push({ date, constantName, expected, actual });
+    }
+    return { passed: failures.length === 0, total: Object.keys(anchors).length, failures };
+}
+function yearSelfTest(calendar, source, year) {
+    const failures = [];
+    const expect = (ok, reason, detail = '') => { if (!ok)
+        failures.push({ date: String(year), reason, detail }); };
+    expect(calendar.size === (0, date_utils_1.daysInYear)(year), 'calendar day count', `${calendar.size} != ${(0, date_utils_1.daysInYear)(year)}`);
+    expect([...calendar.values()].every(day => day.celebration?.length > 0), 'every civil date resolves to a celebration');
+    const eas = (0, date_utils_1.easter)(year), ash = (0, date_utils_1.addDays)(eas, -46), palm = (0, date_utils_1.addDays)(eas, -7), adv = (0, date_utils_1.firstAdvent)(year), king = (0, date_utils_1.christKing)(year), ember = (0, date_utils_1.emberSeptember)(year);
+    expect(mainId(calendar.get((0, date_utils_1.iso)(eas))) === source.constants.TEMPORA_PASC0_0, 'Easter Sunday anchor', String(mainId(calendar.get((0, date_utils_1.iso)(eas)))));
+    expect(mainId(calendar.get((0, date_utils_1.iso)(ash))) === source.constants.TEMPORA_QUADP3_3, 'Ash Wednesday anchor', String(mainId(calendar.get((0, date_utils_1.iso)(ash)))));
+    expect(mainId(calendar.get((0, date_utils_1.iso)(palm))) === source.constants.TEMPORA_QUAD6_0, 'Palm Sunday anchor', String(mainId(calendar.get((0, date_utils_1.iso)(palm)))));
+    expect(mainId(calendar.get((0, date_utils_1.iso)(king))) === source.constants.SANCTI_10_DU, 'Christ the King anchor', String(mainId(calendar.get((0, date_utils_1.iso)(king)))));
+    expect(calendar.get((0, date_utils_1.iso)(adv))?.tempora?.[0]?.id === source.constants.TEMPORA_ADV1_0, 'First Sunday of Advent temporal anchor', String(calendar.get((0, date_utils_1.iso)(adv))?.tempora?.[0]?.id));
+    expect(calendar.get((0, date_utils_1.iso)(ember))?.tempora?.some(obs => obs.id === source.constants.TEMPORA_PENT_3) === true, 'September Ember Wednesday temporal anchor', calendar.get((0, date_utils_1.iso)(ember))?.tempora?.map(obs => obs.id).join(','));
+    const christmas = calendar.get(`${year}-12-25`);
+    expect(christmas?.celebration?.filter(obs => obs.id.startsWith('sancti:12-25m')).length === 3, 'Christmas three formularies', christmas?.celebration?.map(obs => obs.id).join(','));
+    const souls2 = calendar.get(`${year}-11-02`), souls3 = calendar.get(`${year}-11-03`);
+    const soulsCount = (day) => day?.celebration?.filter(obs => obs.id.startsWith('sancti:11-02m')).length || 0;
+    expect(soulsCount(souls2) === 3 || soulsCount(souls3) === 3, 'All Souls three formularies / Sunday transfer', `${soulsCount(souls2)}/${soulsCount(souls3)}`);
+    return { passed: failures.length === 0, total: 9, year, failures };
+}
+function massOptionLabel(option, index) {
+    const id = option.id || '';
+    if (id.includes('12-25m1'))
+        return 'Mass I · Midnight';
+    if (id.includes('12-25m2'))
+        return 'Mass II · Dawn';
+    if (id.includes('12-25m3'))
+        return 'Mass III · Day';
+    if (id.includes('11-02m1'))
+        return 'Mass I';
+    if (id.includes('11-02m2'))
+        return 'Mass II';
+    if (id.includes('11-02m3'))
+        return 'Mass III';
+    return option.title || `Mass ${index + 1}`;
+}
+class CalendarEngine {
+    fetcher;
+    properResolver;
+    sourcePromise = null;
+    calendarCache = new Map();
+    regressionPromise = null;
+    titleCache = new Map();
+    existenceCache = new Map();
+    selfTestReport = null;
+    constructor(fetcher, properResolver) {
+        this.fetcher = fetcher;
+        this.properResolver = properResolver;
+    }
+    clear() { this.sourcePromise = null; this.calendarCache.clear(); this.regressionPromise = null; this.titleCache.clear(); this.existenceCache.clear(); this.selfTestReport = null; }
+    getSelfTestReport() { return this.selfTestReport; }
+    async loadSource(diagnostic) {
+        if (!this.sourcePromise) {
+            this.sourcePromise = Promise.all([
+                this.fetcher.get(source_config_1.CALENDAR_SOURCE_URLS.common, diagnostic),
+                this.fetcher.get(source_config_1.CALENDAR_SOURCE_URLS.blocks, diagnostic),
+                this.fetcher.get(source_config_1.CALENDAR_SOURCE_URLS.titles, diagnostic),
+            ]).then(([common, blocks, titles]) => (0, source_parsers_1.parseCalendarSources)(common, blocks, titles));
+        }
+        return this.sourcePromise;
+    }
+    async runRegression(source) {
+        if (!this.regressionPromise) {
+            this.regressionPromise = Promise.resolve().then(() => {
+                const calendar = resolveConcurrency(fillInitialCalendar(2026, source), source);
+                const report = regressionSelfTest2026(calendar, source);
+                if (!report.passed)
+                    throw new Error(`CALENDAR REGRESSION SELF-TEST FAILED · ${report.failures.slice(0, 4).map(x => `${x.date}: ${x.actual || 'none'} ≠ ${x.expected || x.constantName}`).join(' · ')}`);
+                return report;
+            });
+        }
+        return this.regressionPromise;
+    }
+    async getCalendar(year, diagnostic) {
+        if (!Number.isInteger(year) || year < 100 || year > 9999)
+            throw new Error(`Calendar year ${year} is outside supported range 0100–9999.`);
+        const source = await this.loadSource(diagnostic);
+        const regression = await this.runRegression(source);
+        if (!this.calendarCache.has(year)) {
+            this.calendarCache.set(year, Promise.resolve().then(() => {
+                const calendar = resolveConcurrency(fillInitialCalendar(year, source), source);
+                const yearTest = yearSelfTest(calendar, source, year);
+                if (!yearTest.passed)
+                    throw new Error(`CALENDAR ${year} SELF-TEST FAILED · ${yearTest.failures.slice(0, 4).map(x => `${x.reason}${x.detail ? ': ' + x.detail : ''}`).join(' · ')}`);
+                return { cal: calendar, source, yearTest };
+            }));
+        }
+        try {
+            const built = await this.calendarCache.get(year);
+            this.selfTestReport = { passed: true, total: regression.total + built.yearTest.total, year, failures: [], regression: regression, yearTest: built.yearTest, cached: true };
+            return built;
+        }
+        catch (error) {
+            this.calendarCache.delete(year);
+            throw error;
+        }
+    }
+    async hydrateTitle(observance, diagnostic) {
+        if (observance.title)
+            return observance;
+        if (!observance.path)
+            return { ...observance, title: 'Feria' };
+        if (this.titleCache.has(observance.path))
+            return { ...observance, title: this.titleCache.get(observance.path) };
+        let title = '';
+        try {
+            const en = await this.properResolver.resolveSource(observance.path, 'en', diagnostic);
+            title = (en.map.get('Officium') || []).find(Boolean) || '';
+            if (!title) {
+                const la = await this.properResolver.resolveSource(observance.path, 'la', diagnostic);
+                title = (la.map.get('Officium') || []).find(Boolean) || '';
+            }
+        }
+        catch { /* title fallback is safe */ }
+        title = title || observance.name || 'Feria';
+        this.titleCache.set(observance.path, title);
+        return { ...observance, title };
+    }
+    async resolveCalendarDay(date, diagnostic, formularyIndex = 0) {
+        const { cal } = await this.getCalendar(date.getFullYear(), diagnostic);
+        const raw = cal.get((0, date_utils_1.iso)(date));
+        if (!raw)
+            throw new Error(`No calendar day for ${(0, date_utils_1.iso)(date)}`);
+        const celebration = await Promise.all(raw.celebration.map(item => this.hydrateTitle(item, diagnostic)));
+        const commemorations = await Promise.all(raw.commemoration.map(item => this.hydrateTitle(item, diagnostic)));
+        const massOptions = celebration.filter(item => item.path).map((item, index) => ({ id: item.id, path: item.path, title: item.title, rank: item.rank, color: item.color, label: massOptionLabel(item, index), index }));
+        const selectedIndex = massOptions.length > 1 ? Math.max(0, Math.min(Math.floor(formularyIndex || 0), massOptions.length - 1)) : 0;
+        const selectedOption = massOptions[selectedIndex] || null;
+        const main = selectedOption ? celebration[selectedOption.index] : celebration[0];
+        return {
+            date: (0, date_utils_1.iso)(date), tempora: raw.tempora, celebration, commemorations, displaced: raw.displaced,
+            main, massOptions, formularyIndex: selectedIndex, formularies: massOptions.length > 1 ? massOptions.map(item => item.path) : null, selectedMassOption: selectedOption,
+        };
+    }
+    async missaExists(path, diagnostic) {
+        if (this.existenceCache.has(path))
+            return this.existenceCache.get(path);
+        let exists = false;
+        try {
+            exists = (await this.fetcher.tryGet(`${source_config_1.MISSAL_BASE}/${source_config_1.LANGUAGE_DIR.la}/${path}.txt`, diagnostic)) != null || (await this.fetcher.tryGet(`${source_config_1.DIVINUM_MISSA_BASE}/${source_config_1.LANGUAGE_DIR.la}/${path}.txt`, diagnostic)) != null;
+        }
+        catch {
+            exists = false;
+        }
+        this.existenceCache.set(path, exists);
+        return exists;
+    }
+    async inferObservance(date, diagnostic) {
+        const { cal, source } = await this.getCalendar(date.getFullYear(), diagnostic);
+        let cursor = new Date(date);
+        while (cursor.getDay() !== 0 && !(cursor.getMonth() === 0 && cursor.getDate() === 6)) {
+            if (cursor.getMonth() === 0 && cursor.getDate() === 1)
+                break;
+            cursor = (0, date_utils_1.addDays)(cursor, -1);
+        }
+        const day = cal.get((0, date_utils_1.iso)(cursor));
+        if (!day?.celebration?.length)
+            return null;
+        if (day.celebration[0].id === source.constants.TEMPORA_EPI1_0)
+            return makeObservance(source.constants.TEMPORA_EPI1_0A, cursor, source);
+        if (day.celebration[0].id === source.constants.TEMPORA_PENT01_0)
+            return makeObservance(source.constants.TEMPORA_PENT01_0A, cursor, source);
+        if (day.celebration[0].id === source.constants.TEMPORA_NAT2_0)
+            return makeObservance(source.constants.SANCTI_01_01, cursor, source);
+        if (day.tempora?.length)
+            return day.tempora[0];
+        return day.celebration[0];
+    }
+}
+exports.CalendarEngine = CalendarEngine;
+
+},3:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.pent24Start = exports.septuagesima = exports.daysInYear = exports.sameDay = exports.addDays = exports.dUTC = exports.iso = exports.z = void 0;
+exports.easter = easter;
+exports.firstAdvent = firstAdvent;
+exports.holyFamily = holyFamily;
+exports.holyName = holyName;
+exports.christKing = christKing;
+exports.christmasOctaveSunday = christmasOctaveSunday;
+exports.emberSeptember = emberSeptember;
+const z = (n) => String(n).padStart(2, "0");
+exports.z = z;
+const iso = (d) => `${d.getFullYear()}-${(0, exports.z)(d.getMonth() + 1)}-${(0, exports.z)(d.getDate())}`;
+exports.iso = iso;
+const dUTC = (y, m, d) => new Date(y, m - 1, d, 12, 0, 0, 0);
+exports.dUTC = dUTC;
+const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+exports.addDays = addDays;
+const sameDay = (a, b) => (0, exports.iso)(a) === (0, exports.iso)(b);
+exports.sameDay = sameDay;
+const daysInYear = (year) => ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) ? 366 : 365;
+exports.daysInYear = daysInYear;
+function easter(year) {
+    const a = year % 19, b = Math.floor(year / 100), c = year % 100, d = Math.floor(b / 4), e = b % 4;
+    const f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30;
+    const i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+    const month = Math.floor((h + l - 7 * m + 114) / 31), day = ((h + l - 7 * m + 114) % 31) + 1;
+    return (0, exports.dUTC)(year, month, day);
+}
+const septuagesima = (year) => (0, exports.addDays)(easter(year), -63);
+exports.septuagesima = septuagesima;
+function firstAdvent(year) { let d = (0, exports.dUTC)(year, 11, 27); while (d.getDay() !== 0)
+    d = (0, exports.addDays)(d, 1); return d; }
+const pent24Start = (year) => (0, exports.addDays)(firstAdvent(year), -7);
+exports.pent24Start = pent24Start;
+function holyFamily(year) { const d = (0, exports.dUTC)(year, 1, 6); const wd = (d.getDay() + 6) % 7, delta = wd < 6 ? 6 - wd : 7; return (0, exports.addDays)(d, delta); }
+function holyName(year) { let d = (0, exports.dUTC)(year, 1, 1); while (d.getDate() <= 7) {
+    if (d.getDay() === 0)
+        return [1, 6, 7].includes(d.getDate()) ? (0, exports.dUTC)(year, 1, 2) : d;
+    d = (0, exports.addDays)(d, 1);
+} return (0, exports.dUTC)(year, 1, 2); }
+function christKing(year) { let d = (0, exports.dUTC)(year, 10, 31); while (d.getDay() !== 0)
+    d = (0, exports.addDays)(d, -1); return d; }
+function christmasOctaveSunday(year) { let d = (0, exports.dUTC)(year, 12, 26); while (d.getFullYear() === year) {
+    if (d.getDay() === 0)
+        return d;
+    d = (0, exports.addDays)(d, 1);
+} return null; }
+function emberSeptember(year) { let d = (0, exports.dUTC)(year, 9, 1); while (d.getMonth() === 8) {
+    if (d.getDay() === 0 && d.getDate() >= 15 && d.getDate() <= 21)
+        break;
+    d = (0, exports.addDays)(d, 1);
+} return (0, exports.addDays)(d, 3); }
+
+},4:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LANGUAGE_DIR = exports.CALENDAR_SOURCE_URLS = exports.MISSAL_REPO_ROOT = exports.DIVINUM_HORAS_BASE = exports.DIVINUM_MISSA_BASE = exports.MISSAL_BASE = exports.SOURCE_REVISIONS = void 0;
+exports.SOURCE_REVISIONS = Object.freeze({
+    missaleMeum: "f43359b7a79a5a299158651eedf75cdaf0e43c94",
+    divinumOfficium: "126a07f91ede04664108abb6fb20ace3f4de14b9",
+});
+exports.MISSAL_BASE = `https://raw.githubusercontent.com/mmolenda/missalemeum/${exports.SOURCE_REVISIONS.missaleMeum}/backend/resources/divinum-officium-local/web/www/missa`;
+exports.DIVINUM_MISSA_BASE = `https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/${exports.SOURCE_REVISIONS.divinumOfficium}/web/www/missa`;
+exports.DIVINUM_HORAS_BASE = `https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/${exports.SOURCE_REVISIONS.divinumOfficium}/web/www/horas`;
+exports.MISSAL_REPO_ROOT = `https://raw.githubusercontent.com/mmolenda/missalemeum/${exports.SOURCE_REVISIONS.missaleMeum}`;
+exports.CALENDAR_SOURCE_URLS = Object.freeze({
+    common: `${exports.MISSAL_REPO_ROOT}/backend/api/constants/common.py`,
+    blocks: `${exports.MISSAL_REPO_ROOT}/backend/api/constants/la/blocks.py`,
+    titles: `${exports.MISSAL_REPO_ROOT}/backend/api/constants/en/translation.py`,
+});
+exports.LANGUAGE_DIR = Object.freeze({ la: "Latin", en: "English", fr: "Francais" });
+
+},5:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.stripPythonComment = stripPythonComment;
+exports.extractParenAssignment = extractParenAssignment;
+exports.parseStringConstants = parseStringConstants;
+exports.refsIn = refsIn;
+exports.parseNestedRows = parseNestedRows;
+exports.parseFlatBlock = parseFlatBlock;
+exports.parseTupleTokens = parseTupleTokens;
+exports.parseTitles = parseTitles;
+exports.matcherFromToken = matcherFromToken;
+exports.parseCalendarSources = parseCalendarSources;
+function stripPythonComment(line) {
+    let quote = null;
+    let escaped = false;
+    for (let i = 0; i < line.length; i += 1) {
+        const char = line[i];
+        if (escaped) {
+            escaped = false;
+            continue;
+        }
+        if (char === "\\") {
+            escaped = true;
+            continue;
+        }
+        if (quote) {
+            if (char === quote)
+                quote = null;
+            continue;
+        }
+        if (char === '"' || char === "'") {
+            quote = char;
+            continue;
+        }
+        if (char === "#")
+            return line.slice(0, i);
+    }
+    return line;
+}
+function extractParenAssignment(source, name) {
+    const match = new RegExp(`(?:^|\\n)\\s*${name}\\s*=\\s*\\(`, "m").exec(source);
+    if (!match)
+        throw new Error(`Calendar source missing ${name}`);
+    const start = source.indexOf("(", match.index);
+    let depth = 0, quote = null, escaped = false, comment = false;
+    for (let i = start; i < source.length; i += 1) {
+        const char = source[i];
+        if (comment) {
+            if (char === "\n")
+                comment = false;
+            continue;
+        }
+        if (escaped) {
+            escaped = false;
+            continue;
+        }
+        if (quote) {
+            if (char === "\\")
+                escaped = true;
+            else if (char === quote)
+                quote = null;
+            continue;
+        }
+        if (char === "#") {
+            comment = true;
+            continue;
+        }
+        if (char === '"' || char === "'") {
+            quote = char;
+            continue;
+        }
+        if (char === "(")
+            depth += 1;
+        else if (char === ")" && --depth === 0)
+            return source.slice(start + 1, i);
+    }
+    throw new Error(`Unclosed calendar source tuple ${name}`);
+}
+function parseStringConstants(source) {
+    const out = {};
+    for (const raw of source.split(/\r?\n/)) {
+        const line = stripPythonComment(raw).trim();
+        const match = line.match(/^([A-Z][A-Z0-9_]*)\s*=\s*(['"])([^'"\n]*)\2\s*$/);
+        if (match)
+            out[match[1]] = match[3];
+    }
+    return out;
+}
+function refsIn(text, prefix = "constants.") {
+    const escaped = prefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(`${escaped}([A-Z][A-Z0-9_]*)`, "g");
+    const out = [];
+    let match;
+    while ((match = regex.exec(text)))
+        out.push(match[1]);
+    return out;
+}
+function parseNestedRows(source, name, constants) {
+    const body = extractParenAssignment(source, name);
+    const rows = [];
+    for (const raw of body.split(/\r?\n/)) {
+        const line = stripPythonComment(raw).trim();
+        if (!line.startsWith("("))
+            continue;
+        rows.push(refsIn(line).map(key => constants[key]).filter(Boolean));
+    }
+    return rows;
+}
+function parseFlatBlock(source, name, constants) {
+    return refsIn(extractParenAssignment(source, name)).map(key => constants[key]).filter(Boolean);
+}
+function parseTupleTokens(source, name) {
+    const body = extractParenAssignment(source, name);
+    const tokens = [];
+    for (const raw of body.split(/\r?\n/)) {
+        const line = stripPythonComment(raw).trim();
+        if (!line)
+            continue;
+        const match = line.match(/^([A-Z][A-Z0-9_]*)\s*,?/);
+        if (match)
+            tokens.push(match[1]);
+        else if (/^['"]\.\*['"]/.test(line))
+            tokens.push("WILDCARD");
+    }
+    return tokens;
+}
+function pyUnescape(value) {
+    return value.replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\\n/g, "\n").replace(/\\\\/g, "\\");
+}
+function parseTitles(source, constants) {
+    const out = new Map();
+    for (const raw of source.split(/\r?\n/)) {
+        const line = stripPythonComment(raw).trim();
+        const match = line.match(/^constants\.([A-Z][A-Z0-9_]*)\s*:\s*(['"])(.*)\2\s*,?$/);
+        if (match && constants[match[1]])
+            out.set(constants[match[1]], pyUnescape(match[3]));
+    }
+    return out;
+}
+const PATTERN_TOKENS = {
+    PATTERN_TEMPORA: /^tempora:.*/,
+    PATTERN_ADVENT: /^tempora:Adv\d/,
+    PATTERN_ADVENT_SUNDAY: /^tempora:Adv\d-0/,
+    PATTERN_LENT: /^tempora:Quad(p3-[3-6]|\d)/,
+    PATTERN_LENT_SUNDAY: /^tempora:Quad\d-0.*/,
+    PATTERN_EASTER: /^tempora:Pasc\d/,
+    PATTERN_TEMPORA_SUNDAY: /^tempora:.*-0r*:\d:\w{1,2}$/,
+    PATTERN_TEMPORA_SUNDAY_CLASS_2: /^tempora:(.*-0r*:2|Nat1-0):\w$/,
+    PATTERN_TEMPORA_CLASS_4: /^tempora:.*:4:\w$/,
+    PATTERN_SANCTI: /^sancti:/,
+    PATTERN_SANCTI_CLASS_1_OR_2: /^sancti:.*:[12]:\w$/,
+    PATTERN_SANCTI_CLASS_2: /^sancti:.*:2:\w$/,
+    PATTERN_SANCTI_CLASS_3: /^sancti:.*:3:\w$/,
+    PATTERN_SANCTI_CLASS_3_LOCAL: /^sancti:.*(?:en|pl):3:\w$/,
+    PATTERN_SANCTI_CLASS_4: /^sancti:.*:4c?:\w$/,
+    PATTERN_CLASS_1: /^[a-z]*:.*:1:\w$/,
+    PATTERN_CLASS_2: /^[a-z]*:.*:2:\w$/,
+    PATTERN_CLASS_3: /^[a-z]*:.*:3:\w$/,
+};
+function matcherFromToken(token, constants) {
+    if (token === "WILDCARD")
+        return /.*/;
+    if (PATTERN_TOKENS[token])
+        return PATTERN_TOKENS[token];
+    if (constants[token])
+        return constants[token];
+    return null;
+}
+function parseCalendarSources(common, blocks, titles) {
+    const constants = parseStringConstants(common);
+    const parsedBlocks = {
+        POST_EPIPHANY: parseNestedRows(blocks, "POST_EPIPHANY", constants),
+        FROM_PRE_LENT_TO_POST_PENTECOST: parseNestedRows(blocks, "FROM_PRE_LENT_TO_POST_PENTECOST", constants),
+        EMBER_DAYS_SEPTEMBER: parseNestedRows(blocks, "EMBER_DAYS_SEPTEMBER", constants),
+        WEEK_24_AFTER_PENTECOST: parseNestedRows(blocks, "WEEK_24_AFTER_PENTECOST", constants),
+        ADVENT: parseNestedRows(blocks, "ADVENT", constants),
+        NATIVITY_OCTAVE_SUNDAY: parseNestedRows(blocks, "NATIVITY_OCTAVE_SUNDAY", constants),
+        NATIVITY_OCTAVE_FERIA: parseNestedRows(blocks, "NATIVITY_OCTAVE_FERIA", constants),
+        SANCTI: parseFlatBlock(blocks, "SANCTI", constants),
+    };
+    const source = {
+        constants,
+        blocks: parsedBlocks,
+        titles: parseTitles(titles, constants),
+        ember: new Set(parseTupleTokens(common, "EMBER_DAYS").map(key => constants[key]).filter(Boolean)),
+        fixedVigils: new Set(parseTupleTokens(common, "FIXED_VIGILS_SUPPRESSED_ON_SUNDAY").map(key => constants[key]).filter(Boolean)),
+        jesusFeasts: new Set(parseTupleTokens(common, "FEASTS_OF_JESUS_CLASS_1_AND_2").map(key => constants[key]).filter(Boolean)),
+        precedence: parseTupleTokens(common, "TABLE_OF_PRECEDENCE").map(token => matcherFromToken(token, constants)).filter((x) => !!x),
+    };
+    const problems = [];
+    if (constants.SANCTI_09_16 !== "sancti:09-16:3:r")
+        problems.push("SANCTI_09_16 canonical ID mismatch");
+    if (source.blocks.POST_EPIPHANY.length !== 42)
+        problems.push(`POST_EPIPHANY rows=${source.blocks.POST_EPIPHANY.length}, expected 42`);
+    if (source.blocks.FROM_PRE_LENT_TO_POST_PENTECOST.length < 270)
+        problems.push(`Easter/Pentecost block too short (${source.blocks.FROM_PRE_LENT_TO_POST_PENTECOST.length})`);
+    if (!source.blocks.SANCTI.includes(constants.SANCTI_09_16))
+        problems.push("SANCTI calendar block omits 09-16");
+    if (!source.precedence.length)
+        problems.push("TABLE_OF_PRECEDENCE did not parse");
+    if (problems.length)
+        throw new Error(`Missale Meum calendar source parse failed: ${problems.join("; ")}`);
+    return source;
+}
+
+},6:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.liturgicalColorPlan = liturgicalColorPlan;
+exports.riteProfileFor = riteProfileFor;
+function liturgicalColorPlan(date, day, path, proper) {
+    const id = String(day?.main?.id || '');
+    const base = proper?.canonicalColor || proper?.color || day?.main?.color || 'Green';
+    const normal = { primary: base, massColor: base, label: base, sequence: [], note: '', special: false, rubric: '1960 General Rubrics 117–132' };
+    if (/^tempora:Adv3-0:/.test(id))
+        return { primary: 'Rose', massColor: 'Rose', label: 'Rose (or Violet)', sequence: [['Mass', 'Rose']], note: 'Gaudete Sunday · rose vestments may be used; violet remains legitimate.', special: true, rubric: '1960 General Rubrics 131' };
+    if (/^tempora:Quad4-0:/.test(id))
+        return { primary: 'Rose', massColor: 'Rose', label: 'Rose (or Violet)', sequence: [['Mass', 'Rose']], note: 'Laetare Sunday · rose vestments may be used; violet remains legitimate.', special: true, rubric: '1960 General Rubrics 131' };
+    if (path === 'Tempora/Quad6-0r')
+        return { primary: 'Red', massColor: 'Violet', label: 'Red → Violet', sequence: [['Blessing & procession', 'Red'], ['Mass', 'Violet']], note: 'Palm Sunday changes colour: red for the blessing of palms and procession; violet for the Mass.', special: true, rubric: '1960 General Rubrics 126, 128' };
+    if (path === 'Tempora/Quad6-4')
+        return { primary: 'White', massColor: 'White', label: 'White', sequence: [['Mass of the Lord’s Supper', 'White']], note: 'Holy Thursday uses white for the Mass of the Lord’s Supper.', special: true, rubric: '1960 General Rubrics 122' };
+    if (path === 'Tempora/Quad6-5')
+        return { primary: 'Black', massColor: 'Violet', label: 'Black → Violet', sequence: [['Passion · prayers · Cross', 'Black'], ['Holy Communion', 'Violet']], note: 'Good Friday uses black until Communion; violet is used for the Communion portion.', special: true, rubric: '1960 General Rubrics 130, 132' };
+    if (path === 'Tempora/Quad6-6')
+        return { primary: 'Violet', massColor: 'White', label: 'Violet → White', sequence: [['Opening rites & prophecies', 'Violet'], ['Exsultet / baptismal renewal', 'White'], ['Mass', 'White']], note: 'The Easter Vigil changes colour within the rite; the Mass itself is white.', special: true, rubric: '1960 General Rubrics 119, 122, 128' };
+    if (path === 'Tempora/Pasc6-6')
+        return { primary: 'Violet', massColor: 'Red', label: 'Violet → Red', sequence: [['Preparatory Vigil rites', 'Violet'], ['Mass', 'Red']], note: 'At the Vigil of Pentecost the preparatory rites are violet; the Mass is red.', special: true, rubric: '1960 General Rubrics 123, 128' };
+    if (path === 'Sancti/02-02')
+        return { primary: 'White', massColor: 'White', label: 'White', sequence: [['Candles · procession · Mass', 'White']], note: 'Candlemas uses white for the blessing of candles, procession and Mass.', special: true, rubric: '1960 General Rubrics 120' };
+    if (path === 'Tempora/Quadp3-3')
+        return { primary: 'Violet', massColor: 'Violet', label: 'Violet', sequence: [['Ashes & Mass', 'Violet']], note: 'Ash Wednesday uses violet, including the blessing and imposition of ashes.', special: true, rubric: '1960 General Rubrics 128, 130' };
+    if (/^Sancti\/11-02m/.test(path || '') || proper?.isRequiem)
+        return { primary: 'Black', massColor: 'Black', label: 'Black', sequence: [['Requiem Mass', 'Black']], note: 'Black is the Roman colour for Masses of the Dead, including All Souls.', special: true, rubric: '1960 General Rubrics 132' };
+    if (String(base).includes('/')) {
+        const sequence = String(base).split('/').map(value => value.trim()).filter(Boolean).map((color, index) => [`Liturgical phase ${index + 1}`, color]);
+        return { primary: sequence[0]?.[1] || base, massColor: sequence[sequence.length - 1]?.[1] || base, label: String(base).replace(/\s*\/\s*/g, ' → '), sequence, note: 'This source carries more than one liturgical colour; the rite itself determines the point of change.', special: true, rubric: '1960 General Rubrics 117–132' };
+    }
+    return normal;
+}
+function riteProfileFor(path, proper) {
+    if (path === 'Tempora/Quad6-5')
+        return 'good_friday_1962';
+    if (path === 'Tempora/Quad6-4')
+        return 'holy_thursday_1962';
+    if (path === 'Tempora/Quad6-6')
+        return 'easter_vigil_1962';
+    if (path === 'Tempora/Quad6-0r')
+        return 'palm_sunday_1962';
+    if (path === 'Sancti/02-02')
+        return 'candlemas_1962';
+    if (path === 'Tempora/Quadp3-3')
+        return 'ash_wednesday_1962';
+    if (/^Sancti\/11-02m/.test(path))
+        return 'requiem_mass_1962';
+    if ((proper?.preparatoryLessons?.length || 0) >= 5)
+        return 'ember_saturday_1962';
+    if (proper?.preparatoryLessons?.length)
+        return 'extended_readings_mass_1962';
+    return 'ordinary_mass';
+}
+
+},7:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormularySelectionStore = void 0;
+class FormularySelectionStore {
+    values = new Map();
+    get(date) { return this.values.get(date) || 0; }
+    set(date, index) { this.values.set(date, Math.max(0, Math.floor(Number(index) || 0))); }
+    clear(date) { if (date)
+        this.values.delete(date);
+    else
+        this.values.clear(); }
+    clamp(date, count) {
+        if (count <= 0)
+            return 0;
+        const value = Math.max(0, Math.min(this.get(date), count - 1));
+        if (value !== this.get(date))
+            this.values.set(date, value);
+        return value;
+    }
+}
+exports.FormularySelectionStore = FormularySelectionStore;
+
+},8:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProperResolver = void 0;
+exports.sectionHeading = sectionHeading;
+exports.parseSections = parseSections;
+exports.mergeMissing = mergeMissing;
+exports.parseReference = parseReference;
+exports.parseSubstitutions = parseSubstitutions;
+exports.applySubstitutions = applySubstitutions;
+exports.cleanLines = cleanLines;
+exports.textFrom = textFrom;
+exports.numbered = numbered;
+exports.ruleInfo = ruleInfo;
+exports.normalizeProper = normalizeProper;
+const source_config_1 = require(4);
+const PER_DOM = {
+    la: "Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+    en: "Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+    fr: "Par Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+const GLORIA = {
+    la: "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sǽcula sæculórum. Amen.",
+    en: "Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+    fr: "Gloire au Père, au Fils et au Saint-Esprit. Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il.",
+};
+function sectionHeading(line) {
+    const match = String(line).match(/^\[([^\]]+)\]\s*(.*)$/);
+    return match ? { name: match[1].trim(), modifier: (match[2] || "").trim() } : null;
+}
+function canonicalHeading(name, modifier) {
+    const mod = String(modifier || "").toLowerCase();
+    if (!mod)
+        return { key: name, priority: 1, canonical: true };
+    if (mod.includes("sed non rubrica 196"))
+        return { key: `${name} ${modifier}`, priority: 0, canonical: false };
+    if (mod.includes("rubrica 196") || mod.includes("communi summorum pontificum") || mod.includes("ad missam"))
+        return { key: name, priority: 2, canonical: true };
+    return { key: `${name} ${modifier}`, priority: 0, canonical: false };
+}
+function parseSections(text) {
+    const lines = String(text || "").replace(/\r\n?/g, "\n").split("\n");
+    const map = new Map();

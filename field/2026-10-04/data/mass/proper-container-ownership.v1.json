@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "status": "PINNED_PROPER_CONTAINER_OWNERSHIP",
+  "rule": "Resolved Proper payload occupies only its Proper cue. Fixed responses/private Mass prayers remain separate canonical cues and must not be concatenated into the Proper payload.",
+  "containers": {
+    "EPISTLE_OR_LESSON": {
+      "blockId": "AO.SM.B020",
+      "properCueId": "AO.SM.C0075",
+      "fixedAfterCues": [
+        {
+          "cueId": "AO.SM.C0076",
+          "role": "FIXED_RESPONSE",
+          "textLat": "℟. Deo grátias."
+        }
+      ]
+    },
+    "GOSPEL": {
+      "blockId": "AO.SM.B026",
+      "properCueId": "AO.SM.C0086",
+      "fixedAfterCues": [
+        {
+          "cueId": "AO.SM.C0087",
+          "role": "FIXED_RESPONSE",
+          "textLat": "℟. Laus tibi, Christe."
+        },
+        {
+          "cueId": "AO.SM.C0088",
+          "role": "PRIEST_PRIVATE",
+          "textLat": "Per evangélica dicta deleántur nostra delícta."
+        }
+      ]
+    }
+  },
+  "qaRule": "A Proper-completeness test that skips B020 or B026 is invalid. A Proper payload that absorbs their fixed follow-up cues is also invalid."
+}

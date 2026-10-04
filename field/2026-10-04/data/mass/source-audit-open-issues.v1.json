@@ -1,0 +1,151 @@
+{
+  "version": "1.2.0",
+  "status": "SOURCE_AUDIT_R17_RECONCILED_WITH_OPEN_STRUCTURAL_BLOCKERS",
+  "rule": "This ledger tracks findings that must not be patched into runtime until exact ownership/source reconciliation is pinned. It is not executable liturgical data.",
+  "issues": [
+    {
+      "id": "P1-004",
+      "aliases": [
+        "SRC-OPEN-001"
+      ],
+      "finding": "B020 Epistle/lesson output may leak literal bilingual response debris around Deo gratias / Thanks be to God.",
+      "blockId": "AO.V4.B020",
+      "classification": "PROPER_CONTAINER_COMPOSITION",
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "Trace renderer/Proper composition. Preserve C0075 as Proper payload and C0076 as separate fixed response.",
+      "cueIds": [
+        "AO.SM.C0075",
+        "AO.SM.C0076"
+      ],
+      "resolution": "B020 renderer composition now appends fixed C0076 only after resolved Proper C0075. Regression covered by tests/reader-text.mjs."
+    },
+    {
+      "id": "P1-005",
+      "aliases": [
+        "SRC-OPEN-002"
+      ],
+      "finding": "B026 Gospel output may leak literal bilingual response debris around Laus tibi, Christe / Praise be to thee, O Christ.",
+      "blockId": "AO.V4.B026",
+      "classification": "PROPER_CONTAINER_COMPOSITION",
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "Trace renderer/Proper composition. Preserve C0086 as Proper payload, C0087 as fixed response, and C0088 as priest-private prayer.",
+      "cueIds": [
+        "AO.SM.C0086",
+        "AO.SM.C0087",
+        "AO.SM.C0088"
+      ],
+      "resolution": "B026 renderer composition now appends fixed C0087 and priest-private C0088 only after resolved Proper C0086. Regression covered by tests/reader-text.mjs."
+    },
+    {
+      "id": "P1-006",
+      "aliases": [
+        "SRC-OPEN-003"
+      ],
+      "finding": "QA.016 passes falsely when whole Proper containers are excluded from completeness coverage.",
+      "classification": "QA_COVERAGE_DEFECT",
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "Retire legacy QA.016 as a merge authority after replacement CI and fixture coverage are certified.",
+      "resolution": "Replacement Proper-container coverage is in CI and session-level Proper v2 validation; legacy QA.016 remains non-authoritative."
+    },
+    {
+      "id": "P1-007",
+      "aliases": [
+        "SRC-OPEN-007"
+      ],
+      "finding": "Gloria/Credo cue duplication or overstrong bow ownership has been reported.",
+      "classification": "EVENT_OWNERSHIP",
+      "status": "RESOLVED_ON_R17_EXACT_CUE_PROFILE",
+      "requiredAction": "None on R17. Keep exact-cue ownership and gesture-profile gating in regression.",
+      "resolution": "Exact Gloria/Credo faithful cues are adjudicated in faithful-gloria-credo-gestures.v1.json and wired through faithful-gesture-cues.js. ESSENTIAL/GUIDED_1962 suppress customary bows; TRADITIONAL enables exact-cue customary gestures; Incarnatus remains rubrical/resolver-owned."
+    },
+    {
+      "id": "P1-009",
+      "aliases": [
+        "SRC-OPEN-004"
+      ],
+      "finding": "B016 English assembly yields 'Glory to God in the highest to God.' because AO.SM.C0053 and AO.SM.C0054 are semantically split in English.",
+      "blockId": "AO.SM.B016",
+      "cueIds": [
+        "AO.SM.C0053",
+        "AO.SM.C0054"
+      ],
+      "classification": "CUE_SEGMENTATION_ASSEMBLY",
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "Repair English cue assembly/segmentation without altering the Latin Glória in excélsis Deo or unrelated cue timing.",
+      "resolution": "Display-only composite AO.SM.C0053+AO.SM.C0054 renders 'Glory to God in the highest.' while preserving sourceCueIds and canonical ritual timing."
+    },
+    {
+      "id": "P1-010",
+      "aliases": [
+        "SRC-OPEN-005"
+      ],
+      "finding": "B037 English Lavabo contains the doxology twice: once with V/R labels and again as duplicate plain text.",
+      "blockId": "AO.SM.B037",
+      "classification": "ENGLISH_BLOCK_DUPLICATION",
+      "status": "RESOLVED_ON_R17",
+      "requiredAction": "Identify the exact B037 English cue/unit ownership and remove only the duplicate projection; preserve the single canonical doxology.",
+      "resolution": "Lavabo English projection is deduplicated so the doxology appears once in both Low and Sung reader corpora; canonical ritual timing is unchanged."
+    },
+    {
+      "id": "P1-011",
+      "aliases": [
+        "SRC-OPEN-006"
+      ],
+      "finding": "Confiteor accent discrepancy reported: orare vs oráre.",
+      "classification": "TEXT_ACCENT_PARITY",
+      "status": "RESOLVED_ON_R17_CANONICAL_OVERLAY",
+      "requiredAction": "Locate exact canonical block/cue and source witness before patch.",
+      "blockIds": [
+        "AO.SM.B007",
+        "AO.SM.B077"
+      ],
+      "cueIds": [
+        "AO.SM.C0023",
+        "AO.SM.C0237"
+      ],
+      "resolution": "Normalized orare → oráre in canonical correction layer and reader corpora; text-only change."
+    },
+    {
+      "id": "P1-008",
+      "finding": "Fixture provenance defects reported in the source-audit lane.",
+      "classification": "FIXTURE_PROVENANCE",
+      "status": "RESOLVED_BY_QUARANTINE_REPLACEMENT_WITNESSES_PENDING",
+      "requiredAction": "Replace quarantined categpt.chat provenance with accepted frozen witnesses before this legacy fixture can be promoted to production-golden evidence.",
+      "aliases": [
+        "SRC-OPEN-008"
+      ],
+      "affectedFixture": "4 October 2026 / 19th Sunday after Pentecost",
+      "affectedRows": [
+        {
+          "slot": "SECRET_SET",
+          "blockId": "AO.SM.B040"
+        },
+        {
+          "slot": "COMMUNION",
+          "blockId": "AO.SM.B085"
+        },
+        {
+          "slot": "POSTCOMMUNION_SET",
+          "blockId": "AO.SM.B088"
+        }
+      ],
+      "resolution": "R17 rejects categpt.chat recursively as production authority. Affected rows remain legacy comparison only and cannot make Proper Resolver 2.0 READY."
+    },
+    {
+      "id": "P2-001",
+      "finding": "Older extended-readings resolver can mispair OratioL[n] and LectioL[n] instead of preserving source order.",
+      "classification": "PRE_GOSPEL_SOURCE_ORDER",
+      "status": "RESOLVED_ON_R17_SOURCE_ORDER_COMPILER",
+      "requiredAction": "None on R17. Preserve source-order compiler and proof gate in CI.",
+      "resolution": "pre-gospel-sequence.js compiles OratioL/LectioL/GradualeL/TractusL/AlleluiaL nodes strictly from parsed source order, emits SOURCE_ORDER provenance, and Proper v2 rejects reordered or unproven extended-reading sequences. Adversarial suffix-mismatch test is in CI."
+    },
+    {
+      "id": "P2-008",
+      "finding": "Postcommunion exit ownership conflicts when Prayer over the People is inserted before B089: the ordinary B088 close-Missal/return-centre transition must not execute before the inserted prayer.",
+      "classification": "POSTCOMMUNION_EXIT_OWNERSHIP",
+      "status": "RESOLVED_ON_R17_EXIT_DELTA",
+      "requiredAction": "None on R17. Preserve the C0256 suppression/deferred-exit contract in CI.",
+      "resolution": "postcommunion-exit.js suppresses base AO.SM.C0256 when Prayer over the People is present, keeps the priest at the Epistle-side Missal for the inserted prayer, replays the C0256 route semantic as R17.POP.020 only afterward, then hands off to AO.SM.C0257. Session-level Proper tests and dedicated regression pass."
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "schema": "ao-reader-canon-source-map-v1",
+  "version": "1.0.0",
+  "status": "CERTIFIED_SOURCE_FIRST",
+  "authority": "PRESENTATION_STRUCTURE_ONLY",
+  "releaseAuthority": true,
+  "principle": "Canon presentation follows sourced liturgical prayer/rubric units and canonical cue/event ownership. Historical v1.83 card count is compatibility evidence, not liturgical authority.",
+  "sourceWitnesses": [
+    {
+      "id": "MISSEL_FR",
+      "url": "https://www.missel.fr/",
+      "role": "STRUCTURAL_AND_EDITORIAL_WITNESS",
+      "note": "Missel.fr is used as the external structural witness requested for Canon prayer divisions, crosses and rubric presentation."
+    },
+    {
+      "id": "MISSEL_FR_ABOUT",
+      "url": "https://www.missel.fr/about",
+      "role": "PROVENANCE",
+      "note": "Missel.fr states that its texts and translations use the daily missal of Abbaye Sainte-Madeleine du Barroux as reference."
+    },
+    {
+      "id": "MISSEL_FR_HOLY_THURSDAY_2025",
+      "url": "https://www.missel.fr/pdf/2025-04-17.pdf",
+      "role": "CANON_STRUCTURE_WITNESS",
+      "note": "Published Canon output preserves distinct Hanc igitur and Quam oblationem prayer blocks and printed cross/rubric markers."
+    }
+  ],
+  "invariants": {
+    "blockRange": [
+      "AO.SM.B047",
+      "AO.SM.B060"
+    ],
+    "cueRange": [
+      "AO.SM.C0150",
+      "AO.SM.C0205"
+    ],
+    "exactSegmentCount": 14,
+    "hostWordsCue": "AO.SM.C0173",
+    "hostElevationCue": "AO.SM.C0174",
+    "chaliceWordsThroughCue": "AO.SM.C0180",
+    "chaliceElevationCue": "AO.SM.C0181",
+    "completeNonOverlappingEventCoverage": true,
+    "canonicalTextMutationAllowed": false
+  },
+  "segments": [
+    {
+      "id": "AO.CANON.01",
+      "sequence": 1,
+      "title": "Te igitur",
+      "blockIds": [
+        "AO.SM.B047"
+      ],
+      "eventIds": [
+        "MC-CAN-010",
+        "MC-CAN-020"
+      ],
+      "cueStart": "AO.SM.C0150",
+      "cueEnd": "AO.SM.C0153"
+    },
+    {
+      "id": "AO.CANON.02",
+      "sequence": 2,
+      "title": "Memento, Domine — Living",
+      "blockIds": [
+        "AO.SM.B048"
+      ],
+      "eventIds": [
+        "MC-CAN-030",
+        "MC-CAN-040"
+      ],
+      "cueStart": "AO.SM.C0154",
+      "cueEnd": "AO.SM.C0156"
+    },
+    {
+      "id": "AO.CANON.03",
+      "sequence": 3,
+      "title": "Communicantes",
+      "blockIds": [
+        "AO.SM.B049"
+      ],
+      "eventIds": [
+        "MC-CAN-050"
+      ],
+      "cueStart": "AO.SM.C0157",
+      "cueEnd": "AO.SM.C0160"
+    },
+    {
+      "id": "AO.CANON.04",
+      "sequence": 4,
+      "title": "Hanc igitur",
+      "blockIds": [
+        "AO.SM.B050"
+      ],
+      "eventIds": [
+        "MC-CAN-060",
+        "MC-CAN-070"
+      ],
+      "cueStart": "AO.SM.C0161",
+      "cueEnd": "AO.SM.C0162"
+    },
+    {
+      "id": "AO.CANON.05",
+      "sequence": 5,
+      "title": "Quam oblationem",
+      "blockIds": [
+        "AO.SM.B051"
+      ],
+      "eventIds": [
+        "MC-CAN-080"
+      ],
+      "cueStart": "AO.SM.C0163",
+      "cueEnd": "AO.SM.C0167"
+    },
+    {
+      "id": "AO.CANON.06",
+      "sequence": 6,
+      "title": "Consecration of the Sacred Host",
+      "blockIds": [
+        "AO.SM.B052"
+      ],
+      "eventIds": [
+        "MC-CNS-010",
+        "MC-CNS-020",
+        "MC-CNS-030",
+        "MC-CNS-040",
+        "MC-CNS-060"
+      ],
+      "cueStart": "AO.SM.C0168",
+      "cueEnd": "AO.SM.C0174"
+    },
+    {
+      "id": "AO.CANON.07",
+      "sequence": 7,
+      "title": "Consecration of the Chalice",
+      "blockIds": [
+        "AO.SM.B053"
+      ],
+      "eventIds": [
+        "MC-CNS-080",
+        "MC-CNS-090",
+        "MC-CNS-100",
+        "MC-CNS-110",
+        "MC-CNS-130"
+      ],
+      "cueStart": "AO.SM.C0175",
+      "cueEnd": "AO.SM.C0181"
+    },
+    {
+      "id": "AO.CANON.08",
+      "sequence": 8,
+      "title": "Unde et memores",
+      "blockIds": [
+        "AO.SM.B054"
+      ],
+      "eventIds": [
+        "MC-CAN-100"
+      ],
+      "cueStart": "AO.SM.C0182",
+      "cueEnd": "AO.SM.C0185"
+    },
+    {
+      "id": "AO.CANON.09",
+      "sequence": 9,
+      "title": "Supra quae",
+      "blockIds": [
+        "AO.SM.B055"
+      ],
+      "eventIds": [
+        "MC-CAN-110"
+      ],
+      "cueStart": "AO.SM.C0186",
+      "cueEnd": "AO.SM.C0186"
+    },
+    {
+      "id": "AO.CANON.10",
+      "sequence": 10,
+      "title": "Supplices te rogamus",
+      "blockIds": [
+        "AO.SM.B056"
+      ],
+      "eventIds": [
+        "MC-CAN-120"
+      ],
+      "cueStart": "AO.SM.C0187",
+      "cueEnd": "AO.SM.C0191"
+    },
+    {
+      "id": "AO.CANON.11",
+      "sequence": 11,
+      "title": "Memento etiam, Domine — Dead",
+      "blockIds": [
+        "AO.SM.B057"
+      ],
+      "eventIds": [
+        "MC-CAN-130",
+        "MC-CAN-140"
+      ],
+      "cueStart": "AO.SM.C0192",
+      "cueEnd": "AO.SM.C0195"
+    },
+    {
+      "id": "AO.CANON.12",
+      "sequence": 12,
+      "title": "Nobis quoque peccatoribus",
+      "blockIds": [
+        "AO.SM.B058"
+      ],
+      "eventIds": [
+        "MC-CAN-150",
+        "MC-CAN-160"
+      ],
+      "cueStart": "AO.SM.C0196",
+      "cueEnd": "AO.SM.C0198"
+    },
+    {
+      "id": "AO.CANON.13",
+      "sequence": 13,
+      "title": "Per quem haec omnia",
+      "blockIds": [
+        "AO.SM.B059"
+      ],
+      "eventIds": [
+        "MC-CAN-170"
+      ],
+      "cueStart": "AO.SM.C0199",
+      "cueEnd": "AO.SM.C0200"
+    },
+    {
+      "id": "AO.CANON.14",
+      "sequence": 14,
+      "title": "Per ipsum · Minor Elevation",
+      "blockIds": [
+        "AO.SM.B060"
+      ],
+      "eventIds": [
+        "MC-CAN-180",
+        "MC-CAN-190",
+        "MC-CAN-200"
+      ],
+      "cueStart": "AO.SM.C0201",
+      "cueEnd": "AO.SM.C0205"
+    }
+  ],
+  "historicalV183Compatibility": {
+    "requiredForRelease": false,
+    "expectedHistoricalLiveCards": 48,
+    "status": "OPTIONAL_ARCHAEOLOGICAL_PARITY",
+    "note": "Exact recovery of the lost v1.83 Canon decompression boundary may continue for historical fidelity, but it may not block source-first reader certification or force an invented boundary."
+  }
+}

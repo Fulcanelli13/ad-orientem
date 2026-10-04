@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "status": "R17_READER_PROJECTION_CORRECTIONS",
+  "rule": "Display/projection corrections only. Canonical ritual events, cue IDs, ordering and actor ownership are unchanged.",
+  "corrections": [
+    {
+      "id": "P1-004",
+      "blockId": "AO.SM.B020",
+      "type": "PROPER_FIXED_TAIL_COMPOSITION",
+      "properCueId": "AO.SM.C0075",
+      "fixedCueIds": [
+        "AO.SM.C0076"
+      ],
+      "implementation": "src/mass/proper-reader-composition.js"
+    },
+    {
+      "id": "P1-005",
+      "blockId": "AO.SM.B026",
+      "type": "PROPER_FIXED_TAIL_COMPOSITION",
+      "properCueId": "AO.SM.C0086",
+      "fixedCueIds": [
+        "AO.SM.C0087",
+        "AO.SM.C0088"
+      ],
+      "implementation": "src/mass/proper-reader-composition.js"
+    },
+    {
+      "id": "P1-009",
+      "blockId": "AO.SM.B016",
+      "type": "DISPLAY_COMPOSITE",
+      "sourceCueIds": [
+        "AO.SM.C0053",
+        "AO.SM.C0054"
+      ],
+      "displayLatin": "Glória in excélsis Deo.",
+      "displayEnglish": "Glory to God in the highest.",
+      "implementation": "src/mass/ordinary-reader-composition.js"
+    },
+    {
+      "id": "P1-010",
+      "blockId": "AO.SM.B037",
+      "type": "DISPLAY_DUPLICATE_REMOVAL",
+      "changedCueId": "AO.SM.C0125",
+      "soleDoxologyCueIds": [
+        "AO.SM.C0126",
+        "AO.SM.C0127"
+      ],
+      "implementation": "data/presentation/reader-text-low.v1.json + reader-text-sung.v1.json"
+    }
+  ],
+  "regressionTests": [
+    "tests/reader-text.mjs",
+    "tests/proper-container-coverage.mjs",
+    "tests/proper-contracts.mjs"
+  ]
+}

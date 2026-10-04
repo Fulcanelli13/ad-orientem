@@ -1,0 +1,132 @@
+{
+  "version": "1.1.0",
+  "status": "R17_READER_CONVERGENCE_CONTRACT",
+  "sources": {
+    "sungRuntimeHardening": "v1.77",
+    "stateOwnership": "v1.78",
+    "guideRubrics": "v1.79",
+    "lowPractice": "Ad_Orientem_MASS_CORE_v2.0_LOW_RECONCILED / v2.15 donor"
+  },
+  "canonicalSungPayloadSha256": "050ce4b65918890a252078c9942f1dde282d2494dabe0e522bb842c03be20b28",
+  "presentationModes": [
+    "MISSAL",
+    "SIMPLE",
+    "LIVE"
+  ],
+  "ribbons": {
+    "mode": [
+      "MISSAL",
+      "SIMPLE",
+      "LIVE"
+    ],
+    "state": [
+      "PRIEST_POSITION",
+      "CURRENT_SECTION",
+      "GUIDE"
+    ]
+  },
+  "rails": {
+    "faithful": [
+      "POSTURE",
+      "GESTURE",
+      "RESPOND"
+    ],
+    "audio": [
+      "PRIEST_VOICE",
+      "SCHOLA"
+    ]
+  },
+  "stateOwnership": {
+    "posture": "PERSISTENT_UNTIL_TRANSITION",
+    "gesture": "TRANSIENT_EXACT_ANCHOR",
+    "response": "TRANSIENT_OR_LINE_SCOPED",
+    "priestPosition": "PERSISTENT_UNTIL_ROUTE_CHANGE",
+    "priestVoice": "PERSISTENT_UNTIL_VOICE_CHANGE",
+    "schola": "CONTINUOUS_WHEN_ACTIVE_EXCEPT_SHARED_TEXT_SUPPRESSION",
+    "guide": "CURRENT_RUBRIC_ONLY",
+    "bell": "TRANSIENT_EXACT_ANCHOR",
+    "cinematic": "TRANSIENT_SINGLE_OWNER_TIMED_PRESENTATION"
+  },
+  "hardening": {
+    "crossSourceMismatchCues": [
+      "AO.SM.C0068",
+      "AO.SM.C0104",
+      "AO.SM.C0119",
+      "AO.SM.C0152",
+      "AO.SM.C0164",
+      "AO.SM.C0165",
+      "AO.SM.C0166",
+      "AO.SM.C0171",
+      "AO.SM.C0177",
+      "AO.SM.C0184",
+      "AO.SM.C0185",
+      "AO.SM.C0189",
+      "AO.SM.C0200",
+      "AO.SM.C0202",
+      "AO.SM.C0203"
+    ],
+    "allMismatchCuesMapped": true,
+    "selfMutatingObserverForbidden": true,
+    "languagePreferenceExposed": true,
+    "scholaControlsFinalOverride": true,
+    "railProseFinalOverride": true,
+    "topRibbonPositionOnly": true,
+    "credoSitSubcueBidirectional": true,
+    "gospelCrossVisibleBinding": true,
+    "gospelActualPhraseMark": true,
+    "routeCardsCompact": true
+  },
+  "ownershipRepairs": {
+    "ordinaryIncarnatusPersistentKneel": false,
+    "ordinaryIncarnatusTransientCue": "GENUFLECT",
+    "gloriaCredoLocalPostureProjection": true,
+    "suppressDuplicateLocalPosture": true,
+    "suppressDuplicatePriestPosition": true,
+    "currentColorIconsUseMasks": true
+  },
+  "guide": {
+    "required": true,
+    "stateRibbonButton": true,
+    "certifiedEntryCount": 32,
+    "registryPayloadStatus": "RECOVERED_CONTINUITY_CERTIFIED",
+    "failurePolicy": "FAIL_CLOSED_IF_REGISTRY_MISSING_OR_INVALID",
+    "registryFile": "guide-registry.v1.json",
+    "recoveryEvidence": [
+      "v0.11.1 exact 32-entry RUBRIC_COPY payload",
+      "v1.79 integrity report certifies 32 valid Guide entries",
+      "27 Sep CLEAN_FIELD_LOCK preserves the same 32-entry payload"
+    ]
+  },
+  "lowPractice": {
+    "postureProfiles": [
+      "FOLLOW_CONGREGATION",
+      "MY_LOCAL",
+      "OCONNELL_1962_COMMUNITY",
+      "TRADITIONAL_WALSH"
+    ],
+    "gestureProfiles": [
+      "ESSENTIAL",
+      "GUIDED_1962",
+      "TRADITIONAL"
+    ],
+    "defaultPostureProfile": "FOLLOW_CONGREGATION",
+    "emptyLocalProfile": "FAIL_CLOSED_NO_INVENTED_POSTURE",
+    "formation": "PROFILE_AWARE",
+    "communionRecollection": "PERSONAL_ACTION_LIFECYCLE",
+    "phoneFocus": "V2_12_V2_15_GEOMETRY"
+  },
+  "languagePolicy": {
+    "congregationalDialogue": "LATIN_DEFAULT_WITH_DISCREET_VERNACULAR_UNDER_EACH_LINE",
+    "precedingVersicleForResponse": "LATIN_DEFAULT_WITH_DISCREET_VERNACULAR_UNDER_EACH_LINE",
+    "otherText": "VERNACULAR_DEFAULT_LATIN_ON_TOGGLE_OR_REPLACE",
+    "noRepeatedTapInstruction": true
+  },
+  "guards": [
+    "Reader presentation state may never mutate canonical Mass form or event identity.",
+    "A transient gesture may never become a persistent posture unless a separate posture transition exists.",
+    "The ordinary Incarnatus uses a genuflection cue, not persistent kneeling.",
+    "Local posture overrides are guidance profiles and never rewrite sourced ritual actions.",
+    "Guide rubrics must resolve from the recovered continuity-certified registry; missing/invalid entries fail closed.",
+    "Bell/cinematic presentation state is transient and may never advance canonical Mass state."
+  ]
+}

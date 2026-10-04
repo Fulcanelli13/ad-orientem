@@ -1,0 +1,1000 @@
+            else if (action === 'gospel')
+                this.root.dispatchEvent(new CustomEvent('ao:open-scripture', { bubbles: true, detail: { kind: 'gospel', returnRoute: 'home' } }));
+            this.onNavigate?.(action);
+        }
+    }
+}
+exports.HomeController = HomeController;
+
+},16:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.renderHomeToString = renderHomeToString;
+exports.renderHome = renderHome;
+const i18n_1 = require(17);
+const home_model_1 = require(20);
+function esc(value) {
+    return String(value || '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[char] || char));
+}
+function homeSettings(state) {
+    const l = state.language, s = state.settings;
+    const seg = (label, attr, items, active) => `<div class="homeSettingGroup"><label>${esc(label)}</label><div class="homeSegments">${items.map(([v, t]) => `<button ${attr}="${v}" class="${active === v ? 'active' : ''}">${esc(t)}</button>`).join('')}</div></div>`;
+    return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>${l === 'fr' ? 'Préférences' : 'Preferences'}</span><h2>${l === 'fr' ? 'Réglages' : 'Settings'}</h2></div><button data-home-sheet-close>×</button></header>${seg(l === 'fr' ? 'Forme de Messe' : 'Mass form', 'data-setting-form', [["sung", l === 'fr' ? 'Messe chantée' : 'Sung Mass'], ['low', l === 'fr' ? 'Messe basse' : 'Low Mass']], s.massForm)}${seg(l === 'fr' ? 'Suivre' : 'Follow', 'data-setting-follow', [["vox", 'VOX'], ['missal', l === 'fr' ? 'Missel' : 'Missal']], s.followMode)}${seg(l === 'fr' ? 'Texte' : 'Text', 'data-setting-text', [["oriented", l === 'fr' ? 'Orienté' : 'Oriented'], ['parallel', l === 'fr' ? 'Parallèle' : 'Parallel']], s.textMode)}${seg(l === 'fr' ? 'Participation' : 'Participation', 'data-setting-participation', [["quiet", l === 'fr' ? 'Discrète' : 'Quiet'], ['group', l === 'fr' ? 'Réponses' : 'Group']], s.participationMode)}${seg(l === 'fr' ? 'Taille du texte' : 'Text size', 'data-setting-scale', [["normal", l === 'fr' ? 'Normale' : 'Normal'], ['large', l === 'fr' ? 'Grande' : 'Large']], s.textScale)}<button class="homeToggle" data-setting-motion="${s.reducedMotion ? '0' : '1'}"><span><b>${l === 'fr' ? 'Réduire les animations' : 'Reduce motion'}</b><small>${l === 'fr' ? 'Limiter les transitions non essentielles.' : 'Limit non-essential transitions.'}</small></span><i class="${s.reducedMotion ? 'on' : ''}"></i></button><button class="resetPostureHome" data-reset-postures>${l === 'fr' ? 'Réinitialiser les postures locales' : 'Reset local postures'}</button><button class="resetPostureHome aoContentAuditLaunch" data-content-audit-v8>${l === 'fr' ? 'Audit bilingue du contenu' : 'Bilingual content audit'}</button></section></div>`;
+}
+function homeSheet(state) {
+    const l = state.language;
+    if (!state.homeSheet)
+        return '';
+    if (state.homeSheet === 'settings')
+        return homeSettings(state);
+    if (state.homeSheet === 'mass') {
+        const p = state.resolution?.proper.status === 'ready' ? state.resolution.proper.data : null;
+        const slot = (label, v) => { const vern = (l === 'fr' ? v?.fr : v?.en) || ''; const latinOnly = !vern && !!v?.lat; return `<article><b>${esc(label)}</b><p>${esc(vern || (l === 'fr' ? 'Traduction française indisponible.' : 'English translation unavailable.'))}</p>${latinOnly ? `<small class="translationIntegrityNote">${l === 'fr' ? 'Le texte latin existe, mais il n’est pas affiché comme français.' : 'Latin exists, but is not displayed as English.'}</small>` : ''}</article>`; };
+        return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>${l === 'fr' ? 'Aujourd’hui' : 'Today'}</span><h2>${l === 'fr' ? "Messe du jour" : "Today’s Mass"}</h2></div><button data-home-sheet-close>×</button></header><div class="homeMassOverview">${slot('Introit', p?.introit)}${slot(l === 'fr' ? 'Collecte' : 'Collect', p?.collects?.[0])}${slot(l === 'fr' ? 'Épître / Leçon' : 'Epistle / Lesson', p?.epistle)}${slot(l === 'fr' ? 'Saint Évangile' : 'Holy Gospel', p?.gospel)}${slot('Offertory', p?.offertory)}${slot('Communion', p?.communion)}</div></section></div>`;
+    }
+    return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>${l === 'fr' ? 'Ad Orientem' : 'Ad Orientem'}</span><h2>${l === 'fr' ? 'Plus' : 'More'}</h2></div><button data-home-sheet-close>×</button></header><div class="moreActions"><button data-home-open-settings><b>${l === 'fr' ? 'Réglages' : 'Settings'}</b><span>${l === 'fr' ? 'Messe, langue, participation, affichage et postures locales.' : 'Mass, language, participation, display and local postures.'}</span></button><button data-action="prepare"><b>${l === 'fr' ? 'Se préparer' : 'Prepare'}</b><span>${l === 'fr' ? 'Avant la Messe.' : 'Before Mass.'}</span></button><button data-action="thanks"><b>${l === 'fr' ? 'Action de grâces' : 'Give thanks'}</b><span>${l === 'fr' ? 'Après la Messe.' : 'After Mass.'}</span></button></div></section></div>`;
+}
+function renderHomeToString(state) {
+    const vm = (0, home_model_1.buildHomeViewModel)(state);
+    const tr = (key) => (0, i18n_1.t)(vm.language, key);
+    const status = vm.calendarFailed
+        ? `<div class="statusCard error"><strong>${esc(tr('calendarUnavailable'))}</strong><span>${esc(tr('calendarUnavailableBody'))}</span></div>`
+        : vm.properStatus === 'failed'
+            ? `<div class="statusCard warning"><strong>${esc(tr('properUnavailable'))}</strong><span>${esc(vm.properMessage)}</span></div>`
+            : '';
+    const currentProper = state.resolution?.proper.status === 'ready' ? state.resolution.proper.data : null;
+    const langCoverage = currentProper?.languageCoverage?.[vm.language];
+    const translationStatus = langCoverage && !langCoverage.complete
+        ? `<div class="statusCard warning contentIntegrity"><strong>${vm.language === 'fr' ? 'Traduction du Propre incomplète' : 'Proper translation incomplete'}</strong><span>${esc(`${langCoverage.available}/${langCoverage.expected} · ${langCoverage.missing.join(', ')}`)}</span></div>`
+        : '';
+    const week = vm.week.map(cell => `<button class="dayCell${cell.selected ? ' selected' : ''}${cell.today ? ' today' : ''}" data-date="${esc(cell.date)}" aria-pressed="${cell.selected}"><span>${esc(cell.day)}</span><b>${esc(cell.number)}</b></button>`).join('');
+    const meta = [vm.rank, vm.colour ? `${tr('colour')} · ${vm.colour}` : '', vm.formularyLabel, vm.commemorationLabel].filter(Boolean)
+        .map(item => `<span>${esc(item)}</span>`).join('');
+    const formularyChooser = vm.formularies.length ? `<div class="formularyChooser" role="group" aria-label="${esc(tr('formulary'))}">${vm.formularies.map(item => `<button data-formulary="${item.index}" class="${item.selected ? 'selected' : ''}" aria-pressed="${item.selected}">${esc(item.label)}</button>`).join('')}</div>` : '';
+    const properArt = globalThis.AO_PHASE1_ART?.homeMarkup?.(state, vm.language) || '';
+    return `
+    <main class="homeScreen" data-home-language="${vm.language}">
+      <header class="homeHeader">
+        <div class="brandRow">
+          <div class="brandMark aoBrandEmblem" aria-hidden="true"></div>
+          <div class="brandText"><div class="brandName">${esc(tr('brand'))}</div><div class="brandSub">${esc(tr('subtitle'))}</div></div>
+          <div class="languageSwitch" role="group" aria-label="Language">
+            <button data-language="en" class="${vm.language === 'en' ? 'active' : ''}">${esc(tr('english'))}</button>
+            <button data-language="fr" class="${vm.language === 'fr' ? 'active' : ''}">${esc(tr('french'))}</button>
+          </div>
+        </div>
+        <div class="dateNavigator">
+          <button class="iconButton" data-nav="previous" aria-label="${esc(tr('previousDay'))}">‹</button>
+          <button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button>
+          <button class="iconButton" data-nav="next" aria-label="${esc(tr('nextDay'))}">›</button>
+        </div>
+        <div class="dateRail" aria-label="Week">${week}</div>
+      </header>
+
+      <section class="celebrationBlock">
+        <div class="eyebrow">${esc(vm.weekday)}</div>
+        <h1>${esc(vm.celebration)}</h1>
+        <div class="metaLine">${meta}</div>
+        ${formularyChooser}
+        ${properArt}
+        ${vm.loading ? `<div class="loadingLine"><span></span>${esc(tr('loading'))}</div>` : ''}
+      </section>
+
+      ${status}
+      ${translationStatus}
+      ${state.resume.available ? `<button class="resumeCard" data-resume-mass><span>${vm.language === 'fr' ? 'Messe en cours' : 'Mass in progress'}</span><b>${vm.language === 'fr' ? 'Reprendre' : 'Resume'}</b><small>${esc(globalThis.AO_DISPLAY_DATE?.(state.resume.date)||state.resume.date||'')} · ${state.resume.stepIndex + 1}</small></button>` : ''}
+
+      <section class="homeSection aroundMass">
+        <div class="sectionLabel">${esc(tr('aroundMass'))}</div>
+        <div class="phaseActions">
+          <button class="phaseButton secondary" data-action="prepare"><span>Ⅰ</span><b>${esc(tr('prepare'))}</b></button>
+          <button class="phaseButton primary" data-action="follow"><span>Ⅱ</span><b>${esc(tr('followMass'))}</b></button>
+          <button class="phaseButton secondary" data-action="thanks"><span>Ⅲ</span><b>${esc(tr('giveThanks'))}</b></button>
+        </div>
+      </section>
+
+      <section class="contentCard gospelCard">
+        <div class="cardKicker">${esc(tr('holyGospel'))}</div>
+        ${vm.gospelReference ? `<div class="scriptureRef">${esc(vm.gospelReference)}</div>` : ''}
+        <p>${esc(vm.gospelExcerpt)}</p>
+        <button class="textAction" data-action="gospel">${esc(tr('exploreGospel'))} <span>→</span></button>
+      </section>
+
+      <section class="contentCard massCard">
+        <div><div class="cardKicker">${esc(tr('todaysMass'))}</div><p>${esc(vm.massHint)}</p></div>
+        <button class="roundAction" data-action="today-mass" aria-label="${esc(tr('openMass'))}">→</button>
+      </section>
+
+      <section class="contentCard moreCard">
+        <div><div class="cardKicker">${esc(tr('more'))}</div><p>${esc(tr('moreHint'))}</p></div>
+        <button class="roundAction" data-action="more" aria-label="${esc(tr('openMore'))}">•••</button>
+      </section>
+
+      <div class="homeSpacer"></div>
+      ${state.lastAction && !['today-mass', 'more'].includes(state.lastAction) ? `<div class="alphaNotice" role="status">${esc(tr('developmentAction'))}</div>` : ''}
+      ${homeSheet(state)}
+    </main>`;
+}
+function renderHome(root, state) {
+    root.innerHTML = renderHomeToString(state);
+}
+
+},17:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.t = t;
+const en_1 = require(18);
+const fr_1 = require(19);
+const dictionaries = { en: en_1.en, fr: fr_1.fr };
+function t(language, key) {
+    return dictionaries[language][key] || en_1.en[key];
+}
+
+},18:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.en = void 0;
+exports.en = {
+    brand: 'AD ORIENTEM',
+    subtitle: '1962 Roman Mass companion',
+    prepare: 'Prepare',
+    followMass: 'Follow Mass',
+    giveThanks: 'Give thanks',
+    aroundMass: 'Around the Mass',
+    holyGospel: 'Holy Gospel',
+    exploreGospel: 'Explore Gospel',
+    todaysMass: "Today’s Mass",
+    todaysMassHint: 'Propers · readings · liturgical information',
+    openMass: 'Open today’s Mass',
+    more: 'More',
+    moreHint: 'Search · Calendar · Companions · Settings',
+    openMore: 'Open more',
+    rank: 'Rank',
+    colour: 'Colour',
+    properReady: 'Proper ready',
+    properUnavailable: 'Proper unavailable',
+    properUnavailableBody: 'The fixed Ordinary remains available. Feast-specific texts could not be loaded.',
+    calendarUnavailable: 'Calendar unavailable',
+    calendarUnavailableBody: 'The liturgical day could not be resolved. Try again when a source connection is available.',
+    loading: 'Resolving the liturgical day…',
+    previousDay: 'Previous day',
+    nextDay: 'Next day',
+    today: 'Today',
+    english: 'EN',
+    french: 'FR',
+    sunday: 'Sunday', monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday', thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday',
+    noGospel: 'The appointed Gospel is unavailable.',
+    developmentAction: 'This destination will be connected in the next migration stage.',
+    formulary: 'Formulary',
+    liveMass: 'Mass',
+    backHome: 'Home',
+    imLost: "I’m Lost",
+    settings: 'Settings',
+    you: 'You',
+    priest: 'Priest',
+    followCongregation: 'Follow the congregation',
+    sacredSilence: 'Sacred silence',
+    choirContinues: 'The choir continues while the priest prays quietly.',
+    hearChoir: 'Choir',
+    properUnavailableShort: 'Proper unavailable',
+    previous: 'Back',
+    next: 'Next',
+    finish: 'Finish',
+    vox: 'VOX',
+    missal: 'MISSALE',
+    oriented: 'Oriented',
+    parallel: 'Parallel',
+    sungMass: 'Sung',
+    lowMass: 'Low',
+    whyThis: 'Why this?',
+    whatHappening: 'What is happening?',
+    variantNote: 'Anything unusual?',
+    massMap: 'Mass Map',
+    jumpToSection: 'Jump to section',
+    recoveryTitle: 'Where are you in the Mass?',
+    recoveryHint: 'Choose what you can see or hear. This moves the guide to the nearest likely section.',
+    footAltar: 'At the foot of the altar',
+    readingsGospel: 'Readings / Gospel',
+    offertory: 'Offertory',
+    canonSilence: 'Canon / sacred silence',
+    communion: 'Communion',
+    conclusion: 'Conclusion',
+    textDisplay: 'Text',
+    followMode: 'Following',
+    massForm: 'Mass form',
+    close: 'Close',
+    bell: 'Bell',
+    currentStep: 'Current step',
+    of: 'of',
+    commemorations: 'Commemorations',
+};
+
+},19:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.fr = void 0;
+exports.fr = {
+    brand: 'AD ORIENTEM',
+    subtitle: 'Compagnon de la Messe romaine de 1962',
+    prepare: 'Se préparer',
+    followMass: 'Suivre la Messe',
+    giveThanks: 'Action de grâces',
+    aroundMass: 'Autour de la Messe',
+    holyGospel: 'Saint Évangile',
+    exploreGospel: 'Explorer l’Évangile',
+    todaysMass: 'Messe du jour',
+    todaysMassHint: 'Propres · lectures · informations liturgiques',
+    openMass: 'Ouvrir la Messe du jour',
+    more: 'Plus',
+    moreHint: 'Recherche · Calendrier · Compagnons · Réglages',
+    openMore: 'Ouvrir plus',
+    rank: 'Classe',
+    colour: 'Couleur',
+    properReady: 'Propre disponible',
+    properUnavailable: 'Propre indisponible',
+    properUnavailableBody: 'L’Ordinaire fixe reste disponible. Les textes propres à la fête n’ont pas pu être chargés.',
+    calendarUnavailable: 'Calendrier indisponible',
+    calendarUnavailableBody: 'Le jour liturgique n’a pas pu être résolu. Réessayez lorsqu’une source est disponible.',
+    loading: 'Résolution du jour liturgique…',
+    previousDay: 'Jour précédent',
+    nextDay: 'Jour suivant',
+    today: 'Aujourd’hui',
+    english: 'EN',
+    french: 'FR',
+    sunday: 'Dimanche', monday: 'Lundi', tuesday: 'Mardi', wednesday: 'Mercredi', thursday: 'Jeudi', friday: 'Vendredi', saturday: 'Samedi',
+    noGospel: 'L’Évangile assigné est indisponible.',
+    developmentAction: 'Cette destination sera raccordée à l’étape suivante de la migration.',
+    formulary: 'Formulaire',
+    liveMass: 'Messe',
+    backHome: 'Accueil',
+    imLost: 'Je suis perdu',
+    settings: 'Réglages',
+    you: 'Vous',
+    priest: 'Prêtre',
+    followCongregation: 'Suivez la pratique de l’assemblée',
+    sacredSilence: 'Silence sacré',
+    choirContinues: 'Le chœur continue tandis que le prêtre prie à voix basse.',
+    hearChoir: 'Chœur',
+    properUnavailableShort: 'Propre indisponible',
+    previous: 'Retour',
+    next: 'Suivant',
+    finish: 'Terminer',
+    vox: 'VOX',
+    missal: 'MISSALE',
+    oriented: 'Orienté',
+    parallel: 'Parallèle',
+    sungMass: 'Chantée',
+    lowMass: 'Basse',
+    whyThis: 'Pourquoi ?',
+    whatHappening: 'Que se passe-t-il ?',
+    variantNote: 'Quelque chose d’inhabituel ?',
+    massMap: 'Plan de la Messe',
+    jumpToSection: 'Aller à une section',
+    recoveryTitle: 'Où en êtes-vous dans la Messe ?',
+    recoveryHint: 'Choisissez ce que vous voyez ou entendez. Le guide ira vers la section la plus probable.',
+    footAltar: 'Au bas de l’autel',
+    readingsGospel: 'Lectures / Évangile',
+    offertory: 'Offertoire',
+    canonSilence: 'Canon / silence sacré',
+    communion: 'Communion',
+    conclusion: 'Conclusion',
+    textDisplay: 'Texte',
+    followMode: 'Suivi',
+    massForm: 'Forme de Messe',
+    close: 'Fermer',
+    bell: 'Cloche',
+    currentStep: 'Étape',
+    of: 'sur',
+    commemorations: 'Commémorations',
+};
+
+},20:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.buildHomeViewModel = buildHomeViewModel;
+const i18n_1 = require(17);
+function parseIso(value) {
+    return new Date(`${value}T12:00:00`);
+}
+function iso(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+function localizedText(text, language) {
+    if (!text)
+        return '';
+    return (language === 'fr' ? text.fr : text.en) || '';
+}
+function gospelRef(text) {
+    const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+    const match = lines.find(line => /\b\d{1,3}:\d/.test(line));
+    return match || null;
+}
+function excerpt(text, reference, max = 220) {
+    const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean)
+        .filter(line => line !== reference)
+        .filter(line => !/^(Continuation|Suite|Sequéntia|Évangile)/i.test(line));
+    const joined = lines.join(' ').replace(/\s+/g, ' ').trim();
+    if (!joined)
+        return '';
+    if (joined.length <= max)
+        return joined;
+    const clipped = joined.slice(0, max).replace(/\s+\S*$/, '').trim();
+    return `${clipped}…`;
+}
+function weekCells(dateIso, language) {
+    const selected = parseIso(dateIso);
+    const todayIso = iso(new Date());
+    const formatter = new Intl.DateTimeFormat(language === 'fr' ? 'fr-FR' : 'en-GB', { weekday: 'short' });
+    const cells = [];
+    for (let offset = -3; offset <= 3; offset++) {
+        const d = new Date(selected);
+        d.setDate(d.getDate() + offset);
+        const key = iso(d);
+        cells.push({
+            date: key,
+            day: formatter.format(d).replace('.', ''),
+            number: String(d.getDate()),
+            selected: offset === 0,
+            today: key === todayIso,
+        });
+    }
+    return cells;
+}
+function buildHomeViewModel(state) {
+    const language = state.language;
+    const date = parseIso(state.selectedDate);
+    const locale = language === 'fr' ? 'fr-FR' : 'en-GB';
+    const weekday = new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(date);
+    const dateLong = globalThis.AO_DISPLAY_DATE?.(date) || new Intl.DateTimeFormat(locale, { day: '2-digit', month: '2-digit', year: 'numeric' }).format(date);
+    const resolution = state.resolution;
+    const day = resolution?.day || null;
+    const proper = resolution?.proper.status === 'ready' ? resolution.proper.data : null;
+    const calendarFailed = resolution?.status === 'failed';
+    const celebration = (proper
+        ? (language === 'fr' ? (proper.nameFr || proper.name || day?.main?.title) : (proper.name || day?.main?.title))
+        : day?.main?.title) || (calendarFailed ? (0, i18n_1.t)(language, 'calendarUnavailable') : (0, i18n_1.t)(language, 'loading'));
+    const rankValue = proper?.rank || (day?.main ? String(day.main.rank) : '');
+    const rank = rankValue ? `${(0, i18n_1.t)(language, 'rank')} · ${rankValue}` : '';
+    const rawColour = resolution?.colourPlan?.label || day?.main?.color || '';
+    const colourMapFr = { Green: 'Vert', Violet: 'Violet', Purple: 'Violet', Red: 'Rouge', White: 'Blanc', Black: 'Noir', Rose: 'Rose' };
+    const colour = language === 'fr' ? (colourMapFr[rawColour] || rawColour) : rawColour;
+    const gospelText = localizedText(proper?.gospel, language);
+    const reference = gospelRef(gospelText);
+    const gospelExcerpt = proper ? (excerpt(gospelText, reference) || (0, i18n_1.t)(language, 'noGospel')) : (0, i18n_1.t)(language, 'noGospel');
+    let properStatus = 'idle';
+    let properMessage = null;
+    if (resolution?.proper.status === 'ready')
+        properStatus = 'ready';
+    else if (resolution?.proper.status === 'failed') {
+        properStatus = 'failed';
+        properMessage = (0, i18n_1.t)(language, 'properUnavailableBody');
+    }
+    const formularies = day?.massOptions?.length && day.massOptions.length > 1
+        ? day.massOptions.map(option => ({ index: option.index, label: option.label || option.title || `${(0, i18n_1.t)(language, 'formulary')} ${option.index + 1}`, selected: option.index === day.formularyIndex }))
+        : [];
+    const formularyLabel = formularies.length ? `${(0, i18n_1.t)(language, 'formulary')} ${day.formularyIndex + 1}/${formularies.length}` : null;
+    const commemorationLabel = day?.commemorations?.length
+        ? `${(0, i18n_1.t)(language, 'commemorations')} · ${day.commemorations.map(item => item.title || item.name).join(' · ')}`
+        : null;
+    return {
+        language,
+        dateIso: state.selectedDate,
+        weekday,
+        dateLong,
+        celebration,
+        rank,
+        colour,
+        loading: state.resolving,
+        calendarFailed,
+        properStatus,
+        properMessage,
+        gospelReference: reference,
+        gospelExcerpt,
+        massHint: (0, i18n_1.t)(language, 'todaysMassHint'),
+        formularyLabel,
+        formularies,
+        commemorationLabel,
+        week: weekCells(state.selectedDate, language),
+    };
+}
+
+},21:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.colourHex = colourHex;
+exports.themeTokens = themeTokens;
+exports.applyTheme = applyTheme;
+const BASE = {
+    green: '#4f8f66',
+    violet: '#8065a6',
+    purple: '#8065a6',
+    red: '#a64f55',
+    white: '#d8d1be',
+    gold: '#c7ae7b',
+    black: '#77746f',
+    rose: '#b9788e',
+    pink: '#b9788e',
+};
+function normalize(input) {
+    return String(input || 'green').trim().toLowerCase();
+}
+function colourHex(input) {
+    return BASE[normalize(input)] || BASE.green;
+}
+function themeTokens(plan) {
+    const base = colourHex(plan?.primary || plan?.massColor || 'green');
+    return {
+        liturgical: base,
+        liturgicalSoft: `color-mix(in srgb, ${base} 17%, transparent)`,
+        liturgicalBorder: `color-mix(in srgb, ${base} 45%, rgba(255,255,255,.11))`,
+        liturgicalGlow: `color-mix(in srgb, ${base} 25%, transparent)`,
+    };
+}
+function applyTheme(root, plan) {
+    const tokens = themeTokens(plan);
+    root.style.setProperty('--liturgical', tokens.liturgical);
+    root.style.setProperty('--liturgical-soft', tokens.liturgicalSoft);
+    root.style.setProperty('--liturgical-border', tokens.liturgicalBorder);
+    root.style.setProperty('--liturgical-glow', tokens.liturgicalGlow);
+}
+
+},22:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LiveMassController = void 0;
+const live_mass_1 = require(23);
+const live_mass_model_1 = require(24);
+const liturgical_theme_ui_1 = require(21);
+class LiveMassController {
+    root;
+    store;
+    persistence;
+    constructor(root, store, persistence) {
+        this.root = root;
+        this.store = store;
+        this.persistence = persistence;
+        store.subscribe(state => this.paint(state));
+        root.addEventListener('click', event => this.click(event));
+    }
+    swapButton(event) { return event.target?.closest?.('[data-live-swap]') || null; }
+    setSwap(button, showAlt, held = false) {
+        const surface = button?.closest('.swapSurface');
+        if (!surface) return;
+        surface.classList.toggle('showAlt', !!showAlt);
+        if (!held) {
+            button.textContent = showAlt ? button.dataset.returnLabel : button.dataset.revealLabel;
+            button.setAttribute('aria-pressed', String(!!showAlt));
+        }
+    }
+    swapPointerDown(event) {
+        if (this.store.getState().route !== 'live') return;
+        const button = this.swapButton(event);
+        if (!button || button.dataset.pinned === '1') return;
+        if (button.__aoHoldTimer) clearTimeout(button.__aoHoldTimer);
+        button.__aoHoldTimer = setTimeout(() => {
+            button.dataset.holding = '1';
+            this.setSwap(button, true, true);
+        }, 320);
+    }
+    swapPointerUp(event) {
+        if (this.store.getState().route !== 'live') return;
+        const button = this.swapButton(event);
+        if (!button) return;
+        if (button.__aoHoldTimer) {
+            clearTimeout(button.__aoHoldTimer);
+            button.__aoHoldTimer = null;
+        }
+        if (button.dataset.holding === '1') {
+            delete button.dataset.holding;
+            this.setSwap(button, false, true);
+            button.dataset.suppressClick = '1';
+        }
+    }
+    toggleSwap(button) {
+        if (button.dataset.suppressClick === '1') { delete button.dataset.suppressClick; return; }
+        const pinned = button.dataset.pinned === '1';
+        button.dataset.pinned = pinned ? '0' : '1';
+        this.setSwap(button, !pinned, false);
+    }
+    paint(state = this.store.getState()) { if (state.route !== 'live')
+        return; const seq = (0, live_mass_model_1.buildLiveSequence)(state); if (state.live.stepIndex >= seq.steps.length)
+        this.store.dispatch({ type: 'live-jump', index: seq.steps.length - 1, maxIndex: seq.steps.length - 1 });
+    else {
+        (0, live_mass_1.renderLiveMass)(this.root, state);
+        (0, liturgical_theme_ui_1.applyTheme)(document.documentElement, state.resolution?.colourPlan || null);
+        document.documentElement.dataset.textScale = state.settings.textScale;
+        document.documentElement.dataset.reducedMotion = String(state.settings.reducedMotion);
+    } }
+    click(event) {
+        if (this.store.getState().route !== 'live')
+            return;
+        const target = event.target;
+        const swapSurface = target?.closest?.('[data-live-swap-surface]') || null;
+        const button = target?.closest?.('button');
+        const directBackdrop = target?.matches?.('[data-sheet-close]') ? target : null;
+        const el = button || directBackdrop;
+        if (swapSurface) {
+            const swapButton = swapSurface.querySelector('[data-live-swap]');
+            if (swapButton) this.toggleSwap(swapButton);
+            return;
+        }
+        if (!el)
+            return;
+        const state = this.store.getState(), seq = (0, live_mass_model_1.buildLiveSequence)(state), max = Math.max(0, seq.steps.length - 1);
+        if (el.dataset.liveSwap !== undefined) {
+            this.toggleSwap(el);
+            return;
+        }
+        if (el.hasAttribute('data-sheet-close')) {
+            this.store.dispatch({ type: 'live-sheet', sheet: null });
+            return;
+        }
+        if (el.dataset.liveHome !== undefined) {
+            const fr=this.store.getState().language==='fr';
+            if(window.confirm(fr?'La Messe est en cours. Quitter le suivi ? Votre place sera enregistrée.':'Mass is in progress. Leave the follower? Your place will be saved.')) this.store.dispatch({ type: 'leave-live' });
+            return;
+        }
+        if (el.dataset.liveNext !== undefined) {
+            if (state.live.stepIndex >= max) {
+                this.persistence.completeMass();
+                this.store.dispatch({ type: 'finish-live' });
+            }
+            else
+                this.store.dispatch({ type: 'live-next', maxIndex: max });
+            return;
+        }
+        if (el.dataset.livePrev !== undefined) {
+            this.store.dispatch({ type: 'live-previous' });
+            return;
+        }
+        if (el.dataset.liveJump) {
+            this.store.dispatch({ type: 'live-jump', index: Number(el.dataset.liveJump), maxIndex: max });
+            return;
+        }
+        if (el.dataset.liveScripture) {
+            const liveStep = seq.steps[state.live.stepIndex];
+            this.root.dispatchEvent(new CustomEvent('ao:open-scripture', { bubbles: true, detail: { kind: el.dataset.liveScripture, returnRoute: 'live', text: liveStep?.text || null } }));
+            return;
+        }
+        if (el.dataset.liveSheet) {
+            this.store.dispatch({ type: 'live-sheet', sheet: el.dataset.liveSheet });
+            return;
+        }
+        if (el.dataset.liveForm) {
+            this.store.dispatch({ type: 'live-form-session', form: el.dataset.liveForm });
+            return;
+        }
+        if (el.dataset.liveFollow) {
+            this.store.dispatch({ type: 'live-follow-mode-session', mode: el.dataset.liveFollow });
+            return;
+        }
+        if (el.dataset.liveText) {
+            this.store.dispatch({ type: 'live-text-mode', mode: el.dataset.liveText });
+            return;
+        }
+        if (el.dataset.language) {
+            this.store.dispatch({ type: 'set-language', language: el.dataset.language });
+            return;
+        }
+        if (el.dataset.participation) {
+            this.store.dispatch({ type: 'set-participation', mode: el.dataset.participation });
+            return;
+        }
+        if (el.dataset.faithfulCommunion !== undefined) {
+            this.store.dispatch({ type: 'set-faithful-communion', value: el.dataset.faithfulCommunion === '1' });
+            return;
+        }
+        if (el.dataset.secondConfiteor !== undefined) {
+            this.store.dispatch({ type: 'set-second-confiteor', value: el.dataset.secondConfiteor === '1' });
+            return;
+        }
+        if (el.dataset.joinConfiteor !== undefined) {
+            this.store.dispatch({ type: 'set-join-second-confiteor', value: el.dataset.joinConfiteor === '1' });
+            return;
+        }
+        if (el.dataset.sundayAsperges !== undefined) {
+            this.store.dispatch({ type: 'set-sunday-asperges', value: el.dataset.sundayAsperges === '1' });
+            return;
+        }
+        if (el.dataset.reducedMotion !== undefined) {
+            this.store.dispatch({ type: 'set-reduced-motion', value: el.dataset.reducedMotion === '1' });
+            return;
+        }
+        if (el.dataset.textScale) {
+            this.store.dispatch({ type: 'set-text-scale', value: el.dataset.textScale });
+            return;
+        }
+        if (el.dataset.localPosture) {
+            const step = seq.steps[state.live.stepIndex];
+            this.store.dispatch({ type: 'set-local-posture', key: step.id, value: el.dataset.localPosture });
+            this.store.dispatch({ type: 'live-sheet', sheet: null });
+            return;
+        }
+        if (el.dataset.resetPostures !== undefined) {
+            this.store.dispatch({ type: 'reset-local-postures' });
+            this.store.dispatch({ type: 'live-sheet', sheet: null });
+            return;
+        }
+    }
+}
+exports.LiveMassController = LiveMassController;
+
+},23:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.renderLiveMassToString = renderLiveMassToString;
+exports.renderLiveMass = renderLiveMass;
+const i18n_1 = require(17);
+const live_mass_model_1 = require(24);
+const icons_1 = require(37);
+function esc(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[c] || c)); }
+function nl(value) { return esc(value).replace(/\n/g, '<br>'); }
+function img(id, cls = '', alt = '') { const src = (0, icons_1.iconSrc)(id); return src ? `<img class="${esc(cls)}" src="${src}" alt="${esc(alt)}">` : ''; }
+function postureIcon(label, cls = 'cueIcon') { if (!label)
+    return ''; const u = label.toUpperCase(); let id = ''; if (/KNEEL|GENOUX/.test(u))
+    id = icons_1.POSTURE_ICON.KNEEL;
+else if (/STAND|DEBOUT/.test(u))
+    id = icons_1.POSTURE_ICON.STAND;
+else if (/SIT|ASSIS/.test(u))
+    id = icons_1.POSTURE_ICON.SIT;
+else if (/GENUFLECT|GENUFLEX|GÉNUFLEX/.test(u))
+    id = icons_1.POSTURE_ICON.GENUFLECT;
+else if (/BOW|INCLIN/.test(u))
+    id = icons_1.POSTURE_ICON.BOW; return id ? img(id, cls, '') : ''; }
+function priestIconForPosition(position) {
+    const p = String(position || '').toLowerCase();
+    if (/incens.*people|people.*incens|encens.*fid[eè]les/.test(p)) return 'ao-priest-incensing-people';
+    if (/incens|encens/.test(p)) return 'ao-priest-incensing-altar';
+    if (/elevat|élévat|elevation/.test(p)) return 'ao-priest-elevation';
+    if (/genuflect|g[eé]nuflex/.test(p)) return 'ao-priest-genuflecting';
+    if (/process/.test(p)) return 'ao-priest-procession';
+    if (/epistle|[eé]p[iî]tre/.test(p)) return 'ao-priest-epistle-side';
+    if (/gospel|[eé]vangile/.test(p)) return 'ao-priest-gospel-side';
+    if (/throne|tr[oô]ne/.test(p)) return 'ao-priest-at-throne';
+    if (/sedilia|side chair|chair|si[eè]ge|banquette/.test(p)) return 'ao-priest-at-side-chair';
+    if (/facing.*people|people|communion rail|rail|face au peuple|fid[eè]les/.test(p)) return 'ao-priest-facing-people';
+    return 'ao-priest-centre-ad-orientem';
+}
+function roleLabel(role, language) {
+    const key = String(role || '').toUpperCase();
+    const en = { PRIEST: 'Priest', MINISTERS: 'Ministers', SERVER: 'Server', PEOPLE: 'People', CHOIR: 'Choir', CELEBRANT: 'Celebrant' };
+    const fr = { PRIEST: 'Prêtre', MINISTERS: 'Ministres', SERVER: 'Servant', PEOPLE: 'Fidèles', CHOIR: 'Chœur', CELEBRANT: 'Célébrant' };
+    return (language === 'fr' ? fr[key] : en[key]) || key.replace(/_/g, ' ');
+}
+function normalizeLiturgicalText(value, context = 'default') {
+    let text = String(value || '').replace(/\r\n?/g, '\n').replace(/\u00a0/g, ' ');
+    // Normalize printed cross conventions and remove source-only control tokens.
+    text = text.replace(/\+\+|✠|✚|✙|✛|✜|✝|✞|☩/g, '✠');
+    text = text.replace(/(^|[\s(])\+(?=($|[\s,.;:!?)]))/gm, '$1✠');
+    text = text.replace(/(^|[\n\s])\$+(?=[A-Za-zÀ-ÖØ-öø-ÿĀ-žÆŒæœ])/g, '$1');
+    // Source files sometimes flatten dialogue markers into a single prose line. Restore
+    // semantic speaker breaks before normalising the marker glyphs.
+    text = text.replace(/([^\n])\s+(?=(?:℣|℟)\s*[\.:]\s*)/g, '$1\n');
+    text = text.replace(/([^\n])\s+(?=(?:[VvRrSsMm])\s*[\.:]\s+[A-ZÀ-ÖØ-Þ])/g, '$1\n');
+    // In a Schola block V. is a chant verse. In altar/dialogue text V/R and S/M
+    // are semantic versicle/response markers and must never share a paragraph.
+    if (context === 'choir') {
+        text = text.replace(/(^|\n)\s*[Vv]\s*[\.:]\s*/g, '$1V. ');
+        text = text.replace(/(^|\n)\s*[Rr]\s*[\.:]\s*/g, '$1R. ');
+    } else {
+        text = text.replace(/(^|\n)\s*[VvSs]\s*[\.:]\s*/g, '$1℣. ');
+        text = text.replace(/(^|\n)\s*[RrMm]\s*[\.:]\s*/g, '$1℟. ');
+    }
+    text = text.replace(/[ \t]+\n/g, '\n').replace(/\n[ \t]+/g, '\n');
+    text = text.replace(/[ \t]{2,}/g, ' ').replace(/\n{3,}/g, '\n\n');
+    return text.trim();
+}
+function parseRoleSections(value, context = 'default') {
+    const source = normalizeLiturgicalText(value, context);
+    const out = [];
+    const re = /\[ROLE=([A-Z_-]+)\]\s*([\s\S]*?)\s*\[\/ROLE\]/g;
+    let match, last = 0;
+    while ((match = re.exec(source))) {
+        const before = source.slice(last, match.index).trim();
+        if (before) out.push({ role: '', text: before });
+        out.push({ role: match[1], text: match[2].trim() });
+        last = re.lastIndex;
+    }
+    const after = source.slice(last).trim();
+    if (after) out.push({ role: '', text: after });
+    return out;
+}
+function splitScriptureReference(line) {
+    const text = String(line || '').trim();
+    const match = text.match(/^((?:[1-3]\s*)?[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ.\- ]{0,24}\s+\d+(?:\s*[,;:]\s*\d+(?:\s*[-–]\s*\d+)?)?\.?)(?:\s+(.*))?$/u);
+    if (!match) return null;
+    return { reference: match[1].trim(), body: (match[2] || '').trim() };
+}
+function isScriptureReference(line) { return !!splitScriptureReference(line); }
+function isLiturgicalLead(line) {
+    return /^(Sequéntia|Sequentia|Initium|Léctio|Lectio|Leçon|Lecture de|Évangile|Evangile|Continuation|Suite du saint|Commencement|A reading from|A lesson from|Lesson from|Reading from|The continuation of|The beginning of)/i.test(line);
+}
+function renderParagraphBody(value, context = 'default') {
+    const text = normalizeLiturgicalText(value, context).replace(/\[\/?ROLE(?:=[A-Z_-]+)?\]/g, '').trim();
+    if (!text) return '';
+    const groups = text.split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
+    return groups.map(group => {
+        const lines = group.split(/\n/).map(x => x.trim()).filter(Boolean);
+        if (!lines.length) return '';
+        const pieces = [];
+        let prose = [];
+        const flush = () => {
+            if (!prose.length) return;
+            pieces.push(`<p>${esc(prose.join(' '))}</p>`);
+            prose = [];
+        };
+        for (const line of lines) {
+            const normalized = normalizeLiturgicalText(line, context);
+            if (context !== 'choir' && /^[℣℟]\./.test(normalized)) {
+                flush();
+                const match = normalized.match(/^([℣℟])\.\s*(.*)$/);
+                const isResponse = match && match[1] === '℟';
+                pieces.push(`<p class="liturgicalDialogueLine ${isResponse ? 'responseLine' : 'versicleLine'}"><span class="liturgicalDialogueMark">${match ? esc(match[1] + '.') : ''}</span><span>${match ? esc(match[2]) : esc(normalized)}</span></p>`);
+            } else if (context === 'choir' && /^[VR]\.\s*/.test(normalized)) {
+                flush();
+                const match = normalized.match(/^([VR])\.\s*(.*)$/);
+                pieces.push(`<p class="chantVerseLine"><span class="chantVerseMark">${match ? esc(match[1] + '.') : ''}</span><span>${match ? esc(match[2]) : esc(normalized)}</span></p>`);
+            } else if (isScriptureReference(normalized)) {
+                flush();
+                const citation = splitScriptureReference(normalized);
+                if (citation?.body) pieces.push(`<p class="scriptureVerseLine"><span class="scriptureReferenceInline">${esc(citation.reference)}</span><span>${esc(citation.body)}</span></p>`);
+                else pieces.push(`<p class="scriptureReference">${esc(citation?.reference || normalized)}</p>`);
+            } else if (isLiturgicalLead(normalized)) {
+                flush();
+                pieces.push(`<p class="liturgicalLead">${esc(normalized)}</p>`);
+            } else if (context === 'choir') {
+                flush();
+                pieces.push(`<p class="chantTextLine">${esc(normalized)}</p>`);
+            } else {
+                prose.push(normalized);
+            }
+        }
+        flush();
+        return `<div class="liturgicalParagraphGroup">${pieces.join('')}</div>`;
+    }).join('');
+}
+function roleMark(role) { const key = String(role || '').toUpperCase(); if (/^(PRIEST|CELEBRANT)$/.test(key)) return '℣.'; if (/^(MINISTERS?|SERVER|SERVERS|PEOPLE|CONGREGATION|FAITHFUL)$/.test(key)) return '℟.'; return ''; }
+function isCongregationRole(role) { return /^(PEOPLE|CONGREGATION|FAITHFUL)$/i.test(String(role || '').trim()); }
+function isMinisterRole(role) { return /^(MINISTERS?|SERVER|SERVERS)$/i.test(String(role || '').trim()); }
+function renderRichText(value, language, context = 'default') {
+    const sections = parseRoleSections(value, context);
+    if (!sections.length) return renderParagraphBody(value, context);
+    return sections.map(section => {
+        const mark = context === 'choir' ? '' : roleMark(section.role);
+        const classes = [mark === '℣.' ? 'roleVersicle' : mark === '℟.' ? 'roleResponse' : '', isCongregationRole(section.role) ? 'roleCongregation' : '', isMinisterRole(section.role) ? 'roleMinister' : ''].filter(Boolean).join(' ');
+        const label = mark || (section.role && context !== 'choir' ? roleLabel(section.role, language) : '');
+        return `<div class="rolePassage${classes ? ' ' + classes : ''}">${label ? `<span class="roleLabel">${esc(label)}</span>` : ''}<div class="roleBody">${renderParagraphBody(section.text, context)}</div></div>`;
+    }).join('');
+}
+function swapLabels(block, language) {
+    const vern = language === 'fr' ? 'français' : 'English';
+    const reveal = block.primaryLanguage === 'lat' ? (language === 'fr' ? 'Toucher pour le français' : 'Tap for English') : (language === 'fr' ? 'Toucher pour le latin' : 'Tap for Latin');
+    const release = block.primaryLanguage === 'lat' ? (language === 'fr' ? 'Toucher pour le latin' : 'Tap for Latin') : (language === 'fr' ? `Toucher pour le ${vern}` : 'Tap for English');
+    const back = block.primaryLanguage === 'lat' ? (language === 'fr' ? 'Retour au latin' : 'Back to Latin') : (language === 'fr' ? `Retour au ${vern}` : 'Back to English');
+    return { reveal, release, back };
+}
+function properSlotLabel(slot, language) {
+    const fr = language === 'fr';
+    const labels = { introit: fr ? 'Introït' : 'Introit', offertory: fr ? 'Offertoire' : 'Offertory', communion: fr ? 'Communion' : 'Communion', preGospelChants: fr ? 'chant avant l’Évangile' : 'pre-Gospel chant' };
+    return labels[slot] || (fr ? 'chant' : 'chant');
+}
+function renderSwapReading(block, language, primaryRenderer = null, secondaryRenderer = null) {
+    const labels = swapLabels(block, language);
+    const context = block.role ? 'choir' : 'default';
+    const primaryHtml = primaryRenderer ? primaryRenderer(block.primary) : renderRichText(block.primary, language, context);
+    const secondaryHtml = secondaryRenderer ? secondaryRenderer(block.secondary) : renderRichText(block.secondary, language, context);
+    const body = `<div class="swapSurface" data-live-swap-surface><div class="massText swapPrimary">${primaryHtml}</div><div class="massText swapAlt">${secondaryHtml}</div><button class="swapAction" data-live-swap data-pinned="0" data-reveal-label="${esc(labels.reveal)}" data-release-label="${esc(labels.release)}" data-return-label="${esc(labels.back)}" aria-pressed="false">${esc(labels.reveal)}</button></div>`;
+    if (block.role && block.compactContinuation) {
+        const continuation = language === 'fr' ? 'continue' : 'continues';
+        return `<details class="choirContinuation"><summary>${img('ao-choir','scholaRibbonIcon','')}<b>SCHOLA</b><span class="continuationText">${esc(properSlotLabel(block.properSlot, language))} ${continuation}</span></summary><div class="choirContinuationBody">${body}</div></details>`;
+    }
+    return `<article class="massReading${block.role ? ' choirReading' : ''}">${block.role ? `<div class="massReadingRole choirRibbon">${img('ao-choir','scholaRibbonIcon','')}<span>SCHOLA</span></div>` : ''}${body}</article>`;
+}
+function renderConsecrationText(value, language) {
+    const paragraphs = normalizeLiturgicalText(value).split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
+    return paragraphs.map(paragraph => {
+        const plain = paragraph.replace(/\[\/?ROLE(?:=[A-Z_-]+)?\]/g, '');
+        const letters = plain.replace(/[^A-Za-zÀ-ÖØ-öø-ÿĀ-žÆŒæœ]/g, '');
+        const formula = letters && letters === letters.toUpperCase();
+        return `<div class="${formula ? 'consecrationFormula' : 'consecrationNarrative'}">${renderRichText(paragraph, language)}</div>`;
+    }).join('');
+}
+function renderTexts(state) {
+    const vm = (0, live_mass_model_1.buildLiveMassViewModel)(state);
+    if (!vm.textBlocks.length) return '';
+    const seen = new Set();
+    const blocks = vm.textBlocks.filter(block => {
+        if (block.kind === 'unavailable') return true;
+        const key = `${block.primary || ''}::${block.secondary || ''}`.replace(/\s+/g, ' ').trim();
+        if (seen.has(key)) return false;
+        seen.add(key); return true;
+    });
+    return `<section class="massTexts">${blocks.map(block => {
+        if (block.kind === 'unavailable') return `<div class="properMissing">${esc(block.primary)}</div>`;
+        const context = block.role ? 'choir' : 'default';
+        if (vm.textMode === 'parallel') return `<article class="parallelText${block.role ? ' choirParallel' : ''}${block.response && state.settings.participationMode === 'group' ? ' congregationParallel' : ''}">${block.role ? `<div class="parallelRole choirRibbon">${img('ao-choir','scholaRibbonIcon','')}<span>SCHOLA</span></div>` : ''}<div class="textColumn latin"><div class="textLang">LATIN</div><div class="massText">${renderRichText(block.primary, state.language, context)}</div></div><div class="textColumn vernacular"><div class="textLang">${state.language === 'fr' ? 'FRANÇAIS' : 'ENGLISH'}</div><div class="massText">${block.secondary ? renderRichText(block.secondary, state.language, context) : `<span class="translationMissing">${state.language === 'fr' ? 'Traduction indisponible' : 'Translation unavailable'}</span>`}</div></div></article>`;
+        if (/consecration-(host|chalice)/.test(vm.step.id) && block.secondary) {
+            return `<article class="massReading consecrationReading">${renderSwapReading(block, state.language, value => renderConsecrationText(value, state.language), value => renderConsecrationText(value, state.language)).replace(/^<article class="massReading[^>]*>|<\/article>$/g, '')}</article>`;
+        }
+        // Oriented mode has one liturgical surface only. Translation is revealed by tapping
+        // the text/hint; dialogue, role and paragraph structure are preserved on both faces.
+        if (block.secondary) return renderSwapReading(block, state.language);
+        if (block.role && block.compactContinuation) {
+            const continuation = state.language === 'fr' ? 'continue' : 'continues';
+            return `<details class="choirContinuation"><summary>${img('ao-choir','scholaRibbonIcon','')}<b>SCHOLA</b><span class="continuationText">${esc(properSlotLabel(block.properSlot, state.language))} ${continuation}</span></summary><div class="choirContinuationBody"><div class="massText">${renderRichText(block.primary, state.language, context)}</div></div></details>`;
+        }
+        return `<article class="massReading${block.role ? ' choirReading' : ''}">${block.role ? `<div class="massReadingRole choirRibbon">${img('ao-choir','scholaRibbonIcon','')}<span>SCHOLA</span></div>` : ''}<div class="massText">${renderRichText(block.primary, state.language, context)}</div></article>`;
+    }).join('')}</section>`;
+}
+function settingGroup(label, items, active, attr) { return `<div class="settingGroup"><label>${esc(label)}</label><div class="segmented">${items.map(([value, text]) => `<button ${attr}="${esc(value)}" class="${value === active ? 'active' : ''}">${esc(text)}</button>`).join('')}</div></div>`; }
+function toggleRow(label, copy, value, attr) { return `<button class="toggleRow" ${attr}="${value ? '0' : '1'}"><span><b>${esc(label)}</b><small>${esc(copy)}</small></span><i class="toggle ${value ? 'on' : ''}" aria-hidden="true"></i></button>`; }
+const AO_WHY_SOURCES = {"mr1962":{"label":"Missale Romanum (1962) · Ritus servandus in celebratione Missae","kind":"Primary rubric","url":"https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/","note":"Controlling source for the ordinary 1962 ceremonial and order of Mass. Linked text is an English translation of the Ritus servandus.","label_fr":"Missale Romanum (1962) · Ritus servandus in celebratione Missae","kind_fr":"Rubrique primaire","note_fr":"Source normative pour le cérémonial ordinaire de 1962 et l’ordre de la Messe. Le lien donne une traduction anglaise du Ritus servandus."},"oconnell1964":{"label":"J. B. O’Connell · The Celebration of Mass, 4th ed. (1964)","kind":"Ceremonial manual","note":"Detailed English explanation of the rubrics revised for the 1960 Code of Rubrics and 1962 Missal.","label_fr":"J. B. O’Connell · The Celebration of Mass, 4th ed. (1964)","kind_fr":"Manuel cérémoniel","note_fr":"Explication détaillée en anglais des rubriques, révisée selon le Code des rubriques de 1960 et le Missel de 1962."},"fortescue1962":{"label":"Fortescue–O’Connell · The Ceremonies of the Roman Rite Described, 12th ed. (1962)","kind":"Ceremonial manual","note":"Contemporary ceremonial cross-check for celebration according to the 1962 books.","label_fr":"Fortescue–O’Connell · The Ceremonies of the Roman Rite Described, 12th ed. (1962)","kind_fr":"Manuel cérémoniel","note_fr":"Référence cérémonielle contemporaine pour la célébration selon les livres de 1962."},"mediatorDei":{"label":"Pius XII · Mediator Dei (1947)","kind":"Magisterial theology","url":"https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html","note":"Used for theology of the Eucharistic sacrifice, priesthood, offering, participation and Communion; not to reconstruct 1962 ceremonial.","label_fr":"Pie XII · Mediator Dei (1947)","kind_fr":"Théologie magistérielle","note_fr":"Utilisé pour la théologie du sacrifice eucharistique, du sacerdoce, de l’offrande, de la participation et de la Communion ; non pour reconstruire le cérémonial de 1962."},"ccc":{"label":"Catechism of the Catholic Church · Eucharist, §§1322–1419","kind":"Doctrinal synthesis","url":"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_3.html","note":"Used for doctrinal explanation of Word, sacrifice, consecration, Real Presence and Communion.","label_fr":"Catéchisme de l’Église catholique · Eucharistie, §§1322–1419","kind_fr":"Synthèse doctrinale","note_fr":"Utilisé pour l’explication doctrinale de la Parole, du sacrifice, de la Consécration, de la Présence réelle et de la Communion."},"sc":{"label":"Second Vatican Council · Sacrosanctum Concilium (1963)","kind":"Magisterial theology","url":"https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html","note":"Used only for general liturgical theology and intelligibility, not as a source for 1962 rubrics.","label_fr":"Concile Vatican II · Sacrosanctum Concilium (1963)","kind_fr":"Théologie magistérielle","note_fr":"Utilisé uniquement pour la théologie liturgique générale et l’intelligibilité des rites, non comme source des rubriques de 1962."},"fortescueMass":{"label":"Adrian Fortescue · The Mass: A Study of the Roman Liturgy","kind":"Historical study","note":"Used for historical development of Roman Mass elements; historical interpretation is kept distinct from the 1962 rubric.","label_fr":"Adrian Fortescue · The Mass: A Study of the Roman Liturgy","kind_fr":"Étude historique","note_fr":"Utilisé pour le développement historique des éléments de la Messe romaine ; l’interprétation historique reste distincte de la rubrique de 1962."},"jungmann":{"label":"Josef A. Jungmann, S.J. · Missarum Sollemnia / The Mass of the Roman Rite","kind":"Historical study","note":"Used as a major scholarly account of the historical development and structure of the Roman Mass.","label_fr":"Josef A. Jungmann, S.J. · Missarum Sollemnia / The Mass of the Roman Rite","kind_fr":"Étude historique","note_fr":"Utilisé comme étude savante majeure du développement historique et de la structure de la Messe romaine."},"gihr":{"label":"Nikolaus Gihr · The Holy Sacrifice of the Mass","kind":"Traditional theological interpretation","note":"Used for theological or ascetical interpretation where helpful; not treated as a rubrical or historical authority.","label_fr":"Nikolaus Gihr · The Holy Sacrifice of the Mass","kind_fr":"Interprétation théologique traditionnelle","note_fr":"Utilisé pour l’interprétation théologique ou ascétique lorsqu’elle est utile ; il n’est pas traité comme autorité rubricale ou historique."},"holyweek1955":{"label":"Sacred Congregation of Rites · Ordo Hebdomadae Sanctae Instauratus / Maxima Redemptionis (1955)","kind":"Primary Holy Week reform source","url":"https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_19551116_maxima-redemptionis_la.html","note":"Controls the restored Holy Week framework used by the 1962 Missal; pre-1955 procedural descriptions are excluded.","label_fr":"Sacrée Congrégation des Rites · Ordo Hebdomadae Sanctae Instauratus / Maxima Redemptionis (1955)","kind_fr":"Source primaire de la réforme de la Semaine sainte","note_fr":"Détermine le cadre restauré de la Semaine sainte reçu par le Missel de 1962 ; les descriptions procédurales antérieures à 1955 sont exclues."},"novis1962":{"label":"Sacred Congregation of Rites · Novis hisce temporibus (13 November 1962)","kind":"Authoritative decree","note":"Decree inserting the name of St Joseph into the Communicantes of the Roman Canon, effective 8 December 1962.","label_fr":"Sacrée Congrégation des Rites · Novis hisce temporibus (13 novembre 1962)","kind_fr":"Décret faisant autorité","note_fr":"Décret insérant le nom de saint Joseph dans le Communicantes du Canon romain, avec effet au 8 décembre 1962."}};
+const AO_WHY_ENRICHMENT = {"sign-cross":{"what":"The celebrant begins below the altar with Introibo ad altare Dei — “I will go unto the altar of God.” Before ascending to the altar he begins a distinct preparatory dialogue with the ministers. When the Sunday Asperges precedes the principal Sung Mass, the Introit begins only after its concluding Amen; otherwise the schola may already be singing the Introit.","meaning":"This opening makes the approach to the altar an explicit act of preparation rather than an immediate start at the altar itself.","history":"The prayers now called the Prayers at the Foot developed from preparatory prayers of the celebrant and were only gradually fixed as part of the Roman Mass.","sources":["mr1962","oconnell1964","fortescueMass","jungmann"],"what_fr":"Le célébrant commence au bas de l’autel par Introibo ad altare Dei — « J’irai vers l’autel de Dieu ». Avant de monter à l’autel, il entame avec les ministres un dialogue préparatoire distinct. Lorsque l’aspersion dominicale précède la Messe chantée principale, l’Introït ne commence qu’après son Amen final ; sinon la schola peut déjà chanter l’Introït.","meaning_fr":"Cette ouverture fait de l’approche de l’autel un acte explicite de préparation, plutôt qu’un commencement immédiat à l’autel lui-même.","history_fr":"Les prières aujourd’hui appelées « prières au bas de l’autel » se sont développées à partir des prières préparatoires du célébrant et n’ont été fixées que progressivement comme partie de la Messe romaine."},"judica":{"what":"Priest and ministers alternate Psalm 42, Judica me, whose repeated desire is to approach the altar of God with joy and confidence. The psalm is omitted in Masses for the Dead and from Passion Sunday through Holy Saturday according to the 1962 rubrics.","meaning":"The text gives the celebrant’s approach to the altar a biblical vocabulary of longing, trial and trust in God.","sources":["mr1962","oconnell1964","fortescueMass"],"what_fr":"Le prêtre et les ministres alternent le psaume 42, Judica me, qui exprime à plusieurs reprises le désir de s’approcher de l’autel de Dieu avec joie et confiance. Selon les rubriques de 1962, ce psaume est omis aux Messes des défunts ainsi que du dimanche de la Passion au Samedi saint.","meaning_fr":"Le texte donne à l’approche de l’autel un vocabulaire biblique de désir, d’épreuve et de confiance en Dieu."},"adjutorium":{"what":"After the psalm, Adjutorium nostrum in nomine Domini — “Our help is in the name of the Lord” — marks the transition into the mutual confession of sin. Priest and ministers acknowledge their dependence on divine help before approaching the altar.","sources":["mr1962","oconnell1964"],"what_fr":"Après le psaume, Adjutorium nostrum in nomine Domini — « Notre secours est dans le nom du Seigneur » — marque le passage à la confession réciproque des péchés. Le prêtre et les ministres reconnaissent qu’ils dépendent du secours divin avant de s’approcher de l’autel.","meaning":"The versicle places the penitential preparation under explicit dependence on God: the approach to the altar begins from grace, not self-sufficiency.","meaning_fr":"Ce verset place la préparation pénitentielle sous une dépendance explicite envers Dieu : l’approche de l’autel commence par la grâce, non par l’autosuffisance."},"priest-confiteor":{"what":"The priest first confesses his sins before God, the Blessed Virgin, the saints and the assisting ministers. The ministers answer with a prayer for mercy and forgiveness before making their own confession.","meaning":"The celebrant’s confession is a preparation for sacred ministry; it does not replace sacramental confession.","sources":["mr1962","oconnell1964"],"what_fr":"Le prêtre confesse d’abord ses péchés devant Dieu, la Sainte Vierge, les saints et les ministres qui l’assistent. Ceux-ci répondent par une prière demandant miséricorde et pardon avant de faire à leur tour leur propre confession.","meaning_fr":"La confession du célébrant prépare à l’exercice du ministère sacré ; elle ne remplace pas la confession sacramentelle."},"ministers-confiteor":{"what":"The ministers now make the Confiteor in turn, and the priest responds. The structure is deliberately reciprocal: celebrant and ministers acknowledge sin before the more immediate approach to the altar.","sources":["mr1962","oconnell1964"],"what_fr":"Les ministres récitent ensuite le Confiteor à leur tour, et le prêtre répond. La structure est volontairement réciproque : célébrant et ministres reconnaissent leur péché avant l’approche immédiate de l’autel.","meaning":"The reciprocal confession makes penitential preparation communal without erasing liturgical roles: priest and ministers each acknowledge sin before the sacred action continues.","meaning_fr":"La confession réciproque rend la préparation pénitentielle commune sans effacer les rôles liturgiques : prêtre et ministres reconnaissent chacun leur péché avant la poursuite de l’action sacrée."},"ascend":{"what":"Having completed the prayers below the altar, the priest ascends the steps while asking God to remove iniquity so that he may enter the Holy of Holies with a pure heart.","meaning":"The language deliberately presents the altar as a sacred place approached with purification and reverence.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Les prières au bas de l’autel étant achevées, le prêtre monte les degrés en demandant à Dieu d’ôter ses iniquités afin qu’il puisse entrer dans le Saint des saints avec un cœur pur.","meaning_fr":"Le langage de la prière présente délibérément l’autel comme un lieu sacré auquel on s’approche avec purification et révérence."},"oramus-te":{"what":"At the altar the priest bows and kisses it while praying Oramus te, Domine. The altar is not merely a working surface: it is the consecrated place upon which the Eucharistic sacrifice will be offered.","meaning":"The kiss is an act of reverence toward the altar and, in the traditional prayer, is joined to the memory of the saints whose relics are associated with it.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Arrivé à l’autel, le prêtre s’incline et le baise en récitant Oramus te, Domine. L’autel n’est pas une simple surface fonctionnelle : c’est le lieu consacré sur lequel sera offert le sacrifice eucharistique.","meaning_fr":"Le baiser est un acte de révérence envers l’autel et, dans la prière traditionnelle, il est uni à la mémoire des saints dont les reliques lui sont associées."},"incense-entrance":{"what":"At Solemn Mass the celebrant blesses incense and incenses the cross and altar. The altar is honoured at the beginning of the sacred action; afterwards the celebrant himself is incensed because of his liturgical office.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"À la Messe solennelle, le célébrant bénit l’encens puis encense la croix et l’autel. L’autel est ainsi honoré au commencement de l’action sacrée ; le célébrant est ensuite lui-même encensé en raison de sa fonction liturgique.","meaning":"Incense marks the altar and cross as objects of liturgical honour and visibly distinguishes the solemn sacred action from ordinary activity.","meaning_fr":"L’encens marque l’autel et la croix comme objets d’honneur liturgique et distingue visiblement l’action sacrée solennelle de l’activité ordinaire."},"introit":{"what":"The Introit is the Proper entrance text of this particular Mass. The priest reads it at the Epistle side while, at a Sung Mass, the schola’s entrance chant forms its own audible layer; the two actions can therefore overlap.","meaning":"Unlike the fixed Ordinary, the Introit changes with the liturgical day and helps identify the character of the celebration.","history":"Its name preserves its original processional function: an entrance chant accompanying the approach to the altar.","sources":["mr1962","oconnell1964","fortescueMass","jungmann"],"what_fr":"L’Introït est le chant propre d’entrée de cette Messe. Le prêtre le lit au côté de l’Épître tandis qu’à la Messe chantée la schola exécute le chant d’entrée ; ces deux actions peuvent donc se dérouler simultanément.","meaning_fr":"À la différence de l’Ordinaire fixe, l’Introït change avec le jour liturgique et contribue à manifester le caractère propre de la célébration.","history_fr":"Son nom conserve sa fonction processionnelle originelle : un chant d’entrée accompagnant l’approche de l’autel."},"kyrie":{"what":"The Kyrie is the ninefold supplication Kyrie eleison – Christe eleison – Kyrie eleison, traditionally arranged as three invocations of each formula. Its Greek text is one of the most conspicuous non-Latin survivals in the Roman Mass.","meaning":"The repeated acclamation is a direct plea for the mercy of Christ before the Mass proceeds to the Gloria or Collect.","history":"The Roman form developed differently from the Greek litanic usage; the alternating Kyrie and Christe pattern is already ancient in the Roman tradition.","sources":["mr1962","oconnell1964","fortescueMass","jungmann"],"what_fr":"Le Kyrie est la supplication neuf fois répétée : Kyrie eleison – Christe eleison – Kyrie eleison, traditionnellement organisée en trois invocations de chaque formule. Son texte grec est l’un des vestiges non latins les plus visibles de la Messe romaine.","meaning_fr":"Cette acclamation répétée est une supplication directe à la miséricorde du Christ avant que la Messe ne se poursuive par le Gloria ou la Collecte.","history_fr":"La forme romaine s’est développée différemment de l’usage litanique grec ; l’alternance Kyrie et Christe est déjà ancienne dans la tradition romaine."},"gloria":{"what":"When prescribed, the Gloria follows the Kyrie as the Mass’s great hymn of praise. Its opening echoes the song of the angels at Bethlehem before expanding into adoration, thanksgiving and petitions addressed to the Father and to Christ.","meaning":"Because it is a festal hymn, the rubrics omit it on many penitential ferias and in Masses for the Dead.","sources":["mr1962","oconnell1964","jungmann"],"what_fr":"Lorsqu’il est prescrit, le Gloria suit le Kyrie comme grand hymne de louange de la Messe. Son début reprend le chant des anges à Bethléem, puis se déploie en adoration, action de grâces et supplications adressées au Père et au Christ.","meaning_fr":"Parce qu’il est un hymne festif, les rubriques l’omettent à de nombreuses féries pénitentielles et aux Messes des défunts."},"collect":{"what":"After Dominus vobiscum and Oremus, the priest chants or recites the Collect proper to the day. It gathers the petition of the celebration into a concise oration and concludes the opening portion of the Mass before the readings.","meaning":"The Collect gives liturgical voice to the prayer of the assembled Church in a form proper to the day or feast.","history":"The compact Latin collect became one of the characteristic forms of Roman prayer and was transmitted throughout the Western liturgical tradition.","sources":["mr1962","oconnell1964","fortescueMass","jungmann"],"what_fr":"Après Dominus vobiscum et Oremus, le prêtre chante ou récite la Collecte propre du jour. Cette oraison rassemble en une formule concise la prière de la célébration et conclut la partie d’ouverture de la Messe avant les lectures.","meaning_fr":"La Collecte donne une voix liturgique à la prière de l’Église assemblée sous une forme propre au jour ou à la fête.","history_fr":"La collecte latine, concise, est devenue l’une des formes caractéristiques de la prière romaine et s’est transmise dans toute la tradition liturgique occidentale."},"epistle":{"what":"The Epistle or Lesson is the first principal reading of the Mass. At Solemn Mass it is normally chanted by the subdeacon; at Low Mass the celebrant reads it himself. Its biblical book and passage change with the Proper.","meaning":"The reading belongs to the scriptural proclamation that prepares for the Gospel and the sacrificial portion of the Mass.","sources":["mr1962","oconnell1964","sc","ccc"],"what_fr":"L’Épître ou Leçon est la première lecture principale de la Messe. À la Messe solennelle, elle est normalement chantée par le sous-diacre ; à la Messe basse, le célébrant la lit lui-même. Le livre biblique et le passage varient selon le Propre.","meaning_fr":"Cette lecture appartient à la proclamation scripturaire qui prépare à l’Évangile puis à la partie sacrificielle de la Messe."},"gospel-prep":{"what":"Before the Gospel, the celebrant or deacon asks for purification of heart and lips so that the Gospel may be worthily proclaimed. At Solemn Mass the deacon additionally receives the celebrant’s blessing before going to proclaim it.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"Avant l’Évangile, le célébrant ou le diacre demande la purification du cœur et des lèvres afin de proclamer dignement l’Évangile. À la Messe solennelle, le diacre reçoit en outre la bénédiction du célébrant avant d’aller le chanter.","meaning":"The purification prayer makes clear that proclaiming the Gospel is a sacred ministry received in humility rather than merely a public reading.","meaning_fr":"La prière de purification manifeste que la proclamation de l’Évangile est un ministère sacré reçu dans l’humilité, et non une simple lecture publique."},"gospel":{"what":"The appointed Gospel is proclaimed with greater ceremonial solemnity than the preceding reading. At Solemn Mass it may involve procession, candles, incense, the Gospel book and a deacon; the text itself remains the Gospel Proper of the celebration.","meaning":"The additional ceremonial marks the special place of the Gospel within the liturgy of the Word and directs attention to Christ speaking through the Gospel proclamation.","sources":["mr1962","oconnell1964","fortescue1962","sc","ccc"],"what_fr":"L’Évangile du jour est proclamé avec une solennité cérémonielle plus grande que la lecture précédente. À la Messe solennelle, il peut comporter procession, cierges, encens, évangéliaire et diacre ; le texte demeure l’Évangile propre de la célébration.","meaning_fr":"Le cérémonial plus développé marque la place particulière de l’Évangile dans la liturgie de la Parole et dirige l’attention vers le Christ parlant dans sa proclamation."},"credo":{"what":"When prescribed, the Nicene Creed follows the Gospel. The Church publicly professes the faith before the sacrificial portion of the Mass begins; at Et incarnatus est the celebrant performs the reverence required by the rubrics.","meaning":"Its position links reception of the proclaimed Word with a public profession of the faith in which the Eucharistic mystery is celebrated.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Lorsqu’il est prescrit, le Credo de Nicée suit l’Évangile. L’Église professe publiquement la foi avant le début de la partie sacrificielle de la Messe ; à Et incarnatus est, le célébrant accomplit la révérence prescrite par les rubriques.","meaning_fr":"Sa place relie l’accueil de la Parole proclamée à la profession publique de la foi dans laquelle le mystère eucharistique est célébré."},"offertory":{"what":"With Oremus and the Proper Offertory antiphon, the Mass moves from the readings into the preparation of the Eucharistic sacrifice. The bread and wine that will be consecrated are now prepared and offered with the traditional Offertory prayers.","meaning":"This is preparation and oblation of the gifts; it is not yet the Consecration.","sources":["mr1962","oconnell1964","mediatorDei","ccc","gihr"],"what_fr":"Avec Oremus et l’antienne d’Offertoire propre, la Messe passe des lectures à la préparation du sacrifice eucharistique. Le pain et le vin qui seront consacrés sont maintenant préparés et offerts avec les prières traditionnelles de l’Offertoire.","meaning_fr":"Il s’agit de la préparation et de l’oblation des dons ; ce n’est pas encore la Consécration."},"offer-host":{"what":"The priest takes the paten with the unconsecrated host and offers it while praying Suscipe, sancte Pater. This is an Offertory prayer over the bread that will later be consecrated; the Consecration itself has not yet taken place.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Le prêtre prend la patène portant l’hostie non consacrée et l’offre en récitant Suscipe, sancte Pater. Il s’agit d’une prière d’Offertoire sur le pain qui sera ensuite consacré ; la Consécration n’a pas encore eu lieu.","meaning":"The prayer gives the bread an explicitly sacrificial orientation before Consecration while preserving the distinction between the Offertory and the sacramental change that follows later.","meaning_fr":"La prière donne au pain une orientation explicitement sacrificielle avant la Consécration, tout en maintenant la distinction entre l’Offertoire et le changement sacramentel qui suivra."},"water-wine":{"what":"Wine and a small amount of water are placed in the chalice. The accompanying prayer recalls the union of the divine and human in Christ and asks that humanity may share in His divinity.","meaning":"The mingling of water and wine is an ancient element of the Eucharistic preparation and has long carried theological interpretation in the Roman tradition.","sources":["mr1962","oconnell1964","gihr","jungmann"],"what_fr":"Du vin et une petite quantité d’eau sont versés dans le calice. La prière qui accompagne ce geste rappelle l’union du divin et de l’humain dans le Christ et demande que l’humanité puisse participer à sa divinité.","meaning_fr":"Le mélange de l’eau et du vin est un élément ancien de la préparation eucharistique et a reçu depuis longtemps une interprétation théologique dans la tradition romaine."},"offer-chalice":{"what":"The prepared chalice is offered with Offerimus tibi, Domine, calicem salutaris. Bread and wine now stand prepared upon the altar for the Eucharistic sacrifice.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Le calice préparé est offert avec Offerimus tibi, Domine, calicem salutaris. Le pain et le vin sont désormais disposés sur l’autel en vue du sacrifice eucharistique.","meaning":"The chalice offering places the prepared wine within the same sacrificial movement toward the Eucharistic action, without treating the unconsecrated gifts as already the Body and Blood of Christ.","meaning_fr":"L’offrande du calice inscrit le vin préparé dans le même mouvement sacrificiel vers l’action eucharistique, sans traiter les dons non consacrés comme étant déjà le Corps et le Sang du Christ."},"in-spiritu":{"what":"Bowed before the altar, the priest prays that the sacrifice may be offered in a spirit of humility and contrition and be pleasing to God.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Incliné devant l’autel, le prêtre demande que le sacrifice soit offert dans un esprit d’humilité et de contrition et qu’il soit agréable à Dieu.","meaning":"The bowed prayer joins the external preparation of the gifts to the interior dispositions of humility and contrition expected of the celebrant.","meaning_fr":"Cette prière récitée incliné unit la préparation extérieure des dons aux dispositions intérieures d’humilité et de contrition attendues du célébrant."},"veni-sanctificator":{"what":"The priest invokes God to bless the sacrifice prepared upon the altar. This belongs to the traditional Roman Offertory sequence and must not be confused with the Consecration itself.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Le prêtre invoque Dieu afin qu’il bénisse le sacrifice préparé sur l’autel. Cette prière appartient à la séquence traditionnelle de l’Offertoire romain et ne doit pas être confondue avec la Consécration elle-même.","meaning":"The invocation asks God to receive and bless the prepared offering. Its place before the Canon shows that divine sanctification is being petitioned without anticipating the words of Consecration.","meaning_fr":"L’invocation demande à Dieu de recevoir et bénir l’offrande préparée. Sa place avant le Canon montre qu’on implore la sanctification divine sans anticiper les paroles de la Consécration."},"incense-off":{"what":"At Solemn Mass the gifts, cross and altar are incensed. The celebrant and others are then incensed according to the rite; in a Requiem the ceremonial is deliberately reduced.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"À la Messe solennelle, les oblats, la croix et l’autel sont encensés. Le célébrant puis les autres personnes prévues par le rite sont ensuite encensés ; à la Messe de Requiem, ce cérémonial est volontairement réduit.","meaning":"The incensation surrounds gifts, altar and ministers with a visible language of honour and prayer as the rite moves toward the Canon.","meaning_fr":"L’encensement entoure les dons, l’autel et les ministres d’un langage visible d’honneur et de prière tandis que le rite s’avance vers le Canon."},"lavabo":{"what":"The priest washes the tips of his fingers while praying Psalm 25, Lavabo inter innocentes manus meas. A practical washing has become a liturgical act accompanied by an explicit prayer for purity before the Canon.","meaning":"The prayer places the physical washing within the priest’s immediate preparation for the Eucharistic Prayer.","history":"The washing has practical roots in the handling of offerings; over time it became a stable ritual accompanied by the psalm.","sources":["mr1962","oconnell1964","fortescueMass","jungmann","gihr"],"what_fr":"Le prêtre lave l’extrémité de ses doigts en récitant le psaume 25, Lavabo inter innocentes manus meas. Un lavage d’origine pratique est devenu un acte liturgique accompagné d’une prière explicite de purification avant le Canon.","meaning_fr":"La prière inscrit le lavage physique des mains dans la préparation immédiate du prêtre à la Prière eucharistique.","history_fr":"Le lavage a des racines pratiques liées à la manipulation des offrandes ; avec le temps, il est devenu un rite stable accompagné du psaume."},"suscipe-trinitas":{"what":"The priest bows and offers the entire sacrificial action to the Holy Trinity, recalling the Passion, Resurrection and Ascension of Christ and honouring the saints.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Le prêtre s’incline et offre toute l’action sacrificielle à la Sainte Trinité, en rappelant la Passion, la Résurrection et l’Ascension du Christ et en honorant les saints.","meaning":"The prayer gathers the Offertory into an explicitly Trinitarian and Paschal horizon, relating the present offering to Christ’s saving mysteries and the communion of saints.","meaning_fr":"La prière rassemble l’Offertoire dans un horizon explicitement trinitaire et pascal, reliant l’offrande présente aux mystères sauveurs du Christ et à la communion des saints."},"orate-fratres":{"what":"Turning toward the faithful, the priest asks them to pray that “my sacrifice and yours” may be acceptable to God. Their response explicitly joins the faithful to the offering while preserving the distinct ministerial role of the priest.","meaning":"Pius XII explains that the faithful truly offer the sacrifice in union with the priest and “by the hands of the priest,” without collapsing the distinction between baptismal participation and ministerial priesthood.","sources":["mr1962","oconnell1964","mediatorDei","gihr"],"what_fr":"Se tournant vers les fidèles, le prêtre leur demande de prier afin que « mon sacrifice, qui est aussi le vôtre » soit agréable à Dieu. Leur réponse unit explicitement les fidèles à l’offrande tout en maintenant le rôle ministériel distinct du prêtre.","meaning_fr":"Pie XII explique que les fidèles offrent réellement le sacrifice en union avec le prêtre et « par les mains du prêtre », sans effacer la distinction entre participation baptismale et sacerdoce ministériel."},"secret":{"what":"The Secret is the proper Offertory prayer of the day. It is said quietly and brings the preparation of the offerings to completion immediately before the Preface.","meaning":"Its place closes the Offertory and turns the liturgy toward the solemn thanksgiving of the Preface and Canon.","sources":["mr1962","oconnell1964","jungmann"],"what_fr":"La Secrète est l’oraison propre de l’Offertoire du jour. Elle est dite à voix basse et achève la préparation des offrandes immédiatement avant la Préface.","meaning_fr":"Sa place clôt l’Offertoire et oriente la liturgie vers l’action de grâces solennelle de la Préface et du Canon."},"preface":{"what":"The Preface begins with the audible dialogue Dominus vobiscum – Sursum corda – Gratias agamus Domino Deo nostro. The priest then chants or recites the appointed Preface, giving solemn thanks to God before entering the Roman Canon.","meaning":"The Preface is the solemn thanksgiving that leads directly into the Eucharistic Prayer and the Sanctus, joining the Church’s praise to the worship of heaven.","sources":["mr1962","oconnell1964","ccc","jungmann"],"what_fr":"La Préface commence par le dialogue audible Dominus vobiscum – Sursum corda – Gratias agamus Domino Deo nostro. Le prêtre chante ou récite ensuite la Préface prescrite, rendant solennellement grâce à Dieu avant d’entrer dans le Canon romain.","meaning_fr":"La Préface est l’action de grâces solennelle qui conduit directement à la Prière eucharistique et au Sanctus, unissant la louange de l’Église au culte céleste."},"sanctus":{"what":"The Sanctus joins the Church’s praise to the biblical hymn of the heavenly hosts: Sanctus, Sanctus, Sanctus. It concludes the Preface and leads directly into the Canon; at Sung Mass the choir’s Benedictus may overlap with the celebrant’s silent Canon.","meaning":"This is one of the clearest places where the audible choir track and the celebrant’s liturgical action can proceed concurrently.","sources":["mr1962","oconnell1964","ccc","jungmann"],"what_fr":"Le Sanctus unit la louange de l’Église à l’hymne biblique des armées célestes : Sanctus, Sanctus, Sanctus. Il conclut la Préface et conduit directement au Canon ; à la Messe chantée, le Benedictus du chœur peut se superposer au Canon récité à voix basse par le célébrant.","meaning_fr":"C’est l’un des endroits où l’on voit le plus clairement que le chant audible du chœur et l’action liturgique du célébrant peuvent avancer simultanément."},"te-igitur":{"what":"The priest begins the Roman Canon quietly with Te igitur. He asks the Father to accept and bless the offerings and immediately situates the sacrifice within the visible Church, naming the Pope and local Ordinary.","meaning":"The Canon is the fixed Roman Eucharistic Prayer; from this point the priest’s quiet prayer continues through the Consecration and the intercessions that follow.","sources":["mr1962","oconnell1964","mediatorDei","jungmann"],"what_fr":"Le prêtre commence à voix basse le Canon romain par Te igitur. Il demande au Père d’accepter et de bénir les offrandes et situe immédiatement le sacrifice dans l’Église visible en nommant le Pape et l’Ordinaire du lieu.","meaning_fr":"Le Canon est la Prière eucharistique romaine fixe ; à partir de ce point, la prière silencieuse du prêtre se poursuit à travers la Consécration et les intercessions qui suivent."},"memento-living":{"what":"In the Memento of the Living the priest pauses to remember particular living persons before God. The Canon therefore makes the Eucharistic sacrifice explicitly intercessory.","sources":["mr1962","oconnell1964","mediatorDei"],"what_fr":"Au Mémento des vivants, le prêtre s’arrête pour recommander à Dieu certaines personnes vivantes. Le Canon manifeste ainsi explicitement la dimension d’intercession du sacrifice eucharistique.","meaning":"The Eucharistic sacrifice is offered with concrete intercession: the Church’s prayer includes particular living persons rather than remaining abstract or impersonal.","meaning_fr":"Le sacrifice eucharistique comporte une intercession concrète : la prière de l’Église inclut des personnes vivantes particulières au lieu de rester abstraite ou impersonnelle."},"communicantes":{"what":"Communicantes declares communion with the Church in heaven and names the Blessed Virgin Mary, St Joseph, the Apostles and selected martyrs of the Roman Church. Certain major feasts have a proper form of this prayer.","meaning":"The Eucharistic sacrifice is offered within the communion of the whole Church, earthly and heavenly.","sources":["mr1962","oconnell1964","mediatorDei","novis1962"],"history":"In 1962 St John XXIII ordered the name of St Joseph to be inserted into the Communicantes; the decree took effect on 8 December 1962.","what_fr":"Communicantes proclame la communion avec l’Église du ciel et nomme la Bienheureuse Vierge Marie, saint Joseph, les Apôtres et plusieurs martyrs de l’Église romaine. Certaines grandes fêtes possèdent une forme propre de cette prière.","meaning_fr":"Le sacrifice eucharistique est offert dans la communion de toute l’Église, terrestre et céleste.","history_fr":"En 1962, saint Jean XXIII ordonna l’insertion du nom de saint Joseph dans le Communicantes ; le décret entra en vigueur le 8 décembre 1962."},"hanc":{"what":"In Hanc igitur the priest asks God graciously to accept the offering of His servants and His whole household. Certain days have a proper insertion.","sources":["mr1962","oconnell1964"],"what_fr":"Dans Hanc igitur, le prêtre demande à Dieu d’accepter avec bienveillance l’offrande de ses serviteurs et de toute sa famille. Certains jours comportent une insertion propre.","meaning":"The prayer asks God to accept the oblation of the whole ecclesial household and places the offering under a petition for peace, order and deliverance.","meaning_fr":"La prière demande à Dieu d’accepter l’oblation de toute la famille ecclésiale et place l’offrande sous une demande de paix, d’ordre et de délivrance."},"quam-oblationem":{"what":"Immediately before the institution narrative, Quam oblationem asks God to bless and accept the oblation so that it may become for us the Body and Blood of Christ.","meaning":"The prayer stands immediately before the words of institution and directs the Canon toward the Consecration.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Immédiatement avant le récit de l’institution, Quam oblationem demande à Dieu de bénir et d’agréer l’oblation afin qu’elle devienne pour nous le Corps et le Sang du Christ.","meaning_fr":"Cette prière se situe immédiatement avant les paroles de l’institution et oriente le Canon vers la Consécration."},"consecration-host":{"what":"The priest pronounces Christ’s words of consecration over the bread. By the Consecration it becomes the Body of Christ. The priest immediately genuflects in adoration, elevates the Sacred Host for the faithful to adore, replaces it on the corporal and genuflects again.","meaning":"This is the centre of the Eucharistic sacrifice. Catholic doctrine describes the change as transubstantiation: the substance of bread becomes the Body of Christ while the appearances remain.","sources":["mr1962","oconnell1964","mediatorDei","ccc"],"what_fr":"Le prêtre prononce sur le pain les paroles consécratoires du Christ. Par la Consécration, il devient le Corps du Christ. Le prêtre génuflecte aussitôt en adoration, élève la sainte Hostie pour l’adoration des fidèles, la repose sur le corporal puis génuflecte de nouveau.","meaning_fr":"C’est le centre du sacrifice eucharistique. La doctrine catholique nomme ce changement transsubstantiation : la substance du pain devient le Corps du Christ tandis que les apparences demeurent."},"consecration-chalice":{"what":"The priest pronounces the words of consecration over the chalice. The wine becomes the Precious Blood of Christ. He genuflects, elevates the Chalice for adoration, replaces it upon the corporal and genuflects again.","meaning":"The one sacrifice of Calvary is sacramentally made present; it is not a second or repeated sacrifice. Pius XII emphasizes that the Victim is the same Christ while the manner of offering is sacramental.","sources":["mr1962","oconnell1964","mediatorDei","ccc"],"what_fr":"Le prêtre prononce sur le calice les paroles de la Consécration. Le vin devient le Précieux Sang du Christ. Il génuflecte, élève le Calice pour l’adoration, le repose sur le corporal puis génuflecte de nouveau.","meaning_fr":"L’unique sacrifice du Calvaire est rendu sacramentellement présent ; il ne s’agit pas d’un second sacrifice ni d’une répétition. Pie XII souligne que la Victime est le même Christ, tandis que la manière d’offrir est sacramentelle."},"unde-et-memores":{"what":"Having obeyed Christ’s command, the priest recalls His Passion, Resurrection and Ascension and offers to the Father the holy and spotless Victim now present upon the altar.","sources":["mr1962","oconnell1964","mediatorDei"],"what_fr":"Après avoir accompli le commandement du Christ, le prêtre rappelle sa Passion, sa Résurrection et son Ascension et offre au Père la Victime sainte et sans tache désormais présente sur l’autel.","meaning":"The Canon joins remembrance and offering: the saving mysteries of Christ are recalled precisely as the Church offers the sacramental Victim to the Father.","meaning_fr":"Le Canon unit mémoire et offrande : les mystères sauveurs du Christ sont rappelés précisément tandis que l’Église offre au Père la Victime sacramentelle."},"supra-quae":{"what":"The prayer recalls the accepted sacrifices of Abel, Abraham and Melchisedech and asks God to look favourably upon the Church’s offering.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"La prière rappelle les sacrifices agréés d’Abel, d’Abraham et de Melchisédech et demande à Dieu de regarder favorablement l’offrande de l’Église.","meaning":"The biblical sacrifices of Abel, Abraham and Melchisedech place the Eucharistic offering within the scriptural history of sacrifice while asking God’s favourable regard.","meaning_fr":"Les sacrifices bibliques d’Abel, d’Abraham et de Melchisédech inscrivent l’offrande eucharistique dans l’histoire scripturaire du sacrifice tout en demandant le regard favorable de Dieu."},"supplices":{"what":"Bowed deeply, the priest asks that the offering be borne before God’s heavenly altar and that those who receive Christ’s Body and Blood may be filled with grace and blessing.","sources":["mr1962","oconnell1964","mediatorDei","gihr"],"what_fr":"Profondément incliné, le prêtre demande que l’offrande soit portée devant l’autel céleste de Dieu et que ceux qui reçoivent le Corps et le Sang du Christ soient comblés de grâce et de bénédiction.","meaning":"The prayer directs the earthly liturgy toward heavenly worship and asks that sacramental Communion bear its intended fruit of grace and blessing.","meaning_fr":"La prière oriente la liturgie terrestre vers le culte céleste et demande que la Communion sacramentelle porte son fruit de grâce et de bénédiction."},"memento-dead":{"what":"The Canon now explicitly remembers the faithful departed and asks for them a place of refreshment, light and peace.","meaning":"The Eucharistic sacrifice is intercessory for both the living and the faithful departed.","sources":["mr1962","oconnell1964","mediatorDei"],"what_fr":"Le Canon fait maintenant explicitement mémoire des fidèles défunts et demande pour eux un lieu de rafraîchissement, de lumière et de paix.","meaning_fr":"Le sacrifice eucharistique possède une dimension d’intercession aussi bien pour les vivants que pour les fidèles défunts."},"nobis-quoque":{"what":"The priest asks that sinful servants of God may nevertheless receive fellowship with the saints, not because of their merits but through divine mercy.","sources":["mr1962","oconnell1964"],"what_fr":"Le prêtre demande que les serviteurs pécheurs de Dieu puissent néanmoins être admis à la société des saints, non en raison de leurs mérites, mais par la miséricorde divine.","meaning":"The petition places Christian hope in divine mercy rather than presumption on personal merit, even while asking for fellowship with the saints.","meaning_fr":"La supplication place l’espérance chrétienne dans la miséricorde divine plutôt que dans la présomption de mérites personnels, tout en demandant la communion avec les saints."},"canon-doxology":{"what":"The Canon reaches its solemn conclusion with Per ipsum, et cum ipso, et in ipso. The Sacred Host and Chalice accompany the doxology before the people or ministers answer Amen.","meaning":"The doxology gathers the entire Eucharistic Prayer into praise of the Father through Christ, in the Holy Ghost.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Le Canon atteint sa conclusion solennelle avec Per ipsum, et cum ipso, et in ipso. La sainte Hostie et le Calice accompagnent la doxologie avant que les ministres ou les fidèles répondent Amen.","meaning_fr":"La doxologie rassemble toute la Prière eucharistique en louange du Père par le Christ, dans le Saint-Esprit."},"pater":{"what":"After the Canon, the priest introduces and says or sings the Lord’s Prayer. In the traditional Roman arrangement the priest carries almost the whole text, while the minister or choir answers the final Sed libera nos a malo.","meaning":"The Lord’s Prayer begins the immediate preparation for Communion.","sources":["mr1962","oconnell1964","ccc","jungmann"],"what_fr":"Après le Canon, le prêtre introduit puis récite ou chante le Notre Père. Dans l’ordonnance romaine traditionnelle, il prononce presque tout le texte, tandis que le ministre ou le chœur répond à la fin Sed libera nos a malo.","meaning_fr":"Le Notre Père ouvre la préparation immédiate à la Communion."},"libera-nos":{"what":"The embolism Libera nos expands the final petition of the Pater, asking deliverance from evil and peace through the intercession of the saints.","sources":["mr1962","oconnell1964"],"what_fr":"L’embolisme Libera nos développe la dernière demande du Pater en implorant la délivrance du mal et la paix par l’intercession des saints.","meaning":"The embolism expands the Lord’s Prayer into an immediate preparation for Communion, asking for deliverance and peace as gifts needed to receive worthily.","meaning_fr":"L’embolisme développe le Notre Père en préparation immédiate à la Communion, demandant la délivrance et la paix comme dons nécessaires pour recevoir dignement."},"fraction-pax":{"what":"The priest breaks the Sacred Host according to the prescribed rite as the Communion portion of Mass begins. The accompanying Pax Domini announces the peace of the risen Christ.","meaning":"The fraction is an ancient Eucharistic action immediately connected with preparation for Communion.","sources":["mr1962","oconnell1964","ccc","jungmann"],"what_fr":"Le prêtre rompt la sainte Hostie selon le rite prescrit au moment où commence la partie de la Messe qui conduit à la Communion. Le Pax Domini qui accompagne cette action annonce la paix du Christ ressuscité.","meaning_fr":"La fraction est une action eucharistique ancienne directement liée à la préparation à la Communion."},"commingling":{"what":"A small particle of the Sacred Host is placed into the Chalice while the priest prays Haec commixtio. The fraction and commingling are ancient preparatory rites immediately preceding the Agnus Dei and Communion.","history":"The fraction and commingling preserve very ancient Eucharistic actions whose detailed historical development is treated by Jungmann and other historians of the Roman rite.","sources":["mr1962","oconnell1964","jungmann","gihr"],"what_fr":"Une petite parcelle de la sainte Hostie est déposée dans le Calice pendant que le prêtre récite Haec commixtio. La fraction et l’immixtion sont d’anciens rites préparatoires qui précèdent immédiatement l’Agnus Dei et la Communion.","history_fr":"La fraction et l’immixtion conservent de très anciennes actions eucharistiques dont le développement historique détaillé est étudié par Jungmann et d’autres historiens du rite romain.","meaning":"The commingling belongs to the ancient sequence immediately preparing for Communion and visibly reunites a particle of the consecrated Host with the Precious Blood.","meaning_fr":"L’immixtion appartient à l’ancienne séquence de préparation immédiate à la Communion et réunit visiblement une parcelle de l’Hostie consacrée au Précieux Sang."},"agnus":{"what":"The Agnus Dei invokes Christ three times as the Lamb of God. In the ordinary 1962 form the first two invocations ask mercy and the third asks peace; Requiem Mass has its own form.","meaning":"The invocation directly prepares for Communion by addressing Christ under the biblical title “Lamb of God.”","sources":["mr1962","oconnell1964","ccc"],"what_fr":"L’Agnus Dei invoque trois fois le Christ comme Agneau de Dieu. Dans la forme ordinaire de 1962, les deux premières invocations demandent miséricorde et la troisième demande la paix ; la Messe de Requiem possède une forme propre.","meaning_fr":"Cette invocation prépare directement à la Communion en s’adressant au Christ sous le titre biblique d’« Agneau de Dieu »."},"peace-prayer":{"what":"The priest prays for the Church’s peace immediately before Communion. At Solemn Mass this is connected with the liturgical Kiss of Peace when the rite prescribes it.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"Immédiatement avant la Communion, le prêtre prie pour la paix de l’Église. À la Messe solennelle, cette prière est liée au baiser de paix liturgique lorsque le rite le prescrit.","meaning":"Peace is requested as an ecclesial gift flowing from Christ immediately before Communion; in the solemn form the ceremonial Kiss of Peace expresses that prayer ritually.","meaning_fr":"La paix est demandée comme un don ecclésial venant du Christ immédiatement avant la Communion ; dans la forme solennelle, le baiser de paix liturgique exprime rituellement cette prière."},"priest-communion":{"what":"The celebrant receives the Sacred Host and then the Precious Blood. His Communion belongs to the integrity of the Mass he is celebrating and precedes any Communion of the faithful.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Le célébrant reçoit d’abord la sainte Hostie puis le Précieux Sang. Sa Communion appartient à l’intégrité de la Messe qu’il célèbre et précède toute Communion des fidèles.","meaning":"The celebrant’s Communion is integral to the sacrificial action he has offered, not an optional private devotion appended to it; Communion of the faithful follows from that completed priestly Communion.","meaning_fr":"La Communion du célébrant appartient intégralement à l’action sacrificielle qu’il a offerte ; elle n’est pas une dévotion privée facultative ajoutée à la Messe. La Communion des fidèles suit cette Communion sacerdotale."},"second-confiteor":{"what":"When used, the second Confiteor before Communion of the faithful represents an older custom retained in some traditional communities. It is not part of the ordinary 1962 Communion rite and should be understood as a local or inherited usage.","sources":["mr1962","oconnell1964"],"what_fr":"Lorsqu’il est utilisé, le second Confiteor avant la Communion des fidèles est un usage plus ancien conservé dans certaines communautés traditionnelles. Il ne fait pas partie du rite ordinaire de Communion de 1962 et doit être compris comme un usage local ou hérité.","meaning":"Where retained by custom, this additional penitential preparation can help the faithful prepare for reception, but the app identifies it as inherited or local practice rather than a universal 1962 requirement.","meaning_fr":"Là où cet usage est conservé, cette préparation pénitentielle supplémentaire peut aider les fidèles à se préparer à la réception ; l’application l’identifie toutefois comme pratique héritée ou locale, non comme exigence universelle de 1962."},"ecce":{"what":"Turning with the Sacred Host, the priest presents Christ to the faithful with Ecce Agnus Dei — “Behold the Lamb of God.” The invitation uses the Baptist’s words from the Gospel immediately before Communion.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Se tournant vers les fidèles avec la sainte Hostie, le prêtre présente le Christ en disant Ecce Agnus Dei — « Voici l’Agneau de Dieu ». Cette invitation reprend les paroles de saint Jean-Baptiste dans l’Évangile immédiatement avant la Communion.","meaning":"The invitation identifies the Eucharistic Lord as the Lamb of God and immediately elicits the faithful’s humble preparation to receive Him.","meaning_fr":"L’invitation identifie le Seigneur eucharistique comme l’Agneau de Dieu et suscite immédiatement la préparation humble des fidèles à le recevoir."},"domine-non-sum-dignus":{"what":"Domine, non sum dignus expresses the communicant’s humility using the centurion’s words from the Gospel. The prayer immediately precedes reception of Holy Communion.","meaning":"The Church uses the centurion’s confession as a direct preparation for sacramental reception of Christ.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Domine, non sum dignus exprime l’humilité du communiant avec les paroles du centurion dans l’Évangile. Cette prière précède immédiatement la réception de la sainte Communion.","meaning_fr":"L’Église reprend la confession du centurion comme préparation immédiate à la réception sacramentelle du Christ."},"communion-faithful":{"what":"The faithful who are properly disposed receive the Body of Christ. At Sung Mass the Communion chant may continue while Communion is distributed, so what is heard and what is happening at the altar or rail can overlap.","meaning":"Eucharistic Communion is sacramental reception of Christ Himself and the completion of participation in the sacrificial banquet.","sources":["mr1962","oconnell1964","mediatorDei","ccc"],"what_fr":"Les fidèles convenablement disposés reçoivent le Corps du Christ. À la Messe chantée, le chant de Communion peut se poursuivre pendant la distribution ; ce que l’on entend et ce qui se passe à l’autel ou à la sainte table peuvent donc se superposer.","meaning_fr":"La Communion eucharistique est la réception sacramentelle du Christ lui-même et l’accomplissement de la participation au banquet sacrificiel."},"communion-proper":{"what":"The Communion antiphon is the Proper chant appointed for this Mass. At a Sung Mass it may be heard during the distribution of Communion even while the celebrant is occupied with a different ceremonial action.","meaning":"This is another place where the Roman Mass has concurrent choir and altar tracks rather than a single linear audio sequence.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"L’antienne de Communion est le chant propre assigné à cette Messe. À la Messe chantée, elle peut être entendue pendant la distribution de la Communion alors même que le célébrant accomplit une autre action cérémonielle.","meaning_fr":"C’est un autre endroit où la Messe romaine comporte des actions simultanées du chœur et de l’autel plutôt qu’une unique séquence sonore linéaire."},"ablutions":{"what":"After Communion the priest purifies the Chalice and his fingers with wine and water according to the rite, consuming the ablutions. These actions ensure reverent treatment of any remaining particles or traces of the Precious Blood.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Après la Communion, le prêtre purifie le Calice et ses doigts avec du vin et de l’eau selon le rite, puis consomme les ablutions. Ces gestes assurent le traitement révérencieux de toute parcelle ou trace restante du Précieux Sang.","meaning":"The ablutions express reverent care for the sacred species and vessels after Communion and ensure that what has been consecrated is treated with due care.","meaning_fr":"Les ablutions expriment le soin révérencieux dû aux saintes espèces et aux vases après la Communion et veillent à ce que ce qui a été consacré soit traité avec le respect requis."},"postcommunion":{"what":"After returning to the Missal and the Proper Communion text, the priest greets the faithful and prays the Postcommunion. This proper oration asks that the sacrament just received bear its intended spiritual fruit.","sources":["mr1962","oconnell1964","ccc"],"what_fr":"Après être revenu au Missel et au texte propre de Communion, le prêtre salue les fidèles puis récite la Postcommunion. Cette oraison propre demande que le sacrement reçu porte en eux son fruit spirituel.","meaning":"The Postcommunion is the Church’s liturgical thanksgiving after reception, asking that the sacrament just received produce its spiritual fruit in those who have participated.","meaning_fr":"La Postcommunion est l’action de grâces liturgique de l’Église après la réception du sacrement ; elle demande que celui-ci produise son fruit spirituel chez ceux qui y ont participé."},"dismissal":{"what":"The final greeting is followed by Ite, missa est, Benedicamus Domino or, in a Requiem, Requiescant in pace, according to the rite. The form therefore changes with the liturgical context.","sources":["mr1962","oconnell1964"],"what_fr":"Après la salutation finale viennent, selon le rite, Ite, missa est, Benedicamus Domino ou, à la Messe de Requiem, Requiescant in pace. La formule varie donc selon le contexte liturgique.","meaning":"The dismissal gives the celebration a formal liturgical conclusion: the assembled faithful are released only after the sacrifice, Communion rites and final prayer have been completed.","meaning_fr":"Le renvoi donne à la célébration une conclusion liturgique formelle : les fidèles assemblés ne sont congédiés qu’après l’achèvement du sacrifice, des rites de Communion et de la prière finale."},"placeat":{"what":"Bowed before the altar, the priest privately asks that the sacrifice he has offered be pleasing to the Holy Trinity and beneficial to himself and those for whom it was offered.","sources":["mr1962","oconnell1964","gihr"],"what_fr":"Incliné devant l’autel, le prêtre demande en privé que le sacrifice qu’il vient d’offrir soit agréable à la Sainte Trinité et profitable à lui-même ainsi qu’à ceux pour lesquels il a été offert.","meaning":"The priest closes his altar prayer by entrusting the sacrifice to God despite his own unworthiness, keeping the efficacy of the sacred action distinct from personal self-confidence.","meaning_fr":"Le prêtre conclut sa prière à l’autel en confiant le sacrifice à Dieu malgré sa propre indignité, distinguant l’efficacité de l’action sacrée de toute confiance personnelle en soi."},"blessing":{"what":"When prescribed, the priest gives the final blessing after the Placeat. It is omitted in specified celebrations such as a Requiem and in other exceptional endings governed by their own rubrics.","sources":["mr1962","oconnell1964"],"what_fr":"Lorsqu’elle est prescrite, le prêtre donne la bénédiction finale après le Placeat. Elle est omise dans certaines célébrations, notamment à la Messe de Requiem, ainsi que dans d’autres conclusions exceptionnelles régies par leurs propres rubriques.","meaning":"The blessing places the departing faithful under God’s favour at the close of the rite, while the rubrics preserve important exceptions on particular days and forms.","meaning_fr":"La bénédiction place les fidèles qui repartent sous la faveur de Dieu à la fin du rite, tandis que les rubriques conservent d’importantes exceptions selon certains jours et certaines formes."},"last-gospel":{"what":"Ordinarily the Last Gospel is the Prologue of St John, In principio erat Verbum. It closes the Mass with the mystery of the eternal Word and His Incarnation; particular days may prescribe another Last Gospel or omit it.","history":"The Last Gospel is a later development of the Roman Mass that gradually became standard and was incorporated into the codified Roman Missal.","sources":["mr1962","oconnell1964","fortescueMass","jungmann"],"what_fr":"Normalement, le dernier Évangile est le Prologue de saint Jean, In principio erat Verbum. Il clôt la Messe par le mystère du Verbe éternel et de son Incarnation ; certains jours prescrivent un autre dernier Évangile ou l’omettent.","history_fr":"Le dernier Évangile est un développement plus tardif de la Messe romaine qui devint progressivement habituel avant d’être intégré au Missel romain codifié.","meaning":"The Prologue of St John gives the ordinary conclusion a final contemplation of the eternal Word and the Incarnation; it is a distinct concluding Gospel, not a repetition of the day’s principal Gospel.","meaning_fr":"Le Prologue de saint Jean donne à la conclusion ordinaire une contemplation finale du Verbe éternel et de l’Incarnation ; il s’agit d’un Évangile conclusif distinct, non d’une répétition de l’Évangile principal du jour."},"candlemas-blessing":{"what":"The candles are blessed before Mass with the appointed prayers, holy water and incense. The rite gives sacramental blessing to candles that will then be distributed and carried in procession.","meaning":"The feast’s biblical centre is Christ as the Light recognized by Simeon; the blessing and procession give that theme a public liturgical expression.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"Avant la Messe, les cierges sont bénis par les prières prescrites, l’eau bénite et l’encens. Le rite leur confère une bénédiction sacramentelle avant leur distribution et leur port en procession.","meaning_fr":"Le centre biblique de la fête est le Christ reconnu par Siméon comme Lumière ; la bénédiction et la procession donnent à ce thème une expression liturgique publique."},"candlemas-distribution":{"what":"The blessed candles are distributed according to the ceremonial order while appointed chants accompany the action. The distribution belongs to the preparatory Candlemas rite rather than to the ordinary structure of Mass.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"Les cierges bénits sont distribués selon l’ordre cérémoniel tandis que les chants prescrits accompagnent l’action. Cette distribution appartient au rite préparatoire de la Chandeleur et non à la structure ordinaire de la Messe.","meaning":"Receiving the blessed candles prepares clergy and faithful to take part bodily in the procession; the sacramental object is therefore ordered to the liturgical action that follows.","meaning_fr":"La réception des cierges bénits prépare clergé et fidèles à participer corporellement à la procession ; le sacramental est ainsi ordonné à l’action liturgique qui suit."},"candlemas-procession":{"what":"Clergy and faithful process carrying the blessed candles while the appointed processional chants are sung. Mass follows the completed procession.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"Clergé et fidèles avancent en procession en portant les cierges bénits tandis que sont chantées les pièces processionnelles prescrites. La Messe commence après le retour et l’achèvement de la procession.","meaning":"The procession turns the blessing into a communal liturgical movement: the faithful carry the blessed light before entering the Mass proper.","meaning_fr":"La procession transforme la bénédiction en mouvement liturgique communautaire : les fidèles portent la lumière bénite avant d’entrer dans la Messe proprement dite."},"ashes-antiphon":{"what":"The blessing of ashes occurs before Mass. The rite begins with its appointed chant and prayers rather than with the normal opening structure of the Mass.","sources":["mr1962","oconnell1964","fortescue1962"],"what_fr":"La bénédiction des cendres a lieu avant la Messe. Le rite commence par le chant et les prières qui lui sont propres plutôt que par l’ouverture habituelle de la Messe.","meaning":"The appointed chant frames the distribution of ashes within the Church’s liturgical prayer, rather than leaving the gesture as an isolated devotional act.","meaning_fr":"Le chant prescrit inscrit la distribution des cendres dans la prière liturgique de l’Église, au lieu de laisser le geste comme acte dévotionnel isolé."},"ashes-four-prayers":{"what":"Four prayers bless the ashes and ask that those who receive them may enter the Lenten discipline in a spirit of repentance and receive God’s protection.","sources":["mr1962","oconnell1964"],"what_fr":"Quatre oraisons bénissent les cendres et demandent que ceux qui les reçoivent entrent dans la discipline du Carême avec un esprit de pénitence et reçoivent la protection de Dieu.","meaning":"The prayers interpret the ashes as a sacramental sign ordered to repentance, Lenten discipline and divine protection, not as a merely cultural symbol.","meaning_fr":"Les oraisons interprètent les cendres comme un sacramental ordonné à la pénitence, à la discipline du Carême et à la protection divine, non comme un simple symbole culturel."},"ashes-sprinkle-incense":{"what":"The blessed ashes are sprinkled with holy water and incensed according to the rite before their imposition.","sources":["mr1962","oconnell1964"],"what_fr":"Avant leur imposition, les cendres bénites sont aspergées d’eau bénite et encensées selon le rite.","meaning":"The sprinkling and incensation mark the ashes as blessed matter set apart for a liturgical use and surround their imposition with the Church’s ceremonial reverence.","meaning_fr":"L’aspersion et l’encensement marquent les cendres comme matière bénite mise à part pour un usage liturgique et entourent leur imposition de la révérence cérémonielle de l’Église."},"ashes-imposition":{"what":"Ashes are imposed upon clergy and faithful as the penitential rite is carried out. The gesture visibly marks entry into the Lenten discipline of penance.","sources":["mr1962","oconnell1964"],"what_fr":"Les cendres sont imposées au clergé et aux fidèles dans le cadre du rite pénitentiel. Ce geste marque visiblement l’entrée dans la discipline pénitentielle du Carême.","meaning":"The bodily sign confronts the faithful with mortality and repentance and makes the beginning of Lenten conversion visible rather than purely interior.","meaning_fr":"Le signe corporel confronte les fidèles à la mortalité et à la pénitence et rend visible le commencement de la conversion quadragésimale au lieu de la laisser seulement intérieure."},"palms-blessing":{"what":"The palms or branches are blessed in the restored Palm Sunday rite before the procession. The ceremony commemorates Christ’s messianic entry into Jerusalem and prepares the faithful for the procession.","history":"Older pre-1955 Palm Sunday books describe a substantially different blessing and procession. Those procedural descriptions are not used for the 1962 live guide.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"],"what_fr":"Les rameaux sont bénis avant la procession selon le rite restauré du dimanche des Rameaux. La cérémonie commémore l’entrée messianique du Christ à Jérusalem et prépare les fidèles à la procession.","history_fr":"Les livres du dimanche des Rameaux antérieurs à 1955 décrivent une bénédiction et une procession sensiblement différentes. Ces descriptions procédurales ne sont pas utilisées pour le guide de 1962.","meaning":"The blessed branches direct the procession toward Christ the King entering Jerusalem while also opening the liturgical movement toward His Passion.","meaning_fr":"Les rameaux bénits orientent la procession vers le Christ Roi entrant à Jérusalem tout en ouvrant le mouvement liturgique vers sa Passion."},"palms-gospel":{"what":"The Gospel of Christ’s entry into Jerusalem is proclaimed before the procession, placing the procession directly within its biblical event.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"L’Évangile de l’entrée du Christ à Jérusalem est proclamé avant la procession, plaçant ainsi celle-ci directement dans son événement biblique.","meaning":"The Gospel grounds the procession in the biblical event itself: the ceremonial action follows from the proclaimed entry of Christ into Jerusalem.","meaning_fr":"L’Évangile fonde la procession dans l’événement biblique lui-même : l’action cérémonielle découle de l’entrée proclamée du Christ à Jérusalem."},"palms-procession":{"what":"The faithful process carrying blessed branches in commemoration of the Lord’s triumphal entry. The appointed antiphons give the procession its liturgical text.","history":"The 1955 restoration simplified and reshaped the older Palm Sunday ceremonial; the app follows the restored form received by the 1962 Missal.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"],"what_fr":"Les fidèles avancent en procession avec les rameaux bénis en commémoration de l’entrée triomphale du Seigneur. Les antiennes prescrites donnent à la procession son texte liturgique.","history_fr":"La restauration de 1955 a simplifié et remodelé l’ancien cérémonial du dimanche des Rameaux ; l’application suit la forme restaurée reçue par le Missel de 1962.","meaning":"By walking with blessed branches, the faithful ritually accompany Christ’s entry while the liturgy begins its deliberate passage from triumph to the Passion.","meaning_fr":"En marchant avec les rameaux bénits, les fidèles accompagnent rituellement l’entrée du Christ tandis que la liturgie commence son passage délibéré du triomphe à la Passion."},"holy-thursday-reposition":{"what":"After the Mass of the Lord’s Supper, the Blessed Sacrament reserved for Good Friday is carried solemnly to the altar of repose.","meaning":"The reservation is directly connected with Communion on Good Friday, when there is no Eucharistic Consecration.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"Après la Messe de la Cène du Seigneur, le Saint-Sacrement réservé pour le Vendredi saint est porté solennellement au reposoir.","meaning_fr":"La réserve eucharistique est directement liée à la Communion du Vendredi saint, jour où il n’y a pas de Consécration eucharistique."},"holy-thursday-stripping":{"what":"The altars are stripped after the reposition according to the rite. The removal of their furnishings forms part of the Holy Thursday conclusion.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"Après la translation au reposoir, les autels sont dépouillés selon le rite. Le retrait de leurs ornements fait partie de la conclusion liturgique du Jeudi saint.","meaning":"The stripping closes the festal altar service of Holy Thursday and leaves the church prepared for the stark Good Friday rites that follow.","meaning_fr":"Le dépouillement clôt le service festif de l’autel du Jeudi saint et laisse l’église préparée aux rites dépouillés du Vendredi saint qui suivront."},"gf-prostration":{"what":"The ministers enter in silence and the celebrant prostrates before the altar. There is no Introit and no normal opening of Mass: the Solemn Liturgical Action of Good Friday begins in profound silence.","meaning":"Good Friday is not a Mass. Its restored 1962 structure consists of readings and solemn prayers, veneration of the Cross and Holy Communion from Hosts consecrated previously.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"],"what_fr":"Les ministres entrent en silence et le célébrant se prosterne devant l’autel. Il n’y a ni Introït ni ouverture ordinaire de la Messe : l’Action liturgique solennelle du Vendredi saint commence dans un profond silence.","meaning_fr":"Le Vendredi saint n’est pas une Messe. Sa structure restaurée de 1962 comprend les lectures et Oraisons solennelles, la vénération de la Croix et la sainte Communion avec des Hosties consacrées auparavant."},"gf-passion":{"what":"The Passion according to St John forms the climax of the Good Friday readings. Its ceremonial differs from an ordinary Gospel and should be followed as part of the exceptional Good Friday sequence.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"La Passion selon saint Jean constitue le sommet des lectures du Vendredi saint. Son cérémonial diffère de celui d’un Évangile ordinaire et doit être suivi comme partie de la séquence propre à ce jour exceptionnel.","meaning":"The Passion proclamation places the historical saving death of Christ at the centre of the day’s liturgy and prepares directly for the Solemn Prayers and veneration of the Cross.","meaning_fr":"La proclamation de la Passion place la mort salvifique historique du Christ au centre de la liturgie du jour et prépare directement aux grandes prières et à la vénération de la Croix."},"gf-cross-unveiling":{"what":"The Cross is progressively unveiled and presented to the faithful with Ecce lignum Crucis. The people respond and kneel in adoration of Christ crucified.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"La Croix est dévoilée progressivement et présentée aux fidèles avec Ecce lignum Crucis. L’assemblée répond et s’agenouille en adoration du Christ crucifié.","meaning":"The progressive unveiling directs the faithful’s adoration to Christ crucified through the liturgical veneration of His Cross; the object is honoured because of the mystery it bears and signifies.","meaning_fr":"Le dévoilement progressif oriente l’adoration des fidèles vers le Christ crucifié à travers la vénération liturgique de sa Croix ; l’objet est honoré en raison du mystère qu’il porte et signifie."},"gf-cross-veneration":{"what":"The Cross is solemnly venerated while the appointed chants, including the Reproaches and related texts, may accompany the action.","meaning":"The veneration is directed to Christ crucified through the liturgical honour shown to the Cross.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"La Croix est solennellement vénérée tandis que les chants prescrits, notamment les Impropères et les textes qui les accompagnent, peuvent soutenir l’action.","meaning_fr":"La vénération s’adresse au Christ crucifié à travers l’honneur liturgique rendu à la Croix."},"gf-sacrament-return":{"what":"The Blessed Sacrament consecrated on Holy Thursday is brought from the place of repose for Holy Communion. There is no Eucharistic Consecration on Good Friday.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"Le Saint-Sacrement consacré le Jeudi saint est ramené du reposoir pour la sainte Communion. Il n’y a aucune Consécration eucharistique le Vendredi saint.","meaning":"The return of the Sacrament makes the structure of Good Friday explicit: Communion is received from a previous Consecration because no Mass is offered and no Eucharistic Consecration occurs on this day.","meaning_fr":"Le retour du Saint-Sacrement rend explicite la structure du Vendredi saint : la Communion est reçue d’une Consécration antérieure puisqu’aucune Messe n’est offerte et qu’aucune Consécration eucharistique n’a lieu ce jour-là."},"gf-faithful-communion":{"what":"Holy Communion is distributed from Hosts consecrated previously. The rite therefore gives Communion without a Mass or Consecration on Good Friday.","sources":["mr1962","holyweek1955","oconnell1964","ccc"],"what_fr":"La sainte Communion est distribuée avec des Hosties consacrées précédemment. Le rite donne donc la Communion sans Messe ni Consécration le Vendredi saint.","meaning":"Communion remains truly sacramental even though it occurs within the Solemn Liturgical Action rather than within a Mass celebrated that day.","meaning_fr":"La Communion demeure véritablement sacramentelle même si elle a lieu dans l’Action liturgique solennelle et non dans une Messe célébrée ce jour-là."},"gf-end":{"what":"The Solemn Liturgical Action ends according to its own restored Good Friday order rather than with the normal conclusion of Mass.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"L’Action liturgique solennelle s’achève selon son ordre restauré propre au Vendredi saint, et non selon la conclusion habituelle de la Messe.","meaning":"The austere ending preserves the exceptional character of Good Friday: the rite concludes without simply borrowing the normal dismissal and blessing of Mass.","meaning_fr":"La conclusion dépouillée conserve le caractère exceptionnel du Vendredi saint : le rite s’achève sans reprendre simplement le renvoi et la bénédiction ordinaires de la Messe."},"vigil-fire":{"what":"The Easter Vigil begins with the blessing of the new fire outside or at the entrance of the church. This opens the restored nocturnal Vigil before the procession into the darkened church.","history":"The twentieth-century Holy Week restoration deliberately returned the Vigil to the night and reshaped its ceremonial before it was incorporated into the 1962 books.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"],"what_fr":"La Vigile pascale commence par la bénédiction du feu nouveau à l’extérieur ou à l’entrée de l’église. Elle ouvre la Vigile nocturne restaurée avant la procession dans l’église encore obscure.","history_fr":"La restauration de la Semaine sainte au XXe siècle a volontairement replacé la Vigile dans la nuit et remodelé son cérémonial avant son intégration aux livres de 1962.","meaning":"The new fire establishes the Vigil’s movement from darkness toward Paschal light before the church enters the biblical and sacramental proclamation of the Resurrection.","meaning_fr":"Le feu nouveau établit le mouvement de la Vigile des ténèbres vers la lumière pascale avant que l’Église n’entre dans la proclamation biblique et sacramentelle de la Résurrection."},"vigil-candle":{"what":"The Paschal Candle is prepared and lighted from the new fire. It becomes the principal visible sign accompanying the proclamation of Christ’s Resurrection during the opening of the Vigil.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"Le cierge pascal est préparé puis allumé au feu nouveau. Il devient le principal signe visible qui accompagne la proclamation de la Résurrection du Christ au début de la Vigile.","meaning":"The Paschal Candle becomes the principal liturgical sign of the risen Christ during the opening rites and carries the new light into the church.","meaning_fr":"Le cierge pascal devient le principal signe liturgique du Christ ressuscité dans les rites d’ouverture et porte la lumière nouvelle dans l’église."},"vigil-lumen":{"what":"As the Paschal Candle enters the church, Lumen Christi is proclaimed in stages and answered with Deo gratias. The movement from darkness toward increasing light is built into the rite itself.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"À l’entrée du cierge pascal dans l’église, Lumen Christi est proclamé par étapes et reçoit la réponse Deo gratias. Le passage de l’obscurité à une lumière croissante est inscrit dans le rite lui-même.","meaning":"The repeated proclamation and response make the spread of Paschal light a communal liturgical act: the light advances and the assembly answers in thanksgiving.","meaning_fr":"La proclamation répétée et sa réponse font de la diffusion de la lumière pascale un acte liturgique communautaire : la lumière avance et l’assemblée répond dans l’action de grâces."},"vigil-exsultet":{"what":"At the Paschal Candle the deacon sings the Exsultet, the great Easter proclamation praising the night of Christ’s Resurrection and the saving work celebrated in the Vigil.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"Auprès du cierge pascal, le diacre chante l’Exsultet, grande proclamation pascale qui célèbre la nuit de la Résurrection du Christ et l’œuvre du salut commémorée dans la Vigile.","meaning":"The Exsultet interprets the Paschal Candle and the holy night theologically, placing the Resurrection within the whole history of salvation rather than leaving the symbolism unexplained.","meaning_fr":"L’Exsultet interprète théologiquement le cierge pascal et la nuit sainte, situant la Résurrection dans toute l’histoire du salut au lieu de laisser le symbolisme inexpliqué."},"vigil-prophecies":{"what":"The restored 1962 Vigil has four Old Testament lessons, each with its appointed canticle and prayer. Together they form a scriptural preparation for Baptism and the Easter Mass.","meaning":"Creation, deliverance and the promises of salvation lead the Vigil toward the baptismal rites and the Eucharist.","sources":["mr1962","holyweek1955","oconnell1964","ccc"],"what_fr":"La Vigile restaurée de 1962 comporte quatre leçons de l’Ancien Testament, chacune avec son cantique et son oraison prescrits. Ensemble, elles forment une préparation scripturaire au Baptême et à la Messe de Pâques.","meaning_fr":"La création, la délivrance et les promesses du salut conduisent la Vigile vers les rites baptismaux et l’Eucharistie."},"vigil-font":{"what":"The first portion of the Litany leads toward the baptismal font. The water is solemnly blessed, baptismal promises are renewed and the people are sprinkled; the Litany then resumes while preparations are made for Mass.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"La première partie des Litanies conduit aux fonts baptismaux. L’eau est solennellement bénie, les promesses du baptême sont renouvelées et le peuple est aspergé ; les Litanies reprennent ensuite pendant la préparation de la Messe.","meaning":"The baptismal rites apply the Paschal mystery sacramentally: death and Resurrection are proclaimed not only as events to remember but as the pattern of Christian regeneration and renewed baptismal commitment.","meaning_fr":"Les rites baptismaux appliquent sacramentellement le mystère pascal : mort et Résurrection sont proclamées non seulement comme événements à rappeler, mais comme forme de la régénération chrétienne et du renouvellement des engagements baptismaux."},"vigil-lauds":{"what":"In the restored Easter Vigil the Communion antiphon is replaced by the prescribed abbreviated Lauds sequence, including Psalm 150 and the Benedictus; the altar and ministers are incensed during the Benedictus.","sources":["mr1962","holyweek1955","oconnell1964"],"what_fr":"Dans la Vigile pascale restaurée, l’antienne de Communion est remplacée par la forme abrégée prescrite des Laudes, comprenant le psaume 150 et le Benedictus ; l’autel et les ministres sont encensés pendant le Benedictus.","meaning":"The abbreviated Lauds gives the Vigil Mass a specifically Paschal conclusion in praise, integrating the morning office into the restored nocturnal celebration rather than using the ordinary Communion-antiphon pattern.","meaning_fr":"Les Laudes abrégées donnent à la Messe de la Vigile une conclusion spécifiquement pascale de louange, intégrant l’office du matin à la célébration nocturne restaurée au lieu d’utiliser le schéma ordinaire de l’antienne de Communion."},"foot-versicles":{"what":"After the mutual Confiteor, the priest and ministers exchange a short series of versicles asking God to turn again, show mercy and hear their prayer. These conclude the preparation at the foot of the altar before the priest ascends.","meaning":"The sequence moves from confession of sin to confidence in divine mercy and help.","what_fr":"Après le Confiteor réciproque, le prêtre et les ministres échangent une courte série de versets demandant à Dieu de se tourner de nouveau vers eux, de montrer sa miséricorde et d’exaucer leur prière. Ils concluent la préparation au bas de l’autel avant que le prêtre ne monte.","meaning_fr":"La séquence passe de la confession du péché à la confiance dans la miséricorde et le secours de Dieu.","sources":["mr1962","oconnell1964"]},"misereatur-vestri":{"what":"The priest answers the ministers’ Confiteor with Misereatur vestri, asking Almighty God to have mercy, forgive sins and lead them to everlasting life.","meaning":"This is a liturgical prayer for mercy; it is not the sacramental absolution of Penance.","what_fr":"Le prêtre répond au Confiteor des ministres par Misereatur vestri, demandant à Dieu tout-puissant d’avoir pitié, de pardonner les péchés et de conduire à la vie éternelle.","meaning_fr":"Il s’agit d’une prière liturgique demandant miséricorde ; ce n’est pas l’absolution sacramentelle du sacrement de Pénitence.","sources":["mr1962","oconnell1964"]},"indulgentiam-absolution":{"what":"The priest prays Indulgentiam, absolutionem et remissionem peccatorum nostrorum — asking pardon, absolution and remission of sins.","meaning":"Within the preparatory prayers of Mass, this is a deprecatory prayer for forgiveness and must not be confused with sacramental absolution in Confession.","what_fr":"Le prêtre récite Indulgentiam, absolutionem et remissionem peccatorum nostrorum — demandant l’indulgence, l’absolution et la rémission des péchés.","meaning_fr":"Dans les prières préparatoires de la Messe, il s’agit d’une prière déprécative demandant le pardon et non de l’absolution sacramentelle donnée en confession.","sources":["mr1962","oconnell1964"]},"gradual":{"what":"The Gradual is the Proper chant that follows the Epistle or Lesson. At Sung Mass it is sung by the schola while the celebrant’s own preparation for the Gospel may already be beginning.","meaning":"It forms the principal chant between the readings and changes with the liturgical day.","what_fr":"Le Graduel est le chant propre qui suit l’Épître ou la Leçon. À la Messe chantée, il est exécuté par la schola tandis que le célébrant peut déjà commencer sa préparation personnelle à l’Évangile.","meaning_fr":"Il constitue le principal chant entre les lectures et varie selon le jour liturgique.","sources":["mr1962","oconnell1964","fortescue1962"]},"alleluia":{"what":"When prescribed, the Alleluia follows the Gradual as the festal chant leading toward the Gospel. In penitential seasons it is replaced or omitted according to the Proper.","meaning":"Its place in the sequence marks the approach to the Gospel while also reflecting the liturgical season.","what_fr":"Lorsqu’il est prescrit, l’Alléluia suit le Graduel comme chant festif conduisant à l’Évangile. Dans les temps pénitentiels, il est remplacé ou omis selon le Propre.","meaning_fr":"Sa place dans la séquence marque l’approche de l’Évangile tout en reflétant le temps liturgique.","sources":["mr1962","oconnell1964","fortescue1962"]},"gospel-announcement":{"what":"The Gospel is formally introduced with Dominus vobiscum, the title of the Gospel and the response Gloria tibi, Domine when the normal Gospel ceremonial applies. Exceptional rites, especially the Passion, alter or omit parts of this pattern.","meaning":"The announcement identifies the biblical book and solemnly marks the beginning of the Gospel proclamation.","what_fr":"Lorsque le cérémonial ordinaire de l’Évangile s’applique, celui-ci est formellement introduit par Dominus vobiscum, son titre et la réponse Gloria tibi, Domine. Les rites exceptionnels, notamment la Passion, modifient ou omettent certains de ces éléments.","meaning_fr":"L’annonce identifie le livre biblique et marque solennellement le début de la proclamation de l’Évangile.","sources":["mr1962","oconnell1964","fortescue1962"]},"communion-prep-fili":{"what":"Before receiving Communion, the priest prays Domine Iesu Christe, Fili Dei vivi, asking Christ to deliver him from his sins and every evil and to keep him faithful to the commandments.","meaning":"This is one of the celebrant’s immediate private preparations for sacramental Communion.","what_fr":"Avant de communier, le prêtre récite Domine Iesu Christe, Fili Dei vivi, demandant au Christ de le délivrer de ses péchés et de tout mal et de le garder fidèle à ses commandements.","meaning_fr":"C’est l’une des préparations privées immédiates du célébrant à la Communion sacramentelle.","sources":["mr1962","oconnell1964"]},"communion-prep-perceptio":{"what":"The priest then prays Perceptio Corporis tui, asking that reception of Christ’s Body and Blood may not bring judgment but, through divine mercy, become protection and healing.","meaning":"The prayer combines reverence for the Eucharist with a direct plea for worthy reception.","what_fr":"Le prêtre récite ensuite Perceptio Corporis tui, demandant que la réception du Corps et du Sang du Christ ne lui apporte pas le jugement, mais devienne, par la miséricorde divine, protection et guérison.","meaning_fr":"La prière unit la révérence envers l’Eucharistie à une supplication directe pour la recevoir dignement.","sources":["mr1962","oconnell1964"]},"last-gospel-announcement":{"what":"When the Last Gospel is prescribed, the priest moves to the Gospel side and introduces it with the customary Gospel versicles before beginning the text.","meaning":"This is a distinct concluding Gospel reading after the blessing, not a return to the earlier Liturgy of the Word.","what_fr":"Lorsque le dernier Évangile est prescrit, le prêtre se rend au côté de l’Évangile et l’introduit par les versets habituels avant d’en commencer le texte.","meaning_fr":"Il s’agit d’une lecture évangélique finale distincte, après la bénédiction, et non d’un retour à la liturgie de la Parole qui a précédé.","sources":["mr1962","oconnell1964"]},"ashes-after-distribution":{"what":"After the imposition of ashes, the appointed chant or psalmody concludes the distribution before the celebrant turns to the final prayer of the ash ceremony.","meaning":"The rite remains a distinct penitential ceremony preceding Mass.","what_fr":"Après l’imposition des cendres, le chant ou la psalmodie prescrits concluent la distribution avant que le célébrant ne se tourne vers l’oraison finale de la cérémonie des cendres.","meaning_fr":"Le rite demeure une cérémonie pénitentielle distincte qui précède la Messe.","sources":["mr1962","oconnell1964","fortescue1962"]},"ashes-conclusion":{"what":"A concluding prayer completes the blessing and imposition of ashes. The Mass then follows according to the Ash Wednesday order.","meaning":"The prayer closes the preparatory penitential rite and marks the transition into Mass.","what_fr":"Une oraison finale achève la bénédiction et l’imposition des cendres. La Messe suit ensuite selon l’ordre propre du mercredi des Cendres.","meaning_fr":"Cette oraison clôt le rite pénitentiel préparatoire et marque le passage à la Messe.","sources":["mr1962","oconnell1964","fortescue1962"]},"palms-sprinkle-incense":{"what":"After the branches have been blessed, they are sprinkled with holy water and incensed according to the restored Palm Sunday rite.","meaning":"These actions complete the blessing before the branches are distributed and carried in procession.","what_fr":"Après leur bénédiction, les rameaux sont aspergés d’eau bénite et encensés selon le rite restauré du dimanche des Rameaux.","meaning_fr":"Ces actions achèvent la bénédiction avant la distribution des rameaux et leur port en procession.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"palms-distribution":{"what":"The blessed branches are distributed to clergy and faithful while the appointed antiphons accompany the action. The distribution prepares the assembly to take part in the procession commemorating the Lord’s entry into Jerusalem.","meaning":"The branches are not merely souvenirs; they belong to the liturgical action of blessing and procession.","what_fr":"Les rameaux bénis sont distribués au clergé et aux fidèles tandis que les antiennes prescrites accompagnent l’action. Cette distribution prépare l’assemblée à participer à la procession commémorant l’entrée du Seigneur à Jérusalem.","meaning_fr":"Les rameaux ne sont pas de simples souvenirs ; ils appartiennent à l’action liturgique de bénédiction et de procession.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"palms-return":{"what":"After the procession, clergy and faithful return to the church and the Palm Sunday liturgy proceeds into the Mass. The app follows the restored 1962 transition rather than the older pre-1955 door ceremony.","history":"Older ceremonial books describe a more elaborate return to the church; that sequence was changed by the Holy Week restoration and is not used here.","what_fr":"Après la procession, clergé et fidèles rentrent dans l’église et la liturgie du dimanche des Rameaux se poursuit par la Messe. L’application suit la transition restaurée de 1962 et non l’ancienne cérémonie de la porte antérieure à 1955.","history_fr":"Les anciens livres cérémoniels décrivent un retour à l’église plus élaboré ; cette séquence a été modifiée par la restauration de la Semaine sainte et n’est pas utilisée ici.","meaning":"The return forms the hinge between the commemorative procession and the Mass of the Passion: one liturgical celebration moves from Christ’s royal entry toward the mystery of His suffering and sacrifice.","meaning_fr":"Le retour forme la charnière entre la procession commémorative et la Messe de la Passion : une seule célébration liturgique passe de l’entrée royale du Christ au mystère de sa souffrance et de son sacrifice.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-lesson-1":{"what":"The first Good Friday Lesson begins the scriptural portion of the Solemn Liturgical Action. It is followed by its appointed responsory rather than by the ordinary Mass sequence.","meaning":"Good Friday opens with an extended service of readings that prepares directly for the Passion and the Solemn Prayers.","what_fr":"La première Leçon du Vendredi saint ouvre la partie scripturaire de l’Action liturgique solennelle. Elle est suivie de son répons propre plutôt que de la séquence ordinaire de la Messe.","meaning_fr":"Le Vendredi saint s’ouvre par un office de lectures développé qui prépare directement à la Passion puis aux Oraisons solennelles.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-responsory-1":{"what":"The first Responsory follows the opening Lesson and gives the assembly a sung biblical or liturgical response before the next prayer and reading.","meaning":"The responsories belong to the exceptional Good Friday reading sequence, not to the ordinary Gradual-and-Alleluia pattern of Mass.","what_fr":"Le premier Répons suit la Leçon d’ouverture et donne à l’assemblée une réponse chantée, biblique ou liturgique, avant l’oraison et la lecture suivantes.","meaning_fr":"Les répons appartiennent à la séquence exceptionnelle des lectures du Vendredi saint, et non au schéma ordinaire Graduel-Alléluia de la Messe.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-between-lessons":{"what":"Between the two principal Lessons, the celebrant prays the appointed prayer according to the restored Good Friday order before the second Lesson begins.","meaning":"The prayer links the readings within the distinctive structure of the Solemn Liturgical Action.","what_fr":"Entre les deux Leçons principales, le célébrant récite l’oraison prescrite selon l’ordre restauré du Vendredi saint avant le commencement de la seconde Leçon.","meaning_fr":"L’oraison relie les lectures entre elles dans la structure propre de l’Action liturgique solennelle.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-lesson-2":{"what":"The second Good Friday Lesson continues the scriptural preparation before the Passion according to St John. It is followed by its own Responsory.","meaning":"The sequence progressively directs attention toward the Passion, which is the climax of the reading portion of the rite.","what_fr":"La seconde Leçon du Vendredi saint poursuit la préparation scripturaire avant la Passion selon saint Jean. Elle est suivie de son propre Répons.","meaning_fr":"La séquence dirige progressivement l’attention vers la Passion, sommet de la partie scripturaire du rite.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-responsory-2":{"what":"The second Responsory follows the second Lesson and immediately precedes the Passion sequence.","meaning":"Its position creates the final transition from the Old Testament readings into the proclamation of Christ’s Passion.","what_fr":"Le second Répons suit la deuxième Leçon et précède immédiatement la séquence de la Passion.","meaning_fr":"Sa position crée la dernière transition entre les lectures de l’Ancien Testament et la proclamation de la Passion du Christ.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-pater":{"what":"After the Blessed Sacrament has been brought from the place of repose, the Lord’s Prayer is said within the exceptional Good Friday Communion rite. There is still no Eucharistic Prayer or Consecration.","meaning":"The Pater functions as immediate preparation for Communion from the Hosts consecrated on Holy Thursday.","what_fr":"Après le retour du Saint-Sacrement depuis le reposoir, le Notre Père est récité dans le rite exceptionnel de Communion du Vendredi saint. Il n’y a toujours ni Prière eucharistique ni Consécration.","meaning_fr":"Le Pater sert de préparation immédiate à la Communion avec les Hosties consacrées le Jeudi saint.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-libera":{"what":"The prayer Libera nos follows the Lord’s Prayer in the Good Friday Communion rite, continuing the petition for deliverance and peace before Communion.","meaning":"Its familiar place before Communion is retained even though the day has no Mass or Consecration.","what_fr":"La prière Libera nos suit le Notre Père dans le rite de Communion du Vendredi saint, poursuivant la supplication pour la délivrance et la paix avant la Communion.","meaning_fr":"Sa place familière avant la Communion est conservée bien que ce jour ne comporte ni Messe ni Consécration.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-priest-communion":{"what":"The celebrant receives Holy Communion from the Hosts consecrated on Holy Thursday. His Communion takes place within the restored Good Friday rite, not within a Mass.","meaning":"The distinction is essential: Good Friday has sacramental Communion but no Eucharistic Consecration.","what_fr":"Le célébrant reçoit la sainte Communion avec les Hosties consacrées le Jeudi saint. Sa Communion a lieu dans le rite restauré du Vendredi saint, et non au cours d’une Messe.","meaning_fr":"La distinction est essentielle : le Vendredi saint comporte la Communion sacramentelle mais aucune Consécration eucharistique.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-final-prayers":{"what":"After Communion, the celebrant prays the three appointed concluding prayers of the restored Good Friday order. They bring the Communion portion of the Solemn Liturgical Action toward its close.","meaning":"These replace the normal Postcommunion, dismissal and blessing structure of Mass.","what_fr":"Après la Communion, le célébrant récite les trois oraisons finales prescrites par l’ordre restauré du Vendredi saint. Elles conduisent la partie de Communion de l’Action liturgique solennelle vers sa conclusion.","meaning_fr":"Ces oraisons remplacent la structure ordinaire de Postcommunion, renvoi et bénédiction de la Messe.","sources":["mr1962","holyweek1955","oconnell1964","fortescue1962"]},"gf-solemn-prayer-1":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]},"gf-solemn-prayer-2":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]},"gf-solemn-prayer-3":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]},"gf-solemn-prayer-4":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]},"gf-solemn-prayer-5":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]},"gf-solemn-prayer-6":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]},"gf-solemn-prayer-7":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]},"gf-solemn-prayer-8":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]},"gf-solemn-prayer-9":{"what":"This is one of the nine Solemn Prayers of Good Friday. The celebrant announces a specific public intention and then prays the appointed collect for that intention according to the restored rite.","meaning":"The Church’s intercession expands beyond those present to embrace the needs of the Church and the world in a deliberately universal series of petitions.","what_fr":"Il s’agit de l’une des neuf Oraisons solennelles du Vendredi saint. Le célébrant annonce une intention publique précise puis récite la collecte prescrite pour cette intention selon le rite restauré.","meaning_fr":"L’intercession de l’Église s’étend au-delà des personnes présentes pour embrasser les besoins de l’Église et du monde dans une série de supplications volontairement universelle.","sources":["mr1962","holyweek1955","oconnell1964"]}};
+const AO_THEOLOGY_STEPS = new Set(['offertory','orate-fratres','preface','sanctus','te-igitur','memento-living','communicantes','quam-oblationem','consecration-host','consecration-chalice','unde-et-memores','supplices','memento-dead','canon-doxology','pater','fraction-pax','agnus','priest-communion','ecce','domine-non-sum-dignus','communion-faithful','postcommunion']);
+const AO_HISTORY_STEPS = new Set(['sign-cross','judica','introit','kyrie','collect','water-wine','lavabo','secret','preface','sanctus','commingling','last-gospel']);
+function aoSourceLocus(id, key, lang) {
+    id = String(id || '');
+    const fr = lang === 'fr';
+    if (key === 'mr1962') {
+        if (/^(sign-cross|judica|adjutorium|priest-confiteor|ministers-confiteor|misereatur-vestri|indulgentiam-absolution|foot-versicles|ascend|oramus-te)$/.test(id)) return fr ? 'Ritus servandus III — De initio Missae / Du commencement de la Messe' : 'Ritus servandus III — De initio Missae / The Beginning of Mass';
+        if (/^(incense-entrance|introit|kyrie|gloria)$/.test(id)) return 'Ritus servandus IV — Introit, Kyrie eleison et Gloria in excelsis';
+        if (id === 'collect') return fr ? 'Ritus servandus V — De Oratione / De l’oraison' : 'Ritus servandus V — De Oratione / The Oration';
+        if (/^(epistle|gradual|alleluia|gospel-prep|gospel-prep-requiem|gospel-announcement|gospel|credo)$/.test(id)) return fr ? 'Ritus servandus VI — Épître, Graduel et rites jusqu’à l’Offertoire' : 'Ritus servandus VI — Epistle, Gradual and everything up to the Offertory';
+        if (/^(offertory|offer-host|water-wine|offer-chalice|in-spiritu|veni-sanctificator|incense-off|lavabo|suscipe-trinitas|orate-fratres|secret|preface|sanctus)$/.test(id)) return fr ? 'Ritus servandus VII — Offertoire et rites jusqu’au Canon' : 'Ritus servandus VII — Offertory and other parts up to the Canon';
+        if (/^(te-igitur|memento-living|communicantes|hanc|quam-oblationem|consecration-host|consecration-chalice)$/.test(id)) return fr ? 'Ritus servandus VIII — Canon de la Messe jusqu’à la Consécration' : 'Ritus servandus VIII — Canon of the Mass up to the Consecration';
+        if (/^(unde-et-memores|supra-quae|supplices|memento-dead|nobis-quoque|canon-doxology)$/.test(id)) return fr ? 'Ritus servandus IX — Canon après la Consécration jusqu’au Notre Père' : 'Ritus servandus IX — Canon after the Consecration up to the Lord’s Prayer';
+        if (/^(pater|libera-nos|fraction-pax|commingling|agnus|peace-prayer|communion-prep-fili|communion-prep-perceptio|priest-communion|ecce|domine-non-sum-dignus|communion-faithful)$/.test(id)) return fr ? 'Ritus servandus X — Notre Père et rites jusqu’à la fin de la Communion' : 'Ritus servandus X — Lord’s Prayer and everything up to the end of Communion';
+        if (/^(ablutions|communion-proper|postcommunion|super-populum)$/.test(id)) return fr ? 'Ritus servandus XI — Antienne de Communion et prières après la Communion' : 'Ritus servandus XI — Communion antiphon and prayers after Communion';
+        if (/^(dismissal|placeat|blessing|last-gospel-announcement|last-gospel)$/.test(id)) return fr ? 'Ritus servandus XII — Bénédiction à la fin de la Messe et Évangile de saint Jean' : 'Ritus servandus XII — Blessing at the end of Mass and the Gospel of St John';
+        if (id === 'second-confiteor') return fr ? 'Ritus servandus X.6–7 — rite ordinaire de Communion de 1962 ; aucun second Confiteor n’y est prescrit' : 'Ritus servandus X.6–7 — ordinary 1962 Communion rite; no second Confiteor is prescribed here';
+        if (/^asperges/.test(id)) return fr ? 'Missale Romanum 1962 — rite dominical Asperges/Vidi aquam avant la Messe' : 'Missale Romanum 1962 — Sunday Asperges/Vidi aquam rite before Mass';
+        if (/^candlemas-/.test(id)) return fr ? 'Proprium de Tempore · 2 février — bénédiction des cierges et procession' : 'Proprium de Tempore · 2 February — blessing of candles and procession';
+        if (/^ashes-/.test(id)) return fr ? 'Proprium de Tempore · Feria IV Cinerum — bénédiction et imposition des cendres' : 'Proprium de Tempore · Feria IV Cinerum — blessing and imposition of ashes';
+        if (/^palms-/.test(id)) return fr ? 'Proprium de Tempore · Dominica II Passionis seu in Palmis — rite restauré de 1962 du dimanche des Rameaux' : 'Proprium de Tempore · Dominica II Passionis seu in Palmis — restored 1962 Palm Sunday rite';
+        if (/^holy-thursday-/.test(id)) return 'Proprium de Tempore · Feria V in Cena Domini';
+        if (/^gf-/.test(id)) return 'Proprium de Tempore · Feria VI in Passione et Morte Domini';
+        if (/^vigil-/.test(id)) return fr ? 'Proprium de Tempore · Sabbato Sancto — Vigile pascale restaurée' : 'Proprium de Tempore · Sabbato Sancto — restored Paschal Vigil';
+        if (/^rogation-/.test(id)) return 'Missale Romanum 1962 — Litaniae maiores/minores';
+    }
+    if (key === 'holyweek1955') {
+        if (/^palms-/.test(id)) return fr ? 'Ordo Hebdomadae Sanctae Instauratus — dimanche des Rameaux' : 'Ordo Hebdomadae Sanctae Instauratus — Palm Sunday';
+        if (/^holy-thursday-/.test(id)) return fr ? 'Ordo Hebdomadae Sanctae Instauratus — Jeudi saint' : 'Ordo Hebdomadae Sanctae Instauratus — Holy Thursday';
+        if (/^gf-/.test(id)) return fr ? 'Ordo Hebdomadae Sanctae Instauratus — Vendredi saint' : 'Ordo Hebdomadae Sanctae Instauratus — Good Friday';
+        if (/^vigil-/.test(id)) return fr ? 'Ordo Hebdomadae Sanctae Instauratus — Samedi saint / Vigile pascale' : 'Ordo Hebdomadae Sanctae Instauratus — Holy Saturday / Paschal Vigil';
+        return fr ? 'Maxima Redemptionis (1955) et Ordo restauré de la Semaine sainte' : 'Maxima Redemptionis (1955) and the restored Holy Week Ordo';
+    }
+    if (key === 'mediatorDei') {
+        if (/^(offertory|orate-fratres|te-igitur|memento-living|communicantes|quam-oblationem|unde-et-memores|supplices|memento-dead|canon-doxology)$/.test(id)) return fr ? 'Mediator Dei §§80–100, spécialement §§85–87 sur l’offrande des fidèles' : 'Mediator Dei §§80–100, especially §§85–87 on the faithful’s offering';
+        if (/^consecration-(host|chalice)$/.test(id)) return fr ? 'Mediator Dei §§68–70 ; §129 sur l’adoration eucharistique' : 'Mediator Dei §§68–70; §129 on Eucharistic adoration';
+        if (/^(priest-communion|ecce|domine-non-sum-dignus|communion-faithful)$/.test(id)) return fr ? 'Mediator Dei §§112–119 sur la Communion et la participation au sacrifice' : 'Mediator Dei §§112–119 on Communion and participation in the sacrifice';
+        return fr ? 'Mediator Dei, sacrifice eucharistique et participation, §§66–119' : 'Mediator Dei, Eucharistic sacrifice and participation, §§66–119';
+    }
+    if (key === 'ccc') {
+        if (/^consecration-(host|chalice)$/.test(id)) return fr ? 'CEC §§1373–1381 — Présence réelle et transsubstantiation' : 'CCC §§1373–1381 — Real Presence and transubstantiation';
+        if (/^(priest-communion|ecce|domine-non-sum-dignus|communion-faithful)$/.test(id)) return fr ? 'CEC §§1382–1401 — banquet pascal et sainte Communion' : 'CCC §§1382–1401 — the Paschal banquet and Holy Communion';
+        if (/^(offertory|orate-fratres|te-igitur|unde-et-memores|supplices|canon-doxology)$/.test(id)) return fr ? 'CEC §§1350–1372 — présentation des dons, Prière eucharistique et sacrifice' : 'CCC §§1350–1372 — presentation of gifts, Eucharistic Prayer and sacrifice';
+        return fr ? 'CEC §§1322–1419 — le sacrement de l’Eucharistie' : 'CCC §§1322–1419 — the Sacrament of the Eucharist';
+    }
+    return '';
+}
+function aoWhySourcesForStep(step, enrichment, lang) {
+    const ids = [];
+    const add = (...values) => values.forEach(v => { if (v && !ids.includes(v)) ids.push(v); });
+    add('mr1962','oconnell1964');
+    const id = String(step?.id || '');
+    const holyWeek = /^(palms-|holy-thursday-|gf-|vigil-)/.test(id);
+    if (holyWeek) add('holyweek1955','fortescue1962');
+    else if (/^(candlemas-|ashes-)/.test(id)) add('fortescue1962');
+    if (AO_THEOLOGY_STEPS.has(id)) add('mediatorDei','ccc');
+    if (AO_HISTORY_STEPS.has(id)) add('fortescueMass','jungmann');
+    (enrichment?.sources || []).forEach(add);
+    return ids.map(k => {
+        const base = AO_WHY_SOURCES[k];
+        if (!base) return null;
+        const locus = aoSourceLocus(id, k, lang);
+        return locus ? { ...base, locus } : base;
+    }).filter(Boolean);
+}
+window.AO_LEARN_SOURCES = AO_WHY_SOURCES; window.AO_LEARN_ENRICHMENT = AO_WHY_ENRICHMENT;
+function aoWhyContent(step, lang) {
+    const e = AO_WHY_ENRICHMENT[step?.id] || {};
+    const f = globalThis.AO_FORMATION_NOTES_V4314?.[step?.id] || {};
+    const fallback = step?.explanation || (lang === 'fr' ? 'Cette étape appartient au déroulement liturgique de la Messe.' : 'This step belongs to the liturgical action of the Mass.');
+    const isFr = lang === 'fr';
+    const extraSources = Array.isArray(f.sources) ? f.sources : [];
+    const sourceEnrichment = {...e, sources:[...new Set([...(e.sources||[]), ...extraSources])]};
+    const guidance = globalThis.AO_MASS_GUIDANCE_V4313?.resolveGuidance?.(step?.id) || null;
+    return {
+        what: (isFr ? e.what_fr : e.what) || fallback,
+        meaning: isFr ? (e.meaning_fr || '') : (e.meaning || ''),
+        history: isFr ? (e.history_fr || '') : (e.history || ''),
+        spiritual: isFr ? (f.spiritual_fr || f.spiritual_en || '') : (f.spiritual_en || ''),
+        participation: isFr ? (f.participation_fr || f.participation_en || '') : (f.participation_en || ''),
+        variation: isFr ? (f.variation_fr || f.variation_en || '') : (f.variation_en || ''),
+        sources: aoWhySourcesForStep(step, sourceEnrichment, lang),
+        guidance,
+        enriched: !!AO_WHY_ENRICHMENT[step?.id],
+        primaryTranslated: !isFr || !!e.what_fr
+    };
+}
+function aoSourceList(sources, lang) {
+    if (!sources?.length) return '';
+    const fr = lang === 'fr';
+    return `<ul class="whySources">${sources.map(s => { const kind=fr?(s.kind_fr||s.kind):(s.kind||'Source'), label=fr?(s.label_fr||s.label):s.label, note=fr?(s.note_fr||s.note):s.note; return `<li><span class="sourceType">${esc(kind || (fr?'Source':'Source'))}</span><b>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>` : esc(label)}</b>${s.locus ? `<span class="sourceLocator">${esc(s.locus)}</span>` : ''}${note ? `<p>${esc(note)}</p>` : ''}</li>`; }).join('')}</ul>`;
+}
+
+function aoAuthorityLabel(authority, lang) {
+    const labels = globalThis.AO_MASS_GUIDANCE_V4313?.data?.authority_labels || {};
+    const row = labels[String(authority||'')];
+    return row ? (row[lang] || row.en || authority) : String(authority||'').replaceAll('_',' ').toLowerCase();
+}
+function aoActionLabel(action, lang) {
+    const fr = lang === 'fr';
+    const m = {
+      SIGN_OF_CROSS:[fr?'Signe de croix':'Sign of the Cross','✠'], GOSPEL_CROSSES_3:[fr?'Trois petites croix':'Three small Gospel crosses','✠'],
+      BREAST_STRIKE_1:[fr?'Frapper la poitrine ×1':'Strike breast ×1',''], BREAST_STRIKE_3:[fr?'Frapper la poitrine ×3':'Strike breast ×3',''],
+      HEAD_BOW:[fr?'Incliner la tête':'Bow the head',''], PROFOUND_BOW:[fr?'Inclination profonde':'Profound bow',''],
+      GENUFLECT:[fr?'Génuflexion':'Genuflect',''], KNEEL:[fr?'À genoux':'Kneel',''], RISE:[fr?'Se relever':'Rise',''], STAND:[fr?'Debout':'Stand',''], SIT:[fr?'Assis':'Sit',''], ADORATION:[fr?'Adorer':'Adore','']
+    };
+    const x=m[action]; return x ? `${x[1]?x[1]+' ':''}${x[0]}` : String(action||'').replaceAll('_',' ');
+}
+function aoGuidanceSummary(guidance, lang) {
+    if(!guidance) return '';
+    const fr=lang==='fr', posture=guidance.posture, gestures=(guidance.gestures||[]).filter(x=>!['SIGN_OF_CROSS','GOSPEL_CROSSES_3'].includes(String(x?.action||'')));
+    if(!posture && !gestures.length) return '';
+    const p = posture ? `<div class="aoGuideFact"><b>${fr?'Posture':'Posture'}</b><span>${esc(aoActionLabel(posture.action,lang))}</span><small>${esc(aoAuthorityLabel(posture.authority,lang))}</small></div>` : '';
+    const gs = gestures.map(x=>`<div class="aoGuideFact"><b>${fr?'Geste':'Gesture'}</b><span>${esc(aoActionLabel(x.action,lang))}${x.anchor_lat?` · <em>${esc(x.anchor_lat)}</em>`:''}</span><small>${esc(aoAuthorityLabel(x.authority,lang))}</small></div>`).join('');
+    return `<div class="aoGuideFacts">${p}${gs}</div>`;
+}
+
+function renderSheet(state) {
+    const vm = (0, live_mass_model_1.buildLiveMassViewModel)(state), lang = state.language, sheet = state.live.sheet;
+    if (!sheet)
+        return '';
+    if (sheet === 'map')
+        return `<div class="sheetBackdrop" data-sheet-close><section class="liveSheet" role="dialog" aria-modal="true"><header><div><span class="sheetKicker">${esc((0, i18n_1.t)(lang, 'massMap'))}</span><h2>${esc((0, i18n_1.t)(lang, 'jumpToSection'))}</h2></div><button data-sheet-close aria-label="${esc((0, i18n_1.t)(lang, 'close'))}">×</button></header><div class="mapList">${(0, live_mass_model_1.buildMassMap)(state).map(s => `<button data-live-jump="${s.index}"><span>${esc(s.phase)}</span><b>${esc(s.label)}</b></button>`).join('')}</div></section></div>`;
+    if (sheet === 'lost')
+        return `<div class="sheetBackdrop" data-sheet-close><section class="liveSheet" role="dialog" aria-modal="true"><header><div><span class="sheetKicker">${esc((0, i18n_1.t)(lang, 'imLost'))}</span><h2>${esc((0, i18n_1.t)(lang, 'recoveryTitle'))}</h2></div><button data-sheet-close>×</button></header><p class="sheetIntro">${esc((0, i18n_1.t)(lang, 'recoveryHint'))}</p><div class="recoveryGrid">${(0, live_mass_model_1.recoveryTargets)(state).map(r => `<button data-live-jump="${r.index}">${esc((0, i18n_1.t)(lang, r.key))}</button>`).join('')}</div></section></div>`;
+    if (sheet === 'posture') {
+        const saved = state.settings.localPostures[vm.step.id] || 'follow';
+        const choices = [['follow', lang === 'fr' ? 'Utiliser la suggestion' : 'Use suggestion', ''], ['stand', lang === 'fr' ? 'Debout' : 'Stand', 'ao-posture-stand'], ['sit', lang === 'fr' ? 'Assis' : 'Sit', 'ao-posture-sit'], ['kneel', lang === 'fr' ? 'À genoux' : 'Kneel', 'ao-posture-kneel']];
+        return `<div class="sheetBackdrop" data-sheet-close><section class="liveSheet" role="dialog" aria-modal="true"><header><div><span class="sheetKicker">${lang === 'fr' ? 'Posture' : 'Posture'}</span><h2>${esc(vm.title)}</h2></div><button data-sheet-close>×</button></header><p class="sheetIntro">${lang === 'fr' ? 'Choisissez la posture que vous utilisez ici. Votre choix est enregistré dans l’app pour cette étape.' : 'Choose the posture you use here. Your choice is saved in the app for this step.'}</p><div class="postureChoices">${choices.map(([v, l, id]) => `<button data-local-posture="${v}" class="${saved === v ? 'active' : ''}">${id ? img(id, 'postureChoiceIcon', '') : ''}<span>${esc(l)}</span></button>`).join('')}</div><button class="resetButton" data-reset-postures>${lang === 'fr' ? 'Réinitialiser toutes les postures locales' : 'Reset all local postures'}</button></section></div>`;
+    }
+    if (sheet === 'settings')
+        return `<div class="sheetBackdrop" data-sheet-close><section class="liveSheet settingsSheet" role="dialog" aria-modal="true"><header><div><span class="sheetKicker">${esc((0, i18n_1.t)(lang, 'settings'))}</span><h2>${esc((0, i18n_1.t)(lang, 'liveMass'))}</h2></div><button data-sheet-close>×</button></header>${settingGroup((0, i18n_1.t)(lang, 'massForm'), [['sung', (0, i18n_1.t)(lang, 'sungMass')], ['low', (0, i18n_1.t)(lang, 'lowMass')]], state.live.form, 'data-live-form')}${settingGroup((0, i18n_1.t)(lang, 'followMode'), [['vox', (0, i18n_1.t)(lang, 'vox')], ['missal', (0, i18n_1.t)(lang, 'missal')]], state.live.followMode, 'data-live-follow')}${settingGroup((0, i18n_1.t)(lang, 'textDisplay'), [['oriented', (0, i18n_1.t)(lang, 'oriented')], ['parallel', (0, i18n_1.t)(lang, 'parallel')]], state.live.textMode, 'data-live-text')}${settingGroup(lang === 'fr' ? 'Participation' : 'Participation', [['quiet', lang === 'fr' ? 'Discrète' : 'Quiet'], ['group', lang === 'fr' ? 'Réponses du groupe' : 'Group responses']], state.settings.participationMode, 'data-participation')}${settingGroup('Language', [['en', 'EN'], ['fr', 'FR']], state.language, 'data-language')}${toggleRow(lang === 'fr' ? 'Communion des fidèles' : 'Faithful Communion', lang === 'fr' ? 'Afficher la séquence de Communion des fidèles.' : 'Include the faithful-Communion sequence.', state.settings.faithfulCommunion, 'data-faithful-communion')}${toggleRow('Second Confiteor', lang === 'fr' ? 'Ancien usage facultatif avant la Communion des fidèles.' : 'Optional older custom before the Communion of the faithful.', state.settings.secondConfiteor, 'data-second-confiteor')}${state.settings.secondConfiteor ? toggleRow(lang === 'fr' ? 'Répondre au Confiteor' : 'Join the Confiteor', lang === 'fr' ? 'Traiter le Confiteor comme réponse du groupe selon l’usage local.' : 'Treat the Confiteor as a group response where locally customary.', state.settings.joinSecondConfiteor, 'data-join-confiteor') : ''}${toggleRow(lang === 'fr' ? 'Aspersion dominicale · Messe principale' : 'Sunday Asperges · principal Mass', lang === 'fr' ? 'À la Messe chantée principale du dimanche, insérer Asperges me ou Vidi aquam avant la Messe. Désactivez pour une autre Messe chantée du dimanche.' : 'At the principal Sunday Sung Mass, include Asperges me or Vidi aquam before Mass. Turn this off for another Sunday Sung Mass.', state.settings.sundayAsperges !== false, 'data-sunday-asperges')}${settingGroup(lang === 'fr' ? 'Taille du texte' : 'Text size', [['normal', lang === 'fr' ? 'Normale' : 'Normal'], ['large', lang === 'fr' ? 'Grande' : 'Large']], state.settings.textScale, 'data-text-scale')}${toggleRow(lang === 'fr' ? 'Réduire les animations' : 'Reduce motion', lang === 'fr' ? 'Limiter les transitions non essentielles.' : 'Limit non-essential transitions.', state.settings.reducedMotion, 'data-reduced-motion')}</section></div>`;
+    const why = aoWhyContent(vm.step, lang);
+    const fr = lang === 'fr';
+    const guidance = aoGuidanceSummary(why.guidance, lang);
+    const detail = (label,meta,body,cls='') => body ? `<details class="whyDetail ${cls}"><summary><span class="whySummaryLabel">${esc(label)}</span>${meta?`<span class="whySummaryMeta">${esc(meta)}</span>`:''}</summary><div class="whyDetailBody"><p>${esc(body)}</p></div></details>` : '';
+    const sourceDetail = why.sources?.length ? `<details class="whyDetail"><summary><span class="whySummaryLabel">${fr?'Sources':'Sources'}</span><span class="whySummaryMeta">${why.sources.length}</span></summary><div class="whyDetailBody">${aoSourceList(why.sources,lang)}</div></details>` : '';
+    return `<div class="sheetBackdrop" data-sheet-close><section class="liveSheet whySheet" role="dialog" aria-modal="true"><header><div><span class="sheetKicker">${esc((0, i18n_1.t)(lang, 'whatHappening'))}</span><h2>${esc(vm.title)}</h2></div><button data-sheet-close aria-label="${esc((0, i18n_1.t)(lang, 'close'))}">×</button></header><div class="whyBlock primaryWhy"><p>${esc(why.what)}</p></div>${guidance?`<div class="whyBlock aoGuidanceWhy"><h3>${fr?'Ce que vous faites':'What you do'}</h3>${guidance}${why.participation?`<p class="authorityNote">${esc(why.participation)}</p>`:''}</div>`:''}${detail(fr?'Sens liturgique':'Liturgical meaning','',why.meaning,'meaningDetail')}${detail(fr?'Lecture spirituelle':'Spiritual reading',fr?'Interprétation':'Interpretation',why.spiritual)}${detail(fr?'Variantes et exceptions':'Variations & exceptions','',why.variation)}${detail(fr?'Contexte historique':'Historical context',fr?'Histoire':'History',why.history)}${sourceDetail}<p class="authorityNote">${fr?'Les rubriques du célébrant, les normes du chœur, les usages des fidèles et les interprétations spirituelles restent distingués.':'Celebrant rubrics, choir norms, lay customs and spiritual interpretation are kept distinct.'}</p></section></div>`;}
+
+function renderLiveMassToString(state) {
+    const vm = (0, live_mass_model_1.buildLiveMassViewModel)(state), tr = (k) => (0, i18n_1.t)(vm.language, k);
+    const phase = String(vm.phase || '').trim(), section = String(vm.section || '').trim();
+    const phaseLabel = phase && phase.toLowerCase() !== section.toLowerCase() ? phase : '';
+    const postureKey = vm.language === 'fr' ? (vm.postureSource === 'saved' ? 'Enregistrée · toucher pour changer' : 'Suggérée · toucher pour changer') : (vm.postureSource === 'saved' ? 'Saved · tap to change' : 'Suggested · tap to change');
+    const posture = vm.posture ? `<button class="liveOrientationItem postureOrientation" data-live-sheet="posture" data-posture-source="${vm.postureSource || ''}" aria-label="${esc(postureKey + ': ' + vm.posture)}"><span class="orientationVisualWrap">${postureIcon(vm.posture, 'orientationVisual postureVisual')}</span><span class="orientationValue">${esc(vm.posture)}</span><span class="orientationKey">${esc(postureKey)}</span></button>` : '';
+    const priest = vm.priestPosition ? `<span class="liveOrientationItem priestOrientation"><span class="orientationVisualWrap">${img(priestIconForPosition(vm.priestPosition), 'orientationVisual priestVisual', '')}</span><span class="orientationValue">${esc(vm.priestPosition)}</span><span class="orientationKey">${esc(tr('priest'))}</span></span>` : '';
+    const cues = [];
+    if (vm.soundscape) { const choirCue = /choir|chœur|schola/i.test(vm.soundscape); const cueText = choirCue ? String(vm.soundscape).replace(/^(choir|chœur|schola)\s*[·:—-]?\s*/i, '') : vm.soundscape; cues.push(`<div class="liveCue ${/silence|silenc/i.test(vm.soundscape) ? 'silence' : 'concurrent'}${choirCue ? ' choirConcurrentCue' : ''}">${choirCue ? `${img('ao-choir','cueGlyph choirCueGlyph','')}<b>SCHOLA</b><span>${esc(cueText)}</span>` : esc(vm.soundscape)}</div>`); }
+    if (vm.bell) cues.push(`<div class="liveCue bells">${img('ao-bells','cueGlyph','')}${esc(vm.bell)}</div>`);
+    for (const gesture of vm.gestures) { const crossOnly = /^cross$/i.test(String(gesture)); cues.push(`<span class="liveCue gesture${crossOnly ? ' crossOnly' : ''}">${crossOnly ? img('ao-posture-sign-cross','cueGlyph','') : esc(gesture)}</span>`); }
+    const hasDual = vm.textBlocks.some(block => block.dual && block.secondary);
+    if (vm.participationHint && !hasDual) cues.push(`<div class="liveCue responseHint"><b>${vm.language === 'fr' ? 'Réponse' : 'Response'}</b>${esc(vm.participationHint)}</div>`);
+    const scripture = ['gospel','epistle'].includes(vm.step.id) ? `<button class="liveContextAction scriptureButton" data-live-scripture="${vm.step.id}">${img(vm.step.id === 'gospel' ? 'ao-gospel-book' : 'ao-epistle-book','smallBookIcon','')}<span>${esc(vm.language === 'fr' ? 'Explorer l’Écriture' : 'Explore Scripture')}</span><span>→</span></button>` : '';
+    const subtitle = /consecration-(host|chalice)/.test(vm.step.id) ? (vm.language === 'fr' ? 'Le prêtre prononce à voix basse les paroles de la consécration.' : 'The priest pronounces the words of consecration quietly.') : vm.subtitle;
+    return `<main class="liveScreen" data-step-id="${esc(vm.step.id)}" data-live-blueprint="canonical-visual-roles" data-follow-mode="${vm.followMode}" data-text-mode="${vm.textMode}" data-text-scale="${state.settings.textScale}" data-reduced-motion="${state.settings.reducedMotion}" data-participation="${esc(state.settings.participationMode)}">
+<header class="liveTopbar"><button class="topIcon imageButton" data-live-home aria-label="${esc(tr('backHome'))}">${img(icons_1.NAV_ICON.home,'navIcon','')}<span class="srOnly">${esc(tr('backHome'))}</span></button><div class="topTitle"><b>${esc(vm.section)}</b></div><button class="topIcon imageButton" data-live-sheet="lost" aria-label="${esc(tr('imLost'))}">${img(icons_1.NAV_ICON.lost,'navIcon','')}<span class="srOnly">${esc(tr('imLost'))}</span></button><button class="topIcon imageButton" data-live-sheet="settings" aria-label="${esc(tr('settings'))}">${img(icons_1.NAV_ICON.settings,'navIcon','')}</button></header>
+<div class="liveProgress" aria-label="${esc(vm.progressLabel)}"><span style="width:${vm.progress.toFixed(2)}%"></span></div>
+<section class="liveCurrent">${phaseLabel ? `<div class="stepEyebrow">${esc(phaseLabel)}</div>` : ''}<h1>${esc(vm.title)}</h1>${subtitle ? `<p class="stepSubtitle">${esc(subtitle)}</p>` : ''}${posture || priest ? `<div class="liveOrientation">${posture}${priest}</div>` : ''}${cues.length ? `<div class="liveCues">${cues.join('')}</div>` : ''}${renderTexts(state)}<div class="liveContextActions">${scripture}<button class="liveContextAction whyButton" data-live-sheet="why">${img(icons_1.NAV_ICON.info,'smallNavIcon','')}<span>${esc(tr('whatHappening'))}</span><span>→</span></button></div></section>
+<nav class="liveNav"><button class="liveBackButton" data-live-prev ${vm.index === 0 ? 'disabled' : ''}>← <span>${esc(tr('previous'))}</span></button><button class="liveMapCounter" data-live-sheet="map" aria-label="${esc(tr('massMap'))}: ${esc(vm.progressLabel)}"><span>${vm.index + 1}</span><small>/ ${vm.sequence.steps.length}</small></button><button class="liveNextButton" data-live-next>${vm.index === vm.sequence.steps.length - 1 ? esc(tr('finish')) : `<span>${esc(tr('next'))}</span> →`}</button></nav>${renderSheet(state)}</main>`;
+}
+function renderLiveMass(root, state) { root.innerHTML = renderLiveMassToString(state); }
+
+},24:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
