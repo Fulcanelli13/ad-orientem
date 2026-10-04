@@ -5,6 +5,9 @@ import {
   deriveHostOptions,
   stampMassReaderUi,
   mountR17Preview,
+  ACTIVE_MASS_STORAGE_KEY,
+  readPersistedActiveMass,
+  persistedMassIsResumable,
 } from "../src/mass/browser-entry.js";
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
@@ -69,6 +72,29 @@ assert.throws(
   }),
   /blocked/,
 );
+
+
+const persistedStorage={
+  value:null,
+  getItem(key){return key===ACTIVE_MASS_STORAGE_KEY?this.value:null;},
+  setItem(key,value){if(key===ACTIVE_MASS_STORAGE_KEY)this.value=String(value);},
+};
+persistedStorage.setItem(ACTIVE_MASS_STORAGE_KEY,JSON.stringify({
+  schema:"ao-mass-entry-bootstrap-v1",
+  session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}},
+  readerPreferences:{mode:"LIVE",postureProfile:"TRADITIONAL_WALSH",gestureProfile:"GUIDED_1962",language:"en"},
+  state:"active",
+  readerPosition:{sectionId:"AO.CARD.003"},
+}));
+const persisted=readPersistedActiveMass(persistedStorage);
+assert.equal(persisted?.session?.resolvedMass?.form,"MISSA_CANTATA_INCENSE");
+assert.equal(persisted?.readerPreferences?.mode,"LIVE");
+assert.equal(persisted?.readerPosition?.sectionId,"AO.CARD.003");
+assert.equal(persistedMassIsResumable(persisted),true);
+assert.equal(persistedMassIsResumable({...persisted,state:"complete"}),false);
+assert.equal(readPersistedActiveMass({getItem:()=>"{bad"}),null);
+
+// browser-entry persisted Mass contract
 
 console.log("browser-entry host mapping: PASS");
 
