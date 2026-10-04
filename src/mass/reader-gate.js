@@ -1,4 +1,4 @@
-// Final reader feature gate. R17 native is the production default; LEGACY remains an explicit rollback.
+// Reader override parser. Production rollout scope is owned by browser-entry; LEGACY remains the safe outside-scope default.
 
 export const READER_UI_MODES = Object.freeze(["LEGACY","SHADOW","PREVIEW"]);
 export const READER_UI_STORAGE_KEY = "ao-r17-reader-ui";
@@ -17,14 +17,24 @@ export function resolveReaderUiMode({search="",stored=null}={}){
     const p=new URLSearchParams(String(search||""));
     query=p.get("aoR17Reader");
   }catch{}
-  const selected=query??stored;
-  return selected==null || String(selected).trim()==="" ? "PREVIEW" : normalize(selected);
+  return normalize(query??stored);
+}
+
+export function readBrowserReaderUiOverride(win=globalThis){
+  let stored=null;
+  try{stored=win?.localStorage?.getItem?.(READER_UI_STORAGE_KEY)??null}catch{}
+  let query=null;
+  try{
+    const p=new URLSearchParams(String(win?.location?.search||""));
+    query=p.get("aoR17Reader");
+  }catch{}
+  const raw=query??stored;
+  if(raw==null || String(raw).trim()==="")return null;
+  return normalize(raw);
 }
 
 export function readBrowserReaderUiMode(win=globalThis){
-  let stored=null;
-  try{stored=win?.localStorage?.getItem?.(READER_UI_STORAGE_KEY)??null}catch{}
-  return resolveReaderUiMode({search:win?.location?.search??"",stored});
+  return readBrowserReaderUiOverride(win)??"LEGACY";
 }
 
 export function readerModeAllowsLegacyDom(mode){
