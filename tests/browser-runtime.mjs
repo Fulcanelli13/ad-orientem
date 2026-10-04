@@ -364,6 +364,9 @@ assert.equal(requiemEntered.session.plan.blessingAllowed,false);
 assert.deepEqual([...requiemEntered.session.plan.followingGraphs],["REQUIEM_ABSOLUTION"]);
 assert.equal(requiem.getReaderModel().totalCards,30,"Requiem variance duplicated the Mass reader surface");
 requiem.showSection(29);
+assert.equal(requiem.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
+assert.ok(!requiem.getReaderState().paragraphs.some(p=>p.primary?.includes("Benedícat vos")),
+  "Requiem reader rendered the omitted final blessing");
 const requiemMassEnd=requiem.getCurrentSectionId();
 const absStart=requiem.next();
 assert.equal(requiem.getCurrentSectionId(),requiemMassEnd,"Absolution handoff fabricated a Last Gospel card");
@@ -399,10 +402,14 @@ assert.equal(corpusEntered.session.plan.dismissal,"BENEDICAMUS_DOMINO");
 assert.equal(corpusEntered.session.plan.blessingAllowed,false);
 assert.equal(corpusEntered.session.plan.normalLastGospel,false);
 assert.deepEqual([...corpusEntered.session.plan.followingGraphs],["CORPUS_CHRISTI_PROCESSION"]);
-corpus.showSection(28);
+corpus.showSection(29);
+assert.equal(corpus.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
+assert.ok(corpus.getReaderState().paragraphs.some(p=>p.primary?.includes("Pláceat tibi")));
+assert.ok(!corpus.getReaderState().paragraphs.some(p=>p.primary?.includes("Benedícat vos")),
+  "Corpus Christi reader rendered the omitted final blessing");
 const corpusMassEnd=corpus.getCurrentSectionId();
 const corpusStart=corpus.next();
-assert.equal(corpus.getCurrentSectionId(),corpusMassEnd,"Corpus procession handoff fabricated a blessing/Last Gospel card");
+assert.equal(corpus.getCurrentSectionId(),corpusMassEnd,"Corpus procession handoff fabricated a Last Gospel card");
 assert.equal(corpusStart.cardTitle,"Mass Ends for the Procession");
 assert.equal(corpus.getCorpusChristiState().card.id,"CORPUS-R01");
 corpus.setCorpusChristiSacramentalState("MONSTRANCE_PLACED_IN_CELEBRANT_HANDS");
@@ -437,6 +444,10 @@ assert.equal(holyThursdayEntered.session.plan.blessingAllowed,false);
 assert.equal(holyThursdayEntered.session.plan.normalLastGospel,false);
 assert.deepEqual([...holyThursdayEntered.session.plan.followingGraphs],["HOLY_THURSDAY_POST"]);
 holyThursday.showSection(29);
+assert.equal(holyThursday.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
+assert.ok(holyThursday.getReaderState().paragraphs.some(p=>p.primary?.includes("Pláceat tibi")));
+assert.ok(!holyThursday.getReaderState().paragraphs.some(p=>p.primary?.includes("Benedícat vos")),
+  "Holy Thursday reader rendered the omitted final blessing");
 const holyThursdayMassEnd=holyThursday.getCurrentSectionId();
 const htStart=holyThursday.next();
 assert.equal(holyThursday.getCurrentSectionId(),holyThursdayMassEnd,"Holy Thursday following action fabricated a Last Gospel card");
