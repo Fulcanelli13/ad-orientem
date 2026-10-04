@@ -11,6 +11,7 @@ import { createRogationsReaderController, loadRogationsReaderData } from "./read
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
 import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
 import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
+import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createFormLifecycleRuntime } from "./form-lifecycle.js";
@@ -28,6 +29,7 @@ export function createBrowserMassRuntime({
   requiemAbsolutionContext = null,
   loadCorpusChristiData = loadCorpusChristiProcessionReaderData,
   loadHolyThursdayPostData = loadHolyThursdayPostReaderData,
+  loadGoodFridayData = loadGoodFridayReaderData, goodFridayContext = null,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
   onLifecycleHandoff = null,
@@ -54,6 +56,9 @@ export function createBrowserMassRuntime({
   let inCorpusChristi = false;
   let holyThursdayPostController = null;
   let inHolyThursdayPost = false;
+  let goodFridayController = null;
+  let inGoodFriday = false;
+  let distinctRiteCompletion = null;
   let lifecycleRuntime = null;
   let inLifecycle = false;
 
@@ -287,6 +292,34 @@ export function createBrowserMassRuntime({
     return moment;
   }
 
+  function goodFridayMoment(){
+    const state=goodFridayController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:state.step?.recordId??card.id,
+      sectionTitle:"Good Friday",
+      cardTitle:card.title,
+      cardUpdate:card.cardUpdate!==false,
+      paragraphs:(card.paragraphs??[]).map(row=>({
+        id:row.id,kind:row.kind,primary:row.latin,
+        sourceCueIds:[...(row.sourceIds??[])],
+      })),
+      progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
+      posture:state.posture ? {label:state.posture} : null,
+      gesture:state.action ? {label:state.action} : null,
+      guide:null,
+    };
+  }
+
+  function showGoodFriday(){
+    const moment=goodFridayMoment();
+    if(!moment)return null;
+    currentSectionId=null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
   function introitOnlyCard(){
     const card=readerModel?.cardBySequence?.(1);
     if(!card)return null;
@@ -378,7 +411,31 @@ export function createBrowserMassRuntime({
     return notifyLifecycle(lifecycleRuntime.advance());
   }
 
+  function completeDistinctRite(){
+    distinctRiteCompletion=Object.freeze({
+      schema:"ao-distinct-rite-completion-v1",
+      stage:"DISTINCT_RITE_COMPLETE",
+      rite:"GOOD_FRIDAY",
+      handoff:"GIVE_THANKS",
+      ordinaryMassGraphActive:false,
+    });
+    inGoodFriday=false;
+    onLifecycleHandoff?.(distinctRiteCompletion,currentPrepared);
+    return distinctRiteCompletion;
+  }
+
   function move(direction) {
+    if(inGoodFriday && goodFridayController){
+      if(direction==="next"){
+        const state=goodFridayController.project();
+        if(state.atEnd)return completeDistinctRite();
+        goodFridayController.next();
+        return showGoodFriday();
+      }
+      const state=goodFridayController.project();
+      if(!state.atStart)goodFridayController.previous();
+      return showGoodFriday();
+    }
     if(inHolyThursdayPost && holyThursdayPostController){
       if(direction==="next"){
         const state=holyThursdayPostController.project();
@@ -584,6 +641,25 @@ export function createBrowserMassRuntime({
   const entry = createMassEntryController({
     celebrationApi, resolveHostOptions, readReaderPreferences,
     openReader: async prepared => {
+      const plan=prepared?.session?.plan;
+      const isGoodFriday=plan?.kind==="DISTINCT_RITE" && String(plan?.rite??"")==="GOOD_FRIDAY";
+      if(isGoodFriday){
+        const data=await Promise.resolve(loadGoodFridayData(prepared));
+        goodFridayController=createGoodFridayReaderController({
+          graph:data?.graph,payload:data?.payload,...(goodFridayContext??{})
+        });
+        inGoodFriday=true;
+        distinctRiteCompletion=null;
+        currentPrepared=prepared;
+        currentSectionId=null;
+        readerModel=null;
+        objectiveRuntime=null;
+        lifecycleRuntime=null;
+        reader.mount(prepared);
+        showGoodFriday();
+        onReaderMounted?.(prepared,reader,null);
+        return;
+      }
       const structuralSupport=structureSupport(prepared);
       if(!structuralSupport.supported){
         throw new Error(structuralSupport.reason || "R17 browser reader structure is not certified");
@@ -690,6 +766,9 @@ export function createBrowserMassRuntime({
     inCorpusChristi = false;
     holyThursdayPostController = null;
     inHolyThursdayPost = false;
+    goodFridayController = null;
+    inGoodFriday = false;
+    distinctRiteCompletion = null;
     lifecycleRuntime = null;
     inLifecycle = false;
   }
@@ -719,6 +798,8 @@ export function createBrowserMassRuntime({
     getRequiemAbsolutionState: () => requiemAbsolutionController?.project?.() ?? null,
     getCorpusChristiState: () => corpusChristiController?.project?.() ?? null,
     getHolyThursdayPostState: () => holyThursdayPostController?.project?.() ?? null,
+    getGoodFridayState: () => goodFridayController?.project?.() ?? null,
+    getDistinctRiteCompletion: () => distinctRiteCompletion,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? null,
     chooseLeonine: accept => {
       if(!lifecycleRuntime)return null;
@@ -745,5 +826,6 @@ export function createBrowserMassRuntime({
     setCorpusChristiProcessionParticipant: value => { if(!corpusChristiController)return null; corpusChristiController.setProcessionParticipant(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setCorpusChristiSacramentalState: value => { if(!corpusChristiController)return null; corpusChristiController.setSacramentalState(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setHolyThursdayJoiningState: value => { if(!holyThursdayPostController)return null; holyThursdayPostController.setJoiningState(value); return inHolyThursdayPost ? showHolyThursdayPost() : holyThursdayPostController.project(); },
+    setGoodFridayRecord: value => { if(!goodFridayController)return null; goodFridayController.goToRecord(value); return inGoodFriday ? showGoodFriday() : goodFridayController.project(); },
   });
 }
