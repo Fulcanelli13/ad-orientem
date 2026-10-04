@@ -381,15 +381,17 @@ async function exerciseRealShellFollowingAction(browser,spec){
     async function tapNext(){return tap(next,"Next")}
     async function tapBack(){return tap(back,"Back")}
 
-    const exit=await page.evaluate(exitSourceSequence=>{
+    await page.evaluate(exitSourceSequence=>{
       const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
       const card=api?.model?.cards?.find?.(x=>x.sourceSequence===exitSourceSequence);
       if(!card)throw new Error("Missing source-sequence exit card "+exitSourceSequence);
-      const rendered=api.showSequence(card.sequence);
-      return {id:card.sectionId,renderedTitle:rendered?.title??null};
+      api.showSequence(card.sequence);
     },spec.exitSourceSequence);
-    if(spec.filteredExitTitle)assert.equal(exit.renderedTitle,spec.filteredExitTitle,
-      spec.kind+" production reader failed to suppress the final blessing surface");
+    if(spec.filteredExitTitle){
+      const renderedTitle=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim()??"";
+      assert.equal(renderedTitle,spec.filteredExitTitle,
+        spec.kind+" production reader failed to suppress the final blessing surface");
+    }
 
     await tapNext();
     await page.waitForFunction(({getter,firstId})=>{
