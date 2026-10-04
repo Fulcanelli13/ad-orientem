@@ -124,6 +124,12 @@ export async function mountR17Preview({
     doc,
     prepared,
     iconResolver:createHostIconResolver({assets}),
+    beforeClose:async()=>{
+      const shell=globalThis.AO_APP_SHELL_V1;
+      if(typeof shell?.navigate!=="function")return true;
+      const result=await shell.navigate("home");
+      return result?.ok===true;
+    },
   }));
   return Object.freeze({
     preview,
