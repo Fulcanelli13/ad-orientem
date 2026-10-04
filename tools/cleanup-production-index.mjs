@@ -50,7 +50,7 @@ if(!/id=["']ao-shared-prayer-repairs-css["']/.test(html)){
 if(!/html\.aoAppLive[\s\S]*?#ao-global-ribbon/.test(migratedCss)){
   throw new Error("migrated LIVE ribbon CSS is not owned by aoAppLive");
 }
-if(!/#aoPrayerBookRoot \.lab-prayer-flip>[[]hidden[]]/.test(migratedCss)){
+if(!migratedCss.includes("#aoPrayerBookRoot .lab-prayer-flip>[hidden]")){
   throw new Error("critical shared prayer hidden-state repair was lost");
 }
 
