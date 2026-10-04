@@ -26,4 +26,14 @@ assert.equal(await openOct4FieldStep("mass",fake),true);
 assert.deepEqual(opened,["pray.adoration","pray.benediction","mass"]);
 assert.equal(await openOct4FieldStep("unknown",fake),false);
 
-console.log("field shell recovery: PASS — French source routing + Adoration/Benediction/Holy Rosary launcher");
+const legacyOpened=[];
+const legacyHost={
+  AO_MODULES:{open:async()=>({ok:false})},
+  AO_EUCHARISTIC_V354:{open:id=>{legacyOpened.push("eucharistic:"+id);return true}},
+  AOTraditionalPrayerBook:{openModule:id=>{legacyOpened.push("prayerbook:"+id);return true}},
+};
+assert.equal(await openOct4FieldStep("adoration",legacyHost),true);
+assert.equal(await openOct4FieldStep("benediction",legacyHost),true);
+assert.deepEqual(legacyOpened,["eucharistic:adoration","prayerbook:benediction"]);
+
+console.log("field shell recovery: PASS — French source routing + Adoration/Benediction/Holy Rosary launcher + legacy module fallbacks");
