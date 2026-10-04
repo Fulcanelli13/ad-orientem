@@ -622,13 +622,37 @@
         ],
         "productionDefaultChanged": false
       }
+    },
+    {
+      "id": "GENERIC_PROCESSION_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "controller": "src/mass/reader-generic-procession.js",
+      "payload": "data/presentation/reader-generic-procession.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#PROC",
+      "runtime": "src/mass/browser-runtime.js",
+      "recoveredGraphRecords": 7,
+      "readerSurfaces": 3,
+      "guarantees": [
+        "activation is explicit following-action only",
+        "four PROC-000 Mass-ending records remain plan-owned and do not render as duplicate post-Mass cards",
+        "generic procession does not invent Benedicamus Domino, blessing suppression or Last-Gospel suppression",
+        "post-Mass reader renders only PROC-100-010/020/030",
+        "processional posture applies only when the user is actually participating",
+        "feast/procession-specific chant text is never fabricated by the generic reader",
+        "completion returns to the post-Mass lifecycle"
+      ],
+      "tests": [
+        "tests/reader-generic-procession.mjs",
+        "tests/reader-special-structure.mjs",
+        "tests/browser-runtime.mjs"
+      ]
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Prayer over the People insertion, Generic Procession, Good Friday and Easter Vigil."
+      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Prayer over the People insertion, Easter Vigil."
     }
   ],
   "certificationPolicy": {
