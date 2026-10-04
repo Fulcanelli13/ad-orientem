@@ -63,7 +63,12 @@ export function installAppShellBridge({
         host: state.host,
         initialSurface: initialSurface(win, state.host),
       });
-      installNonMassConvergence({ win });
+      if (
+        typeof win?.document?.createElement === "function" &&
+        typeof win?.MutationObserver === "function"
+      ) {
+        installNonMassConvergence({ win });
+      }
       setDataset("ready");
     } catch {
       state.blocked = true;
