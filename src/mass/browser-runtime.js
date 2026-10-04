@@ -11,6 +11,7 @@ import { createRogationsReaderController, loadRogationsReaderData } from "./read
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
 import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
 import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
+import { createGenericProcessionReaderController, loadGenericProcessionReaderData } from "./reader-generic-procession.js";
 import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
 import { loadCanonicalReaderEvents } from "./reader-event-state.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
@@ -29,6 +30,7 @@ export function createBrowserMassRuntime({
   requiemAbsolutionContext = null,
   loadCorpusChristiData = loadCorpusChristiProcessionReaderData,
   loadHolyThursdayPostData = loadHolyThursdayPostReaderData,
+  loadGenericProcessionData = loadGenericProcessionReaderData,
   loadGoodFridayData = loadGoodFridayReaderData, goodFridayContext = null,
   onPresentationModeChange = null, onPrevious = null, onNext = null,
   onGuide = null, onReaderMounted = null, onSectionChange = null,
@@ -56,6 +58,8 @@ export function createBrowserMassRuntime({
   let inCorpusChristi = false;
   let holyThursdayPostController = null;
   let inHolyThursdayPost = false;
+  let genericProcessionController = null;
+  let inGenericProcession = false;
   let goodFridayController = null;
   let inGoodFriday = false;
   let distinctRiteState = null;
@@ -262,6 +266,30 @@ export function createBrowserMassRuntime({
     return moment;
   }
 
+  function genericProcessionMoment(){
+    const state=genericProcessionController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return {
+      id:card.id,
+      sectionTitle:"Procession",
+      cardTitle:card.title,
+      cardUpdate:true,
+      paragraphs:[],
+      progress:String(state.index+1)+" / "+String(state.total)+" · Procession",
+      posture:state.posture && state.posture!=="LOCAL" ? {label:state.posture} : null,
+      gesture:null,
+      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+    };
+  }
+
+  function showGenericProcession(){
+    const moment=genericProcessionMoment();
+    if(!moment)return null;
+    reader.renderMoment(moment);
+    return moment;
+  }
+
   function goodFridayMoment(){
     const state=goodFridayController?.project?.();
     const card=state?.card;
@@ -402,6 +430,11 @@ export function createBrowserMassRuntime({
       inHolyThursdayPost=true;
       return showHolyThursdayPost();
     }
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && genericProcessionController){
+      inLifecycle=false;
+      inGenericProcession=true;
+      return showGenericProcession();
+    }
     inLifecycle=true;
     return state;
   }
@@ -431,6 +464,21 @@ export function createBrowserMassRuntime({
       const state=goodFridayController.project();
       if(!state.atStart)goodFridayController.previous();
       return showGoodFriday();
+    }
+    if(inGenericProcession && genericProcessionController){
+      if(direction==="next"){
+        const state=genericProcessionController.project();
+        if(state.atEnd){
+          inGenericProcession=false;
+          inLifecycle=true;
+          return notifyLifecycle(lifecycleRuntime.completeFollowingAction());
+        }
+        genericProcessionController.next();
+        return showGenericProcession();
+      }
+      const state=genericProcessionController.project();
+      if(!state.atStart)genericProcessionController.previous();
+      return showGenericProcession();
     }
     if(inHolyThursdayPost && holyThursdayPostController){
       if(direction==="next"){
@@ -676,9 +724,10 @@ export function createBrowserMassRuntime({
       const hasRequiemAbsolution=(prepared?.session?.plan?.followingGraphs??[]).includes("REQUIEM_ABSOLUTION");
       const hasCorpusChristi=(prepared?.session?.plan?.followingGraphs??[]).includes("CORPUS_CHRISTI_PROCESSION");
       const hasHolyThursdayPost=(prepared?.session?.plan?.followingGraphs??[]).includes("HOLY_THURSDAY_POST");
+      const hasGenericProcession=(prepared?.session?.plan?.followingGraphs??[]).includes("GENERIC_PROCESSION");
       const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
       const needsObjectiveRuntime=["LOW","SOLEMN"].includes(form);
-      const [data,aspergesData,palmData,ashData,candlemasData,rogationsData,requiemAbsolutionData,corpusChristiData,holyThursdayPostData,events]=await Promise.all([
+      const [data,aspergesData,palmData,ashData,candlemasData,rogationsData,requiemAbsolutionData,corpusChristiData,holyThursdayPostData,genericProcessionData,events]=await Promise.all([
         Promise.resolve(loadPresentationData(prepared)),
         hasAsperges ? Promise.resolve(loadAspergesData(prepared)) : null,
         hasPalm ? Promise.resolve(loadPalmData(prepared)) : null,
@@ -688,6 +737,7 @@ export function createBrowserMassRuntime({
         hasRequiemAbsolution ? Promise.resolve(loadRequiemAbsolutionData(prepared)) : null,
         hasCorpusChristi ? Promise.resolve(loadCorpusChristiData(prepared)) : null,
         hasHolyThursdayPost ? Promise.resolve(loadHolyThursdayPostData(prepared)) : null,
+        hasGenericProcession ? Promise.resolve(loadGenericProcessionData(prepared)) : null,
         needsObjectiveRuntime
           ? (eventData ?? Promise.resolve(loadEventData(prepared)))
           : Promise.resolve([]),
@@ -735,6 +785,11 @@ export function createBrowserMassRuntime({
         payload:holyThursdayPostData?.payload,
       }) : null;
       inHolyThursdayPost=false;
+      genericProcessionController=hasGenericProcession ? createGenericProcessionReaderController({
+        graph:genericProcessionData?.graph,
+        payload:genericProcessionData?.payload,
+      }) : null;
+      inGenericProcession=false;
       const activePreceding=[inAsperges,inPalm,inAsh,inCandlemas,inRogations].filter(Boolean).length;
       if(activePreceding>1)throw new Error("Multiple preceding rite readers are not yet composable");
       reader.mount(prepared);
@@ -770,6 +825,8 @@ export function createBrowserMassRuntime({
     inCorpusChristi = false;
     holyThursdayPostController = null;
     inHolyThursdayPost = false;
+    genericProcessionController = null;
+    inGenericProcession = false;
     goodFridayController = null;
     inGoodFriday = false;
     distinctRiteState = null;
@@ -802,6 +859,7 @@ export function createBrowserMassRuntime({
     getRequiemAbsolutionState: () => requiemAbsolutionController?.project?.() ?? null,
     getCorpusChristiState: () => corpusChristiController?.project?.() ?? null,
     getHolyThursdayPostState: () => holyThursdayPostController?.project?.() ?? null,
+    getGenericProcessionState: () => genericProcessionController?.project?.() ?? null,
     getGoodFridayState: () => goodFridayController?.project?.() ?? null,
     getLifecycleState: () => lifecycleRuntime?.snapshot?.() ?? distinctRiteState,
 
@@ -830,5 +888,6 @@ export function createBrowserMassRuntime({
     setCorpusChristiProcessionParticipant: value => { if(!corpusChristiController)return null; corpusChristiController.setProcessionParticipant(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setCorpusChristiSacramentalState: value => { if(!corpusChristiController)return null; corpusChristiController.setSacramentalState(value); return inCorpusChristi ? showCorpusChristi() : corpusChristiController.project(); },
     setHolyThursdayJoiningState: value => { if(!holyThursdayPostController)return null; holyThursdayPostController.setJoiningState(value); return inHolyThursdayPost ? showHolyThursdayPost() : holyThursdayPostController.project(); },
+    setGenericProcessionParticipant: value => { if(!genericProcessionController)return null; genericProcessionController.setParticipating(value); return inGenericProcession ? showGenericProcession() : genericProcessionController.project(); },
   });
 }
