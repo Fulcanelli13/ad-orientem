@@ -87,6 +87,12 @@ function statusSnapshot() {
   return null;
 }
 
+export function stampMassReaderUi(owner,doc=globalThis.document){
+  const value=String(owner??"UNKNOWN");
+  if(doc?.documentElement?.dataset)doc.documentElement.dataset.aoMassReaderUi=value;
+  return value;
+}
+
 function persistPrepared(prepared) {
   globalThis.AO_R17_ACTIVE_MASS = prepared;
   try {
@@ -131,11 +137,12 @@ async function openProductionReader(prepared) {
   if(readerUiMode==="LEGACY"){
     if(typeof bridge?.startLive!=="function")throw new Error("Legacy rollback renderer is unavailable");
     await Promise.resolve(bridge.startLive());
+    const uiOwner=stampMassReaderUi("LEGACY_EXPLICIT_ROLLBACK");
     globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
       version:VERSION,prepared,readerUiMode,
       legacyActive:bridge.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null,
       shadowAudit:null,previewFallbackReason:null,
-      uiOwner:"LEGACY_EXPLICIT_ROLLBACK",
+      uiOwner,
       canonicalOwner:"R17_SESSION_ENGINE",
     });
     return;
@@ -146,9 +153,10 @@ async function openProductionReader(prepared) {
     await Promise.resolve(bridge.startLive());
     const legacyActive=bridge.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null;
     const shadowAudit=runReaderShadowAudit({doc:document,prepared});
+    const uiOwner=stampMassReaderUi("LEGACY_SHADOW_AUDIT");
     globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
       version:VERSION,prepared,readerUiMode,legacyActive,shadowAudit,
-      previewFallbackReason:null,uiOwner:"LEGACY_SHADOW_AUDIT",
+      previewFallbackReason:null,uiOwner,
       canonicalOwner:"R17_SESSION_ENGINE",
     });
     return;
@@ -158,11 +166,12 @@ async function openProductionReader(prepared) {
     throw new Error("Unsupported production reader mode: "+readerUiMode);
   }
   const previewState=await mountR17Preview({doc:document,prepared});
+  const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,prepared,readerUiMode,
     legacyActive:null,shadowAudit:null,
     previewFallbackReason:null,
-    uiOwner:previewState.uiOwner,
+    uiOwner,
     canonicalOwner:"R17_SESSION_ENGINE",
   });
 }
