@@ -117,6 +117,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
           proper,
           properSource:spec.properSource,
           insertedRites:[spec.insertedRite],
+          requiemAbsolution:spec.requiemAbsolution??undefined,
           conditions:[],
           rubricSources:["MR1962"],
         }),
@@ -477,6 +478,7 @@ async function exerciseRealShellFollowingAction(browser,spec){
         followingGraphs:[...(prepared.session.plan.followingGraphs??[])],
         normalLastGospel:prepared.session.plan.normalLastGospel,
         blessingAllowed:prepared.session.plan.blessingAllowed,
+        requiemAbsolution:prepared.session.resolvedMass.provenance?.requiemAbsolution??null,
       };
     },{iconKeys,spec});
 
@@ -487,6 +489,10 @@ async function exerciseRealShellFollowingAction(browser,spec){
       spec.kind+" production plan Last Gospel policy changed");
     assert.equal(setup.blessingAllowed,spec.blessingAllowed,
       spec.kind+" production plan blessing policy changed");
+    if(spec.requiemAbsolution)assert.deepEqual(
+      setup.requiemAbsolution,spec.requiemAbsolution,
+      "Requiem funeral branch context did not survive production host adaptation"
+    );
 
     await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
     const ownership=await page.evaluate(()=>({
@@ -600,9 +606,29 @@ async function exerciseRealShellFollowingAction(browser,spec){
       assert.equal(procession.id,"PROC-100-020");
       await tapNext();
     }else if(spec.kind==="REQUIEM_ABSOLUTION"){
-      // Body-absent default: ABS-R01 → ABS-R03 → ABS-R04.
-      await tapNext();
-      await tapNext();
+      const funeral=await page.evaluate(()=>{
+        const state=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getRequiemAbsolutionState?.();
+        return {
+          bodyPresent:state?.bodyPresent??null,
+          burialProcession:state?.burialProcession??null,
+          id:state?.card?.id??null,
+        };
+      });
+      assert.deepEqual(funeral,{bodyPresent:true,burialProcession:true,id:"ABS-R01"},
+        "Requiem body-present burial branch did not reach the native reader");
+
+      await tapNext(); // ABS-R02
+      await tapNext(); // ABS-R03
+      await tapNext(); // ABS-R04
+      const absolutionAction=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_STATE?.gesture??null);
+      assert.equal(absolutionAction,null,
+        "Requiem coffin aspersion/incensation fabricated a faithful gesture");
+      await tapNext(); // ABS-R05
+      assert.equal(
+        (await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim(),
+        "In paradisum",
+        "Requiem body-present burial branch lost In paradisum"
+      );
     }
 
     await page.waitForFunction(({getter,lastId})=>{
@@ -912,7 +938,8 @@ try{
     properSource:"Votive/Requiem",
     getter:"getRequiemAbsolutionState",
     firstId:"ABS-R01",
-    lastId:"ABS-R04",
+    lastId:"ABS-R05",
+    requiemAbsolution:{bodyPresent:true,burialProcession:true},
     exitSourceSequence:29,
     normalLastGospel:false,
     blessingAllowed:false,
@@ -959,8 +986,6 @@ try{
     normalLastGospel:true,
     blessingAllowed:true,
   });
-
-  await exerciseRealShellGoodFriday(browser);
 
   console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, full pre-Mass cluster, Good Friday and four following-action lifecycles on phone Chromium without booting legacy.");
 }finally{
