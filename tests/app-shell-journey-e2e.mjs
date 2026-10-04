@@ -330,24 +330,31 @@ try{
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray" &&
     document.documentElement.dataset.aoPrayRouteOwner==="modular-pray-v1" &&
-    document.getElementById("aoPrayerBookRoot")?.classList?.contains("open"),
+    globalThis.AO_PRAY_V435930?.version==="43.59.30-pray-acceptance" &&
+    document.getElementById("aoPray435930")?.classList?.contains("open"),
     null,{timeout:10000});
   const prayOwnership=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     routeOwner:document.documentElement.dataset.aoPrayRouteOwner??null,
-    rootOwner:document.getElementById("aoPrayerBookRoot")?.dataset?.aoPrayRouteOwner??null,
+    rootOwner:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
     installed:globalThis.AO_PRAY_APP_V1?.status?.().installed??false,
     presentationOwner:globalThis.AO_PRAY_APP_V1?.status?.().presentationOwner??null,
     donorAvailable:globalThis.AO_PRAY_APP_V1?.status?.().donorAvailable??false,
-    prayerBookOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+    presentationVersion:globalThis.AO_PRAY_V435930?.version??null,
+    prayerRecords:globalThis.AO_PRAY_V435930?.qa?.()?.prayerRecords??null,
+    prayOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
+    legacyPrayerBookOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
   }));
   assert.equal(prayOwnership.active,"pray");
   assert.equal(prayOwnership.routeOwner,"modular-pray-v1","production PRAY click bypassed modular route owner");
   assert.equal(prayOwnership.rootOwner,"modular-pray-v1");
   assert.equal(prayOwnership.installed,true);
-  assert.equal(prayOwnership.presentationOwner,"AOTraditionalPrayerBook");
+  assert.equal(prayOwnership.presentationOwner,"AO_PRAY_V435930");
   assert.equal(prayOwnership.donorAvailable,true);
-  assert.equal(prayOwnership.prayerBookOpen,true);
+  assert.equal(prayOwnership.presentationVersion,"43.59.30-pray-acceptance");
+  assert.equal(prayOwnership.prayerRecords,48);
+  assert.equal(prayOwnership.prayOpen,true);
+  assert.equal(prayOwnership.legacyPrayerBookOpen,false,"obsolete PrayerBook surface reopened underneath final PRAY");
 
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>
