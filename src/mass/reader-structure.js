@@ -136,7 +136,7 @@ export function structureSupport(prepared,modeOverride=null){
   if(unsupportedPreceding.length)return Object.freeze({supported:false,reason:"PRECEDING_RITE_PROJECTION_PENDING"});
   const unsupportedFollowing=[...(plan.followingGraphs??[])].filter(x=>!["REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GENERIC_PROCESSION"].includes(x));
   if(unsupportedFollowing.length)return Object.freeze({supported:false,reason:"FOLLOWING_ACTION_PROJECTION_PENDING"});
-  const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>!["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS"].includes(x));
+  const structuralOverlays=(plan.overlayGraphs??[]).filter(x=>!["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS","NUPTIAL"].includes(x));
   if(structuralOverlays.length)return Object.freeze({supported:false,reason:"STRUCTURAL_OVERLAY_PROJECTION_PENDING"});
   const mode=normalizeMode(modeOverride??prepared?.readerPreferences?.mode??resolved?.presentationMode??"LIVE");
   if(mode==="LIVE")return Object.freeze({
