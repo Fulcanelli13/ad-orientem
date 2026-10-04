@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.4.1",
+  "version": "4.5.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html phone-Chromium acceptance is now explicit for the certified pre-Mass cluster (Asperges, Palm, Ash, Candlemas and Rogations). Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native remains the production reader. Full-year special-structure runtime/parity is certified; actual index.html phone-Chromium acceptance is explicit for the full pre-Mass cluster and four following-action lifecycles. Distinct Good Friday, Easter Vigil and Nuptial real-shell evidence remain separately tracked. Legacy remains explicit rollback/debug only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -609,7 +609,7 @@
     },
     {
       "id": "REQUIEM_ABSOLUTION_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-requiem-absolution.js",
       "payload": "data/presentation/reader-requiem-absolution.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#ABS",
@@ -627,11 +627,14 @@
         "tests/reader-requiem-absolution.mjs",
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
-      ]
+      ],
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui"
     },
     {
       "id": "CORPUS_CHRISTI_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-corpus-christi.js",
       "payload": "data/presentation/reader-corpus-christi.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#CORPUS",
@@ -651,7 +654,10 @@
         "tests/reader-corpus-christi.mjs",
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
-      ]
+      ],
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui"
     },
     {
       "id": "ROGATIONS_NATIVE_PAYLOAD",
@@ -682,7 +688,7 @@
     },
     {
       "id": "HOLY_THURSDAY_POST_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-holy-thursday-post.js",
       "payload": "data/presentation/reader-holy-thursday-post.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#HT_POST",
@@ -702,7 +708,10 @@
         "tests/reader-holy-thursday-post.mjs",
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
-      ]
+      ],
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui"
     },
     {
       "id": "PILOT_VERTICAL_PATH",
@@ -739,7 +748,7 @@
     },
     {
       "id": "GENERIC_PROCESSION_NATIVE_PAYLOAD",
-      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-generic-procession.js",
       "payload": "data/presentation/reader-generic-procession.v1.json",
       "structuralSource": "data/mass/special-days-extension.v1.3.json#PROC",
@@ -759,7 +768,10 @@
         "tests/reader-generic-procession.mjs",
         "tests/reader-special-structure.mjs",
         "tests/browser-runtime.mjs"
-      ]
+      ],
+      "productionTest": "tests/app-shell-final-e2e.mjs",
+      "productionOwner": "R17_NATIVE_PRODUCTION",
+      "uiOwnershipMarker": "data-ao-mass-reader-ui"
     },
     {
       "id": "PRAYER_OVER_PEOPLE_READER_INSERTION",
@@ -902,18 +914,18 @@
         "PALM",
         "ASH",
         "CANDLEMAS",
-        "ROGATIONS"
-      ],
-      "pending": [
+        "ROGATIONS",
         "REQUIEM_ABSOLUTION",
         "HOLY_THURSDAY_POST",
         "CORPUS_CHRISTI_PROCESSION",
-        "GENERIC_PROCESSION",
+        "GENERIC_PROCESSION"
+      ],
+      "pending": [
         "GOOD_FRIDAY",
         "EASTER_VIGIL",
         "NUPTIAL"
       ],
-      "rule": "Do not equate modular runtime/reader-harness certification with actual index.html real-shell certification. The pre-Mass cluster is now production-shell certified; post-Mass/distinct/overlay rites remain pending until their app-shell E2E evidence is pinned.",
+      "rule": "Do not equate modular runtime/reader-harness certification with actual index.html real-shell certification. The pre-Mass and following-action clusters are production-shell certified; distinct Good Friday/Easter Vigil and Nuptial overlay real-shell evidence remain pending.",
       "currentTest": "tests/app-shell-final-e2e.mjs"
     },
     {
@@ -941,6 +953,33 @@
         "zero uncaught page errors",
         "Candlemas processional CANDLE_LIT object state is exposed independently of posture",
         "Candlemas Mass candle policy is verified at Gospel, Pater completion and the first post-Pater witness event"
+      ]
+    },
+    {
+      "id": "FOLLOWING_ACTION_CLUSTER_REAL_APP_SHELL_ACCEPTANCE",
+      "status": "CERTIFIED",
+      "test": "tests/app-shell-final-e2e.mjs",
+      "viewport": "390x844 touch Chromium",
+      "actualIndexHtml": true,
+      "actions": [
+        "REQUIEM_ABSOLUTION",
+        "CORPUS_CHRISTI_PROCESSION",
+        "HOLY_THURSDAY_POST",
+        "GENERIC_PROCESSION"
+      ],
+      "nativeOwner": "R17_NATIVE_PRODUCTION",
+      "legacyStartCount": 0,
+      "guarantees": [
+        "plan-aware final blessing suppression is rendered for Requiem, Corpus Christi and Holy Thursday",
+        "Last Gospel is skipped only when the compiled plan forbids it and remains for generic procession",
+        "Mass boundary enters the existing form-lifecycle FOLLOWING_ACTION_HANDOFF rather than a duplicate lifecycle",
+        "Requiem Absolution completes through the body-absent certified branch into DEPARTURE",
+        "Corpus Christi sacramental-state gates and processional participation are preserved in the production shell",
+        "Holy Thursday personal joining state is preserved in the production shell",
+        "generic procession participation is personal and does not invent feast text",
+        "touch Back and Next operate inside the native following-action reader",
+        "following-action completion returns to the certified post-Mass lifecycle",
+        "the legacy live renderer is never started and zero uncaught page errors occur"
       ]
     }
   ],
@@ -1045,13 +1084,13 @@
         "PALM",
         "ASH",
         "CANDLEMAS",
-        "ROGATIONS"
-      ],
-      "pending": [
+        "ROGATIONS",
         "REQUIEM_ABSOLUTION",
         "HOLY_THURSDAY_POST",
         "CORPUS_CHRISTI_PROCESSION",
-        "GENERIC_PROCESSION",
+        "GENERIC_PROCESSION"
+      ],
+      "pending": [
         "GOOD_FRIDAY",
         "EASTER_VIGIL",
         "NUPTIAL"
