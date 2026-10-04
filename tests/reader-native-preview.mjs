@@ -13,6 +13,8 @@ const guideData={registry:load("../data/presentation/guide-registry.v1.json"),ur
 const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
 const palmData={payload:load("../data/presentation/reader-palm.v1.json"),graph:specialExtension.graphs.PALM};
 const ashData={payload:load("../data/presentation/reader-ash.v1.json"),graph:specialExtension.graphs.ASH};
+const candlemasData={payload:load("../data/presentation/reader-candlemas.v1.json"),graph:specialExtension.graphs.CND};
+const rogationsData={payload:load("../data/presentation/reader-rogations.v1.json"),graph:specialExtension.graphs.ROG};
 const cueRegistries=Object.freeze({
   gestures:load("../data/presentation/reader-gestures.v1.json"),
   responses:load("../data/presentation/reader-responses.v1.json"),
@@ -92,20 +94,55 @@ assert.equal(aspergesReady.aspergesController.project().faithfulGesture,"MAKE_FU
 aspergesReady.aspergesController.goTo("ASP-R05");
 assert.equal(aspergesReady.aspergesController.project().handoff,"FOOT_CLUSTER");
 
+const candlemasPrepared={
+  ...livePrepared,
+  session:{
+    ...livePrepared.session,
+    resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["CANDLEMAS"]},
+    plan:{...livePrepared.session.plan,precedingGraphs:["CANDLEMAS"]},
+  },
+};
+const candlemasReady=await prepareNativeReaderPreview({
+  prepared:candlemasPrepared,presentationData:data,eventData,cueRegistries,guideData,candlemasData
+});
+assert.ok(candlemasReady.candlemasController,"native preview lost Candlemas controller");
+assert.equal(candlemasReady.candlemasController.project().card.id,"CND-R01");
+candlemasReady.candlemasController.goTo("CND-R03");
+candlemasReady.candlemasController.setRecipientState("RECEIVE_CANDLE");
+assert.equal(candlemasReady.candlemasController.project().recipientPosture,"KNEEL");
+candlemasReady.candlemasController.goTo("CND-R07");
+assert.equal(candlemasReady.candlemasController.project().handoff,"INTROIT");
+
+const rogationsPrepared={
+  ...livePrepared,
+  session:{
+    ...livePrepared.session,
+    resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["ROGATIONS"]},
+    plan:{...livePrepared.session.plan,precedingGraphs:["ROGATIONS"]},
+  },
+};
+const rogationsReady=await prepareNativeReaderPreview({
+  prepared:rogationsPrepared,presentationData:data,eventData,cueRegistries,guideData,rogationsData
+});
+assert.ok(rogationsReady.rogationsController,"native preview lost Rogations controller");
+assert.equal(rogationsReady.rogationsController.project().card.id,"ROG-R01");
+rogationsReady.rogationsController.goTo("ROG-R06");
+assert.equal(rogationsReady.rogationsController.project().handoff,"INTROIT");
+
 await assert.rejects(
   ()=>prepareNativeReaderPreview({
     prepared:{
       ...livePrepared,
       session:{
         ...livePrepared.session,
-        resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["CANDLEMAS"]},
-        plan:{...livePrepared.session.plan,precedingGraphs:["CANDLEMAS"]},
+        resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:["UNSUPPORTED_RITE"]},
+        plan:{...livePrepared.session.plan,precedingGraphs:["UNSUPPORTED_RITE"]},
       },
     },
     presentationData:data,eventData,cueRegistries,guideData
   }),
-  /NATIVE_PREVIEW_PRECEDING_RITE_PENDING:CANDLEMAS/,
-  "native preview silently skipped an unsupported preceding rite"
+  /PRECEDING_RITE_PROJECTION_PENDING|NATIVE_PREVIEW_PRECEDING_RITE_PENDING:UNSUPPORTED_RITE/,
+  "native preview stopped failing closed on an unsupported preceding rite"
 );
 
 const prepared={

@@ -20,6 +20,8 @@ import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
+import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
+import { createRogationsReaderController, loadRogationsReaderData } from "./reader-rogations.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -163,6 +165,10 @@ export async function prepareNativeReaderPreview({
   loadPalmData=loadPalmReaderData,
   ashData=null,
   loadAshData=loadAshReaderData,
+  candlemasData=null,
+  loadCandlemasData=loadCandlemasReaderData,
+  rogationsData=null,
+  loadRogationsData=loadRogationsReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const structuralSupport=structureSupport(prepared);
@@ -172,15 +178,17 @@ export async function prepareNativeReaderPreview({
   const resolvedForm=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
   const needsFormState=resolvedForm==="LOW" || resolvedForm==="SOLEMN";
   const preceding=[...(prepared?.session?.plan?.precedingGraphs??[])];
-  const unsupportedNativePreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH"].includes(x));
+  const unsupportedNativePreceding=preceding.filter(x=>!["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"].includes(x));
   if(unsupportedNativePreceding.length){
     throw new Error("NATIVE_PREVIEW_PRECEDING_RITE_PENDING:"+unsupportedNativePreceding.join(","));
   }
   const hasAsperges=preceding.includes("ASPERGES");
   const hasPalm=preceding.includes("PALM");
   const hasAsh=preceding.includes("ASH");
-  if([hasAsperges,hasPalm,hasAsh].filter(Boolean).length>1)throw new Error("NATIVE_PREVIEW_MULTIPLE_PRELUDES_PENDING");
-  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh]=await Promise.all([
+  const hasCandlemas=preceding.includes("CANDLEMAS");
+  const hasRogations=preceding.includes("ROGATIONS");
+  if([hasAsperges,hasPalm,hasAsh,hasCandlemas,hasRogations].filter(Boolean).length>1)throw new Error("NATIVE_PREVIEW_MULTIPLE_PRELUDES_PENDING");
+  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas,loadedRogations]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
@@ -189,6 +197,8 @@ export async function prepareNativeReaderPreview({
     hasAsperges ? (aspergesData ?? Promise.resolve(loadAspergesData(prepared))) : null,
     hasPalm ? (palmData ?? Promise.resolve(loadPalmData(prepared))) : null,
     hasAsh ? (ashData ?? Promise.resolve(loadAshData(prepared))) : null,
+    hasCandlemas ? (candlemasData ?? Promise.resolve(loadCandlemasData(prepared))) : null,
+    hasRogations ? (rogationsData ?? Promise.resolve(loadRogationsData(prepared))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -223,7 +233,13 @@ export async function prepareNativeReaderPreview({
   const ashController=hasAsh
     ? createAshReaderController({graph:loadedAsh?.graph,payload:loadedAsh?.payload})
     : null;
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,ashController});
+  const candlemasController=hasCandlemas
+    ? createCandlemasReaderController({graph:loadedCandlemas?.graph,payload:loadedCandlemas?.payload})
+    : null;
+  const rogationsController=hasRogations
+    ? createRogationsReaderController({graph:loadedRogations?.graph,payload:loadedRogations?.payload})
+    : null;
+  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,ashController,candlemasController,rogationsController});
 }
 
 export async function mountNativeReaderPreview({
@@ -245,6 +261,10 @@ export async function mountNativeReaderPreview({
   loadPalmData=loadPalmReaderData,
   ashData=null,
   loadAshData=loadAshReaderData,
+  candlemasData=null,
+  loadCandlemasData=loadCandlemasReaderData,
+  rogationsData=null,
+  loadRogationsData=loadRogationsReaderData,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -256,6 +276,7 @@ export async function mountNativeReaderPreview({
     prepared,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
+    candlemasData,loadCandlemasData,rogationsData,loadRogationsData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -280,6 +301,8 @@ export async function mountNativeReaderPreview({
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
   let inAsh=Boolean(ready.ashController);
+  let inCandlemas=Boolean(ready.candlemasController);
+  let inRogations=Boolean(ready.rogationsController);
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
@@ -564,7 +587,135 @@ export async function mountNativeReaderPreview({
   function showPalm(){return showRecipientPrelude("PALM",ready.palmController)}
   function showAsh(){return showRecipientPrelude("ASH",ready.ashController)}
 
+  function candlemasMoment(){
+    const state=ready.candlemasController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return Object.freeze({
+      state,
+      moment:Object.freeze({
+        id:card.id,
+        sectionTitle:"Candlemas",
+        cardTitle:card.title,
+        cardUpdate:true,
+        paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
+          id:row.id,kind:row.kind,primary:row.latin,
+          sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
+        }))),
+        progress:String(state.index+1)+" / "+String(state.total)+" · Candlemas",
+        posture:state.recipientPosture
+          ? {label:state.recipientPosture}
+          : card.posture && !["LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture)
+            ? {label:card.posture}
+            : null,
+        gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+      }),
+    });
+  }
+
+  function showCandlemas(){
+    const projected=candlemasMoment();
+    if(!projected)return null;
+    inCandlemas=true;inRogations=false;inPalm=false;inAsh=false;inAsperges=false;
+    activeCueId=null;
+    clearEventCinematic({resetCue:true});
+    transientGuard.begin();
+    reader.renderMoment(projected.moment);
+    root.dataset.r17NativeEvent="candlemas";
+    root.dataset.r17NativeCue="unresolved";
+    root.dataset.r17StateOwner="R24_CANDLEMAS_NATIVE";
+    root.dataset.r17OwnerGesture="R24_CANDLEMAS_EXACT_NONE";
+    root.dataset.r17OwnerResponse="R24_CANDLEMAS_PAYLOAD";
+    root.dataset.r17OwnerPriestVoice="R24_CANDLEMAS_NOT_APPLICABLE";
+    root.dataset.r17OwnerPriestPosition="R24_CANDLEMAS_NOT_APPLICABLE";
+    root.dataset.r17OwnerPosture="R24_CANDLEMAS_PERSONAL_OR_PAYLOAD";
+    root.dataset.r17OwnerSchola="R24_CANDLEMAS_PAYLOAD";
+    root.dataset.r17OwnerBell="R24_CANDLEMAS_EXACT_NONE";
+    root.dataset.r17OwnerCinematic="R24_CANDLEMAS_EXACT_NONE";
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+      specialRite:"CANDLEMAS",
+      cardId:projected.state.card?.id??null,
+      posture:projected.moment.posture,
+      gesture:null,
+      handoff:projected.state.handoff??null,
+      recipientState:projected.state.recipientState??null,
+      candleState:projected.state.candleState??null,
+      hasBlessedCandle:projected.state.hasBlessedCandle??false,
+    });
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    if(scroll)scroll.scrollTop=0;
+    return projected.state;
+  }
+
+  function rogationsMoment(){
+    const state=ready.rogationsController?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    return Object.freeze({
+      state,
+      moment:Object.freeze({
+        id:card.id,
+        sectionTitle:"Rogations",
+        cardTitle:card.title,
+        cardUpdate:true,
+        paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
+          id:row.id,kind:row.kind,primary:row.latin,
+          sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
+        }))),
+        progress:String(state.index+1)+" / "+String(state.total)+" · Rogations",
+        posture:card.posture && !["LOCAL_OR_STAND","STAND_OR_LOCAL","ORDINARY_PROFILE","INHERIT"].includes(card.posture)
+          ? {label:card.posture}
+          : null,
+        gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+      }),
+    });
+  }
+
+  function showRogations(){
+    const projected=rogationsMoment();
+    if(!projected)return null;
+    inRogations=true;inCandlemas=false;inPalm=false;inAsh=false;inAsperges=false;
+    activeCueId=null;
+    clearEventCinematic({resetCue:true});
+    transientGuard.begin();
+    reader.renderMoment(projected.moment);
+    root.dataset.r17NativeEvent="rogations";
+    root.dataset.r17NativeCue="unresolved";
+    root.dataset.r17StateOwner="R25_ROGATIONS_NATIVE";
+    root.dataset.r17OwnerGesture="R25_ROGATIONS_EXACT_NONE";
+    root.dataset.r17OwnerResponse="R25_ROGATIONS_PAYLOAD";
+    root.dataset.r17OwnerPriestVoice="R25_ROGATIONS_NOT_APPLICABLE";
+    root.dataset.r17OwnerPriestPosition="R25_ROGATIONS_NOT_APPLICABLE";
+    root.dataset.r17OwnerPosture="R25_ROGATIONS_PAYLOAD";
+    root.dataset.r17OwnerSchola="R25_ROGATIONS_PAYLOAD";
+    root.dataset.r17OwnerBell="R25_ROGATIONS_EXACT_NONE";
+    root.dataset.r17OwnerCinematic="R25_ROGATIONS_EXACT_NONE";
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+      specialRite:"ROGATIONS",
+      cardId:projected.state.card?.id??null,
+      posture:projected.moment.posture,
+      gesture:null,
+      handoff:projected.state.handoff??null,
+      processionActive:projected.state.processionActive??false,
+    });
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    if(scroll)scroll.scrollTop=0;
+    return projected.state;
+  }
+
   function previousReaderCard(){
+    if(inRogations && ready.rogationsController){
+      const state=ready.rogationsController.project();
+      if(!state.atStart)ready.rogationsController.previous();
+      return showRogations();
+    }
+    if(inCandlemas && ready.candlemasController){
+      const state=ready.candlemasController.project();
+      if(!state.atStart)ready.candlemasController.previous();
+      return showCandlemas();
+    }
     if(inPalm && ready.palmController){
       const state=ready.palmController.project();
       if(!state.atStart)ready.palmController.previous();
@@ -581,6 +732,14 @@ export async function mountNativeReaderPreview({
       return showAsperges();
     }
     const first=ready.model.cardBySequence(1);
+    if(ready.rogationsController && current?.sectionId===first?.sectionId){
+      ready.rogationsController.goTo("ROG-R06");
+      return showRogations();
+    }
+    if(ready.candlemasController && current?.sectionId===first?.sectionId){
+      ready.candlemasController.goTo("CND-R07");
+      return showCandlemas();
+    }
     if(ready.palmController && current?.sectionId===first?.sectionId){
       ready.palmController.goTo("PALM-R07");
       return showPalm();
@@ -597,6 +756,24 @@ export async function mountNativeReaderPreview({
   }
 
   function nextReaderCard(){
+    if(inRogations && ready.rogationsController){
+      const state=ready.rogationsController.project();
+      if(state.atEnd){
+        inRogations=false;
+        return showCard(introitOnlyCard());
+      }
+      ready.rogationsController.next();
+      return showRogations();
+    }
+    if(inCandlemas && ready.candlemasController){
+      const state=ready.candlemasController.project();
+      if(state.atEnd){
+        inCandlemas=false;
+        return showCard(introitOnlyCard());
+      }
+      ready.candlemasController.next();
+      return showCandlemas();
+    }
     if(inPalm && ready.palmController){
       const state=ready.palmController.project();
       if(state.atEnd){
@@ -631,6 +808,8 @@ export async function mountNativeReaderPreview({
     inAsperges=false;
     inPalm=false;
     inAsh=false;
+    inCandlemas=false;
+    inRogations=false;
     root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
@@ -687,7 +866,7 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
-    if(inAsperges || inPalm || inAsh)return;
+    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -740,7 +919,9 @@ export async function mountNativeReaderPreview({
   // Mount only after the model is complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
-  if(inPalm)showPalm();
+  if(inRogations)showRogations();
+  else if(inCandlemas)showCandlemas();
+  else if(inPalm)showPalm();
   else if(inAsh)showAsh();
   else if(inAsperges)showAsperges();
   else showCard(current);
@@ -751,7 +932,7 @@ export async function mountNativeReaderPreview({
       container:readerScroll,
       win,
       onChange:(cueId)=>{
-        if(inAsperges || inPalm || inAsh)return;
+        if(inAsperges || inPalm || inAsh || inCandlemas || inRogations)return;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -795,6 +976,8 @@ export async function mountNativeReaderPreview({
       asperges:ready.aspergesController ? "R20_NATIVE_PRELUDE" : "NOT_ACTIVE",
       palm:ready.palmController ? "R22_NATIVE_PRELUDE" : "NOT_ACTIVE",
       ash:ready.ashController ? "R23_NATIVE_PRELUDE" : "NOT_ACTIVE",
+      candlemas:ready.candlemasController ? "R24_NATIVE_PRELUDE" : "NOT_ACTIVE",
+      rogations:ready.rogationsController ? "R25_NATIVE_PRELUDE" : "NOT_ACTIVE",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -803,7 +986,7 @@ export async function mountNativeReaderPreview({
     showSequence:sequence=>showCard(ready.model.cardBySequence(sequence)),
     syncState:queue,
     destroy,
-    getCurrentCard:()=>inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
+    getCurrentCard:()=>inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
@@ -817,8 +1000,13 @@ export async function mountNativeReaderPreview({
     getAspergesState:()=>ready.aspergesController?.project?.()??null,
     getPalmState:()=>ready.palmController?.project?.()??null,
     getAshState:()=>ready.ashController?.project?.()??null,
+    getCandlemasState:()=>ready.candlemasController?.project?.()??null,
+    getRogationsState:()=>ready.rogationsController?.project?.()??null,
     setPalmRecipientState:value=>{if(!ready.palmController)return null;const result=ready.palmController.setRecipientState(value);return inPalm ? showPalm() : result},
     setAshRecipientState:value=>{if(!ready.ashController)return null;const result=ready.ashController.setRecipientState(value);return inAsh ? showAsh() : result},
+    setCandlemasRecipientState:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setRecipientState(value);return inCandlemas ? showCandlemas() : result},
+    setCandlemasProcessionParticipant:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setProcessionParticipant(value);return inCandlemas ? showCandlemas() : result},
+    setCandlemasHasBlessedCandle:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setHasBlessedCandle(value);return inCandlemas ? showCandlemas() : result},
     markActuallySprinkled:()=>{
       if(!ready.aspergesController)return null;
       const value=ready.aspergesController.setActuallySprinkled(true);
