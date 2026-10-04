@@ -1,35 +1,59 @@
-# Ad Orientem
+# Ad Orientem — 4 October 2026 Field Pilot
 
-A traditional Roman Mass companion focused on helping the faithful follow the 1962 Mass, pray, learn, and prepare for the liturgy.
+This directory is the isolated field build for the 4 October 2026 pilot. It is intentionally separate from the repository root so the native Mass reader can be exercised without changing the global production default.
 
-## Migration status
+## Start here
 
-This repository is entering a controlled migration from the historical single-file application to a modular static/PWA architecture.
+Open `pilot.html`.
 
-The frozen behavioural source of truth is **v43.33 — Icon Ownership Consolidation**. During migration, architectural extraction must not silently change liturgical texts, Proper resolution, calendar behaviour, navigation, artwork decisions, icon ownership, prayer content, or Live Mass behaviour.
+The launcher sets the R17 reader feature gate to `PREVIEW` and opens this field build with `?aoR17Reader=r17`.
 
-Work is isolated on the `migration/v43.33` branch until parity is demonstrated.
+For the 4 October Holy Rosary field session, the browser bridge also forces the certified LIVE presentation path rather than falling back to the obsolete Simple reader.
 
-See:
+## Before Mass sequence
 
-- `docs/CANONICAL-BASELINE.md`
-- `docs/MIGRATION.md`
-- `docs/ARCHITECTURE.md`
-- `docs/ASSET-INVENTORY.md`
-- `docs/RELEASE-CHECKLIST.md`
+The field shell exposes the intended sequence for 4 October:
 
-## Canonical baseline
+1. Adoration
+2. Benediction
+3. Holy Rosary Mass
 
-`Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html`
+The launcher uses the existing Ad Orientem modules first and retains legacy module fallbacks where required.
 
-Full SHA-256:
+## Certified field scope
 
-`7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3`
+The field release contract covers:
 
-The 37.9 MB legacy baseline is being imported under `legacy/v43.33.parts/` because the connector cannot safely write the monolith in one contents-API request. The import is currently **partial but byte-verified**: CI verifies that the committed chunks are an exact prefix of the frozen file. It will switch to the full-file SHA-256 gate only after the complete baseline is present.
+- Low Mass
+- Missa Cantata — simple ceremonial
+- Missa Cantata — incense
+- Solemn Mass
+- calendar or votive Proper
+- MISSAL / SIMPLE / source-first LIVE reader architecture
+- resolved Proper required before Mass entry
+- Asperges when explicitly selected
+- real Chromium phone/touch acceptance
 
-`legacy/v43.33.parts/IMPORT-STATUS.json` is the explicit authority for partial/full import state. The migration PR stays Draft until this bootstrap gate is complete.
+The full-year convergence branch now contains substantially more certified special-structure work, but this dated field bundle deliberately remains a narrow frozen pilot.
 
-## Migration principle
+## Rollback
 
-**Preserve behaviour first. Refactor second. Improve features only after parity is demonstrated.**
+The repository-wide production default remains `LEGACY`.
+
+To force the legacy reader in this field build, remove the `aoR17Reader=r17` query parameter and clear the `ao-r17-reader-ui` local-storage key.
+
+The R17 browser bridge also retains the legacy renderer as rollback/state donor; the native preview is mounted over it only when the field gate allows it.
+
+## What to report
+
+For a useful pilot report, record:
+
+- form: Low / Missa Cantata / Solemn;
+- reader mode: MISSAL / SIMPLE / LIVE;
+- selected celebration / Proper;
+- phone model and browser;
+- the exact card or prayer where a problem occurred;
+- whether the defect is text, translation, scrolling/focus, posture/gesture, priest state, Schola, bell/cinematic, or navigation;
+- console error text if one appears.
+
+Do not report the historical 48-card count itself as a defect. The current release architecture uses the certified source-first LIVE structure and retains the historical 48-card model only as compatibility evidence.
