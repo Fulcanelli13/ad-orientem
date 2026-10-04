@@ -5,8 +5,9 @@ import {
   normalizeAppSurface,
   surfaceForCoreRoute,
 } from "./index.js";
+import { installShellFocusVisibilityGuard } from "./shell-focus-visibility.js";
 
-export const VERSION = "final-app-shell-bridge-v1";
+export const VERSION = "final-app-shell-bridge-v2";
 
 function ready(win) {
   return Boolean(
@@ -29,6 +30,14 @@ export function installAppShellBridge({
   pollMs = 80,
   maxPolls = 150,
 } = {}) {
+  // Install the global focus/visibility guard even when the shell bridge already
+  // exists. This protects legacy donor surfaces that still toggle aria-hidden
+  // while they are being extracted into modular owners.
+  const focusVisibilityGuard = installShellFocusVisibilityGuard({
+    doc: win?.document,
+    win,
+  });
+
   if (win?.AO_APP_SHELL_V1) return win.AO_APP_SHELL_V1;
 
   const state = {
@@ -95,6 +104,7 @@ export function installAppShellBridge({
         polls: state.polls,
         blocked: state.blocked,
         active: state.controller?.getActive?.() ?? null,
+        focusVisibilityGuard: Boolean(focusVisibilityGuard?.installed),
         homeOwner: typeof win?.AO_NAV_V362?.home === "function",
         domainOwner: typeof win?.AO_V37_SHELL?.openDomain === "function",
         settingsOwner: Boolean(
