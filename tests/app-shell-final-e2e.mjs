@@ -739,7 +739,9 @@ try{
     massTitle:"Introit",
   });
 
-  await exerciseRealShellRequiemAbsolution(browser);\n\n  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, certified pre-Mass rites and Requiem Absolution lifecycle on phone Chromium without booting legacy.");
+  await exerciseRealShellRequiemAbsolution(browser);
+
+  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, certified pre-Mass rites and Requiem Absolution lifecycle on phone Chromium without booting legacy.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
