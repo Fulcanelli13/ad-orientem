@@ -5,7 +5,7 @@ const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.3.0");
+assert.equal(app.version,"1.4.0");
 assert.equal(app.status,"CONVERGENCE_IN_PROGRESS");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -33,6 +33,8 @@ assert.ok(app.openBlockers.length>0,"whole-app gate was closed without convergen
 assert.equal(findings.find(x=>x.id==="MASS_SUBSYSTEM_CERTIFIED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="SPECIAL_STRUCTURES_REAL_SHELL")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="ARIA_FOCUS_GUARD")?.classification,"PASS");
+assert.equal(findings.find(x=>x.id==="NON_MASS_D3_D6_CONVERGENCE")?.classification,"PASS");
+assert.equal(findings.find(x=>x.id==="NON_MASS_D3_D6_CONVERGENCE")?.status,"CLOSED");
 assert.equal(findings.find(x=>x.id==="VISIBLE_SHELL_OWNERSHIP")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="VISIBLE_SHELL_OWNERSHIP")?.status,"CLOSED");
 assert.equal(findings.find(x=>x.id==="CROSS_DOMAIN_PHONE_JOURNEY")?.classification,"PASS");
@@ -45,7 +47,9 @@ assert.match(app.requiredPhoneJourney,/Home.*Calendar.*Mass.*LIVE.*leave\/resume
 assert.ok(app.regressionGates?.static?.includes("tests/app-release-gate.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/app-shell-contract.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/production-tree-hygiene.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/nonmass-d3-d6-convergence.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-final-e2e.mjs"));
+assert.ok(app.regressionGates?.phone?.includes("tests/nonmass-d3-d6-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-journey-e2e.mjs"));
 
 console.log("PASS app release gate: Mass remains certified; whole-app convergence remains explicitly gated.");
