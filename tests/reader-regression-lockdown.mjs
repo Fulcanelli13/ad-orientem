@@ -163,41 +163,32 @@ assert.equal(palmAshShell?.nativeOwner,"R17_NATIVE_PRODUCTION");
 assert.match(String(palmAshShell?.test??""),/app-shell-final-e2e\.mjs/);
 
 const candlemasPayload=release.protectedInvariants.find(x=>x.id==="CANDLEMAS_NATIVE_PAYLOAD");
-assert.equal(candlemasPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
-  "Candlemas real-shell production certification disappeared");
-assert.match(String(candlemasPayload?.productionTest??""),/app-shell-final-e2e\.mjs/);
-assert.equal(candlemasPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
+assert.equal(candlemasPayload?.status,"CERTIFIED_MODULAR_RUNTIME__REAL_SHELL_ACCEPTANCE_PENDING",
+  "Candlemas real-shell evidence scope changed without certification");
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
 assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
-assert.deepEqual(realShellScope?.certified,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"]);
-assert.equal(realShellScope?.pending?.includes("CANDLEMAS"),false);
-assert.equal(realShellScope?.pending?.includes("ROGATIONS"),false);
+assert.deepEqual(realShellScope?.certified,["PALM","ASH","ASPERGES"]);
+assert.ok(realShellScope?.pending?.includes("CANDLEMAS"));
 assert.ok(realShellScope?.pending?.includes("EASTER_VIGIL"));
 assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
 assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
 assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"PARTIAL_EXPLICIT_EVIDENCE");
 
+const aspergesShell=release.protectedInvariants.find(x=>x.id==="ASPERGES_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(aspergesShell?.status,"CERTIFIED","Asperges real-shell acceptance disappeared");
+assert.equal(aspergesShell?.actualIndexHtml,true);
+assert.equal(aspergesShell?.legacyStartCount,0);
+assert.equal(aspergesShell?.nativeOwner,"R17_NATIVE_PRODUCTION");
+assert.match(String(aspergesShell?.test??""),/app-shell-final-e2e\.mjs/);
+
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
-assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE","Asperges real-shell production certification disappeared");
+assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Asperges native-preview certification disappeared");
 assert.match(String(aspergesPayload?.controller??""),/reader-asperges\.js/,"Asperges controller is not pinned");
 assert.equal(aspergesPayload?.recoveredGraphRecords,6,"Asperges six-record source scope changed");
 assert.equal(aspergesPayload?.readerCards,5,"Asperges reader-card contract changed");
 assert.match(String(aspergesPayload?.nativePreview??""),/reader-native-preview\.js/,"Asperges native preview owner is not pinned");
 assert.match(String(aspergesPayload?.phoneTest??""),/reader-phone-acceptance\.mjs/,"Asperges phone acceptance is not pinned");
-assert.match(String(aspergesPayload?.productionTest??""),/app-shell-final-e2e\.mjs/,"Asperges real-shell test is not pinned");
-assert.equal(aspergesPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
-
-const rogationsPayload=release.protectedInvariants.find(x=>x.id==="ROGATIONS_NATIVE_PAYLOAD");
-assert.equal(rogationsPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE","Rogations real-shell production certification disappeared");
-assert.match(String(rogationsPayload?.productionTest??""),/app-shell-final-e2e\.mjs/);
-assert.equal(rogationsPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
-
-const preMassShell=release.protectedInvariants.find(x=>x.id==="PRE_MASS_CLUSTER_REAL_APP_SHELL_ACCEPTANCE");
-assert.equal(preMassShell?.status,"CERTIFIED");
-assert.deepEqual(preMassShell?.rites,["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"]);
-assert.equal(preMassShell?.actualIndexHtml,true);
-assert.equal(preMassShell?.legacyStartCount,0);
 
 const nuptial=release.protectedInvariants.find(x=>x.id==="NUPTIAL_NATIVE_INSERTIONS");
 assert.equal(nuptial?.status,"CERTIFIED_SOURCE_INSERTION_MODEL","Nuptial insertions lost certification");
