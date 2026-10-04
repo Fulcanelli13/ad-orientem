@@ -101,20 +101,20 @@
     },
     {
       "id": "PERSISTENCE_STATE_CONTAMINATION",
-      "classification": "PASS",
-      "status": "CLOSED",
+      "classification": "MISSING_INTEGRATION",
+      "status": "OPEN",
       "evidence": [
         "tests/app-shell-journey-e2e.mjs",
-        "src/app/host-adapter.js",
-        "src/app/shell-controller.js"
+        "docs/APP-CONVERGENCE.md"
       ],
-      "detail": "Fresh launch, interrupted native LIVE, cancelled/confirmed leave, cross-module navigation and reload with a persisted Mass record are regression-tested; stale persisted Mass state does not reactivate the reader or contaminate the Home route."
+      "detail": "Partial acceptance proves cold launch, cancelled/confirmed LIVE leave, cross-module navigation, and stale persisted-Mass isolation after leaving. Still open: reload while Mass is actively interrupted, return/resume semantics, saved form/language/mode/profile continuity, and broader cross-module local-state contamination."
     }
   ],
   "openBlockers": [
     "EMERGENCY_RUNTIME_RETIREMENT",
     "DUPLICATE_BROWSER_ENTRY_HYGIENE",
-    "NON_MASS_DONOR_EXTRACTION"
+    "NON_MASS_DONOR_EXTRACTION",
+    "PERSISTENCE_STATE_CONTAMINATION"
   ],
   "regressionGates": {
     "static": [
