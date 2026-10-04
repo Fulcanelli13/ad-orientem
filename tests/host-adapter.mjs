@@ -66,12 +66,15 @@ const reqAbs=prepareMassSessionFromV346({
   requestedCelebrationId:"requiem",
   celebrationId:"requiem",
   celebrationType:"requiem",
+  requiemAbsolution:{bodyPresent:true,burialProcession:true},
 },{
   form:"solemn",
   proper:{isRequiem:true},
   followingActions:["REQUIEM_ABSOLUTION"],
 });
 expect(reqAbs.plan.normalLastGospel===false,"Absolution branch did not suppress Last Gospel");
+expect(reqAbs.resolvedMass.provenance.requiemAbsolution.bodyPresent===true,"Requiem body-present context was dropped");
+expect(reqAbs.resolvedMass.provenance.requiemAbsolution.burialProcession===true,"Requiem burial-procession context was dropped");
 
 const nuptial=prepareMassSessionFromV346({
   ...base,
