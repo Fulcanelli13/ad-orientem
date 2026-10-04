@@ -15,6 +15,10 @@ const palmData={payload:load("../data/presentation/reader-palm.v1.json"),graph:s
 const ashData={payload:load("../data/presentation/reader-ash.v1.json"),graph:specialExtension.graphs.ASH};
 const candlemasData={payload:load("../data/presentation/reader-candlemas.v1.json"),graph:specialExtension.graphs.CND};
 const rogationsData={payload:load("../data/presentation/reader-rogations.v1.json"),graph:specialExtension.graphs.ROG};
+const requiemAbsolutionData={payload:load("../data/presentation/reader-requiem-absolution.v1.json"),graph:specialExtension.graphs.ABS};
+const corpusChristiData={payload:load("../data/presentation/reader-corpus-christi.v1.json"),graph:specialExtension.graphs.CORPUS};
+const holyThursdayPostData={payload:load("../data/presentation/reader-holy-thursday-post.v1.json"),graph:specialExtension.graphs.HT_POST};
+const genericProcessionData={payload:load("../data/presentation/reader-generic-procession.v1.json"),graph:specialExtension.graphs.PROC};
 const cueRegistries=Object.freeze({
   gestures:load("../data/presentation/reader-gestures.v1.json"),
   responses:load("../data/presentation/reader-responses.v1.json"),
@@ -128,6 +132,61 @@ assert.ok(rogationsReady.rogationsController,"native preview lost Rogations cont
 assert.equal(rogationsReady.rogationsController.project().card.id,"ROG-R01");
 rogationsReady.rogationsController.goTo("ROG-R06");
 assert.equal(rogationsReady.rogationsController.project().handoff,"INTROIT");
+
+
+const followingFixtures=[
+  ["REQUIEM_ABSOLUTION",requiemAbsolutionData,"requiemAbsolutionController","ABS-R01",{normalLastGospel:false,blessingAllowed:false}],
+  ["CORPUS_CHRISTI_PROCESSION",corpusChristiData,"corpusChristiController","CORPUS-R01",{normalLastGospel:false,blessingAllowed:false}],
+  ["HOLY_THURSDAY_POST",holyThursdayPostData,"holyThursdayPostController","HT-R01",{normalLastGospel:false,blessingAllowed:false}],
+  ["GENERIC_PROCESSION",genericProcessionData,"genericProcessionController","PROC-100-010",{normalLastGospel:true,blessingAllowed:true}],
+];
+for(const [followingAction,fixture,controllerKey,firstId,ending] of followingFixtures){
+  const followingPrepared={
+    ...livePrepared,
+    session:{
+      ...livePrepared.session,
+      resolvedMass:{
+        ...livePrepared.session.resolvedMass,
+        overlays:followingAction==="REQUIEM_ABSOLUTION" ? ["REQUIEM"] : [],
+        followingActions:[followingAction],
+      },
+      plan:{
+        ...livePrepared.session.plan,
+        followingGraphs:[followingAction],
+        normalLastGospel:ending.normalLastGospel,
+        blessingAllowed:ending.blessingAllowed,
+      },
+    },
+  };
+  const readyFollowing=await prepareNativeReaderPreview({
+    prepared:followingPrepared,presentationData:data,eventData,cueRegistries,guideData,
+    requiemAbsolutionData:followingAction==="REQUIEM_ABSOLUTION" ? fixture : null,
+    corpusChristiData:followingAction==="CORPUS_CHRISTI_PROCESSION" ? fixture : null,
+    holyThursdayPostData:followingAction==="HOLY_THURSDAY_POST" ? fixture : null,
+    genericProcessionData:followingAction==="GENERIC_PROCESSION" ? fixture : null,
+  });
+  assert.ok(readyFollowing[controllerKey],"native preview lost "+followingAction+" controller");
+  const first=readyFollowing[controllerKey].project().card;
+  assert.equal(first.id??first.recordId,firstId);
+  assert.equal(readyFollowing.lifecycleRuntime.snapshot().stage,"MASS_ACTIVE");
+  assert.equal(readyFollowing.lifecycleRuntime.contract.followingAction.active,true);
+}
+
+await assert.rejects(
+  ()=>prepareNativeReaderPreview({
+    prepared:{
+      ...livePrepared,
+      session:{
+        ...livePrepared.session,
+        resolvedMass:{...livePrepared.session.resolvedMass,followingActions:["UNSUPPORTED_FOLLOWING"]},
+        plan:{...livePrepared.session.plan,followingGraphs:["UNSUPPORTED_FOLLOWING"]},
+      },
+    },
+    presentationData:data,eventData,cueRegistries,guideData
+  }),
+  /FOLLOWING_ACTION_PROJECTION_PENDING|NATIVE_PREVIEW_FOLLOWING_ACTION_PENDING:UNSUPPORTED_FOLLOWING/,
+  "native preview stopped failing closed on an unsupported following action"
+);
 
 await assert.rejects(
   ()=>prepareNativeReaderPreview({
