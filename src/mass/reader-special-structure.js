@@ -51,7 +51,7 @@ function graphRecords(id,sources){
 }
 
 const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM"]);
-const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","REQUIEM_ABSOLUTION"]);
+const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION"]);
 
 function segment(id,lane,sources,extra={}){
   const meta=sources.registry?.overlays?.[id]??null;
