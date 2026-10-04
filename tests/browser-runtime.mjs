@@ -20,6 +20,9 @@ const corpusChristiPayload=load("../data/presentation/reader-corpus-christi.v1.j
 const corpusChristiData=Object.freeze({payload:corpusChristiPayload,graph:Object.freeze([...specialExtension.graphs.CORPUS])});
 const holyThursdayPostPayload=load("../data/presentation/reader-holy-thursday-post.v1.json");
 const holyThursdayPostData=Object.freeze({payload:holyThursdayPostPayload,graph:Object.freeze([...specialExtension.graphs.HT_POST])});
+const goodFridayPayload=load("../data/presentation/reader-good-friday.v1.json");
+const goodFridayCore=load("../data/mass/special-days-core.v1.1.json");
+const goodFridayData=Object.freeze({payload:goodFridayPayload,graph:Object.freeze([...goodFridayCore.graphs.GF])});
 const presentationData=Object.freeze({
   sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
@@ -274,6 +277,52 @@ rogations.previous();
 assert.equal(rogations.getRogationsState().card.id,"ROG-R06");
 rogations.destroy();
 assert.equal(rogationsRoot.innerHTML,"");
+
+const goodFridayRoot=rootFixture();
+let goodFridayOrdinaryDataRequested=false;
+const goodFriday=createBrowserMassRuntime({
+  root:goodFridayRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({celebrationId:"good-friday",celebrationType:"calendar"})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Good Friday",proper,distinctRite:"GOOD_FRIDAY"}),
+  readReaderPreferences:()=>({mode:"simple"}),
+  loadPresentationData:async()=>{goodFridayOrdinaryDataRequested=true;throw new Error("Good Friday requested ordinary Mass reader data");},
+  loadGoodFridayData:async()=>goodFridayData,
+  goodFridayContext:{venerationMode:"PERSONAL",willReceiveCommunion:true},
+});
+const goodFridayEntered=await goodFriday.enter();
+assert.equal(goodFridayOrdinaryDataRequested,false);
+assert.equal(goodFridayEntered.session.plan.kind,"DISTINCT_RITE");
+assert.equal(goodFridayEntered.session.plan.rite,"GOOD_FRIDAY");
+assert.equal(goodFriday.getReaderModel(),null);
+assert.equal(goodFriday.getGoodFridayState().ordinaryMassGraphActive,false);
+assert.equal(goodFriday.getGoodFridayState().step.recordId,"GF-OPEN-010");
+
+goodFriday.setGoodFridayRecord("GF-PASS-320");
+assert.equal(goodFriday.getReaderState().posture.label,"KNEEL");
+assert.equal(goodFriday.getReaderState().gesture.label,"PAUSE_BRIEFLY");
+goodFriday.setGoodFridayRecord("GF-SOP-05-K");
+assert.equal(goodFriday.getReaderState().posture.label,"KNEEL");
+goodFriday.setGoodFridayRecord("GF-SOP-05-R");
+assert.equal(goodFriday.getReaderState().posture.label,"STAND");
+goodFriday.setGoodFridayRecord("GF-X-522");
+assert.equal(goodFriday.getReaderState().posture.label,"KNEEL");
+assert.equal(goodFriday.getReaderState().gesture.label,"BRIEF_SILENT_ADORATION");
+goodFriday.setGoodFridayRecord("GF-VEN-630");
+assert.equal(goodFriday.getReaderState().gesture.label,"KISS_OR_VENERATE_CROSS");
+goodFriday.setGoodFridayRecord("GF-COM-830");
+assert.equal(goodFriday.getReaderState().posture.label,"STAND");
+assert.equal(goodFriday.getReaderState().gesture.label,"RECITE_PATER");
+goodFriday.setGoodFridayRecord("GF-COM-850");
+assert.equal(goodFriday.getGoodFridayState().personalState,"RECEIVING_COMMUNION");
+goodFriday.setGoodFridayRecord("GF-END-910");
+assert.equal(goodFriday.getGoodFridayState().atEnd,true);
+const goodFridayDone=goodFriday.next();
+assert.equal(goodFridayDone.stage,"DISTINCT_RITE_COMPLETE");
+assert.equal(goodFridayDone.rite,"GOOD_FRIDAY");
+assert.equal(goodFridayDone.handoff,"GIVE_THANKS");
+assert.equal(goodFriday.getDistinctRiteCompletion().ordinaryMassGraphActive,false);
+goodFriday.destroy();
+assert.equal(goodFridayRoot.innerHTML,"");
 
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({
