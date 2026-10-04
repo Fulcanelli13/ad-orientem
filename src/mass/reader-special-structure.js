@@ -50,7 +50,7 @@ function graphRecords(id,sources){
   return freeze([...rows]);
 }
 
-const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM"]);
+const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM","EMBER_LESSONS"]);
 const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GOOD_FRIDAY","GENERIC_PROCESSION"]);
 
 function segment(id,lane,sources,extra={}){
