@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -116,13 +116,18 @@
         "src/home/browser-entry.js",
         "tests/home-owner.mjs",
         "src/pray/browser-entry.js",
-        "tests/pray-owner.mjs"
+        "tests/pray-owner.mjs",
+        "src/pray/canonical-data.js",
+        "src/pray/presentation-styles.js",
+        "src/pray/presentation-runtime.js",
+        "src/pray/presentation-coherence.js",
+        "tests/pray-presentation.mjs"
       ],
-      "detail": "Calendar presentation ownership is extracted and phone-certified. Home and PRAY top-level navigation ownership are modular and actual-index phone-certified. Home card presentation (including Coming Up and Daily Catechism), PRAY presentation/recitation grammar, Learn and Settings still depend on locked non-Mass donor presentation owners.",
+      "detail": "Calendar and PRAY presentation ownership are extracted and actual-index phone-certified. PRAY now runs the locked v43.59.30 48-prayer corpus and final coherence contract from src/pray with no obsolete PrayerBook fallback. Home top-level navigation is modular but its card presentation (including Coming Up and Daily Catechism) remains donor-owned; Learn and Settings presentation extraction also remain open.",
       "progress": {
         "calendar": "MODULAR_PHONE_CERTIFIED",
         "home": "MODULAR_NAVIGATION_PHONE_CERTIFIED__PRESENTATION_PENDING",
-        "pray": "MODULAR_NAVIGATION_PHONE_CERTIFIED__PRESENTATION_PENDING",
+        "pray": "MODULAR_PHONE_CERTIFIED",
         "learn": "PENDING",
         "settings": "PENDING"
       }
@@ -151,7 +156,8 @@
       "tests/production-tree-hygiene.mjs",
       "tests/app-live-session-guards.mjs",
       "tests/home-owner.mjs",
-      "tests/pray-owner.mjs"
+      "tests/pray-owner.mjs",
+      "tests/pray-presentation.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
