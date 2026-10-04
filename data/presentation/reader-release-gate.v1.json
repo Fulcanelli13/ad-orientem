@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
@@ -513,13 +513,37 @@
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs"
       ]
+    },
+    {
+      "id": "CORPUS_CHRISTI_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "controller": "src/mass/reader-corpus-christi.js",
+      "payload": "data/presentation/reader-corpus-christi.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#CORPUS",
+      "runtime": "src/mass/browser-runtime.js",
+      "recoveredGraphRecords": 8,
+      "readerCards": 6,
+      "guarantees": [
+        "activation is explicit following-action only; calendar date alone never starts the procession",
+        "Benedicamus Domino ending, final-blessing suppression and Last-Gospel suppression remain Mass-plan owned",
+        "Pange lingua is tied to MONSTRANCE_PLACED_IN_CELEBRANT_HANDS",
+        "processional posture applies only to participating faithful",
+        "Tantum ergo is tied to BLESSED_SACRAMENT_REPLACED_ON_ALTAR",
+        "Panem de caelo, response and Deus qui nobis prayer are rendered before Benediction",
+        "completion returns to the post-Mass lifecycle"
+      ],
+      "tests": [
+        "tests/reader-corpus-christi.mjs",
+        "tests/browser-runtime.mjs",
+        "tests/reader-special-structure.mjs"
+      ]
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Asperges, Palm, Ash Wednesday, Candlemas and Requiem Absolution have native payload/runtime support. Requiem Mass variance is certified plan-owned. Remaining native special-structure work: Rogations, Holy Thursday post-Mass actions, Corpus procession/Benediction, Good Friday and Easter Vigil."
+      "detail": "Asperges, Palm, Ash Wednesday, Candlemas, Requiem Absolution and Corpus Christi procession/Benediction have native payload/runtime support. Requiem Mass variance is plan-owned. Remaining native special-structure work: Rogations, Holy Thursday post-Mass actions, Good Friday and Easter Vigil."
     }
   ],
   "certificationPolicy": {
