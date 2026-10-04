@@ -220,6 +220,11 @@ try{
     globalThis.AO_R17_BROWSER_ENTRY?.installed===true,
     null,{timeout:30000});
   await page.waitForSelector("[data-ao-app-surface='home']",{state:"visible",timeout:30000});
+  await page.evaluate((iconKeys)=>{
+    globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
+      iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
+    );
+  },iconKeys);
   const interruptedReload=await page.evaluate(()=>{
     const saved=JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}");
     return {
