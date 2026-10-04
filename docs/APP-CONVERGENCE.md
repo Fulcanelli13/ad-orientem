@@ -53,13 +53,18 @@ The app-convergence workflow therefore owns a stronger regression gate from Phas
 
 The first gate snapshot records three closed app-level findings: certified Mass subsystem ownership, complete real-shell special-structure evidence, and the Prayer Book focus/aria guard. It keeps the following work explicitly open rather than allowing reader certification to imply application convergence:
 
-- the full cross-domain phone journey;
 - retirement/decomposition of the emergency runtime;
 - removal and lockout of the duplicated browser-entry include;
 - non-Mass donor extraction/parity;
 - persistence/state-contamination acceptance across reload, interrupted Mass and module switching.
 
 The app gate uses only the regression classifications `PASS`, `REGRESSION`, `STALE_SURFACE`, `MISSING_INTEGRATION` and `CRASH`. `tests/app-release-gate.mjs` ensures the listed open blockers exactly match the open findings while independently asserting that the Mass reader remains `FINAL_NATIVE_READY` with `R17_NATIVE` production default.
+
+## Phase 2.3: cross-domain phone journey
+
+`tests/app-shell-journey-e2e.mjs` now certifies the production app journey on 390×844 touch Chromium: cold Home → Calendar → Mass → native LIVE; a cancelled leave retains the active Mass; a confirmed leave destroys the visible native reader before opening PRAY; Home and Settings remain reachable under modular shell ownership; and a subsequent reload does not allow the persisted Mass record to auto-reactivate either native or legacy Mass.
+
+This closes `CROSS_DOMAIN_PHONE_JOURNEY`. It also supplies partial evidence for persistence hygiene, but `PERSISTENCE_STATE_CONTAMINATION` remains open until reload while an interrupted Mass is still active, resume/return semantics, saved form/language/mode/profile continuity, and cross-module local-state isolation are explicitly exercised.
 
 ## Next promotion step
 
