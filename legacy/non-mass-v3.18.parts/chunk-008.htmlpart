@@ -1,0 +1,500 @@
+        while(value>=v){ out+=sym; value-=v; }
+    }
+    return out;
+}
+function bellarmineHeadingMatches(raw, psalm){
+    const text=cleanBellarmineCorpus(raw), n=String(psalm), roman=bellarmineRoman(psalm);
+    const patterns=[
+        new RegExp(`^#{1,4}\\s*Psalm\\s+${n}\\b.*$`,'gmi'),
+        new RegExp(`^\\s*PSALM\\s+${n}\\b[^\\n]*$`,'gmi'),
+        new RegExp(`^\\s*Psalm\\s+${n}\\b[^\\n]*$`,'gmi'),
+        new RegExp(`^\\s*PSALM\\s+${roman}\\.?\\s*$`,'gmi'),
+        new RegExp(`^\\s*Psalm\\s+${roman}\\.?\\s*$`,'gmi')
+    ];
+    const found=[];
+    for(const re of patterns){ let m; while((m=re.exec(text))) found.push({index:m.index,end:re.lastIndex,line:m[0]}); }
+    return found.sort((a,b)=>a.index-b.index).filter((x,i,a)=>!i || x.index!==a[i-1].index);
+}
+function extractBellarminePsalm(raw, psalm){
+    const text=cleanBellarmineCorpus(raw), starts=bellarmineHeadingMatches(text,psalm);
+    if(!starts.length) throw new Error(`Bellarmine OCR did not expose Psalm ${psalm}.`);
+    // TOC lines are short/bulleted. Prefer a heading followed by substantial prose or "Explanation".
+    let chosen=starts.find(x=>{ const probe=text.slice(x.end,x.end+1200); return /Explanation(?:\s+Of)?(?:\s+The)?\s+Psalm/i.test(probe) || probe.replace(/\s+/g,' ').trim().length>500; }) || starts[starts.length-1];
+    const next=bellarmineHeadingMatches(text,psalm+1).find(x=>x.index>chosen.index);
+    let section=text.slice(chosen.index,next?next.index:Math.min(text.length,chosen.index+60000));
+    section=section
+      .replace(/^\s*[-*]\s*Psalm\s+\d+[^\n]*$/gmi,'')
+      .replace(/^#{1,6}\s*/gm,'')
+      .replace(/\[[^\]]+\]\([^\)]+\)/g,'')
+      .replace(/https?:\/\/\S+/g,'')
+      .replace(/\bTable of Contents\b/gi,'')
+      .replace(/[ \t]{2,}/g,' ')
+      .replace(/\n{3,}/g,'\n\n')
+      .trim();
+    if(section.length<180) throw new Error(`Bellarmine Psalm ${psalm} section was too short after normalization.`);
+    return section;
+}
+function bellarmineVerseUnits(section, psalm){
+    const roman=bellarmineRoman(psalm);
+    let cleaned=String(section||'')
+      .replace(new RegExp(`^Psalm\\s+${psalm}\\b[^\\n]*\\n?`,'i'),'')
+      .replace(new RegExp(`^Psalm\\s+${roman}\\.?\\s*\\n?`,'i'),'')
+      .replace(/^#+\s*[^\n]*\n?/gm,'')
+      .trim();
+    const expl=cleaned.search(/Explanation(?:\s+Of)?(?:\s+The)?\s+Psalm/i);
+    if(expl>=0) cleaned=cleaned.slice(expl).replace(/^Explanation(?:\s+Of)?(?:\s+The)?\s+Psalm\s*/i,'');
+    cleaned=cleaned.replace(/\s+/g,' ').trim();
+    const re=/(^|\s)(\d{1,3})(?:\s*[–—-]\s*(\d{1,3}))?\s+(?=[A-Z“"‘])/g;
+    const bookWord=/^(?:Tim|Cor|Kings?|Mach|Macc|Psalm|John|Luke|Matt|Mark|Rom|Heb|Deut|Gen|Exod|Jer|Isa|Apoc|Rev|Acts|Pet|Thess|Phil|Gal|Eph|Col|Zach|Dan|Eccl|Wis|Prov|Num|Lev|Jos|Judg|Bar|Tob|Jas|Jude)\b/i;
+    const marks=[]; let m, expected=1;
+    while((m=re.exec(cleaned))){
+        const a=+m[2], b=+(m[3]||m[2]);
+        const following=cleaned.slice(re.lastIndex,re.lastIndex+16);
+        if(bookWord.test(following)) continue;
+        if(a!==expected || b<a || b>200) continue;
+        marks.push({start:a,end:b,markerStart:m.index+(m[1]?.length||0),contentStart:re.lastIndex});
+        expected=b+1;
+    }
+    if(!marks.length || marks[0].start!==1) throw new Error(`Bellarmine Psalm ${psalm} verse markers could not be segmented.`);
+    return marks.map((mark,i)=>{
+        const stop=i+1<marks.length?marks[i+1].markerStart:cleaned.length;
+        const text=cleaned.slice(mark.contentStart,stop).trim();
+        return {startVerse:mark.start,endVerse:mark.end,text};
+    }).filter(x=>x.text.length>20);
+}
+function bellarmineEntries(section, reference){
+    const units=bellarmineVerseUnits(section,reference.chapter);
+    const overlaps=units.filter(x=>x.startVerse<=reference.end && x.endVerse>=reference.start);
+    if(!overlaps.length) throw new Error(`Bellarmine Psalm ${reference.chapter} has no segmented commentary overlapping verses ${reference.start}–${reference.end}.`);
+    return overlaps.map(x=>({
+        label:`Psalm ${reference.chapter} · ${x.startVerse===x.endVerse?'v. '+x.startVerse:'vv. '+x.startVerse+'–'+x.endVerse}`,
+        start:`PSA.${reference.chapter}.${x.startVerse}`,
+        end:`PSA.${reference.chapter}.${x.endVerse}`,
+        html:escapeCommentaryText(x.text)
+    }));
+}
+async function loadBellarminePsalm(fetcher, reference){
+    const urls=[source_config_1.BELLARMINE_IA_OCR,source_config_1.BELLARMINE_JINA_OCR,source_config_1.BELLARMINE_JINA_TRANSCRIPTION];
+    const failures=[];
+    for(const url of urls){
+        try{
+            const raw=await fetcher.get(url);
+            const section=extractBellarminePsalm(raw,reference.chapter);
+            const entries=bellarmineEntries(section,reference);
+            if(entries.length) return { sourceId:'bellarmine-en', sourceLabel:'St Robert Bellarmine · Commentary on the Book of Psalms (1866)', entries, fallback:false, retrievalUrl:url, scope:'verse-range' };
+            failures.push(`${url}: no overlapping verse unit`);
+        }catch(e){ failures.push(`${url}: ${e instanceof Error?e.message:String(e)}`); }
+    }
+    const error=new Error(`Bellarmine Psalm ${reference.chapter}:${reference.start}–${reference.end} unavailable from all configured retrieval routes.`);
+    error.failures=failures;
+    throw error;
+}
+
+const PERONNE_GOSPEL_NAMES = { matthew:'Matthieu', mark:'Marc', luke:'Luc', john:'Jean' };
+function peronnePageTitle(reference) {
+    const name = PERONNE_GOSPEL_NAMES[reference.slug];
+    if (!name) return null;
+    return `Chaîne d’or sur l’évangile de saint ${name}/Chapitre ${reference.chapter}`;
+}
+function peronneWikiUrl(title) {
+    return 'https://fr.wikisource.org/wiki/' + String(title).split('/').map(encodeURIComponent).join('/');
+}
+function htmlEscapeText(value) {
+    return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+}
+function peronnePlainText(html) {
+    if (typeof DOMParser === 'undefined') throw new Error('DOMParser unavailable for Wikisource commentary parsing.');
+    const doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+    const root = doc.querySelector('.mw-parser-output') || doc.body;
+    root.querySelectorAll('script,style,table,.mw-editsection,.ws-noexport,.noprint,.navbox,sup.reference').forEach(el => el.remove());
+    return String(root.textContent || '').replace(/\u00a0/g,' ').replace(/\r/g,'');
+}
+function peronneSegments(text) {
+    const lines = String(text || '').split(/\n+/).map(x => x.replace(/[ \t]+/g,' ').trim()).filter(Boolean);
+    const segments=[];
+    let current=null;
+    const marker=/^(?:v(?:\.|ers(?:et)?s?)?\.?|versets?)\s*(\d+)(?:\s*(?:[-–—]|à)\s*(\d+))?\s*[.:]?\s*(.*)$/i;
+    const stop=/^(?:Récupérée de|Catégories\s*:|La dernière modification|Télécharger en|Navigation|Notes et références)$/i;
+    const push=()=>{ if(current && current.body.length){ segments.push({...current, text:current.body.join('\n').trim()}); } };
+    for(const line of lines){
+        if(current && stop.test(line)) break;
+        const m=line.match(marker);
+        if(m){
+            push();
+            current={start:+m[1],end:+(m[2]||m[1]),body:[]};
+            if(m[3]) current.body.push(m[3]);
+            continue;
+        }
+        if(current) current.body.push(line);
+    }
+    push();
+    return segments;
+}
+async function loadPeronneCatena(fetcher, reference) {
+    const title=peronnePageTitle(reference);
+    if(!title) throw new Error('No Péronne Wikisource route for this Gospel.');
+    const api=`${source_config_1.PERONNE_WIKISOURCE_API}?action=parse&format=json&origin=*&redirects=1&prop=text&page=${encodeURIComponent(title)}`;
+    const raw=await fetcher.get(api);
+    const data=JSON.parse(raw);
+    if(data?.error) throw new Error(data.error.info || data.error.code || 'Wikisource parse error.');
+    const html=typeof data?.parse?.text==='string'?data.parse.text:data?.parse?.text?.['*'];
+    if(!html) throw new Error('Wikisource returned no chapter transcription.');
+    const all=peronneSegments(peronnePlainText(html));
+    const chosen=all.filter(x=>x.start<=reference.end && x.end>=reference.start);
+    if(!chosen.length) throw new Error(`Péronne chapter loaded, but no verse markers overlap ${reference.displayFr}.`);
+    const sourceUrl=peronneWikiUrl(title);
+    const entries=chosen.map(x=>({
+        label:`${x.start===x.end?'v. '+x.start:'v. '+x.start+'–'+x.end}`,
+        start:x.start,end:x.end,
+        html:htmlEscapeText(x.text).replace(/\n/g,'<br>')
+    }));
+    return {sourceId:'catena-peronne-fr',sourceLabel:'Chaîne d’Or · Péronne (1868–1869)',entries,retrievalUrl:api,sourceUrl,scope:'verse-range',integrated:true};
+}
+
+function romanPsalm(n) {
+    const values=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
+    let v=Number(n), out='';
+    for(const [value,glyph] of values){ while(v>=value){ out+=glyph; v-=value; } }
+    return out;
+}
+function romanPsalmValue(value) {
+    const map={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};
+    let total=0, prev=0;
+    for(const ch of String(value||'').toUpperCase().split('').reverse()){
+        const n=map[ch]||0;
+        if(n<prev) total-=n; else { total+=n; prev=n; }
+    }
+    return total;
+}
+function augustinePsalmGroupTitle(reference) {
+    const n=Number(reference?.chapter);
+    if(reference?.slug!=='psalms' || !Number.isInteger(n) || n<1 || n>150) return null;
+    const start=Math.floor((n-1)/10)*10+1, end=Math.min(start+9,150);
+    return `Discours sur les psaumes (Augustin)/Psaumes ${romanPsalm(start)} à ${romanPsalm(end)}`;
+}
+function augustineWikiUrl(title) { return `https://fr.wikisource.org/wiki/${encodeURIComponent(title).replace(/%20/g,'_')}`; }
+function augustinePsalmHeading(line) {
+    const m=String(line||'').replace(/\s+/g,' ').trim().match(/^(?:(?:premier|deuxième|second|troisième|quatrième|cinquième|sixième|septième|huitième|neuvième|dixième|onzième|douzième|treizième|quatorzième|quinzième|seizième|dix-septième|dix-huitième|dix-neuvième|vingtième)\s+)?(?:discours|explication|sermon)\s+sur\s+le\s+psaume\s+([IVXLCDM]+)\b[. :—-]*(.*)$/i);
+    return m ? {psalm:romanPsalmValue(m[1]), label:String(line||'').replace(/\s+/g,' ').trim()} : null;
+}
+function augustinePsalmEntries(text, psalm) {
+    const lines=String(text||'').split(/\n+/).map(x=>x.replace(/[ \t]+/g,' ').trim()).filter(Boolean);
+    const entries=[];
+    let active=false,current=null;
+    const stop=/^(?:Récupérée de|Catégories\s*:|La dernière modification|Télécharger en|Navigation|Notes et références)$/i;
+    const push=()=>{ if(current?.body?.length){ entries.push({label:current.label,text:current.body.join('\n').trim()}); } current=null; };
+    for(const line of lines){
+        const h=augustinePsalmHeading(line);
+        if(h){
+            if(active && h.psalm!==psalm){ push(); break; }
+            if(h.psalm===psalm){
+                if(active) push();
+                active=true; current={label:h.label,body:[]};
+                continue;
+            }
+        }
+        if(active && stop.test(line)){ push(); break; }
+        if(active && current) current.body.push(line);
+    }
+    push();
+    return entries;
+}
+async function loadAugustinePsalmFr(fetcher, reference) {
+    const title=augustinePsalmGroupTitle(reference);
+    if(!title) throw new Error('No Augustine/Raulx Wikisource route for this Psalm.');
+    const api=`${source_config_1.PERONNE_WIKISOURCE_API}?action=parse&format=json&origin=*&redirects=1&prop=text&page=${encodeURIComponent(title)}`;
+    const raw=await fetcher.get(api), data=JSON.parse(raw);
+    if(data?.error) throw new Error(data.error.info || data.error.code || 'Wikisource parse error.');
+    const html=typeof data?.parse?.text==='string'?data.parse.text:data?.parse?.text?.['*'];
+    if(!html) throw new Error('Wikisource returned no Augustine Psalm transcription.');
+    const rawEntries=augustinePsalmEntries(peronnePlainText(html), Number(reference.chapter));
+    if(!rawEntries.length) throw new Error(`Augustine/Raulx page loaded, but Psalm ${reference.chapter} could not be isolated.`);
+    const sourceUrl=augustineWikiUrl(title);
+    const entries=rawEntries.map((x,i)=>({
+        label:rawEntries.length>1?x.label:`Psaume ${romanPsalm(reference.chapter)} · commentaire intégral`,
+        start:reference.start,end:reference.end,
+        html:htmlEscapeText(x.text).replace(/\\n/g,'<br>')
+    }));
+    return {sourceId:'augustin-raulx-fr',sourceLabel:'Saint Augustin · Discours sur les psaumes (éd. Raulx, 1864)',entries,retrievalUrl:api,sourceUrl,scope:'psalm-full',integrated:true};
+}
+
+
+const GLAIRE_VIGOUROUX_PAGE = {
+    'acts':'Actes des Apôtres','romans':'Romains','1-corinthians':'I Corinthiens','2-corinthians':'II Corinthiens',
+    'galatians':'Galates','ephesians':'Éphésiens','philippians':'Philippiens','colossians':'Colossiens',
+    '1-thessalonians':'I Thessaloniciens','2-thessalonians':'II Thessaloniciens','1-timothy':'I Timothée','2-timothy':'II Timothée',
+    'titus':'Tite','philemon':'Philémon','hebrews':'Hébreux','james':'Jacques','1-peter':'I Pierre','2-peter':'II Pierre',
+    '1-john':'I Jean','2-john':'II Jean','3-john':'III Jean','jude':'Jude','apocalypse':'Apocalypse',
+    'genesis':'Genèse','exodus':'Exode','leviticus':'Lévitique','numbers':'Nombres','deuteronomy':'Deutéronome',
+    'josue':'Josué','judges':'Juges','ruth':'Ruth','1-kings':'I Rois','2-kings':'II Rois','3-kings':'III Rois','4-kings':'IV Rois',
+    '1-paralipomenon':'I Paralipomènes','2-paralipomenon':'II Paralipomènes','1-esdras':'I Esdras','2-esdras':'II Esdras',
+    'tobias':'Tobie','judith':'Judith','esther':'Esther','1-machabees':'I Machabées','2-machabees':'II Machabées','job':'Job',
+    'proverbs':'Proverbes','ecclesiastes':'Ecclésiaste','canticle-of-canticles':'Cantique des Cantiques','wisdom':'Sagesse',
+    'ecclesiasticus':'Ecclésiastique','isaias':'Isaïe','jeremias':'Jérémie','lamentations':'Lamentations','baruch':'Baruch',
+    'ezechiel':'Ézéchiel','daniel':'Daniel','osee':'Osée','joel':'Joël','amos':'Amos','abdias':'Abdias','jonas':'Jonas',
+    'micheas':'Michée','nahum':'Nahum','habacuc':'Habacuc','sophonias':'Sophonie','aggeus':'Aggée','zacharias':'Zacharie','malachias':'Malachie'
+};
+function glaireVigourouxTitle(reference) {
+    const page=GLAIRE_VIGOUROUX_PAGE[reference?.slug];
+    return page ? `La sainte Bible selon la Vulgate (J.-B. Glaire)/${page}` : null;
+}
+function glaireVigourouxUrl(title) { return `https://fr.wikisource.org/wiki/${encodeURIComponent(title).replace(/%20/g,'_')}`; }
+function glaireChapterNumber(text) {
+    const t=String(text||'').replace(/\s+/g,' ').trim();
+    if(!/^CHAPITRE\b/i.test(t)) return null;
+    if(/^CHAPITRE\s+PREMIER\b/i.test(t)) return 1;
+    const a=t.match(/^CHAPITRE\s+(\d{1,3})\b/i); if(a) return +a[1];
+    const r=t.match(/^CHAPITRE\s+([IVXLCDM]+)\b/i); return r ? romanPsalmValue(r[1]) : null;
+}
+function glaireCleanNoteNode(node) {
+    if(!node) return '';
+    const clone=node.cloneNode(true);
+    clone.querySelectorAll?.('.mw-cite-backlink,.mw-cite-backlink a,.reference-accessdate,.noprint').forEach(x=>x.remove());
+    return String(clone.textContent||'').replace(/\s+/g,' ').trim();
+}
+function glaireParseBookHtml(html, reference) {
+    if(typeof DOMParser==='undefined') throw new Error('DOMParser unavailable in this runtime.');
+    const doc=new DOMParser().parseFromString(String(html||''),'text/html');
+    const root=doc.querySelector('.mw-parser-output') || doc.body;
+    const kids=[...root.children];
+    let start=-1,end=kids.length;
+    for(let i=0;i<kids.length;i++){
+        const n=glaireChapterNumber(kids[i].textContent);
+        if(n===reference.chapter){ start=i; break; }
+    }
+    if(start<0) throw new Error(`Glaire–Vigouroux chapter ${reference.chapter} not found.`);
+    for(let i=start+1;i<kids.length;i++){
+        if(glaireChapterNumber(kids[i].textContent)!=null){ end=i; break; }
+    }
+    let verse=null,lineStart=true,seenVerse=false;
+    const noteIdsByVerse=new Map(), overview=[];
+    const addNote=(v,id)=>{
+        if(!Number.isInteger(v)||v<reference.start||v>reference.end||!id) return;
+        if(!noteIdsByVerse.has(v)) noteIdsByVerse.set(v,[]);
+        const arr=noteIdsByVerse.get(v); if(!arr.includes(id)) arr.push(id);
+    };
+    const walk=(node)=>{
+        if(node.nodeType===3){
+            const txt=String(node.nodeValue||'');
+            const parts=txt.split(/(\n)/);
+            for(const part of parts){
+                if(part==='\n'){ lineStart=true; continue; }
+                if(lineStart){
+                    const m=part.match(/^\s*(\d{1,3})\.\s*/);
+                    if(m){ verse=+m[1]; seenVerse=true; lineStart=false; }
+                    else if(part.trim()) lineStart=false;
+                }
+            }
+            return;
+        }
+        if(node.nodeType!==1) return;
+        const el=node;
+        const tag=el.tagName;
+        if(tag==='BR'){ lineStart=true; return; }
+        if(tag==='SUP' && el.classList?.contains('reference')){
+            const a=el.querySelector('a[href^="#cite_note"]');
+            if(a) addNote(verse, decodeURIComponent(a.getAttribute('href').slice(1)));
+            return;
+        }
+        const block=/^(P|DIV|LI|BLOCKQUOTE|DD|DT)$/.test(tag);
+        if(block) lineStart=true;
+        for(const child of [...el.childNodes]) walk(child);
+        if(block) lineStart=true;
+    };
+    for(let i=start+1;i<end;i++){
+        const el=kids[i];
+        if(!seenVerse){
+            const txt=String(el.textContent||'').replace(/\s+/g,' ').trim();
+            if(txt && !/^\d{1,3}\.\s/.test(txt) && txt.length<1000 && !/^(modifier|Image:|Séparateur)$/i.test(txt)) overview.push(txt);
+        }
+        walk(el);
+    }
+    const entries=[];
+    for(const [v,ids] of [...noteIdsByVerse.entries()].sort((a,b)=>a[0]-b[0])){
+        let n=0;
+        for(const id of ids){
+            const li=doc.getElementById(id), body=li?.querySelector('.reference-text') || li;
+            const text=glaireCleanNoteNode(body);
+            if(!text) continue; n++;
+            entries.push({label:`v. ${v}${ids.length>1?' · note '+n:''}`,start:v,end:v,html:htmlEscapeText(text)});
+        }
+    }
+    const chapterSummary=overview.slice(0,2).join(' ').replace(/\s+/g,' ').trim();
+    return {entries,chapterSummary};
+}
+async function loadGlaireVigourouxFr(fetcher, reference) {
+    const title=glaireVigourouxTitle(reference);
+    if(!title) throw new Error('No Glaire–Vigouroux Wikisource route for this book.');
+    const api=`${source_config_1.PERONNE_WIKISOURCE_API}?action=parse&format=json&origin=*&redirects=1&prop=text&page=${encodeURIComponent(title)}`;
+    const raw=await fetcher.get(api), data=JSON.parse(raw);
+    if(data?.error) throw new Error(data.error.info || data.error.code || 'Wikisource parse error.');
+    const html=typeof data?.parse?.text==='string'?data.parse.text:data?.parse?.text?.['*'];
+    if(!html) throw new Error('Wikisource returned no Glaire–Vigouroux transcription.');
+    const parsed=glaireParseBookHtml(html,reference), sourceUrl=glaireVigourouxUrl(title);
+    return {
+        sourceId:'glaire-vigouroux-fr',sourceLabel:'Glaire–Vigouroux · Bible selon la Vulgate (1905)',
+        entries:parsed.entries,chapterSummary:parsed.chapterSummary,retrievalUrl:api,sourceUrl,
+        scope:parsed.entries.length?'verse-notes':'context-only',integrated:!!parsed.entries.length
+    };
+}
+
+class ScriptureService {
+    fetcher;
+    constructor(fetcher) {
+        this.fetcher = fetcher;
+    }
+    async load(kind, text, options = {}) {
+        const parsed = (0, references_1.parseScriptureReferences)(text);
+        const reference = parsed.refs[0] || null;
+        if (!reference)
+            throw new Error('Scripture reference could not be parsed.');
+        const pericope = { lat: (0, references_1.cleanPericopeText)(text, 'lat'), en: (0, references_1.cleanPericopeText)(text, 'en'), fr: (0, references_1.cleanPericopeText)(text, 'fr') };
+        const hasAppointedPericope = !!(pericope.lat || pericope.en || pericope.fr);
+        if (parsed.relationship === 'composite') {
+            const parts = [], compositeErrors = [];
+            for (const ref of parsed.refs) {
+                const synthetic = {
+                    lat: `${ref.display}\n${pericope.lat || ''}`,
+                    en: `${ref.display}\n${pericope.en || ''}`,
+                    fr: `${ref.displayFr}\n${pericope.fr || ''}`
+                };
+                try { parts.push(await this.load(kind, synthetic, options)); }
+                catch (e) { compositeErrors.push(`${ref.display}: ${e instanceof Error ? e.message : String(e)}`); }
+            }
+            if (!parts.length) throw new Error(`Composite Scripture could not be loaded. ${compositeErrors.join(' | ')}`);
+            const provenance = [];
+            const seen = new Set();
+            for (const part of parts) for (const source of (part.provenance || [])) {
+                const key = `${source.id || source.label}|${source.language || ''}|${source.url || ''}`;
+                if (!seen.has(key)) { seen.add(key); provenance.push(source); }
+            }
+            const first = parsed.refs[0];
+            return {
+                kind:'composite', relationship:'composite',
+                reference:{...first, kind:'composite', label:'Composite Scripture', frLabel:'Lecture composite', display:parsed.refs.map(r=>r.display).join(' + '), displayFr:parsed.refs.map(r=>r.displayFr).join(' + ')},
+                references:parsed.refs, parts, pericope,
+                englishChapter:[], latinChapter:[], frenchChapter:[], chapterSummary:'', frenchChapterSummary:'', englishNotes:[], englishCatena:[], englishCommentary:null, frenchCommentary:null,
+                frenchCatenaUrl:undefined, provenance,
+                errors:[...compositeErrors, ...parts.flatMap(p=>p.errors||[])]
+            };
+        }
+        const effectiveKind = reference.kind === 'gospel' ? 'gospel' : reference.kind === 'psalm' ? 'psalm' : reference.kind === 'vulgate-appendix' ? 'vulgate-appendix' : 'scripture';
+        const errors = [];
+        let englishChapter = [], latinChapter = [], frenchChapter = [], chapterSummary = '', frenchChapterSummary = '', englishNotes = [], englishCatena = [], englishCommentary = null, frenchCommentary = null;
+        try {
+            const raw = await this.fetcher.get(`${source_config_1.ODR_BASE}${encodeURIComponent(odrSlug(reference))}.json`);
+            const data = JSON.parse(raw);
+            const ch = chapterOf(data, reference.chapter);
+            if (!ch)
+                throw new Error('English chapter unavailable.');
+            englishChapter = rowsOf(ch);
+            if (!pericope.en)
+                pericope.en = englishChapter.filter(v => v.verse >= reference.start && v.verse <= reference.end).map(v => v.text).join('\n');
+            chapterSummary = String(ch.summary || '');
+            englishNotes = englishChapter.filter(v => v.verse >= reference.start && v.verse <= reference.end).flatMap(v => (v.notes || []).map(n => ({ verse: v.verse, text: n.text })));
+        }
+        catch (e) {
+            errors.push(`English Scripture: ${e instanceof Error ? e.message : String(e)}`);
+        }
+        try {
+            const data = JSON.parse(await this.fetcher.get(source_config_1.VULGATE_URL));
+            const b = vulgateBook(data, reference);
+            const ch = (b?.chapters || []).find((c) => +c.chapter === reference.chapter);
+            if (!ch)
+                throw new Error('Latin chapter unavailable.');
+            latinChapter = rowsOf(ch);
+            if (!pericope.lat)
+                pericope.lat = latinChapter.filter(v => v.verse >= reference.start && v.verse <= reference.end).map(v => v.text).join('\n');
+        }
+        catch (e) {
+            errors.push(`Latin Vulgate: ${e instanceof Error ? e.message : String(e)}`);
+        }
+        try {
+            const data = JSON.parse(await this.fetcher.get(source_config_1.CRAMPON_URL));
+            const b = cramponBook(data, reference);
+            const ch = (b?.chapters || []).find((c) => +c.chapter === reference.chapter);
+            if (!ch)
+                throw new Error('French chapter unavailable.');
+            frenchChapter = rowsOf(ch);
+            if (!pericope.fr)
+                pericope.fr = frenchChapter.filter(v => v.verse >= reference.start && v.verse <= reference.end).map(v => v.text).join('\n');
+        }
+        catch (e) {
+            errors.push(`French Scripture: ${e instanceof Error ? e.message : String(e)}`);
+        }
+        if (!options.contextOnly && effectiveKind === 'gospel') {
+            try {
+                const raw = await this.fetcher.get(`${source_config_1.CATENA_BASE}${reference.slug}.jsonl`);
+                const nodes = raw.split(/\r?\n/).filter(Boolean).map(line => { try { return JSON.parse(line); } catch { return null; } }).filter(Boolean);
+                let chosen = nodes.filter((n) => { const r = range(n); return r && r.chapter === reference.chapter && r.start <= reference.end && r.end >= reference.start; });
+                if (!chosen.length)
+                    chosen = nodes.filter((n) => { const m = String(n.id || '').match(/\.(\d+)\.(\d+)$/); return m && +m[1] === reference.chapter && +m[2] >= reference.start && +m[2] <= reference.end; });
+                englishCatena = chosen.flatMap((n) => (n.segments || []).filter((s) => s?.text).map((s) => ({ father: String(s.father || 'Traditional commentary'), text: String(s.text), citation: String(n.citation || reference.display), lemma: n.lemma ? String(n.lemma) : undefined })));
+            }
+            catch (e) { errors.push(`Catena Aurea: ${e instanceof Error ? e.message : String(e)}`); }
+            try { frenchCommentary = await loadPeronneCatena(this.fetcher, reference); }
+            catch (e) { errors.push(`Chaîne d’Or · Péronne: ${e instanceof Error ? e.message : String(e)}`); }
+        }
+        // Psalm commentary routing. English: Bellarmine primary, Haydock fallback. French: Augustine/Raulx, clearly Psalm-level rather than verse-exact.
+        if (!options.contextOnly && effectiveKind === 'psalm') {
+            try { englishCommentary = await loadBellarminePsalm(this.fetcher, reference); }
+            catch (e) {
+                const detail=e?.failures?.length?` (${e.failures.join(' | ')})`:'';
+                errors.push(`Bellarmine commentary: ${e instanceof Error ? e.message : String(e)}${detail}`);
+            }
+            try { frenchCommentary = await loadAugustinePsalmFr(this.fetcher, reference); }
+            catch (e) { errors.push(`Saint Augustin · Raulx: ${e instanceof Error ? e.message : String(e)}`); }
+        }
+        if (!options.contextOnly && effectiveKind !== 'gospel' && effectiveKind !== 'vulgate-appendix' && (!englishCommentary || effectiveKind !== 'psalm')) {
+            const code = HAYDOCK_BOOK_CODE[reference.slug];
+            if (code) try {
+                const raw = await this.fetcher.get(`${source_config_1.HAYDOCK_BASE}${code}.json`);
+                const data = JSON.parse(raw);
+                const entries = (data?.entries || []).filter((entry) => haydockOverlap(entry, reference, code)).map((entry) => ({ label:String(entry.label||''), start:String(entry.start||''), end:String(entry.end||''), html:stripUnsafeHtml(entry.body?.['en-US'] || '') }));
+                if (entries.length) englishCommentary = { sourceId:'haydock-en', sourceLabel:'Haydock Catholic Bible Commentary', entries, fallback: effectiveKind === 'psalm' };
+            }
+            catch (e) { errors.push(`Haydock commentary: ${e instanceof Error ? e.message : String(e)}`); }
+        }
+        if (!options.contextOnly && effectiveKind === 'scripture') {
+            try {
+                const gv = await loadGlaireVigourouxFr(this.fetcher, reference);
+                frenchChapterSummary = gv.chapterSummary || '';
+                if (gv.entries?.length) frenchCommentary = gv;
+            }
+            catch (e) { errors.push(`Glaire–Vigouroux: ${e instanceof Error ? e.message : String(e)}`); }
+        }
+        const srcMap = { matthew: 'Matthieu', mark: 'Marc', luke: 'Luc', john: 'Jean' };
+        const frenchCatenaUrl = effectiveKind === 'gospel' ? (frenchCommentary?.sourceUrl || (srcMap[reference.slug] ? source_config_1.PERONNE_BASE + encodeURIComponent(`${srcMap[reference.slug]}${reference.chapter},${reference.start}`) : undefined)) : undefined;
+        const provenance = [
+            ...(hasAppointedPericope ? [{ id:'proper', label:'1962 Proper', language:'la', kind:'proper', note:'Appointed liturgical pericope from the currently resolved 1962 Proper.' }] : []),
+            { id:'odr', label:'Original Douay-Rheims 1582/1609', language:'en', kind:'scripture', url:source_config_1.ODR_BASE, note:'Public-domain chapter context and historical notes.' },
+            { id:'vulgate-clementine', label:'Vulgata Clementina', language:'la', kind:'scripture', url:source_config_1.VULGATE_URL, note:`Clementine Vulgate corpus pinned at ${source_config_1.VULGATE_REVISION.slice(0, 7)}.` },
+            { id:'crampon', label:'Bible Crampon 1923', language:'fr', kind:'scripture', url:source_config_1.CRAMPON_URL, note:`Public-domain French Scripture corpus pinned at ${source_config_1.CRAMPON_REVISION.slice(0, 7)}.` }
+        ];
+        if (!options.contextOnly && effectiveKind === 'gospel') {
+            provenance.push({ id:'catena-en', label:'Catena Aurea · Newman/Oxford', language:'en', kind:'commentary', url:source_config_1.CATENA_BASE, note:'Complete overlapping attributed patristic extracts from the normalized public-domain English corpus.' });
+            if (frenchCommentary?.entries?.length) {
+                provenance.push({ id:'catena-fr', label:'Chaîne d’Or · Péronne 1868–1869', language:'fr', kind:'commentary', url:frenchCommentary.sourceUrl, note:'Integrated French public-domain transcription from Wikisource, segmented against the verse markers of Péronne’s edition. No machine translation from the English Catena.' });
+                provenance.push({ id:'catena-fr-edition', label:'BnF · Péronne edition record', language:'fr', kind:'source-catalogue', url:source_config_1.PERONNE_BNF_CATALOG, note:'Bibliographic control record for the 8-volume Paris, L. Vivès, 1868–1869 edition: Matthew I–III, Mark IV, Luke V–VI, John VII–VIII.' });
+            } else if (frenchCatenaUrl) provenance.push({ id:'catena-fr-link', label:'Chaîne d’Or · Péronne', language:'fr', kind:'commentary-link', url:frenchCatenaUrl, note:'Fallback historical French source link shown only when structured Wikisource ingestion is unavailable.' });
+        } else if (englishCommentary?.sourceId === 'bellarmine-en') {
+            provenance.push({ id:'bellarmine-en', label:'St Robert Bellarmine · Commentary on the Book of Psalms (1866)', language:'en', kind:'commentary', url:source_config_1.BELLARMINE_SOURCE, note:`Public-domain O’Sullivan translation, James Duffy 1866. Edition-level source: Internet Archive scan. Retrieval route: ${englishCommentary.retrievalUrl || source_config_1.BELLARMINE_IA_OCR}. Psalm numbering follows the traditional/Vulgate Psalter.` });
+            provenance.push({ id:'bellarmine-scan', label:'Bellarmine 1866 scan', language:'en', kind:'source-scan', url:source_config_1.BELLARMINE_SCAN, note:'Public-domain scan used to anchor edition provenance independently of any modern transcription layer.' });
+            if (frenchCommentary?.sourceId === 'augustin-raulx-fr') provenance.push({ id:'augustin-raulx-fr', label:'Saint Augustin · Discours sur les psaumes · Raulx 1864', language:'fr', kind:'commentary', url:frenchCommentary.sourceUrl, note:'French historical commentary integrated from the Raulx 1864 transcription on Wikisource. It is presented at Psalm/discourse level; the app does not claim one-to-one verse mapping.' });
+        } else if (englishCommentary?.sourceId === 'haydock-en') {
+            provenance.push({ id:'haydock-en', label:'Haydock Catholic Bible Commentary', language:'en', kind:'commentary', url:source_config_1.HAYDOCK_BASE, note:effectiveKind === 'psalm' ? 'Public-domain historical commentary shown only because the Bellarmine Psalm provider was unavailable for this request.' : 'Public-domain historical English Catholic commentary, pinned to donor corpus v2.0.0.' });
+            if (effectiveKind === 'psalm') provenance.push({ id:'bellarmine-source', label:'St Robert Bellarmine · Commentary on the Book of Psalms (1866)', language:'en', kind:'commentary-source', url:source_config_1.BELLARMINE_SOURCE, note:'Primary Psalm source; retrieval failed for this request, so Haydock is explicitly marked as fallback.' });
+            if (frenchCommentary?.sourceId === 'augustin-raulx-fr') provenance.push({ id:'augustin-raulx-fr', label:'Saint Augustin · Discours sur les psaumes · Raulx 1864', language:'fr', kind:'commentary', url:frenchCommentary.sourceUrl, note:'French historical commentary integrated from the Raulx 1864 transcription on Wikisource. It is presented at Psalm/discourse level; the app does not claim one-to-one verse mapping.' });
+        } else if (frenchCommentary?.sourceId === 'augustin-raulx-fr') {
+            provenance.push({ id:'augustin-raulx-fr', label:'Saint Augustin · Discours sur les psaumes · Raulx 1864', language:'fr', kind:'commentary', url:frenchCommentary.sourceUrl, note:'French historical commentary integrated from the Raulx 1864 transcription on Wikisource. It is presented at Psalm/discourse level; the app does not claim one-to-one verse mapping.' });
+        }
+        if (frenchCommentary?.sourceId === 'glaire-vigouroux-fr' || frenchChapterSummary) {
+            provenance.push({ id:'glaire-vigouroux-fr', label:'J.-B. Glaire / F. Vigouroux · La sainte Bible selon la Vulgate (1905)', language:'fr', kind:frenchCommentary?.entries?.length?'commentary':'context', url:frenchCommentary?.sourceUrl || glaireVigourouxUrl(glaireVigourouxTitle(reference)), note:'Public-domain French Catholic Bible edition on Wikisource. Verse-linked notes are shown only where the 1905 edition actually attaches them; chapter summaries may enrich Context but do not count as verse commentary.' });
+        }
+        return { kind:effectiveKind, relationship:parsed.relationship, reference, pericope, englishChapter, latinChapter, frenchChapter, chapterSummary, frenchChapterSummary, englishNotes, englishCatena, englishCommentary, frenchCommentary, frenchCatenaUrl, provenance, errors };
+    }
+}
+exports.ScriptureService = ScriptureService;
+
+},11:function(module,exports,require){
+"use strict";
