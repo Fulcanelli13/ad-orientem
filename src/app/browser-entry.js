@@ -32,6 +32,7 @@ function installVisibleRibbonOwner(win, controller, state) {
   let nav = null;
   let observer = null;
   let disposed = false;
+  let ribbonClickBound = false;
   const cleanups = [];
 
   function paintActive() {
@@ -44,10 +45,21 @@ function installVisibleRibbonOwner(win, controller, state) {
     }
   }
 
+  function bindRibbonClick() {
+    if (ribbonClickBound || !nav?.addEventListener) return;
+    nav.addEventListener("click", onRibbonClick);
+    ribbonClickBound = true;
+    cleanups.push(() => {
+      nav?.removeEventListener?.("click", onRibbonClick);
+      ribbonClickBound = false;
+    });
+  }
+
   function adopt() {
     if (disposed) return false;
     nav = doc.getElementById("ao-global-ribbon");
     if (!nav?.querySelectorAll) return false;
+    bindRibbonClick();
 
     nav.dataset.aoOwner = "AO_APP_SHELL_V1";
     nav.dataset.aoVisibleShell = "modular";
@@ -103,10 +115,7 @@ function installVisibleRibbonOwner(win, controller, state) {
     if (event.target?.closest?.("[data-app-home]")) controller.setActive?.("home");
   }
 
-  if (adopt()) {
-    nav.addEventListener?.("click", onRibbonClick);
-    cleanups.push(() => nav?.removeEventListener?.("click", onRibbonClick));
-  }
+  adopt();
 
   const unsubscribe = controller.subscribe?.(() => {
     adopt();
