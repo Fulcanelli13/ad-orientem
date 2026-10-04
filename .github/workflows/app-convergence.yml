@@ -4,15 +4,25 @@ on:
   pull_request:
     paths:
       - "src/app/**"
-      - "tests/app-shell-contract.mjs"
+      - "src/mass/browser-entry.js"
+      - "index.html"
+      - "package.json"
+      - "tests/app-shell-*.mjs"
+      - "tests/reader-phone-acceptance.mjs"
+      - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
       - ".github/workflows/app-convergence.yml"
   push:
     branches:
-      - integration/final-app-shell-phase1
+      - main
     paths:
       - "src/app/**"
-      - "tests/app-shell-contract.mjs"
+      - "src/mass/browser-entry.js"
+      - "index.html"
+      - "package.json"
+      - "tests/app-shell-*.mjs"
+      - "tests/reader-phone-acceptance.mjs"
+      - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
       - ".github/workflows/app-convergence.yml"
 
@@ -24,4 +34,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node tests/app-shell-contract.mjs
+      - run: npm run test:app-shell-contract
+      - run: npm run test:tree-hygiene
+
+  app-shell-phone:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:phone
