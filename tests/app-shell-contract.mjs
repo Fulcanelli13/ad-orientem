@@ -138,6 +138,10 @@ function host({ route = "home", confirm = true } = {}) {
       openDomain: (id) => { calls.push(`domain:${id}`); return true; },
       openModule: async (id) => { calls.push(`module:${id}`); return { ok: true }; },
     },
+    AO_PRAY_APP_V1: {
+      open: async () => { calls.push("pray:open"); return true; },
+      close: () => { calls.push("pray:close"); return true; },
+    },
     AO_SETTINGS_V4359: {
       get state() { return { navigation: { open } }; },
       open() { open = true; calls.push("settings:open"); },
@@ -148,11 +152,11 @@ function host({ route = "home", confirm = true } = {}) {
   };
   const adapter = createAppHostAdapter(win);
   assert.equal(adapter.hardHome(), true);
-  assert.equal(adapter.openDomain("pray"), true);
+  assert.equal(await adapter.openDomain("pray"), true);
   assert.equal(await adapter.openCalendar(), true);
   assert.equal(adapter.openSettings(), true);
   assert.equal(adapter.dismissSettings(), true);
-  assert.deepEqual(calls, ["home", "domain:pray", "module:today.calendar", "settings:open", "settings:dismiss"]);
+  assert.deepEqual(calls, ["pray:close", "home", "pray:open", "module:today.calendar", "settings:open", "settings:dismiss"]);
 }
 
 {

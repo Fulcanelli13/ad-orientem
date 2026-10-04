@@ -52,12 +52,15 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     hardHome() {
+      // Close modular domain presentations before mounting Home. These owners
+      // are deliberately independent of the historical hard-Home reset.
+      try { win?.AO_PRAY_APP_V1?.close?.(); } catch {}
+      try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       const modular = win?.AO_HOME_APP_V1;
       if (typeof modular?.open === "function") {
         const opened = modular.open();
         if (opened !== false) return true;
       }
-      try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       const nav = win?.AO_NAV_V362;
       if (typeof nav?.home !== "function") return false;
       nav.home();
@@ -72,6 +75,13 @@ export function createAppHostAdapter(win = globalThis) {
           if (typeof mass?.resume !== "function") return false;
           return Promise.resolve(mass.resume()).then((result) => result?.ok !== false);
         }
+      }
+      if (domain === "pray") {
+        const modular = win?.AO_PRAY_APP_V1;
+        if (typeof modular?.open !== "function") return false;
+        // PRAY has a modular final presentation owner. Never fall back to the
+        // obsolete PrayerBook surface if that owner cannot open.
+        return Promise.resolve(modular.open()).then((opened) => opened !== false);
       }
       const api = shell();
       if (typeof api?.openDomain !== "function") return false;
