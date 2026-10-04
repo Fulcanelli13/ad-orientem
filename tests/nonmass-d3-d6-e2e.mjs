@@ -74,6 +74,12 @@ try{
   assert.equal(boot.persistentPresence,null,"D3 left exposed/reserved state in persistent PRAY storage");
   assert.equal(boot.firstFriday,true,"D3 persistence scrub damaged unrelated programme state");
 
+  await page.waitForFunction(()=>
+    Boolean(globalThis.AO_PRAY_V435930) &&
+    globalThis.AO_MODULES?.qa?.()?.v435930PrayAudit===true,
+    null,{timeout:30000}
+  );
+
   const openedAdoration=await page.evaluate(async()=>{
     const modules=globalThis.AO_MODULES;
     if(typeof modules?.open!=="function")return false;
