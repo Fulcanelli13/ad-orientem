@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
@@ -491,13 +491,35 @@
         "tests/reader-candlemas.mjs",
         "tests/browser-runtime.mjs"
       ]
+    },
+    {
+      "id": "REQUIEM_ABSOLUTION_NATIVE_PAYLOAD",
+      "status": "CERTIFIED_MODULAR_RUNTIME",
+      "controller": "src/mass/reader-requiem-absolution.js",
+      "payload": "data/presentation/reader-requiem-absolution.v1.json",
+      "structuralSource": "data/mass/special-days-extension.v1.3.json#ABS",
+      "runtime": "src/mass/browser-runtime.js",
+      "recoveredGraphRecords": 5,
+      "guarantees": [
+        "activation is explicit following-action only",
+        "Requiem Mass ending hands directly to the Absolution reader without fabricating a Last Gospel",
+        "body-present and body-absent branches remain distinct",
+        "coffin aspersion/incensation never creates a faithful gesture",
+        "In paradisum is limited to the body-present burial-procession branch",
+        "completion returns to the plan-owned post-Mass lifecycle"
+      ],
+      "tests": [
+        "tests/reader-requiem-absolution.mjs",
+        "tests/browser-runtime.mjs",
+        "tests/reader-special-structure.mjs"
+      ]
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Asperges, Palm, Ash Wednesday and Candlemas have source-pinned native payloads. Requiem Mass variance is certified plan-owned and no longer needs a duplicate reader surface. Rogations, explicit Requiem Absolution/funeral following actions, Holy Thursday post-Mass actions, Corpus procession/Benediction, Good Friday and Easter Vigil still require native payload/rendering."
+      "detail": "Asperges, Palm, Ash Wednesday, Candlemas and Requiem Absolution have native payload/runtime support. Requiem Mass variance is certified plan-owned. Remaining native special-structure work: Rogations, Holy Thursday post-Mass actions, Corpus procession/Benediction, Good Friday and Easter Vigil."
     }
   ],
   "certificationPolicy": {
