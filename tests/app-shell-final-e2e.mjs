@@ -177,11 +177,32 @@ async function exerciseRealShellSpecialRite(browser,spec){
     await page.evaluate(({kind,receiveState})=>{
       const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
       if(kind==="PALM")api.setPalmRecipientState(receiveState);
-      else api.setAshRecipientState(receiveState);
+      else if(kind==="ASH")api.setAshRecipientState(receiveState);
+      else if(kind==="CANDLEMAS")api.setCandlemasRecipientState(receiveState);
+      else throw new Error("Unsupported real-shell recipient rite: "+kind);
     },{kind:spec.kind,receiveState:spec.receiveState});
     await page.waitForFunction(()=>
       document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.includes("KNEEL"),
       null,{timeout:5000});
+
+    if(spec.processionCardId){
+      await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.setCandlemasProcessionParticipant(true));
+      await advanceToId(spec.processionCardId);
+      await page.waitForFunction(()=>
+        globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasState?.()?.candleState==="CANDLE_LIT",
+        null,{timeout:5000});
+      const candleState=await page.evaluate(()=>({
+        state:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasState?.()?.candleState??null,
+        marker:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17ObjectState??null,
+        gospel:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasMassState?.("MC-GSP-060")??null,
+        afterPater:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasMassState?.("MC-COM-040")??null,
+      }));
+      assert.equal(candleState.state,"CANDLE_LIT","Candlemas procession lost lighted-candle state");
+      assert.equal(candleState.marker,"CANDLE_LIT","Candlemas native root lost object-state observability");
+      assert.equal(candleState.gospel?.state,"CANDLE_LIT","Candlemas Mass Gospel candle state disappeared");
+      assert.equal(candleState.gospel?.postureOverride,null,"Candlemas object state overrode Mass posture");
+      assert.equal(candleState.afterPater?.state,null,"Candlemas invented a candle requirement after Pater");
+    }
 
     await advanceToId(spec.handoffId);
     await tapNext();
@@ -371,8 +392,20 @@ try{
     receiveState:"RECEIVE_ASHES",
     handoffId:"ASH-R05",
   });
+  await exerciseRealShellSpecialRite(browser,{
+    kind:"CANDLEMAS",
+    insertedRite:"candlemas",
+    date:"2027-02-02",
+    celebrationId:"purificatio-bmv",
+    properSource:"Sancti/02-02",
+    firstId:"CND-R01",
+    recipientCardId:"CND-R03",
+    receiveState:"RECEIVE_CANDLE",
+    processionCardId:"CND-R05",
+    handoffId:"CND-R07",
+  });
 
-  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Palm and Ash paths on phone Chromium without booting legacy.");
+  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Palm, Ash and Candlemas paths on phone Chromium without booting legacy.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
