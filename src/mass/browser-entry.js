@@ -60,6 +60,7 @@ export function deriveHostOptions({ resolvedMass, assemblyStatus, arch, runtimeS
     followingActions: rites.followingActions,
     chantSetting: arch?.chantSetting ?? runtimeState?.settings?.chantSetting ?? "GREGORIAN",
     faithfulCommunicantsPresent: runtimeState?.settings?.faithfulCommunion ?? null,
+    requiemAbsolution: resolvedMass?.requiemAbsolution ?? resolvedMass?.provenance?.requiemAbsolution ?? null,
     localProfile: runtimeState?.settings?.localMassProfile ?? null,
   });
 }
