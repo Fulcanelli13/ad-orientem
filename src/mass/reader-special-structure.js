@@ -133,12 +133,16 @@ export function projectSpecialStructure(prepared,{registry,extension,core}={}){
   const overlays=arr(plan.overlayGraphs).filter(id=>id!=="VOTIVE_PROPER").map(id=>segment(id,"MASS_OVERLAY",sources,{
     massEntry:plan.massEntry,
   }));
-  const insertions=arr(plan.insertions).map(id=>freeze({
-    id,
-    lane:"MASS_INSERTION",
-    renderable:false,
-    readerPayload:"STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
-  }));
+  const insertions=arr(plan.insertions).map(id=>{
+    const prayerOverPeople=id==="PRAYER_OVER_PEOPLE_AFTER_POSTCOMMUNION_BEFORE_FINAL_DOMINUS_VOBISCUM";
+    return freeze({
+      id,
+      lane:"MASS_INSERTION",
+      renderable:prayerOverPeople,
+      planOwned:prayerOverPeople,
+      readerPayload:prayerOverPeople ? "PLAN_APPLIED_TO_ORDINARY_READER" : "STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
+    });
+  });
   const following=arr(plan.followingGraphs).map(id=>segment(id,"FOLLOWING_ACTION",sources,{
     activation:"EXPLICIT_COMPILED_PLAN",
   }));
