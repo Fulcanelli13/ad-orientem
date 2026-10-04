@@ -44,6 +44,27 @@ assert.equal(await delayedOwner.open(),true,"modular PRAY owner did not wait for
 assert.ok(polls>=2);
 assert.equal(delayed.document.documentElement.dataset.aoPrayRouteOwner,"modular-pray-v1");
 
+const bootCalls=[];
+const bootRoot={dataset:{},classList:{contains:name=>name==="open"}};
+const boot={
+  document:{documentElement:{dataset:{}},getElementById:()=>bootRoot},
+  setTimeout(fn){fn();},
+  queueMicrotask(fn){fn();},
+  AO_APP_SHELL_V1:win.AO_APP_SHELL_V1,
+  AO_V37_SHELL:{
+    openDomain(domain){
+      bootCalls.push(domain);
+      boot.AO_PRAY_V435930=win.AO_PRAY_V435930;
+      return true;
+    },
+  },
+};
+const bootOwner=createPrayOwner(boot,{pollMs:1,maxPolls:1});
+assert.equal(await bootOwner.open(),true,"modular PRAY owner did not bootstrap its presentation donor");
+assert.deepEqual(bootCalls,["pray"]);
+assert.equal(boot.document.documentElement.dataset.aoPrayRouteOwner,"modular-pray-v1");
+assert.equal(bootRoot.dataset.aoPrayOwner,"modular-pray-v1");
+
 const absent=createPrayOwner({
   document:{documentElement:{dataset:{}},getElementById:()=>null},
   setTimeout(fn){fn();}
