@@ -98,6 +98,25 @@ function host({ route = "home", confirm = true } = {}) {
 
 {
   const calls = [];
+  const win = {
+    AO_RUNTIME_V8: { store: { getState: () => ({ route: "home", language: "en" }), subscribe: () => () => {} } },
+    AO_NAV_V362: { home: () => { calls.push("home"); return true; } },
+    AO_CALENDAR_APP_V1: {
+      open: () => { calls.push("calendar:modular"); return true; },
+      close: () => { calls.push("calendar:close"); return true; },
+    },
+    AO_V37_SHELL: {
+      openDomain: id => { calls.push("domain:" + id); return true; },
+      openModule: async id => { calls.push("module:" + id); return { ok: true }; },
+    },
+  };
+  const adapter = createAppHostAdapter(win);
+  assert.equal(await adapter.openCalendar(), true);
+  assert.deepEqual(calls, ["calendar:modular"], "Calendar fell through to donor module despite modular owner");
+}
+
+{
+  const calls = [];
   let open = false;
   const win = {
     AO_RUNTIME_V8: { store: { getState: () => ({ route: "home", language: "en" }), subscribe: () => () => {} } },

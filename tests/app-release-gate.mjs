@@ -5,7 +5,7 @@ const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.3.0");
+assert.equal(app.version,"1.4.0");
 assert.equal(app.status,"CONVERGENCE_IN_PROGRESS");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -39,6 +39,13 @@ assert.equal(findings.find(x=>x.id==="CROSS_DOMAIN_PHONE_JOURNEY")?.classificati
 assert.equal(findings.find(x=>x.id==="CROSS_DOMAIN_PHONE_JOURNEY")?.status,"CLOSED");
 assert.equal(findings.find(x=>x.id==="PERSISTENCE_STATE_CONTAMINATION")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="PERSISTENCE_STATE_CONTAMINATION")?.status,"CLOSED");
+const nonMass=findings.find(x=>x.id==="NON_MASS_DONOR_EXTRACTION");
+assert.equal(nonMass?.status,"OPEN");
+assert.equal(nonMass?.progress?.calendar,"MODULAR_PHONE_CERTIFIED");
+assert.equal(nonMass?.progress?.home,"PENDING");
+assert.equal(nonMass?.progress?.pray,"PENDING");
+assert.equal(nonMass?.progress?.learn,"PENDING");
+assert.equal(nonMass?.progress?.settings,"PENDING");
 assert.equal(findings.find(x=>x.id==="DUPLICATE_BROWSER_ENTRY_HYGIENE")?.classification,"REGRESSION");
 assert.match(app.requiredPhoneJourney,/Home.*Calendar.*Mass.*LIVE.*leave\/resume.*PRAY.*Home.*Settings/i);
 

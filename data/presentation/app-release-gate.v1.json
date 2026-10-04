@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -93,9 +93,19 @@
       "status": "OPEN",
       "evidence": [
         "docs/APP-CONVERGENCE.md",
-        "src/app/host-adapter.js"
+        "src/app/host-adapter.js",
+        "src/calendar/browser-entry.js",
+        "tests/app-shell-contract.mjs",
+        "tests/app-shell-journey-e2e.mjs"
       ],
-      "detail": "Home, Calendar, PRAY, Learn and Settings still depend on monolith donor owners rather than final modular visible owners."
+      "detail": "Calendar presentation ownership is extracted and actual-index phone-certified under AO_CALENDAR_APP_V1; the historical today.calendar/v25 Calendar presentation is no longer used when the modular owner is available. Home/Coming Up, PRAY, Learn and Settings still depend on non-Mass donor presentation owners.",
+      "progress": {
+        "calendar": "MODULAR_PHONE_CERTIFIED",
+        "home": "PENDING",
+        "pray": "PENDING",
+        "learn": "PENDING",
+        "settings": "PENDING"
+      }
     },
     {
       "id": "PERSISTENCE_STATE_CONTAMINATION",

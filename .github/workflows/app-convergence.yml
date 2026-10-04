@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "src/app/**"
+      - "src/calendar/**"
       - "src/mass/browser-entry.js"
       - "index.html"
       - "package.json"
@@ -19,6 +20,7 @@ on:
       - main
     paths:
       - "src/app/**"
+      - "src/calendar/**"
       - "src/mass/browser-entry.js"
       - "index.html"
       - "package.json"

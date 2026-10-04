@@ -70,11 +70,19 @@ The adoption layer rewrites ribbon buttons from `data-ao-ribbon` to `data-ao-app
 
 Real-shell phone acceptance now requires all six modular ribbon buttons to be present, zero legacy ribbon click attributes to remain, and the document-level shell owner to report `AO_APP_SHELL_V1` while R17 remains the production Mass owner.
 
+## Phase 4: modular Calendar extraction
+
+Calendar presentation ownership is now extracted from the v43.59.30 donor into `src/calendar/browser-entry.js`. The modular owner retains the donor's user-facing contract: exact-date resolution, DD/MM/YYYY Go semantics, separate Today action, seven-day navigation, Proper/readiness metadata, filtered commemorations, and returning to Home with the chosen date preserved.
+
+The app host prefers `AO_CALENDAR_APP_V1` and only retains `today.calendar` as a fail-safe fallback. Actual-index phone acceptance requires `#ao-calendar-modular-root`, requires the app shell to report the modular Calendar owner, and rejects an active v25 donor Calendar panel. Calendar keeps the permanent six-destination app ribbon above its surface.
+
+This closes Calendar presentation extraction only. `NON_MASS_DONOR_EXTRACTION` remains open for Home/Coming Up, PRAY, Learn and Settings.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
 
-After host promotion, extract in this order: Home/Coming Up, Calendar dashboard and pre-Mass selection entry, PRAY, Learn, Settings. Each extraction replaces one donor owner only after parity tests pass; it must not create a second visible surface for the same state.
+After host promotion, extract in this order: Home/Coming Up, Calendar dashboard and pre-Mass selection entry, PRAY, Learn, Settings. Calendar presentation is now modular and phone-certified; Home/Coming Up is the next extraction target. Each extraction replaces one donor owner only after parity tests pass; it must not create a second visible surface for the same state.
 
 Before calling app convergence complete:
 
