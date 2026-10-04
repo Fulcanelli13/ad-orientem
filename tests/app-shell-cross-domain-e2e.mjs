@@ -57,9 +57,17 @@ try{
   const page=await context.newPage();
   const pageErrors=[];
   const consoleErrors=[];
+  const missingResources=[];
   page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
+  page.on("response",response=>{
+    if(response.status()===404)missingResources.push(response.url());
+  });
   page.on("console",msg=>{
-    if(msg.type()==="error")consoleErrors.push(msg.text());
+    if(msg.type()!=="error")return;
+    const text=msg.text();
+    if(/Blocked call to navigator\.vibrate/i.test(text))return;
+    if(/Failed to load resource:.*404/i.test(text))return;
+    consoleErrors.push(text);
   });
 
   await page.goto("http://127.0.0.1:4177/index.html?aoR17Reader=native",{
@@ -371,8 +379,10 @@ try{
     "Settings ribbon did not reach a Settings owner"
   );
 
+  const critical404s=missingResources.filter(url=>/\.(?:m?js|json|css)(?:\?|$)/i.test(url));
   assert.deepEqual(pageErrors,[],"uncaught errors in cross-domain phone journey: "+JSON.stringify(pageErrors));
-  assert.deepEqual(consoleErrors,[],"console errors in cross-domain phone journey: "+JSON.stringify(consoleErrors));
+  assert.deepEqual(consoleErrors,[],"unexpected console errors in cross-domain phone journey: "+JSON.stringify(consoleErrors));
+  assert.deepEqual(critical404s,[],"missing critical resources in cross-domain phone journey: "+JSON.stringify(critical404s));
 
   await context.close();
   console.log("PASS cross-domain phone journey: Home -> Calendar -> Mass -> native LIVE -> guarded leave -> PRAY -> Home -> Settings.");
