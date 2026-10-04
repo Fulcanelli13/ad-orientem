@@ -39,7 +39,7 @@ No Mass reader/runtime file is modified by this phase. In particular, this work 
 
 ## Phase 2 audit: assembled-app regression gate
 
-The first post-reader audit found that the modular application shell was initially only an adapter. Phase 2.2 now closes that shell-ownership gap: `AO_APP_SHELL_V1` owns capture-phase clicks on the existing visible six-destination ribbon, synchronizes its active/aria-current state, and prevents the historical ribbon listener from receiving those user clicks. The donor ribbon markup is retained as presentation while navigation authority is modular. Non-Mass surface contents are still donor-owned pending extraction.
+The first post-reader audit found that the modular application shell was initially only an adapter. Phase 2.2 now closes that shell-ownership gap: `AO_APP_SHELL_V1` adopts the existing visible six-destination ribbon without creating a second surface. It rewrites the donor `data-ao-ribbon` click hooks to modular `data-ao-app-surface` hooks, synchronizes active/aria-current state, and re-adopts after donor re-renders. The historical ribbon listener remains present but has no top-level ribbon hook to match. Non-Mass surface contents are still donor-owned pending extraction.
 
 The production `index.html` also still contains two cleanup debts that must not become permanent architecture: the embedded `AO_EMERGENCY_STABLE_V4333` runtime and a duplicated `src/mass/browser-entry.js` module tag. These are app-shell convergence items, not Mass-engine blockers. The emergency runtime may only be removed after any still-required live-session locks are owned by the final modular shell/settings path.
 
