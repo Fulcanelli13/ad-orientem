@@ -319,6 +319,7 @@ const requiem=createBrowserMassRuntime({
   resolveHostOptions:()=>({form:"solemn",celebrationTitle:"Requiem",proper,followingActions:["REQUIEM_ABSOLUTION"]}),
   readReaderPreferences:()=>({mode:"simple"}),
   loadPresentationData:async()=>presentationData,
+  eventData,
   loadRequiemAbsolutionData:async()=>requiemAbsolutionData,
   requiemAbsolutionContext:{bodyPresent:true,burialProcession:true},
 });
