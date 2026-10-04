@@ -75,6 +75,15 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
       }
     }
 
+    if (target === "mass" && Boolean(host.hasResumableMass?.())) {
+      const opened = Boolean(
+        await (host.defer?.(() => host.openDomain?.("mass")) ?? host.openDomain?.("mass")),
+      );
+      if (!opened) return result(false, active, { reason: "DOMAIN_OWNER_UNAVAILABLE" });
+      setActive("mass");
+      return result(true, "mass", { resumedMass: true });
+    }
+
     if (target === "home") {
       const opened = Boolean(await host.hardHome?.());
       if (!opened) return result(false, active, { reason: "HOME_OWNER_UNAVAILABLE" });
