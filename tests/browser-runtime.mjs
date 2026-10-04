@@ -12,6 +12,8 @@ const ashPayload=load("../data/presentation/reader-ash.v1.json");
 const ashData=Object.freeze({payload:ashPayload,graph:Object.freeze([...specialExtension.graphs.ASH])});
 const candlemasPayload=load("../data/presentation/reader-candlemas.v1.json");
 const candlemasData=Object.freeze({payload:candlemasPayload,graph:Object.freeze([...specialExtension.graphs.CND])});
+const rogationsPayload=load("../data/presentation/reader-rogations.v1.json");
+const rogationsData=Object.freeze({payload:rogationsPayload,graph:Object.freeze([...specialExtension.graphs.ROG])});
 const requiemAbsolutionPayload=load("../data/presentation/reader-requiem-absolution.v1.json");
 const requiemAbsolutionData=Object.freeze({payload:requiemAbsolutionPayload,graph:Object.freeze([...specialExtension.graphs.ABS])});
 const corpusChristiPayload=load("../data/presentation/reader-corpus-christi.v1.json");
@@ -239,6 +241,37 @@ assert.equal(candlemasRuntime.getCandlemasMassState("MC-COM-040").state,null);
 candlemasRuntime.previous();
 assert.equal(candlemasRuntime.getCandlemasState().card.id,"CND-R07");
 candlemasRuntime.destroy();
+
+const rogationsRoot=rootFixture();
+const rogations=createBrowserMassRuntime({
+  root:rogationsRoot,
+  celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["rogations"]})},
+  resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Rogations",proper,precedingRites:["ROGATIONS"]}),
+  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  loadPresentationData:async()=>presentationData,
+  loadRogationsData:async()=>rogationsData,
+});
+const rogationsEntered=await rogations.enter();
+assert.equal(rogationsEntered.session.plan.massEntry,"INTROIT");
+assert.deepEqual([...rogationsEntered.session.plan.precedingGraphs],["ROGATIONS"]);
+assert.equal(rogations.getCurrentSectionId(),null);
+assert.equal(rogations.getReaderState().cardTitle,"Exsurge Domine");
+rogations.next();
+assert.equal(rogations.getRogationsState().card.id,"ROG-R02");
+assert.equal(rogations.getReaderState().posture.label,"KNEEL");
+rogations.next();
+assert.equal(rogations.getRogationsState().card.id,"ROG-R03");
+assert.equal(rogations.getReaderState().posture.label,"PROCESSIONAL");
+assert.ok(rogations.getReaderState().paragraphs.length>100,"Rogation Litany was abridged in browser runtime");
+while(!rogations.getRogationsState().atEnd)rogations.next();
+assert.equal(rogations.getRogationsState().card.id,"ROG-R06");
+rogations.next();
+assert.equal(rogations.getCurrentSectionId(),"AO.CARD.001");
+assert.equal(rogations.getReaderState().cardTitle,"Introit");
+rogations.previous();
+assert.equal(rogations.getRogationsState().card.id,"ROG-R06");
+rogations.destroy();
+assert.equal(rogationsRoot.innerHTML,"");
 
 const planAwareLowRoot=rootFixture();
 const planAwareLow=createBrowserMassRuntime({
