@@ -23,6 +23,11 @@ import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
 import { createRogationsReaderController, loadRogationsReaderData } from "./reader-rogations.js";
 import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
+import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
+import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
+import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
+import { createGenericProcessionReaderController, loadGenericProcessionReaderData } from "./reader-generic-procession.js";
+import { createFormLifecycleRuntime } from "./form-lifecycle.js";
 
 const ROOT_ID="ao-r17-native-reader-preview";
 
@@ -172,6 +177,14 @@ export async function prepareNativeReaderPreview({
   loadRogationsData=loadRogationsReaderData,
   goodFridayData=null,
   loadGoodFridayData=loadGoodFridayReaderData,
+  requiemAbsolutionData=null,
+  loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
+  corpusChristiData=null,
+  loadCorpusChristiData=loadCorpusChristiProcessionReaderData,
+  holyThursdayPostData=null,
+  loadHolyThursdayPostData=loadHolyThursdayPostReaderData,
+  genericProcessionData=null,
+  loadGenericProcessionData=loadGenericProcessionReaderData,
 }={}){
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const plan=prepared?.session?.plan;
@@ -208,8 +221,18 @@ export async function prepareNativeReaderPreview({
   const hasAsh=preceding.includes("ASH");
   const hasCandlemas=preceding.includes("CANDLEMAS");
   const hasRogations=preceding.includes("ROGATIONS");
+  const following=[...(prepared?.session?.plan?.followingGraphs??[])];
+  const unsupportedNativeFollowing=following.filter(x=>!["REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GENERIC_PROCESSION"].includes(x));
+  if(unsupportedNativeFollowing.length){
+    throw new Error("NATIVE_PREVIEW_FOLLOWING_ACTION_PENDING:"+unsupportedNativeFollowing.join(","));
+  }
+  const hasRequiemAbsolution=following.includes("REQUIEM_ABSOLUTION");
+  const hasCorpusChristi=following.includes("CORPUS_CHRISTI_PROCESSION");
+  const hasHolyThursdayPost=following.includes("HOLY_THURSDAY_POST");
+  const hasGenericProcession=following.includes("GENERIC_PROCESSION");
   if([hasAsperges,hasPalm,hasAsh,hasCandlemas,hasRogations].filter(Boolean).length>1)throw new Error("NATIVE_PREVIEW_MULTIPLE_PRELUDES_PENDING");
-  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas,loadedRogations]=await Promise.all([
+  if([hasRequiemAbsolution,hasCorpusChristi,hasHolyThursdayPost,hasGenericProcession].filter(Boolean).length>1)throw new Error("NATIVE_PREVIEW_MULTIPLE_FOLLOWING_ACTIONS_PENDING");
+  const [data,events,registries,guide,formState,loadedAsperges,loadedPalm,loadedAsh,loadedCandlemas,loadedRogations,loadedRequiemAbsolution,loadedCorpusChristi,loadedHolyThursdayPost,loadedGenericProcession]=await Promise.all([
     presentationData ?? Promise.resolve(loadPresentationData(prepared)),
     eventData ?? Promise.resolve(loadEventData(prepared)),
     cueRegistries ?? Promise.resolve(loadCueRegistries(prepared)),
@@ -220,6 +243,10 @@ export async function prepareNativeReaderPreview({
     hasAsh ? (ashData ?? Promise.resolve(loadAshData(prepared))) : null,
     hasCandlemas ? (candlemasData ?? Promise.resolve(loadCandlemasData(prepared))) : null,
     hasRogations ? (rogationsData ?? Promise.resolve(loadRogationsData(prepared))) : null,
+    hasRequiemAbsolution ? (requiemAbsolutionData ?? Promise.resolve(loadRequiemAbsolutionData(prepared))) : null,
+    hasCorpusChristi ? (corpusChristiData ?? Promise.resolve(loadCorpusChristiData(prepared))) : null,
+    hasHolyThursdayPost ? (holyThursdayPostData ?? Promise.resolve(loadHolyThursdayPostData(prepared))) : null,
+    hasGenericProcession ? (genericProcessionData ?? Promise.resolve(loadGenericProcessionData(prepared))) : null,
   ]);
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
@@ -260,7 +287,30 @@ export async function prepareNativeReaderPreview({
   const rogationsController=hasRogations
     ? createRogationsReaderController({graph:loadedRogations?.graph,payload:loadedRogations?.payload})
     : null;
-  return Object.freeze({prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,aspergesController,palmController,ashController,candlemasController,rogationsController});
+  const absContext=prepared?.session?.resolvedMass?.provenance?.requiemAbsolution ?? {};
+  const requiemAbsolutionController=hasRequiemAbsolution
+    ? createRequiemAbsolutionReaderController({
+        graph:loadedRequiemAbsolution?.graph,
+        payload:loadedRequiemAbsolution?.payload,
+        bodyPresent:absContext.bodyPresent===true,
+        burialProcession:absContext.burialProcession===true,
+      })
+    : null;
+  const corpusChristiController=hasCorpusChristi
+    ? createCorpusChristiProcessionReaderController({graph:loadedCorpusChristi?.graph,payload:loadedCorpusChristi?.payload})
+    : null;
+  const holyThursdayPostController=hasHolyThursdayPost
+    ? createHolyThursdayPostReaderController({graph:loadedHolyThursdayPost?.graph,payload:loadedHolyThursdayPost?.payload})
+    : null;
+  const genericProcessionController=hasGenericProcession
+    ? createGenericProcessionReaderController({graph:loadedGenericProcession?.graph,payload:loadedGenericProcession?.payload})
+    : null;
+  const lifecycleRuntime=createFormLifecycleRuntime({prepared});
+  return Object.freeze({
+    prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,
+    aspergesController,palmController,ashController,candlemasController,rogationsController,
+    requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
+  });
 }
 
 export async function mountNativeReaderPreview({
@@ -288,6 +338,14 @@ export async function mountNativeReaderPreview({
   loadRogationsData=loadRogationsReaderData,
   goodFridayData=null,
   loadGoodFridayData=loadGoodFridayReaderData,
+  requiemAbsolutionData=null,
+  loadRequiemAbsolutionData=loadRequiemAbsolutionReaderData,
+  corpusChristiData=null,
+  loadCorpusChristiData=loadCorpusChristiProcessionReaderData,
+  holyThursdayPostData=null,
+  loadHolyThursdayPostData=loadHolyThursdayPostReaderData,
+  genericProcessionData=null,
+  loadGenericProcessionData=loadGenericProcessionReaderData,
   readLegacyActive=null,
   iconResolver=null,
   onClose=null,
@@ -301,6 +359,8 @@ export async function mountNativeReaderPreview({
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
     candlemasData,loadCandlemasData,rogationsData,loadRogationsData,
     goodFridayData,loadGoodFridayData,
+    requiemAbsolutionData,loadRequiemAbsolutionData,corpusChristiData,loadCorpusChristiData,
+    holyThursdayPostData,loadHolyThursdayPostData,genericProcessionData,loadGenericProcessionData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -413,6 +473,11 @@ export async function mountNativeReaderPreview({
   let inAsh=Boolean(ready.ashController);
   let inCandlemas=Boolean(ready.candlemasController);
   let inRogations=Boolean(ready.rogationsController);
+  let inRequiemAbsolution=false;
+  let inCorpusChristi=false;
+  let inHolyThursdayPost=false;
+  let inGenericProcession=false;
+  let inLifecycle=false;
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
@@ -817,7 +882,127 @@ export async function mountNativeReaderPreview({
     return projected.state;
   }
 
+
+  function followingActionMoment(kind,controller){
+    const state=controller?.project?.();
+    const card=state?.card;
+    if(!card)return null;
+    const config={
+      REQUIEM_ABSOLUTION:{title:"Requiem Absolution",label:"Absolution",owner:"R26_REQUIEM_ABSOLUTION_NATIVE"},
+      CORPUS_CHRISTI_PROCESSION:{title:"Corpus Christi Procession",label:"Corpus Christi",owner:"R27_CORPUS_CHRISTI_NATIVE"},
+      HOLY_THURSDAY_POST:{title:"Holy Thursday",label:"Holy Thursday",owner:"R31_HOLY_THURSDAY_NATIVE"},
+      GENERIC_PROCESSION:{title:"Procession",label:"Procession",owner:"R29_GENERIC_PROCESSION_NATIVE"},
+    }[kind];
+    if(!config)throw new Error("Unknown following-action reader "+kind);
+    const rows=kind==="GENERIC_PROCESSION" ? [] : (card.paragraphs??[]).map(row=>Object.freeze({
+      id:row.id,kind:row.kind,primary:row.latin,
+      sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
+    }));
+    let posture=null;
+    if(kind==="REQUIEM_ABSOLUTION" && card.posture && card.posture!=="LOCAL_OR_INHERIT")posture={label:card.posture};
+    if(kind==="CORPUS_CHRISTI_PROCESSION" && state.posture && !["INHERIT","LOCAL_OR_INHERIT","LOCAL_REVERENT"].includes(state.posture))posture={label:state.posture};
+    if(kind==="HOLY_THURSDAY_POST" && state.posture && state.posture!=="LOCAL_OR_INHERIT")posture={label:state.posture};
+    if(kind==="GENERIC_PROCESSION" && state.posture && state.posture!=="LOCAL")posture={label:state.posture};
+    return Object.freeze({
+      state,config,
+      moment:Object.freeze({
+        id:card.id??card.recordId,
+        sectionTitle:config.title,
+        cardTitle:card.title,
+        cardUpdate:true,
+        paragraphs:Object.freeze(rows),
+        progress:String(state.index+1)+" / "+String(state.total)+" · "+config.label,
+        posture,gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+      }),
+    });
+  }
+
+  function showFollowingAction(kind,controller){
+    const projected=followingActionMoment(kind,controller);
+    if(!projected)return null;
+    inRequiemAbsolution=kind==="REQUIEM_ABSOLUTION";
+    inCorpusChristi=kind==="CORPUS_CHRISTI_PROCESSION";
+    inHolyThursdayPost=kind==="HOLY_THURSDAY_POST";
+    inGenericProcession=kind==="GENERIC_PROCESSION";
+    inLifecycle=false;
+    inAsperges=false;inPalm=false;inAsh=false;inCandlemas=false;inRogations=false;
+    activeCueId=null;
+    clearEventCinematic({resetCue:true});
+    transientGuard.begin();
+    reader.renderMoment(projected.moment);
+    root.dataset.r17NativeEvent=kind.toLowerCase();
+    root.dataset.r17NativeCue="unresolved";
+    root.dataset.r17StateOwner=projected.config.owner;
+    root.dataset.r17OwnerGesture=projected.config.owner+"_EXACT_NONE";
+    root.dataset.r17OwnerResponse=projected.config.owner+"_PAYLOAD";
+    root.dataset.r17OwnerPriestVoice=projected.config.owner+"_NOT_APPLICABLE";
+    root.dataset.r17OwnerPriestPosition=projected.config.owner+"_NOT_APPLICABLE";
+    root.dataset.r17OwnerPosture=projected.config.owner+"_PAYLOAD";
+    root.dataset.r17OwnerSchola=projected.config.owner+"_PAYLOAD";
+    root.dataset.r17OwnerBell=projected.config.owner+"_EXACT_NONE";
+    root.dataset.r17OwnerCinematic=projected.config.owner+"_EXACT_NONE";
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+      specialRite:kind,
+      cardId:projected.state.card?.id??projected.state.card?.recordId??null,
+      posture:projected.moment.posture,
+      handoff:projected.state.handoff??null,
+      objectState:projected.state.objectState??null,
+      joiningState:projected.state.joiningState??null,
+      processionActive:projected.state.processionActive??null,
+    });
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    if(scroll)scroll.scrollTop=0;
+    return projected.state;
+  }
+
+  function showRequiemAbsolution(){return showFollowingAction("REQUIEM_ABSOLUTION",ready.requiemAbsolutionController)}
+  function showCorpusChristi(){return showFollowingAction("CORPUS_CHRISTI_PROCESSION",ready.corpusChristiController)}
+  function showHolyThursdayPost(){return showFollowingAction("HOLY_THURSDAY_POST",ready.holyThursdayPostController)}
+  function showGenericProcession(){return showFollowingAction("GENERIC_PROCESSION",ready.genericProcessionController)}
+
+  function lifecycleState(state){
+    inLifecycle=true;
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({lifecycle:state,specialRite:null});
+    root.dataset.r17StateOwner="R17_FORM_LIFECYCLE";
+    return state;
+  }
+
+  function enterLifecycleBoundary(){
+    const state=ready.lifecycleRuntime.enterMassBoundary();
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && ready.requiemAbsolutionController)return showRequiemAbsolution();
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && ready.corpusChristiController)return showCorpusChristi();
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && ready.holyThursdayPostController)return showHolyThursdayPost();
+    if(state.stage==="FOLLOWING_ACTION_HANDOFF" && ready.genericProcessionController)return showGenericProcession();
+    return lifecycleState(state);
+  }
+
+  function completeFollowingAction(){
+    return lifecycleState(ready.lifecycleRuntime.completeFollowingAction());
+  }
+
   function previousReaderCard(){
+    if(inGenericProcession && ready.genericProcessionController){
+      const state=ready.genericProcessionController.project();
+      if(!state.atStart)ready.genericProcessionController.previous();
+      return showGenericProcession();
+    }
+    if(inHolyThursdayPost && ready.holyThursdayPostController){
+      const state=ready.holyThursdayPostController.project();
+      if(!state.atStart)ready.holyThursdayPostController.previous();
+      return showHolyThursdayPost();
+    }
+    if(inCorpusChristi && ready.corpusChristiController){
+      const state=ready.corpusChristiController.project();
+      if(!state.atStart)ready.corpusChristiController.previous();
+      return showCorpusChristi();
+    }
+    if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      const state=ready.requiemAbsolutionController.project();
+      if(!state.atStart)ready.requiemAbsolutionController.previous();
+      return showRequiemAbsolution();
+    }
+    if(inLifecycle)return ready.lifecycleRuntime.snapshot();
     if(inRogations && ready.rogationsController){
       const state=ready.rogationsController.project();
       if(!state.atStart)ready.rogationsController.previous();
@@ -868,6 +1053,31 @@ export async function mountNativeReaderPreview({
   }
 
   function nextReaderCard(){
+    if(inGenericProcession && ready.genericProcessionController){
+      const state=ready.genericProcessionController.project();
+      if(state.atEnd){inGenericProcession=false;return completeFollowingAction();}
+      ready.genericProcessionController.next();
+      return showGenericProcession();
+    }
+    if(inHolyThursdayPost && ready.holyThursdayPostController){
+      const state=ready.holyThursdayPostController.project();
+      if(state.atEnd){inHolyThursdayPost=false;return completeFollowingAction();}
+      ready.holyThursdayPostController.next();
+      return showHolyThursdayPost();
+    }
+    if(inCorpusChristi && ready.corpusChristiController){
+      const state=ready.corpusChristiController.project();
+      if(state.atEnd){inCorpusChristi=false;return completeFollowingAction();}
+      ready.corpusChristiController.next();
+      return showCorpusChristi();
+    }
+    if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      const state=ready.requiemAbsolutionController.project();
+      if(state.atEnd){inRequiemAbsolution=false;return completeFollowingAction();}
+      ready.requiemAbsolutionController.next();
+      return showRequiemAbsolution();
+    }
+    if(inLifecycle)return lifecycleState(ready.lifecycleRuntime.advance());
     if(inRogations && ready.rogationsController){
       const state=ready.rogationsController.project();
       if(state.atEnd){
@@ -913,8 +1123,26 @@ export async function mountNativeReaderPreview({
       ready.aspergesController.next();
       return showAsperges();
     }
-    return showCard(ready.model.nextCard(current.sectionId));
+    const card=ready.model.nextCard(current.sectionId);
+    if((card?.sourceSequence===30 || card?.sequence===30) && prepared?.session?.plan?.normalLastGospel===false){
+      return enterLifecycleBoundary();
+    }
+    if(!card)return enterLifecycleBoundary();
+    return showCard(card);
   }
+
+  function planAwareCard(card){
+    if(!card)return null;
+    const plan=prepared?.session?.plan;
+    if(plan?.blessingAllowed!==false || card.macroId!=="AO.SM.M29")return card;
+    const blessing=card.blocks?.find?.(value=>value.blockId==="AO.SM.B092");
+    if(!blessing || blessing.firstParagraphIndex==null || !blessing.paragraphCount)return card;
+    const start=blessing.firstParagraphIndex;
+    const end=start+blessing.paragraphCount;
+    const paragraphs=card.paragraphs.filter((_,index)=>index<start||index>=end);
+    return Object.freeze({...card,title:"Placeat tibi, sancta Trinitas",paragraphs:Object.freeze(paragraphs),planFilteredBlocks:Object.freeze(["AO.SM.B092"])});
+  }
+
   function showCard(card){
     if(!card) return null;
     inAsperges=false;
@@ -922,8 +1150,14 @@ export async function mountNativeReaderPreview({
     inAsh=false;
     inCandlemas=false;
     inRogations=false;
+    inRequiemAbsolution=false;
+    inCorpusChristi=false;
+    inHolyThursdayPost=false;
+    inGenericProcession=false;
+    inLifecycle=false;
     root.dataset.r17ObjectState="none";
     root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
+    const visibleCard=planAwareCard(card);
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
     const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
@@ -939,13 +1173,13 @@ export async function mountNativeReaderPreview({
     ready.scholaState.activateForCard(card.sourceSequence??card.guideSequence??card.sequence);
     const state=projectedState();
     reader.renderMoment({
-      id:card.sectionId,
-      sectionTitle:card.title,
-      cardTitle:card.title,
+      id:visibleCard.sectionId,
+      sectionTitle:visibleCard.title,
+      cardTitle:visibleCard.title,
       cardUpdate:true,
-      paragraphs:card.paragraphs,
-      progress:card.sequence+" / "+ready.model.totalCards,
-      guide:guideForCurrent(card),
+      paragraphs:visibleCard.paragraphs,
+      progress:visibleCard.sequence+" / "+ready.model.totalCards,
+      guide:guideForCurrent(visibleCard),
       ...state,
     });
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
@@ -966,7 +1200,7 @@ export async function mountNativeReaderPreview({
       scroll.scrollTop=0;
       cueTracker?.refresh?.();
     }
-    return card;
+    return visibleCard;
   }
 
   const reader=createReaderDomAdapter({
@@ -979,7 +1213,7 @@ export async function mountNativeReaderPreview({
 
   function syncState(){
     scheduled=false;
-    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations)return;
+    if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)return;
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
@@ -1045,7 +1279,7 @@ export async function mountNativeReaderPreview({
       container:readerScroll,
       win,
       onChange:(cueId)=>{
-        if(inAsperges || inPalm || inAsh || inCandlemas || inRogations)return;
+        if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)return;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -1091,6 +1325,11 @@ export async function mountNativeReaderPreview({
       ash:ready.ashController ? "R23_NATIVE_PRELUDE" : "NOT_ACTIVE",
       candlemas:ready.candlemasController ? "R24_NATIVE_PRELUDE" : "NOT_ACTIVE",
       rogations:ready.rogationsController ? "R25_NATIVE_PRELUDE" : "NOT_ACTIVE",
+      requiemAbsolution:ready.requiemAbsolutionController ? "R26_NATIVE_FOLLOWING_ACTION" : "NOT_ACTIVE",
+      corpusChristi:ready.corpusChristiController ? "R27_NATIVE_FOLLOWING_ACTION" : "NOT_ACTIVE",
+      holyThursdayPost:ready.holyThursdayPostController ? "R31_NATIVE_FOLLOWING_ACTION" : "NOT_ACTIVE",
+      genericProcession:ready.genericProcessionController ? "R29_NATIVE_FOLLOWING_ACTION" : "NOT_ACTIVE",
+      lifecycle:"R17_FORM_LIFECYCLE",
     }),
     showSection:(sectionId)=>{
       const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
@@ -1099,7 +1338,7 @@ export async function mountNativeReaderPreview({
     showSequence:sequence=>showCard(ready.model.cardBySequence(sequence)),
     syncState:queue,
     destroy,
-    getCurrentCard:()=>inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
+    getCurrentCard:()=>inGenericProcession ? ready.genericProcessionController?.project?.().card??null : inHolyThursdayPost ? ready.holyThursdayPostController?.project?.().card??null : inCorpusChristi ? ready.corpusChristiController?.project?.().card??null : inRequiemAbsolution ? ready.requiemAbsolutionController?.project?.().card??null : inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
@@ -1116,11 +1355,20 @@ export async function mountNativeReaderPreview({
     getCandlemasState:()=>ready.candlemasController?.project?.()??null,
     getCandlemasMassState:eventId=>ready.candlemasController?.massCandleState?.(eventId)??null,
     getRogationsState:()=>ready.rogationsController?.project?.()??null,
+    getRequiemAbsolutionState:()=>ready.requiemAbsolutionController?.project?.()??null,
+    getCorpusChristiState:()=>ready.corpusChristiController?.project?.()??null,
+    getHolyThursdayPostState:()=>ready.holyThursdayPostController?.project?.()??null,
+    getGenericProcessionState:()=>ready.genericProcessionController?.project?.()??null,
+    getLifecycleState:()=>ready.lifecycleRuntime?.snapshot?.()??null,
     setPalmRecipientState:value=>{if(!ready.palmController)return null;const result=ready.palmController.setRecipientState(value);return inPalm ? showPalm() : result},
     setAshRecipientState:value=>{if(!ready.ashController)return null;const result=ready.ashController.setRecipientState(value);return inAsh ? showAsh() : result},
     setCandlemasRecipientState:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setRecipientState(value);return inCandlemas ? showCandlemas() : result},
     setCandlemasProcessionParticipant:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setProcessionParticipant(value);return inCandlemas ? showCandlemas() : result},
     setCandlemasHasBlessedCandle:value=>{if(!ready.candlemasController)return null;const result=ready.candlemasController.setHasBlessedCandle(value);return inCandlemas ? showCandlemas() : result},
+    setCorpusChristiProcessionParticipant:value=>{if(!ready.corpusChristiController)return null;const result=ready.corpusChristiController.setProcessionParticipant(value);return inCorpusChristi ? showCorpusChristi() : result},
+    setCorpusChristiSacramentalState:value=>{if(!ready.corpusChristiController)return null;const result=ready.corpusChristiController.setSacramentalState(value);return inCorpusChristi ? showCorpusChristi() : result},
+    setHolyThursdayJoiningState:value=>{if(!ready.holyThursdayPostController)return null;const result=ready.holyThursdayPostController.setJoiningState(value);return inHolyThursdayPost ? showHolyThursdayPost() : result},
+    setGenericProcessionParticipant:value=>{if(!ready.genericProcessionController)return null;const result=ready.genericProcessionController.setParticipating(value);return inGenericProcession ? showGenericProcession() : result},
     markActuallySprinkled:()=>{
       if(!ready.aspergesController)return null;
       const value=ready.aspergesController.setActuallySprinkled(true);
