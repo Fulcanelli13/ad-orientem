@@ -51,7 +51,7 @@ function graphRecords(id,sources){
 }
 
 const PLAN_OWNED_MASS_OVERLAYS=new Set(["REQUIEM","EMBER_LESSONS","NUPTIAL"]);
-const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GOOD_FRIDAY","GENERIC_PROCESSION"]);
+const NATIVE_READER_SEGMENTS=new Set(["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST","GOOD_FRIDAY","GENERIC_PROCESSION","EASTER_VIGIL"]);
 
 function segment(id,lane,sources,extra={}){
   const meta=sources.registry?.overlays?.[id]??null;
@@ -98,30 +98,33 @@ export function projectSpecialStructure(prepared,{registry,extension,core}={}){
 
   if(plan.kind==="COMPOSITE_DISTINCT_RITE"){
     const rite=String(plan.rite??"");
+    const riteSegment=segment(rite,"PRECEDING_COMPOSITE_RITE",sources,{handoff:plan.massEntry??null});
+    const easterVigil=rite==="EASTER_VIGIL" && riteSegment.renderable===true && plan.afterMass==="LAUDS";
     return freeze({
       schema:"ao-r19-special-structure-projection-v1",
       audit,
       kind:plan.kind,
       ordinaryMassGraphActive:Boolean(plan.canonicalMassGraphActive),
       segments:freeze([
-        segment(rite,"PRECEDING_COMPOSITE_RITE",sources,{handoff:plan.massEntry??null}),
+        riteSegment,
         freeze({
           id:"ORDINARY_MASS",
           lane:"MASS",
           massEntry:plan.massEntry??"VIGIL_DEFINED_MASS_ENTRY",
           renderable:true,
+          readerPayload:easterVigil?"EASTER_VIGIL_PROJECTED_MASS":"ORDINARY_READER",
           ordinaryOpeningSuppressed:Boolean(plan.ordinaryOpeningSuppressed),
         }),
         freeze({
           id:String(plan.afterMass??"AFTER_MASS"),
           lane:"FOLLOWING_ACTION",
-          renderable:false,
-          readerPayload:"STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
+          renderable:easterVigil,
+          readerPayload:easterVigil?"EASTER_VIGIL_LAUDS_INSERTION":"STRUCTURE_ONLY_NO_TEXT_PAYLOAD",
         }),
       ]),
-      readerPayloadComplete:false,
-      releaseSupport:false,
-      reason:"COMPOSITE_DISTINCT_RITE_READER_PAYLOAD_REQUIRED",
+      readerPayloadComplete:easterVigil,
+      releaseSupport:easterVigil,
+      reason:easterVigil?null:"COMPOSITE_DISTINCT_RITE_READER_PAYLOAD_REQUIRED",
     });
   }
 
