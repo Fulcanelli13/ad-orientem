@@ -171,6 +171,8 @@ async function delegateLegacyRenderer(prepared) {
   if (readerModeMountsPreview(readerUiMode)) {
     previewState=await mountR17Preview({doc:document,prepared});
   }
+  const uiOwner=previewState?.uiOwner ?? "LEGACY_DOM_TEMPORARY";
+  document.documentElement.dataset.aoMassReaderUi=uiOwner;
   globalThis.AO_R17_MASS_RUNTIME = Object.freeze({
     version: VERSION,
     prepared,
@@ -178,7 +180,7 @@ async function delegateLegacyRenderer(prepared) {
     readerUiMode,
     shadowAudit,
     previewFallbackReason: previewState?.fallbackReason ?? null,
-    uiOwner: previewState?.uiOwner ?? "LEGACY_DOM_TEMPORARY",
+    uiOwner,
     canonicalOwner: "R17_SESSION_ENGINE",
   });
 }
