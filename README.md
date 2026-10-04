@@ -6,15 +6,17 @@ Ad Orientem is a traditional Roman Mass companion for the 1962 Roman Rite, with 
 
 `main` is the application source of truth.
 
-The Mass stack is modular under `src/mass/` and its liturgical/source data under `data/mass/` and `data/presentation/`. The certified native R17 reader is the production reader UI.
+The Mass stack is modular under `src/mass/` and its liturgical/source data under `data/mass/` and `data/presentation/`. The certified native R17 reader is the production reader UI inside the explicitly promoted rollout scope.
 
-The historical single-file application remains in the repository as migration evidence and an explicit rollback/compatibility donor where still required. It is not the normal visible Mass reader.
+The historical single-file application remains in the repository as migration evidence and an explicit rollback/compatibility donor where still required. Outside the promoted reader scope it remains the safe production fallback until that special rite's visible native surface is separately accepted.
 
 ## Reader policy
 
 Production default:
 
-`R17_NATIVE`
+`FIELD_NATIVE_PREVIEW`
+
+The native default currently covers ordinary/votive Mass in the certified forms, plus Asperges, Palm Sunday and Ash Wednesday. Other special structures may already have complete runtime/data parity without yet being production-promoted as visible native surfaces.
 
 Available presentation modes are selected before Mass:
 
@@ -26,7 +28,7 @@ The legacy reader can still be forced explicitly with:
 
 `?aoR17Reader=legacy`
 
-That rollback path exists for diagnosis and recovery; it is not the product default.
+That rollback path exists for diagnosis and recovery. It is also the automatic outside-scope fallback until a special rite is explicitly promoted.
 
 ## Release state
 
@@ -35,7 +37,7 @@ The current release gate certifies:
 - source-first LIVE Canon structure;
 - Low, Missa Cantata and Solemn form state;
 - phone/touch reader acceptance;
-- full-year special-structure projection;
+- full-year special-structure projection (runtime/data parity, not automatic UI promotion);
 - Proper readiness/fail-closed behavior;
 - native Schola, Guide, cue rails, bells/cinematics and plan-aware lifecycle.
 
