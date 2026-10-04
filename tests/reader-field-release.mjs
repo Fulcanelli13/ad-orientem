@@ -10,11 +10,12 @@ const extension=load("../data/mass/special-days-extension.v1.3.json");
 const core=load("../data/mass/special-days-core.v1.1.json");
 const sources={registry,extension,core};
 
-assert.equal(gate.fieldRelease?.status,"READY");
+assert.equal(gate.fieldRelease?.status,"SUPERSEDED_BY_FINAL_MAINLINE");
+assert.equal(gate.fieldRelease?.authority,"HISTORICAL_FIELD_SNAPSHOT_ONLY");
 assert.equal(gate.fieldRelease?.target,"2026-10-04_ORDINARY_OR_VOTIVE_MASS");
 assert.equal(gate.fieldRelease?.readerUiPolicy,"NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK");
-assert.equal(gate.openBlockers.length,0,
-  "full-year special-structure certification still reports a release blocker");
+assert.deepEqual(gate.openBlockers.map(x=>x.id),["REAL_APP_SHELL_ACCEPTANCE"],
+  "historical field test changed the final release blocker");
 assert.equal(gate.productionDefault,"R17_NATIVE",
   "final app no longer uses the certified native production reader");
 
@@ -97,4 +98,4 @@ assert.equal(projection.releaseSupport,true,"Ember source-order insertion lost c
 assert.ok(gate.fieldRelease.requiredConditions.includes("no Ember-lessons insertion"),
   "Oct-4 field-release scope silently widened to Ember lessons");
 
-console.log("Oct 4 field release: PASS — dated field scope remains historical evidence while the final app uses the certified native reader.");
+console.log("Oct 4 field snapshot: PASS — historical scope is preserved but superseded by final mainline.");
