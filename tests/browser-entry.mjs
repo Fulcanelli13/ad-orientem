@@ -38,6 +38,18 @@ assert.equal(options.presentationMode, "MISSAL");
 assert.deepEqual([...options.precedingRites], ["ASH"]);
 assert.equal(options.localProfile, "LOCAL");
 
+const funeralContext={bodyPresent:true,burialProcession:true};
+options = deriveHostOptions({
+  resolvedMass:{
+    insertedRites:["requiem absolution"],
+    proper:resolvedProper,
+    requiemAbsolution:funeralContext,
+  },
+});
+assert.deepEqual([...options.followingActions],["REQUIEM_ABSOLUTION"]);
+assert.deepEqual(options.requiemAbsolution,funeralContext,
+  "browser bridge dropped explicit Requiem funeral context");
+
 options = deriveHostOptions({
   resolvedMass: { insertedRites: [], proper:resolvedProper },
   assemblyStatus: { ok:true, proper:{id:"HOST"} },
