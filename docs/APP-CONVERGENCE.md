@@ -78,6 +78,14 @@ The app host prefers `AO_CALENDAR_APP_V1` and only retains `today.calendar` as a
 
 This closes Calendar presentation extraction only. `NON_MASS_DONOR_EXTRACTION` remains open for Home/Coming Up, PRAY, Learn and Settings.
 
+## Phase 5: modular live-session guards
+
+The native Mass reader no longer relies on the embedded v43.33 emergency layer for application-level live-session protection. `src/app/live-session-guards.js` now owns the cross-application protections that still matter while Mass is active: the global app ribbon is suppressed, haptics are forced off, structural Mass settings are blocked, and focus is dropped before a ribbon is hidden so the historical `aria-hidden` focused-descendant failure cannot recur.
+
+The guard recognizes the actual connected native reader, not only the historical core route, so it remains correct when modular shell navigation and the old donor route temporarily disagree. The actual-index cross-domain phone journey certifies this ownership.
+
+This does **not** yet close `EMERGENCY_RUNTIME_RETIREMENT`: the historical v43.33 emergency layer is still physically embedded in `index.html`. Its required responsibilities have now been replaced; the next step is physical removal followed by the full assembled-app regression suite.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
@@ -88,7 +96,7 @@ Before calling app convergence complete:
 
 1. The modular shell must own visible six-destination navigation rather than merely observe/delegate it. **Closed in Phase 3.**
 2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings.
-3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections.
+3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections. **Its required live-session protections are now modular; physical removal remains open.**
 4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene. **Closed.**
 5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
 6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence must be regression-tested so historical local state cannot reactivate obsolete surfaces.
