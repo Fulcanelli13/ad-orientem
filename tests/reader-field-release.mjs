@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {makeResolvedMass,compileMassPlan} from "../src/mass/session-engine.js";
-import {projectSpecialStructure} from "../src/mass/reader-special-structure.js";
+import {projectSpecialStructure} from "../src/mass/reader-special-structure.js";\nimport {installFieldCelebrationOverrides} from "../src/mass/field-celebration-overrides.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const gate=load("../data/presentation/reader-release-gate.v1.json");
