@@ -365,7 +365,8 @@ assert.deepEqual([...requiemEntered.session.plan.followingGraphs],["REQUIEM_ABSO
 assert.equal(requiem.getReaderModel().totalCards,30,"Requiem variance duplicated the Mass reader surface");
 requiem.showSection(29);
 assert.equal(requiem.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
-assert.ok(!requiem.getReaderState().paragraphs.some(p=>p.primary?.includes("Benedícat vos")),
+assert.ok(requiem.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
+assert.ok(!requiem.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
   "Requiem reader rendered the omitted final blessing");
 const requiemMassEnd=requiem.getCurrentSectionId();
 const absStart=requiem.next();
@@ -404,8 +405,8 @@ assert.equal(corpusEntered.session.plan.normalLastGospel,false);
 assert.deepEqual([...corpusEntered.session.plan.followingGraphs],["CORPUS_CHRISTI_PROCESSION"]);
 corpus.showSection(29);
 assert.equal(corpus.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
-assert.ok(corpus.getReaderState().paragraphs.some(p=>p.primary?.includes("Pláceat tibi")));
-assert.ok(!corpus.getReaderState().paragraphs.some(p=>p.primary?.includes("Benedícat vos")),
+assert.ok(corpus.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
+assert.ok(!corpus.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
   "Corpus Christi reader rendered the omitted final blessing");
 const corpusMassEnd=corpus.getCurrentSectionId();
 const corpusStart=corpus.next();
@@ -445,8 +446,8 @@ assert.equal(holyThursdayEntered.session.plan.normalLastGospel,false);
 assert.deepEqual([...holyThursdayEntered.session.plan.followingGraphs],["HOLY_THURSDAY_POST"]);
 holyThursday.showSection(29);
 assert.equal(holyThursday.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
-assert.ok(holyThursday.getReaderState().paragraphs.some(p=>p.primary?.includes("Pláceat tibi")));
-assert.ok(!holyThursday.getReaderState().paragraphs.some(p=>p.primary?.includes("Benedícat vos")),
+assert.ok(holyThursday.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
+assert.ok(!holyThursday.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
   "Holy Thursday reader rendered the omitted final blessing");
 const holyThursdayMassEnd=holyThursday.getCurrentSectionId();
 const htStart=holyThursday.next();
