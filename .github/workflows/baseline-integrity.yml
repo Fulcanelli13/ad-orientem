@@ -1,4 +1,4 @@
-name: Baseline integrity and Pages deploy
+name: Baseline integrity
 
 on:
   push:
@@ -18,7 +18,7 @@ on:
       - 'docs/CANONICAL-BASELINE.md'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   verify:
@@ -29,21 +29,9 @@ jobs:
       - name: Reassemble and verify frozen v43.33
         run: node tools/reassemble-v43.33.mjs
 
-      - name: Publish verified v43.33 as Pages index
-        if: github.ref == 'refs/heads/main'
+      - name: Confirm frozen baseline cannot replace production
         shell: bash
         run: |
-          if grep -q 'data-ao-r17-browser-entry' index.html 2>/dev/null; then
-            echo "R17 browser entry is mounted; refusing to overwrite migrated index.html with frozen v43.33"
-            exit 0
-          fi
-          cp legacy/Ad-Orientem-2.0-v43.33-ICON-OWNERSHIP-CONSOLIDATION.html index.html
-          if git diff --quiet -- index.html; then
-            echo "index.html already matches verified v43.33"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git commit -m "deploy: publish verified v43.33 app"
-          git push origin HEAD:main
+          test -f index.html
+          grep -q 'data-ao-r17-browser-entry' index.html
+          echo "Frozen v43.33 verified as historical baseline only; production index.html is immutable from this workflow."
