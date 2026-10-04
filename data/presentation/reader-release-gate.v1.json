@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.7.0",
+  "version": "4.8.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native remains the production reader. Actual index.html phone-Chromium acceptance is explicit for the pre-Mass cluster, Good Friday, all four supported following-action lifecycles, and Nuptial insertions. Easter Vigil remains the only special-structure path without actual-index real-shell certification. Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native remains the production reader. Actual index.html phone-Chromium acceptance is explicit for the complete certified special-structure scope: pre-Mass rites, Good Friday, Easter Vigil, Nuptial insertions, and all supported following-action lifecycles. Legacy remains explicit rollback/debug only.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -325,7 +325,7 @@
     },
     {
       "id": "EASTER_VIGIL_NATIVE_COMPOSITE",
-      "status": "CERTIFIED_COMPOSITE_RUNTIME__PHONE_SUITE_GREEN",
+      "status": "CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE",
       "controller": "src/mass/reader-easter-vigil.js",
       "payload": "data/presentation/reader-easter-vigil.v1.json",
       "structuralSource": "data/mass/special-days-core.v1.1.json#graphs.EV",
@@ -375,7 +375,29 @@
         "tests/browser-runtime.mjs",
         "tests/reader-special-structure.mjs",
         "tests/reader-phone-acceptance.mjs"
-      ]
+      ],
+      "realShellAcceptance": {
+        "status": "CERTIFIED",
+        "test": "tests/app-shell-easter-vigil-e2e.mjs",
+        "phoneSuite": "npm run test:phone",
+        "viewport": "390x844 touch Chromium",
+        "actualIndexHtml": true,
+        "nativeOwner": "R17_NATIVE_PRODUCTION",
+        "legacyStartCount": 0,
+        "compositeStage": [
+          "VIGIL_ACTIVE",
+          "MASS_ACTIVE"
+        ],
+        "massEntry": "KYRIE",
+        "guarantees": [
+          "38-state Vigil begins in the actual production shell without legacy start",
+          "Vigil-specific Mass projection enters at Kyrie",
+          "source sequences 1, 21 and 30 remain omitted",
+          "Lauds insertion remains present",
+          "Back from the first Vigil Mass card restores EV-MASS-700",
+          "zero uncaught page errors"
+        ]
+      }
     },
     {
       "id": "ASPERGES_NATIVE_PAYLOAD",
@@ -926,7 +948,8 @@
         "Good Friday enters as a native distinct rite with no Ordinary Mass reader model and no legacy renderer boot",
         "all four supported following-action lifecycles traverse the actual production shell",
         "Requiem funeral branch reaches In paradisum with host branch context preserved",
-        "Nuptial actual-index phone acceptance is run as a separate production-shell test"
+        "Nuptial actual-index phone acceptance is run as a separate production-shell test",
+        "Easter Vigil composite rite enters at Kyrie and restores EV-MASS-700 on Back in the actual app shell"
       ],
       "scenarios": [
         "ORDINARY_VOTIVE",
@@ -939,9 +962,13 @@
         "REQUIEM_ABSOLUTION_FOLLOWING_ACTION",
         "CORPUS_CHRISTI_PROCESSION_FOLLOWING_ACTION",
         "HOLY_THURSDAY_POST_FOLLOWING_ACTION",
-        "GENERIC_PROCESSION_FOLLOWING_ACTION"
+        "GENERIC_PROCESSION_FOLLOWING_ACTION",
+        "EASTER_VIGIL_COMPOSITE_RITE"
       ],
-      "supplementalTest": "tests/app-shell-nuptial-e2e.mjs"
+      "supplementalTests": [
+        "tests/app-shell-nuptial-e2e.mjs",
+        "tests/app-shell-easter-vigil-e2e.mjs"
+      ]
     },
     {
       "id": "PALM_ASH_REAL_APP_SHELL_ACCEPTANCE",
@@ -968,7 +995,7 @@
     },
     {
       "id": "REAL_SHELL_SPECIAL_STRUCTURE_SCOPE",
-      "status": "PARTIAL_EXPLICIT_EVIDENCE",
+      "status": "COMPLETE_EXPLICIT_EVIDENCE",
       "evidenceLayer": "ACTUAL_INDEX_HTML_PHONE_CHROMIUM",
       "certified": [
         "ASPERGES",
@@ -981,15 +1008,15 @@
         "CORPUS_CHRISTI_PROCESSION",
         "HOLY_THURSDAY_POST",
         "GENERIC_PROCESSION",
-        "NUPTIAL"
-      ],
-      "pending": [
+        "NUPTIAL",
         "EASTER_VIGIL"
       ],
-      "rule": "Every production special-structure path except Easter Vigil has actual-index phone-Chromium evidence. Easter Vigil remains pending until its composite rite is exercised through the production app shell.",
+      "pending": [],
+      "rule": "All production special-structure paths have explicit actual-index phone-Chromium evidence.",
       "currentTests": [
         "tests/app-shell-final-e2e.mjs",
-        "tests/app-shell-nuptial-e2e.mjs"
+        "tests/app-shell-nuptial-e2e.mjs",
+        "tests/app-shell-easter-vigil-e2e.mjs"
       ]
     },
     {
@@ -1208,7 +1235,7 @@
     "fieldReleaseAuthority": false,
     "fullYearParityEvidence": "MODULAR_RUNTIME_AND_READER_HARNESS",
     "realShellSpecialStructureAcceptance": {
-      "status": "PARTIAL_EXPLICIT_EVIDENCE",
+      "status": "COMPLETE_EXPLICIT_EVIDENCE",
       "certified": [
         "ASPERGES",
         "PALM",
@@ -1220,14 +1247,14 @@
         "CORPUS_CHRISTI_PROCESSION",
         "HOLY_THURSDAY_POST",
         "GENERIC_PROCESSION",
-        "NUPTIAL"
-      ],
-      "pending": [
+        "NUPTIAL",
         "EASTER_VIGIL"
       ],
+      "pending": [],
       "tests": [
         "tests/app-shell-final-e2e.mjs",
-        "tests/app-shell-nuptial-e2e.mjs"
+        "tests/app-shell-nuptial-e2e.mjs",
+        "tests/app-shell-easter-vigil-e2e.mjs"
       ]
     }
   }

@@ -176,20 +176,20 @@ assert.equal(candlemasPayload?.objectStateAcceptance?.afterPaterWitnessEventId,"
 assert.equal(candlemasPayload?.objectStateAcceptance?.postureOverride,null);
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
-assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
+assert.equal(realShellScope?.status,"COMPLETE_EXPLICIT_EVIDENCE");
 assert.deepEqual(realShellScope?.certified,[
   "ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS","GOOD_FRIDAY",
   "REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST",
-  "GENERIC_PROCESSION","NUPTIAL"
+  "GENERIC_PROCESSION","NUPTIAL","EASTER_VIGIL"
 ]);
-assert.deepEqual(realShellScope?.pending,["EASTER_VIGIL"]);
+assert.deepEqual(realShellScope?.pending,[]);
 assert.equal(release.finalAppRelease?.fullYearSpecialStructureParity,true);
 assert.equal(release.finalAppRelease?.fullYearParityEvidence,"MODULAR_RUNTIME_AND_READER_HARNESS");
-assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"PARTIAL_EXPLICIT_EVIDENCE");
+assert.equal(release.finalAppRelease?.realShellSpecialStructureAcceptance?.status,"COMPLETE_EXPLICIT_EVIDENCE");
 assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.certified,realShellScope.certified);
-assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.pending,["EASTER_VIGIL"]);
+assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.pending,[]);
 assert.deepEqual(release.finalAppRelease?.realShellSpecialStructureAcceptance?.tests,[
-  "tests/app-shell-final-e2e.mjs","tests/app-shell-nuptial-e2e.mjs"
+  "tests/app-shell-final-e2e.mjs","tests/app-shell-nuptial-e2e.mjs","tests/app-shell-easter-vigil-e2e.mjs"
 ]);
 
 const goodFridayShell=release.protectedInvariants.find(x=>x.id==="GOOD_FRIDAY_REAL_APP_SHELL_ACCEPTANCE");
@@ -283,7 +283,6 @@ const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUC
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
 const easterVigil=release.protectedInvariants.find(x=>x.id==="EASTER_VIGIL_NATIVE_COMPOSITE");
-assert.equal(easterVigil?.status,"CERTIFIED_COMPOSITE_RUNTIME__PHONE_SUITE_GREEN","Easter Vigil certification disappeared");
 assert.equal(easterVigil?.recoveredGraphRecords,38);
 assert.equal(easterVigil?.massProjection?.entry,"KYRIE");
 assert.deepEqual(easterVigil?.massProjection?.omittedSourceSequences,[1,21,30]);
@@ -291,6 +290,11 @@ assert.deepEqual(easterVigil?.massProjection?.suppressedCanonicalEvents,["MC-COM
 assert.equal(easterVigil?.massProjection?.laudsSectionId,"SP.EASTER_VIGIL.15");
 assert.match(String(easterVigil?.controller??""),/reader-easter-vigil\.js/);
 assert.equal(easterVigil?.sourceText?.prophecies,"RECOVERED_PRESENTATION_OVERVIEW__CHOREOGRAPHY_EXACT__FULL_TEXT_ENRICHMENT_NON_BLOCKING");
+assert.equal(easterVigil?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE");
+assert.equal(easterVigil?.realShellAcceptance?.status,"CERTIFIED");
+assert.match(String(easterVigil?.realShellAcceptance?.test??""),/app-shell-easter-vigil-e2e\.mjs/);
+assert.equal(easterVigil?.realShellAcceptance?.actualIndexHtml,true);
+assert.equal(easterVigil?.realShellAcceptance?.legacyStartCount,0);
 assert.equal(release.productionDefault,"R17_NATIVE","full-year release lost the native production default");
 
 const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
