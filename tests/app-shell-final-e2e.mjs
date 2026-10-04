@@ -226,6 +226,225 @@ async function exerciseRealShellSpecialRite(browser,spec){
   }
 }
 
+
+async function exerciseRealShellFollowingAction(browser,spec){
+  const context=await browser.newContext({
+    viewport:{width:390,height:844},
+    deviceScaleFactor:2,
+    isMobile:true,
+    hasTouch:true,
+  });
+  const page=await context.newPage();
+  const pageErrors=[];
+  page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
+
+  try{
+    await page.goto("http://127.0.0.1:4174/index.html?aoR17Reader=native",{
+      waitUntil:"domcontentloaded",
+      timeout:90000,
+    });
+    await page.waitForTimeout(1200);
+
+    const setup=await page.evaluate(async({iconKeys,spec})=>{
+      const t=(lat,en)=>({lat,en});
+      const proper={
+        sourcePath:spec.properSource,
+        introit:t("Introitus "+spec.kind,"Introit of "+spec.kind),
+        collects:[t("Collecta "+spec.kind,"Collect of "+spec.kind)],
+        epistle:t("Epistola "+spec.kind,"Epistle of "+spec.kind),
+        gradual:t("Graduale "+spec.kind,"Gradual of "+spec.kind),
+        sequence:{lat:spec.celebrationType==="REQUIEM"?"Dies irae":"",en:spec.celebrationType==="REQUIEM"?"Day of wrath":""},
+        gospel:t("Evangelium "+spec.kind,"Gospel of "+spec.kind),
+        offertory:t("Offertorium "+spec.kind,"Offertory of "+spec.kind),
+        secrets:[t("Secreta "+spec.kind,"Secret of "+spec.kind)],
+        preface:t("Praefatio","Preface"),
+        communion:t("Communio "+spec.kind,"Communion of "+spec.kind),
+        postcommunions:[t("Postcommunio "+spec.kind,"Postcommunion of "+spec.kind)],
+      };
+
+      globalThis.__AO_FINAL_LEGACY_STARTS=0;
+      globalThis.AO_SEQUENCE_BRIDGE_V23={
+        startLive(){globalThis.__AO_FINAL_LEGACY_STARTS+=1;},
+        getActive(){return null;},
+        getAssemblyStatus(){return null;},
+      };
+      globalThis.AO_SEQUENCE_BRIDGE_V22=null;
+      globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
+        iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
+      );
+      globalThis.AO_RUNTIME_V8={
+        store:{getState:()=>({
+          selectedDate:spec.date,
+          language:"en",
+          settings:{
+            massForm:"mc-incense",
+            followMode:"vox",
+            massPostureProfile:"TRADITIONAL_WALSH",
+            massGestureProfile:"GUIDED_1962",
+            faithfulCommunion:true,
+          },
+        })},
+      };
+      globalThis.AO_CELEBRATION_ARCH_V1={
+        date:spec.date,
+        celebrationForm:"mc-incense",
+        followMode:"vox",
+        actualCelebration:{id:spec.celebrationId,type:spec.celebrationType??"CALENDAR"},
+      };
+      globalThis.AO_CELEBRATION_API={
+        getResolvedMass:()=>({
+          canStart:true,
+          date:spec.date,
+          calendarDay:{id:spec.celebrationId,title:spec.kind},
+          requestedCelebrationId:spec.celebrationType==="REQUIEM" ? spec.celebrationId : undefined,
+          celebrationId:spec.celebrationId,
+          celebrationType:spec.celebrationType??"CALENDAR",
+          proper,
+          properSource:spec.properSource,
+          insertedRites:[spec.insertedRite],
+          conditions:[],
+          rubricSources:["MR1962"],
+        }),
+      };
+
+      const mod=await import("/src/mass/browser-entry.js?final-shell-following="+spec.kind.toLowerCase());
+      const controller=mod.createBrowserMassController();
+      const prepared=await controller.enter();
+      return {
+        schema:prepared.schema,
+        form:prepared.session.resolvedMass.form,
+        followingGraphs:[...(prepared.session.plan.followingGraphs??[])],
+        normalLastGospel:prepared.session.plan.normalLastGospel,
+        blessingAllowed:prepared.session.plan.blessingAllowed,
+      };
+    },{iconKeys,spec});
+
+    assert.equal(setup.schema,"ao-mass-entry-bootstrap-v1");
+    assert.deepEqual(setup.followingGraphs,[spec.kind],
+      spec.kind+" did not reach the compiled production following-action plan");
+    assert.equal(setup.normalLastGospel,spec.normalLastGospel,
+      spec.kind+" production plan Last Gospel policy changed");
+    assert.equal(setup.blessingAllowed,spec.blessingAllowed,
+      spec.kind+" production plan blessing policy changed");
+
+    await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
+    const ownership=await page.evaluate(()=>({
+      starts:globalThis.__AO_FINAL_LEGACY_STARTS,
+      readerUiMode:globalThis.AO_R17_MASS_RUNTIME?.readerUiMode??null,
+      uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
+      marker:document.documentElement.dataset.aoMassReaderUi??null,
+    }));
+    assert.equal(ownership.starts,0,spec.kind+" real-shell path started legacy renderer");
+    assert.equal(ownership.readerUiMode,"NATIVE");
+    assert.equal(ownership.uiOwner,"R17_NATIVE_PRODUCTION");
+    assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION");
+
+    const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+    const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
+    async function tap(button,label){
+      const b=await button.boundingBox();
+      assert.ok(b && b.height>=44,spec.kind+" "+label+" target is too small");
+      await page.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+      await page.waitForTimeout(100);
+    }
+    async function tapNext(){return tap(next,"Next")}
+    async function tapBack(){return tap(back,"Back")}
+
+    const exit=await page.evaluate(exitSourceSequence=>{
+      const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+      const card=api?.model?.cards?.find?.(x=>x.sourceSequence===exitSourceSequence);
+      if(!card)throw new Error("Missing source-sequence exit card "+exitSourceSequence);
+      const rendered=api.showSequence(card.sequence);
+      return {id:card.sectionId,renderedTitle:rendered?.title??null};
+    },spec.exitSourceSequence);
+    if(spec.filteredExitTitle)assert.equal(exit.renderedTitle,spec.filteredExitTitle,
+      spec.kind+" production reader failed to suppress the final blessing surface");
+
+    await tapNext();
+    await page.waitForFunction(({getter,firstId})=>{
+      const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+      const state=typeof api?.[getter]==="function" ? api[getter]() : null;
+      const id=state?.card?.id??state?.card?.recordId??null;
+      return id===firstId;
+    },{getter:spec.getter,firstId:spec.firstId},{timeout:8000});
+
+    // Prove Back/Next are real touch navigation inside the following-action reader.
+    await tapNext();
+    await tapBack();
+    await page.waitForFunction(({getter,firstId})=>{
+      const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+      const state=api?.[getter]?.();
+      return (state?.card?.id??state?.card?.recordId??null)===firstId;
+    },{getter:spec.getter,firstId:spec.firstId},{timeout:5000});
+
+    if(spec.kind==="CORPUS_CHRISTI_PROCESSION"){
+      const corpus=await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        api.setCorpusChristiSacramentalState("MONSTRANCE_PLACED_IN_CELEBRANT_HANDS");
+        api.setCorpusChristiSacramentalState("PROCESSION_ACTIVE");
+        api.setCorpusChristiProcessionParticipant(true);
+        const processional=api.getCorpusChristiState();
+        api.setCorpusChristiSacramentalState("BLESSED_SACRAMENT_REPLACED_ON_ALTAR");
+        return {posture:processional?.posture??null,id:api.getCorpusChristiState()?.card?.id??null};
+      });
+      assert.equal(corpus.posture,"PROCESSIONAL");
+      assert.equal(corpus.id,"CORPUS-R04");
+      await tapNext();
+      await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW
+        ?.setCorpusChristiSacramentalState?.("BENEDICTION_COMPLETE"));
+    }else if(spec.kind==="HOLY_THURSDAY_POST"){
+      await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        api.getHolyThursdayPostState()?.card?.id==="HT-R01" && api.reader?.renderMoment;
+      });
+      await tapNext();
+      const joined=await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        api.setHolyThursdayJoiningState("JOINING");
+        const state=api.getHolyThursdayPostState();
+        return {id:state?.card?.id??null,posture:state?.posture??null,action:state?.action??null};
+      });
+      assert.equal(joined.id,"HT-R02");
+      assert.equal(joined.posture,"STAND_WALK");
+      assert.equal(joined.action,"FOLLOW_BEHIND");
+      for(let i=0;i<4;i++)await tapNext();
+    }else if(spec.kind==="GENERIC_PROCESSION"){
+      await tapNext();
+      const procession=await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        api.setGenericProcessionParticipant(true);
+        const state=api.getGenericProcessionState();
+        return {posture:state?.posture??null,id:state?.card?.recordId??null};
+      });
+      assert.equal(procession.posture,"PROCESSIONAL");
+      assert.equal(procession.id,"PROC-100-020");
+      await tapNext();
+    }else if(spec.kind==="REQUIEM_ABSOLUTION"){
+      // Body-absent default: ABS-R01 → ABS-R03 → ABS-R04.
+      await tapNext();
+      await tapNext();
+    }
+
+    await page.waitForFunction(({getter,lastId})=>{
+      const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+      const state=api?.[getter]?.();
+      return (state?.card?.id??state?.card?.recordId??null)===lastId && state?.atEnd===true;
+    },{getter:spec.getter,lastId:spec.lastId},{timeout:8000});
+
+    await tapNext();
+    await page.waitForFunction(()=>
+      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getLifecycleState?.()?.stage==="DEPARTURE",
+      null,{timeout:5000});
+    const lifecycle=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getLifecycleState?.());
+    assert.equal(lifecycle?.massComplete,true,spec.kind+" following action lost Mass completion record");
+    assert.equal(lifecycle?.stage,"DEPARTURE");
+
+    assert.deepEqual(pageErrors,[],spec.kind+" uncaught page errors: "+JSON.stringify(pageErrors));
+  }finally{
+    await context.close();
+  }
+}
+
 let browser;
 try{
   browser=await chromium.launch({headless:true});
@@ -488,7 +707,65 @@ try{
     massTitle:"Introit",
   });
 
-  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, Asperges, Palm, Ash, Candlemas and Rogations paths on phone Chromium without booting legacy.");
+
+  await exerciseRealShellFollowingAction(browser,{
+    kind:"REQUIEM_ABSOLUTION",
+    insertedRite:"requiem absolution",
+    date:"2027-11-02",
+    celebrationId:"requiem",
+    celebrationType:"REQUIEM",
+    properSource:"Votive/Requiem",
+    getter:"getRequiemAbsolutionState",
+    firstId:"ABS-R01",
+    lastId:"ABS-R04",
+    exitSourceSequence:29,
+    normalLastGospel:false,
+    blessingAllowed:false,
+    filteredExitTitle:"Placeat tibi, sancta Trinitas",
+  });
+  await exerciseRealShellFollowingAction(browser,{
+    kind:"CORPUS_CHRISTI_PROCESSION",
+    insertedRite:"corpus procession",
+    date:"2027-05-27",
+    celebrationId:"corpus-christi",
+    properSource:"Sancti/Corpus",
+    getter:"getCorpusChristiState",
+    firstId:"CORPUS-R01",
+    lastId:"CORPUS-R06",
+    exitSourceSequence:29,
+    normalLastGospel:false,
+    blessingAllowed:false,
+    filteredExitTitle:"Placeat tibi, sancta Trinitas",
+  });
+  await exerciseRealShellFollowingAction(browser,{
+    kind:"HOLY_THURSDAY_POST",
+    insertedRite:"holy thursday post",
+    date:"2027-03-25",
+    celebrationId:"holy-thursday",
+    properSource:"Tempora/Quad6-4",
+    getter:"getHolyThursdayPostState",
+    firstId:"HT-R01",
+    lastId:"HT-R06",
+    exitSourceSequence:29,
+    normalLastGospel:false,
+    blessingAllowed:false,
+    filteredExitTitle:"Placeat tibi, sancta Trinitas",
+  });
+  await exerciseRealShellFollowingAction(browser,{
+    kind:"GENERIC_PROCESSION",
+    insertedRite:"generic procession",
+    date:"2027-06-24",
+    celebrationId:"nativity-st-john",
+    properSource:"Sancti/06-24",
+    getter:"getGenericProcessionState",
+    firstId:"PROC-100-010",
+    lastId:"PROC-100-030",
+    exitSourceSequence:30,
+    normalLastGospel:true,
+    blessingAllowed:true,
+  });
+
+  console.log("final real-shell acceptance: PASS — actual index.html mounts native ordinary, full pre-Mass cluster and four following-action lifecycles on phone Chromium without booting legacy.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
