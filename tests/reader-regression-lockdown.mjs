@@ -167,6 +167,13 @@ assert.equal(candlemasPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_P
   "Candlemas real-shell production certification disappeared");
 assert.match(String(candlemasPayload?.productionTest??""),/app-shell-final-e2e\.mjs/);
 assert.equal(candlemasPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
+assert.equal(candlemasPayload?.objectStateAcceptance?.status,"CERTIFIED_REAL_SHELL_PHONE");
+assert.equal(candlemasPayload?.objectStateAcceptance?.processionCardId,"CND-R05");
+assert.equal(candlemasPayload?.objectStateAcceptance?.processionState,"CANDLE_LIT");
+assert.equal(candlemasPayload?.objectStateAcceptance?.gospelEventId,"MC-GSP-060");
+assert.equal(candlemasPayload?.objectStateAcceptance?.paterCompletionEventId,"MC-COM-030");
+assert.equal(candlemasPayload?.objectStateAcceptance?.afterPaterWitnessEventId,"MC-COM-040");
+assert.equal(candlemasPayload?.objectStateAcceptance?.postureOverride,null);
 
 const realShellScope=release.protectedInvariants.find(x=>x.id==="REAL_SHELL_SPECIAL_STRUCTURE_SCOPE");
 assert.equal(realShellScope?.status,"PARTIAL_EXPLICIT_EVIDENCE");
@@ -293,6 +300,8 @@ assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
 assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
+assert.match(nativeSource,/getCandlemasMassState/,"native reader lost Candlemas Mass object-state API");
+assert.match(nativeSource,/r17ObjectState/,"native reader lost Candlemas object-state observability");
 assert.match(nativeSource,/createReaderFormCueStateController/,"native reader lost form-aware cue-state controller");
 assert.match(nativeSource,/createPlanAwareObjectiveRuntime/,"native reader lost plan-aware objective runtime");
 assert.match(nativeSource,/objectiveRuntime\.allows/,"native reader stopped enforcing planned objective traversal");

@@ -201,6 +201,37 @@ async function exerciseRealShellSpecialRite(browser,spec){
       stateValue,spec.expectedState,spec.kind+" real-shell personal/rite state did not project correctly"
     );
 
+    if(spec.kind==="CANDLEMAS"){
+      await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.setCandlemasProcessionParticipant?.(true));
+      await advanceToId("CND-R05");
+      await page.waitForFunction(()=>
+        globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasState?.()?.candleState==="CANDLE_LIT",
+        null,{timeout:5000});
+      const candlemasState=await page.evaluate(()=>({
+        procession:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasState?.()??null,
+        marker:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17ObjectState??null,
+        gospel:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasMassState?.("MC-GSP-060")??null,
+        paterEnd:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasMassState?.("MC-COM-030")??null,
+        afterPater:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCandlemasMassState?.("MC-COM-040")??null,
+      }));
+      assert.equal(candlemasState.procession?.hasBlessedCandle,true,
+        "Candlemas real-shell path lost possession of the blessed candle");
+      assert.equal(candlemasState.procession?.processionParticipant,true,
+        "Candlemas real-shell path lost procession participation");
+      assert.equal(candlemasState.procession?.candleState,"CANDLE_LIT",
+        "Candlemas procession did not project the candle as lit");
+      assert.equal(candlemasState.marker,"CANDLE_LIT",
+        "Candlemas reader root lost candle object-state observability");
+      assert.equal(candlemasState.gospel?.state,"CANDLE_LIT",
+        "Candlemas Gospel candle requirement disappeared");
+      assert.equal(candlemasState.gospel?.postureOverride,null,
+        "Candlemas candle object state incorrectly overrode Mass posture");
+      assert.equal(candlemasState.paterEnd?.state,"CANDLE_LIT",
+        "Candlemas candle state did not remain lit through Pater completion");
+      assert.equal(candlemasState.afterPater?.state,null,
+        "Candlemas invented a candle requirement after Pater");
+    }
+
     await advanceToId(spec.handoffId);
     await tapNext();
     await page.waitForFunction(()=>

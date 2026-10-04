@@ -633,6 +633,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerSchola="R24_CANDLEMAS_PAYLOAD";
     root.dataset.r17OwnerBell="R24_CANDLEMAS_EXACT_NONE";
     root.dataset.r17OwnerCinematic="R24_CANDLEMAS_EXACT_NONE";
+    root.dataset.r17ObjectState=projected.state.candleState??"none";
     globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
       specialRite:"CANDLEMAS",
       cardId:projected.state.card?.id??null,
@@ -642,6 +643,7 @@ export async function mountNativeReaderPreview({
       recipientState:projected.state.recipientState??null,
       candleState:projected.state.candleState??null,
       hasBlessedCandle:projected.state.hasBlessedCandle??false,
+      processionParticipant:projected.state.processionParticipant??false,
     });
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll)scroll.scrollTop=0;
@@ -810,6 +812,7 @@ export async function mountNativeReaderPreview({
     inAsh=false;
     inCandlemas=false;
     inRogations=false;
+    root.dataset.r17ObjectState="none";
     root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
@@ -1001,6 +1004,7 @@ export async function mountNativeReaderPreview({
     getPalmState:()=>ready.palmController?.project?.()??null,
     getAshState:()=>ready.ashController?.project?.()??null,
     getCandlemasState:()=>ready.candlemasController?.project?.()??null,
+    getCandlemasMassState:eventId=>ready.candlemasController?.massCandleState?.(eventId)??null,
     getRogationsState:()=>ready.rogationsController?.project?.()??null,
     setPalmRecipientState:value=>{if(!ready.palmController)return null;const result=ready.palmController.setRecipientState(value);return inPalm ? showPalm() : result},
     setAshRecipientState:value=>{if(!ready.ashController)return null;const result=ready.ashController.setRecipientState(value);return inAsh ? showAsh() : result},

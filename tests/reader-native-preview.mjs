@@ -110,6 +110,14 @@ assert.equal(candlemasReady.candlemasController.project().card.id,"CND-R01");
 candlemasReady.candlemasController.goTo("CND-R03");
 candlemasReady.candlemasController.setRecipientState("RECEIVE_CANDLE");
 assert.equal(candlemasReady.candlemasController.project().recipientPosture,"KNEEL");
+assert.equal(candlemasReady.candlemasController.project().hasBlessedCandle,true);
+candlemasReady.candlemasController.setProcessionParticipant(true);
+candlemasReady.candlemasController.goTo("CND-R05");
+assert.equal(candlemasReady.candlemasController.project().candleState,"CANDLE_LIT");
+assert.equal(candlemasReady.candlemasController.massCandleState("MC-GSP-060").state,"CANDLE_LIT");
+assert.equal(candlemasReady.candlemasController.massCandleState("MC-GSP-060").postureOverride,null);
+assert.equal(candlemasReady.candlemasController.massCandleState("MC-COM-030").state,"CANDLE_LIT");
+assert.equal(candlemasReady.candlemasController.massCandleState("MC-COM-040").state,null);
 candlemasReady.candlemasController.goTo("CND-R07");
 assert.equal(candlemasReady.candlemasController.project().handoff,"INTROIT");
 
