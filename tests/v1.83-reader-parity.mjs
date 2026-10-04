@@ -24,7 +24,7 @@ assert.notEqual(gate.currentR17.sourceFirstLiveCards,gate.reference.expectedLive
   "Source-first LIVE must not masquerade as historical v1.83 C01-C48 parity");
 assert.ok(gate.acceptance.some(x=>/48 LIVE cards/.test(x)), "Parity acceptance must require exact recovery of all 48 LIVE cards");
 
-assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");
+assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER__NON_BLOCKING_HISTORICAL_REFERENCE");
 assert.equal(recovery.lineage.v180LiveCards,38);
 assert.equal(recovery.lineage.v181LiveCards,48);
 assert.equal(recovery.lineage.v183FrozenLiveCards,48);
