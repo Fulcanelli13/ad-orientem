@@ -78,7 +78,8 @@
     "test:reader-native-good-friday": "node tests/reader-native-good-friday.mjs",
     "check:app-release": "node tests/app-release-gate.mjs",
     "test:app-live-guards": "node tests/app-live-session-guards.mjs",
-    "test:home-owner": "node tests/home-owner.mjs"
+    "test:home-owner": "node tests/home-owner.mjs",
+    "test:pray-owner": "node tests/pray-owner.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
