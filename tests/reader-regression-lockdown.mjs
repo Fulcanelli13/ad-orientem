@@ -324,6 +324,8 @@ assert.match(nativeSource,/r17OwnerBell/,"native reader lost bell ownership diag
 assert.match(nativeSource,/r17OwnerCinematic/,"native reader lost cinematic ownership diagnostics");
 assert.doesNotMatch(nativeSource,/#scholaDock|#scholaStreamLine/,"native reader reintroduced legacy Schola DOM donor");
 assert.match(nativeSource,/iconKeysForReaderState/,"native reader lost approved icon-key projection");
+assert.match(nativeSource,/AO\.SM\.B092/,"plan-aware final-blessing source block gate disappeared");
+assert.doesNotMatch(nativeSource,/blessingAllowed!==false\s*\|\|\s*card\.macroId/,"final-blessing suppression regressed to macro-ID gating");
 const browserEntrySource=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
 assert.match(browserEntrySource,/createHostIconResolver/,"browser entry lost host icon resolver");
 assert.match(browserEntrySource,/R17_ICON_BANK_INCOMPLETE/,"browser entry stopped failing closed on incomplete icon bank");
