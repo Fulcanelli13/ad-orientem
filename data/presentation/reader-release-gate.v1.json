@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "2.8.0",
+  "version": "3.0.1",
   "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
@@ -615,7 +615,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "All ordinary-Mass overlays, preceding rites and following actions in the recovered registry now have native/plan-owned reader support. Remaining special-structure work is limited to the two distinct rites: Good Friday and Easter Vigil."
+      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Prayer over the People insertion, Generic Procession, Good Friday and Easter Vigil."
     }
   ],
   "certificationPolicy": {
@@ -657,6 +657,41 @@
     "exclusions": [
       "unsupported special rites and following actions remain fail-closed",
       "full production-default promotion waits for SPECIAL_STRUCTURE_PARITY"
+    ]
+  },
+  "fieldRelease": {
+    "schema": "ao-r17-field-release-v1",
+    "status": "READY",
+    "target": "2026-10-04_ORDINARY_OR_VOTIVE_MASS",
+    "readerUiPolicy": "NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK",
+    "supportedForms": [
+      "LOW",
+      "MISSA_CANTATA_SIMPLE",
+      "MISSA_CANTATA_INCENSE",
+      "SOLEMN"
+    ],
+    "supportedCelebrationLayers": [
+      "CALENDAR_MASS",
+      "VOTIVE_PROPER"
+    ],
+    "supportedPrecedingRites": [
+      "ASPERGES"
+    ],
+    "supportedFollowingActions": [],
+    "requiredConditions": [
+      "resolved Proper is READY before reader entry",
+      "no Nuptial overlay",
+      "no Ember-lessons insertion",
+      "no Prayer-over-the-People insertion",
+      "no Generic Procession following action",
+      "not Good Friday",
+      "not Easter Vigil"
+    ],
+    "fallbackPolicy": "Anything outside this scope remains fail-closed or on the proven legacy rollback path; field readiness does not certify the full liturgical year.",
+    "tests": [
+      "tests/reader-field-release.mjs",
+      "tests/browser-runtime.mjs",
+      "tests/reader-phone-acceptance.mjs"
     ]
   }
 }
