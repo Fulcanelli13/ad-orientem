@@ -327,7 +327,18 @@ try{
   assert.equal(exited.route,"home","confirmed reader close left runtime route in LIVE");
 
   await page.locator("[data-ao-app-surface='pray']").click();
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray",null,{timeout:10000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="pray" &&
+    document.getElementById("aoPray435930")?.dataset?.aoPrayOwner==="modular-pray-v1",
+    null,{timeout:10000});
+  const prayOwnership=await page.evaluate(()=>({
+    owner:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
+    installed:globalThis.AO_PRAY_APP_V1?.status?.().installed??false,
+    presentationOwner:globalThis.AO_PRAY_APP_V1?.status?.().presentationOwner??null,
+  }));
+  assert.equal(prayOwnership.owner,"modular-pray-v1","production PRAY click did not use modular PRAY owner");
+  assert.equal(prayOwnership.installed,true);
+  assert.equal(prayOwnership.presentationOwner,"AO_PRAY_V435930");
 
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>
