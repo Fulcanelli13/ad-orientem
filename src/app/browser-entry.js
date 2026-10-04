@@ -243,7 +243,8 @@ export function installAppShellBridge({
           win?.AO_SETTINGS_V4356
         ),
         prayerOwner: win?.AO_PRAY_APP_V1?.status?.()?.installed === true,
-        prayerPresentationDonor: Boolean(win?.AO_PRAY_V435930),
+        prayerPresentationDonor: Boolean(win?.AOTraditionalPrayerBook),
+        lockedPrayerTargetAvailable: Boolean(win?.AO_PRAY_V435930),
         calendarOwner: win?.AO_CALENDAR_APP_V1?.status?.()?.installed === true,
         calendarOpen: win?.AO_CALENDAR_APP_V1?.status?.()?.open === true,
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
