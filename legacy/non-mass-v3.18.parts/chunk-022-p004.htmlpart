@@ -1,0 +1,482 @@
+d6RoSLbQ93Iw16TTuXKlKsTE3zfri+XBdoyTIr13O9nySzbDI5j6wuwS04kiyx9WGQkirQaj3rFknQ750pba+nQbUGuVy1wDraJZNzEk2UqKlJfQ0lrfGU6vHYH02LHEtPTXGora7JKKCDUYVB0ccM5AVKQAIgGV136wFn3X+ufp6IYRXaDJE/nneATgLCEBTB0VUeGMCiIggBTX9nVQ5ADEiMIQcgSYjkFLMTFTQ+ZYHP2sZMKuQqYbPyIR79SVHZObJyHFdNXUqdiFjtiw1G44Ch7WMUeXUmuifhLYhNYjV7L+XTbBBWuShAtasCjqED/loID/3ADf9ozbhOUMwiN2TwGsAiGzWAZREkQHHx29EqvHVAzN/ylszfJVSGDgYMDJZ6ZYKQNc8BFEVAZAOrxNgCSgVby4k9kqEP3DKcHDsqkLXqqAtRGXsVV30S8gaxfH+vglfq6Xp2LEIAw/stNc1JxhFSnNHhOG0kJdZpjj4nI441tdgeRdKGGubLQeFoKfO7JY5TcqhqDngynGoEg6kfxdbz2bYIYs+wdfRo6fAvM0w5GnR1Pr2WDlz73q4pK2IADsRwduNQl4SM7KCD3IOb6+fCysIckdHe26FKltYpBU0q13VHyiAogicpoikKmsACgeAZ7FmirLuuvzKuwB111WvTbj/x8YBAASi8gCugScN/SpRpmLfsSiK00iAKKJISEAorkhhGJG2wauNR5YDgCbX5TgAVRU0W8W6lgOgLHlK1hAAbfP4iF24atNjPxk/WXAqVQNCwmOwKiOtTO6iygCImrLHTFOyr+3CisbaHACjPIeCDkA7z7FHuhVuByCVLiKXMKGX6Fiw27VlKUgSuSAOBVANw8wZvOewWjrZKfj0ag7Ua8+WSy5RKhLebgIffsLWumoIV8hxYHwOgI3WFtGW8mZjlT7aweQx1TUkxV0Lq7uMjKPf5bPXnGShPB2upInrsLbnGkpYuzCRPe4GKy1PosI0T0IjH/c6ANAk5bSriHoUNQdAq6XgwNInaqPHI5CHH9XoWqodAG6QBqW8R7+xdlmP2G2YyydOGUTv/Ie+lfZg5T+AmfQUG7RQzHbcuTwIdDRX52Ipiw1LEFGUAUAkjFLCoLizVrXxmo/0t70D8A4AT2gOQAVvCt0gkNvuVUU5BY+zACgBQ1FdqFJFDaQ0uFt44g+9CM2Crcv2ODJCaMtlFX7GPzLyxI6pNWF+30mkfZ5ARnWs2R9kH66RRcSmtIiZg6guGVU8Fjkm+Q2S3UtIXg5VNmlvKOT2exxxsg/JpjiOqpSIL7rUnaIy90jwCfSw51a4KTWofy90wQorT8meVilXccfMnpDR9l4ay+JXMcxWS7DTd68rnxpiVTqRHPxM7K3i1LYoDszrteQroJfvEDWtW7bsEXzQsNdpjMotbgpCk3Egev1Gj+tkQv0UgZnL/r7Ip8pnO0gBhENI9hV8EkcNkR/DgJuZRYi3pznEjBnkgB1xJaXM1VWiEhrxlVfPlHWKJB89JM0Qjwhxerh02bXz6aCWbsrMHW22eFeFOa81+VWB81PpaNUoCZeuGVHBCCiL+2DWU3JNoFAEmhwiaW7LlZ13AF4BAIAaxauj4+IHxWXvvwCXgX+TT2dmJgUU3M9Ug87c5BPdrJ4Jf5GW566hPIKRQiAnMvMv1Sa3J7Scnx5PeZwGp0iJDD13Y9Er24IoMwbzQbqKzbYfy1sp4F5lVecwwn3+hhQQ/PxxnvuYRbRjQKVsAH8MxVVREgc509jKrdJc9+AnMfZUKrXUE5DvD27hCRwPpM6/lLrkAoDSjnOlHBDXz+NG8wquWhkGDmIFyvcoQWk9qpE28nzefAKj2ctTP0rWGvQpM5opCObWgTfHhhQ3nX+CfJiVPf9U6B5q7/KzyCtIv2aEk9LxzIVGx0uBz5l4BHtdbsc+cHA3tB9j7AoFedFA1h3gihfRB/Wzcw2DiZzbmQyNlB2bBZ/KQi2rAsWio0yAKIIgYlYMJctUDDGkUgBJ5KV8EBcm1nCDPg7Qxz8O/NFVddvO+RTAK3wxAKxNLae3RLFrWJXrXCTbrE2iLjou5R/BIMGVD1AGVpWnoODgSTULGJuYD1MTgZoMq7W3zJ6WKtNRqCrahRYkmrS3dTuiXv3LDt7WRIF1MSPPYabJSoWz8T69zZCLFkuNrZ/Rpo9nFE2FTwSruEx3e5R9EGrPrKzDTGnG16h4ZzMFECJkN9rByDw9lZ+ZzyH6U+bREKo7a8JyR86qSIuaUR3X0LV02KdJcOO5MhO4VdfRG5GTdiQFY3ie4a94hmemk1dlvZ0WQm7/Fn1JCDbwaQrQ/ra7kiYJlukTNn8rHF/tqsqlCijTEuwU3Nq5aSPotUiFYGb7fOKX7BVXso90HakzHYGQA0hWI8wMpmkvcad/zbSo91hphvCecc3yfKdH2+80x4QKilkhBImS7F8yQ5SBFCuGiphZMViVxQQSTKoZhbcDvO/t51MA59ojqNM4qmwd9aaPUXh0Qpj5Z3KydkLLcwsrqoDfK1c66UzRCkUEC4L0MKRZJoMMENZGkkzxDqolMH1iM/PIEZOVTQ19LlA/z00Ls8+RaIvV52PAsGsDfEpMFHgqCybmJh9vlk5YBsf4Dlm+Q0CvslPa9c1nYes+DbEBwGKHJBvG8jRbs7e+y3Z6ynvU6ws840N+7KFlDkSLk8b///aupVeT66rutU/VbXfbbUgQBg8YEClCshkgIjFmzthRxBTxGxg6LTFAYoDEiDnDnmZOhkgRREJySyALOVJCREc4OLbbvrfq7MXgvE/Vd2+300G02Etq9X189/uqTp3Hfq51mI+jNX62w87CBXZhVoyqB0fZHYwe4WxI8YzU4Dg3MTw5u3hynR+iehLb0tOx4OSVg+cCG7hsCstdIvPPwyRzh7l94iA0l+V0G7G7P/h54t2newHv3vRf5N4vRzrOpUEpJkZLZEWKJBE/hFsoMaafWUxcLJaDyT3FySMRk0evjkLgK2gAPBFsBs3FnXuKWlNI0pgK+rXnX8s9gQKhdS1gHDPYOefEFFKd97muF5wntnOXI0YRvTNMelVojDkzOeiZ7Caa5zeI9NxhVZOsRUK8ZLxMOym7EO9xA+DoHRhTtYwcm6MuLTzc4k7WNsvTJTr3DBXz78QY6MIvJE79v0z2XGv8DpXdbJRIKPdoYyn5GevvwBfdggmtJsX6SHT+pem5QIOJMFgyWQwo8+l4+JyEXDHw/I5pEsMxfY/ncZfOEjm3e9f1XCYPBZBD3c3JXLxr9x+uP9HUtbsI5CiZgQvXyCF9dDHSUAr/cItDcDYOJkMkplaXzdMfx3HkqblyKaLDwXjiUS9yen8Kb1HwHMa32mwcRc/G5TIWKh4yhzhsPUOmswiKDbQBlJP/DtvjpTbbmh14LjWekhIyEUSaUYKqKEhRJIb0nUK1RBFsqY5s3xM5Z6RIFHLr1YBeMbwyBsCHh10yPbxtM7m+jrIAYmYSY3GSTeK2i0XL1loyCnaLArLjvWPXA1xYfJukcKPq64t0jhKZlV40VoK65JcAw1IdtnBDV3KPkXhfySG/q9Z6fIGLNjWyFTI6TsWA0ap4nw6WtBmnUGYRvSBxGjKeONCn2+GpPCcu+BwcN4aZ7/3spO23R/QkOji+89zFQZ7FNbqEMFu7Xu5Rp1h+Gjp1xo+FabRxp24J45g3/m630nboQJSH8MqcWmD2LoamCwwc/L0HzamHezLOeMhDYczHptQRTk2B29oBD1EF0zxNc1IOZDus0R2KKFzNIjoR5k6qe2eh8XaY9j2mfeujXvDqTzj3cUve49J649lIyKEelpFTdINtCl0Me+MOl/k0h3bgvxiqQeaCVF4Q6eIJL4GM6cv6LDDYB31PE5tuh4jlxKyCtD5JW6SWy/TguL8euMHYwvXWV3gmlsHMZN7kIoHhToChWCH9M0ZhNIFSjJB9N4lGibvdGMFdcQ8wkohQ2/dNlhhTQiiamG3tct8X0XffE3Q1AG4AvGxY566tQeW1e4s8uA/ZokmMVv3tGEQe3lf5tTfuyZtv3hcBxLYg5BiiY7fxIdEBo+ZekRmpbJw0876jRVaEOrTpQoXs9Uv7Cm92Z/6BWrgU5OgUpIOw6wMCRpdi2KgPLfstRClCZNGE1O4Eytikxy4QbuO+R8VpnBLnhrl2VoJBhqp2dop8OJLXoffYa/0B2nKugijD3ECWb6+bwjj+hxrP3MqZjR+zxADTb27K2jw5boymY/RhkDTpS4TOSWoOBkANFAGYeisreQ6m1iPOVEgjmUN77TGuE1Ip/iEnTI6qx8dWq3JRdqyOsJxSKwItRdiKbS6jKCPmYx/a1qCe5s6qQ9o1t+gQPTN2ci09pwLOOuqaUU+5FATgWHHOMpaTUc5L/nRebezvZpJg7g1EDM0MvCMNfqsBgGmvLJS47IsNOHr96Uec2K+nbg+deIkbm9BMNY46dqc65EdDi72ORh+SmzsGKQIxWGXzbHm/tI71xJLKtgJtNAmEEmm5/U8ZlgVG8PXXV+G+3CchX+4SzcCHr+u9q/Xq3sefRgpSTaCZcOuWxhMRvOsRgJeLx4+F75Rp8O7XUkdfrolTQEIIsgRIJBLls1A0kwKEAFGa7LYLsGQLHJN4R2gKUTUPmutTreMJYEstzGyYljugWahh+/2xtPTM/avlmJGZlS6vf6A/tHDMZx13hjlN15N/GTpDoLeUB5GgQrLb1y6f999fMs3my4o8pkrRYtataevQrock4JHHNH1tXc90t8lOH1pqOVKvc3umY9vRRFREgqRA2ZVhsmijFaNtTAkoLrnGlTHuNAVzFitBL/2XmpOrBzMRXoBHcR7gLGpSpQVOr6OYORzLszPNZqO6mcV+WqPdHDBqJzRJsBeP1C4onwNNjbOpVVIdWIFt9K7jZHW2/9DxVCCfDWzhuKHQLv3cbkur4bRMrjOsqsrDMSI2jDCn1A1l1rMku2dzlhI8HJi8JRmDk56Dqf/mJNpmJxEVTt0urdAVoyElMnYd6VmnUUvEyUlijexyqIf9hGO6sHPkeSBJOzed0kQPMhsAln9GqqisBr3BsqwSoR9vUaKqfn1ZAaP+4noLX2jgGwFyL9sNkdou9LGIvPPOHdkbNwBeDO+9J/jhDwXyoYh8/23SbFfoZmb7z39xLT/6ie73rxAiDXs0KJiPdMrP//tz+fiTn8jVg4+TBBZLUNeav9uJoFAoZi1ubynQxPQ1h5rzxrCJ3D7QYsCDzDyqbofMamjS55i7GiwFRNm/Vpuya8/TyRPSPDaSDuIynWzyBtrhCBGJ9Sw60vI0B/fo8iQP1KqfOtCYEKRYVhgT0XIQZOGierpAB44PkDVFAhI2SRiTx4rmJkQ30iyX1AlxnqYY+3xLODKZhI2SFEIqeoebc0q26YePNkoXssfUQVDnRup7ZgqaBwBoKrM6cUYIGpEfpVaklq7YPiKijJij3uyd4NOzj1LHvoxfV9SB2eCsj4WYdaXqXJhj91NKY7hG43i9HA+lozGa+cETy7coyKo6lx/72B2k7FUZWwMHJ/vwYOjgcLCNHGFTGUpi2Wukwq1bBSeShy04htpkVhZFqzm206O9zlPipAW0yIsDs2QuumDKMAYxZ7lqysnyedsUEfsY30CjDA60afUepiiliWA8kbVz6MeUCnT0bHghuZokYrMSIjuO1aHTaZxzxhQ3CyFsN9fbg08+eSYPX8eff/3hvY/++V8//8ff/nVZr2/2v/nTP/vG3/3VX//b94LwD8XkSyGvo9l2a5GBRwBeIr4vst+IUiVsUfTHT6/jZ8/2mFr9CJLUtHEKCFnCtazrpyJLI3DO1ewsG33ZYHLktxT1t32q8HakjeJQsoRaX4XstttMu30kzytyqKlmj3NXn2YjoGmnNP56Fv88z/9o6T2AC2nKSiJ4UsbVhEOm+qqT4i7LHWolOdEz7vLAnIuR1TT7EpboN5BZilWyxELx89Gl9Qbi5GSAVRZ2Y1ErPWzcvcRODqWUiMPF8IlxZHoz6ZnkhjAva0CxZIa60OQYvuw1+NgefX7u0koDmnxDEEIpmomltI9qD5kkSKcQnF5kh3oqzJ5U4Q7qUq2wzmrtOttZFZbbYcX+SOwVFdpenXKzKIWQHGK8Q/3e7B/xxACYIwJgz7hxrqiQ2UAH81Yxclixq+3ITOBo1nNfvlKlBzH3G2gzwDBIGYsVheGeZiZH4Qr3Yf6bIWoADo6/YjipB6++z2tx8KJJnpcsNqs/r3V2lTt6si6685Ud66lVcR1ORlJtmR9q/dhZjrVRtW+AneQ4+nKWTsoo6RrVEpJRLAHTZaOWB5CXApccbE5wo4EGE5ObaBEf/vj6jz5/xt/95u+s8WuvQz786c3v/eXf/+BP/uCb4aHtYoCEaKKvcA3gq2EAvPOO8IMP0rP64N0nuv+DBCgWDdBPn1E//XxTJimAWmuFHIIqPfnUSWO8M2LJLvzVfz/k6Npr5YRi3GQStuomHed8+AlRnxwJsTqvr9f76NYmZSjYqbSvJzKvvKUNV3Ai+nGpf7bzpKocqfT3g2Zln9fPDwU9VVazS4vgJGw+R0iLkXbGNqvd4oYc9JPGe5wVa8cgTU1NzKKBF6VwrDtuey9YzzMoVdOi88Sgo/oY+jxn5zDb3PPPiYeyZBQwetPAYASMZEidUq2yGR0qBy2ZoZF0MByREzDk8IzAaWymIG1fTTAIS04G9CF6PYvLdZ28ofCA9Jmg6XlHO0m0n3ecdvTTlC6rIIGnae2x1GMKevS0zGNqo8Z4BnKyWaW4yNsPKcCOMfxO93PmsTgh6zutvuc41+qPeicnWUucFIHH13R7Qb+f1VKIGgnstM3KHn+poxR9jGycs3MogNO+sltq70sWpsqbD8JfPHwg8pP/ivzRU+Hr9/U7v/8NfueTz81iFFvv4SqKrNzlgkKcGwAvBY8eNUfgB58/1bCGT69u+B8REgB9DWJqxqscf1aoYAm1Gr+EgzvxPZVRPAq01ulX3aDE91Ap2VPkrY+AdSdcUa/GVFE0GAAQAAhoZe+KgRt1pFodVNStZKmRi9VYo6StnEFzBVhHjdMcGliVSaplaBBQu31/aLI7HHAtfM5WMNRK/FSr20+yabgSXeat490oh0QiM8zRkE6gAMmFRrdQUQ8ZTvQ8g1oykLKVbNTfEIb8zG0IU9RAwVCDkJy65kj33iZsMm1GfXkzqbKmrdEE1bFJz6vMR8kRYmWlDoCoKpJfH3qTCGNAVYmuMVXMSIZyto/dbHX/y12iSJmw4iOxBEjYs6b1WhWoLFmHnv9CT1GCTBBoNmCIWCsyRSDn6st15+xCAJZrK3BGhjnkhTFxKKCpd7OKgrFWrKOmFPITooSOjI6dNZ0KSNFsbwC5ABdKQ07blGcxHpw4cl7W2QCmWGMe7fKKkJOMpYKhPQzM7Ssosvc6aR7xPPA41MmcOSn9aTpnA5LQalLOMZBa9kfUpVgSD1XwgMfEv5ZmRcs1++jsqFbb101zkHmkpsLQnh6rBhiHDQ9d6kxyyhEmkND6b6xIUiRjGmqUmN9VKbwhAilc7/FmJaNB5EuSyxWfhWTcLgHyn7Lgiy5dLU+eCF4VY+BVSQHUx/vRRz+zBwt+KK8t6276W6vioQrvCeUKKgspKqAui9ai1AAIQtu2VUJShRQRMwgy9206VfMWLyIWzUoPAAhjEpNKr4AySq0Czt0nJxF2KDQvWAXVoAsFCBQITDP1vhZOINQEdCOMNYoEaspWJNuFpWmLFAYTA4p2CaoPmm6i5BwVIhLKBpauJx8CEGRtHLVi3uhZsECZmxM7A6ClUVU1Lz7LzbMsJRKs9MLo1mUZ9FS9JainSXE5R2YaksoUFpQoHanDYACoJMm89myspX2HUrie00i7trxYDJS+m5LIut82lDEPD9ySASAqZFRSzIQ0QEwIM1ppfKMx+TBBRSJFNX2rAFQTiXVIKW2oElpaCPN8SGkjJj6ylJpNGZFcjyoHhfdkN5bMWCISJhTVYhMFkh1SD4y8btRuW5pFnKjy5tVTUlQkQlTFitEUzE6jtsJRizhLHhH1hG2ee1PVgJlZ6bQFATFIIEQkQAyQVBCUToVY0n4xCkExQ6YQsWhlLsQu95BsEC0GKIIgMNmXGpDXT1oUEGirgY9CwtIwJxvFyv6gkUY1JusWQxa9j4BAVXP/YE4WdEqkNKW10sKSxaOIMNbgkQAtsHTi8DfvuCsYAUFom0EQNdGcXIrJ7EAONFgqMTISZhDCLLXPQ8jY9eqU1D/TlkxQDYmxPe9LWY/IBn0NFrUk667Tat02ack8II00IQRGMeYajKbtrlrVzCUfC6SoBCgoKhQ1I2JMtg9FYNEsmkRRRE11QHukXMN4LZAIGvddRMifXSk/KiP4+PGhN8qpgF8S8jR4b/+NN//2X9ab+x9d8/rBGr94bbF1XdYl2MoQbhJ797KIrGu+yeXA2dywL7IEmKpwE5F9E4kKBgg17tzSSjHd0++jClVBxRVFbpKBEcGoQp1UaYxECCvCkifFF9T9HjXagmBECIJIYhURDQIbGERX0Wyk7JuIXqX3VgUt5ntZRbZNZKVaykduotquYRNJLxCRYAvCIoiB9XM2UNddxMICNcEeqWlGbPUahtoaFVoEtSvUjdjT17tIwFW+xo3lb9P1grVKZt3Gd97W/M0mugvX7pfX3QGvRuygRkvjJeuaflaf45A6ZbkHVXDPtzRct4LSle6EadyiEZIvbc1XvO9UkU2Wblj2aTrFuPKegptsInZlMe5cF1jcwaAbVYU3IhL39HlXV/mzRORqp9qy4rVAPAM1cMW6m8awwIKgPMtyX0G3NCcjGBRUrFyptm03wzXdiIiFNc05CmK4SQfETo0kZElGRbAFy7g0RFW47CXEcJnhbF3a2CFS6wxa8y7zJVVJ7EsNVdd5mHSNFpTRNBWoFQM9oN+puLVrsEyNDBUq8rqMS6lP4bLANKbnr6vGrcyJL0EhzPJzWgKszIUvdWO5kRBkWI9BLIRAbJG6LqsIqOn0E+CqhcL0WhgjuATYvm/CAAt5b1jy50YjgrZ1sdbBKoNv2q/DfiVGExhvIEt6xdrNW7sRlO81jPvJuL+0PyzPTvb0JttrsPIsNK5cF9gmm0jea+KVMCoYolAjGBW0HXU/VBWGa8G2trkdLO11VyIiV8kEEhGJYWnXtB1r6UJM41buU5H2YaNA97Seol4x7BtVQQmwmy3t0yIiV9P9BhOEhdh2alhSBPSagmgEIrWM9LNtE93TXhfXPUIQbwy2bLpvV4h8BgvbDZf15ubry2cfd2cUxOFwOBwOx/9ruDHgcDgcDocf9P/38GqKAVHw7W+LPn2aBv6zz9L/3/qK7/f2G798nuann51PgrffEM6/exmf9zyf/aL3+Tzv86u+9pf9/i9j3L7KXLrrvf8p//+tO/7+Rcbjq86DJ2+ltOs7T8X6r1/2uP78G4Kv/bvw7TeET94SlQ9e/L2f/ubxuv74K8yr5x3f29b184z5877uV7XOvsocv+2zX8aa+WXurX9uZ8+w/OzS+nqRz+/f/3vdfb/R/f1bbwkfP77cdemWy//ufVAcDscLG9Tf/a7g0aNUhl6+ftlr9P33BY8epc3y/fcv6A7fgV/BdTkcz3Ou+BnjcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOxyn+B5EfIS71+j+/AAAAAElFTkSuQmCC"};
+const FR_ANCHOR={"sign-cross":["Au nom du Père"],"adjutorium":["Notre secours ✠"],"ministers-confiteor":["c’est ma faute, c’est ma faute, c’est ma très grande faute"],"indulgentiam-absolution":["Que le Dieu tout-puissant et miséricordieux"],"gloria":["Nous vous adorons","Nous vous rendons grâces","accueillez notre prière","avec le Saint-Esprit ✠"],"gospel-announcement":["Sequéntia ✠ sancti Evangélii","Suite ✠ du saint Évangile"],"credo":["JE CROIS en un seul Dieu","Et il a pris chair de la Vierge Marie","et s’est fait homme","il reçoit même adoration et même gloire","la vie ✠ du monde à venir"],"sanctus":["Saint, Saint, Saint le Seigneur","Béni soit celui qui vient"],"nobis-quoque":["À nous aussi, vos serviteurs pécheurs"],"agnus":["Agneau de Dieu"],"domine-non-sum-dignus":["Seigneur, je ne suis pas digne"],"blessing":["Que le Dieu tout-puissant vous bénisse"],"last-gospel-announcement":["Commencement ✠ du saint Évangile"],"last-gospel":["ET LE VERBE S’EST FAIT CHAIR.","Et il a habité parmi nous"],"palms-gospel":["Suite ✠ du saint Évangile"],"gf-between-lessons":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-1":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-2":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-3":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-4":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-5":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-6":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-7":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-8":["Fléchissons les genoux","Levez-vous"],"gf-solemn-prayer-9":["Fléchissons les genoux","Levez-vous"],"gf-cross-veneration":["Ô mon peuple"],"preface":["Rendons grâces au Seigneur notre Dieu"]};
+const HOLY_NAME_PUBLIC_STEPS=new Set(["introit","kyrie","gloria","collect","epistle","gradual","alleluia","gospel-announcement","gospel","credo","offertory","orate-fratres","preface","sanctus","canon-doxology","pater","fraction-pax","agnus","ecce","domine-non-sum-dignus","communion-faithful","postcommunion","dismissal","blessing","candlemas-blessing","candlemas-distribution","candlemas-procession","ashes-antiphon","ashes-four-prayers","ashes-imposition","ashes-after-distribution","ashes-conclusion","palms-blessing","palms-sprinkle-incense","palms-distribution","palms-gospel","palms-procession","palms-return","holy-thursday-reposition","holy-thursday-stripping","gf-lesson-1","gf-responsory-1","gf-between-lessons","gf-lesson-2","gf-responsory-2","gf-passion","gf-cross-unveiling","gf-cross-veneration","gf-sacrament-return","gf-pater","gf-libera","gf-faithful-communion","gf-final-prayers","gf-end","vigil-fire","vigil-candle","vigil-lumen","vigil-exsultet","vigil-prophecies","vigil-font","vigil-lauds"]);
+const HOLY_NAME_AUTHORITY='traditional_holy_name_custom';
+const HOLY_NAME_SOURCE='oconnell1962_bows_traditional_custom';
+const DOXOLOGY_BOW_AUTHORITY='traditional_doxology_bow_custom';
+const MARIAN_BOW_AUTHORITY='traditional_marian_name_custom';
+const SAINT_BOW_AUTHORITY='traditional_active_saint_name_custom';
+const POPE_BOW_AUTHORITY='traditional_pope_name_custom';
+const IDENTITY_BOW_SOURCE='ritus_servandus_1962_name_bows';
+const SAINT_PRAYER_STEPS=new Set(['collect','secret','postcommunion']);
+const POPE_NAME_STEPS=new Set(['te-igitur','gf-solemn-prayer-2','vigil-exsultet']);
+const NON_SAINT_TITLE=/Octave Day of Christmas|Epiphany|Baptism of (?:the )?Lord|Precious Blood|Transfiguration|Exaltation of the Holy Cross|All Saints|All Souls|Guardian Angels|Holy Family|Christ the King|Sacred Heart|Corpus Christi|Dedication|Blessed Virgin Mary|Our Lady|Immaculate (?:Heart|Conception)|Most Holy Name of Mary|Maternity of the Blessed Virgin|Presentation of the Blessed Virgin|Queenship of the Blessed Virgin|Seven Sorrows|Nativity of the Blessed Virgin|Assumption of the Blessed Virgin|Visitation of the Blessed Virgin|Annunciation of the Blessed Virgin/i;
+const handled=new WeakSet();
+const norm=v=>String(v??'').replace(/\u00a0/g,' ').replace(/[\t\r\n]+/g,' ').replace(/\s{2,}/g,' ').trim();
+const lang=()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language||'en';
+const form=()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.live?.form||'low';
+function coreState(){return globalThis.AO_RUNTIME_V8?.store?.getState?.()||null}
+function activeProperPath(){
+ const st=coreState(),active=globalThis.AO_ACTIVE_MASS_SESSION;
+ return String(active?.resolvedMass?.properSource||active?.proper?.sourcePath||st?.resolution?.proper?.data?.sourcePath||st?.resolution?.day?.selectedMassOption?.path||st?.resolution?.day?.main?.path||'');
+}
+function activeProper(){
+ const st=coreState(),active=globalThis.AO_ACTIVE_MASS_SESSION;
+ return active?.proper||st?.resolution?.proper?.data||null;
+}
+function activeTitleBlob(){
+ const st=coreState(),active=globalThis.AO_ACTIVE_MASS_SESSION,p=activeProper(),day=st?.resolution?.day;
+ return [active?.resolvedMass?.name,active?.resolvedMass?.title,p?.name,p?.nameFr,day?.selectedMassOption?.title,day?.selectedMassOption?.name,day?.main?.title,day?.main?.name,...(p?.calendarCommemorations||[]).map(x=>x?.name)].filter(Boolean).join(' · ');
+}
+function isMarianCelebration(){
+ return /Blessed Virgin Mary|B\.?\s*V\.?\s*M\.?|Our Lady|Notre-Dame|Sainte Vierge|Immaculate (?:Heart|Conception)|Most Holy Name of Mary|Maternity of the Blessed Virgin|Presentation of the Blessed Virgin|Queenship of the Blessed Virgin|Seven Sorrows|Nativity of the Blessed Virgin|Assumption of the Blessed Virgin|Visitation of the Blessed Virgin|Annunciation of the Blessed Virgin|Purification of the Blessed Virgin|Mary Major/i.test(activeTitleBlob());
+}
+function hasActiveSaintContext(){
+ const p=activeProper(),path=activeProperPath(),title=activeTitleBlob(),commems=p?.calendarCommemorations||[];
+ if(commems.length)return true;
+ if(!/^Sancti\//.test(path)||isMarianCelebration()||NON_SAINT_TITLE.test(title))return false;
+ return /\b(?:St\.?|Saint|Ss\.?|Sts\.?|Apostle|Martyr|Confessor|Virgin|Bishop|Abbot|Pope|Doctor)\b/i.test(title);
+}
+function isRequiemMass(){
+ const st=coreState(),active=globalThis.AO_ACTIVE_MASS_SESSION,p=active?.proper||st?.resolution?.proper?.data,path=activeProperPath();
+ return active?.resolvedMass?.celebrationType==='requiem'||active?.resolvedMass?.exceptionalProfile==='requiem-1962'||p?.isRequiem===true||/requiem/i.test(String(p?.riteProfile||''))||/^Sancti\/11-02(?:m\d+)?$/.test(path);
+}
+function isSpecialIncarnationSung(){
+ if(form()!=='sung')return false; const path=activeProperPath();
+ return path==='Sancti/03-25'||/^Sancti\/12-25m[123]$/.test(path);
+}
+function eventApplies(stepId,ev){
+ if(ev?.unlessRequiem&&isRequiemMass())return false;
+ if(ev?.requiresSecondConfiteorSetting&&!coreState()?.settings?.secondConfiteor)return false;
+ return true;
+}
+function effectiveEvent(stepId,ev){
+ if(stepId==='credo'&&ev?.specialIncarnationSungKind&&isSpecialIncarnationSung())return {...ev,kind:ev.specialIncarnationSungKind,status:ev.specialIncarnationSungStatus||ev.status,authority:AUTHORITY.RUBRIC_1962,label:'Kneel',sourceRefs:['RGM_1960','OCONNELL_1962'],prominence:'CORE',specialRule:'CHRISTMAS_ANNUNCIATION_SUNG_KNEEL'};
+ return ev;
+}
+function detectCompatibilityVariant(text,currentStepId=''){
+ const nearCommunion=['priest-communion','second-confiteor','ecce','domine-non-sum-dignus','communion-faithful'].includes(String(currentStepId));
+ if(!nearCommunion)return null;const t=norm(text).toLocaleLowerCase();
+ if(/conf[ií]teor/.test(t)||(/mea culpa/.test(t)&&/maxima|maxima|máxima/.test(t)))return 'SECOND_CONFITEOR_DETECTED';return null;
+}
+function iconKind(kind,label=''){
+ const k=String(kind||'').toLowerCase(), l=String(label||'').toLowerCase();
+ if(k==='rise'||/\brise\b|stand|debout|levez/.test(l))return 'stand';
+ if(k==='sit'||/\bsit\b|assis/.test(l))return 'sit';
+ if(k==='kneel'||/kneel|genoux|agenou/.test(l))return 'kneel';
+ if(k==='genuflect'||/genuflect|génuflex/.test(l))return 'genuflect';
+ if(k==='bow'||/bow|inclina/.test(l))return 'bow';
+ if(k==='cross'||/cross|croix/.test(l))return 'cross';
+ return 'hands';
+}
+function labelFor(ev,l){
+ const k=String(ev.kind||'').toLowerCase();
+ const map=l==='fr'?{stand:'Debout',sit:'Assis',kneel:'À genoux',genuflect:'Génuflexion',rise:'Se relever',bow:'Incliner la tête',cross:'Signe de croix'}:{stand:'Stand',sit:'Sit',kneel:'Kneel',genuflect:'Genuflect',rise:'Rise',bow:'Bow head',cross:'Sign of the cross'};
+ if(k==='action'&&/breast/i.test(ev.label||'')){const parsed=Number(ev.count)||Number((String(ev.label||'').match(/[×x]\s*(\d+)/i)||[])[1])||1;return l==='fr'?`Frapper la poitrine ×${parsed}`:`Strike breast ×${parsed}`;}
+ if(/forehead/i.test(ev.label||''))return l==='fr'?'Front · lèvres · poitrine':'Forehead · lips · breast';
+ if(k==='bow'&&ev.nameBow==='jesus')return l==='fr'?'Incliner · Saint Nom':'Bow · Holy Name';
+ if(k==='bow'&&ev.nameBow==='mary')return l==='fr'?'Incliner · Notre-Dame':'Bow · Our Lady';
+ if(k==='bow'&&ev.nameBow==='pope')return l==='fr'?'Incliner · nom du Pape':'Bow · Pope’s name';
+ if(k==='bow'&&ev.nameBow==='saint')return l==='fr'?'Incliner · saint du jour':'Bow · Saint of the day';
+ return map[k]||ev.label||k.replace(/_/g,' ');
+}
+function cue(ev,l,extra='',options={}){
+ const rawLabel=String(ev?.label||''), baseKind=iconKind(ev.kind,rawLabel), crossOnlyCue=baseKind==='cross'||ev?.gestureForm==='SIGN_CROSS_GOSPEL'||/forehead|gospel cross|front · lèvres/i.test(rawLabel), kind=crossOnlyCue?'cross':baseKind, span=document.createElement('span'),label=labelFor(ev,l);
+ span.className='aoInlineCue '+extra+(ev.status==='custom'||ev.source==='local'||ev.source==='special_day_step'?' aoCueLocal':'')+(crossOnlyCue?' aoCueIconOnly':'');
+ span.dataset.aoCueKind=String(ev.kind||'action'); span.dataset.aoCueVersion=VERSION;
+ if(ev.count)span.dataset.aoCueCount=String(ev.count); if(ev.status)span.dataset.aoCueStatus=String(ev.status); if(ev.authority)span.dataset.aoCueAuthority=String(ev.authority); if(ev.sourceKey)span.dataset.aoCueSource=String(ev.sourceKey); if(Array.isArray(ev.sourceRefs))span.dataset.aoCueSourceRefs=ev.sourceRefs.join(','); if(ev.nameBow)span.dataset.aoCueNameBow=String(ev.nameBow);
+ if(crossOnlyCue){span.dataset.aoGuideable='0';span.setAttribute('role','img');span.setAttribute('aria-label',label)}else{span.dataset.aoGuideable='1';span.setAttribute('role','button');span.tabIndex=0;span.setAttribute('aria-haspopup','dialog');span._aoCueEvent={...ev};span._aoCueLang=l;}
+ if(crossOnlyCue||!options.suppressIcon){const im=document.createElement('img');im.src=ICON[kind]||ICON.hands;im.alt='';im.setAttribute('aria-hidden','true');span.append(im)}else{span.dataset.aoCueIconSuppressed='printed-cross'}
+ if(!crossOnlyCue)span.append(document.createTextNode(label)); return span;
+}
+const PRINTED_CROSS_RE=/[✠✚✙✛✜✝✞☩]/;
+function printedCrossNearHit(hit){
+ if(!hit?.node)return false;
+ const raw=String(hit.node.nodeValue||''),at=Math.max(0,Number(hit.index)||0);
+ const lineStart=raw.lastIndexOf('\n',Math.max(0,at-1))+1,nextBreak=raw.indexOf('\n',at),lineEnd=nextBreak<0?raw.length:nextBreak;
+ return PRINTED_CROSS_RE.test(raw.slice(lineStart,lineEnd));
+}
+function guideKey(ev){
+ const k=String(ev?.kind||'').toLowerCase(),label=String(ev?.label||'').toLowerCase();
+ if(ev?.gestureForm==='SIGN_CROSS_GOSPEL'||/forehead|front · lèvres|gospel cross/.test(label))return 'gospel_cross';
+ if(k==='cross')return 'full_cross';
+ if(/breast|poitrine/.test(label)){const m=String(ev?.label||'').match(/[×x]\s*(\d+)/i),count=Number(ev?.count||(m&&m[1])||1);return count===1?'breast_1':'breast_3';}
+ if(k==='genuflect'||/genuflect|génuflex/.test(label))return 'genuflect';
+ if(k==='kneel'||/kneel|genoux|agenou/.test(label))return 'kneel';
+ if(k==='rise'||k==='stand'||/rise|stand|debout|relever/.test(label))return 'stand';
+ if(k==='sit'||/\bsit\b|assis/.test(label))return 'sit';
+ if(k==='bow'||/bow|inclina/.test(label))return /profound|profonde/.test(label)?'bow_profound':'bow_head';
+ if(k==='adore'||/adore|adorer/.test(label))return 'adore'; return 'action';
+}
+function escGuide(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function guideStatus(ev,l){const a=String(ev?.authority||'');if(AUTHORITY_LABELS[a])return AUTHORITY_LABELS[a][l]||AUTHORITY_LABELS[a].en;if(CUSTOM_AUTHORITY_LABELS[a])return CUSTOM_AUTHORITY_LABELS[a][l]||CUSTOM_AUTHORITY_LABELS[a].en;if(ev?.source==='special_day_step')return l==='fr'?'Action propre à ce jour':'Special-day action';if(ev?.status==='custom')return l==='fr'?'Usage traditionnel/local':'Traditional/local custom';return l==='fr'?'Indication pratique':'Practical guidance'}
+function guideSources(ev){return (Array.isArray(ev?.sourceRefs)?ev.sourceRefs:[]).filter(id=>SOURCE_REGISTRY[id]).map(id=>SOURCE_REGISTRY[id])}
+function canonicalCueRecord(stepId,ev){
+ if(!stepId||!globalThis.AO_MASS_GUIDANCE_V4313)return null;
+ const key=guideKey(ev),map={full_cross:'SIGN_OF_CROSS',gospel_cross:'GOSPEL_CROSSES_3',breast_1:'BREAST_STRIKE_1',breast_3:'BREAST_STRIKE_3',genuflect:'GENUFLECT',kneel:'KNEEL',stand:'STAND',sit:'SIT',bow_head:'HEAD_BOW',bow_profound:'PROFOUND_BOW',adore:'ADORATION'};
+ const action=map[key]; if(!action)return null;
+ const rows=globalThis.AO_MASS_GUIDANCE_V4313.gesturesFor(stepId)||[];
+ const anchor=String(ev?.anchorLat||'').toLowerCase();
+ return rows.find(r=>r.action===action && (!anchor || String(r.anchor_lat||'').toLowerCase().includes(anchor) || anchor.includes(String(r.anchor_lat||'').toLowerCase()))) || rows.find(r=>r.action===action) || null;
+}
+function guideForEvent(ev,l='en',stepId=''){
+ const key=guideKey(ev),copy=(GUIDE_CONTENT[key]||GUIDE_CONTENT.action)[l]||(GUIDE_CONTENT[key]||GUIDE_CONTENT.action).en;
+ const rec=canonicalCueRecord(stepId,ev), canonical=rec?globalThis.AO_MASS_GUIDANCE_V4313.guideFor(rec,l):null;
+ let action=canonical?.action||copy.action,why=canonical?.why||copy.why,status=canonical?.status||guideStatus(ev,l),sources=canonical?.sources||guideSources(ev);
+ if(ev?.specialRule==='CHRISTMAS_ANNUNCIATION_SUNG_KNEEL'&&key==='kneel'){
+  action=l==='fr'?'À Noël ou à l’Annonciation, à la Messe chantée, mettez-vous à genoux à « Et incarnatus est » et restez à genoux jusqu’à l’indication de vous relever.':'At Christmas or the Annunciation in Sung Mass, kneel at Et incarnatus est and remain kneeling until the cue to rise.';
+  why=l==='fr'?'Il s’agit ici de l’exception propre de 1962 pour l’Incarnation : à ces célébrations, la Messe chantée demande de s’agenouiller plutôt que d’effectuer la génuflexion ordinaire.':'This is the specific 1962 Incarnation exception: on these celebrations at Sung Mass, the action is kneeling rather than the ordinary genuflection.';
+ }
+ return {key,title:copy.title,action,why,status,sources,label:labelFor(ev,l),record:rec,stepId};
+}
+function ensureCueGuideSheet(){let root=document.getElementById('aoCueGuideSheet');if(root)return root;root=document.createElement('div');root.id='aoCueGuideSheet';root.className='sheetBackdrop';root.hidden=true;document.body.append(root);return root}
+function closeCueGuide(){const root=document.getElementById('aoCueGuideSheet');if(root)root.hidden=true;document.body.style.overflow=''}
+function openCueGuide(ev,l='en',stepId=''){
+ const g=guideForEvent(ev,l,stepId),root=ensureCueGuideSheet();
+ const src=g.sources.length?`<ul class="aoCueGuideSources">${g.sources.map(s=>{const label=typeof s==='string'?s:(s?.title||s?.label||'');const type=typeof s==='object'?(s?.type||s?.kind||''):'';return `<li>${type?`<small>${escGuide(type.replaceAll('_',' '))}</small>`:''}${escGuide(label)}</li>`}).join('')}</ul>`:`<p class="aoCueGuideCaution">${l==='fr'?'Aucune référence supplémentaire n’est attachée à ce signal.':'No additional source reference is attached to this cue.'}</p>`;
+ root.innerHTML=`<section class="liveSheet whySheet" role="dialog" aria-modal="true" aria-labelledby="aoCueGuideTitle"><header><div><span class="sheetKicker">${l==='fr'?'Geste pendant la Messe':'Mass action'}</span><h2 id="aoCueGuideTitle">${escGuide(g.title)}</h2></div><button type="button" data-ao-cue-guide-close aria-label="${l==='fr'?'Fermer':'Close'}">×</button></header><div class="whyBlock primaryWhy"><h3>${l==='fr'?'Action':'Action'}</h3><p>${escGuide(g.action)}</p></div><div class="whyBlock"><h3>${l==='fr'?'Statut':'Status'}</h3><span class="aoCueGuideStatus">${escGuide(g.status)}</span></div><div class="whyBlock"><h3>${l==='fr'?'Pourquoi ?':'Why?'}</h3><p>${escGuide(g.why)}</p></div><div class="whyBlock"><h3>${l==='fr'?'Sources':'Sources'}</h3>${src}</div>${stepId?`<button class="aoCueStudy" type="button" data-ao-cue-guide-study="${escGuide(stepId)}">${l==='fr'?'Étudier ce moment de la Messe':'Study this Mass moment'} →</button>`:''}</section>`;
+ root.hidden=false;document.body.style.overflow='hidden';queueMicrotask(()=>root.querySelector('[data-ao-cue-guide-close]')?.focus());
+}
+function installCueGuideEvents(){
+ if(document.documentElement.dataset.aoCueGuideEvents==='1')return;document.documentElement.dataset.aoCueGuideEvents='1';
+ document.addEventListener('click',e=>{const close=e.target.closest?.('[data-ao-cue-guide-close]');if(close){e.preventDefault();closeCueGuide();return}const study=e.target.closest?.('[data-ao-cue-guide-study]');if(study){e.preventDefault();const id=study.dataset.aoCueGuideStudy;closeCueGuide();globalThis.AO_UNDERSTAND_MASS?.openStep?.(id);return}const root=e.target===document.getElementById('aoCueGuideSheet');if(root){closeCueGuide();return}const pill=e.target.closest?.('.aoInlineCue[data-ao-guideable="1"]');if(pill&&pill._aoCueEvent){e.preventDefault();e.stopPropagation();const stepId=pill.closest?.('.liveScreen')?.dataset?.stepId||'';openCueGuide(pill._aoCueEvent,pill._aoCueLang||lang(),stepId)}},true);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('aoCueGuideSheet')?.hidden){closeCueGuide();return}if((e.key==='Enter'||e.key===' ')&&e.target?.matches?.('.aoInlineCue[data-ao-guideable="1"]')&&e.target._aoCueEvent){e.preventDefault();const stepId=e.target.closest?.('.liveScreen')?.dataset?.stepId||'';openCueGuide(e.target._aoCueEvent,e.target._aoCueLang||lang(),stepId)}},true);
+}
+function textNodes(root){
+ const out=[]; if(!root)return out;
+ const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){
+  const p=n.parentElement;if(!p||!norm(n.nodeValue))return NodeFilter.FILTER_REJECT;
+  if(p.closest('.aoInlineCue,.swapAction,.textLang,.massReadingRole,.parallelRole'))return NodeFilter.FILTER_REJECT;
+  return NodeFilter.FILTER_ACCEPT;
+ }}); let n; while(n=w.nextNode())out.push(n); return out;
+}
+function holyNameScopes(root){
+ const out=[],seen=new Set();
+ root.querySelectorAll('.massText').forEach(el=>{
+  if(el.classList.contains('swapAlt')||el.closest('.textColumn.vernacular')||el.classList.contains('consecrationVernacular'))return;
+  const sig=norm(textNodes(el).map(n=>n.nodeValue).join(' '));if(!sig||seen.has(sig))return;seen.add(sig);out.push(el);
+ });
+ return out;
+}
+function placeTextDrivenBows(root,stepId,l){
+ if(!HOLY_NAME_PUBLIC_STEPS.has(stepId))return 0;
+ let placed=0;
+ for(const scope of holyNameScopes(root)){
+  for(const node of textNodes(scope)){
+   const raw=node.nodeValue||'',hits=[];
+   for(const m of raw.matchAll(/\bIes(?:us|um|u)\b/giu))hits.push({m,ev:{kind:'bow',label:'Bow at the Holy Name',status:'custom',authority:HOLY_NAME_AUTHORITY,sourceKey:HOLY_NAME_SOURCE,sourceRefs:['OCONNELL_1962'],prominence:'DETAIL',nameBow:'jesus'}});
+   for(const m of raw.matchAll(/Gl[oó]ria Patri/giu))hits.push({m,ev:{kind:'bow',label:'Bow head',status:'custom',authority:DOXOLOGY_BOW_AUTHORITY,sourceKey:HOLY_NAME_SOURCE,sourceRefs:['OCONNELL_1962'],prominence:'DETAIL'}});
+   hits.sort((a,b)=>(b.m.index??-1)-(a.m.index??-1));
+   for(const hit of hits){
+    const m=hit.m,at=m.index??-1;if(at<0)continue;
+    const anchor=node.splitText(at),after=anchor.splitText(m[0].length);
+    anchor.parentNode.insertBefore(cue(hit.ev,l,'aoCueRitual'),anchor);placed++;
+   }
+  }
+ }
+ return placed;
+}
+function mariaTokenHits(raw){
+ const hits=[];
+ for(const m of raw.matchAll(/(?<!\p{L})Mar(?:í|i)(?:a|ae|æ|am)(?!\p{L})/giu)){
+  const at=m.index??-1;if(at<0)continue;
+  const around=raw.slice(Math.max(0,at-72),Math.min(raw.length,at+m[0].length+72));
+  if(isMarianCelebration()||/Virg|Genetr|Mater\s+Dei|Dei\s+Mat|Deípar|Theotoc|Immaculat/i.test(around))hits.push({index:at,length:m[0].length});
+ }
+ return hits;
+}
+function popeTokenHits(raw){
+ const hits=[];
+ for(const m of raw.matchAll(/Papa\s+nostro\s+N\./giu)){
+  const rel=m[0].lastIndexOf('N.');if((m.index??-1)>=0&&rel>=0)hits.push({index:(m.index??0)+rel,length:2});
+ }
+ return hits;
+}
+function saintInvocationHits(raw){
+ const out=[],seen=new Set(),stop=/^(?:Ecclesi|Evangel|Trinit|Hosti|Sacrament|Cruc|Spirit|Domin|De|Ies|Christ|Mari|Virg|Angel|Apostol|Martyr|Confessor|Episcop|Abbat|Pontific|Doctor)/i;
+ const fold=x=>String(x||'').normalize('NFD').replace(/\p{M}/gu,'').replace(/æ/gi,'ae').replace(/œ/gi,'oe');
+ const add=(index,text)=>{if(index<0||!text||stop.test(fold(text)))return;const key=index+':'+text;if(seen.has(key))return;seen.add(key);out.push({index,length:text.length,text})};
+ const direct=/\b(?:sanct(?:um|am|i|ae|æ)|be(?:a|á)t(?:um|am|i|ae|æ))\s+(?:(?:Apostolum|Martyrem|Confessorem|Virginem|Episcopum|Abbatem|Pontificem|Doctorem)\s+)?(?:tu(?:um|am|i|ae)\s+)?([A-ZÀ-ÖØ-ÞÆŒ][\p{L}’'’-]{2,})/gu;
+ for(const m of raw.matchAll(direct)){const name=m[1],rel=m[0].lastIndexOf(name);add((m.index??0)+rel,name)}
+ const role=/\b(?:Apostol(?:orum|órum)|Mart(?:yrum|ýrum)|Confessoris|Virginis|Episcopi|Abbatis|Pontificis|Doctoris)\s+(?:tu(?:orum|órum|i|ae|æ)\s+)?([A-ZÀ-ÖØ-ÞÆŒ][\p{L}’'’-]{2,})(?:\s+et\s+([A-ZÀ-ÖØ-ÞÆŒ][\p{L}’'’-]{2,}))?/gu;
+ for(const m of raw.matchAll(role)){
+  const a=m[1],ra=m[0].indexOf(a);add((m.index??0)+ra,a);
+  if(m[2]){const rb=m[0].lastIndexOf(m[2]);add((m.index??0)+rb,m[2])}
+ }
+ return out;
+}
+function insertIdentityHits(scope,hits,l){
+ let placed=0;
+ const byNode=new Map();
+ for(const h of hits){if(!h?.node||h.index<0||!h.length)continue;(byNode.get(h.node)||byNode.set(h.node,[]).get(h.node)).push(h)}
+ for(const [node,rows] of byNode){
+  rows.sort((a,b)=>b.index-a.index);
+  for(const h of rows){
+   if(!node.parentNode||h.index>node.nodeValue.length)continue;
+   const anchor=node.splitText(h.index),after=anchor.splitText(Math.min(h.length,anchor.nodeValue.length));
+   anchor.parentNode.insertBefore(cue(h.ev,l,'aoCueRitual'),anchor);placed++;
+  }
+ }
+ return placed;
+}
+function placeIdentityNameBows(root,stepId,l){
+ let placed=0;
+ const scopes=holyNameScopes(root);
+ const marian=[],pope=[],saints=[];
+ for(const scope of scopes){for(const node of textNodes(scope)){
+  const raw=node.nodeValue||'';
+  for(const h of mariaTokenHits(raw))marian.push({node,...h,ev:{kind:'bow',label:'Bow at Our Lady’s name',status:'custom',authority:MARIAN_BOW_AUTHORITY,sourceKey:IDENTITY_BOW_SOURCE,sourceRefs:['OCONNELL_1962'],prominence:'DETAIL',nameBow:'mary'}});
+  if(POPE_NAME_STEPS.has(stepId))for(const h of popeTokenHits(raw))pope.push({node,...h,ev:{kind:'bow',label:'Bow at the Pope’s name',status:'custom',authority:POPE_BOW_AUTHORITY,sourceKey:IDENTITY_BOW_SOURCE,sourceRefs:['MR_1962','OCONNELL_1962'],prominence:'DETAIL',nameBow:'pope'}});
+  if(SAINT_PRAYER_STEPS.has(stepId)&&hasActiveSaintContext())for(const h of saintInvocationHits(raw))saints.push({node,...h,ev:{kind:'bow',label:'Bow at the saint’s name',status:'custom',authority:SAINT_BOW_AUTHORITY,sourceKey:IDENTITY_BOW_SOURCE,sourceRefs:['OCONNELL_1962'],prominence:'DETAIL',nameBow:'saint'}});
+ }}
+ placed+=insertIdentityHits(root,[...marian,...pope,...saints],l);
+ return placed;
+}
+function exactNeedles(stepId,ev,index,l){
+ const a=[]; if(l==='fr'&&FR_ANCHOR[stepId]?.[index])a.push(FR_ANCHOR[stepId][index]);
+ if(l==='en'&&ev.anchorEng)a.push(ev.anchorEng); if(ev.anchorLat)a.push(ev.anchorLat); if(ev.anchorEng)a.push(ev.anchorEng);
+ return [...new Set(a.filter(Boolean))];
+}
+function locate(root,needles){
+ const scopes=[...root.querySelectorAll('.massText')]; scopes.sort((a,b)=>(a.closest('.swapAlt')?1:0)-(b.closest('.swapAlt')?1:0));
+ // Some response/dialogue rows are rendered outside .massText. Search the whole step last,
+ // after the preferred text panels, so exact ritual cues remain inline rather than falling back to the top.
+ scopes.push(root);
+ const seen=new Set();
+ for(const scope of scopes){ if(seen.has(scope))continue; seen.add(scope); for(const n of textNodes(scope)){ const raw=n.nodeValue||'', folded=norm(raw);
+   for(const needle of needles){ const exact=String(needle); let at=raw.indexOf(exact); if(at<0)at=raw.toLocaleLowerCase().indexOf(exact.toLocaleLowerCase());
+    if(at>=0)return {node:n,index:at,length:exact.length,scope};
+    const nf=norm(exact); if(nf&&folded.includes(nf)){ const first=nf.split(' ')[0], approx=raw.toLocaleLowerCase().indexOf(first.toLocaleLowerCase()); if(approx>=0)return {node:n,index:approx,length:first.length,scope}; }
+   }
+ }} return null;
+}
+function place(root,stepId,ev,index,l){
+ const hit=locate(root,exactNeedles(stepId,ev,index,l));
+ const el=cue(ev,l,'aoCueRitual');
+ if(!hit){el.classList.add('aoCueFallback');root.prepend(el);return false;}
+ const anchorStart=hit.node.splitText(hit.index), after=anchorStart.splitText(Math.min(hit.length,anchorStart.nodeValue.length));
+ if(ev.after)after.parentNode.insertBefore(el,after); else anchorStart.parentNode.insertBefore(el,anchorStart); return true;
+}
+function ritualCueFromAction(action){
+ const label=String(action.label||''); let kind='action';
+ if(/genuflect|génuflex/i.test(label))kind='genuflect'; else if(/kneel|genoux|agenou/i.test(label))kind='kneel'; else if(/rise|stand|debout|levez/i.test(label))kind='rise'; else if(/cross|croix/i.test(label))kind='cross';
+ return {kind,label,status:'custom',source:action.source||'special_day_step'};
+}
+function timeline(stepId,l){
+ if(form()!=='sung'||!['gloria','credo'].includes(stepId))return null;
+ const box=document.createElement('div');box.className='aoPostureTimeline';const lab=document.createElement('div');lab.className='aoPostureTimelineLabel';lab.textContent=l==='fr'?'Séquence de posture · usage local/traditionnel':'Posture sequence · local/traditional custom';box.append(lab);
+ const flow=document.createElement('div');flow.className='aoPostureTimelineFlow';const seq=[['stand','Stand','Debout'],['sit','Sit while the schola continues','Assis pendant que la schola continue'],['stand','Stand at the conclusion','Debout à la conclusion']];
+ seq.forEach((x,i)=>{if(i){const a=document.createElement('span');a.className='aoPostureArrow';a.textContent='→';flow.append(a)}flow.append(cue({kind:x[0],label:l==='fr'?x[2]:x[1],status:'custom',authority:AUTHORITY.LOCAL_CUSTOM,sourceRefs:['SCR_1958']},l,'aoCueLocal'))});box.append(flow);
+ const note=document.createElement('p');note.className='aoPostureTimelineNote';const incarnationSpecial=stepId==='credo'&&isSpecialIncarnationSung();note.textContent=l==='fr'?(stepId==='credo'?(incarnationSpecial?'À Noël et à l’Annonciation, à la Messe chantée, tous s’agenouillent pendant « Et incarnatus est »; le repère exact apparaît ci-dessous.':'La génuflexion à « Et incarnatus est » apparaît exactement dans le texte ci-dessous.'):'Les transitions assis/debout pendant une Messe chantée relèvent de l’usage local; le signe de croix final apparaît exactement dans le texte.'):(stepId==='credo'?(incarnationSpecial?'At Christmas and the Annunciation in a Sung Mass, all kneel during Et incarnatus est; the exact cue is marked below.':'The genuflection at Et incarnatus est is marked at the exact words below.'):'Sitting/standing during a Sung Mass follows local custom; the concluding sign of the cross is marked at the exact words below.');box.append(note);return box;
+}
+function enhance(screen){
+ if(!screen||handled.has(screen))return; const stepId=screen.dataset.stepId||''; if(!stepId)return;
+ let texts=screen.querySelector('.massTexts'); if(!texts){texts=document.createElement('section');texts.className='massTexts';const actions=screen.querySelector('.liveContextActions');actions?.parentNode?.insertBefore(texts,actions||null)}
+ const orientation=screen.querySelector('.liveOrientation'); if(orientation){orientation.classList.add('aoInlineOrientation');texts.prepend(orientation)}
+ const l=lang(),tl=timeline(stepId,l);if(tl){const orient=texts.querySelector('.aoInlineOrientation');orient?orient.after(tl):texts.prepend(tl)}
+ screen.querySelectorAll('.liveCues .gesture').forEach(x=>x.remove()); const rec=REGISTRY[stepId]||{gestures:[],ritualActions:[]};
+ const indexed=(rec.gestures||[]).map((ev,i)=>({ev:effectiveEvent(stepId,ev),i})).filter(({ev})=>eventApplies(stepId,ev)), ordered=[];
+ for(let i=0;i<indexed.length;){
+  const cur=indexed[i];
+  if(cur.ev?.after){
+   let j=i+1; while(j<indexed.length&&indexed[j].ev?.after&&indexed[j].ev.anchorLat===cur.ev.anchorLat&&indexed[j].ev.anchorEng===cur.ev.anchorEng)j++;
+   ordered.push(...indexed.slice(i,j).reverse()); i=j;
+  }else{ordered.push(cur);i++}
+ }
+ ordered.forEach(({ev,i})=>place(texts,stepId,ev,i,l));
+ placeTextDrivenBows(texts,stepId,l);
+ placeIdentityNameBows(texts,stepId,l);
+ const ritual=(rec.ritualActions||[]).filter(a=>a&&a.label); if(ritual.length){const rail=document.createElement('div');rail.className='aoPostureTimeline aoRitualActionRail';const lab=document.createElement('div');lab.className='aoPostureTimelineLabel';lab.textContent=l==='fr'?'Action rituelle':'Ritual action';rail.append(lab);const flow=document.createElement('div');flow.className='aoPostureTimelineFlow';ritual.forEach((a,i)=>{if(i){const sep=document.createElement('span');sep.className='aoPostureArrow';sep.textContent='·';flow.append(sep)}flow.append(cue(ritualCueFromAction(a),l,'aoCueRitual'))});rail.append(flow);const orient=texts.querySelector('.aoInlineOrientation'),multi=texts.querySelector('.aoPostureTimeline:not(.aoRitualActionRail)');if(multi)multi.after(rail);else if(orient)orient.after(rail);else texts.prepend(rail)}
+ handled.add(screen);screen.dataset.inlineCuesV251='1';
+}
+function scan(){document.querySelectorAll('.liveScreen').forEach(enhance)}
+let storeHooked=false;function install(){installCueGuideEvents();const store=globalThis.AO_RUNTIME_V8?.store;if(!store?.subscribe){setTimeout(install,80);return}if(!storeHooked){storeHooked=true;store.subscribe(()=>queueMicrotask(scan))}scan()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
+window.AO_INLINE_CUES_V251={version:VERSION,participationEngineVersion:PARTICIPATION_ENGINE_VERSION,guideVersion:GUIDE_VERSION,registrySteps:Object.keys(REGISTRY).length,authorityClasses:AUTHORITY,sourceRegistry:SOURCE_REGISTRY,sourcePolicy:{bows:'traditional/custom for faithful; not asserted as universal 1962 lay rubric',holyName:'audible/sung public-text rule only',identityNames:'Marian identity phrases; Pope N. placeholder; active saint invocation formulas in Collect/Secret/Postcommunion only',sourceKey:'oconnell1962_bows_traditional_custom',identitySourceKey:IDENTITY_BOW_SOURCE},guideForEvent,openGuide:openCueGuide,closeGuide:closeCueGuide,detectCompatibilityVariant,scan,getRegistry(){return JSON.parse(JSON.stringify(REGISTRY))},context(){return {properPath:activeProperPath(),requiem:isRequiemMass(),specialIncarnationSung:isSpecialIncarnationSung(),marianCelebration:isMarianCelebration(),activeSaintContext:hasActiveSaintContext(),form:form(),language:lang()}},diagnostic(){const screen=document.querySelector('.liveScreen');if(!screen)return {version:VERSION,live:false,context:this.context()};return {version:VERSION,live:true,stepId:screen.dataset.stepId||null,orientationInsideText:!!screen.querySelector('.massTexts>.aoInlineOrientation'),detachedGestureCount:screen.querySelectorAll('.liveCues .gesture').length,inlineCueCount:screen.querySelectorAll('.massTexts .aoInlineCue').length,guideableCueCount:screen.querySelectorAll('.massTexts .aoInlineCue[data-ao-guideable="1"]').length,holyNameBowCount:screen.querySelectorAll('.aoInlineCue[data-ao-cue-authority="'+HOLY_NAME_AUTHORITY+'"]').length,doxologyBowCount:screen.querySelectorAll('.aoInlineCue[data-ao-cue-authority="'+DOXOLOGY_BOW_AUTHORITY+'"]').length,marianNameBowCount:screen.querySelectorAll('.aoInlineCue[data-ao-cue-name-bow="mary"]').length,saintNameBowCount:screen.querySelectorAll('.aoInlineCue[data-ao-cue-name-bow="saint"]').length,popeNameBowCount:screen.querySelectorAll('.aoInlineCue[data-ao-cue-name-bow="pope"]').length,multiPosture:!!screen.querySelector('.aoPostureTimeline:not(.aoRitualActionRail)'),context:this.context()}}};
+window.AO_INLINE_CUES_V252=window.AO_INLINE_CUES_V251;
+window.AO_INLINE_CUES_V253=window.AO_INLINE_CUES_V251;
+window.AO_INLINE_CUES_V254=window.AO_INLINE_CUES_V251;
+})();
+</script>
+
+<script id="ao-v351-live-rubrical-certification">
+window.AO_V351_CERTIFICATION = Object.freeze({
+  version: 'v35.1',
+  base: 'v35-HARMONIZED-CANONICAL',
+  scope: 'live Mass regression + inline rubrical certification',
+  repairs: [
+    'Inline cue locator now reaches dialogue rows, fixing Adjutorium and Indulgentiam exact anchoring.',
+    'Ordinary Gospel announcement now derives Matthew/Mark/Luke/John from the resolved Proper instead of hard-coding Luke.',
+    'Good Friday Passion now hydrates from the resolved Good Friday Gospel/Passion Proper; corrupt Luke 14 donor payload removed.',
+    'Same-anchor after-cues preserve ritual order, so Good Friday displays Kneel then Rise at the death of the Lord.'
+  ],
+  audit: {
+    ordinaryRenderedCases: 268,
+    ordinaryFallbackCues: 0,
+    ordinaryDetachedGestures: 0,
+    ordinaryOrientationFailures: 0,
+    sourceGestureAnchorsChecked: 54,
+    sourceGestureAnchorMismatches: 0,
+    evangelistsTested: ['Matthew','Mark','Luke','John'],
+    goodFridayPassionHydration: 'pass'
+  },
+  frozenArchitecture: true
+});
+</script>
+<style id="ao-daily-catechism-v357-css">
+/* v35.7 Daily Catechism — one canonical Catechism corpus, one daily Home entry point */
+.aoDailyCateHome{position:relative;overflow:hidden}
+.aoDailyCateHome .cateCardCopy{min-width:0}
+.aoDailyCateHome .aoDailyCateMeta{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.aoDailyCateHome .aoDailyCateMeta span{display:inline-flex;align-items:center;min-height:24px;padding:3px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.67rem;line-height:1}
+.aoDailyCateHome.complete .aoDailyCateMeta span:first-child{border-color:var(--liturgical-border);color:var(--liturgical)}
+body.aoDailyCateOpen{overflow:hidden}
+.aoDailyCateBackdrop{position:fixed;inset:0;z-index:17850;background:rgba(2,5,9,.82);backdrop-filter:blur(14px);display:flex;align-items:flex-end;justify-content:center}
+.aoDailyCateSheet{width:min(100%,720px);max-height:94dvh;overflow:auto;overscroll-behavior:contain;background:var(--bg);border:1px solid var(--border);border-bottom:0;border-radius:24px 24px 0 0;box-shadow:0 -24px 80px rgba(0,0,0,.48);padding-bottom:max(24px,var(--safe-bottom))}
+.aoDailyCateTop{position:sticky;top:0;z-index:3;display:grid;grid-template-columns:42px 1fr 42px;gap:8px;align-items:center;padding:calc(12px + var(--safe-top)) 14px 11px;background:color-mix(in srgb,var(--bg) 95%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.aoDailyCateTop button{width:42px;height:42px;border:1px solid var(--border);border-radius:50%;background:var(--surface-1);color:var(--text);font-size:1.15rem}
+.aoDailyCateTop>div{text-align:center;min-width:0}.aoDailyCateTop small{display:block;color:var(--liturgical);font:.62rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase}.aoDailyCateTop strong{display:block;margin-top:3px;font:600 1rem/1.2 var(--font-display)}
+.aoDailyCateBody{padding:18px 16px 30px}
+.aoDailyCateProgressHead{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-size:.73rem}.aoDailyCateProgressHead b{color:var(--text);font-family:var(--font-display)}
+.aoDailyCateProgress{height:5px;margin:9px 0 18px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}.aoDailyCateProgress i{display:block;height:100%;background:var(--liturgical);border-radius:inherit;transition:width .2s ease} .aoDailyCateNotice{margin:10px 0;padding:10px 12px;border:1px solid var(--liturgical-border);border-radius:12px;background:var(--liturgical-soft);color:var(--muted);font-size:.78rem;line-height:1.4}
+.aoDailyCateCard{padding:18px;border:1px solid var(--border);border-radius:18px;background:var(--surface-1)}
+.aoDailyCateCard.context{border-color:var(--liturgical-border);background:linear-gradient(180deg,var(--liturgical-soft),var(--surface-1))}
+.aoDailyCateKicker{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--liturgical);font:.64rem/1.2 var(--font-display);letter-spacing:.09em;text-transform:uppercase}.aoDailyCateKicker span:last-child{color:var(--muted);letter-spacing:.05em}
+.aoDailyCateCard h2{margin:12px 0 0;font:600 clamp(1.25rem,5vw,1.7rem)/1.28 var(--font-display);letter-spacing:.01em}
+.aoDailyCateAnswer{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:1rem;line-height:1.65;color:var(--text)}
+.aoDailyCateSource{margin-top:12px;color:var(--muted);font-size:.7rem}
+.aoDailyCateActions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.aoDailyCateActions button,.aoDailyCateReveal,.aoDailyCateLink,.aoDailyCatePrimary{min-height:46px;border:1px solid var(--border);border-radius:13px;background:var(--surface-1);color:var(--text);padding:10px 12px;font-weight:650}.aoDailyCateReveal,.aoDailyCatePrimary{width:100%;margin-top:14px;border-color:var(--liturgical-border);background:var(--liturgical);color:#0b0d11}.aoDailyCateActions .knew{border-color:var(--liturgical-border);background:var(--liturgical-soft)}.aoDailyCateActions .review{color:var(--muted-2)}
+.aoDailyCateLink{width:100%;margin-top:9px;background:transparent;color:var(--muted)}
+.aoDailyCateSummary{padding:20px;border:1px solid var(--liturgical-border);border-radius:18px;background:var(--liturgical-soft);text-align:center}.aoDailyCateSummary .mark{font-size:2rem;color:var(--liturgical)}.aoDailyCateSummary h2{margin:7px 0 6px;font-family:var(--font-display)}.aoDailyCateSummary p{margin:0;color:var(--muted);line-height:1.5}
+.aoDailyCateStats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0}.aoDailyCateStat{padding:12px 8px;border:1px solid var(--border);border-radius:14px;background:var(--surface-1);text-align:center}.aoDailyCateStat b{display:block;font:600 1.15rem/1 var(--font-display)}.aoDailyCateStat span{display:block;margin-top:5px;color:var(--muted);font-size:.66rem;line-height:1.2}
+.aoDailyCateEmpty{padding:18px;border:1px solid var(--border);border-radius:16px;background:var(--surface-1)}.aoDailyCateEmpty h2{margin:0 0 8px;font-family:var(--font-display)}.aoDailyCateEmpty p{margin:0;color:var(--muted);line-height:1.5}
+@media(max-width:430px){.aoDailyCateBody{padding:15px 13px 26px}.aoDailyCateCard{padding:16px 14px}.aoDailyCateActions{grid-template-columns:1fr}.aoDailyCateStats{grid-template-columns:1fr 1fr}.aoDailyCateStats .aoDailyCateStat:last-child{grid-column:1/-1}.aoDailyCateHome{grid-template-columns:minmax(0,1fr) 38px!important}.aoDailyCateHome .roundAction{width:38px!important;min-width:38px!important;height:38px!important}}
+</style>
+<script id="ao-daily-catechism-v357-js">
+(()=>{'use strict';
+const VERSION='43.59.29-daily-catechism-instant';
+const KEY='ao_daily_catechism_v1';
+const TOTAL=10;
+const REVIEW_INTERVALS=[0,2,7,14,30,60];
+let openState={open:false,revealed:false,loading:false,error:'',language:null,contentLanguage:null,fallbackNotice:''};
+let memoryState={version:1,sessions:{},history:{},completionDates:[]};
+let storageMode='unknown';
+let homeQueued=false,midnightTimer=null,storeHooked=false;
+const api=()=>window.AO_TRADITIONAL_CATECHISM||null;
+const rt=()=>window.AO_RUNTIME_V8||null;
+const appState=()=>rt()?.store?.getState?.()||null;
+const lang=()=>appState()?.language==='fr'?'fr':'en';
+const L=(en,fr)=>lang()==='fr'?fr:en;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function load(){if(storageMode==='memory')return memoryState;try{const raw=localStorage.getItem(KEY);if(raw){const x=JSON.parse(raw);if(x&&x.version===1){memoryState=x;storageMode='persistent';return x}}if(storageMode==='unknown')storageMode='persistent'}catch{storageMode='memory'}return memoryState}
+function save(s){memoryState=s;if(storageMode==='memory')return s;try{localStorage.setItem(KEY,JSON.stringify(s));storageMode='persistent'}catch{storageMode='memory'}return s}
+function dateKey(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`}
+function addDays(key,n){const d=new Date(`${key}T12:00:00`);d.setDate(d.getDate()+n);return dateKey(d)}
+function hash(s){let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
+function rng(seed){let a=hash(seed)||1;return()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
+function shuffle(a,r){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function currentTitle(){const s=appState();if(s?.selectedDate&&s.selectedDate!==dateKey())return '';return String(s?.resolution?.day?.main?.title||s?.resolution?.main?.title||'')}
+function contextTerms(title=currentTitle()){
+ const x=title.toLowerCase();
+ const sets=[
+  [['corpus christi','eucharist','sacred heart','holy thursday','first friday','saint-sacrement','eucharistie','sacré-cœur','jeudi saint'],['eucharist','holy communion','mass','body of christ','blood of christ','communion','messe']],
+  [['immaculate','assumption','mary','rosary','notre-dame','marie','immaculée','assomption','rosaire'],['mary','blessed virgin','mother of god','virgin mary','marie','sainte vierge','mère de dieu']],
+  [['pentecost','holy spirit','holy ghost','pentecôte','saint-esprit'],['holy spirit','holy ghost','saint-esprit']],
+  [['trinity','trinité'],['trinity','trinité']],
+  [['christmas','nativity','noël','nativité','advent','avent'],['incarnation','son of god','jesus christ','incarnation','fils de dieu','jésus-christ']],
+  [['easter','resurrection','pâques','résurrection'],['resurrection','risen','résurrection','ressuscité']],
+  [['passion','good friday','cross','vendredi saint','croix'],['passion','cross','redemption','croix','rédemption']],
+  [['all saints','saints','toussaint'],['communion of saints','saints','communion des saints']],
+  [['all souls','requiem','dead','défunts','trépassés'],['purgatory','dead','purgatoire','défunts']],
+  [['lent','quadragesima','carême'],['penance','fast','prayer','pénitence','jeûne','prière']]
+ ];
+ for(const [keys,terms] of sets)if(keys.some(k=>x.includes(k)))return terms;
+ return []
+}
+function partLabel(p){return ({intro:L('Foundations','Fondements'),faith:L('Creed & Faith','Credo & Foi'),moral:L('Commandments','Commandements'),grace:L('Sacraments','Sacrements'),prayer:L('Prayer','Prière')})[p]||L('Catechism','Catéchisme')}
+function stats(s=load()){const day=dateKey(),month=day.slice(0,7);const h=Object.values(s.history||{});return {encountered:h.filter(x=>x&&x.seen).length,due:h.filter(x=>x&&x.due&&x.due<=day).length,month:(s.completionDates||[]).filter(x=>x.startsWith(month)).length,learned:api()?.learnedCount?.()||0}}
+function isWeak(h){return !!h&&h.lastOutcome==='review'}
+function isDue(h,day){return !!h&&h.lastOutcome==='knew'&&(!h.due||h.due<=day)}
+function pickDiverse(pool,count,used,r,parts=['intro','faith','moral','grace','prayer']){
+ const groups=new Map(parts.map(p=>[p,[]]));const other=[];
+ for(const q of shuffle(pool.filter(q=>!used.has(q.n)),r)){(groups.get(q.part)||other).push(q)}
+ const out=[];let idx=Math.floor(r()*parts.length),guard=0;
+ while(out.length<count&&guard<100){guard++;let moved=false;for(let k=0;k<parts.length&&out.length<count;k++){const p=parts[(idx+k)%parts.length],g=groups.get(p);while(g?.length&&used.has(g[0].n))g.shift();if(g?.length){const q=g.shift();used.add(q.n);out.push(q);moved=true}}idx=(idx+1)%parts.length;if(!moved)break}
+ const rest=shuffle([...groups.values()].flat().concat(other).filter(q=>!used.has(q.n)),r);for(const q of rest){if(out.length>=count)break;used.add(q.n);out.push(q)}return out
+}
+function contextualQuestion(qs,s,used,r){const terms=contextTerms();if(!terms.length)return null;const candidates=qs.filter(q=>!used.has(q.n)&&terms.some(k=>(`${q.q} ${q.a}`).toLowerCase().includes(k)));if(!candidates.length)return null;const unseen=candidates.filter(q=>!s.history?.[q.n]&&!api()?.isLearned?.(q.n));const due=candidates.filter(q=>isWeak(s.history?.[q.n])||isDue(s.history?.[q.n],dateKey()));const pool=unseen.length?unseen:due.length?due:candidates;return shuffle(pool,r)[0]||null}
+function buildSession(qs,s,contentLanguage=lang()){const day=dateKey(),r=rng(`${day}|daily-catechism|${contentLanguage}`),used=new Set,ids=[];let contextualId=null;
+ const cq=contextualQuestion(qs,s,used,r);if(cq){used.add(cq.n);ids.push(cq.n);contextualId=cq.n}
+ const weak=qs.filter(q=>isWeak(s.history?.[q.n]));
+ const review=qs.filter(q=>!isWeak(s.history?.[q.n])&&(isDue(s.history?.[q.n],day)||(!s.history?.[q.n]&&api()?.isLearned?.(q.n))));
+ const fresh=qs.filter(q=>!s.history?.[q.n]&&!api()?.isLearned?.(q.n));
+ const quotas=cq?[[fresh,4],[review,3],[weak,2]]:[[fresh,5],[review,3],[weak,2]];
+ for(const [pool,count] of quotas)ids.push(...pickDiverse(pool,count,used,r).map(q=>q.n));
+ if(ids.length<TOTAL){const fallback=qs.filter(q=>!used.has(q.n));ids.push(...pickDiverse(fallback,TOTAL-ids.length,used,r).map(q=>q.n))}
+ const session={date:day,ids:ids.slice(0,TOTAL),index:0,outcomes:{},completedAt:null,contextualId,contentLanguage,createdAt:Date.now()};s.sessions[day]=session;save(s);return session}
+function ensureSession(){const a=api();if(!a?.questions)throw new Error(L('Catechism is not ready yet. Please try again.','Le Catéchisme n’est pas encore prêt. Veuillez réessayer.'));const uiLang=lang();let contentLang=uiLang;let qs=a.questions?.(contentLang)||[];openState.fallbackNotice='';if(qs.length<TOTAL){const en=a.questions?.('en')||[];if(en.length>=TOTAL){contentLang='en';qs=en;if(uiLang==='fr')openState.fallbackNotice=L('The French Catechism is not yet available on this device. Today’s lesson is using the embedded English core.','Le Catéchisme français n’est pas encore disponible sur cet appareil. La leçon du jour utilise le noyau anglais intégré.')}}if(qs.length<TOTAL)throw new Error(L('Daily Catechism needs at least ten available questions.','Le Catéchisme quotidien nécessite au moins dix questions disponibles.'));openState.contentLanguage=contentLang;const s=load(),day=dateKey();let session=s.sessions?.[day];if(!session||!Array.isArray(session.ids)||session.ids.length!==TOTAL||session.contentLanguage!==contentLang)session=buildSession(qs,s,contentLang);else openState.contentLanguage=session.contentLanguage;return {s,session,qs}}
+function nextIndex(session){for(let i=0;i<session.ids.length;i++)if(!session.outcomes?.[session.ids[i]])return i;return session.ids.length}
+function recordOutcome(id,outcome){const s=load(),session=s.sessions?.[dateKey()];if(!session)return;session.outcomes=session.outcomes||{};session.outcomes[id]=outcome;const old=s.history[id]||{seen:0,knew:0,review:0,level:0};const h={...old};h.seen=(h.seen||0)+1;h.last=dateKey();h.lastOutcome=outcome;if(outcome==='knew'){h.knew=(h.knew||0)+1;h.level=Math.min(5,(h.level||0)+1);h.due=addDays(h.last,REVIEW_INTERVALS[h.level]||60);api()?.setLearned?.(id,true)}else{h.review=(h.review||0)+1;h.level=0;h.due=addDays(h.last,1);api()?.setLearned?.(id,false)}s.history[id]=h;session.index=nextIndex(session);if(session.index>=TOTAL){session.completedAt=Date.now();if(!(s.completionDates||[]).includes(session.date)){s.completionDates=s.completionDates||[];s.completionDates.push(session.date)}}save(s);openState.revealed=false;render();queueHome()}
+function close(){document.getElementById('ao-daily-cate-root')?.remove();document.body.classList.remove('aoDailyCateOpen');openState={open:false,revealed:false,loading:false,error:'',language:null,contentLanguage:null,fallbackNotice:''};queueHome()}
+function shell(){let root=document.getElementById('ao-daily-cate-root');if(root)return root;root=document.createElement('div');root.id='ao-daily-cate-root';root.className='aoDailyCateBackdrop';root.innerHTML='<section class="aoDailyCateSheet" role="dialog" aria-modal="true"></section>';document.body.appendChild(root);document.body.classList.add('aoDailyCateOpen');root.addEventListener('click',e=>{if(e.target===root)close()});return root.querySelector('.aoDailyCateSheet')}
+function top(){return `<header class="aoDailyCateTop"><button type="button" data-dc-back aria-label="${esc(L('Back','Retour'))}"><svg class="aoUiIcon" aria-hidden="true" focusable="false"><use href="#ao-ui-back"></use></svg></button><div><small>${esc(L('DAILY FORMATION','FORMATION QUOTIDIENNE'))}</small><strong>${esc(L('Daily Catechism','Catéchisme quotidien'))}</strong></div><span></span></header>`}
+function studyReader(body,title=L('Daily Catechism','Catéchisme quotidien')){
+ const P=globalThis.AO_PRESENTATION_SHELLS_V435920;
+ if(P?.reader)return P.reader({
+  title,
+  context:L('Daily Formation','Formation quotidienne'),
+  showLead:false,
+  backAttrs:'data-dc-close',
+  backIcon:'ao-ui-close',
+  backLabel:L('Close','Fermer'),
+  body:`<div class="aoDailyCateBody">${body}</div>`
+ });
+ return `${top()}<div class="aoDailyCateBody">${body}</div>`
+}
+function open(){openState.open=true;openState.loading=false;openState.error='';openState.revealed=false;openState.language=lang();shell();try{ensureSession()}catch(e){openState.error=String(e?.message||e)}render();queueHome();return true}
+function render(){
+ if(!openState.open)return;
+ const box=shell();
+ if(openState.loading){
+  box.innerHTML=studyReader(`<div class="aoDailyCateEmpty"><h2>${esc(L('Preparing today’s lesson…','Préparation de la leçon du jour…'))}</h2><p>${esc(L('Loading your Catechism questions and review schedule.','Chargement des questions et du programme de révision.'))}</p></div>`);
+  return
+ }
+ if(openState.error){
+  box.innerHTML=studyReader(`<div class="aoDailyCateEmpty"><h2>${esc(L('Daily lesson unavailable','Leçon quotidienne indisponible'))}</h2><p>${esc(L('Today’s lesson could not be prepared. You can continue in the full Catechism.','La leçon du jour n’a pas pu être préparée. Vous pouvez continuer dans le Catéchisme complet.'))}</p><button class="aoDailyCatePrimary" data-dc-full>${esc(L('Open full Catechism','Ouvrir le Catéchisme complet'))}</button></div>`);
+  return
+ }
+ const s=load(),session=s.sessions?.[dateKey()],contentLang=session?.contentLanguage||openState.contentLanguage||lang(),qs=api()?.questions?.(contentLang)||[];
+ if(!session){openState.error=L('Could not create today’s lesson.','Impossible de créer la leçon du jour.');return render()}
+ const done=Object.keys(session.outcomes||{}).length,st=stats(s);
+ if(session.completedAt||done>=TOTAL){
+  box.innerHTML=studyReader(`<div class="aoDailyCateSummary"><div class="mark"><svg class="aoUiIcon" aria-hidden="true" focusable="false"><use href="#ao-ui-check"></use></svg></div><h2>${esc(L('Daily lesson complete','Leçon quotidienne terminée'))}</h2><p>${esc(L('Ten questions completed today. Come back tomorrow for a new set.','Dix questions terminées aujourd’hui. Revenez demain pour une nouvelle série.'))}</p></div><div class="aoDailyCateStats"><div class="aoDailyCateStat"><b>${st.encountered}/433</b><span>${esc(L('questions encountered','questions rencontrées'))}</span></div><div class="aoDailyCateStat"><b>${st.due}</b><span>${esc(L('due for review','à revoir'))}</span></div><div class="aoDailyCateStat"><b>${st.month}</b><span>${esc(L('daily lessons this month','leçons ce mois-ci'))}</span></div></div><button class="aoDailyCatePrimary" data-dc-full>${esc(L('Open full Catechism','Ouvrir le Catéchisme complet'))}</button>`,L('Lesson complete','Leçon terminée'));
+  return
+ }
+ const idx=nextIndex(session);session.index=idx;save(s);
+ const id=session.ids[idx],q=qs.find(x=>x.n===id)||api()?.question?.(id,lang());
+ if(!q){openState.error=L('This question is unavailable in the current language.','Cette question n’est pas disponible dans la langue actuelle.');return render()}
+ const pct=Math.round(done/TOTAL*100),context=session.contextualId===id;
+ const body=`<div class="aoDailyCateProgressHead"><b>${esc(L('Today’s lesson','Leçon du jour'))}</b><span>${done}/${TOTAL}</span></div><div class="aoDailyCateProgress"><i style="width:${pct}%"></i></div>${openState.fallbackNotice?`<div class="aoDailyCateNotice">${esc(openState.fallbackNotice)}</div>`:''}<p class="aoDailyCateStudyContext"><b>${esc(L(`Question ${done+1} of ${TOTAL}`,`Question ${done+1} sur ${TOTAL}`))}</b> · ${esc(L('Answer from memory, then reveal the Catechism answer.','Répondez de mémoire, puis affichez la réponse du Catéchisme.'))}</p><article class="aoDailyCateCard ${context?'context':''}"><div class="aoDailyCateKicker"><span>${context?esc(L('TODAY’S THEME','THÈME DU JOUR')):esc(partLabel(q.part))}</span><span>Q ${q.n} / 433</span></div><h2>${esc(q.q)}</h2>${openState.revealed?`<div class="aoDailyCateAnswer">${esc(q.a)}</div><div class="aoDailyCateSource">${esc(L('Catechism of St Pius X','Catéchisme de Saint Pie X'))} · Q ${q.n}</div><div class="aoDailyCateActions"><button class="knew" data-dc-outcome="knew" data-id="${q.n}">${esc(L('I knew this','Je le savais'))}</button><button class="review" data-dc-outcome="review" data-id="${q.n}">${esc(L('Review again','À revoir'))}</button></div>`:`<button class="aoDailyCateReveal" data-dc-reveal>${esc(L('Reveal answer','Afficher la réponse'))}</button>`}<button class="aoDailyCateLink" data-dc-study="${q.n}">${esc(L('Study this question in the full Catechism','Étudier cette question dans le Catéchisme complet'))}<svg class="aoUiIcon" aria-hidden="true" focusable="false"><use href="#ao-ui-next"></use></svg></button></article>`;
+ box.innerHTML=studyReader(body,L('Daily Catechism','Catéchisme quotidien'))
+}
+function homeCopy(){const s=load(),session=s.sessions?.[dateKey()],st=stats(s),done=session?Object.keys(session.outcomes||{}).length:0,complete=!!session?.completedAt||done>=TOTAL;if(complete)return {title:L('Daily Catechism','Catéchisme quotidien'),desc:L('Today’s ten questions are complete.','Les dix questions du jour sont terminées.'),badge:L('10/10 completed today','10/10 terminées aujourd’hui'),meta:`${st.encountered}/433 ${L('encountered','rencontrées')} · ${st.month} ${L('this month','ce mois-ci')}`,complete:true};if(session)return {title:L('Daily Catechism','Catéchisme quotidien'),desc:L('Continue today’s St Pius X lesson.','Continuez la leçon de Saint Pie X du jour.'),badge:`${done}/10 ${L('completed','terminées')}`,meta:`${st.due} ${L('due for review','à revoir')}`,complete:false};return {title:L('Daily Catechism','Catéchisme quotidien'),desc:L('Ten St Pius X questions: new material, review and weak points.','Dix questions de Saint Pie X : nouveautés, révision et points faibles.'),badge:L('10 questions · today','10 questions · aujourd’hui'),meta:st.encountered?`${st.encountered}/433 ${L('encountered','rencontrées')}`:L('Start your first daily lesson','Commencez votre première leçon'),complete:false}}
+const HOME_HERO={id:'pius-x-selected-5',url:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Pope_Pius_X_%28ca_1907%29.jpg?width=240',source:'Wikimedia Commons · Pope Pius X (ca. 1907) · Giuseppe Felici · public domain'};
+function ensureHome(){
+ const home=document.querySelector('.homeScreen');if(!home)return false;
+ let card=home.querySelector('.aoDailyCateHome');const copy=homeCopy();
+ if(!card){
+  card=document.createElement('section');card.className='contentCard aoCateHomeCard aoDailyCateHome';
+  const coming=home.querySelector('#aoComingUpCardV4323');
+  const anchor=coming||home.querySelector('.contentCard.gospelCard')||home.querySelector('.aoLearnHomeCard')||home.querySelector('.contentCard.massCard');
+  const spacer=home.querySelector('.homeSpacer');
+  if(anchor)anchor.after(card);else if(spacer)spacer.before(card);else home.appendChild(card)
+ }
+ card.classList.remove('aoHomeStablePlaceholder','aoHomeFormationSkeleton');
+ card.setAttribute('aria-busy','false');card.removeAttribute('data-ao-home-placeholder');
+ card.dataset.aoHero=HOME_HERO.id;card.dataset.aoHeroSource=HOME_HERO.url;
+ card.setAttribute('aria-label',L('Daily Catechism of St Pius X','Catéchisme quotidien de Saint Pie X'));
+ card.classList.toggle('complete',copy.complete);
+ const html=`<span class="aoPiusHeroMedia" aria-hidden="true"><img alt="" src="${HOME_HERO.url}" decoding="async" referrerpolicy="no-referrer"></span><div class="cateCardCopy"><div class="cardKicker">${esc(L('Formation','Formation'))}</div><b>${esc(copy.title)}</b><span class="aoPiusXByline">${esc(L('St Pius X','Saint Pie X'))}</span><p>${esc(copy.desc)}</p><span class="aoCateBadge">${esc(copy.badge)}</span><div class="aoDailyCateMeta"><span>${esc(copy.meta)}</span></div></div><button class="roundAction aoUiIconOnly" type="button" data-dc-open aria-label="${esc(L('Open Daily Catechism','Ouvrir le Catéchisme quotidien'))}"><svg class="aoUiIcon" aria-hidden="true" focusable="false"><use href="#ao-ui-next"></use></svg></button>`;
+ if(card.dataset.signature!==html){card.innerHTML=html;card.dataset.signature=html}
+ document.dispatchEvent(new CustomEvent('ao:home-content-ready',{detail:{source:'daily-catechism-v43.58'}}));
+ return true
