@@ -1,15 +1,17 @@
 const VERSION="modular-pray-v1";
 
-function donor(win){return win?.AO_PRAY_V435930??null;}
-function root(win){return win?.document?.getElementById?.("aoPray435930")??null;}
+function donor(win){return win?.AOTraditionalPrayerBook??null;}
+function root(win){return win?.document?.getElementById?.("aoPrayerBookRoot")??null;}
+
 function stamp(win){
   const node=root(win);
-  if(node?.dataset)node.dataset.aoPrayOwner=VERSION;
+  if(node?.dataset)node.dataset.aoPrayRouteOwner=VERSION;
   if(win?.document?.documentElement?.dataset){
     win.document.documentElement.dataset.aoPrayRouteOwner=VERSION;
   }
   return node;
 }
+
 function delay(win,ms){
   return new Promise(resolve=>{
     if(typeof win?.setTimeout==="function")win.setTimeout(resolve,ms);
@@ -19,21 +21,8 @@ function delay(win,ms){
 
 export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   async function resolveDonor(){
-    let api=donor(win);
-    if(typeof api?.open==="function")return api;
-
-    // AO_PRAY_V435930 is still a presentation donor behind the historical
-    // domain shell. During convergence, opening that domain is allowed only as
-    // a bootstrap step; AO_PRAY_APP_V1 remains the route/navigation owner.
-    const legacyShell=win?.AO_V37_SHELL;
-    if(typeof legacyShell?.openDomain==="function"){
-      try{await Promise.resolve(legacyShell.openDomain("pray"));}catch{}
-      api=donor(win);
-      if(typeof api?.open==="function")return api;
-    }
-
     for(let i=0;i<=maxPolls;i++){
-      api=donor(win);
+      const api=donor(win);
       if(typeof api?.open==="function")return api;
       if(i<maxPolls)await delay(win,pollMs);
     }
@@ -43,15 +32,9 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   async function open(){
     const api=await resolveDonor();
     if(typeof api?.open!=="function")return false;
-    const opened=api.open("pray.hub",{returnContext:null});
+    const opened=api.open({returnContext:null});
     if(opened===false)return false;
     stamp(win);
-    if(typeof win?.queueMicrotask==="function"){
-      try{win.queueMicrotask(()=>stamp(win));}catch{}
-    }
-    if(typeof win?.requestAnimationFrame==="function"){
-      try{win.requestAnimationFrame(()=>stamp(win));}catch{}
-    }
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
     return true;
   }
@@ -59,23 +42,24 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
   function close(){
     const api=donor(win);
     if(typeof api?.close!=="function")return false;
-    api.close();
+    api.close({silent:true});
     return true;
   }
 
   function status(){
-    const node=stamp(win);
+    const node=root(win);
     let donorState=null;
-    try{donorState=donor(win)?.state?.()??null;}catch{}
+    try{donorState=donor(win)?.getState?.()??null;}catch{}
     return Object.freeze({
       version:VERSION,
       installed:true,
       donorAvailable:typeof donor(win)?.open==="function",
       routeOwner:win?.document?.documentElement?.dataset?.aoPrayRouteOwner??null,
-      visibleOwner:node?.dataset?.aoPrayOwner??null,
+      rootOwner:node?.dataset?.aoPrayRouteOwner??null,
       open:Boolean(node?.classList?.contains?.("open")),
       donorState,
-      presentationOwner:"AO_PRAY_V435930",
+      presentationOwner:"AOTraditionalPrayerBook",
+      presentationRoot:"aoPrayerBookRoot",
     });
   }
 
