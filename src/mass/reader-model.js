@@ -4,8 +4,9 @@ import { properToReaderSlots, assertReaderProperReady } from "./proper-reader-sl
 import { projectSourceFirstLiveModel } from "./reader-live-source.js";
 import { augmentReaderCardsWithPrayerOverPeople } from "./reader-prayer-over-people.js";
 import { projectEmberInsertionModel } from "./reader-ember-lessons.js";
+import { projectNuptialInsertionModel } from "./reader-nuptial.js";
 
-const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS"]);
+const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS","NUPTIAL"]);
 
 function assertBaselineReaderGraph(resolvedMass){
   if(resolvedMass?.distinctRite) {
@@ -38,6 +39,7 @@ export function createMassReaderModel({
   lowCorpus,
   sungCorpus,
   canonSourceMap=null,
+  nuptialData=null,
 }={}){
   if(!resolvedMass || resolvedMass.schema!=="ao-resolved-mass-v2") {
     throw new TypeError("ao-resolved-mass-v2 required");
@@ -111,5 +113,6 @@ export function createMassReaderModel({
     if(!canonSourceMap)throw new Error("SOURCE_FIRST_LIVE_CANON_MAP_REQUIRED");
     projected=projectSourceFirstLiveModel(baseModel,canonSourceMap);
   }
-  return projectEmberInsertionModel(projected,resolvedMass);
+  projected=projectEmberInsertionModel(projected,resolvedMass);
+  return projectNuptialInsertionModel(projected,resolvedMass,nuptialData);
 }
