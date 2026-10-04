@@ -7,6 +7,7 @@ import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPre
 import { runReaderShadowAudit } from "./reader-shadow.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
+import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 
 export const VERSION = "final-browser-entry-v1";
 const ACTIVE_KEY = "ao-r17-active-mass-v1";
@@ -214,6 +215,7 @@ function showFailure(error, button = null) {
 }
 
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
+  const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
   const state = { installed: false, polls: 0, controller: null };
 
@@ -265,6 +267,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       nativeMounted: Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected),
       uiOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
       fallbackReason: globalThis.AO_R17_MASS_RUNTIME?.previewFallbackReason ?? null,
+      shellFocusGuard: shellFocusGuard?.installed === true,
     }),
   });
 

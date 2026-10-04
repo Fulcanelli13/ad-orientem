@@ -218,7 +218,12 @@ try{
   });
   const page=await context.newPage();
   const pageErrors=[];
+  const ariaHiddenWarnings=[];
   page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
+  page.on("console",msg=>{
+    const text=msg.text();
+    if(/Blocked aria-hidden/i.test(text))ariaHiddenWarnings.push(text);
+  });
 
   await page.goto("http://127.0.0.1:4174/index.html?aoR17Reader=native",{
     waitUntil:"domcontentloaded",
@@ -318,6 +323,7 @@ try{
     rootConnected:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     title:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.textContent?.trim()??"",
     paragraphs:document.querySelectorAll("#ao-r17-native-reader-preview [data-role='paragraphs'] .ao-reader-paragraph").length,
+    shellFocusGuard:globalThis.AO_R17_BROWSER_ENTRY?.status?.().shellFocusGuard??false,
   }));
   assert.equal(ownership.starts,0,"final native entry booted the legacy live renderer");
   assert.equal(ownership.runtime?.readerUiMode,"NATIVE");
@@ -326,6 +332,7 @@ try{
   assert.equal(ownership.massEngine,"r17-native-production");
   assert.equal(ownership.massReaderUi,"R17_NATIVE_PRODUCTION");
   assert.equal(ownership.rootConnected,true);
+  assert.equal(ownership.shellFocusGuard,true,"production shell focus guard was not installed");
   assert.notEqual(ownership.title,"","real app shell mounted a blank native card title");
   assert.ok(ownership.paragraphs>0,"real app shell mounted an empty native prayer card");
 
@@ -345,6 +352,48 @@ try{
     const text=document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent;
     return text && text!==previous;
   },before,{timeout:5000});
+
+  const focusProbe=await page.evaluate(async()=>{
+    const surface=document.createElement("section");
+    surface.id="aoPrayerBookRoot";
+    surface.setAttribute("aria-hidden","false");
+    surface.style.setProperty("display","block","important");
+    surface.style.setProperty("visibility","visible","important");
+    surface.style.setProperty("pointer-events","auto","important");
+    surface.style.setProperty("position","fixed","important");
+    surface.style.setProperty("inset","0","important");
+    surface.style.setProperty("z-index","2147483647","important");
+    const back=document.createElement("button");
+    back.type="button";
+    back.className="lab-back";
+    back.textContent="Back";
+    back.style.setProperty("display","block","important");
+    back.style.setProperty("visibility","visible","important");
+    back.style.setProperty("pointer-events","auto","important");
+    back.style.setProperty("position","fixed","important");
+    back.style.setProperty("top","8px","important");
+    back.style.setProperty("left","8px","important");
+    surface.append(back);
+    document.body.append(surface);
+    surface.addEventListener("click",()=>surface.setAttribute("aria-hidden","true"));
+    back.focus();
+    const focusedBefore=document.activeElement===back;
+    back.click();
+    await new Promise(resolve=>requestAnimationFrame(()=>resolve()));
+    const result={
+      focusedBefore,
+      hidden:surface.getAttribute("aria-hidden"),
+      activeInside:surface.contains(document.activeElement),
+      activeTag:document.activeElement?.tagName??null,
+    };
+    surface.remove();
+    return result;
+  });
+  assert.equal(focusProbe.focusedBefore,true,"focus regression probe could not focus .lab-back");
+  assert.equal(focusProbe.hidden,"true","focus regression probe did not hide Prayer Book surface");
+  assert.equal(focusProbe.activeInside,false,"aria-hidden Prayer Book retained focus");
+  assert.deepEqual(ariaHiddenWarnings,[],
+    "Chromium emitted blocked aria-hidden warning: "+JSON.stringify(ariaHiddenWarnings));
 
   assert.deepEqual(pageErrors,[],"uncaught page errors in real app shell: "+JSON.stringify(pageErrors));
   await context.close();
