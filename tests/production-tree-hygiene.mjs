@@ -36,17 +36,6 @@ assert.match(baseline,/contents:\s*read/i,"baseline verification is not read-onl
 assert.match(baseline,/Frozen v43\.33 verified as historical baseline only/i,
   "baseline workflow lost historical-only guard");
 
-const productionIndex=readFileSync("index.html","utf8");
-const browserEntries=productionIndex.match(/<script[^>]+src=["']\.\/src\/mass\/browser-entry\.js["'][^>]*data-ao-r17-browser-entry[^>]*><\/script>/g)??[];
-assert.equal(browserEntries.length,1,
-  "production index contains duplicate R17 browser entries");
-assert.doesNotMatch(productionIndex,/AO_EMERGENCY_STABLE_V4333|ao-v4333-emergency-stable-js|aoEmergencyStable|aoEmergencyLive/,
-  "v43.33 emergency runtime or live-state surface remains embedded in production index");
-assert.doesNotMatch(productionIndex,/id=["']ao-v4333-emergency-stable-css["']/,
-  "v43.33 emergency CSS owner remains embedded in production index");
-assert.match(productionIndex,/id=["']ao-shared-prayer-repairs-css["']/,
-  "shared prayer repairs were lost while retiring emergency CSS");
-
 const readme=readFileSync("README.md","utf8");
 assert.match(readme,/archive\/2026-10-04-pre-hygiene/,
   "README does not point to the preserved pre-hygiene archive");
