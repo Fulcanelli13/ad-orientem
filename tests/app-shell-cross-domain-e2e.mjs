@@ -307,23 +307,19 @@ try{
   );
   assert.equal(await page.evaluate(()=>globalThis.__AO_FINAL_LEGACY_STARTS),0);
 
-  // Tapping Mass while LIVE retains the live reader rather than restarting it.
-  await tapSurface("mass");
+  // The native reader owns the visible exit surface while LIVE covers the app ribbon.
+  const closeReader=page.getByRole("button",{name:"Close Mass reader"});
+  await closeReader.waitFor({state:"visible",timeout:10000});
+
+  // First attempt to leave LIVE is cancelled and the reader must remain mounted.
+  await page.evaluate(()=>{globalThis.__AO_JOURNEY_CONFIRM_MODE="cancel";});
+  await closeReader.tap();
+  await page.waitForTimeout(150);
   assert.equal(
     await page.locator("#ao-r17-native-reader-preview").count(),
     1,
-    "Mass ribbon did not retain the active native LIVE session"
+    "cancelled LIVE leave destroyed the native reader"
   );
-
-  // First attempt to leave LIVE is cancelled and must stay on Mass.
-  await page.evaluate(()=>{globalThis.__AO_JOURNEY_CONFIRM_MODE="cancel";});
-  const prayButton=page.locator('#ao-global-ribbon [data-ao-app-surface="pray"]');
-  {
-    const box=await prayButton.boundingBox();
-    assert.ok(box,"Pray ribbon target missing during LIVE");
-    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-  }
-  await page.waitForTimeout(150);
   assert.equal(
     await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),
     "mass",
@@ -332,21 +328,29 @@ try{
   assert.equal(
     await page.evaluate(()=>globalThis.__AO_JOURNEY_CALLS.includes("confirm:cancel")),
     true,
-    "LIVE leave guard was not invoked on cross-domain navigation"
+    "native reader close did not invoke the LIVE leave guard"
   );
 
-  // Confirm leave, then move to PRAY.
+  // Confirm leave through the same visible reader control; shell ownership resumes at Home.
   await page.evaluate(()=>{globalThis.__AO_JOURNEY_CONFIRM_MODE="leave";});
-  await tapSurface("pray");
+  await closeReader.tap();
+  await page.waitForSelector("#ao-r17-native-reader-preview",{state:"detached",timeout:10000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",
+    null,{timeout:10000}
+  );
   assert.equal(
     await page.evaluate(()=>globalThis.__AO_JOURNEY_CALLS.includes("confirm:leave")),
     true,
-    "confirmed LIVE leave was not recorded"
+    "confirmed native-reader leave was not recorded"
   );
+
+  // Home -> PRAY after the reader releases the interaction surface.
+  await tapSurface("pray");
   assert.equal(
     await page.evaluate(()=>globalThis.__AO_JOURNEY_CALLS.includes("domain:pray")),
     true,
-    "confirmed LIVE leave did not open PRAY"
+    "post-Mass shell did not open PRAY"
   );
 
   // PRAY -> Home -> Settings completes the required cross-domain journey.
