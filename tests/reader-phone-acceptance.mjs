@@ -272,7 +272,47 @@ try{
     "Back from Mass did not restore the Asperges handoff card");
   await aspContext.close();
 
-  console.log("phone browser acceptance: PASS — 320/360/390/430px Chromium touch, translation, Back/Next, cue focus, elevation gate and transient clearing, plus native Asperges → Mass handoff.");
+
+  async function exerciseRecipientPrelude(kind,firstId,recipientCardId,receiveState,handoffId){
+    const ctx=await browser.newContext({
+      viewport:{width:390,height:844},
+      deviceScaleFactor:2,
+      isMobile:true,
+      hasTouch:true,
+    });
+    const p=await ctx.newPage();
+    await p.goto("http://127.0.0.1:4173/tests/fixtures/reader-phone-harness.html?rite="+kind.toLowerCase(),{waitUntil:"networkidle"});
+    await p.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
+    assert.equal(await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id),firstId,kind+" lost first-card ownership");
+    const next=p.locator('[data-reader-nav="next"]');
+    while((await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id))!==recipientCardId){
+      const b=await next.boundingBox();
+      await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+      await p.waitForTimeout(80);
+    }
+    if(kind==="PALM")await p.evaluate(state=>window.__AO_PHONE_PREVIEW.setPalmRecipientState(state),receiveState);
+    else await p.evaluate(state=>window.__AO_PHONE_PREVIEW.setAshRecipientState(state),receiveState);
+    await p.waitForFunction(()=>document.querySelector('[data-role="posture"]')?.textContent?.includes("KNEEL"));
+    while((await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id))!==handoffId){
+      const b=await next.boundingBox();
+      await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+      await p.waitForTimeout(80);
+    }
+    let b=await next.boundingBox();
+    await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+    await p.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
+    assert.equal(await p.locator('[data-role="card-title"]').textContent(),"Introit",kind+" handoff leaked preparatory prayers");
+    const back=p.locator('[data-reader-nav="previous"]');
+    b=await back.boundingBox();
+    await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+    await p.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard().id===id,handoffId);
+    await ctx.close();
+  }
+
+  await exerciseRecipientPrelude("PALM","PALM-R01","PALM-R02","RECEIVE_PALM","PALM-R07");
+  await exerciseRecipientPrelude("ASH","ASH-R01","ASH-R03","RECEIVE_ASHES","ASH-R05");
+
+  console.log("phone browser acceptance: PASS — 320/360/390/430px Chromium touch, source-first Mass, plus native Asperges/Palm/Ash prelude handoffs.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
