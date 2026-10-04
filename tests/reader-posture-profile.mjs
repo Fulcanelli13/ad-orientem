@@ -30,6 +30,16 @@ let state=resolveReaderPostureChannel({
 assert.equal(state.posture.label,"KNEEL","FOLLOW_CONGREGATION stopped observing the visible congregation");
 assert.equal(state.owner,"FOLLOW_CONGREGATION_OBSERVED");
 
+state=resolveReaderPostureChannel({
+  preferences:follow,
+  cueProjection:sourced,
+  legacyPosture:null,
+  cueId:"AO.SM.C0075",
+});
+assert.equal(state.posture.value,"SIT","FOLLOW_CONGREGATION without observer did not fall back to sourced posture");
+assert.equal(state.owner,"FOLLOW_CONGREGATION_SOURCE_FALLBACK");
+assert.equal(state.sourcePostureId,"AO.SM.POST.007");
+
 const oconnell=resolveReaderPreferences({
   postureProfile:"OCONNELL_1962_COMMUNITY",
 });
