@@ -14,18 +14,18 @@ The primary destinations are exactly:
 
 Sources is not a top-level destination. It belongs under Settings/About.
 
-Legacy donor ownership during extraction:
+Legacy/current ownership during extraction:
 
-| Surface | Donor owner / entry point | Modular target |
+| Surface | Current production owner / entry point | Locked target / modular target |
 | --- | --- | --- |
-| Home | `AO_NAV_V362.home()` | `src/app` + future `src/home` |
+| Home | `AO_NAV_V362.home()` | `src/app` + `src/home` |
 | Mass | domain entry only | current `src/mass` R17 production stack |
-| Pray | `AO_PRAY_V435930` behind the domain shell | future `src/pray` |
+| Pray | `AOTraditionalPrayerBook.open()` / `#aoPrayerBookRoot` | locked v43.59.30 `AO_PRAY_V435930` presentation contract, then `src/pray` |
 | Learn | domain shell | future `src/learn` |
 | Calendar | `today.calendar` | `src/calendar` |
 | Settings | `AO_SETTINGS_V4359` | future `src/settings` |
 
-The v43.59.30 PRAY runtime remains the non-Mass prayer presentation donor: one shell, one interaction vocabulary and one recitation grammar over the canonical 48-prayer corpus. It does not own Mass.
+The locked v43.59.30 PRAY runtime remains the target non-Mass prayer presentation contract: one shell, one interaction vocabulary and one recitation grammar over the canonical 48-prayer corpus. Current production still exposes `AOTraditionalPrayerBook`, so migration to the locked PRAY runtime is a distinct future presentation-extraction step rather than a fact that may be assumed by adapters. Neither prayer surface owns Mass.
 
 ## Phase 1 landed here
 
@@ -94,9 +94,9 @@ This is deliberately **not** recorded as full Home extraction yet. The visible H
 
 ## Phase 7: modular PRAY navigation ownership
 
-`AO_PRAY_APP_V1` now owns the top-level PRAY route and calls the locked final PRAY donor directly through its public `AO_PRAY_V435930.open("pray.hub")` contract. The modular app shell no longer needs the historical `AO_V37_SHELL.openDomain("pray")` forwarding path when the modular owner is available.
+`AO_PRAY_APP_V1` now owns the top-level PRAY route against the prayer surface that production actually exposes: `AOTraditionalPrayerBook.open({returnContext:null})` and `#aoPrayerBookRoot`. The modular app shell therefore no longer needs `AO_V37_SHELL.openDomain("pray")` to enter the current Prayer Book.
 
-This is deliberately not full PRAY extraction. The final v43.59.30 prayer presentation, 48-prayer corpus, recitation grammar, Rosary/Confession/Adoration/Benediction/programme state and related source/provenance handling remain donor-owned until they are extracted with parity tests. The actual-index phone journey now proves modular PRAY navigation ownership while keeping presentation ownership explicit.
+This is deliberately not full PRAY presentation extraction. The current Prayer Book remains donor-rendered, and the locked v43.59.30 `AO_PRAY_V435930` contract remains the later presentation target with its 48-prayer corpus, recitation grammar and consolidated Rosary/Confession/Adoration/Benediction state. The actual-index phone journey certifies only modular route ownership over the existing production Prayer Book; it does not claim that the v43.59.30 presentation has already been promoted.
 
 ## Next promotion step
 
