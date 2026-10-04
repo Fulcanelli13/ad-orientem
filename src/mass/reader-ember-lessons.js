@@ -134,13 +134,10 @@ export function buildEmberInsertionCards(resolvedMass){
 export function projectEmberInsertionModel(model,resolvedMass){
   if(!model?.cards || !Array.isArray(model.cards))throw new TypeError("Reader model required");
   const m=manifest(resolvedMass);
-  const required=Boolean(
-    resolvedMass?.overlays?.includes("EMBER_LESSONS") ||
-    m?.requirements?.preGospelSequence===true
-  );
+  const required=Boolean(resolvedMass?.overlays?.includes("EMBER_LESSONS"));
+  if(!required)return model;
   const inserts=buildEmberInsertionCards(resolvedMass);
-  if(!required && inserts.length===0)return model;
-  if(required && inserts.length===0)throw new Error("EMBER_LESSONS requires a resolved source-ordered preGospelSequence");
+  if(inserts.length===0)throw new Error("EMBER_LESSONS requires a resolved source-ordered preGospelSequence");
 
   const epistleIndex=model.cards.findIndex(card=>
     card.sectionId==="AO.CARD.005" || card.sourceSectionId==="AO.CARD.005"
