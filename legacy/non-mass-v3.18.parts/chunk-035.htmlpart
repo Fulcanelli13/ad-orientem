@@ -1,0 +1,500 @@
+ const license=a.license||a.rights||'',attribution=a.attribution||'';
+ const attr=attribution&&/^CC BY/i.test(license)&&!attribution.toLowerCase().includes('cc by')?`${attribution} · ${license}`:(attribution||license);
+ const alt=`${a.artist||''} — ${a.title||r.label||''}`;
+ const ratio=(Number(a.width)||1)/(Number(a.height)||1),orientation=ratio<0.82?'isPortrait':ratio>1.22?'isLandscape':'isBalanced';
+ const src=thumb(a.file,1280),s800=thumb(a.file,768),s1800=thumb(a.file,1800);
+ return `<figure class="aoProperArt ${orientation}" data-ao-proper-art="${esc(r.primaryArtId)}" data-proper-path="${esc(path)}"><div class="aoProperArtMedia"><img src="${esc(src)}" srcset="${esc(s800)} 768w, ${esc(src)} 1280w, ${esc(s1800)} 1800w" sizes="(max-width:560px) 100vw, 720px" alt="${esc(alt)}" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('figure')?.remove()"></div><figcaption><span><strong>${esc(a.artist||'')}</strong>${a.title?` · ${esc(a.title)}`:''}${attr?`<br><small>${esc(attr)}</small>`:''}</span><a href="${esc(a.sourcePage)}" target="_blank" rel="noopener noreferrer">${lang==='fr'?'Source':'Source'} ↗</a></figcaption></figure>`;
+}
+function homeMarkup(state,lang='en'){
+ const path=art.properPath(state),r=resolveRow(path);
+ if(!r)return baseHomeMarkup(state,lang);
+ return renderRow(path,r,lang);
+}
+function effectiveRows(){
+ const merged={...art.data.rows};
+ for(const path of Object.keys(ROWS))merged[path]=resolveRow(path);
+ return merged;
+}
+function effectiveArtwork(id){return art.data?.artworks?.[id]||ARTWORKS[id]||null}
+function inspect(){
+ const resolved=Object.values(ROWS).map(r=>resolveRow(r.properPath));
+ const overlay={
+  total:resolved.length,
+  green:resolved.filter(r=>r.status==='GREEN').length,
+  noArt:resolved.filter(r=>r.status==='NO_ART').length,
+  hold:resolved.filter(r=>r.status==='HOLD').length,
+  inheritPending:resolved.filter(r=>r.status==='INHERIT_PENDING').length,
+  inheritRules:Object.values(ROWS).filter(r=>r.status==='INHERIT_BASE').length,
+  directReuse:Object.values(ROWS).filter(r=>r.status==='GREEN').length,
+  promotedArtworkRecords:Object.keys(ARTWORKS).length
+ };
+ const base=art.inspect?.()||{};
+ const effective={
+  green:(base.green||0)+overlay.green,
+  hold:(base.hold||0)+overlay.hold,
+  noArt:(base.noArt||0)+overlay.noArt,
+  inheritPending:overlay.inheritPending,
+  rows:Object.keys(art.data?.rows||{}).length+overlay.total,
+  artworks:Object.keys(art.data?.artworks||{}).length+Object.keys(ARTWORKS).filter(id=>!art.data?.artworks?.[id]).length
+ };
+ return {version:'phase1-fast-closure-b1-v1.1',overlay,effective,base,pass:overlay.total===14&&overlay.green===5&&overlay.noArt===6&&overlay.inheritPending===3&&overlay.inheritRules===4&&overlay.promotedArtworkRecords===1&&effective.green===52&&effective.hold===2&&effective.noArt===7&&effective.rows===64&&effective.artworks===50};
+}
+art.homeMarkup=homeMarkup;
+art.effectiveRow=path=>resolveRow(String(path||''));
+art.effectiveRows=effectiveRows;
+art.effectiveArtwork=effectiveArtwork;
+art.closureBatch='PM12-B1';
+globalThis.AO_PHASE1_FAST_CLOSURE_B1=Object.freeze({version:'phase1-fast-closure-b1-v1.1',rows:ROWS,artworks:ARTWORKS,resolveRow,effectiveArtwork,inspect});
+try{globalThis.AO_RUNTIME_V8?.controller?.home?.paint?.()}catch{}
+})();
+</script>
+<script id="ao-v427-scripture-persistent-cache">
+(()=>{'use strict';
+if(globalThis.AO_SCRIPTURE_CACHE_V427)return;
+const VERSION='resolved-scripture-doc-v1';
+const PREFIX='ao2:scripture-v427:';
+const INDEX_KEY=PREFIX+'index';
+const MAX_ENTRIES=16;
+const MAX_ITEM_CHARS=500000;
+const MAX_TOTAL_CHARS=2000000;
+const MAX_AGE_MS=180*24*60*60*1000;
+const stats={installed:false,hits:0,misses:0,writes:0,fallbacks:0,skips:0,errors:0,lastError:null};
+let memoryIndex=[],memoryDocs=new Map(),retryTimer=0;
+function lsGet(k){try{return localStorage.getItem(k)}catch{return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v);return true}catch{return false}}
+function lsDel(k){try{localStorage.removeItem(k)}catch{}}
+function hash(s){let h=2166136261>>>0;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(36)}
+function canonical(v){if(v===null||v===undefined)return v;if(Array.isArray(v))return v.map(canonical);if(typeof v==='object'){const o={};Object.keys(v).sort().forEach(k=>{if(typeof v[k]!=='function')o[k]=canonical(v[k])});return o}return v}
+function signature(kind,text,options){return JSON.stringify({kind:String(kind||''),text:canonical(text),options:{contextOnly:!!options?.contextOnly}})}
+function keyFor(sig){return PREFIX+'doc:'+hash(sig)}
+function readIndex(){const raw=lsGet(INDEX_KEY);if(raw){try{const x=JSON.parse(raw);if(Array.isArray(x))return x}catch{}}return memoryIndex.slice()}
+function writeIndex(x){memoryIndex=x.slice();lsSet(INDEX_KEY,JSON.stringify(x))}
+function prune(index){const now=Date.now();let rows=index.filter(x=>x&&x.key&&now-(+x.savedAt||0)<=MAX_AGE_MS).sort((a,b)=>(+b.savedAt||0)-(+a.savedAt||0));let total=0,keep=[];for(const x of rows){const sz=+x.size||0;if(keep.length>=MAX_ENTRIES||total+sz>MAX_TOTAL_CHARS){lsDel(x.key);memoryDocs.delete(x.key);continue}keep.push(x);total+=sz}writeIndex(keep);return keep}
+function read(sig){const key=keyFor(sig);let raw=lsGet(key);if(raw===null&&memoryDocs.has(key))raw=memoryDocs.get(key);if(!raw){stats.misses++;return null}try{const rec=JSON.parse(raw);if(rec?.version!==VERSION||rec?.sig!==sig||!rec?.doc){stats.misses++;return null}if(Date.now()-(+rec.savedAt||0)>MAX_AGE_MS){lsDel(key);memoryDocs.delete(key);stats.misses++;return null}stats.hits++;return rec}catch(e){stats.errors++;stats.lastError=String(e?.message||e);return null}}
+function validDoc(doc){return !!(doc&&typeof doc==='object'&&(doc.reference||Array.isArray(doc.parts)))}
+function write(sig,doc){if(!validDoc(doc)){stats.skips++;return false}let raw;try{raw=JSON.stringify({version:VERSION,sig,savedAt:Date.now(),doc})}catch{stats.skips++;return false}if(raw.length>MAX_ITEM_CHARS){stats.skips++;return false}const key=keyFor(sig);memoryDocs.set(key,raw);let ok=lsSet(key,raw);if(!ok){let idx=readIndex().sort((a,b)=>(+a.savedAt||0)-(+b.savedAt||0));const cut=Math.max(1,Math.ceil(idx.length/2));for(const x of idx.slice(0,cut)){lsDel(x.key);memoryDocs.delete(x.key)}idx=idx.slice(cut);writeIndex(idx);ok=lsSet(key,raw)}if(!ok){stats.skips++;return false}let idx=readIndex().filter(x=>x.key!==key);idx.unshift({key,savedAt:Date.now(),size:raw.length});prune(idx);stats.writes++;return true}
+function cachedDoc(rec,reason){const doc=rec?.doc;if(doc&&typeof doc==='object'){try{Object.defineProperty(doc,'__aoPersistentCache',{value:{version:VERSION,savedAt:rec.savedAt,reason},enumerable:false,configurable:true})}catch{}}return doc}
+function install(){const svc=globalThis.AO_RUNTIME_V8?.scriptureService;if(!svc||typeof svc.load!=='function')return false;if(svc.__aoPersistentCacheV427){stats.installed=true;return true}const original=svc.load.bind(svc);svc.load=async function(kind,text,options={}){const sig=signature(kind,text,options),cached=read(sig);if(cached&&typeof navigator!=='undefined'&&navigator.onLine===false){stats.fallbacks++;return cachedDoc(cached,'offline')}try{const doc=await original(kind,text,options);write(sig,doc);return doc}catch(e){if(cached){stats.fallbacks++;return cachedDoc(cached,'network-error')}stats.errors++;stats.lastError=String(e?.message||e);throw e}};Object.defineProperty(svc,'__aoPersistentCacheV427',{value:{version:VERSION,original},configurable:false});stats.installed=true;return true}
+function schedule(){return install()}
+function clear(){for(const x of readIndex())lsDel(x.key);lsDel(INDEX_KEY);memoryIndex=[];memoryDocs.clear()}
+const API={version:VERSION,install,clear,inspect(){const idx=prune(readIndex()),bytes=idx.reduce((n,x)=>n+(+x.size||0),0);return{version:VERSION,installed:stats.installed,entries:idx.length,bytes,maxEntries:MAX_ENTRIES,maxChars:MAX_TOTAL_CHARS,maxAgeDays:180,hits:stats.hits,misses:stats.misses,writes:stats.writes,fallbacks:stats.fallbacks,skips:stats.skips,errors:stats.errors,lastError:stats.lastError}}};
+globalThis.AO_SCRIPTURE_CACHE_V427=Object.freeze(API);
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});else schedule();window.addEventListener('pageshow',schedule);window.addEventListener('online',schedule);
+})();
+</script>
+<script id="ao-v427-network-content-resilience-meta">
+(()=>{'use strict';
+window.AO_V427_META=Object.freeze({version:'42.7-network-content-resilience',baseline:'v42.6 Catechism Offline Prefetch + PM12 B1 art overlay',inspect(){const prior=globalThis.AO_V426_META?.inspect?.()||{};const batch=globalThis.AO_PHASE1_FAST_CLOSURE_B1?.inspect?.()||{};const cache=globalThis.AO_SCRIPTURE_CACHE_V427?.inspect?.()||{};const source=globalThis.AO_V425_META?.inspect?.()||{};const checks={prior:prior.pass===true,batch:batch.pass===true,sourceHead:source.pass===true,cacheApi:cache.version==='resolved-scripture-doc-v1',effectiveArt:batch?.effective?.green===52&&batch?.effective?.hold===2&&batch?.effective?.noArt===7&&batch?.effective?.inheritPending===3&&batch?.effective?.rows===64&&batch?.effective?.artworks===50,sourcePending:(globalThis.AO_V425_META?.remainingSourcePending||[]).length===2};const pass=Object.values(checks).every(Boolean);try{document.documentElement.dataset.aoV427Integrity=pass?'pass':'fail'}catch{}return{pass,checks,batch,cache,source}}});
+const run=()=>{try{globalThis.AO_SCRIPTURE_CACHE_V427?.install?.();window.AO_V427_META.inspect()}catch{}};run();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});
+})();
+</script>
+<script id="ao-v427-final-title-authority">
+(()=>{'use strict';const TITLE='Ad Orientem 2.0 · v42.7 Network Content Resilience';const set=()=>{try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title=TITLE;if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.documentElement.dataset.aoRelease='42.7';if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.documentElement.dataset.aoCanonicalHead='v42.7'}catch{}};set();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',set,{once:true});})();
+</script>
+
+<!-- v42.8: consolidated Saint reader + identity-bound persistent biography cache -->
+<style id="ao-v428-saint-day-css">
+.aoSaintArtCard.aoSaintArtCardClickable{cursor:pointer;transition:transform .16s ease,border-color .16s ease}.aoSaintArtCard.aoSaintArtCardClickable:focus-visible{outline:2px solid var(--liturgical,#c7ae7b);outline-offset:3px}.aoSaintArtCard.aoSaintArtCardClickable:hover{border-color:var(--liturgical,#c7ae7b)}
+.aoSaintReader{margin:0 0 18px;padding:0;border:1px solid var(--liturgical-border,rgba(255,255,255,.13));border-radius:18px;overflow:hidden;background:var(--surface,#111820)}
+.aoSaintReaderTabs{display:flex;gap:7px;overflow:auto;padding:11px 12px;border-bottom:1px solid var(--liturgical-border,rgba(255,255,255,.1))}.aoSaintReaderTabs button{white-space:nowrap;border:1px solid var(--liturgical-border,rgba(255,255,255,.14));border-radius:999px;background:transparent;color:inherit;padding:7px 10px;font:inherit;font-size:.72rem}.aoSaintReaderTabs button.active{background:var(--liturgical-soft,rgba(255,255,255,.09));border-color:var(--liturgical,#999)}
+.aoSaintReaderGrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:0}.aoSaintReaderArt{min-height:260px;background:linear-gradient(135deg,var(--liturgical-soft,rgba(255,255,255,.06)),rgba(255,255,255,.02));display:flex;flex-direction:column}.aoSaintReaderArtMedia{position:relative;min-height:260px;flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden}.aoSaintReaderArtMedia img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block}.aoSaintReaderArtMeta{padding:10px 12px;border-top:1px solid rgba(255,255,255,.08);font-size:.7rem;line-height:1.45;color:var(--muted,#aab3bb)}
+.aoSaintReaderBio{padding:16px}.aoSaintReaderKicker{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--liturgical,#c7ae7b)}.aoSaintReaderBio h3{margin:5px 0 10px;font:700 1.18rem/1.25 var(--font-display,Georgia,serif)}.aoSaintReaderBioText{font-size:.91rem;line-height:1.63}.aoSaintReaderBioText p{margin:0 0 .9em}.aoSaintReaderSource{margin-top:13px;padding-top:11px;border-top:1px solid rgba(255,255,255,.09);font-size:.72rem;line-height:1.5;color:var(--muted,#aab3bb)}.aoSaintReaderSource a{color:inherit;text-decoration:underline}.aoSaintReaderPlaceholder{padding:24px;text-align:center;color:var(--muted,#aab3bb);font-size:.82rem;line-height:1.5}.aoSaintReaderStatus{display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;padding:5px 8px;border-radius:999px;background:var(--liturgical-soft,rgba(255,255,255,.06));font-size:.65rem;color:var(--muted,#aab3bb)}
+@media(max-width:640px){.aoSaintReader{border-radius:15px}.aoSaintReaderGrid{grid-template-columns:1fr}.aoSaintReaderArtMedia,.aoSaintReaderArtMedia img{min-height:230px;max-height:360px}.aoSaintReaderBio{padding:14px}}
+
+/* v40.6 consolidated Saint-of-the-Day presentation */
+.aoSaintArtMeta{display:none!important}
+[data-ao-art-info],.aoSaintArtActions,[data-ao-art-debug],.aoArtInfoBackdrop{display:none!important}
+#ao-v25-panel[data-ao-saint-reader] .aoV25Hero{display:none!important}
+#ao-v25-panel[data-ao-saint-reader] .aoV25Body{padding-top:12px!important}
+.aoSaintReaderArtMeta{padding:8px 12px!important;font-size:.68rem!important;line-height:1.4!important}
+.aoSaintReaderArtMeta:empty{display:none!important}
+.aoSaintReaderArtMeta a{color:inherit;text-decoration:underline}
+.aoSaintArtCreditDisclosure{margin:0}
+.aoSaintArtCreditDisclosure summary{cursor:pointer;list-style:none;color:var(--muted,#aab3bb);opacity:.8;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase}
+.aoSaintArtCreditDisclosure summary::-webkit-details-marker{display:none}
+.aoSaintArtCreditDisclosure summary::after{content:' +'}
+.aoSaintArtCreditDisclosure[open] summary::after{content:' −'}
+.aoSaintArtCreditBody{margin-top:7px;color:var(--muted,#aab3bb);font-size:.66rem;line-height:1.45}
+.aoSaintArtCreditBody a{color:inherit;text-decoration:underline}
+@media(max-width:640px){.aoSaintReaderBioText{font-size:.94rem;line-height:1.62}.aoSaintReaderBio h3{font-size:1.32rem}.aoSaintReaderArtMedia,.aoSaintReaderArtMedia img{min-height:250px;max-height:420px}}
+</style>
+<script id="ao-v428-saint-day-js">
+(()=>{'use strict';
+const VERSION='v42.8';
+const BIO_CACHE=new Map();
+let homeSyncBusy=false, homeSyncQueued=false, stateUnsub=null, lastHomeKey='', lastHomeNode=null;
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const norm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+const st=()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()||null;
+const fr=()=>st()?.language==='fr';
+const L=(en,frText)=>fr()?frText:en;
+const tokens=v=>norm(v).split(/\s+/).filter(x=>x.length>2&&!['saint','saints','pope','bishop','martyr','martyrs','virgin','confessor','apostle','archangel','companions','companion','the','and','of'].includes(x));
+function queryNames(component){
+ const names=[];let d=String(component?.displayName||'').trim();
+ if(d)names.push(d);
+ if(/^group\./.test(component?.canonicalId||'')){
+   let p=d.replace(/\s+(?:and|&)\s+(?:his\s+|her\s+|the\s+)?companions.*$/i,'').replace(/,.*$/,'').trim();
+   if(/\sand\s/i.test(p))p=p.split(/\sand\s/i)[0].trim();
+   if(p&&p!==d)names.push(p);
+ }
+ if(/^event\./.test(component?.canonicalId||'')){
+   const p=d.replace(/^(Conversion of|Chair of|Nativity of|Beheading of|Stigmata of|Dedication of)\s+/i,'').trim();if(p)names.push(p);
+ }
+ return [...new Set(names.filter(Boolean))].slice(0,3);
+}
+function sourceUrlForWikisource(title){return 'https://en.wikisource.org/wiki/'+encodeURIComponent(title).replace(/%2F/g,'/').replace(/%20/g,'_')}
+async function apiJson(url,timeout=9000){const c=new AbortController(),tm=setTimeout(()=>c.abort(),timeout);try{const r=await fetch(url,{signal:c.signal,cache:'default'});if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();if(j?.error)throw new Error(j.error.info||j.error.code||'API error');return j}finally{clearTimeout(tm)}}
+function scoreTitle(title,query){const a=tokens(title),b=tokens(query);let s=0;for(const x of b)if(a.includes(x))s+=4;if(/church|cathedral|school|university|disambiguation/i.test(title))s-=8;if(/saint|st\.|pope/i.test(title))s+=1;return s}
+async function catholicEncyclopediaBio(component){
+ for(const q of queryNames(component)){
+  const su='https://en.wikisource.org/w/api.php?action=query&list=search&srnamespace=0&srlimit=10&format=json&origin=*&srsearch='+encodeURIComponent('intitle:"'+q.replace(/"/g,'')+'"');
+  let search;try{search=await apiJson(su)}catch{continue}
+  const rows=(search?.query?.search||[]).filter(x=>String(x.title||'').startsWith('Catholic Encyclopedia (1913)/')).sort((a,b)=>scoreTitle(b.title,q)-scoreTitle(a.title,q));
+  const hit=rows[0];if(!hit||scoreTitle(hit.title,q)<2)continue;
+  const pu='https://en.wikisource.org/w/api.php?action=parse&prop=text%7Cdisplaytitle&format=json&origin=*&page='+encodeURIComponent(hit.title);
+  let parsed;try{parsed=await apiJson(pu)}catch{continue}
+  const html=parsed?.parse?.text?.['*'];if(!html)continue;
+  const doc=new DOMParser().parseFromString(html,'text/html');
+  const ps=[...doc.querySelectorAll('.mw-parser-output > p, .mw-parser-output section > p')].map(p=>p.textContent.replace(/\s+/g,' ').trim()).filter(x=>x.length>80&&!/^Coordinates:/i.test(x));
+  if(!ps.length)continue;
+  let total=0,kept=[];for(const p of ps){if(total>5200||kept.length>=8)break;kept.push(p);total+=p.length}
+  return {kind:'catholic-encyclopedia-1913',title:parsed.parse.displaytitle?.replace(/<[^>]+>/g,'')||hit.title,paragraphs:kept,url:sourceUrlForWikisource(hit.title),label:'Catholic Encyclopedia (1913)',rights:'Public-domain original · transcription via Wikisource',language:'en'};
+ }
+ return null;
+}
+async function wikipediaBio(component,language){
+ const host=language==='fr'?'fr.wikipedia.org':'en.wikipedia.org';
+ for(const q0 of queryNames(component)){
+  const q=q0+' saint Catholic';
+  const u=`https://${host}/w/api.php?action=query&generator=search&gsrnamespace=0&gsrlimit=6&prop=extracts%7Cinfo&exintro=1&explaintext=1&inprop=url&redirects=1&format=json&origin=*&gsrsearch=${encodeURIComponent(q)}`;
+  let j;try{j=await apiJson(u)}catch{continue}
+  const pages=Object.values(j?.query?.pages||{}).filter(x=>x.extract&&x.fullurl).sort((a,b)=>scoreTitle(b.title,q0)-scoreTitle(a.title,q0));
+  const p=pages[0];if(!p||scoreTitle(p.title,q0)<1)continue;
+  const chunks=String(p.extract).split(/\n+/).map(x=>x.trim()).filter(Boolean);if(!chunks.length)continue;
+  return {kind:'wikipedia',title:p.title,paragraphs:chunks.slice(0,6),url:p.fullurl,label:language==='fr'?'Wikipédia':'Wikipedia',rights:'CC BY-SA · background source',language};
+ }
+ return null;
+}
+const BIO_PERSIST_VERSION='saint-biography-cache-v1';
+const BIO_STORE_KEY='ao_saint_biography_cache_v1';
+const BIO_FRESH_MATCH_MS=180*86400000;
+const BIO_FRESH_FALLBACK_MS=30*86400000;
+const BIO_STALE_MS=730*86400000;
+const BIO_MAX_ENTRIES=32;
+const BIO_MAX_ITEM_CHARS=45000;
+const BIO_MAX_TOTAL_CHARS=600000;
+const BIO_CACHE_STATS={reads:0,hits:0,staleHits:0,writes:0,evictions:0,errors:0,rejectedIdentity:0,sourceFallbacks:0};
+function bioIdentityFingerprint(component){return JSON.stringify({manifestVersion:globalThis.AO_SAINT_ART?.version||'',componentId:String(component?.componentId||''),canonicalId:String(component?.canonicalId||''),displayName:String(component?.displayName||''),qaStatus:String(component?.qaStatus||'')})}
+async function bioIdentityVerified(component){
+ if(!component?.componentId||!component?.canonicalId||component?.qaStatus!=='RESOLVED')return false;
+ if(globalThis.AO_SAINT_ART?.version!=='SAINT-ART-MANIFEST-v3.3')return false;
+ let manifest=globalThis.AO_SAINT_ART?.lastManifest||null;
+ if(!manifest){try{manifest=await globalThis.AO_SAINT_ART?.ensureManifest?.()}catch{return false}}
+ const hit=manifest?.components?.find?.(c=>c.componentId===component.componentId&&c.canonicalId===component.canonicalId);
+ return !!(hit&&String(hit.displayName||'')===String(component.displayName||'')&&hit.qaStatus==='RESOLVED');
+}
+function bioPayloadValid(bio){return !!(bio&&typeof bio==='object'&&['catholic-encyclopedia-1913','wikipedia'].includes(bio.kind)&&['en','fr'].includes(bio.language)&&typeof bio.title==='string'&&typeof bio.url==='string'&&/^https:\/\//i.test(bio.url)&&typeof bio.label==='string'&&typeof bio.rights==='string'&&Array.isArray(bio.paragraphs)&&bio.paragraphs.length>0&&bio.paragraphs.length<=8&&bio.paragraphs.every(p=>typeof p==='string'&&p.trim().length>0))}
+function bioStoreLoad(){
+ try{const raw=localStorage.getItem(BIO_STORE_KEY);if(!raw)return {version:BIO_PERSIST_VERSION,entries:[]};const x=JSON.parse(raw);if(x?.version!==BIO_PERSIST_VERSION||!Array.isArray(x.entries))throw new Error('BIO_CACHE_VERSION');return x}
+ catch(e){BIO_CACHE_STATS.errors++;try{localStorage.removeItem(BIO_STORE_KEY)}catch{}return {version:BIO_PERSIST_VERSION,entries:[]}}
+}
+function bioStoreSave(store){try{localStorage.setItem(BIO_STORE_KEY,JSON.stringify(store));return true}catch{BIO_CACHE_STATS.errors++;return false}}
+function bioCachePrune(store){
+ const now=Date.now();let entries=(store.entries||[]).filter(r=>r&&now-(+r.savedAt||0)<=BIO_STALE_MS&&bioPayloadValid(r.bio)).sort((a,b)=>(+b.lastUsed||+b.savedAt||0)-(+a.lastUsed||+a.savedAt||0));
+ let total=0,kept=[];for(const r of entries){let size=0;try{size=JSON.stringify(r).length}catch{continue}if(size>BIO_MAX_ITEM_CHARS)continue;if(kept.length>=BIO_MAX_ENTRIES||total+size>BIO_MAX_TOTAL_CHARS){BIO_CACHE_STATS.evictions++;continue}kept.push(r);total+=size}
+ store.entries=kept;return store;
+}
+function bioCacheRead(component,language){
+ BIO_CACHE_STATS.reads++;const fp=bioIdentityFingerprint(component),key=`${component.canonicalId}|${language}`;let store=bioCachePrune(bioStoreLoad());const idx=store.entries.findIndex(r=>r.key===key&&r.identityFingerprint===fp);if(idx<0){bioStoreSave(store);return null}const r=store.entries[idx],age=Date.now()-(+r.savedAt||0);r.lastUsed=Date.now();store.entries.splice(idx,1);store.entries.unshift(r);bioStoreSave(store);const freshMs=r.bio.language===language?BIO_FRESH_MATCH_MS:BIO_FRESH_FALLBACK_MS;BIO_CACHE_STATS.hits++;if(age>freshMs)BIO_CACHE_STATS.staleHits++;return {record:r,fresh:age<=freshMs,stale:age>freshMs};
+}
+function bioCacheWrite(component,language,bio){
+ if(!bioPayloadValid(bio))return false;let raw;try{raw=JSON.stringify(bio)}catch{return false}if(raw.length>BIO_MAX_ITEM_CHARS)return false;
+ const fp=bioIdentityFingerprint(component),key=`${component.canonicalId}|${language}`,now=Date.now();let store=bioStoreLoad();store.entries=(store.entries||[]).filter(r=>!(r.key===key));store.entries.unshift({key,identityFingerprint:fp,savedAt:now,lastUsed:now,bio});store=bioCachePrune(store);if(!bioStoreSave(store))return false;BIO_CACHE_STATS.writes++;return true;
+}
+function bioCachedValue(hit,reason){if(!hit?.record?.bio)return null;const bio={...hit.record.bio,paragraphs:[...hit.record.bio.paragraphs]};try{Object.defineProperty(bio,'__aoPersistentBiography',{value:{version:BIO_PERSIST_VERSION,savedAt:hit.record.savedAt,reason},enumerable:false})}catch{}return bio}
+function clearPersistentBiographyCache(){try{localStorage.removeItem(BIO_STORE_KEY)}catch{}BIO_CACHE.clear()}
+async function getBiography(component,language){
+ const key=(component?.canonicalId||component?.displayName||'unknown')+'|'+language;if(BIO_CACHE.has(key))return BIO_CACHE.get(key);
+ const task=(async()=>{
+  const verified=await bioIdentityVerified(component);if(!verified){BIO_CACHE_STATS.rejectedIdentity++;return null}
+  const persisted=bioCacheRead(component,language);
+  if(persisted?.fresh)return bioCachedValue(persisted,'fresh-cache');
+  if(persisted&&typeof navigator!=='undefined'&&navigator.onLine===false){BIO_CACHE_STATS.sourceFallbacks++;return bioCachedValue(persisted,'offline')}
+  let bio=null;try{bio=await catholicEncyclopediaBio(component);if(!bio)bio=await wikipediaBio(component,language);if(!bio&&language==='fr')bio=await wikipediaBio(component,'en')}catch{bio=null}
+  if(bio&&await bioIdentityVerified(component)){bioCacheWrite(component,language,bio);return bio}
+  if(persisted){BIO_CACHE_STATS.sourceFallbacks++;return bioCachedValue(persisted,'source-unavailable')}
+  return null;
+ })();BIO_CACHE.set(key,task);try{return await task}catch(e){BIO_CACHE.delete(key);throw e}
+}
+function openSaintPanel(){const mod=globalThis.AO_MODULES;if(mod?.open){mod.open('today.saint');return true}return !!globalThis.AO_NAV_V25?.open?.('saint')}
+function enhanceHomeCard(card){if(!card||card.dataset.aoSaintUx===VERSION)return;card.dataset.aoSaintUx=VERSION;card.classList.add('aoSaintArtCardClickable');card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-label',L('Open Saint of the Day','Ouvrir le Saint du jour'))}
+function enhanceAllHomeCards(){document.querySelectorAll('.aoSaintArtCard').forEach(enhanceHomeCard)}
+async function ensureHomeArt(){const s=st(),home=document.querySelector('.homeScreen');if(!s||s.route!=='home'||s.resolving||!home)return;const key=`${s.selectedDate||''}|${s.language||''}`;if(home===lastHomeNode&&key===lastHomeKey){enhanceAllHomeCards();return}if(homeSyncBusy){homeSyncQueued=true;return}if(!globalThis.AO_SAINT_ART?.syncHome)return;homeSyncBusy=true;try{await globalThis.AO_SAINT_ART.syncHome(s);lastHomeKey=key;lastHomeNode=home}catch{}finally{homeSyncBusy=false;enhanceAllHomeCards();if(homeSyncQueued){homeSyncQueued=false;setTimeout(ensureHomeArt,80)}}}
+function artworkCredit(item){
+ const pieces=[item?.artist,item?.date,item?.credit].filter(Boolean);if(!pieces.length&&!item?.source)return '';
+ const body=`${pieces.length?esc(pieces.join(' · ')):''}${item?.source?`${pieces.length?'<br>':''}<a href="${esc(item.source)}" target="_blank" rel="noopener noreferrer">${L('Artwork source & rights ↗','Source et droits de l’œuvre ↗')}</a>`:''}`;
+ return `<details class="aoSaintArtCreditDisclosure"><summary>${L('Artwork credit','Crédit de l’œuvre')}</summary><div class="aoSaintArtCreditBody">${body}</div></details>`
+}
+function artPlaceholder(result,component){if(result?.status==='NO_APPROVED_ART_RULE')return L('No verified reusable artwork is available for this saint.','Aucune œuvre réutilisable vérifiée n’est disponible pour ce saint.');if(result?.status==='COMMONS_ERROR')return L('Artwork could not be loaded from Wikimedia Commons.','L’œuvre n’a pas pu être chargée depuis Wikimedia Commons.');return L('No reusable artwork is available for this saint.','Aucune œuvre réutilisable n’est disponible pour ce saint.')}
+async function renderSaintComponent(root,record,index,dateIso,language){
+ const token=String(Date.now())+Math.random();root.dataset.loadToken=token;const component=record.components[index];
+ root.innerHTML=`${record.components.length>1?`<div class="aoSaintReaderTabs">${record.components.map((c,i)=>`<button class="${i===index?'active':''}" data-ao-saint-component="${i}">${esc(c.displayName)}</button>`).join('')}</div>`:''}<div class="aoSaintReaderGrid"><div class="aoSaintReaderArt"><div class="aoSaintReaderArtMedia"><div class="aoSaintReaderPlaceholder">${L('Loading approved artwork…','Chargement de l’œuvre approuvée…')}</div></div><div class="aoSaintReaderArtMeta"></div></div><article class="aoSaintReaderBio"><div class="aoSaintReaderKicker">${L('SAINT OF THE DAY','SAINT DU JOUR')}</div><h3>${esc(component.displayName)}</h3><div class="aoSaintReaderStatus">${esc(globalThis.AO_DISPLAY_DATE?.(dateIso)||dateIso)}</div><div class="aoSaintReaderBioText"><p>${L('Loading a sourced biography…','Chargement d’une biographie sourcée…')}</p></div><div class="aoSaintReaderSource"></div></article></div>`;
+ const [artR,bioR]=await Promise.allSettled([globalThis.AO_SAINT_ART?.resolveComponent?.(component,dateIso),getBiography(component,language)]);if(root.dataset.loadToken!==token)return;
+ const art=artR.status==='fulfilled'?artR.value:null,media=root.querySelector('.aoSaintReaderArtMedia'),artMeta=root.querySelector('.aoSaintReaderArtMeta');
+ if(art?.item?.thumbnail||art?.item?.thumb){const item=art.item,src=item.thumbnail||item.thumb;media.innerHTML=`<img src="${esc(src)}" alt="${esc(item.title||component.displayName)}">`;artMeta.innerHTML=artworkCredit(item);media.querySelector('img').onerror=()=>{media.innerHTML=`<div class="aoSaintReaderPlaceholder">${esc(artPlaceholder(art,component))}</div>`}}
+ else{media.innerHTML=`<div class="aoSaintReaderPlaceholder">${esc(artPlaceholder(art,component))}</div>`;artMeta.textContent=''}
+ const bio=bioR.status==='fulfilled'?bioR.value:null,bioBox=root.querySelector('.aoSaintReaderBioText'),source=root.querySelector('.aoSaintReaderSource');
+ if(bio?.paragraphs?.length){bioBox.innerHTML=bio.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('');source.innerHTML=`<b>${esc(bio.label)}</b> · ${esc(bio.rights)}${bio.language!==language?` · ${L('English source shown because a verified French result was not found.','Source anglaise affichée faute de résultat français vérifié.')}`:''}<br><a href="${esc(bio.url)}" target="_blank" rel="noopener noreferrer">${L('Open full source ↗','Ouvrir la source complète ↗')}</a><br><small>${L('Background source; not liturgical text. Text above is retrieved from the cited source, not generated by Ad Orientem.','Source de contexte ; il ne s’agit pas d’un texte liturgique. Le texte ci-dessus est récupéré depuis la source citée, et non généré par Ad Orientem.')}</small>`}
+ else{bioBox.innerHTML=`<p>${L('No sourced biography could be retrieved for this identity. Ad Orientem will not invent one.','Aucune biographie sourcée n’a pu être récupérée pour cette identité. Ad Orientem n’en inventera pas.')}</p>`;source.innerHTML=`<small>${L('Try again when online, or use the artwork/source information above.','Réessayez en ligne, ou utilisez les informations de source de l’œuvre ci-dessus.')}</small>`}
+}
+async function enhanceSaintPanel(){const panel=document.getElementById('ao-v25-panel');if(!panel)return;const title=panel.querySelector('#ao-v25-panel-title')?.textContent?.trim()||'';if(panel.dataset.v25Kind!=='saint'&&!/Saint of the Day|Saint du jour/i.test(title))return;const s=st();if(!s)return;const body=panel.querySelector('.aoV25Body'),dateIso=s.selectedDate,language=s.language||'en';let root=panel.querySelector('[data-ao-saint-reader]');if(root&&root.dataset.date===dateIso&&root.dataset.language===language)return;
+ panel.dataset.aoSaintReader=VERSION;
+ const old=[...body.querySelectorAll('.aoV25Section')].find(sec=>/Current sourced scope|Périmètre sourcé actuel/i.test(sec.textContent||''));old?.remove();
+ if(!root){root=document.createElement('section');root.className='aoSaintReader';root.dataset.aoSaintReader='';const hero=body.querySelector('.aoV25Hero');hero?.insertAdjacentElement('afterend',root)}root.dataset.date=dateIso;root.dataset.language=language;root.innerHTML=`<div class="aoSaintReaderPlaceholder">${L('Loading saint profile…','Chargement du profil du saint…')}</div>`;const guardDate=dateIso,guardLanguage=language;setTimeout(()=>{if(!root.isConnected||root.dataset.date!==guardDate||root.dataset.language!==guardLanguage)return;const txt=root.textContent||'';if(/Loading saint profile|Chargement du profil du saint/i.test(txt)){root.innerHTML=`<div class="aoV37TerminalError"><b>${L('Saint content could not be loaded.','Le contenu du saint n’a pas pu être chargé.')}</b><br>${L('The liturgical day remains available. Try the Saint of the Day again when the source is reachable.','Le jour liturgique reste disponible. Réessayez le Saint du jour lorsque la source est accessible.')}</div>`;globalThis.AO_CONTENT_V37?.markSaintTimeout?.()}},10500);
+ let manifest;try{manifest=await globalThis.AO_SAINT_ART?.ensureManifest?.()}catch{manifest=null}if(!manifest||root.dataset.date!==dateIso)return;const record=manifest.records?.find(r=>r.date===dateIso.slice(5));if(!record?.components?.length){root.innerHTML=`<div class="aoSaintReaderPlaceholder">${L('No sourced saint profile is available for this observance.','Aucun profil sourcé de saint n’est disponible pour cette observance.')}</div>`;return}root.dataset.active='0';renderSaintComponent(root,record,0,dateIso,language)}
+function scheduleStateRefresh(){setTimeout(()=>{ensureHomeArt();enhanceSaintPanel()},60)}
+function installStoreHook(){const store=globalThis.AO_RUNTIME_V8?.store;if(!store?.subscribe)return false;if(stateUnsub)return true;stateUnsub=store.subscribe(()=>scheduleStateRefresh());return true}
+document.addEventListener('click',e=>{const tab=e.target?.closest?.('[data-ao-saint-component]');if(tab){const root=tab.closest('[data-ao-saint-reader]'),s=st();if(!root||!s)return;const idx=Number(tab.dataset.aoSaintComponent)||0;globalThis.AO_SAINT_ART?.ensureManifest?.().then(m=>{const r=m.records.find(x=>x.date===s.selectedDate.slice(5));if(r)renderSaintComponent(root,r,idx,s.selectedDate,s.language||'en')});return}const card=e.target?.closest?.('.aoSaintArtCard.aoSaintArtCardClickable');if(card&&!e.target.closest('button,a,[data-ao-art-component],[data-ao-art-info],[data-ao-art-debug]')){openSaintPanel();setTimeout(enhanceSaintPanel,30)}},false);
+document.addEventListener('keydown',e=>{const card=e.target?.closest?.('.aoSaintArtCard.aoSaintArtCardClickable');if(card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openSaintPanel();setTimeout(enhanceSaintPanel,30)}},false);
+function lifecycleRefresh(){installStoreHook();ensureHomeArt();enhanceAllHomeCards();enhanceSaintPanel()}
+function boot(){
+ installStoreHook();
+ const run=()=>lifecycleRefresh();
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});
+ run();
+ [80,240,700,1600].forEach(ms=>setTimeout(run,ms));
+}
+boot();
+globalThis.AO_SAINT_BIO_CACHE_V428=Object.freeze({version:BIO_PERSIST_VERSION,clear:clearPersistentBiographyCache,inspect(){const store=bioCachePrune(bioStoreLoad()),bytes=(()=>{try{return JSON.stringify(store).length}catch{return 0}})();return{version:BIO_PERSIST_VERSION,entries:store.entries.length,bytes,maxEntries:BIO_MAX_ENTRIES,maxTotalChars:BIO_MAX_TOTAL_CHARS,freshMatchDays:180,freshFallbackDays:30,staleMaxDays:730,...BIO_CACHE_STATS}}});
+globalThis.AO_SAINT_DAY_READER={version:VERSION,enhanceHome:ensureHomeArt,enhancePanel:enhanceSaintPanel,getBiography,refresh:lifecycleRefresh};
+})();
+</script>
+<script id="ao-v428-phase1-proper-closure-js">
+(()=>{'use strict';
+if(globalThis.AO_PHASE1_CLOSURE_V426)return;
+const art=globalThis.AO_PHASE1_ART;
+const b1=globalThis.AO_PHASE1_FAST_CLOSURE_B1;
+if(!art||!b1||typeof art.properPath!=='function')return;
+const ROWS=Object.freeze({"Tempora/Adv2-0":{"properPath":"Tempora/Adv2-0","label":"Second Sunday of Advent","status":"NO_ART","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","note":"Intentional NO_ART: Matthew 11:2–10 centers on John’s messengers and Christ’s testimony; no sufficiently exact high-grade painting was established without substituting a different Baptist episode."},"Tempora/Adv3-0":{"properPath":"Tempora/Adv3-0","label":"Third Sunday of Advent (Gaudete)","status":"GREEN","relationship":"PROPER_THEME","decisionSource":"v42.6 closure curation","primaryArtId":"AO118","note":"Mattia Preti’s Saint John the Baptist Preaching is a strong Baroque John-the-Baptist Proper-theme image. It is not claimed as a literal rendering of John 1:19–28."},"Tempora/Epi3-0":{"properPath":"Tempora/Epi3-0","label":"Third Sunday after Epiphany","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO119","note":"Veronese’s Christ and the Centurion directly depicts Matthew 8:5–13, one of the two healing episodes in the Proper Gospel."},"Tempora/Epi5-0":{"properPath":"Tempora/Epi5-0","label":"Fifth Sunday after Epiphany","status":"NO_ART","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","note":"Intentional NO_ART: wheat-and-tares imagery did not meet the primary-art threshold; reject generic agricultural substitutes."},"Tempora/Epi6-0":{"properPath":"Tempora/Epi6-0","label":"Sixth Sunday after Epiphany","status":"NO_ART","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","note":"Intentional NO_ART: mustard-seed/leaven parables do not justify generic landscape or agricultural imagery."},"Tempora/Nat1-0":{"properPath":"Tempora/Nat1-0","label":"Sunday within the Octave of Christmas","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO120","note":"Rembrandt’s Simeon and Anna in the Temple directly fits Luke 2:33–40 and avoids reusing the held AO112 Presentation record."},"Tempora/Nat2-0":{"properPath":"Tempora/Nat2-0","label":"Most Holy Name of Jesus — Sunday assignment","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO121","note":"Rembrandt’s Circumcision directly fits Luke 2:21, including the naming of the Child. Shared with the Jan 1 Circumcision/Octave Day Proper."},"Tempora/Pent02-0":{"properPath":"Tempora/Pent02-0","label":"Second Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO122","note":"Brunswick Monogrammist’s Parable of the Great Banquet directly fits Luke 14:16–24."},"Tempora/Pent03-0":{"properPath":"Tempora/Pent03-0","label":"Third Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO123","note":"Domenico Fetti’s Parable of the Lost Sheep directly illustrates Luke 15:4–7 within the Proper’s Luke 15:1–10. Delivery is restrained/no-zoom because the open master is 525×719."},"Tempora/Pent10-0":{"properPath":"Tempora/Pent10-0","label":"Tenth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO124","note":"Barent Fabritius’s Pharisee and the Publican directly depicts Luke 18:10–14."},"Tempora/Pent18-0":{"properPath":"Tempora/Pent18-0","label":"Eighteenth Sunday after Pentecost","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO125","note":"Alessandro Magnasco’s Christ Healing a Paralytic is a Louvre Baroque treatment of the Capernaum paralytic miracle; exact miracle family for Matthew 9:1–8."},"Tempora/Quad3-0":{"properPath":"Tempora/Quad3-0","label":"Third Sunday of Lent","status":"NO_ART","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","note":"Intentional NO_ART: searches produced other exorcism episodes or prints for Luke 11:14; do not substitute Gerasene, synagogue, or possessed-boy scenes."},"Tempora/Quadp2-0":{"properPath":"Tempora/Quadp2-0","label":"Sexagesima Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO126","note":"Pieter Bruegel the Elder’s Landscape with the Parable of the Sower directly depicts the Gospel parable. Open master is adequate for restrained app display, not zoom."},"Tempora/Quadp3-0":{"properPath":"Tempora/Quadp3-0","label":"Quinquagesima Sunday","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO127","note":"Lucas van Leyden’s Healing of the Blind Man of Jericho directly depicts Bartimaeus/Jericho, matching Luke 18:35–43."},"Sancti/01-01":{"properPath":"Sancti/01-01","label":"Circumcision of the Lord / Octave Day of Christmas","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO121","note":"Rembrandt’s Circumcision is an exact feast subject and is intentionally shared with Tempora/Nat2-0."},"Sancti/03-19":{"properPath":"Sancti/03-19","label":"Saint Joseph, Spouse of the Blessed Virgin Mary","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO128","note":"Guercino’s Saint Joseph with the Christ Child is a strong Baroque primary for the feast."},"Sancti/06-29":{"properPath":"Sancti/06-29","label":"Saints Peter and Paul, Apostles","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO129","note":"El Greco’s Saint Peter and Saint Paul depicts both apostles together; avoids the earlier Peter-only AO117 shortcut."},"Sancti/11-01":{"properPath":"Sancti/11-01","label":"All Saints","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.6 closure curation","primaryArtId":"AO130","note":"Dürer’s Landauer Altarpiece is explicitly the Altar of All Saints and presents the Trinity surrounded by the heavenly assembly."}});
+const ARTWORKS=Object.freeze({"AO118":{"artId":"AO118","title":"Saint John the Baptist Preaching","artist":"Mattia Preti","institution":"The Metropolitan Museum of Art","date":"ca. 1650","file":"Saint John the Baptist Preaching MET DP123820.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Saint_John_the_Baptist_Preaching_MET_DP123820.jpg","license":"CC0","rights":"CC0 1.0","attribution":"The Metropolitan Museum of Art","width":2917,"height":4000,"roles":["PROPER_THEME","DAY_ART"],"qualityGate":"PASS"},"AO119":{"artId":"AO119","title":"Christ and the Centurion","artist":"Paolo Veronese","institution":"Museo Nacional del Prado","date":"ca. 1571","file":"Jesús y el centurión (El Veronés).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Jes%C3%BAs_y_el_centuri%C3%B3n_(El_Veron%C3%A9s).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3051,"height":1955,"roles":["GOSPEL_ART"],"qualityGate":"PASS"},"AO120":{"artId":"AO120","title":"Simeon and Anna in the Temple","artist":"Rembrandt van Rijn","institution":"Hamburger Kunsthalle","date":"1627","file":"Rembrandt Simeon and Anna in the Temple@Kunsthalle Hamburg.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Rembrandt_Simeon_and_Anna_in_the_Temple@Kunsthalle_Hamburg.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2933,"height":3492,"roles":["GOSPEL_ART"],"qualityGate":"PASS"},"AO121":{"artId":"AO121","title":"The Circumcision","artist":"Rembrandt van Rijn","institution":"National Gallery of Art, Washington","date":"1661","file":"Rembrandt van Rijn, The Circumcision, 1661, NGA 1199.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn,_The_Circumcision,_1661,_NGA_1199.jpg","license":"CC0","rights":"CC0 1.0","attribution":"National Gallery of Art","width":4000,"height":2996,"roles":["DAY_ART","GOSPEL_ART"],"qualityGate":"PASS"},"AO122":{"artId":"AO122","title":"Parable of the Great Banquet","artist":"Brunswick Monogrammist","institution":"National Museum in Warsaw","date":"ca. 1525","file":"Brunswick Monogrammist Great Banquet.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Brunswick_Monogrammist_Great_Banquet.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":3500,"height":2022,"roles":["GOSPEL_ART"],"qualityGate":"PASS"},"AO123":{"artId":"AO123","title":"The Parable of the Lost Sheep","artist":"Domenico Fetti","institution":"Gemäldegalerie Alte Meister, Dresden","date":"ca. 1620","file":"Parabola della pecora smarrita - Fetti.png","sourcePage":"https://commons.wikimedia.org/wiki/File:Parabola_della_pecora_smarrita_-_Fetti.png","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":525,"height":719,"roles":["GOSPEL_ART"],"qualityGate":"PASS_MINIMUM","deliveryPolicy":"DISPLAY_READY_NO_ZOOM"},"AO124":{"artId":"AO124","title":"The Pharisee and the Publican","artist":"Barent Fabritius","institution":"Rijksmuseum","date":"1661","file":"De Farizeeër en de tollenaar Rijksmuseum SK-A-2959.jpeg","sourcePage":"https://commons.wikimedia.org/wiki/File:De_Farizee%C3%ABr_en_de_tollenaar_Rijksmuseum_SK-A-2959.jpeg","license":"CC0","rights":"CC0 1.0","attribution":"Rijksmuseum","width":6102,"height":1986,"roles":["GOSPEL_ART"],"qualityGate":"PASS"},"AO125":{"artId":"AO125","title":"Christ Healing a Paralytic","artist":"Alessandro Magnasco","institution":"Musée du Louvre","date":"ca. 1735","file":"Alessandro magnasco, cristo guarisce il paralitico, 1735 ca..JPG","sourcePage":"https://commons.wikimedia.org/wiki/File:Alessandro_magnasco,_cristo_guarisce_il_paralitico,_1735_ca..JPG","license":"CC BY 3.0","rights":"CC BY 3.0","attribution":"Sailko","width":2553,"height":2024,"roles":["GOSPEL_ART"],"qualityGate":"PASS"},"AO126":{"artId":"AO126","title":"Landscape with the Parable of the Sower","artist":"Pieter Bruegel the Elder","institution":"Timken Museum of Art","date":"1557","file":"Pieter Bruegel the Elder - Landscape with the Parable of the Sower - WGA03340.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Landscape_with_the_Parable_of_the_Sower_-_WGA03340.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":1030,"height":725,"roles":["GOSPEL_ART"],"qualityGate":"PASS_MINIMUM","deliveryPolicy":"DISPLAY_READY_NO_ZOOM"},"AO127":{"artId":"AO127","title":"Healing of the Blind Man of Jericho","artist":"Lucas van Leyden","institution":"State Hermitage Museum","date":"1531","file":"Leyden, Lucas van - Healing of Blind Man of Jericho (triptych), 1531, ГЭ-407.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Leyden,_Lucas_van_-_Healing_of_Blind_Man_of_Jericho_(triptych),_1531,_%D0%93%D0%AD-407.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":1998,"height":1049,"roles":["GOSPEL_ART"],"qualityGate":"PASS"},"AO128":{"artId":"AO128","title":"Saint Joseph with the Christ Child","artist":"Guercino","institution":"National Gallery of Ireland","date":"ca. 1637","file":"Guercino - Saint Joseph with the Christ Child, c.1637.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Guercino_-_Saint_Joseph_with_the_Christ_Child,_c.1637.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2315,"height":3000,"roles":["DAY_ART"],"qualityGate":"PASS"},"AO129":{"artId":"AO129","title":"Saint Peter and Saint Paul","artist":"El Greco","institution":"Museu Nacional d’Art de Catalunya","date":"1590–1600","file":"El Greco - Saint Peter and Saint Paul - Google Art Project.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:El_Greco_-_Saint_Peter_and_Saint_Paul_-_Google_Art_Project.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":4363,"height":5609,"roles":["DAY_ART"],"qualityGate":"PASS"},"AO130":{"artId":"AO130","title":"Adoration of the Trinity (Landauer Altar / All Saints)","artist":"Albrecht Dürer","institution":"Kunsthistorisches Museum, Vienna","date":"1511","file":"Albrecht Dürer - Adoration of the Trinity (Landauer Altar) - Google Art Project.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_(Landauer_Altar)_-_Google_Art_Project.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":4969,"height":5434,"roles":["DAY_ART"],"qualityGate":"PASS"}});
+const priorHomeMarkup=art.homeMarkup.bind(art);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const thumb=(file,width)=>file?`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(file)}?width=${width}`:'';
+
+function effectiveArtwork(id){
+ return ARTWORKS[id]||b1.effectiveArtwork?.(id)||art.data?.artworks?.[id]||null;
+}
+
+function rawRow(path){
+ if(ROWS[path])return ROWS[path];
+ if(b1.rows?.[path])return b1.rows[path];
+ return art.data?.rows?.[path]||null;
+}
+
+function resolveRow(path,trail=new Set()){
+ path=String(path||'');
+ if(!path||trail.has(path))return null;
+ const r=rawRow(path);
+ if(!r)return null;
+ if(r.status!=='INHERIT_BASE')return r;
+ const next=new Set(trail); next.add(path);
+ const base=resolveRow(r.inheritFrom,next);
+ if(!base)return Object.freeze({...r,status:'INHERIT_PENDING'});
+ if(base.status==='GREEN'&&base.primaryArtId)return Object.freeze({...r,status:'GREEN',relationship:base.relationship||'GOSPEL_ART',primaryArtId:base.primaryArtId,note:`${r.note||''} Inherited final primary: ${base.primaryArtId}.`});
+ if(base.status==='NO_ART')return Object.freeze({...r,status:'NO_ART',note:`${r.note||''} Base Proper is intentional NO_ART.`});
+ if(base.status==='HOLD')return Object.freeze({...r,status:'HOLD',primaryArtId:base.primaryArtId||null,note:`${r.note||''} Base Proper is HOLD; render none.`});
+ return Object.freeze({...r,status:'INHERIT_PENDING'});
+}
+
+function renderRow(path,r,lang='en'){
+ if(!r||r.status!=='GREEN'||!r.primaryArtId)return '';
+ const a=effectiveArtwork(r.primaryArtId);
+ if(!a||!a.file||!a.sourcePage)return '';
+ const license=a.license||a.rights||'', attribution=a.attribution||'';
+ const attr=attribution&&/^CC BY/i.test(license)&&!attribution.toLowerCase().includes('cc by')?`${attribution} · ${license}`:(attribution||license);
+ const alt=`${a.artist||''} — ${a.title||r.label||''}`;
+ const ratio=(Number(a.width)||1)/(Number(a.height)||1),orientation=ratio<0.82?'isPortrait':ratio>1.22?'isLandscape':'isBalanced';
+ const maxW=a.deliveryPolicy==='DISPLAY_READY_NO_ZOOM'?Math.min(Number(a.width)||768,1280):1280;
+ const hiW=a.deliveryPolicy==='DISPLAY_READY_NO_ZOOM'?Math.min(Number(a.width)||1280,1800):1800;
+ const loW=Math.min(Number(a.width)||768,768);
+ const src=thumb(a.file,maxW),slo=thumb(a.file,loW),shi=thumb(a.file,hiW);
+ return `<figure class="aoProperArt ${orientation}" data-ao-proper-art="${esc(r.primaryArtId)}" data-proper-path="${esc(path)}"><div class="aoProperArtMedia"><img src="${esc(src)}" srcset="${esc(slo)} ${loW}w, ${esc(src)} ${maxW}w, ${esc(shi)} ${hiW}w" sizes="(max-width:560px) 100vw, 720px" alt="${esc(alt)}" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('figure')?.remove()"></div><figcaption><span><strong>${esc(a.artist||'')}</strong>${a.title?` · ${esc(a.title)}`:''}${attr?`<br><small>${esc(attr)}</small>`:''}</span><a href="${esc(a.sourcePage)}" target="_blank" rel="noopener noreferrer">${lang==='fr'?'Source':'Source'} ↗</a></figcaption></figure>`;
+}
+
+function homeMarkup(state,lang='en'){
+ const path=art.properPath(state);
+ if(ROWS[path]||b1.rows?.[path])return renderRow(path,resolveRow(path),lang);
+ return priorHomeMarkup(state,lang);
+}
+
+function effectiveRows(){
+ const keys=new Set([...Object.keys(art.data?.rows||{}),...Object.keys(b1.rows||{}),...Object.keys(ROWS)]);
+ const out={};
+ for(const k of keys)out[k]=resolveRow(k);
+ return out;
+}
+
+function effectiveArtworks(){
+ return Object.assign({},art.data?.artworks||{},b1.artworks||{},ARTWORKS);
+}
+
+function inspect(){
+ const er=effectiveRows(), ea=effectiveArtworks();
+ const vals=Object.values(er).filter(Boolean);
+ const counts={
+  rows:vals.length,
+  green:vals.filter(r=>r.status==='GREEN').length,
+  hold:vals.filter(r=>r.status==='HOLD').length,
+  noArt:vals.filter(r=>r.status==='NO_ART').length,
+  inheritPending:vals.filter(r=>r.status==='INHERIT_PENDING').length,
+  artworks:Object.keys(ea).length,
+  newRows:Object.keys(ROWS).length,
+  newArtworks:Object.keys(ARTWORKS).length
+ };
+ const inherited={
+  pentEpi3:resolveRow('Tempora/PentEpi3-0'),
+  pentEpi4:resolveRow('Tempora/PentEpi4-0'),
+  pentEpi5:resolveRow('Tempora/PentEpi5-0'),
+  pentEpi6:resolveRow('Tempora/PentEpi6-0')
+ };
+ const checks={
+  expectedCounts:counts.rows===82&&counts.green===67&&counts.hold===2&&counts.noArt===13&&counts.inheritPending===0&&counts.artworks===63&&counts.newRows===18&&counts.newArtworks===13,
+  inheritanceClosed:inherited.pentEpi3?.primaryArtId==='AO119'&&inherited.pentEpi4?.primaryArtId==='AO082'&&inherited.pentEpi5?.status==='NO_ART'&&inherited.pentEpi6?.status==='NO_ART',
+  januaryShared:resolveRow('Tempora/Nat2-0')?.primaryArtId==='AO121'&&resolveRow('Sancti/01-01')?.primaryArtId==='AO121',
+  peterPaulNotPeterOnly:resolveRow('Sancti/06-29')?.primaryArtId==='AO129',
+  noGenericFallback:true
+ };
+ return {version:'phase1-proper-closure-v42.6',pass:Object.values(checks).every(Boolean),counts,checks,inherited};
+}
+
+art.homeMarkup=homeMarkup;
+art.effectiveRow=path=>resolveRow(String(path||''));
+art.effectiveRows=effectiveRows;
+art.effectiveArtwork=effectiveArtwork;
+art.effectiveArtworks=effectiveArtworks;
+art.closureBatch='PM12-COMPLETE-v42.6';
+globalThis.AO_PHASE1_CLOSURE_V426=Object.freeze({version:'phase1-proper-closure-v42.6',rows:ROWS,artworks:ARTWORKS,resolveRow,effectiveArtwork,effectiveRows,effectiveArtworks,inspect});
+try{globalThis.AO_RUNTIME_V8?.controller?.home?.paint?.()}catch{}
+})();
+</script>
+<script id="ao-v428-principal-feast-audit-js">
+(()=>{'use strict';
+if(globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427)return;
+const art=globalThis.AO_PHASE1_ART;
+const v426=globalThis.AO_PHASE1_CLOSURE_V426;
+if(!art||!v426||typeof art.properPath!=='function')return;
+const ROWS=Object.freeze({"Sancti/06-24":{"properPath":"Sancti/06-24","label":"Nativity of Saint John the Baptist","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.7 principal-feast audit closure","primaryArtId":"AO131","note":"Exact Luke 1 birth/naming subject. Artemisia Gentileschi, Prado, ca. 1635."},"Sancti/07-01":{"properPath":"Sancti/07-01","label":"Most Precious Blood of Our Lord Jesus Christ","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.7 principal-feast audit closure","primaryArtId":"AO132","note":"Exact John 19:30–35 lance-opening-the-side subject; Blood and water are the central feast/Gospel image."},"Sancti/09-29":{"properPath":"Sancti/09-29","label":"Dedication of Saint Michael the Archangel","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.7 principal-feast audit closure","primaryArtId":"AO133","note":"Raphael's 1518 Grand Saint Michael provides an exact principal-feast image under the established Renaissance-first art policy."}});
+const ARTWORKS=Object.freeze({"AO131":{"artId":"AO131","title":"The Birth of Saint John the Baptist","artist":"Artemisia Gentileschi","institution":"Museo Nacional del Prado","date":"ca. 1635","file":"Nacimiento de San Juan Bautista (Artemisia Gentileschi).jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Nacimiento_de_San_Juan_Bautista_(Artemisia_Gentileschi).jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2717,"height":1914,"roles":["DAY_ART","GOSPEL_ART"],"qualityGate":"PASS"},"AO132":{"artId":"AO132","title":"Christ on the Cross between the Two Criminals — Le coup de lance","artist":"Anthony van Dyck (Rubens workshop; formerly attributed to Peter Paul Rubens)","institution":"Royal Museum of Fine Arts Antwerp (KMSKA)","date":"1620","file":"Anthony van Dyck - Christ on the cross between the two criminals.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg","license":"CC0","rights":"CC0 1.0","attribution":"Royal Museum of Fine Arts Antwerp","width":4498,"height":6095,"roles":["DAY_ART","GOSPEL_ART"],"qualityGate":"PASS","note":"Current KMSKA attribution credits Van Dyck in the Rubens workshop; older literature often attributes the work to Rubens."},"AO133":{"artId":"AO133","title":"Saint Michael Vanquishing Satan","artist":"Raphael","institution":"Musée du Louvre","date":"1518","file":"Le Grand Saint Michel, by Raffaello Sanzio, from C2RMF retouched.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Le_Grand_Saint_Michel,_by_Raffaello_Sanzio,_from_C2RMF_retouched.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":12542,"height":21200,"roles":["DAY_ART"],"qualityGate":"PASS"}});
+const priorHomeMarkup=art.homeMarkup.bind(art);
+const priorEffectiveRow=art.effectiveRow?.bind(art);
+const priorEffectiveRows=art.effectiveRows?.bind(art);
+const priorEffectiveArtwork=art.effectiveArtwork?.bind(art);
+const priorEffectiveArtworks=art.effectiveArtworks?.bind(art);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const thumb=(file,width)=>file?`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(file)}?width=${width}`:'';
+
+function effectiveArtwork(id){
+ return ARTWORKS[id]||priorEffectiveArtwork?.(id)||null;
+}
+function effectiveRow(path){
+ path=String(path||'');
+ return ROWS[path]||priorEffectiveRow?.(path)||null;
+}
+function renderRow(path,r,lang='en'){
+ if(!r||r.status!=='GREEN'||!r.primaryArtId)return '';
+ const a=effectiveArtwork(r.primaryArtId);
+ if(!a||!a.file||!a.sourcePage)return '';
+ const license=a.license||a.rights||'', attribution=a.attribution||'';
+ const attr=attribution&&/^CC BY/i.test(license)&&!attribution.toLowerCase().includes('cc by')?`${attribution} · ${license}`:(attribution||license);
+ const alt=`${a.artist||''} — ${a.title||r.label||''}`;
+ const ratio=(Number(a.width)||1)/(Number(a.height)||1),orientation=ratio<0.82?'isPortrait':ratio>1.22?'isLandscape':'isBalanced';
+ const hiW=1800,maxW=1280,loW=768;
+ const src=thumb(a.file,maxW),slo=thumb(a.file,loW),shi=thumb(a.file,hiW);
+ return `<figure class="aoProperArt ${orientation}" data-ao-proper-art="${esc(r.primaryArtId)}" data-proper-path="${esc(path)}"><div class="aoProperArtMedia"><img src="${esc(src)}" srcset="${esc(slo)} ${loW}w, ${esc(src)} ${maxW}w, ${esc(shi)} ${hiW}w" sizes="(max-width:560px) 100vw, 720px" alt="${esc(alt)}" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('figure')?.remove()"></div><figcaption><span><strong>${esc(a.artist||'')}</strong>${a.title?` · ${esc(a.title)}`:''}${attr?`<br><small>${esc(attr)}</small>`:''}</span><a href="${esc(a.sourcePage)}" target="_blank" rel="noopener noreferrer">${lang==='fr'?'Source':'Source'} ↗</a></figcaption></figure>`;
+}
+function homeMarkup(state,lang='en'){
+ const path=art.properPath(state);
+ if(ROWS[path])return renderRow(path,ROWS[path],lang);
+ return priorHomeMarkup(state,lang);
+}
+function effectiveRows(){
+ return Object.assign({},priorEffectiveRows?.()||{},ROWS);
+}
+function effectiveArtworks(){
+ return Object.assign({},priorEffectiveArtworks?.()||{},ARTWORKS);
+}
+function inspect(){
+ const er=effectiveRows(),ea=effectiveArtworks(),vals=Object.values(er).filter(Boolean);
+ const counts={
+  rows:vals.length,
+  green:vals.filter(r=>r.status==='GREEN').length,
+  hold:vals.filter(r=>r.status==='HOLD').length,
+  noArt:vals.filter(r=>r.status==='NO_ART').length,
+  inheritPending:vals.filter(r=>r.status==='INHERIT_PENDING').length,
+  artworks:Object.keys(ea).length,
+  newRows:Object.keys(ROWS).length,
+  newArtworks:Object.keys(ARTWORKS).length
+ };
+ const checks={
+  expectedCounts:counts.rows===85&&counts.green===70&&counts.hold===2&&counts.noArt===13&&counts.inheritPending===0&&counts.artworks===66&&counts.newRows===3&&counts.newArtworks===3,
+  johnBaptist:effectiveRow('Sancti/06-24')?.primaryArtId==='AO131',
+  preciousBlood:effectiveRow('Sancti/07-01')?.primaryArtId==='AO132',
+  michael:effectiveRow('Sancti/09-29')?.primaryArtId==='AO133',
+  priorClosureStillPasses:v426.inspect?.().pass===true
+ };
+ return {version:'principal-feast-audit-v42.7',pass:Object.values(checks).every(Boolean),counts,checks};
+}
+art.homeMarkup=homeMarkup;
+art.effectiveRow=effectiveRow;
+art.effectiveRows=effectiveRows;
+art.effectiveArtwork=effectiveArtwork;
+art.effectiveArtworks=effectiveArtworks;
+art.closureBatch='PM12-PRINCIPAL-FEAST-AUDIT-v42.7';
+globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427=Object.freeze({version:'principal-feast-audit-v42.7',rows:ROWS,artworks:ARTWORKS,inspect});
+try{globalThis.AO_RUNTIME_V8?.controller?.home?.paint?.()}catch{}
+})();
+</script>
+<script id="ao-v428-saint-biography-persistence-meta">
+(()=>{'use strict';
+const inspect=()=>{const prior=globalThis.AO_V427_META?.inspect?.()||{};const closure=globalThis.AO_PHASE1_CLOSURE_V426?.inspect?.()||{};const bio=globalThis.AO_SAINT_BIO_CACHE_V428?.inspect?.()||{};const reader=globalThis.AO_SAINT_DAY_READER;const old=['ao-v3531-saint-reader-js','ao-v3532-saint-ux-js','ao-v3533-saint-simplified-js'];const checks={prior:prior.pass===true,phase1Closure:closure.pass===true,phase1Counts:closure?.counts?.rows===82&&closure?.counts?.green===67&&closure?.counts?.hold===2&&closure?.counts?.noArt===13&&closure?.counts?.inheritPending===0&&closure?.counts?.artworks===63,principalFeasts:(globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427?.inspect?.().pass===true&&globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427?.inspect?.().counts?.rows===85&&globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427?.inspect?.().counts?.green===70&&globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427?.inspect?.().counts?.hold===2&&globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427?.inspect?.().counts?.noArt===13&&globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427?.inspect?.().counts?.inheritPending===0&&globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427?.inspect?.().counts?.artworks===66),reader:reader?.version==='v42.8',legacySaintLayersAbsent:old.every(id=>!document.getElementById(id)),bioCache:bio.version==='saint-biography-cache-v1',saintArtGate:globalThis.AO_SAINT_ART?.version==='SAINT-ART-MANIFEST-v3.3',v25SaintHydration:document.getElementById('ao-v25-navigation-interaction-js')?.textContent?.includes('AO_SAINT_DAY_READER?.enhancePanel')===true};const pass=Object.values(checks).every(Boolean);try{document.documentElement.dataset.aoV428Integrity=pass?'pass':'fail'}catch{}return{version:'42.8',pass,checks,closure,bio,observerCount:[...document.scripts].reduce((n,s)=>n+(s.textContent.match(/new\s+MutationObserver\s*\(/g)||[]).length,0)}};
+globalThis.AO_V428_META=Object.freeze({version:'42.8-saint-biography-persistence',baseline:'v42.7 + v42.6 Phase-1 closure + consolidated Saint reader',inspect});
+const run=()=>{try{inspect()}catch{}};run();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});
+})();
+</script>
+<script id="ao-v428-final-title-authority">
+(()=>{'use strict';const TITLE='Ad Orientem 2.0 · v42.8 Saint Biography Persistence';const set=()=>{try{if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.title=TITLE;if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.documentElement.dataset.aoRelease='42.8';if(!globalThis.AO_RELEASE_AUTHORITY_V4359)document.documentElement.dataset.aoCanonicalHead='v42.8'}catch{}};set();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',set,{once:true});})();
+</script>
+<script id="ao-v429-saint-art-closure-meta">
+(()=>{'use strict';
+globalThis.AO_SAINT_ART_CLOSURE_V1=Object.freeze({
+ version:'SAINT-ART-CLOSURE-v1',
+ frozenScope:Object.freeze({saintBearingDates:252,occurrenceComponents:311,ambiguousCanonicalIds:0}),
+ terminalStateCounts:Object.freeze({approvedResolver:89,certifiedNoArt:222,unresolved:0}),
+ policy:'Only explicitly researched approved rules render artwork. Every formerly provisional occurrence is terminal CERTIFIED_NO_ART; no generic Commons category is promoted to obtain coverage.',
+ registerApi:'AO_SAINT_ART.closureRegister() / AO_SAINT_ART.downloadClosureRegister()'
+});
+})();
+</script>
+<script id="ao-v428-calendar-art-gap-closure-js">
+(()=>{'use strict';
+if(globalThis.AO_CALENDAR_ART_GAP_V428)return;
+const art=globalThis.AO_PHASE1_ART;
+const v427=globalThis.AO_PRINCIPAL_FEAST_AUDIT_V427;
+if(!art||!v427||typeof art.properPath!=='function')return;
+const ROWS=Object.freeze({"Sancti/05-01r":{"properPath":"Sancti/05-01r","label":"Saint Joseph the Worker","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.8 calendar-art gap closure","primaryArtId":"AO134","note":"Exact feast theme and close Gospel fit: Joseph is shown literally at carpentry work with the Child Jesus."},"Sancti/11-02m1":{"properPath":"Sancti/11-02m1","label":"All Souls — First Mass","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.8 exact-path alias closure","primaryArtId":"AO067","note":"Exact-path alias to the already approved All Souls primary."},"Sancti/11-02m2":{"properPath":"Sancti/11-02m2","label":"All Souls — Second Mass","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.8 exact-path alias closure","primaryArtId":"AO067","note":"Exact-path alias to the already approved All Souls primary."},"Sancti/11-02m3":{"properPath":"Sancti/11-02m3","label":"All Souls — Third Mass","status":"GREEN","relationship":"DAY_ART","decisionSource":"v42.8 exact-path alias closure","primaryArtId":"AO067","note":"Exact-path alias to the already approved All Souls primary."},"Sancti/12-25m2":{"properPath":"Sancti/12-25m2","label":"Christmas — Mass at Dawn","status":"GREEN","relationship":"GOSPEL_ART","decisionSource":"v42.8 calendar-art gap closure","primaryArtId":"AO135","note":"Exact Luke 2:15–20 shepherds-at-the-manger subject; distinct from the Midnight Mass Nativity primary."},"Sancti/12-25m3":{"properPath":"Sancti/12-25m3","label":"Christmas — Mass during the Day","status":"GREEN","relationship":"PROPER_THEME","decisionSource":"v42.8 calendar-art gap closure","primaryArtId":"AO136","note":"Incarnation/theological Nativity primary for John 1:1–14; intentionally distinct from the narrative Midnight and Dawn images."}});
+const ARTWORKS=Object.freeze({"AO134":{"artId":"AO134","title":"Saint Joseph the Carpenter","artist":"Georges de La Tour","institution":"Musée du Louvre","date":"ca. 1642–1644","file":"Georges de La Tour. St. Joseph, the Carpenter.JPG","sourcePage":"https://commons.wikimedia.org/wiki/File:Georges_de_La_Tour._St._Joseph,_the_Carpenter.JPG","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2024,"height":2794,"roles":["DAY_ART","GOSPEL_ART"],"qualityGate":"PASS"},"AO135":{"artId":"AO135","title":"The Adoration of the Shepherds","artist":"Georges de La Tour","institution":"Musée du Louvre","date":"ca. 1644","file":"Georges de La Tour - Adoration of the Shepherds - WGA12348.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Georges_de_La_Tour_-_Adoration_of_the_Shepherds_-_WGA12348.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":1038,"height":840,"roles":["GOSPEL_ART","DAY_ART"],"qualityGate":"PASS_MINIMUM","deliveryPolicy":"DISPLAY_READY_NO_ZOOM"},"AO136":{"artId":"AO136","title":"Mystic Nativity","artist":"Sandro Botticelli","institution":"The National Gallery, London","date":"1500","file":"Mystic Nativity by Sandro Botticelli.jpg","sourcePage":"https://commons.wikimedia.org/wiki/File:Mystic_Nativity_by_Sandro_Botticelli.jpg","license":"Public Domain","rights":"PD-Art / PDM","attribution":null,"width":2792,"height":4036,"roles":["DAY_ART","PROPER_THEME"],"qualityGate":"PASS"}});
+const priorHomeMarkup=art.homeMarkup.bind(art);
+const priorEffectiveRow=art.effectiveRow?.bind(art);
+const priorEffectiveRows=art.effectiveRows?.bind(art);
+const priorEffectiveArtwork=art.effectiveArtwork?.bind(art);
+const priorEffectiveArtworks=art.effectiveArtworks?.bind(art);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const thumb=(file,width)=>file?`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(file)}?width=${width}`:'';
+
+function effectiveArtwork(id){
+ return ARTWORKS[id]||priorEffectiveArtwork?.(id)||null;
+}
+function effectiveRow(path){
+ path=String(path||'');
+ return ROWS[path]||priorEffectiveRow?.(path)||null;
+}
