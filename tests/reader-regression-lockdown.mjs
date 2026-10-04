@@ -139,16 +139,32 @@ assert.equal(gradualArchitecture?.mundaStartBlock,"AO.SM.B023");
 assert.equal(gradualArchitecture?.mergeB021B022Allowed,false);
 
 const ashPayload=release.protectedInvariants.find(x=>x.id==="ASH_NATIVE_PAYLOAD");
-assert.equal(ashPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Ash native-preview certification disappeared");
+assert.equal(ashPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE","Ash real-shell production certification disappeared");
 assert.equal(ashPayload?.recoveredGraphRecords,8,"Ash source scope changed");
 assert.equal(ashPayload?.readerCards,5,"Ash reader-card contract changed");
 assert.match(String(ashPayload?.controller??""),/reader-ash\.js/,"Ash controller is not pinned");
+assert.match(String(ashPayload?.productionTest??""),/app-shell-final-e2e\.mjs/,"Ash real-shell test is not pinned");
+assert.equal(ashPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
 
 const palmPayload=release.protectedInvariants.find(x=>x.id==="PALM_NATIVE_PAYLOAD");
-assert.equal(palmPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Palm native-preview certification disappeared");
+assert.equal(palmPayload?.status,"CERTIFIED_NATIVE_PRODUCTION__REAL_SHELL_PHONE","Palm real-shell production certification disappeared");
 assert.equal(palmPayload?.recoveredGraphRecords,12,"Palm source scope changed");
 assert.equal(palmPayload?.readerCards,7,"Palm reader-card contract changed");
 assert.match(String(palmPayload?.controller??""),/reader-palm\.js/,"Palm controller is not pinned");
+assert.match(String(palmPayload?.productionTest??""),/app-shell-final-e2e\.mjs/,"Palm real-shell test is not pinned");
+assert.equal(palmPayload?.productionOwner,"R17_NATIVE_PRODUCTION");
+
+const palmAshShell=release.protectedInvariants.find(x=>x.id==="PALM_ASH_REAL_APP_SHELL_ACCEPTANCE");
+assert.equal(palmAshShell?.status,"CERTIFIED","Palm/Ash real-shell acceptance disappeared");
+assert.deepEqual(palmAshShell?.rites,["PALM","ASH"]);
+assert.equal(palmAshShell?.actualIndexHtml,true);
+assert.equal(palmAshShell?.legacyStartCount,0);
+assert.equal(palmAshShell?.nativeOwner,"R17_NATIVE_PRODUCTION");
+assert.match(String(palmAshShell?.test??""),/app-shell-final-e2e\.mjs/);
+
+const candlemasPayload=release.protectedInvariants.find(x=>x.id==="CANDLEMAS_NATIVE_PAYLOAD");
+assert.equal(candlemasPayload?.status,"CERTIFIED_MODULAR_RUNTIME__PRODUCTION_PREVIEW_PENDING",
+  "Candlemas was silently promoted to Palm/Ash production acceptance level");
 
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Asperges native-preview certification disappeared");
@@ -268,6 +284,8 @@ assert.match(browserEntrySource,/createHostIconResolver/,"browser entry lost hos
 assert.match(browserEntrySource,/R17_ICON_BANK_INCOMPLETE/,"browser entry stopped failing closed on incomplete icon bank");
 assert.doesNotMatch(browserEntrySource,/installFieldCelebrationOverrides|installFieldShellRecovery|resolveFieldReaderUiMode/,"field rescue logic leaked into final browser entry");
 assert.match(browserEntrySource,/R17_NATIVE_PRODUCTION/,"browser entry lost native production ownership");
+assert.match(browserEntrySource,/stampMassReaderUi/,"browser entry lost reader UI ownership stamping");
+assert.match(browserEntrySource,/aoMassReaderUi/,"browser entry lost data-ao-mass-reader-ui observability");
 assert.doesNotMatch(browserEntrySource,/mirrorMount|R17_MIRROR_FALLBACK/,"final browser entry restored silent mirror fallback");
 
 const cueSource=readFileSync(new URL("../src/mass/reader-cue-state.js",import.meta.url),"utf8");
