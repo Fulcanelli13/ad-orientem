@@ -52,6 +52,7 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     hardHome() {
+      try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       const nav = win?.AO_NAV_V362;
       if (typeof nav?.home !== "function") return false;
       nav.home();
@@ -80,6 +81,11 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     async openCalendar() {
+      const modular = win?.AO_CALENDAR_APP_V1;
+      if (typeof modular?.open === "function") {
+        const opened = await Promise.resolve(modular.open());
+        if (opened !== false) return true;
+      }
       return this.openModule(NON_MASS_DONOR_CONTRACT.calendarModuleId);
     },
 
