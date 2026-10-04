@@ -269,6 +269,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       uiOwner: globalThis.AO_R17_MASS_RUNTIME?.uiOwner ?? null,
       fallbackReason: globalThis.AO_R17_MASS_RUNTIME?.previewFallbackReason ?? null,
       shellFocusGuard: shellFocusGuard?.installed === true,
+      appShellBridge: globalThis.AO_APP_SHELL_V1?.installed === true,
     }),
   });
 

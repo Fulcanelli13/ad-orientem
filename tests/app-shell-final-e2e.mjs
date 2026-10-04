@@ -374,6 +374,10 @@ try{
     title:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.textContent?.trim()??"",
     paragraphs:document.querySelectorAll("#ao-r17-native-reader-preview [data-role='paragraphs'] .ao-reader-paragraph").length,
     shellFocusGuard:globalThis.AO_R17_BROWSER_ENTRY?.status?.().shellFocusGuard??false,
+    appShellBridge:globalThis.AO_R17_BROWSER_ENTRY?.status?.().appShellBridge??false,
+    appShell:globalThis.AO_APP_SHELL_V1?.status?.()??null,
+    appShellContract:globalThis.AO_APP_SHELL_V1?.contract?.topLevel??null,
+    appShellDataset:document.documentElement.dataset.aoAppShellBridge??null,
   }));
   assert.equal(ownership.starts,0,"final native entry booted the legacy live renderer");
   assert.equal(ownership.runtime?.readerUiMode,"NATIVE");
@@ -383,6 +387,15 @@ try{
   assert.equal(ownership.massReaderUi,"R17_NATIVE_PRODUCTION");
   assert.equal(ownership.rootConnected,true);
   assert.equal(ownership.shellFocusGuard,true,"production shell focus guard was not installed");
+  assert.equal(ownership.appShellBridge,true,"final app shell bridge was not installed beside Mass");
+  assert.equal(ownership.appShell?.installed,true,"final app shell controller is not ready in actual index.html");
+  assert.equal(ownership.appShell?.passive,true,"phase-1 app shell unexpectedly took visual ownership");
+  assert.equal(ownership.appShellDataset,"ready","actual index.html did not expose ready app-shell bridge state");
+  assert.deepEqual(
+    ownership.appShellContract,
+    ["home","mass","pray","learn","calendar","settings"],
+    "actual index.html app-shell surface contract changed"
+  );
   assert.notEqual(ownership.title,"","real app shell mounted a blank native card title");
   assert.ok(ownership.paragraphs>0,"real app shell mounted an empty native prayer card");
 
