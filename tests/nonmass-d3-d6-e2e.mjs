@@ -75,9 +75,9 @@ try{
   assert.equal(boot.firstFriday,true,"D3 persistence scrub damaged unrelated programme state");
 
   const openedAdoration=await page.evaluate(async()=>{
-    const shell=globalThis.AO_V37_SHELL;
-    if(typeof shell?.openModule!=="function")return false;
-    const result=await shell.openModule("pray.adoration");
+    const modules=globalThis.AO_MODULES;
+    if(typeof modules?.open!=="function")return false;
+    const result=await modules.open("pray.adoration");
     return result!==false && result?.ok!==false;
   });
   assert.equal(openedAdoration,true,"could not open canonical Adoration module");
@@ -115,7 +115,7 @@ try{
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.close?.({silent:true}));
   const openedConfession=await page.evaluate(async()=>{
-    const result=await globalThis.AO_V37_SHELL?.openModule?.("pray.confession");
+    const result=await globalThis.AO_MODULES?.open?.("pray.confession");
     return result!==false && result?.ok!==false;
   });
   assert.equal(openedConfession,true,"could not open canonical Confession module");
