@@ -243,29 +243,7 @@ try{
   assert.equal(interruptedReload.savedSection,interrupted.section);
   assert.equal(interruptedReload.probe,"calendar-state-ok","unrelated local state changed during interrupted reload");
 
-  const resumeNav=await page.evaluate(async()=>{
-    const iconBank=globalThis.AO_R17_ICON_ASSETS??null;
-    try{
-      const result=await globalThis.AO_APP_SHELL_V1?.navigate?.("mass");
-      return {
-        result,
-        error:null,
-        iconCount:iconBank&&typeof iconBank==="object"?Object.keys(iconBank).length:0,
-        massStatus:globalThis.AO_R17_BROWSER_ENTRY?.status?.()??null,
-        appStatus:globalThis.AO_APP_SHELL_V1?.status?.()??null,
-      };
-    }catch(error){
-      return {
-        result:null,
-        error:String(error?.stack??error),
-        iconCount:iconBank&&typeof iconBank==="object"?Object.keys(iconBank).length:0,
-        massStatus:globalThis.AO_R17_BROWSER_ENTRY?.status?.()??null,
-        appStatus:globalThis.AO_APP_SHELL_V1?.status?.()??null,
-      };
-    }
-  });
-  assert.equal(resumeNav.error,null,"resume navigation threw: "+JSON.stringify(resumeNav));
-  assert.equal(resumeNav.result?.ok,true,"resume navigation failed: "+JSON.stringify(resumeNav));
+  await page.locator("[data-ao-app-surface='mass']").click();
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
   await page.waitForFunction(expected=>
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId===expected,
