@@ -1,0 +1,500 @@
+}
+function isDualResponse(text) {
+    const lat = text?.lat || '';
+    const legacyAntiphonal = /(^|\n)\s*[SP]\.\s/m.test(lat) && /(^|\n)\s*M\.\s/m.test(lat);
+    return !!lat && (/[℟℣]/.test(lat) || /\[ROLE=(MINISTERS|SERVER|PEOPLE|CONGREGATION|FAITHFUL)\]/.test(lat) || legacyAntiphonal);
+}
+function eventToBlock(event, step, language, textMode, form, compactContinuation = false) {
+    if (event.kind === 'proper-unavailable')
+        return { kind: 'unavailable', role: event.actor || '', primary: (0, i18n_1.t)(language, 'properUnavailableShort'), secondary: null, primaryLanguage: 'vernacular', dual: false, response: false };
+    const text = event.text;
+    const vern = localized(text, language);
+    const lat = latin(text);
+    const dual = isDualResponse(text);
+    const choir = isChoirProjectedEvent(event, form);
+    const latinFirst = choir || /consecration-(host|chalice)/.test(step.id);
+    const meta = { kind: 'text', role: choir ? 'schola' : '', dual, response: !!step.participationHint, continuation: choir && !!event.continuation, compactContinuation: choir && !!compactContinuation, properSlot: event.properSlot || null, overlapStatus: event.overlapStatus || null, mergedDuplicate: !!event.mergedDuplicate };
+    if (textMode === 'parallel')
+        return { ...meta, primary: lat || vern, secondary: vern && vern !== lat ? vern : null, primaryLanguage: 'lat', dual: true };
+    if (dual)
+        return { ...meta, primary: lat || vern, secondary: vern && vern !== lat ? vern : null, primaryLanguage: 'lat' };
+    if (latinFirst)
+        return { ...meta, primary: lat || vern, secondary: vern && vern !== lat ? vern : null, primaryLanguage: 'lat', dual: false, response: false };
+    return { ...meta, role: '', primary: vern || lat, secondary: lat && lat !== vern ? lat : null, primaryLanguage: 'vernacular', dual: false, response: false };
+}
+function buildLiveMassViewModel(state) {
+    const sequence = buildLiveSequence(state);
+    const index = Math.max(0, Math.min(state.live.stepIndex, sequence.steps.length - 1));
+    const step = sequence.steps[index];
+    const rawEvents = (0, mass_engine_1.projectStep)(step, state.live.followMode).events;
+    const events = dedupeProjectedEvents(rawEvents, state.live.form);
+    const language = state.language;
+    const priorContinuationKeys = new Set();
+    for (let i = 0; i < index; i++) {
+        const priorEvents = dedupeProjectedEvents((0, mass_engine_1.projectStep)(sequence.steps[i], state.live.followMode).events, state.live.form);
+        priorEvents.forEach(event => { if (isChoirProjectedEvent(event, state.live.form) && event.continuation && event.text) priorContinuationKeys.add(projectedTextKey(event.text)); });
+    }
+    return {
+        language, sequence, index, step,
+        title: localized(step.title, language), subtitle: localized(step.subtitle, language),
+        section: step.section, phase: step.phase,
+        progress: sequence.steps.length ? ((index + 1) / sequence.steps.length) * 100 : 0,
+        progressLabel: `${(0, i18n_1.t)(language, 'currentStep')} ${index + 1} ${(0, i18n_1.t)(language, 'of')} ${sequence.steps.length}`,
+        posture: postureLabel(step, language, state), priestPosition: step.priestPosition || null,
+        gestures: globalThis.AO_MASS_GUIDANCE_V4313 ? [] : (step.gestures || []).map(g => /^cross$/i.test(String(g.kind || '')) ? 'cross' : (g.label || g.kind)).filter(Boolean),
+        ceremonialCues: (step.ceremonialCues || []).map(cue => ({ actor: cue.actor || '', actorLabel: localized(cue.actorLabel || { en: cue.actor || '', fr: cue.actor || '' }, language), text: localized(cue.text, language), authority: cue.authority || '' })).filter(cue => cue.text),
+        bell: step.bells?.length ? `${(0, i18n_1.t)(language, 'bell')}${step.bells[0].pattern ? ` · ${step.bells[0].pattern}` : ''}` : null,
+        soundscape: soundscape(step, events, language, state.live.form),
+        textBlocks: events.map(event => eventToBlock(event, step, language, state.live.textMode, state.live.form, !!event.continuation && priorContinuationKeys.has(projectedTextKey(event.text)))),
+        properUnavailable: step.properStatus === 'unavailable' || events.some(event => event.kind === 'proper-unavailable'),
+        participationHint: state.settings.participationMode === 'group' ? (step.participationHint || null) : null,
+        postureSource: state.settings.localPostures?.[step.id] && state.settings.localPostures[step.id] !== 'follow' ? 'saved' : (step.posture?.policy === 'custom' || /LOCAL|CUSTOM/i.test(step.posture?.value || '') ? 'local' : step.posture ? 'fixed' : null),
+        form: state.live.form, followMode: state.live.followMode, textMode: state.live.textMode,
+    };
+}
+function buildMassMap(state) {
+    const sequence = buildLiveSequence(state);
+    const seen = new Set();
+    const out = [];
+    sequence.steps.forEach((step, index) => { const key = `${step.phase}::${step.section}`; if (!seen.has(key)) {
+        seen.add(key);
+        out.push({ label: step.section, index, phase: step.phase });
+    } });
+    return out;
+}
+function recoveryTargets(state) {
+    const seq = buildLiveSequence(state).steps;
+    const first = (predicate) => Math.max(0, seq.findIndex(predicate));
+    return [
+        { key: 'footAltar', index: first(s => /Foot|Preparation/.test(s.section)) },
+        { key: 'readingsGospel', index: first(s => /Epistle|Gospel/.test(s.section) || ['epistle', 'gospel'].includes(s.id)) },
+        { key: 'offertory', index: first(s => s.phase === 'Offertory') },
+        { key: 'canonSilence', index: first(s => /Canon/.test(s.phase) || /Canon|Consecration/.test(s.section)) },
+        { key: 'communion', index: first(s => s.phase === 'Communion') },
+        { key: 'conclusion', index: first(s => s.phase === 'Conclusion') },
+    ];
+}
+
+},25:function(module,exports,require){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require(26), exports);
+__exportStar(require(27), exports);
+__exportStar(require(35), exports);
+__exportStar(require(33), exports);
+__exportStar(require(36), exports);
+
+},26:function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+
+},27:function(module,exports,require){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.buildMassSequence = buildMassSequence;
+exports.properUnavailableText = properUnavailableText;
+const ordinary_sung_json_1 = __importDefault(require(28));
+const ordinary_low_json_1 = __importDefault(require(29));
+const ordinary_1 = require(30);
+const references_1 = require(12);
+const exceptional_days_1 = require(33);
+const sungTemplate = ordinary_sung_json_1.default;
+const lowTemplate = ordinary_low_json_1.default;
+const clone = (value) => JSON.parse(JSON.stringify(value));
+const PROPER_UNAVAILABLE_TITLE = {
+    lat: "Proprium huius diei praesto non est.",
+    en: "The Proper for this day is unavailable.",
+    fr: "Le propre de ce jour n’est pas disponible.",
+};
+const responseDeoGratias = {
+    lat: "℟. Deo grátias.",
+    en: "℟. Thanks be to God.",
+    fr: "℟. Nous rendons grâces à Dieu.",
+};
+const secretConclusion = {
+    lat: "Per ómnia sǽcula sæculórum. ℟. Amen.",
+    en: "World without end. ℟. Amen.",
+    fr: "Dans tous les siècles des siècles. ℟. Ainsi soit-il.",
+};
+function hasText(value) {
+    return !!value && Object.values(value).some(v => typeof v === "string" && v.trim().length > 0);
+}
+function normaliseList(values) {
+    return (values || []).map(ordinary_1.normaliseText3).filter((v) => !!v);
+}
+function gospelEvangelist(proper) {
+    const ref = (0, references_1.parseScriptureReference)(proper?.gospel);
+    const names = {
+        matthew: { lat: 'Matthǽum', en: 'Matthew', fr: 'Matthieu' },
+        mark: { lat: 'Marcum', en: 'Mark', fr: 'Marc' },
+        luke: { lat: 'Lucam', en: 'Luke', fr: 'Luc' },
+        john: { lat: 'Ioánnem', en: 'John', fr: 'Jean' },
+    };
+    return ref ? names[ref.slug] || null : null;
+}
+function gospelAnnouncementText(proper) {
+    const evangelist = gospelEvangelist(proper);
+    const title = evangelist
+        ? {
+            lat: `Sequéntia ✠ sancti Evangélii secúndum ${evangelist.lat}.`,
+            en: `Continuation ✠ of the Holy Gospel according to Saint ${evangelist.en}.`,
+            fr: `Suite ✠ du saint Évangile selon saint ${evangelist.fr}.`,
+        }
+        : {
+            lat: 'Sequéntia ✠ sancti Evangélii.',
+            en: 'Continuation ✠ of the Holy Gospel.',
+            fr: 'Suite ✠ du saint Évangile.',
+        };
+    return {
+        lat: `℣. Dóminus vobíscum.\n℟. Et cum spíritu tuo.\n\n${title.lat}\n\n℟. Glória tibi, Dómine.`,
+        en: `℣. The Lord be with you.\n℟. And with thy spirit.\n\n${title.en}\n\n℟. Glory be to Thee, O Lord.`,
+        fr: `℣. Le Seigneur soit avec vous.\n℟. Et avec votre esprit.\n\n${title.fr}\n\n℟. Gloire à vous, Seigneur.`,
+    };
+}
+function properText(proper, slot, stepId) {
+    if (!proper)
+        return undefined;
+    switch (slot) {
+        case "introit": return (0, ordinary_1.normaliseText3)(proper.introit);
+        case "collects": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.collectDialogue, ...normaliseList(proper.collects)]);
+        case "epistle": return (0, ordinary_1.concatText3)([(0, ordinary_1.normaliseText3)(proper.epistle), responseDeoGratias]);
+        case "preGospelChants": {
+            const chants = (proper.preGospelChants || []).filter(Boolean);
+            if (!chants.length)
+                return (0, ordinary_1.normaliseText3)(proper.gradual);
+            const exact = chants.find(ch => (ch.id || ch.kind || "").toLowerCase() === stepId.toLowerCase());
+            const stepKind = stepId.toLowerCase();
+            const semantic = chants.find(ch => (ch.kind || "").toLowerCase().includes(stepKind));
+            const byIndex = stepKind === "gradual" ? chants[0] : stepKind === "alleluia" ? chants.find(ch => /allel/i.test(ch.kind || "")) || chants[1] : undefined;
+            return (0, ordinary_1.normaliseText3)((exact || semantic || byIndex || chants[chants.length - 1])?.text);
+        }
+        case "sequence": return (0, ordinary_1.normaliseText3)(proper.sequence);
+        case "gospel": return (0, ordinary_1.normaliseText3)(proper.gospel);
+        case "offertory": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.offertoryDialogue, (0, ordinary_1.normaliseText3)(proper.offertory)]);
+        case "secrets": return (0, ordinary_1.concatText3)(normaliseList(proper.secrets));
+        case "preface": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.prefaceDialogue, (0, ordinary_1.normaliseText3)(proper.preface)]);
+        case "communion": return (0, ordinary_1.normaliseText3)(proper.communion);
+        case "postcommunions": return (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.postcommunionDialogue, ...normaliseList(proper.postcommunions)]);
+        case "superPopulum": return (0, ordinary_1.normaliseText3)(proper.superPopulum);
+        default: return undefined;
+    }
+}
+function properChoirText(proper, slot, stepId) {
+    if (!proper)
+        return undefined;
+    if (slot === "preGospelChants") {
+        const chants = (proper.preGospelChants || []);
+        if (!chants.length)
+            return (0, ordinary_1.normaliseText3)(proper.gradual);
+        if (stepId === "gospel-prep")
+            return (0, ordinary_1.normaliseText3)(chants[chants.length - 1]?.text);
+        return properText(proper, slot, stepId);
+    }
+    if (slot === "offertory")
+        return (0, ordinary_1.normaliseText3)(proper.offertory);
+    return properText(proper, slot, stepId);
+}
+function properSlotHasSource(proper, slot) {
+    if (!proper)
+        return false;
+    switch (slot) {
+        case "introit": return hasText((0, ordinary_1.normaliseText3)(proper.introit));
+        case "collects": return normaliseList(proper.collects).length > 0;
+        case "epistle": return hasText((0, ordinary_1.normaliseText3)(proper.epistle));
+        case "preGospelChants": return (proper.preGospelChants || []).some(ch => hasText((0, ordinary_1.normaliseText3)(ch?.text))) || hasText((0, ordinary_1.normaliseText3)(proper.gradual));
+        case "sequence": return hasText((0, ordinary_1.normaliseText3)(proper.sequence));
+        case "gospel": return hasText((0, ordinary_1.normaliseText3)(proper.gospel));
+        case "offertory": return hasText((0, ordinary_1.normaliseText3)(proper.offertory));
+        case "secrets": return normaliseList(proper.secrets).length > 0;
+        case "preface": return hasText((0, ordinary_1.normaliseText3)(proper.preface));
+        case "communion": return hasText((0, ordinary_1.normaliseText3)(proper.communion));
+        case "postcommunions": return normaliseList(proper.postcommunions).length > 0;
+        case "superPopulum": return hasText((0, ordinary_1.normaliseText3)(proper.superPopulum));
+        default: return false;
+    }
+}
+function attachProper(step, proper, properAvailable) {
+    const out = clone(step);
+    if (out.id === "gospel-announcement") {
+        out.text = gospelAnnouncementText(proper);
+        if (Array.isArray(out.gestures) && out.gestures[0]) {
+            out.gestures[0].anchorLat = 'Sequéntia ✠ sancti Evangélii';
+            out.gestures[0].anchorEng = 'Continuation ✠ of the Holy Gospel';
+        }
+    }
+    if (out.properSlot) {
+        const sourceReady = properAvailable && properSlotHasSource(proper, out.properSlot);
+        const resolved = sourceReady ? properText(proper, out.properSlot, out.id) : undefined;
+        out.properStatus = hasText(resolved) ? "ready" : "unavailable";
+        if (resolved)
+            out.text = resolved;
+        else
+            delete out.text;
+        if (out.id === "secret")
+            out.audibleFragment = secretConclusion;
+    }
+    if (out.concurrentProperChoir) {
+        const choirSourceReady = properAvailable && properSlotHasSource(proper, out.concurrentProperChoir);
+        const choirText = choirSourceReady ? properChoirText(proper, out.concurrentProperChoir, out.id) : undefined;
+        const dynamicEvent = {
+            id: `${out.id}-${out.concurrentProperChoir}-choir`,
+            role: "choir",
+            properSlot: out.concurrentProperChoir,
+            properStatus: hasText(choirText) ? "ready" : "unavailable",
+            ...(choirText ? { text: choirText } : {}),
+            continuation: true,
+        };
+        out.choir = [...(out.choir || []), dynamicEvent];
+    }
+    delete out.concurrentProperChoir;
+    return out;
+}
+function makeSecondConfiteor(joinConfiteor) {
+    return {
+        id: "second-confiteor",
+        phase: "Communion",
+        section: "Holy Communion",
+        title: { en: "Second Confiteor", fr: "Second Confiteor", lat: "Confíteor" },
+        subtitle: {
+            en: "Older custom before the Communion of the faithful",
+            fr: "Ancien usage avant la Communion des fidèles",
+        },
+        actor: joinConfiteor ? "mixed" : "ministers",
+        priestPosition: "Foot/centre of altar",
+        audibility: "audible",
+        privateAction: false,
+        posture: { value: "KNEEL", policy: "custom", source: "local/custom" },
+        gestures: [
+            { kind: "action", status: "custom", label: "Strike the breast ×3 at mea culpa", anchorLat: "mea culpa, mea culpa, mea máxima culpa", before: true },
+            { kind: "cross", status: "custom", label: "Make the sign of the cross", anchorLat: "Indulgéntiam", before: true },
+        ],
+        text: (0, ordinary_1.concatText3)([ordinary_1.fixedOrdinary.serverConfiteor, ordinary_1.fixedOrdinary.misereaturVestri, ordinary_1.fixedOrdinary.indulgentiam]),
+        customNote: "The 1962 Communion rubric omits this Confiteor and absolution within Mass. It is retained only as an explicitly enabled older custom.",
+        variantNoteId: "older-custom-second-confiteor",
+    };
+}
+function makeCommunionWarningBell() {
+    return {
+        id: 'communion-warning-bell',
+        phase: 'Communion',
+        section: 'Holy Communion',
+        title: { lat: 'Signum ante Communionem', en: 'Warning bell before Communion', fr: 'Clochette avant la Communion' },
+        subtitle: { en: 'When the faithful are to communicate', fr: 'Lorsque les fidèles vont communier' },
+        actor: 'server',
+        priestPosition: 'Altar · before the Communion of the faithful',
+        audibility: 'audible',
+        privateAction: false,
+        posture: { value: 'CUSTOM', policy: 'local', source: 'lay posture is local/customary' },
+        bells: [{ kind: 'bell', label: 'Communion warning bell', pattern: 'prescribed · shortly before faithful Communion', legalStatus: 'PRESCRIBED', authority: 'RUBRIC_1962' }],
+        explanation: 'If the faithful are to communicate, the 1962 Ritus prescribes a warning with the bell shortly beforehand.',
+        customNote: 'The warning itself is prescribed; local execution may vary.',
+        concurrentProperChoir: 'communion'
+    };
+}
+function filterOrdinarySteps(steps, options, proper) {
+    let out = steps;
+    if (options.form === 'sung') {
+        out = out.map(step => {
+            if (!['priest-communion', 'ecce', 'domine-non-sum-dignus', 'communion-faithful'].includes(step.id)) return step;
+            const next = { ...step };
+            delete next.concurrentProperChoir;
+            if (step.id === 'priest-communion' || (options.faithfulCommunion !== false && ['ecce', 'domine-non-sum-dignus', 'communion-faithful'].includes(step.id))) {
+                next.concurrentProperChoir = 'communion';
+            }
+            return next;
+        });
+    }
+    if (proper?.hasGloria === false)
+        out = out.filter(step => step.id !== "gloria");
+    if (proper?.hasCredo === false)
+        out = out.filter(step => step.id !== "credo");
+    if (options.form === "sung" && options.incenseSung === false) {
+        out = out.filter(step => step.id !== "incense-entrance" && step.id !== "incense-off");
+    }
+    if (options.omitJudica || proper?.isRequiem)
+        out = out.filter(step => step.id !== "judica");
+    if (options.faithfulCommunion === false) {
+        out = out.filter(step => !["second-confiteor", "ecce", "domine-non-sum-dignus", "communion-faithful"].includes(step.id));
+    }
+    else if (options.secondConfiteor) {
+        const idx = out.findIndex(step => step.id === "ecce");
+        if (idx >= 0)
+            out = [...out.slice(0, idx), makeSecondConfiteor(!!options.joinConfiteor), ...out.slice(idx)];
+    }
+    if (options.faithfulCommunion !== false) {
+        const idx = out.findIndex(step => step.id === "ecce");
+        if (idx >= 0) out = [...out.slice(0, idx), makeCommunionWarningBell(), ...out.slice(idx)];
+    }
+    if (proper?.omitLastGospel || proper?.followedByLiturgicalAction) {
+        out = out.filter(step => step.id !== "last-gospel-announcement" && step.id !== "last-gospel");
+    }
+    return out;
+}
+
+const AO_GLORIA_INTONATION = {
+    lat: 'Glória in excélsis Deo.',
+    en: 'Glory to God in the highest.',
+    fr: 'Gloire à Dieu au plus haut des cieux.'
+};
+const AO_CREDO_INTONATION = {
+    lat: 'Credo in unum Deum.',
+    en: 'I believe in one God.',
+    fr: 'Je crois en un seul Dieu.'
+};
+const AO_CANON_CONCLUSION = {
+    lat: '℣. Per ómnia sǽcula sæculórum.\n℟. Amen.',
+    en: '℣. World without end.\n℟. Amen.',
+    fr: '℣. Dans tous les siècles des siècles.\n℟. Ainsi soit-il.'
+};
+const AO_NOBIS_AUDIBLE_WORDS = {
+    lat: 'Nobis quoque peccatóribus',
+    en: 'To us also, Thy sinful servants',
+    fr: 'À nous aussi, pécheurs'
+};
+const AO_PRIEST_DNSD_AUDIBLE = {
+    lat: 'Dómine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanábitur ánima mea. (3×)',
+    en: 'Lord, I am not worthy that Thou shouldst enter under my roof; but only say the word and my soul shall be healed. (3×)',
+    fr: 'Seigneur, je ne suis pas digne que vous entriez sous mon toit ; mais dites seulement une parole et mon âme sera guérie. (3×)'
+};
+function paterPublicPortion(text) {
+    if (!text) return text;
+    const out = clone(text);
+    if (out.lat) out.lat = out.lat.replace(/\nAmen\.?\s*$/i,'').trimEnd();
+    if (out.en) out.en = out.en.replace(/\nAmen\.?\s*$/i,'').trimEnd();
+    if (out.fr) out.fr = out.fr.replace(/\n(?:Ainsi soit-il|Amen)\.?\s*$/i,'').trimEnd();
+    return out;
+}
+function makeSequenceStep(form) {
+    const sung = form === 'sung';
+    return {
+        id: 'sequence',
+        phase: 'Mass of the Catechumens',
+        section: 'Lessons & Chants',
+        title: { lat:'Sequéntia', en:'Sequence', fr:'Séquence' },
+        subtitle: { en:'Proper sequence where prescribed', fr:'Séquence propre lorsqu’elle est prescrite' },
+        actor: sung ? 'mixed' : 'celebrant',
+        priestPosition: 'Epistle side / altar',
+        audibility: sung ? 'choir' : 'audible',
+        privateAction: sung,
+        posture: { value:'CUSTOM', policy:'local', source:'local' },
+        properSlot: 'sequence',
+        ...(sung ? { concurrentProperChoir:'sequence' } : {}),
+        explanation: sung
+            ? 'The celebrant privately reads the Sequence while the schola sings it. In the 1962 order it precedes the final Alleluia where Alleluia is used, or follows the Tract.'
+            : 'The celebrant reads the Sequence where the 1962 Proper prescribes it.'
+    };
+}
+function insertSequenceStep(steps, options, proper) {
+    if (options.votiveMass === true) return steps;
+    if (!properSlotHasSource(proper, 'sequence')) return steps;
+    if (steps.some(step => step.id === 'sequence')) return steps;
+    const chants = (proper?.preGospelChants || []).filter(Boolean);
+    const hasAlleluia = chants.some(ch => /allel/i.test(String(ch?.kind || ch?.id || '')));
+    const alleluiaIndex = steps.findIndex(step => step.id === 'alleluia');
+    const gospelPrepIndex = steps.findIndex(step => /^gospel-prep/.test(step.id));
+    let insertAt = gospelPrepIndex >= 0 ? gospelPrepIndex : steps.length;
+    if (alleluiaIndex >= 0) insertAt = hasAlleluia ? alleluiaIndex : alleluiaIndex + 1;
+    const seq = makeSequenceStep(options.form);
+    return [...steps.slice(0, insertAt), seq, ...steps.slice(insertAt)];
+}
+function genericEntranceAllowed(options) {
+    const profile = String(options.exceptionalProfile || '');
+    return !['palm-sunday-1962','candlemas-1962','ash-wednesday-1962','easter-vigil-1962','good-friday-1962'].includes(profile);
+}
+function makeEntranceProcessionStep(options, proper, properAvailable) {
+    const sung = options.form === 'sung';
+    const choirText = sung && properAvailable && properSlotHasSource(proper,'introit') ? properChoirText(proper,'introit','entrance-procession') : undefined;
+    const choir = sung ? [{
+        id:'entrance-introit-choir', role:'choir', properSlot:'introit',
+        properStatus:hasText(choirText)?'ready':'unavailable', continuation:true,
+        ...(choirText ? {text:choirText} : {})
+    }] : [];
+    return {
+        id:'entrance-procession', phase:'Mass of the Catechumens', section:'Entrance',
+        title:{lat:'Introitus',en:'Entrance Procession',fr:'Procession d’entrée'},
+        subtitle:sung
+            ? {en:'The Introit begins as the celebrant approaches the altar',fr:'L’Introït commence tandis que le célébrant s’approche de l’autel'}
+            : {en:'The celebrant and server approach the altar',fr:'Le célébrant et le servant s’approchent de l’autel'},
+        actor:sung?'mixed':'celebrant', priestPosition:'Procession → foot of altar',
+        audibility:sung?'choir':'quiet', privateAction:!sung,
+        posture:{value:'CUSTOM',policy:'local',source:'local'}, choir,
+        explanation:sung
+            ? 'The schola begins the Introit while the celebrant approaches the altar. The procession and chant therefore precede and overlap the transition into the Prayers at the Foot.'
+            : 'The celebrant and server enter and approach the foot of the altar before the preparatory prayers begin.',
+        ceremonialCues:[ceremonialCue('SERVERS',
+            sung ? 'The servers accompany the entrance procession and take their places for the Prayers at the Foot.' : 'The server accompanies the celebrant to the foot of the altar.',
+            sung ? 'Les servants accompagnent la procession d’entrée et prennent place pour les prières au bas de l’autel.' : 'Le servant accompagne le célébrant au bas de l’autel.',
+            'CEREMONIAL_CONTEXT')]
+    };
+}
+function insertEntranceProcession(steps, options, proper, properAvailable) {
+    if (!genericEntranceAllowed(options) || steps.some(step => step.id === 'entrance-procession')) return steps;
+    return [makeEntranceProcessionStep(options, proper, properAvailable), ...steps];
+}
+function ensureChoirDuplicate(next, id) {
+    if (!next.text || (next.choir || []).some(ev => ev?.id === `${id}-choir` || ev?.properSlot === next.properSlot)) return next;
+    return appendChoir(next, {id:`${id}-choir`, role:'choir', text:next.text, properSlot:next.properSlot, properStatus:next.properStatus, timing:'parallel'});
+}
+function applyAudibilityAndEarlyCeremonialRepair(steps, options) {
+    const sung = options.form === 'sung';
+    const incensed = sung && options.incenseSung !== false;
+    return steps.map(step => {
+        let next = { ...step };
+        const cues = [...(next.ceremonialCues || [])];
+        const add = (actor,en,fr,authority='CEREMONIAL_CONTEXT') => cues.push(ceremonialCue(actor,en,fr,authority));
+        if (!sung && ['sign-cross','judica','adjutorium','priest-confiteor','ministers-confiteor','misereatur-vestri','indulgentiam-absolution','foot-versicles'].includes(step.id)) {
+            next.audibility = 'audible';
+            next.privateAction = false;
+            next.voiceAuthority = 'RG60_511_CLEAR_VOICE';
+            next.voiceNote = 'Low Mass: opening prayers through Oremus inclusive are said in a clear voice; Aufer a nobis and Oramus te remain secret.';
+        }
+        if (sung) {
+            switch (step.id) {
+                case 'introit':
+                    next.privateAction = true;
+                    next.audibility = 'mixed';
+                    add('PRIEST','The celebrant reads the Introit privately at the Epistle side while the schola’s Introit is the audible track.','Le célébrant lit l’Introït à voix basse au côté de l’Épître tandis que l’Introït de la schola constitue la piste audible.','CEREMONIAL_1962');
+                    break;
+                case 'kyrie':
+                    next.privateAction = true;
+                    next.audibility = 'choir';
+                    next.priestPosition = 'Centre · private Kyrie while the schola sings';
+                    add('PRIEST','The celebrant recites the Kyrie privately with the ministers; the schola’s Kyrie may continue after he has finished.','Le célébrant récite le Kyrie à voix basse avec les ministres ; le Kyrie de la schola peut continuer après qu’il a terminé.','CEREMONIAL_1962');
+                    break;
+                case 'gloria':
+                    next.privateAction = true;
+                    next.audibility = 'mixed';
+                    next.audibleFragment = AO_GLORIA_INTONATION;
+                    next.priestPosition = 'Centre for intonation → may sit while choir continues → returns to altar before conclusion';
+                    add('PRIEST','The celebrant sings the intonation, privately recites the remainder, may sit while the choir continues, and returns to the altar for the end of the Gloria.','Le célébrant chante l’intonation, récite le reste à voix basse, peut s’asseoir pendant que le chœur continue, puis revient à l’autel pour la fin du Gloria.','CEREMONIAL_1962');
+                    break;
+                case 'gradual':
+                case 'alleluia':
+                case 'sequence':
+                    next = ensureChoirDuplicate(next, step.id);
+                    next.actor = 'mixed';
+                    next.privateAction = true;
+                    next.audibility = 'choir';
+                    next.priestPosition = 'Epistle side / altar · private reading while the schola sings';
+                    add('PRIEST','The celebrant privately reads this Proper chant while the schola performs it independently; a long chant may continue after his reading is complete.','Le célébrant lit ce chant propre à voix basse tandis que la schola l’exécute indépendamment ; un chant long peut continuer après la fin de sa lecture.','CEREMONIAL_1962');
+                    break;
+                case 'gospel-prep':
+                    add('PRIEST','The celebrant says Munda cor meum while the final interlection chant may still be ending.','Le célébrant récite Munda cor meum tandis que le dernier chant entre les lectures peut encore s’achever.','CEREMONIAL_1962');
+                    if (incensed) add('THURIFER','Incense is imposed and blessed for the Gospel; the thurifer assists as the Gospel is prepared.','L’encens est imposé et béni pour l’Évangile ; le thuriféraire assiste à sa préparation.','CEREMONIAL_1962');
