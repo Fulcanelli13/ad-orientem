@@ -344,14 +344,14 @@ async function exerciseRealShellGoodFriday(browser){
       readerUiMode:globalThis.AO_R17_MASS_RUNTIME?.readerUiMode??null,
       uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
       marker:document.documentElement.dataset.aoMassReaderUi??null,
-      model:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model??"MISSING",
+      modelIsNull:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model===null,
       cardOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17CardOwner??null,
     }));
     assert.equal(ownership.starts,0,"Good Friday started legacy renderer");
     assert.equal(ownership.readerUiMode,"NATIVE");
     assert.equal(ownership.uiOwner,"R17_NATIVE_PRODUCTION");
     assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION");
-    assert.equal(ownership.model,null,"Good Friday fabricated an Ordinary Mass reader model");
+    assert.equal(ownership.modelIsNull,true,"Good Friday fabricated an Ordinary Mass reader model");
     assert.equal(ownership.cardOwner,"R28_GOOD_FRIDAY_DISTINCT_RITE");
 
     await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToGoodFridayRecord("GF-PASS-320"));
