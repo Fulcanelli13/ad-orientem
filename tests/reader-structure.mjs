@@ -107,10 +107,14 @@ const requiemPrepared={...missalPrepared,session:{...missalPrepared.session,plan
 assert.equal(structureSupport(requiemPrepared).supported,true,"certified plan-owned Requiem overlay remained structurally blocked");
 const requiemAbsPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:[],followingGraphs:["REQUIEM_ABSOLUTION"],overlayGraphs:["REQUIEM"]}}};
 assert.equal(structureSupport(requiemAbsPrepared).supported,true,"certified Requiem Absolution following action remained structurally blocked");
+const corpusPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:[],followingGraphs:["CORPUS_CHRISTI_PROCESSION"],overlayGraphs:[]}}};
+assert.equal(structureSupport(corpusPrepared).supported,true,"certified Corpus Christi following action remained structurally blocked");
+const holyThursdayPrepared={...missalPrepared,session:{...missalPrepared.session,plan:{kind:"MASS",precedingGraphs:[],followingGraphs:["HOLY_THURSDAY_POST"],overlayGraphs:[]}}};
+assert.equal(structureSupport(holyThursdayPrepared).supported,true,"certified Holy Thursday following action remained structurally blocked");
 
 for(const [label,plan] of [
-  ["preceding",{kind:"MASS",precedingGraphs:["ROGATIONS"],followingGraphs:[],overlayGraphs:[]}],
-  ["following",{kind:"MASS",precedingGraphs:[],followingGraphs:["CORPUS_CHRISTI_PROCESSION"],overlayGraphs:[]}],
+  ["preceding",{kind:"MASS",precedingGraphs:["UNSUPPORTED_PRELUDE"],followingGraphs:[],overlayGraphs:[]}],
+  ["following",{kind:"MASS",precedingGraphs:[],followingGraphs:["UNSUPPORTED_FOLLOWING_ACTION"],overlayGraphs:[]}],
   ["overlay",{kind:"MASS",precedingGraphs:[],followingGraphs:[],overlayGraphs:["NUPTIAL"]}],
   ["distinct",{kind:"DISTINCT_RITE",precedingGraphs:[],followingGraphs:[],overlayGraphs:[]}],
 ]){
