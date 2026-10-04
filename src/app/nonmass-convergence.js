@@ -513,6 +513,8 @@ function patchConfession(win) {
   if (!root?.classList.contains("open") || state?.view !== "confession") return;
   const stage = Number(state.confStep || 0);
   const phase = confessionPhaseForStage(stage);
+  const stageKey = String(stage);
+  if (root.dataset.aoD5PatchedStage === stageKey && root.querySelector("[data-ao-d5-phase-rail]")) return;
   root.dataset.aoD5Integrated = "1";
   root.querySelectorAll(".pbProgress").forEach(function (node) { node.hidden = true; node.setAttribute("aria-hidden", "true"); });
   root.querySelectorAll(".pbFlowCard .pbKicker").forEach(function (node) { node.hidden = true; });
@@ -599,6 +601,7 @@ function patchConfession(win) {
       .replace(/by kind and approximate number/gi, "by kind and number")
       .replace(/selon leur espèce et leur nombre approximatif/gi, "selon leur espèce et leur nombre");
   });
+  root.dataset.aoD5PatchedStage = stageKey;
 }
 
 function benedictionPhase(stage) {
@@ -613,6 +616,8 @@ function patchBenediction(win) {
   const state = oldPrayerState(win);
   if (!root?.classList.contains("open") || state?.view !== "benediction") return;
   const stage = Number(state.benedictionStep || 0);
+  const stageKey = String(stage);
+  if (root.dataset.aoD4PatchedStage === stageKey && root.querySelector("[data-ao-d4-stage-rail]")) return;
   root.dataset.aoD4Integrated = "1";
   root.querySelectorAll(".pbProgress").forEach(function (node) { node.hidden = true; node.setAttribute("aria-hidden", "true"); });
   const existingRail = root.querySelector("[data-ao-d4-stage-rail]");
@@ -648,6 +653,7 @@ function patchBenediction(win) {
   try {
     win.sessionStorage?.setItem?.(ADORATION_SESSION_KEY, stage >= 6 ? "reserved" : "exposed");
   } catch {}
+  root.dataset.aoD4PatchedStage = stageKey;
 }
 
 function sourceFamilyRows(win) {
