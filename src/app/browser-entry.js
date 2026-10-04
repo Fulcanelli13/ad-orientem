@@ -1,3 +1,4 @@
+import "../calendar/browser-entry.js";
 import {
   APP_SURFACES,
   NON_MASS_DONOR_CONTRACT,
@@ -209,6 +210,13 @@ export function installAppShellBridge({
     getActive() {
       return state.controller?.getActive?.() ?? null;
     },
+    syncSurface(surface) {
+      if (!state.controller) return false;
+      const normalized = normalizeAppSurface(surface);
+      if (!normalized) return false;
+      state.controller.setActive?.(normalized);
+      return true;
+    },
     status() {
       const nav = win?.document?.getElementById?.("ao-global-ribbon");
       return Object.freeze({
@@ -229,6 +237,8 @@ export function installAppShellBridge({
           win?.AO_SETTINGS_V4356
         ),
         prayerOwner: Boolean(win?.AO_PRAY_V435930),
+        calendarOwner: win?.AO_CALENDAR_APP_V1?.status?.()?.installed === true,
+        calendarOpen: win?.AO_CALENDAR_APP_V1?.status?.()?.open === true,
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
         legacyRibbonPresent: Boolean(win?.AO_GLOBAL_RIBBON_V4323),
       });
