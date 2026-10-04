@@ -59,7 +59,7 @@
         "tests/app-shell-visible-owner-e2e.mjs",
         "tests/app-shell-final-e2e.mjs"
       ],
-      "detail": "AO_APP_SHELL_V1 owns capture-phase clicks for the existing visible six-destination ribbon, synchronizes aria-current/active state, and suppresses the historical downstream ribbon listener on actual index.html."
+      "detail": "AO_APP_SHELL_V1 adopts the existing six-destination ribbon by replacing donor data-ao-ribbon click hooks with modular data-ao-app-surface hooks, projects active/aria-current state, and re-adopts after donor re-renders so the historical listener is inert for top-level navigation."
     },
     {
       "id": "CROSS_DOMAIN_PHONE_JOURNEY",
