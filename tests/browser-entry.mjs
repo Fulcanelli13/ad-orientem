@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import {
   mapLegacyFollowMode,
   resolveFieldPresentationMode,
+  isCertifiedOct4RosaryField,
+  resolveFieldReaderUiMode,
   mapInsertedRites,
   deriveHostOptions,
   mountR17Preview,
@@ -18,6 +20,13 @@ assert.equal(resolveFieldPresentationMode({
 assert.equal(resolveFieldPresentationMode({
   date:"2026-10-05",celebrationId:"holy_rosary",requestedMode:"simple",
 }),"SIMPLE");
+const fieldPrepared={session:{resolvedMass:{
+  date:"2026-10-04",
+  actualCelebration:{id:"holy_rosary",type:"VOTIVE"},
+}}};
+assert.equal(isCertifiedOct4RosaryField(fieldPrepared),true);
+assert.equal(resolveFieldReaderUiMode(fieldPrepared,"LEGACY"),"PREVIEW");
+assert.equal(resolveFieldReaderUiMode({session:{resolvedMass:{date:"2026-10-05",actualCelebration:{id:"holy_rosary"}}}},"LEGACY"),"LEGACY");
 
 const rites = mapInsertedRites([
   "asperges",
@@ -94,3 +103,17 @@ const missingBank=await mountR17Preview({
 });
 assert.equal(missingBank.uiOwner,"R17_MIRROR_FALLBACK");
 assert.match(missingBank.fallbackReason,/R17_ICON_BANK_INCOMPLETE/);
+
+let fieldMirrorCalls=0;
+const fieldMissingBank=await mountR17Preview({
+  doc:{},
+  prepared:fieldPrepared,
+  iconAssets:{},
+  nativeMount:({iconResolver})=>({kind:"native-field",missingIcon:iconResolver("stand")}),
+  mirrorMount:()=>{fieldMirrorCalls+=1;return {kind:"mirror"}},
+});
+assert.equal(fieldMissingBank.uiOwner,"R17_NATIVE_CARDS_OVER_LEGACY_STATE");
+assert.equal(fieldMissingBank.preview.kind,"native-field");
+assert.equal(fieldMissingBank.preview.missingIcon,null);
+assert.equal(fieldMissingBank.fallbackReason,null);
+assert.equal(fieldMirrorCalls,0);
