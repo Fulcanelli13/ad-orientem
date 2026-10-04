@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -51,13 +51,14 @@
     },
     {
       "id": "VISIBLE_SHELL_OWNERSHIP",
-      "classification": "MISSING_INTEGRATION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "src/app/browser-entry.js",
+        "tests/app-shell-final-e2e.mjs",
         "docs/APP-CONVERGENCE.md"
       ],
-      "detail": "AO_APP_SHELL_V1 remains passive; historical global navigation still owns the visible shell."
+      "detail": "AO_APP_SHELL_V1 adopts the existing six-destination ribbon as its visible interaction surface, rewrites donor click attributes to modular ownership, and keeps the historical ribbon handler inert for top-level navigation."
     },
     {
       "id": "CROSS_DOMAIN_PHONE_JOURNEY",
@@ -108,7 +109,6 @@
     }
   ],
   "openBlockers": [
-    "VISIBLE_SHELL_OWNERSHIP",
     "CROSS_DOMAIN_PHONE_JOURNEY",
     "EMERGENCY_RUNTIME_RETIREMENT",
     "DUPLICATE_BROWSER_ENTRY_HYGIENE",
