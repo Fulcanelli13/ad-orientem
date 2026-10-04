@@ -1,0 +1,131 @@
+{
+  "schema": "ao-app-release-gate-v1",
+  "version": "1.0.0",
+  "status": "CONVERGENCE_IN_PROGRESS",
+  "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
+  "massSubsystem": {
+    "status": "CERTIFIED",
+    "authority": "data/presentation/reader-release-gate.v1.json",
+    "requiredReaderStatus": "FINAL_NATIVE_READY",
+    "productionDefault": "R17_NATIVE",
+    "legacyPolicy": "EXPLICIT_ROLLBACK_ONLY"
+  },
+  "topLevelContract": [
+    "home",
+    "mass",
+    "pray",
+    "learn",
+    "calendar",
+    "settings"
+  ],
+  "requiredPhoneJourney": "cold launch -> Home -> Calendar -> Mass selection -> native LIVE -> leave/resume -> PRAY -> Home -> Settings",
+  "findings": [
+    {
+      "id": "MASS_SUBSYSTEM_CERTIFIED",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "evidence": [
+        "data/presentation/reader-release-gate.v1.json"
+      ],
+      "detail": "R17 native Mass is a certified subsystem and is not an app-convergence blocker."
+    },
+    {
+      "id": "SPECIAL_STRUCTURES_REAL_SHELL",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "evidence": [
+        "tests/app-shell-final-e2e.mjs",
+        "tests/app-shell-nuptial-e2e.mjs",
+        "tests/app-shell-easter-vigil-e2e.mjs"
+      ],
+      "detail": "The complete certified special-structure scope has actual-index phone-Chromium evidence."
+    },
+    {
+      "id": "ARIA_FOCUS_GUARD",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "evidence": [
+        "tests/app-shell-final-e2e.mjs"
+      ],
+      "detail": "The Prayer Book aria-hidden/focused-descendant regression is explicitly exercised without Chromium blocked-aria-hidden warnings."
+    },
+    {
+      "id": "VISIBLE_SHELL_OWNERSHIP",
+      "classification": "MISSING_INTEGRATION",
+      "status": "OPEN",
+      "evidence": [
+        "src/app/browser-entry.js",
+        "docs/APP-CONVERGENCE.md"
+      ],
+      "detail": "AO_APP_SHELL_V1 remains passive; historical global navigation still owns the visible shell."
+    },
+    {
+      "id": "CROSS_DOMAIN_PHONE_JOURNEY",
+      "classification": "MISSING_INTEGRATION",
+      "status": "OPEN",
+      "evidence": [
+        "docs/APP-CONVERGENCE.md",
+        ".github/workflows/app-convergence.yml"
+      ],
+      "detail": "The full cold-launch Home/Calendar/Mass/leave-resume/PRAY/Home/Settings journey is not yet automated end to end."
+    },
+    {
+      "id": "EMERGENCY_RUNTIME_RETIREMENT",
+      "classification": "STALE_SURFACE",
+      "status": "OPEN",
+      "evidence": [
+        "docs/APP-CONVERGENCE.md"
+      ],
+      "detail": "The embedded v43.33 emergency runtime remains a cleanup debt until required live-session locks are owned by final modular shell/settings code."
+    },
+    {
+      "id": "DUPLICATE_BROWSER_ENTRY_HYGIENE",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "evidence": [
+        "docs/APP-CONVERGENCE.md"
+      ],
+      "detail": "Production index.html is documented as containing a duplicated Mass browser-entry include; it must be removed and regression-locked."
+    },
+    {
+      "id": "NON_MASS_DONOR_EXTRACTION",
+      "classification": "MISSING_INTEGRATION",
+      "status": "OPEN",
+      "evidence": [
+        "docs/APP-CONVERGENCE.md",
+        "src/app/host-adapter.js"
+      ],
+      "detail": "Home, Calendar, PRAY, Learn and Settings still depend on monolith donor owners rather than final modular visible owners."
+    },
+    {
+      "id": "PERSISTENCE_STATE_CONTAMINATION",
+      "classification": "MISSING_INTEGRATION",
+      "status": "OPEN",
+      "evidence": [
+        "docs/APP-CONVERGENCE.md"
+      ],
+      "detail": "App-level certification still needs explicit fresh-state, interrupted-Mass, reload/resume and cross-module state-contamination coverage."
+    }
+  ],
+  "openBlockers": [
+    "VISIBLE_SHELL_OWNERSHIP",
+    "CROSS_DOMAIN_PHONE_JOURNEY",
+    "EMERGENCY_RUNTIME_RETIREMENT",
+    "DUPLICATE_BROWSER_ENTRY_HYGIENE",
+    "NON_MASS_DONOR_EXTRACTION",
+    "PERSISTENCE_STATE_CONTAMINATION"
+  ],
+  "regressionGates": {
+    "static": [
+      "tests/app-release-gate.mjs",
+      "tests/app-shell-contract.mjs",
+      "tests/production-tree-hygiene.mjs"
+    ],
+    "phone": [
+      "tests/reader-phone-acceptance.mjs",
+      "tests/app-shell-final-e2e.mjs",
+      "tests/app-shell-nuptial-e2e.mjs",
+      "tests/app-shell-easter-vigil-e2e.mjs"
+    ]
+  }
+}

@@ -47,6 +47,21 @@ The existing real-shell browser tests prove native Mass ownership and phone geom
 
 The app-convergence workflow therefore owns a stronger regression gate from Phase 2 onward: app-shell changes, production `index.html`, the browser entry, app-shell tests and package-script changes must run both the app-shell contract/tree-hygiene checks and the real phone/touch suite. This closes the previous gap where a pure `src/app/**` change could pass only the unit contract.
 
+## Phase 2.1: independent application release gate
+
+`data/presentation/app-release-gate.v1.json` now separates whole-application readiness from Mass-reader certification. The reader gate remains authoritative for the Mass subsystem; the application gate is authoritative for shell, non-Mass integration and cross-domain release readiness.
+
+The first gate snapshot records three closed app-level findings: certified Mass subsystem ownership, complete real-shell special-structure evidence, and the Prayer Book focus/aria guard. It keeps the following work explicitly open rather than allowing reader certification to imply application convergence:
+
+- visible modular shell ownership;
+- the full cross-domain phone journey;
+- retirement/decomposition of the emergency runtime;
+- removal and lockout of the duplicated browser-entry include;
+- non-Mass donor extraction/parity;
+- persistence/state-contamination acceptance across reload, interrupted Mass and module switching.
+
+The app gate uses only the regression classifications `PASS`, `REGRESSION`, `STALE_SURFACE`, `MISSING_INTEGRATION` and `CRASH`. `tests/app-release-gate.mjs` ensures the listed open blockers exactly match the open findings while independently asserting that the Mass reader remains `FINAL_NATIVE_READY` with `R17_NATIVE` production default.
+
 ## Next promotion step
 
 Promote the locked non-Mass donor as the visible host while retaining the current modular R17 browser entry, then remove the donor's anonymous navigation listener only when the modular shell owns the same six-destination behavior under browser tests. Do not copy its historical Mass renderer back into production.
@@ -60,6 +75,7 @@ Before calling app convergence complete:
 3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections.
 4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene.
 5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
+6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence must be regression-tested so historical local state cannot reactivate obsolete surfaces.
 
 ## Regression gates
 
