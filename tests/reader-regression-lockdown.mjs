@@ -9,11 +9,11 @@ const parity=load("../data/presentation/v1.83-reader-parity-gate.v1.json");
 const recovery=load("../data/presentation/v1.83-reader-map-recovery.v1.json");
 const regressions=load("../data/presentation/v1.83-regression-ledger.v1.json");
 
-assert.equal(release.status,"FULL_YEAR_SPECIAL_STRUCTURE_PARITY_CERTIFIED__R17_NATIVE_DEFAULT");
-assert.equal(release.productionDefault,"R17_NATIVE");
-assert.equal(resolveReaderUiMode({}),"PREVIEW","native reader is no longer the certified production default");
+assert.equal(release.status,"READY");
+assert.equal(release.productionDefault,"FIELD_NATIVE_PREVIEW");
+assert.equal(resolveReaderUiMode({}),"LEGACY","raw reader gate must remain safe outside explicit production rollout scope");
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
-assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,true);
+assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,false);
 
 assert.equal(parity.reference.expectedLiveCards,48);
 assert.equal(parity.currentR17.status,"SOURCE_FIRST_LIVE_INTEGRATED");
@@ -72,6 +72,10 @@ assert.equal(release.pilotRelease?.reader,"R17_NATIVE");
 assert.equal(release.pilotRelease?.productionDefaultUnchanged,"LEGACY");
 assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("PALM"));
 assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("ASH"));
+assert.equal(release.rollout?.status,"ACTIVE_SCOPED_NATIVE_DEFAULT");
+assert.deepEqual(release.rollout?.promotedPrecedingRites,["ASPERGES","PALM","ASH"]);
+assert.equal(release.rollout?.defaultOutsidePromotedScope,"LEGACY");
+assert.equal(release.rollout?.rollback,"?aoR17Reader=legacy");
 
 const phoneAcceptance=release.protectedInvariants.find(x=>x.id==="PHONE_BROWSER_ACCEPTANCE");
 assert.equal(phoneAcceptance?.status,"CERTIFIED_CHROMIUM_TOUCH","phone acceptance certification disappeared");
@@ -136,6 +140,10 @@ assert.equal(palmPayload?.recoveredGraphRecords,12,"Palm source scope changed");
 assert.equal(palmPayload?.readerCards,7,"Palm reader-card contract changed");
 assert.match(String(palmPayload?.controller??""),/reader-palm\.js/,"Palm controller is not pinned");
 
+const candlemasPayload=release.protectedInvariants.find(x=>x.id==="CANDLEMAS_NATIVE_PAYLOAD");
+assert.match(String(candlemasPayload?.status??""),/PRODUCTION_PREVIEW_PENDING/,
+  "Candlemas was silently production-promoted without its visible-surface acceptance gate");
+
 const aspergesPayload=release.protectedInvariants.find(x=>x.id==="ASPERGES_NATIVE_PAYLOAD");
 assert.equal(aspergesPayload?.status,"CERTIFIED_NATIVE_PREVIEW__PHONE_TOUCH","Asperges native-preview certification disappeared");
 assert.match(String(aspergesPayload?.controller??""),/reader-asperges\.js/,"Asperges controller is not pinned");
@@ -167,7 +175,8 @@ assert.deepEqual(easterVigil?.massProjection?.suppressedCanonicalEvents,["MC-COM
 assert.equal(easterVigil?.massProjection?.laudsSectionId,"SP.EASTER_VIGIL.15");
 assert.match(String(easterVigil?.controller??""),/reader-easter-vigil\.js/);
 assert.equal(easterVigil?.sourceText?.prophecies,"RECOVERED_PRESENTATION_OVERVIEW__CHOREOGRAPHY_EXACT__FULL_TEXT_ENRICHMENT_NON_BLOCKING");
-assert.equal(release.productionDefault,"R17_NATIVE","full-year release lost the native production default");
+assert.equal(release.productionDefault,"FIELD_NATIVE_PREVIEW",
+  "full-year data/runtime parity silently widened the visible production rollout");
 
 const properProvenance=release.protectedInvariants.find(x=>x.id==="PROPER_FIXTURE_PROVENANCE");
 assert.equal(properProvenance?.status,"CERTIFIED_REPLACEMENT_WITNESS",
