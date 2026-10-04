@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "status": "BLOCKED_PENDING_SPECIAL_STRUCTURE_PARITY",
   "productionDefault": "LEGACY",
   "releaseRule": "R17 reader may not become the production default until special-structure parity is closed. Source-first LIVE and real-browser phone/touch acceptance are certified; historical v1.83 C01-C48 remains compatibility evidence only.",
@@ -275,6 +275,37 @@
         "optional rites/processions never inferred from calendar date",
         "distinct rites never inherit ordinary Mass assumptions",
         "missing reader payload fails closed"
+      ]
+    },
+    {
+      "id": "NUPTIAL_NATIVE_INSERTIONS",
+      "status": "CERTIFIED_SOURCE_INSERTION_MODEL",
+      "controller": "src/mass/reader-nuptial.js",
+      "payload": "data/presentation/reader-nuptial.v1.json",
+      "sourceRegistry": "data/mass/rite-overlay-registry.v1.json#NUPTIAL",
+      "recoveredInsertions": 3,
+      "insertionIds": [
+        "FIRST_NUPTIAL_BLESSING_AFTER_PATER",
+        "DEUS_QUI_POTESTATE_NUPTIAL_BLESSING",
+        "FINAL_BLESSING_OVER_SPOUSES"
+      ],
+      "modelBehavior": {
+        "simpleMissalBaseCards": 30,
+        "liveBaseCards": 39,
+        "liveWithNuptialCards": 42
+      },
+      "guarantees": [
+        "Nuptial prayers are explicit plan-owned insertions and never replace canonical Mass event identity",
+        "the first two blessings follow the Pater noster source section in recovered order",
+        "the final spouse blessing follows the dismissal source section",
+        "spouse kneeling and priest actions remain actor-scoped and never mutate general faithful posture or gesture",
+        "missing Nuptial payload fails closed",
+        "Latin, English and recovered French text remain payload-owned rather than synthesized at runtime"
+      ],
+      "tests": [
+        "tests/reader-nuptial.mjs",
+        "tests/reader-model.mjs",
+        "tests/reader-special-structure.mjs"
       ]
     },
     {
@@ -706,7 +737,7 @@
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Easter Vigil."
+      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction, Holy Thursday post-Mass and Nuptial insertions. Still unresolved for full-year production: Easter Vigil."
     }
   ],
   "certificationPolicy": {

@@ -146,6 +146,17 @@ assert.equal(aspergesPayload?.readerCards,5,"Asperges reader-card contract chang
 assert.match(String(aspergesPayload?.nativePreview??""),/reader-native-preview\.js/,"Asperges native preview owner is not pinned");
 assert.match(String(aspergesPayload?.phoneTest??""),/reader-phone-acceptance\.mjs/,"Asperges phone acceptance is not pinned");
 
+const nuptial=release.protectedInvariants.find(x=>x.id==="NUPTIAL_NATIVE_INSERTIONS");
+assert.equal(nuptial?.status,"CERTIFIED_SOURCE_INSERTION_MODEL","Nuptial insertions lost certification");
+assert.equal(nuptial?.recoveredInsertions,3);
+assert.deepEqual(nuptial?.insertionIds,[
+  "FIRST_NUPTIAL_BLESSING_AFTER_PATER",
+  "DEUS_QUI_POTESTATE_NUPTIAL_BLESSING",
+  "FINAL_BLESSING_OVER_SPOUSES",
+]);
+assert.equal(nuptial?.modelBehavior?.liveWithNuptialCards,42);
+assert.match(String(nuptial?.controller??""),/reader-nuptial\.js/);
+
 const specialStructure=release.protectedInvariants.find(x=>x.id==="SPECIAL_STRUCTURE_PLAN_PROJECTION");
 assert.equal(specialStructure?.status,"CERTIFIED_COMPILED_PLAN_STRUCTURE","special-structure plan certification disappeared");
 assert.match(String(specialStructure?.controller??""),/reader-special-structure\.js/,"special-structure projection controller is not pinned");
