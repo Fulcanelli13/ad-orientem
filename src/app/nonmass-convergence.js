@@ -77,8 +77,8 @@ function currentPrayView(root) {
 }
 
 function activeConfessionStage(root) {
-  const active = root?.querySelector?.("[data-p435930-conf-step].active,[data-p435930-conf-step][aria-current='step']");
-  return Number(active?.dataset?.p435930ConfStep || 0);
+  const active = root?.querySelector?.("[data-p435930-conf-stage].active,[data-p435930-conf-stage][aria-current='step']");
+  return Number(active?.dataset?.p435930ConfStage || 0);
 }
 
 function phaseRail(win, stage) {
