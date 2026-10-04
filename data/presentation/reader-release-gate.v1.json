@@ -646,13 +646,38 @@
         "tests/reader-special-structure.mjs",
         "tests/browser-runtime.mjs"
       ]
+    },
+    {
+      "id": "PRAYER_OVER_PEOPLE_READER_INSERTION",
+      "status": "CERTIFIED_PLAN_OWNED_READER_COMPOSITION",
+      "controller": "src/mass/reader-prayer-over-people.js",
+      "planOwner": "src/mass/postcommunion-exit.js",
+      "properSource": "ao-proper-manifest-v2#orations.prayerOverPeople",
+      "targetCard": "AO.CARD.027",
+      "cardCountMutation": false,
+      "canonicalConditionalEvent": "MC-END-060",
+      "deferredExitCue": "AO.SM.C0256",
+      "finalDominusVobiscumCue": "AO.SM.C0257",
+      "guarantees": [
+        "1962 Oremus/Humiliate invitation precedes the source-owned oration",
+        "day-specific prayer body and conclusion come from Proper Resolver 2.0",
+        "ordinary C0256 Postcommunion exit is suppressed when Prayer over the People is present",
+        "deferred exit occurs after the prayer and before final Dominus vobiscum",
+        "Prayer over the People composes inside Postcommunion card 27 and does not add a new navigation card",
+        "absence of prayerOverPeople leaves ordinary Postcommunion projection unchanged"
+      ],
+      "tests": [
+        "tests/postcommunion-exit.mjs",
+        "tests/reader-prayer-over-people.mjs",
+        "tests/proper-contracts.mjs"
+      ]
     }
   ],
   "openBlockers": [
     {
       "id": "SPECIAL_STRUCTURE_PARITY",
       "severity": "RELEASE_BLOCKER",
-      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Prayer over the People insertion, Easter Vigil."
+      "detail": "Native/plan-owned support is certified for Asperges, Palm, Ash Wednesday, Candlemas, Rogations, Requiem variance, Requiem Absolution, Corpus Christi procession/Benediction and Holy Thursday post-Mass. Still unresolved for full-year production: Nuptial insertions, Ember preparatory lessons, Easter Vigil."
     }
   ],
   "certificationPolicy": {

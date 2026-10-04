@@ -2,6 +2,7 @@ import { createReaderSectionResolver } from "./reader-sections.js";
 import { selectReaderTextCorpus, buildReaderSectionCard } from "./reader-text.js";
 import { properToReaderSlots, assertReaderProperReady } from "./proper-reader-slots.js";
 import { projectSourceFirstLiveModel } from "./reader-live-source.js";
+import { augmentReaderCardsWithPrayerOverPeople } from "./reader-prayer-over-people.js";
 
 const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM"]);
 
@@ -53,13 +54,14 @@ export function createMassReaderModel({
     sungCorpus,
   });
 
-  const cards=Object.freeze(sectionResolver.sections.map(section=>
+  const baseCards=Object.freeze(sectionResolver.sections.map(section=>
     buildReaderSectionCard({
       corpus:selected.corpus,
       section,
       properSlots:properMap.slots,
     })
   ));
+  const cards=augmentReaderCardsWithPrayerOverPeople(baseCards,resolvedMass);
   const byId=new Map(cards.map(card=>[card.sectionId,card]));
 
   function cardBySequence(sequence){
