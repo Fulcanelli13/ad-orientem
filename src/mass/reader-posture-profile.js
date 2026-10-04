@@ -51,9 +51,31 @@ export function resolveReaderPostureChannel({
   const local=findLocalPostureOverride(preferences,{cueId,sectionId,macroId});
 
   if(profile==="FOLLOW_CONGREGATION"){
+    if(legacyPosture){
+      return Object.freeze({
+        posture:legacyPosture,
+        owner:"FOLLOW_CONGREGATION_OBSERVED",
+        localKey:null,
+        sourcePostureId:null,
+      });
+    }
+    if(sourced?.value){
+      return Object.freeze({
+        posture:Object.freeze({
+          ...(cueProjection?.posture ?? {}),
+          label:sourced.value,
+          value:sourced.value,
+          owner:"FOLLOW_CONGREGATION_SOURCE_FALLBACK",
+          persistent:true,
+        }),
+        owner:"FOLLOW_CONGREGATION_SOURCE_FALLBACK",
+        localKey:null,
+        sourcePostureId:sourced.sourcePostureId ?? null,
+      });
+    }
     return Object.freeze({
-      posture:legacyPosture ?? null,
-      owner:"FOLLOW_CONGREGATION_OBSERVED",
+      posture:null,
+      owner:"FOLLOW_CONGREGATION_UNOBSERVED_FAIL_CLOSED",
       localKey:null,
       sourcePostureId:null,
     });
