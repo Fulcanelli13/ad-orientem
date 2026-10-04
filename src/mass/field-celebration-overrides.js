@@ -26,6 +26,56 @@ export const FIELD_CELEBRATION_OVERRIDES = Object.freeze({
   }),
 });
 
+
+export function primeHolyRosaryFieldCelebration(
+  arch,
+  date = arch?.date ?? arch?.liturgicalDay?.date ?? null,
+) {
+  if (!arch || date !== HOLY_ROSARY_FIELD_DATE) return false;
+  if (arch.actualCelebration?.id !== "mass_of_day") return false;
+
+  arch.date = date;
+  arch.actualCelebration = { id: "holy_rosary", type: "votive" };
+  arch.requiemCircumstance = null;
+  arch.votiveBasis = "special_occasion";
+  arch.readiness = null;
+  arch.resolvedProper = null;
+  arch.rubric = null;
+  if (Number.isFinite(arch.lastResolveToken)) arch.lastResolveToken += 1;
+  return true;
+}
+
+function primeRuntimeFieldCelebration() {
+  const arch = globalThis.AO_CELEBRATION_ARCH_V1 ?? null;
+  const api = globalThis.AO_CELEBRATION_API ?? null;
+  const date =
+    globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate ??
+    arch?.date ??
+    arch?.liturgicalDay?.date ??
+    null;
+
+  if (
+    !arch ||
+    !api ||
+    date !== HOLY_ROSARY_FIELD_DATE ||
+    globalThis.AO_HOLY_ROSARY_FIELD_AUTOSELECTED === date
+  ) {
+    return false;
+  }
+
+  const changed = primeHolyRosaryFieldCelebration(arch, date);
+  if (!changed) return false;
+
+  globalThis.AO_HOLY_ROSARY_FIELD_AUTOSELECTED = date;
+  queueMicrotask(() => {
+    try {
+      api.resolveReadiness?.();
+    } catch {}
+    globalThis.AO_SEQUENCE_BRIDGE_V23?.decorate?.();
+  });
+  return true;
+}
+
 function selectedDate(arch = globalThis.AO_CELEBRATION_ARCH_V1 ?? null) {
   return (
     arch?.date ??
@@ -280,6 +330,7 @@ function installUiBridge() {
 
   const refresh = () => {
     installApiBridge();
+    if (primeRuntimeFieldCelebration()) return;
     if (syncInternalFieldBasis()) return;
     decorateFieldPreflight();
     globalThis.AO_SEQUENCE_BRIDGE_V23?.decorate?.();
