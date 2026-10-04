@@ -37,8 +37,8 @@ const win={
 const home=createHomeOwner(win);
 assert.equal(home.open(),true);
 assert.equal(calls.includes("DONOR_HOME_CALLED"),false,"modular Home delegated back to AO_NAV_V362.home()");
-assert.equal(screen.dataset.aoHomeOwner,"modular-home-v1");
-assert.equal(home.status().visibleOwner,"modular-home-v1");
+assert.equal(screen.dataset.aoHomeOwner,"modular-home-v2");
+assert.equal(home.status().visibleOwner,"modular-home-v2");
 assert.equal(home.status().donorHomeAvailable,true);
 assert.ok(calls.includes("calendar:close"));
 assert.ok(calls.includes("shell:close"));
