@@ -1,37 +1,44 @@
 const VERSION="modular-pray-v1";
 
 function donor(win){return win?.AO_PRAY_V435930??null;}
-
-function root(win){
-  return win?.document?.getElementById?.("aoPray435930")??null;
-}
-
-function markRoot(win){
+function root(win){return win?.document?.getElementById?.("aoPray435930")??null;}
+function stamp(win){
   const node=root(win);
   if(node?.dataset)node.dataset.aoPrayOwner=VERSION;
+  if(win?.document?.documentElement?.dataset){
+    win.document.documentElement.dataset.aoPrayRouteOwner=VERSION;
+  }
   return node;
 }
-
-function deferMark(win){
-  markRoot(win);
-  const microtask=win?.queueMicrotask??globalThis.queueMicrotask;
-  if(typeof microtask==="function"){
-    try{microtask(()=>markRoot(win));}catch{}
-  }
-  if(typeof win?.requestAnimationFrame==="function"){
-    try{win.requestAnimationFrame(()=>markRoot(win));}catch{}
-  }else if(typeof win?.setTimeout==="function"){
-    try{win.setTimeout(()=>markRoot(win),0);}catch{}
-  }
+function delay(win,ms){
+  return new Promise(resolve=>{
+    if(typeof win?.setTimeout==="function")win.setTimeout(resolve,ms);
+    else setTimeout(resolve,ms);
+  });
 }
 
-export function createPrayOwner(win=globalThis){
-  function open(){
-    const api=donor(win);
+export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
+  async function resolveDonor(){
+    for(let i=0;i<=maxPolls;i++){
+      const api=donor(win);
+      if(typeof api?.open==="function")return api;
+      if(i<maxPolls)await delay(win,pollMs);
+    }
+    return null;
+  }
+
+  async function open(){
+    const api=await resolveDonor();
     if(typeof api?.open!=="function")return false;
     const opened=api.open("pray.hub",{returnContext:null});
     if(opened===false)return false;
-    deferMark(win);
+    stamp(win);
+    if(typeof win?.queueMicrotask==="function"){
+      try{win.queueMicrotask(()=>stamp(win));}catch{}
+    }
+    if(typeof win?.requestAnimationFrame==="function"){
+      try{win.requestAnimationFrame(()=>stamp(win));}catch{}
+    }
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
     return true;
   }
@@ -44,13 +51,14 @@ export function createPrayOwner(win=globalThis){
   }
 
   function status(){
-    const node=markRoot(win);
+    const node=stamp(win);
     let donorState=null;
     try{donorState=donor(win)?.state?.()??null;}catch{}
     return Object.freeze({
       version:VERSION,
       installed:true,
       donorAvailable:typeof donor(win)?.open==="function",
+      routeOwner:win?.document?.documentElement?.dataset?.aoPrayRouteOwner??null,
       visibleOwner:node?.dataset?.aoPrayOwner??null,
       open:Boolean(node?.classList?.contains?.("open")),
       donorState,
@@ -65,18 +73,6 @@ export function installPrayBrowserOwner(win=globalThis){
   if(win?.AO_PRAY_APP_V1)return win.AO_PRAY_APP_V1;
   const api=createPrayOwner(win);
   win.AO_PRAY_APP_V1=api;
-
-  // The donor may create or replace its presentation root after the modular
-  // browser entry has installed. Keep ownership metadata convergent without
-  // taking presentation ownership away from AO_PRAY_V435930.
-  const doc=win?.document;
-  if(typeof win?.MutationObserver==="function"&&doc?.documentElement){
-    try{
-      const observer=new win.MutationObserver(()=>{markRoot(win);});
-      observer.observe(doc.documentElement,{childList:true,subtree:true});
-    }catch{}
-  }
-  deferMark(win);
   return api;
 }
 
