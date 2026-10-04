@@ -33,4 +33,25 @@ assert.equal(missing.ready,false);
 assert.ok(missing.missing.includes("GOSPEL"));
 assert.throws(()=>assertReaderProperReady(missing),/GOSPEL/);
 
-console.log("Proper → reader slots: PASS — exact v3.4.6 Proper shape, no duplicate Gradual/Alleluia.");
+const tf=(lat,fr)=>({lat,en:"",fr});
+const frenchProper={
+  sourcePath:"Sancti/10-07",
+  introit:tf("Gaudeámus","Réjouissons-nous"),
+  collects:[tf("Deus, cujus Unigénitus","Ô Dieu, dont le Fils unique")],
+  epistle:tf("Ab initio","Dès le commencement"),
+  gradual:tf("Propter veritatem","À cause de la vérité"),
+  sequence:{lat:"",en:"",fr:""},
+  gospel:tf("In illo tempore","En ce temps-là"),
+  offertory:tf("In me gratia","En moi est toute grâce"),
+  secrets:[tf("Fac nos","Faites que nous")],
+  preface:tf("Vere dignum","Il est vraiment juste"),
+  communion:tf("Florete flores","Fleurissez, fleurs"),
+  postcommunions:[tf("Sanctissimae Genetricis","Par les prières de la très sainte Mère")],
+};
+const frenchMapped=properToReaderSlots(frenchProper,{language:"fr"});
+assert.equal(frenchMapped.ready,true);
+assert.equal(frenchMapped.missing.length,0);
+assert.equal(frenchMapped.slots.INTROIT.data.paragraphs[0].vernacular,"Réjouissons-nous");
+assert.equal(frenchMapped.slots.GOSPEL.data.paragraphs[0].vernacular,"En ce temps-là");
+
+console.log("Proper → reader slots: PASS — exact v3.4.6 Proper shape, English/French vernacular, no duplicate Gradual/Alleluia.");
