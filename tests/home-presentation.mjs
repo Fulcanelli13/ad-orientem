@@ -54,6 +54,8 @@ assert.match(en,/Holy Rosary/);
 assert.match(en,/Mass in progress/);
 assert.match(en,/data-formulary="1"/);
 assert.match(en,/Around the Mass/);
+assert.match(en,/data-home-mass-entry/,"Home Follow Mass is not owned by modular app navigation");
+assert.doesNotMatch(en,/data-action="follow"/,"Home Follow Mass still depends on the historical Home click controller");
 assert.match(en,/Holy Gospel/);
 assert.match(en,/Today’s Mass/);
 assert.match(en,/Settings · preparation · thanksgiving/);
