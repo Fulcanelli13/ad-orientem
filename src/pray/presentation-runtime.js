@@ -253,14 +253,27 @@ function syncRosaryPrefs(raw=S.rosary){
  try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(prefs.recitation)}catch{}
  return prefs
 }
-function restoreRosaryLaunchPrefs(raw){
+function restoreRosaryLaunchPrefs(raw,attempt=0){
  const prefs=normalizeRosaryPrefs(raw),root=rosaryDonorRoot();
  const native=root?.querySelector?.(`[data-ao-recitation="${prefs.recitation}"]`);
- if(native&&!native.classList.contains('active')){
+ // aoPrayerBookRoot exists even while hidden. Do not hand ownership to that
+ // stale surface: wait until the preserved Rosary is actually open and has
+ // mounted its native recitation control.
+ if(!root?.classList?.contains('open')||!native){
+  if(attempt<80)setTimeout(()=>restoreRosaryLaunchPrefs(prefs,attempt+1),25);
+  return prefs
+ }
+ if(!native.classList.contains('active')){
   try{native.click()}catch{}
  }
  S.rosary.form=prefs.form;S.rosary.mode=prefs.mode;S.rosary.recitation=prefs.recitation;save();
  syncRosaryPrefs(prefs);decorateRosary();
+ // One post-open verification catches a donor render scheduled in the same
+ // opening turn without keeping a permanent competing observer alive.
+ if(attempt<81)setTimeout(()=>{
+  const r=rosaryDonorRoot(),n=r?.querySelector?.(`[data-ao-recitation="${prefs.recitation}"]`);
+  if(r?.classList?.contains('open')&&n&&!n.classList.contains('active'))restoreRosaryLaunchPrefs(prefs,81)
+ },120);
  return prefs
 }
 function renderRosary(){
@@ -569,7 +582,7 @@ function onClick(e){
  if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
  if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){S.angelusMode=seg;save()}else if(view==='rosary'){if(['standard','devotional'].includes(seg))S.rosary.form=seg;if(['simple','guided'].includes(seg))S.rosary.mode=seg;if(['individual','group'].includes(seg))S.rosary.recitation=seg;save()}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;save()}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
- if(b.matches('[data-p435930-launch-rosary]')){lastRosaryFxMystery='';const prefs=syncRosaryPrefs({...S.rosary});externalResume=captureResume();close({silent:true});window.AOTraditionalPrayerBook?.openModule?.('rosary',{returnContext:PRAY_CTX});setTimeout(()=>restoreRosaryLaunchPrefs(prefs),20);setTimeout(()=>restoreRosaryLaunchPrefs(prefs),160);return}
+ if(b.matches('[data-p435930-launch-rosary]')){lastRosaryFxMystery='';const prefs=syncRosaryPrefs({...S.rosary});externalResume=captureResume();close({silent:true});window.AOTraditionalPrayerBook?.openModule?.('rosary',{returnContext:PRAY_CTX});setTimeout(()=>restoreRosaryLaunchPrefs(prefs),0);return}
  if(b.dataset.p435930ConfStage!=null){CONF.stage=+b.dataset.p435930ConfStage;return render()}
  if(b.matches('[data-p435930-conf-prev]')){CONF.stage=Math.max(0,CONF.stage-1);return render()}
  if(b.matches('[data-p435930-conf-next]')){if(CONF.stage>=4){CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};view='home';return render()}CONF.stage++;return render()}
