@@ -68,6 +68,7 @@ try{
     assert.equal(s.display,"none",surface+" exposed Home beneath the active surface");
   };
 
+  assert.equal(await page.locator(".aoSaintArtCard .aoSaintArtPlaceholder").filter({hasText:/No reusable artwork|No artwork is assigned|not approved for production/i}).count(),0,"Home exposed a terminal saint-art placeholder instead of suppressing the unresolved card");
   await shot("01-home");
 
   await page.locator("[data-ao-app-surface='calendar']").click();
