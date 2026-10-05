@@ -228,12 +228,13 @@ export function installNonMassConvergence({win=globalThis}={}){
   const schedule=()=>{
     if(scheduled)return;
     scheduled=true;
-    win.queueMicrotask(()=>{scheduled=false;reconcile()});
+    const enqueue=typeof win.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
+    enqueue(()=>{scheduled=false;reconcile()});
   };
-  const observer=new win.MutationObserver(schedule);
-  observer.observe(win.document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["class","hidden","data-ao-settings-route","data-ao-release"]});
-  win.addEventListener("click",schedule,true);
-  win.addEventListener("pageshow",schedule);
+  const observer=typeof win.MutationObserver==="function"?new win.MutationObserver(schedule):null;
+  observer?.observe?.(win.document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["class","hidden","data-ao-settings-route","data-ao-release"]});
+  win.addEventListener?.("click",schedule,true);
+  win.addEventListener?.("pageshow",schedule);
   if(win.document.readyState==="loading")win.document.addEventListener("DOMContentLoaded",schedule,{once:true});
   const releaseTimers=[100,500,1200].map(ms=>win.setTimeout?.(schedule,ms)).filter(x=>x!=null);
   const api=Object.freeze({
@@ -259,7 +260,7 @@ export function installNonMassConvergence({win=globalThis}={}){
       d6:win.AO_SETTINGS_APP_V1?.status?.()?.installed===true?"integrated-on-modular-settings":"settings-modular-owner-unavailable",
     }),
     dispose:()=>{
-      observer.disconnect();
+      observer?.disconnect?.();
       win.removeEventListener?.("click",schedule,true);
       win.removeEventListener?.("pageshow",schedule);
       releaseTimers.forEach(id=>win.clearTimeout?.(id));
