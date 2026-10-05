@@ -23,7 +23,7 @@ Legacy/current ownership during extraction:
 | Pray | `AO_PRAY_APP_V1` + modularized locked v43.59.30 `AO_PRAY_V435930` presentation | `src/pray` |
 | Learn | `AO_LEARN_APP_V1` | `src/learn` |
 | Calendar | `today.calendar` | `src/calendar` |
-| Settings | `AO_SETTINGS_V4359` | future `src/settings` |
+| Settings | `AO_SETTINGS_APP_V1` | `src/settings` |
 
 The locked v43.59.30 PRAY runtime is now extracted into `src/pray`: one shell, one interaction vocabulary and one recitation grammar over the canonical 48-prayer corpus. `AO_PRAY_APP_V1` owns app routing while `AO_PRAY_V435930` remains the presentation contract. The obsolete `AOTraditionalPrayerBook` may remain embedded temporarily as donor debt, but modular PRAY never falls back to it. Neither prayer surface owns Mass.
 
@@ -108,11 +108,23 @@ The old v37 domain shell is no longer a production fallback for Learn. `src/app/
 
 Hard Home and Settings transitions explicitly close modular Learn, preventing hidden donor or modular Learn surfaces from remaining active underneath the destination. The Learn root carries stable DOM ownership markers and keeps the permanent app ribbon reachable. Actual-index phone acceptance covers Home → Learn → Home plus Learn → Pray, Calendar and Settings, checks touch geometry and focus/aria safety, rejects visible v37 Learn ownership, and verifies that no Mass reader/runtime starts during the journey.
 
-This certifies `NON_MASS_DONOR_EXTRACTION.progress.learn` only. The overall blocker remains open because Home enrichers and Settings extraction remain unfinished.
+This certifies `NON_MASS_DONOR_EXTRACTION.progress.learn` only. At Phase 8 the overall blocker remained open because Home enrichers and Settings extraction were unfinished.
+
+## Phase 9: modular Settings extraction
+
+Settings presentation and runtime ownership are now extracted into `src/settings` and owned by `AO_SETTINGS_APP_V1`. The app host routes Settings directly to that owner and fails closed if it is unavailable; normal production no longer probes `AO_SETTINGS_V4359`, `AO_SETTINGS_V4358`, `AO_SETTINGS_V4356`, or the historical `utility.settings` module. Those owners remain donor evidence only.
+
+The modular Settings surface preserves the approved English/French control set and writes through the canonical application state owners rather than inventing a parallel preference store: language, Mass form/follow/text/participation preferences, posture and gesture profiles, Communion and Confiteor options, Sunday Asperges, text scale, reduced motion, haptics and local-posture reset. The temporary Settings sheet embedded in modular Home is retired, preserving the one-state/one-surface rule.
+
+Sources/About remains inside Settings and is not a seventh top-level destination. D6 reader-facing source families, provenance labels, privacy text and canonical application-version ownership are native to the modular Settings presentation. `src/app/nonmass-convergence.js` no longer activates historical Settings D6 compatibility hooks during normal production.
+
+Settings continues to obey the locked active-Mass exception. It may overlay an active native R17 session without suspending or restarting the Mass. Structural Mass changes and haptics remain governed by the single `src/app/live-session-guards.js` owner; permitted display preferences may still change. Closing Settings restores the same reader/shell surface and drops focus before hiding/removing the dialog. Production phone acceptance proves same-reader continuity, unchanged LIVE position and resolved Mass form, structural lockout, permitted display persistence, zero historical Settings visibility, zero legacy Mass starts, and no focus/`aria-hidden` warnings.
+
+This certifies `NON_MASS_DONOR_EXTRACTION.progress.settings` as `MODULAR_PHONE_CERTIFIED`. The overall blocker remains open for the still-pending Home enrichers; Settings has no remaining extraction blocker.
 
 ## Next promotion step
 
-Continue donor retirement without replacing the production host wholesale. Calendar, PRAY and Learn presentation are now modular and phone-certified. The remaining non-Mass extraction work is Home/Coming Up presentation and Settings. Each extraction replaces one donor owner only after parity tests pass and must not create a second visible surface for the same state. Do not copy any historical Mass renderer back into production.
+Continue donor retirement without replacing the production host wholesale. Calendar, PRAY, Learn and Settings presentation are now modular and phone-certified. The remaining non-Mass extraction work is Home enrichment ownership (including Coming Up and Daily Catechism). Each extraction replaces one donor owner only after parity tests pass and must not create a second visible surface for the same state. Do not copy any historical Mass renderer back into production.
 
 Before calling app convergence complete:
 
@@ -125,4 +137,4 @@ Before calling app convergence complete:
 
 ## Regression gates
 
-The app-level gate must exercise cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings, plus the modular Learn route Home → Learn → Home and Learn → PRAY/Calendar/Settings, on real phone/touch geometry. The existing Mass convergence and phone suites remain mandatory and independent.
+The app-level gate must exercise cold launch → Home → Calendar → Mass selection → native LIVE → Settings overlay/restore → leave/resume → PRAY → Home → Settings, plus the modular Learn route Home → Learn → Home and Learn → PRAY/Calendar/Settings, on real phone/touch geometry. Settings acceptance additionally proves direct modular ownership, Sources/About/version parity, preference persistence, structural lockout during LIVE, focus safety and zero historical Settings fallback. The existing Mass convergence and phone suites remain mandatory and independent.
