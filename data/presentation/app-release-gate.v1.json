@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.17.0",
-  "status": "PRODUCT_PARITY_RECOVERY_REQUIRED",
-  "releaseRule": "FINAL_APP_READY requires certified runtime stability and approved product/presentation parity across the six production surfaces. Structural modular convergence alone is insufficient.",
+  "version": "1.18.0",
+  "status": "FINAL_APP_READY",
+  "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, and certified product/presentation parity across all six production surfaces.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -186,8 +186,8 @@
     },
     {
       "id": "PRODUCT_PRESENTATION_PARITY",
-      "classification": "REGRESSION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "data/presentation/product-parity.v1.json",
         "tests/app-visual-acceptance.mjs",
@@ -196,14 +196,15 @@
         "src/pray/presentation-coherence.js",
         "src/learn/presentation.js",
         "src/settings/presentation.js",
-        "data/presentation/reader-release-gate.v1.json"
+        "data/presentation/reader-release-gate.v1.json",
+        "src/mass/reader-mode-switch.js",
+        "tests/reader-mode-switch.mjs",
+        "tests/reader-phone-acceptance.mjs"
       ],
-      "detail": "Runtime and modular ownership are certified, but visual acceptance still checks structure/error absence rather than parity with approved Ad Orientem presentation. Recovery is presentation-only: preserve the certified runtime while restoring approved hierarchy, sacred visual identity, interaction grammar and previously accepted surface composition."
+      "detail": "Home, Mass, PRAY, Learn, Calendar and Settings are product-parity certified on actual phone geometry. Mass V1-V6 restores the approved LIVE hierarchy, rails/focus/Schola/cinematics, 48-step source-first product presentation, and persistent in-reader MISSAL / SIMPLE / LIVE switching while preserving the certified source/runtime architecture."
     }
   ],
-  "openBlockers": [
-    "PRODUCT_PRESENTATION_PARITY"
-  ],
+  "openBlockers": [],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
@@ -218,7 +219,8 @@
       "tests/nonmass-d3-d6-convergence.mjs",
       "tests/learn-owner.mjs",
       "tests/settings-owner.mjs",
-      "tests/source-transport-compat.mjs"
+      "tests/source-transport-compat.mjs",
+      "tests/reader-mode-switch.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
