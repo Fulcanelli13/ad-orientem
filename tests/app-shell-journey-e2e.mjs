@@ -364,12 +364,16 @@ try{
     null,{timeout:10000});
   const homeOwnership=await page.evaluate(()=>({
     owner:document.querySelector(".homeScreen")?.dataset?.aoHomeOwner??null,
+    presentationOwner:document.querySelector(".homeScreen")?.dataset?.aoHomePresentationOwner??null,
     installed:globalThis.AO_HOME_APP_V1?.status?.().installed??false,
+    presentationAttached:globalThis.AO_HOME_APP_V1?.status?.().presentationAttached??false,
     donorAvailable:globalThis.AO_HOME_APP_V1?.status?.().donorHomeAvailable??false,
     prayStillOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
   }));
-  assert.equal(homeOwnership.owner,"modular-home-v1","production Home click did not use modular Home owner");
+  assert.equal(homeOwnership.owner,"modular-home-v2","production Home click did not use modular Home owner");
+  assert.equal(homeOwnership.presentationOwner,"modular-home-presentation-v1","production Home did not use modular base presentation");
   assert.equal(homeOwnership.installed,true);
+  assert.equal(homeOwnership.presentationAttached,true,"modular Home presentation is not subscribed to runtime state");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
 
   await page.locator("[data-ao-app-surface='settings']").click();
