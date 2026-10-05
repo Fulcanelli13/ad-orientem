@@ -37,11 +37,23 @@ function resetCoreRoute(win){
   return true;
 }
 
+function retireLegacyHomeEnrichers(win){
+  try{
+    win?.document?.querySelectorAll?.(".aoComingUpV4323,.aoDailyCateHome")?.forEach?.(node=>{
+      const active=win?.document?.activeElement;
+      if(active&&node.contains?.(active)){try{active.blur?.();}catch{}}
+      node.remove?.();
+    });
+  }catch{}
+}
+
 function rehydrateRemainingHomeDonors(win){
   // Coming Up and Daily Catechism Home presentation are modular now.
-  // Keep unrelated donor enrichers until their own extraction wave.
+  // Keep unrelated donor services, then physically retire any historical
+  // Home cards they recreate as compatibility side effects.
   try{win?.AO_EUCHARISTIC_V354?.ensureHome?.();}catch{}
   try{win?.AO_V37_SHELL?.ensureHome?.();}catch{}
+  retireLegacyHomeEnrichers(win);
 }
 
 function root(win){return win?.document?.getElementById?.("app")??null;}
