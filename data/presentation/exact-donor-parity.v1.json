@@ -1,0 +1,152 @@
+{
+  "schema": "ao-exact-donor-presentation-parity-v1",
+  "version": "1.0.0",
+  "status": "OPEN",
+  "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
+  "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
+  "scope": "non-Mass presentation only; Mass remains governed by data/presentation/reader-release-gate.v1.json and data/presentation/product-parity.v1.json",
+  "authorities": [
+    {
+      "id": "PRAY_UNIFIED_READER_CLOSURE",
+      "source": "Ad-Orientem-2.0-v43.59.30-PRAY-UNIFIED-READER-CLOSURE.html",
+      "repositoryReference": "historical production tree before modular PRAY extraction; parent d0d05c5f21527308299a1408dc215e28c676703d of merge a1f74d920aa2db4665f347f732edce12c52467ba",
+      "status": "AVAILABLE_AND_AUDITABLE",
+      "owns": [
+        "one-shell unified PRAY reader grammar",
+        "fluid-v1 scroll-synchronous focus runway",
+        "translation-in-place contract",
+        "V/R identity and recitation grammar",
+        "module surface grammar",
+        "historical Stations artwork treatment",
+        "v43.12 boot/transition/loader/art-loading primitives"
+      ]
+    },
+    {
+      "id": "V3_4_6_PRESENTATION_GRAMMAR",
+      "source": "Ad_Orientem_v3_4_6.html",
+      "status": "REFERENCE_REQUIRED",
+      "owns": [
+        "thin fixed semantic icon rails",
+        "transient cue cinematics",
+        "scroll-synchronous devotional focus behavior"
+      ]
+    },
+    {
+      "id": "V3_4_8_MODULE_RAILS",
+      "source": "Ad_Orientem_v3_4_8.html",
+      "status": "REFERENCE_REQUIRED",
+      "owns": [
+        "Angelus posture/context rails",
+        "Stations/Benediction/Adoration/Confession rail treatments",
+        "module-specific semantic choreography"
+      ]
+    },
+    {
+      "id": "V3_4_14_ROSARY_FINAL",
+      "source": "Ad_Orientem_v3_4_14.html",
+      "status": "REFERENCE_REQUIRED",
+      "owns": [
+        "final Rosary live rail",
+        "mystery cinematics",
+        "progress treatment",
+        "Rosary art treatment"
+      ]
+    },
+    {
+      "id": "NON_MASS_HEAD_V3_22",
+      "source": "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html",
+      "status": "REFERENCE_REQUIRED",
+      "owns": [
+        "latest approved non-Mass composition",
+        "Calendar dashboard composition",
+        "Novena freeze integration",
+        "cross-surface visual hierarchy"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "GENERIC_ROUTE_TRANSITIONS_SUBSTITUTED_FOR_DONOR_CHOREOGRAPHY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "current": "src/app/presentation-fx.js maps the six destinations to generic labels such as Home, Prayer, Learn and Calendar and reuses showTransition() at the route boundary.",
+      "expected": "Recover the donor's actual action/module-specific transition metadata, wording, timing and trigger points. Generic surface transitions may remain only where the donor itself used them.",
+      "evidence": [
+        "src/app/presentation-fx.js",
+        "Ad_Orientem_NON_MASS_HEAD_v2_CINEMATICS_PROTOTYPE.html routeMeta/contentLoadingSpec reference"
+      ]
+    },
+    {
+      "id": "ASYNC_LOADING_SEMANTICS_FLATTENED",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "current": "src/app/presentation-fx.js uses a generic delayed Opening/Preparing <surface> loader.",
+      "expected": "Restore donor workload-specific loaders, including calendar resolution/week progress and Scripture/content-specific states, rather than inventing generic route loading.",
+      "evidence": [
+        "src/app/presentation-fx.js",
+        "Ad_Orientem_NON_MASS_HEAD_v2_CINEMATICS_PROTOTYPE.html contentLoadingSpec and calendar-week loader reference"
+      ]
+    },
+    {
+      "id": "SEMANTIC_RAILS_SIMPLIFIED",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "current": "The modular FX recovery proves the presence of semantic rails but does not prove exact rail geometry, icon sequence, visibility, transient behavior, wording or cue timing from the later v3.4.x donors.",
+      "expected": "Reproduce the exact per-module rail contracts from v3.4.6, v3.4.8 and v3.4.14, including hidden/inactive behavior and transient cue choreography.",
+      "evidence": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/presentation-styles.js",
+        "Ad_Orientem_v3_4_6.html",
+        "Ad_Orientem_v3_4_8.html",
+        "Ad_Orientem_v3_4_14.html"
+      ]
+    },
+    {
+      "id": "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "current": "Current recovery adds a geometry-neutral Rosary context rail and mystery transition while preserving the external canonical player.",
+      "expected": "Recover the final v3.4.14 Rosary rail, mystery transition, progress, art and live-reader composition exactly rather than approximating those features independently.",
+      "evidence": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/presentation-styles.js",
+        "Ad_Orientem_v3_4_14.html"
+      ]
+    },
+    {
+      "id": "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
+      "classification": "MISSING_INTEGRATION",
+      "status": "OPEN",
+      "current": "Existing visual tests certify current modular surfaces against self-authored assertions/screenshots, not against the final approved non-Mass donor head.",
+      "expected": "Create donor-reference acceptance for Home, PRAY, Learn, Calendar and Settings at 390x844 and key module states; certify only after direct donor-vs-current comparison.",
+      "evidence": [
+        "tests/app-visual-acceptance.mjs",
+        "data/presentation/presentation-fx-parity.v1.json",
+        "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
+      ]
+    }
+  ],
+  "preservationRules": [
+    "Do not revive historical Mass ownership.",
+    "Do not replace current modular data/runtime owners with prototype monolith ownership.",
+    "Extract/reproduce donor presentation exactly over modular owners.",
+    "Do not certify a substitute because it has the same conceptual feature.",
+    "Reduced-motion behavior may suppress non-essential motion but must preserve the donor's information hierarchy.",
+    "One state must still map to one visible surface."
+  ],
+  "requiredAcceptance": [
+    "Donor/current side-by-side captures at 390x844 for Home, PRAY hub, representative prayer reader, Rosary, Angelus, Stations, Adoration/Benediction, Confession, Learn, Calendar and Settings.",
+    "Exact transition trigger/content/timing matrix from donor to modular owner.",
+    "Exact loader state matrix from donor to modular owner.",
+    "Exact rail state/icon/visibility/cue matrix from donor to modular owner.",
+    "No Mass ownership regression and no obsolete PrayerBook fallback.",
+    "App release gate may return to FINAL_APP_READY only when all findings are CLOSED."
+  ],
+  "openBlockers": [
+    "GENERIC_ROUTE_TRANSITIONS_SUBSTITUTED_FOR_DONOR_CHOREOGRAPHY",
+    "ASYNC_LOADING_SEMANTICS_FLATTENED",
+    "SEMANTIC_RAILS_SIMPLIFIED",
+    "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
+    "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED"
+  ]
+}
