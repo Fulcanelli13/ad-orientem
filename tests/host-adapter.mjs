@@ -22,6 +22,16 @@ expect(ordinary.resolvedMass.presentationMode==="LIVE","legacy vox mode mapping 
 expect(ordinary.resolvedMass.explicitlySelectedCelebration===false,"Mass of day became manual override");
 expect(ordinary.plan.massEntry==="FOOT_CLUSTER","ordinary plan changed");
 
+const conditioned=prepareMassSessionFromV346({
+  ...base,
+  conditions:["GLORIA_APPOINTED","CREDO_APPOINTED","AGNUS_DEI_PUBLIC","LAST_GOSPEL_PRESENT"],
+},{form:"sung",followMode:"vox",proper});
+expect(conditioned.resolvedMass.conditions===undefined,"legacy compatibility conditions leaked into canonical top-level state");
+expect(
+  conditioned.resolvedMass.provenance.conditions.join("|")==="GLORIA_APPOINTED|CREDO_APPOINTED|AGNUS_DEI_PUBLIC|LAST_GOSPEL_PRESENT",
+  "host liturgical conditions were not preserved by canonical provenance"
+);
+
 const rosary=prepareMassSessionFromV346({
   ...base,
   requestedCelebrationId:"holy_rosary",

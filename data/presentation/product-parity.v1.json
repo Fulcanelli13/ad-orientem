@@ -56,7 +56,7 @@
         "mode controls are visually presented as selectable while production mode switching is locked",
         "production source-first display model currently contains 39 cards; this must be reconciled with the approved v1.83 card philosophy without replacing the source-first engine"
       ],
-      "recoveryPass": "MASS_UI_V3_ELEVATION_CERTIFIED",
+      "recoveryPass": "MASS_UI_V4_SALIENCE_CERTIFIED",
       "recoveryTargets": [
         "collapse inactive cue rails without changing cue ownership",
         "move Schola from narrow right rail to dedicated readable dock",
@@ -89,12 +89,8 @@
         "locked mode selector is visually differentiated"
       ],
       "remainingParityWork": [
-        "first ribbon still needs reconciliation with the approved Home/title/parameters architecture",
         "production mode switching remains intentionally locked despite the earlier persistent-selector product intent",
-        "Schola dock is readable but not yet the approved resizable/hideable surface",
-        "broader gesture/posture salience needs screenshot acceptance beyond the opening and Host Consecration",
         "39-step source-first LIVE presentation must be reconciled with the approved v1.83 48-card philosophy without reverting to a historical engine",
-        "canonical frozen Home/Settings ribbon binaries are registered but not yet externalized; V2 uses explicit HOME/PARAMS text rather than invisible or substitute icons",
         "39-step source-first LIVE presentation still requires reconciliation with the historical 48-card product reference without changing source authority"
       ],
       "v2Targets": [
@@ -106,7 +102,8 @@
       "certifiedPasses": [
         "MASS_UI_V1",
         "MASS_UI_V2",
-        "MASS_UI_V3_ELEVATION"
+        "MASS_UI_V3_ELEVATION",
+        "MASS_UI_V4_SALIENCE"
       ],
       "resolvedInV2": [
         "first ribbon now exposes Home, locked MISSAL/SIMPLE/LIVE modes, current source-first section jump and Settings/parameters",
@@ -128,6 +125,35 @@
         "Visual acceptance workflow 37306081330",
         "R17 Mass convergence workflow 37306081149",
         "08-mass-host-elevation.png"
+      ],
+      "v4Targets": [
+        "traditional Gloria Holy Name bow salience at AO.SM.C0061",
+        "Incarnatus transient genuflection salience at AO.SM.C0096 without replacing persistent posture",
+        "Agnus Dei breast-strike plus standing posture salience at AO.SM.C0222",
+        "Last Gospel genuflect/rise salience at AO.SM.C0273/AO.SM.C0274",
+        "all phone focus acceptance aligned to the certified 39 percent focus line"
+      ],
+      "resolvedInV4": [
+        "cue rails are geometry-neutral overlays and cannot reflow the prayer column or steal 39 percent focus territory",
+        "canonical host conditions are consumed from resolvedMass.provenance.conditions with top-level compatibility retained",
+        "Traditional Gloria Holy Name bow is phone-certified at AO.SM.C0061 with standing posture preserved",
+        "Incarnatus genuflection is phone-certified at AO.SM.C0096 as a transient gesture while persistent standing posture remains",
+        "Agnus Dei breast strike and standing posture are phone-certified at AO.SM.C0222",
+        "Last Gospel genuflect/rise salience is phone-certified at AO.SM.C0273/AO.SM.C0274",
+        "legacy phone acceptance is aligned to the certified 39 percent focus line"
+      ],
+      "v4Evidence": [
+        "tests/mass-visual-acceptance.mjs",
+        "tests/reader-dom.mjs",
+        "tests/reader-cue-state.mjs",
+        "tests/host-adapter.mjs",
+        "Visual acceptance workflow 37308385997",
+        "R17 Mass convergence workflow 37308385848",
+        "App convergence workflow 37308385812",
+        "09-mass-gloria-bow.png",
+        "10-mass-incarnatus.png",
+        "11-mass-agnus-dei.png",
+        "12-mass-last-gospel-genuflect.png"
       ]
     },
     "pray": {

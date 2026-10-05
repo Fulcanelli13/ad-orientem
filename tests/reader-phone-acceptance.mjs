@@ -111,7 +111,7 @@ try{
     const cr=el.getBoundingClientRect();
     const tr=target.getBoundingClientRect();
     const absoluteCenter=(tr.top-cr.top+el.scrollTop)+(tr.height/2);
-    el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.46);
+    el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.39);
   });
   await page.waitForTimeout(250);
   const wordsFocus=await page.evaluate(()=>{
@@ -155,7 +155,7 @@ try{
     const cr=el.getBoundingClientRect();
     const tr=target.getBoundingClientRect();
     const absoluteCenter=(tr.top-cr.top+el.scrollTop)+(tr.height/2);
-    el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.46);
+    el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.39);
   });
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:3000});
   const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());

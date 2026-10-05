@@ -66,7 +66,7 @@ try{
           route,selectedDate:"2026-10-04",language:"en",
           settings:{
             massForm:"mc-incense",followMode:"vox",massPostureProfile:"TRADITIONAL_WALSH",
-            massGestureProfile:"GUIDED_1962",faithfulCommunion:true,textMode:"oriented",
+            massGestureProfile:"TRADITIONAL",faithfulCommunion:true,textMode:"oriented",
           },
         }),
         subscribe:()=>()=>{},
@@ -83,7 +83,7 @@ try{
         calendarDay:{id:"Tempora/Pent18-0",title:"Sunday"},
         requestedCelebrationId:"holy_rosary",celebrationId:"holy_rosary",celebrationType:"VOTIVE",
         actualCelebration:{id:"holy_rosary",type:"VOTIVE",title:"Our Lady of the Rosary"},
-        proper,properSource:"Sancti/10-07",insertedRites:[],conditions:[],rubricSources:["RG60"],
+        proper,properSource:"Sancti/10-07",insertedRites:[],conditions:["GLORIA_APPOINTED","CREDO_APPOINTED","AGNUS_DEI_PUBLIC","LAST_GOSPEL_PRESENT"],rubricSources:["RG60"],
       }),
     };
     const mod=await import("/src/mass/browser-entry.js?mass-visual-audit=1");
@@ -278,7 +278,110 @@ try{
   assert.match(elevationState.cinematicOwner,/R17_EXACT_ELEVATION_CINEMATIC/);
   await page.screenshot({path:resolve(out,"08-mass-host-elevation.png"),fullPage:false});
 
-  await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({setup,opening,consecration,wordsState,elevationState,errors},null,2));
+  async function focusCanonicalCue(cueId){
+    const section=await page.evaluate((id)=>{
+      const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+      const target=(preview?.model?.cards??[]).find(card=>(card?.paragraphs??[]).some(p=>(p?.sourceCueIds??[]).includes(id)));
+      if(!target)return null;
+      preview.showSection?.(target.sectionId);
+      return {sectionId:target.sectionId,title:target.title};
+    },cueId);
+    assert.ok(section?.sectionId,"source-first display model has no section for "+cueId);
+    const cue=page.locator(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${cueId}']`);
+    assert.equal(await cue.count(),1,cueId+" is not exposed exactly once in the current source-first section");
+    for(let attempt=0;attempt<5;attempt++){
+      await cue.evaluate(el=>{
+        const card=el.closest(".ao-prayer-card");
+        const cr=card.getBoundingClientRect(),er=el.getBoundingClientRect();
+        const top=er.top-cr.top+card.scrollTop;
+        const bottom=er.bottom-cr.top+card.scrollTop;
+        const max=Math.max(0,card.scrollHeight-card.clientHeight);
+        card.scrollTop=Math.min(max,Math.max(0,(top+bottom)/2-card.clientHeight*.39));
+        card.dispatchEvent(new Event("scroll"));
+      });
+      await page.waitForTimeout(100);
+      const active=await page.evaluate(()=>document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null);
+      if(active===cueId)break;
+    }
+    const focusDebug=await page.evaluate((id)=>{
+      const root=document.getElementById("ao-r17-native-reader-preview");
+      const el=document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`);
+      const card=el?.closest(".ao-prayer-card");
+      const cr=card?.getBoundingClientRect(),er=el?.getBoundingClientRect();
+      return {
+        expected:id,
+        active:root?.dataset?.r17NativeCue??null,
+        scrollTop:card?.scrollTop??null,
+        maxScroll:card?Math.max(0,card.scrollHeight-card.clientHeight):null,
+        clientHeight:card?.clientHeight??null,
+        targetTop:cr&&er?er.top-cr.top+(card?.scrollTop??0):null,
+        targetBottom:cr&&er?er.bottom-cr.top+(card?.scrollTop??0):null,
+        targetActive:el?.dataset?.active??null,
+      };
+    },cueId);
+    assert.equal(focusDebug.active,cueId,"exact cue did not acquire 39% focus territory: "+JSON.stringify(focusDebug));
+    return page.evaluate((id)=>({
+      cue:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null,
+      section:document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent?.trim()??"",
+      gesture:document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")?.textContent?.trim()??"",
+      posture:document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.trim()??"",
+      leftRail:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.leftRail??null,
+      gestureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='gesture']")?.dataset?.active??null,
+      postureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='posture']")?.dataset?.active??null,
+      gestureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='gesture']")?.hidden??null,
+      postureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture']")?.hidden??null,
+      activeParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
+      targetActive:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`)?.dataset?.active??null,
+      gestureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerGesture??null,
+      postureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerPosture??null,
+    }),cueId);
+  }
+
+  const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
+  assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
+  assert.equal(gloriaBow.posture,"STAND","Gloria posture did not remain visible in the faithful state ribbon");
+  assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
+  assert.equal(gloriaBow.gestureActive,"true");
+  assert.equal(gloriaBow.postureActive,"true");
+  assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
+  assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
+  await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
+
+  const incarnatus=await focusCanonicalCue("AO.SM.C0096");
+  assert.match(incarnatus.gesture,/GENUFLECT/i,"Incarnatus genuflection is not visibly salient");
+  assert.equal(incarnatus.posture,"STAND","Incarnatus transient genuflection incorrectly replaced the persistent standing posture");
+  assert.equal(incarnatus.leftRail,"true");
+  assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
+  assert.equal(incarnatus.targetActive,"true");
+  await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
+
+  const agnus=await focusCanonicalCue("AO.SM.C0222");
+  assert.match(agnus.gesture,/STRIKE BREAST/i,"Agnus Dei breast-strike cue is not visibly salient");
+  assert.equal(agnus.posture,"STAND","Agnus Dei source posture is not visible in the faithful state ribbon");
+  assert.equal(agnus.leftRail,"true");
+  assert.equal(agnus.gestureIconHidden,false,"Agnus Dei breast strike lost its canonical icon");
+  assert.equal(agnus.targetActive,"true");
+  await page.screenshot({path:resolve(out,"11-mass-agnus-dei.png"),fullPage:false});
+
+  const lastGospelGenuflect=await focusCanonicalCue("AO.SM.C0273");
+  assert.match(lastGospelGenuflect.gesture,/GENUFLECT/i,"Last Gospel ET VERBUM CARO cue is not visibly salient");
+  assert.equal(lastGospelGenuflect.posture,"STAND","Last Gospel persistent posture should remain standing around the transient genuflection");
+  assert.equal(lastGospelGenuflect.leftRail,"true");
+  assert.equal(lastGospelGenuflect.gestureIconHidden,false,"Last Gospel genuflect lost its canonical icon");
+  assert.equal(lastGospelGenuflect.targetActive,"true");
+  await page.screenshot({path:resolve(out,"12-mass-last-gospel-genuflect.png"),fullPage:false});
+
+  const lastGospelRise=await focusCanonicalCue("AO.SM.C0274");
+  assert.match(lastGospelRise.gesture,/RISE/i,"Last Gospel return-to-standing cue is not visibly salient");
+  assert.equal(lastGospelRise.posture,"STAND");
+  assert.equal(lastGospelRise.leftRail,"true");
+  assert.equal(lastGospelRise.targetActive,"true");
+
+  await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
+    setup,opening,consecration,wordsState,elevationState,
+    salience:{gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
+    errors
+  },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
   console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration},null,2));
   await context.close();
