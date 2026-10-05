@@ -51,6 +51,20 @@ function loaderElement(win) {
   return win?.document?.getElementById?.("ao-cinema-loader") ?? null;
 }
 
+function ensureModularFxStyle(win) {
+  const doc=win?.document;
+  if (!doc?.createElement || doc.getElementById?.("ao-modular-presentation-fx-style")) return;
+  const style=doc.createElement("style");
+  style.id="ao-modular-presentation-fx-style";
+  style.textContent=`
+.aoModularSurfaceIn{animation:aoModularSurfaceIn .42s cubic-bezier(.18,.8,.2,1) both}
+@keyframes aoModularSurfaceIn{from{opacity:.18;filter:blur(1.5px)}to{opacity:1;filter:none}}
+@media(prefers-reduced-motion:reduce){.aoModularSurfaceIn{animation:none!important;filter:none!important}}
+html[data-reduced-motion="true"] .aoModularSurfaceIn{animation:none!important;filter:none!important}
+`;
+  (doc.head??doc.documentElement)?.append?.(style);
+}
+
 function setText(root, selector, value) {
   const node = root?.querySelector?.(selector);
   if (node) node.textContent = value;
@@ -132,21 +146,23 @@ export function createPresentationFxBridge({
     root.dataset.aoPresentationFxSurface = surface;
 
     if (reducedMotion(win)) {
-      root.classList?.remove?.("aoCinemaSurfaceIn");
+      root.classList?.remove?.("aoModularSurfaceIn");
       return true;
     }
 
-    root.classList?.remove?.("aoCinemaSurfaceIn");
-    // Reflow is intentional: it restarts the inherited v43.12 surface-entry keyframe.
+    ensureModularFxStyle(win);
+    root.classList?.remove?.("aoModularSurfaceIn");
+    // Reflow is intentional: restart a modular-safe opacity/filter entry without
+    // transforming fixed surface geometry or covering the global ribbon.
     void root.offsetWidth;
-    root.classList?.add?.("aoCinemaSurfaceIn");
+    root.classList?.add?.("aoModularSurfaceIn");
 
     if (surfaceTimer != null && typeof win?.clearTimeout === "function") {
       win.clearTimeout(surfaceTimer);
     }
     if (typeof win?.setTimeout === "function") {
       surfaceTimer = win.setTimeout(() => {
-        root.classList?.remove?.("aoCinemaSurfaceIn");
+        root.classList?.remove?.("aoModularSurfaceIn");
         surfaceTimer = null;
       }, surfaceDuration);
     }
