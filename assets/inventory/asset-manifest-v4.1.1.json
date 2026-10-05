@@ -1,0 +1,987 @@
+{
+  "bank": "Ad Orientem Icon Asset Bank",
+  "version": "4.1.1",
+  "state": "HARDENED",
+  "contract_date": "2026-09-27",
+  "core_version": "4.0",
+  "core_asset_count": 109,
+  "extension_asset_count": 8,
+  "active_asset_count": 117,
+  "contract": "V4 core preserved exactly; V4.1 adds explicit post-contract identities and blocks arbitrary DOM admission.",
+  "core_files": [
+    {
+      "semantic_id": "ACTOR.BOAT_BEARER",
+      "semantic_label": "Boat Bearer",
+      "asset_id": "ao-live-boat-bearer",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-boat-bearer.png",
+      "sha256": "ecb94cb1ba2f74136a763d91cb7c03beef3dfa959b6b403ec69c095b991192e8"
+    },
+    {
+      "semantic_id": "ACTOR.MASTER_OF_CEREMONIES",
+      "semantic_label": "Master of Ceremonies",
+      "asset_id": "ao-live-mc",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-mc.png",
+      "sha256": "97786ddf7e60b7650bda3d2cac10cb5eb7fb3d46c050c4d6b01106c3e372a6bc"
+    },
+    {
+      "semantic_id": "ACTOR.PRIEST.CENTRE_AD_ORIENTEM",
+      "semantic_label": "Priest — Centre (Ad Orientem)",
+      "asset_id": "ao-live-priest-centre",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-priest-centre.png",
+      "sha256": "127198855c1f26cac5ef1419e84ea54902542aa4fad35e832041d383cbd8c526"
+    },
+    {
+      "semantic_id": "ACTOR.PRIEST.EPISTLE_SIDE",
+      "semantic_label": "Priest — At Missal (Epistle Side)",
+      "asset_id": "ao-live-priest-epistle-side",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-priest-epistle-side.png",
+      "sha256": "c27a58d196d0d4b7881f603a17cba1a60d67bbb7836e657e58d4da39779ee59f"
+    },
+    {
+      "semantic_id": "ACTOR.PRIEST.FACING_PEOPLE",
+      "semantic_label": "Priest — Facing People",
+      "asset_id": "ao-live-priest-facing-people",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-priest-facing-people.png",
+      "sha256": "ec6dccb0194dd1201cecd9d6ec781255d97ca1861b061c84950655cc37b011d8"
+    },
+    {
+      "semantic_id": "ACTOR.PRIEST.GOSPEL_SIDE",
+      "semantic_label": "Priest — Gospel Side",
+      "asset_id": "ao-live-priest-gospel-side",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-priest-gospel-side.png",
+      "sha256": "b872eb38a778cf2be8764a6b0bfa4733a84c4d87a0e002dab1f04f22ee014fcf"
+    },
+    {
+      "semantic_id": "ACTOR.THURIFER",
+      "semantic_label": "Thurifer",
+      "asset_id": "ao-live-thurifer",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-thurifer.png",
+      "sha256": "1ec0039ae4c4fbb676f2b847cbea8d9446e51a2f636ab77a20130bf227e35346"
+    },
+    {
+      "semantic_id": "SOUND.ALTAR_BELLS",
+      "semantic_label": "Altar Bells",
+      "asset_id": "ao-live-bells",
+      "kind": "mask",
+      "file_path": "assets/active/live-audio/ao-live-bells.png",
+      "sha256": "16ec2bd4511827b7ac6fd2e7c7b6fe3f8cc54ddd715eea707618e0e9c4527758"
+    },
+    {
+      "semantic_id": "SOUND.PRIEST.AUDIBLE",
+      "semantic_label": "Priest Audible",
+      "asset_id": "ao-live-priest-audible",
+      "kind": "mask",
+      "file_path": "assets/active/live-audio/ao-live-priest-audible.png",
+      "sha256": "f3e08e9a206346149baa19c31d94afb1f5fa7217c4b33e0d8cebc5814c1e55e1"
+    },
+    {
+      "semantic_id": "SOUND.PRIEST.SILENT",
+      "semantic_label": "Priest Silent",
+      "asset_id": "ao-live-priest-silent",
+      "kind": "mask",
+      "file_path": "assets/active/live-audio/ao-live-priest-silent.png",
+      "sha256": "1172aba87bfa16e2a70554aab0cafeac0c3f9a5978152a2a0ee33e87608c087c"
+    },
+    {
+      "semantic_id": "SOUND.SCHOLA",
+      "semantic_label": "Schola Active",
+      "asset_id": "ao-live-schola",
+      "kind": "mask",
+      "file_path": "assets/active/live-audio/ao-live-schola.png",
+      "sha256": "6ab82d51b76b675427d6e3e8b8e77b07f0fc07e1975c58daa0d5b8054c75a543"
+    },
+    {
+      "semantic_id": "SOUND.SCHOLA.REST",
+      "semantic_label": "Schola Rest",
+      "asset_id": "ao-live-schola-rest",
+      "kind": "mask",
+      "file_path": "assets/active/live-audio/ao-live-schola-rest.png",
+      "sha256": "987c837ef83d14726783c6696cfb71a87de9528a2c3b00fa5de6a34ded640753"
+    },
+    {
+      "semantic_id": "CONTEXT.CHURCH",
+      "semantic_label": "In Church",
+      "asset_id": "ao-refined-church",
+      "kind": "symbol",
+      "file_path": "assets/active/daily-context/ao-refined-church.svg",
+      "sha256": "c20a60bd959af39ee233bc27dc51e0806f5650e0222336dca7512ed4be6f7cf6"
+    },
+    {
+      "semantic_id": "CONTEXT.DIFFICULT_MOMENTS",
+      "semantic_label": "Difficult Moments",
+      "asset_id": "ao-refined-difficult-moments",
+      "kind": "symbol",
+      "file_path": "assets/active/daily-context/ao-refined-difficult-moments.svg",
+      "sha256": "647cba97c2f412ceefec32c73994a367aa35c7886c7393bc76d438e44f671e3b"
+    },
+    {
+      "semantic_id": "CONTEXT.HELP",
+      "semantic_label": "Need Help",
+      "asset_id": "ao-refined-help",
+      "kind": "symbol",
+      "file_path": "assets/active/daily-context/ao-refined-help.svg",
+      "sha256": "7e1a6fa6d2e629776128e034556a97f34278c295502a701eb012d5670d3dbfb7"
+    },
+    {
+      "semantic_id": "CONTEXT.MEAL",
+      "semantic_label": "Meal",
+      "asset_id": "ao-refined-meal",
+      "kind": "symbol",
+      "file_path": "assets/active/daily-context/ao-refined-meal.svg",
+      "sha256": "3ae02c450946bc698a881d2df84a61b07991dd71278ca74e48a4549dca7fa456"
+    },
+    {
+      "semantic_id": "CONTEXT.REST",
+      "semantic_label": "Rest",
+      "asset_id": "ao-refined-rest",
+      "kind": "symbol",
+      "file_path": "assets/active/daily-context/ao-refined-rest.svg",
+      "sha256": "299b4f2d4be228a47ca264b2e853047543243fdcb6e0a2cfa29fabba75d69a89"
+    },
+    {
+      "semantic_id": "CONTEXT.TRAVEL",
+      "semantic_label": "Travel",
+      "asset_id": "ao-refined-travel",
+      "kind": "symbol",
+      "file_path": "assets/active/daily-context/ao-refined-travel.svg",
+      "sha256": "bd61f5302249ad3fa48698d329ccf82e53a7ae6d704242a96903fe035334cb88"
+    },
+    {
+      "semantic_id": "CONTEXT.WORK",
+      "semantic_label": "Work",
+      "asset_id": "ao-refined-work",
+      "kind": "symbol",
+      "file_path": "assets/active/daily-context/ao-refined-work.svg",
+      "sha256": "33a17281c037ea4dd03dad7c784615c91f97337750454a1d2004871db7d90872"
+    },
+    {
+      "semantic_id": "MODULE.ADORATION",
+      "semantic_label": "Adoration & Benediction",
+      "asset_id": "ao-rich-adoration",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-adoration.png",
+      "sha256": "c4aba21ec81378cdfb090641955cd3265f8c8ae5b2f821d3291fb022a28faabd"
+    },
+    {
+      "semantic_id": "MODULE.ANGELUS",
+      "semantic_label": "Angelus / Regina Cæli",
+      "asset_id": "ao-rich-angelus",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-angelus.png",
+      "sha256": "0841f5785465a167136a39b922cd371bfb6df60c4fc68f1a6a67e7020da152e8"
+    },
+    {
+      "semantic_id": "MODULE.CONFESSION",
+      "semantic_label": "Confession",
+      "asset_id": "ao-rich-confession",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-confession.png",
+      "sha256": "7cab7471e12cdfa3e8ef8f4798c9aef77d8c81df8ed54d9fcf825228bd3a0980"
+    },
+    {
+      "semantic_id": "MODULE.DEVOTIONS",
+      "semantic_label": "Devotions",
+      "asset_id": "ao-refined-devotions",
+      "kind": "symbol",
+      "file_path": "assets/active/devotional-module/ao-refined-devotions.svg",
+      "sha256": "551a53d84e5b4b49e6d51e86905a291d92e3a97fe1c2d5ef10fe17015b65db0f"
+    },
+    {
+      "semantic_id": "MODULE.EUCHARISTIC_LIFE",
+      "semantic_label": "Eucharistic Life",
+      "asset_id": "ao-rich-eucharistic-life",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-eucharistic-life.png",
+      "sha256": "6a415ee00079034e92fe1d97726373477027aedf24083202e541cadc75a61bed"
+    },
+    {
+      "semantic_id": "MODULE.HOLY_SOULS",
+      "semantic_label": "Holy Souls",
+      "asset_id": "ao-rich-holy-souls",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-holy-souls.png",
+      "sha256": "60276d399e9d36f498509cc095acd148f267df603d33290ba096411926424fdc"
+    },
+    {
+      "semantic_id": "MODULE.HOLY_SPIRIT",
+      "semantic_label": "Holy Spirit",
+      "asset_id": "ao-rich-holy-spirit",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-holy-spirit.png",
+      "sha256": "07bf3eae3b745d99cdf6f80c2493223fe6276c6cc041031cf1066d026e42d1f2"
+    },
+    {
+      "semantic_id": "MODULE.IMMACULATE_HEART",
+      "semantic_label": "Immaculate Heart",
+      "asset_id": "ao-rich-immaculate-heart",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-immaculate-heart.png",
+      "sha256": "556587eaf3d845460bf0bf64f45cd700e1ce982df6a33a8f728bf16fa5859386"
+    },
+    {
+      "semantic_id": "MODULE.MENTAL_PRAYER",
+      "semantic_label": "Mental Prayer",
+      "asset_id": "ao-rich-mental-prayer",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-mental-prayer.png",
+      "sha256": "fc9d0048e9a758fe12df4532559fff7661ae6f9d6703ee61ee9e77085ddaba85"
+    },
+    {
+      "semantic_id": "MODULE.NOVENAS",
+      "semantic_label": "Novenas",
+      "asset_id": "ao-rich-novenas",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-novenas.png",
+      "sha256": "ee686dc29d52f681f74d75625db1dbbc8674dfcc1602c22d1955374f875f944c"
+    },
+    {
+      "semantic_id": "MODULE.PLAN_OF_LIFE",
+      "semantic_label": "Plan of Life",
+      "asset_id": "ao-rich-plan-of-life",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-plan-of-life.png",
+      "sha256": "ca2732b547666b4fe6a7d00e976add3ec80b41a59c054348b7386960d925de3c"
+    },
+    {
+      "semantic_id": "MODULE.PRAYER_LIBRARY",
+      "semantic_label": "Prayer Library",
+      "asset_id": "ao-rich-prayer-library",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-prayer-library.png",
+      "sha256": "b3186b328bb01cfa5567f59b9eb68e39f42038f772f148366a6cbb22bf3dc53c"
+    },
+    {
+      "semantic_id": "MODULE.PRAY_NOW",
+      "semantic_label": "Pray Now",
+      "asset_id": "ao-refined-pray-now",
+      "kind": "symbol",
+      "file_path": "assets/active/devotional-module/ao-refined-pray-now.svg",
+      "sha256": "7444907e6c219e82026bbd266ff861b993840350e5991471b6c1a713c1b10f7a"
+    },
+    {
+      "semantic_id": "MODULE.RECOLLECTION",
+      "semantic_label": "Recollection",
+      "asset_id": "ao-rich-recollection",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-recollection.png",
+      "sha256": "429b960a3e5270b350b20b9955a52a080d417b4e42577275c4d1f62c0daeef77"
+    },
+    {
+      "semantic_id": "MODULE.ROSARY",
+      "semantic_label": "Rosary",
+      "asset_id": "ao-rich-rosary",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-rosary.png",
+      "sha256": "63023c5299bb140c27dd8d2f3bdc15fabfd66c3b96f96baf3b338460bb8f4bf9"
+    },
+    {
+      "semantic_id": "MODULE.SACRED_HEART",
+      "semantic_label": "Sacred Heart",
+      "asset_id": "ao-rich-sacred-heart",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-sacred-heart.png",
+      "sha256": "1364c6a3e0c4301cf7ab5253116ede1889d7b1a0005c1b2a5dc9ed0ccca5cdff"
+    },
+    {
+      "semantic_id": "MODULE.SILENCE",
+      "semantic_label": "Silence",
+      "asset_id": "ao-refined-silence",
+      "kind": "symbol",
+      "file_path": "assets/active/devotional-module/ao-refined-silence.svg",
+      "sha256": "c3004d1e3a9862c2913912ddc1518c1d1faea02b446e794dbf6279c467e41869"
+    },
+    {
+      "semantic_id": "MODULE.SPIRITUAL_COMBAT",
+      "semantic_label": "Spiritual Combat",
+      "asset_id": "ao-rich-spiritual-combat",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-spiritual-combat.png",
+      "sha256": "8eb0323785100555fb0e194fa2483f81b0cd39e51b39641607ff1de4ab72b33c"
+    },
+    {
+      "semantic_id": "MODULE.STATIONS",
+      "semantic_label": "Stations of the Cross",
+      "asset_id": "ao-rich-stations",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-stations.png",
+      "sha256": "a7dc11f041ec9cc64fcc2b97de4a5d0f367366a9eaef07c50afd58233f4fafad"
+    },
+    {
+      "semantic_id": "MODULE.ST_JOSEPH",
+      "semantic_label": "St Joseph",
+      "asset_id": "ao-rich-st-joseph",
+      "kind": "mask",
+      "file_path": "assets/active/devotional-module/ao-rich-st-joseph.png",
+      "sha256": "f956d9abfb855ee4f2c76a5767b12e12123748d897c2f5c88000c94e2a956d21"
+    },
+    {
+      "semantic_id": "GESTURE.BREAST_STRIKE",
+      "semantic_label": "Breast Strike",
+      "asset_id": "ao-live-breast-strike",
+      "kind": "mask",
+      "file_path": "assets/active/live-gesture/ao-live-breast-strike.png",
+      "sha256": "a56a3d2024b73424c14e7094ed35caff5bc710ccfcbb650275e0601ed966aa56"
+    },
+    {
+      "semantic_id": "GESTURE.HANDS_JOINED",
+      "semantic_label": "Hands Joined",
+      "asset_id": "ao-live-hands-joined",
+      "kind": "mask",
+      "file_path": "assets/active/live-gesture/ao-live-hands-joined.png",
+      "sha256": "8e6554a6229cd138c332c9ed6083c82cef4abe64ec149c364eb71d4794a27632"
+    },
+    {
+      "semantic_id": "GESTURE.HEAD_BOW",
+      "semantic_label": "Head Bow",
+      "asset_id": "ao-live-head-bow",
+      "kind": "mask",
+      "file_path": "assets/active/live-gesture/ao-live-head-bow.png",
+      "sha256": "34617bb5f581620c9fa943be21575daa5cec4d702c60cbc8b7987495b0ba6078"
+    },
+    {
+      "semantic_id": "GESTURE.PROFOUND_BOW",
+      "semantic_label": "Profound Bow",
+      "asset_id": "ao-live-profound-bow",
+      "kind": "mask",
+      "file_path": "assets/active/live-gesture/ao-live-profound-bow.png",
+      "sha256": "1f24c3e0297a3117fc428d2b96f2bcf21c290728a9aa72705feeaa450b7544dc"
+    },
+    {
+      "semantic_id": "POSTURE.BOW",
+      "semantic_label": "Bow",
+      "asset_id": "ao-live-bow",
+      "kind": "mask",
+      "file_path": "assets/active/live-posture/ao-live-bow.png",
+      "sha256": "36032c09e2cfb432449f5a84449e543e765497b4cd4ef10ae5c32c595a446405"
+    },
+    {
+      "semantic_id": "POSTURE.GENUFLECT",
+      "semantic_label": "Genuflect",
+      "asset_id": "ao-live-genuflect",
+      "kind": "symbol",
+      "file_path": "assets/active/live-posture/ao-live-genuflect.svg",
+      "sha256": "34ce386b806157e73f1ff1811152d0617677c4bfd2073c46290ddeccfe84c74f"
+    },
+    {
+      "semantic_id": "POSTURE.KNEEL",
+      "semantic_label": "Kneel",
+      "asset_id": "ao-live-kneel",
+      "kind": "symbol",
+      "file_path": "assets/active/live-posture/ao-live-kneel.svg",
+      "sha256": "eda5c927849d32ffaa83d8efc9de885178050e78bdcc7a0a30310f6f85f858ec"
+    },
+    {
+      "semantic_id": "POSTURE.SIT",
+      "semantic_label": "Sit",
+      "asset_id": "ao-live-sit",
+      "kind": "mask",
+      "file_path": "assets/active/live-posture/ao-live-sit.png",
+      "sha256": "0a8e59bcc82d49f02f6d0ce7cb60ab1201b406045977cb9f08e22de46675f15a"
+    },
+    {
+      "semantic_id": "POSTURE.STAND",
+      "semantic_label": "Stand",
+      "asset_id": "ao-live-stand",
+      "kind": "symbol",
+      "file_path": "assets/active/live-posture/ao-live-stand.svg",
+      "sha256": "245fcc201fb360b36247412d9406bfbe4ee00e4391775bfc8e1db64ea02ca2b4"
+    },
+    {
+      "semantic_id": "MODULE.BEGINNER",
+      "semantic_label": "Beginner / Getting Started",
+      "asset_id": "ao-refined-beginner",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-beginner.svg",
+      "sha256": "2d914898e733da6ed45fdf60b38288667ae96f3382c40e03e010b5e292dbdc80"
+    },
+    {
+      "semantic_id": "MODULE.CALENDAR_UPCOMING",
+      "semantic_label": "Coming Up / Liturgical Calendar",
+      "asset_id": "ao-refined-calendar-upcoming",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-calendar-upcoming.svg",
+      "sha256": "35ec10d89b4cb2f9b39dd43939362d244f4751cf5462a8bdef6dc02418af0f70"
+    },
+    {
+      "semantic_id": "MODULE.CATHOLIC_WORLD",
+      "semantic_label": "Catholic World",
+      "asset_id": "ao-refined-catholic-world",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-catholic-world.svg",
+      "sha256": "5bc5baed7846a21df0b744aa4fa3c01ba51bfc2e1b5072df36b9ab6a036ff407"
+    },
+    {
+      "semantic_id": "MODULE.JOURNAL",
+      "semantic_label": "Journal",
+      "asset_id": "ao-refined-journal",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-journal.svg",
+      "sha256": "1eaa7b854c39ca7c261ea2a7657ecf9d1c71911355a009c5bdd98cefc87b5112"
+    },
+    {
+      "semantic_id": "MODULE.RESOLUTION",
+      "semantic_label": "Resolution",
+      "asset_id": "ao-refined-resolution",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-resolution.svg",
+      "sha256": "f10d8797da55b81f705e894ca658eba6a0195b9e12858195f4733f9a296619cf"
+    },
+    {
+      "semantic_id": "MODULE.SAINT_OF_DAY",
+      "semantic_label": "Saint of the Day",
+      "asset_id": "ao-refined-saint-of-day",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-saint-of-day.svg",
+      "sha256": "55d5d32a87e66cb8fc48029c49df33b312a032a6a542b259d9d952b667496e7f"
+    },
+    {
+      "semantic_id": "MODULE.SCRIPTURE",
+      "semantic_label": "Scripture / Today’s Gospel",
+      "asset_id": "ao-refined-scripture",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-scripture.svg",
+      "sha256": "032ec42954061176ddb7812acff83dee02cec85610a0c440cd3be351a905121d"
+    },
+    {
+      "semantic_id": "MODULE.SPIRITUAL_LIFE",
+      "semantic_label": "Spiritual Life",
+      "asset_id": "ao-refined-spiritual-life",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-spiritual-life.svg",
+      "sha256": "c4447a713ca04af682fe44385af9fa53b79cce6c3836c7817a18e9dfa24469dd"
+    },
+    {
+      "semantic_id": "MODULE.STUDY",
+      "semantic_label": "Study",
+      "asset_id": "ao-refined-study",
+      "kind": "symbol",
+      "file_path": "assets/active/formation-module/ao-refined-study.svg",
+      "sha256": "f2a98a01023ac78d2bb89658d6bc895614c27ddd95fc807057d0785bbcdb7aec"
+    },
+    {
+      "semantic_id": "UI.BACK",
+      "semantic_label": "Back",
+      "asset_id": "ao-ui-back",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-back.svg",
+      "sha256": "6fa76327acec6b8ea638eaa003bee231495ed2c09da695b1328bc6153f66e8ce"
+    },
+    {
+      "semantic_id": "UI.CHECK",
+      "semantic_label": "Check",
+      "asset_id": "ao-ui-check",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-check.svg",
+      "sha256": "ee7ae8a8b2221c2b567a4ec79ba85398fdf0a61afe4eeda7eb6a62d5fe54c23c"
+    },
+    {
+      "semantic_id": "UI.CLOSE",
+      "semantic_label": "Close",
+      "asset_id": "ao-ui-close",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-close.svg",
+      "sha256": "09d6201070424b8aee9277cc04acaeb5962c8af429d137638350edeacf47f1e1"
+    },
+    {
+      "semantic_id": "UI.EXPAND",
+      "semantic_label": "Expand",
+      "asset_id": "ao-ui-expand",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-expand.svg",
+      "sha256": "8efc169ae002959bbd4279a6d1bd36bb8bc5b1d4578c8f7a38258e2c20bb112c"
+    },
+    {
+      "semantic_id": "UI.EXTERNAL",
+      "semantic_label": "External",
+      "asset_id": "ao-ui-external",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-external.svg",
+      "sha256": "26763d11fe232da94a16f0e9dffc6de90360c4e4982865928afba99af984ea65"
+    },
+    {
+      "semantic_id": "UI.INFO",
+      "semantic_label": "Info",
+      "asset_id": "ao-ui-info",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-info.svg",
+      "sha256": "1d0a4ae2ed6065e7a36957f1b2e133e54ce9ade342aec6bd2edd4a256ff68126"
+    },
+    {
+      "semantic_id": "UI.NEXT",
+      "semantic_label": "Next",
+      "asset_id": "ao-ui-next",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-next.svg",
+      "sha256": "8f5bee6dbd70cdc0dee5c7f7d9d6820a9ac513b534053c7685964d62d1a4bac6"
+    },
+    {
+      "semantic_id": "UI.PREVIOUS",
+      "semantic_label": "Previous",
+      "asset_id": "ao-ui-previous",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-previous.svg",
+      "sha256": "1f2b4f1f74dad53831faac508b582ecca636297158d49fe636091cfb6c286323"
+    },
+    {
+      "semantic_id": "UI.PRIVACY",
+      "semantic_label": "Privacy",
+      "asset_id": "ao-refined-privacy",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-refined-privacy.svg",
+      "sha256": "c3946d3abf2ba3b7cad222dee56625815d380b3060870e31f849c51feab308ac"
+    },
+    {
+      "semantic_id": "UI.SEARCH",
+      "semantic_label": "Search",
+      "asset_id": "ao-ui-search",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-search.svg",
+      "sha256": "bbfd23515545b34fa4ba6704c03e7da12154dfa0536d0231b1e9588bfb5b921a"
+    },
+    {
+      "semantic_id": "UI.SOURCES",
+      "semantic_label": "Sources",
+      "asset_id": "ao-ui-sources",
+      "kind": "symbol",
+      "file_path": "assets/active/ui/ao-ui-sources.svg",
+      "sha256": "2036f05e35ae76d7777072e773cb7c5eeeda28df565c8614b7a92d5186e76bea"
+    },
+    {
+      "semantic_id": "NAV.GLOBAL.CALENDAR",
+      "semantic_label": "Calendar",
+      "asset_id": "ao-nav-calendar",
+      "kind": "mask",
+      "file_path": "assets/active/navigation/ao-nav-calendar.png",
+      "sha256": "f143a7c01c9bcc2ad8d5df23b5bd84bcad4470945054761f408401379a8e2f43"
+    },
+    {
+      "semantic_id": "NAV.GLOBAL.HOME",
+      "semantic_label": "Home — Ad Orientem identity",
+      "asset_id": "ao-nav-home",
+      "kind": "mask",
+      "file_path": "assets/active/navigation/ao-nav-home.png",
+      "sha256": "9a03d23f2e4cf468e2946973fed3522eea5b7920844307d0109b7085fe9b819f"
+    },
+    {
+      "semantic_id": "NAV.GLOBAL.LEARN",
+      "semantic_label": "Learn",
+      "asset_id": "ao-nav-learn",
+      "kind": "mask",
+      "file_path": "assets/active/navigation/ao-nav-learn.png",
+      "sha256": "afc13baf0217aee4e2c4f9fa2decc3325ef9d40d918d675eeef9be29b4c66f22"
+    },
+    {
+      "semantic_id": "NAV.GLOBAL.MASS",
+      "semantic_label": "Mass",
+      "asset_id": "ao-brand-emblem",
+      "kind": "mask",
+      "file_path": "assets/active/navigation/ao-brand-emblem.png",
+      "sha256": "8fa04230a74384932606a4b7eabd9e5e5bfb45f486bf0c4d23c51f2f5d957cbf"
+    },
+    {
+      "semantic_id": "NAV.GLOBAL.PRAY",
+      "semantic_label": "Pray",
+      "asset_id": "ao-nav-pray",
+      "kind": "mask",
+      "file_path": "assets/active/navigation/ao-nav-pray.png",
+      "sha256": "593941700a9ced05ba76c1e7697a6a97863572b18a2ffc56df9fc9124380e43d"
+    },
+    {
+      "semantic_id": "NAV.GLOBAL.SETTINGS",
+      "semantic_label": "Settings",
+      "asset_id": "ao-nav-settings",
+      "kind": "mask",
+      "file_path": "assets/active/navigation/ao-nav-settings.png",
+      "sha256": "6bc33b1a590e7c6551c45c17236bf3d23a4a3801d86af07f12501c5ae602c57a"
+    },
+    {
+      "semantic_id": "ACTION.ENTRANCE_PROCESSION",
+      "semantic_label": "Entrance Procession",
+      "asset_id": "ao-live-processional",
+      "kind": "mask",
+      "file_path": "assets/active/live-actions/ao-live-processional.png",
+      "sha256": "9d3b4cc872008dd05789a1fd4e076333e20e901fe4855f0605ea9ca0c9d97205"
+    },
+    {
+      "semantic_id": "ACTION.RECESSION",
+      "semantic_label": "Recessional",
+      "asset_id": "ao-live-recessional",
+      "kind": "mask",
+      "file_path": "assets/active/live-actions/ao-live-recessional.png",
+      "sha256": "70e680fd6c90cc305eaedda5b82bbd6027d1b2d83dc9e6b6789eb8d9b0c6124f"
+    },
+    {
+      "semantic_id": "ACTION.BLESSING",
+      "semantic_label": "Blessing",
+      "asset_id": "ao-live-blessing",
+      "kind": "mask",
+      "file_path": "assets/active/live-actions/ao-live-blessing.png",
+      "sha256": "620d70d4c40ba75deec8985f043683df6dae0e6bfe72490744eae7c83190417c"
+    },
+    {
+      "semantic_id": "ACTION.COMMUNION",
+      "semantic_label": "Communion",
+      "asset_id": "ao-live-communion",
+      "kind": "mask",
+      "file_path": "assets/active/live-actions/ao-live-communion.png",
+      "sha256": "08edf0b3859a27a810a1cf786a46c0e65186915d3671ffa470fbb661ad6f253e"
+    },
+    {
+      "semantic_id": "ACTION.HOST_ELEVATION",
+      "semantic_label": "Priest — Elevation",
+      "asset_id": "ao-live-priest-elevation",
+      "kind": "mask",
+      "file_path": "assets/active/live-actions/ao-live-priest-elevation.png",
+      "sha256": "78ec06b7f5afa061c2698a776b4738defc2f30fa357c92d6c8fa4cedd4ae64b7"
+    },
+    {
+      "semantic_id": "ACTION.LAVABO",
+      "semantic_label": "Lavabo",
+      "asset_id": "ao-live-lavabo",
+      "kind": "mask",
+      "file_path": "assets/active/live-actions/ao-live-lavabo.png",
+      "sha256": "4310dfa0d50b71f116ae0ae4d171ef145939c750318b29b3b63fc6273f3e186b"
+    },
+    {
+      "semantic_id": "ACTOR.CANDLE_BEARERS",
+      "semantic_label": "Candle Bearers",
+      "asset_id": "ao-live-candle-bearers",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-candle-bearers.png",
+      "sha256": "a4aa5d370a3daeb66d3741fba9dcc94d652043b5f296cb0124f9e8f515cdb350"
+    },
+    {
+      "semantic_id": "ACTOR.CANTOR",
+      "semantic_label": "Cantor",
+      "asset_id": "ao-live-cantor",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-cantor.png",
+      "sha256": "166436d5f606e2c7b382c03c99bee2cce424699240d959c7004acc643fb783be"
+    },
+    {
+      "semantic_id": "ACTOR.CROSS_BEARER",
+      "semantic_label": "Cross Bearer",
+      "asset_id": "ao-live-cross-bearer",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-cross-bearer.png",
+      "sha256": "409725c4c9b985b9d1ece27de17de8a02dabd5baa617225e65ae0ea94b834361"
+    },
+    {
+      "semantic_id": "ACTOR.DEACON",
+      "semantic_label": "Deacon",
+      "asset_id": "ao-live-deacon",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-deacon.png",
+      "sha256": "d0d9cee5e1fa1d9d213f4ee6debe192fbeeec9b808ef1fb2c795061e6f3f4bd7"
+    },
+    {
+      "semantic_id": "ACTOR.PRIEST.GENUFLECT",
+      "semantic_label": "Priest — Genuflect",
+      "asset_id": "ao-live-priest-genuflect",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-priest-genuflect.png",
+      "sha256": "d421532271ccf3978249032e02bcf5f59c6cee8b2d49fbff062da75a96b660d6"
+    },
+    {
+      "semantic_id": "ACTOR.PRIEST.INCENSING_ALTAR",
+      "semantic_label": "Priest — Incensing Altar",
+      "asset_id": "ao-live-priest-incense-altar",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-priest-incense-altar.png",
+      "sha256": "7e613ebf726773d3fab4921b98b0107ecfcdc166b357cc474946e1e391f11f48"
+    },
+    {
+      "semantic_id": "ACTOR.PRIEST.INCENSING_PEOPLE",
+      "semantic_label": "Priest — Incensing People",
+      "asset_id": "ao-live-priest-incense-people",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-priest-incense-people.png",
+      "sha256": "14c807483ff7920a8cad78db04012512f329527442980508fb33a9b303e3998a"
+    },
+    {
+      "semantic_id": "ACTOR.SERVER.GENERIC",
+      "semantic_label": "Server / Acolyte",
+      "asset_id": "ao-live-server",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-server.png",
+      "sha256": "c5f9b8ae7de7203edd16a223408f82536a42837f30077bb00d98662bbd3577ea"
+    },
+    {
+      "semantic_id": "ACTOR.SUBDEACON",
+      "semantic_label": "Subdeacon",
+      "asset_id": "ao-live-subdeacon",
+      "kind": "mask",
+      "file_path": "assets/active/live-actors/ao-live-subdeacon.png",
+      "sha256": "df2611a13e633a9dfb22f45b03159a210f948910a739691268b180f563420bdc"
+    },
+    {
+      "semantic_id": "CUE.HEAR",
+      "semantic_label": "Hear",
+      "asset_id": "ao-live-hear",
+      "kind": "mask",
+      "file_path": "assets/active/live-cue/ao-live-hear.png",
+      "sha256": "41946cfe034c4d17579a00595ab543a501f7019e0f4b1cd553de627effad3ced"
+    },
+    {
+      "semantic_id": "CUE.LOOK",
+      "semantic_label": "Look",
+      "asset_id": "ao-live-look",
+      "kind": "mask",
+      "file_path": "assets/active/live-cue/ao-live-look.png",
+      "sha256": "a40af000f69024040a48c83717463b998d867a05e9b9f9917414726512646fb9"
+    },
+    {
+      "semantic_id": "CUE.RESPONSE",
+      "semantic_label": "Response V/R",
+      "asset_id": "ao-live-response",
+      "kind": "mask",
+      "file_path": "assets/active/live-cue/ao-live-response.png",
+      "sha256": "9d96892b0afda03f52629aedc5fcbe7531b8ea19218c1c42aafacaed97cab624"
+    },
+    {
+      "semantic_id": "CUE.YOU",
+      "semantic_label": "You",
+      "asset_id": "ao-live-you",
+      "kind": "mask",
+      "file_path": "assets/active/live-cue/ao-live-you.png",
+      "sha256": "0371d738ead9b39b9d568d7c7712801597fcde32efd903bb00dae9a9d6a16ed6"
+    },
+    {
+      "semantic_id": "MODULE.BEFORE_MASS",
+      "semantic_label": "Before Mass",
+      "asset_id": "ao-module-before-mass",
+      "kind": "mask",
+      "file_path": "assets/active/modules/ao-module-before-mass.png",
+      "sha256": "09922590a391aa91e727238c83e61d37d3f95e7f99c4ba28dee16aa25d3e07c3"
+    },
+    {
+      "semantic_id": "MODULE.CATECHISM",
+      "semantic_label": "Traditional Catechism",
+      "asset_id": "ao-module-catechism",
+      "kind": "mask",
+      "file_path": "assets/active/modules/ao-module-catechism.png",
+      "sha256": "ef893112f2f81a6b8884c5ae06745aa4c0166e52ead92b5b62ca17f1b7202e6b"
+    },
+    {
+      "semantic_id": "MODULE.MASS_INTENTION",
+      "semantic_label": "Mass Intention",
+      "asset_id": "ao-module-mass-intention",
+      "kind": "mask",
+      "file_path": "assets/active/modules/ao-module-mass-intention.png",
+      "sha256": "c93e4fc2d8e8af727e33367da0c3a15f543e284823b21325f50fdae197736c28"
+    },
+    {
+      "semantic_id": "MODULE.THANKSGIVING_AFTER_MASS",
+      "semantic_label": "Thanksgiving After Mass",
+      "asset_id": "ao-module-thanksgiving",
+      "kind": "mask",
+      "file_path": "assets/active/modules/ao-module-thanksgiving.png",
+      "sha256": "0688d9cac03c09d31a433895cfa09a95f76d49a55fdd2a601478ad8a82f76ded"
+    },
+    {
+      "semantic_id": "POSITION.PRIEST.ASCENDING_STEPS",
+      "semantic_label": "Priest — Ascending Steps",
+      "asset_id": "ao-live-priest-ascending-steps",
+      "kind": "mask",
+      "file_path": "assets/active/live-priest-position/ao-live-priest-ascending-steps.png",
+      "sha256": "d866722786abea05313d12023bb282ddc9efe03ec1e1f7a00a1fef78be7c3d42"
+    },
+    {
+      "semantic_id": "POSITION.PRIEST.COMMUNION_RAIL",
+      "semantic_label": "Priest — Distributing Communion at Rail",
+      "asset_id": "ao-live-priest-communion-rail",
+      "kind": "mask",
+      "file_path": "assets/active/live-priest-position/ao-live-priest-communion-rail.png",
+      "sha256": "f0aee42b284347e03c3c7e1d663e609de59ad7dc963764f576c5f0f869d92d74"
+    },
+    {
+      "semantic_id": "POSITION.PRIEST.FOOT_OF_ALTAR",
+      "semantic_label": "Priest — Foot of Altar",
+      "asset_id": "ao-live-priest-foot-altar",
+      "kind": "mask",
+      "file_path": "assets/active/live-priest-position/ao-live-priest-foot-altar.png",
+      "sha256": "c35defd145fd745741489f44259f7cb6e3c736b824a7e3918ed5539ff96495df"
+    },
+    {
+      "semantic_id": "ACTION.CROSS_VENERATION",
+      "semantic_label": "Cross Veneration",
+      "asset_id": "ao-special-cross-veneration",
+      "kind": "mask",
+      "file_path": "assets/active/special-days/ao-special-cross-veneration.png",
+      "sha256": "ab29b142161d354d3bde1f9111d11e8819cff353f6281967b9e6657049bcd758"
+    },
+    {
+      "semantic_id": "OBJECT.ASHES",
+      "semantic_label": "Ashes",
+      "asset_id": "ao-special-ashes",
+      "kind": "mask",
+      "file_path": "assets/active/special-days/ao-special-ashes.png",
+      "sha256": "aaf9f16283d09ff6590aaae24a41bc55d704fcb88a70f973657aca297471bcc4"
+    },
+    {
+      "semantic_id": "OBJECT.CANDLE.LIT",
+      "semantic_label": "Candle Lit",
+      "asset_id": "ao-special-candle-lit",
+      "kind": "mask",
+      "file_path": "assets/active/special-days/ao-special-candle-lit.png",
+      "sha256": "8b2511b00941152d48889ef862ee13b93f3f79bc96f15ed74094b967705a9d49"
+    },
+    {
+      "semantic_id": "OBJECT.CANDLE.UNLIT",
+      "semantic_label": "Candle Unlit",
+      "asset_id": "ao-special-candle-unlit",
+      "kind": "mask",
+      "file_path": "assets/active/special-days/ao-special-candle-unlit.png",
+      "sha256": "545511cc67412f2d4395214513683b9287081d254e3729739528a61886e11b9f"
+    },
+    {
+      "semantic_id": "OBJECT.MANDATUM_BASIN_TOWEL",
+      "semantic_label": "Mandatum Basin and Towel",
+      "asset_id": "ao-special-mandatum-basin-towel",
+      "kind": "mask",
+      "file_path": "assets/active/special-days/ao-special-mandatum-basin-towel.png",
+      "sha256": "3b8e2ad74f1579dc0a76a2f8d5e4a6a127b322910ecd201926a9dee06a800426"
+    },
+    {
+      "semantic_id": "OBJECT.PALM",
+      "semantic_label": "Palm Branch",
+      "asset_id": "ao-special-palm",
+      "kind": "mask",
+      "file_path": "assets/active/special-days/ao-special-palm.png",
+      "sha256": "d379e13c1a009f1c1e78ce5657f78f940f6dafdb954fa434ee7a266e82d0db7c"
+    },
+    {
+      "semantic_id": "OBJECT.PASCHAL_CANDLE",
+      "semantic_label": "Paschal Candle",
+      "asset_id": "ao-special-paschal-candle",
+      "kind": "mask",
+      "file_path": "assets/active/special-days/ao-special-paschal-candle.png",
+      "sha256": "f0bee664e0d286fd9ca00d3cbda6824eedbf55a51635a21300d0537226990ca8"
+    },
+    {
+      "semantic_id": "UI.HOME",
+      "semantic_label": "Home",
+      "asset_id": "ao-ui-home",
+      "kind": "mask",
+      "file_path": "assets/active/ui/ao-ui-home.png",
+      "sha256": "ac09e47b3db7e94e0203e8c0a411d44dfecc964874b6d9499496612ebb29bcf7"
+    },
+    {
+      "semantic_id": "UI.SETTINGS",
+      "semantic_label": "Settings",
+      "asset_id": "ao-ui-settings",
+      "kind": "mask",
+      "file_path": "assets/active/ui/ao-ui-settings.png",
+      "sha256": "5fbc3ae746ab08f39cae2a44264117a3faccf535c34b113f87e83a3776dbe2e2"
+    }
+  ],
+  "extensions": [
+    {
+      "semantic_id": "module.daily.begin_end_day",
+      "semantic_label": "Morning & Evening Prayer",
+      "asset_id": "ao-rich-begin-end-day",
+      "owner": "module",
+      "kind": "embedded_svg_symbol",
+      "source": "existing post-V4 app asset formally admitted in V4.1"
+    },
+    {
+      "semantic_id": "module.examination_of_conscience",
+      "semantic_label": "Examination of Conscience",
+      "asset_id": "ao-rich-examination-of-conscience",
+      "owner": "module",
+      "kind": "embedded_svg_symbol",
+      "source": "existing post-V4 app asset formally admitted in V4.1"
+    },
+    {
+      "semantic_id": "module.understand_mass",
+      "semantic_label": "Understand the Mass",
+      "asset_id": "ao-rich-guides",
+      "owner": "module",
+      "kind": "embedded_svg_symbol",
+      "source": "existing post-V4 app asset formally admitted in V4.1"
+    },
+    {
+      "semantic_id": "module.morning_prayer",
+      "semantic_label": "Morning Prayer",
+      "asset_id": "ao-rich-morning-offering",
+      "owner": "module",
+      "kind": "embedded_svg_symbol",
+      "source": "existing post-V4 app asset formally admitted in V4.1"
+    },
+    {
+      "semantic_id": "module.night_prayer",
+      "semantic_label": "Night Prayer",
+      "asset_id": "ao-rich-night-prayer",
+      "owner": "module",
+      "kind": "embedded_svg_symbol",
+      "source": "existing post-V4 app asset formally admitted in V4.1"
+    },
+    {
+      "semantic_id": "module.marian.general",
+      "semantic_label": "Our Lady / Marian Devotions",
+      "asset_id": "ao-rich-our-lady-marian-devotions",
+      "owner": "module",
+      "kind": "embedded_svg_symbol",
+      "source": "existing post-V4 app asset formally admitted in V4.1"
+    },
+    {
+      "semantic_id": "ui.help.lost",
+      "semantic_label": "I’m Lost",
+      "asset_id": "ao-ui-lost",
+      "owner": "ui",
+      "kind": "png_mask_alias",
+      "source": "legacy ao-nav-im-lost artwork migrated to V4.1 UI ownership"
+    },
+    {
+      "semantic_id": "live.gesture.sign_cross",
+      "semantic_label": "Sign of the Cross",
+      "asset_id": "ao-live-sign-cross",
+      "owner": "live",
+      "kind": "png_mask_alias",
+      "source": "legacy ao-posture-sign-cross artwork migrated to V4.1 Live ownership"
+    }
+  ],
+  "deliberately_unassigned": [
+    {
+      "control": "ui.datePicker",
+      "reason": "Module/calendar artwork is no longer used as a functional control; existing text glyph retained pending a dedicated ao-ui control asset."
+    }
+  ],
+  "removed_from_active_contract": [
+    "ao-nav-mass",
+    "ao-nav-im-lost",
+    "ao-posture-sign-cross",
+    "ao-nav-mass-map"
+  ],
+  "semantic_state_authority": {
+    "schola": "view-model scholaState from projected chant events",
+    "mass_action": "view-model action from canonical step-id map",
+    "special_rite_object": "view-model riteObjectState from canonical step-id map",
+    "live_gesture": "canonical Live registry",
+    "ribbon": "registry.ui.ribbon",
+    "controls": "registry.ui.controls",
+    "coming_up": "registry.coming",
+    "routes": "registry.module"
+  },
+  "notes": "V4.1.1 correction: Benediction is part of the Adoration module; Forty Hours intentionally shares ao-rich-adoration.",
+  "shared_identity_mappings": [
+    {
+      "route": "pray.benediction",
+      "module_root": "pray.adoration",
+      "asset_id": "ao-rich-adoration",
+      "reason": "Benediction is a subview of the combined Adoration & Benediction module."
+    },
+    {
+      "route": "pray.forty_hours",
+      "asset_id": "ao-rich-adoration",
+      "reason": "Forty Hours intentionally uses the same Eucharistic/Adoration icon."
+    }
+  ]
+}
