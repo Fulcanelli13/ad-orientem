@@ -42,6 +42,7 @@ assert.equal(parity.schema,"ao-product-parity-v1");
 assert.deepEqual(Object.keys(parity.surfaces),["home","mass","pray","learn","calendar","settings"]);
 assert.equal(parity.surfaces.calendar.status,"CERTIFIED");
 assert.equal(parity.surfaces.home.status,"CERTIFIED");
+assert.equal(parity.surfaces.pray.status,"CERTIFIED");
 assert.ok(Object.values(parity.surfaces).some(x=>x.status!=="CERTIFIED"),"presentation parity blocker cannot remain open with every surface certified");
 assert.equal(findings.find(x=>x.id==="MASS_SUBSYSTEM_CERTIFIED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="SPECIAL_STRUCTURES_REAL_SHELL")?.classification,"PASS");

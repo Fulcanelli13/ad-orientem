@@ -120,7 +120,7 @@
       ]
     },
     "pray": {
-      "status": "PENDING_AUDIT",
+      "status": "CERTIFIED",
       "currentOwner": "src/pray",
       "reference": "V43_59_30_PRAY_LOCK",
       "mustPreserve": [
@@ -129,6 +129,16 @@
         "fluid reading focus",
         "recitation grammar",
         "canonical controls"
+      ],
+      "evidence": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/presentation-coherence.js",
+        "src/pray/presentation-styles.js",
+        "src/pray/canonical-data.js",
+        "tests/pray-presentation.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Visual acceptance workflow 37304675296 at 390x844 touch geometry",
+        "R17 Mass convergence workflow 37304675353"
       ]
     },
     "learn": {

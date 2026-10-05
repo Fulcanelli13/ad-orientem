@@ -136,7 +136,49 @@ try{
   await assertHomeHidden("PRAY");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-back]").count(),1,"PRAY root lost its Home return control");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),0,"PRAY root exposes duplicate Back + Close exits");
+  const prayHub=await page.evaluate(()=>({
+    owner:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
+    cards:document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length,
+    legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+  }));
+  assert.equal(prayHub.owner,"modular-pray-v1");
+  assert.ok(prayHub.cards>=10,"PRAY hub lost its locked devotional module hierarchy");
+  assert.equal(prayHub.legacyOpen,false,"legacy Prayer Book is visible beneath modular PRAY");
   await shot("03-pray");
+
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.library",{returnContext:null}));
+  await page.waitForSelector("#aoPray435930.open [data-p435930-lib-open='sacrament_act_of_contrition']",{timeout:10000});
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-lib-open]").count(),48,"PRAY Library no longer exposes the locked 48-prayer corpus");
+  await page.locator("#aoPray435930 [data-p435930-lib-open='sacrament_act_of_contrition']").click();
+  await page.waitForSelector("#aoPray435930 .aoP435930Prayer",{timeout:5000});
+  await page.waitForFunction(()=>globalThis.AO_PRAY_COHERENCE_V435930?.audit?.().readerContract==="fluid-v1",null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930 [data-ao-pray-focus='active']").length===1,null,{timeout:5000});
+  const prayReader=await page.evaluate(()=>{
+    const audit=globalThis.AO_PRAY_COHERENCE_V435930?.audit?.()??{};
+    const flip=document.querySelector("#aoPray435930 .aoP435930Flip");
+    const vern=flip?.querySelector("[data-face-v]");
+    const latin=flip?.querySelector("[data-face-la]");
+    return {
+      ...audit,
+      recitationButtons:document.querySelectorAll("#aoPray435930 [data-p435930-global-recitation]").length,
+      prayerTitle:document.querySelector("#aoPray435930 .aoP435930Prayer h3")?.textContent?.trim()??"",
+      latinHidden:latin?.hidden??null,
+      vernHidden:vern?.hidden??null,
+      activeFocus:document.querySelectorAll("#aoPray435930 [data-ao-pray-focus='active']").length,
+      legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+    };
+  });
+  assert.equal(prayReader.recitationControls,1,"PRAY reader lost its single recitation-mode control");
+  assert.equal(prayReader.recitationButtons,2,"PRAY reader lost Individual/Group recitation choices");
+  assert.equal(prayReader.translationPairs,1,"PRAY library prayer lost its Latin/vernacular pair");
+  assert.equal(prayReader.stackedTranslationPairs,0,"PRAY stacked Latin and vernacular instead of one-language-at-a-time presentation");
+  assert.ok(prayReader.fluidUnits>0,"PRAY reader lost fluid focus units");
+  assert.equal(prayReader.readerContract,"fluid-v1");
+  assert.equal(prayReader.activeFocus,1,"PRAY fluid reader does not expose exactly one active focus unit");
+  assert.ok(prayReader.prayerTitle.length>0,"PRAY prayer title is blank");
+  assert.notEqual(prayReader.latinHidden,prayReader.vernHidden,"PRAY translation pair does not expose exactly one visible language");
+  assert.equal(prayReader.legacyOpen,false,"legacy Prayer Book reopened inside prayer reading");
+  await shot("03b-pray-library-prayer");
 
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
