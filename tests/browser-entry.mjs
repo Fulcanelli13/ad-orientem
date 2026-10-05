@@ -43,6 +43,21 @@ assert.match(cssBank.stand,/^data:image\/svg\+xml;base64,/);
 assert.equal(resolveHostIconAssets(cssWin).priest_centre,cssBank.priest_centre,
   "production resolver did not fall back to the frozen CSS asset bank");
 
+const scopedCssWin={
+  document:{
+    documentElement:{},
+    styleSheets:[{
+      cssRules:Object.entries(cssValues).map(([name,value])=>({
+        style:{getPropertyValue:key=>key===name?value:""},
+      })),
+    }],
+  },
+  getComputedStyle:()=>({getPropertyValue:()=>""}),
+};
+const scopedCssBank=resolveFrozenCssIconAssets(scopedCssWin,scopedCssWin.document);
+assert.deepEqual(Object.keys(scopedCssBank??{}).sort(),Object.keys(R17_FROZEN_CSS_ICON_VARS).sort(),
+  "selector-scoped frozen CSS declarations were not recovered from stylesheet rules");
+
 const rites = mapInsertedRites([
   "asperges",
   "corpus procession",
