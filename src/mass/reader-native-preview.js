@@ -423,7 +423,7 @@ export async function mountNativeReaderPreview({
   close.textContent="×";
   close.setAttribute("aria-label","Close Mass reader");
   close.style.cssText="position:absolute;z-index:4;top:8px;right:8px;width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:#0d141c;color:#ddd;font-size:20px;";
-  root.append(host,close);
+  root.append(host);
 
   if(ready.goodFridayController){
     const controller=ready.goodFridayController;
@@ -1387,6 +1387,11 @@ export async function mountNativeReaderPreview({
     root:host,
     iconResolver,
     allowPresentationModeSwitch:false,
+    sections:ready.model.cards.map(card=>Object.freeze({id:card.sectionId,label:card.title})),
+    onSectionSelect:(sectionId)=>{
+      const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
+      return showCard(card);
+    },
     onPrevious:previousReaderCard,
     onNext:nextReaderCard,
   });
