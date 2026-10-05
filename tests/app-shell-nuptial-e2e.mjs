@@ -116,7 +116,7 @@ try{
   assert.equal(model.marker,"R17_NATIVE_PRODUCTION");
   assert.equal(model.total,51,"Nuptial product reader must be 48 LIVE presentation steps plus three source-pinned insertions");
   assert.equal(model.sourceTotal,42,"Nuptial 48-step presentation replaced the certified 39+3 source model");
-  assert.equal(model.productOwner,"SOURCE_FIRST_LIVE+NUPTIAL_INSERTIONS_PRODUCT_48");
+  assert.equal(model.productOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
   assert.match(model.sourceOwner,/SOURCE_FIRST_LIVE\+NUPTIAL_INSERTIONS/);
   assert.equal(model.count,3);
 
