@@ -131,7 +131,7 @@ function css(){
 }
 let unsub=null;
 function root(){return globalThis.document?.getElementById?.(ROOT_ID)??null}
-function paint(){const r=root();if(!r)return false;const body=r.querySelector("[data-cal-body]");if(!body)return false;body.innerHTML=bodyMarkup();r.dataset.aoCalendarOwner=VERSION;return true}
+function paint(){const r=root();if(!r)return false;const body=r.querySelector("[data-cal-body]");if(!body)return false;body.innerHTML=bodyMarkup();r.dataset.aoCalendarOwner=VERSION;requestAnimationFrame(()=>r.querySelector("[data-cal-date][aria-current=\"date\"]")?.scrollIntoView?.({block:"nearest",inline:"center",behavior:"auto"}));return true}
 function syncShell(surface){globalThis.AO_APP_SHELL_V1?.syncSurface?.(surface)}
 function close({surface="home"}={}){root()?.remove?.();try{unsub?.()}catch{}unsub=null;syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
 async function waitForResolution(target,{attempts=120,delay=50}={}){
