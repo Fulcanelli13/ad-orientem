@@ -216,14 +216,32 @@ try{
 
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForSelector(".aoP435930RosaryBar",{state:"visible",timeout:10000});
-  await page.waitForFunction(()=>(
-    document.querySelector(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']")?.classList?.contains("active")===true &&
-    document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")===true
-  ),null,{timeout:3000});
-  // The preserved Rosary engine may finish its own asynchronous mount after the
-  // first decoration checkpoint. Hold past the second reconciliation checkpoint
-  // and prove the selected state remains authoritative.
-  await page.waitForTimeout(260);
+  const rosaryDiagnostics=[];
+  for(const delay of [0,60,180,400,1000]){
+    if(delay)await page.waitForTimeout(delay);
+    rosaryDiagnostics.push(await page.evaluate(()=>({
+      donorKeys:Object.keys(globalThis.AOTraditionalPrayerBook||{}).sort(),
+      rosaryKeys:Object.keys(globalThis.AO_ROSARY_V381||{}).sort(),
+      stored:localStorage.getItem("ao-prayer-recitation-mode"),
+      modular:globalThis.AO_PRAY_V435930?.state?.()?.rosary?.recitation??null,
+      coherence:globalThis.AO_PRAY_COHERENCE_V435930?.mode?.()??null,
+      htmlGroup:document.documentElement.classList.contains("aoRecitationGroup"),
+      htmlIndividual:document.documentElement.classList.contains("aoRecitationIndividual"),
+      nativeGroup:[...document.querySelectorAll("#aoPrayerBookRoot [data-ao-recitation='group']")].map(x=>({
+        active:x.classList.contains("active"),pressed:x.getAttribute("aria-pressed"),text:x.textContent?.trim()
+      })),
+      nativeIndividual:[...document.querySelectorAll("#aoPrayerBookRoot [data-ao-recitation='individual']")].map(x=>({
+        active:x.classList.contains("active"),pressed:x.getAttribute("aria-pressed"),text:x.textContent?.trim()
+      })),
+      barGroup:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??null,
+      barIndividual:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='individual']")?.classList?.contains("active")??null,
+    })));
+  }
+  console.log("ROSARY_RC_DIAGNOSTICS "+JSON.stringify(rosaryDiagnostics));
+  assert.equal(rosaryDiagnostics.at(-1)?.barGroup,true,
+    "Rosary donor lost group-recitation state after settled donor mount");
+  assert.equal(rosaryDiagnostics.at(-1)?.barIndividual,false,
+    "Rosary donor settled with Individual active after Group chooser selection");
   await assertSinglePrayerLayer("Rosary donor launch");
 
   const rosarySurface=await page.evaluate(()=>{
