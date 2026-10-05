@@ -52,6 +52,13 @@ try{
     globalThis.AO_LEARN_APP_V1?.status?.().installed===true,
     null,{timeout:30000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="home" &&
+    document.documentElement.dataset.aoHomeSuppressed!=="true" &&
+    document.querySelector(".homeScreen")?.dataset?.aoHomeOwner==="modular-home-v2" &&
+    !document.getElementById("ao-cinema-boot"),
+    null,{timeout:15000});
+  await page.waitForTimeout(100);
 
   // HOME: exercise the visible actions that remain intentionally backed by the
   // canonical Home controller after modular presentation extraction.
