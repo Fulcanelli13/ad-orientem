@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.16.0",
-  "status": "FINAL_APP_READY",
-  "releaseRule": "FINAL_APP_READY requires the certified R17 Mass subsystem, zero open app blockers, modular six-destination ownership, cross-domain phone acceptance, and merged-main real-data current-week Proper readiness.",
+  "version": "1.17.0",
+  "status": "PRODUCT_PARITY_RECOVERY_REQUIRED",
+  "releaseRule": "FINAL_APP_READY requires certified runtime stability and approved product/presentation parity across the six production surfaces. Structural modular convergence alone is insufficient.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -183,9 +183,26 @@
         ".github/workflows/app-convergence.yml"
       ],
       "detail": "The 5 October P0 runtime regressions are repaired and verified on merged main. Post-merge App convergence run 37276882767 passed the normal phone journey and real-data Oct 4-9 field-current-week acceptance: every date resolved a READY Proper, runtime recovery filled missing Secret/Postcommunion source sections where needed, every R17 reader was ready, and no reader slots remained missing. Stale persisted Mass checkpoints also fail closed without uncaught resume."
+    },
+    {
+      "id": "PRODUCT_PRESENTATION_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "evidence": [
+        "tests/app-visual-acceptance.mjs",
+        "src/home/presentation.js",
+        "src/calendar/browser-entry.js",
+        "src/pray/presentation-coherence.js",
+        "src/learn/presentation.js",
+        "src/settings/presentation.js",
+        "data/presentation/reader-release-gate.v1.json"
+      ],
+      "detail": "Runtime and modular ownership are certified, but visual acceptance still checks structure/error absence rather than parity with approved Ad Orientem presentation. Recovery is presentation-only: preserve the certified runtime while restoring approved hierarchy, sacred visual identity, interaction grammar and previously accepted surface composition."
     }
   ],
-  "openBlockers": [],
+  "openBlockers": [
+    "PRODUCT_PRESENTATION_PARITY"
+  ],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
