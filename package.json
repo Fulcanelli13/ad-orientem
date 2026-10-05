@@ -94,7 +94,8 @@
     "test:field-current-week": "node tests/field-current-week-e2e.mjs",
     "test:reader-proper-recovery": "node tests/reader-proper-runtime-recovery.mjs",
     "test:reader-live-product48": "node tests/reader-live-product48.mjs",
-    "test:reader-mode-switch": "node tests/reader-mode-switch.mjs"
+    "test:reader-mode-switch": "node tests/reader-mode-switch.mjs",
+    "test:rc-field-qa": "node tests/release-candidate-field-qa.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
