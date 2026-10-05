@@ -56,7 +56,7 @@
         "mode controls are visually presented as selectable while production mode switching is locked",
         "production source-first display model currently contains 39 cards; this must be reconciled with the approved v1.83 card philosophy without replacing the source-first engine"
       ],
-      "recoveryPass": "MASS_UI_V2",
+      "recoveryPass": "MASS_UI_V3_ELEVATION",
       "recoveryTargets": [
         "collapse inactive cue rails without changing cue ownership",
         "move Schola from narrow right rail to dedicated readable dock",
@@ -117,6 +117,11 @@
         "Schola dock is hideable and touch-resizable",
         "obsolete floating reader close control is removed from the visible surface",
         "390x844 visual acceptance certifies visible HOME/PARAMS fallback controls while exact canonical frozen ribbon binaries remain unavailable"
+      ],
+      "v3Targets": [
+        "exact-cue phone certification for Host elevation bell/cinematic",
+        "prove Consecration words cue does not fire elevation transient early",
+        "retain source-first reader and cue ownership unchanged"
       ]
     },
     "pray": {
