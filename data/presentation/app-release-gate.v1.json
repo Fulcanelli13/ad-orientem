@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.20.0",
-  "status": "FINAL_APP_READY",
-  "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified product/presentation parity across all six production surfaces, and certified presentation-FX parity.",
+  "version": "1.21.0",
+  "status": "PROTOTYPE_FIDELITY_RECOVERY_REQUIRED",
+  "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified product/presentation parity, certified presentation-FX operation, and exact accepted-prototype fidelity. Generic or simplified substitutes do not satisfy parity.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -230,9 +230,22 @@
         "R17 Mass convergence workflow 37341706430"
       ],
       "detail": "Presentation FX recovery V1-V5 is certified. The modular shell uses the approved observer-free v43.12 boot/transition/loader owner; PRAY semantic rails are restored; Rosary mystery and Stations transition FX are live; Home/PRAY/Learn/Calendar hero choreography and canonical art-loading scans are restored; reduced motion is enforced. Physical extraction of the embedded v43.12 owner is non-blocking hygiene."
+    },
+    {
+      "id": "PROTOTYPE_FIDELITY_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "evidence": [
+        "data/presentation/prototype-fidelity.v1.json",
+        "src/app/presentation-fx.js",
+        "Ad_Orientem_NON_MASS_HEAD_v2_CINEMATICS_PROTOTYPE.html"
+      ],
+      "detail": "The current modular build certifies the existence of FX and reconstructed surfaces but does not yet prove fidelity to the accepted non-Mass prototype chain. src/app/presentation-fx.js currently invents generic six-surface transition metadata instead of reproducing the donor's event-specific cinematic semantics and contextual loaders. Module-level PRAY/Home/Calendar fidelity also requires direct donor comparison."
     }
   ],
-  "openBlockers": [],
+  "openBlockers": [
+    "PROTOTYPE_FIDELITY_PARITY"
+  ],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
@@ -249,7 +262,8 @@
       "tests/settings-owner.mjs",
       "tests/source-transport-compat.mjs",
       "tests/reader-mode-switch.mjs",
-      "tests/presentation-fx.mjs"
+      "tests/presentation-fx.mjs",
+      "tests/prototype-fidelity.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
@@ -264,5 +278,6 @@
     ]
   },
   "productParityLedger": "data/presentation/product-parity.v1.json",
-  "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json"
+  "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json",
+  "prototypeFidelityLedger": "data/presentation/prototype-fidelity.v1.json"
 }
