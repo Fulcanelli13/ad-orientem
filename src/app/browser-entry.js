@@ -64,6 +64,20 @@ function installVisibleRibbonOwner(win, controller, state) {
     return true;
   }
 
+  function watchReleaseAuthority(){
+    if(releaseObserver||typeof win?.MutationObserver!=="function"||!doc.documentElement){
+      enforceReleaseAuthority();
+      return releaseObserver;
+    }
+    releaseObserver=new win.MutationObserver(()=>enforceReleaseAuthority());
+    releaseObserver.observe(doc.documentElement,{
+      attributes:true,
+      attributeFilter:["data-ao-release","data-ao-release-authority"],
+    });
+    enforceReleaseAuthority();
+    return releaseObserver;
+  }
+
   function syncHomeIsolation(active){
     ensureSurfaceIsolationStyle();
     const suppressed=isolatedNonMass.has(active);
@@ -181,15 +195,8 @@ function installVisibleRibbonOwner(win, controller, state) {
     cleanups.push(() => observer?.disconnect?.());
   }
 
-  if (typeof win?.MutationObserver === "function" && doc.documentElement) {
-    releaseObserver = new win.MutationObserver(() => enforceReleaseAuthority());
-    releaseObserver.observe(doc.documentElement, {
-      attributes: true,
-      attributeFilter: ["data-ao-release", "data-ao-release-authority"],
-    });
-    cleanups.push(() => releaseObserver?.disconnect?.());
-  }
-  enforceReleaseAuthority();
+  watchReleaseAuthority();
+  cleanups.push(() => releaseObserver?.disconnect?.());
 
   return () => {
     disposed = true;
