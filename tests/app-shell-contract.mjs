@@ -18,6 +18,7 @@ assert.equal(NON_MASS_DONOR_CONTRACT.settingsDonorOwner, "AO_SETTINGS_V4359");
 const appEntrySource=readFileSync("src/app/browser-entry.js","utf8");
 assert.match(appEntrySource,/aoHomeSuppressed/,"app shell no longer isolates Home beneath modular surfaces");
 assert.match(appEntrySource,/aoReleaseAuthority/,"app shell no longer owns final release metadata");
+assert.match(appEntrySource,/attributeFilter:\s*\[["\']data-ao-release["\'],\s*["\']data-ao-release-authority["\']\]/,"release metadata overwrite guard is missing");
 
 const calendarSource=readFileSync("src/calendar/browser-entry.js","utf8");
 assert.match(calendarSource,/data-cal-input/,"Calendar lost DD\/MM\/YYYY date entry");
