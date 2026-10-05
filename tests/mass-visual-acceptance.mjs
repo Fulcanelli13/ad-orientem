@@ -106,7 +106,13 @@ try{
     leftRail:Boolean(document.querySelector("#ao-r17-native-reader-preview .ao-rail-left")),
     rightRail:Boolean(document.querySelector("#ao-r17-native-reader-preview .ao-rail-right")),
     title:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.textContent?.trim()??"",
+    titleHidden:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.hidden??false,
     body:document.querySelector("#ao-r17-native-reader-preview [data-role='paragraphs']")?.textContent?.trim()??"",
+    scholaDock:document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset?.active??null,
+    scholaInRightRail:Boolean(document.querySelector("#ao-r17-native-reader-preview .ao-rail-right [data-channel='schola']")),
+    stageLeft:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.leftRail??null,
+    stageRight:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.rightRail??null,
+    focusedParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
     shellRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview .ao-reader-shell")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
   }));
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
@@ -117,7 +123,10 @@ try{
   assert.equal(opening.leftRail,true);
   assert.equal(opening.rightRail,true);
   assert.ok(opening.title.length>0);
+  assert.equal(opening.titleHidden,true,"duplicate card title remained visible under the state ribbon");
   assert.ok(opening.body.length>0);
+  assert.equal(opening.scholaInRightRail,false,"Schola remained trapped in the narrow right rail");
+  assert.equal(opening.scholaDock,"true","active Schola did not move to the readable dedicated dock");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
@@ -133,6 +142,15 @@ try{
       sourceSequence:card?.sourceSequence??card?.sequence??null,
       title:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.textContent?.trim()??"",
       paragraphs:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph")].map(x=>x.textContent?.trim()??""),
+      primaryTexts:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph .ao-line-primary")].map(x=>x.textContent?.trim()??""),
+      secondaryTexts:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph .ao-line-secondary")].map(x=>x.textContent?.trim()??""),
+      rubricCount:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-kind='RUBRIC']").length,
+      consecrationWordsCount:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-kind='CONSECRATION_WORDS']").length,
+      cardTitleHidden:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.hidden??false,
+      guideShort:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-short']")?.textContent?.trim()??"",
+      stageLeft:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.leftRail??null,
+      stageRight:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.rightRail??null,
+      scholaDock:document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset?.active??null,
       leftActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left [data-active='true']").length,
       rightActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-right [data-active='true']").length,
       guideDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-button']")?.disabled??null,
@@ -143,7 +161,14 @@ try{
   });
   assert.ok(consecration.sectionId,"source-first reader exposed no Host Consecration section");
   assert.match(consecration.title,/Consecration/i);
+  assert.equal(consecration.cardTitleHidden,true,"Consecration duplicated its title inside the prayer card");
   assert.ok(consecration.paragraphs.length>0,"Consecration rendered no prayer text");
+  assert.ok(consecration.primaryTexts.some(x=>/Hoc est enim Corpus meum/i.test(x)),"Host Consecration is not Latin-prominent");
+  assert.ok(consecration.secondaryTexts.some(x=>/THIS IS MY BODY/i.test(x)),"Host Consecration lost vernacular support beneath Latin");
+  assert.ok(consecration.rubricCount>=1,"elevation action still renders as ordinary prayer prose");
+  assert.ok(consecration.consecrationWordsCount>=1,"Words of Consecration lost dedicated salience");
+  assert.equal(consecration.stageLeft,"false","empty faithful cue rail still consumes phone width at the Consecration");
+  assert.notEqual(consecration.guideShort,"","short Guide rubric is not visible in the state ribbon");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
 
