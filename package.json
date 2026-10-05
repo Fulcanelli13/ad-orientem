@@ -96,7 +96,8 @@
     "test:reader-live-product48": "node tests/reader-live-product48.mjs",
     "test:reader-mode-switch": "node tests/reader-mode-switch.mjs",
     "test:rc-field-qa": "node tests/release-candidate-field-qa.mjs",
-    "test:presentation-fx": "node tests/presentation-fx.mjs"
+    "test:presentation-fx": "node tests/presentation-fx.mjs",
+    "test:rc-interaction-qa": "node tests/release-candidate-interaction-qa.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
