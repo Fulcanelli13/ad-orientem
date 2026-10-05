@@ -33,6 +33,16 @@ assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
 assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
 assert.match(styles,/@media\(max-width:560px\)[\s\S]*aoP435930SemanticRailIcon\{width:27px/,"PRAY semantic rail icons lost salient phone geometry");
+assert.match(runtime,/function decorateRosaryFx\(r\)/,"Rosary lost its live FX presentation hook");
+assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
+assert.match(runtime,/aoP435930RosarySemanticRails/,"Rosary lost its live contextual side rail");
+assert.match(runtime,/ao-rich-rosary/,"Rosary live rail lost the canonical Rosary identity");
+assert.match(runtime,/step\?\.kind!==['"]mystery['"]/,"Rosary mystery cinematic is no longer restricted to mystery-entry boundaries");
+assert.match(runtime,/AO_CINEMATIC_V4312\|\|window\.AO_CINEMATIC_V4311/,"Rosary mystery cinematic no longer reuses the certified cinematic owner");
+assert.match(runtime,/isReducedMotion\?\.\(\)/,"Rosary mystery cinematic no longer honors reduced motion");
+assert.doesNotMatch(runtime,/aoP435930RosarySemanticRail[\s\S]{0,500}ao-live-(?:stand|kneel)/,"Rosary live rail invented a universal posture");
+assert.match(styles,/aoP435930RosarySemanticRails/,"Rosary live context rail styling is absent");
+assert.match(styles,/aoP435930RosarySemanticRailIcon\{width:29px/,"Rosary live rail icon lost salient geometry");
 
 const body={parentNode:null};
 const direct={parentNode:body};

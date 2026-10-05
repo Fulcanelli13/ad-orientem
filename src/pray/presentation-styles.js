@@ -23,7 +23,24 @@ const SEMANTIC_RAIL_CSS=`/* Presentation FX V2 — semantic side rails recovered
  #aoPray435930 .aoP435930SemanticRailLabel,#aoPray435930 .aoP435930SemanticRailChip small{display:none}
 }
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoP435930SemanticRailChip{transition:none!important}}
-html[data-reduced-motion="true"] #aoPray435930 .aoP435930SemanticRailChip{transition:none!important}`;
+html[data-reduced-motion="true"] #aoPray435930 .aoP435930SemanticRailChip{transition:none!important}
+
+/* Presentation FX V3 — preserved canonical Rosary player live context rail.
+   Context only: Rosary posture remains deliberately free unless an exact gesture cue owns the moment. */
+#aoPrayerBookRoot .aoP435930RosarySemanticRails{position:fixed;inset:0;z-index:2147482050;pointer-events:none}
+#aoPrayerBookRoot .aoP435930RosarySemanticRail{position:absolute;top:112px;right:max(6px,env(safe-area-inset-right));width:56px;display:grid}
+#aoPrayerBookRoot .aoP435930RosarySemanticRailChip{display:grid;justify-items:center;gap:5px;padding:8px 4px;min-height:72px;border:1px solid color-mix(in srgb,var(--liturgical,#d8bd7d) 24%,var(--border,rgba(255,255,255,.12)));border-radius:14px;background:color-mix(in srgb,var(--bg,#080c12) 87%,transparent);backdrop-filter:blur(12px);box-shadow:0 9px 24px rgba(0,0,0,.17);color:var(--liturgical,#d8bd7d)}
+#aoPrayerBookRoot .aoP435930RosarySemanticRailIcon{width:29px!important;height:29px!important;color:currentColor}
+#aoPrayerBookRoot .aoP435930RosarySemanticRailChip>span{max-width:48px;color:var(--text,#f3ead7);font:700 .52rem/1.1 var(--font-display,system-ui);letter-spacing:.045em;text-align:center;text-transform:uppercase}
+#aoPrayerBookRoot .aoP435930RosarySemanticRailChip>small{max-width:48px;color:var(--muted,#aeb2b8);font:600 .48rem/1.15 var(--font-display,system-ui);text-align:center}
+@media(max-width:560px){
+ #aoPrayerBookRoot .aoP435930RosarySemanticRail{top:100px;right:max(4px,env(safe-area-inset-right));width:46px}
+ #aoPrayerBookRoot .aoP435930RosarySemanticRailChip{min-height:50px;padding:5px 3px;border-radius:12px}
+ #aoPrayerBookRoot .aoP435930RosarySemanticRailIcon{width:28px!important;height:28px!important}
+ #aoPrayerBookRoot .aoP435930RosarySemanticRailChip>span,#aoPrayerBookRoot .aoP435930RosarySemanticRailChip>small{display:none}
+}
+@media(prefers-reduced-motion:reduce){#aoPrayerBookRoot .aoP435930RosarySemanticRailChip{transition:none!important}}
+html[data-reduced-motion="true"] #aoPrayerBookRoot .aoP435930RosarySemanticRailChip{transition:none!important}`;
 
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
