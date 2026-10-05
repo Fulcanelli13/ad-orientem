@@ -96,9 +96,11 @@ function patchAboutSettings(win){
   const root=win.document.getElementById("ao-settings-v4359");
   if(!root||root.hidden)return false;
   const route=win.document.documentElement.dataset.aoSettingsRoute;
-  if(route!=="/settings/about-sources"&&win.__AO_D6_ABOUT_ROUTE_ACTIVE!==true)return false;
   const wrap=root.querySelector(".aoSetWrap");
   if(!wrap||wrap.dataset.aoD6About==="1")return false;
+  const rendered=String(wrap.textContent||"");
+  const looksLikeAbout=/sources|provenance|about ad orientem|à propos d.?ad orientem|source/i.test(rendered);
+  if(route!=="/settings/about-sources"&&win.__AO_D6_ABOUT_ROUTE_ACTIVE!==true&&!looksLikeAbout)return false;
   wrap.dataset.aoD6About="1";
   wrap.innerHTML="";
   wrap.appendChild(element(win,"div","aoSetIntro",L(
