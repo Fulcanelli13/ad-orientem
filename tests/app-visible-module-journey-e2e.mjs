@@ -61,15 +61,8 @@ try{
   await page.waitForTimeout(100);
 
   // HOME: exercise the visible actions that remain intentionally backed by the
-  // canonical Home controller after modular presentation extraction.
-  const initialDate=await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??null);
-  await page.locator(".homeScreen [data-nav='next']").tap();
-  await page.waitForFunction(before=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate!==before,initialDate,{timeout:10000});
-  const shiftedDate=await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??null);
-  assert.notEqual(shiftedDate,initialDate,"Home next-day control did not change the selected date");
-  await page.locator(".homeScreen [data-nav='previous']").tap();
-  await page.waitForFunction(expected=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate===expected,initialDate,{timeout:10000});
-
+  // canonical Home controller after modular presentation extraction. Date
+  // navigation is intentionally Calendar-owned since v43.26 and is tested below.
   await page.locator(".homeScreen [data-action='prepare']").tap();
   await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route==="prepare",null,{timeout:5000});
   await page.locator("[data-ao-app-surface='home']").tap();
