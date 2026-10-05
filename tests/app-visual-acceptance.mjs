@@ -76,6 +76,18 @@ try{
   await assertHomeHidden("Calendar");
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1);
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-native]").count(),0);
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),1,"Calendar lost its sacred-time annual overview");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalIdentity").count(),1,"Calendar lost its single selected-feast identity");
+  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalObservance").count()>=7,"Calendar lost the touch observance rail");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalObservance[aria-current='date']").count(),1,"Calendar selected date is not uniquely identified");
+  const calendarDashboard=await page.evaluate(()=>({
+    wheel:document.querySelector("#ao-calendar-modular-root .aoCalYearWheel")?.getBoundingClientRect()?.width??0,
+    identity:document.querySelector("#ao-calendar-modular-root .aoCalIdentity h2")?.textContent?.trim()??"",
+    railScrollable:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalModRail");return x?x.scrollWidth>=x.clientWidth:false})(),
+  }));
+  assert.ok(calendarDashboard.wheel>=120,"Calendar annual overview collapsed below phone-readable size");
+  assert.ok(calendarDashboard.identity.length>0,"Calendar selected feast identity is blank");
+  assert.equal(calendarDashboard.railScrollable,true,"Calendar observance rail is not touch-scrollable/snapping");
   await shot("02-calendar");
 
   await page.locator("[data-ao-app-surface='pray']").click();
