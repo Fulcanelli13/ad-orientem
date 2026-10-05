@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import {
   AO_APP_SURFACE_ASSET_IDS,
   AO_LEARN_ROUTE_ASSET_IDS,
@@ -58,6 +58,9 @@ assert.match(calendar,/ao-ui-previous/);
 assert.match(calendar,/ao-ui-next/);
 assert.match(learn,/canonicalAssetIdForLearnRoute/);
 assert.doesNotMatch(learn,/AO_ICON_REGISTRY_V4333/,"Learn still depends on the historical icon registry");
+assert.match(learn,/asset\.kind==="mask"/,"Learn cannot render canonical file-backed mask assets");
+assert.match(learn,/data-ao-asset-renderer="mask"/,"Learn file-backed assets lack renderer diagnostics");
+assert.ok(existsSync("assets/active/modules/ao-module-catechism.png"),"canonical Traditional Catechism asset was not externalized");
 assert.match(learnOwner,/canonicalAssetIdForSurface\("learn"\)/);
 assert.match(prayOwner,/canonicalAssetIdForSurface\("pray"\)/);
 assert.match(prayPresentation,/ao-ui-back/);
