@@ -64,6 +64,22 @@ assert.match(fr,/Saint Évangile/);
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
 
+
+const settings=renderHomeToString({
+  ...base,
+  homeSheet:"settings",
+  settings:{
+    massForm:"sung",followMode:"vox",textMode:"oriented",participationMode:"quiet",
+    textScale:"normal",reducedMotion:false,
+  },
+},{AO_DISPLAY_DATE:()=> "07/10/2026"});
+assert.match(settings,/data-ao-home-settings="modular"/);
+assert.match(settings,/data-setting-form="sung"/);
+assert.match(settings,/data-setting-follow="vox"/);
+assert.match(settings,/data-setting-scale="normal"/);
+assert.match(settings,/Bilingual content audit/);
+assert.doesNotMatch(settings,/<h2>More<\/h2>/,"Settings route regressed to the generic More sheet");
+
 const failed=renderHomeToString({
   ...base,
   resume:{available:false},
