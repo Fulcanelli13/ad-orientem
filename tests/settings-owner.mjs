@@ -108,5 +108,11 @@ for(const api of ["open","close","dismiss","restoreHome","status"]){
 }
 assert.match(owner,/AO_APP_LIVE_SESSION_GUARDS_V1/,"Settings created or used a live rule outside the modular guard");
 assert.match(owner,/hydrate-settings/,"Settings is not attached to canonical app preference persistence");
+assert.match(owner,/\[data-v37-module='utility\.settings'\]/,"modular owner does not suppress stale utility.settings surfaces");
+
+const nonMass=readFileSync("src/app/nonmass-convergence.js","utf8");
+assert.doesNotMatch(nonMass,/d6:\s*"integrated-on-settings"/,"D6 still claims a donor-backed Settings owner");
+assert.doesNotMatch(nonMass,/integrated-on-settings-compatibility/,"D6 still exposes a historical Settings compatibility fallback");
+assert.match(nonMass,/settings-modular-owner-unavailable/,"D6 does not fail closed when the modular Settings owner is unavailable");
 
 console.log("PASS modular Settings owner/presentation contract");
