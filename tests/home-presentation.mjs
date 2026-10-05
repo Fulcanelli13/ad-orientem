@@ -56,6 +56,8 @@ assert.match(en,/data-formulary="1"/);
 assert.match(en,/Around the Mass/);
 assert.match(en,/Holy Gospel/);
 assert.match(en,/Today’s Mass/);
+assert.match(en,/Settings · preparation · thanksgiving/);
+assert.doesNotMatch(en,/next migration stage/i,"Home still exposes migration-era placeholder copy");
 
 const fr=renderHomeToString({...base,language:"fr"},{AO_DISPLAY_DATE:()=> "07/10/2026"});
 assert.match(fr,/Saint Rosaire/);
@@ -63,6 +65,8 @@ assert.match(fr,/Autour de la Messe/);
 assert.match(fr,/Saint Évangile/);
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
+assert.match(fr,/Réglages · préparation · action de grâces/);
+assert.doesNotMatch(fr,/étape suivante de la migration/i,"French Home still exposes migration-era placeholder copy");
 
 
 const retiredSettings=renderHomeToString({
