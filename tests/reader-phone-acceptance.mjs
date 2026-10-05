@@ -162,6 +162,51 @@ try{
   assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
 
+  async function tapMode(mode){
+    const button=page.locator('[data-reader-mode="'+mode+'"]');
+    const hit=await button.boundingBox();
+    assert.ok(hit&&hit.height>=30,mode+" mode selector is not touchable");
+    await page.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+    await page.waitForFunction(expected=>window.__AO_PHONE_PREVIEW.getPresentationMode()===expected,mode,{timeout:3000});
+    assert.equal(await button.getAttribute("aria-pressed"),"true",mode+" selector did not become active");
+  }
+
+  await tapMode("SIMPLE");
+  let switched=await page.evaluate(()=>({
+    mode:window.__AO_PHONE_PREVIEW.getPresentationMode(),
+    card:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
+    cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+    product:window.__AO_PHONE_PREVIEW.model?.totalCards??null,
+    source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
+    progress:document.querySelector('[data-role="progress"]')?.textContent??"",
+  }));
+  assert.deepEqual(switched,{mode:"SIMPLE",card:"AO.CARD.015",cue:"AO.SM.C0174",product:30,source:30,progress:"15 / 30"},
+    "LIVE -> SIMPLE did not preserve the exact Host elevation source anchor");
+
+  await tapMode("MISSAL");
+  switched=await page.evaluate(()=>({
+    mode:window.__AO_PHONE_PREVIEW.getPresentationMode(),
+    card:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
+    cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+    product:window.__AO_PHONE_PREVIEW.model?.totalCards??null,
+    source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
+    progress:document.querySelector('[data-role="progress"]')?.textContent??"",
+  }));
+  assert.deepEqual(switched,{mode:"MISSAL",card:"AO.CARD.015",cue:"AO.SM.C0174",product:30,source:30,progress:"15 / 30"},
+    "SIMPLE -> MISSAL changed the canonical Host elevation anchor");
+
+  await tapMode("LIVE");
+  switched=await page.evaluate(()=>({
+    mode:window.__AO_PHONE_PREVIEW.getPresentationMode(),
+    card:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
+    cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+    product:window.__AO_PHONE_PREVIEW.model?.totalCards??null,
+    source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
+    progress:document.querySelector('[data-role="progress"]')?.textContent??"",
+  }));
+  assert.deepEqual(switched,{mode:"LIVE",card:"AO.CANON.06",cue:"AO.SM.C0174",product:48,source:39,progress:"21 / 48"},
+    "MISSAL -> LIVE did not restore the exact 48-step Host elevation surface");
+
   box=await nextButton.boundingBox();
   await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.07");
