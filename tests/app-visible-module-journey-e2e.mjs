@@ -181,6 +181,30 @@ try{
   await exerciseLearn("today.gospel","gospel","[data-scripture-close]");
   await exerciseLearn("today.saint","saint","#ao-v25-panel [data-v25-panel-close]");
 
+  // CALENDAR: prove the dashboard is not presentation-only. Touch an adjacent
+  // observance, wait for canonical selectedDate/resolution ownership, then
+  // return through the visible Calendar Home control.
+  await page.locator("[data-ao-app-surface='calendar']").tap();
+  await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
+  const calendarBefore=await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??null);
+  const alternate=page.locator("#ao-calendar-modular-root [data-cal-date]:not([aria-current='date'])").first();
+  assert.ok(await alternate.count(),"Calendar exposed no adjacent observance to select");
+  const alternateDate=await alternate.getAttribute("data-cal-date");
+  await alternate.scrollIntoViewIfNeeded();
+  await alternate.tap();
+  await page.waitForFunction(expected=>
+    globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate===expected &&
+    globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date===expected &&
+    globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolving!==true,
+    alternateDate,{timeout:15000});
+  assert.notEqual(alternateDate,calendarBefore,"Calendar adjacent observance did not change date");
+  assert.equal(await page.locator(`#ao-calendar-modular-root [data-cal-date="${alternateDate}"][aria-current="date"]`).count(),1,
+    "Calendar did not move selected-date identity to the tapped observance");
+  const calClose=page.locator("#ao-calendar-modular-root [data-cal-close]");
+  assert.equal(await calClose.count(),1,"Calendar lost visible Home return control");
+  await calClose.tap();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
+
   assert.deepEqual(ariaWarnings,[],"visible child journeys produced focus/aria warnings: "+JSON.stringify(ariaWarnings));
   assert.deepEqual(pageErrors,[],"visible child journeys produced page errors: "+JSON.stringify(pageErrors));
 
