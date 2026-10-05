@@ -64,6 +64,7 @@ export function createSettingsOwner(win=globalThis){
   let previousFocus=null;
   let unsubscribe=null;
   let legacyObserver=null;
+  let releaseObserver=null;
   let versionTimers=[];
 
   function root(){return win?.document?.getElementById?.(ROOT_ID)??null;}
@@ -86,12 +87,22 @@ export function createSettingsOwner(win=globalThis){
     unsubscribe=null;
     try{legacyObserver?.disconnect?.();}catch{}
     legacyObserver=null;
+    try{releaseObserver?.disconnect?.();}catch{}
+    releaseObserver=null;
     clearTimers();
   }
   function watchHistoricalSurfaces(){
     if(legacyObserver||typeof win?.MutationObserver!=="function")return;
     legacyObserver=new win.MutationObserver(()=>{if(root())suppressHistoricalSettings(win);});
     legacyObserver.observe(win.document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["hidden","class","aria-hidden"]});
+  }
+  function watchReleaseMetadata(){
+    if(releaseObserver||typeof win?.MutationObserver!=="function")return;
+    releaseObserver=new win.MutationObserver(records=>{
+      if(!root())return;
+      if(records.some(record=>record?.type==="attributes"&&record?.attributeName==="data-ao-release"))paint();
+    });
+    releaseObserver.observe(win.document.documentElement,{attributes:true,attributeFilter:["data-ao-release"]});
   }
   function closeInternal({restoreSurface=false,surface=null}={}){
     const r=root();if(!r){releaseSubscription();return true;}
@@ -130,13 +141,21 @@ export function createSettingsOwner(win=globalThis){
     suppressHistoricalSettings(win);
     let r=root();
     if(!r){r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("settings")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");doc.body.appendChild(r);bind(r);}
-    subscribe();watchHistoricalSurfaces();paint();
+    subscribe();watchHistoricalSurfaces();watchReleaseMetadata();paint();
     if(doc.documentElement?.dataset){doc.documentElement.dataset.aoSettingsOwner=OWNER;doc.documentElement.dataset.aoSettingsSurface="open";}
     clearTimers();versionTimers=[100,500,1200].map(ms=>win.setTimeout?.(()=>{if(root())paint();},ms)).filter(id=>id!=null);
     r.querySelector?.(route==="about-sources"?"[data-settings-main]":"[data-settings-close]")?.focus?.();
     return true;
   }
-  function setRoute(next){route=normalizeRoute(next);return paint();}
+  function setRoute(next){
+    route=normalizeRoute(next);
+    const rendered=paint();
+    if(route==="about-sources"){
+      const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
+      queue(()=>{if(root())paint();});
+    }
+    return rendered;
+  }
   function structuralBlocked(){return live(win);}
   function onSettingClick(target){
     if(target.dataset.settingStructural!==undefined&&structuralBlocked()){liveGuards(win)?.sync?.();return true;}
