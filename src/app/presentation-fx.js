@@ -1,13 +1,4 @@
-export const PRESENTATION_FX_VERSION = "modular-presentation-fx-v2";
-
-const SURFACE_META = Object.freeze({
-  home: Object.freeze({ kicker: "AD ORIENTEM", en: "Home", fr: "Accueil" }),
-  mass: Object.freeze({ kicker: "AD ORIENTEM", en: "Mass", fr: "Messe" }),
-  pray: Object.freeze({ kicker: "PRAY", en: "Prayer", fr: "Prière" }),
-  learn: Object.freeze({ kicker: "FORMATION", en: "Learn", fr: "Apprendre" }),
-  calendar: Object.freeze({ kicker: "SACRED TIME", en: "Calendar", fr: "Calendrier" }),
-  settings: Object.freeze({ kicker: "AD ORIENTEM", en: "Settings", fr: "Réglages" }),
-});
+export const PRESENTATION_FX_VERSION = "modular-presentation-fx-v3";
 
 const SURFACE_ROOT = Object.freeze({
   home: ".homeScreen",
@@ -28,18 +19,6 @@ const HERO_SELECTOR = Object.freeze({
 
 function runtimeState(win) {
   return win?.AO_RUNTIME_V8?.store?.getState?.() ?? null;
-}
-
-function isFrench(win) {
-  return runtimeState(win)?.language === "fr";
-}
-
-function labelFor(win, surface) {
-  const meta = SURFACE_META[surface] ?? SURFACE_META.home;
-  return {
-    kicker: meta.kicker,
-    title: isFrench(win) ? meta.fr : meta.en,
-  };
 }
 
 function legacyCinema(win) {
@@ -103,31 +82,38 @@ export function createPresentationFxBridge({
     html.dataset.aoPresentationFxOwner = PRESENTATION_FX_VERSION;
   }
 
-  function showTransition(surface) {
-    if (disposed || reducedMotion(win)) return false;
+  // Exact-donor rule: the v43.12 cinematic owner is semantic, not a generic
+  // six-destination route animation. Callers must supply the donor-owned
+  // meaning explicitly; ribbon navigation never synthesizes one from a surface.
+  function showTransition(meta) {
+    if (disposed || reducedMotion(win) || !meta || typeof meta !== "object") return false;
+    const title = String(meta.title ?? "").trim();
+    if (!title) return false;
     const cinema = legacyCinema(win);
     if (typeof cinema?.showTransition !== "function") {
       mark("legacy-cinema-unavailable");
       return false;
     }
-    cinema.showTransition(labelFor(win, surface));
+    const payload = { kicker: String(meta.kicker ?? "AD ORIENTEM"), title };
+    if (Number.isFinite(meta.hold)) payload.hold = Number(meta.hold);
+    cinema.showTransition(payload);
     const html = win?.document?.documentElement;
-    if (html?.dataset) html.dataset.aoPresentationFxTransition = surface;
+    if (html?.dataset) html.dataset.aoPresentationFxTransition = String(meta.id ?? meta.kind ?? "semantic");
     mark("active");
     return true;
   }
 
-  function showLoader(surface) {
-    if (disposed || reducedMotion(win)) return false;
+  // Likewise, loader copy belongs to the actual workload (calendar resolution,
+  // Scripture, week preparation, etc.), never to the destination name.
+  function showLoader(spec) {
+    if (disposed || reducedMotion(win) || !spec || typeof spec !== "object") return false;
+    const title = String(spec.title ?? "").trim();
+    if (!title) return false;
     const el = loaderElement(win);
     if (!el) return false;
-    const meta = labelFor(win, surface);
-    setText(el, "[data-ao-cinema-loader-title]", isFrench(win) ? "Ouverture…" : "Opening…");
-    setText(
-      el,
-      "[data-ao-cinema-loader-sub]",
-      isFrench(win) ? `Préparation de ${meta.title}` : `Preparing ${meta.title}`,
-    );
+    setText(el, "[data-ao-cinema-loader-title]", title);
+    setText(el, "[data-ao-cinema-loader-sub]", String(spec.sub ?? ""));
+    if (spec.kind) el.dataset.kind = String(spec.kind);
     el.classList?.add?.("aoCinemaLoaderOn");
     el.setAttribute?.("aria-hidden", "false");
     return true;
@@ -289,28 +275,18 @@ export function createPresentationFxBridge({
 
   async function navigate(surface, task) {
     if (typeof task !== "function") throw new TypeError("presentation FX navigation requires a task");
-    const current = getActive?.();
-    if (surface !== current) showTransition(surface);
-
-    hideLoader();
-    if (!reducedMotion(win) && typeof win?.setTimeout === "function") {
-      loaderTimer = win.setTimeout(() => showLoader(surface), loaderDelay);
-    }
-
-    try {
-      const result = await task();
-      if (result?.ok !== false) {
-        const entered = result?.surface ?? surface;
-        if (typeof win?.requestAnimationFrame === "function") {
-          win.requestAnimationFrame(() => win.requestAnimationFrame(() => surfaceEntered(entered)));
-        } else {
-          surfaceEntered(entered);
-        }
+    // Deliberately no generic route transition or route loader here. The donor
+    // fired full-screen cinematics only for semantic events and real workloads.
+    const result = await task();
+    if (result?.ok !== false) {
+      const entered = result?.surface ?? surface;
+      if (typeof win?.requestAnimationFrame === "function") {
+        win.requestAnimationFrame(() => win.requestAnimationFrame(() => surfaceEntered(entered)));
+      } else {
+        surfaceEntered(entered);
       }
-      return result;
-    } finally {
-      hideLoader();
     }
+    return result;
   }
 
   function status() {
@@ -324,6 +300,8 @@ export function createPresentationFxBridge({
       loaderPresent: Boolean(loaderElement(win)),
       activeSurface: getActive?.() ?? null,
       reducedMotion: reducedMotion(win),
+      routeTransitionPolicy: "SEMANTIC_ONLY",
+      genericRouteLoader: false,
     });
   }
 
