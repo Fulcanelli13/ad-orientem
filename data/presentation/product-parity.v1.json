@@ -153,7 +153,7 @@
       ]
     },
     "learn": {
-      "status": "PENDING_AUDIT",
+      "status": "CERTIFIED",
       "currentOwner": "src/learn",
       "reference": "LOCKED_NON_MASS_V43_59_30",
       "mustPreserve": [
@@ -161,6 +161,15 @@
         "Daily formation / Courses & study / Today in context grouping",
         "English/French copy",
         "canonical child-module launches"
+      ],
+      "evidence": [
+        "src/learn/presentation.js",
+        "tests/learn-owner.mjs",
+        "tests/learn-owner-e2e.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Visual acceptance workflow 37305642976 at 390x844 touch geometry",
+        "R17 Mass convergence workflow 37305642967",
+        "rebased final-main parity rerun required"
       ]
     },
     "calendar": {

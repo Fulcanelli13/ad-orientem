@@ -183,6 +183,33 @@ try{
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
   await assertHomeHidden("Learn");
+  const learnParity=await page.evaluate(()=>({
+    heroTitles:document.querySelectorAll("#ao-learn-modular-root .aoLearnModHero h1").length,
+    heroTitle:document.querySelector("#ao-learn-modular-root .aoLearnModHero h1")?.textContent?.trim()??"",
+    intro:document.querySelector("#ao-learn-modular-root .aoLearnModHero p")?.textContent?.trim()??"",
+    context:document.querySelector("#ao-learn-modular-root .aoLearnModContext")?.textContent?.trim()??"",
+    sectionTitles:[...document.querySelectorAll("#ao-learn-modular-root .aoLearnModSectionHead h2")].map(x=>x.textContent?.trim()??""),
+    modules:[...document.querySelectorAll("#ao-learn-modular-root [data-ao-learn-module]")].map(x=>x.dataset.aoLearnModule),
+    featured:[...document.querySelectorAll("#ao-learn-modular-root .aoLearnModCard.featured [data-ao-learn-module]")].map(x=>x.dataset.aoLearnModule),
+    donorNav:document.querySelectorAll("#ao-learn-modular-root [data-v37-domain],#ao-learn-modular-root [data-v37-open],#ao-learn-modular-root .aoV37DomainDock").length,
+    sourcesUtility:document.querySelectorAll("#ao-learn-modular-root [data-ao-learn-module='utility.sources']").length,
+    calendarDashboard:document.querySelectorAll("#ao-learn-modular-root .aoCalYearWheel").length,
+    overflow:(()=>{const x=document.getElementById("ao-learn-modular-root");return x?x.scrollWidth-x.clientWidth:Infinity})(),
+    cards:[...document.querySelectorAll("#ao-learn-modular-root .aoLearnModCard")].map(x=>{const r=x.getBoundingClientRect();return {w:r.width,h:r.height}}),
+  }));
+  assert.equal(learnParity.heroTitles,1,"Learn lost its single formation identity");
+  assert.equal(learnParity.heroTitle,"Learn","Learn hero no longer preserves the locked donor title");
+  assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
+  assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
+  assert.deepEqual(learnParity.sectionTitles,["Daily formation","Courses & study","Today in context"],"Learn section hierarchy diverged from locked v43.59.30");
+  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.mass","learn.catechism","today.gospel","today.saint"],"Learn launcher order diverged from locked v43.59.30");
+  assert.deepEqual(learnParity.featured,["learn.catechism.daily","learn.mass"],"Learn featured-card hierarchy diverged from locked v43.59.30");
+  assert.equal(learnParity.donorNav,0,"historical V37 navigation leaked into modular Learn");
+  assert.equal(learnParity.sourcesUtility,0,"Sources incorrectly resurfaced as a Learn launcher");
+  assert.equal(learnParity.calendarDashboard,0,"Calendar dashboard duplicated inside Learn");
+  assert.ok(learnParity.overflow<=1,"Learn has horizontal overflow on 390px phone geometry");
+  assert.equal(learnParity.cards.length,5,"Learn lost one of its five locked launchers");
+  for(const card of learnParity.cards){assert.ok(card.w>300,"Learn card collapsed below phone-readable width");assert.ok(card.h>=90,"Learn card collapsed below approved touch/readability height");}
   const catechismIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.catechism'] .aoLearnModIcon[data-ao-asset-id='ao-module-catechism']");
   assert.equal(await catechismIcon.count(),1,"Traditional Catechism is missing its canonical icon");
   assert.equal(await catechismIcon.getAttribute("data-ao-asset-renderer"),"mask","Traditional Catechism did not use the canonical file-backed mask renderer");
