@@ -92,6 +92,7 @@ export function createPresentationFxBridge({
   let scanQueued = false;
   let disposed = false;
   let presentationHookInstalled = false;
+  let releaseRuntimeHook = null;
 
   function mark(value) {
     const html = win?.document?.documentElement;
@@ -233,6 +234,20 @@ export function createPresentationFxBridge({
     presentationHookInstalled = false;
   }
 
+  function installRuntimeHook() {
+    if (releaseRuntimeHook) return true;
+    const subscribe = win?.AO_RUNTIME_V8?.store?.subscribe;
+    if (typeof subscribe !== "function") return false;
+    const release = subscribe.call(win.AO_RUNTIME_V8.store, () => queueSurfaceScan());
+    releaseRuntimeHook = typeof release === "function" ? release : () => {};
+    return true;
+  }
+
+  function removeRuntimeHook() {
+    try { releaseRuntimeHook?.(); } catch {}
+    releaseRuntimeHook = null;
+  }
+
   function surfaceEntered(surface) {
     if (disposed) return false;
     const root = rootFor(surface);
@@ -322,11 +337,13 @@ export function createPresentationFxBridge({
     initialScanTimer = null;
     scanQueued = false;
     removePresentationHook();
+    removeRuntimeHook();
     mark("disposed");
   }
 
   mark("installing");
   installPresentationHook();
+  installRuntimeHook();
   if (typeof legacyCinema(win)?.showTransition === "function") mark("ready");
   else mark("legacy-cinema-unavailable");
   scheduleInitialScan();
