@@ -142,7 +142,7 @@
       ]
     },
     "learn": {
-      "status": "IN_AUDIT",
+      "status": "CERTIFIED",
       "currentOwner": "src/learn",
       "reference": "LOCKED_NON_MASS_V43_59_30",
       "mustPreserve": [
@@ -151,12 +151,13 @@
         "English/French copy",
         "canonical child-module launches"
       ],
-      "auditTarget": "390x844 actual-index certification of locked v43.59.30 Learn hierarchy, five launchers, featured-card ownership, canonical assets and phone geometry",
-      "auditEvidence": [
+      "evidence": [
         "src/learn/presentation.js",
         "tests/learn-owner.mjs",
         "tests/learn-owner-e2e.mjs",
-        "tests/app-visual-acceptance.mjs"
+        "tests/app-visual-acceptance.mjs",
+        "Visual acceptance workflow 37305642976 at 390x844 touch geometry",
+        "R17 Mass convergence workflow 37305642967"
       ]
     },
     "calendar": {
