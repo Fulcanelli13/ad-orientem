@@ -4,6 +4,7 @@
 
 import { createMassReaderModel } from "./reader-model.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
+import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -649,8 +650,10 @@ export async function mountNativeReaderPreview({
     return api;
   }
 
-  const readerModel=ready.presentationModel??ready.model;
+  let sourceModel=ready.model;
+  let readerModel=ready.presentationModel??ready.model;
   let current=readerModel.cardBySequence(1);
+  let reader=null;
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
   let inAsh=Boolean(ready.ashController);
@@ -1413,11 +1416,77 @@ export async function mountNativeReaderPreview({
     return visibleCard;
   }
 
-  const reader=createReaderDomAdapter({
+  function sectionItems(){
+    return readerModel.cards
+      .filter(visibleCardAllowed)
+      .map(card=>Object.freeze({id:card.sectionId,label:card.title}));
+  }
+
+  function focusCueAtReaderLine(cueId){
+    if(!cueId)return false;
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    const target=scroll?.querySelector?.('[data-cue-id="'+String(cueId)+'"]');
+    if(!scroll||!target)return false;
+    const cr=scroll.getBoundingClientRect?.();
+    const tr=target.getBoundingClientRect?.();
+    if(!cr||!tr)return false;
+    const absoluteCenter=(tr.top-cr.top+scroll.scrollTop)+(tr.height/2);
+    scroll.scrollTop=Math.max(0,absoluteCenter-scroll.clientHeight*.39);
+    cueTracker?.refresh?.();
+    return true;
+  }
+
+  function switchPresentationMode(nextMode){
+    const anchor=captureReaderModeAnchor(current,{activeCueId});
+    const desiredCue=anchor.cueId;
+    const rebuilt=buildReaderModeModels({
+      prepared:ready.prepared,
+      data:ready.data,
+      mode:nextMode,
+    });
+    sourceModel=rebuilt.sourceModel;
+    readerModel=rebuilt.presentationModel;
+
+    const anchored=findReaderModeAnchorCard(readerModel,anchor)??readerModel.cardBySequence(1);
+    if(!anchored)throw new Error("MODE_SWITCH_ANCHOR_UNAVAILABLE");
+
+    current=anchored;
+    reader?.setSections?.(sectionItems());
+
+    clearEventCinematic({resetCue:true});
+    armPartCinematic(null);
+    transientGuard.begin();
+
+    const cueStillPresent=Boolean(desiredCue && (current.paragraphs??[]).some(paragraph=>
+      (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(desiredCue))
+    ));
+    activeCueId=cueStillPresent ? desiredCue : null;
+    if(activeCueId)transientGuard.resolveCue(activeCueId);
+    ready.scholaState.activateForCard(current.sourceSequence??current.guideSequence??current.sequence);
+
+    root.dataset.r17PresentationMode=rebuilt.mode;
+    root.dataset.r17SourceModelCards=String(sourceModel.totalCards);
+    root.dataset.r17PresentationModelCards=String(readerModel.totalCards);
+
+    if(!(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)){
+      showCard(current);
+      if(cueStillPresent)focusCueAtReaderLine(desiredCue);
+    }
+    return Object.freeze({
+      mode:rebuilt.mode,
+      card:current,
+      sourceModel,
+      presentationModel:readerModel,
+      anchor,
+    });
+  }
+
+  reader=createReaderDomAdapter({
     root:host,
     iconResolver,
-    allowPresentationModeSwitch:false,
-    sections:readerModel.cards.filter(visibleCardAllowed).map(card=>Object.freeze({id:card.sectionId,label:card.title})),
+    allowPresentationModeSwitch:true,
+    sections:sectionItems(),
+    onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
       return showCard(visibleCardAllowed(card)?card:null);
@@ -1520,7 +1589,9 @@ export async function mountNativeReaderPreview({
   }
 
   const api=Object.freeze({
-    root,reader,model:readerModel,sourceModel:ready.model,
+    root,reader,
+    get model(){return readerModel},
+    get sourceModel(){return sourceModel},
     ownership:Object.freeze({
       text:"R17_VERIFIED_CORPUS",
       cards:"R17_READER_MODEL",
@@ -1534,7 +1605,7 @@ export async function mountNativeReaderPreview({
       bell:"R17_RECOVERED_EXACT_CUE_CANONICAL_SOUND_EVENT",
       cinematic:"R17_SINGLE_OWNER_TIMED_TRANSIENT",
       guide:"R17_RECOVERED_V1_79_CONTINUITY_REGISTRY",
-      modeSwitch:"SOURCE_FIRST_LIVE_STRUCTURE_CERTIFIED__FIELD_SWITCH_LOCKED",
+      modeSwitch:"PRESENTATION_ONLY_SOURCE_ANCHORED_IN_READER_SWITCH",
       asperges:ready.aspergesController ? "R20_NATIVE_PRELUDE" : "NOT_ACTIVE",
       palm:ready.palmController ? "R22_NATIVE_PRELUDE" : "NOT_ACTIVE",
       ash:ready.ashController ? "R23_NATIVE_PRELUDE" : "NOT_ACTIVE",
@@ -1555,6 +1626,8 @@ export async function mountNativeReaderPreview({
       return showCard(visibleCardAllowed(card)?card:null);
     },
     syncState:queue,
+    getPresentationMode:()=>reader.getMode(),
+    setPresentationMode:mode=>reader.setMode(mode),
     destroy,
     getCurrentCard:()=>inGenericProcession ? ready.genericProcessionController?.project?.().card??null : inHolyThursdayPost ? ready.holyThursdayPostController?.project?.().card??null : inCorpusChristi ? ready.corpusChristiController?.project?.().card??null : inRequiemAbsolution ? ready.requiemAbsolutionController?.project?.().card??null : inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,

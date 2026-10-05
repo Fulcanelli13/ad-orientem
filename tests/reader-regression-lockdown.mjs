@@ -94,9 +94,13 @@ assert.ok((phoneAcceptance?.guarantees??[]).some(x=>/AO\.SM\.C0173/.test(x)),"pr
 assert.ok((phoneAcceptance?.defectsClosed??[]).some(x=>/cue-id regex/i.test(x)),"browser cue-id regression closure disappeared");
 
 const modeSwitch=release.protectedInvariants.find(x=>x.id==="NATIVE_MODE_SWITCH");
-assert.equal(modeSwitch?.status,"INITIAL_MODE_PHONE_CERTIFIED__IN_READER_SWITCH_DEFERRED_NON_BLOCKING");
-assert.match(String(modeSwitch?.reason??""),/selected before Mass/i);
-assert.match(String(modeSwitch?.reason??""),/locked/i);
+assert.equal(modeSwitch?.status,"IN_READER_MODE_SWITCH_PHONE_CERTIFIED");
+assert.match(String(modeSwitch?.reason??""),/presentation-only rebuild/i);
+assert.match(String(modeSwitch?.reason??""),/canonical Mass\/session\/event state is unchanged/i);
+assert.ok((modeSwitch?.evidence??[]).includes("tests/reader-mode-switch.mjs"),
+  "mode-switch source-anchor regression evidence disappeared");
+assert.ok((modeSwitch?.evidence??[]).includes("tests/reader-phone-acceptance.mjs"),
+  "mode-switch phone acceptance evidence disappeared");
 
 const plannedRuntime=release.protectedInvariants.find(x=>x.id==="PLAN_AWARE_OBJECTIVE_RUNTIME");
 assert.equal(plannedRuntime?.status,"CERTIFIED_LOW_SOLEMN_RUNTIME_OWNERSHIP",
@@ -360,7 +364,14 @@ assert.match(objectiveSource,/MC-COM-150/);
 assert.match(objectiveSource,/MC-COM-160/);
 
 const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
-assert.match(nativeSource,/allowPresentationModeSwitch:false/);
+assert.match(nativeSource,/allowPresentationModeSwitch:true/,
+  "native reader relocked the certified in-reader mode selector");
+assert.match(nativeSource,/buildReaderModeModels/,
+  "native reader lost presentation-only mode model rebuilding");
+assert.match(nativeSource,/captureReaderModeAnchor/,
+  "native reader lost source/cue anchor capture for mode switching");
+assert.match(nativeSource,/findReaderModeAnchorCard/,
+  "native reader lost source/cue anchor restoration for mode switching");
 assert.match(nativeSource,/const structuralSupport=structureSupport\(prepared\)/);
 assert.match(nativeSource,/structuralSupport\.reason/);
 assert.match(nativeSource,/canonSourceMap:data\?\.canonSourceMap/,"native reader lost certified Canon source-map input");

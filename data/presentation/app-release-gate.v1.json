@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.17.0",
-  "status": "PRODUCT_PARITY_RECOVERY_REQUIRED",
-  "releaseRule": "FINAL_APP_READY requires certified runtime stability and approved product/presentation parity across the six production surfaces. Structural modular convergence alone is insufficient.",
+  "version": "1.18.0",
+  "status": "FINAL_APP_READY",
+  "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, and certified product/presentation parity across all six production surfaces.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -186,24 +186,29 @@
     },
     {
       "id": "PRODUCT_PRESENTATION_PARITY",
-      "classification": "REGRESSION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "data/presentation/product-parity.v1.json",
         "tests/app-visual-acceptance.mjs",
+        "tests/mass-visual-acceptance.mjs",
+        "tests/reader-mode-switch.mjs",
+        "tests/reader-phone-acceptance.mjs",
         "src/home/presentation.js",
         "src/calendar/browser-entry.js",
         "src/pray/presentation-coherence.js",
         "src/learn/presentation.js",
         "src/settings/presentation.js",
-        "data/presentation/reader-release-gate.v1.json"
+        "src/mass/reader-live-product48.js",
+        "src/mass/reader-mode-switch.js",
+        "Visual acceptance workflow 37325466930",
+        "R17 Mass convergence workflow 37325466725",
+        "App convergence workflow 37325466826"
       ],
-      "detail": "Runtime and modular ownership are certified, but visual acceptance still checks structure/error absence rather than parity with approved Ad Orientem presentation. Recovery is presentation-only: preserve the certified runtime while restoring approved hierarchy, sacred visual identity, interaction grammar and previously accepted surface composition."
+      "detail": "All six modular product surfaces are phone/visual parity certified. Mass presentation recovery V1-V6 restores the approved LIVE hierarchy and 48-step product rhythm while retaining the 39-step source model, exact cue/state ownership, and persistent source-anchored MISSAL/SIMPLE/LIVE switching."
     }
   ],
-  "openBlockers": [
-    "PRODUCT_PRESENTATION_PARITY"
-  ],
+  "openBlockers": [],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
@@ -218,7 +223,8 @@
       "tests/nonmass-d3-d6-convergence.mjs",
       "tests/learn-owner.mjs",
       "tests/settings-owner.mjs",
-      "tests/source-transport-compat.mjs"
+      "tests/source-transport-compat.mjs",
+      "tests/reader-mode-switch.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",

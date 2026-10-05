@@ -6,8 +6,8 @@ const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.j
 const parity=JSON.parse(readFileSync("data/presentation/product-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.17.0");
-assert.equal(app.status,"PRODUCT_PARITY_RECOVERY_REQUIRED");
+assert.equal(app.version,"1.18.0");
+assert.equal(app.status,"FINAL_APP_READY");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
 assert.equal(reader.status,"FINAL_NATIVE_READY","Mass subsystem lost FINAL_NATIVE_READY");
@@ -30,13 +30,13 @@ for(const finding of findings){
 
 const open=findings.filter(x=>x.status==="OPEN").map(x=>x.id);
 assert.deepEqual(app.openBlockers,open,"app openBlockers must exactly match OPEN findings");
-assert.deepEqual(app.openBlockers,["PRODUCT_PRESENTATION_PARITY"],"product presentation parity blocker must remain explicit until approved parity is certified");
+assert.deepEqual(app.openBlockers,[],"FINAL_APP_READY must have zero open blockers");
 const fieldRuntime=findings.find(x=>x.id==="FIELD_RUNTIME_STABILIZATION");
 assert.equal(fieldRuntime?.classification,"PASS");
 assert.equal(fieldRuntime?.status,"CLOSED");
 const productParity=findings.find(x=>x.id==="PRODUCT_PRESENTATION_PARITY");
-assert.equal(productParity?.classification,"REGRESSION");
-assert.equal(productParity?.status,"OPEN");
+assert.equal(productParity?.classification,"PASS");
+assert.equal(productParity?.status,"CLOSED");
 assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
 assert.equal(parity.schema,"ao-product-parity-v1");
 assert.deepEqual(Object.keys(parity.surfaces),["home","mass","pray","learn","calendar","settings"]);
@@ -45,7 +45,10 @@ assert.equal(parity.surfaces.home.status,"CERTIFIED");
 assert.equal(parity.surfaces.pray.status,"CERTIFIED");
 assert.equal(parity.surfaces.settings.status,"CERTIFIED");
 assert.equal(parity.surfaces.learn.status,"CERTIFIED");
-assert.ok(Object.values(parity.surfaces).some(x=>x.status!=="CERTIFIED"),"presentation parity blocker cannot remain open with every surface certified");
+assert.equal(parity.surfaces.mass.status,"CERTIFIED");
+assert.ok(Object.values(parity.surfaces).every(x=>x.status==="CERTIFIED"),"FINAL_APP_READY requires all six product-parity surfaces certified");
+assert.equal(parity.status,"CERTIFIED");
+assert.equal(parity.releaseBlocker,null);
 assert.equal(findings.find(x=>x.id==="MASS_SUBSYSTEM_CERTIFIED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="SPECIAL_STRUCTURES_REAL_SHELL")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="ARIA_FOCUS_GUARD")?.classification,"PASS");
@@ -92,6 +95,7 @@ assert.ok(app.regressionGates?.phone?.includes("tests/nonmass-d3-d6-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/learn-owner-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/settings-e2e.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/reader-mode-switch.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
 
-console.log("PASS app release gate: PRODUCT_PARITY_RECOVERY_REQUIRED with runtime stable and presentation parity explicit.");
+console.log("PASS app release gate: FINAL_APP_READY with runtime stability and six-surface product parity certified.");

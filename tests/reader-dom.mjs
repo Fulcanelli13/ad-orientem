@@ -131,4 +131,16 @@ expect(locked.canSwitchPresentationMode()===false,"native parity lock was not ex
 locked.setMode("MISSAL");
 expect(locked.getMode()==="LIVE","locked reader accepted cosmetic mode switch before v1.83 parity");
 
-console.log("Reader DOM contract PASS: shell channels, top ribbon, section jump, Schola controls, persistent/transient ownership, Guide fail-closed, and parity mode lock.");
+let callbackMode=null;
+const unlocked=createReaderDomAdapter({
+  root:fakeRoot,
+  allowPresentationModeSwitch:true,
+  onPresentationModeChange:mode=>{callbackMode=mode;},
+});
+unlocked.mount(prepared);
+expect(unlocked.canSwitchPresentationMode()===true,"unlocked reader did not expose mode switching");
+unlocked.setMode("SIMPLE");
+expect(unlocked.getMode()==="SIMPLE","unlocked reader did not change mode");
+expect(callbackMode==="SIMPLE","unlocked reader did not invoke presentation mode callback");
+
+console.log("Reader DOM contract PASS: shell channels, top ribbon, section jump, Schola controls, persistent/transient ownership, Guide fail-closed, and explicit locked/unlocked mode switching.");
