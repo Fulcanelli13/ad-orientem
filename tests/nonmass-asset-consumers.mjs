@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
+import { HOME_ENRICHER_ICON_ASSET_IDS } from "../src/home/enrichers.js";
 import {
   AO_APP_SURFACE_ASSET_IDS,
   AO_LEARN_ROUTE_ASSET_IDS,
@@ -49,6 +50,25 @@ for(const file of [
   assert.ok(existsSync(file),"canonical global-ribbon asset missing: "+file);
 }
 
+const productionHost=readFileSync("index.html","utf8");
+const embeddedSymbol=id=>productionHost.includes(`id="${id}"`)||productionHost.includes(`id='${id}'`);
+const physicalCanonical=id=>{
+  const record=getCanonicalAsset(id);
+  return Boolean(record?.path&&existsSync(record.path));
+};
+
+for(const id of Object.values(AO_APP_SURFACE_ASSET_IDS)){
+  assert.equal(physicalCanonical(id),true,"global ribbon canonical asset is not physically externalized: "+id);
+}
+
+const presentationConsumers=new Set([
+  ...Object.values(AO_LEARN_ROUTE_ASSET_IDS),
+  ...Object.values(HOME_ENRICHER_ICON_ASSET_IDS),
+  "ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-previous","ao-ui-search",
+]);
+const unresolved=[...presentationConsumers].filter(id=>!physicalCanonical(id)&&!embeddedSymbol(id));
+assert.deepEqual(unresolved,[],"current production presentation references unresolved canonical assets");
+
 const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 const home=readFileSync("src/home/presentation.js","utf8");
 const calendar=readFileSync("src/calendar/browser-entry.js","utf8");
@@ -86,4 +106,4 @@ assert.match(settings,/ao-ui-back/);
 assert.match(settings,/ao-ui-close/);
 assert.match(settings,/ao-ui-next/);
 
-console.log("PASS canonical non-Mass asset consumers: shell, Home, Pray, Learn, Calendar and Settings are bound to V4/V4.1.1 identities.");
+console.log("PASS canonical non-Mass asset consumers: all current presentation consumers resolve to physical frozen assets or approved embedded canonical symbols.");
