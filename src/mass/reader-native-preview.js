@@ -1309,9 +1309,6 @@ export async function mountNativeReaderPreview({
       return showAsperges();
     }
     const card=nextVisibleCard(current,"next");
-    if((card?.sourceSequence===30 || card?.sequence===30) && prepared?.session?.plan?.normalLastGospel===false){
-      return enterLifecycleBoundary();
-    }
     if(!card)return enterLifecycleBoundary();
     return showCard(card);
   }
@@ -1329,6 +1326,19 @@ export async function mountNativeReaderPreview({
     return Object.freeze({...card,title:"Placeat tibi, sancta Trinitas",paragraphs:Object.freeze(paragraphs),planFilteredBlocks:Object.freeze(["AO.SM.B092"])});
   }
 
+  function isLastGospelCard(card){
+    if(!card)return false;
+    if(Number(card.sourceSequence)===30)return true;
+    const sourceId=String(card.sourceSectionId??card.sectionId??"");
+    return sourceId==="AO.CARD.030";
+  }
+
+  function visibleCardAllowed(card){
+    if(!card)return false;
+    if(prepared?.session?.plan?.normalLastGospel===false && isLastGospelCard(card))return false;
+    return Boolean(planAwareCard(card));
+  }
+
   function nextVisibleCard(from,direction){
     let probe=from;
     while(probe){
@@ -1336,7 +1346,7 @@ export async function mountNativeReaderPreview({
         ? readerModel.previousCard(probe.sectionId)
         : readerModel.nextCard(probe.sectionId);
       if(!candidate)return null;
-      if(planAwareCard(candidate))return candidate;
+      if(visibleCardAllowed(candidate))return candidate;
       probe=candidate;
     }
     return null;
@@ -1407,10 +1417,10 @@ export async function mountNativeReaderPreview({
     root:host,
     iconResolver,
     allowPresentationModeSwitch:false,
-    sections:readerModel.cards.filter(card=>Boolean(planAwareCard(card))).map(card=>Object.freeze({id:card.sectionId,label:card.title})),
+    sections:readerModel.cards.filter(visibleCardAllowed).map(card=>Object.freeze({id:card.sectionId,label:card.title})),
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(planAwareCard(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null);
     },
     onPrevious:previousReaderCard,
     onNext:nextReaderCard,
