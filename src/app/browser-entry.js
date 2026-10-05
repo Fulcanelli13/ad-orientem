@@ -5,6 +5,7 @@ import "../pray/browser-entry.js";
 import "../learn/browser-entry.js";
 import "../settings/browser-entry.js";
 import { installLiveSessionGuards } from "./live-session-guards.js";
+import { createPresentationFxBridge } from "./presentation-fx.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
 import {
@@ -34,7 +35,7 @@ function initialSurface(win, host) {
   return surfaceForCoreRoute(host.currentCoreRoute?.(), "home");
 }
 
-function installVisibleRibbonOwner(win, controller, state) {
+function installVisibleRibbonOwner(win, controller, state, presentationFx = null) {
   const doc = win?.document;
   if (!doc?.getElementById || !controller) return () => {};
 
@@ -154,7 +155,7 @@ function installVisibleRibbonOwner(win, controller, state) {
     if (!surface) return;
     event.preventDefault?.();
     event.stopPropagation?.();
-    void controller.go(surface);
+    void (presentationFx?.navigate?.(surface, () => controller.go(surface)) ?? controller.go(surface));
   }
 
   function syncExternalNavigation(event) {
@@ -222,6 +223,7 @@ export function installAppShellBridge({
     visibleOwner: false,
     disposeVisibleOwner: null,
     liveSessionGuards: null,
+    presentationFx: null,
   };
 
   function setDataset(value) {
@@ -248,12 +250,17 @@ export function installAppShellBridge({
         host: state.host,
         initialSurface: initialSurface(win, state.host),
       });
+      state.presentationFx?.dispose?.();
+      state.presentationFx = createPresentationFxBridge({
+        win,
+        getActive: () => state.controller?.getActive?.() ?? null,
+      });
       try {
         installNonMassConvergence({ win });
       } catch (error) {
         console.error("Non-Mass D3-D6 convergence install failed", error);
       }
-      state.disposeVisibleOwner = installVisibleRibbonOwner(win, state.controller, state);
+      state.disposeVisibleOwner = installVisibleRibbonOwner(win, state.controller, state, state.presentationFx);
       state.liveSessionGuards?.dispose?.();
       state.liveSessionGuards = installLiveSessionGuards({ win });
       setDataset("ready");
@@ -277,7 +284,7 @@ export function installAppShellBridge({
           reason: state.blocked ? "APP_SHELL_BLOCKED" : "APP_SHELL_NOT_READY",
         }));
       }
-      return state.controller.go(surface);
+      return state.presentationFx?.navigate?.(surface, () => state.controller.go(surface)) ?? state.controller.go(surface);
     },
     getActive() {
       return state.controller?.getActive?.() ?? null;
@@ -318,6 +325,7 @@ export function installAppShellBridge({
         legacyRibbonPresent: Boolean(win?.AO_GLOBAL_RIBBON_V4323),
         liveSessionGuards: state.liveSessionGuards?.status?.() ?? null,
         nonMassConvergence: win?.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.() ?? null,
+        presentationFx: state.presentationFx?.status?.() ?? null,
       });
     },
   });
