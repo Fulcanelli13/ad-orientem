@@ -20,3 +20,25 @@ export function installPrayPresentationStyles(doc=globalThis.document){
 }
 
 if(typeof document!=="undefined")installPrayPresentationStyles(document);
+
+/* Presentation FX V2 — semantic side rails recovered from the accepted devotional prototypes.
+   Geometry-neutral: rails never reserve reading-column width and disappear when no semantic state exists. */
+#aoPray435930 .aoP435930SemanticRails{position:fixed;inset:0;z-index:14972;pointer-events:none}
+#aoPray435930 .aoP435930SemanticRail{position:absolute;top:118px;display:grid;gap:7px;width:54px}
+#aoPray435930 .aoP435930SemanticRail.left{left:max(6px,env(safe-area-inset-left))}
+#aoPray435930 .aoP435930SemanticRail.right{right:max(6px,env(safe-area-inset-right))}
+#aoPray435930 .aoP435930SemanticRailChip{display:grid;justify-items:center;align-content:center;gap:5px;min-height:68px;padding:7px 4px;border:1px solid color-mix(in srgb,var(--liturgical,#d8bd7d) 22%,var(--border,rgba(255,255,255,.12)));border-radius:14px;background:color-mix(in srgb,var(--bg,#080c12) 84%,transparent);backdrop-filter:blur(12px);box-shadow:0 9px 24px rgba(0,0,0,.16);color:var(--liturgical,#d8bd7d);opacity:.94}
+#aoPray435930 .aoP435930SemanticRailIcon{width:28px!important;height:28px!important;color:currentColor}
+#aoPray435930 .aoP435930SemanticRailLabel{max-width:46px;color:var(--text,#f3ead7);font:700 .53rem/1.1 var(--font-display,system-ui);letter-spacing:.045em;text-align:center;text-transform:uppercase}
+#aoPray435930 .aoP435930SemanticRailChip small{max-width:46px;color:var(--muted,#aeb2b8);font:600 .47rem/1.15 var(--font-display,system-ui);text-align:center}
+@media(max-width:560px){
+ #aoPray435930 .aoP435930SemanticRail{top:103px;width:46px}
+ #aoPray435930 .aoP435930SemanticRail.left{left:max(4px,env(safe-area-inset-left))}
+ #aoPray435930 .aoP435930SemanticRail.right{right:max(4px,env(safe-area-inset-right))}
+ #aoPray435930 .aoP435930SemanticRailChip{min-height:50px;padding:5px 3px;border-radius:12px;background:color-mix(in srgb,var(--bg,#080c12) 88%,transparent)}
+ #aoPray435930 .aoP435930SemanticRailIcon{width:27px!important;height:27px!important}
+ #aoPray435930 .aoP435930SemanticRailLabel,#aoPray435930 .aoP435930SemanticRailChip small{display:none}
+}
+@media(prefers-reduced-motion:reduce){#aoPray435930 .aoP435930SemanticRailChip{transition:none!important}}
+html[data-reduced-motion="true"] #aoPray435930 .aoP435930SemanticRailChip{transition:none!important}
+
