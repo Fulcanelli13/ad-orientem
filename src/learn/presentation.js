@@ -1,4 +1,4 @@
-import { canonicalAssetIdForLearnRoute, getCanonicalAsset } from "../assets/asset-registry.js";
+import { canonicalAssetIdForLearnRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 export const LEARN_PRESENTATION_VERSION="modular-learn-presentation-v1";
 export const LEARN_DONOR_RELEASE="43.59.30";
@@ -28,6 +28,11 @@ export const LEARN_LAYOUT=Object.freeze({
 export const LEARN_MODULE_IDS=Object.freeze(LEARN_LAYOUT.sections.flatMap(section=>section.items.map(item=>item.id)));
 
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const assetMask=(assetId,className="aoLearnControlIcon")=>{
+  const url=resolveCanonicalAssetUrl(assetId);
+  if(!url)return "";
+  return `<span class="${className}" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url(\'${esc(url)}\') center/contain no-repeat;mask:url(\'${esc(url)}\') center/contain no-repeat"></span>`;
+};
 const isFr=state=>state?.language==="fr";
 const pick=(pair,state)=>pair[isFr(state)?1:0];
 
@@ -87,7 +92,7 @@ export function renderLearnPresentation(root,state,win,{error=""}={}){
   root.lang=langFr?"fr":"en";
   root.innerHTML=`<style data-ao-learn-style>${learnPresentationCss()}</style>
     <header class="aoLearnModTop">
-      <button type="button" data-ao-learn-home aria-label="${esc(langFr?"Retour à l’accueil":"Back to Home")}">←</button>
+      <button type="button" data-ao-learn-home aria-label="${esc(langFr?"Retour à l’accueil":"Back to Home")}">${assetMask("ao-ui-back")}</button>
       <div class="aoLearnModTopTitle"><small>AD ORIENTEM</small><strong>${esc(pick(LEARN_LAYOUT.title,state))}</strong></div>
       <span class="aoLearnModTopSpacer" aria-hidden="true"></span>
     </header>
