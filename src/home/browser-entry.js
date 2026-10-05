@@ -87,9 +87,7 @@ export function createHomeOwner(win=globalThis){
   function open(){
     closeTransientSurfaces(win);
     resetCoreRoute(win);
-    try{win?.AO_SETTINGS_V4359?.restoreHome?.();}catch{}
-    try{win?.AO_SETTINGS_V4358?.restoreHome?.();}catch{}
-    try{win?.AO_SETTINGS_V4356?.restoreHome?.();}catch{}
+    try{win?.AO_SETTINGS_APP_V1?.restoreHome?.();}catch{}
     attachPresentation();
     paint(state(win));
     markOwner();
