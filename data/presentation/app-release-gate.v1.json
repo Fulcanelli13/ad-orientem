@@ -1,7 +1,7 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.13.0",
-  "status": "CONVERGENCE_IN_PROGRESS",
+  "version": "1.14.0",
+  "status": "FINAL_APP_READY",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
     "status": "CERTIFIED",
@@ -116,8 +116,8 @@
     },
     {
       "id": "NON_MASS_DONOR_EXTRACTION",
-      "classification": "MISSING_INTEGRATION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "docs/APP-CONVERGENCE.md",
         "src/app/host-adapter.js",
@@ -142,12 +142,14 @@
         "src/settings/browser-entry.js",
         "src/settings/presentation.js",
         "tests/settings-owner.mjs",
-        "tests/settings-e2e.mjs"
+        "tests/settings-e2e.mjs",
+        "src/home/enrichers.js",
+        "tests/home-enrichers.mjs"
       ],
-      "detail": "Calendar, PRAY, Learn and Settings presentation ownership are extracted and actual-index phone-certified. Settings now runs through AO_SETTINGS_APP_V1 in src/settings, preserving the approved English/French controls, canonical preference persistence, Sources/About and app-version authority, while using the single modular live-session guard to remain safe over an active R17 Mass. Normal production no longer probes AO_SETTINGS_V4359/V4358/V4356 or utility.settings, and the duplicate Home Settings surface is retired. Home has a modular base presentation owner, but legacy Home enrichers such as Coming Up and Daily Catechism still require extraction.",
+      "detail": "Calendar, Home, PRAY, Learn and Settings presentation ownership are extracted and actual-index phone-certified. Home now owns its base presentation plus Coming Up and Daily Catechism through src/home, continuously retires asynchronously reinserted donor Home cards, and uses canonical V4/V4.1.1 asset identities. Settings runs through AO_SETTINGS_APP_V1 with Sources/About and active-R17 overlay safety. Normal production no longer depends on historical Settings fallbacks or donor Home enricher presentation.",
       "progress": {
         "calendar": "MODULAR_PHONE_CERTIFIED",
-        "home": "MODULAR_BASE_PRESENTATION_PHONE_CERTIFIED__ENRICHERS_PENDING",
+        "home": "MODULAR_PHONE_CERTIFIED",
         "pray": "MODULAR_PHONE_CERTIFIED",
         "learn": "MODULAR_PHONE_CERTIFIED",
         "settings": "MODULAR_PHONE_CERTIFIED"
@@ -166,9 +168,7 @@
       "detail": "Actual-index phone acceptance proves cold state, active-Mass checkpointing, reload without auto-reactivation, explicit resume at the saved section, preservation of form/mode/posture/gesture/language preferences, intentional suspension, and isolation of unrelated local state."
     }
   ],
-  "openBlockers": [
-    "NON_MASS_DONOR_EXTRACTION"
-  ],
+  "openBlockers": [],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
@@ -179,6 +179,7 @@
       "tests/pray-owner.mjs",
       "tests/pray-presentation.mjs",
       "tests/home-presentation.mjs",
+      "tests/home-enrichers.mjs",
       "tests/nonmass-d3-d6-convergence.mjs",
       "tests/learn-owner.mjs",
       "tests/settings-owner.mjs"

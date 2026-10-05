@@ -60,18 +60,28 @@ try{
     globalThis.AO_APP_SHELL_V1?.status?.().legacyRibbonButtons===0,
     null,{timeout:30000});
   await page.waitForSelector("[data-ao-app-surface='home']",{state:"visible",timeout:30000});
+  await page.waitForSelector("[data-ao-home-enricher-owner='modular-home-enrichers-v1']",{state:"visible",timeout:10000});
 
   const cold=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     status:globalThis.AO_APP_SHELL_V1?.status?.()??null,
     owner:document.documentElement.dataset.aoAppShellOwner??null,
     massMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+    enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
+    modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
+    donorHomeEnricherVisible:[...document.querySelectorAll(".aoComingUpV4323,.aoDailyCateHome")].some(node=>{
+      const style=getComputedStyle(node);
+      return node.isConnected&&!node.hidden&&style.display!=="none"&&style.visibility!=="hidden";
+    }),
   }));
   assert.equal(cold.active,"home","cold launch did not begin on Home");
   assert.equal(cold.status?.passive,false,"modular shell is still passive on cold launch");
   assert.equal(cold.status?.visibleOwner,true,"modular shell does not own visible ribbon");
   assert.equal(cold.owner,"AO_APP_SHELL_V1","modular shell ownership marker missing");
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
+  assert.equal(cold.enrichersOwner,"modular-home-enrichers-v1","cold Home did not use modular enrichers");
+  assert.equal(cold.modularEnrichers,2,"cold Home did not render both modular enricher cards");
+  assert.equal(cold.donorHomeEnricherVisible,false,"donor Coming Up/Daily Catechism remained visible under modular Home");
 
   await page.locator("[data-ao-app-surface='calendar']").click();
   await page.waitForFunction(()=>
@@ -457,12 +467,21 @@ try{
     installed:globalThis.AO_HOME_APP_V1?.status?.().installed??false,
     presentationAttached:globalThis.AO_HOME_APP_V1?.status?.().presentationAttached??false,
     donorAvailable:globalThis.AO_HOME_APP_V1?.status?.().donorHomeAvailable??false,
+    enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
+    modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
+    donorHomeEnricherVisible:[...document.querySelectorAll(".aoComingUpV4323,.aoDailyCateHome")].some(node=>{
+      const style=getComputedStyle(node);
+      return node.isConnected&&!node.hidden&&style.display!=="none"&&style.visibility!=="hidden";
+    }),
     prayStillOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
   }));
   assert.equal(homeOwnership.owner,"modular-home-v2","production Home click did not use modular Home owner");
   assert.equal(homeOwnership.presentationOwner,"modular-home-presentation-v1","production Home did not use modular base presentation");
   assert.equal(homeOwnership.installed,true);
   assert.equal(homeOwnership.presentationAttached,true,"modular Home presentation is not subscribed to runtime state");
+  assert.equal(homeOwnership.enrichersOwner,"modular-home-enrichers-v1","Home transition did not restore modular enrichers");
+  assert.equal(homeOwnership.modularEnrichers,2,"Home transition did not restore both modular enricher cards");
+  assert.equal(homeOwnership.donorHomeEnricherVisible,false,"donor Home enrichers resurfaced after PRAY -> Home");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
 
   await page.locator("[data-ao-app-surface='settings']").click();

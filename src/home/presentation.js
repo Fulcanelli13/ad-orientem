@@ -1,4 +1,5 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
 
@@ -102,6 +103,7 @@ export function renderHomeToString(state,win=globalThis){
   const status=vm.calendarFailed?`<div class="statusCard error"><strong>${esc(t("calendarUnavailable"))}</strong><span>${esc(t("calendarUnavailableBody"))}</span></div>`
     :vm.properStatus==="failed"?`<div class="statusCard warning"><strong>${esc(t("properUnavailable"))}</strong><span>${esc(vm.properMessage)}</span></div>`:"";
   const currentProper=state.resolution?.proper?.status==="ready"?state.resolution.proper.data:null;
+  const enrichers=buildHomeEnrichers(state,win);
   const coverage=currentProper?.languageCoverage?.[vm.language];
   const translationStatus=coverage&&!coverage.complete?`<div class="statusCard warning contentIntegrity"><strong>${vm.language==="fr"?"Traduction du Propre incomplète":"Proper translation incomplete"}</strong><span>${esc(`${coverage.available}/${coverage.expected} · ${coverage.missing.join(", ")}`)}</span></div>`:"";
   const week=vm.week.map(c=>`<button class="dayCell${c.selected?" selected":""}${c.today?" today":""}" data-date="${esc(c.date)}" aria-pressed="${c.selected}"><span>${esc(c.day)}</span><b>${esc(c.number)}</b></button>`).join("");
@@ -116,6 +118,7 @@ ${status}${translationStatus}
 ${state.resume?.available?`<button class="resumeCard" data-resume-mass><span>${vm.language==="fr"?"Messe en cours":"Mass in progress"}</span><b>${vm.language==="fr"?"Reprendre":"Resume"}</b><small>${esc(win?.AO_DISPLAY_DATE?.(state.resume.date)||state.resume.date||"")} · ${Number(state.resume.stepIndex||0)+1}</small></button>`:""}
 <section class="homeSection aroundMass"><div class="sectionLabel">${esc(t("aroundMass"))}</div><div class="phaseActions"><button class="phaseButton secondary" data-action="prepare"><span>Ⅰ</span><b>${esc(t("prepare"))}</b></button><button class="phaseButton primary" data-action="follow"><span>Ⅱ</span><b>${esc(t("followMass"))}</b></button><button class="phaseButton secondary" data-action="thanks"><span>Ⅲ</span><b>${esc(t("giveThanks"))}</b></button></div></section>
 <section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p><button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>${assetIcon("ao-ui-next")}</span></button></section>
+${renderHomeEnrichersToString(enrichers,state)}
 <section class="contentCard massCard"><div><div class="cardKicker">${esc(t("todaysMass"))}</div><p>${esc(vm.massHint)}</p></div><button class="roundAction" data-action="today-mass" aria-label="${esc(t("openMass"))}">${assetIcon("ao-ui-next")}</button></section>
 <section class="contentCard moreCard"><div><div class="cardKicker">${esc(t("more"))}</div><p>${esc(t("moreHint"))}</p></div><button class="roundAction" data-action="more" aria-label="${esc(t("openMore"))}">•••</button></section>
 <div class="homeSpacer"></div>${state.lastAction&&!["today-mass","more"].includes(state.lastAction)?`<div class="alphaNotice" role="status">${esc(t("developmentAction"))}</div>`:""}${homeSheet(state)}</main>`;
