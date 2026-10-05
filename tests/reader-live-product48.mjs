@@ -117,8 +117,8 @@ console.log("PASS source-first LIVE product parity: 39 source steps project to 4
 // Real production-data integration: prove that the product projection is a
 // presentation-only decomposition of the certified 39-step Sung LIVE model.
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
-const low=load("../data/presentation/reader-text-low.v1.json");
-const sung=load("../data/presentation/reader-text-sung.v1.json");
+const lowCorpus=load("../data/presentation/reader-text-low.v1.json");
+const sungCorpus=load("../data/presentation/reader-text-sung.v1.json");
 const sectionMap=load("../data/presentation/reader-section-map.v0.13.1.json");
 const canonSourceMap=load("../data/presentation/reader-canon-source-map.v1.json");
 const t=(lat,en)=>({lat,en});
@@ -152,7 +152,7 @@ const resolvedMass={
   distinctRite:null,
 };
 const realSource=createMassReaderModel({
-  resolvedMass,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+  resolvedMass,sectionMap,lowCorpus,sungCorpus,canonSourceMap
 });
 assert.equal(realSource.totalCards,39);
 assert.equal(realSource.structureOwner,"SOURCE_FIRST_LIVE");
