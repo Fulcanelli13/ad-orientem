@@ -37,7 +37,7 @@ function semanticRailChip(assetId,label,value='',opts={}){
  if(!assetId||!label)return'';
  const channel=opts.channel==='transient'?'transient':'persistent';
  const slot=opts.slot?' data-ao-pray-live-cue-slot="1"':'';
- return `<div class="aoP435930SemanticRailChip ${channel}" data-ao-pray-rail-channel="${channel}" data-ao-pray-rail-asset="${esc(assetId)}"${slot}>${assetIcon(assetId,'aoP435930SemanticRailIcon')}<span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
+ return `<div class="aoP435930SemanticRailChip ${channel}" data-ao-pray-rail-channel="${channel}" data-ao-pray-rail-asset="${esc(assetId)}"${slot}><span class="aoP435930SemanticRailCard">${assetIcon(assetId,'aoP435930SemanticRailIcon')}</span><span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
 }
 function semanticRails(){
  let left='',right='';
@@ -696,7 +696,7 @@ function syncFocusedSemanticCue(detail={}){
  if(!asset||!label)return;
  if(slot.dataset.aoPrayRailAsset===asset&&slot.querySelector('.aoP435930SemanticRailLabel')?.textContent===label)return;
  slot.dataset.aoPrayRailAsset=asset;
- slot.innerHTML=`${assetIcon(asset,'aoP435930SemanticRailIcon')}<span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}`;
+ slot.innerHTML=`<span class="aoP435930SemanticRailCard">${assetIcon(asset,'aoP435930SemanticRailIcon')}</span><span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}`;
  slot.classList.remove('cue-enter');void slot.offsetWidth;slot.classList.add('cue-enter');
 }
 document.addEventListener('ao:pray-focus-cue',e=>syncFocusedSemanticCue(e.detail||{}));
