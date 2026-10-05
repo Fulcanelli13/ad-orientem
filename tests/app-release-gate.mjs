@@ -7,8 +7,8 @@ const parity=JSON.parse(readFileSync("data/presentation/product-parity.v1.json",
 const presentationFx=JSON.parse(readFileSync("data/presentation/presentation-fx-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.20.0");
-assert.equal(app.status,"FINAL_APP_READY");
+assert.equal(app.version,"1.21.0");
+assert.equal(app.status,"PROTOTYPE_FIDELITY_RECOVERY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
 assert.equal(reader.status,"FINAL_NATIVE_READY","Mass subsystem lost FINAL_NATIVE_READY");
@@ -31,7 +31,7 @@ for(const finding of findings){
 
 const open=findings.filter(x=>x.status==="OPEN").map(x=>x.id);
 assert.deepEqual(app.openBlockers,open,"app openBlockers must exactly match OPEN findings");
-assert.deepEqual(app.openBlockers,[],"FINAL_APP_READY must not retain app-level blockers");
+assert.deepEqual(app.openBlockers,["PROTOTYPE_FIDELITY_PARITY"],"prototype fidelity must remain the sole app-level blocker during exact donor recovery");
 const fieldRuntime=findings.find(x=>x.id==="FIELD_RUNTIME_STABILIZATION");
 assert.equal(fieldRuntime?.classification,"PASS");
 assert.equal(fieldRuntime?.status,"CLOSED");
@@ -40,6 +40,7 @@ assert.equal(productParity?.classification,"PASS");
 assert.equal(productParity?.status,"CLOSED");
 assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
 assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
+assert.equal(app.prototypeFidelityLedger,"data/presentation/prototype-fidelity.v1.json");
 const fxFinding=findings.find(x=>x.id==="PRESENTATION_FX_PARITY");
 assert.equal(fxFinding?.classification,"PASS");
 assert.equal(fxFinding?.status,"CLOSED");
@@ -91,6 +92,7 @@ assert.ok(app.regressionGates?.static?.includes("tests/app-shell-contract.mjs"))
 assert.ok(app.regressionGates?.static?.includes("tests/production-tree-hygiene.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/app-live-session-guards.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/presentation-fx.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/prototype-fidelity.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/home-owner.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/home-presentation.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/home-enrichers.mjs"));
@@ -108,4 +110,4 @@ assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.m
 assert.ok(app.regressionGates?.static?.includes("tests/reader-mode-switch.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
 
-console.log("PASS app release gate: FINAL_APP_READY with runtime stability and six-surface product parity certified.");
+console.log("PASS app release gate: exact prototype fidelity recovery is the sole open blocker.");
