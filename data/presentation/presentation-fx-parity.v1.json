@@ -1,6 +1,6 @@
 {
   "schema": "ao-presentation-fx-parity-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "RECOVERY_IN_PROGRESS",
   "releaseBlocker": "PRESENTATION_FX_PARITY",
   "rule": "FINAL_APP_READY requires the approved cinematic and semantic presentation systems to be active on the modular six-surface app. Static surface parity alone is insufficient.",
@@ -53,12 +53,16 @@
       "note": "The old shimmer/blur-in art loader still targets historical art selectors; modular surface coverage requires audit."
     },
     "verticalSemanticRails": {
-      "status": "AUDIT_REQUIRED",
+      "status": "RECOVERED_V2_PARTIAL",
       "evidence": [
-        "src/mass/reader-dom.js",
-        "historical index.html presentation layers"
+        "src/pray/presentation-runtime.js",
+        "src/pray/presentation-styles.js",
+        "tests/pray-presentation.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Ad_Orientem_Angelus_Timeline_Prototype_v0.3.html",
+        "Ad_Orientem_v3_4_8.html"
       ],
-      "note": "Mass retains semantic cue rails, but prototype-era vertical icon-rail treatment across Mass/non-Mass has not been systematically recovered or certified."
+      "note": "PRAY now restores geometry-neutral semantic icon rails without duplicating the horizontal stage navigator. Angelus exposes resolved Stand/Kneel plus devotional context; Stations, Rosary, Adoration, Benediction and Confession expose canonical contextual identity only. Unresolved posture is never invented. The external Rosary player still needs its own live mystery/context rail recovery."
     },
     "heroPresenceAndEntryChoreography": {
       "status": "AUDIT_REQUIRED",
@@ -80,8 +84,9 @@
     }
   },
   "nextRecoveryTargets": [
-    "phone-certify modular route transition, loader and surface-entry behavior",
-    "map prototype-era vertical semantic rails to current surfaces and distinguish information-bearing rails from decorative chrome",
+    "phone-certify PRAY Angelus and Stations semantic side rails on current main",
+    "recover live Rosary player mystery/context rail and accepted mystery-change cinematics without duplicating bead navigation",
+    "recover Stations change cinematic and any sourced posture/gesture rail states without inventing local custom",
     "recover approved hero/art entry choreography without reviving obsolete donor navigation",
     "extend art-loading treatment to current modular art owners",
     "extract v43.12 cinematic owner from monolithic index.html only after behavior parity is locked"
