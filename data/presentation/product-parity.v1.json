@@ -120,7 +120,7 @@
       ]
     },
     "pray": {
-      "status": "PENDING_AUDIT",
+      "status": "IN_AUDIT",
       "currentOwner": "src/pray",
       "reference": "V43_59_30_PRAY_LOCK",
       "mustPreserve": [
@@ -129,6 +129,12 @@
         "fluid reading focus",
         "recitation grammar",
         "canonical controls"
+      ],
+      "evidence": [
+        "tests/app-visual-acceptance.mjs",
+        "03-pray.png",
+        "03b-pray-library-prayer.png",
+        "tests/pray-presentation.mjs"
       ]
     },
     "learn": {
