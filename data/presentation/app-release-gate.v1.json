@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -121,12 +121,14 @@
         "src/pray/presentation-styles.js",
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-coherence.js",
-        "tests/pray-presentation.mjs"
+        "tests/pray-presentation.mjs",
+        "src/home/presentation.js",
+        "tests/home-presentation.mjs"
       ],
-      "detail": "Calendar and PRAY presentation ownership are extracted and actual-index phone-certified. PRAY now runs the locked v43.59.30 48-prayer corpus and final coherence contract from src/pray with no obsolete PrayerBook fallback. Home top-level navigation is modular but its card presentation (including Coming Up and Daily Catechism) remains donor-owned; Learn and Settings presentation extraction also remain open.",
+      "detail": "Calendar and PRAY presentation ownership are extracted and actual-index phone-certified. PRAY runs the locked v43.59.30 48-prayer corpus and final coherence contract from src/pray. Home now has a modular base presentation owner for the liturgical day, Mass summary, Gospel, Around the Mass, language/date/formulary state and resume status; legacy Home enrichers such as Coming Up and Daily Catechism still require extraction. Learn and Settings presentation extraction also remain open.",
       "progress": {
         "calendar": "MODULAR_PHONE_CERTIFIED",
-        "home": "MODULAR_NAVIGATION_PHONE_CERTIFIED__PRESENTATION_PENDING",
+        "home": "MODULAR_BASE_PRESENTATION_PHONE_CERTIFIED__ENRICHERS_PENDING",
         "pray": "MODULAR_PHONE_CERTIFIED",
         "learn": "PENDING",
         "settings": "PENDING"
@@ -157,7 +159,8 @@
       "tests/app-live-session-guards.mjs",
       "tests/home-owner.mjs",
       "tests/pray-owner.mjs",
-      "tests/pray-presentation.mjs"
+      "tests/pray-presentation.mjs",
+      "tests/home-presentation.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
