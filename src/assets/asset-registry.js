@@ -1092,6 +1092,31 @@ export const AO_SHARED_IDENTITY_MAPPINGS=Object.freeze([
   }
 ]);
 
+export const AO_APP_SURFACE_ASSET_IDS=Object.freeze({
+  home:"ao-nav-home",
+  mass:"ao-brand-emblem",
+  pray:"ao-nav-pray",
+  learn:"ao-nav-learn",
+  calendar:"ao-nav-calendar",
+  settings:"ao-nav-settings",
+});
+
+export const AO_LEARN_ROUTE_ASSET_IDS=Object.freeze({
+  "learn.catechism.daily":"ao-refined-study",
+  "learn.mass":"ao-rich-guides",
+  "learn.catechism":"ao-module-catechism",
+  "today.gospel":"ao-refined-scripture",
+  "today.saint":"ao-refined-saint-of-day",
+});
+
+export function canonicalAssetIdForSurface(surface){
+  return AO_APP_SURFACE_ASSET_IDS[String(surface??"").trim()]??null;
+}
+
+export function canonicalAssetIdForLearnRoute(route){
+  return AO_LEARN_ROUTE_ASSET_IDS[String(route??"").trim()]??null;
+}
+
 export function getCanonicalAsset(assetId){
   const id=String(assetId??"").trim();
   return AO_CANONICAL_CORE_ASSETS[id]??AO_CANONICAL_EXTENSION_ASSETS[id]??null;

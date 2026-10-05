@@ -1,3 +1,5 @@
+import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+
 const VERSION="modular-calendar-v1";
 const ROOT_ID="ao-calendar-modular-root";
 
@@ -7,6 +9,11 @@ const cache=()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345??null;
 const fr=()=>state()?.language==="fr";
 const L=(en,frText)=>fr()?frText:en;
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const assetIcon=(assetId,className="aoCalAssetIcon")=>{
+  const url=resolveCanonicalAssetUrl(assetId);
+  if(!url)return "";
+  return `<span class="${className}" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url(\'${esc(url)}\') center/contain no-repeat;mask:url(\'${esc(url)}\') center/contain no-repeat"></span>`;
+};
 const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 const dateOf=id=>new Date(`${id}T12:00:00`);
 const displayDate=id=>{const m=String(id??"").match(/^(\d{4})-(\d{2})-(\d{2})$/);return m?`${m[3]}/${m[2]}/${m[1]}`:String(id??"")};
@@ -53,7 +60,7 @@ function bodyMarkup(){
   return `
     <header class="aoCalModHero"><small>${esc(dateOf(selected).toLocaleDateString(loc,{weekday:"long"}))} · ${esc(displayDate(selected))}</small><h2>${esc(titleOf(r))}</h2><div class="aoCalModMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div><div class="aoCalModBadges">${badge("en",coverage(r,"en"))}${badge("fr",coverage(r,"fr"))}<span class="aoCalModBadge ${p?"ok":"warn"}">${p?L("Texts available","Textes disponibles"):L("Texts unavailable","Textes indisponibles")}</span></div></header>
     <section><h3>${L("Jump to date","Aller à une date")}</h3><div class="aoCalModJump"><input data-cal-input inputmode="numeric" value="${esc(displayDate(selected))}" aria-label="${L("Date in DD/MM/YYYY format","Date au format JJ/MM/AAAA")}"><input type="date" data-cal-native value="${esc(selected)}" aria-label="${L("Native date picker","Sélecteur de date")}"><button data-cal-today>${L("Today","Aujourd’hui")}</button><button class="primary" data-cal-go>${L("Go","Aller")}</button></div><div class="aoCalModError" data-cal-error aria-live="polite"></div></section>
-    <section><h3>${L("Liturgical week","Semaine liturgique")}</h3><div class="aoCalModRail">${weekRail(selected)}</div><div class="aoCalModWeekNav"><button data-cal-shift="-7">← ${L("Previous week","Semaine précédente")}</button><button data-cal-shift="7">${L("Next week","Semaine suivante")} →</button></div></section>
+    <section><h3>${L("Liturgical week","Semaine liturgique")}</h3><div class="aoCalModRail">${weekRail(selected)}</div><div class="aoCalModWeekNav"><button data-cal-shift="-7">${assetIcon("ao-ui-previous")} <span>${L("Previous week","Semaine précédente")}</span></button><button data-cal-shift="7"><span>${L("Next week","Semaine suivante")}</span> ${assetIcon("ao-ui-next")}</button></div></section>
     ${cm.length?`<section><h3>${L("Commemorations","Commémoraisons")}</h3><div class="aoCalModList">${cm.map(x=>`<article>${esc(x)}</article>`).join("")}</div></section>`:""}`;
 }
 function css(){
@@ -91,7 +98,7 @@ function bind(r){
 function open(){
   const doc=globalThis.document;if(!doc?.body||!runtime()?.store)return false;
   root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">←</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));void waitForCache().then(A=>{if(A&&root()===r)paint()});r.querySelector("[data-cal-close]")?.focus?.();return true;
+  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));void waitForCache().then(A=>{if(A&&root()===r)paint()});r.querySelector("[data-cal-close]")?.focus?.();return true;
 }
 function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,dataServiceReady:typeof cache()?.revealDate==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
 export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,close,paint,status,select});win.AO_CALENDAR_APP_V1=api;return api}
