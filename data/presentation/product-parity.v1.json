@@ -32,7 +32,11 @@
         "tests/mass-visual-acceptance.mjs",
         "Visual acceptance workflow 37288227688 at 390x844 touch geometry",
         "06-mass-live-opening.png",
-        "07-mass-live-consecration.png"
+        "07-mass-live-consecration.png",
+        "tests/app-shell-journey-e2e.mjs",
+        "Visual acceptance workflow 37298926233",
+        "R17 Mass convergence workflow 37298926238",
+        "App convergence workflow 37298926228"
       ],
       "observedRegressions": [
         "inactive 58px rails remain as empty gutters and materially reduce prayer width",
@@ -93,6 +97,19 @@
         "source-first current-section jump menu",
         "Schola hide/show and touch resize",
         "visible fail-safe labels while exact frozen ribbon assets await externalization"
+      ],
+      "certifiedPasses": [
+        "MASS_UI_V1",
+        "MASS_UI_V2"
+      ],
+      "resolvedInV2": [
+        "first ribbon now exposes Home, locked MISSAL/SIMPLE/LIVE modes, current source-first section jump and Settings/parameters",
+        "Home uses the canonical app-shell live-Mass leave confirmation path",
+        "Settings uses the certified active-Mass overlay path",
+        "source-first section jump is populated from the current native display model rather than a historical card engine",
+        "Schola dock is hideable and touch-resizable",
+        "obsolete floating reader close control is removed from the visible surface",
+        "390x844 visual acceptance certifies visible HOME/PARAMS fallback controls while exact canonical frozen ribbon binaries remain unavailable"
       ]
     },
     "pray": {
