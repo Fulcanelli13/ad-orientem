@@ -27,7 +27,12 @@ assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit 
 assert.match(styles,/aoP435930HeadSpacer/,"PRAY single-exit header spacer lost visual geometry");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
-assert.match(runtime,/ao-rich-angelus/,"Angelus semantic rail lost its canonical devotional identity");
+assert.match(runtime,/ao-live-bells/,"Angelus event rail lost the donor bell/event cue");
+assert.match(runtime,/ao-live-profound-bow/,"Angelus Incarnation rail lost the donor profound-bow cue");
+assert.match(runtime,/ao-live-response/,"Angelus V\/R focus lost the transient response cue");
+assert.match(runtime,/data-ao-pray-live-cue-slot/,"Angelus lost its focus-synchronous transient cue slot");
+assert.match(coherence,/ao:pray-focus-cue/,"PRAY focus engine no longer drives semantic rails");
+assert.match(coherence,/data-ao-angelus-unit=["']vr["']/,"Angelus V\/R no longer receives line-level focus ownership");
 assert.match(runtime,/ao-rich-stations/,"Stations semantic rail lost its canonical devotional identity");
 assert.match(runtime,/ao-live-look/,"Stations lost the sourced face-the-Station attention cue");
 assert.match(runtime,/function stationsFx\(\)/,"Stations lost its transition-cinematic presentation hook");
@@ -38,8 +43,10 @@ assert.match(runtime,/isReducedMotion\?\.\(\)/,"Stations transition no longer ho
 assert.doesNotMatch(runtime,/view===['"]stations['"][\s\S]{0,900}ao-live-(?:stand|kneel)/,"Stations semantic rails invented a universal posture");
 assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
-assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
-assert.match(styles,/@media\(max-width:560px\)[\s\S]*aoP435930SemanticRailIcon\{width:27px/,"PRAY semantic rail icons lost salient phone geometry");
+assert.match(styles,/aoP435930SemanticRailCard\{width:44px/,"PRAY lost the donor thin desktop rail-card geometry");
+assert.match(styles,/writing-mode:vertical-rl/,"PRAY rail labels lost the donor vertical edge treatment");
+assert.match(styles,/@media\(max-width:700px\)[\s\S]*aoP435930SemanticRailCard\{width:38px/,"PRAY lost thin phone edge rails");
+assert.match(styles,/aoPrayRailCueIn/,"transient devotional cues lost their one-shot rail animation");
 assert.match(runtime,/function decorateRosaryFx\(r\)/,"Rosary lost its live FX presentation hook");
 assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
 assert.match(runtime,/aoP435930RosarySemanticRails/,"Rosary lost its live contextual side rail");
