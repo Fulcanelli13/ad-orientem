@@ -1,4 +1,5 @@
 import "./source-transport-compat.js";
+import { installProperRuntimeRepair } from "./proper-runtime-repair.js";
 import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
@@ -323,6 +324,7 @@ export function installAppShellBridge({
   });
 
   win.AO_APP_SHELL_V1 = api;
+  installProperRuntimeRepair(win);
   setDataset("installing");
   tryInstall();
   return api;
