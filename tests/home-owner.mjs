@@ -29,7 +29,7 @@ const win={
   AO_DAILY_CATECHISM:closers("daily"),
   AO_TRAD_V26:closers("trad"),
   AO_EUCHARISTIC_V354:closers("eucharistic"),
-  AO_SETTINGS_V4359:{restoreHome(){calls.push("settings:restore");}},
+  AO_SETTINGS_APP_V1:{restoreHome(){calls.push("settings:restore");}},
   AO_APP_SHELL_V1:{syncSurface(surface){calls.push("surface:"+surface);}},
   AO_NAV_V362:{home(){calls.push("DONOR_HOME_CALLED");}},
 };
