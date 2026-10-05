@@ -1,7 +1,7 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.19.0",
-  "status": "PRESENTATION_FX_RECOVERY_REQUIRED",
+  "version": "1.20.0",
+  "status": "FINAL_APP_READY",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified product/presentation parity across all six production surfaces, and certified presentation-FX parity.",
   "massSubsystem": {
     "status": "CERTIFIED",
@@ -209,24 +209,30 @@
     },
     {
       "id": "PRESENTATION_FX_PARITY",
-      "classification": "REGRESSION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "data/presentation/presentation-fx-parity.v1.json",
         "src/app/presentation-fx.js",
         "src/app/browser-entry.js",
-        "tests/presentation-fx.mjs",
-        "tests/app-visual-acceptance.mjs",
-        "index.html#ao-v4312-cinematic-loading-js",
         "src/pray/presentation-runtime.js",
-        "tests/pray-presentation.mjs"
+        "src/pray/presentation-styles.js",
+        "tests/presentation-fx.mjs",
+        "tests/pray-presentation.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "PR #176",
+        "PR #180",
+        "PR #183",
+        "PR #188",
+        "PR #190",
+        "Visual acceptance workflow 37341706459",
+        "App convergence workflow 37341706363",
+        "R17 Mass convergence workflow 37341706430"
       ],
-      "detail": "Prototype-era cinematic/loading and semantic presentation systems were not release-authoritative during modular convergence. V1 reconnects the certified v43.12 boot/route/loader owner to the modular shell; V2 restores PRAY semantic icon rails; V3 restores the canonical Rosary live context rail and mystery-entry cinematics; V4 now restores sourced Stations attention/context rails and station-change cinematics without inventing a universal posture track. Hero/art choreography, modular art-loading coverage, and eventual extraction of the cinematic owner from monolithic index.html remain open."
+      "detail": "Presentation FX recovery V1-V5 is certified. The modular shell uses the approved observer-free v43.12 boot/transition/loader owner; PRAY semantic rails are restored; Rosary mystery and Stations transition FX are live; Home/PRAY/Learn/Calendar hero choreography and canonical art-loading scans are restored; reduced motion is enforced. Physical extraction of the embedded v43.12 owner is non-blocking hygiene."
     }
   ],
-  "openBlockers": [
-    "PRESENTATION_FX_PARITY"
-  ],
+  "openBlockers": [],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
