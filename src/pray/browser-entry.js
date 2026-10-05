@@ -1,3 +1,4 @@
+import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import "./presentation-coherence.js";
 
 const VERSION="modular-pray-v1";
@@ -7,7 +8,10 @@ function root(win){return win?.document?.getElementById?.("aoPray435930")??null;
 
 function stamp(win){
   const node=root(win);
-  if(node?.dataset)node.dataset.aoPrayOwner=VERSION;
+  if(node?.dataset){
+    node.dataset.aoPrayOwner=VERSION;
+    node.dataset.aoAssetId=canonicalAssetIdForSurface("pray")||"";
+  }
   if(win?.document?.documentElement?.dataset){
     win.document.documentElement.dataset.aoPrayRouteOwner=VERSION;
   }
