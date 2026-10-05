@@ -218,22 +218,23 @@ function installStyles(win){
 export function installNonMassConvergence({win=globalThis}={}){
   if(!win?.document)return null;
   if(win.AO_NON_MASS_D3_D6_CONVERGENCE)return win.AO_NON_MASS_D3_D6_CONVERGENCE;
-  installStyles(win);scrubPersistedAdoration(win);
+  // D6 is now owned by AO_SETTINGS_APP_V1. Historical Settings hooks remain
+  // donor evidence only and are never activated by the production convergence layer.
+  scrubPersistedAdoration(win);
   let scheduled=false;
   const reconcile=()=>{
     scrubPersistedAdoration(win);
-    installSettingsHook(win);
-    patchAboutSettings(win);
   };
   const schedule=()=>{
     if(scheduled)return;
     scheduled=true;
-    win.queueMicrotask(()=>{scheduled=false;reconcile()});
+    const enqueue=typeof win.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
+    enqueue(()=>{scheduled=false;reconcile()});
   };
-  const observer=new win.MutationObserver(schedule);
-  observer.observe(win.document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["class","hidden","data-ao-settings-route","data-ao-release"]});
-  win.addEventListener("click",schedule,true);
-  win.addEventListener("pageshow",schedule);
+  const observer=typeof win.MutationObserver==="function"?new win.MutationObserver(schedule):null;
+  observer?.observe?.(win.document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["class","hidden","data-ao-settings-route","data-ao-release"]});
+  win.addEventListener?.("click",schedule,true);
+  win.addEventListener?.("pageshow",schedule);
   if(win.document.readyState==="loading")win.document.addEventListener("DOMContentLoaded",schedule,{once:true});
   const releaseTimers=[100,500,1200].map(ms=>win.setTimeout?.(schedule,ms)).filter(x=>x!=null);
   const api=Object.freeze({
@@ -249,17 +250,17 @@ export function installNonMassConvergence({win=globalThis}={}){
       adorationOwner:"AO_PRAY_V435930+D3",
       benedictionOwner:"AO_PRAY_V435930+D4",
       confessionOwner:"AO_PRAY_V435930+D5",
-      settingsOwner:Boolean(win.AO_SETTINGS_V4359)||Boolean(win.AO_RUNTIME_V8?.store),
+      settingsOwner:win.AO_SETTINGS_APP_V1?.status?.()?.installed===true?"AO_SETTINGS_APP_V1":null,
       appVersion:canonicalAppVersion(win),
       adorationPresencePersistence:"session-only",
       confessionExamStorage:"read-only",
       d3:"integrated-on-modular-pray",
       d4:"integrated-on-modular-pray",
       d5:"integrated-on-modular-pray",
-      d6:"integrated-on-settings",
+      d6:win.AO_SETTINGS_APP_V1?.status?.()?.installed===true?"integrated-on-modular-settings":"settings-modular-owner-unavailable",
     }),
     dispose:()=>{
-      observer.disconnect();
+      observer?.disconnect?.();
       win.removeEventListener?.("click",schedule,true);
       win.removeEventListener?.("pageshow",schedule);
       releaseTimers.forEach(id=>win.clearTimeout?.(id));
