@@ -33,6 +33,8 @@ assert.ok(runtime.includes('[data-ao-recitation="${prefs.recitation}"]'),
   "Rosary handoff stopped driving the preserved player's native recitation owner");
 assert.match(runtime,/const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
   "Rosary launcher stopped snapshotting chooser state before donor mount");
+assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitationMode\(seg\)/,
+  "Rosary chooser stopped synchronizing recitation through the canonical setter");
 assert.match(styles,/aoP435930HeadSpacer/,"PRAY single-exit header spacer lost visual geometry");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
