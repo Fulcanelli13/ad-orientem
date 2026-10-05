@@ -19,37 +19,60 @@ const assetIcon=(assetId,className='aoP435930UiIcon')=>{
  if(!url)return'';
  return `<span class="${esc(className)}" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
 };
-function selectedSunday(){
+function selectedDay(){
  const raw=core()?.selectedDate;
- if(!/^\d{4}-\d{2}-\d{2}$/.test(String(raw||'')))return new Date().getDay()===0;
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(String(raw||'')))return new Date();
  const d=new Date(String(raw)+'T12:00:00');
- return !Number.isNaN(d.getTime())&&d.getDay()===0;
+ return Number.isNaN(d.getTime())?new Date():d;
 }
-function semanticRailChip(assetId,label,value=''){
+function angelusPostureRail(){
+ const form=angelusChoice().form,d=selectedDay(),stand=form==='regina'||d.getDay()===0;
+ return {
+   assetId:stand?'ao-live-stand':'ao-live-kneel',
+   label:stand?L('Stand','Debout'):L('Kneel','À genoux'),
+   value:form==='regina'?L('Paschaltide','Temps pascal'):stand?L('Sunday','Dimanche'):L('Weekday','Semaine')
+ };
+}
+function semanticRailChip(assetId,label,value='',opts={}){
  if(!assetId||!label)return'';
- return `<div class="aoP435930SemanticRailChip" data-ao-pray-rail-asset="${esc(assetId)}">${assetIcon(assetId,'aoP435930SemanticRailIcon')}<span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
+ const channel=opts.channel==='transient'?'transient':'persistent';
+ const slot=opts.slot?' data-ao-pray-live-cue-slot="1"':'';
+ return `<div class="aoP435930SemanticRailChip ${channel}" data-ao-pray-rail-channel="${channel}" data-ao-pray-rail-asset="${esc(assetId)}"${slot}>${assetIcon(assetId,'aoP435930SemanticRailIcon')}<span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
 }
 function semanticRails(){
  let left='',right='';
  if(view==='angelus'){
-   const choice=angelusChoice(),form=choice.form;
-   const stand=form==='regina'||selectedSunday();
-   left=semanticRailChip(stand?'ao-live-stand':'ao-live-kneel',stand?L('Stand','Debout'):L('Kneel','À genoux'));
-   right=semanticRailChip('ao-rich-angelus',form==='regina'?'Regina Cæli':'Angelus',L('Daily Marian prayer','Prière mariale'));
+   const posture=angelusPostureRail(),form=angelusChoice().form;
+   left=semanticRailChip(posture.assetId,posture.label,posture.value,{channel:'persistent'});
+   right=semanticRailChip('ao-live-bells',form==='regina'?L('Paschal','Pascal'):'Angelus','',{channel:'transient',slot:true});
  }else if(view==='rosary'){
-   right=semanticRailChip('ao-rich-rosary',L('Rosary','Rosaire'),S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'));
+   right=semanticRailChip('ao-rich-rosary',L('Rosary','Rosaire'),S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'),{channel:'persistent'});
  }else if(view==='stations'){
    const roman=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'];
    const i=Math.max(0,Math.min(13,Number(STATIONS.step)||0));
-   left=semanticRailChip('ao-live-look',L('Face station','Regardez la station'),L('Become still','Demeurez immobile'));
-   right=semanticRailChip('ao-rich-stations',L('Stations','Chemin de Croix'),`${roman[i]} / XIV`);
+   left=semanticRailChip(i===13?'ao-refined-silence':'ao-live-look',i===13?L('Silence','Silence'):L('Face station','Regardez la station'),i===13?L('After the XIV Station','Après la XIVe station'):L('Become still','Demeurez immobile'),{channel:i===13?'transient':'persistent'});
+   right=semanticRailChip('ao-rich-stations',L('Stations','Chemin de Croix'),`${roman[i]} / XIV`,{channel:'persistent'});
  }else if(view==='adoration'){
    const presence=adorationPresence();
-   right=semanticRailChip('ao-rich-adoration',L('Adoration','Adoration'),presence==='exposed'?L('Exposed','Exposé'):L('Reserved','Réservé'));
+   const visitArrival=ADOR.mode==='visit'&&ADOR.visitStep===0;
+   left=visitArrival?semanticRailChip('ao-live-genuflect',L('Genuflect','Génuflexion'),L('On arrival','À l’arrivée'),{channel:'transient'}):semanticRailChip('ao-refined-silence',L('Silence','Silence'),L('Remain present','Demeurez présent'),{channel:'persistent'});
+   right=semanticRailChip('ao-rich-adoration',L('Adoration','Adoration'),presence==='exposed'?L('Exposed','Exposé'):L('Reserved','Réservé'),{channel:'persistent'});
  }else if(view==='benediction'){
-   right=semanticRailChip('ao-rich-adoration',L('Benediction','Bénédiction'),L('Live companion','Compagnon'));
+   const stage=BEN_STAGES?.[BEN.step]?.[0]||'exposition';
+   const service={
+     exposition:['ao-rich-adoration',L('Exposition','Exposition')],
+     adoration:['ao-refined-silence',L('Adoration','Adoration')],
+     hymn:['ao-rich-adoration','Tantum Ergo'],
+     prayer:['ao-live-response',L('Respond','Répondre')],
+     blessing:['ao-live-blessing',L('Blessing','Bénédiction')],
+     praises:['ao-live-response',L('Divine Praises','Louanges divines')],
+     reposition:['ao-rich-adoration',L('Reposition','Reposition')]
+   }[stage]||['ao-rich-adoration',L('Benediction','Bénédiction')];
+   if(stage==='prayer'||stage==='praises')left=semanticRailChip('ao-live-response',L('Respond','Répondre'),'',{channel:'transient'});
+   right=semanticRailChip(service[0],service[1],L('Public rite','Rite public'),{channel:stage==='adoration'?'persistent':'transient'});
  }else if(view==='confession'){
-   right=semanticRailChip('ao-rich-confession',L('Confession','Confession'),L('Preparation','Préparation'));
+   if(CONF.stage===3)left=semanticRailChip('ao-live-sign-cross',L('Sign of Cross','Signe de croix'),L('In Confessional','Au confessionnal'),{channel:'transient'});
+   right=semanticRailChip('ao-rich-confession',L('Confession','Confession'),[L('Doctrine','Doctrine'),L('Prepare','Préparer'),L('Examination','Examen'),L('In Confessional','Au confessionnal'),L('After','Après')][CONF.stage]||L('Preparation','Préparation'),{channel:'persistent'});
  }
  if(!left&&!right)return'';
  return `<div class="aoP435930SemanticRails" data-ao-pray-semantic-rails aria-hidden="true">${left?`<aside class="aoP435930SemanticRail left">${left}</aside>`:''}${right?`<aside class="aoP435930SemanticRail right">${right}</aside>`:''}</div>`;
@@ -226,13 +249,35 @@ function angelusUnits(text,form){
  }
  return out;
 }
+function angelusRailMeta(form,index,unit){
+ if(form==='regina'){
+   const events=[
+     ['ao-live-bells',L('Regina','Regina')],
+     ['ao-live-bells',L('Resurrection','Résurrection')],
+     ['ao-live-bells',L('Paschal','Pascal')],
+     ['ao-live-bells',L('Collect','Oraison')]
+   ];
+   return events[Math.min(index,events.length-1)]||['ao-live-bells',L('Paschal','Pascal')];
+ }
+ // Current canonical corpus renders the five donor Angelus movements as
+ // VR/Hail pairs for the first three movements, then Intercession and Collect.
+ const stage=Math.min(4,index<6?Math.floor(index/2):index===6?3:4);
+ const events=[
+   ['ao-live-bells','Angelus'],
+   ['ao-live-bells','Angelus'],
+   ['ao-live-profound-bow',L('Bow','Inclination')],
+   ['ao-live-bells',L('Intercession','Intercession')],
+   ['ao-live-bells',L('Collect','Oraison')]
+ ];
+ return events[stage];
+}
 function renderAngelus(){
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
  const unitsV=angelusUnits(vern,form),unitsL=angelusUnits(lat,form);
  const posture=form==='regina'?L('Stand.','Debout.'):L('Traditional custom: stand on Sundays; kneel on weekdays. At “And the Word was made flesh”: profound bow; genuflection is also documented.','Coutume traditionnelle : debout le dimanche ; à genoux en semaine. À « Et le Verbe s’est fait chair » : inclination profonde ; la génuflexion est également attestée.');
  const authority=c.auto&&!c.authority.ok?callout(esc(L('Automatic seasonal selection could not read the canonical liturgical context, so Angelus is shown. You can choose Regina Cæli manually.','La sélection saisonnière automatique n’a pas pu lire le contexte liturgique canonique ; l’Angelus est donc affiché. Vous pouvez choisir manuellement le Regina Cæli.')),'warn'):'';
  const labels={vr:L('Versicle & response','Verset & répons'),hail:L('Hail Mary','Je vous salue Marie'),collect:L('Collect','Oraison'),prayer:L('Prayer','Prière')};
- const units=unitsV.map((u,i)=>{const la=unitsL[i]?.text||'';return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}"><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(u.text)}</span><span data-face-la hidden>${nl(la)}</span></button></article>`}).join('');
+ const units=unitsV.map((u,i)=>{const la=unitsL[i]?.text||'',rail=angelusRailMeta(form,i,u),bow=rail?.[0]==='ao-live-profound-bow';return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-pray-cue-asset="${esc(rail?.[0]||'ao-live-bells')}" data-ao-pray-cue-label="${esc(rail?.[1]||'Angelus')}" ${bow?'data-ao-pray-bow-cue="1"':''}><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(u.text)}</span><span data-face-la hidden>${nl(la)}</span></button></article>`}).join('');
  return `${head(form==='regina'?'Regina Cæli':'Angelus',L('Season-aware daily Marian prayer','Prière mariale quotidienne selon le temps liturgique'))}<main class="aoP435930Body">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${authority}${callout(`<b>${esc(L('Posture','Posture'))}</b> · ${esc(posture)}`,'rubric')}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div><label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}> <span><b>${esc(L('Historical conclusion','Conclusion historique'))}</b><small>${esc(L('Optional · off by default','Facultative · désactivée par défaut'))}</small></span></label>${S.angelusHistoricalConclusion?`<article class="aoP435930Appendix"><h3>${esc(L('Traditional conclusion','Conclusion traditionnelle'))}</h3><button type="button" class="aoP435930AppendixFlip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
 }
 function syncRosaryPrefs(){
@@ -644,6 +689,17 @@ function onChange(e){const x=e.target;
  if(view==='firstFriday'||view==='firstSaturday')render();
 }
 function onInput(e){const x=e.target;if(x.matches('[data-p435930-since]'))CONF.since=x.value;if(x.matches('[data-p435930-lib-search]')){LIB.q=x.value;const pos=x.selectionStart;render();const n=document.querySelector('[data-p435930-lib-search]');n?.focus();try{n?.setSelectionRange(pos,pos)}catch{}}}
+function syncFocusedSemanticCue(detail={}){
+ const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return;
+ const slot=r.querySelector('[data-ao-pray-live-cue-slot]');if(!slot)return;
+ const asset=String(detail.assetId||''),label=String(detail.label||''),value=String(detail.value||'');
+ if(!asset||!label)return;
+ if(slot.dataset.aoPrayRailAsset===asset&&slot.querySelector('.aoP435930SemanticRailLabel')?.textContent===label)return;
+ slot.dataset.aoPrayRailAsset=asset;
+ slot.innerHTML=`${assetIcon(asset,'aoP435930SemanticRailIcon')}<span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}`;
+ slot.classList.remove('cue-enter');void slot.offsetWidth;slot.classList.add('cue-enter');
+}
+document.addEventListener('ao:pray-focus-cue',e=>syncFocusedSemanticCue(e.detail||{}));
 // Keep shared Rosary preferences synchronized when the preserved canonical player changes them.
 document.addEventListener('click',e=>{
  const f=e.target.closest?.('[data-v38-rosary-form]');if(f){S.rosary.form=f.dataset.v38RosaryForm==='devotional'?'devotional':'standard';save();setTimeout(decorateRosary,20)}
