@@ -53,7 +53,7 @@
       ]
     },
     "calendar": {
-      "status": "IN_RECOVERY",
+      "status": "CERTIFIED",
       "currentOwner": "src/calendar",
       "reference": "APPROVED_CALENDAR_DASHBOARD_V3_23",
       "mustPreserve": [
@@ -63,6 +63,11 @@
         "restrained liturgical-colour emphasis",
         "date navigation through existing resolver only",
         "no duplicate calendar engine"
+      ],
+      "evidence": [
+        "src/calendar/browser-entry.js",
+        "tests/app-visual-acceptance.mjs",
+        "Visual acceptance workflow 37286969906 at 390x844 touch geometry"
       ]
     },
     "settings": {
