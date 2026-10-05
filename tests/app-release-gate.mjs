@@ -5,7 +5,7 @@ const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.12.0");
+assert.equal(app.version,"1.13.0");
 assert.equal(app.status,"CONVERGENCE_IN_PROGRESS");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -52,10 +52,10 @@ assert.equal(nonMass?.progress?.calendar,"MODULAR_PHONE_CERTIFIED");
 assert.equal(nonMass?.progress?.home,"MODULAR_BASE_PRESENTATION_PHONE_CERTIFIED__ENRICHERS_PENDING");
 assert.equal(nonMass?.progress?.pray,"MODULAR_PHONE_CERTIFIED");
 assert.equal(nonMass?.progress?.learn,"MODULAR_PHONE_CERTIFIED");
-assert.equal(nonMass?.progress?.settings,"PENDING");
+assert.equal(nonMass?.progress?.settings,"MODULAR_PHONE_CERTIFIED");
 assert.equal(findings.find(x=>x.id==="DUPLICATE_BROWSER_ENTRY_HYGIENE")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="DUPLICATE_BROWSER_ENTRY_HYGIENE")?.status,"CLOSED");
-assert.match(app.requiredPhoneJourney,/Home.*Calendar.*Mass.*LIVE.*leave\/resume.*PRAY.*Home.*Settings/i);
+assert.match(app.requiredPhoneJourney,/Home.*Calendar.*Mass.*LIVE.*Settings overlay\/restore.*leave\/resume.*PRAY.*Home.*Settings/i);
 
 assert.ok(app.regressionGates?.static?.includes("tests/app-release-gate.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/app-shell-contract.mjs"));
@@ -67,9 +67,11 @@ assert.ok(app.regressionGates?.static?.includes("tests/nonmass-d3-d6-convergence
 assert.ok(app.regressionGates?.static?.includes("tests/pray-owner.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/pray-presentation.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/learn-owner.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/settings-owner.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-final-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-journey-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/nonmass-d3-d6-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/learn-owner-e2e.mjs"));
+assert.ok(app.regressionGates?.phone?.includes("tests/settings-e2e.mjs"));
 
 console.log("PASS app release gate: Mass remains certified; whole-app convergence remains explicitly gated.");
