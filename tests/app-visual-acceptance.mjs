@@ -263,6 +263,7 @@ try{
     left:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.left").length,
     right:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.right").length,
     cue:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    cueMask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.left .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
     context:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
     contextMask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
     step:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right small")?.textContent?.trim()??"",
@@ -271,6 +272,7 @@ try{
   assert.equal(stationRails.left,1,"Stations lost its sourced face-the-Station semantic cue");
   assert.equal(stationRails.right,1,"Stations lost its devotional-context rail");
   assert.equal(stationRails.cue,"ao-live-look","Stations movement cue is not using the canonical look/attention asset");
+  assert.match(stationRails.cueMask,/ao-live-look\.png/,"Stations attention rail did not load the canonical frozen look cue");
   assert.equal(stationRails.context,"ao-rich-stations","Stations context rail is not using the canonical devotional identity");
   assert.match(stationRails.contextMask,/ao-rich-stations\.png/,"Stations semantic rail did not load the canonical frozen mask");
   assert.match(stationRails.step,/I\s*\/\s*XIV/,"Stations rail does not expose the current station identity");
