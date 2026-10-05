@@ -48,7 +48,7 @@ const SHELL_STYLE = `
 .ao-rail-item[data-active="true"]{color:var(--ao-text)}
 .ao-rail-copy{font:600 .56rem/1.15 system-ui,sans-serif;letter-spacing:.02em;overflow-wrap:anywhere}
 .ao-card-viewport{min-width:0;min-height:0;padding:.58rem;background:linear-gradient(180deg,#090e14,#080c12)}
-.ao-prayer-card{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:clamp(.9rem,3vw,1.35rem);border:1px solid var(--ao-line);border-radius:14px;background:linear-gradient(180deg,#10161d,#0d1218);box-shadow:0 12px 34px rgba(0,0,0,.22)}
+.ao-prayer-card{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;overflow-anchor:none;padding:clamp(.9rem,3vw,1.35rem);border:1px solid var(--ao-line);border-radius:14px;background:linear-gradient(180deg,#10161d,#0d1218);box-shadow:0 12px 34px rgba(0,0,0,.22)}
 .ao-prayer-title{margin:0 0 .85rem;font-size:clamp(1.14rem,4.3vw,1.55rem);line-height:1.08;font-weight:600;letter-spacing:.01em;color:#f4eee4}
 .ao-prayer-title[hidden]{display:none}
 .ao-prayer-body{display:flex;flex-direction:column;gap:.82rem;padding-bottom:42vh}
