@@ -101,6 +101,9 @@ try{
     owner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
     marker:document.documentElement.dataset.aoMassReaderUi??null,
     total:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards??null,
+    sourceTotal:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.totalCards??null,
+    productOwner:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.structureOwner??null,
+    sourceOwner:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.structureOwner??null,
     count:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.nuptialInsertionCount??null,
     cards:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.cards?.map?.(x=>({
       id:x.sectionId,sourceSectionId:x.sourceSectionId??null,
@@ -111,7 +114,10 @@ try{
   assert.equal(model.starts,0);
   assert.equal(model.owner,"R17_NATIVE_PRODUCTION");
   assert.equal(model.marker,"R17_NATIVE_PRODUCTION");
-  assert.equal(model.total,42);
+  assert.equal(model.total,51,"Nuptial product reader must be 48 LIVE presentation steps plus three source-pinned insertions");
+  assert.equal(model.sourceTotal,42,"Nuptial 48-step presentation replaced the certified 39+3 source model");
+  assert.equal(model.productOwner,"SOURCE_FIRST_LIVE+NUPTIAL_INSERTIONS_PRODUCT_48");
+  assert.match(model.sourceOwner,/SOURCE_FIRST_LIVE\+NUPTIAL_INSERTIONS/);
   assert.equal(model.count,3);
 
   const insertionCards=model.cards.filter(x=>x.nuptialInsertion);
@@ -140,7 +146,7 @@ try{
 
   assert.deepEqual(pageErrors,[]);
   await context.close();
-  console.log("Nuptial real-shell acceptance: PASS — 42-card native production model with three source-pinned insertions, touch navigation, no faithful-state leakage, no legacy start.");
+  console.log("Nuptial real-shell acceptance: PASS — 51-step product presentation over the certified 42-step source model, with three source-pinned insertions, touch navigation, no faithful-state leakage, no legacy start.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
