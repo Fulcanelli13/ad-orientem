@@ -38,6 +38,17 @@ assert.equal(canonicalAssetIdForSurface("settings"),"ao-nav-settings");
 assert.equal(canonicalAssetIdForLearnRoute("learn.mass"),"ao-rich-guides");
 assert.equal(canonicalAssetIdForLearnRoute("unknown"),null);
 
+for(const file of [
+  "assets/active/navigation/ao-nav-home.png",
+  "assets/active/navigation/ao-brand-emblem.png",
+  "assets/active/navigation/ao-nav-pray.png",
+  "assets/active/navigation/ao-nav-learn.png",
+  "assets/active/navigation/ao-nav-calendar.png",
+  "assets/active/navigation/ao-nav-settings.png",
+]){
+  assert.ok(existsSync(file),"canonical global-ribbon asset missing: "+file);
+}
+
 const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 const home=readFileSync("src/home/presentation.js","utf8");
 const calendar=readFileSync("src/calendar/browser-entry.js","utf8");
@@ -49,6 +60,9 @@ const settingsOwner=readFileSync("src/settings/browser-entry.js","utf8");
 const settings=readFileSync("src/settings/presentation.js","utf8");
 
 assert.match(appEntry,/canonicalAssetIdForSurface/);
+assert.match(appEntry,/resolveCanonicalAssetUrl/);
+assert.match(appEntry,/aoCanonicalRibbonIcon/);
+assert.match(appEntry,/data-ao-asset-renderer|aoAssetRenderer/);
 assert.match(appEntry,/button\.dataset\.aoAssetId=assetId/);
 assert.match(home,/ao-ui-previous/);
 assert.match(home,/ao-ui-next/);
