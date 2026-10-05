@@ -8,7 +8,7 @@ export function pickActiveCue({
   clientHeight=0,
   scrollHeight=0,
   items=[],
-  focusRatio=.46,
+  focusRatio=.39,
   edgePx=8,
 }={}){
   const usable=(items??[]).filter(item=>CUE_RE.test(String(item?.cueId??"")) && Number.isFinite(item?.top) && Number.isFinite(item?.bottom));
@@ -72,7 +72,7 @@ export function markActiveCue(container,cueId){
 export function installCueFocusTracker({
   container,
   onChange,
-  focusRatio=.46,
+  focusRatio=.39,
   win=container?.ownerDocument?.defaultView??globalThis,
 }={}){
   if(!container?.addEventListener)throw new TypeError("Scrollable reader card required");
