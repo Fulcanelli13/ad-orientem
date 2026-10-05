@@ -282,5 +282,31 @@
       ]
     }
   },
-  "status": "CERTIFIED"
+  "status": "CERTIFIED",
+  "crossSurfacePresentationFx": {
+    "status": "RECOVERY_IN_PROGRESS",
+    "authority": "data/presentation/presentation-fx-parity.v1.json",
+    "mustPreserve": [
+      "cold-load branded boot cinematic",
+      "route-change cinematic between top-level surfaces",
+      "async loading treatment for delayed content",
+      "geometry-neutral surface-entry motion",
+      "semantic vertical icon rails where they carry state or navigation",
+      "hero/art entry choreography",
+      "reduced-motion collapse"
+    ],
+    "recoveredInV1": [
+      "modular shell route transitions reuse AO_CINEMATIC_V4312",
+      "slow modular navigation reuses the approved loader card",
+      "modular surface roots receive geometry-neutral opacity/filter entry motion",
+      "reduced-motion remains authoritative"
+    ],
+    "remaining": [
+      "Rosary physical bead rail parity",
+      "Stations XIV pilgrimage-route parity",
+      "current modular hero/art choreography audit",
+      "modular art-loading selector coverage",
+      "phone certification of recovered route transition/loader/surface-entry behavior"
+    ]
+  }
 }
