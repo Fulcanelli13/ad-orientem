@@ -29,6 +29,30 @@ const COPY={
 };
 
 function tr(language,key){return COPY[language]?.[key]??COPY.en[key]??key;}
+const R17_ACTIVE_MASS_STORAGE_KEY="ao-r17-active-mass-v1";
+export function readNativeMassResume(win=globalThis){
+  try{
+    const raw=win?.localStorage?.getItem?.(R17_ACTIVE_MASS_STORAGE_KEY);
+    if(!raw)return null;
+    const record=JSON.parse(raw);
+    const resumable=Boolean(
+      record &&
+      (record.state==="active"||record.state==="suspended") &&
+      record.schema &&
+      record.session?.resolvedMass &&
+      record.readerPreferences
+    );
+    if(!resumable)return null;
+    const sequence=Number(record.readerPosition?.sequence);
+    return Object.freeze({
+      available:true,
+      source:"R17_NATIVE",
+      date:record.session?.resolvedMass?.date??record.session?.date??null,
+      sectionId:record.readerPosition?.sectionId??null,
+      stepNumber:Number.isInteger(sequence)&&sequence>0?sequence:null,
+    });
+  }catch{return null;}
+}
 function esc(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));}
 function assetIcon(assetId,className="aoHomeAssetIcon"){
   const url=resolveCanonicalAssetUrl(assetId);
@@ -110,12 +134,17 @@ export function renderHomeToString(state,win=globalThis){
   const meta=[vm.rank,vm.colour?`${t("colour")} · ${vm.colour}`:"",vm.formularyLabel,vm.commemorationLabel].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("");
   const chooser=vm.formularies.length?`<div class="formularyChooser" role="group" aria-label="${esc(t("formulary"))}">${vm.formularies.map(x=>`<button data-formulary="${x.index}" class="${x.selected?"selected":""}" aria-pressed="${x.selected}">${esc(x.label)}</button>`).join("")}</div>`:"";
   const art=win?.AO_PHASE1_ART?.homeMarkup?.(state,vm.language)||"";
+  const resume=readNativeMassResume(win);
+  const resumeMeta=resume?[
+    resume.date?(win?.AO_DISPLAY_DATE?.(parseIso(resume.date))||resume.date):"",
+    resume.stepNumber?String(resume.stepNumber):"",
+  ].filter(Boolean).join(" · "):"";
   return `<main class="homeScreen" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
 <header class="homeHeader"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><div class="languageSwitch" role="group" aria-label="Language"><button data-language="en" class="${vm.language==="en"?"active":""}">${esc(t("english"))}</button><button data-language="fr" class="${vm.language==="fr"?"active":""}">${esc(t("french"))}</button></div></div>
 <div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div></header>
 <section class="celebrationBlock"><div class="eyebrow">${esc(vm.weekday)}</div><h1>${esc(vm.celebration)}</h1><div class="metaLine">${meta}</div>${chooser}${art}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}</section>
 ${status}${translationStatus}
-${state.resume?.available?`<button class="resumeCard" data-resume-mass><span>${vm.language==="fr"?"Messe en cours":"Mass in progress"}</span><b>${vm.language==="fr"?"Reprendre":"Resume"}</b><small>${esc(win?.AO_DISPLAY_DATE?.(state.resume.date)||state.resume.date||"")} · ${Number(state.resume.stepIndex||0)+1}</small></button>`:""}
+${resume?`<button class="resumeCard" data-resume-mass data-ao-resume-owner="${resume.source}"><span>${vm.language==="fr"?"Messe en cours":"Mass in progress"}</span><b>${vm.language==="fr"?"Reprendre":"Resume"}</b>${resumeMeta?`<small>${esc(resumeMeta)}</small>`:""}</button>`:""}
 <section class="homeSection aroundMass"><div class="sectionLabel">${esc(t("aroundMass"))}</div><div class="phaseActions"><button class="phaseButton secondary" data-action="prepare"><span>Ⅰ</span><b>${esc(t("prepare"))}</b></button><button class="phaseButton primary" data-home-mass-entry><span>Ⅱ</span><b>${esc(t("followMass"))}</b></button><button class="phaseButton secondary" data-action="thanks"><span>Ⅲ</span><b>${esc(t("giveThanks"))}</b></button></div></section>
 <section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p><button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>${assetIcon("ao-ui-next")}</span></button></section>
 ${renderHomeEnrichersToString(enrichers,state,win)}
