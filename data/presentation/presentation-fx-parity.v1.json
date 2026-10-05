@@ -1,0 +1,89 @@
+{
+  "schema": "ao-presentation-fx-parity-v1",
+  "version": "1.0.0",
+  "status": "RECOVERY_IN_PROGRESS",
+  "releaseBlocker": "PRESENTATION_FX_PARITY",
+  "rule": "FINAL_APP_READY requires the approved cinematic and semantic presentation systems to be active on the modular six-surface app. Static surface parity alone is insufficient.",
+  "reference": {
+    "owner": "AO_CINEMATIC_V4312",
+    "version": "43.12-ZERO-OBSERVER-CINEMATIC-CERTIFICATION",
+    "currentEmbeddedSource": "index.html",
+    "historicalReferenceCommit": "ee3b1168887f13ccc35c5646983c1d8c376a32af",
+    "architecture": "presentation-only; no liturgical, data, or navigation ownership"
+  },
+  "systems": {
+    "bootCinematic": {
+      "status": "PRESERVED_LEGACY_OWNER",
+      "evidence": [
+        "index.html#ao-cinema-boot",
+        "index.html#ao-v4312-cinematic-loading-js"
+      ],
+      "note": "Cold-load boot cinematic still exists in the monolith, but remains owned by the legacy embedded presentation layer."
+    },
+    "modularRouteTransitions": {
+      "status": "RECOVERED_V1_PENDING_PHONE_CERTIFICATION",
+      "evidence": [
+        "src/app/presentation-fx.js",
+        "src/app/browser-entry.js",
+        "tests/presentation-fx.mjs"
+      ],
+      "note": "The modular six-surface shell now calls the existing v43.12 cinematic owner instead of bypassing it."
+    },
+    "modularAsyncLoader": {
+      "status": "RECOVERED_V1_PENDING_PHONE_CERTIFICATION",
+      "evidence": [
+        "src/app/presentation-fx.js",
+        "#ao-cinema-loader"
+      ],
+      "note": "Slow modular surface navigation reuses the v43.12 loader card after a short delay."
+    },
+    "modularSurfaceEntry": {
+      "status": "RECOVERED_V1_PENDING_PHONE_CERTIFICATION",
+      "evidence": [
+        "src/app/presentation-fx.js",
+        ".aoCinemaSurfaceIn"
+      ],
+      "note": "Home, Mass, PRAY, Learn, Calendar and Settings can reuse the approved v43.12 surface-entry motion."
+    },
+    "artLoading": {
+      "status": "PARTIAL_LEGACY_SELECTOR_COVERAGE",
+      "evidence": [
+        "index.html#ao-v4312-cinematic-loading-js"
+      ],
+      "note": "The old shimmer/blur-in art loader still targets historical art selectors; modular surface coverage requires audit."
+    },
+    "verticalSemanticRails": {
+      "status": "AUDIT_REQUIRED",
+      "evidence": [
+        "src/mass/reader-dom.js",
+        "historical index.html presentation layers"
+      ],
+      "note": "Mass retains semantic cue rails, but prototype-era vertical icon-rail treatment across Mass/non-Mass has not been systematically recovered or certified."
+    },
+    "heroPresenceAndEntryChoreography": {
+      "status": "AUDIT_REQUIRED",
+      "evidence": [
+        "src/home/presentation.js",
+        "src/calendar/browser-entry.js",
+        "src/pray/presentation-runtime.js",
+        "src/learn/presentation.js"
+      ],
+      "note": "Static hero hierarchy is certified per surface; prototype-level hero animation, atmospheric entry and art choreography are not."
+    },
+    "reducedMotion": {
+      "status": "PRESERVED_AND_BRIDGED",
+      "evidence": [
+        "index.html#ao-v4312-cinematic-loading-css",
+        "src/app/presentation-fx.js"
+      ],
+      "note": "System and app reduced-motion preferences suppress non-essential FX."
+    }
+  },
+  "nextRecoveryTargets": [
+    "phone-certify modular route transition, loader and surface-entry behavior",
+    "map prototype-era vertical semantic rails to current surfaces and distinguish information-bearing rails from decorative chrome",
+    "recover approved hero/art entry choreography without reviving obsolete donor navigation",
+    "extend art-loading treatment to current modular art owners",
+    "extract v43.12 cinematic owner from monolithic index.html only after behavior parity is locked"
+  ]
+}
