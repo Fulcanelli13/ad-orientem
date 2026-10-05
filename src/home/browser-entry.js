@@ -36,10 +36,10 @@ function resetCoreRoute(win){
   return true;
 }
 
-function rehydrateHomeEnhancers(win){
-  try{win?.AO_DAILY_CATECHISM?.ensureHome?.();}catch{}
+function rehydrateRemainingHomeDonors(win){
+  // Coming Up and Daily Catechism Home presentation are modular now.
+  // Keep only unrelated donor enrichers until their own extraction wave.
   try{win?.AO_EUCHARISTIC_V354?.ensureHome?.();}catch{}
-  try{win?.AO_COMING_UP_V4323?.render?.();}catch{}
   try{win?.AO_V37_SHELL?.ensureHome?.();}catch{}
 }
 
@@ -48,6 +48,13 @@ function root(win){return win?.document?.getElementById?.("app")??null;}
 export function createHomeOwner(win=globalThis){
   let unsubscribe=null;
   let retryTimer=null;
+  let enricherClicksBound=false;
+
+  function bindEnricherClicks(){
+    if(enricherClicksBound||typeof win?.document?.addEventListener!=="function")return;
+    win.document.addEventListener("click",onEnricherClick,true);
+    enricherClicksBound=true;
+  }
 
   function markOwner(){
     const screen=win?.document?.querySelector?.(".homeScreen")??null;
@@ -66,7 +73,7 @@ export function createHomeOwner(win=globalThis){
     if(!rendered)return false;
     markOwner();
     const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
-    queue(()=>rehydrateHomeEnhancers(win));
+    queue(()=>rehydrateRemainingHomeDonors(win));
     return true;
   }
 
@@ -82,6 +89,60 @@ export function createHomeOwner(win=globalThis){
     unsubscribe=store.subscribe(next=>{if(next?.route==="home")paint(next);});
     paint(store.getState());
     return true;
+  }
+
+  function openRoute(route){
+    const id=String(route??"");
+    if(!id)return false;
+    if(id==="mass.current"){
+      return win?.AO_APP_SHELL_V1?.navigate?.("mass")??false;
+    }
+    if(id.startsWith("pray.")){
+      try{if(win?.AO_MODULES?.open?.(id))return true;}catch{}
+      try{return win?.AO_PRAY_APP_V1?.open?.()??false;}catch{return false;}
+    }
+    if(id.startsWith("learn.")){
+      try{if(win?.AO_MODULES?.open?.(id))return true;}catch{}
+      try{return win?.AO_V37_SHELL?.openDomain?.("learn")??false;}catch{return false;}
+    }
+    try{if(win?.AO_MODULES?.open?.(id))return true;}catch{}
+    try{return win?.AO_V37_SHELL?.openModule?.(id)??false;}catch{return false;}
+  }
+
+  function onEnricherClick(event){
+    const target=event?.target;
+    const daily=target?.closest?.("[data-home-daily-catechism]");
+    if(daily){
+      event.preventDefault?.();
+      try{win?.AO_DAILY_CATECHISM?.open?.();}catch{}
+      return;
+    }
+    const dynamic=target?.closest?.("[data-home-cu-dynamic]");
+    if(dynamic){
+      event.preventDefault?.();
+      const id=dynamic.dataset?.homeCuDynamic;
+      if(id==="dynamic.free"){openRoute("pray.library");return;}
+      try{if(win?.AO_RULE_V411?.openDynamic?.(id))return;}catch{}
+      openRoute(dynamic.dataset?.homeCuRoute);
+      return;
+    }
+    const stat=target?.closest?.("[data-home-cu-static]");
+    if(stat){
+      event.preventDefault?.();
+      try{win?.AO_RULE_V411?.openStatic?.(stat.dataset?.homeCuStatic);}catch{}
+      return;
+    }
+    const route=target?.closest?.("[data-home-cu-route]");
+    if(route){
+      event.preventDefault?.();
+      openRoute(route.dataset?.homeCuRoute);
+      return;
+    }
+    const all=target?.closest?.("[data-home-cu-all]");
+    if(all){
+      event.preventDefault?.();
+      try{win?.AO_RULE_V411?.openSheet?.();}catch{}
+    }
   }
 
   function open(){
@@ -107,6 +168,7 @@ export function createHomeOwner(win=globalThis){
       presentationAttached:Boolean(unsubscribe),
       route:state(win)?.route??null,
       donorHomeAvailable:typeof win?.AO_NAV_V362?.home==="function",
+      enrichersOwner:screen?.querySelector?.("[data-ao-home-enricher-owner]")?.dataset?.aoHomeEnricherOwner??null,
     });
   }
 
@@ -115,8 +177,13 @@ export function createHomeOwner(win=globalThis){
     unsubscribe=null;
     if(retryTimer&&typeof win?.clearTimeout==="function")win.clearTimeout(retryTimer);
     retryTimer=null;
+    if(enricherClicksBound){
+      try{win?.document?.removeEventListener?.("click",onEnricherClick,true);}catch{}
+      enricherClicksBound=false;
+    }
   }
 
+  bindEnricherClicks();
   attachPresentation();
   return Object.freeze({version:VERSION,open,paint,status,dispose});
 }
