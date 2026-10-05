@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -93,15 +93,15 @@
     },
     {
       "id": "EMERGENCY_RUNTIME_RETIREMENT",
-      "classification": "STALE_SURFACE",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
-        "docs/APP-CONVERGENCE.md",
+        "index.html",
         "src/app/live-session-guards.js",
-        "tests/app-live-session-guards.mjs",
+        "tests/production-tree-hygiene.mjs",
         "tests/app-shell-journey-e2e.mjs"
       ],
-      "detail": "Required live-session protections are now owned and phone-tested by src/app/live-session-guards.js. The blocker remains open only until the embedded v43.33 emergency runtime is physically removed from production index.html and the assembled-app regression suite remains green."
+      "detail": "The embedded v43.33 emergency CSS/JS runtime has been physically removed from production index.html. Required live-session behavior is owned by src/app/live-session-guards.js and remains covered by the actual-index phone journey."
     },
     {
       "id": "DUPLICATE_BROWSER_ENTRY_HYGIENE",
@@ -159,7 +159,6 @@
     }
   ],
   "openBlockers": [
-    "EMERGENCY_RUNTIME_RETIREMENT",
     "NON_MASS_DONOR_EXTRACTION"
   ],
   "regressionGates": {
