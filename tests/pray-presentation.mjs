@@ -27,6 +27,8 @@ assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit 
 assert.match(runtime,/normalizeRosaryPrefs/,"PRAY lost Rosary preference normalization");
 assert.match(runtime,/rosaryDonorRoot/,"PRAY lost canonical Rosary donor-root resolver");
 assert.match(runtime,/restoreRosaryLaunchPrefs/,"PRAY lost post-mount Rosary owner reconciliation");
+assert.ok(runtime.includes("!root?.classList?.contains('open')||!native"),
+  "Rosary handoff stopped waiting for the preserved player to be visibly open");
 assert.ok(runtime.includes('[data-ao-recitation="${prefs.recitation}"]'),
   "Rosary handoff stopped driving the preserved player's native recitation owner");
 assert.match(runtime,/const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
