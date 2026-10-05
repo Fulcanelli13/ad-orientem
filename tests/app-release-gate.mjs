@@ -6,7 +6,7 @@ const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.j
 const parity=JSON.parse(readFileSync("data/presentation/product-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.17.0");
+assert.equal(app.version,"1.18.0");
 assert.equal(app.status,"PRODUCT_PARITY_RECOVERY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -30,7 +30,11 @@ for(const finding of findings){
 
 const open=findings.filter(x=>x.status==="OPEN").map(x=>x.id);
 assert.deepEqual(app.openBlockers,open,"app openBlockers must exactly match OPEN findings");
-assert.deepEqual(app.openBlockers,["PRODUCT_PRESENTATION_PARITY"],"product presentation parity blocker must remain explicit until approved parity is certified");
+assert.deepEqual(
+  app.openBlockers,
+  ["PRODUCT_PRESENTATION_PARITY","PRESENTATION_FX_PARITY"],
+  "product and presentation-FX parity blockers must remain explicit until approved parity is certified"
+);
 const fieldRuntime=findings.find(x=>x.id==="FIELD_RUNTIME_STABILIZATION");
 assert.equal(fieldRuntime?.classification,"PASS");
 assert.equal(fieldRuntime?.status,"CLOSED");
@@ -38,6 +42,10 @@ const productParity=findings.find(x=>x.id==="PRODUCT_PRESENTATION_PARITY");
 assert.equal(productParity?.classification,"REGRESSION");
 assert.equal(productParity?.status,"OPEN");
 assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
+assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
+const presentationFx=findings.find(x=>x.id==="PRESENTATION_FX_PARITY");
+assert.equal(presentationFx?.classification,"REGRESSION");
+assert.equal(presentationFx?.status,"OPEN");
 assert.equal(parity.schema,"ao-product-parity-v1");
 assert.deepEqual(Object.keys(parity.surfaces),["home","mass","pray","learn","calendar","settings"]);
 assert.equal(parity.surfaces.calendar.status,"CERTIFIED");
@@ -92,6 +100,7 @@ assert.ok(app.regressionGates?.phone?.includes("tests/nonmass-d3-d6-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/learn-owner-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/settings-e2e.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/presentation-fx.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
 
 console.log("PASS app release gate: PRODUCT_PARITY_RECOVERY_REQUIRED with runtime stable and presentation parity explicit.");
