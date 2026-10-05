@@ -171,6 +171,15 @@ try{
   assert.equal(homeParity.brand,"AD ORIENTEM");
   assert.ok(homeParity.celebration.length>0,"Home liturgical-day identity is blank");
   assert.ok(homeParity.gospel.length>0,"Home Gospel context is blank");
+  await page.waitForFunction(()=>document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero,null,{timeout:3000});
+  const homeFx=await page.evaluate(()=>({
+    hero:document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero??null,
+    rootScan:document.querySelector(".homeScreen")?.dataset?.aoPresentationFxArtScan??null,
+    width:document.querySelector(".homeScreen .celebrationBlock")?.getBoundingClientRect?.().width??0,
+  }));
+  assert.match(homeFx.hero,/modular-presentation-fx-v2/,"Home celebration hero did not receive recovered entry choreography");
+  assert.equal(homeFx.rootScan,"legacy-v4312","Home modular root bypassed the approved v43.12 art loader");
+  assert.ok(homeFx.width>=350,"Home hero choreography changed phone geometry");
   await shot("01-home");
 
   await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
@@ -212,6 +221,12 @@ try{
   assert.ok(calendarDashboard.wheel>=120,"Calendar annual overview collapsed below phone-readable size");
   assert.ok(calendarDashboard.identity.length>0,"Calendar selected feast identity is blank");
   assert.equal(calendarDashboard.railScrollable,true,"Calendar observance rail is not touch-scrollable/snapping");
+  const calendarFx=await page.evaluate(()=>({
+    hero:document.querySelector("#ao-calendar-modular-root .aoCalSacredTime")?.dataset?.aoPresentationFxHero??null,
+    rootScan:document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFxArtScan??null,
+  }));
+  assert.match(calendarFx.hero,/modular-presentation-fx-v2/,"Calendar Sacred Time hero did not receive recovered entry choreography");
+  assert.equal(calendarFx.rootScan,"legacy-v4312","Calendar modular root bypassed the approved v43.12 art loader");
   await shot("02-calendar");
 
   await page.locator("[data-ao-app-surface='pray']").click();
@@ -228,6 +243,13 @@ try{
   assert.equal(prayHub.owner,"modular-pray-v1");
   assert.ok(prayHub.cards>=10,"PRAY hub lost its locked devotional module hierarchy");
   assert.equal(prayHub.legacyOpen,false,"legacy Prayer Book is visible beneath modular PRAY");
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero,null,{timeout:3000});
+  const prayFx=await page.evaluate(()=>({
+    hero:document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero??null,
+    rootScan:document.getElementById("aoPray435930")?.dataset?.aoPresentationFxArtScan??null,
+  }));
+  assert.match(prayFx.hero,/modular-presentation-fx-v2/,"PRAY home hero did not receive recovered entry choreography");
+  assert.equal(prayFx.rootScan,"legacy-v4312","PRAY modular root bypassed the approved v43.12 art loader");
   await shot("03-pray");
 
   // Prototype-era semantic rails are presentation-only: they must expose
@@ -416,6 +438,12 @@ try{
   assert.equal(await catechismIcon.getAttribute("data-ao-asset-renderer"),"mask","Traditional Catechism did not use the canonical file-backed mask renderer");
   const catechismMask=await catechismIcon.evaluate(el=>getComputedStyle(el).webkitMaskImage||getComputedStyle(el).maskImage||"");
   assert.match(catechismMask,/ao-module-catechism\.png/,"Traditional Catechism canonical mask did not resolve to the frozen PNG");
+  const learnFx=await page.evaluate(()=>({
+    hero:document.querySelector("#ao-learn-modular-root .aoLearnModHero")?.dataset?.aoPresentationFxHero??null,
+    rootScan:document.getElementById("ao-learn-modular-root")?.dataset?.aoPresentationFxArtScan??null,
+  }));
+  assert.match(learnFx.hero,/modular-presentation-fx-v2/,"Learn formation hero did not receive recovered entry choreography");
+  assert.equal(learnFx.rootScan,"legacy-v4312","Learn modular root bypassed the approved v43.12 art loader");
   await shot("04-learn");
 
   await page.locator("[data-ao-app-surface='settings']").click();
