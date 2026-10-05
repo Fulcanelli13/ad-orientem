@@ -123,9 +123,7 @@ try{
       getAssemblyStatus(){return null;},
     };
     globalThis.AO_SEQUENCE_BRIDGE_V22=null;
-    globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
-      iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
-    );
+    try{delete globalThis.AO_R17_ICON_ASSETS}catch{}
     globalThis.AO_RUNTIME_V8={
       store:{
         getState:()=>({
@@ -174,12 +172,18 @@ try{
       schema:prepared.schema,
       form:prepared.session.resolvedMass.form,
       mode:prepared.readerPreferences.mode,
+      iconKeys:Object.keys(mod.resolveHostIconAssets(globalThis)??{}),
+      explicitIconBank:Boolean(globalThis.AO_R17_ICON_ASSETS),
     };
   },iconKeys);
 
   assert.equal(setup.schema,"ao-mass-entry-bootstrap-v1");
   assert.equal(setup.form,"MISSA_CANTATA_INCENSE");
   assert.equal(setup.mode,"LIVE");
+  assert.equal(setup.explicitIconBank,false,"journey test accidentally injected a modular icon bank");
+  assert.ok(setup.iconKeys.length>=iconKeys.length,
+    "actual production page did not resolve the frozen CSS icon bank");
+  for(const key of iconKeys)assert.ok(setup.iconKeys.includes(key),"production CSS icon bank missing "+key);
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.status?.().liveSessionGuards?.live===true &&
