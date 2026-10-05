@@ -271,7 +271,7 @@ function iconMarkup(icon){
 function uiIcon(assetId){
   const url=resolveCanonicalAssetUrl(assetId);
   if(!url)return "";
-  return `<span data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url('\${esc(url)}') center/contain no-repeat;mask:url('\${esc(url)}') center/contain no-repeat"></span>`;
+  return `<span data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
 }
 
 function rowMarkup(row){
