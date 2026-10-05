@@ -258,10 +258,6 @@ export function buildHomeEnrichers(state,win=globalThis,{now=new Date()}={}){
   });
 }
 
-function iconGlyph(icon){
-  return ({calendar:"◫",rosary:"✢",mass:"✠",angelus:"✧",exam:"◇",heart:"♥",marian:"✦",church:"⌂",morning:"☼",evening:"☾",stations:"✝",prayer:"†"})[icon]??"†";
-}
-
 function iconMarkup(icon,win=globalThis){
   const assetId=HOME_ENRICHER_ICON_ASSET_IDS[icon]??HOME_ENRICHER_ICON_ASSET_IDS.prayer;
   const canonical=getCanonicalAsset(assetId);
@@ -270,7 +266,9 @@ function iconMarkup(icon,win=globalThis){
   if(embedded){
     return `<svg class="aoHomeCuIcon" data-ao-asset-id="${esc(resolvedId)}" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><use href="#${esc(resolvedId)}"></use></svg>`;
   }
-  return `<span class="aoHomeCuIcon aoHomeCuIconFallback" data-ao-asset-id="${esc(resolvedId)}" aria-hidden="true">${esc(iconGlyph(icon))}</span>`;
+  // Missing canonical artwork must fail text-only. Never invent a glyph that
+  // could be mistaken for an approved semantic icon.
+  return `<span class="aoHomeCuIcon aoHomeCuIconMissing" data-ao-asset-id="${esc(resolvedId)}" data-ao-icon-missing="true" aria-hidden="true"></span>`;
 }
 
 function uiIcon(assetId){
@@ -293,7 +291,7 @@ export function renderHomeEnrichersToString(model,state,win=globalThis){
   return `<style data-ao-home-enricher-suppression>
 .homeScreen .aoComingUpV4323,.homeScreen .aoDailyCateHome,.aoComingUpV4323,.aoDailyCateHome{display:none!important}
 .aoHomeEnricherCard{margin-top:14px}.aoHomeEnricherHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.aoHomeEnricherHead button{border:0;background:transparent;color:inherit;min-height:44px}
-.homeScreen .aoSaintArtCard:has(.aoSaintArtPlaceholder){display:none!important}.aoHomeCuRows{display:grid;gap:7px}.aoHomeCuRow{display:grid;grid-template-columns:74px 34px 1fr auto;align-items:center;gap:8px;width:100%;min-height:58px;text-align:left;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(255,255,255,.025);color:inherit;padding:8px}.aoHomeCuRole{font-size:10px;text-transform:uppercase;letter-spacing:.045em;white-space:nowrap}.aoHomeCuRole small,.aoHomeCuCopy span{display:block;color:var(--muted-2,#9d9a94);text-transform:none;letter-spacing:0;margin-top:3px}.aoHomeCuIcon{width:28px;height:28px;display:block;overflow:visible;color:var(--liturgical,currentColor)}.aoHomeCuIconFallback{font-size:20px;line-height:28px;text-align:center}.aoHomeCuCopy strong{font-weight:600}.aoHomeCuArrow{font-size:22px}.aoHomeCuRow.done{opacity:.68}
+.homeScreen .aoSaintArtCard:has(.aoSaintArtPlaceholder){display:none!important}.aoHomeCuRows{display:grid;gap:7px}.aoHomeCuRow{display:grid;grid-template-columns:74px 34px 1fr auto;align-items:center;gap:8px;width:100%;min-height:58px;text-align:left;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(255,255,255,.025);color:inherit;padding:8px}.aoHomeCuRole{font-size:10px;text-transform:uppercase;letter-spacing:.045em;white-space:nowrap}.aoHomeCuRole small,.aoHomeCuCopy span{display:block;color:var(--muted-2,#9d9a94);text-transform:none;letter-spacing:0;margin-top:3px}.aoHomeCuIcon{width:28px;height:28px;display:block;overflow:visible;color:var(--liturgical,currentColor)}.aoHomeCuIconMissing{visibility:hidden}.aoHomeCuCopy strong{font-weight:600}.aoHomeCuArrow{font-size:22px}.aoHomeCuRow.done{opacity:.68}
 .aoHomeDailyBody{display:flex;align-items:center;justify-content:space-between;gap:14px}.aoHomeDailyCopy b{display:block;margin:4px 0}.aoHomeDailyCopy p{margin:4px 0 8px}.aoHomeDailyMeta{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted-2,#9d9a94)}.aoHomeDailyBadge{border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:4px 7px}.aoHomeDailyOpen{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:transparent;color:inherit}
 @media(max-width:430px){.aoHomeCuRow{grid-template-columns:72px 28px 1fr auto;gap:6px}.aoHomeCuRole{font-size:9px;letter-spacing:.03em}}
 </style>
