@@ -160,3 +160,14 @@ The stabilization lane fixes those defects without weakening the native reader's
 The required merged-main evidence has now passed. App convergence run `37276882767` on production head `2d4907e31fddd8424bafcb87dfdc81973817cb79` passed the complete phone journey and `tests/field-current-week-e2e.mjs` for 4–9 October 2026. Every date resolved a READY Proper, runtime recovery supplied missing Secret/Postcommunion source sections where the historical host normalizer omitted them, and every reader reported `readerReady: true` with an empty missing-slot list.
 
 `FIELD_RUNTIME_STABILIZATION` is therefore closed and the application gate returns to **FINAL_APP_READY**. The source-transport compatibility layer, PRAY DOM-anchor repair, Proper runtime recovery and stale-checkpoint fail-closed behavior remain permanent regression-locked production code.
+
+
+## Product parity recovery — 5 October 2026
+
+Field runtime stabilization is closed. The next release hold is presentation parity.
+
+The current visual-acceptance workflow proves that production surfaces mount, isolate correctly and avoid uncaught errors, but it does not compare them with the approved Ad Orientem product references. Modular extraction therefore cannot by itself establish visual/product parity.
+
+This phase keeps all certified runtime and ownership boundaries. It recovers presentation surface by surface, starting with Calendar, and must not reopen Mass liturgical/runtime architecture merely to match appearance.
+
+Approved Calendar direction is a contextual sacred-time dashboard rather than a utility date picker: one selected-date identity, a large year/time overview, a dense touch-friendly observance rail, restrained feast/season emphasis, and presentation over the existing calendar resolver rather than a duplicate calendar engine.
