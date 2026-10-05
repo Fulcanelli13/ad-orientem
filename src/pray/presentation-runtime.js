@@ -266,9 +266,10 @@ function decorateRosaryFx(r){
  if(!fx?.isReducedMotion?.())fx?.showTransition?.({kicker:L('HOLY ROSARY','SAINT ROSAIRE'),title,hold:430});
 }
 function decorateRosary(){
- const root=document.querySelector('.pbRoot,.aoPrayerBook,.lab-prayerbook,[data-pb-root]')||document.querySelector('#ao-prayerbook-root')||document.querySelector('[class*="PrayerBook"]');
+ const canonical=document.getElementById('aoPrayerBookRoot');
+ const root=canonical||document.querySelector('.pbRoot,.aoPrayerBook,.lab-prayerbook,[data-pb-root]')||document.querySelector('#ao-prayerbook-root')||document.querySelector('[class*="PrayerBook"]');
  const candidates=[...document.querySelectorAll('body > *')].filter(el=>el.querySelector?.('[data-v38-rosary-form]'));
- const r=root||candidates[0];if(!r)return;
+ const r=root||candidates[0];if(!r||!r.classList?.contains('open'))return;
  r.querySelectorAll('.flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]').forEach(n=>{n.hidden=true;n.setAttribute('aria-hidden','true')});
  r.classList.toggle('aoP435930RosarySimple',S.rosary.mode==='simple');r.classList.toggle('aoP435930RosaryGuided',S.rosary.mode==='guided');
  let bar=r.querySelector('.aoP435930RosaryBar');if(!bar){bar=document.createElement('div');bar.className='aoP435930RosaryBar';const h=r.querySelector('.lab-view-head,.pbTop,.pbHead,header');h?.insertAdjacentElement('afterend',bar)}
