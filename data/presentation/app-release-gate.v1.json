@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -18,7 +18,7 @@
     "calendar",
     "settings"
   ],
-  "requiredPhoneJourney": "cold launch -> Home -> Calendar -> Mass selection -> native LIVE -> leave/resume -> PRAY -> Home -> Learn -> Home -> Learn -> PRAY/Calendar/Settings",
+  "requiredPhoneJourney": "cold launch -> Home -> Calendar -> Mass selection -> native LIVE -> Settings overlay/restore -> leave/resume -> PRAY -> Home -> Learn -> Home -> Learn -> PRAY/Calendar/Settings",
   "findings": [
     {
       "id": "MASS_SUBSYSTEM_CERTIFIED",
@@ -58,7 +58,7 @@
         "tests/nonmass-d3-d6-convergence.mjs",
         "tests/nonmass-d3-d6-e2e.mjs"
       ],
-      "detail": "D3-D6 behavioral convergence is enforced over the current PRAY/Settings donor: session-only exposition state, bounded Adoration/Benediction behavior, read-only Confession examination with five canonical phases and no visible legacy eight-step counter, and reader-facing Sources/About with canonical app-version ownership. This does not close donor extraction."
+      "detail": "D3-D6 behavioral convergence is enforced on modular production owners: D3-D5 remain integrated with modular PRAY, while D6 Sources/About and canonical app-version ownership are native to AO_SETTINGS_APP_V1. Session-only exposition state, bounded Adoration/Benediction behavior, read-only Confession examination with five canonical phases, and reader-facing Sources/About remain regression-covered."
     },
     {
       "id": "VISIBLE_SHELL_OWNERSHIP",
@@ -78,7 +78,7 @@
         "tests/app-shell-journey-e2e.mjs",
         ".github/workflows/app-convergence.yml"
       ],
-      "detail": "Actual index.html passes the required phone/touch journey from cold Home through Calendar and native LIVE, including interrupted reload at an active Mass, exact-section resume, cancelled and confirmed leave, PRAY, Home and Settings, with zero legacy Mass starts."
+      "detail": "Actual index.html passes the required phone/touch journey from cold Home through Calendar and native LIVE, including Settings opened over the same active R17 session with structural locks and same-reader restoration, interrupted reload at an active Mass, exact-section resume, cancelled and confirmed leave, PRAY, Home, Learn and Settings, with zero legacy Mass starts."
     },
     {
       "id": "LIVE_SESSION_GUARDS_MODULARIZED",
@@ -89,7 +89,7 @@
         "tests/app-live-session-guards.mjs",
         "tests/app-shell-journey-e2e.mjs"
       ],
-      "detail": "The modular app shell owns active-Mass ribbon suppression, forced haptics-off, structural-setting lockout, and focus-safe ribbon hiding using native-reader presence as well as the historical LIVE route."
+      "detail": "The modular app shell owns active-Mass ribbon suppression, forced haptics-off, structural-setting lockout, and focus-safe hiding. AO_SETTINGS_APP_V1 consumes this single guard while overlaying an active native reader; opening/closing Settings neither suspends nor restarts R17."
     },
     {
       "id": "EMERGENCY_RUNTIME_RETIREMENT",
@@ -138,15 +138,19 @@
         "src/learn/browser-entry.js",
         "src/learn/presentation.js",
         "tests/learn-owner.mjs",
-        "tests/learn-owner-e2e.mjs"
+        "tests/learn-owner-e2e.mjs",
+        "src/settings/browser-entry.js",
+        "src/settings/presentation.js",
+        "tests/settings-owner.mjs",
+        "tests/settings-e2e.mjs"
       ],
-      "detail": "Calendar, PRAY and Learn presentation ownership are extracted and actual-index phone-certified. PRAY runs the locked v43.59.30 48-prayer corpus and final coherence contract from src/pray. Learn now runs through AO_LEARN_APP_V1 with the locked v43.59.30 formation hub (Daily Catechism, Understand the Mass, Traditional Catechism, Today’s Gospel, Saint of the Day); the historical V37 Learn domain is retired from normal production navigation. Home has a modular base presentation owner for the liturgical day, Mass summary, Gospel, Around the Mass, language/date/formulary state and resume status; legacy Home enrichers such as Coming Up and Daily Catechism still require extraction. Settings presentation extraction also remains open.",
+      "detail": "Calendar, PRAY, Learn and Settings presentation ownership are extracted and actual-index phone-certified. Settings now runs through AO_SETTINGS_APP_V1 in src/settings, preserving the approved English/French controls, canonical preference persistence, Sources/About and app-version authority, while using the single modular live-session guard to remain safe over an active R17 Mass. Normal production no longer probes AO_SETTINGS_V4359/V4358/V4356 or utility.settings, and the duplicate Home Settings surface is retired. Home has a modular base presentation owner, but legacy Home enrichers such as Coming Up and Daily Catechism still require extraction.",
       "progress": {
         "calendar": "MODULAR_PHONE_CERTIFIED",
         "home": "MODULAR_BASE_PRESENTATION_PHONE_CERTIFIED__ENRICHERS_PENDING",
         "pray": "MODULAR_PHONE_CERTIFIED",
         "learn": "MODULAR_PHONE_CERTIFIED",
-        "settings": "PENDING"
+        "settings": "MODULAR_PHONE_CERTIFIED"
       }
     },
     {
@@ -176,7 +180,8 @@
       "tests/pray-presentation.mjs",
       "tests/home-presentation.mjs",
       "tests/nonmass-d3-d6-convergence.mjs",
-      "tests/learn-owner.mjs"
+      "tests/learn-owner.mjs",
+      "tests/settings-owner.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
@@ -185,7 +190,8 @@
       "tests/app-shell-easter-vigil-e2e.mjs",
       "tests/app-shell-journey-e2e.mjs",
       "tests/nonmass-d3-d6-e2e.mjs",
-      "tests/learn-owner-e2e.mjs"
+      "tests/learn-owner-e2e.mjs",
+      "tests/settings-e2e.mjs"
     ]
   }
 }

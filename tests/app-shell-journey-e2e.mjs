@@ -301,6 +301,89 @@ try{
   assert.equal(resumed.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(resumed.probe,"calendar-state-ok");
 
+  // Settings is the one top-level non-Mass surface allowed to overlay an
+  // active reader. Prove that it does not suspend/restart R17, that structural
+  // changes are rejected by the single modular live-session guard, and that
+  // permitted display state still updates while LIVE is retained.
+  const settingsOverLiveBefore=await page.evaluate(()=>{
+    const reader=document.getElementById("ao-r17-native-reader-preview");
+    if(reader)reader.dataset.aoSettingsContinuity="same-reader";
+    globalThis.__AO_SETTINGS_LIVE_ALERTS=0;
+    globalThis.alert=()=>{globalThis.__AO_SETTINGS_LIVE_ALERTS+=1;};
+    const s=globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings??{};
+    return {
+      section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+      form:s.massForm??null,
+      textScale:s.textScale??"normal",
+      persisted:JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}"),
+      legacyStarts:globalThis.__AO_FINAL_LEGACY_STARTS??0,
+    };
+  });
+  const openedSettingsOverLive=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
+  assert.notEqual(openedSettingsOverLive?.ok,false,"Settings could not open over active native Mass");
+  await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
+
+  const settingsOverLiveOpen=await page.evaluate(()=>({
+    readerConnected:Boolean(document.querySelector("#ao-r17-native-reader-preview[data-ao-settings-continuity='same-reader']")?.isConnected),
+    section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+    runtime:Boolean(globalThis.AO_R17_MASS_RUNTIME),
+    guard:globalThis.AO_APP_LIVE_SESSION_GUARDS_V1?.status?.()??null,
+    settings:globalThis.AO_SETTINGS_APP_V1?.status?.()??null,
+    haptics:localStorage.getItem("ao-haptics-enabled"),
+    legacyVisible:[
+      document.getElementById("ao-settings-v4359"),
+      document.getElementById("ao-settings-v4358"),
+      document.getElementById("ao-settings-v4356"),
+    ].some(node=>Boolean(node?.isConnected&&!node.hidden&&getComputedStyle(node).display!=="none"&&getComputedStyle(node).visibility!=="hidden")),
+  }));
+  assert.equal(settingsOverLiveOpen.readerConnected,true,"opening Settings replaced or destroyed the active R17 reader");
+  assert.equal(settingsOverLiveOpen.section,settingsOverLiveBefore.section,"opening Settings moved the LIVE reader section");
+  assert.equal(settingsOverLiveOpen.runtime,true,"opening Settings destroyed native Mass runtime");
+  assert.equal(settingsOverLiveOpen.guard?.live,true,"Settings overlay lost the modular live-session guard");
+  assert.equal(settingsOverLiveOpen.settings?.structuralLocked,true,"Settings did not report structural lock during LIVE");
+  assert.equal(settingsOverLiveOpen.haptics,"0","Settings overlay re-enabled haptics during LIVE");
+  assert.equal(settingsOverLiveOpen.legacyVisible,false,"historical Settings donor became visible over LIVE");
+
+  const structuralTarget=settingsOverLiveBefore.form==="low"?"sung":"low";
+  await page.locator(`#ao-settings-modular-root [data-setting-form='${structuralTarget}']`).click();
+  await page.waitForTimeout(0);
+  const afterStructuralAttempt=await page.evaluate(()=>({
+    form:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.massForm??null,
+    resolvedForm:globalThis.AO_R17_MASS_RUNTIME?.prepared?.session?.resolvedMass?.form??null,
+    alerts:globalThis.__AO_SETTINGS_LIVE_ALERTS??0,
+  }));
+  assert.equal(afterStructuralAttempt.form,settingsOverLiveBefore.form,"structural Mass setting changed during LIVE");
+  assert.equal(afterStructuralAttempt.resolvedForm,"MISSA_CANTATA_INCENSE","Settings mutated the active resolved Mass");
+  assert.ok(afterStructuralAttempt.alerts>=1,"live-session guard did not reject structural Settings input");
+
+  const displayTarget=settingsOverLiveBefore.textScale==="large"?"normal":"large";
+  await page.locator(`#ao-settings-modular-root [data-setting-scale='${displayTarget}']`).click();
+  await page.waitForFunction(expected=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.textScale===expected,displayTarget,{timeout:5000});
+
+  await page.locator("#ao-settings-modular-root [data-settings-close]").first().click();
+  await page.waitForFunction(()=>!document.getElementById("ao-settings-modular-root"),null,{timeout:5000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:5000});
+  const settingsOverLiveAfter=await page.evaluate(()=>({
+    readerConnected:Boolean(document.querySelector("#ao-r17-native-reader-preview[data-ao-settings-continuity='same-reader']")?.isConnected),
+    section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+    resolvedForm:globalThis.AO_R17_MASS_RUNTIME?.prepared?.session?.resolvedMass?.form??null,
+    persisted:JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}"),
+    textScale:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.textScale??null,
+    legacyStarts:globalThis.__AO_FINAL_LEGACY_STARTS??0,
+    focusHidden:Boolean(document.activeElement?.closest?.("[aria-hidden='true'],[hidden]")),
+  }));
+  assert.equal(settingsOverLiveAfter.readerConnected,true,"closing Settings did not restore the same R17 reader");
+  assert.equal(settingsOverLiveAfter.section,settingsOverLiveBefore.section,"closing Settings did not restore the same LIVE position");
+  assert.equal(settingsOverLiveAfter.resolvedForm,"MISSA_CANTATA_INCENSE","closing Settings altered the active Mass form");
+  assert.equal(settingsOverLiveAfter.persisted?.state,settingsOverLiveBefore.persisted?.state,"Settings overlay changed active-Mass lifecycle state");
+  assert.equal(settingsOverLiveAfter.persisted?.readerPosition?.sectionId,settingsOverLiveBefore.persisted?.readerPosition?.sectionId,"Settings overlay changed persisted LIVE position");
+  assert.equal(settingsOverLiveAfter.persisted?.session?.resolvedMass?.form,settingsOverLiveBefore.persisted?.session?.resolvedMass?.form,"Settings overlay changed persisted Mass form");
+  assert.equal(settingsOverLiveAfter.persisted?.readerPreferences?.mode,settingsOverLiveBefore.persisted?.readerPreferences?.mode,"Settings overlay changed persisted reader mode");
+  assert.equal(settingsOverLiveAfter.textScale,displayTarget,"permitted display preference did not survive Settings close");
+  assert.equal(settingsOverLiveAfter.legacyStarts,settingsOverLiveBefore.legacyStarts,"Settings overlay triggered a legacy Mass start");
+  assert.equal(settingsOverLiveAfter.focusHidden,false,"focus remained inside a hidden Settings surface");
+
   await page.evaluate(()=>{
     globalThis.__AO_APP_JOURNEY_CONFIRMS=0;
     globalThis.confirm=()=>{globalThis.__AO_APP_JOURNEY_CONFIRMS+=1;return false;};

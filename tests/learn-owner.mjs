@@ -88,9 +88,9 @@ assert.match(host,/domain === "learn"[\s\S]*AO_LEARN_APP_V1/);
   const win={
     AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en"}),subscribe:()=>()=>{}}},
     AO_LEARN_APP_V1:{close:()=>{calls.push("learn:close");return true;}},
-    AO_SETTINGS_V4359:{
-      open(){settingsOpen=true;calls.push("settings:open");},
-      get state(){return {navigation:{open:settingsOpen}};},
+    AO_SETTINGS_APP_V1:{
+      open(){settingsOpen=true;calls.push("settings:open");return true;},
+      status(){return {installed:true,open:settingsOpen};},
     },
   };
   const adapter=createAppHostAdapter(win);
