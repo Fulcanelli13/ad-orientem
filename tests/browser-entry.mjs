@@ -9,6 +9,7 @@ import {
   readPersistedActiveMass,
   persistedMassIsResumable,
   resolveHostIconAssets,
+  bridgeLegacyHostIconAssets,
 } from "../src/mass/browser-entry.js";
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
@@ -20,6 +21,25 @@ assert.equal(mapLegacyFollowMode(undefined), "LIVE");
 const bridgedIcons={stand:"data:image/svg+xml;base64,PHN2Zy8+"};
 assert.equal(resolveHostIconAssets({AO_R17_ICON_ASSETS:bridgedIcons}),bridgedIcons,
   "explicit modular icon bank stopped taking precedence");
+assert.equal(resolveHostIconAssets({AO_ASSETS:bridgedIcons}),bridgedIcons,
+  "global-object host icon bank stopped resolving");
+
+const legacyBridgeWin={AO_R17_ICON_ASSETS:null};
+let injectedBridgeSource="";
+const legacyBridgeDoc={
+  createElement:()=>({type:"",dataset:{},textContent:"",remove(){}}),
+  head:{
+    appendChild(node){
+      injectedBridgeSource=String(node.textContent??"");
+      legacyBridgeWin.AO_R17_ICON_ASSETS=bridgedIcons;
+      return node;
+    },
+  },
+};
+legacyBridgeWin.document=legacyBridgeDoc;
+assert.equal(bridgeLegacyHostIconAssets(legacyBridgeWin,legacyBridgeDoc),bridgedIcons,
+  "runtime classic-script bridge did not publish the legacy lexical icon bank");
+assert.match(injectedBridgeSource,/typeof AO_ASSETS/,"runtime bridge no longer reads the legacy AO_ASSETS binding");
 assert.equal(resolveHostIconAssets({}),null,
   "icon resolver invented a host bank when no bridge/global bank exists");
 
