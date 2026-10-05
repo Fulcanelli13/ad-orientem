@@ -213,7 +213,50 @@ try{
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
 
-  await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({setup,opening,consecration,errors},null,2));
+  const wordsCue=page.locator("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0173']");
+  const elevationCue=page.locator("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0174']");
+  assert.equal(await wordsCue.count(),1,"Host Consecration words cue AO.SM.C0173 is not exposed in the source-first reader");
+  assert.equal(await elevationCue.count(),1,"Host elevation action cue AO.SM.C0174 is not exposed in the source-first reader");
+
+  await wordsCue.evaluate(el=>el.scrollIntoView({block:"center",inline:"nearest",behavior:"instant"}));
+  await page.waitForFunction(()=>document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue==="AO.SM.C0173",null,{timeout:5000});
+  const wordsState=await page.evaluate(()=>({
+    cue:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null,
+    bellActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='bell']")?.dataset?.active??null,
+    cinematicHidden:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden??null,
+    bellOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerBell??null,
+    cinematicOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerCinematic??null,
+  }));
+  assert.equal(wordsState.cue,"AO.SM.C0173");
+  assert.equal(wordsState.bellActive,"false","Host words cue fired the elevation bell before the action cue");
+  assert.equal(wordsState.cinematicHidden,true,"Host words cue fired the elevation cinematic before the action cue");
+
+  await elevationCue.evaluate(el=>el.scrollIntoView({block:"center",inline:"nearest",behavior:"instant"}));
+  await page.waitForFunction(()=>
+    document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue==="AO.SM.C0174" &&
+    document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===false,
+    null,{timeout:5000});
+  const elevationState=await page.evaluate(()=>({
+    cue:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null,
+    bellActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='bell']")?.dataset?.active??null,
+    bellText:document.querySelector("#ao-r17-native-reader-preview [data-role='bell']")?.textContent?.trim()??"",
+    cinematicKind:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.dataset?.kind??null,
+    cinematicTitle:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-title']")?.textContent?.trim()??"",
+    cinematicSub:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-sub']")?.textContent?.trim()??"",
+    bellOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerBell??null,
+    cinematicOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerCinematic??null,
+  }));
+  assert.equal(elevationState.cue,"AO.SM.C0174");
+  assert.equal(elevationState.bellActive,"true","Host elevation action cue did not activate the bell channel");
+  assert.match(elevationState.bellText,/ELEVATION BELL/i);
+  assert.equal(elevationState.cinematicKind,"ELEVATION");
+  assert.equal(elevationState.cinematicTitle,"ELEVATION");
+  assert.equal(elevationState.cinematicSub,"SACRED HOST");
+  assert.match(elevationState.bellOwner,/R17_RECOVERED_CUE_CANONICAL_SOUND_EVENT/);
+  assert.match(elevationState.cinematicOwner,/R17_EXACT_ELEVATION_CINEMATIC/);
+  await page.screenshot({path:resolve(out,"08-mass-host-elevation.png"),fullPage:false});
+
+  await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({setup,opening,consecration,wordsState,elevationState,errors},null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
   console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration},null,2));
   await context.close();
