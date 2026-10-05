@@ -1422,8 +1422,23 @@ export async function mountNativeReaderPreview({
       .map(card=>Object.freeze({id:card.sectionId,label:card.title}));
   }
 
+  function focusCueAtReaderLine(cueId){
+    if(!cueId)return false;
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    const target=scroll?.querySelector?.('[data-cue-id="'+String(cueId)+'"]');
+    if(!scroll||!target)return false;
+    const cr=scroll.getBoundingClientRect?.();
+    const tr=target.getBoundingClientRect?.();
+    if(!cr||!tr)return false;
+    const absoluteCenter=(tr.top-cr.top+scroll.scrollTop)+(tr.height/2);
+    scroll.scrollTop=Math.max(0,absoluteCenter-scroll.clientHeight*.39);
+    cueTracker?.refresh?.();
+    return true;
+  }
+
   function switchPresentationMode(nextMode){
     const anchor=captureReaderModeAnchor(current,{activeCueId});
+    const desiredCue=anchor.cueId;
     const rebuilt=buildReaderModeModels({
       prepared:ready.prepared,
       data:ready.data,
@@ -1442,10 +1457,10 @@ export async function mountNativeReaderPreview({
     armPartCinematic(null);
     transientGuard.begin();
 
-    const cueStillPresent=Boolean(anchor.cueId && (current.paragraphs??[]).some(paragraph=>
-      (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(anchor.cueId))
+    const cueStillPresent=Boolean(desiredCue && (current.paragraphs??[]).some(paragraph=>
+      (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(desiredCue))
     ));
-    activeCueId=cueStillPresent ? anchor.cueId : null;
+    activeCueId=cueStillPresent ? desiredCue : null;
     if(activeCueId)transientGuard.resolveCue(activeCueId);
     ready.scholaState.activateForCard(current.sourceSequence??current.guideSequence??current.sequence);
 
@@ -1455,6 +1470,7 @@ export async function mountNativeReaderPreview({
 
     if(!(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)){
       showCard(current);
+      if(cueStillPresent)focusCueAtReaderLine(desiredCue);
     }
     return Object.freeze({
       mode:rebuilt.mode,
