@@ -1,4 +1,4 @@
-export const PRESENTATION_FX_VERSION = "modular-presentation-fx-v1";
+export const PRESENTATION_FX_VERSION = "modular-presentation-fx-v2";
 
 const SURFACE_META = Object.freeze({
   home: Object.freeze({ kicker: "AD ORIENTEM", en: "Home", fr: "Accueil" }),
@@ -17,6 +17,14 @@ const SURFACE_ROOT = Object.freeze({
   calendar: "#ao-calendar-modular-root",
   settings: "#ao-settings-modular-root",
 });
+
+const HERO_SELECTOR = Object.freeze({
+  home: ".celebrationBlock",
+  pray: ".aoP435930HomeIntro,.aoP435930Hero,.aoP435930WordHero,.aoP435930MeditationIntro",
+  learn: ".aoLearnModHero",
+  calendar: ".aoCalSacredTime",
+});
+
 
 function runtimeState(win) {
   return win?.AO_RUNTIME_V8?.store?.getState?.() ?? null;
@@ -59,8 +67,10 @@ function ensureModularFxStyle(win) {
   style.textContent=`
 .aoModularSurfaceIn{animation:aoModularSurfaceIn .42s cubic-bezier(.18,.8,.2,1) both}
 @keyframes aoModularSurfaceIn{from{opacity:.18;filter:blur(1.5px)}to{opacity:1;filter:none}}
-@media(prefers-reduced-motion:reduce){.aoModularSurfaceIn{animation:none!important;filter:none!important}}
-html[data-reduced-motion="true"] .aoModularSurfaceIn{animation:none!important;filter:none!important}
+.aoModularHeroIn{animation:aoModularHeroIn .54s cubic-bezier(.16,.78,.18,1) both;transform-origin:50% 20%}
+@keyframes aoModularHeroIn{from{opacity:.12;filter:blur(2.2px);transform:translateY(7px) scale(.995)}to{opacity:1;filter:none;transform:none}}
+@media(prefers-reduced-motion:reduce){.aoModularSurfaceIn,.aoModularHeroIn{animation:none!important;filter:none!important;transform:none!important}}
+html[data-reduced-motion="true"] .aoModularSurfaceIn,html[data-reduced-motion="true"] .aoModularHeroIn{animation:none!important;filter:none!important;transform:none!important}
 `;
   (doc.head??doc.documentElement)?.append?.(style);
 }
@@ -78,7 +88,13 @@ export function createPresentationFxBridge({
 } = {}) {
   let loaderTimer = null;
   let surfaceTimer = null;
+  let scanTimer = null;
+  let initialScanTimer = null;
+  let initialScanAttempts = 0;
+  let scanQueued = false;
   let disposed = false;
+  let presentationHookInstalled = false;
+  let releaseRuntimeHook = null;
 
   function mark(value) {
     const html = win?.document?.documentElement;
@@ -134,6 +150,106 @@ export function createPresentationFxBridge({
     return win?.document?.querySelector?.(selector) ?? null;
   }
 
+  function heroNodes(root, surface) {
+    const selector = HERO_SELECTOR[surface];
+    if (!root || !selector) return [];
+    return [...(root.querySelectorAll?.(selector) ?? [])];
+  }
+
+  function prepHero(node, { force = false } = {}) {
+    if (!node?.classList) return false;
+    if (!force && node.dataset?.aoPresentationFxHero === PRESENTATION_FX_VERSION) return false;
+    node.dataset.aoPresentationFxHero = PRESENTATION_FX_VERSION;
+    if (reducedMotion(win)) {
+      node.classList.remove("aoModularHeroIn");
+      return true;
+    }
+    node.classList.remove("aoModularHeroIn");
+    void node.offsetWidth;
+    node.classList.add("aoModularHeroIn");
+    return true;
+  }
+
+  function scanSurface(surface = getActive?.(), { forceHero = false } = {}) {
+    if (disposed || !surface) return Object.freeze({ heroes: 0, art: 0 });
+    const root = rootFor(surface);
+    if (!root) return Object.freeze({ heroes: 0, art: 0 });
+    ensureModularFxStyle(win);
+    const heroes = heroNodes(root, surface);
+    heroes.forEach(node => prepHero(node, { force: forceHero }));
+    const legacyArtScan = typeof legacyCinema(win)?.scanArt === "function";
+    legacyCinema(win)?.scanArt?.(root);
+    root.dataset.aoPresentationFxHeroCount = String(heroes.length);
+    root.dataset.aoPresentationFxArtScan = legacyArtScan ? "legacy-v4312" : "unavailable";
+    return Object.freeze({ heroes: heroes.length, legacyArtScan });
+  }
+
+  function queueSurfaceScan() {
+    if (disposed) return;
+    if (!scanQueued && typeof win?.requestAnimationFrame === "function") {
+      scanQueued = true;
+      win.requestAnimationFrame(() => {
+        scanQueued = false;
+        scanSurface();
+      });
+    }
+    if (scanTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(scanTimer);
+    if (typeof win?.setTimeout === "function") {
+      scanTimer = win.setTimeout(() => {
+        scanTimer = null;
+        scanSurface();
+      }, 180);
+    }
+  }
+
+  function scheduleInitialScan() {
+    if (disposed) return false;
+    initialScanAttempts += 1;
+    const surface = getActive?.();
+    const result = scanSurface(surface, { forceHero: true });
+    if (result.heroes > 0 || initialScanAttempts >= 16) {
+      initialScanTimer = null;
+      return result.heroes > 0;
+    }
+    if (typeof win?.setTimeout === "function") {
+      initialScanTimer = win.setTimeout(scheduleInitialScan, 120);
+    }
+    return false;
+  }
+
+  function presentationEvent() {
+    queueSurfaceScan();
+  }
+
+  function installPresentationHook() {
+    const doc = win?.document;
+    if (presentationHookInstalled || !doc?.addEventListener) return false;
+    presentationHookInstalled = true;
+    for (const type of ["click", "change", "submit"]) doc.addEventListener(type, presentationEvent, true);
+    return true;
+  }
+
+  function removePresentationHook() {
+    const doc = win?.document;
+    if (!presentationHookInstalled || !doc?.removeEventListener) return;
+    for (const type of ["click", "change", "submit"]) doc.removeEventListener(type, presentationEvent, true);
+    presentationHookInstalled = false;
+  }
+
+  function installRuntimeHook() {
+    if (releaseRuntimeHook) return true;
+    const subscribe = win?.AO_RUNTIME_V8?.store?.subscribe;
+    if (typeof subscribe !== "function") return false;
+    const release = subscribe.call(win.AO_RUNTIME_V8.store, () => queueSurfaceScan());
+    releaseRuntimeHook = typeof release === "function" ? release : () => {};
+    return true;
+  }
+
+  function removeRuntimeHook() {
+    try { releaseRuntimeHook?.(); } catch {}
+    releaseRuntimeHook = null;
+  }
+
   function surfaceEntered(surface) {
     if (disposed) return false;
     const root = rootFor(surface);
@@ -141,6 +257,7 @@ export function createPresentationFxBridge({
     if (html?.dataset) html.dataset.aoPresentationFxSurface = surface;
     legacyCinema(win)?.queuePresentationScan?.();
     if (!root) return false;
+    scanSurface(surface, { forceHero: true });
 
     root.dataset.aoPresentationFx = "entered";
     root.dataset.aoPresentationFxSurface = surface;
@@ -215,13 +332,23 @@ export function createPresentationFxBridge({
     disposed = true;
     hideLoader();
     if (surfaceTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(surfaceTimer);
+    if (scanTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(scanTimer);
+    if (initialScanTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(initialScanTimer);
     surfaceTimer = null;
+    scanTimer = null;
+    initialScanTimer = null;
+    scanQueued = false;
+    removePresentationHook();
+    removeRuntimeHook();
     mark("disposed");
   }
 
   mark("installing");
+  installPresentationHook();
+  installRuntimeHook();
   if (typeof legacyCinema(win)?.showTransition === "function") mark("ready");
   else mark("legacy-cinema-unavailable");
+  scheduleInitialScan();
 
   return Object.freeze({
     version: PRESENTATION_FX_VERSION,
@@ -230,6 +357,8 @@ export function createPresentationFxBridge({
     showLoader,
     hideLoader,
     surfaceEntered,
+    scanSurface,
+    queueSurfaceScan,
     status,
     dispose,
   });

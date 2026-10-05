@@ -64,6 +64,21 @@ const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 assert.match(appEntry,/createPresentationFxBridge/,"app shell no longer installs modular presentation FX bridge");
 assert.match(appEntry,/presentationFx\?\.navigate/,"app shell navigation bypasses presentation FX bridge");
 
+const fxSource=readFileSync("src/app/presentation-fx.js","utf8");
+for(const selector of [".celebrationBlock",".aoP435930Hero",".aoLearnModHero",".aoCalSacredTime"]){
+  assert.ok(fxSource.includes(selector),`modular presentation FX lost approved hero selector ${selector}`);
+}
+assert.match(fxSource,/aoModularHeroIn/,"modular hero entry choreography disappeared");
+assert.match(fxSource,/legacyCinema\(win\)\?\.scanArt\?\.\(root\)/,"modular surfaces no longer invoke the approved v43.12 art-loading owner");
+assert.match(fxSource,/prefers-reduced-motion:reduce/,"modular hero FX lost reduced-motion CSS");
+assert.match(fxSource,/installPresentationHook/,"modular presentation rescans no longer follow rendered child surfaces");
+assert.match(fxSource,/function installRuntimeHook\(\)/,"modular presentation FX no longer follows canonical runtime state renders");
+assert.match(fxSource,/AO_RUNTIME_V8\?\.store\?\.subscribe/,"modular presentation FX lost the observer-free runtime-store hook");
+assert.doesNotMatch(fxSource,/querySelectorAll\?\.\(["']img["']\)/,"presentation FX regressed to scanning every image in the app");
+assert.match(fxSource,/function scheduleInitialScan\(\)/,"initial Home presentation scan lost its bounded late-render recovery");
+assert.match(fxSource,/initialScanAttempts >= 16/,"initial Home presentation scan is no longer bounded");
+assert.match(fxSource,/scheduleInitialScan\(\);\s*\n\s*return Object\.freeze/,"initial Home surface no longer receives presentation FX scan");
+
 const index=readFileSync("index.html","utf8");
 for(const id of ["ao-cinema-boot","ao-cinema-transition","ao-cinema-loader"]){
   assert.match(index,new RegExp(`id=["']${id}["']`),`legacy cinematic surface ${id} disappeared before modular extraction`);
