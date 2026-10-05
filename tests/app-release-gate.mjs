@@ -5,7 +5,7 @@ const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.10.0");
+assert.equal(app.version,"1.11.0");
 assert.equal(app.status,"CONVERGENCE_IN_PROGRESS");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -44,6 +44,8 @@ assert.equal(findings.find(x=>x.id==="PERSISTENCE_STATE_CONTAMINATION")?.classif
 assert.equal(findings.find(x=>x.id==="PERSISTENCE_STATE_CONTAMINATION")?.status,"CLOSED");
 assert.equal(findings.find(x=>x.id==="LIVE_SESSION_GUARDS_MODULARIZED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="LIVE_SESSION_GUARDS_MODULARIZED")?.status,"CLOSED");
+assert.equal(findings.find(x=>x.id==="EMERGENCY_RUNTIME_RETIREMENT")?.classification,"PASS");
+assert.equal(findings.find(x=>x.id==="EMERGENCY_RUNTIME_RETIREMENT")?.status,"CLOSED");
 const nonMass=findings.find(x=>x.id==="NON_MASS_DONOR_EXTRACTION");
 assert.equal(nonMass?.status,"OPEN");
 assert.equal(nonMass?.progress?.calendar,"MODULAR_PHONE_CERTIFIED");
