@@ -359,7 +359,8 @@ try{
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="home" &&
-    document.querySelector(".homeScreen")?.dataset?.aoHomeOwner==="modular-home-v1" &&
+    document.querySelector(".homeScreen")?.dataset?.aoHomeOwner==="modular-home-v2" &&
+    document.querySelector(".homeScreen")?.dataset?.aoHomePresentationOwner==="modular-home-presentation-v1" &&
     !document.getElementById("aoPray435930")?.classList?.contains("open"),
     null,{timeout:10000});
   const homeOwnership=await page.evaluate(()=>({
