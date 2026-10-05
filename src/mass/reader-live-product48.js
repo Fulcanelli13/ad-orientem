@@ -103,6 +103,11 @@ function splitCard(card,config){
       sourceSectionId:sourceId,
       paragraphs,
       blocks,
+      // Split presentation cards never claim canonical event ownership. Event
+      // identity remains on sourceAuthorityModel; the parent macro scope is
+      // retained only as provenance for diagnostics.
+      sourceEventIds:Object.freeze([...(card.eventIds??[])]),
+      eventIds:Object.freeze([]),
       productPresentation48:true,
       historicalV183CardId:null,
       historicalV183IdentityClaim:false,
@@ -179,6 +184,11 @@ export function projectSourceFirst48Presentation(model){
     cardBySequence,
     previousCard:sectionId=>neighbor(sectionId,"previous"),
     nextCard:sectionId=>neighbor(sectionId,"next"),
+    // Canonical event routing intentionally stays on the 39-step source model.
+    // A split presentation card cannot infer exact event ownership from a lost
+    // historical C01-C48 map, so do not leak the source model's cardForEvent
+    // function as though it returned presentation cards.
+    cardForEvent:undefined,
     sourceAuthorityModel:model,
   });
 }
