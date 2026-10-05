@@ -5,8 +5,8 @@ const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.15.0");
-assert.equal(app.status,"FIELD_STABILIZATION_REQUIRED");
+assert.equal(app.version,"1.16.0");
+assert.equal(app.status,"PRODUCT_PARITY_RECOVERY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
 assert.equal(reader.status,"FINAL_NATIVE_READY","Mass subsystem lost FINAL_NATIVE_READY");
@@ -29,10 +29,13 @@ for(const finding of findings){
 
 const open=findings.filter(x=>x.status==="OPEN").map(x=>x.id);
 assert.deepEqual(app.openBlockers,open,"app openBlockers must exactly match OPEN findings");
-assert.deepEqual(app.openBlockers,["FIELD_RUNTIME_STABILIZATION"],"field stabilization blocker must remain explicit until real-data acceptance passes");
+assert.deepEqual(app.openBlockers,["PRODUCT_PRESENTATION_PARITY"],"product parity blocker must remain explicit until approved reference parity is certified");
 const fieldRuntime=findings.find(x=>x.id==="FIELD_RUNTIME_STABILIZATION");
-assert.equal(fieldRuntime?.classification,"CRASH");
-assert.equal(fieldRuntime?.status,"OPEN");
+assert.equal(fieldRuntime?.classification,"PASS");
+assert.equal(fieldRuntime?.status,"CLOSED");
+const productParity=findings.find(x=>x.id==="PRODUCT_PRESENTATION_PARITY");
+assert.equal(productParity?.classification,"REGRESSION");
+assert.equal(productParity?.status,"OPEN");
 assert.equal(findings.find(x=>x.id==="MASS_SUBSYSTEM_CERTIFIED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="SPECIAL_STRUCTURES_REAL_SHELL")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="ARIA_FOCUS_GUARD")?.classification,"PASS");
@@ -81,4 +84,4 @@ assert.ok(app.regressionGates?.phone?.includes("tests/settings-e2e.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
 
-console.log("PASS app release gate: FIELD_STABILIZATION_REQUIRED with certified R17 and explicit field-runtime blocker.");
+console.log("PASS app release gate: PRODUCT_PARITY_RECOVERY_REQUIRED with field runtime closed and presentation parity explicit.");
