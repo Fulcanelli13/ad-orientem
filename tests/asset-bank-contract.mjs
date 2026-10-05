@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -88,6 +89,9 @@ for(const [readerKey,url] of Object.entries(R17_FROZEN_ACTIVE_ICON_ASSETS)){
   assert.ok(record,"R17 "+readerKey+" does not resolve to a canonical V4 asset id: "+assetId);
   assert.equal(record.status,"FROZEN_ACTIVE");
   assert.ok(resolveCanonicalAssetUrl(assetId),"canonical URL missing for "+assetId);
+  const bytes=fs.readFileSync(fileURLToPath(url));
+  const sha256=createHash("sha256").update(bytes).digest("hex");
+  assert.equal(sha256,record.sha256,"R17 compatibility asset drifted from frozen V4 bytes: "+assetId);
 }
 
-console.log("asset bank contract: PASS — V4 core 109 + 8 hardened extensions; R17 subset resolves to canonical identities.");
+console.log("asset bank contract: PASS — V4 core 109 + 8 hardened extensions; all 20 R17 assets are byte-exact frozen V4 binaries.");
