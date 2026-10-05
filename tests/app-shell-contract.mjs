@@ -11,6 +11,8 @@ assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "se
 assert.equal(APP_SURFACES.includes("sources"), false);
 assert.equal(NON_MASS_DONOR_CONTRACT.release, "43.59.30");
 assert.equal(NON_MASS_DONOR_CONTRACT.prayerOwner, "AO_PRAY_V435930");
+assert.equal(NON_MASS_DONOR_CONTRACT.settingsOwner, "AO_SETTINGS_APP_V1");
+assert.equal(NON_MASS_DONOR_CONTRACT.settingsDonorOwner, "AO_SETTINGS_V4359");
 
 function host({ route = "home", confirm = true } = {}) {
   const calls = [];
@@ -142,10 +144,11 @@ function host({ route = "home", confirm = true } = {}) {
       open: async () => { calls.push("pray:open"); return true; },
       close: () => { calls.push("pray:close"); return true; },
     },
-    AO_SETTINGS_V4359: {
-      get state() { return { navigation: { open } }; },
-      open() { open = true; calls.push("settings:open"); },
-      dismiss() { open = false; calls.push("settings:dismiss"); },
+    AO_SETTINGS_APP_V1: {
+      status() { return { installed: true, open }; },
+      open() { open = true; calls.push("settings:open"); return true; },
+      dismiss() { open = false; calls.push("settings:dismiss"); return true; },
+      restoreHome() { open = false; calls.push("settings:home"); return true; },
     },
     confirm: () => true,
     setTimeout: (fn) => { fn(); return 1; },
@@ -157,6 +160,18 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal(adapter.openSettings(), true);
   assert.equal(adapter.dismissSettings(), true);
   assert.deepEqual(calls, ["pray:close", "home", "pray:open", "module:today.calendar", "settings:open", "settings:dismiss"]);
+}
+
+{
+  const calls=[];
+  const win={
+    AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en"}),subscribe:()=>()=>{}}},
+    AO_V37_SHELL:{openModule:id=>{calls.push("legacy:"+id);return {ok:true};}},
+  };
+  Object.defineProperty(win,"AO_SETTINGS_V4359",{get(){throw new Error("historical Settings donor was probed");}});
+  const adapter=createAppHostAdapter(win);
+  assert.equal(adapter.openSettings(),false,"Settings did not fail closed when modular owner was unavailable");
+  assert.deepEqual(calls,[],"utility.settings fallback reopened historical Settings");
 }
 
 {
