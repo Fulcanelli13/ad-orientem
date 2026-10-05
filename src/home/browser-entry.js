@@ -6,6 +6,7 @@ function runtime(win){return win?.AO_RUNTIME_V8??null;}
 function state(win){return runtime(win)?.store?.getState?.()??null;}
 
 function closeTransientSurfaces(win){
+  try{win?.AO_LEARN_APP_V1?.close?.();}catch{}
   try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"home"});}catch{}
   try{win?.AO_INLINE_CUES_V251?.closeGuide?.();}catch{}
   try{win?.AO_RULE_V411?.closeSheet?.();}catch{}

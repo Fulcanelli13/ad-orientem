@@ -54,6 +54,7 @@ export function createAppHostAdapter(win = globalThis) {
     hardHome() {
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
+      try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
       try { win?.AO_PRAY_APP_V1?.close?.(); } catch {}
       try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       const modular = win?.AO_HOME_APP_V1;
@@ -83,6 +84,13 @@ export function createAppHostAdapter(win = globalThis) {
         // obsolete PrayerBook surface if that owner cannot open.
         return Promise.resolve(modular.open()).then((opened) => opened !== false);
       }
+      if (domain === "learn") {
+        const modular = win?.AO_LEARN_APP_V1;
+        if (typeof modular?.open !== "function") return false;
+        // Learn is fail-closed once extracted: the historical V37 domain shell
+        // is donor evidence, not a production fallback.
+        return Promise.resolve(modular.open()).then((opened) => opened !== false);
+      }
       const api = shell();
       if (typeof api?.openDomain !== "function") return false;
       return api.openDomain(domain) !== false;
@@ -105,6 +113,9 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     openSettings() {
+      // Settings may remain overlay-owned while its own extraction is pending,
+      // but it must not leave the modular Learn surface active underneath.
+      try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
       const api = settingsApi(win);
       if (typeof api?.open === "function") {
         api.open();
