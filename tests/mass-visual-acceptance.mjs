@@ -289,15 +289,20 @@ try{
     assert.ok(section?.sectionId,"source-first display model has no section for "+cueId);
     const cue=page.locator(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${cueId}']`);
     assert.equal(await cue.count(),1,cueId+" is not exposed exactly once in the current source-first section");
-    await cue.evaluate(el=>{
-      const card=el.closest(".ao-prayer-card");
-      const cr=card.getBoundingClientRect(),er=el.getBoundingClientRect();
-      const top=er.top-cr.top+card.scrollTop;
-      const bottom=er.bottom-cr.top+card.scrollTop;
-      card.scrollTop=Math.max(0,(top+bottom)/2-card.clientHeight*.39);
-      card.dispatchEvent(new Event("scroll"));
-    });
-    await page.waitForTimeout(120);
+    for(let attempt=0;attempt<5;attempt++){
+      await cue.evaluate(el=>{
+        const card=el.closest(".ao-prayer-card");
+        const cr=card.getBoundingClientRect(),er=el.getBoundingClientRect();
+        const top=er.top-cr.top+card.scrollTop;
+        const bottom=er.bottom-cr.top+card.scrollTop;
+        const max=Math.max(0,card.scrollHeight-card.clientHeight);
+        card.scrollTop=Math.min(max,Math.max(0,(top+bottom)/2-card.clientHeight*.39));
+        card.dispatchEvent(new Event("scroll"));
+      });
+      await page.waitForTimeout(100);
+      const active=await page.evaluate(()=>document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null);
+      if(active===cueId)break;
+    }
     const focusDebug=await page.evaluate((id)=>{
       const root=document.getElementById("ao-r17-native-reader-preview");
       const el=document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`);
