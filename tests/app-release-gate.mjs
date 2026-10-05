@@ -49,7 +49,6 @@ assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
 assert.equal(exactDonor.status,"OPEN");
 assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
 assert.deepEqual(exactDonor.openBlockers,[
-  "GENERIC_ROUTE_TRANSITIONS_SUBSTITUTED_FOR_DONOR_CHOREOGRAPHY",
   "ASYNC_LOADING_SEMANTICS_FLATTENED",
   "SEMANTIC_RAILS_SIMPLIFIED",
   "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",

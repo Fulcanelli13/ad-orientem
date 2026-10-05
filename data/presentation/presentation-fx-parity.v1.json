@@ -1,6 +1,6 @@
 {
   "schema": "ao-presentation-fx-parity-v1",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "status": "CERTIFIED",
   "releaseBlocker": null,
   "rule": "This ledger certifies modular availability of cinematic/rail/hero/art-loading mechanisms only. It does not certify exact reproduction of the approved non-Mass donor presentation; exact donor fidelity is governed by data/presentation/exact-donor-parity.v1.json and may block FINAL_APP_READY independently.",
@@ -23,27 +23,22 @@
       "note": "Cold-load boot/transition/loader markup and the observer-free v43.12 presentation owner remain embedded in index.html. Their behavior is release-certified; physical externalization is optional hygiene and not a product-parity blocker."
     },
     "modularRouteTransitions": {
-      "status": "CERTIFIED_V1",
+      "status": "RETIRED_NON_DONOR_GENERIC_BRIDGE",
       "evidence": [
         "src/app/presentation-fx.js",
-        "src/app/browser-entry.js",
         "tests/presentation-fx.mjs",
-        "PR #176",
-        "Visual acceptance workflow 37329503745",
-        "App convergence workflow 37329503729",
-        "R17 Mass convergence workflow 37329503822"
+        "tests/app-visual-acceptance.mjs"
       ],
-      "note": "The modular six-surface shell calls the approved v43.12 transition owner on actual ribbon navigation. PR #176 passed visual, app and R17 convergence."
+      "note": "The V1 generic six-surface full-screen route transition was not donor-faithful and has been retired. AO_CINEMATIC_V4312 remains available only through explicit semantic metadata and existing donor-owned semantic callers."
     },
     "modularAsyncLoader": {
-      "status": "CERTIFIED_V1",
+      "status": "GENERIC_ROUTE_LOADER_RETIRED__DONOR_WORKLOAD_RECOVERY_PENDING",
       "evidence": [
         "src/app/presentation-fx.js",
-        "#ao-cinema-loader",
-        "PR #176",
-        "Visual acceptance workflow 37329503745"
+        "tests/presentation-fx.mjs",
+        "data/presentation/exact-donor-parity.v1.json"
       ],
-      "note": "Slow modular surface navigation reuses the v43.12 delayed loader and suppresses it under reduced motion."
+      "note": "The generic Opening/Preparing <surface> loader was not donor-faithful and has been removed. Exact workload-specific donor loaders are tracked by EXACT_NON_MASS_DONOR_PARITY."
     },
     "modularSurfaceEntry": {
       "status": "CERTIFIED_V1",

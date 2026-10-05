@@ -171,14 +171,14 @@ try{
   assert.equal(homeParity.brand,"AD ORIENTEM");
   assert.ok(homeParity.celebration.length>0,"Home liturgical-day identity is blank");
   assert.ok(homeParity.gospel.length>0,"Home Gospel context is blank");
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.version==="modular-presentation-fx-v2",null,{timeout:5000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.version==="modular-presentation-fx-v3",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero,null,{timeout:5000});
   const homeFx=await page.evaluate(()=>({
     hero:document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.querySelector(".homeScreen")?.dataset?.aoPresentationFxArtScan??null,
     width:document.querySelector(".homeScreen .celebrationBlock")?.getBoundingClientRect?.().width??0,
   }));
-  assert.match(homeFx.hero,/modular-presentation-fx-v2/,"Home celebration hero did not receive recovered entry choreography");
+  assert.match(homeFx.hero,/modular-presentation-fx-v3/,"Home celebration hero did not receive recovered entry choreography");
   assert.equal(homeFx.rootScan,"legacy-v4312","Home modular root bypassed the approved v43.12 art loader");
   assert.ok(homeFx.width>=350,"Home hero choreography changed phone geometry");
   await shot("01-home");
@@ -203,8 +203,13 @@ try{
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
   await page.locator("[data-ao-app-surface='calendar']").click();
-  await page.waitForSelector("#ao-cinema-transition.aoCinemaTransitionOn",{state:"visible",timeout:2000});
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
+  const genericCalendarTransition=await page.evaluate(()=>{
+    const el=document.getElementById("ao-cinema-transition");
+    const title=el?.querySelector?.("[data-ao-cinema-transition-title]")?.textContent?.trim()??"";
+    return {on:Boolean(el?.classList?.contains("aoCinemaTransitionOn")),title};
+  });
+  assert.notEqual(genericCalendarTransition.title,"Calendar","Calendar ribbon navigation regressed to the fabricated generic destination cinematic");
   await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFx==="entered",null,{timeout:3000});
   await waitForFxSettled();
   await assertHomeHidden("Calendar");
@@ -226,7 +231,7 @@ try{
     hero:document.querySelector("#ao-calendar-modular-root .aoCalSacredTime")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFxArtScan??null,
   }));
-  assert.match(calendarFx.hero,/modular-presentation-fx-v2/,"Calendar Sacred Time hero did not receive recovered entry choreography");
+  assert.match(calendarFx.hero,/modular-presentation-fx-v3/,"Calendar Sacred Time hero did not receive recovered entry choreography");
   assert.equal(calendarFx.rootScan,"legacy-v4312","Calendar modular root bypassed the approved v43.12 art loader");
   await shot("02-calendar");
 
@@ -249,7 +254,7 @@ try{
     hero:document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.getElementById("aoPray435930")?.dataset?.aoPresentationFxArtScan??null,
   }));
-  assert.match(prayFx.hero,/modular-presentation-fx-v2/,"PRAY home hero did not receive recovered entry choreography");
+  assert.match(prayFx.hero,/modular-presentation-fx-v3/,"PRAY home hero did not receive recovered entry choreography");
   assert.equal(prayFx.rootScan,"legacy-v4312","PRAY modular root bypassed the approved v43.12 art loader");
   await shot("03-pray");
 
@@ -443,7 +448,7 @@ try{
     hero:document.querySelector("#ao-learn-modular-root .aoLearnModHero")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.getElementById("ao-learn-modular-root")?.dataset?.aoPresentationFxArtScan??null,
   }));
-  assert.match(learnFx.hero,/modular-presentation-fx-v2/,"Learn formation hero did not receive recovered entry choreography");
+  assert.match(learnFx.hero,/modular-presentation-fx-v3/,"Learn formation hero did not receive recovered entry choreography");
   assert.equal(learnFx.rootScan,"legacy-v4312","Learn modular root bypassed the approved v43.12 art loader");
   await shot("04-learn");
 
