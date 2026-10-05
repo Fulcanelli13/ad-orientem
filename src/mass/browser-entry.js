@@ -140,6 +140,15 @@ function writePersistedActiveMass(record, storage = globalThis.localStorage) {
   }
 }
 
+export function clearPersistedActiveMass(storage = globalThis.localStorage) {
+  try {
+    storageApi(storage)?.removeItem?.(ACTIVE_MASS_STORAGE_KEY);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function preparedFromRecord(record) {
   return Object.freeze({
     schema: record.schema,
@@ -363,7 +372,26 @@ export async function resumePersistedMass({
     return Object.freeze({ ok: true, retained: true, record });
   }
   const prepared = preparedFromRecord(record);
-  await openProductionReader(prepared, { resumeRecord: record });
+  try {
+    await openProductionReader(prepared, { resumeRecord: record });
+  } catch (error) {
+    clearPersistedActiveMass(storage);
+    try { globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.(); } catch {}
+    try { globalThis.AO_R17_NATIVE_READER_PREVIEW?.destroy?.(); } catch {}
+    try { delete globalThis.AO_R17_ACTIVE_MASS; } catch {}
+    try { delete globalThis.AO_R17_MASS_RUNTIME; } catch {}
+    if (globalThis.document?.documentElement?.dataset) {
+      delete globalThis.document.documentElement.dataset.aoMassReaderUi;
+      globalThis.document.documentElement.dataset.aoMassEngine = "r17-resume-invalidated";
+    }
+    console.error("Stored R17 Mass could not be resumed; checkpoint invalidated", error);
+    return Object.freeze({
+      ok: false,
+      reason: "STALE_OR_INCOMPLETE_RESUME",
+      invalidated: true,
+      error: String(error?.message ?? error),
+    });
+  }
   return Object.freeze({
     ok: true,
     resumed: true,
