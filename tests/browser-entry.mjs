@@ -18,11 +18,15 @@ assert.equal(mapLegacyFollowMode("simple"), "SIMPLE");
 assert.equal(mapLegacyFollowMode("vox"), "LIVE");
 assert.equal(mapLegacyFollowMode(undefined), "LIVE");
 
-const bridgedIcons={stand:"data:image/svg+xml;base64,PHN2Zy8+"};
-assert.equal(resolveHostIconAssets({AO_R17_ICON_ASSETS:bridgedIcons}),bridgedIcons,
-  "explicit modular icon bank stopped taking precedence");
-
-const productionIcons=resolveHostIconAssets({});
+const staleHostIcons={
+  stand:"data:image/svg+xml;base64,PHN2Zy8+",
+  cross:"data:image/svg+xml;base64,PHN2Zy8+",
+  gospel_crosses:"data:image/svg+xml;base64,PHN2Zy8+",
+  priest_sedilia:"data:image/svg+xml;base64,PHN2Zy8+",
+};
+const productionIcons=resolveHostIconAssets({AO_R17_ICON_ASSETS:staleHostIcons});
+assert.notEqual(productionIcons,staleHostIcons,
+  "stale host icon bank regained authority over the frozen modular bank");
 const productionAudit=auditHostIconBank(productionIcons);
 assert.equal(productionAudit.complete,true,"externalized frozen active icon bank is incomplete");
 assert.deepEqual(productionAudit.missing,[]);
@@ -117,6 +121,19 @@ console.log("browser-entry host mapping: PASS");
 
 const iconKeys=[...R17_FROZEN_ACTIVE_ICON_KEYS];
 const iconAssets=Object.fromEntries(iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"]));
+
+const previousHostIcons=globalThis.AO_R17_ICON_ASSETS;
+globalThis.AO_R17_ICON_ASSETS={};
+const bundledChoice=await mountR17Preview({
+  doc:{},
+  prepared:{},
+  nativeMount:({iconResolver})=>({kind:"bundled",stand:iconResolver("stand")}),
+});
+assert.equal(bundledChoice.preview.kind,"bundled");
+assert.match(bundledChoice.preview.stand,/assets\/active\/live-posture\/ao-live-stand\.svg$/,
+  "native reader failed to mount from the bundled frozen bank without host injection");
+if(previousHostIcons===undefined)delete globalThis.AO_R17_ICON_ASSETS;
+else globalThis.AO_R17_ICON_ASSETS=previousHostIcons;
 
 const nativeChoice=await mountR17Preview({
   doc:{},
