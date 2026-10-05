@@ -1,18 +1,32 @@
 import { normalizePresentationMode } from "./session-engine.js";
 
 const SHELL_STYLE = `
-.ao-reader-shell{--ao-bg:#080c12;--ao-panel:#0d1218;--ao-line:rgba(189,161,108,.20);--ao-muted:#9a948c;--ao-text:#eee8de;--ao-accent:#bda16c;box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;height:100%;min-height:0;background:var(--ao-bg);color:var(--ao-text);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
+.ao-reader-shell{--ao-bg:#080c12;--ao-panel:#0d1218;--ao-line:rgba(189,161,108,.20);--ao-muted:#9a948c;--ao-text:#eee8de;--ao-accent:#bda16c;box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;height:100%;min-height:0;background:var(--ao-bg);color:var(--ao-text);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
 .ao-reader-shell *{box-sizing:border-box}
-.ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--ao-line);background:#0a0f15}
+.ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);padding-right:50px;border-bottom:1px solid var(--ao-line);background:#0a0f15}
 .ao-mode-ribbon button{appearance:none;border:0;border-right:1px solid rgba(189,161,108,.10);background:transparent;color:var(--ao-muted);min-height:44px;padding:.62rem .4rem;font:600 .72rem/1.1 system-ui,sans-serif;letter-spacing:.11em}
 .ao-mode-ribbon button[aria-pressed="true"]{color:var(--ao-text);background:rgba(189,161,108,.07);box-shadow:inset 0 -2px 0 var(--ao-accent)}
-.ao-state-ribbon{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) 54px;min-height:46px;border-bottom:1px solid var(--ao-line);background:#0b1016}
+.ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button{cursor:default}
+.ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button:not([aria-pressed="true"]){opacity:.34}
+.ao-state-ribbon{display:grid;grid-template-columns:86px minmax(0,1fr) 86px 48px;min-height:50px;border-bottom:1px solid var(--ao-line);background:#0b1016}
+.ao-state-cell[data-side]{flex-direction:column;justify-content:center;gap:.16rem;padding:.28rem .35rem;text-align:center}
+.ao-state-cell[data-side="faithful"]{border-right:1px solid rgba(189,161,108,.10)}
+.ao-state-cell[data-side="priest"]{border-left:1px solid rgba(189,161,108,.10)}
+.ao-state-cell[data-side] .ao-state-label{font-size:.55rem;line-height:1.08;white-space:normal;text-transform:uppercase;letter-spacing:.035em}
+.ao-state-center{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.3rem .48rem;text-align:center}
+.ao-state-center [data-role="section-title"]{max-width:100%;font:600 .72rem/1.1 system-ui,sans-serif;color:#e8e1d8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ao-guide-short{display:block;max-width:100%;margin-top:.16rem;font:500 .54rem/1.08 system-ui,sans-serif;color:var(--ao-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ao-guide-short[hidden]{display:none}
 .ao-state-cell{min-width:0;display:flex;align-items:center;gap:.45rem;padding:.38rem .55rem;border-right:1px solid rgba(189,161,108,.10)}
 .ao-state-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:600 .68rem/1.2 system-ui,sans-serif;color:#d8d0c6}
 .ao-state-guide{appearance:none;border:0;background:transparent;color:var(--ao-accent);font:700 .67rem/1 system-ui,sans-serif;letter-spacing:.04em}
 .ao-state-guide:disabled{opacity:.34}
 .ao-icon-mask{width:22px;height:22px;flex:0 0 22px;background:currentColor;mask-repeat:no-repeat;mask-position:center;mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;-webkit-mask-size:contain}
-.ao-reader-stage{min-height:0;display:grid;grid-template-columns:58px minmax(0,1fr) 58px}
+.ao-reader-stage{min-height:0;display:grid;grid-template-columns:minmax(0,1fr)}
+.ao-reader-stage[data-left-rail="true"][data-right-rail="false"]{grid-template-columns:58px minmax(0,1fr)}
+.ao-reader-stage[data-left-rail="false"][data-right-rail="true"]{grid-template-columns:minmax(0,1fr) 58px}
+.ao-reader-stage[data-left-rail="true"][data-right-rail="true"]{grid-template-columns:58px minmax(0,1fr) 58px}
+.ao-rail[data-visible="false"]{display:none}
 .ao-rail{min-height:0;display:flex;flex-direction:column;gap:.35rem;padding:.5rem .3rem;background:#090e14}
 .ao-rail-left{border-right:1px solid var(--ao-line)}
 .ao-rail-right{border-left:1px solid var(--ao-line)}
@@ -22,14 +36,26 @@ const SHELL_STYLE = `
 .ao-card-viewport{min-width:0;min-height:0;padding:.58rem;background:linear-gradient(180deg,#090e14,#080c12)}
 .ao-prayer-card{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:clamp(.9rem,3vw,1.35rem);border:1px solid var(--ao-line);border-radius:14px;background:linear-gradient(180deg,#10161d,#0d1218);box-shadow:0 12px 34px rgba(0,0,0,.22)}
 .ao-prayer-title{margin:0 0 .85rem;font-size:clamp(1.14rem,4.3vw,1.55rem);line-height:1.08;font-weight:600;letter-spacing:.01em;color:#f4eee4}
+.ao-prayer-title[hidden]{display:none}
 .ao-prayer-body{display:flex;flex-direction:column;gap:.82rem;padding-bottom:42vh}
 .ao-reader-paragraph{margin:0;font-size:clamp(1.02rem,3.7vw,1.28rem);line-height:1.52;color:#e8e1d8}
 .ao-reader-paragraph[data-active="true"]{color:#fffaf1}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:.2;transition:opacity .22s ease,color .22s ease}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph,
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.58}
+.ao-reader-paragraph[data-kind="RUBRIC"]{margin:.15rem 0;padding:.55rem .65rem;border-left:1px solid rgba(189,161,108,.45);font:italic 500 .76rem/1.42 system-ui,sans-serif;color:#9f988f}
+.ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{margin:.25rem 0;padding:.72rem .25rem;text-align:center;font-size:clamp(1.28rem,4.8vw,1.62rem);line-height:1.34;letter-spacing:.035em;color:#fff8eb}
+.ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:.45rem;font-size:.62em;color:#aaa39a}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:.72rem;border-left:2px solid var(--ao-accent)}
 .ao-reader-paragraph[data-translate-toggle="true"]{cursor:pointer}
 .ao-reader-paragraph[data-translate-toggle="true"]:focus-visible{outline:1px solid var(--ao-accent);outline-offset:4px;border-radius:4px}
 .ao-line-primary{display:block}
 .ao-line-secondary{display:block;margin-top:.2rem;font:400 .78em/1.35 system-ui,sans-serif;color:#aaa39a}
+.ao-schola-dock{min-height:48px;display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:.5rem;padding:.42rem .72rem;border-top:1px solid var(--ao-line);background:#0b1117;color:#ddd6cb}
+.ao-schola-dock[data-active="false"]{display:none}
+.ao-schola-dock .ao-schola-kicker{font:700 .56rem/1 system-ui,sans-serif;letter-spacing:.11em;color:var(--ao-accent)}
+.ao-schola-dock [data-role="schola"]{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:500 .72rem/1.2 Georgia,"Times New Roman",serif}
 .ao-reader-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:46px;border-top:1px solid var(--ao-line);background:#0a0f15}
 .ao-reader-nav button{appearance:none;border:0;background:transparent;color:#d8d0c6;min-height:46px;padding:.72rem .8rem;font:600 .72rem/1 system-ui,sans-serif}
 .ao-reader-nav button:last-child{text-align:right}
@@ -42,7 +68,7 @@ const SHELL_STYLE = `
 .ao-cinematic-sub{font:600 .66rem/1.3 system-ui,sans-serif;letter-spacing:.08em;color:var(--ao-muted)}
 .ao-guide-popover{position:absolute;inset:auto 10px 56px 10px;z-index:3;max-height:42%;overflow:auto;padding:.8rem 1rem;border:1px solid var(--ao-line);border-radius:12px;background:#111820;box-shadow:0 14px 34px rgba(0,0,0,.45);font:500 .82rem/1.42 system-ui,sans-serif;color:#ddd6cd}
 .ao-guide-popover[hidden]{display:none}
-@media (min-width:700px){.ao-reader-stage{grid-template-columns:76px minmax(0,1fr) 76px}.ao-card-viewport{padding:.8rem}.ao-rail-copy{font-size:.62rem}}
+@media (min-width:700px){.ao-reader-stage[data-left-rail="true"][data-right-rail="false"]{grid-template-columns:76px minmax(0,1fr)}.ao-reader-stage[data-left-rail="false"][data-right-rail="true"]{grid-template-columns:minmax(0,1fr) 76px}.ao-reader-stage[data-left-rail="true"][data-right-rail="true"]{grid-template-columns:76px minmax(0,1fr) 76px}.ao-card-viewport{padding:.8rem}.ao-rail-copy{font-size:.62rem}}
 `;
 
 function esc(value){
@@ -62,15 +88,26 @@ function persist(next, previous){
 
 export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
+  const momentTitle=String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "");
+  const latinProminent=/Consecration of (?:the )?(?:Sacred )?(?:Host|Chalice)/i.test(momentTitle);
   const paragraphs = Array.isArray(moment.paragraphs) ? moment.paragraphs.map((p, index) => {
     if (typeof p === "string") return Object.freeze({id:String(index),kind:"TEXT",primary:p,secondary:null,alternate:null,replaceOnToggle:false,active:false});
+    let kind=String(p.kind ?? (p.response ? "RESPONSE" : "TEXT")).toUpperCase();
+    let primary=String(p.primary ?? p.text ?? "");
+    let secondary=p.secondary == null ? null : String(p.secondary);
+    let alternate=p.alternate == null ? null : String(p.alternate);
+    let replaceOnToggle=p.replaceOnToggle === true && p.alternate != null;
+    const rubric=/^\s*\[[\s\S]+\]\s*$/.test(primary);
+    if(rubric)kind="RUBRIC";
+    if(latinProminent && alternate && kind!=="RUBRIC"){
+      secondary=primary;
+      primary=alternate;
+      alternate=null;
+      replaceOnToggle=false;
+    }
+    if(latinProminent && /\b(?:Hoc est enim Corpus meum|Hic est enim Calix)\b/i.test(primary))kind="CONSECRATION_WORDS";
     return Object.freeze({
-      id:String(p.id ?? index),
-      kind:String(p.kind ?? (p.response ? "RESPONSE" : "TEXT")).toUpperCase(),
-      primary:String(p.primary ?? p.text ?? ""),
-      secondary:p.secondary == null ? null : String(p.secondary),
-      alternate:p.alternate == null ? null : String(p.alternate),
-      replaceOnToggle:p.replaceOnToggle === true && p.alternate != null,
+      id:String(p.id ?? index),kind,primary,secondary,alternate,replaceOnToggle,
       active:p.active === true,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
     });
@@ -117,13 +154,13 @@ export function buildReaderShellMarkup(prepared = {}) {
     ${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}">${m}</button>`).join("")}
   </nav>
   <div class="ao-state-ribbon">
-    <div class="ao-state-cell"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-state-label" data-role="priest-position">PRIEST POSITION</span></div>
-    <div class="ao-state-cell"><span class="ao-state-label" data-role="section-title">${section}</span></div>
+    <div class="ao-state-cell" data-side="faithful" data-channel="posture"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-state-label" data-role="posture">—</span></div>
+    <div class="ao-state-center"><span data-role="section-title">${section}</span><span class="ao-guide-short" data-role="guide-short" hidden></span></div>
+    <div class="ao-state-cell" data-side="priest"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-state-label" data-role="priest-position">—</span></div>
     <button class="ao-state-guide" type="button" data-role="guide-button" disabled>GUIDE</button>
   </div>
-  <div class="ao-reader-stage">
-    <aside class="ao-rail ao-rail-left" aria-label="Faithful">
-      <div class="ao-rail-item" data-channel="posture"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" data-role="posture">—</span></div>
+  <div class="ao-reader-stage" data-left-rail="false" data-right-rail="false">
+    <aside class="ao-rail ao-rail-left" data-visible="false" aria-label="Faithful cues">
       <div class="ao-rail-item" data-channel="gesture"><span class="ao-icon-mask" data-icon-slot="gesture" hidden></span><span class="ao-rail-copy" data-role="gesture">—</span></div>
       <div class="ao-rail-item" data-channel="response"><span class="ao-icon-mask" data-icon-slot="response" hidden></span><span class="ao-rail-copy" data-role="response">—</span></div>
     </aside>
@@ -133,12 +170,12 @@ export function buildReaderShellMarkup(prepared = {}) {
         <div class="ao-prayer-body" data-role="paragraphs"></div>
       </article>
     </main>
-    <aside class="ao-rail ao-rail-right" aria-label="Audio">
+    <aside class="ao-rail ao-rail-right" data-visible="false" aria-label="Priest and bells">
       <div class="ao-rail-item" data-channel="priest-voice"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="bell"><span class="ao-rail-copy" data-role="bell">—</span></div>
-      <div class="ao-rail-item" data-channel="schola"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-rail-copy" data-role="schola">—</span></div>
     </aside>
   </div>
+  <div class="ao-schola-dock" data-channel="schola" data-active="false"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span data-role="schola">—</span></div>
   <div class="ao-cinematic" data-role="cinematic" aria-live="polite" hidden>
     <div class="ao-cinematic-inner"><div class="ao-cinematic-mark">✠</div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
   </div>
@@ -159,6 +196,19 @@ function setText(root, role, value){
 function setChannel(root, channel, value){
   const item=root.querySelector(`[data-channel="${channel}"]`);
   if(item) item.dataset.active = String(Boolean(textValue(value)));
+}
+
+function syncRailVisibility(root){
+  const stage=root.querySelector(".ao-reader-stage");
+  if(!stage)return;
+  const left=root.querySelector(".ao-rail-left");
+  const right=root.querySelector(".ao-rail-right");
+  const leftActive=Boolean(left?.querySelector('[data-active="true"]'));
+  const rightActive=Boolean(right?.querySelector('[data-active="true"]'));
+  if(left)left.dataset.visible=String(leftActive);
+  if(right)right.dataset.visible=String(rightActive);
+  stage.dataset.leftRail=String(leftActive);
+  stage.dataset.rightRail=String(rightActive);
 }
 
 function applyIcon(root, slot, key, iconResolver){
@@ -238,6 +288,8 @@ export function createReaderDomAdapter({
     prepared=nextPrepared;
     mode=normalizePresentationMode(prepared.readerPreferences?.mode ?? prepared.session.resolvedMass.presentationMode);
     root.innerHTML=buildReaderShellMarkup(prepared);
+    const shell=root.querySelector("[data-ao-reader-shell]");
+    if(shell)shell.dataset.modeSwitchLocked=String(!allowPresentationModeSwitch);
     if(!allowPresentationModeSwitch){
       for(const button of root.querySelectorAll?.("[data-reader-mode]") ?? []){
         button.disabled=true;
@@ -262,6 +314,13 @@ export function createReaderDomAdapter({
     setText(root,"bell",current.bell ? [textValue(current.bell),current.bell.detail].filter(Boolean).join(" · ") : null);
     setText(root,"priest-voice",textValue(current.priestVoice));
     setText(root,"schola",current.scholaVisible ? textValue(current.schola) : null);
+    const titleNode=root.querySelector('[data-role="card-title"]');
+    if(titleNode)titleNode.hidden=Boolean(current.cardTitle && current.cardTitle===current.sectionTitle);
+    const guideShort=root.querySelector('[data-role="guide-short"]');
+    if(guideShort){
+      guideShort.hidden=!current.guide?.text;
+      guideShort.textContent=current.guide?.text??"";
+    }
 
     setChannel(root,"posture",current.posture);
     setChannel(root,"gesture",current.gesture);
@@ -269,6 +328,7 @@ export function createReaderDomAdapter({
     setChannel(root,"bell",current.bell);
     setChannel(root,"priest-voice",current.priestVoice);
     setChannel(root,"schola",current.scholaVisible ? current.schola : null);
+    syncRailVisibility(root);
 
     applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);

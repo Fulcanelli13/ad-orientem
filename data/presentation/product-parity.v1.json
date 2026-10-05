@@ -17,7 +17,7 @@
       ]
     },
     "mass": {
-      "status": "AUDITED_REGRESSIONS_CONFIRMED",
+      "status": "PARTIAL_PARITY_CERTIFIED",
       "currentOwner": "src/mass",
       "reference": "R17_NATIVE_PLUS_APPROVED_LIVE_PRESENTATION",
       "mustPreserve": [
@@ -44,6 +44,46 @@
         "reader presentation lacks the approved fluid 35-40% focus-zone treatment",
         "mode controls are visually presented as selectable while production mode switching is locked",
         "production source-first display model currently contains 39 cards; this must be reconciled with the approved v1.83 card philosophy without replacing the source-first engine"
+      ],
+      "recoveryPass": "MASS_UI_V1",
+      "recoveryTargets": [
+        "collapse inactive cue rails without changing cue ownership",
+        "move Schola from narrow right rail to dedicated readable dock",
+        "make Host/Chalice Consecration Latin-prominent with vernacular subordinate",
+        "render action rubrics as rubrics rather than ordinary prayer prose",
+        "suppress duplicate card title when state ribbon already owns the same title",
+        "surface short Guide rubric while retaining deeper Guide popover",
+        "move faithful posture to the left state ribbon and priest position/action to the right",
+        "restore approximately 39 percent fluid focus-zone presentation",
+        "visually distinguish locked mode selector state"
+      ],
+      "certifiedPass": "MASS_UI_V1",
+      "certifiedEvidence": [
+        "Visual acceptance workflow 37289906495",
+        "R17 Mass convergence workflow 37289906541",
+        "App convergence workflow 37289906553",
+        "tests/mass-visual-acceptance.mjs",
+        "tests/reader-dom.mjs",
+        "tests/reader-cue-focus.mjs"
+      ],
+      "resolvedInPass1": [
+        "inactive cue gutters collapse",
+        "Schola has a dedicated readable dock",
+        "Host/Chalice Consecration is Latin-prominent with vernacular subordinate",
+        "action rubrics are visually distinct from prayer prose",
+        "duplicate in-card title is suppressed when ribbon title owns the same identity",
+        "short Guide rubric is visible with deeper Guide retained",
+        "faithful posture and priest position/action occupy opposite sides of state ribbon",
+        "fluid focus point is restored to approximately 39 percent",
+        "locked mode selector is visually differentiated"
+      ],
+      "remainingParityWork": [
+        "first ribbon still needs reconciliation with the approved Home/title/parameters architecture",
+        "production mode switching remains intentionally locked despite the earlier persistent-selector product intent",
+        "Schola dock is readable but not yet the approved resizable/hideable surface",
+        "elevation/bell cinematic needs direct phone visual certification at the exact action cue",
+        "broader gesture/posture salience needs screenshot acceptance beyond the opening and Host Consecration",
+        "39-step source-first LIVE presentation must be reconciled with the approved v1.83 48-card philosophy without reverting to a historical engine"
       ]
     },
     "pray": {

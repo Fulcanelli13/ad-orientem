@@ -27,7 +27,11 @@ for(const token of [
   'data-role="cinematic"',
   'data-reader-nav="previous"',
   'data-reader-nav="next"',
-  'data-icon-slot="priest-action"'
+  'data-icon-slot="priest-action"',
+  'class="ao-schola-dock"',
+  'data-side="faithful"',
+  'data-side="priest"',
+  'data-role="guide-short"'
 ]) expect(html.includes(token),"reader shell missing "+token);
 
 const first=normalizeReaderMoment({
@@ -82,6 +86,22 @@ const translated=normalizeReaderMoment({
 },third);
 expect(translated.paragraphs[0].alternate==="Credo","Latin alternate text was lost");
 expect(translated.paragraphs[0].replaceOnToggle===true,"replace-on-toggle flag was lost");
+
+const consecration=normalizeReaderMoment({
+  id:"CNS",
+  sectionTitle:"Consecration of the Sacred Host",
+  cardTitle:"Consecration of the Sacred Host",
+  paragraphs:[
+    {id:"c1",kind:"TEXT",primary:"Who, the day before he suffered",alternate:"Qui, prídie quam paterétur",replaceOnToggle:true},
+    {id:"c2",kind:"TEXT",primary:"FOR THIS IS MY BODY.",alternate:"Hoc est enim Corpus meum.",replaceOnToggle:true},
+    {id:"c3",kind:"TEXT",primary:"[Genuflects — elevates the Sacred Host — replaces It — genuflects]"},
+  ]
+},translated);
+expect(consecration.paragraphs[0].primary==="Qui, prídie quam paterétur","Consecration did not become Latin-prominent");
+expect(consecration.paragraphs[0].secondary==="Who, the day before he suffered","Consecration lost vernacular support under Latin");
+expect(consecration.paragraphs[0].replaceOnToggle===false,"Consecration still uses ordinary replace-on-toggle behavior");
+expect(consecration.paragraphs[1].kind==="CONSECRATION_WORDS","Words of Consecration lost salience semantic");
+expect(consecration.paragraphs[2].kind==="RUBRIC","Elevation action still renders as ordinary prayer prose");
 
 const fakeRoot={
   innerHTML:"",

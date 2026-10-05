@@ -758,7 +758,7 @@ try{
   assert.equal(setup.postureProfile,"TRADITIONAL_WALSH");
 
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
-  await page.waitForSelector("#ao-r17-native-reader-preview [data-role=\"card-title\"]",{timeout:30000});
+  await page.waitForSelector("#ao-r17-native-reader-preview [data-role=\"section-title\"]",{state:"visible",timeout:30000});
 
   const ownership=await page.evaluate(()=>({
     starts:globalThis.__AO_FINAL_LEGACY_STARTS,
@@ -767,7 +767,11 @@ try{
     massReaderUi:document.documentElement.dataset.aoMassReaderUi??null,
     bridge:document.documentElement.dataset.aoR17MassBridge??null,
     rootConnected:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
-    title:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.textContent?.trim()??"",
+    title:document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent?.trim()??"",
+    duplicateCardTitleVisible:(()=>{
+      const el=document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']");
+      return Boolean(el && !el.hidden && getComputedStyle(el).display!=="none");
+    })(),
     paragraphs:document.querySelectorAll("#ao-r17-native-reader-preview [data-role='paragraphs'] .ao-reader-paragraph").length,
     shellFocusGuard:globalThis.AO_R17_BROWSER_ENTRY?.status?.().shellFocusGuard??false,
     appShellBridge:globalThis.AO_R17_BROWSER_ENTRY?.status?.().appShellBridge??false,
@@ -798,7 +802,8 @@ try{
     ["home","mass","pray","learn","calendar","settings"],
     "actual index.html app-shell surface contract changed"
   );
-  assert.notEqual(ownership.title,"","real app shell mounted a blank native card title");
+  assert.notEqual(ownership.title,"","real app shell mounted a blank native section title");
+  assert.equal(ownership.duplicateCardTitleVisible,false,"real app shell regressed to duplicate visible reader titles");
   assert.ok(ownership.paragraphs>0,"real app shell mounted an empty native prayer card");
 
   const root=page.locator("#ao-r17-native-reader-preview");
