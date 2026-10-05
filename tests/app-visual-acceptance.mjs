@@ -232,6 +232,58 @@ try{
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
+  // Preserved Rosary player: live context rail follows existing Rosary state and
+  // the global cinematic owner fires only when a new mystery is entered.
+  await page.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="rosary",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-launch-rosary]").click();
+  await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
+  await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
+  const standard=page.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
+  if(await standard.count())await standard.click();
+  await page.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
+  await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-next]",{state:"visible",timeout:5000});
+  await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot .aoP435930RosarySemanticRail.right"),null,{timeout:5000});
+  const rosaryOpeningRail=await page.evaluate(()=>({
+    right:document.querySelectorAll("#aoPrayerBookRoot .aoP435930RosarySemanticRail.right").length,
+    left:document.querySelectorAll("#aoPrayerBookRoot .aoP435930RosarySemanticRail.left").length,
+    icon:document.querySelector("#aoPrayerBookRoot .aoP435930RosarySemanticRailIcon")?.dataset?.aoAssetId??null,
+    context:document.querySelector("#aoPrayerBookRoot .aoP435930RosarySemanticRailChip small")?.textContent?.trim()??"",
+    pointer:getComputedStyle(document.querySelector("#aoPrayerBookRoot .aoP435930RosarySemanticRails")).pointerEvents,
+    shellWidth:document.querySelector("#aoPrayerBookRoot .pbShell")?.getBoundingClientRect?.().width??0,
+  }));
+  assert.equal(rosaryOpeningRail.right,1,"Rosary player lost its live context rail");
+  assert.equal(rosaryOpeningRail.left,0,"Rosary player invented a universal posture rail");
+  assert.equal(rosaryOpeningRail.icon,"ao-rich-rosary","Rosary live rail lost canonical Rosary identity");
+  assert.match(rosaryOpeningRail.context,/Opening|Ouverture/,"Rosary opening context is not reflected in the live rail");
+  assert.equal(rosaryOpeningRail.pointer,"none","Rosary live rail intercepts touch");
+  assert.ok(rosaryOpeningRail.shellWidth>=360,"Rosary live rail reserved prayer-column width");
+
+  // Standard Rosary has seven opening prayer steps before Mystery I.
+  for(let i=0;i<7;i++)await page.locator("#aoPrayerBookRoot [data-lab-rosary-next]").click();
+  await page.waitForFunction(()=>{
+    const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[];
+    return steps[state?.step]?.kind==="mystery";
+  },null,{timeout:5000});
+  await page.waitForSelector("#ao-cinema-transition.aoCinemaTransitionOn",{state:"visible",timeout:2000});
+  const rosaryMysteryFx=await page.evaluate(()=>({
+    context:document.querySelector("#aoPrayerBookRoot .aoP435930RosarySemanticRailChip small")?.textContent?.trim()??"",
+    cinematicTitle:document.querySelector("#ao-cinema-transition [data-ao-cinema-transition-title]")?.textContent?.trim()??"",
+    cinematicKicker:document.querySelector("#ao-cinema-transition [data-ao-cinema-transition-kicker]")?.textContent?.trim()??"",
+    reduced:globalThis.AO_CINEMATIC_V4312?.isReducedMotion?.()??null,
+  }));
+  assert.match(rosaryMysteryFx.context,/Mystery 1 \/ 5|Mystère 1 \/ 5/,"Rosary live rail did not advance to Mystery I");
+  assert.ok(rosaryMysteryFx.cinematicTitle.length>0,"Rosary mystery cinematic has no title");
+  assert.match(rosaryMysteryFx.cinematicKicker,/HOLY ROSARY|SAINT ROSAIRE/,"Rosary mystery cinematic lost devotional identity");
+  assert.equal(rosaryMysteryFx.reduced,false,"visual acceptance unexpectedly entered reduced-motion mode");
+  await shot("03c-pray-rosary-mystery-cinematic");
+  await waitForFxSettled();
+  await shot("03d-pray-rosary-live-rail");
+
+  await page.locator("#aoPrayerBookRoot .lab-back").first().click();
+  await page.waitForFunction(()=>!document.getElementById("aoPrayerBookRoot")?.classList?.contains("open"),null,{timeout:5000});
+  await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:5000});
+
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.library",{returnContext:null}));
   await page.waitForSelector("#aoPray435930.open [data-p435930-lib-open='sacrament_act_of_contrition']",{timeout:10000});
   assert.equal(await page.locator("#aoPray435930 [data-p435930-lib-open]").count(),48,"PRAY Library no longer exposes the locked 48-prayer corpus");
