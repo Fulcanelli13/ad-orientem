@@ -119,25 +119,33 @@ try{
   assert.ok(opening.title.length>0);
   assert.ok(opening.body.length>0);
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
-  await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:true});
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
+  await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
 
   const consecration=await page.evaluate(()=>{
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
-    const card=preview?.showSection?.("AO.CARD.015");
+    const cards=preview?.model?.cards??[];
+    const target=cards.find(card=>/Consecration of (?:the )?(?:Sacred )?Host|Consecration.*Host/i.test(String(card?.title??"")))
+      ?? cards.find(card=>(card?.paragraphs??[]).some(p=>/Hoc est enim Corpus meum/i.test(String(p?.primary??""))));
+    const card=target ? preview.showSection?.(target.sectionId) : null;
     return {
       sectionId:card?.sectionId??null,
+      sourceSequence:card?.sourceSequence??card?.sequence??null,
       title:document.querySelector("#ao-r17-native-reader-preview [data-role='card-title']")?.textContent?.trim()??"",
       paragraphs:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph")].map(x=>x.textContent?.trim()??""),
       leftActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left [data-active='true']").length,
       rightActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-right [data-active='true']").length,
       guideDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-button']")?.disabled??null,
       progress:document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent?.trim()??"",
+      totalCards:preview?.model?.totalCards??cards.length,
+      cardIds:cards.map(x=>x.sectionId),
     };
   });
-  assert.equal(consecration.sectionId,"AO.CARD.015");
+  assert.ok(consecration.sectionId,"source-first reader exposed no Host Consecration section");
   assert.match(consecration.title,/Consecration/i);
   assert.ok(consecration.paragraphs.length>0,"Consecration rendered no prayer text");
-  await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:true});
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
+  await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
 
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({setup,opening,consecration,errors},null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
