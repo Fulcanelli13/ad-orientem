@@ -44,6 +44,8 @@ const calendar=readFileSync("src/calendar/browser-entry.js","utf8");
 const learn=readFileSync("src/learn/presentation.js","utf8");
 const learnOwner=readFileSync("src/learn/browser-entry.js","utf8");
 const prayOwner=readFileSync("src/pray/browser-entry.js","utf8");
+const settingsOwner=readFileSync("src/settings/browser-entry.js","utf8");
+const settings=readFileSync("src/settings/presentation.js","utf8");
 
 assert.match(appEntry,/canonicalAssetIdForSurface/);
 assert.match(appEntry,/button\.dataset\.aoAssetId=assetId/);
@@ -57,5 +59,9 @@ assert.match(learn,/canonicalAssetIdForLearnRoute/);
 assert.doesNotMatch(learn,/AO_ICON_REGISTRY_V4333/,"Learn still depends on the historical icon registry");
 assert.match(learnOwner,/canonicalAssetIdForSurface\("learn"\)/);
 assert.match(prayOwner,/canonicalAssetIdForSurface\("pray"\)/);
+assert.match(settingsOwner,/canonicalAssetIdForSurface\("settings"\)/);
+assert.match(settings,/ao-ui-back/);
+assert.match(settings,/ao-ui-close/);
+assert.match(settings,/ao-ui-next/);
 
-console.log("PASS canonical non-Mass asset consumers: shell, Home, Pray, Learn and Calendar are bound to V4/V4.1.1 identities.");
+console.log("PASS canonical non-Mass asset consumers: shell, Home, Pray, Learn, Calendar and Settings are bound to V4/V4.1.1 identities.");
