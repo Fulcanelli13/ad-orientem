@@ -90,7 +90,8 @@
     "test:settings-owner": "node tests/settings-owner.mjs",
     "test:settings-e2e": "node tests/settings-e2e.mjs",
     "test:home-enrichers": "node tests/home-enrichers.mjs",
-    "test:source-transport": "node tests/source-transport-compat.mjs"
+    "test:source-transport": "node tests/source-transport-compat.mjs",
+    "test:field-current-week": "node tests/field-current-week-e2e.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
