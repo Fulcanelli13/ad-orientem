@@ -32,7 +32,11 @@
         "tests/mass-visual-acceptance.mjs",
         "Visual acceptance workflow 37288227688 at 390x844 touch geometry",
         "06-mass-live-opening.png",
-        "07-mass-live-consecration.png"
+        "07-mass-live-consecration.png",
+        "tests/app-shell-journey-e2e.mjs",
+        "Visual acceptance workflow 37298926233",
+        "R17 Mass convergence workflow 37298926238",
+        "App convergence workflow 37298926228"
       ],
       "observedRegressions": [
         "inactive 58px rails remain as empty gutters and materially reduce prayer width",
@@ -45,7 +49,7 @@
         "mode controls are visually presented as selectable while production mode switching is locked",
         "production source-first display model currently contains 39 cards; this must be reconciled with the approved v1.83 card philosophy without replacing the source-first engine"
       ],
-      "recoveryPass": "MASS_UI_V1",
+      "recoveryPass": "MASS_UI_V2",
       "recoveryTargets": [
         "collapse inactive cue rails without changing cue ownership",
         "move Schola from narrow right rail to dedicated readable dock",
@@ -83,7 +87,29 @@
         "Schola dock is readable but not yet the approved resizable/hideable surface",
         "elevation/bell cinematic needs direct phone visual certification at the exact action cue",
         "broader gesture/posture salience needs screenshot acceptance beyond the opening and Host Consecration",
-        "39-step source-first LIVE presentation must be reconciled with the approved v1.83 48-card philosophy without reverting to a historical engine"
+        "39-step source-first LIVE presentation must be reconciled with the approved v1.83 48-card philosophy without reverting to a historical engine",
+        "canonical frozen Home/Settings ribbon binaries are registered but not yet externalized; V2 uses explicit HOME/PARAMS text rather than invisible or substitute icons",
+        "elevation/bell cinematic still requires exact-cue phone visual certification",
+        "39-step source-first LIVE presentation still requires reconciliation with the historical 48-card product reference without changing source authority"
+      ],
+      "v2Targets": [
+        "Home / mode / current-section / Settings first-ribbon architecture",
+        "source-first current-section jump menu",
+        "Schola hide/show and touch resize",
+        "visible fail-safe labels while exact frozen ribbon assets await externalization"
+      ],
+      "certifiedPasses": [
+        "MASS_UI_V1",
+        "MASS_UI_V2"
+      ],
+      "resolvedInV2": [
+        "first ribbon now exposes Home, locked MISSAL/SIMPLE/LIVE modes, current source-first section jump and Settings/parameters",
+        "Home uses the canonical app-shell live-Mass leave confirmation path",
+        "Settings uses the certified active-Mass overlay path",
+        "source-first section jump is populated from the current native display model rather than a historical card engine",
+        "Schola dock is hideable and touch-resizable",
+        "obsolete floating reader close control is removed from the visible surface",
+        "390x844 visual acceptance certifies visible HOME/PARAMS fallback controls while exact canonical frozen ribbon binaries remain unavailable"
       ]
     },
     "pray": {

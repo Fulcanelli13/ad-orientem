@@ -113,6 +113,16 @@ try{
     stageLeft:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.leftRail??null,
     stageRight:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.rightRail??null,
     focusedParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
+    homeButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")),
+    parametersButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")),
+    homeControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.textContent?.trim()??"",
+    parametersControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.textContent?.trim()??"",
+    homeControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
+    parametersControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
+    floatingClose:Boolean(document.querySelector("#ao-r17-native-reader-preview [aria-label='Close Mass reader']")),
+    sectionJumpDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='section-jump']")?.disabled??null,
+    sectionButtonCount:document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-section]").length,
+    totalCards:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards??null,
     shellRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview .ao-reader-shell")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
   }));
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
@@ -127,16 +137,47 @@ try{
   assert.ok(opening.body.length>0);
   assert.equal(opening.scholaInRightRail,false,"Schola remained trapped in the narrow right rail");
   assert.equal(opening.scholaDock,"true","active Schola did not move to the readable dedicated dock");
+  assert.equal(opening.homeButton,true,"LIVE first ribbon lost Home control");
+  assert.equal(opening.parametersButton,true,"LIVE first ribbon lost Settings/parameters control");
+  assert.equal(opening.homeControlText,"HOME","Home control rendered blank while its canonical asset is not externalized");
+  assert.equal(opening.parametersControlText,"PARAMS","Parameters control rendered blank while its canonical asset is not externalized");
+  assert.ok(opening.homeControlRect?.width>=44&&opening.homeControlRect?.height>=44,"Home control lost a usable phone touch target");
+  assert.ok(opening.parametersControlRect?.width>=44&&opening.parametersControlRect?.height>=44,"Parameters control lost a usable phone touch target");
+  assert.equal(opening.floatingClose,false,"obsolete floating close button still overlays the LIVE ribbon");
+  assert.equal(opening.sectionJumpDisabled,false,"source-first section jump is disabled");
+  assert.equal(opening.sectionButtonCount,opening.totalCards,"section jump does not expose the complete current display model");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
+
+  const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
+  const scholaToggle=scholaDock.locator("[data-schola-toggle]");
+  await scholaToggle.click();
+  assert.equal(await scholaDock.getAttribute("data-collapsed"),"true","Schola hide control did not collapse the dock");
+  await scholaToggle.click();
+  assert.equal(await scholaDock.getAttribute("data-collapsed"),"false","Schola show control did not restore the dock");
+  const scholaBefore=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
+  const handle=scholaDock.locator("[data-schola-resize]");
+  const handleBox=await handle.boundingBox();
+  if(handleBox){
+    await page.mouse.move(handleBox.x+handleBox.width/2,handleBox.y+handleBox.height/2);
+    await page.mouse.down();
+    await page.mouse.move(handleBox.x+handleBox.width/2,Math.max(1,handleBox.y-34),{steps:4});
+    await page.mouse.up();
+    const scholaAfter=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
+    assert.ok(scholaAfter>scholaBefore+10,"Schola drag handle did not resize the dock");
+  }
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
+
+  await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
+  const hostSection=page.locator("#ao-r17-native-reader-preview [data-reader-section]").filter({hasText:/Consecration.*Host/i}).first();
+  assert.equal(await hostSection.count(),1,"source-first section menu exposes no Host Consecration");
+  await hostSection.click();
+  await page.waitForFunction(()=>/Consecration/i.test(document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent??""),null,{timeout:5000});
 
   const consecration=await page.evaluate(()=>{
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
     const cards=preview?.model?.cards??[];
-    const target=cards.find(card=>/Consecration of (?:the )?(?:Sacred )?Host|Consecration.*Host/i.test(String(card?.title??"")))
-      ?? cards.find(card=>(card?.paragraphs??[]).some(p=>/Hoc est enim Corpus meum/i.test(String(p?.primary??""))));
-    const card=target ? preview.showSection?.(target.sectionId) : null;
+    const card=preview?.getCurrentCard?.()??null;
     return {
       sectionId:card?.sectionId??null,
       sourceSequence:card?.sourceSequence??card?.sequence??null,
