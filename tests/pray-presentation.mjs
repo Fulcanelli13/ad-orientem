@@ -24,6 +24,10 @@ assert.doesNotMatch(runtime,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to ra
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
 assert.match(runtime,/const trailing=view==='home'/,"PRAY root header no longer distinguishes its root exit state");
 assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit header spacer");
+assert.match(runtime,/normalizeRosaryPrefs/,"PRAY lost canonical Rosary preference normalization");
+assert.match(runtime,/restoreRosaryLaunchPrefs/,"PRAY lost post-mount Rosary preference restoration");
+assert.match(runtime,/const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
+  "Rosary launcher stopped snapshotting chooser state before donor mount");
 assert.match(styles,/aoP435930HeadSpacer/,"PRAY single-exit header spacer lost visual geometry");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
