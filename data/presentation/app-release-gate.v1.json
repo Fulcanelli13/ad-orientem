@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.15.0",
-  "status": "FIELD_STABILIZATION_REQUIRED",
-  "releaseRule": "FINAL_APP_READY is suspended while field-runtime stabilization is open. The Mass subsystem remains certified; application release requires all app blockers closed, modular six-destination ownership, cross-domain phone acceptance, and real-data current-week Proper readiness.",
+  "version": "1.16.0",
+  "status": "FINAL_APP_READY",
+  "releaseRule": "FINAL_APP_READY requires the certified R17 Mass subsystem, zero open app blockers, modular six-destination ownership, cross-domain phone acceptance, and merged-main real-data current-week Proper readiness.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -169,8 +169,8 @@
     },
     {
       "id": "FIELD_RUNTIME_STABILIZATION",
-      "classification": "CRASH",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "src/app/source-transport-compat.js",
         "src/pray/dom-anchor.js",
@@ -179,14 +179,13 @@
         "tests/source-transport-compat.mjs",
         "tests/pray-presentation.mjs",
         "tests/browser-entry.mjs",
-        "tests/field-current-week-e2e.mjs"
+        "tests/field-current-week-e2e.mjs",
+        ".github/workflows/app-convergence.yml"
       ],
-      "detail": "Real production use exposed two P0 regressions after architectural convergence: PRAY recitation decoration could call insertBefore with a nested descendant, and source resolution probed broken French/local paths plus Mass Commons under the wrong Divinum Officium tree, producing incomplete Propers and blocked R17 entry. P0 repairs are implemented, stale persisted Mass checkpoints now fail closed without an uncaught resume, and FINAL_APP_READY remains suspended until the real-data Oct 4-9 acceptance passes on the merged production tree."
+      "detail": "The 5 October P0 runtime regressions are repaired and verified on merged main. Post-merge App convergence run 37276882767 passed the normal phone journey and real-data Oct 4-9 field-current-week acceptance: every date resolved a READY Proper, runtime recovery filled missing Secret/Postcommunion source sections where needed, every R17 reader was ready, and no reader slots remained missing. Stale persisted Mass checkpoints also fail closed without uncaught resume."
     }
   ],
-  "openBlockers": [
-    "FIELD_RUNTIME_STABILIZATION"
-  ],
+  "openBlockers": [],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
