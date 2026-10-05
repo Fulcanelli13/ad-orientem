@@ -295,7 +295,8 @@ try{
   assert.equal(interruptedReload.savedSection,interrupted.section);
   assert.equal(interruptedReload.probe,"calendar-state-ok","unrelated local state changed during interrupted reload");
 
-  await page.locator("[data-ao-app-surface='mass']").click();
+  assert.equal(await page.locator("[data-resume-mass]").count(),1,"Home did not expose the resumable native Mass");
+  await page.locator("[data-resume-mass]").click();
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
   await page.waitForFunction(expected=>
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId===expected,
@@ -310,10 +311,11 @@ try{
       resumed:runtime?.resumed??false,
       restoredSection:runtime?.restoredSection??null,
       uiOwner:runtime?.uiOwner??null,
+      legacyStarts:globalThis.__AO_FINAL_LEGACY_STARTS??0,
       probe:localStorage.getItem("ao-app-cross-module-probe"),
     };
   });
-  assert.equal(resumed.active,"mass","return through top-level Mass did not activate Mass");
+  assert.equal(resumed.active,"mass","Home Resume did not activate Mass");
   assert.equal(resumed.section,interrupted.section,"resumed Mass did not restore saved reader section");
   assert.equal(resumed.restoredSection,interrupted.section);
   assert.equal(resumed.form,"MISSA_CANTATA_INCENSE");
@@ -323,6 +325,7 @@ try{
   assert.equal(resumed.prefs?.language,"en");
   assert.equal(resumed.resumed,true);
   assert.equal(resumed.uiOwner,"R17_NATIVE_PRODUCTION");
+  assert.equal(resumed.legacyStarts,0,"Home Resume triggered a legacy Mass start");
   assert.equal(resumed.probe,"calendar-state-ok");
 
   // Settings is the one top-level non-Mass surface allowed to overlay an
