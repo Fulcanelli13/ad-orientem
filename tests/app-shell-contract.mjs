@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   APP_SURFACES,
   NON_MASS_DONOR_CONTRACT,
@@ -13,6 +14,14 @@ assert.equal(NON_MASS_DONOR_CONTRACT.release, "43.59.30");
 assert.equal(NON_MASS_DONOR_CONTRACT.prayerOwner, "AO_PRAY_V435930");
 assert.equal(NON_MASS_DONOR_CONTRACT.settingsOwner, "AO_SETTINGS_APP_V1");
 assert.equal(NON_MASS_DONOR_CONTRACT.settingsDonorOwner, "AO_SETTINGS_V4359");
+
+const appEntrySource=readFileSync("src/app/browser-entry.js","utf8");
+assert.match(appEntrySource,/aoHomeSuppressed/,"app shell no longer isolates Home beneath modular surfaces");
+assert.match(appEntrySource,/aoReleaseAuthority/,"app shell no longer owns final release metadata");
+
+const calendarSource=readFileSync("src/calendar/browser-entry.js","utf8");
+assert.match(calendarSource,/data-cal-input/,"Calendar lost DD\/MM\/YYYY date entry");
+assert.doesNotMatch(calendarSource,/data-cal-native/,"Calendar regressed to duplicate visible date inputs");
 
 function host({ route = "home", confirm = true } = {}) {
   const calls = [];
