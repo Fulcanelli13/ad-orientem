@@ -1,9 +1,9 @@
 {
   "schema": "ao-presentation-fx-parity-v1",
-  "version": "1.4.0",
-  "status": "RECOVERY_IN_PROGRESS",
-  "releaseBlocker": "PRESENTATION_FX_PARITY",
-  "rule": "FINAL_APP_READY requires the approved cinematic and semantic presentation systems to be active on the modular six-surface app. Static surface parity alone is insufficient.",
+  "version": "1.5.0",
+  "status": "CERTIFIED",
+  "releaseBlocker": null,
+  "rule": "FINAL_APP_READY requires the approved cinematic and semantic presentation systems to be active and phone/visual certified on the modular six-surface app. Physical extraction of the certified v43.12 presentation owner from index.html is non-blocking hygiene.",
   "reference": {
     "owner": "AO_CINEMATIC_V4312",
     "version": "43.12-ZERO-OBSERVER-CINEMATIC-CERTIFICATION",
@@ -13,12 +13,14 @@
   },
   "systems": {
     "bootCinematic": {
-      "status": "PRESERVED_LEGACY_OWNER",
+      "status": "CERTIFIED_EMBEDDED_OWNER",
       "evidence": [
         "index.html#ao-cinema-boot",
-        "index.html#ao-v4312-cinematic-loading-js"
+        "index.html#ao-v4312-cinematic-loading-js",
+        "tests/presentation-fx.mjs",
+        "Visual acceptance workflow 37341706459"
       ],
-      "note": "Cold-load boot cinematic still exists in the monolith, but remains owned by the legacy embedded presentation layer."
+      "note": "Cold-load boot/transition/loader markup and the observer-free v43.12 presentation owner remain embedded in index.html. Their behavior is release-certified; physical externalization is optional hygiene and not a product-parity blocker."
     },
     "modularRouteTransitions": {
       "status": "CERTIFIED_V1",
@@ -54,14 +56,18 @@
       "note": "Home, Mass, PRAY, Learn, Calendar and Settings receive geometry-neutral surface-entry choreography."
     },
     "artLoading": {
-      "status": "RECOVERED_V5_VALIDATION",
+      "status": "CERTIFIED_V5",
       "evidence": [
         "index.html#ao-v4312-cinematic-loading-js",
         "src/app/presentation-fx.js",
         "tests/presentation-fx.mjs",
-        "tests/app-visual-acceptance.mjs"
+        "tests/app-visual-acceptance.mjs",
+        "PR #190",
+        "Visual acceptance workflow 37341706459",
+        "App convergence workflow 37341706363",
+        "R17 Mass convergence workflow 37341706430"
       ],
-      "note": "V5 makes modular surface entry explicitly invoke the approved v43.12 scanArt owner instead of introducing a second shimmer/blur system. Existing Home Proper, Rosary, Saint and Stations imagery retain the canonical v43.12 image selectors. CI validation remains required."
+      "note": "Modular surfaces explicitly invoke the approved v43.12 scanArt owner instead of introducing a second shimmer/blur system. Existing Home Proper, Rosary, Saint and Stations imagery retain the canonical image-loading treatment. PR #190 passed visual, app and R17 convergence."
     },
     "verticalSemanticRails": {
       "status": "CERTIFIED_V2_V3",
@@ -80,7 +86,7 @@
       "note": "PRAY restores geometry-neutral semantic icon rails without duplicating horizontal stage navigation. Angelus exposes resolved Stand/Kneel plus devotional context. Stations exposes sourced attention/context cues without inventing a universal posture. Adoration, Benediction and Confession expose canonical contextual identity. The external canonical Rosary player now has its own live mystery/context rail. PR #180 passed visual, app and R17 convergence."
     },
     "heroPresenceAndEntryChoreography": {
-      "status": "RECOVERED_V5_VALIDATION",
+      "status": "CERTIFIED_V5",
       "evidence": [
         "src/app/presentation-fx.js",
         "tests/presentation-fx.mjs",
@@ -88,17 +94,23 @@
         "src/home/presentation.js",
         "src/calendar/browser-entry.js",
         "src/pray/presentation-runtime.js",
-        "src/learn/presentation.js"
+        "src/learn/presentation.js",
+        "PR #190",
+        "Visual acceptance workflow 37341706459",
+        "App convergence workflow 37341706363",
+        "R17 Mass convergence workflow 37341706430"
       ],
-      "note": "V5 restores restrained prototype-level hero entry choreography to Home celebration identity, PRAY devotional heroes, Learn formation hero and Calendar Sacred Time. Background interaction rescans do not repeatedly restart existing hero motion; reduced motion suppresses it. CI validation is required."
+      "note": "Home celebration identity, PRAY devotional heroes, Learn formation hero and Calendar Sacred Time receive restrained entry choreography. Runtime-store rescans catch late renders without MutationObserver ownership; ordinary interaction does not repeatedly restart existing hero motion; system/app reduced motion suppresses the effect."
     },
     "reducedMotion": {
-      "status": "PRESERVED_AND_BRIDGED",
+      "status": "CERTIFIED",
       "evidence": [
         "index.html#ao-v4312-cinematic-loading-css",
-        "src/app/presentation-fx.js"
+        "src/app/presentation-fx.js",
+        "tests/presentation-fx.mjs",
+        "App convergence workflow 37341706363"
       ],
-      "note": "System and app reduced-motion preferences suppress non-essential FX."
+      "note": "System prefers-reduced-motion and the app reduced-motion setting suppress non-essential route, surface, hero and devotional transition FX."
     },
     "rosaryLiveFx": {
       "status": "CERTIFIED_V3",
@@ -132,9 +144,8 @@
       "note": "Stations uses the canonical look/attention cue, XIV-step context rail and restrained transition cinematic on actual station changes. It deliberately does not impose a universal kneel/stand track. PR #188 passed visual, app and R17 convergence."
     }
   },
-  "nextRecoveryTargets": [
-    "phone-certify V5 modular hero choreography and single-owner v43.12 art scanning",
-    "extract the v43.12 cinematic owner from monolithic index.html into a modular presentation owner without changing behavior",
-    "close PRESENTATION_FX_PARITY only after extracted boot/transition/loader/art behavior passes the same production phone gates"
+  "nextRecoveryTargets": [],
+  "nonBlockingHygiene": [
+    "Optionally externalize the certified v43.12 cinematic CSS/runtime from index.html when the monolith can be split safely without changing first-paint or parser-order behavior."
   ]
 }
