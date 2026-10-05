@@ -23,10 +23,8 @@ assert.equal(confessionPhaseForStage(0), "doctrine");
 assert.equal(confessionPhaseForStage(1), "prepare");
 assert.equal(confessionPhaseForStage(2), "examination");
 assert.equal(confessionPhaseForStage(3), "in-confessional");
-assert.equal(confessionPhaseForStage(4), "in-confessional");
-assert.equal(confessionPhaseForStage(5), "in-confessional");
-assert.equal(confessionPhaseForStage(6), "in-confessional");
-assert.equal(confessionPhaseForStage(7), "after");
+assert.equal(confessionPhaseForStage(4), "after");
+assert.equal(confessionPhaseForStage(5), "after");
 
 const original = {
   adoration: { presence: "exposed", mode: "open" },
@@ -54,3 +52,11 @@ assert.equal(
 assert.equal(canonicalAppVersion({}), null);
 
 console.log("PASS D3-D6 non-Mass convergence contract");
+
+import { readFileSync } from "node:fs";
+const prayRuntime=readFileSync("src/pray/presentation-runtime.js","utf8");
+assert.match(prayRuntime,/ADORATION_SESSION_KEY='ao\.app\.adoration\.presence\.v1'/);
+assert.match(prayRuntime,/aoP435930ExamReadOnly/);
+assert.doesNotMatch(prayRuntime,/data-p435930-exam="/,"modular Confession still renders tickable sin prompts");
+assert.match(prayRuntime,/aoP435930BenMacroRail/);
+assert.match(prayRuntime,/data-p435930-ador-mode="holy"/,"Holy Hour is not nested inside modular Adoration");
