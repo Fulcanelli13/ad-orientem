@@ -69,6 +69,7 @@ assert.match(html,/data-home-cu-route="learn\.liturgical_year"/);
 assert.match(html,/data-home-daily-catechism/);
 assert.match(html,/data-ao-asset-id="ao-rich-rosary"/);
 assert.match(html,/data-ao-asset-id="ao-ui-next"/);
+assert.doesNotMatch(html,/\\$\\{esc\\(url\\)\\}/,"canonical UI asset URL interpolation leaked into rendered markup");
 assert.match(html,/\.aoComingUpV4323,.homeScreen>.aoDailyCateHome\{display:none!important\}/);
 
 const offDate=buildHomeEnrichers({...state,selectedDate:"2026-10-04"},win,{now});
