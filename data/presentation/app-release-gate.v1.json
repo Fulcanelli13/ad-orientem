@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.18.0",
-  "status": "FINAL_APP_READY",
-  "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, and certified product/presentation parity across all six production surfaces.",
+  "version": "1.19.0",
+  "status": "PRESENTATION_FX_RECOVERY_REQUIRED",
+  "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified product/presentation parity across all six production surfaces, and certified presentation-FX parity.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -206,9 +206,25 @@
         "App convergence workflow 37325466826"
       ],
       "detail": "All six modular product surfaces are phone/visual parity certified. Mass presentation recovery V1-V6 restores the approved LIVE hierarchy and 48-step product rhythm while retaining the 39-step source model, exact cue/state ownership, and persistent source-anchored MISSAL/SIMPLE/LIVE switching."
+    },
+    {
+      "id": "PRESENTATION_FX_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "evidence": [
+        "data/presentation/presentation-fx-parity.v1.json",
+        "src/app/presentation-fx.js",
+        "src/app/browser-entry.js",
+        "tests/presentation-fx.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "index.html#ao-v4312-cinematic-loading-js"
+      ],
+      "detail": "Prototype-era cinematic/loading and semantic presentation systems were not release-authoritative during modular convergence. The v43.12 cinematic owner still exists in index.html but was wired to legacy runtime actions rather than the modular six-surface shell. V1 restores modular route transitions/loaders and geometry-neutral surface-entry motion; vertical semantic rails, modular art-loading coverage and hero choreography remain explicit recovery work."
     }
   ],
-  "openBlockers": [],
+  "openBlockers": [
+    "PRESENTATION_FX_PARITY"
+  ],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
@@ -224,7 +240,8 @@
       "tests/learn-owner.mjs",
       "tests/settings-owner.mjs",
       "tests/source-transport-compat.mjs",
-      "tests/reader-mode-switch.mjs"
+      "tests/reader-mode-switch.mjs",
+      "tests/presentation-fx.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
@@ -238,5 +255,6 @@
       "tests/field-current-week-e2e.mjs"
     ]
   },
-  "productParityLedger": "data/presentation/product-parity.v1.json"
+  "productParityLedger": "data/presentation/product-parity.v1.json",
+  "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json"
 }
