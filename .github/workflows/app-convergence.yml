@@ -8,6 +8,7 @@ on:
       - "src/home/**"
       - "src/learn/**"
       - "src/pray/**"
+      - "src/settings/**"
       - "src/mass/browser-entry.js"
       - "index.html"
       - "package.json"
@@ -16,6 +17,7 @@ on:
       - "tests/app-shell-*.mjs"
       - "tests/nonmass-d3-d6-*.mjs"
       - "tests/learn-*.mjs"
+      - "tests/settings-*.mjs"
       - "tests/reader-phone-acceptance.mjs"
       - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
@@ -36,6 +38,7 @@ on:
       - "tests/app-shell-*.mjs"
       - "tests/nonmass-d3-d6-*.mjs"
       - "tests/learn-*.mjs"
+      - "tests/settings-*.mjs"
       - "tests/reader-phone-acceptance.mjs"
       - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
@@ -54,6 +57,7 @@ jobs:
       - run: npm run test:app-live-guards
       - run: npm run test:home-owner
       - run: npm run test:home-presentation
+      - run: npm run test:settings-owner
       - run: npm run test:nonmass-convergence
       - run: npm run test:pray-owner
       - run: npm run test:learn-owner
