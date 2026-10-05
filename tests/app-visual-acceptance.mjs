@@ -100,7 +100,9 @@ try{
 
   const consumedMaskPaths={
     "ao-rich-adoration":"assets/active/devotional-module/ao-rich-adoration.png",
-    "ao-rich-angelus":"assets/active/devotional-module/ao-rich-angelus.png",
+    "ao-live-bells":"assets/active/live-audio/ao-live-bells.png",
+    "ao-live-profound-bow":"assets/active/live-gesture/ao-live-profound-bow.png",
+    "ao-live-response":"assets/active/live-cue/ao-live-response.png",
     "ao-rich-confession":"assets/active/devotional-module/ao-rich-confession.png",
     "ao-rich-rosary":"assets/active/devotional-module/ao-rich-rosary.png",
     "ao-rich-sacred-heart":"assets/active/devotional-module/ao-rich-sacred-heart.png",
@@ -273,14 +275,36 @@ try{
     contextMask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
   }));
   assert.equal(angelusRails.left,1,"Angelus lost the faithful-posture semantic rail");
-  assert.equal(angelusRails.right,1,"Angelus lost the devotional-context semantic rail");
+  assert.equal(angelusRails.right,1,"Angelus lost the current-event semantic rail");
   assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.posture),"Angelus posture rail is not sourced from the canonical posture bank");
-  assert.equal(angelusRails.context,"ao-rich-angelus","Angelus context rail is not using the canonical devotional identity");
+  assert.equal(angelusRails.context,"ao-live-bells","Angelus event rail did not open on the donor bell/event cue");
   assert.ok(angelusRails.iconWidth>=26,"Angelus rail icon is not salient at phone size");
   assert.ok(angelusRails.bodyWidth>=360,"semantic rails reserved horizontal reading width");
   assert.equal(angelusRails.pointer,"none","semantic rails intercept touch interaction");
-  assert.match(angelusRails.contextMask,/ao-rich-angelus\.png/,"Angelus semantic rail did not load the canonical frozen mask");
+  assert.match(angelusRails.contextMask,/ao-live-bells\.png/,"Angelus event rail did not load the canonical bell cue");
   await shot("03a-pray-angelus-rails");
+  // Exact donor behavior: the right rail follows the active Angelus unit.
+  // At Et Verbum caro factum est it becomes the profound-bow cue; when the
+  // response itself owns focus, the response icon takes precedence.
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-ao-pray-bow-cue='1'] .aoP435930FluidUnit"),null,{timeout:5000});
+  await page.evaluate(()=>{
+    const mount=document.querySelector("#aoPray435930 .aoP435930Mount");
+    const target=document.querySelector("#aoPray435930 [data-ao-pray-bow-cue='1'] .aoP435930FluidUnit");
+    if(mount&&target){
+      const mr=mount.getBoundingClientRect(),tr=target.getBoundingClientRect();
+      mount.scrollTop+=tr.top-(mr.top+Math.min(mr.height,innerHeight)*.43);
+      mount.dispatchEvent(new Event("scroll"));
+    }
+  });
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-ao-pray-live-cue-slot]")?.dataset?.aoPrayRailAsset==="ao-live-profound-bow",null,{timeout:3000});
+  const angelusBowRail=await page.evaluate(()=>({
+    asset:document.querySelector("#aoPray435930 [data-ao-pray-live-cue-slot]")?.dataset?.aoPrayRailAsset??null,
+    label:document.querySelector("#aoPray435930 [data-ao-pray-live-cue-slot] .aoP435930SemanticRailLabel")?.textContent?.trim()??"",
+  }));
+  assert.equal(angelusBowRail.asset,"ao-live-profound-bow","Angelus Incarnation focus did not switch the rail to profound bow");
+  assert.match(angelusBowRail.label,/Bow|Inclination/,"Angelus Incarnation rail lost its bow label");
+  await shot("03aa-pray-angelus-bow-rail");
+
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
