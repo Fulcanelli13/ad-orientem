@@ -92,23 +92,9 @@ function sourceFamilyRows(win){
       ["Sacred art","Artist, work, collection and rights are retained where known."],
     ];
 }
-function patchAboutSettings(win){
-  const root=win.document.getElementById("ao-settings-v4359");
-  if(!root||root.hidden)return false;
-  const route=win.document.documentElement.dataset.aoSettingsRoute;
-  const wrap=root.querySelector(".aoSetWrap");
-  if(!wrap)return false;
-  if(wrap.dataset.aoD6About==="1"&&wrap.querySelector(".aoD6Sources"))return false;
-  const rendered=String(wrap.textContent||"");
-  const looksLikeAbout=/sources|provenance|about ad orientem|à propos d.?ad orientem|application version|version de l[’\']application|privacy|confidentialit[ée]|licen[cs]e|acknowledg|source/i.test(rendered);
-  if(route!=="/settings/about-sources"&&win.__AO_D6_ABOUT_ROUTE_ACTIVE!==true&&!looksLikeAbout)return false;
-  wrap.dataset.aoD6About="1";
-  wrap.innerHTML="";
-  wrap.appendChild(element(win,"div","aoSetIntro",L(
-    win,
-    "Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.",
-    "Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."
-  )));
+function buildSourcesAbout(win){
+  const frag=win.document.createDocumentFragment();
+
   const sourceSection=element(win,"section","aoSetSection aoD6Sources");
   sourceSection.appendChild(element(win,"h2","",L(win,"Sources","Sources")));
   const group=element(win,"div","aoSetGroup");
@@ -117,7 +103,7 @@ function patchAboutSettings(win){
     details.append(element(win,"summary","",row[0]),element(win,"p","",row[1]));
     group.appendChild(details);
   });
-  sourceSection.appendChild(group);wrap.appendChild(sourceSection);
+  sourceSection.appendChild(group);frag.appendChild(sourceSection);
 
   const keySection=element(win,"section","aoSetSection");
   keySection.appendChild(element(win,"h2","",L(win,"How provenance is labelled","Comment la provenance est indiquée")));
@@ -126,7 +112,7 @@ function patchAboutSettings(win){
     ? ["Source officielle / normative","Source liturgique de 1962","Témoin historique","Méthode dévotionnelle traditionnelle","Guide éditorial Ad Orientem","Traduction / adaptation"]
     : ["Official / governing source","1962 liturgical source","Historical witness","Traditional devotional source","Ad Orientem editorial guidance","Translation / adaptation"]
   ).forEach(value=>keyGroup.appendChild(element(win,"p","",value)));
-  keySection.appendChild(keyGroup);wrap.appendChild(keySection);
+  keySection.appendChild(keyGroup);frag.appendChild(keySection);
 
   const aboutSection=element(win,"section","aoSetSection");
   aboutSection.appendChild(element(win,"h2","",L(win,"About Ad Orientem","À propos d’Ad Orientem")));
@@ -140,7 +126,56 @@ function patchAboutSettings(win){
     div.append(element(win,"b","",row[0]),element(win,"span","",row[1]));
     aboutGroup.appendChild(div);
   });
-  aboutSection.appendChild(aboutGroup);wrap.appendChild(aboutSection);
+  aboutSection.appendChild(aboutGroup);frag.appendChild(aboutSection);
+  return frag;
+}
+
+function patchAboutSettings(win){
+  const doc=win.document;
+  const state=win.AO_RUNTIME_V8?.store?.getState?.()??null;
+
+  // Production currently renders Settings as the core Home settings sheet.
+  if(state?.homeSheet==="settings"){
+    const sheet=[...doc.querySelectorAll(".homeSheet")].find(node=>
+      node.querySelector("[data-setting-form],[data-setting-follow],[data-setting-scale]") ||
+      /settings|réglages/i.test(String(node.textContent||""))
+    );
+    if(!sheet)return false;
+    if(sheet.querySelector(".aoD6SettingsSupplement .aoD6Sources"))return false;
+    const supplement=element(win,"div","aoD6SettingsSupplement");
+    supplement.dataset.aoD6Settings="core-home-sheet";
+    supplement.append(
+      element(win,"div","aoSetIntro",L(
+        win,
+        "Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.",
+        "Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."
+      )),
+      buildSourcesAbout(win)
+    );
+    sheet.appendChild(supplement);
+    return true;
+  }
+
+  // Compatibility path for a future/extracted Settings owner.
+  const root=doc.getElementById("ao-settings-v4359");
+  if(!root||root.hidden)return false;
+  const route=doc.documentElement.dataset.aoSettingsRoute;
+  const wrap=root.querySelector(".aoSetWrap");
+  if(!wrap)return false;
+  if(wrap.dataset.aoD6About==="1"&&wrap.querySelector(".aoD6Sources"))return false;
+  const rendered=String(wrap.textContent||"");
+  const looksLikeAbout=/sources|provenance|about ad orientem|à propos d.?ad orientem|source/i.test(rendered);
+  if(route!=="/settings/about-sources"&&win.__AO_D6_ABOUT_ROUTE_ACTIVE!==true&&!looksLikeAbout)return false;
+  wrap.dataset.aoD6About="1";
+  wrap.innerHTML="";
+  wrap.append(
+    element(win,"div","aoSetIntro",L(
+      win,
+      "Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.",
+      "Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."
+    )),
+    buildSourcesAbout(win)
+  );
   return true;
 }
 function installSettingsHook(win){
@@ -200,7 +235,7 @@ export function installNonMassConvergence({win=globalThis}={}){
       adorationOwner:"AO_PRAY_V435930+D3",
       benedictionOwner:"AO_PRAY_V435930+D4",
       confessionOwner:"AO_PRAY_V435930+D5",
-      settingsOwner:Boolean(win.AO_SETTINGS_V4359),
+      settingsOwner:Boolean(win.AO_SETTINGS_V4359)||Boolean(win.AO_RUNTIME_V8?.store),
       appVersion:canonicalAppVersion(win),
       adorationPresencePersistence:"session-only",
       confessionExamStorage:"read-only",
