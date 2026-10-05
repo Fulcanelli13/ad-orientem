@@ -81,8 +81,8 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: npm run test:rc-interaction-qa
       - run: npm run test:phone
       - run: node tests/app-shell-journey-e2e.mjs
       - run: npm run test:field-current-week
       - run: npm run test:rc-field-qa
-      - run: npm run test:rc-interaction-qa
