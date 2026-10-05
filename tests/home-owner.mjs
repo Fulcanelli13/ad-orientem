@@ -59,7 +59,8 @@ assert.doesNotMatch(ownerSource,/AO_DAILY_CATECHISM\?\.ensureHome|AO_DAILY_CATEC
 assert.doesNotMatch(ownerSource,/AO_V37_SHELL\?\.openDomain\?\.\("learn"\)|AO_V37_SHELL\.openDomain\("learn"\)/,"Home enrichers revive historical Learn domain");
 assert.match(ownerSource,/navigate\?\.\("calendar"\)/,"Coming Up View all no longer routes through modular Calendar");
 assert.match(ownerSource,/\[data-resume-mass\]/,"Home Resume is not intercepted by the modular owner");
-assert.match(ownerSource,/resumeMass[\\s\\S]*AO_APP_SHELL_V1\?\.navigate\?\.\("mass"\)/,"Home Resume does not route through the native app shell");
+assert.match(ownerSource,/Modular Home Mass resume failed/,"Home Resume does not use modular app-shell ownership");
+assert.ok((ownerSource.match(/navigate\?\.\("mass"\)/g)||[]).length>=2,"Home fresh entry and Resume are not both routed through the app shell");
 assert.match(ownerSource,/MutationObserver/,"Home does not continuously retire asynchronously reinserted donor enrichers");
 assert.match(ownerSource,/retireLegacyHomeEnrichers/,"Home donor enricher retirement helper is missing");
 assert.match(ownerSource,/retireUnresolvedSaintArt/,"Home does not suppress terminal saint-art cards without resolved artwork");
