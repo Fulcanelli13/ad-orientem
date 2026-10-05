@@ -27,7 +27,8 @@ export const NON_MASS_DONOR_CONTRACT = Object.freeze({
   sourcesTopLevelVisible: false,
   homeOwner: "AO_NAV_V362",
   domainShellOwner: "AO_V37_SHELL",
-  settingsOwner: "AO_SETTINGS_V4359",
+  settingsOwner: "AO_SETTINGS_APP_V1",
+  settingsDonorOwner: "AO_SETTINGS_V4359",
   prayerOwner: "AO_PRAY_V435930",
   calendarModuleId: "today.calendar",
 });
