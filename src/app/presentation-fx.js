@@ -25,12 +25,6 @@ const HERO_SELECTOR = Object.freeze({
   calendar: ".aoCalSacredTime",
 });
 
-const MODULAR_ART_SELECTOR = Object.freeze({
-  home: ".celebrationBlock .aoProperArt img",
-  pray: ".aoP435930Hero img,.aoP435930WordHero img",
-  learn: ".aoLearnModHero img",
-  calendar: ".aoCalSacredTime img",
-});
 
 function runtimeState(win) {
   return win?.AO_RUNTIME_V8?.store?.getState?.() ?? null;
@@ -75,16 +69,6 @@ function ensureModularFxStyle(win) {
 @keyframes aoModularSurfaceIn{from{opacity:.18;filter:blur(1.5px)}to{opacity:1;filter:none}}
 .aoModularHeroIn{animation:aoModularHeroIn .54s cubic-bezier(.16,.78,.18,1) both;transform-origin:50% 20%}
 @keyframes aoModularHeroIn{from{opacity:.12;filter:blur(2.2px);transform:translateY(7px) scale(.995)}to{opacity:1;filter:none;transform:none}}
-.aoModularArtHost{position:relative;overflow:hidden}
-.aoModularArtHost.aoModularArtLoading:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(108deg,transparent 12%,rgba(230,214,181,.11) 42%,rgba(255,255,255,.16) 50%,rgba(230,214,181,.08) 58%,transparent 88%);transform:translateX(-115%);animation:aoModularArtShimmer 1.15s ease-in-out infinite}
-@keyframes aoModularArtShimmer{to{transform:translateX(115%)}}
-.aoModularArtPending{opacity:.08!important;filter:blur(8px) saturate(.75);transform:scale(1.012);transition:opacity .42s ease,filter .52s ease,transform .52s ease}
-.aoModularArtReady{opacity:1!important;filter:none;transform:none}
-.aoModularArtError{opacity:.32!important;filter:grayscale(.55)}
-@media(prefers-reduced-motion:reduce){.aoModularSurfaceIn,.aoModularHeroIn{animation:none!important;filter:none!important;transform:none!important}.aoModularArtHost.aoModularArtLoading:after{display:none!important}.aoModularArtPending,.aoModularArtReady{transition:none!important;filter:none!important;transform:none!important}}
-html[data-reduced-motion="true"] .aoModularSurfaceIn,html[data-reduced-motion="true"] .aoModularHeroIn{animation:none!important;filter:none!important;transform:none!important}
-html[data-reduced-motion="true"] .aoModularArtHost.aoModularArtLoading:after{display:none!important}
-html[data-reduced-motion="true"] .aoModularArtPending,html[data-reduced-motion="true"] .aoModularArtReady{transition:none!important;filter:none!important;transform:none!important}
 `;
   (doc.head??doc.documentElement)?.append?.(style);
 }
@@ -167,12 +151,6 @@ export function createPresentationFxBridge({
     return [...(root.querySelectorAll?.(selector) ?? [])];
   }
 
-  function artNodes(root, surface) {
-    const selector = MODULAR_ART_SELECTOR[surface];
-    if (!root || !selector) return [];
-    return [...(root.querySelectorAll?.(selector) ?? [])];
-  }
-
   function prepHero(node, { force = false } = {}) {
     if (!node?.classList) return false;
     if (!force && node.dataset?.aoPresentationFxHero === PRESENTATION_FX_VERSION) return false;
@@ -187,51 +165,18 @@ export function createPresentationFxBridge({
     return true;
   }
 
-  function prepArt(img) {
-    if (!img?.classList || img.dataset?.aoModularFxImage === "1") return false;
-    img.dataset.aoModularFxImage = "1";
-    const host = img.parentElement;
-    host?.classList?.add?.("aoModularArtHost");
-    const ready = () => {
-      img.classList.remove("aoModularArtPending", "aoModularArtError");
-      img.classList.add("aoModularArtReady");
-      host?.classList?.remove?.("aoModularArtLoading");
-    };
-    const fail = () => {
-      img.classList.remove("aoModularArtPending");
-      img.classList.add("aoModularArtError");
-      host?.classList?.remove?.("aoModularArtLoading");
-    };
-    if (reducedMotion(win)) {
-      ready();
-      return true;
-    }
-    host?.classList?.add?.("aoModularArtLoading");
-    if (img.complete && Number(img.naturalWidth ?? 0) > 0) {
-      img.classList.add("aoModularArtPending");
-      if (typeof win?.requestAnimationFrame === "function") {
-        win.requestAnimationFrame(() => win.requestAnimationFrame(ready));
-      } else ready();
-      return true;
-    }
-    img.classList.add("aoModularArtPending");
-    img.addEventListener?.("load", ready, { once: true });
-    img.addEventListener?.("error", fail, { once: true });
-    return true;
-  }
-
   function scanSurface(surface = getActive?.(), { forceHero = false } = {}) {
     if (disposed || !surface) return Object.freeze({ heroes: 0, art: 0 });
     const root = rootFor(surface);
     if (!root) return Object.freeze({ heroes: 0, art: 0 });
     ensureModularFxStyle(win);
     const heroes = heroNodes(root, surface);
-    const art = artNodes(root, surface);
     heroes.forEach(node => prepHero(node, { force: forceHero }));
-    art.forEach(prepArt);
+    const legacyArtScan = typeof legacyCinema(win)?.scanArt === "function";
+    legacyCinema(win)?.scanArt?.(root);
     root.dataset.aoPresentationFxHeroCount = String(heroes.length);
-    root.dataset.aoPresentationFxArtCount = String(art.length);
-    return Object.freeze({ heroes: heroes.length, art: art.length });
+    root.dataset.aoPresentationFxArtScan = legacyArtScan ? "legacy-v4312" : "unavailable";
+    return Object.freeze({ heroes: heroes.length, legacyArtScan });
   }
 
   function queueSurfaceScan() {
@@ -365,6 +310,7 @@ export function createPresentationFxBridge({
   installPresentationHook();
   if (typeof legacyCinema(win)?.showTransition === "function") mark("ready");
   else mark("legacy-cinema-unavailable");
+  queueSurfaceScan();
 
   return Object.freeze({
     version: PRESENTATION_FX_VERSION,
