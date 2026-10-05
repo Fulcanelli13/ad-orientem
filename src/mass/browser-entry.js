@@ -181,7 +181,7 @@ export function checkpointPersistedMass({
 }
 
 function installReaderCloseBridge(preview) {
-  const close = preview?.root?.querySelector?.("[aria-label='Close Mass reader']");
+  const close = preview?.root?.querySelector?.("[data-reader-home], [aria-label='Close Mass reader']");
   if (!close?.addEventListener) return null;
 
   const onClick = (event) => {
@@ -190,7 +190,7 @@ function installReaderCloseBridge(preview) {
     event.preventDefault?.();
     event.stopImmediatePropagation?.();
     void Promise.resolve(shell.navigate("home")).catch((error) => {
-      console.error("R17 reader close navigation failed", error);
+      console.error("R17 reader Home navigation failed", error);
     });
   };
   close.addEventListener("click", onClick, true);
@@ -198,6 +198,24 @@ function installReaderCloseBridge(preview) {
     dispose() {
       close.removeEventListener?.("click", onClick, true);
     },
+  });
+}
+
+function installReaderParametersBridge(preview) {
+  const button=preview?.root?.querySelector?.("[data-reader-parameters]");
+  if(!button?.addEventListener)return null;
+  const onClick=(event)=>{
+    const shell=globalThis.AO_APP_SHELL_V1;
+    if(typeof shell?.navigate!=="function")return;
+    event.preventDefault?.();
+    event.stopImmediatePropagation?.();
+    void Promise.resolve(shell.navigate("settings")).catch((error)=>{
+      console.error("R17 reader Settings navigation failed",error);
+    });
+  };
+  button.addEventListener("click",onClick,true);
+  return Object.freeze({
+    dispose(){button.removeEventListener?.("click",onClick,true);}
   });
 }
 
@@ -349,6 +367,7 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
   installReaderCheckpoint(previewState.preview);
   installReaderCloseBridge(previewState.preview);
+  installReaderParametersBridge(previewState.preview);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,prepared,readerUiMode,
