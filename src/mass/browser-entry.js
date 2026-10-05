@@ -45,16 +45,44 @@ function unwrapCssUrl(value){
   return match ? String(match[2]??"").trim() : raw;
 }
 
+function collectFrozenCssDeclarations(ruleList,values){
+  for(const rule of Array.from(ruleList??[])){
+    const style=rule?.style;
+    if(style?.getPropertyValue){
+      for(const cssVar of Object.values(R17_FROZEN_CSS_ICON_VARS)){
+        if(values[cssVar])continue;
+        const raw=style.getPropertyValue(cssVar);
+        if(raw)values[cssVar]=raw;
+      }
+    }
+    try{
+      if(rule?.cssRules)collectFrozenCssDeclarations(rule.cssRules,values);
+    }catch{}
+  }
+  return values;
+}
+
 export function resolveFrozenCssIconAssets(win=globalThis, doc=win?.document){
+  const values={};
   const root=doc?.documentElement;
   const getStyle=win?.getComputedStyle;
-  if(!root || typeof getStyle!=="function") return null;
-  let style=null;
-  try{ style=getStyle.call(win,root); }catch{return null}
-  if(!style?.getPropertyValue)return null;
+  if(root && typeof getStyle==="function"){
+    try{
+      const computed=getStyle.call(win,root);
+      if(computed?.getPropertyValue){
+        for(const cssVar of Object.values(R17_FROZEN_CSS_ICON_VARS)){
+          const raw=computed.getPropertyValue(cssVar);
+          if(raw)values[cssVar]=raw;
+        }
+      }
+    }catch{}
+  }
+  for(const sheet of Array.from(doc?.styleSheets??[])){
+    try{collectFrozenCssDeclarations(sheet?.cssRules,values);}catch{}
+  }
   const bank={};
   for(const [key,cssVar] of Object.entries(R17_FROZEN_CSS_ICON_VARS)){
-    const value=unwrapCssUrl(style.getPropertyValue(cssVar));
+    const value=unwrapCssUrl(values[cssVar]);
     if(value)bank[key]=value;
   }
   return Object.keys(bank).length ? Object.freeze(bank) : null;
