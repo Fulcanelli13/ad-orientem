@@ -142,7 +142,7 @@
       ]
     },
     "learn": {
-      "status": "PENDING_AUDIT",
+      "status": "IN_AUDIT",
       "currentOwner": "src/learn",
       "reference": "LOCKED_NON_MASS_V43_59_30",
       "mustPreserve": [
@@ -150,6 +150,13 @@
         "Daily formation / Courses & study / Today in context grouping",
         "English/French copy",
         "canonical child-module launches"
+      ],
+      "auditTarget": "390x844 actual-index certification of locked v43.59.30 Learn hierarchy, five launchers, featured-card ownership, canonical assets and phone geometry",
+      "auditEvidence": [
+        "src/learn/presentation.js",
+        "tests/learn-owner.mjs",
+        "tests/learn-owner-e2e.mjs",
+        "tests/app-visual-acceptance.mjs"
       ]
     },
     "calendar": {
