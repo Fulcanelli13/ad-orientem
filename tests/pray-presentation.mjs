@@ -31,6 +31,7 @@ assert.match(runtime,/ao-rich-angelus/,"Angelus semantic rail lost its canonical
 assert.match(runtime,/ao-rich-stations/,"Stations semantic rail lost its canonical devotional identity");
 assert.match(runtime,/ao-live-look/,"Stations lost the sourced face-the-Station attention cue");
 assert.match(runtime,/function stationsFx\(\)/,"Stations lost its transition-cinematic presentation hook");
+assert.match(runtime,/lastStationsFxStep===i/,"Stations transition no longer deduplicates repeated renders of the same Station");
 assert.match(runtime,/STATIONS OF THE CROSS/,"Stations cinematic lost its devotional identity");
 assert.match(runtime,/AO_CINEMATIC_V4312\|\|window\.AO_CINEMATIC_V4311/,"Stations transition no longer reuses the certified cinematic owner");
 assert.match(runtime,/isReducedMotion\?\.\(\)/,"Stations transition no longer honors reduced motion");
