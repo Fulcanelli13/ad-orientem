@@ -71,6 +71,9 @@ try{
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
     homeEmbeddedCanonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     homeFallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
+    release:document.documentElement.dataset.aoRelease??null,
+    releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
+    homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     donorHomeEnricherVisible:[...document.querySelectorAll(".aoComingUpV4323,.aoDailyCateHome")].some(node=>{
       const style=getComputedStyle(node);
       return node.isConnected&&!node.hidden&&style.display!=="none"&&style.visibility!=="hidden";
@@ -85,6 +88,9 @@ try{
   assert.equal(cold.modularEnrichers,2,"cold Home did not render both modular enricher cards");
   assert.equal(cold.homeEmbeddedCanonicalIcons,3,"cold Home did not render all three Coming Up icons from canonical embedded artwork");
   assert.equal(cold.homeFallbackIcons,0,"cold Home fell back to Unicode placeholder artwork");
+  assert.equal(cold.release,"43.59.30","production DOM exposes a stale pre-convergence release label");
+  assert.equal(cold.releaseAuthority,"AO_APP_SHELL_V1");
+  assert.equal(cold.homeSuppressed,"false","Home was suppressed while Home owned the surface");
   assert.equal(cold.donorHomeEnricherVisible,false,"donor Coming Up/Daily Catechism remained visible under modular Home");
 
   await page.locator("[data-ao-app-surface='calendar']").click();
@@ -97,10 +103,14 @@ try{
     owner:document.getElementById("ao-calendar-modular-root")?.dataset?.aoCalendarOwner??null,
     donorPanel:globalThis.AO_NAV_V25?.getState?.()?.panel??null,
     shell:globalThis.AO_APP_SHELL_V1?.status?.().calendarOwner??false,
+    homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null,
+    homeDisplay:getComputedStyle(document.querySelector(".homeScreen")).display,
   }));
   assert.equal(calendarOwnership.owner,"modular-calendar-v1","Calendar did not mount the modular presentation owner");
   assert.notEqual(calendarOwnership.donorPanel,"calendar","Calendar still opened the donor v25 panel");
   assert.equal(calendarOwnership.shell,true,"app shell did not report the modular Calendar owner");
+  assert.equal(calendarOwnership.homeSuppressed,"true","Calendar did not isolate Home");
+  assert.equal(calendarOwnership.homeDisplay,"none","Home remained visually exposed beneath Calendar");
 
   await page.locator("[data-ao-app-surface='mass']").click();
   await page.waitForFunction(()=>!document.getElementById("ao-calendar-modular-root"),null,{timeout:10000});
@@ -446,6 +456,8 @@ try{
     prayerRecords:globalThis.AO_PRAY_V435930?.qa?.()?.prayerRecords??null,
     prayOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
     legacyPrayerBookOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+    homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null,
+    homeDisplay:getComputedStyle(document.querySelector(".homeScreen")).display,
   }));
   assert.equal(prayOwnership.active,"pray");
   assert.equal(prayOwnership.routeOwner,"modular-pray-v1","production PRAY click bypassed modular route owner");
@@ -457,6 +469,8 @@ try{
   assert.equal(prayOwnership.prayerRecords,48);
   assert.equal(prayOwnership.prayOpen,true);
   assert.equal(prayOwnership.legacyPrayerBookOpen,false,"obsolete PrayerBook surface reopened underneath final PRAY");
+  assert.equal(prayOwnership.homeSuppressed,"true","PRAY did not isolate Home");
+  assert.equal(prayOwnership.homeDisplay,"none","Home remained visually exposed beneath PRAY");
 
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>
@@ -478,6 +492,8 @@ try{
       return node.isConnected&&!node.hidden&&style.display!=="none"&&style.visibility!=="hidden";
     }),
     prayStillOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
+    homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null,
+    homeDisplay:getComputedStyle(document.querySelector(".homeScreen")).display,
   }));
   assert.equal(homeOwnership.owner,"modular-home-v2","production Home click did not use modular Home owner");
   assert.equal(homeOwnership.presentationOwner,"modular-home-presentation-v1","production Home did not use modular base presentation");
@@ -487,6 +503,8 @@ try{
   assert.equal(homeOwnership.modularEnrichers,2,"Home transition did not restore both modular enricher cards");
   assert.equal(homeOwnership.donorHomeEnricherVisible,false,"donor Home enrichers resurfaced after PRAY -> Home");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
+  assert.equal(homeOwnership.homeSuppressed,"false","Home suppression survived return to Home");
+  assert.notEqual(homeOwnership.homeDisplay,"none","Home did not become visible after returning Home");
 
   await page.locator("[data-ao-app-surface='settings']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
@@ -495,10 +513,14 @@ try{
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     confirms:globalThis.__AO_APP_JOURNEY_CONFIRMS,
     owner:document.documentElement.dataset.aoAppShellOwner??null,
+    homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null,
+    homeDisplay:getComputedStyle(document.querySelector(".homeScreen")).display,
   }));
   assert.equal(end.active,"settings");
   assert.equal(end.confirms,2,"LIVE leave/resume guard did not run exactly twice");
   assert.equal(end.owner,"AO_APP_SHELL_V1");
+  assert.equal(end.homeSuppressed,"true","Settings did not isolate Home");
+  assert.equal(end.homeDisplay,"none","Home remained visually exposed beneath Settings");
 
   const storedBeforeReload=await page.evaluate(()=>localStorage.getItem("ao-r17-active-mass-v1"));
   assert.ok(storedBeforeReload,"native Mass persistence record disappeared before reload");
