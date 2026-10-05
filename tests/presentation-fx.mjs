@@ -69,11 +69,11 @@ for(const selector of [".celebrationBlock",".aoP435930Hero",".aoLearnModHero",".
   assert.ok(fxSource.includes(selector),`modular presentation FX lost approved hero selector ${selector}`);
 }
 assert.match(fxSource,/aoModularHeroIn/,"modular hero entry choreography disappeared");
-assert.match(fxSource,/aoModularArtLoading/,"modular art loading shimmer disappeared");
-assert.match(fxSource,/aoModularArtPending/,"modular art blur-in state disappeared");
-assert.match(fxSource,/prefers-reduced-motion:reduce/,"modular hero/art FX lost reduced-motion CSS");
+assert.match(fxSource,/legacyCinema\(win\)\?\.scanArt\?\.\(root\)/,"modular surfaces no longer invoke the approved v43.12 art-loading owner");
+assert.match(fxSource,/prefers-reduced-motion:reduce/,"modular hero FX lost reduced-motion CSS");
 assert.match(fxSource,/installPresentationHook/,"modular presentation rescans no longer follow rendered child surfaces");
 assert.doesNotMatch(fxSource,/querySelectorAll\?\.\(["']img["']\)/,"presentation FX regressed to scanning every image in the app");
+assert.match(fxSource,/queueSurfaceScan\(\);\s*\n\s*return Object\.freeze/,"initial Home surface no longer receives presentation FX scan");
 
 const index=readFileSync("index.html","utf8");
 for(const id of ["ao-cinema-boot","ao-cinema-transition","ao-cinema-loader"]){
