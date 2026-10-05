@@ -68,7 +68,9 @@ assert.match(html,/data-home-cu-static="rosary"/);
 assert.match(html,/data-home-cu-route="learn\.liturgical_year"/);
 assert.match(html,/data-home-daily-catechism/);
 assert.match(html,/data-ao-asset-id="ao-rich-rosary"/);
+assert.match(html,/<use href="#ao-rich-rosary"><\/use>/,"Home Rosary still renders a placeholder instead of the canonical embedded symbol");
 assert.match(html,/data-ao-asset-id="ao-ui-next"/);
+assert.doesNotMatch(html,/[✢✧◫◇♥✦⌂☼☾✝†]/,"Home enrichers regressed to Unicode placeholder glyphs");
 assert.doesNotMatch(html,/\\$\\{esc\\(url\\)\\}/,"canonical UI asset URL interpolation leaked into rendered markup");
 assert.match(html,/aoComingUpV4323[^{]*aoDailyCateHome[^{]*\{display:none!important\}/,"retired donor Home cards lost suppression");
 
