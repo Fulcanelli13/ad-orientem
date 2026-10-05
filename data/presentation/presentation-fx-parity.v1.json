@@ -83,7 +83,7 @@
       "note": "System and app reduced-motion preferences suppress non-essential FX."
     },
     "rosaryLiveFx": {
-      "status": "RECOVERED_V3_PENDING_CI",
+      "status": "RECOVERED_V3_VALIDATION",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
@@ -93,7 +93,7 @@
         "Ad_Orientem_Devotional_Timelines_and_Rubrics_Blueprint_v3_EXACT_CUE_BINDINGS.xlsx",
         "V41.1-GROUP-ROLES-GESTURES-HARMONIZATION-NOTES.md"
       ],
-      "note": "The preserved canonical Rosary player receives a geometry-neutral right context rail from AO_ROSARY_V381 state and reuses AO_CINEMATIC_V4312 only when a new mystery is entered. No universal Rosary posture is invented, bead navigation is untouched, and reduced motion suppresses the cinematic."
+      "note": "The preserved canonical Rosary player receives a geometry-neutral right context rail from AO_ROSARY_V381 state and reuses AO_CINEMATIC_V4312 only when a new mystery is entered. No universal Rosary posture is invented, bead navigation is untouched, and reduced motion suppresses the cinematic. CI validation is required before certification or merge."
     }
   },
   "nextRecoveryTargets": [
