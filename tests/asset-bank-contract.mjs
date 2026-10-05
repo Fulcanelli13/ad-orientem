@@ -82,6 +82,27 @@ const basenameAssetId=(url)=>{
   return name.replace(/\.[^.]+$/,"");
 };
 
+const collectFiles=(dir)=>{
+  const out=[];
+  for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
+    const full=path.join(dir,entry.name);
+    if(entry.isDirectory())out.push(...collectFiles(full));
+    else out.push(full);
+  }
+  return out;
+};
+
+const activeRoot=path.join(root,"assets/active");
+const externalized=collectFiles(activeRoot).filter(file=>/\.(png|svg|jpg|jpeg|webp)$/i.test(file));
+for(const file of externalized){
+  const assetId=path.basename(file).replace(/\.[^.]+$/,"");
+  const record=getCanonicalAsset(assetId);
+  assert.ok(record,"non-canonical asset entered assets/active: "+path.relative(root,file));
+  assert.equal(record.status,"FROZEN_ACTIVE");
+  const sha256=createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+  assert.equal(sha256,record.sha256,"externalized asset drifted from frozen V4 bytes: "+assetId);
+}
+
 assert.equal(auditHostIconBank(R17_FROZEN_ACTIVE_ICON_ASSETS).complete,true);
 for(const [readerKey,url] of Object.entries(R17_FROZEN_ACTIVE_ICON_ASSETS)){
   const assetId=basenameAssetId(url);
@@ -94,4 +115,4 @@ for(const [readerKey,url] of Object.entries(R17_FROZEN_ACTIVE_ICON_ASSETS)){
   assert.equal(sha256,record.sha256,"R17 compatibility asset drifted from frozen V4 bytes: "+assetId);
 }
 
-console.log("asset bank contract: PASS — V4 core 109 + 8 hardened extensions; all 20 R17 assets are byte-exact frozen V4 binaries.");
+console.log("asset bank contract: PASS — V4 core 109 + 8 hardened extensions; "+externalized.length+" externalized assets and all 20 R17 compatibility assets are byte-exact V4 binaries.");
