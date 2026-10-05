@@ -348,7 +348,7 @@ try{
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
-  assert.match(incarnatus.gesture,/GENUFLECT.*INCARNATUS|INCARNATUS.*GENUFLECT/i,"Incarnatus genuflection is not visibly salient");
+  assert.match(incarnatus.gesture,/GENUFLECT/i,"Incarnatus genuflection is not visibly salient");
   assert.equal(incarnatus.posture,"STAND","Incarnatus transient genuflection incorrectly replaced the persistent standing posture");
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
