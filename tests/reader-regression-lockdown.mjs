@@ -304,7 +304,9 @@ assert.match(String(properProvenance?.witnessFile??""),/golden-proper-witnesses\
   "Proper fixture replacement witness file is not pinned");
 
 const icons=release.protectedInvariants.find(x=>x.id==="ICON_ASSET_BANK_NATIVE");
-assert.equal(icons?.status,"CERTIFIED_HOST_BANK_BRIDGE","icon blocker disappeared without native bank certification");
+assert.equal(icons?.status,"CERTIFIED_REPOSITORY_FROZEN_ACTIVE_BANK","icon blocker disappeared without repository bank certification");
+assert.match(String(icons?.productionBank??""),/reader-icon-bank\.js/,"production icon bank is not pinned");
+assert.equal(icons?.assetRoot,"assets/active");
 assert.equal(icons?.failClosedOnMissingAssets,true,"icon bank stopped failing closed");
 
 const schola=release.protectedInvariants.find(x=>x.id==="SCHOLA_NATIVE_OWNERSHIP");
