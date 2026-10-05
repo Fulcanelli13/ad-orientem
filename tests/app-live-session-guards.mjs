@@ -38,6 +38,7 @@ const win={
 
 const guard=installLiveSessionGuards({win});
 assert.equal(guard.installed,true);
+assert.equal(win.AO_APP_LIVE_SESSION_GUARDS_V1,guard,"live-session guard was not exposed as the single Settings lock authority");
 assert.equal(ribbon.hidden,false);
 assert.equal(guard.status().live,false);
 
@@ -55,7 +56,7 @@ assert.equal(guard.status().live,true);
 let prevented=false;
 let stopped=false;
 clickHandler?.({
-  target:{closest(selector){return selector.includes("[data-live-form]")?{}:null;}},
+  target:{closest(selector){return selector.includes("[data-setting-structural]")?{}:null;}},
   preventDefault(){prevented=true;},
   stopImmediatePropagation(){stopped=true;},
 });
@@ -77,4 +78,5 @@ assert.equal(classes.has("aoAppLive"),false);
 
 guard.dispose();
 assert.equal(clickHandler,null);
+assert.equal(win.AO_APP_LIVE_SESSION_GUARDS_V1,undefined);
 console.log("PASS modular live-session guards");
