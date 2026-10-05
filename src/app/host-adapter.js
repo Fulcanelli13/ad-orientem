@@ -1,17 +1,12 @@
 import { NON_MASS_DONOR_CONTRACT } from "./contracts.js";
 
 function settingsApi(win) {
-  return (
-    win?.AO_SETTINGS_V4359 ??
-    win?.AO_SETTINGS_V4358 ??
-    win?.AO_SETTINGS_V4356 ??
-    null
-  );
+  return win?.AO_SETTINGS_APP_V1 ?? null;
 }
 
-function settingsState(api) {
+function settingsStatus(api) {
   try {
-    return typeof api?.state === "function" ? api.state() : api?.state ?? null;
+    return typeof api?.status === "function" ? api.status() : null;
   } catch {
     return null;
   }
@@ -106,20 +101,12 @@ export function createAppHostAdapter(win = globalThis) {
 
     openSettings() {
       const api = settingsApi(win);
-      if (typeof api?.open === "function") {
-        api.open();
-        return true;
-      }
-      const legacy = shell();
-      if (typeof legacy?.openModule === "function") {
-        void legacy.openModule("utility.settings");
-        return true;
-      }
-      return false;
+      if (typeof api?.open !== "function") return false;
+      return api.open() !== false;
     },
 
     settingsOpen() {
-      return Boolean(settingsState(settingsApi(win))?.navigation?.open);
+      return Boolean(settingsStatus(settingsApi(win))?.open);
     },
 
     dismissSettings() {
