@@ -189,6 +189,7 @@
       "classification": "REGRESSION",
       "status": "OPEN",
       "evidence": [
+        "data/presentation/product-parity.v1.json",
         "tests/app-visual-acceptance.mjs",
         "src/home/presentation.js",
         "src/calendar/browser-entry.js",
@@ -230,5 +231,6 @@
       "tests/settings-e2e.mjs",
       "tests/field-current-week-e2e.mjs"
     ]
-  }
+  },
+  "productParityLedger": "data/presentation/product-parity.v1.json"
 }
