@@ -1,3 +1,4 @@
+import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import {
   SETTINGS_PRESENTATION_VERSION,
   renderSettingsToString,
@@ -128,7 +129,7 @@ export function createSettingsOwner(win=globalThis){
     route=normalizeRoute(target);
     suppressHistoricalSettings(win);
     let r=root();
-    if(!r){r=doc.createElement("section");r.id=ROOT_ID;r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");doc.body.appendChild(r);bind(r);}
+    if(!r){r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("settings")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");doc.body.appendChild(r);bind(r);}
     subscribe();watchHistoricalSurfaces();paint();
     if(doc.documentElement?.dataset){doc.documentElement.dataset.aoSettingsOwner=OWNER;doc.documentElement.dataset.aoSettingsSurface="open";}
     clearTimers();versionTimers=[100,500,1200].map(ms=>win.setTimeout?.(()=>{if(root())paint();},ms)).filter(id=>id!=null);
