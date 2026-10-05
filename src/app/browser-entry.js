@@ -1,5 +1,5 @@
 import "./source-transport-compat.js";
-import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
+import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
 import "../learn/browser-entry.js";
@@ -105,6 +105,31 @@ function installVisibleRibbonOwner(win, controller, state) {
     }
   }
 
+  function applyCanonicalRibbonIcon(button,assetId){
+    const url=resolveCanonicalAssetUrl(assetId);
+    if(!url||!button)return false;
+    let icon=button.querySelector?.(".aoGlobalRibbonIcon")??null;
+    if(
+      icon?.dataset?.aoAssetId===assetId &&
+      icon?.dataset?.aoAssetRenderer==="mask"
+    )return true;
+    if(!icon){
+      icon=doc.createElement?.("span")??null;
+      if(!icon)return false;
+      button.insertBefore?.(icon,button.firstChild??null);
+    }
+    icon.className="aoGlobalRibbonIcon aoCanonicalRibbonIcon";
+    icon.dataset.aoAssetId=assetId;
+    icon.dataset.aoAssetRenderer="mask";
+    icon.setAttribute?.("aria-hidden","true");
+    if(typeof icon.replaceChildren==="function")icon.replaceChildren();
+    else icon.innerHTML="";
+    icon.style.background="currentColor";
+    icon.style.webkitMask=`url("${url}") center / contain no-repeat`;
+    icon.style.mask=`url("${url}") center / contain no-repeat`;
+    return true;
+  }
+
   function bindRibbonClick() {
     if (ribbonClickBound || !nav?.addEventListener) return;
     nav.addEventListener("click", onRibbonClick);
@@ -132,7 +157,10 @@ function installVisibleRibbonOwner(win, controller, state) {
       if (!surface) continue;
       button.dataset.aoAppSurface = surface;
       const assetId=canonicalAssetIdForSurface(surface);
-      if(assetId)button.dataset.aoAssetId=assetId;
+      if(assetId){
+        button.dataset.aoAssetId=assetId;
+        applyCanonicalRibbonIcon(button,assetId);
+      }
       button.removeAttribute?.("data-ao-ribbon");
       adopted += 1;
     }
