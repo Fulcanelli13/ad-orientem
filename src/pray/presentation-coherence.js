@@ -1,4 +1,5 @@
 import "./presentation-runtime.js";
+import { directChildAnchor } from "./dom-anchor.js";
 
 // Locked v43.59.30 PRAY coherence owner. Presentation behavior is preserved
 // verbatim while route/navigation ownership belongs to AO_PRAY_APP_V1.
@@ -41,7 +42,8 @@ function recitationControl(root){
   const el=document.createElement('section');el.className='aoP435930RecitationMode';el.dataset.aoRecitationControl='1';
   el.innerHTML=`<span>${fr?'Récitation':'Recitation'}</span><div role="group" aria-label="${fr?'Mode de récitation':'Recitation mode'}"><button type="button" aria-pressed="${m==='individual'?'true':'false'}" data-p435930-global-recitation="individual" class="${m==='individual'?'active':''}">${fr?'Individuel':'Individual'}</button><button type="button" aria-pressed="${m==='group'?'true':'false'}" data-p435930-global-recitation="group" class="${m==='group'?'active':''}">${fr?'Groupe':'Group'}</button></div>`;
   const firstPrayer=body.querySelector('.aoP435930Cards,.aoP435930Prayer,.aoP435930AppendixFlip');
-  if(firstPrayer)body.insertBefore(el,firstPrayer);else body.prepend(el);
+  const anchor=directChildAnchor(body,firstPrayer);
+  if(anchor)body.insertBefore(el,anchor);else body.prepend(el);
 }
 function plainWithBreaks(el){
   const c=el.cloneNode(true);c.querySelectorAll('br').forEach(br=>br.replaceWith(document.createTextNode('\n')));

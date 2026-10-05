@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
+import { directChildAnchor } from "../src/pray/dom-anchor.js";
 
 const prayers=PRAY_CANONICAL_DATA_V435930?.prayers??{};
 assert.equal(Object.keys(prayers).length,48,"locked v43.59.30 corpus must contain exactly 48 prayer records");
@@ -21,5 +22,12 @@ for(const id of ["ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-search"]){
 }
 assert.doesNotMatch(runtime,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
+
+const body={parentNode:null};
+const direct={parentNode:body};
+const nested={parentNode:direct};
+assert.equal(directChildAnchor(body,direct),direct,"direct PRAY card insertion anchor changed");
+assert.equal(directChildAnchor(body,nested),direct,"nested PRAY card did not resolve to a direct body child");
+assert.equal(directChildAnchor(body,{parentNode:null}),null,"foreign PRAY node incorrectly became an insertion anchor");
 
 console.log("PASS locked v43.59.30 PRAY presentation extraction");

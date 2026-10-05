@@ -10,6 +10,7 @@ import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
+import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 
 export const VERSION = "final-browser-entry-v2";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
@@ -134,6 +135,15 @@ export function persistedMassIsResumable(record) {
 function writePersistedActiveMass(record, storage = globalThis.localStorage) {
   try {
     storageApi(storage)?.setItem?.(ACTIVE_MASS_STORAGE_KEY, JSON.stringify(record));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function clearPersistedActiveMass(storage = globalThis.localStorage) {
+  try {
+    storageApi(storage)?.removeItem?.(ACTIVE_MASS_STORAGE_KEY);
     return true;
   } catch {
     return false;
@@ -363,7 +373,26 @@ export async function resumePersistedMass({
     return Object.freeze({ ok: true, retained: true, record });
   }
   const prepared = preparedFromRecord(record);
-  await openProductionReader(prepared, { resumeRecord: record });
+  try {
+    await openProductionReader(prepared, { resumeRecord: record });
+  } catch (error) {
+    clearPersistedActiveMass(storage);
+    try { globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.(); } catch {}
+    try { globalThis.AO_R17_NATIVE_READER_PREVIEW?.destroy?.(); } catch {}
+    try { delete globalThis.AO_R17_ACTIVE_MASS; } catch {}
+    try { delete globalThis.AO_R17_MASS_RUNTIME; } catch {}
+    if (globalThis.document?.documentElement?.dataset) {
+      delete globalThis.document.documentElement.dataset.aoMassReaderUi;
+      globalThis.document.documentElement.dataset.aoMassEngine = "r17-resume-invalidated";
+    }
+    console.error("Stored R17 Mass could not be resumed; checkpoint invalidated", error);
+    return Object.freeze({
+      ok: false,
+      reason: "STALE_OR_INCOMPLETE_RESUME",
+      invalidated: true,
+      error: String(error?.message ?? error),
+    });
+  }
   return Object.freeze({
     ok: true,
     resumed: true,
@@ -378,12 +407,18 @@ export function createBrowserMassController() {
   return createMassEntryController({
     celebrationApi: api,
     readReaderPreferences: () => readerPreferences(),
-    resolveHostOptions: (resolvedMass) => deriveHostOptions({
-      resolvedMass,
-      assemblyStatus: statusSnapshot(),
-      arch: arch(),
-      runtimeState: runtimeState(),
-    }),
+    resolveHostOptions: async (resolvedMass) => {
+      const options=deriveHostOptions({
+        resolvedMass,
+        assemblyStatus: statusSnapshot(),
+        arch: arch(),
+        runtimeState: runtimeState(),
+      });
+      const proper=await recoverReaderProperOmissions(options.proper,{
+        hostResolver:runtime()?.resolver?.properResolver,
+      });
+      return Object.freeze({...options,proper});
+    },
     openReader: openProductionReader,
   });
 }

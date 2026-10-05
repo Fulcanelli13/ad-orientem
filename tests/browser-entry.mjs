@@ -8,6 +8,7 @@ import {
   ACTIVE_MASS_STORAGE_KEY,
   readPersistedActiveMass,
   persistedMassIsResumable,
+  clearPersistedActiveMass,
   resolveHostIconAssets,
 } from "../src/mass/browser-entry.js";
 import { auditHostIconBank, R17_FROZEN_ACTIVE_ICON_KEYS, R17_FROZEN_EXCLUDED_ICON_KEYS } from "../src/mass/reader-icons.js";
@@ -99,6 +100,7 @@ const persistedStorage={
   value:null,
   getItem(key){return key===ACTIVE_MASS_STORAGE_KEY?this.value:null;},
   setItem(key,value){if(key===ACTIVE_MASS_STORAGE_KEY)this.value=String(value);},
+  removeItem(key){if(key===ACTIVE_MASS_STORAGE_KEY)this.value=null;},
 };
 persistedStorage.setItem(ACTIVE_MASS_STORAGE_KEY,JSON.stringify({
   schema:"ao-mass-entry-bootstrap-v1",
@@ -114,6 +116,8 @@ assert.equal(persisted?.readerPosition?.sectionId,"AO.CARD.003");
 assert.equal(persistedMassIsResumable(persisted),true);
 assert.equal(persistedMassIsResumable({...persisted,state:"complete"}),false);
 assert.equal(readPersistedActiveMass({getItem:()=>"{bad"}),null);
+assert.equal(clearPersistedActiveMass(persistedStorage),true);
+assert.equal(readPersistedActiveMass(persistedStorage),null,"stale persisted Mass checkpoint was not clearable");
 
 // browser-entry persisted Mass contract
 
