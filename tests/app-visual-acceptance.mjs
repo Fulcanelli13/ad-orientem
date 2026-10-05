@@ -152,6 +152,7 @@ try{
   await page.locator("#aoPray435930 [data-p435930-lib-open='sacrament_act_of_contrition']").click();
   await page.waitForSelector("#aoPray435930 .aoP435930Prayer",{timeout:5000});
   await page.waitForFunction(()=>globalThis.AO_PRAY_COHERENCE_V435930?.audit?.().readerContract==="fluid-v1",null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930 [data-ao-pray-focus='active']").length===1,null,{timeout:5000});
   const prayReader=await page.evaluate(()=>{
     const audit=globalThis.AO_PRAY_COHERENCE_V435930?.audit?.()??{};
     const flip=document.querySelector("#aoPray435930 .aoP435930Flip");
