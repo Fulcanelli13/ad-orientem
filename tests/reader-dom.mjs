@@ -31,7 +31,13 @@ for(const token of [
   'class="ao-schola-dock"',
   'data-side="faithful"',
   'data-side="priest"',
-  'data-role="guide-short"'
+  'data-role="guide-short"',
+  'data-reader-home',
+  'data-reader-parameters',
+  'data-role="section-jump"',
+  'data-role="section-menu"',
+  'data-schola-resize',
+  'data-schola-toggle'
 ]) expect(html.includes(token),"reader shell missing "+token);
 
 const first=normalizeReaderMoment({
@@ -116,4 +122,4 @@ expect(locked.canSwitchPresentationMode()===false,"native parity lock was not ex
 locked.setMode("MISSAL");
 expect(locked.getMode()==="LIVE","locked reader accepted cosmetic mode switch before v1.83 parity");
 
-console.log("Reader DOM contract PASS: shell channels, persistent/transient ownership, Guide fail-closed, Schola suppression, parity mode lock.");
+console.log("Reader DOM contract PASS: shell channels, top ribbon, section jump, Schola controls, persistent/transient ownership, Guide fail-closed, and parity mode lock.");
