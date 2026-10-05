@@ -1,3 +1,5 @@
+import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+
 export const SETTINGS_PRESENTATION_VERSION="modular-settings-presentation-v1";
 
 const COPY={
@@ -66,6 +68,11 @@ const PROVENANCE={
 };
 
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const assetIcon=(assetId,className="aoSetModIcon")=>{
+  const url=resolveCanonicalAssetUrl(assetId);
+  if(!url)return "";
+  return `<span class="${className}" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url(\'${esc(url)}\') center/contain no-repeat;mask:url(\'${esc(url)}\') center/contain no-repeat"></span>`;
+};
 const t=(lang,key)=>COPY[lang]?.[key]??COPY.en[key]??key;
 
 export function canonicalSettingsAppVersion(win=globalThis){
@@ -126,7 +133,7 @@ ${segments(t(l,"gestureProfile"),"data-setting-gesture-profile",[["ESSENTIAL",t(
 <div class="aoSetModCard">${toggle(t(l,"faithfulCommunion"),"","data-setting-faithful-communion",s.faithfulCommunion,{structural:true})}${toggle(t(l,"secondConfiteor"),"","data-setting-second-confiteor",s.secondConfiteor,{structural:true})}${toggle(t(l,"joinSecondConfiteor"),"","data-setting-join-confiteor",s.joinSecondConfiteor,{structural:true})}${toggle(t(l,"sundayAsperges"),"","data-sunday-asperges",s.sundayAsperges,{structural:true})}</div></section>
 <section class="aoSetModSection"><h2>${esc(t(l,"display"))}</h2>${segments(t(l,"textSize"),"data-setting-scale",[["normal",t(l,"normal")],["large",t(l,"large")]],s.textScale)}<div class="aoSetModCard">${toggle(t(l,"reduceMotion"),t(l,"reduceMotionHint"),"data-setting-motion",s.reducedMotion)}${toggle(t(l,"haptics"),vm.live?t(l,"liveHaptics"):t(l,"hapticsHint"),"data-setting-haptics",vm.haptics,{disabled:vm.live})}</div></section>
 <section class="aoSetModSection"><h2>${esc(t(l,"localPractice"))}</h2><div class="aoSetModCard"><button type="button" class="aoSetModAction" data-reset-postures>${esc(t(l,"resetPostures"))}</button></div></section>
-<section class="aoSetModSection"><button type="button" class="aoSetModNav" data-settings-sources><span><b>${esc(t(l,"sourcesAbout"))}</b><small>${esc(t(l,"sourcesHint"))}</small></span><strong aria-hidden="true">→</strong></button></section>
+<section class="aoSetModSection"><button type="button" class="aoSetModNav" data-settings-sources><span><b>${esc(t(l,"sourcesAbout"))}</b><small>${esc(t(l,"sourcesHint"))}</small></span><strong aria-hidden="true">${assetIcon("ao-ui-next")}</strong></button></section>
 <section class="aoSetModSection"><h2>${esc(t(l,"advanced"))}</h2><div class="aoSetModCard"><button type="button" class="aoSetModAction aoContentAuditLaunch" data-content-audit-v8>${esc(t(l,"contentAudit"))}</button></div></section>`;
 }
 
@@ -137,5 +144,5 @@ export function settingsCss(rootId="ao-settings-modular-root"){
 export function renderSettingsToString(win=globalThis,{route="main",live=false}={}){
   const vm=buildSettingsViewModel(win,{route,live});
   const l=vm.language,about=vm.route==="about-sources";
-  return `<style>${settingsCss()}</style><header class="aoSetModTop"><button type="button" ${about?"data-settings-main":"data-settings-close"} aria-label="${esc(about?t(l,"back"):t(l,"close"))}">${about?"←":"×"}</button><div><small>${esc(about?t(l,"sourcesAbout"):t(l,"preferences"))}</small><h1>${esc(about?t(l,"sourcesAbout"):t(l,"settings"))}</h1></div><button type="button" data-settings-close aria-label="${esc(t(l,"close"))}">×</button></header><main class="aoSetModBody">${about?sourceMarkup(vm):mainMarkup(vm)}</main>`;
+  return `<style>${settingsCss()}</style><header class="aoSetModTop"><button type="button" ${about?"data-settings-main":"data-settings-close"} aria-label="${esc(about?t(l,"back"):t(l,"close"))}">${about?assetIcon("ao-ui-back"):assetIcon("ao-ui-close")}</button><div><small>${esc(about?t(l,"sourcesAbout"):t(l,"preferences"))}</small><h1>${esc(about?t(l,"sourcesAbout"):t(l,"settings"))}</h1></div><button type="button" data-settings-close aria-label="${esc(t(l,"close"))}">${assetIcon("ao-ui-close")}</button></header><main class="aoSetModBody">${about?sourceMarkup(vm):mainMarkup(vm)}</main>`;
 }
