@@ -8,95 +8,16 @@ import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPre
 import { runReaderShadowAudit } from "./reader-shadow.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
+import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 
 export const VERSION = "final-browser-entry-v1";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
 
-export const R17_FROZEN_CSS_ICON_VARS=Object.freeze({
-  stand:"--v4-stand",
-  sit:"--v4-sit",
-  kneel:"--v4-kneel",
-  genuflect:"--v4-genuflect",
-  bow:"--v4-bow",
-  cross:"--v4-cross",
-  gospel_crosses:"--v4-gospelcrosses",
-  breast_strike:"--v4-breast",
-  head_bow:"--v4-headbow",
-  profound_bow:"--v4-profound",
-  hands_joined:"--v4-hands",
-  response:"--v4-response",
-  schola:"--v4-schola",
-  priest_audible:"--v4-audible",
-  priest_silent:"--v4-silent",
-  priest_foot:"--v4-foot",
-  priest_steps:"--v4-steps",
-  priest_centre:"--v4-altar",
-  priest_epistle:"--v4-epistle",
-  priest_gospel:"--v4-gospel",
-  priest_sedilia:"--v4-sedilia",
-  priest_rail:"--v4-rail",
-  priest_people:"--v4-people",
-});
-
-function unwrapCssUrl(value){
-  const raw=String(value??"").trim();
-  const match=raw.match(/^url\((['"]?)(.*?)\1\)$/i);
-  return match ? String(match[2]??"").trim() : raw;
-}
-
-function collectFrozenCssDeclarations(ruleList,values){
-  for(const rule of Array.from(ruleList??[])){
-    const style=rule?.style;
-    if(style?.getPropertyValue){
-      for(const cssVar of Object.values(R17_FROZEN_CSS_ICON_VARS)){
-        if(values[cssVar])continue;
-        const raw=style.getPropertyValue(cssVar);
-        if(raw)values[cssVar]=raw;
-      }
-    }
-    try{
-      if(rule?.cssRules)collectFrozenCssDeclarations(rule.cssRules,values);
-    }catch{}
-  }
-  return values;
-}
-
-export function resolveFrozenCssIconAssets(win=globalThis, doc=win?.document){
-  const values={};
-  const root=doc?.documentElement;
-  const getStyle=win?.getComputedStyle;
-  if(root && typeof getStyle==="function"){
-    try{
-      const computed=getStyle.call(win,root);
-      if(computed?.getPropertyValue){
-        for(const cssVar of Object.values(R17_FROZEN_CSS_ICON_VARS)){
-          const raw=computed.getPropertyValue(cssVar);
-          if(raw)values[cssVar]=raw;
-        }
-      }
-    }catch{}
-  }
-  for(const sheet of Array.from(doc?.styleSheets??[])){
-    try{collectFrozenCssDeclarations(sheet?.cssRules,values);}catch{}
-  }
-  const bank={};
-  for(const [key,cssVar] of Object.entries(R17_FROZEN_CSS_ICON_VARS)){
-    const value=unwrapCssUrl(values[cssVar]);
-    if(value)bank[key]=value;
-  }
-  return Object.keys(bank).length ? Object.freeze(bank) : null;
-}
-
 export function resolveHostIconAssets(win=globalThis){
   if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
-  if(win?.AO_ASSETS) return win.AO_ASSETS;
-  try {
-    if(typeof AO_ASSETS!=="undefined" && AO_ASSETS) return AO_ASSETS;
-  } catch {}
-  return resolveFrozenCssIconAssets(win,win?.document);
+  return R17_FROZEN_ACTIVE_ICON_ASSETS;
 }
-
 
 export function mapLegacyFollowMode(value) {
   const raw = String(value ?? "vox").toLowerCase();
