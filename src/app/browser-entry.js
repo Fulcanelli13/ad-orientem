@@ -1,5 +1,6 @@
 import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
+import "../learn/browser-entry.js";
 import { installLiveSessionGuards } from "./live-session-guards.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
@@ -12,7 +13,7 @@ import {
   surfaceForCoreRoute,
 } from "./index.js";
 
-export const VERSION = "final-app-shell-owner-v2";
+export const VERSION = "final-app-shell-owner-v3";
 
 function ready(win) {
   return Boolean(
@@ -251,6 +252,10 @@ export function installAppShellBridge({
         prayerOwner: win?.AO_PRAY_APP_V1?.status?.()?.installed === true,
         prayerPresentationDonor: Boolean(win?.AOTraditionalPrayerBook),
         lockedPrayerTargetAvailable: Boolean(win?.AO_PRAY_V435930),
+        learnOwner: win?.AO_LEARN_APP_V1?.status?.()?.installed === true,
+        learnOpen: win?.AO_LEARN_APP_V1?.status?.()?.open === true,
+        learnPresentationOwner: win?.AO_LEARN_APP_V1?.status?.()?.presentationOwner ?? null,
+        historicalLearnDonorOpen: win?.AO_LEARN_APP_V1?.status?.()?.donorShellOpen ?? null,
         calendarOwner: win?.AO_CALENDAR_APP_V1?.status?.()?.installed === true,
         calendarOpen: win?.AO_CALENDAR_APP_V1?.status?.()?.open === true,
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),

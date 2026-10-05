@@ -171,6 +171,9 @@ function host({ route = "home", confirm = true } = {}) {
       },
     },
     AO_NAV_V362: { home: () => calls.push("home") },
+    AO_LEARN_APP_V1: {
+      open: () => { calls.push("learn:open"); return true; },
+    },
     AO_V37_SHELL: {
       openDomain: (id) => { calls.push("domain:" + id); return true; },
       openModule: async () => ({ ok: true }),
@@ -183,7 +186,7 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal(dataset.aoAppShellBridge, "ready");
   assert.equal(bridge.status().passive, false);
   assert.equal((await bridge.navigate("learn")).ok, true);
-  assert.deepEqual(calls, ["home", "domain:learn"]);
+  assert.deepEqual(calls, ["home", "learn:open"]);
 }
 
 
@@ -223,6 +226,7 @@ function host({ route = "home", confirm = true } = {}) {
     },
     AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en"}),subscribe:()=>()=>{}}},
     AO_NAV_V362:{home:()=>{calls.push("home");return true;}},
+    AO_LEARN_APP_V1:{open:()=>{calls.push("learn:open");return true;}},
     AO_V37_SHELL:{openDomain:id=>{calls.push("domain:"+id);return true;},openModule:async()=>({ok:true})},
     setTimeout:fn=>{fn();return 1;},
   };
@@ -245,7 +249,7 @@ function host({ route = "home", confirm = true } = {}) {
   await Promise.resolve();
   await Promise.resolve();
   assert.equal(prevented,true,"late donor ribbon click was not owned by modular shell");
-  assert.deepEqual(calls,["home","domain:learn"]);
+  assert.deepEqual(calls,["home","learn:open"]);
 }
 
 console.log("PASS app shell contract");
