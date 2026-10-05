@@ -5,10 +5,11 @@ const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
 const parity=JSON.parse(readFileSync("data/presentation/product-parity.v1.json","utf8"));
 const presentationFx=JSON.parse(readFileSync("data/presentation/presentation-fx-parity.v1.json","utf8"));
+const exactDonor=JSON.parse(readFileSync("data/presentation/exact-donor-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.20.0");
-assert.equal(app.status,"FINAL_APP_READY");
+assert.equal(app.version,"1.21.0");
+assert.equal(app.status,"PRESENTATION_PARITY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
 assert.equal(reader.status,"FINAL_NATIVE_READY","Mass subsystem lost FINAL_NATIVE_READY");
@@ -31,7 +32,7 @@ for(const finding of findings){
 
 const open=findings.filter(x=>x.status==="OPEN").map(x=>x.id);
 assert.deepEqual(app.openBlockers,open,"app openBlockers must exactly match OPEN findings");
-assert.deepEqual(app.openBlockers,[],"FINAL_APP_READY must not retain app-level blockers");
+assert.deepEqual(app.openBlockers,["EXACT_NON_MASS_DONOR_PARITY"],"exact donor parity must remain the sole reopened app blocker");
 const fieldRuntime=findings.find(x=>x.id==="FIELD_RUNTIME_STABILIZATION");
 assert.equal(fieldRuntime?.classification,"PASS");
 assert.equal(fieldRuntime?.status,"CLOSED");
@@ -40,6 +41,21 @@ assert.equal(productParity?.classification,"PASS");
 assert.equal(productParity?.status,"CLOSED");
 assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
 assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
+assert.equal(app.exactDonorParityLedger,"data/presentation/exact-donor-parity.v1.json");
+const exactFinding=findings.find(x=>x.id==="EXACT_NON_MASS_DONOR_PARITY");
+assert.equal(exactFinding?.classification,"REGRESSION");
+assert.equal(exactFinding?.status,"OPEN");
+assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
+assert.equal(exactDonor.status,"OPEN");
+assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
+assert.deepEqual(exactDonor.openBlockers,[
+  "GENERIC_ROUTE_TRANSITIONS_SUBSTITUTED_FOR_DONOR_CHOREOGRAPHY",
+  "ASYNC_LOADING_SEMANTICS_FLATTENED",
+  "SEMANTIC_RAILS_SIMPLIFIED",
+  "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
+  "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
+]);
+assert.match(exactDonor.rule,/conceptual equivalence.*do not satisfy|conceptual equivalence.*insufficient|conceptual feature/i);
 const fxFinding=findings.find(x=>x.id==="PRESENTATION_FX_PARITY");
 assert.equal(fxFinding?.classification,"PASS");
 assert.equal(fxFinding?.status,"CLOSED");
@@ -108,4 +124,4 @@ assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.m
 assert.ok(app.regressionGates?.static?.includes("tests/reader-mode-switch.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
 
-console.log("PASS app release gate: FINAL_APP_READY with runtime stability and six-surface product parity certified.");
+console.log("PASS app release gate: architecture/runtime remain certified; exact non-Mass donor parity is correctly reopened.");

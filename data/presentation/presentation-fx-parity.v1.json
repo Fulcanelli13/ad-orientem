@@ -1,9 +1,9 @@
 {
   "schema": "ao-presentation-fx-parity-v1",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "status": "CERTIFIED",
   "releaseBlocker": null,
-  "rule": "FINAL_APP_READY requires the approved cinematic and semantic presentation systems to be active and phone/visual certified on the modular six-surface app. Physical extraction of the certified v43.12 presentation owner from index.html is non-blocking hygiene.",
+  "rule": "This ledger certifies modular availability of cinematic/rail/hero/art-loading mechanisms only. It does not certify exact reproduction of the approved non-Mass donor presentation; exact donor fidelity is governed by data/presentation/exact-donor-parity.v1.json and may block FINAL_APP_READY independently.",
   "reference": {
     "owner": "AO_CINEMATIC_V4312",
     "version": "43.12-ZERO-OBSERVER-CINEMATIC-CERTIFICATION",
@@ -146,6 +146,9 @@
   },
   "nextRecoveryTargets": [],
   "nonBlockingHygiene": [
-    "Optionally externalize the certified v43.12 cinematic CSS/runtime from index.html when the monolith can be split safely without changing first-paint or parser-order behavior."
-  ]
+    "Optionally externalize the certified v43.12 cinematic CSS/runtime from index.html when the monolith can be split safely without changing first-paint or parser-order behavior.",
+    "Do not use this ledger as evidence that later v3.4.x or final non-Mass donor composition has been reproduced exactly."
+  ],
+  "exactDonorParityAuthority": "data/presentation/exact-donor-parity.v1.json",
+  "scope": "MECHANISM_AVAILABILITY_NOT_EXACT_DONOR_FIDELITY"
 }

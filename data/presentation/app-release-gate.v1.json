@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.20.0",
-  "status": "FINAL_APP_READY",
-  "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified product/presentation parity across all six production surfaces, and certified presentation-FX parity.",
+  "version": "1.21.0",
+  "status": "PRESENTATION_PARITY_REQUIRED",
+  "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -229,10 +229,30 @@
         "App convergence workflow 37341706363",
         "R17 Mass convergence workflow 37341706430"
       ],
-      "detail": "Presentation FX recovery V1-V5 is certified. The modular shell uses the approved observer-free v43.12 boot/transition/loader owner; PRAY semantic rails are restored; Rosary mystery and Stations transition FX are live; Home/PRAY/Learn/Calendar hero choreography and canonical art-loading scans are restored; reduced motion is enforced. Physical extraction of the embedded v43.12 owner is non-blocking hygiene."
+      "detail": "Presentation FX V1-V5 certifies that cinematic, rail, hero and art-loading mechanisms exist on modular surfaces. It does not certify exact reproduction of the later approved non-Mass prototype composition, trigger semantics, geometry, timings or module choreography; those are governed by EXACT_NON_MASS_DONOR_PARITY."
+    },
+    {
+      "id": "EXACT_NON_MASS_DONOR_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "evidence": [
+        "data/presentation/exact-donor-parity.v1.json",
+        "src/app/presentation-fx.js",
+        "src/pray/presentation-runtime.js",
+        "src/pray/presentation-styles.js",
+        "tests/app-visual-acceptance.mjs",
+        "Ad-Orientem-2.0-v43.59.30-PRAY-UNIFIED-READER-CLOSURE.html",
+        "Ad_Orientem_v3_4_6.html",
+        "Ad_Orientem_v3_4_8.html",
+        "Ad_Orientem_v3_4_14.html",
+        "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
+      ],
+      "detail": "The current modular app recovers presentation mechanisms but not the exact approved non-Mass donor experience. Generic six-surface transition labels and loaders were substituted for donor action/content-specific choreography; semantic rails and Rosary presentation were reconstructed approximately; and current visual tests compare against current implementation rather than the final donor head. Release readiness is therefore reopened until direct donor-to-current parity is certified."
     }
   ],
-  "openBlockers": [],
+  "openBlockers": [
+    "EXACT_NON_MASS_DONOR_PARITY"
+  ],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
@@ -264,5 +284,6 @@
     ]
   },
   "productParityLedger": "data/presentation/product-parity.v1.json",
-  "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json"
+  "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json",
+  "exactDonorParityLedger": "data/presentation/exact-donor-parity.v1.json"
 }
