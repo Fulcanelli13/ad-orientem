@@ -1,6 +1,6 @@
 // Approved Ad Orientem icon-bank mapping for the native R17 reader.
-// Runtime keys resolve to the existing host AO_ASSETS payload; no duplicate
-// embedded image bank is introduced here.
+// Only semantics marked FROZEN_ACTIVE in the v4 asset ledger are mandatory.
+// FROZEN_EXCLUDED semantics deliberately remain text-only.
 
 export const R17_ICON_KEYS=Object.freeze({
   posture:Object.freeze({
@@ -98,15 +98,26 @@ export function createHostIconResolver({
   };
 }
 
+export const R17_FROZEN_ACTIVE_ICON_KEYS=Object.freeze([
+  "stand","sit","kneel","genuflect","bow",
+  "breast_strike","head_bow","profound_bow","hands_joined",
+  "response","schola","priest_audible","priest_silent",
+  "priest_foot","priest_steps","priest_centre","priest_epistle","priest_gospel",
+  "priest_rail","priest_people",
+]);
+
+export const R17_FROZEN_EXCLUDED_ICON_KEYS=Object.freeze([
+  "cross","gospel_crosses","priest_sedilia",
+]);
+
 export function auditHostIconBank(assets){
   const resolver=createHostIconResolver({assets});
-  const required=[
-    "stand","sit","kneel","genuflect","bow",
-    "cross","gospel_crosses","breast_strike","head_bow","profound_bow","hands_joined",
-    "response","schola","priest_audible","priest_silent",
-    "priest_foot","priest_steps","priest_centre","priest_epistle","priest_gospel",
-    "priest_sedilia","priest_rail","priest_people",
-  ];
+  const required=[...R17_FROZEN_ACTIVE_ICON_KEYS];
   const missing=required.filter(key=>!resolver(key));
-  return Object.freeze({required:Object.freeze(required),missing:Object.freeze(missing),complete:missing.length===0});
+  return Object.freeze({
+    required:Object.freeze(required),
+    excluded:R17_FROZEN_EXCLUDED_ICON_KEYS,
+    missing:Object.freeze(missing),
+    complete:missing.length===0,
+  });
 }

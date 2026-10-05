@@ -8,6 +8,7 @@ import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPre
 import { runReaderShadowAudit } from "./reader-shadow.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
+import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 
 export const VERSION = "final-browser-entry-v1";
@@ -15,12 +16,8 @@ export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
 
 export function resolveHostIconAssets(win=globalThis){
   if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
-  try {
-    if(typeof AO_ASSETS!=="undefined" && AO_ASSETS) return AO_ASSETS;
-  } catch {}
-  return null;
+  return R17_FROZEN_ACTIVE_ICON_ASSETS;
 }
-
 
 export function mapLegacyFollowMode(value) {
   const raw = String(value ?? "vox").toLowerCase();
