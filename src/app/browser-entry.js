@@ -1,5 +1,6 @@
 import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
+import "../settings/browser-entry.js";
 import { installLiveSessionGuards } from "./live-session-guards.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
@@ -243,11 +244,8 @@ export function installAppShellBridge({
         active: state.controller?.getActive?.() ?? null,
         homeOwner: typeof win?.AO_NAV_V362?.home === "function",
         domainOwner: typeof win?.AO_V37_SHELL?.openDomain === "function",
-        settingsOwner: Boolean(
-          win?.AO_SETTINGS_V4359 ??
-          win?.AO_SETTINGS_V4358 ??
-          win?.AO_SETTINGS_V4356
-        ),
+        settingsOwner: win?.AO_SETTINGS_APP_V1?.status?.()?.installed === true,
+        settingsOpen: win?.AO_SETTINGS_APP_V1?.status?.()?.open === true,
         prayerOwner: win?.AO_PRAY_APP_V1?.status?.()?.installed === true,
         prayerPresentationDonor: Boolean(win?.AOTraditionalPrayerBook),
         lockedPrayerTargetAvailable: Boolean(win?.AO_PRAY_V435930),
