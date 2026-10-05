@@ -1,0 +1,70 @@
+{
+  "schema": "ao-prototype-fidelity-v1",
+  "version": "1.0.0",
+  "status": "RECOVERY_REQUIRED",
+  "releaseBlocker": "PROTOTYPE_FIDELITY_PARITY",
+  "rule": "FINAL_APP_READY requires exact recovery of accepted prototype presentation behavior. Functional equivalence, generic substitutes, or simplified modular approximations do not count as parity.",
+  "donorAuthority": {
+    "nonMassCinematics": "Ad_Orientem_NON_MASS_HEAD_v2_CINEMATICS_PROTOTYPE.html",
+    "lockedPray": "v43.59.30 donor chain",
+    "principle": "recover donor behavior exactly where accepted; do not redesign"
+  },
+  "findings": [
+    {
+      "id": "GENERIC_SURFACE_TRANSITIONS",
+      "status": "REGRESSION",
+      "severity": "P0",
+      "current": "src/app/presentation-fx.js SURFACE_META invents generic Home/Mass/Prayer/Learn/Calendar/Settings cinematic labels",
+      "donor": "event-specific routeMeta: enter-live, leave-live, enter-prepare, leave-prepare, enter-thanksgiving, finish-live, leave-thanksgiving, scripture-open, scripture-close",
+      "repair": "remove generic labels as parity authority; restore exact donor event semantics and timings"
+    },
+    {
+      "id": "CONTEXTUAL_LOADERS",
+      "status": "REGRESSION",
+      "severity": "P0",
+      "current": "generic Opening… / Preparing <surface>",
+      "donor": "context-specific calendar/scripture loaders plus week-progress loader",
+      "repair": "restore exact donor loader titles/subtitles/progress behavior"
+    },
+    {
+      "id": "BOOT_READINESS",
+      "status": "PARTIAL",
+      "severity": "P1",
+      "current": "boot owner preserved but modular certification only checks presence",
+      "donor": "dynamic Ready state tied to resolved day/proper, stable Home critical content, fonts/art readiness",
+      "repair": "certify donor readiness criteria and timing, not merely boot disappearance"
+    },
+    {
+      "id": "PRAY_MODULE_CHOREOGRAPHY",
+      "status": "AUDIT_REQUIRED",
+      "severity": "P0",
+      "current": "modular subset certified against extracted v43.59.30",
+      "donor": "later accumulated Rosary/Stations/Angelus/Adoration/Benediction/Confession presentation chain",
+      "repair": "module-by-module donor diff; restore exact accepted rails, transitions, artwork, entry/completion states"
+    },
+    {
+      "id": "HOME_CALENDAR_VISUAL_LANGUAGE",
+      "status": "AUDIT_REQUIRED",
+      "severity": "P0",
+      "current": "modular reconstructions",
+      "donor": "final non-Mass Home/Calendar prototypes",
+      "repair": "direct visual/DOM comparison and exact recovery of accepted composition"
+    },
+    {
+      "id": "NO_APPROXIMATION_POLICY",
+      "status": "OPEN",
+      "severity": "P0",
+      "current": "tests accept feature existence and generic equivalents",
+      "donor": "exact accepted prototype behavior",
+      "repair": "add donor-fidelity regression tests; prohibit substitute labels/layouts/effects unless explicitly approved"
+    }
+  ],
+  "open": [
+    "GENERIC_SURFACE_TRANSITIONS",
+    "CONTEXTUAL_LOADERS",
+    "BOOT_READINESS",
+    "PRAY_MODULE_CHOREOGRAPHY",
+    "HOME_CALENDAR_VISUAL_LANGUAGE",
+    "NO_APPROXIMATION_POLICY"
+  ]
+}
