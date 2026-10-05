@@ -56,12 +56,28 @@ function rehydrateRemainingHomeDonors(win){
   retireLegacyHomeEnrichers(win);
 }
 
+function watchRetiredHomeEnrichers(win,onMutation){
+  if(typeof win?.MutationObserver!=="function"||!win?.document?.documentElement)return null;
+  const observer=new win.MutationObserver(()=>onMutation?.());
+  observer.observe(win.document.documentElement,{subtree:true,childList:true});
+  return observer;
+}
+
 function root(win){return win?.document?.getElementById?.("app")??null;}
 
 export function createHomeOwner(win=globalThis){
   let unsubscribe=null;
   let retryTimer=null;
   let enricherClicksBound=false;
+  let retiredEnricherObserver=null;
+
+  function ensureRetiredEnricherWatch(){
+    if(retiredEnricherObserver)return;
+    retiredEnricherObserver=watchRetiredHomeEnrichers(win,()=>{
+      if(state(win)?.route==="home")retireLegacyHomeEnrichers(win);
+    });
+    retireLegacyHomeEnrichers(win);
+  }
 
   function bindEnricherClicks(){
     if(enricherClicksBound||typeof win?.document?.addEventListener!=="function")return;
@@ -159,6 +175,7 @@ export function createHomeOwner(win=globalThis){
     closeTransientSurfaces(win);
     resetCoreRoute(win);
     try{win?.AO_SETTINGS_APP_V1?.restoreHome?.();}catch{}
+    ensureRetiredEnricherWatch();
     attachPresentation();
     paint(state(win));
     markOwner();
@@ -189,9 +206,12 @@ export function createHomeOwner(win=globalThis){
       try{win?.document?.removeEventListener?.("click",onEnricherClick,true);}catch{}
       enricherClicksBound=false;
     }
+    try{retiredEnricherObserver?.disconnect?.();}catch{}
+    retiredEnricherObserver=null;
   }
 
   bindEnricherClicks();
+  ensureRetiredEnricherWatch();
   attachPresentation();
   return Object.freeze({version:VERSION,open,paint,status,dispose});
 }
