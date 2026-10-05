@@ -173,8 +173,9 @@ export function createPresentationFxBridge({
     return [...(root.querySelectorAll?.(selector) ?? [])];
   }
 
-  function prepHero(node) {
+  function prepHero(node, { force = false } = {}) {
     if (!node?.classList) return false;
+    if (!force && node.dataset?.aoPresentationFxHero === PRESENTATION_FX_VERSION) return false;
     node.dataset.aoPresentationFxHero = PRESENTATION_FX_VERSION;
     if (reducedMotion(win)) {
       node.classList.remove("aoModularHeroIn");
@@ -219,14 +220,14 @@ export function createPresentationFxBridge({
     return true;
   }
 
-  function scanSurface(surface = getActive?.()) {
+  function scanSurface(surface = getActive?.(), { forceHero = false } = {}) {
     if (disposed || !surface) return Object.freeze({ heroes: 0, art: 0 });
     const root = rootFor(surface);
     if (!root) return Object.freeze({ heroes: 0, art: 0 });
     ensureModularFxStyle(win);
     const heroes = heroNodes(root, surface);
     const art = artNodes(root, surface);
-    heroes.forEach(prepHero);
+    heroes.forEach(node => prepHero(node, { force: forceHero }));
     art.forEach(prepArt);
     root.dataset.aoPresentationFxHeroCount = String(heroes.length);
     root.dataset.aoPresentationFxArtCount = String(art.length);
@@ -277,7 +278,7 @@ export function createPresentationFxBridge({
     if (html?.dataset) html.dataset.aoPresentationFxSurface = surface;
     legacyCinema(win)?.queuePresentationScan?.();
     if (!root) return false;
-    scanSurface(surface);
+    scanSurface(surface, { forceHero: true });
 
     root.dataset.aoPresentationFx = "entered";
     root.dataset.aoPresentationFxSurface = surface;
