@@ -218,12 +218,12 @@ function installStyles(win){
 export function installNonMassConvergence({win=globalThis}={}){
   if(!win?.document)return null;
   if(win.AO_NON_MASS_D3_D6_CONVERGENCE)return win.AO_NON_MASS_D3_D6_CONVERGENCE;
-  installStyles(win);scrubPersistedAdoration(win);
+  // D6 is now owned by AO_SETTINGS_APP_V1. Historical Settings hooks remain
+  // donor evidence only and are never activated by the production convergence layer.
+  scrubPersistedAdoration(win);
   let scheduled=false;
   const reconcile=()=>{
     scrubPersistedAdoration(win);
-    installSettingsHook(win);
-    patchAboutSettings(win);
   };
   const schedule=()=>{
     if(scheduled)return;
@@ -249,14 +249,14 @@ export function installNonMassConvergence({win=globalThis}={}){
       adorationOwner:"AO_PRAY_V435930+D3",
       benedictionOwner:"AO_PRAY_V435930+D4",
       confessionOwner:"AO_PRAY_V435930+D5",
-      settingsOwner:Boolean(win.AO_SETTINGS_V4359)||Boolean(win.AO_RUNTIME_V8?.store),
+      settingsOwner:win.AO_SETTINGS_APP_V1?.status?.()?.installed===true?"AO_SETTINGS_APP_V1":null,
       appVersion:canonicalAppVersion(win),
       adorationPresencePersistence:"session-only",
       confessionExamStorage:"read-only",
       d3:"integrated-on-modular-pray",
       d4:"integrated-on-modular-pray",
       d5:"integrated-on-modular-pray",
-      d6:"integrated-on-settings",
+      d6:win.AO_SETTINGS_APP_V1?.status?.()?.installed===true?"integrated-on-modular-settings":"settings-modular-owner-unavailable",
     }),
     dispose:()=>{
       observer.disconnect();
