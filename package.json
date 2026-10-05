@@ -81,8 +81,9 @@
     "test:home-owner": "node tests/home-owner.mjs",
     "test:pray-owner": "node tests/pray-presentation.mjs && node tests/pray-owner.mjs",
     "test:home-presentation": "node tests/home-presentation.mjs",
-    "test:nonmass-convergence": "node tests/nonmass-d3-d6-convergence.mjs",
-    "test:nonmass-convergence-e2e": "node tests/nonmass-d3-d6-e2e.mjs"
+    "test:nonmass-convergence": "node tests/nonmass-d3-d6-convergence.mjs && npm run test:home-enrichers",
+    "test:nonmass-convergence-e2e": "node tests/nonmass-d3-d6-e2e.mjs",
+    "test:home-enrichers": "node tests/home-enrichers.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
