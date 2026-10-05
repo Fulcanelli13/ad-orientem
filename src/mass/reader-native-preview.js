@@ -1548,11 +1548,11 @@ export async function mountNativeReaderPreview({
     }),
     showSection:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(planAwareCard(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null);
     },
     showSequence:sequence=>{
       const card=readerModel.cardBySequence(sequence);
-      return showCard(planAwareCard(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null);
     },
     syncState:queue,
     destroy,
