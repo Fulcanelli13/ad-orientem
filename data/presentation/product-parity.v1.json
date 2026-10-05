@@ -1,7 +1,7 @@
 {
   "schema": "ao-product-parity-v1",
   "version": "1.0.0",
-  "releaseBlocker": "PRODUCT_PRESENTATION_PARITY",
+  "releaseBlocker": null,
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
     "home": {
@@ -24,7 +24,7 @@
       ]
     },
     "mass": {
-      "status": "PARTIAL_PARITY_CERTIFIED",
+      "status": "CERTIFIED",
       "currentOwner": "src/mass",
       "reference": "R17_NATIVE_PLUS_APPROVED_LIVE_PRESENTATION",
       "mustPreserve": [
@@ -45,10 +45,8 @@
         "R17 Mass convergence workflow 37298926238",
         "App convergence workflow 37298926228"
       ],
-      "observedRegressions": [
-        "production mode switching remains intentionally locked despite the approved persistent MISSAL / SIMPLE / LIVE selector intent"
-      ],
-      "recoveryPass": "MASS_UI_V5_SOURCE_FIRST_48_CERTIFIED",
+      "observedRegressions": [],
+      "recoveryPass": "MASS_UI_V6_MODE_SWITCH_CERTIFIED",
       "recoveryTargets": [
         "collapse inactive cue rails without changing cue ownership",
         "move Schola from narrow right rail to dedicated readable dock",
@@ -80,9 +78,7 @@
         "fluid focus point is restored to approximately 39 percent",
         "locked mode selector is visually differentiated"
       ],
-      "remainingParityWork": [
-        "production in-reader MISSAL / SIMPLE / LIVE switching remains intentionally locked; pre-Mass mode selection is certified but the earlier persistent-selector interaction intent is not yet restored"
-      ],
+      "remainingParityWork": [],
       "v2Targets": [
         "Home / mode / current-section / Settings first-ribbon architecture",
         "source-first current-section jump menu",
@@ -94,7 +90,8 @@
         "MASS_UI_V2",
         "MASS_UI_V3_ELEVATION",
         "MASS_UI_V4_SALIENCE",
-        "MASS_UI_V5_SOURCE_FIRST_48"
+        "MASS_UI_V5_SOURCE_FIRST_48",
+        "MASS_UI_V6_MODE_SWITCH"
       ],
       "resolvedInV2": [
         "first ribbon now exposes Home, locked MISSAL/SIMPLE/LIVE modes, current source-first section jump and Settings/parameters",
@@ -173,6 +170,34 @@
         "Visual acceptance workflow 37315999862",
         "R17 Mass convergence workflow 37315999966",
         "App convergence workflow 37315999911"
+      ],
+      "v6Targets": [
+        "persistent MISSAL / SIMPLE / LIVE selector remains interactive during an active ordinary native Mass",
+        "mode changes rebuild presentation only from the already-prepared Mass session",
+        "exact active canonical cue is preserved first, with source section/sequence fallback",
+        "LIVE returns to the 48-step product presentation over the 39-step source model",
+        "SIMPLE and MISSAL use the certified 30-macro models without restarting Mass",
+        "section jump, Schola, Guide, cue focus and transient ownership remain synchronized after switching"
+      ],
+      "resolvedInV6": [
+        "LIVE -> SIMPLE -> MISSAL -> LIVE is phone-certified at Host elevation AO.SM.C0174 without losing canonical position",
+        "ordinary LIVE restores 48 visible / 39 source steps after switching back from SIMPLE or MISSAL",
+        "SIMPLE and MISSAL remain 30-step source/presentation models",
+        "mode switching is presentation-only and does not create a new Mass session or invoke legacy start paths",
+        "section-jump items rebuild from the active presentation model",
+        "the certified 39 percent cue focus line is restored after each switch",
+        "mode ownership is now PRESENTATION_ONLY_SOURCE_ANCHORED_IN_READER_SWITCH"
+      ],
+      "v6Evidence": [
+        "src/mass/reader-mode-switch.js",
+        "src/mass/reader-native-preview.js",
+        "src/mass/reader-dom.js",
+        "tests/reader-mode-switch.mjs",
+        "tests/reader-dom.mjs",
+        "tests/reader-phone-acceptance.mjs",
+        "Visual acceptance workflow 37325466930",
+        "App convergence workflow 37325466826",
+        "R17 Mass convergence workflow 37325466725"
       ]
     },
     "pray": {
@@ -256,5 +281,6 @@
         "R17 Mass convergence workflow 37305791833"
       ]
     }
-  }
+  },
+  "status": "CERTIFIED"
 }
