@@ -64,6 +64,17 @@ const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 assert.match(appEntry,/createPresentationFxBridge/,"app shell no longer installs modular presentation FX bridge");
 assert.match(appEntry,/presentationFx\?\.navigate/,"app shell navigation bypasses presentation FX bridge");
 
+const fxSource=readFileSync("src/app/presentation-fx.js","utf8");
+for(const selector of [".celebrationBlock",".aoP435930Hero",".aoLearnModHero",".aoCalSacredTime"]){
+  assert.ok(fxSource.includes(selector),`modular presentation FX lost approved hero selector ${selector}`);
+}
+assert.match(fxSource,/aoModularHeroIn/,"modular hero entry choreography disappeared");
+assert.match(fxSource,/aoModularArtLoading/,"modular art loading shimmer disappeared");
+assert.match(fxSource,/aoModularArtPending/,"modular art blur-in state disappeared");
+assert.match(fxSource,/prefers-reduced-motion:reduce/,"modular hero/art FX lost reduced-motion CSS");
+assert.match(fxSource,/installPresentationHook/,"modular presentation rescans no longer follow rendered child surfaces");
+assert.doesNotMatch(fxSource,/querySelectorAll\?\.\(["']img["']\)/,"presentation FX regressed to scanning every image in the app");
+
 const index=readFileSync("index.html","utf8");
 for(const id of ["ao-cinema-boot","ao-cinema-transition","ao-cinema-loader"]){
   assert.match(index,new RegExp(`id=["']${id}["']`),`legacy cinematic surface ${id} disappeared before modular extraction`);
