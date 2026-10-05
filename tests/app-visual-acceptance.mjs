@@ -258,17 +258,37 @@ try{
 
   await page.locator("#aoPray435930 [data-p435930-own='pray.stations']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="stations",null,{timeout:5000});
+  await waitForFxSettled();
   const stationRails=await page.evaluate(()=>({
     left:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.left").length,
     right:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.right").length,
+    cue:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
     context:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
     contextMask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
+    step:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right small")?.textContent?.trim()??"",
+    bodyWidth:document.querySelector("#aoPray435930 .aoP435930Body")?.getBoundingClientRect?.().width??0,
   }));
-  assert.equal(stationRails.left,0,"Stations invented a posture rail without resolved posture authority");
+  assert.equal(stationRails.left,1,"Stations lost its sourced face-the-Station semantic cue");
   assert.equal(stationRails.right,1,"Stations lost its devotional-context rail");
+  assert.equal(stationRails.cue,"ao-live-look","Stations movement cue is not using the canonical look/attention asset");
   assert.equal(stationRails.context,"ao-rich-stations","Stations context rail is not using the canonical devotional identity");
   assert.match(stationRails.contextMask,/ao-rich-stations\.png/,"Stations semantic rail did not load the canonical frozen mask");
+  assert.match(stationRails.step,/I\s*\/\s*XIV/,"Stations rail does not expose the current station identity");
+  assert.ok(stationRails.bodyWidth>=360,"Stations semantic rails reserved horizontal reading width");
   await shot("03b-pray-stations-rail");
+
+  await page.locator("#aoPray435930 [data-p435930-station-next]").click();
+  await page.waitForSelector("#ao-cinema-transition.aoCinemaTransitionOn",{state:"visible",timeout:2000});
+  await page.waitForFunction(()=>/II\s*\/\s*XIV/.test(document.querySelector("#aoPray435930 .aoP435930SemanticRail.right small")?.textContent??""),null,{timeout:3000});
+  const stationFx=await page.evaluate(()=>({
+    title:document.querySelector("#ao-cinema-transition [data-ao-cinema-transition-title]")?.textContent?.trim()??document.querySelector("#ao-cinema-transition .aoCinemaTransitionTitle")?.textContent?.trim()??"",
+    kicker:document.querySelector("#ao-cinema-transition [data-ao-cinema-transition-kicker]")?.textContent?.trim()??document.querySelector("#ao-cinema-transition .aoCinemaTransitionKicker")?.textContent?.trim()??"",
+    active:document.querySelector("#aoPray435930 .aoP435930StationRail [aria-current='step'] span")?.textContent?.trim()??"",
+  }));
+  assert.equal(stationFx.active,"II","Stations horizontal navigator did not advance with the cinematic");
+  assert.match((stationFx.kicker+" "+stationFx.title).toUpperCase(),/STATIONS|CHEMIN|II/,"Stations change cinematic lost devotional identity");
+  await shot("03c-pray-stations-transition");
+  await waitForFxSettled();
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
