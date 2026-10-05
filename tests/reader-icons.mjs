@@ -1,11 +1,22 @@
 import assert from "node:assert/strict";
-import { R17_ICON_KEYS, iconKeysForReaderState, createHostIconResolver, auditHostIconBank } from "../src/mass/reader-icons.js";
+import {
+  R17_ICON_KEYS,
+  R17_FROZEN_ACTIVE_ICON_KEYS,
+  R17_FROZEN_EXCLUDED_ICON_KEYS,
+  iconKeysForReaderState,
+  createHostIconResolver,
+  auditHostIconBank,
+} from "../src/mass/reader-icons.js";
 
 const required=auditHostIconBank({}).required;
 const bank=Object.fromEntries(required.map(key=>[key,"data:image/svg+xml;base64,"+Buffer.from("<svg/>").toString("base64")]));
 const audit=auditHostIconBank(bank);
 assert.equal(audit.complete,true);
 assert.deepEqual(audit.missing,[]);
+assert.deepEqual(audit.required,[...R17_FROZEN_ACTIVE_ICON_KEYS]);
+assert.deepEqual(audit.excluded,[...R17_FROZEN_EXCLUDED_ICON_KEYS]);
+for(const key of R17_FROZEN_EXCLUDED_ICON_KEYS)assert.equal(bank[key],undefined,
+  key+" unexpectedly became a mandatory frozen asset");
 
 const resolve=createHostIconResolver({assets:bank});
 assert.match(resolve("stand"),/^data:image/);
@@ -41,4 +52,4 @@ const broken={...bank}; delete broken.priest_steps;
 assert.equal(auditHostIconBank(broken).complete,false);
 assert.ok(auditHostIconBank(broken).missing.includes("priest_steps"));
 
-console.log("reader icons: PASS — native state maps to approved host bank and missing assets fail closed.");
+console.log("reader icons: PASS — frozen-active assets fail closed; frozen-excluded semantics remain text-only.");
