@@ -11,11 +11,13 @@ import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 
-export const VERSION = "final-browser-entry-v1";
+export const VERSION = "final-browser-entry-v2";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
 
-export function resolveHostIconAssets(win=globalThis){
-  if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
+export function resolveHostIconAssets(_win=globalThis){
+  // The frozen modular bank is the production authority. Historical hosts may
+  // still expose AO_R17_ICON_ASSETS, but that global must never override,
+  // partially replace, or downgrade the certified R17 asset contract.
   return R17_FROZEN_ACTIVE_ICON_ASSETS;
 }
 
