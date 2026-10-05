@@ -1,0 +1,86 @@
+{
+  "schema": "ao-product-parity-v1",
+  "version": "1.0.0",
+  "releaseBlocker": "PRODUCT_PRESENTATION_PARITY",
+  "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
+  "surfaces": {
+    "home": {
+      "status": "PENDING_AUDIT",
+      "currentOwner": "src/home",
+      "reference": "LOCKED_NON_MASS_V43_59_30",
+      "mustPreserve": [
+        "single liturgical-day identity",
+        "Gospel in context",
+        "Prepare / Follow Mass / Give thanks hierarchy",
+        "restrained sacred visual language",
+        "no Calendar dashboard duplication on Home"
+      ]
+    },
+    "mass": {
+      "status": "PENDING_AUDIT",
+      "currentOwner": "src/mass",
+      "reference": "R17_NATIVE_PLUS_APPROVED_LIVE_PRESENTATION",
+      "mustPreserve": [
+        "LIVE focus hierarchy",
+        "ribbons and rails",
+        "translation interaction",
+        "posture/action salience",
+        "Schola presentation",
+        "cinematic moments without reopening liturgical runtime"
+      ]
+    },
+    "pray": {
+      "status": "PENDING_AUDIT",
+      "currentOwner": "src/pray",
+      "reference": "V43_59_30_PRAY_LOCK",
+      "mustPreserve": [
+        "single PRAY shell",
+        "48-prayer corpus presentation",
+        "fluid reading focus",
+        "recitation grammar",
+        "canonical controls"
+      ]
+    },
+    "learn": {
+      "status": "PENDING_AUDIT",
+      "currentOwner": "src/learn",
+      "reference": "LOCKED_NON_MASS_V43_59_30",
+      "mustPreserve": [
+        "featured hierarchy",
+        "Daily formation / Courses & study / Today in context grouping",
+        "English/French copy",
+        "canonical child-module launches"
+      ]
+    },
+    "calendar": {
+      "status": "CERTIFIED",
+      "currentOwner": "src/calendar",
+      "reference": "APPROVED_CALENDAR_DASHBOARD_V3_23",
+      "mustPreserve": [
+        "one selected-date feast identity",
+        "large annual/sacred-time orientation",
+        "touch-scroll observance rail with selected landmark",
+        "restrained liturgical-colour emphasis",
+        "date navigation through existing resolver only",
+        "no duplicate calendar engine"
+      ],
+      "evidence": [
+        "src/calendar/browser-entry.js",
+        "tests/app-visual-acceptance.mjs",
+        "Visual acceptance workflow 37286969906 at 390x844 touch geometry"
+      ]
+    },
+    "settings": {
+      "status": "PENDING_AUDIT",
+      "currentOwner": "src/settings",
+      "reference": "LOCKED_NON_MASS_V43_59_30_PLUS_D6",
+      "mustPreserve": [
+        "clear preference hierarchy",
+        "Sources/About inside Settings",
+        "active-Mass structural lockout",
+        "canonical version/provenance",
+        "focus-safe overlay behavior"
+      ]
+    }
+  }
+}
