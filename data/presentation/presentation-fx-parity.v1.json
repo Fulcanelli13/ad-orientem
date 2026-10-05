@@ -1,6 +1,6 @@
 {
   "schema": "ao-presentation-fx-parity-v1",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "RECOVERY_IN_PROGRESS",
   "releaseBlocker": "PRESENTATION_FX_PARITY",
   "rule": "FINAL_APP_READY requires the approved cinematic and semantic presentation systems to be active on the modular six-surface app. Static surface parity alone is insufficient.",
@@ -53,7 +53,7 @@
       "note": "The old shimmer/blur-in art loader still targets historical art selectors; modular surface coverage requires audit."
     },
     "verticalSemanticRails": {
-      "status": "RECOVERED_V2_PARTIAL",
+      "status": "RECOVERED_V2_V3",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
@@ -62,7 +62,7 @@
         "Ad_Orientem_Angelus_Timeline_Prototype_v0.3.html",
         "Ad_Orientem_v3_4_8.html"
       ],
-      "note": "PRAY now restores geometry-neutral semantic icon rails without duplicating the horizontal stage navigator. Angelus exposes resolved Stand/Kneel plus devotional context; Stations, Rosary, Adoration, Benediction and Confession expose canonical contextual identity only. Unresolved posture is never invented. The external Rosary player still needs its own live mystery/context rail recovery."
+      "note": "PRAY restores geometry-neutral semantic icon rails without duplicating horizontal stage navigation. Angelus exposes resolved Stand/Kneel plus devotional context. Stations exposes sourced attention/context cues without inventing a universal posture. Adoration, Benediction and Confession expose canonical contextual identity. The external canonical Rosary player now has its own live mystery/context rail."
     },
     "heroPresenceAndEntryChoreography": {
       "status": "AUDIT_REQUIRED",
@@ -83,7 +83,7 @@
       "note": "System and app reduced-motion preferences suppress non-essential FX."
     },
     "rosaryLiveFx": {
-      "status": "RECOVERED_V3_VALIDATION",
+      "status": "CERTIFIED_V3",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
@@ -91,14 +91,27 @@
         "tests/app-visual-acceptance.mjs",
         "Ad_Orientem_v3_4_14.html",
         "Ad_Orientem_Devotional_Timelines_and_Rubrics_Blueprint_v3_EXACT_CUE_BINDINGS.xlsx",
-        "V41.1-GROUP-ROLES-GESTURES-HARMONIZATION-NOTES.md"
+        "V41.1-GROUP-ROLES-GESTURES-HARMONIZATION-NOTES.md",
+        "PR #183",
+        "Visual acceptance workflow 37332872525",
+        "App convergence workflow 37332872517",
+        "R17 Mass convergence workflow 37332872603"
       ],
-      "note": "The preserved canonical Rosary player receives a geometry-neutral right context rail from AO_ROSARY_V381 state and reuses AO_CINEMATIC_V4312 only when a new mystery is entered. No universal Rosary posture is invented, bead navigation is untouched, and reduced motion suppresses the cinematic. CI validation is required before certification or merge."
+      "note": "The preserved canonical Rosary player receives a geometry-neutral right context rail from AO_ROSARY_V381 state and reuses AO_CINEMATIC_V4312 only when a new mystery is entered. No universal Rosary posture is invented, bead navigation is untouched, reduced motion suppresses the cinematic, and PR #183 passed Visual acceptance, App convergence and R17 convergence."
+    },
+    "stationsLiveFx": {
+      "status": "RECOVERED_V4_VALIDATION",
+      "evidence": [
+        "src/pray/presentation-runtime.js",
+        "tests/pray-presentation.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Ad_Orientem_Devotional_Timelines_and_Rubrics_Blueprint_v1.xlsx — STA.T01/STA.T02/STA.T06"
+      ],
+      "note": "Stations now uses the canonical look/attention asset to cue facing the current Station, keeps the canonical Stations identity rail with the current XIV-step context, and reuses AO_CINEMATIC_V4312 on actual station changes. The recovery deliberately does not invent a universal kneel/stand track: the blueprint classifies movement and posture as contextual/traditional, and at-home use must not simulate a procession. CI validation is required before certification."
     }
   },
   "nextRecoveryTargets": [
-    "certify Rosary live context rail and mystery-entry cinematic on 390x844 production phone geometry",
-    "recover Stations change cinematic and exact sourced posture/gesture rail states without inventing local custom",
+    "phone-certify Stations semantic cue rail and station-change cinematic on 390x844 production geometry",
     "recover approved hero/art entry choreography across modular Home/PRAY/Learn/Calendar surfaces",
     "extend cinematic art-loading treatment to current modular art owners and prove real loading states",
     "extract v43.12 cinematic owner from monolithic index.html only after full presentation-FX behavior parity is locked"
