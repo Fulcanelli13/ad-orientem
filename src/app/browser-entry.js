@@ -1,3 +1,4 @@
+import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
 import "../learn/browser-entry.js";
@@ -78,6 +79,8 @@ function installVisibleRibbonOwner(win, controller, state) {
       );
       if (!surface) continue;
       button.dataset.aoAppSurface = surface;
+      const assetId=canonicalAssetIdForSurface(surface);
+      if(assetId)button.dataset.aoAssetId=assetId;
       button.removeAttribute?.("data-ao-ribbon");
       adopted += 1;
     }

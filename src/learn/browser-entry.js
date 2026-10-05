@@ -1,3 +1,4 @@
+import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import {
   LEARN_DONOR_RELEASE,
   LEARN_MODULE_IDS,
@@ -94,6 +95,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     node=doc.createElement("section");
     node.id=ROOT_ID;
     node.dataset.aoLearnOwner=VERSION;
+    node.dataset.aoAssetId=canonicalAssetIdForSurface("learn")||"";
     node.dataset.aoLearnDonorRelease=LEARN_DONOR_RELEASE;
     node.setAttribute("role","region");
     node.setAttribute("aria-label",L(win,"Learn","Apprendre"));

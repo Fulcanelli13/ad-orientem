@@ -1,3 +1,5 @@
+import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
 
 const COPY={
@@ -27,6 +29,11 @@ const COPY={
 
 function tr(language,key){return COPY[language]?.[key]??COPY.en[key]??key;}
 function esc(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));}
+function assetIcon(assetId,className="aoHomeAssetIcon"){
+  const url=resolveCanonicalAssetUrl(assetId);
+  if(!url)return "";
+  return `<span class="${className}" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url(\'${esc(url)}\') center/contain no-repeat;mask:url(\'${esc(url)}\') center/contain no-repeat"></span>`;
+}
 function parseIso(value){return new Date(`${value}T12:00:00`);}
 function iso(date){return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;}
 function localizedText(text,language){return !text?"":((language==="fr"?text.fr:text.en)||"");}
@@ -84,9 +91,9 @@ function homeSheet(state){
   if(state.homeSheet==="mass"){
     const p=state.resolution?.proper?.status==="ready"?state.resolution.proper.data:null;
     const slot=(label,v)=>{const vern=(l==="fr"?v?.fr:v?.en)||"",latinOnly=!vern&&!!v?.lat;return `<article><b>${esc(label)}</b><p>${esc(vern||(l==="fr"?"Traduction française indisponible.":"English translation unavailable."))}</p>${latinOnly?`<small class="translationIntegrityNote">${l==="fr"?"Le texte latin existe, mais il n’est pas affiché comme français.":"Latin exists, but is not displayed as English."}</small>`:""}</article>`;};
-    return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>${l==="fr"?"Aujourd’hui":"Today"}</span><h2>${l==="fr"?"Messe du jour":"Today’s Mass"}</h2></div><button data-home-sheet-close>×</button></header><div class="homeMassOverview">${slot("Introit",p?.introit)}${slot(l==="fr"?"Collecte":"Collect",p?.collects?.[0])}${slot(l==="fr"?"Épître / Leçon":"Epistle / Lesson",p?.epistle)}${slot(l==="fr"?"Saint Évangile":"Holy Gospel",p?.gospel)}${slot("Offertory",p?.offertory)}${slot("Communion",p?.communion)}</div></section></div>`;
+    return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>${l==="fr"?"Aujourd’hui":"Today"}</span><h2>${l==="fr"?"Messe du jour":"Today’s Mass"}</h2></div><button data-home-sheet-close aria-label="${l==="fr"?"Fermer":"Close"}">${assetIcon("ao-ui-close")}</button></header><div class="homeMassOverview">${slot("Introit",p?.introit)}${slot(l==="fr"?"Collecte":"Collect",p?.collects?.[0])}${slot(l==="fr"?"Épître / Leçon":"Epistle / Lesson",p?.epistle)}${slot(l==="fr"?"Saint Évangile":"Holy Gospel",p?.gospel)}${slot("Offertory",p?.offertory)}${slot("Communion",p?.communion)}</div></section></div>`;
   }
-  return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>Ad Orientem</span><h2>${l==="fr"?"Plus":"More"}</h2></div><button data-home-sheet-close>×</button></header><div class="moreActions"><button data-ao-settings-open><b>${l==="fr"?"Réglages":"Settings"}</b><span>${l==="fr"?"Messe, langue, participation, affichage et postures locales.":"Mass, language, participation, display and local postures."}</span></button><button data-action="prepare"><b>${l==="fr"?"Se préparer":"Prepare"}</b><span>${l==="fr"?"Avant la Messe.":"Before Mass."}</span></button><button data-action="thanks"><b>${l==="fr"?"Action de grâces":"Give thanks"}</b><span>${l==="fr"?"Après la Messe.":"After Mass."}</span></button></div></section></div>`;
+  return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true"><header><div><span>Ad Orientem</span><h2>${l==="fr"?"Plus":"More"}</h2></div><button data-home-sheet-close aria-label="${l==="fr"?"Fermer":"Close"}">${assetIcon("ao-ui-close")}</button></header><div class="moreActions"><button data-ao-settings-open><b>${l==="fr"?"Réglages":"Settings"}</b><span>${l==="fr"?"Messe, langue, participation, affichage et postures locales.":"Mass, language, participation, display and local postures."}</span></button><button data-action="prepare"><b>${l==="fr"?"Se préparer":"Prepare"}</b><span>${l==="fr"?"Avant la Messe.":"Before Mass."}</span></button><button data-action="thanks"><b>${l==="fr"?"Action de grâces":"Give thanks"}</b><span>${l==="fr"?"Après la Messe.":"After Mass."}</span></button></div></section></div>`;
 }
 
 export function renderHomeToString(state,win=globalThis){
@@ -100,15 +107,15 @@ export function renderHomeToString(state,win=globalThis){
   const meta=[vm.rank,vm.colour?`${t("colour")} · ${vm.colour}`:"",vm.formularyLabel,vm.commemorationLabel].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("");
   const chooser=vm.formularies.length?`<div class="formularyChooser" role="group" aria-label="${esc(t("formulary"))}">${vm.formularies.map(x=>`<button data-formulary="${x.index}" class="${x.selected?"selected":""}" aria-pressed="${x.selected}">${esc(x.label)}</button>`).join("")}</div>`:"";
   const art=win?.AO_PHASE1_ART?.homeMarkup?.(state,vm.language)||"";
-  return `<main class="homeScreen" data-home-language="${vm.language}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
+  return `<main class="homeScreen" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
 <header class="homeHeader"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><div class="languageSwitch" role="group" aria-label="Language"><button data-language="en" class="${vm.language==="en"?"active":""}">${esc(t("english"))}</button><button data-language="fr" class="${vm.language==="fr"?"active":""}">${esc(t("french"))}</button></div></div>
-<div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">‹</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">›</button></div><div class="dateRail" aria-label="Week">${week}</div></header>
+<div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div></header>
 <section class="celebrationBlock"><div class="eyebrow">${esc(vm.weekday)}</div><h1>${esc(vm.celebration)}</h1><div class="metaLine">${meta}</div>${chooser}${art}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}</section>
 ${status}${translationStatus}
 ${state.resume?.available?`<button class="resumeCard" data-resume-mass><span>${vm.language==="fr"?"Messe en cours":"Mass in progress"}</span><b>${vm.language==="fr"?"Reprendre":"Resume"}</b><small>${esc(win?.AO_DISPLAY_DATE?.(state.resume.date)||state.resume.date||"")} · ${Number(state.resume.stepIndex||0)+1}</small></button>`:""}
 <section class="homeSection aroundMass"><div class="sectionLabel">${esc(t("aroundMass"))}</div><div class="phaseActions"><button class="phaseButton secondary" data-action="prepare"><span>Ⅰ</span><b>${esc(t("prepare"))}</b></button><button class="phaseButton primary" data-action="follow"><span>Ⅱ</span><b>${esc(t("followMass"))}</b></button><button class="phaseButton secondary" data-action="thanks"><span>Ⅲ</span><b>${esc(t("giveThanks"))}</b></button></div></section>
-<section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p><button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>→</span></button></section>
-<section class="contentCard massCard"><div><div class="cardKicker">${esc(t("todaysMass"))}</div><p>${esc(vm.massHint)}</p></div><button class="roundAction" data-action="today-mass" aria-label="${esc(t("openMass"))}">→</button></section>
+<section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p><button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>${assetIcon("ao-ui-next")}</span></button></section>
+<section class="contentCard massCard"><div><div class="cardKicker">${esc(t("todaysMass"))}</div><p>${esc(vm.massHint)}</p></div><button class="roundAction" data-action="today-mass" aria-label="${esc(t("openMass"))}">${assetIcon("ao-ui-next")}</button></section>
 <section class="contentCard moreCard"><div><div class="cardKicker">${esc(t("more"))}</div><p>${esc(t("moreHint"))}</p></div><button class="roundAction" data-action="more" aria-label="${esc(t("openMore"))}">•••</button></section>
 <div class="homeSpacer"></div>${state.lastAction&&!["today-mass","more"].includes(state.lastAction)?`<div class="alphaNotice" role="status">${esc(t("developmentAction"))}</div>`:""}${homeSheet(state)}</main>`;
 }
