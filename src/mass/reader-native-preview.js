@@ -3,6 +3,7 @@
 // Legacy DOM/state is consulted only when an explicit rollback/shadow donor is supplied.
 
 import { createMassReaderModel } from "./reader-model.js";
+import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -298,6 +299,7 @@ export async function prepareNativeReaderPreview({
     nuptialData:data?.nuptialData,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
+  const presentationModel=projectSourceFirst48Presentation(model);
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
   const cueState=createReaderFormCueStateController({
@@ -348,7 +350,7 @@ export async function prepareNativeReaderPreview({
     : null;
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
-    prepared,data,model,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,
+    prepared,data,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
   });
@@ -647,7 +649,8 @@ export async function mountNativeReaderPreview({
     return api;
   }
 
-  let current=ready.model.cardBySequence(1);
+  const readerModel=ready.presentationModel??ready.model;
+  let current=readerModel.cardBySequence(1);
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
   let inAsh=Boolean(ready.ashController);
@@ -867,7 +870,7 @@ export async function mountNativeReaderPreview({
 
 
   function introitOnlyCard(){
-    const card=ready.model.cardBySequence(1);
+    const card=readerModel.cardBySequence(1);
     if(!card)return null;
     const block=card.blocks?.find?.(value=>value.blockId==="AO.SM.B014");
     if(!block || block.firstParagraphIndex==null || !block.paragraphCount){
@@ -1208,7 +1211,7 @@ export async function mountNativeReaderPreview({
       if(!state.atStart)ready.aspergesController.previous();
       return showAsperges();
     }
-    const first=ready.model.cardBySequence(1);
+    const first=readerModel.cardBySequence(1);
     if(ready.rogationsController && current?.sectionId===first?.sectionId){
       ready.rogationsController.goTo("ROG-R06");
       return showRogations();
@@ -1229,7 +1232,7 @@ export async function mountNativeReaderPreview({
       ready.aspergesController.goTo("ASP-R05");
       return showAsperges();
     }
-    return showCard(ready.model.previousCard(current.sectionId));
+    return showCard(readerModel.previousCard(current.sectionId));
   }
 
   function nextReaderCard(){
@@ -1298,12 +1301,12 @@ export async function mountNativeReaderPreview({
       const state=ready.aspergesController.project();
       if(state.atEnd){
         inAsperges=false;
-        return showCard(ready.model.cardBySequence(1));
+        return showCard(readerModel.cardBySequence(1));
       }
       ready.aspergesController.next();
       return showAsperges();
     }
-    const card=ready.model.nextCard(current.sectionId);
+    const card=readerModel.nextCard(current.sectionId);
     if((card?.sourceSequence===30 || card?.sequence===30) && prepared?.session?.plan?.normalLastGospel===false){
       return enterLifecycleBoundary();
     }
@@ -1358,7 +1361,7 @@ export async function mountNativeReaderPreview({
       cardTitle:visibleCard.title,
       cardUpdate:true,
       paragraphs:visibleCard.paragraphs,
-      progress:visibleCard.sequence+" / "+ready.model.totalCards,
+      progress:visibleCard.sequence+" / "+readerModel.totalCards,
       guide:guideForCurrent(visibleCard),
       ...state,
     });
@@ -1387,9 +1390,9 @@ export async function mountNativeReaderPreview({
     root:host,
     iconResolver,
     allowPresentationModeSwitch:false,
-    sections:ready.model.cards.map(card=>Object.freeze({id:card.sectionId,label:card.title})),
+    sections:readerModel.cards.map(card=>Object.freeze({id:card.sectionId,label:card.title})),
     onSectionSelect:(sectionId)=>{
-      const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
+      const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
       return showCard(card);
     },
     onPrevious:previousReaderCard,
@@ -1404,7 +1407,7 @@ export async function mountNativeReaderPreview({
       id:current?.sectionId ?? "",
       sectionTitle:current?.title ?? "",
       cardUpdate:false,
-      progress:current ? current.sequence+" / "+ready.model.totalCards : null,
+      progress:current ? current.sequence+" / "+readerModel.totalCards : null,
       guide:guideForCurrent(current),
       ...state,
     });
@@ -1490,7 +1493,7 @@ export async function mountNativeReaderPreview({
   }
 
   const api=Object.freeze({
-    root,reader,model:ready.model,
+    root,reader,model:readerModel,sourceModel:ready.model,
     ownership:Object.freeze({
       text:"R17_VERIFIED_CORPUS",
       cards:"R17_READER_MODEL",
@@ -1517,10 +1520,10 @@ export async function mountNativeReaderPreview({
       lifecycle:"R17_FORM_LIFECYCLE",
     }),
     showSection:(sectionId)=>{
-      const card=ready.model.cards.find(value=>value.sectionId===String(sectionId));
+      const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
       return showCard(card);
     },
-    showSequence:sequence=>showCard(ready.model.cardBySequence(sequence)),
+    showSequence:sequence=>showCard(readerModel.cardBySequence(sequence)),
     syncState:queue,
     destroy,
     getCurrentCard:()=>inGenericProcession ? ready.genericProcessionController?.project?.().card??null : inHolyThursdayPost ? ready.holyThursdayPostController?.project?.().card??null : inCorpusChristi ? ready.corpusChristiController?.project?.().card??null : inRequiemAbsolution ? ready.requiemAbsolutionController?.project?.().card??null : inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
