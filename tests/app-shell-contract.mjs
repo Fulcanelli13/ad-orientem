@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   APP_SURFACES,
   NON_MASS_DONOR_CONTRACT,
@@ -13,6 +14,13 @@ assert.equal(NON_MASS_DONOR_CONTRACT.release, "43.59.30");
 assert.equal(NON_MASS_DONOR_CONTRACT.prayerOwner, "AO_PRAY_V435930");
 assert.equal(NON_MASS_DONOR_CONTRACT.settingsOwner, "AO_SETTINGS_APP_V1");
 assert.equal(NON_MASS_DONOR_CONTRACT.settingsDonorOwner, "AO_SETTINGS_V4359");
+
+const calendarSource=readFileSync("src/calendar/browser-entry.js","utf8");
+assert.match(calendarSource,/data-cal-input/,"Calendar lost DD\/MM\/YYYY date entry");
+assert.doesNotMatch(calendarSource,/data-cal-native/,"Calendar regressed to duplicate visible date inputs");
+assert.match(calendarSource,/Commémorations/,"Calendar French commemorations label regressed");
+assert.doesNotMatch(calendarSource,/Commémoraisons/,"Calendar retains misspelled French commemorations label");
+assert.match(calendarSource,/grid-template-columns:44px minmax\(0,1fr\) 44px/,"Calendar sticky title lost symmetric header geometry");
 
 function host({ route = "home", confirm = true } = {}) {
   const calls = [];
