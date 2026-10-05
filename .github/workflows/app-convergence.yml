@@ -13,6 +13,7 @@ on:
       - "data/presentation/app-release-gate.v1.json"
       - "tests/app-release-gate.mjs"
       - "tests/app-shell-*.mjs"
+      - "tests/nonmass-d3-d6-*.mjs"
       - "tests/reader-phone-acceptance.mjs"
       - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
@@ -30,6 +31,7 @@ on:
       - "data/presentation/app-release-gate.v1.json"
       - "tests/app-release-gate.mjs"
       - "tests/app-shell-*.mjs"
+      - "tests/nonmass-d3-d6-*.mjs"
       - "tests/reader-phone-acceptance.mjs"
       - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
@@ -48,6 +50,7 @@ jobs:
       - run: npm run test:app-live-guards
       - run: npm run test:home-owner
       - run: npm run test:home-presentation
+      - run: npm run test:nonmass-convergence
       - run: npm run test:pray-owner
       - run: npm run check:app-release
 
