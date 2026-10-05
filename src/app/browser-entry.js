@@ -39,6 +39,7 @@ function installVisibleRibbonOwner(win, controller, state) {
 
   let nav = null;
   let observer = null;
+  let releaseObserver = null;
   let disposed = false;
   let ribbonClickBound = false;
   const cleanups = [];
@@ -54,6 +55,15 @@ function installVisibleRibbonOwner(win, controller, state) {
     (doc.head??doc.documentElement)?.append?.(style);
   }
 
+  function enforceReleaseAuthority(){
+    const html=doc.documentElement;
+    if(!html?.dataset)return false;
+    const release=NON_MASS_DONOR_CONTRACT.release;
+    if(html.dataset.aoRelease!==release)html.dataset.aoRelease=release;
+    if(html.dataset.aoReleaseAuthority!=="AO_APP_SHELL_V1")html.dataset.aoReleaseAuthority="AO_APP_SHELL_V1";
+    return true;
+  }
+
   function syncHomeIsolation(active){
     ensureSurfaceIsolationStyle();
     const suppressed=isolatedNonMass.has(active);
@@ -64,10 +74,7 @@ function installVisibleRibbonOwner(win, controller, state) {
     if(doc.documentElement?.dataset){
       doc.documentElement.dataset.aoHomeSuppressed=suppressed?"true":"false";
     }
-    if(doc.documentElement){
-      doc.documentElement.dataset.aoRelease=NON_MASS_DONOR_CONTRACT.release;
-      doc.documentElement.dataset.aoReleaseAuthority="AO_APP_SHELL_V1";
-    }
+    enforceReleaseAuthority();
   }
 
   function paintActive() {
@@ -171,6 +178,16 @@ function installVisibleRibbonOwner(win, controller, state) {
     observer.observe(nav, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-ao-ribbon"] });
     cleanups.push(() => observer?.disconnect?.());
   }
+
+  if (typeof win?.MutationObserver === "function" && doc.documentElement) {
+    releaseObserver = new win.MutationObserver(() => enforceReleaseAuthority());
+    releaseObserver.observe(doc.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-ao-release", "data-ao-release-authority"],
+    });
+    cleanups.push(() => releaseObserver?.disconnect?.());
+  }
+  enforceReleaseAuthority();
 
   return () => {
     disposed = true;
