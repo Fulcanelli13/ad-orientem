@@ -117,6 +117,10 @@ try{
     parametersButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")),
     homeControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.textContent?.trim()??"",
     parametersControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.textContent?.trim()??"",
+    homeControlRenderer:document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.dataset?.aoAssetRenderer??null,
+    parametersControlRenderer:document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.dataset?.aoAssetRenderer??null,
+    homeControlMask:getComputedStyle(document.querySelector("#ao-r17-native-reader-preview [data-reader-home] .ao-reader-top-icon"))?.webkitMaskImage||"",
+    parametersControlMask:getComputedStyle(document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters] .ao-reader-top-icon"))?.webkitMaskImage||"",
     homeControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
     parametersControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
     floatingClose:Boolean(document.querySelector("#ao-r17-native-reader-preview [aria-label='Close Mass reader']")),
@@ -139,8 +143,12 @@ try{
   assert.equal(opening.scholaDock,"true","active Schola did not move to the readable dedicated dock");
   assert.equal(opening.homeButton,true,"LIVE first ribbon lost Home control");
   assert.equal(opening.parametersButton,true,"LIVE first ribbon lost Settings/parameters control");
-  assert.equal(opening.homeControlText,"HOME","Home control rendered blank while its canonical asset is not externalized");
-  assert.equal(opening.parametersControlText,"PARAMS","Parameters control rendered blank while its canonical asset is not externalized");
+  assert.equal(opening.homeControlText,"","Home control retained obsolete text after canonical icon externalization");
+  assert.equal(opening.parametersControlText,"","Parameters control retained obsolete text after canonical icon externalization");
+  assert.equal(opening.homeControlRenderer,"mask","Home control is not owned by the canonical mask renderer");
+  assert.equal(opening.parametersControlRenderer,"mask","Parameters control is not owned by the canonical mask renderer");
+  assert.match(opening.homeControlMask,/ao-nav-home\.png/,"Home control does not render the frozen navigation asset");
+  assert.match(opening.parametersControlMask,/ao-nav-settings\.png/,"Parameters control does not render the frozen navigation asset");
   assert.ok(opening.homeControlRect?.width>=44&&opening.homeControlRect?.height>=44,"Home control lost a usable phone touch target");
   assert.ok(opening.parametersControlRect?.width>=44&&opening.parametersControlRect?.height>=44,"Parameters control lost a usable phone touch target");
   assert.equal(opening.floatingClose,false,"obsolete floating close button still overlays the LIVE ribbon");
