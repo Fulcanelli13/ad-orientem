@@ -211,17 +211,25 @@ try{
   await page.waitForSelector(".aoP435930RosaryBar",{state:"visible",timeout:10000});
   await assertSinglePrayerLayer("Rosary donor launch");
 
-  const rosarySurface=await page.evaluate(()=>({
-    bars:document.querySelectorAll(".aoP435930RosaryBar").length,
-    simple:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-rosary-depth='simple']").length,
-    guided:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']").length,
-    individual:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-recitation='individual']").length,
-    group:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-recitation='group']").length,
-    guidedActive:document.querySelector(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']")?.classList?.contains("active")??false,
-    groupActive:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??false,
-    hintsVisible:[...document.querySelectorAll(".flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]")]
-      .filter(node=>visibleState(node)).length,
-  }));
+  const rosarySurface=await page.evaluate(()=>{
+    const visible=node=>{
+      if(!node)return false;
+      const style=getComputedStyle(node),r=node.getBoundingClientRect();
+      return !node.hidden && style.display!=="none" && style.visibility!=="hidden" &&
+        style.opacity!=="0" && r.width>0 && r.height>0;
+    };
+    return {
+      bars:document.querySelectorAll(".aoP435930RosaryBar").length,
+      simple:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-rosary-depth='simple']").length,
+      guided:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']").length,
+      individual:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-recitation='individual']").length,
+      group:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-recitation='group']").length,
+      guidedActive:document.querySelector(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']")?.classList?.contains("active")??false,
+      groupActive:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??false,
+      hintsVisible:[...document.querySelectorAll(".flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]")]
+        .filter(visible).length,
+    };
+  });
   assert.deepEqual(
     {bars:rosarySurface.bars,simple:rosarySurface.simple,guided:rosarySurface.guided,individual:rosarySurface.individual,group:rosarySurface.group},
     {bars:1,simple:1,guided:1,individual:1,group:1},
