@@ -46,17 +46,9 @@
         "App convergence workflow 37298926228"
       ],
       "observedRegressions": [
-        "inactive 58px rails remain as empty gutters and materially reduce prayer width",
-        "Schola text is squeezed into the narrow right rail instead of a readable dedicated surface",
-        "Host Consecration renders vernacular-first rather than Latin-prominent",
-        "elevation/genuflection rubric remains inline in prayer text rather than being promoted to state/cinematic treatment",
-        "current card title is duplicated between state ribbon and prayer card",
-        "state ribbon uses priest position on the left instead of the approved faithful/posture versus priest-action split",
-        "reader presentation lacks the approved fluid 35-40% focus-zone treatment",
-        "mode controls are visually presented as selectable while production mode switching is locked",
-        "production source-first display model currently contains 39 cards; this must be reconciled with the approved v1.83 card philosophy without replacing the source-first engine"
+        "production mode switching remains intentionally locked despite the approved persistent MISSAL / SIMPLE / LIVE selector intent"
       ],
-      "recoveryPass": "MASS_UI_V5_SOURCE_FIRST_48",
+      "recoveryPass": "MASS_UI_V5_SOURCE_FIRST_48_CERTIFIED",
       "recoveryTargets": [
         "collapse inactive cue rails without changing cue ownership",
         "move Schola from narrow right rail to dedicated readable dock",
@@ -101,7 +93,8 @@
         "MASS_UI_V1",
         "MASS_UI_V2",
         "MASS_UI_V3_ELEVATION",
-        "MASS_UI_V4_SALIENCE"
+        "MASS_UI_V4_SALIENCE",
+        "MASS_UI_V5_SOURCE_FIRST_48"
       ],
       "resolvedInV2": [
         "first ribbon now exposes Home, locked MISSAL/SIMPLE/LIVE modes, current source-first section jump and Settings/parameters",
@@ -159,6 +152,26 @@
         "use canonical block boundaries plus recovered semantic decompression evidence",
         "do not invent or claim historical v1.83 C01-C48 identities",
         "preserve section jump, navigation, Schola sourceSequence, Guide sourceSequence, cue focus and cinematics on phone"
+      ],
+      "resolvedInV5": [
+        "ordinary Sung LIVE now exposes exactly 48 visible presentation steps over the certified 39-step source-first model",
+        "the nine added presentation steps use canonical source-block decompression and do not invent historical v1.83 C01-C48 identifiers",
+        "phone acceptance certifies 48 visible steps while sourceModel remains 39",
+        "Nuptial LIVE preserves three source-pinned insertions as 51 visible steps over 42 source steps",
+        "Final Blessing and Last Gospel suppression remain compiled-plan/source-owned after presentation decompression",
+        "Guide, Schola, exact cue focus, elevation cinematic and section navigation remain green across the 48-step layer"
+      ],
+      "v5Evidence": [
+        "src/mass/reader-live-product48.js",
+        "tests/reader-live-product48.mjs",
+        "tests/reader-native-preview.mjs",
+        "tests/reader-phone-acceptance.mjs",
+        "tests/app-shell-final-e2e.mjs",
+        "tests/app-shell-nuptial-e2e.mjs",
+        "tests/mass-visual-acceptance.mjs",
+        "Visual acceptance workflow 37315999862",
+        "R17 Mass convergence workflow 37315999966",
+        "App convergence workflow 37315999911"
       ]
     },
     "pray": {
