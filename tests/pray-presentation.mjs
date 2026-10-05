@@ -25,6 +25,14 @@ assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card 
 assert.match(runtime,/const trailing=view==='home'/,"PRAY root header no longer distinguishes its root exit state");
 assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit header spacer");
 assert.match(styles,/aoP435930HeadSpacer/,"PRAY single-exit header spacer lost visual geometry");
+assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
+assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
+assert.match(runtime,/ao-rich-angelus/,"Angelus semantic rail lost its canonical devotional identity");
+assert.match(runtime,/ao-rich-stations/,"Stations semantic rail lost its canonical devotional identity");
+assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
+assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
+assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
+assert.match(styles,/@media\(max-width:560px\)[\s\S]*aoP435930SemanticRailIcon\{width:27px/,"PRAY semantic rail icons lost salient phone geometry");
 
 const body={parentNode:null};
 const direct={parentNode:body};

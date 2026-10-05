@@ -194,6 +194,44 @@ try{
   assert.equal(prayHub.legacyOpen,false,"legacy Prayer Book is visible beneath modular PRAY");
   await shot("03-pray");
 
+  // Prototype-era semantic rails are presentation-only: they must expose
+  // resolved posture/context without reserving prayer-column width or stealing touch.
+  await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
+  const angelusRails=await page.evaluate(()=>({
+    left:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.left").length,
+    right:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.right").length,
+    posture:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    context:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    iconWidth:document.querySelector("#aoPray435930 .aoP435930SemanticRailIcon")?.getBoundingClientRect?.().width??0,
+    bodyWidth:document.querySelector("#aoPray435930 .aoP435930Body")?.getBoundingClientRect?.().width??0,
+    pointer:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930SemanticRails")).pointerEvents,
+  }));
+  assert.equal(angelusRails.left,1,"Angelus lost the faithful-posture semantic rail");
+  assert.equal(angelusRails.right,1,"Angelus lost the devotional-context semantic rail");
+  assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.posture),"Angelus posture rail is not sourced from the canonical posture bank");
+  assert.equal(angelusRails.context,"ao-rich-angelus","Angelus context rail is not using the canonical devotional identity");
+  assert.ok(angelusRails.iconWidth>=26,"Angelus rail icon is not salient at phone size");
+  assert.ok(angelusRails.bodyWidth>=360,"semantic rails reserved horizontal reading width");
+  assert.equal(angelusRails.pointer,"none","semantic rails intercept touch interaction");
+  await shot("03a-pray-angelus-rails");
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
+
+  await page.locator("#aoPray435930 [data-p435930-own='pray.stations']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="stations",null,{timeout:5000});
+  const stationRails=await page.evaluate(()=>({
+    left:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.left").length,
+    right:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.right").length,
+    context:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+  }));
+  assert.equal(stationRails.left,0,"Stations invented a posture rail without resolved posture authority");
+  assert.equal(stationRails.right,1,"Stations lost its devotional-context rail");
+  assert.equal(stationRails.context,"ao-rich-stations","Stations context rail is not using the canonical devotional identity");
+  await shot("03b-pray-stations-rail");
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
+
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.library",{returnContext:null}));
   await page.waitForSelector("#aoPray435930.open [data-p435930-lib-open='sacrament_act_of_contrition']",{timeout:10000});
   assert.equal(await page.locator("#aoPray435930 [data-p435930-lib-open]").count(),48,"PRAY Library no longer exposes the locked 48-prayer corpus");

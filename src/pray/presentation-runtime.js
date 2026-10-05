@@ -19,6 +19,38 @@ const assetIcon=(assetId,className='aoP435930UiIcon')=>{
  if(!url)return'';
  return `<span class="${esc(className)}" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
 };
+function selectedSunday(){
+ const raw=core()?.selectedDate;
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(String(raw||'')))return new Date().getDay()===0;
+ const d=new Date(String(raw)+'T12:00:00');
+ return !Number.isNaN(d.getTime())&&d.getDay()===0;
+}
+function semanticRailChip(assetId,label,value=''){
+ if(!assetId||!label)return'';
+ return `<div class="aoP435930SemanticRailChip" data-ao-pray-rail-asset="${esc(assetId)}">${assetIcon(assetId,'aoP435930SemanticRailIcon')}<span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
+}
+function semanticRails(){
+ let left='',right='';
+ if(view==='angelus'){
+   const choice=angelusChoice(),form=choice.form;
+   const stand=form==='regina'||selectedSunday();
+   left=semanticRailChip(stand?'ao-live-stand':'ao-live-kneel',stand?L('Stand','Debout'):L('Kneel','À genoux'));
+   right=semanticRailChip('ao-rich-angelus',form==='regina'?'Regina Cæli':'Angelus',L('Daily Marian prayer','Prière mariale'));
+ }else if(view==='rosary'){
+   right=semanticRailChip('ao-rich-rosary',L('Rosary','Rosaire'),S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'));
+ }else if(view==='stations'){
+   right=semanticRailChip('ao-rich-stations',L('Stations','Chemin de Croix'),L('XIV stations','XIV stations'));
+ }else if(view==='adoration'){
+   const presence=adorationPresence();
+   right=semanticRailChip('ao-rich-adoration',L('Adoration','Adoration'),presence==='exposed'?L('Exposed','Exposé'):L('Reserved','Réservé'));
+ }else if(view==='benediction'){
+   right=semanticRailChip('ao-rich-adoration',L('Benediction','Bénédiction'),L('Live companion','Compagnon'));
+ }else if(view==='confession'){
+   right=semanticRailChip('ao-rich-confession',L('Confession','Confession'),L('Preparation','Préparation'));
+ }
+ if(!left&&!right)return'';
+ return `<div class="aoP435930SemanticRails" data-ao-pray-semantic-rails aria-hidden="true">${left?`<aside class="aoP435930SemanticRail left">${left}</aside>`:''}${right?`<aside class="aoP435930SemanticRail right">${right}</aside>`:''}</div>`;
+}
 const nl=v=>esc(v).replace(/\n/g,'<br>');
 const runtime=()=>window.AO_RUNTIME_V8;
 const core=()=>runtime()?.store?.getState?.()||{};
@@ -471,7 +503,7 @@ function fortyStageBody(){
 function renderFortyHours(){
  FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step));return `${head(L('Forty Hours','Quarante-Heures'),L('Live companion · follow the church, not a timer','Compagnon en direct · suivez l’église, pas un minuteur'))}<main class="aoP435930Body">${callout(esc(L('Use this by what is happening around you, not by a timer. Public worship always outranks the private sequence on the screen.','Utilisez ce guide selon ce qui se passe autour de vous, non selon un minuteur. Le culte public a toujours priorité sur la séquence privée affichée à l’écran.')),'rubric')}${guideRail(FORTY_STAGES.map(x=>L(x[0],x[1])),FORTY.step,'forty')}${fortyStageBody()}<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-forty-prev ${FORTY.step===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>${FORTY.step===FORTY_STAGES.length-1?`<button type="button" class="aoP435930Primary" data-p435930-forty-done>${esc(L('Done · back to PRAY','Terminé · retour à PRIER'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-forty-next>${esc(L('Continue','Continuer'))}</button>`}</div>${devotionalSource('Baltimore Manual · The Devotion of the Forty Hours’ Adoration',L('Historical source for the traditional prayer aids named here; the situational navigation is app guidance, not a claim about a universal ceremonial schedule.','Source historique des aides de prière traditionnelles nommées ici ; la navigation selon la situation est une aide de l’application, non une affirmation sur un cérémonial universel.'))}</main>`
 }
-function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0})}
+function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0})}
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
 function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;ADOR.timer=setInterval(()=>{if(Date.now()>=ADOR.timerEnd){stopTimer();render()}else render()},30000);render()}
 function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.rosary'?'rosary':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';render()}
