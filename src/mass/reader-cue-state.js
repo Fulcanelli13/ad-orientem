@@ -125,7 +125,11 @@ export function conditionPasses(expression,conditions){
 export function cueProjectionConditions(prepared){
   const active=new Set();
   const resolved=prepared?.session?.resolvedMass;
-  for(const value of resolved?.conditions??[]){
+  const conditionSources=[
+    ...(resolved?.provenance?.conditions??[]),
+    ...(resolved?.conditions??[]),
+  ];
+  for(const value of conditionSources){
     if(typeof value==="string" && value.trim())active.add(value.trim());
     else if(value?.id)active.add(String(value.id));
   }
