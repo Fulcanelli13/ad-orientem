@@ -141,9 +141,13 @@ function patchAboutSettings(win){
       /settings|réglages/i.test(String(node.textContent||""))
     );
     if(!sheet)return false;
-    if(sheet.querySelector(".aoD6SettingsSupplement .aoD6Sources"))return false;
+    const currentVersion=String(canonicalAppVersion(win)||"");
+    const existing=sheet.querySelector(".aoD6SettingsSupplement");
+    if(existing?.querySelector(".aoD6Sources") && existing.dataset.aoD6Version===currentVersion)return false;
+    existing?.remove?.();
     const supplement=element(win,"div","aoD6SettingsSupplement");
     supplement.dataset.aoD6Settings="core-home-sheet";
+    supplement.dataset.aoD6Version=currentVersion;
     supplement.append(
       element(win,"div","aoSetIntro",L(
         win,
