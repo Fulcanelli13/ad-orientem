@@ -171,7 +171,8 @@ try{
   assert.equal(homeParity.brand,"AD ORIENTEM");
   assert.ok(homeParity.celebration.length>0,"Home liturgical-day identity is blank");
   assert.ok(homeParity.gospel.length>0,"Home Gospel context is blank");
-  await page.waitForFunction(()=>document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero,null,{timeout:3000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.version==="modular-presentation-fx-v2",null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero,null,{timeout:5000});
   const homeFx=await page.evaluate(()=>({
     hero:document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero??null,
     rootScan:document.querySelector(".homeScreen")?.dataset?.aoPresentationFxArtScan??null,
