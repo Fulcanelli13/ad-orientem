@@ -29,6 +29,12 @@ assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered seman
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
 assert.match(runtime,/ao-rich-angelus/,"Angelus semantic rail lost its canonical devotional identity");
 assert.match(runtime,/ao-rich-stations/,"Stations semantic rail lost its canonical devotional identity");
+assert.match(runtime,/ao-live-look/,"Stations lost the sourced face-the-Station attention cue");
+assert.match(runtime,/function stationsFx\(\)/,"Stations lost its transition-cinematic presentation hook");
+assert.match(runtime,/STATIONS OF THE CROSS/,"Stations cinematic lost its devotional identity");
+assert.match(runtime,/AO_CINEMATIC_V4312\|\|window\.AO_CINEMATIC_V4311/,"Stations transition no longer reuses the certified cinematic owner");
+assert.match(runtime,/isReducedMotion\?\.\(\)/,"Stations transition no longer honors reduced motion");
+assert.doesNotMatch(runtime,/view===['"]stations['"][\s\S]{0,900}ao-live-(?:stand|kneel)/,"Stations semantic rails invented a universal posture");
 assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
 assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
