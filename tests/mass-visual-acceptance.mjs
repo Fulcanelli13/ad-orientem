@@ -172,7 +172,31 @@ try{
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
 
-  await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({setup,opening,consecration,errors},null,2));
+  const elevation=await page.evaluate(()=>{
+    const card=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+    const target=card?.querySelector('[data-cue-id="AO.SM.C0174"]');
+    if(!card||!target)return{ok:false};
+    const cr=card.getBoundingClientRect(),tr=target.getBoundingClientRect();
+    const absoluteCenter=(tr.top-cr.top+card.scrollTop)+(tr.height/2);
+    card.scrollTop=Math.max(0,absoluteCenter-card.clientHeight*.39);
+    return{ok:true};
+  });
+  assert.equal(elevation.ok,true,"Host elevation cue is not present in the rendered Consecration card");
+  await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getActiveCue?.()==="AO.SM.C0174",null,{timeout:3000});
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===false,null,{timeout:3000});
+  const elevationState=await page.evaluate(()=>({
+    cue:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getActiveCue?.()??null,
+    bell:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getNativeEventState?.()?.bell?.label??null,
+    cinematicTitle:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-title']")?.textContent?.trim()??"",
+    cinematicSub:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-sub']")?.textContent?.trim()??"",
+    cinematicKind:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.dataset?.kind??"",
+  }));
+  assert.equal(elevationState.cue,"AO.SM.C0174");
+  assert.equal(elevationState.bell,"ELEVATION BELL");
+  assert.notEqual(elevationState.cinematicTitle,"","Host elevation cinematic has no title");
+  await page.screenshot({path:resolve(out,"08-mass-live-host-elevation.png"),fullPage:false});
+
+  await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({setup,opening,consecration,elevation:elevationState,errors},null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
   console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration},null,2));
   await context.close();
