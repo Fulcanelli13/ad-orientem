@@ -19,21 +19,29 @@ function focusSafeRemove(win,node){
   if(active&&node.contains?.(active)){try{active.blur?.();}catch{}}
   node.remove?.();
 }
+const HISTORICAL_SETTINGS_SELECTORS=[
+  "#ao-settings-v4359",
+  "#ao-settings-v4358",
+  "#ao-settings-v4356",
+  "[data-ao-settings-owner^='AO_SETTINGS_V']",
+  "[data-v37-module='utility.settings']",
+  "[data-module='utility.settings']",
+];
+
 function historicalSettingsVisible(win){
   const doc=win?.document;
-  const selectors=["#ao-settings-v4359","#ao-settings-v4358","#ao-settings-v4356","[data-ao-settings-owner^='AO_SETTINGS_V']"];
-  return selectors.some(selector=>[...doc?.querySelectorAll?.(selector)??[]].some(node=>!node.hidden&&node.isConnected));
+  return HISTORICAL_SETTINGS_SELECTORS.some(selector=>[...doc?.querySelectorAll?.(selector)??[]].some(node=>!node.hidden&&node.isConnected));
 }
 function suppressHistoricalSettings(win){
   const s=state(win),st=store(win);
   if(s?.homeSheet==="settings"&&typeof st?.dispatch==="function")st.dispatch({type:"home-sheet",sheet:null});
   const doc=win?.document;
-  for(const selector of ["#ao-settings-v4359","#ao-settings-v4358","#ao-settings-v4356","[data-ao-settings-owner^='AO_SETTINGS_V']"]){
+  for(const selector of HISTORICAL_SETTINGS_SELECTORS){
     for(const node of doc?.querySelectorAll?.(selector)??[]){
       if(node.id===ROOT_ID)continue;
       const active=doc.activeElement;if(active&&node.contains?.(active)){try{active.blur?.();}catch{}}
-      node.hidden=true;
-      node.removeAttribute?.("aria-hidden");
+      if(!node.hidden)node.hidden=true;
+      if(node.hasAttribute?.("aria-hidden"))node.removeAttribute?.("aria-hidden");
     }
   }
 }
@@ -54,6 +62,7 @@ export function createSettingsOwner(win=globalThis){
   let returnSurface="home";
   let previousFocus=null;
   let unsubscribe=null;
+  let legacyObserver=null;
   let versionTimers=[];
 
   function root(){return win?.document?.getElementById?.(ROOT_ID)??null;}
@@ -71,9 +80,20 @@ export function createSettingsOwner(win=globalThis){
     const st=store(win);
     if(typeof st?.subscribe==="function")unsubscribe=st.subscribe(()=>{if(root())(win.queueMicrotask?.bind(win)??queueMicrotask)(paint);});
   }
-  function releaseSubscription(){try{unsubscribe?.();}catch{}unsubscribe=null;clearTimers();}
+  function releaseSubscription(){
+    try{unsubscribe?.();}catch{}
+    unsubscribe=null;
+    try{legacyObserver?.disconnect?.();}catch{}
+    legacyObserver=null;
+    clearTimers();
+  }
+  function watchHistoricalSurfaces(){
+    if(legacyObserver||typeof win?.MutationObserver!=="function")return;
+    legacyObserver=new win.MutationObserver(()=>{if(root())suppressHistoricalSettings(win);});
+    legacyObserver.observe(win.document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["hidden","class","aria-hidden"]});
+  }
   function closeInternal({restoreSurface=false,surface=null}={}){
-    const r=root();if(!r)return true;
+    const r=root();if(!r){releaseSubscription();return true;}
     const prior=previousFocus;
     focusSafeRemove(win,r);releaseSubscription();
     if(win?.document?.documentElement?.dataset){
@@ -109,7 +129,7 @@ export function createSettingsOwner(win=globalThis){
     suppressHistoricalSettings(win);
     let r=root();
     if(!r){r=doc.createElement("section");r.id=ROOT_ID;r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");doc.body.appendChild(r);bind(r);}
-    subscribe();paint();
+    subscribe();watchHistoricalSurfaces();paint();
     if(doc.documentElement?.dataset){doc.documentElement.dataset.aoSettingsOwner=OWNER;doc.documentElement.dataset.aoSettingsSurface="open";}
     clearTimers();versionTimers=[100,500,1200].map(ms=>win.setTimeout?.(()=>{if(root())paint();},ms)).filter(id=>id!=null);
     r.querySelector?.(route==="about-sources"?"[data-settings-main]":"[data-settings-close]")?.focus?.();
