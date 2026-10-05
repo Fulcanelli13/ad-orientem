@@ -1,0 +1,52 @@
+name: Temporary v43.33 monolith surgery
+
+on:
+  push:
+    branches:
+      - cleanup/retire-v4333-emergency-runtime
+    paths:
+      - ".github/workflows/tmp-retire-v4333.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  retire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cleanup/retire-v4333-emergency-runtime
+          fetch-depth: 0
+      - name: Remove embedded emergency runtime
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          before=len(s)
+          patterns=[
+            r'<style id="ao-v4333-emergency-stable-css">[\s\S]*?</style>\s*',
+            r'<script id="ao-v4333-emergency-stable-js">[\s\S]*?</script>\s*',
+          ]
+          for pattern in patterns:
+              s,n=re.subn(pattern,"",s,count=1)
+              if n != 1:
+                  raise SystemExit(f"expected exactly one match for {pattern}, got {n}")
+          forbidden=("AO_EMERGENCY_STABLE_V4333","ao-v4333-emergency-stable-css","ao-v4333-emergency-stable-js")
+          if any(x in s for x in forbidden):
+              raise SystemExit("emergency runtime residue remains")
+          if s.count('src="./src/mass/browser-entry.js"') != 1:
+              raise SystemExit("Mass browser entry count changed")
+          p.write_text(s,encoding="utf-8")
+          print("removed",before-len(s),"characters")
+      - name: Remove temporary workflow and commit surgery
+        shell: bash
+        run: |
+          rm .github/workflows/tmp-retire-v4333.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/tmp-retire-v4333.yml
+          git commit -m "app: retire embedded v43.33 emergency runtime"
+          git push origin HEAD:cleanup/retire-v4333-emergency-runtime
