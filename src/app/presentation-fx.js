@@ -87,6 +87,8 @@ export function createPresentationFxBridge({
   let loaderTimer = null;
   let surfaceTimer = null;
   let scanTimer = null;
+  let initialScanTimer = null;
+  let initialScanAttempts = 0;
   let scanQueued = false;
   let disposed = false;
   let presentationHookInstalled = false;
@@ -197,6 +199,21 @@ export function createPresentationFxBridge({
     }
   }
 
+  function scheduleInitialScan() {
+    if (disposed) return false;
+    initialScanAttempts += 1;
+    const surface = getActive?.();
+    const result = scanSurface(surface, { forceHero: true });
+    if (result.heroes > 0 || initialScanAttempts >= 16) {
+      initialScanTimer = null;
+      return result.heroes > 0;
+    }
+    if (typeof win?.setTimeout === "function") {
+      initialScanTimer = win.setTimeout(scheduleInitialScan, 120);
+    }
+    return false;
+  }
+
   function presentationEvent() {
     queueSurfaceScan();
   }
@@ -299,8 +316,10 @@ export function createPresentationFxBridge({
     hideLoader();
     if (surfaceTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(surfaceTimer);
     if (scanTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(scanTimer);
+    if (initialScanTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(initialScanTimer);
     surfaceTimer = null;
     scanTimer = null;
+    initialScanTimer = null;
     scanQueued = false;
     removePresentationHook();
     mark("disposed");
@@ -310,7 +329,7 @@ export function createPresentationFxBridge({
   installPresentationHook();
   if (typeof legacyCinema(win)?.showTransition === "function") mark("ready");
   else mark("legacy-cinema-unavailable");
-  queueSurfaceScan();
+  scheduleInitialScan();
 
   return Object.freeze({
     version: PRESENTATION_FX_VERSION,
