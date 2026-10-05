@@ -51,10 +51,14 @@ try{
       const state=globalThis.AO_RUNTIME_V8?.store?.getState?.()??{};
       const resolution=state.resolution??null;
       const proper=resolution?.proper?.status==="ready"?resolution.proper.data:null;
-      let reader=null;
+      let reader=null,repaired=null;
       if(proper){
-        const mod=await import("/src/mass/proper-reader-slots.js?field-current-week=1");
-        reader=mod.properToReaderSlots(proper,{language:"fr"});
+        const slots=await import("/src/mass/proper-reader-slots.js?field-current-week=1");
+        const recovery=await import("/src/mass/reader-proper-runtime-recovery.js?field-current-week=1");
+        repaired=await recovery.recoverReaderProperOmissions(proper,{
+          hostResolver:globalThis.AO_RUNTIME_V8?.resolver?.properResolver,
+        });
+        reader=slots.properToReaderSlots(repaired,{language:"fr"});
       }
       return{
         date,selected,
@@ -62,6 +66,16 @@ try{
         resolutionStatus:resolution?.status??null,
         properStatus:resolution?.proper?.status??null,
         sourcePath:proper?.sourcePath??null,
+        hostMissing:{
+          epistle:!proper?.epistle?.lat,
+          secret:!(proper?.secrets?.length||proper?.secret?.lat),
+          postcommunion:!(proper?.postcommunions?.length||proper?.postcommunion?.lat),
+        },
+        recovered:{
+          epistle:Boolean(repaired?.epistle?.lat),
+          secret:Boolean(repaired?.secrets?.length||repaired?.secret?.lat),
+          postcommunion:Boolean(repaired?.postcommunions?.length||repaired?.postcommunion?.lat),
+        },
         readerReady:reader?.ready??false,
         missing:reader?.missing??[],
       };
