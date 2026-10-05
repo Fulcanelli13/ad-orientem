@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { R17_FROZEN_ACTIVE_ICON_KEYS, R17_FROZEN_EXCLUDED_ICON_KEYS } from "../src/mass/reader-icons.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={
@@ -33,10 +34,8 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(4182,"127.0.0.1",ok)});
 
-const iconKeys=[
-  "stand","sit","kneel","genuflect","bow","cross","gospel_crosses","breast_strike","head_bow","profound_bow","hands_joined",
-  "response","schola","priest_audible","priest_silent","priest_foot","priest_steps","priest_centre","priest_epistle","priest_gospel","priest_sedilia","priest_rail","priest_people",
-];
+const iconKeys=[...R17_FROZEN_ACTIVE_ICON_KEYS];
+const excludedIconKeys=[...R17_FROZEN_EXCLUDED_ICON_KEYS];
 
 let browser;
 try{
@@ -93,7 +92,7 @@ try{
   await page.waitForFunction(()=>!document.getElementById("ao-calendar-modular-root"),null,{timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
 
-  const setup=await page.evaluate(async(iconKeys)=>{
+  const setup=await page.evaluate(async({iconKeys,excludedIconKeys})=>{
     const t=(lat,en)=>({lat,en});
     const proper={
       sourcePath:"Sancti/10-07",
@@ -174,8 +173,9 @@ try{
       mode:prepared.readerPreferences.mode,
       iconKeys:Object.keys(mod.resolveHostIconAssets(globalThis)??{}),
       explicitIconBank:Boolean(globalThis.AO_R17_ICON_ASSETS),
+      excludedPresent:excludedIconKeys.filter(key=>Object.hasOwn(mod.resolveHostIconAssets(globalThis)??{},key)),
     };
-  },iconKeys);
+  },{iconKeys,excludedIconKeys});
 
   assert.equal(setup.schema,"ao-mass-entry-bootstrap-v1");
   assert.equal(setup.form,"MISSA_CANTATA_INCENSE");
@@ -183,7 +183,8 @@ try{
   assert.equal(setup.explicitIconBank,false,"journey test accidentally injected a modular icon bank");
   assert.ok(setup.iconKeys.length>=iconKeys.length,
     "actual production page did not resolve the frozen CSS icon bank");
-  for(const key of iconKeys)assert.ok(setup.iconKeys.includes(key),"production CSS icon bank missing "+key);
+  for(const key of iconKeys)assert.ok(setup.iconKeys.includes(key),"production frozen-active icon bank missing "+key);
+  assert.deepEqual(setup.excludedPresent,[],"frozen-excluded icon semantics leaked back into the production bank");
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.status?.().liveSessionGuards?.live===true &&
