@@ -315,7 +315,7 @@ try{
       section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
       form:s.massForm??null,
       textScale:s.textScale??"normal",
-      persisted:localStorage.getItem("ao-r17-active-mass-v1"),
+      persisted:JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}"),
       legacyStarts:globalThis.__AO_FINAL_LEGACY_STARTS??0,
     };
   });
@@ -368,7 +368,7 @@ try{
     readerConnected:Boolean(document.querySelector("#ao-r17-native-reader-preview[data-ao-settings-continuity='same-reader']")?.isConnected),
     section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
     resolvedForm:globalThis.AO_R17_MASS_RUNTIME?.prepared?.session?.resolvedMass?.form??null,
-    persisted:localStorage.getItem("ao-r17-active-mass-v1"),
+    persisted:JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}"),
     textScale:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.textScale??null,
     legacyStarts:globalThis.__AO_FINAL_LEGACY_STARTS??0,
     focusHidden:Boolean(document.activeElement?.closest?.("[aria-hidden='true'],[hidden]")),
@@ -376,7 +376,10 @@ try{
   assert.equal(settingsOverLiveAfter.readerConnected,true,"closing Settings did not restore the same R17 reader");
   assert.equal(settingsOverLiveAfter.section,settingsOverLiveBefore.section,"closing Settings did not restore the same LIVE position");
   assert.equal(settingsOverLiveAfter.resolvedForm,"MISSA_CANTATA_INCENSE","closing Settings altered the active Mass form");
-  assert.equal(settingsOverLiveAfter.persisted,settingsOverLiveBefore.persisted,"Settings overlay rewrote active-Mass lifecycle persistence");
+  assert.equal(settingsOverLiveAfter.persisted?.state,settingsOverLiveBefore.persisted?.state,"Settings overlay changed active-Mass lifecycle state");
+  assert.equal(settingsOverLiveAfter.persisted?.readerPosition?.sectionId,settingsOverLiveBefore.persisted?.readerPosition?.sectionId,"Settings overlay changed persisted LIVE position");
+  assert.equal(settingsOverLiveAfter.persisted?.session?.resolvedMass?.form,settingsOverLiveBefore.persisted?.session?.resolvedMass?.form,"Settings overlay changed persisted Mass form");
+  assert.equal(settingsOverLiveAfter.persisted?.readerPreferences?.mode,settingsOverLiveBefore.persisted?.readerPreferences?.mode,"Settings overlay changed persisted reader mode");
   assert.equal(settingsOverLiveAfter.textScale,displayTarget,"permitted display preference did not survive Settings close");
   assert.equal(settingsOverLiveAfter.legacyStarts,settingsOverLiveBefore.legacyStarts,"Settings overlay triggered a legacy Mass start");
   assert.equal(settingsOverLiveAfter.focusHidden,false,"focus remained inside a hidden Settings surface");
