@@ -17,7 +17,7 @@
       ]
     },
     "mass": {
-      "status": "PENDING_AUDIT",
+      "status": "AUDITED_REGRESSIONS_CONFIRMED",
       "currentOwner": "src/mass",
       "reference": "R17_NATIVE_PLUS_APPROVED_LIVE_PRESENTATION",
       "mustPreserve": [
@@ -27,6 +27,23 @@
         "posture/action salience",
         "Schola presentation",
         "cinematic moments without reopening liturgical runtime"
+      ],
+      "evidence": [
+        "tests/mass-visual-acceptance.mjs",
+        "Visual acceptance workflow 37288227688 at 390x844 touch geometry",
+        "06-mass-live-opening.png",
+        "07-mass-live-consecration.png"
+      ],
+      "observedRegressions": [
+        "inactive 58px rails remain as empty gutters and materially reduce prayer width",
+        "Schola text is squeezed into the narrow right rail instead of a readable dedicated surface",
+        "Host Consecration renders vernacular-first rather than Latin-prominent",
+        "elevation/genuflection rubric remains inline in prayer text rather than being promoted to state/cinematic treatment",
+        "current card title is duplicated between state ribbon and prayer card",
+        "state ribbon uses priest position on the left instead of the approved faithful/posture versus priest-action split",
+        "reader presentation lacks the approved fluid 35-40% focus-zone treatment",
+        "mode controls are visually presented as selectable while production mode switching is locked",
+        "production source-first display model currently contains 39 cards; this must be reconciled with the approved v1.83 card philosophy without replacing the source-first engine"
       ]
     },
     "pray": {
