@@ -238,9 +238,24 @@ try{
     })));
   }
   console.log("ROSARY_RC_DIAGNOSTICS "+JSON.stringify(rosaryDiagnostics));
-  assert.equal(rosaryDiagnostics.at(-1)?.barGroup,true,
+  const settledRosary=rosaryDiagnostics.at(-1);
+  assert.equal(settledRosary?.stored,"group",
+    "Rosary donor did not preserve group recitation in canonical storage");
+  assert.equal(settledRosary?.modular,"group",
+    "Rosary donor overwrote modular PRAY recitation ownership");
+  assert.equal(settledRosary?.coherence,"group",
+    "Rosary donor/coherence layer disagreed with Group recitation");
+  assert.equal(settledRosary?.htmlGroup,true,
+    "Rosary donor did not apply the canonical Group document state");
+  assert.equal(settledRosary?.htmlIndividual,false,
+    "Rosary donor left the canonical Individual document state active");
+  assert.ok((settledRosary?.nativeGroup??[]).some(x=>x.active===true||x.pressed==="true"),
+    "Rosary donor native Group control did not become active");
+  assert.ok((settledRosary?.nativeIndividual??[]).every(x=>x.active!==true&&x.pressed!=="true"),
+    "Rosary donor native Individual control remained active after Group handoff");
+  assert.equal(settledRosary?.barGroup,true,
     "Rosary donor lost group-recitation state after settled donor mount");
-  assert.equal(rosaryDiagnostics.at(-1)?.barIndividual,false,
+  assert.equal(settledRosary?.barIndividual,false,
     "Rosary donor settled with Individual active after Group chooser selection");
   await assertSinglePrayerLayer("Rosary donor launch");
 
