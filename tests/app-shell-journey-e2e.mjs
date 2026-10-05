@@ -123,9 +123,6 @@ try{
       getAssemblyStatus(){return null;},
     };
     globalThis.AO_SEQUENCE_BRIDGE_V22=null;
-    globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
-      iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
-    );
     globalThis.AO_RUNTIME_V8={
       store:{
         getState:()=>({
@@ -174,12 +171,15 @@ try{
       schema:prepared.schema,
       form:prepared.session.resolvedMass.form,
       mode:prepared.readerPreferences.mode,
+      bridgedIconKeys:Object.keys(globalThis.AO_R17_ICON_ASSETS??{}),
     };
   },iconKeys);
 
   assert.equal(setup.schema,"ao-mass-entry-bootstrap-v1");
   assert.equal(setup.form,"MISSA_CANTATA_INCENSE");
   assert.equal(setup.mode,"LIVE");
+  assert.ok(setup.bridgedIconKeys.length>=iconKeys.length,
+    "actual production page did not bridge the host icon bank into R17");
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.status?.().liveSessionGuards?.live===true &&
@@ -244,9 +244,6 @@ try{
     null,{timeout:30000});
   await page.waitForSelector("[data-ao-app-surface='home']",{state:"visible",timeout:30000});
   await page.evaluate((iconKeys)=>{
-    globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
-      iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
-    );
   },iconKeys);
   const interruptedReload=await page.evaluate(()=>{
     const saved=JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"{}");
