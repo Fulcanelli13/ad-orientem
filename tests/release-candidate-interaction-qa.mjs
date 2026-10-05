@@ -237,6 +237,26 @@ try{
       barGroup:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??null,
     })));
   }
+  const recitationOwners=await page.evaluate(()=>{
+    const interesting=/recit|rosary|prayer|group/i;
+    const names=Object.getOwnPropertyNames(globalThis).filter(k=>interesting.test(k)).sort();
+    const describe=(name)=>{
+      let value;try{value=globalThis[name]}catch{return {name,type:"inaccessible"}}
+      const out={name,type:typeof value};
+      if(value&&(typeof value==="object"||typeof value==="function")){
+        try{
+          const own=Object.getOwnPropertyNames(value);
+          const proto=value&&Object.getPrototypeOf(value)?Object.getOwnPropertyNames(Object.getPrototypeOf(value)):[];
+          out.members=[...new Set([...own,...proto])]
+            .filter(k=>/set|mode|recit|group|state|open|close|toggle|change/i.test(k))
+            .slice(0,80);
+        }catch{}
+      }
+      return out;
+    };
+    return names.map(describe).filter(x=>x.members?.length||/recit/i.test(x.name));
+  });
+  console.log("ROSARY_GLOBAL_OWNERS "+JSON.stringify(recitationOwners));
   const nativeGroupButton=page.locator("#aoPrayerBookRoot [data-ao-recitation='group']").first();
   assert.equal(await nativeGroupButton.count(),1,"preserved Rosary lost native Group control");
   await nativeGroupButton.click({force:true});
