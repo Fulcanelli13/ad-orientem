@@ -73,7 +73,9 @@ assert.match(fxSource,/legacyCinema\(win\)\?\.scanArt\?\.\(root\)/,"modular surf
 assert.match(fxSource,/prefers-reduced-motion:reduce/,"modular hero FX lost reduced-motion CSS");
 assert.match(fxSource,/installPresentationHook/,"modular presentation rescans no longer follow rendered child surfaces");
 assert.doesNotMatch(fxSource,/querySelectorAll\?\.\(["']img["']\)/,"presentation FX regressed to scanning every image in the app");
-assert.match(fxSource,/queueSurfaceScan\(\);\s*\n\s*return Object\.freeze/,"initial Home surface no longer receives presentation FX scan");
+assert.match(fxSource,/function scheduleInitialScan\(\)/,"initial Home presentation scan lost its bounded late-render recovery");
+assert.match(fxSource,/initialScanAttempts >= 16/,"initial Home presentation scan is no longer bounded");
+assert.match(fxSource,/scheduleInitialScan\(\);\s*\n\s*return Object\.freeze/,"initial Home surface no longer receives presentation FX scan");
 
 const index=readFileSync("index.html","utf8");
 for(const id of ["ao-cinema-boot","ao-cinema-transition","ao-cinema-loader"]){
