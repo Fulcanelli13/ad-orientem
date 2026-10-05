@@ -40,6 +40,11 @@ assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
 assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
 assert.match(styles,/@media\(max-width:560px\)[\s\S]*aoP435930SemanticRailIcon\{width:27px/,"PRAY semantic rail icons lost salient phone geometry");
+assert.match(runtime,/function stationsFx\(\)/,"Stations lost its recovered transition-cinematic owner");
+assert.match(runtime,/ao-live-look/,"Stations lost the sourced face-the-Station cue");
+assert.match(runtime,/STATIONS OF THE CROSS/,"Stations transition cinematic lost its devotional identity");
+assert.doesNotMatch(runtime,/view==='stations'[\s\S]{0,1200}ao-live-kneel/,"Stations presentation reintroduced universal kneeling without contextual authority");
+assert.doesNotMatch(runtime,/view==='stations'[\s\S]{0,1200}ao-live-stand/,"Stations presentation reintroduced universal standing without contextual authority");
 assert.match(runtime,/function decorateRosaryFx\(r\)/,"Rosary lost its live FX presentation hook");
 assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
 assert.match(runtime,/aoP435930RosarySemanticRails/,"Rosary lost its live contextual side rail");
