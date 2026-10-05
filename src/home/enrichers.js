@@ -264,7 +264,11 @@ function iconMarkup(icon,win=globalThis){
   const resolvedId=canonical?.assetId??assetId;
   const embedded=win?.document?.getElementById?.(resolvedId)??null;
   if(embedded){
-    return `<svg class="aoHomeCuIcon" data-ao-asset-id="${esc(resolvedId)}" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><use href="#${esc(resolvedId)}"></use></svg>`;
+    return `<svg class="aoHomeCuIcon" data-ao-asset-id="${esc(resolvedId)}" data-ao-asset-renderer="embedded" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><use href="#${esc(resolvedId)}"></use></svg>`;
+  }
+  if(canonical?.kind==="mask"&&canonical?.path){
+    const url=resolveCanonicalAssetUrl(resolvedId);
+    if(url)return `<span class="aoHomeCuIcon" data-ao-asset-id="${esc(resolvedId)}" data-ao-asset-renderer="mask" aria-hidden="true" style="background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
   }
   // Missing canonical artwork must fail text-only. Never invent a glyph that
   // could be mistaken for an approved semantic icon.
