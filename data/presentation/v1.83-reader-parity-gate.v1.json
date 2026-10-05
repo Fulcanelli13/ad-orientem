@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "HISTORICAL_PARITY_REFERENCE_NON_BLOCKING",
   "reference": {
     "runtimeHead": "v1.83 MERGE GATE",
@@ -20,7 +20,11 @@
     "canonicalMacros": 30,
     "status": "SOURCE_FIRST_LIVE_INTEGRATED",
     "sourceFirstLiveCards": 39,
-    "sourceFirstCanonSegments": 14
+    "sourceFirstCanonSegments": 14,
+    "productPresentationSteps": 48,
+    "productPresentationStatus": "SOURCE_FIRST_48_PRODUCT_PARITY",
+    "historicalV183IdentityClaim": false,
+    "productPresentationFile": "src/mass/reader-live-product48.js"
   },
   "acceptance": [
     "Recover v1.81/v1.83 donor bytes or an exact contemporaneous enumeration of all 48 LIVE cards; do not invent IDs or boundaries.",
@@ -29,9 +33,11 @@
     "Host and Chalice consecration/elevation timing must remain separately testable.",
     "Preserve the v1.83 Gradual repair: B021 Gradual surface, B022 separate Alleluia/Tract Schola content, B023 begins Munda cor meum.",
     "Focus geometry and horizontal navigation must pass on phone widths.",
-    "No source correction may silently collapse the frozen 48-card concept."
+    "No source correction may silently collapse the frozen 48-card concept.",
+    "Keep the certified 39-step source model distinct from the 48-step source-first product presentation.",
+    "A 48-step product presentation must not claim historical v1.83 C01-C48 identity unless the exact contemporaneous map is recovered."
   ],
-  "blockingReason": "No longer a release blocker. Exact v1.83 C01-C48 recovery remains useful for historical UI fidelity only; Canon release structure is certified separately from source-backed prayer blocks and canonical cue/event ownership.",
+  "blockingReason": "No longer a release blocker. The production reader now preserves a 48-step source-first LIVE product presentation over the certified 39-step source model. Exact historical v1.83 C01-C48 IDs/ranges remain unrecovered and are explicitly not claimed.",
   "recoveredV181Splits": [
     {
       "label": "Chalice preparation / Offerimus tibi",
