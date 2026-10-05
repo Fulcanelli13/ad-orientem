@@ -108,6 +108,9 @@ for(const api of ["open","close","dismiss","restoreHome","status"]){
 }
 assert.match(owner,/AO_APP_LIVE_SESSION_GUARDS_V1/,"Settings created or used a live rule outside the modular guard");
 assert.match(owner,/hydrate-settings/,"Settings is not attached to canonical app preference persistence");
+assert.match(owner,/watchReleaseMetadata/,"Settings does not observe canonical release metadata");
+assert.match(owner,/data-ao-release/,"Settings does not repaint when canonical release metadata settles");
+assert.match(owner,/queueMicrotask/,"Sources/About does not schedule a post-route canonical-version repaint");
 assert.match(owner,/\[data-v37-module='utility\.settings'\]/,"modular owner does not suppress stale utility.settings surfaces");
 
 const nonMass=readFileSync("src/app/nonmass-convergence.js","utf8");
