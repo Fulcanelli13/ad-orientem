@@ -44,6 +44,7 @@ const calendar=readFileSync("src/calendar/browser-entry.js","utf8");
 const learn=readFileSync("src/learn/presentation.js","utf8");
 const learnOwner=readFileSync("src/learn/browser-entry.js","utf8");
 const prayOwner=readFileSync("src/pray/browser-entry.js","utf8");
+const prayPresentation=readFileSync("src/pray/presentation-runtime.js","utf8");
 const settingsOwner=readFileSync("src/settings/browser-entry.js","utf8");
 const settings=readFileSync("src/settings/presentation.js","utf8");
 
@@ -59,6 +60,10 @@ assert.match(learn,/canonicalAssetIdForLearnRoute/);
 assert.doesNotMatch(learn,/AO_ICON_REGISTRY_V4333/,"Learn still depends on the historical icon registry");
 assert.match(learnOwner,/canonicalAssetIdForSurface\("learn"\)/);
 assert.match(prayOwner,/canonicalAssetIdForSurface\("pray"\)/);
+assert.match(prayPresentation,/ao-ui-back/);
+assert.match(prayPresentation,/ao-ui-close/);
+assert.match(prayPresentation,/ao-ui-next/);
+assert.match(prayPresentation,/ao-ui-search/);
 assert.match(settingsOwner,/canonicalAssetIdForSurface\("settings"\)/);
 assert.match(settings,/ao-ui-back/);
 assert.match(settings,/ao-ui-close/);

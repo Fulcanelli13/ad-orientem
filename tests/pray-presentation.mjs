@@ -16,5 +16,10 @@ assert.match(coherence,/aoPrayerBookRoot/);
 assert.match(coherence,/aoPray435930/);
 assert.match(styles,/ao-v435930-pray-audit-style/);
 assert.match(styles,/ao-v435930-pray-coherence-style/);
+for(const id of ["ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-search"]){
+  assert.match(runtime,new RegExp(id),"PRAY lost canonical V4 control: "+id);
+}
+assert.doesNotMatch(runtime,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls");
+assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
 
 console.log("PASS locked v43.59.30 PRAY presentation extraction");

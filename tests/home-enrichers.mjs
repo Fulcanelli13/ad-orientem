@@ -77,6 +77,14 @@ assert.match(html,/<use href="#ao-rich-angelus"><\/use>/);
 assert.match(html,/<use href="#ao-rich-rosary"><\/use>/);
 assert.match(html,/<use href="#ao-refined-calendar-upcoming"><\/use>/);
 assert.doesNotMatch(html,/[✢✧◫]/,"embedded canonical Home icons regressed to Unicode placeholders");
+
+const sundayNow=new Date(2026,9,11,9,0,0);
+const sundayState={...state,selectedDate:"2026-10-11"};
+const sundayModel=buildHomeEnrichers(sundayState,win,{now:sundayNow});
+const sundayHtml=renderHomeEnrichersToString(sundayModel,sundayState,win);
+assert.match(sundayHtml,/data-ao-asset-id="ao-brand-emblem"/,"Sunday Mass lost its canonical semantic asset identity");
+assert.match(sundayHtml,/data-ao-icon-missing="true"/,"unavailable canonical Home artwork should fail text-only");
+assert.doesNotMatch(sundayHtml,/✠/,"missing Mass emblem regressed to a fake Unicode cross icon");
 assert.match(html,/data-ao-asset-id="ao-ui-next"/);
 assert.doesNotMatch(html,/\\$\\{esc\\(url\\)\\}/,"canonical UI asset URL interpolation leaked into rendered markup");
 assert.match(html,/aoComingUpV4323[^{]*aoDailyCateHome[^{]*\{display:none!important\}/,"retired donor Home cards lost suppression");
