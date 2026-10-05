@@ -50,6 +50,7 @@ jobs:
       - run: npm run test:app-live-guards
       - run: npm run test:home-owner
       - run: npm run test:home-presentation
+      - run: npm run test:home-enrichers
       - run: npm run test:nonmass-convergence
       - run: npm run test:pray-owner
       - run: npm run check:app-release
