@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {
   HOME_PRESENTATION_VERSION,
   buildHomeViewModel,
+  readNativeMassResume,
   renderHomeToString,
 } from "../src/home/presentation.js";
 
@@ -41,6 +42,24 @@ const base={
   },
 };
 
+const r17ResumeRecord={
+  schema:"ao-mass-entry-bootstrap-v1",
+  state:"suspended",
+  session:{resolvedMass:{date:"2026-10-07"}},
+  readerPreferences:{mode:"LIVE"},
+  readerPosition:{sectionId:"AO.CARD.005",sequence:5},
+};
+const r17Win={
+  AO_DISPLAY_DATE:()=> "07/10/2026",
+  localStorage:{
+    getItem(key){return key==="ao-r17-active-mass-v1"?JSON.stringify(r17ResumeRecord):null;},
+  },
+};
+const nativeResume=readNativeMassResume(r17Win);
+assert.equal(nativeResume?.source,"R17_NATIVE");
+assert.equal(nativeResume?.stepNumber,5);
+assert.equal(nativeResume?.sectionId,"AO.CARD.005");
+
 const vm=buildHomeViewModel(base,{AO_DISPLAY_DATE:()=> "07/10/2026"});
 assert.equal(vm.celebration,"Holy Rosary");
 assert.equal(vm.dateLong,"07/10/2026");
@@ -48,10 +67,12 @@ assert.equal(vm.formularyLabel,"Formulary 2/2");
 assert.equal(vm.commemorationLabel,"Commemorations · St Mark");
 assert.equal(vm.gospelReference,"Luke 1:26");
 
-const en=renderHomeToString(base,{AO_DISPLAY_DATE:()=> "07/10/2026"});
+const en=renderHomeToString(base,r17Win);
 assert.match(en,new RegExp(`data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}"`));
 assert.match(en,/Holy Rosary/);
 assert.match(en,/Mass in progress/);
+assert.match(en,/data-ao-resume-owner="R17_NATIVE"/,"Home Resume is not owned by native R17 persistence");
+assert.match(en,/07\/10\/2026 · 5/,"Home Resume lost native checkpoint date/position");
 assert.match(en,/data-formulary="1"/);
 assert.match(en,/Around the Mass/);
 assert.match(en,/data-home-mass-entry/,"Home Follow Mass is not owned by modular app navigation");
@@ -61,7 +82,7 @@ assert.match(en,/Today’s Mass/);
 assert.match(en,/Settings · preparation · thanksgiving/);
 assert.doesNotMatch(en,/next migration stage/i,"Home still exposes migration-era placeholder copy");
 
-const fr=renderHomeToString({...base,language:"fr"},{AO_DISPLAY_DATE:()=> "07/10/2026"});
+const fr=renderHomeToString({...base,language:"fr"},r17Win);
 assert.match(fr,/Saint Rosaire/);
 assert.match(fr,/Autour de la Messe/);
 assert.match(fr,/Saint Évangile/);
@@ -70,6 +91,9 @@ assert.match(fr,/Formulaire 2\/2/);
 assert.match(fr,/Réglages · préparation · action de grâces/);
 assert.doesNotMatch(fr,/étape suivante de la migration/i,"French Home still exposes migration-era placeholder copy");
 
+
+const historicalOnly=renderHomeToString(base,{AO_DISPLAY_DATE:()=> "07/10/2026"});
+assert.doesNotMatch(historicalOnly,/data-resume-mass/,"historical state.resume regained production Resume ownership");
 
 const retiredSettings=renderHomeToString({
   ...base,
