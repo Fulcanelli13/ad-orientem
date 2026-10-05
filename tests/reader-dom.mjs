@@ -39,6 +39,11 @@ for(const token of [
   'data-schola-resize',
   'data-schola-toggle'
 ]) expect(html.includes(token),"reader shell missing "+token);
+expect(html.includes('data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask"'),"reader Home control is not canonical-mask owned");
+expect(html.includes('data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask"'),"reader Parameters control is not canonical-mask owned");
+expect(html.includes("ao-nav-home.png"),"reader Home mask did not resolve to externalized PNG");
+expect(html.includes("ao-nav-settings.png"),"reader Parameters mask did not resolve to externalized PNG");
+expect(!html.includes("pending-externalization"),"reader top ribbon still advertises pending asset externalization");
 
 const first=normalizeReaderMoment({
   id:"A",

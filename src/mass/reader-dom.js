@@ -1,3 +1,4 @@
+import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { normalizePresentationMode } from "./session-engine.js";
 
 const SHELL_STYLE = `
@@ -8,6 +9,7 @@ const SHELL_STYLE = `
 .ao-reader-top-action:first-child{border-right:1px solid rgba(189,161,108,.10)}
 .ao-reader-top-action:last-child{border-left:1px solid rgba(189,161,108,.10)}
 .ao-reader-top-action .ao-reader-top-copy{font:700 .54rem/1 system-ui,sans-serif;letter-spacing:.075em;color:#cfc6ba}
+.ao-reader-top-icon{display:block;width:28px;height:28px;background:currentColor}
 .ao-reader-top-main{min-width:0;display:grid;grid-template-rows:34px 30px}
 .ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);background:transparent}
 .ao-mode-ribbon button{appearance:none;border:0;border-right:1px solid rgba(189,161,108,.08);background:transparent;color:var(--ao-muted);min-height:34px;padding:.38rem .3rem;font:600 .66rem/1 system-ui,sans-serif;letter-spacing:.11em}
@@ -95,6 +97,12 @@ function esc(value){
   return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
 
+function topAssetMask(assetId,fallback){
+  const url=resolveCanonicalAssetUrl(assetId);
+  if(!url)return `<span class="ao-reader-top-copy">${esc(fallback)}</span>`;
+  return `<span class="ao-reader-top-icon" data-ao-asset-id="${esc(assetId)}" data-ao-asset-renderer="mask" aria-hidden="true" style="-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
+}
+
 function textValue(value){
   if (value == null) return null;
   if (typeof value === "string") return value;
@@ -171,14 +179,14 @@ export function buildReaderShellMarkup(prepared = {}) {
   return `<style data-ao-reader-shell-style>${SHELL_STYLE}</style>
 <section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}">
   <header class="ao-reader-top-ribbon">
-    <button class="ao-reader-top-action" type="button" data-reader-home data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="pending-externalization" aria-label="Home"><span class="ao-reader-top-copy">HOME</span></button>
+    <button class="ao-reader-top-action" type="button" data-reader-home data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask" aria-label="Home">${topAssetMask("ao-nav-home","HOME")}</button>
     <div class="ao-reader-top-main">
       <nav class="ao-mode-ribbon" aria-label="Reader mode">
         ${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}">${m}</button>`).join("")}
       </nav>
       <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled><span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span></button>
     </div>
-    <button class="ao-reader-top-action" type="button" data-reader-parameters data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="pending-externalization" aria-label="Mass settings"><span class="ao-reader-top-copy">PARAMS</span></button>
+    <button class="ao-reader-top-action" type="button" data-reader-parameters data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask" aria-label="Mass settings">${topAssetMask("ao-nav-settings","PARAMS")}</button>
   </header>
   <div class="ao-section-menu" data-role="section-menu" hidden></div>
   <div class="ao-state-ribbon">
