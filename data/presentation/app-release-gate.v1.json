@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.15.0",
-  "status": "FIELD_STABILIZATION_REQUIRED",
-  "releaseRule": "FINAL_APP_READY is suspended while field-runtime stabilization is open. The Mass subsystem remains certified; application release requires all app blockers closed, modular six-destination ownership, cross-domain phone acceptance, and real-data current-week Proper readiness.",
+  "version": "1.16.0",
+  "status": "PRODUCT_PARITY_RECOVERY_REQUIRED",
+  "releaseRule": "FINAL_APP_READY requires certified runtime stability and approved product/presentation parity across the six production surfaces. Structural modular convergence alone is insufficient.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -169,8 +169,8 @@
     },
     {
       "id": "FIELD_RUNTIME_STABILIZATION",
-      "classification": "CRASH",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "src/app/source-transport-compat.js",
         "src/pray/dom-anchor.js",
@@ -179,13 +179,29 @@
         "tests/source-transport-compat.mjs",
         "tests/pray-presentation.mjs",
         "tests/browser-entry.mjs",
-        "tests/field-current-week-e2e.mjs"
+        "tests/field-current-week-e2e.mjs",
+        ".github/workflows/app-convergence.yml"
       ],
-      "detail": "Real production use exposed two P0 regressions after architectural convergence: PRAY recitation decoration could call insertBefore with a nested descendant, and source resolution probed broken French/local paths plus Mass Commons under the wrong Divinum Officium tree, producing incomplete Propers and blocked R17 entry. P0 repairs are implemented, stale persisted Mass checkpoints now fail closed without an uncaught resume, and FINAL_APP_READY remains suspended until the real-data Oct 4-9 acceptance passes on the merged production tree."
+      "detail": "Field-runtime stabilization is closed on main after the full phone suite, cross-domain journey, and real-data 4–9 October 2026 Proper-to-R17 acceptance all passed post-merge. PRAY nested-recitation insertion is safe, reader-facing host Proper omissions are source-recovered without weakening R17 completeness, source transport routes French/Common paths to canonical pinned locations, and stale persisted sessions invalidate cleanly."
+    },
+    {
+      "id": "PRODUCT_PRESENTATION_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "evidence": [
+        "tests/app-visual-acceptance.mjs",
+        "src/home/presentation.js",
+        "src/calendar/browser-entry.js",
+        "src/pray/presentation-coherence.js",
+        "src/learn/presentation.js",
+        "src/settings/presentation.js",
+        "data/presentation/reader-release-gate.v1.json"
+      ],
+      "detail": "Architectural convergence and screenshot capture are green, but the current visual-acceptance suite proves structural visibility and error absence rather than parity with the approved Ad Orientem product. Current production surfaces must be compared against approved locked/reference presentations and corrected where modular extraction reduced hierarchy, richness, sacred visual identity, reader interaction, or previously approved presentation behavior. This blocker is presentation-only: do not reopen certified Mass liturgical/runtime architecture unless a functional defect is independently reproduced."
     }
   ],
   "openBlockers": [
-    "FIELD_RUNTIME_STABILIZATION"
+    "PRODUCT_PRESENTATION_PARITY"
   ],
   "regressionGates": {
     "static": [
