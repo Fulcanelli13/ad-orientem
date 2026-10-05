@@ -122,19 +122,23 @@ Settings continues to obey the locked active-Mass exception. It may overlay an a
 
 This certifies `NON_MASS_DONOR_EXTRACTION.progress.settings` as `MODULAR_PHONE_CERTIFIED`. The overall blocker remains open for the still-pending Home enrichers; Settings has no remaining extraction blocker.
 
-## Next promotion step
+## Phase 10: modular Home enrichers and final application promotion
 
-Continue donor retirement without replacing the production host wholesale. Calendar, PRAY, Learn and Settings presentation are now modular and phone-certified. The remaining non-Mass extraction work is Home enrichment ownership (including Coming Up and Daily Catechism). Each extraction replaces one donor owner only after parity tests pass and must not create a second visible surface for the same state. Do not copy any historical Mass renderer back into production.
+Home enrichment ownership is now extracted into `src/home/enrichers.js`. The modular Home owns Coming Up and Daily Catechism presentation; historical `AO_COMING_UP_V4323` and donor Daily Catechism Home cards are no longer production presentation owners. The Home owner continuously removes asynchronously reinserted donor cards while preserving the underlying canonical rule and Daily Catechism services.
+
+Coming Up retains the recovered behavioral contract—dynamic prayer timing, daily rule items and liturgical/upcoming observances—but routes visible presentation through the modular Home and canonical app destinations. Its icons and UI controls are bound to the canonical V4/V4.1.1 asset registry. Actual-index phone acceptance proves both modular enricher cards are present at cold Home and after PRAY → Home, while donor Home cards remain absent.
+
+With Calendar, Home, PRAY, Learn and Settings all modular and phone-certified, `NON_MASS_DONOR_EXTRACTION` is closed. The application release gate is promoted to **FINAL_APP_READY** with zero open app blockers. The Mass subsystem remains independently certified as **FINAL_NATIVE_READY** with `R17_NATIVE` production default and legacy explicit rollback only.
 
 Before calling app convergence complete:
 
 1. The modular shell must own visible six-destination navigation rather than merely observe/delegate it. **Closed in Phase 3.**
-2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings.
+2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings. **Closed.**
 3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections. **Closed: protections are modular and the embedded runtime is physically removed.**
 4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene. **Closed.**
-5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
-6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence must be regression-tested so historical local state cannot reactivate obsolete surfaces.
+5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance. **Closed for Calendar, Home, PRAY, Learn and Settings.**
+6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence must be regression-tested so historical local state cannot reactivate obsolete surfaces. **Closed by the actual-index phone journey and persistence acceptance.**
 
 ## Regression gates
 
-The app-level gate must exercise cold launch → Home → Calendar → Mass selection → native LIVE → Settings overlay/restore → leave/resume → PRAY → Home → Settings, plus the modular Learn route Home → Learn → Home and Learn → PRAY/Calendar/Settings, on real phone/touch geometry. Settings acceptance additionally proves direct modular ownership, Sources/About/version parity, preference persistence, structural lockout during LIVE, focus safety and zero historical Settings fallback. The existing Mass convergence and phone suites remain mandatory and independent.
+The app-level gate exercises cold launch → Home → Calendar → Mass selection → native LIVE → Settings overlay/restore → leave/resume → PRAY → Home → Settings, plus the modular Learn route Home → Learn → Home and Learn → PRAY/Calendar/Settings, on real phone/touch geometry. It also verifies modular Home Coming Up/Daily Catechism ownership and rejects resurfaced donor Home cards. Settings acceptance additionally proves direct modular ownership, Sources/About/version parity, preference persistence, structural lockout during LIVE, focus safety and zero historical Settings fallback. The existing Mass convergence and phone suites remain mandatory and independent.
