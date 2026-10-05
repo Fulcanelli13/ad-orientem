@@ -205,6 +205,13 @@ try{
   // Make the restored snapshot non-default so a hub reset or lost state is obvious.
   await page.locator("#aoPray435930 [data-p435930-seg='guided']").click();
   await page.locator("#aoPray435930 [data-p435930-seg='group']").click();
+  const chooserState=await page.evaluate(()=>({
+    guided:document.querySelector("#aoPray435930 [data-p435930-seg='guided']")?.getAttribute("aria-pressed"),
+    group:document.querySelector("#aoPray435930 [data-p435930-seg='group']")?.getAttribute("aria-pressed"),
+    stored:globalThis.AO_PRAY_V435930?.state?.()?.rosary?.recitation??null,
+  }));
+  assert.deepEqual(chooserState,{guided:"true",group:"true",stored:"group"},
+    "modular Rosary chooser did not own Guided + Group before donor launch");
   await page.locator("#aoPray435930 [data-p435930-launch-rosary]").click();
 
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
