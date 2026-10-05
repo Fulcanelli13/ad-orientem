@@ -47,6 +47,19 @@ function retireLegacyHomeEnrichers(win){
   }catch{}
 }
 
+function retireUnresolvedSaintArt(win){
+  try{
+    win?.document?.querySelectorAll?.(".aoSaintArtCard")?.forEach?.(node=>{
+      let data=null;
+      try{data=JSON.parse(node?.dataset?.result||"null")}catch{}
+      if(!data?.result||data.result.item)return;
+      const active=win?.document?.activeElement;
+      if(active&&node.contains?.(active)){try{active.blur?.();}catch{}}
+      node.remove?.();
+    });
+  }catch{}
+}
+
 function rehydrateRemainingHomeDonors(win){
   // Coming Up and Daily Catechism Home presentation are modular now.
   // Keep unrelated donor services, then physically retire any historical
@@ -54,6 +67,7 @@ function rehydrateRemainingHomeDonors(win){
   try{win?.AO_EUCHARISTIC_V354?.ensureHome?.();}catch{}
   try{win?.AO_V37_SHELL?.ensureHome?.();}catch{}
   retireLegacyHomeEnrichers(win);
+  retireUnresolvedSaintArt(win);
 }
 
 function watchRetiredHomeEnrichers(win,onMutation){
@@ -74,9 +88,13 @@ export function createHomeOwner(win=globalThis){
   function ensureRetiredEnricherWatch(){
     if(retiredEnricherObserver)return;
     retiredEnricherObserver=watchRetiredHomeEnrichers(win,()=>{
-      if(state(win)?.route==="home")retireLegacyHomeEnrichers(win);
+      if(state(win)?.route==="home"){
+        retireLegacyHomeEnrichers(win);
+        retireUnresolvedSaintArt(win);
+      }
     });
     retireLegacyHomeEnrichers(win);
+    retireUnresolvedSaintArt(win);
   }
 
   function bindEnricherClicks(){

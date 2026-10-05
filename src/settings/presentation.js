@@ -144,5 +144,7 @@ export function settingsCss(rootId="ao-settings-modular-root"){
 export function renderSettingsToString(win=globalThis,{route="main",live=false}={}){
   const vm=buildSettingsViewModel(win,{route,live});
   const l=vm.language,about=vm.route==="about-sources";
-  return `<style>${settingsCss()}</style><header class="aoSetModTop"><button type="button" ${about?"data-settings-main":"data-settings-close"} aria-label="${esc(about?t(l,"back"):t(l,"close"))}">${about?assetIcon("ao-ui-back"):assetIcon("ao-ui-close")}</button><div><small>${esc(about?t(l,"sourcesAbout"):t(l,"preferences"))}</small><h1>${esc(about?t(l,"sourcesAbout"):t(l,"settings"))}</h1></div><button type="button" data-settings-close aria-label="${esc(t(l,"close"))}">${assetIcon("ao-ui-close")}</button></header><main class="aoSetModBody">${about?sourceMarkup(vm):mainMarkup(vm)}</main>`;
+  const left=about?`<button type="button" data-settings-main aria-label="${esc(t(l,"back"))}">${assetIcon("ao-ui-back")}</button>`:`<button type="button" data-settings-close aria-label="${esc(t(l,"close"))}">${assetIcon("ao-ui-back")}</button>`;
+  const right=about?`<button type="button" data-settings-close aria-label="${esc(t(l,"close"))}">${assetIcon("ao-ui-close")}</button>`:`<span aria-hidden="true"></span>`;
+  return `<style>${settingsCss()}</style><header class="aoSetModTop">${left}<div><small>${esc(about?t(l,"sourcesAbout"):t(l,"preferences"))}</small><h1>${esc(about?t(l,"sourcesAbout"):t(l,"settings"))}</h1></div>${right}</header><main class="aoSetModBody">${about?sourceMarkup(vm):mainMarkup(vm)}</main>`;
 }

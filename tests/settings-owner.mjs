@@ -69,6 +69,8 @@ for(const marker of [
   assert.ok(html.includes(marker),marker+" missing from modular Settings");
 }
 assert.match(html,/data-setting-structural="true"/,"structural Settings controls are not exposed to the canonical live-session guard");
+assert.equal((html.match(/data-settings-close/g)||[]).length,1,"Settings main renders duplicate close controls");
+assert.match(html,/ao-ui-back/,"Settings main exit control is not the canonical Back icon");
 
 const liveHtml=renderSettingsToString(fakeWin,{live:true});
 assert.match(liveHtml,/Structural Mass settings are locked while the current Mass is in progress/);
@@ -81,6 +83,8 @@ assert.match(sources,/How provenance is labelled/);
 assert.match(sources,/Application version/);
 assert.match(sources,/43\.59\.30/);
 assert.match(sources,/Sins are not recorded/);
+assert.equal((sources.match(/data-settings-close/g)||[]).length,1,"Sources/About should expose one close control");
+assert.match(sources,/data-settings-main/,"Sources/About lost the Back to Settings control");
 
 const frWin={
   ...fakeWin,
