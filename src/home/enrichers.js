@@ -1,4 +1,20 @@
+import { getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+
 export const HOME_ENRICHERS_VERSION="modular-home-enrichers-v1";
+export const HOME_ENRICHER_ICON_ASSET_IDS=Object.freeze({
+  calendar:"ao-refined-calendar-upcoming",
+  rosary:"ao-rich-rosary",
+  mass:"ao-brand-emblem",
+  angelus:"ao-rich-angelus",
+  exam:"ao-rich-examination-of-conscience",
+  heart:"ao-rich-sacred-heart",
+  marian:"ao-rich-our-lady-marian-devotions",
+  church:"ao-refined-church",
+  morning:"ao-rich-morning-offering",
+  evening:"ao-rich-night-prayer",
+  stations:"ao-rich-stations",
+  prayer:"ao-refined-pray-now",
+});
 
 const DAILY_KEY="ao_daily_catechism_v1";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -246,12 +262,24 @@ function iconGlyph(icon){
   return ({calendar:"◫",rosary:"✢",mass:"✠",angelus:"✧",exam:"◇",heart:"♥",marian:"✦",church:"⌂",morning:"☼",evening:"☾",stations:"✝",prayer:"†"})[icon]??"†";
 }
 
+function iconMarkup(icon){
+  const assetId=HOME_ENRICHER_ICON_ASSET_IDS[icon]??HOME_ENRICHER_ICON_ASSET_IDS.prayer;
+  const canonical=getCanonicalAsset(assetId);
+  return `<span class="aoHomeCuIcon" data-ao-asset-id="${esc(canonical?.assetId??assetId)}" aria-hidden="true">${esc(iconGlyph(icon))}</span>`;
+}
+
+function uiIcon(assetId){
+  const url=resolveCanonicalAssetUrl(assetId);
+  if(!url)return "";
+  return `<span data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url('\${esc(url)}') center/contain no-repeat;mask:url('\${esc(url)}') center/contain no-repeat"></span>`;
+}
+
 function rowMarkup(row){
   const attrs=row.kind==="dynamic"?`data-home-cu-dynamic="${esc(row.id)}" data-home-cu-route="${esc(row.route??"")}"`
     :row.kind==="static"?`data-home-cu-static="${esc(row.id)}"`
     :row.kind==="all"?"data-home-cu-all"
     :`data-home-cu-route="${esc(row.route??"")}" data-home-cu-date="${esc(row.date??"")}"`;
-  return `<button type="button" class="aoHomeCuRow${row.done?" done":""}" ${attrs}><span class="aoHomeCuRole">${esc(row.role)}<small>${esc(row.when)}</small></span><span class="aoHomeCuIcon" aria-hidden="true">${esc(iconGlyph(row.icon))}</span><span class="aoHomeCuCopy"><strong>${esc(row.title)}</strong><span>${esc(row.sub)}</span></span><span class="aoHomeCuArrow">›</span></button>`;
+  return `<button type="button" class="aoHomeCuRow${row.done?" done":""}" ${attrs}><span class="aoHomeCuRole">${esc(row.role)}<small>${esc(row.when)}</small></span>${iconMarkup(row.icon)}<span class="aoHomeCuCopy"><strong>${esc(row.title)}</strong><span>${esc(row.sub)}</span></span><span class="aoHomeCuArrow">${uiIcon("ao-ui-next")}</span></button>`;
 }
 
 export function renderHomeEnrichersToString(model,state){
@@ -264,6 +292,6 @@ export function renderHomeEnrichersToString(model,state){
 .aoHomeDailyBody{display:flex;align-items:center;justify-content:space-between;gap:14px}.aoHomeDailyCopy b{display:block;margin:4px 0}.aoHomeDailyCopy p{margin:4px 0 8px}.aoHomeDailyMeta{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted-2,#9d9a94)}.aoHomeDailyBadge{border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:4px 7px}.aoHomeDailyOpen{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:transparent;color:inherit}
 @media(max-width:430px){.aoHomeCuRow{grid-template-columns:52px 28px 1fr auto;gap:6px}.aoHomeCuRole{font-size:10px}}
 </style>
-<section class="contentCard aoHomeEnricherCard aoHomeComingUp" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}" aria-label="${esc(model.comingUp.title)}"><div class="aoHomeEnricherHead"><div class="cardKicker">${esc(model.comingUp.title)}</div><button type="button" data-home-cu-all>${esc(model.comingUp.viewAll)} →</button></div><div class="aoHomeCuRows">${model.comingUp.rows.map(rowMarkup).join("")}</div></section>
-<section class="contentCard aoHomeEnricherCard aoHomeDailyCatechism" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}"><div class="aoHomeDailyBody"><div class="aoHomeDailyCopy"><div class="cardKicker">${fr?"Formation":"Formation"}</div><b>${esc(daily.title)}</b><p>${esc(daily.description)}</p><div class="aoHomeDailyMeta"><span class="aoHomeDailyBadge">${esc(daily.badge)}</span><span>${esc(daily.meta)}</span></div></div><button type="button" class="aoHomeDailyOpen" data-home-daily-catechism aria-label="${esc(fr?"Ouvrir le Catéchisme quotidien":"Open Daily Catechism")}">→</button></div></section>`;
+<section class="contentCard aoHomeEnricherCard aoHomeComingUp" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}" aria-label="${esc(model.comingUp.title)}"><div class="aoHomeEnricherHead"><div class="cardKicker">${esc(model.comingUp.title)}</div><button type="button" data-home-cu-all>${esc(model.comingUp.viewAll)} ${uiIcon("ao-ui-next")}</button></div><div class="aoHomeCuRows">${model.comingUp.rows.map(rowMarkup).join("")}</div></section>
+<section class="contentCard aoHomeEnricherCard aoHomeDailyCatechism" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}"><div class="aoHomeDailyBody"><div class="aoHomeDailyCopy"><div class="cardKicker">${fr?"Formation":"Formation"}</div><b>${esc(daily.title)}</b><p>${esc(daily.description)}</p><div class="aoHomeDailyMeta"><span class="aoHomeDailyBadge">${esc(daily.badge)}</span><span>${esc(daily.meta)}</span></div></div><button type="button" class="aoHomeDailyOpen" data-home-daily-catechism aria-label="${esc(fr?"Ouvrir le Catéchisme quotidien":"Open Daily Catechism")}">${uiIcon("ao-ui-next")}</button></div></section>`;
 }
