@@ -295,7 +295,9 @@ try{
   assert.equal(interruptedReload.savedSection,interrupted.section);
   assert.equal(interruptedReload.probe,"calendar-state-ok","unrelated local state changed during interrupted reload");
 
-  await page.locator("[data-ao-app-surface='mass']").click();
+  const homeResume=page.locator(".homeScreen [data-resume-mass]");
+  assert.equal(await homeResume.count(),1,"interrupted reload exposed no visible Home Resume card");
+  await homeResume.click();
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
   await page.waitForFunction(expected=>
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId===expected,
@@ -313,8 +315,8 @@ try{
       probe:localStorage.getItem("ao-app-cross-module-probe"),
     };
   });
-  assert.equal(resumed.active,"mass","return through top-level Mass did not activate Mass");
-  assert.equal(resumed.section,interrupted.section,"resumed Mass did not restore saved reader section");
+  assert.equal(resumed.active,"mass","visible Home Resume did not activate Mass");
+  assert.equal(resumed.section,interrupted.section,"Home Resume did not restore saved reader section");
   assert.equal(resumed.restoredSection,interrupted.section);
   assert.equal(resumed.form,"MISSA_CANTATA_INCENSE");
   assert.equal(resumed.prefs?.mode,"LIVE");
