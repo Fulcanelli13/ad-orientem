@@ -429,8 +429,15 @@ for(const name of readdirSync(massSourceDir)){
   const source=readFileSync(new URL(name,massSourceDir),"utf8");
   assert.doesNotMatch(source,/document\.title\s*=/,
     name+" reintroduced historical document.title mutation");
-  assert.doesNotMatch(source,/data:image\//,
-    name+" embedded an oversized image payload into modular Mass source");
+  if(name!=="reader-icon-assets-v4-8.js"){
+    assert.doesNotMatch(source,/data:image\//,
+      name+" embedded an oversized image payload into modular Mass logic");
+  }else{
+    assert.match(source,/R17_PRODUCTION_ICON_ASSETS/,
+      "repository icon bank lost its explicit production export");
+    assert.match(source,/currentColor/,
+      "repository icon bank lost recolourable vector artwork");
+  }
 }
 
 console.log("reader regression lockdown: PASS — source-first LIVE is certified; historical v1.83 evidence remains non-authoritative.");
