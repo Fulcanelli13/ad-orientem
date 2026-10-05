@@ -47,8 +47,12 @@ function commemorations(r){
 }
 function coverage(r,lang){const c=properOf(r)?.languageCoverage?.[lang];return c?{complete:!!c.complete}:null}
 function badge(lang,c){return `<span class="aoCalModBadge ${c?.complete?"ok":"warn"}">${lang.toUpperCase()} · ${esc(c?.complete?L("available","disponible"):L("unavailable","indisponible"))}</span>`}
+function fallbackWeekIds(selected){
+  const start=dateOf(selected);start.setDate(start.getDate()-start.getDay());
+  return Array.from({length:7},(_,i)=>{const d=new Date(start);d.setDate(start.getDate()+i);return iso(d)});
+}
 function weekRail(selected){
-  const A=cache(),ids=A?.weekIds?.(selected)??[],loc=fr()?"fr-FR":"en-GB";
+  const A=cache(),cached=A?.weekIds?.(selected)??[],ids=cached.length?cached:fallbackWeekIds(selected),loc=fr()?"fr-FR":"en-GB";
   return ids.map(id=>{const r=A?.get?.(id),d=dateOf(id),ready=!!(r&&r.date===id&&r.status!=="failed");return `<button type="button" class="${id===selected?"active":""}" data-cal-date="${id}" data-ready="${ready?1:0}" title="${esc(r?titleOf(r):L("Not prepared","Non préparé"))}"><small>${esc(d.toLocaleDateString(loc,{weekday:"short"}))}</small><b>${d.getDate()}</b></button>`}).join("");
 }
 function bodyMarkup(){
