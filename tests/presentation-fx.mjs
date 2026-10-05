@@ -62,7 +62,7 @@ assert.equal(loader.attrs["aria-hidden"],"true");
 
 const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 assert.match(appEntry,/createPresentationFxBridge/,"app shell no longer installs modular presentation FX bridge");
-assert.match(appEntry,/presentationFx\.navigate/,"app shell navigation bypasses presentation FX bridge");
+assert.match(appEntry,/presentationFx\?\.navigate/,"app shell navigation bypasses presentation FX bridge");
 
 const index=readFileSync("index.html","utf8");
 for(const id of ["ao-cinema-boot","ao-cinema-transition","ao-cinema-loader"]){
