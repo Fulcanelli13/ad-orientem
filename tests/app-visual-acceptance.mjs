@@ -73,6 +73,18 @@ try{
 
   await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
   await page.locator("[data-home-mass-entry]").click();
+  await page.waitForSelector("#ao-mass-flow-v1",{state:"attached",timeout:10000});
+  const massEntryStack=await page.evaluate(()=>{
+    const selectors=["#ao-v37-root","#aoPrayerBookRoot","#ao-learn-root","#ao-cate-root","#ao-daily-cate-root","#ao-v354-root","#ao-v26-exercises","#aoRuleSheet","#ao-mass-flow-v1","#ao-use-guide-v9","#aoCueGuideSheet"];
+    const surfaces=selectors.map(selector=>{
+      const el=document.querySelector(selector);
+      if(!el)return {selector,present:false};
+      const css=getComputedStyle(el);
+      return {selector,present:true,hidden:Boolean(el.hidden),ariaHidden:el.getAttribute("aria-hidden"),display:css.display,visibility:css.visibility,opacity:css.opacity,zIndex:css.zIndex,ghost:el.dataset.aoGhostSuppressed??null,inlineStyle:el.getAttribute("style")??""};
+    });
+    return {surfaces,v4329:globalThis.AO_V4329?.inspect?.()??null};
+  });
+  console.log("Mass preflight stack",JSON.stringify(massEntryStack));
   await page.waitForSelector("#ao-mass-flow-v1",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
   const massEntry=await page.evaluate(()=>({
