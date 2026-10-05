@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 
 const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","utf8"));
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
+const parity=JSON.parse(readFileSync("data/presentation/product-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
 assert.equal(app.version,"1.17.0");
@@ -36,6 +37,11 @@ assert.equal(fieldRuntime?.status,"CLOSED");
 const productParity=findings.find(x=>x.id==="PRODUCT_PRESENTATION_PARITY");
 assert.equal(productParity?.classification,"REGRESSION");
 assert.equal(productParity?.status,"OPEN");
+assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
+assert.equal(parity.schema,"ao-product-parity-v1");
+assert.deepEqual(Object.keys(parity.surfaces),["home","mass","pray","learn","calendar","settings"]);
+assert.equal(parity.surfaces.calendar.status,"IN_RECOVERY");
+assert.ok(Object.values(parity.surfaces).some(x=>x.status!=="CERTIFIED"),"presentation parity blocker cannot remain open with every surface certified");
 assert.equal(findings.find(x=>x.id==="MASS_SUBSYSTEM_CERTIFIED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="SPECIAL_STRUCTURES_REAL_SHELL")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="ARIA_FOCUS_GUARD")?.classification,"PASS");
