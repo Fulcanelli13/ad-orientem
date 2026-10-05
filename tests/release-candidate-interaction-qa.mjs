@@ -216,6 +216,14 @@ try{
 
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForSelector(".aoP435930RosaryBar",{state:"visible",timeout:10000});
+  await page.waitForFunction(()=>(
+    document.querySelector(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']")?.classList?.contains("active")===true &&
+    document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")===true
+  ),null,{timeout:3000});
+  // The preserved Rosary engine may finish its own asynchronous mount after the
+  // first decoration checkpoint. Hold past the second reconciliation checkpoint
+  // and prove the selected state remains authoritative.
+  await page.waitForTimeout(260);
   await assertSinglePrayerLayer("Rosary donor launch");
 
   const rosarySurface=await page.evaluate(()=>{
