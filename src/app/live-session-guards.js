@@ -1,9 +1,10 @@
-export const VERSION = "app-live-session-guards-v1";
+export const VERSION = "app-live-session-guards-v2";
 
 const STRUCTURAL_SELECTOR = [
   "[data-live-form]",
   "[data-sunday-asperges]",
   "[data-setting-form]",
+  "[data-setting-structural]",
 ].join(",");
 
 function liveActive(win) {
@@ -91,7 +92,11 @@ export function installLiveSessionGuards({ win = globalThis } = {}) {
       try{unsubscribe?.();}catch{}
       observer?.disconnect?.();
       doc.removeEventListener?.("click",onClick,true);
+      if(win.AO_APP_LIVE_SESSION_GUARDS_V1===api){
+        try{delete win.AO_APP_LIVE_SESSION_GUARDS_V1;}catch{}
+      }
     },
   });
+  win.AO_APP_LIVE_SESSION_GUARDS_V1=api;
   return api;
 }
