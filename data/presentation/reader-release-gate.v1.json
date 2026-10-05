@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.8.0",
+  "version": "4.8.1",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
   "releaseRule": "R17 native remains the production reader. Actual index.html phone-Chromium acceptance is explicit for the complete certified special-structure scope: pre-Mass rites, Good Friday, Easter Vigil, Nuptial insertions, and all supported following-action lifecycles. Legacy remains explicit rollback/debug only.",
@@ -76,11 +76,19 @@
     },
     {
       "id": "ICON_ASSET_BANK_NATIVE",
-      "status": "CERTIFIED_HOST_BANK_BRIDGE",
+      "status": "CERTIFIED_REPOSITORY_FROZEN_ACTIVE_BANK",
       "resolver": "src/mass/reader-icons.js",
-      "bridge": "globalThis.AO_R17_ICON_ASSETS",
-      "sourceBank": "existing host AO_ASSETS",
-      "failClosedOnMissingAssets": true
+      "bridge": "src/mass/reader-icon-bank.js",
+      "sourceBank": "Ad_Orientem_Icon_Asset_Bank_v4_FROZEN.zip — FROZEN_ACTIVE assets externalized under assets/active",
+      "failClosedOnMissingAssets": true,
+      "productionBank": "src/mass/reader-icon-bank.js",
+      "assetRoot": "assets/active",
+      "excludedSemantics": [
+        "cross",
+        "gospel_crosses",
+        "priest_sedilia"
+      ],
+      "excludedBehavior": "TEXT_ONLY_BY_FROZEN_LEDGER"
     },
     {
       "id": "BELL_CINEMATIC_NATIVE_OWNERSHIP",
