@@ -1,8 +1,8 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.14.0",
-  "status": "FINAL_APP_READY",
-  "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
+  "version": "1.15.0",
+  "status": "FIELD_STABILIZATION_REQUIRED",
+  "releaseRule": "FINAL_APP_READY is suspended while field-runtime stabilization is open. The Mass subsystem remains certified; application release requires all app blockers closed, modular six-destination ownership, cross-domain phone acceptance, and real-data current-week Proper readiness.",
   "massSubsystem": {
     "status": "CERTIFIED",
     "authority": "data/presentation/reader-release-gate.v1.json",
@@ -166,9 +166,27 @@
         "src/app/shell-controller.js"
       ],
       "detail": "Actual-index phone acceptance proves cold state, active-Mass checkpointing, reload without auto-reactivation, explicit resume at the saved section, preservation of form/mode/posture/gesture/language preferences, intentional suspension, and isolation of unrelated local state."
+    },
+    {
+      "id": "FIELD_RUNTIME_STABILIZATION",
+      "classification": "CRASH",
+      "status": "OPEN",
+      "evidence": [
+        "src/app/source-transport-compat.js",
+        "src/pray/dom-anchor.js",
+        "src/pray/presentation-coherence.js",
+        "src/mass/browser-entry.js",
+        "tests/source-transport-compat.mjs",
+        "tests/pray-presentation.mjs",
+        "tests/browser-entry.mjs",
+        "tests/field-current-week-e2e.mjs"
+      ],
+      "detail": "Real production use exposed two P0 regressions after architectural convergence: PRAY recitation decoration could call insertBefore with a nested descendant, and source resolution probed broken French/local paths plus Mass Commons under the wrong Divinum Officium tree, producing incomplete Propers and blocked R17 entry. P0 repairs are implemented, stale persisted Mass checkpoints now fail closed without an uncaught resume, and FINAL_APP_READY remains suspended until the real-data Oct 4-9 acceptance passes on the merged production tree."
     }
   ],
-  "openBlockers": [],
+  "openBlockers": [
+    "FIELD_RUNTIME_STABILIZATION"
+  ],
   "regressionGates": {
     "static": [
       "tests/app-release-gate.mjs",
@@ -182,7 +200,8 @@
       "tests/home-enrichers.mjs",
       "tests/nonmass-d3-d6-convergence.mjs",
       "tests/learn-owner.mjs",
-      "tests/settings-owner.mjs"
+      "tests/settings-owner.mjs",
+      "tests/source-transport-compat.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
@@ -192,7 +211,8 @@
       "tests/app-shell-journey-e2e.mjs",
       "tests/nonmass-d3-d6-e2e.mjs",
       "tests/learn-owner-e2e.mjs",
-      "tests/settings-e2e.mjs"
+      "tests/settings-e2e.mjs",
+      "tests/field-current-week-e2e.mjs"
     ]
   }
 }
