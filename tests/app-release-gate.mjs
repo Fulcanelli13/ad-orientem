@@ -7,8 +7,8 @@ const parity=JSON.parse(readFileSync("data/presentation/product-parity.v1.json",
 const presentationFx=JSON.parse(readFileSync("data/presentation/presentation-fx-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.19.0");
-assert.equal(app.status,"PRESENTATION_FX_RECOVERY_REQUIRED");
+assert.equal(app.version,"1.20.0");
+assert.equal(app.status,"FINAL_APP_READY");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
 assert.equal(reader.status,"FINAL_NATIVE_READY","Mass subsystem lost FINAL_NATIVE_READY");
@@ -31,7 +31,7 @@ for(const finding of findings){
 
 const open=findings.filter(x=>x.status==="OPEN").map(x=>x.id);
 assert.deepEqual(app.openBlockers,open,"app openBlockers must exactly match OPEN findings");
-assert.deepEqual(app.openBlockers,["PRESENTATION_FX_PARITY"],"presentation FX must remain release-blocking until the cinematic/rail recovery is certified");
+assert.deepEqual(app.openBlockers,[],"FINAL_APP_READY must not retain app-level blockers");
 const fieldRuntime=findings.find(x=>x.id==="FIELD_RUNTIME_STABILIZATION");
 assert.equal(fieldRuntime?.classification,"PASS");
 assert.equal(fieldRuntime?.status,"CLOSED");
@@ -41,10 +41,12 @@ assert.equal(productParity?.status,"CLOSED");
 assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
 assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
 const fxFinding=findings.find(x=>x.id==="PRESENTATION_FX_PARITY");
-assert.equal(fxFinding?.classification,"REGRESSION");
-assert.equal(fxFinding?.status,"OPEN");
+assert.equal(fxFinding?.classification,"PASS");
+assert.equal(fxFinding?.status,"CLOSED");
 assert.equal(presentationFx.schema,"ao-presentation-fx-parity-v1");
-assert.equal(presentationFx.status,"RECOVERY_IN_PROGRESS");
+assert.equal(presentationFx.status,"CERTIFIED");
+assert.equal(presentationFx.releaseBlocker,null);
+assert.ok(Array.isArray(presentationFx.nonBlockingHygiene),"certified FX ledger must keep optional extraction work explicitly non-blocking");
 assert.equal(parity.schema,"ao-product-parity-v1");
 assert.deepEqual(Object.keys(parity.surfaces),["home","mass","pray","learn","calendar","settings"]);
 assert.equal(parity.surfaces.calendar.status,"CERTIFIED");
