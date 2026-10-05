@@ -1,6 +1,6 @@
 {
   "schema": "ao-presentation-fx-parity-v1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "RECOVERY_IN_PROGRESS",
   "releaseBlocker": "PRESENTATION_FX_PARITY",
   "rule": "FINAL_APP_READY requires the approved cinematic and semantic presentation systems to be active on the modular six-surface app. Static surface parity alone is insufficient.",
@@ -21,58 +21,76 @@
       "note": "Cold-load boot cinematic still exists in the monolith, but remains owned by the legacy embedded presentation layer."
     },
     "modularRouteTransitions": {
-      "status": "RECOVERED_V1_PENDING_PHONE_CERTIFICATION",
+      "status": "CERTIFIED_V1",
       "evidence": [
         "src/app/presentation-fx.js",
         "src/app/browser-entry.js",
-        "tests/presentation-fx.mjs"
+        "tests/presentation-fx.mjs",
+        "PR #176",
+        "Visual acceptance workflow 37329503745",
+        "App convergence workflow 37329503729",
+        "R17 Mass convergence workflow 37329503822"
       ],
-      "note": "The modular six-surface shell now calls the existing v43.12 cinematic owner instead of bypassing it."
+      "note": "The modular six-surface shell calls the approved v43.12 transition owner on actual ribbon navigation. PR #176 passed visual, app and R17 convergence."
     },
     "modularAsyncLoader": {
-      "status": "RECOVERED_V1_PENDING_PHONE_CERTIFICATION",
+      "status": "CERTIFIED_V1",
       "evidence": [
         "src/app/presentation-fx.js",
-        "#ao-cinema-loader"
+        "#ao-cinema-loader",
+        "PR #176",
+        "Visual acceptance workflow 37329503745"
       ],
-      "note": "Slow modular surface navigation reuses the v43.12 loader card after a short delay."
+      "note": "Slow modular surface navigation reuses the v43.12 delayed loader and suppresses it under reduced motion."
     },
     "modularSurfaceEntry": {
-      "status": "RECOVERED_V1_PENDING_PHONE_CERTIFICATION",
+      "status": "CERTIFIED_V1",
       "evidence": [
         "src/app/presentation-fx.js",
-        ".aoCinemaSurfaceIn"
+        ".aoModularSurfaceIn",
+        "PR #176",
+        "Visual acceptance workflow 37329503745"
       ],
-      "note": "Home, Mass, PRAY, Learn, Calendar and Settings can reuse the approved v43.12 surface-entry motion."
+      "note": "Home, Mass, PRAY, Learn, Calendar and Settings receive geometry-neutral surface-entry choreography."
     },
     "artLoading": {
-      "status": "PARTIAL_LEGACY_SELECTOR_COVERAGE",
+      "status": "RECOVERED_V5_VALIDATION",
       "evidence": [
-        "index.html#ao-v4312-cinematic-loading-js"
+        "index.html#ao-v4312-cinematic-loading-js",
+        "src/app/presentation-fx.js",
+        "tests/presentation-fx.mjs",
+        "tests/app-visual-acceptance.mjs"
       ],
-      "note": "The old shimmer/blur-in art loader still targets historical art selectors; modular surface coverage requires audit."
+      "note": "V5 makes modular surface entry explicitly invoke the approved v43.12 scanArt owner instead of introducing a second shimmer/blur system. Existing Home Proper, Rosary, Saint and Stations imagery retain the canonical v43.12 image selectors. CI validation remains required."
     },
     "verticalSemanticRails": {
-      "status": "RECOVERED_V2_V3",
+      "status": "CERTIFIED_V2_V3",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
         "tests/pray-presentation.mjs",
         "tests/app-visual-acceptance.mjs",
         "Ad_Orientem_Angelus_Timeline_Prototype_v0.3.html",
-        "Ad_Orientem_v3_4_8.html"
+        "Ad_Orientem_v3_4_8.html",
+        "PR #180",
+        "Visual acceptance workflow 37330996545",
+        "App convergence workflow 37330996331",
+        "R17 Mass convergence workflow 37330996238"
       ],
-      "note": "PRAY restores geometry-neutral semantic icon rails without duplicating horizontal stage navigation. Angelus exposes resolved Stand/Kneel plus devotional context. Stations exposes sourced attention/context cues without inventing a universal posture. Adoration, Benediction and Confession expose canonical contextual identity. The external canonical Rosary player now has its own live mystery/context rail."
+      "note": "PRAY restores geometry-neutral semantic icon rails without duplicating horizontal stage navigation. Angelus exposes resolved Stand/Kneel plus devotional context. Stations exposes sourced attention/context cues without inventing a universal posture. Adoration, Benediction and Confession expose canonical contextual identity. The external canonical Rosary player now has its own live mystery/context rail. PR #180 passed visual, app and R17 convergence."
     },
     "heroPresenceAndEntryChoreography": {
-      "status": "AUDIT_REQUIRED",
+      "status": "RECOVERED_V5_VALIDATION",
       "evidence": [
+        "src/app/presentation-fx.js",
+        "tests/presentation-fx.mjs",
+        "tests/app-visual-acceptance.mjs",
         "src/home/presentation.js",
         "src/calendar/browser-entry.js",
         "src/pray/presentation-runtime.js",
         "src/learn/presentation.js"
       ],
-      "note": "Static hero hierarchy is certified per surface; prototype-level hero animation, atmospheric entry and art choreography are not."
+      "note": "V5 restores restrained prototype-level hero entry choreography to Home celebration identity, PRAY devotional heroes, Learn formation hero and Calendar Sacred Time. Background interaction rescans do not repeatedly restart existing hero motion; reduced motion suppresses it. CI validation is required."
     },
     "reducedMotion": {
       "status": "PRESERVED_AND_BRIDGED",
@@ -100,20 +118,23 @@
       "note": "The preserved canonical Rosary player receives a geometry-neutral right context rail from AO_ROSARY_V381 state and reuses AO_CINEMATIC_V4312 only when a new mystery is entered. No universal Rosary posture is invented, bead navigation is untouched, reduced motion suppresses the cinematic, and PR #183 passed Visual acceptance, App convergence and R17 convergence."
     },
     "stationsLiveFx": {
-      "status": "RECOVERED_V4_VALIDATION",
+      "status": "CERTIFIED_V4",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "tests/pray-presentation.mjs",
         "tests/app-visual-acceptance.mjs",
-        "Ad_Orientem_Devotional_Timelines_and_Rubrics_Blueprint_v1.xlsx — STA.T01/STA.T02/STA.T06"
+        "Ad_Orientem_Devotional_Timelines_and_Rubrics_Blueprint_v1.xlsx — STA.T01/STA.T02/STA.T06",
+        "PR #188",
+        "Visual acceptance workflow 37338199677",
+        "App convergence workflow 37338199684",
+        "R17 Mass convergence workflow 37338199661"
       ],
-      "note": "Stations now uses the canonical look/attention asset to cue facing the current Station, keeps the canonical Stations identity rail with the current XIV-step context, and reuses AO_CINEMATIC_V4312 on actual station changes. The recovery deliberately does not invent a universal kneel/stand track: the blueprint classifies movement and posture as contextual/traditional, and at-home use must not simulate a procession. CI validation is required before certification."
+      "note": "Stations uses the canonical look/attention cue, XIV-step context rail and restrained transition cinematic on actual station changes. It deliberately does not impose a universal kneel/stand track. PR #188 passed visual, app and R17 convergence."
     }
   },
   "nextRecoveryTargets": [
-    "phone-certify Stations semantic cue rail and station-change cinematic on 390x844 production geometry",
-    "recover approved hero/art entry choreography across modular Home/PRAY/Learn/Calendar surfaces",
-    "extend cinematic art-loading treatment to current modular art owners and prove real loading states",
-    "extract v43.12 cinematic owner from monolithic index.html only after full presentation-FX behavior parity is locked"
+    "phone-certify V5 modular hero choreography and single-owner v43.12 art scanning",
+    "extract the v43.12 cinematic owner from monolithic index.html into a modular presentation owner without changing behavior",
+    "close PRESENTATION_FX_PARITY only after extracted boot/transition/loader/art behavior passes the same production phone gates"
   ]
 }
