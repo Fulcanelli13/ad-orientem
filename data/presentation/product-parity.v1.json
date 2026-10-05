@@ -5,7 +5,7 @@
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
     "home": {
-      "status": "IN_AUDIT",
+      "status": "CERTIFIED",
       "currentOwner": "src/home",
       "reference": "LOCKED_NON_MASS_V43_59_30",
       "mustPreserve": [
@@ -16,8 +16,11 @@
         "no Calendar dashboard duplication on Home"
       ],
       "evidence": [
+        "src/home/presentation.js",
+        "src/home/enrichers.js",
         "tests/app-visual-acceptance.mjs",
-        "01-home.png"
+        "Visual acceptance workflow 37303689014 at 390x844 touch geometry",
+        "R17 Mass convergence workflow 37303689024"
       ]
     },
     "mass": {
