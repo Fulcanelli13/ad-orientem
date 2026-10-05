@@ -113,6 +113,39 @@ function host({ route = "home", confirm = true } = {}) {
 }
 
 {
+  const calls=[];
+  const win={
+    AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en"}),subscribe:()=>()=>{}}},
+    AO_NAV_V362:{home:()=>true},
+    AO_V37_SHELL:{openDomain:(id)=>{calls.push("donor:"+id);return true;}},
+    AO_R17_BROWSER_ENTRY:{
+      hasResumable:()=>false,
+      enter:async()=>{calls.push("mass:enter");return {ok:true};},
+    },
+    AO_CELEBRATION_API:{
+      openPreflight:()=>{calls.push("mass:preflight");return true;},
+    },
+  };
+  const adapter=createAppHostAdapter(win);
+  assert.equal(await adapter.openDomain("mass"),true);
+  assert.deepEqual(calls,["mass:preflight"],"fresh Mass did not open resolved-celebration preflight");
+  assert.equal(calls.some(x=>x.startsWith("donor:")),false,"fresh Mass fell through to historical V37 domain");
+  assert.equal(calls.includes("mass:enter"),false,"fresh app navigation bypassed preflight and started R17 directly");
+}
+
+{
+  const calls=[];
+  const win={
+    AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language:"en"}),subscribe:()=>()=>{}}},
+    AO_V37_SHELL:{openDomain:(id)=>{calls.push("donor:"+id);return true;}},
+    AO_R17_BROWSER_ENTRY:{hasResumable:()=>false},
+  };
+  const adapter=createAppHostAdapter(win);
+  assert.equal(await adapter.openDomain("mass"),false,"fresh Mass did not fail closed without preflight owner");
+  assert.deepEqual(calls,[],"missing preflight owner reopened historical Mass");
+}
+
+{
   const calls = [];
   const win = {
     AO_RUNTIME_V8: { store: { getState: () => ({ route: "home", language: "en" }), subscribe: () => () => {} } },

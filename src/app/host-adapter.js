@@ -71,6 +71,11 @@ export function createAppHostAdapter(win = globalThis) {
           if (typeof mass?.resume !== "function") return false;
           return Promise.resolve(mass.resume()).then((result) => result?.ok !== false);
         }
+        const celebration = win?.AO_CELEBRATION_API;
+        if (typeof celebration?.openPreflight !== "function") return false;
+        // Fresh Mass entry belongs to the resolved-celebration preflight.
+        // Do not fall through to the historical V37 Mass domain.
+        return Promise.resolve(celebration.openPreflight()).then((result) => result !== false);
       }
       if (domain === "pray") {
         const modular = win?.AO_PRAY_APP_V1;

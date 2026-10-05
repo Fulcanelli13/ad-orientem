@@ -71,6 +71,25 @@ try{
   assert.equal(await page.locator(".aoSaintArtCard .aoSaintArtPlaceholder").filter({hasText:/No reusable artwork|No artwork is assigned|not approved for production/i}).count(),0,"Home exposed a terminal saint-art placeholder instead of suppressing the unresolved card");
   await shot("01-home");
 
+  await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
+  await page.locator("[data-home-mass-entry]").click();
+  await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
+  const massEntry=await page.evaluate(()=>({
+    active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+    preflightVisible:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop .aoMassFlow")),
+    nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+    donorLearnVisible:Boolean(document.getElementById("ao-v37-root")?.classList?.contains("aoV37ShellOpen")),
+  }));
+  assert.equal(massEntry.active,"mass","Home Follow Mass did not activate the Mass destination");
+  assert.equal(massEntry.preflightVisible,true,"Home Follow Mass did not open the celebration preflight");
+  assert.equal(massEntry.nativeMounted,false,"fresh Mass entry bypassed preflight and mounted R17 immediately");
+  await shot("01b-mass-preflight");
+  await page.locator("#ao-mass-flow-v1 [data-ao-close]").last().click();
+  await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});
+  await page.locator("[data-ao-app-surface='home']").click();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
+
   await page.locator("[data-ao-app-surface='calendar']").click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   await assertHomeHidden("Calendar");
