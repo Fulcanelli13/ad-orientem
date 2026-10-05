@@ -63,7 +63,7 @@ assert.equal(model.dailyCatechism.meta,"1 due for review");
 
 const html=renderHomeEnrichersToString(model,state);
 assert.match(html,new RegExp(`data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}"`));
-assert.match(html,/data-home-cu-dynamic="angelus\.noon"/);
+assert.match(html,/data-home-cu-route="pray\.angelus_regina"/,"future Angelus item should route through the canonical prayer module");
 assert.match(html,/data-home-cu-static="rosary"/);
 assert.match(html,/data-home-cu-route="learn\.liturgical_year"/);
 assert.match(html,/data-home-daily-catechism/);
