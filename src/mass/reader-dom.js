@@ -1,5 +1,4 @@
 import { normalizePresentationMode } from "./session-engine.js";
-import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 const SHELL_STYLE = `
 .ao-reader-shell{--ao-bg:#080c12;--ao-panel:#0d1218;--ao-line:rgba(189,161,108,.20);--ao-muted:#9a948c;--ao-text:#eee8de;--ao-accent:#bda16c;--ao-schola-height:52px;box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;height:100%;min-height:0;background:var(--ao-bg);color:var(--ao-text);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
@@ -8,7 +7,7 @@ const SHELL_STYLE = `
 .ao-reader-top-action{appearance:none;border:0;background:transparent;color:#cfc6ba;display:grid;place-items:center;min-width:48px;padding:0}
 .ao-reader-top-action:first-child{border-right:1px solid rgba(189,161,108,.10)}
 .ao-reader-top-action:last-child{border-left:1px solid rgba(189,161,108,.10)}
-.ao-reader-top-action .ao-app-icon{width:22px;height:22px}
+.ao-reader-top-action .ao-reader-top-copy{font:700 .54rem/1 system-ui,sans-serif;letter-spacing:.075em;color:#cfc6ba}
 .ao-reader-top-main{min-width:0;display:grid;grid-template-rows:34px 30px}
 .ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);background:transparent}
 .ao-mode-ribbon button{appearance:none;border:0;border-right:1px solid rgba(189,161,108,.08);background:transparent;color:var(--ao-muted);min-height:34px;padding:.38rem .3rem;font:600 .66rem/1 system-ui,sans-serif;letter-spacing:.11em}
@@ -96,12 +95,6 @@ function esc(value){
   return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
 
-function appIcon(assetId){
-  const url=resolveCanonicalAssetUrl(assetId);
-  if(!url)return "";
-  return `<span class="ao-app-icon" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
-}
-
 function textValue(value){
   if (value == null) return null;
   if (typeof value === "string") return value;
@@ -178,14 +171,14 @@ export function buildReaderShellMarkup(prepared = {}) {
   return `<style data-ao-reader-shell-style>${SHELL_STYLE}</style>
 <section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}">
   <header class="ao-reader-top-ribbon">
-    <button class="ao-reader-top-action" type="button" data-reader-home aria-label="Home">${appIcon("ao-nav-home")}</button>
+    <button class="ao-reader-top-action" type="button" data-reader-home data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="pending-externalization" aria-label="Home"><span class="ao-reader-top-copy">HOME</span></button>
     <div class="ao-reader-top-main">
       <nav class="ao-mode-ribbon" aria-label="Reader mode">
         ${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}">${m}</button>`).join("")}
       </nav>
       <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled><span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span></button>
     </div>
-    <button class="ao-reader-top-action" type="button" data-reader-parameters aria-label="Mass settings">${appIcon("ao-nav-settings")}</button>
+    <button class="ao-reader-top-action" type="button" data-reader-parameters data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="pending-externalization" aria-label="Mass settings"><span class="ao-reader-top-copy">PARAMS</span></button>
   </header>
   <div class="ao-section-menu" data-role="section-menu" hidden></div>
   <div class="ao-state-ribbon">
