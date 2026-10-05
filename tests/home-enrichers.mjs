@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
+import { getCanonicalAsset } from "../src/assets/asset-registry.js";
 import {
   HOME_ENRICHERS_VERSION,
+  HOME_ENRICHER_ICON_ASSET_IDS,
   buildHomeEnrichers,
   renderHomeEnrichersToString,
 } from "../src/home/enrichers.js";
@@ -45,6 +47,10 @@ const win={
   },
 };
 
+for(const assetId of Object.values(HOME_ENRICHER_ICON_ASSET_IDS)){
+  assert.ok(getCanonicalAsset(assetId),"Home enricher uses a non-canonical asset: "+assetId);
+}
+
 const model=buildHomeEnrichers(state,win,{now});
 assert.equal(model.version,HOME_ENRICHERS_VERSION);
 assert.equal(model.visible,true);
@@ -61,6 +67,8 @@ assert.match(html,/data-home-cu-dynamic="angelus\.noon"/);
 assert.match(html,/data-home-cu-static="rosary"/);
 assert.match(html,/data-home-cu-route="learn\.liturgical_year"/);
 assert.match(html,/data-home-daily-catechism/);
+assert.match(html,/data-ao-asset-id="ao-rich-rosary"/);
+assert.match(html,/data-ao-asset-id="ao-ui-next"/);
 assert.match(html,/\.aoComingUpV4323,.homeScreen>.aoDailyCateHome\{display:none!important\}/);
 
 const offDate=buildHomeEnrichers({...state,selectedDate:"2026-10-04"},win,{now});
