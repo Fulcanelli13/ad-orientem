@@ -364,7 +364,14 @@ assert.match(objectiveSource,/MC-COM-150/);
 assert.match(objectiveSource,/MC-COM-160/);
 
 const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
-assert.match(nativeSource,/allowPresentationModeSwitch:false/);
+assert.match(nativeSource,/allowPresentationModeSwitch:true/,
+  "native reader relocked the certified in-reader mode selector");
+assert.match(nativeSource,/buildReaderModeModels/,
+  "native reader lost presentation-only mode model rebuilding");
+assert.match(nativeSource,/captureReaderModeAnchor/,
+  "native reader lost source/cue anchor capture for mode switching");
+assert.match(nativeSource,/findReaderModeAnchorCard/,
+  "native reader lost source/cue anchor restoration for mode switching");
 assert.match(nativeSource,/const structuralSupport=structureSupport\(prepared\)/);
 assert.match(nativeSource,/structuralSupport\.reason/);
 assert.match(nativeSource,/canonSourceMap:data\?\.canonSourceMap/,"native reader lost certified Canon source-map input");
