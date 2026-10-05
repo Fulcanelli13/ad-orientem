@@ -9,6 +9,8 @@ import {
   readPersistedActiveMass,
   persistedMassIsResumable,
   resolveHostIconAssets,
+  resolveFrozenCssIconAssets,
+  R17_FROZEN_CSS_ICON_VARS,
 } from "../src/mass/browser-entry.js";
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
@@ -22,6 +24,24 @@ assert.equal(resolveHostIconAssets({AO_R17_ICON_ASSETS:bridgedIcons}),bridgedIco
   "explicit modular icon bank stopped taking precedence");
 assert.equal(resolveHostIconAssets({}),null,
   "icon resolver invented a host bank when no bridge/global bank exists");
+
+const cssValues=Object.fromEntries(
+  Object.values(R17_FROZEN_CSS_ICON_VARS).map((name,index)=>[
+    name,
+    `url("data:image/svg+xml;base64,${Buffer.from("<svg data-i='"+index+"'/>").toString("base64")}")`,
+  ])
+);
+const cssWin={
+  document:{documentElement:{}},
+  getComputedStyle:()=>({getPropertyValue:name=>cssValues[name]??""}),
+};
+const cssBank=resolveFrozenCssIconAssets(cssWin,cssWin.document);
+assert.ok(cssBank,"frozen CSS bank did not resolve");
+assert.deepEqual(Object.keys(cssBank).sort(),Object.keys(R17_FROZEN_CSS_ICON_VARS).sort(),
+  "frozen CSS bank lost an R17 semantic key");
+assert.match(cssBank.stand,/^data:image\/svg\+xml;base64,/);
+assert.equal(resolveHostIconAssets(cssWin).priest_centre,cssBank.priest_centre,
+  "production resolver did not fall back to the frozen CSS asset bank");
 
 const rites = mapInsertedRites([
   "asperges",
