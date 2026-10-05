@@ -543,7 +543,7 @@ function onClick(e){
  if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
  if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){S.angelusMode=seg;save()}else if(view==='rosary'){if(['standard','devotional'].includes(seg))S.rosary.form=seg;if(['simple','guided'].includes(seg))S.rosary.mode=seg;if(['individual','group'].includes(seg))S.rosary.recitation=seg;save()}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;save()}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
- if(b.matches('[data-p435930-launch-rosary]')){syncRosaryPrefs();externalResume=captureResume();close({silent:true});window.AOTraditionalPrayerBook?.openModule?.('rosary',{returnContext:PRAY_CTX});setTimeout(decorateRosary,20);setTimeout(decorateRosary,160);return}
+ if(b.matches('[data-p435930-launch-rosary]')){lastRosaryFxMystery='';syncRosaryPrefs();externalResume=captureResume();close({silent:true});window.AOTraditionalPrayerBook?.openModule?.('rosary',{returnContext:PRAY_CTX});setTimeout(decorateRosary,20);setTimeout(decorateRosary,160);return}
  if(b.dataset.p435930ConfStage!=null){CONF.stage=+b.dataset.p435930ConfStage;return render()}
  if(b.matches('[data-p435930-conf-prev]')){CONF.stage=Math.max(0,CONF.stage-1);return render()}
  if(b.matches('[data-p435930-conf-next]')){if(CONF.stage>=4){CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};view='home';return render()}CONF.stage++;return render()}
@@ -634,8 +634,8 @@ document.addEventListener('click',e=>{
  const r=e.target.closest?.('[data-ao-recitation]');if(r){S.rosary.recitation=r.dataset.aoRecitation==='group'?'group':'individual';save();setTimeout(decorateRosary,20)}
  const d=e.target.closest?.('[data-p435930-rosary-depth]');if(d){S.rosary.mode=d.dataset.p435930RosaryDepth==='guided'?'guided':'simple';save();setTimeout(decorateRosary,0)}
  const m=e.target.closest?.('[data-p435930-recitation]');if(m){S.rosary.recitation=m.dataset.p435930Recitation==='group'?'group':'individual';save();try{localStorage.setItem('ao-prayer-recitation-mode',S.rosary.recitation)}catch{};setTimeout(decorateRosary,0)}
- const step=e.target.closest?.('[data-lab-rosary-next],[data-lab-rosary-prev],[data-v401-rosary-jump],[data-ao-rosary-bead]');
- if(step)setTimeout(decorateRosary,0);
+ const step=e.target.closest?.('[data-lab-rosary-next],[data-lab-rosary-prev],[data-v401-rosary-jump],[data-ao-rosary-bead],[data-lab-rosary-today],[data-pb-rosary-set],[data-lab-rosary-change],[data-pb-rosary-change]');
+ if(step){if(step.matches?.('[data-lab-rosary-change],[data-pb-rosary-change]'))lastRosaryFxMystery='';setTimeout(decorateRosary,0)}
 },true);
 // Route old PRAY entry points through the final shared owner. No Mass route is intercepted.
 document.addEventListener('click',e=>{
