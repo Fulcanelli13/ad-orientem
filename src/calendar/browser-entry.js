@@ -5,6 +5,7 @@ const ROOT_ID="ao-calendar-modular-root";
 
 const runtime=()=>globalThis.AO_RUNTIME_V8??null;
 const state=()=>runtime()?.store?.getState?.()??null;
+const cache=()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345??null;
 const dateController=()=>runtime()?.controller?.home??null;
 const fr=()=>state()?.language==="fr";
 const L=(en,frText)=>fr()?frText:en;
