@@ -95,7 +95,8 @@ function sourceFamilyRows(win){
 function patchAboutSettings(win){
   const root=win.document.getElementById("ao-settings-v4359");
   if(!root||root.hidden)return false;
-  if(win.document.documentElement.dataset.aoSettingsRoute!=="/settings/about-sources")return false;
+  const route=win.document.documentElement.dataset.aoSettingsRoute;
+  if(route!=="/settings/about-sources"&&win.__AO_D6_ABOUT_ROUTE_ACTIVE!==true)return false;
   const wrap=root.querySelector(".aoSetWrap");
   if(!wrap||wrap.dataset.aoD6About==="1")return false;
   wrap.dataset.aoD6About="1";
@@ -139,6 +140,18 @@ function patchAboutSettings(win){
   aboutSection.appendChild(aboutGroup);wrap.appendChild(aboutSection);
   return true;
 }
+function installSettingsHook(win){
+  const api=win.AO_SETTINGS_V4359;
+  if(!api||api.__aoD6RouteHooked||typeof api.open!=="function")return false;
+  const original=api.open.bind(api);
+  const wrapped=function(route,...rest){
+    win.__AO_D6_ABOUT_ROUTE_ACTIVE=String(route)==="/settings/about-sources";
+    const result=original(route,...rest);
+    win.queueMicrotask(()=>patchAboutSettings(win));
+    return result;
+  };
+  try{api.open=wrapped;api.__aoD6RouteHooked=true;return true}catch{return false}
+}
 function installStyles(win){
   if(win.document.getElementById("ao-nonmass-d6-style"))return;
   const style=element(win,"style");
@@ -160,6 +173,7 @@ export function installNonMassConvergence({win=globalThis}={}){
   let scheduled=false;
   const reconcile=()=>{
     scrubPersistedAdoration(win);
+    installSettingsHook(win);
     patchAboutSettings(win);
   };
   const schedule=()=>{
