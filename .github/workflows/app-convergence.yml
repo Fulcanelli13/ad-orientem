@@ -20,6 +20,7 @@ on:
       - "tests/settings-*.mjs"
       - "tests/reader-phone-acceptance.mjs"
       - "tests/source-transport-compat.mjs"
+      - "tests/proper-runtime-repair.mjs"
       - "tests/field-current-week-e2e.mjs"
       - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
@@ -65,6 +66,7 @@ jobs:
       - run: npm run test:pray-owner
       - run: npm run test:learn-owner
       - run: npm run test:source-transport
+      - run: npm run test:proper-runtime-repair
       - run: npm run check:app-release
 
   app-shell-phone:
