@@ -53,6 +53,52 @@ try{
     null,{timeout:30000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
 
+  // HOME: exercise the visible actions that remain intentionally backed by the
+  // canonical Home controller after modular presentation extraction.
+  const initialDate=await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??null);
+  await page.locator(".homeScreen [data-nav='next']").tap();
+  await page.waitForFunction(before=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate!==before,initialDate,{timeout:10000});
+  const shiftedDate=await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??null);
+  assert.notEqual(shiftedDate,initialDate,"Home next-day control did not change the selected date");
+  await page.locator(".homeScreen [data-nav='previous']").tap();
+  await page.waitForFunction(expected=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate===expected,initialDate,{timeout:10000});
+
+  await page.locator(".homeScreen [data-action='prepare']").tap();
+  await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route==="prepare",null,{timeout:5000});
+  await page.locator("[data-ao-app-surface='home']").tap();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"&&globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route==="home",null,{timeout:5000});
+
+  await page.locator(".homeScreen [data-action='thanks']").tap();
+  await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route==="thanksgiving",null,{timeout:5000});
+  await page.locator("[data-ao-app-surface='home']").tap();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"&&globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route==="home",null,{timeout:5000});
+
+  await page.locator(".homeScreen [data-action='gospel']").tap();
+  await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route==="scripture",null,{timeout:10000});
+  const scriptureClose=page.locator("[data-scripture-close]").first();
+  assert.equal(await scriptureClose.count(),1,"Home Gospel action opened no visible Scripture return control");
+  await scriptureClose.tap();
+  await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route==="home",null,{timeout:5000});
+
+  await page.locator(".homeScreen .massCard [data-action='today-mass']").tap();
+  await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+  const massDetailClose=page.locator("#ao-mass-flow-v1 [data-ao-close]").last();
+  assert.equal(await massDetailClose.count(),1,"Today’s Mass card opened no visible close control");
+  await massDetailClose.tap();
+  await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});
+  await page.locator("[data-ao-app-surface='home']").tap();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
+
+  await page.locator(".homeScreen [data-action='more']").tap();
+  await page.waitForSelector(".homeSheet",{state:"visible",timeout:5000});
+  const moreSettings=page.locator(".homeSheet [data-ao-settings-open]");
+  assert.equal(await moreSettings.count(),1,"Home More sheet lost its Settings launcher");
+  await moreSettings.tap();
+  await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
+  await page.locator("#ao-settings-modular-root [data-settings-close]").first().tap();
+  await page.waitForFunction(()=>!document.getElementById("ao-settings-modular-root"),null,{timeout:5000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
+
   // PRAY: prove every visible owned hub card actually opens its child view by touch,
   // then returns through the visible Back control. No direct module API calls.
   await page.locator("[data-ao-app-surface='pray']").tap();
