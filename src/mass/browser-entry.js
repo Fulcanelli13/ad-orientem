@@ -13,30 +13,43 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 export const VERSION = "final-browser-entry-v1";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
 
-export function bridgeLegacyHostIconAssets(win=globalThis, doc=win?.document){
-  if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
-  const parent=doc?.head ?? doc?.documentElement ?? doc?.body ?? null;
-  if(!doc?.createElement || !parent?.appendChild) return null;
-  try {
-    const bridge=doc.createElement("script");
-    bridge.type="text/javascript";
-    bridge.dataset.aoR17RuntimeIconBridge="1";
-    bridge.textContent='globalThis.AO_R17_ICON_ASSETS=(typeof AO_ASSETS!=="undefined"&&AO_ASSETS)||globalThis.AO_R17_ICON_ASSETS||null;';
-    parent.appendChild(bridge);
-    bridge.remove?.();
-  } catch {}
-  return win?.AO_R17_ICON_ASSETS ?? null;
-}
-
 export function resolveHostIconAssets(win=globalThis){
   if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
   if(win?.AO_ASSETS) return win.AO_ASSETS;
   try {
     if(typeof AO_ASSETS!=="undefined" && AO_ASSETS) return AO_ASSETS;
   } catch {}
-  return bridgeLegacyHostIconAssets(win, win?.document);
+  return null;
 }
 
+let hostIconBridgePromise=null;
+export async function loadHostIconAssets({
+  win=globalThis,
+  doc=win?.document,
+  bridgeUrl=new URL("./icon-bank-bridge-classic.js",import.meta.url).href,
+}={}){
+  const direct=resolveHostIconAssets(win);
+  if(direct) return direct;
+  if(!doc?.createElement) return null;
+  if(hostIconBridgePromise) {
+    await hostIconBridgePromise;
+    return resolveHostIconAssets(win);
+  }
+  hostIconBridgePromise=new Promise(resolve=>{
+    const parent=doc.head??doc.documentElement??doc.body??null;
+    if(!parent?.appendChild){resolve(false);return;}
+    const script=doc.createElement("script");
+    script.src=bridgeUrl;
+    script.async=false;
+    script.dataset.aoR17RuntimeIconBridge="1";
+    const done=()=>{script.remove?.();resolve(true);};
+    script.addEventListener?.("load",done,{once:true});
+    script.addEventListener?.("error",done,{once:true});
+    parent.appendChild(script);
+  }).finally(()=>{hostIconBridgePromise=null;});
+  await hostIconBridgePromise;
+  return resolveHostIconAssets(win);
+}
 
 export function mapLegacyFollowMode(value) {
   const raw = String(value ?? "vox").toLowerCase();
@@ -296,9 +309,9 @@ export async function mountR17Preview({
   doc,
   prepared,
   nativeMount=mountNativeReaderPreview,
-  iconAssets=resolveHostIconAssets(),
+  iconAssets=undefined,
 }={}) {
-  const assets=iconAssets;
+  const assets=iconAssets===undefined ? await loadHostIconAssets({win:globalThis,doc}) : iconAssets;
   const iconAudit=auditHostIconBank(assets);
   if(!iconAudit.complete){
     throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
