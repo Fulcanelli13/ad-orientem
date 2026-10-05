@@ -120,6 +120,15 @@ export function createHomeOwner(win=globalThis){
 
   function onEnricherClick(event){
     const target=event?.target;
+    const resumeMass=target?.closest?.("[data-resume-mass]");
+    if(resumeMass){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>{
+        console.error("Modular Home Mass resume failed",error);
+      });
+      return;
+    }
     const massEntry=target?.closest?.("[data-home-mass-entry]");
     if(massEntry){
       event.preventDefault?.();
