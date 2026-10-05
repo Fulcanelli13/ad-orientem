@@ -95,8 +95,12 @@ assert.ok((phoneAcceptance?.defectsClosed??[]).some(x=>/cue-id regex/i.test(x)),
 
 const modeSwitch=release.protectedInvariants.find(x=>x.id==="NATIVE_MODE_SWITCH");
 assert.equal(modeSwitch?.status,"IN_READER_MODE_SWITCH_PHONE_CERTIFIED");
-assert.match(String(modeSwitch?.reason??""),/selected before Mass/i);
-assert.match(String(modeSwitch?.reason??""),/locked/i);
+assert.match(String(modeSwitch?.reason??""),/presentation-only rebuild/i);
+assert.match(String(modeSwitch?.reason??""),/canonical Mass\/session\/event state is unchanged/i);
+assert.ok((modeSwitch?.evidence??[]).includes("tests/reader-mode-switch.mjs"),
+  "mode-switch source-anchor regression evidence disappeared");
+assert.ok((modeSwitch?.evidence??[]).includes("tests/reader-phone-acceptance.mjs"),
+  "mode-switch phone acceptance evidence disappeared");
 
 const plannedRuntime=release.protectedInvariants.find(x=>x.id==="PLAN_AWARE_OBJECTIVE_RUNTIME");
 assert.equal(plannedRuntime?.status,"CERTIFIED_LOW_SOLEMN_RUNTIME_OWNERSHIP",
