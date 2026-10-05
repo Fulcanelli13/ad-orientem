@@ -49,6 +49,37 @@ try{
     null,{timeout:8000}
   );
 
+  const expectedRibbonAssets={
+    home:"ao-nav-home",
+    mass:"ao-brand-emblem",
+    pray:"ao-nav-pray",
+    learn:"ao-nav-learn",
+    calendar:"ao-nav-calendar",
+    settings:"ao-nav-settings",
+  };
+  const ribbonAssets=await page.evaluate(expected=>Object.fromEntries(
+    Object.entries(expected).map(([surface,assetId])=>{
+      const button=document.querySelector(`#ao-global-ribbon [data-ao-app-surface="${surface}"]`);
+      const icon=button?.querySelector?.(".aoCanonicalRibbonIcon")??null;
+      const mask=icon?(getComputedStyle(icon).webkitMaskImage||getComputedStyle(icon).maskImage||""):"";
+      return [surface,{
+        buttonAsset:button?.dataset?.aoAssetId??null,
+        iconAsset:icon?.dataset?.aoAssetId??null,
+        renderer:icon?.dataset?.aoAssetRenderer??null,
+        mask,
+        legacySvg:icon?.querySelectorAll?.("svg,use")?.length??0,
+      }];
+    })
+  ),expectedRibbonAssets);
+  for(const [surface,assetId] of Object.entries(expectedRibbonAssets)){
+    const actual=ribbonAssets[surface];
+    assert.equal(actual.buttonAsset,assetId,surface+" ribbon button lost canonical semantic ownership");
+    assert.equal(actual.iconAsset,assetId,surface+" ribbon icon is not the canonical asset");
+    assert.equal(actual.renderer,"mask",surface+" ribbon icon did not use the canonical mask renderer");
+    assert.equal(actual.legacySvg,0,surface+" ribbon icon still contains inherited legacy SVG artwork");
+    assert.match(actual.mask,new RegExp(assetId+"\\.png"),surface+" ribbon mask does not resolve to the frozen navigation PNG");
+  }
+
   const homeAudit=await page.evaluate(()=>({
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
