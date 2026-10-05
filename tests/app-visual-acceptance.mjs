@@ -98,6 +98,42 @@ try{
   assert.equal(homeAudit.presentationFx?.transitionPresent,true,"route-transition cinematic surface is missing");
   assert.equal(homeAudit.presentationFx?.loaderPresent,true,"async cinematic loader surface is missing");
 
+  const consumedMaskPaths={
+    "ao-rich-adoration":"assets/active/devotional-module/ao-rich-adoration.png",
+    "ao-rich-angelus":"assets/active/devotional-module/ao-rich-angelus.png",
+    "ao-rich-confession":"assets/active/devotional-module/ao-rich-confession.png",
+    "ao-rich-rosary":"assets/active/devotional-module/ao-rich-rosary.png",
+    "ao-rich-sacred-heart":"assets/active/devotional-module/ao-rich-sacred-heart.png",
+    "ao-rich-stations":"assets/active/devotional-module/ao-rich-stations.png",
+  };
+  const consumedMaskFetch=await page.evaluate(async paths=>Object.fromEntries(await Promise.all(
+    Object.entries(paths).map(async([assetId,path])=>{
+      const response=await fetch(path,{cache:"no-store"});
+      return [assetId,{ok:response.ok,status:response.status,type:response.headers.get("content-type")||"",bytes:(await response.arrayBuffer()).byteLength}];
+    })
+  )),consumedMaskPaths);
+  for(const [assetId,result] of Object.entries(consumedMaskFetch)){
+    assert.equal(result.ok,true,assetId+" canonical mask is not physically available");
+    assert.match(result.type,/image\/png/i,assetId+" canonical mask is not served as PNG");
+    assert.ok(result.bytes>0,assetId+" canonical mask is empty");
+  }
+
+  const expectedEmbeddedSymbols=[
+    "ao-refined-calendar-upcoming",
+    "ao-refined-church",
+    "ao-refined-pray-now",
+    "ao-rich-examination-of-conscience",
+    "ao-rich-morning-offering",
+    "ao-rich-night-prayer",
+    "ao-rich-our-lady-marian-devotions",
+    "ao-refined-study",
+    "ao-rich-guides",
+    "ao-refined-scripture",
+    "ao-refined-saint-of-day",
+  ];
+  const embeddedPresence=await page.evaluate(ids=>Object.fromEntries(ids.map(id=>[id,Boolean(document.getElementById(id))])),expectedEmbeddedSymbols);
+  for(const id of expectedEmbeddedSymbols)assert.equal(embeddedPresence[id],true,id+" is consumed but neither physically externalized nor embedded");
+
   const shot=async(name)=>page.screenshot({path:resolve(out,name+".png"),fullPage:true});
   const waitForFxSettled=async()=>page.waitForFunction(()=>{
     const el=document.getElementById("ao-cinema-transition");
@@ -206,6 +242,7 @@ try{
     iconWidth:document.querySelector("#aoPray435930 .aoP435930SemanticRailIcon")?.getBoundingClientRect?.().width??0,
     bodyWidth:document.querySelector("#aoPray435930 .aoP435930Body")?.getBoundingClientRect?.().width??0,
     pointer:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930SemanticRails")).pointerEvents,
+    contextMask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
   }));
   assert.equal(angelusRails.left,1,"Angelus lost the faithful-posture semantic rail");
   assert.equal(angelusRails.right,1,"Angelus lost the devotional-context semantic rail");
@@ -214,6 +251,7 @@ try{
   assert.ok(angelusRails.iconWidth>=26,"Angelus rail icon is not salient at phone size");
   assert.ok(angelusRails.bodyWidth>=360,"semantic rails reserved horizontal reading width");
   assert.equal(angelusRails.pointer,"none","semantic rails intercept touch interaction");
+  assert.match(angelusRails.contextMask,/ao-rich-angelus\.png/,"Angelus semantic rail did not load the canonical frozen mask");
   await shot("03a-pray-angelus-rails");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
@@ -224,10 +262,12 @@ try{
     left:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.left").length,
     right:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.right").length,
     context:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    contextMask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
   }));
   assert.equal(stationRails.left,0,"Stations invented a posture rail without resolved posture authority");
   assert.equal(stationRails.right,1,"Stations lost its devotional-context rail");
   assert.equal(stationRails.context,"ao-rich-stations","Stations context rail is not using the canonical devotional identity");
+  assert.match(stationRails.contextMask,/ao-rich-stations\.png/,"Stations semantic rail did not load the canonical frozen mask");
   await shot("03b-pray-stations-rail");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});

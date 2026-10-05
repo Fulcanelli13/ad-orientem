@@ -35,6 +35,22 @@ for(const id of Object.values(AO_LEARN_ROUTE_ASSET_IDS)){
   assert.ok(!AO_REMOVED_ASSET_IDS.includes(id),"Learn route revived a removed asset: "+id);
 }
 
+const CONSUMED_DEVOTIONAL_MASK_ASSETS=Object.freeze([
+  "ao-rich-adoration",
+  "ao-rich-angelus",
+  "ao-rich-confession",
+  "ao-rich-rosary",
+  "ao-rich-sacred-heart",
+  "ao-rich-stations",
+]);
+for(const id of CONSUMED_DEVOTIONAL_MASK_ASSETS){
+  const asset=getCanonicalAsset(id);
+  assert.ok(asset,"consumed devotional asset is not canonical: "+id);
+  assert.equal(asset.kind,"mask","consumed devotional asset changed renderer kind: "+id);
+  assert.ok(asset.path,"consumed devotional mask has no canonical path: "+id);
+  assert.ok(existsSync(asset.path),"consumed devotional mask is not physically externalized: "+id);
+}
+
 assert.equal(canonicalAssetIdForSurface("settings"),"ao-nav-settings");
 assert.equal(canonicalAssetIdForLearnRoute("learn.mass"),"ao-rich-guides");
 assert.equal(canonicalAssetIdForLearnRoute("unknown"),null);
@@ -106,4 +122,4 @@ assert.match(settings,/ao-ui-back/);
 assert.match(settings,/ao-ui-close/);
 assert.match(settings,/ao-ui-next/);
 
-console.log("PASS canonical non-Mass asset consumers: all current presentation consumers resolve to physical frozen assets or approved embedded canonical symbols.");
+console.log("PASS canonical non-Mass asset consumers: all current presentation consumers resolve to physical frozen assets or approved embedded canonical symbols; "+CONSUMED_DEVOTIONAL_MASK_ASSETS.length+" consumed devotional masks are physically externalized.");
