@@ -26,7 +26,7 @@ try{
   const pageErrors=[];page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
   await page.goto("http://127.0.0.1:4176/index.html",{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>
-    globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.().d6==="integrated-on-settings" &&
+    globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.().d6==="integrated-on-modular-settings" &&
     typeof globalThis.AO_PRAY_V435930?.open==="function" &&
     typeof globalThis.AO_PRAY_APP_V1?.open==="function",
     null,{timeout:30000}
@@ -100,28 +100,31 @@ try{
   assert.equal(await page.locator("#aoPray435930 .aoP435930BenMacroRail span.active").count(),1);
 
   await page.evaluate(async()=>{globalThis.AO_PRAY_V435930.close({silent:true});await globalThis.AO_APP_SHELL_V1?.navigate?.("settings")});
+  await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
-  await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.homeSheet==="settings",null,{timeout:10000});
-  const settingsControlsBefore=await page.evaluate(()=>
-    [...document.querySelectorAll(".homeSheet button,.homeSheet input,.homeSheet select,.homeSheet textarea")]
-      .filter(node=>!node.closest(".aoD6SettingsSupplement")).length
-  );
-  assert.ok(settingsControlsBefore>0,"production Settings sheet exposed no interactive controls before D6 augmentation");
-  await page.evaluate(()=>globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.reconcile?.());
-  await page.waitForSelector(".homeSheet .aoD6SettingsSupplement .aoD6Sources",{timeout:10000});
+  const settingsControlsBefore=await page.locator("#ao-settings-modular-root button").count();
+  assert.ok(settingsControlsBefore>0,"modular Settings exposed no interactive controls");
+
+  await page.locator("#ao-settings-modular-root [data-settings-sources]").click();
+  await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="about-sources",null,{timeout:5000});
   const about=await page.evaluate(()=>({
-    text:document.querySelector(".homeSheet .aoD6SettingsSupplement")?.innerText??"",
+    text:document.getElementById("ao-settings-modular-root")?.innerText??"",
     version:globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.canonicalAppVersion?.()??null,
-    settingsVersion:globalThis.AO_SETTINGS_V4359?.version??null,
-    coreSettingsControls:[...document.querySelectorAll(".homeSheet button,.homeSheet input,.homeSheet select,.homeSheet textarea")]
-      .filter(node=>!node.closest(".aoD6SettingsSupplement")).length,
+    shownVersion:document.querySelector("#ao-settings-modular-root [data-settings-app-version]")?.textContent?.trim()??null,
+    owner:globalThis.AO_SETTINGS_APP_V1?.status?.().owner??null,
+    d6:globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.().d6??null,
+    homeSheet:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.homeSheet??null,
+    oldSettingsVisible:globalThis.AO_SETTINGS_APP_V1?.status?.().historicalSettingsVisible??null,
   }));
   assert.match(about.text,/Liturgical books & 1962 basis|Livres liturgiques et base 1962/);
   assert.match(about.text,/Prayer & devotional methods|Prières et méthodes dévotionnelles/);
   assert.ok(about.version);
-  if(about.settingsVersion)assert.notEqual(about.version,about.settingsVersion);
-  assert.ok(about.coreSettingsControls>=settingsControlsBefore,"D6 replaced the real Settings controls instead of augmenting them");
-  assert.ok(about.text.includes(String(about.version)));
+  assert.equal(about.shownVersion,String(about.version));
+  assert.equal(about.owner,"AO_SETTINGS_APP_V1");
+  assert.equal(about.d6,"integrated-on-modular-settings");
+  assert.notEqual(about.homeSheet,"settings","D6 reopened the retired Home Settings surface");
+  assert.equal(about.oldSettingsVisible,false,"D6 reopened a historical Settings donor");
+
 
   assert.deepEqual(pageErrors,[],"D3-D6 assembled-app page errors: "+JSON.stringify(pageErrors));
   await context.close();
