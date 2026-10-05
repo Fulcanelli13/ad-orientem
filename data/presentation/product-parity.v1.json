@@ -171,7 +171,7 @@
       ]
     },
     "settings": {
-      "status": "PENDING_AUDIT",
+      "status": "CERTIFIED",
       "currentOwner": "src/settings",
       "reference": "LOCKED_NON_MASS_V43_59_30_PLUS_D6",
       "mustPreserve": [
@@ -180,6 +180,15 @@
         "active-Mass structural lockout",
         "canonical version/provenance",
         "focus-safe overlay behavior"
+      ],
+      "evidence": [
+        "src/settings/presentation.js",
+        "src/settings/browser-entry.js",
+        "tests/settings-e2e.mjs",
+        "tests/nonmass-d3-d6-e2e.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Visual acceptance workflow 37305791838 at 390x844 touch geometry",
+        "R17 Mass convergence workflow 37305791833"
       ]
     }
   }
