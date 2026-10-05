@@ -226,7 +226,14 @@ try{
   assert.equal(await wordsCue.count(),1,"Host Consecration words cue AO.SM.C0173 is not exposed in the source-first reader");
   assert.equal(await elevationCue.count(),1,"Host elevation action cue AO.SM.C0174 is not exposed in the source-first reader");
 
-  await wordsCue.evaluate(el=>el.scrollIntoView({block:"center",inline:"nearest",behavior:"instant"}));
+  await wordsCue.evaluate(el=>{
+    const card=el.closest(".ao-prayer-card");
+    const cr=card.getBoundingClientRect(),er=el.getBoundingClientRect();
+    const top=er.top-cr.top+card.scrollTop;
+    const bottom=er.bottom-cr.top+card.scrollTop;
+    card.scrollTop=Math.max(0,(top+bottom)/2-card.clientHeight*.39);
+    card.dispatchEvent(new Event("scroll"));
+  });
   await page.waitForFunction(()=>document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue==="AO.SM.C0173",null,{timeout:5000});
   const wordsState=await page.evaluate(()=>({
     cue:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null,
@@ -239,7 +246,14 @@ try{
   assert.equal(wordsState.bellActive,"false","Host words cue fired the elevation bell before the action cue");
   assert.equal(wordsState.cinematicHidden,true,"Host words cue fired the elevation cinematic before the action cue");
 
-  await elevationCue.evaluate(el=>el.scrollIntoView({block:"center",inline:"nearest",behavior:"instant"}));
+  await elevationCue.evaluate(el=>{
+    const card=el.closest(".ao-prayer-card");
+    const cr=card.getBoundingClientRect(),er=el.getBoundingClientRect();
+    const top=er.top-cr.top+card.scrollTop;
+    const bottom=er.bottom-cr.top+card.scrollTop;
+    card.scrollTop=Math.max(0,(top+bottom)/2-card.clientHeight*.39);
+    card.dispatchEvent(new Event("scroll"));
+  });
   await page.waitForFunction(()=>
     document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue==="AO.SM.C0174" &&
     document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===false,
