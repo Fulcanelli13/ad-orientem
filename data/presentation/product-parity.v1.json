@@ -17,7 +17,7 @@
       ]
     },
     "mass": {
-      "status": "PENDING_AUDIT",
+      "status": "IN_AUDIT",
       "currentOwner": "src/mass",
       "reference": "R17_NATIVE_PLUS_APPROVED_LIVE_PRESENTATION",
       "mustPreserve": [
@@ -27,6 +27,10 @@
         "posture/action salience",
         "Schola presentation",
         "cinematic moments without reopening liturgical runtime"
+      ],
+      "evidence": [
+        "tests/mass-visual-acceptance.mjs",
+        ".github/workflows/visual-acceptance.yml"
       ]
     },
     "pray": {
