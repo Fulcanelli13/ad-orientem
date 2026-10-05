@@ -8,22 +8,22 @@ const COPY={
     brand:"AD ORIENTEM",subtitle:"1962 Roman Mass companion",prepare:"Prepare",followMass:"Follow Mass",
     giveThanks:"Give thanks",aroundMass:"Around the Mass",holyGospel:"Holy Gospel",exploreGospel:"Explore Gospel",
     todaysMass:"Today’s Mass",todaysMassHint:"Propers · readings · liturgical information",openMass:"Open today’s Mass",
-    more:"More",moreHint:"Search · Calendar · Companions · Settings",openMore:"Open more",rank:"Rank",colour:"Colour",
+    more:"More",moreHint:"Settings · preparation · thanksgiving",openMore:"Open more",rank:"Rank",colour:"Colour",
     properUnavailable:"Proper unavailable",properUnavailableBody:"The fixed Ordinary remains available. Feast-specific texts could not be loaded.",
     calendarUnavailable:"Calendar unavailable",calendarUnavailableBody:"The liturgical day could not be resolved. Try again when a source connection is available.",
     loading:"Resolving the liturgical day…",previousDay:"Previous day",nextDay:"Next day",english:"EN",french:"FR",
-    noGospel:"The appointed Gospel is unavailable.",developmentAction:"This destination will be connected in the next migration stage.",
+    noGospel:"The appointed Gospel is unavailable.",
     formulary:"Formulary",commemorations:"Commemorations"
   },
   fr:{
     brand:"AD ORIENTEM",subtitle:"Compagnon de la Messe romaine de 1962",prepare:"Se préparer",followMass:"Suivre la Messe",
     giveThanks:"Action de grâces",aroundMass:"Autour de la Messe",holyGospel:"Saint Évangile",exploreGospel:"Explorer l’Évangile",
     todaysMass:"Messe du jour",todaysMassHint:"Propres · lectures · informations liturgiques",openMass:"Ouvrir la Messe du jour",
-    more:"Plus",moreHint:"Recherche · Calendrier · Compagnons · Réglages",openMore:"Ouvrir plus",rank:"Classe",colour:"Couleur",
+    more:"Plus",moreHint:"Réglages · préparation · action de grâces",openMore:"Ouvrir plus",rank:"Classe",colour:"Couleur",
     properUnavailable:"Propre indisponible",properUnavailableBody:"L’Ordinaire fixe reste disponible. Les textes propres à la fête n’ont pas pu être chargés.",
     calendarUnavailable:"Calendrier indisponible",calendarUnavailableBody:"Le jour liturgique n’a pas pu être résolu. Réessayez lorsqu’une source est disponible.",
     loading:"Résolution du jour liturgique…",previousDay:"Jour précédent",nextDay:"Jour suivant",english:"EN",french:"FR",
-    noGospel:"L’Évangile assigné est indisponible.",developmentAction:"Cette destination sera raccordée à l’étape suivante de la migration.",
+    noGospel:"L’Évangile assigné est indisponible.",
     formulary:"Formulaire",commemorations:"Commémorations"
   }
 };
@@ -121,7 +121,7 @@ ${state.resume?.available?`<button class="resumeCard" data-resume-mass><span>${v
 ${renderHomeEnrichersToString(enrichers,state,win)}
 <section class="contentCard massCard"><div><div class="cardKicker">${esc(t("todaysMass"))}</div><p>${esc(vm.massHint)}</p></div><button class="roundAction" data-action="today-mass" aria-label="${esc(t("openMass"))}">${assetIcon("ao-ui-next")}</button></section>
 <section class="contentCard moreCard"><div><div class="cardKicker">${esc(t("more"))}</div><p>${esc(t("moreHint"))}</p></div><button class="roundAction" data-action="more" aria-label="${esc(t("openMore"))}">•••</button></section>
-<div class="homeSpacer"></div>${state.lastAction&&!["today-mass","more"].includes(state.lastAction)?`<div class="alphaNotice" role="status">${esc(t("developmentAction"))}</div>`:""}${homeSheet(state)}</main>`;
+<div class="homeSpacer"></div>${homeSheet(state)}</main>`;
 }
 
 export function renderHome(root,state,win=globalThis){
