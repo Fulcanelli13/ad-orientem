@@ -6,54 +6,29 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
 const repoRoot=resolve(fileURLToPath(new URL("..",import.meta.url)));
-const mime={
-  ".html":"text/html; charset=utf-8",
-  ".js":"text/javascript; charset=utf-8",
-  ".mjs":"text/javascript; charset=utf-8",
-  ".json":"application/json; charset=utf-8",
-  ".css":"text/css; charset=utf-8",
-  ".svg":"image/svg+xml",
-  ".png":"image/png",
-  ".jpg":"image/jpeg",
-  ".jpeg":"image/jpeg",
-  ".webp":"image/webp",
-};
-
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png"};
 const server=http.createServer(async(req,res)=>{
   try{
     const pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
     const candidate=resolve(repoRoot,"."+pathname);
-    if(candidate!==repoRoot && !candidate.startsWith(repoRoot+sep)){
-      res.writeHead(403);res.end("forbidden");return;
-    }
+    if(candidate!==repoRoot&&!candidate.startsWith(repoRoot+sep)){res.writeHead(403);res.end("forbidden");return}
     const data=await readFile(candidate);
-    res.writeHead(200,{"content-type":mime[extname(candidate)]??"application/octet-stream","cache-control":"no-store"});
-    res.end(data);
-  }catch(error){
-    res.writeHead(error?.code==="ENOENT"?404:500);
-    res.end(String(error?.message??error));
-  }
+    res.writeHead(200,{"content-type":mime[extname(candidate)]??"application/octet-stream","cache-control":"no-store"});res.end(data);
+  }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error?.message??error))}
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(4176,"127.0.0.1",ok)});
 
 let browser;
 try{
   browser=await chromium.launch({headless:true});
-  const context=await browser.newContext({
-    viewport:{width:390,height:844},
-    deviceScaleFactor:2,
-    isMobile:true,
-    hasTouch:true,
-  });
+  const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true});
   const page=await context.newPage();
-  const pageErrors=[];
-  page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
-
+  const pageErrors=[];page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
   await page.goto("http://127.0.0.1:4176/index.html",{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>
     globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.().d6==="integrated-on-settings" &&
-    typeof globalThis.AO_V37_SHELL?.openDomain==="function" &&
-    typeof globalThis.AOTraditionalPrayerBook?.openModule==="function",
+    typeof globalThis.AO_PRAY_V435930?.open==="function" &&
+    typeof globalThis.AO_PRAY_APP_V1?.open==="function",
     null,{timeout:30000}
   );
 
@@ -62,96 +37,69 @@ try{
     saved.adoration={...(saved.adoration||{}),presence:"exposed"};
     saved.firstFriday={...(saved.firstFriday||{}),records:[{date:"2026-10-02",complete:true}]};
     localStorage.setItem("ao.pray.v435930",JSON.stringify(saved));
-    globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.reconcile?.();
+    globalThis.AO_NON_MASS_D3_D6_CONVERGENCE.reconcile();
     const normalized=JSON.parse(localStorage.getItem("ao.pray.v435930")||"{}");
     return {
-      status:globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.()??null,
+      status:globalThis.AO_NON_MASS_D3_D6_CONVERGENCE.status(),
       persistentPresence:normalized?.adoration?.presence??null,
       firstFriday:normalized?.firstFriday?.records?.[0]?.complete??null,
     };
   });
-  assert.equal(boot.status?.d3,"integrated-on-current-owner");
-  assert.equal(boot.status?.d4,"integrated-on-current-owner");
-  assert.equal(boot.status?.d5,"integrated-on-current-owner");
-  assert.equal(boot.status?.d6,"integrated-on-settings");
-  assert.equal(boot.status?.prayDomainOwner,"AO_V37_SHELL");
-  assert.equal(boot.persistentPresence,null,"D3 left exposed/reserved state in persistent PRAY storage");
-  assert.equal(boot.firstFriday,true,"D3 persistence scrub damaged unrelated programme state");
+  assert.equal(boot.status.prayDomainOwner,"modular-pray-v1");
+  assert.equal(boot.status.presentationOwner,"AO_PRAY_V435930");
+  assert.equal(boot.status.d3,"integrated-on-modular-pray");
+  assert.equal(boot.status.d4,"integrated-on-modular-pray");
+  assert.equal(boot.status.d5,"integrated-on-modular-pray");
+  assert.equal(boot.persistentPresence,null);
+  assert.equal(boot.firstFriday,true);
 
-  const openedPray=await page.evaluate(async()=>
-    (await globalThis.AO_APP_SHELL_V1?.navigate?.("pray"))?.ok!==false
-  );
-  assert.equal(openedPray,true,"could not open canonical PRAY domain through app shell");
-  await page.waitForSelector("#ao-v37-root:not([hidden]) [data-v37-open='pray.adoration']",{timeout:15000});
-
-  await page.locator("#ao-v37-root [data-v37-open='pray.adoration']").first().click();
-  await page.waitForSelector("#ao-d3-adoration.open",{timeout:10000});
-  const adorationHome=await page.evaluate(()=>({
-    visit:Boolean(document.querySelector("#ao-d3-adoration [data-ao-d3-mode='visit']")),
-    adoration:Boolean(document.querySelector("#ao-d3-adoration [data-ao-d3-mode='adoration']")),
-    benediction:Boolean(document.querySelector("#ao-d3-adoration [data-ao-d3-mode='benediction']")),
-    treasury:Boolean(document.querySelector("#ao-d3-adoration [data-ao-d3-mode='treasury']")),
-    holyTop:Boolean(document.querySelector("#ao-d3-adoration [data-ao-d3-mode='holy']")),
-    fourTop:Boolean(document.querySelector("#ao-d3-adoration [data-ao-d3-mode='four']")),
+  assert.notEqual((await page.evaluate(async()=>globalThis.AO_APP_SHELL_V1?.navigate?.("pray")))?.ok,false);
+  await page.waitForSelector("#aoPray435930.open",{timeout:15000});
+  const owner=await page.evaluate(()=>({
+    route:document.documentElement.dataset.aoPrayRouteOwner??null,
+    visible:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
   }));
-  assert.deepEqual(adorationHome,{
-    visit:true,adoration:true,benediction:true,treasury:true,holyTop:false,fourTop:false,
-  },"D3 top-level Adoration contract regressed");
+  assert.equal(owner.route,"modular-pray-v1");
+  assert.equal(owner.visible,"modular-pray-v1");
 
-  await page.locator("#ao-d3-adoration [data-ao-d3-mode='adoration']").click();
-  await page.waitForSelector("#ao-d3-adoration [data-ao-d3-method='holy']",{timeout:5000});
-  assert.equal(await page.locator("#ao-d3-adoration [data-ao-d3-method='four']").count(),1,"Four Ends lost guided nesting");
-  assert.equal(await page.locator("#ao-d3-adoration [data-ao-d3-method='holy']").count(),1,"Holy Hour is not nested under Adoration");
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
+  await page.waitForSelector("#aoPray435930.open [data-p435930-ador-mode='visit']",{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='visit']").count(),1);
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='open']").count(),1);
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-go-ben]").count(),1);
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='treasury']").count(),1);
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='holy']").count(),0,"Holy Hour leaked into D3 top level");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='four']").count(),0,"Four Ends leaked into D3 top level");
 
-  await page.locator("#ao-d3-adoration [data-ao-d3-presence='exposed']").click();
-  await page.waitForTimeout(50);
+  await page.locator("#aoPray435930 [data-p435930-ador-mode='open']").click();
+  await page.waitForSelector("#aoPray435930 [data-p435930-ador-mode='holy']",{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-four]").count(),1,"Four Ends is not nested under Adoration");
+  await page.locator("#aoPray435930 [data-p435930-seg='exposed']").click();
   const presence=await page.evaluate(()=>{
     const saved=JSON.parse(localStorage.getItem("ao.pray.v435930")||"{}");
-    return {
-      session:sessionStorage.getItem("ao.app.adoration.presence.v1"),
-      persistent:saved?.adoration?.presence??null,
-    };
+    return {session:sessionStorage.getItem("ao.app.adoration.presence.v1"),persistent:saved?.adoration?.presence??null,state:globalThis.AO_PRAY_V435930.state().adorationPresence};
   });
-  assert.equal(presence.session,"exposed");
-  assert.equal(presence.persistent,null,"exposition state leaked back into persistent storage");
-  await page.locator("#ao-d3-adoration [data-ao-d3-close]").click();
+  assert.deepEqual(presence,{session:"exposed",persistent:null,state:"exposed"});
 
-  await page.waitForSelector("#ao-v37-root:not([hidden]) [data-v37-open='pray.confession']",{timeout:10000});
-  await page.locator("#ao-v37-root [data-v37-open='pray.confession']").first().click();
-  await page.waitForSelector("#aoPrayerBookRoot.open[data-ao-d5-integrated='1']",{timeout:10000});
-  assert.equal(await page.locator("#aoPrayerBookRoot .aoD5PhaseRail span").count(),5,"D5 did not expose five canonical phases");
-  assert.equal(await page.locator("#aoPrayerBookRoot .pbProgress:visible").count(),0,"legacy Confession percentage progress remained visible");
-  assert.equal(await page.locator("#aoPrayerBookRoot .aoD5PhaseRail [data-phase='doctrine'].active").count(),1,"D5 did not begin at Doctrine");
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
+  await page.waitForSelector("#aoPray435930 [data-p435930-conf-step='0']",{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-step]").count(),5,"D5 does not expose exactly five canonical phases");
+  assert.doesNotMatch(await page.locator("#aoPray435930").innerText(),/\b\d+\s*\/\s*8\b/);
+  await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  await page.waitForSelector("#aoPray435930 .aoP435930ExamReadOnly details",{timeout:5000});
+  assert.ok(await page.locator("#aoPray435930 .aoP435930ExamReadOnly details").count()>=10);
+  assert.equal(await page.locator("#aoPray435930 .aoP435930ExamReadOnly input").count(),0,"D5 examination still contains tickable controls");
+  const examText=await page.locator("#aoPray435930").innerText();
+  assert.match(examText,/nothing.*selected.*scored.*saved|rien.*sélectionné.*noté.*enregistré/i);
+  assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i);
 
-  await page.locator("#aoPrayerBookRoot [data-pb-conf-next]").click();
-  await page.waitForSelector("#aoPrayerBookRoot .aoD5PhaseRail [data-phase='prepare'].active",{timeout:5000});
-  await page.locator("#aoPrayerBookRoot [data-pb-conf-next]").click();
-  await page.waitForSelector("#aoPrayerBookRoot .aoD5PhaseRail [data-phase='examination'].active",{timeout:5000});
-  await page.waitForSelector("#aoPrayerBookRoot [data-ao-d5-exam-surface]",{timeout:5000});
-  assert.ok(await page.locator("#aoPrayerBookRoot [data-ao-d5-exam-surface] details").count()>=10,"D5 read-only examination sections are incomplete");
-  assert.equal(await page.locator("#aoPrayerBookRoot [data-ao-d5-exam-surface] input").count(),0,"Confession examination exposes stored/tickable sin controls");
-  const examText=await page.locator("#aoPrayerBookRoot").innerText();
-  assert.match(examText,/nothing is selected, scored or stored|no sin list|rien n[’']est sélectionné|pas enregistr/i,"D5 privacy boundary is not visible");
-  assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i,"marked-prompt score remains visible");
-  assert.doesNotMatch(examText,/\b\d+\s*\/\s*8\b/,"legacy eight-step Confession counter remains visible");
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null}));
+  await page.waitForSelector("#aoPray435930 .aoP435930BenMacroRail",{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 .aoP435930BenMacroRail span").count(),4,"D4 does not expose four macro service phases");
+  assert.equal(await page.locator("#aoPray435930 .aoP435930BenMacroRail span.active").count(),1);
 
-  await page.evaluate(()=>{try{globalThis.AOTraditionalPrayerBook?.close?.({silent:true})}catch{}});
-  const reopenedPray=await page.evaluate(async()=>
-    (await globalThis.AO_APP_SHELL_V1?.navigate?.("pray"))?.ok!==false
-  );
-  assert.equal(reopenedPray,true,"could not reopen canonical PRAY domain after Confession");
-  await page.waitForSelector("#ao-v37-root:not([hidden]) [data-v37-open='pray.benediction']",{timeout:10000});
-
-  await page.locator("#ao-v37-root [data-v37-open='pray.benediction']").first().click();
-  await page.waitForSelector("#aoPrayerBookRoot.open[data-ao-d4-integrated='1']",{timeout:10000});
-  assert.equal(await page.locator("#aoPrayerBookRoot .aoD4StageRail span").count(),4,"D4 did not expose four macro service stages");
-  assert.equal(await page.locator("#aoPrayerBookRoot .pbProgress:visible").count(),0,"Benediction percentage progress remained visible");
-  assert.equal(await page.locator("#aoPrayerBookRoot .aoD4StageRail [data-phase='exposition'].active").count(),1,"D4 did not begin at Exposition");
-  assert.ok(await page.locator("#aoPrayerBookRoot .aoD4Note").count()>0,"D4 did not provide service-context guidance");
-
-  await page.evaluate(()=>{try{globalThis.AOTraditionalPrayerBook?.close?.({silent:true})}catch{}});
-
-  await page.evaluate(async()=>{await globalThis.AO_APP_SHELL_V1?.navigate?.("settings")});
+  await page.evaluate(async()=>{globalThis.AO_PRAY_V435930.close({silent:true});await globalThis.AO_APP_SHELL_V1?.navigate?.("settings")});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
   await page.evaluate(()=>globalThis.AO_SETTINGS_V4359?.open?.("/settings/about-sources"));
   await page.waitForSelector("#ao-settings-v4359 .aoD6Sources",{timeout:10000});
@@ -162,13 +110,13 @@ try{
   }));
   assert.match(about.text,/Liturgical books & 1962 basis|Livres liturgiques et base 1962/);
   assert.match(about.text,/Prayer & devotional methods|Prières et méthodes dévotionnelles/);
-  assert.ok(about.version,"D6 has no canonical application release version");
-  assert.notEqual(about.version,about.settingsVersion,"About is still displaying the Settings component version as the app version");
-  assert.ok(about.text.includes(String(about.version)),"About does not display canonical application version");
+  assert.ok(about.version);
+  assert.notEqual(about.version,about.settingsVersion);
+  assert.ok(about.text.includes(String(about.version)));
 
   assert.deepEqual(pageErrors,[],"D3-D6 assembled-app page errors: "+JSON.stringify(pageErrors));
   await context.close();
-  console.log("PASS D3-D6 current-owner phone convergence");
+  console.log("PASS D3-D6 modular PRAY + Settings phone convergence");
 }finally{
   if(browser)await browser.close();
   await new Promise(resolve=>server.close(resolve));
