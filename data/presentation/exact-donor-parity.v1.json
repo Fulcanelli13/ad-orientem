@@ -1,6 +1,6 @@
 {
   "schema": "ao-exact-donor-presentation-parity-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "OPEN",
   "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
   "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
@@ -67,21 +67,22 @@
   "findings": [
     {
       "id": "GENERIC_ROUTE_TRANSITIONS_SUBSTITUTED_FOR_DONOR_CHOREOGRAPHY",
-      "classification": "REGRESSION",
-      "status": "OPEN",
-      "current": "src/app/presentation-fx.js maps the six destinations to generic labels such as Home, Prayer, Learn and Calendar and reuses showTransition() at the route boundary.",
-      "expected": "Recover the donor's actual action/module-specific transition metadata, wording, timing and trigger points. Generic surface transitions may remain only where the donor itself used them.",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "Top-level ribbon navigation no longer synthesizes destination-name full-screen cinematics. The modular bridge accepts only explicit semantic transition metadata; Stations/Rosary and other donor-owned semantic callers retain direct use of AO_CINEMATIC_V4312.",
+      "expected": "Maintain semantic-only cinematic triggers. Do not reintroduce six-surface destination cinematics unless an exact donor proves one for that event.",
       "evidence": [
         "src/app/presentation-fx.js",
-        "Ad_Orientem_NON_MASS_HEAD_v2_CINEMATICS_PROTOTYPE.html routeMeta/contentLoadingSpec reference"
+        "tests/presentation-fx.mjs",
+        "tests/app-visual-acceptance.mjs"
       ]
     },
     {
       "id": "ASYNC_LOADING_SEMANTICS_FLATTENED",
       "classification": "REGRESSION",
       "status": "OPEN",
-      "current": "src/app/presentation-fx.js uses a generic delayed Opening/Preparing <surface> loader.",
-      "expected": "Restore donor workload-specific loaders, including calendar resolution/week progress and Scripture/content-specific states, rather than inventing generic route loading.",
+      "current": "The fabricated generic Opening/Preparing <surface> route loader is removed. Exact workload-specific donor loaders still require a direct audit/recovery pass for modular Calendar/Scripture and any later non-Mass async owners.",
+      "expected": "Recover only workload-specific loader states from the donor, including calendar resolution/week progress and Scripture/content-specific states. No destination-name loader is permitted.",
       "evidence": [
         "src/app/presentation-fx.js",
         "Ad_Orientem_NON_MASS_HEAD_v2_CINEMATICS_PROTOTYPE.html contentLoadingSpec and calendar-week loader reference"
@@ -143,7 +144,6 @@
     "App release gate may return to FINAL_APP_READY only when all findings are CLOSED."
   ],
   "openBlockers": [
-    "GENERIC_ROUTE_TRANSITIONS_SUBSTITUTED_FOR_DONOR_CHOREOGRAPHY",
     "ASYNC_LOADING_SEMANTICS_FLATTENED",
     "SEMANTIC_RAILS_SIMPLIFIED",
     "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
