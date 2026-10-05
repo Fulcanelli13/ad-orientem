@@ -44,6 +44,10 @@ try{
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
   await page.waitForSelector("[data-ao-home-enricher-owner='modular-home-enrichers-v1']",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>!document.getElementById("ao-cinema-boot"),null,{timeout:8000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.legacyCinematicAvailable===true,
+    null,{timeout:8000}
+  );
 
   const homeAudit=await page.evaluate(()=>({
     release:document.documentElement.dataset.aoRelease??null,
@@ -51,14 +55,23 @@ try{
     suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
+    presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
   assert.equal(homeAudit.canonicalIcons,3,"Home Coming Up did not render all canonical embedded symbols");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
+  assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
+  assert.equal(homeAudit.presentationFx?.legacyCinematicAvailable,true,"v43.12 cinematic owner is not bridged into the modular shell");
+  assert.equal(homeAudit.presentationFx?.transitionPresent,true,"route-transition cinematic surface is missing");
+  assert.equal(homeAudit.presentationFx?.loaderPresent,true,"async cinematic loader surface is missing");
 
   const shot=async(name)=>page.screenshot({path:resolve(out,name+".png"),fullPage:true});
+  const waitForFxSettled=async()=>page.waitForFunction(()=>{
+    const el=document.getElementById("ao-cinema-transition");
+    return !el||el.getAttribute("aria-hidden")==="true";
+  },null,{timeout:3500});
   const assertHomeHidden=async(surface)=>{
     const s=await page.evaluate(()=>({
       suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
@@ -113,7 +126,10 @@ try{
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
   await page.locator("[data-ao-app-surface='calendar']").click();
+  await page.waitForSelector("#ao-cinema-transition.aoCinemaTransitionOn",{state:"visible",timeout:2000});
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
+  await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFx==="entered",null,{timeout:3000});
+  await waitForFxSettled();
   await assertHomeHidden("Calendar");
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1);
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-native]").count(),0);
@@ -133,6 +149,7 @@ try{
 
   await page.locator("[data-ao-app-surface='pray']").click();
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
+  await waitForFxSettled();
   await assertHomeHidden("PRAY");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-back]").count(),1,"PRAY root lost its Home return control");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),0,"PRAY root exposes duplicate Back + Close exits");
@@ -182,6 +199,7 @@ try{
 
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
+  await waitForFxSettled();
   await assertHomeHidden("Learn");
   const learnParity=await page.evaluate(()=>({
     heroTitles:document.querySelectorAll("#ao-learn-modular-root .aoLearnModHero h1").length,
@@ -219,6 +237,7 @@ try{
 
   await page.locator("[data-ao-app-surface='settings']").click();
   await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
+  await waitForFxSettled();
   await assertHomeHidden("Settings");
   assert.equal(await page.locator("#ao-settings-modular-root [data-settings-close]").count(),1,"Settings main has duplicate exit controls");
   const settingsParity=await page.evaluate(()=>({
