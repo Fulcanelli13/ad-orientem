@@ -191,17 +191,21 @@
       "evidence": [
         "data/presentation/product-parity.v1.json",
         "tests/app-visual-acceptance.mjs",
+        "tests/mass-visual-acceptance.mjs",
+        "tests/reader-mode-switch.mjs",
+        "tests/reader-phone-acceptance.mjs",
         "src/home/presentation.js",
         "src/calendar/browser-entry.js",
         "src/pray/presentation-coherence.js",
         "src/learn/presentation.js",
         "src/settings/presentation.js",
-        "data/presentation/reader-release-gate.v1.json",
+        "src/mass/reader-live-product48.js",
         "src/mass/reader-mode-switch.js",
-        "tests/reader-mode-switch.mjs",
-        "tests/reader-phone-acceptance.mjs"
+        "Visual acceptance workflow 37325466930",
+        "R17 Mass convergence workflow 37325466725",
+        "App convergence workflow 37325466826"
       ],
-      "detail": "Home, Mass, PRAY, Learn, Calendar and Settings are product-parity certified on actual phone geometry. Mass V1-V6 restores the approved LIVE hierarchy, rails/focus/Schola/cinematics, 48-step source-first product presentation, and persistent in-reader MISSAL / SIMPLE / LIVE switching while preserving the certified source/runtime architecture."
+      "detail": "All six modular product surfaces are phone/visual parity certified. Mass presentation recovery V1-V6 restores the approved LIVE hierarchy and 48-step product rhythm while retaining the 39-step source model, exact cue/state ownership, and persistent source-anchored MISSAL/SIMPLE/LIVE switching."
     }
   ],
   "openBlockers": [],
