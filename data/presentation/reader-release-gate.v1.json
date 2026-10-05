@@ -1,6 +1,6 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.8.1",
+  "version": "4.9.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
   "releaseRule": "R17 native remains the production reader. Actual index.html phone-Chromium acceptance is explicit for the complete certified special-structure scope: pre-Mass rites, Good Friday, Easter Vigil, Nuptial insertions, and all supported following-action lifecycles. Legacy remains explicit rollback/debug only.",
@@ -34,8 +34,16 @@
     },
     {
       "id": "NATIVE_MODE_SWITCH",
-      "status": "INITIAL_MODE_PHONE_CERTIFIED__IN_READER_SWITCH_DEFERRED_NON_BLOCKING",
-      "reason": "MISSAL/SIMPLE/LIVE are selected before Mass; the field reader keeps in-reader mode switching locked to avoid structure churn during Mass."
+      "status": "IN_READER_MODE_SWITCH_PHONE_CERTIFIED",
+      "reason": "MISSAL/SIMPLE/LIVE switch inside the ordinary native reader as a presentation-only rebuild. Exact active cue is preserved when available, with source section/sequence fallback; canonical Mass/session/event state is unchanged.",
+      "evidence": [
+        "src/mass/reader-mode-switch.js",
+        "src/mass/reader-native-preview.js",
+        "tests/reader-mode-switch.mjs",
+        "tests/reader-phone-acceptance.mjs",
+        "R17 Mass convergence workflow 37325466725",
+        "App convergence workflow 37325466826"
+      ]
     },
     {
       "id": "GLORIA_CREDO_PROFILE_ADJUDICATION",
@@ -1264,6 +1272,7 @@
         "tests/app-shell-nuptial-e2e.mjs",
         "tests/app-shell-easter-vigil-e2e.mjs"
       ]
-    }
+    },
+    "inReaderModeSwitchCertified": true
   }
 }
