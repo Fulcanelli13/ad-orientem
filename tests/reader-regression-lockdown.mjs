@@ -94,7 +94,7 @@ assert.ok((phoneAcceptance?.guarantees??[]).some(x=>/AO\.SM\.C0173/.test(x)),"pr
 assert.ok((phoneAcceptance?.defectsClosed??[]).some(x=>/cue-id regex/i.test(x)),"browser cue-id regression closure disappeared");
 
 const modeSwitch=release.protectedInvariants.find(x=>x.id==="NATIVE_MODE_SWITCH");
-assert.equal(modeSwitch?.status,"INITIAL_MODE_PHONE_CERTIFIED__IN_READER_SWITCH_DEFERRED_NON_BLOCKING");
+assert.equal(modeSwitch?.status,"IN_READER_MODE_SWITCH_PHONE_CERTIFIED");
 assert.match(String(modeSwitch?.reason??""),/selected before Mass/i);
 assert.match(String(modeSwitch?.reason??""),/locked/i);
 
