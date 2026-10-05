@@ -99,6 +99,12 @@ function enforceTranslationContract(root){
 function focusUnits(root){
   root.querySelectorAll('.aoP435930FluidUnit').forEach(x=>x.classList.remove('aoP435930FluidUnit'));
   root.querySelectorAll('.aoP435930SemanticFace').forEach(face=>{
+    // Angelus/Regina V/R needs line-level focus so the response cue can replace
+    // the stage cue at the exact response rather than colouring the whole card.
+    if(face.closest('[data-ao-angelus-unit="vr"]')){
+      [...face.children].forEach(el=>{if(!el.classList.contains('aoP435930PrayerSpacer'))el.classList.add('aoP435930FluidUnit')});
+      return;
+    }
     if(face.closest('.aoP435930PrayerUnit')){face.classList.add('aoP435930FluidUnit');return}
     [...face.children].forEach(el=>{if(!el.classList.contains('aoP435930PrayerSpacer'))el.classList.add('aoP435930FluidUnit')});
   });
@@ -108,6 +114,19 @@ function focusUnits(root){
   mount?.classList.toggle('aoP435930ReadingView',hasFocusUnits);
   mount?.classList.toggle('aoP435930InteractiveView',!hasFocusUnits);
   if(mount){if(hasFocusUnits)mount.dataset.aoReaderContract='fluid-v1';else delete mount.dataset.aoReaderContract}
+}
+let lastRailCueKey='';
+function syncFocusedRailCue(active,root){
+ if(!active||!root)return;
+ const response=active.matches?.('.aoP435930CommonResponse,.aoP435930PrayerDialogue.aoResponse,.aoP435930LitanyResponse');
+ const carrier=active.closest?.('[data-ao-pray-cue-asset]');
+ let assetId=response?'ao-live-response':carrier?.dataset?.aoPrayCueAsset||'';
+ let label=response?(isFr()?'Répondre':'Respond'):carrier?.dataset?.aoPrayCueLabel||'';
+ if(!assetId||!label)return;
+ const key=assetId+'|'+label;
+ if(key===lastRailCueKey)return;
+ lastRailCueKey=key;
+ try{document.dispatchEvent(new CustomEvent('ao:pray-focus-cue',{detail:{assetId,label}}))}catch{}
 }
 function updateFocus(){
   const root=document.getElementById(ROOT),mount=root?.querySelector('.aoP435930Mount');if(!root||!mount||!root.classList.contains('open'))return;
@@ -121,6 +140,7 @@ function updateFocus(){
     el.style.setProperty('--ao-pray-focus-opacity',opacity.toFixed(3));
     el.dataset.aoPrayFocus=el===active?'active':c<focusY?'past':'future';
   }
+  syncFocusedRailCue(active,root);
 }
 function decorate(){
   const root=document.getElementById(ROOT);if(!root)return;
