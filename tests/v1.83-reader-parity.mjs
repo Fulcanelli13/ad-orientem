@@ -13,6 +13,10 @@ assert.equal(resolver.total,30);
 assert.equal(gate.currentR17.nativeReaderCards,39);
 assert.equal(gate.currentR17.sourceFirstLiveCards,39);
 assert.equal(gate.currentR17.sourceFirstCanonSegments,14);
+assert.equal(gate.currentR17.productPresentationSteps,48);
+assert.equal(gate.currentR17.productPresentationStatus,"SOURCE_FIRST_48_PRODUCT_PARITY");
+assert.equal(gate.currentR17.historicalV183IdentityClaim,false);
+assert.equal(gate.currentR17.productPresentationFile,"src/mass/reader-live-product48.js");
 assert.equal(gate.currentR17.status,"SOURCE_FIRST_LIVE_INTEGRATED");
 assert.equal(gate.status,"HISTORICAL_PARITY_REFERENCE_NON_BLOCKING");
 assert.equal(gate.releaseAuthority,false);
@@ -21,7 +25,11 @@ assert.deepEqual(gate.unresolvedV181SplitAreas.map(x=>x.area).sort(),["CANON"]);
 assert.equal(Object.hasOwn(gate,"knownV181Splits"),false,
   "Parity gate must not retain the stale six-split ledger after 9/10 recovery");
 assert.notEqual(gate.currentR17.sourceFirstLiveCards,gate.reference.expectedLiveCards,
-  "Source-first LIVE must not masquerade as historical v1.83 C01-C48 parity");
+  "39-step source model must remain distinct from historical v1.83 C01-C48 parity");
+assert.equal(gate.currentR17.productPresentationSteps,gate.reference.expectedLiveCards,
+  "product presentation no longer preserves the frozen 48-step LIVE concept");
+assert.equal(gate.currentR17.historicalV183IdentityClaim,false,
+  "48-step product presentation must not masquerade as recovered historical card identity");
 assert.ok(gate.acceptance.some(x=>/48 LIVE cards/.test(x)), "Parity acceptance must require exact recovery of all 48 LIVE cards");
 
 assert.equal(recovery.status,"PARTIAL_EVIDENCE_ONLY_DO_NOT_RENDER");

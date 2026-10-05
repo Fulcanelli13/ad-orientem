@@ -127,6 +127,10 @@ try{
     sectionJumpDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='section-jump']")?.disabled??null,
     sectionButtonCount:document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-section]").length,
     totalCards:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards??null,
+    sourceTotalCards:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.totalCards??null,
+    structureOwner:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.structureOwner??null,
+    sourceStructureOwner:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.sourceStructureOwner??null,
+    historicalIdentityClaim:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.historicalV183IdentityClaim??null,
     shellRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview .ao-reader-shell")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
   }));
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
@@ -154,6 +158,11 @@ try{
   assert.equal(opening.floatingClose,false,"obsolete floating close button still overlays the LIVE ribbon");
   assert.equal(opening.sectionJumpDisabled,false,"source-first section jump is disabled");
   assert.equal(opening.sectionButtonCount,opening.totalCards,"section jump does not expose the complete current display model");
+  assert.equal(opening.totalCards,48,"visible Sung LIVE presentation no longer preserves the approved 48-step concept");
+  assert.equal(opening.sourceTotalCards,39,"48-step presentation mutated or replaced the certified 39-step source model");
+  assert.equal(opening.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
+  assert.equal(opening.sourceStructureOwner,"SOURCE_FIRST_LIVE");
+  assert.equal(opening.historicalIdentityClaim,false,"source-first product 48 must not masquerade as recovered historical C01-C48 identity");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
 
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");

@@ -46,17 +46,9 @@
         "App convergence workflow 37298926228"
       ],
       "observedRegressions": [
-        "inactive 58px rails remain as empty gutters and materially reduce prayer width",
-        "Schola text is squeezed into the narrow right rail instead of a readable dedicated surface",
-        "Host Consecration renders vernacular-first rather than Latin-prominent",
-        "elevation/genuflection rubric remains inline in prayer text rather than being promoted to state/cinematic treatment",
-        "current card title is duplicated between state ribbon and prayer card",
-        "state ribbon uses priest position on the left instead of the approved faithful/posture versus priest-action split",
-        "reader presentation lacks the approved fluid 35-40% focus-zone treatment",
-        "mode controls are visually presented as selectable while production mode switching is locked",
-        "production source-first display model currently contains 39 cards; this must be reconciled with the approved v1.83 card philosophy without replacing the source-first engine"
+        "production mode switching remains intentionally locked despite the approved persistent MISSAL / SIMPLE / LIVE selector intent"
       ],
-      "recoveryPass": "MASS_UI_V4_SALIENCE_CERTIFIED",
+      "recoveryPass": "MASS_UI_V5_SOURCE_FIRST_48_CERTIFIED",
       "recoveryTargets": [
         "collapse inactive cue rails without changing cue ownership",
         "move Schola from narrow right rail to dedicated readable dock",
@@ -89,9 +81,7 @@
         "locked mode selector is visually differentiated"
       ],
       "remainingParityWork": [
-        "production mode switching remains intentionally locked despite the earlier persistent-selector product intent",
-        "39-step source-first LIVE presentation must be reconciled with the approved v1.83 48-card philosophy without reverting to a historical engine",
-        "39-step source-first LIVE presentation still requires reconciliation with the historical 48-card product reference without changing source authority"
+        "production in-reader MISSAL / SIMPLE / LIVE switching remains intentionally locked; pre-Mass mode selection is certified but the earlier persistent-selector interaction intent is not yet restored"
       ],
       "v2Targets": [
         "Home / mode / current-section / Settings first-ribbon architecture",
@@ -103,7 +93,8 @@
         "MASS_UI_V1",
         "MASS_UI_V2",
         "MASS_UI_V3_ELEVATION",
-        "MASS_UI_V4_SALIENCE"
+        "MASS_UI_V4_SALIENCE",
+        "MASS_UI_V5_SOURCE_FIRST_48"
       ],
       "resolvedInV2": [
         "first ribbon now exposes Home, locked MISSAL/SIMPLE/LIVE modes, current source-first section jump and Settings/parameters",
@@ -154,6 +145,34 @@
         "10-mass-incarnatus.png",
         "11-mass-agnus-dei.png",
         "12-mass-last-gospel-genuflect.png"
+      ],
+      "v5Targets": [
+        "retain certified 39-step source-first LIVE model as source authority",
+        "project ordinary Sung LIVE into exactly 48 visible presentation steps",
+        "use canonical block boundaries plus recovered semantic decompression evidence",
+        "do not invent or claim historical v1.83 C01-C48 identities",
+        "preserve section jump, navigation, Schola sourceSequence, Guide sourceSequence, cue focus and cinematics on phone"
+      ],
+      "resolvedInV5": [
+        "ordinary Sung LIVE now exposes exactly 48 product presentation steps over the certified 39-step source-first model",
+        "the 48-step layer does not claim recovered historical v1.83 C01-C48 identities or boundaries",
+        "every canonical source block and reader paragraph is preserved exactly once and in source order",
+        "split presentation cards own no canonical events; canonical event routing remains on the 39-step source model",
+        "ambiguous Libera/Pax and Priest Communion adjacency is resolved by isolating canonical source blocks rather than guessing lost historical membership",
+        "local posture overrides continue to key from original source section IDs",
+        "compiled-plan suppression skips dedicated Final Blessing and Last Gospel presentation steps when those rites are not permitted",
+        "ordinary Sung phone display is 48 over 39 source; Nuptial is 51 over 42 source with all three source-pinned insertions preserved"
+      ],
+      "v5Evidence": [
+        "src/mass/reader-live-product48.js",
+        "tests/reader-live-product48.mjs",
+        "tests/reader-phone-acceptance.mjs",
+        "tests/app-shell-final-e2e.mjs",
+        "tests/app-shell-nuptial-e2e.mjs",
+        "tests/mass-visual-acceptance.mjs",
+        "Visual acceptance workflow 37315999862",
+        "R17 Mass convergence workflow 37315999966",
+        "App convergence workflow 37315999911"
       ]
     },
     "pray": {

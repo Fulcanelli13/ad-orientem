@@ -520,12 +520,20 @@ async function exerciseRealShellFollowingAction(browser,spec){
 
     const exit=await page.evaluate(exitSourceSequence=>{
       const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
-      const card=api?.model?.cards?.find?.(x=>x.sourceSequence===exitSourceSequence);
+      const cards=(api?.model?.cards??[]).filter(x=>x.sourceSequence===exitSourceSequence);
+      const card=cards[0]??null;
       if(!card)throw new Error("Missing source-sequence exit card "+exitSourceSequence);
       const rendered=api.showSequence(card.sequence);
+      const blessingCard=cards.find(x=>(x.blocks??[]).some(block=>block.blockId==="AO.SM.B092"))??null;
+      const blessingRendered=blessingCard?api.showSequence(blessingCard.sequence):null;
+      // A blocked direct navigation must not replace the already-rendered Placeat surface.
       const root=document.getElementById("ao-r17-native-reader-preview");
       return {
         id:card.sectionId,
+        product48:api?.model?.structureOwner==="SOURCE_FIRST_LIVE_PRODUCT_48",
+        sourceChildCount:cards.length,
+        blessingCardId:blessingCard?.sectionId??null,
+        blessingRendered:Boolean(blessingRendered),
         renderedTitle:rendered?.title??null,
         domTitle:root?.querySelector?.("[data-role='card-title']")?.textContent?.trim()??null,
         originalParagraphCount:card.paragraphs?.length??0,
@@ -536,15 +544,26 @@ async function exerciseRealShellFollowingAction(browser,spec){
     },spec.exitSourceSequence);
     if(spec.filteredExitTitle){
       assert.equal(exit.renderedTitle,spec.filteredExitTitle,
-        spec.kind+" public reader API did not return the plan-filtered exit card");
+        spec.kind+" public reader API did not return the plan-aware exit card");
       assert.equal(exit.domTitle,spec.filteredExitTitle,
-        spec.kind+" actual DOM did not show the plan-filtered exit card title");
-      assert.ok(exit.planFilteredBlocks.includes("AO.SM.B092"),
-        spec.kind+" final-blessing block was not marked as plan-filtered");
-      assert.ok(exit.renderedParagraphCount<exit.originalParagraphCount,
-        spec.kind+" final blessing paragraphs were not removed from the rendered card");
+        spec.kind+" actual DOM did not show the plan-aware exit card title");
+      if(exit.product48){
+        assert.ok(exit.sourceChildCount>=2,
+          spec.kind+" 48-step exit no longer exposes separate Placeat / Blessing presentation children");
+        assert.ok(exit.blessingCardId,
+          spec.kind+" 48-step exit lost the dedicated Final Blessing presentation card");
+        assert.equal(exit.blessingRendered,false,
+          spec.kind+" compiled no-blessing plan allowed direct navigation into the Final Blessing card");
+        assert.equal(exit.renderedParagraphCount,exit.originalParagraphCount,
+          spec.kind+" 48-step Placeat card was unnecessarily text-filtered after the blessing became a separate suppressed card");
+      }else{
+        assert.ok(exit.planFilteredBlocks.includes("AO.SM.B092"),
+          spec.kind+" final-blessing block was not marked as plan-filtered");
+        assert.ok(exit.renderedParagraphCount<exit.originalParagraphCount,
+          spec.kind+" final blessing paragraphs were not removed from the rendered card");
+      }
       assert.equal(exit.visibleParagraphCount,exit.renderedParagraphCount,
-        spec.kind+" DOM paragraph count diverged from the plan-filtered card");
+        spec.kind+" DOM paragraph count diverged from the plan-aware card");
     }
 
     await tapNext();

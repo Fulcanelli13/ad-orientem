@@ -169,7 +169,17 @@ try{
     "Host bell transient leaked into Chalice Consecration card");
 
   const progress=await page.locator('[data-role="progress"]').textContent();
-  assert.match(progress,/20 \/ 39/,"source-first LIVE card counter did not reach Chalice Consecration as 20 / 39");
+  assert.match(progress,/22 \/ 48/,"48-step LIVE product counter did not reach Chalice Consecration as 22 / 48");
+  const modelCounts=await page.evaluate(()=>({
+    product:window.__AO_PHONE_PREVIEW?.model?.totalCards??null,
+    source:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards??null,
+    productOwner:window.__AO_PHONE_PREVIEW?.model?.structureOwner??null,
+    sourceOwner:window.__AO_PHONE_PREVIEW?.sourceModel?.structureOwner??null,
+  }));
+  assert.equal(modelCounts.product,48,"phone reader lost 48-step product presentation");
+  assert.equal(modelCounts.source,39,"48-step product presentation replaced the certified 39-step source model");
+  assert.equal(modelCounts.productOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
+  assert.equal(modelCounts.sourceOwner,"SOURCE_FIRST_LIVE");
 
   await context.close();
 
@@ -289,8 +299,10 @@ try{
   let hit=await aspNext.boundingBox();
   await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
   await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
-  assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 39/,
-    "Asperges did not hand off to the first source-first Mass card");
+  assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 48/,
+    "Asperges did not hand off to the first 48-step LIVE product card");
+  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),39,
+    "Asperges handoff replaced the certified 39-step source model");
 
   const aspBack=asp.locator('[data-reader-nav="previous"]');
   hit=await aspBack.boundingBox();
