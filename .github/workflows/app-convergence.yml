@@ -14,6 +14,7 @@ on:
       - "package.json"
       - "data/presentation/app-release-gate.v1.json"
       - "tests/app-release-gate.mjs"
+      - "tests/presentation-fx.mjs"
       - "tests/app-shell-*.mjs"
       - "tests/nonmass-d3-d6-*.mjs"
       - "tests/learn-*.mjs"
@@ -38,6 +39,7 @@ on:
       - "package.json"
       - "data/presentation/app-release-gate.v1.json"
       - "tests/app-release-gate.mjs"
+      - "tests/presentation-fx.mjs"
       - "tests/app-shell-*.mjs"
       - "tests/nonmass-d3-d6-*.mjs"
       - "tests/learn-*.mjs"
@@ -58,6 +60,7 @@ jobs:
       - run: npm run test:app-shell-contract
       - run: npm run test:tree-hygiene
       - run: npm run test:app-live-guards
+      - run: npm run test:presentation-fx
       - run: npm run test:home-owner
       - run: npm run test:home-presentation
       - run: npm run test:home-enrichers
