@@ -168,6 +168,7 @@ try{
 
   const consecration=await page.evaluate(()=>{
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+    const cards=preview?.model?.cards??[];
     const card=preview?.getCurrentCard?.()??null;
     return {
       sectionId:card?.sectionId??null,
