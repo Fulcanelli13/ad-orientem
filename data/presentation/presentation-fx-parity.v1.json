@@ -1,6 +1,6 @@
 {
   "schema": "ao-presentation-fx-parity-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "RECOVERY_IN_PROGRESS",
   "releaseBlocker": "PRESENTATION_FX_PARITY",
   "rule": "FINAL_APP_READY requires the approved cinematic and semantic presentation systems to be active on the modular six-surface app. Static surface parity alone is insufficient.",
@@ -81,14 +81,26 @@
         "src/app/presentation-fx.js"
       ],
       "note": "System and app reduced-motion preferences suppress non-essential FX."
+    },
+    "rosaryLiveFx": {
+      "status": "RECOVERED_V3_PENDING_CI",
+      "evidence": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/presentation-styles.js",
+        "tests/pray-presentation.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Ad_Orientem_v3_4_14.html",
+        "Ad_Orientem_Devotional_Timelines_and_Rubrics_Blueprint_v3_EXACT_CUE_BINDINGS.xlsx",
+        "V41.1-GROUP-ROLES-GESTURES-HARMONIZATION-NOTES.md"
+      ],
+      "note": "The preserved canonical Rosary player receives a geometry-neutral right context rail from AO_ROSARY_V381 state and reuses AO_CINEMATIC_V4312 only when a new mystery is entered. No universal Rosary posture is invented, bead navigation is untouched, and reduced motion suppresses the cinematic."
     }
   },
   "nextRecoveryTargets": [
-    "phone-certify PRAY Angelus and Stations semantic side rails on current main",
-    "recover live Rosary player mystery/context rail and accepted mystery-change cinematics without duplicating bead navigation",
-    "recover Stations change cinematic and any sourced posture/gesture rail states without inventing local custom",
-    "recover approved hero/art entry choreography without reviving obsolete donor navigation",
-    "extend art-loading treatment to current modular art owners",
-    "extract v43.12 cinematic owner from monolithic index.html only after behavior parity is locked"
+    "certify Rosary live context rail and mystery-entry cinematic on 390x844 production phone geometry",
+    "recover Stations change cinematic and exact sourced posture/gesture rail states without inventing local custom",
+    "recover approved hero/art entry choreography across modular Home/PRAY/Learn/Calendar surfaces",
+    "extend cinematic art-loading treatment to current modular art owners and prove real loading states",
+    "extract v43.12 cinematic owner from monolithic index.html only after full presentation-FX behavior parity is locked"
   ]
 }
