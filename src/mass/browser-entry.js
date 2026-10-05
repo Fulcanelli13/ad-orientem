@@ -8,34 +8,16 @@ import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPre
 import { runReaderShadowAudit } from "./reader-shadow.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
+import { R17_PRODUCTION_ICON_ASSETS } from "./reader-icon-assets-v4-8.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 
 export const VERSION = "final-browser-entry-v1";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
 
-export function bridgeLegacyHostIconAssets(win=globalThis){
-  if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
-  try {
-    const assets=typeof win?.eval==="function"
-      ? win.eval('typeof AO_ASSETS!=="undefined" ? AO_ASSETS : null')
-      : null;
-    if(assets){
-      win.AO_R17_ICON_ASSETS=assets;
-      return assets;
-    }
-  } catch {}
-  return null;
-}
-
 export function resolveHostIconAssets(win=globalThis){
   if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
-  if(win?.AO_ASSETS) return win.AO_ASSETS;
-  try {
-    if(typeof AO_ASSETS!=="undefined" && AO_ASSETS) return AO_ASSETS;
-  } catch {}
-  return bridgeLegacyHostIconAssets(win, win?.document);
+  return R17_PRODUCTION_ICON_ASSETS;
 }
-
 
 export function mapLegacyFollowMode(value) {
   const raw = String(value ?? "vox").toLowerCase();

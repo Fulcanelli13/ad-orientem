@@ -9,8 +9,8 @@ import {
   readPersistedActiveMass,
   persistedMassIsResumable,
   resolveHostIconAssets,
-  bridgeLegacyHostIconAssets,
 } from "../src/mass/browser-entry.js";
+import { R17_PRODUCTION_ICON_ASSETS } from "../src/mass/reader-icon-assets-v4-8.js";
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
 assert.equal(mapLegacyFollowMode("read"), "MISSAL");
@@ -20,23 +20,9 @@ assert.equal(mapLegacyFollowMode(undefined), "LIVE");
 
 const bridgedIcons={stand:"data:image/svg+xml;base64,PHN2Zy8+"};
 assert.equal(resolveHostIconAssets({AO_R17_ICON_ASSETS:bridgedIcons}),bridgedIcons,
-  "explicit modular icon bank stopped taking precedence");
-assert.equal(resolveHostIconAssets({AO_ASSETS:bridgedIcons}),bridgedIcons,
-  "global-object host icon bank stopped resolving");
-
-const legacyBridgeWin={
-  AO_R17_ICON_ASSETS:null,
-  eval(source){
-    assert.match(String(source),/typeof AO_ASSETS/,"runtime bridge no longer reads the legacy AO_ASSETS binding");
-    return bridgedIcons;
-  },
-};
-assert.equal(bridgeLegacyHostIconAssets(legacyBridgeWin),bridgedIcons,
-  "global-page bridge did not recover the legacy lexical icon bank");
-assert.equal(legacyBridgeWin.AO_R17_ICON_ASSETS,bridgedIcons,
-  "recovered host icon bank was not published for R17 reuse");
-assert.equal(resolveHostIconAssets({}),null,
-  "icon resolver invented a host bank when no bridge/global bank exists");
+  "explicit modular icon-bank override stopped taking precedence");
+assert.equal(resolveHostIconAssets({}),R17_PRODUCTION_ICON_ASSETS,
+  "production browser entry stopped owning the repository icon bank");
 
 const rites = mapInsertedRites([
   "asperges",

@@ -83,10 +83,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
         getAssemblyStatus(){return null;},
       };
       globalThis.AO_SEQUENCE_BRIDGE_V22=null;
-      globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
-        iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
-      );
-      globalThis.AO_RUNTIME_V8={
+globalThis.AO_RUNTIME_V8={
         store:{
           getState:()=>({
             selectedDate:spec.date,
@@ -282,10 +279,7 @@ async function exerciseRealShellGoodFriday(browser){
         getAssemblyStatus(){return null;},
       };
       globalThis.AO_SEQUENCE_BRIDGE_V22=null;
-      globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
-        iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
-      );
-      globalThis.AO_RUNTIME_V8={
+globalThis.AO_RUNTIME_V8={
         store:{getState:()=>({
           selectedDate:"2027-03-26",
           language:"en",
@@ -431,10 +425,7 @@ async function exerciseRealShellFollowingAction(browser,spec){
         getAssemblyStatus(){return null;},
       };
       globalThis.AO_SEQUENCE_BRIDGE_V22=null;
-      globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
-        iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
-      );
-      globalThis.AO_RUNTIME_V8={
+globalThis.AO_RUNTIME_V8={
         store:{getState:()=>({
           selectedDate:spec.date,
           language:"en",
@@ -701,10 +692,7 @@ try{
       getAssemblyStatus(){return null;},
     };
     globalThis.AO_SEQUENCE_BRIDGE_V22=null;
-    globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(
-      iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"])
-    );
-    globalThis.AO_RUNTIME_V8={
+globalThis.AO_RUNTIME_V8={
       store:{
         getState:()=>({
           selectedDate:"2026-10-04",

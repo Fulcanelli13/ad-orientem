@@ -1,0 +1,195 @@
+{
+  "schema": "ao-r17-production-icon-bank-v1",
+  "version": "1.0.0",
+  "runtimeBank": "4.8.0+r17-recovered-gospel-crosses",
+  "sourceAuthority": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+  "rule": "Repository-owned real artwork. No synthetic placeholders. R17 continues to fail closed if any required key is absent.",
+  "exceptions": {
+    "gospel_crosses": "Existing runtime SVG recovered from the v0.19.27 donor line because this semantic is absent from the v4.8 manager export."
+  },
+  "assets": [
+    {
+      "key": "stand",
+      "assetId": "ao-live-stand",
+      "semanticId": "POSTURE.STAND",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "sit",
+      "assetId": "ao-live-sit",
+      "semanticId": "POSTURE.SIT",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "kneel",
+      "assetId": "ao-live-kneel",
+      "semanticId": "POSTURE.KNEEL",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "genuflect",
+      "assetId": "ao-live-genuflect",
+      "semanticId": "POSTURE.GENUFLECT",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "bow",
+      "assetId": "ao-live-bow",
+      "semanticId": "GESTURE.BOW",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "cross",
+      "assetId": "ao-live-cross",
+      "semanticId": "GESTURE.SIGN_OF_CROSS",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "gospel_crosses",
+      "assetId": "ao-live-gospel-crosses",
+      "semanticId": "GESTURE.GOSPEL_CROSSES",
+      "sourceBank": "Ad Orientem Mass Asset Bank v1",
+      "sourceStatus": "RECOVERED_EXISTING_RUNTIME_SVG"
+    },
+    {
+      "key": "breast_strike",
+      "assetId": "ao-live-breast-strike",
+      "semanticId": "GESTURE.BREAST_STRIKE",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "head_bow",
+      "assetId": "ao-live-head-bow",
+      "semanticId": "GESTURE.HEAD_BOW",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "profound_bow",
+      "assetId": "ao-live-profound-bow",
+      "semanticId": "GESTURE.PROFOUND_BOW",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "hands_joined",
+      "assetId": "ao-live-hands-joined",
+      "semanticId": "GESTURE.HANDS_JOINED",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "response",
+      "assetId": "ao-live-response",
+      "semanticId": "CUE.RESPONSE",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "schola",
+      "assetId": "ao-live-schola",
+      "semanticId": "SOUND.SCHOLA",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_audible",
+      "assetId": "ao-live-priest-audible",
+      "semanticId": "SOUND.PRIEST.AUDIBLE",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_silent",
+      "assetId": "ao-live-priest-silent",
+      "semanticId": "SOUND.PRIEST.SILENT",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_foot",
+      "assetId": "ao-live-priest-foot-altar",
+      "semanticId": "POSITION.PRIEST.FOOT_OF_ALTAR",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_steps",
+      "assetId": "ao-live-priest-ascending-steps",
+      "semanticId": "POSITION.PRIEST.ASCENDING_STEPS",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_centre",
+      "assetId": "ao-live-priest-centre",
+      "semanticId": "POSITION.PRIEST.ALTAR_CENTER",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_epistle",
+      "assetId": "ao-live-priest-epistle-side",
+      "semanticId": "POSITION.PRIEST.EPISTLE_SIDE",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_gospel",
+      "assetId": "ao-reuse-priest-epistle-side-a",
+      "semanticId": "POSITION.PRIEST.GOSPEL_SIDE",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "REUSABLE_VARIANT",
+      "sourceNote": "Legacy asset ID says epistle-side, but the artwork physically depicts priest’s left / Gospel side."
+    },
+    {
+      "key": "priest_sedilia",
+      "assetId": "ao-live-priest-chair",
+      "semanticId": "POSITION.PRIEST.SEDILIA",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_rail",
+      "assetId": "ao-live-priest-communion-rail",
+      "semanticId": "POSITION.PRIEST.COMMUNION_RAIL",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    },
+    {
+      "key": "priest_people",
+      "assetId": "ao-live-priest-facing-people",
+      "semanticId": "POSITION.PRIEST.FACING_PEOPLE",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED",
+      "sourceStatus": "CANONICAL_DEFAULT",
+      "sourceNote": null
+    }
+  ]
+}

@@ -62,8 +62,7 @@ try{
       getAssemblyStatus(){return null},
     };
     globalThis.AO_SEQUENCE_BRIDGE_V22=null;
-    globalThis.AO_R17_ICON_ASSETS=Object.fromEntries(iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"]));
-    globalThis.AO_RUNTIME_V8={store:{getState:()=>({
+globalThis.AO_RUNTIME_V8={store:{getState:()=>({
       selectedDate:"2027-03-27",language:"en",
       settings:{massForm:"solemn",followMode:"vox",massPostureProfile:"TRADITIONAL_WALSH",massGestureProfile:"GUIDED_1962",faithfulCommunion:true},
     })}};

@@ -171,15 +171,15 @@ try{
       schema:prepared.schema,
       form:prepared.session.resolvedMass.form,
       mode:prepared.readerPreferences.mode,
-      bridgedIconKeys:Object.keys(globalThis.AO_R17_ICON_ASSETS??{}),
+      productionIconKeys:Object.keys(mod.resolveHostIconAssets()),
     };
   },iconKeys);
 
   assert.equal(setup.schema,"ao-mass-entry-bootstrap-v1");
   assert.equal(setup.form,"MISSA_CANTATA_INCENSE");
   assert.equal(setup.mode,"LIVE");
-  assert.ok(setup.bridgedIconKeys.length>=iconKeys.length,
-    "actual production page did not bridge the host icon bank into R17");
+  assert.ok(setup.productionIconKeys.length>=iconKeys.length,
+    "actual production page did not resolve the repository-owned R17 icon bank");
   await page.waitForSelector("#ao-r17-native-reader-preview",{state:"attached",timeout:30000});
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.status?.().liveSessionGuards?.live===true &&

@@ -76,11 +76,12 @@
     },
     {
       "id": "ICON_ASSET_BANK_NATIVE",
-      "status": "CERTIFIED_HOST_BANK_BRIDGE",
+      "status": "CERTIFIED_REPOSITORY_BANK",
       "resolver": "src/mass/reader-icons.js",
-      "bridge": "globalThis.AO_R17_ICON_ASSETS",
-      "sourceBank": "existing host AO_ASSETS",
-      "failClosedOnMissingAssets": true
+      "bridge": "globalThis.AO_R17_ICON_ASSETS explicit override only",
+      "sourceBank": "Ad Orientem Asset Bank v4.8 — MASS MAPPED + recovered existing Gospel-crosses runtime SVG",
+      "failClosedOnMissingAssets": true,
+      "productionBank": "src/mass/reader-icon-assets-v4-8.js"
     },
     {
       "id": "BELL_CINEMATIC_NATIVE_OWNERSHIP",
