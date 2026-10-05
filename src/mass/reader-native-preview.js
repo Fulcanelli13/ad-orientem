@@ -751,7 +751,9 @@ export async function mountNativeReaderPreview({
       cueProjection:cueNative ? cueProjection : null,
       legacyPosture:eventAllowed ? legacy.posture : null,
       cueId:activeCueId,
-      sectionId:current?.sectionId??null,
+      // Preserve pre-V5 local posture keys. The 48-step layer owns display IDs
+      // only; saved section overrides continue to target the source AO.CARD.* id.
+      sectionId:current?.sourceSectionId??current?.sectionId??null,
       macroId:current?.macroId??null,
     });
     const posture=postureResolved.posture;
@@ -1232,7 +1234,7 @@ export async function mountNativeReaderPreview({
       ready.aspergesController.goTo("ASP-R05");
       return showAsperges();
     }
-    return showCard(readerModel.previousCard(current.sectionId));
+    return showCard(nextVisibleCard(current,"previous"));
   }
 
   function nextReaderCard(){
@@ -1306,7 +1308,7 @@ export async function mountNativeReaderPreview({
       ready.aspergesController.next();
       return showAsperges();
     }
-    const card=readerModel.nextCard(current.sectionId);
+    const card=nextVisibleCard(current,"next");
     if((card?.sourceSequence===30 || card?.sequence===30) && prepared?.session?.plan?.normalLastGospel===false){
       return enterLifecycleBoundary();
     }
@@ -1323,7 +1325,21 @@ export async function mountNativeReaderPreview({
     const start=blessing.firstParagraphIndex;
     const end=start+blessing.paragraphCount;
     const paragraphs=card.paragraphs.filter((_,index)=>index<start||index>=end);
+    if(!paragraphs.length && !card.stateOnly)return null;
     return Object.freeze({...card,title:"Placeat tibi, sancta Trinitas",paragraphs:Object.freeze(paragraphs),planFilteredBlocks:Object.freeze(["AO.SM.B092"])});
+  }
+
+  function nextVisibleCard(from,direction){
+    let probe=from;
+    while(probe){
+      const candidate=direction==="previous"
+        ? readerModel.previousCard(probe.sectionId)
+        : readerModel.nextCard(probe.sectionId);
+      if(!candidate)return null;
+      if(planAwareCard(candidate))return candidate;
+      probe=candidate;
+    }
+    return null;
   }
 
   function showCard(card){
@@ -1341,6 +1357,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17ObjectState="none";
     root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
     const visibleCard=planAwareCard(card);
+    if(!visibleCard)return null;
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
     const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
@@ -1390,10 +1407,10 @@ export async function mountNativeReaderPreview({
     root:host,
     iconResolver,
     allowPresentationModeSwitch:false,
-    sections:readerModel.cards.map(card=>Object.freeze({id:card.sectionId,label:card.title})),
+    sections:readerModel.cards.filter(card=>Boolean(planAwareCard(card))).map(card=>Object.freeze({id:card.sectionId,label:card.title})),
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(card);
+      return showCard(planAwareCard(card)?card:null);
     },
     onPrevious:previousReaderCard,
     onNext:nextReaderCard,
@@ -1521,9 +1538,12 @@ export async function mountNativeReaderPreview({
     }),
     showSection:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(card);
+      return showCard(planAwareCard(card)?card:null);
     },
-    showSequence:sequence=>showCard(readerModel.cardBySequence(sequence)),
+    showSequence:sequence=>{
+      const card=readerModel.cardBySequence(sequence);
+      return showCard(planAwareCard(card)?card:null);
+    },
     syncState:queue,
     destroy,
     getCurrentCard:()=>inGenericProcession ? ready.genericProcessionController?.project?.().card??null : inHolyThursdayPost ? ready.holyThursdayPostController?.project?.().card??null : inCorpusChristi ? ready.corpusChristiController?.project?.().card??null : inRequiemAbsolution ? ready.requiemAbsolutionController?.project?.().card??null : inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
