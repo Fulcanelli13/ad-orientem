@@ -165,7 +165,14 @@ function patchAboutSettings(win){
   if(wrap.dataset.aoD6About==="1"&&wrap.querySelector(".aoD6Sources"))return false;
   const rendered=String(wrap.textContent||"");
   const looksLikeAbout=/sources|provenance|about ad orientem|à propos d.?ad orientem|source/i.test(rendered);
-  if(route!=="/settings/about-sources"&&win.__AO_D6_ABOUT_ROUTE_ACTIVE!==true&&!looksLikeAbout)return false;
+  let settingsStateText="";
+  try{
+    const api=win.AO_SETTINGS_V4359;
+    const state=typeof api?.state==="function"?api.state():api?.state;
+    settingsStateText=JSON.stringify(state??{});
+  }catch{}
+  const stateLooksAbout=/about-sources|\/settings\/about-sources/i.test(settingsStateText);
+  if(route!=="/settings/about-sources"&&win.__AO_D6_ABOUT_ROUTE_ACTIVE!==true&&!stateLooksAbout&&!looksLikeAbout)return false;
   wrap.dataset.aoD6About="1";
   wrap.innerHTML="";
   wrap.append(
