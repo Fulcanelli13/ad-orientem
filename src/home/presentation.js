@@ -77,9 +77,25 @@ export function buildHomeViewModel(state,win=globalThis){
   };
 }
 
+function homeSettings(state){
+  const l=state.language==="fr"?"fr":"en",s=state.settings??{};
+  const seg=(label,attr,items,active)=>`<div class="homeSettingGroup"><label>${esc(label)}</label><div class="homeSegments">${items.map(([v,t])=>`<button ${attr}="${v}" class="${active===v?"active":""}">${esc(t)}</button>`).join("")}</div></div>`;
+  return `<div class="homeSheetBackdrop" data-home-sheet-close><section class="homeSheet" role="dialog" aria-modal="true" data-ao-home-settings="modular"><header><div><span>${l==="fr"?"Préférences":"Preferences"}</span><h2>${l==="fr"?"Réglages":"Settings"}</h2></div><button data-home-sheet-close>×</button></header>
+${seg(l==="fr"?"Forme de Messe":"Mass form","data-setting-form",[["sung",l==="fr"?"Messe chantée":"Sung Mass"],["low",l==="fr"?"Messe basse":"Low Mass"]],s.massForm)}
+${seg(l==="fr"?"Suivre":"Follow","data-setting-follow",[["vox","VOX"],["missal",l==="fr"?"Missel":"Missal"]],s.followMode)}
+${seg(l==="fr"?"Texte":"Text","data-setting-text",[["oriented",l==="fr"?"Orienté":"Oriented"],["parallel",l==="fr"?"Parallèle":"Parallel"]],s.textMode)}
+${seg(l==="fr"?"Participation":"Participation","data-setting-participation",[["quiet",l==="fr"?"Discrète":"Quiet"],["group",l==="fr"?"Réponses":"Group"]],s.participationMode)}
+${seg(l==="fr"?"Taille du texte":"Text size","data-setting-scale",[["normal",l==="fr"?"Normale":"Normal"],["large",l==="fr"?"Grande":"Large"]],s.textScale)}
+<button class="homeToggle" data-setting-motion="${s.reducedMotion?"0":"1"}"><span><b>${l==="fr"?"Réduire les animations":"Reduce motion"}</b><small>${l==="fr"?"Limiter les transitions non essentielles.":"Limit non-essential transitions."}</small></span><i class="${s.reducedMotion?"on":""}"></i></button>
+<button class="resetPostureHome" data-reset-postures>${l==="fr"?"Réinitialiser les postures locales":"Reset local postures"}</button>
+<button class="resetPostureHome aoContentAuditLaunch" data-content-audit-v8>${l==="fr"?"Audit bilingue du contenu":"Bilingual content audit"}</button>
+</section></div>`;
+}
+
 function homeSheet(state){
   const l=state.language==="fr"?"fr":"en";
   if(!state.homeSheet)return "";
+  if(state.homeSheet==="settings")return homeSettings(state);
   if(state.homeSheet==="mass"){
     const p=state.resolution?.proper?.status==="ready"?state.resolution.proper.data:null;
     const slot=(label,v)=>{const vern=(l==="fr"?v?.fr:v?.en)||"",latinOnly=!vern&&!!v?.lat;return `<article><b>${esc(label)}</b><p>${esc(vern||(l==="fr"?"Traduction française indisponible.":"English translation unavailable."))}</p>${latinOnly?`<small class="translationIntegrityNote">${l==="fr"?"Le texte latin existe, mais il n’est pas affiché comme français.":"Latin exists, but is not displayed as English."}</small>`:""}</article>`;};
