@@ -41,7 +41,7 @@ No Mass reader/runtime file is modified by this phase. In particular, this work 
 
 The first post-reader audit found that the modular application shell was present only as an adapter. Phase 3 promotes `AO_APP_SHELL_V1` to the visible six-destination ribbon owner while retaining the final donor-backed destination renderers underneath. The historical ribbon still supplies the visual markup, but its `data-ao-ribbon` click ownership is stripped after render and replaced with modular `data-ao-app-surface` ownership.
 
-The production `index.html` still contains one cleanup debt that must not become permanent architecture: the embedded `AO_EMERGENCY_STABLE_V4333` runtime. The duplicated `src/mass/browser-entry.js` module tag has been removed and regression-locked at exactly one include; icon-bank discovery now belongs to the modular Mass browser entry. The emergency runtime may only be removed after any still-required live-session locks are owned by the final modular shell/settings path.
+The production `index.html` no longer contains the embedded `AO_EMERGENCY_STABLE_V4333` runtime. Its live-session responsibilities were first extracted into `src/app/live-session-guards.js`, then the 74-line emergency CSS/JS layer was physically removed and regression-locked by production-tree hygiene. The duplicated `src/mass/browser-entry.js` module tag also remains removed and locked at exactly one include.
 
 The existing real-shell browser tests prove native Mass ownership and phone geometry for certified Mass/special-rite paths, but they do not yet exercise the complete application journey through visible navigation. In particular, they do not currently prove cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings.
 
@@ -84,7 +84,7 @@ The native Mass reader no longer relies on the embedded v43.33 emergency layer f
 
 The guard recognizes the actual connected native reader, not only the historical core route, so it remains correct when modular shell navigation and the old donor route temporarily disagree. The actual-index cross-domain phone journey certifies this ownership.
 
-This does **not** yet close `EMERGENCY_RUNTIME_RETIREMENT`: the historical v43.33 emergency layer is still physically embedded in `index.html`. Its required responsibilities have now been replaced; the next step is physical removal followed by the full assembled-app regression suite.
+`EMERGENCY_RUNTIME_RETIREMENT` is now **closed**. The historical v43.33 emergency layer has been physically removed from `index.html`; the modular guard remains the sole owner of the required live-session protections, with actual-index journey coverage.
 
 ## Phase 6: modular Home navigation ownership
 
@@ -108,7 +108,7 @@ Before calling app convergence complete:
 
 1. The modular shell must own visible six-destination navigation rather than merely observe/delegate it. **Closed in Phase 3.**
 2. The full phone journey must be automated from cold launch across Home, Calendar, Mass, PRAY and Settings.
-3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections. **Its required live-session protections are now modular; physical removal remains open.**
+3. The emergency v43.33 runtime must be retired or decomposed into explicit final owners without losing required live-session protections. **Closed: protections are modular and the embedded runtime is physically removed.**
 4. The duplicate browser-entry include must be removed and locked out by production-tree hygiene. **Closed.**
 5. Each non-Mass donor owner must be retired only after its extracted module passes parity and phone acceptance.
 6. Fresh-state, interrupted-Mass, reload/resume and cross-module persistence must be regression-tested so historical local state cannot reactivate obsolete surfaces.
