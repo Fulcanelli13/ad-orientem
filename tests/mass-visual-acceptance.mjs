@@ -297,7 +297,24 @@ try{
       card.scrollTop=Math.max(0,(top+bottom)/2-card.clientHeight*.39);
       card.dispatchEvent(new Event("scroll"));
     });
-    await page.waitForFunction(id=>document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue===id,cueId,{timeout:5000});
+    await page.waitForTimeout(120);
+    const focusDebug=await page.evaluate((id)=>{
+      const root=document.getElementById("ao-r17-native-reader-preview");
+      const el=document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`);
+      const card=el?.closest(".ao-prayer-card");
+      const cr=card?.getBoundingClientRect(),er=el?.getBoundingClientRect();
+      return {
+        expected:id,
+        active:root?.dataset?.r17NativeCue??null,
+        scrollTop:card?.scrollTop??null,
+        maxScroll:card?Math.max(0,card.scrollHeight-card.clientHeight):null,
+        clientHeight:card?.clientHeight??null,
+        targetTop:cr&&er?er.top-cr.top+(card?.scrollTop??0):null,
+        targetBottom:cr&&er?er.bottom-cr.top+(card?.scrollTop??0):null,
+        targetActive:el?.dataset?.active??null,
+      };
+    },cueId);
+    assert.equal(focusDebug.active,cueId,"exact cue did not acquire 39% focus territory: "+JSON.stringify(focusDebug));
     return page.evaluate((id)=>({
       cue:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null,
       section:document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent?.trim()??"",
