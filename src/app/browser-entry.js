@@ -180,10 +180,9 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
 
   adopt();
 
-  const unsubscribe = controller.subscribe?.((active) => {
+  const unsubscribe = controller.subscribe?.(() => {
     adopt();
     paintActive();
-    presentationFx?.surfaceEntered?.(active);
   });
   if (typeof unsubscribe === "function") cleanups.push(unsubscribe);
 
