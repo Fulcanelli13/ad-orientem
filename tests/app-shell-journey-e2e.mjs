@@ -301,6 +301,71 @@ try{
   assert.equal(resumed.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(resumed.probe,"calendar-state-ok");
 
+  const liveSettingsBefore=await page.evaluate(()=>{
+    globalThis.__AO_SETTINGS_LIVE_ALERTS=[];
+    globalThis.alert=value=>globalThis.__AO_SETTINGS_LIVE_ALERTS.push(String(value));
+    const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+    return {
+      section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+      massForm:state?.settings?.massForm??null,
+      textScale:state?.settings?.textScale??"normal",
+    };
+  });
+  const settingsNav=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
+  assert.notEqual(settingsNav?.ok,false,"Settings could not open over active native Mass");
+  await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings" &&
+    globalThis.AO_SETTINGS_APP_V1?.status?.().liveSessionGuarded===true,
+    null,{timeout:5000});
+  const overLive=await page.evaluate(()=>{
+    const root=document.getElementById("ao-settings-modular-root"),rect=root?.getBoundingClientRect?.();
+    return {
+      readerMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
+      section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+      owner:root?.dataset?.aoSettingsOwner??null,
+      oldVisible:globalThis.AO_SETTINGS_APP_V1?.status?.().historicalSettingsVisible??null,
+      hapticsDisabled:Boolean(root?.querySelector?.("[data-setting-haptics]")?.disabled),
+      rect:rect?{width:rect.width,height:rect.height}:null,
+    };
+  });
+  assert.equal(overLive.readerMounted,true,"opening Settings killed the active R17 session");
+  assert.equal(overLive.section,liveSettingsBefore.section,"opening Settings changed the active Mass position");
+  assert.equal(overLive.owner,"AO_SETTINGS_APP_V1");
+  assert.equal(overLive.oldVisible,false,"historical Settings donor appeared over LIVE");
+  assert.equal(overLive.hapticsDisabled,true,"haptics were not locked by the live-session guard");
+  assert.ok(overLive.rect?.width>=388&&overLive.rect?.height>=840,"LIVE Settings phone overlay geometry is invalid");
+
+  const targetForm=liveSettingsBefore.massForm==="low"?"sung":"low";
+  await page.locator("#ao-settings-modular-root [data-setting-form='"+targetForm+"']").click();
+  await page.waitForFunction(()=>globalThis.__AO_SETTINGS_LIVE_ALERTS?.length===1,null,{timeout:5000});
+  const structuralAfter=await page.evaluate(()=>({
+    massForm:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.massForm??null,
+    section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+    alerts:globalThis.__AO_SETTINGS_LIVE_ALERTS?.length??0,
+  }));
+  assert.equal(structuralAfter.massForm,liveSettingsBefore.massForm,"structural Mass form changed during active Mass");
+  assert.equal(structuralAfter.section,liveSettingsBefore.section,"blocked structural setting disturbed the reader");
+  assert.equal(structuralAfter.alerts,1);
+
+  const targetScale=liveSettingsBefore.textScale==="large"?"normal":"large";
+  await page.locator("#ao-settings-modular-root [data-setting-scale='"+targetScale+"']").click();
+  await page.waitForFunction(expected=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.settings?.textScale===expected,targetScale,{timeout:5000});
+  await page.locator("#ao-settings-modular-root [data-settings-close]").first().click();
+  await page.waitForFunction(()=>
+    !document.getElementById("ao-settings-modular-root") &&
+    document.getElementById("ao-r17-native-reader-preview")?.isConnected &&
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",
+    null,{timeout:5000});
+  const liveSettingsClosed=await page.evaluate(()=>({
+    section:globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId??null,
+    focusHidden:Boolean(document.activeElement?.closest?.("[aria-hidden='true'],[hidden]")),
+    legacyStarts:globalThis.__AO_FINAL_LEGACY_STARTS??0,
+  }));
+  assert.equal(liveSettingsClosed.section,liveSettingsBefore.section,"closing Settings did not restore the same active Mass state");
+  assert.equal(liveSettingsClosed.focusHidden,false,"Settings close left focus in a hidden surface");
+  assert.equal(liveSettingsClosed.legacyStarts,0,"Settings LIVE overlay started the legacy Mass engine");
+
   await page.evaluate(()=>{
     globalThis.__AO_APP_JOURNEY_CONFIRMS=0;
     globalThis.confirm=()=>{globalThis.__AO_APP_JOURNEY_CONFIRMS+=1;return false;};
@@ -383,16 +448,23 @@ try{
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
 
   await page.locator("[data-ao-app-surface='settings']").click();
+  await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
 
   const end=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     confirms:globalThis.__AO_APP_JOURNEY_CONFIRMS,
     owner:document.documentElement.dataset.aoAppShellOwner??null,
+    settingsOwner:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsOwner??null,
+    historicalVisible:globalThis.AO_SETTINGS_APP_V1?.status?.().historicalSettingsVisible??null,
+    homeSettings:Boolean(document.querySelector("[data-ao-home-settings]")),
   }));
   assert.equal(end.active,"settings");
   assert.equal(end.confirms,2,"LIVE leave/resume guard did not run exactly twice");
   assert.equal(end.owner,"AO_APP_SHELL_V1");
+  assert.equal(end.settingsOwner,"AO_SETTINGS_APP_V1");
+  assert.equal(end.historicalVisible,false);
+  assert.equal(end.homeSettings,false,"retired Home Settings surface reopened");
 
   const storedBeforeReload=await page.evaluate(()=>localStorage.getItem("ao-r17-active-mass-v1"));
   assert.ok(storedBeforeReload,"native Mass persistence record disappeared before reload");
@@ -424,7 +496,7 @@ try{
   assert.deepEqual(pageErrors,[],"uncaught errors in cross-domain app journey: "+JSON.stringify(pageErrors));
 
   await context.close();
-  console.log("PASS app shell journey: cold Home -> Calendar -> native LIVE -> interrupted reload/resume -> leave -> Pray -> Home -> Settings -> clean suspended reload");
+  console.log("PASS app shell journey: cold Home -> Calendar -> native LIVE -> Settings overlay -> same LIVE -> leave -> Pray -> Home -> Settings -> clean suspended reload");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
