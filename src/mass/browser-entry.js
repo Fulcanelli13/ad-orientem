@@ -10,6 +10,7 @@ import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
+import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 
 export const VERSION = "final-browser-entry-v2";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
@@ -406,12 +407,18 @@ export function createBrowserMassController() {
   return createMassEntryController({
     celebrationApi: api,
     readReaderPreferences: () => readerPreferences(),
-    resolveHostOptions: (resolvedMass) => deriveHostOptions({
-      resolvedMass,
-      assemblyStatus: statusSnapshot(),
-      arch: arch(),
-      runtimeState: runtimeState(),
-    }),
+    resolveHostOptions: async (resolvedMass) => {
+      const options=deriveHostOptions({
+        resolvedMass,
+        assemblyStatus: statusSnapshot(),
+        arch: arch(),
+        runtimeState: runtimeState(),
+      });
+      const proper=await recoverReaderProperOmissions(options.proper,{
+        hostResolver:runtime()?.resolver?.properResolver,
+      });
+      return Object.freeze({...options,proper});
+    },
     openReader: openProductionReader,
   });
 }
