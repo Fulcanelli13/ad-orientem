@@ -55,7 +55,7 @@
     "test:reader-palm": "node tests/reader-palm.mjs",
     "test:form-lifecycle": "node tests/form-lifecycle.mjs",
     "test:solemn-pax": "node tests/solemn-pax-authority.mjs",
-    "test:phone": "node tests/reader-phone-acceptance.mjs && node tests/app-shell-final-e2e.mjs && node tests/app-shell-nuptial-e2e.mjs && node tests/app-shell-easter-vigil-e2e.mjs && npm run test:nonmass-convergence-e2e && npm run test:learn-owner-e2e && npm run test:settings-e2e",
+    "test:phone": "node tests/reader-phone-acceptance.mjs && node tests/app-shell-final-e2e.mjs && node tests/app-shell-nuptial-e2e.mjs && node tests/app-shell-easter-vigil-e2e.mjs && npm run test:nonmass-convergence-e2e && npm run test:learn-owner-e2e && npm run test:settings-e2e && npm run test:visible-modules",
     "test:reader-ash": "node tests/reader-ash.mjs",
     "test:reader-candlemas": "node tests/reader-candlemas.mjs",
     "test:reader-requiem-absolution": "node tests/reader-requiem-absolution.mjs",
@@ -92,7 +92,8 @@
     "test:home-enrichers": "node tests/home-enrichers.mjs",
     "test:source-transport": "node tests/source-transport-compat.mjs",
     "test:field-current-week": "node tests/field-current-week-e2e.mjs",
-    "test:reader-proper-recovery": "node tests/reader-proper-runtime-recovery.mjs"
+    "test:reader-proper-recovery": "node tests/reader-proper-runtime-recovery.mjs",
+    "test:visible-modules": "node tests/app-visible-module-journey-e2e.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
