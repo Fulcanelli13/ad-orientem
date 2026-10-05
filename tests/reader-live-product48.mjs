@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { createMassReaderModel } from "../src/mass/reader-model.js";
 import { projectSourceFirst48Presentation, SOURCE_FIRST_48_TARGETS } from "../src/mass/reader-live-product48.js";
 
 const targetIds=Object.keys(SOURCE_FIRST_48_TARGETS);
@@ -110,3 +112,98 @@ const low={...sourceModel,corpusFamily:"LOW"};
 assert.equal(projectSourceFirst48Presentation(low),low,"Low Mass was incorrectly given the Sung 48-step presentation");
 
 console.log("PASS source-first LIVE product parity: 39 source steps project to 48 visible steps without historical-ID claims.");
+
+
+// Real production-data integration: prove that the product projection is a
+// presentation-only decomposition of the certified 39-step Sung LIVE model.
+const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
+const low=load("../data/presentation/reader-text-low.v1.json");
+const sung=load("../data/presentation/reader-text-sung.v1.json");
+const sectionMap=load("../data/presentation/reader-section-map.v0.13.1.json");
+const canonSourceMap=load("../data/presentation/reader-canon-source-map.v1.json");
+const t=(lat,en)=>({lat,en});
+const proper={
+  sourcePath:"Sancti/10-07",
+  introit:t("Introitus Rosarii","Introit of the Rosary"),
+  collects:[t("Collecta","Collect")],
+  epistle:t("Epistola","Epistle"),
+  gradual:t("Graduale","Gradual"),
+  alleluia_tract:t("Alleluia","Alleluia"),
+  sequence:{lat:"",en:""},
+  gospel:t("Evangelium","Gospel"),
+  offertory:t("Offertorium","Offertory"),
+  secrets:[t("Secreta","Secret")],
+  preface:t("Praefatio","Preface"),
+  communion:t("Communio","Communion"),
+  postcommunions:[t("Postcommunio","Postcommunion")],
+};
+const resolvedMass={
+  schema:"ao-resolved-mass-v2",
+  date:"2026-10-04",
+  form:"MISSA_CANTATA_INCENSE",
+  presentationMode:"LIVE",
+  actualCelebration:{id:"holy_rosary",type:"VOTIVE",title:"Holy Rosary"},
+  calendarCelebration:{id:"Tempora/Pent18-0",type:"CALENDAR"},
+  explicitlySelectedCelebration:true,
+  proper:{status:"READY",data:proper,sourcePath:"Sancti/10-07"},
+  overlays:["VOTIVE_PROPER"],
+  precedingRites:[],
+  followingActions:[],
+  distinctRite:null,
+};
+const realSource=createMassReaderModel({
+  resolvedMass,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
+assert.equal(realSource.totalCards,39);
+assert.equal(realSource.structureOwner,"SOURCE_FIRST_LIVE");
+const real48=projectSourceFirst48Presentation(realSource);
+assert.equal(real48.totalCards,48);
+assert.equal(real48.sourceModelTotalCards,39);
+assert.equal(real48.sourceAuthorityModel,realSource);
+assert.equal(real48.cardForEvent,undefined,
+  "presentation model leaked source-model event routing as though split cards owned events");
+
+const sourceBlocks=realSource.cards.flatMap(card=>card.blocks.map(block=>block.blockId));
+const productBlocks=real48.cards.flatMap(card=>card.blocks.map(block=>block.blockId));
+assert.deepEqual(productBlocks,sourceBlocks,
+  "48-step projection changed, duplicated or reordered canonical block coverage");
+assert.equal(new Set(productBlocks).size,productBlocks.length,
+  "48-step projection duplicated a canonical block");
+
+const sourceParagraphs=realSource.cards.flatMap(card=>card.paragraphs.map(p=>p.id));
+const productParagraphs=real48.cards.flatMap(card=>card.paragraphs.map(p=>p.id));
+assert.deepEqual(productParagraphs,sourceParagraphs,
+  "48-step projection changed, duplicated or reordered reader paragraphs");
+
+for(const card of real48.cards.filter(x=>x.productPresentation48===true)){
+  assert.deepEqual(card.eventIds,[],
+    card.sectionId+" falsely claimed canonical event ownership");
+  assert.ok(Array.isArray(card.sourceEventIds),
+    card.sectionId+" lost parent source-event provenance");
+  assert.equal(card.historicalV183IdentityClaim,false);
+}
+
+const realCounts=Object.fromEntries(Object.keys(SOURCE_FIRST_48_TARGETS).map(sourceId=>[
+  sourceId,real48.cards.filter(card=>card.sourceSectionId===sourceId).length
+]));
+assert.deepEqual(realCounts,{
+  "AO.CARD.010":3,
+  "AO.CARD.020":4,
+  "AO.CARD.022":2,
+  "AO.CARD.023":3,
+  "AO.CARD.029":2,
+});
+assert.deepEqual(
+  real48.cards.filter(card=>card.sourceSectionId==="AO.CARD.020").map(card=>card.blocks.map(b=>b.blockId)),
+  [["AO.SM.B064"],["AO.SM.B065"],["AO.SM.B066"],["AO.SM.B067"]],
+  "Libera/Pax ambiguity was resolved by guessing historical adjacency instead of isolating source blocks"
+);
+assert.deepEqual(
+  real48.cards.filter(card=>card.sourceSectionId==="AO.CARD.023").map(card=>card.blocks.map(b=>b.blockId)),
+  [["AO.SM.B074"],["AO.SM.B075"],["AO.SM.B076"]],
+  "Priest Communion ambiguity was resolved by guessing historical adjacency instead of isolating source blocks"
+);
+assert.equal(real48.sourceAuthorityModel.cardForEvent("MC-CNS-010")?.card?.sectionId,"AO.CANON.06",
+  "39-step source model stopped owning canonical event routing");
+
+console.log("PASS real source-first 48 integration: all canonical blocks/paragraphs preserved once; event authority remains on 39-step source model.");
