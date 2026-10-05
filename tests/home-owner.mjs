@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { createHomeOwner } from "../src/home/browser-entry.js";
 
 const calls=[];
@@ -51,5 +52,11 @@ calls.length=0;
 home.open();
 assert.ok(calls.includes("dispatch:leave-live"),"Home did not leave historical live route");
 assert.equal(calls.includes("DONOR_HOME_CALLED"),false);
+
+const ownerSource=readFileSync("src/home/browser-entry.js","utf8");
+assert.doesNotMatch(ownerSource,/AO_COMING_UP_V4323\?\.render|AO_COMING_UP_V4323\.render/,"Home still rehydrates donor Coming Up");
+assert.doesNotMatch(ownerSource,/AO_DAILY_CATECHISM\?\.ensureHome|AO_DAILY_CATECHISM\.ensureHome/,"Home still rehydrates donor Daily Catechism card");
+assert.doesNotMatch(ownerSource,/AO_V37_SHELL\?\.openDomain\?\.\("learn"\)|AO_V37_SHELL\.openDomain\("learn"\)/,"Home enrichers revive historical Learn domain");
+assert.match(ownerSource,/navigate\?\.\("calendar"\)/,"Coming Up View all no longer routes through modular Calendar");
 
 console.log("PASS modular Home navigation/reset owner");
