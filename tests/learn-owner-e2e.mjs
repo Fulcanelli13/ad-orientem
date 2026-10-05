@@ -159,18 +159,13 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  const settings=await page.evaluate(()=>{
-    const settingsState=api=>{
-      try{return typeof api?.state==="function"?api.state():api?.state??null;}catch{return null;}
-    };
-    const modern=settingsState(globalThis.AO_SETTINGS_V4359)??settingsState(globalThis.AO_SETTINGS_V4358)??settingsState(globalThis.AO_SETTINGS_V4356);
-    return {
-      modernOpen:Boolean(modern?.navigation?.open),
-      homeSheet:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.homeSheet??null,
-      donorLearnVisible:Boolean(document.getElementById("ao-v37-root")&&!document.getElementById("ao-v37-root").hidden&&document.body.classList.contains("aoV37ShellOpen")),
-    };
-  });
-  assert.ok(settings.modernOpen||settings.homeSheet==="settings","Learn -> Settings did not open the production Settings surface");
+  const settings=await page.evaluate(()=>({
+    active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+    learnMounted:Boolean(document.getElementById("ao-learn-modular-root")),
+    donorLearnVisible:Boolean(document.getElementById("ao-v37-root")&&!document.getElementById("ao-v37-root").hidden&&document.body.classList.contains("aoV37ShellOpen")),
+  }));
+  assert.equal(settings.active,"settings","Learn -> Settings did not complete through AO_APP_SHELL_V1");
+  assert.equal(settings.learnMounted,false,"modular Learn remained mounted underneath Settings");
   assert.equal(settings.donorLearnVisible,false,"historical Learn donor resurfaced under Settings");
   await assertNoMass("Learn -> Settings");
   await assertFocusSafe("Learn -> Settings");
