@@ -34,6 +34,7 @@ assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept tou
 assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
 assert.match(styles,/@media\(max-width:560px\)[\s\S]*aoP435930SemanticRailIcon\{width:27px/,"PRAY semantic rail icons lost salient phone geometry");
 assert.match(runtime,/function decorateRosaryFx\(r\)/,"Rosary lost its live FX presentation hook");
+assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
 assert.match(runtime,/aoP435930RosarySemanticRails/,"Rosary lost its live contextual side rail");
 assert.match(runtime,/ao-rich-rosary/,"Rosary live rail lost the canonical Rosary identity");
 assert.match(runtime,/step\?\.kind!==['"]mystery['"]/,"Rosary mystery cinematic is no longer restricted to mystery-entry boundaries");
