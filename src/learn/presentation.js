@@ -1,3 +1,5 @@
+import { canonicalAssetIdForLearnRoute, getCanonicalAsset } from "../assets/asset-registry.js";
+
 export const LEARN_PRESENTATION_VERSION="modular-learn-presentation-v1";
 export const LEARN_DONOR_RELEASE="43.59.30";
 
@@ -45,13 +47,19 @@ function typeLabel(item,state){
 }
 
 function iconMarkup(item,win){
-  try{return win?.AO_ICON_REGISTRY_V4333?.iconForRoute?.(item.id,"aoLearnModIcon")||"";}catch{return "";}
+  const assetId=canonicalAssetIdForLearnRoute(item?.id);
+  const asset=assetId?getCanonicalAsset(assetId):null;
+  if(!asset)return "";
+  const embedded=win?.document?.getElementById?.(assetId)??null;
+  if(!embedded)return "";
+  return `<svg class="aoLearnModIcon" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" focusable="false"><use href="#${esc(assetId)}"></use></svg>`;
 }
 
 function cardMarkup(item,state,win){
+  const assetId=canonicalAssetIdForLearnRoute(item?.id);
   const icon=iconMarkup(item,win);
   return `<article class="aoLearnModCard ${item.featured?"featured":""}">
-    <button type="button" class="aoLearnModCardMain ${icon?"iconized":""}" data-ao-learn-module="${esc(item.id)}" data-ao-learn-card="${esc(item.id)}">
+    <button type="button" class="aoLearnModCardMain ${icon?"iconized":""}" data-ao-learn-module="${esc(item.id)}" data-ao-learn-card="${esc(item.id)}"${assetId?` data-ao-asset-id="${esc(assetId)}"`:""}>
       ${icon}<span class="type">${esc(typeLabel(item,state))}</span>
       <strong>${esc(pick(item.title,state))}</strong>
       <p>${esc(pick(item.description,state))}</p>
