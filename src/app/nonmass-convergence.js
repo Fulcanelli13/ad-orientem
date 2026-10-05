@@ -590,6 +590,24 @@ function patchConfession(win) {
       node.dataset.aoD5LegacyCounter = "hidden";
     }
   });
+  // Some donor builds render the N / 8 counter as a bare text node rather than
+  // a dedicated element. Remove only standalone counter text so the five-phase
+  // D5 navigation remains the sole visible progress model.
+  const flowCard = root.querySelector(".pbFlowCard");
+  if (flowCard) {
+    const scrub = function (node) {
+      Array.from(node.childNodes || []).forEach(function (child) {
+        if (child.nodeType === 3) {
+          if (/^\s*\d+\s*\/\s*\d+\s*$/.test(String(child.nodeValue || ""))) {
+            child.nodeValue = "";
+          }
+          return;
+        }
+        scrub(child);
+      });
+    };
+    scrub(flowCard);
+  }
   const existingRail = root.querySelector("[data-ao-d5-phase-rail]");
   if (existingRail) existingRail.remove();
   const anchor = root.querySelector(".pbHero") || root.querySelector(".lab-view-head,.pbTop");
