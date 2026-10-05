@@ -154,3 +154,9 @@ The modular convergence gate reached architectural closure, but real production 
 The stabilization lane fixes those defects without weakening the native reader's Proper-completeness contract and without restoring the retired v43.33 emergency runtime. Stale persisted Mass checkpoints that can no longer construct a reader are invalidated cleanly instead of throwing an uncaught resume error.
 
 `FINAL_APP_READY` is suspended while `FIELD_RUNTIME_STABILIZATION` remains open. Closure requires the real-data Oct 4–9 acceptance path to resolve READY Propers into complete R17 reader slots on the production tree, plus the normal application regression suite.
+
+### Field stabilization closure
+
+The required merged-main evidence has now passed. App convergence run `37276882767` on production head `2d4907e31fddd8424bafcb87dfdc81973817cb79` passed the complete phone journey and `tests/field-current-week-e2e.mjs` for 4–9 October 2026. Every date resolved a READY Proper, runtime recovery supplied missing Secret/Postcommunion source sections where the historical host normalizer omitted them, and every reader reported `readerReady: true` with an empty missing-slot list.
+
+`FIELD_RUNTIME_STABILIZATION` is therefore closed and the application gate returns to **FINAL_APP_READY**. The source-transport compatibility layer, PRAY DOM-anchor repair, Proper runtime recovery and stale-checkpoint fail-closed behavior remain permanent regression-locked production code.
