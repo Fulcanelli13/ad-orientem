@@ -89,8 +89,10 @@ try{
     return s?.massPostureProfile==="TRADITIONAL_WALSH"&&s?.massGestureProfile==="TRADITIONAL";
   },null,{timeout:5000});
 
-  const hapticsToggle=page.locator("#ao-settings-modular-root [data-setting-haptics='1']");
-  if(await hapticsToggle.count())await hapticsToggle.click();
+  const hapticsBefore=await page.evaluate(()=>globalThis.AO_HAPTICS_V4319?.isEnabled?.()??null);
+  assert.notEqual(hapticsBefore,null,"canonical haptics owner is unavailable");
+  await page.locator("#ao-settings-modular-root [data-setting-haptics]").click();
+  await page.waitForFunction(expected=>globalThis.AO_HAPTICS_V4319?.isEnabled?.()===expected,!hapticsBefore,{timeout:5000});
 
   await page.evaluate(()=>{
     const appStore=globalThis.AO_RUNTIME_V8?.store;
@@ -120,6 +122,7 @@ try{
   assert.equal(persisted.saved?.textScale,"large");
   assert.equal(persisted.saved?.massPostureProfile,"TRADITIONAL_WALSH");
   assert.equal(persisted.saved?.massGestureProfile,"TRADITIONAL");
+  assert.equal(persisted.haptics,hapticsBefore?"0":"1","haptics preference did not persist through canonical owner");
 
   await page.locator("#ao-settings-modular-root [data-settings-sources]").click();
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="about-sources",null,{timeout:5000});
