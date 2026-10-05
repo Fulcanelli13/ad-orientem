@@ -100,7 +100,7 @@ function patchAboutSettings(win){
   if(!wrap)return false;
   if(wrap.dataset.aoD6About==="1"&&wrap.querySelector(".aoD6Sources"))return false;
   const rendered=String(wrap.textContent||"");
-  const looksLikeAbout=/sources|provenance|about ad orientem|à propos d.?ad orientem|source/i.test(rendered);
+  const looksLikeAbout=/sources|provenance|about ad orientem|à propos d.?ad orientem|application version|version de l[’\']application|privacy|confidentialit[ée]|licen[cs]e|acknowledg|source/i.test(rendered);
   if(route!=="/settings/about-sources"&&win.__AO_D6_ABOUT_ROUTE_ACTIVE!==true&&!looksLikeAbout)return false;
   wrap.dataset.aoD6About="1";
   wrap.innerHTML="";
