@@ -24,22 +24,17 @@ assert.equal(resolveHostIconAssets({AO_R17_ICON_ASSETS:bridgedIcons}),bridgedIco
 assert.equal(resolveHostIconAssets({AO_ASSETS:bridgedIcons}),bridgedIcons,
   "global-object host icon bank stopped resolving");
 
-const legacyBridgeWin={AO_R17_ICON_ASSETS:null};
-let injectedBridgeSource="";
-const legacyBridgeDoc={
-  createElement:()=>({type:"",dataset:{},textContent:"",remove(){}}),
-  head:{
-    appendChild(node){
-      injectedBridgeSource=String(node.textContent??"");
-      legacyBridgeWin.AO_R17_ICON_ASSETS=bridgedIcons;
-      return node;
-    },
+const legacyBridgeWin={
+  AO_R17_ICON_ASSETS:null,
+  eval(source){
+    assert.match(String(source),/typeof AO_ASSETS/,"runtime bridge no longer reads the legacy AO_ASSETS binding");
+    return bridgedIcons;
   },
 };
-legacyBridgeWin.document=legacyBridgeDoc;
-assert.equal(bridgeLegacyHostIconAssets(legacyBridgeWin,legacyBridgeDoc),bridgedIcons,
-  "runtime classic-script bridge did not publish the legacy lexical icon bank");
-assert.match(injectedBridgeSource,/typeof AO_ASSETS/,"runtime bridge no longer reads the legacy AO_ASSETS binding");
+assert.equal(bridgeLegacyHostIconAssets(legacyBridgeWin),bridgedIcons,
+  "global-page bridge did not recover the legacy lexical icon bank");
+assert.equal(legacyBridgeWin.AO_R17_ICON_ASSETS,bridgedIcons,
+  "recovered host icon bank was not published for R17 reuse");
 assert.equal(resolveHostIconAssets({}),null,
   "icon resolver invented a host bank when no bridge/global bank exists");
 
