@@ -20,10 +20,10 @@ assert.equal(pickActiveCue({
 assert.equal(pickActiveCue({
   scrollTop:30,clientHeight:100,scrollHeight:240,
   items:[
-    {cueId:"AO.SM.C0100",top:40,bottom:60},
-    {cueId:"AO.SM.C0101",top:65,bottom:85},
-    {cueId:"AO.SM.C0102",top:90,bottom:110},
+    {cueId:"AO.SM.C0100",top:60,bottom:71},
+    {cueId:"AO.SM.C0101",top:72,bottom:90},
+    {cueId:"AO.SM.C0102",top:100,bottom:120},
   ],
-}),"AO.SM.C0101","default LIVE focus point no longer sits in the approved ~39% reading zone");
+}),"AO.SM.C0100","default LIVE focus point no longer sits in the approved ~39% reading zone");
 
 console.log("reader cue focus: PASS — top/bottom ownership, zero-lag geometry and 39% focus zone.");
