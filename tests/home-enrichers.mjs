@@ -45,6 +45,11 @@ const win={
       return [];
     },
   },
+  document:{
+    getElementById(id){
+      return ["ao-rich-angelus","ao-rich-rosary","ao-refined-calendar-upcoming"].includes(id)?{id}:null;
+    },
+  },
 };
 
 for(const assetId of Object.values(HOME_ENRICHER_ICON_ASSET_IDS)){
@@ -61,13 +66,17 @@ assert.equal(model.comingUp.rows[2].id,"christ-king");
 assert.equal(model.dailyCatechism.badge,"2/10 completed");
 assert.equal(model.dailyCatechism.meta,"1 due for review");
 
-const html=renderHomeEnrichersToString(model,state);
+const html=renderHomeEnrichersToString(model,state,win);
 assert.match(html,new RegExp(`data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}"`));
 assert.match(html,/data-home-cu-route="pray\.angelus_regina"/,"future Angelus item should route through the canonical prayer module");
 assert.match(html,/data-home-cu-static="rosary"/);
 assert.match(html,/data-home-cu-route="learn\.liturgical_year"/);
 assert.match(html,/data-home-daily-catechism/);
 assert.match(html,/data-ao-asset-id="ao-rich-rosary"/);
+assert.match(html,/<use href="#ao-rich-angelus"><\/use>/);
+assert.match(html,/<use href="#ao-rich-rosary"><\/use>/);
+assert.match(html,/<use href="#ao-refined-calendar-upcoming"><\/use>/);
+assert.doesNotMatch(html,/[✢✧◫]/,"embedded canonical Home icons regressed to Unicode placeholders");
 assert.match(html,/data-ao-asset-id="ao-ui-next"/);
 assert.doesNotMatch(html,/\\$\\{esc\\(url\\)\\}/,"canonical UI asset URL interpolation leaked into rendered markup");
 assert.match(html,/aoComingUpV4323[^{]*aoDailyCateHome[^{]*\{display:none!important\}/,"retired donor Home cards lost suppression");
