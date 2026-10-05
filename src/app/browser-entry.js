@@ -78,21 +78,6 @@ function installVisibleRibbonOwner(win, controller, state) {
     }
   }
 
-  function assertReleaseAuthority(){
-    if(!doc.documentElement?.dataset)return;
-    if(doc.documentElement.dataset.aoRelease!==NON_MASS_DONOR_CONTRACT.release){
-      doc.documentElement.dataset.aoRelease=NON_MASS_DONOR_CONTRACT.release;
-    }
-    doc.documentElement.dataset.aoReleaseAuthority="AO_APP_SHELL_V1";
-  }
-
-  function watchReleaseAuthority(){
-    assertReleaseAuthority();
-    if(releaseObserver||typeof win?.MutationObserver!=="function"||!doc.documentElement)return;
-    releaseObserver=new win.MutationObserver(()=>assertReleaseAuthority());
-    releaseObserver.observe(doc.documentElement,{attributes:true,attributeFilter:["data-ao-release"]});
-    cleanups.push(()=>{try{releaseObserver?.disconnect?.();}catch{} releaseObserver=null;});
-  }
 
   function paintActive() {
     if (!nav?.querySelectorAll) return;
@@ -177,7 +162,6 @@ function installVisibleRibbonOwner(win, controller, state) {
     if (event.target?.closest?.("[data-app-home]")) controller.setActive?.("home");
   }
 
-  watchReleaseAuthority();
   adopt();
 
   const unsubscribe = controller.subscribe?.(() => {
