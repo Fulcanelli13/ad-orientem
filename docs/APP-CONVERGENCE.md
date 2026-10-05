@@ -154,3 +154,12 @@ The modular convergence gate reached architectural closure, but real production 
 The stabilization lane fixes those defects without weakening the native reader's Proper-completeness contract and without restoring the retired v43.33 emergency runtime. Stale persisted Mass checkpoints that can no longer construct a reader are invalidated cleanly instead of throwing an uncaught resume error.
 
 `FINAL_APP_READY` is suspended while `FIELD_RUNTIME_STABILIZATION` remains open. Closure requires the real-data Oct 4–9 acceptance path to resolve READY Propers into complete R17 reader slots on the production tree, plus the normal application regression suite.
+
+
+## Product parity recovery — 5 October 2026
+
+The field-runtime hold is closed: post-merge main passes the full phone suite, cross-domain journey and the real-data 4–9 October Proper-to-R17 acceptance.
+
+The next release hold is presentation parity. The existing visual-acceptance workflow captures the six production surfaces and asserts structural conditions, but it does not compare them against approved Ad Orientem reference presentations. Architectural convergence therefore cannot by itself establish product parity.
+
+The product-parity phase keeps the modular owners and certified R17 runtime. It restores approved presentation quality surface by surface, using locked/reference states rather than redesigning from scratch. Any functional defect discovered during that work is tracked separately; presentation recovery must not reopen certified Mass liturgical architecture merely to match appearance.
