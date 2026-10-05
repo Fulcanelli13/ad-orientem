@@ -108,8 +108,8 @@ assert.equal(projected.previousCard(projected.cards[47].sectionId),projected.car
 
 const simple={...sourceModel,presentationMode:"SIMPLE"};
 assert.equal(projectSourceFirst48Presentation(simple),simple,"non-LIVE presentation was decompressed");
-const low={...sourceModel,corpusFamily:"LOW"};
-assert.equal(projectSourceFirst48Presentation(low),low,"Low Mass was incorrectly given the Sung 48-step presentation");
+const lowModeModel={...sourceModel,corpusFamily:"LOW"};
+assert.equal(projectSourceFirst48Presentation(lowModeModel),lowModeModel,"Low Mass was incorrectly given the Sung 48-step presentation");
 
 console.log("PASS source-first LIVE product parity: 39 source steps project to 48 visible steps without historical-ID claims.");
 
