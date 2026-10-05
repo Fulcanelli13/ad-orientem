@@ -21,7 +21,7 @@ Legacy/current ownership during extraction:
 | Home | `AO_NAV_V362.home()` | `src/app` + `src/home` |
 | Mass | domain entry only | current `src/mass` R17 production stack |
 | Pray | `AO_PRAY_APP_V1` + modularized locked v43.59.30 `AO_PRAY_V435930` presentation | `src/pray` |
-| Learn | domain shell | future `src/learn` |
+| Learn | `AO_LEARN_APP_V1` | `src/learn` |
 | Calendar | `today.calendar` | `src/calendar` |
 | Settings | `AO_SETTINGS_V4359` | future `src/settings` |
 
@@ -100,9 +100,19 @@ The locked v43.59.30 PRAY contract is now extracted into modular source rather t
 
 Static regression locks verify the 48-record corpus and extracted presentation assets. Actual-index phone acceptance proves Home → PRAY → Home using the final v43.59.30 surface, verifies the obsolete `#aoPrayerBookRoot` is not open underneath it, and leaves the certified R17 Mass subsystem unchanged.
 
+## Phase 8: modular Learn extraction
+
+The locked v43.59.30 Learn hub is now extracted into `src/learn` and owned by `AO_LEARN_APP_V1`. The recovered donor contract is intentionally small: Daily Catechism; Understand the Mass; Traditional Catechism; Today’s Gospel; and Saint of the Day, grouped under Daily formation, Courses & study, and Today in context with the donor’s English/French copy and featured-card hierarchy.
+
+The old v37 domain shell is no longer a production fallback for Learn. `src/app/host-adapter.js` routes Learn directly to `AO_LEARN_APP_V1` and fails closed if that owner is unavailable. The modular hub launches the existing canonical child modules without the historical `{surface:"domain",domain:"learn"}` return context, so closing a child returns to the modular hub instead of reviving `AO_V37_SHELL`. The v37 four-domain dock and its utility Sources link are compatibility navigation and are not copied into Learn; Sources remains under Settings/About and the six-destination ribbon remains owned by `AO_APP_SHELL_V1`.
+
+Hard Home and Settings transitions explicitly close modular Learn, preventing hidden donor or modular Learn surfaces from remaining active underneath the destination. The Learn root carries stable DOM ownership markers and keeps the permanent app ribbon reachable. Actual-index phone acceptance covers Home → Learn → Home plus Learn → Pray, Calendar and Settings, checks touch geometry and focus/aria safety, rejects visible v37 Learn ownership, and verifies that no Mass reader/runtime starts during the journey.
+
+This certifies `NON_MASS_DONOR_EXTRACTION.progress.learn` only. The overall blocker remains open because Home enrichers and Settings extraction remain unfinished.
+
 ## Next promotion step
 
-Continue donor retirement without replacing the production host wholesale. Calendar and PRAY presentation are now modular and phone-certified. The remaining non-Mass extraction order is Home/Coming Up presentation, Learn, then Settings. Each extraction replaces one donor owner only after parity tests pass and must not create a second visible surface for the same state. Do not copy any historical Mass renderer back into production.
+Continue donor retirement without replacing the production host wholesale. Calendar, PRAY and Learn presentation are now modular and phone-certified. The remaining non-Mass extraction work is Home/Coming Up presentation and Settings. Each extraction replaces one donor owner only after parity tests pass and must not create a second visible surface for the same state. Do not copy any historical Mass renderer back into production.
 
 Before calling app convergence complete:
 
@@ -115,4 +125,4 @@ Before calling app convergence complete:
 
 ## Regression gates
 
-The app-level gate must exercise cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings on real phone/touch geometry. The existing Mass convergence and phone suites remain mandatory and independent.
+The app-level gate must exercise cold launch → Home → Calendar → Mass selection → native LIVE → leave/resume → PRAY → Home → Settings, plus the modular Learn route Home → Learn → Home and Learn → PRAY/Calendar/Settings, on real phone/touch geometry. The existing Mass convergence and phone suites remain mandatory and independent.

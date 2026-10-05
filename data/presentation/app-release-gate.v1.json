@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "status": "CONVERGENCE_IN_PROGRESS",
   "releaseRule": "The application may be marked FINAL_APP_READY only when the Mass subsystem remains certified, all app-level blockers are closed, the modular shell owns visible six-destination navigation, and the required cross-domain phone journey passes against actual index.html.",
   "massSubsystem": {
@@ -18,7 +18,7 @@
     "calendar",
     "settings"
   ],
-  "requiredPhoneJourney": "cold launch -> Home -> Calendar -> Mass selection -> native LIVE -> leave/resume -> PRAY -> Home -> Settings",
+  "requiredPhoneJourney": "cold launch -> Home -> Calendar -> Mass selection -> native LIVE -> leave/resume -> PRAY -> Home -> Learn -> Home -> Learn -> PRAY/Calendar/Settings",
   "findings": [
     {
       "id": "MASS_SUBSYSTEM_CERTIFIED",
@@ -134,14 +134,18 @@
         "src/pray/presentation-coherence.js",
         "tests/pray-presentation.mjs",
         "src/home/presentation.js",
-        "tests/home-presentation.mjs"
+        "tests/home-presentation.mjs",
+        "src/learn/browser-entry.js",
+        "src/learn/presentation.js",
+        "tests/learn-owner.mjs",
+        "tests/learn-owner-e2e.mjs"
       ],
-      "detail": "Calendar and PRAY presentation ownership are extracted and actual-index phone-certified. PRAY runs the locked v43.59.30 48-prayer corpus and final coherence contract from src/pray. Home now has a modular base presentation owner for the liturgical day, Mass summary, Gospel, Around the Mass, language/date/formulary state and resume status; legacy Home enrichers such as Coming Up and Daily Catechism still require extraction. Learn and Settings presentation extraction also remain open.",
+      "detail": "Calendar, PRAY and Learn presentation ownership are extracted and actual-index phone-certified. PRAY runs the locked v43.59.30 48-prayer corpus and final coherence contract from src/pray. Learn now runs through AO_LEARN_APP_V1 with the locked v43.59.30 formation hub (Daily Catechism, Understand the Mass, Traditional Catechism, Today’s Gospel, Saint of the Day); the historical V37 Learn domain is retired from normal production navigation. Home has a modular base presentation owner for the liturgical day, Mass summary, Gospel, Around the Mass, language/date/formulary state and resume status; legacy Home enrichers such as Coming Up and Daily Catechism still require extraction. Settings presentation extraction also remains open.",
       "progress": {
         "calendar": "MODULAR_PHONE_CERTIFIED",
         "home": "MODULAR_BASE_PRESENTATION_PHONE_CERTIFIED__ENRICHERS_PENDING",
         "pray": "MODULAR_PHONE_CERTIFIED",
-        "learn": "PENDING",
+        "learn": "MODULAR_PHONE_CERTIFIED",
         "settings": "PENDING"
       }
     },
@@ -171,7 +175,8 @@
       "tests/pray-owner.mjs",
       "tests/pray-presentation.mjs",
       "tests/home-presentation.mjs",
-      "tests/nonmass-d3-d6-convergence.mjs"
+      "tests/nonmass-d3-d6-convergence.mjs",
+      "tests/learn-owner.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
@@ -179,7 +184,8 @@
       "tests/app-shell-nuptial-e2e.mjs",
       "tests/app-shell-easter-vigil-e2e.mjs",
       "tests/app-shell-journey-e2e.mjs",
-      "tests/nonmass-d3-d6-e2e.mjs"
+      "tests/nonmass-d3-d6-e2e.mjs",
+      "tests/learn-owner-e2e.mjs"
     ]
   }
 }
