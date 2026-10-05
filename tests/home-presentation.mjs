@@ -65,20 +65,17 @@ assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
 
 
-const settings=renderHomeToString({
+const retiredSettings=renderHomeToString({
   ...base,
   homeSheet:"settings",
-  settings:{
-    massForm:"sung",followMode:"vox",textMode:"oriented",participationMode:"quiet",
-    textScale:"normal",reducedMotion:false,
-  },
+  settings:{massForm:"sung",followMode:"vox",textMode:"oriented",participationMode:"quiet",textScale:"normal",reducedMotion:false},
 },{AO_DISPLAY_DATE:()=> "07/10/2026"});
-assert.match(settings,/data-ao-home-settings="modular"/);
-assert.match(settings,/data-setting-form="sung"/);
-assert.match(settings,/data-setting-follow="vox"/);
-assert.match(settings,/data-setting-scale="normal"/);
-assert.match(settings,/Bilingual content audit/);
-assert.doesNotMatch(settings,/<h2>More<\/h2>/,"Settings route regressed to the generic More sheet");
+assert.doesNotMatch(retiredSettings,/data-ao-home-settings=/,"Home still renders a second Settings surface");
+assert.doesNotMatch(retiredSettings,/data-setting-form=/,"Home still owns Settings controls after extraction");
+
+const more=renderHomeToString({...base,homeSheet:"more"},{AO_DISPLAY_DATE:()=> "07/10/2026"});
+assert.match(more,/data-ao-settings-open/,"Home More launcher does not route to modular Settings");
+assert.doesNotMatch(more,/data-home-open-settings/,"historical Home Settings launcher survived extraction");
 
 const failed=renderHomeToString({
   ...base,
