@@ -11,7 +11,7 @@ assert.deepEqual(audit.missing,[]);
 const productionAudit=auditHostIconBank(R17_PRODUCTION_ICON_ASSETS);
 assert.equal(productionAudit.complete,true,"repository production icon bank is incomplete");
 assert.deepEqual(productionAudit.missing,[]);
-assert.match(R17_PRODUCTION_ICON_BANK_VERSION,/^4\\.8\\.0\\+/);
+assert.match(R17_PRODUCTION_ICON_BANK_VERSION,/^4\.8\.0\+/);
 
 const resolve=createHostIconResolver({assets:bank});
 assert.match(resolve("stand"),/^data:image/);
