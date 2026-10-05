@@ -101,17 +101,20 @@ try{
 
   await page.evaluate(async()=>{globalThis.AO_PRAY_V435930.close({silent:true});await globalThis.AO_APP_SHELL_V1?.navigate?.("settings")});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="settings",null,{timeout:10000});
-  await page.evaluate(()=>globalThis.AO_SETTINGS_V4359?.open?.("/settings/about-sources"));
-  await page.waitForSelector("#ao-settings-v4359 .aoD6Sources",{timeout:10000});
+  await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.homeSheet==="settings",null,{timeout:10000});
+  await page.evaluate(()=>globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.reconcile?.());
+  await page.waitForSelector(".homeSheet .aoD6SettingsSupplement .aoD6Sources",{timeout:10000});
   const about=await page.evaluate(()=>({
-    text:document.querySelector("#ao-settings-v4359 .aoSetWrap")?.innerText??"",
+    text:document.querySelector(".homeSheet .aoD6SettingsSupplement")?.innerText??"",
     version:globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.canonicalAppVersion?.()??null,
     settingsVersion:globalThis.AO_SETTINGS_V4359?.version??null,
+    coreSettingsPreserved:Boolean(document.querySelector(".homeSheet [data-setting-form]")),
   }));
   assert.match(about.text,/Liturgical books & 1962 basis|Livres liturgiques et base 1962/);
   assert.match(about.text,/Prayer & devotional methods|Prières et méthodes dévotionnelles/);
   assert.ok(about.version);
-  assert.notEqual(about.version,about.settingsVersion);
+  if(about.settingsVersion)assert.notEqual(about.version,about.settingsVersion);
+  assert.equal(about.coreSettingsPreserved,true,"D6 replaced the real Settings controls instead of augmenting them");
   assert.ok(about.text.includes(String(about.version)));
 
   assert.deepEqual(pageErrors,[],"D3-D6 assembled-app page errors: "+JSON.stringify(pageErrors));
