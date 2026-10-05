@@ -247,7 +247,7 @@ function iconGlyph(icon){
 }
 
 function rowMarkup(row){
-  const attrs=row.kind==="dynamic"?`data-home-cu-dynamic="${esc(row.id)}"`
+  const attrs=row.kind==="dynamic"?`data-home-cu-dynamic="${esc(row.id)}" data-home-cu-route="${esc(row.route??"")}"`
     :row.kind==="static"?`data-home-cu-static="${esc(row.id)}"`
     :row.kind==="all"?"data-home-cu-all"
     :`data-home-cu-route="${esc(row.route??"")}" data-home-cu-date="${esc(row.date??"")}"`;
