@@ -69,6 +69,28 @@ try{
   };
 
   assert.equal(await page.locator(".aoSaintArtCard .aoSaintArtPlaceholder").filter({hasText:/No reusable artwork|No artwork is assigned|not approved for production/i}).count(),0,"Home exposed a terminal saint-art placeholder instead of suppressing the unresolved card");
+  const homeParity=await page.evaluate(()=>({
+    celebrationTitles:document.querySelectorAll(".homeScreen .celebrationBlock > h1").length,
+    aroundMassActions:document.querySelectorAll(".homeScreen .aroundMass .phaseButton").length,
+    followMass:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
+    gospelCards:document.querySelectorAll(".homeScreen .gospelCard").length,
+    comingUp:document.querySelectorAll(".homeScreen .aoHomeComingUp").length,
+    dailyCatechism:document.querySelectorAll(".homeScreen .aoHomeDailyCatechism").length,
+    calendarDashboard:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
+    brand:document.querySelector(".homeScreen .brandName")?.textContent?.trim()??"",
+    celebration:document.querySelector(".homeScreen .celebrationBlock > h1")?.textContent?.trim()??"",
+    gospel:document.querySelector(".homeScreen .gospelCard p")?.textContent?.trim()??"",
+  }));
+  assert.equal(homeParity.celebrationTitles,1,"Home lost its single liturgical-day identity");
+  assert.equal(homeParity.aroundMassActions,3,"Home lost the Prepare / Follow Mass / Give thanks triad");
+  assert.equal(homeParity.followMass,1,"Home does not expose exactly one canonical Follow Mass action");
+  assert.equal(homeParity.gospelCards,1,"Home lost its single Gospel-in-context surface");
+  assert.equal(homeParity.comingUp,1,"Home lost modular Coming Up");
+  assert.equal(homeParity.dailyCatechism,1,"Home lost modular Daily Catechism");
+  assert.equal(homeParity.calendarDashboard,0,"Calendar dashboard leaked back onto Home");
+  assert.equal(homeParity.brand,"AD ORIENTEM");
+  assert.ok(homeParity.celebration.length>0,"Home liturgical-day identity is blank");
+  assert.ok(homeParity.gospel.length>0,"Home Gospel context is blank");
   await shot("01-home");
 
   await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
