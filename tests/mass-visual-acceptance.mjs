@@ -115,6 +115,10 @@ try{
     focusedParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
     homeButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")),
     parametersButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")),
+    homeControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.textContent?.trim()??"",
+    parametersControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.textContent?.trim()??"",
+    homeControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
+    parametersControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
     floatingClose:Boolean(document.querySelector("#ao-r17-native-reader-preview [aria-label='Close Mass reader']")),
     sectionJumpDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='section-jump']")?.disabled??null,
     sectionButtonCount:document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-section]").length,
@@ -135,6 +139,10 @@ try{
   assert.equal(opening.scholaDock,"true","active Schola did not move to the readable dedicated dock");
   assert.equal(opening.homeButton,true,"LIVE first ribbon lost Home control");
   assert.equal(opening.parametersButton,true,"LIVE first ribbon lost Settings/parameters control");
+  assert.equal(opening.homeControlText,"HOME","Home control rendered blank while its canonical asset is not externalized");
+  assert.equal(opening.parametersControlText,"PARAMS","Parameters control rendered blank while its canonical asset is not externalized");
+  assert.ok(opening.homeControlRect?.width>=44&&opening.homeControlRect?.height>=44,"Home control lost a usable phone touch target");
+  assert.ok(opening.parametersControlRect?.width>=44&&opening.parametersControlRect?.height>=44,"Parameters control lost a usable phone touch target");
   assert.equal(opening.floatingClose,false,"obsolete floating close button still overlays the LIVE ribbon");
   assert.equal(opening.sectionJumpDisabled,false,"source-first section jump is disabled");
   assert.equal(opening.sectionButtonCount,opening.totalCards,"section jump does not expose the complete current display model");
