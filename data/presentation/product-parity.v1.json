@@ -1,6 +1,6 @@
 {
   "schema": "ao-product-parity-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "releaseBlocker": "PRODUCT_PRESENTATION_PARITY",
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
@@ -256,5 +256,30 @@
         "R17 Mass convergence workflow 37305791833"
       ]
     }
+  },
+  "crossSurfacePresentationFx": {
+    "status": "RECOVERY_IN_PROGRESS",
+    "authority": "data/presentation/presentation-fx-parity.v1.json",
+    "mustPreserve": [
+      "cold-load branded boot cinematic",
+      "route-change cinematic between top-level surfaces",
+      "async loading treatment for delayed content",
+      "surface-entry motion",
+      "semantic vertical icon rails where they carry state or navigation",
+      "hero/art entry choreography",
+      "reduced-motion collapse"
+    ],
+    "recoveredInV1": [
+      "modular shell route transitions reuse AO_CINEMATIC_V4312",
+      "slow modular navigation reuses the approved loader card",
+      "modular surface roots reuse aoCinemaSurfaceIn",
+      "reduced-motion remains authoritative"
+    ],
+    "remaining": [
+      "vertical semantic rail parity audit and recovery",
+      "current modular hero/art choreography audit",
+      "modular art-loading selector coverage",
+      "phone certification of recovered route transition/loader/surface-entry behavior"
+    ]
   }
 }
