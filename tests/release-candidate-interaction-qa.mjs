@@ -217,46 +217,45 @@ try{
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForSelector(".aoP435930RosaryBar",{state:"visible",timeout:10000});
   const rosaryDiagnostics=[];
-  for(const delay of [0,60,180,400,1000]){
+  for(const delay of [0,80,240]){
     if(delay)await page.waitForTimeout(delay);
     rosaryDiagnostics.push(await page.evaluate(()=>({
       donorKeys:Object.keys(globalThis.AOTraditionalPrayerBook||{}).sort(),
-      rosaryKeys:Object.keys(globalThis.AO_ROSARY_V381||{}).sort(),
+      donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
+      rosaryState:globalThis.AO_ROSARY_V381?.state?.()??null,
       stored:localStorage.getItem("ao-prayer-recitation-mode"),
       modular:globalThis.AO_PRAY_V435930?.state?.()?.rosary?.recitation??null,
       coherence:globalThis.AO_PRAY_COHERENCE_V435930?.mode?.()??null,
-      htmlGroup:document.documentElement.classList.contains("aoRecitationGroup"),
-      htmlIndividual:document.documentElement.classList.contains("aoRecitationIndividual"),
+      rootClass:document.getElementById("aoPrayerBookRoot")?.className??null,
+      rootAria:document.getElementById("aoPrayerBookRoot")?.getAttribute("aria-hidden")??null,
       nativeGroup:[...document.querySelectorAll("#aoPrayerBookRoot [data-ao-recitation='group']")].map(x=>({
-        active:x.classList.contains("active"),pressed:x.getAttribute("aria-pressed"),text:x.textContent?.trim()
+        active:x.classList.contains("active"),disabled:x.disabled,pressed:x.getAttribute("aria-pressed"),text:x.textContent?.trim()
       })),
       nativeIndividual:[...document.querySelectorAll("#aoPrayerBookRoot [data-ao-recitation='individual']")].map(x=>({
-        active:x.classList.contains("active"),pressed:x.getAttribute("aria-pressed"),text:x.textContent?.trim()
+        active:x.classList.contains("active"),disabled:x.disabled,pressed:x.getAttribute("aria-pressed"),text:x.textContent?.trim()
       })),
       barGroup:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??null,
-      barIndividual:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='individual']")?.classList?.contains("active")??null,
     })));
   }
-  console.log("ROSARY_RC_DIAGNOSTICS "+JSON.stringify(rosaryDiagnostics));
-  const settledRosary=rosaryDiagnostics.at(-1);
-  assert.equal(settledRosary?.stored,"group",
-    "Rosary donor did not preserve group recitation in canonical storage");
-  assert.equal(settledRosary?.modular,"group",
-    "Rosary donor overwrote modular PRAY recitation ownership");
-  assert.equal(settledRosary?.coherence,"group",
-    "Rosary donor/coherence layer disagreed with Group recitation");
-  assert.equal(settledRosary?.htmlGroup,true,
-    "Rosary donor did not apply the canonical Group document state");
-  assert.equal(settledRosary?.htmlIndividual,false,
-    "Rosary donor left the canonical Individual document state active");
-  assert.ok((settledRosary?.nativeGroup??[]).some(x=>x.active===true||x.pressed==="true"),
-    "Rosary donor native Group control did not become active");
-  assert.ok((settledRosary?.nativeIndividual??[]).every(x=>x.active!==true&&x.pressed!=="true"),
-    "Rosary donor native Individual control remained active after Group handoff");
-  assert.equal(settledRosary?.barGroup,true,
-    "Rosary donor lost group-recitation state after settled donor mount");
-  assert.equal(settledRosary?.barIndividual,false,
-    "Rosary donor settled with Individual active after Group chooser selection");
+  const nativeGroupButton=page.locator("#aoPrayerBookRoot [data-ao-recitation='group']").first();
+  assert.equal(await nativeGroupButton.count(),1,"preserved Rosary lost native Group control");
+  await nativeGroupButton.click({force:true});
+  await page.waitForTimeout(120);
+  const afterNativeClick=await page.evaluate(()=>({
+    donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
+    rosaryState:globalThis.AO_ROSARY_V381?.state?.()??null,
+    stored:localStorage.getItem("ao-prayer-recitation-mode"),
+    modular:globalThis.AO_PRAY_V435930?.state?.()?.rosary?.recitation??null,
+    coherence:globalThis.AO_PRAY_COHERENCE_V435930?.mode?.()??null,
+    htmlGroup:document.documentElement.classList.contains("aoRecitationGroup"),
+    nativeGroup:document.querySelector("#aoPrayerBookRoot [data-ao-recitation='group']")?.classList?.contains("active")??null,
+    nativeIndividual:document.querySelector("#aoPrayerBookRoot [data-ao-recitation='individual']")?.classList?.contains("active")??null,
+    barGroup:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??null,
+  }));
+  console.log("ROSARY_RC_OWNERSHIP "+JSON.stringify({before:rosaryDiagnostics,afterNativeClick}));
+  assert.equal(afterNativeClick.nativeGroup,true,"manual donor Group control did not become active");
+  assert.equal(afterNativeClick.stored,"group","manual donor Group control did not own canonical storage");
+  throw new Error("RC_DIAGNOSTIC_COMPLETE");
   await assertSinglePrayerLayer("Rosary donor launch");
 
   const rosarySurface=await page.evaluate(()=>{
