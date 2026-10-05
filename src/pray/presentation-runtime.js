@@ -256,23 +256,25 @@ function syncRosaryPrefs(raw=S.rosary){
 function restoreRosaryLaunchPrefs(raw,attempt=0){
  const prefs=normalizeRosaryPrefs(raw),root=rosaryDonorRoot();
  const native=root?.querySelector?.(`[data-ao-recitation="${prefs.recitation}"]`);
- // aoPrayerBookRoot exists even while hidden. Do not hand ownership to that
- // stale surface: wait until the preserved Rosary is actually open and has
- // mounted its native recitation control.
- if(!root?.classList?.contains('open')||!native){
+ // The donor renders the recitation buttons before its bind() pass assigns the
+ // actual aoRSetMode closure to button.onclick. A present button is therefore
+ // not sufficient ownership evidence. Wait for the preserved Rosary to be
+ // open AND for the donor-owned onclick setter to exist.
+ if(!root?.classList?.contains('open')||!native||typeof native.onclick!=='function'){
   if(attempt<80)setTimeout(()=>restoreRosaryLaunchPrefs(prefs,attempt+1),25);
   return prefs
  }
  if(!native.classList.contains('active')){
-  try{native.click()}catch{}
+  try{native.onclick()}catch{}
  }
+ // aoRSetMode rerenders the donor, so resolve the post-render root/control
+ // again before reconciling the modular presentation state.
  S.rosary.form=prefs.form;S.rosary.mode=prefs.mode;S.rosary.recitation=prefs.recitation;save();
  syncRosaryPrefs(prefs);decorateRosary();
- // One post-open verification catches a donor render scheduled in the same
- // opening turn without keeping a permanent competing observer alive.
  if(attempt<81)setTimeout(()=>{
   const r=rosaryDonorRoot(),n=r?.querySelector?.(`[data-ao-recitation="${prefs.recitation}"]`);
-  if(r?.classList?.contains('open')&&n&&!n.classList.contains('active'))restoreRosaryLaunchPrefs(prefs,81)
+  const donorMode=window.AOTraditionalPrayerBook?.getState?.()?.recitationMode;
+  if(r?.classList?.contains('open')&&(donorMode!==prefs.recitation||!n?.classList?.contains('active')))restoreRosaryLaunchPrefs(prefs,81)
  },120);
  return prefs
 }
