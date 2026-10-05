@@ -122,4 +122,4 @@ assert.match(settings,/ao-ui-back/);
 assert.match(settings,/ao-ui-close/);
 assert.match(settings,/ao-ui-next/);
 
-console.log("PASS canonical non-Mass asset consumers: all current presentation consumers resolve to physical frozen assets or approved embedded canonical symbols.");
+console.log("PASS canonical non-Mass asset consumers: all current presentation consumers resolve to physical frozen assets or approved embedded canonical symbols; "+CONSUMED_DEVOTIONAL_MASK_ASSETS.length+" consumed devotional masks are physically externalized.");
