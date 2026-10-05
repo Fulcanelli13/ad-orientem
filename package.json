@@ -79,7 +79,8 @@
     "check:app-release": "node tests/app-release-gate.mjs",
     "test:app-live-guards": "node tests/app-live-session-guards.mjs",
     "test:home-owner": "node tests/home-owner.mjs",
-    "test:pray-owner": "node tests/pray-presentation.mjs && node tests/pray-owner.mjs"
+    "test:pray-owner": "node tests/pray-presentation.mjs && node tests/pray-owner.mjs",
+    "test:home-presentation": "node tests/home-presentation.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
