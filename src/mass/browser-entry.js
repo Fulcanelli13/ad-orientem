@@ -13,19 +13,18 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 export const VERSION = "final-browser-entry-v1";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
 
-export function bridgeLegacyHostIconAssets(win=globalThis, doc=win?.document){
+export function bridgeLegacyHostIconAssets(win=globalThis){
   if(win?.AO_R17_ICON_ASSETS) return win.AO_R17_ICON_ASSETS;
-  const parent=doc?.head ?? doc?.documentElement ?? doc?.body ?? null;
-  if(!doc?.createElement || !parent?.appendChild) return null;
   try {
-    const bridge=doc.createElement("script");
-    bridge.type="text/javascript";
-    bridge.dataset.aoR17RuntimeIconBridge="1";
-    bridge.textContent='globalThis.AO_R17_ICON_ASSETS=(typeof AO_ASSETS!=="undefined"&&AO_ASSETS)||globalThis.AO_R17_ICON_ASSETS||null;';
-    parent.appendChild(bridge);
-    bridge.remove?.();
+    const assets=typeof win?.eval==="function"
+      ? win.eval('typeof AO_ASSETS!=="undefined" ? AO_ASSETS : null')
+      : null;
+    if(assets){
+      win.AO_R17_ICON_ASSETS=assets;
+      return assets;
+    }
   } catch {}
-  return win?.AO_R17_ICON_ASSETS ?? null;
+  return null;
 }
 
 export function resolveHostIconAssets(win=globalThis){
