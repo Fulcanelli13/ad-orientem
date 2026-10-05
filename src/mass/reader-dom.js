@@ -273,6 +273,7 @@ export function createReaderDomAdapter({
   let current=null;
   let mode="LIVE";
   let bound=false;
+  let sectionItems=Array.isArray(sections)?[...sections]:[];
   let scholaCollapsed=false;
   let scholaHeight=52;
 
@@ -313,7 +314,7 @@ export function createReaderDomAdapter({
     const jump=root.querySelector('[data-role="section-jump"]');
     if(!menu||!jump)return;
     menu.replaceChildren?.();
-    const values=Array.isArray(sections)?sections.filter(x=>x?.id&&x?.label):[];
+    const values=sectionItems.filter(x=>x?.id&&x?.label);
     jump.disabled=values.length===0;
     const doc=menu.ownerDocument??globalThis.document;
     if(!doc?.createElement)return;
@@ -513,12 +514,18 @@ export function createReaderDomAdapter({
     return current;
   }
 
+  function setSections(nextSections=[]){
+    sectionItems=Array.isArray(nextSections)?[...nextSections]:[];
+    populateSections();
+    return Object.freeze([...sectionItems]);
+  }
+
   function destroy(){
-    prepared=null;current=null;bound=false;root.innerHTML="";
+    prepared=null;current=null;bound=false;sectionItems=[];root.innerHTML="";
   }
 
   return Object.freeze({
-    mount,renderMoment,setMode,destroy,
+    mount,renderMoment,setMode,setSections,destroy,
     getState:()=>current,
     getMode:()=>mode,
     canSwitchPresentationMode:()=>allowPresentationModeSwitch,
