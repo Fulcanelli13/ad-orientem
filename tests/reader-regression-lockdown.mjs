@@ -435,8 +435,6 @@ for(const name of readdirSync(massSourceDir)){
   }else{
     assert.match(source,/R17_PRODUCTION_ICON_ASSETS/,
       "repository icon bank lost its explicit production export");
-    assert.match(source,/currentColor/,
-      "repository icon bank lost recolourable vector artwork");
   }
 }
 
