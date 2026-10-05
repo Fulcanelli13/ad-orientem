@@ -22,6 +22,9 @@ for(const id of ["ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-search"]){
 }
 assert.doesNotMatch(runtime,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
+assert.match(runtime,/const trailing=view==='home'/,"PRAY root header no longer distinguishes its root exit state");
+assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit header spacer");
+assert.match(styles,/aoP435930HeadSpacer/,"PRAY single-exit header spacer lost visual geometry");
 
 const body={parentNode:null};
 const direct={parentNode:body};
