@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.17.0",
+  "version": "1.18.0",
   "status": "PRODUCT_PARITY_RECOVERY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability and approved product/presentation parity across the six production surfaces. Structural modular convergence alone is insufficient.",
   "massSubsystem": {
@@ -199,10 +199,24 @@
         "data/presentation/reader-release-gate.v1.json"
       ],
       "detail": "Runtime and modular ownership are certified, but visual acceptance still checks structure/error absence rather than parity with approved Ad Orientem presentation. Recovery is presentation-only: preserve the certified runtime while restoring approved hierarchy, sacred visual identity, interaction grammar and previously accepted surface composition."
+    },
+    {
+      "id": "PRESENTATION_FX_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
+      "evidence": [
+        "data/presentation/presentation-fx-parity.v1.json",
+        "src/app/presentation-fx.js",
+        "src/app/browser-entry.js",
+        "tests/presentation-fx.mjs",
+        "index.html#ao-v4312-cinematic-loading-js"
+      ],
+      "detail": "Prototype-era cinematic/loading and semantic presentation systems were not release-authoritative during modular convergence. The v43.12 cinematic owner still exists in index.html but was wired to legacy runtime actions rather than the modular six-surface shell. V1 restores modular route transitions/loaders/surface-entry motion, while vertical semantic rails, modular art-loading coverage and hero choreography remain explicit recovery work."
     }
   ],
   "openBlockers": [
-    "PRODUCT_PRESENTATION_PARITY"
+    "PRODUCT_PRESENTATION_PARITY",
+    "PRESENTATION_FX_PARITY"
   ],
   "regressionGates": {
     "static": [
@@ -218,7 +232,8 @@
       "tests/nonmass-d3-d6-convergence.mjs",
       "tests/learn-owner.mjs",
       "tests/settings-owner.mjs",
-      "tests/source-transport-compat.mjs"
+      "tests/source-transport-compat.mjs",
+      "tests/presentation-fx.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
@@ -232,5 +247,6 @@
       "tests/field-current-week-e2e.mjs"
     ]
   },
-  "productParityLedger": "data/presentation/product-parity.v1.json"
+  "productParityLedger": "data/presentation/product-parity.v1.json",
+  "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json"
 }
