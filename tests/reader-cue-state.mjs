@@ -28,7 +28,7 @@ assert.equal(conditionPasses("A && B",new Set(["A"])),false);
 assert.equal(conditionPasses("A && B",new Set(["A","B"])),true);
 
 const prepared={
-  session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",conditions:[]}},
+  session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",provenance:{conditions:[]}}},
   readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"},
 };
 const ctrl=createReaderCueStateController({registries,sungCorpus:sung,prepared});
@@ -106,6 +106,21 @@ state=ctrl.project("AO.SM.C0075");
 assert.equal(state.posture,null,"default sung posture activated without explicit profile condition");
 state=ctrl.project("AO.SM.C0075",{conditions:["DEFAULT_SUNG_PROFILE"]});
 assert.equal(state.posture.value,"SIT");
+
+const provenancePrepared={
+  session:{resolvedMass:{
+    form:"MISSA_CANTATA_INCENSE",
+    provenance:{conditions:["GLORIA_APPOINTED","CREDO_APPOINTED","AGNUS_DEI_PUBLIC","LAST_GOSPEL_PRESENT"]},
+  }},
+  readerPreferences:{mode:"LIVE",postureProfile:"TRADITIONAL_WALSH",gestureProfile:"TRADITIONAL"},
+};
+const provenanceCtrl=createReaderCueStateController({registries,sungCorpus:sung,prepared:provenancePrepared});
+state=provenanceCtrl.project("AO.SM.C0061");
+assert.equal(state.posture?.value,"STAND","canonical provenance condition did not preserve Gloria standing posture");
+state=provenanceCtrl.project("AO.SM.C0222");
+assert.equal(state.posture?.value,"STAND","canonical provenance condition did not preserve Agnus standing posture");
+state=provenanceCtrl.project("AO.SM.C0273");
+assert.equal(state.posture?.value,"STAND","canonical provenance condition did not preserve Last Gospel standing posture");
 state=ctrl.project("AO.SM.C0150",{conditions:["DEFAULT_SUNG_PROFILE","CANON_START","AO_DEFAULT_1962_SUNG"]});
 assert.equal(state.posture.value,"KNEEL");
 
