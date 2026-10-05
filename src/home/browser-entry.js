@@ -1,4 +1,6 @@
-const VERSION="modular-home-v1";
+import { HOME_PRESENTATION_VERSION, renderHome } from "./presentation.js";
+
+const VERSION="modular-home-v2";
 
 function runtime(win){return win?.AO_RUNTIME_V8??null;}
 function state(win){return runtime(win)?.store?.getState?.()??null;}
@@ -34,29 +36,89 @@ function resetCoreRoute(win){
   return true;
 }
 
+function rehydrateHomeEnhancers(win){
+  try{win?.AO_DAILY_CATECHISM?.ensureHome?.();}catch{}
+  try{win?.AO_EUCHARISTIC_V354?.ensureHome?.();}catch{}
+  try{win?.AO_COMING_UP_V4323?.render?.();}catch{}
+  try{win?.AO_V37_SHELL?.ensureHome?.();}catch{}
+}
+
+function root(win){return win?.document?.getElementById?.("app")??null;}
+
 export function createHomeOwner(win=globalThis){
+  let unsubscribe=null;
+  let retryTimer=null;
+
+  function markOwner(){
+    const screen=win?.document?.querySelector?.(".homeScreen")??null;
+    if(screen?.dataset){
+      screen.dataset.aoHomeOwner=VERSION;
+      screen.dataset.aoHomePresentationOwner=HOME_PRESENTATION_VERSION;
+    }
+    return screen;
+  }
+
+  function paint(next=state(win)){
+    if(next?.route!=="home")return false;
+    const appRoot=root(win);
+    if(!appRoot)return false;
+    const rendered=renderHome(appRoot,next,win);
+    if(!rendered)return false;
+    markOwner();
+    const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
+    queue(()=>rehydrateHomeEnhancers(win));
+    return true;
+  }
+
+  function attachPresentation(){
+    if(unsubscribe)return true;
+    const store=runtime(win)?.store;
+    if(typeof store?.getState!=="function"||typeof store?.subscribe!=="function"){
+      if(typeof win?.setTimeout==="function"&&!retryTimer){
+        retryTimer=win.setTimeout(()=>{retryTimer=null;attachPresentation();},80);
+      }
+      return false;
+    }
+    unsubscribe=store.subscribe(next=>{if(next?.route==="home")paint(next);});
+    paint(store.getState());
+    return true;
+  }
+
   function open(){
     closeTransientSurfaces(win);
     resetCoreRoute(win);
     try{win?.AO_SETTINGS_V4359?.restoreHome?.();}catch{}
     try{win?.AO_SETTINGS_V4358?.restoreHome?.();}catch{}
     try{win?.AO_SETTINGS_V4356?.restoreHome?.();}catch{}
-    const screen=win?.document?.querySelector?.(".homeScreen")??null;
-    if(screen?.dataset)screen.dataset.aoHomeOwner=VERSION;
+    attachPresentation();
+    paint(state(win));
+    markOwner();
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("home");}catch{}
     return true;
   }
+
   function status(){
     const screen=win?.document?.querySelector?.(".homeScreen")??null;
     return Object.freeze({
       version:VERSION,
       installed:true,
       visibleOwner:screen?.dataset?.aoHomeOwner??null,
+      presentationOwner:screen?.dataset?.aoHomePresentationOwner??null,
+      presentationAttached:Boolean(unsubscribe),
       route:state(win)?.route??null,
       donorHomeAvailable:typeof win?.AO_NAV_V362?.home==="function",
     });
   }
-  return Object.freeze({version:VERSION,open,status});
+
+  function dispose(){
+    try{unsubscribe?.();}catch{}
+    unsubscribe=null;
+    if(retryTimer&&typeof win?.clearTimeout==="function")win.clearTimeout(retryTimer);
+    retryTimer=null;
+  }
+
+  attachPresentation();
+  return Object.freeze({version:VERSION,open,paint,status,dispose});
 }
 
 export function installHomeBrowserOwner(win=globalThis){
