@@ -61,6 +61,11 @@ const liveReady=await prepareNativeReaderPreview({
 });
 assert.equal(liveReady.model.totalCards,39);
 assert.equal(liveReady.model.structureOwner,"SOURCE_FIRST_LIVE");
+assert.equal(liveReady.presentationModel.totalCards,48);
+assert.equal(liveReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
+assert.equal(liveReady.presentationModel.sourceModelTotalCards,39);
+assert.equal(liveReady.presentationModel.historicalV183IdentityClaim,false);
+assert.equal(liveReady.presentationModel.sourceAuthorityModel,liveReady.model);
 assert.equal(liveReady.model.cards[13].sectionId,"AO.CANON.01");
 assert.equal(liveReady.model.cards[13].title,"Te igitur");
 assert.equal(liveReady.model.cards[18].sectionId,"AO.CANON.06");
@@ -226,6 +231,7 @@ assert.equal(ready.guide.registry.entries["AO.CARD.001"].moment,"Introit & Prepa
 assert.equal(ready.scholaState.supported,true);
 assert.equal(ready.scholaState.activateForCard(2).schola.cueId,"AO.SM.C0044");
 assert.equal(ready.model.totalCards,30);
+assert.equal(ready.presentationModel,ready.model,"non-LIVE native preview should not receive the 48-step Sung presentation");
 assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
 assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
 assert.equal(ready.cueState.supported,true);
