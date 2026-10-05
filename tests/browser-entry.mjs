@@ -9,9 +9,8 @@ import {
   readPersistedActiveMass,
   persistedMassIsResumable,
   resolveHostIconAssets,
-  resolveFrozenCssIconAssets,
-  R17_FROZEN_CSS_ICON_VARS,
 } from "../src/mass/browser-entry.js";
+import { auditHostIconBank, R17_FROZEN_ACTIVE_ICON_KEYS, R17_FROZEN_EXCLUDED_ICON_KEYS } from "../src/mass/reader-icons.js";
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
 assert.equal(mapLegacyFollowMode("read"), "MISSAL");
@@ -22,41 +21,17 @@ assert.equal(mapLegacyFollowMode(undefined), "LIVE");
 const bridgedIcons={stand:"data:image/svg+xml;base64,PHN2Zy8+"};
 assert.equal(resolveHostIconAssets({AO_R17_ICON_ASSETS:bridgedIcons}),bridgedIcons,
   "explicit modular icon bank stopped taking precedence");
-assert.equal(resolveHostIconAssets({}),null,
-  "icon resolver invented a host bank when no bridge/global bank exists");
 
-const cssValues=Object.fromEntries(
-  Object.values(R17_FROZEN_CSS_ICON_VARS).map((name,index)=>[
-    name,
-    `url("data:image/svg+xml;base64,${Buffer.from("<svg data-i='"+index+"'/>").toString("base64")}")`,
-  ])
-);
-const cssWin={
-  document:{documentElement:{}},
-  getComputedStyle:()=>({getPropertyValue:name=>cssValues[name]??""}),
-};
-const cssBank=resolveFrozenCssIconAssets(cssWin,cssWin.document);
-assert.ok(cssBank,"frozen CSS bank did not resolve");
-assert.deepEqual(Object.keys(cssBank).sort(),Object.keys(R17_FROZEN_CSS_ICON_VARS).sort(),
-  "frozen CSS bank lost an R17 semantic key");
-assert.match(cssBank.stand,/^data:image\/svg\+xml;base64,/);
-assert.equal(resolveHostIconAssets(cssWin).priest_centre,cssBank.priest_centre,
-  "production resolver did not fall back to the frozen CSS asset bank");
-
-const scopedCssWin={
-  document:{
-    documentElement:{},
-    styleSheets:[{
-      cssRules:Object.entries(cssValues).map(([name,value])=>({
-        style:{getPropertyValue:key=>key===name?value:""},
-      })),
-    }],
-  },
-  getComputedStyle:()=>({getPropertyValue:()=>""}),
-};
-const scopedCssBank=resolveFrozenCssIconAssets(scopedCssWin,scopedCssWin.document);
-assert.deepEqual(Object.keys(scopedCssBank??{}).sort(),Object.keys(R17_FROZEN_CSS_ICON_VARS).sort(),
-  "selector-scoped frozen CSS declarations were not recovered from stylesheet rules");
+const productionIcons=resolveHostIconAssets({});
+const productionAudit=auditHostIconBank(productionIcons);
+assert.equal(productionAudit.complete,true,"externalized frozen active icon bank is incomplete");
+assert.deepEqual(productionAudit.missing,[]);
+assert.deepEqual(productionAudit.required,[...R17_FROZEN_ACTIVE_ICON_KEYS]);
+assert.deepEqual(productionAudit.excluded,[...R17_FROZEN_EXCLUDED_ICON_KEYS]);
+assert.match(productionIcons.stand,/assets\/active\/live-posture\/ao-live-stand\.svg$/);
+assert.match(productionIcons.priest_gospel,/assets\/active\/live-priest-position\/ao-live-priest-gospel-side\.png$/);
+for(const key of R17_FROZEN_EXCLUDED_ICON_KEYS)assert.equal(productionIcons[key],undefined,
+  key+" was reintroduced despite FROZEN_EXCLUDED status");
 
 const rites = mapInsertedRites([
   "asperges",
@@ -140,10 +115,7 @@ assert.equal(readPersistedActiveMass({getItem:()=>"{bad"}),null);
 
 console.log("browser-entry host mapping: PASS");
 
-const iconKeys=[
-  "stand","sit","kneel","genuflect","bow","cross","gospel_crosses","breast_strike","head_bow","profound_bow","hands_joined",
-  "response","schola","priest_audible","priest_silent","priest_foot","priest_steps","priest_centre","priest_epistle","priest_gospel","priest_sedilia","priest_rail","priest_people",
-];
+const iconKeys=[...R17_FROZEN_ACTIVE_ICON_KEYS];
 const iconAssets=Object.fromEntries(iconKeys.map(key=>[key,"data:image/svg+xml;base64,PHN2Zy8+"]));
 
 const nativeChoice=await mountR17Preview({
