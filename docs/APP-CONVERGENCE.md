@@ -142,3 +142,15 @@ Before calling app convergence complete:
 ## Regression gates
 
 The app-level gate exercises cold launch → Home → Calendar → Mass selection → native LIVE → Settings overlay/restore → leave/resume → PRAY → Home → Settings, plus the modular Learn route Home → Learn → Home and Learn → PRAY/Calendar/Settings, on real phone/touch geometry. It also verifies modular Home Coming Up/Daily Catechism ownership and rejects resurfaced donor Home cards. Settings acceptance additionally proves direct modular ownership, Sources/About/version parity, preference persistence, structural lockout during LIVE, focus safety and zero historical Settings fallback. The existing Mass convergence and phone suites remain mandatory and independent.
+
+
+## Field stabilization hold — 5 October 2026
+
+The modular convergence gate reached architectural closure, but real production use on 5 October exposed two P0 runtime regressions that the fixture-heavy acceptance suite did not detect:
+
+- PRAY recitation decoration could call `insertBefore` with a nested descendant rather than a direct child of the prayer body.
+- Proper resolution still depended on broken embedded French source URLs and probed Divinum Officium Mass Commons under `web/www/missa/.../Commune`, while the pinned Commons live under `web/www/horas/.../Commune`. The resulting incomplete Proper could block native R17 entry for missing Secret, Postcommunion, or lesson slots.
+
+The stabilization lane fixes those defects without weakening the native reader's Proper-completeness contract and without restoring the retired v43.33 emergency runtime. Stale persisted Mass checkpoints that can no longer construct a reader are invalidated cleanly instead of throwing an uncaught resume error.
+
+`FINAL_APP_READY` is suspended while `FIELD_RUNTIME_STABILIZATION` remains open. Closure requires the real-data Oct 4–9 acceptance path to resolve READY Propers into complete R17 reader slots on the production tree, plus the normal application regression suite.
