@@ -251,8 +251,8 @@ html[data-reduced-motion="true"] #aoPrayerBookRoot .aoRosaryRitualCenter.r24-has
  #aoPrayerBookRoot .lab-view-head>:has(h1){order:2;flex:1 1 calc(100% - 56px)!important;min-width:0!important}
  #aoPrayerBookRoot .lab-view-head>:has(.r29-head-recitation){order:10;flex:1 1 100%!important;min-width:0!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:flex-end!important;gap:7px!important}
  #aoPrayerBookRoot .lab-view-head .lab-icon{flex:0 0 44px!important}
- #aoPrayerBookRoot .lab-view-head .r29-head-recitation{flex:0 1 auto!important;min-width:148px!important;max-width:190px!important;margin-left:0!important}
- #aoPrayerBookRoot .lab-view-head .r29-head-recitation button{min-width:72px!important;padding:0 10px!important}
+ #aoPrayerBookRoot .lab-view-head .r29-head-recitation{flex:0 0 176px!important;width:176px!important;min-width:176px!important;max-width:176px!important;margin-left:0!important}
+ #aoPrayerBookRoot .lab-view-head .r29-head-recitation button{min-width:86px!important;padding:0 8px!important;overflow:visible!important;text-overflow:clip!important}
  #aoPrayerBookRoot .lab-view-head .r23-overview-open{flex:0 0 auto!important;min-width:76px!important;width:auto!important;height:44px!important;padding:0 10px!important;border-radius:999px!important}
  #aoPrayerBookRoot .lab-view-head h1{font-size:clamp(1.45rem,7vw,2rem)!important;line-height:1.03!important;margin:2px 0 0!important}
 }
