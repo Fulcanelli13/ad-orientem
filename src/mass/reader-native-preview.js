@@ -1487,6 +1487,11 @@ export async function mountNativeReaderPreview({
     allowPresentationModeSwitch:true,
     sections:sectionItems(),
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
+    onScholaAdvance:()=>{
+      const value=ready.scholaState.next();
+      queue();
+      return value;
+    },
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
       return showCard(visibleCardAllowed(card)?card:null);
