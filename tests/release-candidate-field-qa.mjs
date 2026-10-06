@@ -264,8 +264,8 @@ try{
     await openSurface(page,"home",viewport.width);
 
     assert.deepEqual(pageErrors,[],viewport.width+"px assembled app emitted page errors");
-    assert.deepEqual(consoleErrors,[],viewport.width+"px assembled app emitted console errors");
     assert.deepEqual(failedResources,[],viewport.width+"px assembled app requested missing production resources");
+    assert.deepEqual(consoleErrors,[],viewport.width+"px assembled app emitted console errors");
 
     await context.close();
   }
