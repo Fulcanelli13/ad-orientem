@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.21.0",
+  "version": "1.22.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -144,9 +144,15 @@
         "tests/settings-owner.mjs",
         "tests/settings-e2e.mjs",
         "src/home/enrichers.js",
-        "tests/home-enrichers.mjs"
+        "tests/home-enrichers.mjs",
+        "src/pray/novena-corpus.js",
+        "src/pray/novena-runtime.js",
+        "src/pray/traditional-pray-runtime.js",
+        "tests/pray-traditional-life.mjs",
+        "src/learn/traditional-life.js",
+        "tests/learn-traditional-life.mjs"
       ],
-      "detail": "Calendar, Home, PRAY, Learn and Settings presentation ownership are extracted and actual-index phone-certified. Home now owns its base presentation plus Coming Up and Daily Catechism through src/home, continuously retires asynchronously reinserted donor Home cards, and uses canonical V4/V4.1.1 asset identities. Settings runs through AO_SETTINGS_APP_V1 with Sources/About and active-R17 overlay safety. Normal production no longer depends on historical Settings fallbacks or donor Home enricher presentation.",
+      "detail": "Calendar, Home, PRAY, Learn and Settings presentation ownership are extracted and actual-index phone-certified. PRAY additionally owns exact Guided Novenas N3 and the recovered Morning/Evening, Hymns and Holy Name modules; Learn owns the six recovered Traditional Catholic Life guides with phone-certified child journeys. Historical PrayerBook/Traditions monoliths are not production owners.",
       "progress": {
         "calendar": "MODULAR_PHONE_CERTIFIED",
         "home": "MODULAR_PHONE_CERTIFIED",
@@ -237,17 +243,19 @@
       "status": "OPEN",
       "evidence": [
         "data/presentation/exact-donor-parity.v1.json",
-        "src/app/presentation-fx.js",
         "src/pray/presentation-runtime.js",
-        "src/pray/presentation-styles.js",
+        "src/pray/presentation-coherence.js",
+        "src/pray/novena-runtime.js",
+        "src/pray/traditional-pray-runtime.js",
+        "src/learn/traditional-life.js",
         "tests/app-visual-acceptance.mjs",
-        "Ad-Orientem-2.0-v43.59.30-PRAY-UNIFIED-READER-CLOSURE.html",
-        "Ad_Orientem_v3_4_6.html",
-        "Ad_Orientem_v3_4_8.html",
-        "Ad_Orientem_v3_4_14.html",
-        "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
+        "tests/learn-owner-e2e.mjs",
+        "PR #203 / #204 exact donor rails",
+        "PR #205 exact donor Rosary",
+        "PR #215 v3.4.10 focus",
+        "PR #220 / #221 Traditional Catholic Life extraction"
       ],
-      "detail": "The current modular app recovers presentation mechanisms but not the exact approved non-Mass donor experience. Generic six-surface transition labels and loaders were substituted for donor action/content-specific choreography; semantic rails and Rosary presentation were reconstructed approximately; and current visual tests compare against current implementation rather than the final donor head. Release readiness is therefore reopened until direct donor-to-current parity is certified."
+      "detail": "Exact donor feature recovery is now substantially complete: semantic rails, final Rosary presentation, v3.4.10 scroll focus, Guided Novenas N3 and the nine Traditional Catholic Life modules are recovered under modular owners. The sole remaining exact-donor blocker is direct final composition certification: donor/current side-by-side acceptance at phone geometry for the approved non-Mass head and representative module states."
     }
   ],
   "openBlockers": [
@@ -269,7 +277,9 @@
       "tests/settings-owner.mjs",
       "tests/source-transport-compat.mjs",
       "tests/reader-mode-switch.mjs",
-      "tests/presentation-fx.mjs"
+      "tests/presentation-fx.mjs",
+      "tests/pray-traditional-life.mjs",
+      "tests/learn-traditional-life.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
