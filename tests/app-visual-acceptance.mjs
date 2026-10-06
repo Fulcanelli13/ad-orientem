@@ -480,15 +480,20 @@ try{
   // Follow the preserved engine's actual opening sequence using only the visible
   // Next control. The donor presentation must attach at the engine's own first
   // mystery boundary; no duplicate step-count model is introduced here.
-  const firstMystery=await page.evaluate(()=>{
+  const rosaryBounds=await page.evaluate(()=>{
     const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[];
     return {current:Number(state?.step)||0,target:steps.findIndex(step=>step?.kind==="mystery"),total:steps.length};
   });
-  assert.ok(firstMystery.target>=firstMystery.current,"Preserved Rosary engine exposes no reachable mystery boundary");
-  assert.ok(firstMystery.target<firstMystery.total,"Preserved Rosary first mystery index is outside its step list");
-  for(let i=firstMystery.current;i<firstMystery.target;i++){
+  assert.ok(rosaryBounds.target>=rosaryBounds.current,"Preserved Rosary engine exposes no reachable mystery boundary");
+  assert.ok(rosaryBounds.target<rosaryBounds.total,"Preserved Rosary first mystery index is outside its step list");
+  for(let guard=0;guard<rosaryBounds.total;guard++){
+    const state=await page.evaluate(()=>{
+      const api=globalThis.AO_ROSARY_V381,s=api?.state?.(),steps=api?.steps?.()||[];
+      return {index:Number(s?.step)||0,kind:steps[s?.step]?.kind??null};
+    });
+    if(state.kind==="mystery")break;
     await page.locator("#aoPrayerBookRoot [data-lab-rosary-next]").click();
-    await page.waitForTimeout(35);
+    await page.waitForFunction(before=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step)!==before,state.index,{timeout:2000});
   }
   assert.equal(await page.evaluate(()=>{
     const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[];
