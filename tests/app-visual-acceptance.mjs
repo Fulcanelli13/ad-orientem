@@ -274,6 +274,8 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),0,"PRAY root exposes duplicate Back + Close exits");
   const prayHub=await page.evaluate(()=>{
     const sheet=document.querySelector("#aoPray435930 .aoP435930Sheet"),grid=document.querySelector("#aoPray435930 .aoP435930ModuleGrid");
+    const first=document.querySelector("#aoPray435930 .aoP435930ModuleCard"),title=first?.querySelector("b"),description=first?.querySelector(".aoP435930ModuleDescription"),icon=first?.querySelector(".aoP435930ModuleIcon");
+    const tr=title?.getBoundingClientRect?.(),dr=description?.getBoundingClientRect?.(),ir=icon?.getBoundingClientRect?.();
     return {
       owner:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
       cards:document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length,
@@ -281,6 +283,10 @@ try{
       sheetWidth:sheet?.getBoundingClientRect?.().width??0,
       gridColumns:grid?getComputedStyle(grid).gridTemplateColumns:"",
       overflow:(sheet?.scrollWidth??0)-(sheet?.clientWidth??0),
+      titleWidth:tr?.width??0,
+      descriptionWidth:dr?.width??0,
+      iconRight:ir?.right??0,
+      titleLeft:tr?.left??0,
     };
   });
   assert.equal(prayHub.owner,"modular-pray-v1");
@@ -289,6 +295,8 @@ try{
   assert.ok(prayHub.sheetWidth>=360&&prayHub.sheetWidth<=390,"PRAY phone shell is not bounded to the viewport");
   assert.ok(!/\s/.test(prayHub.gridColumns.trim()),"PRAY hub regressed to multiple module columns on phone");
   assert.ok(prayHub.overflow<=1,"PRAY hub has horizontal overflow");
+  assert.ok(prayHub.titleWidth>=220&&prayHub.descriptionWidth>=220,"PRAY module text collapsed into the icon column");
+  assert.ok(prayHub.titleLeft>=prayHub.iconRight+6,"PRAY module text overlaps its canonical icon column");
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero,null,{timeout:3000});
   const prayFx=await page.evaluate(()=>({
     hero:document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero??null,
