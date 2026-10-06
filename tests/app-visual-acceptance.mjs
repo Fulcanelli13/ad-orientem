@@ -333,8 +333,8 @@ try{
   assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");
   const angelusHeader=await page.evaluate(()=>({
     closeButtons:document.querySelectorAll("#aoPray435930 [data-p435930-close]").length,
-    closeSvgs:document.querySelectorAll("#aoPray435930 [data-p435930-close] svg[data-ao-asset-id='ao-ui-close']").length,
-    closePaths:document.querySelectorAll("#aoPray435930 [data-p435930-close] svg[data-ao-asset-id='ao-ui-close'] path").length,
+    closeSvgs:document.querySelectorAll("#aoPray435930 [data-p435930-close] svg[data-ao-inline-asset-id='ao-ui-close']").length,
+    closePaths:document.querySelectorAll("#aoPray435930 [data-p435930-close] svg[data-ao-inline-asset-id='ao-ui-close'] path").length,
   }));
   assert.deepEqual(angelusHeader,{closeButtons:1,closeSvgs:1,closePaths:1},"Angelus close control is duplicated or no longer a single inline canonical icon");
   await shot("03a-pray-angelus-rails");
@@ -504,16 +504,25 @@ try{
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
 
   // Prove the real Next button and the actual prayer column, not just selector presence.
-  let reachedOurFather=false;
-  for(let i=0;i<8&&!reachedOurFather;i+=1){
+  const ourFatherTarget=await page.evaluate(()=>{
+    const xs=globalThis.AO_ROSARY_V381?.steps?.()||[];
+    return xs.findIndex(step=>/pater|our father|lord.?s prayer/i.test(JSON.stringify(step)));
+  });
+  assert.ok(ourFatherTarget>=0,"Canonical Rosary steps expose no Our Father target");
+  let currentRosaryStep=await page.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+  for(let guard=0;currentRosaryStep<ourFatherTarget&&guard<32;guard+=1){
+    const before=currentRosaryStep;
     await page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
-    await page.waitForTimeout(60);
-    reachedOurFather=await page.evaluate(()=>/Our Father/i.test(document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']")?.innerText??""));
+    await page.waitForFunction(previous=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1)>previous,before,{timeout:2000});
+    currentRosaryStep=await page.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+    assert.equal(currentRosaryStep,before+1,"Visible Rosary Next skipped or failed to advance exactly one canonical step");
   }
-  assert.equal(reachedOurFather,true,"Visible Rosary Next control did not reach the Our Father through the preserved opening sequence");
+  assert.equal(currentRosaryStep,ourFatherTarget,"Visible Rosary Next did not reach the canonical Our Father step");
   const rosaryPrayerGeometry=await page.evaluate(()=>{
     const active=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']");
-    const card=active?.querySelector(".lab-prayer-sheet,.pbFlowCard"),rect=card?.getBoundingClientRect?.();
+    const candidates=[...(active?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])];
+    const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null;
+    const rect=card?.getBoundingClientRect?.();
     return {
       width:rect?.width??0,height:rect?.height??0,
       scrollWidth:card?.scrollWidth??0,clientWidth:card?.clientWidth??0,
@@ -730,15 +739,24 @@ try{
   if(await wideStandard.count())await wideStandard.click();
   await wide.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await wide.waitForSelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]",{state:"visible",timeout:5000});
-  let wideReachedOurFather=false;
-  for(let i=0;i<8&&!wideReachedOurFather;i+=1){
+  const wideOurFatherTarget=await wide.evaluate(()=>{
+    const xs=globalThis.AO_ROSARY_V381?.steps?.()||[];
+    return xs.findIndex(step=>/pater|our father|lord.?s prayer/i.test(JSON.stringify(step)));
+  });
+  assert.ok(wideOurFatherTarget>=0,"Wide canonical Rosary exposes no Our Father target");
+  let wideStep=await wide.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+  for(let guard=0;wideStep<wideOurFatherTarget&&guard<32;guard+=1){
+    const before=wideStep;
     await wide.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
-    await wide.waitForTimeout(60);
-    wideReachedOurFather=await wide.evaluate(()=>/Our Father/i.test(document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']")?.innerText??""));
+    await wide.waitForFunction(previous=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1)>previous,before,{timeout:2000});
+    wideStep=await wide.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+    assert.equal(wideStep,before+1,"Wide Rosary Next skipped or failed to advance exactly one canonical step");
   }
-  assert.equal(wideReachedOurFather,true,"Wide Rosary Next control did not reach the Our Father");
+  assert.equal(wideStep,wideOurFatherTarget,"Wide Rosary Next did not reach the canonical Our Father");
   const wideRosary=await wide.evaluate(()=>{
-    const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']"),shell=root?.querySelector(".pbShell"),card=root?.querySelector(".lab-prayer-sheet,.pbFlowCard"),r=card?.getBoundingClientRect();
+    const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']"),shell=root?.querySelector(".pbShell");
+    const candidates=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])];
+    const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null,r=card?.getBoundingClientRect();
     const visibleLegacy=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>getComputedStyle(node).display!=="none").length;
     return {shell:shell?.getBoundingClientRect().width??0,cardWidth:r?.width??0,cardHeight:r?.height??0,visibleLegacy,nested:shell?.querySelectorAll(":scope > section.aoRosaryRitualGrid").length??0};
   });
