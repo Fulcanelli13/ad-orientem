@@ -1,5 +1,6 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { normalizePresentationMode } from "./session-engine.js";
+import { V180_BELL_HOLD_MS } from "./reader-transients.js";
 
 const SHELL_STYLE = `
 .ao-reader-shell{--ao-bg:#080c12;--ao-panel:#0d1218;--ao-line:rgba(189,161,108,.20);--ao-muted:#9a948c;--ao-text:#eee8de;--ao-accent:#bda16c;--ao-schola-height:52px;box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;height:100%;min-height:0;background:var(--ao-bg);color:var(--ao-text);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
@@ -276,6 +277,106 @@ export function createReaderDomAdapter({
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let scholaCollapsed=false;
   let scholaHeight=52;
+  let bellHold=null;
+  let bellHoldUntil=0;
+  let bellHoldTimer=null;
+  let cinematicHold=null;
+  let cinematicHoldUntil=0;
+  let cinematicHoldTimer=null;
+  let lastCinematicKey="";
+
+  const timerHost=()=>root?.ownerDocument?.defaultView??null;
+  const now=()=>Date.now();
+  const transientKey=value=>String(value?.cueId??value?.id??[value?.kind,value?.title,value?.subtitle].filter(Boolean).join(":")??"");
+
+  function clearBellTimer(){
+    const host=timerHost();
+    if(bellHoldTimer!=null&&host?.clearTimeout)host.clearTimeout(bellHoldTimer);
+    bellHoldTimer=null;
+  }
+  function clearCinematicTimer(){
+    const host=timerHost();
+    if(cinematicHoldTimer!=null&&host?.clearTimeout)host.clearTimeout(cinematicHoldTimer);
+    cinematicHoldTimer=null;
+  }
+  function resetPresentationHolds(){
+    clearBellTimer();clearCinematicTimer();
+    bellHold=null;bellHoldUntil=0;cinematicHold=null;cinematicHoldUntil=0;lastCinematicKey="";
+  }
+  function paintBell(value,{held=false}={}){
+    const item=root.querySelector('[data-channel="bell"]');
+    setText(root,"bell",value?[textValue(value),value.detail].filter(Boolean).join(" · "):null);
+    setChannel(root,"bell",value);
+    if(item){
+      item.dataset.v180Hold=String(Boolean(value&&held));
+      item.dataset.v180OwnerCue=value?.cueId??"";
+    }
+    syncRailVisibility(root);
+  }
+  function scheduleBellExpiry(){
+    clearBellTimer();
+    const host=timerHost();if(!host?.setTimeout||!bellHold)return;
+    const token=transientKey(bellHold),delay=Math.max(20,bellHoldUntil-now()+25);
+    bellHoldTimer=host.setTimeout(()=>{
+      bellHoldTimer=null;
+      if(!bellHold||transientKey(bellHold)!==token)return;
+      if(now()<bellHoldUntil){scheduleBellExpiry();return}
+      if(current?.bell)return;
+      bellHold=null;bellHoldUntil=0;paintBell(null);
+    },delay);
+  }
+  function syncBellPresentation(){
+    if(current?.bell){
+      const key=transientKey(current.bell);
+      if(!bellHold||transientKey(bellHold)!==key){
+        bellHold=current.bell;bellHoldUntil=now()+V180_BELL_HOLD_MS;scheduleBellExpiry();
+      }
+      paintBell(current.bell);
+      return;
+    }
+    if(bellHold&&now()<bellHoldUntil){paintBell(bellHold,{held:true});return}
+    bellHold=null;bellHoldUntil=0;clearBellTimer();paintBell(null);
+  }
+  function paintCinematic(value,{held=false}={}){
+    const cinematic=root.querySelector('[data-role="cinematic"]');if(!cinematic)return;
+    const visible=Boolean(value);
+    cinematic.hidden=!visible;
+    cinematic.dataset.kind=visible?String(value.kind??"TRANSIENT"):"";
+    cinematic.dataset.v180Hold=String(Boolean(visible&&held));
+    cinematic.dataset.v180OwnerCue=visible?String(value.cueId??""):"";
+    setText(root,"cinematic-title",visible?value.title:null);
+    setText(root,"cinematic-sub",visible?value.subtitle:null);
+  }
+  function scheduleCinematicExpiry(){
+    clearCinematicTimer();
+    const host=timerHost();if(!host?.setTimeout||!cinematicHold)return;
+    const token=transientKey(cinematicHold),delay=Math.max(20,cinematicHoldUntil-now()+25);
+    cinematicHoldTimer=host.setTimeout(()=>{
+      cinematicHoldTimer=null;
+      if(!cinematicHold||transientKey(cinematicHold)!==token)return;
+      if(now()<cinematicHoldUntil){scheduleCinematicExpiry();return}
+      cinematicHold=null;cinematicHoldUntil=0;paintCinematic(null);
+    },delay);
+  }
+  function syncCinematicPresentation(){
+    const next=current?.cinematic??null;
+    if(next){
+      const key=transientKey(next);
+      if(key!==lastCinematicKey){
+        lastCinematicKey=key;
+        cinematicHold=next;
+        cinematicHoldUntil=now()+Math.max(0,Number(next.durationMs)||0);
+        paintCinematic(next,{held:true});
+        if(cinematicHoldUntil>now())scheduleCinematicExpiry();
+        return;
+      }
+      if(cinematicHold&&now()<cinematicHoldUntil){paintCinematic(cinematicHold,{held:true});return}
+      paintCinematic(null);return;
+    }
+    lastCinematicKey="";
+    if(cinematicHold&&now()<cinematicHoldUntil){paintCinematic(cinematicHold,{held:true});return}
+    cinematicHold=null;cinematicHoldUntil=0;clearCinematicTimer();paintCinematic(null);
+  }
 
   function setMode(next){
     const requested=normalizePresentationMode(next);
@@ -404,6 +505,7 @@ export function createReaderDomAdapter({
 
   function mount(nextPrepared){
     if(!nextPrepared?.session?.resolvedMass) throw new TypeError("Prepared Mass session required");
+    resetPresentationHolds();
     prepared=nextPrepared;
     mode=normalizePresentationMode(prepared.readerPreferences?.mode ?? prepared.session.resolvedMass.presentationMode);
     root.innerHTML=buildReaderShellMarkup(prepared);
@@ -436,7 +538,6 @@ export function createReaderDomAdapter({
     setText(root,"posture",textValue(current.posture));
     setText(root,"gesture",textValue(current.gesture));
     setText(root,"response",textValue(current.response));
-    setText(root,"bell",current.bell ? [textValue(current.bell),current.bell.detail].filter(Boolean).join(" · ") : null);
     setText(root,"priest-voice",textValue(current.priestVoice));
     setText(root,"schola",current.scholaVisible ? textValue(current.schola) : null);
     const titleNode=root.querySelector('[data-role="card-title"]');
@@ -450,7 +551,6 @@ export function createReaderDomAdapter({
     setChannel(root,"posture",current.posture);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
-    setChannel(root,"bell",current.bell);
     setChannel(root,"priest-voice",current.priestVoice);
     setChannel(root,"schola",current.scholaVisible ? current.schola : null);
     syncScholaChrome();
@@ -463,14 +563,8 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
 
-    const cinematic=root.querySelector('[data-role="cinematic"]');
-    if(cinematic){
-      const visible=Boolean(current.cinematic);
-      cinematic.hidden=!visible;
-      cinematic.dataset.kind=visible ? String(current.cinematic.kind??"TRANSIENT") : "";
-      setText(root,"cinematic-title",visible ? current.cinematic.title : null);
-      setText(root,"cinematic-sub",visible ? current.cinematic.subtitle : null);
-    }
+    syncBellPresentation();
+    syncCinematicPresentation();
 
     const guideButton=root.querySelector('[data-role="guide-button"]');
     if(guideButton) guideButton.disabled=!current.guide;
@@ -521,6 +615,7 @@ export function createReaderDomAdapter({
   }
 
   function destroy(){
+    resetPresentationHolds();
     prepared=null;current=null;bound=false;sectionItems=[];root.innerHTML="";
   }
 
