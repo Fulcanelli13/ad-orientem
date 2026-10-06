@@ -1,7 +1,7 @@
 {
   "schema": "ao-product-parity-v1",
-  "version": "1.1.0",
-  "releaseBlocker": null,
+  "version": "1.2.0",
+  "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
     "home": {
@@ -24,9 +24,9 @@
       ]
     },
     "mass": {
-      "status": "CERTIFIED",
+      "status": "RECOVERY_REQUIRED",
       "currentOwner": "src/mass",
-      "reference": "R17_NATIVE_PLUS_APPROVED_LIVE_PRESENTATION",
+      "reference": "V1_66_EXECUTABLE_DONOR_PLUS_LATER_DIRECT_EVIDENCE",
       "mustPreserve": [
         "LIVE focus hierarchy",
         "ribbons and rails",
@@ -36,17 +36,23 @@
         "cinematic moments without reopening liturgical runtime"
       ],
       "evidence": [
+        "data/presentation/mass-definitive-convergence.v1.json",
+        "src/mass/reader-dom.js",
+        "src/mass/reader-gate.js",
+        "src/mass/browser-entry.js",
         "tests/mass-visual-acceptance.mjs",
-        "Visual acceptance workflow 37288227688 at 390x844 touch geometry",
-        "06-mass-live-opening.png",
-        "07-mass-live-consecration.png",
-        "tests/app-shell-journey-e2e.mjs",
-        "Visual acceptance workflow 37298926233",
-        "R17 Mass convergence workflow 37298926238",
-        "App convergence workflow 37298926228"
+        "tests/production-tree-hygiene.mjs"
       ],
-      "observedRegressions": [],
-      "recoveryPass": "MASS_UI_V6_MODE_SWITCH_CERTIFIED",
+      "observedRegressions": [
+        "production reader expanded into browser-width dashboard geometry on wide viewports",
+        "mode selector became three full-width tabs rather than compact donor control",
+        "LIVE ritual rails disappeared when channels were inactive instead of remaining as dim state surfaces",
+        "centre reader regained giant bordered card chrome",
+        "focus muting made surrounding prayer text unreadably dark",
+        "navigation became a full-width footer instead of latent boundary controls",
+        "Schola presentation became a full-width status strip"
+      ],
+      "recoveryPass": "MASS_DEFINITIVE_SINGLE_READER_V1_IN_PROGRESS",
       "recoveryTargets": [
         "collapse inactive cue rails without changing cue ownership",
         "move Schola from narrow right rail to dedicated readable dock",
@@ -78,7 +84,14 @@
         "fluid focus point is restored to approximately 39 percent",
         "locked mode selector is visually differentiated"
       ],
-      "remainingParityWork": [],
+      "remainingParityWork": [
+        "CI/browser certification of donor-derived shell at phone and wide viewport",
+        "line-by-line cue choreography audit",
+        "priest-action icon/text parity",
+        "Schola lifecycle/translation parity",
+        "cinematic timing/composition parity",
+        "48-step boundary reconciliation using direct evidence only"
+      ],
       "v2Targets": [
         "Home / mode / current-section / Settings first-ribbon architecture",
         "source-first current-section jump menu",
@@ -282,7 +295,7 @@
       ]
     }
   },
-  "status": "CERTIFIED",
+  "status": "RECOVERY_REQUIRED",
   "crossSurfacePresentationFx": {
     "status": "RECOVERY_IN_PROGRESS",
     "authority": "data/presentation/presentation-fx-parity.v1.json",
