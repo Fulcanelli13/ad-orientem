@@ -930,9 +930,23 @@ export function createReaderDomAdapter({
         syncScholaChrome();
         return;
       }
+      const scholaSlower=event.target?.closest?.("[data-schola-slower]");
+      if(scholaSlower){changeScholaSpeed(-1);return;}
+      const scholaFaster=event.target?.closest?.("[data-schola-faster]");
+      if(scholaFaster){changeScholaSpeed(1);return;}
+      const scholaPause=event.target?.closest?.("[data-schola-pause]");
+      if(scholaPause){setScholaPaused(!scholaUserPaused,{user:true});return;}
       const scholaTranslate=event.target?.closest?.("[data-schola-translate]");
       if(scholaTranslate && current?.schola?.english){
-        scholaTranslationVisible=!scholaTranslationVisible;
+        const opening=!scholaTranslationVisible;
+        if(opening){
+          scholaPausedBeforeTranslation=scholaPaused;
+          scholaTranslationVisible=true;
+          setScholaPaused(true);
+        }else{
+          scholaTranslationVisible=false;
+          if(!scholaPausedBeforeTranslation&&!scholaUserPaused)setScholaPaused(false);
+        }
         syncScholaContent();
         return;
       }
@@ -1000,6 +1014,9 @@ export function createReaderDomAdapter({
     }
     populateSections();
     setPreferencesOpen(false);
+    scholaSpeed=loadScholaSpeed();
+    scholaPaused=scholaUserPaused;
+    syncScholaControls();
     syncScholaChrome();
     syncScholaContent();
     syncRailVisibility(root);
@@ -1129,7 +1146,9 @@ export function createReaderDomAdapter({
 
   function destroy(){
     if(bellHoldTimer)clearTimeout(bellHoldTimer);
+    cancelScholaTicker({clearIdentity:true});
     bellHoldTimer=0;heldBell=null;bellHoldUntil=0;
+    scholaPaused=false;scholaUserPaused=false;scholaTranslationVisible=false;
     prepared=null;current=null;bound=false;sectionItems=[];root.innerHTML="";
   }
 
