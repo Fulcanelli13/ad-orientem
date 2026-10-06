@@ -1,0 +1,58 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+
+const donor=JSON.parse(readFileSync("data/presentation/mass-v180-donor-parity.v1.json","utf8"));
+const dom=readFileSync("src/mass/reader-dom.js","utf8");
+const gate=readFileSync("src/mass/reader-gate.js","utf8");
+const entry=readFileSync("src/mass/browser-entry.js","utf8");
+const transients=readFileSync("src/mass/reader-transients.js","utf8");
+
+assert.equal(donor.schema,"ao-mass-v180-donor-parity-v1");
+assert.equal(donor.donor.sha256,"4e8dc4a0148590aee95d6fd36d8c915a1c1d35097c1d235e96a17791cb7d5543");
+assert.equal(donor.donor.sizeBytes,13713627);
+assert.equal(donor.donor.totalLines,8543);
+assert.equal(donor.donor.authority,"PRIMARY_PRESENTATION_INTERACTION_DONOR");
+
+assert.match(gate,/READER_UI_MODES\s*=\s*Object\.freeze\(\[["']NATIVE["']\]\)/);
+assert.doesNotMatch(entry,/\.startLive\s*\(|runReaderShadowAudit|LEGACY_EXPLICIT_ROLLBACK|LEGACY_SHADOW_AUDIT/);
+
+assert.match(dom,/data-reader-home/);
+assert.match(dom,/data-role="section-jump"/);
+assert.match(dom,/data-reader-preferences/);
+assert.match(dom,/data-role="mass-preferences"/);
+assert.match(dom,/data-reader-mode="MISSAL"/);
+assert.match(dom,/data-reader-mode="SIMPLE"/);
+assert.match(dom,/data-reader-mode="LIVE"/);
+
+assert.match(dom,/>YOU</);
+assert.match(dom,/>GUIDE</);
+assert.match(dom,/>PRIEST</);
+assert.match(dom,/data-icon-slot="posture-top"/);
+assert.match(dom,/data-icon-slot="priest-position"/);
+assert.match(dom,/data-role="priest-action-badge"/);
+assert.match(dom,/data-channel="priest-action"/);
+
+assert.match(dom,/data-channel="gesture"/);
+assert.match(dom,/data-channel="priest-voice"/);
+assert.match(dom,/data-channel="bell"/);
+assert.match(dom,/\.ao-rail-copy\{display:none!important\}/);
+assert.match(dom,/border:0;border-radius:0;background:transparent;box-shadow:none/);
+assert.doesNotMatch(dom,/grid-template-columns:repeat\(3,1fr\).*ao-reader-top-ribbon/);
+
+assert.match(dom,/data-role="schola-page"/);
+assert.match(dom,/data-role="schola-progress"/);
+assert.match(dom,/data-role="schola-translation"/);
+assert.match(dom,/data-schola-translate/);
+
+assert.match(transients,/"AO\.SM\.C0174":Object\.freeze\(\{kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST",durationMs:3450\}\)/);
+assert.match(transients,/"AO\.SM\.C0181":Object\.freeze\(\{kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:3450\}\)/);
+assert.match(transients,/presentationHoldMs:presentationSpec\?\.kind==="ELEVATION" \? 3600/);
+
+assert.deepEqual(donor.open.map(x=>x.id),[
+  "V180_PRIEST_ACTION_OWNERSHIP",
+  "V180_SCHOLA_TIMING_CONTROLS",
+  "V180_EXACT_RITUAL_TRIGGER_STYLING",
+  "V180_TO_V183_CARD_MAP_RECONCILIATION",
+]);
+
+console.log("Mass v1.80 donor parity contract: PASS — definitive shell/timing locked; four evidence-bound parity items remain open.");
