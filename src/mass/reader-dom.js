@@ -182,6 +182,12 @@ const SHELL_STYLE = `
 }
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:8px;font-size:.60em;color:#b8c2b9}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:14px;border-left:2px solid rgba(200,217,233,.50);color:#dbe5ee}
+.ao-ritual-trigger{border-radius:.18em;background:linear-gradient(transparent 72%,rgba(132,169,141,.18) 72%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.ao-ritual-trigger-live{background:linear-gradient(transparent 62%,rgba(151,194,162,.38) 62%);text-shadow:0 0 12px rgba(155,198,166,.10);animation:aoRitualWordCue 1.25s ease-out both}
+@keyframes aoRitualWordCue{0%{background-color:rgba(154,197,165,.19)}100%{background-color:transparent}}
+.ao-ritual-cross-symbol{display:inline-block;margin:0 .06em;color:#8dac92;font-weight:700;transform:scale(1.08);text-shadow:0 0 11px rgba(148,188,158,.24)}
+.ao-ritual-cross-symbol.ao-ritual-trigger-live{animation:aoRitualCross 1.25s ease-out both}
+@keyframes aoRitualCross{0%{transform:scale(.92);filter:brightness(.8)}35%{transform:scale(1.28);filter:brightness(1.35)}100%{transform:scale(1.08);filter:none}}
 .ao-reader-paragraph[data-translate-toggle="true"]{cursor:pointer}
 .ao-reader-paragraph[data-translate-toggle="true"]:focus-visible{outline:1px solid rgba(109,149,117,.7);outline-offset:4px}
 .ao-line-primary{display:block}
@@ -368,6 +374,55 @@ function textValue(value){
 
 function persist(next, previous){
   return next === undefined ? previous ?? null : next;
+}
+
+function ritualAnchorFragments(anchor){
+  return String(anchor??"")
+    .split(/\s*(?:…|\.\.\.)\s*/)
+    .map(value=>value.trim())
+    .filter(Boolean);
+}
+
+function appendRitualFragment(target,text,doc){
+  const pieces=String(text??"").split("✠");
+  pieces.forEach((piece,index)=>{
+    if(piece)target.append(doc.createTextNode(piece));
+    if(index<pieces.length-1){
+      const cross=doc.createElement("span");
+      cross.className="ao-ritual-cross-symbol ao-ritual-trigger-live";
+      cross.textContent="✠";
+      target.append(cross);
+    }
+  });
+}
+
+function renderReaderText(target,text,{anchor=null,active=false}={}){
+  if(!target)return false;
+  const doc=target.ownerDocument??globalThis.document;
+  if(!doc?.createTextNode){target.textContent=String(text??"");return false;}
+  const raw=String(text??"");
+  const fragments=active ? ritualAnchorFragments(anchor) : [];
+  target.replaceChildren();
+  if(!fragments.length){target.textContent=raw;return false;}
+
+  let cursor=0,matched=false;
+  for(const fragment of fragments){
+    const index=raw.indexOf(fragment,cursor);
+    if(index<0)continue;
+    if(index>cursor)target.append(doc.createTextNode(raw.slice(cursor,index)));
+    const span=doc.createElement("span");
+    span.className="ao-ritual-trigger ao-ritual-trigger-live";
+    appendRitualFragment(span,fragment,doc);
+    target.append(span);
+    cursor=index+fragment.length;
+    matched=true;
+  }
+  if(cursor<raw.length)target.append(doc.createTextNode(raw.slice(cursor)));
+  if(!matched){
+    target.replaceChildren();
+    target.textContent=raw;
+  }
+  return matched;
 }
 
 export function normalizeReaderMoment(moment = {}, previous = {}) {
@@ -958,8 +1013,13 @@ export function createReaderDomAdapter({
         const primary=translatable.querySelector?.(".ao-line-primary");
         if(primary){
           const showingAlt=translatable.dataset.showingAlt === "true";
-          primary.textContent=showingAlt ? translatable.dataset.primaryText : translatable.dataset.altText;
-          translatable.dataset.showingAlt=String(!showingAlt);
+          const nextText=showingAlt ? translatable.dataset.primaryText : translatable.dataset.altText;
+          const nextShowingAlt=!showingAlt;
+          renderReaderText(primary,nextText,{
+            anchor:translatable.dataset.ritualAnchor??null,
+            active:translatable.dataset.ritualCueActive==="true",
+          });
+          translatable.dataset.showingAlt=String(nextShowingAlt);
         }
         return;
       }
@@ -1131,7 +1191,21 @@ export function createReaderDomAdapter({
           }
           const primary=doc.createElement("span");
           primary.className="ao-line-primary";
-          primary.textContent=p.primary;
+          const gestureCueId=String(current.gesture?.canonicalCueId??current.gesture?.cueId??"");
+          const ritualCueActive=Boolean(
+            p.active &&
+            current.gesture?.anchorLat &&
+            gestureCueId &&
+            exactCueIds.includes(gestureCueId)
+          );
+          if(ritualCueActive){
+            node.dataset.ritualAnchor=String(current.gesture.anchorLat);
+            node.dataset.ritualCueActive="true";
+          }
+          renderReaderText(primary,p.primary,{
+            anchor:ritualCueActive ? current.gesture.anchorLat : null,
+            active:ritualCueActive,
+          });
           node.append(primary);
           if(p.secondary){
             const secondary=doc.createElement("span");
