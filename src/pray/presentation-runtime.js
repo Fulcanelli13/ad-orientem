@@ -449,15 +449,27 @@ function decorateRosaryExact(r){
  const info=rosaryLiveInfo();if(!info?.state?.set)return false;
  const shell=r.querySelector('.pbShell');if(!shell)return false;
  const existing=shell.querySelector(':scope > .aoRosaryRitualGrid');
+ const st=rosaryExactState(info);
  if(existing){
+  const rail=existing.querySelector('.aoRosaryFaithfulRail');
+  const slots=[
+    rosaryExactSlot('gesture',st.gesture,{emphasis:st.entering&&!!st.gesture}),
+    rosaryExactSlot('action',st.action,{emphasis:st.entering&&!!st.action})
+  ].filter(Boolean);
+  if(rail){rail.innerHTML=slots.join('');rail.hidden=!slots.length}
   ensureRosaryDonorProgress(r,info);ensureRosaryDonorRecitation(r);rosaryDonorArt(r,info);rosaryDonorMysteryFx(r,info);
   existing.dataset.aoRosaryStep=String(info.index);
   existing.dataset.aoRosaryKind=String(info.step?.kind||'');
+  existing.dataset.aoRosaryKey=String(info.step?.key||'');
   existing.dataset.aoRosaryPhase=String(info.step?.phase||'');
+  existing.dataset.aoRosaryBead=String(Number(info.step?.bead||0));
+  existing.dataset.aoRosaryCue=info.step?.cue?'true':'false';
+  existing.dataset.aoRosaryFinalCross=info.step?.finalCross?'true':'false';
+  lastRosaryRitualKey=st.key;
   return true;
  }
 
- const st=rosaryExactState(info),grid=document.createElement('section'),rail=document.createElement('aside'),center=document.createElement('div');
+ const grid=document.createElement('section'),rail=document.createElement('aside'),center=document.createElement('div');
  grid.className='aoRosaryRitualGrid';
  grid.dataset.aoRosaryStep=String(info.index);
  grid.dataset.aoRosaryKind=String(info.step?.kind||'');
