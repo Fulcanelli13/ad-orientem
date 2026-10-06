@@ -120,6 +120,44 @@ try{
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
 
+  const recoveredTraditional=[
+    "learn.rites.sick",
+    "learn.rites.baptism",
+    "learn.rites.matrimony",
+    "learn.serve_mass.responses",
+    "learn.scapular",
+    "learn.seasonal_rites",
+  ];
+  for(const id of recoveredTraditional){
+    await page.locator(`#ao-learn-modular-root [data-ao-learn-module="${id}"]`).tap();
+    await page.waitForFunction(expected=>{
+      const s=globalThis.AO_TRADITIONAL_LEARN_V381?.status?.();
+      const root=document.getElementById("ao-learn-traditional-root");
+      return s?.open===true&&s?.route===expected&&Boolean(root);
+    },id,{timeout:10000});
+    const child=await page.evaluate(()=>{const r=document.getElementById("ao-learn-traditional-root"),b=r?.getBoundingClientRect();return{
+      owner:r?.dataset?.aoTraditionalLearnOwner??null,
+      overflow:r?(r.scrollWidth-r.clientWidth):Infinity,
+      width:b?.width??0,
+      donorVisible:Boolean(document.getElementById("aoV38Traditions")?.classList?.contains("open")),
+      priestCeremonialExposed:globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().priestCeremonialExposed,
+    }});
+    assert.equal(child.owner,"38.1-modular-learn-extraction",id+": wrong child owner");
+    assert.ok(child.width>300,id+": child collapsed on phone");
+    assert.ok(child.overflow<=1,id+": child has horizontal overflow");
+    assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
+    assert.equal(child.priestCeremonialExposed,false,id+": priest-only ceremonial scope leaked");
+    await assertFocusSafe(id+" open");
+    await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").tap();
+    await page.waitForFunction(()=>
+      !document.getElementById("ao-learn-traditional-root") &&
+      !document.getElementById("ao-learn-modular-root")?.hidden &&
+      globalThis.AO_LEARN_APP_V1?.status?.().child==null,
+      null,{timeout:10000}
+    );
+    await assertFocusSafe(id+" return");
+  }
+
   await page.locator("#ao-learn-modular-root [data-ao-learn-home]").tap();
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="home" &&
