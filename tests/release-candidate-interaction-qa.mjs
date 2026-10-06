@@ -237,8 +237,8 @@ try{
     nativeIndividual:[...document.querySelectorAll("#aoPrayerBookRoot [data-ao-recitation='individual']")].map(x=>({
       active:x.classList.contains("active"),pressed:x.getAttribute("aria-pressed"),text:x.textContent?.trim()
     })),
-    barGroup:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??null,
-    barIndividual:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='individual']")?.classList?.contains("active")??null,
+    headGroup:document.querySelector(".r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14'] [data-p435930-recitation='group']")?.classList?.contains("active")??null,
+    headIndividual:document.querySelector(".r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14'] [data-p435930-recitation='individual']")?.classList?.contains("active")??null,
   }));
   assert.equal(settledRosary?.donorState?.recitationMode,"group",
     "Rosary donor internal owner did not preserve Group recitation");
@@ -256,10 +256,10 @@ try{
     "Rosary donor native Group control did not become active");
   assert.ok((settledRosary?.nativeIndividual??[]).every(x=>x.active!==true&&x.pressed!=="true"),
     "Rosary donor native Individual control remained active after Group handoff");
-  assert.equal(settledRosary?.barGroup,true,
-    "Rosary decorated controls lost Group recitation after donor mount");
-  assert.equal(settledRosary?.barIndividual,false,
-    "Rosary decorated controls settled on Individual after Group selection");
+  assert.equal(settledRosary?.headGroup,true,
+    "Rosary exact donor head controls lost Group recitation after donor mount");
+  assert.equal(settledRosary?.headIndividual,false,
+    "Rosary exact donor head controls settled on Individual after Group selection");
   await assertSinglePrayerLayer("Rosary donor launch");
 
   const rosarySurface=await page.evaluate(()=>{
