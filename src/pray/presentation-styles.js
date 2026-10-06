@@ -28,6 +28,7 @@ const EXACT_RITUAL_RAIL_CSS=`/* Exact donor v3.14 shared ritual-rail hierarchy â
 @keyframes aoRitualGestureV2{0%{opacity:0;transform:translateY(8px) scale(.82)}42%{opacity:1;transform:translateY(-2px) scale(1.08)}68%{transform:translateY(0) scale(.985)}100%{opacity:1;transform:none}}
 @keyframes aoRitualActionV2{0%{opacity:0;transform:translateY(9px)}58%{opacity:1;transform:translateY(-1px)}100%{opacity:1;transform:none}}
 @keyframes aoRitualContextV2{from{opacity:0}to{opacity:1}}
+@keyframes aoRitualHalo{0%{opacity:.5;transform:scale(.72)}100%{opacity:0;transform:scale(1.42)}}
 #aoPray435930 .aoRitualSlot.is-emphasis{animation:aoRitualActionV2 .52s cubic-bezier(.2,.78,.2,1) both}
 #aoPray435930 .aoRitualSlot[data-channel="gesture"].is-emphasis{animation:aoRitualGestureV2 .78s cubic-bezier(.18,.84,.2,1) both}
 #aoPray435930 .aoRitualSlot[data-channel="context"].is-emphasis{animation:aoRitualContextV2 .42s ease both}
