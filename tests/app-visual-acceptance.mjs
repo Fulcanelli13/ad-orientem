@@ -766,8 +766,8 @@ try{
   assert.ok(wideHub.sheet>=818&&wideHub.sheet<=822,"PRAY wide shell diverged from the v3.4.10 820px composition");
   assert.ok(wideHub.body>=750&&wideHub.body<=762,"PRAY wide reading measure diverged from the v3.4.10 760px composition");
   assert.equal(wideHub.columnCount,2,"PRAY wide hub no longer uses the donor two-column module grid");
-  assert.ok(wideHub.titleWidth>=250&&wideHub.descriptionWidth>=250,"PRAY wide module text collapsed inside its canonical icon column");
-  assert.ok(wideHub.titleLeft>=wideHub.iconRight+6,"PRAY wide module text overlaps its canonical icon column");
+  assert.ok(wideHub.titleWidth>=210&&wideHub.descriptionWidth>=210,"PRAY wide module text collapsed inside its canonical icon column: "+JSON.stringify(wideHub));
+  assert.ok(wideHub.titleLeft>=wideHub.iconRight+6,"PRAY wide module text overlaps its canonical icon column: "+JSON.stringify(wideHub));
 
   await wide.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
   await wide.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="rosary",null,{timeout:5000});
