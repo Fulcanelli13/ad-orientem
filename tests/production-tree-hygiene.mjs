@@ -43,6 +43,17 @@ assert.doesNotMatch(productionIndex,/data-ao-r17-icon-bridge/,
 assert.doesNotMatch(productionIndex,/AO_EMERGENCY_STABLE_V4333|ao-v4333-emergency-stable-(?:css|js)/,
   "embedded v43.33 emergency runtime returned to production index");
 
+const massBrowserEntry=readFileSync("src/mass/browser-entry.js","utf8");
+const massReaderGate=readFileSync("src/mass/reader-gate.js","utf8");
+assert.doesNotMatch(massBrowserEntry,/\.startLive\s*\(/,
+  "production Mass entry regained a legacy renderer start path");
+assert.doesNotMatch(massBrowserEntry,/runReaderShadowAudit/,
+  "production Mass entry regained shadow-renderer ownership");
+assert.match(massReaderGate,/READER_UI_MODES\s*=\s*Object\.freeze\(\["NATIVE"\]\)/,
+  "Mass reader gate is no longer native-only");
+assert.doesNotMatch(massReaderGate,/return\s+["'](?:LEGACY|SHADOW)["']/,
+  "Mass reader gate can still select a historical presentation owner");
+
 const baseline=readFileSync(".github/workflows/baseline-integrity.yml","utf8");
 assert.match(baseline,/contents:\s*read/i,"baseline verification is not read-only");
 assert.match(baseline,/Frozen v43\.33 verified as historical baseline only/i,
@@ -54,4 +65,4 @@ assert.match(readme,/archive\/2026-10-04-pre-hygiene/,
 assert.doesNotMatch(readme,/retained under `field\/2026-10-04\/`/,
   "README still claims the field snapshot lives in production main");
 
-console.log("production tree hygiene: PASS — no legacy mutators, emergency v43.33 runtime, duplicate Mass entry, or inline icon bridge remain.");
+console.log("production tree hygiene: PASS — one native Mass presentation owner; no legacy mutators, emergency runtime, duplicate entry, or inline bridge.");
