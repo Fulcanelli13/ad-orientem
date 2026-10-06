@@ -460,22 +460,75 @@ try{
   await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot .aoRosaryRitualGrid"),null,{timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot .rosary-decade-bar-v15[data-ao-exact-donor-progress='v3.4.14']",{state:"visible",timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",{state:"visible",timeout:5000});
-  const rosaryOpening=await page.evaluate(()=>({
-    donor:document.querySelector("#aoPrayerBookRoot .pbShell")?.dataset?.aoRosaryExactDonor??null,
-    progressSegments:document.querySelectorAll("#aoPrayerBookRoot .rosary-decade-bar-v15[data-ao-exact-donor-progress] i").length,
-    currentSegments:document.querySelectorAll("#aoPrayerBookRoot .rosary-decade-bar-v15[data-ao-exact-donor-progress] i.current").length,
-    recitationButtons:document.querySelectorAll("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation] button").length,
-    activeRecitation:document.querySelectorAll("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation] button.active").length,
-    ritualGrid:document.querySelectorAll("#aoPrayerBookRoot .aoRosaryRitualGrid").length,
-    shellWidth:document.querySelector("#aoPrayerBookRoot .pbShell")?.getBoundingClientRect?.().width??0,
-  }));
+  const rosaryOpening=await page.evaluate(()=>{
+    const roots=[...document.querySelectorAll("#aoPrayerBookRoot")],active=roots.find(root=>root.dataset.aoRosaryActiveRoot==="true")||roots.find(root=>root.classList.contains("open"));
+    const shell=active?.querySelector(".pbShell"),head=shell?.querySelector(".lab-view-head"),recitation=shell?.querySelector(".r29-head-recitation"),overview=shell?.querySelector("[data-r23-overview-open]");
+    const legacyRecitation=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>getComputedStyle(node).display!=="none").length;
+    const headRect=head?.getBoundingClientRect?.(),recRect=recitation?.getBoundingClientRect?.(),overviewRect=overview?.getBoundingClientRect?.();
+    const recitationButtonWidths=[...(recitation?.querySelectorAll("button")??[])].map(button=>button.getBoundingClientRect().width);
+    return {
+      donor:shell?.dataset?.aoRosaryExactDonor??null,
+      progressSegments:shell?.querySelectorAll(".rosary-decade-bar-v15[data-ao-exact-donor-progress] i").length??0,
+      currentSegments:shell?.querySelectorAll(".rosary-decade-bar-v15[data-ao-exact-donor-progress] i.current").length??0,
+      recitationButtons:shell?.querySelectorAll(".r29-head-recitation[data-ao-exact-donor-recitation] button").length??0,
+      activeRecitation:shell?.querySelectorAll(".r29-head-recitation[data-ao-exact-donor-recitation] button.active").length??0,
+      ritualGrid:shell?.classList.contains("aoRosaryRitualGrid")?1:0,
+      nestedRitualGrid:shell?.querySelectorAll(":scope > section.aoRosaryRitualGrid").length??0,
+      activeRoots:roots.filter(root=>root.dataset.aoRosaryActiveRoot==="true"&&root.classList.contains("open")).length,
+      legacyRecitation,
+      shellWidth:shell?.getBoundingClientRect?.().width??0,
+      headOverflow:(head?.scrollWidth??0)-(head?.clientWidth??0),
+      recitationButtonWidths,
+      recitationRight:recRect?.right??0,
+      overviewRight:overviewRect?.right??0,
+      headRight:headRect?.right??0,
+    };
+  });
   assert.equal(rosaryOpening.donor,"v3.4.14","Rosary player is not stamped with the exact donor presentation owner");
   assert.equal(rosaryOpening.progressSegments,5,"Rosary lost the donor five-segment mystery progress bar");
   assert.equal(rosaryOpening.currentSegments,0,"Rosary opening incorrectly marks a mystery current");
   assert.equal(rosaryOpening.recitationButtons,2,"Rosary lost donor Individual/Group head controls");
   assert.equal(rosaryOpening.activeRecitation,1,"Rosary donor recitation control has no single active owner");
-  assert.equal(rosaryOpening.ritualGrid,1,"Rosary lost the donor ritual reader grid");
+  assert.equal(rosaryOpening.ritualGrid,1,"Rosary lost the donor ritual reader ownership marker");
+  assert.equal(rosaryOpening.nestedRitualGrid,0,"Rosary reintroduced the DOM-reparenting ritual wrapper");
+  assert.equal(rosaryOpening.activeRoots,1,"More than one PrayerBook root owns visible Rosary input");
+  assert.equal(rosaryOpening.legacyRecitation,0,"Rosary exposes a second legacy Individual/Group selector");
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
+  assert.ok(rosaryOpening.headOverflow<=1,"Rosary phone header still overflows horizontally");
+  assert.ok(rosaryOpening.recitationButtonWidths.length===2&&rosaryOpening.recitationButtonWidths.every(width=>width>=52),"Rosary Individual / Group controls are visibly truncated");
+  assert.ok(rosaryOpening.recitationRight<=rosaryOpening.headRight+1,"Rosary recitation control clips outside the phone header");
+  assert.ok(rosaryOpening.overviewRight<=rosaryOpening.headRight+1,"Rosary Overview control clips outside the phone header");
+
+  // Prove the real Next button and the actual prayer column, not just selector presence.
+  const ourFatherTarget=await page.evaluate(()=>{
+    const xs=globalThis.AO_ROSARY_V381?.steps?.()||[];
+    return xs.findIndex(step=>/pater|our father|lord.?s prayer/i.test(JSON.stringify(step)));
+  });
+  assert.ok(ourFatherTarget>=0,"Canonical Rosary steps expose no Our Father target");
+  let currentRosaryStep=await page.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+  for(let guard=0;currentRosaryStep<ourFatherTarget&&guard<32;guard+=1){
+    const before=currentRosaryStep;
+    await page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
+    await page.waitForFunction(previous=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1)>previous,before,{timeout:2000});
+    currentRosaryStep=await page.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+    assert.equal(currentRosaryStep,before+1,"Visible Rosary Next skipped or failed to advance exactly one canonical step");
+  }
+  assert.equal(currentRosaryStep,ourFatherTarget,"Visible Rosary Next did not reach the canonical Our Father step");
+  const rosaryPrayerGeometry=await page.evaluate(()=>{
+    const active=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']");
+    const candidates=[...(active?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])];
+    const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null;
+    const rect=card?.getBoundingClientRect?.();
+    return {
+      width:rect?.width??0,height:rect?.height??0,
+      scrollWidth:card?.scrollWidth??0,clientWidth:card?.clientWidth??0,
+      text:(card?.innerText??"").replace(/\s+/g," ").trim(),
+    };
+  });
+  assert.ok(rosaryPrayerGeometry.width>=330,"Rosary prayer column collapsed horizontally");
+  assert.ok(rosaryPrayerGeometry.height>0&&rosaryPrayerGeometry.height<720,"Rosary Our Father card exploded vertically from word-by-word wrapping");
+  assert.ok(rosaryPrayerGeometry.scrollWidth-rosaryPrayerGeometry.clientWidth<=1,"Rosary prayer card has horizontal overflow");
+  assert.match(rosaryPrayerGeometry.text,/Our Father/i,"Visible Rosary Next did not advance to the Our Father");
 
   // Use the exact donor's visible Overview → Mystery I jump rather than forcing
   // the preserved engine through intermediate opening states.
