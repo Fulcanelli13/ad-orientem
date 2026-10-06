@@ -28,7 +28,8 @@ function selectedSunday(){
 function semanticRailChip(assetId,label,value='',opts={}){
  if(!assetId||!label)return'';
  const channel=opts.channel==='transient'?'transient':'persistent';
- return `<div class="aoP435930SemanticRailChip ${channel}" data-ao-pray-rail-channel="${channel}" data-ao-pray-rail-asset="${esc(assetId)}"><span class="aoP435930SemanticRailCard">${assetIcon(assetId,'aoP435930SemanticRailIcon')}</span><span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
+ const cueClass=channel==='transient'?' cue-enter':'';
+ return `<div class="aoP435930SemanticRailChip ${channel}${cueClass}" data-ao-pray-rail-channel="${channel}" data-ao-pray-rail-asset="${esc(assetId)}"><span class="aoP435930SemanticRailCard">${assetIcon(assetId,'aoP435930SemanticRailIcon')}</span><span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
 }
 function ritualChannelLabel(channel){
  return ({posture:L('Posture','Posture'),gesture:L('Gesture','Geste'),action:L('Action','Action'),context:L('Context','Contexte')})[channel]||channel;
