@@ -26,6 +26,12 @@ assert.deepEqual(AO_LEARN_ROUTE_ASSET_IDS,{
   "learn.catechism":"ao-module-catechism",
   "today.gospel":"ao-refined-scripture",
   "today.saint":"ao-refined-saint-of-day",
+  "learn.rites.sick":"ao-refined-help",
+  "learn.rites.baptism":"ao-rich-guides",
+  "learn.rites.matrimony":"ao-rich-guides",
+  "learn.serve_mass.responses":"ao-refined-study",
+  "learn.scapular":"ao-rich-our-lady-marian-devotions",
+  "learn.seasonal_rites":"ao-refined-calendar-upcoming",
 });
 
 const PRAY_HOME_ROUTE_ASSET_IDS=Object.freeze({

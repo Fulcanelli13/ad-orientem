@@ -107,7 +107,7 @@ try{
   assert.equal(learned.owner,"modular-learn-v1");
   assert.equal(learned.presentationOwner,"modular-learn-presentation-v1");
   assert.equal(learned.routeOwner,"modular-learn-v1");
-  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.mass","learn.catechism","today.gospel","today.saint"]);
+  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","learn.seasonal_rites","today.gospel","today.saint"]);
   assert.equal(learned.donorVisible,false,"historical V37 Learn donor remained visible underneath modular Learn");
   assert.equal(learned.donorNavCount,0,"historical V37 navigation leaked into modular Learn");
   assert.equal(learned.sourcesUtilityCount,0,"top-level Sources leaked back into Learn");
@@ -119,6 +119,44 @@ try{
   for(const target of learned.geometry.tapTargets)assert.ok(target.w>=44&&target.h>=44,"Learn touch target fell below 44px");
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
+
+  const recoveredTraditional=[
+    "learn.rites.sick",
+    "learn.rites.baptism",
+    "learn.rites.matrimony",
+    "learn.serve_mass.responses",
+    "learn.scapular",
+    "learn.seasonal_rites",
+  ];
+  for(const id of recoveredTraditional){
+    await page.locator(`#ao-learn-modular-root [data-ao-learn-module="${id}"]`).tap();
+    await page.waitForFunction(expected=>{
+      const s=globalThis.AO_TRADITIONAL_LEARN_V381?.status?.();
+      const root=document.getElementById("ao-learn-traditional-root");
+      return s?.open===true&&s?.route===expected&&Boolean(root);
+    },id,{timeout:10000});
+    const child=await page.evaluate(()=>{const r=document.getElementById("ao-learn-traditional-root"),b=r?.getBoundingClientRect();return{
+      owner:r?.dataset?.aoTraditionalLearnOwner??null,
+      overflow:r?(r.scrollWidth-r.clientWidth):Infinity,
+      width:b?.width??0,
+      donorVisible:Boolean(document.getElementById("aoV38Traditions")?.classList?.contains("open")),
+      priestCeremonialExposed:globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().priestCeremonialExposed,
+    }});
+    assert.equal(child.owner,"38.1-modular-learn-extraction",id+": wrong child owner");
+    assert.ok(child.width>300,id+": child collapsed on phone");
+    assert.ok(child.overflow<=1,id+": child has horizontal overflow");
+    assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
+    assert.equal(child.priestCeremonialExposed,false,id+": priest-only ceremonial scope leaked");
+    await assertFocusSafe(id+" open");
+    await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").tap();
+    await page.waitForFunction(()=>
+      !document.getElementById("ao-learn-traditional-root") &&
+      !document.getElementById("ao-learn-modular-root")?.hidden &&
+      globalThis.AO_LEARN_APP_V1?.status?.().child==null,
+      null,{timeout:10000}
+    );
+    await assertFocusSafe(id+" return");
+  }
 
   await page.locator("#ao-learn-modular-root [data-ao-learn-home]").tap();
   await page.waitForFunction(()=>

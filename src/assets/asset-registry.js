@@ -1120,6 +1120,36 @@ export const AO_SHARED_IDENTITY_MAPPINGS=Object.freeze([
     "route": "pray.holy_name_litany",
     "asset_id": "ao-refined-devotions",
     "reason": "The Litany of the Holy Name uses the active general Devotions identity because V4 has no dedicated Holy-Name-litany identity."
+  },
+  {
+    "route": "learn.rites.sick",
+    "asset_id": "ao-refined-help",
+    "reason": "Serious Illness & Dying reuses the active Need Help identity; V4 has no sacramental-care-specific formation icon."
+  },
+  {
+    "route": "learn.rites.baptism",
+    "asset_id": "ao-rich-guides",
+    "reason": "The Baptism lay guide intentionally uses the active Guides identity rather than inventing a sacrament-specific icon."
+  },
+  {
+    "route": "learn.rites.matrimony",
+    "asset_id": "ao-rich-guides",
+    "reason": "The Matrimony lay guide intentionally uses the active Guides identity rather than inventing a sacrament-specific icon."
+  },
+  {
+    "route": "learn.serve_mass.responses",
+    "asset_id": "ao-refined-study",
+    "reason": "The Low Mass response trainer is a formation exercise and therefore reuses the Study identity."
+  },
+  {
+    "route": "learn.scapular",
+    "asset_id": "ao-rich-our-lady-marian-devotions",
+    "reason": "The Brown Scapular guide is Marian and reuses the post-contract Our Lady / Marian Devotions identity."
+  },
+  {
+    "route": "learn.seasonal_rites",
+    "asset_id": "ao-refined-calendar-upcoming",
+    "reason": "Seasonal Catholic Practice is calendar-led formation and reuses the Liturgical Calendar / Coming Up identity."
   }
 ]);
 
@@ -1138,6 +1168,12 @@ export const AO_LEARN_ROUTE_ASSET_IDS=Object.freeze({
   "learn.catechism":"ao-module-catechism",
   "today.gospel":"ao-refined-scripture",
   "today.saint":"ao-refined-saint-of-day",
+  "learn.rites.sick":"ao-refined-help",
+  "learn.rites.baptism":"ao-rich-guides",
+  "learn.rites.matrimony":"ao-rich-guides",
+  "learn.serve_mass.responses":"ao-refined-study",
+  "learn.scapular":"ao-rich-our-lady-marian-devotions",
+  "learn.seasonal_rites":"ao-refined-calendar-upcoming",
 });
 
 export const AO_PRAY_ROUTE_ASSET_IDS=Object.freeze({

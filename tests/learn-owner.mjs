@@ -17,13 +17,14 @@ assert.deepEqual(
   [
     ["Daily formation","Formation quotidienne"],
     ["Courses & study","Parcours & étude"],
+    ["Traditional Catholic life","Vie catholique traditionnelle"],
     ["Today in context","Le jour en contexte"],
   ],
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.mass","learn.catechism","today.gospel","today.saint"],
-  "locked v43.59.30 Learn launcher order changed",
+  ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","learn.seasonal_rites","today.gospel","today.saint"],
+  "Learn launcher order changed after v38.1 traditional-life extraction",
 );
 assert.deepEqual(
   LEARN_LAYOUT.sections.flatMap(section=>section.items.filter(item=>item.featured).map(item=>item.id)),
@@ -98,4 +99,4 @@ assert.match(host,/domain === "learn"[\s\S]*AO_LEARN_APP_V1/);
   assert.deepEqual(calls,["learn:close","settings:open"],"Settings left modular Learn active underneath");
 }
 
-console.log("PASS modular Learn owner: locked v43.59.30 hub extracted, shell-routed, and donor fallback retired.");
+console.log("PASS modular Learn owner: v43.59.30 hub plus v38.1 traditional-life extraction, shell-routed, donor fallback retired.");

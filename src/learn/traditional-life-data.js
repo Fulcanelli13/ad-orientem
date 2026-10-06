@@ -1,0 +1,45 @@
+// Exact v38.1 Traditional Catholic Life data extracted from Ad_Orientem_v3_4_10.html.
+// Lay-facing only. Priest-only ceremonial remains deliberately excluded.
+
+export const TRADITIONAL_LEARN_SOURCES_V381=Object.freeze({
+  baltimore:"https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity",
+  ritual1952:"https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+  currentAnointing:"https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19721130_sacram-unctionem.html",
+  currentBaptism:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/iii_how_is_the_sacrament_of_baptism_celebrated.html",
+  currentMarriage:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_7/ii_the_celebration_of_marriage.html",
+  currentConsent:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_7/iii_matrimonial_consent.html",
+  scapular:"https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+  ritualPermission:"https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html",
+  viaticum:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/v_viaticum%2C_the_last_sacrament_of_the_christian.html",
+});
+
+export const LOW_MASS_RESPONSES_V381=Object.freeze([
+  Object.freeze({cue:"At the foot of the altar",prompt:"℣. Introíbo ad altáre Dei.",lat:"℟. Ad Deum, qui lætíficat iuventútem meam.",en:"℟. To God, who giveth joy to my youth."}),
+  Object.freeze({cue:"Psalm Judica",prompt:"℣. Emítte lucem tuam et veritátem tuam...",lat:"℟. Et introíbo ad altáre Dei: ad Deum, qui lætíficat iuventútem meam.",en:"℟. And I will go in to the altar of God: to God, who giveth joy to my youth."}),
+  Object.freeze({cue:"After the priest’s Confiteor",prompt:"The priest finishes his Confiteor.",lat:"℟. Misereátur tui omnípotens Deus, et, dimíssis peccátis tuis, perdúcat te ad vitam ætérnam.",en:"℟. May almighty God have mercy on thee, forgive thee thy sins, and bring thee to life everlasting."}),
+  Object.freeze({cue:"Adjutorium nostrum",prompt:"℣. Adiutórium nostrum in nómine Dómini.",lat:"℟. Qui fecit cælum et terram.",en:"℟. Who made heaven and earth."}),
+  Object.freeze({cue:"Foot prayers",prompt:"℣. Deus, tu convérsus vivificábis nos.",lat:"℟. Et plebs tua lætábitur in te.",en:"℟. And Thy people shall rejoice in Thee."}),
+  Object.freeze({cue:"Foot prayers",prompt:"℣. Osténde nobis, Dómine, misericórdiam tuam.",lat:"℟. Et salutáre tuum da nobis.",en:"℟. And grant us Thy salvation."}),
+  Object.freeze({cue:"Foot prayers",prompt:"℣. Dómine, exáudi oratiónem meam.",lat:"℟. Et clamor meus ad te véniat.",en:"℟. And let my cry come unto Thee."}),
+  Object.freeze({cue:"Dominus vobiscum",prompt:"℣. Dóminus vobíscum.",lat:"℟. Et cum spíritu tuo.",en:"℟. And with thy spirit."}),
+  Object.freeze({cue:"Gospel",prompt:"The celebrant announces the holy Gospel.",lat:"℟. Glória tibi, Dómine.",en:"℟. Glory be to Thee, O Lord."}),
+  Object.freeze({cue:"End of Gospel",prompt:"The Gospel concludes.",lat:"℟. Laus tibi, Christe.",en:"℟. Praise be to Thee, O Christ."}),
+  Object.freeze({cue:"Orate, fratres",prompt:"℣. Oráte, fratres...",lat:"℟. Suscípiat Dóminus sacrifícium de mánibus tuis ad laudem et glóriam nominis sui, ad utilitátem quoque nostram, totiúsque Ecclésiæ suæ sanctæ. Amen.",en:"℟. May the Lord accept the Sacrifice from thy hands, to the praise and glory of His Name, for our benefit and for that of all His holy Church. Amen."}),
+  Object.freeze({cue:"Preface dialogue",prompt:"℣. Sursum corda.",lat:"℟. Habémus ad Dóminum.",en:"℟. We have lifted them up to the Lord."}),
+  Object.freeze({cue:"Preface dialogue",prompt:"℣. Grátias agámus Dómino Deo nostro.",lat:"℟. Dignum et iustum est.",en:"℟. It is right and just."}),
+  Object.freeze({cue:"Pater noster",prompt:"℣. Et ne nos indúcas in tentatiónem.",lat:"℟. Sed líbera nos a malo.",en:"℟. But deliver us from evil."}),
+  Object.freeze({cue:"Dismissal",prompt:"℣. Ite, missa est.",lat:"℟. Deo grátias.",en:"℟. Thanks be to God."}),
+]);
+
+export const SEASONAL_PRACTICES_V381=Object.freeze([
+  Object.freeze({title:["Candlemas","Chandeleur"],when:["2 February","2 février"],detail:["Bring/receive blessed candles · join the procession where celebrated","Apporter/recevoir les cierges bénits · participer à la procession là où elle est célébrée"],route:"calendar"}),
+  Object.freeze({title:["Ash Wednesday","Mercredi des Cendres"],when:["Beginning of Lent","Début du Carême"],detail:["Receive ashes · observe current penance · optional older discipline","Recevoir les cendres · observer la pénitence actuelle · ancienne discipline facultative"],route:"pray.penitential_psalms"}),
+  Object.freeze({title:["Palm Sunday","Dimanche des Rameaux"],when:["Holy Week","Semaine Sainte"],detail:["Take part in the procession · keep blessed palm reverently · hear the Passion","Participer à la procession · conserver respectueusement le rameau bénit · entendre la Passion"],route:"pray.seven_words"}),
+  Object.freeze({title:["Holy Thursday","Jeudi Saint"],when:["Sacred Triduum","Triduum sacré"],detail:["Mass · Altar of Repose · Eucharistic watch","Messe · reposoir · veille eucharistique"],route:"pray.adoration"}),
+  Object.freeze({title:["Good Friday","Vendredi Saint"],when:["Sacred Triduum","Triduum sacré"],detail:["Current fast/abstinence · Cross · Seven Words · Stations","Jeûne/abstinence actuels · Croix · Sept Paroles · Chemin de Croix"],route:"pray.seven_words"}),
+  Object.freeze({title:["Rogation Days","Rogations"],when:["Traditional seasonal observance","Observance saisonnière traditionnelle"],detail:["Join the Litany/procession where celebrated · pray for land, work and needs","Participer aux litanies/procession là où elles sont célébrées · prier pour la terre, le travail et les besoins"],route:"pray.penitential_psalms"}),
+  Object.freeze({title:["Corpus Christi","Fête-Dieu"],when:["Eucharistic feast","Fête eucharistique"],detail:["Mass · Eucharistic procession · hymns · Benediction","Messe · procession eucharistique · hymnes · bénédiction"],route:"pray.benediction"}),
+  Object.freeze({title:["Ember Days","Quatre-Temps"],when:["Four seasonal sets","Quatre séries saisonnières"],detail:["Attend the proper Mass where possible · voluntary traditional fasting","Assister si possible à la Messe propre · jeûne traditionnel volontaire"],route:"calendar"}),
+  Object.freeze({title:["October Rosary","Rosaire d’octobre"],when:["Traditional devotional season","Saison dévotionnelle traditionnelle"],detail:["Pray the Rosary · Litany of Loreto","Prier le Rosaire · Litanies de Lorette"],route:"pray.rosary"}),
+  Object.freeze({title:["November / Holy Souls","Novembre / Âmes du purgatoire"],when:["1–8 November and All Souls","1–8 novembre et Commémoration des fidèles défunts"],detail:["Cemetery prayer · De profundis · Requiem · Mass for the dead","Prière au cimetière · De profundis · Requiem · Messe pour les défunts"],route:"pray.penitential_psalms"}),
+]);
