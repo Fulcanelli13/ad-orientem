@@ -114,15 +114,19 @@ try{
     stageRight:document.querySelector("#ao-r17-native-reader-preview .ao-reader-stage")?.dataset?.rightRail??null,
     focusedParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
     homeButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")),
-    parametersButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")),
+    preferencesButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences]")),
+    appSettingsButton:Boolean(document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")),
     homeControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.textContent?.trim()??"",
-    parametersControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.textContent?.trim()??"",
+    preferencesControlText:document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences]")?.textContent?.trim()??"",
     homeControlRenderer:document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.dataset?.aoAssetRenderer??null,
-    parametersControlRenderer:document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.dataset?.aoAssetRenderer??null,
+    preferencesControlRenderer:document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences]")?.dataset?.aoAssetRenderer??null,
     homeControlMask:getComputedStyle(document.querySelector("#ao-r17-native-reader-preview [data-reader-home] .ao-reader-top-icon"))?.webkitMaskImage||"",
-    parametersControlMask:getComputedStyle(document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters] .ao-reader-top-icon"))?.webkitMaskImage||"",
+    preferencesControlMask:getComputedStyle(document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences] .ao-reader-top-icon"))?.webkitMaskImage||"",
     homeControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-home]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
-    parametersControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-parameters]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
+    preferencesControlRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview [data-reader-preferences]")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
+    stateLabels:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-state-kicker")].map(x=>x.textContent?.trim()??""),
+    guideLabel:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-short']")?.textContent?.trim()??"",
+    preferencesOpen:document.querySelector("#ao-r17-native-reader-preview [data-role='mass-preferences']")?.dataset?.open??null,
     floatingClose:Boolean(document.querySelector("#ao-r17-native-reader-preview [aria-label='Close Mass reader']")),
     sectionJumpDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='section-jump']")?.disabled??null,
     sectionButtonCount:document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-section]").length,
@@ -146,15 +150,19 @@ try{
   assert.equal(opening.scholaInRightRail,false,"Schola remained trapped in the narrow right rail");
   assert.equal(opening.scholaDock,"true","active Schola did not move to the readable dedicated dock");
   assert.equal(opening.homeButton,true,"LIVE first ribbon lost Home control");
-  assert.equal(opening.parametersButton,true,"LIVE first ribbon lost Settings/parameters control");
+  assert.equal(opening.preferencesButton,true,"v1.80 first ribbon lost Mass preferences control");
+  assert.equal(opening.appSettingsButton,true,"Mass preferences lost its app-settings handoff");
   assert.equal(opening.homeControlText,"","Home control retained obsolete text after canonical icon externalization");
-  assert.equal(opening.parametersControlText,"","Parameters control retained obsolete text after canonical icon externalization");
+  assert.equal(opening.preferencesControlText,"","Mass preferences control retained obsolete text after canonical icon externalization");
   assert.equal(opening.homeControlRenderer,"mask","Home control is not owned by the canonical mask renderer");
-  assert.equal(opening.parametersControlRenderer,"mask","Parameters control is not owned by the canonical mask renderer");
+  assert.equal(opening.preferencesControlRenderer,"mask","Mass preferences control is not owned by the canonical mask renderer");
   assert.match(opening.homeControlMask,/ao-nav-home\.png/,"Home control does not render the frozen navigation asset");
-  assert.match(opening.parametersControlMask,/ao-nav-settings\.png/,"Parameters control does not render the frozen navigation asset");
+  assert.match(opening.preferencesControlMask,/ao-nav-settings\.png/,"Mass preferences control does not render the frozen navigation asset");
   assert.ok(opening.homeControlRect?.width>=44&&opening.homeControlRect?.height>=44,"Home control lost a usable phone touch target");
-  assert.ok(opening.parametersControlRect?.width>=44&&opening.parametersControlRect?.height>=44,"Parameters control lost a usable phone touch target");
+  assert.ok(opening.preferencesControlRect?.width>=44&&opening.preferencesControlRect?.height>=44,"Mass preferences control lost a usable phone touch target");
+  assert.deepEqual(opening.stateLabels,["YOU","PRIEST"],"persistent state ribbon is no longer YOU / GUIDE / PRIEST");
+  assert.ok(["OPEN","RUBRICS"].includes(opening.guideLabel),"Guide centre cell lost v1.79/v1.80 semantics");
+  assert.equal(opening.preferencesOpen,"false","Mass preferences sheet should be closed at reader entry");
   assert.equal(opening.floatingClose,false,"obsolete floating close button still overlays the LIVE ribbon");
   assert.equal(opening.sectionJumpDisabled,false,"source-first section jump is disabled");
   assert.equal(opening.sectionButtonCount,opening.totalCards,"section jump does not expose the complete current display model");
