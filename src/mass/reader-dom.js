@@ -525,6 +525,9 @@ export function createReaderDomAdapter({
   let scholaHeight=100;
   let scholaTranslationVisible=false;
   let scholaIdentity=null;
+  let heldBell=null;
+  let bellHoldUntil=0;
+  let bellHoldTimer=0;
 
   function setMode(next){
     const requested=normalizePresentationMode(next);
@@ -561,6 +564,31 @@ export function createReaderDomAdapter({
     const match=String(current?.progress??"").match(/(\d+)\s*\/\s*(\d+)/);
     const pct=match ? Math.max(0,Math.min(100,(Number(match[1])/Math.max(1,Number(match[2])))*100)) : 0;
     track.style.width=pct+"%";
+  }
+
+  function displayBell(nextBell){
+    if(nextBell){
+      heldBell=nextBell;
+      const hold=Math.max(0,Number(nextBell.presentationHoldMs)||0);
+      bellHoldUntil=hold ? Date.now()+hold : 0;
+      if(bellHoldTimer)clearTimeout(bellHoldTimer);
+      if(hold){
+        bellHoldTimer=setTimeout(()=>{
+          bellHoldTimer=0;
+          if(!current?.bell && Date.now()>=bellHoldUntil){
+            heldBell=null;bellHoldUntil=0;
+            setText(root,"bell",null);
+            setChannel(root,"bell",null);
+            const rail=root.querySelector('[data-channel="bell"]');
+            if(rail)rail.dataset.major="false";
+          }
+        },hold+35);
+      }
+      return nextBell;
+    }
+    if(heldBell && bellHoldUntil>Date.now())return heldBell;
+    heldBell=null;bellHoldUntil=0;
+    return null;
   }
 
   function syncScholaContent(){
@@ -741,7 +769,8 @@ export function createReaderDomAdapter({
     setText(root,"posture",textValue(current.posture));
     setText(root,"gesture",textValue(current.gesture));
     setText(root,"response",textValue(current.response));
-    setText(root,"bell",current.bell ? [textValue(current.bell),current.bell.detail].filter(Boolean).join(" · ") : null);
+    const visibleBell=displayBell(current.bell);
+    setText(root,"bell",visibleBell ? [textValue(visibleBell),visibleBell.detail].filter(Boolean).join(" · ") : null);
     setText(root,"priest-voice",textValue(current.priestVoice));
     setText(root,"schola",current.scholaVisible ? textValue(current.schola) : null);
     const titleNode=root.querySelector('[data-role="card-title"]');
@@ -756,7 +785,7 @@ export function createReaderDomAdapter({
     setChannel(root,"priest-action",current.priestAction);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
-    setChannel(root,"bell",current.bell);
+    setChannel(root,"bell",visibleBell);
     setChannel(root,"priest-voice",current.priestVoice);
     setChannel(root,"schola",current.scholaVisible ? current.schola : null);
     syncScholaChrome();
@@ -781,7 +810,7 @@ export function createReaderDomAdapter({
     if(actionBadge){actionBadge.dataset.active=String(actionActive);actionBadge.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));}
     if(actionRail)actionRail.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));
     const bellRail=root.querySelector('[data-channel="bell"]');
-    if(bellRail)bellRail.dataset.major=String(Boolean(current.bell&&majorCue.has(activeCue)));
+    if(bellRail)bellRail.dataset.major=String(Boolean(visibleBell&&majorCue.has(visibleBell.cueId??activeCue)));
 
     const cinematic=root.querySelector('[data-role="cinematic"]');
     if(cinematic){
@@ -844,6 +873,8 @@ export function createReaderDomAdapter({
   }
 
   function destroy(){
+    if(bellHoldTimer)clearTimeout(bellHoldTimer);
+    bellHoldTimer=0;heldBell=null;bellHoldUntil=0;
     prepared=null;current=null;bound=false;sectionItems=[];root.innerHTML="";
   }
 
