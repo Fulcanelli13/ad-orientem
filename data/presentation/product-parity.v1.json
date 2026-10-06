@@ -1,6 +1,6 @@
 {
   "schema": "ao-product-parity-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "releaseBlocker": null,
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
@@ -203,12 +203,16 @@
     "pray": {
       "status": "CERTIFIED",
       "currentOwner": "src/pray",
-      "reference": "V43_59_30_PRAY_LOCK",
+      "reference": "V43_59_30_PRAY_LOCK_PLUS_EXACT_DONOR_RECOVERIES",
       "mustPreserve": [
         "single PRAY shell",
-        "48-prayer corpus presentation",
-        "fluid reading focus",
+        "canonical prayer corpus presentation",
+        "v3.4.10 40/42 percent fluid focus with midpoint handoff and anticipation",
         "recitation grammar",
+        "exact donor semantic rails",
+        "final donor Rosary composition",
+        "Guided Novenas N3 corpus and privacy rules",
+        "traditional Morning/Evening, Hymns and Holy Name modules",
         "canonical controls"
       ],
       "evidence": [
@@ -216,30 +220,46 @@
         "src/pray/presentation-coherence.js",
         "src/pray/presentation-styles.js",
         "src/pray/canonical-data.js",
+        "src/pray/novena-corpus.js",
+        "src/pray/novena-runtime.js",
+        "src/pray/traditional-pray-data.js",
+        "src/pray/traditional-pray-runtime.js",
         "tests/pray-presentation.mjs",
+        "tests/pray-novenas.mjs",
+        "tests/pray-traditional-life.mjs",
         "tests/app-visual-acceptance.mjs",
-        "Visual acceptance workflow 37304675296 at 390x844 touch geometry",
-        "R17 Mass convergence workflow 37304675353"
+        "PR #203 / #204 exact donor rails",
+        "PR #205 exact donor Rosary",
+        "PR #215 v3.4.10 focus",
+        "PR #220 traditional PRAY extraction"
       ]
     },
     "learn": {
       "status": "CERTIFIED",
       "currentOwner": "src/learn",
-      "reference": "LOCKED_NON_MASS_V43_59_30",
+      "reference": "LOCKED_NON_MASS_V43_59_30_PLUS_V38_1_TRADITIONAL_LIFE",
       "mustPreserve": [
-        "featured hierarchy",
-        "Daily formation / Courses & study / Today in context grouping",
+        "featured Daily Catechism / Understand the Mass hierarchy",
+        "Daily formation / Courses & study / Traditional Catholic life / Today in context grouping",
         "English/French copy",
-        "canonical child-module launches"
+        "canonical child-module launches",
+        "lay-only scope for sacramental/traditional-life guides",
+        "15-card certified Low Mass response trainer",
+        "no AO_TRADITION_V38 runtime fallback"
       ],
       "evidence": [
         "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/traditional-life-data.js",
+        "src/learn/traditional-life.js",
         "tests/learn-owner.mjs",
+        "tests/learn-traditional-life.mjs",
         "tests/learn-owner-e2e.mjs",
         "tests/app-visual-acceptance.mjs",
-        "Visual acceptance workflow 37305642976 at 390x844 touch geometry",
-        "R17 Mass convergence workflow 37305642967",
-        "rebased final-main parity rerun required"
+        "PR #221 — merge c5827cf120b6bd08a80905a10db8b94d0f6c3203",
+        "Visual acceptance workflow 37517552665",
+        "R17 Mass convergence workflow 37517552687",
+        "App convergence workflow 37517552756"
       ]
     },
     "calendar": {
@@ -284,7 +304,7 @@
   },
   "status": "CERTIFIED",
   "crossSurfacePresentationFx": {
-    "status": "RECOVERY_IN_PROGRESS",
+    "status": "EXACT_DONOR_FINAL_COMPOSITION_PENDING",
     "authority": "data/presentation/presentation-fx-parity.v1.json",
     "mustPreserve": [
       "cold-load branded boot cinematic",
@@ -302,11 +322,9 @@
       "reduced-motion remains authoritative"
     ],
     "remaining": [
-      "Rosary physical bead rail parity",
-      "Stations XIV pilgrimage-route parity",
-      "current modular hero/art choreography audit",
-      "modular art-loading selector coverage",
-      "phone certification of recovered route transition/loader/surface-entry behavior"
+      "direct final-donor/current side-by-side composition audit at 390x844",
+      "current modular hero/art choreography comparison against the final approved donor head",
+      "final donor-reference acceptance for Home, PRAY, Learn, Calendar and Settings"
     ]
   }
 }
