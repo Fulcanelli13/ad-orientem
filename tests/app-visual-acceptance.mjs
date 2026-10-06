@@ -213,6 +213,37 @@ try{
   await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFx==="entered",null,{timeout:3000});
   await waitForFxSettled();
   await assertHomeHidden("Calendar");
+  await page.waitForFunction(()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.version==="43.45-modular-exact",null,{timeout:5000});
+  await page.evaluate(()=>{
+    const id=globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate;
+    globalThis.__AO_EXACT_WEEK_RETRY=globalThis.AO_CALENDAR_WEEK_CACHE_V4345.retryWeek(id);
+  });
+  await page.waitForFunction(()=>{
+    const el=document.getElementById("ao-cinema-loader");
+    return el?.dataset?.kind==="calendar-week"&&el.classList.contains("aoCinemaLoaderOn");
+  },null,{timeout:5000});
+  const donorWeekLoader=await page.evaluate(()=>{
+    const el=document.getElementById("ao-cinema-loader");
+    return {
+      kind:el?.dataset?.kind??null,
+      title:el?.querySelector?.("[data-ao-cinema-loader-title]")?.textContent?.trim()??"",
+      sub:el?.querySelector?.("[data-ao-cinema-loader-sub]")?.textContent?.trim()??"",
+      progress:el?.dataset?.weekProgress??null,
+    };
+  });
+  assert.equal(donorWeekLoader.kind,"calendar-week","Calendar did not use the donor week-progress workload");
+  assert.equal(donorWeekLoader.title,"Preparing the liturgical week","Calendar week loader copy diverged from the approved donor");
+  assert.match(donorWeekLoader.sub,/\d+ of 7 days prepared/,"Calendar week loader lost seven-day progress");
+  assert.equal(donorWeekLoader.progress,"1962 calendar · complete week","Calendar week loader lost its donor progress identity");
+  await page.evaluate(()=>globalThis.__AO_EXACT_WEEK_RETRY);
+  await page.waitForFunction(()=>{
+    const api=globalThis.AO_CALENDAR_WEEK_CACHE_V4345,state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+    return api?.weekReady?.(state?.selectedDate)===true;
+  },null,{timeout:20000});
+  const donorWeek=await page.evaluate(()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345.inspect());
+  assert.equal(donorWeek.weekReady,true,"Calendar did not resolve the complete visible week");
+  assert.equal(donorWeek.visibleWeek.length,7,"Calendar donor week cache does not contain seven dates");
+  assert.equal(donorWeek.visibleWeek.every(x=>x.cached),true,"Calendar rail still contains unresolved placeholder dates after donor preload");
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1);
   assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-native]").count(),0);
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),1,"Calendar lost its sacred-time annual overview");
