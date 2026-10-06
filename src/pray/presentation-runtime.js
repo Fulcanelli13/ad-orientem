@@ -921,6 +921,17 @@ function onChange(e){const x=e.target;
 function onInput(e){const x=e.target;if(x.matches('[data-p435930-since]'))CONF.since=x.value;if(x.matches('[data-p435930-lib-search]')){LIB.q=x.value;const pos=x.selectionStart;render();const n=document.querySelector('[data-p435930-lib-search]');n?.focus();try{n?.setSelectionRange(pos,pos)}catch{}}}
 // Keep shared Rosary preferences synchronized when the preserved canonical player changes them.
 document.addEventListener('click',e=>{
+ const donorBack=e.target.closest?.('#aoPrayerBookRoot .lab-back[data-pb-back]');
+ if(donorBack&&externalResume&&rosaryDonorRoot()?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]')){
+  // The preserved PrayerBook owns its internal Rosary state, but modular PRAY owns
+  // the handoff return. Close silently so a stale/lost donor returnContext cannot
+  // strand the user in the donor hub, then let the canonical PRAY-domain bridge
+  // consume externalResume and restore the exact modular snapshot.
+  e.preventDefault();e.stopImmediatePropagation();
+  window.AOTraditionalPrayerBook?.close?.({silent:true});
+  window.AO_V37_SHELL?.openDomain?.('pray');
+  return
+ }
  const overviewOpen=e.target.closest?.('[data-r23-overview-open]');if(overviewOpen){
   const r=rosaryDonorRoot();const sheet=r?.querySelector?.('#r23-overview-sheet');if(sheet){e.preventDefault();e.stopPropagation();sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');sheet.querySelector('[data-r23-overview-close]')?.focus?.()}return
  }
