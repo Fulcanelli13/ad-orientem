@@ -410,7 +410,10 @@ function bindRosaryDonorBack(root){
       target=Math.max(0,Math.min(steps.length-1,current+delta));
      if(target!==current){
       e.preventDefault();e.stopImmediatePropagation();
-      if(api.setStep(target)!==false)setTimeout(decorateRosary,0);
+      if(api.setStep(target)!==false){
+       decorateRosary();
+       queueMicrotask(()=>decorateRosary());
+      }
       return;
      }
     }
