@@ -25,11 +25,20 @@ function selectedSunday(){
  const d=new Date(String(raw)+'T12:00:00');
  return !Number.isNaN(d.getTime())&&d.getDay()===0;
 }
+let lastSemanticTransientSignature='';
+let semanticTransientAssets=[];
 function semanticRailChip(assetId,label,value='',opts={}){
  if(!assetId||!label)return'';
  const channel=opts.channel==='transient'?'transient':'persistent';
- const cueClass=channel==='transient'?' cue-enter':'';
- return `<div class="aoP435930SemanticRailChip ${channel}${cueClass}" data-ao-pray-rail-channel="${channel}" data-ao-pray-rail-asset="${esc(assetId)}"><span class="aoP435930SemanticRailCard">${assetIcon(assetId,'aoP435930SemanticRailIcon')}</span><span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
+ if(channel==='transient')semanticTransientAssets.push(assetId);
+ return `<div class="aoP435930SemanticRailChip ${channel}" data-ao-pray-rail-channel="${channel}" data-ao-pray-rail-asset="${esc(assetId)}"><span class="aoP435930SemanticRailCard">${assetIcon(assetId,'aoP435930SemanticRailIcon')}</span><span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
+}
+function semanticTransientStateKey(){
+ if(view==='stations')return 'stations:'+STATIONS.step;
+ if(view==='adoration')return ['adoration',ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep].join(':');
+ if(view==='benediction')return 'benediction:'+BEN.step;
+ if(view==='confession')return 'confession:'+CONF.stage;
+ return view;
 }
 function ritualChannelLabel(channel){
  return ({posture:L('Posture','Posture'),gesture:L('Gesture','Geste'),action:L('Action','Action'),context:L('Context','Contexte')})[channel]||channel;
@@ -47,9 +56,11 @@ function angelusExactRailMarkup(){
  return `<aside class="aoRitualRail aoRitualFaithfulRail" data-ao-ritual-rail data-ao-ritual-module="angelus" data-ao-ritual-channels="posture,gesture" aria-label="${esc(L('Prayer posture and gesture','Posture et geste de prière'))}">${ritualSlotMarkup('posture',p.assetId,p.label,{value:p.stand?'stand':'kneel'})}</aside>`;
 }
 function semanticRails(){
+ semanticTransientAssets=[];
  let left='',right='';
  if(view==='angelus'){
    // Angelus owns the exact donor ritual grid inside renderAngelus().
+   lastSemanticTransientSignature='';
    return'';
  }else if(view==='rosary'){
    // Rosary remains under its dedicated exact-donor recovery lane.
@@ -93,8 +104,13 @@ function semanticRails(){
      {channel:'persistent'}
    );
  }
- if(!left&&!right)return'';
- return `<div class="aoP435930SemanticRails" data-ao-pray-semantic-rails aria-hidden="true">${left?`<aside class="aoP435930SemanticRail left">${left}</aside>`:''}${right?`<aside class="aoP435930SemanticRail right">${right}</aside>`:''}</div>`;
+ if(!left&&!right){lastSemanticTransientSignature='';return'';}
+ const signature=semanticTransientAssets.length?[semanticTransientStateKey(),...semanticTransientAssets].join('|'):'';
+ const cueEnter=Boolean(signature&&signature!==lastSemanticTransientSignature);
+ lastSemanticTransientSignature=signature;
+ let markup=`<div class="aoP435930SemanticRails" data-ao-pray-semantic-rails aria-hidden="true">${left?`<aside class="aoP435930SemanticRail left">${left}</aside>`:''}${right?`<aside class="aoP435930SemanticRail right">${right}</aside>`:''}</div>`;
+ if(cueEnter)markup=markup.replaceAll('aoP435930SemanticRailChip transient"','aoP435930SemanticRailChip transient cue-enter"');
+ return markup;
 }
 const nl=v=>esc(v).replace(/\n/g,'<br>');
 const runtime=()=>window.AO_RUNTIME_V8;
