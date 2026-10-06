@@ -66,14 +66,16 @@ assert.match(runtime,/CONF\.stage===3.*ao-live-sign-cross/s,"Confession in-confe
 assert.match(runtime,/aoP435930SemanticRailChip \$\{channel\}\$\{cueClass\}/,"transient semantic rail state no longer receives its cue-enter class");
 assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
-assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
+assert.match(styles,/aoP435930SemanticRailCard\{width:44px/,"PRAY lost the donor thin desktop rail-card geometry");
+assert.match(styles,/writing-mode:vertical-rl/,"PRAY rail labels lost the donor vertical edge treatment");
+assert.match(styles,/@media\(max-width:700px\)[\s\S]*aoP435930SemanticRailCard\{width:38px/,"PRAY lost thin phone edge rails");
+assert.match(styles,/aoPrayRailCueIn/,"transient devotional cues lost their one-shot rail animation");
 assert.match(styles,/grid-template-columns:80px minmax\(0,1fr\)/,"Angelus exact donor rail lost its 80px desktop reader-grid channel");
 assert.match(styles,/min-height:78px/,"Angelus exact donor ritual slot lost its 78px desktop height");
 assert.match(styles,/data-channel="gesture"\] \.aoRitualIcon\{width:48px!important;height:48px!important\}/,"Angelus gesture icon lost donor 48px hierarchy");
 assert.match(styles,/@media\(max-width:720px\)[\s\S]*grid-template-columns:minmax\(0,1fr\)/,"Angelus exact donor rail lost mobile single-column reflow");
 assert.match(styles,/@media\(max-width:620px\)[\s\S]*\.aoRitualRail\{top:70px;flex-direction:row/,"Angelus exact donor rail lost mobile horizontal cue row");
 assert.match(styles,/@keyframes aoRitualHalo\{0%\{opacity:\.5;transform:scale\(\.72\)\}100%\{opacity:0;transform:scale\(1\.42\)\}\}/,"Angelus gesture halo no longer matches donor motion");
-assert.match(styles,/@media\(max-width:560px\)[\s\S]*aoP435930SemanticRailIcon\{width:27px/,"PRAY semantic rail icons lost salient phone geometry");
 assert.match(runtime,/function decorateRosaryFx\(r\)/,"Rosary lost its live FX presentation hook");
 assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
 assert.match(runtime,/aoP435930RosarySemanticRails/,"Rosary lost its live contextual side rail");
