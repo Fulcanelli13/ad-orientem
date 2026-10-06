@@ -740,7 +740,7 @@ try{
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
     appOwner:document.documentElement.dataset.aoAppShellOwner??null,
   }));
-  // Wide-browser regression: the product remains an app-width reader rather than a desktop web page.
+  // Wide-browser regression: preserve the integrated v3.4.10 composition — 820px PRAY shell, 760px content measure, two-column hub.
   const wideContext=await browser.newContext({viewport:{width:1440,height:960},deviceScaleFactor:1,hasTouch:false,locale:"en-GB"});
   const wide=await wideContext.newPage();
   await wide.goto("http://127.0.0.1:4186/index.html",{waitUntil:"domcontentloaded",timeout:90000});
@@ -749,11 +749,25 @@ try{
   await wide.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
   const wideHub=await wide.evaluate(()=>{
     const sheet=document.querySelector("#aoPray435930 .aoP435930Sheet"),body=document.querySelector("#aoPray435930 .aoP435930Body"),grid=document.querySelector("#aoPray435930 .aoP435930ModuleGrid");
-    return {sheet:sheet?.getBoundingClientRect().width??0,body:body?.getBoundingClientRect().width??0,columns:grid?getComputedStyle(grid).gridTemplateColumns:""};
+    const first=document.querySelector("#aoPray435930 .aoP435930ModuleCard"),title=first?.querySelector("b"),description=first?.querySelector(".aoP435930ModuleDescription"),icon=first?.querySelector(".aoP435930ModuleIcon");
+    const tr=title?.getBoundingClientRect?.(),dr=description?.getBoundingClientRect?.(),ir=icon?.getBoundingClientRect?.();
+    const columns=grid?getComputedStyle(grid).gridTemplateColumns:"";
+    return {
+      sheet:sheet?.getBoundingClientRect().width??0,
+      body:body?.getBoundingClientRect().width??0,
+      columns,
+      columnCount:columns.trim()?columns.trim().split(/\s+/).length:0,
+      titleWidth:tr?.width??0,
+      descriptionWidth:dr?.width??0,
+      iconRight:ir?.right??0,
+      titleLeft:tr?.left??0,
+    };
   });
-  assert.ok(wideHub.sheet<=522,"PRAY expanded into a desktop-width web page");
-  assert.ok(wideHub.body<=482,"PRAY reading column exceeded the app-native measure");
-  assert.ok(!/\s/.test(wideHub.columns.trim()),"PRAY wide viewport restored the two-column dashboard hub");
+  assert.ok(wideHub.sheet>=818&&wideHub.sheet<=822,"PRAY wide shell diverged from the v3.4.10 820px composition");
+  assert.ok(wideHub.body>=750&&wideHub.body<=762,"PRAY wide reading measure diverged from the v3.4.10 760px composition");
+  assert.equal(wideHub.columnCount,2,"PRAY wide hub no longer uses the donor two-column module grid");
+  assert.ok(wideHub.titleWidth>=250&&wideHub.descriptionWidth>=250,"PRAY wide module text collapsed inside its canonical icon column");
+  assert.ok(wideHub.titleLeft>=wideHub.iconRight+6,"PRAY wide module text overlaps its canonical icon column");
 
   await wide.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
   await wide.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="rosary",null,{timeout:5000});
@@ -793,8 +807,8 @@ try{
     };
   });
   await wide.screenshot({path:resolve(out,"03e-pray-wide-regression.png"),fullPage:false});
-  assert.ok(wideRosary.shell<=522,"Rosary expanded beyond the bounded app reader on wide viewport: "+JSON.stringify(wideRosary));
-  assert.ok(wideRosary.cardWidth>=360,"Rosary wide viewport collapsed the actual prayer column");
+  assert.ok(wideRosary.shell>=748&&wideRosary.shell<=762,"Rosary wide shell diverged from the v3.4.10 760px preserved donor measure: "+JSON.stringify(wideRosary));
+  assert.ok(wideRosary.cardWidth>=680,"Rosary wide viewport collapsed the actual prayer column");
   assert.ok(wideRosary.cardHeight>0&&wideRosary.cardHeight<720,"Rosary wide Our Father reproduced the vertical word-stack regression");
   assert.equal(wideRosary.visibleLegacy,0,"Rosary wide viewport exposes duplicate recitation controls");
   assert.equal(wideRosary.nested,0,"Rosary wide viewport reparents donor DOM into a nested ritual grid");
