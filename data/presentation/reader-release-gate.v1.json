@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.9.0",
+  "version": "5.0.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native remains the production reader. Actual index.html phone-Chromium acceptance is explicit for the complete certified special-structure scope: pre-Mass rites, Good Friday, Easter Vigil, Nuptial insertions, and all supported following-action lifecycles. Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native is the only executable production Mass reader. Actual index.html phone-Chromium acceptance remains required for the complete certified special-structure scope; historical legacy/shadow renderers are evidence only and cannot be selected or started.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -50,8 +50,24 @@
       "status": "CUSTOMARY_ONLY_TRADITIONAL__INCARNATUS_RUBRICAL"
     },
     {
-      "id": "DEPLOYMENT_ROLLBACK_PROTECTION",
-      "status": "LEGACY_BASELINE_MAY_NOT_OVERWRITE_R17_MOUNT"
+      "id": "DEFINITIVE_SINGLE_RENDERER_OWNERSHIP",
+      "status": "CERTIFIED_NATIVE_ONLY",
+      "productionUiOwner": "R17_NATIVE_PRODUCTION",
+      "canonicalOwner": "R17_SESSION_ENGINE",
+      "gate": "src/mass/reader-gate.js",
+      "browserEntry": "src/mass/browser-entry.js",
+      "guarantees": [
+        "reader gate exposes NATIVE as the only selectable renderer",
+        "legacy/shadow query strings and persisted reader-ui values collapse to NATIVE",
+        "browser entry contains no legacy startLive execution path",
+        "browser entry contains no shadow-renderer execution path",
+        "native mount failure fails closed and never falls back to another Mass renderer"
+      ],
+      "tests": [
+        "tests/reader-gate.mjs",
+        "tests/browser-entry.mjs",
+        "tests/production-tree-hygiene.mjs"
+      ]
     },
     {
       "id": "SOLEMN_PAX_SEPARATION",
@@ -901,8 +917,7 @@
       "productionDefault": "R17_NATIVE",
       "browserEntry": "src/mass/browser-entry.js",
       "gate": "src/mass/reader-gate.js",
-      "legacyPolicy": "EXPLICIT_ROLLBACK_OR_SHADOW_ONLY",
-      "rollbackQuery": "?aoR17Reader=legacy",
+      "legacyPolicy": "REMOVED_FROM_PRODUCTION_SELECTION",
       "guarantees": [
         "native reader boots without starting the legacy live renderer",
         "native mount failures fail closed rather than silently falling back to the obsolete mirror",
@@ -1166,7 +1181,7 @@
     "requireSourceFirstCanonMap": true,
     "requireSourceFirstLiveStructure": true,
     "requireRealAppShellAcceptance": true,
-    "legacyRollbackExplicitOnly": true,
+    "legacyRollbackExplicitOnly": false,
     "productionNativeDefault": true
   },
   "pilotRelease": {
@@ -1207,7 +1222,7 @@
     "schema": "ao-r17-field-release-v1",
     "status": "SUPERSEDED_BY_FINAL_MAINLINE",
     "target": "2026-10-04_ORDINARY_OR_VOTIVE_MASS",
-    "readerUiPolicy": "NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK",
+    "readerUiPolicy": "NATIVE_ONLY_DEFINITIVE",
     "supportedForms": [
       "LOW",
       "MISSA_CANTATA_SIMPLE",
@@ -1231,7 +1246,7 @@
       "not Good Friday",
       "not Easter Vigil"
     ],
-    "fallbackPolicy": "Anything outside this scope remains fail-closed or on the proven legacy rollback path; field readiness does not certify the full liturgical year.",
+    "fallbackPolicy": "Unsupported or incomplete native states fail closed; no alternate Mass renderer is permitted.",
     "tests": [
       "tests/reader-field-release.mjs",
       "tests/browser-runtime.mjs",
@@ -1243,7 +1258,7 @@
     "schema": "ao-final-app-release-v1",
     "status": "PRODUCTION_NATIVE_DEFAULT",
     "reader": "R17_NATIVE",
-    "rollback": "LEGACY_EXPLICIT_ONLY",
+    "rollback": "NO_ALTERNATE_RENDERER",
     "fullYearSpecialStructureParity": true,
     "phoneTouchCertified": true,
     "sourceFirstLiveCertified": true,
