@@ -6,6 +6,12 @@ const VISIBLE_REGRESSION_GUARD_CSS=`
 #aoPray435930 .aoP435930Head button::before,#aoPray435930 .aoP435930Head button::after{content:none!important;display:none!important}
 #aoPray435930 .aoP435930Head button>:not([data-ao-inline-asset-id]){display:none!important}
 #aoPray435930 .aoP435930HomeIntro.aoModularHeroIn{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
+#aoPray435930 .aoP435930ModuleCard{grid-template-columns:44px minmax(0,1fr) auto!important;grid-template-rows:auto auto 1fr!important;column-gap:10px!important;row-gap:3px!important}
+#aoPray435930 .aoP435930ModuleCard>.aoP435930ModuleIcon{grid-column:1!important;grid-row:1/4!important;align-self:center!important}
+#aoPray435930 .aoP435930ModuleCard>.aoP435930ModuleKind{grid-column:2!important;grid-row:1!important}
+#aoPray435930 .aoP435930ModuleCard>b{grid-column:2!important;grid-row:2!important;min-width:0!important}
+#aoPray435930 .aoP435930ModuleCard>.aoP435930ModuleDescription{grid-column:2!important;grid-row:3!important;min-width:0!important}
+#aoPray435930 .aoP435930ModuleCard>i{grid-column:3!important;grid-row:1/4!important;width:24px!important;height:24px!important;align-self:center!important}
 @media(max-width:560px){
  #aoPray435930 .aoP435930RecitationMode{grid-template-columns:auto minmax(160px,220px)!important;justify-content:space-between!important;gap:8px!important;padding-left:8px!important}
  #aoPray435930 .aoP435930RecitationMode>div{width:100%!important}
