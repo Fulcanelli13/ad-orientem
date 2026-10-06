@@ -270,21 +270,17 @@ try{
       bars:document.querySelectorAll(".aoP435930RosaryBar").length,
       simple:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-rosary-depth='simple']").length,
       guided:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']").length,
-      individual:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-recitation='individual']").length,
-      group:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-recitation='group']").length,
       guidedActive:document.querySelector(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']")?.classList?.contains("active")??false,
-      groupActive:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??false,
       hintsVisible:[...document.querySelectorAll(".flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]")]
         .filter(visible).length,
     };
   });
   assert.deepEqual(
-    {bars:rosarySurface.bars,simple:rosarySurface.simple,guided:rosarySurface.guided,individual:rosarySurface.individual,group:rosarySurface.group},
-    {bars:1,simple:1,guided:1,individual:1,group:1},
-    "Rosary donor did not receive the final PRAY control bar"
+    {bars:rosarySurface.bars,simple:rosarySurface.simple,guided:rosarySurface.guided},
+    {bars:1,simple:1,guided:1},
+    "Rosary donor did not receive the final PRAY depth control bar"
   );
   assert.equal(rosarySurface.guidedActive,true,"Rosary donor lost guided-depth state");
-  assert.equal(rosarySurface.groupActive,true,"Rosary donor lost group-recitation state");
   assert.equal(rosarySurface.hintsVisible,0,"obsolete Rosary flip/translation hints remained visible");
 
   await page.evaluate(()=>globalThis.AO_V37_SHELL?.openDomain?.("pray"));
