@@ -555,6 +555,7 @@ try{
     donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
     modularOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
     modularView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
+    returnCaptureDebug:globalThis.__aoRosaryReturnCaptureDebug??null,
   }));
   console.log("ROSARY_BACK_AFTER",JSON.stringify(rosaryBackAfter));
   console.log("ROSARY_BACK_EVENTS",JSON.stringify(await page.evaluate(()=>globalThis.__aoRosaryBackEvents||[])));
