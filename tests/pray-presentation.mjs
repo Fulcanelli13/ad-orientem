@@ -82,6 +82,10 @@ assert.ok(runtime.includes("donorBack&&rosaryDonorReturnSnapshot&&rosaryDonorRoo
   "Rosary exact-donor back control lost the dedicated modular PRAY return bridge");
 assert.match(runtime,/const snap=rosaryDonorReturnSnapshot;rosaryDonorReturnSnapshot=null;externalResume=null;[\s\S]*AOTraditionalPrayerBook\?\.close\?\.\(\{silent:true\}\);[\s\S]*reopenResume\(snap\)/,
   "Rosary donor return no longer closes the preserved PrayerBook and restores its captured modular snapshot");
+assert.ok(runtime.includes("if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))rosaryDonorReturnSnapshot=null"),
+  "Rosary donor return snapshot no longer clears only after the donor is actually closed");
+assert.doesNotMatch(runtime,/if\(!silent\)\{navStack=\[\];externalResume=null;rosaryDonorReturnSnapshot=null\}/,
+  "generic modular close must not erase an active Rosary donor return snapshot");
 assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
 assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader grid");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
