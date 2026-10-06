@@ -1066,6 +1066,8 @@ export const AO_CANONICAL_EXTENSION_ASSETS=Object.freeze({
     "assetId": "ao-live-sign-cross",
     "owner": "live",
     "kind": "png_mask_alias",
+    "path": "assets/active/live-gesture/ao-live-sign-cross.png",
+    "sha256": "b1684a9aa8365e8b851253bb034842e3f97d2b01ad4df231961b8563f99351a3",
     "source": "legacy ao-posture-sign-cross artwork migrated to V4.1 Live ownership",
     "status": "HARDENED_EXTENSION"
   }
@@ -1127,7 +1129,7 @@ export function isCanonicalAssetId(assetId){
 }
 
 export function resolveCanonicalAssetUrl(assetId,baseUrl=import.meta.url){
-  const record=AO_CANONICAL_CORE_ASSETS[String(assetId??"").trim()];
+  const record=getCanonicalAsset(assetId);
   if(!record?.path)return null;
   return new URL("../../"+record.path,baseUrl).href;
 }
