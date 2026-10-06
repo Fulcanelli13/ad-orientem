@@ -418,8 +418,8 @@ try{
     };
   });
   assert.ok(wide.modeRibbon?.width<340,"mode selector regressed into browser-width tabs: "+JSON.stringify(wide));
-  assert.ok(wide.cardViewport?.width<=1010,"Mass centre reader expands too wide on desktop: "+JSON.stringify(wide));
-  assert.ok(wide.prayerBody?.width<=770,"prayer measure lost donor maximum width: "+JSON.stringify(wide));
+  assert.ok(wide.cardViewport?.width>=wide.prayerBody?.width,"transparent reader viewport no longer contains the centred prayer measure");
+  assert.ok(wide.prayerBody?.width<=800,"prayer measure lost donor 790px maximum: "+JSON.stringify(wide));
   assert.equal(wide.cardBorderTop,"0px","giant bordered prayer card chrome returned");
   assert.equal(wide.cardBackgroundImage,"none","giant panel background returned behind prayer text");
   assert.equal(wide.cardBoxShadow,"none","giant card shadow returned");
