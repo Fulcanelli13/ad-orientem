@@ -1110,6 +1110,16 @@ export const AO_SHARED_IDENTITY_MAPPINGS=Object.freeze([
     "route": "pray.litany_saints",
     "asset_id": "ao-refined-devotions",
     "reason": "The Litany of the Saints uses the active general Devotions identity because V4 has no dedicated Litany-of-Saints identity."
+  },
+  {
+    "route": "pray.sacred_hymns",
+    "asset_id": "ao-refined-devotions",
+    "reason": "Sacred Hymns & Canticles uses the active general Devotions identity because V4 has no dedicated sacred-hymns identity."
+  },
+  {
+    "route": "pray.holy_name_litany",
+    "asset_id": "ao-refined-devotions",
+    "reason": "The Litany of the Holy Name uses the active general Devotions identity because V4 has no dedicated Holy-Name-litany identity."
   }
 ]);
 
@@ -1160,7 +1170,7 @@ export const AO_PRAY_ROUTE_ASSET_IDS=Object.freeze({
   "pray.pray_now":"ao-refined-pray-now",
   "pray.devotions":"ao-refined-devotions",
   "pray.silence":"ao-refined-silence",
-  "pray.morning_evening":"ao-rich-begin-end-day",
+  "pray.morning_evening":"ao-rich-begin-end-day",\n  "pray.sacred_hymns":"ao-refined-devotions",\n  "pray.holy_name_litany":"ao-refined-devotions",
   "pray.morning":"ao-rich-morning-offering",
   "pray.night":"ao-rich-night-prayer",
   "pray.marian":"ao-rich-our-lady-marian-devotions",
