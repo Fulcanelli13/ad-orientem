@@ -17,8 +17,8 @@ export const BELL_CUE_BINDINGS=Object.freeze([
 const CINEMATIC_BY_CUE=Object.freeze({
   "AO.SM.C0145":Object.freeze({kind:"BELL",title:"SANCTUS BELL",subtitle:"SANCTUS",durationMs:1350}),
   "AO.SM.C0161":Object.freeze({kind:"BELL",title:"WARNING BELL",subtitle:"BEFORE CONSECRATION",durationMs:1350}),
-  "AO.SM.C0174":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST",durationMs:1950}),
-  "AO.SM.C0181":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:1950}),
+  "AO.SM.C0174":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST",durationMs:3450}),
+  "AO.SM.C0181":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:3450}),
   "AO.SM.C0225":Object.freeze({kind:"BELL",title:"COMMUNION WARNING",subtitle:"SHORTLY AFTER AGNUS DEI",durationMs:1350}),
 });
 
@@ -159,10 +159,12 @@ export function createReaderTransientController({events,prepared}={}){
         patternRole:sound.pattern_role??null,
         permittedPatterns:Object.freeze([...(sound.permitted_patterns??[])]),
       })));
+      const presentationSpec=CINEMATIC_BY_CUE[id]??null;
       bell=Object.freeze({
         label:binding.label,detail:binding.detail,cueId:id,
         canonicalEventIds:binding.canonicalEventIds,
         soundEvents:Object.freeze(soundEvents),
+        presentationHoldMs:presentationSpec?.kind==="ELEVATION" ? 3600 : (presentationSpec?.durationMs??0),
         transient:true,owner:"R17_RECOVERED_CUE_CANONICAL_SOUND_EVENT",
       });
       bellOwner="R17_RECOVERED_CUE_CANONICAL_SOUND_EVENT";
