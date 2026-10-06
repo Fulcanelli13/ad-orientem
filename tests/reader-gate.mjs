@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
+  READER_UI_MODES,
   resolveReaderUiMode,
   readerModeAllowsLegacyDom,
   readerModeRunsShadowAudit,
@@ -10,24 +12,29 @@ import {
   auditSelectorPresence,
 } from "../src/mass/reader-parity.js";
 
-assert.equal(resolveReaderUiMode({}), "NATIVE");
-assert.equal(resolveReaderUiMode({stored:"legacy"}), "LEGACY");
-assert.equal(resolveReaderUiMode({stored:"shadow"}), "SHADOW");
-assert.equal(resolveReaderUiMode({stored:"preview"}), "NATIVE");
-assert.equal(resolveReaderUiMode({search:"?aoR17Reader=shadow",stored:"preview"}), "SHADOW");
-assert.equal(resolveReaderUiMode({search:"?aoR17Reader=legacy"}), "LEGACY");
-assert.equal(resolveReaderUiMode({search:"?aoR17Reader=r17"}), "NATIVE");
-assert.equal(resolveReaderUiMode({search:"?aoR17Reader=unknown",stored:"legacy"}), "NATIVE");
-
-assert.equal(readerModeAllowsLegacyDom("NATIVE"), false);
-assert.equal(readerModeAllowsLegacyDom("LEGACY"), true);
-assert.equal(readerModeAllowsLegacyDom("SHADOW"), true);
-assert.equal(readerModeRunsShadowAudit("NATIVE"), false);
-assert.equal(readerModeRunsShadowAudit("LEGACY"), false);
-assert.equal(readerModeRunsShadowAudit("SHADOW"), true);
-assert.equal(readerModeMountsPreview("NATIVE"), true);
-assert.equal(readerModeMountsPreview("LEGACY"), false);
-assert.equal(readerModeMountsPreview("SHADOW"), false);
+assert.deepEqual([...READER_UI_MODES],["NATIVE"]);
+for(const input of [
+  {},
+  {stored:"legacy"},
+  {stored:"shadow"},
+  {stored:"preview"},
+  {search:"?aoR17Reader=shadow",stored:"legacy"},
+  {search:"?aoR17Reader=legacy"},
+  {search:"?aoR17Reader=r17"},
+  {search:"?aoR17Reader=unknown",stored:"legacy"},
+]){
+  assert.equal(resolveReaderUiMode(input),"NATIVE","historical reader selector regained production authority");
+}
+for(const mode of ["NATIVE","LEGACY","SHADOW","rollback","preview",null]){
+  assert.equal(readerModeAllowsLegacyDom(mode),false,"legacy DOM became selectable");
+  assert.equal(readerModeRunsShadowAudit(mode),false,"shadow renderer became selectable");
+  assert.equal(readerModeMountsPreview(mode),true,"native renderer stopped being the sole production mount");
+}
+const browserEntrySource=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
+assert.doesNotMatch(browserEntrySource,/\.startLive\s*\(/,
+  "production Mass entry can still start a historical renderer");
+assert.doesNotMatch(browserEntrySource,/runReaderShadowAudit/,
+  "production Mass entry still imports or runs the historical shadow renderer");
 
 const requiredSelectors=READER_PARITY_REQUIREMENTS.filter(x=>x.required).map(x=>x.selector);
 const allPresent=new Set(requiredSelectors);
@@ -41,4 +48,4 @@ const fail=auditSelectorPresence(sel=>oneMissing.has(sel));
 assert.equal(fail.complete,false);
 assert.deepEqual([...fail.missing],["schola-dock"]);
 
-console.log("reader gate/parity contract: PASS — native default, explicit legacy rollback.");
+console.log("reader gate/parity contract: PASS — one definitive native production owner.");
