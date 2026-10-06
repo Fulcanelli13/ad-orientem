@@ -156,6 +156,51 @@ html[data-reduced-motion="true"] #aoPray435930 .aoP435930SemanticRailChip.transi
 }
 html[data-reduced-motion="true"] #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot{animation:none!important}`;
 
+
+const ROSARY_EXACT_DONOR_CSS=\`/* Exact v3.4.14 Rosary live-player presentation.
+   Ported over the preserved Rosary state/controls; no second engine. */
+#aoPrayerBookRoot .rosary-decade-bar-v15{display:flex;gap:5px;margin:0 0 12px}
+#aoPrayerBookRoot .rosary-decade-bar-v15 i{height:4px;flex:1;border-radius:999px;background:rgba(255,255,255,.13)}
+#aoPrayerBookRoot .rosary-decade-bar-v15 i.done{background:var(--gold,var(--liturgical,#d8bd7d))}
+#aoPrayerBookRoot .rosary-decade-bar-v15 i.current{background:var(--gold,var(--liturgical,#d8bd7d));box-shadow:0 0 0 1px rgba(199,174,109,.28)}
+
+#aoPrayerBookRoot .r29-head-recitation{display:flex;align-items:center;border:1px solid rgba(197,209,218,.22);border-radius:10px;overflow:hidden;height:40px;background:rgba(4,18,31,.24);margin-left:auto}
+#aoPrayerBookRoot .r29-head-recitation button{width:auto;height:38px;min-height:38px;border:0;border-radius:0;padding:0 10px;color:var(--silver,var(--muted,#aeb2b8));background:transparent;font-size:.68rem;font-weight:700;letter-spacing:.025em}
+#aoPrayerBookRoot .r29-head-recitation button+button{border-left:1px solid rgba(197,209,218,.16)}
+#aoPrayerBookRoot .r29-head-recitation button.active,#aoPrayerBookRoot .r29-head-recitation button[aria-pressed="true"]{background:rgba(199,174,109,.18);color:var(--paper,var(--text,#f3ead7));box-shadow:inset 0 0 0 1px rgba(199,174,109,.18)}
+#aoPrayerBookRoot .r29-short{display:none}
+
+#aoPrayerBookRoot .aoRosaryRitualCenter{position:relative;isolation:isolate}
+#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{content:"";position:absolute;z-index:0;inset:-18px -18px -56px;background-image:linear-gradient(180deg,rgba(5,17,31,.70),rgba(5,17,31,.82)),var(--r24-mystery-art);background-size:cover;background-position:center 28%;background-repeat:no-repeat;opacity:.58;filter:saturate(.76) contrast(.92);pointer-events:none;border-radius:0 0 24px 24px}
+#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art>*{position:relative;z-index:1}
+#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art .lab-prayer-sheet,
+#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art .pbFlowCard,
+#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art .r23-prayer-sheet{background:rgba(248,247,241,.92)!important;backdrop-filter:blur(2px)}
+#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art .lab-bead-stage,
+#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art [data-ao-rosary-beads],
+#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art .r23-bead-stage{padding:10px 8px;border-radius:18px;background:rgba(6,21,37,.30);backdrop-filter:blur(2px)}
+
+#aoPrayerBookRoot .lab-contemplation,#aoPrayerBookRoot .r23-contemplation{padding:20px;border-radius:19px;background:var(--paper,#f8f7f1);color:var(--ink,#172532);box-shadow:0 16px 38px rgba(0,0,0,.24)}
+#aoPrayerBookRoot .lab-contemplation h2,#aoPrayerBookRoot .r23-contemplation h2{font-size:clamp(1.8rem,6vw,2.45rem);line-height:1.04;margin:5px 0 7px}
+#aoPrayerBookRoot .r24-individual-mystery-art,#aoPrayerBookRoot .lab-contemplation img{max-height:430px;object-position:center 35%;box-shadow:0 8px 24px rgba(0,0,0,.16)}
+
+@media(max-width:760px){
+ #aoPrayerBookRoot .r29-head-recitation button{padding:0 7px;font-size:.64rem}
+ #aoPrayerBookRoot .r29-wide{display:none}
+ #aoPrayerBookRoot .r29-short{display:inline}
+}
+@media(max-width:650px){
+ #aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{inset:-10px -12px -70px;background-position:center 22%}
+ #aoPrayerBookRoot .r24-individual-mystery-art,#aoPrayerBookRoot .lab-contemplation img{max-height:360px}
+}
+@media(max-width:520px){
+ #aoPrayerBookRoot .r29-head-recitation{height:36px}
+ #aoPrayerBookRoot .r29-head-recitation button{height:34px;min-height:34px;padding:0 6px}
+}
+@media(prefers-reduced-motion:reduce){#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{transition:none}}
+html[data-reduced-motion="true"] #aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{transition:none}
+\`;
+
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
   const style=doc.createElement("style");
@@ -171,6 +216,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-modular-shell-integration-style",MODULAR_SHELL_CSS);
   ensureStyle(doc,"ao-pray-exact-ritual-rail-style",EXACT_RITUAL_RAIL_CSS);
   ensureStyle(doc,"ao-pray-semantic-rails-style",SEMANTIC_RAIL_CSS);
+  ensureStyle(doc,"ao-pray-exact-rosary-v3414-style",ROSARY_EXACT_DONOR_CSS);
   return true;
 }
 
