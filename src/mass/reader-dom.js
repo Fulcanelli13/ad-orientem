@@ -298,8 +298,9 @@ const SHELL_STYLE = `
   .ao-rail .ao-icon-mask{width:34px;height:34px}
   .ao-schola-dock{width:calc(100% - 124px);min-height:100px;padding:9px 11px 11px}
   .ao-schola-dock [data-role="schola"]{font-size:14px}.ao-schola-translation{font-size:12px;padding:7px 8px}
-  .ao-reader-nav button{top:auto;bottom:15px;width:34px;height:34px;border-radius:50%;font-size:20px;opacity:.34;background:rgba(11,16,13,.38)}
-  .ao-reader-nav button[data-reader-nav="previous"]{left:67px}.ao-reader-nav button[data-reader-nav="next"]{right:67px}
+  .ao-reader-nav button{top:auto;bottom:10px;width:44px;height:44px;border-radius:50%;font-size:20px;opacity:.34;background:transparent}
+  .ao-reader-nav button::before{inset:5px;background:rgba(11,16,13,.38)}
+  .ao-reader-nav button[data-reader-nav="previous"]{left:62px}.ao-reader-nav button[data-reader-nav="next"]{right:62px}
   .ao-guide-popover{width:100%;max-height:89vh;border-radius:16px 16px 0 0;padding:15px 14px 28px}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{width:min(48vw,190px)}
 }
