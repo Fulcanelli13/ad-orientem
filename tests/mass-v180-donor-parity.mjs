@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { buildReaderShellMarkup } from "../src/mass/reader-dom.js";
 
 const donor=JSON.parse(readFileSync("data/presentation/mass-v180-donor-parity.v1.json","utf8"));
+const stepReconciliation=JSON.parse(readFileSync("data/presentation/mass-v180-v183-step-reconciliation.v1.json","utf8"));
 const dom=readFileSync("src/mass/reader-dom.js","utf8");
 const gate=readFileSync("src/mass/reader-gate.js","utf8");
 const entry=readFileSync("src/mass/browser-entry.js","utf8");
@@ -63,8 +64,15 @@ assert.match(transients,/"AO\.SM\.C0174":Object\.freeze\(\{kind:"ELEVATION",titl
 assert.match(transients,/"AO\.SM\.C0181":Object\.freeze\(\{kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:3450\}\)/);
 assert.match(transients,/presentationHoldMs:presentationSpec\?\.kind==="ELEVATION" \? 3600/);
 
-assert.deepEqual(donor.open.map(x=>x.id),[
-  "V180_TO_V183_CARD_MAP_RECONCILIATION",
-]);
+assert.deepEqual(donor.open,[]);
+assert.equal(donor.status,"IMPLEMENTATION_COMPLETE_AWAITING_CI");
+assert.equal(stepReconciliation.status,"RECONCILED_FOR_PRODUCT_NONHISTORICAL");
+assert.equal(stepReconciliation.authorities.presentationDonor.livePrayerCards,38);
+assert.equal(stepReconciliation.authorities.canonicalSource.steps,39);
+assert.equal(stepReconciliation.arithmetic.recoveredProductDecompressions,9);
+assert.equal(stepReconciliation.authorities.productionPresentation.steps,48);
+assert.equal(stepReconciliation.historicalGap.exactBoundaryRecovered,false);
+assert.equal(stepReconciliation.historicalGap.releaseImpact,"NONE_UNLESS_HISTORICAL_V183_IDENTITY_IS_CLAIMED");
+assert.equal(stepReconciliation.invariants.includes("historicalV183IdentityClaim remains false"),true);
 
-console.log("Mass v1.80 donor parity contract: PASS — shell, Schola, ritual salience and source-backed priest actions locked; only historical 38→48 reconciliation remains open.");
+console.log("Mass v1.80 donor parity contract: PASS — v1.80 presentation is implemented, 38→48 is explicitly non-historical, and only CI certification remains.");
