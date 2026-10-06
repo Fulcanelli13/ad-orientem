@@ -1,8 +1,8 @@
 {
   "schema": "ao-product-parity-v1",
-  "version": "1.1.0",
-  "releaseBlocker": null,
-  "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
+  "version": "1.2.0",
+  "releaseBlocker": "PRODUCT_PRESENTATION_PARITY",
+  "rule": "A surface is certified only when the current modular owner preserves the approved donor product hierarchy, geometry, focus behavior and interaction contract on actual phone and wide-browser geometry. Runtime ownership, DOM presence, card counts, or conceptual equivalence do not certify presentation parity.",
   "surfaces": {
     "home": {
       "status": "CERTIFIED",
@@ -24,9 +24,9 @@
       ]
     },
     "mass": {
-      "status": "CERTIFIED",
+      "status": "REOPENED_DONOR_PARITY_REQUIRED",
       "currentOwner": "src/mass",
-      "reference": "R17_NATIVE_PLUS_APPROVED_LIVE_PRESENTATION",
+      "reference": "V1_65_MOBILE_NATIVE_V48_PRESENTATION_DONOR_PLUS_V1_83_FROZEN_READER_CONTRACT",
       "mustPreserve": [
         "LIVE focus hierarchy",
         "ribbons and rails",
@@ -45,7 +45,14 @@
         "R17 Mass convergence workflow 37298926238",
         "App convergence workflow 37298926228"
       ],
-      "observedRegressions": [],
+      "observedRegressions": [
+        "wide viewport stretches the Mass shell and mode ribbon across the browser instead of preserving the donor app-width reading surface",
+        "current prayer card renders as a large bordered slab with excessive empty space instead of the donor borderless focused reading field",
+        "inactive prayer text is reduced to approximately 20 percent opacity, substantially darker than the donor focus ladder",
+        "Schola is rendered as a structural bottom strip rather than an integrated liturgical secondary surface",
+        "reader navigation and ribbon hierarchy visually resemble a web dashboard rather than the approved mobile-native Mass reader",
+        "current visual acceptance tests certify DOM/state presence at 390x844 but do not compare donor geometry or wide-view behavior"
+      ],
       "recoveryPass": "MASS_UI_V6_MODE_SWITCH_CERTIFIED",
       "recoveryTargets": [
         "collapse inactive cue rails without changing cue ownership",
@@ -78,7 +85,14 @@
         "fluid focus point is restored to approximately 39 percent",
         "locked mode selector is visually differentiated"
       ],
-      "remainingParityWork": [],
+      "remainingParityWork": [
+        "resolve donor presentation into one canonical src/mass presentation layer rather than stacking donor CSS patches",
+        "restore donor-constrained app width, reading column geometry, ribbon hierarchy, focus ladder, Schola treatment and navigation",
+        "preserve the current R17/R19 canonical liturgical/source/session engine unchanged",
+        "add phone and wide-browser donor geometry acceptance",
+        "retain the source-first 39-step canonical model and 48-step product layer without claiming unrecovered historical v1.83 card identities",
+        "certify that no legacy, shadow, rescue, mirror or donor DOM can mount underneath the definitive native reader"
+      ],
       "v2Targets": [
         "Home / mode / current-section / Settings first-ribbon architecture",
         "source-first current-section jump menu",
@@ -198,7 +212,17 @@
         "Visual acceptance workflow 37325466930",
         "R17 Mass convergence workflow 37325466725",
         "App convergence workflow 37325466826"
-      ]
+      ],
+      "donorAuthority": {
+        "presentationFile": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.65_MOBILE_NATIVE_V48.html",
+        "finalFrozenContract": "v1.83 MERGE GATE",
+        "v183Evidence": [
+          "data/presentation/v1.83-reader-parity-gate.v1.json",
+          "data/presentation/v1.83-reader-map-recovery.v1.json",
+          "data/presentation/v1.83-regression-ledger.v1.json"
+        ],
+        "rule": "Use v1.65 source for recoverable presentation geometry and behavior; apply only explicitly recovered v1.83 structural/runtime deltas. Do not invent unrecovered historical C01-C48 identities."
+      }
     },
     "pray": {
       "status": "CERTIFIED",
@@ -282,7 +306,7 @@
       ]
     }
   },
-  "status": "CERTIFIED",
+  "status": "REOPENED",
   "crossSurfacePresentationFx": {
     "status": "RECOVERY_IN_PROGRESS",
     "authority": "data/presentation/presentation-fx-parity.v1.json",
