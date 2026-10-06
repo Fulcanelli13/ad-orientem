@@ -444,6 +444,42 @@ function rosaryDonorMysteryFx(r,info){
  fx?.showTransition?.({kicker:L('HOLY ROSARY','SAINT ROSAIRE'),title,hold:430});
  return true;
 }
+
+function rosaryDonorOverviewModel(info){
+ const xs=info?.steps||[],current=Number(info?.index)||0;
+ const mysteries=Array.from({length:5},(_,mi)=>{
+  const index=xs.findIndex(x=>x?.kind==='mystery'&&Number(x?.mi)===mi);
+  const step=index>=0?xs[index]:null;
+  return {mi,index,title:String(step?.title||L(`Mystery ${mi+1}`,`Mystère ${mi+1}`)),current:Number(info?.mi)===mi};
+ }).filter(x=>x.index>=0);
+ const closing=xs.findIndex(x=>x?.kind==='conclusion'||x?.phase==='closing');
+ return {current,mysteries,closing};
+}
+function ensureRosaryDonorOverview(r,info){
+ const center=r.querySelector('.aoRosaryRitualCenter')||r.querySelector('.pbShell');if(!center)return null;
+ const model=rosaryDonorOverviewModel(info);
+ let opener=center.querySelector('[data-r23-overview-open]');
+ if(!opener){
+  opener=document.createElement('button');opener.type='button';opener.className='r23-overview-open';opener.dataset.r23OverviewOpen='';
+  opener.textContent=L('Overview','Aperçu');opener.setAttribute('aria-haspopup','dialog');opener.setAttribute('aria-controls','r23-overview-sheet');
+  const head=center.querySelector('.lab-view-head,.pbTop,.pbHead,header');
+  if(head)head.appendChild(opener);else center.prepend(opener);
+ }
+ let sheet=center.querySelector('#r23-overview-sheet');
+ if(!sheet){
+  sheet=document.createElement('div');sheet.id='r23-overview-sheet';sheet.className='r23-modal';sheet.setAttribute('aria-hidden','true');
+  center.appendChild(sheet);
+ }
+ const mysteryRows=model.mysteries.map(x=>`<button type="button" class="r23-overview-row${x.current?' current':''}" data-r23-overview-jump="${x.index}" data-r23-overview-mystery="${x.mi+1}"${x.current?' aria-current="step"':''}><span class="r23-overview-num">${x.mi+1}</span><span class="r23-overview-copy"><strong>${esc(x.title)}</strong><small>${esc(x.current?L('Current mystery','Mystère actuel'):L('Jump here','Aller ici'))}</small></span></button>`).join('');
+ sheet.innerHTML=`<div class="r23-overview-panel" role="dialog" aria-modal="true" aria-labelledby="r23-overview-title"><div class="r23-overview-head"><div><small>${esc(L('The Holy Rosary','Le Saint Rosaire'))}</small><h2 id="r23-overview-title">${esc(L('Rosary overview','Aperçu du Rosaire'))}</h2></div><button type="button" data-r23-overview-close aria-label="${esc(L('Close overview','Fermer l’aperçu'))}">×</button></div><button type="button" class="r23-overview-section" data-r23-overview-jump="0"><span>${esc(L('Opening prayers','Prières d’introduction'))}</span><small>${model.current===0?esc(L('In progress','En cours')):esc(L('Jump here','Aller ici'))}</small></button><div class="r23-overview-mysteries">${mysteryRows}</div>${model.closing>=0?`<button type="button" class="r23-overview-section" data-r23-overview-jump="${model.closing}"><span>${esc(L('Closing prayers','Prières finales'))}</span><small>${esc(L('Jump here','Aller ici'))}</small></button>`:''}</div>`;
+ return sheet;
+}
+function closeRosaryDonorOverview(r,{restoreFocus=true}={}){
+ const sheet=r?.querySelector?.('#r23-overview-sheet');if(!sheet)return false;
+ sheet.classList.remove('open');sheet.setAttribute('aria-hidden','true');
+ if(restoreFocus)r.querySelector('[data-r23-overview-open]')?.focus?.();
+ return true;
+}
 function decorateRosaryExact(r){
  r.querySelectorAll('.aoP435930RosarySemanticRails').forEach(x=>x.remove());
  const info=rosaryLiveInfo();if(!info?.state?.set)return false;
@@ -457,7 +493,7 @@ function decorateRosaryExact(r){
     rosaryExactSlot('action',st.action,{emphasis:st.entering&&!!st.action})
   ].filter(Boolean);
   if(rail){rail.innerHTML=slots.join('');rail.hidden=!slots.length}
-  ensureRosaryDonorProgress(r,info);ensureRosaryDonorRecitation(r);rosaryDonorArt(r,info);rosaryDonorMysteryFx(r,info);
+  ensureRosaryDonorProgress(r,info);ensureRosaryDonorRecitation(r);ensureRosaryDonorOverview(r,info);rosaryDonorArt(r,info);rosaryDonorMysteryFx(r,info);
   existing.dataset.aoRosaryStep=String(info.index);
   existing.dataset.aoRosaryKind=String(info.step?.kind||'');
   existing.dataset.aoRosaryKey=String(info.step?.key||'');
@@ -499,6 +535,7 @@ function decorateRosaryExact(r){
  shell.dataset.aoRosaryExactDonor='v3.4.14';
  ensureRosaryDonorProgress(r,info);
  ensureRosaryDonorRecitation(r);
+ ensureRosaryDonorOverview(r,info);
  rosaryDonorArt(r,info);
  rosaryDonorMysteryFx(r,info);
  lastRosaryRitualKey=st.key;
@@ -881,6 +918,16 @@ function onChange(e){const x=e.target;
 function onInput(e){const x=e.target;if(x.matches('[data-p435930-since]'))CONF.since=x.value;if(x.matches('[data-p435930-lib-search]')){LIB.q=x.value;const pos=x.selectionStart;render();const n=document.querySelector('[data-p435930-lib-search]');n?.focus();try{n?.setSelectionRange(pos,pos)}catch{}}}
 // Keep shared Rosary preferences synchronized when the preserved canonical player changes them.
 document.addEventListener('click',e=>{
+ const overviewOpen=e.target.closest?.('[data-r23-overview-open]');if(overviewOpen){
+  const r=rosaryDonorRoot();const sheet=r?.querySelector?.('#r23-overview-sheet');if(sheet){e.preventDefault();e.stopPropagation();sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');sheet.querySelector('[data-r23-overview-close]')?.focus?.()}return
+ }
+ const overviewClose=e.target.closest?.('[data-r23-overview-close]');if(overviewClose){const r=rosaryDonorRoot();e.preventDefault();e.stopPropagation();closeRosaryDonorOverview(r);return}
+ const overviewJump=e.target.closest?.('[data-r23-overview-jump]');if(overviewJump){
+  const r=rosaryDonorRoot(),api=window.AO_ROSARY_V381,target=Math.max(0,Math.trunc(Number(overviewJump.dataset.r23OverviewJump)||0));
+  e.preventDefault();e.stopPropagation();
+  if(api?.setStep?.(target)!==false){closeRosaryDonorOverview(r,{restoreFocus:false});setTimeout(decorateRosary,0)}
+  return
+ }
  const f=e.target.closest?.('[data-v38-rosary-form]');if(f){S.rosary.form=f.dataset.v38RosaryForm==='devotional'?'devotional':'standard';save();setTimeout(decorateRosary,20)}
  const r=e.target.closest?.('[data-ao-recitation]');if(r){S.rosary.recitation=r.dataset.aoRecitation==='group'?'group':'individual';save();setTimeout(decorateRosary,20)}
  const d=e.target.closest?.('[data-p435930-rosary-depth]');if(d){S.rosary.mode=d.dataset.p435930RosaryDepth==='guided'?'guided':'simple';save();setTimeout(decorateRosary,0)}
