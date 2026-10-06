@@ -163,12 +163,18 @@ try{
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
 
   async function tapMode(mode){
+    const prefs=page.locator('[data-reader-preferences]');
+    const prefBox=await prefs.boundingBox();
+    assert.ok(prefBox&&prefBox.height>=40,"v1.80 Mass-preferences control is not touchable");
+    await page.touchscreen.tap(prefBox.x+prefBox.width/2,prefBox.y+prefBox.height/2);
+    await page.waitForFunction(()=>document.querySelector('[data-role="mass-preferences"]')?.dataset?.open==="true");
     const button=page.locator('[data-reader-mode="'+mode+'"]');
     const hit=await button.boundingBox();
-    assert.ok(hit&&hit.height>=30,mode+" mode selector is not touchable");
+    assert.ok(hit&&hit.height>=30,mode+" mode selector is not touchable in Mass preferences");
     await page.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
     await page.waitForFunction(expected=>window.__AO_PHONE_PREVIEW.getPresentationMode()===expected,mode,{timeout:3000});
     assert.equal(await button.getAttribute("aria-pressed"),"true",mode+" selector did not become active");
+    await page.locator('[data-reader-preferences-close]').click();
   }
 
   await tapMode("SIMPLE");
