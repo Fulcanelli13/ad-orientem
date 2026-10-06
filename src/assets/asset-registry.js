@@ -1120,6 +1120,7 @@ export const AO_SHARED_IDENTITY_MAPPINGS=Object.freeze([
     "route": "pray.holy_name_litany",
     "asset_id": "ao-refined-devotions",
     "reason": "The Litany of the Holy Name uses the active general Devotions identity because V4 has no dedicated Holy-Name-litany identity."
+  }
 ]);
 
 export const AO_APP_SURFACE_ASSET_IDS=Object.freeze({
