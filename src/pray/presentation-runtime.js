@@ -360,14 +360,18 @@ function returnFromRosaryDonor(e,root,snapshot){
 }
 function bindRosaryDonorBack(root){
  const back=root?.querySelector?.('.lab-back[data-pb-back],.lab-back');
- if(!back||back.dataset.aoRosaryReturnBound==='1')return false;
- back.dataset.aoRosaryReturnBound='1';
- back.addEventListener('click',e=>{
-  const snapshot=readRosaryDonorReturn();
-  if(!snapshot||!root.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]'))return;
-  returnFromRosaryDonor(e,root,snapshot);
- },true);
- return true;
+ if(back)back.dataset.aoRosaryReturnBound='1';
+ if(document.documentElement?.dataset?.aoRosaryReturnCapture!=='v1'){
+  if(document.documentElement?.dataset)document.documentElement.dataset.aoRosaryReturnCapture='v1';
+  document.addEventListener('click',e=>{
+   const hit=e.target.closest?.('#aoPrayerBookRoot .lab-back[data-pb-back],#aoPrayerBookRoot .lab-back');
+   if(!hit)return;
+   const donorRoot=rosaryDonorRoot(),snapshot=readRosaryDonorReturn();
+   if(!snapshot||!donorRoot?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]'))return;
+   returnFromRosaryDonor(e,donorRoot,snapshot);
+  },true);
+ }
+ return !!back;
 }
 function syncRosaryPrefs(raw=S.rosary){
  const prefs=normalizeRosaryPrefs(raw);
