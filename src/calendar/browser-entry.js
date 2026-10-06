@@ -26,16 +26,16 @@ let foregroundWeek="",navEpoch=0;
 function weekStart(id){const d=dateOf(id);d.setDate(d.getDate()-d.getDay());return iso(d)}
 function weekIds(id){const s=weekStart(id);return Array.from({length:7},(_,i)=>addDays(s,i))}
 function weekReady(id){return weekIds(id).every(x=>weekCache.has(x))}
-function weekLabel(id){const ids=weekIds(id),a=dateOf(ids[0]),b=dateOf(ids[6]),loc=fr()?"fr-FR":"en-GB";const af=a.toLocaleDateString(loc,{day:"numeric",month:"long"}),bf=b.toLocaleDateString(loc,{day:"numeric",month:"long",year:"numeric"});return \`${af} – ${bf}\`}
+function weekLabel(id){const ids=weekIds(id),a=dateOf(ids[0]),b=dateOf(ids[6]),loc=fr()?"fr-FR":"en-GB";const af=a.toLocaleDateString(loc,{day:"numeric",month:"long"}),bf=b.toLocaleDateString(loc,{day:"numeric",month:"long",year:"numeric"});return `${af} – ${bf}`}
 function seedCurrent(){const s=state(),r=s?.resolution;if(s&&!s.resolving&&r?.date===s.selectedDate&&!weekCache.has(s.selectedDate))weekCache.set(s.selectedDate,r)}
 function cinemaLoader(){return globalThis.document?.getElementById?.("ao-cinema-loader")??null}
 function loaderText(done,total,id,errors=0){
   const el=cinemaLoader();if(!el)return;
   const title=el.querySelector("[data-ao-cinema-loader-title]"),sub=el.querySelector("[data-ao-cinema-loader-sub]");
   if(title)title.textContent=L("Preparing the liturgical week","Préparation de la semaine liturgique");
-  const progress=L(\`${done} of ${total} days prepared\`,\`${done} jours sur ${total} préparés\`);
-  const err=errors?\` · ${L(`${errors} unavailable`,`${errors} indisponible${errors>1?'s':''}`)}\`:"";
-  if(sub)sub.textContent=\`${weekLabel(id)} · ${progress}${err}\`;
+  const progress=L(`${done} of ${total} days prepared`,`${done} jours sur ${total} préparés`);
+  const err=errors?` · ${L(`${errors} unavailable`,`${errors} indisponible${errors>1?'s':''}`)}`:"";
+  if(sub)sub.textContent=`${weekLabel(id)} · ${progress}${err}`;
   el.dataset.weekProgress=L("1962 calendar · complete week","Calendrier 1962 · semaine complète");
 }
 function showWeekLoader(id,done=0,total=7,errors=0){
