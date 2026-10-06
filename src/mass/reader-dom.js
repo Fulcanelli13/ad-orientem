@@ -384,7 +384,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     schola,
     scholaVisible:!sharedTextWithSchola && Boolean(textValue(schola)),
     guide,
-    priestPositionIconKey:moment.priestPositionIconKey ?? moment.priestActionIconKey ?? null,
+    priestPositionIconKey:moment.priestPositionIconKey ?? null,
     priestActionIconKey:moment.priestActionIconKey ?? null,
     postureIconKey:moment.postureIconKey ?? null,
     gestureIconKey:moment.gestureIconKey ?? null,
