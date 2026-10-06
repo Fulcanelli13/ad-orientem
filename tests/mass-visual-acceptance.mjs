@@ -386,9 +386,53 @@ try{
   assert.equal(lastGospelRise.leftRail,"true");
   assert.equal(lastGospelRise.targetActive,"true");
 
+  // The approved mobile-native donor is an app-width reader, not a website that
+  // expands its chrome and text field across a desktop browser. Exercise the
+  // same live reader at a wide viewport so a future CSS regression cannot
+  // recreate the stretched dashboard visible in the Oct 6 production capture.
+  await page.setViewportSize({width:1440,height:900});
+  const wideFocus=await focusCanonicalCue("AO.SM.C0096");
+  assert.equal(wideFocus.targetActive,"true");
+  const wide=await page.evaluate(()=>{
+    const q=s=>document.querySelector("#ao-r17-native-reader-preview "+s);
+    const rect=s=>{const x=q(s)?.getBoundingClientRect();return x?{left:x.left,right:x.right,width:x.width,height:x.height}:null;};
+    const buttons=[...document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-mode]")].map(x=>x.getBoundingClientRect().width);
+    const card=q(".ao-prayer-card");
+    const paragraphs=[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph")];
+    const inactive=paragraphs.filter(x=>x.dataset.active!=="true").map(x=>Number.parseFloat(getComputedStyle(x).opacity));
+    return {
+      shell:rect(".ao-reader-shell"),
+      top:rect(".ao-reader-top-ribbon"),
+      body:rect(".ao-prayer-body"),
+      nav:rect(".ao-reader-nav"),
+      modeWidths:buttons,
+      cardBorder:getComputedStyle(card).borderTopWidth,
+      cardRadius:getComputedStyle(card).borderTopLeftRadius,
+      activeOpacity:Number.parseFloat(getComputedStyle(q('.ao-reader-paragraph[data-active="true"]')).opacity),
+      inactiveOpacityMin:inactive.length?Math.min(...inactive):null,
+      viewport:window.innerWidth,
+      horizontalOverflow:document.documentElement.scrollWidth-window.innerWidth,
+    };
+  });
+  assert.equal(wide.viewport,1440);
+  assert.ok(wide.shell?.width<=820.5,"Mass shell stretched beyond donor app width: "+JSON.stringify(wide.shell));
+  assert.ok(wide.shell?.left>=300&&wide.shell?.right<=1140,
+    "Mass shell is not centered as a bounded reader on wide geometry: "+JSON.stringify(wide.shell));
+  assert.ok(wide.body?.width<=690.5,"prayer reading column exceeded donor maximum: "+JSON.stringify(wide.body));
+  assert.ok(wide.modeWidths.every(x=>x<=150.5),"mode controls stretched into website tabs: "+JSON.stringify(wide.modeWidths));
+  assert.ok(wide.nav?.width<=520.5,"reader navigation became a full-width footer: "+JSON.stringify(wide.nav));
+  assert.equal(wide.cardBorder,"0px","definitive reader regained the boxed-card slab");
+  assert.equal(wide.cardRadius,"0px","definitive reader regained rounded web-card geometry");
+  assert.equal(wide.activeOpacity,1,"active prayer text lost full salience");
+  if(wide.inactiveOpacityMin!=null)assert.ok(wide.inactiveOpacityMin>=0.33,
+    "focus system blacked out surrounding prayer text: "+wide.inactiveOpacityMin);
+  assert.ok(wide.horizontalOverflow<=1,"wide definitive reader introduced horizontal overflow");
+  await page.screenshot({path:resolve(out,"13-mass-wide-donor-geometry.png"),fullPage:false});
+
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,consecration,wordsState,elevationState,
     salience:{gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
+    wide,
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
