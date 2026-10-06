@@ -83,6 +83,10 @@ assert.match(fxSource,/prefers-reduced-motion:reduce/,"modular hero FX lost redu
 assert.match(fxSource,/installPresentationHook/,"modular presentation rescans no longer follow rendered child surfaces");
 assert.match(fxSource,/function installRuntimeHook\(\)/,"modular presentation FX no longer follows canonical runtime state renders");
 assert.match(fxSource,/AO_RUNTIME_V8\?\.store\?\.subscribe/,"modular presentation FX lost the observer-free runtime-store hook");
+assert.match(fxSource,/function syncLegacyWorkloadLoader/,"exact donor loader foreground guard disappeared");
+assert.match(fxSource,/next\?\.scripture\?\.loading/,"Scripture workload loader is no longer preserved");
+assert.match(fxSource,/next\?\.resolving && active === "calendar"/,"Calendar resolver loader is no longer foreground-scoped");
+assert.match(fxSource,/dataset\?\.kind === "calendar-week"/,"Calendar week-progress loader is not protected from the legacy guard");
 assert.doesNotMatch(fxSource,/querySelectorAll\?\.\(["']img["']\)/,"presentation FX regressed to scanning every image in the app");
 assert.doesNotMatch(fxSource,/SURFACE_META/,"generic six-surface cinematic metadata returned");
 assert.doesNotMatch(fxSource,/showTransition\(surface\)/,"route navigation again synthesizes full-screen destination cinematics");
