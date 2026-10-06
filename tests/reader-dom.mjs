@@ -52,7 +52,8 @@ expect(html.includes("border:0;border-radius:0;background:transparent;box-shadow
 expect(html.includes(".ao-reader-body")===false,"unexpected duplicate reader body presentation layer appeared");
 expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matches the final executable donor");
 expect(html.includes("opacity:.70"),"donor near-focus level no longer matches the final executable donor");
-expect(html.includes(".ao-state-kicker{display:none!important}"),"obsolete PRIEST/ACTION label chrome returned");
+expect(html.includes(".ao-state-kicker{font:700 7px/1"),"YOU / PRIEST state labels lost v1.79-v1.80 typography");
+expect(html.includes('class="ao-guide-copy"><small>GUIDE</small>'),"GUIDE centre cell is missing from the state ribbon");
 expect(html.includes('[data-channel="gesture"][data-active="false"]'),"inactive gesture rail no longer disappears like the final donor");
 
 const first=normalizeReaderMoment({
