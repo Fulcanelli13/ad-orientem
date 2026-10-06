@@ -1,6 +1,24 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { normalizePresentationMode } from "./session-engine.js";
 
+export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
+export const DEFAULT_SCHOLA_SPEED=0.45;
+export const SCHOLA_SPEED_STORAGE_KEY="ao-schola-speed";
+
+export function normalizeScholaSpeed(value){
+  const n=Number(value);
+  return SCHOLA_SPEEDS.includes(n) ? n : DEFAULT_SCHOLA_SPEED;
+}
+
+export function scholaTickerDuration({viewportWidth=0,lineWidth=0,speed=DEFAULT_SCHOLA_SPEED,isMobile=false}={}){
+  const vw=Math.max(0,Number(viewportWidth)||0);
+  const lw=Math.max(0,Number(lineWidth)||0);
+  const travel=Math.max(vw+lw+80,260);
+  const baseSpeed=isMobile ? 34 : 40;
+  const pixelsPerSecond=Math.max(7,baseSpeed*normalizeScholaSpeed(speed));
+  return Math.max(15000,Math.min(120000,(travel/pixelsPerSecond)*1000));
+}
+
 const SHELL_STYLE = `
 .ao-reader-shell{
   --ao-bg:#0d120f;--ao-panel:#141c17;--ao-panel2:#19231d;
@@ -221,13 +239,27 @@ const SHELL_STYLE = `
 .ao-schola-title .ao-icon-mask{width:22px;height:22px;color:#a9c6b0}
 .ao-schola-kicker{font:700 8.5px/1 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#99b6a0}
 .ao-schola-page{font:700 8px/1 system-ui,sans-serif;letter-spacing:.12em;color:#6f8175}
-.ao-schola-main{grid-column:1/4;min-width:0;border-top:1px solid rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.045);padding:10px 0;cursor:pointer}
-.ao-schola-dock [data-role="schola"]{display:block;min-width:0;font:500 17px/1.3 Georgia,"Times New Roman",serif;color:#f2f3ed;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ao-schola-main{grid-column:1/4;min-width:0;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.045);padding:10px 0;cursor:pointer}
+.ao-schola-dock [data-role="schola"]{display:inline-block;min-width:max-content;font:500 17px/1.3 Georgia,"Times New Roman",serif;color:#f2f3ed;white-space:nowrap;will-change:transform;backface-visibility:hidden}
 .ao-schola-translation{display:none;margin-top:7px;padding:8px 10px;border-radius:9px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.05);font:400 14px/1.42 Georgia,"Times New Roman",serif;color:#d8dfd8}
 .ao-schola-dock[data-show-translation="true"] .ao-schola-translation{display:block}
-.ao-schola-meta{grid-column:1/3;display:flex;align-items:center;gap:8px}
-.ao-schola-progress{height:2px;flex:1;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px}
-.ao-schola-progress>span{display:block;height:100%;width:0;background:#8eae96;transition:width .18s linear}
+.ao-schola-meta{grid-column:1/4;display:grid;grid-template-columns:1fr;gap:8px;min-width:0}
+.ao-schola-progress{height:2px;width:100%;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px}
+.ao-schola-progress>span{display:block;height:100%;width:0;background:#8eae96;transition:none}
+.ao-schola-controls{width:100%;display:grid;grid-template-columns:38px 58px 38px minmax(72px,1fr);gap:6px;align-items:center}
+.ao-schola-control{
+  appearance:none;height:34px;border:1px solid rgba(255,255,255,.09);border-radius:7px;
+  background:rgba(255,255,255,.03);color:#aebcaf;display:grid;place-items:center;
+  font:700 8px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase
+}
+button.ao-schola-control{cursor:pointer}
+.ao-schola-control[data-schola-slower],.ao-schola-control[data-schola-faster]{
+  font-size:16px;line-height:1;color:#d7e2d9;background:rgba(115,151,123,.14);border-color:rgba(145,181,153,.28)
+}
+.ao-schola-speed{color:#c9d8cc;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.07)}
+.ao-schola-control[data-schola-pause][aria-pressed="true"]{
+  color:#e5ede7;border-color:rgba(145,181,153,.34);background:rgba(88,123,97,.22)
+}
 .ao-schola-toggle{grid-column:3;grid-row:1;appearance:none;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);color:#9eada2;border-radius:7px;min-height:28px;padding:4px 8px;font:700 8px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 
 .ao-reader-nav{position:absolute;z-index:5;inset:0;pointer-events:none}
@@ -303,6 +335,7 @@ const SHELL_STYLE = `
   .ao-rail .ao-icon-mask{width:34px;height:34px}
   .ao-schola-dock{width:calc(100% - 124px);min-height:100px;padding:9px 11px 11px}
   .ao-schola-dock [data-role="schola"]{font-size:14px}.ao-schola-translation{font-size:12px;padding:7px 8px}
+  .ao-schola-controls{grid-template-columns:36px 54px 36px minmax(66px,1fr);gap:5px}
   .ao-reader-nav button{top:auto;bottom:10px;width:44px;height:44px;border-radius:50%;font-size:20px;opacity:.34;background:transparent}
   .ao-reader-shell[data-schola-visible="true"] .ao-reader-nav button{bottom:calc(10px + var(--ao-schola-reserve) + 10px);transform:none}
   .ao-reader-nav button::before{inset:5px;background:rgba(11,16,13,.38)}
@@ -459,7 +492,15 @@ export function buildReaderShellMarkup(prepared = {}) {
     <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-page" data-role="schola-page"></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
     <div class="ao-schola-main" data-schola-translate title="Tap to show translation"><span data-role="schola">—</span><span class="ao-schola-translation" data-role="schola-translation"></span></div>
-    <div class="ao-schola-meta"><span class="ao-schola-progress"><span data-role="schola-progress"></span></span></div>
+    <div class="ao-schola-meta">
+      <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
+      <div class="ao-schola-controls" aria-label="Schola text speed">
+        <button type="button" class="ao-schola-control" data-schola-slower aria-label="Slower Schola text">−</button>
+        <span class="ao-schola-control ao-schola-speed" data-role="schola-speed" aria-label="Schola speed">0.45×</span>
+        <button type="button" class="ao-schola-control" data-schola-faster aria-label="Faster Schola text">+</button>
+        <button type="button" class="ao-schola-control" data-schola-pause aria-label="Pause Schola text" aria-pressed="false">PAUSE</button>
+      </div>
+    </div>
   </div>
 
   <div class="ao-cinematic" data-role="cinematic" aria-live="polite" hidden>
