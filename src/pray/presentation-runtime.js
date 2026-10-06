@@ -607,11 +607,20 @@ function ownRosaryDonorRoots(active){
   }
  });
 }
+function suppressRosaryDuplicateRecitation(shell){
+ shell?.querySelectorAll?.('.lab-recitation-mode,[data-ao-recitation]').forEach(node=>{
+  node.hidden=true;
+  node.setAttribute('aria-hidden','true');
+  node.style?.setProperty?.('display','none','important');
+  if('inert' in node)node.inert=true;
+ });
+}
 function decorateRosaryExact(r){
  r.querySelectorAll('.aoP435930RosarySemanticRails').forEach(x=>x.remove());
  const info=rosaryLiveInfo();if(!info?.state?.set)return false;
  const shell=normalizeRosaryExactStructure(r.querySelector('.pbShell'));if(!shell)return false;
  ownRosaryDonorRoots(r);
+ suppressRosaryDuplicateRecitation(shell);
  bindRosaryDonorBack(r);
  let rail=shell.querySelector(':scope > .aoRosaryFaithfulRail');
  if(!rail){
