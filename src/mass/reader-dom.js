@@ -244,7 +244,7 @@ const SHELL_STYLE = `
 @media(prefers-reduced-motion:reduce){
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}
 }
-`
+`;
 
 function esc(value){
   return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -603,6 +603,7 @@ export function createReaderDomAdapter({
     }
     populateSections();
     syncScholaChrome();
+    syncRailVisibility(root);
     bound=false;
     bind();
     return prepared;
