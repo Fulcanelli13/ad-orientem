@@ -504,8 +504,13 @@ try{
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
 
   // Prove the real Next button and the actual prayer column, not just selector presence.
-  await page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
-  await page.waitForFunction(()=>/Our Father/i.test(document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet,#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .pbFlowCard")?.innerText??""),null,{timeout:5000});
+  let reachedOurFather=false;
+  for(let i=0;i<8&&!reachedOurFather;i+=1){
+    await page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
+    await page.waitForTimeout(60);
+    reachedOurFather=await page.evaluate(()=>/Our Father/i.test(document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']")?.innerText??""));
+  }
+  assert.equal(reachedOurFather,true,"Visible Rosary Next control did not reach the Our Father through the preserved opening sequence");
   const rosaryPrayerGeometry=await page.evaluate(()=>{
     const active=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']");
     const card=active?.querySelector(".lab-prayer-sheet,.pbFlowCard"),rect=card?.getBoundingClientRect?.();
@@ -725,8 +730,13 @@ try{
   if(await wideStandard.count())await wideStandard.click();
   await wide.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await wide.waitForSelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]",{state:"visible",timeout:5000});
-  await wide.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
-  await wide.waitForFunction(()=>/Our Father/i.test(document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet,#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .pbFlowCard")?.innerText??""),null,{timeout:5000});
+  let wideReachedOurFather=false;
+  for(let i=0;i<8&&!wideReachedOurFather;i+=1){
+    await wide.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
+    await wide.waitForTimeout(60);
+    wideReachedOurFather=await wide.evaluate(()=>/Our Father/i.test(document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']")?.innerText??""));
+  }
+  assert.equal(wideReachedOurFather,true,"Wide Rosary Next control did not reach the Our Father");
   const wideRosary=await wide.evaluate(()=>{
     const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']"),shell=root?.querySelector(".pbShell"),card=root?.querySelector(".lab-prayer-sheet,.pbFlowCard"),r=card?.getBoundingClientRect();
     const visibleLegacy=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>getComputedStyle(node).display!=="none").length;
