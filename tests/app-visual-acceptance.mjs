@@ -361,6 +361,89 @@ try{
   assert.match((stationFx.kicker+" "+stationFx.title).toUpperCase(),/STATIONS|CHEMIN|II/,"Stations change cinematic lost devotional identity");
   await shot("03c-pray-stations-transition");
   await waitForFxSettled();
+
+  await page.locator("#aoPray435930 [data-p435930-station-step='13']").click();
+  await page.waitForFunction(()=>/XIV\s*\/\s*XIV/.test(document.querySelector("#aoPray435930 .aoP435930SemanticRail.right small")?.textContent??""),null,{timeout:3000});
+  const stationXiv=await page.evaluate(()=>({
+    cue:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    context:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    step:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right small")?.textContent?.trim()??"",
+    forbidden:[...document.querySelectorAll("#aoPray435930 [data-ao-pray-rail-asset]")].some(x=>/ao-live-(?:stand|kneel)/.test(x.dataset.aoPrayRailAsset||"")),
+  }));
+  assert.equal(stationXiv.cue,"ao-refined-silence","Station XIV did not change from attention to the donor silence cue");
+  assert.equal(stationXiv.context,"ao-rich-stations","Station XIV lost its Stations identity rail");
+  assert.match(stationXiv.step,/XIV\s*\/\s*XIV/,"Station XIV rail lost exact current-station identity");
+  assert.equal(stationXiv.forbidden,false,"Stations invented a universal stand/kneel cue");
+  await shot("03d-pray-stations-xiv-silence");
+
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
+
+  // Exact-donor devotional rails: Adoration arrival is transient genuflection,
+  // then yields to persistent silence without changing reader geometry.
+  await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="adoration",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-ador-mode='visit']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-genuflect",null,{timeout:3000});
+  const adorationArrival=await page.evaluate(()=>({
+    left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    channel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+    bodyWidth:document.querySelector("#aoPray435930 .aoP435930Body")?.getBoundingClientRect?.().width??0,
+    pointer:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930SemanticRails")).pointerEvents,
+  }));
+  assert.equal(adorationArrival.left,"ao-live-genuflect","Adoration Visit arrival lost the donor genuflection cue");
+  assert.equal(adorationArrival.right,"ao-rich-adoration","Adoration lost its Eucharistic identity rail");
+  assert.equal(adorationArrival.channel,"transient","Adoration arrival cue is no longer transient");
+  assert.ok(adorationArrival.bodyWidth>=360,"Adoration rails reserved horizontal reader width");
+  assert.equal(adorationArrival.pointer,"none","Adoration rails intercept touch");
+  await shot("03e-pray-adoration-arrival");
+
+  await page.locator("#aoPray435930 [data-p435930-visit-next]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-refined-silence",null,{timeout:3000});
+  assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel='persistent']").count(),1,"Adoration did not settle into the persistent silence rail");
+  await shot("03f-pray-adoration-silence");
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForSelector("#aoPray435930 [data-p435930-ador-mode='visit']",{state:"visible",timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
+
+  // Benediction rail follows the public rite rather than presenting one generic card.
+  await page.locator("#aoPray435930 [data-p435930-own='pray.benediction']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-rich-adoration']").count(),1,"Benediction Exposition rail lost its Eucharistic owner");
+  for(let i=0;i<3;i++)await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-response",null,{timeout:3000});
+  const benPrayer=await page.evaluate(()=>({
+    left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    macro:document.querySelector("#aoPray435930 .aoP435930BenMacroRail [aria-current='step']")?.textContent?.trim()??"",
+  }));
+  assert.equal(benPrayer.left,"ao-live-response","Benediction versicle/collect lost its congregational response cue");
+  assert.equal(benPrayer.right,"ao-live-response","Benediction stage rail no longer follows the response moment");
+  assert.match(benPrayer.macro,/Benediction|Bénédiction/,"Benediction public-rite macro did not track the visible Continue path");
+  await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
+  assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Benediction blessing retained an unrelated left cue");
+  await shot("03g-pray-benediction-blessing");
+  await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
+
+  // Confession remains private/read-only; only the exact in-confessional moment
+  // owns the transient Sign-of-Cross rail cue.
+  await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="confession",null,{timeout:5000});
+  for(let i=0;i<3;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-sign-cross",null,{timeout:3000});
+  const confessionRail=await page.evaluate(()=>({
+    left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    stage:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right small")?.textContent?.trim()??"",
+  }));
+  assert.equal(confessionRail.left,"ao-live-sign-cross","Confession in-confessional stage lost the donor Sign-of-Cross cue");
+  assert.equal(confessionRail.right,"ao-rich-confession","Confession lost its persistent sacramental identity rail");
+  assert.match(confessionRail.stage,/In Confessional|Au confessionnal/,"Confession rail lost the active stage");
+  await shot("03h-pray-confession-in-confessional");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 

@@ -58,26 +58,32 @@ const EXACT_RITUAL_RAIL_CSS=`/* Exact donor v3.14 shared ritual-rail hierarchy �
 html[data-reduced-motion="true"] #aoPray435930 .aoRitualSlot{animation:none!important}
 `;
 
-const SEMANTIC_RAIL_CSS=`/* Presentation FX V2 — semantic side rails recovered from the accepted devotional prototypes.
-   Geometry-neutral: rails never reserve reading-column width and disappear when no semantic state exists. */
+const SEMANTIC_RAIL_CSS=`/* Exact-donor devotional rail recovery — thin fixed edge grammar.
+   Persistent state stays quiet; transient cues animate only when their semantic owner changes. */
 #aoPray435930 .aoP435930SemanticRails{position:fixed;inset:0;z-index:14972;pointer-events:none}
-#aoPray435930 .aoP435930SemanticRail{position:absolute;top:118px;display:grid;gap:7px;width:54px}
-#aoPray435930 .aoP435930SemanticRail.left{left:max(6px,env(safe-area-inset-left))}
-#aoPray435930 .aoP435930SemanticRail.right{right:max(6px,env(safe-area-inset-right))}
-#aoPray435930 .aoP435930SemanticRailChip{display:grid;justify-items:center;align-content:center;gap:5px;min-height:68px;padding:7px 4px;border:1px solid color-mix(in srgb,var(--liturgical,#d8bd7d) 22%,var(--border,rgba(255,255,255,.12)));border-radius:14px;background:color-mix(in srgb,var(--bg,#080c12) 84%,transparent);backdrop-filter:blur(12px);box-shadow:0 9px 24px rgba(0,0,0,.16);color:var(--liturgical,#d8bd7d);opacity:.94}
-#aoPray435930 .aoP435930SemanticRailIcon{width:28px!important;height:28px!important;color:currentColor}
-#aoPray435930 .aoP435930SemanticRailLabel{max-width:46px;color:var(--text,#f3ead7);font:700 .53rem/1.1 var(--font-display,system-ui);letter-spacing:.045em;text-align:center;text-transform:uppercase}
-#aoPray435930 .aoP435930SemanticRailChip small{max-width:46px;color:var(--muted,#aeb2b8);font:600 .47rem/1.15 var(--font-display,system-ui);text-align:center}
-@media(max-width:560px){
- #aoPray435930 .aoP435930SemanticRail{top:103px;width:46px}
- #aoPray435930 .aoP435930SemanticRail.left{left:max(4px,env(safe-area-inset-left))}
- #aoPray435930 .aoP435930SemanticRail.right{right:max(4px,env(safe-area-inset-right))}
- #aoPray435930 .aoP435930SemanticRailChip{min-height:50px;padding:5px 3px;border-radius:12px;background:color-mix(in srgb,var(--bg,#080c12) 88%,transparent)}
- #aoPray435930 .aoP435930SemanticRailIcon{width:27px!important;height:27px!important}
+#aoPray435930 .aoP435930SemanticRail{position:absolute;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;width:44px}
+#aoPray435930 .aoP435930SemanticRail.left{left:max(8px,calc((100vw - 900px)/2 + 8px),env(safe-area-inset-left))}
+#aoPray435930 .aoP435930SemanticRail.right{right:max(8px,calc((100vw - 900px)/2 + 8px),env(safe-area-inset-right))}
+#aoPray435930 .aoP435930SemanticRailChip{display:flex;flex-direction:column;align-items:center;gap:7px;width:44px;color:var(--liturgical,#d8bd7d)}
+#aoPray435930 .aoP435930SemanticRailChip.persistent{opacity:.82}
+#aoPray435930 .aoP435930SemanticRailChip.transient{opacity:1}
+#aoPray435930 .aoP435930SemanticRailCard{width:44px;min-height:44px;padding:7px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border,rgba(255,255,255,.11));border-radius:14px;background:color-mix(in srgb,var(--bg,#080c12) 86%,transparent);backdrop-filter:blur(10px);box-shadow:0 10px 28px rgba(0,0,0,.18)}
+#aoPray435930 .aoP435930SemanticRailIcon{display:block!important;width:28px!important;height:28px!important;color:currentColor}
+#aoPray435930 .aoP435930SemanticRailLabel{writing-mode:vertical-rl;transform:rotate(180deg);max-height:108px;padding:9px 5px;border:1px solid var(--border,rgba(255,255,255,.11));border-radius:999px;background:color-mix(in srgb,var(--bg,#080c12) 84%,transparent);color:var(--muted,#aeb2b8);font:800 .5rem/1 var(--font-display,system-ui);letter-spacing:.11em;text-transform:uppercase;text-align:center}
+#aoPray435930 .aoP435930SemanticRailChip small{display:none}
+#aoPray435930 .aoP435930SemanticRailChip.transient.cue-enter .aoP435930SemanticRailCard{animation:aoPrayRailCueIn .42s cubic-bezier(.18,.8,.2,1) both}
+@keyframes aoPrayRailCueIn{0%{opacity:.2;transform:scale(.82);box-shadow:0 0 0 rgba(0,0,0,0)}55%{opacity:1;transform:scale(1.08);box-shadow:0 0 26px color-mix(in srgb,var(--liturgical,#d8bd7d) 22%,transparent)}100%{transform:none;box-shadow:0 10px 28px rgba(0,0,0,.18)}}
+@media(max-width:700px){
+ #aoPray435930 .aoP435930SemanticRail{width:38px;gap:5px}
+ #aoPray435930 .aoP435930SemanticRail.left{left:max(3px,env(safe-area-inset-left))}
+ #aoPray435930 .aoP435930SemanticRail.right{right:max(3px,env(safe-area-inset-right))}
+ #aoPray435930 .aoP435930SemanticRailChip{width:38px;gap:0}
+ #aoPray435930 .aoP435930SemanticRailCard{width:38px;min-height:42px;padding:6px 4px;border-radius:11px;background:color-mix(in srgb,var(--bg,#080c12) 89%,transparent)}
+ #aoPray435930 .aoP435930SemanticRailIcon{width:26px!important;height:26px!important}
  #aoPray435930 .aoP435930SemanticRailLabel,#aoPray435930 .aoP435930SemanticRailChip small{display:none}
 }
-@media(prefers-reduced-motion:reduce){#aoPray435930 .aoP435930SemanticRailChip{transition:none!important}}
-html[data-reduced-motion="true"] #aoPray435930 .aoP435930SemanticRailChip{transition:none!important}
+@media(prefers-reduced-motion:reduce){#aoPray435930 .aoP435930SemanticRailChip.transient.cue-enter .aoP435930SemanticRailCard{animation:none!important}}
+html[data-reduced-motion="true"] #aoPray435930 .aoP435930SemanticRailChip.transient.cue-enter .aoP435930SemanticRailCard{animation:none!important}
 
 /* Presentation FX V3 — preserved canonical Rosary player live context rail.
    Context only: Rosary posture remains deliberately free unless an exact gesture cue owns the moment. */
