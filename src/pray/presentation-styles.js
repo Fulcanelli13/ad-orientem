@@ -157,7 +157,7 @@ html[data-reduced-motion="true"] #aoPray435930 .aoP435930SemanticRailChip.transi
 html[data-reduced-motion="true"] #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot{animation:none!important}`;
 
 
-const ROSARY_EXACT_DONOR_CSS=\`/* Exact v3.4.14 Rosary live-player presentation.
+const ROSARY_EXACT_DONOR_CSS=`/* Exact v3.4.14 Rosary live-player presentation.
    Ported over the preserved Rosary state/controls; no second engine. */
 #aoPrayerBookRoot .rosary-decade-bar-v15{display:flex;gap:5px;margin:0 0 12px}
 #aoPrayerBookRoot .rosary-decade-bar-v15 i{height:4px;flex:1;border-radius:999px;background:rgba(255,255,255,.13)}
@@ -199,7 +199,7 @@ const ROSARY_EXACT_DONOR_CSS=\`/* Exact v3.4.14 Rosary live-player presentation.
 }
 @media(prefers-reduced-motion:reduce){#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{transition:none}}
 html[data-reduced-motion="true"] #aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{transition:none}
-\`;
+`;
 
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
