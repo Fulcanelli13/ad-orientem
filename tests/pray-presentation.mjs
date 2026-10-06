@@ -53,6 +53,17 @@ assert.match(runtime,/STATIONS OF THE CROSS/,"Stations cinematic lost its devoti
 assert.match(runtime,/AO_CINEMATIC_V4312\|\|window\.AO_CINEMATIC_V4311/,"Stations transition no longer reuses the certified cinematic owner");
 assert.match(runtime,/isReducedMotion\?\.\(\)/,"Stations transition no longer honors reduced motion");
 assert.doesNotMatch(runtime,/view===['"]stations['"][\s\S]{0,900}ao-live-(?:stand|kneel)/,"Stations semantic rails invented a universal posture");
+assert.match(runtime,/i===13\?'ao-refined-silence':'ao-live-look'/,"Stations XIV no longer changes from attention to donor silence");
+assert.match(runtime,/After the XIV Station/,"Stations XIV silence cue lost its donor context");
+assert.match(runtime,/ADOR\.mode==='visit'&&ADOR\.visitStep===0/,"Adoration arrival cue lost exact visit-entry ownership");
+assert.match(runtime,/ao-live-genuflect/,"Adoration arrival lost the donor genuflection cue");
+assert.match(runtime,/Remain present/,"Adoration recollection rail lost its persistent silence state");
+assert.match(runtime,/const stage=BEN_STAGES\?\.\[BEN\.step\]\?\.\[0\]/,"Benediction rails stopped following the public-rite stage");
+assert.match(runtime,/blessing:\['ao-live-blessing'/,"Benediction blessing stage lost the canonical blessing cue");
+assert.match(runtime,/prayer:\['ao-live-response'/,"Benediction versicle\/collect stage lost the response cue");
+assert.match(runtime,/praises:\['ao-live-response'/,"Benediction Divine Praises stage lost the response cue");
+assert.match(runtime,/CONF\.stage===3.*ao-live-sign-cross/s,"Confession in-confessional stage lost the donor Sign-of-Cross cue");
+assert.match(runtime,/aoP435930SemanticRailChip \$\{channel\}\$\{cueClass\}/,"transient semantic rail state no longer receives its cue-enter class");
 assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
 assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
