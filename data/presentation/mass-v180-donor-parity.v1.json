@@ -1,0 +1,89 @@
+{
+  "schema": "ao-mass-v180-donor-parity-v1",
+  "version": "1.0.0",
+  "status": "IN_PROGRESS",
+  "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
+  "donor": {
+    "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
+    "sha256": "4e8dc4a0148590aee95d6fd36d8c915a1c1d35097c1d235e96a17791cb7d5543",
+    "sizeBytes": 13713627,
+    "totalLines": 8543,
+    "authority": "PRIMARY_PRESENTATION_INTERACTION_DONOR"
+  },
+  "runtimeRule": "R17/R19 remains canonical for liturgical data, state, form, source ownership and lifecycle. v1.80 owns presentation/choreography unless directly superseded by later recovered v1.83 evidence.",
+  "evidence": [
+    {
+      "range": "L1440-L1488",
+      "scope": "final primary ribbon, YOU/GUIDE/PRIEST state ribbon, Mass preferences sheet and rail markup"
+    },
+    {
+      "range": "L1560-L1635",
+      "scope": "v1.75 live-reader architecture: app ribbon, state ribbon, semantic rails and preferences"
+    },
+    {
+      "range": "L8325-L8383",
+      "scope": "v1.77 final UI hardening and icon-first cue surfaces"
+    },
+    {
+      "range": "L8384-L8440",
+      "scope": "v1.78 one-state-one-owner semantics"
+    },
+    {
+      "range": "L8441-L8480",
+      "scope": "v1.79 Guide/rubric restoration in second ribbon"
+    },
+    {
+      "range": "L8481-L8542",
+      "scope": "v1.80 Eucharistic card architecture and sacramental salience"
+    }
+  ],
+  "closed": [
+    "single executable Mass renderer is native-only",
+    "primary ribbon is Home / current section / Mass preferences",
+    "MISSAL / SIMPLE / LIVE selector lives inside Mass preferences",
+    "second ribbon is YOU / GUIDE / PRIEST",
+    "persistent priest position remains in PRIEST summary",
+    "left/right LIVE rails are icon-first cue surfaces rather than prose dashboard cards",
+    "persistent faithful posture cue is retained",
+    "centre reader has no giant bordered card chrome",
+    "duplicate in-card title is suppressed because the top ribbon owns current moment",
+    "Schola has a dedicated readable stream surface with page/progress/translation affordances",
+    "Host and Chalice elevation cues remain distinct",
+    "Host and Chalice elevation cinematic duration is 3450 ms",
+    "elevation bell salience is held for approximately 3600 ms",
+    "phone card arrows preserve donor-small visuals inside minimum 44 px touch targets",
+    "wide-browser acceptance prevents the reader from stretching back into dashboard geometry"
+  ],
+  "open": [
+    {
+      "id": "V180_PRIEST_ACTION_OWNERSHIP",
+      "status": "OPEN",
+      "rule": "Transient priest action and its icon must be source-backed for ordinary Sung Mass; priest position must not be relabelled as action."
+    },
+    {
+      "id": "V180_SCHOLA_TIMING_CONTROLS",
+      "status": "OPEN",
+      "rule": "Donor slower/faster/pause behavior must be recovered from direct evidence or remain explicitly unavailable; do not add fake speed controls."
+    },
+    {
+      "id": "V180_EXACT_RITUAL_TRIGGER_STYLING",
+      "status": "OPEN",
+      "rule": "Exact ritual words and cross-symbol salience must be rendered from cue ownership without text-guessing."
+    },
+    {
+      "id": "V180_TO_V183_CARD_MAP_RECONCILIATION",
+      "status": "OPEN",
+      "rule": "v1.80 reports 38 LIVE prayer cards while later product evidence requires 48 visible LIVE steps; reconcile using direct later evidence and never invent lost historical boundaries."
+    }
+  ],
+  "prohibitedRegressions": [
+    "browser-width MISSAL/SIMPLE/LIVE tabs in the primary ribbon",
+    "PRIEST/current/ACTION as the persistent second ribbon",
+    "giant bordered full-viewport prayer card",
+    "full-width Back / counter / Next footer",
+    "Schola reduced to a thin status strip",
+    "legacy or shadow reader renderer fallback",
+    "using priest position as a substitute for priest action",
+    "claiming current 48-step projection is the recovered historical v1.83 C01-C48 map"
+  ]
+}
