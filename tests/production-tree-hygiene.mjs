@@ -10,6 +10,8 @@ const forbiddenPaths=[
   "tools/apply_emergency_stable_v4333.py",
   "tools/apply_emergency_stable_v4333_core.py",
   "tools/apply-r17-browser-entry.py",
+  "src/mass/reader-preview.js",
+  "src/mass/reader-shadow.js",
 ];
 
 for(const path of forbiddenPaths){
