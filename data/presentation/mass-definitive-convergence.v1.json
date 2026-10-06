@@ -1,0 +1,71 @@
+{
+  "schema": "ao-mass-definitive-convergence-v1",
+  "version": "1.0.0",
+  "status": "IN_PROGRESS",
+  "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
+  "rule": "The final Mass product has one executable reader only. R17/R19 owns canonical liturgical data, state and lifecycle; the recovered Sung Mass donor owns presentation geometry and choreography. Historical legacy/shadow renderers may remain only as non-executable evidence.",
+  "runtimeAuthority": {
+    "owner": "R17_SESSION_ENGINE",
+    "browserRuntime": "src/mass/browser-runtime.js",
+    "productionEntry": "src/mass/browser-entry.js",
+    "productionUiOwner": "R17_NATIVE_PRODUCTION",
+    "presentationRenderer": "src/mass/reader-dom.js"
+  },
+  "donorAuthority": {
+    "primary": {
+      "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.66_SCHOLA_LIFECYCLE_REPAIR.html",
+      "sha256": "b32b91b97626b38418805e9e72ae3dc5a7c29e97ffc43e3d53b3bdc012b562e7",
+      "sizeBytes": 13149455,
+      "role": "latest accessible executable Sung-Mass presentation donor"
+    },
+    "supporting": [
+      {
+        "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.66_RUNTIME_SCOPE_REPAIR.html",
+        "sha256": "45b908e80c009c1d099d263da281f0a345bdf49d6cffdb76a4ff579ffb0b48ce",
+        "sizeBytes": 21832333
+      },
+      {
+        "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.65_MOBILE_NATIVE_V48.html",
+        "sha256": "d42e41020b60c91bad8cee409b0acc61f5074bad3140a957811f29cc2b1430d0",
+        "sizeBytes": 21833060
+      }
+    ],
+    "laterEvidence": [
+      "v1.74_full_mobile_regression_report.json",
+      "v1.77_static_integrity_report.json",
+      "v1.79_guide_rubric_integrity_report.json",
+      "data/presentation/v1.83-reader-map-recovery.v1.json",
+      "data/presentation/v1.83-reader-parity-gate.v1.json"
+    ],
+    "exactV183HtmlAvailable": false,
+    "policy": "Do not invent missing v1.83 presentation boundaries. Use executable v1.66 presentation as the visual/choreographic donor and later certified ledgers only where they provide direct evidence."
+  },
+  "singleOwnerContract": {
+    "selectableReaderModes": [
+      "NATIVE"
+    ],
+    "queryOrStoredLegacySelection": "COLLAPSES_TO_NATIVE",
+    "legacyStartLiveAllowed": false,
+    "shadowRendererAllowed": false,
+    "nativeFailurePolicy": "FAIL_CLOSED",
+    "alternateRendererFallback": false
+  },
+  "recoveredThisPass": [
+    "compact centred MISSAL/SIMPLE/LIVE control replaces browser-width mode tabs",
+    "two-level donor HUD restored with PRIEST / current moment / ACTION hierarchy",
+    "LIVE faithful and audio rails remain present and dim inactive cards instead of disappearing",
+    "centre reader is transparent and measure-limited instead of a giant bordered panel",
+    "surrounding prayer focus opacity restored to readable donor-family values",
+    "floating boundary navigation replaces the full-width Back/counter/Next footer",
+    "Schola returns to a floating donor-style dock rather than a full-width status strip",
+    "wide-viewport acceptance added so desktop stretching cannot pass phone-only tests"
+  ],
+  "remaining": [
+    "run CI/browser screenshots and reconcile any geometry failures",
+    "complete line-by-line donor choreography audit for every cue/state class, not only shell geometry",
+    "audit priest-action icon/text salience against donor and frozen asset bank",
+    "audit Schola streaming lifecycle and translation controls against donor",
+    "audit part-transition/elevation cinematics against donor timing and composition",
+    "reconcile the 48-step product projection with all directly recoverable historical card-boundary evidence without inventing the unresolved v1.83 Canon boundary"
+  ]
+}
