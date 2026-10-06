@@ -28,6 +28,7 @@ let keys=iconKeysForReaderState({
   response:{text:"Amen"},
   priestVoice:{value:"LOW_VOICE"},
   priestPosition:{station:"ALTAR_GOSPEL_MISSAL"},
+  priestAction:{label:"ELEVATES HOST"},
   schola:{label:"Credo"},
 });
 assert.equal(keys.postureIconKey,"kneel");
@@ -35,7 +36,7 @@ assert.equal(keys.gestureIconKey,"gospel_crosses");
 assert.equal(keys.responseIconKey,"response");
 assert.equal(keys.priestVoiceIconKey,"priest_silent");
 assert.equal(keys.priestPositionIconKey,"priest_gospel");
-assert.equal(keys.priestActionIconKey,null,"priest position must not masquerade as transient action art");
+assert.equal(keys.priestActionIconKey,"priest_elevation","source-backed elevation action lost canonical v4 action art");
 assert.equal(keys.scholaIconKey,"schola");
 
 keys=iconKeysForReaderState({
@@ -48,10 +49,17 @@ assert.equal(keys.postureIconKey,R17_ICON_KEYS.posture.STAND);
 assert.equal(keys.gestureIconKey,"head_bow");
 assert.equal(keys.priestVoiceIconKey,"priest_audible");
 assert.equal(keys.priestPositionIconKey,"priest_foot");
-assert.equal(keys.priestActionIconKey,null);
+assert.equal(keys.priestActionIconKey,null,"position-only state must remain action-art free");
 
 const broken={...bank}; delete broken.priest_steps;
 assert.equal(auditHostIconBank(broken).complete,false);
 assert.ok(auditHostIconBank(broken).missing.includes("priest_steps"));
 
-console.log("reader icons: PASS — position and action ownership are separated; missing action art fails closed.");
+keys=iconKeysForReaderState({priestAction:{label:"GENUFLECTS"}});
+assert.equal(keys.priestActionIconKey,"priest_genuflect");
+keys=iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES"}});
+assert.equal(keys.priestActionIconKey,"lavabo");
+keys=iconKeysForReaderState({priestAction:{label:"UNMAPPED SOURCE ACTION"}});
+assert.equal(keys.priestActionIconKey,null,"unmapped action guessed an unrelated icon");
+
+console.log("reader icons: PASS — source-backed action art is exact-mapped and position art never masquerades as action.");
