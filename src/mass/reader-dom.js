@@ -6,7 +6,7 @@ const SHELL_STYLE = `
   --ao-bg:#0d120f;--ao-panel:#141c17;--ao-panel2:#19231d;
   --ao-line:rgba(238,241,233,.13);--ao-muted:#a9afa7;--ao-dim:#6f766f;
   --ao-text:#eef1e9;--ao-accent:#6d9575;--ao-warm:#d6caa6;--ao-response:#c8d9e9;
-  --ao-rail:62px;--ao-content-max:820px;--ao-schola-height:100px;
+  --ao-rail:62px;--ao-content-max:820px;--ao-schola-height:100px;--ao-schola-reserve:0px;
   box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr);
   width:100%;height:100%;min-height:0;overflow:hidden;
   background:linear-gradient(180deg,#0c120e 0,#101711 100%);color:var(--ao-text);
@@ -128,7 +128,7 @@ const SHELL_STYLE = `
 .ao-prayer-card{
   width:100%;height:100%;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
   scrollbar-width:none;scroll-behavior:auto;scroll-padding-top:clamp(44px,8vh,82px);
-  padding:clamp(28px,4.5vh,48px) max(18px,calc((100% - 790px)/2)) max(42vh,250px);
+  padding:clamp(28px,4.5vh,48px) max(18px,calc((100% - 790px)/2)) calc(max(42vh,250px) + var(--ao-schola-reserve));
   border:0;border-radius:0;background:transparent;box-shadow:none
 }
 .ao-prayer-card::-webkit-scrollbar{display:none}
@@ -240,6 +240,7 @@ const SHELL_STYLE = `
 .ao-reader-nav button:hover,.ao-reader-nav button:focus-visible{opacity:.92;background:rgba(23,32,26,.90);color:#e8ece7;outline:none}
 .ao-reader-nav button[data-reader-nav="previous"]{left:max(49px,calc((100% - 1120px)/2 + 52px))}
 .ao-reader-nav button[data-reader-nav="next"]{right:max(49px,calc((100% - 1120px)/2 + 52px))}
+.ao-reader-shell[data-schola-visible="true"] .ao-reader-nav button{transform:translateY(calc((var(--ao-schola-reserve) + 18px)*-.42))}
 .ao-reader-progress{display:none}
 
 .ao-cinematic{
@@ -299,6 +300,7 @@ const SHELL_STYLE = `
   .ao-schola-dock{width:calc(100% - 124px);min-height:100px;padding:9px 11px 11px}
   .ao-schola-dock [data-role="schola"]{font-size:14px}.ao-schola-translation{font-size:12px;padding:7px 8px}
   .ao-reader-nav button{top:auto;bottom:10px;width:44px;height:44px;border-radius:50%;font-size:20px;opacity:.34;background:transparent}
+  .ao-reader-shell[data-schola-visible="true"] .ao-reader-nav button{bottom:calc(10px + var(--ao-schola-reserve) + 10px);transform:none}
   .ao-reader-nav button::before{inset:5px;background:rgba(11,16,13,.38)}
   .ao-reader-nav button[data-reader-nav="previous"]{left:62px}.ao-reader-nav button[data-reader-nav="next"]{right:62px}
   .ao-guide-popover{width:100%;max-height:89vh;border-radius:16px 16px 0 0;padding:15px 14px 28px}
@@ -617,6 +619,13 @@ export function createReaderDomAdapter({
     if(!dock)return;
     dock.dataset.collapsed=String(scholaCollapsed);
     dock.style.setProperty?.("--ao-schola-height",scholaHeight+"px");
+    const shell=root.querySelector("[data-ao-reader-shell]");
+    const scholaActive=dock.dataset.active==="true";
+    const reserve=scholaActive ? (scholaCollapsed ? 32 : scholaHeight) : 0;
+    if(shell){
+      shell.dataset.scholaVisible=String(scholaActive);
+      shell.style.setProperty?.("--ao-schola-reserve",reserve+"px");
+    }
     const toggle=dock.querySelector?.("[data-schola-toggle]");
     if(toggle){
       toggle.textContent=scholaCollapsed?"SHOW":"HIDE";
