@@ -28,18 +28,29 @@ const SHELL_STYLE = `
 .ao-reader-top-icon{display:block;width:27px;height:27px;background:currentColor}
 .ao-reader-top-main{min-width:0;display:flex;align-items:center;justify-content:center}
 .ao-mode-ribbon{
-  display:inline-flex;align-items:center;justify-content:center;gap:1px;padding:2px;
-  border:1px solid rgba(221,234,224,.09);border-radius:999px;
-  background:rgba(16,24,18,.62);box-shadow:0 8px 30px rgba(0,0,0,.12);
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:1px;padding:0 2px;
+  border:0;border-radius:999px;background:transparent;
   transition:opacity .28s ease,transform .28s cubic-bezier(.22,.72,.22,1)
 }
-.ao-mode-ribbon button{
-  appearance:none;border:0;background:transparent;color:#77827a;
-  min-width:66px;min-height:28px;padding:4px 10px;border-radius:999px;
-  font:700 8px/1 system-ui,sans-serif;letter-spacing:.11em;
-  transition:background .18s ease,color .18s ease,transform .18s ease
+.ao-mode-ribbon::before{
+  content:"";position:absolute;z-index:0;left:0;right:0;top:8px;bottom:8px;
+  border:1px solid rgba(221,234,224,.09);border-radius:999px;
+  background:rgba(16,24,18,.62);box-shadow:0 8px 30px rgba(0,0,0,.12);pointer-events:none
 }
-.ao-mode-ribbon button[aria-pressed="true"]{background:rgba(82,111,90,.26);color:#edf1eb;box-shadow:inset 0 0 0 1px rgba(162,190,169,.08)}
+.ao-mode-ribbon button{
+  position:relative;z-index:1;appearance:none;border:0;background:transparent;color:#77827a;
+  min-width:66px;min-height:44px;padding:0 10px;border-radius:999px;
+  font:700 8px/1 system-ui,sans-serif;letter-spacing:.11em;
+  transition:color .18s ease,transform .18s ease
+}
+.ao-mode-ribbon button::before{
+  content:"";position:absolute;z-index:-1;left:2px;right:2px;top:8px;bottom:8px;
+  border-radius:999px;background:transparent;box-shadow:none;pointer-events:none
+}
+.ao-mode-ribbon button[aria-pressed="true"]{color:#edf1eb}
+.ao-mode-ribbon button[aria-pressed="true"]::before{
+  background:rgba(82,111,90,.26);box-shadow:inset 0 0 0 1px rgba(162,190,169,.08)
+}
 .ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button{cursor:default}
 .ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button:not([aria-pressed="true"]){opacity:.34}
 
@@ -241,7 +252,7 @@ const SHELL_STYLE = `
   .ao-reader-top-ribbon{grid-template-columns:44px minmax(0,1fr) 44px;height:44px;min-height:44px;padding:3px 5px 0}
   .ao-reader-top-action{width:44px;height:44px}
   .ao-reader-top-icon{width:25px;height:25px}
-  .ao-mode-ribbon button{min-width:58px;min-height:28px;padding:4px 7px;font-size:7px}
+  .ao-mode-ribbon button{min-width:58px;min-height:44px;padding:0 7px;font-size:7px}
   .ao-state-ribbon{grid-template-columns:86px minmax(0,1fr) 86px;height:41px;min-height:41px;padding:2px 5px;gap:3px}
   .ao-state-cell{min-height:0;padding:3px 5px;max-width:86px}
   .ao-state-label{font-size:6.8px;max-width:57px}
