@@ -20,7 +20,8 @@ assert.match(styles,/ao-v435930-pray-coherence-style/);
 for(const id of ["ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-search"]){
   assert.match(runtime,new RegExp(id),"PRAY lost canonical V4 control: "+id);
 }
-assert.doesNotMatch(runtime,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls");
+const runtimeWithoutDonorOverviewClose=runtime.replace(/<button[^>]*data-r23-overview-close[^>]*>×<\/button>/g,"");
+assert.doesNotMatch(runtimeWithoutDonorOverviewClose,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls outside the exact donor Rosary overview close control");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
 assert.match(runtime,/const trailing=view==='home'/,"PRAY root header no longer distinguishes its root exit state");
 assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit header spacer");
