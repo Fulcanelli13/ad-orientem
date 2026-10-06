@@ -52,23 +52,15 @@
     "Host and Chalice elevation cinematic duration is 3450 ms",
     "elevation bell salience is held for approximately 3600 ms",
     "phone card arrows preserve donor-small visuals inside minimum 44 px touch targets",
-    "wide-browser acceptance prevents the reader from stretching back into dashboard geometry"
+    "wide-browser acceptance prevents the reader from stretching back into dashboard geometry",
+    "Schola slower/faster/pause controls use the donor speed ladder [0.25, 0.35, 0.45, 0.60, 0.80, 1.00], persist ao-schola-speed, and pause while translation is open",
+    "exact Gloria/Credo ritual words are decorated only from the source-backed gesture anchorLat on the active canonical cue; no prayer-text guessing is used"
   ],
   "open": [
     {
       "id": "V180_PRIEST_ACTION_OWNERSHIP",
       "status": "OPEN",
       "rule": "Transient priest action and its icon must be source-backed for ordinary Sung Mass; priest position must not be relabelled as action."
-    },
-    {
-      "id": "V180_SCHOLA_TIMING_CONTROLS",
-      "status": "OPEN",
-      "rule": "Donor slower/faster/pause behavior must be recovered from direct evidence or remain explicitly unavailable; do not add fake speed controls."
-    },
-    {
-      "id": "V180_EXACT_RITUAL_TRIGGER_STYLING",
-      "status": "OPEN",
-      "rule": "Exact ritual words and cross-symbol salience must be rendered from cue ownership without text-guessing."
     },
     {
       "id": "V180_TO_V183_CARD_MAP_RECONCILIATION",
