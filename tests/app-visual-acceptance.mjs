@@ -361,7 +361,102 @@ try{
   assert.match((stationFx.kicker+" "+stationFx.title).toUpperCase(),/STATIONS|CHEMIN|II/,"Stations change cinematic lost devotional identity");
   await shot("03c-pray-stations-transition");
   await waitForFxSettled();
+
+  await page.locator("#aoPray435930 [data-p435930-station-step='13']").click();
+  await page.waitForFunction(()=>/XIV\s*\/\s*XIV/.test(document.querySelector("#aoPray435930 .aoP435930SemanticRail.right small")?.textContent??""),null,{timeout:3000});
+  const stationXivRail=await page.evaluate(()=>({
+    cue:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    channel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+    enter:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left .aoP435930SemanticRailChip")?.classList?.contains("cue-enter")??false,
+    mask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.left .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
+  }));
+  assert.equal(stationXivRail.cue,"ao-refined-silence","Station XIV lost the donor silence cue");
+  assert.equal(stationXivRail.channel,"transient","Station XIV silence cue is not transient");
+  assert.equal(stationXivRail.enter,true,"Station XIV transient cue did not receive donor entry choreography");
+  assert.match(stationXivRail.mask,/ao-refined-silence\.svg/,"Station XIV silence cue did not resolve to the canonical frozen symbol");
+  await shot("03d-pray-stations-xiv-silence");
+
   await page.locator("#aoPray435930 [data-p435930-back]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
+
+  await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="adoration",null,{timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-ador-mode='visit']").click();
+  await page.waitForSelector("#aoPray435930 [data-p435930-visit-next]",{state:"visible",timeout:5000});
+  const adorArrival=await page.evaluate(()=>({
+    left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    leftChannel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+    leftEnter:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left .aoP435930SemanticRailChip")?.classList?.contains("cue-enter")??false,
+    right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    rightChannel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+  }));
+  assert.equal(adorArrival.left,"ao-live-genuflect","Adoration arrival lost the donor genuflection cue");
+  assert.equal(adorArrival.leftChannel,"transient","Adoration arrival genuflection is not transient");
+  assert.equal(adorArrival.leftEnter,true,"Adoration arrival genuflection did not animate on semantic entry");
+  assert.equal(adorArrival.right,"ao-rich-adoration","Adoration lost its persistent devotional identity");
+  assert.equal(adorArrival.rightChannel,"persistent","Adoration devotional identity is not persistent");
+  await shot("03e-pray-adoration-arrival");
+
+  await page.locator("#aoPray435930 [data-p435930-visit-next]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-refined-silence",null,{timeout:3000});
+  const adorSilence=await page.evaluate(()=>({
+    left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    channel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+    enter:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left .aoP435930SemanticRailChip")?.classList?.contains("cue-enter")??false,
+  }));
+  assert.equal(adorSilence.left,"ao-refined-silence","Adoration post-arrival rail did not become Silence");
+  assert.equal(adorSilence.channel,"persistent","Adoration silence state is not persistent");
+  assert.equal(adorSilence.enter,false,"persistent Adoration silence incorrectly replays transient cue animation");
+
+  await page.locator("#aoPray435930 [data-p435930-ador-home]").click();
+  await page.waitForSelector("#aoPray435930 [data-p435930-go-ben]",{state:"visible",timeout:5000});
+  await page.locator("#aoPray435930 [data-p435930-go-ben]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
+  for(let i=0;i<3;i++)await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-response",null,{timeout:3000});
+  const benPrayer=await page.evaluate(()=>({
+    left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    leftChannel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+    right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    enter:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left .aoP435930SemanticRailChip")?.classList?.contains("cue-enter")??false,
+  }));
+  assert.equal(benPrayer.left,"ao-live-response","Benediction prayer stage lost the congregational response cue");
+  assert.equal(benPrayer.leftChannel,"transient","Benediction response cue is not transient");
+  assert.equal(benPrayer.right,"ao-live-response","Benediction prayer stage context did not resolve to Response");
+  assert.equal(benPrayer.enter,true,"Benediction response cue did not receive donor entry choreography");
+  await shot("03f-pray-benediction-response");
+
+  await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
+  const benBlessing=await page.evaluate(()=>({
+    right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    channel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+    mask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
+  }));
+  assert.equal(benBlessing.right,"ao-live-blessing","Benediction blessing stage lost the canonical Blessing cue");
+  assert.equal(benBlessing.channel,"transient","Benediction blessing cue is not transient");
+  assert.match(benBlessing.mask,/ao-live-blessing\.png/,"Benediction Blessing cue did not resolve to the frozen asset");
+  await shot("03g-pray-benediction-blessing");
+
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.confession",{returnContext:null}));
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="confession",null,{timeout:5000});
+  for(let i=0;i<3;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-sign-cross",null,{timeout:3000});
+  const confessionRail=await page.evaluate(()=>({
+    left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    leftChannel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+    leftMask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.left .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
+    right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
+    rightChannel:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-channel]")?.dataset?.aoPrayRailChannel??null,
+  }));
+  assert.equal(confessionRail.left,"ao-live-sign-cross","Confession in-confessional stage lost the Sign of Cross cue");
+  assert.equal(confessionRail.leftChannel,"transient","Confession Sign of Cross cue is not transient");
+  assert.match(confessionRail.leftMask,/ao-live-sign-cross\.png/,"Confession Sign of Cross cue did not resolve through the hardened V4.1 asset");
+  assert.equal(confessionRail.right,"ao-rich-confession","Confession lost its persistent devotional identity");
+  assert.equal(confessionRail.rightChannel,"persistent","Confession devotional identity is not persistent");
+  await shot("03h-pray-confession-sign-cross");
+
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.home",{returnContext:null}));
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Preserved Rosary player: live context rail follows existing Rosary state and
