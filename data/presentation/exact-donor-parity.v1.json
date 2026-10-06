@@ -1,6 +1,6 @@
 {
   "schema": "ao-exact-donor-presentation-parity-v1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "OPEN",
   "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
   "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional or conceptual equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
@@ -98,39 +98,54 @@
     },
     {
       "id": "SEMANTIC_RAILS_SIMPLIFIED",
-      "classification": "REGRESSION",
-      "status": "OPEN",
-      "current": "The modular FX recovery proves the presence of semantic rails but does not prove exact rail geometry, icon sequence, visibility, transient behavior, wording or cue timing from the later v3.4.x donors.",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "Exact donor rail recovery is now in production: Angelus uses the recovered ritual grid/gesture choreography; Stations, Benediction, Adoration and Confession use the recovered thin fixed-edge semantic rails with transient cue behavior and hidden/inactive-state discipline. The later v3.4.10 focus pass also restores the donor 40/42 percent activation geometry, midpoint handoff, directional anticipation and 45 ms opacity response for Angelus and Stations.",
       "expected": "Reproduce the exact per-module rail contracts from v3.4.6, v3.4.8 and v3.4.14, including hidden/inactive behavior and transient cue choreography.",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
+        "src/pray/presentation-coherence.js",
+        "tests/pray-presentation.mjs",
+        "PR #203 — Exact donor Angelus ritual grid",
+        "PR #204 — Exact donor devotional rail choreography",
+        "PR #215 — Restore v3.4.10 PRAY scroll focus",
         "Ad_Orientem_v3_4_6.html",
         "Ad_Orientem_v3_4_8.html",
-        "Ad_Orientem_v3_4_14.html"
-      ]
+        "Ad_Orientem_v3_4_10.html"
+      ],
+      "validation": "RECOVERED_AND_REGRESSION_LOCKED"
     },
     {
       "id": "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
-      "classification": "REGRESSION",
-      "status": "OPEN",
-      "current": "Current recovery adds a geometry-neutral Rosary context rail and mystery transition while preserving the external canonical player.",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "The final v3.4.14 Rosary presentation is restored over the preserved Rosary engine: exact live-player hierarchy, ritual rail, mystery cinematic and launch state, progress treatment, mystery art/backdrop, recitation controls, overview sheet and visible return path to modular PRAY are regression-locked.",
       "expected": "Recover the final v3.4.14 Rosary rail, mystery transition, progress, art and live-reader composition exactly rather than approximating those features independently.",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
+        "tests/pray-presentation.mjs",
+        "PR #205 — Exact donor Rosary V5: restore final live player composition",
         "Ad_Orientem_v3_4_14.html"
-      ]
+      ],
+      "validation": "RECOVERED_AND_REGRESSION_LOCKED"
     },
     {
       "id": "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
       "classification": "MISSING_INTEGRATION",
       "status": "OPEN",
-      "current": "Existing visual tests certify current modular surfaces against self-authored assertions/screenshots, not against the final approved non-Mass donor head.",
+      "current": "The remaining donor-parity risk is now visual/compositional certification rather than known missing module/runtime ownership. Exact Rosary, devotional rails, v3.4.10 Angelus/Stations focus, Guided Novenas N3 and the v38.1 Traditional Catholic Life modules have been extracted/recovered, but current acceptance still lacks direct donor/current capture comparison for the complete non-Mass surface set.",
       "expected": "Create donor-reference acceptance for Home, PRAY, Learn, Calendar and Settings at 390x844 and key module states; certify only after direct donor-vs-current comparison.",
       "evidence": [
         "tests/app-visual-acceptance.mjs",
+        "tests/pray-presentation.mjs",
+        "tests/pray-novenas.mjs",
+        "tests/pray-traditional-life.mjs",
+        "tests/learn-traditional-life.mjs",
         "data/presentation/presentation-fx-parity.v1.json",
+        "Ad_Orientem_v3_4_10.html",
+        "Ad_Orientem_v3_4_14.html",
         "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
       ]
     }
@@ -152,8 +167,6 @@
     "App release gate may return to FINAL_APP_READY only when all findings are CLOSED."
   ],
   "openBlockers": [
-    "SEMANTIC_RAILS_SIMPLIFIED",
-    "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
     "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED"
   ]
 }
