@@ -1,0 +1,30 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { TRADITIONAL_HYMNS_V381, MORNING_SEQUENCE_V381, EVENING_SEQUENCE_V381, TRADITIONAL_PRAY_SOURCES_V381 } from "../src/pray/traditional-pray-data.js";
+import { canonicalAssetIdForPrayRoute } from "../src/assets/asset-registry.js";
+
+assert.deepEqual(Object.keys(TRADITIONAL_HYMNS_V381),["te_deum","veni_creator","ave_maris_stella"]);
+assert.equal(TRADITIONAL_HYMNS_V381.te_deum.la.startsWith("Te Deum laudamus"),true);
+assert.equal(TRADITIONAL_HYMNS_V381.veni_creator.la.startsWith("Veni, Creator Spiritus"),true);
+assert.equal(TRADITIONAL_HYMNS_V381.ave_maris_stella.la.startsWith("Ave, maris stella"),true);
+assert.equal(MORNING_SEQUENCE_V381.length,10);
+assert.equal(EVENING_SEQUENCE_V381.length,9);
+assert.deepEqual(MORNING_SEQUENCE_V381.map(x=>x[0]),["foundations_sign_of_cross","sacrament_come_holy_spirit","foundations_our_father","foundations_hail_mary","foundations_apostles_creed","foundations_act_of_faith","foundations_act_of_hope","foundations_act_of_love","sacrament_act_of_contrition","foundations_guardian_angel"]);
+assert.deepEqual(EVENING_SEQUENCE_V381.map(x=>x[0]),["foundations_sign_of_cross","sacrament_come_holy_spirit","foundations_our_father","foundations_hail_mary","foundations_apostles_creed","pray.confession","sacrament_act_of_contrition","dead_de_profundis","marian_hail_holy_queen"]);
+assert.match(TRADITIONAL_PRAY_SOURCES_V381.holyName,/The_Litany_of_the_Holy_Name_of_Jesus/);
+assert.equal(canonicalAssetIdForPrayRoute("pray.morning_evening"),"ao-rich-begin-end-day");
+assert.equal(canonicalAssetIdForPrayRoute("pray.sacred_hymns"),"ao-refined-devotions");
+assert.equal(canonicalAssetIdForPrayRoute("pray.holy_name_litany"),"ao-refined-devotions");
+
+const runtime=readFileSync("src/pray/traditional-pray-runtime.js","utf8"),browser=readFileSync("src/pray/browser-entry.js","utf8");
+assert.match(runtime,/38\.1-modular-pray/);
+for(const route of ["pray.morning_evening","pray.sacred_hymns","pray.holy_name_litany"])assert.ok(runtime.includes(route));
+assert.match(runtime,/LIVE_PUBLIC_DOMAIN_WITNESS_FAIL_CLOSED/);
+assert.match(runtime,/The source text could not be loaded\. Ad Orientem will not substitute an invented litany/);
+assert.match(runtime,/AO_PRAY_CANONICAL_DATA_V435930/);
+assert.doesNotMatch(runtime,/AO_TRADITION_V38/);
+assert.doesNotMatch(runtime,/AOTraditionalPrayerBook/);
+assert.match(runtime,/aoN1InsertedSection/);
+assert.match(runtime,/canonicalAssetIdForPrayRoute/);
+assert.match(browser,/import "\.\/traditional-pray-runtime\.js";/);
+console.log("PASS v38.1 traditional PRAY modular extraction");

@@ -42,6 +42,9 @@ const PRAY_HOME_ROUTE_ASSET_IDS=Object.freeze({
   "programme.first_friday":"ao-rich-sacred-heart",
   "programme.first_saturday":"ao-rich-immaculate-heart",
   "pray.library":"ao-rich-prayer-library",
+  "pray.morning_evening":"ao-rich-begin-end-day",
+  "pray.sacred_hymns":"ao-refined-devotions",
+  "pray.holy_name_litany":"ao-refined-devotions",
 });
 for(const [route,id] of Object.entries(PRAY_HOME_ROUTE_ASSET_IDS)){
   assert.equal(AO_PRAY_ROUTE_ASSET_IDS[route],id,"PRAY route asset mapping changed: "+route);
