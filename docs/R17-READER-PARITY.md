@@ -1,85 +1,44 @@
-# R17 Reader Parity Gate
+# Definitive Mass reader convergence
 
-Date: 2026-10-03
+## Current production authority
 
-This landing is deliberately reversible. The production default remains the existing GitHub Mass reader.
+Production Mass has one presentation owner only:
 
-## Donor / contract basis
+`src/mass/reader-native-preview.js` + `src/mass/reader-dom.js`
 
-Reader parity is checked against:
+The canonical/session/source engine remains the modular R17/R19 stack. Historical mirror, shadow, rescue and legacy renderers are not production fallbacks and cannot be selected by query string or localStorage.
 
-1. `Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.65_MOBILE_NATIVE_V48.html`
-2. `data/presentation/reader-contract.v1.json`
-3. the R17 canonical/session engine already landed in this branch
+## Presentation donor chain
 
-The v1.65 donor provides the proven mobile-native surface geometry and state surfaces. R17 owns canonical Mass/session state. The legacy GitHub reader remains the rollback DOM until parity is proven.
+Presentation recovery is grounded in:
 
-## Feature gate
+1. `Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.65_MOBILE_NATIVE_V48.html` — recoverable source for the proven mobile-native geometry, focus treatment, Schola surface and reader hierarchy.
+2. `data/presentation/v1.83-reader-parity-gate.v1.json`
+3. `data/presentation/v1.83-reader-map-recovery.v1.json`
+4. `data/presentation/v1.83-regression-ledger.v1.json`
 
-Query string overrides storage.
+v1.83 remains the frozen final reader contract for the 48-card concept, rails/ribbons, focus engine, translation interaction, Schola architecture and mobile visual language. The raw v1.83 donor bytes are not present in the current repository/library evidence, so unrecovered historical C01-C48 identities or boundaries must not be invented.
 
-- default: `LEGACY`
-- `?aoR17Reader=shadow` — legacy reader remains visible; R17 audits required reader surfaces without DOM mutation
-- `?aoR17Reader=preview` — legacy reader still runs underneath; a new R17 shell is mounted over it and mirrors the current legacy content/state
-- `?aoR17Reader=r17` is currently an alias for `PREVIEW`, not a production switch
+## Definitive ownership rule
 
-Storage key for controlled testing: `ao-r17-reader-ui`.
+- R17/R19 owns liturgical facts, source structure, form state, cue ownership, special structures and session lifecycle.
+- `reader-dom.js` owns the one production Mass presentation.
+- `reader-native-preview.js` mounts that presentation from canonical state.
+- The source-first 39-step LIVE model remains canonical.
+- The 48-step product layer remains a presentation projection and must not claim unrecovered historical v1.83 identities.
+- No legacy DOM, mirror shell, shadow reader or rescue renderer may mount underneath or above the definitive reader.
 
-There is intentionally no code path in this wave that deletes the legacy reader or makes the preview the default.
+## Presentation acceptance
 
-## Required parity surfaces
+Presentation parity is reopened until direct donor-derived geometry is certified at both phone and wide browser dimensions. Required checks include:
 
-### Modes
-- MISSAL
-- SIMPLE
-- LIVE
+- bounded app-width shell rather than full-browser stretching;
+- compact mode/section hierarchy;
+- source-owned left/right cue rails without reflowing the prayer column;
+- borderless focused reading field rather than a large web-card slab;
+- readable focus ladder that does not black out surrounding prayer text;
+- integrated Schola presentation;
+- compact navigation;
+- exact Host/Chalice elevation cue ownership and all previously certified liturgical/runtime behavior.
 
-### Reader + navigation
-- reader surface
-- previous / next
-- card counter
-
-### State ribbon
-- priest position
-- current section / Guide copy
-- priest action
-
-### Faithful rail
-- persistent posture
-- transient gesture
-- response cue
-
-### Audio / Schola
-- priest voice
-- Schola live surface
-- Schola text
-- Schola translation
-- bell cue remains optional as a separate visual surface
-
-### Cinematic / Guide
-- part transition cinematic
-- Guide next/current-rubric state
-
-## Ownership rules
-
-- R17 canonical/session engine must never be mutated by the reader.
-- Posture is persistent until a sourced transition.
-- Gesture is transient at its exact anchor.
-- Incarnatus is a transient genuflection, never persistent kneeling.
-- MISSAL / SIMPLE / LIVE are presentation modes, never Mass forms.
-- Schola is continuous when active except when the public text is identical to the reader text.
-- Missing Guide rubric data fails closed; the reader does not invent rubric prose.
-- v4.8 icon semantics remain `currentColor`/mask compatible.
-
-## This wave
-
-Added:
-
-- `src/mass/reader-gate.js`
-- `src/mass/reader-parity.js`
-- `src/mass/reader-shadow.js`
-- `src/mass/reader-preview.js`
-
-The preview is intentionally a **mirror shell**. It reuses the legacy reader only as a temporary content/state donor while the new shell geometry is tested. Closing the preview immediately reveals the untouched legacy reader underneath.
-
-The next reader wave replaces individual mirrored state channels with R17-native projections one by one. The legacy reader is removed only after all required parity channels are independently sourced and tested.
+Runtime certification remains separate from presentation certification.
