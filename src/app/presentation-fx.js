@@ -74,6 +74,7 @@ export function createPresentationFxBridge({
   let disposed = false;
   let presentationHookInstalled = false;
   let releaseRuntimeHook = null;
+  let legacyLoaderGuardTimer = null;
 
   function mark(value) {
     const html = win?.document?.documentElement;
@@ -222,12 +223,52 @@ export function createPresentationFxBridge({
     presentationHookInstalled = false;
   }
 
+  function syncLegacyWorkloadLoader(next = runtimeState(win)) {
+    const el = loaderElement(win);
+    if (!el) return false;
+    const active = getActive?.() ?? null;
+    const allowed = Boolean(
+      next?.scripture?.loading ||
+      (next?.resolving && active === "calendar") ||
+      el.dataset?.kind === "calendar-week"
+    );
+    if (allowed) return true;
+
+    const clearIfStillBackground = () => {
+      const current = runtimeState(win);
+      const node = loaderElement(win);
+      if (!node || node.dataset?.kind === "calendar-week") return;
+      if (current?.scripture?.loading) return;
+      if (current?.resolving && getActive?.() === "calendar") return;
+      node.classList?.remove?.("aoCinemaLoaderOn");
+      node.setAttribute?.("aria-hidden", "true");
+    };
+
+    clearIfStillBackground();
+    if (legacyLoaderGuardTimer != null && typeof win?.clearTimeout === "function") {
+      win.clearTimeout(legacyLoaderGuardTimer);
+    }
+    if (typeof win?.setTimeout === "function") {
+      // The embedded v43.12 donor schedules its legacy loader at 220 ms.
+      // Correct it immediately afterwards when calendar resolution is background work.
+      legacyLoaderGuardTimer = win.setTimeout(() => {
+        legacyLoaderGuardTimer = null;
+        clearIfStillBackground();
+      }, 225);
+    }
+    return false;
+  }
+
   function installRuntimeHook() {
     if (releaseRuntimeHook) return true;
     const subscribe = win?.AO_RUNTIME_V8?.store?.subscribe;
     if (typeof subscribe !== "function") return false;
-    const release = subscribe.call(win.AO_RUNTIME_V8.store, () => queueSurfaceScan());
+    const release = subscribe.call(win.AO_RUNTIME_V8.store, next => {
+      queueSurfaceScan();
+      syncLegacyWorkloadLoader(next);
+    });
     releaseRuntimeHook = typeof release === "function" ? release : () => {};
+    syncLegacyWorkloadLoader(runtimeState(win));
     return true;
   }
 
@@ -312,9 +353,11 @@ export function createPresentationFxBridge({
     if (surfaceTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(surfaceTimer);
     if (scanTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(scanTimer);
     if (initialScanTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(initialScanTimer);
+    if (legacyLoaderGuardTimer != null && typeof win?.clearTimeout === "function") win.clearTimeout(legacyLoaderGuardTimer);
     surfaceTimer = null;
     scanTimer = null;
     initialScanTimer = null;
+    legacyLoaderGuardTimer = null;
     scanQueued = false;
     removePresentationHook();
     removeRuntimeHook();

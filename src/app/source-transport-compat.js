@@ -1,9 +1,24 @@
 export const DIVINUM_OFFICIUM_PIN="126a07f91ede04664108abb6fb20ace3f4de14b9";
 
 const RAW_DO="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/";
+const PINNED_DO=RAW_DO+DIVINUM_OFFICIUM_PIN+"/";
 const MISSALEMEUM_FR=/^https:\/\/raw\.githubusercontent\.com\/mmolenda\/missalemeum\/[^/]+\/backend\/resources\/divinum-officium-local\/web\/www\/missa\/Francais\/(.+)$/i;
 const DO_MISSA_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/web\/www\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
 const DO_OBSOLETE_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/obsolete\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
+
+const PINNED_ABSENT_SOURCES=new Set([
+  PINNED_DO+"web/www/horas/English/Commune/Coronatio.txt",
+  PINNED_DO+"web/www/horas/Francais/Commune/Coronatio.txt",
+  PINNED_DO+"web/www/horas/French/Commune/Coronatio.txt",
+  ...["Latin","English","Francais","French"].flatMap(language=>[
+    PINNED_DO+"web/www/missa/"+language+"/Sancti/10-08c.txt",
+    PINNED_DO+"web/www/horas/"+language+"/Sancti/10-08c.txt",
+  ]),
+]);
+
+export function isKnownAbsentResolvedSourceUrl(input){
+  return PINNED_ABSENT_SOURCES.has(String(input??""));
+}
 
 function canonicalLanguage(value){
   return /^French$/i.test(String(value??""))?"Francais":String(value??"");
@@ -47,6 +62,14 @@ export function installSourceTransportCompat(win=globalThis){
   const wrapped=(input,init)=>{
     const raw=requestUrl(input);
     const rewritten=rewriteResolvedSourceUrl(raw);
+    const target=rewritten||raw;
+    if(isKnownAbsentResolvedSourceUrl(target)&&typeof win.Response==="function"){
+      return Promise.resolve(new win.Response("",{
+        status:404,
+        statusText:"Not Found",
+        headers:{"content-type":"text/plain; charset=utf-8","x-ao-source-compat":"known-absent"},
+      }));
+    }
     if(!rewritten||rewritten===raw)return nativeFetch(input,init);
     try{
       if(typeof win.Request==="function"&&input instanceof win.Request){
@@ -60,6 +83,7 @@ export function installSourceTransportCompat(win=globalThis){
     version:"source-transport-compat-v1",
     installed:true,
     rewrite:rewriteResolvedSourceUrl,
+    isKnownAbsent:isKnownAbsentResolvedSourceUrl,
   });
   try{
     Object.defineProperty(win,"fetch",{value:wrapped,configurable:true,writable:true});

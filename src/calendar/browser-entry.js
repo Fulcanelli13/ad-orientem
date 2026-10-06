@@ -21,6 +21,88 @@ const displayDate=id=>{const m=String(id??"").match(/^(\d{4})-(\d{2})-(\d{2})$/)
 const parseDisplayDate=raw=>{const m=String(raw??"").trim().match(/^(\d{1,2})\s*[\/.-]\s*(\d{1,2})\s*[\/.-]\s*(\d{4})$/);if(!m)return null;const d=+m[1],mo=+m[2],y=+m[3],x=new Date(y,mo-1,d,12);return x.getFullYear()===y&&x.getMonth()===mo-1&&x.getDate()===d?iso(x):null};
 const addDays=(id,n)=>{const d=dateOf(id);d.setDate(d.getDate()+Number(n||0));return iso(d)};
 
+const weekCache=new Map(),weekLoads=new Map(),weekStatus=new Map();
+let foregroundWeek="",navEpoch=0;
+function weekStart(id){const d=dateOf(id);d.setDate(d.getDate()-d.getDay());return iso(d)}
+function weekIds(id){const s=weekStart(id);return Array.from({length:7},(_,i)=>addDays(s,i))}
+function weekReady(id){return weekIds(id).every(x=>weekCache.has(x))}
+function weekLabel(id){const ids=weekIds(id),a=dateOf(ids[0]),b=dateOf(ids[6]),loc=fr()?"fr-FR":"en-GB";const af=a.toLocaleDateString(loc,{day:"numeric",month:"long"}),bf=b.toLocaleDateString(loc,{day:"numeric",month:"long",year:"numeric"});return `${af} – ${bf}`}
+function seedCurrent(){const s=state(),r=s?.resolution;if(s&&!s.resolving&&r?.date===s.selectedDate&&!weekCache.has(s.selectedDate))weekCache.set(s.selectedDate,r)}
+function cinemaLoader(){return globalThis.document?.getElementById?.("ao-cinema-loader")??null}
+function loaderText(done,total,id,errors=0){
+  const el=cinemaLoader();if(!el)return;
+  const title=el.querySelector("[data-ao-cinema-loader-title]"),sub=el.querySelector("[data-ao-cinema-loader-sub]");
+  if(title)title.textContent=L("Preparing the liturgical week","Préparation de la semaine liturgique");
+  const progress=L(`${done} of ${total} days prepared`,`${done} jours sur ${total} préparés`);
+  const err=errors?` · ${L(`${errors} unavailable`,`${errors} indisponible${errors>1?'s':''}`)}`:"";
+  if(sub)sub.textContent=`${weekLabel(id)} · ${progress}${err}`;
+  el.dataset.weekProgress=L("1962 calendar · complete week","Calendrier 1962 · semaine complète");
+}
+function showWeekLoader(id,done=0,total=7,errors=0){
+  const el=cinemaLoader();if(!el)return;
+  foregroundWeek=weekStart(id);clearTimeout(el.__aoWeekHideTimer);el.dataset.kind="calendar-week";
+  loaderText(done,total,id,errors);el.classList.add("aoCinemaLoaderOn");el.setAttribute("aria-hidden","false");
+}
+function hideWeekLoader(){
+  const el=cinemaLoader();foregroundWeek="";if(!el)return;
+  if(el.dataset.kind==="calendar-week"){el.classList.remove("aoCinemaLoaderOn");el.removeAttribute("data-kind");el.removeAttribute("data-week-progress");el.setAttribute("aria-hidden","true")}
+}
+function failedResolution(id,msg){return {status:"failed",date:id,day:{main:{title:L("Calendar unavailable","Calendrier indisponible"),rank:"",color:""},commemorations:[]},proper:{status:"failed",data:null,error:msg||"Calendar resolution failed"},colourPlan:null,error:msg||"Calendar resolution failed",diagnostic:{warnings:[],errors:[msg||"Calendar resolution failed"]}}}
+async function resolveOne(id){
+  if(weekCache.has(id))return weekCache.get(id);
+  const resolver=runtime()?.resolver;if(!resolver?.resolveDay){const r=failedResolution(id,"Resolver unavailable");weekCache.set(id,r);return r}
+  try{const r=await resolver.resolveDay(id),safe=r?.date===id?r:failedResolution(id,"Resolver returned mismatched date");weekCache.set(id,safe);return safe}
+  catch(error){const r=failedResolution(id,String(error?.message||error));weekCache.set(id,r);return r}
+}
+async function prepareWeek(id,{foreground=false,concurrency=3,skipSeed=false}={}){
+  if(!skipSeed)seedCurrent();const key=weekStart(id),ids=weekIds(id);if(weekReady(id))return ids.map(x=>weekCache.get(x));
+  const existing=weekLoads.get(key);if(existing){if(foreground){const z=weekStatus.get(key)||{done:ids.filter(x=>weekCache.has(x)).length,errors:0};showWeekLoader(id,z.done,7,z.errors)}return existing}
+  const s={done:ids.filter(x=>weekCache.has(x)).length,errors:ids.filter(x=>weekCache.get(x)?.status==="failed").length,total:7};weekStatus.set(key,s);if(foreground)showWeekLoader(id,s.done,7,s.errors);
+  const missing=ids.filter(x=>!weekCache.has(x));let cursor=0;
+  const worker=async()=>{while(cursor<missing.length){const index=cursor++,day=missing[index],r=await resolveOne(day);s.done++;if(r?.status==="failed"||!r?.day)s.errors++;weekStatus.set(key,{...s});if(foregroundWeek===key)loaderText(s.done,7,id,s.errors)}};
+  const p=Promise.all(Array.from({length:Math.min(Math.max(1,concurrency),Math.max(1,missing.length))},worker)).then(()=>ids.map(x=>weekCache.get(x))).finally(()=>weekLoads.delete(key));
+  weekLoads.set(key,p);return p;
+}
+function applyCached(id){
+  const r=weekCache.get(id),rt=runtime(),store=rt?.store;if(!r||!store)return false;
+  const home=rt?.controller?.home;if(home&&typeof home.resolutionToken==="number")home.resolutionToken++;
+  const s=store.getState();if(s?.selectedDate!==id)store.dispatch({type:"set-date",date:id});
+  store.dispatch({type:"resolve-complete",resolution:r});return store.getState()?.resolution?.date===id;
+}
+function cancelPendingNavigation(){navEpoch++;foregroundWeek="";hideWeekLoader();return true}
+function hideWeekLoaderAfterPaint(token){
+  const done=()=>{if(token===navEpoch)hideWeekLoader()};
+  if(typeof globalThis.requestAnimationFrame==="function")globalThis.requestAnimationFrame(()=>globalThis.requestAnimationFrame(done));
+  else queueMicrotask(done);
+}
+async function revealDate(id,{forceLoader=false,prefetch=true,skipSeed=false}={}){
+  const token=++navEpoch,needs=!weekReady(id);
+  if(needs||forceLoader)showWeekLoader(id,weekStatus.get(weekStart(id))?.done||0,7,weekStatus.get(weekStart(id))?.errors||0);
+  await prepareWeek(id,{foreground:needs||forceLoader,concurrency:3,skipSeed});
+  if(token!==navEpoch)return false;
+  const applied=applyCached(id);if(token!==navEpoch)return false;
+  paint();
+  if(needs||forceLoader)hideWeekLoaderAfterPaint(token);
+  if(prefetch&&token===navEpoch)setTimeout(()=>prefetchNeighbours(id),240);
+  return applied;
+}
+function prefetchNeighbours(id){
+  const prev=addDays(weekStart(id),-7),next=addDays(weekStart(id),7);
+  void Promise.all([prepareWeek(prev,{foreground:false,concurrency:2}),prepareWeek(next,{foreground:false,concurrency:2})]);
+}
+function installWeekCacheApi(){
+  const api=Object.freeze({
+    version:"43.45-modular-exact",open:()=>revealDate(state()?.selectedDate||iso(new Date()),{forceLoader:!weekReady(state()?.selectedDate||iso(new Date())),prefetch:true}),
+    revealDate,prepareWeek,weekIds,weekReady,cancel:cancelPendingNavigation,
+    inspect:()=>{const id=state()?.selectedDate||iso(new Date()),ids=weekIds(id);return {version:"43.45-modular-exact",selectedDate:id,weekStart:weekStart(id),weekReady:weekReady(id),cachedDates:[...weekCache.keys()].sort(),visibleWeek:ids.map(x=>({date:x,cached:weekCache.has(x),status:weekCache.get(x)?.status||null,title:weekCache.get(x)?.day?.main?.title||null})),activeLoads:[...weekLoads.keys()],foregroundWeek}},
+    cacheSize:()=>weekCache.size,get:id=>weekCache.get(String(id||""))||null,
+    invalidate:id=>{const key=String(id||"");if(!key)return false;weekCache.delete(key);weekStatus.delete(weekStart(key));return true},
+    retryDate:async id=>{const key=String(id||"");if(!key)return null;const active=weekLoads.get(weekStart(key));if(active)await active;weekCache.delete(key);weekStatus.delete(weekStart(key));showWeekLoader(key,0,1,0);const r=await resolveOne(key);if(state()?.selectedDate===key){applyCached(key);paint()}hideWeekLoaderAfterPaint(navEpoch);return r},
+    retryWeek:async id=>{const key=weekStart(String(id||state()?.selectedDate||iso(new Date()))),active=weekLoads.get(key);if(active)await active;weekIds(key).forEach(x=>weekCache.delete(x));weekStatus.delete(key);return revealDate(String(id||key),{forceLoader:true,prefetch:true,skipSeed:true})}
+  });
+  globalThis.AO_CALENDAR_WEEK_CACHE_V4345=api;return api;
+}
+
 function resolution(){
   const s=state(),id=s?.selectedDate,r=s?.resolution;
   return id&&r?.date===id&&!s?.resolving?r:null;
@@ -133,7 +215,7 @@ let unsub=null;
 function root(){return globalThis.document?.getElementById?.(ROOT_ID)??null}
 function paint(){const r=root();if(!r)return false;const body=r.querySelector("[data-cal-body]");if(!body)return false;body.innerHTML=bodyMarkup();r.dataset.aoCalendarOwner=VERSION;requestAnimationFrame(()=>r.querySelector("[data-cal-date][aria-current=\"date\"]")?.scrollIntoView?.({block:"nearest",inline:"center",behavior:"auto"}));return true}
 function syncShell(surface){globalThis.AO_APP_SHELL_V1?.syncSurface?.(surface)}
-function close({surface="home"}={}){root()?.remove?.();try{unsub?.()}catch{}unsub=null;syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
+function close({surface="home"}={}){cancelPendingNavigation();root()?.remove?.();try{unsub?.()}catch{}unsub=null;syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
 async function waitForResolution(target,{attempts=120,delay=50}={}){
   for(let i=0;i<attempts;i+=1){
     const s=state(),r=s?.resolution;
@@ -144,11 +226,8 @@ async function waitForResolution(target,{attempts=120,delay=50}={}){
 }
 async function select(id,{closeAfter=false}={}){
   const target=String(id||"");if(!target)return false;
-  const controller=dateController();if(typeof controller?.changeDate!=="function")return false;
   try{
-    controller.changeDate(target);
-    const resolved=await waitForResolution(target),ok=!!resolved&&resolved.status!=="failed";
-    paint();
+    const ok=await revealDate(target,{forceLoader:false,prefetch:true});
     if(ok&&closeAfter)close({surface:"home"});
     return ok;
   }catch(error){console.error("Modular Calendar date navigation failed",error);return false}
@@ -164,10 +243,11 @@ function bind(r){
   r.addEventListener("keydown",event=>{const input=event.target.closest?.("[data-cal-input]");if(input&&event.key==="Enter"){event.preventDefault();const id=parseDisplayDate(input.value);if(id)void select(id,{closeAfter:true})}});
 }
 function open(){
-  const doc=globalThis.document;if(!doc?.body||!runtime()?.store)return false;
-  root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();return true;
+  const doc=globalThis.document;if(!doc?.body||!runtime()?.store||!runtime()?.resolver)return false;
+  installWeekCacheApi();seedCurrent();root()?.remove?.();
+  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();
+  const selected=state()?.selectedDate||iso(new Date());void revealDate(selected,{forceLoader:!weekReady(selected),prefetch:true});return true;
 }
-function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,dataServiceReady:typeof dateController()?.changeDate==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
+function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
 export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,close,paint,status,select});win.AO_CALENDAR_APP_V1=api;return api}
-if(typeof window!=="undefined"&&typeof document!=="undefined")installCalendarBrowserOwner(window);
+if(typeof window!=="undefined"&&typeof document!=="undefined"){installWeekCacheApi();installCalendarBrowserOwner(window);}

@@ -1,9 +1,9 @@
 {
   "schema": "ao-exact-donor-presentation-parity-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "OPEN",
   "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
-  "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
+  "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional or conceptual equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
   "scope": "non-Mass presentation only; Mass remains governed by data/presentation/reader-release-gate.v1.json and data/presentation/product-parity.v1.json",
   "authorities": [
     {
@@ -81,12 +81,16 @@
       "id": "ASYNC_LOADING_SEMANTICS_FLATTENED",
       "classification": "REGRESSION",
       "status": "OPEN",
-      "current": "The fabricated generic Opening/Preparing <surface> route loader is removed. Exact workload-specific donor loaders still require a direct audit/recovery pass for modular Calendar/Scripture and any later non-Mass async owners.",
+      "current": "Exact donor v43.45 week-cache/preload behavior is ported to modular Calendar on the recovery branch: seven-day cache, concurrency-3 preparation, exact bilingual progress loader, cached-date apply and adjacent-week prefetch. The v43.12 background calendar loader is guarded outside the Calendar foreground; exact Scripture workload wording remains preserved. Validation is pending real-phone CI.",
       "expected": "Recover only workload-specific loader states from the donor, including calendar resolution/week progress and Scripture/content-specific states. No destination-name loader is permitted.",
       "evidence": [
+        "src/calendar/browser-entry.js",
         "src/app/presentation-fx.js",
-        "Ad_Orientem_NON_MASS_HEAD_v2_CINEMATICS_PROTOTYPE.html contentLoadingSpec and calendar-week loader reference"
-      ]
+        "tests/presentation-fx.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Ad_Orientem_NON_MASS_HEAD_v2_CINEMATICS_PROTOTYPE.html v43.45 week preload reference"
+      ],
+      "validation": "IMPLEMENTED_PENDING_PHONE_CI"
     },
     {
       "id": "SEMANTIC_RAILS_SIMPLIFIED",
