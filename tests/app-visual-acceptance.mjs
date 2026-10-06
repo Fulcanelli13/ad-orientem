@@ -331,12 +331,18 @@ try{
   assert.equal(angelusRails.incarnationUnits,1,"Angelus lost the unique Incarnation focus marker");
   assert.equal(angelusRails.genericAngelusContext,0,"Angelus regained the later generic devotional context card");
   assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");
-  const angelusHeader=await page.evaluate(()=>({
-    closeButtons:document.querySelectorAll("#aoPray435930 [data-p435930-close]").length,
-    closeSvgs:document.querySelectorAll("#aoPray435930 [data-p435930-close] svg[data-ao-inline-asset-id='ao-ui-close']").length,
-    closePaths:document.querySelectorAll("#aoPray435930 [data-p435930-close] svg[data-ao-inline-asset-id='ao-ui-close'] path").length,
-  }));
-  assert.deepEqual(angelusHeader,{closeButtons:1,closeSvgs:1,closePaths:1},"Angelus close control is duplicated or no longer a single inline canonical icon");
+  const angelusHeader=await page.evaluate(()=>{
+    const button=document.querySelector("#aoPray435930 [data-p435930-close]");
+    return {
+      closeButtons:document.querySelectorAll("#aoPray435930 [data-p435930-close]").length,
+      closeSvgs:document.querySelectorAll("#aoPray435930 [data-p435930-close] svg[data-ao-inline-asset-id='ao-ui-close']").length,
+      closePaths:document.querySelectorAll("#aoPray435930 [data-p435930-close] svg[data-ao-inline-asset-id='ao-ui-close'] path").length,
+      visibleChildren:[...(button?.children??[])].filter(node=>getComputedStyle(node).display!=="none").length,
+      before:button?getComputedStyle(button,"::before").content:null,
+      after:button?getComputedStyle(button,"::after").content:null,
+    };
+  });
+  assert.deepEqual(angelusHeader,{closeButtons:1,closeSvgs:1,closePaths:1,visibleChildren:1,before:"none",after:"none"},"Angelus close control still has duplicate visible decoration");
   await shot("03a-pray-angelus-rails");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
@@ -718,7 +724,7 @@ try{
   // Wide-browser regression: the product remains an app-width reader rather than a desktop web page.
   const wideContext=await browser.newContext({viewport:{width:1440,height:960},deviceScaleFactor:1,hasTouch:false,locale:"en-GB"});
   const wide=await wideContext.newPage();
-  await wide.goto("http://127.0.0.1:4176/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+  await wide.goto("http://127.0.0.1:4186/index.html",{waitUntil:"domcontentloaded",timeout:90000});
   await wide.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true&&globalThis.AO_PRAY_APP_V1?.status?.().installed===true,null,{timeout:30000});
   await wide.locator("[data-ao-app-surface='pray']").click();
   await wide.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
