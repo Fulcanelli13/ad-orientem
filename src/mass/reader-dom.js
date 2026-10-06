@@ -128,7 +128,8 @@ const SHELL_STYLE = `
 }
 .ao-rail-item:not([data-active="true"]){display:none}
 .ao-rail-item[data-active="true"]{color:var(--ao-text);border-color:color-mix(in srgb,var(--ao-accent) 28%,rgba(255,255,255,.06))}
-.ao-rail-item .ao-icon-mask{width:32px;height:32px;flex-basis:32px}
+.ao-rail-item .ao-icon-mask{width:32px;height:32px;flex-basis:32px;background:#e8e1d8}
+.ao-state-cell[data-side] .ao-icon-mask{background:#e8e1d8}
 .ao-rail-copy{
   max-width:48px;font:600 .43rem/1.08 "Cinzel",Georgia,serif;letter-spacing:.025em;
   overflow-wrap:anywhere;text-transform:uppercase;color:inherit
