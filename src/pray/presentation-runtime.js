@@ -397,7 +397,10 @@ function rosaryDonorArt(r,info){
  const center=r.querySelector('.aoRosaryRitualCenter')||r.querySelector('.pbShell');
  if(!center)return'';
  const img=r.querySelector('.aoV401RosaryHero img,.lab-contemplation img,[data-ao-rosary-art] img,.r23-mystery-art,img[data-mystery-art]');
- const src=img?.currentSrc||img?.src||'';
+ const apiArt=info?.mi!==null
+  ?(window.AO_ROSARY_V401?.preview?.(info.set,info.mi)||window.AO_ROSARY_V41?.preview?.(info.set,info.mi)||'')
+  :'';
+ const src=img?.currentSrc||img?.src||apiArt||'';
  center.classList.toggle('r24-has-mystery-art',!!src&&info?.mi!==null);
  if(src&&info?.mi!==null)center.style.setProperty('--r24-mystery-art',`url("${String(src).replace(/"/g,'\\\"')}")`);
  else center.style.removeProperty('--r24-mystery-art');
