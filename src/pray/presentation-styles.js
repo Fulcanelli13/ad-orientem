@@ -3,6 +3,8 @@ const AUDIT_CSS="\nbody.aoP435930Open{overflow:hidden!important}\n.aoP435930Back
 const MODULAR_SHELL_CSS="body.aoP435930Open #ao-global-ribbon{z-index:2147483300!important;pointer-events:auto!important}";
 const VISIBLE_REGRESSION_GUARD_CSS=`
 #aoPray435930 svg.aoP435930UiIcon,#aoPray435930 svg.aoRitualIcon,#aoPray435930 svg.aoP435930SemanticRailIcon{background:none!important;-webkit-mask:none!important;mask:none!important;overflow:visible!important}
+#aoPray435930 .aoP435930Head button::before,#aoPray435930 .aoP435930Head button::after{content:none!important;display:none!important}
+#aoPray435930 .aoP435930Head button>:not([data-ao-inline-asset-id]){display:none!important}
 #aoPray435930 .aoP435930HomeIntro.aoModularHeroIn{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
 @media(max-width:560px){
  #aoPray435930 .aoP435930RecitationMode{grid-template-columns:auto minmax(160px,220px)!important;justify-content:space-between!important;gap:8px!important;padding-left:8px!important}
@@ -228,6 +230,16 @@ const ROSARY_EXACT_DONOR_CSS=`#aoPrayerBookRoot[data-ao-rosary-active-root="fals
 }
 @media(prefers-reduced-motion:reduce){#aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{transition:none}}
 html[data-reduced-motion="true"] #aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{transition:none}
+@media(max-width:560px){
+ #aoPrayerBookRoot .lab-view-head{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:8px!important}
+ #aoPrayerBookRoot .lab-view-head>.lab-back{order:1;flex:0 0 44px!important}
+ #aoPrayerBookRoot .lab-view-head>:has(h1){order:2;flex:1 1 220px!important;min-width:0!important}
+ #aoPrayerBookRoot .lab-view-head>.lab-icon{order:3;flex:0 0 44px!important}
+ #aoPrayerBookRoot .lab-view-head>span:not(.eyebrow){order:9;flex:0 0 auto!important}
+ #aoPrayerBookRoot .lab-view-head>.r29-head-recitation{order:10;flex:1 1 150px!important;max-width:190px!important;min-width:136px!important}
+ #aoPrayerBookRoot .lab-view-head>.r23-overview-open{order:11;flex:0 0 auto!important;min-width:76px!important;height:44px!important}
+ #aoPrayerBookRoot .lab-view-head h1{font-size:clamp(1.45rem,7vw,2rem)!important;line-height:1.03!important;margin:2px 0 0!important}
+}
 `;
 
 const ROSARY_EXACT_OVERVIEW_CSS=`
