@@ -63,7 +63,9 @@ assert.match(runtime,/blessing:\['ao-live-blessing'/,"Benediction blessing stage
 assert.match(runtime,/prayer:\['ao-live-response'/,"Benediction versicle\/collect stage lost the response cue");
 assert.match(runtime,/praises:\['ao-live-response'/,"Benediction Divine Praises stage lost the response cue");
 assert.match(runtime,/CONF\.stage===3.*ao-live-sign-cross/s,"Confession in-confessional stage lost the donor Sign-of-Cross cue");
-assert.match(runtime,/aoP435930SemanticRailChip \$\{channel\}\$\{cueClass\}/,"transient semantic rail state no longer receives its cue-enter class");
+assert.match(runtime,/function semanticTransientStateKey\(\)/,"transient devotional cues lost state-scoped ownership");
+assert.match(runtime,/signature&&signature!==lastSemanticTransientSignature/,"transient devotional cues no longer deduplicate unchanged state");
+assert.match(runtime,/replaceAll\('aoP435930SemanticRailChip transient"','aoP435930SemanticRailChip transient cue-enter"'\)/,"semantic-change cue entry class is not applied");
 assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
 assert.match(styles,/aoP435930SemanticRailCard\{width:44px/,"PRAY lost the donor thin desktop rail-card geometry");
