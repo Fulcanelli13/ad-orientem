@@ -289,28 +289,39 @@ try{
   assert.equal(prayFx.rootScan,"legacy-v4312","PRAY modular root bypassed the approved v43.12 art loader");
   await shot("03-pray");
 
-  // Prototype-era semantic rails are presentation-only: they must expose
-  // resolved posture/context without reserving prayer-column width or stealing touch.
+  // Exact v3.14 Angelus ritual rail: the rail belongs to the reading grid.
+  // On phone it reflows above the prayer cards as a horizontal cue row.
   await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
-  const angelusRails=await page.evaluate(()=>({
-    left:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.left").length,
-    right:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRail.right").length,
-    posture:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
-    context:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
-    iconWidth:document.querySelector("#aoPray435930 .aoP435930SemanticRailIcon")?.getBoundingClientRect?.().width??0,
-    bodyWidth:document.querySelector("#aoPray435930 .aoP435930Body")?.getBoundingClientRect?.().width??0,
-    pointer:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930SemanticRails")).pointerEvents,
-    contextMask:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right .aoP435930SemanticRailIcon");return x?(getComputedStyle(x).webkitMaskImage||getComputedStyle(x).maskImage||""):""})(),
-  }));
-  assert.equal(angelusRails.left,1,"Angelus lost the faithful-posture semantic rail");
-  assert.equal(angelusRails.right,1,"Angelus lost the devotional-context semantic rail");
-  assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.posture),"Angelus posture rail is not sourced from the canonical posture bank");
-  assert.equal(angelusRails.context,"ao-rich-angelus","Angelus context rail is not using the canonical devotional identity");
-  assert.ok(angelusRails.iconWidth>=26,"Angelus rail icon is not salient at phone size");
-  assert.ok(angelusRails.bodyWidth>=360,"semantic rails reserved horizontal reading width");
-  assert.equal(angelusRails.pointer,"none","semantic rails intercept touch interaction");
-  assert.match(angelusRails.contextMask,/ao-rich-angelus\.png/,"Angelus semantic rail did not load the canonical frozen mask");
+  const angelusRails=await page.evaluate(()=>{
+    const grid=document.querySelector("#aoPray435930 .aoAngelusRitualGrid");
+    const rail=grid?.querySelector('[data-ao-ritual-module="angelus"]')??null;
+    const posture=rail?.querySelector('[data-channel="posture"]')??null;
+    const icon=posture?.querySelector(".aoRitualIcon")??null;
+    const gs=grid?getComputedStyle(grid):null,rs=rail?getComputedStyle(rail):null;
+    return {
+      oldOverlay:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRails").length,
+      gridColumns:gs?.gridTemplateColumns??"",
+      channels:rail?.dataset?.aoRitualChannels??null,
+      railDirection:rs?.flexDirection??null,
+      railPosition:rs?.position??null,
+      postureChannel:posture?.dataset?.channel??null,
+      postureAsset:icon?.dataset?.aoAssetId??null,
+      slotHeight:posture?.getBoundingClientRect?.().height??0,
+      incarnationUnits:grid?.querySelectorAll?.('[data-ao-incarnation="true"]')?.length??0,
+      genericAngelusContext:grid?.querySelectorAll?.('[data-ao-asset-id="ao-rich-angelus"]')?.length??0,
+    };
+  });
+  assert.equal(angelusRails.oldOverlay,0,"Angelus exact donor view still exposes the later fixed semantic-overlay rail");
+  assert.equal(angelusRails.channels,"posture,gesture","Angelus ritual rail lost the donor posture/gesture channel contract");
+  assert.equal(angelusRails.railDirection,"row","Angelus phone rail did not reflow into the donor horizontal cue row");
+  assert.equal(angelusRails.railPosition,"sticky","Angelus exact donor rail is no longer sticky with the reader");
+  assert.equal(angelusRails.postureChannel,"posture","Angelus rail no longer identifies the persistent posture channel");
+  assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.postureAsset),"Angelus posture slot is not using the canonical posture bank");
+  assert.ok(angelusRails.slotHeight>=54,"Angelus phone ritual slot collapsed below donor-readable geometry");
+  assert.equal(angelusRails.incarnationUnits,1,"Angelus lost the unique Incarnation focus marker");
+  assert.equal(angelusRails.genericAngelusContext,0,"Angelus regained the later generic devotional context card");
+  assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");
   await shot("03a-pray-angelus-rails");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
