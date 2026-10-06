@@ -1,4 +1,12 @@
-import { buildReaderShellMarkup, createReaderDomAdapter, normalizeReaderMoment } from "../src/mass/reader-dom.js";
+import {
+  buildReaderShellMarkup,
+  createReaderDomAdapter,
+  normalizeReaderMoment,
+  SCHOLA_SPEEDS,
+  DEFAULT_SCHOLA_SPEED,
+  normalizeScholaSpeed,
+  scholaTickerDuration,
+} from "../src/mass/reader-dom.js";
 
 const expect=(x,m)=>{if(!x)throw new Error(m)};
 
@@ -38,7 +46,11 @@ for(const token of [
   'data-role="section-jump"',
   'data-role="section-menu"',
   'data-schola-resize',
-  'data-schola-toggle'
+  'data-schola-toggle',
+  'data-schola-slower',
+  'data-role="schola-speed"',
+  'data-schola-faster',
+  'data-schola-pause'
 ]) expect(html.includes(token),"reader shell missing "+token);
 expect(html.includes('data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask"'),"reader Home control is not canonical-mask owned");
 expect(html.includes('data-reader-preferences data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask"'),"reader Mass-preferences control is not canonical-mask owned");
@@ -55,6 +67,13 @@ expect(html.includes("opacity:.70"),"donor near-focus level no longer matches th
 expect(html.includes(".ao-state-kicker{font:700 7px/1"),"YOU / PRIEST state labels lost v1.79-v1.80 typography");
 expect(html.includes('class="ao-guide-copy"><small>GUIDE</small>'),"GUIDE centre cell is missing from the state ribbon");
 expect(html.includes('[data-channel="gesture"][data-active="false"]'),"inactive gesture rail no longer disappears like the final donor");
+
+assert.deepEqual([...SCHOLA_SPEEDS],[0.25,0.35,0.45,0.60,0.80,1]);
+expect(DEFAULT_SCHOLA_SPEED===0.45,"v1.80 Schola default speed changed");
+expect(normalizeScholaSpeed(0.60)===0.60,"valid donor Schola speed was rejected");
+expect(normalizeScholaSpeed(0.50)===0.45,"unknown Schola speed did not fail to donor default");
+const donorDuration=scholaTickerDuration({viewportWidth:260,lineWidth:420,speed:0.45,isMobile:true});
+expect(donorDuration>=15000&&donorDuration<=120000,"Schola ticker duration escaped donor bounds");
 
 const first=normalizeReaderMoment({
   id:"A",
