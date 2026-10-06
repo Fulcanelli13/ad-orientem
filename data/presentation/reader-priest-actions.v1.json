@@ -1,0 +1,399 @@
+{
+  "schema": "ao-r17-reader-priest-actions-v1",
+  "version": "1.0.0",
+  "source": {
+    "workbook": "Ad_Orientem_1962_Sung_Mass_CANONICAL_BLUEPRINT_v1.1_PROTOTYPE_READY.xlsx",
+    "sha256": "2f091b2f099387cbd709cadd78aff5c25ca1d4152ad0af18083edf301609891f",
+    "sheet": "05_PRIEST_EVENTS",
+    "presentationDonor": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
+    "donorMassDataHashExpected": "050ce4b65918890a252078c9942f1dde282d2494dabe0e522bb842c03be20b28"
+  },
+  "rule": "Exact cue-scoped significant priest-action lane recovered from the v1.80 donor classifier. Local Gloria/Credo sedilia transitions C0276-C0279 are deliberately excluded: v1.76 assigns those to persistent priest position and suppresses duplicate action-rail ownership.",
+  "items": [
+    {
+      "cueId": "AO.SM.C0016",
+      "label": "PROFOUND BOW",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0017",
+      "label": "STRIKES BREAST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0037",
+      "label": "ASCENDS ALTAR",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0039",
+      "label": "KISSES ALTAR",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0040",
+      "label": "BLESSES INCENSE",
+      "condition": "INCENSE_ENABLED"
+    },
+    {
+      "cueId": "AO.SM.C0041",
+      "label": "INCENSES ALTAR",
+      "condition": "INCENSE_ENABLED"
+    },
+    {
+      "cueId": "AO.SM.C0053",
+      "label": "INTONES GLORIA",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0070",
+      "label": "TURNS TO PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0071",
+      "label": "TURNS TO MISSAL",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0072",
+      "label": "TURNS TO MISSAL",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0075",
+      "label": "READS EPISTLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0084",
+      "label": "SIGNS BOOK",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0086",
+      "label": "PROCLAIMS GOSPEL",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0088",
+      "label": "KISSES GOSPEL",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0089",
+      "label": "INTONES CREDO",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0096",
+      "label": "GENUFLECTS",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0106",
+      "label": "TURNS TO PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0110",
+      "label": "OFFERS HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0111",
+      "label": "SIGNS WITH PATEN",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0114",
+      "label": "OFFERS CHALICE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0116",
+      "label": "PROFOUND BOW",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0120",
+      "label": "BLESSES INCENSE",
+      "condition": "INCENSE_ENABLED"
+    },
+    {
+      "cueId": "AO.SM.C0121",
+      "label": "INCENSES ALTAR",
+      "condition": "INCENSE_ENABLED"
+    },
+    {
+      "cueId": "AO.SM.C0122",
+      "label": "INCENSES ALTAR",
+      "condition": "INCENSE_ENABLED"
+    },
+    {
+      "cueId": "AO.SM.C0124",
+      "label": "RECEIVES INCENSE",
+      "condition": "INCENSE_ENABLED"
+    },
+    {
+      "cueId": "AO.SM.C0125",
+      "label": "WASHES / PURIFIES",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0129",
+      "label": "KISSES ALTAR",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0130",
+      "label": "TURNS TO PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0131",
+      "label": "TURNS TO ALTAR",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0150",
+      "label": "PROFOUND BOW",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0151",
+      "label": "KISSES ALTAR",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "label": "THREE CROSSES",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "label": "THREE CROSSES",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "label": "SIGNS HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "label": "SIGNS CHALICE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "label": "SIGNS HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "label": "ELEVATES HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "label": "SIGNS CHALICE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "label": "ELEVATES CHALICE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "label": "THREE CROSSES",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "label": "SIGNS HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "label": "PROFOUND BOW",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "label": "KISSES ALTAR",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "label": "SIGNS HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "label": "SIGNS HIMSELF",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "label": "STRIKES BREAST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "label": "GENUFLECTS",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "label": "MINOR ELEVATION",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "label": "GENUFLECTS",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0213",
+      "label": "SIGNS HIMSELF",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0215",
+      "label": "GENUFLECTS",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0216",
+      "label": "BREAKS HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0221",
+      "label": "PLACES PARTICLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0222",
+      "label": "STRIKES BREAST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0223",
+      "label": "STRIKES BREAST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0224",
+      "label": "STRIKES BREAST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0225",
+      "label": "PROFOUND BOW",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0226",
+      "label": "PROFOUND BOW",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0227",
+      "label": "PROFOUND BOW",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0229",
+      "label": "STRIKES BREAST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0230",
+      "label": "STRIKES BREAST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0231",
+      "label": "STRIKES BREAST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0232",
+      "label": "RECEIVES HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0234",
+      "label": "RECEIVES CHALICE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0242",
+      "label": "SHOWS SACRED HOST",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0246",
+      "label": "GIVES COMMUNION",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0247",
+      "label": "WASHES / PURIFIES",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0248",
+      "label": "WASHES / PURIFIES",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0250",
+      "label": "TURNS TO PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0251",
+      "label": "TURNS TO PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0253",
+      "label": "TURNS TO MISSAL",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0256",
+      "label": "TURNS TO PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0257",
+      "label": "TURNS TO PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0259",
+      "label": "TURNS TO PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0265",
+      "label": "BLESSES PEOPLE",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0269",
+      "label": "SIGNS BOOK",
+      "condition": null
+    },
+    {
+      "cueId": "AO.SM.C0273",
+      "label": "GENUFLECTS",
+      "condition": null
+    }
+  ]
+}
