@@ -2,93 +2,249 @@ import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { normalizePresentationMode } from "./session-engine.js";
 
 const SHELL_STYLE = `
-.ao-reader-shell{--ao-bg:#080c12;--ao-panel:#0d1218;--ao-line:rgba(189,161,108,.20);--ao-muted:#9a948c;--ao-text:#eee8de;--ao-accent:#bda16c;--ao-schola-height:52px;box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;height:100%;min-height:0;background:var(--ao-bg);color:var(--ao-text);font-family:Georgia,"Times New Roman",serif;overflow:hidden}
+.ao-reader-shell{
+  --ao-bg:#0d120f;--ao-panel:#141c17;--ao-panel2:#19231d;
+  --ao-line:rgba(238,241,233,.13);--ao-muted:#a9afa7;--ao-dim:#6f766f;
+  --ao-text:#eef1e9;--ao-accent:#6d9575;--ao-warm:#d6caa6;--ao-response:#c8d9e9;
+  --ao-rail:62px;--ao-content-max:820px;--ao-schola-height:72px;
+  box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr);
+  width:100%;height:100%;min-height:0;overflow:hidden;
+  background:linear-gradient(180deg,#0c120e 0,#101711 100%);color:var(--ao-text);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif
+}
 .ao-reader-shell *{box-sizing:border-box}
-.ao-reader-top-ribbon{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;align-items:stretch;min-height:64px;border-bottom:1px solid var(--ao-line);background:#0a0f15}
-.ao-reader-top-action{appearance:none;border:0;background:transparent;color:#cfc6ba;display:grid;place-items:center;min-width:48px;padding:0}
-.ao-reader-top-action:first-child{border-right:1px solid rgba(189,161,108,.10)}
-.ao-reader-top-action:last-child{border-left:1px solid rgba(189,161,108,.10)}
-.ao-reader-top-action .ao-reader-top-copy{font:700 .54rem/1 system-ui,sans-serif;letter-spacing:.075em;color:#cfc6ba}
-.ao-reader-top-icon{display:block;width:28px;height:28px;background:currentColor}
-.ao-reader-top-main{min-width:0;display:grid;grid-template-rows:34px 30px}
-.ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);background:transparent}
-.ao-mode-ribbon button{appearance:none;border:0;border-right:1px solid rgba(189,161,108,.08);background:transparent;color:var(--ao-muted);min-height:34px;padding:.38rem .3rem;font:600 .66rem/1 system-ui,sans-serif;letter-spacing:.11em}
-.ao-mode-ribbon button:last-child{border-right:0}
-.ao-mode-ribbon button[aria-pressed="true"]{color:var(--ao-text);background:rgba(189,161,108,.07);box-shadow:inset 0 -2px 0 var(--ao-accent)}
-.ao-section-jump{appearance:none;border:0;border-top:1px solid rgba(189,161,108,.08);background:transparent;color:#e8e1d8;min-width:0;padding:.18rem .5rem;display:flex;align-items:center;justify-content:center;gap:.36rem;font:600 .69rem/1.05 system-ui,sans-serif}
-.ao-section-jump [data-role="section-title"]{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ao-section-jump:disabled{cursor:default}
-.ao-section-caret{font-size:.72rem;color:var(--ao-muted)}
-.ao-section-menu{position:absolute;z-index:7;top:64px;left:52px;right:52px;max-height:min(52vh,430px);overflow:auto;padding:.42rem;border:1px solid var(--ao-line);border-radius:0 0 12px 12px;background:#0d141c;box-shadow:0 18px 34px rgba(0,0,0,.48)}
-.ao-section-menu[hidden]{display:none}
-.ao-section-menu button{appearance:none;width:100%;border:0;border-bottom:1px solid rgba(189,161,108,.08);background:transparent;color:#c9c1b7;padding:.66rem .72rem;text-align:left;font:500 .72rem/1.25 system-ui,sans-serif}
-.ao-section-menu button:last-child{border-bottom:0}
-.ao-section-menu button[aria-current="true"]{color:#fff5e6;background:rgba(189,161,108,.08)}
+.ao-reader-top-ribbon{
+  position:relative;z-index:10;display:grid;grid-template-columns:52px minmax(0,1fr) 52px;align-items:center;
+  min-height:52px;padding:5px 8px;
+  background:linear-gradient(180deg,rgba(8,13,9,.97),rgba(8,13,9,.82));
+  backdrop-filter:blur(14px) saturate(112%);border:0
+}
+.ao-reader-top-action{
+  appearance:none;border:0;background:transparent;color:#bdc6be;display:grid;place-items:center;
+  width:48px;height:44px;padding:0;border-radius:12px;opacity:.72
+}
+.ao-reader-top-action:hover,.ao-reader-top-action:focus-visible{opacity:1;background:rgba(255,255,255,.035);outline:none}
+.ao-reader-top-action .ao-reader-top-copy{font:700 .52rem/1 system-ui,sans-serif;letter-spacing:.08em}
+.ao-reader-top-icon{display:block;width:27px;height:27px;background:currentColor}
+.ao-reader-top-main{min-width:0;display:flex;align-items:center;justify-content:center}
+.ao-mode-ribbon{
+  display:inline-flex;align-items:center;justify-content:center;gap:1px;padding:2px;
+  border:1px solid rgba(221,234,224,.09);border-radius:999px;
+  background:rgba(13,21,15,.72);box-shadow:0 9px 30px rgba(0,0,0,.16);backdrop-filter:blur(14px)
+}
+.ao-mode-ribbon button{
+  appearance:none;border:0;background:transparent;color:#929a93;
+  min-width:72px;min-height:34px;padding:6px 11px;border-radius:999px;
+  font:700 .59rem/1 system-ui,sans-serif;letter-spacing:.1em
+}
+.ao-mode-ribbon button[aria-pressed="true"]{background:rgba(77,107,85,.29);color:#f0f4ee}
 .ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button{cursor:default}
 .ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button:not([aria-pressed="true"]){opacity:.34}
-.ao-state-ribbon{display:grid;grid-template-columns:88px minmax(0,1fr) 88px;min-height:52px;border-bottom:1px solid var(--ao-line);background:#0b1016}
-.ao-state-cell[data-side]{flex-direction:column;justify-content:center;gap:.16rem;padding:.28rem .35rem;text-align:center}
-.ao-state-cell[data-side="faithful"]{border-right:1px solid rgba(189,161,108,.10)}
-.ao-state-cell[data-side="priest"]{border-left:1px solid rgba(189,161,108,.10)}
-.ao-state-cell[data-side] .ao-state-label{font-size:.55rem;line-height:1.08;white-space:normal;text-transform:uppercase;letter-spacing:.035em}
-.ao-state-center{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.26rem .4rem;text-align:center;gap:.16rem}
-.ao-guide-short{display:block;max-width:100%;margin-top:.16rem;font:500 .54rem/1.08 system-ui,sans-serif;color:var(--ao-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.ao-state-ribbon{
+  position:relative;z-index:9;display:grid;grid-template-columns:minmax(78px,112px) minmax(0,1fr) minmax(78px,112px);
+  align-items:center;gap:8px;min-height:68px;padding:7px 10px 8px;
+  background:rgba(8,13,9,.72);border-top:1px solid rgba(255,255,255,.025);
+  border-bottom:1px solid rgba(238,241,233,.065);backdrop-filter:blur(12px)
+}
+.ao-state-cell{
+  min-width:0;min-height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;padding:5px 4px;text-align:center;border:0;color:#9ca69e
+}
+.ao-state-kicker{font:700 .48rem/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6f7d73}
+.ao-state-label{
+  max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font:600 .57rem/1.12 system-ui,sans-serif;letter-spacing:.035em;text-transform:uppercase;color:#c1c9c2
+}
+.ao-state-center{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:2px 8px;text-align:center}
+.ao-section-jump{
+  appearance:none;border:0;background:transparent;color:#eef1e9;min-width:0;max-width:100%;padding:2px 7px;
+  display:flex;align-items:center;justify-content:center;gap:5px;
+  font:400 clamp(.76rem,1.7vw,.94rem)/1.2 Georgia,"Times New Roman",serif
+}
+.ao-section-jump [data-role="section-title"]{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ao-section-caret{font:500 .66rem/1 system-ui,sans-serif;color:#7f8a81}
+.ao-guide-short{
+  display:block;max-width:min(560px,100%);font:500 .53rem/1.15 system-ui,sans-serif;
+  color:#8f9991;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
 .ao-guide-short[hidden]{display:none}
-.ao-state-cell{min-width:0;display:flex;align-items:center;gap:.45rem;padding:.38rem .55rem;border-right:1px solid rgba(189,161,108,.10)}
-.ao-state-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:600 .68rem/1.2 system-ui,sans-serif;color:#d8d0c6}
-.ao-state-guide{appearance:none;border:0;background:transparent;color:var(--ao-accent);font:700 .59rem/1 system-ui,sans-serif;letter-spacing:.08em;padding:.1rem .25rem}
-.ao-state-guide:disabled{opacity:.28}
-.ao-icon-mask{width:22px;height:22px;flex:0 0 22px;background:currentColor;mask-repeat:no-repeat;mask-position:center;mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;-webkit-mask-size:contain}
-.ao-reader-stage{min-height:0;display:grid;grid-template-columns:minmax(0,1fr);position:relative;isolation:isolate}
-.ao-rail[data-visible="false"]{display:none}
-.ao-rail{position:absolute;top:.45rem;bottom:.45rem;z-index:3;width:50px;min-height:0;display:flex;flex-direction:column;gap:.35rem;padding:.42rem .24rem;background:rgba(9,14,20,.94);box-shadow:0 8px 24px rgba(0,0,0,.28);backdrop-filter:blur(8px);pointer-events:none}
-.ao-rail-left{left:.45rem;border:1px solid var(--ao-line);border-left:0;border-radius:0 10px 10px 0}
-.ao-rail-right{right:.45rem;border:1px solid var(--ao-line);border-right:0;border-radius:10px 0 0 10px}
-.ao-rail-item{min-height:0;display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:.28rem;text-align:center;color:var(--ao-muted)}
-.ao-rail-item[data-active="true"]{color:var(--ao-text)}
-.ao-rail-copy{font:600 .56rem/1.15 system-ui,sans-serif;letter-spacing:.02em;overflow-wrap:anywhere}
-.ao-card-viewport{min-width:0;min-height:0;padding:.58rem;background:linear-gradient(180deg,#090e14,#080c12)}
-.ao-prayer-card{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:clamp(.9rem,3vw,1.35rem);border:1px solid var(--ao-line);border-radius:14px;background:linear-gradient(180deg,#10161d,#0d1218);box-shadow:0 12px 34px rgba(0,0,0,.22)}
-.ao-prayer-title{margin:0 0 .85rem;font-size:clamp(1.14rem,4.3vw,1.55rem);line-height:1.08;font-weight:600;letter-spacing:.01em;color:#f4eee4}
+.ao-state-guide{
+  appearance:none;border:0;background:transparent;color:#94a098;
+  font:700 .47rem/1 system-ui,sans-serif;letter-spacing:.11em;padding:2px 5px
+}
+.ao-state-guide:disabled{opacity:.20}
+.ao-icon-mask{
+  width:24px;height:24px;flex:0 0 24px;background:currentColor;
+  mask-repeat:no-repeat;mask-position:center;mask-size:contain;
+  -webkit-mask-repeat:no-repeat;-webkit-mask-position:center;-webkit-mask-size:contain
+}
+
+.ao-section-menu{
+  position:absolute;z-index:30;top:120px;left:50%;transform:translateX(-50%);
+  width:min(720px,calc(100% - 120px));max-height:min(54vh,440px);overflow:auto;
+  padding:7px;border:1px solid rgba(238,241,233,.11);border-radius:12px;
+  background:rgba(14,21,17,.985);box-shadow:0 18px 42px rgba(0,0,0,.46)
+}
+.ao-section-menu[hidden]{display:none}
+.ao-section-menu button{
+  appearance:none;width:100%;border:0;border-bottom:1px solid rgba(238,241,233,.06);
+  background:transparent;color:#bdc6be;padding:10px 11px;text-align:left;
+  font:500 .69rem/1.25 system-ui,sans-serif
+}
+.ao-section-menu button:last-child{border-bottom:0}
+.ao-section-menu button[aria-current="true"]{color:#f3f4ee;background:rgba(80,120,91,.14)}
+
+.ao-reader-stage{min-height:0;position:relative;isolation:isolate;overflow:hidden}
+.ao-card-viewport{
+  width:min(100%,calc(var(--ao-content-max) + (var(--ao-rail) + 25px)*2));height:100%;
+  min-width:0;min-height:0;margin:0 auto;padding:0 calc(var(--ao-rail) + 25px);
+  background:transparent
+}
+.ao-prayer-card{
+  width:100%;height:100%;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+  scrollbar-width:none;scroll-behavior:auto;
+  padding:clamp(34px,5.5vh,62px) 8px max(42vh,250px);
+  border:0;border-radius:0;background:transparent;box-shadow:none
+}
+.ao-prayer-card::-webkit-scrollbar{display:none}
+.ao-prayer-title{
+  margin:0 auto 26px;max-width:760px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.045);
+  font:400 clamp(1.15rem,2.3vw,1.55rem)/1.18 Georgia,"Times New Roman",serif;
+  letter-spacing:.018em;color:#e7ebe5
+}
 .ao-prayer-title[hidden]{display:none}
-.ao-prayer-body{display:flex;flex-direction:column;gap:.82rem;padding-bottom:42vh}
-.ao-reader-paragraph{margin:0;font-size:clamp(1.02rem,3.7vw,1.28rem);line-height:1.52;color:#e8e1d8}
-.ao-reader-paragraph[data-active="true"]{color:#fffaf1}
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:.2;transition:opacity .22s ease,color .22s ease}
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1}
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph,
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.58}
-.ao-reader-paragraph[data-kind="RUBRIC"]{margin:.15rem 0;padding:.55rem .65rem;border-left:1px solid rgba(189,161,108,.45);font:italic 500 .76rem/1.42 system-ui,sans-serif;color:#9f988f}
-.ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{margin:.25rem 0;padding:.72rem .25rem;text-align:center;font-size:clamp(1.28rem,4.8vw,1.62rem);line-height:1.34;letter-spacing:.035em;color:#fff8eb}
-.ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:.45rem;font-size:.62em;color:#aaa39a}
-.ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:.72rem;border-left:2px solid var(--ao-accent)}
+.ao-prayer-body{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:4px}
+.ao-reader-paragraph{
+  position:relative;margin:0 0 2px;padding:2px 0;border-radius:6px;
+  font:400 clamp(1.18rem,2.45vw,1.68rem)/1.62 Georgia,"Times New Roman",serif;
+  color:var(--ao-text);opacity:1;transition:opacity .16s ease,color .16s ease,transform .16s ease
+}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:.46}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1;color:#fff}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.84}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.67}
+.ao-reader-paragraph[data-kind="RUBRIC"]{
+  margin:10px 0;padding:8px 10px;border-left:2px solid #65756a;
+  background:rgba(255,255,255,.022);font:italic 500 .74rem/1.45 system-ui,sans-serif;
+  letter-spacing:.01em;color:#aab0a9
+}
+.ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{
+  margin:14px 0;padding:14px 8px;text-align:center;
+  font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.34;letter-spacing:.035em;color:#fff
+}
+.ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:8px;font-size:.60em;color:#b8c2b9}
+.ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:14px;border-left:2px solid rgba(200,217,233,.50);color:#dbe5ee}
 .ao-reader-paragraph[data-translate-toggle="true"]{cursor:pointer}
-.ao-reader-paragraph[data-translate-toggle="true"]:focus-visible{outline:1px solid var(--ao-accent);outline-offset:4px;border-radius:4px}
+.ao-reader-paragraph[data-translate-toggle="true"]:focus-visible{outline:1px solid rgba(109,149,117,.7);outline-offset:4px}
 .ao-line-primary{display:block}
-.ao-line-secondary{display:block;margin-top:.2rem;font:400 .78em/1.35 system-ui,sans-serif;color:#aaa39a}
-.ao-schola-dock{position:relative;height:var(--ao-schola-height);min-height:32px;max-height:180px;display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;align-items:center;gap:.5rem;padding:.48rem .65rem .38rem;border-top:1px solid var(--ao-line);background:#0b1117;color:#ddd6cb;overflow:hidden}
+.ao-line-secondary{
+  display:block;margin-top:4px;padding:4px 0 8px 12px;border-left:1px solid rgba(255,255,255,.09);
+  font:400 .67em/1.5 system-ui,sans-serif;color:#b8c2b9
+}
+
+.ao-rail{
+  position:absolute;z-index:4;top:14px;bottom:22px;width:var(--ao-rail);
+  display:flex;flex-direction:column;gap:8px;padding:0;background:transparent;box-shadow:none;
+  pointer-events:none
+}
+.ao-rail-left{left:max(8px,calc((100% - 1080px)/2))}
+.ao-rail-right{right:max(8px,calc((100% - 1080px)/2))}
+.ao-rail[data-visible="false"]{display:flex}
+.ao-reader-shell:not([data-mode="LIVE"]) .ao-rail{display:none}
+.ao-rail-item{
+  flex:0 0 auto;min-height:58px;padding:8px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;text-align:center;color:#8e978f;
+  background:rgba(18,26,21,.93);border:1px solid var(--ao-line);border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);opacity:.22;transition:opacity .16s ease,border-color .16s ease,background .16s ease
+}
+.ao-rail-item[data-active="true"]{opacity:1;color:#e8ebe4}
+.ao-rail-left .ao-rail-item[data-channel="response"][data-active="true"]{
+  border-color:rgba(200,217,233,.42);background:rgba(31,46,57,.96);color:var(--ao-response)
+}
+.ao-rail-copy{
+  max-width:52px;overflow-wrap:anywhere;
+  font:600 .50rem/1.14 system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase
+}
+.ao-rail .ao-icon-mask{width:24px;height:24px}
+
+.ao-schola-dock{
+  position:absolute;z-index:7;left:50%;bottom:16px;transform:translateX(-50%);
+  width:min(760px,calc(100% - 126px));height:var(--ao-schola-height);min-height:42px;max-height:180px;
+  display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;align-items:center;gap:8px;
+  padding:8px 12px;border:1px solid rgba(109,149,117,.38);border-radius:14px;
+  background:rgba(17,25,20,.968);box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
+}
 .ao-schola-dock[data-active="false"]{display:none}
-.ao-schola-dock[data-collapsed="true"]{height:32px!important;min-height:32px;padding-top:.28rem;padding-bottom:.24rem}
+.ao-schola-dock[data-collapsed="true"]{height:32px!important;min-height:32px;padding-top:4px;padding-bottom:4px}
 .ao-schola-dock[data-collapsed="true"] [data-role="schola"],.ao-schola-dock[data-collapsed="true"] [data-icon-slot="schola"]{display:none}
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
-.ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:rgba(189,161,108,.25);transform:translateX(-50%)}
-.ao-schola-dock .ao-schola-kicker{font:700 .56rem/1 system-ui,sans-serif;letter-spacing:.11em;color:var(--ao-accent)}
-.ao-schola-dock [data-role="schola"]{min-width:0;overflow:auto;white-space:normal;font:500 .72rem/1.28 Georgia,"Times New Roman",serif}
-.ao-schola-toggle{appearance:none;border:0;background:transparent;color:var(--ao-muted);font:700 .54rem/1 system-ui,sans-serif;letter-spacing:.06em;padding:.35rem .2rem}
-.ao-reader-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:46px;border-top:1px solid var(--ao-line);background:#0a0f15}
-.ao-reader-nav button{appearance:none;border:0;background:transparent;color:#d8d0c6;min-height:46px;padding:.72rem .8rem;font:600 .72rem/1 system-ui,sans-serif}
-.ao-reader-nav button:last-child{text-align:right}
-.ao-reader-progress{font:600 .64rem/1 system-ui,sans-serif;color:var(--ao-muted)}
-.ao-cinematic{position:absolute;inset:0;z-index:8;display:grid;place-items:center;background:rgba(8,12,18,.88);pointer-events:none;text-align:center;padding:2rem}
+.ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:rgba(109,149,117,.28);transform:translateX(-50%)}
+.ao-schola-dock .ao-schola-kicker{font:700 .54rem/1 system-ui,sans-serif;letter-spacing:.11em;color:#94b29b}
+.ao-schola-dock [data-role="schola"]{min-width:0;overflow:auto;font:500 .82rem/1.38 Georgia,"Times New Roman",serif}
+.ao-schola-toggle{appearance:none;border:0;background:transparent;color:#89918b;font:700 .49rem/1 system-ui,sans-serif;letter-spacing:.08em;padding:6px}
+
+.ao-reader-nav{position:absolute;z-index:5;inset:0;pointer-events:none}
+.ao-reader-nav button{
+  position:absolute;top:52%;width:44px;height:50px;border:0;border-radius:12px;
+  background:rgba(11,16,13,.34);color:#828d85;cursor:pointer;pointer-events:auto;
+  font:400 1.65rem/1 Georgia,serif;opacity:.16;transition:opacity .16s ease,background .16s ease,color .16s ease
+}
+.ao-reader-nav button:hover,.ao-reader-nav button:focus-visible{opacity:.92;background:rgba(23,32,26,.90);color:#e8ece7;outline:none}
+.ao-reader-nav button[data-reader-nav="previous"]{left:max(10px,calc((100% - 1080px)/2 + var(--ao-rail) + 10px))}
+.ao-reader-nav button[data-reader-nav="next"]{right:max(10px,calc((100% - 1080px)/2 + var(--ao-rail) + 10px))}
+.ao-reader-progress{display:none}
+
+.ao-cinematic{
+  position:absolute;inset:0;z-index:20;display:grid;place-items:center;
+  background:rgba(7,11,8,.93);pointer-events:none;text-align:center;padding:2rem
+}
 .ao-cinematic[hidden]{display:none}
-.ao-cinematic-inner{display:grid;gap:.55rem;justify-items:center;max-width:88%}
-.ao-cinematic-mark{font-size:1.25rem;color:var(--ao-accent)}
-.ao-cinematic-title{font:600 clamp(1.05rem,4vw,1.7rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:.08em}
-.ao-cinematic-sub{font:600 .66rem/1.3 system-ui,sans-serif;letter-spacing:.08em;color:var(--ao-muted)}
-.ao-guide-popover{position:absolute;inset:auto 10px 56px 10px;z-index:3;max-height:42%;overflow:auto;padding:.8rem 1rem;border:1px solid var(--ao-line);border-radius:12px;background:#111820;box-shadow:0 14px 34px rgba(0,0,0,.45);font:500 .82rem/1.42 system-ui,sans-serif;color:#ddd6cd}
+.ao-cinematic-inner{display:grid;gap:9px;justify-items:center;max-width:88%}
+.ao-cinematic-mark{font:400 1.35rem/1 Georgia,serif;color:var(--ao-warm)}
+.ao-cinematic-title{font:400 clamp(1.2rem,4vw,2rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:.08em;color:#f0f1e9}
+.ao-cinematic-sub{font:600 .63rem/1.3 system-ui,sans-serif;letter-spacing:.11em;color:#89928a}
+
+.ao-guide-popover{
+  position:absolute;z-index:25;left:50%;bottom:76px;transform:translateX(-50%);
+  width:min(720px,calc(100% - 110px));max-height:42%;overflow:auto;
+  padding:13px 16px;border:1px solid rgba(238,241,233,.11);border-radius:12px;
+  background:rgba(14,21,17,.985);box-shadow:0 14px 34px rgba(0,0,0,.45);
+  font:500 .82rem/1.42 system-ui,sans-serif;color:#dde3dc
+}
 .ao-guide-popover[hidden]{display:none}
-@media (min-width:700px){.ao-rail{width:64px}.ao-card-viewport{padding:.8rem}.ao-rail-copy{font-size:.62rem}}
-`;
+
+@media(max-width:760px){
+  .ao-reader-shell{--ao-rail:48px}
+  .ao-reader-top-ribbon{grid-template-columns:46px minmax(0,1fr) 46px;min-height:50px;padding:4px 5px}
+  .ao-reader-top-action{width:44px;height:44px}
+  .ao-reader-top-icon{width:25px;height:25px}
+  .ao-mode-ribbon button{min-width:68px;min-height:34px;padding:6px 8px;font-size:.54rem}
+  .ao-state-ribbon{grid-template-columns:74px minmax(0,1fr) 74px;min-height:70px;padding:7px 8px;gap:5px}
+  .ao-state-cell{min-height:50px;padding:4px 2px}
+  .ao-state-label{font-size:.50rem}
+  .ao-section-jump{font-size:.76rem}
+  .ao-guide-short{font-size:.48rem;max-width:180px}
+  .ao-section-menu{top:120px;width:calc(100% - 24px)}
+  .ao-card-viewport{width:100%;padding:0 56px}
+  .ao-prayer-card{padding:30px 8px max(42vh,240px)}
+  .ao-reader-paragraph{font-size:19px;line-height:1.58}
+  .ao-rail{top:10px;bottom:18px;width:48px;gap:6px}
+  .ao-rail-left{left:4px}.ao-rail-right{right:4px}
+  .ao-rail-item{min-height:54px;padding:6px 3px;border-radius:10px}
+  .ao-rail-copy{max-width:44px;font-size:.44rem}
+  .ao-rail .ao-icon-mask{width:22px;height:22px}
+  .ao-schola-dock{left:16px;right:16px;bottom:12px;transform:none;width:auto;padding:8px 10px;border-radius:14px}
+  .ao-schola-dock [data-role="schola"]{font-size:.74rem}
+  .ao-reader-nav button{top:auto;bottom:14px;width:44px;height:44px;border-radius:50%;font-size:1.35rem;opacity:.12}
+  .ao-reader-nav button[data-reader-nav="previous"]{left:51px}
+  .ao-reader-nav button[data-reader-nav="next"]{right:51px}
+  .ao-guide-popover{bottom:68px;width:calc(100% - 24px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}
+}
+`
 
 function esc(value){
   return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -157,10 +313,12 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     bell:moment.bell ?? null,
     cinematic:moment.cinematic ?? null,
     priestPosition:persist(moment.priestPosition, previous.priestPosition),
+    priestAction:moment.priestAction ?? null,
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
     scholaVisible:!sharedTextWithSchola && Boolean(textValue(schola)),
     guide,
+    priestPositionIconKey:moment.priestPositionIconKey ?? moment.priestActionIconKey ?? null,
     priestActionIconKey:moment.priestActionIconKey ?? null,
     postureIconKey:moment.postureIconKey ?? null,
     gestureIconKey:moment.gestureIconKey ?? null,
@@ -181,40 +339,67 @@ export function buildReaderShellMarkup(prepared = {}) {
       <nav class="ao-mode-ribbon" aria-label="Reader mode">
         ${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}">${m}</button>`).join("")}
       </nav>
-      <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled><span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span></button>
     </div>
     <button class="ao-reader-top-action" type="button" data-reader-parameters data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask" aria-label="Mass settings">${topAssetMask("ao-nav-settings","PARAMS")}</button>
   </header>
-  <div class="ao-section-menu" data-role="section-menu" hidden></div>
-  <div class="ao-state-ribbon">
-    <div class="ao-state-cell" data-side="faithful" data-channel="posture"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-state-label" data-role="posture">—</span></div>
-    <div class="ao-state-center"><span class="ao-guide-short" data-role="guide-short" hidden></span><button class="ao-state-guide" type="button" data-role="guide-button" disabled>GUIDE</button></div>
-    <div class="ao-state-cell" data-side="priest"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-state-label" data-role="priest-position">—</span></div>
+
+  <div class="ao-state-ribbon" aria-live="polite">
+    <div class="ao-state-cell" data-side="priest">
+      <span class="ao-icon-mask" data-icon-slot="priest-position" hidden></span>
+      <span class="ao-state-kicker">PRIEST</span>
+      <span class="ao-state-label" data-role="priest-position">—</span>
+    </div>
+    <div class="ao-state-center">
+      <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled>
+        <span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span>
+      </button>
+      <span class="ao-guide-short" data-role="guide-short" hidden></span>
+      <button class="ao-state-guide" type="button" data-role="guide-button" disabled>GUIDE</button>
+    </div>
+    <div class="ao-state-cell" data-side="action" data-channel="priest-action">
+      <span class="ao-state-kicker">ACTION</span>
+      <span class="ao-state-label" data-role="priest-action">—</span>
+    </div>
   </div>
-  <div class="ao-reader-stage" data-left-rail="false" data-right-rail="false">
-    <aside class="ao-rail ao-rail-left" data-visible="false" aria-label="Faithful cues">
+
+  <div class="ao-section-menu" data-role="section-menu" hidden></div>
+
+  <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
+    <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful state">
+      <div class="ao-rail-item" data-channel="posture"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" data-role="posture">—</span></div>
       <div class="ao-rail-item" data-channel="gesture"><span class="ao-icon-mask" data-icon-slot="gesture" hidden></span><span class="ao-rail-copy" data-role="gesture">—</span></div>
       <div class="ao-rail-item" data-channel="response"><span class="ao-icon-mask" data-icon-slot="response" hidden></span><span class="ao-rail-copy" data-role="response">—</span></div>
     </aside>
+
     <main class="ao-card-viewport">
       <article class="ao-prayer-card" data-role="card" tabindex="0">
         <h1 class="ao-prayer-title" data-role="card-title">${section}</h1>
         <div class="ao-prayer-body" data-role="paragraphs"></div>
       </article>
     </main>
-    <aside class="ao-rail ao-rail-right" data-visible="false" aria-label="Priest and bells">
+
+    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Live audio state">
       <div class="ao-rail-item" data-channel="priest-voice"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="bell"><span class="ao-rail-copy" data-role="bell">—</span></div>
     </aside>
   </div>
-  <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false"><span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span data-role="schola">—</span><button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button></div>
+
+  <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false">
+    <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
+    <span class="ao-icon-mask" data-icon-slot="schola" hidden></span>
+    <span class="ao-schola-kicker">SCHOLA LIVE</span>
+    <span data-role="schola">—</span>
+    <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
+  </div>
+
   <div class="ao-cinematic" data-role="cinematic" aria-live="polite" hidden>
     <div class="ao-cinematic-inner"><div class="ao-cinematic-mark">✠</div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
   </div>
+
   <nav class="ao-reader-nav" aria-label="Prayer card navigation">
-    <button type="button" data-reader-nav="previous">Back</button>
+    <button type="button" data-reader-nav="previous" aria-label="Previous Mass card">‹</button>
     <span class="ao-reader-progress" data-role="progress">—</span>
-    <button type="button" data-reader-nav="next">Next</button>
+    <button type="button" data-reader-nav="next" aria-label="Next Mass card">›</button>
   </nav>
   <aside class="ao-guide-popover" data-role="guide-popover" hidden></aside>
 </section>`;
@@ -233,14 +418,14 @@ function setChannel(root, channel, value){
 function syncRailVisibility(root){
   const stage=root.querySelector(".ao-reader-stage");
   if(!stage)return;
+  const shell=root.querySelector("[data-ao-reader-shell]");
+  const live=String(shell?.dataset?.mode??"LIVE").toUpperCase()==="LIVE";
   const left=root.querySelector(".ao-rail-left");
   const right=root.querySelector(".ao-rail-right");
-  const leftActive=Boolean(left?.querySelector('[data-active="true"]'));
-  const rightActive=Boolean(right?.querySelector('[data-active="true"]'));
-  if(left)left.dataset.visible=String(leftActive);
-  if(right)right.dataset.visible=String(rightActive);
-  stage.dataset.leftRail=String(leftActive);
-  stage.dataset.rightRail=String(rightActive);
+  if(left)left.dataset.visible=String(live);
+  if(right)right.dataset.visible=String(live);
+  stage.dataset.leftRail=String(live);
+  stage.dataset.rightRail=String(live);
 }
 
 function applyIcon(root, slot, key, iconResolver){
@@ -286,6 +471,7 @@ export function createReaderDomAdapter({
     for(const button of root.querySelectorAll?.("[data-reader-mode]") ?? []){
       button.setAttribute("aria-pressed",String(button.dataset.readerMode===mode));
     }
+    syncRailVisibility(root);
     if(typeof onPresentationModeChange==="function") onPresentationModeChange(mode,prepared);
     return mode;
   }
@@ -433,6 +619,7 @@ export function createReaderDomAdapter({
     setText(root,"card-title",current.cardTitle);
     setText(root,"progress",current.progress);
     setText(root,"priest-position",textValue(current.priestPosition));
+    setText(root,"priest-action",textValue(current.priestAction));
     setText(root,"posture",textValue(current.posture));
     setText(root,"gesture",textValue(current.gesture));
     setText(root,"response",textValue(current.response));
@@ -448,6 +635,7 @@ export function createReaderDomAdapter({
     }
 
     setChannel(root,"posture",current.posture);
+    setChannel(root,"priest-action",current.priestAction);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
     setChannel(root,"bell",current.bell);
@@ -456,7 +644,7 @@ export function createReaderDomAdapter({
     syncScholaChrome();
     syncRailVisibility(root);
 
-    applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
+    applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
     applyIcon(root,"response",current.responseIconKey,iconResolver);
