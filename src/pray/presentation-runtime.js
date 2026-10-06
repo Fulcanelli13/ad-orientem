@@ -190,6 +190,7 @@ function shell(){
 }
 function mount(){return shell().querySelector('.aoP435930Mount')}
 function open(id,opts={}){
+  if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))rosaryDonorReturnSnapshot=null;
   returnContext=Object.prototype.hasOwnProperty.call(opts,'returnContext')?opts.returnContext:PRAY_CTX;returnFocus=opts.trigger||document.activeElement;
   navStack=[];
   if(id==='pray.hub')view='home';
@@ -218,7 +219,7 @@ function close({silent=false}={}){
   CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};
   BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
   if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
-  const ret=returnContext;returnContext=null;if(!silent){navStack=[];externalResume=null;rosaryDonorReturnSnapshot=null}if(!silent&&ret)queueMicrotask(()=>window.AO_NAV_V362?.restore?.(ret));
+  const ret=returnContext;returnContext=null;if(!silent){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>window.AO_NAV_V362?.restore?.(ret));
   try{returnFocus?.focus?.()}catch{} returnFocus=null;
 }
 function head(title,sub=''){
