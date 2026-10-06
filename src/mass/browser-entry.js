@@ -4,8 +4,7 @@
 
 import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
-import { readBrowserReaderUiMode, readerModeRunsShadowAudit, readerModeMountsPreview } from "./reader-gate.js";
-import { runReaderShadowAudit } from "./reader-shadow.js";
+import { readBrowserReaderUiMode } from "./reader-gate.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
@@ -328,40 +327,14 @@ export async function mountR17Preview({
 
 async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   persistPrepared(prepared, { state: "active", resumeRecord });
+
+  // Production has one and only one Mass presentation owner. Reader-gate
+  // compatibility inputs are deliberately ignored and always resolve NATIVE.
   const readerUiMode=readBrowserReaderUiMode(globalThis);
-  const bridge=legacyBridge();
-
-  if(readerUiMode==="LEGACY"){
-    if(typeof bridge?.startLive!=="function")throw new Error("Legacy rollback renderer is unavailable");
-    await Promise.resolve(bridge.startLive());
-    const uiOwner=stampMassReaderUi("LEGACY_EXPLICIT_ROLLBACK");
-    globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
-      version:VERSION,prepared,readerUiMode,
-      legacyActive:bridge.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null,
-      shadowAudit:null,previewFallbackReason:null,
-      uiOwner,
-      canonicalOwner:"R17_SESSION_ENGINE",
-    });
-    return;
+  if(readerUiMode!=="NATIVE"){
+    throw new Error("Production Mass reader ownership violation: "+readerUiMode);
   }
 
-  if(readerModeRunsShadowAudit(readerUiMode)){
-    if(typeof bridge?.startLive!=="function")throw new Error("Legacy shadow renderer is unavailable");
-    await Promise.resolve(bridge.startLive());
-    const legacyActive=bridge.getActive?.() ?? globalThis.AO_ACTIVE_MASS_SESSION ?? null;
-    const shadowAudit=runReaderShadowAudit({doc:document,prepared});
-    const uiOwner=stampMassReaderUi("LEGACY_SHADOW_AUDIT");
-    globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
-      version:VERSION,prepared,readerUiMode,legacyActive,shadowAudit,
-      previewFallbackReason:null,uiOwner,
-      canonicalOwner:"R17_SESSION_ENGINE",
-    });
-    return;
-  }
-
-  if(!readerModeMountsPreview(readerUiMode)){
-    throw new Error("Unsupported production reader mode: "+readerUiMode);
-  }
   const previewState=await mountR17Preview({doc:document,prepared});
   const restoredSection = resumeRecord?.readerPosition?.sectionId ?? null;
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
@@ -370,11 +343,12 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderParametersBridge(previewState.preview);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
-    version:VERSION,prepared,readerUiMode,
+    version:VERSION,prepared,readerUiMode:"NATIVE",
     legacyActive:null,shadowAudit:null,
     previewFallbackReason:null,
     uiOwner,
     canonicalOwner:"R17_SESSION_ENGINE",
+    presentationOwner:"R17_NATIVE_PRODUCTION",
     resumed:Boolean(resumeRecord),
     restoredSection,
   });
@@ -511,7 +485,8 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       installed: state.installed,
       polls: state.polls,
       hostApi: Boolean(celebrationApi()?.getResolvedMass),
-      legacyRenderer: Boolean(legacyBridge()?.startLive),
+      legacyRenderer: false,
+      hostAssemblyStatusBridge: Boolean(legacyBridge()?.getAssemblyStatus),
       runtime: Boolean(runtime()?.store),
       active: globalThis.AO_R17_ACTIVE_MASS ?? null,
       readerUiMode: globalThis.AO_R17_MASS_RUNTIME?.readerUiMode ?? readBrowserReaderUiMode(globalThis),
