@@ -29,10 +29,11 @@ for(const token of [
   'data-reader-nav="next"',
   'data-icon-slot="priest-position"',
   'class="ao-schola-dock"',
+  'data-side="faithful"',
   'data-side="priest"',
-  'data-side="action"',
   'data-role="guide-short"',
   'data-reader-home',
+  'data-reader-preferences',
   'data-reader-parameters',
   'data-role="section-jump"',
   'data-role="section-menu"',
@@ -40,7 +41,7 @@ for(const token of [
   'data-schola-toggle'
 ]) expect(html.includes(token),"reader shell missing "+token);
 expect(html.includes('data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask"'),"reader Home control is not canonical-mask owned");
-expect(html.includes('data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask"'),"reader Parameters control is not canonical-mask owned");
+expect(html.includes('data-reader-preferences data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask"'),"reader Mass-preferences control is not canonical-mask owned");
 expect(html.includes("ao-nav-home.png"),"reader Home mask did not resolve to externalized PNG");
 expect(html.includes("ao-nav-settings.png"),"reader Parameters mask did not resolve to externalized PNG");
 expect(!html.includes("pending-externalization"),"reader top ribbon still advertises pending asset externalization");
@@ -73,7 +74,7 @@ const first=normalizeReaderMoment({
 expect(first.guide===null,"unsourced Guide rubric did not fail closed");
 expect(first.gesture?.label==="BOW","transient gesture missing");
 expect(first.posture?.label==="STAND","persistent posture missing");
-expect(first.priestAction?.label==="ELEVATES HOST","priest action did not reach the donor section ribbon");
+expect(first.priestAction?.label==="ELEVATES HOST","priest action did not reach the v1.80 transient action channel");
 
 const second=normalizeReaderMoment({
   id:"B",
@@ -151,4 +152,4 @@ unlocked.setMode("SIMPLE");
 expect(unlocked.getMode()==="SIMPLE","unlocked reader did not change mode");
 expect(callbackMode==="SIMPLE","unlocked reader did not invoke presentation mode callback");
 
-console.log("Reader DOM contract PASS: donor-derived HUD/rails/centre reader, Schola controls, persistent/transient ownership, Guide fail-closed, and explicit mode switching.");
+console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
