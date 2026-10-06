@@ -20,7 +20,8 @@ assert.match(styles,/ao-v435930-pray-coherence-style/);
 for(const id of ["ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-search"]){
   assert.match(runtime,new RegExp(id),"PRAY lost canonical V4 control: "+id);
 }
-assert.doesNotMatch(runtime,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls");
+const runtimeWithoutDonorOverviewClose=runtime.replace(/<button[^>]*data-r23-overview-close[^>]*>×<\/button>/g,"");
+assert.doesNotMatch(runtimeWithoutDonorOverviewClose,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls outside the exact donor Rosary overview close control");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");
 assert.match(runtime,/const trailing=view==='home'/,"PRAY root header no longer distinguishes its root exit state");
 assert.match(runtime,/aoP435930HeadSpacer/,"PRAY root lost balanced single-exit header spacer");
@@ -76,16 +77,37 @@ assert.match(styles,/data-channel="gesture"\] \.aoRitualIcon\{width:48px!importa
 assert.match(styles,/@media\(max-width:720px\)[\s\S]*grid-template-columns:minmax\(0,1fr\)/,"Angelus exact donor rail lost mobile single-column reflow");
 assert.match(styles,/@media\(max-width:620px\)[\s\S]*\.aoRitualRail\{top:70px;flex-direction:row/,"Angelus exact donor rail lost mobile horizontal cue row");
 assert.match(styles,/@keyframes aoRitualHalo\{0%\{opacity:\.5;transform:scale\(\.72\)\}100%\{opacity:0;transform:scale\(1\.42\)\}\}/,"Angelus gesture halo no longer matches donor motion");
-assert.match(runtime,/function decorateRosaryFx\(r\)/,"Rosary lost its live FX presentation hook");
+assert.match(runtime,/function decorateRosaryExact\(r\)/,"Rosary lost its exact-donor presentation owner");
+assert.match(runtime,/function storeRosaryDonorReturn\(snapshot\)/,"Rosary donor return lost its root-owned snapshot writer");
+assert.match(runtime,/root\.dataset\.aoPrayRosaryReturn=JSON\.stringify\(snapshot\)/,"Rosary donor return snapshot is no longer anchored on the preserved PrayerBook root");
+assert.match(runtime,/function readRosaryDonorReturn\(\)/,"Rosary donor return lost its root-owned snapshot reader");
+assert.match(runtime,/function bindRosaryDonorBack\(root\)[\s\S]*window\.addEventListener\('click',[\s\S]*e\.composedPath[\s\S]*node\?\.id==='aoPrayerBookRoot'/,
+  "Rosary exact-donor back control lost the active-root window-capture return bridge");
+assert.match(runtime,/function returnFromRosaryDonor\(e,root,snapshot\)[\s\S]*clearRosaryDonorReturn\(\);[\s\S]*api\.close\(\{silent:true\}\)[\s\S]*reopenResume\(snapshot\)/,
+  "Rosary donor return no longer consumes its root snapshot, closes the donor and restores modular PRAY");
+assert.ok(runtime.includes("if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))clearRosaryDonorReturn()"),
+  "stale Rosary donor return ownership is not cleared when the donor is actually closed");
+assert.doesNotMatch(runtime,/if\(!silent\)\{navStack=\[\];externalResume=null;rosaryDonorReturnSnapshot=null\}/,
+  "generic modular close must not erase an active Rosary donor return snapshot");
 assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
-assert.match(runtime,/aoP435930RosarySemanticRails/,"Rosary lost its live contextual side rail");
-assert.match(runtime,/ao-rich-rosary/,"Rosary live rail lost the canonical Rosary identity");
-assert.match(runtime,/step\?\.kind!==['"]mystery['"]/,"Rosary mystery cinematic is no longer restricted to mystery-entry boundaries");
+assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader grid");
+assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
+assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary lost donor five-mystery progress projection");
+assert.match(runtime,/rosary-decade-bar-v15/,"Rosary lost the donor five-segment progress bar");
+assert.match(runtime,/data-ao-exact-donor-progress/,"Rosary progress is no longer marked as exact donor presentation");
+assert.match(runtime,/function ensureRosaryDonorRecitation\(r\)/,"Rosary lost donor head recitation control");
+assert.match(runtime,/r29-head-recitation/,"Rosary lost Individual\/Group head control");
+assert.match(runtime,/function rosaryDonorArt\(r,info\)/,"Rosary lost donor mystery-art backdrop projection");
+assert.match(runtime,/r24-has-mystery-art/,"Rosary lost donor mystery-art state");
+assert.match(runtime,/function rosaryDonorMysteryFx\(r,info\)/,"Rosary lost donor mystery-entry cinematic owner");
+assert.match(runtime,/info\?\.step\?\.kind!==['"]mystery['"]/,"Rosary mystery cinematic is no longer restricted to mystery-entry boundaries");
 assert.match(runtime,/AO_CINEMATIC_V4312\|\|window\.AO_CINEMATIC_V4311/,"Rosary mystery cinematic no longer reuses the certified cinematic owner");
 assert.match(runtime,/isReducedMotion\?\.\(\)/,"Rosary mystery cinematic no longer honors reduced motion");
-assert.doesNotMatch(runtime,/aoP435930RosarySemanticRail[\s\S]{0,500}ao-live-(?:stand|kneel)/,"Rosary live rail invented a universal posture");
-assert.match(styles,/aoP435930RosarySemanticRails/,"Rosary live context rail styling is absent");
-assert.match(styles,/aoP435930RosarySemanticRailIcon\{width:29px/,"Rosary live rail icon lost salient geometry");
+assert.match(styles,/ROSARY_EXACT_DONOR_CSS/,"Rosary exact donor style block is absent");
+assert.match(styles,/rosary-decade-bar-v15 i\.current/,"Rosary donor progress current-state geometry is absent");
+assert.match(styles,/r29-head-recitation/,"Rosary donor recitation strip styling is absent");
+assert.match(styles,/r24-has-mystery-art::before/,"Rosary donor sacred-art backdrop styling is absent");
+assert.match(styles,/lab-contemplation.*r23-contemplation/,"Rosary donor contemplation-sheet styling is absent");
 
 const body={parentNode:null};
 const direct={parentNode:body};

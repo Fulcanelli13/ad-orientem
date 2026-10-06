@@ -237,8 +237,7 @@ try{
     nativeIndividual:[...document.querySelectorAll("#aoPrayerBookRoot [data-ao-recitation='individual']")].map(x=>({
       active:x.classList.contains("active"),pressed:x.getAttribute("aria-pressed"),text:x.textContent?.trim()
     })),
-    barGroup:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??null,
-    barIndividual:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='individual']")?.classList?.contains("active")??null,
+    exactPlayerHeadCount:document.querySelectorAll(".r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']").length,
   }));
   assert.equal(settledRosary?.donorState?.recitationMode,"group",
     "Rosary donor internal owner did not preserve Group recitation");
@@ -256,10 +255,8 @@ try{
     "Rosary donor native Group control did not become active");
   assert.ok((settledRosary?.nativeIndividual??[]).every(x=>x.active!==true&&x.pressed!=="true"),
     "Rosary donor native Individual control remained active after Group handoff");
-  assert.equal(settledRosary?.barGroup,true,
-    "Rosary decorated controls lost Group recitation after donor mount");
-  assert.equal(settledRosary?.barIndividual,false,
-    "Rosary decorated controls settled on Individual after Group selection");
+  assert.equal(settledRosary?.exactPlayerHeadCount,0,
+    "Rosary live-player recitation strip appeared before a live Rosary session began");
   await assertSinglePrayerLayer("Rosary donor launch");
 
   const rosarySurface=await page.evaluate(()=>{
@@ -273,24 +270,23 @@ try{
       bars:document.querySelectorAll(".aoP435930RosaryBar").length,
       simple:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-rosary-depth='simple']").length,
       guided:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']").length,
-      individual:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-recitation='individual']").length,
-      group:document.querySelectorAll(".aoP435930RosaryBar [data-p435930-recitation='group']").length,
       guidedActive:document.querySelector(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']")?.classList?.contains("active")??false,
-      groupActive:document.querySelector(".aoP435930RosaryBar [data-p435930-recitation='group']")?.classList?.contains("active")??false,
       hintsVisible:[...document.querySelectorAll(".flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]")]
         .filter(visible).length,
     };
   });
   assert.deepEqual(
-    {bars:rosarySurface.bars,simple:rosarySurface.simple,guided:rosarySurface.guided,individual:rosarySurface.individual,group:rosarySurface.group},
-    {bars:1,simple:1,guided:1,individual:1,group:1},
-    "Rosary donor did not receive the final PRAY control bar"
+    {bars:rosarySurface.bars,simple:rosarySurface.simple,guided:rosarySurface.guided},
+    {bars:1,simple:1,guided:1},
+    "Rosary donor did not receive the final PRAY depth control bar"
   );
   assert.equal(rosarySurface.guidedActive,true,"Rosary donor lost guided-depth state");
-  assert.equal(rosarySurface.groupActive,true,"Rosary donor lost group-recitation state");
   assert.equal(rosarySurface.hintsVisible,0,"obsolete Rosary flip/translation hints remained visible");
 
-  await page.evaluate(()=>globalThis.AO_V37_SHELL?.openDomain?.("pray"));
+  await page.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot .pbShell")?.dataset?.aoRosaryExactDonor==="v3.4.14",null,{timeout:5000});
+  await page.locator("#aoPrayerBookRoot .lab-back").first().click();
+  await page.waitForFunction(()=>!document.getElementById("aoPrayerBookRoot")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForFunction(()=>
     document.getElementById("aoPray435930")?.classList?.contains("open") &&
     document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="rosary",
