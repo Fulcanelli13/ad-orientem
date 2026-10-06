@@ -25,6 +25,7 @@ const cueRegistries=Object.freeze({
   postures:load("../data/presentation/reader-postures.v1.json"),
   positions:load("../data/presentation/reader-priest-positions.v1.json"),
   voices:load("../data/presentation/reader-priest-voices.v1.json"),
+  actions:load("../data/presentation/reader-priest-actions.v1.json"),
 });
 const t=(lat,en)=>({lat,en});
 const proper={
