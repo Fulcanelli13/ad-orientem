@@ -15,7 +15,9 @@ assert.equal(resolveReaderUiMode({}),"NATIVE","native reader is no longer the ce
 assert.equal(release.certificationPolicy.greenUnitCIIsNotReleaseCertification,true);
 assert.equal(release.certificationPolicy.requireLegacyDefaultUntilCertified,false);
 assert.equal(release.certificationPolicy.requireRealAppShellAcceptance,true);
-assert.equal(release.certificationPolicy.legacyRollbackExplicitOnly,true);
+assert.equal(release.certificationPolicy.legacyRollbackExplicitOnly,false);
+assert.equal(release.certificationPolicy.productionLegacyRendererAllowed,false);
+assert.equal(release.certificationPolicy.singlePresentationOwnerRequired,true);
 
 assert.equal(parity.reference.expectedLiveCards,48);
 assert.equal(parity.currentR17.status,"SOURCE_FIRST_LIVE_INTEGRATED");
@@ -78,8 +80,9 @@ assert.ok(release.pilotRelease?.scope?.certifiedPrecedingRites?.includes("ASH"))
 const productionCutover=release.protectedInvariants.find(x=>x.id==="PRODUCTION_NATIVE_CUTOVER");
 assert.equal(productionCutover?.status,"CERTIFIED_REAL_SHELL_E2E");
 assert.equal(productionCutover?.productionDefault,"R17_NATIVE");
-assert.equal(productionCutover?.legacyPolicy,"EXPLICIT_ROLLBACK_OR_SHADOW_ONLY");
-assert.match(String(productionCutover?.rollbackQuery??""),/aoR17Reader=legacy/);
+assert.equal(productionCutover?.legacyPolicy,"NO_PRODUCTION_LEGACY_OR_SHADOW_RENDERER");
+assert.equal(productionCutover?.presentationOwner,"R17_NATIVE_PRODUCTION");
+assert.equal(Object.hasOwn(productionCutover??{},"rollbackQuery"),false,"obsolete rollback query regained production authority");
 
 const realShell=release.protectedInvariants.find(x=>x.id==="REAL_APP_SHELL_ACCEPTANCE");
 assert.equal(realShell?.status,"CERTIFIED","real app-shell acceptance disappeared");
