@@ -1,6 +1,6 @@
 {
   "schema": "ao-exact-donor-presentation-parity-v1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "OPEN",
   "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
   "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional or conceptual equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
@@ -98,29 +98,51 @@
     },
     {
       "id": "SEMANTIC_RAILS_SIMPLIFIED",
-      "classification": "REGRESSION",
-      "status": "OPEN",
-      "current": "The modular FX recovery proves the presence of semantic rails but does not prove exact rail geometry, icon sequence, visibility, transient behavior, wording or cue timing from the later v3.4.x donors.",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "Exact donor rail recovery is complete across the scoped PRAY modules. Angelus uses the accepted ritual reader-grid rail; Stations, Adoration, Benediction and Confession use donor-derived thin-edge choreography; Rosary uses the final v3.4.14 ritual grid/gesture-action rail. Hidden/inactive and transient cue behavior are phone/visual regression-covered.",
       "expected": "Reproduce the exact per-module rail contracts from v3.4.6, v3.4.8 and v3.4.14, including hidden/inactive behavior and transient cue choreography.",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
+        "tests/pray-presentation.mjs",
+        "tests/app-visual-acceptance.mjs",
         "Ad_Orientem_v3_4_6.html",
         "Ad_Orientem_v3_4_8.html",
-        "Ad_Orientem_v3_4_14.html"
-      ]
+        "Ad_Orientem_v3_4_14.html",
+        "PR #203",
+        "Visual acceptance workflow 37414875316",
+        "App convergence workflow 37414875352",
+        "R17 Mass convergence workflow 37414875438",
+        "PR #204",
+        "Visual acceptance workflow 37416069725",
+        "App convergence workflow 37416069707",
+        "R17 Mass convergence workflow 37416069768",
+        "PR #205",
+        "Visual acceptance workflow 37466103853",
+        "App convergence workflow 37466103870",
+        "R17 Mass convergence workflow 37466103830"
+      ],
+      "validation": "CERTIFIED"
     },
     {
       "id": "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
-      "classification": "REGRESSION",
-      "status": "OPEN",
-      "current": "Current recovery adds a geometry-neutral Rosary context rail and mystery transition while preserving the external canonical player.",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "The preserved canonical Rosary engine now carries the final v3.4.14 presentation contract: ritual reader grid, synchronized gesture/action rail, five-segment mystery progress, head-level Individual/Group recitation control, per-mystery sacred-art backdrop, contemplation/bead treatment and semantic mystery-entry cinematic. The visible Back return is regression-locked so it restores modular PRAY without advancing Rosary state.",
       "expected": "Recover the final v3.4.14 Rosary rail, mystery transition, progress, art and live-reader composition exactly rather than approximating those features independently.",
       "evidence": [
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
-        "Ad_Orientem_v3_4_14.html"
-      ]
+        "tests/pray-presentation.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Ad_Orientem_v3_4_14.html",
+        "PR #205",
+        "Visual acceptance workflow 37466103853",
+        "App convergence workflow 37466103870",
+        "R17 Mass convergence workflow 37466103830"
+      ],
+      "validation": "CERTIFIED"
     },
     {
       "id": "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
@@ -152,8 +174,6 @@
     "App release gate may return to FINAL_APP_READY only when all findings are CLOSED."
   ],
   "openBlockers": [
-    "SEMANTIC_RAILS_SIMPLIFIED",
-    "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
     "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED"
   ]
 }
