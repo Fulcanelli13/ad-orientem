@@ -516,51 +516,16 @@ try{
   await waitForFxSettled();
   await shot("03d-pray-rosary-live-rail");
 
-  const rosaryBackBefore=await page.evaluate(()=>{
-    const back=document.querySelector("#aoPrayerBookRoot .lab-back"),rect=back?.getBoundingClientRect?.();
-    const cx=rect?rect.left+rect.width/2:0,cy=rect?rect.top+rect.height/2:0;
-    globalThis.__aoRosaryBackEvents=[];
-    for(const type of ["pointerdown","mousedown","pointerup","mouseup","click"]){
-      document.addEventListener(type,e=>{
-        globalThis.__aoRosaryBackEvents.push({
-          type,target:e.target?.tagName+"."+String(e.target?.className||""),
-          dataBack:e.target?.closest?.("[data-pb-back]")?.className||null,
-          dataNext:e.target?.closest?.("[data-lab-rosary-next]")?.className||null,
-          path:e.composedPath?.().slice(0,6).map(x=>x?.id||x?.className||x?.tagName||String(x))||[]
-        });
-      },{capture:true,once:false});
-    }
-    return {
-      rootOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
-      donorStamp:document.querySelector("#aoPrayerBookRoot .pbShell")?.dataset?.aoRosaryExactDonor??null,
-      returnCapture:document.documentElement?.dataset?.aoRosaryReturnCapture??null,
-      backBound:document.querySelector("#aoPrayerBookRoot .lab-back")?.dataset?.aoRosaryReturnBound??null,
-      returnMarker:document.getElementById("aoPrayerBookRoot")?.dataset?.aoPrayRosaryReturn??null,
-      donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
-      modularOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
-      backCount:document.querySelectorAll("#aoPrayerBookRoot .lab-back").length,
-      backRect:rect?{left:rect.left,top:rect.top,right:rect.right,bottom:rect.bottom,width:rect.width,height:rect.height}:null,
-      backStyle:back?{position:getComputedStyle(back).position,zIndex:getComputedStyle(back).zIndex,pointerEvents:getComputedStyle(back).pointerEvents}:null,
-      pointStack:document.elementsFromPoint(cx,cy).slice(0,10).map(x=>({tag:x.tagName,id:x.id,cls:String(x.className||""),next:!!x.closest?.("[data-lab-rosary-next]"),back:!!x.closest?.("[data-pb-back]")})),
-      nextRect:(()=>{const n=document.querySelector("#aoPrayerBookRoot [data-lab-rosary-next]"),r=n?.getBoundingClientRect?.();return r?{left:r.left,top:r.top,right:r.right,bottom:r.bottom,width:r.width,height:r.height}:null})()
-    };
-  });
-  console.log("ROSARY_BACK_BEFORE",JSON.stringify(rosaryBackBefore));
-  await page.locator("#aoPrayerBookRoot .lab-back").first().click();
-  await page.waitForTimeout(120);
-  const rosaryBackAfter=await page.evaluate(()=>({
-    rootOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
-    donorStamp:document.querySelector("#aoPrayerBookRoot .pbShell")?.dataset?.aoRosaryExactDonor??null,
-    returnMarker:document.getElementById("aoPrayerBookRoot")?.dataset?.aoPrayRosaryReturn??null,
-    donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
-    modularOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
-    modularView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
-    returnCaptureDebug:globalThis.__aoRosaryReturnCaptureDebug??null,
-  }));
-  console.log("ROSARY_BACK_AFTER",JSON.stringify(rosaryBackAfter));
-  console.log("ROSARY_BACK_EVENTS",JSON.stringify(await page.evaluate(()=>globalThis.__aoRosaryBackEvents||[])));
-  await page.waitForFunction(()=>!document.getElementById("aoPrayerBookRoot")?.classList?.contains("open"),null,{timeout:5000});
+  const rosaryStepBeforeBack=await page.evaluate(()=>globalThis.AOTraditionalPrayerBook?.getState?.()?.rosaryStep??null);
+  await page.locator("#aoPrayerBookRoot.open .lab-back,#aoPrayerBookRoot .lab-back").first().click();
+  await page.waitForFunction(()=>[...document.querySelectorAll("#aoPrayerBookRoot")].every(root=>!root.classList.contains("open")),null,{timeout:5000});
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:5000});
+  const rosaryReturn=await page.evaluate(()=>({
+    rosaryStep:globalThis.AOTraditionalPrayerBook?.getState?.()?.rosaryStep??null,
+    modularView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
+  }));
+  assert.equal(rosaryReturn.rosaryStep,rosaryStepBeforeBack,"Rosary visible Back advanced the preserved engine instead of returning");
+  assert.equal(rosaryReturn.modularView,"rosary","Rosary visible Back did not restore the modular Rosary chooser");
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.library",{returnContext:null}));
   await page.waitForSelector("#aoPray435930.open [data-p435930-lib-open='sacrament_act_of_contrition']",{timeout:10000});
