@@ -559,6 +559,7 @@ export function createReaderDomAdapter({
   onGuide = null,
   onHome = null,
   onParameters = null,
+  onScholaAdvance = null,
   sections = [],
   onSectionSelect = null,
   allowPresentationModeSwitch = true,
@@ -577,6 +578,14 @@ export function createReaderDomAdapter({
   let heldBell=null;
   let bellHoldUntil=0;
   let bellHoldTimer=0;
+  let scholaSpeed=DEFAULT_SCHOLA_SPEED;
+  let scholaPaused=false;
+  let scholaUserPaused=false;
+  let scholaPausedBeforeTranslation=false;
+  let scholaAnimation=null;
+  let scholaProgressRaf=0;
+  let scholaFallbackTimer=0;
+  let scholaTickerIdentity=null;
 
   function setMode(next){
     const requested=normalizePresentationMode(next);
@@ -640,22 +649,211 @@ export function createReaderDomAdapter({
     return null;
   }
 
+  function scholaWindow(){
+    return root?.ownerDocument?.defaultView ?? globalThis;
+  }
+
+  function loadScholaSpeed(){
+    const win=scholaWindow();
+    try{return normalizeScholaSpeed(win?.localStorage?.getItem?.(SCHOLA_SPEED_STORAGE_KEY))}
+    catch{return DEFAULT_SCHOLA_SPEED}
+  }
+
+  function storeScholaSpeed(){
+    const win=scholaWindow();
+    try{win?.localStorage?.setItem?.(SCHOLA_SPEED_STORAGE_KEY,String(scholaSpeed))}catch{}
+  }
+
+  function scholaTitle(trackId){
+    return ({
+      INTROIT:"INTROIT",
+      KYRIE:"KYRIE",
+      GLORIA:"GLORIA",
+      GRADUAL:"GRADUAL",
+      ALLELUIA_TRACT_SEQUENCE:"ALLELUIA / TRACT / SEQUENCE",
+      CREDO:"CREDO",
+      OFFERTORY:"OFFERTORY CHANT",
+      SANCTUS_BENEDICTUS:"SANCTUS / BENEDICTUS",
+      AGNUS_DEI:"AGNUS DEI",
+      COMMUNION:"COMMUNION HYMN",
+    })[String(trackId??"")] ?? "SCHOLA";
+  }
+
+  function cancelScholaTicker({clearIdentity=false}={}){
+    const win=scholaWindow();
+    if(scholaAnimation){
+      try{scholaAnimation.onfinish=null;scholaAnimation.cancel?.()}catch{}
+      scholaAnimation=null;
+    }
+    if(scholaProgressRaf){
+      try{win?.cancelAnimationFrame?.(scholaProgressRaf)}catch{}
+      scholaProgressRaf=0;
+    }
+    if(scholaFallbackTimer){
+      try{(win?.clearTimeout??globalThis.clearTimeout)?.call?.(win,scholaFallbackTimer)}catch{clearTimeout(scholaFallbackTimer)}
+      scholaFallbackTimer=0;
+    }
+    if(clearIdentity)scholaTickerIdentity=null;
+  }
+
+  function syncScholaControls(){
+    const speedNode=root.querySelector('[data-role="schola-speed"]');
+    if(speedNode)speedNode.textContent=scholaSpeed.toFixed(2)+"×";
+    const pause=root.querySelector('[data-schola-pause]');
+    if(pause){
+      pause.textContent=scholaPaused?"RESUME":"PAUSE";
+      pause.setAttribute?.("aria-pressed",String(scholaPaused));
+      pause.setAttribute?.("aria-label",scholaPaused?"Resume Schola text":"Pause Schola text");
+    }
+  }
+
+  function scholaProgressLoop(){
+    const progress=root.querySelector('[data-role="schola-progress"]');
+    const win=scholaWindow();
+    if(!scholaAnimation||scholaPaused||!progress){scholaProgressRaf=0;return}
+    const duration=Math.max(1,Number(scholaAnimation.effect?.getTiming?.().duration)||1);
+    const elapsed=Math.max(0,Number(scholaAnimation.currentTime)||0);
+    progress.style.width=Math.max(0,Math.min(100,(elapsed/duration)*100))+"%";
+    if(elapsed<duration)scholaProgressRaf=win?.requestAnimationFrame?.(scholaProgressLoop)??0;
+    else scholaProgressRaf=0;
+  }
+
+  function finishScholaTicker(identity){
+    const progress=root.querySelector('[data-role="schola-progress"]');
+    if(progress)progress.style.width="100%";
+    scholaAnimation=null;scholaProgressRaf=0;scholaFallbackTimer=0;
+    if(scholaPaused||identity!==scholaTickerIdentity)return;
+    if(typeof onScholaAdvance==="function"){
+      const before=current?.schola;
+      const next=onScholaAdvance(before,current,prepared);
+      if(next?.schola?.segmentId===before?.segmentId && next?.complete){
+        scholaTickerIdentity=identity;
+      }
+    }
+  }
+
+  function startScholaTicker({force=false}={}){
+    const schola=current?.scholaVisible ? current.schola : null;
+    const dock=root.querySelector(".ao-schola-dock");
+    const line=root.querySelector('[data-role="schola"]');
+    const viewport=root.querySelector(".ao-schola-main");
+    const progress=root.querySelector('[data-role="schola-progress"]');
+    if(!schola||!dock||dock.dataset.active!=="true"||!line||!viewport){
+      cancelScholaTicker({clearIdentity:true});
+      if(progress)progress.style.width="0%";
+      return false;
+    }
+    const identity=[schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|");
+    if(schola.complete){
+      cancelScholaTicker();
+      scholaTickerIdentity=identity;
+      if(progress)progress.style.width="100%";
+      return false;
+    }
+    if(!force && scholaTickerIdentity===identity && scholaAnimation)return true;
+    cancelScholaTicker();
+    scholaTickerIdentity=identity;
+    if(progress)progress.style.width="0%";
+    line.style.transform="";
+    if(scholaPaused||scholaTranslationVisible)return false;
+
+    const win=scholaWindow();
+    const vw=Math.max(0,Number(viewport.clientWidth)||0);
+    const lw=Math.max(0,Number(line.scrollWidth)||0);
+    if(!vw||!lw)return false;
+    const duration=scholaTickerDuration({
+      viewportWidth:vw,lineWidth:lw,speed:scholaSpeed,
+      isMobile:Number(win?.innerWidth||0)<760,
+    });
+    const visibleLead=Math.min(lw,Math.max(92,vw*.30));
+    const from=Math.max(0,vw-visibleLead),to=-(lw+24);
+
+    if(typeof line.animate==="function"){
+      scholaAnimation=line.animate([
+        {transform:"translate3d("+from+"px,0,0)"},
+        {transform:"translate3d("+to+"px,0,0)"},
+      ],{duration,easing:"linear",fill:"forwards"});
+      scholaAnimation.onfinish=()=>{
+        const finished=scholaAnimation;
+        scholaAnimation=null;
+        try{finished?.cancel?.()}catch{}
+        line.style.transform="translate3d(0,0,0)";
+        finishScholaTicker(identity);
+      };
+      scholaProgressRaf=win?.requestAnimationFrame?.(scholaProgressLoop)??0;
+      return true;
+    }
+
+    const set=win?.setTimeout??globalThis.setTimeout;
+    scholaFallbackTimer=set?.call?.(win,()=>finishScholaTicker(identity),duration)??0;
+    return true;
+  }
+
+  function setScholaPaused(paused,{user=false}={}){
+    if(user)scholaUserPaused=Boolean(paused);
+    scholaPaused=Boolean(paused);
+    if(scholaAnimation){
+      try{scholaPaused?scholaAnimation.pause?.():scholaAnimation.play?.()}catch{}
+      if(!scholaPaused && !scholaProgressRaf){
+        scholaProgressRaf=scholaWindow()?.requestAnimationFrame?.(scholaProgressLoop)??0;
+      }
+    }else if(!scholaPaused && !scholaTranslationVisible){
+      startScholaTicker({force:true});
+    }
+    syncScholaControls();
+    return scholaPaused;
+  }
+
+  function changeScholaSpeed(delta){
+    const currentIndex=Math.max(0,SCHOLA_SPEEDS.indexOf(scholaSpeed));
+    const nextIndex=Math.max(0,Math.min(SCHOLA_SPEEDS.length-1,currentIndex+Number(delta||0)));
+    const next=SCHOLA_SPEEDS[nextIndex];
+    if(next===scholaSpeed)return scholaSpeed;
+    scholaSpeed=next;
+    storeScholaSpeed();
+    syncScholaControls();
+    if(!scholaPaused&&!scholaTranslationVisible)startScholaTicker({force:true});
+    return scholaSpeed;
+  }
+
   function syncScholaContent(){
     const dock=root.querySelector(".ao-schola-dock");
     if(!dock)return;
     const schola=current?.scholaVisible ? current.schola : null;
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
-    if(identity!==scholaIdentity){scholaIdentity=identity;scholaTranslationVisible=false;}
+    const changed=identity!==scholaIdentity;
+    if(changed){
+      scholaIdentity=identity;
+      scholaTranslationVisible=false;
+      cancelScholaTicker({clearIdentity:true});
+    }
     dock.dataset.showTranslation=String(Boolean(scholaTranslationVisible && schola?.english));
+    const title=root.querySelector(".ao-schola-kicker");
+    if(title)title.textContent=schola ? scholaTitle(schola.trackId) : "SCHOLA";
     setText(root,"schola",schola ? (schola.latin??textValue(schola)) : null);
     setText(root,"schola-translation",schola?.english??null);
     const page=root.querySelector('[data-role="schola-page"]');
     if(page)page.textContent=schola?.total ? String((Number(schola.index)||0)+1)+" / "+String(schola.total) : "";
     const progress=root.querySelector('[data-role="schola-progress"]');
-    if(progress){
-      const total=Math.max(1,Number(schola?.total)||1);
-      const index=Math.max(0,Number(schola?.index)||0);
-      progress.style.width=schola ? String(Math.min(100,((index+1)/total)*100))+"%" : "0%";
+    if(!schola){
+      if(progress)progress.style.width="0%";
+      cancelScholaTicker({clearIdentity:true});
+      return;
+    }
+    if(schola.complete){
+      if(progress)progress.style.width="100%";
+      cancelScholaTicker();
+      scholaTickerIdentity=identity;
+      return;
+    }
+    const win=scholaWindow();
+    const request=win?.requestAnimationFrame;
+    if(changed){
+      if(typeof request==="function")request.call(win,()=>startScholaTicker({force:true}));
+      else startScholaTicker({force:true});
+    }else if(!scholaAnimation&&!scholaPaused&&!scholaTranslationVisible){
+      if(typeof request==="function")request.call(win,()=>startScholaTicker());
+      else startScholaTicker();
     }
   }
 
