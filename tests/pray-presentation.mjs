@@ -28,6 +28,15 @@ assert.match(runtime,/data-ao-asset-renderer="embedded-symbol"/,"PRAY cannot ren
 assert.doesNotMatch(runtime,/AO_ICON_REGISTRY_V4333/,"PRAY regressed to the historical donor icon registry");
 assert.match(styles,/aoP435930ModuleIcon\{grid-column:1;grid-row:1\/4/,"PRAY module identity icons lost their dedicated card column");
 assert.match(styles,/aoP435930ModuleAsset\{display:block;width:40px!important;height:40px!important/,"PRAY module identity icon hierarchy changed");
+assert.match(coherence,/function v3410FocusY\(mount\)/,"v3.4.10 40\/42 percent focus-line owner is absent");
+assert.match(coherence,/matchMedia\('\(max-width:760px\)'\)\.matches\?\.40:\.42/,"v3.4.10 phone\/desktop focus ratios changed");
+assert.match(coherence,/function v3410MidpointCurrent\(nodes,y\)/,"v3.4.10 midpoint handoff is absent");
+assert.match(coherence,/const preZone=matchMedia\('\(max-width:760px\)'\)\.matches\?118:138/,"v3.4.10 anticipation zone changed");
+assert.match(coherence,/view==='angelus'/,"Angelus is not using the v3.4.10 focus owner");
+assert.match(coherence,/view==='stations'/,"Stations are not using the v3.4.10 focus owner");
+assert.match(styles,/opacity \.045s linear/,"v3.4.10 45ms visual interpolation disappeared");
+assert.match(styles,/--ao346-focus-opacity/,"Angelus v3.4.10 focus energy variable is absent");
+assert.match(styles,/--ao347-focus-opacity/,"Stations v3.4.10 focus energy variable is absent");
 const runtimeWithoutDonorOverviewClose=runtime.replace(/<button[^>]*data-r23-overview-close[^>]*>×<\/button>/g,"");
 assert.doesNotMatch(runtimeWithoutDonorOverviewClose,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls outside the exact donor Rosary overview close control");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");

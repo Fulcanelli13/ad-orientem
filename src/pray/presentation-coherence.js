@@ -96,21 +96,89 @@ function enforceTranslationContract(root){
     const latinVisible=!latin.hidden;host.dataset.aoTranslate='tap';host.setAttribute('aria-pressed',latinVisible?'true':'false');host.setAttribute('aria-label',isFr()?'Afficher l’autre langue':'Show the other language');
   });
 }
+let v3410LastScrollTop=0;
+function v3410FocusY(mount){
+  const mr=mount.getBoundingClientRect(),head=mount.querySelector(':scope > .aoP435930Head');
+  const top=Math.max(mr.top,head?.getBoundingClientRect().bottom||mr.top),bottom=mr.bottom;
+  const ratio=matchMedia('(max-width:760px)').matches?.40:.42;
+  return top+Math.max(90,(bottom-top)*ratio);
+}
+function v3410MidpointCurrent(nodes,y){
+  if(!nodes.length)return null;
+  for(let i=0;i<nodes.length-1;i++){
+    const a=nodes[i].getBoundingClientRect(),b=nodes[i+1].getBoundingClientRect();
+    if(y<(a.bottom+b.top)/2)return nodes[i];
+  }
+  return nodes[nodes.length-1];
+}
+function v3410Energy(nodes,current,mount,{near=.76,far=.54,variable='--ao347-focus-opacity',prefix='ao347'}={}){
+  const idx=nodes.indexOf(current);if(idx<0)return;
+  const y=v3410FocusY(mount),s=mount.scrollTop,direction=s===v3410LastScrollTop?0:(s>v3410LastScrollTop?1:-1);
+  v3410LastScrollTop=s;
+  const energy=nodes.map((_,i)=>i===idx?1:(Math.abs(i-idx)===1?near:far));
+  const preZone=matchMedia('(max-width:760px)').matches?118:138;
+  if(direction>=0&&idx<nodes.length-1){
+    const a=current.getBoundingClientRect(),b=nodes[idx+1].getBoundingClientRect(),distance=(a.bottom+b.top)/2-y,p=Math.max(0,Math.min(1,1-distance/preZone));
+    if(p>0){energy[idx]=1-.04*p;energy[idx+1]=near+.17*p}
+  }else if(direction<0&&idx>0){
+    const a=nodes[idx-1].getBoundingClientRect(),b=current.getBoundingClientRect(),distance=y-(a.bottom+b.top)/2,p=Math.max(0,Math.min(1,1-distance/preZone));
+    if(p>0){energy[idx]=1-.04*p;energy[idx-1]=near+.17*p}
+  }
+  nodes.forEach((n,i)=>{
+    n.style.setProperty(variable,energy[i].toFixed(3));
+    const d=Math.abs(i-idx);
+    n.classList.toggle(prefix+'-current',i===idx);
+    n.classList.toggle(prefix+'-near',d===1);
+    n.classList.toggle(prefix+'-far',d>1);
+    n.dataset.aoPrayFocus=i===idx?'active':i<idx?'past':'future';
+  });
+}
+function v3410StationNodes(root){
+  const main=root.querySelector('.aoP435930Stations');if(!main)return[];
+  const out=[],push=(el,phase)=>{if(el){el.dataset.ao347Phase=phase;out.push(el)}};
+  push(main.querySelector('.aoP435930GuideNow'),'arrive');
+  const prayers=[...main.querySelectorAll('.aoP435930StationPrayer')];
+  push(prayers[0],'adoramus');
+  push(main.querySelector('.aoP435930StationConsider'),'consider');
+  push(main.querySelector('.aoP435930StationOrdinary'),'ordinary');
+  prayers.slice(1).forEach(el=>push(el,'devotion'));
+  push([...main.querySelectorAll('.aoP435930GuideCue')].at(-1),'move');
+  return out;
+}
+function v3410SpecialFocus(root,mount){
+  const view=viewOf(root),y=v3410FocusY(mount);
+  if(view==='angelus'){
+    const nodes=[...root.querySelectorAll('.aoP435930AngelusSequence .aoP435930PrayerUnit')].filter(x=>x.offsetParent!==null),current=v3410MidpointCurrent(nodes,y);
+    if(!current)return false;
+    v3410Energy(nodes,current,mount,{near:.76,far:.50,variable:'--ao346-focus-opacity',prefix:'ao346'});
+    nodes.forEach(n=>n.classList.toggle('ao346-incarnation',n===current&&n.dataset.aoIncarnation==='true'));
+    return true;
+  }
+  if(view==='stations'){
+    const nodes=v3410StationNodes(root).filter(x=>x.offsetParent!==null),current=v3410MidpointCurrent(nodes,y);
+    if(!current)return false;
+    nodes.forEach(n=>n.classList.add('ao347-focusable'));
+    v3410Energy(nodes,current,mount,{near:.76,far:.54,variable:'--ao347-focus-opacity',prefix:'ao347'});
+    return true;
+  }
+  return false;
+}
 function focusUnits(root){
   root.querySelectorAll('.aoP435930FluidUnit').forEach(x=>x.classList.remove('aoP435930FluidUnit'));
   root.querySelectorAll('.aoP435930SemanticFace').forEach(face=>{
     if(face.closest('.aoP435930PrayerUnit')){face.classList.add('aoP435930FluidUnit');return}
     [...face.children].forEach(el=>{if(!el.classList.contains('aoP435930PrayerSpacer'))el.classList.add('aoP435930FluidUnit')});
   });
-  const mount=root.querySelector('.aoP435930Mount');
-  const hasFocusUnits=!!root.querySelector('.aoP435930FluidUnit');
+  const mount=root.querySelector('.aoP435930Mount'),special=['angelus','stations'].includes(viewOf(root));
+  const hasFocusUnits=special||!!root.querySelector('.aoP435930FluidUnit');
   mount?.classList.toggle('aoP435930FocusRunway',hasFocusUnits);
   mount?.classList.toggle('aoP435930ReadingView',hasFocusUnits);
   mount?.classList.toggle('aoP435930InteractiveView',!hasFocusUnits);
-  if(mount){if(hasFocusUnits)mount.dataset.aoReaderContract='fluid-v1';else delete mount.dataset.aoReaderContract}
+  if(mount){if(hasFocusUnits)mount.dataset.aoReaderContract=special?'fluid-v3410':'fluid-v1';else delete mount.dataset.aoReaderContract}
 }
 function updateFocus(){
   const root=document.getElementById(ROOT),mount=root?.querySelector('.aoP435930Mount');if(!root||!mount||!root.classList.contains('open'))return;
+  if(v3410SpecialFocus(root,mount))return;
   const units=[...root.querySelectorAll('.aoP435930FluidUnit')].filter(x=>x.offsetParent!==null);if(!units.length)return;
   const box=mount.getBoundingClientRect(),focusY=box.top+Math.min(box.height,window.innerHeight)*.43,band=Math.max(150,Math.min(box.height,window.innerHeight)*.39);
   let active=null,best=Infinity;
