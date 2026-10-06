@@ -1,14 +1,14 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.21.0",
+  "version": "1.22.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
-    "status": "CERTIFIED",
+    "status": "RUNTIME_CERTIFIED_PRESENTATION_REOPENED",
     "authority": "data/presentation/reader-release-gate.v1.json",
     "requiredReaderStatus": "FINAL_NATIVE_READY",
     "productionDefault": "R17_NATIVE",
-    "legacyPolicy": "EXPLICIT_ROLLBACK_ONLY"
+    "legacyPolicy": "NO_PRODUCTION_LEGACY_OR_SHADOW_RENDERER"
   },
   "topLevelContract": [
     "home",
@@ -186,26 +186,19 @@
     },
     {
       "id": "PRODUCT_PRESENTATION_PARITY",
-      "classification": "PASS",
-      "status": "CLOSED",
+      "classification": "REGRESSION",
+      "status": "OPEN",
       "evidence": [
         "data/presentation/product-parity.v1.json",
-        "tests/app-visual-acceptance.mjs",
+        "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.65_MOBILE_NATIVE_V48.html",
+        "data/presentation/v1.83-reader-parity-gate.v1.json",
+        "src/mass/reader-dom.js",
+        "src/mass/reader-gate.js",
+        "src/mass/browser-entry.js",
         "tests/mass-visual-acceptance.mjs",
-        "tests/reader-mode-switch.mjs",
-        "tests/reader-phone-acceptance.mjs",
-        "src/home/presentation.js",
-        "src/calendar/browser-entry.js",
-        "src/pray/presentation-coherence.js",
-        "src/learn/presentation.js",
-        "src/settings/presentation.js",
-        "src/mass/reader-live-product48.js",
-        "src/mass/reader-mode-switch.js",
-        "Visual acceptance workflow 37325466930",
-        "R17 Mass convergence workflow 37325466725",
-        "App convergence workflow 37325466826"
+        "tests/production-tree-hygiene.mjs"
       ],
-      "detail": "All six modular product surfaces are phone/visual parity certified. Mass presentation recovery V1-V6 restores the approved LIVE hierarchy and 48-step product rhythm while retaining the 39-step source model, exact cue/state ownership, and persistent source-anchored MISSAL/SIMPLE/LIVE switching."
+      "detail": "Mass runtime/source ownership remains certified, but visible Mass presentation parity is reopened. The current 390x844 visual suite verifies structure and cue ownership rather than direct donor geometry, and wide-browser screenshots expose major divergence from the approved Mass reader. Mass must converge to one native presentation owner and pass donor-based phone and wide-view acceptance before this finding closes."
     },
     {
       "id": "PRESENTATION_FX_PARITY",
@@ -251,6 +244,7 @@
     }
   ],
   "openBlockers": [
+    "PRODUCT_PRESENTATION_PARITY",
     "EXACT_NON_MASS_DONOR_PARITY"
   ],
   "regressionGates": {
