@@ -14,93 +14,101 @@ const SHELL_STYLE = `
 }
 .ao-reader-shell *{box-sizing:border-box}
 .ao-reader-top-ribbon{
-  position:relative;z-index:10;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;align-items:center;
-  height:44px;min-height:44px;padding:3px 8px 0;
-  background:linear-gradient(180deg,rgba(8,13,9,.94),rgba(8,13,9,.76));
-  backdrop-filter:blur(16px) saturate(112%);border:0
+  position:relative;z-index:12;display:grid;grid-template-columns:56px minmax(0,1fr) 56px;align-items:center;
+  height:56px;min-height:56px;gap:4px;padding:4px 6px;
+  background:rgba(6,10,8,.975);border-bottom:1px solid rgba(255,255,255,.045)
 }
 .ao-reader-top-action{
-  appearance:none;border:0;background:transparent;color:#bdc6be;display:grid;place-items:center;
-  width:48px;height:44px;padding:0;border-radius:12px;opacity:.72
+  appearance:none;border:0;background:transparent;color:#d7dfd8;display:grid;place-items:center;
+  width:46px;height:46px;margin:auto;padding:0;border-radius:12px
 }
-.ao-reader-top-action:hover,.ao-reader-top-action:focus-visible{opacity:1;background:rgba(255,255,255,.035);outline:none}
+.ao-reader-top-action:active,.ao-reader-top-action:focus-visible{background:rgba(255,255,255,.055);outline:none}
 .ao-reader-top-action .ao-reader-top-copy{font:700 .52rem/1 system-ui,sans-serif;letter-spacing:.08em}
-.ao-reader-top-icon{display:block;width:27px;height:27px;background:currentColor}
-.ao-reader-top-main{min-width:0;display:flex;align-items:center;justify-content:center}
-.ao-mode-ribbon{
-  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:1px;padding:0 2px;
-  border:0;border-radius:999px;background:transparent;
-  transition:opacity .28s ease,transform .28s cubic-bezier(.22,.72,.22,1)
-}
-.ao-mode-ribbon::before{
-  content:"";position:absolute;z-index:0;left:0;right:0;top:8px;bottom:8px;
-  border:1px solid rgba(221,234,224,.09);border-radius:999px;
-  background:rgba(16,24,18,.62);box-shadow:0 8px 30px rgba(0,0,0,.12);pointer-events:none
-}
-.ao-mode-ribbon button{
-  position:relative;z-index:1;appearance:none;border:0;background:transparent;color:#77827a;
-  min-width:66px;min-height:44px;padding:0 10px;border-radius:999px;
-  font:700 8px/1 system-ui,sans-serif;letter-spacing:.11em;
-  transition:color .18s ease,transform .18s ease
-}
-.ao-mode-ribbon button::before{
-  content:"";position:absolute;z-index:-1;left:2px;right:2px;top:8px;bottom:8px;
-  border-radius:999px;background:transparent;box-shadow:none;pointer-events:none
-}
-.ao-mode-ribbon button[aria-pressed="true"]{color:#edf1eb}
-.ao-mode-ribbon button[aria-pressed="true"]::before{
-  background:rgba(82,111,90,.26);box-shadow:inset 0 0 0 1px rgba(162,190,169,.08)
-}
-.ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button{cursor:default}
-.ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button:not([aria-pressed="true"]){opacity:.34}
-
-.ao-state-ribbon{
-  position:relative;z-index:9;display:grid;grid-template-columns:minmax(126px,210px) minmax(0,1fr) minmax(0,210px);
-  align-items:center;gap:10px;height:44px;min-height:44px;padding:3px max(12px,calc((100vw - 1120px)/2));
-  background:transparent;border:0;backdrop-filter:none
-}
-.ao-state-cell{
-  width:max-content;max-width:210px;min-width:0;min-height:0;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;
-  gap:5px;padding:4px 8px;text-align:left;border:1px solid transparent;border-radius:999px;color:#9ca69e;
-  background:transparent;overflow:hidden;transition:opacity .25s ease,background .25s ease,border-color .25s ease,transform .25s cubic-bezier(.22,.72,.22,1)
-}
-.ao-state-kicker{display:none!important}
-.ao-state-cell[data-side="priest"]{justify-self:start}
-.ao-state-cell[data-side="action"]{justify-self:end;text-align:right}
-.ao-state-cell[data-side="action"][data-active="false"]{visibility:hidden;opacity:0}
-.ao-state-cell[data-side="action"][data-active="true"]{visibility:visible;opacity:1;background:rgba(20,29,22,.44);border-color:rgba(216,228,219,.07)}
-.ao-state-label{
-  max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  font:600 8px/1.12 system-ui,sans-serif;letter-spacing:.055em;text-transform:uppercase;color:#8f9b92
-}
-.ao-state-center{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:0 8px;text-align:center}
+.ao-reader-top-icon{display:block;width:29px;height:29px;background:currentColor}
 .ao-section-jump{
-  appearance:none;border:0;background:transparent;color:#eef1ec;min-width:0;max-width:100%;padding:1px 7px;
-  display:flex;align-items:center;justify-content:center;gap:5px;
-  font:400 clamp(13px,1.5vw,16px)/1.12 Georgia,"Times New Roman",serif;
-  letter-spacing:.018em;text-shadow:0 1px 20px rgba(0,0,0,.34)
+  appearance:none;border:0;background:transparent;color:#f1f3ee;min-width:0;height:46px;padding:0 8px;
+  display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;
+  font:600 15px/1.1 Georgia,"Times New Roman",serif;letter-spacing:.015em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
 }
 .ao-section-jump [data-role="section-title"]{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ao-section-caret{font:500 .66rem/1 system-ui,sans-serif;color:#7f8a81}
-.ao-guide-short{
-  display:block;max-width:min(560px,100%);font:500 .53rem/1.15 system-ui,sans-serif;
-  color:#8f9991;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+.ao-section-caret{font:500 16px/1 system-ui,sans-serif;color:#78867b}
+
+.ao-mass-prefs{
+  position:absolute;z-index:34;top:58px;right:8px;width:min(310px,calc(100% - 16px));
+  padding:13px;border:1px solid rgba(255,255,255,.075);border-radius:14px;
+  background:rgba(8,13,10,.985);box-shadow:0 18px 60px rgba(0,0,0,.5);
+  opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:.18s ease
 }
-.ao-guide-short[hidden]{display:none}
+.ao-mass-prefs[data-open="true"]{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.ao-mass-prefs-head{display:flex;justify-content:space-between;align-items:center;color:#e3e8e3;font:600 15px Georgia,serif}
+.ao-mass-prefs-close{appearance:none;border:0;background:transparent;color:#89958c;font-size:22px;line-height:1;padding:3px 5px}
+.ao-mass-prefs-group{margin-top:14px}
+.ao-mass-prefs-group>small{display:block;margin-bottom:7px;color:#6e7a72;font:700 8px/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.ao-mode-ribbon button{
+  appearance:none;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);color:#929a93;
+  min-width:0;height:36px;padding:0 7px;border-radius:9px;font:700 8px/1 system-ui,sans-serif;letter-spacing:.09em
+}
+.ao-mode-ribbon button[aria-pressed="true"]{background:#26342b;color:#fbfbf5;border-color:rgba(140,174,149,.22)}
+.ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button{cursor:default}
+.ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button:not([aria-pressed="true"]){opacity:.34}
+.ao-mass-prefs-more{
+  width:100%;margin-top:12px;min-height:36px;border:1px solid rgba(255,255,255,.07);border-radius:9px;
+  background:#0d130f;color:#c4ccc5;font:700 8px/1 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase
+}
+
+.ao-state-ribbon{
+  position:relative;z-index:11;display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(90px,.72fr) minmax(0,1fr);
+  align-items:stretch;gap:1px;height:64px;min-height:64px;padding:0;
+  background:rgba(255,255,255,.035);border:0
+}
+.ao-state-cell{
+  position:relative;min-width:0;display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:5px 9px;background:rgba(7,12,9,.96);color:#9ca69e;overflow:visible
+}
+.ao-state-cell[data-side="faithful"]{justify-content:center}
+.ao-state-cell[data-side="priest"]{justify-content:center;border-left:1px solid rgba(255,255,255,.035)}
+.ao-state-kicker{font:700 7px/1 system-ui,sans-serif;letter-spacing:.12em;color:#657268}
+.ao-state-copy{min-width:0;display:flex;flex-direction:column}
+.ao-state-label{
+  max-width:132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font:600 10px/1.15 system-ui,sans-serif;letter-spacing:.045em;color:#c9d1ca
+}
+.ao-state-cell>.ao-icon-mask{width:52px;height:52px;flex:0 0 52px;color:#d6dfd7}
 .ao-state-guide{
-  appearance:none;border:0;background:transparent;color:#94a098;
-  font:700 .47rem/1 system-ui,sans-serif;letter-spacing:.11em;padding:2px 5px
+  appearance:none;border:0;border-left:1px solid rgba(255,255,255,.035);border-right:1px solid rgba(255,255,255,.035);
+  background:rgba(9,15,11,.98);color:#d6dfd7;display:flex;align-items:center;justify-content:center;gap:8px;
+  min-width:0;padding:5px 8px;cursor:pointer;font:inherit;transition:background .18s ease,color .18s ease,box-shadow .18s ease
 }
-.ao-state-guide:disabled{opacity:.20}
+.ao-state-guide:hover,.ao-state-guide:focus-visible{background:rgba(37,52,41,.92);color:#f2f4ef;outline:none;box-shadow:inset 0 0 0 1px rgba(174,194,179,.10)}
+.ao-state-guide:disabled{opacity:.34}
+.ao-guide-icon{width:32px;height:32px;display:grid;place-items:center;flex:0 0 32px;color:currentColor}
+.ao-guide-icon svg{width:29px;height:29px;display:block}
+.ao-guide-copy{display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:2px;text-align:left}
+.ao-guide-copy small{font:700 7px/1 system-ui,sans-serif;letter-spacing:.11em;color:#77847a}
+.ao-guide-short{display:block;max-width:92px;font:600 8px/1.05 system-ui,sans-serif;letter-spacing:.045em;color:#d5ddd6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ao-priest-action-badge{
+  position:absolute;right:4px;top:3px;width:27px;height:27px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(10,15,12,.96);border:1px solid rgba(212,225,215,.20);box-shadow:0 4px 14px rgba(0,0,0,.28);
+  opacity:0;transform:scale(.78);transition:opacity .16s ease,transform .18s ease,width .18s ease,height .18s ease;
+  pointer-events:none;z-index:4;color:#e5eee8
+}
+.ao-priest-action-badge[data-active="true"]{opacity:1;transform:scale(1)}
+.ao-priest-action-badge[data-major="true"]{width:42px;height:42px;right:-2px;top:-5px;border-color:rgba(225,207,145,.44);box-shadow:0 0 0 5px rgba(225,207,145,.055),0 7px 22px rgba(0,0,0,.32)}
+.ao-priest-action-badge .ao-icon-mask{width:86%;height:86%}
 .ao-icon-mask{
   width:24px;height:24px;flex:0 0 24px;background:currentColor;
   mask-repeat:no-repeat;mask-position:center;mask-size:contain;
   -webkit-mask-repeat:no-repeat;-webkit-mask-position:center;-webkit-mask-size:contain
 }
+.ao-progress-track{position:absolute;z-index:13;left:0;right:0;top:120px;height:2px;background:rgba(255,255,255,.05)}
+.ao-progress-track>span{display:block;height:100%;width:0;background:#6d9575;transition:width .18s linear}
 
 .ao-section-menu{
-  position:absolute;z-index:30;top:120px;left:50%;transform:translateX(-50%);
-  width:min(720px,calc(100% - 120px));max-height:min(54vh,440px);overflow:auto;
+  position:absolute;z-index:33;top:58px;left:50%;transform:translateX(-50%);
+  width:min(92vw,440px);max-height:min(70vh,560px);overflow:auto;
   padding:7px;border:1px solid rgba(238,241,233,.11);border-radius:12px;
   background:rgba(14,21,17,.985);box-shadow:0 18px 42px rgba(0,0,0,.46)
 }
@@ -161,56 +169,62 @@ const SHELL_STYLE = `
 }
 
 .ao-rail{
-  position:absolute;z-index:4;top:14px;bottom:22px;width:44px;
-  display:flex;flex-direction:column;gap:9px;padding:0;background:transparent;box-shadow:none;overflow:visible;
-  pointer-events:none
+  position:absolute;z-index:5;top:8px;bottom:20px;width:52px;
+  display:flex;flex-direction:column;gap:7px;padding:0;background:transparent;box-shadow:none;overflow:visible;pointer-events:none
 }
-.ao-rail-left{left:max(8px,calc((100% - 1120px)/2))}
-.ao-rail-right{right:max(8px,calc((100% - 1120px)/2))}
+.ao-rail-left{left:max(5px,calc((100% - 1080px)/2))}
+.ao-rail-right{right:max(5px,calc((100% - 1080px)/2))}
 .ao-rail[data-visible="false"]{display:flex}
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-rail{display:none}
 .ao-rail-item{
-  position:relative;flex:0 0 auto;width:42px;min-height:42px;padding:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:0;text-align:center;color:#8e978f;background:transparent;border:1px solid transparent;border-radius:14px;box-shadow:none;
-  opacity:.62;transition:opacity .22s ease,transform .25s cubic-bezier(.22,.72,.22,1),background .22s ease,border-color .22s ease,visibility .22s
+  position:relative;flex:0 0 auto;width:52px;height:52px;min-height:52px;padding:0;
+  display:grid;place-items:center;text-align:center;color:#8e978f;
+  background:rgba(15,22,18,.82);border:1px solid rgba(238,241,233,.105);border-radius:13px;box-shadow:none;
+  opacity:.18;overflow:hidden;transition:opacity .22s ease,transform .28s ease,box-shadow .28s ease,border-color .22s ease,background .22s ease,visibility .22s
 }
-.ao-rail-item[data-channel="posture"]{opacity:.42}
-.ao-rail-item[data-channel="priest-voice"]{opacity:.26}
+.ao-rail-item[data-channel="priest-voice"]{opacity:.88}
+.ao-rail-item[data-active="true"]{opacity:1;color:#edf0e9}
 .ao-rail-item[data-channel="gesture"][data-active="false"],
 .ao-rail-item[data-channel="response"][data-active="false"],
-.ao-rail-item[data-channel="bell"][data-active="false"]{opacity:0;visibility:hidden;transform:scale(.76)}
+.ao-rail-item[data-channel="priest-action"][data-active="false"],
+.ao-rail-item[data-channel="bell"][data-active="false"]{display:none}
 .ao-rail-item[data-channel="gesture"][data-active="true"],
 .ao-rail-item[data-channel="response"][data-active="true"],
-.ao-rail-item[data-channel="bell"][data-active="true"]{opacity:1;visibility:visible;transform:scale(1.04);background:rgba(28,40,30,.80);border-color:rgba(190,211,196,.15);box-shadow:0 10px 30px rgba(0,0,0,.20);color:#e8ebe4}
-.ao-rail-item[data-channel="response"][data-active="true"]{background:rgba(29,42,51,.82);border-color:rgba(192,216,233,.20);color:var(--ao-response)}
-.ao-rail-item[data-channel="bell"][data-active="true"]{background:rgba(48,42,27,.84);border-color:rgba(220,201,146,.23)}
-.ao-rail-copy{
-  position:absolute;top:50%;left:49px;transform:translateY(-50%) translateX(-5px);z-index:3;width:max-content;max-width:190px;
-  padding:6px 9px;border:1px solid rgba(227,236,229,.09);border-radius:10px;background:rgba(11,18,13,.94);box-shadow:0 10px 30px rgba(0,0,0,.26);
-  color:#c8d1ca;font:600 8px/1.25 system-ui,sans-serif;letter-spacing:.045em;text-transform:uppercase;opacity:0;visibility:hidden
-}
-.ao-rail-right .ao-rail-copy{left:auto;right:49px;transform:translateY(-50%) translateX(5px)}
-.ao-rail-item[data-channel="gesture"][data-active="true"] .ao-rail-copy,
-.ao-rail-item[data-channel="response"][data-active="true"] .ao-rail-copy,
-.ao-rail-item[data-channel="bell"][data-active="true"] .ao-rail-copy{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
-.ao-rail-item[data-channel="posture"] .ao-rail-copy{display:none}
-.ao-rail .ao-icon-mask{width:28px;height:28px}
+.ao-rail-item[data-channel="priest-action"][data-active="true"],
+.ao-rail-item[data-channel="bell"][data-active="true"]{animation:aoCueIn .42s cubic-bezier(.18,.8,.22,1) both}
+.ao-rail-item[data-channel="response"][data-active="true"]{border-color:rgba(198,217,232,.48);background:rgba(28,43,54,.94);color:var(--ao-response)}
+.ao-rail-item[data-channel="bell"][data-active="true"]{border-color:rgba(214,202,166,.45);background:rgba(49,43,29,.96)}
+.ao-rail-item[data-major="true"]{width:64px;height:64px;min-height:64px;z-index:8;transform:scale(1.06)}
+@keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+.ao-rail-copy{display:none!important}
+.ao-rail .ao-icon-mask{width:36px;height:36px}
 
 .ao-schola-dock{
-  position:absolute;z-index:7;left:50%;bottom:16px;transform:translateX(-50%);
-  width:min(720px,calc(100% - 120px));height:var(--ao-schola-height);min-height:42px;max-height:180px;
-  display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;align-items:center;gap:8px;
-  padding:10px 13px 9px;border:1px solid rgba(166,197,175,.15);border-radius:16px;
-  background:rgba(13,20,15,.91);box-shadow:0 20px 70px rgba(0,0,0,.34);backdrop-filter:blur(18px) saturate(110%);color:#f0f1eb;overflow:hidden
+  position:absolute;z-index:9;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
+  width:min(940px,calc(100% - 170px));height:auto;min-height:100px;max-height:180px;
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(42px,auto) auto;
+  align-items:center;gap:6px 10px;padding:11px 16px 13px;
+  border:1px solid rgba(109,149,117,.38);border-radius:16px;background:rgba(17,25,20,.968);
+  box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
 }
 .ao-schola-dock[data-active="false"]{display:none}
-.ao-schola-dock[data-collapsed="true"]{height:32px!important;min-height:32px;padding-top:4px;padding-bottom:4px}
-.ao-schola-dock[data-collapsed="true"] [data-role="schola"],.ao-schola-dock[data-collapsed="true"] [data-icon-slot="schola"]{display:none}
+.ao-schola-dock[data-collapsed="true"]{min-height:36px;height:36px;padding-top:4px;padding-bottom:4px}
+.ao-schola-dock[data-collapsed="true"] .ao-schola-main,
+.ao-schola-dock[data-collapsed="true"] .ao-schola-meta{display:none}
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
 .ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:rgba(109,149,117,.28);transform:translateX(-50%)}
-.ao-schola-dock .ao-schola-kicker{font:700 .54rem/1 system-ui,sans-serif;letter-spacing:.11em;color:#94b29b}
-.ao-schola-dock [data-role="schola"]{min-width:0;overflow:auto;font:500 .82rem/1.38 Georgia,"Times New Roman",serif}
-.ao-schola-toggle{appearance:none;border:0;background:transparent;color:#89918b;font:700 .49rem/1 system-ui,sans-serif;letter-spacing:.08em;padding:6px}
+.ao-schola-title{display:flex;align-items:center;gap:7px;grid-column:1/3;min-height:24px}
+.ao-schola-title .ao-icon-mask{width:22px;height:22px;color:#a9c6b0}
+.ao-schola-kicker{font:700 8.5px/1 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#99b6a0}
+.ao-schola-page{font:700 8px/1 system-ui,sans-serif;letter-spacing:.12em;color:#6f8175}
+.ao-schola-main{grid-column:1/4;min-width:0;border-top:1px solid rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.045);padding:10px 0;cursor:pointer}
+.ao-schola-dock [data-role="schola"]{display:block;min-width:0;font:500 17px/1.3 Georgia,"Times New Roman",serif;color:#f2f3ed;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ao-schola-translation{display:none;margin-top:7px;padding:8px 10px;border-radius:9px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.05);font:400 14px/1.42 Georgia,"Times New Roman",serif;color:#d8dfd8}
+.ao-schola-dock[data-show-translation="true"] .ao-schola-translation{display:block}
+.ao-schola-meta{grid-column:1/3;display:flex;align-items:center;gap:8px}
+.ao-schola-progress{height:2px;flex:1;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px}
+.ao-schola-progress>span{display:block;height:100%;width:0;background:#8eae96;transition:width .18s linear}
+.ao-schola-toggle{grid-column:3;grid-row:1;appearance:none;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);color:#9eada2;border-radius:7px;min-height:28px;padding:4px 8px;font:700 8px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 
 .ao-reader-nav{position:absolute;z-index:5;inset:0;pointer-events:none}
 .ao-reader-nav button{
@@ -229,59 +243,69 @@ const SHELL_STYLE = `
 .ao-reader-progress{display:none}
 
 .ao-cinematic{
-  position:absolute;inset:0;z-index:20;display:grid;place-items:center;
-  background:rgba(7,11,8,.93);pointer-events:none;text-align:center;padding:2rem
+  position:absolute;inset:0;z-index:22;display:grid;place-items:center;pointer-events:none;text-align:center;padding:2rem;
+  opacity:1;visibility:visible;background:rgba(7,11,8,.93)
 }
 .ao-cinematic[hidden]{display:none}
 .ao-cinematic-inner{display:grid;gap:9px;justify-items:center;max-width:88%}
 .ao-cinematic-mark{font:400 1.35rem/1 Georgia,serif;color:var(--ao-warm)}
 .ao-cinematic-title{font:400 clamp(1.2rem,4vw,2rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:.08em;color:#f0f1e9}
 .ao-cinematic-sub{font:600 .63rem/1.3 system-ui,sans-serif;letter-spacing:.11em;color:#89928a}
+.ao-cinematic[data-kind="ELEVATION"]{background:radial-gradient(circle at center,rgba(226,211,158,.075),rgba(3,7,5,0) 43%)}
+.ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{
+  position:relative;width:min(43vw,210px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle,rgba(239,233,210,.12),rgba(20,27,22,.44) 48%,rgba(7,10,8,.15) 70%,transparent 72%);
+  filter:drop-shadow(0 0 28px rgba(230,214,157,.14));animation:aoElevation 3.35s cubic-bezier(.18,.72,.22,1) both
+}
+.ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-mark{font-size:clamp(2.4rem,10vw,5.6rem);color:#efe9d2}
+.ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-title{display:none}
+.ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-sub{
+  position:absolute;top:calc(100% + 14px);white-space:nowrap;font:600 10px/1.2 Cinzel,Georgia,serif;
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(238,235,217,.74)
+}
+@keyframes aoElevation{0%{opacity:0;transform:translateY(28px) scale(.72)}16%{opacity:1;transform:translateY(0) scale(1.03)}72%{opacity:1;transform:translateY(-5px) scale(1)}100%{opacity:0;transform:translateY(-16px) scale(.96)}}
 
 .ao-guide-popover{
-  position:absolute;z-index:25;left:50%;bottom:76px;transform:translateX(-50%);
-  width:min(720px,calc(100% - 110px));max-height:42%;overflow:auto;
-  padding:13px 16px;border:1px solid rgba(238,241,233,.11);border-radius:12px;
-  background:rgba(14,21,17,.985);box-shadow:0 14px 34px rgba(0,0,0,.45);
-  font:500 .82rem/1.42 system-ui,sans-serif;color:#dde3dc
+  position:absolute;z-index:30;left:50%;bottom:0;transform:translateX(-50%);
+  width:min(760px,100%);max-height:min(84vh,860px);overflow:auto;
+  padding:18px 18px 34px;border:1px solid rgba(218,225,218,.10);border-bottom:0;border-radius:18px 18px 0 0;
+  background:#0c120e;box-shadow:0 -22px 60px rgba(0,0,0,.44);
+  font:400 14px/1.62 Georgia,"Times New Roman",serif;color:#c4c8c2
 }
 .ao-guide-popover[hidden]{display:none}
 
 @media(max-width:760px){
   .ao-reader-shell{--ao-rail:48px}
-  .ao-reader-top-ribbon{grid-template-columns:44px minmax(0,1fr) 44px;height:44px;min-height:44px;padding:3px 5px 0}
-  .ao-reader-top-action{width:44px;height:44px}
-  .ao-reader-top-icon{width:25px;height:25px}
-  .ao-mode-ribbon button{min-width:58px;min-height:44px;padding:0 7px;font-size:7px}
-  .ao-state-ribbon{grid-template-columns:86px minmax(0,1fr) 86px;height:41px;min-height:41px;padding:2px 5px;gap:3px}
-  .ao-state-cell{min-height:0;padding:3px 5px;max-width:86px}
-  .ao-state-label{font-size:6.8px;max-width:57px}
-  .ao-section-jump{font-size:11.5px}
-  .ao-guide-short{font-size:7px;max-width:180px}
-  .ao-section-menu{top:120px;width:calc(100% - 24px)}
-  .ao-card-viewport{width:100%;padding:0 46px}
-  .ao-prayer-card{padding:24px 12px max(42vh,240px)}
-  .ao-reader-paragraph{font-size:clamp(19px,4.85vw,23px);line-height:1.66;opacity:.48}
-  .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:.48}
-  .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph,
-  .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.74}
-  .ao-rail{top:10px;bottom:18px;width:38px;gap:6px}
-  .ao-rail-left{left:4px}.ao-rail-right{right:4px}
-  .ao-rail-item{width:37px;min-height:38px;padding:4px;border-radius:14px}
-  .ao-rail-copy{left:42px;max-width:145px;font-size:7px}
-  .ao-rail-right .ao-rail-copy{right:42px}
-  .ao-rail .ao-icon-mask{width:25px;height:25px}
-  .ao-schola-dock{left:47px;right:47px;bottom:12px;transform:none;width:auto;padding:8px 10px;border-radius:14px}
-  .ao-schola-dock [data-role="schola"]{font-size:14px;line-height:1.42}
-  .ao-reader-nav{z-index:8}
-  .ao-reader-nav button{top:52%;bottom:auto;width:44px;height:44px;border-radius:999px;font-size:1.25rem;opacity:.12}
-  .ao-reader-nav button::before{inset:5px}
-  .ao-reader-nav button[data-reader-nav="previous"]{left:49px}
-  .ao-reader-nav button[data-reader-nav="next"]{right:49px}
-  .ao-guide-popover{bottom:68px;width:calc(100% - 24px)}
+  .ao-reader-top-ribbon{grid-template-columns:56px minmax(0,1fr) 56px;height:56px;min-height:56px;padding:4px 5px}
+  .ao-reader-top-action{width:44px;height:44px}.ao-reader-top-icon{width:28px;height:28px}
+  .ao-section-jump{font-size:14px}
+  .ao-state-ribbon{grid-template-columns:minmax(0,1fr) 80px minmax(0,1fr);height:64px;min-height:64px}
+  .ao-state-cell{gap:7px;padding:5px 6px}
+  .ao-state-cell>.ao-icon-mask{width:46px;height:46px;flex-basis:46px}
+  .ao-state-label{font-size:9px;max-width:102px}
+  .ao-guide-icon{width:29px;height:29px;flex-basis:29px}.ao-guide-icon svg{width:26px;height:26px}
+  .ao-guide-copy{gap:1px}.ao-guide-copy small{font-size:5.8px}.ao-guide-short{font-size:6.6px;max-width:38px}
+  .ao-progress-track{top:120px}
+  .ao-section-menu{top:58px;width:min(92vw,440px)}
+  .ao-mass-prefs{top:58px;right:8px;width:min(310px,calc(100% - 16px))}
+  .ao-card-viewport{width:100%;padding:0 61px}
+  .ao-prayer-card{padding:22px 12px max(42vh,240px)}
+  .ao-reader-paragraph{font-size:19px;line-height:1.55}
+  .ao-rail{top:8px;bottom:20px;width:48px;gap:6px}
+  .ao-rail-left{left:5px}.ao-rail-right{right:5px}
+  .ao-rail-item{width:48px;height:48px;min-height:48px}
+  .ao-rail-item[data-major="true"]{width:58px;height:58px;min-height:58px}
+  .ao-rail .ao-icon-mask{width:34px;height:34px}
+  .ao-schola-dock{width:calc(100% - 124px);min-height:100px;padding:9px 11px 11px}
+  .ao-schola-dock [data-role="schola"]{font-size:14px}.ao-schola-translation{font-size:12px;padding:7px 8px}
+  .ao-reader-nav button{top:auto;bottom:15px;width:34px;height:34px;border-radius:50%;font-size:20px;opacity:.34;background:rgba(11,16,13,.38)}
+  .ao-reader-nav button[data-reader-nav="previous"]{left:67px}.ao-reader-nav button[data-reader-nav="next"]{right:67px}
+  .ao-guide-popover{width:100%;max-height:89vh;border-radius:16px 16px 0 0;padding:15px 14px 28px}
+  .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{width:min(48vw,190px)}
 }
 @media(prefers-reduced-motion:reduce){
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}
+  .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{animation:none!important}
 }
 `;
 
@@ -372,42 +396,40 @@ export function buildReaderShellMarkup(prepared = {}) {
   const section = esc(prepared?.session?.resolvedMass?.actualCelebration?.title ?? "Mass");
   return `<style data-ao-reader-shell-style>${SHELL_STYLE}</style>
 <section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}">
-  <header class="ao-reader-top-ribbon">
-    <button class="ao-reader-top-action" type="button" data-reader-home data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask" aria-label="Home">${topAssetMask("ao-nav-home","HOME")}</button>
-    <div class="ao-reader-top-main">
-      <nav class="ao-mode-ribbon" aria-label="Reader mode">
-        ${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}">${m}</button>`).join("")}
-      </nav>
-    </div>
-    <button class="ao-reader-top-action" type="button" data-reader-parameters data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask" aria-label="Mass settings">${topAssetMask("ao-nav-settings","PARAMS")}</button>
+  <header class="ao-reader-top-ribbon" aria-label="Mass navigation">
+    <button class="ao-reader-top-action" type="button" data-reader-home data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask" aria-label="Back to Ad Orientem home">${topAssetMask("ao-nav-home","HOME")}</button>
+    <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled><span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span></button>
+    <button class="ao-reader-top-action" type="button" data-reader-preferences data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask" aria-label="Mass preferences" aria-expanded="false">${topAssetMask("ao-nav-settings","PARAMS")}</button>
   </header>
 
   <div class="ao-state-ribbon" aria-live="polite">
+    <div class="ao-state-cell" data-side="faithful" data-channel="posture">
+      <span class="ao-icon-mask" data-icon-slot="posture" hidden></span>
+      <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span></span>
+    </div>
+    <button class="ao-state-guide" type="button" data-role="guide-button" disabled aria-label="Open Guide and rubrics">
+      <span class="ao-guide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.75h10.5A2.5 2.5 0 0 1 18 7.25v12H7.5A2.5 2.5 0 0 1 5 16.75z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h6.5M8 11h6.5M8 14h4.5" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/></svg></span>
+      <span class="ao-guide-copy"><small>GUIDE</small><b class="ao-guide-short" data-role="guide-short">RUBRICS</b></span>
+    </button>
     <div class="ao-state-cell" data-side="priest">
       <span class="ao-icon-mask" data-icon-slot="priest-position" hidden></span>
-      <span class="ao-state-kicker">PRIEST</span>
-      <span class="ao-state-label" data-role="priest-position">—</span>
-    </div>
-    <div class="ao-state-center">
-      <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled>
-        <span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span>
-      </button>
-      <span class="ao-guide-short" data-role="guide-short" hidden></span>
-      <button class="ao-state-guide" type="button" data-role="guide-button" disabled>GUIDE</button>
-    </div>
-    <div class="ao-state-cell" data-side="action" data-channel="priest-action">
-      <span class="ao-state-kicker">ACTION</span>
-      <span class="ao-state-label" data-role="priest-action">—</span>
+      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span></span>
+      <span class="ao-priest-action-badge" data-role="priest-action-badge" data-active="false" data-major="false" aria-hidden="true"><span class="ao-icon-mask" data-icon-slot="priest-action-top" hidden></span></span>
     </div>
   </div>
+  <div class="ao-progress-track" aria-hidden="true"><span data-role="progress-track"></span></div>
 
   <div class="ao-section-menu" data-role="section-menu" hidden></div>
+  <aside class="ao-mass-prefs" data-role="mass-preferences" data-open="false" aria-label="Mass preferences">
+    <div class="ao-mass-prefs-head"><b>Mass preferences</b><button class="ao-mass-prefs-close" type="button" data-reader-preferences-close aria-label="Close preferences">×</button></div>
+    <div class="ao-mass-prefs-group"><small>Reader mode</small><nav class="ao-mode-ribbon" aria-label="Reader mode">${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}">${m}</button>`).join("")}</nav></div>
+    <button class="ao-mass-prefs-more" type="button" data-reader-parameters>App settings</button>
+  </aside>
 
   <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
-    <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful state">
-      <div class="ao-rail-item" data-channel="posture"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" data-role="posture">—</span></div>
-      <div class="ao-rail-item" data-channel="gesture"><span class="ao-icon-mask" data-icon-slot="gesture" hidden></span><span class="ao-rail-copy" data-role="gesture">—</span></div>
-      <div class="ao-rail-item" data-channel="response"><span class="ao-icon-mask" data-icon-slot="response" hidden></span><span class="ao-rail-copy" data-role="response">—</span></div>
+    <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful cues">
+      <div class="ao-rail-item" data-channel="gesture" data-active="false"><span class="ao-icon-mask" data-icon-slot="gesture" hidden></span><span class="ao-rail-copy" data-role="gesture">—</span></div>
+      <div class="ao-rail-item" data-channel="response" data-active="false"><span class="ao-icon-mask" data-icon-slot="response" hidden></span><span class="ao-rail-copy" data-role="response">—</span></div>
     </aside>
 
     <main class="ao-card-viewport">
@@ -417,18 +439,19 @@ export function buildReaderShellMarkup(prepared = {}) {
       </article>
     </main>
 
-    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Live audio state">
-      <div class="ao-rail-item" data-channel="priest-voice"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
-      <div class="ao-rail-item" data-channel="bell"><span class="ao-rail-copy" data-role="bell">—</span></div>
+    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest and bell cues">
+      <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
+      <div class="ao-rail-item" data-channel="priest-action" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-rail-copy" data-role="priest-action">—</span></div>
+      <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-rail-copy" data-role="bell">—</span></div>
     </aside>
   </div>
 
-  <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false">
+  <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false" data-show-translation="false">
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
-    <span class="ao-icon-mask" data-icon-slot="schola" hidden></span>
-    <span class="ao-schola-kicker">SCHOLA LIVE</span>
-    <span data-role="schola">—</span>
+    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-page" data-role="schola-page"></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
+    <div class="ao-schola-main" data-schola-translate title="Tap to show translation"><span data-role="schola">—</span><span class="ao-schola-translation" data-role="schola-translation"></span></div>
+    <div class="ao-schola-meta"><span class="ao-schola-progress"><span data-role="schola-progress"></span></span></div>
   </div>
 
   <div class="ao-cinematic" data-role="cinematic" aria-live="polite" hidden>
@@ -499,7 +522,9 @@ export function createReaderDomAdapter({
   let bound=false;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let scholaCollapsed=false;
-  let scholaHeight=52;
+  let scholaHeight=100;
+  let scholaTranslationVisible=false;
+  let scholaIdentity=null;
 
   function setMode(next){
     const requested=normalizePresentationMode(next);
@@ -520,6 +545,41 @@ export function createReaderDomAdapter({
     const jump=root.querySelector('[data-role="section-jump"]');
     if(menu)menu.hidden=true;
     jump?.setAttribute?.("aria-expanded","false");
+  }
+
+  function setPreferencesOpen(open){
+    const panel=root.querySelector('[data-role="mass-preferences"]');
+    const button=root.querySelector('[data-reader-preferences]');
+    if(panel)panel.dataset.open=String(Boolean(open));
+    button?.setAttribute?.("aria-expanded",String(Boolean(open)));
+    return Boolean(open);
+  }
+
+  function syncProgress(){
+    const track=root.querySelector('[data-role="progress-track"]');
+    if(!track)return;
+    const match=String(current?.progress??"").match(/(\d+)\s*\/\s*(\d+)/);
+    const pct=match ? Math.max(0,Math.min(100,(Number(match[1])/Math.max(1,Number(match[2])))*100)) : 0;
+    track.style.width=pct+"%";
+  }
+
+  function syncScholaContent(){
+    const dock=root.querySelector(".ao-schola-dock");
+    if(!dock)return;
+    const schola=current?.scholaVisible ? current.schola : null;
+    const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
+    if(identity!==scholaIdentity){scholaIdentity=identity;scholaTranslationVisible=false;}
+    dock.dataset.showTranslation=String(Boolean(scholaTranslationVisible && schola?.english));
+    setText(root,"schola",schola ? (schola.latin??textValue(schola)) : null);
+    setText(root,"schola-translation",schola?.english??null);
+    const page=root.querySelector('[data-role="schola-page"]');
+    if(page)page.textContent=schola?.total ? String((Number(schola.index)||0)+1)+" / "+String(schola.total) : "";
+    const progress=root.querySelector('[data-role="schola-progress"]');
+    if(progress){
+      const total=Math.max(1,Number(schola?.total)||1);
+      const index=Math.max(0,Number(schola?.index)||0);
+      progress.style.width=schola ? String(Math.min(100,((index+1)/total)*100))+"%" : "0%";
+    }
   }
 
   function syncScholaChrome(){
@@ -558,12 +618,22 @@ export function createReaderDomAdapter({
     root.addEventListener?.("click", event => {
       const homeButton=event.target?.closest?.("[data-reader-home]");
       if(homeButton){onHome?.(current,prepared);return;}
+      const preferencesButton=event.target?.closest?.("[data-reader-preferences]");
+      if(preferencesButton){
+        const panel=root.querySelector('[data-role="mass-preferences"]');
+        setPreferencesOpen(panel?.dataset?.open!=="true");
+        closeSectionMenu();
+        return;
+      }
+      const preferencesClose=event.target?.closest?.("[data-reader-preferences-close]");
+      if(preferencesClose){setPreferencesOpen(false);return;}
       const parametersButton=event.target?.closest?.("[data-reader-parameters]");
-      if(parametersButton){onParameters?.(current,prepared);return;}
+      if(parametersButton){setPreferencesOpen(false);onParameters?.(current,prepared);return;}
       const sectionJump=event.target?.closest?.('[data-role="section-jump"]');
       if(sectionJump && !sectionJump.disabled){
         const menu=root.querySelector('[data-role="section-menu"]');
         if(menu){menu.hidden=!menu.hidden;sectionJump.setAttribute("aria-expanded",String(!menu.hidden));}
+        setPreferencesOpen(false);
         return;
       }
       const sectionButton=event.target?.closest?.("[data-reader-section]");
@@ -576,6 +646,12 @@ export function createReaderDomAdapter({
       if(scholaToggle){
         scholaCollapsed=!scholaCollapsed;
         syncScholaChrome();
+        return;
+      }
+      const scholaTranslate=event.target?.closest?.("[data-schola-translate]");
+      if(scholaTranslate && current?.schola?.english){
+        scholaTranslationVisible=!scholaTranslationVisible;
+        syncScholaContent();
         return;
       }
       const modeButton=event.target?.closest?.("[data-reader-mode]");
@@ -641,7 +717,9 @@ export function createReaderDomAdapter({
       }
     }
     populateSections();
+    setPreferencesOpen(false);
     syncScholaChrome();
+    syncScholaContent();
     syncRailVisibility(root);
     bound=false;
     bind();
@@ -667,11 +745,11 @@ export function createReaderDomAdapter({
     setText(root,"priest-voice",textValue(current.priestVoice));
     setText(root,"schola",current.scholaVisible ? textValue(current.schola) : null);
     const titleNode=root.querySelector('[data-role="card-title"]');
-    if(titleNode)titleNode.hidden=Boolean(current.cardTitle && current.cardTitle===current.sectionTitle);
+    if(titleNode)titleNode.hidden=true;
     const guideShort=root.querySelector('[data-role="guide-short"]');
     if(guideShort){
-      guideShort.hidden=!current.guide?.text;
-      guideShort.textContent=current.guide?.text??"";
+      guideShort.hidden=false;
+      guideShort.textContent=current.guide?.text ? "OPEN" : "RUBRICS";
     }
 
     setChannel(root,"posture",current.posture);
@@ -682,6 +760,8 @@ export function createReaderDomAdapter({
     setChannel(root,"priest-voice",current.priestVoice);
     setChannel(root,"schola",current.scholaVisible ? current.schola : null);
     syncScholaChrome();
+    syncScholaContent();
+    syncProgress();
     syncRailVisibility(root);
 
     applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
@@ -689,7 +769,19 @@ export function createReaderDomAdapter({
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
     applyIcon(root,"response",current.responseIconKey,iconResolver);
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
+    applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
+    applyIcon(root,"priest-action-top",current.priestActionIconKey,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
+
+    const actionBadge=root.querySelector('[data-role="priest-action-badge"]');
+    const actionRail=root.querySelector('[data-channel="priest-action"]');
+    const majorCue=new Set(["AO.SM.C0161","AO.SM.C0174","AO.SM.C0181","AO.SM.C0225","AO.SM.C0265","AO.SM.C0273"]);
+    const activeCue=current.cinematic?.cueId ?? current.bell?.cueId ?? current.priestAction?.cueId ?? null;
+    const actionActive=Boolean(textValue(current.priestAction) && current.priestActionIconKey);
+    if(actionBadge){actionBadge.dataset.active=String(actionActive);actionBadge.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));}
+    if(actionRail)actionRail.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));
+    const bellRail=root.querySelector('[data-channel="bell"]');
+    if(bellRail)bellRail.dataset.major=String(Boolean(current.bell&&majorCue.has(activeCue)));
 
     const cinematic=root.querySelector('[data-role="cinematic"]');
     if(cinematic){
@@ -701,7 +793,10 @@ export function createReaderDomAdapter({
     }
 
     const guideButton=root.querySelector('[data-role="guide-button"]');
-    if(guideButton) guideButton.disabled=!current.guide;
+    if(guideButton){
+      guideButton.disabled=!current.guide;
+      guideButton.title=current.guide?.text??"Guide";
+    }
     const pop=root.querySelector('[data-role="guide-popover"]');
     if(pop){pop.hidden=true;pop.textContent="";}
 
