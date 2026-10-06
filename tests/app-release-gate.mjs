@@ -120,6 +120,7 @@ assert.ok(app.regressionGates?.phone?.includes("tests/learn-owner-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/settings-e2e.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/reader-mode-switch.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/mass-definitive-presentation.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
 
 console.log("PASS app release gate: Mass runtime stays certified while visible Mass and exact non-Mass donor parity remain explicitly reopened.");
