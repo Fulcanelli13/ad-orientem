@@ -781,16 +781,23 @@ try{
   const wideRosary=await wide.evaluate(()=>{
     const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']"),shell=root?.querySelector(".pbShell");
     const candidates=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])];
-    const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null,r=card?.getBoundingClientRect();
+    const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null,r=card?.getBoundingClientRect(),sr=shell?.getBoundingClientRect(),rr=root?.getBoundingClientRect();
     const visibleLegacy=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>getComputedStyle(node).display!=="none").length;
-    return {shell:shell?.getBoundingClientRect().width??0,cardWidth:r?.width??0,cardHeight:r?.height??0,visibleLegacy,nested:shell?.querySelectorAll(":scope > section.aoRosaryRitualGrid").length??0};
+    const css=shell?getComputedStyle(shell):null;
+    return {
+      shell:sr?.width??0,cardWidth:r?.width??0,cardHeight:r?.height??0,visibleLegacy,
+      nested:shell?.querySelectorAll(":scope > section.aoRosaryRitualGrid").length??0,
+      rootWidth:rr?.width??0,cssWidth:css?.width??"",maxWidth:css?.maxWidth??"",boxSizing:css?.boxSizing??"",
+      transform:css?.transform??"",paddingLeft:css?.paddingLeft??"",paddingRight:css?.paddingRight??"",
+      offsetWidth:shell?.offsetWidth??0,scrollWidth:shell?.scrollWidth??0,
+    };
   });
-  assert.ok(wideRosary.shell<=522,"Rosary expanded beyond the bounded app reader on wide viewport");
+  await wide.screenshot({path:resolve(out,"03e-pray-wide-regression.png"),fullPage:false});
+  assert.ok(wideRosary.shell<=522,"Rosary expanded beyond the bounded app reader on wide viewport: "+JSON.stringify(wideRosary));
   assert.ok(wideRosary.cardWidth>=360,"Rosary wide viewport collapsed the actual prayer column");
   assert.ok(wideRosary.cardHeight>0&&wideRosary.cardHeight<720,"Rosary wide Our Father reproduced the vertical word-stack regression");
   assert.equal(wideRosary.visibleLegacy,0,"Rosary wide viewport exposes duplicate recitation controls");
   assert.equal(wideRosary.nested,0,"Rosary wide viewport reparents donor DOM into a nested ritual grid");
-  await wide.screenshot({path:resolve(out,"03e-pray-wide-regression.png"),fullPage:false});
   await wideContext.close();
 
   await writeFile(resolve(out,"report.json"),JSON.stringify({report,errors},null,2));
