@@ -23,4 +23,10 @@ export const R17_FROZEN_ACTIVE_ICON_ASSETS=Object.freeze({
   priest_epistle:new URL("../../assets/active/live-actors/ao-live-priest-epistle-side.png",import.meta.url).href,
   priest_gospel:new URL("../../assets/active/live-actors/ao-live-priest-gospel-side.png",import.meta.url).href,
   priest_people:new URL("../../assets/active/live-actors/ao-live-priest-facing-people.png",import.meta.url).href,
+  priest_elevation:new URL("../../assets/active/live-actions/ao-live-priest-elevation.png",import.meta.url).href,
+  priest_genuflect:new URL("../../assets/active/live-actors/ao-live-priest-genuflect.png",import.meta.url).href,
+  priest_incense_altar:new URL("../../assets/active/live-actors/ao-live-priest-incense-altar.png",import.meta.url).href,
+  lavabo:new URL("../../assets/active/live-actions/ao-live-lavabo.png",import.meta.url).href,
+  blessing:new URL("../../assets/active/live-actions/ao-live-blessing.png",import.meta.url).href,
+  communion:new URL("../../assets/active/live-actions/ao-live-communion.png",import.meta.url).href,
 });
