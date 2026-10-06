@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.21.0",
+  "version": "1.22.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -233,21 +233,23 @@
     },
     {
       "id": "EXACT_NON_MASS_DONOR_PARITY",
-      "classification": "REGRESSION",
+      "classification": "MISSING_INTEGRATION",
       "status": "OPEN",
       "evidence": [
         "data/presentation/exact-donor-parity.v1.json",
-        "src/app/presentation-fx.js",
         "src/pray/presentation-runtime.js",
         "src/pray/presentation-styles.js",
-        "tests/app-visual-acceptance.mjs",
-        "Ad-Orientem-2.0-v43.59.30-PRAY-UNIFIED-READER-CLOSURE.html",
-        "Ad_Orientem_v3_4_6.html",
-        "Ad_Orientem_v3_4_8.html",
-        "Ad_Orientem_v3_4_14.html",
-        "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
+        "src/pray/presentation-coherence.js",
+        "src/pray/novena-runtime.js",
+        "src/pray/traditional-pray-runtime.js",
+        "src/learn/traditional-life.js",
+        "tests/pray-presentation.mjs",
+        "tests/pray-novenas.mjs",
+        "tests/pray-traditional-life.mjs",
+        "tests/learn-traditional-life.mjs",
+        "tests/app-visual-acceptance.mjs"
       ],
-      "detail": "The current modular app recovers presentation mechanisms but not the exact approved non-Mass donor experience. Generic six-surface transition labels and loaders were substituted for donor action/content-specific choreography; semantic rails and Rosary presentation were reconstructed approximately; and current visual tests compare against current implementation rather than the final donor head. Release readiness is therefore reopened until direct donor-to-current parity is certified."
+      "detail": "Exact-donor recovery has materially converged: semantic devotional rails are recovered, the final v3.4.14 Rosary presentation is restored, v3.4.10 Angelus/Stations scroll-focus geometry is restored, Guided Novenas N3 is modular, and the v38.1 Traditional Catholic Life modules are extracted into modular PRAY/Learn. The remaining blocker is direct donor-to-current visual/compositional acceptance at 390x844 across the full non-Mass surface/state matrix; current visual tests still certify the implementation rather than the final donor head."
     }
   ],
   "openBlockers": [
@@ -269,7 +271,10 @@
       "tests/settings-owner.mjs",
       "tests/source-transport-compat.mjs",
       "tests/reader-mode-switch.mjs",
-      "tests/presentation-fx.mjs"
+      "tests/presentation-fx.mjs",
+      "tests/pray-novenas.mjs",
+      "tests/pray-traditional-life.mjs",
+      "tests/learn-traditional-life.mjs"
     ],
     "phone": [
       "tests/reader-phone-acceptance.mjs",
