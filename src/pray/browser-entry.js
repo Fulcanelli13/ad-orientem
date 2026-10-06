@@ -1,5 +1,6 @@
 import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import "./presentation-coherence.js";
+import "./novena-runtime.js";
 
 const VERSION="modular-pray-v1";
 
