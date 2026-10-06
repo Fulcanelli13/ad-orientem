@@ -711,6 +711,80 @@ try{
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
     appOwner:document.documentElement.dataset.aoAppShellOwner??null,
   }));
+  // Wide-browser regression: preserve the integrated v3.4.10 composition — 820px PRAY shell, 760px content measure, two-column hub.
+  const wideContext=await browser.newContext({viewport:{width:1440,height:960},deviceScaleFactor:1,hasTouch:false,locale:"en-GB"});
+  const wide=await wideContext.newPage();
+  await wide.goto("http://127.0.0.1:4186/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+  await wide.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true&&globalThis.AO_PRAY_APP_V1?.status?.().installed===true,null,{timeout:30000});
+  await wide.locator("[data-ao-app-surface='pray']").click();
+  await wide.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
+  const wideHub=await wide.evaluate(()=>{
+    const sheet=document.querySelector("#aoPray435930 .aoP435930Sheet"),body=document.querySelector("#aoPray435930 .aoP435930Body"),grid=document.querySelector("#aoPray435930 .aoP435930ModuleGrid");
+    const first=document.querySelector("#aoPray435930 .aoP435930ModuleCard"),title=first?.querySelector("b"),description=first?.querySelector(".aoP435930ModuleDescription"),icon=first?.querySelector(".aoP435930ModuleIcon");
+    const tr=title?.getBoundingClientRect?.(),dr=description?.getBoundingClientRect?.(),ir=icon?.getBoundingClientRect?.();
+    const columns=grid?getComputedStyle(grid).gridTemplateColumns:"";
+    return {
+      sheet:sheet?.getBoundingClientRect().width??0,
+      body:body?.getBoundingClientRect().width??0,
+      columns,
+      columnCount:columns.trim()?columns.trim().split(/\s+/).length:0,
+      titleWidth:tr?.width??0,
+      descriptionWidth:dr?.width??0,
+      iconRight:ir?.right??0,
+      titleLeft:tr?.left??0,
+    };
+  });
+  assert.ok(wideHub.sheet>=818&&wideHub.sheet<=822,"PRAY wide shell diverged from the v3.4.10 820px composition");
+  assert.ok(wideHub.body>=750&&wideHub.body<=762,"PRAY wide reading measure diverged from the v3.4.10 760px composition");
+  assert.equal(wideHub.columnCount,2,"PRAY wide hub no longer uses the donor two-column module grid");
+  assert.ok(wideHub.titleWidth>=210&&wideHub.descriptionWidth>=210,"PRAY wide module text collapsed inside its canonical icon column: "+JSON.stringify(wideHub));
+  assert.ok(wideHub.titleLeft>=wideHub.iconRight+6,"PRAY wide module text overlaps its canonical icon column: "+JSON.stringify(wideHub));
+
+  await wide.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
+  await wide.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="rosary",null,{timeout:5000});
+  await wide.locator("#aoPray435930 [data-p435930-launch-rosary]").click();
+  await wide.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
+  await wide.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
+  const wideStandard=wide.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
+  if(await wideStandard.count())await wideStandard.click();
+  await wide.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
+  await wide.waitForSelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]",{state:"visible",timeout:5000});
+  const wideOurFatherTarget=await wide.evaluate(()=>{
+    const xs=globalThis.AO_ROSARY_V381?.steps?.()||[];
+    return xs.findIndex(step=>/pater|our father|lord.?s prayer/i.test(JSON.stringify(step)));
+  });
+  assert.ok(wideOurFatherTarget>=0,"Wide canonical Rosary exposes no Our Father target");
+  let wideStep=await wide.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+  for(let guard=0;wideStep<wideOurFatherTarget&&guard<32;guard+=1){
+    const before=wideStep;
+    await wide.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
+    await wide.waitForFunction(previous=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1)>previous,before,{timeout:2000});
+    wideStep=await wide.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+    assert.equal(wideStep,before+1,"Wide Rosary Next skipped or failed to advance exactly one canonical step");
+  }
+  assert.equal(wideStep,wideOurFatherTarget,"Wide Rosary Next did not reach the canonical Our Father");
+  const wideRosary=await wide.evaluate(()=>{
+    const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']"),shell=root?.querySelector(".pbShell");
+    const candidates=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])];
+    const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null,r=card?.getBoundingClientRect(),sr=shell?.getBoundingClientRect(),rr=root?.getBoundingClientRect();
+    const visibleLegacy=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>getComputedStyle(node).display!=="none").length;
+    const css=shell?getComputedStyle(shell):null;
+    return {
+      shell:sr?.width??0,cardWidth:r?.width??0,cardHeight:r?.height??0,visibleLegacy,
+      nested:shell?.querySelectorAll(":scope > section.aoRosaryRitualGrid").length??0,
+      rootWidth:rr?.width??0,cssWidth:css?.width??"",maxWidth:css?.maxWidth??"",boxSizing:css?.boxSizing??"",
+      transform:css?.transform??"",paddingLeft:css?.paddingLeft??"",paddingRight:css?.paddingRight??"",
+      offsetWidth:shell?.offsetWidth??0,scrollWidth:shell?.scrollWidth??0,
+    };
+  });
+  await wide.screenshot({path:resolve(out,"03e-pray-wide-regression.png"),fullPage:false});
+  assert.ok(wideRosary.shell>=748&&wideRosary.shell<=762,"Rosary wide shell diverged from the v3.4.10 760px preserved donor measure: "+JSON.stringify(wideRosary));
+  assert.ok(wideRosary.cardWidth>=680,"Rosary wide viewport collapsed the actual prayer column");
+  assert.ok(wideRosary.cardHeight>0&&wideRosary.cardHeight<720,"Rosary wide Our Father reproduced the vertical word-stack regression");
+  assert.equal(wideRosary.visibleLegacy,0,"Rosary wide viewport exposes duplicate recitation controls");
+  assert.equal(wideRosary.nested,0,"Rosary wide viewport reparents donor DOM into a nested ritual grid");
+  await wideContext.close();
+
   await writeFile(resolve(out,"report.json"),JSON.stringify({report,errors},null,2));
   assert.deepEqual(errors,[],"page errors during visual acceptance: "+JSON.stringify(errors));
   console.log("visual acceptance capture: PASS",JSON.stringify({errors,report},null,2));
