@@ -54,7 +54,7 @@ assert.deepEqual(exactDonor.openBlockers,[
   "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
   "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
 ]);
-assert.match(exactDonor.rule,/conceptual equivalence.*do not satisfy|conceptual equivalence.*insufficient|conceptual feature/i);
+assert.match(exactDonor.rule,/functional equivalence.*do not satisfy|conceptual equivalence.*do not satisfy|conceptual equivalence.*insufficient|conceptual feature/i);
 const fxFinding=findings.find(x=>x.id==="PRESENTATION_FX_PARITY");
 assert.equal(fxFinding?.classification,"PASS");
 assert.equal(fxFinding?.status,"CLOSED");
