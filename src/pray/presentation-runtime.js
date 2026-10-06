@@ -809,7 +809,7 @@ document.addEventListener('click',e=>{
  const d=e.target.closest?.('[data-p435930-rosary-depth]');if(d){S.rosary.mode=d.dataset.p435930RosaryDepth==='guided'?'guided':'simple';save();setTimeout(decorateRosary,0)}
  const m=e.target.closest?.('[data-p435930-recitation]');if(m){S.rosary.recitation=m.dataset.p435930Recitation==='group'?'group':'individual';save();try{localStorage.setItem('ao-prayer-recitation-mode',S.rosary.recitation)}catch{};setTimeout(decorateRosary,0)}
  const step=e.target.closest?.('[data-lab-rosary-next],[data-lab-rosary-prev],[data-v401-rosary-jump],[data-ao-rosary-bead],[data-lab-rosary-today],[data-pb-rosary-set],[data-lab-rosary-change],[data-pb-rosary-change]');
- if(step){if(step.matches?.('[data-lab-rosary-change],[data-pb-rosary-change]'))lastRosaryFxMystery='';setTimeout(decorateRosary,0)}
+ if(step){if(step.matches?.('[data-lab-rosary-change],[data-pb-rosary-change]'))lastRosaryRitualKey='';setTimeout(decorateRosary,0)}
 },true);
 // Route old PRAY entry points through the final shared owner. No Mass route is intercepted.
 document.addEventListener('click',e=>{
