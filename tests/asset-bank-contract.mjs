@@ -73,6 +73,12 @@ assert.equal(
   AO_SHARED_IDENTITY_MAPPINGS.find(x=>x.route==="pray.forty_hours")?.asset_id,
   "ao-rich-adoration",
 );
+const signCross=getCanonicalAsset("ao-live-sign-cross");
+assert.equal(signCross?.status,"HARDENED_EXTENSION");
+assert.equal(signCross?.path,"assets/active/live-gesture/ao-live-sign-cross.png");
+assert.equal(signCross?.sha256,"b1684a9aa8365e8b851253bb034842e3f97d2b01ad4df231961b8563f99351a3");
+assert.ok(resolveCanonicalAssetUrl("ao-live-sign-cross"),"hardened Sign-of-Cross URL does not resolve");
+assert.equal(getCanonicalAsset("ao-posture-sign-cross"),null,"removed legacy Sign-of-Cross id regained canonical ownership");
 
 assert.ok(activeCsv.startsWith("index,semantic_id,semantic_label,"));
 assert.ok(!activeCsv.startsWith("<PARSED TEXT"),"Library parser banner leaked into canonical CSV");
@@ -98,9 +104,12 @@ for(const file of externalized){
   const assetId=path.basename(file).replace(/\.[^.]+$/,"");
   const record=getCanonicalAsset(assetId);
   assert.ok(record,"non-canonical asset entered assets/active: "+path.relative(root,file));
-  assert.equal(record.status,"FROZEN_ACTIVE");
+  assert.ok(["FROZEN_ACTIVE","HARDENED_EXTENSION"].includes(record.status),"externalized asset has unsupported contract status: "+assetId);
+  assert.ok(record.path,"externalized canonical asset has no contract path: "+assetId);
+  assert.equal(path.normalize(record.path),path.normalize(path.relative(root,file)),"externalized canonical asset is at the wrong path: "+assetId);
+  assert.ok(record.sha256,"externalized canonical asset has no contract hash: "+assetId);
   const sha256=createHash("sha256").update(fs.readFileSync(file)).digest("hex");
-  assert.equal(sha256,record.sha256,"externalized asset drifted from frozen V4 bytes: "+assetId);
+  assert.equal(sha256,record.sha256,"externalized asset drifted from canonical contract bytes: "+assetId);
 }
 
 assert.equal(auditHostIconBank(R17_FROZEN_ACTIVE_ICON_ASSETS).complete,true);
@@ -115,4 +124,4 @@ for(const [readerKey,url] of Object.entries(R17_FROZEN_ACTIVE_ICON_ASSETS)){
   assert.equal(sha256,record.sha256,"R17 compatibility asset drifted from frozen V4 bytes: "+assetId);
 }
 
-console.log("asset bank contract: PASS — V4 core 109 + 8 hardened extensions; "+externalized.length+" externalized assets and all 20 R17 compatibility assets are byte-exact V4 binaries.");
+console.log("asset bank contract: PASS — V4 core 109 remains byte-exact; 8 hardened extensions remain canonical; "+externalized.length+" externalized canonical assets and all 20 R17 compatibility assets match their contract hashes.");
