@@ -463,7 +463,7 @@ try{
   const rosaryOpening=await page.evaluate(()=>{
     const roots=[...document.querySelectorAll("#aoPrayerBookRoot")],active=roots.find(root=>root.dataset.aoRosaryActiveRoot==="true")||roots.find(root=>root.classList.contains("open"));
     const shell=active?.querySelector(".pbShell"),head=shell?.querySelector(".lab-view-head"),recitation=shell?.querySelector(".r29-head-recitation"),overview=shell?.querySelector("[data-r23-overview-open]");
-    const legacyRecitation=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>getComputedStyle(node).display!=="none").length;
+    const legacyRecitation=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>node.getClientRects().length>0&&getComputedStyle(node).visibility!=="hidden").length;
     const headRect=head?.getBoundingClientRect?.(),recRect=recitation?.getBoundingClientRect?.(),overviewRect=overview?.getBoundingClientRect?.();
     const recitationButtonWidths=[...(recitation?.querySelectorAll("button")??[])].map(button=>button.getBoundingClientRect().width);
     return {
@@ -767,7 +767,7 @@ try{
     const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']"),shell=root?.querySelector(".pbShell");
     const candidates=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])];
     const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null,r=card?.getBoundingClientRect(),sr=shell?.getBoundingClientRect(),rr=root?.getBoundingClientRect();
-    const visibleLegacy=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>getComputedStyle(node).display!=="none").length;
+    const visibleLegacy=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>node.getClientRects().length>0&&getComputedStyle(node).visibility!=="hidden").length;
     const css=shell?getComputedStyle(shell):null;
     return {
       shell:sr?.width??0,cardWidth:r?.width??0,cardHeight:r?.height??0,visibleLegacy,
