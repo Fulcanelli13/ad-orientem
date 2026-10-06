@@ -112,6 +112,8 @@ assert.match(runtime,/function ownRosaryDonorRoots\(active\)/,"Rosary lost singl
 assert.match(runtime,/assetId:'ao-live-sign-cross'/,"Rosary still references the removed ao-posture-sign-cross asset id");
 assert.doesNotMatch(runtime,/assetId:'ao-posture-sign-cross'/,"Removed Sign-of-Cross asset id survived in production PRAY");
 assert.match(styles,/data-ao-rosary-active-root="false"[^}]*pointer-events:none/,"Inactive duplicate PrayerBook roots can still intercept pointer input");
+assert.match(styles,/data-ao-rosary-active-root="true"[^\n]*\.lab-recitation-mode[\s\S]*display:none!important/,"Active Rosary root can expose the legacy recitation surface during shell rebuilds");
+assert.match(runtime,/api\.setStep\(target\)!==false\)\{decorateRosary\(\);setTimeout\(decorateRosary,0\)\}/,"Rosary canonical Next\/Previous no longer redecorates synchronously at the step boundary");
 assert.match(styles,/data-ao-rosary-exact-donor="v3\.4\.14"[^\n]*\.lab-recitation-mode[\s\S]*display:none!important/,"Rosary still exposes duplicate native recitation controls");
 assert.match(styles,/width:min\(820px,100%\)!important/,"PRAY shell diverged from the integrated v3.4.10 820px composition");
 assert.match(styles,/data-ao-rosary-active-root="true"[^\n]*pbShell\[data-ao-rosary-exact-donor="v3\.4\.14"\][^\{]*\{[^\}]*max-width:760px!important[^\}]*box-sizing:border-box!important/,"Active Rosary shell lost the v3.4.10 760px composition measure");
