@@ -110,9 +110,11 @@ for(const [readerKey,url] of Object.entries(R17_FROZEN_ACTIVE_ICON_ASSETS)){
   assert.ok(record,"R17 "+readerKey+" does not resolve to a canonical V4 asset id: "+assetId);
   assert.equal(record.status,"FROZEN_ACTIVE");
   assert.ok(resolveCanonicalAssetUrl(assetId),"canonical URL missing for "+assetId);
+  const actualPath=path.relative(root,fileURLToPath(url)).split(path.sep).join("/");
+  assert.equal(actualPath,record.path,"R17 "+readerKey+" is not using the manifest canonical path for "+assetId);
   const bytes=fs.readFileSync(fileURLToPath(url));
   const sha256=createHash("sha256").update(bytes).digest("hex");
   assert.equal(sha256,record.sha256,"R17 compatibility asset drifted from frozen V4 bytes: "+assetId);
 }
 
-console.log("asset bank contract: PASS — V4 core 109 + 8 hardened extensions; "+externalized.length+" externalized assets and all 20 R17 compatibility assets are byte-exact V4 binaries.");
+console.log("asset bank contract: PASS — V4 core 109 + 8 hardened extensions; "+externalized.length+" externalized assets and all 20 R17 assets use byte-exact manifest canonical paths.");
