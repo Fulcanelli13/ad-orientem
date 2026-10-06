@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { ACTION_CINEMATIC_BINDINGS, BELL_CUE_BINDINGS, createReaderTransientController, partTransitionCinematic, validateReaderTransientBindings } from "../src/mass/reader-transients.js";
+import { ACTION_CINEMATIC_BINDINGS, BELL_CUE_BINDINGS, V180_BELL_HOLD_MS, V180_ELEVATION_CINEMA_MS, createReaderTransientController, partTransitionCinematic, validateReaderTransientBindings } from "../src/mass/reader-transients.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const events=["../data/mass/mc-events-01.v1.json","../data/mass/mc-events-02.v1.json","../data/mass/mc-events-03.v1.json","../data/mass/mc-events-04.v1.json","../data/mass/mc-events-05.v1.json","../data/mass/mc-events-06.v1.json"].flatMap(path=>load(path).events);
@@ -18,6 +18,10 @@ assert.equal(controller.project("AO.SM.C0145").bell.canonicalEventIds[0],"MC-SAN
 assert.equal(controller.project("AO.SM.C0161").bell.canonicalEventIds[0],"MC-CAN-070");
 assert.deepEqual(controller.project("AO.SM.C0174").bell.canonicalEventIds,["MC-CNS-030","MC-CNS-040"]);
 assert.equal(controller.project("AO.SM.C0174").cinematic.kind,"ELEVATION");
+assert.equal(V180_BELL_HOLD_MS,3600,"v1.80 bell visual hold changed");
+assert.equal(V180_ELEVATION_CINEMA_MS,3450,"v1.80 principal elevation cinematic duration changed");
+assert.equal(controller.project("AO.SM.C0174").cinematic.durationMs,3450,"Host elevation cinematic no longer matches v1.80");
+assert.equal(controller.project("AO.SM.C0181").cinematic.durationMs,3450,"Chalice elevation cinematic no longer matches v1.80");
 assert.deepEqual(controller.project("AO.SM.C0181").bell.canonicalEventIds,["MC-CNS-100","MC-CNS-110"]);
 assert.equal(controller.project("AO.SM.C0225").bell.canonicalEventIds[0],"MC-COM-185");
 assert.equal(controller.project("AO.SM.C0225").cinematic.kind,"BELL");
