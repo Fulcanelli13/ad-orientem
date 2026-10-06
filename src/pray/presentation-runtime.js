@@ -318,7 +318,12 @@ function normalizeRosaryPrefs(raw=S.rosary){
  })
 }
 function rosaryDonorRoot(){
- return document.getElementById('aoPrayerBookRoot')
+ const canonical=[...document.querySelectorAll('#aoPrayerBookRoot')];
+ const active=canonical.find(el=>el.classList?.contains('open')&&el.querySelector?.('.pbShell'));
+ if(active)return active;
+ const exact=canonical.find(el=>el.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]'));
+ if(exact)return exact;
+ return canonical[0]
   ||document.querySelector('.pbRoot,.aoPrayerBook,.lab-prayerbook,[data-pb-root]')
   ||document.querySelector('#ao-prayerbook-root')
   ||document.querySelector('[class*="PrayerBook"]')
@@ -364,19 +369,14 @@ function bindRosaryDonorBack(root){
  if(document.documentElement?.dataset?.aoRosaryReturnCapture!=='v1'){
   if(document.documentElement?.dataset)document.documentElement.dataset.aoRosaryReturnCapture='v1';
   document.addEventListener('click',e=>{
-   const donorRoot=document.getElementById('aoPrayerBookRoot'),hit=e.target?.closest?.('.lab-back'),
-    stamp=donorRoot?.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor||null,
-    raw=donorRoot?.dataset?.aoPrayRosaryReturn||null;
-   window.__aoRosaryReturnCaptureDebug={called:true,targetClass:String(e.target?.className||''),hit:!!hit,root:!!donorRoot,contains:!!(donorRoot&&hit&&donorRoot.contains(hit)),stamp,raw};
+   const hit=e.target?.closest?.('.lab-back'),donorRoot=hit?.closest?.('#aoPrayerBookRoot')||rosaryDonorRoot();
    if(!donorRoot||!hit||!donorRoot.contains(hit))return;
-   if(stamp!=='v3.4.14')return;
+   if(donorRoot.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor!=='v3.4.14')return;
    let snapshot=rosaryDonorReturnSnapshot;
    if(!snapshot){
-    try{snapshot=JSON.parse(raw||'null')}catch{snapshot=null}
+    try{snapshot=JSON.parse(donorRoot.dataset?.aoPrayRosaryReturn||'null')}catch{snapshot=null}
    }
-   window.__aoRosaryReturnCaptureDebug.snapshot=!!snapshot;
    if(!snapshot)return;
-   window.__aoRosaryReturnCaptureDebug.returning=true;
    returnFromRosaryDonor(e,donorRoot,snapshot);
   },true);
  }
@@ -980,7 +980,7 @@ function onChange(e){const x=e.target;
 function onInput(e){const x=e.target;if(x.matches('[data-p435930-since]'))CONF.since=x.value;if(x.matches('[data-p435930-lib-search]')){LIB.q=x.value;const pos=x.selectionStart;render();const n=document.querySelector('[data-p435930-lib-search]');n?.focus();try{n?.setSelectionRange(pos,pos)}catch{}}}
 // Keep shared Rosary preferences synchronized when the preserved canonical player changes them.
 document.addEventListener('click',e=>{
- const donorRoot=document.getElementById('aoPrayerBookRoot'),donorBack=e.target?.closest?.('.lab-back'),donorResume=readRosaryDonorReturn();
+ const donorBack=e.target?.closest?.('.lab-back'),donorRoot=donorBack?.closest?.('#aoPrayerBookRoot')||rosaryDonorRoot(),donorResume=readRosaryDonorReturn();
  if(donorRoot&&donorBack&&donorRoot.contains(donorBack)&&donorResume&&donorRoot.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor==='v3.4.14'){
   // Modular PRAY owns the return handoff, while the preserved engine keeps Rosary state.
   returnFromRosaryDonor(e,donorRoot,donorResume);
