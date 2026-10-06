@@ -477,28 +477,23 @@ try{
   assert.equal(rosaryOpening.ritualGrid,1,"Rosary lost the donor ritual reader grid");
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
 
-  // Follow the preserved engine's actual opening sequence using only the visible
-  // Next control. The donor presentation must attach at the engine's own first
-  // mystery boundary; no duplicate step-count model is introduced here.
-  const rosaryBounds=await page.evaluate(()=>{
+  // Use the exact donor's visible Overview → Mystery I jump rather than forcing
+  // the preserved engine through intermediate opening states.
+  await page.locator("#aoPrayerBookRoot [data-r23-overview-open]").click();
+  await page.waitForSelector("#aoPrayerBookRoot #r23-overview-sheet.open",{state:"visible",timeout:2000});
+  const overview=await page.evaluate(()=>({
+    rows:document.querySelectorAll("#aoPrayerBookRoot #r23-overview-sheet .r23-overview-row").length,
+    opening:document.querySelectorAll("#aoPrayerBookRoot #r23-overview-sheet .r23-overview-section[data-r23-overview-jump='0']").length,
+    close:document.querySelectorAll("#aoPrayerBookRoot #r23-overview-sheet [data-r23-overview-close]").length,
+  }));
+  assert.equal(overview.rows,5,"Rosary donor overview lost its five mystery rows");
+  assert.equal(overview.opening,1,"Rosary donor overview lost Opening prayers");
+  assert.equal(overview.close,1,"Rosary donor overview lost its close control");
+  await page.locator("#aoPrayerBookRoot #r23-overview-sheet .r23-overview-row[data-r23-overview-mystery='1']").click();
+  await page.waitForFunction(()=>{
     const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[];
-    return {current:Number(state?.step)||0,target:steps.findIndex(step=>step?.kind==="mystery"),total:steps.length};
-  });
-  assert.ok(rosaryBounds.target>=rosaryBounds.current,"Preserved Rosary engine exposes no reachable mystery boundary");
-  assert.ok(rosaryBounds.target<rosaryBounds.total,"Preserved Rosary first mystery index is outside its step list");
-  for(let guard=0;guard<rosaryBounds.total;guard++){
-    const state=await page.evaluate(()=>{
-      const api=globalThis.AO_ROSARY_V381,s=api?.state?.(),steps=api?.steps?.()||[];
-      return {index:Number(s?.step)||0,kind:steps[s?.step]?.kind??null};
-    });
-    if(state.kind==="mystery")break;
-    await page.locator("#aoPrayerBookRoot [data-lab-rosary-next]").click();
-    await page.waitForFunction(before=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step)!==before,state.index,{timeout:2000});
-  }
-  assert.equal(await page.evaluate(()=>{
-    const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[];
-    return steps[state?.step]?.kind;
-  }),"mystery","Rosary visible Next path did not reach the engine-owned Mystery I boundary");
+    return steps[state?.step]?.kind==="mystery"&&Number(steps[state?.step]?.mi)===0;
+  },null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot .rosary-decade-bar-v15 i.current")?.dataset?.mystery==="1",null,{timeout:5000});
   await page.waitForSelector("#ao-cinema-transition.aoCinemaTransitionOn",{state:"visible",timeout:2000});
   const rosaryMysteryFx=await page.evaluate(()=>({
