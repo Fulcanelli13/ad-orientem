@@ -38,7 +38,13 @@ assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitation
 assert.match(styles,/aoP435930HeadSpacer/,"PRAY single-exit header spacer lost visual geometry");
 assert.match(runtime,/function semanticRails\(\)/,"PRAY lost the recovered semantic side-rail owner");
 assert.match(runtime,/ao-live-stand.*ao-live-kneel/s,"Angelus semantic rail lost canonical Stand\/Kneel mapping");
-assert.match(runtime,/ao-rich-angelus/,"Angelus semantic rail lost its canonical devotional identity");
+assert.doesNotMatch(runtime,/view===['"]angelus['"][\s\S]{0,650}ao-rich-angelus/,"Angelus exact donor rail regained the later generic context card");
+assert.match(runtime,/aoRitualReaderGrid aoAngelusRitualGrid/,"Angelus lost the donor ritual reader grid");
+assert.match(runtime,/data-ao-ritual-module="angelus"/,"Angelus lost its exact donor rail ownership marker");
+assert.match(runtime,/data-ao-ritual-channels="posture,gesture"/,"Angelus exact donor channel contract changed");
+assert.match(runtime,/data-ao-incarnation="true"/,"Angelus lost the exact Incarnation focus marker");
+assert.match(runtime,/ritualSlotMarkup\('gesture','ao-live-profound-bow'/,"Angelus lost the donor profound-bow gesture slot");
+assert.match(runtime,/intersectionRatio>=\.56/,"Angelus gesture no longer follows the donor focus threshold");
 assert.match(runtime,/ao-rich-stations/,"Stations semantic rail lost its canonical devotional identity");
 assert.match(runtime,/ao-live-look/,"Stations lost the sourced face-the-Station attention cue");
 assert.match(runtime,/function stationsFx\(\)/,"Stations lost its transition-cinematic presentation hook");
@@ -50,6 +56,12 @@ assert.doesNotMatch(runtime,/view===['"]stations['"][\s\S]{0,900}ao-live-(?:stan
 assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
 assert.match(styles,/pointer-events:none/,"PRAY semantic rails may intercept touch");
 assert.match(styles,/aoP435930SemanticRailIcon\{width:28px/,"PRAY semantic rail icons lost salient desktop geometry");
+assert.match(styles,/grid-template-columns:80px minmax\(0,1fr\)/,"Angelus exact donor rail lost its 80px desktop reader-grid channel");
+assert.match(styles,/min-height:78px/,"Angelus exact donor ritual slot lost its 78px desktop height");
+assert.match(styles,/data-channel="gesture"\] \.aoRitualIcon\{width:48px!important;height:48px!important\}/,"Angelus gesture icon lost donor 48px hierarchy");
+assert.match(styles,/@media\(max-width:720px\)[\s\S]*grid-template-columns:minmax\(0,1fr\)/,"Angelus exact donor rail lost mobile single-column reflow");
+assert.match(styles,/@media\(max-width:620px\)[\s\S]*\.aoRitualRail\{top:70px;flex-direction:row/,"Angelus exact donor rail lost mobile horizontal cue row");
+assert.match(styles,/@keyframes aoRitualHalo\{0%\{opacity:\.5;transform:scale\(\.72\)\}100%\{opacity:0;transform:scale\(1\.42\)\}\}/,"Angelus gesture halo no longer matches donor motion");
 assert.match(styles,/@media\(max-width:560px\)[\s\S]*aoP435930SemanticRailIcon\{width:27px/,"PRAY semantic rail icons lost salient phone geometry");
 assert.match(runtime,/function decorateRosaryFx\(r\)/,"Rosary lost its live FX presentation hook");
 assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
