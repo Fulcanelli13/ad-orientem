@@ -4,6 +4,7 @@ import {
   SEASONAL_PRACTICES_V381,
   TRADITIONAL_LEARN_SOURCES_V381,
 } from "./traditional-life-data.js";
+import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 export const TRADITIONAL_LEARN_VERSION="38.1-modular-learn-extraction";
 export const TRADITIONAL_LEARN_ROOT_ID="ao-learn-traditional-root";
@@ -19,6 +20,7 @@ export const TRADITIONAL_LEARN_ROUTES=Object.freeze({
 
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const nl=v=>esc(v).replace(/\n/g,"<br>");
+const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const stateOf=win=>win?.AO_RUNTIME_V8?.store?.getState?.()||{};
 const isFr=win=>stateOf(win)?.language==="fr"||String(win?.document?.documentElement?.lang||"").toLowerCase().startsWith("fr");
 const L=(win,en,fr)=>isFr(win)?(fr||en):en;
@@ -51,7 +53,7 @@ function actions(items){
   return `<div class="aoLearnTradActions">${items.map(item=>`<button type="button" class="${item.primary?"primary":""}" ${item.route?`data-ao-tradlearn-route="${esc(item.route)}"`:""} ${item.prayer?`data-ao-tradlearn-prayer="${esc(item.prayer)}"`:""} ${item.nuptial?"data-ao-tradlearn-nuptial":""}>${esc(item.label)}</button>`).join("")}</div>`;
 }
 function top(win,title){
-  return `<style data-ao-traditional-learn-style>${css()}</style><header class="aoLearnTradTop"><button type="button" data-ao-tradlearn-back aria-label="${esc(L(win,"Back","Retour"))}">←</button><div><small>FORMATION</small><strong>${esc(title)}</strong></div><span aria-hidden="true"></span></header>`;
+  return `<style data-ao-traditional-learn-style>${css()}</style><header class="aoLearnTradTop"><button type="button" data-ao-tradlearn-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>FORMATION</small><strong>${esc(title)}</strong></div><span aria-hidden="true"></span></header>`;
 }
 function shell(win,title,intro,status,body){
   return `${top(win,title)}<main class="aoLearnTradWrap"><p class="aoLearnTradIntro">${esc(intro)}</p><span class="aoLearnTradStatus">${esc(status)}</span>${body}</main>`;
@@ -174,7 +176,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
   }
   function close(){
     const node=root();if(node){const active=win?.document?.activeElement;if(node.contains(active))try{active.blur?.()}catch{}node.remove()}
-    const f=state.returnFocus;state.route=null;state.screen="module";state.prayerId=null;state.trainerReveal=false;state.returnFocus=null;try{f?.focus?.({preventScroll:true})}catch{}return true;
+    state.route=null;state.screen="module";state.prayerId=null;state.trainerReveal=false;state.returnFocus=null;return true;
   }
   async function handoff(route){
     close();
