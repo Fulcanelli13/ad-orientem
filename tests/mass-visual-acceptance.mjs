@@ -225,7 +225,8 @@ try{
   assert.ok(consecration.secondaryTexts.some(x=>/THIS IS MY BODY/i.test(x)),"Host Consecration lost vernacular support beneath Latin");
   assert.ok(consecration.rubricCount>=1,"elevation action still renders as ordinary prayer prose");
   assert.ok(consecration.consecrationWordsCount>=1,"Words of Consecration lost dedicated salience");
-  assert.equal(consecration.stageLeft,"false","empty faithful cue rail still consumes phone width at the Consecration");
+  assert.equal(consecration.stageLeft,"true","donor LIVE faithful rail disappeared when no transient cue was active");
+  assert.equal(consecration.stageRight,"true","donor LIVE audio rail disappeared at the Consecration");
   assert.notEqual(consecration.guideShort,"","short Guide rubric is not visible in the state ribbon");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
@@ -386,9 +387,52 @@ try{
   assert.equal(lastGospelRise.leftRail,"true");
   assert.equal(lastGospelRise.targetActive,"true");
 
+  // Donor-parity guard for the regression visible on wide browsers: the reader
+  // must remain a centred ritual surface, not expand into a dashboard-width card.
+  await page.setViewportSize({width:1440,height:900});
+  await page.waitForTimeout(80);
+  const wide=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    const mode=root?.querySelector(".ao-mode-ribbon");
+    const viewport=root?.querySelector(".ao-card-viewport");
+    const card=root?.querySelector(".ao-prayer-card");
+    const body=root?.querySelector(".ao-prayer-body");
+    const left=root?.querySelector(".ao-rail-left");
+    const right=root?.querySelector(".ao-rail-right");
+    const nonActive=[...root?.querySelectorAll?.(".ao-reader-paragraph:not([data-active='true'])")??[]]
+      .map(node=>Number.parseFloat(getComputedStyle(node).opacity))
+      .filter(Number.isFinite);
+    const rect=x=>x?(()=>{const r=x.getBoundingClientRect();return {width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom}})():null;
+    const cs=card?getComputedStyle(card):null;
+    return {
+      shell:rect(root),
+      modeRibbon:rect(mode),
+      cardViewport:rect(viewport),
+      prayerBody:rect(body),
+      cardBorderTop:cs?.borderTopWidth??null,
+      cardBackgroundImage:cs?.backgroundImage??null,
+      cardBoxShadow:cs?.boxShadow??null,
+      leftRailDisplay:left?getComputedStyle(left).display:null,
+      rightRailDisplay:right?getComputedStyle(right).display:null,
+      nonActiveOpacityMin:nonActive.length?Math.min(...nonActive):null,
+    };
+  });
+  assert.ok(wide.modeRibbon?.width<340,"mode selector regressed into browser-width tabs: "+JSON.stringify(wide));
+  assert.ok(wide.cardViewport?.width<=1010,"Mass centre reader expands too wide on desktop: "+JSON.stringify(wide));
+  assert.ok(wide.prayerBody?.width<=770,"prayer measure lost donor maximum width: "+JSON.stringify(wide));
+  assert.equal(wide.cardBorderTop,"0px","giant bordered prayer card chrome returned");
+  assert.equal(wide.cardBackgroundImage,"none","giant panel background returned behind prayer text");
+  assert.equal(wide.cardBoxShadow,"none","giant card shadow returned");
+  assert.equal(wide.leftRailDisplay,"flex","left ritual rail is not persistent in LIVE");
+  assert.equal(wide.rightRailDisplay,"flex","right ritual rail is not persistent in LIVE");
+  if(wide.nonActiveOpacityMin!=null)assert.ok(wide.nonActiveOpacityMin>=0.39,
+    "surrounding prayer text became unreadably dark again: "+JSON.stringify(wide));
+  await page.screenshot({path:resolve(out,"13-mass-wide-donor-shell.png"),fullPage:false});
+
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,consecration,wordsState,elevationState,
     salience:{gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
+    wide,
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
