@@ -340,6 +340,35 @@ function clearRosaryDonorReturn(){
  const root=rosaryDonorRoot();if(root)delete root.dataset.aoPrayRosaryReturn;
  rosaryDonorReturnSnapshot=null;externalResume=null;
 }
+function returnFromRosaryDonor(e,root,snapshot){
+ if(!root||!snapshot)return false;
+ e?.preventDefault?.();e?.stopImmediatePropagation?.();
+ clearRosaryDonorReturn();
+ try{
+  const api=window.AOTraditionalPrayerBook;
+  if(typeof api?.close==='function')api.close({silent:true});
+ }catch{}
+ // Some preserved PrayerBook builds expose openModule/getState but no close method.
+ // In that case the exact-donor presentation layer must only close the visible shell;
+ // it must not mutate Rosary engine state.
+ if(root.classList?.contains('open')){
+  root.classList.remove('open');
+  root.setAttribute('aria-hidden','true');
+ }
+ reopenResume(snapshot);
+ return true;
+}
+function bindRosaryDonorBack(root){
+ const back=root?.querySelector?.('.lab-back[data-pb-back],.lab-back');
+ if(!back||back.dataset.aoRosaryReturnBound==='1')return false;
+ back.dataset.aoRosaryReturnBound='1';
+ back.addEventListener('click',e=>{
+  const snapshot=readRosaryDonorReturn();
+  if(!snapshot||!root.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]'))return;
+  returnFromRosaryDonor(e,root,snapshot);
+ },true);
+ return true;
+}
 function syncRosaryPrefs(raw=S.rosary){
  const prefs=normalizeRosaryPrefs(raw);
  try{window.AO_ROSARY_V381?.setForm?.(prefs.form)}catch{}
@@ -503,6 +532,7 @@ function decorateRosaryExact(r){
  r.querySelectorAll('.aoP435930RosarySemanticRails').forEach(x=>x.remove());
  const info=rosaryLiveInfo();if(!info?.state?.set)return false;
  const shell=r.querySelector('.pbShell');if(!shell)return false;
+ bindRosaryDonorBack(r);
  const existing=shell.querySelector(':scope > .aoRosaryRitualGrid');
  const st=rosaryExactState(info);
  if(existing){
@@ -937,15 +967,10 @@ function onChange(e){const x=e.target;
 function onInput(e){const x=e.target;if(x.matches('[data-p435930-since]'))CONF.since=x.value;if(x.matches('[data-p435930-lib-search]')){LIB.q=x.value;const pos=x.selectionStart;render();const n=document.querySelector('[data-p435930-lib-search]');n?.focus();try{n?.setSelectionRange(pos,pos)}catch{}}}
 // Keep shared Rosary preferences synchronized when the preserved canonical player changes them.
 document.addEventListener('click',e=>{
- const donorBack=e.target.closest?.('#aoPrayerBookRoot .lab-back[data-pb-back]'),donorRoot=rosaryDonorRoot(),donorResume=readRosaryDonorReturn();
+ const donorBack=e.target.closest?.('#aoPrayerBookRoot .lab-back[data-pb-back],#aoPrayerBookRoot .lab-back'),donorRoot=rosaryDonorRoot(),donorResume=readRosaryDonorReturn();
  if(donorBack&&donorResume&&donorRoot?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]')){
-  // The preserved PrayerBook owns its internal Rosary state, but modular PRAY owns
-  // the handoff return. The session-only snapshot is also held on the donor root,
-  // which survives every preserved-engine rerender and cannot be lost to shell races.
-  e.preventDefault();e.stopImmediatePropagation();
-  clearRosaryDonorReturn();
-  window.AOTraditionalPrayerBook?.close?.({silent:true});
-  reopenResume(donorResume);
+  // Modular PRAY owns the return handoff, while the preserved engine keeps Rosary state.
+  returnFromRosaryDonor(e,donorRoot,donorResume);
   return
  }
  const overviewOpen=e.target.closest?.('[data-r23-overview-open]');if(overviewOpen){
