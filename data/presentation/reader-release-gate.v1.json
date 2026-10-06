@@ -1,9 +1,9 @@
 {
   "schema": "ao-r17-reader-release-gate-v1",
-  "version": "4.9.0",
+  "version": "5.0.0",
   "status": "FINAL_NATIVE_READY",
   "productionDefault": "R17_NATIVE",
-  "releaseRule": "R17 native remains the production reader. Actual index.html phone-Chromium acceptance is explicit for the complete certified special-structure scope: pre-Mass rites, Good Friday, Easter Vigil, Nuptial insertions, and all supported following-action lifecycles. Legacy remains explicit rollback/debug only.",
+  "releaseRule": "R17 native is the only production Mass reader and presentation owner. Actual index.html browser acceptance remains required for certified liturgical/runtime scope. Historical legacy, shadow, rescue and mirror readers are evidence only and may not be selected, mounted, or used as production fallback.",
   "protectedInvariants": [
     {
       "id": "V183_CARD_COUNT_HISTORICAL_REFERENCE",
@@ -51,7 +51,7 @@
     },
     {
       "id": "DEPLOYMENT_ROLLBACK_PROTECTION",
-      "status": "LEGACY_BASELINE_MAY_NOT_OVERWRITE_R17_MOUNT"
+      "status": "HISTORICAL_BASELINES_NEVER_MOUNT_IN_PRODUCTION"
     },
     {
       "id": "SOLEMN_PAX_SEPARATION",
@@ -901,12 +901,12 @@
       "productionDefault": "R17_NATIVE",
       "browserEntry": "src/mass/browser-entry.js",
       "gate": "src/mass/reader-gate.js",
-      "legacyPolicy": "EXPLICIT_ROLLBACK_OR_SHADOW_ONLY",
-      "rollbackQuery": "?aoR17Reader=legacy",
+      "legacyPolicy": "NO_PRODUCTION_LEGACY_OR_SHADOW_RENDERER",
       "guarantees": [
-        "native reader boots without starting the legacy live renderer",
-        "native mount failures fail closed rather than silently falling back to the obsolete mirror",
-        "resolved Proper can enter without legacy assembly-state dependency",
+        "native reader is the sole production Mass presentation owner",
+        "query string and localStorage cannot select legacy, shadow, rescue or mirror renderers",
+        "native mount failures fail closed rather than falling back to another Mass UI",
+        "resolved Proper can enter without legacy presentation-state dependency",
         "FOLLOW_CONGREGATION uses observed posture when available and sourced posture when no observer exists",
         "production native mode reads no implicit legacy DOM state",
         "Palm and Ash native preceding rites pass the actual index.html phone path through Introit handoff and Back",
@@ -944,7 +944,8 @@
         "followingActionClusterRealShell": true,
         "requiemFuneralBranchRealShell": true,
         "nuptialRealShell": true
-      }
+      },
+      "presentationOwner": "R17_NATIVE_PRODUCTION"
     },
     {
       "id": "REAL_APP_SHELL_ACCEPTANCE",
@@ -1166,8 +1167,10 @@
     "requireSourceFirstCanonMap": true,
     "requireSourceFirstLiveStructure": true,
     "requireRealAppShellAcceptance": true,
-    "legacyRollbackExplicitOnly": true,
-    "productionNativeDefault": true
+    "legacyRollbackExplicitOnly": false,
+    "productionNativeDefault": true,
+    "productionLegacyRendererAllowed": false,
+    "singlePresentationOwnerRequired": true
   },
   "pilotRelease": {
     "status": "SUPERSEDED_BY_FINAL_MAINLINE",
@@ -1243,7 +1246,7 @@
     "schema": "ao-final-app-release-v1",
     "status": "PRODUCTION_NATIVE_DEFAULT",
     "reader": "R17_NATIVE",
-    "rollback": "LEGACY_EXPLICIT_ONLY",
+    "rollback": "NONE_PRODUCTION_NATIVE_ONLY",
     "fullYearSpecialStructureParity": true,
     "phoneTouchCertified": true,
     "sourceFirstLiveCertified": true,
@@ -1273,6 +1276,7 @@
         "tests/app-shell-easter-vigil-e2e.mjs"
       ]
     },
-    "inReaderModeSwitchCertified": true
+    "inReaderModeSwitchCertified": true,
+    "presentationOwner": "R17_NATIVE_PRODUCTION"
   }
 }
