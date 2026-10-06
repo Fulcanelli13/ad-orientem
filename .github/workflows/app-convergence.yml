@@ -23,6 +23,7 @@ on:
       - "tests/source-transport-compat.mjs"
       - "tests/field-current-week-e2e.mjs"
       - "tests/release-candidate-field-qa.mjs"
+      - "tests/release-candidate-interaction-qa.mjs"
       - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
       - ".github/workflows/app-convergence.yml"
@@ -80,6 +81,7 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: npm run test:rc-interaction-qa
       - run: npm run test:phone
       - run: node tests/app-shell-journey-e2e.mjs
       - run: npm run test:field-current-week
