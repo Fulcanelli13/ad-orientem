@@ -477,23 +477,23 @@ try{
   assert.equal(rosaryOpening.ritualGrid,1,"Rosary lost the donor ritual reader grid");
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
 
-  // Advance through the preserved engine by visible Next controls until the first
-  // mystery boundary. Exact donor parity governs presentation, not a duplicated
-  // hard-coded engine step count.
-  let reachedMystery=false;
-  for(let i=0;i<14;i++){
-    reachedMystery=await page.evaluate(()=>{
-      const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[];
-      return steps[state?.step]?.kind==="mystery";
-    });
-    if(reachedMystery)break;
+  // Follow the preserved engine's actual opening sequence using only the visible
+  // Next control. The donor presentation must attach at the engine's own first
+  // mystery boundary; no duplicate step-count model is introduced here.
+  const firstMystery=await page.evaluate(()=>{
+    const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[];
+    return {current:Number(state?.step)||0,target:steps.findIndex(step=>step?.kind==="mystery"),total:steps.length};
+  });
+  assert.ok(firstMystery.target>=firstMystery.current,"Preserved Rosary engine exposes no reachable mystery boundary");
+  assert.ok(firstMystery.target<firstMystery.total,"Preserved Rosary first mystery index is outside its step list");
+  for(let i=firstMystery.current;i<firstMystery.target;i++){
     await page.locator("#aoPrayerBookRoot [data-lab-rosary-next]").click();
     await page.waitForTimeout(35);
   }
   assert.equal(await page.evaluate(()=>{
     const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[];
     return steps[state?.step]?.kind;
-  }),"mystery","Rosary visible Next path did not reach Mystery I within the opening sequence");
+  }),"mystery","Rosary visible Next path did not reach the engine-owned Mystery I boundary");
   await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot .rosary-decade-bar-v15 i.current")?.dataset?.mystery==="1",null,{timeout:5000});
   await page.waitForSelector("#ao-cinema-transition.aoCinemaTransitionOn",{state:"visible",timeout:2000});
   const rosaryMysteryFx=await page.evaluate(()=>({
