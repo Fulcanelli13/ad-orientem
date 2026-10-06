@@ -1,40 +1,28 @@
-// Final production feature gate for the native Mass reader.
-// Native is the default. Legacy is an explicit rollback/debug path only.
+// Definitive production gate for the Mass reader.
+//
+// There is exactly one production presentation owner: the native modular reader.
+// Historical LEGACY/SHADOW renderers remain repository evidence only and are not
+// selectable by query string, localStorage, or runtime fallback.
 
-export const READER_UI_MODES = Object.freeze(["NATIVE","LEGACY","SHADOW"]);
+export const READER_UI_MODES = Object.freeze(["NATIVE"]);
 export const READER_UI_STORAGE_KEY = "ao-r17-reader-ui";
 
-function normalize(value){
-  const raw=String(value??"").trim().toLowerCase();
-  if(raw==="legacy"||raw==="rollback") return "LEGACY";
-  if(raw==="shadow") return "SHADOW";
-  if(raw==="preview"||raw==="r17"||raw==="native"||raw==="") return "NATIVE";
+export function resolveReaderUiMode(){
   return "NATIVE";
 }
 
-export function resolveReaderUiMode({search="",stored=null}={}){
-  let query=null;
-  try{
-    const p=new URLSearchParams(String(search||""));
-    query=p.get("aoR17Reader");
-  }catch{}
-  return normalize(query??stored);
+export function readBrowserReaderUiMode(){
+  return "NATIVE";
 }
 
-export function readBrowserReaderUiMode(win=globalThis){
-  let stored=null;
-  try{stored=win?.localStorage?.getItem?.(READER_UI_STORAGE_KEY)??null}catch{}
-  return resolveReaderUiMode({search:win?.location?.search??"",stored});
+export function readerModeAllowsLegacyDom(){
+  return false;
 }
 
-export function readerModeAllowsLegacyDom(mode){
-  return ["LEGACY","SHADOW"].includes(normalize(mode));
+export function readerModeRunsShadowAudit(){
+  return false;
 }
 
-export function readerModeRunsShadowAudit(mode){
-  return normalize(mode)==="SHADOW";
-}
-
-export function readerModeMountsPreview(mode){
-  return normalize(mode)==="NATIVE";
+export function readerModeMountsPreview(){
+  return true;
 }
