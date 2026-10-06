@@ -263,6 +263,7 @@ try{
     await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});
     await openSurface(page,"home",viewport.width);
 
+    if(consoleErrors.length||failedResources.length)console.log("RC field QA resource diagnostics",JSON.stringify({viewport:viewport.width,consoleErrors,failedResources},null,2));
     assert.deepEqual(pageErrors,[],viewport.width+"px assembled app emitted page errors");
     assert.deepEqual(consoleErrors,[],viewport.width+"px assembled app emitted console errors");
     assert.deepEqual(failedResources,[],viewport.width+"px assembled app requested missing production resources");
