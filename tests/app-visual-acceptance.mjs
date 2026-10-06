@@ -767,10 +767,21 @@ try{
     const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']"),shell=root?.querySelector(".pbShell");
     const candidates=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])];
     const card=candidates.find(node=>node.offsetParent!==null&&/Our Father|Pater noster/i.test(node.innerText??""))||candidates.find(node=>node.offsetParent!==null)||null,r=card?.getBoundingClientRect(),sr=shell?.getBoundingClientRect(),rr=root?.getBoundingClientRect();
-    const visibleLegacy=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>node.getClientRects().length>0&&getComputedStyle(node).visibility!=="hidden").length;
+    const legacyNodes=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])];
+    const legacyDetails=legacyNodes.map(node=>{
+      const cs=getComputedStyle(node),rect=node.getBoundingClientRect();
+      return {
+        tag:node.tagName,className:node.className||"",aoRecitation:node.dataset?.aoRecitation??null,
+        text:(node.textContent||"").replace(/\s+/g," ").trim().slice(0,80),
+        display:cs.display,visibility:cs.visibility,opacity:cs.opacity,
+        rects:node.getClientRects().length,x:Math.round(rect.x),y:Math.round(rect.y),w:Math.round(rect.width),h:Math.round(rect.height),
+        parent:node.parentElement?.className||node.parentElement?.tagName||"",
+      };
+    });
+    const visibleLegacy=legacyDetails.filter(x=>x.rects>0&&x.visibility!=="hidden"&&Number(x.opacity)!==0).length;
     const css=shell?getComputedStyle(shell):null;
     return {
-      shell:sr?.width??0,cardWidth:r?.width??0,cardHeight:r?.height??0,visibleLegacy,
+      shell:sr?.width??0,cardWidth:r?.width??0,cardHeight:r?.height??0,visibleLegacy,legacyDetails,
       nested:shell?.querySelectorAll(":scope > section.aoRosaryRitualGrid").length??0,
       rootWidth:rr?.width??0,cssWidth:css?.width??"",maxWidth:css?.maxWidth??"",boxSizing:css?.boxSizing??"",
       transform:css?.transform??"",paddingLeft:css?.paddingLeft??"",paddingRight:css?.paddingRight??"",
@@ -781,7 +792,7 @@ try{
   assert.ok(wideRosary.shell>=748&&wideRosary.shell<=762,"Rosary wide shell diverged from the v3.4.10 760px preserved donor measure: "+JSON.stringify(wideRosary));
   assert.ok(wideRosary.cardWidth>=680,"Rosary wide viewport collapsed the actual prayer column");
   assert.ok(wideRosary.cardHeight>0&&wideRosary.cardHeight<720,"Rosary wide Our Father reproduced the vertical word-stack regression");
-  assert.equal(wideRosary.visibleLegacy,0,"Rosary wide viewport exposes duplicate recitation controls");
+  assert.equal(wideRosary.visibleLegacy,0,"Rosary wide viewport exposes duplicate recitation controls: "+JSON.stringify(wideRosary.legacyDetails));
   assert.equal(wideRosary.nested,0,"Rosary wide viewport reparents donor DOM into a nested ritual grid");
   await wideContext.close();
 
