@@ -1,0 +1,58 @@
+{
+  "schema": "ao-mass-v180-v183-step-reconciliation-v1",
+  "version": "1.0.0",
+  "status": "RECONCILED_FOR_PRODUCT_NONHISTORICAL",
+  "rule": "v1.80 is the direct executable presentation/choreography donor and reports 38 LIVE prayer cards. Later v1.81/v1.83 evidence establishes a frozen 48-step LIVE concept. Production therefore preserves the v1.80 presentation family while using the certified source-first 48-step product projection over the 39-step canonical source model. This is product reconciliation, not recovery of historical v1.83 C01-C48 identities.",
+  "authorities": {
+    "presentationDonor": {
+      "version": "1.80",
+      "livePrayerCards": 38,
+      "file": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html"
+    },
+    "laterStepCount": {
+      "version": "1.83",
+      "visibleLiveSteps": 48,
+      "evidence": "data/presentation/v1.83-reader-map-recovery.v1.json"
+    },
+    "canonicalSource": {
+      "steps": 39,
+      "owner": "SOURCE_FIRST_LIVE"
+    },
+    "productionPresentation": {
+      "steps": 48,
+      "owner": "SOURCE_FIRST_LIVE_PRODUCT_48",
+      "file": "src/mass/reader-live-product48.js"
+    }
+  },
+  "arithmetic": {
+    "directDonorCards": 38,
+    "canonicalSourceSteps": 39,
+    "recoveredProductDecompressions": 9,
+    "productionVisibleSteps": 48,
+    "historicalV181Delta": 10,
+    "explanation": "The production source model is already one step more decompressed than the v1.80 presentation count. The product layer then applies the nine directly recovered/uniquely triangulated semantic decompressions, yielding 39 + 9 = 48. The historically unresolved tenth v1.81 Canon split is not named or reverse-engineered."
+  },
+  "invariants": [
+    "historicalV183IdentityClaim remains false",
+    "all canonical source blocks appear exactly once and in source order in the 48-step product",
+    "all reader paragraphs appear exactly once and in source order in the 48-step product",
+    "split presentation steps own no canonical event identity",
+    "Host words/elevation remain C0173 -> C0174",
+    "Chalice words/elevation remain C0180 -> C0181",
+    "Gradual remains B021, Alleluia/Tract B022 separate, Munda begins B023",
+    "the unresolved historical Canon boundary remains recorded as unresolved evidence and is never promoted to a historical card ID"
+  ],
+  "historicalGap": {
+    "status": "PRESERVED_NON_BLOCKING",
+    "area": "CANON",
+    "exactBoundaryRecovered": false,
+    "historicalCardIdsRecovered": false,
+    "releaseImpact": "NONE_UNLESS_HISTORICAL_V183_IDENTITY_IS_CLAIMED",
+    "authority": "data/presentation/v1.83-reader-map-recovery.v1.json"
+  },
+  "acceptance": [
+    "tests/reader-live-product48.mjs proves 48 visible steps over 39 source steps",
+    "tests/v1.83-reader-parity.mjs proves historical identity is not claimed and the one Canon split remains unresolved",
+    "tests/mass-v180-donor-parity.mjs locks v1.80 presentation authority separately from later 48-step product count"
+  ]
+}
