@@ -182,7 +182,7 @@ const SHELL_STYLE = `
   background:rgba(15,22,18,.82);border:1px solid rgba(238,241,233,.105);border-radius:13px;box-shadow:none;
   opacity:.18;overflow:hidden;transition:opacity .22s ease,transform .28s ease,box-shadow .28s ease,border-color .22s ease,background .22s ease,visibility .22s
 }
-.ao-rail-item[data-channel="priest-voice"]{opacity:.88}
+.ao-rail-item[data-channel="posture"],.ao-rail-item[data-channel="priest-voice"]{opacity:.88}
 .ao-rail-item[data-active="true"]{opacity:1;color:#edf0e9}
 .ao-rail-item[data-channel="gesture"][data-active="false"],
 .ao-rail-item[data-channel="response"][data-active="false"],
@@ -404,7 +404,7 @@ export function buildReaderShellMarkup(prepared = {}) {
 
   <div class="ao-state-ribbon" aria-live="polite">
     <div class="ao-state-cell" data-side="faithful" data-channel="posture">
-      <span class="ao-icon-mask" data-icon-slot="posture" hidden></span>
+      <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span></span>
     </div>
     <button class="ao-state-guide" type="button" data-role="guide-button" disabled aria-label="Open Guide and rubrics">
@@ -428,6 +428,7 @@ export function buildReaderShellMarkup(prepared = {}) {
 
   <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
     <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful cues">
+      <div class="ao-rail-item" data-channel="posture" data-active="true"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" aria-hidden="true">—</span></div>
       <div class="ao-rail-item" data-channel="gesture" data-active="false"><span class="ao-icon-mask" data-icon-slot="gesture" hidden></span><span class="ao-rail-copy" data-role="gesture">—</span></div>
       <div class="ao-rail-item" data-channel="response" data-active="false"><span class="ao-icon-mask" data-icon-slot="response" hidden></span><span class="ao-rail-copy" data-role="response">—</span></div>
     </aside>
@@ -794,6 +795,7 @@ export function createReaderDomAdapter({
     syncRailVisibility(root);
 
     applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
+    applyIcon(root,"posture-top",current.postureIconKey,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
     applyIcon(root,"response",current.responseIconKey,iconResolver);
