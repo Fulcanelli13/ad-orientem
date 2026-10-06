@@ -12,6 +12,11 @@ assert.equal(
   `https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/${DIVINUM_OFFICIUM_PIN}/web/www/horas/Francais/Commune/C3a.txt`,
   "French Common did not redirect to the canonical horas tree"
 );
+assert.equal(
+  rewriteResolvedSourceUrl(missalemeumBase+"Commune/Coronatio.txt"),
+  `https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/${DIVINUM_OFFICIUM_PIN}/web/www/missa/Francais/Commune/Coronatio.txt`,
+  "Mass-only French Coronatio Common was incorrectly redirected to horas"
+);
 
 const doBase=`https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/${DIVINUM_OFFICIUM_PIN}/`;
 assert.equal(
@@ -23,6 +28,21 @@ assert.equal(
   doBase+"web/www/horas/English/Commune/C7a.txt"
 );
 assert.equal(
+  rewriteResolvedSourceUrl(doBase+"web/www/missa/English/Commune/Coronatio.txt"),
+  doBase+"web/www/missa/English/Commune/Coronatio.txt",
+  "Mass-only English Coronatio Common was incorrectly redirected to horas"
+);
+assert.equal(
+  rewriteResolvedSourceUrl(doBase+"web/www/missa/Francais/Commune/Coronatio.txt"),
+  doBase+"web/www/missa/Francais/Commune/Coronatio.txt",
+  "Mass-only French Coronatio Common was incorrectly redirected to horas"
+);
+assert.equal(
+  rewriteResolvedSourceUrl(doBase+"web/www/missa/English/Commune/Propaganda.txt"),
+  doBase+"web/www/missa/English/Commune/Propaganda.txt",
+  "Mass-only English Propaganda Common was incorrectly redirected to horas"
+);
+assert.equal(
   rewriteResolvedSourceUrl(doBase+"obsolete/missa/French/Commune/C4b.txt"),
   doBase+"web/www/horas/Francais/Commune/C4b.txt"
 );
@@ -30,4 +50,4 @@ assert.equal(
 const ordinary=doBase+"web/www/missa/Latin/Sancti/10-07.txt";
 assert.equal(rewriteResolvedSourceUrl(ordinary),ordinary,"ordinary Proper URL was rewritten unexpectedly");
 
-console.log("PASS source transport compatibility: French roots and Mass Commons resolve to canonical pinned paths.");
+console.log("PASS source transport compatibility: French roots and Mass Commons follow pinned missa/horas topology without known 404 rewrites.");
