@@ -106,8 +106,18 @@ assert.ok(runtime.includes("if(!document.getElementById('aoPrayerBookRoot')?.cla
   "stale Rosary donor return ownership is not cleared when the donor is actually closed");
 assert.doesNotMatch(runtime,/if\(!silent\)\{navStack=\[\];externalResume=null;rosaryDonorReturnSnapshot=null\}/,
   "generic modular close must not erase an active Rosary donor return snapshot");
-assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
-assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader grid");
+assert.match(runtime,/function decorateRosary\(\)\{\s*const r=rosaryDonorRoot\(\)/,"Rosary decorator is not bound to the actually visible donor root");
+assert.doesNotMatch(runtime,/for\(const node of children\)center\.appendChild\(node\)/,"Rosary decorator still reparents the preserved PrayerBook DOM and can collapse donor geometry");
+assert.match(runtime,/function ownRosaryDonorRoots\(active\)/,"Rosary lost single-visible-root ownership");
+assert.match(runtime,/assetId:'ao-live-sign-cross'/,"Rosary still references the removed ao-posture-sign-cross asset id");
+assert.doesNotMatch(runtime,/assetId:'ao-posture-sign-cross'/,"Removed Sign-of-Cross asset id survived in production PRAY");
+assert.match(styles,/data-ao-rosary-active-root="false"[^}]*pointer-events:none/,"Inactive duplicate PrayerBook roots can still intercept pointer input");
+assert.match(styles,/data-ao-rosary-exact-donor="v3\.4\.14"[^\n]*\.lab-recitation-mode[\s\S]*display:none!important/,"Rosary still exposes duplicate native recitation controls");
+assert.match(styles,/width:min\(820px,100%\)!important/,"PRAY shell diverged from the integrated v3.4.10 820px composition");
+assert.match(styles,/data-ao-rosary-active-root="true"[^\n]*pbShell\[data-ao-rosary-exact-donor="v3\.4\.14"\][^\{]*\{[^\}]*max-width:760px!important[^\}]*box-sizing:border-box!important/,"Active Rosary shell lost the v3.4.10 760px composition measure");
+assert.match(styles,/aoP435930ModuleGrid\{display:grid;grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/,"PRAY wide hub lost the v3.4.10 two-column module grid");
+assert.match(styles,/@media\(max-width:560px\)\{#aoPray435930 \.aoP435930ModuleGrid\{grid-template-columns:1fr\}/,"PRAY phone hub lost the v3.4.10 single-column collapse");
+assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader ownership marker");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
 assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary lost donor five-mystery progress projection");
 assert.match(runtime,/rosary-decade-bar-v15/,"Rosary lost the donor five-segment progress bar");
