@@ -15,8 +15,8 @@ const BASE=window.AO_MODULES;
 const PRAY_CTX={surface:'domain',domain:'pray'};
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 const assetIcon=(assetId,className='aoP435930UiIcon')=>{
- if(assetId==='ao-ui-back')return `<svg class="${esc(className)}" data-ao-asset-id="ao-ui-back" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M10.5 6.5 5 12l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
- if(assetId==='ao-ui-close')return `<svg class="${esc(className)}" data-ao-asset-id="ao-ui-close" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+ if(assetId==='ao-ui-back')return `<svg class="${esc(className)}" data-ao-inline-asset-id="ao-ui-back" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M10.5 6.5 5 12l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+ if(assetId==='ao-ui-close')return `<svg class="${esc(className)}" data-ao-inline-asset-id="ao-ui-close" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
  const url=resolveCanonicalAssetUrl(assetId);
  if(!url)return'';
  return `<span class="${esc(className)}" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
@@ -995,6 +995,19 @@ document.addEventListener('click',e=>{
   e.preventDefault();e.stopPropagation();
   if(api?.setStep?.(target)!==false){closeRosaryDonorOverview(r,{restoreFocus:false});setTimeout(decorateRosary,0)}
   return
+ }
+ const liveNav=e.target.closest?.('[data-lab-rosary-next],[data-lab-rosary-prev]');if(liveNav){
+  const root=rosaryDonorRoot(),api=window.AO_ROSARY_V381,st=api?.state?.(),steps=api?.steps?.()||[];
+  if(root?.dataset?.aoRosaryActiveRoot==='true'&&root.contains(liveNav)&&typeof api?.setStep==='function'&&steps.length){
+   const current=Math.max(0,Math.min(steps.length-1,Math.trunc(Number(st?.step)||0)));
+   const delta=liveNav.matches('[data-lab-rosary-prev]')?-1:1;
+   const target=Math.max(0,Math.min(steps.length-1,current+delta));
+   if(target!==current){
+    e.preventDefault();e.stopImmediatePropagation();
+    if(api.setStep(target)!==false)setTimeout(decorateRosary,0);
+    return
+   }
+  }
  }
  const f=e.target.closest?.('[data-v38-rosary-form]');if(f){S.rosary.form=f.dataset.v38RosaryForm==='devotional'?'devotional':'standard';save();setTimeout(decorateRosary,20)}
  const r=e.target.closest?.('[data-ao-recitation]');if(r){S.rosary.recitation=r.dataset.aoRecitation==='group'?'group':'individual';save();setTimeout(decorateRosary,20)}
