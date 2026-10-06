@@ -201,6 +201,26 @@ const ROSARY_EXACT_DONOR_CSS=`/* Exact v3.4.14 Rosary live-player presentation.
 html[data-reduced-motion="true"] #aoPrayerBookRoot .aoRosaryRitualCenter.r24-has-mystery-art::before{transition:none}
 `;
 
+const ROSARY_EXACT_OVERVIEW_CSS=`
+#aoPrayerBookRoot .r23-overview-open{width:42px;height:42px;border:1px solid var(--line,var(--border));border-radius:50%;background:transparent;color:var(--gold,var(--liturgical));padding:0;font:700 .58rem/1 var(--font-display,system-ui)}
+#aoPrayerBookRoot .r23-modal{position:fixed;inset:0;display:none;align-items:flex-end;justify-content:center;padding:18px;background:rgba(3,12,20,.74);z-index:15920}
+#aoPrayerBookRoot .r23-modal.open{display:flex}
+#aoPrayerBookRoot .r23-overview-panel{width:min(620px,100%);max-height:min(82vh,760px);overflow:auto;background:#0b253b;color:var(--paper,var(--text));border:1px solid var(--line,var(--border));border-radius:19px;box-shadow:0 20px 60px rgba(0,0,0,.45);padding:18px}
+#aoPrayerBookRoot .r23-overview-head{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+#aoPrayerBookRoot .r23-overview-head small{color:var(--gold,var(--liturgical));font:700 .62rem var(--font-display,system-ui);letter-spacing:.1em;text-transform:uppercase}
+#aoPrayerBookRoot .r23-overview-head h2{margin:3px 0 0}
+#aoPrayerBookRoot .r23-overview-head button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line,var(--border));background:transparent;color:var(--paper,var(--text));font-size:1.4rem;padding:0}
+#aoPrayerBookRoot .r23-overview-section,#aoPrayerBookRoot .r23-overview-row{width:100%;text-align:left;border:1px solid var(--line,var(--border));background:rgba(255,255,255,.025);color:var(--paper,var(--text));border-radius:12px}
+#aoPrayerBookRoot .r23-overview-section{display:flex;justify-content:space-between;gap:12px;padding:11px 12px;margin:7px 0}
+#aoPrayerBookRoot .r23-overview-section small,#aoPrayerBookRoot .r23-overview-copy small{color:var(--muted);margin-top:2px}
+#aoPrayerBookRoot .r23-overview-row{display:grid;grid-template-columns:30px 1fr;gap:9px;padding:12px;margin:8px 0}
+#aoPrayerBookRoot .r23-overview-row.current{border-color:var(--gold,var(--liturgical));background:rgba(199,174,109,.08)}
+#aoPrayerBookRoot .r23-overview-num{width:26px;height:26px;border-radius:50%;border:1px solid var(--line,var(--border));display:grid;place-items:center;color:var(--gold,var(--liturgical));font-size:.78rem}
+#aoPrayerBookRoot .r23-overview-copy strong,#aoPrayerBookRoot .r23-overview-copy small{display:block}
+@media(min-width:760px){#aoPrayerBookRoot .r23-modal{align-items:center}#aoPrayerBookRoot .r23-overview-panel{max-height:78vh}}
+@media(max-width:560px){#aoPrayerBookRoot .r23-modal{padding:10px}#aoPrayerBookRoot .r23-overview-panel{padding:14px;border-radius:16px}}
+`;
+
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
   const style=doc.createElement("style");
@@ -217,6 +237,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-exact-ritual-rail-style",EXACT_RITUAL_RAIL_CSS);
   ensureStyle(doc,"ao-pray-semantic-rails-style",SEMANTIC_RAIL_CSS);
   ensureStyle(doc,"ao-pray-exact-rosary-v3414-style",ROSARY_EXACT_DONOR_CSS);
+  ensureStyle(doc,"ao-pray-exact-rosary-overview-v3414-style",ROSARY_EXACT_OVERVIEW_CSS);
   return true;
 }
 
