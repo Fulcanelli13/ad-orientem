@@ -78,10 +78,10 @@ assert.match(styles,/@media\(max-width:720px\)[\s\S]*grid-template-columns:minma
 assert.match(styles,/@media\(max-width:620px\)[\s\S]*\.aoRitualRail\{top:70px;flex-direction:row/,"Angelus exact donor rail lost mobile horizontal cue row");
 assert.match(styles,/@keyframes aoRitualHalo\{0%\{opacity:\.5;transform:scale\(\.72\)\}100%\{opacity:0;transform:scale\(1\.42\)\}\}/,"Angelus gesture halo no longer matches donor motion");
 assert.match(runtime,/function decorateRosaryExact\(r\)/,"Rosary lost its exact-donor presentation owner");
-assert.ok(runtime.includes("donorBack&&externalResume&&rosaryDonorRoot()?.querySelector?.('.pbShell[data-ao-rosary-exact-donor=\"v3.4.14\"]')"),
-  "Rosary exact-donor back control lost the modular PRAY return bridge");
-assert.match(runtime,/AOTraditionalPrayerBook\?\.close\?\.\(\{silent:true\}\)[\s\S]*AO_V37_SHELL\?\.openDomain\?\.\('pray'\)/,
-  "Rosary donor return no longer closes the preserved PrayerBook before restoring modular PRAY");
+assert.ok(runtime.includes("donorBack&&rosaryDonorReturnSnapshot&&rosaryDonorRoot()?.querySelector?.('.pbShell[data-ao-rosary-exact-donor=\"v3.4.14\"]')"),
+  "Rosary exact-donor back control lost the dedicated modular PRAY return bridge");
+assert.match(runtime,/const snap=rosaryDonorReturnSnapshot;rosaryDonorReturnSnapshot=null;externalResume=null;[\s\S]*AOTraditionalPrayerBook\?\.close\?\.\(\{silent:true\}\);[\s\S]*reopenResume\(snap\)/,
+  "Rosary donor return no longer closes the preserved PrayerBook and restores its captured modular snapshot");
 assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
 assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader grid");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
