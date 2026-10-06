@@ -262,7 +262,7 @@ button.ao-schola-control{cursor:pointer}
 }
 .ao-schola-toggle{grid-column:3;grid-row:1;appearance:none;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);color:#9eada2;border-radius:7px;min-height:28px;padding:4px 8px;font:700 8px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 
-.ao-reader-nav{position:absolute;z-index:5;inset:0;pointer-events:none}
+.ao-reader-nav{position:absolute;z-index:10;inset:0;pointer-events:none}
 .ao-reader-nav button{
   position:absolute;top:52%;width:44px;height:44px;border:0;border-radius:999px;
   background:transparent;color:#828d85;cursor:pointer;pointer-events:auto;
