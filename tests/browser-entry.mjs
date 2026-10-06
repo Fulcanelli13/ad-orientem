@@ -34,7 +34,7 @@ assert.deepEqual(productionAudit.missing,[]);
 assert.deepEqual(productionAudit.required,[...R17_FROZEN_ACTIVE_ICON_KEYS]);
 assert.deepEqual(productionAudit.excluded,[...R17_FROZEN_EXCLUDED_ICON_KEYS]);
 assert.match(productionIcons.stand,/assets\/active\/live-posture\/ao-live-stand\.svg$/);
-assert.match(productionIcons.priest_gospel,/assets\/active\/live-priest-position\/ao-live-priest-gospel-side\.png$/);
+assert.match(productionIcons.priest_gospel,/assets\/active\/live-actors\/ao-live-priest-gospel-side\.png$/);
 for(const key of R17_FROZEN_EXCLUDED_ICON_KEYS)assert.equal(productionIcons[key],undefined,
   key+" was reintroduced despite FROZEN_EXCLUDED status");
 
