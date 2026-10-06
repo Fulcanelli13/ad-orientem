@@ -190,7 +190,7 @@ const SHELL_STYLE = `
 
 .ao-schola-dock{
   position:absolute;z-index:9;left:50%;right:auto;bottom:62px;transform:translateX(-50%);
-  width:min(calc(100% - 28px),620px);height:var(--ao-schola-height);min-height:42px;max-height:180px;
+  width:min(calc(100% - 28px),700px);height:var(--ao-schola-height);min-height:42px;max-height:180px;
   display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;align-items:center;gap:.55rem;
   padding:.6rem .75rem .48rem;border:1px solid color-mix(in srgb,var(--ao-accent) 28%,rgba(255,255,255,.06));
   border-radius:15px;background:rgba(10,16,12,.97);color:#ddd6cb;
