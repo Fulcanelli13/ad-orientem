@@ -1080,6 +1080,12 @@ export const AO_REMOVED_ASSET_IDS=Object.freeze([
 
 export const AO_SHARED_IDENTITY_MAPPINGS=Object.freeze([
   {
+    "route": "pray.visit_blessed_sacrament",
+    "module_root": "pray.adoration",
+    "asset_id": "ao-rich-adoration",
+    "reason": "A Visit to the Blessed Sacrament is a subview of the Adoration module."
+  },
+  {
     "route": "pray.benediction",
     "module_root": "pray.adoration",
     "asset_id": "ao-rich-adoration",
@@ -1089,6 +1095,21 @@ export const AO_SHARED_IDENTITY_MAPPINGS=Object.freeze([
     "route": "pray.forty_hours",
     "asset_id": "ao-rich-adoration",
     "reason": "Forty Hours intentionally uses the same Eucharistic/Adoration icon."
+  },
+  {
+    "route": "pray.penitential_psalms",
+    "asset_id": "ao-refined-scripture",
+    "reason": "The Seven Penitential Psalms are a Scripture-led devotion; the active Scripture identity is reused rather than reviving the excluded Passion/Penitence artwork."
+  },
+  {
+    "route": "pray.seven_words",
+    "asset_id": "ao-rich-stations",
+    "reason": "The Seven Words is a Passion devotion and intentionally shares the active Stations identity rather than reviving excluded Passion/Penitence artwork."
+  },
+  {
+    "route": "pray.litany_saints",
+    "asset_id": "ao-refined-devotions",
+    "reason": "The Litany of the Saints uses the active general Devotions identity because V4 has no dedicated Litany-of-Saints identity."
   }
 ]);
 
@@ -1109,12 +1130,53 @@ export const AO_LEARN_ROUTE_ASSET_IDS=Object.freeze({
   "today.saint":"ao-refined-saint-of-day",
 });
 
+export const AO_PRAY_ROUTE_ASSET_IDS=Object.freeze({
+  "pray.angelus":"ao-rich-angelus",
+  "pray.angelus_regina":"ao-rich-angelus",
+  "pray.rosary":"ao-rich-rosary",
+  "pray.adoration":"ao-rich-adoration",
+  "pray.visit_blessed_sacrament":"ao-rich-adoration",
+  "pray.benediction":"ao-rich-adoration",
+  "pray.forty_hours":"ao-rich-adoration",
+  "pray.confession":"ao-rich-confession",
+  "pray.stations":"ao-rich-stations",
+  "pray.penitential_psalms":"ao-refined-scripture",
+  "pray.seven_words":"ao-rich-stations",
+  "pray.litany_saints":"ao-refined-devotions",
+  "programme.first_friday":"ao-rich-sacred-heart",
+  "programme.first_saturday":"ao-rich-immaculate-heart",
+  "pray.library":"ao-rich-prayer-library",
+  "pray.novenas":"ao-rich-novenas",
+  "pray.plan_of_life":"ao-rich-plan-of-life",
+  "pray.mental_prayer":"ao-rich-mental-prayer",
+  "pray.sacred_heart":"ao-rich-sacred-heart",
+  "pray.immaculate_heart":"ao-rich-immaculate-heart",
+  "pray.st_joseph":"ao-rich-st-joseph",
+  "pray.holy_spirit":"ao-rich-holy-spirit",
+  "pray.holy_souls":"ao-rich-holy-souls",
+  "pray.spiritual_combat":"ao-rich-spiritual-combat",
+  "pray.eucharistic_life":"ao-rich-eucharistic-life",
+  "pray.recollection":"ao-rich-recollection",
+  "pray.pray_now":"ao-refined-pray-now",
+  "pray.devotions":"ao-refined-devotions",
+  "pray.silence":"ao-refined-silence",
+  "pray.morning_evening":"ao-rich-begin-end-day",
+  "pray.morning":"ao-rich-morning-offering",
+  "pray.night":"ao-rich-night-prayer",
+  "pray.marian":"ao-rich-our-lady-marian-devotions",
+  "pray.examination_of_conscience":"ao-rich-examination-of-conscience",
+});
+
 export function canonicalAssetIdForSurface(surface){
   return AO_APP_SURFACE_ASSET_IDS[String(surface??"").trim()]??null;
 }
 
 export function canonicalAssetIdForLearnRoute(route){
   return AO_LEARN_ROUTE_ASSET_IDS[String(route??"").trim()]??null;
+}
+
+export function canonicalAssetIdForPrayRoute(route){
+  return AO_PRAY_ROUTE_ASSET_IDS[String(route??"").trim()]??null;
 }
 
 export function getCanonicalAsset(assetId){

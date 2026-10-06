@@ -4,8 +4,10 @@ import { HOME_ENRICHER_ICON_ASSET_IDS } from "../src/home/enrichers.js";
 import {
   AO_APP_SURFACE_ASSET_IDS,
   AO_LEARN_ROUTE_ASSET_IDS,
+  AO_PRAY_ROUTE_ASSET_IDS,
   AO_REMOVED_ASSET_IDS,
   canonicalAssetIdForLearnRoute,
+  canonicalAssetIdForPrayRoute,
   canonicalAssetIdForSurface,
   getCanonicalAsset,
 } from "../src/assets/asset-registry.js";
@@ -25,6 +27,32 @@ assert.deepEqual(AO_LEARN_ROUTE_ASSET_IDS,{
   "today.gospel":"ao-refined-scripture",
   "today.saint":"ao-refined-saint-of-day",
 });
+
+const PRAY_HOME_ROUTE_ASSET_IDS=Object.freeze({
+  "pray.angelus_regina":"ao-rich-angelus",
+  "pray.rosary":"ao-rich-rosary",
+  "pray.adoration":"ao-rich-adoration",
+  "pray.benediction":"ao-rich-adoration",
+  "pray.forty_hours":"ao-rich-adoration",
+  "pray.confession":"ao-rich-confession",
+  "pray.stations":"ao-rich-stations",
+  "pray.penitential_psalms":"ao-refined-scripture",
+  "pray.seven_words":"ao-rich-stations",
+  "pray.litany_saints":"ao-refined-devotions",
+  "programme.first_friday":"ao-rich-sacred-heart",
+  "programme.first_saturday":"ao-rich-immaculate-heart",
+  "pray.library":"ao-rich-prayer-library",
+});
+for(const [route,id] of Object.entries(PRAY_HOME_ROUTE_ASSET_IDS)){
+  assert.equal(AO_PRAY_ROUTE_ASSET_IDS[route],id,"PRAY route asset mapping changed: "+route);
+}
+for(const [route,id] of Object.entries(AO_PRAY_ROUTE_ASSET_IDS)){
+  assert.ok(getCanonicalAsset(id),"PRAY route uses a non-canonical asset: "+route+" -> "+id);
+  assert.ok(!AO_REMOVED_ASSET_IDS.includes(id),"PRAY route revived a removed asset: "+route+" -> "+id);
+}
+assert.equal(canonicalAssetIdForPrayRoute("pray.novenas"),"ao-rich-novenas");
+assert.equal(canonicalAssetIdForPrayRoute("pray.morning_evening"),"ao-rich-begin-end-day");
+assert.equal(canonicalAssetIdForPrayRoute("unknown"),null);
 
 for(const id of Object.values(AO_APP_SURFACE_ASSET_IDS)){
   assert.ok(getCanonicalAsset(id),"app surface uses a non-canonical asset: "+id);
@@ -54,6 +82,7 @@ for(const id of CONSUMED_DEVOTIONAL_MASK_ASSETS){
 assert.equal(canonicalAssetIdForSurface("settings"),"ao-nav-settings");
 assert.equal(canonicalAssetIdForLearnRoute("learn.mass"),"ao-rich-guides");
 assert.equal(canonicalAssetIdForLearnRoute("unknown"),null);
+assert.equal(canonicalAssetIdForPrayRoute("pray.rosary"),"ao-rich-rosary");
 
 for(const file of [
   "assets/active/navigation/ao-nav-home.png",
@@ -79,6 +108,7 @@ for(const id of Object.values(AO_APP_SURFACE_ASSET_IDS)){
 
 const presentationConsumers=new Set([
   ...Object.values(AO_LEARN_ROUTE_ASSET_IDS),
+  ...Object.values(PRAY_HOME_ROUTE_ASSET_IDS),
   ...Object.values(HOME_ENRICHER_ICON_ASSET_IDS),
   "ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-previous","ao-ui-search",
 ]);
@@ -117,6 +147,10 @@ assert.match(prayPresentation,/ao-ui-back/);
 assert.match(prayPresentation,/ao-ui-close/);
 assert.match(prayPresentation,/ao-ui-next/);
 assert.match(prayPresentation,/ao-ui-search/);
+assert.match(prayPresentation,/canonicalAssetIdForPrayRoute/);
+assert.match(prayPresentation,/data-ao-pray-module-asset/);
+assert.match(prayPresentation,/data-ao-asset-renderer="embedded-symbol"/);
+assert.doesNotMatch(prayPresentation,/AO_ICON_REGISTRY_V4333/,"PRAY regained the historical icon registry");
 assert.match(settingsOwner,/canonicalAssetIdForSurface\("settings"\)/);
 assert.match(settings,/ao-ui-back/);
 assert.match(settings,/ao-ui-close/);

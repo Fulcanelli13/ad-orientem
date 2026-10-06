@@ -20,6 +20,14 @@ assert.match(styles,/ao-v435930-pray-coherence-style/);
 for(const id of ["ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-search"]){
   assert.match(runtime,new RegExp(id),"PRAY lost canonical V4 control: "+id);
 }
+assert.match(runtime,/canonicalAssetIdForPrayRoute/,"PRAY module cards no longer resolve through the canonical route asset registry");
+assert.match(runtime,/function|const moduleIcon/,"PRAY module identity icon renderer is absent");
+assert.match(runtime,/data-ao-pray-module-asset/,"PRAY module cards lost canonical asset diagnostics");
+assert.match(runtime,/aoP435930ModuleAsset/,"PRAY module cards lost their identity icon class");
+assert.match(runtime,/data-ao-asset-renderer="embedded-symbol"/,"PRAY cannot render approved embedded canonical symbols while physical externalization is incomplete");
+assert.doesNotMatch(runtime,/AO_ICON_REGISTRY_V4333/,"PRAY regressed to the historical donor icon registry");
+assert.match(styles,/aoP435930ModuleIcon\{grid-column:1;grid-row:1\/4/,"PRAY module identity icons lost their dedicated card column");
+assert.match(styles,/aoP435930ModuleAsset\{display:block;width:40px!important;height:40px!important/,"PRAY module identity icon hierarchy changed");
 const runtimeWithoutDonorOverviewClose=runtime.replace(/<button[^>]*data-r23-overview-close[^>]*>×<\/button>/g,"");
 assert.doesNotMatch(runtimeWithoutDonorOverviewClose,/>←<|>← |>×<|>→<|>⌕</,"PRAY regressed to raw Unicode navigation/search controls outside the exact donor Rosary overview close control");
 assert.match(styles,/aoP435930ModuleCard i \.aoP435930UiIcon/,"PRAY module-card canonical chevrons lost explicit touch-visible geometry");

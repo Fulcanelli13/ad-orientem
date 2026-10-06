@@ -1,6 +1,6 @@
 import "./canonical-data.js";
 import "./presentation-styles.js";
-import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -14,10 +14,33 @@ const DATA=window.AO_PRAY_CANONICAL_DATA_V435930||{prayers:{},categories:{}};
 const BASE=window.AO_MODULES;
 const PRAY_CTX={surface:'domain',domain:'pray'};
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-const assetIcon=(assetId,className='aoP435930UiIcon')=>{
+const PRAY_EMBEDDED_CANONICAL_ASSET_IDS=new Set([
+ 'ao-refined-scripture','ao-refined-devotions','ao-rich-immaculate-heart','ao-rich-prayer-library','ao-rich-novenas',
+ 'ao-rich-begin-end-day','ao-rich-morning-offering','ao-rich-night-prayer','ao-rich-our-lady-marian-devotions','ao-rich-examination-of-conscience'
+]);
+const embeddedAssetIcon=(assetId,className)=>{
+ const symbol=document.getElementById(assetId);
+ if(!symbol)return'';
+ const viewBox=symbol.getAttribute('viewBox')||symbol.getAttribute('viewbox')||'0 0 128 128';
+ return `<svg class="${esc(className)}" data-ao-asset-id="${esc(assetId)}" data-ao-asset-renderer="embedded-symbol" viewBox="${esc(viewBox)}" aria-hidden="true" focusable="false"><use href="#${esc(assetId)}"></use></svg>`;
+};
+const assetIcon=(assetId,className='aoP435930UiIcon',opts={})=>{
+ const asset=getCanonicalAsset(assetId);
+ if(!asset)return'';
+ if(opts.preferEmbedded||asset.kind==='embedded_svg_symbol'||asset.kind==='symbol'){
+   const embedded=embeddedAssetIcon(assetId,className);
+   if(embedded)return embedded;
+ }
  const url=resolveCanonicalAssetUrl(assetId);
- if(!url)return'';
- return `<span class="${esc(className)}" data-ao-asset-id="${esc(assetId)}" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
+ if(url)return `<span class="${esc(className)}" data-ao-asset-id="${esc(assetId)}" data-ao-asset-renderer="mask" aria-hidden="true" style="display:inline-block;width:1em;height:1em;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
+ return embeddedAssetIcon(assetId,className);
+};
+const moduleIcon=route=>{
+ const assetId=canonicalAssetIdForPrayRoute(route);
+ if(!assetId)return'';
+ const icon=assetIcon(assetId,'aoP435930ModuleAsset',{preferEmbedded:PRAY_EMBEDDED_CANONICAL_ASSET_IDS.has(assetId)});
+ if(!icon)return'';
+ return `<span class="aoP435930ModuleIcon" data-ao-pray-module-route="${esc(route)}" data-ao-pray-module-asset="${esc(assetId)}">${icon}</span>`;
 };
 function selectedSunday(){
  const raw=core()?.selectedDate;
@@ -280,8 +303,8 @@ function renderPrayHome(){
   ]}
  ];
  const kind=it=>it[0]==='handoff'?L('AROUND MASS','AUTOUR DE LA MESSE'):it[1].startsWith('programme.')?L('PROGRAMME','PROGRAMME'):['pray.benediction','pray.forty_hours'].includes(it[1])?L('LIVE COMPANION','COMPAGNON EN DIRECT'):L('GUIDED','GUIDÉ');
- const card=it=>`<button type="button" class="aoP435930ModuleCard" ${it[0]==='own'?`data-p435930-own="${esc(it[1])}"`:`data-p435930-handoff="${esc(it[1])}"`}><small class="aoP435930ModuleKind">${esc(kind(it))}</small><b>${esc(it[2])}</b><span>${esc(it[3])}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
- return `${head(L('Pray','Prier'),L('Choose the kind of prayer you need','Choisissez le type de prière dont vous avez besoin'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('One place for the app’s prayer life','Un seul espace pour la vie de prière de l’application'))}</h2><p>${esc(L('Guided devotions, live companions, programmes and individual prayer texts are kept distinct so the next step is clear.','Les dévotions guidées, compagnons en direct, programmes et prières individuelles restent distincts afin que l’étape suivante soit évidente.'))}</p></section>${sections.map(sec=>`<section class="aoP435930ModuleSection"><div class="aoP435930ModuleSectionHead"><h3>${esc(sec.title)}</h3><p>${esc(sec.sub)}</p></div><div class="aoP435930ModuleGrid">${sec.items.map(card).join('')}</div></section>`).join('')}<section class="aoP435930ModuleSection aoP435930LibraryDoor"><div class="aoP435930ModuleSectionHead"><h3>${esc(L('Prayer Library','Livre de prières'))}</h3><p>${esc(L('Use this when you want a particular prayer rather than a guided devotion.','Utilisez-le lorsque vous cherchez une prière précise plutôt qu’une dévotion guidée.'))}</p></div><button type="button" class="aoP435930ModuleCard primary" data-p435930-own="pray.library"><small class="aoP435930ModuleKind">${esc(L('REFERENCE','RÉFÉRENCE'))}</small><b>${esc(L('Browse individual prayers','Parcourir les prières individuelles'))}</b><span>${esc(Object.keys(DATA.prayers||{}).length+' '+L('prayers available','prières disponibles'))}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button></section></main>`;
+ const card=it=>`<button type="button" class="aoP435930ModuleCard" ${it[0]==='own'?`data-p435930-own="${esc(it[1])}"`:`data-p435930-handoff="${esc(it[1])}"`}>${it[0]==='own'?moduleIcon(it[1]):''}<small class="aoP435930ModuleKind">${esc(kind(it))}</small><b>${esc(it[2])}</b><span class="aoP435930ModuleDescription">${esc(it[3])}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
+ return `${head(L('Pray','Prier'),L('Choose the kind of prayer you need','Choisissez le type de prière dont vous avez besoin'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('One place for the app’s prayer life','Un seul espace pour la vie de prière de l’application'))}</h2><p>${esc(L('Guided devotions, live companions, programmes and individual prayer texts are kept distinct so the next step is clear.','Les dévotions guidées, compagnons en direct, programmes et prières individuelles restent distincts afin que l’étape suivante soit évidente.'))}</p></section>${sections.map(sec=>`<section class="aoP435930ModuleSection"><div class="aoP435930ModuleSectionHead"><h3>${esc(sec.title)}</h3><p>${esc(sec.sub)}</p></div><div class="aoP435930ModuleGrid">${sec.items.map(card).join('')}</div></section>`).join('')}<section class="aoP435930ModuleSection aoP435930LibraryDoor"><div class="aoP435930ModuleSectionHead"><h3>${esc(L('Prayer Library','Livre de prières'))}</h3><p>${esc(L('Use this when you want a particular prayer rather than a guided devotion.','Utilisez-le lorsque vous cherchez une prière précise plutôt qu’une dévotion guidée.'))}</p></div><button type="button" class="aoP435930ModuleCard primary" data-p435930-own="pray.library">${moduleIcon('pray.library')}<small class="aoP435930ModuleKind">${esc(L('REFERENCE','RÉFÉRENCE'))}</small><b>${esc(L('Browse individual prayers','Parcourir les prières individuelles'))}</b><span class="aoP435930ModuleDescription">${esc(Object.keys(DATA.prayers||{}).length+' '+L('prayers available','prières disponibles'))}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button></section></main>`;
 }
 function angelusUnits(text,form){
  const lines=String(text||'').replace(/\r/g,'').split(/\n/).map(x=>x.trim()).filter(Boolean),out=[];
