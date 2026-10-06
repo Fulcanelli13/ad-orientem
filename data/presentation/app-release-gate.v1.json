@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.21.0",
+  "version": "1.22.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -8,7 +8,10 @@
     "authority": "data/presentation/reader-release-gate.v1.json",
     "requiredReaderStatus": "FINAL_NATIVE_READY",
     "productionDefault": "R17_NATIVE",
-    "legacyPolicy": "EXPLICIT_ROLLBACK_ONLY"
+    "legacyPolicy": "NO_ALTERNATE_RENDERER",
+    "presentationStatus": "RECOVERY_REQUIRED",
+    "singlePresentationOwner": "R17_NATIVE_PRODUCTION",
+    "definitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json"
   },
   "topLevelContract": [
     "home",
@@ -185,27 +188,25 @@
       "detail": "The 5 October P0 runtime regressions are repaired and verified on merged main. Post-merge App convergence run 37276882767 passed the normal phone journey and real-data Oct 4-9 field-current-week acceptance: every date resolved a READY Proper, runtime recovery filled missing Secret/Postcommunion source sections where needed, every R17 reader was ready, and no reader slots remained missing. Stale persisted Mass checkpoints also fail closed without uncaught resume."
     },
     {
-      "id": "PRODUCT_PRESENTATION_PARITY",
-      "classification": "PASS",
-      "status": "CLOSED",
+      "id": "MASS_DEFINITIVE_DONOR_PARITY",
+      "classification": "REGRESSION",
+      "status": "OPEN",
       "evidence": [
+        "data/presentation/mass-definitive-convergence.v1.json",
         "data/presentation/product-parity.v1.json",
-        "tests/app-visual-acceptance.mjs",
+        "src/mass/reader-dom.js",
+        "src/mass/reader-gate.js",
+        "src/mass/browser-entry.js",
         "tests/mass-visual-acceptance.mjs",
-        "tests/reader-mode-switch.mjs",
-        "tests/reader-phone-acceptance.mjs",
-        "src/home/presentation.js",
-        "src/calendar/browser-entry.js",
-        "src/pray/presentation-coherence.js",
-        "src/learn/presentation.js",
-        "src/settings/presentation.js",
-        "src/mass/reader-live-product48.js",
-        "src/mass/reader-mode-switch.js",
-        "Visual acceptance workflow 37325466930",
-        "R17 Mass convergence workflow 37325466725",
-        "App convergence workflow 37325466826"
+        "tests/production-tree-hygiene.mjs"
       ],
-      "detail": "All six modular product surfaces are phone/visual parity certified. Mass presentation recovery V1-V6 restores the approved LIVE hierarchy and 48-step product rhythm while retaining the 39-step source model, exact cue/state ownership, and persistent source-anchored MISSAL/SIMPLE/LIVE switching."
+      "detail": "The Mass liturgical/runtime subsystem remains certified, but the visible native reader had diverged from the approved executable donor: browser-width mode tabs, giant card chrome, disappearing LIVE rails, over-dark focus muting, footer navigation and Schola status-strip presentation. Recovery is now donor-first on one definitive native renderer; release remains blocked until the donor-derived shell and choreography pass phone and wide-view visual acceptance.",
+      "progress": {
+        "singleRenderer": "LANDED_ON_CONVERGENCE_BRANCH",
+        "donorShell": "PORTED_FROM_V1_66_EXECUTABLE_DONOR",
+        "wideViewportGuard": "ADDED",
+        "choreographyAudit": "IN_PROGRESS"
+      }
     },
     {
       "id": "PRESENTATION_FX_PARITY",
@@ -251,6 +252,7 @@
     }
   ],
   "openBlockers": [
+    "MASS_DEFINITIVE_DONOR_PARITY",
     "EXACT_NON_MASS_DONOR_PARITY"
   ],
   "regressionGates": {
