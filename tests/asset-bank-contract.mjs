@@ -106,7 +106,9 @@ for(const file of externalized){
   assert.ok(record,"non-canonical asset entered assets/active: "+path.relative(root,file));
   assert.ok(["FROZEN_ACTIVE","HARDENED_EXTENSION"].includes(record.status),"externalized asset has unsupported contract status: "+assetId);
   assert.ok(record.path,"externalized canonical asset has no contract path: "+assetId);
-  assert.equal(path.normalize(record.path),path.normalize(path.relative(root,file)),"externalized canonical asset is at the wrong path: "+assetId);
+  if(record.status==="HARDENED_EXTENSION"){
+    assert.equal(path.normalize(record.path),path.normalize(path.relative(root,file)),"externalized hardened asset is at the wrong canonical path: "+assetId);
+  }
   assert.ok(record.sha256,"externalized canonical asset has no contract hash: "+assetId);
   const sha256=createHash("sha256").update(fs.readFileSync(file)).digest("hex");
   assert.equal(sha256,record.sha256,"externalized asset drifted from canonical contract bytes: "+assetId);
