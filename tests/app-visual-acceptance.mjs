@@ -315,7 +315,7 @@ try{
       railDirection:rs?.flexDirection??null,
       railPosition:rs?.position??null,
       postureChannel:posture?.dataset?.channel??null,
-      postureAsset:icon?.dataset?.aoAssetId??null,
+      postureAsset:icon?.dataset?.aoAssetId||icon?.dataset?.aoInlineAssetId||null,
       slotHeight:posture?.getBoundingClientRect?.().height??0,
       incarnationUnits:grid?.querySelectorAll?.('[data-ao-incarnation="true"]')?.length??0,
       genericAngelusContext:grid?.querySelectorAll?.('[data-ao-asset-id="ao-rich-angelus"]')?.length??0,
