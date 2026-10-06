@@ -366,8 +366,8 @@ function returnFromRosaryDonor(e,root,snapshot){
 function bindRosaryDonorBack(root){
  const back=root?.querySelector?.('.lab-back[data-pb-back],.lab-back');
  if(back)back.dataset.aoRosaryReturnBound='1';
- if(document.documentElement?.dataset?.aoRosaryReturnCapture!=='v1'){
-  if(document.documentElement?.dataset)document.documentElement.dataset.aoRosaryReturnCapture='v1';
+ if(document.documentElement?.dataset?.aoRosaryReturnCapture!=='v2-active-root'){
+  if(document.documentElement?.dataset)document.documentElement.dataset.aoRosaryReturnCapture='v2-active-root';
   document.addEventListener('click',e=>{
    const hit=e.target?.closest?.('.lab-back'),donorRoot=hit?.closest?.('#aoPrayerBookRoot')||rosaryDonorRoot();
    if(!donorRoot||!hit||!donorRoot.contains(hit))return;
