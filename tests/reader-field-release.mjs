@@ -13,7 +13,11 @@ const sources={registry,extension,core};
 assert.equal(gate.fieldRelease?.status,"SUPERSEDED_BY_FINAL_MAINLINE");
 assert.equal(gate.fieldRelease?.authority,"HISTORICAL_FIELD_SNAPSHOT_ONLY");
 assert.equal(gate.fieldRelease?.target,"2026-10-04_ORDINARY_OR_VOTIVE_MASS");
-assert.equal(gate.fieldRelease?.readerUiPolicy,"NATIVE_PREVIEW_OVER_LEGACY_ROLLBACK");
+assert.equal(gate.fieldRelease?.readerUiPolicy,"NATIVE_ONLY_DEFINITIVE");
+assert.equal(gate.certificationPolicy?.legacyRollbackExplicitOnly,false,
+  "historical field snapshot still claims an executable legacy rollback reader");
+assert.equal(gate.protectedInvariants?.find(x=>x.id==="DEFINITIVE_SINGLE_RENDERER_OWNERSHIP")?.status,
+  "CERTIFIED_NATIVE_ONLY");
 assert.deepEqual(gate.openBlockers,[],
   "historical field snapshot reintroduced a final release blocker");
 assert.equal(gate.productionDefault,"R17_NATIVE",
