@@ -533,6 +533,8 @@ try{
     return {
       rootOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
       donorStamp:document.querySelector("#aoPrayerBookRoot .pbShell")?.dataset?.aoRosaryExactDonor??null,
+      returnCapture:document.documentElement?.dataset?.aoRosaryReturnCapture??null,
+      backBound:document.querySelector("#aoPrayerBookRoot .lab-back")?.dataset?.aoRosaryReturnBound??null,
       returnMarker:document.getElementById("aoPrayerBookRoot")?.dataset?.aoPrayRosaryReturn??null,
       donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
       modularOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
