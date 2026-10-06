@@ -516,7 +516,25 @@ try{
   await waitForFxSettled();
   await shot("03d-pray-rosary-live-rail");
 
+  const rosaryBackBefore=await page.evaluate(()=>({
+    rootOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+    donorStamp:document.querySelector("#aoPrayerBookRoot .pbShell")?.dataset?.aoRosaryExactDonor??null,
+    returnMarker:document.getElementById("aoPrayerBookRoot")?.dataset?.aoPrayRosaryReturn??null,
+    donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
+    modularOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
+  }));
+  console.log("ROSARY_BACK_BEFORE",JSON.stringify(rosaryBackBefore));
   await page.locator("#aoPrayerBookRoot .lab-back").first().click();
+  await page.waitForTimeout(120);
+  const rosaryBackAfter=await page.evaluate(()=>({
+    rootOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+    donorStamp:document.querySelector("#aoPrayerBookRoot .pbShell")?.dataset?.aoRosaryExactDonor??null,
+    returnMarker:document.getElementById("aoPrayerBookRoot")?.dataset?.aoPrayRosaryReturn??null,
+    donorState:globalThis.AOTraditionalPrayerBook?.getState?.()??null,
+    modularOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
+    modularView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
+  }));
+  console.log("ROSARY_BACK_AFTER",JSON.stringify(rosaryBackAfter));
   await page.waitForFunction(()=>!document.getElementById("aoPrayerBookRoot")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:5000});
 
