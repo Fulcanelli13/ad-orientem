@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-definitive-convergence-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "IN_PROGRESS",
   "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
   "rule": "The final Mass product has one executable reader only. R17/R19 owns canonical liturgical data, state and lifecycle; the recovered Sung Mass donor owns presentation geometry and choreography. Historical legacy/shadow renderers may remain only as non-executable evidence.",
@@ -13,12 +13,18 @@
   },
   "donorAuthority": {
     "primary": {
-      "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.66_SCHOLA_LIFECYCLE_REPAIR.html",
-      "sha256": "b32b91b97626b38418805e9e72ae3dc5a7c29e97ffc43e3d53b3bdc012b562e7",
-      "sizeBytes": 13149455,
-      "role": "latest accessible executable Sung-Mass presentation donor"
+      "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
+      "sha256": "4e8dc4a0148590aee95d6fd36d8c915a1c1d35097c1d235e96a17791cb7d5543",
+      "sizeBytes": 13713627,
+      "role": "primary executable presentation and interaction authority for definitive Mass convergence"
     },
     "supporting": [
+      {
+        "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.66_SCHOLA_LIFECYCLE_REPAIR.html",
+        "sha256": "b32b91b97626b38418805e9e72ae3dc5a7c29e97ffc43e3d53b3bdc012b562e7",
+        "sizeBytes": 13149455,
+        "role": "earlier executable donor retained only where v1.80 does not supersede it"
+      },
       {
         "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.66_RUNTIME_SCOPE_REPAIR.html",
         "sha256": "45b908e80c009c1d099d263da281f0a345bdf49d6cffdb76a4ff579ffb0b48ce",
@@ -38,7 +44,26 @@
       "data/presentation/v1.83-reader-parity-gate.v1.json"
     ],
     "exactV183HtmlAvailable": false,
-    "policy": "Do not invent missing v1.83 presentation boundaries. Use executable v1.66 presentation as the visual/choreographic donor and later certified ledgers only where they provide direct evidence."
+    "policy": "Use executable v1.80 as the primary authority for Mass presentation geometry, ribbon/rail ownership, Schola presentation and Eucharistic salience. Use later v1.83 evidence only where it directly and demonstrably supersedes v1.80, especially the later 48-step LIVE presentation evolution. Do not invent missing v1.83 historical card boundaries.",
+    "directV180Evidence": {
+      "shellLines": "1440-1488",
+      "v175ArchitectureLines": "1560-1635",
+      "v177HardeningLines": "8325-8383",
+      "v178OwnershipLines": "8384-8440",
+      "v179GuideLines": "8441-8480",
+      "v180EucharisticLines": "8481-8542",
+      "latePresentationFacts": [
+        "primary ribbon is Home / current Mass section / Mass preferences",
+        "reader mode selector lives inside Mass preferences rather than as the primary ribbon",
+        "second ribbon is YOU / GUIDE / PRIEST",
+        "priest position remains persistent while priest action is transient",
+        "left/right rails are semantic pictograms with prose suppressed",
+        "Schola is a dedicated concurrent stream surface",
+        "Host and Chalice elevations are distinct sacramental cinematics",
+        "elevation bell/action salience remains perceptible for approximately 3.4–3.6 seconds",
+        "LIVE prayer-card architecture reports 38 prayer cards in v1.80 before later v1.83/48-step evolution"
+      ]
+    }
   },
   "singleOwnerContract": {
     "selectableReaderModes": [
@@ -51,21 +76,25 @@
     "alternateRendererFallback": false
   },
   "recoveredThisPass": [
-    "compact centred MISSAL/SIMPLE/LIVE control replaces browser-width mode tabs",
-    "two-level donor HUD restored with PRIEST / current moment / ACTION hierarchy",
-    "LIVE faithful and audio rails remain present and dim inactive cards instead of disappearing",
-    "centre reader is transparent and measure-limited instead of a giant bordered panel",
-    "surrounding prayer focus opacity restored to readable donor-family values",
-    "floating boundary navigation replaces the full-width Back/counter/Next footer",
-    "Schola returns to a floating donor-style dock rather than a full-width status strip",
-    "wide-viewport acceptance added so desktop stretching cannot pass phone-only tests"
+    "production reader selection is native-only; legacy/shadow renderers are non-executable evidence",
+    "v1.80 primary ribbon restored as Home / current Mass section / Mass preferences",
+    "MISSAL / SIMPLE / LIVE selector moved into Mass preferences as in v1.75-v1.80",
+    "v1.79-v1.80 YOU / GUIDE / PRIEST state ribbon restored",
+    "persistent priest position no longer gets replaced by transient action text",
+    "semantic ritual rails restored as icon-first cue surfaces",
+    "persistent faithful posture rail restored alongside the YOU summary",
+    "centre reader remains transparent and measure-limited rather than a giant bordered panel",
+    "v1.80-style Schola stream surface restored with page/progress/translation affordances",
+    "v1.80 Host/Chalice elevation visual treatment restored without creating canonical events",
+    "v1.80 elevation cinematic duration restored to 3450 ms and bell salience held for 3600 ms",
+    "wide-viewport acceptance remains present so desktop dashboard regressions cannot pass phone-only tests"
   ],
   "remaining": [
-    "run CI/browser screenshots and reconcile any geometry failures",
-    "complete line-by-line donor choreography audit for every cue/state class, not only shell geometry",
-    "audit priest-action icon/text salience against donor and frozen asset bank",
-    "audit Schola streaming lifecycle and translation controls against donor",
-    "audit part-transition/elevation cinematics against donor timing and composition",
-    "reconcile the 48-step product projection with all directly recoverable historical card-boundary evidence without inventing the unresolved v1.83 Canon boundary"
+    "run full static, phone and visual CI after v1.80 port and reconcile any interaction regressions",
+    "restore exact v1.80 priest-action icon ownership for ordinary Sung Mass from directly recoverable source evidence rather than inferring actions from position",
+    "complete Schola slower/faster/pause runtime parity; current native Schola controller owns sequence but not donor timing-speed controls yet",
+    "complete line-by-line ritual trigger styling for exact words and cross symbols",
+    "audit v1.80 card-composition boundaries against the later 48-step v1.83 product projection",
+    "preserve v1.80 appearance/choreography while retaining later certified special structures and R17/R19 canonical state"
   ]
 }
