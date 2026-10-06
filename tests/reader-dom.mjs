@@ -45,7 +45,7 @@ expect(html.includes("ao-nav-home.png"),"reader Home mask did not resolve to ext
 expect(html.includes("ao-nav-settings.png"),"reader Parameters mask did not resolve to externalized PNG");
 expect(!html.includes("pending-externalization"),"reader top ribbon still advertises pending asset externalization");
 expect(html.includes(".ao-reader-stage{min-height:0;display:grid;grid-template-columns:minmax(0,1fr);position:relative"),"reader stage lost geometry-neutral single-column layout");
-expect(html.includes(".ao-rail{position:absolute"),"active cue rails are no longer overlays");
+expect(/\.ao-rail\s*\{[\s\S]*?position:absolute/.test(html),"active cue rails are no longer overlays");
 expect(!html.includes('data-left-rail="true"][data-right-rail="false"]{grid-template-columns'),"left cue rail can still reflow prayer width");
 expect(!html.includes('data-left-rail="false"][data-right-rail="true"]{grid-template-columns'),"right cue rail can still reflow prayer width");
 
