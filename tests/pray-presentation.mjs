@@ -105,6 +105,7 @@ assert.doesNotMatch(runtime,/assetId:'ao-posture-sign-cross'/,"Removed Sign-of-C
 assert.match(styles,/data-ao-rosary-active-root="false"[^}]*pointer-events:none/,"Inactive duplicate PrayerBook roots can still intercept pointer input");
 assert.match(styles,/data-ao-rosary-exact-donor="v3\.4\.14"[^\n]*\.lab-recitation-mode[\s\S]*display:none!important/,"Rosary still exposes duplicate native recitation controls");
 assert.match(styles,/width:min\(520px,100%\)!important/,"PRAY shell is no longer bounded to app-native width");
+assert.match(styles,/data-ao-rosary-active-root="true"[^\n]*pbShell\[data-ao-rosary-exact-donor="v3\.4\.14"\][^\{]*\{[^\}]*max-width:520px!important[^\}]*box-sizing:border-box!important/,"Active exact-donor Rosary shell lost its final 520px width ownership");
 assert.match(styles,/aoP435930ModuleGrid\{display:grid;grid-template-columns:1fr/,"PRAY hub regressed to the desktop two-column layout");
 assert.match(runtime,/aoRosaryRitualGrid/,"Rosary lost the v3.4.14 ritual reader ownership marker");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
