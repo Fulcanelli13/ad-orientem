@@ -1,28 +1,23 @@
 export const DIVINUM_OFFICIUM_PIN="126a07f91ede04664108abb6fb20ace3f4de14b9";
 
 const RAW_DO="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/";
+const PINNED_DO=RAW_DO+DIVINUM_OFFICIUM_PIN+"/";
 const MISSALEMEUM_FR=/^https:\/\/raw\.githubusercontent\.com\/mmolenda\/missalemeum\/[^/]+\/backend\/resources\/divinum-officium-local\/web\/www\/missa\/Francais\/(.+)$/i;
 const DO_MISSA_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/web\/www\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
 const DO_OBSOLETE_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/obsolete\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
 
-const PINNED_ABSENT_SOURCES=[
-  new RegExp(`^https://raw\\.githubusercontent\\.com/DivinumOfficium/divinum-officium/${DIVINUM_OFFICIUM_PIN}/web/www/horas/(?:English|Francais|French)/Commune/Coronatio\\.txtexport const DIVINUM_OFFICIUM_PIN="126a07f91ede04664108abb6fb20ace3f4de14b9";
-
-const RAW_DO="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/";
-const MISSALEMEUM_FR=/^https:\/\/raw\.githubusercontent\.com\/mmolenda\/missalemeum\/[^/]+\/backend\/resources\/divinum-officium-local\/web\/www\/missa\/Francais\/(.+)$/i;
-const DO_MISSA_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/web\/www\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
-,"i"),
-  new RegExp(`^https://raw\\.githubusercontent\\.com/DivinumOfficium/divinum-officium/${DIVINUM_OFFICIUM_PIN}/web/www/(?:missa|horas)/(?:Latin|English|Francais|French)/Sancti/10-08c\\.txtexport const DIVINUM_OFFICIUM_PIN="126a07f91ede04664108abb6fb20ace3f4de14b9";
-
-const RAW_DO="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/";
-const MISSALEMEUM_FR=/^https:\/\/raw\.githubusercontent\.com\/mmolenda\/missalemeum\/[^/]+\/backend\/resources\/divinum-officium-local\/web\/www\/missa\/Francais\/(.+)$/i;
-const DO_MISSA_COMMON=/^https:\/\/raw\.githubusercontent\.com\/DivinumOfficium\/divinum-officium\/([^/]+)\/web\/www\/missa\/(Latin|English|Francais|French)\/Commune\/(.+)$/i;
-,"i"),
-];
+const PINNED_ABSENT_SOURCES=new Set([
+  PINNED_DO+"web/www/horas/English/Commune/Coronatio.txt",
+  PINNED_DO+"web/www/horas/Francais/Commune/Coronatio.txt",
+  PINNED_DO+"web/www/horas/French/Commune/Coronatio.txt",
+  ...["Latin","English","Francais","French"].flatMap(language=>[
+    PINNED_DO+"web/www/missa/"+language+"/Sancti/10-08c.txt",
+    PINNED_DO+"web/www/horas/"+language+"/Sancti/10-08c.txt",
+  ]),
+]);
 
 export function isKnownAbsentResolvedSourceUrl(input){
-  const url=String(input??"");
-  return PINNED_ABSENT_SOURCES.some(pattern=>pattern.test(url));
+  return PINNED_ABSENT_SOURCES.has(String(input??""));
 }
 
 function canonicalLanguage(value){
