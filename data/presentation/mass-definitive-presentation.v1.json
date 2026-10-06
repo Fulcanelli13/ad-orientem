@@ -1,0 +1,138 @@
+{
+  "schema": "ao-mass-definitive-presentation-v1",
+  "version": "1.0.0",
+  "status": "CERTIFICATION_CANDIDATE",
+  "rule": "Production Mass has one presentation owner. Recoverable donor presentation values are locked directly; later frozen v1.83 structural/runtime deltas are applied without inventing unrecovered historical card identities.",
+  "production": {
+    "canonicalRuntimeOwner": "R17_R19_MODULAR_MASS_STACK",
+    "presentationOwner": "src/mass/reader-dom.js",
+    "mountOwner": "src/mass/reader-native-preview.js",
+    "browserOwner": "src/mass/browser-entry.js",
+    "selectableReaderModes": [
+      "NATIVE"
+    ],
+    "forbiddenProductionRenderers": [
+      "src/mass/reader-preview.js",
+      "src/mass/reader-shadow.js",
+      "LEGACY",
+      "SHADOW",
+      "rescue reader overlays"
+    ]
+  },
+  "authorityChain": {
+    "recoverablePresentationDonor": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.65_MOBILE_NATIVE_V48.html",
+    "frozenFinalContract": "v1.83 MERGE GATE",
+    "v183Evidence": [
+      "data/presentation/v1.83-reader-parity-gate.v1.json",
+      "data/presentation/v1.83-reader-map-recovery.v1.json",
+      "data/presentation/v1.83-regression-ledger.v1.json"
+    ],
+    "historicalIdentityPolicy": "The current 48-step product projection does not claim unrecovered v1.83 C01-C48 IDs or ranges."
+  },
+  "donorLocks": [
+    {
+      "id": "APP_MAX_WIDTH",
+      "donorSelector": ":root --v165-app-max",
+      "donorValue": "820px",
+      "productionSelector": ".ao-reader-shell",
+      "productionValue": "width:min(100%,820px)"
+    },
+    {
+      "id": "MODE_MAX_WIDTH",
+      "donorSelector": ".mode-btn",
+      "donorValue": "150px",
+      "productionSelector": ".ao-mode-ribbon button",
+      "productionValue": "max-width:150px"
+    },
+    {
+      "id": "READING_COLUMN",
+      "donorSelector": ".mass-block",
+      "donorValue": "690px",
+      "productionSelector": ".ao-prayer-body",
+      "productionValue": "width:min(100%,690px)"
+    },
+    {
+      "id": "BORDERLESS_READER",
+      "donorSelector": ".mass-card",
+      "donorValue": "border:0; border-radius:0; box-shadow:none",
+      "productionSelector": ".ao-prayer-card",
+      "productionValue": "border:0;border-radius:0;box-shadow:none"
+    },
+    {
+      "id": "SCHOLA_MAX_WIDTH",
+      "donorSelector": ".schola-dock",
+      "donorValue": "700px",
+      "productionSelector": ".ao-schola-dock",
+      "productionValue": "700px"
+    },
+    {
+      "id": "FOCUS_FUTURE",
+      "donorSelector": ".flow-unit.focus-future",
+      "donorValue": 0.34,
+      "productionSelector": "inactive prayer default",
+      "productionValue": 0.34
+    },
+    {
+      "id": "FOCUS_FORWARD_2",
+      "donorSelector": ".flow-unit.focus-forward-2",
+      "donorValue": 0.43,
+      "productionSelector": "active + 2",
+      "productionValue": 0.43
+    },
+    {
+      "id": "FOCUS_FORWARD_1",
+      "donorSelector": ".flow-unit.focus-forward-1",
+      "donorValue": 0.62,
+      "productionSelector": "active + 1",
+      "productionValue": 0.62
+    },
+    {
+      "id": "FOCUS_BACK_1",
+      "donorSelector": ".flow-unit.focus-back-1",
+      "donorValue": 0.47,
+      "productionSelector": "active - 1",
+      "productionValue": 0.47
+    },
+    {
+      "id": "FOCUS_BACK_2",
+      "donorSelector": ".flow-unit.focus-back-2",
+      "donorValue": 0.36,
+      "productionSelector": "active - 2",
+      "productionValue": 0.36
+    },
+    {
+      "id": "FOCUS_CURRENT",
+      "donorSelector": ".flow-unit.focus-current",
+      "donorValue": 1,
+      "productionSelector": ".ao-reader-paragraph[data-active=true]",
+      "productionValue": 1
+    }
+  ],
+  "intentionalConvergence": [
+    {
+      "id": "CUE_RAIL_GEOMETRY",
+      "donor": "v1.65 mobile-native used a bottom cue dock",
+      "definitive": "current final contract uses geometry-neutral left/right cue rails over the reading field",
+      "invariant": "inactive cues disappear; rails never reflow the prayer column; icon-first when a canonical asset exists"
+    },
+    {
+      "id": "CANONICAL_SOURCE_MODEL",
+      "donor": "historical reader presentation",
+      "definitive": "39-step source-first canonical LIVE model with 48-step product projection",
+      "invariant": "presentation never mutates canonical source/event ownership"
+    }
+  ],
+  "browserAcceptance": {
+    "phone": "390x844 touch Chromium",
+    "wide": "1440x900",
+    "test": "tests/mass-visual-acceptance.mjs",
+    "wideLocks": [
+      "shell <= 820.5px",
+      "reading column <= 690.5px",
+      "mode control <= 150.5px",
+      "navigation <= 520.5px",
+      "borderless reader field",
+      "surrounding text opacity >= 0.33"
+    ]
+  }
+}
