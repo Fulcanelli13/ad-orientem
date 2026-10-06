@@ -1,11 +1,16 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { buildReaderShellMarkup } from "../src/mass/reader-dom.js";
 
 const donor=JSON.parse(readFileSync("data/presentation/mass-v180-donor-parity.v1.json","utf8"));
 const dom=readFileSync("src/mass/reader-dom.js","utf8");
 const gate=readFileSync("src/mass/reader-gate.js","utf8");
 const entry=readFileSync("src/mass/browser-entry.js","utf8");
 const transients=readFileSync("src/mass/reader-transients.js","utf8");
+const rendered=buildReaderShellMarkup({
+  readerPreferences:{mode:"LIVE"},
+  session:{resolvedMass:{presentationMode:"LIVE",actualCelebration:{title:"Mass"}}},
+});
 
 assert.equal(donor.schema,"ao-mass-v180-donor-parity-v1");
 assert.equal(donor.donor.sha256,"4e8dc4a0148590aee95d6fd36d8c915a1c1d35097c1d235e96a17791cb7d5543");
@@ -20,9 +25,9 @@ assert.match(dom,/data-reader-home/);
 assert.match(dom,/data-role="section-jump"/);
 assert.match(dom,/data-reader-preferences/);
 assert.match(dom,/data-role="mass-preferences"/);
-assert.match(dom,/data-reader-mode="MISSAL"/);
-assert.match(dom,/data-reader-mode="SIMPLE"/);
-assert.match(dom,/data-reader-mode="LIVE"/);
+assert.match(rendered,/data-reader-mode="MISSAL"/);
+assert.match(rendered,/data-reader-mode="SIMPLE"/);
+assert.match(rendered,/data-reader-mode="LIVE"/);
 
 assert.match(dom,/>YOU</);
 assert.match(dom,/>GUIDE</);
