@@ -14,11 +14,14 @@ export const BELL_CUE_BINDINGS=Object.freeze([
   Object.freeze({cueId:"AO.SM.C0225",label:"COMMUNION WARNING",detail:"Shortly after Agnus Dei",canonicalEventIds:Object.freeze(["MC-COM-185"])}),
 ]);
 
+export const V180_BELL_HOLD_MS=3600;
+export const V180_ELEVATION_CINEMA_MS=3450;
+
 const CINEMATIC_BY_CUE=Object.freeze({
   "AO.SM.C0145":Object.freeze({kind:"BELL",title:"SANCTUS BELL",subtitle:"SANCTUS",durationMs:1350}),
   "AO.SM.C0161":Object.freeze({kind:"BELL",title:"WARNING BELL",subtitle:"BEFORE CONSECRATION",durationMs:1350}),
-  "AO.SM.C0174":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST",durationMs:1950}),
-  "AO.SM.C0181":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:1950}),
+  "AO.SM.C0174":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST",durationMs:V180_ELEVATION_CINEMA_MS}),
+  "AO.SM.C0181":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:V180_ELEVATION_CINEMA_MS}),
   "AO.SM.C0225":Object.freeze({kind:"BELL",title:"COMMUNION WARNING",subtitle:"SHORTLY AFTER AGNUS DEI",durationMs:1350}),
 });
 
