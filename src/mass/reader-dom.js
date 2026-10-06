@@ -236,7 +236,8 @@ const SHELL_STYLE = `
   .ao-rail .ao-icon-mask{width:22px;height:22px}
   .ao-schola-dock{left:16px;right:16px;bottom:12px;transform:none;width:auto;padding:8px 10px;border-radius:14px}
   .ao-schola-dock [data-role="schola"]{font-size:.74rem}
-  .ao-reader-nav button{top:auto;bottom:14px;width:44px;height:44px;border-radius:50%;font-size:1.35rem;opacity:.12}
+  .ao-reader-nav{z-index:8}
+  .ao-reader-nav button{top:52%;bottom:auto;width:44px;height:44px;border-radius:50%;font-size:1.35rem;opacity:.12}
   .ao-reader-nav button[data-reader-nav="previous"]{left:51px}
   .ao-reader-nav button[data-reader-nav="next"]{right:51px}
   .ao-guide-popover{bottom:68px;width:calc(100% - 24px)}
