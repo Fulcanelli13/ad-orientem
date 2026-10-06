@@ -46,10 +46,13 @@ expect(html.includes("ao-nav-settings.png"),"reader Parameters mask did not reso
 expect(!html.includes("pending-externalization"),"reader top ribbon still advertises pending asset externalization");
 expect(html.includes(".ao-reader-stage{min-height:0;position:relative"),"reader stage lost donor-derived geometry");
 expect(html.includes(".ao-rail{\n  position:absolute"),"ritual rails are no longer overlay surfaces");
-expect(html.includes("width:min(100%,calc(var(--ao-content-max) + (var(--ao-rail) + 25px)*2))"),"centre reader lost donor-derived maximum measure");
+expect(html.includes("padding:clamp(28px,4.5vh,48px) max(18px,calc((100% - 790px)/2))"),"centre reader lost donor 790px reading measure");
 expect(html.includes("border:0;border-radius:0;background:transparent;box-shadow:none"),"giant card chrome returned to the Mass reader");
 expect(html.includes(".ao-reader-body")===false,"unexpected duplicate reader body presentation layer appeared");
-expect(html.includes("opacity:.46"),"donor focus family no longer preserves readable surrounding prayer text");
+expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matches the final executable donor");
+expect(html.includes("opacity:.70"),"donor near-focus level no longer matches the final executable donor");
+expect(html.includes(".ao-state-kicker{display:none!important}"),"obsolete PRIEST/ACTION label chrome returned");
+expect(html.includes('[data-channel="gesture"][data-active="false"]'),"inactive gesture rail no longer disappears like the final donor");
 
 const first=normalizeReaderMoment({
   id:"A",
