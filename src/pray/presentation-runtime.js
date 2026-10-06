@@ -364,10 +364,14 @@ function bindRosaryDonorBack(root){
  if(document.documentElement?.dataset?.aoRosaryReturnCapture!=='v1'){
   if(document.documentElement?.dataset)document.documentElement.dataset.aoRosaryReturnCapture='v1';
   document.addEventListener('click',e=>{
-   const hit=e.target.closest?.('#aoPrayerBookRoot .lab-back[data-pb-back],#aoPrayerBookRoot .lab-back');
-   if(!hit)return;
-   const donorRoot=rosaryDonorRoot(),snapshot=readRosaryDonorReturn();
-   if(!snapshot||!donorRoot?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]'))return;
+   const donorRoot=document.getElementById('aoPrayerBookRoot'),hit=e.target?.closest?.('.lab-back');
+   if(!donorRoot||!hit||!donorRoot.contains(hit))return;
+   if(donorRoot.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor!=='v3.4.14')return;
+   let snapshot=rosaryDonorReturnSnapshot;
+   if(!snapshot){
+    try{snapshot=JSON.parse(donorRoot.dataset?.aoPrayRosaryReturn||'null')}catch{snapshot=null}
+   }
+   if(!snapshot)return;
    returnFromRosaryDonor(e,donorRoot,snapshot);
   },true);
  }
@@ -971,8 +975,8 @@ function onChange(e){const x=e.target;
 function onInput(e){const x=e.target;if(x.matches('[data-p435930-since]'))CONF.since=x.value;if(x.matches('[data-p435930-lib-search]')){LIB.q=x.value;const pos=x.selectionStart;render();const n=document.querySelector('[data-p435930-lib-search]');n?.focus();try{n?.setSelectionRange(pos,pos)}catch{}}}
 // Keep shared Rosary preferences synchronized when the preserved canonical player changes them.
 document.addEventListener('click',e=>{
- const donorBack=e.target.closest?.('#aoPrayerBookRoot .lab-back[data-pb-back],#aoPrayerBookRoot .lab-back'),donorRoot=rosaryDonorRoot(),donorResume=readRosaryDonorReturn();
- if(donorBack&&donorResume&&donorRoot?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]')){
+ const donorRoot=document.getElementById('aoPrayerBookRoot'),donorBack=e.target?.closest?.('.lab-back'),donorResume=readRosaryDonorReturn();
+ if(donorRoot&&donorBack&&donorRoot.contains(donorBack)&&donorResume&&donorRoot.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor==='v3.4.14'){
   // Modular PRAY owns the return handoff, while the preserved engine keeps Rosary state.
   returnFromRosaryDonor(e,donorRoot,donorResume);
   return
