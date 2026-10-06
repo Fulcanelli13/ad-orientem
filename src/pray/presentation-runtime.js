@@ -131,7 +131,7 @@ function load(){
   return d;
 }
 let S=load();
-let view='home',returnContext=null,returnFocus=null,navStack=[],externalResume=null,lastRenderSignature='';
+let view='home',returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
 let CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};
 let BEN={step:0,divinePraises:false};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
@@ -218,7 +218,7 @@ function close({silent=false}={}){
   CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};
   BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
   if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
-  const ret=returnContext;returnContext=null;if(!silent){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>window.AO_NAV_V362?.restore?.(ret));
+  const ret=returnContext;returnContext=null;if(!silent){navStack=[];externalResume=null;rosaryDonorReturnSnapshot=null}if(!silent&&ret)queueMicrotask(()=>window.AO_NAV_V362?.restore?.(ret));
   try{returnFocus?.focus?.()}catch{} returnFocus=null;
 }
 function head(title,sub=''){
@@ -834,7 +834,7 @@ function onClick(e){
  if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
  if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){S.angelusMode=seg;save()}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;save()}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
- if(b.matches('[data-p435930-launch-rosary]')){lastRosaryFxMystery='';const prefs=syncRosaryPrefs({...S.rosary});externalResume=captureResume();close({silent:true});window.AOTraditionalPrayerBook?.openModule?.('rosary',{returnContext:PRAY_CTX});restoreRosaryLaunchPrefs(prefs);return}
+ if(b.matches('[data-p435930-launch-rosary]')){lastRosaryFxMystery='';const prefs=syncRosaryPrefs({...S.rosary}),resume=captureResume();externalResume=resume;rosaryDonorReturnSnapshot=resume;close({silent:true});window.AOTraditionalPrayerBook?.openModule?.('rosary',{returnContext:PRAY_CTX});restoreRosaryLaunchPrefs(prefs);return}
  if(b.dataset.p435930ConfStage!=null){CONF.stage=+b.dataset.p435930ConfStage;return render()}
  if(b.matches('[data-p435930-conf-prev]')){CONF.stage=Math.max(0,CONF.stage-1);return render()}
  if(b.matches('[data-p435930-conf-next]')){if(CONF.stage>=4){CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};view='home';return render()}CONF.stage++;return render()}
@@ -922,14 +922,14 @@ function onInput(e){const x=e.target;if(x.matches('[data-p435930-since]'))CONF.s
 // Keep shared Rosary preferences synchronized when the preserved canonical player changes them.
 document.addEventListener('click',e=>{
  const donorBack=e.target.closest?.('#aoPrayerBookRoot .lab-back[data-pb-back]');
- if(donorBack&&externalResume&&rosaryDonorRoot()?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]')){
+ if(donorBack&&rosaryDonorReturnSnapshot&&rosaryDonorRoot()?.querySelector?.('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]')){
   // The preserved PrayerBook owns its internal Rosary state, but modular PRAY owns
-  // the handoff return. Close silently so a stale/lost donor returnContext cannot
-  // strand the user in the donor hub, then let the canonical PRAY-domain bridge
-  // consume externalResume and restore the exact modular snapshot.
+  // the handoff return. Keep a Rosary-specific snapshot because generic domain
+  // reconciliation may consume externalResume while the donor player is still open.
   e.preventDefault();e.stopImmediatePropagation();
+  const snap=rosaryDonorReturnSnapshot;rosaryDonorReturnSnapshot=null;externalResume=null;
   window.AOTraditionalPrayerBook?.close?.({silent:true});
-  window.AO_V37_SHELL?.openDomain?.('pray');
+  reopenResume(snap);
   return
  }
  const overviewOpen=e.target.closest?.('[data-r23-overview-open]');if(overviewOpen){
