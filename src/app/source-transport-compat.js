@@ -9,25 +9,36 @@ function canonicalLanguage(value){
   return /^French$/i.test(String(value??""))?"Francais":String(value??"");
 }
 
+function canonicalCommonRoot(language,file){
+  const lang=canonicalLanguage(language);
+  const name=String(file??"").replace(/^Commune\//i,"");
+  if(/^Coronatio\.txt$/i.test(name))return "missa";
+  if(/^Propaganda\.txt$/i.test(name)&&/^English$/i.test(lang))return "missa";
+  return "horas";
+}
+
 export function rewriteResolvedSourceUrl(input){
   const raw=String(input??"");
   let match=raw.match(MISSALEMEUM_FR);
   if(match){
     const relative=match[1];
-    const root=/^Commune\//i.test(relative)?"horas":"missa";
+    const common=relative.match(/^Commune\/(.+)$/i);
+    const root=common?canonicalCommonRoot("Francais",common[1]):"missa";
     return `${RAW_DO}${DIVINUM_OFFICIUM_PIN}/web/www/${root}/Francais/${relative}`;
   }
 
   match=raw.match(DO_MISSA_COMMON);
   if(match){
     const [,ref,language,file]=match;
-    return `${RAW_DO}${ref}/web/www/horas/${canonicalLanguage(language)}/Commune/${file}`;
+    const root=canonicalCommonRoot(language,file);
+    return `${RAW_DO}${ref}/web/www/${root}/${canonicalLanguage(language)}/Commune/${file}`;
   }
 
   match=raw.match(DO_OBSOLETE_COMMON);
   if(match){
     const [,ref,language,file]=match;
-    return `${RAW_DO}${ref}/web/www/horas/${canonicalLanguage(language)}/Commune/${file}`;
+    const root=canonicalCommonRoot(language,file);
+    return `${RAW_DO}${ref}/web/www/${root}/${canonicalLanguage(language)}/Commune/${file}`;
   }
 
   return raw;
