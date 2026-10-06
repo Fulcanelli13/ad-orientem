@@ -57,8 +57,12 @@ try{
   const pageErrors=[];
   const ariaWarnings=[];
   const consoleErrors=[];
+  const missingResponses=[];
 
   page.on("pageerror",error=>pageErrors.push(String(error?.message??error)));
+  page.on("response",response=>{
+    if(response.status()===404)missingResponses.push(response.url());
+  });
   page.on("console",message=>{
     const value=message.text();
     if(/Blocked aria-hidden|aria-hidden.*focus|retained focus/i.test(value))ariaWarnings.push(value);
@@ -317,7 +321,7 @@ try{
 
   assert.deepEqual(ariaWarnings,[],"aria/focus warnings: "+JSON.stringify(ariaWarnings));
   assert.deepEqual(pageErrors,[],"uncaught RC interaction errors: "+JSON.stringify(pageErrors));
-  assert.deepEqual(consoleErrors,[],"RC interaction console errors: "+JSON.stringify(consoleErrors));
+  assert.deepEqual(consoleErrors,[],"RC interaction console errors: "+JSON.stringify(consoleErrors)+"; 404 URLs: "+JSON.stringify(missingResponses));
 
   await context.close();
   console.log("RC interaction QA PASS — Angelus/Regina language/form, Stations progression, First Friday Around-Mass resume, and First Saturday Rosary donor/return context.");
