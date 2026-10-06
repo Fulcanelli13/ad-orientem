@@ -950,8 +950,6 @@ export function createReaderDomAdapter({
         syncScholaContent();
         return;
       }
-      const modeButton=event.target?.closest?.("[data-reader-mode]");
-      if(modeButton){setMode(modeButton.dataset.readerMode);return;}
       const nav=event.target?.closest?.("[data-reader-nav]");
       if(nav?.dataset.readerNav==="previous"){onPrevious?.(current,prepared);return;}
       if(nav?.dataset.readerNav==="next"){onNext?.(current,prepared);return;}
@@ -976,6 +974,16 @@ export function createReaderDomAdapter({
         onGuide?.(current.guide,current,prepared);
       }
     });
+    // v1.80 Mass-preferences mode controls own their touch/click lifecycle directly.
+    // This avoids delegated-click ambiguity inside the floating preferences sheet
+    // and guarantees that a real phone tap commits the presentation switch.
+    for(const modeButton of root.querySelectorAll?.("[data-reader-mode]") ?? []){
+      modeButton.addEventListener?.("click",event=>{
+        event.preventDefault?.();
+        event.stopPropagation?.();
+        setMode(modeButton.dataset.readerMode);
+      });
+    }
     const resize=root.querySelector?.("[data-schola-resize]");
     if(resize?.addEventListener){
       let pointerId=null,startY=0,startHeight=scholaHeight;
