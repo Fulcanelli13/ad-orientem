@@ -78,12 +78,15 @@ assert.match(styles,/@media\(max-width:720px\)[\s\S]*grid-template-columns:minma
 assert.match(styles,/@media\(max-width:620px\)[\s\S]*\.aoRitualRail\{top:70px;flex-direction:row/,"Angelus exact donor rail lost mobile horizontal cue row");
 assert.match(styles,/@keyframes aoRitualHalo\{0%\{opacity:\.5;transform:scale\(\.72\)\}100%\{opacity:0;transform:scale\(1\.42\)\}\}/,"Angelus gesture halo no longer matches donor motion");
 assert.match(runtime,/function decorateRosaryExact\(r\)/,"Rosary lost its exact-donor presentation owner");
-assert.ok(runtime.includes("donorBack&&rosaryDonorReturnSnapshot&&rosaryDonorRoot()?.querySelector?.('.pbShell[data-ao-rosary-exact-donor=\"v3.4.14\"]')"),
+assert.match(runtime,/function storeRosaryDonorReturn\(snapshot\)/,"Rosary donor return lost its root-owned snapshot writer");
+assert.match(runtime,/root\.dataset\.aoPrayRosaryReturn=JSON\.stringify\(snapshot\)/,"Rosary donor return snapshot is no longer anchored on the preserved PrayerBook root");
+assert.match(runtime,/function readRosaryDonorReturn\(\)/,"Rosary donor return lost its root-owned snapshot reader");
+assert.ok(runtime.includes("donorBack&&donorResume&&donorRoot?.querySelector?.('.pbShell[data-ao-rosary-exact-donor=\"v3.4.14\"]')"),
   "Rosary exact-donor back control lost the dedicated modular PRAY return bridge");
-assert.match(runtime,/const snap=rosaryDonorReturnSnapshot;rosaryDonorReturnSnapshot=null;externalResume=null;[\s\S]*AOTraditionalPrayerBook\?\.close\?\.\(\{silent:true\}\);[\s\S]*reopenResume\(snap\)/,
-  "Rosary donor return no longer closes the preserved PrayerBook and restores its captured modular snapshot");
-assert.ok(runtime.includes("if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))rosaryDonorReturnSnapshot=null"),
-  "Rosary donor return snapshot no longer clears only after the donor is actually closed");
+assert.match(runtime,/clearRosaryDonorReturn\(\);[\s\S]*AOTraditionalPrayerBook\?\.close\?\.\(\{silent:true\}\);[\s\S]*reopenResume\(donorResume\)/,
+  "Rosary donor return no longer consumes its root snapshot, closes the donor and restores modular PRAY");
+assert.ok(runtime.includes("if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))clearRosaryDonorReturn()"),
+  "stale Rosary donor return ownership is not cleared when the donor is actually closed");
 assert.doesNotMatch(runtime,/if\(!silent\)\{navStack=\[\];externalResume=null;rosaryDonorReturnSnapshot=null\}/,
   "generic modular close must not erase an active Rosary donor return snapshot");
 assert.match(runtime,/getElementById\(['"]aoPrayerBookRoot['"]\)/,"Rosary decorator no longer prioritizes the canonical production PrayerBook root");
