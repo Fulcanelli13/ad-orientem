@@ -8,18 +8,18 @@ const presentationFx=JSON.parse(readFileSync("data/presentation/presentation-fx-
 const exactDonor=JSON.parse(readFileSync("data/presentation/exact-donor-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.21.0");
+assert.equal(app.version,"1.22.0");
 assert.equal(app.status,"PRESENTATION_PARITY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
 assert.equal(reader.status,"FINAL_NATIVE_READY","Mass subsystem lost FINAL_NATIVE_READY");
 assert.equal(reader.productionDefault,"R17_NATIVE","Mass subsystem lost R17 native default");
 assert.deepEqual(reader.openBlockers,[],"Mass subsystem has reopened blockers");
-assert.equal(app.massSubsystem?.status,"CERTIFIED");
+assert.equal(app.massSubsystem?.status,"RUNTIME_CERTIFIED_PRESENTATION_REOPENED");
 assert.equal(app.massSubsystem?.authority,"data/presentation/reader-release-gate.v1.json");
 assert.equal(app.massSubsystem?.requiredReaderStatus,reader.status);
 assert.equal(app.massSubsystem?.productionDefault,reader.productionDefault);
-assert.equal(app.massSubsystem?.legacyPolicy,"EXPLICIT_ROLLBACK_ONLY");
+assert.equal(app.massSubsystem?.legacyPolicy,"NO_PRODUCTION_LEGACY_OR_SHADOW_RENDERER");
 
 const allowed=new Set(["PASS","REGRESSION","STALE_SURFACE","MISSING_INTEGRATION","CRASH"]);
 const findings=Array.isArray(app.findings)?app.findings:[];
@@ -32,13 +32,13 @@ for(const finding of findings){
 
 const open=findings.filter(x=>x.status==="OPEN").map(x=>x.id);
 assert.deepEqual(app.openBlockers,open,"app openBlockers must exactly match OPEN findings");
-assert.deepEqual(app.openBlockers,["EXACT_NON_MASS_DONOR_PARITY"],"exact donor parity must remain the sole reopened app blocker");
+assert.deepEqual(app.openBlockers,["PRODUCT_PRESENTATION_PARITY","EXACT_NON_MASS_DONOR_PARITY"],"Mass presentation parity and exact non-Mass donor parity must remain explicitly reopened");
 const fieldRuntime=findings.find(x=>x.id==="FIELD_RUNTIME_STABILIZATION");
 assert.equal(fieldRuntime?.classification,"PASS");
 assert.equal(fieldRuntime?.status,"CLOSED");
 const productParity=findings.find(x=>x.id==="PRODUCT_PRESENTATION_PARITY");
-assert.equal(productParity?.classification,"PASS");
-assert.equal(productParity?.status,"CLOSED");
+assert.equal(productParity?.classification,"REGRESSION");
+assert.equal(productParity?.status,"OPEN");
 assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
 assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
 assert.equal(app.exactDonorParityLedger,"data/presentation/exact-donor-parity.v1.json");
@@ -68,10 +68,10 @@ assert.equal(parity.surfaces.home.status,"CERTIFIED");
 assert.equal(parity.surfaces.pray.status,"CERTIFIED");
 assert.equal(parity.surfaces.settings.status,"CERTIFIED");
 assert.equal(parity.surfaces.learn.status,"CERTIFIED");
-assert.equal(parity.surfaces.mass.status,"CERTIFIED");
-assert.ok(Object.values(parity.surfaces).every(x=>x.status==="CERTIFIED"),"all six product-parity surfaces must remain certified during FX recovery");
-assert.equal(parity.status,"CERTIFIED");
-assert.equal(parity.releaseBlocker,null);
+assert.equal(parity.surfaces.mass.status,"REOPENED_DONOR_PARITY_REQUIRED");
+assert.ok(Object.entries(parity.surfaces).filter(([id])=>id!=="mass").every(([,x])=>x.status==="CERTIFIED"),"non-Mass product surfaces unexpectedly lost their existing product certification");
+assert.equal(parity.status,"REOPENED");
+assert.equal(parity.releaseBlocker,"PRODUCT_PRESENTATION_PARITY");
 assert.equal(findings.find(x=>x.id==="MASS_SUBSYSTEM_CERTIFIED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="SPECIAL_STRUCTURES_REAL_SHELL")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="ARIA_FOCUS_GUARD")?.classification,"PASS");
@@ -122,4 +122,4 @@ assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.m
 assert.ok(app.regressionGates?.static?.includes("tests/reader-mode-switch.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
 
-console.log("PASS app release gate: architecture/runtime remain certified; exact non-Mass donor parity is correctly reopened.");
+console.log("PASS app release gate: Mass runtime stays certified while visible Mass and exact non-Mass donor parity remain explicitly reopened.");
