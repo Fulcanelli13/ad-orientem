@@ -133,6 +133,7 @@ const SHELL_STYLE = `
   max-width:48px;font:600 .43rem/1.08 "Cinzel",Georgia,serif;letter-spacing:.025em;
   overflow-wrap:anywhere;text-transform:uppercase;color:inherit
 }
+.ao-rail-item:has(.ao-icon-mask:not([hidden])) .ao-rail-copy{display:none}
 
 .ao-card-viewport{min-width:0;min-height:0;padding:0;background:transparent}
 .ao-prayer-card{
