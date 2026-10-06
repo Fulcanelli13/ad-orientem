@@ -25,6 +25,9 @@ const embeddedAssetIcon=(assetId,className)=>{
  return `<svg class="${esc(className)}" data-ao-asset-id="${esc(assetId)}" data-ao-asset-renderer="embedded-symbol" viewBox="${esc(viewBox)}" aria-hidden="true" focusable="false"><use href="#${esc(assetId)}"></use></svg>`;
 };
 const assetIcon=(assetId,className='aoP435930UiIcon',opts={})=>{
+ if(assetId==='ao-ui-back')return `<svg class="${esc(className)}" data-ao-inline-asset-id="ao-ui-back" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M10.5 6.5 5 12l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+ if(assetId==='ao-ui-close')return `<svg class="${esc(className)}" data-ao-inline-asset-id="ao-ui-close" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+ if(assetId==='ao-live-sign-cross')return `<svg class="${esc(className)}" data-ao-inline-asset-id="ao-live-sign-cross" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v17M7.2 8.2h9.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M12 3.5c1.2 1 2.1 1.7 3 2.2M7.5 12c1.3 1.6 2.8 2.8 4.5 3.8M16.5 12c-1.3 1.6-2.8 2.8-4.5 3.8" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" opacity=".55"/></svg>`;
  const asset=getCanonicalAsset(assetId);
  if(!asset)return'';
  if(opts.preferEmbedded||asset.kind==='embedded_svg_symbol'||asset.kind==='symbol'){
@@ -393,10 +396,26 @@ function bindRosaryDonorBack(root){
   if(document.documentElement?.dataset)document.documentElement.dataset.aoRosaryReturnCapture='v3-window-path';
   window.addEventListener('click',e=>{
    const path=typeof e.composedPath==='function'?e.composedPath():[],
-    hit=path.find(node=>node?.classList?.contains?.('lab-back'))||e.target?.closest?.('.lab-back'),
+    back=path.find(node=>node?.classList?.contains?.('lab-back'))||e.target?.closest?.('.lab-back'),
+    nav=path.find(node=>node?.matches?.('[data-lab-rosary-next],[data-lab-rosary-prev]'))||e.target?.closest?.('[data-lab-rosary-next],[data-lab-rosary-prev]'),
+    hit=back||nav,
     donorRoot=path.find(node=>node?.id==='aoPrayerBookRoot')||hit?.closest?.('#aoPrayerBookRoot')||rosaryDonorRoot();
    if(!donorRoot||!hit||!donorRoot.contains(hit))return;
    if(donorRoot.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor!=='v3.4.14')return;
+   if(nav&&donorRoot.dataset?.aoRosaryActiveRoot==='true'){
+    const api=window.AO_ROSARY_V381,st=api?.state?.(),steps=api?.steps?.()||[];
+    if(typeof api?.setStep==='function'&&steps.length){
+     const current=Math.max(0,Math.min(steps.length-1,Math.trunc(Number(st?.step)||0))),
+      delta=nav.matches('[data-lab-rosary-prev]')?-1:1,
+      target=Math.max(0,Math.min(steps.length-1,current+delta));
+     if(target!==current){
+      e.preventDefault();e.stopImmediatePropagation();
+      if(api.setStep(target)!==false){decorateRosary();setTimeout(decorateRosary,0)}
+      return;
+     }
+    }
+   }
+   if(!back)return;
    let snapshot=rosaryDonorReturnSnapshot;
    if(!snapshot){
     try{snapshot=JSON.parse(donorRoot.dataset?.aoPrayRosaryReturn||'null')}catch{snapshot=null}
@@ -461,7 +480,7 @@ function rosaryExactState(info){
    gesture={
      value:finalCross?'closing-sign-cross':'opening-sign-cross',
      label:finalCross?L('Closing Sign of the Cross','Signe de Croix final'):L('Sign of the Cross','Signe de la Croix'),
-     assetId:'ao-posture-sign-cross',
+     assetId:'ao-live-sign-cross',
      persistent:false
    };
  }
@@ -566,60 +585,59 @@ function closeRosaryDonorOverview(r,{restoreFocus=true}={}){
  if(restoreFocus)r.querySelector('[data-r23-overview-open]')?.focus?.();
  return true;
 }
+function normalizeRosaryExactStructure(shell){
+ const legacyGrid=shell?.querySelector?.(':scope > .aoRosaryRitualGrid:not(.pbShell)');
+ if(legacyGrid){
+  const center=legacyGrid.querySelector(':scope > .aoRosaryRitualCenter');
+  if(center){
+   while(center.firstChild)shell.insertBefore(center.firstChild,legacyGrid);
+  }
+  legacyGrid.remove();
+ }
+ shell?.classList?.add('aoRosaryRitualGrid','aoRosaryRitualCenter');
+ return shell;
+}
+function ownRosaryDonorRoots(active){
+ document.querySelectorAll('#aoPrayerBookRoot').forEach(root=>{
+  const isActive=root===active;
+  root.dataset.aoRosaryActiveRoot=isActive?'true':'false';
+  if(!isActive&&root.classList?.contains('open')){
+   root.classList.remove('open');
+   root.setAttribute('aria-hidden','true');
+  }
+ });
+}
 function decorateRosaryExact(r){
  r.querySelectorAll('.aoP435930RosarySemanticRails').forEach(x=>x.remove());
  const info=rosaryLiveInfo();if(!info?.state?.set)return false;
- const shell=r.querySelector('.pbShell');if(!shell)return false;
+ const shell=normalizeRosaryExactStructure(r.querySelector('.pbShell'));if(!shell)return false;
+ ownRosaryDonorRoots(r);
  bindRosaryDonorBack(r);
- const existing=shell.querySelector(':scope > .aoRosaryRitualGrid');
- const st=rosaryExactState(info);
- if(existing){
-  const rail=existing.querySelector('.aoRosaryFaithfulRail');
-  const slots=[
-    rosaryExactSlot('gesture',st.gesture,{emphasis:st.entering&&!!st.gesture}),
-    rosaryExactSlot('action',st.action,{emphasis:st.entering&&!!st.action})
-  ].filter(Boolean);
-  if(rail){rail.innerHTML=slots.join('');rail.hidden=!slots.length}
-  ensureRosaryDonorProgress(r,info);ensureRosaryDonorRecitation(r);ensureRosaryDonorOverview(r,info);rosaryDonorArt(r,info);rosaryDonorMysteryFx(r,info);
-  existing.dataset.aoRosaryStep=String(info.index);
-  existing.dataset.aoRosaryKind=String(info.step?.kind||'');
-  existing.dataset.aoRosaryKey=String(info.step?.key||'');
-  existing.dataset.aoRosaryPhase=String(info.step?.phase||'');
-  existing.dataset.aoRosaryBead=String(Number(info.step?.bead||0));
-  existing.dataset.aoRosaryCue=info.step?.cue?'true':'false';
-  existing.dataset.aoRosaryFinalCross=info.step?.finalCross?'true':'false';
-  lastRosaryRitualKey=st.key;
-  return true;
+ let rail=shell.querySelector(':scope > .aoRosaryFaithfulRail');
+ if(!rail){
+  rail=document.createElement('aside');
+  rail.className='aoRitualRail aoRosaryFaithfulRail';
+  rail.dataset.aoRitualRail='';
+  rail.dataset.aoRitualModule='rosary';
+  rail.dataset.aoRitualChannels='posture,gesture,action';
+  rail.setAttribute('aria-label',L('Rosary posture, gesture and contemplation','Posture, geste et contemplation du Rosaire'));
+  const head=shell.querySelector(':scope > .lab-view-head,:scope > .pbTop,:scope > .pbHead,:scope > header');
+  if(head)head.insertAdjacentElement('afterend',rail);else shell.prepend(rail);
  }
-
- const grid=document.createElement('section'),rail=document.createElement('aside'),center=document.createElement('div');
- grid.className='aoRosaryRitualGrid';
- grid.dataset.aoRosaryStep=String(info.index);
- grid.dataset.aoRosaryKind=String(info.step?.kind||'');
- grid.dataset.aoRosaryKey=String(info.step?.key||'');
- grid.dataset.aoRosaryPhase=String(info.step?.phase||'');
- grid.dataset.aoRosaryBead=String(Number(info.step?.bead||0));
- grid.dataset.aoRosaryCue=info.step?.cue?'true':'false';
- grid.dataset.aoRosaryFinalCross=info.step?.finalCross?'true':'false';
- rail.className='aoRitualRail aoRosaryFaithfulRail';
- rail.dataset.aoRitualRail='';
- rail.dataset.aoRitualModule='rosary';
- rail.dataset.aoRitualChannels='posture,gesture,action';
- rail.setAttribute('aria-label',L('Rosary posture, gesture and contemplation','Posture, geste et contemplation du Rosaire'));
- center.className='aoRosaryRitualCenter';
-
- const slots=[
-   rosaryExactSlot('gesture',st.gesture,{emphasis:st.entering&&!!st.gesture}),
-   rosaryExactSlot('action',st.action,{emphasis:st.entering&&!!st.action})
+ const st=rosaryExactState(info),slots=[
+  rosaryExactSlot('gesture',st.gesture,{emphasis:st.entering&&!!st.gesture}),
+  rosaryExactSlot('action',st.action,{emphasis:st.entering&&!!st.action})
  ].filter(Boolean);
  rail.innerHTML=slots.join('');
  rail.hidden=!slots.length;
-
- const children=[...shell.childNodes];
- for(const node of children)center.appendChild(node);
- grid.append(rail,center);
- shell.appendChild(grid);
  shell.dataset.aoRosaryExactDonor='v3.4.14';
+ shell.dataset.aoRosaryStep=String(info.index);
+ shell.dataset.aoRosaryKind=String(info.step?.kind||'');
+ shell.dataset.aoRosaryKey=String(info.step?.key||'');
+ shell.dataset.aoRosaryPhase=String(info.step?.phase||'');
+ shell.dataset.aoRosaryBead=String(Number(info.step?.bead||0));
+ shell.dataset.aoRosaryCue=info.step?.cue?'true':'false';
+ shell.dataset.aoRosaryFinalCross=info.step?.finalCross?'true':'false';
  ensureRosaryDonorProgress(r,info);
  ensureRosaryDonorRecitation(r);
  ensureRosaryDonorOverview(r,info);
@@ -629,10 +647,7 @@ function decorateRosaryExact(r){
  return true;
 }
 function decorateRosary(){
- const canonical=document.getElementById('aoPrayerBookRoot');
- const root=canonical||document.querySelector('.pbRoot,.aoPrayerBook,.lab-prayerbook,[data-pb-root]')||document.querySelector('#ao-prayerbook-root')||document.querySelector('[class*="PrayerBook"]');
- const candidates=[...document.querySelectorAll('body > *')].filter(el=>el.querySelector?.('[data-v38-rosary-form]'));
- const r=root||candidates[0];if(!r||!r.classList?.contains('open'))return;
+ const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  r.querySelectorAll('.flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]').forEach(n=>{n.hidden=true;n.setAttribute('aria-hidden','true')});
  r.classList.toggle('aoP435930RosarySimple',S.rosary.mode==='simple');r.classList.toggle('aoP435930RosaryGuided',S.rosary.mode==='guided');
  let bar=r.querySelector('.aoP435930RosaryBar');if(!bar){bar=document.createElement('div');bar.className='aoP435930RosaryBar';const h=r.querySelector('.lab-view-head,.pbTop,.pbHead,header');h?.insertAdjacentElement('afterend',bar)}
