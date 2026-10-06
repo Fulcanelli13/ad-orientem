@@ -12,6 +12,8 @@ const VISIBLE_REGRESSION_GUARD_CSS=`
 #aoPray435930 .aoP435930ModuleCard>b{grid-column:2!important;grid-row:2!important;min-width:0!important}
 #aoPray435930 .aoP435930ModuleCard>.aoP435930ModuleDescription{grid-column:2!important;grid-row:3!important;min-width:0!important}
 #aoPray435930 .aoP435930ModuleCard>i{grid-column:3!important;grid-row:1/4!important;width:24px!important;height:24px!important;align-self:center!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-recitation-mode,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] [data-ao-recitation]{display:none!important}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .pbShell[data-ao-rosary-exact-donor="v3.4.14"]{width:min(760px,100vw)!important;max-width:760px!important;min-width:0!important;box-sizing:border-box!important;margin-left:auto!important;margin-right:auto!important;padding-left:16px!important;padding-right:16px!important}
 @media(max-width:560px){
  #aoPray435930 .aoP435930RecitationMode{grid-template-columns:auto minmax(160px,220px)!important;justify-content:space-between!important;gap:8px!important;padding-left:8px!important}
