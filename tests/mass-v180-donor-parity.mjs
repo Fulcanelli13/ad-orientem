@@ -64,8 +64,7 @@ assert.match(transients,/"AO\.SM\.C0181":Object\.freeze\(\{kind:"ELEVATION",titl
 assert.match(transients,/presentationHoldMs:presentationSpec\?\.kind==="ELEVATION" \? 3600/);
 
 assert.deepEqual(donor.open.map(x=>x.id),[
-  "V180_PRIEST_ACTION_OWNERSHIP",
   "V180_TO_V183_CARD_MAP_RECONCILIATION",
 ]);
 
-console.log("Mass v1.80 donor parity contract: PASS — shell, Schola timing and exact source-backed ritual salience locked; two evidence-bound parity items remain open.");
+console.log("Mass v1.80 donor parity contract: PASS — shell, Schola, ritual salience and source-backed priest actions locked; only historical 38→48 reconciliation remains open.");
