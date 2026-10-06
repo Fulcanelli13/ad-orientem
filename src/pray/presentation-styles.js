@@ -85,22 +85,76 @@ const SEMANTIC_RAIL_CSS=`/* Exact-donor devotional rail recovery — thin fixed 
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoP435930SemanticRailChip.transient.cue-enter .aoP435930SemanticRailCard{animation:none!important}}
 html[data-reduced-motion="true"] #aoPray435930 .aoP435930SemanticRailChip.transient.cue-enter .aoP435930SemanticRailCard{animation:none!important}
 
-/* Presentation FX V3 — preserved canonical Rosary player live context rail.
-   Context only: Rosary posture remains deliberately free unless an exact gesture cue owns the moment. */
-#aoPrayerBookRoot .aoP435930RosarySemanticRails{position:fixed;inset:0;z-index:2147482050;pointer-events:none}
-#aoPrayerBookRoot .aoP435930RosarySemanticRail{position:absolute;top:112px;right:max(6px,env(safe-area-inset-right));width:56px;display:grid}
-#aoPrayerBookRoot .aoP435930RosarySemanticRailChip{display:grid;justify-items:center;gap:5px;padding:8px 4px;min-height:72px;border:1px solid color-mix(in srgb,var(--liturgical,#d8bd7d) 24%,var(--border,rgba(255,255,255,.12)));border-radius:14px;background:color-mix(in srgb,var(--bg,#080c12) 87%,transparent);backdrop-filter:blur(12px);box-shadow:0 9px 24px rgba(0,0,0,.17);color:var(--liturgical,#d8bd7d)}
-#aoPrayerBookRoot .aoP435930RosarySemanticRailIcon{width:29px!important;height:29px!important;color:currentColor}
-#aoPrayerBookRoot .aoP435930RosarySemanticRailChip>span{max-width:48px;color:var(--text,#f3ead7);font:700 .52rem/1.1 var(--font-display,system-ui);letter-spacing:.045em;text-align:center;text-transform:uppercase}
-#aoPrayerBookRoot .aoP435930RosarySemanticRailChip>small{max-width:48px;color:var(--muted,#aeb2b8);font:600 .48rem/1.15 var(--font-display,system-ui);text-align:center}
-@media(max-width:560px){
- #aoPrayerBookRoot .aoP435930RosarySemanticRail{top:100px;right:max(4px,env(safe-area-inset-right));width:46px}
- #aoPrayerBookRoot .aoP435930RosarySemanticRailChip{min-height:50px;padding:5px 3px;border-radius:12px}
- #aoPrayerBookRoot .aoP435930RosarySemanticRailIcon{width:28px!important;height:28px!important}
- #aoPrayerBookRoot .aoP435930RosarySemanticRailChip>span,#aoPrayerBookRoot .aoP435930RosarySemanticRailChip>small{display:none}
+/* Exact donor Rosary ritual rail — v3.14 visual hierarchy over the canonical player. */
+#aoPrayerBookRoot .aoRosaryRitualGrid{
+ display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:start
 }
-@media(prefers-reduced-motion:reduce){#aoPrayerBookRoot .aoP435930RosarySemanticRailChip{transition:none!important}}
-html[data-reduced-motion="true"] #aoPrayerBookRoot .aoP435930RosarySemanticRailChip{transition:none!important}`;
+#aoPrayerBookRoot .aoRosaryRitualCenter{min-width:0}
+#aoPrayerBookRoot .aoRosaryFaithfulRail{
+ position:sticky;top:12px;align-self:start;display:grid;gap:8px
+}
+#aoPrayerBookRoot .aoRosaryFaithfulRail[hidden],
+#aoPrayerBookRoot .aoRosaryFaithfulRail:empty{display:none!important}
+#aoPrayerBookRoot .aoRosaryRitualGrid:has(.aoRosaryFaithfulRail[hidden]),
+#aoPrayerBookRoot .aoRosaryRitualGrid:has(.aoRosaryFaithfulRail:empty){grid-template-columns:minmax(0,1fr)}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot{
+ position:relative;display:grid;grid-template-rows:48px auto;justify-items:center;align-items:center;
+ min-height:78px;padding:8px 5px 7px;gap:3px;border:1px solid var(--border,rgba(255,255,255,.12));
+ border-radius:16px;background:color-mix(in srgb,var(--surface-1,#151c24) 89%,transparent);
+ color:color-mix(in srgb,var(--liturgical,#d8bd7d) 64%,var(--muted,#aeb2b8));
+ box-shadow:0 10px 28px rgba(0,0,0,.10)
+}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"]{
+ color:var(--liturgical,#d8bd7d);
+ border-color:color-mix(in srgb,var(--liturgical,#d8bd7d) 58%,var(--border,rgba(255,255,255,.12)));
+ background:radial-gradient(circle at 50% 34%,color-mix(in srgb,var(--liturgical,#d8bd7d) 12%,transparent),transparent 56%),color-mix(in srgb,var(--surface-1,#151c24) 94%,transparent);
+ box-shadow:0 13px 30px rgba(0,0,0,.17)
+}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot[data-channel="action"]{
+ color:color-mix(in srgb,var(--liturgical,#d8bd7d) 64%,var(--muted,#aeb2b8));
+ border-color:color-mix(in srgb,var(--liturgical,#d8bd7d) 21%,var(--border,rgba(255,255,255,.12)))
+}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualIcon{
+ display:block;width:44px!important;height:44px!important;color:currentColor;
+ filter:drop-shadow(0 3px 8px rgba(0,0,0,.22))
+}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"] .aoRitualIcon{width:48px!important;height:48px!important}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot[data-channel="action"] .aoRitualIcon{width:40px!important;height:40px!important}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSymbol{display:grid!important;place-items:center;font-size:1.45rem;background:none!important}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualMeta{min-width:0;text-align:center}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualKey{display:block;opacity:.52;font:700 .42rem/1 var(--font-display,system-ui);letter-spacing:.13em;text-transform:uppercase}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualValue{display:block;margin-top:3px;font:590 .68rem/1.06 var(--font-display,system-ui);color:inherit}
+@keyframes aoRosaryRitualGestureV2{0%{opacity:0;transform:translateY(8px) scale(.82)}42%{opacity:1;transform:translateY(-2px) scale(1.08)}68%{transform:translateY(0) scale(.985)}100%{opacity:1;transform:none}}
+@keyframes aoRosaryRitualActionV2{0%{opacity:0;transform:translateY(9px)}58%{opacity:1;transform:translateY(-1px)}100%{opacity:1;transform:none}}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot.is-emphasis{animation:aoRosaryRitualActionV2 .52s cubic-bezier(.2,.78,.2,1) both}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"].is-emphasis{animation:aoRosaryRitualGestureV2 .78s cubic-bezier(.18,.84,.2,1) both}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"].is-emphasis:after{
+ content:"";position:absolute;inset:6px;border:1px solid color-mix(in srgb,currentColor 54%,transparent);
+ border-radius:13px;pointer-events:none
+}
+#aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"].is-emphasis .aoRitualIcon{transform:scale(1.08)}
+@media(max-width:720px){
+ #aoPrayerBookRoot .aoRosaryRitualGrid{grid-template-columns:minmax(0,1fr);gap:8px}
+ #aoPrayerBookRoot .aoRosaryFaithfulRail{position:static;display:flex;flex-wrap:wrap;gap:6px}
+ #aoPrayerBookRoot .aoRosaryFaithfulRail[hidden],#aoPrayerBookRoot .aoRosaryFaithfulRail:empty{display:none!important}
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot{
+  width:auto;min-width:92px;min-height:56px;padding:6px 9px;
+  grid-template-columns:38px auto;grid-template-rows:1fr;justify-content:start;gap:8px;border-radius:14px
+ }
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualIcon{width:36px!important;height:36px!important}
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"] .aoRitualIcon{width:40px!important;height:40px!important}
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualMeta{text-align:left}
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualKey{display:none}
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualValue{margin-top:0;font-size:.72rem;line-height:1.08}
+}
+@media(max-width:420px){
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot{min-width:86px;padding-inline:7px}
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualValue{font-size:.69rem}
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot{animation:none!important}
+}
+html[data-reduced-motion="true"] #aoPrayerBookRoot .aoRosaryFaithfulRail .aoRitualSlot{animation:none!important}`;
 
 function ensureStyle(doc,id,css){
   if(!doc||doc.getElementById?.(id))return false;
