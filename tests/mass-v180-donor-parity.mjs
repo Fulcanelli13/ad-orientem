@@ -48,6 +48,16 @@ assert.match(dom,/data-role="schola-page"/);
 assert.match(dom,/data-role="schola-progress"/);
 assert.match(dom,/data-role="schola-translation"/);
 assert.match(dom,/data-schola-translate/);
+assert.match(dom,/SCHOLA_SPEEDS=Object\.freeze\(\[0\.25,0\.35,0\.45,0\.60,0\.80,1\.00\]\)/);
+assert.match(dom,/SCHOLA_SPEED_STORAGE_KEY="ao-schola-speed"/);
+assert.match(dom,/data-schola-slower/);
+assert.match(dom,/data-schola-faster/);
+assert.match(dom,/data-schola-pause/);
+assert.match(dom,/ao-ritual-trigger-live/);
+assert.match(dom,/current\.gesture\?\.anchorLat/);
+assert.match(dom,/exactCueIds\.includes\(gestureCueId\)/);
+assert.doesNotMatch(dom,/includes\(["'`]Iesu Christe["'`]\)|includes\(["'`]Et incarn/i,
+  "ritual trigger styling must not infer cue ownership by prayer-text search");
 
 assert.match(transients,/"AO\.SM\.C0174":Object\.freeze\(\{kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST",durationMs:3450\}\)/);
 assert.match(transients,/"AO\.SM\.C0181":Object\.freeze\(\{kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:3450\}\)/);
@@ -55,9 +65,7 @@ assert.match(transients,/presentationHoldMs:presentationSpec\?\.kind==="ELEVATIO
 
 assert.deepEqual(donor.open.map(x=>x.id),[
   "V180_PRIEST_ACTION_OWNERSHIP",
-  "V180_SCHOLA_TIMING_CONTROLS",
-  "V180_EXACT_RITUAL_TRIGGER_STYLING",
   "V180_TO_V183_CARD_MAP_RECONCILIATION",
 ]);
 
-console.log("Mass v1.80 donor parity contract: PASS — definitive shell/timing locked; four evidence-bound parity items remain open.");
+console.log("Mass v1.80 donor parity contract: PASS — shell, Schola timing and exact source-backed ritual salience locked; two evidence-bound parity items remain open.");
