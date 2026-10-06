@@ -103,6 +103,7 @@ try{
     "ao-live-bells":"assets/active/live-audio/ao-live-bells.png",
     "ao-live-profound-bow":"assets/active/live-gesture/ao-live-profound-bow.png",
     "ao-live-response":"assets/active/live-cue/ao-live-response.png",
+    "ao-live-sign-cross":"assets/active/live-gesture/ao-live-sign-cross.png",
     "ao-rich-confession":"assets/active/devotional-module/ao-rich-confession.png",
     "ao-rich-rosary":"assets/active/devotional-module/ao-rich-rosary.png",
     "ao-rich-sacred-heart":"assets/active/devotional-module/ao-rich-sacred-heart.png",
@@ -119,6 +120,13 @@ try{
     assert.match(result.type,/image\/png/i,assetId+" canonical mask is not served as PNG");
     assert.ok(result.bytes>0,assetId+" canonical mask is empty");
   }
+  const silenceAsset=await page.evaluate(async()=>{
+    const response=await fetch("assets/active/devotional-module/ao-refined-silence.svg",{cache:"no-store"});
+    return {ok:response.ok,status:response.status,type:response.headers.get("content-type")||"",bytes:(await response.arrayBuffer()).byteLength};
+  });
+  assert.equal(silenceAsset.ok,true,"canonical Silence rail asset is not physically available");
+  assert.match(silenceAsset.type,/image\/svg\+xml/i,"canonical Silence rail asset is not served as SVG");
+  assert.ok(silenceAsset.bytes>0,"canonical Silence rail asset is empty");
 
   const expectedEmbeddedSymbols=[
     "ao-refined-calendar-upcoming",
