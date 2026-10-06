@@ -393,6 +393,7 @@ try{
   await page.setViewportSize({width:1440,height:900});
   const wideFocus=await focusCanonicalCue("AO.SM.C0096");
   assert.equal(wideFocus.targetActive,"true");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   const wide=await page.evaluate(()=>{
     const q=s=>document.querySelector("#ao-r17-native-reader-preview "+s);
     const rect=s=>{const x=q(s)?.getBoundingClientRect();return x?{left:x.left,right:x.right,width:x.width,height:x.height}:null;};
