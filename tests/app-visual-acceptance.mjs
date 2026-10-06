@@ -483,8 +483,10 @@ try{
   await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",{state:"visible",timeout:5000});
   const rosaryOpening=await page.evaluate(()=>{
     const roots=[...document.querySelectorAll("#aoPrayerBookRoot")],active=roots.find(root=>root.dataset.aoRosaryActiveRoot==="true")||roots.find(root=>root.classList.contains("open"));
-    const shell=active?.querySelector(".pbShell");
+    const shell=active?.querySelector(".pbShell"),head=shell?.querySelector(".lab-view-head"),recitation=shell?.querySelector(".r29-head-recitation"),overview=shell?.querySelector("[data-r23-overview-open]");
     const legacyRecitation=[...(shell?.querySelectorAll(".lab-recitation-mode,[data-ao-recitation]")??[])].filter(node=>getComputedStyle(node).display!=="none").length;
+    const headRect=head?.getBoundingClientRect?.(),recRect=recitation?.getBoundingClientRect?.(),overviewRect=overview?.getBoundingClientRect?.();
+    const recitationButtonWidths=[...(recitation?.querySelectorAll("button")??[])].map(button=>button.getBoundingClientRect().width);
     return {
       donor:shell?.dataset?.aoRosaryExactDonor??null,
       progressSegments:shell?.querySelectorAll(".rosary-decade-bar-v15[data-ao-exact-donor-progress] i").length??0,
@@ -496,6 +498,11 @@ try{
       activeRoots:roots.filter(root=>root.dataset.aoRosaryActiveRoot==="true"&&root.classList.contains("open")).length,
       legacyRecitation,
       shellWidth:shell?.getBoundingClientRect?.().width??0,
+      headOverflow:(head?.scrollWidth??0)-(head?.clientWidth??0),
+      recitationButtonWidths,
+      recitationRight:recRect?.right??0,
+      overviewRight:overviewRect?.right??0,
+      headRight:headRect?.right??0,
     };
   });
   assert.equal(rosaryOpening.donor,"v3.4.14","Rosary player is not stamped with the exact donor presentation owner");
@@ -508,6 +515,10 @@ try{
   assert.equal(rosaryOpening.activeRoots,1,"More than one PrayerBook root owns visible Rosary input");
   assert.equal(rosaryOpening.legacyRecitation,0,"Rosary exposes a second legacy Individual/Group selector");
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
+  assert.ok(rosaryOpening.headOverflow<=1,"Rosary phone header still overflows horizontally");
+  assert.ok(rosaryOpening.recitationButtonWidths.length===2&&rosaryOpening.recitationButtonWidths.every(width=>width>=52),"Rosary Individual / Group controls are visibly truncated");
+  assert.ok(rosaryOpening.recitationRight<=rosaryOpening.headRight+1,"Rosary recitation control clips outside the phone header");
+  assert.ok(rosaryOpening.overviewRight<=rosaryOpening.headRight+1,"Rosary Overview control clips outside the phone header");
 
   // Prove the real Next button and the actual prayer column, not just selector presence.
   const ourFatherTarget=await page.evaluate(()=>{
