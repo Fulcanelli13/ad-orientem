@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-v180-donor-parity-v1",
-  "version": "1.0.0",
-  "status": "IN_PROGRESS",
+  "version": "1.1.0",
+  "status": "IMPLEMENTATION_COMPLETE_AWAITING_CI",
   "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
   "donor": {
     "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
@@ -55,15 +55,10 @@
     "wide-browser acceptance prevents the reader from stretching back into dashboard geometry",
     "Schola slower/faster/pause controls use the donor speed ladder [0.25, 0.35, 0.45, 0.60, 0.80, 1.00], persist ao-schola-speed, and pause while translation is open",
     "exact Gloria/Credo ritual words are decorated only from the source-backed gesture anchorLat on the active canonical cue; no prayer-text guessing is used",
-    "ordinary Sung priest actions now come from a 77-cue source-backed action registry derived from canonical priest events and the v1.80 classifier; canonical v4 action art is exact-mapped where available and unmapped actions fail closed rather than borrowing priest-position art"
+    "ordinary Sung priest actions now come from a 77-cue source-backed action registry derived from canonical priest events and the v1.80 classifier; canonical v4 action art is exact-mapped where available and unmapped actions fail closed rather than borrowing priest-position art",
+    "v1.80 38-card presentation and later v1.83 48-step concept are reconciled at product level without claiming historical C01-C48 identity; the unrecovered Canon boundary remains a non-blocking historical evidence gap"
   ],
-  "open": [
-    {
-      "id": "V180_TO_V183_CARD_MAP_RECONCILIATION",
-      "status": "OPEN",
-      "rule": "v1.80 reports 38 LIVE prayer cards while later product evidence requires 48 visible LIVE steps; reconcile using direct later evidence and never invent lost historical boundaries."
-    }
-  ],
+  "open": [],
   "prohibitedRegressions": [
     "browser-width MISSAL/SIMPLE/LIVE tabs in the primary ribbon",
     "PRIEST/current/ACTION as the persistent second ribbon",
@@ -73,5 +68,7 @@
     "legacy or shadow reader renderer fallback",
     "using priest position as a substitute for priest action",
     "claiming current 48-step projection is the recovered historical v1.83 C01-C48 map"
-  ]
+  ],
+  "reconciliationLedger": "data/presentation/mass-v180-v183-step-reconciliation.v1.json",
+  "releaseRule": "MASS_DEFINITIVE_DONOR_PARITY remains a release blocker until static, phone and visual CI certify this implementation. Historical v1.83 identity recovery is not required unless the product claims those historical IDs/boundaries."
 }
