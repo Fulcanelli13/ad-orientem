@@ -364,14 +364,19 @@ function bindRosaryDonorBack(root){
  if(document.documentElement?.dataset?.aoRosaryReturnCapture!=='v1'){
   if(document.documentElement?.dataset)document.documentElement.dataset.aoRosaryReturnCapture='v1';
   document.addEventListener('click',e=>{
-   const donorRoot=document.getElementById('aoPrayerBookRoot'),hit=e.target?.closest?.('.lab-back');
+   const donorRoot=document.getElementById('aoPrayerBookRoot'),hit=e.target?.closest?.('.lab-back'),
+    stamp=donorRoot?.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor||null,
+    raw=donorRoot?.dataset?.aoPrayRosaryReturn||null;
+   window.__aoRosaryReturnCaptureDebug={called:true,targetClass:String(e.target?.className||''),hit:!!hit,root:!!donorRoot,contains:!!(donorRoot&&hit&&donorRoot.contains(hit)),stamp,raw};
    if(!donorRoot||!hit||!donorRoot.contains(hit))return;
-   if(donorRoot.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor!=='v3.4.14')return;
+   if(stamp!=='v3.4.14')return;
    let snapshot=rosaryDonorReturnSnapshot;
    if(!snapshot){
-    try{snapshot=JSON.parse(donorRoot.dataset?.aoPrayRosaryReturn||'null')}catch{snapshot=null}
+    try{snapshot=JSON.parse(raw||'null')}catch{snapshot=null}
    }
+   window.__aoRosaryReturnCaptureDebug.snapshot=!!snapshot;
    if(!snapshot)return;
+   window.__aoRosaryReturnCaptureDebug.returning=true;
    returnFromRosaryDonor(e,donorRoot,snapshot);
   },true);
  }
