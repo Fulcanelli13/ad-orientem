@@ -25,9 +25,10 @@ function selectedSunday(){
  const d=new Date(String(raw)+'T12:00:00');
  return !Number.isNaN(d.getTime())&&d.getDay()===0;
 }
-function semanticRailChip(assetId,label,value=''){
+function semanticRailChip(assetId,label,value='',opts={}){
  if(!assetId||!label)return'';
- return `<div class="aoP435930SemanticRailChip" data-ao-pray-rail-asset="${esc(assetId)}">${assetIcon(assetId,'aoP435930SemanticRailIcon')}<span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
+ const channel=opts.channel==='transient'?'transient':'persistent';
+ return `<div class="aoP435930SemanticRailChip ${channel}" data-ao-pray-rail-channel="${channel}" data-ao-pray-rail-asset="${esc(assetId)}"><span class="aoP435930SemanticRailCard">${assetIcon(assetId,'aoP435930SemanticRailIcon')}</span><span class="aoP435930SemanticRailLabel">${esc(label)}</span>${value?`<small>${esc(value)}</small>`:''}</div>`;
 }
 function ritualChannelLabel(channel){
  return ({posture:L('Posture','Posture'),gesture:L('Gesture','Geste'),action:L('Action','Action'),context:L('Context','Contexte')})[channel]||channel;
@@ -48,22 +49,48 @@ function semanticRails(){
  let left='',right='';
  if(view==='angelus'){
    // Angelus owns the exact donor ritual grid inside renderAngelus().
-   // Do not add the later approximation's fixed overlay/context card.
    return'';
  }else if(view==='rosary'){
+   // Rosary remains under its dedicated exact-donor recovery lane.
    right=semanticRailChip('ao-rich-rosary',L('Rosary','Rosaire'),S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'));
  }else if(view==='stations'){
    const roman=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'];
    const i=Math.max(0,Math.min(13,Number(STATIONS.step)||0));
-   left=semanticRailChip('ao-live-look',L('Face station','Regardez la station'),L('Become still','Demeurez immobile'));
-   right=semanticRailChip('ao-rich-stations',L('Stations','Chemin de Croix'),`${roman[i]} / XIV`);
+   left=semanticRailChip(
+     i===13?'ao-refined-silence':'ao-live-look',
+     i===13?L('Silence','Silence'):L('Face station','Regardez la station'),
+     i===13?L('After the XIV Station','Après la XIVe station'):L('Become still','Demeurez immobile'),
+     {channel:i===13?'transient':'persistent'}
+   );
+   right=semanticRailChip('ao-rich-stations',L('Stations','Chemin de Croix'),`${roman[i]} / XIV`,{channel:'persistent'});
  }else if(view==='adoration'){
    const presence=adorationPresence();
-   right=semanticRailChip('ao-rich-adoration',L('Adoration','Adoration'),presence==='exposed'?L('Exposed','Exposé'):L('Reserved','Réservé'));
+   const arrival=ADOR.mode==='visit'&&ADOR.visitStep===0;
+   left=arrival
+     ?semanticRailChip('ao-live-genuflect',L('Genuflect','Génuflexion'),L('On arrival','À l’arrivée'),{channel:'transient'})
+     :semanticRailChip('ao-refined-silence',L('Silence','Silence'),L('Remain present','Demeurez présent'),{channel:'persistent'});
+   right=semanticRailChip('ao-rich-adoration',L('Adoration','Adoration'),presence==='exposed'?L('Exposed','Exposé'):L('Reserved','Réservé'),{channel:'persistent'});
  }else if(view==='benediction'){
-   right=semanticRailChip('ao-rich-adoration',L('Benediction','Bénédiction'),L('Live companion','Compagnon'));
+   const stage=BEN_STAGES?.[BEN.step]?.[0]||'exposition';
+   const service={
+     exposition:['ao-rich-adoration',L('Exposition','Exposition')],
+     adoration:['ao-refined-silence',L('Adoration','Adoration')],
+     hymn:['ao-rich-adoration','Tantum Ergo'],
+     prayer:['ao-live-response',L('Respond','Répondre')],
+     blessing:['ao-live-blessing',L('Blessing','Bénédiction')],
+     praises:['ao-live-response',L('Divine Praises','Louanges divines')],
+     reposition:['ao-rich-adoration',L('Reposition','Reposition')]
+   }[stage]||['ao-rich-adoration',L('Benediction','Bénédiction')];
+   if(stage==='prayer'||stage==='praises')left=semanticRailChip('ao-live-response',L('Respond','Répondre'),'',{channel:'transient'});
+   right=semanticRailChip(service[0],service[1],L('Public rite','Rite public'),{channel:stage==='adoration'?'persistent':'transient'});
  }else if(view==='confession'){
-   right=semanticRailChip('ao-rich-confession',L('Confession','Confession'),L('Preparation','Préparation'));
+   if(CONF.stage===3)left=semanticRailChip('ao-live-sign-cross',L('Sign of Cross','Signe de croix'),L('In Confessional','Au confessionnal'),{channel:'transient'});
+   right=semanticRailChip(
+     'ao-rich-confession',
+     L('Confession','Confession'),
+     [L('Doctrine','Doctrine'),L('Prepare','Préparer'),L('Examination','Examen'),L('In Confessional','Au confessionnal'),L('After','Après')][CONF.stage]||L('Preparation','Préparation'),
+     {channel:'persistent'}
+   );
  }
  if(!left&&!right)return'';
  return `<div class="aoP435930SemanticRails" data-ao-pray-semantic-rails aria-hidden="true">${left?`<aside class="aoP435930SemanticRail left">${left}</aside>`:''}${right?`<aside class="aoP435930SemanticRail right">${right}</aside>`:''}</div>`;
