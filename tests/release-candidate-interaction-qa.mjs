@@ -283,6 +283,8 @@ try{
   assert.equal(rosarySurface.guidedActive,true,"Rosary donor lost guided-depth state");
   assert.equal(rosarySurface.hintsVisible,0,"obsolete Rosary flip/translation hints remained visible");
 
+  await page.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot .pbShell")?.dataset?.aoRosaryExactDonor==="v3.4.14",null,{timeout:5000});
   await page.locator("#aoPrayerBookRoot .lab-back").first().click();
   await page.waitForFunction(()=>!document.getElementById("aoPrayerBookRoot")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForFunction(()=>
