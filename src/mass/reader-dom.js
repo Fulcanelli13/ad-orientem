@@ -47,10 +47,14 @@ const SHELL_STYLE = `
 .ao-mass-prefs-group>small{display:block;margin-bottom:7px;color:#6e7a72;font:700 8px/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
 .ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
 .ao-mode-ribbon button{
-  appearance:none;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);color:#929a93;
-  min-width:0;height:36px;padding:0 7px;border-radius:9px;font:700 8px/1 system-ui,sans-serif;letter-spacing:.09em
+  appearance:none;border:0;background:transparent;color:#929a93;min-width:0;height:44px;padding:4px 0;
+  font:700 8px/1 system-ui,sans-serif;letter-spacing:.09em
 }
-.ao-mode-ribbon button[aria-pressed="true"]{background:#26342b;color:#fbfbf5;border-color:rgba(140,174,149,.22)}
+.ao-mode-ribbon button>span{
+  height:36px;display:grid;place-items:center;padding:0 7px;border:1px solid rgba(255,255,255,.07);
+  border-radius:9px;background:rgba(255,255,255,.025);pointer-events:none
+}
+.ao-mode-ribbon button[aria-pressed="true"]>span{background:#26342b;color:#fbfbf5;border-color:rgba(140,174,149,.22)}
 .ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button{cursor:default}
 .ao-reader-shell[data-mode-switch-locked="true"] .ao-mode-ribbon button:not([aria-pressed="true"]){opacity:.34}
 .ao-mass-prefs-more{
@@ -425,7 +429,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   <div class="ao-section-menu" data-role="section-menu" hidden></div>
   <aside class="ao-mass-prefs" data-role="mass-preferences" data-open="false" aria-label="Mass preferences">
     <div class="ao-mass-prefs-head"><b>Mass preferences</b><button class="ao-mass-prefs-close" type="button" data-reader-preferences-close aria-label="Close preferences">×</button></div>
-    <div class="ao-mass-prefs-group"><small>Reader mode</small><nav class="ao-mode-ribbon" aria-label="Reader mode">${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}">${m}</button>`).join("")}</nav></div>
+    <div class="ao-mass-prefs-group"><small>Reader mode</small><nav class="ao-mode-ribbon" aria-label="Reader mode">${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}"><span>${m}</span></button>`).join("")}</nav></div>
     <button class="ao-mass-prefs-more" type="button" data-reader-parameters>App settings</button>
   </aside>
 
