@@ -1,0 +1,152 @@
+{
+  "schema": "NOVENA_CUSTOMS_GEOGRAPHY_BRIDGE_V1",
+  "version": "1.0.0",
+  "created_at": "2026-10-07",
+  "purpose": "Evidence-backed links from frozen novena identities to Customs Atlas customs and shared geography context. No proximity-based association.",
+  "invariants": [
+    "A novena does not become local merely because a shrine or custom is associated with its devotional family.",
+    "Exact-form attestation and devotional-family context are distinct relationship types.",
+    "PLACE_PENDING and AREA_CONTEXT never become canonical map pins without promotion through the shared Geography SOT.",
+    "Directory/TLM community proximity never proves a novena custom."
+  ],
+  "sources": [
+    {
+      "id": "PARAY-NOVENA",
+      "title": "Présentation de la neuvaine · Sanctuaire du Sacré-Cœur, Paray-le-Monial",
+      "url": "https://sacrecoeur-paray.org/parcours-jours/presentation-de-la-neuvaine/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "LISIEUX-NOVENA",
+      "title": "Sanctuaire Sainte-Thérèse de Lisieux · site map listing Neuvaine à sainte Thérèse",
+      "url": "https://www.therese-de-lisieux.catholique.fr/plan-du-site/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "ECF-ST-JOSEPH-SHRINES",
+      "title": "Église catholique en France · seven sanctuaries and monasteries dedicated to St Joseph",
+      "url": "https://eglise.catholique.fr/guide-eglise-catholique-france/eveques-dioceses-france/liste-des-dioceses/a-decouverte-dioceses-de-france/focus-sur-les-sanctuaires-de-france/570113-sept-sanctuaires-et-monasteres-saint-joseph/",
+      "directness": "OFFICIAL_CURRENT"
+    }
+  ],
+  "links": [
+    {
+      "link_id": "novena-custom:sacred_heart:DOM-006",
+      "novena_id": "sacred_heart",
+      "relationship": "DEVOTIONAL_FAMILY_CUSTOM",
+      "custom_id": "DOM-006",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "place_name_hint": null,
+      "map_policy": "PLACE",
+      "source_ids": [
+        "PARAY-CONSECRATION",
+        "PARAY-NOVENA"
+      ],
+      "confidence": "HIGH",
+      "note": "The Sacred Heart novena belongs to the same devotional family as family consecration; the exact frozen AO prayer form is not claimed to be the Paray form. Promoted to the canonical shared Paray place/shrine after SHRINES_PILGRIMAGES_SOT_V1.",
+      "geographic_precision": "PLACE",
+      "shrine_id": "shrine:FR:paray-sacred-heart"
+    },
+    {
+      "link_id": "novena-custom:sacred_heart:DOM-007",
+      "novena_id": "sacred_heart",
+      "relationship": "OPTIONAL_PREPARATORY_CUSTOM",
+      "custom_id": "DOM-007",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "place_name_hint": null,
+      "map_policy": "PLACE",
+      "source_ids": [
+        "PARAY-INTRONISATION",
+        "PARAY-NOVENA"
+      ],
+      "confidence": "HIGH",
+      "note": "Paray explicitly recommends a Sacred Heart novena as possible preparation for home enthronement; enthronement remains a distinct custom. Promoted to the canonical shared Paray place/shrine after SHRINES_PILGRIMAGES_SOT_V1.",
+      "geographic_precision": "PLACE",
+      "shrine_id": "shrine:FR:paray-sacred-heart"
+    },
+    {
+      "link_id": "novena-custom:holy_souls:DEAD-001",
+      "novena_id": "holy_souls",
+      "relationship": "RELATED_DEVOTIONAL_CUSTOM",
+      "custom_id": "DEAD-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "map_policy": "AREA_CONTEXT",
+      "source_ids": [
+        "ECF-DEAD"
+      ],
+      "confidence": "HIGH",
+      "note": "Prayerful cemetery visitation is related to prayer for the faithful departed but is not required by the novena."
+    },
+    {
+      "link_id": "novena-custom:holy_souls:DEAD-003",
+      "novena_id": "holy_souls",
+      "relationship": "TEMPORAL_CUSTOM_CONTEXT",
+      "custom_id": "DEAD-003",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "map_policy": "AREA_CONTEXT",
+      "source_ids": [
+        "ECF-DEAD",
+        "DPP-2001"
+      ],
+      "confidence": "HIGH",
+      "note": "2 November prayer for the dead is a privileged contextual observance; the novena itself may be prayed at other times."
+    },
+    {
+      "link_id": "novena-place:st_therese:lisieux",
+      "novena_id": "st_therese",
+      "relationship": "DEVOTIONAL_FAMILY_SHRINE_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Sanctuaire Sainte-Thérèse de Lisieux",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "LISIEUX-NOVENA"
+      ],
+      "confidence": "HIGH",
+      "note": "Official Lisieux material attests a St Thérèse novena and the shrine context. It does not prove that the sanctuary uses AO's exact Twenty-Four Glory Bes form."
+    },
+    {
+      "link_id": "novena-area:st_joseph:france",
+      "novena_id": "st_joseph",
+      "relationship": "DEVOTIONAL_FAMILY_AREA_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "map_policy": "AREA_CONTEXT",
+      "source_ids": [
+        "ECF-ST-JOSEPH-SHRINES"
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "note": "French episcopal evidence attests multiple St Joseph sanctuaries and feast devotion; it does not establish the exact Moran novena at each place."
+    }
+  ],
+  "negative_knowledge": [
+    {
+      "novena_ids": [
+        "holy_ghost",
+        "christmas",
+        "corpus_christi",
+        "immaculate_conception",
+        "annunciation",
+        "assumption",
+        "seven_sorrows",
+        "perpetual_help",
+        "st_anthony_nine_tuesdays",
+        "christ_the_king",
+        "immaculate_heart",
+        "st_michael"
+      ],
+      "decision": "NO_PUBLISHED_GEO_CUSTOM_BRIDGE_YET",
+      "reason": "No row-level evidence-backed Customs/Geography bridge has yet been established for the exact novena or a sufficiently relevant devotional-family context. Do not infer one from nearby shrines or TLM venues."
+    }
+  ],
+  "shrines_dependency": "SHRINES_PILGRIMAGES_SOT_V1"
+}
