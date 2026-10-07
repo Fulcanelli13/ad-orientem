@@ -7,7 +7,6 @@ on:
       - "src/find/**"
       - "tools/directory/**"
       - "tests/directory-*.mjs"
-      - "package.json"
       - ".github/workflows/directory-foundation.yml"
   push:
     branches:
@@ -17,7 +16,6 @@ on:
       - "src/find/**"
       - "tools/directory/**"
       - "tests/directory-*.mjs"
-      - "package.json"
       - ".github/workflows/directory-foundation.yml"
 
 concurrency:
