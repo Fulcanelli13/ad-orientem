@@ -1,0 +1,1086 @@
+{
+  "version": "SPIRITUAL_LIFE_COURSE_V1",
+  "status": "BILINGUAL_CONTENT_READY_NOT_PUBLISHED",
+  "created_at": "2026-10-07",
+  "source_sot": "data/learn/spiritual-life-sot.v1.json",
+  "future_route": "learn.spiritual_life",
+  "lesson_count": 14,
+  "language_parity": [
+    "en",
+    "fr"
+  ],
+  "exercise_policy": "NON_SCORED_APPLICATION_AND_UNDERSTANDING_ONLY",
+  "provenance_policy": "Every block and practice maps to one or more frozen SOT claim IDs; source drawers must resolve through the SOT.",
+  "lessons": [
+    {
+      "id": "SL01",
+      "title": {
+        "en": "The Interior Life",
+        "fr": "La vie intérieure"
+      },
+      "summary": {
+        "en": "Spiritual life is not a collection of devotions. Its centre is life with God: grace, charity, conformity to His will and fidelity in your actual state of life.",
+        "fr": "La vie spirituelle n’est pas une collection de dévotions. Son centre est la vie avec Dieu : la grâce, la charité, la conformité à sa volonté et la fidélité dans votre état de vie réel."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "The end",
+            "fr": "Le but"
+          },
+          "t": {
+            "en": "Prayer, sacraments, reading and devotions are means. They are good because they help you know, love and serve God more faithfully—not because having more practices makes you more advanced.",
+            "fr": "La prière, les sacrements, la lecture et les dévotions sont des moyens. Ils sont bons parce qu’ils aident à mieux connaître, aimer et servir Dieu — non parce que multiplier les pratiques rendrait plus avancé."
+          },
+          "claims": [
+            "SL01-Q01",
+            "SL01-Q04"
+          ]
+        },
+        {
+          "h": {
+            "en": "Your state of life matters",
+            "fr": "Votre état de vie compte"
+          },
+          "t": {
+            "en": "A parent, a student, a worker, a priest and a religious do not live the same schedule. Genuine devotion strengthens the duties God has actually given you; it does not make you imitate somebody else’s timetable.",
+            "fr": "Un parent, un étudiant, un travailleur, un prêtre et un religieux ne vivent pas le même horaire. La vraie dévotion fortifie les devoirs que Dieu vous a réellement confiés ; elle ne vous fait pas copier l’emploi du temps d’un autre."
+          },
+          "claims": [
+            "SL01-Q02"
+          ]
+        },
+        {
+          "h": {
+            "en": "Progress without pressure",
+            "fr": "Progresser sans pression"
+          },
+          "t": {
+            "en": "Spiritual progress requires desire and effort, but not nervous self-measurement. Renew the desire calmly, depend on grace, and begin again when you fail.",
+            "fr": "Le progrès spirituel demande désir et effort, mais non une mesure anxieuse de soi. Renouvelez calmement le désir, comptez sur la grâce et recommencez après une chute."
+          },
+          "claims": [
+            "SL01-Q03",
+            "SL01-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "APPLICATION",
+        "prompt": {
+          "en": "Name one spiritual practice you are tempted to treat as an achievement rather than a means. What is it supposed to help you do before God?",
+          "fr": "Nommez une pratique spirituelle que vous êtes tenté de traiter comme une réussite plutôt que comme un moyen. Que doit-elle vous aider à faire devant Dieu ?"
+        },
+        "guidance": {
+          "en": "Keep the answer concrete: prayer, charity, a duty of state, repentance or union with God—not a score.",
+          "fr": "Gardez une réponse concrète : prière, charité, devoir d’état, repentir ou union à Dieu — pas un score."
+        },
+        "claims": [
+          "SL01-Q01",
+          "SL01-Q05"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "formation",
+          "target": "learn.catechism",
+          "reason": "Doctrine remains owned by Catechism."
+        }
+      ]
+    },
+    {
+      "id": "SL02",
+      "title": {
+        "en": "Living in God's Presence",
+        "fr": "Vivre en présence de Dieu"
+      },
+      "summary": {
+        "en": "Recollection means repeatedly returning the heart to God in the middle of ordinary life.",
+        "fr": "Le recueillement consiste à ramener souvent le cœur vers Dieu au milieu de la vie ordinaire."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "God is not far away",
+            "fr": "Dieu n’est pas loin"
+          },
+          "t": {
+            "en": "The presence of God begins in faith: God sustains you, sees you and, in the life of grace, dwells in the soul. Recollection is the practical remembrance of that reality.",
+            "fr": "La présence de Dieu commence dans la foi : Dieu vous soutient, vous voit et, dans la vie de la grâce, habite l’âme. Le recueillement est le souvenir pratique de cette réalité."
+          },
+          "claims": [
+            "SL02-Q01"
+          ]
+        },
+        {
+          "h": {
+            "en": "Return, do not strain",
+            "fr": "Revenir, sans se crisper"
+          },
+          "t": {
+            "en": "You do not have to keep a continuous stream of religious thoughts. A brief aspiration, an interior glance toward God or a renewed intention can restore recollection after work has absorbed your attention.",
+            "fr": "Vous n’avez pas à maintenir un flot continu de pensées religieuses. Une brève aspiration, un regard intérieur vers Dieu ou une intention renouvelée peut rétablir le recueillement après que le travail a absorbé votre attention."
+          },
+          "claims": [
+            "SL02-Q02",
+            "SL02-Q05"
+          ]
+        },
+        {
+          "h": {
+            "en": "Compatible with work",
+            "fr": "Compatible avec le travail"
+          },
+          "t": {
+            "en": "Recollection should make you more present to your real duties, not less. It belongs inside ordinary action as well as in explicit times of prayer.",
+            "fr": "Le recueillement doit vous rendre plus présent à vos devoirs réels, non moins. Il appartient à l’action ordinaire aussi bien qu’aux moments explicites de prière."
+          },
+          "claims": [
+            "SL02-Q03",
+            "SL02-Q04"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "APPLICATION",
+        "prompt": {
+          "en": "Choose one ordinary transition today—starting work, opening a door, getting into the car—and use it once as a quiet reminder of God’s presence.",
+          "fr": "Choisissez aujourd’hui une transition ordinaire — commencer le travail, ouvrir une porte, monter en voiture — et utilisez-la une fois comme rappel silencieux de la présence de Dieu."
+        },
+        "guidance": {
+          "en": "One simple return is enough. Do not turn it into a compulsory counter.",
+          "fr": "Un simple retour suffit. N’en faites pas un compteur obligatoire."
+        },
+        "claims": [
+          "SL02-Q05"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "pray",
+          "target": "pray.morning_evening",
+          "reason": "Existing prayer owner can anchor the beginning and end of the day."
+        }
+      ]
+    },
+    {
+      "id": "SL03",
+      "title": {
+        "en": "Mental Prayer: The Foundations",
+        "fr": "Oraison mentale : les fondements"
+      },
+      "summary": {
+        "en": "Mental prayer is interior conversation with God. Method helps you begin; it is not the prayer itself.",
+        "fr": "L’oraison mentale est une conversation intérieure avec Dieu. La méthode aide à commencer ; elle n’est pas la prière elle-même."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Mind and heart",
+            "fr": "Intelligence et cœur"
+          },
+          "t": {
+            "en": "Mental prayer may include reflection, recollection, self-examination, loving attention and desire. Its purpose is not to finish a thought exercise but to turn the person toward God.",
+            "fr": "L’oraison mentale peut comprendre réflexion, recueillement, examen de soi, attention aimante et désir. Son but n’est pas d’achever un exercice intellectuel, mais d’orienter la personne vers Dieu."
+          },
+          "claims": [
+            "SL03-Q01"
+          ]
+        },
+        {
+          "h": {
+            "en": "From truth to prayer",
+            "fr": "De la vérité à la prière"
+          },
+          "t": {
+            "en": "A useful meditation normally moves from a truth considered to affection, petition and a practical resolution. Christ’s life and Passion provide especially rich matter for this.",
+            "fr": "Une méditation utile passe normalement d’une vérité considérée à l’affection, à la demande et à une résolution pratique. La vie et la Passion du Christ offrent une matière particulièrement riche."
+          },
+          "claims": [
+            "SL03-Q02",
+            "SL03-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "A simple way to begin",
+            "fr": "Une manière simple de commencer"
+          },
+          "t": {
+            "en": "Read a short solid passage. Ask what is true here, where it touches your life, what should change today, and what grace you need. Then speak to God.",
+            "fr": "Lisez un court passage solide. Demandez ce qui est vrai ici, où cela touche votre vie, ce qui doit changer aujourd’hui et de quelle grâce vous avez besoin. Puis parlez à Dieu."
+          },
+          "claims": [
+            "SL03-Q04",
+            "SL03-Q05",
+            "SL03-Q06"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "GUIDED_METHOD",
+        "prompt": {
+          "en": "Take one short Gospel sentence. Spend a few minutes considering it, make one act of prayer, and finish with one concrete resolution.",
+          "fr": "Prenez une courte phrase de l’Évangile. Considérez-la quelques minutes, faites un acte de prière et terminez par une résolution concrète."
+        },
+        "guidance": {
+          "en": "Do not try to manufacture feelings. The movement toward God matters more than completing a template.",
+          "fr": "N’essayez pas de fabriquer des sentiments. Le mouvement vers Dieu compte davantage que l’achèvement d’un canevas."
+        },
+        "claims": [
+          "SL03-Q02",
+          "SL03-Q04"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "formation",
+          "target": "today.gospel",
+          "reason": "Today's Gospel can supply authentic meditation material without generating invented meditations."
+        }
+      ]
+    },
+    {
+      "id": "SL04",
+      "title": {
+        "en": "The Saint-Sulpice Method",
+        "fr": "La méthode de Saint-Sulpice"
+      },
+      "summary": {
+        "en": "A Christ-centred traditional method: Jesus before the eyes, in the heart and in the hands.",
+        "fr": "Une méthode traditionnelle centrée sur le Christ : Jésus devant les yeux, dans le cœur et dans les mains."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "One method, not the method",
+            "fr": "Une méthode, non la méthode"
+          },
+          "t": {
+            "en": "Saint-Sulpice gives a strong framework for beginners, but the Church has several legitimate schools of mental prayer. Use it as a guide, not a universal law.",
+            "fr": "Saint-Sulpice offre un cadre solide pour les débutants, mais l’Église connaît plusieurs écoles légitimes d’oraison. Utilisez-le comme guide, non comme loi universelle."
+          },
+          "claims": [
+            "SL04-Q01"
+          ]
+        },
+        {
+          "h": {
+            "en": "Jesus before the eyes",
+            "fr": "Jésus devant les yeux"
+          },
+          "t": {
+            "en": "Look to Christ as model: His words, actions and dispositions. Adore Him and let the truth of what you contemplate become clear.",
+            "fr": "Regardez le Christ comme modèle : ses paroles, ses actions et ses dispositions. Adorez-le et laissez apparaître clairement la vérité contemplée."
+          },
+          "claims": [
+            "SL04-Q02",
+            "SL04-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "Jesus in the heart and hands",
+            "fr": "Jésus dans le cœur et dans les mains"
+          },
+          "t": {
+            "en": "Ask for His dispositions and virtues; then co-operate by carrying one concrete resolution into the day. The method has done its work when it leads to loving union and action.",
+            "fr": "Demandez ses dispositions et ses vertus ; puis coopérez en portant une résolution concrète dans la journée. La méthode a accompli son rôle lorsqu’elle conduit à l’union aimante et à l’action."
+          },
+          "claims": [
+            "SL04-Q04",
+            "SL04-Q05",
+            "SL04-Q06"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "GUIDED_METHOD",
+        "prompt": {
+          "en": "Using one Gospel scene, write only three short lines: What do I see in Christ? What do I ask Him to form in me? What will I do today?",
+          "fr": "À partir d’une scène de l’Évangile, écrivez seulement trois courtes lignes : Que vois-je dans le Christ ? Que lui demandé-je de former en moi ? Que vais-je faire aujourd’hui ?"
+        },
+        "guidance": {
+          "en": "The three lines are a scaffold. Prayer should not become paperwork.",
+          "fr": "Les trois lignes sont un échafaudage. La prière ne doit pas devenir de la paperasse."
+        },
+        "claims": [
+          "SL04-Q02",
+          "SL04-Q06"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "formation",
+          "target": "today.gospel",
+          "reason": "Use canonical Gospel text as meditation matter."
+        }
+      ]
+    },
+    {
+      "id": "SL05",
+      "title": {
+        "en": "Distractions, Dryness & Perseverance",
+        "fr": "Distractions, sécheresse & persévérance"
+      },
+      "summary": {
+        "en": "Prayer is not measured by how much consolation you feel.",
+        "fr": "La prière ne se mesure pas à la quantité de consolation ressentie."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Dry does not mean useless",
+            "fr": "Sec ne veut pas dire inutile"
+          },
+          "t": {
+            "en": "Prayer can be faithful and fruitful without sensible sweetness. Do not conclude that God is absent or that you have failed simply because prayer feels barren.",
+            "fr": "La prière peut être fidèle et féconde sans douceur sensible. Ne concluez pas que Dieu est absent ou que vous avez échoué simplement parce que la prière paraît aride."
+          },
+          "claims": [
+            "SL05-Q01"
+          ]
+        },
+        {
+          "h": {
+            "en": "Stay peacefully",
+            "fr": "Rester paisiblement"
+          },
+          "t": {
+            "en": "When you are dry, remain before God without forcing emotion. A familiar vocal prayer, a crucifix or a few lines of spiritual reading may help recollect the mind.",
+            "fr": "Dans la sécheresse, restez devant Dieu sans forcer l’émotion. Une prière vocale familière, un crucifix ou quelques lignes de lecture spirituelle peuvent aider à recueillir l’esprit."
+          },
+          "claims": [
+            "SL05-Q02",
+            "SL05-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "Real duties can interrupt",
+            "fr": "Les vrais devoirs peuvent interrompre"
+          },
+          "t": {
+            "en": "Work, illness, family and unavoidable duties can disrupt a planned exercise. Adapt prudently and return when you can; do not turn the missed session into a verdict on your spiritual state.",
+            "fr": "Le travail, la maladie, la famille et les devoirs inévitables peuvent interrompre un exercice prévu. Adaptez-vous avec prudence et reprenez lorsque vous le pouvez ; ne transformez pas la séance manquée en verdict sur votre état spirituel."
+          },
+          "claims": [
+            "SL05-Q04",
+            "SL05-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "REFLECTION",
+        "prompt": {
+          "en": "When prayer goes badly, what do you usually judge: the fidelity of your effort, or the feeling you received?",
+          "fr": "Lorsque la prière se passe mal, que jugez-vous habituellement : la fidélité de votre effort ou le sentiment que vous avez reçu ?"
+        },
+        "guidance": {
+          "en": "The lesson is not to ignore negligence; it is to stop using consolation as the main measure.",
+          "fr": "La leçon n’est pas d’ignorer la négligence ; elle est de cesser d’utiliser la consolation comme mesure principale."
+        },
+        "claims": [
+          "SL05-Q01",
+          "SL05-Q05"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "pray",
+          "target": "pray.morning_evening",
+          "reason": "Use existing owned prayer routines when a simple restart is helpful."
+        }
+      ]
+    },
+    {
+      "id": "SL06",
+      "title": {
+        "en": "The General Examination",
+        "fr": "L’examen général"
+      },
+      "summary": {
+        "en": "A short daily review before God: gratitude, light, truth, pardon and a new beginning.",
+        "fr": "Une courte revue quotidienne devant Dieu : gratitude, lumière, vérité, pardon et nouveau départ."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Five movements",
+            "fr": "Cinq mouvements"
+          },
+          "t": {
+            "en": "The classical general examen gives thanks, asks for light, reviews the day, asks pardon and resolves amendment with God’s grace.",
+            "fr": "L’examen général classique rend grâce, demande la lumière, revoit la journée, demande pardon et prend une résolution d’amendement avec la grâce de Dieu."
+          },
+          "claims": [
+            "SL06-Q01",
+            "SL06-Q02"
+          ]
+        },
+        {
+          "h": {
+            "en": "Not another Confession",
+            "fr": "Pas une autre Confession"
+          },
+          "t": {
+            "en": "A nightly examen is not the same as the fuller examination used when preparing to confess sacramentally. Its ordinary purpose is daily knowledge, repentance and reform.",
+            "fr": "L’examen du soir n’est pas identique à l’examen plus complet fait en préparation à la Confession sacramentelle. Son but ordinaire est la connaissance quotidienne de soi, le repentir et la réforme."
+          },
+          "claims": [
+            "SL06-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "Calm and finite",
+            "fr": "Calme et limité"
+          },
+          "t": {
+            "en": "Review honestly, ask pardon, choose what needs amendment and finish. Repeatedly reopening the day in search of perfect certainty defeats the purpose.",
+            "fr": "Revoyez honnêtement, demandez pardon, choisissez ce qui doit être amendé et terminez. Rouvrir sans cesse la journée à la recherche d’une certitude parfaite détourne l’exercice de son but."
+          },
+          "claims": [
+            "SL06-Q04",
+            "SL06-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "GUIDED_METHOD",
+        "prompt": {
+          "en": "Tonight use only the five movements: thanks; light; review; pardon; amendment.",
+          "fr": "Ce soir, utilisez seulement les cinq mouvements : merci ; lumière ; revue ; pardon ; amendement."
+        },
+        "guidance": {
+          "en": "Keep it brief. If you need sacramental preparation, use the Confession owner instead.",
+          "fr": "Gardez-le bref. Si vous avez besoin d’une préparation sacramentelle, utilisez le module Confession."
+        },
+        "claims": [
+          "SL06-Q02",
+          "SL06-Q03"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "pray",
+          "target": "pray.confession",
+          "reason": "Full sacramental Confession preparation remains owned by PRAY."
+        },
+        {
+          "surface": "pray",
+          "target": "pray.morning_evening",
+          "reason": "Daily evening prayer remains owned by PRAY."
+        }
+      ]
+    },
+    {
+      "id": "SL07",
+      "title": {
+        "en": "The Particular Examination",
+        "fr": "L’examen particulier"
+      },
+      "summary": {
+        "en": "Work deliberately on one point instead of vaguely trying to improve everything at once.",
+        "fr": "Travaillez délibérément sur un point au lieu d’essayer vaguement de tout améliorer à la fois."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "One point",
+            "fr": "Un seul point"
+          },
+          "t": {
+            "en": "Choose one concrete fault to resist or one virtue to practise. The point should be specific enough to recognize in real situations.",
+            "fr": "Choisissez une faute concrète à combattre ou une vertu à pratiquer. Le point doit être assez précis pour être reconnu dans des situations réelles."
+          },
+          "claims": [
+            "SL07-Q01",
+            "SL07-Q04"
+          ]
+        },
+        {
+          "h": {
+            "en": "Review for amendment",
+            "fr": "Revoir pour s’amender"
+          },
+          "t": {
+            "en": "Return briefly to that point during the day and ask where you succeeded, where you failed and what practical means will help next time.",
+            "fr": "Revenez brièvement à ce point pendant la journée et demandez où vous avez réussi, où vous avez échoué et quel moyen pratique aidera la prochaine fois."
+          },
+          "claims": [
+            "SL07-Q02",
+            "SL07-Q05"
+          ]
+        },
+        {
+          "h": {
+            "en": "No spiritual scoreboard",
+            "fr": "Pas de tableau de score spirituel"
+          },
+          "t": {
+            "en": "Some traditional methods used marks or counts. They may sharpen attention, but the number is never the spiritual goal and should not become a vanity or anxiety metric.",
+            "fr": "Certaines méthodes traditionnelles utilisaient des marques ou des comptes. Ils peuvent aiguiser l’attention, mais le nombre n’est jamais le but spirituel et ne doit pas devenir une mesure de vanité ou d’anxiété."
+          },
+          "claims": [
+            "SL07-Q03",
+            "SL07-Q06"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "APPLICATION",
+        "prompt": {
+          "en": "Choose one point for the next few days and phrase it as an action you can recognize—for example, ‘pause before answering sharply.’",
+          "fr": "Choisissez un point pour les prochains jours et formulez-le comme une action reconnaissable — par exemple : « faire une pause avant de répondre sèchement »."
+        },
+        "guidance": {
+          "en": "Do not choose five points. Focus is the method.",
+          "fr": "Ne choisissez pas cinq points. La concentration est la méthode."
+        },
+        "claims": [
+          "SL07-Q01",
+          "SL07-Q04"
+        ]
+      },
+      "handoffs": []
+    },
+    {
+      "id": "SL08",
+      "title": {
+        "en": "Spiritual Reading",
+        "fr": "La lecture spirituelle"
+      },
+      "summary": {
+        "en": "Read to nourish prayer and conversion, not merely to consume Catholic information.",
+        "fr": "Lisez pour nourrir la prière et la conversion, non simplement pour consommer de l’information catholique."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Read slowly enough",
+            "fr": "Lire assez lentement"
+          },
+          "t": {
+            "en": "A short passage read attentively can do more spiritual work than many pages rushed through. Pause where a truth touches the mind or conscience.",
+            "fr": "Un court passage lu attentivement peut produire davantage de fruit spirituel que de nombreuses pages parcourues rapidement. Arrêtez-vous là où une vérité touche l’esprit ou la conscience."
+          },
+          "claims": [
+            "SL08-Q01",
+            "SL08-Q02"
+          ]
+        },
+        {
+          "h": {
+            "en": "Choose sound material",
+            "fr": "Choisir une matière sûre"
+          },
+          "t": {
+            "en": "Scripture, solid spiritual classics and suitable lives of saints are normal material. Reading should lead toward prayer, imitation and a practical response.",
+            "fr": "L’Écriture, les classiques spirituels solides et les vies de saints adaptées sont une matière normale. La lecture doit conduire vers la prière, l’imitation et une réponse pratique."
+          },
+          "claims": [
+            "SL08-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "Admire without copying blindly",
+            "fr": "Admirer sans copier aveuglément"
+          },
+          "t": {
+            "en": "A saint may have lived practices that do not fit your circumstances. Imitate the virtue according to your state of life rather than reproducing every exterior detail.",
+            "fr": "Un saint peut avoir vécu des pratiques qui ne conviennent pas à vos circonstances. Imitez la vertu selon votre état de vie plutôt que de reproduire chaque détail extérieur."
+          },
+          "claims": [
+            "SL08-Q04",
+            "SL08-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "APPLICATION",
+        "prompt": {
+          "en": "Read one page of a sound spiritual work. Stop at one sentence worth carrying into prayer instead of finishing the chapter.",
+          "fr": "Lisez une page d’un ouvrage spirituel sûr. Arrêtez-vous à une phrase qui mérite d’être portée dans la prière au lieu de finir le chapitre."
+        },
+        "guidance": {
+          "en": "The point is assimilation, not completion.",
+          "fr": "Le but est l’assimilation, non l’achèvement."
+        },
+        "claims": [
+          "SL08-Q01",
+          "SL08-Q02"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "formation",
+          "target": "today.gospel",
+          "reason": "Scripture can provide short, canonical reading material."
+        }
+      ]
+    },
+    {
+      "id": "SL09",
+      "title": {
+        "en": "Sanctifying Ordinary Duties",
+        "fr": "Sanctifier les devoirs ordinaires"
+      },
+      "summary": {
+        "en": "Work and ordinary responsibilities can be offered to God and lived in union with Christ.",
+        "fr": "Le travail et les responsabilités ordinaires peuvent être offerts à Dieu et vécus en union avec le Christ."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Ordinary actions matter",
+            "fr": "Les actions ordinaires comptent"
+          },
+          "t": {
+            "en": "Catholic spiritual life is not confined to explicit prayer. Lawful work, family responsibilities and ordinary actions can be done for God’s glory and in the name of Christ.",
+            "fr": "La vie spirituelle catholique ne se limite pas à la prière explicite. Le travail licite, les responsabilités familiales et les actions ordinaires peuvent être accomplis pour la gloire de Dieu et au nom du Christ."
+          },
+          "claims": [
+            "SL09-Q01"
+          ]
+        },
+        {
+          "h": {
+            "en": "Duties are not obstacles",
+            "fr": "Les devoirs ne sont pas des obstacles"
+          },
+          "t": {
+            "en": "A real duty of state is material for sanctification. Optional devotions should help you fulfil duties with greater faith, charity and competence—not become excuses for neglecting them.",
+            "fr": "Un véritable devoir d’état est une matière de sanctification. Les dévotions facultatives doivent vous aider à accomplir vos devoirs avec davantage de foi, de charité et de compétence — non devenir des excuses pour les négliger."
+          },
+          "claims": [
+            "SL09-Q02",
+            "SL09-Q04"
+          ]
+        },
+        {
+          "h": {
+            "en": "Offer the action",
+            "fr": "Offrir l’action"
+          },
+          "t": {
+            "en": "Before an important task, a brief intention can be enough: do this with Christ, for God’s glory and in charity. The doctrine is broadly Catholic and is not the property of one modern movement.",
+            "fr": "Avant une tâche importante, une brève intention peut suffire : accomplir cela avec le Christ, pour la gloire de Dieu et dans la charité. Cette doctrine est largement catholique et n’appartient pas à un mouvement moderne particulier."
+          },
+          "claims": [
+            "SL09-Q03",
+            "SL09-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "APPLICATION",
+        "prompt": {
+          "en": "Before one ordinary duty today, pause once and explicitly offer it to God. Then do the duty well.",
+          "fr": "Avant un devoir ordinaire aujourd’hui, arrêtez-vous une fois et offrez-le explicitement à Dieu. Puis accomplissez bien ce devoir."
+        },
+        "guidance": {
+          "en": "The quality of the duty matters; the offering is not a substitute for doing it properly.",
+          "fr": "La qualité du devoir compte ; l’offrande ne remplace pas le fait de bien l’accomplir."
+        },
+        "claims": [
+          "SL09-Q01",
+          "SL09-Q04"
+        ]
+      },
+      "handoffs": []
+    },
+    {
+      "id": "SL10",
+      "title": {
+        "en": "A Rule of Life Without Rigidity",
+        "fr": "Une règle de vie sans rigidité"
+      },
+      "summary": {
+        "en": "A rule of life gives structure without turning optional practices into an inflexible private law.",
+        "fr": "Une règle de vie donne une structure sans transformer les pratiques facultatives en loi privée inflexible."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Why have a rule?",
+            "fr": "Pourquoi une règle ?"
+          },
+          "t": {
+            "en": "A simple rule reduces indecision and helps protect time for prayer, duties, work and rest. Its purpose is fidelity, not control for its own sake.",
+            "fr": "Une règle simple réduit l’indécision et aide à protéger du temps pour la prière, les devoirs, le travail et le repos. Son but est la fidélité, non le contrôle pour lui-même."
+          },
+          "claims": [
+            "SL10-Q01"
+          ]
+        },
+        {
+          "h": {
+            "en": "Firm and flexible",
+            "fr": "Ferme et souple"
+          },
+          "t": {
+            "en": "A good rule has a stable core but can adapt when charity, illness, family, travel or an urgent duty requires it. The more necessary comes first.",
+            "fr": "Une bonne règle possède un noyau stable mais peut s’adapter lorsque la charité, la maladie, la famille, le voyage ou un devoir urgent l’exige. Le plus nécessaire vient d’abord."
+          },
+          "claims": [
+            "SL10-Q02",
+            "SL10-Q03",
+            "SL10-Q05"
+          ]
+        },
+        {
+          "h": {
+            "en": "Do not overbuild",
+            "fr": "Ne pas surcharger"
+          },
+          "t": {
+            "en": "Begin with what can realistically remain stable. A small rule faithfully lived is better than an impressive programme repeatedly abandoned.",
+            "fr": "Commencez par ce qui peut réellement rester stable. Une petite règle fidèlement vécue vaut mieux qu’un programme impressionnant sans cesse abandonné."
+          },
+          "claims": [
+            "SL10-Q04",
+            "SL10-Q06"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "APPLICATION",
+        "prompt": {
+          "en": "Write a three-part core only: one morning anchor, one daily recollection point, one evening anchor.",
+          "fr": "Écrivez seulement un noyau en trois parties : un point d’ancrage le matin, un rappel quotidien, un point d’ancrage le soir."
+        },
+        "guidance": {
+          "en": "Do not add optional devotions until the core is stable.",
+          "fr": "N’ajoutez pas de dévotions facultatives avant que le noyau soit stable."
+        },
+        "claims": [
+          "SL10-Q02",
+          "SL10-Q04"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "pray",
+          "target": "pray.morning_evening",
+          "reason": "Actual morning/evening prayer sequences remain owned by PRAY."
+        }
+      ]
+    },
+    {
+      "id": "SL11",
+      "title": {
+        "en": "Prayer Before Action",
+        "fr": "La prière avant l’action"
+      },
+      "summary": {
+        "en": "Apostolic work should overflow from the interior life rather than replace it.",
+        "fr": "L’œuvre apostolique doit déborder de la vie intérieure plutôt que la remplacer."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Activity is not union",
+            "fr": "L’activité n’est pas l’union"
+          },
+          "t": {
+            "en": "Good work can be genuinely good and still become spiritually disordered if activity steadily replaces prayer, dependence on grace and recollection.",
+            "fr": "Une bonne œuvre peut être réellement bonne et pourtant devenir spirituellement désordonnée si l’activité remplace peu à peu la prière, la dépendance à la grâce et le recueillement."
+          },
+          "claims": [
+            "SL11-Q01",
+            "SL11-Q02"
+          ]
+        },
+        {
+          "h": {
+            "en": "Busier means more need",
+            "fr": "Plus occupé, plus besoin"
+          },
+          "t": {
+            "en": "A heavy apostolate is not a reason to abandon the essentials of interior life. It makes those essentials more necessary because action needs purity of intention and supernatural strength.",
+            "fr": "Un apostolat chargé n’est pas une raison d’abandonner les éléments essentiels de la vie intérieure. Il les rend plus nécessaires parce que l’action a besoin de pureté d’intention et de force surnaturelle."
+          },
+          "claims": [
+            "SL11-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "Then act",
+            "fr": "Puis agir"
+          },
+          "t": {
+            "en": "The goal is not retreat from responsibility. Prayer should make action more supernatural, steady and charitable. The practical techniques of helping others remain in Apostolate.",
+            "fr": "Le but n’est pas de fuir la responsabilité. La prière doit rendre l’action plus surnaturelle, stable et charitable. Les techniques pratiques pour aider les autres restent dans Apostolate."
+          },
+          "claims": [
+            "SL11-Q04",
+            "SL11-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "REFLECTION",
+        "prompt": {
+          "en": "Is there one good activity that currently consumes the time or attention needed for an essential spiritual practice?",
+          "fr": "Existe-t-il une bonne activité qui consomme actuellement le temps ou l’attention nécessaire à une pratique spirituelle essentielle ?"
+        },
+        "guidance": {
+          "en": "Do not answer by dropping duties. Look first for disorder, excess or avoidable activity.",
+          "fr": "Ne répondez pas en abandonnant vos devoirs. Cherchez d’abord le désordre, l’excès ou l’activité évitable."
+        },
+        "claims": [
+          "SL11-Q01",
+          "SL11-Q03"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "apostolate",
+          "target": "APF01",
+          "reason": "Apostolate owns the practical formation for helping others."
+        }
+      ]
+    },
+    {
+      "id": "SL12",
+      "title": {
+        "en": "Reparation & Indulgences",
+        "fr": "Réparation & indulgences"
+      },
+      "summary": {
+        "en": "Both belong to Catholic life, but neither is a spiritual accounting system.",
+        "fr": "Toutes deux appartiennent à la vie catholique, mais aucune n’est un système de comptabilité spirituelle."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Reparation",
+            "fr": "La réparation"
+          },
+          "t": {
+            "en": "Reparation is a response of love and justice united to Christ, especially prominent in Sacred Heart devotion. It is not a way of buying grace or balancing a private score.",
+            "fr": "La réparation est une réponse d’amour et de justice unie au Christ, particulièrement présente dans la dévotion au Sacré-Cœur. Elle n’est pas une manière d’acheter la grâce ou d’équilibrer un score privé."
+          },
+          "claims": [
+            "SL12-Q01",
+            "SL12-Q06"
+          ]
+        },
+        {
+          "h": {
+            "en": "What an indulgence is",
+            "fr": "Ce qu’est une indulgence"
+          },
+          "t": {
+            "en": "An indulgence concerns temporal punishment for sins whose guilt has already been forgiven. Current discipline distinguishes partial and plenary indulgences and attaches conditions to the latter.",
+            "fr": "Une indulgence concerne la peine temporelle due pour des péchés dont la faute a déjà été pardonnée. La discipline actuelle distingue les indulgences partielles et plénières et attache des conditions à ces dernières."
+          },
+          "claims": [
+            "SL12-Q02",
+            "SL12-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "Historical language",
+            "fr": "Le langage historique"
+          },
+          "t": {
+            "en": "Older books may speak of days or years. That language is not the current measure and never meant a literal number of days subtracted from Purgatory.",
+            "fr": "Les anciens livres peuvent parler de jours ou d’années. Ce langage n’est plus la mesure actuelle et n’a jamais signifié un nombre littéral de jours retranchés du Purgatoire."
+          },
+          "claims": [
+            "SL12-Q04",
+            "SL12-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "KNOWLEDGE_CHECK",
+        "prompt": {
+          "en": "Which statement is correct: ‘an indulgence forgives the guilt of sin’ or ‘it concerns temporal punishment after guilt has been forgiven’?",
+          "fr": "Quelle affirmation est correcte : « une indulgence pardonne la faute du péché » ou « elle concerne la peine temporelle après que la faute a été pardonnée » ?"
+        },
+        "guidance": {
+          "en": "The second statement is correct.",
+          "fr": "La seconde affirmation est correcte."
+        },
+        "claims": [
+          "SL12-Q02"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "pray",
+          "target": "programme.first_friday",
+          "reason": "First Friday owns its reparatory programme and prayer execution."
+        },
+        {
+          "surface": "calendar",
+          "target": "calendar",
+          "reason": "Calendar may surface verified indulgenced occasions without Formation owning date logic."
+        }
+      ]
+    },
+    {
+      "id": "SL13",
+      "title": {
+        "en": "Devotion Without Superstition",
+        "fr": "Dévotion sans superstition"
+      },
+      "summary": {
+        "en": "Catholic devotion uses material signs without treating them as magic.",
+        "fr": "La dévotion catholique utilise des signes matériels sans les traiter comme de la magie."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "What superstition adds",
+            "fr": "Ce que la superstition ajoute"
+          },
+          "t": {
+            "en": "Superstition attributes a supernatural power to an action or object that it does not possess according to the Church’s teaching and practice.",
+            "fr": "La superstition attribue à une action ou à un objet une puissance surnaturelle qu’il ne possède pas selon l’enseignement et la pratique de l’Église."
+          },
+          "claims": [
+            "SL13-Q01"
+          ]
+        },
+        {
+          "h": {
+            "en": "Exterior and interior",
+            "fr": "Extérieur et intérieur"
+          },
+          "t": {
+            "en": "Images, medals, scapulars, blessed objects and other devotions should direct faith and prayer toward God. Their exterior use is not meant to function independently of interior religion and conversion.",
+            "fr": "Les images, médailles, scapulaires, objets bénits et autres dévotions doivent orienter la foi et la prière vers Dieu. Leur usage extérieur n’est pas destiné à fonctionner indépendamment de la religion intérieure et de la conversion."
+          },
+          "claims": [
+            "SL13-Q02",
+            "SL13-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "Reject automatic guarantees",
+            "fr": "Rejeter les garanties automatiques"
+          },
+          "t": {
+            "en": "Be cautious whenever possession or mechanical use of an object is presented as guaranteeing worldly success or salvation. Verify what the Church actually promises.",
+            "fr": "Soyez prudent lorsqu’on présente la possession ou l’usage mécanique d’un objet comme garantissant le succès terrestre ou le salut. Vérifiez ce que l’Église promet réellement."
+          },
+          "claims": [
+            "SL13-Q04",
+            "SL13-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "APPLICATION",
+        "prompt": {
+          "en": "For one sacramental or devotional object you use, state what it is meant to turn your mind or prayer toward.",
+          "fr": "Pour un sacramental ou objet de dévotion que vous utilisez, dites vers quoi il est destiné à orienter votre esprit ou votre prière."
+        },
+        "guidance": {
+          "en": "Answer in terms of God, prayer, faith, repentance, protection sought from God or imitation of a saint—not autonomous object-power.",
+          "fr": "Répondez en termes de Dieu, prière, foi, repentir, protection demandée à Dieu ou imitation d’un saint — non d’un pouvoir autonome de l’objet."
+        },
+        "claims": [
+          "SL13-Q02",
+          "SL13-Q03"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "formation",
+          "target": "learn.scapular",
+          "reason": "The Brown Scapular has its own sourced formation owner."
+        }
+      ]
+    },
+    {
+      "id": "SL14",
+      "title": {
+        "en": "Building a Mature Spiritual Rhythm",
+        "fr": "Construire un rythme spirituel mûr"
+      },
+      "summary": {
+        "en": "Maturity is not having the longest programme. It is faithful, ordered life with God that can survive real circumstances.",
+        "fr": "La maturité ne consiste pas à avoir le programme le plus long. Elle consiste en une vie avec Dieu, fidèle et ordonnée, capable de traverser les circonstances réelles."
+      },
+      "blocks": [
+        {
+          "h": {
+            "en": "Integrate",
+            "fr": "Intégrer"
+          },
+          "t": {
+            "en": "Prayer, sacraments, reading, examen, duties and charity should support one another. A fragmented pile of practices is not automatically a spiritual life.",
+            "fr": "La prière, les sacrements, la lecture, l’examen, les devoirs et la charité doivent se soutenir mutuellement. Un tas fragmenté de pratiques n’est pas automatiquement une vie spirituelle."
+          },
+          "claims": [
+            "SL14-Q01"
+          ]
+        },
+        {
+          "h": {
+            "en": "Sometimes simplify",
+            "fr": "Parfois simplifier"
+          },
+          "t": {
+            "en": "Growth may mean deeper attention and greater fidelity with fewer prompts. When circumstances change, adapt methods without casually abandoning essential duties.",
+            "fr": "Grandir peut signifier une attention plus profonde et une plus grande fidélité avec moins d’incitations. Lorsque les circonstances changent, adaptez les méthodes sans abandonner légèrement les devoirs essentiels."
+          },
+          "claims": [
+            "SL14-Q02",
+            "SL14-Q03"
+          ]
+        },
+        {
+          "h": {
+            "en": "Know the app's limit",
+            "fr": "Connaître la limite de l’application"
+          },
+          "t": {
+            "en": "Formation can teach principles and methods. It cannot replace a confessor or spiritual director where personal discernment is required, and it should make you less dependent on the app over time, not more.",
+            "fr": "Formation peut enseigner des principes et des méthodes. Elle ne peut remplacer un confesseur ou un directeur spirituel lorsqu’un discernement personnel est requis, et elle devrait vous rendre avec le temps moins dépendant de l’application, non davantage."
+          },
+          "claims": [
+            "SL14-Q04",
+            "SL14-Q05"
+          ]
+        }
+      ],
+      "practice": {
+        "type": "REVIEW",
+        "prompt": {
+          "en": "Choose one thing to keep, one thing to simplify, and one duty to protect in your current spiritual rhythm.",
+          "fr": "Choisissez une chose à garder, une chose à simplifier et un devoir à protéger dans votre rythme spirituel actuel."
+        },
+        "guidance": {
+          "en": "The aim is an ordered life, not a larger checklist.",
+          "fr": "Le but est une vie ordonnée, non une liste plus longue."
+        },
+        "claims": [
+          "SL14-Q01",
+          "SL14-Q02"
+        ]
+      },
+      "handoffs": [
+        {
+          "surface": "pray",
+          "target": "pray.morning_evening",
+          "reason": "Prayer execution remains with PRAY."
+        },
+        {
+          "surface": "formation",
+          "target": "learn.catechism",
+          "reason": "Doctrine remains with Catechism."
+        }
+      ]
+    }
+  ]
+}
