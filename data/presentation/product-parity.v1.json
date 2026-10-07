@@ -1,7 +1,7 @@
 {
   "schema": "ao-product-parity-v1",
-  "version": "1.3.0",
-  "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
+  "version": "1.4.0",
+  "releaseBlocker": null,
   "rule": "A surface is certified only when the current modular owner preserves the approved product hierarchy and interaction contract on actual phone geometry. Runtime/ownership tests alone do not certify presentation parity.",
   "surfaces": {
     "home": {
@@ -24,7 +24,7 @@
       ]
     },
     "mass": {
-      "status": "RECOVERY_REQUIRED",
+      "status": "CERTIFIED",
       "currentOwner": "src/mass",
       "reference": "V1_80_EXECUTABLE_EUCHARISTIC_CARD_DONOR_PLUS_DIRECT_V183_EVIDENCE",
       "mustPreserve": [
@@ -56,7 +56,7 @@
         "navigation became a full-width footer instead of latent boundary controls",
         "Schola presentation became a full-width status strip"
       ],
-      "recoveryPass": "MASS_V180_DEFINITIVE_NATIVE_IMPLEMENTATION_COMPLETE_AWAITING_CI",
+      "recoveryPass": "MASS_V180_DEFINITIVE_NATIVE_CERTIFIED",
       "recoveryTargets": [
         "v1.80 Home / current-section / Mass-preferences primary ribbon",
         "v1.79-v1.80 YOU / GUIDE / PRIEST state ribbon",
@@ -87,13 +87,7 @@
         "fluid focus point is restored to approximately 39 percent",
         "locked mode selector is visually differentiated"
       ],
-      "remainingParityWork": [
-        "green full static CI on branch rebased to current main",
-        "green real-touch phone CI at 320/360/390/430 px",
-        "green phone app-shell/special-structure CI",
-        "green donor-derived visual acceptance at phone and wide viewport",
-        "post-merge deployed visual comparison against v1.80 representative ritual checkpoints"
-      ],
+      "remainingParityWork": [],
       "v2Targets": [
         "Home / mode / current-section / Settings first-ribbon architecture",
         "source-first current-section jump menu",
@@ -216,6 +210,15 @@
       ],
       "nonBlockingAssetHygiene": [
         "priest-action semantics remain exact and source-backed; action artwork with unavailable certified frozen bytes fails closed to text rather than borrowing position/provisional art"
+      ],
+      "certification": {
+        "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
+        "r17MassConvergenceRun": 37563706320,
+        "appConvergenceRun": 37563706129,
+        "visualAcceptanceRun": 37563706157
+      },
+      "postMergeValidation": [
+        "deployed representative-checkpoint comparison against v1.80"
       ]
     },
     "pray": {
@@ -300,7 +303,7 @@
       ]
     }
   },
-  "status": "RECOVERY_REQUIRED",
+  "status": "CERTIFIED",
   "crossSurfacePresentationFx": {
     "status": "RECOVERY_IN_PROGRESS",
     "authority": "data/presentation/presentation-fx-parity.v1.json",
