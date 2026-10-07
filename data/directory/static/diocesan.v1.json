@@ -1,0 +1,1340 @@
+{
+  "schema": "AO_DIRECTORY_STATIC_DIOCESAN_V1",
+  "version": "1.0.0",
+  "generated_at": "2026-10-07T16:15:00Z",
+  "records": [
+    {
+      "id": "DIO-GB-WEST-WILLESDEN",
+      "venue_id": "VEN-GB-WEST-WILLESDEN",
+      "community": "DIOCESAN",
+      "country_code": "GB",
+      "jurisdiction": "Archdiocese of Westminster",
+      "locality": "London – Willesden",
+      "name": "Shrine & Parish of Our Lady of Willesden",
+      "venue_type": "PARISH_CHURCH",
+      "address": "1 Nicoll Road, London NW10 9AX",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_17:30",
+      "authorization_status": "AUTHORIZATION_ASSERTED_NO_DECREE_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://parish.rcdow.org.uk/willesden/wp-content/uploads/sites/72/2026/02/Newsletter-8.2.26.pdf"
+        },
+        {
+          "role": "authorization",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://parish.rcdow.org.uk/willesden/wp-content/uploads/sites/72/2021/07/Newsletter-25.07.2021.pdf"
+        }
+      ],
+      "notes": "Current 2026 parish newsletter explicitly says Sunday 5:30pm Latin Mass — 1962 Missal. A 25/07/2021 parish statement says Cardinal Vincent responded positively to the parish priest's application to continue celebrating the 1962 Missal. No public Apostolic-See dispensation document was located in this tranche."
+    },
+    {
+      "id": "DIO-GB-WEST-MAIDENLANE",
+      "venue_id": "VEN-GB-WEST-MAIDENLANE",
+      "community": "DIOCESAN",
+      "country_code": "GB",
+      "jurisdiction": "Archdiocese of Westminster",
+      "locality": "London – Covent Garden",
+      "name": "Corpus Christi Shrine, Covent Garden",
+      "venue_type": "PARISH_CHURCH_DIOCESAN_SHRINE",
+      "address": "1-5 Maiden Lane, London WC2E 7NB",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "MONDAY_18:30; SECOND_FRIDAY_18:30; HOLY_DAYS_08:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://parish.rcdow.org.uk/maidenlane/mass-times/"
+        }
+      ],
+      "notes": "Current parish page explicitly labels these as Extraordinary Form / Missal of 1962 / Tridentine Mass. The church is also the Westminster Diocesan Shrine of the Blessed Sacrament. Schedule evidence is current; a separate public authorization instrument was not located."
+    },
+    {
+      "id": "DIO-GB-BIRM-OXFORD-SGA",
+      "venue_id": "VEN-GB-BIRM-OXFORD-SGA",
+      "community": "DIOCESAN",
+      "country_code": "GB",
+      "jurisdiction": "Archdiocese of Birmingham",
+      "locality": "Oxford",
+      "name": "SS Gregory & Augustine",
+      "venue_type": "PARISH_CHURCH",
+      "address": "322 Woodstock Road, Oxford OX2 7NS",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "WEDNESDAY_18:00; FRIDAY_18:00; FIRST_THURSDAY_12:00; THIRD_SUNDAY_12:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.ssgregoryandaugustine.org/mass-in-the-extraordinary-form"
+        }
+      ],
+      "notes": "Current parish page states that the Traditional Latin Mass is celebrated according to the Roman Missal of 1962 and gives the recurring schedule. Page identifies the parish as part of the Archdiocese of Birmingham."
+    },
+    {
+      "id": "DIO-GB-LEEDS-BRADFORD-STPATRICK",
+      "venue_id": "VEN-GB-LEEDS-BRADFORD-STPATRICK",
+      "community": "DIOCESAN",
+      "country_code": "GB",
+      "jurisdiction": "Diocese of Leeds",
+      "locality": "Bradford",
+      "name": "St Patrick's Mission",
+      "venue_type": "MISSION_CHURCH",
+      "address": "Westgate, Bradford, West Yorkshire",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_13:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESAN_OFFICIAL",
+          "url": "https://www.dioceseofleeds.org.uk/new-priest-for-the-st-patricks-mission-sunday-mass-rota/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A2_DIOCESAN_OFFICIAL",
+          "url": "https://www.dioceseofleeds.org.uk/new-priest-for-the-st-patricks-mission-sunday-mass-rota/"
+        }
+      ],
+      "notes": "The Diocese states that St Patrick's is a Mission, designated by the Bishop as the home of the Latin Mass in the Diocese, with Mass at 1pm every Sunday. A current parish source confirms that the 1962-Missal EF community was moved there by the Bishop in 2021."
+    },
+    {
+      "id": "DIO-GB-GLASGOW-TORYGLEN",
+      "venue_id": "VEN-GB-GLASGOW-STBRIGID",
+      "community": "DIOCESAN",
+      "country_code": "GB",
+      "jurisdiction": "Archdiocese of Glasgow",
+      "locality": "Glasgow – Toryglen",
+      "name": "St Brigid's, Toryglen",
+      "venue_type": "PARISH_CHURCH",
+      "address": "12 Prospecthill Crescent, Toryglen, Glasgow G42 0JN",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_09:30",
+      "authorization_status": "HOLY_SEE_DISPENSATION_EVIDENCED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A1_ARCHDIOCESE_OFFICIAL",
+          "url": "https://www.rcag.org.uk/the-archdiocese/latest-news/220-traditionis-custodes"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_OFFICIAL",
+          "url": "https://www.rcag.org.uk/the-archdiocese/latest-news/220-traditionis-custodes"
+        }
+      ],
+      "notes": "Archdiocese states that authorities in Rome gave permission for the 1962 Latin Mass at St Brigid's despite parish-church restriction, and identifies St Brigid's as the sole venue in the archdiocese, Sundays 9:30am."
+    },
+    {
+      "id": "DIO-GB-DUNKELD-DUNDEE-LAWSIDE",
+      "venue_id": "VEN-GB-DUNKELD-LAWSIDE",
+      "community": "DIOCESAN",
+      "country_code": "GB",
+      "jurisdiction": "Diocese of Dunkeld",
+      "locality": "Dundee",
+      "name": "St Joseph's Chapel, Lawside",
+      "venue_type": "CHAPEL",
+      "address": "Lawside, Dundee",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_13:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://dundeelatinmass.com/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_BISHOP_HISTORICAL_COMMUNITY_AUTH",
+          "url": "https://www.dunkelddiocese.co.uk/traditional-latin-mass-bishop-stephens-update/"
+        }
+      ],
+      "notes": "Bishop Stephen directly authorized the diocesan 1962-Missal community's then-current arrangements in 2021. The community's current official site states that from 21/06/2026 Sunday Mass is 1pm at St Joseph's Chapel Lawside. A public diocesan instrument authorizing the 2026 venue change was not located, so current-venue authorization remains NOT_PUBLICLY_ESTABLISHED."
+    },
+    {
+      "id": "DIO-IE-CLOYNE-BALLYHEA",
+      "venue_id": "VEN-IE-CLOYNE-BALLYHEA",
+      "community": "DIOCESAN",
+      "country_code": "IE",
+      "jurisdiction": "Diocese of Cloyne",
+      "locality": "Ballyhea, Co. Cork",
+      "name": "St Mary's, Ballyhea",
+      "venue_type": "PARISH_CHURCH",
+      "address": "Ballyhea, Charleville, Co. Cork",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "CURRENT_1962_MASS; EXACT_SLOT_NOT_IDENTIFIED_ON_CURRENT_PAGE",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESAN_OFFICIAL",
+          "url": "https://cloynediocese.ie/parishes/ballyhea"
+        },
+        {
+          "role": "authorization",
+          "tier": "A2_DIOCESAN_OFFICIAL",
+          "url": "https://cloynediocese.ie/parishes/ballyhea"
+        }
+      ],
+      "notes": "Current Diocese of Cloyne parish page states that Mass will be celebrated in Latin according to the Missal of St Pope John XXIII (1962), as per Diocesan Directory. The page lists general parish Mass times but does not identify which listed slot is the 1962 Mass."
+    },
+    {
+      "id": "DIO-FR-PARIS-STEUGENE",
+      "venue_id": "VEN-FR-PARIS-STEUGENE",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Archdiocese of Paris",
+      "locality": "Paris 9e",
+      "name": "Saint-Eugène–Sainte-Cécile",
+      "venue_type": "PARISH_CHURCH",
+      "address": "4 bis rue Sainte-Cécile, 75009 Paris",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_08:15_11:00_19:00; WEEKDAY_07:30_19:00; SATURDAY_07:30_09:30",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESE_OFFICIAL",
+          "url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_OFFICIAL",
+          "url": "https://dioceseparis.fr/lettre-de-mgr-michel-aupetit-aux.html"
+        }
+      ],
+      "notes": "Current Diocese of Paris index lists recurring 1962 Masses and the parish publishes a full current 1962 schedule. The Archbishop's 08/09/2021 instruction expressly designated this church and required written mission for priests. No public post-2023 Apostolic-See dispensation instrument was located."
+    },
+    {
+      "id": "DIO-FR-PARIS-STROCH",
+      "venue_id": "VEN-FR-PARIS-STROCH",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Archdiocese of Paris",
+      "locality": "Paris 1er",
+      "name": "Saint-Roch",
+      "venue_type": "PARISH_CHURCH",
+      "address": "296 rue Saint-Honoré, 75001 Paris",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_09:30_20:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESE_OFFICIAL",
+          "url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_OFFICIAL",
+          "url": "https://dioceseparis.fr/lettre-de-mgr-michel-aupetit-aux.html"
+        }
+      ],
+      "notes": "Current Diocese of Paris 1962 index lists the Sunday schedule. The 2021 archiepiscopal instruction designated Saint-Roch as one of the five Paris churches for the 1962 Missal."
+    },
+    {
+      "id": "DIO-FR-PARIS-STEODILE",
+      "venue_id": "VEN-FR-PARIS-STEODILE",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Archdiocese of Paris",
+      "locality": "Paris 17e",
+      "name": "Sainte-Odile",
+      "venue_type": "PARISH_CHURCH",
+      "address": "2 avenue Stéphane-Mallarmé, 75017 Paris",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_09:30_17:45; CURRENT_WEEKDAY_1962_CELEBRATIONS",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESE_OFFICIAL",
+          "url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_OFFICIAL",
+          "url": "https://dioceseparis.fr/lettre-de-mgr-michel-aupetit-aux.html"
+        }
+      ],
+      "notes": "Current Diocese of Paris pages show 1962 celebrations and current address; 2021 archiepiscopal instruction expressly designated Sainte-Odile."
+    },
+    {
+      "id": "DIO-FR-PARIS-STEJEANNE",
+      "venue_id": "VEN-FR-PARIS-STEJEANNE",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Archdiocese of Paris",
+      "locality": "Paris 16e",
+      "name": "Sainte-Jeanne-de-Chantal",
+      "venue_type": "PARISH_CHURCH",
+      "address": "96 boulevard Murat, 75016 Paris",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_12:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.saintejeannedechantal.com/horaire-2/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_OFFICIAL",
+          "url": "https://dioceseparis.fr/lettre-de-mgr-michel-aupetit-aux.html"
+        }
+      ],
+      "notes": "Current parish page explicitly states Sunday noon Mass according to the 1962 Missal. The 2021 archiepiscopal instruction expressly designated the parish."
+    },
+    {
+      "id": "DIO-FR-VERSAILLES-NDA",
+      "venue_id": "VEN-FR-VERSAILLES-NDA",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Diocese of Versailles",
+      "locality": "Versailles",
+      "name": "Notre-Dame des Armées",
+      "venue_type": "PERSONAL_PARISH_CHURCH",
+      "address": "4 impasse des Gendarmes, 78000 Versailles",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_08:00_09:00_10:30_12:00_19:00; MULTIPLE_WEEKDAY_MASSES",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://notredamedesarmees.fr/paroisse/presentation/horaires-messes-nda/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://notredamedesarmees.fr/"
+        }
+      ],
+      "notes": "Current 2026 official site identifies Notre-Dame des Armées as a personal parish of the Diocese of Versailles in the extraordinary form and publishes the current schedule. No public post-2023 Apostolic-See dispensation instrument was located in this tranche."
+    },
+    {
+      "id": "DIO-FR-ANGERS-NDV",
+      "venue_id": "VEN-FR-ANGERS-NDV",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Diocese of Angers",
+      "locality": "Angers",
+      "name": "Église Notre-Dame des Victoires",
+      "venue_type": "PARISH_CHURCH",
+      "address": "Place Louis-Imbach, 49100 Angers",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:30; MONDAY_TO_FRIDAY_18:30; TUESDAY_08:30_SCHOOL_TERM; SATURDAY_09:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESAN_PARISH_OFFICIAL",
+          "url": "https://cathedralestmauricenotredame.diocese49.org/la-paroisse/horaires-a-remttre-apres-ete/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A2_DIOCESAN_PARISH_OFFICIAL",
+          "url": "https://cathedralestmauricenotredame.diocese49.org/la-paroisse/horaires-a-remttre-apres-ete/"
+        }
+      ],
+      "notes": "Current Diocese of Angers parish site explicitly labels the recurring celebrations 'Missel St Jean XXIII'. Official parish heritage identifies the church entrance from Place Imbach; the presbytery is at 3 rue de l'Aubrière."
+    },
+    {
+      "id": "DIO-FR-BOURGES-ND",
+      "venue_id": "VEN-FR-BOURGES-ND",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Archdiocese of Bourges",
+      "locality": "Bourges",
+      "name": "Église Notre-Dame",
+      "venue_type": "PARISH_CHURCH",
+      "address": "Rue Notre-Dame, 18000 Bourges",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:30; MON_WED_FRI_18:30; TUE_THU_09:00; SAT_11:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://paroisse-stguillaume-bourges.fr/horaires-des-messes/"
+        }
+      ],
+      "notes": "Current parish pages explicitly state the Sunday 10:30 and weekday celebrations use the 1962 Latin Missal. A separate current public authorization instrument was not located, so schedule and authorization remain distinct."
+    },
+    {
+      "id": "DIO-FR-QUIMPER-STMATHIEU",
+      "venue_id": "VEN-FR-QUIMPER-STMATHIEU",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Diocese of Quimper and Léon",
+      "locality": "Quimper",
+      "name": "Église Saint-Mathieu",
+      "venue_type": "PARISH_CHURCH",
+      "address": "32 rue du Chapeau Rouge, 29000 Quimper",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:30",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.quimpersaintcorentin.com/missel-1962/"
+        }
+      ],
+      "notes": "Current parish pages explicitly list Sunday 10:30 according to the 1962 Missal. The parish contact page provides the Saint-Mathieu presbytery address; a separate public authorization decree was not located."
+    },
+    {
+      "id": "DIO-FR-VANNES-STPATERN",
+      "venue_id": "VEN-FR-VANNES-STPATERN",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Diocese of Vannes",
+      "locality": "Vannes",
+      "name": "Église Saint-Patern",
+      "venue_type": "PARISH_CHURCH",
+      "address": "Saint-Patern / 2 place Sainte-Catherine, 56000 Vannes",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_09:15; TUE_WED_THU_FRI_18:30; FIRST_SATURDAY_12:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.saint-patern.bzh/horaires"
+        }
+      ],
+      "notes": "Current parish site explicitly publishes the extraordinary-form schedule and states that the parish celebrates both the current Roman rite and the 1962 Missal. The address given is the parish/presbytery contact adjacent to Saint-Patern."
+    },
+    {
+      "id": "DIO-FR-NANTERRE-PLESSIS-SJB",
+      "venue_id": "VEN-FR-NANTERRE-PLESSIS-SJB",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Diocese of Nanterre",
+      "locality": "Le Plessis-Robinson",
+      "name": "Saint-Jean-Baptiste",
+      "venue_type": "CHURCH",
+      "address": "Place de la Mairie, 92350 Le Plessis-Robinson",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.paroisses-plessis-clamart.fr/"
+        }
+      ],
+      "notes": "Current parish homepage explicitly states Sunday 10:00 Mass for the faithful attached to celebration according to the 1962 Missal. Canonical parish-church status and any reserved dispensation evidence were not established from the current public source."
+    },
+    {
+      "id": "DIO-FR-LUCON-LAROCHE-ND",
+      "venue_id": "VEN-FR-LUCON-LAROCHE-ND",
+      "community": "DIOCESAN",
+      "country_code": "FR",
+      "jurisdiction": "Diocese of Luçon",
+      "locality": "La Roche-sur-Yon",
+      "name": "Église Notre-Dame",
+      "venue_type": "CHURCH_IN_PARISH",
+      "address": "14 rue Lazare Carnot, 85000 La Roche-sur-Yon",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://stlouisdelaroche.fr/lesprit-de-la-liturgie/"
+        }
+      ],
+      "notes": "Current parish liturgy page explicitly says Sunday 10:00 at Notre-Dame in Gregorian Latin according to the 1962 Missal. Current parish church directory supplies the venue address; a separate public authorization instrument was not located."
+    },
+    {
+      "id": "DIO-US-CHARLOTTE-LITTLEFLOWER",
+      "venue_id": "VEN-US-CHARLOTTE-LITTLEFLOWER",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Charlotte",
+      "locality": "Mooresville, NC",
+      "name": "Chapel of the Little Flower",
+      "venue_type": "DIOCESAN_CHAPEL",
+      "address": "757 Oakridge Farm Hwy., Mooresville, NC 28115",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:00_12:00; HOLY_DAYS_AS_ANNOUNCED",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESE_OFFICIAL",
+          "url": "https://charlottediocese.org/tlmchapel/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_BISHOP_OFFICIAL",
+          "url": "https://charlottediocese.org/communications/completing-the-implementation-of-traditionis-custodes-in-the-diocese-of-charlotte/"
+        }
+      ],
+      "notes": "Current diocesan chapel page gives the live schedule. Bishop Martin's 2025 implementation statement explicitly designated this non-parish chapel for Sunday and holy-day celebrations using the Roman Missal of 1962."
+    },
+    {
+      "id": "DIO-US-TULSA-SSPP",
+      "venue_id": "VEN-US-TULSA-SSPP",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Tulsa and Eastern Oklahoma",
+      "locality": "Tulsa, OK",
+      "name": "Saints Peter and Paul Parish and Diocesan Shrine of Saint Toribio Romo",
+      "venue_type": "PARISH_CHURCH",
+      "address": "1419 N. 67th East Ave., Tulsa, OK 74115-5602",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:30",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESE_OFFICIAL",
+          "url": "https://www.dioceseoftulsa.org/documents/2025/3/2025.03.27%20DOT%20Directory%20REVISED%20PUBLIC.pdf"
+        }
+      ],
+      "notes": "Latest public diocesan directory located and checked in this tranche explicitly lists Sunday 10:30 '1962 RM/EF (Latin)'. A separate current public authorization instrument was not located."
+    },
+    {
+      "id": "DIO-US-INDY-HOLYROSARY",
+      "venue_id": "VEN-US-INDY-HOLYROSARY",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Archdiocese of Indianapolis",
+      "locality": "Indianapolis, IN",
+      "name": "Our Lady of the Most Holy Rosary",
+      "venue_type": "PARISH_CHURCH",
+      "address": "520 Stevens St., Indianapolis, IN 46203-1737",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_07:00_LOW_11:00_SUNG; CURRENT_WEEKDAY_LATIN_SCHEDULE",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://holyrosaryindy.org/calendar"
+        },
+        {
+          "role": "authorization",
+          "tier": "A2_ARCHDIOCESE_OFFICIAL",
+          "url": "https://archindy.org/traditional-latin-mass"
+        }
+      ],
+      "notes": "Current October 2026 parish calendar explicitly labels the Sunday 7:00 Low Mass and 11:00 sung Mass as the 1962 Missal. The Archdiocese's current Traditional Latin Mass page lists Holy Rosary as a TLM parish and identifies its current diocesan pastor."
+    },
+    {
+      "id": "DIO-US-DENVER-BOULDER-SHM",
+      "venue_id": "VEN-US-DENVER-SHM",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Archdiocese of Denver",
+      "locality": "Boulder, CO",
+      "name": "Sacred Heart of Mary Parish",
+      "venue_type": "PARISH_CHURCH",
+      "address": "6739 South Boulder Road, Boulder, CO 80303",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_12:30; TUESDAY_12:00; HOLY_DAYS_AND_OTHER_OCCASIONS",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://sacredheartofmary.org/traditional-latin-mass"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_DECREE",
+          "url": "https://archden.org/wp-content/uploads/2022/10/2021-0494-Implementing-Traditionis-Custodes-1.pdf"
+        }
+      ],
+      "notes": "Current parish page explicitly says the Traditional Latin Mass according to the 1962 Missal is celebrated Sunday 12:30 and Tuesday noon. The 2021 archdiocesan decree publicly authorized continued 1962 use at this parish church. No later public Apostolic-See dispensation document was located."
+    },
+    {
+      "id": "DIO-US-DENVER-FORTCOLLINS-J23",
+      "venue_id": "VEN-US-DENVER-J23",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Archdiocese of Denver",
+      "locality": "Fort Collins, CO",
+      "name": "St. John XXIII Catholic Church",
+      "venue_type": "PARISH_CHURCH",
+      "address": "1220 University Ave., Fort Collins, CO",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_11:30; HOLY_DAYS_AS_ANNOUNCED",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.saintjohn.church/prayer"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_DECREE",
+          "url": "https://archden.org/wp-content/uploads/2022/10/2021-0494-Implementing-Traditionis-Custodes-1.pdf"
+        }
+      ],
+      "notes": "Current parish page says the Traditional Latin Mass is celebrated every Sunday at 11:30. The Denver decree identifies this community specifically as Mass according to the 1962 Roman Missal and authorizes continued use at the parish church."
+    },
+    {
+      "id": "DIO-US-ARL-WINCHESTER-SH",
+      "venue_id": "VEN-US-ARL-SHACADEMY",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Arlington",
+      "locality": "Winchester, VA",
+      "name": "Sacred Heart of Jesus TLM at Sacred Heart Academy",
+      "venue_type": "NON_PARISH_SCHOOL_CHAPEL",
+      "address": "110 Keating Dr., Winchester, VA",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_08:30",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY",
+          "url": "https://www.arlingtondiocese.org/uploadedImages/CDA/Assets/PDF/Communications/Bishop/Public%20Messages/Policy%20for%20the%20Implementation%20of%20Traditionis%20Custodes%20in%20the%20Diocese%20of%20Arlington.pdf"
+        }
+      ],
+      "notes": "Current Arlington Latin Mass Society schedule lists Sunday 8:30 at Sacred Heart Academy. The diocesan implementation policy explicitly designates Sacred Heart Academy as the permitted off-site location; current diocesan worship pages continue to direct the faithful to current 1962-Missal parish provision."
+    },
+    {
+      "id": "DIO-US-ARL-FREDERICKSBURG-STP",
+      "venue_id": "VEN-US-ARL-STPATRICK-HIST",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Arlington",
+      "locality": "Fredericksburg, VA",
+      "name": "St. Patrick TLM in the Historic Church",
+      "venue_type": "NON_PARISH_FORMER_CHURCH",
+      "address": "9149 Elys Ford Rd., Fredericksburg, VA",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_12:30; MONDAY_11:30; TUESDAY_06:30",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY",
+          "url": "https://www.arlingtondiocese.org/uploadedImages/CDA/Assets/PDF/Communications/Bishop/Public%20Messages/Policy%20for%20the%20Implementation%20of%20Traditionis%20Custodes%20in%20the%20Diocese%20of%20Arlington.pdf"
+        }
+      ],
+      "notes": "Current community schedule lists the historic church with recurring Sunday and weekday TLMs. The diocesan implementation policy expressly designates the former church building as the permitted location."
+    },
+    {
+      "id": "DIO-US-ARL-LEESBURG-STJOHN",
+      "venue_id": "VEN-US-ARL-STJOHN-HIST",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Arlington",
+      "locality": "Leesburg, VA",
+      "name": "St. John the Apostle TLM in the Historic Chapel",
+      "venue_type": "NON_PARISH_HISTORIC_CHAPEL",
+      "address": "231 N. King St., Leesburg, VA",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:30",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY",
+          "url": "https://www.arlingtondiocese.org/uploadedImages/CDA/Assets/PDF/Communications/Bishop/Public%20Messages/Policy%20for%20the%20Implementation%20of%20Traditionis%20Custodes%20in%20the%20Diocese%20of%20Arlington.pdf"
+        }
+      ],
+      "notes": "Current community schedule lists Sunday 10:30 in the historic chapel. The diocesan implementation policy expressly designates this alternate location."
+    },
+    {
+      "id": "DIO-US-ARL-ALEXANDRIA-STRITA",
+      "venue_id": "VEN-US-ARL-STRITA",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Arlington",
+      "locality": "Alexandria, VA",
+      "name": "St. Rita of Cascia",
+      "venue_type": "PARISH_CHURCH",
+      "address": "3815 Russell Rd., Alexandria, VA",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_09:15_EXCEPT_SECOND_SUNDAY; TUE_THU_19:30",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY_HISTORIC",
+          "url": "https://www.arlingtondiocese.org/uploadedImages/CDA/Assets/PDF/Communications/Bishop/Public%20Messages/Policy%20for%20the%20Implementation%20of%20Traditionis%20Custodes%20in%20the%20Diocese%20of%20Arlington.pdf"
+        }
+      ],
+      "notes": "Current 2026 community schedule shows recurring TLMs. The 2022 diocesan policy authorized parish-church use and a later public renewal was reported through summer 2026; a current post-summer-2026 Holy-See renewal instrument was not located. Current venue fact is promoted; current authorization evidence remains conservative."
+    },
+    {
+      "id": "DIO-US-ARL-MCLEAN-STJOHN",
+      "venue_id": "VEN-US-ARL-STJOHNBELOVED",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Arlington",
+      "locality": "McLean, VA",
+      "name": "St. John the Beloved",
+      "venue_type": "PARISH_CHURCH",
+      "address": "6420 Linway Terrace, McLean, VA 22101",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_12:00_EXCEPT_FOURTH_SUNDAY; MONDAY_20:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY_HISTORIC",
+          "url": "https://www.arlingtondiocese.org/uploadedImages/CDA/Assets/PDF/Communications/Bishop/Public%20Messages/Policy%20for%20the%20Implementation%20of%20Traditionis%20Custodes%20in%20the%20Diocese%20of%20Arlington.pdf"
+        }
+      ],
+      "notes": "Current 2026 community schedule shows recurring TLMs. The 2022 diocesan policy authorized parish-church use; public evidence for renewal beyond the reported summer-2026 extension was not located."
+    },
+    {
+      "id": "DIO-US-ARL-KINGGEORGE-STANTHONY",
+      "venue_id": "VEN-US-ARL-STANTHONY",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Arlington",
+      "locality": "King George, VA",
+      "name": "St. Anthony of Padua Mission",
+      "venue_type": "MISSION_CHURCH",
+      "address": "10299 Millbank Rd., King George, VA",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_13:00_WITH_ONE_MONTHLY_CANCELLATION; MON_THU_09:00; TUE_19:00; FRI_19:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY_HISTORIC",
+          "url": "https://www.arlingtondiocese.org/uploadedImages/CDA/Assets/PDF/Communications/Bishop/Public%20Messages/Policy%20for%20the%20Implementation%20of%20Traditionis%20Custodes%20in%20the%20Diocese%20of%20Arlington.pdf"
+        }
+      ],
+      "notes": "Current 2026 community schedule shows recurring TLMs at the mission. The 2022 diocesan policy authorized parish/mission church use; public evidence for renewal beyond the reported summer-2026 extension was not located."
+    },
+    {
+      "id": "DIO-US-NY-POUGHKEEPSIE-HT",
+      "venue_id": "VEN-US-NY-POUGHKEEPSIE-HT",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Archdiocese of New York",
+      "locality": "Poughkeepsie, NY",
+      "name": "Church of the Holy Trinity",
+      "venue_type": "PARISH_CHURCH",
+      "address": "775 Main Street, Poughkeepsie, NY 12603",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_13:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://holytrinitypoughkeepsie.com/"
+        }
+      ],
+      "notes": "Current parish homepage explicitly says the 1pm Tridentine Latin Mass is according to the 1962 Roman Missal."
+    },
+    {
+      "id": "DIO-US-BOSTON-NEWTON-MIL",
+      "venue_id": "VEN-US-BOSTON-MIL",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Archdiocese of Boston",
+      "locality": "Newton, MA",
+      "name": "Mary Immaculate of Lourdes",
+      "venue_type": "PARISH_CHURCH",
+      "address": "270 Elliot Street, Newton, MA 02464",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_11:00_17:30; MON_WED_FRI_12:30; THU_17:30; SAT_09:00",
+      "authorization_status": "AUTHORIZATION_ASSERTED_NO_DECREE_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.maryimmaculateoflourdesnewtonma.org/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.maryimmaculateoflourdesnewtonma.org/"
+        }
+      ],
+      "notes": "Current parish site explicitly distinguishes the 1970 and 1962 Missals and says the 1962 form is celebrated with the blessing of the Archbishop; no separate current decree was located."
+    },
+    {
+      "id": "DIO-US-PROV-HOLYNAME",
+      "venue_id": "VEN-US-PROV-HOLYNAME",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Providence",
+      "locality": "Providence, RI",
+      "name": "Church of the Holy Name of Jesus",
+      "venue_type": "PARISH_CHURCH",
+      "address": "99 Camp Street, Providence, RI 02906",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_09:00; SATURDAY_08:00_MISSA_RECITATA",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.holynameprovidence.org/latin-mass"
+        },
+        {
+          "role": "authorization",
+          "tier": "A2_DIOCESE_OFFICIAL",
+          "url": "https://www.dioceseofprovidence.org/parishfinder"
+        }
+      ],
+      "notes": "Current parish page states the Tridentine Mass uses the liturgical books of 1962 with local-bishop permission; the current diocesan parish finder continues to list Extraordinary Form celebrations."
+    },
+    {
+      "id": "DIO-US-TOLEDO-STJOSEPH",
+      "venue_id": "VEN-US-TOLEDO-STJOSEPH",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Toledo",
+      "locality": "Toledo, OH",
+      "name": "St. Joseph Parish",
+      "venue_type": "PARISH_CHURCH",
+      "address": "628 Locust Street, Toledo, OH 43604",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_07:00_LOW_09:00_HIGH; WEDNESDAY_18:00; FIRST_SATURDAY_08:00",
+      "authorization_status": "NOT_PUBLICLY_ESTABLISHED",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.stjosephstoledo.com/"
+        }
+      ],
+      "notes": "Current parish homepage explicitly labels each traditional Mass as 1962 Missal."
+    },
+    {
+      "id": "DIO-US-SYR-TRANSFIGURATION",
+      "venue_id": "VEN-US-SYR-TRANSFIGURATION",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Syracuse",
+      "locality": "Syracuse, NY",
+      "name": "Transfiguration of Our Lord Parish",
+      "venue_type": "PARISH_CHURCH",
+      "address": "740 Teall Avenue, Syracuse, NY 13206",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_08:00_LOW_10:00_SUNG; DAILY_TRADITIONAL_SCHEDULE",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://transfigurationsyr.com/liturgy"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_BISHOP_CURRENT",
+          "url": "https://stjamesjc.org/bishop-lucias-statement-on-the-sspx/"
+        }
+      ],
+      "notes": "Current parish states Sunday and daily Masses are according to the 1962 Roman Missal. Bishop Lucia's July 2026 statement identifies Transfiguration as the diocesan TLM parish."
+    },
+    {
+      "id": "DIO-US-SYR-VERONA-OLGC",
+      "venue_id": "VEN-US-SYR-VERONA-OLGC",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Syracuse",
+      "locality": "Verona, NY",
+      "name": "Our Lady of Good Counsel",
+      "venue_type": "PARISH_CHURCH",
+      "address": "5652 East Main Street, Verona, NY 13478",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_08:00; SOME_WEEKDAYS_AND_HOLY_DAYS",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://olgcc.org/information-for-visitors/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_BISHOP_CURRENT",
+          "url": "https://stjamesjc.org/bishop-lucias-statement-on-the-sspx/"
+        }
+      ],
+      "notes": "Current parish page lists the Ancient Rite Latin Mass every Sunday at 8am. Bishop Lucia's July 2026 statement directs faithful to this parish 'by indult' in the 1962-Missal context."
+    },
+    {
+      "id": "DIO-US-HON-BLESSED",
+      "venue_id": "VEN-US-HON-BLESSED",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Honolulu",
+      "locality": "Honolulu, HI",
+      "name": "Blessed Sacrament Church, Pauoa",
+      "venue_type": "PARISH_CHURCH",
+      "address": "2124 Pauoa Road, Honolulu, HI 96813-1568",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_10:00; FIRST_SATURDAY_09:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A2_DIOCESE_OFFICIAL",
+          "url": "https://www.catholichawaii.org/parish-listing/blessed-sacrament/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_BISHOP_OFFICIAL",
+          "url": "https://www.catholichawaii.org/news-events/news-articles/2022/january/112-letter-regarding-celebration-of-latin-mass/"
+        }
+      ],
+      "notes": "Current diocesan parish listing gives Latin Extraordinary Form at Sunday 10am and first Saturday 9am; the TLM community page explicitly says 1962 Roman Missal. Bishop Silva's instruction is explicitly for the 1962 Missal."
+    },
+    {
+      "id": "DIO-US-HON-CATHEDRAL",
+      "venue_id": "VEN-US-HON-CATHEDRAL",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Honolulu",
+      "locality": "Honolulu, HI",
+      "name": "Cathedral Basilica of Our Lady of Peace",
+      "venue_type": "CATHEDRAL",
+      "address": "1184 Bishop Street, Honolulu, HI 96813-2838",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "FIRST_FRIDAY_19:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://blessed-sacrament-church-tlm.mailchimpsites.com/bsc-tlm-mass-schedules"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_BISHOP_OFFICIAL",
+          "url": "https://www.catholichawaii.org/news-events/news-articles/2022/january/112-letter-regarding-celebration-of-latin-mass/"
+        }
+      ],
+      "notes": "Current Blessed Sacrament TLM community schedule gives a First Friday 7pm traditional Mass at the Cathedral; Bishop Silva's 1962-Missal instruction supplies the diocesan authorization context."
+    },
+    {
+      "id": "DIO-US-ADW-FRANCISCAN",
+      "venue_id": "VEN-US-ADW-FRANCISCAN",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Archdiocese of Washington",
+      "locality": "Washington, DC",
+      "name": "Franciscan Monastery of the Holy Land in America",
+      "venue_type": "NON_PAROCHIAL_CHURCH",
+      "address": "1400 Quincy Street NE, Washington, DC 20017",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_09:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://dcfranciscans.latinmassarlington.org/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_DECREE",
+          "url": "https://adw.org/news/traditionis-custodes/"
+        }
+      ],
+      "notes": "Current TLM community schedule lists Sunday 9am. Archdiocese of Washington decree explicitly designates the Franciscan Monastery as a Sunday location for the 1962 Roman Missal."
+    },
+    {
+      "id": "DIO-US-ADW-AQUASCO",
+      "venue_id": "VEN-US-ADW-STDOMINIC",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Archdiocese of Washington",
+      "locality": "Aquasco, MD",
+      "name": "Mission Church of St. Dominic",
+      "venue_type": "NON_PAROCHIAL_MISSION_CHURCH",
+      "address": "Aquasco, Maryland",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_15:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://stmichaelbaden.org/traditional-latin-mass"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_ARCHDIOCESE_DECREE",
+          "url": "https://adw.org/news/traditionis-custodes/"
+        }
+      ],
+      "notes": "Current parish page lists Sunday 3pm Extraordinary Form. Archdiocesan decree explicitly designates St Dominic as a Sunday 1962-Missal location."
+    },
+    {
+      "id": "DIO-US-CHARLESTON-POP",
+      "venue_id": "VEN-US-CHARLESTON-POP",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Charleston",
+      "locality": "Taylors, SC",
+      "name": "Prince of Peace Catholic Church",
+      "venue_type": "PARISH_CHURCH",
+      "address": "1209 Brushy Creek Road, Taylors, SC 29687",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_12:00; WEEKDAYS_12:00; SATURDAY_08:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://princeofpeacetaylors.org/mass-and-sacraments/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY",
+          "url": "https://charlestondiocese.org/wp-content/uploads/2022/10/Diocese-of-Charleston-Policies-Sept2024.pdf"
+        }
+      ],
+      "notes": "Current parish schedule lists recurring Latin Masses. The Diocese of Charleston policy explicitly permits Mass according to the Missal of 1962 at Prince of Peace."
+    },
+    {
+      "id": "DIO-US-CHARLESTON-OLL",
+      "venue_id": "VEN-US-CHARLESTON-OLL",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Charleston",
+      "locality": "Chapin, SC",
+      "name": "Our Lady of the Lake Catholic Church",
+      "venue_type": "PARISH_CHURCH",
+      "address": "195 Amicks Ferry Road, Chapin, SC 29036",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_13:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.ollchapin.org/mass-times"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY",
+          "url": "https://charlestondiocese.org/wp-content/uploads/2022/10/Diocese-of-Charleston-Policies-Sept2024.pdf"
+        }
+      ],
+      "notes": "Current parish page lists Sunday 1pm Latin Mass; current 2026 parish materials identify it as Traditional Latin/EF. The diocesan policy explicitly identifies Our Lady of the Lake as a permitted 1962-Missal parish."
+    },
+    {
+      "id": "DIO-US-CHARLESTON-STELLA",
+      "venue_id": "VEN-US-CHARLESTON-STELLA",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Charleston",
+      "locality": "Sullivan's Island, SC",
+      "name": "Stella Maris Catholic Church",
+      "venue_type": "PARISH_CHURCH",
+      "address": "1204 Middle Street, Sullivan's Island, SC 29482",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_17:30; FIRST_FRIDAY_16:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://www.stellamarischurch.org/mass-times"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY",
+          "url": "https://charlestondiocese.org/wp-content/uploads/2022/10/Diocese-of-Charleston-Policies-Sept2024.pdf"
+        }
+      ],
+      "notes": "Current parish schedule lists Sunday and First-Friday Latin Masses; the current diocesan policy explicitly names Stella Maris among parishes permitted to celebrate the 1962 Missal."
+    },
+    {
+      "id": "DIO-US-CHARLESTON-SACREDHEART",
+      "venue_id": "VEN-US-CHARLESTON-SACREDHEART",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Charleston",
+      "locality": "Charleston, SC",
+      "name": "Sacred Heart Church",
+      "venue_type": "PARISH_CHURCH",
+      "address": "888 King Street, Charleston, SC 29403",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "SUNDAY_12:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "RECENTLY_VERIFIED",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "B_COMMUNITY_OFFICIAL",
+          "url": "https://carolinaliturgy.org/mass-times"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_POLICY",
+          "url": "https://charlestondiocese.org/wp-content/uploads/2022/10/Diocese-of-Charleston-Policies-Sept2024.pdf"
+        }
+      ],
+      "notes": "Current Carolina traditional-liturgy schedule lists Sunday noon at Sacred Heart; the diocesan policy separately permits the 1962 Missal there. Schedule and authorization remain separate claims."
+    }
+  ],
+  "residue_summary": {
+    "total": 13,
+    "promoted": 1,
+    "provider_routed": 4,
+    "rejected_current": 1,
+    "staged": 7
+  }
+}
