@@ -26,6 +26,7 @@ assert.deepEqual(AO_LEARN_ROUTE_ASSET_IDS,{
   "learn.catechism.daily":"ao-refined-study",
   "learn.latin":"ao-refined-study",
   "learn.mass":"ao-rich-guides",
+  "learn.spiritual_life":"ao-refined-spiritual-life",
   "learn.catechism":"ao-module-catechism",
   "today.gospel":"ao-refined-scripture",
   "today.saint":"ao-refined-saint-of-day",
@@ -93,6 +94,7 @@ for(const id of CONSUMED_DEVOTIONAL_MASK_ASSETS){
 
 assert.equal(canonicalAssetIdForSurface("settings"),"ao-nav-settings");
 assert.equal(canonicalAssetIdForLearnRoute("learn.mass"),"ao-rich-guides");
+assert.equal(canonicalAssetIdForLearnRoute("learn.spiritual_life"),"ao-refined-spiritual-life");
 assert.equal(canonicalAssetIdForLearnRoute("unknown"),null);
 assert.equal(canonicalAssetIdForPrayRoute("pray.rosary"),"ao-rich-rosary");
 
