@@ -52,6 +52,19 @@ function css(){
 function categoryCount(c){return c.sections.reduce((n,s)=>n+s.entry_numbers.length,0)}
 function categoryById(data,id){return data.nav.categories.find(x=>x.id===id)||null}
 function sectionById(c,id){return c?.sections?.find(x=>x.id===id)||null}
+const LATIN_STAGE_TITLES=Object.freeze({
+  1:["Hear the Latin of the Church","Entendre le latin de l’Église"],
+  2:["The Ordinary","L’Ordinaire"],
+  3:["Actions and Time","Actions et temps"],
+  4:["Structure","Structure"],
+  5:["Prayer Language","Langage de la prière"],
+  6:["Canon","Canon"],
+  7:["Church Latin","Latin de l’Église"],
+  8:["Read the Missal","Lire le Missel"],
+  0:["Reference extras","Compléments de référence"]
+});
+const latinStageOf=x=>x?.first_lesson?Math.ceil(Number(x.first_lesson)/5):0;
+
 
 export function createGlossaryRuntime(win=globalThis){
   const state={open:false,loaded:false,loading:false,error:"",view:"categories",categoryId:null,sectionId:null,latinStage:null,query:"",detailId:null,detailType:"concept",contextIds:[],origin:"learn",data:null,unsub:null,lastLanguage:null};
@@ -114,10 +127,30 @@ export function createGlossaryRuntime(win=globalThis){
     return '<button class="aoGlossTerm" type="button" data-gloss-entry="'+esc(e.id)+'"><small>'+esc(e.id+" · "+e.temporal_layer)+'</small><strong>'+esc(isFr(win)?e.labels.fr:e.labels.en)+'</strong>'+(e.labels.la?'<em>'+esc(e.labels.la)+'</em>':'')+'</button>';
   }
 
+  function lexemeButton(x){
+    const gloss=isFr(win)?x.gloss_fr:x.gloss_en;
+    const lesson=x.first_lesson?L(win,"Lesson ","Leçon ")+x.first_lesson:L(win,"Reference","Référence");
+    return '<button class="aoGlossTerm" type="button" data-gloss-lexeme="'+esc(x.id)+'"><small>'+esc("CORE #"+x.core_rank+" · "+String(x.part_of_speech||"")+" · "+lesson)+'</small><strong>'+esc(x.lemma)+'</strong>'+(gloss?'<em>'+esc(gloss)+'</em>':'')+'</button>';
+  }
+
+  function phraseButton(p){
+    const tr=isFr(win)?p.translations?.fr:p.translations?.en;
+    return '<button class="aoGlossTerm" type="button" data-gloss-phrase="'+esc(p.id)+'"><small>'+esc(p.id+" · "+L(win,"Latin phrase","Formule latine"))+'</small><strong>'+esc(p.latin)+'</strong>'+(tr?'<em>'+esc(tr)+'</em>':'')+'</button>';
+  }
+
+  function resultGroup(label,rows,renderRow){
+    if(!rows.length)return "";
+    return '<section><div class="aoGlossKicker" style="margin:14px 0 8px">'+esc(label+" · "+rows.length)+'</div><div class="aoGlossTerms">'+rows.map(renderRow).join("")+'</div></section>';
+  }
+
   function searchResults(){
     const q=norm(state.query);
-    const rows=q?state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la,e.short_definition?.en,e.short_definition?.fr,e.explanation?.en,e.explanation?.fr].join(" ")).includes(q)).slice(0,80):[];
-    return '<div class="aoGlossTerms">'+(rows.length?rows.map(termButton).join(""):'<div class="aoGlossEmpty">'+esc(L(win,"No matching term.","Aucun terme correspondant."))+'</div>')+'</div>';
+    if(!q)return "";
+    const concepts=state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la,e.short_definition?.en,e.short_definition?.fr,e.explanation?.en,e.explanation?.fr].join(" ")).includes(q)).slice(0,40);
+    const lexemes=state.data.lexemes.filter(x=>norm([x.id,x.lemma,x.gloss_en,x.gloss_fr,x.part_of_speech].join(" ")).includes(q)).slice(0,30);
+    const phrases=state.data.phrases.filter(p=>norm([p.id,p.latin,p.translations?.en,p.translations?.fr].join(" ")).includes(q)).slice(0,20);
+    const html=resultGroup(L(win,"Concepts","Notions"),concepts,termButton)+resultGroup(L(win,"Latin lemmas","Lemmes latins"),lexemes,lexemeButton)+resultGroup(L(win,"Phrases","Formules"),phrases,phraseButton);
+    return html||'<div class="aoGlossEmpty">'+esc(L(win,"No matching term.","Aucun terme correspondant."))+'</div>';
   }
 
   function categoriesView(){
@@ -127,7 +160,11 @@ export function createGlossaryRuntime(win=globalThis){
 
   function categoryView(){
     const c=categoryById(state.data,state.categoryId);if(!c)return categoriesView();
-    const rows=c.sections.map(s=>'<button class="aoGlossSection" type="button" data-gloss-section="'+esc(s.id)+'"><strong>'+esc(isFr(win)?s.label.fr:s.label.en)+'</strong><span>'+s.entry_numbers.length+' '+esc(L(win,"terms","termes"))+'</span></button>').join("");
+    let rows=c.sections.map(s=>'<button class="aoGlossSection" type="button" data-gloss-section="'+esc(s.id)+'"><strong>'+esc(isFr(win)?s.label.fr:s.label.en)+'</strong><span>'+s.entry_numbers.length+' '+esc(L(win,"terms","termes"))+'</span></button>').join("");
+    if(c.id==="latin_rubrics"){
+      rows+='<button class="aoGlossSection" type="button" data-gloss-collection="lexemes"><strong>'+esc(L(win,"Core Latin Lexicon","Lexique latin essentiel"))+'</strong><span>'+state.data.lexemes.length+' '+esc(L(win,"lemmas · grouped by 8 course stages","lemmes · regroupés selon les 8 étapes du cours"))+'</span></button>';
+      rows+='<button class="aoGlossSection" type="button" data-gloss-collection="phrases"><strong>'+esc(L(win,"Liturgical Phrasebook","Recueil de formules liturgiques"))+'</strong><span>'+state.data.phrases.length+' '+esc(L(win,"source-attested phrases","formules attestées par les sources"))+'</span></button>';
+    }
     return top()+'<main class="aoGlossWrap">'+searchBox()+(state.query?searchResults():'<div class="aoGlossSections">'+rows+'</div>')+'</main>';
   }
 
@@ -135,6 +172,26 @@ export function createGlossaryRuntime(win=globalThis){
     const c=categoryById(state.data,state.categoryId),s=sectionById(c,state.sectionId);if(!s)return categoryView();
     const rows=s.entry_numbers.map(n=>state.data.byId.get("G"+String(n).padStart(3,"0"))).filter(Boolean);
     return top()+'<main class="aoGlossWrap">'+searchBox()+(state.query?searchResults():'<div class="aoGlossTerms">'+rows.map(termButton).join("")+'</div>')+'</main>';
+  }
+
+  function lexemeStagesView(){
+    const stages=[1,2,3,4,5,6,7,8,0].map(n=>{
+      const count=state.data.lexemes.filter(x=>latinStageOf(x)===n).length;
+      const title=LATIN_STAGE_TITLES[n]||["Stage "+n,"Étape "+n];
+      return {n,count,title};
+    }).filter(x=>x.count);
+    const cards=stages.map(x=>'<button class="aoGlossCard" type="button" data-gloss-stage="'+x.n+'"><small>'+x.count+' '+esc(L(win,"lemmas","lemmes"))+'</small><strong>'+esc(isFr(win)?x.title[1]:x.title[0])+'</strong><p>'+esc(x.n?L(win,"Lessons "+((x.n-1)*5+1)+"–"+(x.n*5),"Leçons "+((x.n-1)*5+1)+"–"+(x.n*5)):L(win,"Frozen Core items not assigned to an active lesson","Éléments du noyau figé non affectés à une leçon active"))+'</p></button>').join("");
+    return top()+'<main class="aoGlossWrap">'+searchBox()+(state.query?searchResults():'<div class="aoGlossGrid">'+cards+'</div>')+'</main>';
+  }
+
+  function lexemeStageView(){
+    const rows=state.data.lexemes.filter(x=>latinStageOf(x)===Number(state.latinStage)).sort((a,b)=>a.core_rank-b.core_rank);
+    return top()+'<main class="aoGlossWrap">'+searchBox()+(state.query?searchResults():'<div class="aoGlossTerms">'+rows.map(lexemeButton).join("")+'</div>')+'</main>';
+  }
+
+  function phrasesView(){
+    const rows=[...state.data.phrases].sort((a,b)=>a.id.localeCompare(b.id));
+    return top()+'<main class="aoGlossWrap">'+searchBox()+(state.query?searchResults():'<div class="aoGlossTerms">'+rows.map(phraseButton).join("")+'</div>')+'</main>';
   }
 
   function contextView(){
