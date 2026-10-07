@@ -136,6 +136,23 @@ function listMarkup(mode,state,scenarios){
   return `<section class="aoApostolateListIntro"><h1>${esc(L(state,"Help someone","Aider quelqu’un"))}</h1><p>${esc(L(state,"Choose the situation that best matches the other person’s actual need. Apostolate does not replace a priest, sacrament or specialist owner.","Choisissez la situation qui correspond le mieux au besoin réel de l’autre personne. Apostolate ne remplace ni un prêtre, ni un sacrement, ni le module compétent."))}</p></section>${searchMarkup(state)}${groups.map(([title,records,quote])=>{const rows=filtered(records,state);return rows.length?`<section class="aoApostolateGroup"><h2>${esc(title)}</h2><div class="aoApostolateList">${rows.map(s=>scenarioButton(s,state,{quote})).join("")}</div></section>`:""}).join("")}`;
 }
 
+function skillDetailMarkup(skill,state,sources){
+  if(!skill)return "";
+  const lang=isFr(state)?"fr":"en";
+  const sourceRecords=(skill.sourceIds||[]).map(id=>sources[id]).filter(Boolean);
+  return `
+    <section class="aoApostolateScenarioHero">
+      <div class="aoApostolateEyebrow">${esc(L(state,"APOSTOLIC SKILL","COMPÉTENCE APOSTOLIQUE"))}</div>
+      <h1>${esc(pick(skill.title,state))}</h1>
+      <p>${esc(pick(skill.summary,state))}</p>
+    </section>
+    <section class="aoApostolateAnswer"><h2>${esc(L(state,"Why it matters","Pourquoi c’est important"))}</h2><p>${esc(pick(skill.explanation,state))}</p></section>
+    <section class="aoApostolateSkills"><h2>${esc(L(state,"Practise","À pratiquer"))}</h2><ul>${(skill.practice?.[lang]||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>
+    <details class="aoApostolateDetail"><summary>${esc(L(state,"What to avoid","À éviter"))}</summary><ul>${(skill.avoid?.[lang]||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></details>
+    ${sourceRecords.length?`<details class="aoApostolateSources"><summary>${esc(L(state,"Sources","Sources"))} · ${sourceRecords.length}</summary><ul>${sourceRecords.map(x=>sourceMarkup(x,state)).join("")}</ul></details>`:""}
+  `;
+}
+
 function homeMarkup(state){
   const cards=[
     ["answer","ao-refined-help",L(state,"Answer a question","Répondre à une question"),L(state,"Concise Catholic answers to common objections and questions.","Réponses catholiques concises aux questions et objections courantes.")],
@@ -167,7 +184,7 @@ export function apostolateCss(){
 
 export function renderApostolatePresentation(root,state,{scenarios,skills,sources}={}){
   if(!root)return false;
-  const selected=state.selectedId?scenarios.get(state.selectedId):null;
+  const selected=state.selectedId?scenarios.get(state.selectedId):null;\n  const selectedSkill=state.selectedSkillId?skills.get(state.selectedSkillId):null;
   root.dataset.aoApostolatePresentationOwner=APOSTOLATE_PRESENTATION_VERSION;
   root.lang=isFr(state)?"fr":"en";
   let body="";
@@ -175,7 +192,7 @@ export function renderApostolatePresentation(root,state,{scenarios,skills,source
   else if(state.view==="answer"||state.view==="help")body=listMarkup(state.view,state,scenarios);
   else if(state.view==="practice"&&!selected)body=listMarkup("practice",state,scenarios);
   else if(state.view==="practice"&&selected)body=practiceMarkup(selected,state,skills,sources);
-  else if(state.view==="scenario")body=detailMarkup(selected,state,skills,sources);
+  else if(state.view==="scenario")body=detailMarkup(selected,state,skills,sources);\n  else if(state.view==="skill")body=skillDetailMarkup(selectedSkill,state,sources);
   else body=homeMarkup(state);
   const canBack=state.view!=="home";
   root.innerHTML=`<style data-ao-apostolate-style>${apostolateCss()}</style><header class="aoApostolateTop"><button type="button" data-ao-ap-back aria-label="${esc(L(state,canBack?"Back":"Back to Formation",canBack?"Retour":"Retour à la Formation"))}">${icon("ao-ui-back")}</button><div class="aoApostolateTopTitle"><small>APOSTOLATE</small><strong>${esc(L(state,"Apostolate","Apostolat"))}</strong></div><button type="button" data-ao-ap-close aria-label="${esc(L(state,"Close","Fermer"))}">${icon("ao-ui-close")}</button></header><main class="aoApostolateWrap">${body}</main>`;
