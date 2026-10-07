@@ -36,6 +36,8 @@ export const APOSTOLATE_SKILLS=Object.freeze([
 
 export const APOSTOLATE_CLAIM_CLASSES=Object.freeze(["D","N","T","H","S","P","C"]);
 export const APOSTOLATE_PUBLICATION_STATES=Object.freeze(["RESEARCH_ONLY","READY"]);
+export const APOSTOLATE_SOURCE_STRENGTHS=Object.freeze(["PRIMARY","PRIMARY_PLUS_CATECHETICAL","MIXED_VERIFIED"]);
+export const APOSTOLATE_TEACHING_STEPS=Object.freeze(["understand","minimum","prepare","launch","followUp"]);
 
 export const APOSTOLATE_OWNERSHIP_BOUNDARIES=Object.freeze({
   MASS:Object.freeze({owner:"mass",target:"mass"}),
@@ -83,6 +85,9 @@ export function makeApostolateScenario(input={}){
     explanation:input.explanation&&typeof input.explanation==="object"?input.explanation:{},
     avoid:input.avoid&&typeof input.avoid==="object"?input.avoid:{},
     apfSkills:Array.isArray(input.apfSkills)?input.apfSkills.filter(nonEmpty):[],
+    doctrineRefs:Array.isArray(input.doctrineRefs)?input.doctrineRefs.filter(nonEmpty):[],
+    sourceStrength:nonEmpty(input.sourceStrength)?input.sourceStrength:null,
+    teaching:input.teaching&&typeof input.teaching==="object"?input.teaching:{},
     sourceIds:Array.isArray(input.sourceIds)?input.sourceIds.filter(nonEmpty):[],
     handoffs:Array.isArray(input.handoffs)?input.handoffs:[],
   };
@@ -96,6 +101,12 @@ export function makeApostolateScenario(input={}){
     if(record.apfSkills.length===0||record.apfSkills.some(skill=>!skillSet.has(skill)))throw new Error("READY Apostolate scenario requires valid APF skills: "+id);
     if(!Array.isArray(record.avoid.en)||record.avoid.en.length===0||!Array.isArray(record.avoid.fr)||record.avoid.fr.length===0)throw new Error("READY Apostolate scenario requires bilingual avoidances: "+id);
     if(record.handoffs.length===0)throw new Error("READY Apostolate scenario requires at least one canonical handoff: "+id);
+    if(id.startsWith("TF")){
+      if(record.doctrineRefs.length===0)throw new Error("READY TF scenario requires doctrineRefs: "+id);
+      if(!APOSTOLATE_SOURCE_STRENGTHS.includes(record.sourceStrength))throw new Error("READY TF scenario requires a valid sourceStrength: "+id);
+      const incomplete=APOSTOLATE_TEACHING_STEPS.filter(step=>!nonEmpty(record.teaching?.[step]?.en)||!nonEmpty(record.teaching?.[step]?.fr));
+      if(incomplete.length)throw new Error("READY TF scenario requires bilingual INTRODUCE teaching steps: "+id+" ("+incomplete.join(",")+")");
+    }
   }
 
   return Object.freeze({
@@ -108,6 +119,10 @@ export function makeApostolateScenario(input={}){
       fr:Object.freeze([...(Array.isArray(record.avoid.fr)?record.avoid.fr:[])]),
     }),
     apfSkills:Object.freeze([...record.apfSkills]),
+    doctrineRefs:Object.freeze([...record.doctrineRefs]),
+    teaching:Object.freeze(Object.fromEntries(
+      Object.entries(record.teaching).map(([key,value])=>[key,Object.freeze({...value})])
+    )),
     sourceIds:Object.freeze([...record.sourceIds]),
     handoffs:Object.freeze([...record.handoffs]),
   });
