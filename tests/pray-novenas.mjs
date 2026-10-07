@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { NOVENA_CORPUS_V3 } from "../src/pray/novena-corpus.js";
-import { NOVENA_CORPUS_V4, NOVENA_CORPUS_V4_IDS, NOVENA_CORPUS_V4_VERSION } from "../src/pray/novena-corpus-v4.js";
+import { NOVENA_CORPUS_V4, NOVENA_CORPUS_V4_IDS, NOVENA_CORPUS_V4_VERSION, NOVENA_START_KIND } from "../src/pray/novena-corpus-v4.js";
 import { NOVENA_SOURCE_HOLDS, NOVENA_TARGET_IDS, NOVENA_TARGET_REGISTRY_V1 } from "../src/calendar/devotional-registry.js";
 
 const donorExpected=[
@@ -21,6 +21,24 @@ assert.equal(NOVENA_TARGET_IDS.length,16,"Novena registry must remain 16 targets
 assert.equal(Object.keys(NOVENA_TARGET_REGISTRY_V1).length,16);
 assert.deepEqual(Object.keys(NOVENA_SOURCE_HOLDS),[],"Completed novena corpus must have no unresolved source holds");
 assert.ok(Object.values(NOVENA_TARGET_REGISTRY_V1).every(x=>x.playable===true&&x.availability==="PLAYABLE_BILINGUAL_SOURCE_LOCKED"),"All 16 novenas must be playable bilingual targets");
+const traditionalStartIds=new Set(["holy_ghost","christmas","corpus_christi","sacred_heart","immaculate_conception","christ_the_king"]);
+for(const [id,n] of Object.entries(NOVENA_CORPUS_V4)){
+  assert.equal(
+    n.startKind,
+    traditionalStartIds.has(id)?NOVENA_START_KIND.TRADITIONAL:NOVENA_START_KIND.SUGGESTED,
+    id+" start authority changed"
+  );
+}
+assert.equal(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.startKind,NOVENA_START_KIND.SUGGESTED);
+assert.equal(NOVENA_CORPUS_V4.immaculate_heart.startKind,NOVENA_START_KIND.SUGGESTED);
+assert.equal(NOVENA_CORPUS_V4.st_michael.startKind,NOVENA_START_KIND.SUGGESTED);
+assert.equal(NOVENA_CORPUS_V4.christ_the_king.startKind,NOVENA_START_KIND.TRADITIONAL);
+assert.match(NOVENA_CORPUS_V4.st_michael.traditionalStart.en,/Suggested feast preparation/);
+assert.match(NOVENA_CORPUS_V4.immaculate_heart.traditionalStart.en,/Suggested feast preparation/);
+assert.match(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.traditionalStart.en,/Suggested feast preparation/);
+assert.ok(NOVENA_CORPUS_V4.st_michael.historySources.some(x=>/Raccolta/.test(x.label)),"St Michael lost the Raccolta novena authority witness");
+assert.ok(NOVENA_CORPUS_V4.christ_the_king.historySources.some(x=>/1955/.test(x.label)),"Christ the King lost the pre-conciliar feast-preparation witness");
+
 
 let bodyCount=0;
 for(const id of completeExpected){
@@ -76,6 +94,14 @@ assert.equal(sot.target_count,16);
 assert.equal(sot.playable_count,16);
 assert.equal(sot.french_body_parity,"16/16");
 assert.equal(sot.source_holds,0);
+assert.ok(sot.global_rules.some(x=>/TRADITIONAL_START or SUGGESTED_START/.test(x)),"SOT lost start-authority rule");
+for(const row of sot.novenas){
+  assert.equal(row.start_kind,traditionalStartIds.has(row.id)?"TRADITIONAL_START":"SUGGESTED_START",row.id+" SOT start_kind diverged");
+}
+assert.equal(sot.recovered_targets.christ_the_king.start_kind,"TRADITIONAL_START");
+assert.equal(sot.recovered_targets.st_anthony_nine_tuesdays.start_kind,"SUGGESTED_START");
+assert.equal(sot.recovered_targets.immaculate_heart.start_kind,"SUGGESTED_START");
+assert.equal(sot.recovered_targets.st_michael.start_kind,"SUGGESTED_START");
 assert.deepEqual(sot.novenas.map(x=>x.id),completeExpected,"NOVENA_SOT_V1 target order diverged from production corpus");
 assert.ok(sot.novenas.every(x=>x.playable===true&&x.french_text_status&&!/MISSING/i.test(x.french_text_status)),"NOVENA_SOT_V1 lost playable/French parity");
 assert.match(readFileSync("docs/NOVENA-SOT-V1.md","utf8"),/French parity means the \*\*actual prayer body\*\*/,"Novena freeze doc lost prayer-body French parity rule");
@@ -100,6 +126,9 @@ assert.match(runtime,/TRADUCTION FRANÇAISE · ALIGNÉE SUR LA SOURCE/,"French e
 assert.match(runtime,/TEXTE FRANÇAIS TRADITIONNEL/,"Traditional French witness label disappeared");
 assert.match(runtime,/Revenir au français/,"French\/English prayer witness toggle lost return path");
 assert.match(runtime,/calendarStatus/,"calendar-aware Novena status disappeared");
+assert.match(runtime,/Traditional start/,"Novena detail lost Traditional start label");
+assert.match(runtime,/Suggested start/,"Novena detail lost Suggested start label");
+assert.match(runtime,/NOVENA_START_KIND/,"Novena runtime stopped consuming start authority metadata");
 assert.match(runtime,/novenaStatusFor/,"Novenas stopped consuming shared Calendar intelligence date semantics");
 assert.doesNotMatch(runtime,/function easter\(/,"Novenas reintroduced a private Easter calculator");
 assert.doesNotMatch(runtime,/function windowFor\(/,"Novenas reintroduced private novena date-window logic");
