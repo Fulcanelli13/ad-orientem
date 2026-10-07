@@ -1,5 +1,6 @@
 // Exact v38.1 Traditional Catholic Life data extracted from Ad_Orientem_v3_4_10.html.
 // Lay-facing only. Priest-only ceremonial remains deliberately excluded.
+// Authority guard: older manuals remain historical evidence unless a 1962 source confirms the rule. A 1951 rule is therefore never copied into the 1962 engine.
 
 export const TRADITIONAL_LEARN_SOURCES_V381=Object.freeze({
   baltimore:"https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity",
