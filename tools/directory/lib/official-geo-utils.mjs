@@ -82,7 +82,30 @@ function pointFromUrl(url){
   }
   return null;
 }
-function urlCandidates(html,pageUrl){
+function significantWords(value){
+  return decodeURIComponent(String(value??""))
+    .normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
+    .toLowerCase().replace(/[^a-z0-9]+/g," ").split(/\s+/).filter(Boolean)
+    .filter(token=>token.length>=3)
+    .filter(token=>!new Set(["www","google","maps","map","place","dir","data","entry","view","viewer","italy","france","germany","deutschland","suisse","switzerland","usa","united","states"]).has(token));
+}
+function explicitMapPlaceText(url){
+  let u;try{u=new URL(url);}catch{return null}
+  const decoded=decodeURIComponent(u.pathname);
+  const place=decoded.match(/\/(?:place|dir\/\/)\/([^/@]+)/i)?.[1]??null;
+  return place?place.replace(/\+/g," "):null;
+}
+function mapCandidateConflicts(url,expectedText){
+  if(!expectedText)return false;
+  const placeText=explicitMapPlaceText(url);
+  if(!placeText)return false;
+  const evidence=[...new Set(significantWords(placeText))];
+  if(evidence.length<2)return false;
+  const expected=new Set(significantWords(expectedText));
+  const overlaps=evidence.filter(token=>expected.has(token));
+  return overlaps.length===0;
+}
+function urlCandidates(html,pageUrl,{expectedText=null}={}){
   const out=[];let index=0;
   const attrRe=/\b(?:href|src|data-src|data-url)\s*=\s*(?:"([^"]+)"|'([^']+)')/gi;let m;
   while((m=attrRe.exec(String(html??"")))){
@@ -91,6 +114,10 @@ function urlCandidates(html,pageUrl){
     if(!/(?:google\.[^/]+\/maps|maps\.google\.|openstreetmap\.org|bing\.com\/maps|apple\.com\/maps|mapy\.cz|here\.com)/i.test(url))continue;
     const p=pointFromUrl(url);
     if(!p)continue;
+    if(mapCandidateConflicts(url,expectedText)){
+      out.push(Object.freeze({rejected:true,lat:p.lat,lng:p.lng,carrier:"MAP_URL",sourceRef:url,sourceUrl:pageUrl,precision:"address",rejection:"MAP_PLACE_TEXT_CONFLICT"}));
+      continue;
+    }
     out.push(candidate(p.lat,p.lng,{carrier:"MAP_URL",sourceRef:url,sourceUrl:pageUrl,precision:"address"}));
     index+=1;
   }
@@ -110,20 +137,22 @@ function coherent(candidates){
   return candidates.every(c=>Math.abs(c.lat-base.lat)<=COORD_EPSILON&&Math.abs(c.lng-base.lng)<=COORD_EPSILON);
 }
 
-export function extractOfficialGeoCandidates(html,{pageUrl}={}){
+export function extractOfficialGeoCandidates(html,{pageUrl,expectedText=null}={}){
   const sourceUrl=pageUrl??"about:blank";
-  return dedupe([
+  return [
     ...jsonLdCandidates(html,sourceUrl),
     ...metaCandidates(html,sourceUrl),
     ...dataAttributeCandidates(html,sourceUrl),
-    ...urlCandidates(html,sourceUrl),
-  ]);
+    ...urlCandidates(html,sourceUrl,{expectedText}),
+  ];
 }
 
-export function selectOfficialGeoFromHtml(html,{pageUrl}={}){
-  const candidates=extractOfficialGeoCandidates(html,{pageUrl});
-  if(!candidates.length)return Object.freeze({geo:null,candidates:[],ambiguous:false});
-  if(!coherent(candidates))return Object.freeze({geo:null,candidates,ambiguous:true});
+export function selectOfficialGeoFromHtml(html,{pageUrl,expectedText=null}={}){
+  const all=extractOfficialGeoCandidates(html,{pageUrl,expectedText});
+  const rejectedCandidates=all.filter(c=>c?.rejected);
+  const candidates=dedupe(all.filter(c=>!c?.rejected));
+  if(!candidates.length)return Object.freeze({geo:null,candidates:[],rejectedCandidates,ambiguous:false});
+  if(!coherent(candidates))return Object.freeze({geo:null,candidates,rejectedCandidates,ambiguous:true});
   const chosen=candidates[0];
   return Object.freeze({
     geo:Object.freeze({
@@ -136,6 +165,7 @@ export function selectOfficialGeoFromHtml(html,{pageUrl}={}){
       upstream_carrier:chosen.carrier,
     }),
     candidates,
+    rejectedCandidates,
     ambiguous:false,
   });
 }
