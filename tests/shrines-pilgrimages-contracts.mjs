@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:40,
-  pilgrimages:53,
-  routes:14,
-  temporalLinks:41,
-  sources:92,
+  shrines:48,
+  pilgrimages:61,
+  routes:16,
+  temporalLinks:49,
+  sources:107,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -94,6 +94,14 @@ const requiredPlaces=new Set([
   "place:BR:nazare-belem",
   "place:CO:las-lajas-ipiales",
   "place:CO:chiquinquira-basilica",
+  "place:BE:banneux",
+  "place:BE:beauraing",
+  "place:CZ:svata-hora-pribram",
+  "place:CZ:stara-boleslav-st-wenceslas",
+  "place:NL:heiloo-olv-ter-nood",
+  "place:NL:maastricht-sterre-der-zee",
+  "place:PT:fatima-sanctuary",
+  "place:PT:sameiro-braga",
 ]);
 for(const shrine of corpus.shrines){
   assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
@@ -118,6 +126,10 @@ assert.equal(calendarDateForSemanticKey("observance.zapopan_romeria",2026),"2026
 assert.equal(calendarDateForSemanticKey("observance.our_lady_aparecida",2026),"2026-10-12");
 assert.equal(calendarDateForSemanticKey("observance.las_lajas",2026),"2026-09-15");
 assert.equal(calendarDateForSemanticKey("observance.chiquinquira_july9",2026),"2026-07-09");
+assert.equal(calendarDateForSemanticKey("observance.banneux_first_apparition",2026),"2026-01-15");
+assert.equal(calendarDateForSemanticKey("feast.saint_wenceslas",2026),"2026-09-28");
+assert.equal(calendarDateForSemanticKey("observance.fatima_may13",2026),"2026-05-13");
+assert.equal(calendarDateForSemanticKey("observance.sameiro_june12",2026),"2026-06-12");
 
 const kevelaerSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:kevelaer:pilgrimage-season");
 assert.equal(kevelaerSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -154,6 +166,24 @@ assert.equal(zapopanRoute.destination_place_id,"place:MX:basilica-zapopan");
 const cirioRoute=corpus.routes.find(item=>item.route_id==="route:BR:belem-cathedral-nazare");
 assert.equal(cirioRoute.route_state,"DOCUMENTED_UNMAPPED");
 assert.equal(cirioRoute.destination_place_id,"place:BR:nazare-belem");
+
+for(const id of [
+  "temporal:svata-hora:annual-feast",
+  "temporal:heiloo:first-saturday",
+  "temporal:maastricht:sterre-der-zee-walk",
+  "temporal:sameiro:annual-pilgrimage",
+]){
+  const link=corpus.temporalLinks.find(item=>item.temporal_link_id===id);
+  assert.ok(link,id+" missing");
+  assert.equal(link.binding_state,"NO_FIXED_CALENDAR_BINDING");
+}
+
+const maastrichtRoute=corpus.routes.find(item=>item.route_id==="route:NL:winthagen-maastricht-sterre-der-zee");
+assert.equal(maastrichtRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(maastrichtRoute.destination_place_id,"place:NL:maastricht-sterre-der-zee");
+const sameiroRoute=corpus.routes.find(item=>item.route_id==="route:PT:braga-cathedral-sameiro");
+assert.equal(sameiroRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(sameiroRoute.destination_place_id,"place:PT:sameiro-braga");
 
 const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
 assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
