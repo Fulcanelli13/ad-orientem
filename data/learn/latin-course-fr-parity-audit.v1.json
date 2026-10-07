@@ -1,6 +1,6 @@
 {
-  "version": "latin-course-fr-parity-audit-v1.6",
-  "status": "PARTIAL_PARITY_STAGE6_COMPLETE",
+  "version": "latin-course-fr-parity-audit-v1.7",
+  "status": "PARTIAL_PARITY_STAGE7_COMPLETE",
   "audited": "2026-10-07",
   "scope": "All authored Latin course lessons 1-40",
   "totals": {
@@ -103,32 +103,46 @@
       "localizedOptionSets": "all applicable",
       "localizedMatchingLabels": "all applicable",
       "gradingValuesChanged": 0
+    },
+    "stage7": {
+      "lessons": "5/5",
+      "lessonTitles": "5/5",
+      "lessonGrammarFocus": "5/5",
+      "lessonReadingOutcome": "5/5",
+      "lessonObjectives": "5/5",
+      "blockTitles": "30/30",
+      "exercisePrompts": "53/53",
+      "exerciseHints": "53/53",
+      "exerciseExplanations": "53/53",
+      "localizedOptionSets": "all applicable",
+      "localizedMatchingLabels": "all applicable",
+      "gradingValuesChanged": 0
     }
   },
   "missing": {
     "lessonTitles": {
-      "localizedFr": 30,
+      "localizedFr": 35,
       "total": 40
     },
     "blockTitles": {
-      "localizedFr": 185,
+      "localizedFr": 215,
       "total": 245
     },
     "exercisePrompts": {
-      "localizedFr": 326,
+      "localizedFr": 379,
       "total": 431
     },
     "exerciseHints": {
-      "localizedFr": 326,
+      "localizedFr": 379,
       "total": 431
     },
     "exerciseExplanations": {
-      "localizedFr": 326,
+      "localizedFr": 379,
       "total": 431
     },
-    "exerciseOptionLabels": "Lessons 1-30 complete; Lessons 31-40 pending.",
-    "lessonObjectives": "Lessons 1-30 complete; Lessons 31-40 pending.",
-    "grammarFocusAndReadingOutcome": "Lessons 1-30 complete; Lessons 31-40 pending."
+    "exerciseOptionLabels": "Lessons 1-35 complete; Lessons 36-40 pending.",
+    "lessonObjectives": "Lessons 1-35 complete; Lessons 36-40 pending.",
+    "grammarFocusAndReadingOutcome": "Lessons 1-35 complete; Lessons 36-40 pending."
   },
   "schemaRecommendation": {
     "backwardsCompatibility": "Keep existing English/canonical fields for grading and current UI.",
@@ -141,7 +155,8 @@
     "implementedStage3": "Lessons 11-15 now use the same localization.fr contract; all canonical grading, source and provenance fields remain unchanged.",
     "implementedStage4": "Lessons 16-20 now use the same localization.fr contract, including the compulsory Credo checkpoint, with canonical grading/source/provenance fields unchanged.",
     "implementedStage5": "Lessons 21-25 now use the same localization.fr contract for subjunctive and multi-clause syntax; canonical grading, source and provenance fields remain unchanged.",
-    "implementedStage6": "Lessons 26-30 now use the same localization.fr contract for indirect statement, verbal nouns/adjectives, ablative absolute, advanced cases and the complete Collect checkpoint; canonical grading/source/provenance fields remain unchanged."
+    "implementedStage6": "Lessons 26-30 now use the same localization.fr contract for indirect statement, verbal nouns/adjectives, ablative absolute, advanced cases and the complete Collect checkpoint; canonical grading/source/provenance fields remain unchanged.",
+    "implementedStage7": "Lessons 31-35 now use the same localization.fr contract for reader toolkit, Church/Biblical Latin, Collect architecture and Canon periodic syntax; canonical grading/source/provenance fields remain unchanged."
   },
   "repairBatching": [
     "Lessons 1-5",
@@ -163,7 +178,8 @@
     "Lessons 11-15 are a hard French-parity CI gate under the same aligned-display and canonical-grading preservation rules.",
     "Lessons 16-20 are a hard French-parity CI gate, including the integrated Credo checkpoint.",
     "Lessons 21-25 are a hard French-parity CI gate, including the multi-clause Stage 5 checkpoint.",
-    "Lessons 26-30 are a hard French-parity CI gate, including the complete Roman Collect checkpoint."
+    "Lessons 26-30 are a hard French-parity CI gate, including the complete Roman Collect checkpoint.",
+    "Lessons 31-35 are a hard French-parity CI gate, including the long-Canon Stage 7 checkpoint."
   ],
   "completedBatches": [
     "Lessons 1-5",
@@ -171,7 +187,8 @@
     "Lessons 11-15",
     "Lessons 16-20",
     "Lessons 21-25",
-    "Lessons 26-30"
+    "Lessons 26-30",
+    "Lessons 31-35"
   ],
-  "nextBatch": "Lessons 31-35"
+  "nextBatch": "Lessons 36-40"
 }
