@@ -538,13 +538,29 @@ async function select(id,{closeAfter=false}={}){
     return ok;
   }catch(error){console.error("Modular Calendar date navigation failed",error);return false}
 }
-function setView(view){
+function setMonthView(view,{openMonth=true}={}){
   const next=String(view||"").toLowerCase();
+  if(!MONTH_INDEX_VIEWS.has(next))return false;
+  calendarMonthView=next;
+  if(openMonth)calendarView="picker";
+  if(!root()){requestedView=openMonth?"picker":requestedView;requestedMonthView=next;return true}
+  if(calendarView==="picker"&&!pickerMonthId)pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
+  root()?.scrollTo?.({top:0,left:0,behavior:"auto"});
+  paint();
+  if(calendarView==="picker")requestPickerMonth();
+  return true;
+}
+function setView(view){
+  let next=String(view||"").toLowerCase();
+  if(next==="index"){calendarMonthView="major";requestedMonthView="major";next="picker"}
+  if(next==="month")next="picker";
   if(!CALENDAR_VIEWS.has(next))return false;
   if(!root()){requestedView=next;return true}
   calendarView=next;
-  if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
-  else monthEpoch++;
+  if(calendarView==="picker"){
+    pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
+    if(!MONTH_INDEX_VIEWS.has(calendarMonthView))calendarMonthView="calendar";
+  }else monthEpoch++;
   root()?.scrollTo?.({top:0,left:0,behavior:"auto"});
   paint();
   if(calendarView==="picker")requestPickerMonth();
@@ -553,14 +569,15 @@ function setView(view){
 function bind(r){
   r.addEventListener("click",event=>{
     const viewButton=event.target.closest?.("[data-cal-view]");if(viewButton){event.preventDefault();setView(viewButton.dataset.calView||"day");return}
-    const filterButton=event.target.closest?.("[data-cal-filter]");if(filterButton){event.preventDefault();calendarIndexFilter=filterButton.dataset.calFilter||"all";paint();return}
+    const monthViewButton=event.target.closest?.("[data-cal-month-view]");if(monthViewButton){event.preventDefault();setMonthView(monthViewButton.dataset.calMonthView||"calendar",{openMonth:true});return}
+    const monthOpen=event.target.closest?.("[data-cal-open-month]");if(monthOpen){event.preventDefault();setMonthView(monthOpen.dataset.calOpenMonth||"calendar",{openMonth:true});return}
     const v384Panel=event.target.closest?.("[data-ao-cal-v384-panel]");if(v384Panel){event.preventDefault();calendarV384Panel=v384Panel.dataset.aoCalV384Panel==="discipline"?"discipline":"year";paint();return}
     const v384Era=event.target.closest?.("[data-ao-cal-v384-era]");if(v384Era){event.preventDefault();calendarV384Era=["current","1962","older"].includes(v384Era.dataset.aoCalV384Era)?v384Era.dataset.aoCalV384Era:"current";calendarV384Panel="discipline";paint();return}
     const v384Route=event.target.closest?.("[data-ao-cal-v384-route]");if(v384Route){event.preventDefault();const route=v384Route.dataset.aoCalV384Route||"";if(route==="today.calendar"){calendarView="day";paint();return}if(route==="learn.discipline"){calendarV384Panel="discipline";paint();return}void Promise.resolve(globalThis.AO_MODULES?.open?.(route,{returnContext:{surface:"calendar",view:"year"}})).catch(error=>console.error("Calendar v38.4 route failed",error));return}
     const dayShift=event.target.closest?.("[data-cal-day-shift]");if(dayShift){event.preventDefault();void select(addDays(state()?.selectedDate||iso(new Date()),Number(dayShift.dataset.calDayShift||0)));return}
     const monthShift=event.target.closest?.("[data-cal-month-shift]");if(monthShift){event.preventDefault();const base=pickerMonthId||String(state()?.selectedDate||iso(new Date())).slice(0,7),parts=base.split("-").map(Number),d=new Date(parts[0],parts[1]-1+Number(monthShift.dataset.calMonthShift||0),1,12);pickerMonthId=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");paint();requestPickerMonth();return}
     const pick=event.target.closest?.("[data-cal-pick-date]");if(pick){event.preventDefault();calendarView="day";void select(pick.dataset.calPickDate);return}
-    const indexDate=event.target.closest?.("[data-cal-index-date]");if(indexDate){event.preventDefault();calendarView="day";void select(indexDate.dataset.calIndexDate);return}
+    const monthIndexDate=event.target.closest?.("[data-cal-month-index-date]");if(monthIndexDate){event.preventDefault();calendarView="day";void select(monthIndexDate.dataset.calMonthIndexDate);return}
     const mass=event.target.closest?.("[data-cal-mass]");if(mass){event.preventDefault();void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar Mass entry failed",error));return}
     const closeButton=event.target.closest?.("[data-cal-close]");if(closeButton){event.preventDefault();close();return}
     const day=event.target.closest?.("[data-cal-date]");if(day){event.preventDefault();void select(day.dataset.calDate);return}
@@ -572,12 +589,12 @@ function bind(r){
 }
 function open(){
   const doc=globalThis.document;if(!doc?.body||!runtime()?.store||!runtime()?.resolver)return false;
-  calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";requestedView=null;calendarV384Panel="year";calendarV384Era="current";
+  calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;calendarV384Panel="year";calendarV384Era="current";
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
   const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();
   const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();void revealDate(selected,{forceLoader:!weekReady(selected),prefetch:true});return true;
 }
-function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,view:calendarView,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,pickerMonthId,monthReady:pickerMonthId?monthReady(pickerMonthId):false,monthLoading:pickerMonthId?monthLoads.has(pickerMonthId):false,monthCachedDays:pickerMonthId?monthGridIds(pickerMonthId).filter(x=>weekCache.has(x)).length:0,traditionalPanel:calendarV384Panel,disciplineEra:calendarV384Era,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
-export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,close,paint,status,select,setView,prepareMonth,monthGridIds,monthReady});win.AO_CALENDAR_APP_V1=api;return api}
+function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,view:calendarView,monthView:calendarMonthView,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,pickerMonthId,monthReady:pickerMonthId?monthReady(pickerMonthId):false,monthLoading:pickerMonthId?monthLoads.has(pickerMonthId):false,monthCachedDays:pickerMonthId?monthGridIds(pickerMonthId).filter(x=>weekCache.has(x)).length:0,traditionalPanel:calendarV384Panel,disciplineEra:calendarV384Era,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
+export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,close,paint,status,select,setView,setMonthView,prepareMonth,monthGridIds,monthReady,monthIndexEntries});win.AO_CALENDAR_APP_V1=api;return api}
 if(typeof window!=="undefined"&&typeof document!=="undefined"){installWeekCacheApi();installCalendarBrowserOwner(window);}
