@@ -1392,13 +1392,45 @@
         }
       ],
       "notes": "Current parish schedule gives recurring Tridentine Masses; the parish's own current About page explicitly identifies its Extraordinary Form as the 1962 edition."
+    },
+    {
+      "id": "DIO-US-TRENTON-HOLYINNOCENTS-NEPTUNE",
+      "venue_id": "VEN-US-TRENTON-HOLYINNOCENTS-NEPTUNE",
+      "community": "DIOCESAN",
+      "country_code": "US",
+      "jurisdiction": "Diocese of Trenton",
+      "locality": "Neptune, NJ",
+      "name": "Holy Innocents Church",
+      "venue_type": "PARISH_CHURCH",
+      "address": "3455 West Bangs Avenue, Neptune, NJ 07753",
+      "family": "ROMAN",
+      "books": "1962",
+      "frequency": "THIRD_SUNDAY_15:00",
+      "authorization_status": "AUTHORIZED_PUBLIC",
+      "schedule_status": "CURRENT",
+      "verification": "OFFICIAL_LIVE",
+      "verified_on": "07/10/2026",
+      "next_review": "07/01/2027",
+      "sources": [
+        {
+          "role": "schedule",
+          "tier": "A3_PARISH_OFFICIAL",
+          "url": "https://holyinnocentschurch.net/series/traditional-latin-mass-with-gregorian-chant-2/"
+        },
+        {
+          "role": "authorization",
+          "tier": "A1_DIOCESE_BISHOP_OFFICIAL",
+          "url": "https://trentonmonitor.com/2021/07/19/application-of-the-apostolic-letter-traditionis-cu/"
+        }
+      ],
+      "notes": "Current parish event series lists a Traditional Latin Mass with Gregorian Chant on the third Sunday at 3pm through February 2027. Bishop David O'Connell's diocesan implementation explicitly authorizes Holy Innocents Parish to use the 1962 Roman Missal. Current schedule and edition authorization are preserved as separate evidence."
     }
   ],
   "residue_summary": {
     "total": 13,
-    "promoted": 3,
+    "promoted": 4,
     "provider_routed": 4,
     "rejected_current": 1,
-    "staged": 5
+    "staged": 4
   }
 }
