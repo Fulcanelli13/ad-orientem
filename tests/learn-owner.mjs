@@ -23,7 +23,7 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
+  ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.confirmation","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
   "Learn visible launcher order changed after moving Saint of the Day into Calendar",
 );
 assert.deepEqual(
@@ -102,4 +102,4 @@ assert.match(host,/domain === "learn"[\s\S]*AO_LEARN_APP_V1/);
   assert.deepEqual(calls,["learn:close","settings:open"],"Settings left modular Learn active underneath");
 }
 
-console.log("PASS modular Learn owner: v43.59.30 hub plus v38.1 traditional-life extraction, shell-routed, donor fallback retired.");
+console.log("PASS modular Learn owner: v43.59.30 hub plus v38.2 sacramental-life formation, shell-routed, donor fallback retired.");
