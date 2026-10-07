@@ -53,6 +53,12 @@ assert.deepEqual(
     "place:FR:sanctuaire-sacre-coeur-paray",
     "place:FR:chartres-notre-dame",
     "place:FR:sainte-anne-d-auray",
+    "place:FR:bermont-greux",
+    "place:FR:notre-dame-des-marins-arcachon",
+    "place:FR:pontmain",
+    "place:FR:pellevoisin",
+    "place:FR:montligeon",
+    "place:FR:rue-du-bac",
     "place:IE:knock-shrine",
     "place:IE:lough-derg-station-island",
     "place:MU:pere-laval-sainte-croix",
@@ -162,7 +168,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 24,
-  places: 57,
+  places: 63,
   directoryPlaceLinks: 1,
 });
 
@@ -208,6 +214,21 @@ assert.equal(alphonsusLink.relationship,"LOCATED_AT");
 assert.equal(alphonsusLink.confidence,"CONFIRMED");
 assert.equal(alphonsusLink.venue_id,"ao-fssp-national-shrine-of-st-alphonsus-liguori-114-w-saratoga-st-baltimore-md-21201-usa");
 assert.equal(alphonsusLink.place_id,"place:US:st-alphonsus-baltimore");
+
+
+const arcachonLink=seed.directoryPlaceLinks.find(link=>link.link_id==="link:directory-place:FR:arcachon-notre-dame");
+assert.ok(arcachonLink,"production Arcachon Directory→Place link missing");
+assert.equal(arcachonLink.relationship,"LOCATED_AT");
+assert.equal(arcachonLink.confidence,"CONFIRMED");
+assert.equal(arcachonLink.venue_id,"ao-fssp-basilique-notre-dame-f-33120-arcachon-france");
+assert.equal(arcachonLink.place_id,"place:FR:notre-dame-des-marins-arcachon");
+
+const bermontLink=seed.directoryPlaceLinks.find(link=>link.link_id==="link:directory-place:FR:bermont-greux");
+assert.ok(bermontLink,"production Bermont Directory→Place link missing");
+assert.equal(bermontLink.relationship,"LOCATED_AT");
+assert.equal(bermontLink.confidence,"CONFIRMED");
+assert.equal(bermontLink.venue_id,"ao-fssp-ermitage-notre-dame-de-bermont-chapelle-notre-dame-de-bermont-f-88630-greux-france");
+assert.equal(bermontLink.place_id,"place:FR:bermont-greux");
 
 assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:PT:fatima-sanctuary"),false,"FSSP presence in Fátima city was incorrectly collapsed into the sanctuary");
 assert.equal(candidates.candidates.some(item=>item.place_id==="place:PT:fatima-sanctuary"),false,"city-level FSSP presence created an unresolved sanctuary candidate without identity evidence");
