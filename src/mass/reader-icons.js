@@ -53,15 +53,10 @@ function token(value){
   return String(value??"").trim().toUpperCase().replace(/[ -]+/g,"_");
 }
 
-function priestActionKey(action){
-  const label=String(action?.label??action?.action??"").trim().toUpperCase();
-  if(!label)return null;
-  if(label==="ELEVATES HOST" || label==="ELEVATES CHALICE" || label==="MINOR ELEVATION" || label==="SHOWS SACRED HOST")return "priest_elevation";
-  if(label==="GENUFLECTS")return "priest_genuflect";
-  if(label==="INCENSES ALTAR")return "priest_incense_altar";
-  if(label==="WASHES / PURIFIES")return "lavabo";
-  if(label==="BLESSES PEOPLE")return "blessing";
-  if(label==="GIVES COMMUNION")return "communion";
+function priestActionKey(_action){
+  // Exact action semantics are source-backed, but the corresponding frozen V4
+  // action masters are not present in the repository at their certified hashes.
+  // Do not substitute priest-position or provisional artwork.
   return null;
 }
 
@@ -120,7 +115,6 @@ export const R17_FROZEN_ACTIVE_ICON_KEYS=Object.freeze([
   "response","schola","priest_audible","priest_silent",
   "priest_foot","priest_steps","priest_centre","priest_epistle","priest_gospel",
   "priest_rail","priest_people",
-  "priest_elevation","priest_genuflect","priest_incense_altar","lavabo","blessing","communion",
 ]);
 
 export const R17_FROZEN_EXCLUDED_ICON_KEYS=Object.freeze([
