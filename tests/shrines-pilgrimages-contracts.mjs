@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:54,
-  pilgrimages:69,
+  shrines:60,
+  pilgrimages:79,
   routes:17,
-  temporalLinks:53,
-  sources:118,
+  temporalLinks:58,
+  sources:130,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -59,6 +59,12 @@ const requiredPlaces=new Set([
   "place:FR:sanctuaire-sacre-coeur-paray",
   "place:FR:chartres-notre-dame",
   "place:FR:sainte-anne-d-auray",
+  "place:FR:bermont-greux",
+  "place:FR:notre-dame-des-marins-arcachon",
+  "place:FR:pontmain",
+  "place:FR:pellevoisin",
+  "place:FR:montligeon",
+  "place:FR:rue-du-bac",
   "place:IE:knock-shrine",
   "place:IE:lough-derg-station-island",
   "place:MU:pere-laval-sainte-croix",
@@ -136,6 +142,8 @@ assert.equal(calendarDateForSemanticKey("observance.banneux_first_apparition",20
 assert.equal(calendarDateForSemanticKey("feast.saint_wenceslas",2026),"2026-09-28");
 assert.equal(calendarDateForSemanticKey("observance.fatima_may13",2026),"2026-05-13");
 assert.equal(calendarDateForSemanticKey("observance.sameiro_june12",2026),"2026-06-12");
+assert.equal(calendarDateForSemanticKey("observance.pontmain_apparition_anniversary",2026),"2026-01-17");
+assert.equal(calendarDateForSemanticKey("observance.miraculous_medal_nov27",2026),"2026-11-27");
 
 const kevelaerSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:kevelaer:pilgrimage-season");
 assert.equal(kevelaerSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -207,6 +215,27 @@ assert.equal(calendarDateForSemanticKey(grottoLourdes.calendar_semantic_key,2026
 const czestochowaUsRoute=corpus.routes.find(item=>item.route_id==="route:US:great-meadows-doylestown-czestochowa");
 assert.equal(czestochowaUsRoute.route_state,"DOCUMENTED_UNMAPPED");
 assert.equal(czestochowaUsRoute.destination_place_id,"place:US:czestochowa-doylestown");
+
+const pontmainJan17=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:pontmain:jan17");
+assert.equal(pontmainJan17.binding_state,"BOUND_TO_CALENDAR");
+assert.equal(pontmainJan17.calendar_semantic_key,"observance.pontmain_apparition_anniversary");
+assert.equal(calendarDateForSemanticKey(pontmainJan17.calendar_semantic_key,2026),"2026-01-17");
+
+const pontmainAssumption=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:pontmain:assumption");
+assert.equal(pontmainAssumption.calendar_semantic_key,"feast.assumption_of_mary");
+assert.equal(calendarDateForSemanticKey(pontmainAssumption.calendar_semantic_key,2026),"2026-08-15");
+
+for(const id of ["temporal:pellevoisin:annual","temporal:montligeon:ciel"]){
+  const link=corpus.temporalLinks.find(item=>item.temporal_link_id===id);
+  assert.ok(link,id+" missing");
+  assert.equal(link.binding_state,"NO_FIXED_CALENDAR_BINDING");
+}
+
+const rueDuBac=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:rue-du-bac:nov27");
+assert.equal(rueDuBac.binding_state,"BOUND_TO_CALENDAR");
+assert.equal(rueDuBac.calendar_semantic_key,"observance.miraculous_medal_nov27");
+assert.equal(calendarDateForSemanticKey(rueDuBac.calendar_semantic_key,2026),"2026-11-27");
+
 
 const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
 assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");

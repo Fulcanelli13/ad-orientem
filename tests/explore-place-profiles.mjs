@@ -99,7 +99,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,56,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,62,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -136,6 +136,51 @@ assert.ok(sainteAnne);
 assert.equal(sainteAnne.counts.pilgrimages,2);
 assert.ok(sainteAnne.counts.traditions>=1);
 assert.ok(sainteAnne.calendar.some(row=>row.semantic_key==="feast.saint_anne"&&row.date==="2027-07-26"));
+
+const bermont=explorePlaceProfile(profiles,"place:FR:bermont-greux");
+assert.ok(bermont);
+assert.equal(bermont.counts.shrines,1);
+assert.equal(bermont.counts.pilgrimages,1);
+assert.ok(bermont.counts.traditions>=1);
+assert.equal(bermont.map_publishable,false);
+
+const arcachon=explorePlaceProfile(profiles,"place:FR:notre-dame-des-marins-arcachon");
+assert.ok(arcachon);
+assert.equal(arcachon.counts.shrines,1);
+assert.equal(arcachon.counts.pilgrimages,1);
+assert.equal(arcachon.map_publishable,false);
+
+const pontmain=explorePlaceProfile(profiles,"place:FR:pontmain");
+assert.ok(pontmain);
+assert.equal(pontmain.counts.shrines,1);
+assert.equal(pontmain.counts.pilgrimages,3);
+assert.ok(pontmain.counts.traditions>=2);
+assert.equal(pontmain.counts.tlm,0);
+assert.equal(pontmain.map_publishable,false);
+assert.ok(pontmain.calendar.some(row=>row.semantic_key==="observance.pontmain_apparition_anniversary"&&row.date==="2027-01-17"));
+assert.ok(pontmain.calendar.some(row=>row.semantic_key==="feast.assumption_of_mary"&&row.date==="2027-08-15"));
+
+const pellevoisin=explorePlaceProfile(profiles,"place:FR:pellevoisin");
+assert.ok(pellevoisin);
+assert.equal(pellevoisin.counts.shrines,1);
+assert.equal(pellevoisin.counts.pilgrimages,2);
+assert.ok(pellevoisin.counts.traditions>=1);
+assert.equal(pellevoisin.calendar.length,0);
+
+const montligeon=explorePlaceProfile(profiles,"place:FR:montligeon");
+assert.ok(montligeon);
+assert.equal(montligeon.counts.shrines,1);
+assert.equal(montligeon.counts.pilgrimages,2);
+assert.ok(montligeon.counts.traditions>=1);
+assert.equal(montligeon.calendar.length,0);
+
+const rueDuBac=explorePlaceProfile(profiles,"place:FR:rue-du-bac");
+assert.ok(rueDuBac);
+assert.equal(rueDuBac.counts.shrines,1);
+assert.equal(rueDuBac.counts.pilgrimages,1);
+assert.ok(rueDuBac.counts.traditions>=1);
+assert.equal(rueDuBac.counts.tlm,0,"Paris fixture was incorrectly inferred as the rue du Bac chapel");
+assert.ok(rueDuBac.calendar.some(row=>row.semantic_key==="observance.miraculous_medal_nov27"&&row.date==="2026-11-27"));
 
 const knock=explorePlaceProfile(profiles,"place:IE:knock-shrine");
 assert.ok(knock);

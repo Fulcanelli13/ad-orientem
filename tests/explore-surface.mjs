@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:54,
-  traditions:72,
-  pilgrimages:69,
+  shrines:60,
+  traditions:78,
+  pilgrimages:79,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -390,6 +390,40 @@ assert.ok(sameiro[0].sections.some(section=>/Archdiocesan pilgrimage to Sameiro/
 assert.ok(sameiro[0].sections.some(section=>/Feast of Our Lady of Sameiro/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
 assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"tranche 7 address-only shrines unexpectedly published map points");
+
+const bermontShrine=filterExploreItems(projection.byLens.shrines,{query:"Bermont"});
+assert.equal(bermontShrine.length,1);
+assert.equal(bermontShrine[0].map_publishable,false);
+assert.equal(bermontShrine[0].map_state,"ADDRESS_ONLY");
+
+const arcachonShrine=filterExploreItems(projection.byLens.shrines,{query:"Notre-Dame des Marins"});
+assert.equal(arcachonShrine.length,1);
+assert.equal(arcachonShrine[0].map_publishable,false);
+
+const pontmainShrine=filterExploreItems(projection.byLens.shrines,{query:"Notre-Dame de Pontmain"});
+assert.equal(pontmainShrine.length,1);
+assert.equal(pontmainShrine[0].map_publishable,false);
+const pontmainAnniversary=filterExploreItems(projection.byLens.pilgrimages,{query:"Pontmain Apparition Anniversary"});
+assert.equal(pontmainAnniversary.length,1);
+assert.ok(pontmainAnniversary[0].sections.some(section=>/Anniversary of the Pontmain Apparition/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+const pontmainAssumption=filterExploreItems(projection.byLens.pilgrimages,{query:"Pontmain Assumption"});
+assert.equal(pontmainAssumption.length,1);
+assert.ok(pontmainAssumption[0].sections.some(section=>/Assumption/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const pellevoisinAnnual=filterExploreItems(projection.byLens.pilgrimages,{query:"Grand Annual Pilgrimage to Pellevoisin"});
+assert.equal(pellevoisinAnnual.length,1);
+assert.ok(pellevoisinAnnual[0].sections.some(section=>/last weekend of August/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const montligeonCiel=filterExploreItems(projection.byLens.pilgrimages,{query:"Pèlerinages du Ciel"});
+assert.equal(montligeonCiel.length,1);
+assert.ok(montligeonCiel[0].sections.some(section=>/Pèlerinages du Ciel/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const rueDuBacPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Rue du Bac"});
+assert.equal(rueDuBacPilgrimage.length,1);
+assert.equal(rueDuBacPilgrimage[0].map_publishable,false);
+assert.ok(rueDuBacPilgrimage[0].sections.some(section=>/Miraculous Medal/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"France tranche address-only shrines unexpectedly published map points");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);

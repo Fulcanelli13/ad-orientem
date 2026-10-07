@@ -2256,6 +2256,198 @@
       "source_ids": [
         "SHR-GROTTO-LOURDES-EMMITSBURG"
       ]
+    },
+    {
+      "place_id": "place:FR:bermont-greux",
+      "name": {
+        "official": "Chapelle Notre-Dame de Bermont",
+        "aliases": [
+          "Ermitage Notre-Dame de Bermont",
+          "Notre-Dame de Bermont"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "1810 chemin de la Chapelle",
+        "line2": null,
+        "postal_code": "88630",
+        "city": "Greux",
+        "region": "Vosges",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "1810 chemin de la Chapelle, 88630 Greux, France"
+      },
+      "source_ids": [
+        "SHR-BERMONT-GREUX"
+      ]
+    },
+    {
+      "place_id": "place:FR:notre-dame-des-marins-arcachon",
+      "name": {
+        "official": "Basilique Notre-Dame d’Arcachon — Sanctuaire Notre-Dame des Marins",
+        "aliases": [
+          "Basilique Notre-Dame d’Arcachon",
+          "Notre-Dame des Marins"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Place de la basilique Notre-Dame",
+        "line2": null,
+        "postal_code": "33120",
+        "city": "Arcachon",
+        "region": "Gironde",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place de la basilique Notre-Dame, 33120 Arcachon, France"
+      },
+      "source_ids": [
+        "SHR-ARCACHON-MARINS"
+      ]
+    },
+    {
+      "place_id": "place:FR:pontmain",
+      "name": {
+        "official": "Sanctuaire Notre-Dame de Pontmain",
+        "aliases": [
+          "Sanctuaire de Pontmain",
+          "Basilique Notre-Dame de Pontmain"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "3 rue Notre-Dame",
+        "line2": null,
+        "postal_code": "53220",
+        "city": "Pontmain",
+        "region": "Mayenne",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "3 rue Notre-Dame, 53220 Pontmain, France"
+      },
+      "source_ids": [
+        "SHR-PONTMAIN"
+      ]
+    },
+    {
+      "place_id": "place:FR:pellevoisin",
+      "name": {
+        "official": "Sanctuaire Notre-Dame de Miséricorde de Pellevoisin",
+        "aliases": [
+          "Sanctuaire de Pellevoisin",
+          "Notre-Dame de Pellevoisin"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "3b rue Notre-Dame",
+        "line2": null,
+        "postal_code": "36180",
+        "city": "Pellevoisin",
+        "region": "Indre",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "3b rue Notre-Dame, 36180 Pellevoisin, France"
+      },
+      "source_ids": [
+        "SHR-PELLEVOISIN"
+      ]
+    },
+    {
+      "place_id": "place:FR:montligeon",
+      "name": {
+        "official": "Sanctuaire Notre-Dame de Montligeon",
+        "aliases": [
+          "Basilique Notre-Dame de Montligeon",
+          "Notre-Dame Libératrice de Montligeon"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "26 Rue Principale",
+        "line2": null,
+        "postal_code": "61400",
+        "city": "La Chapelle-Montligeon",
+        "region": "Orne",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "26 Rue Principale, 61400 La Chapelle-Montligeon, France"
+      },
+      "source_ids": [
+        "SHR-MONTLIGEON"
+      ]
+    },
+    {
+      "place_id": "place:FR:rue-du-bac",
+      "name": {
+        "official": "Chapelle Notre-Dame de la Médaille Miraculeuse",
+        "aliases": [
+          "Chapelle de la rue du Bac",
+          "Rue du Bac"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "140 rue du Bac",
+        "line2": null,
+        "postal_code": "75007",
+        "city": "Paris",
+        "region": "Île-de-France",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "140 rue du Bac, 75007 Paris, France"
+      },
+      "source_ids": [
+        "SHR-RUE-DU-BAC"
+      ]
     }
   ],
   "directoryPlaceLinks": [
@@ -2279,6 +2471,28 @@
       "source_ids": [
         "src-fssp-national-shrine-of-st-alphonsus-liguori-114-w-saratoga-st-baltimore-md-21201-usa",
         "SHR-ALPHONSUS-BALTIMORE"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:FR:arcachon-notre-dame",
+      "venue_id": "ao-fssp-basilique-notre-dame-f-33120-arcachon-france",
+      "place_id": "place:FR:notre-dame-des-marins-arcachon",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "src-fssp-basilique-notre-dame-f-33120-arcachon-france",
+        "SHR-ARCACHON-MARINS"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:FR:bermont-greux",
+      "venue_id": "ao-fssp-ermitage-notre-dame-de-bermont-chapelle-notre-dame-de-bermont-f-88630-greux-france",
+      "place_id": "place:FR:bermont-greux",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "src-fssp-ermitage-notre-dame-de-bermont-chapelle-notre-dame-de-bermont-f-88630-greux-france",
+        "SHR-BERMONT-GREUX"
       ]
     }
   ]
