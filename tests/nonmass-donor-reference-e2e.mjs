@@ -76,7 +76,7 @@ try{
   ]);
   await current.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner===true,null,{timeout:30000});
   await current.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
-  await donor.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+  await donor.waitForFunction(()=>typeof globalThis.AO_V37_SHELL?.openDomain==="function",null,{timeout:30000});
   await donor.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
   await Promise.all([
     donor.waitForTimeout(1600),
@@ -132,6 +132,8 @@ try{
 
   await capturePair("01-home","home");
 
+  await donor.evaluate(()=>globalThis.AO_V37_SHELL.openDomain("pray"));
+  await donor.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:10000});
   await donor.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
   await current.locator("[data-ao-app-surface='pray']").click();
   await Promise.all([
