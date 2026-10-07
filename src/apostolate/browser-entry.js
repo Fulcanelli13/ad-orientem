@@ -38,6 +38,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     view:"home",
     returnView:"home",
     selectedId:null,
+    selectedSkillId:null,
     practiceRevealed:false,
     draft:"",
     query:"",
@@ -94,6 +95,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     state.view="home";
     state.returnView="home";
     state.selectedId=null;
+    state.selectedSkillId=null;
     state.practiceRevealed=false;
     state.draft="";
     state.query="";
@@ -103,6 +105,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     const key=String(id??"").trim().toUpperCase();
     if(!scenarioMap.has(key))return false;
     state.selectedId=key;
+    state.selectedSkillId=null;
     state.returnView=returnView||(practice?"practice":state.view==="help"?"help":"answer");
     state.view=practice?"practice":"scenario";
     state.practiceRevealed=false;
@@ -122,11 +125,17 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
       if(!selectScenario(opts.scenarioId,{practice,returnView:practice?"practice":"answer"}))resetHome();
     }else if(opts?.skillId){
       const skill=skillMap.get(String(opts.skillId??"").trim().toUpperCase());
-      const scenarioId=skill?.scenarioRefs?.[0]??null;
-      if(scenarioId)selectScenario(scenarioId,{practice:true,returnView:"practice"});
-      else resetHome();
+      if(skill){
+        state.view="skill";
+        state.returnView="home";
+        state.selectedId=null;
+        state.selectedSkillId=skill.id;
+        state.query="";
+        state.draft="";
+        state.practiceRevealed=false;
+      }else resetHome();
     }else if(["answer","help","practice"].includes(opts?.view)){
-      state.view=opts.view;state.returnView="home";state.selectedId=null;state.query="";state.draft="";state.practiceRevealed=false;
+      state.view=opts.view;state.returnView="home";state.selectedId=null;state.selectedSkillId=null;state.query="";state.draft="";state.practiceRevealed=false;
     }else resetHome();
     node.hidden=false;
     node.removeAttribute?.("aria-hidden");
@@ -188,6 +197,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
   }
 
   function goBack(){
+    if(state.view==="skill"){resetHome();render();return true;}
     if(state.view==="scenario"){
       const target=state.returnView||"answer";
       state.view=target;state.selectedId=null;state.practiceRevealed=false;state.draft="";state.query="";render();return true;
@@ -213,7 +223,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
       event.preventDefault?.();goBack();return;
     }
     if(button.dataset?.aoApMode){
-      state.view=button.dataset.aoApMode;state.returnView="home";state.selectedId=null;state.practiceRevealed=false;state.draft="";state.query="";render();return;
+      state.view=button.dataset.aoApMode;state.returnView="home";state.selectedId=null;state.selectedSkillId=null;state.practiceRevealed=false;state.draft="";state.query="";render();return;
     }
     if(button.dataset?.aoApScenario){
       selectScenario(button.dataset.aoApScenario,{practice:state.view==="practice",returnView:state.view});return;
@@ -288,6 +298,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
       mounted:Boolean(node?.isConnected),
       view:state.open?state.view:null,
       selectedId:state.selectedId,
+      selectedSkillId:state.selectedSkillId,
       practiceDraftPersistence:"NONE",
       ribbonExposed:Boolean(win?.document?.querySelector?.("[data-ao-app-surface='apostolate'],[data-ao-ribbon='apostolate']")),
       readyFamilies:Object.freeze(
