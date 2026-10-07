@@ -420,6 +420,20 @@ assert.equal(exactOwned.priestVoice.value,"LISTENS");
 assert.equal(exactOwned.response.text,"Et cum spíritu tuo.");
 assert.equal(exactOwned.gesture,null);
 
+const matrixCue=ready.cueState.project("AO.SM.C0001");
+assert.equal(matrixCue.gesture.owner,"GESTURE_MATRIX_SOT");
+assert.equal(matrixCue.gesture.sourceGestureId,"GM.F.C0001.01");
+const matrixOwned=resolveCueOwnedChannels({
+  cueControllerSupported:true,
+  cueProjection:matrixCue,
+  eventState:null,
+  legacy:staleLegacy,
+  cueId:"AO.SM.C0001",
+  gestureProfile:"GUIDED_1962",
+});
+assert.equal(matrixOwned.gesture.owner,"GESTURE_MATRIX_SOT");
+assert.equal(matrixOwned.ownership.gesture,"GESTURE_MATRIX_SOT");
+
 const unsupportedOwned=resolveCueOwnedChannels({
   cueControllerSupported:false,
   cueProjection:null,
