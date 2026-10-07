@@ -194,7 +194,7 @@ try{
     ["12-sacred-hymns","V3_4_10_PRESENTATION_AND_TRADITION","../03h-pray-sacred-hymns.png",null],
     ["13-holy-name","V3_4_10_PRESENTATION_AND_TRADITION","../03i-pray-holy-name.png",null],
     ["14-learn","NON_MASS_HEAD_V3_22","../04-learn.png","../04a-learn-serious-illness.png"],
-    ["15-calendar-v384","NON_MASS_HEAD_V3_22","../04f2-calendar-v384-christ-king-october.png","../04h-calendar-v384-discipline-1962.png"],
+    ["15-calendar-intelligence","NON_MASS_HEAD_V3_22","../02h-calendar-day-practices.png","../02i-calendar-day-discipline.png"],
     ["16-settings","NON_MASS_HEAD_V3_22","../05-settings.png","../05b-settings-sources.png"],
   ];
   for(const [id,,currentImage,secondary] of later){
