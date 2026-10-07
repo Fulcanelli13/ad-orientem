@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:3,
-  traditions:35,
-  pilgrimages:4,
+  shrines:8,
+  traditions:36,
+  pilgrimages:11,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -169,7 +169,31 @@ const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   filters:{},
 }));
 assert.match(shrineMapHtml,/Loading source-backed map points/i);
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,3,"all three seeded shrines should map through canonical Place coordinates");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,3,"only provenance-locked shrine Places should publish map points");
+
+const chartresShrine=filterExploreItems(projection.byLens.shrines,{query:"Chartres"});
+assert.equal(chartresShrine.length,1);
+assert.equal(chartresShrine[0].map_publishable,false);
+assert.equal(chartresShrine[0].map_state,"ADDRESS_ONLY");
+assert.match(chartresShrine[0].subtitle,/Chartres/);
+
+const sainteAnneTradition=filterExploreItems(projection.byLens.traditions,{query:"Grand Pardon"});
+assert.ok(sainteAnneTradition.some(item=>item.source_id==="att:DEV-007:SAINTE-ANNE-D-AURAY"));
+assert.ok(sainteAnneTradition.every(item=>item.map_publishable===false),"address-only Sainte-Anne custom unexpectedly became a pin");
+
+const knockPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Knock Apparition"});
+assert.equal(knockPilgrimage.length,1);
+assert.equal(knockPilgrimage[0].map_publishable,false);
+assert.ok(knockPilgrimage[0].sections.some(section=>/Anniversary of the Knock Apparition/.test(section.title)));
+
+const loughDerg=filterExploreItems(projection.byLens.pilgrimages,{query:"Lough Derg Three Day"});
+assert.equal(loughDerg.length,1);
+assert.equal(loughDerg[0].map_state,"DESTINATION_ADDRESS_ONLY");
+assert.ok(loughDerg[0].sections.some(section=>section.label==="Calendar relationship"&&/Traditional Three Day Pilgrimage season/.test(section.title)));
+
+const pereLaval=filterExploreItems(projection.byLens.pilgrimages,{query:"Père Laval"});
+assert.equal(pereLaval.length,1);
+assert.equal(pereLaval[0].map_publishable,false);
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
