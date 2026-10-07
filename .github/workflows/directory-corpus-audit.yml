@@ -10,20 +10,24 @@ on:
       - "package.json"
 
 jobs:
-  live-sspx-corpus:
+  live-source-corpus:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [sspx, fssp, icksp, ibp]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Import official SSPX corpus
-        run: npm run directory:import:sspx
-      - name: Print SSPX import report
-        run: cat data/directory/generated/sspx/import-report.v1.json
+      - name: Import official source corpus
+        run: npm run directory:import:${{ matrix.source }}
+      - name: Print import report
+        run: cat data/directory/generated/${{ matrix.source }}/import-report.v1.json
       - uses: actions/upload-artifact@v4
         with:
-          name: directory-sspx-live-audit
-          path: data/directory/generated/sspx/
+          name: directory-${{ matrix.source }}-live-audit
+          path: data/directory/generated/${{ matrix.source }}/
           if-no-files-found: error
           retention-days: 14
