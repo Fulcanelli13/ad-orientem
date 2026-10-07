@@ -9,12 +9,16 @@ import {
   TRADITIONAL_PRAY_SOURCES_V381,
 } from "./traditional-pray-data.js";
 import {
+  GOOD_DEATH_DYING_V384,
+  GOOD_DEATH_DYING_SOURCES_V384,
+} from "./good-death-data.js";
+import {
   canonicalAssetIdForPrayRoute,
   getCanonicalAsset,
   resolveCanonicalAssetUrl,
 } from "../assets/asset-registry.js";
 
-const VERSION="38.3-communion-treasury";
+const VERSION="38.4-good-death-dying-companion";
 const ROUTES=Object.freeze({
   "pray.morning_evening":Object.freeze({id:"pray.morning_evening",type:"module",domain:"pray",category:"daily-prayer",title:"Morning & Evening Prayer"}),
   "pray.sacred_hymns":Object.freeze({id:"pray.sacred_hymns",type:"module",domain:"pray",category:"traditional-devotion",title:"Sacred Hymns & Canticles"}),
@@ -23,6 +27,8 @@ const ROUTES=Object.freeze({
   "pray.meal_prayers":Object.freeze({id:"pray.meal_prayers",type:"module",domain:"pray",category:"daily-prayer",title:"Grace at Meals"}),
   "pray.sacred_heart":Object.freeze({id:"pray.sacred_heart",type:"module",domain:"pray",category:"sacred-heart",title:"Sacred Heart of Jesus"}),
   "pray.communion_treasury":Object.freeze({id:"pray.communion_treasury",type:"module",domain:"pray",category:"eucharistic",title:"Traditional Communion Prayers"}),
+  "pray.good_death":Object.freeze({id:"pray.good_death",type:"module",domain:"pray",category:"traditional-devotion",title:"Preparation for a Good Death"}),
+  "pray.dying_companion":Object.freeze({id:"pray.dying_companion",type:"module",domain:"pray",category:"pastoral-care",title:"Dying Companion"}),
 });
 
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -72,7 +78,7 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={};
-let S={route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:"en",prayerId:null,sacredHeart:"litany",communion:"before"};
+let S={route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:"en",prayerId:null,sacredHeart:"litany",communion:"before",dying:"now"};
 
 function renderMorningEvening(){
   const rows=S.daypart==="evening"?EVENING_PRAYER_SEQUENCE_V381:MORNING_PRAYER_SEQUENCE_V381;
@@ -142,16 +148,74 @@ function renderCommunionTreasury(){
   }
   return `${head(L("Traditional Communion Prayers","Prières traditionnelles de Communion"),L("Preparation · thanksgiving","Préparation · action de grâces"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A source-locked treasury of prayers long printed before and after Mass in the Roman-Missal tradition, retained only where the French Catholic tradition is also attested.","Un trésor de prières verrouillées sur leurs sources, longtemps imprimées avant et après la Messe dans la tradition du Missel romain, retenues seulement lorsqu’elles sont également attestées dans la tradition catholique française."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-communion="before" class="${tab==="before"?"active":""}">${esc(L("Before Communion","Avant la Communion"))}</button><button type="button" data-tp381-communion="after" class="${tab==="after"?"active":""}">${esc(L("After Communion","Après la Communion"))}</button></div>${body}</main>`;
 }
+function renderGoodDeath(){
+  const d=GOOD_DEATH_DYING_V384;
+  return `${head(L("Preparation for a Good Death","Préparation à une bonne mort"),L("St Joseph · perseverance · readiness","Saint Joseph · persévérance · préparation"))}<main class="aoP435930Body aoTP381DonorBody">
+    <p class="aoTP381Intro">${esc(L("This is an ordinary devotional treasury for preparing throughout life for a holy death. It is not an emergency checklist and it does not replace the sacraments or the ministry of a priest.","Il s’agit d’un trésor dévotionnel ordinaire pour se préparer, durant la vie, à une sainte mort. Ce n’est pas une liste d’urgence et il ne remplace ni les sacrements ni le ministère d’un prêtre."))}</p>
+    <section class="aoTP381Section"><h2>${esc(L("St Joseph · patron of the dying","Saint Joseph · patron des mourants"))}</h2><p>${esc(L("The Roman prayers for the dying explicitly invoke St Joseph as patron of the dying. Reuse the app’s existing St Joseph corpus here rather than creating duplicate texts.","Les prières romaines pour les mourants invoquent explicitement saint Joseph comme patron des mourants. L’application réutilise ici son corpus existant de saint Joseph au lieu de créer des doublons."))}</p></section>
+    ${prayerRows([
+      ["devotion_litany_st_joseph",L("Litany of Saint Joseph","Litanies de saint Joseph"),L("Includes the invocation Patron of the dying","Comprend l’invocation Patron des mourants")],
+      ["devotion_ad_te_beate_ioseph",L("To Thee, O Blessed Joseph","À vous, bienheureux Joseph"),L("Traditional prayer asking for a happy death","Prière traditionnelle demandant une bonne mort")],
+      ["devotion_memorare_st_joseph",L("Memorare to St Joseph","Souvenez-vous à saint Joseph"),L("Traditional recourse to St Joseph","Recours traditionnel à saint Joseph")]
+    ])}
+    <section class="aoTP381Section"><h2>${esc(L("Final perseverance and readiness","Persévérance finale et préparation"))}</h2><p>${esc(L("The traditional preparation for death is not a separate spiritual life. It deepens the ordinary acts of faith, hope, charity, contrition and confidence in Our Lady at the hour of death.","La préparation traditionnelle à la mort n’est pas une vie spirituelle séparée. Elle approfondit les actes ordinaires de foi, d’espérance, de charité, de contrition et la confiance en Notre-Dame à l’heure de la mort."))}</p></section>
+    ${prayerRows([
+      ["foundations_act_of_faith",L("Act of Faith","Acte de foi"),L("Renew faith","Renouveler la foi")],
+      ["foundations_act_of_hope",L("Act of Hope","Acte d’espérance"),L("Renew hope","Renouveler l’espérance")],
+      ["foundations_act_of_love",L("Act of Charity","Acte de charité"),L("Renew charity","Renouveler la charité")],
+      ["sacrament_act_of_contrition",L("Act of Contrition","Acte de contrition"),L("Sorrow for sin and purpose of amendment","Contrition et ferme propos")],
+      ["foundations_hail_mary",L("Hail Mary","Je vous salue Marie"),L("Pray for us now and at the hour of our death","Priez pour nous maintenant et à l’heure de notre mort")]
+    ])}
+    ${sourcedPrayerCard(d.aspirations,L(d.aspirations.title,d.aspirations.titleFr))}
+    ${source("Acta Apostolicae Sedis · 1922 · Ordo Commendationis Animae",GOOD_DEATH_DYING_SOURCES_V384.romanJoseph1922)}
+    ${source(L("Current customary invocations · Apostolic Penitentiary","Invocations usuelles actuelles · Pénitencerie apostolique"),GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}
+    <div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.dying_companion"><span><b>${esc(L("Someone may be dying now","Une personne est peut-être mourante maintenant"))}</b><small>${esc(L("Open the bedside Dying Companion","Ouvrir l’accompagnement au chevet du mourant"))}</small></span><i aria-hidden="true">→</i></button></div>
+  </main>`;
+}
+function renderDyingCompanion(){
+  const d=GOOD_DEATH_DYING_V384,tab=["now","pray","commend"].includes(S.dying)?S.dying:"now";
+  let body="";
+  if(tab==="pray"){
+    body=`<p class="aoTP381Intro">${esc(L("Keep the prayers short and peaceful. If the dying person can answer, let them join as they are able; if not, pray quietly beside them.","Gardez les prières brèves et paisibles. Si le mourant peut répondre, laissez-le s’unir comme il le peut; sinon, priez doucement auprès de lui."))}</p>
+      ${prayerRows([
+        ["sacrament_act_of_contrition",L("Act of Contrition","Acte de contrition"),L("If the person can pray it","Si la personne peut la réciter")],
+        ["foundations_act_of_faith",L("Act of Faith","Acte de foi"),L("Short act of faith","Bref acte de foi")],
+        ["foundations_act_of_hope",L("Act of Hope","Acte d’espérance"),L("Short act of hope","Bref acte d’espérance")],
+        ["foundations_act_of_love",L("Act of Charity","Acte de charité"),L("Short act of charity","Bref acte de charité")],
+        ["foundations_hail_mary",L("Hail Mary","Je vous salue Marie"),L("At the hour of our death","À l’heure de notre mort")],
+        ["adoration_anima_christi","Anima Christi",L("Passion of Christ, strengthen me","Passion du Christ, fortifiez-moi")]
+      ])}
+      ${sourcedPrayerCard(d.aspirations,L(d.aspirations.title,d.aspirations.titleFr))}
+      <div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.st_joseph"><span><b>${esc(L("St Joseph","Saint Joseph"))}</b><small>${esc(L("Patron of the dying · open the existing St Joseph module","Patron des mourants · ouvrir le module existant de saint Joseph"))}</small></span><i aria-hidden="true">→</i></button></div>
+      ${source(L("French customary invocations","Invocations usuelles françaises"),GOOD_DEATH_DYING_SOURCES_V384.frenchInvocations)}`;
+  }else if(tab==="commend"){
+    body=`<p class="aoTP381Intro">${esc(L("The Commendation of the Soul is a traditional prayer of the Church as death approaches. These prayers may be prayed at the bedside; they do not imitate absolution, Anointing, Viaticum or the Apostolic Blessing, which belong to the priestly sacramental ministry.","La recommandation de l’âme est une prière traditionnelle de l’Église à l’approche de la mort. Ces prières peuvent être récitées au chevet du mourant; elles n’imitent ni l’absolution, ni l’Onction, ni le Viatique, ni la Bénédiction apostolique, qui relèvent du ministère sacramentel du prêtre."))}</p>
+      ${sourcedPrayerCard(d.proficiscere,L(d.proficiscere.title,d.proficiscere.titleFr))}
+      ${source("Traditional Roman Commendation · Latin",GOOD_DEATH_DYING_SOURCES_V384.latinProficiscere)}
+      ${source(L("Historical French Catholic witness","Témoin catholique français historique"),GOOD_DEATH_DYING_SOURCES_V384.frenchProficiscere)}
+      <section class="aoTP381Section"><h2>${esc(L("If the person has died","Si la personne est décédée"))}</h2><p>${esc(L("Move from prayers for the dying to suffrage for the departed; do not continue presenting the person as still in the agony of death.","Passez des prières pour le mourant aux suffrages pour le défunt; ne continuez pas à présenter la personne comme encore dans l’agonie."))}</p></section>
+      ${prayerRows([
+        ["dead_eternal_rest_singular",L("Eternal Rest · for one deceased person","Repos éternel · pour un défunt"),L("Immediate suffrage for the departed","Suffrage immédiat pour le défunt")],
+        ["dead_de_profundis","De profundis · Psalm 129",L("Traditional prayer for the departed","Prière traditionnelle pour les défunts")]
+      ])}`;
+  }else{
+    body=`<section class="aoTP381Section"><h2>${esc(L("Call a priest now","Appelez un prêtre maintenant"))}</h2><p>${esc(L("If death may be approaching, contact a priest without waiting for the person to become unconscious. Ask specifically about Confession or Penance, Anointing of the Sick, Holy Communion as Viaticum, and the Apostolic Blessing at the point of death.","Si la mort peut être proche, contactez un prêtre sans attendre que la personne perde connaissance. Demandez explicitement la Confession ou Pénitence, l’Onction des malades, la sainte Communion en Viatique et la Bénédiction apostolique à l’article de la mort."))}</p></section>
+      <section class="aoTP381Section"><h2>${esc(L("What this companion does","Ce que fait cet accompagnement"))}</h2><p>${esc(L("It helps the faithful pray and understand what to request. It never simulates priestly absolution, sacramental anointing, administration of Viaticum or the Apostolic Blessing.","Il aide les fidèles à prier et à comprendre ce qu’il faut demander. Il ne simule jamais l’absolution sacerdotale, l’onction sacramentelle, l’administration du Viatique ou la Bénédiction apostolique."))}</p></section>
+      <details class="aoTP381Source"><summary>${esc(L("At the point of death · current indulgence","À l’article de la mort · indulgence actuelle"))}</summary><p>${esc(isFr()?d.currentIndulgence.fr:d.currentIndulgence.en)}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>
+      <details class="aoTP381Source"><summary>${esc(L("Why Viaticum matters","Pourquoi le Viatique est important"))}</summary><p>${esc(L("The Church gives the Eucharist as Viaticum to those about to leave this life. Together with Penance and Anointing of the Sick, it belongs to the sacraments that complete the Christian’s earthly pilgrimage.","L’Église donne l’Eucharistie en Viatique à ceux qui sont sur le point de quitter cette vie. Avec la Pénitence et l’Onction des malades, il appartient aux sacrements qui achèvent le pèlerinage terrestre du chrétien."))}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.viaticum)}" target="_blank" rel="noopener">${esc(L("Catechism · Viaticum","Catéchisme · Viatique"))} ↗</a></p></details>`;
+  }
+  return `${head(L("Dying Companion","Accompagnement du mourant"),L("Priest · prayer · commendation","Prêtre · prière · recommandation"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-dying="now" class="${tab==="now"?"active":""}">${esc(L("Now","Maintenant"))}</button><button type="button" data-tp381-dying="pray" class="${tab==="pray"?"active":""}">${esc(L("Pray","Prier"))}</button><button type="button" data-tp381-dying="commend" class="${tab==="commend"?"active":""}">${esc(L("Commend","Recommander"))}</button></div>${body}</main>`;
+}
 function renderPrayer(){
   const p=data().prayers?.[S.prayerId];
-  const parent=S.route==="pray.communion_treasury"?L("Traditional Communion Prayers","Prières traditionnelles de Communion"):L("Morning & Evening Prayer","Prières du matin & du soir");
+  const parent=S.route==="pray.communion_treasury"?L("Traditional Communion Prayers","Prières traditionnelles de Communion"):S.route==="pray.good_death"?L("Preparation for a Good Death","Préparation à une bonne mort"):S.route==="pray.dying_companion"?L("Dying Companion","Accompagnement du mourant"):L("Morning & Evening Prayer","Prières du matin & du soir");
   return `${head(prayerTitle(p,S.prayerId),parent)}<main class="aoP435930Body">${prayerCard(S.prayerId)}</main>`;
 }
 function render(){
   const m=mount();if(!m)return false;
   m.dataset.aoPrayView="traditional-pray";
   m.dataset.aoTraditionalPrayRoute=S.route;
-  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():renderMorningEvening();
+  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   m.scrollTop=0;
   queueMicrotask(()=>m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());
   return true;
@@ -168,7 +232,7 @@ function back(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-close],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-flip]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-close],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-flip]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-close]"))return BASE_CLOSE();
@@ -178,6 +242,7 @@ function handleClick(e){
   if(b.dataset.tp381HymnLang){S.hymnLang=b.dataset.tp381HymnLang==="la"?"la":"en";return render()}
   if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
   if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";return render()}
+  if(b.dataset.tp381Dying){S.dying=["now","pray","commend"].includes(b.dataset.tp381Dying)?b.dataset.tp381Dying:"now";return render()}
   if(b.dataset.tp381Prayer){S.prayerId=b.dataset.tp381Prayer;S.screen="prayer";return render()}
   if(b.dataset.tp381Route){
     if(ROUTES[b.dataset.tp381Route])return open(b.dataset.tp381Route,{trigger:b});
@@ -197,6 +262,8 @@ function injectHome(){
     ["pray.holy_name_litany",L("Litany of the Holy Name","Litanies du Saint Nom"),L("Traditional Roman form · available offline","Forme romaine traditionnelle · disponible hors ligne")],
     ["pray.sacred_heart",L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"),L("Litany · reparation · Christ-the-King consecration","Litanies · réparation · consécration du Christ-Roi")],
     ["pray.communion_treasury",L("Traditional Communion Prayers","Prières traditionnelles de Communion"),L("St Thomas · St Ambrose · St Bonaventure · En ego","Saint Thomas · saint Ambroise · saint Bonaventure · En ego")],
+    ["pray.good_death",L("Preparation for a Good Death","Préparation à une bonne mort"),L("St Joseph · perseverance · Jesus, Mary, Joseph","Saint Joseph · persévérance · Jésus, Marie, Joseph")],
+    ["pray.dying_companion",L("Dying Companion","Accompagnement du mourant"),L("Priest · Viaticum · bedside prayer · commendation","Prêtre · Viatique · prière au chevet · recommandation")],
     ["pray.meal_prayers",L("Grace at Meals","Prières des repas"),L("Before and after meals","Avant et après les repas")],
   ];
   sec.innerHTML=`<div class="aoP435930ModuleSectionHead"><h3>${esc(L("Daily & traditional prayer","Prière quotidienne & traditionnelle"))}</h3><p>${esc(L("Source-led lay sequences and traditional texts recovered from the approved donor.","Séquences laïques guidées par les sources et textes traditionnels récupérés du donneur approuvé."))}</p></div><div class="aoP435930ModuleGrid">${cards.map(([route,title,desc])=>`<button type="button" class="aoP435930ModuleCard" data-tp381-open="${esc(route)}">${assetMarkup(route)}<small class="aoP435930ModuleKind">${esc(L("TRADITIONAL","TRADITIONNEL"))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(desc)}</span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
@@ -230,7 +297,7 @@ function mountRuntime(){
     open,
     close:BASE_CLOSE,
     state:()=>({...S}),
-    qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",sacredHeartPolicy:"SOURCE_LOCKED_TRADITIONAL",communionTreasuryPolicy:"FRENCH_WORLD_SOURCE_LOCKED",legacyTraditionOwner:false})
+    qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",sacredHeartPolicy:"SOURCE_LOCKED_TRADITIONAL",communionTreasuryPolicy:"FRENCH_WORLD_SOURCE_LOCKED",goodDeathPolicy:"ROMAN_ST_JOSEPH_SOURCE_LOCKED",dyingCompanionPolicy:"PASTORAL_NOT_SACRAMENT_SIMULATION",legacyTraditionOwner:false})
   });
   queueMicrotask(injectHome);
   return window.AO_TRADITIONAL_PRAY_V381;
