@@ -8,11 +8,16 @@ import {
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { mountExploreMap } from "./map-runtime.js";
+import { buildExplorePlaceProfiles } from "./place-profiles.js";
 
 const VERSION="explore-v1";
 const ROOT_ID="ao-find-modular-root";
 const language=win=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"?"fr":"en";
 const getRoot=win=>win?.document?.getElementById?.(ROOT_ID)??null;
+const localTodayIso=()=>{
+  const d=new Date();
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+};
 
 function ensureRoot(win){
   let node=getRoot(win);
@@ -60,6 +65,7 @@ function installStyle(win){
     ".aoExploreAddress{margin:15px 0;padding:12px;border:1px solid rgba(217,197,154,.1);border-radius:12px}.aoExploreAddress p{margin:5px 0 0;color:#c5baa6}",
     ".aoFindActions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.aoFindActions a,.aoFindActions button,.aoFindSources a{border:1px solid rgba(217,197,154,.2);border-radius:999px;padding:9px 12px;color:#e7d8b8;text-decoration:none;font:600 11px sans-serif;background:transparent;cursor:pointer}",
     ".aoFindSources{margin:15px 0}.aoFindSources>div{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.aoFindSheet footer{color:#8f846e;font-size:11px;margin-top:14px}.aoFindGeoAttribution{display:block;margin-top:6px;opacity:.82}",
+    ".aoExplorePlaceGroup{margin:16px 0;padding-top:13px;border-top:1px solid rgba(217,197,154,.1)}.aoExplorePlaceGroup>small{display:block;font:600 10px/1.2 sans-serif;letter-spacing:.12em;color:#b7a57d;margin-bottom:9px}.aoExplorePlaceGroup>p{color:#bdb29f;line-height:1.45;font-size:13px}.aoExplorePlaceGroup>article{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid rgba(217,197,154,.07)}.aoExplorePlaceGroup>article:first-of-type{border-top:0}.aoExplorePlaceGroup>article strong{font-size:13px;font-weight:500}.aoExplorePlaceGroup>article span{color:#a99e89;font:600 11px sans-serif;white-space:nowrap}.aoExplorePlaceRows{display:grid;gap:7px}.aoExplorePlaceRow{width:100%;display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;border:1px solid rgba(217,197,154,.12);background:#101923;color:#e9e4d9;border-radius:12px;padding:11px}.aoExplorePlaceRow span{min-width:0}.aoExplorePlaceRow small{display:block;color:#a99570;font:600 9px/1.1 sans-serif;letter-spacing:.08em}.aoExplorePlaceRow strong{display:block;margin-top:4px;font-size:13px;font-weight:500}.aoExplorePlaceRow i{font:600 9px sans-serif;color:#887e6d;font-style:normal;text-align:right}",
     "@media(min-width:800px){.aoFindSurface{max-width:980px;margin:auto;border-left:1px solid rgba(217,197,154,.08);border-right:1px solid rgba(217,197,154,.08)}.aoFindList{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindSheet{max-width:720px;margin:0 auto}.aoFindSheetBackdrop{justify-content:center}}",
     "@media(max-width:520px){.aoExploreLensTabs{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindMap{height:calc(100vh - 320px);min-height:360px}}"
   ].join("");
@@ -78,6 +84,7 @@ export function createFindOwner(win=globalThis){
     liturgy:"ANY",
     massType:"ANY",
     selectedId:null,
+    selectedPlaceId:null,
   };
 
   async function ensureData(){
@@ -103,6 +110,7 @@ export function createFindOwner(win=globalThis){
     const node=ensureRoot(win);if(!node)return false;
     installStyle(win);
     const data=await ensureData(),items=filtered();
+    const placeProfiles=buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const vm=buildExploreViewModel({
       language:language(win),
       items,
@@ -113,6 +121,8 @@ export function createFindOwner(win=globalThis){
       view:state.view,
       filters:state,
       selectedId:state.selectedId,
+      placeProfiles,
+      selectedPlaceId:state.selectedPlaceId,
     });
     node.innerHTML=renderExploreToString(vm);
     node.dataset.open=openState?"true":"false";
@@ -121,7 +131,7 @@ export function createFindOwner(win=globalThis){
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
       try{
-        mapHandle=await mountExploreMap(mapNode,items,{win,onSelect:id=>{state.selectedId=id;void paint()}});
+        mapHandle=await mountExploreMap(mapNode,items,{win,onSelect:id=>{state.selectedPlaceId=null;state.selectedId=id;void paint()}});
       }catch(error){
         const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
         if(fallback)fallback.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
@@ -137,6 +147,7 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
     if(typeof options?.query==="string")state.query=options.query;
+    if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
     openState=true;
     const node=ensureRoot(win);if(node)node.dataset.open="true";
     await paint();
@@ -145,7 +156,7 @@ export function createFindOwner(win=globalThis){
   }
 
   function close(){
-    openState=false;state.selectedId=null;mapHandle?.destroy?.();mapHandle=null;
+    openState=false;state.selectedId=null;state.selectedPlaceId=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
   }
@@ -154,7 +165,7 @@ export function createFindOwner(win=globalThis){
     if(key==="view")state.view=value==="map"?"map":"list";
     else if(key==="lens"&&EXPLORE_LENSES.includes(value))state.lens=value;
     else if(Object.hasOwn(state,key))state[key]=value;
-    state.selectedId=null;void paint();
+    state.selectedId=null;state.selectedPlaceId=null;void paint();
   }
 
   function onClick(event){
@@ -162,6 +173,24 @@ export function createFindOwner(win=globalThis){
     const target=event?.target;
     if(target?.closest?.("[data-find-close]")){event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(target?.closest?.("[data-find-close-detail]")){state.selectedId=null;void paint();return}
+    if(target?.closest?.("[data-find-close-place]")){state.selectedPlaceId=null;void paint();return}
+    const openPlace=target?.closest?.("[data-explore-open-place]");
+    if(openPlace){
+      event.preventDefault?.();event.stopPropagation?.();
+      state.selectedPlaceId=openPlace.dataset.exploreOpenPlace||null;
+      state.selectedId=null;
+      void paint();return;
+    }
+    const placeItem=target?.closest?.("[data-explore-place-item]");
+    if(placeItem){
+      event.preventDefault?.();event.stopPropagation?.();
+      const lens=placeItem.dataset.explorePlaceLens;
+      if(EXPLORE_LENSES.includes(lens))state.lens=lens;
+      state.query="";
+      state.selectedPlaceId=null;
+      state.selectedId=placeItem.dataset.explorePlaceItem||null;
+      void paint();return;
+    }
     const novena=target?.closest?.("[data-explore-open-novena]");
     if(novena){
       event.preventDefault?.();event.stopPropagation?.();
@@ -171,7 +200,7 @@ export function createFindOwner(win=globalThis){
       try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
       return;
     }
-    const item=target?.closest?.("[data-explore-item]");if(item){state.selectedId=item.dataset.exploreItem;void paint();return}
+    const item=target?.closest?.("[data-explore-item]");if(item){state.selectedPlaceId=null;state.selectedId=item.dataset.exploreItem;void paint();return}
     const aff=target?.closest?.("[data-find-affiliation]");
     if(aff&&state.lens==="tlm"){
       const id=aff.dataset.findAffiliation,index=state.affiliations.indexOf(id);
@@ -184,7 +213,7 @@ export function createFindOwner(win=globalThis){
   function onInput(event){
     if(!openState)return;
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
-    state.query=input.value??"";state.selectedId=null;void paint();
+    state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;void paint();
   }
 
   win?.document?.addEventListener?.("click",onClick,true);
@@ -201,6 +230,7 @@ export function createFindOwner(win=globalThis){
       open:openState,
       lens:state.lens,
       view:state.view,
+      selectedPlaceId:state.selectedPlaceId,
       counts:projection?.counts??{},
       loadedProviders:dataset?.directory?.loadedProviders??[],
       unavailableProviders:dataset?.directory?.unavailableProviders??[],

@@ -42,6 +42,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     geography:Object.freeze({
       geoAreas:safeArray(geography?.geoAreas),
       places:safeArray(geography?.places),
+      directoryPlaceLinks:safeArray(geography?.directoryPlaceLinks),
     }),
     customs:Object.freeze({
       customs:safeArray(customs?.customs),
