@@ -8,7 +8,7 @@ const diocesan=readJson("data/directory/static/diocesan.v1.json");
 const provider=readJson("data/directory/static/provider-research.v1.json");
 const residue=readJson("data/directory/static/us-residue.v1.json");
 
-assert.equal(diocesan.records.length,45);
+assert.equal(diocesan.records.length,46);
 assert.equal(provider.records.length,204);
 assert.deepEqual(provider.distribution,{
   AASJMV:6,
@@ -19,13 +19,13 @@ assert.deepEqual(provider.distribution,{
   CMRI:142,
   SMMD:1,
 });
-assert.deepEqual(residue.summary,{total:13,promoted:3,provider_routed:4,rejected_current:1,staged:5});
+assert.deepEqual(residue.summary,{total:13,promoted:4,provider_routed:4,rejected_current:1,staged:4});
 
 const expandedDiocesan=expandStaticDirectoryBundle(diocesan);
 const expandedProvider=expandStaticDirectoryBundle(provider);
 assert.equal(expandedDiocesan.issues.length,0);
 assert.equal(expandedProvider.issues.length,0);
-assert.equal(expandedDiocesan.venues.length+expandedProvider.venues.length,249);
+assert.equal(expandedDiocesan.venues.length+expandedProvider.venues.length,250);
 
 for(const venue of [...expandedDiocesan.venues,...expandedProvider.venues]){
   assert.deepEqual(auditVenue(venue),[],venue.venue_id+" failed canonical venue audit");
@@ -57,7 +57,15 @@ const sacredHeart=residue.records.find(x=>x.exception_id==="USB-EX-012");
 assert.equal(lahaina.resolution,"REJECT_CURRENT_VENUE");
 assert.equal(sacredHeart.resolution,"PROMOTED_DIOCESAN_2026_10_07");
 assert.equal(residue.records.filter(x=>x.resolution==="PROVIDER_ROUTED").length,4);
-assert.equal(residue.records.filter(x=>x.resolution==="STAGED").length,5);
+assert.equal(residue.records.filter(x=>x.resolution==="STAGED").length,4);
+
+const neptune=diocesan.records.find(x=>x.id==="DIO-US-TRENTON-HOLYINNOCENTS-NEPTUNE");
+assert.ok(neptune);
+assert.equal(neptune.frequency,"THIRD_SUNDAY_15:00");
+assert.equal(neptune.books,"1962");
+assert.ok(neptune.sources.some(x=>x.role==="schedule"&&/holyinnocentschurch\.net/.test(x.url)));
+assert.ok(neptune.sources.some(x=>x.role==="authorization"&&/trentonmonitor\.com/.test(x.url)));
+
 
 const lawton=provider.records.find(x=>x.id==="SJC-004");
 assert.equal(lawton.verification,"OFFICIAL_LIVE");
