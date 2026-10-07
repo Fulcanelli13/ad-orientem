@@ -730,6 +730,56 @@ try{
   assert.equal(rosaryPrayerGeometry.latinVisible,false,"Rosary visually renders Latin simultaneously with the vernacular");
   assert.equal(rosaryPrayerGeometry.vernVisible,true,"Rosary vernacular face is not actually visible");
 
+  // Translation is a real tap-to-replace interaction in the preserved Rosary engine,
+  // not merely a hidden second face. Tap once for Latin, then tap again to return.
+  const rosaryFlip=page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet:visible .lab-prayer-flip[data-pb-flip]").first();
+  assert.equal(await rosaryFlip.count(),1,"Visible Rosary Our Father exposes no translation surface");
+  await rosaryFlip.tap();
+  await page.waitForFunction(()=>{
+    const flip=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet .lab-prayer-flip[data-pb-flip]");
+    return flip?.dataset?.face==="latin"&&!flip.querySelector("[data-pb-latin]")?.hidden&&flip.querySelector("[data-pb-vern]")?.hidden;
+  },null,{timeout:2000});
+  const rosaryLatin=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true']");
+    const card=[...(root?.querySelectorAll(".lab-prayer-sheet,.pbFlowCard")??[])].find(node=>node.offsetParent!==null&&/Pater noster|Our Father/i.test(node.innerText??""))||null;
+    const flip=card?.querySelector(".lab-prayer-flip[data-pb-flip]"),latin=flip?.querySelector("[data-pb-latin]"),vern=flip?.querySelector("[data-pb-vern]");
+    const cardRect=card?.getBoundingClientRect?.(),flipRect=flip?.getBoundingClientRect?.(),css=flip?getComputedStyle(flip):null;
+    return {
+      face:flip?.dataset?.face??null,
+      latinHidden:latin?.hidden??null,
+      vernHidden:vern?.hidden??null,
+      latinVisible:Boolean(latin&&getComputedStyle(latin).display!=="none"&&latin.getClientRects().length),
+      vernVisible:Boolean(vern&&getComputedStyle(vern).display!=="none"&&vern.getClientRects().length),
+      text:(card?.innerText??"").replace(/\s+/g," ").trim(),
+      cardWidth:cardRect?.width??0,
+      flipWidth:flipRect?.width??0,
+      cardHeight:cardRect?.height??0,
+      writingMode:css?.writingMode??"",
+    };
+  });
+  assert.equal(rosaryLatin.face,"latin","Rosary tap did not switch the active face to Latin");
+  assert.equal(rosaryLatin.latinHidden,false,"Rosary Latin face remains hidden after tap");
+  assert.equal(rosaryLatin.vernHidden,true,"Rosary vernacular face remains visible after Latin tap");
+  assert.equal(rosaryLatin.latinVisible,true,"Rosary Latin face is not actually visible after tap");
+  assert.equal(rosaryLatin.vernVisible,false,"Rosary renders both language faces after tap");
+  assert.match(rosaryLatin.text,/Pater noster/i,"Rosary Latin replacement did not render the Our Father");
+  assert.ok(rosaryLatin.cardWidth>=330&&rosaryLatin.flipWidth>=300,"Rosary translation tap collapsed the prayer column horizontally");
+  assert.ok(rosaryLatin.cardHeight>0&&rosaryLatin.cardHeight<720,"Rosary Latin face reproduced the vertical word-stack regression");
+  assert.match(rosaryLatin.writingMode,/horizontal/i,"Rosary prayer flip is not horizontally written after translation");
+  await shot("03d3-pray-rosary-latin-toggle");
+
+  await rosaryFlip.tap();
+  await page.waitForFunction(()=>{
+    const flip=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet .lab-prayer-flip[data-pb-flip]");
+    return flip?.dataset?.face==="vernacular"&&flip.querySelector("[data-pb-latin]")?.hidden&&!flip.querySelector("[data-pb-vern]")?.hidden;
+  },null,{timeout:2000});
+  const rosaryReturned=await page.evaluate(()=>{
+    const flip=document.querySelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-sheet .lab-prayer-flip[data-pb-flip]");
+    return {face:flip?.dataset?.face??null,text:(flip?.innerText??"").replace(/\s+/g," ").trim()};
+  });
+  assert.equal(rosaryReturned.face,"vernacular","Second Rosary tap did not return to the vernacular");
+  assert.match(rosaryReturned.text,/Our Father/i,"Second Rosary tap did not restore the vernacular prayer");
+
   // Advance through the actual prayer sequence to Mystery I. The permanent
   // Overview control was removed because it duplicated navigation and crowded the header.
   let mysteryReached=await page.evaluate(()=>{

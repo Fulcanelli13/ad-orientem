@@ -369,6 +369,32 @@ const ROSARY_DECLUTTER_CSS=`
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .aoModuleHome,
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .lab-lang{display:none!important}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] [hidden]{display:none!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip[data-pb-flip]{
+ display:block!important;
+ width:100%!important;
+ max-width:100%!important;
+ min-width:0!important;
+ grid-template-columns:none!important;
+ grid-auto-columns:auto!important;
+ writing-mode:horizontal-tb!important;
+ text-orientation:mixed!important;
+ white-space:normal!important;
+ word-break:normal!important;
+ overflow-wrap:normal!important;
+ cursor:pointer!important;
+ touch-action:manipulation!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip[data-pb-flip]>[data-pb-latin],
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip[data-pb-flip]>[data-pb-vern]{
+ width:100%!important;
+ max-width:100%!important;
+ min-width:0!important;
+ writing-mode:horizontal-tb!important;
+ text-orientation:mixed!important;
+ white-space:normal!important;
+ word-break:normal!important;
+ overflow-wrap:normal!important;
+}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip>[data-pb-latin][hidden],
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip>[data-pb-vern][hidden]{
  display:none!important;
