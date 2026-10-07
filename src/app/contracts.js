@@ -7,7 +7,9 @@ export const APP_SURFACES = Object.freeze([
   "settings",
 ]);
 
-const APP_SURFACE_SET = new Set(APP_SURFACES);
+export const APP_ROUTE_SURFACES = Object.freeze([...APP_SURFACES, "find"]);
+
+const APP_SURFACE_SET = new Set(APP_ROUTE_SURFACES);
 
 export const CORE_MASS_ROUTES = Object.freeze([
   "live",
