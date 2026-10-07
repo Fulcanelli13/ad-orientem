@@ -30,6 +30,77 @@
           "sourceId": "SRC_DDF_SSPX_2026_07_02"
         }
       ]
+    },
+    {
+      "communityId": "FSSP",
+      "communionProfile": {
+        "recognises_current_pontiff": "YES",
+        "pope_named_in_canon": "UNKNOWN",
+        "ordinary_named_in_canon": "UNKNOWN",
+        "position_family": "ROMAN_PONTIFF_RECOGNISED",
+        "certainty": "OFFICIAL_CURRENT_SELF_DESCRIPTION",
+        "effective_from": "2025-05-08",
+        "effective_until": null,
+        "evidence_source_ids": [
+          "SRC_FSSP_CONSTITUTIONS",
+          "SRC_FSSP_LEO_XIV_2026"
+        ]
+      },
+      "statusAssertions": [
+        {
+          "assertionId": "FSSP_PONTIFICAL_RIGHT",
+          "authority": "Priestly Fraternity of Saint Peter / Holy See foundation documents",
+          "authorityType": "COMMUNITY_PRIMARY_WITH_HOLY_SEE_DOCUMENTS",
+          "statusCode": "SOCIETY_APOSTOLIC_LIFE_PONTIFICAL_RIGHT",
+          "summary": "The FSSP identifies itself as a clerical Society of Apostolic Life of Pontifical Right.",
+          "effectiveDate": "1988-10-18",
+          "endDate": null,
+          "sourceId": "SRC_FSSP_CONSTITUTIONS"
+        }
+      ]
+    },
+    {
+      "communityId": "ICKSP",
+      "communionProfile": {
+        "recognises_current_pontiff": "YES",
+        "pope_named_in_canon": "UNKNOWN",
+        "ordinary_named_in_canon": "UNKNOWN",
+        "position_family": "ROMAN_PONTIFF_RECOGNISED",
+        "certainty": "OFFICIAL_CURRENT_SELF_DESCRIPTION",
+        "effective_from": "2025-05-08",
+        "effective_until": null,
+        "evidence_source_ids": [
+          "SRC_ICKSP_CALENDAR_2026"
+        ]
+      },
+      "statusAssertions": [
+        {
+          "assertionId": "ICKSP_PONTIFICAL_RIGHT",
+          "authority": "Institute of Christ the King Sovereign Priest",
+          "authorityType": "COMMUNITY_PRIMARY_REPORTING_HOLY_SEE_DECREE",
+          "statusCode": "SOCIETY_APOSTOLIC_LIFE_PONTIFICAL_RIGHT",
+          "summary": "The Institute records its elevation to a Society of Apostolic Life of Pontifical Right by the decree Saeculorum Rex.",
+          "effectiveDate": "2008-10-07",
+          "endDate": null,
+          "sourceId": "SRC_ICKSP_PONTIFICAL_RIGHT"
+        }
+      ]
+    },
+    {
+      "communityId": "IBP",
+      "communionProfile": {
+        "recognises_current_pontiff": "YES",
+        "pope_named_in_canon": "UNKNOWN",
+        "ordinary_named_in_canon": "UNKNOWN",
+        "position_family": "ROMAN_PONTIFF_RECOGNISED",
+        "certainty": "OFFICIAL_CURRENT_SELF_DESCRIPTION",
+        "effective_from": "2025-05-08",
+        "effective_until": null,
+        "evidence_source_ids": [
+          "SRC_IBP_LEO_XIV_2025"
+        ]
+      },
+      "statusAssertions": []
     }
   ]
 }
