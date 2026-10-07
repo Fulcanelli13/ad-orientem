@@ -16,6 +16,7 @@ function readJson(relative) {
 
 const contract = readJson("../data/geography/geography-contract.v1.json");
 const seed = readJson("../data/geography/seed-registry.v1.json");
+const candidates = readJson("../data/geography/directory-place-candidates.v1.json");
 
 assert.equal(contract.schema, EXPLORE_GEOGRAPHY_SCHEMA);
 assert.equal(contract.version, "1.0.0");
@@ -27,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU"],
+  ["FR", "IE", "MU", "DE", "AT", "CH"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -55,6 +56,13 @@ assert.deepEqual(
     "place:IE:knock-shrine",
     "place:IE:lough-derg-station-island",
     "place:MU:pere-laval-sainte-croix",
+    "place:DE:altoetting-gnadenkapelle",
+    "place:DE:kevelaer-gnadenkapelle",
+    "place:DE:kevelaer-kerzenkapelle",
+    "place:AT:mariazell-basilica",
+    "place:AT:maria-taferl-basilica",
+    "place:CH:einsiedeln-monastery",
+    "place:CH:kloster-mariastein",
   ].sort(),
 );
 
@@ -112,10 +120,18 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 5,
-  places: 9,
+  geoAreas: 8,
+  places: 16,
   directoryPlaceLinks: 1,
 });
+
+const kevelaerCandidate=candidates.candidates.find(item=>item.candidate_id==="candidate:directory-place:DE:kevelaer-kerzenkapelle-1962");
+assert.ok(kevelaerCandidate,"Kevelaer 1962-Mass identity-resolution candidate missing");
+assert.equal(kevelaerCandidate.status,"IDENTITY_RESOLUTION_REQUIRED");
+assert.equal(kevelaerCandidate.place_id,"place:DE:kevelaer-kerzenkapelle");
+assert.deepEqual(kevelaerCandidate.generated_provider_scan.exact_or_text_matches,[]);
+assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:DE:kevelaer-kerzenkapelle"),false,"unresolved Kevelaer candidate leaked into canonical Directory→Place links");
+assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:DE:kevelaer-gnadenkapelle"),false,"1962 Kerzenkapelle evidence was incorrectly attached to the Gnadenkapelle");
 
 const badParent = structuredClone(registry);
 badParent.geoAreas.push({

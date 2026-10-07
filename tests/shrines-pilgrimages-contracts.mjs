@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:8,
-  pilgrimages:11,
+  shrines:14,
+  pilgrimages:19,
   routes:6,
-  temporalLinks:8,
-  sources:22,
+  temporalLinks:13,
+  sources:35,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -62,6 +62,12 @@ const requiredPlaces=new Set([
   "place:IE:knock-shrine",
   "place:IE:lough-derg-station-island",
   "place:MU:pere-laval-sainte-croix",
+  "place:DE:altoetting-gnadenkapelle",
+  "place:DE:kevelaer-gnadenkapelle",
+  "place:AT:mariazell-basilica",
+  "place:AT:maria-taferl-basilica",
+  "place:CH:einsiedeln-monastery",
+  "place:CH:kloster-mariastein",
 ]);
 for(const shrine of corpus.shrines){
   assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
@@ -70,6 +76,15 @@ for(const shrine of corpus.shrines){
 assert.equal(calendarDateForSemanticKey("feast.saint_anne",2026),"2026-07-26");
 assert.equal(calendarDateForSemanticKey("observance.knock_apparition_anniversary",2026),"2026-08-21");
 assert.equal(calendarDateForSemanticKey("feast.blessed_jacques_desire_laval",2026),"2026-09-09");
+assert.equal(calendarDateForSemanticKey("feast.assumption_of_mary",2026),"2026-08-15");
+assert.equal(calendarDateForSemanticKey("observance.einsiedeln_engelweihe",2026),"2026-09-14");
+
+const kevelaerSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:kevelaer:pilgrimage-season");
+assert.equal(kevelaerSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
+const mariazellSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:mariazell:pilgrimage-season");
+assert.equal(mariazellSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
+const mariasteinMonthly=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:mariastein:monthly-pilgrimage");
+assert.equal(mariasteinMonthly.binding_state,"NO_FIXED_CALENDAR_BINDING");
 
 const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
 assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");

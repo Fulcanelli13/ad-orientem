@@ -84,6 +84,62 @@
       ],
       "mappable": false,
       "codes": {}
+    },
+    {
+      "geo_area_id": "geo:country:DE",
+      "name": {
+        "official": "Germany",
+        "aliases": [
+          "Deutschland"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "DE"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:AT",
+      "name": {
+        "official": "Austria",
+        "aliases": [
+          "Österreich"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "AT"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CH",
+      "name": {
+        "official": "Switzerland",
+        "aliases": [
+          "Schweiz",
+          "Suisse",
+          "Svizzera"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CH"
+      }
     }
   ],
   "places": [
@@ -360,6 +416,229 @@
       },
       "source_ids": [
         "SHR-PERE-LAVAL-CENTRE"
+      ]
+    },
+    {
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "name": {
+        "official": "Gnadenkapelle Altötting",
+        "aliases": [
+          "Chapel of Grace, Altötting",
+          "Gnadenkapelle"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Kapellplatz",
+        "line2": null,
+        "postal_code": "84503",
+        "city": "Altötting",
+        "region": "Bavaria",
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Gnadenkapelle, Kapellplatz, 84503 Altötting, Germany"
+      },
+      "source_ids": [
+        "SHR-ALTOETTING-PILGRIMAGE-SITE"
+      ]
+    },
+    {
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "name": {
+        "official": "Gnadenkapelle Kevelaer",
+        "aliases": [
+          "Gnadenkapelle St. Marien Kevelaer",
+          "Chapel of Grace, Kevelaer"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Kapellenplatz",
+        "line2": null,
+        "postal_code": "47623",
+        "city": "Kevelaer",
+        "region": "North Rhine-Westphalia",
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Gnadenkapelle, Kapellenplatz, 47623 Kevelaer, Germany"
+      },
+      "source_ids": [
+        "SHR-KEVELAER-GNADENKAPELLE"
+      ]
+    },
+    {
+      "place_id": "place:DE:kevelaer-kerzenkapelle",
+      "name": {
+        "official": "Kerzenkapelle Kevelaer",
+        "aliases": [
+          "Candle Chapel, Kevelaer"
+        ]
+      },
+      "place_type": "chapel",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Kapellenplatz",
+        "line2": null,
+        "postal_code": "47623",
+        "city": "Kevelaer",
+        "region": "North Rhine-Westphalia",
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Kerzenkapelle, Kapellenplatz, 47623 Kevelaer, Germany"
+      },
+      "source_ids": [
+        "SHR-KEVELAER-1962-SCHEDULE"
+      ]
+    },
+    {
+      "place_id": "place:AT:mariazell-basilica",
+      "name": {
+        "official": "Basilika Mariazell",
+        "aliases": [
+          "Basilica of the Birth of the Virgin Mary, Mariazell",
+          "Mariazell Basilica"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:AT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Benedictusplatz 1",
+        "line2": null,
+        "postal_code": "8630",
+        "city": "Mariazell",
+        "region": "Styria",
+        "country_code": "AT",
+        "country": "Austria",
+        "formatted": "Benedictusplatz 1, 8630 Mariazell, Austria"
+      },
+      "source_ids": [
+        "SHR-MARIAZELL-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:AT:maria-taferl-basilica",
+      "name": {
+        "official": "Wallfahrtsbasilika Maria Taferl",
+        "aliases": [
+          "Basilika Maria Taferl",
+          "Maria Taferl Pilgrimage Basilica"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:AT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Maria Taferl 1",
+        "line2": null,
+        "postal_code": "3672",
+        "city": "Maria Taferl",
+        "region": "Lower Austria",
+        "country_code": "AT",
+        "country": "Austria",
+        "formatted": "3672 Maria Taferl 1, Austria"
+      },
+      "source_ids": [
+        "SHR-MARIA-TAFERL-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:CH:einsiedeln-monastery",
+      "name": {
+        "official": "Kloster Einsiedeln",
+        "aliases": [
+          "Einsiedeln Abbey",
+          "Gnadenkapelle Einsiedeln"
+        ]
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:CH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Kloster Einsiedeln",
+        "line2": null,
+        "postal_code": "8840",
+        "city": "Einsiedeln",
+        "region": "Schwyz",
+        "country_code": "CH",
+        "country": "Switzerland",
+        "formatted": "Kloster Einsiedeln, 8840 Einsiedeln, Switzerland"
+      },
+      "source_ids": [
+        "SHR-EINSIEDELN-PILGRIMAGE"
+      ]
+    },
+    {
+      "place_id": "place:CH:kloster-mariastein",
+      "name": {
+        "official": "Kloster Mariastein",
+        "aliases": [
+          "Mariastein Monastery",
+          "Gnadenkapelle Mariastein"
+        ]
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:CH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Klosterplatz 2",
+        "line2": null,
+        "postal_code": "4115",
+        "city": "Mariastein",
+        "region": "Solothurn",
+        "country_code": "CH",
+        "country": "Switzerland",
+        "formatted": "Klosterplatz 2, 4115 Mariastein, Switzerland"
+      },
+      "source_ids": [
+        "SHR-MARIASTEIN-CONTACT"
       ]
     }
   ],
