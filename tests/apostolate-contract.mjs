@@ -260,6 +260,7 @@ assert.equal(owner.status().mounted,false);
 assert.equal(owner.status().ribbonExposed,false);
 assert.equal(owner.status().publishedCount,23);
 assert.equal(owner.status().researchOnlyCount,13);
+assert.deepEqual(owner.status().readyFamilies,["AQ","HS","FH"]);
 assert.equal(owner.engines.answer.resolve("AQ01").ok,true);
 assert.equal(owner.engines.answer.resolve("AQ08").ok,true);
 assert.equal(owner.engines.help.resolve("HS01").ok,true);
@@ -280,6 +281,7 @@ const installedWin={document:{documentElement:{dataset:{}},querySelector:()=>nul
 const installed=installApostolateOwner(installedWin);
 assert.equal(installed.status().publishedCount,23,"production hidden owner did not load AQ + HS + FH corpora");
 assert.equal(installed.status().researchOnlyCount,13);
+assert.deepEqual(installed.status().readyFamilies,["AQ","HS","FH"]);
 assert.equal(installed.status().visible,false);
 assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"hidden");
 
