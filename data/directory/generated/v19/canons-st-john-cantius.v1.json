@@ -1,7 +1,7 @@
 {
   "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
   "version": "1.0.0",
-  "generated_at": "2026-10-07T18:45:00Z",
+  "generated_at": "2026-10-07T19:34:00Z",
   "provider": "CANONS_ST_JOHN_CANTIUS",
   "defaults": {
     "c": "CANONS_ST_JOHN_CANTIUS",
@@ -33,6 +33,28 @@
       "sr": "SEASONAL_FIRST_SATURDAY_MASS_CONFIRMED_2026",
       "su": "https://www.canons-regular.org/newsdesk",
       "st": "COMMUNITY_OFFICIAL"
+    },
+    {
+      "u": "SJC-001",
+      "cc": "US",
+      "l": "Chicago, IL",
+      "n": "St. John Cantius Church",
+      "vt": "church",
+      "a": "825 N. Carpenter Street, Chicago, IL 60642",
+      "sr": "SUNDAY_07:30_LOW_12:30_HIGH_1962_EXCEPT_FIRST_SUNDAY; MON_TUE_THU_FRI_06:30; WED_06:30_19:30; SAT_08:30",
+      "su": "https://www.cantius.org/full-liturgy-schedule",
+      "st": "PARISH_OFFICIAL"
+    },
+    {
+      "u": "SJC-002",
+      "cc": "US",
+      "l": "Volo, IL",
+      "n": "St. Peter Catholic Church",
+      "vt": "church",
+      "a": "27551 Volo Village Road, Volo, IL 60073",
+      "sr": "SUNDAY_07:00_11:30_1962; MON_TUE_THU_FRI_06:15; WED_06:15_19:00; FIRST_FRIDAY_06:15_19:00; SAT_08:00",
+      "su": "https://www.stpetervolo.org/mass-schedule",
+      "st": "PARISH_OFFICIAL"
     }
   ]
 }
