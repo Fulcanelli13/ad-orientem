@@ -35,7 +35,7 @@ for (const entry of negative.entries) {
 }
 
 assert.equal(atlas.customs.length, 13);
-assert.equal(atlas.attestations.length, 18);
+assert.equal(atlas.attestations.length, 21);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -49,13 +49,13 @@ const result = assertCustomsAtlasRegistry({
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
   customs: 13,
-  attestations: 18,
-  sources: 22,
+  attestations: 21,
+  sources: 25,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
   [...result.mapCandidates].sort(),
-  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY"].sort(),
+  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY", "att:DEV-009:ALTOETTING", "att:DEV-010:MARIAZELL", "att:DEV-007:EINSIEDELN-ENGELWEIHE"].sort(),
 );
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
@@ -70,6 +70,13 @@ assert.equal(lourdes.place_id, "place:FR:sanctuaire-notre-dame-de-lourdes");
 const sainteAnne = atlas.attestations.find(item => item.attestation_id === "att:DEV-007:SAINTE-ANNE-D-AURAY");
 assert.equal(sainteAnne.map_policy,"PLACE");
 assert.equal(sainteAnne.place_id,"place:FR:sainte-anne-d-auray");
+
+const altoetting=atlas.attestations.find(item=>item.attestation_id==="att:DEV-009:ALTOETTING");
+assert.equal(altoetting.place_id,"place:DE:altoetting-gnadenkapelle");
+const mariazell=atlas.attestations.find(item=>item.attestation_id==="att:DEV-010:MARIAZELL");
+assert.equal(mariazell.place_id,"place:AT:mariazell-basilica");
+const einsiedeln=atlas.attestations.find(item=>item.attestation_id==="att:DEV-007:EINSIEDELN-ENGELWEIHE");
+assert.equal(einsiedeln.place_id,"place:CH:einsiedeln-monastery");
 
 const universalPilgrimage = atlas.attestations.find(item => item.attestation_id === "att:DEV-006:WORLD");
 assert.equal(universalPilgrimage.map_policy, "NOT_MAPPED");
