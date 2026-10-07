@@ -186,6 +186,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();event.stopPropagation?.();
       const lens=placeItem.dataset.explorePlaceLens;
       if(EXPLORE_LENSES.includes(lens))state.lens=lens;
+      state.query="";
       state.selectedPlaceId=null;
       state.selectedId=placeItem.dataset.explorePlaceItem||null;
       void paint();return;
