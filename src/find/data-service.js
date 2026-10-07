@@ -1,6 +1,7 @@
 import { auditVenue } from "./contracts.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
+export const RESEARCH_MASS_REVIEW_DAYS=120;
 const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"diocesan",file:"diocesan.v1.json"}),
   Object.freeze({key:"aasjmv",file:"aasjmv.v1.json"}),
@@ -97,7 +98,7 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
     const scheduleRaw=text(row.sr);
     const serviceType=text(row.svc)||"MASS";
     const verifiedOn=isoDay(row.vv)||isoDay(generatedAt);
-    const reviewDue=serviceType==="MASS"&&verifiedOn?addDays(verifiedOn,120):null;
+    const reviewDue=serviceType==="MASS"&&verifiedOn?addDays(verifiedOn,RESEARCH_MASS_REVIEW_DAYS):null;
     const sunday=/\bsunday\b|\bdimanche\b|\bdomingo\b|\bdomenica\b|\bsonntag\b|\bsun\.?\b/i.test(scheduleRaw);
     out.venues.push({
       venue_id:venueId,
