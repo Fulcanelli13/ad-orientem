@@ -88,8 +88,21 @@ try{
   assert.notEqual(afterNext,initialCard,"Next touch did not change cards");
   const backButton=page.locator('[data-reader-nav="previous"]');
   box=await backButton.boundingBox();
+  const backHit=await page.evaluate(({x,y})=>{
+    const target=document.elementFromPoint(x,y);
+    return {
+      tag:target?.tagName??null,
+      cls:target?.className??null,
+      nav:target?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,
+      cinematicHidden:document.querySelector('[data-role="cinematic"]')?.hidden??null,
+      current:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
+    };
+  },{x:box.x+box.width/2,y:box.y+box.height/2});
   await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-  await page.waitForFunction(expected=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId===expected,initialCard);
+  await page.waitForTimeout(350);
+  const afterBack=await cardId();
+  assert.equal(afterBack,initialCard,
+    "Back touch did not restore initial card: "+JSON.stringify({initialCard,afterNext,afterBack,backHit}));
 
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
