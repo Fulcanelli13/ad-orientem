@@ -56,6 +56,42 @@ assert.match(ickspUs.address,/New York 11361/);
 assert.deepEqual(ickspUs.phones,["718-229-1663"]);
 assert.deepEqual(phoneCandidates("09/02/2026 718-229-1663"),["718-229-1663"],"date string was classified as a phone");
 
+const ickspMerrillvilleHtml=`
+<h6>St. Joseph Oratory</h6>
+<div>Holy Mass</div><div>Sunday 8:00 AM High Mass</div>
+<div>Address:</div>
+<div>| St. Joseph Oratory</div>
+<div>(at Our Lady of Częstochowa Shrine)</div>
+<div>5755 Pennsylvania Street</div>
+<div>Merrillville, Indiana 46410</div>
+<div>Mailing Address:</div>
+<div>Institute of Christ the King</div>
+<div>6415 South Woodlawn Avenue</div>
+<div>Chicago, IL 60637</div>
+<div>Phone:</div><div>| 219-555-0000</div>`;
+const ickspMerrillville=parseIckspUsDetail(ickspMerrillvilleHtml,{label:"Merrillville - St. Joseph Oratory",url:"https://www.institute-christ-king.org/merrillville-home",countryCode:"US"});
+assert.match(ickspMerrillville.address,/5755 Pennsylvania Street/);
+assert.match(ickspMerrillville.address,/Merrillville, Indiana 46410/);
+assert.doesNotMatch(ickspMerrillville.address,/6415 South Woodlawn/);
+
+const ickspSanJoseHtml=`
+<h6>Immaculate Heart of Mary Oratory</h6>
+<div>Sunday Masses</div><div>8:00 AM Low Mass</div>
+<div>Address:</div>
+<div>| Temporary Chapel Address</div>
+<div>Immaculate Heart of Mary Oratory</div>
+<div>1101 S. Winchester Boulevard</div>
+<div>San José, CA 95128</div>
+<div>Mailing Address:</div>
+<div>Clergy Residence</div>
+<div>4467 Illsley Court</div>
+<div>San José, CA 95136</div>
+<div>Phone:</div><div>| 408-781-9497</div>`;
+const ickspSanJose=parseIckspUsDetail(ickspSanJoseHtml,{label:"San Jose - Immaculate Heart of Mary Oratory",url:"https://institute-christ-king.org/sanjose-home",countryCode:"US"});
+assert.match(ickspSanJose.address,/1101 S\. Winchester Boulevard/);
+assert.match(ickspSanJose.address,/San José, CA 95128/);
+assert.doesNotMatch(ickspSanJose.address,/4467 Illsley/);
+
 const ickspIntl=`
 <h2>Rome, Italy</h2>
 <h4>Basilica dei Santi Celso e Giuliano</h4>
@@ -73,6 +109,7 @@ assert.equal(icksp.length,2);
 assert.equal(icksp[0].countryCode,"IT");
 assert.match(icksp[0].title,/Celso/);
 assert.match(icksp[0].massRaw,/Holy Mass/);
+assert.match(icksp[0].address,/Rome/,"international ICKSP address lost section locality");
 const ickspDataset=buildIckspDataset(icksp,{retrievedAt:"2026-10-07T09:00:00Z"});
 assert.equal(ickspDataset.ministries.every(x=>x.community_id==="ICKSP"),true);
 
