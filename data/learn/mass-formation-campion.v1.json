@@ -1,0 +1,445 @@
+{
+  "schema": "ao-mass-formation-campion-v1",
+  "version": "1.0.0",
+  "route": "learn.mass",
+  "status": "SOURCE_BACKED_FORMATION",
+  "title": {
+    "en": "Understand the Mass",
+    "fr": "Comprendre la Messe"
+  },
+  "intro": {
+    "en": "Eight source-backed stages on the structure, sacrifice, prayer and participation of the traditional Roman Mass.",
+    "fr": "Huit étapes sourcées sur la structure, le sacrifice, la prière et la participation à la Messe romaine traditionnelle."
+  },
+  "sources": [
+    {
+      "id": "SRC-MR62",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "role": "NORMATIVE_1962"
+    },
+    {
+      "id": "SRC-MEDIATOR-DEI",
+      "title": "Pius XII — Mediator Dei",
+      "authority_type": "PAPAL_ENCYCLICAL",
+      "canonical_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "role": "DOCTRINAL_PRIMARY"
+    },
+    {
+      "id": "SRC-OCONNELL-1962",
+      "title": "J. B. O'Connell — The Celebration of Mass (1962)",
+      "authority_type": "CONTEMPORARY_CEREMONIAL_MANUAL",
+      "canonical_url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
+      "role": "CEREMONIAL_REFERENCE"
+    },
+    {
+      "id": "SRC-CAMPION-1954",
+      "title": "Fr. Demetrius Manousos, O.F.M. Cap. — Know Your Mass / Saint Edmund Campion Children's Missal (1954)",
+      "authority_type": "IMPRIMATUR_CATECHETICAL_MISSAL",
+      "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+      "role": "DISCOVERY_AND_EXPLANATORY"
+    }
+  ],
+  "stages": [
+    {
+      "id": "MF01",
+      "order": 1,
+      "title": {
+        "en": "The shape of the Mass",
+        "fr": "La structure de la Messe"
+      },
+      "question": {
+        "en": "How does the Mass fit together?",
+        "fr": "Comment les parties de la Messe s’articulent-elles ?"
+      },
+      "summary": {
+        "en": "The traditional Roman Mass moves from preparation and instruction into the sacrificial action and Communion.",
+        "fr": "La Messe romaine traditionnelle conduit de la préparation et de l’instruction à l’action sacrificielle et à la Communion."
+      },
+      "claims": [
+        {
+          "id": "MF01-C01",
+          "text": {
+            "en": "The older Roman vocabulary commonly distinguishes the Mass of the Catechumens from the Mass of the Faithful; these names are useful historical and catechetical labels rather than two separate Masses.",
+            "fr": "Le vocabulaire romain ancien distingue communément la Messe des catéchumènes de la Messe des fidèles ; ces noms sont des repères historiques et catéchétiques utiles, non deux Messes séparées."
+          },
+          "sources": [
+            "SRC-CAMPION-1954",
+            "SRC-OCONNELL-1962"
+          ]
+        },
+        {
+          "id": "MF01-C02",
+          "text": {
+            "en": "The first movement contains preparation, prayer and instruction: the prayers at the foot of the altar, Introit, Kyrie, Gloria and Collect lead into the lessons, Gospel and Creed when prescribed.",
+            "fr": "Le premier mouvement contient préparation, prière et instruction : les prières au bas de l’autel, l’Introït, le Kyrie, le Gloria et la Collecte conduisent aux lectures, à l’Évangile et au Credo lorsqu’il est prescrit."
+          },
+          "sources": [
+            "SRC-MR62",
+            "SRC-CAMPION-1954"
+          ]
+        },
+        {
+          "id": "MF01-C03",
+          "text": {
+            "en": "The second movement centres on offering, Consecration and Communion; the Offertory, Canon and Communion therefore belong to one sacrificial movement rather than three unrelated devotions.",
+            "fr": "Le second mouvement est centré sur l’offrande, la Consécration et la Communion ; l’Offertoire, le Canon et la Communion appartiennent donc à un même mouvement sacrificiel et non à trois dévotions sans lien."
+          },
+          "sources": [
+            "SRC-MR62",
+            "SRC-MEDIATOR-DEI",
+            "SRC-CAMPION-1954"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MF02",
+      "order": 2,
+      "title": {
+        "en": "The body at prayer",
+        "fr": "Le corps en prière"
+      },
+      "question": {
+        "en": "Why so many bows, crosses and genuflections?",
+        "fr": "Pourquoi tant d’inclinations, de signes de croix et de génuflexions ?"
+      },
+      "summary": {
+        "en": "The ceremonies make the Church’s prayer visible, but the faithful do not simply copy every priestly rubric.",
+        "fr": "Les cérémonies rendent visible la prière de l’Église, mais les fidèles ne copient pas simplement chaque rubrique du prêtre."
+      },
+      "claims": [
+        {
+          "id": "MF02-C01",
+          "text": {
+            "en": "The 1962 Missal attaches many gestures to exact words: bows at holy names or phrases, signs of the Cross, genuflections and kisses of the altar are part of the celebrant’s prescribed ceremonial.",
+            "fr": "Le Missel de 1962 attache de nombreux gestes à des mots précis : inclinations aux saints noms ou à certaines phrases, signes de croix, génuflexions et baisers de l’autel font partie du cérémonial prescrit au célébrant."
+          },
+          "sources": [
+            "SRC-MR62",
+            "SRC-OCONNELL-1962"
+          ]
+        },
+        {
+          "id": "MF02-C02",
+          "text": {
+            "en": "Traditional participation also uses bodily gestures, but congregational custom and the celebrant’s rubrics are different authority layers.",
+            "fr": "La participation traditionnelle emploie aussi des gestes corporels, mais la coutume de l’assemblée et les rubriques du célébrant relèvent de niveaux d’autorité différents."
+          },
+          "sources": [
+            "SRC-MR62",
+            "SRC-OCONNELL-1962",
+            "SRC-CAMPION-1954"
+          ]
+        },
+        {
+          "id": "MF02-C03",
+          "text": {
+            "en": "The point of ceremonial is not choreography for its own sake: external worship should express and foster the interior worship of the heart.",
+            "fr": "Le cérémonial n’est pas une chorégraphie pour elle-même : le culte extérieur doit exprimer et nourrir le culte intérieur du cœur."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MF03",
+      "order": 3,
+      "title": {
+        "en": "The Offertory and your offering",
+        "fr": "L’Offertoire et votre offrande"
+      },
+      "question": {
+        "en": "What can the faithful really offer at Mass?",
+        "fr": "Que peuvent réellement offrir les fidèles à la Messe ?"
+      },
+      "summary": {
+        "en": "The priest performs the sacramental offering; the faithful truly participate by uniting their interior oblation to Christ and the priestly offering.",
+        "fr": "Le prêtre accomplit l’offrande sacramentelle ; les fidèles participent réellement en unissant leur offrande intérieure au Christ et à l’offrande sacerdotale."
+      },
+      "claims": [
+        {
+          "id": "MF03-C01",
+          "text": {
+            "en": "At Orate, fratres the Roman text itself distinguishes ‘my sacrifice and yours’, showing both a real participation of the faithful and a distinction of roles.",
+            "fr": "À l’Orate, fratres, le texte romain distingue lui-même « mon sacrifice et le vôtre », montrant à la fois une participation réelle des fidèles et une distinction des rôles."
+          },
+          "sources": [
+            "SRC-MR62"
+          ]
+        },
+        {
+          "id": "MF03-C02",
+          "text": {
+            "en": "Pius XII teaches that the sacramental immolation is performed by the priest alone in the person of Christ, while the faithful offer through the priest and, in a qualified sense, together with him by joining their prayers and interior dispositions.",
+            "fr": "Pie XII enseigne que l’immolation sacramentelle est accomplie par le prêtre seul dans la personne du Christ, tandis que les fidèles offrent par les mains du prêtre et, en un sens qualifié, avec lui en unissant leurs prières et dispositions intérieures."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI"
+          ]
+        },
+        {
+          "id": "MF03-C03",
+          "text": {
+            "en": "Campion’s useful practical insight is therefore sound when properly qualified: the visible Offertory can prompt the faithful to offer their work, sufferings, thanksgiving and petitions without pretending to perform the priest’s rite.",
+            "fr": "L’intuition pratique de Campion est donc juste lorsqu’elle est bien précisée : l’Offertoire visible peut inviter les fidèles à offrir leur travail, leurs souffrances, leur action de grâces et leurs intentions sans prétendre accomplir le rite du prêtre."
+          },
+          "sources": [
+            "SRC-CAMPION-1954",
+            "SRC-MEDIATOR-DEI"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MF04",
+      "order": 4,
+      "title": {
+        "en": "Inside the Roman Canon",
+        "fr": "Au cœur du Canon romain"
+      },
+      "question": {
+        "en": "What is happening during the quiet centre of Mass?",
+        "fr": "Que se passe-t-il pendant le centre silencieux de la Messe ?"
+      },
+      "summary": {
+        "en": "The Canon is a tightly ordered prayer of offering and intercession embracing the whole Church.",
+        "fr": "Le Canon est une prière ordonnée d’offrande et d’intercession qui embrasse toute l’Église."
+      },
+      "claims": [
+        {
+          "id": "MF04-C01",
+          "text": {
+            "en": "The Canon is prayed in a low voice in the 1962 rite; silence does not mean nothing is happening, but marks a dense sequence of offering, remembrance and intercession.",
+            "fr": "Le Canon est récité à voix basse dans le rite de 1962 ; le silence ne signifie pas qu’il ne se passe rien, mais accompagne une séquence dense d’offrande, de mémoire et d’intercession."
+          },
+          "sources": [
+            "SRC-MR62",
+            "SRC-CAMPION-1954"
+          ]
+        },
+        {
+          "id": "MF04-C02",
+          "text": {
+            "en": "The Canon prays for the Church, the Pope and local bishop, particular living persons, the saints, the departed, and finally the celebrant and faithful as sinners seeking mercy.",
+            "fr": "Le Canon prie pour l’Église, le Pape et l’évêque du lieu, des vivants en particulier, les saints, les défunts, puis enfin le célébrant et les fidèles comme pécheurs implorant la miséricorde."
+          },
+          "sources": [
+            "SRC-MR62"
+          ]
+        },
+        {
+          "id": "MF04-C03",
+          "text": {
+            "en": "The Mementos are natural moments for the faithful to remember the living and the dead rather than treating the silent Canon as dead time.",
+            "fr": "Les Mémentos sont des moments naturels pour que les fidèles se souviennent des vivants et des morts, au lieu de considérer le Canon silencieux comme un temps mort."
+          },
+          "sources": [
+            "SRC-MR62",
+            "SRC-CAMPION-1954"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MF05",
+      "order": 5,
+      "title": {
+        "en": "What changes at the Consecration",
+        "fr": "Ce qui change à la Consécration"
+      },
+      "question": {
+        "en": "What does transubstantiation mean?",
+        "fr": "Que signifie la transsubstantiation ?"
+      },
+      "summary": {
+        "en": "After the Consecration Christ is truly present under the appearances of bread and wine.",
+        "fr": "Après la Consécration, le Christ est réellement présent sous les apparences du pain et du vin."
+      },
+      "claims": [
+        {
+          "id": "MF05-C01",
+          "text": {
+            "en": "Pius XII explicitly teaches the transubstantiation of bread into Christ’s Body and wine into His Blood; the Eucharistic species remain the sensible signs under which the whole Christ is truly present.",
+            "fr": "Pie XII enseigne explicitement la transsubstantiation du pain au Corps du Christ et du vin à son Sang ; les espèces eucharistiques demeurent les signes sensibles sous lesquels le Christ tout entier est réellement présent."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI"
+          ]
+        },
+        {
+          "id": "MF05-C02",
+          "text": {
+            "en": "The separate consecration under the two species sacramentally represents Christ’s sacrificial death; it does not divide or kill the risen Christ again.",
+            "fr": "La consécration séparée sous les deux espèces représente sacramentellement la mort sacrificielle du Christ ; elle ne divise pas et ne tue pas de nouveau le Christ ressuscité."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI"
+          ]
+        },
+        {
+          "id": "MF05-C03",
+          "text": {
+            "en": "The elevations are therefore moments of adoration of Christ truly present, not merely visual pauses for following the ceremony.",
+            "fr": "Les élévations sont donc des moments d’adoration du Christ réellement présent, et non de simples pauses visuelles pour suivre la cérémonie."
+          },
+          "sources": [
+            "SRC-MR62",
+            "SRC-MEDIATOR-DEI"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MF06",
+      "order": 6,
+      "title": {
+        "en": "Is the Mass another Calvary?",
+        "fr": "La Messe est-elle un autre Calvaire ?"
+      },
+      "question": {
+        "en": "How can the Mass be a sacrifice if Christ died once?",
+        "fr": "Comment la Messe peut-elle être un sacrifice si le Christ est mort une seule fois ?"
+      },
+      "summary": {
+        "en": "The Victim is the same Christ; the manner of offering differs.",
+        "fr": "La Victime est le même Christ ; le mode d’offrande diffère."
+      },
+      "claims": [
+        {
+          "id": "MF06-C01",
+          "text": {
+            "en": "The Mass is not a second death of Christ. Pius XII teaches that the Victim is the same divine Redeemer, while the manner of offering is different: Calvary was bloody; the altar presents the sacrifice in an unbloody sacramental manner.",
+            "fr": "La Messe n’est pas une seconde mort du Christ. Pie XII enseigne que la Victime est le même divin Rédempteur, tandis que le mode d’offrande diffère : le Calvaire fut sanglant ; l’autel présente le sacrifice d’une manière sacramentelle non sanglante."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI"
+          ]
+        },
+        {
+          "id": "MF06-C02",
+          "text": {
+            "en": "The Roman Canon consciously places the Eucharistic offering within biblical sacrificial history by naming Abel, Abraham and Melchisedech.",
+            "fr": "Le Canon romain inscrit consciemment l’offrande eucharistique dans l’histoire biblique du sacrifice en nommant Abel, Abraham et Melchisédech."
+          },
+          "sources": [
+            "SRC-MR62"
+          ]
+        },
+        {
+          "id": "MF06-C03",
+          "text": {
+            "en": "Sacrifice and sacred banquet are therefore not rival explanations of the Mass: Communion is participation in the sacrificial Victim offered to the Father.",
+            "fr": "Sacrifice et banquet sacré ne sont donc pas deux explications rivales de la Messe : la Communion est participation à la Victime sacrificielle offerte au Père."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI",
+            "SRC-CAMPION-1954"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MF07",
+      "order": 7,
+      "title": {
+        "en": "Why the priest must receive",
+        "fr": "Pourquoi le prêtre doit communier"
+      },
+      "question": {
+        "en": "Does the Mass depend on everyone receiving Communion?",
+        "fr": "La Messe dépend-elle de la Communion de tous les assistants ?"
+      },
+      "summary": {
+        "en": "The celebrant’s Communion belongs to the integrity of the Mass; Communion of the faithful is earnestly encouraged but is not what makes the sacrifice a Mass.",
+        "fr": "La Communion du célébrant appartient à l’intégrité de la Messe ; la Communion des fidèles est vivement recommandée mais n’est pas ce qui constitue le sacrifice comme Messe."
+      },
+      "claims": [
+        {
+          "id": "MF07-C01",
+          "text": {
+            "en": "Pius XII states that Holy Communion pertains to the integrity of the Mass and is obligatory for the priest who celebrates.",
+            "fr": "Pie XII affirme que la Sainte Communion appartient à l’intégrité de la Messe et qu’elle est obligatoire pour le prêtre qui célèbre."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI"
+          ]
+        },
+        {
+          "id": "MF07-C02",
+          "text": {
+            "en": "The faithful’s sacramental Communion is strongly recommended, but a person may assist at Mass without receiving Communion.",
+            "fr": "La Communion sacramentelle des fidèles est vivement recommandée, mais une personne peut assister à la Messe sans communier."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI"
+          ]
+        },
+        {
+          "id": "MF07-C03",
+          "text": {
+            "en": "This distinction prevents a common misunderstanding: the liturgy does not become complete only when the congregation has communicated.",
+            "fr": "Cette distinction évite un malentendu fréquent : la liturgie ne devient pas complète seulement lorsque l’assemblée a communié."
+          },
+          "sources": [
+            "SRC-MEDIATOR-DEI",
+            "SRC-CAMPION-1954"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MF08",
+      "order": 8,
+      "title": {
+        "en": "Thanksgiving and being sent",
+        "fr": "Action de grâces et envoi"
+      },
+      "question": {
+        "en": "What should remain after the final Gospel?",
+        "fr": "Que doit-il rester après le dernier Évangile ?"
+      },
+      "summary": {
+        "en": "The liturgy ends, but thanksgiving and Christian duty continue.",
+        "fr": "La liturgie s’achève, mais l’action de grâces et le devoir chrétien continuent."
+      },
+      "claims": [
+        {
+          "id": "MF08-C01",
+          "text": {
+            "en": "The Postcommunion is the Church’s liturgical thanksgiving; personal thanksgiving after Communion can continue after the formal rites have ended.",
+            "fr": "La Postcommunion est l’action de grâces liturgique de l’Église ; l’action de grâces personnelle après la Communion peut se poursuivre après la fin des rites formels."
+          },
+          "sources": [
+            "SRC-MR62",
+            "SRC-CAMPION-1954"
+          ]
+        },
+        {
+          "id": "MF08-C02",
+          "text": {
+            "en": "Campion’s final catechetical application is useful when kept as application rather than etymology: having worshipped and received Christ, the Catholic returns to ordinary duties with a responsibility to live the faith.",
+            "fr": "L’application catéchétique finale de Campion est utile lorsqu’on la garde comme application et non comme étymologie : après avoir adoré et reçu le Christ, le catholique retourne à ses devoirs ordinaires avec la responsabilité de vivre la foi."
+          },
+          "sources": [
+            "SRC-CAMPION-1954"
+          ]
+        },
+        {
+          "id": "MF08-C03",
+          "text": {
+            "en": "Thanksgiving, charity, good example and fidelity to one’s duties are therefore fruits of Mass, not extra choreography added to the rite.",
+            "fr": "L’action de grâces, la charité, le bon exemple et la fidélité aux devoirs sont donc des fruits de la Messe, non une chorégraphie ajoutée au rite."
+          },
+          "sources": [
+            "SRC-CAMPION-1954",
+            "SRC-MEDIATOR-DEI"
+          ]
+        }
+      ]
+    }
+  ]
+}
