@@ -33,6 +33,16 @@ const presentation=readFileSync("src/learn/presentation.js","utf8");
 const assets=readFileSync("src/assets/asset-registry.js","utf8");
 
 assert.match(runtime,/priestCeremonialExposed:false/,"lay-only scope guard disappeared");
+assert.match(runtime,/38\.2-rite-formation-convergence/,"traditional rite formation version marker missing");
+assert.match(runtime,/WHAT YOU MAY SEE IN THE TRADITIONAL CEREMONY/,"Matrimony lost its lay-facing traditional ceremony map");
+assert.match(runtime,/one ring or two/,"Matrimony no longer warns that ring customs vary");
+assert.match(runtime,/approved local custom/,"Matrimony local-custom guard disappeared");
+assert.match(runtime,/special marriage prayers after the Pater noster/,"Matrimony no longer explains the certified Nuptial Mass insertions");
+assert.match(runtime,/A 1951 rule is therefore never copied into the 1962 engine/,"older-missal versus 1962 authority guard disappeared");
+assert.match(runtime,/AFTER DEATH · TRADITIONAL FUNERAL SEQUENCE/,"Serious Illness & Dying lost the traditional funeral sequence explanation");
+assert.match(runtime,/Absolution at the bier or catafalque is actually appointed/,"funeral formation no longer preserves explicit Absolution activation");
+assert.match(runtime,/In paradisum accompanies the departure/,"funeral formation lost the burial-procession handoff");
+assert.doesNotMatch(runtime,/Ego conjungo vos|With this ring I thee wed/,"lay formation leaked a country-specific or celebrant ritual script");
 assert.match(runtime,/AO_TRADITIONAL_LEARN_V381/);
 assert.match(runtime,/learn\.serve_mass.*learn\.serve_mass\.responses/s,"Low Mass alias disappeared");
 assert.match(runtime,/data-ao-tradlearn-close/,"traditional Learn child shell lost donor Close control");
@@ -52,4 +62,4 @@ assert.match(assets,/"learn\.serve_mass\.responses"\s*:\s*"ao-refined-study"/);
 assert.match(assets,/"learn\.scapular"\s*:\s*"ao-rich-our-lady-marian-devotions"/);
 assert.match(assets,/"learn\.seasonal_rites"\s*:\s*"ao-refined-calendar-upcoming"/);
 
-console.log("PASS modular v38.1 traditional Learn extraction");
+console.log("PASS modular v38.2 traditional Learn rite-formation convergence");
