@@ -1136,15 +1136,15 @@ try{
   assert.equal(learnParity.heroTitle,"Formation","Formation hero no longer preserves the locked A2 title");
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
-  assert.deepEqual(learnParity.sectionTitles,["Daily formation","Courses & study","Traditional Catholic life","Today in context"],"Learn section hierarchy diverged from v43.59.30 plus v38.4 Holy Orders formation");
-  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.glossary","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],"Formation visible launcher order diverged from the canonical layout");
+  assert.deepEqual(learnParity.sectionTitles,["Foundations","Spiritual & Moral Life","Liturgy & Tradition","Sacraments & Life Events","Latin","Reference"],"Formation learning-intent hierarchy diverged");
+  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.mass","learn.serve_mass.responses","learn.scapular","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],"Formation visible launcher order diverged from the learning-intent layout");
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module='today.saint']").count(),0,"Saint of the Day remained duplicated in Learn");
   assert.deepEqual(learnParity.featured,["learn.catechism.daily","learn.mass"],"Learn featured-card hierarchy diverged from the canonical Formation layout");
   assert.equal(learnParity.donorNav,0,"historical V37 navigation leaked into modular Learn");
   assert.equal(learnParity.sourcesUtility,0,"Sources incorrectly resurfaced as a Learn launcher");
   assert.equal(learnParity.calendarDashboard,0,"Calendar dashboard duplicated inside Learn");
   assert.ok(learnParity.overflow<=1,"Learn has horizontal overflow on 390px phone geometry");
-  assert.equal(learnParity.cards.length,16,"Formation launcher count should include Glossary, Spiritual Life, Latin, Catholic Sexual Ethics and the sacramental modules while Saint of the Day remains owned by Calendar");
+  assert.equal(learnParity.cards.length,15,"Formation should expose 15 learning launchers; Today’s Gospel remains owned outside Formation");
   for(const card of learnParity.cards){assert.ok(card.w>300,"Learn card collapsed below phone-readable width");assert.ok(card.h>=90,"Learn card collapsed below approved touch/readability height");}
   const spiritualIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.spiritual_life'] .aoLearnModIcon[data-ao-asset-id='ao-refined-spiritual-life']");
   assert.equal(await spiritualIcon.count(),1,"Spiritual Life is missing its canonical formation icon");
