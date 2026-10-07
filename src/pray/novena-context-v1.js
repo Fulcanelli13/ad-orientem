@@ -2,7 +2,7 @@
 // Prayer text/history/how-to remain owned by novena-corpus-v4.js.
 // Cross-domain links mirror data/customs/novena-context-links.v1.json.
 export const NOVENA_CONTEXT_V1={
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sourceRegistry": [
     {
       "id": "EI4-22",
