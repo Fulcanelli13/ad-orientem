@@ -310,6 +310,12 @@ try{
   assert.equal(calendarFx.rootScan,"legacy-v4312","Calendar modular root bypassed the approved v43.12 art loader");
   await shot("02-calendar-day");
 
+  await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").click();
+  await page.waitForFunction(()=>globalThis.AO_NAV_V25?.getState?.()?.panel==="saint",null,{timeout:5000});
+  assert.equal(await page.locator("#ao-v25-panel").count(),1,"Calendar Day saint/feast reference did not open the shared detail panel");
+  await page.evaluate(()=>globalThis.AO_NAV_V25?.closePanel?.());
+  await page.waitForFunction(()=>globalThis.AO_NAV_V25?.getState?.()?.panel!=="saint",null,{timeout:5000});
+
   await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='year']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2Ring",{state:"visible",timeout:3000});
   const calendarYear=await page.evaluate(()=>({
