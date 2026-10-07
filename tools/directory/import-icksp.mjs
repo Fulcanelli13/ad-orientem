@@ -96,7 +96,7 @@ export function parseIckspUsDetail(html,candidate){
   return {
     title,address,countryCode:"US",diocese:null,detailUrl:candidate.url,
     emails:emailAddresses(text),phones:phonesFromLines(lines),massRaw:rawSchedule,
-    detailText:text,officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0
+    detailText:text,officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0
   };
 }
 export function parseIckspInternationalHtml(html,{pageUrl=ICKSP_INTL_URL}={}){
@@ -117,7 +117,7 @@ export function parseIckspInternationalHtml(html,{pageUrl=ICKSP_INTL_URL}={}){
     sections.push({
       index:index++,title:h4,address:addressLines.join(", "),countryCode,diocese:null,detailUrl:pageUrl,
       emails:emailAddresses(stripTags(body)),phones:phoneCandidates(stripTags(body)),massRaw:schedule,detailText:stripTags(body),
-      officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous
+      officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0
     });
   }
   return sections;
