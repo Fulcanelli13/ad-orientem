@@ -504,7 +504,7 @@ try{
   if(await standard.count())await standard.click();
   await page.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-next]",{state:"visible",timeout:5000});
-  await page.waitForSelector("#aoPrayerBookRoot .rosary-decade-bar-v15[data-ao-exact-donor-progress='v3.4.14']",{state:"visible",timeout:5000});
+  await page.waitForSelector("#aoPrayerBookRoot .lab-decade-bar",{state:"visible",timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",{state:"visible",timeout:5000});
   const rosaryOpening=await page.evaluate(()=>{
     const roots=[...document.querySelectorAll("#aoPrayerBookRoot")],active=roots.find(root=>root.dataset.aoRosaryActiveRoot==="true")||roots.find(root=>root.classList.contains("open"));
@@ -521,8 +521,9 @@ try{
     return {
       donor:shell?.dataset?.aoRosaryExactDonor??null,
       layout:shell?.dataset?.aoRosaryLayout??null,
-      progressSegments:shell?.querySelectorAll(".rosary-decade-bar-v15[data-ao-exact-donor-progress] i").length??0,
-      currentSegments:shell?.querySelectorAll(".rosary-decade-bar-v15[data-ao-exact-donor-progress] i.current").length??0,
+      progressSegments:shell?.querySelectorAll(".lab-decade-bar i").length??0,
+      currentSegments:shell?.querySelectorAll(".lab-decade-bar i.current").length??0,
+      injectedProgress:shell?.querySelectorAll(".rosary-decade-bar-v15[data-ao-exact-donor-progress]").length??0,
       recitationButtons:shell?.querySelectorAll(".r29-head-recitation[data-ao-exact-donor-recitation] button").length??0,
       activeRecitation:shell?.querySelectorAll(".r29-head-recitation[data-ao-exact-donor-recitation] button.active").length??0,
       depthBars:shell?.querySelectorAll(".aoP435930RosaryBar").length??0,
@@ -546,6 +547,7 @@ try{
   assert.equal(rosaryOpening.layout,"single-column","Rosary prayer shell is not explicitly single-column");
   assert.equal(rosaryOpening.progressSegments,5,"Rosary lost the donor five-segment mystery progress bar");
   assert.equal(rosaryOpening.currentSegments,0,"Rosary opening incorrectly marks a mystery current");
+  assert.equal(rosaryOpening.injectedProgress,0,"Rosary exposes a second injected five-segment mystery-progress bar");
   assert.equal(rosaryOpening.recitationButtons,2,"Rosary lost its single Individual/Group head control");
   assert.equal(rosaryOpening.activeRecitation,1,"Rosary recitation control has no single active owner");
   assert.equal(rosaryOpening.depthBars,1,"Rosary exposes more than one Simple/Guided surface");
@@ -617,10 +619,16 @@ try{
     });
   }
   assert.equal(mysteryReached,true,"Visible Rosary Next did not reach Mystery I");
-  await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot .rosary-decade-bar-v15 i.current")?.dataset?.mystery==="1",null,{timeout:5000});
+  await page.waitForFunction(()=>{
+    const bar=document.querySelector("#aoPrayerBookRoot .lab-decade-bar"),cur=bar?.querySelector("i.current");
+    return cur&&Array.from(bar.children).indexOf(cur)===0;
+  },null,{timeout:5000});
   await page.waitForSelector("#ao-cinema-transition.aoCinemaTransitionOn",{state:"visible",timeout:2000});
   const rosaryMysteryFx=await page.evaluate(()=>({
-    currentMystery:document.querySelector("#aoPrayerBookRoot .rosary-decade-bar-v15 i.current")?.dataset?.mystery??null,
+    currentMystery:(()=>{
+      const bar=document.querySelector("#aoPrayerBookRoot .lab-decade-bar"),cur=bar?.querySelector("i.current");
+      return cur?String(Array.from(bar.children).indexOf(cur)+1):null;
+    })(),
     artBackdrop:document.querySelector("#aoPrayerBookRoot .aoRosaryRitualCenter")?.classList?.contains("r24-has-mystery-art")??false,
     artValue:document.querySelector("#aoPrayerBookRoot .aoRosaryRitualCenter")?.style?.getPropertyValue("--r24-mystery-art")??"",
     contemplation:document.querySelectorAll("#aoPrayerBookRoot .lab-contemplation,#aoPrayerBookRoot .r23-contemplation").length,
