@@ -57,14 +57,17 @@
     "live_runtime_records": 27,
     "live_current_mass_records": 26,
     "federated_supplement_records": 98,
-    "federated_current_mass_records": 84,
-    "publishable_current_mass_total": 110,
-    "nonpublishable_total": 15,
+    "federated_current_mass_candidate_records": 85,
+    "federated_physical_projection_records": 110,
+    "federated_physical_current_mass_venues": 95,
+    "publishable_current_mass_candidates_total": 111,
+    "publishable_physical_mass_venues_total": 121,
+    "nonpublishable_candidate_total": 14,
     "provider_presence_only_total": 5,
     "public_mass_suspended_total": 1,
     "restricted_or_special_access_total": 2,
     "seasonal_or_occasional_total": 5,
-    "mass_eligibility_pending_total": 2
+    "mass_eligibility_pending_total": 1
   },
   "provider_presence_only_candidate_ids": [
     "ICKSP-STG-020",
@@ -80,7 +83,7 @@
     "ICKSP-STG-106",
     "ICKSP-STG-107"
   ],
-  "publication_rule": "Find a Mass requires a current recurring public Mass established by a first-party source. The eligibility pass distinguishes suspended, restricted/special-access, seasonal/occasional, provider/non-Mass, and genuinely unresolved schedule cases instead of collapsing them into one pending bucket.",
+  "publication_rule": "Find a Mass operates on physical Mass venues, not merely apostolate candidates. A candidate may fan out to several physical venues when current first-party evidence gives distinct locations and schedules; restricted, suspended, seasonal/occasional and unpublished-time records remain outside Find.",
   "bulk_eligibility_pass": {
     "verified_on": "2026-10-07",
     "newly_promoted_federated_candidates": 49,
@@ -150,7 +153,69 @@
     "ICKSP-STG-099"
   ],
   "no_published_current_times_candidate_ids": [
-    "ICKSP-STG-028",
+    "ICKSP-STG-028"
+  ],
+  "physical_venue_normalization": {
+    "verified_on": "2026-10-07",
+    "scope": [
+      "FR_PROVINCE",
+      "IRELAND_NORTHERN_IRELAND"
+    ],
+    "candidate_records_preserved": 98,
+    "multi_venue_candidate_ids": [
+      "ICKSP-STG-001",
+      "ICKSP-STG-007",
+      "ICKSP-STG-012",
+      "ICKSP-STG-013",
+      "ICKSP-STG-018",
+      "ICKSP-STG-023",
+      "ICKSP-STG-025",
+      "ICKSP-STG-027",
+      "ICKSP-STG-029"
+    ],
+    "additional_physical_records": 12,
+    "additional_publishable_mass_venues": 10,
+    "rule": "The research candidate count remains stable. Candidate rows may project to multiple physical venues when a current first-party source lists distinct churches, chapels or houses with separate Mass schedules. Non-public or schedule-by-contact subvenues remain SOURCE_ASSERTION and do not enter Find."
+  },
+  "ireland_northern_ireland_audit": {
+    "verified_on": "2026-10-07",
+    "current_official_locations": [
+      {
+        "candidate_id": "ICKSP-STG-122",
+        "place": "Limerick",
+        "venue": "Sacred Heart Church"
+      },
+      {
+        "candidate_id": "ICKSP-STG-123",
+        "place": "Belfast",
+        "venue": "Church of the Immaculate Heart of Mary"
+      },
+      {
+        "candidate_id": "ICKSP-STG-124",
+        "place": "Ardee",
+        "venue": "House of Our Lady of the Most Holy Rosary"
+      },
+      {
+        "candidate_id": "ICKSP-STG-125",
+        "place": "Galway",
+        "venue": "St. Mary's College Chapel"
+      }
+    ],
+    "ardee_status": "PROMOTED_CURRENT_MASS",
+    "galway_current_sunday_time": "12:00",
+    "negative_checks": [
+      {
+        "place": "Wexford",
+        "status": "NO_CURRENT_FIRST_PARTY_ICKSP_APOSTOLATE_LISTING_FOUND"
+      },
+      {
+        "place": "Waterford",
+        "status": "NO_CURRENT_FIRST_PARTY_ICKSP_APOSTOLATE_LISTING_FOUND"
+      }
+    ],
+    "note": "No Wexford or Waterford row is promoted without current first-party ICKSP evidence; this does not assert that no occasional historic or visiting Mass has ever occurred there."
+  },
+  "resolved_since_bulk_eligibility_pass": [
     "ICKSP-STG-124"
   ]
 }
