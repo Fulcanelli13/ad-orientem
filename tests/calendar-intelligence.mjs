@@ -31,6 +31,11 @@ assert.equal(calendarDateForSemanticKey("feast.assumption_of_mary",2026),"2026-0
 assert.equal(calendarDateForSemanticKey("observance.einsiedeln_engelweihe",2026),"2026-09-14");
 assert.equal(calendarDateForSemanticKey("observance.our_lady_of_champion",2026),"2026-10-09");
 assert.equal(calendarDateForSemanticKey("feast.our_lady_of_guadalupe",2026),"2026-12-12");
+assert.equal(calendarDateForSemanticKey("observance.loreto_our_lady",2026),"2026-12-10");
+assert.equal(calendarDateForSemanticKey("observance.pompeii_supplica_may_8",2026),"2026-05-08");
+assert.equal(calendarDateForSemanticKey("observance.jasna_gora_czestochowa",2026),"2026-08-26");
+assert.equal(calendarDateForSemanticKey("observance.walsingham_our_lady",2026),"2026-09-24");
+assert.equal(calendarDateForSemanticKey("observance.holywell_saint_winefride",2026),"2026-11-03");
 assert.equal(calendarDateForSemanticKey("unknown.key",2026),null);
 assert.ok(calendarSemanticEventsForDate("2026-02-11").some(x=>x.id==="feast.our_lady_of_lourdes"));
 assert.ok(calendarSemanticEventsForDate("2026-05-25").some(x=>x.id==="liturgical.pentecost_monday"));
@@ -51,6 +56,17 @@ const championSemantic=calendarSemanticEventsForDate("2026-10-09").find(x=>x.id=
 assert.ok(championSemantic);
 assert.ok(championSemantic.tags.includes("LOCAL_SHRINE_OBSERVANCE"));
 assert.ok(calendarSemanticEventsForDate("2026-12-12").some(x=>x.id==="feast.our_lady_of_guadalupe"));
+for(const [date,key] of [
+  ["2026-12-10","observance.loreto_our_lady"],
+  ["2026-05-08","observance.pompeii_supplica_may_8"],
+  ["2026-08-26","observance.jasna_gora_czestochowa"],
+  ["2026-09-24","observance.walsingham_our_lady"],
+  ["2026-11-03","observance.holywell_saint_winefride"],
+]){
+  const ev=calendarSemanticEventsForDate(date).find(x=>x.id===key);
+  assert.ok(ev,key+" missing");
+  assert.ok(ev.tags.includes("EXPLORE_TEMPORAL_LINK"),key+" lost Explore semantic tag");
+}
 assert.equal(CALENDAR_DEVOTIONAL_REGISTRY_VERSION,"calendar-devotional-registry-v2-bilingual-novena-freeze");
 assert.equal(NOVENA_TARGET_IDS.length,16,"frozen target registry must contain 16 devotional programmes");
 assert.deepEqual(Object.keys(NOVENA_SOURCE_HOLDS),[],"completed corpus must have no source holds");
