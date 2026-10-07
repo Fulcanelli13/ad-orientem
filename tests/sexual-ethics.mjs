@@ -143,7 +143,7 @@ for(const item of CSE_QUESTIONS){
   if(item.depth==="DEBATE"){
     const positionRefs=CSE_DEBATE_POSITION_REFS[item.id];
     assert.ok(positionRefs?.length,`${item.id}: missing actual-position source(s)`);
-    assert.ok(positionRefs.some(([sourceId])=>["opposing_position","empirical"].includes(CSE_SOURCE_MAP[sourceId]?.role)||sourceId==="CCC"||sourceId==="ST77"),`${item.id}: objection source chain is not anchored to a proponent/empirical source`);
+    assert.ok(positionRefs.some(([sourceId])=>["opposing_position","empirical"].includes(CSE_SOURCE_MAP[sourceId]?.role)),`${item.id}: objection source chain is not anchored to an actual proponent or empirical source`);
     for(const field of CSE_DEBATE_FIELDS){
       const refs=paragraphRefsFor(item,"debate",field);
       assert.equal(validateParagraphRefs(item,refs),true,`${item.id} ${field}: debate paragraph must have clickable provenance`);
