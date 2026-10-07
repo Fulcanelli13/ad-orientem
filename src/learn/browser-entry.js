@@ -6,6 +6,7 @@ import {
   renderLearnPresentation,
 } from "./presentation.js";
 import { ensureTraditionalLearnRegistry, installTraditionalLearnModules, TRADITIONAL_LEARN_ROUTES } from "./traditional-life.js";
+import { installCatholicLifeModule } from "./catholic-life.js";
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
@@ -37,6 +38,7 @@ function retireHistoricalLearnSurface(win){
 }
 
 function childOpen(win,id){
+  if(id==="learn.catholic_life")return Boolean(win?.AO_CATHOLIC_LIFE_V1?.status?.()?.open);
   if(TRADITIONAL_LEARN_ROUTES[id]){const s=win?.AO_TRADITIONAL_LEARN_V381?.status?.();return Boolean(s?.open&&s?.route===id)}
   if(id==="learn.mass"){
     const node=win?.document?.getElementById?.("ao-learn-root");
@@ -59,6 +61,7 @@ function childOpen(win,id){
 
 function closeChild(win,id){
   try{
+    if(id==="learn.catholic_life"){win?.AO_CATHOLIC_LIFE_V1?.close?.();return true;}
     if(TRADITIONAL_LEARN_ROUTES[id]){win?.AO_TRADITIONAL_LEARN_V381?.close?.();return true;}
     if(id==="learn.mass"){win?.AO_UNDERSTAND_MASS?.close?.();return true;}
     if(id==="learn.catechism"){win?.AO_TRADITIONAL_CATECHISM?.close?.();return true;}
@@ -288,6 +291,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
 export function installLearnBrowserOwner(win=globalThis){
   if(win?.AO_LEARN_APP_V1)return win.AO_LEARN_APP_V1;
   installTraditionalLearnModules(win);
+  installCatholicLifeModule(win);
   const api=createLearnOwner(win);
   win.AO_LEARN_APP_V1=api;
   return api;
