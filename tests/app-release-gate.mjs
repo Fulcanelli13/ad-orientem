@@ -8,7 +8,7 @@ const presentationFx=JSON.parse(readFileSync("data/presentation/presentation-fx-
 const exactDonor=JSON.parse(readFileSync("data/presentation/exact-donor-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.21.0");
+assert.equal(app.version,"1.22.0");
 assert.equal(app.status,"PRESENTATION_PARITY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -43,14 +43,13 @@ assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json")
 assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
 assert.equal(app.exactDonorParityLedger,"data/presentation/exact-donor-parity.v1.json");
 const exactFinding=findings.find(x=>x.id==="EXACT_NON_MASS_DONOR_PARITY");
-assert.equal(exactFinding?.classification,"REGRESSION");
+assert.equal(exactFinding?.classification,"MISSING_INTEGRATION");
 assert.equal(exactFinding?.status,"OPEN");
 assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
 assert.equal(exactDonor.status,"OPEN");
+assert.equal(exactDonor.version,"1.4.0");
 assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
 assert.deepEqual(exactDonor.openBlockers,[
-  "SEMANTIC_RAILS_SIMPLIFIED",
-  "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
   "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
 ]);
 assert.match(exactDonor.rule,/conceptual equivalence.*do not satisfy|conceptual equivalence.*insufficient|conceptual feature/i);
@@ -113,6 +112,9 @@ assert.ok(app.regressionGates?.static?.includes("tests/pray-owner.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/pray-presentation.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/learn-owner.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/settings-owner.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/pray-novenas.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/pray-traditional-life.mjs"));
+assert.ok(app.regressionGates?.static?.includes("tests/learn-traditional-life.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-final-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/app-shell-journey-e2e.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/nonmass-d3-d6-e2e.mjs"));
