@@ -78,23 +78,38 @@ export function makeApostolateScenario(input={}){
     engine,
     publication,
     claimClass:input.claimClass??null,
+    title:input.title&&typeof input.title==="object"?input.title:{},
+    text:input.text&&typeof input.text==="object"?input.text:{},
+    explanation:input.explanation&&typeof input.explanation==="object"?input.explanation:{},
+    avoid:input.avoid&&typeof input.avoid==="object"?input.avoid:{},
+    apfSkills:Array.isArray(input.apfSkills)?input.apfSkills.filter(nonEmpty):[],
     sourceIds:Array.isArray(input.sourceIds)?input.sourceIds.filter(nonEmpty):[],
     handoffs:Array.isArray(input.handoffs)?input.handoffs:[],
-    text:input.text&&typeof input.text==="object"?input.text:{},
   };
 
   if(publication==="READY"){
     if(!claimSet.has(record.claimClass))throw new Error("READY Apostolate scenario requires a valid claim class: "+id);
     if(record.sourceIds.length===0)throw new Error("READY Apostolate scenario requires resolved source IDs: "+id);
+    if(!nonEmpty(record.title.en)||!nonEmpty(record.title.fr))throw new Error("READY Apostolate scenario requires English and French titles: "+id);
     if(!nonEmpty(record.text.en)||!nonEmpty(record.text.fr))throw new Error("READY Apostolate scenario requires English and French text: "+id);
+    if(!nonEmpty(record.explanation.en)||!nonEmpty(record.explanation.fr))throw new Error("READY Apostolate scenario requires English and French explanations: "+id);
+    if(record.apfSkills.length===0||record.apfSkills.some(skill=>!skillSet.has(skill)))throw new Error("READY Apostolate scenario requires valid APF skills: "+id);
+    if(!Array.isArray(record.avoid.en)||record.avoid.en.length===0||!Array.isArray(record.avoid.fr)||record.avoid.fr.length===0)throw new Error("READY Apostolate scenario requires bilingual avoidances: "+id);
     if(record.handoffs.length===0)throw new Error("READY Apostolate scenario requires at least one canonical handoff: "+id);
   }
 
   return Object.freeze({
     ...record,
+    title:Object.freeze({...record.title}),
+    text:Object.freeze({...record.text}),
+    explanation:Object.freeze({...record.explanation}),
+    avoid:Object.freeze({
+      en:Object.freeze([...(Array.isArray(record.avoid.en)?record.avoid.en:[])]),
+      fr:Object.freeze([...(Array.isArray(record.avoid.fr)?record.avoid.fr:[])]),
+    }),
+    apfSkills:Object.freeze([...record.apfSkills]),
     sourceIds:Object.freeze([...record.sourceIds]),
     handoffs:Object.freeze([...record.handoffs]),
-    text:Object.freeze({...record.text}),
   });
 }
 
