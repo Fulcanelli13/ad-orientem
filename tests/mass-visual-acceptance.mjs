@@ -181,6 +181,31 @@ try{
   assert.equal(opening.historicalIdentityClaim,false,"source-first product 48 must not masquerade as recovered historical C01-C48 identity");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
 
+  // v1.79 Guide: structured sheet, curated sections and source links.
+  const guideButton=page.locator("#ao-r17-native-reader-preview [data-role='guide-button']");
+  assert.equal(await guideButton.isDisabled(),false,"opening v1.79 Guide is disabled");
+  await guideButton.click();
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===false);
+  const guideAudit=await page.evaluate(()=>({
+    kicker:document.querySelector("#ao-r17-native-reader-preview .ao-guide-kicker")?.textContent?.trim()??"",
+    title:document.querySelector("#ao-r17-native-reader-preview .ao-guide-title")?.textContent?.trim()??"",
+    summary:document.querySelector("#ao-r17-native-reader-preview .ao-guide-summary")?.textContent?.trim()??"",
+    headings:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-section h3,#ao-r17-native-reader-preview .ao-guide-section h4")].map(x=>x.textContent?.trim()??""),
+    sectionCount:document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-section").length,
+    sources:document.querySelector("#ao-r17-native-reader-preview .ao-guide-sources p")?.textContent?.trim()??"",
+    sourceLinks:document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-links a").length,
+  }));
+  assert.equal(guideAudit.kicker,"Guide · 1962 Sung Mass","Guide lost v1.79 identity");
+  assert.ok(guideAudit.title.length>0&&guideAudit.summary.length>0,"Guide header is not curated");
+  assert.ok(guideAudit.sectionCount>=5,"Guide collapsed back into an unstructured long-text dump");
+  for(const heading of ["What is happening","What should I do?","For prayer"]){
+    assert.ok(guideAudit.headings.includes(heading),"Guide is missing curated section: "+heading);
+  }
+  assert.ok(guideAudit.sources.length>0,"Guide lost its source line");
+  assert.ok(guideAudit.sourceLinks>=1,"Guide lost source links");
+  await page.locator("#ao-r17-native-reader-preview [data-guide-close]").click();
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===true);
+
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
   await scholaToggle.click();
@@ -207,6 +232,39 @@ try{
     const scholaAfter=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
     assert.ok(scholaAfter>scholaBefore+10,"Schola drag handle did not resize the dock");
   }
+
+  // v1.76-v1.80 Schola interaction contract: page/progress, persisted speed,
+  // explicit pause/resume, and translation which temporarily pauses motion.
+  const scholaState=await page.evaluate(()=>({
+    page:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-page']")?.textContent?.trim()??"",
+    progress:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-progress']")?.style?.width??"",
+    speed:document.querySelector("#ao-r17-native-reader-preview [data-role='schola-speed']")?.textContent?.trim()??"",
+    latin:document.querySelector("#ao-r17-native-reader-preview [data-role='schola']")?.textContent?.trim()??"",
+  }));
+  assert.match(scholaState.page,/\d+\s*\/\s*\d+/,"Schola lost page state");
+  assert.match(scholaState.progress,/^\d+(?:\.\d+)?%$/,"Schola lost progress state");
+  assert.equal(scholaState.speed,"0.45×","Schola no longer starts on donor default speed");
+  assert.ok(scholaState.latin.length>0,"Schola stream is empty");
+
+  await scholaDock.locator("[data-schola-faster]").click();
+  assert.equal(await scholaDock.locator("[data-role='schola-speed']").textContent(),"0.60×","Schola faster control did not advance donor speed ladder");
+  assert.equal(await page.evaluate(()=>localStorage.getItem("ao-schola-speed")),"0.6","Schola speed did not persist");
+
+  const scholaPause=scholaDock.locator("[data-schola-pause]");
+  await scholaPause.click();
+  assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola pause control did not pause");
+  assert.equal((await scholaPause.textContent())?.trim(),"RESUME","paused Schola does not expose resume");
+  await scholaPause.click();
+  assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola resume control did not resume");
+
+  await scholaDock.locator("[data-schola-translate]").click();
+  assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not open");
+  assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola translation did not pause moving text");
+  assert.ok(((await scholaDock.locator("[data-role='schola-translation']").textContent())??"").trim().length>0,"Schola translation is empty");
+  await scholaDock.locator("[data-schola-translate]").click();
+  assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola translation did not close");
+  assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola did not resume after translation closed");
+
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
 
