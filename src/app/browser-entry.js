@@ -53,7 +53,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   let ribbonClickBound = false;
   const cleanups = [];
 
-  const isolatedNonMass=new Set(["calendar","pray","learn","settings","find"]);
+  const isolatedNonMass=new Set(["calendar","pray","learn","settings","find","apostolate"]);
 
   function ensureSurfaceIsolationStyle(){
     if(doc.getElementById?.("ao-app-surface-isolation"))return;
