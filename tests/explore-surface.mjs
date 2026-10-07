@@ -15,6 +15,8 @@ const customsSeed=readJson("data/customs/customs-atlas-seed.v1.json");
 const customSources=readJson("data/customs/source-registry.v1.json");
 const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
 const shrineSources=readJson("data/shrines/source-registry.v1.json");
+const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
+const novenaSot=readJson("data/pray/novena-sot.v1.json");
 
 const records=joinDirectoryRecords({
   venues:[{
@@ -60,6 +62,12 @@ const dataset={
     temporalLinks:shrineSeed.temporalLinks,
     sources:shrineSources.sources,
   },
+  novenas:{
+    records:novenaSot.novenas,
+    links:novenaBridge.links,
+    sources:novenaBridge.sources,
+    researchStatus:novenaBridge.research_status,
+  },
 };
 
 const projection=projectExploreDataset(dataset);
@@ -67,7 +75,7 @@ assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
   shrines:3,
-  traditions:17,
+  traditions:35,
   pilgrimages:4,
 });
 
@@ -89,10 +97,21 @@ assert.equal(lourdesShrine[0].map_publishable,false);
 assert.equal(lourdesShrine[0].map_state,"ADDRESS_ONLY");
 assert.equal(exploreMapFeatures(lourdesShrine).length,0,"address-only shrine must not silently become a map pin");
 assert.match(lourdesShrine[0].subtitle,/Lourdes/);
+assert.ok(lourdesShrine[0].sections.some(section=>section.label==="Related novena"&&/Immaculate Conception/.test(section.title)),"Lourdes shrine lost related Immaculate Conception novena");
+assert.ok(lourdesShrine[0].actions.some(action=>action.novena_id==="immaculate_conception"),"Lourdes shrine lost Novena deep link");
 
 const lourdesTradition=filterExploreItems(projection.byLens.traditions,{query:"Lourdes"});
 assert.ok(lourdesTradition.some(item=>item.source_id==="att:DEV-010:LOURDES"));
 assert.ok(lourdesTradition.every(item=>item.map_publishable===false));
+
+const immaculateContext=filterExploreItems(projection.byLens.traditions,{query:"Immaculate Conception"});
+assert.ok(immaculateContext.some(item=>item.kind==="NOVENA_CONTEXT"&&item.raw?.link?.novena_id==="immaculate_conception"),"Explore Traditions lost Immaculate Conception Novena context");
+
+const christmasContext=filterExploreItems(projection.byLens.traditions,{query:"Christmas Novena"});
+assert.ok(christmasContext.some(item=>item.kind==="NOVENA_CONTEXT"&&/Corsica/i.test(item.subtitle)),"Explore lost French Christmas O-antiphon Novena attestation");
+
+const christKingContext=filterExploreItems(projection.byLens.traditions,{query:"Christ the King"});
+assert.ok(christKingContext.some(item=>item.kind==="NOVENA_CONTEXT"&&item.map_state==="NOT_MAPPED"),"Christ the King textual French-world context was incorrectly forced onto a map");
 
 const lourdesPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Lourdes"});
 assert.equal(lourdesPilgrimage.length,1);
@@ -118,6 +137,9 @@ assert.match(shrineHtml,/Pilgrimages/);
 assert.match(shrineHtml,/Sanctuaire Notre-Dame de Lourdes/);
 assert.match(shrineHtml,/Official Sanctuary|OFFICIAL SANCTUARY/);
 assert.match(shrineHtml,/SOURCES/);
+assert.match(shrineHtml,/Related novena/);
+assert.match(shrineHtml,/Open novena/);
+assert.match(shrineHtml,/data-explore-open-novena="immaculate_conception"/);
 assert.doesNotMatch(shrineHtml,/data-find-filter="unaCum"/,"TLM-only filters leaked into Shrine lens");
 
 const tlmVm=buildExploreViewModel({
@@ -152,7 +174,13 @@ assert.match(browserSource,/loadExploreDataset/);
 assert.match(browserSource,/projectExploreDataset/);
 assert.match(browserSource,/mountExploreMap/);
 assert.match(browserSource,/lens:"tlm"/);
+assert.match(browserSource,/data-explore-open-novena/,"Explore lost Novena deep-link click handling");
+assert.match(browserSource,/AO_PRAY_V435930\?\.open\?\.\("pray\.novenas"/,"Explore no longer opens the canonical PRAY Novena owner");
 assert.doesNotMatch(browserSource,/Sanctuaire Notre-Dame de Lourdes|Paray-le-Monial|Notre-Dame de Laghet/,"Explore browser owner hardcodes corpus places");
+
+const novenaRuntimeSource=readFileSync("src/pray/novena-runtime.js","utf8");
+assert.match(novenaRuntimeSource,/opts\?\.novenaId/,"Novenas stopped accepting Explore deep-link identity");
+assert.match(novenaRuntimeSource,/Object\.keys\(CORPUS\)\.length===16/,"Novena QA still assumes the obsolete 12-target corpus");
 
 const homeSource=readFileSync("src/home/presentation.js","utf8");
 assert.match(homeSource,/Traditional Masses, shrines, customs and pilgrimages/);
