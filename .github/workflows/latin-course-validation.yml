@@ -28,6 +28,10 @@ on:
       - "tools/validate_latin_course.mjs"
       - ".github/workflows/latin-course-validation.yml"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate-course:
     runs-on: ubuntu-latest
