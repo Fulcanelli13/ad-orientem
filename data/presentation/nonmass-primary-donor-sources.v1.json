@@ -1,0 +1,121 @@
+{
+  "schema": "ao-nonmass-primary-donor-sources-v1",
+  "version": "1.0.0",
+  "rule": "Exact donor/current certification may only use primary donor bytes or an immutable render derived from those exact bytes. Recovered/reconstructed modular code is supporting evidence, not a substitute primary donor.",
+  "sources": [
+    {
+      "id": "PRAY_UNIFIED_READER_CLOSURE",
+      "filename": "Ad-Orientem-2.0-v43.59.30-PRAY-UNIFIED-READER-CLOSURE.html",
+      "availability": "GIT_ADDRESSABLE",
+      "repositoryCommit": "7a613721d5caee0500588c759c90864e4041e7a2",
+      "owns": [
+        "Home",
+        "PRAY hub",
+        "Angelus base composition",
+        "Stations base composition",
+        "representative prayer reader",
+        "v43.12 presentation primitives"
+      ]
+    },
+    {
+      "id": "V3_4_10_PRESENTATION_AND_TRADITION",
+      "filename": "Ad_Orientem_v3_4_10.html",
+      "availability": "EXACT_EXTERNAL_BYTES_HASHED_NOT_REPOSITORY_ADDRESSABLE",
+      "sha256": "952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283",
+      "byteLength": 54354041,
+      "owns": [
+        "40/42 percent focus geometry",
+        "midpoint handoff",
+        "directional anticipation",
+        "45 ms focus interpolation",
+        "v38.1 Traditional PRAY and Learn presentation",
+        "v38.4 Liturgical Year and discipline presentation"
+      ],
+      "note": "Exact user-supplied bytes were available during the 2026-10-07 recovery pass, but CI cannot retrieve conversation attachments. Preserve the hash; do not replace this source with reconstructed current code."
+    },
+    {
+      "id": "N3_GUIDED_NOVENAS",
+      "filename": "Ad_Orientem_NON_MASS_HEAD_v1_NOVENAS_N3_GUIDED.html",
+      "availability": "EXACT_EXTERNAL_BYTES_HASHED_NOT_REPOSITORY_ADDRESSABLE",
+      "sha256": "105f765d0227b937c58781416cf461c7b950b50427704b81478b4deaeeaadf10",
+      "byteLength": 40461455,
+      "owns": [
+        "12-novena N3 corpus presentation",
+        "Guided/Simple novena flow",
+        "calendar-aware novena status",
+        "source/provenance treatment"
+      ],
+      "note": "Exact user-supplied bytes were available during the 2026-10-07 recovery pass, but CI cannot retrieve conversation attachments. Preserve the hash; do not replace this source with reconstructed current code."
+    },
+    {
+      "id": "V3_4_14_ROSARY_FINAL",
+      "filename": "Ad_Orientem_v3_4_14.html",
+      "availability": "APPROVED_PRIMARY_BYTES_MISSING",
+      "owns": [
+        "final Rosary live rail",
+        "mystery cinematic",
+        "progress treatment",
+        "Rosary art treatment"
+      ],
+      "note": "Approved authority is known, but exact primary bytes are not in Git history, current attachments, or the persistent file library. Existing recovered Rosary tests remain supporting evidence only."
+    },
+    {
+      "id": "NON_MASS_HEAD_V3_22",
+      "filename": "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html",
+      "availability": "APPROVED_PRIMARY_BYTES_MISSING",
+      "owns": [
+        "latest approved non-Mass composition",
+        "Calendar dashboard composition",
+        "Novena freeze integration",
+        "cross-surface visual hierarchy"
+      ],
+      "note": "Approved authority is known, but exact primary bytes are not repository- or library-addressable. Current visual capture can be reviewed, but exact final side-by-side certification must remain open."
+    }
+  ],
+  "currentCaptureCoverage": {
+    "viewport": "390x844",
+    "directGitDonorPairs": [
+      "Home",
+      "PRAY hub",
+      "Angelus",
+      "Stations",
+      "representative prayer reader"
+    ],
+    "currentRegressionStates": [
+      "Rosary mystery cinematic",
+      "Rosary live rail",
+      "Adoration arrival",
+      "Adoration silence",
+      "Benediction blessing",
+      "Confession in-confessional",
+      "Novenas overview",
+      "Morning & Evening Prayer",
+      "Sacred Hymns & Canticles",
+      "Litany of the Holy Name",
+      "Learn hub",
+      "Serious Illness & Dying",
+      "Baptism",
+      "Matrimony",
+      "Serve Low Mass",
+      "Brown Scapular",
+      "Calendar day",
+      "Liturgical Year",
+      "v38.4 Christ the King + October",
+      "Current discipline",
+      "1962 discipline",
+      "Settings",
+      "Sources & About"
+    ]
+  },
+  "certification": {
+    "status": "OPEN_PRIMARY_EVIDENCE_GAP",
+    "blockingSources": [
+      "V3_4_14_ROSARY_FINAL",
+      "NON_MASS_HEAD_V3_22"
+    ],
+    "supportingButNotSubstituteSources": [
+      "V3_4_10_PRESENTATION_AND_TRADITION",
+      "N3_GUIDED_NOVENAS"
+    ]
+  }
+}

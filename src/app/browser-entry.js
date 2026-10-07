@@ -1,5 +1,6 @@
 import "./source-transport-compat.js";
 import { installAppDesignSystem } from "./design-system.js";
+import { installDateFormat } from "./date-format.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
@@ -20,6 +21,7 @@ import {
 
 export const VERSION = "final-app-shell-owner-v3";
 installAppDesignSystem(globalThis);
+installDateFormat(globalThis);
 
 function ready(win) {
   return Boolean(
