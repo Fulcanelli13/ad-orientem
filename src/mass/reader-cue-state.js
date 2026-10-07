@@ -1,3 +1,4 @@
+import { validateReaderGestureMatrix } from "./reader-gesture-matrix.js";
 // R17 cue-scoped reader state projection.
 // Source-backed only: exact cue IDs from the certified Sung Mass blueprint.
 // No text scanning, no title/phase heuristics, no canonical chronology mutation.
@@ -171,6 +172,38 @@ function exactByCue(items){
   return new Map(items.map(item=>[item.cueId,item]));
 }
 
+function gestureParityKey(item){
+  return [
+    String(item?.cueId??""),
+    String(item?.action??item?.label??""),
+    String(item?.trigger??item?.triggerLatin??""),
+    String(item?.condition??""),
+  ].join("|");
+}
+
+function faithfulGestureItemsFromMatrix(gestureMatrix,legacyItems){
+  if(!gestureMatrix)return Object.freeze([...(legacyItems??[])]);
+  const audit=validateReaderGestureMatrix(gestureMatrix);
+  const matrixRows=audit.items
+    .filter(item=>item.actor==="FAITHFUL")
+    .map(item=>Object.freeze({
+      cueId:item.cueId,
+      action:item.label,
+      trigger:item.triggerLatin,
+      scope:"INSTANT",
+      condition:item.condition,
+      sourceGestureId:item.id,
+      sources:item.sources,
+      campionPages:item.campionPages,
+    }));
+  const legacy=[...(legacyItems??[])];
+  if(matrixRows.length!==legacy.length)throw new Error("Faithful gesture matrix parity count mismatch");
+  const a=[...matrixRows].map(gestureParityKey).sort();
+  const b=[...legacy].map(gestureParityKey).sort();
+  if(a.some((value,index)=>value!==b[index]))throw new Error("Faithful gesture matrix diverges from compatibility donor");
+  return Object.freeze(matrixRows);
+}
+
 // v1.83 recovered runtime gates override ambiguous/duplicated gesture extraction
 // without mutating the frozen source registry. The words of Consecration and
 // the elevation action must remain distinct perceptible territories.
@@ -211,6 +244,7 @@ function latestPassing(transitions,activeSort,conditions){
 function sourceGesture(item){
   if(!item)return null;
   const action=String(item.action??"").trim();
+  const matrixOwned=Boolean(item.sourceGestureId);
   // The source itself explicitly marks these as conditional/advisory rather than universal.
   if(/do not hard-code as universal/i.test(action) || /depends on sung\/local calendar rule/i.test(action)){
     return Object.freeze({
@@ -218,8 +252,11 @@ function sourceGesture(item){
       action,
       trigger:item.trigger??null,
       scope:item.scope??"INSTANT",
-      owner:"R17_SOURCE_ADVISORY_FAIL_CLOSED",
+      owner:matrixOwned?"GESTURE_MATRIX_SOT_ADVISORY":"R17_SOURCE_ADVISORY_FAIL_CLOSED",
       cueId:item.cueId,
+      sourceGestureId:item.sourceGestureId??null,
+      sources:item.sources??null,
+      campionPages:item.campionPages??null,
       transient:true,
     });
   }
@@ -228,8 +265,11 @@ function sourceGesture(item){
     action,
     trigger:item.trigger??null,
     scope:item.scope??"INSTANT",
-    owner:"R17_CUE_SOURCE",
+    owner:matrixOwned?"GESTURE_MATRIX_SOT":"R17_CUE_SOURCE",
     cueId:item.cueId,
+    sourceGestureId:item.sourceGestureId??null,
+    sources:item.sources??null,
+    campionPages:item.campionPages??null,
     transient:true,
   });
 }
@@ -301,6 +341,7 @@ export function createReaderCueStateController({
   sungCorpus,
   prepared,
   conditions=null,
+  gestureMatrix=null,
 }={}){
   const audit=validateReaderCueRegistries(registries,sungCorpus);
   const sortIndex=cueSortIndex(sungCorpus);
@@ -308,7 +349,8 @@ export function createReaderCueStateController({
   const supported=SUPPORTED_FORMS.has(form);
   const defaultConditions=conditions==null ? cueProjectionConditions(prepared) : conditionSet(conditions);
 
-  const gestures=exactByCue(registries.gestures.items);
+  const gestureItems=faithfulGestureItemsFromMatrix(gestureMatrix,registries.gestures.items);
+  const gestures=exactByCue(gestureItems);
   const responses=exactByCue(registries.responses.items);
   const actions=exactByCue(registries.actions.items);
   const positions=transitionList(registries.positions.items,sortIndex);
@@ -387,7 +429,7 @@ export function createReaderCueStateController({
     schema:"ao-r17-reader-cue-state-controller-v1",
     supported,
     form,
-    audit,
+    audit:Object.freeze({...audit,gestureAuthority:gestureMatrix?"GESTURE_MATRIX_SOT":"READER_GESTURES_COMPATIBILITY"}),
     project,
     cueSort:cueId=>sortIndex.get(String(cueId))??null,
     unresolvedPostureAnchors,
