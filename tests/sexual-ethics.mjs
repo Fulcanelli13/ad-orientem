@@ -115,8 +115,8 @@ const publicQuestionFiles=[
 assert.doesNotMatch(publicQuestionFiles,/Ad Orientem/);
 assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Every displayed citation source must have a hyperlink destination");
 
-const META_COMMENTARY_EN=/(?:the strongest objection|the serious objection|the classic objection|the traditional reply|the Catholic reply|the Catholic answer|this question should|this remains a case-analysis question|this is a case-analysis question|this module|the module|the reusable method)/i;
-const META_COMMENTARY_FR=/(?:l’objection la plus forte|l’objection sérieuse|l’objection classique|la réponse traditionnelle|la réponse catholique|cette question doit|cela reste une question d’analyse|c’est une question d’analyse|ce module|la méthode réutilisable)/i;
+const META_COMMENTARY_EN=/(?:the strongest objection|the serious objection|the classic objection|the traditional reply|the Catholic reply|the Catholic answer|this question should|this remains a case-analysis question|this is a case-analysis question|this is a prudential case question|this module|the module|the reusable method)/i;
+const META_COMMENTARY_FR=/(?:l’objection la plus forte|l’objection sérieuse|l’objection classique|la réponse traditionnelle|la réponse catholique|cette question doit|cela reste une question d’analyse|c’est une question d’analyse|c’est une question prudentielle de cas|ce module|la méthode réutilisable)/i;
 for(const item of CSE_QUESTIONS){
   for(const [label,text] of [
     ["detail-en",item.d?.[0]],
