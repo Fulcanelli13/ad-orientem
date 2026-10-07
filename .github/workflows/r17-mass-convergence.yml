@@ -26,7 +26,6 @@ on:
       - "tests/source-transport-compat.mjs"
       - "tests/fixtures/reader-phone-harness.html"
       - "index.html"
-      - "package.json"
       - ".github/workflows/r17-mass-convergence.yml"
 
 concurrency:
@@ -44,6 +43,7 @@ jobs:
       - run: npm test
 
   phone-browser:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

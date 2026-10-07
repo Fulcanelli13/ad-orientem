@@ -7,7 +7,6 @@ on:
       - "tools/directory/**"
       - "data/directory/**"
       - ".github/workflows/directory-corpus-audit.yml"
-      - "package.json"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -18,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         source: [fssp, icksp, ibp]
     steps:
