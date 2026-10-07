@@ -80,11 +80,13 @@ export function emailAddresses(text){
 }
 
 export function phoneCandidates(text){
-  const matches=(String(text??"").match(/(?:\+?\d[\d .()\/-]{6,}\d)/g)??[]).map(x=>x.trim());
+  const sanitized=String(text??"")
+    .replace(/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/g," ")
+    .replace(/\b\d{4}[\/-]\d{1,2}[\/-]\d{1,2}\b/g," ");
+  const matches=(sanitized.match(/(?:\+?\d[\d .()\/-]{6,}\d)/g)??[]).map(x=>x.trim());
   return [...new Set(matches.filter(value=>{
     const compact=value.replace(/\s+/g,"");
-    if(/^\d{1,2}[\/-]\d{1,2}[\/-]\d{4}$/.test(compact))return false;
-    if(/^\d{4}[\/-]\d{1,2}[\/-]\d{1,2}$/.test(compact))return false;
+    if(/^\d{5}-\d{4}$/.test(compact))return false;
     const digits=value.replace(/\D/g,"");
     return digits.length>=7&&digits.length<=15;
   }))];
