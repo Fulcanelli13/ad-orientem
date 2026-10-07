@@ -69,7 +69,7 @@ function detailSheet(vm){
   const v=record.venue??{},m=arr(record.ministries)[0]??{},contact=v.contact??{},src=sourceUrl(record),dir=directionsUrl(v),una=communion(record);
   const schedules=rawSchedules(record),phone=arr(contact.phone)[0],email=arr(contact.email)[0],site=arr(contact.website)[0];
   let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet" role="dialog" aria-modal="true">';
-  html+='<header><div><small>'+esc(communityLabel(m.community_id,vm.communities))+'</small><h2>'+esc(v?.name?.official||"Venue")+'</h2><p>'+esc(v?.address?.formatted||[v?.address?.city,v?.address?.country_code].filter(Boolean).join(", "))+'</p></div><button type="button" data-find-close-detail aria-label="Close">×</button></header>';
+  html+='<header><div><small>'+esc(communityLabel(m.community_id,vm.communities))+'</small><h2>'+esc(v?.name?.official||"Venue")+'</h2><p>'+esc(v?.address?.formatted||[v?.address?.city,v?.address?.country_code].filter(Boolean).join(", "))+'</p></div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">×</button></header>';
   html+='<div class="aoFindFacts">';
   if(v?.diocese?.name)html+='<div><small>'+esc(L(vm.language,"DIOCESE","DIOCÈSE"))+'</small><strong>'+esc(v.diocese.name)+'</strong></div>';
   html+='<div><small>'+esc(L(vm.language,"LITURGY","LITURGIE"))+'</small><strong>'+esc(usageLabel(m))+'</strong></div>';
