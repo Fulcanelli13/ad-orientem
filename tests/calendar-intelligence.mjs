@@ -35,6 +35,9 @@ const christKing=calendarPracticeEvents("2026-10-25",{fr:false});
 assert.ok(christKing.some(x=>x.id==="practice.christ-king"),"Christ the King traditional context disappeared");
 assert.ok(christKing.some(x=>x.id==="programme.sunday-mass"),"Sunday obligation projection disappeared on Christ the King");
 
+const christKingIntelligence=calendarIntelligenceForDate("2026-10-25",{fr:false});
+assert.ok(christKingIntelligence.novenas.some(x=>x.novenaId==="holy_souls"),"Active Holy Souls novena was not projected alongside Christ the King and October Rosary");
+
 const ash=calendarPracticeEvents("2026-02-18",{fr:false}).find(x=>x.id==="practice.ash");
 assert.ok(ash?.tags.includes("CURRENT_UNIVERSAL_DISCIPLINE"),"Ash Wednesday current discipline classification disappeared");
 
