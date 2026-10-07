@@ -277,22 +277,6 @@ try{
     cinematicHidden:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden??null,
     bellOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerBell??null,
     cinematicOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerCinematic??null,
-    bellIcon:(()=>{
-      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='bell']");
-      const s=x?getComputedStyle(x):null;
-      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
-    })(),
-    priestActionIcon:(()=>{
-      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='priest-action']");
-      const s=x?getComputedStyle(x):null;
-      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
-    })(),
-    cinematicActionIcon:(()=>{
-      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='cinematic-action']");
-      const s=x?getComputedStyle(x):null;
-      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
-    })(),
-    cinematicFallbackHidden:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-fallback']")?.hidden??null,
   }));
   assert.equal(wordsState.cue,"AO.SM.C0173");
   assert.equal(wordsState.bellActive,"false","Host words cue fired the elevation bell before the action cue");
@@ -319,6 +303,22 @@ try{
     cinematicSub:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-sub']")?.textContent?.trim()??"",
     bellOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerBell??null,
     cinematicOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerCinematic??null,
+    bellIcon:(()=>{
+      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='bell']");
+      const s=x?getComputedStyle(x):null;
+      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
+    })(),
+    priestActionIcon:(()=>{
+      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='priest-action']");
+      const s=x?getComputedStyle(x):null;
+      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
+    })(),
+    cinematicActionIcon:(()=>{
+      const x=document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='cinematic-action']");
+      const s=x?getComputedStyle(x):null;
+      return x&&s?{hidden:x.hidden,mask:s.webkitMaskImage||s.maskImage}:null;
+    })(),
+    cinematicFallbackHidden:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic-fallback']")?.hidden??null,
   }));
   assert.equal(elevationState.cue,"AO.SM.C0174");
   assert.equal(elevationState.bellActive,"true","Host elevation action cue did not activate the bell channel");
