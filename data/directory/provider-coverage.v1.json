@@ -1,0 +1,82 @@
+{
+  "schema": "AO_DIRECTORY_PROVIDER_COVERAGE_V1",
+  "version": "1.0.0",
+  "snapshot_date": "2026-10-07",
+  "rule": "Provider identity, canonical status, una-cum status, liturgical family, public-Mass eligibility and physical venue identity are independent claims.",
+  "providers": [
+    {
+      "provider_id": "ICKSP",
+      "runtime_published_venues": 27,
+      "official_source_records": 127,
+      "unique_current_candidates": 125,
+      "status": "PARTIAL_PUBLICATION",
+      "blocks_complete": true,
+      "note": "The 125-candidate research corpus is not a worldwide denominator. Many candidates establish current provider presence but still require venue-level public-Mass/schedule verification before Find a Mass publication."
+    },
+    {
+      "provider_id": "IBP",
+      "runtime_published_venues": 34,
+      "official_headline_locations": 33,
+      "enumerated_current_locations": 34,
+      "status": "SOURCE_DISCREPANCY_FROZEN",
+      "blocks_complete": false,
+      "note": "Retain all 34 enumerated current locations; do not delete a listed location merely to force the official headline total of 33."
+    },
+    {
+      "provider_id": "SSPX",
+      "official_public_map_published_places": 942,
+      "headline_chapels": 864,
+      "status": "API_IMPORT_REQUIRED",
+      "blocks_complete": true,
+      "note": "Canonical ingestion uses the official public map API and stable CRM IDs. The 942 published places and 864 headline chapels are different denominators."
+    },
+    {
+      "provider_id": "AASJMV",
+      "static_external_communities_published": 6,
+      "status": "TERRITORIAL_DIRECTORY_PENDING",
+      "blocks_complete": true,
+      "note": "Six fixed external communities are staged; the current territorial Campos network directory remains pending."
+    },
+    {
+      "provider_id": "FSSP",
+      "status": "LIVE_IMPORT",
+      "blocks_complete": false
+    },
+    {
+      "provider_id": "CMRI",
+      "static_published_venues": 142,
+      "status": "STATIC_CURRENT_DIRECTORY",
+      "blocks_complete": false
+    },
+    {
+      "provider_id": "RCI",
+      "static_published_venues": 31,
+      "status": "STATIC_CURRENT_DIRECTORY",
+      "blocks_complete": false
+    },
+    {
+      "provider_id": "SSPV_CSPV",
+      "static_published_venues": 19,
+      "status": "STATIC_CURRENT_DIRECTORY",
+      "blocks_complete": false
+    },
+    {
+      "provider_id": "CANONS_ST_JOHN_CANTIUS",
+      "static_published_venues": 4,
+      "status": "STATIC_VERIFIED",
+      "blocks_complete": false
+    },
+    {
+      "provider_id": "FSVF",
+      "static_published_venues": 1,
+      "status": "STATIC_VERIFIED",
+      "blocks_complete": false
+    },
+    {
+      "provider_id": "SMMD",
+      "static_published_venues": 1,
+      "status": "STATIC_VERIFIED",
+      "blocks_complete": false
+    }
+  ]
+}
