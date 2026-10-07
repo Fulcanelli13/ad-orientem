@@ -55,6 +55,10 @@ for(const id of ["pray.morning_evening","pray.sacred_hymns","pray.holy_name_lita
   assert.match(runtime,new RegExp(id.replace(".","\\.")),id+" is not owned by the modular traditional PRAY runtime");
 }
 assert.match(runtime,/BASE_OPEN\("pray\.hub",opts\)/,"Traditional PRAY modules no longer mount inside the shared PRAY shell");
+assert.doesNotMatch(runtime,/function injectHome|aoTP381InsertedSection|MutationObserver/,"Traditional PRAY regained DOM-based hub injection");
+assert.match(runtime,/OPEN_OPTS\.returnFamily/,"Traditional PRAY no longer preserves its owning PRAY family");
+assert.match(runtime,/openFamily\?\.\(OPEN_OPTS\.returnFamily\)/,"Traditional PRAY family return is not delegated to the canonical PRAY owner");
+
 assert.match(runtime,/legacyTraditionOwner:false/,"Extraction must not restore AO_TRADITION_V38 ownership");
 assert.match(runtime,/OFFLINE_SOURCE_LOCKED/,"Holy Name litany is no longer declared offline/source-locked");
 assert.doesNotMatch(runtime,/ensureHolyName|en\.wikisource\.org\/w\/api\.php/,"Holy Name litany regained a runtime network dependency");
