@@ -338,8 +338,10 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
 async function fetchJson(url, { fetchImpl = fetch } = {}) {
   const response = await fetchImpl(url, {
     headers: {
-      accept: "application/json",
-      "user-agent": "Ad-Orientem-Directory-Importer/1.0",
+      accept: "application/json,text/plain,*/*",
+      "accept-language": "en-US,en;q=0.9",
+      referer: "https://map.fsspx.org/en/api",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/155 Safari/537.36",
     },
   });
   if (!response.ok) throw new Error(`SSPX API ${response.status} for ${url}`);
@@ -427,6 +429,9 @@ async function writeJson(file, value) {
 
 export async function runSspxImport(options = {}) {
   const summaries = await fetchAllSspxPlaceSummaries(options);
+  if (summaries.length < 100) {
+    throw new Error(`SSPX import coverage guard: expected a substantial official corpus, received ${summaries.length} place summaries.`);
+  }
   const places = options.details === false
     ? summaries
     : await fetchSspxPlaceDetails(summaries, options);
