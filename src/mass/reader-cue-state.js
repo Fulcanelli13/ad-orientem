@@ -415,7 +415,7 @@ export function createReaderCueStateController({
       priestVoice:sourceVoice(voiceItem),
       posture:sourcePosture(postureItem),
       ownership:Object.freeze({
-        gesture:gesture?.label ? "R17_CUE_NATIVE" : gesture ? "R17_SOURCE_ADVISORY_FAIL_CLOSED" : "R17_EXACT_CUE_NONE",
+        gesture:gesture?.label ? (gesture.owner==="GESTURE_MATRIX_SOT"?"GESTURE_MATRIX_SOT":"R17_CUE_NATIVE") : gesture ? (gesture.owner==="GESTURE_MATRIX_SOT_ADVISORY"?"GESTURE_MATRIX_SOT_ADVISORY_FAIL_CLOSED":"R17_SOURCE_ADVISORY_FAIL_CLOSED") : "R17_EXACT_CUE_NONE",
         response:response ? "R17_CUE_NATIVE" : "R17_EXACT_CUE_NONE",
         priestAction:priestAction ? "R17_V180_EXACT_CUE_ACTION" : "R17_EXACT_CUE_NONE",
         priestPosition:positionItem ? "R17_CUE_NATIVE_PERSISTENT" : "R17_FAIL_CLOSED",
