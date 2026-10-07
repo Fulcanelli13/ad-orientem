@@ -41,7 +41,7 @@ const expectedResearchCounts = new Map([
   ["DIOCESAN",46],
   ["AASJMV",6],
   ["FSVF",1],
-  ["CANONS_ST_JOHN_CANTIUS",2],
+  ["CANONS_ST_JOHN_CANTIUS",4],
   ["CMRI",142],
   ["RCI",31],
   ["SSPV_CSPV",19],
@@ -77,13 +77,18 @@ for(const snapshot of researchSnapshots){
   if(snapshot.provider==="CMRI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books!=="1962"),"CMRI was wrongly normalized to 1962");
   if(snapshot.provider==="RCI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="PRE_1955"),"RCI pre-1955 profile drifted");
   if(snapshot.provider==="SSPV_CSPV")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="UNKNOWN"),"CSPV exact books were inferred");
+  if(snapshot.provider==="CANONS_ST_JOHN_CANTIUS"){
+    assert.ok(expanded.venues.some(v=>/sjc-001/.test(v.venue_id)),"St John Cantius current 1962 venue missing");
+    assert.ok(expanded.venues.some(v=>/sjc-002/.test(v.venue_id)),"St Peter Volo current 1962 venue missing");
+    assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="1962"),"Canons 1962 profile drifted");
+  }
   if(snapshot.provider==="ICKSP_FEDERATED_V13"){
     assert.ok(expanded.ministries.every(m=>m.community_id==="ICKSP"&&m.liturgical_usage.books==="1962"),"ICKSP supplement profile drifted");
     assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,35,"ICKSP strict current-Mass count drifted");
     assert.equal(expanded.schedules.filter(s=>s.service_type==="SOURCE_ASSERTION").length,63,"ICKSP research-assertion count drifted");
   }
 }
-assert.equal(researchVenueCount,346,"v1.9 research projection count drift");
+assert.equal(researchVenueCount,348,"v1.9 research projection count drift");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
