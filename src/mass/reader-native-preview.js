@@ -313,6 +313,7 @@ export async function prepareNativeReaderPreview({
     lowCorpus:data?.lowCorpus,
     sungCorpus:data?.sungCorpus,
     prepared,
+    gestureMatrix:data?.gestureMatrix??null,
   });
   const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
   const transientState=createReaderTransientController({events,prepared});
