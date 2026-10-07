@@ -130,6 +130,8 @@ const shrineVm=buildExploreViewModel({
 });
 const shrineHtml=renderExploreToString(shrineVm);
 assert.match(shrineHtml,/AD ORIENTEM · EXPLORE/);
+assert.ok(shrineHtml.indexOf("aoFindSearch")<shrineHtml.indexOf("aoExploreLensTabs"),"Explore search must precede specialist lens selection");
+assert.match(shrineHtml,/Find a Mass, shrine, tradition or pilgrimage/,"Explore lost discovery-first purpose copy");
 assert.match(shrineHtml,/>Explore</);
 assert.match(shrineHtml,/data-find-filter="lens"/);
 assert.match(shrineHtml,/Shrines/);
@@ -155,10 +157,16 @@ const tlmVm=buildExploreViewModel({
   selectedId:tlm.item_id,
 });
 const tlmHtml=renderExploreToString(tlmVm);
+assert.match(tlmHtml,/Advanced filters/,"TLM specialist controls are not demoted behind Advanced filters");
+assert.ok(tlmHtml.indexOf("Advanced filters")<tlmHtml.indexOf('data-find-affiliation="FSSP"'),"Affiliation taxonomy escaped the Advanced filter block");
 assert.match(tlmHtml,/data-find-filter="unaCum"/);
 assert.match(tlmHtml,/data-find-affiliation="FSSP"/);
 assert.match(tlmHtml,/Église Saint-Test/);
 assert.match(tlmHtml,/Sunday 10:30 Sung Mass/);
+assert.match(tlmHtml,/SOURCE-BACKED/,"TLM result card does not foreground verification state");
+assert.match(tlmHtml,/aoFindScheduleLead/,"TLM result card does not foreground the published schedule");
+assert.match(tlmHtml,/aoFindCommunity[^>]*>FSSP</,"TLM result card does not show community after the schedule");
+assert.doesNotMatch(tlmHtml,/· [0-9]+ mapped|address only/,"Explore result summary leaked map-provenance diagnostics");
 
 const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   language:"en",
