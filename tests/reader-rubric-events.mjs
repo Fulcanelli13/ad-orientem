@@ -80,11 +80,11 @@ assert.equal(frozenActions.source.sha256,
 
 const matrixAudit=validateReaderGestureMatrix(gestureMatrix);
 assert.equal(matrixAudit.schema,"ao-mass-gesture-matrix-v1");
-assert.equal(matrixAudit.itemCount,99);
-assert.equal(matrixAudit.priestCount,40);
+assert.equal(matrixAudit.itemCount,142);
+assert.equal(matrixAudit.priestCount,83);
 assert.equal(matrixAudit.faithfulCount,59);
-assert.equal(matrixAudit.campionBackedCount,60);
-assert.ok(matrixAudit.primaryPriestCueCount>=30);
+assert.equal(matrixAudit.campionBackedCount,100);
+assert.equal(matrixAudit.primaryPriestCueCount,73);
 assert.equal(gestureMatrix.invariants.primaryRubricalAuthority,"ROMAN_MISSAL_1962");
 assert.equal(gestureMatrix.invariants.campionRole,"DISCOVERY_CORROBORATION_AND_EXPLANATORY_PROVENANCE");
 assert.equal(gestureMatrix.invariants.iconBindingRequired,false);
@@ -92,6 +92,15 @@ assert.equal(gestureMatrix.invariants.runtimeMustNotInferBySubstring,true);
 assert.equal(gestureMatrix.items.every(x=>x.iconKey===null),true,"gesture matrix unexpectedly hard-bound icons before icon pass");
 
 const matrixController=createReaderGestureMatrixController({data:gestureMatrix});
+const opening=matrixController.project("AO.SM.C0001");
+assert.equal(opening.primaryPriestAction.label,"SIGNS HIMSELF");
+assert.ok(opening.primaryPriestAction.campionPages.includes(17));
+const teIgitur=matrixController.project("AO.SM.C0152");
+assert.equal(teIgitur.primaryPriestAction.label,"MAKES THREE CROSSES OVER HOST AND CHALICE");
+assert.ok(teIgitur.primaryPriestAction.campionPages.includes(49));
+const lastGospel=matrixController.project("AO.SM.C0269");
+assert.equal(lastGospel.primaryPriestAction.label,"SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST");
+assert.ok(lastGospel.primaryPriestAction.campionPages.includes(95));
 const perIpsum=matrixController.project("AO.SM.C0202");
 assert.equal(perIpsum.primaryPriestAction.label,"THREE CROSSES WITH HOST OVER CHALICE");
 assert.equal(perIpsum.primaryPriestAction.owner,"GESTURE_MATRIX_SOT");
