@@ -160,6 +160,7 @@ try{
     brand:document.querySelector(".homeScreen .brandName")?.textContent?.trim()??"",
     celebration:document.querySelector(".homeScreen .celebrationBlock > h1")?.textContent?.trim()??"",
     gospel:document.querySelector(".homeScreen .gospelCard p")?.textContent?.trim()??"",
+    displayedDate:document.querySelector(".homeScreen .dateTitle b")?.textContent?.trim()??"",
   }));
   assert.equal(homeParity.celebrationTitles,1,"Home lost its single liturgical-day identity");
   assert.equal(homeParity.aroundMassActions,3,"Home lost the Prepare / Follow Mass / Give thanks triad");
@@ -171,6 +172,7 @@ try{
   assert.equal(homeParity.brand,"AD ORIENTEM");
   assert.ok(homeParity.celebration.length>0,"Home liturgical-day identity is blank");
   assert.ok(homeParity.gospel.length>0,"Home Gospel context is blank");
+  assert.match(homeParity.displayedDate,/^\d{2}\/\d{2}\/\d{4}$/,"Home date is not DD/MM/YYYY");
   const designBaseline=await page.evaluate(()=>({
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
@@ -274,12 +276,14 @@ try{
     progress:document.querySelector("#ao-calendar-modular-root .aoCalV2Progress i")?.style?.width??"",
     weekScrollable:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalV2Week");return x?x.scrollWidth>=x.clientWidth:false})(),
     rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
+    displayedDate:document.querySelector("#ao-calendar-modular-root .aoCalV2DayNav strong")?.textContent?.trim()??"",
   }));
   assert.equal(calendarDay.version,"modular-calendar-v2-liturgical-year","Calendar did not activate the v2 owner");
   assert.ok(calendarDay.identity.length>0,"Calendar selected feast identity is blank");
   assert.ok(calendarDay.season.length>0,"Calendar selected liturgical period is blank");
   assert.match(calendarDay.progress,/\d+(?:\.\d+)?%/,"Calendar period progress is missing");
   assert.equal(calendarDay.weekScrollable,true,"Calendar week context does not remain touch-scrollable on phone");
+  assert.match(calendarDay.displayedDate,/^\d{2}\/\d{2}\/\d{4}$/,"Calendar Day date is not DD/MM/YYYY");
   const calendarDesign=await page.evaluate(()=>({
     displayFont:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalV2Hero h2")).fontFamily,
     bodyFont:getComputedStyle(document.getElementById("ao-calendar-modular-root")).fontFamily,
