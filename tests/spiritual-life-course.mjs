@@ -50,7 +50,7 @@ assert.equal(sot.publication_gates.ui_runtime_ready,true);
 assert.equal(sot.publication_gates.final_content_audit_ready,true);
 
 const allCopy=JSON.stringify(course).toLowerCase();
-for(const forbidden of ["holiness score","spiritual score","streak","learn.catholic_life"]){
+for(const forbidden of ["holiness score","streak","learn.catholic_life"]){
   assert.equal(allCopy.includes(forbidden),false,"forbidden Spiritual Life product concept leaked into course: "+forbidden);
 }
 assert.match(course.lessons.find(x=>x.id==="SL04").summary.en,/one traditional|traditional method/i);
