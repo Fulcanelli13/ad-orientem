@@ -38,7 +38,7 @@ for(const lesson of course.lessons){
   }
 }
 
-assert.equal(used.size,75,"not every Spiritual Life SOT claim is represented in user-facing lesson copy");
+assert.equal(used.size,76,"not every Spiritual Life SOT claim is represented in user-facing lesson copy");
 assert.equal([...claimSet].filter(id=>!used.has(id)).length,0);
 
 assert.equal(sot.publication_gates.research_complete,true);
