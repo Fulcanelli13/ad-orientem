@@ -29,7 +29,7 @@ assert.deepEqual(
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
 assert.deepEqual(
   LEARN_LAYOUT.sections.flatMap(section=>section.items.filter(item=>item.featured).map(item=>item.id)),
-  ["learn.catechism.daily","learn.mass"],
+  ["learn.catechism.daily","learn.mass","learn.catholic_life"],
   "locked Learn featured-card ownership changed",
 );
 
