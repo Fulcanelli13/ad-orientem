@@ -36,7 +36,13 @@ assert.equal(auditGeoArea(culturalScope).length, 0);
 
 for (const place of seed.places) {
   assert.equal(auditPlace(place).length, 0, place.place_id);
-  assert.equal(isMapPublishablePlaceGeo(place.geo, place.address?.country_code), true, place.place_id+" geo is not publishable");
+  const publishable=isMapPublishablePlaceGeo(place.geo, place.address?.country_code);
+  if(place.geo?.lat!==null&&place.geo?.lat!==undefined){
+    assert.equal(publishable,true,place.place_id+" geo is not publishable");
+  }else{
+    assert.equal(publishable,false,place.place_id+" unexpectedly published address-only geo");
+    assert.ok(place.address?.city||place.address?.formatted,place.place_id+" address-only Place lost usable address");
+  }
 }
 assert.deepEqual(
   seed.places.map(place => place.place_id).sort(),
@@ -44,11 +50,16 @@ assert.deepEqual(
     "place:FR:sanctuaire-notre-dame-de-laghet",
     "place:FR:sanctuaire-notre-dame-de-lourdes",
     "place:FR:sanctuaire-sacre-coeur-paray",
+    "place:FR:chartres-notre-dame",
+    "place:FR:sainte-anne-d-auray",
+    "place:IE:knock-shrine",
+    "place:IE:lough-derg-station-island",
+    "place:MU:pere-laval-sainte-croix",
   ].sort(),
 );
 
 const chartres = {
-  place_id: "place:FR:chartres-notre-dame",
+  place_id: "place:FR:test-chartres",
   name: { official: "Cathédrale Notre-Dame de Chartres", aliases: ["Chartres Cathedral"] },
   place_type: "cathedral",
   geo_area_ids: ["geo:country:FR"],
@@ -102,7 +113,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 5,
-  places: 4,
+  places: 9,
   directoryPlaceLinks: 1,
 });
 
