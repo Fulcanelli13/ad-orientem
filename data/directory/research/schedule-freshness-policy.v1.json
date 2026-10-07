@@ -1,0 +1,25 @@
+{
+  "schema": "AO_DIRECTORY_SCHEDULE_FRESHNESS_POLICY_V1",
+  "version": "1.0.0",
+  "effective_date": "2026-10-08",
+  "rules": {
+    "research_current_mass": {
+      "review_days": 120,
+      "action_on_due": "REVIEW_REQUIRED",
+      "auto_delete": false,
+      "rationale": "Recurring provider/parish schedules may drift; stale records remain visible only with explicit review state rather than being silently treated as fresh."
+    },
+    "seasonal_or_occasional": {
+      "action": "DO_NOT_PUBLISH_AS_CURRENT_RECURRING_MASS"
+    },
+    "suspended_public_mass": {
+      "action": "EXCLUDE_FROM_FIND"
+    }
+  },
+  "source_priority": [
+    "current local apostolate/parish schedule",
+    "current provider national schedule",
+    "current official bulletin/calendar",
+    "provider location summary"
+  ]
+}
