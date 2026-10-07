@@ -55,28 +55,102 @@
   "caveat": "Provider identity and current official-source listing do not by themselves prove a public Mass schedule. Rows with unaudited or non-Mass statuses are projected as SOURCE_ASSERTION rather than MASS.",
   "publication_gate": {
     "live_runtime_records": 27,
-    "live_current_mass_records": 25,
+    "live_current_mass_records": 26,
     "federated_supplement_records": 98,
-    "federated_current_mass_records": 35,
-    "publishable_current_mass_total": 60,
+    "federated_current_mass_records": 84,
+    "publishable_current_mass_total": 110,
+    "nonpublishable_total": 15,
     "provider_presence_only_total": 5,
-    "mass_eligibility_pending_total": 60
+    "public_mass_suspended_total": 1,
+    "restricted_or_special_access_total": 2,
+    "seasonal_or_occasional_total": 5,
+    "mass_eligibility_pending_total": 2
   },
   "provider_presence_only_candidate_ids": [
-    "ICKSP-STG-047",
-    "ICKSP-STG-055",
+    "ICKSP-STG-020",
+    "ICKSP-STG-081",
     "ICKSP-STG-104",
     "ICKSP-STG-110",
     "ICKSP-STG-113"
   ],
   "conditional_mass_evidence_not_promoted_ids": [
     "ICKSP-STG-067",
-    "ICKSP-STG-099",
     "ICKSP-STG-102",
     "ICKSP-STG-105",
     "ICKSP-STG-106",
-    "ICKSP-STG-107",
-    "ICKSP-STG-124"
+    "ICKSP-STG-107"
   ],
-  "publication_rule": "Find a Mass requires a live Mass schedule or explicit current public-Mass evidence. Provider presence, seasonal/occasional passage Masses, school-chapel evidence and contact-for-schedule records remain research assertions until a current public schedule clears the gate."
+  "publication_rule": "Find a Mass requires a current recurring public Mass established by a first-party source. The eligibility pass distinguishes suspended, restricted/special-access, seasonal/occasional, provider/non-Mass, and genuinely unresolved schedule cases instead of collapsing them into one pending bucket.",
+  "bulk_eligibility_pass": {
+    "verified_on": "2026-10-07",
+    "newly_promoted_federated_candidates": 49,
+    "newly_recovered_live_mass_records": 1,
+    "newly_publishable_total": 50,
+    "rule": "A candidate clears Find only when a current first-party source establishes a recurring public Mass. Seasonal/occasional passage Masses, restricted/school settings, suspended public Masses, non-Mass houses and rows without published current times remain outside Find."
+  },
+  "newly_promoted_candidate_ids": [
+    "ICKSP-STG-001",
+    "ICKSP-STG-002",
+    "ICKSP-STG-003",
+    "ICKSP-STG-004",
+    "ICKSP-STG-005",
+    "ICKSP-STG-006",
+    "ICKSP-STG-007",
+    "ICKSP-STG-008",
+    "ICKSP-STG-009",
+    "ICKSP-STG-010",
+    "ICKSP-STG-011",
+    "ICKSP-STG-012",
+    "ICKSP-STG-013",
+    "ICKSP-STG-014",
+    "ICKSP-STG-015",
+    "ICKSP-STG-016",
+    "ICKSP-STG-017",
+    "ICKSP-STG-018",
+    "ICKSP-STG-021",
+    "ICKSP-STG-022",
+    "ICKSP-STG-023",
+    "ICKSP-STG-024",
+    "ICKSP-STG-025",
+    "ICKSP-STG-026",
+    "ICKSP-STG-027",
+    "ICKSP-STG-029",
+    "ICKSP-STG-030",
+    "ICKSP-STG-031",
+    "ICKSP-STG-032",
+    "ICKSP-STG-033",
+    "ICKSP-STG-034",
+    "ICKSP-STG-035",
+    "ICKSP-STG-036",
+    "ICKSP-STG-037",
+    "ICKSP-STG-038",
+    "ICKSP-STG-039",
+    "ICKSP-STG-040",
+    "ICKSP-STG-043",
+    "ICKSP-STG-054",
+    "ICKSP-STG-062",
+    "ICKSP-STG-068",
+    "ICKSP-STG-070",
+    "ICKSP-STG-072",
+    "ICKSP-STG-073",
+    "ICKSP-STG-076",
+    "ICKSP-STG-077",
+    "ICKSP-STG-078",
+    "ICKSP-STG-079",
+    "ICKSP-STG-080"
+  ],
+  "live_recovered_mass_candidate_ids": [
+    "ICKSP-STG-055"
+  ],
+  "public_mass_suspended_candidate_ids": [
+    "ICKSP-STG-047"
+  ],
+  "restricted_or_special_access_candidate_ids": [
+    "ICKSP-STG-019",
+    "ICKSP-STG-099"
+  ],
+  "no_published_current_times_candidate_ids": [
+    "ICKSP-STG-028",
+    "ICKSP-STG-124"
+  ]
 }
