@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { HOME_ENRICHER_ICON_ASSET_IDS } from "../src/home/enrichers.js";
 import {
   AO_APP_SURFACE_ASSET_IDS,
@@ -10,6 +11,7 @@ import {
   canonicalAssetIdForPrayRoute,
   canonicalAssetIdForSurface,
   getCanonicalAsset,
+  resolveCanonicalAssetUrl,
 } from "../src/assets/asset-registry.js";
 
 assert.deepEqual(AO_APP_SURFACE_ASSET_IDS,{
@@ -104,8 +106,8 @@ for(const file of [
 const productionHost=readFileSync("index.html","utf8");
 const embeddedSymbol=id=>productionHost.includes(`id="${id}"`)||productionHost.includes(`id='${id}'`);
 const physicalCanonical=id=>{
-  const record=getCanonicalAsset(id);
-  return Boolean(record?.path&&existsSync(record.path));
+  const url=resolveCanonicalAssetUrl(id);
+  return Boolean(url&&existsSync(fileURLToPath(url)));
 };
 
 for(const id of Object.values(AO_APP_SURFACE_ASSET_IDS)){
@@ -117,6 +119,7 @@ const presentationConsumers=new Set([
   ...Object.values(PRAY_HOME_ROUTE_ASSET_IDS),
   ...Object.values(HOME_ENRICHER_ICON_ASSET_IDS),
   "ao-ui-back","ao-ui-close","ao-ui-next","ao-ui-previous","ao-ui-search",
+  "ao-live-blessing",
 ]);
 const unresolved=[...presentationConsumers].filter(id=>!physicalCanonical(id)&&!embeddedSymbol(id));
 assert.deepEqual(unresolved,[],"current production presentation references unresolved canonical assets");
