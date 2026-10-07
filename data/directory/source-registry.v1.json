@@ -1,0 +1,59 @@
+{
+  "schema": "AO_DIRECTORY_SOURCE_REGISTRY_V1",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-07",
+  "sources": [
+    {
+      "id": "SRC_SSPX_MAP_API",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Society of Saint Pius X",
+      "title": "SSPX public Mass locations and schools API",
+      "url": "https://map.fsspx.org/en/api",
+      "apiBase": "https://map.fsspx.org/api/v1",
+      "authority": "PRIMARY",
+      "retrieval": "automated",
+      "notes": "Public read-only API; API documentation states it is refreshed four times a day and exposes places, schedules, contacts and GeoJSON."
+    },
+    {
+      "id": "SRC_SSPX_UNA_CUM_POLICY",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Society of Saint Pius X — District of the USA",
+      "title": "Interview with Bishop Bernard Fellay on SSPX, the Mass, Traditionis Custodes — Part 2",
+      "url": "https://sspx.org/en/news/interview-bishop-bernard-fellay-sspx-mass-traditionis-custodes-part-2-27435",
+      "authority": "PRIMARY_FOR_SELF_DESCRIPTION",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.SSPX.communion_profile.recognises_current_pontiff",
+        "community.SSPX.communion_profile.pope_named_in_canon",
+        "community.SSPX.communion_profile.ordinary_named_in_canon"
+      ]
+    },
+    {
+      "id": "SRC_SSPX_UNA_CUM_2026",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Society of Saint Pius X — Saint Pius V Chapel",
+      "title": "Invalid Punishments, Valid Sacraments",
+      "url": "https://mukwonago.wi.sspx.org/en/news/invalid-punishments-valid-sacraments-60025",
+      "authority": "PRIMARY_FOR_SELF_DESCRIPTION",
+      "publishedAt": "2026-07-07",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.SSPX.communion_profile.recognises_current_pontiff",
+        "community.SSPX.communion_profile.pope_named_in_canon"
+      ]
+    },
+    {
+      "id": "SRC_DDF_SSPX_2026_07_02",
+      "sourceType": "HOLY_SEE_OFFICIAL",
+      "publisher": "Dicastery for the Doctrine of the Faith",
+      "title": "Explanatory Note — 2 July 2026",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html",
+      "authority": "PRIMARY_FOR_HOLY_SEE_STATUS",
+      "publishedAt": "2026-07-02",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.SSPX.status_assertions"
+      ]
+    }
+  ]
+}
