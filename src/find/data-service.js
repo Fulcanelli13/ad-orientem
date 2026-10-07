@@ -61,7 +61,13 @@ export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sourc
   });
 }
 export function publishableDirectoryRecords(records){
-  return safeArray(records).filter(record=>auditVenue(record?.venue).length===0);
+  return safeArray(records).filter(record=>{
+    if(auditVenue(record?.venue).length!==0)return false;
+    const ministries=safeArray(record?.ministries);
+    const icksp=ministries.filter(m=>m?.community_id==="ICKSP");
+    if(icksp.length&&!icksp.some(m=>safeArray(m?.schedules).length>0))return false;
+    return true;
+  });
 }
 export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PROVIDERS}={}){
   const [statusData,communityData,coverageData]=await Promise.all([
