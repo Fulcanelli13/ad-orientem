@@ -1153,6 +1153,11 @@ export const AO_SHARED_IDENTITY_MAPPINGS=Object.freeze([
     "reason": "The Confirmation lay guide uses the active Guides identity; V4 has no dedicated Confirmation formation icon."
   },
   {
+    "route": "learn.rites.holy_orders",
+    "asset_id": "ao-rich-guides",
+    "reason": "Holy Orders is a formation guide; V4 has no dedicated ordination/vocation formation icon, so the canonical Guides identity is reused rather than a Mass priest-position asset."
+  },
+  {
     "route": "learn.rites.matrimony",
     "asset_id": "ao-rich-guides",
     "reason": "The Matrimony lay guide intentionally uses the active Guides identity rather than inventing a sacrament-specific icon."
@@ -1193,6 +1198,7 @@ export const AO_LEARN_ROUTE_ASSET_IDS=Object.freeze({
   "learn.rites.baptism":"ao-rich-guides",
   "learn.rites.first_communion":"ao-rich-eucharistic-life",
   "learn.rites.confirmation":"ao-rich-guides",
+  "learn.rites.holy_orders":"ao-rich-guides",
   "learn.rites.matrimony":"ao-rich-guides",
   "learn.serve_mass.responses":"ao-refined-study",
   "learn.scapular":"ao-rich-our-lady-marian-devotions",
