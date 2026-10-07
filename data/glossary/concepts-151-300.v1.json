@@ -1469,7 +1469,18 @@
         "SRC-HIST-VESTMENTS-CE"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The proper outer vestment of the deacon at solemn Mass and certain other liturgical functions.",
+        "fr": "Ornement extérieur propre au diacre à la Messe solennelle et dans certaines autres fonctions liturgiques."
+      },
+      "explanation": {
+        "en": "The dalmatic is distinct from the priest’s chasuble and the subdeacon’s tunicle. In traditional Roman ceremonial its use identifies the deacon’s liturgical role within the solemn ministry.",
+        "fr": "La dalmatique se distingue de la chasuble du prêtre et de la tunique du sous-diacre. Dans le cérémonial romain traditionnel, son usage manifeste le rôle liturgique du diacre dans le ministère solennel."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-VESTMENTS-CE"
+      ]
     },
     {
       "id": "G202",
@@ -1487,7 +1498,18 @@
         "SRC-HIST-VESTMENTS-CE"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The proper outer vestment of the subdeacon in the traditional Roman solemn Mass.",
+        "fr": "Ornement extérieur propre au sous-diacre dans la Messe solennelle romaine traditionnelle."
+      },
+      "explanation": {
+        "en": "The tunicle resembles the dalmatic but belongs to the subdeacon’s role in the older Roman ceremonial. It is therefore a PROFILE_1962/HISTORICAL object rather than a current universal vestment requirement.",
+        "fr": "La tunique ressemble à la dalmatique mais appartient au rôle du sous-diacre dans l’ancien cérémonial romain. Elle relève donc du profil 1962/historique et non d’une obligation vestimentaire universelle actuelle."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-VESTMENTS-CE"
+      ]
     },
     {
       "id": "G203",
@@ -1505,7 +1527,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A full liturgical cloak worn by clergy in processions, Benediction and other functions where the chasuble is not used.",
+        "fr": "Grand manteau liturgique porté par le clergé lors des processions, du Salut et d’autres fonctions où la chasuble n’est pas employée."
+      },
+      "explanation": {
+        "en": "The cope is not a Mass vestment in the strict sense and is used in a wide range of non-Eucharistic or processional rites. Its use depends on the ceremony and the minister.",
+        "fr": "La chape n’est pas, au sens strict, un ornement de Messe et s’emploie dans de nombreux rites non eucharistiques ou processionnels. Son usage dépend de la cérémonie et du ministre."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G204",
@@ -1523,7 +1556,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A long veil worn over the shoulders and used to cover the hands when carrying or handling certain sacred objects, especially the Blessed Sacrament.",
+        "fr": "Long voile porté sur les épaules et servant à couvrir les mains lors du port ou de la manipulation de certains objets sacrés, notamment le Saint-Sacrement."
+      },
+      "explanation": {
+        "en": "The humeral veil is especially associated with Benediction and Eucharistic processions, but it also appears in other ceremonial contexts. Its colour and use depend on the rite.",
+        "fr": "Le voile huméral est particulièrement associé au Salut et aux processions eucharistiques, mais il apparaît aussi dans d’autres contextes cérémoniels. Sa couleur et son usage dépendent du rite."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G205",
@@ -1541,7 +1585,18 @@
         "SRC-HIST-VESTMENTS-CE"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The cord worn around the waist over the alb.",
+        "fr": "Cordon porté autour de la taille sur l’aube."
+      },
+      "explanation": {
+        "en": "The cincture secures the alb and belongs to traditional liturgical vesture. Its use is practical and symbolic, but the precise vesting customs vary by rite and period.",
+        "fr": "Le cordon maintient l’aube et appartient au vêtement liturgique traditionnel. Son usage est pratique et symbolique, mais les coutumes d’habillement précises varient selon les rites et les époques."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-VESTMENTS-CE"
+      ]
     },
     {
       "id": "G206",
@@ -1559,7 +1614,18 @@
         "SRC-HIST-VESTMENTS-CE"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A white linen vestment with wide sleeves worn over the cassock by clergy and servers in many liturgical functions.",
+        "fr": "Vêtement blanc à larges manches porté sur la soutane par le clergé et les servants dans de nombreuses fonctions liturgiques."
+      },
+      "explanation": {
+        "en": "The surplice is shorter and differently cut from the alb. It is common in choir, serving, blessings and other rites, but it does not replace the alb where the rubrics require the latter.",
+        "fr": "Le surplis est plus court et différemment taillé que l’aube. Il est courant au chœur, au service, lors des bénédictions et d’autres rites, mais ne remplace pas l’aube lorsque les rubriques exigent celle-ci."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-VESTMENTS-CE"
+      ]
     },
     {
       "id": "G207",
@@ -1577,7 +1643,18 @@
         "SRC-HIST-CASSOCK"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The long clerical garment traditionally worn as ordinary choir or clerical dress.",
+        "fr": "Long vêtement clérical traditionnellement porté comme tenue ordinaire ou de chœur."
+      },
+      "explanation": {
+        "en": "Cassock colour and trimming can indicate rank or institute, but the basic garment is not itself a sacramental vestment. Particular law and custom govern current clerical dress.",
+        "fr": "La couleur et les garnitures de la soutane peuvent indiquer le rang ou l’institut, mais le vêtement de base n’est pas en lui-même un ornement sacramentel. Le droit particulier et la coutume régissent la tenue cléricale actuelle."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CASSOCK"
+      ]
     },
     {
       "id": "G208",
@@ -1595,7 +1672,18 @@
         "SRC-HIST-BIRETTA"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A square clerical cap traditionally worn by certain clergy in choir and liturgical ceremonial.",
+        "fr": "Coiffure cléricale carrée traditionnellement portée par certains membres du clergé au chœur et dans le cérémonial liturgique."
+      },
+      "explanation": {
+        "en": "The biretta is a traditional clerical and ceremonial article whose colour and entitlement vary with rank and usage. It is not an essential vestment for the validity of any sacrament.",
+        "fr": "La barrette est un élément traditionnel de tenue cléricale et cérémonielle dont la couleur et le droit au port varient selon le rang et l’usage. Elle n’est pas un ornement essentiel à la validité d’un sacrement."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-BIRETTA"
+      ]
     },
     {
       "id": "G209",
@@ -1613,7 +1701,18 @@
         "SRC-HIST-ROCHET"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A white, close-fitting choir garment worn by bishops and certain prelates over the cassock.",
+        "fr": "Vêtement blanc ajusté de chœur porté par les évêques et certains prélats sur la soutane."
+      },
+      "explanation": {
+        "en": "The rochet resembles a shortened alb but is a prelatial choir garment, not a substitute for the alb at Mass. Its use is governed by rank and ceremonial law.",
+        "fr": "Le rochet ressemble à une aube raccourcie mais constitue un vêtement prélatial de chœur, non un substitut de l’aube à la Messe. Son usage dépend du rang et du droit cérémoniel."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-ROCHET"
+      ]
     },
     {
       "id": "G210",
@@ -1631,7 +1730,18 @@
         "SRC-HIST-SOLIDEO"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A small skullcap worn by clerics entitled to it, with colour traditionally corresponding to rank.",
+        "fr": "Petite calotte portée par les clercs qui y ont droit, la couleur correspondant traditionnellement au rang."
+      },
+      "explanation": {
+        "en": "The zucchetto or solideo is clerical dress rather than a sacramental vestment. Its use and colour are determined by ecclesiastical custom and office.",
+        "fr": "La calotte ou solideo relève de la tenue cléricale plutôt que de l’ornement sacramentel. Son usage et sa couleur sont déterminés par la coutume ecclésiastique et la charge."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-SOLIDEO"
+      ]
     },
     {
       "id": "G211",
@@ -1649,7 +1759,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A veil placed over the prepared chalice in the traditional Roman Mass.",
+        "fr": "Voile placé sur le calice préparé dans la Messe romaine traditionnelle."
+      },
+      "explanation": {
+        "en": "The chalice veil belongs to the traditional arrangement of chalice, paten, pall, corporal and burse. It is distinct from the humeral veil and ciborium veil.",
+        "fr": "Le voile de calice appartient à l’agencement traditionnel du calice, de la patène, de la pale, du corporal et de la bourse. Il se distingue du voile huméral et du voile de ciboire."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G212",
@@ -1667,7 +1788,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A stiff liturgical case traditionally used to hold the folded corporal.",
+        "fr": "Étui liturgique rigide traditionnellement utilisé pour contenir le corporal plié."
+      },
+      "explanation": {
+        "en": "The burse forms part of the traditional chalice set and is normally placed over the chalice veil before Mass. It should not be confused with an ordinary pouch or with modern vessel cases.",
+        "fr": "La bourse fait partie de l’ensemble traditionnel du calice et est normalement placée sur le voile de calice avant la Messe. Elle ne doit pas être confondue avec une pochette ordinaire ni avec les étuis modernes pour vases sacrés."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G213",
@@ -1685,7 +1817,18 @@
         "SRC-HIST-ALTAR-LITURGY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Three cards placed on or near the altar containing fixed texts used by the celebrant during the traditional Roman Mass.",
+        "fr": "Trois cartes placées sur ou près de l’autel contenant des textes fixes utilisés par le célébrant pendant la Messe romaine traditionnelle."
+      },
+      "explanation": {
+        "en": "Altar cards support the celebrant by displaying prayers such as parts of the Canon, lavabo and Last Gospel texts. They belong to the traditional altar arrangement and are not independent liturgical books.",
+        "fr": "Les canons d’autel aident le célébrant en présentant des prières telles que certaines parties du Canon, du lavabo et du Dernier Évangile. Ils appartiennent à l’agencement traditionnel de l’autel et ne constituent pas des livres liturgiques indépendants."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-ALTAR-LITURGY"
+      ]
     },
     {
       "id": "G214",
@@ -1703,7 +1846,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The liturgical book containing the texts and rubrics for the celebration of Mass in the Roman rite.",
+        "fr": "Livre liturgique contenant les textes et rubriques pour la célébration de la Messe dans le rite romain."
+      },
+      "explanation": {
+        "en": "For Ad Orientem, ‘Roman Missal’ often refers specifically to the 1962 typical edition when discussing the traditional Mass. Current Roman Missals are distinct editions and must not be silently conflated with the 1962 text.",
+        "fr": "Dans Ad Orientem, « Missel romain » désigne souvent spécifiquement l’édition typique de 1962 lorsqu’il est question de la Messe traditionnelle. Les missels romains actuels sont des éditions distinctes et ne doivent pas être confondus silencieusement avec le texte de 1962."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G215",
@@ -1721,7 +1875,18 @@
         "SRC-HIST-ALTAR-LITURGY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The support on the altar that holds the Missal for the celebrant.",
+        "fr": "Support placé sur l’autel et destiné à porter le Missel pour le célébrant."
+      },
+      "explanation": {
+        "en": "Traditional ceremonial directs the movement of the Missal and its stand between the Epistle and Gospel sides at appointed moments. The stand itself has no sacramental significance apart from its liturgical function.",
+        "fr": "Le cérémonial traditionnel règle le déplacement du Missel et de son pupitre entre les côtés de l’Épître et de l’Évangile aux moments prescrits. Le pupitre n’a pas de signification sacramentelle propre au-delà de sa fonction liturgique."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-ALTAR-LITURGY"
+      ]
     },
     {
       "id": "G216",
@@ -1739,7 +1904,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The washing of the celebrant’s fingers at the offertory, accompanied by the prayer beginning Lavabo inter innocentes manus meas.",
+        "fr": "Lavage des doigts du célébrant à l’offertoire, accompagné de la prière commençant par Lavabo inter innocentes manus meas."
+      },
+      "explanation": {
+        "en": "‘Lavabo’ names both the action and, by extension, the associated prayer. In the traditional Mass it occurs after the offertory incensation where incense is used, or after the offering rites in Low Mass.",
+        "fr": "« Lavabo » désigne à la fois l’action et, par extension, la prière qui l’accompagne. Dans la Messe traditionnelle, il a lieu après l’encensement de l’offertoire lorsqu’on emploie l’encens, ou après les rites d’offrande à la Messe basse."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G217",
@@ -1757,7 +1933,18 @@
         "SRC-OCONNELL-MASS-GENERAL-1962"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A towel used by the celebrant to dry the fingers after the lavabo.",
+        "fr": "Linge utilisé par le célébrant pour sécher les doigts après le lavabo."
+      },
+      "explanation": {
+        "en": "The manuterge is a practical liturgical linen associated with the washing of hands. It is distinct from the purificator, which is used with the chalice and other sacred vessels.",
+        "fr": "Le manuterge est un linge liturgique pratique associé au lavage des mains. Il se distingue du purificatoire, qui est utilisé avec le calice et les autres vases sacrés."
+      },
+      "definition_source_ids": [
+        "SRC-OCONNELL-MASS-GENERAL-1962"
+      ]
     },
     {
       "id": "G218",
@@ -1775,7 +1962,18 @@
         "SRC-CIC83-938-940"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A lamp kept burning near the place where the Blessed Sacrament is reserved.",
+        "fr": "Lampe maintenue allumée près du lieu où le Saint-Sacrement est conservé."
+      },
+      "explanation": {
+        "en": "The sanctuary lamp signals Eucharistic reservation and expresses honour to the Blessed Sacrament. Its form and fuel can vary according to law and legitimate custom.",
+        "fr": "La lampe du sanctuaire signale la réserve eucharistique et exprime l’honneur dû au Saint-Sacrement. Sa forme et son combustible peuvent varier selon le droit et la coutume légitime."
+      },
+      "definition_source_ids": [
+        "SRC-CIC83-938-940"
+      ]
     },
     {
       "id": "G219",
@@ -1793,7 +1991,18 @@
         "SRC-HIST-ALTAR-STONE"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A consecrated stone containing relics and used historically in or upon an altar for the celebration of Mass.",
+        "fr": "Pierre consacrée contenant des reliques et historiquement utilisée dans ou sur un autel pour la célébration de la Messe."
+      },
+      "explanation": {
+        "en": "The altar stone belongs especially to older Latin discipline and portable-altars practice. It should not be presented as a current universal requirement for every altar.",
+        "fr": "La pierre d’autel appartient surtout à l’ancienne discipline latine et à la pratique des autels portatifs. Elle ne doit pas être présentée comme une exigence universelle actuelle pour tout autel."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-ALTAR-STONE"
+      ]
     },
     {
       "id": "G220",
@@ -1811,7 +2020,18 @@
         "SRC-CDF-RELICS-2017"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A container or shrine designed to hold and honour relics.",
+        "fr": "Réceptacle ou écrin destiné à contenir et honorer des reliques."
+      },
+      "explanation": {
+        "en": "A reliquary protects relics and presents them for lawful veneration. The object itself is not the relic and should not be confused with a tabernacle or pyx used for the Blessed Sacrament.",
+        "fr": "Un reliquaire protège les reliques et les présente à la vénération légitime. L’objet lui-même n’est pas la relique et ne doit pas être confondu avec un tabernacle ou une pyxide utilisés pour le Saint-Sacrement."
+      },
+      "definition_source_ids": [
+        "SRC-CDF-RELICS-2017"
+      ]
     },
     {
       "id": "G221",
@@ -1829,7 +2049,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The minister who carries and manages the thurible and incense during liturgical rites.",
+        "fr": "Ministre qui porte et manie l’encensoir et l’encens pendant les rites liturgiques."
+      },
+      "explanation": {
+        "en": "The thurifer’s actions are governed by detailed ceremonial cues: preparing the coals, presenting the incense, carrying the thurible and assisting at incensations. The role is ceremonial, not a distinct sacramental order.",
+        "fr": "Les actions du thuriféraire sont réglées par des indications cérémonielles précises : préparation des charbons, présentation de l’encens, port de l’encensoir et assistance aux encensements. Il s’agit d’un rôle cérémoniel, non d’un ordre sacramentel distinct."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G222",
@@ -1847,7 +2078,18 @@
         "SRC-CIC17-CLERICAL-CURSUS"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A traditional minor-order minister associated especially with serving at the altar, lights and cruets; in current Latin law also an instituted ministry.",
+        "fr": "Ministre de l’ancien ordre mineur associé notamment au service de l’autel, aux cierges et aux burettes ; dans le droit latin actuel, également ministère institué."
+      },
+      "explanation": {
+        "en": "The historical minor order and the current instituted ministry of acolyte are related but not identical juridical forms. The glossary therefore treats acolyte as a multi-layer term.",
+        "fr": "L’ancien ordre mineur et le ministère institué actuel d’acolyte sont liés mais ne constituent pas la même forme juridique. Le glossaire traite donc « acolyte » comme un terme à plusieurs couches."
+      },
+      "definition_source_ids": [
+        "SRC-CIC17-CLERICAL-CURSUS"
+      ]
     },
     {
       "id": "G223",
@@ -1865,7 +2107,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The minister who carries the processional cross.",
+        "fr": "Ministre qui porte la croix de procession."
+      },
+      "explanation": {
+        "en": "The crucifer’s place and movements depend on the procession and ceremonial. The role is functional and may be fulfilled by different classes of server according to local and ritual practice.",
+        "fr": "La place et les déplacements du porte-croix dépendent de la procession et du cérémonial. Le rôle est fonctionnel et peut être assuré par différentes catégories de servants selon la pratique locale et rituelle."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G224",
@@ -1883,7 +2136,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A server who carries a torch or large candle at appointed moments of solemn liturgy.",
+        "fr": "Servant qui porte un flambeau ou un grand cierge aux moments prescrits de la liturgie solennelle."
+      },
+      "explanation": {
+        "en": "Torchbearers are especially associated with the Canon, elevations and Communion in traditional ceremonial. Their number and exact movements depend on the form of Mass and local ceremonial practice.",
+        "fr": "Les céroféraires sont particulièrement associés au Canon, aux élévations et à la Communion dans le cérémonial traditionnel. Leur nombre et leurs déplacements exacts dépendent de la forme de Messe et de la pratique cérémonielle locale."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G225",
@@ -1901,7 +2165,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The minister responsible for directing and coordinating the ceremonial execution of a liturgical function.",
+        "fr": "Ministre chargé de diriger et coordonner l’exécution cérémonielle d’une fonction liturgique."
+      },
+      "explanation": {
+        "en": "The Master of Ceremonies ensures that ministers, books, objects and movements follow the rubrics. The role is practical and ceremonial and does not itself confer sacramental authority.",
+        "fr": "Le maître de cérémonies veille à ce que les ministres, livres, objets et mouvements suivent les rubriques. Il s’agit d’un rôle pratique et cérémoniel qui ne confère pas en lui-même une autorité sacramentelle."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G226",
@@ -1919,7 +2194,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "In traditional solemn liturgy, the ordained ministers who exercise the principal ceremonial roles around the celebrant, especially deacon and subdeacon.",
+        "fr": "Dans la liturgie solennelle traditionnelle, ministres ordonnés qui exercent les principaux rôles cérémoniels autour du célébrant, notamment le diacre et le sous-diacre."
+      },
+      "explanation": {
+        "en": "The exact scope of ‘sacred ministers’ depends on historical and ritual context. In the 1962 Solemn Mass it commonly denotes the deacon and subdeacon assisting the priest celebrant.",
+        "fr": "L’étendue exacte de l’expression « ministres sacrés » dépend du contexte historique et rituel. Dans la Messe solennelle de 1962, elle désigne couramment le diacre et le sous-diacre qui assistent le prêtre célébrant."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G227",
@@ -1937,7 +2223,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The priest or bishop who presides at and offers the Mass or other liturgical function according to the rite.",
+        "fr": "Prêtre ou évêque qui préside et célèbre la Messe ou une autre fonction liturgique selon le rite."
+      },
+      "explanation": {
+        "en": "‘Celebrant’ describes a liturgical role in a given function. It does not by itself identify canonical office, jurisdiction, community affiliation or personal status.",
+        "fr": "« Célébrant » décrit un rôle liturgique dans une fonction donnée. Le terme n’identifie pas à lui seul une charge canonique, une juridiction, une affiliation communautaire ou un statut personnel."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G228",
@@ -1955,7 +2252,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A person who assists the celebrant and ministers at the altar according to the rubrics.",
+        "fr": "Personne qui assiste le célébrant et les ministres à l’autel selon les rubriques."
+      },
+      "explanation": {
+        "en": "In the traditional Low Mass the server gives responses and performs defined ceremonial tasks. ‘Server’ is a functional category and should not automatically be equated with the instituted ministry of acolyte.",
+        "fr": "Dans la Messe basse traditionnelle, le servant donne les réponses et accomplit des tâches cérémonielles déterminées. « Servant » est une catégorie fonctionnelle et ne doit pas être automatiquement assimilée au ministère institué d’acolyte."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G229",
@@ -1973,7 +2281,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A cross mounted on a staff and carried at the head or within a liturgical procession.",
+        "fr": "Croix fixée sur une hampe et portée en tête ou au sein d’une procession liturgique."
+      },
+      "explanation": {
+        "en": "The processional cross is a movable liturgical object and should be distinguished from a fixed altar crucifix or rood. Its place in the procession depends on the rite.",
+        "fr": "La croix de procession est un objet liturgique mobile et doit être distinguée d’un crucifix fixe d’autel ou d’un jubé crucifère. Sa place dans la procession dépend du rite."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G230",
@@ -1991,7 +2310,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A portable canopy carried over the Blessed Sacrament or, in some rites, over a dignitary during a procession.",
+        "fr": "Dais portatif porté au-dessus du Saint-Sacrement ou, dans certains rites, au-dessus d’un dignitaire pendant une procession."
+      },
+      "explanation": {
+        "en": "This portable processional canopy must be distinguished from G417, the fixed architectural baldachin over an altar. Search may show both senses but the canonical objects remain separate.",
+        "fr": "Ce dais processionnel portatif doit être distingué de G417, le baldaquin architectural fixe au-dessus d’un autel. La recherche peut afficher les deux sens, mais les objets canoniques restent distincts."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G231",
@@ -2009,7 +2339,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A fragrant substance burned in worship as a sign of honour, prayer and sanctification.",
+        "fr": "Substance aromatique brûlée dans le culte comme signe d’honneur, de prière et de sanctification."
+      },
+      "explanation": {
+        "en": "Incense is used according to the rite at altars, Gospel, offerings, Blessed Sacrament, clergy and faithful. Its use is liturgical and symbolic, not magical.",
+        "fr": "L’encens est utilisé selon le rite pour les autels, l’Évangile, les offrandes, le Saint-Sacrement, le clergé et les fidèles. Son usage est liturgique et symbolique, non magique."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G232",
@@ -2027,7 +2368,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The ritual act of honouring a person or sacred thing with incense.",
+        "fr": "Acte rituel d’honorer une personne ou une chose sacrée avec de l’encens."
+      },
+      "explanation": {
+        "en": "Incensation has prescribed direction, number of swings or ceremonial pattern according to the traditional rubrics. The app should therefore link the generic concept to exact context-specific cues.",
+        "fr": "L’encensement suit une direction, un nombre de coups ou un schéma cérémoniel prescrit selon les rubriques traditionnelles. L’application doit donc relier le concept général aux indications précises du contexte."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G233",
@@ -2045,7 +2397,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "An ordered liturgical or devotional movement of clergy and faithful from one place to another with prayer, chant or sacred objects.",
+        "fr": "Déplacement liturgique ou dévotionnel ordonné du clergé et des fidèles d’un lieu à un autre avec prière, chant ou objets sacrés."
+      },
+      "explanation": {
+        "en": "A procession is an action, not merely a calendar label. Ad Orientem therefore requires evidence that a procession actually occurs rather than inferring one from the feast alone.",
+        "fr": "Une procession est une action, non une simple étiquette de calendrier. Ad Orientem exige donc une preuve qu’une procession a effectivement lieu au lieu de la déduire uniquement de la fête."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G234",
@@ -2063,7 +2426,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The ceremonial procession by which ministers approach and enter the place of celebration at the beginning of a liturgical function.",
+        "fr": "Procession cérémonielle par laquelle les ministres s’approchent du lieu de célébration et y entrent au début d’une fonction liturgique."
+      },
+      "explanation": {
+        "en": "The exact entrance order varies by the form of Mass, ministers present and local ceremonial. It is distinct from devotional processions such as Corpus Christi or Rogations.",
+        "fr": "L’ordre exact d’entrée varie selon la forme de Messe, les ministres présents et le cérémonial local. Elle se distingue des processions dévotionnelles comme la Fête-Dieu ou les Rogations."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G235",
@@ -2081,7 +2455,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The antiphon Asperges me and the associated Sunday rite of sprinkling with holy water outside Paschaltide in the traditional Roman use.",
+        "fr": "Antienne Asperges me et rite dominical associé d’aspersion d’eau bénite hors du Temps pascal dans l’usage romain traditionnel."
+      },
+      "explanation": {
+        "en": "The term can refer to the chant or, by extension, the entire sprinkling rite. During Paschaltide the corresponding antiphon is Vidi aquam.",
+        "fr": "Le terme peut désigner le chant ou, par extension, l’ensemble du rite d’aspersion. Pendant le Temps pascal, l’antienne correspondante est Vidi aquam."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G236",
@@ -2099,7 +2484,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The Paschaltide antiphon and sprinkling rite replacing Asperges me in the traditional Roman use.",
+        "fr": "Antienne et rite d’aspersion du Temps pascal remplaçant Asperges me dans l’usage romain traditionnel."
+      },
+      "explanation": {
+        "en": "Vidi aquam is not an interchangeable stylistic alternative to Asperges me; the liturgical season determines which antiphon is appointed.",
+        "fr": "Vidi aquam n’est pas une variante stylistique interchangeable d’Asperges me ; le temps liturgique détermine l’antienne prescrite."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G237",
@@ -2117,7 +2513,18 @@
         "SRC-ROMRIT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A prayer or rite by which the Church invokes God’s favour upon persons, places or things.",
+        "fr": "Prière ou rite par lequel l’Église invoque la faveur de Dieu sur des personnes, lieux ou choses."
+      },
+      "explanation": {
+        "en": "Blessings belong to the Church’s sacramental life but are not all sacraments. Their minister, formula and effects depend on the liturgical book and law governing the particular blessing.",
+        "fr": "Les bénédictions appartiennent à la vie sacramentelle de l’Église mais ne sont pas toutes des sacrements. Leur ministre, leur formule et leurs effets dépendent du livre liturgique et du droit régissant la bénédiction concernée."
+      },
+      "definition_source_ids": [
+        "SRC-ROMRIT"
+      ]
     },
     {
       "id": "G238",
@@ -2135,7 +2542,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The ritual sprinkling of persons or things with holy water.",
+        "fr": "Aspersion rituelle de personnes ou de choses avec de l’eau bénite."
+      },
+      "explanation": {
+        "en": "Aspersion can form part of the Sunday Asperges/Vidi aquam rite, blessings and other rituals. The action is distinct from the aspergillum, the implement used to perform it.",
+        "fr": "L’aspersion peut faire partie du rite dominical Asperges/Vidi aquam, de bénédictions et d’autres rituels. L’action se distingue du goupillon, l’instrument utilisé pour l’accomplir."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G239",
@@ -2153,7 +2571,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A prescribed ceremonial kiss given to the altar, sacred objects or, in older ceremonial, between ministers as an act of reverence or liturgical exchange.",
+        "fr": "Baiser cérémoniel prescrit donné à l’autel, à des objets sacrés ou, dans l’ancien cérémonial, entre ministres comme acte de révérence ou d’échange liturgique."
+      },
+      "explanation": {
+        "en": "Liturgical kisses are technical gestures whose object and timing matter. They should not be interpreted through modern social conventions but according to the rite’s ceremonial meaning.",
+        "fr": "Les baisers liturgiques sont des gestes techniques dont l’objet et le moment importent. Ils ne doivent pas être interprétés selon les conventions sociales modernes mais selon le sens cérémoniel du rite."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G240",
@@ -2171,7 +2600,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The ceremonial exchange or giving of the peace in the traditional Roman liturgy.",
+        "fr": "Échange ou transmission cérémonielle de la paix dans la liturgie romaine traditionnelle."
+      },
+      "explanation": {
+        "en": "In Solemn Mass the pax can be transmitted hierarchically by the ministers according to the rubrics. It is distinct from a modern congregational greeting and from the general theological concept of peace.",
+        "fr": "Dans la Messe solennelle, la paix peut être transmise hiérarchiquement par les ministres selon les rubriques. Elle se distingue d’une salutation moderne de l’assemblée et du concept théologique général de paix."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G241",
@@ -2189,7 +2629,18 @@
         "PIUS-X-TRA-LE-SOLLECITUDINI-1903"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The liturgical plainchant proper to the Roman Church, traditionally associated with the Gregorian repertory.",
+        "fr": "Plain-chant liturgique propre à l’Église romaine, traditionnellement associé au répertoire grégorien."
+      },
+      "explanation": {
+        "en": "St Pius X gave Gregorian chant a normative place in Roman sacred music. The term refers to a real musical repertory and style, not merely any unaccompanied Latin singing.",
+        "fr": "Saint Pie X a donné au chant grégorien une place normative dans la musique sacrée romaine. Le terme désigne un véritable répertoire et un style musical, et non tout chant latin sans accompagnement."
+      },
+      "definition_source_ids": [
+        "PIUS-X-TRA-LE-SOLLECITUDINI-1903"
+      ]
     },
     {
       "id": "G242",
@@ -2207,7 +2658,18 @@
         "SRC-HIST-PLAINCHANT"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "Unaccompanied monophonic liturgical chant based on a single melodic line, including Gregorian and related repertories.",
+        "fr": "Chant liturgique monodique non accompagné fondé sur une seule ligne mélodique, comprenant le grégorien et des répertoires apparentés."
+      },
+      "explanation": {
+        "en": "Plainchant is broader than Gregorian chant. Not every form of plainchant belongs to the Gregorian repertory, though Gregorian chant is the principal Roman example.",
+        "fr": "Le plain-chant est plus large que le chant grégorien. Toute forme de plain-chant n’appartient pas au répertoire grégorien, bien que le chant grégorien en soit l’exemple romain principal."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PLAINCHANT"
+      ]
     },
     {
       "id": "G243",
@@ -2225,7 +2687,18 @@
         "SRC-HIST-SCHOLA-CANTORUM"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A body of singers trained to render the liturgical chant.",
+        "fr": "Groupe de chanteurs formés pour exécuter le chant liturgique."
+      },
+      "explanation": {
+        "en": "Schola cantorum can historically mean a school or institution of singers as well as the performing group. In Ad Orientem the operational sense is the liturgical singing body whose parts are distinct from the priest’s and congregation’s.",
+        "fr": "Schola cantorum peut historiquement désigner une école ou institution de chantres ainsi que le groupe exécutant. Dans Ad Orientem, le sens opérationnel est celui du groupe liturgique dont les parties se distinguent de celles du prêtre et de l’assemblée."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-SCHOLA-CANTORUM"
+      ]
     },
     {
       "id": "G244",
@@ -2243,7 +2716,18 @@
         "SRC-HIST-CANTOR"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A singer who intones or leads liturgical chant.",
+        "fr": "Chantre qui entonne ou dirige le chant liturgique."
+      },
+      "explanation": {
+        "en": "The cantor can begin chants, sing solo verses or lead the schola according to the rite. The role should be distinguished from the broader choir or schola as a collective body.",
+        "fr": "Le chantre peut commencer les chants, chanter des versets solistes ou diriger la schola selon le rite. Le rôle doit être distingué du chœur ou de la schola considérés comme corps collectif."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-CANTOR"
+      ]
     },
     {
       "id": "G245",
@@ -2261,7 +2745,18 @@
         "PIUS-X-TRA-LE-SOLLECITUDINI-1903"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The body of singers who render the liturgical music.",
+        "fr": "Ensemble des chanteurs qui exécutent la musique liturgique."
+      },
+      "explanation": {
+        "en": "This musical sense of choir must be distinguished from G403, the architectural choir or chancel area. ‘Choir’ can also have clerical-community senses in historical texts, so context matters.",
+        "fr": "Ce sens musical de chœur doit être distingué de G403, le chœur architectural. « Chœur » peut aussi avoir des sens liés à la communauté cléricale dans les textes historiques ; le contexte est donc déterminant."
+      },
+      "definition_source_ids": [
+        "PIUS-X-TRA-LE-SOLLECITUDINI-1903"
+      ]
     },
     {
       "id": "G246",
@@ -2279,7 +2774,18 @@
         "SRC-HIST-ANTIPHON"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A liturgical chant or verse associated with psalmody and sung in alternation or as a framing text.",
+        "fr": "Chant ou verset liturgique associé à la psalmodie et chanté en alternance ou comme texte d’encadrement."
+      },
+      "explanation": {
+        "en": "In the Mass, chants such as the Introit, Offertory and Communion preserve antiphonal origins or form. ‘Antiphon’ should not be used as a generic synonym for every chant.",
+        "fr": "Dans la Messe, des chants comme l’Introït, l’Offertoire et la Communion conservent une origine ou une forme antiphonale. « Antienne » ne doit pas être employé comme synonyme générique de tout chant."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-ANTIPHON"
+      ]
     },
     {
       "id": "G247",
@@ -2297,7 +2803,18 @@
         "MR62-ORDINARY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A sacred poem or song from the biblical Book of Psalms used in prayer and liturgy.",
+        "fr": "Poème ou chant sacré du livre biblique des Psaumes employé dans la prière et la liturgie."
+      },
+      "explanation": {
+        "en": "Psalms permeate the Mass, Divine Office and devotional prayer. Their liturgical use can involve antiphons, tones, responsories and other musical forms distinct from the biblical text itself.",
+        "fr": "Les psaumes imprègnent la Messe, l’Office divin et la prière dévotionnelle. Leur usage liturgique peut comporter antiennes, tons, répons et autres formes musicales distinctes du texte biblique lui-même."
+      },
+      "definition_source_ids": [
+        "MR62-ORDINARY"
+      ]
     },
     {
       "id": "G248",
@@ -2315,7 +2832,18 @@
         "SRC-HIST-PSALMODY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A melodic formula used for chanting psalm verses, normally including intonation, reciting tone and cadence.",
+        "fr": "Formule mélodique utilisée pour chanter les versets des psaumes, comprenant normalement intonation, teneur et cadence."
+      },
+      "explanation": {
+        "en": "Psalm tones are functional chant formulas rather than complete melodies composed separately for every verse. Their detailed terminology belongs to the chant/Latin reference layer.",
+        "fr": "Les tons psalmodiques sont des formules fonctionnelles de chant plutôt que des mélodies complètes composées séparément pour chaque verset. Leur terminologie détaillée relève de la couche de référence chant/latin."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PSALMODY"
+      ]
     },
     {
       "id": "G249",
@@ -2333,7 +2861,18 @@
         "SRC-HIST-NEUME"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "A sign or group of signs used in medieval and Gregorian notation to represent one or more notes and their melodic movement.",
+        "fr": "Signe ou groupe de signes utilisé dans la notation médiévale et grégorienne pour représenter une ou plusieurs notes et leur mouvement mélodique."
+      },
+      "explanation": {
+        "en": "Neumes are notation symbols, not the sounds themselves. Their exact graphic form and rhythmic interpretation depend on the notation tradition and edition.",
+        "fr": "Les neumes sont des signes de notation, non les sons eux-mêmes. Leur forme graphique exacte et leur interprétation rythmique dépendent de la tradition de notation et de l’édition."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-NEUME"
+      ]
     },
     {
       "id": "G250",
@@ -2351,7 +2890,18 @@
         "SRC-HIST-PSALMODY"
       ],
       "status": "SOURCE_OWNER_LOCKED",
-      "definition_status": "TEXT_PENDING"
+      "definition_status": "SOURCE_BACKED",
+      "short_definition": {
+        "en": "The opening melodic formula by which a chant, psalm tone or liturgical item is begun.",
+        "fr": "Formule mélodique initiale par laquelle commence un chant, un ton psalmodique ou un élément liturgique."
+      },
+      "explanation": {
+        "en": "In psalmody, intonation is one component of the tone before the reciting pitch. In ceremonial usage, a cantor or celebrant may intone a chant before the schola or others continue it.",
+        "fr": "Dans la psalmodie, l’intonation est une composante du ton avant la teneur. Dans l’usage cérémoniel, un chantre ou le célébrant peut entonner un chant avant que la schola ou d’autres le poursuivent."
+      },
+      "definition_source_ids": [
+        "SRC-HIST-PSALMODY"
+      ]
     },
     {
       "id": "G251",
