@@ -6,7 +6,7 @@ import {
   buildMajorCelebrations,
   nextMajorCelebration,
 } from "../src/calendar/liturgical-year.js";
-import { v384Dates, v384Event, v384YearHTML, v384DisciplineHTML } from "../src/calendar/traditional-year-v384.js";
+import { v384Dates, v384Events, v384Event, v384YearHTML, v384DisciplineHTML } from "../src/calendar/traditional-year-v384.js";
 
 function assertContinuous(year) {
   assert.equal(year.periods.reduce((sum, period) => sum + period.days, 0), year.totalDays);
@@ -69,10 +69,26 @@ assert.deepEqual(traditional.emberSept,["2026-09-23","2026-09-25","2026-09-26"])
 const octoberEvent=v384Event("2026-10-07",{fr:false});
 assert.equal(octoberEvent?.key,"october");
 assert.equal(octoberEvent?.title,"Month of the Holy Rosary");
+const christKingEvents=v384Events("2026-10-25",{fr:false});
+assert.deepEqual(christKingEvents.map(x=>x.key),["christ-king","october"],"v38.4 must preserve concurrent Christ the King + October Rosary observances in priority order");
 const christKingEvent=v384Event("2026-10-25",{fr:false});
-assert.equal(christKingEvent?.key,"christ-king","specific Christ the King event must outrank generic October observance");
+assert.equal(christKingEvent?.key,"christ-king","compatibility primary event must remain the highest-priority donor event");
 const septEvent=v384Event("2026-02-01",{fr:false});
 assert.equal(septEvent?.key,"septuagesima");
+
+const christKingYear=v384YearHTML("2026-10-25",{fr:false});
+assert.equal((christKingYear.match(/Current \/ traditional status/g)||[]).length,2,"selected-date v38.4 year surface collapsed concurrent donor practices");
+assert.match(christKingYear,/Kingship of Christ/);
+assert.match(christKingYear,/Month of the Holy Rosary/);
+assert.match(christKingYear,/Pray the Rosary/);
+
+const holyThursdayEvents=v384Events(traditional.holyThursday,{fr:false});
+assert.deepEqual(holyThursdayEvents[0]?.actions?.map(x=>x[0]),["pray.adoration","today.calendar"],"Holy Thursday donor actions were simplified");
+const holySoulsEvents=v384Events("2026-11-02",{fr:false});
+assert.deepEqual(holySoulsEvents[0]?.actions?.map(x=>x[0]),["pray.penitential_psalms","mass.intentions"],"Holy Souls donor actions were simplified");
+const transferredEmber=v384Events("2026-09-24",{fr:false,properTitle:"Ember Thursday"});
+assert.equal(transferredEmber[0]?.key,"ember-calendar","resolved-calendar Ember fallback disappeared");
+assert.deepEqual(transferredEmber[0]?.actions?.map(x=>x[0]),["today.calendar","learn.discipline"]);
 
 const v384Year=v384YearHTML("2026-10-07",{fr:false});
 for(const phrase of ["Relevant today","Month of the Holy Rosary","Current / traditional status","Traditional year · 2026","Candlemas","Septuagesima","Lenten Ember Days","Rogation Days","Corpus Christi","September Ember Days","Holy Souls","Advent Ember Days","Directory on Popular Piety","1962 September Ember reckoning"])assert.ok(v384Year.includes(phrase),phrase+" missing from v38.4 traditional-year recovery");

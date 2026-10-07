@@ -1,4 +1,5 @@
 import { getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { formatDisplayDate } from "../app/date-format.js";
 
 export const HOME_ENRICHERS_VERSION="modular-home-enrichers-v1";
 export const HOME_ENRICHER_ICON_ASSET_IDS=Object.freeze({
@@ -184,7 +185,7 @@ function eventSlot(state,win,now){
   if(best){
     const when=best.days===1?L(state,"Tomorrow","Demain")
       :best.days<7?new Intl.DateTimeFormat(lang(state)==="fr"?"fr-FR":"en-GB",{weekday:"short"}).format(best.d)
-      :`${pad(best.d.getDate())}/${pad(best.d.getMonth()+1)}`;
+      :formatDisplayDate(best.d);
     return Object.freeze({...best,id:best.key,kind:"event",role:L(state,"Upcoming","À venir"),when,date:iso(best.d),done:false});
   }
   return Object.freeze({

@@ -160,6 +160,7 @@ try{
     brand:document.querySelector(".homeScreen .brandName")?.textContent?.trim()??"",
     celebration:document.querySelector(".homeScreen .celebrationBlock > h1")?.textContent?.trim()??"",
     gospel:document.querySelector(".homeScreen .gospelCard p")?.textContent?.trim()??"",
+    displayedDate:document.querySelector(".homeScreen .dateTitle b")?.textContent?.trim()??"",
   }));
   assert.equal(homeParity.celebrationTitles,1,"Home lost its single liturgical-day identity");
   assert.equal(homeParity.aroundMassActions,3,"Home lost the Prepare / Follow Mass / Give thanks triad");
@@ -171,6 +172,23 @@ try{
   assert.equal(homeParity.brand,"AD ORIENTEM");
   assert.ok(homeParity.celebration.length>0,"Home liturgical-day identity is blank");
   assert.ok(homeParity.gospel.length>0,"Home Gospel context is blank");
+  assert.match(homeParity.displayedDate,/^\d{2}\/\d{2}\/\d{4}$/,"Home date is not DD/MM/YYYY");
+  const designBaseline=await page.evaluate(()=>({
+    version:document.documentElement.dataset.aoDesignSystem??null,
+    stylePresent:Boolean(document.getElementById("ao-app-design-system")),
+    displayFont:getComputedStyle(document.querySelector(".homeScreen .celebrationBlock > h1")).fontFamily,
+    bodyFont:getComputedStyle(document.querySelector(".homeScreen")).fontFamily,
+    cardRadius:getComputedStyle(document.querySelector(".homeScreen .contentCard")).borderRadius,
+    gutter:getComputedStyle(document.documentElement).getPropertyValue("--ao-page-gutter").trim(),
+    controlHeight:getComputedStyle(document.documentElement).getPropertyValue("--ao-control-h").trim(),
+  }));
+  assert.equal(designBaseline.version,"ao-design-system-v1","shared app design system is not installed");
+  assert.equal(designBaseline.stylePresent,true,"shared app design-system stylesheet is missing");
+  assert.ok(designBaseline.displayFont.length>0,"Home display font did not resolve");
+  assert.ok(designBaseline.bodyFont.length>0,"Home body font did not resolve");
+  assert.equal(designBaseline.cardRadius,"15px","Home content cards diverged from the canonical card radius");
+  assert.equal(designBaseline.gutter,"12px","390px phone did not resolve the canonical phone gutter");
+  assert.equal(designBaseline.controlHeight,"44px","canonical touch-control height drifted");
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.version==="modular-presentation-fx-v3",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero,null,{timeout:5000});
   const homeFx=await page.evaluate(()=>({
@@ -258,12 +276,28 @@ try{
     progress:document.querySelector("#ao-calendar-modular-root .aoCalV2Progress i")?.style?.width??"",
     weekScrollable:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalV2Week");return x?x.scrollWidth>=x.clientWidth:false})(),
     rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
+    displayedDate:document.querySelector("#ao-calendar-modular-root .aoCalV2DayNav strong")?.textContent?.trim()??"",
   }));
   assert.equal(calendarDay.version,"modular-calendar-v2-liturgical-year","Calendar did not activate the v2 owner");
   assert.ok(calendarDay.identity.length>0,"Calendar selected feast identity is blank");
   assert.ok(calendarDay.season.length>0,"Calendar selected liturgical period is blank");
   assert.match(calendarDay.progress,/\d+(?:\.\d+)?%/,"Calendar period progress is missing");
   assert.equal(calendarDay.weekScrollable,true,"Calendar week context does not remain touch-scrollable on phone");
+  assert.match(calendarDay.displayedDate,/^\d{2}\/\d{2}\/\d{4}$/,"Calendar Day date is not DD/MM/YYYY");
+  const calendarDesign=await page.evaluate(()=>({
+    displayFont:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalV2Hero h2")).fontFamily,
+    bodyFont:getComputedStyle(document.getElementById("ao-calendar-modular-root")).fontFamily,
+    gutter:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalModBody")).paddingLeft,
+    cardRadius:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalV2NextMajor")).borderRadius,
+    topControl:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalModTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
+  }));
+  assert.equal(calendarDesign.displayFont,designBaseline.displayFont,"Calendar display typography diverged from Home");
+  assert.equal(calendarDesign.bodyFont,designBaseline.bodyFont,"Calendar body typography diverged from Home");
+  assert.equal(calendarDesign.gutter,designBaseline.gutter,"Calendar phone gutter diverged from the app grid");
+  assert.equal(calendarDesign.cardRadius,designBaseline.cardRadius,"Calendar card geometry diverged from the app system");
+  assert.equal(Math.round(calendarDesign.topControl.w),44,"Calendar top control width diverged");
+  assert.equal(Math.round(calendarDesign.topControl.h),44,"Calendar top control height diverged");
+  assert.equal(calendarDesign.topControl.r,"999px","Calendar top control lost canonical circular geometry");
   assert.ok(calendarDay.rootScrollTop<=2,"Calendar Day auto-scrolled vertically while centering the selected date");
   const calendarFx=await page.evaluate(()=>({
     hero:document.querySelector("#ao-calendar-modular-root .aoCalV2Hero")?.dataset?.aoPresentationFxHero??null,
@@ -334,6 +368,18 @@ try{
   }));
   assert.match(prayFx.hero,/modular-presentation-fx-v3/,"PRAY home hero did not receive recovered entry choreography");
   assert.equal(prayFx.rootScan,"legacy-v4312","PRAY modular root bypassed the approved v43.12 art loader");
+  const prayDesign=await page.evaluate(()=>({
+    displayFont:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930HomeIntro h2")).fontFamily,
+    gutter:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930Body")).paddingLeft,
+    cardRadius:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930ModuleCard")).borderRadius,
+    topControl:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930Head button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
+  }));
+  assert.equal(prayDesign.displayFont,designBaseline.displayFont,"PRAY display typography diverged from the app system");
+  assert.equal(prayDesign.gutter,designBaseline.gutter,"PRAY phone gutter diverged from the app grid");
+  assert.equal(prayDesign.cardRadius,designBaseline.cardRadius,"PRAY module cards diverged from canonical geometry");
+  assert.equal(Math.round(prayDesign.topControl.w),44,"PRAY top control width diverged");
+  assert.equal(Math.round(prayDesign.topControl.h),44,"PRAY top control height diverged");
+  assert.equal(prayDesign.topControl.r,"999px","PRAY top control lost canonical circular geometry");
   await shot("03-pray");
 
   // Exact v3.14 Angelus ritual rail: the rail belongs to the reading grid.
@@ -792,6 +838,20 @@ try{
   }));
   assert.match(learnFx.hero,/modular-presentation-fx-v3/,"Learn formation hero did not receive recovered entry choreography");
   assert.equal(learnFx.rootScan,"legacy-v4312","Learn modular root bypassed the approved v43.12 art loader");
+  const learnDesign=await page.evaluate(()=>({
+    displayFont:getComputedStyle(document.querySelector("#ao-learn-modular-root .aoLearnModHero h1")).fontFamily,
+    bodyFont:getComputedStyle(document.getElementById("ao-learn-modular-root")).fontFamily,
+    gutter:getComputedStyle(document.querySelector("#ao-learn-modular-root .aoLearnModWrap")).paddingLeft,
+    cardRadius:getComputedStyle(document.querySelector("#ao-learn-modular-root .aoLearnModCard")).borderRadius,
+    topControl:(()=>{const x=document.querySelector("#ao-learn-modular-root .aoLearnModTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
+  }));
+  assert.equal(learnDesign.displayFont,designBaseline.displayFont,"Learn display typography diverged from the app system");
+  assert.equal(learnDesign.bodyFont,designBaseline.bodyFont,"Learn body typography diverged from Home");
+  assert.equal(learnDesign.gutter,designBaseline.gutter,"Learn phone gutter diverged from the app grid");
+  assert.equal(learnDesign.cardRadius,designBaseline.cardRadius,"Learn cards diverged from canonical geometry");
+  assert.equal(Math.round(learnDesign.topControl.w),44,"Learn top control width diverged");
+  assert.equal(Math.round(learnDesign.topControl.h),44,"Learn top control height diverged");
+  assert.equal(learnDesign.topControl.r,"999px","Learn top control lost canonical circular geometry");
   await shot("04-learn");
 
   for(const [route,name] of [
@@ -824,6 +884,20 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root .v384SectionLabel").count(),1,"v38.4 full traditional-year index is missing");
   assert.equal(await page.locator("#ao-calendar-modular-root .v384Practice").count()>=12,true,"v38.4 traditional-year rows are incomplete");
   await shot("04f-seasonal-year-alias");
+
+  // Exact v38.4 concurrent-practice composition: Christ the King occurs inside October.
+  const christKingSelected=await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.select?.("2026-10-25"));
+  assert.equal(christKingSelected,true,"Calendar could not select Christ the King for v38.4 parity capture");
+  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate==="2026-10-25",null,{timeout:10000});
+  globalThis.AO_CALENDAR_APP_V1?.setView?.("year");
+  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view==="year",null,{timeout:5000});
+  const v384Concurrent=await page.locator("#ao-calendar-modular-root .aoCalV384Companion .v384Rows").first().innerText();
+  assert.match(v384Concurrent,/Kingship of Christ/,"v38.4 selected-date practices lost Christ the King");
+  assert.match(v384Concurrent,/Month of the Holy Rosary/,"v38.4 selected-date practices collapsed the concurrent October Rosary observance");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion .v384Rows").first().locator(".v384Practice").count(),2,
+    "v38.4 selected-date donor composition must expose both concurrent practices");
+  await shot("04f2-calendar-v384-christ-king-october");
+
   await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-panel='discipline']").click();
   assert.equal(await page.locator("#ao-calendar-modular-root .v384EraTabs [data-ao-cal-v384-era]").count(),3,"v38.4 discipline era switch is incomplete");
   assert.match((await page.locator("#ao-calendar-modular-root .aoCalV384Companion").innerText()),/Older Catholic discipline is preserved here as historical knowledge/);
@@ -862,6 +936,20 @@ try{
   assert.equal(settingsParity.embeddedHomeSettings,false,"retired Home Settings surface is visible beneath modular Settings");
   assert.ok(settingsParity.overflow<=1,"Settings has horizontal overflow on 390px phone geometry");
   assert.equal(settingsParity.topLevelSources,0,"Sources resurfaced as a seventh top-level destination");
+  const settingsDesign=await page.evaluate(()=>({
+    displayFont:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModTop h1")).fontFamily,
+    bodyFont:getComputedStyle(document.getElementById("ao-settings-modular-root")).fontFamily,
+    gutter:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModBody")).paddingLeft,
+    cardRadius:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModCard")).borderRadius,
+    topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetModTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
+  }));
+  assert.equal(settingsDesign.displayFont,designBaseline.displayFont,"Settings display typography diverged from the app system");
+  assert.equal(settingsDesign.bodyFont,designBaseline.bodyFont,"Settings body typography diverged from Home");
+  assert.equal(settingsDesign.gutter,designBaseline.gutter,"Settings phone gutter diverged from the app grid");
+  assert.equal(settingsDesign.cardRadius,designBaseline.cardRadius,"Settings cards diverged from canonical geometry");
+  assert.equal(Math.round(settingsDesign.topControl.w),44,"Settings top control width diverged");
+  assert.equal(Math.round(settingsDesign.topControl.h),44,"Settings top control height diverged");
+  assert.equal(settingsDesign.topControl.r,"999px","Settings top control lost canonical circular geometry");
   await shot("05-settings");
 
   await page.locator("#ao-settings-modular-root [data-settings-sources]").click();
