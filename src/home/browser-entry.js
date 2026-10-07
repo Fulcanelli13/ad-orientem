@@ -8,6 +8,7 @@ function state(win){return runtime(win)?.store?.getState?.()??null;}
 function closeTransientSurfaces(win){
   try{win?.AO_LEARN_APP_V1?.close?.();}catch{}
   try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"home"});}catch{}
+  try{win?.AO_FIND_APP_V1?.close?.();}catch{}
   try{win?.AO_INLINE_CUES_V251?.closeGuide?.();}catch{}
   try{win?.AO_RULE_V411?.closeSheet?.();}catch{}
   try{win?.AO_CONTENT_V37?.closeDiagnostics?.();}catch{}
@@ -136,6 +137,15 @@ export function createHomeOwner(win=globalThis){
       event.stopImmediatePropagation?.();
       void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>{
         console.error("Modular Home Mass entry failed",error);
+      });
+      return;
+    }
+    const find=target?.closest?.("[data-home-find]");
+    if(find){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("find")).catch(error=>{
+        console.error("Modular Home Find navigation failed",error);
       });
       return;
     }
