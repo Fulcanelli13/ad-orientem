@@ -36,7 +36,7 @@ assert.equal(keys.gestureIconKey,"gospel_crosses");
 assert.equal(keys.responseIconKey,"response");
 assert.equal(keys.priestVoiceIconKey,"priest_silent");
 assert.equal(keys.priestPositionIconKey,"priest_gospel");
-assert.equal(keys.priestActionIconKey,"priest_elevation","source-backed elevation action lost canonical v4 action art");
+assert.equal(keys.priestActionIconKey,null,"unavailable certified elevation art must fail closed");
 assert.equal(keys.scholaIconKey,"schola");
 
 keys=iconKeysForReaderState({
@@ -56,10 +56,10 @@ assert.equal(auditHostIconBank(broken).complete,false);
 assert.ok(auditHostIconBank(broken).missing.includes("priest_steps"));
 
 keys=iconKeysForReaderState({priestAction:{label:"GENUFLECTS"}});
-assert.equal(keys.priestActionIconKey,"priest_genuflect");
+assert.equal(keys.priestActionIconKey,null);
 keys=iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES"}});
-assert.equal(keys.priestActionIconKey,"lavabo");
+assert.equal(keys.priestActionIconKey,null);
 keys=iconKeysForReaderState({priestAction:{label:"UNMAPPED SOURCE ACTION"}});
 assert.equal(keys.priestActionIconKey,null,"unmapped action guessed an unrelated icon");
 
-console.log("reader icons: PASS — source-backed action art is exact-mapped and position art never masquerades as action.");
+console.log("reader icons: PASS — priest actions are source-backed and uncertified action art fails closed.");
