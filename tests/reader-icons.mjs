@@ -29,6 +29,7 @@ let keys=iconKeysForReaderState({
   priestVoice:{value:"LOW_VOICE"},
   priestPosition:{station:"ALTAR_GOSPEL_MISSAL"},
   priestAction:{label:"ELEVATES HOST"},
+  bell:{label:"ALTAR BELLS"},
   schola:{label:"Credo"},
 });
 assert.equal(keys.postureIconKey,"kneel");
@@ -36,7 +37,8 @@ assert.equal(keys.gestureIconKey,"gospel_crosses");
 assert.equal(keys.responseIconKey,"response");
 assert.equal(keys.priestVoiceIconKey,"priest_silent");
 assert.equal(keys.priestPositionIconKey,"priest_gospel");
-assert.equal(keys.priestActionIconKey,null,"unavailable certified elevation art must fail closed");
+assert.equal(keys.priestActionIconKey,"priest_elevation","recovered frozen elevation art is not selected");
+assert.equal(keys.bellIconKey,"bells","active altar-bell cue lost its frozen V4 icon");
 assert.equal(keys.scholaIconKey,"schola");
 
 keys=iconKeysForReaderState({
@@ -56,10 +58,16 @@ assert.equal(auditHostIconBank(broken).complete,false);
 assert.ok(auditHostIconBank(broken).missing.includes("priest_steps"));
 
 keys=iconKeysForReaderState({priestAction:{label:"GENUFLECTS"}});
-assert.equal(keys.priestActionIconKey,null);
+assert.equal(keys.priestActionIconKey,null,"quarantined priest-genuflect binary must remain text-only");
 keys=iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES"}});
-assert.equal(keys.priestActionIconKey,null);
+assert.equal(keys.priestActionIconKey,"lavabo");
+keys=iconKeysForReaderState({priestAction:{label:"INCENSES ALTAR"}});
+assert.equal(keys.priestActionIconKey,"priest_incense_altar");
+keys=iconKeysForReaderState({priestAction:{label:"BLESSES PEOPLE"}});
+assert.equal(keys.priestActionIconKey,"blessing");
+keys=iconKeysForReaderState({priestAction:{label:"GIVES COMMUNION"}});
+assert.equal(keys.priestActionIconKey,"communion");
 keys=iconKeysForReaderState({priestAction:{label:"UNMAPPED SOURCE ACTION"}});
 assert.equal(keys.priestActionIconKey,null,"unmapped action guessed an unrelated icon");
 
-console.log("reader icons: PASS — priest actions are source-backed and uncertified action art fails closed.");
+console.log("reader icons: PASS — exact recovered V4 action/bell art is source-mapped; quarantined or unmapped actions fail closed.");
