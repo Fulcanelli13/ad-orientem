@@ -718,6 +718,43 @@ try{
   await waitForFxSettled();
   await shot("03d-pray-rosary-live-rail");
 
+  let firstAveReached=await page.evaluate(()=>{
+    const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[],step=steps[state?.step];
+    return step?.kind==="prayer"&&step?.key==="ave"&&Number(step?.bead)===1;
+  });
+  for(let guard=0;!firstAveReached&&guard<8;guard+=1){
+    const before=await page.evaluate(()=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1));
+    await page.locator("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]").click();
+    await page.waitForFunction(previous=>Number(globalThis.AO_ROSARY_V381?.state?.()?.step??-1)>previous,before,{timeout:2000});
+    firstAveReached=await page.evaluate(()=>{
+      const api=globalThis.AO_ROSARY_V381,state=api?.state?.(),steps=api?.steps?.()||[],step=steps[state?.step];
+      return step?.kind==="prayer"&&step?.key==="ave"&&Number(step?.bead)===1;
+    });
+  }
+  assert.equal(firstAveReached,true,"Rosary visible Next did not reach the first Hail Mary of the decade");
+  const hailMaryPresentation=await page.evaluate(()=>{
+    const visible=x=>Boolean(x&&getComputedStyle(x).display!=="none"&&getComputedStyle(x).visibility!=="hidden"&&x.getClientRects().length);
+    const count=document.querySelector("#aoPrayerBookRoot .lab-prayer-count");
+    const beads=[...document.querySelectorAll("#aoPrayerBookRoot .lab-bead-stage .lab-bead")];
+    const flip=document.querySelector("#aoPrayerBookRoot .lab-prayer-flip[data-pb-flip]");
+    const latin=flip?.querySelector("[data-pb-latin]"),vern=flip?.querySelector("[data-pb-vern]");
+    return {
+      title:document.querySelector("#aoPrayerBookRoot .lab-prayer-sheet h2")?.textContent?.trim()??"",
+      visibleCount:visible(count),
+      visibleBeads:beads.filter(visible).length,
+      currentBeads:beads.filter(x=>x.classList.contains("current")&&visible(x)).length,
+      latinVisible:visible(latin),
+      vernVisible:visible(vern),
+    };
+  });
+  assert.match(hailMaryPresentation.title,/Hail Mary|Je vous salue Marie/i,"Rosary first decade prayer is not the Hail Mary");
+  assert.equal(hailMaryPresentation.visibleCount,false,"Rosary repeats Hail Mary 1/10 text beside the ten-bead progress owner");
+  assert.equal(hailMaryPresentation.visibleBeads,10,"Rosary first Hail Mary does not expose the ten-bead progress row");
+  assert.equal(hailMaryPresentation.currentBeads,1,"Rosary ten-bead progress has more than one current owner");
+  assert.equal(hailMaryPresentation.latinVisible,false,"Rosary Hail Mary renders Latin simultaneously with the vernacular");
+  assert.equal(hailMaryPresentation.vernVisible,true,"Rosary Hail Mary vernacular face is not visible");
+  await shot("03d2-pray-rosary-hail-mary");
+
   const rosaryStepBeforeBack=await page.evaluate(()=>globalThis.AOTraditionalPrayerBook?.getState?.()?.rosaryStep??null);
   await page.locator("#aoPrayerBookRoot.open .lab-back,#aoPrayerBookRoot .lab-back").first().click();
   await page.waitForFunction(()=>[...document.querySelectorAll("#aoPrayerBookRoot")].every(root=>!root.classList.contains("open")),null,{timeout:5000});
