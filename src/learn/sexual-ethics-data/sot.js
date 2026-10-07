@@ -134,9 +134,10 @@ export const CSE_SOT_MATRIX=Object.freeze(CSE_QUESTIONS.map(item=>{
 }));
 
 export const CSE_GAP_AUDIT=Object.freeze([
-  Object.freeze({topic:"Adultery / consensual non-monogamy",status:"COVERED",record:"CSE117",action:"Replaced low-value sexual-sacrilege slot in v2 hardening."}),
+  Object.freeze({topic:"Adultery / consensual non-monogamy",status:"COVERED",record:"CSE056",action:"Replaced a lower-value marital-frequency slot in v2 hardening."}),
   Object.freeze({topic:"Double effect",status:"COVERED_BY_METHOD",records:Object.freeze(["CSE008","CSE009","CSE068","CSE069"]),action:"Keep as embedded method; no standalone question needed for a practical 150-question module."}),
   Object.freeze({topic:"Sexual sacrilege as a distinct species",status:"EXCLUDED_LOW_USER_VALUE",action:"Retain in specialist moral theology, not the main app corpus."}),
+  Object.freeze({topic:"Intoxication / incapacity and sexual consent",status:"COVERED",record:"CSE117"}),
   Object.freeze({topic:"Detailed annulment law",status:"CROSS_LINK",target:"learn.rites.matrimony"}),
   Object.freeze({topic:"Detailed confession mechanics",status:"CROSS_LINK",target:"pray.confession",records:Object.freeze(["CSE119","CSE131","CSE132","CSE133","CSE134","CSE135","CSE136","CSE137","CSE138","CSE139","CSE140"])}),
   Object.freeze({topic:"Abortion and full embryo-personhood treatment",status:"OUT_OF_SCOPE",action:"Belongs in Bioethics / Life rather than Sexual Ethics."}),
