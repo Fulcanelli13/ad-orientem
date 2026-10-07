@@ -506,7 +506,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lecture à froid d’abord"
+        }
+      }
     },
     {
       "id": "l40-b2",
@@ -523,7 +528,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ne pas chercher le nom de la leçon de grammaire"
+        }
+      }
     },
     {
       "id": "l40-b3",
@@ -540,7 +550,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le genre prédit sans résoudre"
+        }
+      }
     },
     {
       "id": "l40-b4",
@@ -557,7 +572,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les chants exigent une reconstruction poétique"
+        }
+      }
     },
     {
       "id": "l40-b5",
@@ -572,7 +592,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une aide minimale est une aide stratégique"
+        }
+      }
     },
     {
       "id": "l40-b6",
@@ -587,7 +612,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lire le Missel"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -816,7 +846,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle est votre première action devant un texte inconnu du couronnement ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "lire à froid et identifier la structure",
+            "ouvrir toutes les gloses",
+            "traduire mot à mot",
+            "chercher la leçon de grammaire"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e2",
@@ -846,7 +889,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le genre de la longue sélection de Luc 1 ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "récit évangélique et dialogue",
+            "Oraison",
+            "Secrète",
+            "chant de Requiem"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e3",
@@ -876,7 +932,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel texte exige le plus fortement une reconstruction poétique ou parallèle ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "Offertoire",
+            "Évangile",
+            "titre de l’Épître",
+            "aucun"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e4",
@@ -904,7 +973,18 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Un nom propre inconnu doit-il déclencher une révision de grammaire ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e5",
@@ -934,7 +1014,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signale quomodo dans l’Évangile ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "une question directe « comment ? »",
+            "une proposition de but",
+            "un génitif",
+            "un ablatif absolu"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e6",
@@ -964,7 +1057,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que doit vous faire faire la répétition de et dans la prose biblique ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "suivre la coordination sans fragmenter le passage",
+            "écarter les propositions répétées",
+            "supposer une erreur de copiste",
+            "traduire chaque et différemment"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e7",
@@ -991,7 +1097,18 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "La leçon 40 introduit-elle du nouveau vocabulaire suivi ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e8",
@@ -1020,7 +1137,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui compte comme réussite au couronnement ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "une compréhension structurelle soutenue avec une aide minimale",
+            "une traduction littéraire parfaite",
+            "la mémorisation du Propre",
+            "zéro mot inconnu"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e9",
@@ -1050,7 +1180,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle unité-source contient Dominus possedit me in initio viarum suarum ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "Épître",
+            "Introït",
+            "Évangile",
+            "Communion"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e10",
@@ -1080,7 +1223,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle unité-source commence par Gaudeamus omnes in Domino ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "Introït",
+            "Offertoire",
+            "Communion",
+            "Évangile"
+          ]
+        }
+      }
     },
     {
       "id": "l40-e11",
@@ -1109,7 +1265,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon final figé ?",
+          "hint": "Utilisez le flux de lecture du cours entier ; aucun nouvel indice grammatical n’est donné.",
+          "explanation": "Le couronnement évalue la lecture liturgique autonome à partir d’un texte authentique du Missel.",
+          "options": [
+            "Couronnement sur un texte authentique inconnu du Missel.",
+            "Ordinaire complet.",
+            "Propres ordinaires inconnus.",
+            "Passage du Canon à longue syntaxe périodique."
+          ]
+        }
+      }
     },
     {
       "id": "l40-e12",
@@ -1146,7 +1315,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Énoncez la séquence de récupération du couronnement.",
+          "hint": "Le processus compte autant que la réponse.",
+          "explanation": "Lire de façon autonome signifie pouvoir récupérer après une incertitude sans revenir au mode débutant."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1219,5 +1395,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Lire le Missel",
+      "grammarFocus": "Couronnement de lecture liturgique autonome",
+      "readingOutcome": "Lire avec une aide minimale une sélection authentique et inconnue du Missel.",
+      "objectives": [
+        "Lire du latin authentique et inconnu du Missel avec une aide minimale.",
+        "Choisir de façon autonome les outils grammaticaux plutôt qu’à partir de l’étiquette d’une leçon.",
+        "Tolérer du vocabulaire hors corpus fondamental sans perdre la compréhension structurelle.",
+        "Réussir le couronnement final sur un texte authentique inconnu du Missel."
+      ]
+    }
+  }
 }
