@@ -43,8 +43,35 @@ const CSS=`
 #aoPray435930 h1,#aoPray435930 h2,#aoPray435930 h3,#aoPray435930 h4,
 .prepareScreen h1,.prepareScreen h2,.prepareScreen h3,
 .thanksgivingScreen h1,.thanksgivingScreen h2,.thanksgivingScreen h3{
+  font-family:var(--ao-font-display)!important;
+}
+
+#ao-global-ribbon{
   font-family:var(--ao-font-display);
 }
+.aoCalModTop button,
+.aoLearnModTop button,
+.aoSetModTop button,
+#aoPray435930 .aoP435930Head button{
+  width:var(--ao-control-h)!important;
+  height:var(--ao-control-h)!important;
+  min-width:var(--ao-control-h)!important;
+  min-height:var(--ao-control-h)!important;
+  border-radius:var(--ao-pill-radius)!important;
+}
+.homeScreen .contentCard,
+#ao-calendar-modular-root .aoCalV2NextMajor,
+#ao-calendar-modular-root .aoCalV2YearHeroGrid,
+#ao-calendar-modular-root .aoCalV2JourneyRail>button,
+#ao-calendar-modular-root .aoCalV2ComingGrid button,
+#ao-calendar-modular-root .aoCalV2IndexGrid button,
+#ao-learn-modular-root .aoLearnModCard,
+#ao-settings-modular-root .aoSetModCard,
+#aoPray435930 .aoP435930ModuleCard,
+.ao-reader-shell .ao-prayer-card{
+  border-radius:var(--ao-card-radius)!important;
+}
+
 #ao-calendar-modular-root button,
 #ao-learn-modular-root button,
 #ao-settings-modular-root button,
