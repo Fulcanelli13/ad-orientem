@@ -32,6 +32,20 @@ assert.ok(Math.abs(mapSelection.geo.lat-40.7128)<1e-8);
 assert.ok(Math.abs(mapSelection.geo.lng+74.0060)<1e-8);
 assert.equal(mapSelection.geo.upstream_carrier,"MAP_URL");
 
+const googlePlaceHtml=`
+<a href="https://www.google.com/maps/place/Test/@32.3850625,-95.4185124,17z/data=!3m1!4b1!4m4!3m3!8m2!3d32.3850625!4d-95.4159375">Map</a>`;
+const googlePlace=selectOfficialGeoFromHtml(googlePlaceHtml,{pageUrl:"https://official.example/tyler",expectedText:"Test Tyler"});
+assert.ok(googlePlace.geo);
+assert.equal(googlePlace.geo.lat,32.3850625);
+assert.equal(googlePlace.geo.lng,-95.4159375,"Google viewport center was used instead of actual place longitude");
+
+const googleDirectionsHtml=`
+<a href="https://www.google.com/maps/dir//St.+Anton,+Kannenfeldstrasse+35,+Basel/@47.563512,7.5699551,16z/data=!4m8!4m7!1m0!1m5!2m2!1d7.5729949!2d47.5637084">Directions</a>`;
+const googleDirections=selectOfficialGeoFromHtml(googleDirectionsHtml,{pageUrl:"https://official.example/basel",expectedText:"St Anton Kannenfeldstrasse 35 Basel"});
+assert.ok(googleDirections.geo);
+assert.equal(googleDirections.geo.lat,47.5637084);
+assert.equal(googleDirections.geo.lng,7.5729949);
+
 const metaHtml=`
 <meta itemprop="latitude" content="45.5017">
 <meta itemprop="longitude" content="-73.5673">`;
