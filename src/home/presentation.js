@@ -1,5 +1,6 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
+import { formatDisplayDate } from "../app/date-format.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
 
@@ -94,7 +95,7 @@ export function buildHomeViewModel(state,win=globalThis){
   return{
     language,dateIso:state.selectedDate,
     weekday:new Intl.DateTimeFormat(locale,{weekday:"long"}).format(date),
-    dateLong:win?.AO_DISPLAY_DATE?.(date)||new Intl.DateTimeFormat(locale,{day:"2-digit",month:"2-digit",year:"numeric"}).format(date),
+    dateLong:formatDisplayDate(date),
     celebration,rank:rankValue?`${tr(language,"rank")} · ${rankValue}`:"",
     colour:language==="fr"?(colourMapFr[rawColour]||rawColour):rawColour,
     loading:Boolean(state.resolving),calendarFailed,
@@ -136,7 +137,7 @@ export function renderHomeToString(state,win=globalThis){
   const art=win?.AO_PHASE1_ART?.homeMarkup?.(state,vm.language)||"";
   const resume=readNativeMassResume(win);
   const resumeMeta=resume?[
-    resume.date?(win?.AO_DISPLAY_DATE?.(parseIso(resume.date))||resume.date):"",
+    resume.date?formatDisplayDate(resume.date):"",
     resume.stepNumber?String(resume.stepNumber):"",
   ].filter(Boolean).join(" · "):"";
   return `<main class="homeScreen" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
