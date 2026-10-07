@@ -1,0 +1,1129 @@
+{
+  "version": "CATHOLIC_LIFE_RETIREMENT_RESOLUTION_BATCH2",
+  "status": "COMPLETE",
+  "created_at": "2026-10-07",
+  "scope": "Reference, Mass-SOT, customary/Sacramental, Scapular, Spiritual-Life-gap and product-internal claims",
+  "claims_resolved": 184,
+  "breakdown": {
+    "reference_only": 33,
+    "mass_sot": 10,
+    "customary_sot": 55,
+    "scapular_owner": 6,
+    "spiritual_life_gap": 3,
+    "product_internal_archive_only": 77
+  },
+  "policy": [
+    "Product-internal statements are not Catholic formation and receive no learner-facing migration.",
+    "Reference vocabulary is preserved as glossary/reference data.",
+    "Mass posture/gesture material is owned by Mass SOT, not a parallel behaviour course.",
+    "Customary and sacramental practice data is owned by customary SOTs with geographic/authority distinctions.",
+    "The Brown Scapular keeps its dedicated owner.",
+    "The superstition/devotion cluster is preserved for the future Spiritual Life owner and does not create a new route by itself."
+  ],
+  "resolutions": [
+    {
+      "claim_id": "CL01-S01-Q001",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S01-Q002",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S01-Q003",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S01-Q004",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S01-Q005",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S02-Q001",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S02-Q002",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S02-Q003",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S02-Q004",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S02-Q005",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S02-Q006",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S03-Q001",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S03-Q002",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S03-Q003",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S03-Q004",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S03-Q005",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S04-Q001",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S04-Q002",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S04-Q003",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S04-Q004",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S04-Q005",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S05-Q001",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S05-Q002",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S05-Q003",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S05-Q004",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S05-Q005",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S06-Q001",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S06-Q002",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S06-Q003",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S06-Q004",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S07-Q001",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S07-Q002",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S07-Q003",
+      "outcome": "REHOMED_REFERENCE_ONLY",
+      "final_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE",
+      "artifact": "data/reference/catholic-glossary-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S02-Q001",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.GESTURES_AND_REVERENCES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S02-Q002",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.GESTURES_AND_REVERENCES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S02-Q003",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.GESTURES_AND_REVERENCES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S02-Q004",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.GESTURES_AND_REVERENCES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S02-Q005",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.GESTURES_AND_REVERENCES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S03-Q001",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.POSTURES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S03-Q002",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.POSTURES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S03-Q003",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.POSTURES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S03-Q004",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.POSTURES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S03-Q005",
+      "outcome": "REHOMED_MASS_SOT",
+      "final_destination": "MASS_SOT.POSTURES",
+      "artifact": "data/mass/catholic-life-gesture-posture-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S01-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S01-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S01-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S01-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S04-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S04-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S04-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S04-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S04-Q005",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S05-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S05-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S05-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S05-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S06-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_CONDUCT",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S06-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_CONDUCT",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S06-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.CHURCH_CONDUCT",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S07-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S07-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL02-S07-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S01-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S01-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S01-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S01-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S01-Q005",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S02-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S02-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S02-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S02-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S02-Q005",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S03-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S03-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S03-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S03-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S03-Q005",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S05-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.RELICS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S05-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.RELICS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S05-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.RELICS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S05-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.RELICS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S05-Q005",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.RELICS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S05-Q006",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.RELICS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S06-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S06-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S06-Q006",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRAMENTALS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S07-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S07-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S07-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S07-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S07-Q005",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S07-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S07-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL09-S07-Q003",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S02-Q001",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S02-Q002",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S02-Q004",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S02-Q005",
+      "outcome": "REHOMED_CUSTOMARY_SOT",
+      "final_destination": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "artifact": "data/customary/catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S04-Q001",
+      "outcome": "REHOMED_SCAPULAR_OWNER",
+      "final_destination": "learn.scapular",
+      "artifact": "data/learn/scapular-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S04-Q002",
+      "outcome": "REHOMED_SCAPULAR_OWNER",
+      "final_destination": "learn.scapular",
+      "artifact": "data/learn/scapular-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S04-Q003",
+      "outcome": "REHOMED_SCAPULAR_OWNER",
+      "final_destination": "learn.scapular",
+      "artifact": "data/learn/scapular-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S04-Q004",
+      "outcome": "REHOMED_SCAPULAR_OWNER",
+      "final_destination": "learn.scapular",
+      "artifact": "data/learn/scapular-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S04-Q005",
+      "outcome": "REHOMED_SCAPULAR_OWNER",
+      "final_destination": "learn.scapular",
+      "artifact": "data/learn/scapular-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S04-Q006",
+      "outcome": "REHOMED_SCAPULAR_OWNER",
+      "final_destination": "learn.scapular",
+      "artifact": "data/learn/scapular-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S08-Q001",
+      "outcome": "REHOMED_PENDING_SPIRITUAL_LIFE_OWNER",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE",
+      "artifact": "data/learn/spiritual-life-superstition-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S08-Q002",
+      "outcome": "REHOMED_PENDING_SPIRITUAL_LIFE_OWNER",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE",
+      "artifact": "data/learn/spiritual-life-superstition-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL08-S08-Q003",
+      "outcome": "REHOMED_PENDING_SPIRITUAL_LIFE_OWNER",
+      "final_destination": "FORMATION.SPIRITUAL_LIFE",
+      "artifact": "data/learn/spiritual-life-superstition-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL01-S07-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL02-S05-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL02-S06-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL02-S07-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL02-S07-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL03-S01-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL03-S01-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL03-S02-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL03-S03-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL03-S05-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL03-S06-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL03-S07-Q002",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL03-S07-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL04-S01-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL04-S02-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL04-S03-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL04-S04-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL04-S06-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL04-S07-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL05-S04-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL05-S04-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL05-S06-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL05-S06-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL05-S08-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL06-S01-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL06-S03-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL06-S04-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL06-S06-Q002",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL06-S06-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL06-S07-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL06-S07-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S03-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S04-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S05-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S05-Q002",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S05-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S06-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S06-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S09-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL07-S09-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL08-S02-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL08-S06-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL08-S06-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL08-S06-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL08-S08-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S01-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S01-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S02-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S03-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S04-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S05-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S05-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S06-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S06-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S07-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S07-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S07-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S08-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S08-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S08-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL09-S08-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S01-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S01-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S02-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S02-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S03-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S03-Q007",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S04-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S06-Q008",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S07-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S08-Q001",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S08-Q002",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S08-Q003",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S08-Q004",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S08-Q005",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S08-Q006",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    },
+    {
+      "claim_id": "CL10-S08-Q007",
+      "outcome": "REMOVED_FROM_LEARNER_SCOPE_ARCHIVE_ONLY",
+      "final_destination": "NO_USER_FACING_OWNER",
+      "artifact": "data/learn/catholic-life-retirement-audit.v1.json"
+    }
+  ]
+}

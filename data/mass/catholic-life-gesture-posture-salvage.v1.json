@@ -1,0 +1,161 @@
+{
+  "version": "MASS_CATHOLIC_LIFE_GESTURE_POSTURE_SALVAGE_V1",
+  "status": "MASS_SOT_ANNEX",
+  "created_at": "2026-10-07",
+  "purpose": "Re-home Catholic Life posture, gesture and reverence distinctions under the Mass source-of-truth layer so the reader/formation surfaces can consume them contextually.",
+  "claims": [
+    {
+      "claim_id": "CL02-S02-Q001",
+      "stage_id": "CL02-S02",
+      "stage_title": "Genuflect, Bow or Neither",
+      "layer": "CURRENT",
+      "text": "Current Roman liturgical law directs genuflection principally to the Blessed Sacrament.",
+      "source_ids": [
+        "SRC-GIRM-274-275"
+      ],
+      "original_destination": "MASS_SOT.GESTURES_AND_REVERENCES"
+    },
+    {
+      "claim_id": "CL02-S02-Q002",
+      "stage_id": "CL02-S02",
+      "stage_title": "Genuflect, Bow or Neither",
+      "layer": "PROFILE_1962",
+      "text": "The 1962 Missal distinguishes profound altar reverence from genuflection where the Blessed Sacrament is reserved.",
+      "source_ids": [
+        "SRC-MR62-RS-II"
+      ],
+      "original_destination": "MASS_SOT.GESTURES_AND_REVERENCES"
+    },
+    {
+      "claim_id": "CL02-S02-Q003",
+      "stage_id": "CL02-S02",
+      "stage_title": "Genuflect, Bow or Neither",
+      "layer": "CURRENT",
+      "text": "Current Roman law distinguishes head and profound bows from genuflection.",
+      "source_ids": [
+        "SRC-GIRM-274-275"
+      ],
+      "original_destination": "MASS_SOT.GESTURES_AND_REVERENCES"
+    },
+    {
+      "claim_id": "CL02-S02-Q004",
+      "stage_id": "CL02-S02",
+      "stage_title": "Genuflect, Bow or Neither",
+      "layer": "SHARED",
+      "text": "Veneration of images and relics is distinct from Eucharistic genuflection.",
+      "source_ids": [
+        "SRC-CIC83-1186-1190",
+        "SRC-GIRM-274-275"
+      ],
+      "original_destination": "MASS_SOT.GESTURES_AND_REVERENCES"
+    },
+    {
+      "claim_id": "CL02-S02-Q005",
+      "stage_id": "CL02-S02",
+      "stage_title": "Genuflect, Bow or Neither",
+      "layer": "PASTORAL",
+      "text": "Traditional exposed-Sacrament ceremonial has context-specific genuflection rules and should not be simplified to 'every movement equals double genuflection'.",
+      "source_ids": [
+        "SRC-OCONNELL-CELEBRATION-MASS-1962"
+      ],
+      "original_destination": "MASS_SOT.GESTURES_AND_REVERENCES"
+    },
+    {
+      "claim_id": "CL02-S03-Q001",
+      "stage_id": "CL02-S03",
+      "stage_title": "Stand, Sit, Kneel",
+      "layer": "PASTORAL",
+      "text": "Standing, sitting and kneeling have distinct liturgical functions.",
+      "source_ids": [
+        "SRC-GIRM-42-44"
+      ],
+      "original_destination": "MASS_SOT.POSTURES"
+    },
+    {
+      "claim_id": "CL02-S03-Q002",
+      "stage_id": "CL02-S03",
+      "stage_title": "Stand, Sit, Kneel",
+      "layer": "CURRENT",
+      "text": "Current Roman Mass posture is normatively regulated and can include legitimate territorial adaptation.",
+      "source_ids": [
+        "SRC-GIRM-42-44"
+      ],
+      "original_destination": "MASS_SOT.POSTURES"
+    },
+    {
+      "claim_id": "CL02-S03-Q003",
+      "stage_id": "CL02-S03",
+      "stage_title": "Stand, Sit, Kneel",
+      "layer": "PROFILE_1962",
+      "text": "The 1962 Missal directly regulates the postures of celebrant, sacred ministers and those in choir.",
+      "source_ids": [
+        "SRC-MR62-RG-517-525"
+      ],
+      "original_destination": "MASS_SOT.POSTURES"
+    },
+    {
+      "claim_id": "CL02-S03-Q004",
+      "stage_id": "CL02-S03",
+      "stage_title": "Stand, Sit, Kneel",
+      "layer": "PROFILE_1962",
+      "text": "The 1962 Missal does not itself provide one exhaustive universal lay posture table.",
+      "source_ids": [
+        "SRC-MR62-RG-517-525"
+      ],
+      "original_destination": "MASS_SOT.POSTURES"
+    },
+    {
+      "claim_id": "CL02-S03-Q005",
+      "stage_id": "CL02-S03",
+      "stage_title": "Stand, Sit, Kneel",
+      "layer": "PASTORAL",
+      "text": "Physical inability can justify pastoral accommodation without changing the underlying liturgical norm.",
+      "source_ids": [],
+      "original_destination": "MASS_SOT.POSTURES"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-CIC83-1186-1190",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-GIRM-274-275",
+      "title": "General Instruction of the Roman Missal",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+    },
+    {
+      "source_id": "SRC-GIRM-42-44",
+      "title": "General Instruction of the Roman Missal",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+    },
+    {
+      "source_id": "SRC-MR62-RG-517-525",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-MR62-RS-II",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-OCONNELL-CELEBRATION-MASS-1962",
+      "title": "The Celebration of Mass: A Study of the Rubrics of the Roman Missal",
+      "authority_type": "AUTHORITATIVE_CEREMONIAL_SOURCE",
+      "status": "PINNED_CONTEMPORARY_CEREMONIAL",
+      "canonical_url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf"
+    }
+  ]
+}

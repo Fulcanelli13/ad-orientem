@@ -1,0 +1,566 @@
+{
+  "version": "CATHOLIC_REFERENCE_GLOSSARY_SALVAGE_V1",
+  "status": "CANONICAL_REFERENCE_ANNEX",
+  "created_at": "2026-10-07",
+  "purpose": "Preserve church architecture, furnishing and devotional-space recognition material as contextual reference rather than a Formation curriculum.",
+  "domains": {
+    "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE": [
+      {
+        "claim_id": "CL01-S01-Q001",
+        "stage_id": "CL01-S01",
+        "stage_title": "Read the Church",
+        "layer": "HISTORICAL",
+        "text": "Some churches have an entrance vestibule; historically, certain entrance spaces are called narthexes.",
+        "source_ids": [
+          "SRC-HIST-NARTHEX"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S01-Q002",
+        "stage_id": "CL01-S01",
+        "stage_title": "Read the Church",
+        "layer": "HISTORICAL",
+        "text": "The nave is the principal body of many Western churches and is traditionally associated with the place of the faithful.",
+        "source_ids": [
+          "SRC-HIST-NAVE"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S01-Q003",
+        "stage_id": "CL01-S01",
+        "stage_title": "Read the Church",
+        "layer": "HISTORICAL",
+        "text": "The term choir can refer to the area occupied by choir stalls or singers, and its architectural position varies.",
+        "source_ids": [
+          "SRC-HIST-CHOIR"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S01-Q004",
+        "stage_id": "CL01-S01",
+        "stage_title": "Read the Church",
+        "layer": "CURRENT",
+        "text": "In the current Roman arrangement, the sanctuary contains the altar and places associated with proclamation and ministry.",
+        "source_ids": [
+          "SRC-GIRM-295-318"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S01-Q005",
+        "stage_id": "CL01-S01",
+        "stage_title": "Read the Church",
+        "layer": "PASTORAL",
+        "text": "Architectural style does not by itself establish which liturgical profile is celebrated there.",
+        "source_ids": [
+          "SRC-HIST-SANCTUARY",
+          "SRC-GIRM-295-318"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S06-Q001",
+        "stage_id": "CL01-S06",
+        "stage_title": "Why Churches Look Different",
+        "layer": "HISTORICAL",
+        "text": "Church architecture varies by period, place and use.",
+        "source_ids": [
+          "SRC-HIST-SANCTUARY"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S06-Q002",
+        "stage_id": "CL01-S06",
+        "stage_title": "Why Churches Look Different",
+        "layer": "PROFILE_1962",
+        "text": "The 1962 Missal distinguishes altar reverence from genuflection where the Blessed Sacrament is reserved.",
+        "source_ids": [
+          "SRC-MR62-RS-II"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S06-Q003",
+        "stage_id": "CL01-S06",
+        "stage_title": "Why Churches Look Different",
+        "layer": "CURRENT",
+        "text": "Current Roman norms permit Eucharistic reservation apart from the altar of celebration in the forms established by liturgical law.",
+        "source_ids": [
+          "SRC-GIRM-295-318",
+          "SRC-CIC83-938-940"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S06-Q004",
+        "stage_id": "CL01-S06",
+        "stage_title": "Why Churches Look Different",
+        "layer": "PASTORAL",
+        "text": "Architectural style is not sufficient evidence of the liturgical profile currently celebrated in a church.",
+        "source_ids": [
+          "SRC-MR62-RS-II",
+          "SRC-GIRM-295-318"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S07-Q001",
+        "stage_id": "CL01-S07",
+        "stage_title": "Read a Church Yourself",
+        "layer": "PASTORAL",
+        "text": "Begin by locating the sanctuary and altar rather than assuming their form from one architectural style.",
+        "source_ids": [
+          "SRC-GIRM-295-318",
+          "SRC-HIST-SANCTUARY"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S07-Q002",
+        "stage_id": "CL01-S07",
+        "stage_title": "Read a Church Yourself",
+        "layer": "PASTORAL",
+        "text": "Identify the altar and the place of Eucharistic reservation separately.",
+        "source_ids": [
+          "SRC-MR62-RS-II",
+          "SRC-CIC83-938-940"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      },
+      {
+        "claim_id": "CL01-S07-Q003",
+        "stage_id": "CL01-S07",
+        "stage_title": "Read a Church Yourself",
+        "layer": "PASTORAL",
+        "text": "Distinguish Word, Baptism, Confession and devotional spaces by their actual furnishings and use.",
+        "source_ids": [
+          "SRC-GIRM-295-318",
+          "SRC-CIC83-858",
+          "SRC-CIC83-964"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_ARCHITECTURE"
+      }
+    ],
+    "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS": [
+      {
+        "claim_id": "CL01-S02-Q001",
+        "stage_id": "CL01-S02",
+        "stage_title": "Eucharistic Centre",
+        "layer": "SHARED",
+        "text": "The altar and tabernacle are distinct sacred realities.",
+        "source_ids": [
+          "SRC-MR62-RS-II",
+          "SRC-CIC83-938-940",
+          "SRC-CIC83-1235-1239"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S02-Q002",
+        "stage_id": "CL01-S02",
+        "stage_title": "Eucharistic Centre",
+        "layer": "CURRENT",
+        "text": "Current law provides for a special lamp at the place of Eucharistic reservation to indicate and honour Christ's presence.",
+        "source_ids": [
+          "SRC-CIC83-938-940"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S02-Q003",
+        "stage_id": "CL01-S02",
+        "stage_title": "Eucharistic Centre",
+        "layer": "HISTORICAL",
+        "text": "Traditional churches may contain a principal high altar and side altars; a side altar does not by itself establish the church's titular or patron.",
+        "source_ids": [
+          "SRC-P16-HIGH-SIDE-ALTARS"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S02-Q004",
+        "stage_id": "CL01-S02",
+        "stage_title": "Eucharistic Centre",
+        "layer": "SHARED",
+        "text": "A communion rail is not itself a trigger for Eucharistic genuflection.",
+        "source_ids": [
+          "SRC-MR62-RS-II",
+          "SRC-GIRM-274-275",
+          "SRC-P16-COMMUNION-RAIL"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S02-Q005",
+        "stage_id": "CL01-S02",
+        "stage_title": "Eucharistic Centre",
+        "layer": "HISTORICAL",
+        "text": "Traditional sedilia, the current celebrant's chair and a bishop's cathedra are not interchangeable terms.",
+        "source_ids": [
+          "SRC-P16-SEDILIA-CATHEDRA"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S02-Q006",
+        "stage_id": "CL01-S02",
+        "stage_title": "Eucharistic Centre",
+        "layer": "HISTORICAL",
+        "text": "A jubé or rood screen is an architectural feature and must not be confused with a communion rail.",
+        "source_ids": [
+          "SRC-P16-JUBE"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.SANCTUARY_FURNISHINGS"
+      }
+    ],
+    "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS": [
+      {
+        "claim_id": "CL01-S03-Q001",
+        "stage_id": "CL01-S03",
+        "stage_title": "Word, Baptism & Confession",
+        "layer": "HISTORICAL",
+        "text": "The historical pulpit and the current liturgical ambo are related but are not identical categories.",
+        "source_ids": [
+          "SRC-HIST-PULPIT-AMBO",
+          "SRC-GIRM-295-318"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S03-Q002",
+        "stage_id": "CL01-S03",
+        "stage_title": "Word, Baptism & Confession",
+        "layer": "CURRENT",
+        "text": "Current law provides that parish churches are to have a baptismal font.",
+        "source_ids": [
+          "SRC-CIC83-858"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S03-Q003",
+        "stage_id": "CL01-S03",
+        "stage_title": "Word, Baptism & Confession",
+        "layer": "HISTORICAL",
+        "text": "A baptismal font and a holy-water stoup are distinct furnishings.",
+        "source_ids": [
+          "SRC-HIST-FONT-STOUP"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S03-Q004",
+        "stage_id": "CL01-S03",
+        "stage_title": "Word, Baptism & Confession",
+        "layer": "CURRENT",
+        "text": "Current law requires fixed-grille confessionals to remain available to the faithful who freely wish to use them.",
+        "source_ids": [
+          "SRC-CIC83-964"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S03-Q005",
+        "stage_id": "CL01-S03",
+        "stage_title": "Word, Baptism & Confession",
+        "layer": "PROFILE_1962",
+        "text": "The 1917 legal discipline in force in the 1962 context imposed specific fixed-grille requirements, especially for women's confessions, with stated exceptions.",
+        "source_ids": [
+          "SRC-CIC17-909"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.CHURCH_FURNISHINGS"
+      }
+    ],
+    "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS": [
+      {
+        "claim_id": "CL01-S04-Q001",
+        "stage_id": "CL01-S04",
+        "stage_title": "Behind the Liturgy",
+        "layer": "SHARED",
+        "text": "The credence is distinct from the altar and is used for items needed in liturgical celebration.",
+        "source_ids": [
+          "SRC-P16-CREDENCE",
+          "SRC-GIRM-295-318"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S04-Q002",
+        "stage_id": "CL01-S04",
+        "stage_title": "Behind the Liturgy",
+        "layer": "HISTORICAL",
+        "text": "A sacrarium or piscina is not an ordinary sink; it is a special liturgical drainage feature.",
+        "source_ids": [
+          "SRC-HIST-PISCINA-SACRARIUM"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S04-Q003",
+        "stage_id": "CL01-S04",
+        "stage_title": "Behind the Liturgy",
+        "layer": "HISTORICAL",
+        "text": "An architectural ciborium or baldachin is distinct from the Eucharistic vessel also called a ciborium.",
+        "source_ids": [
+          "SRC-P16-RETABLE-CIBORIUM"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S04-Q004",
+        "stage_id": "CL01-S04",
+        "stage_title": "Behind the Liturgy",
+        "layer": "HISTORICAL",
+        "text": "A retable is distinct from the altar itself.",
+        "source_ids": [
+          "SRC-P16-RETABLE-CIBORIUM"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS"
+      },
+      {
+        "claim_id": "CL01-S04-Q005",
+        "stage_id": "CL01-S04",
+        "stage_title": "Behind the Liturgy",
+        "layer": "PASTORAL",
+        "text": "The presence of a reliquary near an altar does not by itself prove that it is an altar relic.",
+        "source_ids": [
+          "SRC-CIC83-1235-1239"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.LITURGICAL_FURNISHINGS"
+      }
+    ],
+    "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES": [
+      {
+        "claim_id": "CL01-S05-Q001",
+        "stage_id": "CL01-S05",
+        "stage_title": "Devotion Around the Church",
+        "layer": "SHARED",
+        "text": "A Station of the Cross is not simply any image of the Passion.",
+        "source_ids": [
+          "SRC-P16-STATIONS"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES"
+      },
+      {
+        "claim_id": "CL01-S05-Q002",
+        "stage_id": "CL01-S05",
+        "stage_title": "Devotion Around the Church",
+        "layer": "CURRENT",
+        "text": "Sacred images may legitimately be exposed for veneration in churches.",
+        "source_ids": [
+          "SRC-CIC83-1186-1190",
+          "SRC-GIRM-295-318"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES"
+      },
+      {
+        "claim_id": "CL01-S05-Q003",
+        "stage_id": "CL01-S05",
+        "stage_title": "Devotion Around the Church",
+        "layer": "SHARED",
+        "text": "Veneration of sacred images is distinct from Eucharistic adoration.",
+        "source_ids": [
+          "SRC-CIC83-1186-1190",
+          "SRC-CIC83-938-940"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES"
+      },
+      {
+        "claim_id": "CL01-S05-Q004",
+        "stage_id": "CL01-S05",
+        "stage_title": "Devotion Around the Church",
+        "layer": "PASTORAL",
+        "text": "Candles or a devotional image do not establish that the Blessed Sacrament is reserved there.",
+        "source_ids": [
+          "SRC-CIC83-938-940"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES"
+      },
+      {
+        "claim_id": "CL01-S05-Q005",
+        "stage_id": "CL01-S05",
+        "stage_title": "Devotion Around the Church",
+        "layer": "HISTORICAL",
+        "text": "A churchyard is not automatically a cemetery.",
+        "source_ids": [
+          "SRC-P16-CHURCHYARD-CEMETERY"
+        ],
+        "original_destination": "REFERENCE.CATHOLIC_GLOSSARY.DEVOTIONAL_SPACES"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC-CIC17-909",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC83-1186-1190",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1235-1239",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-858",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-938-940",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-964",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-GIRM-274-275",
+      "title": "General Instruction of the Roman Missal",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+    },
+    {
+      "source_id": "SRC-GIRM-295-318",
+      "title": "General Instruction of the Roman Missal",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html"
+    },
+    {
+      "source_id": "SRC-HIST-CHOIR",
+      "title": "Choir (In Architecture) — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/03693a.htm"
+    },
+    {
+      "source_id": "SRC-HIST-FONT-STOUP",
+      "title": "Baptismal Font / Holy Water Fonts — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/02274a.htm"
+    },
+    {
+      "source_id": "SRC-HIST-NARTHEX",
+      "title": "Narthex — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/10704b.htm"
+    },
+    {
+      "source_id": "SRC-HIST-NAVE",
+      "title": "Nave — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/10724a.htm"
+    },
+    {
+      "source_id": "SRC-HIST-PISCINA-SACRARIUM",
+      "title": "Piscina — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/12115a.htm"
+    },
+    {
+      "source_id": "SRC-HIST-PULPIT-AMBO",
+      "title": "Pulpit — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/12563b.htm"
+    },
+    {
+      "source_id": "SRC-HIST-SANCTUARY",
+      "title": "Sanctuary (Ecclesiastical Architecture) — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/13431a.htm"
+    },
+    {
+      "source_id": "SRC-MR62-RS-II",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-P16-CHURCHYARD-CEMETERY",
+      "title": "Cemetery / Churchyard — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/03504a.htm"
+    },
+    {
+      "source_id": "SRC-P16-COMMUNION-RAIL",
+      "title": "Altar Rail / Communion Bench — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/01356c.htm"
+    },
+    {
+      "source_id": "SRC-P16-CREDENCE",
+      "title": "Credence — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/04476a.htm"
+    },
+    {
+      "source_id": "SRC-P16-HIGH-SIDE-ALTARS",
+      "title": "High Altar — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/07346b.htm"
+    },
+    {
+      "source_id": "SRC-P16-JUBE",
+      "title": "Rood / Rood Screen — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/13181a.htm"
+    },
+    {
+      "source_id": "SRC-P16-RETABLE-CIBORIUM",
+      "title": "Altar Screen (Retable/Reredos) / Ciborium — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/01356d.htm"
+    },
+    {
+      "source_id": "SRC-P16-SEDILIA-CATHEDRA",
+      "title": "Sedilia / Cathedra — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/13679b.htm"
+    },
+    {
+      "source_id": "SRC-P16-STATIONS",
+      "title": "Way of the Cross — Catholic Encyclopedia",
+      "authority_type": "HISTORICAL_REFERENCE",
+      "status": "PINNED_REFERENCE_TRANSCRIPTION",
+      "canonical_url": "https://www.newadvent.org/cathen/15569a.htm"
+    }
+  ]
+}
