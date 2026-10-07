@@ -90,10 +90,10 @@ const depthCounts=Object.freeze({
   EXPANDED:CSE_QUESTIONS.filter(item=>item.depth==="EXPANDED").length,
   DEBATE:CSE_QUESTIONS.filter(item=>item.depth==="DEBATE").length,
 });
-if(depthCounts.STANDARD!==75)errors.push(`expected 75 STANDARD, got ${depthCounts.STANDARD}`);
+if(depthCounts.STANDARD!==70)errors.push(`expected 70 STANDARD, got ${depthCounts.STANDARD}`);
 if(depthCounts.EXPANDED!==25)errors.push(`expected 25 EXPANDED, got ${depthCounts.EXPANDED}`);
-if(depthCounts.DEBATE!==50)errors.push(`expected 50 DEBATE, got ${depthCounts.DEBATE}`);
-if(!CSE_DEBATE_VALIDATION.complete||CSE_DEBATE_VALIDATION.count!==50)errors.push(`structured debate corpus invalid`);
+if(depthCounts.DEBATE!==55)errors.push(`expected 55 DEBATE, got ${depthCounts.DEBATE}`);
+if(!CSE_DEBATE_VALIDATION.complete||CSE_DEBATE_VALIDATION.count!==55)errors.push(`structured debate corpus invalid`);
 for(const id of CSE_DEBATE_IDS){if(!CSE_QUESTION_MAP[id])errors.push(`debate references missing question ${id}`);}
 for(const item of CSE_QUESTIONS){if(item.depth==="DEBATE"){for(const field of CSE_DEBATE_FIELDS){if(!item.debate?.[field]?.[0]||!item.debate?.[field]?.[1])errors.push(`${item.id}: incomplete debate field ${field}`);}}}
 
