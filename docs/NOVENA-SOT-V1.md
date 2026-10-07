@@ -50,23 +50,34 @@ Two French provenance labels are deliberately distinct:
 
 This distinction must not be removed for cosmetic uniformity.
 
+## Calendar start authority
+
+The calendar window and the historical prayer body are separate claims.
+
+Every novena now carries one of two start classifications:
+
+- **TRADITIONAL_START** — the source or pre-conciliar devotional tradition explicitly binds the novena to that liturgical preparation or start;
+- **SUGGESTED_START** — Ad Orientem offers a useful feast-relative or seasonal window, but the historical source did not require that exact start date.
+
+The interface must render these as **Traditional start / Début traditionnel** and **Suggested start / Début suggéré**. A feast-aligned convenience date must never be promoted into a historical rule merely because Calendar Intelligence can calculate it.
+
 ## Four recovered targets
 
 ### St Anthony’s Nine Tuesdays
 
-This remains a **weekly** devotion. It is not a nine-consecutive-day novena. Calendar Intelligence computes nine successive Tuesdays leading toward the 13 June feast. The traditional source also makes clear that one single mandatory prayer text was not universally prescribed; Ad Orientem uses the commonly attested traditional prayers without inventing nine day-specific meditations.
+This remains a **weekly** devotion. It is not a nine-consecutive-day novena. The traditional source requires nine consecutive Tuesdays but does not restrict them to a feast-preparation window. Calendar Intelligence therefore offers the nine Tuesdays leading toward 13 June as a **SUGGESTED_START**, not as a recovered historical start rule. The source also makes clear that one single mandatory prayer text was not universally prescribed; Ad Orientem uses the commonly attested traditional prayers without inventing nine day-specific meditations.
 
 ### Christ the King
 
-The novena uses the traditional Prayer to Christ the King in repeated form and binds its preparation to the **last Sunday of October**, matching the 1962 feast.
+The novena uses the traditional Prayer to Christ the King in repeated form. A pre-conciliar family-liturgy witness explicitly describes a private novena or triduum during the nine or three days immediately preceding the feast, so this is classified **TRADITIONAL_START** and is bound to the last Sunday of October in the 1962 calendar.
 
 ### Immaculate Heart of Mary
 
-The novena uses an older approved prayer to the Immaculate Heart in repeated form over nine days, preparing the **22 August** feast. Historical evidence supports nine days of approved prayer without requiring an invented day-specific corpus.
+The novena uses an older approved prayer to the Immaculate Heart in repeated form over nine days. Historical evidence supports nine consecutive days of approved prayer without fixing them to 13–21 August. Ad Orientem offers 13–21 August before the 22 August feast as **SUGGESTED_START**, not as a source-mandated historical window.
 
 ### St Michael
 
-The novena uses the traditional Leonine Prayer to St Michael in repeated form, preparing **29 September**.
+The novena uses the traditional Leonine Prayer to St Michael in repeated form. The 1910 Raccolta states that the novena may be made at any time of year with any prayers sanctioned by competent ecclesiastical authority. Ad Orientem therefore offers 20–28 September before Michaelmas as **SUGGESTED_START**, not as the historical rule.
 
 ## Ownership
 
