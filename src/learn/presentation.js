@@ -16,6 +16,7 @@ export const LEARN_LAYOUT=Object.freeze({
       Object.freeze({id:"learn.catechism.daily",type:"programme",featured:true,title:Object.freeze(["Daily Catechism","Catéchisme quotidien"]),description:Object.freeze(["Ten questions each day: new material, review and weak points.","Dix questions chaque jour : nouveautés, révision et points faibles."])})
     ])}),
     Object.freeze({title:Object.freeze(["Courses & study","Parcours & étude"]),items:Object.freeze([
+      Object.freeze({id:"learn.latin",type:"module",featured:false,title:Object.freeze(["Latin for the Missal","Latin du Missel"]),description:Object.freeze(["A 40-lesson course from pronunciation and cases to the Ordinary, Canon, Propers and independent Missal reading.","Un parcours de 40 leçons, de la prononciation et des cas jusqu’à l’Ordinaire, au Canon, aux Propres et à la lecture autonome du Missel."])}),
       Object.freeze({id:"learn.mass",type:"module",featured:true,title:Object.freeze(["Understand the Mass","Comprendre la Messe"]),description:Object.freeze(["A guided course through the order, meaning, history and roles of the Roman Mass.","Un parcours guidé sur l’ordre, le sens, l’histoire et les rôles de la Messe romaine."])}),
       Object.freeze({id:"learn.catechism",type:"module",featured:false,title:Object.freeze(["Traditional Catechism","Catéchisme traditionnel"]),description:Object.freeze(["The complete Catechism of St Pius X: browse, search and study.","Le Catéchisme complet de saint Pie X : parcourir, rechercher et étudier."])})
     ])}),
