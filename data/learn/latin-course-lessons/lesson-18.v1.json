@@ -451,7 +451,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Tous les « il / ceci / cela » n’ont pas la même fonction"
+        }
+      }
     },
     {
       "id": "l18-b2",
@@ -468,7 +473,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Hoc est enim Corpus meum"
+        }
+      }
     },
     {
       "id": "l18-b3",
@@ -485,7 +495,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "In ipso vita erat"
+        }
+      }
     },
     {
       "id": "l18-b4",
@@ -500,7 +515,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "ille et iste"
+        }
+      }
     },
     {
       "id": "l18-b5",
@@ -517,7 +537,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "unus et le modèle de l’adjectif pronominal"
+        }
+      }
     },
     {
       "id": "l18-b6",
@@ -532,7 +557,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La progression en spirale exige désormais de choisir la bonne famille"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -708,7 +738,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi Hoc est-il neutre dans Hoc est Corpus meum ?",
+          "hint": "Faites correspondre le démonstratif à Corpus.",
+          "explanation": "Hoc s’accorde avec le nom neutre Corpus.",
+          "options": [
+            "parce qu’il identifie le neutre Corpus",
+            "parce que tous les démonstratifs sont neutres",
+            "parce que est exige le neutre",
+            "parce que meum est un verbe"
+          ]
+        }
+      }
     },
     {
       "id": "l18-e2",
@@ -739,7 +782,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est ipso dans In ipso vita erat ?",
+          "hint": "in statique régit l’ablatif.",
+          "explanation": "ipso est à l’ablatif singulier.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
     },
     {
       "id": "l18-e3",
@@ -770,7 +826,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la famille pronominale à sa valeur principale.",
+          "hint": "Distinguez l’indication démonstrative de l’identité intensive.",
+          "explanation": "Ces familles ont des fonctions discursives proches mais distinctes.",
+          "matches": {
+            "hic/haec/hoc": "ceci / celui-ci",
+            "ille": "cela / celui-là / il",
+            "ipse": "lui-même / précisément",
+            "idem": "le même"
+          }
+        }
+      }
     },
     {
       "id": "l18-e4",
@@ -799,7 +868,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle famille est le pronom anaphorique léger de troisième personne déjà appris à la leçon 10 ?",
+          "hint": "Il signifie souvent il/elle/cela sans forte valeur démonstrative.",
+          "explanation": "is/ea/id est la famille anaphorique légère.",
+          "options": [
+            "is/ea/id",
+            "hic/haec/hoc",
+            "ipse",
+            "idem"
+          ]
+        }
+      }
     },
     {
       "id": "l18-e5",
@@ -830,7 +912,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que montre unus dans Unus Dominus, una fides, unum baptisma ?",
+          "hint": "Les trois formes modifient des noms de genres différents.",
+          "explanation": "unus change de forme pour s’accorder avec son nom.",
+          "options": [
+            "l’accord de genre au masculin, au féminin et au neutre",
+            "le futur",
+            "le cas du pronom relatif",
+            "la voix passive"
+          ]
+        }
+      }
     },
     {
       "id": "l18-e6",
@@ -861,7 +956,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le mot de la leçon 18 à son sens.",
+          "hint": "Ces mots accompagnent le système démonstratif et pronominal.",
+          "explanation": "Ceci vérifie le vocabulaire des adjectifs pronominaux.",
+          "matches": {
+            "alius": "autre / un autre",
+            "multus": "beaucoup / nombreux",
+            "totus": "tout entier / entier",
+            "solus": "seul / seulement"
+          }
+        }
+      }
     },
     {
       "id": "l18-e7",
@@ -892,7 +1000,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 18 à son sens.",
+          "hint": "Tous appartiennent au vocabulaire figé de la leçon 18.",
+          "explanation": "Ceci achève la récupération lexicale.",
+          "matches": {
+            "quidam": "un certain / quelqu’un",
+            "unus": "un",
+            "duo": "deux",
+            "sacramentum": "sacrement / mystère"
+          }
+        }
+      }
     },
     {
       "id": "l18-e8",
@@ -921,7 +1042,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel pronom est intensif plutôt que simplement démonstratif ?",
+          "hint": "Il signifie « lui-même / précisément ».",
+          "explanation": "ipse intensifie l’identité.",
+          "options": [
+            "ipse",
+            "hic",
+            "ille",
+            "iste"
+          ]
+        }
+      }
     },
     {
       "id": "l18-e9",
@@ -950,7 +1084,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie idem ?",
+          "hint": "Il marque l’identité entre plusieurs références.",
+          "explanation": "idem signifie « le même ».",
+          "options": [
+            "le même",
+            "autre",
+            "quiconque",
+            "chacun"
+          ]
+        }
+      }
     },
     {
       "id": "l18-e10",
@@ -975,7 +1122,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « sacrement / mystère ».",
+          "hint": "Il apparaît avec hoc dans Éphésiens 5,32.",
+          "explanation": "sacramentum est le nom de la leçon 18."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1049,5 +1203,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Hoc est Corpus meum",
+      "grammarFocus": "Démonstratifs et ipse",
+      "readingOutcome": "Distinguer en contexte les pronoms démonstratifs, intensifs et d’identité.",
+      "objectives": [
+        "Distinguer les familles démonstratives, intensives et d’identité.",
+        "Analyser les démonstratifs sur la carte de cas déjà connue.",
+        "Relier unus/solus/totus/alius à la morphologie pronominale.",
+        "Poursuivre la progression en spirale des pronoms en opposant les nouvelles familles à is/ea/id."
+      ]
+    }
+  }
 }

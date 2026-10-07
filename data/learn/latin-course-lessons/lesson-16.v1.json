@@ -444,7 +444,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Un participe avec sum peut former un passif accompli"
+        }
+      }
     },
     {
       "id": "l16-b2",
@@ -459,7 +464,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le participe s’accorde avec son sujet"
+        }
+      }
     },
     {
       "id": "l16-b3",
@@ -476,7 +486,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Et incarnatus est"
+        }
+      }
     },
     {
       "id": "l16-b4",
@@ -493,7 +508,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Crucifixus, passus, sepultus"
+        }
+      }
     },
     {
       "id": "l16-b5",
@@ -510,7 +530,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "traditus est face à resurrexit"
+        }
+      }
     },
     {
       "id": "l16-b6",
@@ -525,7 +550,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ne pas confondre forme participiale et valeur de voix"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -675,7 +705,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle construction est incarnatus est ?",
+          "hint": "Cherchez participe + est.",
+          "explanation": "incarnatus est est une construction au parfait passif.",
+          "options": [
+            "parfait passif",
+            "imparfait actif",
+            "futur actif",
+            "présent passif seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l16-e2",
@@ -704,7 +747,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Avec quoi le participe au parfait passif doit-il s’accorder ?",
+          "hint": "Traitez le participe comme un adjectif qui s’accorde.",
+          "explanation": "L’accord du participe est essentiel à la construction.",
+          "options": [
+            "avec son sujet grammatical en genre, nombre et cas",
+            "avec la préposition la plus proche seulement",
+            "avec le verbe sum seulement pour le temps",
+            "avec l’ordre des mots"
+          ]
+        }
+      }
     },
     {
       "id": "l16-e3",
@@ -737,7 +793,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les formes au parfait passif.",
+          "hint": "passus est déponent et a un sens actif.",
+          "explanation": "Crucifixus et sepultus appartiennent à des constructions passives ; passus préfigure les déponents."
+        }
+      }
     },
     {
       "id": "l16-e4",
@@ -768,7 +831,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme a un sens actif malgré une morphologie d’apparence passive ?",
+          "hint": "Elle appartient à patior.",
+          "explanation": "patior est déponent ; passus signifie « a souffert ».",
+          "options": [
+            "passus",
+            "crucifixus",
+            "sepultus",
+            "traditus"
+          ]
+        }
+      }
     },
     {
       "id": "l16-e5",
@@ -796,7 +872,18 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle action accomplie est passive ?",
+          "hint": "L’une signifie « fut livré ».",
+          "explanation": "traditus est est au parfait passif ; resurrexit est au parfait actif.",
+          "options": [
+            "traditus est",
+            "resurrexit"
+          ]
+        }
+      }
     },
     {
       "id": "l16-e6",
@@ -827,7 +914,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière electi ?",
+          "hint": "Il signifie « choisis ».",
+          "explanation": "electi est une forme participiale de eligo.",
+          "options": [
+            "eligo",
+            "lego",
+            "voco",
+            "annuntio"
+          ]
+        }
+      }
     },
     {
       "id": "l16-e7",
@@ -858,7 +958,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de la leçon 16 à son sens.",
+          "hint": "Tous appartiennent au vocabulaire fondamental de la leçon 16.",
+          "explanation": "Ceci vérifie le vocabulaire principal d’action.",
+          "matches": {
+            "incarno": "s’incarner",
+            "crucifigo": "crucifier",
+            "sepelio": "ensevelir",
+            "trado": "livrer / remettre"
+          }
+        }
+      }
     },
     {
       "id": "l16-e8",
@@ -889,7 +1002,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 16 à son sens.",
+          "hint": "Deux verbes préfigurent le comportement déponent.",
+          "explanation": "Ceci vérifie le reste de l’ensemble fondamental.",
+          "matches": {
+            "nascor": "naître",
+            "morior": "mourir",
+            "annuntio": "annoncer / proclamer",
+            "signum": "signe"
+          }
+        }
+      }
     },
     {
       "id": "l16-e9",
@@ -919,7 +1045,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que montre le pluriel electi ?",
+          "hint": "La terminaison change avec le nombre.",
+          "explanation": "electi est au pluriel parce que son référent est pluriel.",
+          "options": [
+            "l’accord participial avec un référent pluriel",
+            "le futur",
+            "l’adresse directe",
+            "le régime de l’ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l16-e10",
@@ -944,7 +1083,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « signe ».",
+          "hint": "Il apparaît dans la proposition de la Nativité.",
+          "explanation": "signum signifie « signe »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1016,5 +1162,19 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Incarnatus est",
+      "grammarFocus": "Parfait passif ; participe",
+      "readingOutcome": "Analyser les constructions au parfait passif et l’accord du participe.",
+      "objectives": [
+        "Analyser la construction participe parfait passif + sum.",
+        "Utiliser l’accord du participe pour identifier les rapports avec le sujet.",
+        "Opposer le parfait passif au parfait actif.",
+        "Prévisualiser les exceptions déponentes nommées sans les confondre avec un sens passif.",
+        "Apprendre les dix lemmes figés de la leçon 16."
+      ]
+    }
+  }
 }

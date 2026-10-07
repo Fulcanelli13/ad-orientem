@@ -406,7 +406,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une forme passive ne signifie pas toujours une action passive"
+        }
+      }
     },
     {
       "id": "l19-b2",
@@ -421,7 +426,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La leçon 16 avait déjà préparé ce point"
+        }
+      }
     },
     {
       "id": "l19-b3",
@@ -438,7 +448,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "miserere nobis"
+        }
+      }
     },
     {
       "id": "l19-b4",
@@ -455,7 +470,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Confiteor Deo"
+        }
+      }
     },
     {
       "id": "l19-b5",
@@ -472,7 +492,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les déponents conservent leur propre régime casuel"
+        }
+      }
     },
     {
       "id": "l19-b6",
@@ -487,7 +512,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lire la morphologie, puis vérifier la voix lexicale"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -646,7 +676,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qu’un verbe déponent ?",
+          "hint": "Pensez à sequitur = « suit ».",
+          "explanation": "Les déponents emploient des formes passives avec un sens lexical actif.",
+          "options": [
+            "un verbe à morphologie passive et à sens actif",
+            "un verbe sans sens",
+            "un nom employé comme verbe",
+            "un verbe uniquement futur"
+          ]
+        }
+      }
     },
     {
       "id": "l19-e2",
@@ -676,7 +719,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie miserere ici ?",
+          "hint": "C’est un ordre déponent.",
+          "explanation": "miserere a un sens actif malgré sa forme d’apparence passive.",
+          "options": [
+            "ayez pitié",
+            "soyez pris en pitié",
+            "fut pris en pitié",
+            "aura pitié"
+          ]
+        }
+      }
     },
     {
       "id": "l19-e3",
@@ -706,7 +762,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie Confiteor ?",
+          "hint": "La terminaison -or ne rend pas son sens passif.",
+          "explanation": "confiteor est un déponent à la première personne du singulier.",
+          "options": [
+            "je confesse / reconnais",
+            "je suis confessé",
+            "je confesserai",
+            "confesse !"
+          ]
+        }
+      }
     },
     {
       "id": "l19-e4",
@@ -738,7 +807,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est me dans qui sequitur me ?",
+          "hint": "C’est le complément d’objet de « suit ».",
+          "explanation": "me est ici à l’accusatif.",
+          "options": [
+            "accusatif",
+            "ablatif",
+            "datif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l19-e5",
@@ -769,7 +851,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est incorporée dans tecum ?",
+          "hint": "Rappelez-vous les formes soudées avec cum.",
+          "explanation": "tecum contient l’ablatif te avec cum postposé.",
+          "options": [
+            "ablatif te + cum",
+            "accusatif te + ad",
+            "datif tibi + cum",
+            "génitif tui + cum"
+          ]
+        }
+      }
     },
     {
       "id": "l19-e6",
@@ -800,7 +895,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le déponent à son sens.",
+          "hint": "Tous ont un sens actif.",
+          "explanation": "Ceci vérifie le nouveau vocabulaire déponent.",
+          "matches": {
+            "veneror": "vénérer",
+            "precor": "prier / supplier",
+            "dignor": "daigner / juger digne",
+            "loquor": "parler"
+          }
+        }
+      }
     },
     {
       "id": "l19-e7",
@@ -829,7 +937,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel verbe antérieur avait déjà préfiguré le comportement déponent ?",
+          "hint": "passus signifiait « a souffert ».",
+          "explanation": "patior était l’aperçu de la leçon 16.",
+          "options": [
+            "patior",
+            "crucifigo",
+            "sepelio",
+            "trado"
+          ]
+        }
+      }
     },
     {
       "id": "l19-e8",
@@ -860,7 +981,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "La morphologie déponente change-t-elle le système ordinaire des cas ?",
+          "hint": "Le régime casuel reste lexical et syntaxique.",
+          "explanation": "Les déponents régissent toujours les cas selon leur propre syntaxe.",
+          "options": [
+            "non",
+            "oui, tous les compléments deviennent ablatifs",
+            "oui, le nominatif disparaît",
+            "oui, seuls les pronoms changent"
+          ]
+        }
+      }
     },
     {
       "id": "l19-e9",
@@ -890,7 +1024,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le verbe déponent et son pronom complément.",
+          "hint": "L’un est le déponent ; l’autre est son complément à l’accusatif.",
+          "explanation": "sequitur régit me à l’accusatif."
+        }
+      }
     },
     {
       "id": "l19-e10",
@@ -915,7 +1056,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le déponent latin signifiant « parler ».",
+          "hint": "Il apparaît dans Ego sum, qui loquor tecum.",
+          "explanation": "loquor signifie « parler »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -983,5 +1131,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Miserere nobis",
+      "grammarFocus": "Verbes déponents",
+      "readingOutcome": "Lire des verbes de forme passive mais de sens actif.",
+      "objectives": [
+        "Reconnaître une morphologie passive avec une valeur lexicale active chez les déponents.",
+        "Relier les aperçus de verbes déponents de la leçon 16 à un système général.",
+        "Maintenir actifs le régime casuel et les pronoms avec les verbes déponents.",
+        "Apprendre les sept lemmes figés de la leçon 19."
+      ]
+    }
+  }
 }

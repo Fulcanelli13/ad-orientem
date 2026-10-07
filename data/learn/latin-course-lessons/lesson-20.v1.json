@@ -608,7 +608,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Cesser de lire mot par mot"
+        }
+      }
     },
     {
       "id": "l20-b2",
@@ -625,7 +630,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Cartographier le Credo avant de traduire"
+        }
+      }
     },
     {
       "id": "l20-b3",
@@ -640,7 +650,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La récupération mêlée des pronoms est obligatoire"
+        }
+      }
     },
     {
       "id": "l20-b4",
@@ -657,7 +672,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Hic est enim Calix Sanguinis mei"
+        }
+      }
     },
     {
       "id": "l20-b5",
@@ -674,7 +694,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "qui se exaltat"
+        }
+      }
     },
     {
       "id": "l20-b6",
@@ -689,7 +714,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Jalon de lecture intégrée du Credo"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -947,7 +977,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Identifiez les trois ouvertures répétées de propositions relatives dans le passage principal du Credo.",
+          "hint": "Le passage répète la même famille relative.",
+          "explanation": "Les propositions répétées en qui structurent la section du Credo sur le Saint-Esprit."
+        }
+      }
     },
     {
       "id": "l20-e2",
@@ -979,7 +1016,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Avec quoi catholicam s’accorde-t-il dans le passage du Credo ?",
+          "hint": "Faites correspondre genre, nombre et cas.",
+          "explanation": "catholicam est féminin accusatif singulier et s’accorde avec Ecclesiam.",
+          "options": [
+            "Ecclesiam",
+            "Spiritum",
+            "Prophetas",
+            "remissionem"
+          ]
+        }
+      }
     },
     {
       "id": "l20-e3",
@@ -1010,7 +1060,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est remissionem après in dans le passage du Credo ?",
+          "hint": "Ici in exprime un but ou résultat : vers la rémission.",
+          "explanation": "remissionem est à l’accusatif après in directionnel/de résultat.",
+          "options": [
+            "accusatif",
+            "ablatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
     },
     {
       "id": "l20-e4",
@@ -1040,7 +1103,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quelle famille pronominale Hic appartient-il dans Hic est enim Calix... ?",
+          "hint": "Il désigne « ceci ».",
+          "explanation": "Hic est démonstratif.",
+          "options": [
+            "démonstratif hic/haec/hoc",
+            "relatif qui/quae/quod",
+            "personnel ego/tu",
+            "réfléchi se"
+          ]
+        }
+      }
     },
     {
       "id": "l20-e5",
@@ -1071,7 +1147,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle famille / forme est mei dans Sanguinis mei ?",
+          "hint": "Il signifie « de moi / mon ».",
+          "explanation": "mei est la forme au génitif associée à ego.",
+          "options": [
+            "génitif de ego",
+            "datif de nos",
+            "génitif relatif",
+            "réfléchi se"
+          ]
+        }
+      }
     },
     {
       "id": "l20-e6",
@@ -1101,7 +1190,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quelle famille pronominale appartient se dans qui se exaltat ?",
+          "hint": "Il renvoie au sujet de sa propre proposition.",
+          "explanation": "se est réfléchi.",
+          "options": [
+            "réfléchi",
+            "relatif",
+            "démonstratif",
+            "personnel au nominatif"
+          ]
+        }
+      }
     },
     {
       "id": "l20-e7",
@@ -1134,7 +1236,21 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la forme pronominale à sa famille.",
+          "hint": "C’est le jalon obligatoire mêlant plusieurs familles.",
+          "explanation": "Chaque forme appartient à une famille distincte apprise entre les leçons 10 et 20.",
+          "matches": {
+            "nos": "personnel",
+            "se": "réfléchi",
+            "ejus": "is/ea/id",
+            "qui": "relatif",
+            "Hic": "démonstratif"
+          }
+        }
+      }
     },
     {
       "id": "l20-e8",
@@ -1165,7 +1281,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est ejus dans pedes ejus ?",
+          "hint": "Il répond à la question « les pieds de qui ? ».",
+          "explanation": "ejus est le génitif singulier de is/ea/id.",
+          "options": [
+            "génitif",
+            "accusatif",
+            "datif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l20-e9",
@@ -1196,7 +1325,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est eum dans adoraverunt eum ?",
+          "hint": "C’est le complément d’objet direct de adoraverunt.",
+          "explanation": "eum est à l’accusatif masculin singulier.",
+          "options": [
+            "accusatif",
+            "génitif",
+            "datif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l20-e10",
@@ -1227,7 +1369,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la structure de l’étape 4 à son exemple.",
+          "hint": "Chaque leçon apporte un système structurel.",
+          "explanation": "Ceci réactive les leçons 16–19 avant la lecture du passage.",
+          "matches": {
+            "perfect passive": "incarnatus est",
+            "relative pronoun": "qui tollis",
+            "demonstrative": "Hoc est Corpus meum",
+            "deponent": "miserere nobis"
+          }
+        }
+      }
     },
     {
       "id": "l20-e11",
@@ -1258,7 +1413,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce que locutus est dans le passage du Credo ?",
+          "hint": "loquor est déponent.",
+          "explanation": "locutus est signifie « a parlé », et non « a été parlé ».",
+          "options": [
+            "parfait déponent à sens actif",
+            "parfait passif ordinaire",
+            "futur actif",
+            "impératif"
+          ]
+        }
+      }
     },
     {
       "id": "l20-e12",
@@ -1289,7 +1457,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nouveau lemme de la leçon 20 à son sens.",
+          "hint": "Ces mots apparaissent dans les sources complémentaires du jalon.",
+          "explanation": "Ceci vérifie la partie hors Credo du vocabulaire figé.",
+          "matches": {
+            "testamentum": "testament / alliance",
+            "caritas": "charité / amour",
+            "communio": "communion / participation",
+            "iudicium": "jugement"
+          }
+        }
+      }
     },
     {
       "id": "l20-e13",
@@ -1322,7 +1503,21 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nouveau lemme de la leçon 20 à son sens.",
+          "hint": "Tous appartiennent à l’allocation figée de la leçon 20.",
+          "explanation": "Ceci achève la récupération lexicale.",
+          "matches": {
+            "remissio": "rémission / pardon",
+            "mors": "mort",
+            "propheta": "prophète",
+            "cunctus": "tout / entier",
+            "universus": "tout entier / universel / tous"
+          }
+        }
+      }
     },
     {
       "id": "l20-e14",
@@ -1351,7 +1546,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 4 ?",
+          "hint": "C’est le seuil figé de la leçon 20.",
+          "explanation": "L’étape 4 s’achève par la lecture du Credo au niveau du passage.",
+          "options": [
+            "Jalon de lecture intégrée du Credo.",
+            "Courtes propositions narratives de Psaume ou d’Évangile.",
+            "Oraison romaine complète.",
+            "Passage du Canon à longue syntaxe périodique."
+          ]
+        }
+      }
     },
     {
       "id": "l20-e15",
@@ -1380,7 +1588,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel changement intervient dans la progression de lecture à la leçon 20 ?",
+          "hint": "La sélection principale du Credo est un texte continu et soutenu.",
+          "explanation": "La leçon 20 est le premier jalon au niveau du passage.",
+          "options": [
+            "phrase → passage",
+            "groupe de mots → phrase",
+            "passage → lecture liturgique autonome",
+            "aucun changement"
+          ]
+        }
+      }
     }
   ],
   "objectives": [
@@ -1478,5 +1699,19 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Lire le Credo",
+      "grammarFocus": "Jalon intégré de morphologie et de syntaxe",
+      "readingOutcome": "Lire le Credo en mobilisant cumulativement cas, temps et résolution des pronoms.",
+      "objectives": [
+        "Lire un passage soutenu du Credo comme une syntaxe continue.",
+        "Résoudre dans un même jalon les familles de pronoms personnels, réfléchis, anaphoriques, relatifs et démonstratifs.",
+        "Intégrer les systèmes du parfait passif, des déponents, des cas, des temps et de l’accord.",
+        "Apprendre les dix lemmes figés de la leçon 20.",
+        "Franchir le jalon obligatoire de lecture intégrée du Credo."
+      ]
+    }
+  }
 }

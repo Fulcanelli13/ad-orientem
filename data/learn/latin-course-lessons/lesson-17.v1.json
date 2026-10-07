@@ -392,7 +392,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Un pronom relatif remplit deux fonctions"
+        }
+      }
     },
     {
       "id": "l17-b2",
@@ -409,7 +414,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Agnus Dei, qui tollis"
+        }
+      }
     },
     {
       "id": "l17-b3",
@@ -426,7 +436,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "cuius montre le changement de cas du pronom relatif"
+        }
+      }
     },
     {
       "id": "l17-b4",
@@ -441,7 +456,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Résoudre avant de traduire"
+        }
+      }
     },
     {
       "id": "l17-b5",
@@ -458,7 +478,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "quicumque"
+        }
+      }
     },
     {
       "id": "l17-b6",
@@ -473,7 +498,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La progression en spirale compte maintenant trois familles"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -637,7 +667,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui détermine le genre et le nombre d’un pronom relatif ?",
+          "hint": "L’accord renvoie en arrière.",
+          "explanation": "L’antécédent fournit le genre et le nombre.",
+          "options": [
+            "son antécédent",
+            "le temps de son verbe",
+            "la préposition la plus proche",
+            "l’ordre des mots"
+          ]
+        }
+      }
     },
     {
       "id": "l17-e2",
@@ -667,7 +710,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui détermine le cas d’un pronom relatif ?",
+          "hint": "Le cas dépend de la fonction du pronom dans sa propre proposition.",
+          "explanation": "Le cas du relatif vient de son rôle grammatical dans la proposition relative.",
+          "options": [
+            "sa fonction dans la proposition relative",
+            "automatiquement le cas de l’antécédent",
+            "sa position dans la phrase",
+            "le temps du verbe principal"
+          ]
+        }
+      }
     },
     {
       "id": "l17-e3",
@@ -698,7 +754,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est qui dans Agnus Dei, qui tollis... ?",
+          "hint": "Il est le sujet de tollis.",
+          "explanation": "qui est au nominatif masculin singulier.",
+          "options": [
+            "nominatif",
+            "génitif",
+            "datif",
+            "accusatif"
+          ]
+        }
+      }
     },
     {
       "id": "l17-e4",
@@ -729,7 +798,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est cuius dans Cuius regni non erit finis ?",
+          "hint": "Traduisez « dont / duquel ».",
+          "explanation": "cuius est au génitif singulier.",
+          "options": [
+            "génitif",
+            "nominatif",
+            "datif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l17-e5",
@@ -759,7 +841,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le rapport d’antécédent dans Qui sedes ad dexteram Patris ?",
+          "hint": "La proposition relative décrit « Vous qui êtes assis ».",
+          "explanation": "Le relatif identifie la personne à qui l’on s’adresse, et non les noms voisins.",
+          "options": [
+            "Qui renvoie à la personne à qui l’on s’adresse dans le Gloria",
+            "Qui renvoie à dexteram",
+            "Qui renvoie à Patris",
+            "Qui n’a aucun antécédent ni référent"
+          ]
+        }
+      }
     },
     {
       "id": "l17-e6",
@@ -793,7 +888,21 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la forme relative à son cas / sa fonction.",
+          "hint": "Utilisez le paradigme relatif singulier.",
+          "explanation": "Ceci construit les formes relatives les plus fréquentes.",
+          "matches": {
+            "qui": "nominatif masculin singulier",
+            "cuius": "génitif singulier",
+            "cui": "datif singulier",
+            "quem": "accusatif masculin singulier",
+            "quo": "ablatif masculin / neutre singulier"
+          }
+        }
+      }
     },
     {
       "id": "l17-e7",
@@ -823,7 +932,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie quicumque ?",
+          "hint": "C’est un relatif indéfini.",
+          "explanation": "quicumque signifie « quiconque / tout ce qui ».",
+          "options": [
+            "quiconque",
+            "où",
+            "chacun",
+            "parce que"
+          ]
+        }
+      }
     },
     {
       "id": "l17-e8",
@@ -856,7 +978,21 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 17 à son sens.",
+          "hint": "Tous appartiennent à l’allocation figée de la leçon 17.",
+          "explanation": "Ceci vérifie le vocabulaire non relatif.",
+          "matches": {
+            "tollo": "enlever / ôter",
+            "peccatum": "péché",
+            "dextera": "main droite / côté droit",
+            "unde": "d’où",
+            "quisque": "chacun / chacun d’eux"
+          }
+        }
+      }
     },
     {
       "id": "l17-e9",
@@ -885,7 +1021,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle famille pronominale est formellement ajoutée à la progression en spirale à la leçon 17 ?",
+          "hint": "C’est la leçon des pronoms relatifs.",
+          "explanation": "Les pronoms relatifs rejoignent les familles personnelles et de troisième personne déjà apprises.",
+          "options": [
+            "qui/quae/quod",
+            "ego/tu seulement",
+            "se seulement",
+            "aucune"
+          ]
+        }
+      }
     },
     {
       "id": "l17-e10",
@@ -910,7 +1059,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « péché ».",
+          "hint": "Il apparaît dans l’Agnus Dei.",
+          "explanation": "peccatum signifie « péché »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -978,5 +1134,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Qui tollis",
+      "grammarFocus": "Pronoms relatifs",
+      "readingOutcome": "Résoudre l’antécédent, le cas et la fonction des pronoms relatifs.",
+      "objectives": [
+        "Distinguer l’antécédent du cas propre du pronom relatif.",
+        "Apprendre les principales formes singulières de qui/quae/quod.",
+        "Introduire quicumque/quisque/unde sans confondre leurs fonctions.",
+        "Poursuivre la progression en spirale des pronoms dans des propositions authentiques de l’Ordinaire et du Credo."
+      ]
+    }
+  }
 }
