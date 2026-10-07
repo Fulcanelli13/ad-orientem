@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { countryCodeFromText } from "../tools/directory/lib/country-codes.mjs";
 import { parseFsspDirectoryHtml, buildFsspDataset } from "../tools/directory/import-fssp.mjs";
-import { parseIckspInternationalHtml, parseIckspUsDetail, buildIckspDataset } from "../tools/directory/import-icksp.mjs";
+import { ICKSP_LIVE_MASS_REVIEW_DAYS, parseIckspInternationalHtml, parseIckspUsDetail, buildIckspDataset } from "../tools/directory/import-icksp.mjs";
 import { discoverIbpIndex, buildIbpDataset, mergeIbpIndexWitness } from "../tools/directory/import-ibp.mjs";
 import { phoneCandidates } from "../tools/directory/lib/html-source-utils.mjs";
 
@@ -112,6 +112,9 @@ assert.match(icksp[0].massRaw,/Holy Mass/);
 assert.match(icksp[0].address,/Rome/,"international ICKSP address lost section locality");
 const ickspDataset=buildIckspDataset(icksp,{retrievedAt:"2026-10-07T09:00:00Z"});
 assert.equal(ickspDataset.ministries.every(x=>x.community_id==="ICKSP"),true);
+assert.equal(ICKSP_LIVE_MASS_REVIEW_DAYS,120,"ICKSP live review horizon drifted");
+assert.ok(ickspDataset.schedules.every(x=>x.verification.freshness_policy==="CURRENT_MASS_120D"));
+assert.ok(ickspDataset.schedules.every(x=>x.verification.review_due_at==="2027-02-04T09:00:00.000Z"));
 
 const ibpIndex=`
 <h4>France</h4>
