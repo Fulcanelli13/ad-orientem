@@ -768,11 +768,11 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root .v384SectionLabel").count(),1,"v38.4 full traditional-year index is missing");
   assert.equal(await page.locator("#ao-calendar-modular-root .v384Practice").count()>=12,true,"v38.4 traditional-year rows are incomplete");
   await shot("04f-seasonal-year-alias");
-  await page.locator("#ao-calendar-modular-root [data-v384-panel='discipline']").click();
-  assert.equal(await page.locator("#ao-calendar-modular-root .v384EraTabs [data-v384-era]").count(),3,"v38.4 discipline era switch is incomplete");
+  await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-panel='discipline']").click();
+  assert.equal(await page.locator("#ao-calendar-modular-root .v384EraTabs [data-ao-cal-v384-era]").count(),3,"v38.4 discipline era switch is incomplete");
   assert.match((await page.locator("#ao-calendar-modular-root .aoCalV384Companion").innerText()),/Older Catholic discipline is preserved here as historical knowledge/);
   await shot("04g-calendar-v384-discipline-current");
-  await page.locator("#ao-calendar-modular-root [data-v384-era='1962']").click();
+  await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-era='1962']").click();
   const discipline1962Text=await page.locator("#ao-calendar-modular-root .aoCalV384Companion").innerText();
   assert.match(discipline1962Text,/HISTORICAL DISCIPLINE/);
   assert.match(discipline1962Text,/SOURCE-SENSITIVE/);
