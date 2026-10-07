@@ -30,8 +30,9 @@ assert.equal((landing.match(/data-settings-close/g)||[]).length,1);
 assert.doesNotMatch(landing,/43\.59\.99/,"version must appear in About only");
 
 const css=settingsCss();
-assert.match(css,/z-index:14950/,"Settings must remain below the global app ribbon");
+assert.match(css,/z-index:2147483250/,"Settings must remain above live Mass but below the global app ribbon");
 assert.match(css,/inset:0 0 calc\(var\(--ao-global-ribbon-h,68px\) \+ var\(--safe-bottom,0px\)\) 0/,"Settings must reserve the global ribbon footprint");
+assert.match(css,/data-ao-settings-surface="open"\] #ao-global-ribbon\{z-index:2147483300!important/,"Settings must elevate the global ribbon above the overlay");
 assert.doesNotMatch(css,/z-index:2147483400/,"Settings donor z-index must not cover the modular shell ribbon");
 
 const mass=renderSettingsToString(fakeWin,{route:"/settings/mass",live:true});
