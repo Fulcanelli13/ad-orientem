@@ -132,9 +132,11 @@ try{
 
   await capturePair("01-home","home");
 
-  await donor.evaluate(()=>globalThis.AO_V37_SHELL.openDomain("pray"));
-  await donor.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:10000});
-  await donor.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+  await donor.evaluate(async()=>{
+    await globalThis.AO_V37_SHELL.openDomain("pray");
+    await globalThis.AO_V37_SHELL.openModule("pray.hub",{});
+  });
+  await donor.waitForFunction(()=>document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:15000});
   await current.locator("[data-ao-app-surface='pray']").click();
   await Promise.all([
     donor.waitForSelector("#aoPray435930.open .aoP435930Home",{timeout:10000}),
