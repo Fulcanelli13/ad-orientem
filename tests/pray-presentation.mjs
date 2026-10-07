@@ -96,6 +96,11 @@ assert.match(runtime,/const stage=BEN_STAGES\?\.\[BEN\.step\]\?\.\[0\]/,"Benedic
 assert.match(runtime,/blessing:\['ao-live-blessing'/,"Benediction blessing stage lost the canonical blessing cue");
 assert.match(runtime,/prayer:\['ao-live-response'/,"Benediction versicle\/collect stage lost the response cue");
 assert.match(runtime,/praises:\['ao-live-response'/,"Benediction Divine Praises stage lost the response cue");
+assert.match(runtime,/data-p435930-handoff="pray\.sacred_heart"/,"First Friday no longer hands off to the Sacred Heart treasury");
+assert.match(runtime,/Private Litany of the Saints/,"Forty Hours private Litany is no longer distinguished from the public ceremonial form");
+assert.match(runtime,/Psalm 69 \(Deus, in adiutorium\)/,"Forty Hours lost the historical public Psalm 69 cue");
+assert.match(runtime,/proper Forty Hours prayers/,"Forty Hours lost the historical proper-prayers cue");
+assert.match(runtime,/follow the book and clergy actually being used in the church/,"Forty Hours no longer gives actual public ceremonial priority");
 assert.match(runtime,/CONF\.stage===3.*ao-live-sign-cross/s,"Confession in-confessional stage lost the donor Sign-of-Cross cue");
 assert.match(runtime,/aoP435930SemanticRailChip \$\{channel\}\$\{cueClass\}/,"transient semantic rail state no longer receives its cue-enter class");
 assert.match(styles,/aoP435930SemanticRails/,"PRAY semantic rail geometry is not present");
