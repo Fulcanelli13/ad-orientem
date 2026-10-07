@@ -189,6 +189,7 @@ export function projectShrineItems({shrines=[],places=[],sources=[],novenaLinks=
     return Object.freeze({
       item_id:"shrine:"+shrine.shrine_id,
       source_id:shrine.shrine_id,
+      place_id:place?.place_id??null,
       lens:"shrines",
       kind:"SHRINE",
       eyebrow:"SHRINE",
@@ -238,6 +239,7 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
     return Object.freeze({
       item_id:"tradition:"+attestation.attestation_id,
       source_id:attestation.attestation_id,
+      place_id:place?.place_id??null,
       lens:"traditions",
       kind:"CUSTOM_ATTESTATION",
       eyebrow:"TRADITION · "+String(attestation?.geographic_precision??"").replaceAll("_"," "),
@@ -285,6 +287,7 @@ export function projectNovenaContextItems({links=[],novenas=[],places=[],geoArea
     return Object.freeze({
       item_id:"tradition:novena:"+link.link_id,
       source_id:link.link_id,
+      place_id:place?.place_id??null,
       lens:"traditions",
       kind:"NOVENA_CONTEXT",
       eyebrow:"NOVENA CONTEXT · "+String(link?.geographic_precision??link?.map_policy??"").replaceAll("_"," "),
@@ -345,6 +348,7 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
     return Object.freeze({
       item_id:"pilgrimage:"+pilgrimage.pilgrimage_id,
       source_id:pilgrimage.pilgrimage_id,
+      place_id:place?.place_id??null,
       lens:"pilgrimages",
       kind:"PILGRIMAGE",
       eyebrow:"PILGRIMAGE",
