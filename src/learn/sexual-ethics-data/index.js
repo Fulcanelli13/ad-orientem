@@ -3,7 +3,7 @@ import { CSE_RAW_001_050 } from "./questions-001-050.js";
 import { CSE_RAW_051_100 } from "./questions-051-100.js";
 import { CSE_RAW_101_150 } from "./questions-101-150.js";
 
-export const SEXUAL_ETHICS_VERSION="1.0.0";
+export const SEXUAL_ETHICS_VERSION="1.1.0";
 export const SEXUAL_ETHICS_ROUTE="learn.sexual_ethics";
 export const SEXUAL_ETHICS_RESEARCH_LEAD="LBM";
 
@@ -56,6 +56,7 @@ export { CSE_SOURCES, CSE_SOURCE_MAP };
 const errors=[];
 const seen=new Set();
 const allowedLayers=new Set(["PERENNIAL","LATER_APPLICATION","PASTORAL_CASE"]);
+const allowedCrossTargets=new Set(["learn.rites.matrimony","learn.catholic_life","pray.confession"]);
 for(let n=1;n<=150;n++){
   const id=`CSE${String(n).padStart(3,"0")}`;
   const item=CSE_QUESTION_MAP[id];
@@ -69,6 +70,7 @@ for(let n=1;n<=150;n++){
   if((item.depth==="DEBATE"||item.depth==="EXPANDED")&&(!item.d?.[0]||!item.d?.[1]))errors.push(`${id}: ${item.depth} missing detail`);
   if(!allowedLayers.has(item.layer))errors.push(`${id}: invalid layer ${item.layer}`);
   if(!item.refs.length)errors.push(`${id}: no sources`);
+  if(item.cross.some(target=>!allowedCrossTargets.has(target)))errors.push(`${id}: invalid cross-link target`);
   for(const [sourceId,locator] of item.refs){
     if(!CSE_SOURCE_MAP[sourceId])errors.push(`${id}: unknown source ${sourceId}`);
     if(!locator)errors.push(`${id}: source ${sourceId} missing locator`);
