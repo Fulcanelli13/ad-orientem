@@ -200,7 +200,8 @@ function renderDyingCompanion(){
       ])}`;
   }else{
     body=`<section class="aoTP381Section"><h2>${esc(L("Call a priest now","Appelez un prêtre maintenant"))}</h2><p>${esc(L("If death may be approaching, contact a priest without waiting for the person to become unconscious. Ask specifically about Confession or Penance, Anointing of the Sick, Holy Communion as Viaticum, and the Apostolic Blessing at the point of death.","Si la mort peut être proche, contactez un prêtre sans attendre que la personne perde connaissance. Demandez explicitement la Confession ou Pénitence, l’Onction des malades, la sainte Communion en Viatique et la Bénédiction apostolique à l’article de la mort."))}</p></section>
-      <section class="aoTP381Section"><h2>${esc(L("What this companion does","Ce que fait cet accompagnement"))}</h2><p>${esc(L("It helps the faithful pray and understand what to request. It never simulates priestly absolution, sacramental anointing, administration of Viaticum or the Apostolic Blessing.","Il aide les fidèles à prier et à comprendre ce qu’il faut demander. Il ne simule jamais l’absolution sacerdotale, l’onction sacramentelle, l’administration du Viatique ou la Bénédiction apostolique."))}</p></section>
+      <section class="aoTP381Section"><h2>${esc(L("What this companion does","Ce que fait cet accompagnement"))}</h2><p>${esc(L("It helps the faithful pray and act at the bedside. For fuller formation about Penance, Anointing and Viaticum, use the Serious Illness guide; this companion does not duplicate that material and never simulates priestly absolution, sacramental anointing, administration of Viaticum or the Apostolic Blessing.","Il aide les fidèles à prier et à agir au chevet. Pour une formation plus complète sur la Pénitence, l’Onction et le Viatique, utilisez le guide Maladie grave; cet accompagnement ne duplique pas ce contenu et ne simule jamais l’absolution sacerdotale, l’onction sacramentelle, l’administration du Viatique ou la Bénédiction apostolique."))}</p></section>
+      <div class="aoTP381PrayerList"><button type="button" data-tp381-route="learn.rites.sick"><span><b>${esc(L("Understand the sacraments for serious illness","Comprendre les sacrements en cas de maladie grave"))}</b><small>${esc(L("Open the Serious Illness & Dying formation guide","Ouvrir le guide de formation Maladie grave & fin de vie"))}</small></span><i aria-hidden="true">→</i></button></div>
       <details class="aoTP381Source"><summary>${esc(L("At the point of death · current indulgence","À l’article de la mort · indulgence actuelle"))}</summary><p>${esc(isFr()?d.currentIndulgence.fr:d.currentIndulgence.en)}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>
       <details class="aoTP381Source"><summary>${esc(L("Why Viaticum matters","Pourquoi le Viatique est important"))}</summary><p>${esc(L("The Church gives the Eucharist as Viaticum to those about to leave this life. Together with Penance and Anointing of the Sick, it belongs to the sacraments that complete the Christian’s earthly pilgrimage.","L’Église donne l’Eucharistie en Viatique à ceux qui sont sur le point de quitter cette vie. Avec la Pénitence et l’Onction des malades, il appartient aux sacrements qui achèvent le pèlerinage terrestre du chrétien."))}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.viaticum)}" target="_blank" rel="noopener">${esc(L("Catechism · Viaticum","Catéchisme · Viatique"))} ↗</a></p></details>`;
   }
@@ -245,8 +246,17 @@ function handleClick(e){
   if(b.dataset.tp381Dying){S.dying=["now","pray","commend"].includes(b.dataset.tp381Dying)?b.dataset.tp381Dying:"now";return render()}
   if(b.dataset.tp381Prayer){S.prayerId=b.dataset.tp381Prayer;S.screen="prayer";return render()}
   if(b.dataset.tp381Route){
-    if(ROUTES[b.dataset.tp381Route])return open(b.dataset.tp381Route,{trigger:b});
-    return BASE_OPEN(b.dataset.tp381Route,{trigger:b,returnContext:{surface:"domain",domain:"pray"}});
+    const route=b.dataset.tp381Route;
+    if(ROUTES[route])return open(route,{trigger:b});
+    if(String(route).startsWith("learn.")){
+      BASE_CLOSE();
+      void (async()=>{
+        try{await window?.AO_APP_SHELL_V1?.navigate?.("learn")}catch{}
+        try{await window?.AO_MODULES?.open?.(route,{returnContext:{surface:"pray",route:S.route}})}catch{}
+      })();
+      return;
+    }
+    return BASE_OPEN(route,{trigger:b,returnContext:{surface:"domain",domain:"pray"}});
   }
   if(b.matches("[data-tp381-flip]")){
     const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return;
@@ -297,7 +307,7 @@ function mountRuntime(){
     open,
     close:BASE_CLOSE,
     state:()=>({...S}),
-    qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",sacredHeartPolicy:"SOURCE_LOCKED_TRADITIONAL",communionTreasuryPolicy:"FRENCH_WORLD_SOURCE_LOCKED",goodDeathPolicy:"ROMAN_ST_JOSEPH_SOURCE_LOCKED",dyingCompanionPolicy:"PASTORAL_NOT_SACRAMENT_SIMULATION",legacyTraditionOwner:false})
+    qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",sacredHeartPolicy:"SOURCE_LOCKED_TRADITIONAL",communionTreasuryPolicy:"FRENCH_WORLD_SOURCE_LOCKED",goodDeathPolicy:"ROMAN_ST_JOSEPH_SOURCE_LOCKED",dyingCompanionPolicy:"PASTORAL_NOT_SACRAMENT_SIMULATION",seriousIllnessBridge:"learn.rites.sick",legacyTraditionOwner:false})
   });
   queueMicrotask(injectHome);
   return window.AO_TRADITIONAL_PRAY_V381;
