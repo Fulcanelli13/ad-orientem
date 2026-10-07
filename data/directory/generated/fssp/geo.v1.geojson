@@ -1203,8 +1203,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.8511159,
-          47.9931113
+          7.850891023769155,
+          47.99167049965044
         ]
       },
       "properties": {
@@ -1214,9 +1214,9 @@
         "country_code": "DE",
         "city": null,
         "community_id": "FSSP",
-        "precision": "building",
+        "precision": "address",
         "approximate": false,
-        "geocoding_source": "OSM_NOMINATIM"
+        "geocoding_source": "OFFICIAL_SOURCE"
       }
     },
     {
@@ -4185,8 +4185,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.572879,
-          47.5638664
+          7.5729949,
+          47.5637084
         ]
       },
       "properties": {
@@ -4196,9 +4196,9 @@
         "country_code": "CH",
         "city": null,
         "community_id": "FSSP",
-        "precision": "building",
+        "precision": "address",
         "approximate": false,
-        "geocoding_source": "OSM_NOMINATIM"
+        "geocoding_source": "OFFICIAL_SOURCE"
       }
     },
     {
@@ -5109,8 +5109,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -93.2582549,
-          44.9940771
+          -93.2580694,
+          44.9940722
         ]
       },
       "properties": {
@@ -5120,9 +5120,9 @@
         "country_code": "US",
         "city": null,
         "community_id": "FSSP",
-        "precision": "building",
+        "precision": "address",
         "approximate": false,
-        "geocoding_source": "OSM_NOMINATIM"
+        "geocoding_source": "OFFICIAL_SOURCE"
       }
     },
     {
@@ -5480,6 +5480,27 @@
         "precision": "street",
         "approximate": true,
         "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.4159375,
+          32.3850625
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-fssp-st-joseph-the-worker-parish-14927-county-rd-1151-rozell-rd-tyler-tx-75704-usa",
+        "name": "St. Joseph the Worker Parish",
+        "venue_type": "church",
+        "country_code": "US",
+        "city": null,
+        "community_id": "FSSP",
+        "precision": "address",
+        "approximate": false,
+        "geocoding_source": "OFFICIAL_SOURCE"
       }
     },
     {
@@ -5865,8 +5886,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.4554349,
-          38.5264295
+          -121.4555469,
+          38.5262739
         ]
       },
       "properties": {
@@ -5876,9 +5897,9 @@
         "country_code": "US",
         "city": null,
         "community_id": "FSSP",
-        "precision": "building",
+        "precision": "address",
         "approximate": false,
-        "geocoding_source": "OSM_NOMINATIM"
+        "geocoding_source": "OFFICIAL_SOURCE"
       }
     },
     {
@@ -5886,8 +5907,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.4554349,
-          38.5264295
+          -121.4555469,
+          38.5262739
         ]
       },
       "properties": {
@@ -5897,9 +5918,9 @@
         "country_code": "US",
         "city": null,
         "community_id": "FSSP",
-        "precision": "building",
+        "precision": "address",
         "approximate": false,
-        "geocoding_source": "OSM_NOMINATIM"
+        "geocoding_source": "OFFICIAL_SOURCE"
       }
     },
     {
