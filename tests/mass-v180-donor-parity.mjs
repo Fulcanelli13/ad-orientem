@@ -176,14 +176,17 @@ assert.match(dom,/kind==="ELEVATION" \? current\.priestActionIconKey : null/,
 assert.match(dom,/@keyframes aoBellHold\{/,"v1.80 held-bell animation is missing");
 assert.match(dom,/animation:aoBellHold 3\.4s ease-out both/,"v1.80 held-bell salience duration drifted");
 
-assert.deepEqual(donor.open.map(x=>x.id),[
+assert.deepEqual(donor.open,[]);
+assert.equal(donor.status,"CERTIFIED");
+assert.equal(donor.releaseBlocker,null);
+assert.deepEqual(donor.certified.map(x=>x.id),[
   "V180_TWO_AXIS_NAVIGATION",
   "V180_SCHOLA_INTERACTION_PARITY",
   "V179_GUIDE_CURATED_PRESENTATION",
   "V180_RUBRIC_EFFICIENCY",
   "V46_MASTER_ICON_PARITY",
 ]);
-assert.equal(donor.status,"RECOVERY_REQUIRED");
+assert.ok(donor.certified.every(x=>x.status==="CERTIFIED"),"a closed v1.80 donor-parity gate lost certification");
 assert.equal(stepReconciliation.status,"RECONCILED_FOR_PRODUCT_NONHISTORICAL");
 assert.equal(stepReconciliation.authorities.presentationDonor.livePrayerCards,38);
 assert.equal(stepReconciliation.authorities.canonicalSource.steps,39);
@@ -193,5 +196,7 @@ assert.equal(stepReconciliation.historicalGap.exactBoundaryRecovered,false);
 assert.equal(stepReconciliation.historicalGap.releaseImpact,"NONE_UNLESS_HISTORICAL_V183_IDENTITY_IS_CLAIMED");
 assert.equal(stepReconciliation.invariants.includes("historicalV183IdentityClaim remains false"),true);
 
-assert.equal(donor.releaseBlocker,"MASS_V180_INTERACTION_ICON_PARITY");
-console.log("Mass v1.80 donor parity contract: PASS — interaction/Guide/icon gaps are explicit and master v4.6 payloads are present; certification remains intentionally open.");
+assert.equal(donor.certification.r17MassConvergenceRun,37591506346);
+assert.equal(donor.certification.appConvergenceRun,37591506503);
+assert.equal(donor.certification.visualAcceptanceRun,37591506362);
+console.log("Mass v1.80 donor parity contract: CERTIFIED — two-axis navigation, Schola, Guide, rubric efficiency and exact v4.6 master-bank parity are regression-locked.");
