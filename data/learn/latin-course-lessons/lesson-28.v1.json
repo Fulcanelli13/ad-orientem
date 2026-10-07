@@ -318,7 +318,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Toute une proposition d’arrière-plan peut se condenser à l’ablatif"
+        }
+      }
     },
     {
       "id": "l28-b2",
@@ -335,7 +340,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Defuncto Herode"
+        }
+      }
     },
     {
       "id": "l28-b3",
@@ -352,7 +362,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Convocatis Apostolis"
+        }
+      }
     },
     {
       "id": "l28-b4",
@@ -369,7 +384,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Tout participe n’est pas un ablatif absolu"
+        }
+      }
     },
     {
       "id": "l28-b5",
@@ -384,7 +404,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Vérifier l’indépendance, pas la ponctuation"
+        }
+      }
     },
     {
       "id": "l28-b6",
@@ -399,7 +424,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Déployer la circonstance condensée"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -522,7 +552,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce que Defuncto Herode ?",
+          "hint": "Les deux mots sont à l’ablatif et indépendants de apparuit.",
+          "explanation": "C’est une circonstance d’arrière-plan condensée.",
+          "options": [
+            "ablatif absolu",
+            "complément d’objet direct",
+            "proposition relative",
+            "datif de possession"
+          ]
+        }
+      }
     },
     {
       "id": "l28-e2",
@@ -552,7 +595,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Comment faut-il comprendre Defuncto Herode ici ?",
+          "hint": "Le contexte donne un arrière-plan temporel.",
+          "explanation": "La relation de l’ablatif absolu se déduit du contexte.",
+          "options": [
+            "quand / après qu’Hérode fut mort",
+            "Hérode comme complément d’objet direct",
+            "à Hérode",
+            "par ordre d’Hérode seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l28-e3",
@@ -582,7 +638,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui s’accorde dans Convocatis Apostolis ?",
+          "hint": "L’accord constitue le groupe.",
+          "explanation": "Les deux éléments sont à l’ablatif pluriel.",
+          "options": [
+            "les deux sont à l’ablatif pluriel",
+            "les deux sont au nominatif singulier",
+            "seul le participe est à l’ablatif",
+            "il n’y a pas d’accord"
+          ]
+        }
+      }
     },
     {
       "id": "l28-e4",
@@ -612,7 +681,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi Accedentes duodecim n’est-il pas un ablatif absolu ?",
+          "hint": "Le cas et la syntaxe décident.",
+          "explanation": "Le groupe appartient directement à la proposition principale.",
+          "options": [
+            "il est au nominatif et constitue le sujet de la proposition principale",
+            "il contient une virgule",
+            "il contient un participe",
+            "il est pluriel"
+          ]
+        }
+      }
     },
     {
       "id": "l28-e5",
@@ -643,7 +725,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 28 à son sens.",
+          "hint": "Ce sont des noms figés de la leçon 28.",
+          "explanation": "Ceci vérifie le vocabulaire.",
+          "matches": {
+            "rex": "roi",
+            "populus": "peuple",
+            "princeps": "chef / prince / dirigeant",
+            "discipulus": "disciple"
+          }
+        }
+      }
     },
     {
       "id": "l28-e6",
@@ -670,7 +765,18 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 28 à son sens.",
+          "hint": "Ce sont les deux noms restants de la leçon 28.",
+          "explanation": "Ceci achève la récupération lexicale.",
+          "matches": {
+            "mulier": "femme",
+            "turba": "foule"
+          }
+        }
+      }
     },
     {
       "id": "l28-e7",
@@ -699,7 +805,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le diagnostic essentiel au-delà des terminaisons de l’ablatif ?",
+          "hint": "« Absolu » signifie détaché.",
+          "explanation": "L’indépendance syntaxique distingue la construction.",
+          "options": [
+            "le groupe est syntaxiquement indépendant de la proposition principale",
+            "il doit ouvrir la phrase",
+            "il doit mentionner un roi",
+            "il doit être passif"
+          ]
+        }
+      }
     },
     {
       "id": "l28-e8",
@@ -729,7 +848,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau nom apparaît sous les formes turbae/turbas dans les passages de Luc ?",
+          "hint": "Il signifie « foule ».",
+          "explanation": "turba est le lemme.",
+          "options": [
+            "turba",
+            "populus",
+            "mulier",
+            "discipulus"
+          ]
+        }
+      }
     },
     {
       "id": "l28-e9",
@@ -753,7 +885,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « roi ».",
+          "hint": "Vocabulaire fondamental de la leçon 28.",
+          "explanation": "rex signifie « roi »."
+        }
+      }
     },
     {
       "id": "l28-e10",
@@ -777,7 +916,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « disciple ».",
+          "hint": "Vocabulaire fondamental de la leçon 28.",
+          "explanation": "discipulus signifie « disciple »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -844,5 +990,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Herode rege / multis convocatis",
+      "grammarFocus": "Ablatif absolu",
+      "readingOutcome": "Reconnaître les propositions circonstancielles condensées.",
+      "objectives": [
+        "Reconnaître l’ablatif absolu par l’accord de cas et l’indépendance syntaxique.",
+        "Traduire la circonstance condensée selon le contexte.",
+        "Opposer l’ablatif absolu aux participes rattachés à la proposition principale.",
+        "Apprendre les six lemmes figés de la leçon 28."
+      ]
+    }
+  }
 }
