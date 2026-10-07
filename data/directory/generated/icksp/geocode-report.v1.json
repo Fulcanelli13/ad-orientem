@@ -1,12 +1,13 @@
 {
   "schema": "AO_DIRECTORY_PROVIDER_GEOCODE_REPORT_V1",
   "provider": "ICKSP",
-  "generated_at": "2026-10-07T11:45:46.801Z",
+  "generated_at": "2026-10-07T12:47:35.021Z",
   "total": 27,
   "existing_valid": 0,
   "accepted": 22,
   "primary_accepted": 3,
   "fallback_accepted": 19,
+  "structured_accepted": 0,
   "unresolved": 5,
   "existing_invalid": 0,
   "by_precision": {
@@ -25,13 +26,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Institute of Christ the King - Bay Area, Most Holy Rosary Chapel, St. Vincent's School for Boys, 1 St. Vincent's Drive",
+          "params": null,
           "key": "e96b4f942748217b80198f70f2569641e534081174bfcf6706e0b85fafc6ec29",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Most Holy Rosary Chapel, St. Vincent's School for Boys, 1 St. Vincent's Drive",
+          "params": null,
           "key": "c4949421968a0fca2263d1443356f79dd7ae7f657e352787d6ce37a0525f99ff",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=1 St. Vincent's Drive&street=Most Holy Rosary Chapel",
+          "params": {
+            "street": "Most Holy Rosary Chapel",
+            "city": "1 St. Vincent's Drive",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "b176683fa2042249db3aa0939a00b25ff43f2de3090ddacc9f14a5f199f9e519",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Institute of Christ the King - Bay Area&city=1 St. Vincent's Drive",
+          "params": {
+            "amenity": "Institute of Christ the King - Bay Area",
+            "city": "1 St. Vincent's Drive",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "051773056840149281b6161ead59a9803684544066e117894f7079541391558a",
           "candidates": []
         }
       ]
@@ -43,13 +70,27 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Immaculate Heart of Mary Oratory, Immaculate Heart of Mary Oratory, 1101 S. Winchester Boulevard",
+          "params": null,
           "key": "f5ec81acdff664cb250183859562a0795475c7d52a67e059546029ad359b8dc0",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Immaculate Heart of Mary Oratory, 1101 S. Winchester Boulevard",
+          "params": null,
           "key": "91b678cadba7275c8e22927b69270bcfbe583a7423bb69fd9fbd7192bbf8d053",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Immaculate Heart of Mary Oratory&city=1101 S. Winchester Boulevard",
+          "params": {
+            "amenity": "Immaculate Heart of Mary Oratory",
+            "city": "1101 S. Winchester Boulevard",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "770cbc7325805beb3532b960cd3b923710a8a3eee23770035125c747f0ea13af",
           "candidates": []
         }
       ]
@@ -61,13 +102,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Shrine of Christ the King Sovereign Priest, Institute of Christ the King, 6415 South Woodlawn Avenue, Chicago, Illinois 60637-3817",
+          "params": null,
           "key": "6d1e11cc9de24282d5908f84d54f57f0d3c78092417d9d031e2428b21f208376",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Institute of Christ the King, 6415 South Woodlawn Avenue, Chicago, Illinois 60637-3817",
+          "params": null,
           "key": "8ae08bc8ae2c70db82d7f2454308330df7af3ce91ce0c9512303518962e13d63",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Illinois&postalcode=60637-3817&street=Institute of Christ the King",
+          "params": {
+            "street": "Institute of Christ the King",
+            "city": "Illinois",
+            "state": null,
+            "postalcode": "60637-3817"
+          },
+          "key": "a006cec23efae6cdc19676f6e21d75020dd02a55f312a2a81b3aaf0f92f94b99",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Shrine of Christ the King Sovereign Priest&city=Illinois&postalcode=60637-3817",
+          "params": {
+            "amenity": "Shrine of Christ the King Sovereign Priest",
+            "city": "Illinois",
+            "state": null,
+            "postalcode": "60637-3817"
+          },
+          "key": "8549aed86630ff7683d257955f53073bdad910634760dfde14985223e0535fd0",
           "candidates": []
         }
       ]
@@ -79,13 +146,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Joseph Oratory, St. Joseph Oratory, (at Our Lady of Częstochowa Shrine), 5755 Pennsylvania Street",
+          "params": null,
           "key": "663a551c791d9698d8b345bcf789f426968bb54d54e6c6581b8016ecf9b31b60",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "St. Joseph Oratory, (at Our Lady of Częstochowa Shrine), 5755 Pennsylvania Street",
+          "params": null,
           "key": "17b0aea672149d1129e729f0d4e0ae42ce7a954b506fa1ea927040643de0f724",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=5755 Pennsylvania Street&street=(at Our Lady of Częstochowa Shrine)",
+          "params": {
+            "street": "(at Our Lady of Częstochowa Shrine)",
+            "city": "5755 Pennsylvania Street",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "c920e761df7d66146fb4eb1206f231f884d7054d1b51db79d1642b8da49089f6",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Joseph Oratory&city=5755 Pennsylvania Street",
+          "params": {
+            "amenity": "St. Joseph Oratory",
+            "city": "5755 Pennsylvania Street",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "b04f6f9872d5a96b6fa51a366dddb9031cc707ad68565a437d4cfcea3b710bd4",
           "candidates": []
         }
       ]
@@ -97,12 +190,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Basilica dei Santi Celso e Giuliano, Via del Banco di Santo Spirito, 5",
+          "params": null,
           "key": "551ff2015aa211a2d380951a38ae9a6a3062277dba25655ca40bf3592c5ae2e8",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Via del Banco di Santo Spirito, 5",
+          "params": null,
           "key": "fd2b2b2865fb76a09e3afbd3b71f48b379a4db6813040c99b8361b43c39d6b9e",
           "candidates": [
             {
@@ -111,6 +206,30 @@
               "country_code": "it"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=5&street=Via del Banco di Santo Spirito",
+          "params": {
+            "street": "Via del Banco di Santo Spirito",
+            "city": "5",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "074ea6afbf0ca1b3c3ac83663a8b41a8f259bdf3c770bb29d3e52cec5942e8e3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Basilica dei Santi Celso e Giuliano&city=5",
+          "params": {
+            "amenity": "Basilica dei Santi Celso e Giuliano",
+            "city": "5",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "c8c17f918db3dc8232acbed4c4deb9cc03003da074775f2c774eb94ffc8e4cb4",
+          "candidates": []
         }
       ]
     }

@@ -1,17 +1,18 @@
 {
   "schema": "AO_DIRECTORY_PROVIDER_GEOCODE_REPORT_V1",
   "provider": "FSSP",
-  "generated_at": "2026-10-07T11:45:46.705Z",
+  "generated_at": "2026-10-07T12:47:34.876Z",
   "total": 404,
-  "existing_valid": 6,
+  "existing_valid": 7,
   "accepted": 280,
   "primary_accepted": 13,
   "fallback_accepted": 267,
-  "unresolved": 118,
+  "structured_accepted": 0,
+  "unresolved": 117,
   "existing_invalid": 0,
   "by_precision": {
     "building": 130,
-    "address": 87,
+    "address": 88,
     "street": 62,
     "locality": 7,
     "region": 0,
@@ -25,13 +26,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Maternal Heart of Mary Parish, Charles O'Neill Way (off Thomas St.), Lewisham NSW 2049, Australia",
+          "params": null,
           "key": "37ea2e59c4bbd9d73859c52cd5f3434dd3ea1c299f2472c3391c7dd36d25c39c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Charles O'Neill Way (off Thomas St.), Lewisham NSW 2049, Australia",
+          "params": null,
           "key": "874a74498e13dfbe36c1c87405d5046a5d05dd4ceaf7a114ecc72d1056a1e194",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Lewisham&postalcode=2049&state=NSW&street=Charles O'Neill Way (off Thomas St.)",
+          "params": {
+            "street": "Charles O'Neill Way (off Thomas St.)",
+            "city": "Lewisham",
+            "state": "NSW",
+            "postalcode": "2049"
+          },
+          "key": "578f64acc209d6b50dc383a42e88e33b8e721883befb63a73db93d36a550f168",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Maternal Heart of Mary Parish&city=Lewisham&postalcode=2049&state=NSW",
+          "params": {
+            "amenity": "Maternal Heart of Mary Parish",
+            "city": "Lewisham",
+            "state": "NSW",
+            "postalcode": "2049"
+          },
+          "key": "a8b39869f50edb082d8da88e83903dea330b04e5557914a1f5a4aba834fe03c4",
           "candidates": []
         }
       ]
@@ -43,13 +70,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Campion College Chapel, 8-14 Austin Woodbury Place, Old Toongabbie NSW 2146, Australia",
+          "params": null,
           "key": "896d4d65cbb31dbc1d75d4b0da83b484f81a10ba21d6b2dc251292cbc81c987b",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "8-14 Austin Woodbury Place, Old Toongabbie NSW 2146, Australia",
+          "params": null,
           "key": "858a6e776d6b4ac7cee6d51aefd881f47b8436db9e75412c24529bd9806ec59d",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Old Toongabbie&postalcode=2146&state=NSW&street=8-14 Austin Woodbury Place",
+          "params": {
+            "street": "8-14 Austin Woodbury Place",
+            "city": "Old Toongabbie",
+            "state": "NSW",
+            "postalcode": "2146"
+          },
+          "key": "899dc0a23b093258148fbd7703c07c4668b9526d50cacab3a0888edd214ca16f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Campion College Chapel&city=Old Toongabbie&postalcode=2146&state=NSW",
+          "params": {
+            "amenity": "Campion College Chapel",
+            "city": "Old Toongabbie",
+            "state": "NSW",
+            "postalcode": "2146"
+          },
+          "key": "9f8ad0a736544e709d0823cbb69f039cf3c35ec9ac60a42c51ea8885b99a77b0",
           "candidates": []
         }
       ]
@@ -61,13 +114,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Mark's Catholic Coptic Church, at the intersection of Prospect Hwy. And Reservoir Rd., Prospect NSW 2148, Australia",
+          "params": null,
           "key": "d484d9be5eb7c407f2e394211bc53691ac284315ba5dda07d33b8f08785198c9",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "at the intersection of Prospect Hwy. And Reservoir Rd., Prospect NSW 2148, Australia",
+          "params": null,
           "key": "4276aa1197e0d5d03ba7234b6d6e6fa9994916cacac770a68d17d1f71f8deb46",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Prospect&postalcode=2148&state=NSW&street=at the intersection of Prospect Hwy. And Reservoir Rd.",
+          "params": {
+            "street": "at the intersection of Prospect Hwy. And Reservoir Rd.",
+            "city": "Prospect",
+            "state": "NSW",
+            "postalcode": "2148"
+          },
+          "key": "0c82be8b52b889b4cf9a9e68588d576e30473e4038d8a3d73b388af6bb8662f2",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Mark's Catholic Coptic Church&city=Prospect&postalcode=2148&state=NSW",
+          "params": {
+            "amenity": "St. Mark's Catholic Coptic Church",
+            "city": "Prospect",
+            "state": "NSW",
+            "postalcode": "2148"
+          },
+          "key": "f28ce1b7ce7152b1db2016923366d89365c5373234d715cb9858c43b18b7ca4c",
           "candidates": []
         }
       ]
@@ -79,13 +158,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Thomas Becket House, 374 Norton Rd, Wamboin NSW 2620, Australia",
+          "params": null,
           "key": "3128c611a6abb017c073f0d807a9450ba1688cef71577b89ef19f5185bca26a0",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "374 Norton Rd, Wamboin NSW 2620, Australia",
+          "params": null,
           "key": "707c5fa5254d173a3b5427f27a2b31909234e30c4309e1aeebb4e1f3d8900206",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Wamboin&postalcode=2620&state=NSW&street=374 Norton Rd",
+          "params": {
+            "street": "374 Norton Rd",
+            "city": "Wamboin",
+            "state": "NSW",
+            "postalcode": "2620"
+          },
+          "key": "af4555608ae34a57639fd02168956cc81b00f0d9e1860b52ec5814926c33fdfb",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Thomas Becket House&city=Wamboin&postalcode=2620&state=NSW",
+          "params": {
+            "amenity": "St. Thomas Becket House",
+            "city": "Wamboin",
+            "state": "NSW",
+            "postalcode": "2620"
+          },
+          "key": "8fbb11b13d2730690f1c2cfcf9ddf034bfb2a303ae64858d8900a682f2c914a5",
           "candidates": []
         }
       ]
@@ -97,12 +202,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Our Lady of the Nativity Church, 254 Great Western Hwy., Lawson NSW 2783, Australia",
+          "params": null,
           "key": "176f5f058efbde523119d1ed3678b71488a4ef8416fea6c265203e188925a79d",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "254 Great Western Hwy., Lawson NSW 2783, Australia",
+          "params": null,
           "key": "3b89a5e481aad9b10e387e75e2837dea69b30f1c18ad2e9b4fa4c28d3efde740",
           "candidates": [
             {
@@ -111,6 +218,30 @@
               "country_code": "au"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Lawson&postalcode=2783&state=NSW&street=254 Great Western Hwy.",
+          "params": {
+            "street": "254 Great Western Hwy.",
+            "city": "Lawson",
+            "state": "NSW",
+            "postalcode": "2783"
+          },
+          "key": "300a7271c15256bacdb99a28ca4cb9647ffc9e7a10323228b36b2f35d4c0f006",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Our Lady of the Nativity Church&city=Lawson&postalcode=2783&state=NSW",
+          "params": {
+            "amenity": "Our Lady of the Nativity Church",
+            "city": "Lawson",
+            "state": "NSW",
+            "postalcode": "2783"
+          },
+          "key": "885f5655199a5c859da22e4c0bdeb075872135f2ef79046f9135a81b7dedf687",
+          "candidates": []
         }
       ]
     },
@@ -121,13 +252,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Maison Saint-Paul, Rue des Minimes 27 boîte 8, B-1000 Bruxelles, Belgique",
+          "params": null,
           "key": "c8211973f983e5bdf647b1c929cb8ab29ddd8e8941c1692dd307e2eb40e5c260",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Rue des Minimes 27 boîte 8, 1000 Bruxelles, Belgique",
+          "params": null,
           "key": "c34b9990edd07593efb1b679ec1951be012be695fad32ebbc1373985bf7f84ba",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Bruxelles&postalcode=1000&street=Rue des Minimes 27 boîte 8",
+          "params": {
+            "street": "Rue des Minimes 27 boîte 8",
+            "city": "Bruxelles",
+            "state": null,
+            "postalcode": "1000"
+          },
+          "key": "abaef8259904091755ba40cd9452c86cb67cae0e2c4646f8b8d52e5d9c38fd53",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Maison Saint-Paul&city=Bruxelles&postalcode=1000",
+          "params": {
+            "amenity": "Maison Saint-Paul",
+            "city": "Bruxelles",
+            "state": null,
+            "postalcode": "1000"
+          },
+          "key": "ce73787e59e777c39f4d5f104f735df8d2987b755843745e8069be0068b982ab",
           "candidates": []
         }
       ]
@@ -139,13 +296,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Eglise Saint-Médard, rue Léon Colleaux, B-6762 Saint-Mard (Vitron), Belgique",
+          "params": null,
           "key": "163245ad9307a5e31d50bce28fb0cbae0b2f99fbbde26e00a169b441161e64a4",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "rue Léon Colleaux, 6762 Saint-Mard (Vitron), Belgique",
+          "params": null,
           "key": "dc9512f5ddb993a72d9745ccb2cea54a029dd4987dd057642d6993d7800b593a",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Saint-Mard (Vitron)&postalcode=6762&street=rue Léon Colleaux",
+          "params": {
+            "street": "rue Léon Colleaux",
+            "city": "Saint-Mard (Vitron)",
+            "state": null,
+            "postalcode": "6762"
+          },
+          "key": "269c43068c96814c71ea233660ca00a275e9f848c2eabf6ea8bdadaaf0966b77",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Eglise Saint-Médard&city=Saint-Mard (Vitron)&postalcode=6762",
+          "params": {
+            "amenity": "Eglise Saint-Médard",
+            "city": "Saint-Mard (Vitron)",
+            "state": null,
+            "postalcode": "6762"
+          },
+          "key": "c0731362fd058e7ae0eb0bbd57afbd1b6288e674170b4aa5f696a11d743a804c",
           "candidates": []
         }
       ]
@@ -157,12 +340,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Eglise St-Zéphirin-de-Stadacona, 1450 avenue François-1er, Québec QC G1L 4L2, Canada",
+          "params": null,
           "key": "aa2e01a62b45488cf12b02023d5c2d361ee3462784cbd45e9e6551a365da7540",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "1450 avenue François-1er, Québec QC G1L 4L2, Canada",
+          "params": null,
           "key": "dcc4e5d4d8b113c19c57e3d4b031741afb8ef7f35541a6e93d7276fa92cfcaa5",
           "candidates": [
             {
@@ -181,6 +366,30 @@
               "country_code": "ca"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Québec&postalcode=G1L 4L2&state=QC&street=1450 avenue François-1er",
+          "params": {
+            "street": "1450 avenue François-1er",
+            "city": "Québec",
+            "state": "QC",
+            "postalcode": "G1L 4L2"
+          },
+          "key": "1a316723ce120fb7359f3bb3444ce587770daef548db5390ef4a64b6eca6b140",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Eglise St-Zéphirin-de-Stadacona&city=Québec&postalcode=G1L 4L2&state=QC",
+          "params": {
+            "amenity": "Eglise St-Zéphirin-de-Stadacona",
+            "city": "Québec",
+            "state": "QC",
+            "postalcode": "G1L 4L2"
+          },
+          "key": "aaea7d60d42f56d0cd42ea921c786e3ebd12d9badf195fe8799c3e0ee8f1d58f",
+          "candidates": []
         }
       ]
     },
@@ -191,12 +400,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Eglise Saint-Irénée, 560 Av. Atwater, Montréal QC H4C 1M9, Canada",
+          "params": null,
           "key": "afd5cf370b89b9d827118d2bef3eb2747e04c12d19518636e139f1455ab3a84d",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "560 Av. Atwater, Montréal QC H4C 1M9, Canada",
+          "params": null,
           "key": "668b1737827e3e4d602490ca6f455c4bd3b211a22b0d2f6083046381cee9c295",
           "candidates": [
             {
@@ -215,6 +426,30 @@
               "country_code": "ca"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Montréal&postalcode=H4C 1M9&state=QC&street=560 Av. Atwater",
+          "params": {
+            "street": "560 Av. Atwater",
+            "city": "Montréal",
+            "state": "QC",
+            "postalcode": "H4C 1M9"
+          },
+          "key": "1974f1aebe7bc93feafa25da8b0c6013f831c4b2bc263e8da868736a81777c78",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Eglise Saint-Irénée&city=Montréal&postalcode=H4C 1M9&state=QC",
+          "params": {
+            "amenity": "Eglise Saint-Irénée",
+            "city": "Montréal",
+            "state": "QC",
+            "postalcode": "H4C 1M9"
+          },
+          "key": "f9e4cc9a75285958d05507fc9eb60d77c95b38041c66d7371ad6e25c1b99107f",
+          "candidates": []
         }
       ]
     },
@@ -225,12 +460,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Aloysius Parish, 317 Morton St., Thorold ON L2V 1C4, Canada",
+          "params": null,
           "key": "7d2d39a6f9ae8641e1db836a6275bdd63f10fd657bca44eb7f990f4ddec9fd5f",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "317 Morton St., Thorold ON L2V 1C4, Canada",
+          "params": null,
           "key": "6185585456d8d125816170f4a1f72ca924a6490ca8b1fb70f3f0e708ce2f6c45",
           "candidates": [
             {
@@ -239,6 +476,30 @@
               "country_code": "ca"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Thorold&postalcode=L2V 1C4&state=ON&street=317 Morton St.",
+          "params": {
+            "street": "317 Morton St.",
+            "city": "Thorold",
+            "state": "ON",
+            "postalcode": "L2V 1C4"
+          },
+          "key": "83a4f04df4270f22469a995079573567dba320828c5274b3bb67336d1f6ecc37",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Aloysius Parish&city=Thorold&postalcode=L2V 1C4&state=ON",
+          "params": {
+            "amenity": "St. Aloysius Parish",
+            "city": "Thorold",
+            "state": "ON",
+            "postalcode": "L2V 1C4"
+          },
+          "key": "865455f6e14b19545681f54027ad2b6cdb2715fb971f5bfa548d9fb766e5e1bf",
+          "candidates": []
         }
       ]
     },
@@ -249,13 +510,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Anthony Church, 5340 4th St. SW., Calgary AB T2V 0Z5, Canada",
+          "params": null,
           "key": "2e6c9f48c078d664690e7d08b0e7b7529d722bef99f53a4440cd510b34140d17",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "5340 4th St. SW., Calgary AB T2V 0Z5, Canada",
+          "params": null,
           "key": "6bdf0d7643b0872e7eae12fc330d395216aa722d07668abda1958b79a526ec7a",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Calgary&postalcode=T2V 0Z5&state=AB&street=5340 4th St. SW.",
+          "params": {
+            "street": "5340 4th St. SW.",
+            "city": "Calgary",
+            "state": "AB",
+            "postalcode": "T2V 0Z5"
+          },
+          "key": "d80f6f38786cb4040c110a41f25e4290ae338ac60b106bc021669fa37cc10336",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Anthony Church&city=Calgary&postalcode=T2V 0Z5&state=AB",
+          "params": {
+            "amenity": "St. Anthony Church",
+            "city": "Calgary",
+            "state": "AB",
+            "postalcode": "T2V 0Z5"
+          },
+          "key": "9eb8d7d9f69156b71881900767569209104dae315cd0423fb51298966d54c7bf",
           "candidates": []
         }
       ]
@@ -267,12 +554,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kostel Svatého Jakuba, Přesanické nám., CZ-33501 Nepomuk, Česká republika",
+          "params": null,
           "key": "6da8d77b94041437eef3b152737f007808786e862a3373dbb66bbe1cdedbe9dc",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Přesanické nám., 33501 Nepomuk, Česká republika",
+          "params": null,
           "key": "0ea062ff6d1354fc77abed60230a14844fe4e9ab362067d4bac4bd4e5029e726",
           "candidates": [
             {
@@ -281,6 +570,30 @@
               "country_code": "cz"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Nepomuk&postalcode=33501&street=Přesanické nám.",
+          "params": {
+            "street": "Přesanické nám.",
+            "city": "Nepomuk",
+            "state": null,
+            "postalcode": "33501"
+          },
+          "key": "9b3f631cb0c34ec6f33c8a7a11b160a5a90da57339b5ad3d05deedd154d08131",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kostel Svatého Jakuba&city=Nepomuk&postalcode=33501",
+          "params": {
+            "amenity": "Kostel Svatého Jakuba",
+            "city": "Nepomuk",
+            "state": null,
+            "postalcode": "33501"
+          },
+          "key": "4cf6f96d8dfa02c2d71d54079b489ab7de8baa8d74ff3f6a5ded996492febae6",
+          "candidates": []
         }
       ]
     },
@@ -291,12 +604,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kostel Obětování Panny Marie, Piaristické nám. České Budějovice 1, CZ-37001 České Budějovice, Česká republika",
+          "params": null,
           "key": "b61eed1c2970f1fb1a5b7eda9776b6c253210974470ae41455e3ca823d7b6c64",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Piaristické nám. České Budějovice 1, 37001 České Budějovice, Česká republika",
+          "params": null,
           "key": "f3b29b5678c4beed47b225df6f373d965e91508a5e4f9f5d9a6f0fee54bb8a77",
           "candidates": [
             {
@@ -310,6 +625,30 @@
               "country_code": "cz"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=České Budějovice&postalcode=37001&street=Piaristické nám. České Budějovice 1",
+          "params": {
+            "street": "Piaristické nám. České Budějovice 1",
+            "city": "České Budějovice",
+            "state": null,
+            "postalcode": "37001"
+          },
+          "key": "045fe3926eb514c75138bff15d110e1682ddddd3a480fd8e901c0c89b81bb000",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kostel Obětování Panny Marie&city=České Budějovice&postalcode=37001",
+          "params": {
+            "amenity": "Kostel Obětování Panny Marie",
+            "city": "České Budějovice",
+            "state": null,
+            "postalcode": "37001"
+          },
+          "key": "8bd9ca57c23bab93ce7d43aad4dcf1084713215b7241f7ea649143fc62ec5065",
+          "candidates": []
         }
       ]
     },
@@ -320,12 +659,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Dům svatého Jana Nepomuckého, Kostelní 10, CZ-37324 Římov, Česká republika",
+          "params": null,
           "key": "fbc187a87df1a22b441f649b8ac290ff6a3d1c1634082bbf911f80c0bca4cc13",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Kostelní 10, 37324 Římov, Česká republika",
+          "params": null,
           "key": "c3643c700a3d0c7d811477fab8b74ea7747fa7ba0b12db2534d3c4ebccccc1f1",
           "candidates": [
             {
@@ -334,6 +675,30 @@
               "country_code": "cz"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Římov&postalcode=37324&street=Kostelní 10",
+          "params": {
+            "street": "Kostelní 10",
+            "city": "Římov",
+            "state": null,
+            "postalcode": "37324"
+          },
+          "key": "41fbe6b9f9c2ef81fcb84f1d218d1ecd7b0aaf225298c9d360efb632a2a66600",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Dům svatého Jana Nepomuckého&city=Římov&postalcode=37324",
+          "params": {
+            "amenity": "Dům svatého Jana Nepomuckého",
+            "city": "Římov",
+            "state": null,
+            "postalcode": "37324"
+          },
+          "key": "762a6d301586bad66f5c3dd1f347ecfde7ef2a71e8c327a59150ba92b2959eba",
+          "candidates": []
         }
       ]
     },
@@ -344,12 +709,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kostel Svatého Ducha a Loretánská kaple, Náměstí J. Gurreho 67, CZ-37324 Římov, Česká republika",
+          "params": null,
           "key": "4dfbd876f833a6faa6e6aa90dab5462923cd7ecae5fc4809f13cf6d1cfb0093e",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Náměstí J. Gurreho 67, 37324 Římov, Česká republika",
+          "params": null,
           "key": "70eac30e45765cbf13ce7c3a9d156795b654e7887c4e408513765a626accd5c1",
           "candidates": [
             {
@@ -358,6 +725,30 @@
               "country_code": "cz"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Římov&postalcode=37324&street=Náměstí J. Gurreho 67",
+          "params": {
+            "street": "Náměstí J. Gurreho 67",
+            "city": "Římov",
+            "state": null,
+            "postalcode": "37324"
+          },
+          "key": "625827714acd0367b1a7ee79a1899749c7db3e0782b02329b84bdaecfe2f8bb2",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kostel Svatého Ducha a Loretánská kaple&city=Římov&postalcode=37324",
+          "params": {
+            "amenity": "Kostel Svatého Ducha a Loretánská kaple",
+            "city": "Římov",
+            "state": null,
+            "postalcode": "37324"
+          },
+          "key": "a8d34d4308eb9b23fd6955ac00392330b68098cc8829024ce90cbf3e5a38fbbb",
+          "candidates": []
         }
       ]
     },
@@ -368,12 +759,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kostel sv. Františka z Assisi, CZ-40752 Varnsdorf, Česká republika",
+          "params": null,
           "key": "70187b6f8968eebdd1f27b3e590572f13d16296a53542b33db08546e5ce6e9e9",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "40752 Varnsdorf, Česká republika",
+          "params": null,
           "key": "934b9bfea46c938488730698f8e65f61d0ca978bf77835a86db7ae62e7842627",
           "candidates": [
             {
@@ -392,6 +785,30 @@
               "country_code": "cz"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Varnsdorf&postalcode=40752&street=40752 Varnsdorf",
+          "params": {
+            "street": "40752 Varnsdorf",
+            "city": "Varnsdorf",
+            "state": null,
+            "postalcode": "40752"
+          },
+          "key": "c49d1f69bc1b256615cfae144782ffe27807f0ef659aefcca1ac6f4623bec903",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kostel sv. Františka z Assisi&city=Varnsdorf&postalcode=40752",
+          "params": {
+            "amenity": "Kostel sv. Františka z Assisi",
+            "city": "Varnsdorf",
+            "state": null,
+            "postalcode": "40752"
+          },
+          "key": "a0b8135c9a11bec4d8aea087ebb8ce0a1c52447f8fac2b7421c410677f44e362",
+          "candidates": []
         }
       ]
     },
@@ -402,12 +819,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kostel sv. Jakuba, Velká Dominikánská 272/9, CZ-41201 Litoměřice, Česká republika",
+          "params": null,
           "key": "c41bb74f7818fca8cb046b22b8e22aaebfadf665eb4d7611498b7ec1f7698e86",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Velká Dominikánská 272/9, 41201 Litoměřice, Česká republika",
+          "params": null,
           "key": "85986bcd0a7e8e5480b4f2b3fd5bff8d223b64a3b5ac99860458a46c4bf45e3e",
           "candidates": [
             {
@@ -416,6 +835,30 @@
               "country_code": "cz"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Litoměřice&postalcode=41201&street=Velká Dominikánská 272/9",
+          "params": {
+            "street": "Velká Dominikánská 272/9",
+            "city": "Litoměřice",
+            "state": null,
+            "postalcode": "41201"
+          },
+          "key": "7977a10ae3b56b5785c1626d07d2a4488406d9c83705daaf7546d9caa3899f22",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kostel sv. Jakuba&city=Litoměřice&postalcode=41201",
+          "params": {
+            "amenity": "Kostel sv. Jakuba",
+            "city": "Litoměřice",
+            "state": null,
+            "postalcode": "41201"
+          },
+          "key": "b3a03ecb588f4a1a232699deb2455e05cdcb9280c550f484c000ebb1f7e7493f",
+          "candidates": []
         }
       ]
     },
@@ -426,13 +869,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kaple sv. Bernarda z Clairvaux, Militaris Templariorum Ordo Equitanc Jesu Christi, CZ-59442 Stránecká Zhoř, Česká republika",
+          "params": null,
           "key": "d45d76fc234f401b63fe81c5f5ecf2e1b8f76f5c9da1282117604f83a74349ae",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Militaris Templariorum Ordo Equitanc Jesu Christi, 59442 Stránecká Zhoř, Česká republika",
+          "params": null,
           "key": "c061fdd72ad5f669fa808177f261ad46a7ff7eaa4c4c18b9f9cc4b52c732397e",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Stránecká Zhoř&postalcode=59442&street=Militaris Templariorum Ordo Equitanc Jesu Christi",
+          "params": {
+            "street": "Militaris Templariorum Ordo Equitanc Jesu Christi",
+            "city": "Stránecká Zhoř",
+            "state": null,
+            "postalcode": "59442"
+          },
+          "key": "05fc5a55fe7a686a3316439194df8e2d198c28a5803cac1ed2982cc1cd3593d7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kaple sv. Bernarda z Clairvaux&city=Stránecká Zhoř&postalcode=59442",
+          "params": {
+            "amenity": "Kaple sv. Bernarda z Clairvaux",
+            "city": "Stránecká Zhoř",
+            "state": null,
+            "postalcode": "59442"
+          },
+          "key": "1fac81c2d9d21009a0451eb174ea362069a857482ecb4d7b6590921dd460506e",
           "candidates": []
         }
       ]
@@ -444,13 +913,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Casa San Martín de Porres, vda La María, 253040 Anolaima Cundinamarca, Colombia",
+          "params": null,
           "key": "0a3ec9cd002a6071c728bc0135ecc2502cb5ec3373ba6b71b73f816da9183ec9",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "vda La María, 253040 Anolaima Cundinamarca, Colombia",
+          "params": null,
           "key": "587f6cde4de4948281e8cb4c86c830ff4f7c05a823cd491295d82339722c6e2b",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Anolaima Cundinamarca&postalcode=253040&street=vda La María",
+          "params": {
+            "street": "vda La María",
+            "city": "Anolaima Cundinamarca",
+            "state": null,
+            "postalcode": "253040"
+          },
+          "key": "d20ebd482cb05b042e8d7e1a48ff177c6d5b133b794e153981713e69641e1cf8",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Casa San Martín de Porres&city=Anolaima Cundinamarca&postalcode=253040",
+          "params": {
+            "amenity": "Casa San Martín de Porres",
+            "city": "Anolaima Cundinamarca",
+            "state": null,
+            "postalcode": "253040"
+          },
+          "key": "2ccffb043a9234c45008b585201cb7fcdd3a0fd40131ff78be685fb15237bdca",
           "candidates": []
         }
       ]
@@ -462,13 +957,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Capilla Ntra. Sra. de Fátima, Casa San Martín de Porres, vda La María, 253040 Anolaima Cundinamarca, Colombia",
+          "params": null,
           "key": "2332f386514b7768232734ed60f2d8077f7924b9861f296ff1830acca3aa4c39",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Casa San Martín de Porres, vda La María, 253040 Anolaima Cundinamarca, Colombia",
+          "params": null,
           "key": "0a3ec9cd002a6071c728bc0135ecc2502cb5ec3373ba6b71b73f816da9183ec9",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Anolaima Cundinamarca&postalcode=253040&street=Casa San Martín de Porres",
+          "params": {
+            "street": "Casa San Martín de Porres",
+            "city": "Anolaima Cundinamarca",
+            "state": null,
+            "postalcode": "253040"
+          },
+          "key": "8b0d40dbc62619d5ec4efa695a91966d9e18425f0577ea186dc60759b7f3af85",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Capilla Ntra. Sra. de Fátima&city=Anolaima Cundinamarca&postalcode=253040",
+          "params": {
+            "amenity": "Capilla Ntra. Sra. de Fátima",
+            "city": "Anolaima Cundinamarca",
+            "state": null,
+            "postalcode": "253040"
+          },
+          "key": "b3068db2d6b4df3a00425666bf7c069d42ba39b260907b18ac2ec77388d1f2fc",
           "candidates": []
         }
       ]
@@ -480,13 +1001,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Colegio Campestre Santo Domingo Savio Anolaima, Casa San Martín de Porres, vda La María, 253040 Anolaima Cundinamarca, Colombia",
+          "params": null,
           "key": "1b29587c35ea457282fb2110cbff84904e4cd585ff306d98570af146783a718f",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Casa San Martín de Porres, vda La María, 253040 Anolaima Cundinamarca, Colombia",
+          "params": null,
           "key": "0a3ec9cd002a6071c728bc0135ecc2502cb5ec3373ba6b71b73f816da9183ec9",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Anolaima Cundinamarca&postalcode=253040&street=Casa San Martín de Porres",
+          "params": {
+            "street": "Casa San Martín de Porres",
+            "city": "Anolaima Cundinamarca",
+            "state": null,
+            "postalcode": "253040"
+          },
+          "key": "8b0d40dbc62619d5ec4efa695a91966d9e18425f0577ea186dc60759b7f3af85",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Colegio Campestre Santo Domingo Savio Anolaima&city=Anolaima Cundinamarca&postalcode=253040",
+          "params": {
+            "amenity": "Colegio Campestre Santo Domingo Savio Anolaima",
+            "city": "Anolaima Cundinamarca",
+            "state": null,
+            "postalcode": "253040"
+          },
+          "key": "dbc6258cf7efd679ae986bf017604fd432c23148afaa341d5ad102e28d76285c",
           "candidates": []
         }
       ]
@@ -498,12 +1045,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Michael, Rheinbacher Str. 13, D-53115 Bonn, Deutschland",
+          "params": null,
           "key": "e58fb36a5c5a9ba4dcb9379d2cde4de5d094d1e7745164c4613cf56d953bfe3b",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Rheinbacher Str. 13, 53115 Bonn, Deutschland",
+          "params": null,
           "key": "23815970c4cb5d63e9c0b22fb39d8b11a20b501c1070e0fd9913cefff56e9019",
           "candidates": [
             {
@@ -517,6 +1066,30 @@
               "country_code": "de"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Bonn&postalcode=53115&street=Rheinbacher Str. 13",
+          "params": {
+            "street": "Rheinbacher Str. 13",
+            "city": "Bonn",
+            "state": null,
+            "postalcode": "53115"
+          },
+          "key": "bb6fe5c5d3eadd09238a34a1fe946fb69eaa688ae86b469933d500d8f457fea7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Michael&city=Bonn&postalcode=53115",
+          "params": {
+            "amenity": "St. Michael",
+            "city": "Bonn",
+            "state": null,
+            "postalcode": "53115"
+          },
+          "key": "8cff1c109ddaec1165b0b22cecb92f7c8280d38d2c42a18a7a213d973b3cbb69",
+          "candidates": []
         }
       ]
     },
@@ -527,13 +1100,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Haus St. Lutwinus, Kirchenrektorat, Stiftstr. 18, D-66740 Saarlouis, Deutschland",
+          "params": null,
           "key": "30fa95f2959d2b09c69e1b297cc8ca06ec362fc2c8ca7059fe2af3c3b7c4cf83",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Kirchenrektorat, Stiftstr. 18, 66740 Saarlouis, Deutschland",
+          "params": null,
           "key": "e504d49ee0b623db0878917cb1471e93ad8b9ed100e6fc61f5ec553d22f08e64",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Saarlouis&postalcode=66740&street=Kirchenrektorat",
+          "params": {
+            "street": "Kirchenrektorat",
+            "city": "Saarlouis",
+            "state": null,
+            "postalcode": "66740"
+          },
+          "key": "390222e5ce2a1cb3a52ee9bd4646a612d27e477c7bd940031b18c3a773afd9bb",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Haus St. Lutwinus&city=Saarlouis&postalcode=66740",
+          "params": {
+            "amenity": "Haus St. Lutwinus",
+            "city": "Saarlouis",
+            "state": null,
+            "postalcode": "66740"
+          },
+          "key": "90279eab5c55320242758a9f723210bf31c2ccaa4f8c1ff016ab2a4745b0cdd2",
           "candidates": []
         }
       ]
@@ -545,13 +1144,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Spitalkirche St. Margareth, Margarethenstr. 1, D-86150 Augsburg, Deutschland",
+          "params": null,
           "key": "9d86b5f6e898fbcfadae1cac429d02c98fdf1f245d729215aa05282ecb220ecb",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Margarethenstr. 1, 86150 Augsburg, Deutschland",
+          "params": null,
           "key": "f092517f4a3c56f0e97ad245ce14ade6fe464cd19cf5d47a41eb977a1b02d5eb",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Augsburg&postalcode=86150&street=Margarethenstr. 1",
+          "params": {
+            "street": "Margarethenstr. 1",
+            "city": "Augsburg",
+            "state": null,
+            "postalcode": "86150"
+          },
+          "key": "5eed402a32b4466ff7521cdb4fcfe8c9daa77279de6f0f10696db012a4a302ef",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Spitalkirche St. Margareth&city=Augsburg&postalcode=86150",
+          "params": {
+            "amenity": "Spitalkirche St. Margareth",
+            "city": "Augsburg",
+            "state": null,
+            "postalcode": "86150"
+          },
+          "key": "e3f6e0736ca2f5eae773c67ee34ed0c6a80730d4a6a70506d17fc42a5dde4b80",
           "candidates": []
         }
       ]
@@ -563,12 +1188,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kapuzinerkirche Maria Unbefleckte Empfängnis, Grabenstrasse 2, D-86842 Türkheim, Deutschland",
+          "params": null,
           "key": "0f42f4d698b7b90db934dd272a277cd8762bf60161b89d8b7ac1094d5d0d44b1",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Grabenstrasse 2, 86842 Türkheim, Deutschland",
+          "params": null,
           "key": "f27cbcc69d1fa360f3c45623f5bd171e485c0e652b090b3404e6b59f449e8d3c",
           "candidates": [
             {
@@ -577,6 +1204,30 @@
               "country_code": "de"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Türkheim&postalcode=86842&street=Grabenstrasse 2",
+          "params": {
+            "street": "Grabenstrasse 2",
+            "city": "Türkheim",
+            "state": null,
+            "postalcode": "86842"
+          },
+          "key": "44771182ef882e4b6815355a596a1ecf6ed46c090aae8e556675108062eadaf9",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kapuzinerkirche Maria Unbefleckte Empfängnis&city=Türkheim&postalcode=86842",
+          "params": {
+            "amenity": "Kapuzinerkirche Maria Unbefleckte Empfängnis",
+            "city": "Türkheim",
+            "state": null,
+            "postalcode": "86842"
+          },
+          "key": "37f335e935dae432ab96e438079a8b25c4f4ee28d6eb3ad8e1b213d7b7515eb5",
+          "candidates": []
         }
       ]
     },
@@ -587,13 +1238,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Herz-Jesu-Kirche, Herz-Jesu-Berg, D-92355 Velburg, Deutschland",
+          "params": null,
           "key": "52de03f2f18637cbdb9804c67917ee21a2ce6376ee110c20972588b26098510a",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Herz-Jesu-Berg, 92355 Velburg, Deutschland",
+          "params": null,
           "key": "6d8a20487f30c9c259cc6d46aed7d2cb528073d567f4194e9880703de3bb8c53",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Velburg&postalcode=92355&street=Herz-Jesu-Berg",
+          "params": {
+            "street": "Herz-Jesu-Berg",
+            "city": "Velburg",
+            "state": null,
+            "postalcode": "92355"
+          },
+          "key": "9c5d2b458c120c40f593782f6f93da2aaf43bd63bddaa1624ea6401b587c618c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Herz-Jesu-Kirche&city=Velburg&postalcode=92355",
+          "params": {
+            "amenity": "Herz-Jesu-Kirche",
+            "city": "Velburg",
+            "state": null,
+            "postalcode": "92355"
+          },
+          "key": "7804ef46ad537100c389d433cabbb941fee0c71a0529567a5e01b5898e9b6150",
           "candidates": []
         }
       ]
@@ -605,13 +1282,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Pfarrkirche St. Elisabeth, Benefiziatengasse 9, D-93476 Blaibach, Deutschland",
+          "params": null,
           "key": "0518df90b95683829e8077d5cd37da82918168ce08e3821290cf61dda69ae20e",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Benefiziatengasse 9, 93476 Blaibach, Deutschland",
+          "params": null,
           "key": "52ce794099e66fe03d8aac4ceeaf5b7a3204b9bb3d104270d15bf22bb03529ba",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Blaibach&postalcode=93476&street=Benefiziatengasse 9",
+          "params": {
+            "street": "Benefiziatengasse 9",
+            "city": "Blaibach",
+            "state": null,
+            "postalcode": "93476"
+          },
+          "key": "06979a9c17af4ab74d301063e94759b2731713cfa1df55c23439590e796783cb",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Pfarrkirche St. Elisabeth&city=Blaibach&postalcode=93476",
+          "params": {
+            "amenity": "Pfarrkirche St. Elisabeth",
+            "city": "Blaibach",
+            "state": null,
+            "postalcode": "93476"
+          },
+          "key": "d5497e495bd0149086347087a7b31a1bc79665a0e88936e590ad65fa13a72047",
           "candidates": []
         }
       ]
@@ -623,13 +1326,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Parroquia San Jacinto de Guale, Cantón Paján, Provincia de Manabí, Guale, Equateur",
+          "params": null,
           "key": "e0c307b03ed293c1de3e3ba2c07a7d91bf397fedb349b9ba139ed113e34d9a26",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Cantón Paján, Provincia de Manabí, Guale, Equateur",
+          "params": null,
           "key": "94cdc55478839d04e54503093bbe4ae98cacd6680928090936123df90ee25fc9",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Equateur&street=Cantón Paján",
+          "params": {
+            "street": "Cantón Paján",
+            "city": "Equateur",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "f1c610dcbf6ac29fb296cd47bd0c752bbf3ab08c5bf29aeb2e4a1db3f5e2b9e7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Parroquia San Jacinto de Guale&city=Equateur",
+          "params": {
+            "amenity": "Parroquia San Jacinto de Guale",
+            "city": "Equateur",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "b2fe780db6ad7c010c8c9042cfb8e0bf1053cd526b4b51ca22532da5ecc5672a",
           "candidates": []
         }
       ]
@@ -641,13 +1370,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Casa del Sagrado Corazón de Jesús, c/Francos 36 . Bajos-D, E-11403 Jerez de la Frontera, España",
+          "params": null,
           "key": "68f48df399b22312c74641b18bd2d24ac253fe29ad1acab3f11e5cb417dc9352",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "c/Francos 36 . Bajos-D, E-11403 Jerez de la Frontera, España",
+          "params": null,
           "key": "a63fabdeeb76c7290cdd15f2cd89ef47b8bfc7d226d32a2419df0ba529eb2d96",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=E- Jerez de la Frontera&postalcode=11403&street=c/Francos 36 . Bajos-D",
+          "params": {
+            "street": "c/Francos 36 . Bajos-D",
+            "city": "E- Jerez de la Frontera",
+            "state": null,
+            "postalcode": "11403"
+          },
+          "key": "8f716c83bc3175dc9d80ebfb31c3d10a6a05e3565296c094f5b6724856ff5628",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Casa del Sagrado Corazón de Jesús&city=E- Jerez de la Frontera&postalcode=11403",
+          "params": {
+            "amenity": "Casa del Sagrado Corazón de Jesús",
+            "city": "E- Jerez de la Frontera",
+            "state": null,
+            "postalcode": "11403"
+          },
+          "key": "96d5de307ab73ef9567d8f3a364e57c5313996db5818f6d837beb86ebb2bdb72",
           "candidates": []
         }
       ]
@@ -659,13 +1414,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Capilla de Ntra. Sra. de los Remedios, Calle Remedios 2, E-11403 Jerez de la Frontera, España",
+          "params": null,
           "key": "b981716f279fb2e41a5465db1774930e1fb98b1fe2df706fa486c163223476a6",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Calle Remedios 2, E-11403 Jerez de la Frontera, España",
+          "params": null,
           "key": "8bf272792e4438c6837d67e74a53bc3e27d3f1b92a55a6ce52654d996ebc301b",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=E- Jerez de la Frontera&postalcode=11403&street=Calle Remedios 2",
+          "params": {
+            "street": "Calle Remedios 2",
+            "city": "E- Jerez de la Frontera",
+            "state": null,
+            "postalcode": "11403"
+          },
+          "key": "08718faeea61d8186d87d7deff12e4ecbfd89f5198b0eb083874b585808f81f4",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Capilla de Ntra. Sra. de los Remedios&city=E- Jerez de la Frontera&postalcode=11403",
+          "params": {
+            "amenity": "Capilla de Ntra. Sra. de los Remedios",
+            "city": "E- Jerez de la Frontera",
+            "state": null,
+            "postalcode": "11403"
+          },
+          "key": "1b0ab699fa561dda52db8243857a17687d2fe0cd59e4859f24085cdc46099d52",
           "candidates": []
         }
       ]
@@ -677,12 +1458,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Casa di a Madonna di e Grazie, 3 rue de l’évêché, F-20200 Bastia, France",
+          "params": null,
           "key": "58ec9300d379c81954b01807f555d825fdb4860be91c5af77c423ddf132d76da",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "3 rue de l’évêché, 20200 Bastia, France",
+          "params": null,
           "key": "4ae7d0093a49f13b1af8481da4ba9a8f556b58fbbb844192b406be825388977b",
           "candidates": [
             {
@@ -701,6 +1484,30 @@
               "country_code": "fr"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Bastia&postalcode=20200&street=3 rue de l’évêché",
+          "params": {
+            "street": "3 rue de l’évêché",
+            "city": "Bastia",
+            "state": null,
+            "postalcode": "20200"
+          },
+          "key": "82fd5ec96be7ef5258e3fac2a48e33032f63028637faae6df2e4f28ebf76980a",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Casa di a Madonna di e Grazie&city=Bastia&postalcode=20200",
+          "params": {
+            "amenity": "Casa di a Madonna di e Grazie",
+            "city": "Bastia",
+            "state": null,
+            "postalcode": "20200"
+          },
+          "key": "24cd3dfe5676acd1e75bd9c7270bce7c0637b63a3f75d71672936302f0e310f9",
+          "candidates": []
         }
       ]
     },
@@ -711,12 +1518,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Chapelle Notre-Dame de Monserrato, 73 chemin de Scala Santa, F-20200 Bastia, France",
+          "params": null,
           "key": "5afe3fef50e9bf10373d76cdc7ed4dcd2794e860eabd7786a92e53fdc4817e80",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "73 chemin de Scala Santa, 20200 Bastia, France",
+          "params": null,
           "key": "d505b28d79fa85c1acc657fcda835a553eab758332210a6152707303277e9bcd",
           "candidates": [
             {
@@ -735,6 +1544,30 @@
               "country_code": "fr"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Bastia&postalcode=20200&street=73 chemin de Scala Santa",
+          "params": {
+            "street": "73 chemin de Scala Santa",
+            "city": "Bastia",
+            "state": null,
+            "postalcode": "20200"
+          },
+          "key": "b285e99cc1e76b50edb748adbfef048c8f412d6ade46e4e1af47f655e3a87791",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle Notre-Dame de Monserrato&city=Bastia&postalcode=20200",
+          "params": {
+            "amenity": "Chapelle Notre-Dame de Monserrato",
+            "city": "Bastia",
+            "state": null,
+            "postalcode": "20200"
+          },
+          "key": "3d1c0953038dbc4da3bf3e33a1ad75db7929e6fc42a20d98a40edd55838d0166",
+          "candidates": []
         }
       ]
     },
@@ -745,13 +1578,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Chapelle Saint-Antoine, Chapelle Saint-Antoine, F-20220 Sant' Antonino, France",
+          "params": null,
           "key": "d2c0ee13ec7f41a5b41250d844ed5255440180b76ef25e68e126b948d6df4160",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Chapelle Saint-Antoine, 20220 Sant' Antonino, France",
+          "params": null,
           "key": "e6377a78b5dd8a5ac0a5c734cdaae4ef33cfd633d6f7afebd009017212e5ae70",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Sant' Antonino&postalcode=20220&street=20220 Sant' Antonino",
+          "params": {
+            "street": "20220 Sant' Antonino",
+            "city": "Sant' Antonino",
+            "state": null,
+            "postalcode": "20220"
+          },
+          "key": "cb3ba7f869bcffce6290ffcea9e0b002a19dff567371f10c8e0a1a95f6fe5e1f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle Saint-Antoine&city=Sant' Antonino&postalcode=20220",
+          "params": {
+            "amenity": "Chapelle Saint-Antoine",
+            "city": "Sant' Antonino",
+            "state": null,
+            "postalcode": "20220"
+          },
+          "key": "0842e694b21848cae7a6e12cc43ff8704a17d2d6d0f2f65c74ab01ec3e489fb4",
           "candidates": []
         }
       ]
@@ -763,13 +1622,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Eglise paroissiale, rue de la résistance quartier d'Azans, F-39198 Dole, France",
+          "params": null,
           "key": "9b88e4bd9fad228306ea1732ec838049a1131b977d99a31caf445887958e36cb",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "rue de la résistance quartier d'Azans, 39198 Dole, France",
+          "params": null,
           "key": "de42a7bbc03643311a153da1b1fef660ade9522a8ab8a0b08efa7c803161171e",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Dole&postalcode=39198&street=rue de la résistance quartier d'Azans",
+          "params": {
+            "street": "rue de la résistance quartier d'Azans",
+            "city": "Dole",
+            "state": null,
+            "postalcode": "39198"
+          },
+          "key": "e545aeec37f14084301f36f15052223960d30bc878947e90a84585ec6129e3f0",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Eglise paroissiale&city=Dole&postalcode=39198",
+          "params": {
+            "amenity": "Eglise paroissiale",
+            "city": "Dole",
+            "state": null,
+            "postalcode": "39198"
+          },
+          "key": "8738ff174bbb39253f786e0f7a1c07d736b817dfc012db127d1e6defdfe60acf",
           "candidates": []
         }
       ]
@@ -781,13 +1666,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Maison Saint-Vincent-de-Paul, Château de Baure, 66 route de Baure, F-40180 Clermont, France",
+          "params": null,
           "key": "b9f074f601a812295a8c28a688e66785b7f05433df67c3350da0d87b6820516c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Château de Baure, 66 route de Baure, 40180 Clermont, France",
+          "params": null,
           "key": "7adff872d3f148d4144eda58ecbdc1d44b203fbdf19fb674a1cff8e7a0275ca8",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Clermont&postalcode=40180&street=Château de Baure",
+          "params": {
+            "street": "Château de Baure",
+            "city": "Clermont",
+            "state": null,
+            "postalcode": "40180"
+          },
+          "key": "0f80438838f0d5f9cc7a47e3b25a58b1c0a39600c3a52b6d00a3da047ee927a9",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Maison Saint-Vincent-de-Paul&city=Clermont&postalcode=40180",
+          "params": {
+            "amenity": "Maison Saint-Vincent-de-Paul",
+            "city": "Clermont",
+            "state": null,
+            "postalcode": "40180"
+          },
+          "key": "d3c2e29d2ded5017857bfa9dfd466f41e4079367929bbe2bd508b2b1d1a065fd",
           "candidates": []
         }
       ]
@@ -799,13 +1710,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Maison Sainte-Anne, 64 bis rue du Gal Buat, F-44000 Nantes, France",
+          "params": null,
           "key": "b54a52b122f57ef026f56fe3a3ea00a5fa6c2612e347ca7bce46c501bf47c175",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "64 bis rue du Gal Buat, 44000 Nantes, France",
+          "params": null,
           "key": "ade2764fd218a33123d7a24ef4746bc9b93bbc33cbba6874d022ed926ed5b188",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Nantes&postalcode=44000&street=64 bis rue du Gal Buat",
+          "params": {
+            "street": "64 bis rue du Gal Buat",
+            "city": "Nantes",
+            "state": null,
+            "postalcode": "44000"
+          },
+          "key": "f98f1b8f7923a4219d216145c6b46196817c698e5757300b3b6580c14bad3809",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Maison Sainte-Anne&city=Nantes&postalcode=44000",
+          "params": {
+            "amenity": "Maison Sainte-Anne",
+            "city": "Nantes",
+            "state": null,
+            "postalcode": "44000"
+          },
+          "key": "6b2202162e19ffa2f58aa46043293691b164daeae215be091a9af7243a0a16f5",
           "candidates": []
         }
       ]
@@ -817,13 +1754,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Chapelle du Carmel La Ratrie (anc. Carmel d’Alençon), 31 rue de la Pérelle, F-61250 Cuissai, France",
+          "params": null,
           "key": "f017a473609469c647326f13e8f10403a00d0a6bc1985cf35cd2a2bc07266b87",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "31 rue de la Pérelle, 61250 Cuissai, France",
+          "params": null,
           "key": "db4f0e9886966995d8e7863b89acd849ba5eb3ddd13781bd5239cec5bdd23c3a",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Cuissai&postalcode=61250&street=31 rue de la Pérelle",
+          "params": {
+            "street": "31 rue de la Pérelle",
+            "city": "Cuissai",
+            "state": null,
+            "postalcode": "61250"
+          },
+          "key": "17033d11325a9862291a5ae127c918f6cbe2b22a1a273bd15f333165c4087b1e",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle du Carmel La Ratrie (anc. Carmel d’Alençon)&city=Cuissai&postalcode=61250",
+          "params": {
+            "amenity": "Chapelle du Carmel La Ratrie (anc. Carmel d’Alençon)",
+            "city": "Cuissai",
+            "state": null,
+            "postalcode": "61250"
+          },
+          "key": "9561f81bb83650e1dde298e7074fa25614e992f0fd3bdfc9f1652a73b6fd8853",
           "candidates": []
         }
       ]
@@ -835,13 +1798,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Maison Saint-Joseph, Institut Croix-des-Vents, 55 rue d'Argentré, F-61500 Sées, France",
+          "params": null,
           "key": "e5fd475f6c85a284bff7b322ed8ef2facc9cc7a9b823d018bc9677cafee4445b",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Institut Croix-des-Vents, 55 rue d'Argentré, 61500 Sées, France",
+          "params": null,
           "key": "f612be0ad2c2c6dadf5c59e58dbc3cc57218624349a6b86b595e787e11b00603",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Sées&postalcode=61500&street=Institut Croix-des-Vents",
+          "params": {
+            "street": "Institut Croix-des-Vents",
+            "city": "Sées",
+            "state": null,
+            "postalcode": "61500"
+          },
+          "key": "fa27a494099a08c712a838eb5af3753d536499e7c72ee6a2fceabe3423ce6794",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Maison Saint-Joseph&city=Sées&postalcode=61500",
+          "params": {
+            "amenity": "Maison Saint-Joseph",
+            "city": "Sées",
+            "state": null,
+            "postalcode": "61500"
+          },
+          "key": "dacc0a0b67a3ca4f59e1268ebe72b371d6dde68036089a96917e6606ca46681e",
           "candidates": []
         }
       ]
@@ -853,13 +1842,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Chapelle du Sacré Cœur et de l'Immac. Conception (Chapelle du Carmel), 6 bis blvd. Général Leclerc, F-77300 Fontainebleau, France",
+          "params": null,
           "key": "85ba61714ae32ccf41ef888e0aaf53c948390fa6ddf24f3299a1abf7a32aa34e",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "6 bis blvd. Général Leclerc, 77300 Fontainebleau, France",
+          "params": null,
           "key": "8ad4f817ade5183599393adb64d3ecf2fbe8b51306dabdc4f7fe3b7a6b07458c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Fontainebleau&postalcode=77300&street=6 bis blvd. Général Leclerc",
+          "params": {
+            "street": "6 bis blvd. Général Leclerc",
+            "city": "Fontainebleau",
+            "state": null,
+            "postalcode": "77300"
+          },
+          "key": "466a2adce6666dcebb438acc99276bd21cab429263d882671bf50848d88f91da",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle du Sacré Cœur et de l'Immac. Conception (Chapelle du Carmel)&city=Fontainebleau&postalcode=77300",
+          "params": {
+            "amenity": "Chapelle du Sacré Cœur et de l'Immac. Conception (Chapelle du Carmel)",
+            "city": "Fontainebleau",
+            "state": null,
+            "postalcode": "77300"
+          },
+          "key": "b88021838ad9bd54d5ebb5461bd769cf4e9f2ea51246751feaacf416e34f772d",
           "candidates": []
         }
       ]
@@ -871,13 +1886,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Catholic Church of Our Lady of Ransom, 307 Bedford Rd, Kempston Bedford MK42 8QB, Great Britain",
+          "params": null,
           "key": "2eabee0b846dcfb0bd123e095a08b0996b94dc7759ff42b674b2684757b047bf",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "307 Bedford Rd, Kempston Bedford MK42 8QB, Great Britain",
+          "params": null,
           "key": "5b6378f047b95dfc41738693b6712e3679155cfdad8e58f08d50b5ed34e38c14",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Kempston Bedford&postalcode=MK42 8QB&street=307 Bedford Rd",
+          "params": {
+            "street": "307 Bedford Rd",
+            "city": "Kempston Bedford",
+            "state": null,
+            "postalcode": "MK42 8QB"
+          },
+          "key": "f5ece149bdd70f9cceba4c9317ae61b7599775472d1afbb8fc0012fd7152475e",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Catholic Church of Our Lady of Ransom&city=Kempston Bedford&postalcode=MK42 8QB",
+          "params": {
+            "amenity": "Catholic Church of Our Lady of Ransom",
+            "city": "Kempston Bedford",
+            "state": null,
+            "postalcode": "MK42 8QB"
+          },
+          "key": "b48d8a19f7c490b4f975aa1eb177c26deb18098e3b0f648991c326fb51445084",
           "candidates": []
         }
       ]
@@ -889,13 +1930,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Cuthbert House, 6 Belford Park, Edinburgh EH4 3DP, Great Britain",
+          "params": null,
           "key": "905dec39b1326ee80c849a073810d7e57c0498cdecabbd31a0af0b5c3a246f57",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "6 Belford Park, Edinburgh EH4 3DP, Great Britain",
+          "params": null,
           "key": "eb2c1e6a3bbe63caf848694a00397ff011513f1766bdda618148fb4b4cc915c3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Edinburgh&postalcode=EH4 3DP&street=6 Belford Park",
+          "params": {
+            "street": "6 Belford Park",
+            "city": "Edinburgh",
+            "state": null,
+            "postalcode": "EH4 3DP"
+          },
+          "key": "e8cbf831934ac8f52836f2efcfeff8bc544fe487026132738b11c6fd09b8678c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Cuthbert House&city=Edinburgh&postalcode=EH4 3DP",
+          "params": {
+            "amenity": "St. Cuthbert House",
+            "city": "Edinburgh",
+            "state": null,
+            "postalcode": "EH4 3DP"
+          },
+          "key": "7540638df3f09b71e81d5576b3ed355e16350a6294822a01180858e18060d43b",
           "candidates": []
         }
       ]
@@ -907,13 +1974,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St Cuthbert’s House Chapel, 6 Belford Park, Edinburgh EH4 3DP, Great Britain",
+          "params": null,
           "key": "18dccbbdabc20c4d66353c2adb3fed2574d531613034daf573ab4b910e6700b2",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "6 Belford Park, Edinburgh EH4 3DP, Great Britain",
+          "params": null,
           "key": "eb2c1e6a3bbe63caf848694a00397ff011513f1766bdda618148fb4b4cc915c3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Edinburgh&postalcode=EH4 3DP&street=6 Belford Park",
+          "params": {
+            "street": "6 Belford Park",
+            "city": "Edinburgh",
+            "state": null,
+            "postalcode": "EH4 3DP"
+          },
+          "key": "e8cbf831934ac8f52836f2efcfeff8bc544fe487026132738b11c6fd09b8678c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St Cuthbert’s House Chapel&city=Edinburgh&postalcode=EH4 3DP",
+          "params": {
+            "amenity": "St Cuthbert’s House Chapel",
+            "city": "Edinburgh",
+            "state": null,
+            "postalcode": "EH4 3DP"
+          },
+          "key": "4345ed9816b9566d0eba030820ad22fbb716095bcbe3b298c80dac5e311d479e",
           "candidates": []
         }
       ]
@@ -925,13 +2018,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Andrew's Church Ravelston, 77 Belford Rd., Edinburgh EH4 3DS, Great Britain",
+          "params": null,
           "key": "2669ba74bc5ef227b9e497961ab7ecd6cd71275b019a3230cebd49ba8caf7852",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "77 Belford Rd., Edinburgh EH4 3DS, Great Britain",
+          "params": null,
           "key": "87249a8fd91fae19ec779a3d258ee3f0305200e1480b755767009e42bb0489ca",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Edinburgh&postalcode=EH4 3DS&street=77 Belford Rd.",
+          "params": {
+            "street": "77 Belford Rd.",
+            "city": "Edinburgh",
+            "state": null,
+            "postalcode": "EH4 3DS"
+          },
+          "key": "393ff04e2252d2bee651c1d9cd8f11905deea35cc475e6573824bb36e44c605c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Andrew's Church Ravelston&city=Edinburgh&postalcode=EH4 3DS",
+          "params": {
+            "amenity": "St. Andrew's Church Ravelston",
+            "city": "Edinburgh",
+            "state": null,
+            "postalcode": "EH4 3DS"
+          },
+          "key": "9541e7b5441392d112f0a53ba7afad87b5a7dad467fd44f6d1a99d0b574aa883",
           "candidates": []
         }
       ]
@@ -943,13 +2062,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Our Lady of Perpetual Succour Catholic Church, 30 Amersham Road, Chesham Bois Bucks HP6 5PE, Great Britain",
+          "params": null,
           "key": "1a50e7292251ba562d3c78ad1620f0c306df0e3f6145419862b4a9234d6e5f22",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "30 Amersham Road, Chesham Bois Bucks HP6 5PE, Great Britain",
+          "params": null,
           "key": "d0a137bf685c5877baee6a70861ab6a677882a15c177afcf64c9497d822a6569",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Chesham Bois Bucks&postalcode=HP6 5PE&street=30 Amersham Road",
+          "params": {
+            "street": "30 Amersham Road",
+            "city": "Chesham Bois Bucks",
+            "state": null,
+            "postalcode": "HP6 5PE"
+          },
+          "key": "bd315f5f8effd8b3650e0bb5de6a7340f4ce1b0e2108a8d911d53cb53b6a8ee2",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Our Lady of Perpetual Succour Catholic Church&city=Chesham Bois Bucks&postalcode=HP6 5PE",
+          "params": {
+            "amenity": "Our Lady of Perpetual Succour Catholic Church",
+            "city": "Chesham Bois Bucks",
+            "state": null,
+            "postalcode": "HP6 5PE"
+          },
+          "key": "04fb91f4942f84bde5c2e300ed422a14607507562f0bb8fa658b412faf54d22c",
           "candidates": []
         }
       ]
@@ -961,13 +2106,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Alban House, 18 Brett Drive, Bromham MK43 8RF, Great Britain",
+          "params": null,
           "key": "3e662667b883ba0d7b8430d57f659d76d7f135f0a6e0a0df6a164a55b7d3c08a",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "18 Brett Drive, Bromham MK43 8RF, Great Britain",
+          "params": null,
           "key": "40dfc93248d02d7c88bc79091996c3e075b7ec12192f3b1ad3b908623e6f53ac",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Bromham&postalcode=MK43 8RF&street=18 Brett Drive",
+          "params": {
+            "street": "18 Brett Drive",
+            "city": "Bromham",
+            "state": null,
+            "postalcode": "MK43 8RF"
+          },
+          "key": "944eaaace7dd13985424e507d0392a694059a5dd692d525319b4915a9d1e04a2",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Alban House&city=Bromham&postalcode=MK43 8RF",
+          "params": {
+            "amenity": "St. Alban House",
+            "city": "Bromham",
+            "state": null,
+            "postalcode": "MK43 8RF"
+          },
+          "key": "509effb99c5d8836fde4321c2bf7bec97e131d3761e9df67c407567266947eb2",
           "candidates": []
         }
       ]
@@ -979,13 +2150,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "All Saints Church, Church End, Kempston MK43 8RH, Great Britain",
+          "params": null,
           "key": "be7a2fe05c8fb078deb97371c63c881fd95314c7e99ee3beddc07dd539a65e5b",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Church End, Kempston MK43 8RH, Great Britain",
+          "params": null,
           "key": "1db29b1c3d189f355e22ea67c73471110068944fc8a348d90b75f253f599e8bc",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Kempston&postalcode=MK43 8RH&street=Church End",
+          "params": {
+            "street": "Church End",
+            "city": "Kempston",
+            "state": null,
+            "postalcode": "MK43 8RH"
+          },
+          "key": "748d918a8d75db3c888e820d97a5e4e9c46114964b9c814e68303455cdc3293f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=All Saints Church&city=Kempston&postalcode=MK43 8RH",
+          "params": {
+            "amenity": "All Saints Church",
+            "city": "Kempston",
+            "state": null,
+            "postalcode": "MK43 8RH"
+          },
+          "key": "b420310ea9d6bfafa2c2ff0edfedbd297e2f63b182db7862195c99bafebfd192",
           "candidates": []
         }
       ]
@@ -997,13 +2194,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. John Fisher Parish (St. William of York Church), Upper Redlands Road, Reading RG1 5JP, Great Britain",
+          "params": null,
           "key": "fea05de509e4a628ba91d19e11503207ca81bc0344798bf4e271bb02422012cc",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Upper Redlands Road, Reading RG1 5JP, Great Britain",
+          "params": null,
           "key": "d76c7ec4c74c729c2c31c83ca8c64d1d4c123d2e720ff66aa140b123650fe432",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Reading&postalcode=RG1 5JP&street=Upper Redlands Road",
+          "params": {
+            "street": "Upper Redlands Road",
+            "city": "Reading",
+            "state": null,
+            "postalcode": "RG1 5JP"
+          },
+          "key": "18def6cab81442db9e0d08a0daa60988c08d338aef57263ea6b6854c1b769273",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. John Fisher Parish (St. William of York Church)&city=Reading&postalcode=RG1 5JP",
+          "params": {
+            "amenity": "St. John Fisher Parish (St. William of York Church)",
+            "city": "Reading",
+            "state": null,
+            "postalcode": "RG1 5JP"
+          },
+          "key": "7c63fd364c3a8ed138d138a705b03d62bc5f65ecebf7cf85161d0ae8bc3522b8",
           "candidates": []
         }
       ]
@@ -1015,13 +2238,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. John Fisher House, 17 Eastern Avenue, Reading RG1 5RU, Great Britain",
+          "params": null,
           "key": "cdd221b4fba218ed79080819a3e59c590d7aefc5e94e768b70e72cca6f02fdd0",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "17 Eastern Avenue, Reading RG1 5RU, Great Britain",
+          "params": null,
           "key": "73eab5ff7091ec3f16a9f4ad4574a0dd7d053d48f6a14e3fb340600da98c9573",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Reading&postalcode=RG1 5RU&street=17 Eastern Avenue",
+          "params": {
+            "street": "17 Eastern Avenue",
+            "city": "Reading",
+            "state": null,
+            "postalcode": "RG1 5RU"
+          },
+          "key": "4355e495b150d1822b2ce0bd98cd6aa2025bdd737793ead12fe71d27b2a3ffde",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. John Fisher House&city=Reading&postalcode=RG1 5RU",
+          "params": {
+            "amenity": "St. John Fisher House",
+            "city": "Reading",
+            "state": null,
+            "postalcode": "RG1 5RU"
+          },
+          "key": "ff4af4e103cd12c99da861db046aea68e7c29572ad29161eee9562f404db3200",
           "candidates": []
         }
       ]
@@ -1033,13 +2282,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Most Pure Heart of Mary House, Smith Street, Warrington Cheshire WA1 2NS, Great Britain",
+          "params": null,
           "key": "13262144eed672f3b119a13ed30366f617ed244068d5e9b301f7fa4b760ba7b6",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Smith Street, Warrington Cheshire WA1 2NS, Great Britain",
+          "params": null,
           "key": "cf07ca1ddcc325e504e0e3024e24f75a2d54e69f6e1a16b2928bb0caa7ea0d78",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Warrington Cheshire&postalcode=WA1 2NS&street=Smith Street",
+          "params": {
+            "street": "Smith Street",
+            "city": "Warrington Cheshire",
+            "state": null,
+            "postalcode": "WA1 2NS"
+          },
+          "key": "6d209d5817eb72818d977b6133c07b9b9dbdd375df4a9d0962ce66f181268ad7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Most Pure Heart of Mary House&city=Warrington Cheshire&postalcode=WA1 2NS",
+          "params": {
+            "amenity": "Most Pure Heart of Mary House",
+            "city": "Warrington Cheshire",
+            "state": null,
+            "postalcode": "WA1 2NS"
+          },
+          "key": "c8f36807794f5a7782ab935ad31f7c1b9d9f09a8380fd404b79e426ae0a4b147",
           "candidates": []
         }
       ]
@@ -1051,13 +2326,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St Mary's Church, Smith Street, Warrington Cheshire WA1 2NS, Great Britain",
+          "params": null,
           "key": "e349c80d8d9ac6f3cd49c7f118dc00061547ba7898dfee5810e0d04be2b5f02b",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Smith Street, Warrington Cheshire WA1 2NS, Great Britain",
+          "params": null,
           "key": "cf07ca1ddcc325e504e0e3024e24f75a2d54e69f6e1a16b2928bb0caa7ea0d78",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Warrington Cheshire&postalcode=WA1 2NS&street=Smith Street",
+          "params": {
+            "street": "Smith Street",
+            "city": "Warrington Cheshire",
+            "state": null,
+            "postalcode": "WA1 2NS"
+          },
+          "key": "6d209d5817eb72818d977b6133c07b9b9dbdd375df4a9d0962ce66f181268ad7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St Mary's Church&city=Warrington Cheshire&postalcode=WA1 2NS",
+          "params": {
+            "amenity": "St Mary's Church",
+            "city": "Warrington Cheshire",
+            "state": null,
+            "postalcode": "WA1 2NS"
+          },
+          "key": "04f81cd79784f6be62d762105a0d08c5f8402cdd05c38fbfb75cf1457d3dc978",
           "candidates": []
         }
       ]
@@ -1069,13 +2370,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St Oliver Plunkett House, Ballinaneeshagh, Cork Road, X91 N677 Waterford City, Irlande",
+          "params": null,
           "key": "f102d289d36b706a2652870ad45311d65adc6ecb52b9329d3e406af1addb4568",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Ballinaneeshagh, Cork Road, X91 N677 Waterford City, Irlande",
+          "params": null,
           "key": "caf22180d8d11926bbf12a106f998d61f9d565d28a68ad02d66d85d2d16bfb12",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Irlande&street=Ballinaneeshagh",
+          "params": {
+            "street": "Ballinaneeshagh",
+            "city": "Irlande",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "f405b065d3f58027341d8153c8525b9fd039761db5c7a115a8cef4723c5f6290",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St Oliver Plunkett House&city=Irlande",
+          "params": {
+            "amenity": "St Oliver Plunkett House",
+            "city": "Irlande",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "5da3d93e6cfcbf69b0dee475442b944d76673f69a9ba9352aa1871fc35f2eb8d",
           "candidates": []
         }
       ]
@@ -1087,12 +2414,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "San Simon Piccolo, Santa Croce 703, I-30135 Venezia, Italia",
+          "params": null,
           "key": "9d3f19f2103de8de35b162f24c70aa51733563f948b32b6cf9d7ad758bea5c9a",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Santa Croce 703, 30135 Venezia, Italia",
+          "params": null,
           "key": "7213dc4f4798e1c63ecc54d96d1d68e3c7d8d1fc6b3244afe7fa99b0c16fda3e",
           "candidates": [
             {
@@ -1101,6 +2430,30 @@
               "country_code": "it"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Venezia&postalcode=30135&street=Santa Croce 703",
+          "params": {
+            "street": "Santa Croce 703",
+            "city": "Venezia",
+            "state": null,
+            "postalcode": "30135"
+          },
+          "key": "27f9379db1c96297e967f2257128e5e5ad6eae0e0db72042d916021cf46a72e3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=San Simon Piccolo&city=Venezia&postalcode=30135",
+          "params": {
+            "amenity": "San Simon Piccolo",
+            "city": "Venezia",
+            "state": null,
+            "postalcode": "30135"
+          },
+          "key": "5b26e0dcb67dea969a6cf3f25cdee520ef09581708e227442fe12fc40509ccb3",
+          "candidates": []
         }
       ]
     },
@@ -1111,12 +2464,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Chiesa di S. Simon Piccolo, 698 Santa Croce, I-30135 Venezia, Italia",
+          "params": null,
           "key": "7c8d11a472505a488b90aad580496e9985734869a796010f05743f0030193b6c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "698 Santa Croce, 30135 Venezia, Italia",
+          "params": null,
           "key": "20ce0ea0b786d1392d694a67acc56bc0ebf62618d5ed86fa605e9aa62db8452f",
           "candidates": [
             {
@@ -1125,6 +2480,30 @@
               "country_code": "it"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Venezia&postalcode=30135&street=698 Santa Croce",
+          "params": {
+            "street": "698 Santa Croce",
+            "city": "Venezia",
+            "state": null,
+            "postalcode": "30135"
+          },
+          "key": "a8ae5a44b2e3657b91ae2001c07a65b20fe860951c87e7809c36642114ff15b3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chiesa di S. Simon Piccolo&city=Venezia&postalcode=30135",
+          "params": {
+            "amenity": "Chiesa di S. Simon Piccolo",
+            "city": "Venezia",
+            "state": null,
+            "postalcode": "30135"
+          },
+          "key": "44a4c9ea0d44b28e1b453601de8476402813862094fff7d5b63f35b0260c2986",
+          "candidates": []
         }
       ]
     },
@@ -1135,13 +2514,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kirche St Antonius, Piccolin Str. 20, I-39030 Pikolein, Italia",
+          "params": null,
           "key": "fbd57bd735049288436f3f2932712eaf90b212e450ff616ffe8728b65dd6b422",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Piccolin Str. 20, 39030 Pikolein, Italia",
+          "params": null,
           "key": "3f56ba6e3d9529f1f236d572beef42280ba3dbd25a8f9aae041db9b7337df8ef",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Pikolein&postalcode=39030&street=Piccolin Str. 20",
+          "params": {
+            "street": "Piccolin Str. 20",
+            "city": "Pikolein",
+            "state": null,
+            "postalcode": "39030"
+          },
+          "key": "d99bfa9a9340423b43eaf2def91caddc8cd44c36d48e133301109b3cff66b649",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kirche St Antonius&city=Pikolein&postalcode=39030",
+          "params": {
+            "amenity": "Kirche St Antonius",
+            "city": "Pikolein",
+            "state": null,
+            "postalcode": "39030"
+          },
+          "key": "5f0a4b8b9d3f32985135cca220f3a95a6dfa72e9c12e8d4e8a72f8c044b178ae",
           "candidates": []
         }
       ]
@@ -1153,13 +2558,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Casa San Juan Diego, Ave. Fortuna 13 bis, Tepeyac Insurgentes, 07020 Ciudad de México, México",
+          "params": null,
           "key": "304ecf5e07de27c464cb68a0f7a6d3ca7d7e53f9d3809ad9577d2633058f0534",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Ave. Fortuna 13 bis, Tepeyac Insurgentes, 07020 Ciudad de México, México",
+          "params": null,
           "key": "b2f7a0d0370ed19a879c6e0c62c4d2b255fab19999f9ac738ede5a2607bdd7fb",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Ciudad de México&postalcode=07020&street=Ave. Fortuna 13 bis",
+          "params": {
+            "street": "Ave. Fortuna 13 bis",
+            "city": "Ciudad de México",
+            "state": null,
+            "postalcode": "07020"
+          },
+          "key": "c4febc982015951f016fc4fb829a97dc9b328ce5192d529b807578e2c53bf6e3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Casa San Juan Diego&city=Ciudad de México&postalcode=07020",
+          "params": {
+            "amenity": "Casa San Juan Diego",
+            "city": "Ciudad de México",
+            "state": null,
+            "postalcode": "07020"
+          },
+          "key": "489f4e4a312d06f0ed12cdcd210a8af61d3ca664ad15085397730f0d5804e915",
           "candidates": []
         }
       ]
@@ -1171,13 +2602,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Nuestra Señora del Pilar - Cuasi-Parroquia de San Pedro en Cadenas, Madero #508, Colonia Centro, 44110 Guadalajara Jalisco, México",
+          "params": null,
           "key": "e9a0f2519424d6b4483f72def1f663e457054fca22258dc17684d91b46a03021",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Madero #508, Colonia Centro, 44110 Guadalajara Jalisco, México",
+          "params": null,
           "key": "ad94111cfc46bcc06ad2d158ebe2098a3cf24f9306dfebf67420ced5f6d98d37",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Guadalajara Jalisco&postalcode=44110&street=Madero #508",
+          "params": {
+            "street": "Madero #508",
+            "city": "Guadalajara Jalisco",
+            "state": null,
+            "postalcode": "44110"
+          },
+          "key": "781cb6eaa96d4b247c293422a0a6da29129e00770d0ad3c5291beaa4b3ce1547",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Nuestra Señora del Pilar - Cuasi-Parroquia de San Pedro en Cadenas&city=Guadalajara Jalisco&postalcode=44110",
+          "params": {
+            "amenity": "Nuestra Señora del Pilar - Cuasi-Parroquia de San Pedro en Cadenas",
+            "city": "Guadalajara Jalisco",
+            "state": null,
+            "postalcode": "44110"
+          },
+          "key": "ea02f8cd602ede81a8446d9b5fc5b12da34f563658b56647652e8d6ba30e210c",
           "candidates": []
         }
       ]
@@ -1189,13 +2646,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Casa Cristo Rey, Enrique Díaz de León 933, Colonia Moderna, 44190 Guadalajara Jalisco, México",
+          "params": null,
           "key": "93648d6d829ab5456350e630b876a43fe2499e262c626eb38df9aa71ebb00175",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Enrique Díaz de León 933, Colonia Moderna, 44190 Guadalajara Jalisco, México",
+          "params": null,
           "key": "22b2cf814088f226f047de7efe666053bdb31107b15c8526633448a16da6e86e",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Guadalajara Jalisco&postalcode=44190&street=Enrique Díaz de León 933",
+          "params": {
+            "street": "Enrique Díaz de León 933",
+            "city": "Guadalajara Jalisco",
+            "state": null,
+            "postalcode": "44190"
+          },
+          "key": "d94aaebd4038a030097b714483f9c5f7edf7c96e35ff42e006da76caaafac1f7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Casa Cristo Rey&city=Guadalajara Jalisco&postalcode=44190",
+          "params": {
+            "amenity": "Casa Cristo Rey",
+            "city": "Guadalajara Jalisco",
+            "state": null,
+            "postalcode": "44190"
+          },
+          "key": "4b57aa334a85caa19a114305cbff4811f7c21392a959d2de88a09e5b21c9fa2d",
           "candidates": []
         }
       ]
@@ -1207,13 +2690,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Capilla de la Casa Cristo Rey, Enrique Díaz de León 933, Colonia Moderna, 44190 Guadalajara Jalisco, México",
+          "params": null,
           "key": "f0af9198429ce9805bca3d76a52d90b75ad5903d53e65f37f5a2cc1fff6642d5",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Enrique Díaz de León 933, Colonia Moderna, 44190 Guadalajara Jalisco, México",
+          "params": null,
           "key": "22b2cf814088f226f047de7efe666053bdb31107b15c8526633448a16da6e86e",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Guadalajara Jalisco&postalcode=44190&street=Enrique Díaz de León 933",
+          "params": {
+            "street": "Enrique Díaz de León 933",
+            "city": "Guadalajara Jalisco",
+            "state": null,
+            "postalcode": "44190"
+          },
+          "key": "d94aaebd4038a030097b714483f9c5f7edf7c96e35ff42e006da76caaafac1f7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Capilla de la Casa Cristo Rey&city=Guadalajara Jalisco&postalcode=44190",
+          "params": {
+            "amenity": "Capilla de la Casa Cristo Rey",
+            "city": "Guadalajara Jalisco",
+            "state": null,
+            "postalcode": "44190"
+          },
+          "key": "5e56ec66e6449e23655b9275b872d6f8bf80039eecd494a0647d3ad0f3222cbd",
           "candidates": []
         }
       ]
@@ -1225,13 +2734,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "San Javier de las Colinas, Paseo Loma Ancha 3460, 44660 Guadalajara Jalisco, México",
+          "params": null,
           "key": "163b0cca071b3242045e2f0192e73e03c97a783920807acd12f979b0404009e3",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Paseo Loma Ancha 3460, 44660 Guadalajara Jalisco, México",
+          "params": null,
           "key": "98b6f01693def1b65d7753228666a831bf1cff39517c2f22ca198567acba8807",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Guadalajara Jalisco&postalcode=44660&street=Paseo Loma Ancha 3460",
+          "params": {
+            "street": "Paseo Loma Ancha 3460",
+            "city": "Guadalajara Jalisco",
+            "state": null,
+            "postalcode": "44660"
+          },
+          "key": "df06975ad75f4517442ca6497de0ed260ab5bf0be4b102fcf9faa24ed1b44c44",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=San Javier de las Colinas&city=Guadalajara Jalisco&postalcode=44660",
+          "params": {
+            "amenity": "San Javier de las Colinas",
+            "city": "Guadalajara Jalisco",
+            "state": null,
+            "postalcode": "44660"
+          },
+          "key": "8bb4b66820944aa80a01778fd7172442946a942d255a7344127f043f0917f02c",
           "candidates": []
         }
       ]
@@ -1243,12 +2778,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Capilla de la Parroquia de Nuestra Señora del Perpetuo Socorro, Calle Manuel Doblado 27, 52175 Metepec, México",
+          "params": null,
           "key": "0178a44489a4bf07076b3c2e072c40c90d0391e7d0a8370fa4dbc5e24f467411",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Calle Manuel Doblado 27, 52175 Metepec, México",
+          "params": null,
           "key": "985b9d86328e15a67a0bac0f3a9c4ef6bbfb913e57c5534f5215f2bac674647f",
           "candidates": [
             {
@@ -1267,6 +2804,30 @@
               "country_code": "mx"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Metepec&postalcode=52175&street=Calle Manuel Doblado 27",
+          "params": {
+            "street": "Calle Manuel Doblado 27",
+            "city": "Metepec",
+            "state": null,
+            "postalcode": "52175"
+          },
+          "key": "c77430584116eb0edb9a155bcb5a6dde193dacfcea03bff8a8bdf17f0e86adf7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Capilla de la Parroquia de Nuestra Señora del Perpetuo Socorro&city=Metepec&postalcode=52175",
+          "params": {
+            "amenity": "Capilla de la Parroquia de Nuestra Señora del Perpetuo Socorro",
+            "city": "Metepec",
+            "state": null,
+            "postalcode": "52175"
+          },
+          "key": "3a91d5f5a49f35b3def46c3bcd117aca490d0795094d253518b320ceec421445",
+          "candidates": []
         }
       ]
     },
@@ -1277,13 +2838,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Huis Sint Bonifatius, Pastorie Sint-Agneskerk, Amstelveenseweg 161, NL-1075 XA Amsterdam, Nederland",
+          "params": null,
           "key": "e3d0c5536b77829fe2cc5df1178b827e31a3e15c15877dc5905c0a5bba0815ca",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Pastorie Sint-Agneskerk, Amstelveenseweg 161, NL-1075 XA Amsterdam, Nederland",
+          "params": null,
           "key": "d27e7a51eed117e3d8d9567899d846911c9bc03743aea50226c29965fc21010a",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=NL- XA Amsterdam&postalcode=1075&street=Pastorie Sint-Agneskerk",
+          "params": {
+            "street": "Pastorie Sint-Agneskerk",
+            "city": "NL- XA Amsterdam",
+            "state": null,
+            "postalcode": "1075"
+          },
+          "key": "c7de49e655577af74d9905be73d2fc29ceb2e47d8b4b381060f95c398c7bb7a3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Huis Sint Bonifatius&city=NL- XA Amsterdam&postalcode=1075",
+          "params": {
+            "amenity": "Huis Sint Bonifatius",
+            "city": "NL- XA Amsterdam",
+            "state": null,
+            "postalcode": "1075"
+          },
+          "key": "3ed08dcabd2d4eae44d2b0ae1483dcf8b5916d5ef7ce15b206bace001257febc",
           "candidates": []
         }
       ]
@@ -1295,13 +2882,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Nne Enyemaka Shrine Umuaka, 474123 Umuaka Imo State, Nigeria",
+          "params": null,
           "key": "203e56e24981468e421d5b9590a2a71cc21c1c820e44cfed416f260afaa09caa",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "474123 Umuaka Imo State, Nigeria",
+          "params": null,
           "key": "a7159172c540fefb18ac6b1e3f0fb6a67a5f49de50fae9c028a68553b8d654a4",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Umuaka Imo State&postalcode=474123&street=474123 Umuaka Imo State",
+          "params": {
+            "street": "474123 Umuaka Imo State",
+            "city": "Umuaka Imo State",
+            "state": null,
+            "postalcode": "474123"
+          },
+          "key": "8545db2d8ccbe41a30ed6b5467c642909947b4d9ad95efd875f840ae7a8c50a0",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Nne Enyemaka Shrine Umuaka&city=Umuaka Imo State&postalcode=474123",
+          "params": {
+            "amenity": "Nne Enyemaka Shrine Umuaka",
+            "city": "Umuaka Imo State",
+            "state": null,
+            "postalcode": "474123"
+          },
+          "key": "f2455f29f9f6a8269f58cf6ce0c60a393a4dd875f7db03176c5ab7eaf9b1c04d",
           "candidates": []
         }
       ]
@@ -1313,13 +2926,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kirche zu den hl. Schutzengeln, Paulanergasse 6/Wiedner Hauptstr., A-1040 Wien, Österreich",
+          "params": null,
           "key": "53890621299eeb6752e13fad025da231e18679246eb50a0cec79c128e02549e7",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Paulanergasse 6/Wiedner Hauptstr., A-1040 Wien, Österreich",
+          "params": null,
           "key": "ee7f057369656de91ea5c3cfe9f58a9febb11da578155b33a32164baecead018",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Wien&postalcode=1040&street=Paulanergasse 6/Wiedner Hauptstr.",
+          "params": {
+            "street": "Paulanergasse 6/Wiedner Hauptstr.",
+            "city": "A- Wien",
+            "state": null,
+            "postalcode": "1040"
+          },
+          "key": "b5d123829eefd341b43706bd822cb7f4ee7a43c324d63310793f036206d61d73",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kirche zu den hl. Schutzengeln&city=A- Wien&postalcode=1040",
+          "params": {
+            "amenity": "Kirche zu den hl. Schutzengeln",
+            "city": "A- Wien",
+            "state": null,
+            "postalcode": "1040"
+          },
+          "key": "550d6ced2c8e8646c4405afefd7bbfe5cedfbfcbaa8921c0e759960c6609656c",
           "candidates": []
         }
       ]
@@ -1331,13 +2970,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Haus St. Leopold, Kleine Neugasse 13/4, A-1050 Wien, Österreich",
+          "params": null,
           "key": "2212349adc2e26c9434c7b35c114b0c9c020dcc2ea46a6d1fa28980de5137a1f",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Kleine Neugasse 13/4, A-1050 Wien, Österreich",
+          "params": null,
           "key": "68e7cbd7d665496efdc10c84b4cba95f0476eb1df8f5c8adfd044ece57c8c0f3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Wien&postalcode=1050&street=Kleine Neugasse 13/4",
+          "params": {
+            "street": "Kleine Neugasse 13/4",
+            "city": "A- Wien",
+            "state": null,
+            "postalcode": "1050"
+          },
+          "key": "af044f7e926626e4977b957bbe75fc0092404c287da8c7427486feba2ecc7288",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Haus St. Leopold&city=A- Wien&postalcode=1050",
+          "params": {
+            "amenity": "Haus St. Leopold",
+            "city": "A- Wien",
+            "state": null,
+            "postalcode": "1050"
+          },
+          "key": "f9c486710de81acf8e4f7b58b595ffbad4fe6dad42f8034ec46d2a3fae5a22f2",
           "candidates": []
         }
       ]
@@ -1349,13 +3014,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Hauskapelle St. Leopold, Kleine Neugasse 13/4, A-1050 Wien, Österreich",
+          "params": null,
           "key": "89395f72facd2f9393302ffa05eef4c40a2136b015bf28c606fbdb1c1e8ad93c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Kleine Neugasse 13/4, A-1050 Wien, Österreich",
+          "params": null,
           "key": "68e7cbd7d665496efdc10c84b4cba95f0476eb1df8f5c8adfd044ece57c8c0f3",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Wien&postalcode=1050&street=Kleine Neugasse 13/4",
+          "params": {
+            "street": "Kleine Neugasse 13/4",
+            "city": "A- Wien",
+            "state": null,
+            "postalcode": "1050"
+          },
+          "key": "af044f7e926626e4977b957bbe75fc0092404c287da8c7427486feba2ecc7288",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Hauskapelle St. Leopold&city=A- Wien&postalcode=1050",
+          "params": {
+            "amenity": "Hauskapelle St. Leopold",
+            "city": "A- Wien",
+            "state": null,
+            "postalcode": "1050"
+          },
+          "key": "5a17851f20b3760baf1b41b22210e7915e12aa851d66147fd4e37548ae2ff32b",
           "candidates": []
         }
       ]
@@ -1367,13 +3058,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kirche St. Radegund, Kirchengasse 21, A-2801 Katzelsdorf an der Leitha, Österreich",
+          "params": null,
           "key": "5597fe2228722b161d24c852b927aa3c7066c5cc21d387ccf051635d1ed18e76",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Kirchengasse 21, A-2801 Katzelsdorf an der Leitha, Österreich",
+          "params": null,
           "key": "400c34b119993edd8ec0f2239276e7b7920c82e20d04bc38a5d37608abf5c7d6",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Katzelsdorf an der Leitha&postalcode=2801&street=Kirchengasse 21",
+          "params": {
+            "street": "Kirchengasse 21",
+            "city": "A- Katzelsdorf an der Leitha",
+            "state": null,
+            "postalcode": "2801"
+          },
+          "key": "58634bd12fd7ccf38f632764b8620e292440f32eac08cc45ccb2163e7a2aee90",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kirche St. Radegund&city=A- Katzelsdorf an der Leitha&postalcode=2801",
+          "params": {
+            "amenity": "Kirche St. Radegund",
+            "city": "A- Katzelsdorf an der Leitha",
+            "state": null,
+            "postalcode": "2801"
+          },
+          "key": "9e96a3633122a0bb76e0c545713ff991d84151647c2104a3ccec497fa70fe305",
           "candidates": []
         }
       ]
@@ -1385,13 +3102,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Minoritenkirche (am Landhaus), Klosterstrasse 7, A-4010 Linz, Österreich",
+          "params": null,
           "key": "d55c7398677aa6465ed0afe62ee85990562608f13d6112fabde468a4eda4a58c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Klosterstrasse 7, A-4010 Linz, Österreich",
+          "params": null,
           "key": "45376a7f188f567ce5e08a1bcd5011a389efd0ab2be70d0dc439055e4f049cf5",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Linz&postalcode=4010&street=Klosterstrasse 7",
+          "params": {
+            "street": "Klosterstrasse 7",
+            "city": "A- Linz",
+            "state": null,
+            "postalcode": "4010"
+          },
+          "key": "ad924e851a04d7ad875bd82f64ff33b8937a194203a5fa4701dc83763697230f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Minoritenkirche (am Landhaus)&city=A- Linz&postalcode=4010",
+          "params": {
+            "amenity": "Minoritenkirche (am Landhaus)",
+            "city": "A- Linz",
+            "state": null,
+            "postalcode": "4010"
+          },
+          "key": "762aa2667dae6509852064bec0232b8707fdf2116ca117f6eea17e19439c910a",
           "candidates": []
         }
       ]
@@ -1403,13 +3146,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Haus St. Florian, Wiener Strasse 262a, A-4030 Linz, Österreich",
+          "params": null,
           "key": "46587d7abfdc13f468244ac32651e2438e2b580144c8b024987a557e2e35c723",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Wiener Strasse 262a, A-4030 Linz, Österreich",
+          "params": null,
           "key": "aba386333dd61d07100e90df0eda71004e1e3aba30f66a24f5ce722eaacd131c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Linz&postalcode=4030&street=Wiener Strasse 262a",
+          "params": {
+            "street": "Wiener Strasse 262a",
+            "city": "A- Linz",
+            "state": null,
+            "postalcode": "4030"
+          },
+          "key": "c26a0bf757d1741dc4d50a87c4d253160be8ede75d0d3fbc1e6e5ce8f29eed38",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Haus St. Florian&city=A- Linz&postalcode=4030",
+          "params": {
+            "amenity": "Haus St. Florian",
+            "city": "A- Linz",
+            "state": null,
+            "postalcode": "4030"
+          },
+          "key": "292ebd7bf966f65f352e1173347c31b096927bc6473b0a9bc31a9e591d8c0712",
           "candidates": []
         }
       ]
@@ -1421,13 +3190,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Pfarrkirche Hl. Martin, Kirchenpl. 37, A-4493 Wolfern, Österreich",
+          "params": null,
           "key": "95df83bf298d18d223176f428cfba68ff0f7aab683f663cd123c2193a9c9035a",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Kirchenpl. 37, A-4493 Wolfern, Österreich",
+          "params": null,
           "key": "cf0bb5a5c44c441187f34f00a3ac757f628a2aaeb32a8202e12fd0c3a69de49d",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Wolfern&postalcode=4493&street=Kirchenpl. 37",
+          "params": {
+            "street": "Kirchenpl. 37",
+            "city": "A- Wolfern",
+            "state": null,
+            "postalcode": "4493"
+          },
+          "key": "cfdd03da17b7d5625c806e7882ca8df31ae4a28ccfdaee5e0ac0f3d68e4e0e6c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Pfarrkirche Hl. Martin&city=A- Wolfern&postalcode=4493",
+          "params": {
+            "amenity": "Pfarrkirche Hl. Martin",
+            "city": "A- Wolfern",
+            "state": null,
+            "postalcode": "4493"
+          },
+          "key": "c4ee88d5aaac51b8906a9ac7243806df10ca08f19cdcac8b91d05a9236bb5ddb",
           "candidates": []
         }
       ]
@@ -1439,13 +3234,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kapelle der Familie Messner, Köppach, A-4904 Atzbach-Köppach, Österreich",
+          "params": null,
           "key": "e755dd6df17c7778d791ee293a7c5a5fd58287ca78450d6113af55ec6b32c811",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Köppach, A-4904 Atzbach-Köppach, Österreich",
+          "params": null,
           "key": "1cc29413745844d2e67cd1b8d9e1596cccd831c0c0c6f5e7dd3d6522cc6299f9",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Atzbach-Köppach&postalcode=4904&street=Köppach",
+          "params": {
+            "street": "Köppach",
+            "city": "A- Atzbach-Köppach",
+            "state": null,
+            "postalcode": "4904"
+          },
+          "key": "d51d001d672808f6fae6fd455a75613bc93c80a6b3f14f7a53441af2865ac4de",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kapelle der Familie Messner&city=A- Atzbach-Köppach&postalcode=4904",
+          "params": {
+            "amenity": "Kapelle der Familie Messner",
+            "city": "A- Atzbach-Köppach",
+            "state": null,
+            "postalcode": "4904"
+          },
+          "key": "12f1ad9b15c3d788752bf14d0d52dced5942780a6e0a53e1fe6c4a8a396d0af7",
           "candidates": []
         }
       ]
@@ -1457,13 +3278,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kapelle der Familie Messner, A-4904 Atzbach, Österreich",
+          "params": null,
           "key": "a5fef8c52db33c5320c5be2bd5b70ba07f16c203709286076359996149b6cde7",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "A-4904 Atzbach, Österreich",
+          "params": null,
           "key": "5b9f794db36284e99304160b7bf81f7d962f01cafa35c2011981fe883abf2f4b",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Atzbach&postalcode=4904&street=A-4904 Atzbach",
+          "params": {
+            "street": "A-4904 Atzbach",
+            "city": "A- Atzbach",
+            "state": null,
+            "postalcode": "4904"
+          },
+          "key": "3812cdcdf2706f815f36a4de247d080b06de6bd530dfe9d163c4c55d054c9dd4",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kapelle der Familie Messner&city=A- Atzbach&postalcode=4904",
+          "params": {
+            "amenity": "Kapelle der Familie Messner",
+            "city": "A- Atzbach",
+            "state": null,
+            "postalcode": "4904"
+          },
+          "key": "9d5dab1882abe6aa7e465f7fa13e38dfa6b0b6b5c229495e098670cfde6fe051",
           "candidates": []
         }
       ]
@@ -1475,13 +3322,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Haus St. Sebastian, Kirchenrektorat, Linzer Gasse 41, A-5020 Salzburg, Österreich",
+          "params": null,
           "key": "5a8260a45b9e3d64f14cc70ca093560b2361039296499ce229b3350fd87d7ace",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Kirchenrektorat, Linzer Gasse 41, A-5020 Salzburg, Österreich",
+          "params": null,
           "key": "5cad56f90ee44b178783ef5afbf3ec95e96c595ba39aaefd87b611d6b1102640",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Salzburg&postalcode=5020&street=Kirchenrektorat",
+          "params": {
+            "street": "Kirchenrektorat",
+            "city": "A- Salzburg",
+            "state": null,
+            "postalcode": "5020"
+          },
+          "key": "9dc1d79b1029fdb7e6f1a140d0a35d3b7cb0bce8dcd8c2a48ceec422b7e6d6bd",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Haus St. Sebastian&city=A- Salzburg&postalcode=5020",
+          "params": {
+            "amenity": "Haus St. Sebastian",
+            "city": "A- Salzburg",
+            "state": null,
+            "postalcode": "5020"
+          },
+          "key": "8cb56b6d567aa3f951e7e5892f7a90bcb531e1d3da7daffc884585f422ff304d",
           "candidates": []
         }
       ]
@@ -1493,13 +3366,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kirche St. Sebastian, Linzer Gasse 41, A-5020 Salzburg, Österreich",
+          "params": null,
           "key": "6e90b941ab3522c43fa089074963fbfeb9bb67162b640a4f74c69f4ebbbc4ab9",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Linzer Gasse 41, A-5020 Salzburg, Österreich",
+          "params": null,
           "key": "2c842f12e0223d6bbc7f76ffb0555c625d1bbfb9edcbc5e24b174f5de164d972",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Salzburg&postalcode=5020&street=Linzer Gasse 41",
+          "params": {
+            "street": "Linzer Gasse 41",
+            "city": "A- Salzburg",
+            "state": null,
+            "postalcode": "5020"
+          },
+          "key": "87cc64879d0a980b28dd8486c45a1c8e66015df80a43c6f785cb9d938a0b1648",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kirche St. Sebastian&city=A- Salzburg&postalcode=5020",
+          "params": {
+            "amenity": "Kirche St. Sebastian",
+            "city": "A- Salzburg",
+            "state": null,
+            "postalcode": "5020"
+          },
+          "key": "1aa6325cb84f5862f96e8bd8cc1d12a7905faa05e7c3ede143e3571a71d1ad3f",
           "candidates": []
         }
       ]
@@ -1511,13 +3410,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Loretokloster, Paris-Lodron-Strasse 6, A-5020 Salzburg, Österreich",
+          "params": null,
           "key": "0e512d14cf58dadc45a878344fc6211d7d1b0a51aeb740d57df927a5ceae391f",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Paris-Lodron-Strasse 6, A-5020 Salzburg, Österreich",
+          "params": null,
           "key": "15124ed490cfce290042ea687575cdfb1480d4bb1d7d81042a3a583d09e54af8",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Salzburg&postalcode=5020&street=Paris-Lodron-Strasse 6",
+          "params": {
+            "street": "Paris-Lodron-Strasse 6",
+            "city": "A- Salzburg",
+            "state": null,
+            "postalcode": "5020"
+          },
+          "key": "f5a764ffbd5c3f80ec5c12e3c7a8f829787affe419dcd6c11955330b9537a6fd",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Loretokloster&city=A- Salzburg&postalcode=5020",
+          "params": {
+            "amenity": "Loretokloster",
+            "city": "A- Salzburg",
+            "state": null,
+            "postalcode": "5020"
+          },
+          "key": "7acd9bd9e75188d8ffe17b5b5755e1897595259c46afe79d8496fde974f3c1cb",
           "candidates": []
         }
       ]
@@ -1529,13 +3454,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kloster der Ewigen Anbetung, Karl-Kapferer-Straße 7, A-6020 Innsbruck, Österreich",
+          "params": null,
           "key": "66159f14f910b5fd10c8125bc5ce7b108e6152fee6cd00b700559aa8e14d1225",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Karl-Kapferer-Straße 7, A-6020 Innsbruck, Österreich",
+          "params": null,
           "key": "938179c540b76172e69f0b18d415c82068af7bbe98a4c054ca09b9ff5c25947c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Innsbruck&postalcode=6020&street=Karl-Kapferer-Straße 7",
+          "params": {
+            "street": "Karl-Kapferer-Straße 7",
+            "city": "A- Innsbruck",
+            "state": null,
+            "postalcode": "6020"
+          },
+          "key": "63925b2bdc2b86a56fcc15eb868726546d34b0ed18523c99dbabd2315591b008",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kloster der Ewigen Anbetung&city=A- Innsbruck&postalcode=6020",
+          "params": {
+            "amenity": "Kloster der Ewigen Anbetung",
+            "city": "A- Innsbruck",
+            "state": null,
+            "postalcode": "6020"
+          },
+          "key": "4ff65ab81dd60cb1862ee6a5ebbd60b8246e89d4f77503681aad1e9d734bf055",
           "candidates": []
         }
       ]
@@ -1547,13 +3498,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Klein-Theresien-Karmel, Treietstrasse 18, A-6830 Rankweil, Österreich",
+          "params": null,
           "key": "1cde76d1fde9c22ab6ade4f88b037d681a7217126bb1aa77a939610a09a55ca1",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Treietstrasse 18, A-6830 Rankweil, Österreich",
+          "params": null,
           "key": "200b21156783cad5d2ed6096c7867a523c1a0d768fc387a6b65fefd393870570",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=A- Rankweil&postalcode=6830&street=Treietstrasse 18",
+          "params": {
+            "street": "Treietstrasse 18",
+            "city": "A- Rankweil",
+            "state": null,
+            "postalcode": "6830"
+          },
+          "key": "10ed38ba65599d7aa99a4cb9c7c243f032745cf80c000759f9bf3a7a2802de04",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Klein-Theresien-Karmel&city=A- Rankweil&postalcode=6830",
+          "params": {
+            "amenity": "Klein-Theresien-Karmel",
+            "city": "A- Rankweil",
+            "state": null,
+            "postalcode": "6830"
+          },
+          "key": "e45d33b5037023e676d3fbee91557f054fdebf7092241d14bedbaa19d07f4e61",
           "candidates": []
         }
       ]
@@ -1565,13 +3542,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. John Cantius House - Dom św. Jana Kantego, ul. Pasieczna 3, PL 30-603 Kraków, Polska",
+          "params": null,
           "key": "50108f7bd80e490bf02b15d8048a5d667134afdf6d6b8f76171335897e340961",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "ul. Pasieczna 3, PL 30-603 Kraków, Polska",
+          "params": null,
           "key": "90cc8b44dd533d8de1c905f4075cb92e714a300e7ac75abf60f01884a8f0f5dc",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=PL Kraków&postalcode=30-603&street=ul. Pasieczna 3",
+          "params": {
+            "street": "ul. Pasieczna 3",
+            "city": "PL Kraków",
+            "state": null,
+            "postalcode": "30-603"
+          },
+          "key": "1cc488d70e7fe7fe9c62c31658b64166ccee2a722e145292999612dc6cf8f9fe",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. John Cantius House - Dom św. Jana Kantego&city=PL Kraków&postalcode=30-603",
+          "params": {
+            "amenity": "St. John Cantius House - Dom św. Jana Kantego",
+            "city": "PL Kraków",
+            "state": null,
+            "postalcode": "30-603"
+          },
+          "key": "ddd174abd4801eff3061a6af3e3aa2b1d75029e5bac49ea6ed46824ac441b8c7",
           "candidates": []
         }
       ]
@@ -1583,13 +3586,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kościół Niepokalanego Poczęcia Najświętszej Maryi Panny, ul. Mikołaja Kopernika 19, PL 31-529 Kraków, Polska",
+          "params": null,
           "key": "4ab907786fcb3328cfc834c43b43af254d9ac5ee7b53aaa745ba028501efeed7",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "ul. Mikołaja Kopernika 19, PL 31-529 Kraków, Polska",
+          "params": null,
           "key": "aab9d9e768567a5553b64eab10be0b1b3975d3e49f48e6d1967f3250c4b63194",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=PL Kraków&postalcode=31-529&street=ul. Mikołaja Kopernika 19",
+          "params": {
+            "street": "ul. Mikołaja Kopernika 19",
+            "city": "PL Kraków",
+            "state": null,
+            "postalcode": "31-529"
+          },
+          "key": "cc56a443191c21539444ae7f101a8c0a19e1c0ac98f7c310ca5e23613f70fe0b",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kościół Niepokalanego Poczęcia Najświętszej Maryi Panny&city=PL Kraków&postalcode=31-529",
+          "params": {
+            "amenity": "Kościół Niepokalanego Poczęcia Najświętszej Maryi Panny",
+            "city": "PL Kraków",
+            "state": null,
+            "postalcode": "31-529"
+          },
+          "key": "3c83727d2ca3f952d2cf233c80d5d52913a6885b701c57c4792a9cd77a2621ff",
           "candidates": []
         }
       ]
@@ -1601,13 +3630,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kościół św. Jakuba, ul. Królowej Jadwigi 5, PL 32-400 Myślenice, Polska",
+          "params": null,
           "key": "fbb7fbc9e6ab07876086fdd932db20274fca8a866554fa4105cb37fd046b789c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "ul. Królowej Jadwigi 5, PL 32-400 Myślenice, Polska",
+          "params": null,
           "key": "a11a99c861e9f0488d6e7c25bef6fe9efa69afe264658d3c6c6ab260397b8c71",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=PL Myślenice&postalcode=32-400&street=ul. Królowej Jadwigi 5",
+          "params": {
+            "street": "ul. Królowej Jadwigi 5",
+            "city": "PL Myślenice",
+            "state": null,
+            "postalcode": "32-400"
+          },
+          "key": "a24403eccfe31748c25692464ab20bc3606ecc28006c1468ff230a66a358f853",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kościół św. Jakuba&city=PL Myślenice&postalcode=32-400",
+          "params": {
+            "amenity": "Kościół św. Jakuba",
+            "city": "PL Myślenice",
+            "state": null,
+            "postalcode": "32-400"
+          },
+          "key": "c17e2f88e223eb2bdc5b88e7b219702e7e152b3c43eb44e75be2e43c49de5b59",
           "candidates": []
         }
       ]
@@ -1619,13 +3674,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kościół św. Anny, ul Zacisze 17, PL 34-400 Nowy Targ, Polska",
+          "params": null,
           "key": "ec79d84a3776b13ef139f09f343d8e3cf2f8c78a39b2c794cbb5113958435fef",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "ul Zacisze 17, PL 34-400 Nowy Targ, Polska",
+          "params": null,
           "key": "a514f52c9bcb9ae25ceea0ec295110de44288795157a1c9468fe859239ca971d",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=PL Nowy Targ&postalcode=34-400&street=ul Zacisze 17",
+          "params": {
+            "street": "ul Zacisze 17",
+            "city": "PL Nowy Targ",
+            "state": null,
+            "postalcode": "34-400"
+          },
+          "key": "d8357ce6ccc5ce8a8c8b3be5c8a21b3d76f5bb1e183ad6c709223b1e398d38bd",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kościół św. Anny&city=PL Nowy Targ&postalcode=34-400",
+          "params": {
+            "amenity": "Kościół św. Anny",
+            "city": "PL Nowy Targ",
+            "state": null,
+            "postalcode": "34-400"
+          },
+          "key": "9d2fe061ee5d5bc38b2508991d039802b60677700afd9e4e1dfe13b58fe08b80",
           "candidates": []
         }
       ]
@@ -1637,13 +3718,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kościół Św. Ducha, ul. Władysława Jagiełły 23, PL 62-010 Pobiedziska, Polska",
+          "params": null,
           "key": "96ff364142867efa6771cce86773e00e08ae683229f748685c7e3227eb31729c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "ul. Władysława Jagiełły 23, PL 62-010 Pobiedziska, Polska",
+          "params": null,
           "key": "c155ee1242cb5a05bd57f07d1cc5df97dd07c34263ec93d2033f03425f0d442a",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=PL Pobiedziska&postalcode=62-010&street=ul. Władysława Jagiełły 23",
+          "params": {
+            "street": "ul. Władysława Jagiełły 23",
+            "city": "PL Pobiedziska",
+            "state": null,
+            "postalcode": "62-010"
+          },
+          "key": "665d89bbc87c20f67f9752f126ad66cbe228c9d62fd40692b66b9332bc243015",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kościół Św. Ducha&city=PL Pobiedziska&postalcode=62-010",
+          "params": {
+            "amenity": "Kościół Św. Ducha",
+            "city": "PL Pobiedziska",
+            "state": null,
+            "postalcode": "62-010"
+          },
+          "key": "88a652cbc366b9237d35230d3e6d70e0d5e5b3d40e57870b7030d39d18aa6100",
           "candidates": []
         }
       ]
@@ -1655,13 +3762,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kaplica Szpitala Powiatowego, ul. Słowackiego 2, PL 62-300 Września, Polska",
+          "params": null,
           "key": "7b54facf237bec56c0119e0c3c7003d321b123558ab9741ac3472271cab9f6e9",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "ul. Słowackiego 2, PL 62-300 Września, Polska",
+          "params": null,
           "key": "e49d5ee881ef2e03158fd2e023c73d02d8310713756009f86531c59360ca6db7",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=PL Września&postalcode=62-300&street=ul. Słowackiego 2",
+          "params": {
+            "street": "ul. Słowackiego 2",
+            "city": "PL Września",
+            "state": null,
+            "postalcode": "62-300"
+          },
+          "key": "58acb8331320b473be583e7ce8330ecb3895be609a0a025bdea5ede5b81a5846",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kaplica Szpitala Powiatowego&city=PL Września&postalcode=62-300",
+          "params": {
+            "amenity": "Kaplica Szpitala Powiatowego",
+            "city": "PL Września",
+            "state": null,
+            "postalcode": "62-300"
+          },
+          "key": "06ed7c695aca62708626421c54599aba33ad367097c44c7faa9c487713a0eb1a",
           "candidates": []
         }
       ]
@@ -1673,13 +3806,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kościół Filialny Podwyższenia Krzyża Świętego, ul. Kasztanowa 3, PL 66-416 Wojcieszyce, Polska",
+          "params": null,
           "key": "d28605c0a6add96bf538a3986f816b0b0912627e4fed66df4a2052d7421f3980",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "ul. Kasztanowa 3, PL 66-416 Wojcieszyce, Polska",
+          "params": null,
           "key": "a36b60541dc3916b2b8ba41c6feb314da8f6d3b5c91affa998002e87d17de01b",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=PL Wojcieszyce&postalcode=66-416&street=ul. Kasztanowa 3",
+          "params": {
+            "street": "ul. Kasztanowa 3",
+            "city": "PL Wojcieszyce",
+            "state": null,
+            "postalcode": "66-416"
+          },
+          "key": "b1f97e8d537d820eb8f179def29399df5e2a7e95fef935b96173e599ab7d2a73",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kościół Filialny Podwyższenia Krzyża Świętego&city=PL Wojcieszyce&postalcode=66-416",
+          "params": {
+            "amenity": "Kościół Filialny Podwyższenia Krzyża Świętego",
+            "city": "PL Wojcieszyce",
+            "state": null,
+            "postalcode": "66-416"
+          },
+          "key": "9ed7069a673459a14a00040f5eacef26a00bf8f2c4c7ba5998677e1c0103fc30",
           "candidates": []
         }
       ]
@@ -1691,13 +3850,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Casa Anjo de Portugal, Rua do Imaculado Coração de Maria n.24, Cova da Iria, 2495-441 Fátima, Portugal",
+          "params": null,
           "key": "caa02e7acf64896fd60fe1ae4d59c43dfd2d123ec7e8da6a905a556bf4a3da63",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Rua do Imaculado Coração de Maria n.24, Cova da Iria, 2495-441 Fátima, Portugal",
+          "params": null,
           "key": "285f79086472d85a1befbcb6270f75cb8c4dfbf2ef7d36a0c7cd31c1e6af4be6",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Fátima&postalcode=2495-441&street=Rua do Imaculado Coração de Maria n.24",
+          "params": {
+            "street": "Rua do Imaculado Coração de Maria n.24",
+            "city": "Fátima",
+            "state": null,
+            "postalcode": "2495-441"
+          },
+          "key": "4aa7eb9c3069ca4b1de139679daf3b9c5b8e552812a8b9091a9bc03e5a690675",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Casa Anjo de Portugal&city=Fátima&postalcode=2495-441",
+          "params": {
+            "amenity": "Casa Anjo de Portugal",
+            "city": "Fátima",
+            "state": null,
+            "postalcode": "2495-441"
+          },
+          "key": "594b84a7e6fe09c803a4433db399e9f927b009298ea6ce702eea45cbd8a829b9",
           "candidates": []
         }
       ]
@@ -1709,13 +3894,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Capela da Casa Anjo de Portugal, Rua do Imaculado Coração de Maria n.24, Cova da Iria, 2495-441 Fátima, Portugal",
+          "params": null,
           "key": "88d07f121d1dba9a1f3188708088f2e679bef5b4cde09738a806287d98954671",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Rua do Imaculado Coração de Maria n.24, Cova da Iria, 2495-441 Fátima, Portugal",
+          "params": null,
           "key": "285f79086472d85a1befbcb6270f75cb8c4dfbf2ef7d36a0c7cd31c1e6af4be6",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Fátima&postalcode=2495-441&street=Rua do Imaculado Coração de Maria n.24",
+          "params": {
+            "street": "Rua do Imaculado Coração de Maria n.24",
+            "city": "Fátima",
+            "state": null,
+            "postalcode": "2495-441"
+          },
+          "key": "4aa7eb9c3069ca4b1de139679daf3b9c5b8e552812a8b9091a9bc03e5a690675",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Capela da Casa Anjo de Portugal&city=Fátima&postalcode=2495-441",
+          "params": {
+            "amenity": "Capela da Casa Anjo de Portugal",
+            "city": "Fátima",
+            "state": null,
+            "postalcode": "2495-441"
+          },
+          "key": "515d5fadcee25c6df4cbb10be6ccdb8067af08eeb49e56e577a15096cf22b910",
           "candidates": []
         }
       ]
@@ -1727,12 +3938,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Chapelle Notre-Dame de Compassion, 2 place du marché, CH-1630 Bulle, Suisse",
+          "params": null,
           "key": "747ba6384d9051fe702eb38eb136b72ad00a701dd3c9a7aa5022270119ee58ca",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "2 place du marché, CH-1630 Bulle, Suisse",
+          "params": null,
           "key": "c15986800a06356576932fdd1868a64738fc9d519eebb8c5dddb1be39be0fbb0",
           "candidates": [
             {
@@ -1741,6 +3954,30 @@
               "country_code": "ch"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=CH- Bulle&postalcode=1630&street=2 place du marché",
+          "params": {
+            "street": "2 place du marché",
+            "city": "CH- Bulle",
+            "state": null,
+            "postalcode": "1630"
+          },
+          "key": "d3082cdd36e34e84103c6a3bd332ca35efe1e687a2ec07b0711e389aebb928e0",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle Notre-Dame de Compassion&city=CH- Bulle&postalcode=1630",
+          "params": {
+            "amenity": "Chapelle Notre-Dame de Compassion",
+            "city": "CH- Bulle",
+            "state": null,
+            "postalcode": "1630"
+          },
+          "key": "3ee96ddeb9372100aeb710f61336adb2c3557e510b90d19487d38a8bfba6165a",
+          "candidates": []
         }
       ]
     },
@@ -1751,13 +3988,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Chapelle Sainte-Anne, Hattenberg (Bourguillon), Hattenberg 2, CH-1717 Hattenberg-St. Ursen, Suisse",
+          "params": null,
           "key": "5d03ec4e8d7c8e75d5c727784d8ea9147738cd306d62f4ffcf747339dceeab4b",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Hattenberg (Bourguillon), Hattenberg 2, CH-1717 Hattenberg-St. Ursen, Suisse",
+          "params": null,
           "key": "c366ddb001fd2391ebd4370d255ab39afc36f4cd17badc0b1e2643a9fb8193fc",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=CH- Hattenberg-St. Ursen&postalcode=1717&street=Hattenberg (Bourguillon)",
+          "params": {
+            "street": "Hattenberg (Bourguillon)",
+            "city": "CH- Hattenberg-St. Ursen",
+            "state": null,
+            "postalcode": "1717"
+          },
+          "key": "32d01f0b1dc9f809ab5daec6b3c06a1d612261d467c79259db42d04694ddc55f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle Sainte-Anne&city=CH- Hattenberg-St. Ursen&postalcode=1717",
+          "params": {
+            "amenity": "Chapelle Sainte-Anne",
+            "city": "CH- Hattenberg-St. Ursen",
+            "state": null,
+            "postalcode": "1717"
+          },
+          "key": "953cfbf50cb59232c3afac261e18ae386140c8d6637e607c335cd0929667d113",
           "candidates": []
         }
       ]
@@ -1769,12 +4032,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Kirche St. Mauritius, Niederwil, CH-6330 Cham, Suisse",
+          "params": null,
           "key": "0e25af6dd9893b53c590177a82270d01ad6c1e5e9e4eb539dff0d83857bac596",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Niederwil, CH-6330 Cham, Suisse",
+          "params": null,
           "key": "522b835c8cc7f15fde3b1989065003cf32f2f620a99b6be34538bef5c8266fa6",
           "candidates": [
             {
@@ -1793,6 +4058,30 @@
               "country_code": "ch"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=CH- Cham&postalcode=6330&street=Niederwil",
+          "params": {
+            "street": "Niederwil",
+            "city": "CH- Cham",
+            "state": null,
+            "postalcode": "6330"
+          },
+          "key": "9b4c57aea263dc35f19857cbbe923866b07e00355a4c6d4f330a3de3aea36aee",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kirche St. Mauritius&city=CH- Cham&postalcode=6330",
+          "params": {
+            "amenity": "Kirche St. Mauritius",
+            "city": "CH- Cham",
+            "state": null,
+            "postalcode": "6330"
+          },
+          "key": "ca2c827627a2828f667840eac6613a250e49ce10267aeefd8c34ffda4f8a40de",
+          "candidates": []
         }
       ]
     },
@@ -1803,13 +4092,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Pfarrkirche St. Pelagiberg, CH-9225 St. Pelagiberg, Suisse",
+          "params": null,
           "key": "36742063014ada56fa04d8df771d14a23167604240a01b372c01d87662393c42",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "CH-9225 St. Pelagiberg, Suisse",
+          "params": null,
           "key": "124c69fa759390ae8678c37b17647bdf13bb931edd27f94be300d4b6b55609ab",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=CH- St. Pelagiberg&postalcode=9225&street=CH-9225 St. Pelagiberg",
+          "params": {
+            "street": "CH-9225 St. Pelagiberg",
+            "city": "CH- St. Pelagiberg",
+            "state": null,
+            "postalcode": "9225"
+          },
+          "key": "a0d692d9519228a631b089b713f59d0f4436b375fa4dbfff81391b66b01ea9a5",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Pfarrkirche St. Pelagiberg&city=CH- St. Pelagiberg&postalcode=9225",
+          "params": {
+            "amenity": "Pfarrkirche St. Pelagiberg",
+            "city": "CH- St. Pelagiberg",
+            "state": null,
+            "postalcode": "9225"
+          },
+          "key": "e023588fbd28904a4a383355d7b636d58a2ba0f56a7059546b530038a04cea9c",
           "candidates": []
         }
       ]
@@ -1821,13 +4136,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Our Lady of Victory Chaplaincy (Historic Chapel), Saint John the Baptist Historic Chapel 120 W Main Street;, Front Royal VA 22630, USA",
+          "params": null,
           "key": "0546b83c41c034dccb409e38baa34bc03f45b6cf2c5ee654e928c724192d0365",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Saint John the Baptist Historic Chapel 120 W Main Street;, Front Royal VA 22630, USA",
+          "params": null,
           "key": "7dea384a1d18db2e23e25bdedbbfd008776ea19fa2a6679d405108603084c3f2",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Front Royal&postalcode=22630&state=VA&street=Saint John the Baptist Historic Chapel 120 W Main Street;",
+          "params": {
+            "street": "Saint John the Baptist Historic Chapel 120 W Main Street;",
+            "city": "Front Royal",
+            "state": "VA",
+            "postalcode": "22630"
+          },
+          "key": "688cf320a88757a2104c2de5b1c1bd636288877e783fdd5af64050f2ea1226b2",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Our Lady of Victory Chaplaincy (Historic Chapel)&city=Front Royal&postalcode=22630&state=VA",
+          "params": {
+            "amenity": "Our Lady of Victory Chaplaincy (Historic Chapel)",
+            "city": "Front Royal",
+            "state": "VA",
+            "postalcode": "22630"
+          },
+          "key": "7482edd3a9ca2d93d3d420386f2b9043c2f191207f49f7914e4e5d6934b01dc3",
           "candidates": []
         }
       ]
@@ -1839,13 +4180,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Our Lady of Victory Chaplaincy (Chelsea Academy), St. Thomas More Chapel 1190 Progress Drive;, Front Royal VA 22630, USA",
+          "params": null,
           "key": "637298d9807c8f043efbb38c0490ddc2c421fb905815710623227a81d3fdf597",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "St. Thomas More Chapel 1190 Progress Drive;, Front Royal VA 22630, USA",
+          "params": null,
           "key": "0c6fc2a0e2c5f0fd0590ddb65a68482fce9554d2902f9068479ebc3fc460a329",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Front Royal&postalcode=22630&state=VA&street=St. Thomas More Chapel 1190 Progress Drive;",
+          "params": {
+            "street": "St. Thomas More Chapel 1190 Progress Drive;",
+            "city": "Front Royal",
+            "state": "VA",
+            "postalcode": "22630"
+          },
+          "key": "4143714a86772e2f7e34a2183c4915d9859f9d5cd3647e7e83699119c9149011",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Our Lady of Victory Chaplaincy (Chelsea Academy)&city=Front Royal&postalcode=22630&state=VA",
+          "params": {
+            "amenity": "Our Lady of Victory Chaplaincy (Chelsea Academy)",
+            "city": "Front Royal",
+            "state": "VA",
+            "postalcode": "22630"
+          },
+          "key": "06bdbdd21b4605a3cc0e93b458571d6c8fe6c4d6eb1d594f678be6136e723a5d",
           "candidates": []
         }
       ]
@@ -1857,13 +4224,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Mark House, 8707 Buford Square Place, North Chesterfield VA 23235, USA",
+          "params": null,
           "key": "b4d6134b42ffbd0ef25b27c6dbd9aaac93049620a8bc684d47511eda0e7e6409",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "8707 Buford Square Place, North Chesterfield VA 23235, USA",
+          "params": null,
           "key": "7fb0166bc43a3a93e6cdeaf9eaef4a0b7938b7cbd7cd80250015ea116c71e2fa",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=North Chesterfield&postalcode=23235&state=VA&street=8707 Buford Square Place",
+          "params": {
+            "street": "8707 Buford Square Place",
+            "city": "North Chesterfield",
+            "state": "VA",
+            "postalcode": "23235"
+          },
+          "key": "a945283396f18f5a2b187663f5e5bd8f5a696da3e0d53703b60e86237acb3b8f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Mark House&city=North Chesterfield&postalcode=23235&state=VA",
+          "params": {
+            "amenity": "St. Mark House",
+            "city": "North Chesterfield",
+            "state": "VA",
+            "postalcode": "23235"
+          },
+          "key": "0c4ff9338ac01ecd2149c5bc7c40d923961925afaf7fff335618d55389257242",
           "candidates": []
         }
       ]
@@ -1875,13 +4268,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Joseph Parish, 828 Buford Road, Richmond VA 23235, USA",
+          "params": null,
           "key": "09ef35034722c16846b2bc66e369b2d7c6305706c6f344cd97c5c7f38713b333",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "828 Buford Road, Richmond VA 23235, USA",
+          "params": null,
           "key": "7ee026470e56a131deb6107a548bc8c327c81c9ca26d9f468db18b98d1242491",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Richmond&postalcode=23235&state=VA&street=828 Buford Road",
+          "params": {
+            "street": "828 Buford Road",
+            "city": "Richmond",
+            "state": "VA",
+            "postalcode": "23235"
+          },
+          "key": "b076434c9cfaad8b79381a8aad8d90aa5916c9493d3397107ffaad9b5f117e30",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Joseph Parish&city=Richmond&postalcode=23235&state=VA",
+          "params": {
+            "amenity": "St. Joseph Parish",
+            "city": "Richmond",
+            "state": "VA",
+            "postalcode": "23235"
+          },
+          "key": "e41699bb245c0debe4f15de150b3b1f852a94a65c0320e0035f3ced20ad87b6a",
           "candidates": []
         }
       ]
@@ -1893,13 +4312,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Chaplaincy of the Holy Face of Jesus (Belen Jesuit Preparatory), Our Lady of Belen Chapel, 500 SW 127th Avenue, Miami FL 33184, USA",
+          "params": null,
           "key": "5a8541d44035c7acfea551d4f63426fd59fd89d16f14b7e4a48c6b717bb14018",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Our Lady of Belen Chapel, 500 SW 127th Avenue, Miami FL 33184, USA",
+          "params": null,
           "key": "95ba1d8ee551aeff4656384baef806a7b005767b7994d3064a6a1ca5207dbfcf",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Miami&postalcode=33184&state=FL&street=Our Lady of Belen Chapel",
+          "params": {
+            "street": "Our Lady of Belen Chapel",
+            "city": "Miami",
+            "state": "FL",
+            "postalcode": "33184"
+          },
+          "key": "601e38029b7719ddfd6757d109e17109a88bd91e1d5e366f0234ecb22fa78b6c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chaplaincy of the Holy Face of Jesus (Belen Jesuit Preparatory)&city=Miami&postalcode=33184&state=FL",
+          "params": {
+            "amenity": "Chaplaincy of the Holy Face of Jesus (Belen Jesuit Preparatory)",
+            "city": "Miami",
+            "state": "FL",
+            "postalcode": "33184"
+          },
+          "key": "bde01b7f387c1598a8aba1fd7f440fed05128ea6a01870341bbcb7e73079bde7",
           "candidates": []
         }
       ]
@@ -1911,13 +4356,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Corpus Christi Chapel (Resurrection of Our Lord Parish), 8121 Cypress Lake Drive, Fort Myers FL 33919, USA",
+          "params": null,
           "key": "8eabbd9a9c9366f5fa69e047efa94727e75d9b0755dd2fb2d2ee6c721ed79e7f",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "8121 Cypress Lake Drive, Fort Myers FL 33919, USA",
+          "params": null,
           "key": "aab57f3fc2cb185aed68253e062f0606745fbc92f06a64ef338b42a8b4e90ab1",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Fort Myers&postalcode=33919&state=FL&street=8121 Cypress Lake Drive",
+          "params": {
+            "street": "8121 Cypress Lake Drive",
+            "city": "Fort Myers",
+            "state": "FL",
+            "postalcode": "33919"
+          },
+          "key": "c516e7a78a35e1377bfe5dade603d8af74458323ffe1a7fa9c0ada56fbcb4879",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Corpus Christi Chapel (Resurrection of Our Lord Parish)&city=Fort Myers&postalcode=33919&state=FL",
+          "params": {
+            "amenity": "Corpus Christi Chapel (Resurrection of Our Lord Parish)",
+            "city": "Fort Myers",
+            "state": "FL",
+            "postalcode": "33919"
+          },
+          "key": "bd467c0ff22b6e2995bbbd7e1e182c67de82abc17b849b82238bd1177f91931a",
           "candidates": []
         }
       ]
@@ -1929,12 +4400,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Corpus Christi House, 5881 Golden Gate Parkway, Naples FL 34116, USA",
+          "params": null,
           "key": "1b3df414b8d608c7978351400d7e84578619a2d072c18785bd76460895bc198c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "5881 Golden Gate Parkway, Naples FL 34116, USA",
+          "params": null,
           "key": "00ece0ea0a202790956ec37d01da42c47aa17a7ec911b8d5e40b4ffc1268dbe0",
           "candidates": [
             {
@@ -1953,6 +4426,30 @@
               "country_code": "us"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Naples&postalcode=34116&state=FL&street=5881 Golden Gate Parkway",
+          "params": {
+            "street": "5881 Golden Gate Parkway",
+            "city": "Naples",
+            "state": "FL",
+            "postalcode": "34116"
+          },
+          "key": "3d4e98476f0dc105d45a38f576a31142cc8b9ae1f71cdfe769acd6f8f5150077",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Corpus Christi House&city=Naples&postalcode=34116&state=FL",
+          "params": {
+            "amenity": "Corpus Christi House",
+            "city": "Naples",
+            "state": "FL",
+            "postalcode": "34116"
+          },
+          "key": "7b80161f5ea6f22b383698e66ea787d58d6ba20279345aa1f18c215adbd36ae5",
+          "candidates": []
         }
       ]
     },
@@ -1963,12 +4460,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Corpus Christi Chapel, 5975 Golden Gate Parkway, Naples FL 34116, USA",
+          "params": null,
           "key": "37e12ed70ddcc9658127d5a09435e0d80be09a6d2b84eab01b58a9330ecbb4e4",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "5975 Golden Gate Parkway, Naples FL 34116, USA",
+          "params": null,
           "key": "b772ccfd4dce15301edaf8c356bf43d1c80fd70c7b17e89ad278e2fb959665fa",
           "candidates": [
             {
@@ -1987,6 +4486,30 @@
               "country_code": "us"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Naples&postalcode=34116&state=FL&street=5975 Golden Gate Parkway",
+          "params": {
+            "street": "5975 Golden Gate Parkway",
+            "city": "Naples",
+            "state": "FL",
+            "postalcode": "34116"
+          },
+          "key": "2c4a74ac9a4665805fe14363a252a2c013d67da6934ee82936d0bee323e6b34b",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Corpus Christi Chapel&city=Naples&postalcode=34116&state=FL",
+          "params": {
+            "amenity": "Corpus Christi Chapel",
+            "city": "Naples",
+            "state": "FL",
+            "postalcode": "34116"
+          },
+          "key": "fef3fcfc364ff37d3b2054257279803d1135bc1f9bbacd9872e2892dc1b5b266",
+          "candidates": []
         }
       ]
     },
@@ -1997,13 +4520,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Our Lady Queen of Peace Catholic Church, 6455 S.W. State Road 200, Ocala FL 34476, USA",
+          "params": null,
           "key": "6fcdeda2a6f05cd4ade445feba47be6c0b161c0c994d2b044135b5b41434c134",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "6455 S.W. State Road 200, Ocala FL 34476, USA",
+          "params": null,
           "key": "e25625d1f72a6f9861938db6e4798abd51bd4f11a34d8c2f51edbf1c93eb832b",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Ocala&postalcode=34476&state=FL&street=6455 S.W. State Road 200",
+          "params": {
+            "street": "6455 S.W. State Road 200",
+            "city": "Ocala",
+            "state": "FL",
+            "postalcode": "34476"
+          },
+          "key": "dc3efba40eb6b708bdecc54937af8e89a615bd88016685a6495941f5f6bc9d72",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Our Lady Queen of Peace Catholic Church&city=Ocala&postalcode=34476&state=FL",
+          "params": {
+            "amenity": "Our Lady Queen of Peace Catholic Church",
+            "city": "Ocala",
+            "state": "FL",
+            "postalcode": "34476"
+          },
+          "key": "95bed204447342172349543f9776b3a23c5de0dcde17151cabcb9b08db0f72ee",
           "candidates": []
         }
       ]
@@ -2015,13 +4564,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Francis de Sales, 4086 Frankfort Pike, Georgetown KY 40324, USA",
+          "params": null,
           "key": "2f518f3d25d3c1ac5128962016a5ce10d49ee502ddee4df64cc6c82547f79229",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "4086 Frankfort Pike, Georgetown KY 40324, USA",
+          "params": null,
           "key": "0e1e37928ebb38eb725cfabc20b384abf71476213d49a5a8ffb1ce272e237481",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Georgetown&postalcode=40324&state=KY&street=4086 Frankfort Pike",
+          "params": {
+            "street": "4086 Frankfort Pike",
+            "city": "Georgetown",
+            "state": "KY",
+            "postalcode": "40324"
+          },
+          "key": "fccd64e6ab4e171117bdbb6dcd7de626cdf8c8acbb69edb7882b748ea2afdc3e",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Francis de Sales&city=Georgetown&postalcode=40324&state=KY",
+          "params": {
+            "amenity": "St. Francis de Sales",
+            "city": "Georgetown",
+            "state": "KY",
+            "postalcode": "40324"
+          },
+          "key": "dda149e54ea2bec67ecbcafe22a1f4b578fa31b4ccb55d621245621d9de8f8b7",
           "candidates": []
         }
       ]
@@ -2033,13 +4608,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Sts. Philomena and Cecilia House, 16194 St. Mary's Road, Brookville IN 47012, USA",
+          "params": null,
           "key": "dc298ea448468dda35a9f58b5792ec6f782ca9cb9a48a80cfc3ddc2d1a70532d",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "16194 St. Mary's Road, Brookville IN 47012, USA",
+          "params": null,
           "key": "8a5c4bb68ee7efab2dab023492eb604d2e4c5571ada59db46273f111c47e9390",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Brookville&postalcode=47012&state=IN&street=16194 St. Mary's Road",
+          "params": {
+            "street": "16194 St. Mary's Road",
+            "city": "Brookville",
+            "state": "IN",
+            "postalcode": "47012"
+          },
+          "key": "eec9cf7f76bb4c3bd1527018a2b3883d0846fa5b804fe328d591dee8f95f682f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Sts. Philomena and Cecilia House&city=Brookville&postalcode=47012&state=IN",
+          "params": {
+            "amenity": "Sts. Philomena and Cecilia House",
+            "city": "Brookville",
+            "state": "IN",
+            "postalcode": "47012"
+          },
+          "key": "326d4c7aafbbbe57b460ee3b5641d83bfd17f3fa6b4eb91bdbba2348295202d0",
           "candidates": []
         }
       ]
@@ -2051,13 +4652,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Sts. Philomena and Cecilia Church, 16194 St. Mary's Road, Brookville IN 47012, USA",
+          "params": null,
           "key": "f6a60693cba4665d0712874f58626bdd01fa99143f603d9209cf5ceee4cdc93d",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "16194 St. Mary's Road, Brookville IN 47012, USA",
+          "params": null,
           "key": "8a5c4bb68ee7efab2dab023492eb604d2e4c5571ada59db46273f111c47e9390",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Brookville&postalcode=47012&state=IN&street=16194 St. Mary's Road",
+          "params": {
+            "street": "16194 St. Mary's Road",
+            "city": "Brookville",
+            "state": "IN",
+            "postalcode": "47012"
+          },
+          "key": "eec9cf7f76bb4c3bd1527018a2b3883d0846fa5b804fe328d591dee8f95f682f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Sts. Philomena and Cecilia Church&city=Brookville&postalcode=47012&state=IN",
+          "params": {
+            "amenity": "Sts. Philomena and Cecilia Church",
+            "city": "Brookville",
+            "state": "IN",
+            "postalcode": "47012"
+          },
+          "key": "93e4069ce003a0ff6c5d862e0364409ca8ab5840a57e26582e8ac4c00b5fe12d",
           "candidates": []
         }
       ]
@@ -2069,13 +4696,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Immaculate Conception Church, 922 Fifth Street, Rapid City SD 57701, USA",
+          "params": null,
           "key": "c37c5f3e14a3f4310a2336bae5bff524cc0d60aa1eff643924c501367d9b79f4",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "922 Fifth Street, Rapid City SD 57701, USA",
+          "params": null,
           "key": "593033df8bac184987586850652a2d5be960faf06576fab3ba7e540c7d11e6d8",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Rapid City&postalcode=57701&state=SD&street=922 Fifth Street",
+          "params": {
+            "street": "922 Fifth Street",
+            "city": "Rapid City",
+            "state": "SD",
+            "postalcode": "57701"
+          },
+          "key": "1498984ffb0778efa502fb6741f6850835a19ec12963c6f4b90e067b510fad00",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Immaculate Conception Church&city=Rapid City&postalcode=57701&state=SD",
+          "params": {
+            "amenity": "Immaculate Conception Church",
+            "city": "Rapid City",
+            "state": "SD",
+            "postalcode": "57701"
+          },
+          "key": "8e886aee10b9f8366873adc72499fe3bc09ce0ed91b741afafb2e45b2d75bd93",
           "candidates": []
         }
       ]
@@ -2087,13 +4740,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Francis Xavier House, 1329 Belleview Ave., Rockdale IL 60436, USA",
+          "params": null,
           "key": "d2bbf30ee223ddcbf98f470932e4faedc7d95d250d1cb4dde0a256dea02f0681",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "1329 Belleview Ave., Rockdale IL 60436, USA",
+          "params": null,
           "key": "b31cf3cd66259ce0dc7fdcada26f686df0a1d5c2e26a2f985e61e16fb88ca764",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Rockdale&postalcode=60436&state=IL&street=1329 Belleview Ave.",
+          "params": {
+            "street": "1329 Belleview Ave.",
+            "city": "Rockdale",
+            "state": "IL",
+            "postalcode": "60436"
+          },
+          "key": "08a990dd4550fd8281728f43ae2aacfb9c934fe023083fa245bf54ae8f24443d",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Francis Xavier House&city=Rockdale&postalcode=60436&state=IL",
+          "params": {
+            "amenity": "St. Francis Xavier House",
+            "city": "Rockdale",
+            "state": "IL",
+            "postalcode": "60436"
+          },
+          "key": "c48bef0c3a72ab73e69c142e61d47194ca08ad0416e00714a7a69cdcdb15f6f5",
           "candidates": []
         }
       ]
@@ -2105,13 +4784,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Joseph Church, 1329 Belleview Av, Rockdale IL 60436, USA",
+          "params": null,
           "key": "080a97597f5bc41b97f1b56d11f9372894416115673046b51dcf56ba519bf94c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "1329 Belleview Av, Rockdale IL 60436, USA",
+          "params": null,
           "key": "20e61d3403283f39b597a1c7d73898e83467e46aed30da3e7588a4157e9dd73c",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Rockdale&postalcode=60436&state=IL&street=1329 Belleview Av",
+          "params": {
+            "street": "1329 Belleview Av",
+            "city": "Rockdale",
+            "state": "IL",
+            "postalcode": "60436"
+          },
+          "key": "cf7ba87d4327bf879c692aad695a46ec2ee632db0e3d9cf6b3158e1143da7211",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Joseph Church&city=Rockdale&postalcode=60436&state=IL",
+          "params": {
+            "amenity": "St. Joseph Church",
+            "city": "Rockdale",
+            "state": "IL",
+            "postalcode": "60436"
+          },
+          "key": "3b088eced18715f6ca04bc95dfa3db3debf048cda508d66c2165ebf04cdfec2b",
           "candidates": []
         }
       ]
@@ -2123,13 +4828,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Joseph House, 14611B Waterman Crossing Road, Maple Hill KS 66507, USA",
+          "params": null,
           "key": "f9751ef3ba588e3ff103babb4031e88df9c9d8525fa2184d8e0dd288e5b65e0f",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "14611B Waterman Crossing Road, Maple Hill KS 66507, USA",
+          "params": null,
           "key": "99aeb5bee5a8d867a5586d62516bcb41078e202aabfe4910352d132e292652eb",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Maple Hill&postalcode=66507&state=KS&street=14611B Waterman Crossing Road",
+          "params": {
+            "street": "14611B Waterman Crossing Road",
+            "city": "Maple Hill",
+            "state": "KS",
+            "postalcode": "66507"
+          },
+          "key": "dd71ead13536e71e0fc25c3315678839f590ee189e86b1b01bd6a6cf4b256ce8",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Joseph House&city=Maple Hill&postalcode=66507&state=KS",
+          "params": {
+            "amenity": "St. Joseph House",
+            "city": "Maple Hill",
+            "state": "KS",
+            "postalcode": "66507"
+          },
+          "key": "bbb497b48f092d4e63f76bdfcca57b93ea983d3677431198eb6c65f1a4bfdbb0",
           "candidates": []
         }
       ]
@@ -2141,13 +4872,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. John Vianney Chapel, 14611B Waterman Crossing Road, Maple Hill KS 66507, USA",
+          "params": null,
           "key": "b7bd00fd2e23959d1387e0bf42eefb7d9420038088fd75045a75abcf1b0c3770",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "14611B Waterman Crossing Road, Maple Hill KS 66507, USA",
+          "params": null,
           "key": "99aeb5bee5a8d867a5586d62516bcb41078e202aabfe4910352d132e292652eb",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Maple Hill&postalcode=66507&state=KS&street=14611B Waterman Crossing Road",
+          "params": {
+            "street": "14611B Waterman Crossing Road",
+            "city": "Maple Hill",
+            "state": "KS",
+            "postalcode": "66507"
+          },
+          "key": "dd71ead13536e71e0fc25c3315678839f590ee189e86b1b01bd6a6cf4b256ce8",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. John Vianney Chapel&city=Maple Hill&postalcode=66507&state=KS",
+          "params": {
+            "amenity": "St. John Vianney Chapel",
+            "city": "Maple Hill",
+            "state": "KS",
+            "postalcode": "66507"
+          },
+          "key": "7fbbf5456fc16ac9aecee4ff7bbaf592ad795b88ef9e261ee99321b2e4cce1f3",
           "candidates": []
         }
       ]
@@ -2159,13 +4916,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. James the Lesser House, 2245 S11th Street, Lincoln NE 68502, USA",
+          "params": null,
           "key": "6141cd513230b12c85d3433d5dbd929af7ccfdb7141e5ef7ef5f3d09b04b0ec3",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "2245 S11th Street, Lincoln NE 68502, USA",
+          "params": null,
           "key": "d0ffa62508d142ce6b225eb31f10fc6dbb6fb70e2cc7c1f58e2f4f09951a4c31",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Lincoln&postalcode=68502&state=NE&street=2245 S11th Street",
+          "params": {
+            "street": "2245 S11th Street",
+            "city": "Lincoln",
+            "state": "NE",
+            "postalcode": "68502"
+          },
+          "key": "0366548321c695a59141c54ad7c64332ec1eefffe87bb3bbee26b23f9c2100f2",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. James the Lesser House&city=Lincoln&postalcode=68502&state=NE",
+          "params": {
+            "amenity": "St. James the Lesser House",
+            "city": "Lincoln",
+            "state": "NE",
+            "postalcode": "68502"
+          },
+          "key": "da4d4ec326191b5c754a2e406b809b196eb705c8965a2a138cf79add19995f38",
           "candidates": []
         }
       ]
@@ -2177,13 +4960,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Sacred Heart House, 8455 NW234th/Sorghum Mill, Edmond OK 73025, USA",
+          "params": null,
           "key": "b0ecbff3e0eeae0bb2cade0b33090d31741f50c89ff46c6f723b9bd892db97fb",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "8455 NW234th/Sorghum Mill, Edmond OK 73025, USA",
+          "params": null,
           "key": "c7b94bdbd01ee4af9b199958e0e4c09196a424b2022cd2d3bc0232bd9fb8520f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Edmond&postalcode=73025&state=OK&street=8455 NW234th/Sorghum Mill",
+          "params": {
+            "street": "8455 NW234th/Sorghum Mill",
+            "city": "Edmond",
+            "state": "OK",
+            "postalcode": "73025"
+          },
+          "key": "5fad16bda0ee5a1e2d83211e7a3e823a521ca9ab3129a491d95b1e02e4d4da89",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Sacred Heart House&city=Edmond&postalcode=73025&state=OK",
+          "params": {
+            "amenity": "Sacred Heart House",
+            "city": "Edmond",
+            "state": "OK",
+            "postalcode": "73025"
+          },
+          "key": "38cc9a5057d32fe9fbb3391e047e33f04a47f1582169d00bf50e8ab1517b1387",
           "candidates": []
         }
       ]
@@ -2195,12 +5004,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Damien of Molokai Parish, 8455 NW 234th Street, Edmond OK 73025, USA",
+          "params": null,
           "key": "119ee82802f90e25187c95438b2052b929ee2b5925f205a9ec6fc949a390d5d4",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "8455 NW 234th Street, Edmond OK 73025, USA",
+          "params": null,
           "key": "733e9f34edc79809648e5db672b3799a4f9841bfe766f2f64e975f53987dc81c",
           "candidates": [
             {
@@ -2209,6 +5020,30 @@
               "country_code": "us"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Edmond&postalcode=73025&state=OK&street=8455 NW 234th Street",
+          "params": {
+            "street": "8455 NW 234th Street",
+            "city": "Edmond",
+            "state": "OK",
+            "postalcode": "73025"
+          },
+          "key": "9d69582378a415f664b2c80c9ed60110aafdaafcd0ede500950e9bb30f14564a",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Damien of Molokai Parish&city=Edmond&postalcode=73025&state=OK",
+          "params": {
+            "amenity": "St. Damien of Molokai Parish",
+            "city": "Edmond",
+            "state": "OK",
+            "postalcode": "73025"
+          },
+          "key": "b014bef4cd34dee3bb611f106eebd7796d1ff484db77f8c76f0f1a71c687f2f3",
+          "candidates": []
         }
       ]
     },
@@ -2219,31 +5054,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Joseph House, 2030 East State Hwy 356, Irving TX 75060, USA",
+          "params": null,
           "key": "7911099e05ade8772d9fac2d7ebde205770848a82611712dbd583c2124d664dc",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "2030 East State Hwy 356, Irving TX 75060, USA",
+          "params": null,
           "key": "b19616c8cfda1464794989a608be9c628b82f0abc08532266cedf3a1afa5c7a1",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-fssp-mater-dei-parish-2030-e-hwy-356-irving-tx-75060-usa",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Mater Dei Parish, 2030 E Hwy 356, Irving TX 75060, USA",
-          "key": "ad0a57982659a6f9d614c81775b02abc7b19eb8535f7f8ce82272d943f8d746a",
           "candidates": []
         },
         {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "2030 E Hwy 356, Irving TX 75060, USA",
-          "key": "e8c76e4e4b725f9748ef59bcf549f0c73dc1e7f6e9520bff65140bf05d3d0e60",
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Irving&postalcode=75060&state=TX&street=2030 East State Hwy 356",
+          "params": {
+            "street": "2030 East State Hwy 356",
+            "city": "Irving",
+            "state": "TX",
+            "postalcode": "75060"
+          },
+          "key": "d4ae9df088e77a30d42b8ed600fac8a027e10b5e765f94a906aaa6157c201708",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Joseph House&city=Irving&postalcode=75060&state=TX",
+          "params": {
+            "amenity": "St. Joseph House",
+            "city": "Irving",
+            "state": "TX",
+            "postalcode": "75060"
+          },
+          "key": "1a5ca44f70fc9972242a2cb918bc693700f8b139a63cf3e62170573aed6e4a54",
           "candidates": []
         }
       ]
@@ -2255,13 +5098,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Pedro Maldonado House, 14927 County Rd 1151, Tyler TX 75704, USA",
+          "params": null,
           "key": "00dbf6c65f1a7b3a110ebf0519992bfd75169a3c2a5d039bdbacf035f28d4de4",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "14927 County Rd 1151, Tyler TX 75704, USA",
+          "params": null,
           "key": "7b139d51a2c1322b2492f47efa46d0fbea68f43a3801c9cf51408d361cc06e06",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Tyler&postalcode=75704&state=TX&street=14927 County Rd 1151",
+          "params": {
+            "street": "14927 County Rd 1151",
+            "city": "Tyler",
+            "state": "TX",
+            "postalcode": "75704"
+          },
+          "key": "21dd000b69a48cc2a0829387a12a54f5b8e1c7e3927316f942ea48df30fad5a5",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Pedro Maldonado House&city=Tyler&postalcode=75704&state=TX",
+          "params": {
+            "amenity": "St. Pedro Maldonado House",
+            "city": "Tyler",
+            "state": "TX",
+            "postalcode": "75704"
+          },
+          "key": "56dfafe387124af5ab2023b164c054df8381b815a4134b7e555c3d14f2c802d3",
           "candidates": []
         }
       ]
@@ -2273,13 +5142,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Athanasius House, 8121 Breen Rd., Houston TX 77064, USA",
+          "params": null,
           "key": "bef9b85c83a8751ec573060c94c3ff1804ce033c79a8312906d4902bb62d906c",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "8121 Breen Rd., Houston TX 77064, USA",
+          "params": null,
           "key": "5afe703caae481c86b81134b67c7282892b4f1e0a2c52b071347f2825efbe114",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Houston&postalcode=77064&state=TX&street=8121 Breen Rd.",
+          "params": {
+            "street": "8121 Breen Rd.",
+            "city": "Houston",
+            "state": "TX",
+            "postalcode": "77064"
+          },
+          "key": "cbf0ec68a8994aa4001483c2ae17515b065e9231caad003a583235c3676f388a",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Athanasius House&city=Houston&postalcode=77064&state=TX",
+          "params": {
+            "amenity": "St. Athanasius House",
+            "city": "Houston",
+            "state": "TX",
+            "postalcode": "77064"
+          },
+          "key": "fa6a67b58c18b149c266faf6edaf5a27a19e166684f23931a2aa8fdc48da929e",
           "candidates": []
         }
       ]
@@ -2291,13 +5186,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Regina Caeli Parish, 8121 Breen Rd, Houston TX 77064, USA",
+          "params": null,
           "key": "429f9401975fea02463ed449fde917d203d311571500b1203f536e74aace0063",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "8121 Breen Rd, Houston TX 77064, USA",
+          "params": null,
           "key": "71437b8393b6c401d32061b85f5ea9e38993b953e9f55db52fae0cf947b7bc38",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Houston&postalcode=77064&state=TX&street=8121 Breen Rd",
+          "params": {
+            "street": "8121 Breen Rd",
+            "city": "Houston",
+            "state": "TX",
+            "postalcode": "77064"
+          },
+          "key": "ab82d4ee57fd37ca86b534eaa08505aa5c79869e882b689fc982ba9f1639b201",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Regina Caeli Parish&city=Houston&postalcode=77064&state=TX",
+          "params": {
+            "amenity": "Regina Caeli Parish",
+            "city": "Houston",
+            "state": "TX",
+            "postalcode": "77064"
+          },
+          "key": "7089b4365ade695b62192aa5ffeeef526d3ca351883632bd981fe5db801622eb",
           "candidates": []
         }
       ]
@@ -2309,13 +5230,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Mother of Divine Grace House, 5620 So. Hickory Circle, Littleton CO 80120, USA",
+          "params": null,
           "key": "8a48dd4356c45270efbe5ce984d81cdb8d26c0a5377a9196f917b3113c5ba3e8",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "5620 So. Hickory Circle, Littleton CO 80120, USA",
+          "params": null,
           "key": "d538d3a56dbfa61017ef0b31317405d3cf57da96a2560fd34ad15025aca6cab9",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Littleton&postalcode=80120&state=CO&street=5620 So. Hickory Circle",
+          "params": {
+            "street": "5620 So. Hickory Circle",
+            "city": "Littleton",
+            "state": "CO",
+            "postalcode": "80120"
+          },
+          "key": "5c8b1e44ee4053b343f8e3ec5fd0553187739d0a898e6cfc6e5cec37024fc9df",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Mother of Divine Grace House&city=Littleton&postalcode=80120&state=CO",
+          "params": {
+            "amenity": "Mother of Divine Grace House",
+            "city": "Littleton",
+            "state": "CO",
+            "postalcode": "80120"
+          },
+          "key": "affa4f9cd35816884589bc6e3bf1c84df2b4699f50f2e8faa6ad5f6deff1292b",
           "candidates": []
         }
       ]
@@ -2327,13 +5274,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Our Lady of Mt. Carmel Parish, 5612 So. Hickory Street, Littleton CO 80120, USA",
+          "params": null,
           "key": "9cb5769eba5af27c0441ebf37422a7fd59d63d665bd522a442b18b49a8501a95",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "5612 So. Hickory Street, Littleton CO 80120, USA",
+          "params": null,
           "key": "dabfd809ad658d1ae5dbcab8c55e5275048bd0769f626c61bd3bc6766417dba5",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Littleton&postalcode=80120&state=CO&street=5612 So. Hickory Street",
+          "params": {
+            "street": "5612 So. Hickory Street",
+            "city": "Littleton",
+            "state": "CO",
+            "postalcode": "80120"
+          },
+          "key": "8d84a3e2a8018bef8c4745c0662ec2ca9c9c6cd5eb9f6a51f316c94539d8e660",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Our Lady of Mt. Carmel Parish&city=Littleton&postalcode=80120&state=CO",
+          "params": {
+            "amenity": "Our Lady of Mt. Carmel Parish",
+            "city": "Littleton",
+            "state": "CO",
+            "postalcode": "80120"
+          },
+          "key": "b88da2674620fb775e27e7e26fcc5aa20c0e980d00bdd6b3ef9781fb4cf36fde",
           "candidates": []
         }
       ]
@@ -2345,12 +5318,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Immaculate Conception Parish, 626 Aspen Drive, Colorado Springs CO 80911, USA",
+          "params": null,
           "key": "ff9dff56e2f5f20db1a78a028f510f625d578d63b8b5af678ef654e9ed8e77dd",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "626 Aspen Drive, Colorado Springs CO 80911, USA",
+          "params": null,
           "key": "b3cb09318db970cedcc1dfe567d1f4bc8a25eebe6a174999261b89365c92e53c",
           "candidates": [
             {
@@ -2359,6 +5334,30 @@
               "country_code": "us"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Colorado Springs&postalcode=80911&state=CO&street=626 Aspen Drive",
+          "params": {
+            "street": "626 Aspen Drive",
+            "city": "Colorado Springs",
+            "state": "CO",
+            "postalcode": "80911"
+          },
+          "key": "d74565dc3bbdf2225efaaba6e73b5ada8b35cb777eb38adc47abfb7cea6c6ebb",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Immaculate Conception Parish&city=Colorado Springs&postalcode=80911&state=CO",
+          "params": {
+            "amenity": "Immaculate Conception Parish",
+            "city": "Colorado Springs",
+            "state": "CO",
+            "postalcode": "80911"
+          },
+          "key": "07b9ac1dcf480f378d93d5d62900a62a838c99d9f1dc88345640ce0951cc796c",
+          "candidates": []
         }
       ]
     },
@@ -2369,13 +5368,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "St. Cecilia Church, 850 Main St.; P. O. Box 1228, Clarkdale AZ 86324, USA",
+          "params": null,
           "key": "541ae2776c1cc6166e64e6bb75a38df1d2717c4b26d2a52a3aedd86ffe873905",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "850 Main St.; P. O. Box 1228, Clarkdale AZ 86324, USA",
+          "params": null,
           "key": "6c7f2d8347dbf803a71e5bdec650c70e69282fec577036603ba33fd1a4e2c248",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Clarkdale&postalcode=86324&state=AZ&street=850 Main St.; P. O. Box 1228",
+          "params": {
+            "street": "850 Main St.; P. O. Box 1228",
+            "city": "Clarkdale",
+            "state": "AZ",
+            "postalcode": "86324"
+          },
+          "key": "222539ec78b3d56203e627eba7fac851c456cdb97827777404641b5cd9301016",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=St. Cecilia Church&city=Clarkdale&postalcode=86324&state=AZ",
+          "params": {
+            "amenity": "St. Cecilia Church",
+            "city": "Clarkdale",
+            "state": "AZ",
+            "postalcode": "86324"
+          },
+          "key": "de87f5acb9f17877d1e4645a43347c817deb5e751783981ae23c8032c8f084f3",
           "candidates": []
         }
       ]

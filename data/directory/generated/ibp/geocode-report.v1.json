@@ -1,12 +1,13 @@
 {
   "schema": "AO_DIRECTORY_PROVIDER_GEOCODE_REPORT_V1",
   "provider": "IBP",
-  "generated_at": "2026-10-07T11:45:46.810Z",
+  "generated_at": "2026-10-07T12:47:35.032Z",
   "total": 34,
   "existing_valid": 0,
   "accepted": 25,
   "primary_accepted": 15,
   "fallback_accepted": 10,
+  "structured_accepted": 0,
   "unresolved": 9,
   "existing_invalid": 0,
   "by_precision": {
@@ -25,13 +26,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Paris – Centre Saint-Paul, Centre Saint-Paul, 12 rue saint Joseph, 75002 Paris",
+          "params": null,
           "key": "50f13e0e0e5de5635ffe76e270c4211feb3badf7bc38aff8286dc6f1bc170081",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Centre Saint-Paul, 12 rue saint Joseph, 75002 Paris",
+          "params": null,
           "key": "f1ac52625f83086c729dbf0fe45a9c6a4ec491b98a0ede8a6a060163a4601621",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Paris&postalcode=75002&street=Centre Saint-Paul",
+          "params": {
+            "street": "Centre Saint-Paul",
+            "city": "Paris",
+            "state": null,
+            "postalcode": "75002"
+          },
+          "key": "633bd5b61a8cc146b383395b888d3b61999d893734b0e638c5333e3838c5de95",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Paris – Centre Saint-Paul&city=Paris&postalcode=75002",
+          "params": {
+            "amenity": "Paris – Centre Saint-Paul",
+            "city": "Paris",
+            "state": null,
+            "postalcode": "75002"
+          },
+          "key": "12496f7e2966c9d65496592b9deb55c8a3f9babeb1b14af58862a8bc34c5319c",
           "candidates": []
         }
       ]
@@ -43,13 +70,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Courtalain, 20, Place Alexandre Rillié, 28290 Courtalain",
+          "params": null,
           "key": "f390d0bfcdbedf9528e35210c7ab2d8a476b7615b497c36880dd3154fa7c5888",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "20, Place Alexandre Rillié, 28290 Courtalain",
+          "params": null,
           "key": "9f5a13753721d872e4368c2e52dfe1fcde233be5c4febb71f5c76c3a0a6b1c69",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Courtalain&postalcode=28290&street=20",
+          "params": {
+            "street": "20",
+            "city": "Courtalain",
+            "state": null,
+            "postalcode": "28290"
+          },
+          "key": "65041fe1246c102b8fea4e84fdead056a84793adba076f537211b2c112f9d086",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Courtalain&city=Courtalain&postalcode=28290",
+          "params": {
+            "amenity": "Courtalain",
+            "city": "Courtalain",
+            "state": null,
+            "postalcode": "28290"
+          },
+          "key": "d50ca8af8bff543ad7af10426f1baf16a6c3f2582f4565f0d51b109b4a78f30c",
           "candidates": []
         }
       ]
@@ -61,13 +114,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Ascoli Piceno, Iglesia di Santo Christoforo, Ascoli Piceno",
+          "params": null,
           "key": "ad8dcae5db34d0b8b180af7a4399aa35a1c248eb68d7b23fa0161f64cdff354b",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Iglesia di Santo Christoforo, Ascoli Piceno",
+          "params": null,
           "key": "ff104dddecde2c2cbec3e49075ee76693d189b4b3ef17017698b31519c8e2b45",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Ascoli Piceno&street=Iglesia di Santo Christoforo",
+          "params": {
+            "street": "Iglesia di Santo Christoforo",
+            "city": "Ascoli Piceno",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "87610e0373c7057162ddbb54535a28c40158f291eb5a7b238384ab3b489d9719",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Ascoli Piceno&city=Ascoli Piceno",
+          "params": {
+            "amenity": "Ascoli Piceno",
+            "city": "Ascoli Piceno",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "61a8e1cf5f03d6319550ea428940eaa8c85d4e1a19bf536f359022a74ce2dc5b",
           "candidates": []
         }
       ]
@@ -79,13 +158,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Tolentino, Iglesia di Sacro Cuore dei Sacconi, Tolentino",
+          "params": null,
           "key": "52b009f2c6f309006e6226a130a6e0782601546bb9fc421cfbba579189442e23",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Iglesia di Sacro Cuore dei Sacconi, Tolentino",
+          "params": null,
           "key": "a80d9bd620895bdde1812a930d5e6b9cd8d5d5189e3a7bf5c9749aabcd788b36",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Tolentino&street=Iglesia di Sacro Cuore dei Sacconi",
+          "params": {
+            "street": "Iglesia di Sacro Cuore dei Sacconi",
+            "city": "Tolentino",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "4d45ded9917c0a45e7e99572fb5740bd72a76ffd13315b28eaeb52fb663934aa",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Tolentino&city=Tolentino",
+          "params": {
+            "amenity": "Tolentino",
+            "city": "Tolentino",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "4f84016a00b5e97654ea037559d41202d3dbb1e629f6f636975295224c344aea",
           "candidates": []
         }
       ]
@@ -97,13 +202,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Białystok, ul. Szkolna 2a, 15-640 Białystok, Polska",
+          "params": null,
           "key": "82f83501975d675cbf5333ae87b0ec99771882cb8d471fb8030be11d53f9b5c7",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "ul. Szkolna 2a, 15-640 Białystok, Polska",
+          "params": null,
           "key": "ecadd4d6f85177efcee9d4845674d31eb4395e8df7e6eec082dece240f88ba0b",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Białystok&postalcode=15-640&street=ul. Szkolna 2a",
+          "params": {
+            "street": "ul. Szkolna 2a",
+            "city": "Białystok",
+            "state": null,
+            "postalcode": "15-640"
+          },
+          "key": "f05afc5859046fbc6914914208f150e6519a8142b90ba8e5158295a571b03ebc",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Białystok&city=Białystok&postalcode=15-640",
+          "params": {
+            "amenity": "Białystok",
+            "city": "Białystok",
+            "state": null,
+            "postalcode": "15-640"
+          },
+          "key": "c0d0f1992f5cc95ce4de4f61f87e223719334783739218b4471a64b3f03c42c7",
           "candidates": []
         }
       ]
@@ -115,12 +246,14 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Warszawa, pl. Teatralny 18, 00-077 Warszawa, Polska",
+          "params": null,
           "key": "e278b9ac3371c0b7c7703dc2402ebce5bbeda3a4e694e8aede14a41d3904020b",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "pl. Teatralny 18, 00-077 Warszawa, Polska",
+          "params": null,
           "key": "f59b83c8e18e8e293f809cf141bf97055dae000da3d302bd498cd9568f1666f2",
           "candidates": [
             {
@@ -134,6 +267,30 @@
               "country_code": "pl"
             }
           ]
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Warszawa&postalcode=00-077&street=pl. Teatralny 18",
+          "params": {
+            "street": "pl. Teatralny 18",
+            "city": "Warszawa",
+            "state": null,
+            "postalcode": "00-077"
+          },
+          "key": "3dc3c89493bcbfd167145eb7d0d806b92ed7d0195fdbc398c8091208cbeacd74",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Warszawa&city=Warszawa&postalcode=00-077",
+          "params": {
+            "amenity": "Warszawa",
+            "city": "Warszawa",
+            "state": null,
+            "postalcode": "00-077"
+          },
+          "key": "a9bc38bbd2cd2c15892d21a2881ee85465a635ebd9a7541b224bc2fdcf8d20d3",
+          "candidates": []
         }
       ]
     },
@@ -144,13 +301,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Brasília, Capela Nossa Senhora das Dores. Jardim Botânico III, Av. das Paineiras, Entrequadra 9/10, Brasília/DF, 71681-505., Maison canonique : Domus Virgo Dolorosa. Jardim Botânico III, Av. das Paineiras, Entrequadra 9/10, Brasília/DF, 71681-505",
+          "params": null,
           "key": "f818c5128a8e917f60c3b96ed2d1296db17aa02f874b521b53443e5c53aa0e50",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Capela Nossa Senhora das Dores. Jardim Botânico III, Av. das Paineiras, Entrequadra 9/10, Brasília/DF, 71681-505.",
+          "params": null,
           "key": "138d46b0d8cc1921bdd828fec237f095bf4b2c0b0d9b9a88eac8ba48bb7b5004",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=.&postalcode=71681-505&street=Capela Nossa Senhora das Dores. Jardim Botânico III",
+          "params": {
+            "street": "Capela Nossa Senhora das Dores. Jardim Botânico III",
+            "city": ".",
+            "state": null,
+            "postalcode": "71681-505"
+          },
+          "key": "d833ad0d2b849d0aef0b6ffc4ffa7621eb25fecc52f48de9e6b3e11baae175ff",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Brasília&city=.&postalcode=71681-505",
+          "params": {
+            "amenity": "Brasília",
+            "city": ".",
+            "state": null,
+            "postalcode": "71681-505"
+          },
+          "key": "cf2b292281a950ef3f28eeca53c04d68c5c872b3d9b497e652eb54190d0568fd",
           "candidates": []
         }
       ]
@@ -162,13 +345,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Belém, Igreja Nossa Senhora do Rosário. R. Pe. Prudênci o, 337 ; Campina – Belém/PA ; CEP : 66.019-080, Prêtre responsable : M. l’Abbé José Zucchi, Hospital Beneficente Portuguesa. Belém/PA, Messe :, Du Dimanche au Vendredi : 17h30, Confessions : Après la messe, Adresse : Hospita",
+          "params": null,
           "key": "bc2e0b62fc8eb7b4e50fa3aba8c5130966bf8727deac0e74425dfd681b71de37",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Igreja Nossa Senhora do Rosário. R. Pe. Prudênci o, 337 ; Campina – Belém/PA ; CEP : 66.019-080",
+          "params": null,
           "key": "53876096e5a169ec3d7fb5b052c9eb6f44aa6229356f8b8d8fabb642a649e4a1",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=337 ; Campina – Belém/PA ; CEP : 66.019-080&street=Igreja Nossa Senhora do Rosário. R. Pe. Prudênci o",
+          "params": {
+            "street": "Igreja Nossa Senhora do Rosário. R. Pe. Prudênci o",
+            "city": "337 ; Campina – Belém/PA ; CEP : 66.019-080",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "b3947da22c262a2d631d2419ce8e79d2f740e693517d95468d9c75f210258bb8",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Belém&city=337 ; Campina – Belém/PA ; CEP : 66.019-080",
+          "params": {
+            "amenity": "Belém",
+            "city": "337 ; Campina – Belém/PA ; CEP : 66.019-080",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "648bdd1ffccc4c2b4cca8a43bdf88974d614b8334b308cc5a71e85e97c36acf8",
           "candidates": []
         }
       ]
@@ -180,13 +389,39 @@
         {
           "kind": "PRIMARY_NAME_ADDRESS",
           "query": "Bogotá, Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC., Maison canonique : TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC",
+          "params": null,
           "key": "0e95d40f2ce34301724b60c29d28049b985b62d70fe0cea25ca59eff9a248408",
           "candidates": []
         },
         {
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC.",
+          "params": null,
           "key": "09e0a17cdc136d282ad74ac2ccb2154e57e74f0530f4cb118e6cfb84e4f048f8",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=BOGOTA/DC.&street=Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A",
+          "params": {
+            "street": "Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A",
+            "city": "BOGOTA/DC.",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "d9d24419f6476e97693577388d64675365f111c792ffa19b18649290ab12f74f",
+          "candidates": []
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Bogotá&city=BOGOTA/DC.",
+          "params": {
+            "amenity": "Bogotá",
+            "city": "BOGOTA/DC.",
+            "state": null,
+            "postalcode": null
+          },
+          "key": "4a59a667b2e5efe696bb22878309fa8b59767995986e22f3c4964af0a482da33",
           "candidates": []
         }
       ]
