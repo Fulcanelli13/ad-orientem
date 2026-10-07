@@ -15,6 +15,24 @@ const RESEARCH_PROVIDERS=Object.freeze([
 
 function safeArray(value){return Array.isArray(value)?value:[]}
 function text(value){return String(value??"").trim()}
+function isoDay(value){
+  const match=text(value).match(/^(20\d{2}-\d{2}-\d{2})/);
+  return match?.[1]??null;
+}
+function addDays(day,count){
+  if(!day)return null;
+  const date=new Date(day+"T00:00:00Z");
+  if(Number.isNaN(date.getTime()))return null;
+  date.setUTCDate(date.getUTCDate()+Number(count||0));
+  return date.toISOString().slice(0,10);
+}
+export function scheduleFreshnessState(schedule,{now=new Date()}={}){
+  const due=schedule?.verification?.review_due_at;
+  if(!due)return "UNKNOWN";
+  const dueTime=new Date(due).getTime(),nowTime=now instanceof Date?now.getTime():new Date(now).getTime();
+  if(!Number.isFinite(dueTime)||!Number.isFinite(nowTime))return "UNKNOWN";
+  return nowTime>dueTime?"REVIEW_DUE":"CURRENT";
+}
 async function fetchJson(url,{fetchImpl=fetch,optional=false}={}){
   try{
     const response=await fetchImpl(url,{headers:{accept:"application/json"}});
@@ -76,6 +94,9 @@ export function expandResearchProviderSnapshot(snapshot={}){
     const sourceIds=[scheduleSourceId,...(authorizationSourceId?[authorizationSourceId]:[]),...(editionSourceId?[editionSourceId]:[])];
     const formatted=text(row.a)||[row.l,row.r,row.cc].map(text).filter(Boolean).join(", ");
     const scheduleRaw=text(row.sr);
+    const serviceType=text(row.svc)||"MASS";
+    const verifiedOn=isoDay(row.vv)||isoDay(generatedAt);
+    const reviewDue=serviceType==="MASS"&&verifiedOn?addDays(verifiedOn,120):null;
     const sunday=/\bsunday\b|\bdimanche\b|\bdomingo\b|\bdomenica\b|\bsonntag\b|\bsun\.?\b/i.test(scheduleRaw);
     out.venues.push({
       venue_id:venueId,
@@ -137,11 +158,16 @@ export function expandResearchProviderSnapshot(snapshot={}){
     out.schedules.push({
       schedule_id:scheduleId,
       ministry_id:ministryId,
-      service_type:text(row.svc)||"MASS",
+      service_type:serviceType,
       mass_type:"UNKNOWN",
       payload:{raw:scheduleRaw},
       source_ids:[scheduleSourceId],
-      verification:{state:text(row.vs)||"OFFICIAL_VERIFIED",checked_at:generatedAt},
+      verification:{
+        state:text(row.vs)||"OFFICIAL_VERIFIED",
+        checked_at:verifiedOn?verifiedOn+"T00:00:00Z":generatedAt,
+        review_due_at:reviewDue?reviewDue+"T23:59:59Z":null,
+        freshness_policy:serviceType==="MASS"?"CURRENT_MASS_120D":null,
+      },
     });
     out.sources.push({
       source_id:scheduleSourceId,
