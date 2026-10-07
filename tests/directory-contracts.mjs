@@ -2,6 +2,7 @@ import fs from "node:fs";
 import assert from "node:assert/strict";
 import {
   auditCommunionProfile,
+  auditSchedule,
   auditStatusAssertion,
   auditVenue,
 } from "../src/find/contracts.js";
@@ -9,6 +10,7 @@ import {
   compareVenueCandidates,
   normalizeAddress,
 } from "../src/find/entity-resolution.js";
+import { expandResearchProviderSnapshot } from "../src/find/data-service.js";
 import {
   buildCanonicalSspxDataset,
   mapSspxPlace,
@@ -22,6 +24,55 @@ const contract = readJson("../data/directory/directory-contract.v1.json");
 const communities = readJson("../data/directory/communities.v1.json");
 const sources = readJson("../data/directory/source-registry.v1.json");
 const status = readJson("../data/directory/status-assertions.v1.json");
+
+const researchSnapshots = [
+  readJson("../data/directory/generated/v19/diocesan.v1.json"),
+  readJson("../data/directory/generated/v19/aasjmv.v1.json"),
+  readJson("../data/directory/generated/v19/fsvf.v1.json"),
+  readJson("../data/directory/generated/v19/canons-st-john-cantius.v1.json"),
+  readJson("../data/directory/generated/v19/cmri.v1.json"),
+  readJson("../data/directory/generated/v19/rci.v1.json"),
+  readJson("../data/directory/generated/v19/cspv.v1.json"),
+  readJson("../data/directory/generated/v19/smmd.v1.json"),
+];
+
+const expectedResearchCounts = new Map([
+  ["DIOCESAN",44],
+  ["AASJMV",6],
+  ["FSVF",1],
+  ["CANONS_ST_JOHN_CANTIUS",2],
+  ["CMRI",142],
+  ["RCI",31],
+  ["SSPV_CSPV",19],
+  ["SMMD",1],
+]);
+let researchVenueCount=0;
+const researchVenueIds=new Set();
+for(const snapshot of researchSnapshots){
+  assert.equal(snapshot.schema,"AO_DIRECTORY_RESEARCH_PROVIDER_V1");
+  assert.equal(snapshot.records.length,expectedResearchCounts.get(snapshot.provider),snapshot.provider+" record-count drift");
+  const expanded=expandResearchProviderSnapshot(snapshot);
+  assert.equal(expanded.venues.length,snapshot.records.length,snapshot.provider+" expansion lost venues");
+  assert.equal(expanded.ministries.length,snapshot.records.length,snapshot.provider+" expansion lost ministries");
+  assert.equal(expanded.schedules.length,snapshot.records.length,snapshot.provider+" expansion lost schedules");
+  researchVenueCount+=expanded.venues.length;
+  for(const venue of expanded.venues){
+    assert.equal(auditVenue(venue).length,0,venue.venue_id+" failed venue audit");
+    assert.ok(!researchVenueIds.has(venue.venue_id),"duplicate research venue "+venue.venue_id);
+    researchVenueIds.add(venue.venue_id);
+  }
+  for(const schedule of expanded.schedules)assert.equal(auditSchedule(schedule).length,0,schedule.schedule_id+" failed schedule audit");
+  if(snapshot.provider==="DIOCESAN"){
+    assert.ok(expanded.ministries.every(m=>m.liturgical_usage.family==="ROMAN"&&m.liturgical_usage.books==="1962"));
+    assert.ok(expanded.venues.some(v=>/charleston-sacredheart/.test(v.venue_id)),"Charleston residue promotion missing");
+    assert.ok(expanded.venues.some(v=>/binghamton-stmary/.test(v.venue_id)),"Binghamton residue promotion missing");
+  }
+  if(snapshot.provider==="CMRI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books!=="1962"),"CMRI was wrongly normalized to 1962");
+  if(snapshot.provider==="RCI")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="PRE_1955"),"RCI pre-1955 profile drifted");
+  if(snapshot.provider==="SSPV_CSPV")assert.ok(expanded.ministries.every(m=>m.liturgical_usage.books==="UNKNOWN"),"CSPV exact books were inferred");
+}
+assert.equal(researchVenueCount,246,"v1.9 research projection count drift");
+
 
 assert.equal(contract.schema, "DIRECTORY_SOT_V1");
 assert.equal(contract.version, "1.1.0");
