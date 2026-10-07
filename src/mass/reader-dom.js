@@ -483,6 +483,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     postureIconKey:moment.postureIconKey ?? null,
     gestureIconKey:moment.gestureIconKey ?? null,
     responseIconKey:moment.responseIconKey ?? null,
+    bellIconKey:moment.bellIconKey ?? null,
     priestVoiceIconKey:moment.priestVoiceIconKey ?? null,
     scholaIconKey:moment.scholaIconKey ?? null,
   });
@@ -540,7 +541,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest and bell cues">
       <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="priest-action" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-rail-copy" data-role="priest-action">—</span></div>
-      <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-rail-copy" data-role="bell">—</span></div>
+      <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-icon-mask" data-icon-slot="bell" hidden></span><span class="ao-rail-copy" data-role="bell">—</span></div>
     </aside>
   </div>
 
@@ -1203,6 +1204,7 @@ export function createReaderDomAdapter({
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
     applyIcon(root,"response",current.responseIconKey,iconResolver);
+    applyIcon(root,"bell",current.bellIconKey,iconResolver);
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
     applyIcon(root,"priest-action-top",current.priestActionIconKey,iconResolver);
