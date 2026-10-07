@@ -13,7 +13,7 @@ export const CSE_DEBATE_POSITION_REFS=freezeMap({
   CSE014:[["CURRAN1992","living tradition and development in Catholic moral theology"],["CURRAN2006","dissent from official sexual teaching"]],
   CSE016:[["CURRAN2006","conscience, dissent and hierarchical teaching office"]],
   CSE018:[["CURRAN2006","theological dissent and magisterial authority"]],
-  CSE020:[["CCC","§2352"],["ST77","aa.6–7"],["ST78","a.2"]],
+  CSE020:[["NIDA_ADDICTION","compulsive use and impaired self-control"],["CCC","§2352"],["ST77","aa.6–7"]],
   CSE021:[["FARLEY2008","sexuality and its meanings · Just Sex"]],
   CSE029:[["FARLEY2008","celibacy and sexual ethics"]],
   CSE031:[["FARLEY2008","Just Sex; contexts for sexual relationships"],["PP_RELATIONSHIPS","sexual and romantic relationships"]],
