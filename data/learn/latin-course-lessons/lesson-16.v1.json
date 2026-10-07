@@ -1,0 +1,1180 @@
+{
+  "version": "latin-course-lesson-16-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 16,
+  "stage": {
+    "number": 4,
+    "title": "Structure"
+  },
+  "title": "Incarnatus est",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "sentence",
+  "grammarFocus": "Perfect passive; participle",
+  "readingOutcome": "Parse perfect passive constructions and participial agreement.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen Lesson 16 allocation is introduced; later clause vocabulary is explicit support.",
+    "authenticTextPolicy": "Perfect passive is anchored in the Credo and scriptural clauses used in the Roman liturgy.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "incarno",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "become incarnate / take flesh",
+          "fr": "s'incarner"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "crucifigo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "crucify",
+          "fr": "crucifier"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "patior",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "suffer",
+          "fr": "souffrir"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "sepelio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "bury",
+          "fr": "ensevelir"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "nascor",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "be born",
+          "fr": "naître"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "morior",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "die",
+          "fr": "mourir"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "eligo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "choose / elect",
+          "fr": "choisir / élire"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "trado",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "hand over / betray / deliver",
+          "fr": "livrer / transmettre"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "annuntio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "announce / proclaim",
+          "fr": "annoncer"
+        },
+        "frozenLesson": 16
+      },
+      {
+        "lemma": "signum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sign",
+          "fr": "signe"
+        },
+        "frozenLesson": 16
+      }
+    ],
+    "recycled": [
+      "et",
+      "sum",
+      "de",
+      "spiritus",
+      "sanctus",
+      "virgo",
+      "homo",
+      "facio",
+      "pro",
+      "nos",
+      "sub",
+      "pater",
+      "resurgo",
+      "propter",
+      "noster",
+      "enim",
+      "voco",
+      "video",
+      "in",
+      "Deus",
+      "e/ex",
+      "vos",
+      "invenio"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Maria",
+      "forms": [
+        "Maria"
+      ],
+      "gloss": {
+        "en": "Mary",
+        "fr": "Marie"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "etiam",
+      "forms": [
+        "etiam"
+      ],
+      "gloss": {
+        "en": "also / even",
+        "fr": "aussi / même"
+      },
+      "trackedLesson": 25,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Pontius",
+      "forms": [
+        "Pontio"
+      ],
+      "gloss": {
+        "en": "Pontius",
+        "fr": "Ponce"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Pilatus",
+      "forms": [
+        "Pilato"
+      ],
+      "gloss": {
+        "en": "Pilate",
+        "fr": "Pilate"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "delictum",
+      "forms": [
+        "delicta"
+      ],
+      "gloss": {
+        "en": "offence / transgression",
+        "fr": "faute / offense"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "iustificatio",
+      "forms": [
+        "justificationem"
+      ],
+      "gloss": {
+        "en": "justification",
+        "fr": "justification"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pauci",
+      "forms": [
+        "pauci"
+      ],
+      "gloss": {
+        "en": "few",
+        "fr": "peu de gens"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "infans",
+      "forms": [
+        "infantem"
+      ],
+      "gloss": {
+        "en": "infant",
+        "fr": "enfant"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pannus",
+      "forms": [
+        "pannis"
+      ],
+      "gloss": {
+        "en": "swaddling cloth",
+        "fr": "langes"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "praesepium",
+      "forms": [
+        "praesepio"
+      ],
+      "gloss": {
+        "en": "manger",
+        "fr": "crèche / mangeoire"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "qui/quae/quod",
+      "forms": [
+        "Qui"
+      ],
+      "gloss": {
+        "en": "who / which",
+        "fr": "qui / lequel"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "hic/haec/hoc",
+      "forms": [
+        "hoc"
+      ],
+      "gloss": {
+        "en": "this",
+        "fr": "ceci"
+      },
+      "trackedLesson": 18,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "multus",
+      "forms": [
+        "Multi"
+      ],
+      "gloss": {
+        "en": "many",
+        "fr": "nombreux"
+      },
+      "trackedLesson": 18,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-credo-incarnatus-l16",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est.",
+      "provenanceNote": "incarnatus est is the principal perfect-passive construction; factus est is recycled as a parallel.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-credo-crucifixus-l16",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Crucifixus etiam pro nobis: sub Pontio Pilato passus, et sepultus est.",
+      "provenanceNote": "Crucifixus/passus/sepultus provide coordinated participial predicates with passive/perfect meaning.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "vulg-rom4-25-l16",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Romani 4:25",
+      "sourceLatin": "Qui traditus est propter delicta nostra, et resurrexit propter justificationem nostram.",
+      "provenanceNote": "traditus est gives perfect passive trado beside active perfect resurrexit.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-mt22-14-l16",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 22:14",
+      "sourceLatin": "Multi enim sunt vocati, pauci vero electi.",
+      "provenanceNote": "electi gives a plural perfect-passive participle and agreement anchor.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-lk2-12-l16",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 2:12",
+      "sourceLatin": "Et hoc vobis signum: invenietis infantem pannis involutum, et positum in praesepio.",
+      "provenanceNote": "signum is introduced in a Nativity clause; participles are reading support, not silently taught grammar beyond the lesson target.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active. Participles are read through the same agreement system as adjectives.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "perfectPassiveFramework": {
+    "construction": "perfect passive participle + present of sum",
+    "agreement": "The participle agrees with the grammatical subject in gender, number and case.",
+    "anchors": [
+      {
+        "surface": "incarnatus est",
+        "lemma": "incarno",
+        "value": "was incarnate / became incarnate"
+      },
+      {
+        "surface": "crucifixus ... est",
+        "lemma": "crucifigo",
+        "value": "was crucified"
+      },
+      {
+        "surface": "sepultus est",
+        "lemma": "sepelio",
+        "value": "was buried"
+      },
+      {
+        "surface": "traditus est",
+        "lemma": "trado",
+        "value": "was handed over"
+      }
+    ],
+    "deponentPreview": "nascor and morior form perfects with participles + sum but have active meaning; the general deponent system is deferred to Lesson 19.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l16-b1",
+      "type": "concept",
+      "title": "A participle plus sum can make a completed passive",
+      "learnerCopy": {
+        "en": "Latin often forms the perfect passive with a perfect passive participle plus a present form of sum: incarnatus est, crucifixus est, sepultus est. Read the participle as an agreeing adjective that also carries verbal meaning.",
+        "fr": "Le latin forme souvent le parfait passif avec un participe parfait passif et une forme présente de sum : incarnatus est, crucifixus est, sepultus est. Lisez le participe comme un adjectif accordé qui porte aussi un sens verbal."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Un participe avec sum peut former un passif accompli"
+        }
+      }
+    },
+    {
+      "id": "l16-b2",
+      "type": "agreement",
+      "title": "The participle agrees with its subject",
+      "learnerCopy": {
+        "en": "incarnatus and crucifixus are masculine singular because their understood subject is Christ. electi is masculine plural because it refers to the 'few' who are chosen. Agreement is therefore part of parsing the verb construction.",
+        "fr": "incarnatus et crucifixus sont masculins singuliers parce que leur sujet sous-entendu est le Christ. electi est masculin pluriel parce qu'il se rapporte aux « peu nombreux » qui sont choisis. L'accord fait donc partie de l'analyse verbale."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le participe s’accorde avec son sujet"
+        }
+      }
+    },
+    {
+      "id": "l16-b3",
+      "type": "authentic-example",
+      "title": "Et incarnatus est",
+      "sourceId": "mr1962-credo-incarnatus-l16",
+      "learnerCopy": {
+        "en": "incarnatus est is completed passive meaning. In the same sentence, factus est gives a second participle + sum construction already partly familiar from earlier reading.",
+        "fr": "incarnatus est exprime un accompli passif. Dans la même phrase, factus est fournit une seconde construction participe + sum, déjà partiellement familière."
+      },
+      "referenceIds": [
+        "mr1962-credo-incarnatus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Et incarnatus est"
+        }
+      }
+    },
+    {
+      "id": "l16-b4",
+      "type": "authentic-example",
+      "title": "Crucifixus, passus, sepultus",
+      "sourceId": "mr1962-credo-crucifixus-l16",
+      "learnerCopy": {
+        "en": "The Creed compresses three actions. Crucifixus and sepultus are passive in meaning; passus belongs to the deponent patior and has active meaning 'suffered'. This contrast prepares Lesson 19 without teaching the whole deponent system early.",
+        "fr": "Le Credo condense trois actions. Crucifixus et sepultus ont un sens passif ; passus appartient au déponent patior et signifie activement « souffrit ». Ce contraste prépare la leçon 19 sans anticiper tout le système des déponents."
+      },
+      "referenceIds": [
+        "mr1962-credo-crucifixus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Crucifixus, passus, sepultus"
+        }
+      }
+    },
+    {
+      "id": "l16-b5",
+      "type": "contrast",
+      "title": "traditus est versus resurrexit",
+      "sourceId": "vulg-rom4-25-l16",
+      "learnerCopy": {
+        "en": "traditus est is perfect passive: he was handed over. resurrexit is perfect active: he rose again. The two completed actions have different voices, and the morphology tells you which.",
+        "fr": "traditus est est un parfait passif : il fut livré. resurrexit est un parfait actif : il ressuscita. Les deux actions sont accomplies, mais leur voix diffère."
+      },
+      "referenceIds": [
+        "vulg-rom4-25-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "traditus est face à resurrexit"
+        }
+      }
+    },
+    {
+      "id": "l16-b6",
+      "type": "retrieval",
+      "title": "Do not confuse participle shape with voice meaning",
+      "learnerCopy": {
+        "en": "nascor, morior and patior remind you that some verbs have passive-looking forms but active meaning. For now, recognize these named exceptions; Lesson 19 will generalize the deponent system.",
+        "fr": "nascor, morior et patior rappellent que certains verbes ont des formes d'apparence passive mais un sens actif. Pour l'instant, reconnaissez ces exceptions nommées ; la leçon 19 généralisera le système."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ne pas confondre forme participiale et valeur de voix"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l16-p1",
+      "sourceId": "mr1962-credo-incarnatus-l16",
+      "sourceLatin": "Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est.",
+      "instructionalDisplay": "Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est.",
+      "translation": {
+        "en": "And He became incarnate by the Holy Ghost of the Virgin Mary: and was made man.",
+        "fr": "Et il s'est incarné du Saint-Esprit dans le sein de la Vierge Marie, et il s'est fait homme."
+      },
+      "targetLemmas": [
+        "et",
+        "incarno",
+        "sum",
+        "de",
+        "spiritus",
+        "sanctus",
+        "virgo",
+        "homo",
+        "facio"
+      ],
+      "supportLemmas": [
+        "Maria"
+      ]
+    },
+    {
+      "id": "l16-p2",
+      "sourceId": "mr1962-credo-crucifixus-l16",
+      "sourceLatin": "Crucifixus etiam pro nobis: sub Pontio Pilato passus, et sepultus est.",
+      "instructionalDisplay": "Crucifixus etiam pro nobis: sub Pontio Pilato passus, et sepultus est.",
+      "translation": {
+        "en": "He was crucified also for us: suffered under Pontius Pilate, and was buried.",
+        "fr": "Il fut aussi crucifié pour nous ; sous Ponce Pilate il souffrit et fut enseveli."
+      },
+      "targetLemmas": [
+        "crucifigo",
+        "pro",
+        "nos",
+        "sub",
+        "patior",
+        "et",
+        "sepelio",
+        "sum"
+      ],
+      "supportLemmas": [
+        "etiam",
+        "Pontius",
+        "Pilatus"
+      ]
+    },
+    {
+      "id": "l16-p3",
+      "sourceId": "vulg-rom4-25-l16",
+      "sourceLatin": "Qui traditus est propter delicta nostra, et resurrexit propter justificationem nostram.",
+      "instructionalDisplay": "Qui traditus est propter delicta nostra, et resurrexit propter justificationem nostram.",
+      "translation": {
+        "en": "Who was delivered up for our sins, and rose again for our justification.",
+        "fr": "Lui qui fut livré pour nos fautes et ressuscita pour notre justification."
+      },
+      "targetLemmas": [
+        "trado",
+        "sum",
+        "propter",
+        "noster",
+        "et",
+        "resurgo"
+      ],
+      "supportLemmas": [
+        "qui/quae/quod",
+        "delictum",
+        "iustificatio"
+      ]
+    },
+    {
+      "id": "l16-p4",
+      "sourceId": "vulg-mt22-14-l16",
+      "sourceLatin": "Multi enim sunt vocati, pauci vero electi.",
+      "instructionalDisplay": "Multi enim sunt vocati, pauci vero electi.",
+      "translation": {
+        "en": "For many are called, but few are chosen.",
+        "fr": "Car beaucoup sont appelés, mais peu sont élus."
+      },
+      "targetLemmas": [
+        "enim",
+        "sum",
+        "voco",
+        "eligo"
+      ],
+      "supportLemmas": [
+        "multus",
+        "pauci"
+      ]
+    },
+    {
+      "id": "l16-p5",
+      "sourceId": "vulg-lk2-12-l16",
+      "sourceLatin": "Et hoc vobis signum: invenietis infantem pannis involutum, et positum in praesepio.",
+      "instructionalDisplay": "Et hoc vobis signum: invenietis infantem pannis involutum, et positum in praesepio.",
+      "translation": {
+        "en": "And this shall be a sign unto you: you shall find the infant wrapped in swaddling clothes and laid in a manger.",
+        "fr": "Et voici le signe qui vous est donné : vous trouverez un enfant enveloppé de langes et couché dans une mangeoire."
+      },
+      "targetLemmas": [
+        "et",
+        "vos",
+        "signum",
+        "invenio",
+        "in"
+      ],
+      "supportLemmas": [
+        "hic/haec/hoc",
+        "infans",
+        "pannus",
+        "praesepium"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l16-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What construction is incarnatus est?",
+      "stimulus": "incarnatus est",
+      "options": [
+        "perfect passive",
+        "imperfect active",
+        "future active",
+        "present passive only"
+      ],
+      "expectedAnswer": "perfect passive",
+      "acceptedVariants": [
+        "perfect passive"
+      ],
+      "hint": "Look for participle + est.",
+      "explanation": "incarnatus est is a perfect-passive construction.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-incarnatus-l16",
+      "skills": [
+        "voice:passive",
+        "tense:perfect"
+      ],
+      "referenceIds": [
+        "mr1962-credo-incarnatus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle construction est incarnatus est ?",
+          "hint": "Cherchez participe + est.",
+          "explanation": "incarnatus est est une construction au parfait passif.",
+          "options": [
+            "parfait passif",
+            "imparfait actif",
+            "futur actif",
+            "présent passif seulement"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l16-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What must the perfect passive participle agree with?",
+      "stimulus": "incarnatus",
+      "options": [
+        "its grammatical subject in gender, number and case",
+        "the nearest preposition only",
+        "the verb sum in tense only",
+        "word order"
+      ],
+      "expectedAnswer": "its grammatical subject in gender, number and case",
+      "acceptedVariants": [
+        "its grammatical subject in gender, number and case"
+      ],
+      "hint": "Treat the participle like an agreeing adjective.",
+      "explanation": "Participial agreement is essential to the construction.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "participle:agreement"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Avec quoi le participe au parfait passif doit-il s’accorder ?",
+          "hint": "Traitez le participe comme un adjectif qui s’accorde.",
+          "explanation": "L’accord du participe est essentiel à la construction.",
+          "options": [
+            "avec son sujet grammatical en genre, nombre et cas",
+            "avec la préposition la plus proche seulement",
+            "avec le verbe sum seulement pour le temps",
+            "avec l’ordre des mots"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l16-e3",
+      "exerciseType": "token_select",
+      "prompt": "Select the perfect-passive forms.",
+      "stimulus": "Crucifixus etiam pro nobis: sub Pontio Pilato passus, et sepultus est.",
+      "expectedAnswer": [
+        "Crucifixus",
+        "sepultus",
+        "est"
+      ],
+      "acceptedVariants": [
+        [
+          "Crucifixus",
+          "sepultus",
+          "est"
+        ]
+      ],
+      "hint": "passus is deponent-active in meaning.",
+      "explanation": "Crucifixus and sepultus belong to passive constructions; passus previews deponents.",
+      "difficulty": 2,
+      "sourceId": "mr1962-credo-crucifixus-l16",
+      "skills": [
+        "voice:passive",
+        "deponent:preview"
+      ],
+      "referenceIds": [
+        "mr1962-credo-crucifixus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les formes au parfait passif.",
+          "hint": "passus est déponent et a un sens actif.",
+          "explanation": "Crucifixus et sepultus appartiennent à des constructions passives ; passus préfigure les déponents."
+        }
+      }
+    },
+    {
+      "id": "l16-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form has active meaning despite passive-looking morphology?",
+      "stimulus": "passus",
+      "options": [
+        "passus",
+        "crucifixus",
+        "sepultus",
+        "traditus"
+      ],
+      "expectedAnswer": "passus",
+      "acceptedVariants": [
+        "passus"
+      ],
+      "hint": "It belongs to patior.",
+      "explanation": "patior is deponent; passus means 'suffered'.",
+      "difficulty": 2,
+      "sourceId": "mr1962-credo-crucifixus-l16",
+      "skills": [
+        "deponent:preview",
+        "vocabulary:patior"
+      ],
+      "referenceIds": [
+        "mr1962-credo-crucifixus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme a un sens actif malgré une morphologie d’apparence passive ?",
+          "hint": "Elle appartient à patior.",
+          "explanation": "patior est déponent ; passus signifie « a souffert ».",
+          "options": [
+            "passus",
+            "crucifixus",
+            "sepultus",
+            "traditus"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l16-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which completed action is passive?",
+      "stimulus": "traditus est / resurrexit",
+      "options": [
+        "traditus est",
+        "resurrexit"
+      ],
+      "expectedAnswer": "traditus est",
+      "acceptedVariants": [
+        "traditus est"
+      ],
+      "hint": "One means 'was handed over'.",
+      "explanation": "traditus est is perfect passive; resurrexit is perfect active.",
+      "difficulty": 1,
+      "sourceId": "vulg-rom4-25-l16",
+      "skills": [
+        "voice:contrast"
+      ],
+      "referenceIds": [
+        "vulg-rom4-25-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle action accomplie est passive ?",
+          "hint": "L’une signifie « fut livré ».",
+          "explanation": "traditus est est au parfait passif ; resurrexit est au parfait actif.",
+          "options": [
+            "traditus est",
+            "resurrexit"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l16-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What lemma lies behind electi?",
+      "stimulus": "electi",
+      "options": [
+        "eligo",
+        "lego",
+        "voco",
+        "annuntio"
+      ],
+      "expectedAnswer": "eligo",
+      "acceptedVariants": [
+        "eligo"
+      ],
+      "hint": "It means 'chosen'.",
+      "explanation": "electi is a participial form of eligo.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt22-14-l16",
+      "skills": [
+        "vocabulary:eligo",
+        "participle"
+      ],
+      "referenceIds": [
+        "vulg-mt22-14-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière electi ?",
+          "hint": "Il signifie « choisis ».",
+          "explanation": "electi est une forme participiale de eligo.",
+          "options": [
+            "eligo",
+            "lego",
+            "voco",
+            "annuntio"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l16-e7",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 16 verb to meaning.",
+      "stimulus": [
+        "incarno",
+        "crucifigo",
+        "sepelio",
+        "trado"
+      ],
+      "expectedAnswer": {
+        "incarno": "become incarnate",
+        "crucifigo": "crucify",
+        "sepelio": "bury",
+        "trado": "hand over / deliver"
+      },
+      "acceptedVariants": [],
+      "hint": "All are Lesson 16 Core.",
+      "explanation": "This checks the main action vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l16"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de la leçon 16 à son sens.",
+          "hint": "Tous appartiennent au vocabulaire fondamental de la leçon 16.",
+          "explanation": "Ceci vérifie le vocabulaire principal d’action.",
+          "matches": {
+            "incarno": "s’incarner",
+            "crucifigo": "crucifier",
+            "sepelio": "ensevelir",
+            "trado": "livrer / remettre"
+          }
+        }
+      }
+    },
+    {
+      "id": "l16-e8",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 16 item to meaning.",
+      "stimulus": [
+        "nascor",
+        "morior",
+        "annuntio",
+        "signum"
+      ],
+      "expectedAnswer": {
+        "nascor": "be born",
+        "morior": "die",
+        "annuntio": "announce / proclaim",
+        "signum": "sign"
+      },
+      "acceptedVariants": [],
+      "hint": "Two verbs preview deponent behavior.",
+      "explanation": "This checks the remaining Core set.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l16"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 16 à son sens.",
+          "hint": "Deux verbes préfigurent le comportement déponent.",
+          "explanation": "Ceci vérifie le reste de l’ensemble fondamental.",
+          "matches": {
+            "nascor": "naître",
+            "morior": "mourir",
+            "annuntio": "annoncer / proclamer",
+            "signum": "signe"
+          }
+        }
+      }
+    },
+    {
+      "id": "l16-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does the plural electi demonstrate?",
+      "stimulus": "participial agreement with a plural referent",
+      "options": [
+        "participial agreement with a plural referent",
+        "future tense",
+        "direct address",
+        "ablative government"
+      ],
+      "expectedAnswer": "participial agreement with a plural referent",
+      "acceptedVariants": [
+        "participial agreement with a plural referent"
+      ],
+      "hint": "The ending changes with number.",
+      "explanation": "electi is plural because its referent is plural.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt22-14-l16",
+      "skills": [
+        "participle:agreement"
+      ],
+      "referenceIds": [
+        "vulg-mt22-14-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que montre le pluriel electi ?",
+          "hint": "La terminaison change avec le nombre.",
+          "explanation": "electi est au pluriel parce que son référent est pluriel.",
+          "options": [
+            "l’accord participial avec un référent pluriel",
+            "le futur",
+            "l’adresse directe",
+            "le régime de l’ablatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l16-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'sign'.",
+      "stimulus": null,
+      "expectedAnswer": "signum",
+      "acceptedVariants": [
+        "signum",
+        "Signum"
+      ],
+      "hint": "It appears in the Nativity clause.",
+      "explanation": "signum means sign.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk2-12-l16",
+      "skills": [
+        "vocabulary:signum"
+      ],
+      "referenceIds": [
+        "vulg-lk2-12-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « signe ».",
+          "hint": "Il apparaît dans la proposition de la Nativité.",
+          "explanation": "signum signifie « signe »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Parse perfect passive participle + sum.",
+    "Use participial agreement to identify subject relationships.",
+    "Contrast perfect passive with perfect active.",
+    "Preview named deponent exceptions without collapsing them into passive meaning.",
+    "Learn all ten frozen Lesson 16 lemmas."
+  ],
+  "checkpoint": {
+    "id": "l16-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l16-e1",
+        "l16-e2",
+        "l16-e3",
+        "l16-e4",
+        "l16-e5",
+        "l16-e6",
+        "l16-e7",
+        "l16-e8",
+        "l16-e9",
+        "l16-e10"
+      ]
+    },
+    "mustKnow": [
+      "perfect passive = participle + sum",
+      "participial agreement",
+      "traditus est vs resurrexit",
+      "patior/nascor/morior preview active meaning"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "incarno",
+      "crucifigo",
+      "patior",
+      "sepelio",
+      "nascor",
+      "morior",
+      "eligo",
+      "trado",
+      "annuntio",
+      "signum"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 5,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Incarnatus est",
+      "grammarFocus": "Parfait passif ; participe",
+      "readingOutcome": "Analyser les constructions au parfait passif et l’accord du participe.",
+      "objectives": [
+        "Analyser la construction participe parfait passif + sum.",
+        "Utiliser l’accord du participe pour identifier les rapports avec le sujet.",
+        "Opposer le parfait passif au parfait actif.",
+        "Prévisualiser les exceptions déponentes nommées sans les confondre avec un sens passif.",
+        "Apprendre les dix lemmes figés de la leçon 16."
+      ]
+    }
+  }
+}

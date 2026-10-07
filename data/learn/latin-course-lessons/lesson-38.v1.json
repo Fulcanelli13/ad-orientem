@@ -1,0 +1,1537 @@
+{
+  "version": "latin-course-lesson-38-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 38,
+  "stage": {
+    "number": 8,
+    "title": "Read the Missal"
+  },
+  "title": "Read the Propers",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 75,
+  "progressionStep": "independent-liturgical-reading",
+  "grammarFocus": "Temporal, Sanctoral and Commons",
+  "readingOutcome": "Read unseen Introit, Collect, Epistle, chants, Gospel, Offertory, Secret, Communion and Postcommunion.",
+  "authoringPolicy": {
+    "method": "identify part -> first read -> clause skeleton -> selective support -> reread",
+    "vocabularyPolicy": "Zero new tracked vocabulary.",
+    "authenticTextPolicy": "One coherent normal Proper set is used.",
+    "copyrightPolicy": "Liturgical Latin source text; original pedagogy.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [],
+    "recycled": [
+      "iustus",
+      "sapientia",
+      "lingua",
+      "iudicium",
+      "lex",
+      "Deus",
+      "cor",
+      "neque",
+      "iniquitas",
+      "sanctus",
+      "tuus",
+      "quaeso",
+      "Dominus",
+      "ut",
+      "qui/quae/quod",
+      "maiestas",
+      "nos",
+      "beatus",
+      "sine",
+      "non",
+      "nec",
+      "spero",
+      "quis/quid",
+      "hic/haec/hoc",
+      "laudo",
+      "facio",
+      "vita",
+      "gloria",
+      "aeternus",
+      "malus",
+      "ideo",
+      "bonus",
+      "ecclesia",
+      "omnis",
+      "misericordia",
+      "veritas",
+      "per",
+      "nox",
+      "corona",
+      "cum",
+      "accipio",
+      "quando",
+      "et",
+      "vos",
+      "homo",
+      "servus",
+      "dico",
+      "si",
+      "filius",
+      "nomen",
+      "hostia",
+      "memoria",
+      "contra",
+      "super",
+      "suus",
+      "ipse",
+      "quoniam",
+      "venio",
+      "se",
+      "meus",
+      "in",
+      "tu",
+      "is/ea/id",
+      "omnipotens",
+      "confiteor",
+      "mundus",
+      "angelus",
+      "benedico",
+      "patior",
+      "scribo",
+      "timor",
+      "regnum",
+      "do",
+      "domus",
+      "caelum",
+      "virtus",
+      "salus",
+      "anima",
+      "tribuo",
+      "corpus",
+      "honor",
+      "sequor",
+      "grex",
+      "autem",
+      "nolo",
+      "pater",
+      "ubi",
+      "enim",
+      "sum",
+      "ego"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Bruno",
+      "forms": [
+        "Brunonis",
+        "Brunone"
+      ],
+      "gloss": {
+        "en": "Bruno",
+        "fr": "Bruno"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Confessor",
+      "forms": [
+        "Confessoris",
+        "Confessore"
+      ],
+      "gloss": {
+        "en": "Confessor",
+        "fr": "Confesseur"
+      },
+      "trackedLesson": null,
+      "status": "liturgical-title"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christum",
+        "Christo"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesu"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "palma",
+      "forms": [
+        "palma"
+      ],
+      "gloss": {
+        "en": "palm tree",
+        "fr": "palmier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cedrus",
+      "forms": [
+        "cedrus"
+      ],
+      "gloss": {
+        "en": "cedar",
+        "fr": "cèdre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "atrium",
+      "forms": [
+        "atriis"
+      ],
+      "gloss": {
+        "en": "court / atrium",
+        "fr": "parvis / cour"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "psallo",
+      "forms": [
+        "psallere"
+      ],
+      "gloss": {
+        "en": "sing psalms / praise",
+        "fr": "psalmodier / chanter"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Altissimus",
+      "forms": [
+        "Altissime"
+      ],
+      "gloss": {
+        "en": "Most High",
+        "fr": "Très-Haut"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "spectaculum",
+      "forms": [
+        "Spectaculum"
+      ],
+      "gloss": {
+        "en": "spectacle / public show",
+        "fr": "spectacle"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "prudens",
+      "forms": [
+        "prudentes"
+      ],
+      "gloss": {
+        "en": "prudent / wise",
+        "fr": "prudent / sage"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "infirmus",
+      "forms": [
+        "infirmi"
+      ],
+      "gloss": {
+        "en": "weak",
+        "fr": "faible"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "fortis",
+      "forms": [
+        "fortes"
+      ],
+      "gloss": {
+        "en": "strong",
+        "fr": "fort"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "laboro",
+      "forms": [
+        "laboramus"
+      ],
+      "gloss": {
+        "en": "labour / work",
+        "fr": "travailler"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "persecutio",
+      "forms": [
+        "persecutionem"
+      ],
+      "gloss": {
+        "en": "persecution",
+        "fr": "persécution"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Alleluia",
+      "forms": [
+        "Alleluia"
+      ],
+      "gloss": {
+        "en": "Alleluia",
+        "fr": "Alléluia"
+      },
+      "trackedLesson": null,
+      "status": "liturgical-formula"
+    },
+    {
+      "lemma": "pusillus",
+      "forms": [
+        "pusillus"
+      ],
+      "gloss": {
+        "en": "little / small",
+        "fr": "petit"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "complaceo",
+      "forms": [
+        "complacuit"
+      ],
+      "gloss": {
+        "en": "be pleased",
+        "fr": "se complaire"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "eleemosyna",
+      "forms": [
+        "eleemosynam"
+      ],
+      "gloss": {
+        "en": "alms",
+        "fr": "aumône"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "thesaurus",
+      "forms": [
+        "thesaurum"
+      ],
+      "gloss": {
+        "en": "treasure",
+        "fr": "trésor"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "tinea",
+      "forms": [
+        "tinea"
+      ],
+      "gloss": {
+        "en": "moth",
+        "fr": "teigne / mite"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "desiderium",
+      "forms": [
+        "desiderium"
+      ],
+      "gloss": {
+        "en": "desire",
+        "fr": "désir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "oblatio",
+      "forms": [
+        "oblatio"
+      ],
+      "gloss": {
+        "en": "offering",
+        "fr": "oblation"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "humilitas",
+      "forms": [
+        "humilitatis"
+      ],
+      "gloss": {
+        "en": "humility",
+        "fr": "humilité"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "purifico",
+      "forms": [
+        "purificet"
+      ],
+      "gloss": {
+        "en": "purify",
+        "fr": "purifier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "relinquo",
+      "forms": [
+        "reliquistis"
+      ],
+      "gloss": {
+        "en": "leave / abandon",
+        "fr": "laisser / abandonner"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "centuplum",
+      "forms": [
+        "centuplum"
+      ],
+      "gloss": {
+        "en": "a hundredfold",
+        "fr": "le centuple"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "alimentum",
+      "forms": [
+        "alimenta"
+      ],
+      "gloss": {
+        "en": "nourishment",
+        "fr": "nourriture"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vir",
+      "forms": [
+        "vir"
+      ],
+      "gloss": {
+        "en": "man",
+        "fr": "homme"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "munio",
+      "forms": [
+        "muniamur"
+      ],
+      "gloss": {
+        "en": "fortify / protect",
+        "fr": "fortifier / protéger"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "stbruno-introit-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Introit — C5-1",
+      "sourceLatin": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur: plantatus in domo Domini: in atriis domus Dei nostri. Bonum est confiteri Domino: et psallere nomini tuo, Altissime.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "stbruno-collect-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno Confessor",
+      "section": "Proper Collect — Sancti/10-06",
+      "sourceLatin": "Sancti Brunonis Confessoris tui, quaesumus, Domine, intercessionibus adjuvemur: ut, qui majestatem tuam graviter delinquendo offendimus, ejus meritis et precibus, nostrorum delictorum veniam consequamur. Per Dominum nostrum.",
+      "provenanceNote": "Proper text in Sancti/10-06. The feast rule inherits the Confessor non-pontiff common; orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Sancti/10-06.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "stbruno-epistle-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Epistle — 1 Corinthians 4:9-14",
+      "sourceLatin": "Fratres: Spectaculum facti sumus mundo et Angelis et hominibus. Nos stulti propter Christum, vos autem prudentes in Christo: nos infirmi, vos autem fortes: vos nobiles, nos autem ignobiles. Usque in hanc horam et esurimus, et sitimus, et nudi sumus, et colaphis caedimur, et instabiles sumus, et laboramus operantes manibus nostris: maledicimur, et benedicimus: persecutionem patimur, et sustinemus: blasphemamur, et obsecramus: tamquam purgamenta hujus mundi facti sumus, omnium peripsema usque adhuc. Non ut confundant vos, haec scribo, sed ut filios meos carissimos moneo: in Christo Jesu, Domino nostro.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "stbruno-gradual-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Gradual and Alleluia — Ps 36:30-31; Ps 111:1",
+      "sourceLatin": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium. Lex Dei ejus in corde ipsius: et non supplantabuntur gressus ejus. Alleluia, alleluia. Beatus vir, qui timet Dominum: in mandatis ejus cupit nimis. Alleluia.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "stbruno-gospel-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Gospel — Luke 12:32-34",
+      "sourceLatin": "In illo tempore: Dixit Jesus discipulis suis: Nolite timere, pusillus grex, quia complacuit Patri vestro dare vobis regnum. Vendite quae possidetis, et date eleemosynam. Facite vobis sacculos, qui non veterascunt, thesaurum non deficientem in caelis: quo fur non appropiat, neque tinea corrumpit. Ubi enim thesaurus vester est, ibi et cor vestrum erit.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "stbruno-offertory-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Offertory — Ps 20:2-3",
+      "sourceLatin": "In virtute tua, Domine, laetabitur justus, et super salutare tuum exsultabit vehementer: desiderium animae ejus tribuisti ei.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "stbruno-secret-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Secret — C5-1",
+      "sourceLatin": "Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis oblatio et pro tuorum tibi grata sit honore Sanctorum, et nos corpore pariter et mente purificet. Per Dominum nostrum.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "stbruno-communion-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Communion — Matthew 19:28-29",
+      "sourceLatin": "Amen, dico vobis: quod vos, qui reliquistis omnia et secuti estis me, centuplum accipietis, et vitam aeternam possidebitis.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "stbruno-postcommunion-l38",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Postcommunion — C5-1 with Bruno substitution",
+      "sourceLatin": "Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedente beato Brunone Confessore tuo, per haec contra omnia adversa muniamur. Per Dominum nostrum.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "properReadingFramework": {
+    "route": [
+      "identify part",
+      "predict register",
+      "first uninterrupted read",
+      "mark clause skeleton",
+      "consult support only for blockers",
+      "reread continuously"
+    ],
+    "parts": [
+      "Introit",
+      "Collect",
+      "Epistle",
+      "Gradual/Alleluia",
+      "Gospel",
+      "Offertory",
+      "Secret",
+      "Communion",
+      "Postcommunion"
+    ],
+    "rule": "Liturgical function supplies expectations before lexical detail.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l38-b1",
+      "type": "method",
+      "title": "Identify the part first",
+      "learnerCopy": {
+        "en": "An Introit, Collect, Epistle and Secret have different expected shapes; liturgical position is reading information.",
+        "fr": "Introït, collecte, épître et secrète ont des formes attendues différentes ; la position liturgique est une information de lecture."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Identifier d’abord la partie"
+        }
+      }
+    },
+    {
+      "id": "l38-b2",
+      "type": "proper",
+      "title": "Introit and chants",
+      "sourceId": "stbruno-introit-l38",
+      "learnerCopy": {
+        "en": "Expect Psalmic compression and parallelism. St Bruno inherits the Confessor non-pontiff common here: the Introit opens Justus ut palma, while the Gradual later uses Os justi.",
+        "fr": "Attendez une syntaxe psalmique condensée et parallèle. Saint Bruno hérite ici du Commun des confesseurs non pontifes : l'Introït commence par Justus ut palma, tandis que le Graduel emploie ensuite Os justi."
+      },
+      "referenceIds": [
+        "stbruno-introit-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Introït et chants"
+        }
+      }
+    },
+    {
+      "id": "l38-b3",
+      "type": "proper",
+      "title": "Collect, Secret, Postcommunion",
+      "sourceId": "stbruno-collect-l38",
+      "learnerCopy": {
+        "en": "Reuse the prayer architecture already learned.",
+        "fr": "Réutilisez l'architecture de prière déjà apprise."
+      },
+      "referenceIds": [
+        "stbruno-collect-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Oraison, Secrète, Postcommunion"
+        }
+      }
+    },
+    {
+      "id": "l38-b4",
+      "type": "proper",
+      "title": "Epistle and Gospel",
+      "sourceId": "stbruno-gospel-l38",
+      "learnerCopy": {
+        "en": "The inherited Epistle is 1 Corinthians 4:9–14 and the Gospel is Luke 12:32–34. Track finite verbs, contrasts and pronouns rather than assuming the older Confessor-common readings.",
+        "fr": "L'Épître héritée est 1 Corinthiens 4, 9–14 et l'Évangile Luc 12, 32–34. Suivez les verbes conjugués, les contrastes et les pronoms au lieu de supposer les anciennes lectures du Commun."
+      },
+      "referenceIds": [
+        "stbruno-gospel-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Épître et Évangile"
+        }
+      }
+    },
+    {
+      "id": "l38-b5",
+      "type": "independence",
+      "title": "Infer before glossing",
+      "learnerCopy": {
+        "en": "Unknown words should first be tested against morphology and context.",
+        "fr": "Les mots inconnus doivent d'abord être testés par la morphologie et le contexte."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Inférer avant de consulter une glose"
+        }
+      }
+    },
+    {
+      "id": "l38-b6",
+      "type": "milestone",
+      "title": "From Introit to Postcommunion",
+      "learnerCopy": {
+        "en": "The goal is one continuous normal-Proper reading route.",
+        "fr": "Le but est une lecture continue du propre normal, de l'Introït à la Postcommunion."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "De l’Introït à la Postcommunion"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l38-p1",
+      "sourceId": "stbruno-introit-l38",
+      "sourceLatin": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur: plantatus in domo Domini: in atriis domus Dei nostri. Bonum est confiteri Domino: et psallere nomini tuo, Altissime.",
+      "instructionalDisplay": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur: plantatus in domo Domini: in atriis domus Dei nostri. Bonum est confiteri Domino: et psallere nomini tuo, Altissime.",
+      "targetLemmas": [
+        "iustus",
+        "domus",
+        "Dominus",
+        "bonus",
+        "confiteor",
+        "nomen",
+        "tuus"
+      ],
+      "supportLemmas": [
+        "palma",
+        "cedrus",
+        "atrium",
+        "psallo",
+        "Altissimus"
+      ]
+    },
+    {
+      "id": "l38-p2",
+      "sourceId": "stbruno-collect-l38",
+      "sourceLatin": "Sancti Brunonis Confessoris tui, quaesumus, Domine, intercessionibus adjuvemur: ut, qui majestatem tuam graviter delinquendo offendimus, ejus meritis et precibus, nostrorum delictorum veniam consequamur. Per Dominum nostrum.",
+      "instructionalDisplay": "Sancti Brunonis Confessoris tui, quaesumus, Domine, intercessionibus adjuvemur: ut, qui majestatem tuam graviter delinquendo offendimus, ejus meritis et precibus, nostrorum delictorum veniam consequamur. Per Dominum nostrum.",
+      "targetLemmas": [
+        "sanctus",
+        "tuus",
+        "quaeso",
+        "Dominus",
+        "ut",
+        "qui/quae/quod",
+        "maiestas",
+        "nos"
+      ],
+      "supportLemmas": [
+        "Bruno",
+        "Confessor"
+      ]
+    },
+    {
+      "id": "l38-p3",
+      "sourceId": "stbruno-epistle-l38",
+      "sourceLatin": "Fratres: Spectaculum facti sumus mundo et Angelis et hominibus. Nos stulti propter Christum, vos autem prudentes in Christo: nos infirmi, vos autem fortes: vos nobiles, nos autem ignobiles. Usque in hanc horam et esurimus, et sitimus, et nudi sumus, et colaphis caedimur, et instabiles sumus, et laboramus operantes manibus nostris: maledicimur, et benedicimus: persecutionem patimur, et sustinemus: blasphemamur, et obsecramus: tamquam purgamenta hujus mundi facti sumus, omnium peripsema usque adhuc. Non ut confundant vos, haec scribo, sed ut filios meos carissimos moneo: in Christo Jesu, Domino nostro.",
+      "instructionalDisplay": "Fratres: Spectaculum facti sumus mundo et Angelis et hominibus. Nos stulti propter Christum, vos autem prudentes in Christo: nos infirmi, vos autem fortes: vos nobiles, nos autem ignobiles. Usque in hanc horam et esurimus, et sitimus, et nudi sumus, et colaphis caedimur, et instabiles sumus, et laboramus operantes manibus nostris: maledicimur, et benedicimus: persecutionem patimur, et sustinemus: blasphemamur, et obsecramus: tamquam purgamenta hujus mundi facti sumus, omnium peripsema usque adhuc. Non ut confundant vos, haec scribo, sed ut filios meos carissimos moneo: in Christo Jesu, Domino nostro.",
+      "targetLemmas": [
+        "nos",
+        "mundus",
+        "angelus",
+        "homo",
+        "vos",
+        "autem",
+        "patior",
+        "benedico",
+        "scribo",
+        "filius",
+        "meus",
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "Christus",
+        "Iesus",
+        "spectaculum",
+        "prudens",
+        "infirmus",
+        "fortis",
+        "laboro",
+        "persecutio"
+      ]
+    },
+    {
+      "id": "l38-p4",
+      "sourceId": "stbruno-gradual-l38",
+      "sourceLatin": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium. Lex Dei ejus in corde ipsius: et non supplantabuntur gressus ejus. Alleluia, alleluia. Beatus vir, qui timet Dominum: in mandatis ejus cupit nimis. Alleluia.",
+      "instructionalDisplay": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium. Lex Dei ejus in corde ipsius: et non supplantabuntur gressus ejus. Alleluia, alleluia. Beatus vir, qui timet Dominum: in mandatis ejus cupit nimis. Alleluia.",
+      "targetLemmas": [
+        "iustus",
+        "sapientia",
+        "lingua",
+        "iudicium",
+        "lex",
+        "Deus",
+        "cor",
+        "ipse",
+        "non",
+        "beatus",
+        "timor",
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "Alleluia",
+        "vir"
+      ]
+    },
+    {
+      "id": "l38-p5",
+      "sourceId": "stbruno-gospel-l38",
+      "sourceLatin": "In illo tempore: Dixit Jesus discipulis suis: Nolite timere, pusillus grex, quia complacuit Patri vestro dare vobis regnum. Vendite quae possidetis, et date eleemosynam. Facite vobis sacculos, qui non veterascunt, thesaurum non deficientem in caelis: quo fur non appropiat, neque tinea corrumpit. Ubi enim thesaurus vester est, ibi et cor vestrum erit.",
+      "instructionalDisplay": "In illo tempore: Dixit Jesus discipulis suis: Nolite timere, pusillus grex, quia complacuit Patri vestro dare vobis regnum. Vendite quae possidetis, et date eleemosynam. Facite vobis sacculos, qui non veterascunt, thesaurum non deficientem in caelis: quo fur non appropiat, neque tinea corrumpit. Ubi enim thesaurus vester est, ibi et cor vestrum erit.",
+      "targetLemmas": [
+        "dico",
+        "nolo",
+        "timor",
+        "grex",
+        "pater",
+        "vos",
+        "do",
+        "regnum",
+        "facio",
+        "caelum",
+        "ubi",
+        "enim",
+        "cor",
+        "sum"
+      ],
+      "supportLemmas": [
+        "Iesus",
+        "pusillus",
+        "complaceo",
+        "eleemosyna",
+        "thesaurus",
+        "tinea"
+      ]
+    },
+    {
+      "id": "l38-p6",
+      "sourceId": "stbruno-offertory-l38",
+      "sourceLatin": "In virtute tua, Domine, laetabitur justus, et super salutare tuum exsultabit vehementer: desiderium animae ejus tribuisti ei.",
+      "instructionalDisplay": "In virtute tua, Domine, laetabitur justus, et super salutare tuum exsultabit vehementer: desiderium animae ejus tribuisti ei.",
+      "targetLemmas": [
+        "in",
+        "virtus",
+        "tuus",
+        "Dominus",
+        "iustus",
+        "et",
+        "super",
+        "salus",
+        "anima",
+        "is/ea/id",
+        "tribuo"
+      ],
+      "supportLemmas": [
+        "desiderium"
+      ]
+    },
+    {
+      "id": "l38-p7",
+      "sourceId": "stbruno-secret-l38",
+      "sourceLatin": "Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis oblatio et pro tuorum tibi grata sit honore Sanctorum, et nos corpore pariter et mente purificet. Per Dominum nostrum.",
+      "instructionalDisplay": "Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis oblatio et pro tuorum tibi grata sit honore Sanctorum, et nos corpore pariter et mente purificet. Per Dominum nostrum.",
+      "targetLemmas": [
+        "nos",
+        "quaeso",
+        "omnipotens",
+        "Deus",
+        "ut",
+        "tuus",
+        "tu",
+        "sanctus",
+        "corpus",
+        "et",
+        "honor",
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "humilitas",
+        "oblatio",
+        "purifico"
+      ]
+    },
+    {
+      "id": "l38-p8",
+      "sourceId": "stbruno-communion-l38",
+      "sourceLatin": "Amen, dico vobis: quod vos, qui reliquistis omnia et secuti estis me, centuplum accipietis, et vitam aeternam possidebitis.",
+      "instructionalDisplay": "Amen, dico vobis: quod vos, qui reliquistis omnia et secuti estis me, centuplum accipietis, et vitam aeternam possidebitis.",
+      "targetLemmas": [
+        "dico",
+        "vos",
+        "qui/quae/quod",
+        "omnis",
+        "et",
+        "sequor",
+        "ego",
+        "accipio",
+        "vita",
+        "aeternus"
+      ],
+      "supportLemmas": [
+        "relinquo",
+        "centuplum"
+      ]
+    },
+    {
+      "id": "l38-p9",
+      "sourceId": "stbruno-postcommunion-l38",
+      "sourceLatin": "Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedente beato Brunone Confessore tuo, per haec contra omnia adversa muniamur. Per Dominum nostrum.",
+      "instructionalDisplay": "Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedente beato Brunone Confessore tuo, per haec contra omnia adversa muniamur. Per Dominum nostrum.",
+      "targetLemmas": [
+        "quaeso",
+        "omnipotens",
+        "Deus",
+        "ut",
+        "qui/quae/quod",
+        "beatus",
+        "tuus",
+        "per",
+        "hic/haec/hoc",
+        "contra",
+        "omnis",
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "alimentum",
+        "Bruno",
+        "Confessor",
+        "munio"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l38-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which part should behave most like Psalmic chant?",
+      "stimulus": null,
+      "options": [
+        "Introit",
+        "Collect",
+        "Secret",
+        "Postcommunion"
+      ],
+      "expectedAnswer": "Introit",
+      "acceptedVariants": [
+        "Introit"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "stbruno-introit-l38",
+      "skills": [
+        "proper:genre"
+      ],
+      "referenceIds": [
+        "stbruno-introit-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle partie doit se comporter le plus comme un chant psalmique ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Introït",
+            "Oraison",
+            "Secrète",
+            "Postcommunion"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which parts most directly reuse Collect architecture?",
+      "stimulus": null,
+      "options": [
+        "Collect, Secret and Postcommunion",
+        "Epistle and Gospel",
+        "Introit only",
+        "Gradual only"
+      ],
+      "expectedAnswer": "Collect, Secret and Postcommunion",
+      "acceptedVariants": [
+        "Collect, Secret and Postcommunion"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "stbruno-collect-l38",
+      "skills": [
+        "proper:prayer"
+      ],
+      "referenceIds": [
+        "stbruno-collect-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelles parties réutilisent le plus directement l’architecture de l’oraison ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Oraison, Secrète et Postcommunion",
+            "Épître et Évangile",
+            "Introït seulement",
+            "Graduel seulement"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should you locate first in the Gospel?",
+      "stimulus": null,
+      "options": [
+        "finite verbs and clause connectors",
+        "every dictionary gloss",
+        "chant repetition",
+        "the Collect conclusion"
+      ],
+      "expectedAnswer": "finite verbs and clause connectors",
+      "acceptedVariants": [
+        "finite verbs and clause connectors"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "stbruno-gospel-l38",
+      "skills": [
+        "proper:gospel"
+      ],
+      "referenceIds": [
+        "stbruno-gospel-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que faut-il repérer d’abord dans l’Évangile ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "les verbes finis et les connecteurs de propositions",
+            "chaque glose de dictionnaire",
+            "la répétition du chant",
+            "la conclusion de l’oraison"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should an unknown word trigger first?",
+      "stimulus": null,
+      "options": [
+        "morphology and context inference",
+        "a new vocabulary lesson",
+        "abandonment",
+        "classical rewriting"
+      ],
+      "expectedAnswer": "morphology and context inference",
+      "acceptedVariants": [
+        "morphology and context inference"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:independence"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que doit déclencher en premier un mot inconnu ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "l’inférence morphologique et contextuelle",
+            "une nouvelle leçon de vocabulaire",
+            "l’abandon",
+            "une réécriture classique"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which inherited text begins Spectaculum facti sumus mundo et Angelis et hominibus?",
+      "stimulus": null,
+      "options": [
+        "Epistle",
+        "Secret",
+        "Communion",
+        "Introit"
+      ],
+      "expectedAnswer": "Epistle",
+      "acceptedVariants": [
+        "Epistle"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "The pinned C5-1 common supplies 1 Corinthians 4:9–14 as the Epistle.",
+      "difficulty": 1,
+      "sourceId": "stbruno-epistle-l38",
+      "skills": [
+        "proper:navigation"
+      ],
+      "referenceIds": [
+        "stbruno-epistle-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel texte hérité commence par Spectaculum facti sumus mundo et Angelis et hominibus ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Le commun C5-1 figé fournit 1 Corinthiens 4,9–14 comme Épître.",
+          "options": [
+            "Épître",
+            "Secrète",
+            "Communion",
+            "Introït"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which inherited text begins Os justi meditabitur sapientiam?",
+      "stimulus": null,
+      "options": [
+        "Gradual/Alleluia",
+        "Introit",
+        "Offertory",
+        "Postcommunion"
+      ],
+      "expectedAnswer": "Gradual/Alleluia",
+      "acceptedVariants": [
+        "Gradual/Alleluia"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "In the pinned C5-1 common, Os justi is the Gradual; the Introit is Justus ut palma.",
+      "difficulty": 1,
+      "sourceId": "stbruno-gradual-l38",
+      "skills": [
+        "proper:navigation"
+      ],
+      "referenceIds": [
+        "stbruno-gradual-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel texte hérité commence par Os justi meditabitur sapientiam ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Dans le commun C5-1 figé, Os justi est le Graduel ; l’Introït est Justus ut palma.",
+          "options": [
+            "Graduel / Alléluia",
+            "Introït",
+            "Offertoire",
+            "Postcommunion"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which text ends the Proper route?",
+      "stimulus": null,
+      "options": [
+        "Postcommunion",
+        "Gospel",
+        "Offertory",
+        "Introit"
+      ],
+      "expectedAnswer": "Postcommunion",
+      "acceptedVariants": [
+        "Postcommunion"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": "stbruno-postcommunion-l38",
+      "skills": [
+        "proper:navigation"
+      ],
+      "referenceIds": [
+        "stbruno-postcommunion-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel texte termine le parcours des Propres ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Postcommunion",
+            "Évangile",
+            "Offertoire",
+            "Introït"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is Lesson 38's milestone?",
+      "stimulus": null,
+      "options": [
+        "Unseen normal Propers.",
+        "Complete Ordinary.",
+        "Requiem and Holy Week specialized registers.",
+        "Unseen authentic Missal capstone."
+      ],
+      "expectedAnswer": "Unseen normal Propers.",
+      "acceptedVariants": [
+        "Unseen normal Propers."
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de la leçon 38 ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Propres ordinaires inconnus.",
+            "Ordinaire complet.",
+            "Registres spécialisés du Requiem et de la Semaine sainte.",
+            "Couronnement sur un texte authentique inconnu du Missel."
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Does Lesson 38 introduce tracked vocabulary?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:vocabulary-neutral"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "La leçon 38 introduit-elle du vocabulaire suivi ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l38-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should guide reading before lexical detail?",
+      "stimulus": null,
+      "options": [
+        "liturgical function",
+        "alphabetical order",
+        "English word order",
+        "new grammar"
+      ],
+      "expectedAnswer": "liturgical function",
+      "acceptedVariants": [
+        "liturgical function"
+      ],
+      "hint": "Use the liturgical part and clause structure first.",
+      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:genre"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui doit guider la lecture avant le détail lexical ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "la fonction liturgique",
+            "l’ordre alphabétique",
+            "l’ordre des mots français",
+            "une nouvelle grammaire"
+          ]
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Read a complete unseen normal Proper set.",
+    "Use liturgical genre as a prediction tool.",
+    "Maintain continuous reading through chant, prose and narrative.",
+    "Introduce zero new tracked vocabulary."
+  ],
+  "checkpoint": {
+    "id": "l38-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l38-e1",
+        "l38-e2",
+        "l38-e3",
+        "l38-e4",
+        "l38-e5",
+        "l38-e6",
+        "l38-e7",
+        "l38-e8",
+        "l38-e9",
+        "l38-e10"
+      ]
+    },
+    "mustKnow": [
+      "genre prediction",
+      "prayer architecture",
+      "narrative tracking",
+      "full Proper navigation"
+    ],
+    "progressionGate": "Unseen normal Propers.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [],
+    "silentIntroductions": [],
+    "authenticSourceCount": 9,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true,
+    "liturgicalSourcePin": {
+      "repository": "DivinumOfficium/divinum-officium",
+      "commit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "feastPath": "web/www/missa/Latin/Sancti/10-06.txt",
+      "inheritedCommonPath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "inheritance": "Sancti/10-06 `vide C5`; pinned current common `[Missa] Justus` in C5-1",
+      "accuracyStatus": "PINNED_SOURCE_ALIGNED"
+    }
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Lire les Propres",
+      "grammarFocus": "Temporal, Sanctoral et Communs",
+      "readingOutcome": "Lire sans préparation un Introït, une oraison, une Épître, des chants, un Évangile, un Offertoire, une Secrète, une Communion et une Postcommunion.",
+      "objectives": [
+        "Lire un ensemble complet de Propres ordinaires inconnus.",
+        "Utiliser le genre liturgique comme outil de prédiction.",
+        "Maintenir une lecture continue à travers chant, prose et récit.",
+        "N’introduire aucun nouveau vocabulaire suivi."
+      ]
+    }
+  }
+}

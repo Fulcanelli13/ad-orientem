@@ -1,0 +1,1169 @@
+{
+  "version": "latin-course-lesson-24-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 24,
+  "stage": {
+    "number": 5,
+    "title": "Prayer Language"
+  },
+  "title": "Ut digni efficiamur",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "passage",
+  "grammarFocus": "Result and purpose",
+  "readingOutcome": "Distinguish result from purpose in authentic prayer clauses.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen Lesson 24 allocation is introduced; comparison and result vocabulary is grounded in authentic prayer/scriptural examples.",
+    "authenticTextPolicy": "Purpose/result contrast is anchored in Marian versicle, Vulgate and traditional hymn texts.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "efficio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "bring about / make / render",
+          "fr": "rendre / produire"
+        },
+        "frozenLesson": 24
+      },
+      {
+        "lemma": "promissio",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "promise",
+          "fr": "promesse"
+        },
+        "frozenLesson": 24
+      },
+      {
+        "lemma": "dignus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "worthy",
+          "fr": "digne"
+        },
+        "frozenLesson": 24
+      },
+      {
+        "lemma": "mereor",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "merit / deserve / be deemed worthy",
+          "fr": "mériter / être jugé digne"
+        },
+        "frozenLesson": 24
+      },
+      {
+        "lemma": "magis",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "more / rather",
+          "fr": "davantage / plutôt"
+        },
+        "frozenLesson": 24
+      },
+      {
+        "lemma": "tantum",
+        "partOfSpeech": "adverb/adjective",
+        "gloss": {
+          "en": "so much / so great / only",
+          "fr": "tant / si grand / seulement"
+        },
+        "frozenLesson": 24
+      },
+      {
+        "lemma": "plus",
+        "partOfSpeech": "adverb/noun",
+        "gloss": {
+          "en": "more",
+          "fr": "plus"
+        },
+        "frozenLesson": 24
+      },
+      {
+        "lemma": "nimis",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "exceedingly / very much",
+          "fr": "extrêmement / beaucoup"
+        },
+        "frozenLesson": 24
+      }
+    ],
+    "recycled": [
+      "oro",
+      "pro",
+      "nos",
+      "sanctus",
+      "Deus",
+      "ut",
+      "sic",
+      "enim",
+      "mundus",
+      "filius",
+      "suus",
+      "unus",
+      "omnis",
+      "qui/quae/quod",
+      "non",
+      "sed",
+      "habeo",
+      "vita",
+      "aeternus",
+      "sacramentum",
+      "veneror",
+      "sum",
+      "do",
+      "accipio",
+      "autem",
+      "tuus",
+      "ego",
+      "credo",
+      "beatus",
+      "hic/haec/hoc",
+      "is/ea/id"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Genetrix",
+      "forms": [
+        "Genitrix"
+      ],
+      "gloss": {
+        "en": "Mother / she who gives birth",
+        "fr": "Mère / Génitrice"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "diligo",
+      "forms": [
+        "dilexit",
+        "diligis"
+      ],
+      "gloss": {
+        "en": "love",
+        "fr": "aimer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "unigenitus",
+      "forms": [
+        "unigenitum"
+      ],
+      "gloss": {
+        "en": "only-begotten",
+        "fr": "Fils unique"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pereo",
+      "forms": [
+        "pereat"
+      ],
+      "gloss": {
+        "en": "perish",
+        "fr": "périr"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cernuus",
+      "forms": [
+        "cernui"
+      ],
+      "gloss": {
+        "en": "bowed / prostrate",
+        "fr": "inclinés / prosternés"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Simon",
+      "forms": [
+        "Simon"
+      ],
+      "gloss": {
+        "en": "Simon",
+        "fr": "Simon"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Ioannes",
+      "forms": [
+        "Joannis"
+      ],
+      "gloss": {
+        "en": "John",
+        "fr": "Jean"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "honoro",
+      "forms": [
+        "honorati"
+      ],
+      "gloss": {
+        "en": "honour",
+        "fr": "honorer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "amicus",
+      "forms": [
+        "amici"
+      ],
+      "gloss": {
+        "en": "friend",
+        "fr": "ami"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "conforto",
+      "forms": [
+        "confortatus est"
+      ],
+      "gloss": {
+        "en": "strengthen",
+        "fr": "fortifier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "principatus",
+      "forms": [
+        "principatus"
+      ],
+      "gloss": {
+        "en": "principality / rank",
+        "fr": "principauté"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christi"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "marian-versicle-digni-l24",
+      "sourceType": "primary-prayer",
+      "work": "Traditional Rosary / Angelus versicle",
+      "section": "Versicle before the collect",
+      "sourceLatin": "Ora pro nobis, sancta Dei Genitrix. Ut digni efficiamur promissionibus Christi.",
+      "provenanceNote": "The ut-clause expresses the desired outcome of the prayer: that we may be made worthy of Christ's promises."
+    },
+    {
+      "id": "vulg-jn3-16-l24",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 3:16",
+      "sourceLatin": "Sic enim Deus dilexit mundum, ut Filium suum unigenitum daret: ut omnis qui credit in eum, non pereat, sed habeat vitam aeternam.",
+      "provenanceNote": "sic ... ut provides a classic result/consequence frame, followed by a further goal clause.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "tantum-ergo-l24",
+      "sourceType": "primary-liturgical-hymn",
+      "work": "Tantum ergo Sacramentum",
+      "section": "Verse 1",
+      "sourceLatin": "Tantum ergo Sacramentum veneremur cernui.",
+      "provenanceNote": "tantum is introduced in a traditional Benediction hymn already encountered passively."
+    },
+    {
+      "id": "vulg-acts20-35-l24",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Actus Apostolorum 20:35",
+      "sourceLatin": "Beatius est magis dare quam accipere.",
+      "provenanceNote": "magis introduces comparison in a compact authentic sentence.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-jn21-15-l24",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 21:15",
+      "sourceLatin": "Simon Joannis, diligis me plus his?",
+      "provenanceNote": "plus introduces comparison/degree in a Gospel question.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps138-17-l24",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 138:17",
+      "sourceLatin": "Mihi autem nimis honorati sunt amici tui, Deus: nimis confortatus est principatus eorum.",
+      "provenanceNote": "nimis gives an intensifying degree adverb in Psalmic language.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; the new task is clause semantics and comparison/degree language.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "purposeResultFramework": {
+    "purposeQuestion": "What is the action intended to achieve?",
+    "resultQuestion": "What outcome follows from the degree/state stated in the main clause?",
+    "prayerOutcome": "Prayer clauses such as ut digni efficiamur express a desired result/outcome and can overlap semantically with purpose.",
+    "correlatives": [
+      "sic ... ut",
+      "ita ... ut",
+      "tantus/tantum ... ut"
+    ],
+    "caution": "Do not label every ut-clause 'purpose'. Read the semantic relationship between clauses.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l24-b1",
+      "type": "concept",
+      "title": "ut does not mean 'purpose' by itself",
+      "learnerCopy": {
+        "en": "An ut-clause can express purpose, result, desired outcome or other subordinate relationships. Lesson 24 asks what the main clause makes the ut-clause mean.",
+        "fr": "Une proposition en ut peut exprimer le but, le résultat, un résultat désiré ou d'autres relations. La leçon 24 demande ce que la principale fait signifier à la subordonnée en ut."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "ut ne signifie pas « but » à lui seul"
+        }
+      }
+    },
+    {
+      "id": "l24-b2",
+      "type": "authentic-example",
+      "title": "Ut digni efficiamur",
+      "sourceId": "marian-versicle-digni-l24",
+      "learnerCopy": {
+        "en": "Ora pro nobis ... ut digni efficiamur gives the desired outcome of the prayer: pray for us so that we may be made worthy. digni agrees with the understood 'we'; efficiamur is subjunctive of efficio.",
+        "fr": "Ora pro nobis ... ut digni efficiamur exprime le résultat désiré de la prière : priez pour nous afin que nous soyons rendus dignes. digni s'accorde avec le « nous » sous-entendu ; efficiamur est le subjonctif de efficio."
+      },
+      "referenceIds": [
+        "marian-versicle-digni-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ut digni efficiamur"
+        }
+      }
+    },
+    {
+      "id": "l24-b3",
+      "type": "result",
+      "title": "Sic ... ut marks consequence",
+      "sourceId": "vulg-jn3-16-l24",
+      "learnerCopy": {
+        "en": "Sic enim Deus dilexit mundum, ut Filium... daret links degree/manner in the main clause to its consequence: God so loved the world that He gave His Son. This is not the same relation as a simple command done for a purpose.",
+        "fr": "Sic enim Deus dilexit mundum, ut Filium... daret relie le degré de la principale à sa conséquence : Dieu a tant aimé le monde qu'il a donné son Fils. Ce rapport n'est pas celui d'un simple acte accompli dans un but."
+      },
+      "referenceIds": [
+        "vulg-jn3-16-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Sic ... ut marque la conséquence"
+        }
+      }
+    },
+    {
+      "id": "l24-b4",
+      "type": "comparison",
+      "title": "magis and plus compare",
+      "learnerCopy": {
+        "en": "magis and plus both express 'more', but they appear in different constructions. Beatius est magis dare... compares actions; diligis me plus his? expresses degree/comparison.",
+        "fr": "magis et plus expriment tous deux « davantage », mais dans des constructions différentes. Beatius est magis dare... compare des actions ; diligis me plus his? exprime un degré ou une comparaison."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "magis et plus comparent"
+        }
+      }
+    },
+    {
+      "id": "l24-b5",
+      "type": "degree",
+      "title": "tantum and nimis express degree",
+      "learnerCopy": {
+        "en": "tantum can mean so much/so great or only depending on context; nimis intensifies strongly. These degree words are useful because result clauses often depend on an expressed degree.",
+        "fr": "tantum peut signifier « tant / si grand » ou « seulement » selon le contexte ; nimis intensifie fortement. Ces mots de degré sont utiles car les propositions de résultat dépendent souvent d'un degré exprimé."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "tantum et nimis expriment le degré"
+        }
+      }
+    },
+    {
+      "id": "l24-b6",
+      "type": "retrieval",
+      "title": "Ask a semantic question",
+      "learnerCopy": {
+        "en": "For each ut-clause ask: intended goal, actual/logical result, or desired prayer outcome? Then verify subjunctive morphology and any degree-correlative words.",
+        "fr": "Pour chaque proposition en ut, demandez : but voulu, résultat logique/réel ou résultat désiré de la prière ? Vérifiez ensuite le subjonctif et les mots corrélatifs de degré."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Poser une question sémantique"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l24-p1",
+      "sourceId": "marian-versicle-digni-l24",
+      "sourceLatin": "Ora pro nobis, sancta Dei Genitrix. Ut digni efficiamur promissionibus Christi.",
+      "instructionalDisplay": "Ora pro nobis, sancta Dei Genitrix. Ut digni efficiamur promissionibus Christi.",
+      "translation": {
+        "en": "Pray for us, holy Mother of God, that we may be made worthy of the promises of Christ.",
+        "fr": "Priez pour nous, sainte Mère de Dieu, afin que nous soyons rendus dignes des promesses du Christ."
+      },
+      "targetLemmas": [
+        "oro",
+        "pro",
+        "nos",
+        "sanctus",
+        "Deus",
+        "ut",
+        "dignus",
+        "efficio",
+        "promissio"
+      ],
+      "supportLemmas": [
+        "Genetrix",
+        "Christus"
+      ]
+    },
+    {
+      "id": "l24-p2",
+      "sourceId": "vulg-jn3-16-l24",
+      "sourceLatin": "Sic enim Deus dilexit mundum, ut Filium suum unigenitum daret: ut omnis qui credit in eum, non pereat, sed habeat vitam aeternam.",
+      "instructionalDisplay": "Sic enim Deus dilexit mundum, ut Filium suum unigenitum daret: ut omnis qui credit in eum, non pereat, sed habeat vitam aeternam.",
+      "translation": {
+        "en": "For God so loved the world as to give His only-begotten Son; that whosoever believeth in Him may not perish, but may have life everlasting.",
+        "fr": "Car Dieu a tant aimé le monde qu'il a donné son Fils unique, afin que quiconque croit en lui ne périsse pas mais ait la vie éternelle."
+      },
+      "targetLemmas": [
+        "sic",
+        "enim",
+        "Deus",
+        "mundus",
+        "ut",
+        "filius",
+        "suus",
+        "unus",
+        "omnis",
+        "qui/quae/quod",
+        "is/ea/id",
+        "non",
+        "sed",
+        "habeo",
+        "vita",
+        "aeternus",
+        "credo"
+      ],
+      "supportLemmas": [
+        "diligo",
+        "unigenitus",
+        "pereo"
+      ]
+    },
+    {
+      "id": "l24-p3",
+      "sourceId": "tantum-ergo-l24",
+      "sourceLatin": "Tantum ergo Sacramentum veneremur cernui.",
+      "instructionalDisplay": "Tantum ergo Sacramentum veneremur cernui.",
+      "translation": {
+        "en": "Therefore let us venerate so great a Sacrament, bowing low.",
+        "fr": "Vénérons donc, prosternés, un si grand Sacrement."
+      },
+      "targetLemmas": [
+        "tantum",
+        "sacramentum",
+        "veneror"
+      ],
+      "supportLemmas": [
+        "cernuus"
+      ]
+    },
+    {
+      "id": "l24-p4",
+      "sourceId": "vulg-acts20-35-l24",
+      "sourceLatin": "Beatius est magis dare quam accipere.",
+      "instructionalDisplay": "Beatius est magis dare quam accipere.",
+      "translation": {
+        "en": "It is more blessed to give than to receive.",
+        "fr": "Il y a plus de bonheur à donner qu'à recevoir."
+      },
+      "targetLemmas": [
+        "sum",
+        "magis",
+        "do",
+        "accipio",
+        "beatus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l24-p5",
+      "sourceId": "vulg-jn21-15-l24",
+      "sourceLatin": "Simon Joannis, diligis me plus his?",
+      "instructionalDisplay": "Simon Joannis, diligis me plus his?",
+      "translation": {
+        "en": "Simon, son of John, lovest thou Me more than these?",
+        "fr": "Simon, fils de Jean, m'aimes-tu plus que ceux-ci ?"
+      },
+      "targetLemmas": [
+        "ego",
+        "plus",
+        "hic/haec/hoc"
+      ],
+      "supportLemmas": [
+        "Simon",
+        "Ioannes",
+        "diligo"
+      ]
+    },
+    {
+      "id": "l24-p6",
+      "sourceId": "vulg-ps138-17-l24",
+      "sourceLatin": "Mihi autem nimis honorati sunt amici tui, Deus: nimis confortatus est principatus eorum.",
+      "instructionalDisplay": "Mihi autem nimis honorati sunt amici tui, Deus: nimis confortatus est principatus eorum.",
+      "translation": {
+        "en": "But to me Thy friends, O God, are made exceedingly honourable: their principality is exceedingly strengthened.",
+        "fr": "Pour moi, vos amis, ô Dieu, sont extrêmement honorés ; leur puissance est grandement affermie."
+      },
+      "targetLemmas": [
+        "ego",
+        "autem",
+        "nimis",
+        "tuus",
+        "Deus",
+        "sum",
+        "is/ea/id"
+      ],
+      "supportLemmas": [
+        "honoro",
+        "amicus",
+        "conforto",
+        "principatus"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l24-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What relationship does ut digni efficiamur express?",
+      "stimulus": null,
+      "options": [
+        "desired prayer outcome",
+        "simple past narrative",
+        "direct address",
+        "genitive possession"
+      ],
+      "expectedAnswer": "desired prayer outcome",
+      "acceptedVariants": [
+        "desired prayer outcome"
+      ],
+      "hint": "It answers what the prayer seeks to achieve.",
+      "explanation": "The clause states the desired outcome of Ora pro nobis.",
+      "difficulty": 1,
+      "sourceId": "marian-versicle-digni-l24",
+      "skills": [
+        "syntax:result-purpose"
+      ],
+      "referenceIds": [
+        "marian-versicle-digni-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle relation ut digni efficiamur exprime-t-il ?",
+          "hint": "Il répond à ce que la prière cherche à obtenir.",
+          "explanation": "La proposition énonce le résultat désiré de Ora pro nobis.",
+          "options": [
+            "résultat désiré de la prière",
+            "simple récit au passé",
+            "adresse directe",
+            "possession au génitif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l24-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What lemma lies behind efficiamur?",
+      "stimulus": "efficiamur",
+      "options": [
+        "efficio",
+        "facio",
+        "fio",
+        "mereor"
+      ],
+      "expectedAnswer": "efficio",
+      "acceptedVariants": [
+        "efficio"
+      ],
+      "hint": "It means 'we may be made/rendered'.",
+      "explanation": "efficiamur is subjunctive of efficio.",
+      "difficulty": 1,
+      "sourceId": "marian-versicle-digni-l24",
+      "skills": [
+        "vocabulary:efficio",
+        "mood:subjunctive"
+      ],
+      "referenceIds": [
+        "marian-versicle-digni-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière efficiamur ?",
+          "hint": "Il signifie « que nous soyons rendus ».",
+          "explanation": "efficiamur est un subjonctif de efficio.",
+          "options": [
+            "efficio",
+            "facio",
+            "fio",
+            "mereor"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l24-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does sic ... ut signal in John 3:16?",
+      "stimulus": null,
+      "options": [
+        "degree leading to result/consequence",
+        "direct command",
+        "vocative address",
+        "ablative instrument only"
+      ],
+      "expectedAnswer": "degree leading to result/consequence",
+      "acceptedVariants": [
+        "degree leading to result/consequence"
+      ],
+      "hint": "Translate 'so ... that'.",
+      "explanation": "sic correlates with ut to express consequence/result.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn3-16-l24",
+      "skills": [
+        "syntax:result"
+      ],
+      "referenceIds": [
+        "vulg-jn3-16-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signale sic ... ut dans Jean 3,16 ?",
+          "hint": "Traduisez « tellement ... que ».",
+          "explanation": "sic est corrélé à ut pour exprimer une conséquence ou un résultat.",
+          "options": [
+            "un degré menant à une conséquence / un résultat",
+            "un ordre direct",
+            "une adresse au vocatif",
+            "l’instrument à l’ablatif seulement"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l24-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why must every ut-clause not be labelled purpose?",
+      "stimulus": null,
+      "options": [
+        "ut can mark several subordinate relationships including result and desired outcome",
+        "ut is never a conjunction",
+        "purpose uses only indicative",
+        "word order forbids it"
+      ],
+      "expectedAnswer": "ut can mark several subordinate relationships including result and desired outcome",
+      "acceptedVariants": [
+        "ut can mark several subordinate relationships including result and desired outcome"
+      ],
+      "hint": "Lesson 23 already taught relationship over conjunction.",
+      "explanation": "ut is multifunctional.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "syntax:ut"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi ne faut-il pas étiqueter toute proposition en ut comme une proposition de but ?",
+          "hint": "La leçon 23 a déjà privilégié la relation plutôt que la conjonction seule.",
+          "explanation": "ut est multifonctionnel.",
+          "options": [
+            "ut peut marquer plusieurs relations subordonnées, notamment le résultat et le résultat désiré",
+            "ut n’est jamais une conjonction",
+            "le but emploie seulement l’indicatif",
+            "l’ordre des mots l’interdit"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l24-e5",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 24 item to meaning.",
+      "stimulus": [
+        "promissio",
+        "dignus",
+        "mereor",
+        "tantum"
+      ],
+      "expectedAnswer": {
+        "promissio": "promise",
+        "dignus": "worthy",
+        "mereor": "merit / deserve",
+        "tantum": "so much / so great / only"
+      },
+      "acceptedVariants": [],
+      "hint": "These are prayer/degree words.",
+      "explanation": "This checks lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l24"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 24 à son sens.",
+          "hint": "Ce sont des mots de prière et de degré.",
+          "explanation": "Ceci vérifie la récupération lexicale.",
+          "matches": {
+            "promissio": "promesse",
+            "dignus": "digne",
+            "mereor": "mériter",
+            "tantum": "tant / tellement / seulement"
+          }
+        }
+      }
+    },
+    {
+      "id": "l24-e6",
+      "exerciseType": "matching",
+      "prompt": "Match degree word to core meaning.",
+      "stimulus": [
+        "magis",
+        "plus",
+        "nimis"
+      ],
+      "expectedAnswer": {
+        "magis": "more / rather",
+        "plus": "more",
+        "nimis": "exceedingly / very much"
+      },
+      "acceptedVariants": [],
+      "hint": "All express comparison or degree.",
+      "explanation": "Their syntax differs by context.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l24"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le mot de degré à son sens principal.",
+          "hint": "Tous expriment comparaison ou degré.",
+          "explanation": "Leur syntaxe varie selon le contexte.",
+          "matches": {
+            "magis": "davantage / plutôt",
+            "plus": "plus",
+            "nimis": "excessivement / beaucoup"
+          }
+        }
+      }
+    },
+    {
+      "id": "l24-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does magis do in Beatius est magis dare quam accipere?",
+      "stimulus": "magis",
+      "options": [
+        "marks comparison/degree",
+        "introduces a relative clause",
+        "marks genitive",
+        "creates passive voice"
+      ],
+      "expectedAnswer": "marks comparison/degree",
+      "acceptedVariants": [
+        "marks comparison/degree"
+      ],
+      "hint": "It accompanies quam.",
+      "explanation": "magis helps compare giving with receiving.",
+      "difficulty": 1,
+      "sourceId": "vulg-acts20-35-l24",
+      "skills": [
+        "comparison:magis"
+      ],
+      "referenceIds": [
+        "vulg-acts20-35-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait magis dans Beatius est magis dare quam accipere ?",
+          "hint": "Il accompagne quam.",
+          "explanation": "magis aide à comparer donner et recevoir.",
+          "options": [
+            "marque la comparaison / le degré",
+            "introduit une proposition relative",
+            "marque le génitif",
+            "crée la voix passive"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l24-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does plus express in diligis me plus his?",
+      "stimulus": "plus",
+      "options": [
+        "greater degree/comparison",
+        "purpose",
+        "future tense",
+        "direct address"
+      ],
+      "expectedAnswer": "greater degree/comparison",
+      "acceptedVariants": [
+        "greater degree/comparison"
+      ],
+      "hint": "Translate 'more than'.",
+      "explanation": "plus expresses degree/comparison.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn21-15-l24",
+      "skills": [
+        "comparison:plus"
+      ],
+      "referenceIds": [
+        "vulg-jn21-15-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’exprime plus dans diligis me plus his ?",
+          "hint": "Traduisez « davantage que ».",
+          "explanation": "plus exprime le degré ou la comparaison.",
+          "options": [
+            "degré supérieur / comparaison",
+            "but",
+            "futur",
+            "adresse directe"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l24-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does nimis do in the Psalm clause?",
+      "stimulus": "nimis",
+      "options": [
+        "strongly intensifies degree",
+        "marks a relative pronoun",
+        "creates subjunctive",
+        "means 'never'"
+      ],
+      "expectedAnswer": "strongly intensifies degree",
+      "acceptedVariants": [
+        "strongly intensifies degree"
+      ],
+      "hint": "It means exceedingly.",
+      "explanation": "nimis is an intensifier.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps138-17-l24",
+      "skills": [
+        "degree:nimis"
+      ],
+      "referenceIds": [
+        "vulg-ps138-17-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait nimis dans la proposition du Psaume ?",
+          "hint": "Il signifie « excessivement ».",
+          "explanation": "nimis est un intensificateur.",
+          "options": [
+            "intensifie fortement le degré",
+            "marque un pronom relatif",
+            "crée le subjonctif",
+            "signifie « jamais »"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l24-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin adjective meaning 'worthy'.",
+      "stimulus": null,
+      "expectedAnswer": "dignus",
+      "acceptedVariants": [
+        "dignus",
+        "Dignus"
+      ],
+      "hint": "It appears as digni in the Marian versicle.",
+      "explanation": "dignus means worthy.",
+      "difficulty": 1,
+      "sourceId": "marian-versicle-digni-l24",
+      "skills": [
+        "vocabulary:dignus"
+      ],
+      "referenceIds": [
+        "marian-versicle-digni-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez l’adjectif latin signifiant « digne ».",
+          "hint": "Il apparaît sous la forme digni dans le verset marial.",
+          "explanation": "dignus signifie « digne »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Distinguish purpose, result and desired prayer outcome.",
+    "Recognize sic/ita/tantum-style degree-to-result logic.",
+    "Learn all eight frozen Lesson 24 lemmas.",
+    "Read comparison/degree adverbs without confusing them with clause markers."
+  ],
+  "checkpoint": {
+    "id": "l24-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l24-e1",
+        "l24-e2",
+        "l24-e3",
+        "l24-e4",
+        "l24-e5",
+        "l24-e6",
+        "l24-e7",
+        "l24-e8",
+        "l24-e9",
+        "l24-e10"
+      ]
+    },
+    "mustKnow": [
+      "ut is multifunctional",
+      "ut digni efficiamur desired outcome",
+      "sic...ut result",
+      "magis/plus/nimis/tantum degree language"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "efficio",
+      "promissio",
+      "dignus",
+      "mereor",
+      "magis",
+      "tantum",
+      "plus",
+      "nimis"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 6,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Ut digni efficiamur",
+      "grammarFocus": "Conséquence et but",
+      "readingOutcome": "Distinguer conséquence et but dans des propositions authentiques de prière.",
+      "objectives": [
+        "Distinguer le but, la conséquence et le résultat désiré d’une prière.",
+        "Reconnaître la logique degré → conséquence des schémas sic/ita/tantum.",
+        "Apprendre les huit lemmes figés de la leçon 24.",
+        "Lire les adverbes de comparaison et de degré sans les confondre avec des marqueurs de proposition."
+      ]
+    }
+  }
+}

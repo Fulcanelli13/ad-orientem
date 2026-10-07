@@ -1,0 +1,40 @@
+name: Latin course validation
+
+on:
+  push:
+    branches:
+      - main
+      - integrate/latin-course-main-20261007
+      - research/core-201-350-resolved-propers
+    paths:
+      - "data/learn/core-latin-200.v0.2.json"
+      - "data/learn/core-latin-201-350.v1.json"
+      - "data/learn/latin-course-40-core350.v1.json"
+      - "data/learn/latin-course-fr-parity-audit.v1.json"
+      - "data/learn/latin-course-lessons/**"
+      - "src/assets/asset-registry.js"
+      - "src/learn/latin-course.js"
+      - "src/learn/browser-entry.js"
+      - "src/learn/presentation.js"
+      - "tests/learn-latin-core-freeze.mjs"
+      - "tests/learn-latin-runtime.mjs"
+      - "tests/learn-owner.mjs"
+      - "tools/validate_latin_course.mjs"
+      - ".github/workflows/latin-course-validation.yml"
+
+jobs:
+  validate-course:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate frozen Latin core
+        run: node tests/learn-latin-core-freeze.mjs
+      - name: Validate frozen curriculum and authored Latin lessons
+        run: node tools/validate_latin_course.mjs
+      - name: Validate Latin runtime localization and grading isolation
+        run: node tests/learn-latin-runtime.mjs
+      - name: Validate Formation owner wiring
+        run: node tests/learn-owner.mjs

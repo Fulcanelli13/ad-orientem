@@ -1,0 +1,1586 @@
+{
+  "version": "latin-course-lesson-30-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 30,
+  "stage": {
+    "number": 6,
+    "title": "Canon"
+  },
+  "title": "Read a Collect",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 60,
+  "progressionStep": "passage",
+  "grammarFocus": "Integrated prayer-syntax checkpoint",
+  "readingOutcome": "Parse a complete Roman Collect from invocation through conclusion.",
+  "authoringPolicy": {
+    "method": "invocation → relative rationale → petition → ut-clause → conclusion → full reread",
+    "vocabularyPolicy": "Frozen Lesson 30 vocabulary only; proper names and non-Core collect vocabulary are explicit support.",
+    "authenticTextPolicy": "Checkpoint uses the traditional Collect for Trinity Sunday in full form with Roman conclusion.",
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "omnipotens",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "almighty",
+          "fr": "tout-puissant"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "sempiternus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "everlasting / eternal",
+          "fr": "éternel / perpétuel"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "clemens",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "merciful / gracious",
+          "fr": "clément"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "misericors",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "merciful",
+          "fr": "miséricordieux"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "divinus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "divine",
+          "fr": "divin"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "oratio",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "prayer",
+          "fr": "prière"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "supplex",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "suppliant / humble",
+          "fr": "suppliant / humble"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "gaudium",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "joy",
+          "fr": "joie"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "laetitia",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "gladness / joy",
+          "fr": "allégresse / joie"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "sapientia",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "wisdom",
+          "fr": "sagesse"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "iniquitas",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "iniquity",
+          "fr": "iniquité"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "tribulatio",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "tribulation / distress",
+          "fr": "tribulation / détresse"
+        },
+        "frozenLesson": 30
+      },
+      {
+        "lemma": "salutaris",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "saving / health-giving",
+          "fr": "salutaire"
+        },
+        "frozenLesson": 30
+      }
+    ],
+    "recycled": [
+      "Deus",
+      "qui/quae/quod",
+      "do",
+      "famulus",
+      "tuus",
+      "in",
+      "fides",
+      "aeternus",
+      "gloria",
+      "cognosco",
+      "et",
+      "maiestas",
+      "adoro",
+      "unitas",
+      "quaeso",
+      "ut",
+      "is/ea/id",
+      "omnis",
+      "semper",
+      "Dominus",
+      "noster",
+      "filius",
+      "vivo",
+      "regno",
+      "spiritus",
+      "sanctus",
+      "per",
+      "saeculum",
+      "misericordia",
+      "a/ab",
+      "tu",
+      "exaudio",
+      "meus",
+      "virgo",
+      "vos",
+      "magnus",
+      "ego",
+      "virtus"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "confessio",
+      "forms": [
+        "confessione"
+      ],
+      "gloss": {
+        "en": "confession",
+        "fr": "confession"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "verus",
+      "forms": [
+        "verae"
+      ],
+      "gloss": {
+        "en": "true",
+        "fr": "vrai"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "agnosco",
+      "forms": [
+        "agnoscere"
+      ],
+      "gloss": {
+        "en": "acknowledge / recognize",
+        "fr": "reconnaître"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "firmitas",
+      "forms": [
+        "firmitate"
+      ],
+      "gloss": {
+        "en": "firmness",
+        "fr": "fermeté"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "munio",
+      "forms": [
+        "muniamur"
+      ],
+      "gloss": {
+        "en": "fortify / protect",
+        "fr": "fortifier / protéger"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "adversum",
+      "forms": [
+        "adversis"
+      ],
+      "gloss": {
+        "en": "adversity / adverse things",
+        "fr": "adversité"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesum"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christum"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "Trinitas",
+      "forms": [
+        "Trinitatis"
+      ],
+      "gloss": {
+        "en": "Trinity",
+        "fr": "Trinité"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "potentia",
+      "forms": [
+        "potentia"
+      ],
+      "gloss": {
+        "en": "power",
+        "fr": "puissance"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pius",
+      "forms": [
+        "pia"
+      ],
+      "gloss": {
+        "en": "loving / pious",
+        "fr": "pieuse"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "dulcis",
+      "forms": [
+        "dulcis"
+      ],
+      "gloss": {
+        "en": "sweet",
+        "fr": "douce"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Maria",
+      "forms": [
+        "Maria"
+      ],
+      "gloss": {
+        "en": "Mary",
+        "fr": "Marie"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "evangelizo",
+      "forms": [
+        "Evangelizo"
+      ],
+      "gloss": {
+        "en": "announce good news",
+        "fr": "annoncer la bonne nouvelle"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "altitudo",
+      "forms": [
+        "altitudo"
+      ],
+      "gloss": {
+        "en": "depth / height",
+        "fr": "profondeur / hauteur"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "divitiae",
+      "forms": [
+        "divitiarum"
+      ],
+      "gloss": {
+        "en": "riches",
+        "fr": "richesses"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "scientia",
+      "forms": [
+        "scientiae"
+      ],
+      "gloss": {
+        "en": "knowledge",
+        "fr": "science / connaissance"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "amplius",
+      "forms": [
+        "Amplius"
+      ],
+      "gloss": {
+        "en": "more / further",
+        "fr": "davantage"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "lavo",
+      "forms": [
+        "lava"
+      ],
+      "gloss": {
+        "en": "wash",
+        "fr": "laver"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "refugium",
+      "forms": [
+        "refugium"
+      ],
+      "gloss": {
+        "en": "refuge",
+        "fr": "refuge"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "adiutor",
+      "forms": [
+        "adiutor"
+      ],
+      "gloss": {
+        "en": "helper",
+        "fr": "secours / aide"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "trinity-collect-l30",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum — Dominica Sanctissimae Trinitatis",
+      "section": "Oratio",
+      "sourceLatin": "Omnipotens sempiterne Deus, qui dedisti famulis tuis in confessione verae fidei, aeternae Trinitatis gloriam agnoscere, et in potentia maiestatis adorare unitatem: quaesumus; ut, eiusdem fidei firmitate, ab omnibus semper muniamur adversis. Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "provenanceNote": "Complete Roman Collect checkpoint: invocation, relative clause, petition, ut-clause and conclusion.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "canon-supplices-short-l30",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Supplices te rogamus",
+      "sourceLatin": "Supplices te rogamus, omnipotens Deus.",
+      "provenanceNote": "supplex and omnipotens are anchored directly in the Canon.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "versicle-oratio-l30",
+      "sourceType": "primary-liturgical",
+      "work": "Traditional Roman versicle",
+      "section": "Before Collects",
+      "sourceLatin": "Domine, exaudi orationem meam.",
+      "provenanceNote": "oratio is introduced in a ubiquitous liturgical formula."
+    },
+    {
+      "id": "salve-regina-clemens-l30",
+      "sourceType": "primary-prayer",
+      "work": "Salve Regina",
+      "section": "Conclusion",
+      "sourceLatin": "O clemens, O pia, O dulcis Virgo Maria.",
+      "provenanceNote": "clemens is anchored in a traditional Marian antiphon."
+    },
+    {
+      "id": "vulg-lk2-10-gaudium-l30",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 2:10",
+      "sourceLatin": "Evangelizo vobis gaudium magnum.",
+      "provenanceNote": "gaudium appears in the angelic proclamation.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "rom11-sapientia-l30",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Romani 11:33",
+      "sourceLatin": "O altitudo divitiarum sapientiae et scientiae Dei!",
+      "provenanceNote": "sapientia appears in the Epistle of Trinity Sunday.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "ps50-iniquitas-l30",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 50:4",
+      "sourceLatin": "Amplius lava me ab iniquitate mea.",
+      "provenanceNote": "iniquitas is anchored in the Miserere.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "ps45-tribulatio-l30",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 45:2",
+      "sourceLatin": "Deus noster refugium et virtus: adiutor in tribulationibus.",
+      "provenanceNote": "tribulatio appears in Psalmic prayer language.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases and all Stage 1-5 syntax remain active; the Collect is read as one rhetorical-syntactic unit.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "collectFramework": {
+    "canonicalMoves": [
+      {
+        "move": "invocation",
+        "example": "Omnipotens sempiterne Deus"
+      },
+      {
+        "move": "relative rationale/praise",
+        "example": "qui dedisti famulis tuis..."
+      },
+      {
+        "move": "petition marker",
+        "example": "quaesumus"
+      },
+      {
+        "move": "desired outcome",
+        "example": "ut ... muniamur adversis"
+      },
+      {
+        "move": "conclusion",
+        "example": "Per Dominum nostrum ... per omnia saecula saeculorum"
+      }
+    ],
+    "readingRule": "Parse rhetorical moves first, then resolve morphology inside each move, then reread the Collect continuously.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l30-b1",
+      "type": "concept",
+      "title": "A Collect has an architecture",
+      "learnerCopy": {
+        "en": "Roman Collects are compact but highly organized. Find the invocation, any relative clause explaining God's attribute/action, the petition, the requested outcome, and the Christological conclusion.",
+        "fr": "Les collectes romaines sont brèves mais fortement structurées. Repérez l'invocation, la relative qui expose l'attribut ou l'action divine, la demande, le résultat demandé et la conclusion christologique."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une oraison possède une architecture"
+        }
+      }
+    },
+    {
+      "id": "l30-b2",
+      "type": "collect",
+      "title": "Invocation",
+      "sourceId": "trinity-collect-l30",
+      "learnerCopy": {
+        "en": "Omnipotens sempiterne Deus gives three coordinated identifying words before the sentence expands. Do not search for a finite verb too early.",
+        "fr": "Omnipotens sempiterne Deus donne trois mots d'identification coordonnés avant que la phrase ne s'étende. Ne cherchez pas trop tôt un verbe conjugué."
+      },
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Invocation"
+        }
+      }
+    },
+    {
+      "id": "l30-b3",
+      "type": "collect",
+      "title": "Relative rationale",
+      "sourceId": "trinity-collect-l30",
+      "learnerCopy": {
+        "en": "qui dedisti famulis tuis... explains what God has granted. The infinitives agnoscere and adorare depend on dedisti and carry their own complements.",
+        "fr": "qui dedisti famulis tuis... explique ce que Dieu a accordé. Les infinitifs agnoscere et adorare dépendent de dedisti et portent leurs propres compléments."
+      },
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Motif relatif"
+        }
+      }
+    },
+    {
+      "id": "l30-b4",
+      "type": "collect",
+      "title": "Petition and ut-clause",
+      "sourceId": "trinity-collect-l30",
+      "learnerCopy": {
+        "en": "quaesumus marks the petition; ut ... muniamur gives the requested result. Earlier purpose/result/subjunctive work now becomes part of one real Collect.",
+        "fr": "quaesumus marque la demande ; ut ... muniamur donne le résultat demandé. Le travail antérieur sur ut, le résultat et le subjonctif s'intègre maintenant dans une vraie collecte."
+      },
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Demande et proposition en ut"
+        }
+      }
+    },
+    {
+      "id": "l30-b5",
+      "type": "collect",
+      "title": "Conclusion",
+      "sourceId": "trinity-collect-l30",
+      "learnerCopy": {
+        "en": "The conclusion identifies Christ and the Trinitarian relation before the final per omnia saecula saeculorum. Treat it as a familiar reusable syntax block.",
+        "fr": "La conclusion identifie le Christ et la relation trinitaire avant le per omnia saecula saeculorum final. Lisez-la comme un bloc syntaxique familier et réutilisable."
+      },
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Conclusion"
+        }
+      }
+    },
+    {
+      "id": "l30-b6",
+      "type": "stage-checkpoint",
+      "title": "Read the whole Collect without resetting",
+      "learnerCopy": {
+        "en": "The Stage 6 gate is continuous reading. You may mark clause boundaries, but you must preserve the prayer's rhetorical movement from invocation to conclusion.",
+        "fr": "Le contrôle de l'étape 6 exige une lecture continue. Vous pouvez marquer les limites des propositions, mais vous devez conserver le mouvement rhétorique de l'invocation à la conclusion."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lire toute l’oraison sans repartir de zéro"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l30-p1",
+      "sourceId": "trinity-collect-l30",
+      "sourceLatin": "Omnipotens sempiterne Deus, qui dedisti famulis tuis in confessione verae fidei, aeternae Trinitatis gloriam agnoscere, et in potentia maiestatis adorare unitatem: quaesumus; ut, eiusdem fidei firmitate, ab omnibus semper muniamur adversis. Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "instructionalDisplay": "Omnipotens sempiterne Deus, qui dedisti famulis tuis in confessione verae fidei, aeternae Trinitatis gloriam agnoscere, et in potentia maiestatis adorare unitatem: quaesumus; ut, eiusdem fidei firmitate, ab omnibus semper muniamur adversis. Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
+      "translation": {
+        "en": "Almighty everlasting God, who hast granted Thy servants, in confessing the true faith, to acknowledge the glory of the eternal Trinity and in the power of Majesty to adore Its Unity: we beseech Thee that, by steadfastness in this faith, we may ever be defended from all adversities. Through our Lord Jesus Christ Thy Son, who with Thee liveth and reigneth in the unity of the Holy Ghost, God, world without end. Amen.",
+        "fr": "Dieu tout-puissant et éternel, qui avez donné à vos serviteurs, dans la confession de la vraie foi, de reconnaître la gloire de l'éternelle Trinité et d'adorer l'Unité dans la puissance de sa Majesté : nous vous en supplions, faites que, par la fermeté de cette même foi, nous soyons toujours protégés de toute adversité. Par Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l'unité du Saint-Esprit, Dieu, pour les siècles des siècles. Amen."
+      },
+      "targetLemmas": [
+        "omnipotens",
+        "sempiternus",
+        "Deus",
+        "qui/quae/quod",
+        "do",
+        "famulus",
+        "tuus",
+        "in",
+        "fides",
+        "aeternus",
+        "gloria",
+        "et",
+        "maiestas",
+        "adoro",
+        "unitas",
+        "quaeso",
+        "ut",
+        "a/ab",
+        "omnis",
+        "semper",
+        "Dominus",
+        "noster",
+        "filius",
+        "vivo",
+        "regno",
+        "spiritus",
+        "sanctus",
+        "per",
+        "saeculum"
+      ],
+      "supportLemmas": [
+        "confessio",
+        "verus",
+        "agnosco",
+        "firmitas",
+        "munio",
+        "adversum",
+        "Iesus",
+        "Christus",
+        "Amen",
+        "Trinitas",
+        "potentia"
+      ]
+    },
+    {
+      "id": "l30-p2",
+      "sourceId": "canon-supplices-short-l30",
+      "sourceLatin": "Supplices te rogamus, omnipotens Deus.",
+      "instructionalDisplay": "Supplices te rogamus, omnipotens Deus.",
+      "translation": {
+        "en": "We humbly beseech Thee, Almighty God.",
+        "fr": "Nous vous supplions humblement, Dieu tout-puissant."
+      },
+      "targetLemmas": [
+        "supplex",
+        "tu",
+        "omnipotens",
+        "Deus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l30-p3",
+      "sourceId": "versicle-oratio-l30",
+      "sourceLatin": "Domine, exaudi orationem meam.",
+      "instructionalDisplay": "Domine, exaudi orationem meam.",
+      "translation": {
+        "en": "O Lord, hear my prayer.",
+        "fr": "Seigneur, exaucez ma prière."
+      },
+      "targetLemmas": [
+        "Dominus",
+        "exaudio",
+        "oratio",
+        "meus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l30-p4",
+      "sourceId": "salve-regina-clemens-l30",
+      "sourceLatin": "O clemens, O pia, O dulcis Virgo Maria.",
+      "instructionalDisplay": "O clemens, O pia, O dulcis Virgo Maria.",
+      "translation": {
+        "en": "O clement, O loving, O sweet Virgin Mary.",
+        "fr": "Ô clémente, ô pieuse, ô douce Vierge Marie."
+      },
+      "targetLemmas": [
+        "clemens",
+        "virgo"
+      ],
+      "supportLemmas": [
+        "pius",
+        "dulcis",
+        "Maria"
+      ]
+    },
+    {
+      "id": "l30-p5",
+      "sourceId": "vulg-lk2-10-gaudium-l30",
+      "sourceLatin": "Evangelizo vobis gaudium magnum.",
+      "instructionalDisplay": "Evangelizo vobis gaudium magnum.",
+      "translation": {
+        "en": "I bring you tidings of great joy.",
+        "fr": "Je vous annonce une grande joie."
+      },
+      "targetLemmas": [
+        "vos",
+        "gaudium",
+        "magnus"
+      ],
+      "supportLemmas": [
+        "evangelizo"
+      ]
+    },
+    {
+      "id": "l30-p6",
+      "sourceId": "rom11-sapientia-l30",
+      "sourceLatin": "O altitudo divitiarum sapientiae et scientiae Dei!",
+      "instructionalDisplay": "O altitudo divitiarum sapientiae et scientiae Dei!",
+      "translation": {
+        "en": "O the depth of the riches of the wisdom and of the knowledge of God!",
+        "fr": "Ô profondeur des richesses de la sagesse et de la science de Dieu !"
+      },
+      "targetLemmas": [
+        "sapientia",
+        "et",
+        "Deus"
+      ],
+      "supportLemmas": [
+        "altitudo",
+        "divitiae",
+        "scientia"
+      ]
+    },
+    {
+      "id": "l30-p7",
+      "sourceId": "ps50-iniquitas-l30",
+      "sourceLatin": "Amplius lava me ab iniquitate mea.",
+      "instructionalDisplay": "Amplius lava me ab iniquitate mea.",
+      "translation": {
+        "en": "Wash me yet more from my iniquity.",
+        "fr": "Lavez-moi davantage de mon iniquité."
+      },
+      "targetLemmas": [
+        "ego",
+        "a/ab",
+        "iniquitas",
+        "meus"
+      ],
+      "supportLemmas": [
+        "amplius",
+        "lavo"
+      ]
+    },
+    {
+      "id": "l30-p8",
+      "sourceId": "ps45-tribulatio-l30",
+      "sourceLatin": "Deus noster refugium et virtus: adiutor in tribulationibus.",
+      "instructionalDisplay": "Deus noster refugium et virtus: adiutor in tribulationibus.",
+      "translation": {
+        "en": "Our God is our refuge and strength: a helper in troubles.",
+        "fr": "Dieu est pour nous refuge et force, secours dans les tribulations."
+      },
+      "targetLemmas": [
+        "Deus",
+        "noster",
+        "et",
+        "virtus",
+        "in",
+        "tribulatio"
+      ],
+      "supportLemmas": [
+        "refugium",
+        "adiutor"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l30-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the first rhetorical move of the Collect?",
+      "stimulus": "Omnipotens sempiterne Deus",
+      "options": [
+        "invocation",
+        "purpose clause",
+        "relative conclusion",
+        "indirect statement"
+      ],
+      "expectedAnswer": "invocation",
+      "acceptedVariants": [
+        "invocation"
+      ],
+      "hint": "The prayer begins by addressing God.",
+      "explanation": "This is the invocation.",
+      "difficulty": 1,
+      "sourceId": "trinity-collect-l30",
+      "skills": [
+        "collect:architecture"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le premier mouvement rhétorique de l’oraison ?",
+          "hint": "La prière commence en s’adressant à Dieu.",
+          "explanation": "C’est l’invocation.",
+          "options": [
+            "invocation",
+            "proposition de but",
+            "conclusion relative",
+            "discours indirect"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What begins the relative rationale?",
+      "stimulus": "qui dedisti",
+      "options": [
+        "qui dedisti",
+        "quaesumus",
+        "ut",
+        "Per Dominum"
+      ],
+      "expectedAnswer": "qui dedisti",
+      "acceptedVariants": [
+        "qui dedisti"
+      ],
+      "hint": "Relative pronoun + finite verb.",
+      "explanation": "The relative clause explains God's prior gift/action.",
+      "difficulty": 1,
+      "sourceId": "trinity-collect-l30",
+      "skills": [
+        "collect:relative"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui ouvre le motif relatif ?",
+          "hint": "Pronom relatif + verbe fini.",
+          "explanation": "La proposition relative explique le don ou l’action antérieure de Dieu.",
+          "options": [
+            "qui dedisti",
+            "quaesumus",
+            "ut",
+            "Per Dominum"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What word explicitly marks the petition?",
+      "stimulus": "quaesumus",
+      "options": [
+        "quaesumus",
+        "unitatem",
+        "gloriam",
+        "sempiterne"
+      ],
+      "expectedAnswer": "quaesumus",
+      "acceptedVariants": [
+        "quaesumus"
+      ],
+      "hint": "It means 'we beseech'.",
+      "explanation": "quaesumus marks the petition.",
+      "difficulty": 1,
+      "sourceId": "trinity-collect-l30",
+      "skills": [
+        "collect:petition"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel mot marque explicitement la demande ?",
+          "hint": "Il signifie « nous vous en supplions ».",
+          "explanation": "quaesumus marque la demande.",
+          "options": [
+            "quaesumus",
+            "unitatem",
+            "gloriam",
+            "sempiterne"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does the ut-clause express?",
+      "stimulus": "ut ... muniamur adversis",
+      "options": [
+        "the requested outcome",
+        "the invocation",
+        "a direct object only",
+        "a vocative"
+      ],
+      "expectedAnswer": "the requested outcome",
+      "acceptedVariants": [
+        "the requested outcome"
+      ],
+      "hint": "Stage 5 syntax returns here.",
+      "explanation": "The subjunctive clause gives the desired result.",
+      "difficulty": 1,
+      "sourceId": "trinity-collect-l30",
+      "skills": [
+        "collect:ut-clause"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’exprime la proposition en ut ?",
+          "hint": "La syntaxe de l’étape 5 revient ici.",
+          "explanation": "La proposition au subjonctif donne le résultat demandé.",
+          "options": [
+            "le résultat demandé",
+            "l’invocation",
+            "un simple complément d’objet direct",
+            "un vocatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the final reusable syntax block?",
+      "stimulus": "Per Dominum nostrum...",
+      "options": [
+        "the Christological conclusion",
+        "an ablative absolute",
+        "a gerund",
+        "an indirect statement"
+      ],
+      "expectedAnswer": "the Christological conclusion",
+      "acceptedVariants": [
+        "the Christological conclusion"
+      ],
+      "hint": "It closes Roman Collects.",
+      "explanation": "The conclusion is a reusable liturgical syntax block.",
+      "difficulty": 1,
+      "sourceId": "trinity-collect-l30",
+      "skills": [
+        "collect:conclusion"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le dernier bloc syntaxique réutilisable ?",
+          "hint": "Il clôt les oraisons romaines.",
+          "explanation": "La conclusion est un bloc syntaxique liturgique réutilisable.",
+          "options": [
+            "la conclusion christologique",
+            "un ablatif absolu",
+            "un gérondif",
+            "un discours indirect"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e6",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 30 adjective to meaning.",
+      "stimulus": [
+        "omnipotens",
+        "sempiternus",
+        "clemens",
+        "misericors",
+        "divinus",
+        "salutaris"
+      ],
+      "expectedAnswer": {
+        "omnipotens": "almighty",
+        "sempiternus": "everlasting",
+        "clemens": "merciful / gracious",
+        "misericors": "merciful",
+        "divinus": "divine",
+        "salutaris": "saving / health-giving"
+      },
+      "acceptedVariants": [],
+      "hint": "These are prayer-language adjectives.",
+      "explanation": "Lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l30"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’adjectif de la leçon 30 à son sens.",
+          "hint": "Ce sont des adjectifs du langage de la prière.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "omnipotens": "tout-puissant",
+            "sempiternus": "éternel / perpétuel",
+            "clemens": "clément / bienveillant",
+            "misericors": "miséricordieux",
+            "divinus": "divin",
+            "salutaris": "salutaire / qui donne le salut"
+          }
+        }
+      }
+    },
+    {
+      "id": "l30-e7",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 30 noun to meaning.",
+      "stimulus": [
+        "oratio",
+        "gaudium",
+        "laetitia",
+        "sapientia"
+      ],
+      "expectedAnswer": {
+        "oratio": "prayer",
+        "gaudium": "joy",
+        "laetitia": "gladness / joy",
+        "sapientia": "wisdom"
+      },
+      "acceptedVariants": [],
+      "hint": "Four high-value prayer nouns.",
+      "explanation": "Lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l30"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 30 à son sens.",
+          "hint": "Quatre noms importants du langage de la prière.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "oratio": "prière",
+            "gaudium": "joie",
+            "laetitia": "allégresse / joie",
+            "sapientia": "sagesse"
+          }
+        }
+      }
+    },
+    {
+      "id": "l30-e8",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 30 noun to meaning.",
+      "stimulus": [
+        "iniquitas",
+        "tribulatio"
+      ],
+      "expectedAnswer": {
+        "iniquitas": "iniquity",
+        "tribulatio": "tribulation / distress"
+      },
+      "acceptedVariants": [],
+      "hint": "Penitential and Psalmic vocabulary.",
+      "explanation": "Lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l30"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 30 à son sens.",
+          "hint": "Vocabulaire pénitentiel et psalmique.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "iniquitas": "iniquité",
+            "tribulatio": "tribulation / détresse"
+          }
+        }
+      }
+    },
+    {
+      "id": "l30-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is supplices in Supplices te rogamus?",
+      "stimulus": "Supplices",
+      "options": [
+        "a supplicant/humble adjective describing 'we'",
+        "a future verb",
+        "a noun meaning altar",
+        "a relative pronoun"
+      ],
+      "expectedAnswer": "a supplicant/humble adjective describing 'we'",
+      "acceptedVariants": [
+        "a supplicant/humble adjective describing 'we'"
+      ],
+      "hint": "It agrees with the implicit first-person plural subject.",
+      "explanation": "supplices means humbly/suppliantly as agreeing adjective.",
+      "difficulty": 2,
+      "sourceId": "canon-supplices-short-l30",
+      "skills": [
+        "vocabulary:supplex",
+        "agreement"
+      ],
+      "referenceIds": [
+        "canon-supplices-short-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce que supplices dans Supplices te rogamus ?",
+          "hint": "Il s’accorde avec le sujet implicite à la première personne du pluriel.",
+          "explanation": "supplices signifie « suppliants / humblement suppliants » comme adjectif accordé.",
+          "options": [
+            "un adjectif « suppliants / humbles » décrivant « nous »",
+            "un verbe au futur",
+            "un nom signifiant autel",
+            "un pronom relatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is tribulationibus after in?",
+      "stimulus": "in tribulationibus",
+      "options": [
+        "ablative",
+        "accusative",
+        "genitive",
+        "dative"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "Location/circumstance after in.",
+      "explanation": "tribulationibus is ablative plural.",
+      "difficulty": 1,
+      "sourceId": "ps45-tribulatio-l30",
+      "skills": [
+        "case:ablative"
+      ],
+      "referenceIds": [
+        "ps45-tribulatio-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est tribulationibus après in ?",
+          "hint": "Lieu ou circonstance après in.",
+          "explanation": "tribulationibus est à l’ablatif pluriel.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e11",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the Stage 6 milestone?",
+      "stimulus": null,
+      "options": [
+        "Complete Roman Collect.",
+        "Multi-clause prayer and narrative syntax.",
+        "Credo integrated reading checkpoint.",
+        "Complete Ordinary."
+      ],
+      "expectedAnswer": "Complete Roman Collect.",
+      "acceptedVariants": [
+        "Complete Roman Collect."
+      ],
+      "hint": "This is the frozen gate.",
+      "explanation": "Stage 6 ends with a whole Collect.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 6 ?",
+          "hint": "C’est le seuil figé.",
+          "explanation": "L’étape 6 s’achève par une oraison entière.",
+          "options": [
+            "Oraison romaine complète.",
+            "Syntaxe de prière et de récit à plusieurs propositions.",
+            "Jalon de lecture intégrée du Credo.",
+            "Ordinaire complet."
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e12",
+      "exerciseType": "passage_analysis",
+      "prompt": "What should you mark before translating the Collect continuously?",
+      "stimulus": null,
+      "expectedAnswer": [
+        "invocation",
+        "relative rationale",
+        "petition",
+        "ut-clause",
+        "conclusion"
+      ],
+      "acceptedVariants": [
+        [
+          "invocation",
+          "relative rationale",
+          "petition",
+          "ut-clause",
+          "conclusion"
+        ]
+      ],
+      "hint": "Use rhetorical architecture first.",
+      "explanation": "The Collect's moves organize its syntax.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "reading:collect"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que devez-vous marquer avant de traduire l’oraison de façon continue ?",
+          "hint": "Commencez par l’architecture rhétorique.",
+          "explanation": "Les mouvements de l’oraison organisent sa syntaxe.",
+          "answerGuide": [
+            "invocation",
+            "motif relatif",
+            "demande",
+            "proposition en ut",
+            "conclusion"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l30-e13",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'wisdom'.",
+      "stimulus": null,
+      "expectedAnswer": "sapientia",
+      "acceptedVariants": [
+        "sapientia",
+        "Sapientia"
+      ],
+      "hint": "It appears in Romans 11:33.",
+      "explanation": "sapientia means wisdom.",
+      "difficulty": 1,
+      "sourceId": "rom11-sapientia-l30",
+      "skills": [
+        "vocabulary:sapientia"
+      ],
+      "referenceIds": [
+        "rom11-sapientia-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « sagesse ».",
+          "hint": "Il apparaît dans Romains 11,33.",
+          "explanation": "sapientia signifie « sagesse »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Parse a complete Roman Collect from invocation through conclusion.",
+    "Integrate relative clauses, infinitives, cases, subjunctive and liturgical conclusion syntax.",
+    "Learn all thirteen frozen Lesson 30 lemmas.",
+    "Pass the Stage 6 Complete Roman Collect checkpoint."
+  ],
+  "checkpoint": {
+    "id": "stage6-checkpoint",
+    "stage": 6,
+    "scopeLessons": [
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "progressionGate": "Complete Roman Collect.",
+    "readingTransition": "multi-clause passage → complete Roman Collect",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 10,
+      "autoGradedExerciseIds": [
+        "l30-e1",
+        "l30-e2",
+        "l30-e3",
+        "l30-e4",
+        "l30-e5",
+        "l30-e6",
+        "l30-e7",
+        "l30-e8",
+        "l30-e9",
+        "l30-e10",
+        "l30-e11",
+        "l30-e12",
+        "l30-e13"
+      ]
+    },
+    "mustKnow": [
+      "indirect statement",
+      "gerund/gerundive",
+      "ablative absolute",
+      "advanced dative/ablative",
+      "Collect architecture",
+      "complete continuous reading"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "omnipotens",
+      "sempiternus",
+      "clemens",
+      "misericors",
+      "divinus",
+      "oratio",
+      "supplex",
+      "gaudium",
+      "laetitia",
+      "sapientia",
+      "iniquitas",
+      "tribulatio",
+      "salutaris"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 8,
+    "exerciseCount": 13,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Lire une oraison",
+      "grammarFocus": "Jalon intégré de syntaxe de la prière",
+      "readingOutcome": "Analyser une oraison romaine complète, de l’invocation à la conclusion.",
+      "objectives": [
+        "Analyser une oraison romaine complète, de l’invocation à la conclusion.",
+        "Intégrer propositions relatives, infinitifs, cas, subjonctif et syntaxe de la conclusion liturgique.",
+        "Apprendre les treize lemmes figés de la leçon 30.",
+        "Franchir le jalon de l’étape 6 : oraison romaine complète."
+      ]
+    }
+  }
+}

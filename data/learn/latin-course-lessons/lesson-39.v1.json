@@ -1,0 +1,1107 @@
+{
+  "version": "latin-course-lesson-39-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 39,
+  "stage": {
+    "number": 8,
+    "title": "Read the Missal"
+  },
+  "title": "Requiem and Holy Week",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 60,
+  "progressionStep": "independent-liturgical-reading",
+  "grammarFocus": "Specialized liturgical registers",
+  "readingOutcome": "Read Requiem and Holy Week texts without treating special-rite vocabulary as normal-Proper frequency.",
+  "authoringPolicy": {
+    "method": "identify special register -> read structure -> isolate specialized lexicon -> preserve normal-frequency model",
+    "vocabularyPolicy": "Only crux, requies and defunctus are introduced.",
+    "authenticTextPolicy": "Requiem and Good Friday texts remain in their specialized rites.",
+    "copyrightPolicy": "Liturgical Latin source text; original pedagogy.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "crux",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "cross",
+          "fr": "croix"
+        },
+        "frozenLesson": 39
+      },
+      {
+        "lemma": "requies",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "rest",
+          "fr": "repos"
+        },
+        "frozenLesson": 39
+      },
+      {
+        "lemma": "defunctus",
+        "partOfSpeech": "adjective/noun",
+        "gloss": {
+          "en": "deceased",
+          "fr": "defunt"
+        },
+        "frozenLesson": 39
+      }
+    ],
+    "recycled": [
+      "aeternus",
+      "do",
+      "is/ea/id",
+      "Dominus",
+      "et",
+      "lux",
+      "Deus",
+      "in",
+      "oratio",
+      "meus",
+      "ad",
+      "omnis",
+      "caro",
+      "venio",
+      "rex",
+      "gloria",
+      "libero",
+      "anima",
+      "fidelis",
+      "de",
+      "sanctus",
+      "semen",
+      "hostia",
+      "tu",
+      "laudo",
+      "offero",
+      "suscipio",
+      "pro",
+      "memoria",
+      "facio",
+      "mors",
+      "vita",
+      "ecce",
+      "qui/quae/quod",
+      "salus",
+      "mundus",
+      "adoro",
+      "populus",
+      "quis/quid",
+      "aut",
+      "respondeo",
+      "tuus",
+      "glorifico",
+      "enim",
+      "propter",
+      "gaudium",
+      "universus",
+      "ego"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Sion",
+      "forms": [
+        "Sion"
+      ],
+      "gloss": {
+        "en": "Sion",
+        "fr": "Sion"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Jerusalem",
+      "forms": [
+        "Jerusalem"
+      ],
+      "gloss": {
+        "en": "Jerusalem",
+        "fr": "Jerusalem"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Michael",
+      "forms": [
+        "Michael"
+      ],
+      "gloss": {
+        "en": "Michael",
+        "fr": "Michel"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Abraham",
+      "forms": [
+        "Abrahae"
+      ],
+      "gloss": {
+        "en": "Abraham",
+        "fr": "Abraham"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "lignum",
+      "forms": [
+        "lignum"
+      ],
+      "gloss": {
+        "en": "wood",
+        "fr": "bois"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pendeo",
+      "forms": [
+        "pependit"
+      ],
+      "gloss": {
+        "en": "hang",
+        "fr": "pendre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "contristo",
+      "forms": [
+        "contristavi"
+      ],
+      "gloss": {
+        "en": "sadden",
+        "fr": "attrister"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "requiem-introit-l39",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Missa pro Defunctis",
+      "section": "Introit excerpt — antiphon and psalm verse; repeated antiphon omitted",
+      "sourceLatin": "Requiem aeternam dona eis, Domine: et lux perpetua luceat eis. Te decet hymnus, Deus, in Sion: et tibi reddetur votum in Jerusalem: exaudi orationem meam, ad te omnis caro veniet.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "obsolete/missa/Latin/Commune/C9.txt",
+      "textAudit": {
+        "status": "VERIFIED_EXCERPT",
+        "note": "Checked against pinned Requiem Mass corpus. Repeated antiphon/refrain material not needed for the reading exercise is omitted from sourceLatin."
+      }
+    },
+    {
+      "id": "requiem-offertory-l39",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Missa pro Defunctis",
+      "section": "Offertory excerpt — final repeated Quam olim refrain omitted",
+      "sourceLatin": "Domine Iesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni et de profundo lacu: libera eas de ore leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer sanctus Michael repraesentet eas in lucem sanctam: quam olim Abrahae promisisti et semini ejus. Hostias et preces tibi, Domine, laudis offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus: fac eas, Domine, de morte transire ad vitam.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "obsolete/missa/Latin/Commune/C9.txt",
+      "textAudit": {
+        "status": "VERIFIED_EXCERPT",
+        "note": "Checked against pinned Requiem Mass corpus. Repeated antiphon/refrain material not needed for the reading exercise is omitted from sourceLatin."
+      }
+    },
+    {
+      "id": "goodfriday-ecce-l39",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Feria VI in Parasceve",
+      "section": "Adoration of the Cross",
+      "sourceLatin": "Ecce lignum Crucis, in quo salus mundi pependit. Venite, adoremus.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Tempora/Quad6-5r.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1955/1962 reformed Good Friday action; accents and orthography normalized only."
+      }
+    },
+    {
+      "id": "goodfriday-popule-l39",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Feria VI in Parasceve",
+      "section": "Improperia",
+      "sourceLatin": "Popule meus, quid feci tibi? aut in quo contristavi te? responde mihi.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Tempora/Quad6-5r.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1955/1962 reformed Good Friday action; accents and orthography normalized only."
+      }
+    },
+    {
+      "id": "goodfriday-crucem-l39",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962) - Feria VI in Parasceve",
+      "section": "Adoration chant",
+      "sourceLatin": "Crucem tuam adoramus, Domine: et sanctam resurrectionem tuam laudamus et glorificamus: ecce enim propter lignum venit gaudium in universo mundo.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Tempora/Quad6-5r.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1955/1962 reformed Good Friday action; accents and orthography normalized only."
+      }
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "specializedRegisterFramework": {
+    "requiem": {
+      "signals": [
+        "requies",
+        "defunctus",
+        "intercession for the departed"
+      ],
+      "warning": "Do not treat Requiem-specific vocabulary as normal-Proper frequency."
+    },
+    "holyWeek": {
+      "signals": [
+        "crux",
+        "lignum",
+        "reproach dialogue"
+      ],
+      "warning": "Good Friday is a specialized liturgical action."
+    },
+    "rule": "Read accurately while keeping specialized frequency partitioned.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l39-b1",
+      "type": "concept",
+      "title": "Special rites, special lexicon",
+      "learnerCopy": {
+        "en": "Requiem and Holy Week contain crucial vocabulary that is comparatively rare in normal Propers.",
+        "fr": "Le Requiem et la Semaine sainte contiennent un vocabulaire crucial mais relativement rare dans les propres ordinaires."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Rites particuliers, lexique particulier"
+        }
+      }
+    },
+    {
+      "id": "l39-b2",
+      "type": "requiem",
+      "title": "Requiem aeternam",
+      "sourceId": "requiem-introit-l39",
+      "learnerCopy": {
+        "en": "requies is the semantic center of the Introit; the surrounding syntax is already familiar.",
+        "fr": "requies est le centre semantique de l'Introit ; la syntaxe environnante est deja familiere."
+      },
+      "referenceIds": [
+        "requiem-introit-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Requiem aeternam"
+        }
+      }
+    },
+    {
+      "id": "l39-b3",
+      "type": "requiem",
+      "title": "fidelium defunctorum",
+      "sourceId": "requiem-offertory-l39",
+      "learnerCopy": {
+        "en": "defunctorum is genitive plural: of the faithful departed.",
+        "fr": "defunctorum est un genitif pluriel : des fideles defunts."
+      },
+      "referenceIds": [
+        "requiem-offertory-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "fidelium defunctorum"
+        }
+      }
+    },
+    {
+      "id": "l39-b4",
+      "type": "holy-week",
+      "title": "Ecce lignum Crucis",
+      "sourceId": "goodfriday-ecce-l39",
+      "learnerCopy": {
+        "en": "Crucis is genitive singular of crux: the wood of the Cross.",
+        "fr": "Crucis est le genitif singulier de crux : le bois de la Croix."
+      },
+      "referenceIds": [
+        "goodfriday-ecce-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ecce lignum Crucis"
+        }
+      }
+    },
+    {
+      "id": "l39-b5",
+      "type": "holy-week",
+      "title": "Popule meus",
+      "sourceId": "goodfriday-popule-l39",
+      "learnerCopy": {
+        "en": "The Reproaches use direct address and rhetorical questions.",
+        "fr": "Les Improperes emploient l'adresse directe et les questions rhetoriques."
+      },
+      "referenceIds": [
+        "goodfriday-popule-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Popule meus"
+        }
+      }
+    },
+    {
+      "id": "l39-b6",
+      "type": "milestone",
+      "title": "Do not normalize the frequency",
+      "learnerCopy": {
+        "en": "Understand the specialized text while preserving the distinction between special-rite and ordinary vocabulary.",
+        "fr": "Comprenez le texte specialise tout en gardant la distinction entre vocabulaire special et vocabulaire ordinaire."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ne pas normaliser la fréquence"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l39-p1",
+      "sourceId": "requiem-introit-l39",
+      "sourceLatin": "Requiem aeternam dona eis, Domine: et lux perpetua luceat eis. Te decet hymnus, Deus, in Sion: et tibi reddetur votum in Jerusalem: exaudi orationem meam, ad te omnis caro veniet.",
+      "instructionalDisplay": "Requiem aeternam dona eis, Domine: et lux perpetua luceat eis. Te decet hymnus, Deus, in Sion: et tibi reddetur votum in Jerusalem: exaudi orationem meam, ad te omnis caro veniet.",
+      "targetLemmas": [
+        "requies",
+        "aeternus",
+        "do",
+        "is/ea/id",
+        "Dominus",
+        "et",
+        "lux",
+        "Deus",
+        "in",
+        "oratio",
+        "meus",
+        "ad",
+        "omnis",
+        "caro",
+        "venio"
+      ],
+      "supportLemmas": [
+        "Sion",
+        "Jerusalem"
+      ]
+    },
+    {
+      "id": "l39-p2",
+      "sourceId": "requiem-offertory-l39",
+      "sourceLatin": "Domine Iesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni et de profundo lacu: libera eas de ore leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer sanctus Michael repraesentet eas in lucem sanctam: quam olim Abrahae promisisti et semini ejus. Hostias et preces tibi, Domine, laudis offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus: fac eas, Domine, de morte transire ad vitam.",
+      "instructionalDisplay": "Domine Iesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni et de profundo lacu: libera eas de ore leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer sanctus Michael repraesentet eas in lucem sanctam: quam olim Abrahae promisisti et semini ejus. Hostias et preces tibi, Domine, laudis offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus: fac eas, Domine, de morte transire ad vitam.",
+      "targetLemmas": [
+        "defunctus",
+        "Dominus",
+        "rex",
+        "gloria",
+        "libero",
+        "anima",
+        "omnis",
+        "fidelis",
+        "de",
+        "sanctus",
+        "semen",
+        "hostia",
+        "tu",
+        "laudo",
+        "offero",
+        "suscipio",
+        "pro",
+        "memoria",
+        "facio",
+        "mors",
+        "vita"
+      ],
+      "supportLemmas": [
+        "Michael",
+        "Abraham"
+      ]
+    },
+    {
+      "id": "l39-p3",
+      "sourceId": "goodfriday-ecce-l39",
+      "sourceLatin": "Ecce lignum Crucis, in quo salus mundi pependit. Venite, adoremus.",
+      "instructionalDisplay": "Ecce lignum Crucis, in quo salus mundi pependit. Venite, adoremus.",
+      "targetLemmas": [
+        "crux",
+        "ecce",
+        "salus",
+        "mundus",
+        "venio",
+        "adoro"
+      ],
+      "supportLemmas": [
+        "lignum",
+        "pendeo"
+      ]
+    },
+    {
+      "id": "l39-p4",
+      "sourceId": "goodfriday-popule-l39",
+      "sourceLatin": "Popule meus, quid feci tibi? aut in quo contristavi te? responde mihi.",
+      "instructionalDisplay": "Popule meus, quid feci tibi? aut in quo contristavi te? responde mihi.",
+      "targetLemmas": [
+        "populus",
+        "meus",
+        "quis/quid",
+        "facio",
+        "tu",
+        "aut",
+        "in",
+        "qui/quae/quod",
+        "respondeo",
+        "ego"
+      ],
+      "supportLemmas": [
+        "contristo"
+      ]
+    },
+    {
+      "id": "l39-p5",
+      "sourceId": "goodfriday-crucem-l39",
+      "sourceLatin": "Crucem tuam adoramus, Domine: et sanctam resurrectionem tuam laudamus et glorificamus: ecce enim propter lignum venit gaudium in universo mundo.",
+      "instructionalDisplay": "Crucem tuam adoramus, Domine: et sanctam resurrectionem tuam laudamus et glorificamus: ecce enim propter lignum venit gaudium in universo mundo.",
+      "targetLemmas": [
+        "crux",
+        "tuus",
+        "adoro",
+        "Dominus",
+        "et",
+        "sanctus",
+        "laudo",
+        "glorifico",
+        "ecce",
+        "enim",
+        "propter",
+        "venio",
+        "gaudium",
+        "in",
+        "universus",
+        "mundus"
+      ],
+      "supportLemmas": [
+        "lignum"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l39-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does requies mean?",
+      "stimulus": null,
+      "options": [
+        "rest",
+        "cross",
+        "wine",
+        "priest"
+      ],
+      "expectedAnswer": "rest",
+      "acceptedVariants": [
+        "rest"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": "requiem-introit-l39",
+      "skills": [
+        "vocabulary:requies"
+      ],
+      "referenceIds": [
+        "requiem-introit-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie requies ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "repos",
+            "croix",
+            "vin",
+            "prêtre"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What form is defunctorum?",
+      "stimulus": null,
+      "options": [
+        "genitive plural",
+        "nominative singular",
+        "accusative plural",
+        "ablative singular"
+      ],
+      "expectedAnswer": "genitive plural",
+      "acceptedVariants": [
+        "genitive plural"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": "requiem-offertory-l39",
+      "skills": [
+        "vocabulary:defunctus"
+      ],
+      "referenceIds": [
+        "requiem-offertory-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est defunctorum ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "génitif pluriel",
+            "nominatif singulier",
+            "accusatif pluriel",
+            "ablatif singulier"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does Crucis mean?",
+      "stimulus": null,
+      "options": [
+        "of the Cross",
+        "to the Cross",
+        "Crosses",
+        "with the Cross"
+      ],
+      "expectedAnswer": "of the Cross",
+      "acceptedVariants": [
+        "of the Cross"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": "goodfriday-ecce-l39",
+      "skills": [
+        "vocabulary:crux"
+      ],
+      "referenceIds": [
+        "goodfriday-ecce-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie Crucis ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "de la Croix",
+            "à la Croix",
+            "des Croix",
+            "avec la Croix"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why should Requiem infernal imagery not alter normal-Proper frequency?",
+      "stimulus": null,
+      "options": [
+        "it belongs to a specialized register",
+        "it is not Latin",
+        "it is in every Collect",
+        "it is all Core"
+      ],
+      "expectedAnswer": "it belongs to a specialized register",
+      "acceptedVariants": [
+        "it belongs to a specialized register"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": "requiem-offertory-l39",
+      "skills": [
+        "register:requiem"
+      ],
+      "referenceIds": [
+        "requiem-offertory-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi l’imagerie infernale du Requiem ne doit-elle pas modifier la fréquence des Propres ordinaires ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "elle appartient à un registre spécialisé",
+            "ce n’est pas du latin",
+            "elle se trouve dans chaque oraison",
+            "tout cela appartient au vocabulaire fondamental"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What rhetorical mode dominates Popule meus?",
+      "stimulus": null,
+      "options": [
+        "direct address and questions",
+        "indirect statement",
+        "legal prose",
+        "genealogy"
+      ],
+      "expectedAnswer": "direct address and questions",
+      "acceptedVariants": [
+        "direct address and questions"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": "goodfriday-popule-l39",
+      "skills": [
+        "register:holy-week"
+      ],
+      "referenceIds": [
+        "goodfriday-popule-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel mode rhétorique domine Popule meus ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "adresse directe et questions",
+            "discours indirect",
+            "prose juridique",
+            "généalogie"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Is Good Friday cross-veneration an ordinary Mass Proper?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": "goodfriday-ecce-l39",
+      "skills": [
+        "register:holy-week"
+      ],
+      "referenceIds": [
+        "goodfriday-ecce-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "La vénération de la Croix du Vendredi saint est-elle un Propre ordinaire de Messe ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which new word means deceased?",
+      "stimulus": null,
+      "options": [
+        "defunctus",
+        "requies",
+        "crux",
+        "hostia"
+      ],
+      "expectedAnswer": "defunctus",
+      "acceptedVariants": [
+        "defunctus"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": "requiem-offertory-l39",
+      "skills": [
+        "vocabulary:defunctus"
+      ],
+      "referenceIds": [
+        "requiem-offertory-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau mot signifie « défunt » ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "defunctus",
+            "requies",
+            "crux",
+            "hostia"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which new word means cross?",
+      "stimulus": null,
+      "options": [
+        "crux",
+        "requies",
+        "defunctus",
+        "lignum"
+      ],
+      "expectedAnswer": "crux",
+      "acceptedVariants": [
+        "crux"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": "goodfriday-ecce-l39",
+      "skills": [
+        "vocabulary:crux"
+      ],
+      "referenceIds": [
+        "goodfriday-ecce-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau mot signifie « croix » ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "crux",
+            "requies",
+            "defunctus",
+            "lignum"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is Lesson 39's milestone?",
+      "stimulus": null,
+      "options": [
+        "Requiem and Holy Week specialized registers.",
+        "Unseen normal Propers.",
+        "Complete Ordinary.",
+        "Unseen authentic Missal capstone."
+      ],
+      "expectedAnswer": "Requiem and Holy Week specialized registers.",
+      "acceptedVariants": [
+        "Requiem and Holy Week specialized registers."
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de la leçon 39 ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "Registres spécialisés du Requiem et de la Semaine sainte.",
+            "Propres ordinaires inconnus.",
+            "Ordinaire complet.",
+            "Couronnement sur un texte authentique inconnu du Missel."
+          ]
+        }
+      }
+    },
+    {
+      "id": "l39-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the correct frequency policy?",
+      "stimulus": null,
+      "options": [
+        "keep specialized vocabulary partitioned from normal-Proper frequency",
+        "treat it all as ordinary high-frequency vocabulary",
+        "ignore special rites",
+        "remove rare words"
+      ],
+      "expectedAnswer": "keep specialized vocabulary partitioned from normal-Proper frequency",
+      "acceptedVariants": [
+        "keep specialized vocabulary partitioned from normal-Proper frequency"
+      ],
+      "hint": "Identify the specialized register first.",
+      "explanation": "This checks specialized Requiem/Holy Week reading without generalizing its frequency.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "register:frequency"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle est la bonne politique de fréquence ?",
+          "hint": "Identifiez d’abord le registre spécialisé.",
+          "explanation": "Ceci vérifie la lecture spécialisée du Requiem et de la Semaine sainte sans généraliser sa fréquence.",
+          "options": [
+            "garder le vocabulaire spécialisé séparé de la fréquence des Propres ordinaires",
+            "traiter tout comme vocabulaire ordinaire à haute fréquence",
+            "ignorer les rites particuliers",
+            "supprimer les mots rares"
+          ]
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Read Requiem and Good Friday registers accurately.",
+    "Learn crux, requies and defunctus.",
+    "Separate specialized frequency from normal Propers.",
+    "Reach the specialized-register milestone."
+  ],
+  "checkpoint": {
+    "id": "l39-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l39-e1",
+        "l39-e2",
+        "l39-e3",
+        "l39-e4",
+        "l39-e5",
+        "l39-e6",
+        "l39-e7",
+        "l39-e8",
+        "l39-e9",
+        "l39-e10"
+      ]
+    },
+    "mustKnow": [
+      "requies",
+      "defunctus",
+      "crux",
+      "Requiem register",
+      "Good Friday register",
+      "frequency partition"
+    ],
+    "progressionGate": "Requiem and Holy Week specialized registers.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "crux",
+      "requies",
+      "defunctus"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 5,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Requiem et Semaine sainte",
+      "grammarFocus": "Registres liturgiques spécialisés",
+      "readingOutcome": "Lire les textes du Requiem et de la Semaine sainte sans traiter le vocabulaire des rites particuliers comme fréquent dans les Propres ordinaires.",
+      "objectives": [
+        "Lire avec précision les registres du Requiem et du Vendredi saint.",
+        "Apprendre crux, requies et defunctus.",
+        "Séparer la fréquence spécialisée de celle des Propres ordinaires.",
+        "Atteindre le jalon des registres spécialisés."
+      ]
+    }
+  }
+}

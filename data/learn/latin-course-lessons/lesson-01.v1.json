@@ -1,0 +1,1174 @@
+{
+  "version": "latin-course-lesson-01-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 1,
+  "stage": {
+    "number": 1,
+    "title": "Hear the Latin of the Church"
+  },
+  "title": "Hear the Latin of the Church",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 25,
+  "progressionStep": "phrase",
+  "grammarFocus": "Ecclesiastical pronunciation; stress; listening and recognition",
+  "readingOutcome": "Hear and pronounce authentic liturgical phrases.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "authenticTextPolicy": "Primary liturgical text is kept distinct from editorial accents, pronunciation guides and translations.",
+    "vocabularyPolicy": "Only frozen Lesson 1 Core vocabulary is taught. Later Core words may appear only as explicit passive reading support and retain their frozen later lesson.",
+    "copyrightPolicy": "Pedagogical explanations and exercises are original synthesis. No textbook prose is reproduced.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "objectives": [
+    "Hear Latin as a regular sound system rather than English read with Latin spelling.",
+    "Use the course's marked stress to pronounce unfamiliar liturgical words.",
+    "Recognize and understand et as the conjunction 'and'.",
+    "Read Et cum spiritu tuo aloud with explicit support.",
+    "Find et inside authentic Ordinary texts without being expected to parse the surrounding later vocabulary."
+  ],
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "rank": 1,
+        "lemma": "et",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "and",
+          "fr": "et"
+        },
+        "pronunciation": {
+          "ipa": "et",
+          "learnerGuide": "eh-t; keep the final t clear"
+        },
+        "inflection": "invariable",
+        "frozenLesson": 1
+      }
+    ],
+    "recycled": []
+  },
+  "pronunciationSystem": {
+    "variety": "Roman ecclesiastical Latin",
+    "scopeNote": "Lesson 1 teaches only the high-yield sound rules required by its examples. Finer phonetic detail can be added later without changing the lexical curriculum.",
+    "rules": [
+      {
+        "id": "vowels",
+        "label": "Keep the vowels clear",
+        "learnerCopy": "Latin vowels are kept clean and distinct. Do not turn them into long English glides. In this course, ae and oe are normally heard like e.",
+        "examples": [
+          {
+            "latin": "et",
+            "guide": "eh-t"
+          },
+          {
+            "latin": "caelum",
+            "guide": "CHEH-loom",
+            "status": "support-only"
+          }
+        ]
+      },
+      {
+        "id": "soft-c",
+        "label": "c changes before front vowels",
+        "learnerCopy": "Before e, ae, oe, i or y, c is heard like the ch in 'church'. Elsewhere it is normally k.",
+        "examples": [
+          {
+            "latin": "caelum",
+            "guide": "CHEH-loom",
+            "status": "support-only"
+          },
+          {
+            "latin": "cum",
+            "guide": "koom",
+            "status": "support-only"
+          }
+        ]
+      },
+      {
+        "id": "soft-g",
+        "label": "g can be soft",
+        "learnerCopy": "Before e, ae, oe, i or y, g is normally heard like the j in 'judge'; elsewhere it remains hard.",
+        "examples": [
+          {
+            "latin": "Virgine",
+            "guide": "VEER-jee-neh",
+            "status": "support-only"
+          }
+        ]
+      },
+      {
+        "id": "gn",
+        "label": "gn is one familiar Church sound",
+        "learnerCopy": "gn is heard approximately like ny in 'canyon'.",
+        "examples": [
+          {
+            "latin": "Agnus",
+            "guide": "AH-nyoos",
+            "status": "support-only"
+          }
+        ]
+      },
+      {
+        "id": "ti-vowel",
+        "label": "ti + vowel often becomes tsee",
+        "learnerCopy": "When ti is followed by another vowel, it is commonly heard as tsee in Church Latin, unless the spelling environment blocks that change. For now, learn the sound from the model.",
+        "examples": [
+          {
+            "latin": "gratia",
+            "guide": "GRAH-tsee-ah",
+            "status": "support-only"
+          }
+        ]
+      },
+      {
+        "id": "h",
+        "label": "h is normally silent",
+        "learnerCopy": "The h of ordinary ecclesiastical pronunciation is normally silent.",
+        "examples": [
+          {
+            "latin": "hominibus",
+            "guide": "oh-MEE-nee-boos",
+            "status": "support-only"
+          }
+        ]
+      }
+    ],
+    "stress": {
+      "learnerCopy": "Stress belongs to the word, not to English instinct. Two-syllable words are normally stressed on the first syllable. In longer words, this course will mark the stressed vowel while you are learning: spíritu, glória, Vírgine. The unaccented primary-source text remains unchanged.",
+      "policy": "Instructional display may add an acute accent solely as a stress aid; sourceLatin never adds editorial accents."
+    }
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "cum",
+      "forms": [
+        "cum"
+      ],
+      "gloss": {
+        "en": "with",
+        "fr": "avec"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "spiritus",
+      "forms": [
+        "spiritu"
+      ],
+      "gloss": {
+        "en": "spirit",
+        "fr": "esprit"
+      },
+      "trackedLesson": 14,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "tuus",
+      "forms": [
+        "tuo"
+      ],
+      "gloss": {
+        "en": "your",
+        "fr": "votre / ton"
+      },
+      "trackedLesson": 4,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "gloria",
+      "forms": [
+        "Gloria"
+      ],
+      "gloss": {
+        "en": "glory",
+        "fr": "gloire"
+      },
+      "trackedLesson": 2,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "in",
+      "forms": [
+        "in"
+      ],
+      "gloss": {
+        "en": "in / on",
+        "fr": "dans / sur"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "excelsus",
+      "forms": [
+        "excelsis"
+      ],
+      "gloss": {
+        "en": "highest / high",
+        "fr": "très haut"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Deus",
+      "forms": [
+        "Deo"
+      ],
+      "gloss": {
+        "en": "God",
+        "fr": "Dieu"
+      },
+      "trackedLesson": 3,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "terra",
+      "forms": [
+        "terra"
+      ],
+      "gloss": {
+        "en": "earth",
+        "fr": "terre"
+      },
+      "trackedLesson": 2,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "pax",
+      "forms": [
+        "pax"
+      ],
+      "gloss": {
+        "en": "peace",
+        "fr": "paix"
+      },
+      "trackedLesson": 6,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "homo",
+      "forms": [
+        "hominibus",
+        "homo"
+      ],
+      "gloss": {
+        "en": "human being / man",
+        "fr": "homme"
+      },
+      "trackedLesson": 6,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "bonus",
+      "forms": [
+        "bonae"
+      ],
+      "gloss": {
+        "en": "good",
+        "fr": "bon"
+      },
+      "trackedLesson": 4,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "voluntas",
+      "forms": [
+        "voluntatis"
+      ],
+      "gloss": {
+        "en": "will",
+        "fr": "volonté"
+      },
+      "trackedLesson": 8,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "incarno",
+      "forms": [
+        "incarnatus"
+      ],
+      "gloss": {
+        "en": "become incarnate",
+        "fr": "s'incarner"
+      },
+      "trackedLesson": 16,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "sum",
+      "forms": [
+        "est"
+      ],
+      "gloss": {
+        "en": "be",
+        "fr": "être"
+      },
+      "trackedLesson": 3,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "de",
+      "forms": [
+        "de"
+      ],
+      "gloss": {
+        "en": "from / of",
+        "fr": "de"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "sanctus",
+      "forms": [
+        "Sancto"
+      ],
+      "gloss": {
+        "en": "holy",
+        "fr": "saint"
+      },
+      "trackedLesson": 4,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "e/ex",
+      "forms": [
+        "ex"
+      ],
+      "gloss": {
+        "en": "from / out of",
+        "fr": "de / hors de"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Maria",
+      "forms": [
+        "Maria"
+      ],
+      "gloss": {
+        "en": "Mary",
+        "fr": "Marie"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "virgo",
+      "forms": [
+        "Virgine"
+      ],
+      "gloss": {
+        "en": "virgin",
+        "fr": "vierge"
+      },
+      "trackedLesson": 6,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "facio",
+      "forms": [
+        "factus"
+      ],
+      "gloss": {
+        "en": "make / become",
+        "fr": "faire / devenir"
+      },
+      "trackedLesson": 12,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "caelum",
+      "forms": [
+        "caelum"
+      ],
+      "gloss": {
+        "en": "heaven",
+        "fr": "ciel"
+      },
+      "trackedLesson": 3,
+      "status": "pronunciation-support-not-introduced"
+    },
+    {
+      "lemma": "agnus",
+      "forms": [
+        "Agnus"
+      ],
+      "gloss": {
+        "en": "lamb",
+        "fr": "agneau"
+      },
+      "trackedLesson": 8,
+      "status": "pronunciation-support-not-introduced"
+    },
+    {
+      "lemma": "gratia",
+      "forms": [
+        "gratia"
+      ],
+      "gloss": {
+        "en": "grace",
+        "fr": "grâce"
+      },
+      "trackedLesson": 2,
+      "status": "pronunciation-support-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-ordo-response-et-cum-spiritu-tuo",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — response to Dominus vobiscum",
+      "sourceLatin": "Et cum spiritu tuo.",
+      "provenanceNote": "Authentic Ordinary formula; punctuation normalized only at terminal full stop.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-ordo-gloria-opening",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Gloria in excelsis",
+      "sourceLatin": "Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis.",
+      "provenanceNote": "Authentic opening clause used for recognition, not grammatical mastery.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-ordo-credo-incarnatus",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est.",
+      "provenanceNote": "Authentic Credo clause used as supported listening/recognition material.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "learningBlocks": [
+    {
+      "id": "l1-b1",
+      "type": "concept",
+      "title": "Latin arrives first as sound",
+      "learnerCopy": {
+        "en": "At Mass you do not first meet Latin as a declension table. You hear a response, a prayer, a repeated phrase. This lesson therefore begins with the sound of the Church's Latin. Your task is not to understand every word. It is to hear the pattern, pronounce it cleanly, and recognize one word that will recur everywhere: et.",
+        "fr": "À la Messe, le latin ne se présente pas d'abord comme un tableau de déclinaisons. On entend une réponse, une prière, une formule répétée. Cette première leçon commence donc par le son du latin de l'Église. Il ne faut pas encore tout comprendre : il faut entendre le rythme, prononcer clairement et reconnaître un mot qui revient partout : et."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le latin s’entend d’abord comme un son"
+        }
+      }
+    },
+    {
+      "id": "l1-b2",
+      "type": "pronunciation",
+      "title": "A small sound map",
+      "learnerCopy": {
+        "en": "Do not apply English spelling habits. Keep the vowels clear. Notice especially c in caelum versus cum, g in Virgine, gn in Agnus, and ti in gratia. These few patterns already unlock a large amount of liturgical Latin.",
+        "fr": "N'appliquez pas au latin les habitudes de prononciation anglaises ou françaises. Gardez les voyelles nettes. Remarquez surtout c dans caelum et cum, g dans Virgine, gn dans Agnus et ti dans gratia. Ces quelques régularités ouvrent déjà une grande partie du latin liturgique."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une petite carte des sons"
+        }
+      }
+    },
+    {
+      "id": "l1-b3",
+      "type": "stress",
+      "title": "Hear the stressed syllable",
+      "learnerCopy": {
+        "en": "The course may temporarily mark stress with an acute accent: spíritu, glória, Vírgin(e). Read the stressed syllable firmly, but do not exaggerate it. The source text itself remains unaltered.",
+        "fr": "Le cours peut signaler provisoirement l'accent tonique par un accent aigu : spíritu, glória, Vírgin(e). Faites entendre la syllabe accentuée sans l'exagérer. Le texte-source, lui, reste inchangé."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Entendre la syllabe accentuée"
+        }
+      }
+    },
+    {
+      "id": "l1-b4",
+      "type": "vocabulary",
+      "title": "Your first tracked word: et",
+      "learnerCopy": {
+        "en": "et means 'and'. It does not change its ending. Its job is to join: one word and another, one phrase and another. Because it is so frequent, recognizing it immediately helps you hear the structure of a prayer even before you know the surrounding vocabulary.",
+        "fr": "et signifie « et ». Le mot ne change pas de terminaison. Il relie un mot à un autre, une expression à une autre. Comme il est extrêmement fréquent, le reconnaître immédiatement permet déjà d'entendre la structure d'une prière avant même de connaître les autres mots."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Votre premier mot suivi : et"
+        }
+      }
+    },
+    {
+      "id": "l1-b5",
+      "type": "authentic-example",
+      "title": "A response you already hear",
+      "sourceId": "mr1962-ordo-response-et-cum-spiritu-tuo",
+      "learnerCopy": {
+        "en": "Read: Et cum spíritu tuo. The only tracked word here is et. For this lesson, the rest is supplied: cum = with; spiritu = spirit; tuo = your. Read the whole response as one unit: 'And with thy spirit.'",
+        "fr": "Lisez : Et cum spíritu tuo. Le seul mot comptabilisé comme appris ici est et. Pour cette leçon, le reste est fourni : cum = avec ; spiritu = esprit ; tuo = votre. Lisez la réponse comme une seule unité : « Et avec votre esprit. »"
+      },
+      "referenceIds": [
+        "mr1962-ordo-response-et-cum-spiritu-tuo",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une réponse que vous entendez déjà"
+        }
+      }
+    },
+    {
+      "id": "l1-b6",
+      "type": "guided-recognition",
+      "title": "Find the hinge word",
+      "sourceId": "mr1962-ordo-gloria-opening",
+      "learnerCopy": {
+        "en": "Now look at a longer line without trying to translate it word by word: Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis. Find et. You already know what the line is doing at that point: it is joining two parts. That is genuine reading, even though most of the vocabulary belongs to later lessons.",
+        "fr": "Regardez maintenant une phrase plus longue sans chercher à la traduire mot à mot : Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis. Repérez et. Vous savez déjà ce qui se passe à cet endroit : le mot relie deux parties. C'est déjà une véritable lecture, même si la plupart des mots seront étudiés plus tard."
+      },
+      "referenceIds": [
+        "mr1962-ordo-gloria-opening",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Repérer le mot charnière"
+        }
+      }
+    },
+    {
+      "id": "l1-b7",
+      "type": "liturgical-reading",
+      "title": "Recognize before you analyse",
+      "sourceId": "mr1962-ordo-credo-incarnatus",
+      "learnerCopy": {
+        "en": "In the Credo you can already pick out the repeated conjunction: Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est. Do not parse the sentence yet. Hear the two et forms, keep the vowels clean, and let the later words remain supported reading vocabulary.",
+        "fr": "Dans le Credo, vous pouvez déjà repérer la conjonction répétée : Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est. N'analysez pas encore la phrase. Entendez les deux et, gardez les voyelles nettes et laissez les autres mots au statut de vocabulaire de lecture assistée."
+      },
+      "referenceIds": [
+        "mr1962-ordo-credo-incarnatus",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Reconnaître avant d’analyser"
+        }
+      }
+    },
+    {
+      "id": "l1-b8",
+      "type": "retrieval",
+      "title": "What you must retain",
+      "learnerCopy": {
+        "en": "After Lesson 1, only one Latin lemma is formally in your active Core: et = and. But you should also be able to pronounce the supported phrases more confidently and recognize that unfamiliar liturgical Latin is not a wall of text: recurring sounds and connector words give it structure.",
+        "fr": "Après la leçon 1, un seul lemme latin entre officiellement dans votre vocabulaire actif : et = « et ». Mais vous devez aussi pouvoir prononcer plus sûrement les formules proposées et comprendre que le latin liturgique inconnu n'est pas un mur de texte : des sons réguliers et des mots-charnières lui donnent une structure."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ce que vous devez retenir"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l1-p1",
+      "sourceId": "mr1962-ordo-response-et-cum-spiritu-tuo",
+      "sourceLatin": "Et cum spiritu tuo.",
+      "instructionalDisplay": "Et cum spíritu tuo.",
+      "pronunciationGuide": "ET koom SPEE-ree-too TOO-oh",
+      "translation": {
+        "en": "And with thy spirit.",
+        "fr": "Et avec votre esprit."
+      },
+      "targetLemmas": [
+        "et"
+      ],
+      "supportLemmas": [
+        "cum",
+        "spiritus",
+        "tuus"
+      ]
+    },
+    {
+      "id": "l1-p2",
+      "sourceId": "mr1962-ordo-gloria-opening",
+      "sourceLatin": "Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis.",
+      "instructionalDisplay": "Glória in excélsis Deo, et in terra pax homínibus bonae voluntátis.",
+      "translation": {
+        "en": "Glory to God in the highest, and on earth peace to men of good will.",
+        "fr": "Gloire à Dieu au plus haut des cieux, et paix sur la terre aux hommes de bonne volonté."
+      },
+      "targetLemmas": [
+        "et"
+      ],
+      "supportLemmas": [
+        "gloria",
+        "in",
+        "excelsus",
+        "Deus",
+        "terra",
+        "pax",
+        "homo",
+        "bonus",
+        "voluntas"
+      ]
+    },
+    {
+      "id": "l1-p3",
+      "sourceId": "mr1962-ordo-credo-incarnatus",
+      "sourceLatin": "Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est.",
+      "instructionalDisplay": "Et incarnátus est de Spíritu Sancto ex María Vírgine: et homo factus est.",
+      "translation": {
+        "en": "And He was incarnate by the Holy Ghost of the Virgin Mary: and was made man.",
+        "fr": "Et il s'est incarné du Saint-Esprit, de la Vierge Marie, et s'est fait homme."
+      },
+      "targetLemmas": [
+        "et"
+      ],
+      "supportLemmas": [
+        "incarno",
+        "sum",
+        "de",
+        "spiritus",
+        "sanctus",
+        "e/ex",
+        "Maria",
+        "virgo",
+        "homo",
+        "facio"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l1-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does et mean?",
+      "stimulus": "et",
+      "options": [
+        "and",
+        "with",
+        "from",
+        "holy"
+      ],
+      "expectedAnswer": "and",
+      "acceptedVariants": [
+        "and"
+      ],
+      "hint": "It joins one word or phrase to another.",
+      "explanation": "et is the invariable conjunction 'and'.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:et"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie et ?",
+          "hint": "Il relie un mot ou un groupe de mots à un autre.",
+          "explanation": "et est la conjonction invariable « et ».",
+          "options": [
+            "et",
+            "avec",
+            "de",
+            "saint"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l1-e2",
+      "exerciseType": "token_select",
+      "prompt": "Select the tracked Core word in this response.",
+      "stimulus": "Et cum spiritu tuo.",
+      "expectedAnswer": [
+        "Et"
+      ],
+      "acceptedVariants": [
+        [
+          "Et"
+        ],
+        [
+          "et"
+        ]
+      ],
+      "hint": "Only one word is active vocabulary in Lesson 1.",
+      "explanation": "Et is the Lesson 1 Core word. cum, spiritu and tuo are deliberately glossed support and are taught later.",
+      "difficulty": 1,
+      "sourceId": "mr1962-ordo-response-et-cum-spiritu-tuo",
+      "skills": [
+        "vocabulary:et",
+        "reading:target-recognition"
+      ],
+      "referenceIds": [
+        "mr1962-ordo-response-et-cum-spiritu-tuo",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le mot du vocabulaire fondamental suivi dans cette réponse.",
+          "hint": "Un seul mot appartient au vocabulaire actif de la leçon 1.",
+          "explanation": "Et est le mot du vocabulaire fondamental de la leçon 1. cum, spiritu et tuo sont volontairement fournis comme aide de lecture et seront enseignés plus tard."
+        }
+      }
+    },
+    {
+      "id": "l1-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Choose the supported meaning of the complete response.",
+      "stimulus": "Et cum spiritu tuo.",
+      "options": [
+        "And with thy spirit.",
+        "Glory to God.",
+        "Lord, have mercy.",
+        "Thanks be to God."
+      ],
+      "expectedAnswer": "And with thy spirit.",
+      "acceptedVariants": [
+        "And with thy spirit.",
+        "And with your spirit."
+      ],
+      "hint": "et = and; the remaining words are supplied reading support.",
+      "explanation": "The fixed response means 'And with thy spirit.' The exercise checks recognition of the whole heard unit without pretending the later words have already been learned.",
+      "difficulty": 1,
+      "sourceId": "mr1962-ordo-response-et-cum-spiritu-tuo",
+      "skills": [
+        "formula-recognition",
+        "vocabulary:et"
+      ],
+      "referenceIds": [
+        "mr1962-ordo-response-et-cum-spiritu-tuo",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Choisissez le sens fourni de la réponse complète.",
+          "hint": "et = et ; les autres mots sont fournis comme aide à la lecture.",
+          "explanation": "La réponse fixe signifie « Et avec votre esprit. » L’exercice vérifie la reconnaissance de l’unité entendue dans son ensemble sans prétendre que les mots ultérieurs ont déjà été appris.",
+          "options": [
+            "Et avec votre esprit.",
+            "Gloire à Dieu.",
+            "Seigneur, ayez pitié.",
+            "Nous rendons grâce à Dieu."
+          ]
+        }
+      }
+    },
+    {
+      "id": "l1-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "How is the c of cum pronounced in Roman ecclesiastical Latin?",
+      "stimulus": "cum",
+      "options": [
+        "k",
+        "ch",
+        "s",
+        "ts"
+      ],
+      "expectedAnswer": "k",
+      "acceptedVariants": [
+        "k",
+        "hard c"
+      ],
+      "hint": "The c is not before e, ae, oe, i or y.",
+      "explanation": "Before u, c remains hard: cum begins with a k sound.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronunciation:soft-c"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Comment se prononce le c de cum en latin ecclésiastique romain ?",
+          "hint": "Le c n’est pas devant e, ae, oe, i ou y.",
+          "explanation": "Devant u, c reste dur : cum commence par un son k.",
+          "options": [
+            "k",
+            "ch",
+            "s",
+            "ts"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l1-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "How is the c of caelum pronounced?",
+      "stimulus": "caelum",
+      "options": [
+        "ch",
+        "k",
+        "s",
+        "g"
+      ],
+      "expectedAnswer": "ch",
+      "acceptedVariants": [
+        "ch",
+        "soft c"
+      ],
+      "hint": "c before ae follows the soft-c rule.",
+      "explanation": "caelum begins approximately CHEH-. The word is pronunciation support only; its Core lesson remains Lesson 3.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronunciation:soft-c",
+        "curriculum:passive-support"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Comment se prononce le c de caelum ?",
+          "hint": "c devant ae suit la règle du c doux.",
+          "explanation": "caelum commence approximativement par « TCHÉ- ». Le mot ne sert ici que d’aide à la prononciation ; sa leçon de vocabulaire fondamental reste la leçon 3.",
+          "options": [
+            "ch",
+            "k",
+            "s",
+            "g"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l1-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which guide best matches gn in Agnus?",
+      "stimulus": "Agnus",
+      "options": [
+        "ny",
+        "hard g + n",
+        "j",
+        "sh"
+      ],
+      "expectedAnswer": "ny",
+      "acceptedVariants": [
+        "ny",
+        "gn ≈ ny"
+      ],
+      "hint": "Think of the middle of 'canyon'.",
+      "explanation": "In Roman ecclesiastical pronunciation, gn is approximately the palatal ny sound.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronunciation:gn",
+        "curriculum:passive-support"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel guide correspond le mieux à gn dans Agnus ?",
+          "hint": "Pensez au son « gn » de « agneau ».",
+          "explanation": "En prononciation ecclésiastique romaine, gn correspond approximativement au son palatal « gn ».",
+          "options": [
+            "gn",
+            "g dur + n",
+            "j",
+            "ch"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l1-e7",
+      "exerciseType": "syllable_select",
+      "prompt": "Which syllable carries the marked stress?",
+      "stimulus": "spíritu",
+      "options": [
+        "spí",
+        "ri",
+        "tu"
+      ],
+      "expectedAnswer": "spí",
+      "acceptedVariants": [
+        "spí",
+        "spi",
+        "first syllable"
+      ],
+      "hint": "The acute accent is an instructional stress mark.",
+      "explanation": "The course writes spíritu during early instruction so the learner can hear the stress before learning the full stress rules.",
+      "difficulty": 1,
+      "sourceId": "mr1962-ordo-response-et-cum-spiritu-tuo",
+      "skills": [
+        "pronunciation:stress"
+      ],
+      "referenceIds": [
+        "mr1962-ordo-response-et-cum-spiritu-tuo",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle syllabe porte l’accent tonique indiqué ?",
+          "hint": "L’accent aigu est un signe pédagogique d’accentuation.",
+          "explanation": "Le cours écrit spíritu au début de l’apprentissage afin que l’élève entende l’accent avant d’apprendre toutes les règles d’accentuation.",
+          "options": [
+            "spí",
+            "ri",
+            "tu"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l1-e8",
+      "exerciseType": "token_select",
+      "prompt": "Select every occurrence of et in this authentic Credo clause.",
+      "stimulus": "Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est.",
+      "expectedAnswer": [
+        "Et",
+        "et"
+      ],
+      "acceptedVariants": [
+        [
+          "Et",
+          "et"
+        ],
+        [
+          "et",
+          "et"
+        ]
+      ],
+      "hint": "There are two occurrences: one opens the clause and one follows the colon.",
+      "explanation": "You can already recognize the conjunction twice without parsing the advanced morphology around it.",
+      "difficulty": 2,
+      "sourceId": "mr1962-ordo-credo-incarnatus",
+      "skills": [
+        "vocabulary:et",
+        "reading:target-recognition"
+      ],
+      "referenceIds": [
+        "mr1962-ordo-credo-incarnatus",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez chaque occurrence de et dans cette proposition authentique du Credo.",
+          "hint": "Il y en a deux : l’une ouvre la proposition et l’autre suit les deux-points.",
+          "explanation": "Vous pouvez déjà reconnaître deux fois la conjonction sans analyser la morphologie avancée qui l’entoure."
+        }
+      }
+    },
+    {
+      "id": "l1-e9",
+      "exerciseType": "read_aloud_model",
+      "prompt": "Read the response aloud, then compare yourself with the model guide.",
+      "stimulus": "Et cum spíritu tuo.",
+      "expectedAnswer": {
+        "modelGuide": "ET koom SPEE-ree-too TOO-oh",
+        "requiredChecks": [
+          "clear final t in et",
+          "hard c in cum",
+          "stress on spí",
+          "three syllables in spiritu",
+          "two syllables in tuo"
+        ]
+      },
+      "acceptedVariants": [],
+      "hint": "Keep the vowels clean; do not swallow spiritu into English-style syllables.",
+      "explanation": "This is a self-check exercise. The stored model gives a resolvable target even before recorded audio is added.",
+      "difficulty": 2,
+      "sourceId": "mr1962-ordo-response-et-cum-spiritu-tuo",
+      "grading": "self_check",
+      "skills": [
+        "pronunciation:integrated",
+        "formula-recognition"
+      ],
+      "referenceIds": [
+        "mr1962-ordo-response-et-cum-spiritu-tuo",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Lisez la réponse à haute voix, puis comparez-vous au guide-modèle.",
+          "hint": "Gardez les voyelles nettes ; n’avalez pas spiritu en syllabes à l’anglaise.",
+          "explanation": "Ceci est un exercice d’auto-évaluation. Le guide-modèle fournit une cible vérifiable même avant l’ajout d’un enregistrement audio.",
+          "modelGuide": "ET koom SPEE-ree-too TOO-oh",
+          "requiredChecks": [
+            "t final de et nettement prononcé",
+            "c dur dans cum",
+            "accent tonique sur spí",
+            "trois syllabes dans spiritu",
+            "deux syllabes dans tuo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l1-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Without looking back: which single Core lemma was formally introduced in Lesson 1?",
+      "stimulus": null,
+      "expectedAnswer": "et",
+      "acceptedVariants": [
+        "et",
+        "Et"
+      ],
+      "hint": "It is the conjunction you found in all three authentic passages.",
+      "explanation": "Lesson 1 deliberately introduces only et. Every other Latin word in the lesson is support, not silently added vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "retrieval:vocabulary",
+        "curriculum:core-lock"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sans revenir en arrière : quel unique lemme du vocabulaire fondamental a été formellement introduit à la leçon 1 ?",
+          "hint": "C’est la conjonction repérée dans les trois passages authentiques.",
+          "explanation": "La leçon 1 n’introduit volontairement que et. Tous les autres mots latins de la leçon sont des aides et ne sont pas ajoutés implicitement au vocabulaire."
+        }
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "l1-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 7,
+      "autoGradedExerciseIds": [
+        "l1-e1",
+        "l1-e2",
+        "l1-e3",
+        "l1-e4",
+        "l1-e5",
+        "l1-e6",
+        "l1-e7",
+        "l1-e8",
+        "l1-e10"
+      ],
+      "selfCheckRequired": [
+        "l1-e9"
+      ]
+    },
+    "mustKnow": [
+      "et = and",
+      "c is hard in cum and soft in caelum",
+      "gn is approximately ny",
+      "course accents show stress during early lessons",
+      "later vocabulary seen in authentic passages remains passive support until its frozen lesson"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "et"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 3,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Entendre le latin de l’Église",
+      "grammarFocus": "Prononciation ecclésiastique ; accent tonique ; écoute et reconnaissance",
+      "readingOutcome": "Entendre et prononcer des expressions liturgiques authentiques.",
+      "objectives": [
+        "Entendre le latin comme un système phonétique régulier, et non comme de l’anglais lu avec une orthographe latine.",
+        "Utiliser l’accent tonique indiqué par le cours pour prononcer des mots liturgiques inconnus.",
+        "Reconnaître et comprendre et comme la conjonction « et ».",
+        "Lire Et cum spiritu tuo à haute voix avec un accompagnement explicite.",
+        "Repérer et dans des textes authentiques de l’Ordinaire sans devoir analyser le vocabulaire ultérieur qui l’entoure."
+      ]
+    }
+  }
+}

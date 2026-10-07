@@ -1,0 +1,1822 @@
+{
+  "version": "latin-course-lesson-25-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 25,
+  "stage": {
+    "number": 5,
+    "title": "Prayer Language"
+  },
+  "title": "Cum… esset",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 60,
+  "progressionStep": "passage",
+  "grammarFocus": "Imperfect subjunctive; cum clauses",
+  "readingOutcome": "Read circumstantial/temporal cum and longer subordinate clauses.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 25 connective vocabulary only; complex narrative nouns/proper names are explicit support.",
+    "authenticTextPolicy": "Longer syntax is anchored in Vulgate narrative, Gloria, hymn and traditional liturgical texts.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "quando",
+        "partOfSpeech": "conjunction/adverb",
+        "gloss": {
+          "en": "when",
+          "fr": "quand / lorsque"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "dum",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "while / while yet",
+          "fr": "pendant que / tandis que"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "ubi",
+        "partOfSpeech": "conjunction/adverb",
+        "gloss": {
+          "en": "where / when",
+          "fr": "où / lorsque"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "si",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "if",
+          "fr": "si"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "nisi",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "unless / if not",
+          "fr": "à moins que / si... ne"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "quoniam",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "because / since / for",
+          "fr": "parce que / puisque"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "atque/ac",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "and / and also",
+          "fr": "et / ainsi que"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "quasi",
+        "partOfSpeech": "conjunction/adverb",
+        "gloss": {
+          "en": "as if / as though / like",
+          "fr": "comme si / comme"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "nam",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "for",
+          "fr": "car"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "vero",
+        "partOfSpeech": "conjunction/adverb",
+        "gloss": {
+          "en": "but / indeed / in truth",
+          "fr": "mais / certes / en vérité"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "etiam",
+        "partOfSpeech": "adverb/conjunction",
+        "gloss": {
+          "en": "also / even",
+          "fr": "aussi / même"
+        },
+        "frozenLesson": 25
+      },
+      {
+        "lemma": "quidem",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "indeed / certainly",
+          "fr": "certes / assurément"
+        },
+        "frozenLesson": 25
+      }
+    ],
+    "recycled": [
+      "autem",
+      "sic",
+      "sum",
+      "cum",
+      "mater",
+      "is/ea/id",
+      "habeo",
+      "de",
+      "spiritus",
+      "sanctus",
+      "nascor",
+      "ecce",
+      "venio",
+      "Deus",
+      "pro",
+      "nos",
+      "contra",
+      "e/ex",
+      "aqua",
+      "et",
+      "non",
+      "possum",
+      "introeo",
+      "in",
+      "regnum",
+      "tu",
+      "solus",
+      "Dominus",
+      "caritas",
+      "ibi",
+      "corpus",
+      "morior",
+      "facio",
+      "ut",
+      "anima",
+      "do",
+      "gloria",
+      "omnis",
+      "nox",
+      "tuus",
+      "caelum",
+      "ambulo",
+      "mors",
+      "timeo",
+      "malus",
+      "sine",
+      "ergo",
+      "dies",
+      "a/ab",
+      "suus"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "generatio",
+      "forms": [
+        "generatio"
+      ],
+      "gloss": {
+        "en": "generation / birth",
+        "fr": "génération / naissance"
+      },
+      "trackedLesson": 33,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "desponso",
+      "forms": [
+        "desponsata"
+      ],
+      "gloss": {
+        "en": "betroth",
+        "fr": "fiancer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Maria",
+      "forms": [
+        "Maria"
+      ],
+      "gloss": {
+        "en": "Mary",
+        "fr": "Marie"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Ioseph",
+      "forms": [
+        "Joseph"
+      ],
+      "gloss": {
+        "en": "Joseph",
+        "fr": "Joseph"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "antequam",
+      "forms": [
+        "antequam"
+      ],
+      "gloss": {
+        "en": "before",
+        "fr": "avant que"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "convenio",
+      "forms": [
+        "convenirent"
+      ],
+      "gloss": {
+        "en": "come together",
+        "fr": "se réunir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "uterus",
+      "forms": [
+        "utero"
+      ],
+      "gloss": {
+        "en": "womb",
+        "fr": "sein / ventre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesus",
+        "Jesu"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Bethlehem",
+      "forms": [
+        "Bethlehem"
+      ],
+      "gloss": {
+        "en": "Bethlehem",
+        "fr": "Bethléem"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Iuda",
+      "forms": [
+        "Juda"
+      ],
+      "gloss": {
+        "en": "Judah",
+        "fr": "Juda"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Herodes",
+      "forms": [
+        "Herodis"
+      ],
+      "gloss": {
+        "en": "Herod",
+        "fr": "Hérode"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Magi",
+      "forms": [
+        "Magi"
+      ],
+      "gloss": {
+        "en": "Magi",
+        "fr": "Mages"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "oriens",
+      "forms": [
+        "oriente"
+      ],
+      "gloss": {
+        "en": "east / rising",
+        "fr": "orient"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "quis",
+      "forms": [
+        "quis"
+      ],
+      "gloss": {
+        "en": "who / anyone",
+        "fr": "qui / quelqu'un"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "renascor",
+      "forms": [
+        "renatus fuerit"
+      ],
+      "gloss": {
+        "en": "be born again",
+        "fr": "renaître"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Altissimus",
+      "forms": [
+        "Altissimus"
+      ],
+      "gloss": {
+        "en": "Most High",
+        "fr": "Très-Haut"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "amor",
+      "forms": [
+        "amor"
+      ],
+      "gloss": {
+        "en": "love",
+        "fr": "amour"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "paradisus",
+      "forms": [
+        "paradisi"
+      ],
+      "gloss": {
+        "en": "paradise",
+        "fr": "paradis"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "medius",
+      "forms": [
+        "medium"
+      ],
+      "gloss": {
+        "en": "middle",
+        "fr": "milieu"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "silentium",
+      "forms": [
+        "silentium"
+      ],
+      "gloss": {
+        "en": "silence",
+        "fr": "silence"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "teneo",
+      "forms": [
+        "tenerent"
+      ],
+      "gloss": {
+        "en": "hold / possess",
+        "fr": "tenir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cursus",
+      "forms": [
+        "cursu"
+      ],
+      "gloss": {
+        "en": "course",
+        "fr": "cours"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "iter",
+      "forms": [
+        "iter"
+      ],
+      "gloss": {
+        "en": "way / journey",
+        "fr": "chemin / parcours"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sermo",
+      "forms": [
+        "sermo"
+      ],
+      "gloss": {
+        "en": "word / speech",
+        "fr": "parole"
+      },
+      "trackedLesson": 33,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "regalis",
+      "forms": [
+        "regalibus"
+      ],
+      "gloss": {
+        "en": "royal",
+        "fr": "royal"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sedes",
+      "forms": [
+        "sedibus"
+      ],
+      "gloss": {
+        "en": "seat / throne",
+        "fr": "siège / trône"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "etsi",
+      "forms": [
+        "etsi"
+      ],
+      "gloss": {
+        "en": "even if / although",
+        "fr": "même si / bien que"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "umbra",
+      "forms": [
+        "umbrae"
+      ],
+      "gloss": {
+        "en": "shadow",
+        "fr": "ombre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christi",
+        "Christe"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "omnipotens",
+      "forms": [
+        "omnipotens"
+      ],
+      "gloss": {
+        "en": "almighty",
+        "fr": "tout-puissant"
+      },
+      "trackedLesson": 30,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "vulg-mt1-18-l25",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 1:18",
+      "sourceLatin": "Christi autem generatio sic erat. Cum esset desponsata mater ejus Maria Joseph, antequam convenirent, inventa est in utero habens de Spiritu Sancto.",
+      "provenanceNote": "cum esset gives the principal imperfect-subjunctive circumstantial frame.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-mt2-1-l25",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 2:1",
+      "sourceLatin": "Cum ergo natus esset Jesus in Bethlehem Juda in diebus Herodis regis, ecce Magi ab oriente venerunt Jerosolymam.",
+      "provenanceNote": "cum + pluperfect/imperfect-subjunctive narrative frame is read as background circumstance; exact tense formation beyond the lesson is supplied.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-rom8-31-l25",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Romani 8:31",
+      "sourceLatin": "Si Deus pro nobis, quis contra nos?",
+      "provenanceNote": "si introduces a compact condition and retrieves pronoun/preposition syntax.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-jn3-5-l25",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 3:5",
+      "sourceLatin": "Nisi quis renatus fuerit ex aqua et Spiritu Sancto, non potest introire in regnum Dei.",
+      "provenanceNote": "nisi introduces an exceptive/negative condition in a doctrinal sentence.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "mr1962-gloria-quoniam-l25",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Gloria",
+      "sourceLatin": "Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Jesu Christe.",
+      "provenanceNote": "quoniam introduces the explanatory/causal conclusion of the Gloria.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "ubi-caritas-l25",
+      "sourceType": "primary-liturgical-hymn",
+      "work": "Ubi caritas",
+      "section": "Refrain",
+      "sourceLatin": "Ubi caritas et amor, Deus ibi est.",
+      "provenanceNote": "ubi provides a compact locative/conditional-style clause in traditional liturgical song."
+    },
+    {
+      "id": "stabat-quando-l25",
+      "sourceType": "primary-liturgical-hymn",
+      "work": "Stabat Mater",
+      "section": "Final stanza",
+      "sourceLatin": "Quando corpus morietur, fac ut animae donetur paradisi gloria.",
+      "provenanceNote": "quando introduces a future temporal clause linked to a prayer request."
+    },
+    {
+      "id": "wis18-dum-l25",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina / Roman Introit tradition",
+      "section": "Sapientia 18:14-15",
+      "sourceLatin": "Dum medium silentium tenerent omnia, et nox in suo cursu medium iter haberet, omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit.",
+      "provenanceNote": "dum introduces a sustained temporal background with imperfect-subjunctive/indicative narrative texture in liturgical Scripture.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps22-4-l25",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 22:4",
+      "sourceLatin": "Nam, etsi ambulavero in medio umbrae mortis, non timebo mala: quoniam tu mecum es.",
+      "provenanceNote": "nam, etsi and quoniam show layered discourse and conditional/causal relations.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "quasimodo-introit-l25",
+      "sourceType": "primary-liturgical",
+      "work": "Roman Missal / I Petri 2:2",
+      "section": "Dominica in Albis — Introit",
+      "sourceLatin": "Quasi modo geniti infantes.",
+      "provenanceNote": "quasi is introduced from the traditional Quasimodo Introit opening.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; Stage 5 closes by requiring case, mood and clause linkage simultaneously across longer passages.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "cumClauseFramework": {
+    "corePattern": "cum + imperfect/pluperfect subjunctive often supplies background circumstance in narrative: when/while/since/although, according to context.",
+    "imperfectSubjunctiveRecognition": "Commonly built from the present infinitive + personal endings: esse → essem/esses/esset..., amare → amarem..., etc.",
+    "caution": "cum is multifunctional: earlier it was a preposition with ablative; here it is a conjunction introducing a clause. Decide from what follows.",
+    "connectors": {
+      "temporal": [
+        "quando",
+        "dum",
+        "ubi"
+      ],
+      "conditional": [
+        "si",
+        "nisi",
+        "quasi"
+      ],
+      "causalExplanatory": [
+        "quoniam",
+        "nam"
+      ],
+      "additiveContrastive": [
+        "atque/ac",
+        "vero",
+        "etiam",
+        "quidem"
+      ]
+    },
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l25-b1",
+      "type": "concept",
+      "title": "cum can introduce a whole circumstance",
+      "learnerCopy": {
+        "en": "You already know cum + ablative as 'with'. Before a finite verb, cum can instead introduce a subordinate clause. With the imperfect or pluperfect subjunctive it often supplies narrative background: when, while, since or although.",
+        "fr": "Vous connaissez déjà cum + ablatif au sens de « avec ». Devant un verbe conjugué, cum peut introduire une proposition subordonnée. Avec l'imparfait ou le plus-que-parfait du subjonctif, il fournit souvent l'arrière-plan narratif : lorsque, tandis que, puisque ou bien que."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "cum peut introduire toute une circonstance"
+        }
+      }
+    },
+    {
+      "id": "l25-b2",
+      "type": "morphology",
+      "title": "esset reveals the imperfect subjunctive",
+      "learnerCopy": {
+        "en": "The imperfect subjunctive is highly recognizable because it is built on the present infinitive: esse → esset, amare → amaret, venire → veniret. In cum esset, the infinitive-shaped stem is the clue.",
+        "fr": "L'imparfait du subjonctif est très reconnaissable car il se construit sur l'infinitif présent : esse → esset, amare → amaret, venire → veniret. Dans cum esset, la base d'infinitif est le signal."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "esset révèle l’imparfait du subjonctif"
+        }
+      }
+    },
+    {
+      "id": "l25-b3",
+      "type": "authentic-example",
+      "title": "Cum esset desponsata",
+      "sourceId": "vulg-mt1-18-l25",
+      "learnerCopy": {
+        "en": "The cum-clause establishes the circumstance before the main event inventa est. Do not translate word by word first; mark the subordinate boundary and find the main verb.",
+        "fr": "La proposition en cum établit la circonstance avant l'événement principal inventa est. Ne traduisez pas d'abord mot à mot : marquez la limite de la subordonnée et trouvez le verbe principal."
+      },
+      "referenceIds": [
+        "vulg-mt1-18-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Cum esset desponsata"
+        }
+      }
+    },
+    {
+      "id": "l25-b4",
+      "type": "condition",
+      "title": "si and nisi frame conditions",
+      "learnerCopy": {
+        "en": "si introduces an open condition; nisi normally means 'unless / if not'. These clauses may use different moods depending on meaning, so the conjunction identifies the relation, not a fixed mood by itself.",
+        "fr": "si introduit une condition ; nisi signifie normalement « à moins que / si... ne ». Ces propositions peuvent employer différents modes selon le sens : la conjonction indique la relation, non un mode fixe à elle seule."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "si et nisi encadrent les conditions"
+        }
+      }
+    },
+    {
+      "id": "l25-b5",
+      "type": "discourse",
+      "title": "Temporal, causal and discourse connectors",
+      "learnerCopy": {
+        "en": "quando, dum and ubi locate events; quoniam and nam explain; atque/ac, vero, etiam and quidem connect or shade discourse. These small words are what make long prayer and narrative passages navigable.",
+        "fr": "quando, dum et ubi situent les événements ; quoniam et nam expliquent ; atque/ac, vero, etiam et quidem relient ou nuancent le discours. Ces petits mots rendent les longs passages de prière et de récit navigables."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Connecteurs temporels, causaux et discursifs"
+        }
+      }
+    },
+    {
+      "id": "l25-b6",
+      "type": "stage-checkpoint",
+      "title": "Stage 5: hold several clauses at once",
+      "learnerCopy": {
+        "en": "The Stage 5 gate requires multi-clause reading: identify main and subordinate clauses, recognize subjunctive mood, distinguish purpose/result/condition/time/cause, and keep case/pronoun resolution active across the whole passage.",
+        "fr": "Le contrôle de l'étape 5 exige une lecture à plusieurs propositions : distinguer principale et subordonnées, reconnaître le subjonctif, différencier but/résultat/condition/temps/cause et maintenir l'analyse des cas et pronoms sur tout le passage."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Étape 5 : tenir plusieurs propositions à la fois"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l25-p1",
+      "sourceId": "vulg-mt1-18-l25",
+      "sourceLatin": "Christi autem generatio sic erat. Cum esset desponsata mater ejus Maria Joseph, antequam convenirent, inventa est in utero habens de Spiritu Sancto.",
+      "instructionalDisplay": "Christi autem generatio sic erat. Cum esset desponsata mater ejus Maria Joseph, antequam convenirent, inventa est in utero habens de Spiritu Sancto.",
+      "translation": {
+        "en": "Now the generation of Christ was in this wise. When His mother Mary was espoused to Joseph, before they came together, she was found with child, of the Holy Ghost.",
+        "fr": "Voici comment arriva la naissance du Christ. Marie, sa mère, étant fiancée à Joseph, avant qu'ils eussent habité ensemble, se trouva enceinte par l'Esprit-Saint."
+      },
+      "targetLemmas": [
+        "autem",
+        "sic",
+        "sum",
+        "cum",
+        "mater",
+        "is/ea/id",
+        "habeo",
+        "de",
+        "spiritus",
+        "sanctus"
+      ],
+      "supportLemmas": [
+        "generatio",
+        "desponso",
+        "Maria",
+        "Ioseph",
+        "antequam",
+        "convenio",
+        "uterus",
+        "Christus"
+      ]
+    },
+    {
+      "id": "l25-p2",
+      "sourceId": "vulg-mt2-1-l25",
+      "sourceLatin": "Cum ergo natus esset Jesus in Bethlehem Juda in diebus Herodis regis, ecce Magi ab oriente venerunt Jerosolymam.",
+      "instructionalDisplay": "Cum ergo natus esset Jesus in Bethlehem Juda in diebus Herodis regis, ecce Magi ab oriente venerunt Jerosolymam.",
+      "translation": {
+        "en": "When Jesus therefore was born in Bethlehem of Juda in the days of King Herod, behold there came wise men from the east to Jerusalem.",
+        "fr": "Jésus étant né à Bethléem de Judée, au temps du roi Hérode, voici que des Mages vinrent d'Orient à Jérusalem."
+      },
+      "targetLemmas": [
+        "cum",
+        "ergo",
+        "nascor",
+        "sum",
+        "in",
+        "dies",
+        "ecce",
+        "a/ab",
+        "venio"
+      ],
+      "supportLemmas": [
+        "Iesus",
+        "Bethlehem",
+        "Iuda",
+        "Herodes",
+        "Magi",
+        "oriens"
+      ]
+    },
+    {
+      "id": "l25-p3",
+      "sourceId": "vulg-rom8-31-l25",
+      "sourceLatin": "Si Deus pro nobis, quis contra nos?",
+      "instructionalDisplay": "Si Deus pro nobis, quis contra nos?",
+      "translation": {
+        "en": "If God be for us, who is against us?",
+        "fr": "Si Dieu est pour nous, qui sera contre nous ?"
+      },
+      "targetLemmas": [
+        "si",
+        "Deus",
+        "pro",
+        "nos",
+        "contra"
+      ],
+      "supportLemmas": [
+        "quis"
+      ]
+    },
+    {
+      "id": "l25-p4",
+      "sourceId": "vulg-jn3-5-l25",
+      "sourceLatin": "Nisi quis renatus fuerit ex aqua et Spiritu Sancto, non potest introire in regnum Dei.",
+      "instructionalDisplay": "Nisi quis renatus fuerit ex aqua et Spiritu Sancto, non potest introire in regnum Dei.",
+      "translation": {
+        "en": "Unless a man be born again of water and the Holy Ghost, he cannot enter into the kingdom of God.",
+        "fr": "À moins de renaître de l'eau et de l'Esprit-Saint, nul ne peut entrer dans le royaume de Dieu."
+      },
+      "targetLemmas": [
+        "nisi",
+        "e/ex",
+        "aqua",
+        "et",
+        "spiritus",
+        "sanctus",
+        "non",
+        "possum",
+        "introeo",
+        "in",
+        "regnum",
+        "Deus"
+      ],
+      "supportLemmas": [
+        "quis",
+        "renascor"
+      ]
+    },
+    {
+      "id": "l25-p5",
+      "sourceId": "mr1962-gloria-quoniam-l25",
+      "sourceLatin": "Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Jesu Christe.",
+      "instructionalDisplay": "Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Jesu Christe.",
+      "translation": {
+        "en": "For Thou only art holy. Thou only art the Lord. Thou only art most high, O Jesus Christ.",
+        "fr": "Car vous seul êtes Saint. Vous seul êtes Seigneur. Vous seul êtes le Très-Haut, Jésus-Christ."
+      },
+      "targetLemmas": [
+        "quoniam",
+        "tu",
+        "solus",
+        "sanctus",
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "Altissimus",
+        "Iesus",
+        "Christus"
+      ]
+    },
+    {
+      "id": "l25-p6",
+      "sourceId": "ubi-caritas-l25",
+      "sourceLatin": "Ubi caritas et amor, Deus ibi est.",
+      "instructionalDisplay": "Ubi caritas et amor, Deus ibi est.",
+      "translation": {
+        "en": "Where charity and love are, there is God.",
+        "fr": "Là où sont la charité et l'amour, Dieu est présent."
+      },
+      "targetLemmas": [
+        "ubi",
+        "caritas",
+        "et",
+        "Deus",
+        "ibi",
+        "sum"
+      ],
+      "supportLemmas": [
+        "amor"
+      ]
+    },
+    {
+      "id": "l25-p7",
+      "sourceId": "stabat-quando-l25",
+      "sourceLatin": "Quando corpus morietur, fac ut animae donetur paradisi gloria.",
+      "instructionalDisplay": "Quando corpus morietur, fac ut animae donetur paradisi gloria.",
+      "translation": {
+        "en": "When my body shall die, grant that to my soul be given the glory of paradise.",
+        "fr": "Quand mon corps mourra, faites que soit donnée à mon âme la gloire du paradis."
+      },
+      "targetLemmas": [
+        "quando",
+        "corpus",
+        "morior",
+        "facio",
+        "ut",
+        "anima",
+        "do",
+        "gloria"
+      ],
+      "supportLemmas": [
+        "paradisus"
+      ]
+    },
+    {
+      "id": "l25-p8",
+      "sourceId": "wis18-dum-l25",
+      "sourceLatin": "Dum medium silentium tenerent omnia, et nox in suo cursu medium iter haberet, omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit.",
+      "instructionalDisplay": "Dum medium silentium tenerent omnia, et nox in suo cursu medium iter haberet, omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit.",
+      "translation": {
+        "en": "While all things were in quiet silence, and the night was in the midst of her course, Thy almighty Word, O Lord, came down from heaven from the royal throne.",
+        "fr": "Alors qu'un profond silence enveloppait toutes choses et que la nuit était au milieu de sa course, votre Verbe tout-puissant, Seigneur, vint du ciel, du trône royal."
+      },
+      "targetLemmas": [
+        "dum",
+        "omnis",
+        "et",
+        "nox",
+        "in",
+        "suus",
+        "habeo",
+        "tuus",
+        "Dominus",
+        "de",
+        "caelum",
+        "venio"
+      ],
+      "supportLemmas": [
+        "medius",
+        "silentium",
+        "teneo",
+        "cursus",
+        "iter",
+        "sermo",
+        "regalis",
+        "sedes",
+        "omnipotens"
+      ]
+    },
+    {
+      "id": "l25-p9",
+      "sourceId": "vulg-ps22-4-l25",
+      "sourceLatin": "Nam, etsi ambulavero in medio umbrae mortis, non timebo mala: quoniam tu mecum es.",
+      "instructionalDisplay": "Nam, etsi ambulavero in medio umbrae mortis, non timebo mala: quoniam tu mecum es.",
+      "translation": {
+        "en": "For though I should walk in the midst of the shadow of death, I will fear no evils: for Thou art with me.",
+        "fr": "Car, même si je marche au milieu de l'ombre de la mort, je ne craindrai aucun mal, parce que vous êtes avec moi."
+      },
+      "targetLemmas": [
+        "nam",
+        "ambulo",
+        "in",
+        "mors",
+        "non",
+        "timeo",
+        "malus",
+        "quoniam",
+        "tu",
+        "cum",
+        "sum"
+      ],
+      "supportLemmas": [
+        "etsi",
+        "medius",
+        "umbra"
+      ]
+    },
+    {
+      "id": "l25-p10",
+      "sourceId": "quasimodo-introit-l25",
+      "sourceLatin": "Quasi modo geniti infantes.",
+      "instructionalDisplay": "Quasi modo geniti infantes.",
+      "translation": {
+        "en": "As newborn babes.",
+        "fr": "Comme des enfants nouveau-nés."
+      },
+      "targetLemmas": [
+        "quasi"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l25-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is cum doing in Cum esset desponsata...?",
+      "stimulus": "Cum esset",
+      "options": [
+        "introducing a subordinate circumstantial clause",
+        "governing an ablative noun",
+        "marking a direct object",
+        "forming a relative pronoun"
+      ],
+      "expectedAnswer": "introducing a subordinate circumstantial clause",
+      "acceptedVariants": [
+        "introducing a subordinate circumstantial clause"
+      ],
+      "hint": "A finite verb follows cum.",
+      "explanation": "Here cum is a conjunction, not the preposition 'with'.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt1-18-l25",
+      "skills": [
+        "syntax:cum"
+      ],
+      "referenceIds": [
+        "vulg-mt1-18-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait cum dans Cum esset desponsata... ?",
+          "hint": "Un verbe fini suit cum.",
+          "explanation": "Ici, cum est une conjonction, et non la préposition « avec ».",
+          "options": [
+            "introduit une proposition subordonnée circonstancielle",
+            "régit un nom à l’ablatif",
+            "marque un objet direct",
+            "forme un pronom relatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What mood/tense is esset?",
+      "stimulus": "esset",
+      "options": [
+        "imperfect subjunctive",
+        "future indicative",
+        "perfect active",
+        "imperative"
+      ],
+      "expectedAnswer": "imperfect subjunctive",
+      "acceptedVariants": [
+        "imperfect subjunctive"
+      ],
+      "hint": "It is built from esse + personal ending.",
+      "explanation": "esset is third-person singular imperfect subjunctive of sum.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt1-18-l25",
+      "skills": [
+        "mood:subjunctive",
+        "tense:imperfect"
+      ],
+      "referenceIds": [
+        "vulg-mt1-18-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel mode et à quel temps est esset ?",
+          "hint": "Il se construit sur esse + terminaison personnelle.",
+          "explanation": "esset est la troisième personne du singulier de l’imparfait du subjonctif de sum.",
+          "options": [
+            "imparfait du subjonctif",
+            "futur de l’indicatif",
+            "parfait actif",
+            "impératif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What structural job does the cum-clause perform in Matthew 1:18?",
+      "stimulus": "Cum esset desponsata...",
+      "options": [
+        "background circumstance before the main event",
+        "direct command",
+        "result clause only",
+        "genitive phrase"
+      ],
+      "expectedAnswer": "background circumstance before the main event",
+      "acceptedVariants": [
+        "background circumstance before the main event"
+      ],
+      "hint": "Find the later main event inventa est.",
+      "explanation": "The cum-clause frames the circumstance.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt1-18-l25",
+      "skills": [
+        "reading:narrative"
+      ],
+      "referenceIds": [
+        "vulg-mt1-18-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel rôle structurel la proposition en cum joue-t-elle dans Matthieu 1,18 ?",
+          "hint": "Repérez plus loin l’événement principal inventa est.",
+          "explanation": "La proposition en cum encadre la circonstance.",
+          "options": [
+            "circonstance d’arrière-plan précédant l’événement principal",
+            "ordre direct",
+            "proposition de résultat seulement",
+            "groupe au génitif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e4",
+      "exerciseType": "matching",
+      "prompt": "Match connector to relation.",
+      "stimulus": [
+        "quando",
+        "dum",
+        "ubi",
+        "si",
+        "nisi"
+      ],
+      "expectedAnswer": {
+        "quando": "when",
+        "dum": "while",
+        "ubi": "where / when",
+        "si": "if",
+        "nisi": "unless / if not"
+      },
+      "acceptedVariants": [],
+      "hint": "These are the main temporal/conditional connectors.",
+      "explanation": "This checks structural vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l25"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le connecteur à la relation qu’il exprime.",
+          "hint": "Ce sont les principaux connecteurs temporels et conditionnels.",
+          "explanation": "Ceci vérifie le vocabulaire structurel.",
+          "matches": {
+            "quando": "quand",
+            "dum": "pendant que",
+            "ubi": "où / quand",
+            "si": "si",
+            "nisi": "à moins que / si ne… pas"
+          }
+        }
+      }
+    },
+    {
+      "id": "l25-e5",
+      "exerciseType": "matching",
+      "prompt": "Match discourse connector to meaning.",
+      "stimulus": [
+        "quoniam",
+        "nam",
+        "vero",
+        "etiam",
+        "quidem"
+      ],
+      "expectedAnswer": {
+        "quoniam": "because / since",
+        "nam": "for",
+        "vero": "but / indeed",
+        "etiam": "also / even",
+        "quidem": "indeed / certainly"
+      },
+      "acceptedVariants": [],
+      "hint": "These guide relation and emphasis.",
+      "explanation": "This checks discourse vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l25"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le connecteur discursif à son sens.",
+          "hint": "Ces mots guident la relation et l’emphase.",
+          "explanation": "Ceci vérifie le vocabulaire discursif.",
+          "matches": {
+            "quoniam": "parce que / puisque",
+            "nam": "car",
+            "vero": "mais / en vérité",
+            "etiam": "aussi / même",
+            "quidem": "certes / assurément"
+          }
+        }
+      }
+    },
+    {
+      "id": "l25-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does nisi introduce in John 3:5?",
+      "stimulus": "Nisi quis renatus fuerit...",
+      "options": [
+        "an exceptive/negative condition",
+        "a vocative",
+        "a result clause",
+        "an ablative phrase"
+      ],
+      "expectedAnswer": "an exceptive/negative condition",
+      "acceptedVariants": [
+        "an exceptive/negative condition"
+      ],
+      "hint": "Translate 'unless'.",
+      "explanation": "nisi introduces the condition under which entry is impossible.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn3-5-l25",
+      "skills": [
+        "syntax:condition"
+      ],
+      "referenceIds": [
+        "vulg-jn3-5-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’introduit nisi dans Jean 3,5 ?",
+          "hint": "Traduisez « à moins que ».",
+          "explanation": "nisi introduit la condition en dehors de laquelle l’entrée est impossible.",
+          "options": [
+            "une condition exceptive / négative",
+            "un vocatif",
+            "une proposition de résultat",
+            "un groupe à l’ablatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What relation does quoniam express in the Gloria?",
+      "stimulus": "Quoniam tu solus Sanctus",
+      "options": [
+        "causal/explanatory",
+        "direct command",
+        "purpose only",
+        "comparison"
+      ],
+      "expectedAnswer": "causal/explanatory",
+      "acceptedVariants": [
+        "causal/explanatory"
+      ],
+      "hint": "Translate 'for / because'.",
+      "explanation": "quoniam explains the preceding praise.",
+      "difficulty": 1,
+      "sourceId": "mr1962-gloria-quoniam-l25",
+      "skills": [
+        "syntax:cause"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-quoniam-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle relation quoniam exprime-t-il dans le Gloria ?",
+          "hint": "Traduisez « car / parce que ».",
+          "explanation": "quoniam explique la louange qui précède.",
+          "options": [
+            "causale / explicative",
+            "ordre direct",
+            "but seulement",
+            "comparaison"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What relation does quando express in the Stabat Mater line?",
+      "stimulus": "Quando corpus morietur",
+      "options": [
+        "future temporal",
+        "relative",
+        "causal only",
+        "genitive"
+      ],
+      "expectedAnswer": "future temporal",
+      "acceptedVariants": [
+        "future temporal"
+      ],
+      "hint": "Translate 'when'.",
+      "explanation": "quando locates the prayer request in future time.",
+      "difficulty": 1,
+      "sourceId": "stabat-quando-l25",
+      "skills": [
+        "syntax:time"
+      ],
+      "referenceIds": [
+        "stabat-quando-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle relation quando exprime-t-il dans le vers du Stabat Mater ?",
+          "hint": "Traduisez « quand ».",
+          "explanation": "quando situe la demande de prière dans un temps futur.",
+          "options": [
+            "temporelle future",
+            "relative",
+            "causale seulement",
+            "génitive"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does dum do in the Wisdom/Introit passage?",
+      "stimulus": "Dum medium silentium...",
+      "options": [
+        "sets a temporal background while the main event occurs",
+        "marks possession",
+        "creates direct speech",
+        "means unless"
+      ],
+      "expectedAnswer": "sets a temporal background while the main event occurs",
+      "acceptedVariants": [
+        "sets a temporal background while the main event occurs"
+      ],
+      "hint": "The main event is venit.",
+      "explanation": "dum frames the background time.",
+      "difficulty": 2,
+      "sourceId": "wis18-dum-l25",
+      "skills": [
+        "syntax:time",
+        "reading:passage"
+      ],
+      "referenceIds": [
+        "wis18-dum-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait dum dans le passage de la Sagesse / de l’Introït ?",
+          "hint": "L’événement principal est venit.",
+          "explanation": "dum encadre le temps d’arrière-plan.",
+          "options": [
+            "établit un arrière-plan temporel pendant que survient l’événement principal",
+            "marque la possession",
+            "crée le discours direct",
+            "signifie « à moins que »"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does nam contribute in Psalm 22?",
+      "stimulus": "Nam, etsi ambulavero...",
+      "options": [
+        "explanation: for",
+        "condition: unless",
+        "purpose: so that",
+        "direct address"
+      ],
+      "expectedAnswer": "explanation: for",
+      "acceptedVariants": [
+        "explanation: for"
+      ],
+      "hint": "It links the statement to what precedes.",
+      "explanation": "nam is an explanatory discourse connector.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps22-4-l25",
+      "skills": [
+        "discourse:nam"
+      ],
+      "referenceIds": [
+        "vulg-ps22-4-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fournit nam dans le Psaume 22 ?",
+          "hint": "Il relie l’énoncé à ce qui précède.",
+          "explanation": "nam est un connecteur discursif explicatif.",
+          "options": [
+            "explication : car",
+            "condition : à moins que",
+            "but : afin que",
+            "adresse directe"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e11",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does quasi mean in the Introit opening?",
+      "stimulus": "Quasi modo geniti infantes",
+      "options": [
+        "as / like",
+        "because",
+        "unless",
+        "after"
+      ],
+      "expectedAnswer": "as / like",
+      "acceptedVariants": [
+        "as / like"
+      ],
+      "hint": "It introduces comparison.",
+      "explanation": "quasi means as if / as / like.",
+      "difficulty": 1,
+      "sourceId": "quasimodo-introit-l25",
+      "skills": [
+        "vocabulary:quasi"
+      ],
+      "referenceIds": [
+        "quasimodo-introit-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie quasi dans l’ouverture de l’Introït ?",
+          "hint": "Il introduit une comparaison.",
+          "explanation": "quasi signifie « comme / à la manière de ».",
+          "options": [
+            "comme / semblable à",
+            "parce que",
+            "à moins que",
+            "après"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e12",
+      "exerciseType": "multiple_choice",
+      "prompt": "How do you distinguish cum preposition from cum conjunction?",
+      "stimulus": null,
+      "options": [
+        "a conjunction is followed by a clause with a finite verb; the preposition governs an ablative noun/pronoun",
+        "word order alone",
+        "they are always identical",
+        "the conjunction always takes accusative"
+      ],
+      "expectedAnswer": "a conjunction is followed by a clause with a finite verb; the preposition governs an ablative noun/pronoun",
+      "acceptedVariants": [
+        "a conjunction is followed by a clause with a finite verb; the preposition governs an ablative noun/pronoun"
+      ],
+      "hint": "Compare cum spiritu with cum esset.",
+      "explanation": "Syntactic environment distinguishes the two.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "syntax:cum",
+        "case:ablative"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Comment distinguer cum préposition de cum conjonction ?",
+          "hint": "Comparez cum spiritu et cum esset.",
+          "explanation": "L’environnement syntaxique distingue les deux emplois.",
+          "options": [
+            "la conjonction est suivie d’une proposition avec verbe fini ; la préposition régit un nom ou pronom à l’ablatif",
+            "par l’ordre des mots seulement",
+            "ils sont toujours identiques",
+            "la conjonction prend toujours l’accusatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e13",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the Stage 5 milestone?",
+      "stimulus": null,
+      "options": [
+        "Multi-clause prayer and narrative syntax.",
+        "Credo integrated reading checkpoint.",
+        "Complete Roman Collect.",
+        "Complete Ordinary."
+      ],
+      "expectedAnswer": "Multi-clause prayer and narrative syntax.",
+      "acceptedVariants": [
+        "Multi-clause prayer and narrative syntax."
+      ],
+      "hint": "This is the frozen Lesson 25 gate.",
+      "explanation": "Stage 5 closes with multi-clause reading.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 5 ?",
+          "hint": "C’est le seuil figé de la leçon 25.",
+          "explanation": "L’étape 5 s’achève par la lecture à plusieurs propositions.",
+          "options": [
+            "Syntaxe de prière et de récit à plusieurs propositions.",
+            "Jalon de lecture intégrée du Credo.",
+            "Oraison romaine complète.",
+            "Ordinaire complet."
+          ]
+        }
+      }
+    },
+    {
+      "id": "l25-e14",
+      "exerciseType": "passage_analysis",
+      "prompt": "What should you mark first in a long Stage 5 passage?",
+      "stimulus": null,
+      "expectedAnswer": [
+        "main and subordinate clause boundaries"
+      ],
+      "acceptedVariants": [
+        [
+          "main and subordinate clause boundaries"
+        ],
+        "clause boundaries"
+      ],
+      "hint": "Do not begin with word-by-word translation.",
+      "explanation": "Clause architecture is the first-pass reading strategy.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "reading:passage"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que devez-vous marquer en premier dans un long passage de l’étape 5 ?",
+          "hint": "Ne commencez pas par la traduction mot à mot.",
+          "explanation": "L’architecture des propositions est la première stratégie de lecture.",
+          "answerGuide": [
+            "limites des propositions principales et subordonnées"
+          ]
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Recognize imperfect subjunctive forms such as esset.",
+    "Distinguish cum preposition from cum conjunction.",
+    "Read temporal, conditional, causal and discourse connectors across multi-clause passages.",
+    "Learn all twelve frozen Lesson 25 lemmas.",
+    "Pass the Stage 5 multi-clause prayer/narrative checkpoint."
+  ],
+  "checkpoint": {
+    "id": "stage5-checkpoint",
+    "stage": 5,
+    "scopeLessons": [
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "progressionGate": "Multi-clause prayer and narrative syntax.",
+    "readingTransition": "passage → multi-clause passage",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 11,
+      "autoGradedExerciseIds": [
+        "l25-e1",
+        "l25-e2",
+        "l25-e3",
+        "l25-e4",
+        "l25-e5",
+        "l25-e6",
+        "l25-e7",
+        "l25-e8",
+        "l25-e9",
+        "l25-e10",
+        "l25-e11",
+        "l25-e12",
+        "l25-e13",
+        "l25-e14"
+      ]
+    },
+    "mustKnow": [
+      "present subjunctive prayer force",
+      "jussive/optative uses",
+      "purpose versus result",
+      "imperfect subjunctive recognition",
+      "cum clause background",
+      "conditional/temporal/causal connectors",
+      "multi-clause passage architecture"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "quando",
+      "dum",
+      "ubi",
+      "si",
+      "nisi",
+      "quoniam",
+      "atque/ac",
+      "quasi",
+      "nam",
+      "vero",
+      "etiam",
+      "quidem"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 10,
+    "exerciseCount": 14,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Cum… esset",
+      "grammarFocus": "Imparfait du subjonctif ; propositions en cum",
+      "readingOutcome": "Lire le cum circonstanciel ou temporel et des propositions subordonnées plus longues.",
+      "objectives": [
+        "Reconnaître des formes de l’imparfait du subjonctif telles que esset.",
+        "Distinguer cum préposition de cum conjonction.",
+        "Lire les connecteurs temporels, conditionnels, causaux et discursifs dans des passages à plusieurs propositions.",
+        "Apprendre les douze lemmes figés de la leçon 25.",
+        "Franchir le jalon de l’étape 5 portant sur les prières et récits à plusieurs propositions."
+      ]
+    }
+  }
+}

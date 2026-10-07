@@ -1,0 +1,1007 @@
+{
+  "version": "latin-course-lesson-28-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 28,
+  "stage": {
+    "number": 6,
+    "title": "Canon"
+  },
+  "title": "Herode rege / multis convocatis",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "passage",
+  "grammarFocus": "Ablative absolute",
+  "readingOutcome": "Recognize compressed circumstantial clauses.",
+  "authoringPolicy": {
+    "method": "concept → authentic example → recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only frozen Lesson 28 vocabulary is introduced; proper names and later terms remain support.",
+    "authenticTextPolicy": "Ablative absolutes are anchored in Vulgate narrative clauses.",
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "rex",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "king",
+          "fr": "roi"
+        },
+        "frozenLesson": 28
+      },
+      {
+        "lemma": "populus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "people",
+          "fr": "peuple"
+        },
+        "frozenLesson": 28
+      },
+      {
+        "lemma": "princeps",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "chief / prince / leader",
+          "fr": "chef / prince"
+        },
+        "frozenLesson": 28
+      },
+      {
+        "lemma": "discipulus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "disciple",
+          "fr": "disciple"
+        },
+        "frozenLesson": 28
+      },
+      {
+        "lemma": "mulier",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "woman",
+          "fr": "femme"
+        },
+        "frozenLesson": 28
+      },
+      {
+        "lemma": "turba",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "crowd",
+          "fr": "foule"
+        },
+        "frozenLesson": 28
+      }
+    ],
+    "recycled": [
+      "autem",
+      "ecce",
+      "angelus",
+      "Dominus",
+      "in",
+      "sum",
+      "duo",
+      "do",
+      "is/ea/id",
+      "virtus",
+      "et",
+      "super",
+      "omnis",
+      "regnum",
+      "Deus",
+      "cognosco",
+      "sequor",
+      "loquor",
+      "de",
+      "dies",
+      "accedo",
+      "dico",
+      "ibi",
+      "locus",
+      "nos",
+      "cum"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Herodes",
+      "forms": [
+        "Herode"
+      ],
+      "gloss": {
+        "en": "Herod",
+        "fr": "Hérode"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "defungor",
+      "forms": [
+        "Defuncto"
+      ],
+      "gloss": {
+        "en": "die / finish",
+        "fr": "mourir / achever"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "apostolus",
+      "forms": [
+        "Apostolis"
+      ],
+      "gloss": {
+        "en": "apostle",
+        "fr": "apôtre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "convoco",
+      "forms": [
+        "Convocatis"
+      ],
+      "gloss": {
+        "en": "call together",
+        "fr": "convoquer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "daemonium",
+      "forms": [
+        "daemonia"
+      ],
+      "gloss": {
+        "en": "demon",
+        "fr": "démon"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cura",
+      "forms": [
+        "cura"
+      ],
+      "gloss": {
+        "en": "care / need",
+        "fr": "soin / besoin"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "indigeo",
+      "forms": [
+        "indigebant"
+      ],
+      "gloss": {
+        "en": "need",
+        "fr": "avoir besoin"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "potestas",
+      "forms": [
+        "potestatem"
+      ],
+      "gloss": {
+        "en": "power / authority",
+        "fr": "puissance / autorité"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "vulg-mt2-19-l28",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 2:19",
+      "sourceLatin": "Defuncto autem Herode, ecce angelus Domini apparuit in somnis Joseph in Aegypto.",
+      "provenanceNote": "Defuncto Herode is a classic ablative absolute giving background circumstance.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-lk9-1-l28",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 9:1",
+      "sourceLatin": "Convocatis autem duodecim Apostolis, dedit illis virtutem et potestatem super omnia daemonia.",
+      "provenanceNote": "Convocatis Apostolis is an ablative absolute preceding the main action.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-lk9-11-l28",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 9:11",
+      "sourceLatin": "Quod cum cognovissent turbae, secutae sunt illum: et excepit eos, et loquebatur illis de regno Dei.",
+      "provenanceNote": "turbae is introduced inside a multi-clause narrative immediately adjacent to the ablative-absolute lesson.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-lk9-12-l28",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 9:12",
+      "sourceLatin": "Accedentes autem duodecim dixerunt illi: Dimitte turbas.",
+      "provenanceNote": "turba recurs in narrative syntax; participial compression is contrasted with ablative absolute.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "Ablative absolute uses ablative morphology but stands syntactically apart from the main clause.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "ablativeAbsoluteFramework": {
+    "form": "Usually noun/pronoun + participle, both ablative; sometimes noun + noun/adjective.",
+    "function": "Compressed background circumstance: when, after, since, although, with... depending on context.",
+    "diagnostic": "The ablative phrase is grammatically independent of the main clause; its noun is not an argument of the main verb.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l28-b1",
+      "type": "concept",
+      "title": "A whole background clause can collapse into the ablative",
+      "learnerCopy": {
+        "en": "An ablative absolute compresses circumstance into an ablative noun/pronoun plus participle. Translate the relation from context: when, after, since, although, with.",
+        "fr": "L'ablatif absolu condense une circonstance en nom/pronom à l'ablatif + participe. Le lien se traduit selon le contexte : lorsque, après que, puisque, bien que, avec."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Toute une proposition d’arrière-plan peut se condenser à l’ablatif"
+        }
+      }
+    },
+    {
+      "id": "l28-b2",
+      "type": "authentic-example",
+      "title": "Defuncto Herode",
+      "sourceId": "vulg-mt2-19-l28",
+      "learnerCopy": {
+        "en": "Defuncto Herode means 'when/after Herod had died'. Herode does not perform a role in apparuit; the phrase supplies independent background.",
+        "fr": "Defuncto Herode signifie « après la mort d'Hérode / Hérode étant mort ». Herode n'exerce aucune fonction dans apparuit ; le groupe fournit l'arrière-plan."
+      },
+      "referenceIds": [
+        "vulg-mt2-19-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Defuncto Herode"
+        }
+      }
+    },
+    {
+      "id": "l28-b3",
+      "type": "authentic-example",
+      "title": "Convocatis Apostolis",
+      "sourceId": "vulg-lk9-1-l28",
+      "learnerCopy": {
+        "en": "Convocatis Apostolis means 'having called the Apostles together / when the Apostles had been called'. Both words are ablative plural and form one compressed circumstance.",
+        "fr": "Convocatis Apostolis signifie « les Apôtres ayant été convoqués ». Les deux mots sont à l'ablatif pluriel et forment une seule circonstance condensée."
+      },
+      "referenceIds": [
+        "vulg-lk9-1-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Convocatis Apostolis"
+        }
+      }
+    },
+    {
+      "id": "l28-b4",
+      "type": "contrast",
+      "title": "Not every participle is an ablative absolute",
+      "sourceId": "vulg-lk9-12-l28",
+      "learnerCopy": {
+        "en": "Accedentes duodecim is nominative and belongs directly to the main clause subject. Case agreement distinguishes it from an ablative absolute.",
+        "fr": "Accedentes duodecim est au nominatif et appartient directement au sujet de la principale. L'accord de cas le distingue d'un ablatif absolu."
+      },
+      "referenceIds": [
+        "vulg-lk9-12-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Tout participe n’est pas un ablatif absolu"
+        }
+      }
+    },
+    {
+      "id": "l28-b5",
+      "type": "retrieval",
+      "title": "Check independence, not punctuation",
+      "learnerCopy": {
+        "en": "Do not identify an ablative absolute merely because a comma appears. Verify ablative agreement and confirm that the phrase's noun is syntactically independent of the main verb.",
+        "fr": "N'identifiez pas un ablatif absolu à cause d'une virgule. Vérifiez l'accord à l'ablatif et l'indépendance syntaxique du nom par rapport au verbe principal."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Vérifier l’indépendance, pas la ponctuation"
+        }
+      }
+    },
+    {
+      "id": "l28-b6",
+      "type": "application",
+      "title": "Expand the compressed circumstance",
+      "learnerCopy": {
+        "en": "A useful check is to expand the ablative absolute into a full subordinate clause: Defuncto Herode → 'when Herod had died'. If the expansion preserves the main clause independently, the analysis is probably sound.",
+        "fr": "Un bon contrôle consiste à développer l'ablatif absolu en proposition complète : Defuncto Herode → « lorsque Hérode fut mort ». Si la principale reste indépendante, l'analyse est probablement correcte."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Déployer la circonstance condensée"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l28-p1",
+      "sourceId": "vulg-mt2-19-l28",
+      "sourceLatin": "Defuncto autem Herode, ecce angelus Domini apparuit in somnis Joseph in Aegypto.",
+      "instructionalDisplay": "Defuncto autem Herode, ecce angelus Domini apparuit in somnis Joseph in Aegypto.",
+      "translation": {
+        "en": "But when Herod was dead, behold an angel of the Lord appeared in a dream to Joseph in Egypt.",
+        "fr": "Après la mort d'Hérode, voici qu'un ange du Seigneur apparut en songe à Joseph en Égypte."
+      },
+      "targetLemmas": [
+        "autem",
+        "ecce",
+        "angelus",
+        "Dominus",
+        "in"
+      ],
+      "supportLemmas": [
+        "Herodes",
+        "defungor"
+      ]
+    },
+    {
+      "id": "l28-p2",
+      "sourceId": "vulg-lk9-1-l28",
+      "sourceLatin": "Convocatis autem duodecim Apostolis, dedit illis virtutem et potestatem super omnia daemonia.",
+      "instructionalDisplay": "Convocatis autem duodecim Apostolis, dedit illis virtutem et potestatem super omnia daemonia.",
+      "translation": {
+        "en": "And calling together the twelve Apostles, He gave them power and authority over all devils.",
+        "fr": "Ayant convoqué les douze Apôtres, il leur donna puissance et autorité sur tous les démons."
+      },
+      "targetLemmas": [
+        "autem",
+        "duo",
+        "do",
+        "is/ea/id",
+        "virtus",
+        "et",
+        "super",
+        "omnis"
+      ],
+      "supportLemmas": [
+        "convoco",
+        "apostolus",
+        "daemonium",
+        "potestas"
+      ]
+    },
+    {
+      "id": "l28-p3",
+      "sourceId": "vulg-lk9-11-l28",
+      "sourceLatin": "Quod cum cognovissent turbae, secutae sunt illum: et excepit eos, et loquebatur illis de regno Dei.",
+      "instructionalDisplay": "Quod cum cognovissent turbae, secutae sunt illum: et excepit eos, et loquebatur illis de regno Dei.",
+      "translation": {
+        "en": "Which when the crowds had known, they followed Him; and He received them and spoke to them of the kingdom of God.",
+        "fr": "Les foules, l'ayant appris, le suivirent ; il les accueillit et leur parlait du royaume de Dieu."
+      },
+      "targetLemmas": [
+        "cum",
+        "cognosco",
+        "turba",
+        "sequor",
+        "et",
+        "loquor",
+        "de",
+        "regnum",
+        "Deus",
+        "is/ea/id"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l28-p4",
+      "sourceId": "vulg-lk9-12-l28",
+      "sourceLatin": "Accedentes autem duodecim dixerunt illi: Dimitte turbas.",
+      "instructionalDisplay": "Accedentes autem duodecim dixerunt illi: Dimitte turbas.",
+      "translation": {
+        "en": "And the twelve coming to Him said: Send away the crowds.",
+        "fr": "Les douze s'approchèrent et lui dirent : renvoyez les foules."
+      },
+      "targetLemmas": [
+        "accedo",
+        "autem",
+        "duo",
+        "dico",
+        "is/ea/id",
+        "turba"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l28-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is Defuncto Herode?",
+      "stimulus": "Defuncto Herode",
+      "options": [
+        "ablative absolute",
+        "direct object",
+        "relative clause",
+        "dative possession"
+      ],
+      "expectedAnswer": "ablative absolute",
+      "acceptedVariants": [
+        "ablative absolute"
+      ],
+      "hint": "Both words are ablative and independent of apparuit.",
+      "explanation": "It is compressed background circumstance.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt2-19-l28",
+      "skills": [
+        "ablative:absolute"
+      ],
+      "referenceIds": [
+        "vulg-mt2-19-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce que Defuncto Herode ?",
+          "hint": "Les deux mots sont à l’ablatif et indépendants de apparuit.",
+          "explanation": "C’est une circonstance d’arrière-plan condensée.",
+          "options": [
+            "ablatif absolu",
+            "complément d’objet direct",
+            "proposition relative",
+            "datif de possession"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l28-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "How should Defuncto Herode be understood here?",
+      "stimulus": null,
+      "options": [
+        "when/after Herod had died",
+        "Herod as direct object",
+        "to Herod",
+        "by command of Herod only"
+      ],
+      "expectedAnswer": "when/after Herod had died",
+      "acceptedVariants": [
+        "when/after Herod had died"
+      ],
+      "hint": "Context gives temporal background.",
+      "explanation": "Ablative absolute relation is inferred from context.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt2-19-l28",
+      "skills": [
+        "syntax:circumstance"
+      ],
+      "referenceIds": [
+        "vulg-mt2-19-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Comment faut-il comprendre Defuncto Herode ici ?",
+          "hint": "Le contexte donne un arrière-plan temporel.",
+          "explanation": "La relation de l’ablatif absolu se déduit du contexte.",
+          "options": [
+            "quand / après qu’Hérode fut mort",
+            "Hérode comme complément d’objet direct",
+            "à Hérode",
+            "par ordre d’Hérode seulement"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l28-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What agrees in Convocatis Apostolis?",
+      "stimulus": "Convocatis Apostolis",
+      "options": [
+        "both are ablative plural",
+        "both are nominative singular",
+        "only the participle is ablative",
+        "no agreement"
+      ],
+      "expectedAnswer": "both are ablative plural",
+      "acceptedVariants": [
+        "both are ablative plural"
+      ],
+      "hint": "Agreement forms the phrase.",
+      "explanation": "Both elements are ablative plural.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk9-1-l28",
+      "skills": [
+        "agreement:ablative"
+      ],
+      "referenceIds": [
+        "vulg-lk9-1-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui s’accorde dans Convocatis Apostolis ?",
+          "hint": "L’accord constitue le groupe.",
+          "explanation": "Les deux éléments sont à l’ablatif pluriel.",
+          "options": [
+            "les deux sont à l’ablatif pluriel",
+            "les deux sont au nominatif singulier",
+            "seul le participe est à l’ablatif",
+            "il n’y a pas d’accord"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l28-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why is Accedentes duodecim not an ablative absolute?",
+      "stimulus": "Accedentes duodecim",
+      "options": [
+        "it is nominative and is the main-clause subject",
+        "it has a comma",
+        "it contains a participle",
+        "it is plural"
+      ],
+      "expectedAnswer": "it is nominative and is the main-clause subject",
+      "acceptedVariants": [
+        "it is nominative and is the main-clause subject"
+      ],
+      "hint": "Case and syntax decide.",
+      "explanation": "It belongs directly to the main clause.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk9-12-l28",
+      "skills": [
+        "ablative:absolute-contrast"
+      ],
+      "referenceIds": [
+        "vulg-lk9-12-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi Accedentes duodecim n’est-il pas un ablatif absolu ?",
+          "hint": "Le cas et la syntaxe décident.",
+          "explanation": "Le groupe appartient directement à la proposition principale.",
+          "options": [
+            "il est au nominatif et constitue le sujet de la proposition principale",
+            "il contient une virgule",
+            "il contient un participe",
+            "il est pluriel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l28-e5",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 28 noun to meaning.",
+      "stimulus": [
+        "rex",
+        "populus",
+        "princeps",
+        "discipulus"
+      ],
+      "expectedAnswer": {
+        "rex": "king",
+        "populus": "people",
+        "princeps": "chief / prince / leader",
+        "discipulus": "disciple"
+      },
+      "acceptedVariants": [],
+      "hint": "Frozen Lesson 28 nouns.",
+      "explanation": "This checks vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l28"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 28 à son sens.",
+          "hint": "Ce sont des noms figés de la leçon 28.",
+          "explanation": "Ceci vérifie le vocabulaire.",
+          "matches": {
+            "rex": "roi",
+            "populus": "peuple",
+            "princeps": "chef / prince / dirigeant",
+            "discipulus": "disciple"
+          }
+        }
+      }
+    },
+    {
+      "id": "l28-e6",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 28 noun to meaning.",
+      "stimulus": [
+        "mulier",
+        "turba"
+      ],
+      "expectedAnswer": {
+        "mulier": "woman",
+        "turba": "crowd"
+      },
+      "acceptedVariants": [],
+      "hint": "Two remaining Lesson 28 nouns.",
+      "explanation": "This completes lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l28"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 28 à son sens.",
+          "hint": "Ce sont les deux noms restants de la leçon 28.",
+          "explanation": "Ceci achève la récupération lexicale.",
+          "matches": {
+            "mulier": "femme",
+            "turba": "foule"
+          }
+        }
+      }
+    },
+    {
+      "id": "l28-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the key diagnostic beyond ablative endings?",
+      "stimulus": null,
+      "options": [
+        "the phrase is syntactically independent of the main clause",
+        "it must begin the sentence",
+        "it must mention a king",
+        "it must be passive"
+      ],
+      "expectedAnswer": "the phrase is syntactically independent of the main clause",
+      "acceptedVariants": [
+        "the phrase is syntactically independent of the main clause"
+      ],
+      "hint": "Absolute means detached.",
+      "explanation": "Independence distinguishes the construction.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "ablative:absolute"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le diagnostic essentiel au-delà des terminaisons de l’ablatif ?",
+          "hint": "« Absolu » signifie détaché.",
+          "explanation": "L’indépendance syntaxique distingue la construction.",
+          "options": [
+            "le groupe est syntaxiquement indépendant de la proposition principale",
+            "il doit ouvrir la phrase",
+            "il doit mentionner un roi",
+            "il doit être passif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l28-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which new noun appears as turbae/turbas in the Luke passages?",
+      "stimulus": "turba",
+      "options": [
+        "turba",
+        "populus",
+        "mulier",
+        "discipulus"
+      ],
+      "expectedAnswer": "turba",
+      "acceptedVariants": [
+        "turba"
+      ],
+      "hint": "It means crowd.",
+      "explanation": "turba is the lemma.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk9-11-l28",
+      "skills": [
+        "vocabulary:turba"
+      ],
+      "referenceIds": [
+        "vulg-lk9-11-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau nom apparaît sous les formes turbae/turbas dans les passages de Luc ?",
+          "hint": "Il signifie « foule ».",
+          "explanation": "turba est le lemme.",
+          "options": [
+            "turba",
+            "populus",
+            "mulier",
+            "discipulus"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l28-e9",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'king'.",
+      "stimulus": null,
+      "expectedAnswer": "rex",
+      "acceptedVariants": [
+        "rex",
+        "Rex"
+      ],
+      "hint": "Lesson 28 Core.",
+      "explanation": "rex means king.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:rex"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « roi ».",
+          "hint": "Vocabulaire fondamental de la leçon 28.",
+          "explanation": "rex signifie « roi »."
+        }
+      }
+    },
+    {
+      "id": "l28-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'disciple'.",
+      "stimulus": null,
+      "expectedAnswer": "discipulus",
+      "acceptedVariants": [
+        "discipulus",
+        "Discipulus"
+      ],
+      "hint": "Lesson 28 Core.",
+      "explanation": "discipulus means disciple.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:discipulus"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « disciple ».",
+          "hint": "Vocabulaire fondamental de la leçon 28.",
+          "explanation": "discipulus signifie « disciple »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Recognize ablative absolute by case agreement and independence.",
+    "Translate compressed circumstance according to context.",
+    "Contrast absolute with participles tied to the main clause.",
+    "Learn all six frozen Lesson 28 lemmas."
+  ],
+  "checkpoint": {
+    "id": "l28-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l28-e1",
+        "l28-e2",
+        "l28-e3",
+        "l28-e4",
+        "l28-e5",
+        "l28-e6",
+        "l28-e7",
+        "l28-e8",
+        "l28-e9",
+        "l28-e10"
+      ]
+    },
+    "mustKnow": [
+      "ablative agreement",
+      "syntactic independence",
+      "contextual translation",
+      "participle contrast"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "rex",
+      "populus",
+      "princeps",
+      "discipulus",
+      "mulier",
+      "turba"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 4,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Herode rege / multis convocatis",
+      "grammarFocus": "Ablatif absolu",
+      "readingOutcome": "Reconnaître les propositions circonstancielles condensées.",
+      "objectives": [
+        "Reconnaître l’ablatif absolu par l’accord de cas et l’indépendance syntaxique.",
+        "Traduire la circonstance condensée selon le contexte.",
+        "Opposer l’ablatif absolu aux participes rattachés à la proposition principale.",
+        "Apprendre les six lemmes figés de la leçon 28."
+      ]
+    }
+  }
+}

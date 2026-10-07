@@ -1,0 +1,1045 @@
+{
+  "version": "latin-course-lesson-22-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 22,
+  "stage": {
+    "number": 5,
+    "title": "Prayer Language"
+  },
+  "title": "Adveniat. Fiat. Oremus.",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "passage",
+  "grammarFocus": "Jussive and optative uses",
+  "readingOutcome": "Read commands, wishes and liturgical exhortation in the subjunctive.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 22 vocabulary only; syntax is sourced from authentic prayer/liturgical clauses, while vocabulary without a secure source anchor is taught through controlled exercises.",
+    "authenticTextPolicy": "Jussive/optative force is anchored in Pater noster, Oremus, Psalms and traditional Roman prayer formulas.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "exaudio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "hear graciously / hear a prayer",
+          "fr": "exaucer"
+        },
+        "frozenLesson": 22
+      },
+      {
+        "lemma": "libero",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "deliver / free",
+          "fr": "délivrer / libérer"
+        },
+        "frozenLesson": 22
+      },
+      {
+        "lemma": "parco",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "spare / pardon",
+          "fr": "épargner / pardonner"
+        },
+        "frozenLesson": 22
+      },
+      {
+        "lemma": "perduco",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "lead through / bring to",
+          "fr": "conduire jusqu'à"
+        },
+        "frozenLesson": 22
+      },
+      {
+        "lemma": "custodio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "guard / keep",
+          "fr": "garder"
+        },
+        "frozenLesson": 22
+      },
+      {
+        "lemma": "ostendo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "show",
+          "fr": "montrer"
+        },
+        "frozenLesson": 22
+      },
+      {
+        "lemma": "ambulo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "walk",
+          "fr": "marcher"
+        },
+        "frozenLesson": 22
+      }
+    ],
+    "recycled": [
+      "advenio",
+      "regnum",
+      "tuus",
+      "fio",
+      "voluntas",
+      "oro",
+      "nos",
+      "Dominus",
+      "salus",
+      "do",
+      "peccatum",
+      "in",
+      "vita",
+      "aeternus",
+      "et",
+      "spiritus",
+      "sanctus",
+      "pater",
+      "filius",
+      "benedico",
+      "a/ab",
+      "malus"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "misericordia",
+      "forms": [
+        "misericordiam"
+      ],
+      "gloss": {
+        "en": "mercy",
+        "fr": "miséricorde"
+      },
+      "trackedLesson": 29,
+      "status": "surface-support"
+    },
+    {
+      "lemma": "salutare",
+      "forms": [
+        "salutare"
+      ],
+      "gloss": {
+        "en": "salvation / saving help",
+        "fr": "salut"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "populus",
+      "forms": [
+        "populo"
+      ],
+      "gloss": {
+        "en": "people",
+        "fr": "peuple"
+      },
+      "trackedLesson": 28,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "misericors",
+      "forms": [
+        "misericors"
+      ],
+      "gloss": {
+        "en": "merciful",
+        "fr": "miséricordieux"
+      },
+      "trackedLesson": 30,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "omnipotens",
+      "forms": [
+        "omnipotens"
+      ],
+      "gloss": {
+        "en": "almighty",
+        "fr": "tout-puissant"
+      },
+      "trackedLesson": 30,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pater-adveniat-fiat-l22",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pater noster",
+      "sourceLatin": "Adveniat regnum tuum. Fiat voluntas tua.",
+      "provenanceNote": "Two independent present-subjunctive petitions illustrate jussive/optative prayer force.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-oremus-l22",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — liturgical invitation",
+      "sourceLatin": "Oremus.",
+      "provenanceNote": "Oremus is the standard first-person plural subjunctive exhortation: 'Let us pray.'",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "vulg-ps84-8-l22",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 84:8",
+      "sourceLatin": "Ostende nobis, Domine, misericordiam tuam: et salutare tuum da nobis.",
+      "provenanceNote": "Imperatives ostende/da contrast direct command with the subjunctive prayer forms.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "joel-2-17-parce-l22",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina / traditional Lenten chant",
+      "section": "Ioel 2:17",
+      "sourceLatin": "Parce, Domine, parce populo tuo.",
+      "provenanceNote": "Direct imperative parce provides a useful contrast with jussive subjunctive prayer.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "pater-libera-l22",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pater noster",
+      "sourceLatin": "Sed libera nos a malo.",
+      "provenanceNote": "libera is a direct imperative; the lesson distinguishes command forms from jussive/optative subjunctive force.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "office-benedicat-custodiat-l22",
+      "sourceType": "primary-liturgical",
+      "work": "Traditional Roman Office formula",
+      "section": "Blessing formula",
+      "sourceLatin": "Benedicat et custodiat nos omnipotens et misericors Dominus, Pater, et Filius, et Spiritus Sanctus. Amen.",
+      "provenanceNote": "custodiat is a jussive/optative present subjunctive in a traditional blessing formula."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; mood force is read on top of existing morphology.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "jussiveOptativeFramework": {
+    "jussive": "Subjunctive used to urge or command: oremus — let us pray.",
+    "optative": "Subjunctive used to express desired prayer outcome: adveniat, fiat, custodiat.",
+    "contrast": "Latin may also use a true imperative in prayer: ostende, parce, libera. Read the morphology before assigning the English/French force.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l22-b1",
+      "type": "concept",
+      "title": "Prayer can command, exhort or wish",
+      "learnerCopy": {
+        "en": "Latin prayer language uses both imperative and subjunctive forms. Oremus is an exhortation, adveniat/fiat express desired outcomes, while ostende/parce/libera are direct imperatives.",
+        "fr": "Le langage de la prière latine emploie à la fois l'impératif et le subjonctif. Oremus est une exhortation, adveniat/fiat expriment un résultat désiré, tandis que ostende/parce/libera sont des impératifs directs."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "La prière peut ordonner, exhorter ou souhaiter"
+        }
+      }
+    },
+    {
+      "id": "l22-b2",
+      "type": "authentic-example",
+      "title": "Oremus",
+      "sourceId": "mr1962-oremus-l22",
+      "learnerCopy": {
+        "en": "Oremus is first-person plural present subjunctive: literally 'may we pray', idiomatically 'let us pray'. This is the standard liturgical exhortation.",
+        "fr": "Oremus est un subjonctif présent à la première personne du pluriel : littéralement « puissions-nous prier », idiomatiquement « prions ». C'est l'exhortation liturgique standard."
+      },
+      "referenceIds": [
+        "mr1962-oremus-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Oremus"
+        }
+      }
+    },
+    {
+      "id": "l22-b3",
+      "type": "contrast",
+      "title": "Adveniat / Fiat versus Ostende / Parce",
+      "learnerCopy": {
+        "en": "adveniat and fiat are subjunctive petitions; ostende and parce are imperatives. Both can sound like English/French commands, so morphology—not translation alone—must decide the analysis.",
+        "fr": "adveniat et fiat sont des demandes au subjonctif ; ostende et parce sont des impératifs. Les traductions peuvent se ressembler : c'est donc la morphologie, non la traduction seule, qui décide l'analyse."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Adveniat / Fiat face à Ostende / Parce"
+        }
+      }
+    },
+    {
+      "id": "l22-b4",
+      "type": "authentic-example",
+      "title": "custodiat nos",
+      "sourceId": "office-benedicat-custodiat-l22",
+      "learnerCopy": {
+        "en": "custodiat means 'may He guard us'. The subject is Dominus; nos is the object. This is a clean optative/jussive prayer use of present subjunctive.",
+        "fr": "custodiat signifie « qu'il nous garde ». Le sujet est Dominus ; nos est le complément d'objet. C'est un emploi clair du subjonctif présent dans la prière."
+      },
+      "referenceIds": [
+        "office-benedicat-custodiat-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "custodiat nos"
+        }
+      }
+    },
+    {
+      "id": "l22-b5",
+      "type": "vocabulary",
+      "title": "Prayer verbs recur across modules",
+      "learnerCopy": {
+        "en": "exaudio, libero, parco, perduco, custodio and ostendo are high-value prayer verbs. Learn the lemma meanings now; the course will recycle their inflected forms in later collects and devotional texts.",
+        "fr": "exaudio, libero, parco, perduco, custodio et ostendo sont des verbes de prière très fréquents. Apprenez maintenant leur sens lexical ; leurs formes seront recyclées dans les collectes et les textes dévotionnels."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les verbes de prière reviennent dans plusieurs modules"
+        }
+      }
+    },
+    {
+      "id": "l22-b6",
+      "type": "retrieval",
+      "title": "Identify morphology before prayer nuance",
+      "learnerCopy": {
+        "en": "The safe reading order is: identify the verb form, decide imperative versus subjunctive, then interpret the prayer force—command, exhortation or desired outcome.",
+        "fr": "L'ordre de lecture sûr est : identifier la forme verbale, distinguer impératif et subjonctif, puis interpréter la force de prière — ordre, exhortation ou résultat désiré."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Identifier la morphologie avant la nuance de la prière"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l22-p1",
+      "sourceId": "pater-adveniat-fiat-l22",
+      "sourceLatin": "Adveniat regnum tuum. Fiat voluntas tua.",
+      "instructionalDisplay": "Adveniat regnum tuum. Fiat voluntas tua.",
+      "translation": {
+        "en": "Thy kingdom come. Thy will be done.",
+        "fr": "Que votre règne arrive. Que votre volonté soit faite."
+      },
+      "targetLemmas": [
+        "advenio",
+        "regnum",
+        "tuus",
+        "fio",
+        "voluntas"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l22-p2",
+      "sourceId": "mr1962-oremus-l22",
+      "sourceLatin": "Oremus.",
+      "instructionalDisplay": "Oremus.",
+      "translation": {
+        "en": "Let us pray.",
+        "fr": "Prions."
+      },
+      "targetLemmas": [
+        "oro"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l22-p3",
+      "sourceId": "vulg-ps84-8-l22",
+      "sourceLatin": "Ostende nobis, Domine, misericordiam tuam: et salutare tuum da nobis.",
+      "instructionalDisplay": "Ostende nobis, Domine, misericordiam tuam: et salutare tuum da nobis.",
+      "translation": {
+        "en": "Show us, O Lord, Thy mercy: and grant us Thy salvation.",
+        "fr": "Montrez-nous, Seigneur, votre miséricorde, et donnez-nous votre salut."
+      },
+      "targetLemmas": [
+        "ostendo",
+        "nos",
+        "Dominus",
+        "tuus",
+        "et",
+        "do"
+      ],
+      "supportLemmas": [
+        "misericordia",
+        "salutare"
+      ]
+    },
+    {
+      "id": "l22-p4",
+      "sourceId": "joel-2-17-parce-l22",
+      "sourceLatin": "Parce, Domine, parce populo tuo.",
+      "instructionalDisplay": "Parce, Domine, parce populo tuo.",
+      "translation": {
+        "en": "Spare, O Lord, spare Thy people.",
+        "fr": "Épargnez, Seigneur, épargnez votre peuple."
+      },
+      "targetLemmas": [
+        "parco",
+        "Dominus",
+        "tuus"
+      ],
+      "supportLemmas": [
+        "populus"
+      ]
+    },
+    {
+      "id": "l22-p5",
+      "sourceId": "pater-libera-l22",
+      "sourceLatin": "Sed libera nos a malo.",
+      "instructionalDisplay": "Sed libera nos a malo.",
+      "translation": {
+        "en": "But deliver us from evil.",
+        "fr": "Mais délivrez-nous du mal."
+      },
+      "targetLemmas": [
+        "libero",
+        "nos",
+        "a/ab",
+        "malus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l22-p6",
+      "sourceId": "office-benedicat-custodiat-l22",
+      "sourceLatin": "Benedicat et custodiat nos omnipotens et misericors Dominus, Pater, et Filius, et Spiritus Sanctus. Amen.",
+      "instructionalDisplay": "Benedicat et custodiat nos omnipotens et misericors Dominus, Pater, et Filius, et Spiritus Sanctus. Amen.",
+      "translation": {
+        "en": "May almighty and merciful Lord, Father, Son and Holy Ghost, bless and keep us. Amen.",
+        "fr": "Que le Seigneur tout-puissant et miséricordieux, Père, Fils et Saint-Esprit, nous bénisse et nous garde. Amen."
+      },
+      "targetLemmas": [
+        "et",
+        "custodio",
+        "nos",
+        "Dominus",
+        "pater",
+        "filius",
+        "spiritus",
+        "sanctus",
+        "benedico"
+      ],
+      "supportLemmas": [
+        "omnipotens",
+        "misericors",
+        "Amen"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l22-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is Oremus?",
+      "stimulus": "Oremus",
+      "options": [
+        "jussive/exhortative present subjunctive",
+        "imperative singular",
+        "future indicative",
+        "perfect passive"
+      ],
+      "expectedAnswer": "jussive/exhortative present subjunctive",
+      "acceptedVariants": [
+        "jussive/exhortative present subjunctive"
+      ],
+      "hint": "It means 'Let us pray'.",
+      "explanation": "Oremus is first-person plural present subjunctive used as an exhortation.",
+      "difficulty": 1,
+      "sourceId": "mr1962-oremus-l22",
+      "skills": [
+        "mood:jussive"
+      ],
+      "referenceIds": [
+        "mr1962-oremus-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce que Oremus ?",
+          "hint": "Il signifie « Prions ».",
+          "explanation": "Oremus est un subjonctif présent à la première personne du pluriel employé comme exhortation.",
+          "options": [
+            "subjonctif présent jussif / exhortatif",
+            "impératif singulier",
+            "futur de l’indicatif",
+            "parfait passif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l22-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form is a direct imperative?",
+      "stimulus": "Ostende",
+      "options": [
+        "Ostende",
+        "Adveniat",
+        "Fiat",
+        "custodiat"
+      ],
+      "expectedAnswer": "Ostende",
+      "acceptedVariants": [
+        "Ostende",
+        "ostende"
+      ],
+      "hint": "It directly commands 'show'.",
+      "explanation": "ostende is imperative; the others are subjunctive forms.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps84-8-l22",
+      "skills": [
+        "mood:contrast"
+      ],
+      "referenceIds": [
+        "vulg-ps84-8-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est un impératif direct ?",
+          "hint": "Elle commande directement : « montre ».",
+          "explanation": "ostende est à l’impératif ; les autres formes sont au subjonctif.",
+          "options": [
+            "Ostende",
+            "Adveniat",
+            "Fiat",
+            "custodiat"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l22-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What force does custodiat carry in the blessing formula?",
+      "stimulus": "custodiat nos",
+      "options": [
+        "desired/jussive prayer: may He guard us",
+        "completed past",
+        "direct indicative fact",
+        "infinitive"
+      ],
+      "expectedAnswer": "desired/jussive prayer: may He guard us",
+      "acceptedVariants": [
+        "desired/jussive prayer: may He guard us"
+      ],
+      "hint": "It is present subjunctive.",
+      "explanation": "custodiat expresses the desired prayer outcome.",
+      "difficulty": 1,
+      "sourceId": "office-benedicat-custodiat-l22",
+      "skills": [
+        "mood:optative"
+      ],
+      "referenceIds": [
+        "office-benedicat-custodiat-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle force custodiat a-t-il dans la formule de bénédiction ?",
+          "hint": "C’est un subjonctif présent.",
+          "explanation": "custodiat exprime le résultat désiré de la prière.",
+          "options": [
+            "prière désirée / jussive : qu’Il nous garde",
+            "passé achevé",
+            "fait direct à l’indicatif",
+            "infinitif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l22-e4",
+      "exerciseType": "matching",
+      "prompt": "Match prayer verb to meaning.",
+      "stimulus": [
+        "exaudio",
+        "libero",
+        "parco",
+        "perduco"
+      ],
+      "expectedAnswer": {
+        "exaudio": "hear graciously / exaucer",
+        "libero": "deliver / free",
+        "parco": "spare / pardon",
+        "perduco": "lead through / bring to"
+      },
+      "acceptedVariants": [],
+      "hint": "These are high-value prayer verbs.",
+      "explanation": "This checks vocabulary without forcing dubious formulas.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l22"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de prière à son sens.",
+          "hint": "Ce sont des verbes de prière à forte valeur.",
+          "explanation": "Ceci vérifie le vocabulaire sans imposer de formules douteuses.",
+          "matches": {
+            "exaudio": "exaucer / entendre favorablement",
+            "libero": "délivrer / libérer",
+            "parco": "épargner / pardonner",
+            "perduco": "conduire jusqu’à / mener à"
+          }
+        }
+      }
+    },
+    {
+      "id": "l22-e5",
+      "exerciseType": "matching",
+      "prompt": "Match prayer verb to meaning.",
+      "stimulus": [
+        "custodio",
+        "ostendo",
+        "ambulo"
+      ],
+      "expectedAnswer": {
+        "custodio": "guard / keep",
+        "ostendo": "show",
+        "ambulo": "walk"
+      },
+      "acceptedVariants": [],
+      "hint": "All are frozen Lesson 22 lemmas.",
+      "explanation": "This completes lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l22"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de prière à son sens.",
+          "hint": "Tous sont des lemmes figés de la leçon 22.",
+          "explanation": "Ceci achève la récupération lexicale.",
+          "matches": {
+            "custodio": "garder / protéger",
+            "ostendo": "montrer",
+            "ambulo": "marcher"
+          }
+        }
+      }
+    },
+    {
+      "id": "l22-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is nobis in Ostende nobis...?",
+      "stimulus": "nobis",
+      "options": [
+        "dative",
+        "accusative",
+        "genitive",
+        "nominative"
+      ],
+      "expectedAnswer": "dative",
+      "acceptedVariants": [
+        "dative"
+      ],
+      "hint": "Show something to us.",
+      "explanation": "nobis is dative plural.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps84-8-l22",
+      "skills": [
+        "case:dative",
+        "pronoun:nos"
+      ],
+      "referenceIds": [
+        "vulg-ps84-8-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nobis dans Ostende nobis... ?",
+          "hint": "Montrer quelque chose à nous.",
+          "explanation": "nobis est au datif pluriel.",
+          "options": [
+            "datif",
+            "accusatif",
+            "génitif",
+            "nominatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l22-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is nos in custodiat nos?",
+      "stimulus": "nos",
+      "options": [
+        "accusative",
+        "dative",
+        "ablative",
+        "genitive"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "It is the object being guarded.",
+      "explanation": "nos is accusative here.",
+      "difficulty": 1,
+      "sourceId": "office-benedicat-custodiat-l22",
+      "skills": [
+        "case:accusative",
+        "pronoun:nos"
+      ],
+      "referenceIds": [
+        "office-benedicat-custodiat-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nos dans custodiat nos ?",
+          "hint": "C’est l’objet de l’action de garder.",
+          "explanation": "nos est ici à l’accusatif.",
+          "options": [
+            "accusatif",
+            "datif",
+            "ablatif",
+            "génitif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l22-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why can English/French translation alone be misleading here?",
+      "stimulus": null,
+      "options": [
+        "imperatives and jussive/optative subjunctives can both sound like commands or wishes",
+        "all subjunctives mean past tense",
+        "Latin has no imperatives",
+        "word order decides mood"
+      ],
+      "expectedAnswer": "imperatives and jussive/optative subjunctives can both sound like commands or wishes",
+      "acceptedVariants": [
+        "imperatives and jussive/optative subjunctives can both sound like commands or wishes"
+      ],
+      "hint": "Compare Ostende with Adveniat.",
+      "explanation": "Morphology must be identified before interpreting nuance.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "mood:analysis"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi la seule traduction française ou anglaise peut-elle être trompeuse ici ?",
+          "hint": "Comparez Ostende et Adveniat.",
+          "explanation": "Il faut identifier la morphologie avant d’interpréter la nuance.",
+          "options": [
+            "les impératifs et les subjonctifs jussifs/optatifs peuvent tous deux se traduire comme des ordres ou des souhaits",
+            "tous les subjonctifs expriment le passé",
+            "le latin n’a pas d’impératif",
+            "l’ordre des mots détermine le mode"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l22-e9",
+      "exerciseType": "token_select",
+      "prompt": "Select the subjunctive prayer verbs.",
+      "stimulus": "Adveniat regnum tuum. Fiat voluntas tua.",
+      "expectedAnswer": [
+        "Adveniat",
+        "Fiat"
+      ],
+      "acceptedVariants": [
+        [
+          "Adveniat",
+          "Fiat"
+        ]
+      ],
+      "hint": "Both express desired outcomes.",
+      "explanation": "Both are present-subjunctive prayer forms.",
+      "difficulty": 1,
+      "sourceId": "pater-adveniat-fiat-l22",
+      "skills": [
+        "mood:subjunctive"
+      ],
+      "referenceIds": [
+        "pater-adveniat-fiat-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les verbes de prière au subjonctif.",
+          "hint": "Tous deux expriment des résultats désirés.",
+          "explanation": "Les deux sont des formes de prière au subjonctif présent."
+        }
+      }
+    },
+    {
+      "id": "l22-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin verb meaning 'guard / keep'.",
+      "stimulus": null,
+      "expectedAnswer": "custodio",
+      "acceptedVariants": [
+        "custodio",
+        "Custodio"
+      ],
+      "hint": "It appears as custodiat.",
+      "explanation": "custodio means guard / keep.",
+      "difficulty": 1,
+      "sourceId": "office-benedicat-custodiat-l22",
+      "skills": [
+        "vocabulary:custodio"
+      ],
+      "referenceIds": [
+        "office-benedicat-custodiat-l22",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le verbe latin signifiant « garder / protéger ».",
+          "hint": "Il apparaît sous la forme custodiat.",
+          "explanation": "custodio signifie « garder / protéger »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Distinguish imperative from jussive/optative subjunctive.",
+    "Read Oremus as liturgical exhortation.",
+    "Learn all seven frozen Lesson 22 lemmas.",
+    "Keep pronoun case recognition active inside prayer clauses."
+  ],
+  "checkpoint": {
+    "id": "l22-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l22-e1",
+        "l22-e2",
+        "l22-e3",
+        "l22-e4",
+        "l22-e5",
+        "l22-e6",
+        "l22-e7",
+        "l22-e8",
+        "l22-e9",
+        "l22-e10"
+      ]
+    },
+    "mustKnow": [
+      "Oremus jussive/exhortative",
+      "Adveniat/Fiat desired outcome",
+      "imperative versus subjunctive contrast",
+      "prayer-verb vocabulary"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "exaudio",
+      "libero",
+      "parco",
+      "perduco",
+      "custodio",
+      "ostendo",
+      "ambulo"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 6,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Adveniat. Fiat. Oremus.",
+      "grammarFocus": "Emplois jussif et optatif",
+      "readingOutcome": "Lire les ordres, les souhaits et l’exhortation liturgique au subjonctif.",
+      "objectives": [
+        "Distinguer l’impératif du subjonctif jussif ou optatif.",
+        "Lire Oremus comme une exhortation liturgique.",
+        "Apprendre les sept lemmes figés de la leçon 22.",
+        "Maintenir active la reconnaissance des cas pronominaux dans les propositions de prière."
+      ]
+    }
+  }
+}

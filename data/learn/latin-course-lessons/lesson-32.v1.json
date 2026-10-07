@@ -1,0 +1,1105 @@
+{
+  "version": "latin-course-lesson-32-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 32,
+  "stage": {
+    "number": 7,
+    "title": "Church Latin"
+  },
+  "title": "Church Latin is not School Latin",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "passage",
+  "grammarFocus": "Ecclesiastical versus classical usage",
+  "readingOutcome": "Recognize characteristic Church-Latin vocabulary and syntactic preferences without forcing classical norms.",
+  "authoringPolicy": {
+    "method": "usage contrast → authentic ecclesiastical example → reading rule → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 32 connective vocabulary only.",
+    "authenticTextPolicy": "Examples are Vulgate/liturgical Latin illustrating genuine ecclesiastical usage, not reconstructed Ciceronian substitutes.",
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "neque",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "and not / neither",
+          "fr": "et ne... pas / ni"
+        },
+        "frozenLesson": 32
+      },
+      {
+        "lemma": "nec",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "and not / nor",
+          "fr": "et ne... pas / ni"
+        },
+        "frozenLesson": 32
+      },
+      {
+        "lemma": "aut",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "or",
+          "fr": "ou"
+        },
+        "frozenLesson": 32
+      },
+      {
+        "lemma": "vel",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "or / even",
+          "fr": "ou / voire"
+        },
+        "frozenLesson": 32
+      },
+      {
+        "lemma": "sive",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "whether / or if",
+          "fr": "soit / ou bien"
+        },
+        "frozenLesson": 32
+      },
+      {
+        "lemma": "at",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "but / yet",
+          "fr": "mais / cependant"
+        },
+        "frozenLesson": 32
+      }
+    ],
+    "recycled": [
+      "non",
+      "e/ex",
+      "sanguis",
+      "voluntas",
+      "caro",
+      "sed",
+      "Deus",
+      "nascor",
+      "Dominus",
+      "servio",
+      "duo",
+      "unus",
+      "habeo",
+      "ubi",
+      "enim",
+      "sum",
+      "in",
+      "nomen",
+      "meus",
+      "facio",
+      "omnis",
+      "gloria",
+      "qui/quae/quod",
+      "et",
+      "ibi",
+      "is/ea/id",
+      "ergo",
+      "quis/quid"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "manduco",
+      "forms": [
+        "manducatis"
+      ],
+      "gloss": {
+        "en": "eat",
+        "fr": "manger"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "bibo",
+      "forms": [
+        "bibitis"
+      ],
+      "gloss": {
+        "en": "drink",
+        "fr": "boire"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "aliud",
+      "forms": [
+        "aliud"
+      ],
+      "gloss": {
+        "en": "other thing",
+        "fr": "autre chose"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "tres",
+      "forms": [
+        "tres"
+      ],
+      "gloss": {
+        "en": "three",
+        "fr": "trois"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "congrego",
+      "forms": [
+        "congregati"
+      ],
+      "gloss": {
+        "en": "gather",
+        "fr": "rassembler"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "medius",
+      "forms": [
+        "medio"
+      ],
+      "gloss": {
+        "en": "midst",
+        "fr": "milieu"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vir",
+      "forms": [
+        "viri"
+      ],
+      "gloss": {
+        "en": "man / husband",
+        "fr": "homme / mari"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "diligo",
+      "forms": [
+        "diliget"
+      ],
+      "gloss": {
+        "en": "love",
+        "fr": "aimer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sustineo",
+      "forms": [
+        "sustinebit"
+      ],
+      "gloss": {
+        "en": "hold to / support",
+        "fr": "s'attacher à / soutenir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "contemno",
+      "forms": [
+        "contemnet"
+      ],
+      "gloss": {
+        "en": "despise",
+        "fr": "mépriser"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "odio",
+      "forms": [
+        "odio habebit"
+      ],
+      "gloss": {
+        "en": "hate",
+        "fr": "haïr"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "alter",
+      "forms": [
+        "alterum"
+      ],
+      "gloss": {
+        "en": "the other / one of two",
+        "fr": "l'autre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "vulg-jn1-13-l32",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 1:13",
+      "sourceLatin": "Qui non ex sanguinibus, neque ex voluntate carnis, neque ex voluntate viri, sed ex Deo nati sunt.",
+      "provenanceNote": "neque coordination and biblical semantic usage.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-mt6-24-aut-l32",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 6:24",
+      "sourceLatin": "Aut enim unum odio habebit, et alterum diliget: aut unum sustinebit, et alterum contemnet.",
+      "provenanceNote": "aut...aut gives explicit alternatives.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-mt18-20-vel-l32",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 18:20",
+      "sourceLatin": "Ubi enim sunt duo vel tres congregati in nomine meo, ibi sum in medio eorum.",
+      "provenanceNote": "vel supplies ordinary ecclesiastical disjunction.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-1cor10-31-sive-l32",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "I ad Corinthios 10:31",
+      "sourceLatin": "Sive ergo manducatis, sive bibitis, sive aliud quid facitis: omnia in gloriam Dei facite.",
+      "provenanceNote": "sive...sive coordinates alternatives in exhortation.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-mt5-37-nec-l32",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 5:37",
+      "sourceLatin": "Sit autem sermo vester: Est, est: Non, non.",
+      "provenanceNote": "Included as a Church-Latin punctuation/coordination contrast; nec itself is taught through controlled retrieval.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; Lesson 32 focuses on usage and coordination rather than new morphology.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "churchLatinFramework": {
+    "principles": [
+      "Church Latin includes biblical, patristic and liturgical strata; not every construction should be regularized toward classical prose.",
+      "quia/quoniam reporting, heavy coordination, repeated et/neque/sive, and semantic extensions are normal reading data.",
+      "Read the transmitted text first; compare classical preference only when it clarifies, never to overwrite the ecclesiastical construction."
+    ],
+    "connectors": {
+      "negative": [
+        "neque",
+        "nec"
+      ],
+      "alternatives": [
+        "aut",
+        "vel",
+        "sive"
+      ],
+      "contrast": [
+        "at",
+        "sed",
+        "autem",
+        "vero"
+      ]
+    },
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l32-b1",
+      "type": "concept",
+      "title": "Church Latin is a historical language, not bad Classical Latin",
+      "learnerCopy": {
+        "en": "Liturgical Latin inherits classical grammar but also biblical, patristic and medieval usage. A reader should recognize these developments rather than silently rewriting them into a preferred classical idiom.",
+        "fr": "Le latin liturgique hérite de la grammaire classique, mais aussi d'usages bibliques, patristiques et médiévaux. Le lecteur doit reconnaître ces développements au lieu de les réécrire silencieusement selon un idéal classique."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le latin de l’Église est une langue historique, pas du mauvais latin classique"
+        }
+      }
+    },
+    {
+      "id": "l32-b2",
+      "type": "coordination",
+      "title": "neque and nec accumulate negatives",
+      "sourceId": "vulg-jn1-13-l32",
+      "learnerCopy": {
+        "en": "Biblical Latin often coordinates through repeated particles. neque...neque can carry a chain of exclusions; do not compress it until you have seen the whole structure.",
+        "fr": "Le latin biblique coordonne souvent par répétition de particules. neque...neque peut porter une chaîne d'exclusions ; ne la condensez qu'après avoir vu toute la structure."
+      },
+      "referenceIds": [
+        "vulg-jn1-13-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "neque et nec accumulent les négations"
+        }
+      }
+    },
+    {
+      "id": "l32-b3",
+      "type": "alternatives",
+      "title": "aut, vel and sive overlap but are not identical",
+      "learnerCopy": {
+        "en": "aut often marks a sharper alternative; vel can be looser or inclusive; sive can frame 'whether...or'. Church usage is context-driven, so avoid forcing a rigid one-word English/French equivalent.",
+        "fr": "aut marque souvent une alternative plus nette ; vel peut être plus souple ou inclusif ; sive peut encadrer « soit...soit ». L'usage ecclésiastique dépend du contexte : évitez une équivalence rigide mot à mot."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "aut, vel et sive se recouvrent sans être identiques"
+        }
+      }
+    },
+    {
+      "id": "l32-b4",
+      "type": "authentic-example",
+      "title": "Sive... sive... sive...",
+      "sourceId": "vulg-1cor10-31-sive-l32",
+      "learnerCopy": {
+        "en": "The repeated conjunction is part of the rhetoric. Preserve the coordination long enough to see that every alternative is subordinated to the final command: do all to the glory of God.",
+        "fr": "La répétition de la conjonction appartient à la rhétorique. Conservez la coordination assez longtemps pour voir que chaque alternative dépend du commandement final : faites tout pour la gloire de Dieu."
+      },
+      "referenceIds": [
+        "vulg-1cor10-31-sive-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Sive... sive... sive..."
+        }
+      }
+    },
+    {
+      "id": "l32-b5",
+      "type": "method",
+      "title": "Do not 'correct' ecclesiastical usage while parsing",
+      "learnerCopy": {
+        "en": "First describe what the text actually does. Only afterward, if useful, note that a classical author might have preferred another construction. The app must teach the Latin Catholics actually meet.",
+        "fr": "Décrivez d'abord ce que le texte fait réellement. Ensuite seulement, si c'est utile, notez qu'un auteur classique aurait pu préférer une autre construction. L'application doit enseigner le latin réellement rencontré par les catholiques."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ne pas « corriger » l’usage ecclésiastique pendant l’analyse"
+        }
+      }
+    },
+    {
+      "id": "l32-b6",
+      "type": "retrieval",
+      "title": "Small connectors control large passages",
+      "learnerCopy": {
+        "en": "neque, nec, aut, vel, sive and at are tiny, but they define logical architecture. In long prayers, marking them is often more useful than immediately translating every noun.",
+        "fr": "neque, nec, aut, vel, sive et at sont minuscules, mais ils structurent la logique. Dans les longues prières, les repérer est souvent plus utile que de traduire immédiatement chaque nom."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "De petits connecteurs gouvernent de longs passages"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l32-p1",
+      "sourceId": "vulg-jn1-13-l32",
+      "sourceLatin": "Qui non ex sanguinibus, neque ex voluntate carnis, neque ex voluntate viri, sed ex Deo nati sunt.",
+      "instructionalDisplay": "Qui non ex sanguinibus, neque ex voluntate carnis, neque ex voluntate viri, sed ex Deo nati sunt.",
+      "translation": {
+        "en": "Who are born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.",
+        "fr": "Qui sont nés, non du sang, ni de la volonté de la chair, ni de la volonté de l'homme, mais de Dieu."
+      },
+      "targetLemmas": [
+        "qui/quae/quod",
+        "non",
+        "e/ex",
+        "neque",
+        "voluntas",
+        "caro",
+        "sed",
+        "Deus",
+        "nascor",
+        "sum",
+        "sanguis"
+      ],
+      "supportLemmas": [
+        "vir"
+      ]
+    },
+    {
+      "id": "l32-p2",
+      "sourceId": "vulg-mt6-24-aut-l32",
+      "sourceLatin": "Aut enim unum odio habebit, et alterum diliget: aut unum sustinebit, et alterum contemnet.",
+      "instructionalDisplay": "Aut enim unum odio habebit, et alterum diliget: aut unum sustinebit, et alterum contemnet.",
+      "translation": {
+        "en": "For either he will hate the one and love the other; or he will sustain the one and despise the other.",
+        "fr": "Car ou bien il haïra l'un et aimera l'autre, ou bien il s'attachera à l'un et méprisera l'autre."
+      },
+      "targetLemmas": [
+        "aut",
+        "enim",
+        "unus",
+        "habeo",
+        "et"
+      ],
+      "supportLemmas": [
+        "odio",
+        "alter",
+        "diligo",
+        "sustineo",
+        "contemno"
+      ]
+    },
+    {
+      "id": "l32-p3",
+      "sourceId": "vulg-mt18-20-vel-l32",
+      "sourceLatin": "Ubi enim sunt duo vel tres congregati in nomine meo, ibi sum in medio eorum.",
+      "instructionalDisplay": "Ubi enim sunt duo vel tres congregati in nomine meo, ibi sum in medio eorum.",
+      "translation": {
+        "en": "For where there are two or three gathered together in My name, there am I in the midst of them.",
+        "fr": "Car là où deux ou trois sont réunis en mon nom, je suis au milieu d'eux."
+      },
+      "targetLemmas": [
+        "ubi",
+        "enim",
+        "sum",
+        "duo",
+        "vel",
+        "in",
+        "nomen",
+        "meus",
+        "ibi",
+        "is/ea/id"
+      ],
+      "supportLemmas": [
+        "tres",
+        "congrego",
+        "medius"
+      ]
+    },
+    {
+      "id": "l32-p4",
+      "sourceId": "vulg-1cor10-31-sive-l32",
+      "sourceLatin": "Sive ergo manducatis, sive bibitis, sive aliud quid facitis: omnia in gloriam Dei facite.",
+      "instructionalDisplay": "Sive ergo manducatis, sive bibitis, sive aliud quid facitis: omnia in gloriam Dei facite.",
+      "translation": {
+        "en": "Whether you eat or drink, or whatsoever else you do, do all to the glory of God.",
+        "fr": "Soit que vous mangiez, soit que vous buviez, ou quoi que vous fassiez, faites tout pour la gloire de Dieu."
+      },
+      "targetLemmas": [
+        "sive",
+        "ergo",
+        "quis/quid",
+        "facio",
+        "omnis",
+        "in",
+        "gloria",
+        "Deus"
+      ],
+      "supportLemmas": [
+        "manduco",
+        "bibo",
+        "aliud"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l32-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the governing reading principle of Lesson 32?",
+      "stimulus": null,
+      "options": [
+        "describe the ecclesiastical construction before comparing it with classical preference",
+        "rewrite every sentence into Ciceronian prose",
+        "ignore biblical usage",
+        "treat all post-classical usage as error"
+      ],
+      "expectedAnswer": "describe the ecclesiastical construction before comparing it with classical preference",
+      "acceptedVariants": [
+        "describe the ecclesiastical construction before comparing it with classical preference"
+      ],
+      "hint": "Read the transmitted text first.",
+      "explanation": "Church Latin is taught as real historical usage.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "church-latin:method"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le principe directeur de lecture de la leçon 32 ?",
+          "hint": "Lire d’abord le texte transmis.",
+          "explanation": "Le latin de l’Église est enseigné comme un usage historique réel.",
+          "options": [
+            "décrire d’abord la construction ecclésiastique avant de la comparer à une préférence classique",
+            "réécrire chaque phrase en prose cicéronienne",
+            "ignorer l’usage biblique",
+            "traiter tout usage postclassique comme une erreur"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l32-e2",
+      "exerciseType": "matching",
+      "prompt": "Match negative/alternative connector to core meaning.",
+      "stimulus": [
+        "neque",
+        "nec",
+        "aut",
+        "vel",
+        "sive",
+        "at"
+      ],
+      "expectedAnswer": {
+        "neque": "and not / neither",
+        "nec": "and not / nor",
+        "aut": "or",
+        "vel": "or / even",
+        "sive": "whether / or if",
+        "at": "but / yet"
+      },
+      "acceptedVariants": [],
+      "hint": "All six are Lesson 32 Core.",
+      "explanation": "Connector retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l32"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le connecteur négatif ou alternatif à son sens principal.",
+          "hint": "Les six appartiennent au vocabulaire fondamental de la leçon 32.",
+          "explanation": "Récupération des connecteurs.",
+          "matches": {
+            "neque": "et ne... pas / ni",
+            "nec": "et ne... pas / ni",
+            "aut": "ou",
+            "vel": "ou / voire",
+            "sive": "soit / ou si",
+            "at": "mais / cependant"
+          }
+        }
+      }
+    },
+    {
+      "id": "l32-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does repeated neque do in John 1:13?",
+      "stimulus": null,
+      "options": [
+        "builds a chain of exclusions",
+        "forms a relative clause",
+        "marks future tense",
+        "creates an ablative absolute"
+      ],
+      "expectedAnswer": "builds a chain of exclusions",
+      "acceptedVariants": [
+        "builds a chain of exclusions"
+      ],
+      "hint": "Read the whole coordination.",
+      "explanation": "Repeated neque accumulates negative alternatives.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn1-13-l32",
+      "skills": [
+        "coordination:negative"
+      ],
+      "referenceIds": [
+        "vulg-jn1-13-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait la répétition de neque dans Jean 1,13 ?",
+          "hint": "Lisez toute la coordination.",
+          "explanation": "La répétition de neque accumule les alternatives négatives.",
+          "options": [
+            "construit une chaîne d’exclusions",
+            "forme une proposition relative",
+            "marque le futur",
+            "crée un ablatif absolu"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l32-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which connector usually marks the sharper either/or alternative?",
+      "stimulus": null,
+      "options": [
+        "aut",
+        "vel",
+        "sive",
+        "neque"
+      ],
+      "expectedAnswer": "aut",
+      "acceptedVariants": [
+        "aut"
+      ],
+      "hint": "Compare aut...aut.",
+      "explanation": "aut commonly marks exclusive/sharp alternatives.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt6-24-aut-l32",
+      "skills": [
+        "coordination:alternative"
+      ],
+      "referenceIds": [
+        "vulg-mt6-24-aut-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel connecteur marque habituellement l’alternative la plus tranchée, de type « soit... soit » ?",
+          "hint": "Comparez aut...aut.",
+          "explanation": "aut marque couramment des alternatives exclusives ou nettes.",
+          "options": [
+            "aut",
+            "vel",
+            "sive",
+            "neque"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l32-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which connector can be looser or inclusive 'or'?",
+      "stimulus": null,
+      "options": [
+        "vel",
+        "aut",
+        "nec",
+        "at"
+      ],
+      "expectedAnswer": "vel",
+      "acceptedVariants": [
+        "vel"
+      ],
+      "hint": "Two or three.",
+      "explanation": "vel often gives a looser alternative.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt18-20-vel-l32",
+      "skills": [
+        "coordination:vel"
+      ],
+      "referenceIds": [
+        "vulg-mt18-20-vel-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel connecteur peut exprimer un « ou » plus souple ou inclusif ?",
+          "hint": "Deux ou trois possibilités.",
+          "explanation": "vel donne souvent une alternative plus souple.",
+          "options": [
+            "vel",
+            "aut",
+            "nec",
+            "at"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l32-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does sive...sive structure?",
+      "stimulus": null,
+      "options": [
+        "whether...or alternatives",
+        "a genitive chain",
+        "direct address",
+        "passive voice"
+      ],
+      "expectedAnswer": "whether...or alternatives",
+      "acceptedVariants": [
+        "whether...or alternatives"
+      ],
+      "hint": "Paul's repeated alternatives.",
+      "explanation": "sive frames alternatives.",
+      "difficulty": 1,
+      "sourceId": "vulg-1cor10-31-sive-l32",
+      "skills": [
+        "coordination:sive"
+      ],
+      "referenceIds": [
+        "vulg-1cor10-31-sive-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que structure sive...sive ?",
+          "hint": "Les alternatives répétées chez saint Paul.",
+          "explanation": "sive encadre des alternatives.",
+          "options": [
+            "des alternatives « soit... soit »",
+            "une chaîne de génitifs",
+            "une adresse directe",
+            "la voix passive"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l32-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Should biblical quia/quoniam usage be rejected because classical prose might prefer another construction?",
+      "stimulus": null,
+      "options": [
+        "no",
+        "yes"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "Church Latin has its own history.",
+      "explanation": "The reader learns actual ecclesiastical usage.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "church-latin:usage"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Faut-il rejeter l’usage biblique de quia/quoniam parce que la prose classique pourrait préférer une autre construction ?",
+          "hint": "Le latin de l’Église possède sa propre histoire.",
+          "explanation": "Le lecteur apprend l’usage ecclésiastique réel.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l32-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why are connectors especially important in long liturgical prose?",
+      "stimulus": null,
+      "options": [
+        "they expose logical architecture",
+        "they replace all verbs",
+        "they determine pronunciation",
+        "they remove case endings"
+      ],
+      "expectedAnswer": "they expose logical architecture",
+      "acceptedVariants": [
+        "they expose logical architecture"
+      ],
+      "hint": "Structure before vocabulary overload.",
+      "explanation": "Connectors show how clauses relate.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:structure"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi les connecteurs sont-ils particulièrement importants dans la prose liturgique longue ?",
+          "hint": "La structure avant la surcharge lexicale.",
+          "explanation": "Les connecteurs montrent comment les propositions s’articulent.",
+          "options": [
+            "ils révèlent l’architecture logique",
+            "ils remplacent tous les verbes",
+            "ils déterminent la prononciation",
+            "ils suppriment les terminaisons casuelles"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l32-e9",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin connector meaning 'whether / or if'.",
+      "stimulus": null,
+      "expectedAnswer": "sive",
+      "acceptedVariants": [
+        "sive",
+        "Sive"
+      ],
+      "hint": "It repeats in 1 Corinthians 10:31.",
+      "explanation": "sive is the target.",
+      "difficulty": 1,
+      "sourceId": "vulg-1cor10-31-sive-l32",
+      "skills": [
+        "vocabulary:sive"
+      ],
+      "referenceIds": [
+        "vulg-1cor10-31-sive-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le connecteur latin signifiant « soit / ou si ».",
+          "hint": "Il se répète dans 1 Corinthiens 10,31.",
+          "explanation": "sive est la forme visée."
+        }
+      }
+    },
+    {
+      "id": "l32-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin conjunction meaning 'and not / nor' that can shorten neque.",
+      "stimulus": null,
+      "expectedAnswer": "nec",
+      "acceptedVariants": [
+        "nec",
+        "Nec"
+      ],
+      "hint": "Lesson 32 Core.",
+      "explanation": "nec means nor / and not.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:nec"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez la conjonction latine signifiant « et ne... pas / ni », forme brève apparentée à neque.",
+          "hint": "Vocabulaire fondamental de la leçon 32.",
+          "explanation": "nec signifie « ni / et ne... pas »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Read Church Latin without forcing classical normalization.",
+    "Recognize negative and alternative coordination.",
+    "Understand connector nuance contextually.",
+    "Learn all six frozen Lesson 32 lemmas."
+  ],
+  "checkpoint": {
+    "id": "l32-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l32-e1",
+        "l32-e2",
+        "l32-e3",
+        "l32-e4",
+        "l32-e5",
+        "l32-e6",
+        "l32-e7",
+        "l32-e8",
+        "l32-e9",
+        "l32-e10"
+      ]
+    },
+    "mustKnow": [
+      "neque/nec",
+      "aut/vel/sive",
+      "Church Latin as historical usage",
+      "connector-first structural reading"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "neque",
+      "nec",
+      "aut",
+      "vel",
+      "sive",
+      "at"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 5,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Le latin de l’Église n’est pas le latin scolaire",
+      "grammarFocus": "Usage ecclésiastique et usage classique",
+      "readingOutcome": "Reconnaître le vocabulaire et les préférences syntaxiques propres au latin de l’Église sans imposer les normes classiques.",
+      "objectives": [
+        "Lire le latin de l’Église sans le normaliser de force selon le latin classique.",
+        "Reconnaître la coordination négative et alternative.",
+        "Comprendre la nuance des connecteurs selon le contexte.",
+        "Apprendre les six lemmes figés de la leçon 32."
+      ]
+    }
+  }
+}
