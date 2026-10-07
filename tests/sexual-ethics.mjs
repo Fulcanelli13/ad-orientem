@@ -19,7 +19,7 @@ import {
   relatedTargetsFor,
 } from "../src/learn/sexual-ethics-data/sot.js";
 
-assert.equal(SEXUAL_ETHICS_VERSION,"1.1.0");
+assert.equal(SEXUAL_ETHICS_VERSION,"1.1.1");
 assert.equal(SEXUAL_ETHICS_ROUTE,"learn.sexual_ethics");
 assert.equal(SEXUAL_ETHICS_RESEARCH_LEAD,"LBM");
 assert.equal(CSE_QUESTIONS.length,150);
@@ -83,6 +83,21 @@ assert.ok(CSE_GAP_AUDIT.some(item=>item.topic==="Sexual sacrilege as a distinct 
 assert.ok(relatedTargetsFor(CSE_QUESTIONS.find(item=>item.id==="CSE049")).some(target=>target.id==="learn.rites.matrimony"));
 assert.ok(relatedTargetsFor(CSE_QUESTIONS.find(item=>item.id==="CSE137")).some(target=>target.id==="pray.confession"));
 
+const q014=CSE_QUESTIONS.find(item=>item.id==="CSE014");
+assert.match(q014.a[0],/Christ condemns adultery and lust/i);
+assert.match(q014.a[0],/Pius XI in 1930/i);
+assert.ok(q014.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator.includes("53–59")));
+assert.ok(q014.refs.some(([sourceId,locator])=>sourceId==="TRENT6"&&/adultery and fornication/i.test(locator)));
+
+const publicQuestionFiles=[
+  readFileSync("src/learn/sexual-ethics-data/questions-001-050.js","utf8"),
+  readFileSync("src/learn/sexual-ethics-data/questions-051-100.js","utf8"),
+  readFileSync("src/learn/sexual-ethics-data/questions-101-150.js","utf8"),
+].join("\n");
+assert.doesNotMatch(publicQuestionFiles,/Ad Orientem/);
+assert.doesNotMatch(runtime,/Related in Ad Orientem|À voir aussi dans Ad Orientem/);
+assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Every displayed citation source must have a hyperlink destination");
+
 const presentation=readFileSync("src/learn/presentation.js","utf8");
 const owner=readFileSync("src/learn/browser-entry.js","utf8");
 const runtime=readFileSync("src/learn/sexual-ethics.js","utf8");
@@ -93,8 +108,9 @@ assert.match(owner,/AO_SEXUAL_ETHICS_V1/);
 assert.match(runtime,/Search all 150 questions/);
 assert.match(runtime,/Sources & provenance/);
 assert.match(runtime,/Lawler · Boyle · May/);
-assert.match(runtime,/Related in Ad Orientem/);
+assert.match(runtime,/Related topics/);
 assert.match(runtime,/data-ao-cse-related/);
+assert.match(runtime,/<a href="\$\{esc\(url\)\}" target="_blank" rel="noopener"><strong>\$\{esc\(citation\)\}<\/strong> ↗<\/a>/);
 assert.match(runtime,/handoffToApostolate/);
 assert.match(runtime,/FORMATION_TO_APOSTOLATE/);
 
