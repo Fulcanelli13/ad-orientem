@@ -52,7 +52,7 @@ function categoryById(data,id){return data.nav.categories.find(x=>x.id===id)||nu
 function sectionById(c,id){return c?.sections?.find(x=>x.id===id)||null}
 
 export function createGlossaryRuntime(win=globalThis){
-  const state={open:false,loaded:false,loading:false,error:"",view:"categories",categoryId:null,sectionId:null,query:"",detailId:null,data:null,unsub:null,lastLanguage:null};
+  const state={open:false,loaded:false,loading:false,error:"",view:"categories",categoryId:null,sectionId:null,query:"",detailId:null,contextIds:[],origin:"learn",data:null,unsub:null,lastLanguage:null};
 
   async function load(){
     if(state.loaded)return state.data;
@@ -84,6 +84,7 @@ export function createGlossaryRuntime(win=globalThis){
 
   function title(){
     if(!state.data)return L(win,"Glossary","Glossaire");
+    if(state.view==="context")return L(win,"Terms used here","Termes utilisés ici");
     if(state.view==="section"){const c=categoryById(state.data,state.categoryId),s=sectionById(c,state.sectionId);return isFr(win)?s?.label?.fr:s?.label?.en}
     if(state.view==="category"){const c=categoryById(state.data,state.categoryId);return isFr(win)?c?.label?.fr:c?.label?.en}
     return L(win,"Glossary","Glossaire");
@@ -103,7 +104,7 @@ export function createGlossaryRuntime(win=globalThis){
 
   function searchResults(){
     const q=norm(state.query);
-    const rows=q?state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la].join(" ")).includes(q)).slice(0,80):[];
+    const rows=q?state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la,e.short_definition?.en,e.short_definition?.fr,e.explanation?.en,e.explanation?.fr].join(" ")).includes(q)).slice(0,80):[];
     return '<div class="aoGlossTerms">'+(rows.length?rows.map(termButton).join(""):'<div class="aoGlossEmpty">'+esc(L(win,"No matching term.","Aucun terme correspondant."))+'</div>')+'</div>';
   }
 
@@ -124,6 +125,11 @@ export function createGlossaryRuntime(win=globalThis){
     return top()+'<main class="aoGlossWrap">'+searchBox()+(state.query?searchResults():'<div class="aoGlossTerms">'+rows.map(termButton).join("")+'</div>')+'</main>';
   }
 
+  function contextView(){
+    const rows=state.contextIds.map(id=>state.data.byId.get(id)).filter(Boolean);
+    return top()+'<main class="aoGlossWrap"><div class="aoGlossKicker">'+esc(L(win,"Context reference","Référence contextuelle"))+'</div><p class="aoGlossHint">'+esc(L(win,"These are the glossary terms linked from the screen you were using.","Voici les termes du glossaire liés à l’écran que vous consultiez."))+'</p><div class="aoGlossTerms">'+rows.map(termButton).join("")+'</div></main>';
+  }
+
   function detail(){
     const e=state.data?.byId?.get(state.detailId);if(!e)return "";
     const c=categoryById(state.data,e.primary_category),s=sectionById(c,e.browse_section);
@@ -142,7 +148,7 @@ export function createGlossaryRuntime(win=globalThis){
     let body;
     if(state.loading)body=top()+'<main class="aoGlossWrap"><div class="aoGlossEmpty">'+esc(L(win,"Loading glossary…","Chargement du glossaire…"))+'</div></main>';
     else if(state.error)body=top()+'<main class="aoGlossWrap"><div class="aoGlossEmpty">'+esc(state.error)+'</div></main>';
-    else body=state.view==="section"?sectionView():state.view==="category"?categoryView():categoriesView();
+    else body=state.view==="context"?contextView():state.view==="section"?sectionView():state.view==="category"?categoryView():categoriesView();
     n.innerHTML="<style>"+css()+"</style>"+body+(state.detailId?detail():"");
     n.hidden=false;n.removeAttribute("aria-hidden");return true;
   }
@@ -166,13 +172,14 @@ export function createGlossaryRuntime(win=globalThis){
   function onKey(e){if(e.key!=="Escape")return;if(state.detailId){state.detailId=null;render()}else back()}
 
   function back(){
+    if(state.view==="context"){close(false);return true}
     if(state.view==="section"){state.view="category";state.sectionId=null;state.query="";render();return true}
     if(state.view==="category"){state.view="categories";state.categoryId=null;state.query="";render();return true}
-    close(true);return true;
+    close(state.origin==="learn");return true;
   }
 
   async function open(opts={}){
-    state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.query=String(opts.query||"");state.detailId=null;
+    state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.query=String(opts.query||"");state.detailId=null;state.contextIds=[];state.origin=String(opts.origin||"learn");
     ensureRoot();attach();state.loading=!state.loaded;render();
     await load();state.loading=false;
     if(opts.categoryId&&categoryById(state.data,opts.categoryId)){state.categoryId=opts.categoryId;state.view="category"}
@@ -181,22 +188,22 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   async function openEntry(id){return open({entryId:String(id||"")})}
-  async function openTerms(ids=[]){
-    await open();
-    const rows=ids.map(String).map(id=>state.data.byId.get(id)).filter(Boolean);
+  async function openTerms(ids=[],opts={}){
+    await open({...opts,origin:"context"});
+    const rows=[...new Set(ids.map(String))].map(id=>state.data.byId.get(id)).filter(Boolean);
     if(rows.length===1){state.detailId=rows[0].id;render();return true}
-    if(rows.length){state.query=rows[0].id;render();return true}
+    if(rows.length){state.contextIds=rows.map(x=>x.id);state.view="context";state.query="";render();return true}
     return false;
   }
 
   function search(q){
     const z=norm(q);if(!state.loaded||!z)return [];
-    return state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la].join(" ")).includes(z));
+    return state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la,e.short_definition?.en,e.short_definition?.fr,e.explanation?.en,e.explanation?.fr].join(" ")).includes(z));
   }
 
   function close(returnToLearn=false){
     const n=root(win);try{n?.querySelector?.(":focus")?.blur?.()}catch{}n?.remove?.();
-    state.open=false;state.detailId=null;state.query="";
+    state.open=false;state.detailId=null;state.query="";state.contextIds=[];
     if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     return true;
   }
@@ -212,7 +219,7 @@ export function ensureGlossaryRegistry(win=globalThis){
   const wrapper={...base,__aoGlossaryV1:true,
     get(id){return id===ROUTE_ID?GLOSSARY_DEFINITION:base.get?.(id)||null},
     resolve(id){if(id===ROUTE_ID)return {ok:true,input:id,id,defaults:{},chain:[id],definition:GLOSSARY_DEFINITION};return base.resolve?.(id)},
-    async open(id,opts={}){if(id===ROUTE_ID)return {ok:await runtime.open(opts)!==false,input:String(id),canonicalId:id,type:"reference",domain:"learn",options:opts,aliasChain:[id],error:null};return base.open?.(id,opts)},
+    async open(id,opts={}){if(id===ROUTE_ID)return {ok:await runtime.open({...opts,origin:"learn"})!==false,input:String(id),canonicalId:id,type:"reference",domain:"learn",options:opts,aliasChain:[id],error:null};return base.open?.(id,opts)},
     list(filter={}){const prior=[...(base.list?.(filter)||[])].filter(x=>x?.id!==ROUTE_ID);if((!filter.type||filter.type==="reference")&&(!filter.domain||String(filter.domain).toLowerCase()==="learn"))prior.push(GLOSSARY_DEFINITION);return prior}
   };
   win.AO_MODULES=wrapper;win.AO_MODULE_REGISTRY_V36=wrapper;return wrapper;
