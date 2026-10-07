@@ -52,6 +52,9 @@ assert.match(presentation,/id:"learn\.glossary"/,"Glossary launcher is missing f
 assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
 assert.match(presentation,/id:"learn\.spiritual_life"/,"Spiritual Life launcher is missing from Formation");
 assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
+assert.match(presentation,/data-ao-learn-apostolate/,"Formation lost its Apostolate entry action");
+assert.match(presentation,/ao-refined-help/,"Formation Apostolate entry lost its canonical icon");
+assert.match(owner,/navigate\?\.\("apostolate"\)/,"Formation Apostolate action does not use the app-shell route");
 assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint","today\.gospel",SPIRITUAL_LIFE_ROUTE_ID\]\)/,"Learn module set lost hidden Today compatibility routes or Spiritual Life");
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
 assert.doesNotMatch(presentation,/id:"today\.gospel"/,"Today’s Gospel returned as a Formation launcher");
