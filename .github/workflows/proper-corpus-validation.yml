@@ -21,6 +21,7 @@ jobs:
       - name: Resolve seven-year validation corpus
         run: node tools/build_core_proper_corpus.mjs --discovery-start=2020-01-01 --discovery-end=2026-12-31
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: core-proper-corpus-validation
           path: artifacts/core-proper-corpus/
