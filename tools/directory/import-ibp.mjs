@@ -104,9 +104,46 @@ export function buildIbpDataset(records,{retrievedAt=new Date().toISOString()}={
   });
   return {venues,ministries,schedules,sources};
 }
+async function discoverIbpIndexRendered(){
+  const { chromium }=await import("@playwright/test");
+  const browser=await chromium.launch({headless:true});
+  try{
+    const page=await browser.newPage();
+    await page.goto(IBP_INDEX_URL,{waitUntil:"domcontentloaded",timeout:60000});
+    await page.waitForLoadState("networkidle",{timeout:15000}).catch(()=>{});
+    const nodes=await page.locator("main h2, main h3, main h4, main h5, main h6, main li").evaluateAll(elements=>
+      elements.map(el=>({
+        tag:el.tagName.toLowerCase(),
+        text:(el.innerText||"").replace(/\s+/g," ").trim(),
+        href:el.tagName.toLowerCase()==="li"?(el.querySelector("a")?.href??null):null
+      })).filter(x=>x.text)
+    );
+    let currentCountry=null,currentDiocese=null,index=0;
+    const out=[],seen=new Set();
+    for(const node of nodes){
+      if(node.tag!=="li"){
+        const cc=countryCodeFromText(node.text);
+        if(cc){currentCountry=cc;currentDiocese=null;}
+        if(/(?:archi)?diocèse|diocese|patriarcat/i.test(node.text))currentDiocese=node.text.replace(/\s*:\s*$/,"").trim();
+        continue;
+      }
+      if(!currentCountry||/retour|liste|implantations/i.test(node.text))continue;
+      const url=node.href||IBP_INDEX_URL+`#rendered-${index}`;
+      const key=`${currentCountry}|${currentDiocese}|${node.text}`;
+      if(seen.has(key))continue;
+      seen.add(key);
+      out.push({label:node.text,url,countryCode:currentCountry,diocese:currentDiocese,indexOnly:!node.href});
+      index+=1;
+    }
+    return out;
+  }finally{await browser.close();}
+}
+
 export async function runIbpImport({out="data/directory/generated/ibp",concurrency=6,fetchImpl=fetch}={}){
-  const html=await fetchText(IBP_INDEX_URL,{fetchImpl}),candidates=discoverIbpIndex(html);
-  if(candidates.length < 30) throw new Error(`IBP import coverage guard: official index currently reports 33 apostolates; parser discovered only ${candidates.length}.`);
+  const html=await fetchText(IBP_INDEX_URL,{fetchImpl});
+  let candidates=discoverIbpIndex(html);
+  if(candidates.length < 33)candidates=await discoverIbpIndexRendered();
+  if(candidates.length < 33) throw new Error(`IBP import coverage guard: official page states 33 apostolates; parser discovered only ${candidates.length}.`);
   const records=await concurrentMap(candidates,concurrency,async candidate=>{
     if(candidate.indexOnly)return {title:candidate.label,address:null,countryCode:candidate.countryCode,diocese:candidate.diocese,detailUrl:IBP_INDEX_URL,emails:[],phones:[],massRaw:null,indexOnly:true};
     try{return parseDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
