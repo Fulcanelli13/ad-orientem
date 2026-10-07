@@ -1143,6 +1143,11 @@ export const AO_SHARED_IDENTITY_MAPPINGS=Object.freeze([
     "reason": "The Baptism lay guide intentionally uses the active Guides identity rather than inventing a sacrament-specific icon."
   },
   {
+    "route": "learn.rites.first_communion",
+    "asset_id": "ao-rich-eucharistic-life",
+    "reason": "First Holy Communion formation reuses the active Eucharistic Life identity rather than creating a duplicate sacramental asset."
+  },
+  {
     "route": "learn.rites.confirmation",
     "asset_id": "ao-rich-guides",
     "reason": "The Confirmation lay guide uses the active Guides identity; V4 has no dedicated Confirmation formation icon."
@@ -1186,6 +1191,7 @@ export const AO_LEARN_ROUTE_ASSET_IDS=Object.freeze({
   "today.saint":"ao-refined-saint-of-day",
   "learn.rites.sick":"ao-refined-help",
   "learn.rites.baptism":"ao-rich-guides",
+  "learn.rites.first_communion":"ao-rich-eucharistic-life",
   "learn.rites.confirmation":"ao-rich-guides",
   "learn.rites.matrimony":"ao-rich-guides",
   "learn.serve_mass.responses":"ao-refined-study",
