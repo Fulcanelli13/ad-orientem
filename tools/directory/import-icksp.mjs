@@ -47,7 +47,7 @@ function discoverUs(html){
 function parseUsDetail(html,candidate){
   const lines=textLines(html),text=stripTags(html);
   const h=extractTagBlocks(html,"h6").map(x=>x.text).find(Boolean);
-  const title=h??candidate.label.split(" - ").slice(1).join(" - ")||candidate.label;
+  const inferred=candidate.label.split(" - ").slice(1).join(" - ");\n  const title=h ?? (inferred || candidate.label);
   const church=blockAfter(lines,/^Church\s*:/i,/^(Priory|Phone|Email|©)/i);
   const address=church.length>1?church.slice(1).join(", "):church.join(", ");
   const rawSchedule=scheduleLines(lines).join("\n")||null;
