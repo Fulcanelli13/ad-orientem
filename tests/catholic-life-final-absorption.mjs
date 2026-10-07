@@ -42,7 +42,8 @@ const matrimony=runtime.slice(matrimonyStart,matrimonyEnd);
 assert.match(sick,/WHEN DEATH OCCURS/);
 assert.match(sick,/FUNERAL & REQUIEM/);
 assert.match(sick,/BURIAL, CREMATION & ASHES/);
-assert.match(sick,/data-ao-tradlearn-mass/);
+assert.match(sick,/mass:true/);
+assert.match(runtime,/data-ao-tradlearn-mass/);
 assert.match(sick,/route:"pray\.holy_souls"/);
 assert.doesNotMatch(sick,/DISCERNMENT & ENGAGEMENT|CANONICAL PREPARATION/,"Matrimony cards leaked into Serious Illness");
 
