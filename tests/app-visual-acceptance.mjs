@@ -582,7 +582,7 @@ try{
     const icon=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-live-blessing'] .aoP435930SemanticRailIcon");
     const cs=icon?getComputedStyle(icon):null;
     const mask=cs?.webkitMaskImage||cs?.maskImage||"";
-    const match=mask.match(/url\\(["']?(.*?)["']?\\)/);
+    const match=mask.match(/url\(["']?([^"')]+)["']?\)/);
     const url=match?.[1]??"";
     let status=0,bytes=0;
     if(url){try{const response=await fetch(url);status=response.status;bytes=(await response.arrayBuffer()).byteLength}catch{}}
