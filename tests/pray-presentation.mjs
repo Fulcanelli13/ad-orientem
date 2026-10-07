@@ -128,6 +128,9 @@ assert.match(runtime,/function declutterRosaryDonor\(r\)/,"Rosary duplicate-cont
 assert.match(runtime,/\['guide','preferences','préférences'\]/,"Rosary no longer suppresses redundant Guide / Preferences controls");
 assert.match(runtime,/\.lab-view-head \.aoModuleHome,\.lab-view-head \.lab-lang/,"Rosary no longer suppresses redundant Home / language header chrome");
 assert.match(runtime,/host\.dataset\.face='vernacular'/,"Rosary no longer defaults prayer text to the vernacular face");
+assert.match(runtime,/function rosarySetHeading\(set\)/,"Rosary set-heading owner is absent");
+assert.match(runtime,/headerTitle&&setHeading\)headerTitle\.textContent=setHeading/,"Rosary live header still repeats the active mystery title");
+assert.match(runtime,/\.lab-option-bar \.lab-step-count/,"Rosary no longer suppresses redundant helper copy");
 assert.doesNotMatch(runtime,/decorateRosaryExact\(r\)[\s\S]{0,2200}ensureRosaryDonorOverview\(r,info\)/,"Rosary exact decorator still injects permanent Overview chrome");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
 assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary legacy progress projection helper disappeared unexpectedly");
