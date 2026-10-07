@@ -143,7 +143,7 @@ export function renderLearnPresentation(root,state,win,{error=""}={}){
     <header class="aoLearnModTop">
       <button type="button" data-ao-learn-home aria-label="${esc(langFr?"Retour à l’accueil":"Back to Home")}">${assetMask("ao-ui-back")}</button>
       <div class="aoLearnModTopTitle"><small>AD ORIENTEM</small><strong>${esc(pick(LEARN_LAYOUT.title,state))}</strong></div>
-      <span class="aoLearnModTopSpacer" aria-hidden="true"></span>
+      <button type="button" data-ao-learn-apostolate aria-label="${esc(langFr?"Ouvrir Apostolat":"Open Apostolate")}">${assetMask("ao-refined-help")}</button>
     </header>
     <main class="aoLearnModWrap">
       <section class="aoLearnModHero"><div class="kicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1>${esc(pick(LEARN_LAYOUT.title,state))}</h1><p>${esc(pick(LEARN_LAYOUT.intro,state))}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
