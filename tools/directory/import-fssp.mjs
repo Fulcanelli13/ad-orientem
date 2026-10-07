@@ -71,8 +71,8 @@ async function enrichDetail(record,{fetchImpl=fetch}={}){
     const html=await fetchText(record.detailUrl,{fetchImpl});
     const text=stripTags(html);
     const links=extractAnchors(html,record.detailUrl).map(x=>x.url);
-    const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:record.detailUrl});
-    return {...record,detailText:text,emails:emailAddresses(text),phones:phoneCandidates(text),externalLinks:[...new Set(links)],officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous};
+    const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:record.detailUrl,expectedText:[record.title,record.address].filter(Boolean).join(" ")});
+    return {...record,detailText:text,emails:emailAddresses(text),phones:phoneCandidates(text),externalLinks:[...new Set(links)],officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0};
   }catch(error){
     return {...record,detailText:null,emails:[],phones:[],externalLinks:[],detailWarning:String(error?.message??error)};
   }
@@ -165,7 +165,8 @@ export async function runFsspImport({out="data/directory/generated/fssp",concurr
       country_code_known:countryKnown,
       country_code_unknown:dataset.venues.length-countryKnown,
       official_geo_recovered:records.filter(r=>r.officialGeo).length,
-      official_geo_ambiguous:records.filter(r=>r.officialGeoAmbiguous).length
+      official_geo_ambiguous:records.filter(r=>r.officialGeoAmbiguous).length,
+      official_geo_rejected_conflict:records.filter(r=>r.officialGeoRejected).length
     }
   });
   return result.report;
