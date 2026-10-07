@@ -47,7 +47,7 @@ assert.equal(sot.publication_gates.english_claim_copy_ready,true);
 assert.equal(sot.publication_gates.french_parity_ready,true);
 assert.equal(sot.publication_gates.prayer_owner_handoffs_mapped,true);
 assert.equal(sot.publication_gates.ui_runtime_ready,false);
-assert.equal(sot.publication_gates.final_content_audit_ready,false);
+assert.equal(sot.publication_gates.final_content_audit_ready,true);
 
 const allCopy=JSON.stringify(course).toLowerCase();
 for(const forbidden of ["holiness score","spiritual score","streak","learn.catholic_life"]){
