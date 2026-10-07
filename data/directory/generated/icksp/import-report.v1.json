@@ -1,7 +1,7 @@
 {
   "schema": "AO_DIRECTORY_SOURCE_IMPORT_REPORT_V1",
   "provider": "ICKSP",
-  "retrieved_at": "2026-10-07T10:10:47.827Z",
+  "retrieved_at": "2026-10-07T11:04:40.301Z",
   "venue_count": 27,
   "ministry_count": 27,
   "schedule_assertion_count": 25,
@@ -18,10 +18,12 @@
     "international_country_sites": 8,
     "international_scope": "PARTIAL_CENTRAL_PLUS_COUNTRY_DISCOVERY"
   },
-  "geocoded_at": "2026-10-07T10:37:49.617Z",
+  "geocoded_at": "2026-10-07T11:04:48.497Z",
   "geocoding": {
     "provider": "OSM_NOMINATIM",
     "accepted": 3,
+    "primary_accepted": 3,
+    "fallback_accepted": 0,
     "existing_valid": 0,
     "unresolved": 24,
     "existing_invalid": 0

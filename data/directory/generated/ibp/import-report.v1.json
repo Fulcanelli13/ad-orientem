@@ -1,7 +1,7 @@
 {
   "schema": "AO_DIRECTORY_SOURCE_IMPORT_REPORT_V1",
   "provider": "IBP",
-  "retrieved_at": "2026-10-07T10:10:55.423Z",
+  "retrieved_at": "2026-10-07T11:04:48.252Z",
   "venue_count": 34,
   "ministry_count": 34,
   "schedule_assertion_count": 22,
@@ -22,10 +22,12 @@
     "country_code_known": 34,
     "source_count_discrepancy": "The official page states 33 apostolate locations while its visible country/diocese enumeration contains 34 named entries. Preserve all enumerated entries pending upstream clarification."
   },
-  "geocoded_at": "2026-10-07T10:38:27.586Z",
+  "geocoded_at": "2026-10-07T11:04:48.508Z",
   "geocoding": {
     "provider": "OSM_NOMINATIM",
     "accepted": 15,
+    "primary_accepted": 15,
+    "fallback_accepted": 0,
     "existing_valid": 0,
     "unresolved": 19,
     "existing_invalid": 0
