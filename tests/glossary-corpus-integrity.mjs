@@ -41,6 +41,8 @@ assert.equal(lex.items.length,350);
 assert.equal(new Set(lex.items.map(x=>x.id)).size,350);
 assert.deepEqual(lex.items.map(x=>x.core_rank),Array.from({length:350},(_,i)=>i+1));
 assert.ok(lex.items.every(x=>x.lemma&&x.status==="FROZEN_CORE"));
+assert.ok(lex.items.every(x=>x.part_of_speech&&x.gloss_en&&x.gloss_fr),"all 350 lexemes must have POS + EN/FR gloss");
+assert.equal(lex.enrichment?.complete,true,"Latin lexeme enrichment is not complete");
 
 assert.equal(sourceRegistry.schema,"GLOSSARY_SOURCE_REGISTRY_V1");
 assert.equal(new Set(sourceRegistry.sources.map(x=>x.id)).size,sourceRegistry.sources.length);
@@ -64,14 +66,18 @@ for(const e of concepts){
     assert.ok(/^https:\/\//.test(source.canonical_url),sourceId+" has no clickable source URL");
   }
 }
+for(const x of lex.items){
+  for(const sourceId of x.source_ids||[])assert.ok(sourceMap.has(sourceId),x.id+" unresolved lexeme source "+sourceId);
+}
 
 assert.equal(phr.schema,"GLOSSARY_LATIN_PHRASES_V1");
-assert.equal(phr.items.length,60);
+assert.equal(phr.items.length,80);
 assert.equal(new Set(phr.items.map(x=>x.id)).size,60);
 for(const p of phr.items){
   assert.ok(p.latin,p.id+" missing Latin");
   assert.ok(p.translations?.en&&p.translations?.fr,p.id+" missing EN/FR translation");
   assert.ok(p.source_ids?.length,p.id+" missing source");
+  for(const sourceId of p.source_ids)assert.ok(sourceMap.has(sourceId),p.id+" unresolved phrase source "+sourceId);
 }
 
 for(const [a,b] of [["G181","G336"],["G245","G403"],["G192","G416"],["G050","G131"],["G061","G134"],["G034","G178"],["G031","G149"],["G036","G395"]]){
@@ -79,4 +85,4 @@ for(const [a,b] of [["G181","G336"],["G245","G403"],["G192","G416"],["G050","G13
   assert.ok(navById.has(a)&&navById.has(b),"collision lock target missing "+a+"/"+b);
 }
 
-console.log("Glossary corpus integrity: 450 concepts + 350 frozen lexemes + 60 phrases clean.");
+console.log("Glossary corpus integrity: 450 concepts + 350 fully enriched lexemes + 80 phrases clean.");
