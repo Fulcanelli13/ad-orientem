@@ -5,6 +5,20 @@
   "note": "Specific locators remain on glossary entries/source IDs. Project-internal pointers are not substitutes for doctrinal authorities.",
   "sources": [
     {
+      "id": "AO-LATIN-CORE-1-200",
+      "title": "Ad Orientem — frozen Core Latin 1–200 ranking",
+      "authority_type": "PROJECT_INTERNAL",
+      "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/core-latin-200.v0.2.json",
+      "status": "PROJECT_INTERNAL"
+    },
+    {
+      "id": "AO-LATIN-CORPUS-201-350",
+      "title": "Ad Orientem — frozen Core Latin 201–350 ranking",
+      "authority_type": "PROJECT_INTERNAL",
+      "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/core-latin-201-350.v1.0.json",
+      "status": "PROJECT_INTERNAL"
+    },
+    {
       "id": "CORE-LATIN-200-V0.2",
       "title": "CORE LATIN 200 V0.2",
       "authority_type": "PROJECT_INTERNAL",
@@ -115,6 +129,13 @@
       "authority_type": "PROJECT_INTERNAL",
       "canonical_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/pray/canonical-data.js",
       "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SCANLON-1944",
+      "title": "Cora Carroll Scanlon & Charles L. Scanlon, Latin Grammar (1944)",
+      "authority_type": "GRAMMAR_REFERENCE",
+      "canonical_url": "https://books.google.com/books?id=m1akCuhCNOwC",
+      "status": "DIRECT_CONTEXT_V1"
     },
     {
       "id": "SRC-ASCETICAL-PRAYER",
@@ -810,6 +831,48 @@
       "authority_type": "HISTORICAL_REFERENCE",
       "canonical_url": "https://www.newadvent.org/cathen/15569a.htm",
       "status": "RESOLVABLE_V1"
+    },
+    {
+      "id": "SRC-PRAY-COMPENDIUM-APP-A",
+      "title": "Compendium of the Catechism of the Catholic Church — Appendix A: Common Prayers",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "status": "DIRECT_CONTEXT_V1"
+    },
+    {
+      "id": "SRC-PRAY-HOLY-SPIRIT-USCCB",
+      "title": "USCCB — Prayer to the Holy Spirit",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.usccb.org/prayers/prayer-holy-spirit",
+      "status": "DIRECT_CONTEXT_V1"
+    },
+    {
+      "id": "SRC-PRAY-LASANCE-BENEDICTION",
+      "title": "F. X. Lasance, With God — Benediction of the Blessed Sacrament",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "status": "DIRECT_CONTEXT_V1"
+    },
+    {
+      "id": "SRC-PRAY-MICHAEL-HOLYSEE",
+      "title": "Holy See Press Office — Prayer to Saint Michael the Archangel",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "status": "DIRECT_CONTEXT_V1"
+    },
+    {
+      "id": "SRC-PRAY-SACRED-HEART-USCCB",
+      "title": "USCCB — Novena to the Sacred Heart of Jesus",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://www.usccb.org/novena-sacred-heart-jesus",
+      "status": "DIRECT_CONTEXT_V1"
+    },
+    {
+      "id": "SRC-PRAY-SUB-TUUM-HOLYSEE",
+      "title": "Holy See Press Office — Sub tuum praesidium witness",
+      "authority_type": "APPROVED_OR_REFERENCE_SOURCE",
+      "canonical_url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "status": "DIRECT_CONTEXT_V1"
     },
     {
       "id": "SRC-ROMRIT",
