@@ -97,7 +97,7 @@ export const APOSTOLATE_TF_SCENARIOS=Object.freeze([
       fr:Object.freeze(["Ne pas bluffer.","Ne pas transformer une opinion personnelle en enseignement de l’Église.","Ne pas employer « je pense » pour masquer qu’aucune source n’a été vérifiée.","Ne pas poursuivre le débat tant que la prémisse doctrinale ou factuelle essentielle n’est pas résolue."]),
     }),
     apfSkills:Object.freeze(["APF02","APF03","APF04","APF07","APF08","APF09"]),
-    doctrineRefs:Object.freeze(["learn.catechism","learn.catholic_life"]),
+    doctrineRefs:Object.freeze(["learn.catechism"]),
     sourceStrength:"PRIMARY",
     teaching:Object.freeze({
       understand:step("Restate the exact question and separate what is known from what is uncertain.","Reformulez la question exacte et séparez ce qui est connu de ce qui est incertain."),
@@ -109,7 +109,6 @@ export const APOSTOLATE_TF_SCENARIOS=Object.freeze([
     sourceIds:Object.freeze(["PIUS-X-ACERBO-NIMIS","ST-PIUS-X-CATECHISM-FR"]),
     handoffs:Object.freeze([
       formation("TF03","learn.catechism","Check canonical doctrine before answering an unresolved doctrinal question."),
-      formation("TF03","learn.catholic_life","Use source-backed Formation when the question concerns practice, discipline or Catholic life."),
     ]),
   }),
   Object.freeze({
@@ -131,7 +130,7 @@ export const APOSTOLATE_TF_SCENARIOS=Object.freeze([
       fr:Object.freeze(["Ne pas commencer par toutes les dévotions facultatives associées au Rosaire.","Ne pas exiger la mémorisation avant de permettre à la personne de prier avec vous.","Ne pas dupliquer dans Apostolate les textes ou le moteur des mystères du Rosaire."]),
     }),
     apfSkills:Object.freeze(["APF01","APF02","APF03","APF04","APF05","APF09"]),
-    doctrineRefs:Object.freeze(["learn.catholic_life"]),
+    doctrineRefs:Object.freeze(["learn.catechism"]),
     sourceStrength:"PRIMARY",
     teaching:Object.freeze({
       understand:step("Ask whether the person has ever seen or prayed a Rosary and what they already recognize.","Demandez si la personne a déjà vu ou prié un Rosaire et ce qu’elle reconnaît déjà."),
