@@ -27,8 +27,7 @@ export const LEARN_LAYOUT=Object.freeze({
       Object.freeze({id:"learn.scapular",type:"module",featured:false,title:Object.freeze(["Brown Scapular","Scapulaire brun"]),description:Object.freeze(["Meaning, preparation for enrolment and living the devotion.","Sens, préparation à l’imposition et vie de la dévotion."])})
     ])}),
     Object.freeze({title:Object.freeze(["Today in context","Le jour en contexte"]),items:Object.freeze([
-      Object.freeze({id:"today.gospel",type:"reference",featured:false,title:Object.freeze(["Today’s Gospel","Évangile du jour"]),description:Object.freeze(["Read the appointed Gospel with context and commentary.","Lire l’Évangile assigné avec contexte et commentaire."])}),
-      Object.freeze({id:"today.saint",type:"reference",featured:false,title:Object.freeze(["Saint of the Day","Saint du jour"]),description:Object.freeze(["Identity, artwork, biography and sources for today’s observance.","Identité, œuvre, biographie et sources de l’observance du jour."])})
+      Object.freeze({id:"today.gospel",type:"reference",featured:false,title:Object.freeze(["Today’s Gospel","Évangile du jour"]),description:Object.freeze(["Read the appointed Gospel with context and commentary.","Lire l’Évangile assigné avec contexte et commentaire."])})
     ])})
   ])
 });
