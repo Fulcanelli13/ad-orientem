@@ -1,6 +1,6 @@
 {
   "schema": "ao-exact-donor-presentation-parity-v1",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "status": "OPEN",
   "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
   "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional or conceptual equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
@@ -42,6 +42,18 @@
       ]
     },
     {
+      "id": "V3_4_10_PRESENTATION_AND_TRADITION",
+      "source": "Ad_Orientem_v3_4_10.html",
+      "status": "EXACT_EXTERNAL_BYTES_HASHED_NOT_REPOSITORY_ADDRESSABLE",
+      "sha256": "952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283",
+      "owns": [
+        "40/42 percent devotional focus geometry",
+        "midpoint handoff and directional anticipation",
+        "v38.1 Traditional PRAY and Learn presentation",
+        "v38.4 Traditional Liturgical Year and discipline presentation"
+      ]
+    },
+    {
       "id": "V3_4_14_ROSARY_FINAL",
       "source": "Ad_Orientem_v3_4_14.html",
       "status": "REFERENCE_REQUIRED",
@@ -50,6 +62,18 @@
         "mystery cinematics",
         "progress treatment",
         "Rosary art treatment"
+      ]
+    },
+    {
+      "id": "N3_GUIDED_NOVENAS",
+      "source": "Ad_Orientem_NON_MASS_HEAD_v1_NOVENAS_N3_GUIDED.html",
+      "status": "EXACT_EXTERNAL_BYTES_HASHED_NOT_REPOSITORY_ADDRESSABLE",
+      "sha256": "105f765d0227b937c58781416cf461c7b950b50427704b81478b4deaeeaadf10",
+      "owns": [
+        "12-novena N3 corpus presentation",
+        "Guided/Simple novena flow",
+        "calendar-aware novena status",
+        "source/provenance treatment"
       ]
     },
     {
@@ -133,24 +157,25 @@
     },
     {
       "id": "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
-      "classification": "MISSING_INTEGRATION",
+      "classification": "MISSING_PRIMARY_EVIDENCE",
       "status": "OPEN",
-      "current": "A direct donor/current capture lane now renders the frozen v43.59.30 historical production tree and current modular app in independent 390x844 mobile Chromium contexts, producing paired Home, PRAY hub, Angelus, Stations and representative prayer-reader screenshots plus measured geometry. The later v3.4.10/v3.4.14/N3 recovery deltas remain regression-locked in code/tests, but the full pair set still requires visual review before this finding can close.",
-      "expected": "Create donor-reference acceptance for Home, PRAY, Learn, Calendar and Settings at 390x844 and key module states; certify only after direct donor-vs-current comparison.",
+      "current": "The current 390x844 regression matrix now covers Home, PRAY hub, Angelus, Stations, prayer reader, Rosary cinematic/live rail, Adoration, Benediction, Confession, N3 Novenas, all three recovered v38.1 Traditional PRAY modules, the modular Learn hub plus five Traditional Catholic Life children, Calendar Day/Year/Index/Picker, v38.4 Traditional Year/current/1962 discipline, Settings and Sources & About. The direct comparison artifact now embeds this full matrix and labels the authority used for every later state. Five states retain genuine Git-addressable donor/current pairs from frozen v43.59.30. Exact v3.4.10 and N3 primary files are known and hashed but are not repository-addressable in CI. The final v3.4.14 Rosary donor and v3.22 final non-Mass head are approved authorities whose exact primary bytes are currently unavailable. No reconstructed implementation is accepted as a substitute donor.",
+      "expected": "Keep the full current capture matrix green and obtain immutable primary evidence for the final v3.4.14 Rosary donor and v3.22 final non-Mass head before closing exact parity. Exact external v3.4.10/N3 hashes may support provenance but do not become CI donor renders unless their exact bytes are made repository-addressable or an immutable render is frozen directly from those bytes.",
       "evidence": [
         "tests/nonmass-donor-reference-e2e.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "data/presentation/nonmass-primary-donor-sources.v1.json",
         ".github/workflows/visual-acceptance.yml",
         "artifacts/visual-acceptance/donor-current-v435930/comparison.html (CI artifact)",
-        "tests/app-visual-acceptance.mjs",
-        "tests/pray-focus.mjs",
-        "tests/pray-novenas.mjs",
-        "tests/pray-traditional-life.mjs",
-        "tests/learn-traditional-life.mjs",
-        "Ad_Orientem_v3_4_10.html",
-        "Ad_Orientem_v3_4_14.html",
-        "Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
+        "PR #203 — Exact donor Angelus ritual grid",
+        "PR #204 — Exact donor devotional rail choreography",
+        "PR #205 — Exact donor Rosary V5 recovery",
+        "PR #215 — Restore v3.4.10 PRAY scroll focus",
+        "PR #237 — Restore exact v38.4 traditional-year composition",
+        "Ad_Orientem_v3_4_10.html · SHA-256 952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283",
+        "Ad_Orientem_NON_MASS_HEAD_v1_NOVENAS_N3_GUIDED.html · SHA-256 105f765d0227b937c58781416cf461c7b950b50427704b81478b4deaeeaadf10"
       ],
-      "validation": "DIRECT_CAPTURE_LANE_INSTALLED_REVIEW_PENDING"
+      "validation": "CURRENT_MATRIX_COMPLETE_PRIMARY_DONOR_REVIEW_BLOCKED"
     }
   ],
   "preservationRules": [
@@ -162,15 +187,19 @@
     "One state must still map to one visible surface."
   ],
   "requiredAcceptance": [
-    "CI must generate frozen v43.59.30 donor/current comparison artifacts at 390x844 before final manual/computer-vision review.",
-    "Donor/current side-by-side captures at 390x844 for Home, PRAY hub, representative prayer reader, Rosary, Angelus, Stations, Adoration/Benediction, Confession, Learn, Calendar and Settings.",
+    "CI must generate frozen v43.59.30 donor/current comparison artifacts at 390x844 and a full later-state evidence matrix.",
+    "Current 390x844 regression captures must cover Home, PRAY hub, representative prayer reader, Rosary, Angelus, Stations, Adoration/Benediction, Confession, Novenas, Traditional PRAY, Learn, Calendar/v38.4 and Settings.",
     "Exact transition trigger/content/timing matrix from donor to modular owner.",
     "Exact loader state matrix from donor to modular owner.",
     "Exact rail state/icon/visibility/cue matrix from donor to modular owner.",
+    "Primary v3.4.14 Rosary donor bytes or an immutable render derived directly from those exact bytes.",
+    "Primary v3.22 final non-Mass head bytes or an immutable render derived directly from those exact bytes.",
     "No Mass ownership regression and no obsolete PrayerBook fallback.",
     "App release gate may return to FINAL_APP_READY only when all findings are CLOSED."
   ],
   "openBlockers": [
-    "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED"
+    "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
+    "MISSING_PRIMARY_DONOR: Ad_Orientem_v3_4_14.html",
+    "MISSING_PRIMARY_DONOR: Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html"
   ]
 }
