@@ -230,6 +230,41 @@
       "codes": {
         "iso_alpha2": "GB"
       }
+    },
+    {
+      "geo_area_id": "geo:country:AU",
+      "name": {
+        "official": "Australia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "AU"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:NZ",
+      "name": {
+        "official": "New Zealand",
+        "aliases": [
+          "Aotearoa New Zealand",
+          "Aotearoa"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "NZ"
+      }
     }
   ],
   "places": [
@@ -1143,6 +1178,148 @@
       },
       "source_ids": [
         "SHR-HOLYWELL-PARISH"
+      ]
+    },
+    {
+      "place_id": "place:AU:penrose-park",
+      "name": {
+        "official": "Shrine of Our Lady of Mercy — Penrose Park",
+        "aliases": [
+          "Penrose Park",
+          "Our Lady of Mercy Penrose Park"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:AU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -34.6272222222,
+        "lng": 150.1958333333,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://penrosepark.com.au/findus/",
+        "source_ref": "SHR-PENROSE-FINDUS:gps",
+        "attribution": "Shrine of Our Lady of Mercy — Penrose Park",
+        "matched_country_code": "AU",
+        "verified_at": "2026-10-07"
+      },
+      "address": {
+        "line1": "120 Hanging Rock Road",
+        "line2": null,
+        "postal_code": "2577",
+        "city": "Sutton Forest",
+        "region": "New South Wales",
+        "country_code": "AU",
+        "country": "Australia",
+        "formatted": "120 Hanging Rock Road, Sutton Forest NSW 2577, Australia"
+      },
+      "source_ids": [
+        "SHR-PENROSE-FINDUS"
+      ]
+    },
+    {
+      "place_id": "place:AU:marian-valley",
+      "name": {
+        "official": "Marian Valley Shrine of Our Lady Help of Christians",
+        "aliases": [
+          "Marian Valley",
+          "Shrine of Our Lady Help of Christians, Marian Valley"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:AU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -28.0821666667,
+        "lng": 153.1945833333,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://marianvalley.org.au/contact-us/",
+        "source_ref": "SHR-MARIAN-VALLEY-CONTACT:gps",
+        "attribution": "Marian Valley Shrine of Our Lady Help of Christians",
+        "matched_country_code": "AU",
+        "verified_at": "2026-10-07"
+      },
+      "address": {
+        "line1": "2541 Beechmont Road",
+        "line2": "Witheren via Canungra",
+        "postal_code": "4275",
+        "city": "Canungra",
+        "region": "Queensland",
+        "country_code": "AU",
+        "country": "Australia",
+        "formatted": "2541 Beechmont Road, Witheren via Canungra QLD 4275, Australia"
+      },
+      "source_ids": [
+        "SHR-MARIAN-VALLEY-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:NZ:st-mary-angels-wellington",
+      "name": {
+        "official": "St Mary of the Angels — National Shrine of Mary Assumed into Heaven",
+        "aliases": [
+          "St Mary of the Angels, Wellington",
+          "National Marian Shrine of Aotearoa New Zealand"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:NZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "17 Boulcott Street",
+        "line2": null,
+        "postal_code": "6011",
+        "city": "Wellington",
+        "region": "Wellington",
+        "country_code": "NZ",
+        "country": "New Zealand",
+        "formatted": "17 Boulcott Street, Wellington 6011, New Zealand"
+      },
+      "source_ids": [
+        "SHR-NZ-MARY-NATIONAL"
+      ]
+    },
+    {
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "name": {
+        "official": "National Shrine of St Peter Chanel — Russell",
+        "aliases": [
+          "Shrine of St Peter Chanel, Russell",
+          "National Catholic Shrine of St Peter Chanel"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:NZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Corner of Chapel Street and Beresford Street",
+        "line2": null,
+        "postal_code": "0202",
+        "city": "Russell",
+        "region": "Northland",
+        "country_code": "NZ",
+        "country": "New Zealand",
+        "formatted": "Corner of Chapel Street and Beresford Street, Russell 0202, New Zealand"
+      },
+      "source_ids": [
+        "SHR-NZ-PETER-CHANEL-ROUTE"
       ]
     }
   ],
