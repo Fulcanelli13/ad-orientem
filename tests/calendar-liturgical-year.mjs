@@ -28,7 +28,8 @@ assert.equal(rosary.currentPeriod.id, "after-pentecost");
 assert.equal(rosary.currentPeriod.start, "2026-05-31");
 assert.equal(rosary.currentPeriod.days, 182);
 assert.equal(rosary.periodDayIndex, 130);
-assert.ok(Math.abs(rosary.periodProgress - (129 / 182)) < 1e-12);
+assert.ok(Math.abs(rosary.periodProgress - (130 / 182)) < 1e-12);
+assert.ok(Math.abs(rosary.progress - (312 / 364)) < 1e-12);
 assertContinuous(rosary);
 
 const next = nextMajorCelebration("2026-10-07");
