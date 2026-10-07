@@ -1,0 +1,848 @@
+{
+  "version": "latin-course-lesson-04-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 4,
+  "stage": {
+    "number": 1,
+    "title": "Hear the Latin of the Church"
+  },
+  "title": "Holy, Blessed, Almighty",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "progressionStep": "phrase",
+  "grammarFocus": "Adjective agreement",
+  "readingOutcome": "Match adjective endings to case, number and gender.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen lesson allocation is introduced; earlier Core may be recycled and later Core may appear only as explicit support.",
+    "authenticTextPolicy": "Primary text and instructional markup are stored separately.",
+    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "sanctus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "holy",
+          "fr": "saint"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "beatus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "blessed",
+          "fr": "bienheureux"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "bonus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "good",
+          "fr": "bon"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "meus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "my",
+          "fr": "mon / ma"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "tuus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "your",
+          "fr": "ton / votre"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "noster",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "our",
+          "fr": "notre"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "suus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "his / her / its / their own",
+          "fr": "son / sa / leur propre"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "omnis",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "all / every",
+          "fr": "tout"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "fidelis",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "faithful",
+          "fr": "fidèle"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "magnus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "great",
+          "fr": "grand"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "iustus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "just / righteous",
+          "fr": "juste"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "malus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "bad / evil",
+          "fr": "mauvais"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "salvus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "safe / saved",
+          "fr": "sauf / sauvé"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "novus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "new",
+          "fr": "nouveau"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "plenus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "full",
+          "fr": "plein"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "similis",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "like / similar",
+          "fr": "semblable"
+        },
+        "frozenLesson": 4
+      },
+      {
+        "lemma": "primus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "first",
+          "fr": "premier"
+        },
+        "frozenLesson": 4
+      }
+    ],
+    "recycled": [
+      "et",
+      "gloria",
+      "terra",
+      "Deus",
+      "Dominus",
+      "filius",
+      "caelum",
+      "sum",
+      "non"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Sabaoth",
+      "forms": [
+        "Sabaoth"
+      ],
+      "gloss": {
+        "en": "of hosts",
+        "fr": "des armées"
+      },
+      "trackedLesson": null,
+      "status": "formula-untracked"
+    },
+    {
+      "lemma": "pater",
+      "forms": [
+        "Patri"
+      ],
+      "gloss": {
+        "en": "Father",
+        "fr": "Père"
+      },
+      "trackedLesson": 6,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "spiritus",
+      "forms": [
+        "Spiritui"
+      ],
+      "gloss": {
+        "en": "Spirit",
+        "fr": "Esprit"
+      },
+      "trackedLesson": 14,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "dignus",
+      "forms": [
+        "dignus"
+      ],
+      "gloss": {
+        "en": "worthy",
+        "fr": "digne"
+      },
+      "trackedLesson": 24,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "ut",
+      "forms": [
+        "ut"
+      ],
+      "gloss": {
+        "en": "that / so that",
+        "fr": "que / afin que"
+      },
+      "trackedLesson": 23,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "introeo",
+      "forms": [
+        "intres"
+      ],
+      "gloss": {
+        "en": "enter",
+        "fr": "entrer"
+      },
+      "trackedLesson": 11,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "sub",
+      "forms": [
+        "sub"
+      ],
+      "gloss": {
+        "en": "under",
+        "fr": "sous"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "tectum",
+      "forms": [
+        "tectum"
+      ],
+      "gloss": {
+        "en": "roof",
+        "fr": "toit"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-sanctus-pleni",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Sanctus",
+      "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua.",
+      "provenanceNote": "Authentic Sanctus opening; adjective agreement is the target."
+    },
+    {
+      "id": "mr1962-gloria-patri-l4",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Doxology",
+      "sourceLatin": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "provenanceNote": "Traditional liturgical doxology; Sancto shows adjective agreement while later nouns are supplied."
+    },
+    {
+      "id": "mr1962-domine-non-sum-dignus-l4",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Communion",
+      "sourceLatin": "Domine, non sum dignus, ut intres sub tectum meum.",
+      "provenanceNote": "Authentic Communion formula; meum is the target possessive adjective form."
+    }
+  ],
+  "learningBlocks": [
+    {
+      "id": "l4-b1",
+      "type": "concept",
+      "title": "Agreement makes words belong together",
+      "learnerCopy": {
+        "en": "Adjectives change their endings to agree with the noun they describe in gender, number and case. The important reading skill is not 'same ending at all costs' but recognizing matched grammatical information.",
+        "fr": "Les adjectifs changent de terminaison pour s'accorder avec le nom en genre, nombre et cas. Le but n'est pas de chercher mécaniquement la même terminaison, mais de reconnaître des informations grammaticales concordantes."
+      }
+    },
+    {
+      "id": "l4-b2",
+      "type": "case-panel",
+      "title": "The case map stays on screen",
+      "learnerCopy": {
+        "en": "Nominative and vocative are still the active case functions. Now the adjective must be read on the same map as its noun.",
+        "fr": "Le nominatif et le vocatif restent les fonctions actives. Désormais, l'adjectif doit être lu sur la même carte que le nom qu'il qualifie."
+      }
+    },
+    {
+      "id": "l4-b3",
+      "type": "morphology",
+      "title": "First/second-declension adjectives",
+      "learnerCopy": {
+        "en": "sanctus, bonus, meus, tuus, noster, suus, magnus, iustus, malus, salvus, novus, plenus and primus use familiar first/second-declension adjective patterns. omnis, fidelis and similis belong to a different adjective pattern but still agree by grammatical features.",
+        "fr": "sanctus, bonus, meus, tuus, noster, suus, magnus, iustus, malus, salvus, novus, plenus et primus suivent les formes familières des adjectifs de première/deuxième déclinaison. omnis, fidelis et similis ont un autre modèle mais s'accordent selon les mêmes catégories."
+      }
+    },
+    {
+      "id": "l4-b4",
+      "type": "authentic-example",
+      "title": "Pleni sunt caeli",
+      "sourceId": "mr1962-sanctus-pleni",
+      "learnerCopy": {
+        "en": "Pleni points to caeli as a plural pair; tua points to gloria. You do not need the later case functions to see that the words are grammatically linked.",
+        "fr": "Pleni s'accorde avec caeli au pluriel; tua se rattache à gloria. Il n'est pas nécessaire de maîtriser encore les fonctions des autres cas pour voir ces liens."
+      }
+    },
+    {
+      "id": "l4-b5",
+      "type": "authentic-example",
+      "title": "Spiritui Sancto",
+      "sourceId": "mr1962-gloria-patri-l4",
+      "learnerCopy": {
+        "en": "Sancto is not a different adjective from sanctus. It is the same lemma taking the form required by Spiritui. This is exactly why the course tracks lemmas rather than surface forms.",
+        "fr": "Sancto n'est pas un adjectif différent de sanctus. C'est le même lemme sous la forme exigée par Spiritui. C'est précisément pourquoi le cours suit les lemmes et non chaque forme séparément."
+      }
+    },
+    {
+      "id": "l4-b6",
+      "type": "guided-recognition",
+      "title": "meus changes too",
+      "sourceId": "mr1962-domine-non-sum-dignus-l4",
+      "learnerCopy": {
+        "en": "meus is learned as the lemma, but the Communion formula has meum because it agrees with tectum. Recognize the relationship without needing to analyse every later word in the sentence.",
+        "fr": "meus est le lemme appris, mais la formule de Communion donne meum parce qu'il s'accorde avec tectum. Reconnaissez cette relation sans devoir analyser tous les mots plus avancés."
+      }
+    },
+    {
+      "id": "l4-b7",
+      "type": "retrieval",
+      "title": "Agreement is a reading tool",
+      "learnerCopy": {
+        "en": "When two words agree, treat them as a grammatical unit even if Latin separates them. This becomes essential later when liturgical sentences grow longer.",
+        "fr": "Lorsque deux mots s'accordent, lisez-les comme une unité grammaticale même si le latin les sépare. Cela deviendra essentiel dans les longues phrases liturgiques."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l4-p1",
+      "sourceId": "mr1962-sanctus-pleni",
+      "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua.",
+      "instructionalDisplay": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua.",
+      "translation": {
+        "en": "Holy, holy, holy Lord God of hosts. Heaven and earth are full of Thy glory.",
+        "fr": "Saint, saint, saint, le Seigneur Dieu des armées. Le ciel et la terre sont remplis de votre gloire."
+      },
+      "targetLemmas": [
+        "sanctus",
+        "plenus",
+        "Dominus",
+        "Deus",
+        "caelum",
+        "et",
+        "terra",
+        "gloria",
+        "tuus",
+        "sum"
+      ],
+      "supportLemmas": [
+        "Sabaoth"
+      ]
+    },
+    {
+      "id": "l4-p2",
+      "sourceId": "mr1962-gloria-patri-l4",
+      "sourceLatin": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "instructionalDisplay": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "translation": {
+        "en": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+        "fr": "Gloire au Père, et au Fils, et au Saint-Esprit."
+      },
+      "targetLemmas": [
+        "gloria",
+        "et",
+        "filius",
+        "sanctus"
+      ],
+      "supportLemmas": [
+        "pater",
+        "spiritus"
+      ]
+    },
+    {
+      "id": "l4-p3",
+      "sourceId": "mr1962-domine-non-sum-dignus-l4",
+      "sourceLatin": "Domine, non sum dignus, ut intres sub tectum meum.",
+      "instructionalDisplay": "Domine, non sum dignus, ut intres sub tectum meum.",
+      "translation": {
+        "en": "Lord, I am not worthy that Thou shouldst enter under my roof.",
+        "fr": "Seigneur, je ne suis pas digne que vous entriez sous mon toit."
+      },
+      "targetLemmas": [
+        "Dominus",
+        "non",
+        "sum",
+        "meus"
+      ],
+      "supportLemmas": [
+        "dignus",
+        "ut",
+        "introeo",
+        "sub",
+        "tectum"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l4-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which adjective means 'holy'?",
+      "stimulus": null,
+      "expectedAnswer": "sanctus",
+      "acceptedVariants": [
+        "sanctus"
+      ],
+      "hint": "It appears three times at the start of the Sanctus.",
+      "explanation": "sanctus is the Lesson 4 adjective 'holy'.",
+      "difficulty": 1,
+      "sourceId": "mr1962-sanctus-pleni",
+      "skills": [
+        "vocabulary:sanctus"
+      ],
+      "options": [
+        "sanctus",
+        "terra",
+        "verbum",
+        "possum"
+      ]
+    },
+    {
+      "id": "l4-e2",
+      "exerciseType": "matching",
+      "prompt": "Match the adjective to its meaning.",
+      "stimulus": [
+        "magnus",
+        "iustus",
+        "novus",
+        "fidelis"
+      ],
+      "expectedAnswer": {
+        "magnus": "great",
+        "iustus": "just",
+        "novus": "new",
+        "fidelis": "faithful"
+      },
+      "acceptedVariants": [],
+      "hint": "All are active Lesson 4 vocabulary.",
+      "explanation": "This checks the new adjective set.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l4"
+      ]
+    },
+    {
+      "id": "l4-e3",
+      "exerciseType": "token_select",
+      "prompt": "Select the adjective that agrees with gloria.",
+      "stimulus": "Pleni sunt caeli et terra gloria tua.",
+      "expectedAnswer": [
+        "tua"
+      ],
+      "acceptedVariants": [
+        [
+          "tua"
+        ]
+      ],
+      "hint": "Look for the possessive adjective meaning 'your'.",
+      "explanation": "tua is a form of tuus and agrees with gloria.",
+      "difficulty": 2,
+      "sourceId": "mr1962-sanctus-pleni",
+      "skills": [
+        "agreement:adjective-noun",
+        "vocabulary:tuus"
+      ]
+    },
+    {
+      "id": "l4-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Is Sancto in Spiritui Sancto a new vocabulary lemma separate from sanctus?",
+      "stimulus": null,
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "Think lemma versus inflected form.",
+      "explanation": "Sancto is an inflected form of sanctus.",
+      "difficulty": 1,
+      "sourceId": "mr1962-gloria-patri-l4",
+      "skills": [
+        "curriculum:lemma-family",
+        "agreement"
+      ],
+      "options": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "id": "l4-e5",
+      "exerciseType": "token_select",
+      "prompt": "Select the possessive adjective form.",
+      "stimulus": "Domine, non sum dignus, ut intres sub tectum meum.",
+      "expectedAnswer": [
+        "meum"
+      ],
+      "acceptedVariants": [
+        [
+          "meum"
+        ]
+      ],
+      "hint": "It comes from meus.",
+      "explanation": "meum is the agreeing form of meus.",
+      "difficulty": 2,
+      "sourceId": "mr1962-domine-non-sum-dignus-l4",
+      "skills": [
+        "vocabulary:meus",
+        "agreement"
+      ]
+    },
+    {
+      "id": "l4-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which pair is explicitly linked by agreement in the Sanctus line?",
+      "stimulus": null,
+      "expectedAnswer": "gloria tua",
+      "acceptedVariants": [
+        "gloria tua"
+      ],
+      "hint": "One noun and one possessive adjective.",
+      "explanation": "gloria tua forms an agreement pair.",
+      "difficulty": 2,
+      "sourceId": "mr1962-sanctus-pleni",
+      "skills": [
+        "agreement:pairing"
+      ],
+      "options": [
+        "gloria tua",
+        "gloria pleni",
+        "terra tuae",
+        "Deus tua"
+      ]
+    },
+    {
+      "id": "l4-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which Lesson 4 adjective means 'full'?",
+      "stimulus": null,
+      "expectedAnswer": "plenus",
+      "acceptedVariants": [
+        "plenus"
+      ],
+      "hint": "Think Pleni sunt caeli.",
+      "explanation": "plenus means full.",
+      "difficulty": 1,
+      "sourceId": "mr1962-sanctus-pleni",
+      "skills": [
+        "vocabulary:plenus"
+      ],
+      "options": [
+        "plenus",
+        "primus",
+        "salvus",
+        "similis"
+      ]
+    },
+    {
+      "id": "l4-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What information must an adjective agree with its noun in?",
+      "stimulus": null,
+      "expectedAnswer": "gender, number and case",
+      "acceptedVariants": [
+        "gender, number and case"
+      ],
+      "hint": "Agreement is morphological.",
+      "explanation": "Latin adjectives agree in gender, number and case.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "agreement:principle"
+      ],
+      "options": [
+        "gender, number and case",
+        "only word order",
+        "only meaning",
+        "tense and person"
+      ]
+    },
+    {
+      "id": "l4-e9",
+      "exerciseType": "token_select",
+      "prompt": "Select all words already learned by the end of Lesson 4.",
+      "stimulus": "Sanctus Dominus Deus. Pleni sunt caeli et terra gloria tua.",
+      "expectedAnswer": [
+        "Sanctus",
+        "Dominus",
+        "Deus",
+        "Pleni",
+        "sunt",
+        "caeli",
+        "et",
+        "terra",
+        "gloria",
+        "tua"
+      ],
+      "acceptedVariants": [
+        [
+          "Sanctus",
+          "Dominus",
+          "Deus",
+          "Pleni",
+          "sunt",
+          "caeli",
+          "et",
+          "terra",
+          "gloria",
+          "tua"
+        ]
+      ],
+      "hint": "Every word here except none: all derive from current or earlier Core lemmas.",
+      "explanation": "The line now demonstrates how quickly cumulative coverage grows.",
+      "difficulty": 3,
+      "sourceId": "mr1962-sanctus-pleni",
+      "skills": [
+        "reading:cumulative"
+      ]
+    },
+    {
+      "id": "l4-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the lemma behind the form tua.",
+      "stimulus": null,
+      "expectedAnswer": "tuus",
+      "acceptedVariants": [
+        "tuus",
+        "Tuus"
+      ],
+      "hint": "Dictionary form, not the surface form.",
+      "explanation": "tua belongs to the adjective lemma tuus.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:tuus",
+        "morphology:lemma-form"
+      ]
+    }
+  ],
+  "durationMinutes": 40,
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases stay visible from here onward. Only nominative and vocative are active functions in Stage 1; the remaining cases are previewed until their later unlocks.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active",
+        "question": "who/what is named as the subject or identity?",
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-ae"
+        },
+        "secondDeclension": {
+          "masculineSingular": "-us / -er",
+          "masculinePlural": "-i",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "vocative",
+        "status": "active",
+        "question": "who/what is directly addressed?",
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-ae"
+        },
+        "secondDeclension": {
+          "masculineSingular": "usually -e; -er often unchanged",
+          "masculinePlural": "-i",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "accusative",
+        "status": "preview",
+        "unlockLesson": 9,
+        "firstDeclension": {
+          "singular": "-am",
+          "plural": "-as"
+        },
+        "secondDeclension": {
+          "masculineSingular": "-um",
+          "masculinePlural": "-os",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "genitive",
+        "status": "preview",
+        "unlockLesson": 8,
+        "firstDeclension": {
+          "singular": "-ae",
+          "plural": "-arum"
+        },
+        "secondDeclension": {
+          "singular": "-i",
+          "plural": "-orum"
+        }
+      },
+      {
+        "case": "dative",
+        "status": "preview",
+        "unlockLesson": 8,
+        "firstDeclension": {
+          "singular": "-ae",
+          "plural": "-is"
+        },
+        "secondDeclension": {
+          "singular": "-o",
+          "plural": "-is"
+        }
+      },
+      {
+        "case": "ablative",
+        "status": "preview",
+        "unlockLesson": 9,
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-is"
+        },
+        "secondDeclension": {
+          "singular": "-o",
+          "plural": "-is"
+        }
+      }
+    ],
+    "notes": [
+      "Deus commonly keeps Deus in direct address; filius has the familiar vocative fili. These are learned as liturgical forms rather than forced into a simplistic rule."
+    ]
+  },
+  "objectives": [
+    "Read adjective agreement as a structural signal.",
+    "Learn all seventeen frozen Lesson 4 adjectives.",
+    "Recognize changed adjective forms as members of one lemma family.",
+    "Keep the cumulative case map visible while reading noun-adjective groups."
+  ],
+  "checkpoint": {
+    "id": "l4-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l4-e1",
+        "l4-e2",
+        "l4-e3",
+        "l4-e4",
+        "l4-e5",
+        "l4-e6",
+        "l4-e7",
+        "l4-e8",
+        "l4-e9",
+        "l4-e10"
+      ]
+    },
+    "mustKnow": [
+      "adjectives agree in gender, number and case",
+      "sanctus/Sancto is one lemma",
+      "meus/meum is one lemma",
+      "case map remains cumulative"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "sanctus",
+      "beatus",
+      "bonus",
+      "meus",
+      "tuus",
+      "noster",
+      "suus",
+      "omnis",
+      "fidelis",
+      "magnus",
+      "iustus",
+      "malus",
+      "salvus",
+      "novus",
+      "plenus",
+      "similis",
+      "primus"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 3,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}
