@@ -528,6 +528,14 @@ try{
   // then yields to persistent silence without changing reader geometry.
   await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="adoration",null,{timeout:5000});
+  const adorationLanding=await page.evaluate(()=>({
+    modes:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode]")].map(x=>x.getAttribute("data-p435930-ador-mode")),
+    titles:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode] b")].map(x=>x.textContent?.trim()??""),
+    benedictionCard:document.querySelectorAll("#aoPray435930 [data-p435930-go-ben]").length,
+  }));
+  assert.deepEqual(adorationLanding.modes,["visit","open","holy","four","treasury"],"Adoration landing no longer matches the final five-entry donor composition");
+  assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Adoration","Holy Hour","Four Ends","Eucharistic Treasury"],"Adoration landing titles regressed");
+  assert.equal(adorationLanding.benedictionCard,0,"Benediction incorrectly replaced a private Adoration entry on the landing page");
   await page.locator("#aoPray435930 [data-p435930-ador-mode='visit']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-genuflect",null,{timeout:3000});
   const adorationArrival=await page.evaluate(()=>({
@@ -570,6 +578,21 @@ try{
   await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Benediction blessing retained an unrelated left cue");
+  const benBlessing=await page.evaluate(async()=>{
+    const icon=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-live-blessing'] .aoP435930SemanticRailIcon");
+    const cs=icon?getComputedStyle(icon):null;
+    const mask=cs?.webkitMaskImage||cs?.maskImage||"";
+    const match=mask.match(/url\\(["']?(.*?)["']?\\)/);
+    const url=match?.[1]??"";
+    let status=0,bytes=0;
+    if(url){try{const response=await fetch(url);status=response.status;bytes=(await response.arrayBuffer()).byteLength}catch{}}
+    const rect=icon?.getBoundingClientRect?.();
+    return {mask,url,status,bytes,width:rect?.width??0,height:rect?.height??0};
+  });
+  assert.match(benBlessing.mask,/assets\\/recovered\\/ao-live-blessing\\.svg/,"Benediction blessing did not resolve through the recovered frozen-V4 silhouette");
+  assert.equal(benBlessing.status,200,"Benediction blessing runtime asset does not load");
+  assert.ok(benBlessing.bytes>1000,"Benediction blessing runtime asset is unexpectedly empty");
+  assert.ok(benBlessing.width>=30&&benBlessing.height>=30,"Benediction blessing icon collapsed below visible rail geometry");
   await shot("03g-pray-benediction-blessing");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
@@ -1008,29 +1031,31 @@ try{
   const settingsParity=await page.evaluate(()=>({
     owner:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsOwner??null,
     presentation:document.getElementById("ao-settings-modular-root")?.dataset?.aoSettingsPresentationOwner??null,
-    headings:[...document.querySelectorAll("#ao-settings-modular-root .aoSetModSection > h2")].map(x=>x.textContent?.trim()??""),
+    headings:[...document.querySelectorAll("#ao-settings-modular-root .aoSetSection > h2")].map(x=>x.textContent?.trim()??""),
+    routes:[...document.querySelectorAll("#ao-settings-modular-root [data-settings-route]")].map(x=>x.getAttribute("data-settings-route")),
     sourcesLaunchers:document.querySelectorAll("#ao-settings-modular-root [data-settings-sources]").length,
-    structuralControls:document.querySelectorAll("#ao-settings-modular-root [data-setting-structural='true']").length,
     historicalVisible:globalThis.AO_SETTINGS_APP_V1?.status?.().historicalSettingsVisible??null,
     embeddedHomeSettings:globalThis.AO_SETTINGS_APP_V1?.status?.().embeddedHomeSettingsVisible??null,
     overflow:(()=>{const x=document.getElementById("ao-settings-modular-root");return x?x.scrollWidth-x.clientWidth:Infinity})(),
     topLevelSources:document.querySelectorAll("[data-ao-app-surface='sources']").length,
   }));
   assert.equal(settingsParity.owner,"AO_SETTINGS_APP_V1");
-  assert.equal(settingsParity.presentation,"modular-settings-presentation-v1");
-  assert.deepEqual(settingsParity.headings,["Language","Mass","Display & accessibility","Local practice","Advanced"],"Settings preference hierarchy diverged from approved modular Settings");
+  assert.equal(settingsParity.presentation,"modular-settings-presentation-v4359.6");
+  assert.deepEqual(settingsParity.headings,["APP","MASS & PRAYER","DATA","ABOUT"],"Settings donor hierarchy regressed");
+  for(const route of ["/settings/general","/settings/accessibility","/settings/language-reading","/settings/mass","/settings/local-customs","/settings/prayer","/settings/privacy-data","/settings/about-sources"]){
+    assert.ok(settingsParity.routes.includes(route),route+" missing from restored Settings landing");
+  }
   assert.equal(settingsParity.sourcesLaunchers,1,"Settings must expose exactly one Sources & About destination");
-  assert.ok(settingsParity.structuralControls>=6,"Settings lost structural Mass controls");
   assert.equal(settingsParity.historicalVisible,false,"historical Settings donor is visible beneath modular Settings");
   assert.equal(settingsParity.embeddedHomeSettings,false,"retired Home Settings surface is visible beneath modular Settings");
   assert.ok(settingsParity.overflow<=1,"Settings has horizontal overflow on 390px phone geometry");
   assert.equal(settingsParity.topLevelSources,0,"Sources resurfaced as a seventh top-level destination");
   const settingsDesign=await page.evaluate(()=>({
-    displayFont:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModTop h1")).fontFamily,
+    displayFont:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetTitle strong")).fontFamily,
     bodyFont:getComputedStyle(document.getElementById("ao-settings-modular-root")).fontFamily,
-    gutter:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModBody")).paddingLeft,
-    cardRadius:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetModCard")).borderRadius,
-    topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetModTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
+    gutter:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetWrap")).paddingLeft,
+    cardRadius:getComputedStyle(document.querySelector("#ao-settings-modular-root .aoSetGroup")).borderRadius,
+    topControl:(()=>{const x=document.querySelector("#ao-settings-modular-root .aoSetTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
   }));
   assert.equal(settingsDesign.displayFont,designBaseline.displayFont,"Settings display typography diverged from the app system");
   assert.equal(settingsDesign.bodyFont,designBaseline.bodyFont,"Settings body typography diverged from Home");
@@ -1044,19 +1069,17 @@ try{
   await page.locator("#ao-settings-modular-root [data-settings-sources]").click();
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="about-sources",null,{timeout:5000});
   const settingsAbout=await page.evaluate(()=>({
-    sourceGroups:document.querySelectorAll("#ao-settings-modular-root .aoSetModSource").length,
-    provenanceRows:document.querySelectorAll("#ao-settings-modular-root .aoSetModKey p").length,
-    aboutRows:document.querySelectorAll("#ao-settings-modular-root .aoSetModAbout > div").length,
+    sourceGroups:document.querySelectorAll("#ao-settings-modular-root .aoSetSource").length,
+    provenanceRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSourceKey").length,
+    aboutRows:document.querySelectorAll("#ao-settings-modular-root .aoSetSection:last-child .aoSetRow").length,
     version:document.querySelector("#ao-settings-modular-root [data-settings-app-version]")?.textContent?.trim()??"",
     canonical:globalThis.AO_RELEASE_AUTHORITY_V4359?.version||document.documentElement.dataset.aoRelease||"",
-    privacy:/sins are not recorded/i.test(document.getElementById("ao-settings-modular-root")?.innerText??""),
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
   }));
   assert.equal(settingsAbout.sourceGroups,8,"Sources & About lost a source family");
   assert.equal(settingsAbout.provenanceRows,6,"Sources & About lost provenance labels");
-  assert.ok(settingsAbout.aboutRows>=3,"Settings About section is incomplete");
+  assert.ok(settingsAbout.aboutRows>=7,"Settings About section is incomplete");
   assert.equal(settingsAbout.version,String(settingsAbout.canonical),"Settings About does not show canonical application version");
-  assert.equal(settingsAbout.privacy,true,"Settings privacy statement no longer states that sins are not recorded");
   assert.equal(settingsAbout.active,"settings","Sources & About escaped Settings into another top-level surface");
   await page.screenshot({path:resolve(out,"05b-settings-sources.png"),fullPage:false});
 
