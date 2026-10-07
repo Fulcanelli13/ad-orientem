@@ -15,6 +15,10 @@ on:
       - "package.json"
       - ".github/workflows/r17-mass-convergence.yml"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
