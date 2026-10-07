@@ -84,7 +84,7 @@
     "test:nonmass-convergence": "node tests/nonmass-d3-d6-convergence.mjs",
     "test:nonmass-convergence-e2e": "node tests/nonmass-d3-d6-e2e.mjs",
     "test:asset-bank-contract": "node tests/asset-bank-contract.mjs",
-    "test:learn-owner": "node tests/learn-owner.mjs && node tests/learn-traditional-life.mjs && node tests/sacramental-formation-sot.mjs",
+    "test:learn-owner": "node tests/learn-owner.mjs && node tests/learn-traditional-life.mjs && node tests/sacramental-formation-sot.mjs && npm run test:catholic-life",
     "test:learn-owner-e2e": "node tests/learn-owner-e2e.mjs",
     "test:nonmass-assets": "node tests/nonmass-asset-consumers.mjs",
     "test:settings-owner": "node tests/settings-owner.mjs",
@@ -122,7 +122,8 @@
     "test:novena-context": "node tests/novena-context-sot.mjs",
     "test:explore-surface": "node tests/explore-surface.mjs",
     "test:explore-place-profiles": "node tests/explore-place-profiles.mjs",
-    "test:directory-official-geo": "node tests/directory-official-geo.mjs"
+    "test:directory-official-geo": "node tests/directory-official-geo.mjs",
+    "test:catholic-life": "node tests/catholic-life.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
