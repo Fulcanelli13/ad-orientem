@@ -99,7 +99,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,36,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,42,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -339,6 +339,55 @@ const munyonyo=explorePlaceProfile(profiles,"place:UG:munyonyo-martyrs");
 assert.ok(munyonyo);
 assert.ok(munyonyo.counts.traditions>=1);
 assert.ok(munyonyo.calendar.some(row=>row.semantic_key==="feast.uganda_martyrs"&&row.date==="2027-06-03"));
+
+const guadalupeMx=explorePlaceProfile(profiles,"place:MX:basilica-guadalupe-mexico-city");
+assert.ok(guadalupeMx);
+assert.equal(guadalupeMx.counts.shrines,1);
+assert.equal(guadalupeMx.counts.pilgrimages,1);
+assert.ok(guadalupeMx.counts.traditions>=1);
+assert.equal(guadalupeMx.map_publishable,false);
+assert.equal(guadalupeMx.counts.tlm,0);
+assert.ok(guadalupeMx.calendar.some(row=>row.semantic_key==="feast.our_lady_of_guadalupe"&&row.date==="2026-12-12"));
+
+const zapopan=explorePlaceProfile(profiles,"place:MX:basilica-zapopan");
+assert.ok(zapopan);
+assert.equal(zapopan.counts.shrines,1);
+assert.equal(zapopan.counts.pilgrimages,2);
+assert.ok(zapopan.counts.traditions>=1);
+assert.equal(zapopan.map_publishable,false);
+assert.ok(zapopan.calendar.some(row=>row.semantic_key==="observance.zapopan_romeria"&&row.date==="2026-10-12"));
+
+const aparecida=explorePlaceProfile(profiles,"place:BR:aparecida-national-shrine");
+assert.ok(aparecida);
+assert.equal(aparecida.counts.shrines,1);
+assert.equal(aparecida.counts.pilgrimages,1);
+assert.ok(aparecida.counts.traditions>=1);
+assert.equal(aparecida.map_publishable,false);
+assert.ok(aparecida.calendar.some(row=>row.semantic_key==="observance.our_lady_aparecida"&&row.date==="2026-10-12"));
+
+const nazare=explorePlaceProfile(profiles,"place:BR:nazare-belem");
+assert.ok(nazare);
+assert.equal(nazare.counts.shrines,1);
+assert.equal(nazare.counts.pilgrimages,2);
+assert.ok(nazare.counts.traditions>=1);
+assert.equal(nazare.map_publishable,false);
+assert.equal(nazare.calendar.length,0,"second-Sunday Círio recurrence was incorrectly reduced to one fixed date");
+
+const lasLajas=explorePlaceProfile(profiles,"place:CO:las-lajas-ipiales");
+assert.ok(lasLajas);
+assert.equal(lasLajas.counts.shrines,1);
+assert.equal(lasLajas.counts.pilgrimages,1);
+assert.ok(lasLajas.counts.traditions>=1);
+assert.equal(lasLajas.map_publishable,true);
+assert.ok(lasLajas.calendar.some(row=>row.semantic_key==="observance.las_lajas"&&row.date==="2027-09-15"));
+
+const chiquinquira=explorePlaceProfile(profiles,"place:CO:chiquinquira-basilica");
+assert.ok(chiquinquira);
+assert.equal(chiquinquira.counts.shrines,1);
+assert.equal(chiquinquira.counts.pilgrimages,1);
+assert.ok(chiquinquira.counts.traditions>=1);
+assert.equal(chiquinquira.map_publishable,false);
+assert.ok(chiquinquira.calendar.some(row=>row.semantic_key==="observance.chiquinquira_july9"&&row.date==="2027-07-09"));
 
 const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"})[0];
 assert.equal(placeIdForExploreItem(lourdesShrine),lourdes.place_id);
