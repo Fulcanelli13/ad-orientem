@@ -371,6 +371,14 @@ const ROSARY_DECLUTTER_CSS=`
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"]{
  grid-template-columns:28px!important;padding-inline:8px!important;
 }
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoV401RosaryHero figcaption span:first-child,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryArtHero figcaption span:first-child{
+ display:none!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoV401RosaryHero figcaption,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryArtHero figcaption{
+ justify-content:flex-end!important;
+}
 @media(max-width:560px){
  #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .pbShell[data-ao-rosary-exact-donor="v3.4.14"]{
   width:100%!important;
