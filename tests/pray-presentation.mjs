@@ -130,9 +130,9 @@ assert.match(runtime,/\.lab-view-head \.aoModuleHome,\.lab-view-head \.lab-lang/
 assert.match(runtime,/host\.dataset\.face='vernacular'/,"Rosary no longer defaults prayer text to the vernacular face");
 assert.doesNotMatch(runtime,/decorateRosaryExact\(r\)[\s\S]{0,2200}ensureRosaryDonorOverview\(r,info\)/,"Rosary exact decorator still injects permanent Overview chrome");
 assert.match(runtime,/aoRosaryExactDonor='v3\.4\.14'/,"Rosary exact donor ownership stamp changed");
-assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary lost donor five-mystery progress projection");
-assert.match(runtime,/rosary-decade-bar-v15/,"Rosary lost the donor five-segment progress bar");
-assert.match(runtime,/data-ao-exact-donor-progress/,"Rosary progress is no longer marked as exact donor presentation");
+assert.match(runtime,/function rosaryDonorProgress\(info\)/,"Rosary legacy progress projection helper disappeared unexpectedly");
+assert.doesNotMatch(runtime,/decorateRosaryExact\(r\)[\s\S]{0,1400}ensureRosaryDonorProgress\(r,info\)/,"Rosary exact decorator still injects a duplicate five-segment progress bar");
+assert.match(runtime,/querySelectorAll\('\.rosary-decade-bar-v15\[data-ao-exact-donor-progress\]'\)\.forEach\(node=>node\.remove\(\)\)/,"Rosary does not actively remove stale injected progress surfaces");
 assert.match(runtime,/function ensureRosaryDonorRecitation\(r\)/,"Rosary lost donor head recitation control");
 assert.match(runtime,/r29-head-recitation/,"Rosary lost Individual\/Group head control");
 assert.match(runtime,/function rosaryDonorArt\(r,info\)/,"Rosary lost donor mystery-art backdrop projection");
