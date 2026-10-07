@@ -1,0 +1,1060 @@
+{
+  "schema": "ao-reader-rubric-events-v1",
+  "version": "1.0.0",
+  "status": "SOURCE_BACKED_OVERLAY",
+  "authority": "PRESENTATION_RUBRIC_DETAIL_ONLY",
+  "invariants": {
+    "canonicalTextMutationAllowed": false,
+    "frozenDonorRegistryMutationAllowed": false,
+    "cardStructureMutationAllowed": false,
+    "primaryAuthority": "ROMAN_MISSAL_1962",
+    "campionRole": "DISCOVERY_AND_EXPLANATORY_PROVENANCE_ONLY"
+  },
+  "sources": [
+    {
+      "id": "MR62_RITUS",
+      "title": "Missale Romanum 1962 — Ritus servandus in celebratione Missae",
+      "role": "NORMATIVE_PRIMARY",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+    },
+    {
+      "id": "CAMPION_1954",
+      "title": "Demetrius Manousos, O.F.M. Cap., Know Your Mass (1954) / Saint Edmund Campion Children's Missal",
+      "role": "DISCOVERY_EXPLANATORY_SECONDARY",
+      "url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf"
+    }
+  ],
+  "items": [
+    {
+      "id": "AO.RUB.C0010.01",
+      "cueId": "AO.SM.C0010",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Gloria Patri",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        23
+      ]
+    },
+    {
+      "id": "AO.RUB.C0058.01",
+      "cueId": "AO.SM.C0058",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Gratias agimus tibi",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        26
+      ]
+    },
+    {
+      "id": "AO.RUB.C0061.01",
+      "cueId": "AO.SM.C0061",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Iesu Christe",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        26
+      ]
+    },
+    {
+      "id": "AO.RUB.C0064.01",
+      "cueId": "AO.SM.C0064",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "suscipe deprecationem nostram",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        26
+      ]
+    },
+    {
+      "id": "AO.RUB.C0067.01",
+      "cueId": "AO.SM.C0067",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Iesu Christe",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        26
+      ]
+    },
+    {
+      "id": "AO.RUB.C0068.01",
+      "cueId": "AO.SM.C0068",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "SIGNS HIMSELF",
+      "triggerLat": "Cum Sancto Spiritu",
+      "iconKey": "cross",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        26
+      ]
+    },
+    {
+      "id": "AO.RUB.C0072.01",
+      "cueId": "AO.SM.C0072",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Oremus",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        26
+      ]
+    },
+    {
+      "id": "AO.RUB.C0079.01",
+      "cueId": "AO.SM.C0079",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "PROFOUND BOW",
+      "triggerLat": "Munda cor meum",
+      "iconKey": "priest_profound_bow_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        29,
+        30
+      ]
+    },
+    {
+      "id": "AO.RUB.C0093.01",
+      "cueId": "AO.SM.C0093",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Iesum Christum",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "AO.RUB.C0101.01",
+      "cueId": "AO.SM.C0101",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "simul adoratur",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "AO.RUB.C0104.01",
+      "cueId": "AO.SM.C0104",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "SIGNS HIMSELF",
+      "triggerLat": "Et vitam venturi saeculi",
+      "iconKey": "cross",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        34
+      ]
+    },
+    {
+      "id": "AO.RUB.C0111.01",
+      "cueId": "AO.SM.C0111",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "CROSSES WITH PATEN",
+      "iconKey": "cross",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": "AO.RUB.C0111.02",
+      "cueId": "AO.SM.C0111",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "PLACES HOST",
+      "iconKey": "priest_elevate_host_rich",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": "AO.RUB.C0111.03",
+      "cueId": "AO.SM.C0111",
+      "order": 3,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "SETS PATEN ASIDE",
+      "iconKey": "canon",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        38
+      ]
+    },
+    {
+      "id": "AO.RUB.C0115.01",
+      "cueId": "AO.SM.C0115",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "CROSSES WITH CHALICE",
+      "iconKey": "cross",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        40
+      ]
+    },
+    {
+      "id": "AO.RUB.C0115.02",
+      "cueId": "AO.SM.C0115",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "PLACES CHALICE",
+      "iconKey": "chalice_elevation",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        40
+      ]
+    },
+    {
+      "id": "AO.RUB.C0115.03",
+      "cueId": "AO.SM.C0115",
+      "order": 3,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "COVERS CHALICE",
+      "iconKey": "canon",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        40
+      ]
+    },
+    {
+      "id": "AO.RUB.C0117.01",
+      "cueId": "AO.SM.C0117",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "RAISES EYES AND HANDS",
+      "iconKey": "priest_centre_arms_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        41
+      ]
+    },
+    {
+      "id": "AO.RUB.C0117.02",
+      "cueId": "AO.SM.C0117",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "JOINS HANDS",
+      "iconKey": "hands_joined",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        41
+      ]
+    },
+    {
+      "id": "AO.RUB.C0119.01",
+      "cueId": "AO.SM.C0119",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BLESSES OFFERINGS",
+      "triggerLat": "et benedic",
+      "iconKey": "cross",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        41
+      ]
+    },
+    {
+      "id": "AO.RUB.C0126.01",
+      "cueId": "AO.SM.C0126",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Gloria Patri",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        42
+      ]
+    },
+    {
+      "id": "AO.RUB.C0155.01",
+      "cueId": "AO.SM.C0155",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "REMEMBERS THE LIVING",
+      "iconKey": "priest_centre_hands_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        51
+      ]
+    },
+    {
+      "id": "AO.RUB.C0158.01",
+      "cueId": "AO.SM.C0158",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Iesu Christi",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        52
+      ]
+    },
+    {
+      "id": "AO.RUB.C0161.01",
+      "cueId": "AO.SM.C0161",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "HANDS OVER OBLATIONS",
+      "iconKey": "priest_centre_hands_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        53
+      ]
+    },
+    {
+      "id": "AO.RUB.C0161.02",
+      "cueId": "AO.SM.C0161",
+      "order": 2,
+      "actor": "SERVER",
+      "kind": "BELL",
+      "label": "WARNING BELL",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE_WITH_LOCAL_PATTERN",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        53
+      ],
+      "presentationOwner": "reader-transients"
+    },
+    {
+      "id": "AO.RUB.C0167.01",
+      "cueId": "AO.SM.C0167",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Iesu Christi",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        54
+      ]
+    },
+    {
+      "id": "AO.RUB.C0169.01",
+      "cueId": "AO.SM.C0169",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "RAISES EYES",
+      "triggerLat": "elevatis oculis",
+      "iconKey": "priest_centre_arms_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "AO.RUB.C0170.01",
+      "cueId": "AO.SM.C0170",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "tibi gratias agens",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "AO.RUB.C0174.01",
+      "cueId": "AO.SM.C0174",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "GENUFLECTS",
+      "iconKey": "priest_genuflect",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "AO.RUB.C0174.02",
+      "cueId": "AO.SM.C0174",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "ELEVATES HOST",
+      "iconKey": "priest_elevate_host_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "AO.RUB.C0174.03",
+      "cueId": "AO.SM.C0174",
+      "order": 3,
+      "actor": "SERVER",
+      "kind": "BELL",
+      "label": "ELEVATION BELL · HOST",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE_WITH_LOCAL_PATTERN",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        55,
+        56
+      ],
+      "presentationOwner": "reader-transients"
+    },
+    {
+      "id": "AO.RUB.C0174.04",
+      "cueId": "AO.SM.C0174",
+      "order": 4,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "REPLACES HOST",
+      "iconKey": "canon",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "AO.RUB.C0174.05",
+      "cueId": "AO.SM.C0174",
+      "order": 5,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "GENUFLECTS",
+      "iconKey": "priest_genuflect",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "AO.RUB.C0174.06",
+      "cueId": "AO.SM.C0174",
+      "order": 6,
+      "actor": "PRIEST",
+      "kind": "STATE",
+      "label": "THUMB AND INDEX FINGERS REMAIN JOINED",
+      "displayPrimary": false,
+      "stateKey": "THUMB_INDEX_JOINED",
+      "stateValue": true,
+      "endCueId": "AO.SM.C0248",
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "AO.RUB.C0176.01",
+      "cueId": "AO.SM.C0176",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "tibi gratias agens",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        57,
+        58
+      ]
+    },
+    {
+      "id": "AO.RUB.C0181.01",
+      "cueId": "AO.SM.C0181",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "GENUFLECTS",
+      "iconKey": "priest_genuflect",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        57,
+        58
+      ]
+    },
+    {
+      "id": "AO.RUB.C0181.02",
+      "cueId": "AO.SM.C0181",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "ELEVATES CHALICE",
+      "iconKey": "priest_elevate_chalice_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        57,
+        58
+      ]
+    },
+    {
+      "id": "AO.RUB.C0181.03",
+      "cueId": "AO.SM.C0181",
+      "order": 3,
+      "actor": "SERVER",
+      "kind": "BELL",
+      "label": "ELEVATION BELL · CHALICE",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE_WITH_LOCAL_PATTERN",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        57,
+        58
+      ],
+      "presentationOwner": "reader-transients"
+    },
+    {
+      "id": "AO.RUB.C0181.04",
+      "cueId": "AO.SM.C0181",
+      "order": 4,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "REPLACES AND COVERS CHALICE",
+      "iconKey": "canon",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        57,
+        58
+      ]
+    },
+    {
+      "id": "AO.RUB.C0181.05",
+      "cueId": "AO.SM.C0181",
+      "order": 5,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "GENUFLECTS",
+      "iconKey": "priest_genuflect",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        57,
+        58
+      ]
+    },
+    {
+      "id": "AO.RUB.C0193.01",
+      "cueId": "AO.SM.C0193",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "REMEMBERS THE DEAD",
+      "iconKey": "priest_centre_hands_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        66
+      ]
+    },
+    {
+      "id": "AO.RUB.C0200.01",
+      "cueId": "AO.SM.C0200",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "THREE CROSSES",
+      "triggerLat": "sanctificas · vivificas · benedicis",
+      "iconKey": "cross",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        68
+      ]
+    },
+    {
+      "id": "AO.RUB.C0202.01",
+      "cueId": "AO.SM.C0202",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "THREE CROSSES WITH HOST OVER CHALICE",
+      "triggerLat": "Per ipsum · et cum ipso · et in ipso",
+      "iconKey": "cross",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        69,
+        70
+      ]
+    },
+    {
+      "id": "AO.RUB.C0203.01",
+      "cueId": "AO.SM.C0203",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "TWO CROSSES WITH HOST",
+      "triggerLat": "Deo Patri omnipotenti · in unitate Spiritus Sancti",
+      "iconKey": "cross",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        69,
+        70
+      ]
+    },
+    {
+      "id": "AO.RUB.C0208.01",
+      "cueId": "AO.SM.C0208",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD",
+      "triggerLat": "Oremus",
+      "iconKey": "head_bow",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        71,
+        72
+      ]
+    },
+    {
+      "id": "AO.RUB.C0219.01",
+      "cueId": "AO.SM.C0219",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "THREE CROSSES WITH PARTICLE",
+      "triggerLat": "Pax Domini sit semper vobiscum",
+      "iconKey": "cross",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        73,
+        74
+      ]
+    },
+    {
+      "id": "AO.RUB.C0228.01",
+      "cueId": "AO.SM.C0228",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "TAKES SACRED HOST",
+      "iconKey": "communion",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        79,
+        80
+      ]
+    },
+    {
+      "id": "AO.RUB.C0232.01",
+      "cueId": "AO.SM.C0232",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "SIGNS WITH HOST",
+      "triggerLat": "Corpus Domini nostri Iesu Christi",
+      "iconKey": "cross",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        80,
+        81
+      ]
+    },
+    {
+      "id": "AO.RUB.C0232.02",
+      "cueId": "AO.SM.C0232",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "RECEIVES HOST",
+      "iconKey": "communion",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        80,
+        81
+      ]
+    },
+    {
+      "id": "AO.RUB.C0234.01",
+      "cueId": "AO.SM.C0234",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "SIGNS WITH CHALICE",
+      "triggerLat": "Sanguis Domini nostri Iesu Christi",
+      "iconKey": "cross",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        82,
+        83
+      ]
+    },
+    {
+      "id": "AO.RUB.C0234.02",
+      "cueId": "AO.SM.C0234",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "RECEIVES CHALICE",
+      "iconKey": "chalice_elevation",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        82,
+        83
+      ]
+    },
+    {
+      "id": "AO.RUB.C0248.01",
+      "cueId": "AO.SM.C0248",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "STATE",
+      "label": "THUMB AND INDEX FINGER DISCIPLINE ENDS",
+      "displayPrimary": false,
+      "stateKey": "THUMB_INDEX_JOINED",
+      "stateValue": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        87,
+        88
+      ]
+    },
+    {
+      "id": "AO.RUB.C0262.01",
+      "cueId": "AO.SM.C0262",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "KISSES ALTAR",
+      "iconKey": "priest_kiss_altar_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        93,
+        94
+      ]
+    },
+    {
+      "id": "AO.RUB.C0262.02",
+      "cueId": "AO.SM.C0262",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "RISES FACING ALTAR",
+      "iconKey": "priest_centre_rich",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        93,
+        94
+      ]
+    },
+    {
+      "id": "AO.RUB.C0263.01",
+      "cueId": "AO.SM.C0263",
+      "order": 1,
+      "actor": "PRIEST",
+      "kind": "ACTION",
+      "label": "RAISES EYES AND HANDS",
+      "iconKey": "priest_centre_arms_rich",
+      "displayPrimary": true,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        94,
+        95
+      ]
+    },
+    {
+      "id": "AO.RUB.C0263.02",
+      "cueId": "AO.SM.C0263",
+      "order": 2,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "JOINS HANDS",
+      "iconKey": "hands_joined",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        94,
+        95
+      ]
+    },
+    {
+      "id": "AO.RUB.C0263.03",
+      "cueId": "AO.SM.C0263",
+      "order": 3,
+      "actor": "PRIEST",
+      "kind": "GESTURE",
+      "label": "BOWS HEAD TO CROSS",
+      "iconKey": "head_bow",
+      "displayPrimary": false,
+      "authorityClass": "1962_NORMATIVE",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [
+        94,
+        95
+      ]
+    }
+  ]
+}
