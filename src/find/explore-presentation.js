@@ -2,10 +2,11 @@ const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;
 const arr=value=>Array.isArray(value)?value:[];
 const L=(language,en,fr)=>language==="fr"?fr:en;
 const AFFILIATION_ORDER=Object.freeze([
-  "DIOCESAN","FSSP","ICKSP","IBP","AASJMV","FSVF","CANONS_ST_JOHN_CANTIUS","SMMD","SSPX","CMRI","RCI","SSPV_CSPV","OTHER","INDEPENDENT","UNKNOWN"
+  "DIOCESAN","FSSP","ICKSP","SSPX","IBP","AASJMV","FSVF","CANONS_ST_JOHN_CANTIUS","SMMD","CMRI","RCI","SSPV_CSPV","OTHER","INDEPENDENT","UNKNOWN"
 ]);
+const BASE_AFFILIATIONS=Object.freeze(["DIOCESAN","FSSP","ICKSP","SSPX","IBP","OTHER"]);
 function tlmAffiliationIds(items){
-  const found=new Set(arr(items).flatMap(item=>arr(item?.raw?.ministries).map(m=>m?.community_id)).filter(Boolean));
+  const found=new Set([...BASE_AFFILIATIONS,...arr(items).flatMap(item=>arr(item?.raw?.ministries).map(m=>m?.community_id)).filter(Boolean)]);
   return [...found].sort((a,b)=>{
     const ai=AFFILIATION_ORDER.indexOf(a),bi=AFFILIATION_ORDER.indexOf(b);
     if(ai!==-1||bi!==-1)return (ai===-1?999:ai)-(bi===-1?999:bi);
