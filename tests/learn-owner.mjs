@@ -23,7 +23,7 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
+  ["learn.catechism.daily","learn.latin","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
   "Learn visible launcher order changed after moving Saint of the Day into Calendar",
 );
 assert.deepEqual(
