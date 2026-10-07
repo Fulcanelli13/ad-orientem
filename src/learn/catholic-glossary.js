@@ -70,21 +70,28 @@ export function createCatholicGlossaryRuntime(win=globalThis,{fetchImpl=globalTh
     let node=root();if(node)return node;
     node=doc.createElement("section");node.id=CATHOLIC_GLOSSARY_ROOT_ID;node.dataset.aoCatholicGlossaryOwner=CATHOLIC_GLOSSARY_VERSION;node.setAttribute("role","region");node.setAttribute("aria-label","Catholic Glossary");
     node.addEventListener("click",event=>{const b=event.target?.closest?.("button");if(!b)return;if(b.matches("[data-ao-g-close],[data-ao-g-back]")){event.preventDefault();close(true);}});
-    node.addEventListener("input",event=>{if(event.target?.matches?.("[data-ao-g-search]")){state.query=String(event.target.value??"");render(false);}});
+    node.addEventListener("input",event=>{if(event.target?.matches?.("[data-ao-g-search]")){state.query=String(event.target.value??"");renderResults(node);}});
     doc.body.append(node);return node;
   }
-  function render(focusSearch=true){
-    const node=ensureRoot();if(!node||!state.data)return false;
+  function renderResults(node){
+    if(!node||!state.data)return false;
     const sources=sourceMap(state.data),all=entries(state.data),q=state.query.trim().toLowerCase();
     const filtered=!q?all:all.filter(e=>[pick(win,e.term),pick(win,e.definition),e.latin,e.category].join(" ").toLowerCase().includes(q));
     const cards=filtered.map(e=>{
       const src=(e.sourceIds??[]).map(id=>sources[id]).filter(Boolean).map(s=>'<a href="'+esc(s.canonical_url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title)+' ↗</a>').join("");
-      const pages=e.campionPages?.length?' · Campion pp. '+e.campionPages.join(", "):"";
-      return '<article class="aoGEntry"><span class="aoGCat">'+esc(e.category)+'</span><h2>'+esc(pick(win,e.term))+'</h2>'+(e.latin?'<div class="aoGLatin">'+esc(e.latin)+'</div>':"")+'<p>'+esc(pick(win,e.definition))+'</p>'+(pages?'<p class="aoGMeta">'+esc(pages.slice(3))+'</p>':"")+'<div class="aoGSources">'+src+'</div></article>';
+      const pages=e.campionPages?.length?'Campion pp. '+e.campionPages.join(", "):"";
+      return '<article class="aoGEntry"><span class="aoGCat">'+esc(e.category)+'</span><h2>'+esc(pick(win,e.term))+'</h2>'+(e.latin?'<div class="aoGLatin">'+esc(e.latin)+'</div>':"")+'<p>'+esc(pick(win,e.definition))+'</p>'+(pages?'<p class="aoGMeta">'+esc(pages)+'</p>':"")+'<div class="aoGSources">'+src+'</div></article>';
     }).join("");
-    node.innerHTML=top(win)+'<main class="aoGWrap"><p class="aoGIntro">'+esc(L(win,"Search liturgical terms, sacred objects, church furnishings and traditional Roman vocabulary. Each entry keeps its source links.","Recherchez les termes liturgiques, objets sacrés, éléments d’église et le vocabulaire romain traditionnel. Chaque entrée conserve ses liens de source."))+'</p><input class="aoGSearch" data-ao-g-search type="search" value="'+esc(state.query)+'" placeholder="'+esc(L(win,"Search the glossary…","Rechercher dans le glossaire…"))+'"><div class="aoGMeta">'+filtered.length+' / '+all.length+' '+esc(L(win,"entries","entrées"))+'</div>'+(cards||'<div class="aoGEmpty">'+esc(L(win,"No matching entry.","Aucune entrée correspondante."))+'</div>')+'</main>';
+    const meta=node.querySelector("[data-ao-g-meta]");if(meta)meta.textContent=filtered.length+" / "+all.length+" "+L(win,"entries","entrées");
+    const results=node.querySelector("[data-ao-g-results]");if(results)results.innerHTML=cards||'<div class="aoGEmpty">'+esc(L(win,"No matching entry.","Aucune entrée correspondante."))+'</div>';
+    return true;
+  }
+  function render(focusSearch=true){
+    const node=ensureRoot();if(!node||!state.data)return false;
+    node.innerHTML=top(win)+'<main class="aoGWrap"><p class="aoGIntro">'+esc(L(win,"Search liturgical terms, sacred objects, church furnishings and traditional Roman vocabulary. Each entry keeps its source links.","Recherchez les termes liturgiques, objets sacrés, éléments d’église et le vocabulaire romain traditionnel. Chaque entrée conserve ses liens de source."))+'</p><input class="aoGSearch" data-ao-g-search type="search" value="'+esc(state.query)+'" placeholder="'+esc(L(win,"Search the glossary…","Rechercher dans le glossaire…"))+'"><div class="aoGMeta" data-ao-g-meta></div><div data-ao-g-results></div></main>';
+    renderResults(node);
     node.hidden=false;node.removeAttribute("aria-hidden");
-    if(focusSearch)queueMicrotask(()=>node.querySelector("[data-ao-g-search]")?.focus?.({preventScroll:true}));
+    if(focusSearch)queueMicrotask(()=>{const input=node.querySelector("[data-ao-g-search]");input?.focus?.({preventScroll:true});if(input?.setSelectionRange){const n=input.value.length;input.setSelectionRange(n,n);}});
     return true;
   }
   async function open(opts={}){
