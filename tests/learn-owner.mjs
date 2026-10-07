@@ -23,13 +23,13 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.latin","learn.mass","learn.catechism","learn.sexual_ethics","learn.catholic_life","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
+  ["learn.catechism.daily","learn.latin","learn.mass","learn.catechism","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
   "Formation rename changed the canonical Learn launcher IDs",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
 assert.deepEqual(
   LEARN_LAYOUT.sections.flatMap(section=>section.items.filter(item=>item.featured).map(item=>item.id)),
-  ["learn.catechism.daily","learn.mass","learn.catholic_life"],
+  ["learn.catechism.daily","learn.mass"],
   "locked Learn featured-card ownership changed",
 );
 
