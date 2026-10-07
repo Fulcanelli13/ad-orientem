@@ -8,7 +8,7 @@ const presentationFx=JSON.parse(readFileSync("data/presentation/presentation-fx-
 const exactDonor=JSON.parse(readFileSync("data/presentation/exact-donor-parity.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.22.0");
+assert.equal(app.version,"1.23.0");
 assert.equal(app.status,"PRESENTATION_PARITY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -47,6 +47,7 @@ assert.equal(exactFinding?.classification,"MISSING_INTEGRATION");
 assert.equal(exactFinding?.status,"OPEN");
 assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
 assert.equal(exactDonor.status,"OPEN");
+assert.equal(exactDonor.version,"1.5.0");
 assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
 assert.deepEqual(exactDonor.openBlockers,[
   "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
@@ -119,5 +120,6 @@ assert.ok(app.regressionGates?.phone?.includes("tests/settings-e2e.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/reader-mode-switch.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
+assert.ok(app.regressionGates?.phone?.includes("tests/nonmass-donor-reference-e2e.mjs"));
 
 console.log("PASS app release gate: architecture/runtime remain certified; exact non-Mass donor parity is correctly reopened.");
