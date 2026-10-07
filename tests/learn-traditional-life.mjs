@@ -39,6 +39,11 @@ assert.match(runtime,/approved local custom/,"Matrimony local-custom guard disap
 assert.match(runtime,/special marriage prayers after the Pater noster/,"Matrimony no longer explains the certified Nuptial Mass insertions");
 assert.match(runtime,/A 1951 rule is therefore never copied into the 1962 engine/,"older-missal versus 1962 authority guard disappeared");
 assert.match(runtime,/AFTER DEATH · TRADITIONAL FUNERAL SEQUENCE/,"Serious Illness & Dying lost the traditional funeral sequence explanation");
+assert.match(runtime,/Death may be near · Open Dying Companion/,"Serious Illness guide lost escalation into Dying Companion");
+assert.match(runtime,/route:"pray\.dying_companion"/,"Serious Illness guide no longer routes imminent death to the bedside companion");
+assert.match(runtime,/stop using prayers addressed to the dying person and move to suffrage for the departed/,"Serious Illness guide lost the death-state boundary");
+assert.match(runtime,/dead_eternal_rest_singular/,"Serious Illness after-death section lost singular Eternal Rest");
+
 assert.match(runtime,/Absolution at the bier or catafalque is actually appointed/,"funeral formation no longer preserves explicit Absolution activation");
 assert.match(runtime,/In paradisum accompanies the departure/,"funeral formation lost the burial-procession handoff");
 assert.doesNotMatch(runtime,/Ego conjungo vos|With this ring I thee wed/,"lay formation leaked a country-specific or celebrant ritual script");
