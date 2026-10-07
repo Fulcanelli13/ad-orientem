@@ -21,6 +21,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install browser scraper dependency
+        if: matrix.source == 'fssp'
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium for dynamic FSSP directory
+        if: matrix.source == 'fssp'
+        run: npx playwright install --with-deps chromium
       - name: Import official source corpus
         run: npm run directory:import:${{ matrix.source }}
       - name: Print import report
