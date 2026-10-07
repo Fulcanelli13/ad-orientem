@@ -40,6 +40,52 @@
   },
   "items": [
     {
+      "id": "GM.P.C0001.01",
+      "cueId": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "SIGNS HIMSELF",
+      "triggerLatin": "In nómine Patris",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        17
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0001.01",
+      "cueId": "AO.SM.C0001",
+      "actor": "FAITHFUL",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "Sign of the Cross",
+      "triggerLatin": "In nómine Patris",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        17
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0010.01",
       "cueId": "AO.SM.C0010",
       "actor": "PRIEST",
@@ -59,6 +105,296 @@
       ],
       "sourceRubricEventId": "AO.RUB.C0010.01",
       "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0014.01",
+      "cueId": "AO.SM.C0014",
+      "actor": "FAITHFUL",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "Sign of the Cross",
+      "triggerLatin": "Adiutórium nostrum ✠",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0016.01",
+      "cueId": "AO.SM.C0016",
+      "actor": "PRIEST",
+      "gesture": "PROFOUND_BOW",
+      "label": "BOWS PROFOUNDLY",
+      "triggerLatin": "Confiteor",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        21
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0017.01",
+      "cueId": "AO.SM.C0017",
+      "actor": "PRIEST",
+      "gesture": "BREAST_STRIKE",
+      "label": "STRIKES BREAST ×3",
+      "triggerLatin": "mea culpa ×3",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        21
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0021.01",
+      "cueId": "AO.SM.C0021",
+      "actor": "FAITHFUL",
+      "gesture": "PROFOUND_BOW",
+      "label": "Profound bow / remain kneeling according profile",
+      "triggerLatin": "During Confiteor",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        21,
+        22
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0022.01",
+      "cueId": "AO.SM.C0022",
+      "actor": "FAITHFUL",
+      "gesture": "BREAST_STRIKE",
+      "label": "Strike breast ×3",
+      "triggerLatin": "mea culpa ×3",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        21,
+        22
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0023.01",
+      "cueId": "AO.SM.C0023",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain bowed / return after conclusion",
+      "triggerLatin": "After mea culpa",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        21,
+        22
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0026.01",
+      "cueId": "AO.SM.C0026",
+      "actor": "PRIEST",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "SIGNS HIMSELF",
+      "triggerLatin": "Indulgéntiam",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        22
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0026.01",
+      "cueId": "AO.SM.C0026",
+      "actor": "FAITHFUL",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "Sign of the Cross",
+      "triggerLatin": "Indulgéntiam ✠",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        22
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0038.01",
+      "cueId": "AO.SM.C0038",
+      "actor": "PRIEST",
+      "gesture": "BODY_BOW",
+      "label": "BOWS OVER THE ALTAR",
+      "triggerLatin": "Orámus te",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        23
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0039.01",
+      "cueId": "AO.SM.C0039",
+      "actor": "PRIEST",
+      "gesture": "ALTAR_KISS",
+      "label": "KISSES THE ALTAR",
+      "triggerLatin": "quorum relíquiæ hic sunt",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        23
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0055.01",
+      "cueId": "AO.SM.C0055",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Adorámus te",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0056.01",
+      "cueId": "AO.SM.C0056",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Customary bow may follow local practice; do not hard-code as universal.",
+      "triggerLatin": "Adorámus te",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0057.01",
+      "cueId": "AO.SM.C0057",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Adorámus te",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
     },
@@ -86,6 +422,66 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.F.C0058.01",
+      "cueId": "AO.SM.C0058",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Grátias ágimus tibi",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0059.01",
+      "cueId": "AO.SM.C0059",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Grátias ágimus tibi",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0060.01",
+      "cueId": "AO.SM.C0060",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Iesu Christe",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0061.01",
       "cueId": "AO.SM.C0061",
       "actor": "PRIEST",
@@ -105,6 +501,66 @@
       ],
       "sourceRubricEventId": "AO.RUB.C0061.01",
       "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0061.01",
+      "cueId": "AO.SM.C0061",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Iesu Christe",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0062.01",
+      "cueId": "AO.SM.C0062",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Iesu Christe",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0063.01",
+      "cueId": "AO.SM.C0063",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "súscipe deprecatiónem nostram",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
     },
@@ -132,6 +588,46 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.F.C0064.01",
+      "cueId": "AO.SM.C0064",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "súscipe deprecatiónem nostram",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0066.01",
+      "cueId": "AO.SM.C0066",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Iesu Christe",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0067.01",
       "cueId": "AO.SM.C0067",
       "actor": "PRIEST",
@@ -155,6 +651,26 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.F.C0067.01",
+      "cueId": "AO.SM.C0067",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Iesu Christe",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0068.01",
       "cueId": "AO.SM.C0068",
       "actor": "PRIEST",
@@ -174,6 +690,49 @@
       ],
       "sourceRubricEventId": "AO.RUB.C0068.01",
       "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0068.01",
+      "cueId": "AO.SM.C0068",
+      "actor": "FAITHFUL",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "Sign of the Cross",
+      "triggerLatin": "Cum Sancto Spíritu ✠",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        26
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0069.01",
+      "cueId": "AO.SM.C0069",
+      "actor": "FAITHFUL",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "Sign of the Cross",
+      "triggerLatin": "Cum Sancto Spíritu ✠",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
     },
@@ -225,6 +784,136 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.P.C0084.01",
+      "cueId": "AO.SM.C0084",
+      "actor": "PRIEST",
+      "gesture": "GOSPEL_BOOK_AND_BODY_CROSSES",
+      "label": "SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST",
+      "triggerLatin": "Sequéntia sancti Evangélii",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        30
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0084.01",
+      "cueId": "AO.SM.C0084",
+      "actor": "FAITHFUL",
+      "gesture": "GOSPEL_SMALL_CROSSES",
+      "label": "Forehead · lips · breast small crosses",
+      "triggerLatin": "At Gospel announcement",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        30
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0089.01",
+      "cueId": "AO.SM.C0089",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Credo in unum Deum",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0090.01",
+      "cueId": "AO.SM.C0090",
+      "actor": "PRIEST",
+      "gesture": "HEAD_BOW",
+      "label": "BOWS HEAD",
+      "triggerLatin": "in unum Deum",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        33,
+        34
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0090.01",
+      "cueId": "AO.SM.C0090",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Credo in unum Deum",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0092.01",
+      "cueId": "AO.SM.C0092",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Iesum Christum / Holy Name",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0093.01",
       "cueId": "AO.SM.C0093",
       "actor": "PRIEST",
@@ -245,6 +934,132 @@
       ],
       "sourceRubricEventId": "AO.RUB.C0093.01",
       "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0093.01",
+      "cueId": "AO.SM.C0093",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Iesum Christum / Holy Name",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0094.01",
+      "cueId": "AO.SM.C0094",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Iesum Christum / Holy Name",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0096.01",
+      "cueId": "AO.SM.C0096",
+      "actor": "PRIEST",
+      "gesture": "GENUFLECT",
+      "label": "GENUFLECTS",
+      "triggerLatin": "Et incarnátus est ... et homo factus est",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        33
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0096.01",
+      "cueId": "AO.SM.C0096",
+      "actor": "FAITHFUL",
+      "gesture": "GENUFLECT",
+      "label": "Kneeling/genuflection here depends on sung/local calendar rule; Christmas and...",
+      "triggerLatin": "Et incarnatus est ... et homo factus est",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        33
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0097.01",
+      "cueId": "AO.SM.C0097",
+      "actor": "FAITHFUL",
+      "gesture": "RISE",
+      "label": "Rise / resume prior posture",
+      "triggerLatin": "after et homo factus est",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0100.01",
+      "cueId": "AO.SM.C0100",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "simul adorátur",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
     },
@@ -273,6 +1088,46 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.F.C0101.01",
+      "cueId": "AO.SM.C0101",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "simul adorátur",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0102.01",
+      "cueId": "AO.SM.C0102",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "simul adorátur",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0104.01",
       "cueId": "AO.SM.C0104",
       "actor": "PRIEST",
@@ -292,6 +1147,49 @@
       ],
       "sourceRubricEventId": "AO.RUB.C0104.01",
       "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0104.01",
+      "cueId": "AO.SM.C0104",
+      "actor": "FAITHFUL",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "Sign of the Cross",
+      "triggerLatin": "Et vitam ✠ ventúri sæculi",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        34
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0105.01",
+      "cueId": "AO.SM.C0105",
+      "actor": "FAITHFUL",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "Sign of the Cross",
+      "triggerLatin": "Et vitam ✠ ventúri sæculi",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
     },
@@ -338,6 +1236,29 @@
         40
       ],
       "sourceRubricEventId": "AO.RUB.C0115.01",
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0116.01",
+      "cueId": "AO.SM.C0116",
+      "actor": "PRIEST",
+      "gesture": "BODY_BOW",
+      "label": "BOWS SLIGHTLY",
+      "triggerLatin": "In spíritu humilitátis",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        41
+      ],
+      "sourceRubricEventId": null,
       "displayPrimary": true,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
@@ -435,6 +1356,295 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.P.C0128.01",
+      "cueId": "AO.SM.C0128",
+      "actor": "PRIEST",
+      "gesture": "BODY_BOW",
+      "label": "BOWS SLIGHTLY",
+      "triggerLatin": "Súscipe, sancta Trínitas",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        43
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0129.01",
+      "cueId": "AO.SM.C0129",
+      "actor": "PRIEST",
+      "gesture": "ALTAR_KISS",
+      "label": "KISSES THE ALTAR",
+      "triggerLatin": "before Oráte, fratres",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        44
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0141.01",
+      "cueId": "AO.SM.C0141",
+      "actor": "PRIEST",
+      "gesture": "HEAD_BOW",
+      "label": "BOWS HEAD",
+      "triggerLatin": "Grátias agámus Dómino",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        45
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0141.01",
+      "cueId": "AO.SM.C0141",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Grátias agámus Dómino Deo nostro",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0142.01",
+      "cueId": "AO.SM.C0142",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Grátias agámus Dómino Deo nostro",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0145.01",
+      "cueId": "AO.SM.C0145",
+      "actor": "PRIEST",
+      "gesture": "BODY_BOW",
+      "label": "BOWS FOR SANCTUS",
+      "triggerLatin": "Sanctus, Sanctus, Sanctus",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        45,
+        46
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0145.01",
+      "cueId": "AO.SM.C0145",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Bow head",
+      "triggerLatin": "Sanctus, Sanctus, Sanctus",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0148.01",
+      "cueId": "AO.SM.C0148",
+      "actor": "PRIEST",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "SIGNS HIMSELF",
+      "triggerLatin": "Benedíctus qui venit",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        45,
+        46
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0148.01",
+      "cueId": "AO.SM.C0148",
+      "actor": "FAITHFUL",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "Sign of the Cross",
+      "triggerLatin": "Benedíctus qui venit",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0150.01",
+      "cueId": "AO.SM.C0150",
+      "actor": "PRIEST",
+      "gesture": "PROFOUND_BOW",
+      "label": "BOWS PROFOUNDLY",
+      "triggerLatin": "Te igitur",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        49
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0151.01",
+      "cueId": "AO.SM.C0151",
+      "actor": "PRIEST",
+      "gesture": "ALTAR_KISS",
+      "label": "KISSES THE ALTAR",
+      "triggerLatin": "uti accepta habeas et benedícas",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        49
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0152.01",
+      "cueId": "AO.SM.C0152",
+      "actor": "PRIEST",
+      "gesture": "THREE_CROSSES",
+      "label": "MAKES THREE CROSSES OVER HOST AND CHALICE",
+      "triggerLatin": "hæc dona · hæc múnera · hæc sancta sacrifícia",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        49
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0155.01",
+      "cueId": "AO.SM.C0155",
+      "actor": "PRIEST",
+      "gesture": "MEMENTO_HANDS",
+      "label": "RAISES AND JOINS HANDS · BOWS HEAD",
+      "triggerLatin": "silent commemoration of the living",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        51
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0158.01",
       "cueId": "AO.SM.C0158",
       "actor": "PRIEST",
@@ -476,6 +1686,75 @@
         53
       ],
       "sourceRubricEventId": "AO.RUB.C0161.01",
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0164.01",
+      "cueId": "AO.SM.C0164",
+      "actor": "PRIEST",
+      "gesture": "THREE_CROSSES",
+      "label": "MAKES THREE CROSSES OVER HOST AND CHALICE",
+      "triggerLatin": "benedíctam · adscríptam · ratam",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        54
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0165.01",
+      "cueId": "AO.SM.C0165",
+      "actor": "PRIEST",
+      "gesture": "CROSS_OVER_HOST",
+      "label": "MAKES CROSS OVER HOST",
+      "triggerLatin": "Corpus",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        54
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0166.01",
+      "cueId": "AO.SM.C0166",
+      "actor": "PRIEST",
+      "gesture": "CROSS_OVER_CHALICE",
+      "label": "MAKES CROSS OVER CHALICE",
+      "triggerLatin": "Sanguis",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        54
+      ],
+      "sourceRubricEventId": null,
       "displayPrimary": true,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
@@ -552,6 +1831,54 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.P.C0171.01",
+      "cueId": "AO.SM.C0171",
+      "actor": "PRIEST",
+      "gesture": "CROSS_OVER_HOST",
+      "label": "MAKES CROSS OVER HOST",
+      "triggerLatin": "benedíxit",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        55,
+        56
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0173.01",
+      "cueId": "AO.SM.C0173",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+      "triggerLatin": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        55,
+        56
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0174.01",
       "cueId": "AO.SM.C0174",
       "actor": "PRIEST",
@@ -624,6 +1951,30 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.F.C0174.01",
+      "cueId": "AO.SM.C0174",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+      "triggerLatin": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        55,
+        56
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0176.01",
       "cueId": "AO.SM.C0176",
       "actor": "PRIEST",
@@ -644,6 +1995,54 @@
       ],
       "sourceRubricEventId": "AO.RUB.C0176.01",
       "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0177.01",
+      "cueId": "AO.SM.C0177",
+      "actor": "PRIEST",
+      "gesture": "CROSS_OVER_CHALICE",
+      "label": "MAKES CROSS OVER CHALICE",
+      "triggerLatin": "benedíxit",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        57,
+        58
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0179.01",
+      "cueId": "AO.SM.C0179",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Chalice",
+      "triggerLatin": "The Chalice is actually elevated — At the actual elevation [Do not add an inv...",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        57,
+        58
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
     },
@@ -720,6 +2119,254 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.P.C0184.01",
+      "cueId": "AO.SM.C0184",
+      "actor": "PRIEST",
+      "gesture": "THREE_CROSSES",
+      "label": "MAKES THREE CROSSES OVER HOST AND CHALICE",
+      "triggerLatin": "hóstiam puram · hóstiam sanctam · hóstiam immaculátam",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        61
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0185.01",
+      "cueId": "AO.SM.C0185",
+      "actor": "PRIEST",
+      "gesture": "CROSS_HOST_AND_CHALICE",
+      "label": "CROSSES HOST THEN CHALICE",
+      "triggerLatin": "Panem sanctum ... et Calicem",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        61
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0187.01",
+      "cueId": "AO.SM.C0187",
+      "actor": "PRIEST",
+      "gesture": "PROFOUND_BOW",
+      "label": "BOWS PROFOUNDLY",
+      "triggerLatin": "Súpplices te rogámus",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        63,
+        64
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0188.01",
+      "cueId": "AO.SM.C0188",
+      "actor": "PRIEST",
+      "gesture": "ALTAR_KISS",
+      "label": "KISSES THE ALTAR",
+      "triggerLatin": "ex hac altáris participatióne",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        63,
+        64
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0189.01",
+      "cueId": "AO.SM.C0189",
+      "actor": "PRIEST",
+      "gesture": "CROSS_HOST_AND_CHALICE",
+      "label": "CROSSES HOST THEN CHALICE",
+      "triggerLatin": "Corpus · Sanguinem",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        63,
+        64
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0190.01",
+      "cueId": "AO.SM.C0190",
+      "actor": "PRIEST",
+      "gesture": "SIGN_OF_CROSS",
+      "label": "SIGNS HIMSELF",
+      "triggerLatin": "omni benedictióne coelésti",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        63,
+        64
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0193.01",
+      "cueId": "AO.SM.C0193",
+      "actor": "PRIEST",
+      "gesture": "MEMENTO_HANDS",
+      "label": "RAISES AND JOINS HANDS · EYES ON THE SACRAMENT",
+      "triggerLatin": "silent commemoration of the dead",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        66
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0196.01",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "gesture": "BREAST_STRIKE",
+      "label": "STRIKES BREAST ONCE",
+      "triggerLatin": "Nobis quoque peccatóribus",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        67
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0196.01",
+      "cueId": "AO.SM.C0196",
+      "actor": "FAITHFUL",
+      "gesture": "BREAST_STRIKE",
+      "label": "Strike breast",
+      "triggerLatin": "Nobis quoque peccatóribus — At / as these words begin",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0197.01",
+      "cueId": "AO.SM.C0197",
+      "actor": "FAITHFUL",
+      "gesture": "BREAST_STRIKE",
+      "label": "Strike breast",
+      "triggerLatin": "Nobis quoque peccatóribus — At / as these words begin",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0198.01",
+      "cueId": "AO.SM.C0198",
+      "actor": "FAITHFUL",
+      "gesture": "BREAST_STRIKE",
+      "label": "Strike breast",
+      "triggerLatin": "Nobis quoque peccatóribus — At / as these words begin",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0200.01",
       "cueId": "AO.SM.C0200",
       "actor": "PRIEST",
@@ -791,6 +2438,30 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.P.C0204.01",
+      "cueId": "AO.SM.C0204",
+      "actor": "PRIEST",
+      "gesture": "MINOR_ELEVATION",
+      "label": "ELEVATES HOST AND CHALICE SLIGHTLY",
+      "triggerLatin": "omnis honor, et glória",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        69,
+        70
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0208.01",
       "cueId": "AO.SM.C0208",
       "actor": "PRIEST",
@@ -815,6 +2486,30 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.P.C0213.01",
+      "cueId": "AO.SM.C0213",
+      "actor": "PRIEST",
+      "gesture": "SIGN_WITH_PATEN",
+      "label": "SIGNS HIMSELF WITH PATEN",
+      "triggerLatin": "da propítius pacem",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        71,
+        72
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.P.C0219.01",
       "cueId": "AO.SM.C0219",
       "actor": "PRIEST",
@@ -834,6 +2529,198 @@
         74
       ],
       "sourceRubricEventId": "AO.RUB.C0219.01",
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0222.01",
+      "cueId": "AO.SM.C0222",
+      "actor": "PRIEST",
+      "gesture": "BREAST_STRIKE",
+      "label": "STRIKES BREAST ONCE",
+      "triggerLatin": "Agnus Dei · miserére nobis",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": "NOT_REQUIEM",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0222.01",
+      "cueId": "AO.SM.C0222",
+      "actor": "FAITHFUL",
+      "gesture": "BREAST_STRIKE",
+      "label": "Strike breast once",
+      "triggerLatin": "Agnus Dei at each invocation",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0223.01",
+      "cueId": "AO.SM.C0223",
+      "actor": "PRIEST",
+      "gesture": "BREAST_STRIKE",
+      "label": "STRIKES BREAST ONCE",
+      "triggerLatin": "Agnus Dei · miserére nobis",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": "NOT_REQUIEM",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0223.01",
+      "cueId": "AO.SM.C0223",
+      "actor": "FAITHFUL",
+      "gesture": "BREAST_STRIKE",
+      "label": "Strike breast once",
+      "triggerLatin": "Agnus Dei at each invocation",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0224.01",
+      "cueId": "AO.SM.C0224",
+      "actor": "PRIEST",
+      "gesture": "BREAST_STRIKE",
+      "label": "STRIKES BREAST ONCE",
+      "triggerLatin": "Agnus Dei · dona nobis pacem",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": "NOT_REQUIEM",
+      "sources": [
+        "MR62_RITUS"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.F.C0224.01",
+      "cueId": "AO.SM.C0224",
+      "actor": "FAITHFUL",
+      "gesture": "BREAST_STRIKE",
+      "label": "Strike breast once",
+      "triggerLatin": "Agnus Dei at each invocation",
+      "sequenceOrder": 1,
+      "authorityClass": "FAITHFUL_CUE_SOT",
+      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
+      "condition": null,
+      "sources": [
+        "CURRENT_SUNG_BLUEPRINT"
+      ],
+      "campionPages": [],
+      "sourceRubricEventId": null,
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0229.01",
+      "cueId": "AO.SM.C0229",
+      "actor": "PRIEST",
+      "gesture": "BREAST_STRIKE",
+      "label": "STRIKES BREAST ONCE",
+      "triggerLatin": "Dómine, non sum dignus · 1",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        79,
+        80
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0230.01",
+      "cueId": "AO.SM.C0230",
+      "actor": "PRIEST",
+      "gesture": "BREAST_STRIKE",
+      "label": "STRIKES BREAST ONCE",
+      "triggerLatin": "Dómine, non sum dignus · 2",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        79,
+        80
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0231.01",
+      "cueId": "AO.SM.C0231",
+      "actor": "PRIEST",
+      "gesture": "BREAST_STRIKE",
+      "label": "STRIKES BREAST ONCE",
+      "triggerLatin": "Dómine, non sum dignus · 3",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        79,
+        80
+      ],
+      "sourceRubricEventId": null,
       "displayPrimary": true,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
@@ -883,1064 +2770,6 @@
       ],
       "sourceRubricEventId": "AO.RUB.C0234.01",
       "displayPrimary": true,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.P.C0262.01",
-      "cueId": "AO.SM.C0262",
-      "actor": "PRIEST",
-      "gesture": "ALTAR_KISS",
-      "label": "KISSES ALTAR",
-      "triggerLatin": null,
-      "sequenceOrder": 1,
-      "authorityClass": "1962_NORMATIVE",
-      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
-      "condition": null,
-      "sources": [
-        "MR62_RITUS",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        93,
-        94
-      ],
-      "sourceRubricEventId": "AO.RUB.C0262.01",
-      "displayPrimary": true,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.P.C0263.01",
-      "cueId": "AO.SM.C0263",
-      "actor": "PRIEST",
-      "gesture": "RAISE_EYES_AND_HANDS",
-      "label": "RAISES EYES AND HANDS",
-      "triggerLatin": null,
-      "sequenceOrder": 1,
-      "authorityClass": "1962_NORMATIVE",
-      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
-      "condition": null,
-      "sources": [
-        "MR62_RITUS",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        94,
-        95
-      ],
-      "sourceRubricEventId": "AO.RUB.C0263.01",
-      "displayPrimary": true,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.P.C0263.02",
-      "cueId": "AO.SM.C0263",
-      "actor": "PRIEST",
-      "gesture": "JOIN_HANDS",
-      "label": "JOINS HANDS",
-      "triggerLatin": null,
-      "sequenceOrder": 2,
-      "authorityClass": "1962_NORMATIVE",
-      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
-      "condition": null,
-      "sources": [
-        "MR62_RITUS",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        94,
-        95
-      ],
-      "sourceRubricEventId": "AO.RUB.C0263.02",
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.P.C0263.03",
-      "cueId": "AO.SM.C0263",
-      "actor": "PRIEST",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "BOWS HEAD TO CROSS",
-      "triggerLatin": null,
-      "sequenceOrder": 3,
-      "authorityClass": "1962_NORMATIVE",
-      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
-      "condition": null,
-      "sources": [
-        "MR62_RITUS",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        94,
-        95
-      ],
-      "sourceRubricEventId": "AO.RUB.C0263.03",
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0001.01",
-      "cueId": "AO.SM.C0001",
-      "actor": "FAITHFUL",
-      "gesture": "SIGN_OF_CROSS",
-      "label": "Sign of the Cross",
-      "triggerLatin": "In nómine Patris",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        17
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0014.01",
-      "cueId": "AO.SM.C0014",
-      "actor": "FAITHFUL",
-      "gesture": "SIGN_OF_CROSS",
-      "label": "Sign of the Cross",
-      "triggerLatin": "Adiutórium nostrum ✠",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0021.01",
-      "cueId": "AO.SM.C0021",
-      "actor": "FAITHFUL",
-      "gesture": "PROFOUND_BOW",
-      "label": "Profound bow / remain kneeling according profile",
-      "triggerLatin": "During Confiteor",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        21,
-        22
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0022.01",
-      "cueId": "AO.SM.C0022",
-      "actor": "FAITHFUL",
-      "gesture": "BREAST_STRIKE",
-      "label": "Strike breast ×3",
-      "triggerLatin": "mea culpa ×3",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        21,
-        22
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0023.01",
-      "cueId": "AO.SM.C0023",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Remain bowed / return after conclusion",
-      "triggerLatin": "After mea culpa",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        21,
-        22
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0026.01",
-      "cueId": "AO.SM.C0026",
-      "actor": "FAITHFUL",
-      "gesture": "SIGN_OF_CROSS",
-      "label": "Sign of the Cross",
-      "triggerLatin": "Indulgéntiam ✠",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        22
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0055.01",
-      "cueId": "AO.SM.C0055",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Adorámus te",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0056.01",
-      "cueId": "AO.SM.C0056",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Customary bow may follow local practice; do not hard-code as universal.",
-      "triggerLatin": "Adorámus te",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0057.01",
-      "cueId": "AO.SM.C0057",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Adorámus te",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0058.01",
-      "cueId": "AO.SM.C0058",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Grátias ágimus tibi",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0059.01",
-      "cueId": "AO.SM.C0059",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Grátias ágimus tibi",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0060.01",
-      "cueId": "AO.SM.C0060",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Iesu Christe",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0061.01",
-      "cueId": "AO.SM.C0061",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Iesu Christe",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0062.01",
-      "cueId": "AO.SM.C0062",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Iesu Christe",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0063.01",
-      "cueId": "AO.SM.C0063",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "súscipe deprecatiónem nostram",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0064.01",
-      "cueId": "AO.SM.C0064",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "súscipe deprecatiónem nostram",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0066.01",
-      "cueId": "AO.SM.C0066",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Iesu Christe",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0067.01",
-      "cueId": "AO.SM.C0067",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Iesu Christe",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0068.01",
-      "cueId": "AO.SM.C0068",
-      "actor": "FAITHFUL",
-      "gesture": "SIGN_OF_CROSS",
-      "label": "Sign of the Cross",
-      "triggerLatin": "Cum Sancto Spíritu ✠",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        26
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0069.01",
-      "cueId": "AO.SM.C0069",
-      "actor": "FAITHFUL",
-      "gesture": "SIGN_OF_CROSS",
-      "label": "Sign of the Cross",
-      "triggerLatin": "Cum Sancto Spíritu ✠",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0084.01",
-      "cueId": "AO.SM.C0084",
-      "actor": "FAITHFUL",
-      "gesture": "GOSPEL_SMALL_CROSSES",
-      "label": "Forehead · lips · breast small crosses",
-      "triggerLatin": "At Gospel announcement",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        30
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0089.01",
-      "cueId": "AO.SM.C0089",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Credo in unum Deum",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0090.01",
-      "cueId": "AO.SM.C0090",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Credo in unum Deum",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0092.01",
-      "cueId": "AO.SM.C0092",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Iesum Christum / Holy Name",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0093.01",
-      "cueId": "AO.SM.C0093",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Iesum Christum / Holy Name",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0094.01",
-      "cueId": "AO.SM.C0094",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Iesum Christum / Holy Name",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0096.01",
-      "cueId": "AO.SM.C0096",
-      "actor": "FAITHFUL",
-      "gesture": "GENUFLECT",
-      "label": "Kneeling/genuflection here depends on sung/local calendar rule; Christmas and...",
-      "triggerLatin": "Et incarnatus est ... et homo factus est",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        33
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0097.01",
-      "cueId": "AO.SM.C0097",
-      "actor": "FAITHFUL",
-      "gesture": "RISE",
-      "label": "Rise / resume prior posture",
-      "triggerLatin": "after et homo factus est",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0100.01",
-      "cueId": "AO.SM.C0100",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "simul adorátur",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0101.01",
-      "cueId": "AO.SM.C0101",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "simul adorátur",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0102.01",
-      "cueId": "AO.SM.C0102",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "simul adorátur",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0104.01",
-      "cueId": "AO.SM.C0104",
-      "actor": "FAITHFUL",
-      "gesture": "SIGN_OF_CROSS",
-      "label": "Sign of the Cross",
-      "triggerLatin": "Et vitam ✠ ventúri sæculi",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        34
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0105.01",
-      "cueId": "AO.SM.C0105",
-      "actor": "FAITHFUL",
-      "gesture": "SIGN_OF_CROSS",
-      "label": "Sign of the Cross",
-      "triggerLatin": "Et vitam ✠ ventúri sæculi",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0141.01",
-      "cueId": "AO.SM.C0141",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Grátias agámus Dómino Deo nostro",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0142.01",
-      "cueId": "AO.SM.C0142",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Grátias agámus Dómino Deo nostro",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0145.01",
-      "cueId": "AO.SM.C0145",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Bow head",
-      "triggerLatin": "Sanctus, Sanctus, Sanctus",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0148.01",
-      "cueId": "AO.SM.C0148",
-      "actor": "FAITHFUL",
-      "gesture": "SIGN_OF_CROSS",
-      "label": "Sign of the Cross",
-      "triggerLatin": "Benedíctus qui venit",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0173.01",
-      "cueId": "AO.SM.C0173",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Remain kneeling; bow reverently, then look up at the Sacred Host",
-      "triggerLatin": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        55,
-        56
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0174.01",
-      "cueId": "AO.SM.C0174",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Remain kneeling; bow reverently, then look up at the Sacred Host",
-      "triggerLatin": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        55,
-        56
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0179.01",
-      "cueId": "AO.SM.C0179",
-      "actor": "FAITHFUL",
-      "gesture": "HEAD_OR_BODY_BOW",
-      "label": "Remain kneeling; bow reverently, then look up at the Chalice",
-      "triggerLatin": "The Chalice is actually elevated — At the actual elevation [Do not add an inv...",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT",
-        "CAMPION_1954"
-      ],
-      "campionPages": [
-        57,
-        58
-      ],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0196.01",
-      "cueId": "AO.SM.C0196",
-      "actor": "FAITHFUL",
-      "gesture": "BREAST_STRIKE",
-      "label": "Strike breast",
-      "triggerLatin": "Nobis quoque peccatóribus — At / as these words begin",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0197.01",
-      "cueId": "AO.SM.C0197",
-      "actor": "FAITHFUL",
-      "gesture": "BREAST_STRIKE",
-      "label": "Strike breast",
-      "triggerLatin": "Nobis quoque peccatóribus — At / as these words begin",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0198.01",
-      "cueId": "AO.SM.C0198",
-      "actor": "FAITHFUL",
-      "gesture": "BREAST_STRIKE",
-      "label": "Strike breast",
-      "triggerLatin": "Nobis quoque peccatóribus — At / as these words begin",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0222.01",
-      "cueId": "AO.SM.C0222",
-      "actor": "FAITHFUL",
-      "gesture": "BREAST_STRIKE",
-      "label": "Strike breast once",
-      "triggerLatin": "Agnus Dei at each invocation",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0223.01",
-      "cueId": "AO.SM.C0223",
-      "actor": "FAITHFUL",
-      "gesture": "BREAST_STRIKE",
-      "label": "Strike breast once",
-      "triggerLatin": "Agnus Dei at each invocation",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
-      "iconKey": null,
-      "iconStatus": "PENDING_ICON_BINDING"
-    },
-    {
-      "id": "GM.F.C0224.01",
-      "cueId": "AO.SM.C0224",
-      "actor": "FAITHFUL",
-      "gesture": "BREAST_STRIKE",
-      "label": "Strike breast once",
-      "triggerLatin": "Agnus Dei at each invocation",
-      "sequenceOrder": 1,
-      "authorityClass": "FAITHFUL_CUE_SOT",
-      "runtimeProfile": "CURRENT_GESTURE_PROFILE_RULES",
-      "condition": null,
-      "sources": [
-        "CURRENT_SUNG_BLUEPRINT"
-      ],
-      "campionPages": [],
-      "sourceRubricEventId": null,
-      "displayPrimary": false,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
     },
@@ -2141,6 +2970,126 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.P.C0262.01",
+      "cueId": "AO.SM.C0262",
+      "actor": "PRIEST",
+      "gesture": "ALTAR_KISS",
+      "label": "KISSES ALTAR",
+      "triggerLatin": null,
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        93,
+        94
+      ],
+      "sourceRubricEventId": "AO.RUB.C0262.01",
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0263.01",
+      "cueId": "AO.SM.C0263",
+      "actor": "PRIEST",
+      "gesture": "RAISE_EYES_AND_HANDS",
+      "label": "RAISES EYES AND HANDS",
+      "triggerLatin": null,
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        94,
+        95
+      ],
+      "sourceRubricEventId": "AO.RUB.C0263.01",
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0263.02",
+      "cueId": "AO.SM.C0263",
+      "actor": "PRIEST",
+      "gesture": "JOIN_HANDS",
+      "label": "JOINS HANDS",
+      "triggerLatin": null,
+      "sequenceOrder": 2,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        94,
+        95
+      ],
+      "sourceRubricEventId": "AO.RUB.C0263.02",
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0263.03",
+      "cueId": "AO.SM.C0263",
+      "actor": "PRIEST",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "BOWS HEAD TO CROSS",
+      "triggerLatin": null,
+      "sequenceOrder": 3,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        94,
+        95
+      ],
+      "sourceRubricEventId": "AO.RUB.C0263.03",
+      "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0265.01",
+      "cueId": "AO.SM.C0265",
+      "actor": "PRIEST",
+      "gesture": "BLESSING_CROSS",
+      "label": "MAKES ONE SIGN OF THE CROSS OVER THE PEOPLE",
+      "triggerLatin": "Pater, et Fílius, et Spíritus Sanctus",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        94,
+        95
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.F.C0265.01",
       "cueId": "AO.SM.C0265",
       "actor": "FAITHFUL",
@@ -2165,6 +3114,29 @@
       "iconStatus": "PENDING_ICON_BINDING"
     },
     {
+      "id": "GM.P.C0269.01",
+      "cueId": "AO.SM.C0269",
+      "actor": "PRIEST",
+      "gesture": "GOSPEL_BOOK_AND_BODY_CROSSES",
+      "label": "SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST",
+      "triggerLatin": "Initium sancti Evangélii",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        95
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
       "id": "GM.F.C0269.01",
       "cueId": "AO.SM.C0269",
       "actor": "FAITHFUL",
@@ -2184,6 +3156,29 @@
       ],
       "sourceRubricEventId": null,
       "displayPrimary": false,
+      "iconKey": null,
+      "iconStatus": "PENDING_ICON_BINDING"
+    },
+    {
+      "id": "GM.P.C0273.01",
+      "cueId": "AO.SM.C0273",
+      "actor": "PRIEST",
+      "gesture": "GENUFLECT",
+      "label": "GENUFLECTS TOWARD THE GOSPEL",
+      "triggerLatin": "Et Verbum caro factum est",
+      "sequenceOrder": 1,
+      "authorityClass": "1962_NORMATIVE",
+      "runtimeProfile": "ALL_1962_FORMS_UNLESS_CONDITIONED",
+      "condition": null,
+      "sources": [
+        "MR62_RITUS",
+        "CAMPION_1954"
+      ],
+      "campionPages": [
+        95
+      ],
+      "sourceRubricEventId": null,
+      "displayPrimary": true,
       "iconKey": null,
       "iconStatus": "PENDING_ICON_BINDING"
     },
