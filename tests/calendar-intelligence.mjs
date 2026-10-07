@@ -13,6 +13,7 @@ import {
   novenaTargetRegistryStatus,
 } from "../src/calendar/intelligence.js";
 import { CALENDAR_DEVOTIONAL_REGISTRY_VERSION, DEVOTIONAL_PRACTICE_REGISTRY, NOVENA_SOURCE_HOLDS, NOVENA_TARGET_IDS } from "../src/calendar/devotional-registry.js";
+import { NOVENA_START_KIND } from "../src/pray/novena-corpus-v4.js";
 
 assert.equal(CALENDAR_INTELLIGENCE_VERSION,"calendar-intelligence-v2-complete-novenas");
 assert.equal(CALENDAR_DEVOTIONAL_REGISTRY_VERSION,"calendar-devotional-registry-v2-bilingual-novena-freeze");
@@ -95,14 +96,26 @@ assert.equal(novenaStatusFor("immaculate_conception","2026-12-07").day,9);
 const immaculateHeart=novenaWindowFor("immaculate_heart",2026);
 assert.deepEqual(immaculateHeart,{start:"2026-08-13",end:"2026-08-21",feast:"2026-08-22"},"Immaculate Heart must prepare the traditional 22 August feast");
 assert.equal(novenaStatusFor("immaculate_heart","2026-08-21").day,9);
+const immaculateHeartOrdinary=novenaStatusFor("immaculate_heart","2026-01-01",{fr:false});
+assert.equal(immaculateHeartOrdinary.startKind,NOVENA_START_KIND.SUGGESTED);
+assert.match(immaculateHeartOrdinary.label,/Suggested start/);
+
 
 const stMichael=novenaWindowFor("st_michael",2026);
 assert.deepEqual(stMichael,{start:"2026-09-20",end:"2026-09-28",feast:"2026-09-29"},"St Michael novena must prepare Michaelmas");
 assert.equal(novenaStatusFor("st_michael","2026-09-20").day,1);
+const stMichaelOrdinary=novenaStatusFor("st_michael","2026-01-01",{fr:false});
+assert.equal(stMichaelOrdinary.startKind,NOVENA_START_KIND.SUGGESTED);
+assert.match(stMichaelOrdinary.label,/Suggested start/);
+
 
 const christKingNovena=novenaWindowFor("christ_the_king",2026);
 assert.deepEqual(christKingNovena,{start:"2026-10-16",end:"2026-10-24",feast:"2026-10-25"},"Christ the King novena must bind to the 1962 last Sunday of October");
 assert.equal(novenaStatusFor("christ_the_king","2026-10-24").day,9);
+const christKingOrdinary=novenaStatusFor("christ_the_king","2026-01-01",{fr:false});
+assert.equal(christKingOrdinary.startKind,NOVENA_START_KIND.TRADITIONAL);
+assert.match(christKingOrdinary.label,/Traditional start/);
+
 
 const anthony=novenaWindowFor("st_anthony_nine_tuesdays",2026);
 assert.deepEqual(anthony.occurrences,[
@@ -119,6 +132,10 @@ assert.equal(anthonyBetween.kind,"upcoming");
 assert.equal(anthonyBetween.day,6);
 assert.equal(anthonyBetween.next,"2026-05-19");
 assert.match(anthonyBetween.label,/Tuesday 6 of 9/);
+const anthonyOrdinary=novenaStatusFor("st_anthony_nine_tuesdays","2026-01-01",{fr:false});
+assert.equal(anthonyOrdinary.startKind,NOVENA_START_KIND.SUGGESTED);
+assert.match(anthonyOrdinary.label,/Suggested start/);
+
 
 const activeNovenas=calendarNovenaEvents("2026-05-15",{fr:false});
 assert.ok(activeNovenas.some(x=>x.novenaId==="holy_ghost"),"Calendar intelligence did not expose active Holy Ghost novena");
