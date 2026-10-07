@@ -1,4 +1,3 @@
-import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { normalizePresentationMode } from "./session-engine.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
@@ -42,7 +41,8 @@ const SHELL_STYLE = `
 }
 .ao-reader-top-action:active,.ao-reader-top-action:focus-visible{background:rgba(255,255,255,.055);outline:none}
 .ao-reader-top-action .ao-reader-top-copy{font:700 .52rem/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em}
-.ao-reader-top-icon{display:block;width:29px;height:29px;background:currentColor}
+.ao-reader-top-icon{display:block;width:29px;height:29px;color:currentColor}
+.ao-reader-top-icon svg{display:block;width:100%;height:100%}
 .ao-section-jump{
   appearance:none;border:0;background:transparent;color:#f1f3ee;min-width:0;height:46px;padding:0 8px;
   display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;
@@ -227,6 +227,7 @@ const SHELL_STYLE = `
 .ao-rail-copy{display:none!important}
 .ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
 .ao-rail .ao-icon-mask{width:36px;height:36px}
+.ao-rail-image-icon{display:block;width:36px;height:36px;object-fit:contain}
 
 .ao-schola-dock{
   position:absolute;z-index:9;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
@@ -361,10 +362,9 @@ function esc(value){
   return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
 
-function topAssetMask(assetId,fallback){
-  const url=resolveCanonicalAssetUrl(assetId);
-  if(!url)return `<span class="ao-reader-top-copy">${esc(fallback)}</span>`;
-  return `<span class="ao-reader-top-icon" data-ao-asset-id="${esc(assetId)}" data-ao-asset-renderer="mask" aria-hidden="true" style="-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`;
+function topNavSvg(kind){
+  if(kind==="home")return `<span class="ao-reader-top-icon" data-ao-donor-icon="home" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 10.7 12 3.8l8.5 6.9v9.1h-5.4v-5.7H8.9v5.7H3.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>`;
+  return `<span class="ao-reader-top-icon" data-ao-donor-icon="preferences" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M4 12h5M13 12h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="8" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="11" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></span>`;
 }
 
 function textValue(value){
@@ -494,9 +494,9 @@ export function buildReaderShellMarkup(prepared = {}) {
   return `<style data-ao-reader-shell-style>${SHELL_STYLE}</style>
 <section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}">
   <header class="ao-reader-top-ribbon" aria-label="Mass navigation">
-    <button class="ao-reader-top-action" type="button" data-reader-home data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask" aria-label="Back to Ad Orientem home">${topAssetMask("ao-nav-home","HOME")}</button>
+    <button class="ao-reader-top-action" type="button" data-reader-home aria-label="Back to Ad Orientem home">${topNavSvg("home")}</button>
     <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled><span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span></button>
-    <button class="ao-reader-top-action" type="button" data-reader-preferences data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask" aria-label="Mass preferences" aria-expanded="false">${topAssetMask("ao-nav-settings","PARAMS")}</button>
+    <button class="ao-reader-top-action" type="button" data-reader-preferences aria-label="Mass preferences" aria-expanded="false">${topNavSvg("preferences")}</button>
   </header>
 
   <div class="ao-state-ribbon" aria-live="polite">
@@ -540,7 +540,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest and bell cues">
       <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="priest-action" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-rail-copy" data-role="priest-action">—</span></div>
-      <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-rail-copy" data-role="bell">—</span></div>
+      <div class="ao-rail-item" data-channel="bell" data-active="false"><img class="ao-rail-image-icon" data-icon-slot="bell" alt="" hidden><span class="ao-rail-copy" data-role="bell">—</span></div>
     </aside>
   </div>
 
@@ -594,6 +594,19 @@ function syncRailVisibility(root){
   if(right)right.dataset.visible=String(live);
   stage.dataset.leftRail=String(live);
   stage.dataset.rightRail=String(live);
+}
+
+function applyImageIcon(root, slot, key, iconResolver){
+  const node=root.querySelector?.(`[data-icon-slot="${slot}"]`);
+  if(!node)return;
+  const url=key && typeof iconResolver==="function" ? iconResolver(key) : null;
+  if(url){
+    node.src=url;
+    node.hidden=false;
+  }else{
+    node.removeAttribute?.("src");
+    node.hidden=true;
+  }
 }
 
 function applyIcon(root, slot, key, iconResolver){
@@ -1186,6 +1199,7 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
     applyIcon(root,"priest-action-top",current.priestActionIconKey,iconResolver);
+    applyImageIcon(root,"bell",visibleBell ? "bells" : null,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
 
     const actionBadge=root.querySelector('[data-role="priest-action-badge"]');
