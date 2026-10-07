@@ -272,7 +272,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Un verbe peut se comporter comme un nom ou un adjectif"
+        }
+      }
     },
     {
       "id": "l27-b2",
@@ -289,7 +294,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "ad annuntiandum"
+        }
+      }
     },
     {
       "id": "l27-b3",
@@ -306,7 +316,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "tradendus est"
+        }
+      }
     },
     {
       "id": "l27-b4",
@@ -321,7 +336,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "donis ac datis / munera"
+        }
+      }
     },
     {
       "id": "l27-b5",
@@ -336,7 +356,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Demander si la forme s’accorde"
+        }
+      }
     },
     {
       "id": "l27-b6",
@@ -351,7 +376,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Gérondif et adjectif verbal convergent dans la traduction, pas dans la syntaxe"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -470,7 +500,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce que annuntiandum après ad ?",
+          "hint": "Il fonctionne comme un nom verbal après ad.",
+          "explanation": "C’est une construction classique ad + gérondif exprimant le but.",
+          "options": [
+            "gérondif à l’accusatif exprimant le but",
+            "adjectif verbal s’accordant avec un nom",
+            "parfait passif",
+            "pronom relatif"
+          ]
+        }
+      }
     },
     {
       "id": "l27-e2",
@@ -500,7 +543,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi tradendus est-il un adjectif verbal ?",
+          "hint": "L’accord est décisif.",
+          "explanation": "tradendus est un adjectif verbal.",
+          "options": [
+            "il s’accorde avec Filius",
+            "il suit ad",
+            "c’est un adverbe",
+            "il n’a pas de nom"
+          ]
+        }
+      }
     },
     {
       "id": "l27-e3",
@@ -530,7 +586,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle force tradendus est exprime-t-il ?",
+          "hint": "Adjectif verbal + sum.",
+          "explanation": "La périphrase exprime « doit être / est destiné à être ».",
+          "options": [
+            "nécessité / action destinée",
+            "simple fait au présent",
+            "ordre direct",
+            "possibilité seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l27-e4",
@@ -559,7 +628,19 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 27 à son sens.",
+          "hint": "Les trois appartiennent au vocabulaire figé de la leçon 27.",
+          "explanation": "Ceci vérifie la récupération lexicale.",
+          "matches": {
+            "causa": "cause / motif",
+            "donum": "don",
+            "munus": "don / offrande / charge"
+          }
+        }
+      }
     },
     {
       "id": "l27-e5",
@@ -588,7 +669,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle question distingue le mieux l’adjectif verbal du gérondif ?",
+          "hint": "La syntaxe prime sur la traduction.",
+          "explanation": "L’accord identifie l’emploi adjectival verbal.",
+          "options": [
+            "La forme en -nd- s’accorde-t-elle avec un nom ?",
+            "Est-elle en fin de phrase ?",
+            "Contient-elle un n ?",
+            "Se traduit-elle avec « pour » ?"
+          ]
+        }
+      }
     },
     {
       "id": "l27-e6",
@@ -618,7 +712,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie donis dans la phrase du Canon ?",
+          "hint": "Le lemme est donum.",
+          "explanation": "donis est une forme oblique plurielle de donum.",
+          "options": [
+            "dons",
+            "causes",
+            "rois",
+            "foules"
+          ]
+        }
+      }
     },
     {
       "id": "l27-e7",
@@ -648,7 +755,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie munera dans la phrase du Canon ?",
+          "hint": "Le lemme est munus.",
+          "explanation": "munera est le pluriel de munus.",
+          "options": [
+            "dons / offrandes",
+            "péchés",
+            "mains",
+            "jours"
+          ]
+        }
+      }
     },
     {
       "id": "l27-e8",
@@ -677,7 +797,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle construction exprime le plus couramment le but ici ?",
+          "hint": "Rappelez-vous ad annuntiandum.",
+          "explanation": "ad + gérondif est un schéma fréquent de but.",
+          "options": [
+            "ad + gérondif à l’accusatif",
+            "cum + pronom à l’ablatif",
+            "génitif seul",
+            "vocatif"
+          ]
+        }
+      }
     },
     {
       "id": "l27-e9",
@@ -701,7 +834,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « cause / motif ».",
+          "hint": "Il appartient au vocabulaire fondamental de la leçon 27.",
+          "explanation": "causa signifie « cause / motif »."
+        }
+      }
     },
     {
       "id": "l27-e10",
@@ -726,7 +866,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « don / offrande / charge ».",
+          "hint": "Il apparaît sous la forme munera.",
+          "explanation": "munus est le lemme."
+        }
+      }
     }
   ],
   "objectives": [
@@ -790,5 +937,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Ad laudandum / agendae gratiae",
+      "grammarFocus": "Gérondif et adjectif verbal",
+      "readingOutcome": "Lire les noms et adjectifs verbaux ainsi que les constructions d’obligation et de but.",
+      "objectives": [
+        "Distinguer le gérondif de l’adjectif verbal par la syntaxe.",
+        "Lire ad + gérondif pour exprimer le but.",
+        "Lire adjectif verbal + sum pour exprimer obligation ou nécessité.",
+        "Apprendre causa, donum et munus dans le vocabulaire du Canon et de l’offrande."
+      ]
+    }
+  }
 }
