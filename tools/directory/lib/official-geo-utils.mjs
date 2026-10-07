@@ -70,16 +70,21 @@ function dataAttributeCandidates(html,pageUrl){
 function pointFromUrl(url){
   let u;try{u=new URL(url);}catch{return null}
   const decoded=decodeURIComponent(u.href);
-  const patterns=[
-    /@(-?\d{1,2}(?:\.\d+)?),(-?\d{1,3}(?:\.\d+)?)(?:,|z|$)/i,
+  const latLngPatterns=[
+    /!3d(-?\d{1,2}(?:\.\d+)?)!4d(-?\d{1,3}(?:\.\d+)?)/i,
     /[?&#](?:q|query|destination|ll|center)=(-?\d{1,2}(?:\.\d+)?)(?:%2C|,)(-?\d{1,3}(?:\.\d+)?)/i,
     /[?&#]mlat=(-?\d{1,2}(?:\.\d+)?).*?[?&#]mlon=(-?\d{1,3}(?:\.\d+)?)/i,
     /#map=\d+(?:\.\d+)?\/(-?\d{1,2}(?:\.\d+)?)\/(-?\d{1,3}(?:\.\d+)?)/i,
-    /!3d(-?\d{1,2}(?:\.\d+)?)!4d(-?\d{1,3}(?:\.\d+)?)/i,
   ];
-  for(const re of patterns){
+  for(const re of latLngPatterns){
     const m=decoded.match(re);if(m){const p=finitePoint(m[1],m[2]);if(p)return p}
   }
+  const directionTarget=decoded.match(/!1d(-?\d{1,3}(?:\.\d+)?)!2d(-?\d{1,2}(?:\.\d+)?)/i);
+  if(directionTarget){
+    const p=finitePoint(directionTarget[2],directionTarget[1]);if(p)return p;
+  }
+  const center=decoded.match(/@(-?\d{1,2}(?:\.\d+)?),(-?\d{1,3}(?:\.\d+)?)(?:,|z|$)/i);
+  if(center){const p=finitePoint(center[1],center[2]);if(p)return p}
   return null;
 }
 function significantWords(value){
