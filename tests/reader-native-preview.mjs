@@ -8,6 +8,7 @@ const data={
   lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
   sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
   canonSourceMap:load("../data/presentation/reader-canon-source-map.v1.json"),
+  rubricEvents:load("../data/presentation/reader-rubric-events.v1.json"),
 };
 const guideData={registry:load("../data/presentation/guide-registry.v1.json"),url:"test://guide-registry"};
 const specialExtension=load("../data/mass/special-days-extension.v1.3.json");
@@ -61,6 +62,10 @@ const liveReady=await prepareNativeReaderPreview({
   prepared:livePrepared,presentationData:data,eventData,cueRegistries,guideData
 });
 assert.equal(liveReady.model.totalCards,39);
+assert.equal(liveReady.rubricState.supported,true);
+assert.equal(liveReady.rubricState.project("AO.SM.C0058").primaryPriestAction.label,"BOWS HEAD");
+assert.equal(liveReady.rubricState.project("AO.SM.C0174").events.length,6);
+assert.equal(liveReady.rubricState.project("AO.SM.C0204").activeStates.THUMB_INDEX_JOINED.value,true);
 assert.equal(liveReady.model.structureOwner,"SOURCE_FIRST_LIVE");
 assert.equal(liveReady.presentationModel.totalCards,48);
 assert.equal(liveReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
