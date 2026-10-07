@@ -9,7 +9,7 @@ This SOT implements the ownership decision in `data/learn/formation-gap-ownershi
 ## Corpus
 
 - **14 stages**
-- **75 source-backed claims**
+- **76 source-backed claims**
 - **12 source records**
 - **0 unresolved source IDs**
 - **0 unsourced claims**
