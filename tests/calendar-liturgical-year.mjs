@@ -123,11 +123,18 @@ assert.match(browser, /data-ao-cal-v384-era/,"Calendar lost the donor Current\/1
 assert.match(browser, /traditional-year-v384/,"Calendar no longer imports the extracted v38.4 donor contract");
 assert.match(browser, /data-cal-index-date/);
 assert.match(browser, /data-cal-pick-date/);
+assert.match(browser, /L\("Month","Mois"\)/, "Calendar fourth surface must be the Liturgical Month");
+assert.match(browser, /function monthGridIds\(monthId\)/, "Calendar lost its 42-cell month geometry");
+assert.match(browser, /function prepareMonth\(monthId,\{concurrency=3/, "Calendar month preload lost its bounded resolver concurrency");
+assert.match(browser, /data-cal-liturgical-marker/, "Calendar month cells lost semantic liturgical markers");
+assert.match(browser, /data-rank-tier/, "Calendar month cells lost rank salience");
+assert.match(browser, /dayLoads\.has\(id\)/, "Calendar no longer deduplicates day resolution across week and month loaders");
 assert.match(browser, /data-cal-mass/);
 assert.match(browser, /Open this Mass/);
 assert.doesNotMatch(browser, /scrollIntoView/, "Calendar must not vertically auto-scroll while centering the selected day");
 assert.match(browser, /repeat\(7,minmax\(0,1fr\)\)/, "Calendar month grid must use zero-minimum seven-column tracks");
 assert.match(browser, /overflow-y:auto;overflow-x:hidden/, "Calendar root must suppress accidental horizontal overflow");
+assert.match(browser, /height:66px!important/, "Calendar liturgical month lost its phone-readable cell height");
 
 const bodySource = browser.match(/function bodyMarkup\(\)\{[\s\S]*?\n\}\nfunction css/)?.[0] || "";
 assert.doesNotMatch(bodySource, /yearWheel\(selected,r\)/, "day surface must not restore the old decorative year ring");
