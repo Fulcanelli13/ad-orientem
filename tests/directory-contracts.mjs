@@ -54,9 +54,10 @@ for(const snapshot of researchSnapshots){
   assert.equal(snapshot.schema,"AO_DIRECTORY_RESEARCH_PROVIDER_V1");
   assert.equal(snapshot.records.length,expectedResearchCounts.get(snapshot.provider),snapshot.provider+" record-count drift");
   const expanded=expandResearchProviderSnapshot(snapshot);
-  assert.equal(expanded.venues.length,snapshot.records.length,snapshot.provider+" expansion lost venues");
-  assert.equal(expanded.ministries.length,snapshot.records.length,snapshot.provider+" expansion lost ministries");
-  assert.equal(expanded.schedules.length,snapshot.records.length,snapshot.provider+" expansion lost schedules");
+  const expectedExpandedCount=snapshot.provider==="ICKSP_FEDERATED_V13"?110:snapshot.records.length;
+  assert.equal(expanded.venues.length,expectedExpandedCount,snapshot.provider+" physical venue expansion drift");
+  assert.equal(expanded.ministries.length,expectedExpandedCount,snapshot.provider+" physical ministry expansion drift");
+  assert.equal(expanded.schedules.length,expectedExpandedCount,snapshot.provider+" physical schedule expansion drift");
   researchVenueCount+=expanded.venues.length;
   for(const venue of expanded.venues){
     assert.equal(auditVenue(venue).length,0,venue.venue_id+" failed venue audit");
@@ -84,11 +85,18 @@ for(const snapshot of researchSnapshots){
   }
   if(snapshot.provider==="ICKSP_FEDERATED_V13"){
     assert.ok(expanded.ministries.every(m=>m.community_id==="ICKSP"&&m.liturgical_usage.books==="1962"),"ICKSP supplement profile drifted");
-    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,84,"ICKSP strict current-Mass count drifted");
-    assert.equal(expanded.schedules.filter(s=>s.service_type==="SOURCE_ASSERTION").length,14,"ICKSP research-assertion count drifted");
+    assert.equal(snapshot.records.filter(row=>row.svc==="MASS").length,85,"ICKSP current-Mass candidate count drifted");
+    assert.equal(snapshot.records.filter(row=>row.svc==="SOURCE_ASSERTION").length,13,"ICKSP candidate assertion count drifted");
+    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,95,"ICKSP physical current-Mass count drifted");
+    assert.equal(expanded.schedules.filter(s=>s.service_type==="SOURCE_ASSERTION").length,15,"ICKSP physical research-assertion count drifted");
+    assert.equal(expanded.venues.filter(v=>v.upstream.parent_upstream_id).length,21,"ICKSP physical fan-out count drifted");
+    assert.ok(expanded.venues.some(v=>/icksp-stg-001-lafox/.test(v.venue_id)),"Agen Lafox physical venue missing");
+    assert.ok(expanded.venues.some(v=>/icksp-stg-027-conflans/.test(v.venue_id)),"Orleans Conflans physical venue missing");
+    assert.ok(expanded.venues.some(v=>/icksp-stg-023-steulalie/.test(v.venue_id)),"Montpellier Sainte-Eulalie venue missing");
+    assert.ok(expanded.venues.some(v=>/icksp-stg-124/.test(v.venue_id)&&v.name.official.includes("Holy Rosary")),"Ardee current Mass venue missing");
   }
 }
-assert.equal(researchVenueCount,348,"v1.9 research projection count drift");
+assert.equal(researchVenueCount,360,"v1.9 research physical projection count drift");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
@@ -98,14 +106,17 @@ assert.deepEqual(ickspReconciliation.publication_gate,{
   live_runtime_records:27,
   live_current_mass_records:26,
   federated_supplement_records:98,
-  federated_current_mass_records:84,
-  publishable_current_mass_total:110,
-  nonpublishable_total:15,
+  federated_current_mass_candidate_records:85,
+  federated_physical_projection_records:110,
+  federated_physical_current_mass_venues:95,
+  publishable_current_mass_candidates_total:111,
+  publishable_physical_mass_venues_total:121,
+  nonpublishable_candidate_total:14,
   provider_presence_only_total:5,
   public_mass_suspended_total:1,
   restricted_or_special_access_total:2,
   seasonal_or_occasional_total:5,
-  mass_eligibility_pending_total:2,
+  mass_eligibility_pending_total:1,
 });
 assert.equal(ickspReconciliation.newly_promoted_candidate_ids.length,49);
 assert.deepEqual(ickspReconciliation.live_recovered_mass_candidate_ids,["ICKSP-STG-055"]);
@@ -113,14 +124,23 @@ assert.equal(ickspReconciliation.provider_presence_only_candidate_ids.length,5);
 assert.equal(ickspReconciliation.public_mass_suspended_candidate_ids.length,1);
 assert.equal(ickspReconciliation.restricted_or_special_access_candidate_ids.length,2);
 assert.equal(ickspReconciliation.conditional_mass_evidence_not_promoted_ids.length,5);
-assert.equal(ickspReconciliation.no_published_current_times_candidate_ids.length,2);
+assert.deepEqual(ickspReconciliation.no_published_current_times_candidate_ids,["ICKSP-STG-028"]);
+assert.equal(ickspReconciliation.physical_venue_normalization.additional_physical_records,12);
+assert.equal(ickspReconciliation.physical_venue_normalization.additional_publishable_mass_venues,10);
+assert.equal(ickspReconciliation.ireland_northern_ireland_audit.current_official_locations.length,4);
+assert.equal(ickspReconciliation.ireland_northern_ireland_audit.ardee_status,"PROMOTED_CURRENT_MASS");
+assert.equal(ickspReconciliation.ireland_northern_ireland_audit.galway_current_sunday_time,"12:00");
+assert.deepEqual(
+  ickspReconciliation.ireland_northern_ireland_audit.negative_checks.map(x=>x.place).sort(),
+  ["Waterford","Wexford"]
+);
 
 const ickspFederated=researchSnapshots.find(snapshot=>snapshot.provider==="ICKSP_FEDERATED_V13");
 const expandedIcksp=expandResearchProviderSnapshot(ickspFederated);
 const massIndex=expandedIcksp.schedules.findIndex(schedule=>schedule.service_type==="MASS");
 const assertionIndex=expandedIcksp.schedules.findIndex(schedule=>schedule.service_type==="SOURCE_ASSERTION");
 const residualIckspRows=ickspFederated.records.filter(row=>row.svc==="SOURCE_ASSERTION");
-assert.equal(residualIckspRows.length,14);
+assert.equal(residualIckspRows.length,13);
 assert.ok(residualIckspRows.every(row=>String(row.pr||"").startsWith("ICKSP_")),"residual ICKSP assertion lacks an explicit hold reason");
 assert.ok(massIndex>=0&&assertionIndex>=0);
 assert.equal(publishableDirectoryRecords([{
