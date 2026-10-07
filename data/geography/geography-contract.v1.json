@@ -19,7 +19,8 @@
     "Directory venue-to-place links require explicit provenance and may remain REVIEW or UNKNOWN.",
     "A nearby custom, shrine or traditional community must never be inferred to be associated with another entity solely from geographic proximity.",
     "Coordinates are locators, not identity keys.",
-    "Stable ids must survive source refreshes and importer changes."
+    "Stable ids must survive source refreshes and importer changes.",
+    "Publishable Place coordinates require explicit precision, provenance, source reference and country match metadata; coordinates without provenance remain non-publishable."
   ],
   "enums": {
     "areaSystem": [
@@ -71,6 +72,19 @@
       "PROBABLE",
       "REVIEW",
       "UNKNOWN"
+    ],
+    "placeGeoPrecision": [
+      "site",
+      "complex_anchor",
+      "address",
+      "street",
+      "locality"
+    ],
+    "placeGeoSource": [
+      "OFFICIAL_SOURCE",
+      "OSM",
+      "MANUAL",
+      "OTHER"
     ]
   },
   "stableIdPatterns": {
@@ -81,9 +95,10 @@
   "releaseGates": {
     "identity": "Every published area/place must have a stable id and canonical name.",
     "hierarchy": "Parent relationships must reference explicit geo area ids; no hierarchy may be inferred from display text alone.",
-    "location": "Every mappable place requires usable coordinates or a usable address.",
+    "location": "Every mappable place requires a usable address; coordinates become publishable only when the Place geo provenance contract passes.",
     "provenance": "Directory-to-place bridges require source ids.",
     "separation": "Directory venues remain operational records; places remain shared geographic identities.",
-    "associationSafety": "No cross-domain association may be inferred solely from distance."
+    "associationSafety": "No cross-domain association may be inferred solely from distance.",
+    "placeGeoProvenance": "Published Place map coordinates require valid latitude/longitude, supported precision/source class, source_url, source_ref, matched_country_code, verified_at, and OSM attribution when applicable."
   }
 }
