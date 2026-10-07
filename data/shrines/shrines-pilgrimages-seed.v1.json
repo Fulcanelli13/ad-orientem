@@ -323,6 +323,104 @@
         "SHR-MARTYRS-MINISTRY"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:loreto-holy-house",
+      "place_id": "place:IT:loreto-santa-casa",
+      "name": "Santuario Pontificio della Santa Casa di Loreto",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Blessed Virgin Mary of Loreto / Holy House",
+      "origin_summary": "Pontifical Marian sanctuary centered on the Holy House, traditionally associated with the house of Nazareth and the Annunciation.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-LORETO-CONTACT",
+        "SHR-LORETO-HOLY-HOUSE",
+        "PIL-LORETO-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:pompei-rosary",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "name": "Pontificio Santuario della Beata Maria Vergine del Santo Rosario di Pompei",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of the Rosary of Pompeii",
+      "origin_summary": "Pontifical Marian shrine founded through the apostolate of Saint Bartolo Longo and centered on devotion to the Rosary and the Supplica.",
+      "associated_saints": [
+        "Saint Bartolo Longo"
+      ],
+      "source_ids": [
+        "SHR-POMPEI-CONTACT",
+        "PIL-POMPEI-SUPPLICA-MAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:PL:jasna-gora-czestochowa",
+      "place_id": "place:PL:jasna-gora",
+      "name": "Jasna Góra",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Częstochowa",
+      "origin_summary": "Pauline monastery and major Polish Marian pilgrimage shrine centered on the icon of Our Lady of Częstochowa.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-JASNA-GORA-CONTACT",
+        "PIL-JASNA-GORA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:PL:kalwaria-zebrzydowska",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "name": "Sanktuarium Pasyjno-Maryjne w Kalwarii Zebrzydowskiej",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Kalwaria",
+      "origin_summary": "Bernardine Passion-Marian pilgrimage sanctuary with devotional paths, rosary practice and major Assumption observances.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-KALWARIA-CONTACT",
+        "PIL-KALWARIA-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:GB:walsingham-our-lady",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "name": "Catholic National Shrine and Basilica of Our Lady, Walsingham",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Walsingham",
+      "origin_summary": "Catholic National Shrine and Basilica at Walsingham, restored around the Slipper Chapel and dedicated to the mystery of the Incarnation and Our Lady of Walsingham.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-WALSINGHAM-CONTACT",
+        "PIL-WALSINGHAM-FEAST",
+        "PIL-WALSINGHAM-LMS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:GB:holywell-st-winefride",
+      "place_id": "place:GB:holywell-st-winefride",
+      "name": "St Winefride's Shrine & Well",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Winefride",
+      "origin_summary": "Ancient Welsh Catholic pilgrimage shrine centered on St Winefride's Well, with an unbroken tradition of pilgrimage and veneration.",
+      "associated_saints": [
+        "Saint Winefride",
+        "Saint Beuno"
+      ],
+      "source_ids": [
+        "SHR-HOLYWELL-CONTACT",
+        "PIL-HOLYWELL-FEAST",
+        "PIL-HOLYWELL-LMS"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -774,6 +872,138 @@
         "PIL-MARTYRS-SSPX"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:loreto-destination",
+      "name": "Pilgrimage to the Holy House of Loreto",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:loreto-holy-house",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:loreto:our-lady-feast"
+      ],
+      "scope_note": "Open pilgrimage destination centered on the Holy House, with a major annual Venuta and Our Lady of Loreto observance on 9–10 December.",
+      "source_ids": [
+        "SHR-LORETO-HOLY-HOUSE",
+        "PIL-LORETO-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:pompei-destination",
+      "name": "Pilgrimage to Our Lady of the Rosary of Pompeii",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:pompei-rosary",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:pompei:supplica-may-8"
+      ],
+      "scope_note": "Rosary pilgrimage destination whose recurring 8 May Supplica draws large numbers of pilgrims to the sanctuary.",
+      "source_ids": [
+        "SHR-POMPEI-CONTACT",
+        "PIL-POMPEI-SUPPLICA-MAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:PL:jasna-gora-destination",
+      "name": "Pilgrimage to Jasna Góra",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:PL:jasna-gora-czestochowa",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:jasna-gora:czestochowa-feast"
+      ],
+      "scope_note": "Major Polish Marian pilgrimage destination receiving large organized and walking pilgrimages, with the 26 August feast of Our Lady of Częstochowa as a principal annual observance.",
+      "source_ids": [
+        "SHR-JASNA-GORA-CONTACT",
+        "PIL-JASNA-GORA-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:PL:kalwaria-destination",
+      "name": "Pilgrimage to Kalwaria Zebrzydowska",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:PL:kalwaria-zebrzydowska",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:kalwaria:assumption"
+      ],
+      "scope_note": "Passion-Marian pilgrimage destination with devotional paths and a major annual Assumption cycle from 9 to 16 August.",
+      "source_ids": [
+        "SHR-KALWARIA-CONTACT",
+        "PIL-KALWARIA-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:walsingham-destination",
+      "name": "Pilgrimage to Our Lady of Walsingham",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:walsingham-our-lady",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:walsingham:our-lady-feast"
+      ],
+      "scope_note": "Catholic National Shrine pilgrimage destination whose feast of Our Lady of Walsingham is observed on 24 September.",
+      "source_ids": [
+        "SHR-WALSINGHAM-CONTACT",
+        "PIL-WALSINGHAM-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:walsingham-lms",
+      "name": "Latin Mass Society walking pilgrimage to Walsingham",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:walsingham-our-lady",
+      "route_ids": [
+        "route:GB:ely-walsingham-lms"
+      ],
+      "temporal_link_ids": [
+        "temporal:walsingham:lms-walk"
+      ],
+      "scope_note": "Annual traditional Catholic walking pilgrimage from Ely to Walsingham with Traditional High Masses, devotions and procession at the Catholic National Shrine.",
+      "source_ids": [
+        "PIL-WALSINGHAM-LMS",
+        "SHR-WALSINGHAM-CONTACT"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:holywell-destination",
+      "name": "Pilgrimage to St Winefride's Well",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:holywell-st-winefride",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:holywell:saint-winefride-feast"
+      ],
+      "scope_note": "Ancient Welsh pilgrimage destination focused on the Well, relic veneration and devotion to Saint Winefride; her liturgical feast is observed locally on 3 November.",
+      "source_ids": [
+        "SHR-HOLYWELL-CONTACT",
+        "PIL-HOLYWELL-FEAST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:holywell-lms",
+      "name": "Latin Mass Society Holywell pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:holywell-st-winefride",
+      "route_ids": [
+        "route:GB:holywell-church-to-well"
+      ],
+      "temporal_link_ids": [
+        "temporal:holywell:lms-pilgrimage"
+      ],
+      "scope_note": "Annual first-Sunday-of-July traditional pilgrimage with High Mass, rosary procession to St Winefride's Well and veneration of the saint's relic.",
+      "source_ids": [
+        "PIL-HOLYWELL-LMS",
+        "SHR-HOLYWELL-CONTACT"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -894,6 +1124,36 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "PIL-MARTYRS-SSPX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:GB:ely-walsingham-lms",
+      "name": "Ely to Walsingham",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Ely, Cambridgeshire",
+      "destination_place_id": "place:GB:walsingham-catholic-shrine",
+      "stage_count": 3,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-WALSINGHAM-LMS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:GB:holywell-church-to-well",
+      "name": "St Winefride's Parish Church to St Winefride's Well",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "St Winefride's RC Parish Church, 15 Well Street, Holywell",
+      "destination_place_id": "place:GB:holywell-st-winefride",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-HOLYWELL-LMS"
       ],
       "confidence": "HIGH"
     }
@@ -1169,6 +1429,116 @@
       "source_event_label": "Annual Canadian Martyrs traditional pilgrimage",
       "source_ids": [
         "PIL-MARTYRS-SSPX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:loreto:our-lady-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:IT:loreto-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.loreto_our_lady",
+      "source_event_label": "Feast of the Blessed Virgin Mary of Loreto",
+      "source_ids": [
+        "PIL-LORETO-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:pompei:supplica-may-8",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:IT:pompei-destination",
+      "relation": "SOURCE_EVENT",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.pompeii_supplica_may_8",
+      "source_event_label": "Supplica to Our Lady of the Rosary of Pompeii",
+      "source_ids": [
+        "PIL-POMPEI-SUPPLICA-MAY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:jasna-gora:czestochowa-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:PL:jasna-gora-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.jasna_gora_czestochowa",
+      "source_event_label": "Feast of Our Lady of Częstochowa",
+      "source_ids": [
+        "PIL-JASNA-GORA-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:kalwaria:assumption",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:PL:kalwaria-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.assumption_of_mary",
+      "source_event_label": "Assumption pilgrimage cycle at Kalwaria Zebrzydowska",
+      "source_ids": [
+        "PIL-KALWARIA-ASSUMPTION"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:walsingham:our-lady-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:GB:walsingham-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.walsingham_our_lady",
+      "source_event_label": "Feast of Our Lady of Walsingham",
+      "source_ids": [
+        "PIL-WALSINGHAM-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:walsingham:lms-walk",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:GB:walsingham-lms",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual LMS walking pilgrimage over the August Bank Holiday period",
+      "source_ids": [
+        "PIL-WALSINGHAM-LMS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:holywell:saint-winefride-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:GB:holywell-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.holywell_saint_winefride",
+      "source_event_label": "Liturgical feast of Saint Winefride",
+      "source_ids": [
+        "PIL-HOLYWELL-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:holywell:lms-pilgrimage",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:GB:holywell-lms",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Annual LMS Holywell pilgrimage on the first Sunday of July",
+      "source_ids": [
+        "PIL-HOLYWELL-LMS"
       ],
       "confidence": "HIGH"
     }
