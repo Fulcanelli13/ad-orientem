@@ -644,8 +644,8 @@ export const AO_CANONICAL_CORE_ASSETS=Object.freeze({
     "status": "FROZEN_ACTIVE"
   },
   "ao-nav-learn": {
-    "semanticId": "NAV.GLOBAL.LEARN",
-    "label": "Learn",
+    "semanticId": "NAV.GLOBAL.FORMATION",
+    "label": "Formation",
     "assetId": "ao-nav-learn",
     "kind": "mask",
     "path": "assets/active/navigation/ao-nav-learn.png",
