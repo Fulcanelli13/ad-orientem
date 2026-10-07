@@ -225,6 +225,7 @@ const SHELL_STYLE = `
 .ao-rail-item[data-major="true"]{width:64px;height:64px;min-height:64px;z-index:8;transform:scale(1.06)}
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
+.ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 system-ui,sans-serif;letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
 .ao-rail .ao-icon-mask{width:36px;height:36px}
 
 .ao-schola-dock{
@@ -641,6 +642,7 @@ export function createReaderDomAdapter({
   let scholaProgressRaf=0;
   let scholaFallbackTimer=0;
   let scholaTickerIdentity=null;
+  let suppressNavClickUntil=0;
 
   function setMode(next){
     const requested=normalizePresentationMode(next);
@@ -1006,6 +1008,7 @@ export function createReaderDomAdapter({
         return;
       }
       const nav=event.target?.closest?.("[data-reader-nav]");
+      if(nav && Date.now()<suppressNavClickUntil){return;}
       if(nav?.dataset.readerNav==="previous"){onPrevious?.(current,prepared);return;}
       if(nav?.dataset.readerNav==="next"){onNext?.(current,prepared);return;}
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
@@ -1042,6 +1045,7 @@ export function createReaderDomAdapter({
       navButton.addEventListener?.("touchend",event=>{
         event.preventDefault?.();
         event.stopPropagation?.();
+        suppressNavClickUntil=Date.now()+550;
         if(navButton.dataset.readerNav==="previous")onPrevious?.(current,prepared);
         else if(navButton.dataset.readerNav==="next")onNext?.(current,prepared);
       },{passive:false});
