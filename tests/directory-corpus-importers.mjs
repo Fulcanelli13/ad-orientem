@@ -68,10 +68,11 @@ const witnessMerge=mergeIbpIndexWitness(ibp,{
     {country_code:"FR",diocese:"Diocèse de Chartres",city:"Manou",label:"Manou"}
   ]
 });
-assert.equal(witnessMerge.length,2);
+assert.equal(witnessMerge.length,3);
 assert.equal(witnessMerge[0].city,"Paris");
 assert.equal(witnessMerge[1].city,"Manou");
 assert.equal(witnessMerge[1].witnessOnly,true);
+assert.equal(witnessMerge[2].sourceDiscoveryExtra,true);
 const ibpDataset=buildIbpDataset([{
   title:"Paris – Centre Saint-Paul",address:"12 rue Saint Joseph, 75002 Paris",countryCode:"FR",
   diocese:"Archidiocèse de Paris",detailUrl:"https://www.institutdubonpasteur.org/example",
