@@ -1,6 +1,6 @@
 {
   "schema": "ao-nonmass-primary-donor-sources-v1",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "rule": "Exact donor/current certification may only use primary donor bytes or an immutable render derived from those exact bytes. Recovered/reconstructed modular code is supporting evidence, not a substitute primary donor.",
   "sources": [
     {
@@ -169,8 +169,42 @@
       "persistent File Library",
       "prior ChatGPT conversation context",
       "active /mnt/data artifact mount",
-      "exact uploaded Ad_Orientem_v3_4_16.html successor bytes and embedded certification chain"
+      "exact uploaded Ad_Orientem_v3_4_16.html successor bytes and embedded certification chain",
+      "Persistent File Library exact title search for Ad_Orientem_v3_4_14.html",
+      "Persistent File Library 2026-10-02T20:30Z–22:30Z creation-window listing around the recorded v3.4.14 generation",
+      "Persistent File Library exact title search for Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html",
+      "Persistent File Library exact title search for Ad_Orientem_NON_MASS_HEAD_v3_23_NOVENA_FREEZE_CALENDAR_DASHBOARD_C3_FINAL.html",
+      "Persistent File Library 2026-10-04T14:35Z–15:20Z creation-window listing around recorded v3.22/v3.23 generation",
+      "GitHub commit-message search for v3.4.14, v3.22 and v3.23 exact filenames"
     ],
-    "result": "Exact v3.4.16 successor bytes were recovered and hashed, and the N3 donor hash was revalidated. v3.4.16 proves the v3.4.14 lineage/preserved Rosary rail but is not byte-identical evidence for v3.4.14: later cross-marker repair passes altered content and the frozen v3.4.10 prefix hash does not match. No exact primary bytes for V3_4_14_ROSARY_FINAL or NON_MASS_HEAD_V3_22 were recovered. Certification remains open; reconstructed or later-successor code must not be substituted."
+    "result": "Current implementation remains green. Historical generation records now confirm that v3.4.14 and v3.22 were created in prior ChatGPT sessions, and v3.23 was documented as an append-only successor to v3.22, but neither exact primary file nor v3.23 successor bytes are Library-, repository-, or commit-addressable. The recorded exact v3.4.16 successor hash remains provenance support only and is not a substitute for v3.4.14 primary bytes. Certification remains open.",
+    "latestForensicAttempt": {
+      "performedAt": "2026-10-07",
+      "v3414": {
+        "historicalGenerationRecord": "2026-10-02T21:02:31Z",
+        "historicalSandboxPath": "sandbox:/mnt/data/Ad_Orientem_v3_4_14.html",
+        "libraryWindowSearched": "2026-10-02T20:30:00Z–2026-10-02T22:30:00Z",
+        "libraryResult": "NO_MATCHING_PRIMARY_OR_SUCCESSOR_HTML",
+        "gitCommitSearchResult": "NO_MATCHING_COMMIT",
+        "conclusion": "GENERATION_HISTORY_CONFIRMED_PRIMARY_BYTES_NOT_RECOVERED"
+      },
+      "v322": {
+        "historicalGenerationRecord": "2026-10-04T14:52:03Z",
+        "historicalSandboxPath": "sandbox:/mnt/data/Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2.html",
+        "documentedAppendOnlySuccessor": "Ad_Orientem_NON_MASS_HEAD_v3_23_NOVENA_FREEZE_CALENDAR_DASHBOARD_C3_FINAL.html",
+        "successorGenerationRecord": "2026-10-04T15:06:48Z",
+        "libraryWindowSearched": "2026-10-04T14:35:00Z–2026-10-04T15:20:00Z",
+        "libraryResult": "NO_FILES_IN_GENERATION_WINDOW",
+        "gitCommitSearchResult": "NO_MATCHING_V3_22_OR_V3_23_COMMIT",
+        "conclusion": "GENERATION_AND_SUCCESSOR_HISTORY_CONFIRMED_PRIMARY_AND_SUCCESSOR_BYTES_NOT_RECOVERED"
+      },
+      "v3416": {
+        "recordedRecoveredSha256": "f34ab3281ac16f8125e13cb3e9e1173efe1f0e10185f163b6604bdae30d0bc86",
+        "recordedByteLength": 54403486,
+        "currentPersistentLibraryLookup": "NOT_ADDRESSABLE_BY_TITLE_OR_2026-10-07_LIBRARY_INVENTORY",
+        "conclusion": "RECORDED_IMMUTABLE_SUCCESSOR_HASH_REMAINS_PROVENANCE_ONLY_NOT_V3414_PRIMARY"
+      },
+      "releaseDecision": "DO_NOT_CLOSE_EXACT_NON_MASS_DONOR_PARITY_FROM_GENERATION_HISTORY_OR_SUCCESSOR_LINEAGE_ALONE"
+    }
   }
 }
