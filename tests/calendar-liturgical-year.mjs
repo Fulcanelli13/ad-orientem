@@ -6,6 +6,7 @@ import {
   buildMajorCelebrations,
   nextMajorCelebration,
 } from "../src/calendar/liturgical-year.js";
+import { v384Dates, v384Event, v384YearHTML, v384DisciplineHTML } from "../src/calendar/traditional-year-v384.js";
 
 function assertContinuous(year) {
   assert.equal(year.periods.reduce((sum, period) => sum + period.days, 0), year.totalDays);
@@ -57,6 +58,42 @@ assert.equal(byEnglishName.get("Christ the King")?.date, "2026-10-25");
 assert.equal(byEnglishName.get("All Saints")?.date, "2026-11-01");
 assert.equal(byEnglishName.get("Commemoration of All the Faithful Departed")?.date, "2026-11-02");
 
+const traditional=v384Dates(2026);
+assert.equal(traditional.easter,"2026-04-05");
+assert.equal(traditional.septuagesima,"2026-02-01");
+assert.equal(traditional.ash,"2026-02-18");
+assert.equal(traditional.corpus,"2026-06-04");
+assert.equal(traditional.christKing,"2026-10-25");
+assert.deepEqual(traditional.emberSept,["2026-09-23","2026-09-25","2026-09-26"]);
+
+const octoberEvent=v384Event("2026-10-07",{fr:false});
+assert.equal(octoberEvent?.key,"october");
+assert.equal(octoberEvent?.title,"Month of the Holy Rosary");
+const christKingEvent=v384Event("2026-10-25",{fr:false});
+assert.equal(christKingEvent?.key,"christ-king","specific Christ the King event must outrank generic October observance");
+const septEvent=v384Event("2026-02-01",{fr:false});
+assert.equal(septEvent?.key,"septuagesima");
+
+const v384Year=v384YearHTML("2026-10-07",{fr:false});
+for(const phrase of ["Relevant today","Month of the Holy Rosary","Current / traditional status","Traditional year · 2026","Candlemas","Septuagesima","Lenten Ember Days","Rogation Days","Corpus Christi","September Ember Days","Holy Souls","Advent Ember Days","Directory on Popular Piety","1962 September Ember reckoning"])assert.ok(v384Year.includes(phrase),phrase+" missing from v38.4 traditional-year recovery");
+assert.match(v384YearHTML("2026-10-07",{fr:true}),/Mois du Saint Rosaire/);
+assert.match(v384YearHTML("2026-10-07",{fr:true}),/Année traditionnelle · 2026/);
+
+const currentDiscipline=v384DisciplineHTML("2026-10-09",{fr:false,era:"current"});
+assert.match(currentDiscipline,/Current law/);
+assert.match(currentDiscipline,/At least one hour before Holy Communion/);
+assert.match(currentDiscipline,/Today is Friday, a universal penitential day/);
+assert.match(currentDiscipline,/can\. 919/);
+const discipline1962=v384DisciplineHTML("2026-10-07",{fr:false,era:"1962"});
+assert.match(discipline1962,/three hours from solid food and alcoholic drink, one hour from non-alcoholic drink/);
+assert.match(discipline1962,/HISTORICAL DISCIPLINE/);
+assert.match(discipline1962,/SOURCE-SENSITIVE/);
+assert.match(discipline1962,/Sacram Communionem/);
+const disciplineOlder=v384DisciplineHTML("2026-10-07",{fr:false,era:"older"});
+assert.match(disciplineOlder,/Before the Pius XII mitigations/);
+assert.match(disciplineOlder,/Vigils, Ember Days and other fasts/);
+assert.match(disciplineOlder,/Christus Dominus/);
+
 const browser = fs.readFileSync(new URL("../src/calendar/browser-entry.js", import.meta.url), "utf8");
 assert.match(browser, /modular-calendar-v2-liturgical-year/);
 assert.match(browser, /calendarView==="year"\?yearSurface/);
@@ -64,6 +101,10 @@ assert.match(browser, /data-cal-view/);
 assert.match(browser, /aoCalV2Ring/);
 assert.match(browser, /aoCalV2Timeline/);
 assert.match(browser, /aoCalV2JourneyRail/);
+assert.match(browser, /v384Companion/,"Calendar year view lost the v38.4 traditional companion");
+assert.match(browser, /data-ao-cal-v384-panel/,"Calendar lost the v38.4 year\/discipline switch");
+assert.match(browser, /data-ao-cal-v384-era/,"Calendar lost the donor Current\/1962\/Earlier discipline switch");
+assert.match(browser, /traditional-year-v384/,"Calendar no longer imports the extracted v38.4 donor contract");
 assert.match(browser, /data-cal-index-date/);
 assert.match(browser, /data-cal-pick-date/);
 assert.match(browser, /data-cal-mass/);

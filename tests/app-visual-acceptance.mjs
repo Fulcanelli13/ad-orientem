@@ -763,7 +763,21 @@ try{
   assert.equal(seasonalAlias?.ok,true,"Seasonal compatibility route failed");
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:5000});
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Ring").count(),1,"Seasonal compatibility route did not reach the Liturgical Year surface");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion").count(),1,"v38.4 Traditional Liturgical Year companion is missing");
+  assert.equal(await page.locator("#ao-calendar-modular-root .v384DateLead").count(),1,"v38.4 contextual date lead is missing");
+  assert.equal(await page.locator("#ao-calendar-modular-root .v384SectionLabel").count(),1,"v38.4 full traditional-year index is missing");
+  assert.equal(await page.locator("#ao-calendar-modular-root .v384Practice").count()>=12,true,"v38.4 traditional-year rows are incomplete");
   await shot("04f-seasonal-year-alias");
+  await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-panel='discipline']").click();
+  assert.equal(await page.locator("#ao-calendar-modular-root .v384EraTabs [data-ao-cal-v384-era]").count(),3,"v38.4 discipline era switch is incomplete");
+  assert.match((await page.locator("#ao-calendar-modular-root .aoCalV384Companion").innerText()),/Older Catholic discipline is preserved here as historical knowledge/);
+  await shot("04g-calendar-v384-discipline-current");
+  await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-era='1962']").click();
+  const discipline1962Text=await page.locator("#ao-calendar-modular-root .aoCalV384Companion").innerText();
+  assert.match(discipline1962Text,/HISTORICAL DISCIPLINE/);
+  assert.match(discipline1962Text,/SOURCE-SENSITIVE/);
+  assert.match(discipline1962Text,/three hours from solid food and alcoholic drink/);
+  await shot("04h-calendar-v384-discipline-1962");
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
 
