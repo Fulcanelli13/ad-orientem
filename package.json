@@ -101,12 +101,13 @@
     "test:pray-novenas": "node tests/pray-novenas.mjs",
     "test:pray-focus": "node tests/pray-focus.mjs",
     "test:pray-traditional": "node tests/pray-traditional-life.mjs",
-    "test:learn-traditional": "node tests/learn-traditional-life.mjs",
+    "test:learn-traditional": "node tests/learn-traditional-life.mjs && node tests/learn-latin-core-freeze.mjs",
     "test:donor-visual": "node tests/nonmass-donor-reference-e2e.mjs",
     "test:calendar": "node tests/calendar-liturgical-year.mjs",
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
-    "test:date-format": "node tests/date-format-coherence.mjs"
+    "test:date-format": "node tests/date-format-coherence.mjs",
+    "test:learn-latin-core": "node tests/learn-latin-core-freeze.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
