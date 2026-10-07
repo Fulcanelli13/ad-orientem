@@ -92,9 +92,12 @@ function coherentGeoList(geos){
   const first=geos[0];
   return geos.every(g=>Math.abs(Number(g.lat)-Number(first.lat))<=0.00035&&Math.abs(Number(g.lng)-Number(first.lng))<=0.00035);
 }
-async function recoverLinkedOfficialGeo(record,anchors,{fetchImpl=fetch,maxPages=2}={}){
-  const pages=anchors.filter(a=>likelyGeoLink(a,record.detailUrl)).map(a=>a.url);
-  const unique=[...new Set(pages)].filter(url=>url!==record.detailUrl).slice(0,maxPages);
+export function linkedOfficialGeoPageCandidates(anchors,detailUrl,{maxPages=2}={}){
+  const pages=anchors.filter(a=>likelyGeoLink(a,detailUrl)).map(a=>a.url);
+  return [...new Set(pages)].filter(url=>url!==detailUrl).slice(0,maxPages);
+}
+export async function recoverLinkedOfficialGeo(record,anchors,{fetchImpl=fetch,maxPages=2}={}){
+  const unique=linkedOfficialGeoPageCandidates(anchors,record.detailUrl,{maxPages});
   const recovered=[],rejected=[];let attempted=0;
   for(const url of unique){
     attempted+=1;
