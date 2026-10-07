@@ -1,0 +1,39 @@
+{
+  "schema": "AO_DIRECTORY_ICKSP_ADDRESS_PRECISION_AUDIT_V1",
+  "version": "1.0.0",
+  "generated_at": "2026-10-07T22:20:00Z",
+  "scope": {
+    "federated_physical_venues": 120,
+    "current_mass_physical_venues": 104
+  },
+  "result": {
+    "street_or_property_level": 103,
+    "locality_only": 16,
+    "named_place_only": 1,
+    "current_mass_locality_only": 3
+  },
+  "current_mass_locality_only": [
+    {
+      "id": "ICKSP-STG-108",
+      "name": "Chapelle Notre-Dame-du-Sacré-Cœur",
+      "locality": "Mouila",
+      "country_code": "GA",
+      "disposition": "KEEP_LOW_PRECISION_UNTIL_FIRST_PARTY_STREET_OR_PROPERTY_LOCATION"
+    },
+    {
+      "id": "ICKSP-STG-109",
+      "name": "Chapelle Sainte-Thérèse-de-l’Enfant-Jésus",
+      "locality": "Mouila",
+      "country_code": "GA",
+      "disposition": "KEEP_LOW_PRECISION_UNTIL_FIRST_PARTY_STREET_OR_PROPERTY_LOCATION"
+    },
+    {
+      "id": "ICKSP-STG-111",
+      "name": "Chapelle de l’École Saint-François-de-Sales",
+      "locality": "Mouila",
+      "country_code": "GA",
+      "disposition": "KEEP_LOW_PRECISION_UNTIL_FIRST_PARTY_STREET_OR_PROPERTY_LOCATION"
+    }
+  ],
+  "note": "All other current-Mass physical venues have either a street/property-level address or a named physical place. Locality-only rows must not be promoted to building/address precision solely because a geocoder returns a result."
+}
