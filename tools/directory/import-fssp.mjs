@@ -35,6 +35,11 @@ function rowLink(row,pageUrl){
     ?? links.find(a=>a.url!==pageUrl)?.url
     ?? null;
 }
+const FSSP_CONTROL_TITLES=new Set(["←","→","↑","↓","+","-","Home","End","Page Up","Page Down"]);
+function isDirectoryControlRow(title,address){
+  if(FSSP_CONTROL_TITLES.has(String(title??"").trim()))return true;
+  return /^(?:Move (?:left|right|up|down)|Zoom (?:in|out)|Jump (?:left|right|up|down) by 75%)$/i.test(String(address??"").trim());
+}
 function rowRecord(row,pageUrl,index){
   const texts=row.cells.map(c=>c.text.trim());
   const descIndex=texts.findIndex(t=>/(?:Arch)?Dioc(?:ese|èse|esis)|Masses?|Messes?|Misas?/i.test(t));
@@ -49,7 +54,7 @@ function rowRecord(row,pageUrl,index){
     address=nonEmpty[1]?.text??null;
     description=nonEmpty.slice(2).map(x=>x.text).join(" ");
   }
-  if(!title||/^(image|title|address|description|link)$/i.test(title)||/^(image|title|address|description|link)$/i.test(address??""))return null;
+  if(!title||/^(image|title|address|description|link)$/i.test(title)||/^(image|title|address|description|link)$/i.test(address??"")||isDirectoryControlRow(title,address))return null;
   const countryCode=countryCodeFromText(address)??countryCodeFromText(description);
   const detailUrl=rowLink(row,pageUrl);
   return {index,title,address,description,countryCode,detailUrl,diocese:dioceseFromText(description),massRaw:massText(description)};
