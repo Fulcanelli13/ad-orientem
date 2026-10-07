@@ -693,7 +693,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Identifier d’abord la partie"
+        }
+      }
     },
     {
       "id": "l38-b2",
@@ -710,7 +715,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Introït et chants"
+        }
+      }
     },
     {
       "id": "l38-b3",
@@ -727,7 +737,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Oraison, Secrète, Postcommunion"
+        }
+      }
     },
     {
       "id": "l38-b4",
@@ -744,7 +759,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Épître et Évangile"
+        }
+      }
     },
     {
       "id": "l38-b5",
@@ -759,7 +779,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Inférer avant de consulter une glose"
+        }
+      }
     },
     {
       "id": "l38-b6",
@@ -774,7 +799,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "De l’Introït à la Postcommunion"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -1029,7 +1059,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle partie doit se comporter le plus comme un chant psalmique ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Introït",
+            "Oraison",
+            "Secrète",
+            "Postcommunion"
+          ]
+        }
+      }
     },
     {
       "id": "l38-e2",
@@ -1059,7 +1102,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelles parties réutilisent le plus directement l’architecture de l’oraison ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Oraison, Secrète et Postcommunion",
+            "Épître et Évangile",
+            "Introït seulement",
+            "Graduel seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l38-e3",
@@ -1089,7 +1145,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que faut-il repérer d’abord dans l’Évangile ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "les verbes finis et les connecteurs de propositions",
+            "chaque glose de dictionnaire",
+            "la répétition du chant",
+            "la conclusion de l’oraison"
+          ]
+        }
+      }
     },
     {
       "id": "l38-e4",
@@ -1118,7 +1187,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que doit déclencher en premier un mot inconnu ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "l’inférence morphologique et contextuelle",
+            "une nouvelle leçon de vocabulaire",
+            "l’abandon",
+            "une réécriture classique"
+          ]
+        }
+      }
     },
     {
       "id": "l38-e5",
@@ -1148,7 +1230,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel texte hérité commence par Spectaculum facti sumus mundo et Angelis et hominibus ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Le commun C5-1 figé fournit 1 Corinthiens 4,9–14 comme Épître.",
+          "options": [
+            "Épître",
+            "Secrète",
+            "Communion",
+            "Introït"
+          ]
+        }
+      }
     },
     {
       "id": "l38-e6",
@@ -1178,7 +1273,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel texte hérité commence par Os justi meditabitur sapientiam ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Dans le commun C5-1 figé, Os justi est le Graduel ; l’Introït est Justus ut palma.",
+          "options": [
+            "Graduel / Alléluia",
+            "Introït",
+            "Offertoire",
+            "Postcommunion"
+          ]
+        }
+      }
     },
     {
       "id": "l38-e7",
@@ -1208,7 +1316,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel texte termine le parcours des Propres ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Postcommunion",
+            "Évangile",
+            "Offertoire",
+            "Introït"
+          ]
+        }
+      }
     },
     {
       "id": "l38-e8",
@@ -1237,7 +1358,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de la leçon 38 ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "Propres ordinaires inconnus.",
+            "Ordinaire complet.",
+            "Registres spécialisés du Requiem et de la Semaine sainte.",
+            "Couronnement sur un texte authentique inconnu du Missel."
+          ]
+        }
+      }
     },
     {
       "id": "l38-e9",
@@ -1264,7 +1398,18 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "La leçon 38 introduit-elle du vocabulaire suivi ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
     },
     {
       "id": "l38-e10",
@@ -1293,7 +1438,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui doit guider la lecture avant le détail lexical ?",
+          "hint": "Utilisez d’abord la partie liturgique et la structure des propositions.",
+          "explanation": "Ceci vérifie la navigation dans des Propres inconnus plutôt que du nouveau vocabulaire.",
+          "options": [
+            "la fonction liturgique",
+            "l’ordre alphabétique",
+            "l’ordre des mots français",
+            "une nouvelle grammaire"
+          ]
+        }
+      }
     }
   ],
   "objectives": [
@@ -1362,5 +1520,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Lire les Propres",
+      "grammarFocus": "Temporal, Sanctoral et Communs",
+      "readingOutcome": "Lire sans préparation un Introït, une oraison, une Épître, des chants, un Évangile, un Offertoire, une Secrète, une Communion et une Postcommunion.",
+      "objectives": [
+        "Lire un ensemble complet de Propres ordinaires inconnus.",
+        "Utiliser le genre liturgique comme outil de prédiction.",
+        "Maintenir une lecture continue à travers chant, prose et récit.",
+        "N’introduire aucun nouveau vocabulaire suivi."
+      ]
+    }
+  }
 }
