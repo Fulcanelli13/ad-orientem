@@ -1,0 +1,20 @@
+{
+  "schema": "AO_DIRECTORY_LIVE_SOURCE_BLOCKERS_V1",
+  "updated_at": "2026-10-07",
+  "blockers": [
+    {
+      "provider": "SSPX",
+      "source": "https://map.fsspx.org/api/v1",
+      "status": "LIVE_AUDIT_BLOCKED",
+      "blocker": "HTTP_403_FROM_GITHUB_ACTIONS_RUNNER",
+      "impact": "The canonical SSPX importer and deterministic tests remain available, but the live CI corpus refresh is not a release gate until upstream access from GitHub runners is reliable.",
+      "evidence": {
+        "workflow": "Directory corpus audit",
+        "observed_on": "2026-10-07",
+        "request": "GET /api/v1/places?lang=en&limit=1000&offset=0",
+        "response_status": 403
+      },
+      "next_action": "Run SSPX refresh from an allowed environment or add a sanctioned upstream mirror/export; do not weaken provenance or scrape third-party copies."
+    }
+  ]
+}
