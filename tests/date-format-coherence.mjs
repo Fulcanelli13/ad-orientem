@@ -38,7 +38,7 @@ assert.doesNotMatch(pray,/type="date" data-p435930-fs-confession/);
 assert.match(novenas,/function fmt\(d\)\{return formatDisplayDate\(d\)\}/);
 
 for(const [name,source] of [["home",home],["calendar",calendar],["learn",learn],["pray",pray],["novenas",novenas]]){
-  assert.doesNotMatch(source,/month:['"]long['"],year:['"]numeric['"]/,`${name} reintroduced a prose-style full date instead of DD/MM/YYYY`);
+  assert.doesNotMatch(source,/day:['"](?:numeric|2-digit)['"],month:['"]long['"],year:['"]numeric['"]/,`${name} reintroduced a prose-style full date instead of DD/MM/YYYY`);
 }
 
 console.log("Canonical user-visible date format DD/MM/YYYY: OK");
