@@ -11,8 +11,8 @@ export const READER_PROPER_SLOTS = Object.freeze([
 function vernacularValue(value,language="en"){
   if(!value || typeof value!=="object")return "";
   const lang=String(language??"en").toLowerCase();
-  const preferred=lang.startsWith("fr") ? value.fr : value.en;
-  return String(preferred ?? value.en ?? value.fr ?? value.vernacular ?? value.translation ?? "").trim();
+  if(lang.startsWith("fr")) return String(value.fr ?? "").trim();
+  return String(value.en ?? value.vernacular ?? value.translation ?? "").trim();
 }
 
 function usable(value,language="en"){

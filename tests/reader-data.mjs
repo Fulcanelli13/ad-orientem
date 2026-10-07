@@ -22,8 +22,11 @@ assert.equal(data.sectionMap.contract,"AO_MASS_READER_V2_SECTION_MAP");
 assert.equal(data.lowCorpus.form,"LOW");
 assert.equal(data.sungCorpus.form,"SUNG");
 assert.equal(data.canonSourceMap.status,"CERTIFIED_SOURCE_FIRST");
+assert.equal(data.frenchOrdinary.schema,"ao-reader-french-ordinary-v1");
+assert.equal(Object.keys(data.frenchOrdinary.byCue??{}).length,256);
 assert.deepEqual(new Set(requested),new Set(Object.values(READER_PRESENTATION_FILES)));
 assert.ok(data.urls.lowCorpus.endsWith("/data/presentation/reader-text-low.v1.json"));
+assert.ok(data.urls.frenchOrdinary.endsWith("/data/presentation/reader-french-ordinary.v1.json"));
 
 let failed=false;
 try{

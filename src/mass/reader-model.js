@@ -40,6 +40,7 @@ export function createMassReaderModel({
   sungCorpus,
   canonSourceMap=null,
   nuptialData=null,
+  frenchOrdinary=null,
   properNotApplicableSlots=Object.freeze([]),
   vernacularLanguage="en",
 }={}){
@@ -67,6 +68,8 @@ export function createMassReaderModel({
       corpus:selected.corpus,
       section,
       properSlots:properMap.slots,
+      vernacularLanguage,
+      frenchOrdinary,
     })
   ));
   const cards=augmentReaderCardsWithPrayerOverPeople(baseCards,resolvedMass);

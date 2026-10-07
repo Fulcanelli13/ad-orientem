@@ -17,6 +17,13 @@ import {
 } from "../src/pray/good-death-data.js";
 
 assert.deepEqual(Object.keys(SACRED_HYMNS_V381),["te_deum","veni_creator","ave_maris_stella"],"v38.1 hymn corpus identity/order changed");
+for(const [id,hymn] of Object.entries(SACRED_HYMNS_V381)){
+  assert.ok(["en","fr","la"].every(k=>String(hymn[k]||"").length>150),id+" hymn language gap");
+  assert.ok(String(hymn.subtitleFr||"").length>5,id+" hymn French subtitle missing");
+}
+assert.match(TRADITIONAL_PRAY_SOURCES_V381.teDeumFrench,/126a07f91ede04664108abb6fb20ace3f4de14b9/,"Te Deum French source pin changed");
+assert.match(TRADITIONAL_PRAY_SOURCES_V381.veniCreatorFrench,/fr\.wikisource\.org/,"Veni Creator lost historical French witness");
+assert.match(TRADITIONAL_PRAY_SOURCES_V381.aveMarisFrench,/fr\.wikisource\.org/,"Ave Maris Stella lost historical French witness");
 assert.equal(MORNING_PRAYER_SEQUENCE_V381.length,11,"v38.1 morning sequence changed");
 assert.equal(EVENING_PRAYER_SEQUENCE_V381.length,13,"v38.1 evening sequence changed");
 assert.equal(MORNING_PRAYER_SEQUENCE_V381[0][0],"foundations_sign_of_cross");
@@ -60,6 +67,9 @@ assert.match(runtime,/OFFLINE_SOURCE_LOCKED/,"Holy Name litany is no longer decl
 assert.doesNotMatch(runtime,/ensureHolyName|en\.wikisource\.org\/w\/api\.php/,"Holy Name litany regained a runtime network dependency");
 assert.match(runtime,/data-tp381-daypart/,"Morning/Evening daypart control disappeared");
 assert.match(runtime,/data-tp381-hymn-lang/,"Hymn language control disappeared");
+assert.match(runtime,/data-tp381-hymn-lang="fr"/,"French Sacred Hymn control disappeared");
+assert.match(runtime,/S\.hymnLang\|\| \(isFr\(\)\?"fr":"en"\)/,"Sacred Hymns no longer default to the app language");
+assert.match(runtime,/Sacred hymn language missing/,"Sacred Hymns regained silent language fallback");
 assert.match(runtime,/data-tp381-prayer/,"Canonical prayer reuse disappeared");
 assert.match(styles,/aoTP381Reader/);
 assert.match(styles,/aoTP381PrayerList/);

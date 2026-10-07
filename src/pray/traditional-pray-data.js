@@ -9,6 +9,9 @@ export const TRADITIONAL_PRAY_SOURCES_V381=Object.freeze({
   holynameLatin:"https://www.traditio-op.org/Liturgica_Rito_Latino/Rituale_Romanum_1925.pdf",
   holynameFrench:"https://laportelatine.org/spiritualite/prieres-et-devotions/litanies/litanies-du-saint-nom-de-jesus",
   dailybook:"https://en.wikisource.org/wiki/The_Daily_Prayer-Book/Prayers",
+  teDeumFrench:"https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/missa/Francais/Ordo/Prayers.txt",
+  veniCreatorFrench:"https://fr.wikisource.org/wiki/Veni,_Creator",
+  aveMarisFrench:"https://fr.wikisource.org/wiki/%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Office_de_la_sainte_Vierge/%C3%80_v%C3%AApres",
 });
 
 export const HOLY_NAME_LITANY_V381=Object.freeze({
@@ -356,6 +359,7 @@ export const SACRED_HYMNS_V381=Object.freeze({
   te_deum:Object.freeze({
     title:"Te Deum",
     subtitle:"Great hymn of praise and thanksgiving",
+    subtitleFr:"Grande hymne de louange et d’action de grâces",
     la:`Te Deum laudamus: te Dominum confitemur.
 Te æternum Patrem omnis terra veneratur.
 Tibi omnes Angeli; tibi cæli et universæ potestates.
@@ -414,11 +418,44 @@ And we praise Thy name for ever: yea, for ever and ever.
 Vouchsafe, O Lord, this day to keep us without sin.
 O Lord, have mercy upon us: have mercy upon us.
 O Lord, let Thy mercy be showed upon us, as we have hoped in Thee.
-O Lord, in Thee have I hoped: let me not be confounded for ever.`
+O Lord, in Thee have I hoped: let me not be confounded for ever.`,
+    fr:`C’est vous, ô Dieu, que nous louons ;
+nous vous reconnaissons comme le Seigneur.
+Toute la terre vous vénère, ô Père éternel.
+Tous les Anges, les Cieux et toutes les Puissances,
+les Chérubins et les Séraphins redisent inlassablement :
+Saint, saint, saint est le Seigneur, Dieu des forces célestes ;
+le ciel et la terre sont remplis de la majesté de votre gloire.
+C’est vous que louent le glorieux chœur des apôtres,
+la multitude des prophètes, digne de louange,
+et la blanche armée des martyrs.
+La sainte Église, sur toute l’étendue de la terre, vous reconnaît,
+ô Père d’infinie majesté,
+avec votre adorable Fils, unique et véritable,
+et aussi le Saint-Esprit Consolateur.
+Vous, Christ, Roi de gloire,
+vous, Fils éternel du Père,
+c’est vous qui, près d’entreprendre la rédemption de l’homme, n’avez pas dédaigné le séjour d’un corps virginal.
+Triomphant de l’aiguillon de la mort,
+vous avez ouvert aux croyants le royaume des cieux.
+Vous trônez à la droite de Dieu, dans la gloire du Père.
+Nous croyons que vous êtes le Juge qui doit venir.
+Aussi vous demandons-nous de secourir vos serviteurs, que vous avez rachetés par votre sang précieux.
+Faites qu’ils soient mis au nombre de vos saints dans la gloire éternelle.
+Sauvez votre peuple, Seigneur,
+et bénissez ceux qui forment votre héritage.
+Soyez leur guide et leur puissant soutien jusqu’aux siècles sans fin.
+Chaque jour, nous vous bénissons,
+et nous louons votre nom pour toujours, dans les siècles des siècles.
+Daignez, Seigneur, en ce jour, nous garder du péché.
+Ayez pitié de nous, Seigneur, ayez pitié de nous.
+Que votre miséricorde, Seigneur, soit sur nous, comme est en vous notre espérance.
+C’est en vous, Seigneur, que j’espère ; je ne serai pas confondu à jamais.`
   }),
   veni_creator:Object.freeze({
     title:"Veni Creator Spiritus",
     subtitle:"Invocation of the Holy Ghost",
+    subtitleFr:"Invocation au Saint-Esprit",
     la:`Veni, Creator Spiritus,
 mentes tuorum visita,
 imple superna gratia,
@@ -486,11 +523,45 @@ Of both th’ Eternal Spirit blest.
 All glory while the ages run
 Be to the Father, and the Son
 Who rose from death; the same to Thee,
-O Holy Ghost eternally. Amen.`
+O Holy Ghost eternally. Amen.`,
+    fr:`Venez, Esprit créateur ;
+visitez les âmes de vos enfants ;
+remplissez d’une grâce supérieure les cœurs
+que vous avez créés.
+
+Vous qui êtes le consolateur,
+le don de Dieu très-haut,
+la source vive, la flamme, la charité,
+et l’onction spirituelle.
+
+Vous qui donnez les sept dons,
+doigt de la droiture de Dieu,
+promesse du Père,
+inspirateur de la parole.
+
+Allumez la lumière dans nos esprits,
+remplissez nos cœurs d’amour.
+Donnez-nous par votre vertu la force
+de supporter les misères de notre corps.
+
+Repoussez au loin l’ennemi ;
+donnez-nous la paix.
+Que sous votre direction,
+nous évitions tous les dangers.
+
+Que par vous nous ayons la connaissance du Père,
+que nous connaissions aussi le Fils,
+et que nous croyions en vous, Esprit
+procédant de l’un et de l’autre.
+
+Gloire à Dieu le Père, gloire au Fils qui triompha de la mort,
+gloire au Saint-Esprit dans les siècles des siècles.
+Ainsi soit-il.`
   }),
   ave_maris_stella:Object.freeze({
     title:"Ave Maris Stella",
     subtitle:"Traditional Marian hymn",
+    subtitleFr:"Hymne mariale traditionnelle",
     la:`Ave, maris stella,
 Dei Mater alma,
 atque semper Virgo,
@@ -558,7 +629,41 @@ We rejoice for ever.
 Through the highest heaven,
 To the Almighty Three,
 Father, Son, and Spirit,
-One same glory be. Amen.`
+One same glory be. Amen.`,
+    fr:`Étoile de la mer, mère du Tout-Puissant,
+toujours vierge, toujours étoile sans nuage,
+porte du ciel ouverte au pécheur gémissant,
+reçois notre humble hommage.
+
+De nous, comme de l’ange, accepte ce salut ;
+et dans une paix sainte affermissant notre âme,
+change l’impression que notre sang reçut
+de la première femme.
+
+Des captifs du péché romps les tristes liens,
+aux esprits aveuglés rends de vives lumières,
+chasse loin tous les maux, obtiens-nous tous les biens,
+Vierge, par tes prières.
+
+Montre de pleins effets du pouvoir maternel :
+fais qu’à remplir nos vœux cet Homme-Dieu s’applique,
+qui pour rendre la vie à l’homme criminel
+naquit ton fils unique.
+
+Ô Vierge sans pareille en clémence, en bonté,
+fais-lui de tous nos cœurs d’agréables victimes ;
+verse-y ta douceur, joins-y ta chasteté,
+et lave tous nos crimes.
+
+Épure notre vie, enflamme notre esprit ;
+du ciel par ton suffrage assure-nous la voie,
+et fais-nous y goûter près de ton Jésus-Christ
+une éternelle joie.
+
+Gloire, louange, honneur et puissance au Très-Haut !
+Gloire, honneur et louange à sa parfaite image !
+Gloire à l’Esprit divin, ainsi qu’eux sans défaut !
+À tous trois même hommage !`
   })
 });
 

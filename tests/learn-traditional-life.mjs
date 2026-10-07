@@ -24,6 +24,10 @@ assert.deepEqual(Object.keys(TRADITIONAL_LEARN_ROUTES),expected,"v38.4 tradition
 assert.equal(LOW_MASS_RESPONSES_V381.length,15,"Low Mass response trainer no longer matches donor 15-card corpus");
 assert.equal(LOW_MASS_RESPONSES_V381[0].lat,"℟. Ad Deum, qui lætíficat iuventútem meam.");
 assert.equal(LOW_MASS_RESPONSES_V381.at(-1).lat,"℟. Deo grátias.");
+assert.ok(LOW_MASS_RESPONSES_V381.every(row=>row.fr&&row.cueFr&&row.promptFr),"Low Mass response trainer has a French parity gap");
+assert.equal(LOW_MASS_RESPONSES_V381[0].fr,"℟. Au Dieu qui réjouit ma jeunesse.");
+assert.equal(LOW_MASS_RESPONSES_V381.at(-1).fr,"℟. Nous rendons grâces à Dieu.");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.frenchMassOrdo,/126a07f91ede04664108abb6fb20ace3f4de14b9/,"Low Mass French response source pin changed");
 assert.equal(SEASONAL_PRACTICES_V381.length,10,"seasonal lay-practice list changed");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.ritual1952,/alcuinus\.org/);
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.pontifical1962,/books\.google\.com/,"Confirmation formation lost the 1962 Pontifical witness");
@@ -49,6 +53,9 @@ const presentation=readFileSync("src/learn/presentation.js","utf8");
 const assets=readFileSync("src/assets/asset-registry.js","utf8");
 
 assert.match(runtime,/priestCeremonialExposed:false/,"lay-only scope guard disappeared");
+assert.match(runtime,/isFr\(win\)\?x\.fr:x\.en/,"French Low Mass trainer still hard-codes the English response");
+assert.match(runtime,/x\.cueFr/,"French Low Mass trainer cue is not localized");
+assert.match(runtime,/x\.promptFr/,"French Low Mass trainer prompt is not localized");
 assert.match(runtime,/WHAT YOU MAY SEE IN THE TRADITIONAL CEREMONY/,"Matrimony lost its lay-facing traditional ceremony map");
 assert.match(runtime,/one ring or two/,"Matrimony no longer warns that ring customs vary");
 assert.match(runtime,/approved local custom/,"Matrimony local-custom guard disappeared");
