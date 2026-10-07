@@ -1,8 +1,8 @@
 {
   "schema": "ao-mass-definitive-convergence-v1",
-  "version": "1.2.0",
-  "status": "IMPLEMENTATION_COMPLETE_AWAITING_CI",
-  "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
+  "version": "1.3.0",
+  "status": "CERTIFIED",
+  "releaseBlocker": null,
   "rule": "The final Mass product has one executable reader only. R17/R19 owns canonical liturgical data, state and lifecycle; the recovered Sung Mass donor owns presentation geometry and choreography. Historical legacy/shadow renderers may remain only as non-executable evidence.",
   "runtimeAuthority": {
     "owner": "R17_SESSION_ENGINE",
@@ -89,15 +89,23 @@
     "v1.80 elevation cinematic duration restored to 3450 ms and bell salience held for 3600 ms",
     "wide-viewport acceptance remains present so desktop dashboard regressions cannot pass phone-only tests"
   ],
-  "remaining": [
-    "keep branch reconciled with the current mainline without replacing v1.80 Mass presentation authority",
-    "pass complete static Mass/app CI",
-    "pass real-touch phone CI including forward/back navigation and mode switching",
-    "pass full app-shell/special-structure phone CI",
-    "pass donor-derived visual acceptance at 390x844 and wide desktop geometry",
-    "after merge, compare deployed Mass visually against v1.80 at representative ritual checkpoints"
-  ],
+  "remaining": [],
   "nonBlockingHygiene": [
     "certified frozen bytes for some priest-action artwork are unavailable in the repository; exact source-backed action text remains authoritative and artwork fails closed until the asset bank resolves those bytes"
+  ],
+  "certification": {
+    "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
+    "r17MassConvergenceRun": 37563706320,
+    "appConvergenceRun": 37563706129,
+    "visualAcceptanceRun": 37563706157,
+    "singleRenderer": "PASS",
+    "static": "PASS",
+    "realTouchPhone": "PASS",
+    "appShellPhone": "PASS",
+    "donorVisualAcceptance": "PASS"
+  },
+  "postMergeValidation": [
+    "compare deployed Mass against v1.80 at representative ritual checkpoints",
+    "treat any deployed-only visual discrepancy as a new regression rather than reopening historical renderer paths"
   ]
 }
