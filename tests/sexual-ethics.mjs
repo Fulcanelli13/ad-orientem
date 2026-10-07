@@ -29,8 +29,14 @@ import {
   CSE_QUALITY_AUDIT,
   CSE_QUALITY_SUMMARY,
 } from "../src/learn/sexual-ethics-data/quality-audit.js";
+import {
+  CSE_DEBATE_POSITION_REFS,
+  CSE_POSITION_SOURCE_IDS,
+  paragraphRefsFor,
+  validateParagraphRefs,
+} from "../src/learn/sexual-ethics-data/provenance.js";
 
-assert.equal(SEXUAL_ETHICS_VERSION,"1.3.0");
+assert.equal(SEXUAL_ETHICS_VERSION,"1.4.0");
 assert.equal(SEXUAL_ETHICS_ROUTE,"learn.sexual_ethics");
 assert.equal(SEXUAL_ETHICS_RESEARCH_LEAD,"LBM");
 assert.equal(CSE_QUESTIONS.length,150);
@@ -114,6 +120,39 @@ const publicQuestionFiles=[
 ].join("\n");
 assert.doesNotMatch(publicQuestionFiles,/Ad Orientem/);
 assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Every displayed citation source must have a hyperlink destination");
+
+assert.equal(CSE_POSITION_SOURCE_IDS.length,55,"Every structured debate must have an explicit position-source chain");
+assert.deepEqual(CSE_POSITION_SOURCE_IDS,[...CSE_DEBATE_IDS].sort(),"Position-source coverage must match the 55 debate IDs exactly");
+let sourcedQuestions=0;
+let sourcedParagraphs=0;
+for(const item of CSE_QUESTIONS){
+  const questionRefs=paragraphRefsFor(item,"question");
+  assert.equal(validateParagraphRefs(item,questionRefs),true,`${item.id}: question prompt must have clickable provenance`);
+  sourcedQuestions++;
+
+  const answerRefs=paragraphRefsFor(item,"answer");
+  assert.equal(validateParagraphRefs(item,answerRefs),true,`${item.id}: answer paragraph must have clickable provenance`);
+  sourcedParagraphs++;
+
+  if(item.depth==="EXPANDED"){
+    const detailRefs=paragraphRefsFor(item,"detail");
+    assert.equal(validateParagraphRefs(item,detailRefs),true,`${item.id}: expanded paragraph must have clickable provenance`);
+    sourcedParagraphs++;
+  }
+
+  if(item.depth==="DEBATE"){
+    const positionRefs=CSE_DEBATE_POSITION_REFS[item.id];
+    assert.ok(positionRefs?.length,`${item.id}: missing actual-position source(s)`);
+    assert.ok(positionRefs.some(([sourceId])=>["opposing_position","empirical"].includes(CSE_SOURCE_MAP[sourceId]?.role)),`${item.id}: objection source chain is not anchored to an actual proponent or empirical source`);
+    for(const field of CSE_DEBATE_FIELDS){
+      const refs=paragraphRefsFor(item,"debate",field);
+      assert.equal(validateParagraphRefs(item,refs),true,`${item.id} ${field}: debate paragraph must have clickable provenance`);
+      sourcedParagraphs++;
+    }
+  }
+}
+assert.equal(sourcedQuestions,150,"Every Sexual Ethics question prompt must carry provenance");
+assert.equal(sourcedParagraphs,610,"Every visible substantive Sexual Ethics paragraph must carry a source chain");
 
 const META_COMMENTARY_EN=/(?:the strongest objection|the serious objection|the classic objection|the objection\b|the traditional reply|the traditional response|the Catholic reply|the Catholic answer|the Catholic argument|the Catholic case|the argument (?:assumes|starts|concerns|depends|confuses|correctly|recognizes|sees)|this question should|this remains a case-analysis question|this is a case-analysis question|this is a prudential case question|this module|the module|the reusable method|the point is|the point here)/i;
 const META_COMMENTARY_FR=/(?:l’objection la plus forte|l’objection sérieuse|l’objection classique|l’objection\b|la réponse traditionnelle|la réponse catholique|l’argument catholique|l’argument (?:suppose|part|concerne|dépend|confond|reconnaît|voit)|cette question doit|cela reste une question d’analyse|c’est une question d’analyse|c’est une question prudentielle de cas|ce module|la méthode réutilisable)/i;
@@ -240,6 +279,11 @@ assert.match(owner,/ensureSexualEthicsRegistry/);
 assert.match(owner,/AO_SEXUAL_ETHICS_V1/);
 assert.match(runtime,/Search all 150 questions/);
 assert.match(runtime,/Sources & provenance/);
+assert.match(runtime,/paragraphSourceLinks/);
+assert.match(runtime,/data-ao-cse-inline-source/);
+assert.match(runtime,/Question source:/);
+assert.match(runtime,/Position source:/);
+assert.match(runtime,/aoCSEInlineRefs/);
 assert.doesNotMatch(runtime,/Research architecture informed by Lawler · Boyle · May/,"research-method copy leaked back onto the learner landing");
 assert.match(runtime,/ao-ui-back/);
 assert.match(runtime,/ao-ui-close/);
