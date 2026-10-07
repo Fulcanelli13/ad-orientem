@@ -1,7 +1,7 @@
 {
   "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
-  "version": "1.0.0",
-  "generated_at": "2026-10-07T19:55:00Z",
+  "version": "1.1.0",
+  "generated_at": "2026-10-07T20:25:00Z",
   "provider": "ICKSP_FEDERATED_V13",
   "defaults": {
     "c": "ICKSP",
@@ -878,7 +878,29 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-068-ACIREALE",
+          "l": "Acireale",
+          "n": "Rettoria Santa Maria dell’Odigitria",
+          "vt": "church",
+          "a": "Piazza Odigitria, 95024 Acireale CT, Italy",
+          "sr": "SUNDAY_FEAST_10:30; TUE_WED_THU_08:45; MON_FRI_19:00; SATURDAY_11:00",
+          "svc": "MASS",
+          "su": "https://icrssrandazzo.wixsite.com/icrss-acireale/acireale"
+        },
+        {
+          "u": "ICKSP-STG-068-RANDAZZO",
+          "l": "Randazzo",
+          "n": "Rettoria Santa Maria della Volta",
+          "vt": "church",
+          "a": "Piazza San Nicolò, 95036 Randazzo CT, Italy",
+          "sr": "SUNDAY_FEAST_18:00; FRIDAY_18:00; SATURDAY_18:00",
+          "svc": "MASS",
+          "su": "https://icrssrandazzo.wixsite.com/icrss-acireale/randazzo"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-070",
@@ -892,7 +914,29 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-070-LECCE",
+          "l": "Lecce",
+          "n": "Chiesa di Sant’Anna",
+          "vt": "church",
+          "a": "Via Libertini 13, Lecce, Italy",
+          "sr": "CURRENT_WEEKLY_MASS_SCHEDULE_PUBLISHED; CHECK_OFFICIAL_RETTORIA_PAGE_FOR_TIMES",
+          "svc": "MASS",
+          "su": "https://icrsslecce.wixsite.com/icrsslecce/orari"
+        },
+        {
+          "u": "ICKSP-STG-070-CARMIANO",
+          "l": "Carmiano",
+          "n": "Chiesa del Cuore Immacolato di Maria (Li Sala)",
+          "vt": "church",
+          "a": "SP13 73, 73041 Carmiano LE, Italy",
+          "sr": "CURRENT_WEEKLY_MASS_SCHEDULE_PUBLISHED; CHECK_OFFICIAL_RETTORIA_PAGE_FOR_TIMES",
+          "svc": "MASS",
+          "su": "https://icrsslecce.wixsite.com/icrsslecce/orari"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-072",
@@ -906,77 +950,115 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-072-BARRA",
+          "l": "Napoli",
+          "n": "Chiesa Santa Maria della Sanità a Barra",
+          "vt": "church",
+          "a": "Corso Sirena 68, 80147 Napoli, Italy",
+          "sr": "SUNDAY_FEAST_09:15_LOW_11:00_SUNG; MON_TUE_THU_FRI_SAT_08:00; WEDNESDAY_11:00",
+          "svc": "MASS",
+          "su": "https://www.icrss.it/napoli/"
+        },
+        {
+          "u": "ICKSP-STG-072-ROSARIELLO",
+          "l": "Napoli",
+          "n": "Chiesa Rettoria del Rosariello",
+          "vt": "church",
+          "a": "Piazza Cavour 124, 80137 Napoli, Italy",
+          "sr": "SUNDAY_FEAST_11:00_SUNG_19:00_LOW; MON_FRI_18:30; SATURDAY_11:00",
+          "svc": "MASS",
+          "su": "https://www.icrss.it/napoli/"
+        },
+        {
+          "u": "ICKSP-STG-072-SANTANNA",
+          "l": "Napoli",
+          "n": "Chiesa di Sant’Anna alle Paludi",
+          "vt": "church",
+          "a": "Corso Arnaldo Lucci 124/A, 80142 Napoli, Italy",
+          "sr": "PHYSICAL_ICKSP_APOSTOLATE_VENUE; CURRENT_RECURRING_MASS_TIME_NOT_PUBLISHED_ON_SOURCE",
+          "svc": "SOURCE_ASSERTION",
+          "pr": "ICKSP_PHYSICAL_VENUE_NO_PUBLISHED_CURRENT_MASS_TIME",
+          "su": "https://www.icrss.it/napoli/"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-073",
       "cc": "IT",
       "l": "Piacenza",
-      "n": "Apostolato di Piacenza",
-      "vt": "other",
-      "sr": "SUNDAY_FEAST_09:00_10:30_18:00; WEEKDAY_MASSES",
+      "n": "Chiesa di San Giorgio in Sopramuro",
+      "vt": "church",
+      "sr": "SUNDAY_FEAST_09:00_10:30_18:00; MONDAY_18:00; TUE_THU_FRI_07:30; WEDNESDAY_19:00; SATURDAY_11:00",
       "su": "https://www.icrss.it/piacenza/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Via Sopramuro 53, 29121 Piacenza, Italy"
     },
     {
       "u": "ICKSP-STG-076",
       "cc": "GB",
       "l": "New Brighton",
-      "n": "Ss Peter & Paul and St Philomena",
-      "vt": "other",
+      "n": "Catholic Shrine Church of Ss Peter & Paul and St Philomena",
+      "vt": "church",
       "sr": "SUNDAY_08:30_LOW_10:30_SUNG; MON_FRI_18:30_LOW; SATURDAY_10:00_LOW",
-      "su": "https://icksp.org.uk/newbrighton/",
+      "su": "https://icksp.org.uk/newbrighton/contact-us/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "7 Atherton Street, Wallasey, New Brighton, CH45 9LT, United Kingdom"
     },
     {
       "u": "ICKSP-STG-077",
       "cc": "GB",
       "l": "Preston",
-      "n": "St Walburge",
-      "vt": "other",
+      "n": "Shrine Church of St Walburge",
+      "vt": "church",
       "sr": "SUNDAY_08:30_LOW_10:30_SUNG_18:30_LOW; WEEKDAY_MASSES",
       "su": "https://icksp.org.uk/preston/wp-content/uploads/sites/3/2026/08/233-Dominica-XIV-Post-Pentecosten-.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Weston Street, Preston, Lancashire PR2 2QE, United Kingdom"
     },
     {
       "u": "ICKSP-STG-078",
       "cc": "GB",
       "l": "Shrewsbury",
-      "n": "St Winefride",
-      "vt": "other",
-      "sr": "SUNDAY_12:30_SUNG; MON_10:00; TUE_18:30; WED_10:00; THU_18:30; FRI_SAT_10:00",
-      "su": "https://icksp.org.uk/shrewsbury/",
+      "n": "St Winefride’s Church",
+      "vt": "church",
+      "sr": "SUNDAY_12:30_SUNG; MONDAY_10:00; TUESDAY_18:30; WEDNESDAY_10:00; THURSDAY_18:30; FRIDAY_10:00; SATURDAY_10:00",
+      "su": "https://icksp.org.uk/shrewsbury/contact-us/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Crowmere Road, Monkmoor, Shrewsbury, SY2 5RA, United Kingdom"
     },
     {
       "u": "ICKSP-STG-079",
       "cc": "GB",
-      "l": "St Mawgan / Lanherne",
-      "n": "Lanherne Convent",
-      "vt": "other",
+      "l": "St Mawgan",
+      "n": "Lanherne Convent Chapel",
+      "vt": "chapel",
       "sr": "SUNDAY_08:00_SUNG_11:00_LOW; MON_SAT_08:00; THURSDAY_EXTRA_18:15",
       "su": "https://icksp.org.uk/cornwall/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "a": "Lanherne Convent, St Mawgan, Newquay TR8 4ER, United Kingdom"
     },
     {
       "u": "ICKSP-STG-080",
@@ -990,7 +1072,29 @@
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_CURRENT_MASS",
       "gs": "SOURCE_LOCATION_ONLY",
-      "vv": "2026-10-07"
+      "vv": "2026-10-07",
+      "pv": [
+        {
+          "u": "ICKSP-STG-080-HOLYANGELS",
+          "l": "Torquay",
+          "n": "Holy Angels Church",
+          "vt": "church",
+          "a": "Queensway, Chelston, Torquay TQ2 6BP, United Kingdom",
+          "sr": "SUNDAY_10:45_SUNG_HIGH; MON_TUE_THU_FRI_08:30; WEDNESDAY_12:00; SATURDAY_08:30",
+          "svc": "MASS",
+          "su": "https://icksp.org.uk/plymouth/"
+        },
+        {
+          "u": "ICKSP-STG-080-STEDWARD",
+          "l": "Plymouth",
+          "n": "St Edward the Confessor Church",
+          "vt": "church",
+          "a": "Home Park Avenue, Peverell, Plymouth PL3 4PG, United Kingdom",
+          "sr": "SUNDAY_08:15_SUNG; ADDITIONAL_MASSES_AS_PUBLISHED",
+          "svc": "MASS",
+          "su": "https://icksp.org.uk/plymouth/"
+        }
+      ]
     },
     {
       "u": "ICKSP-STG-081",
@@ -1009,22 +1113,23 @@
     {
       "u": "ICKSP-STG-082",
       "cc": "SE",
-      "l": "Stockholm / Sätra",
+      "l": "Skärholmen",
       "n": "St Maroun Church",
-      "vt": "other",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "vt": "church",
+      "sr": "SUNDAY_09:30_SUNG; MONDAY_09:00; TUESDAY_18:00; WEDNESDAY_07:30; THURSDAY_18:00; FRIDAY_17:00; SATURDAY_09:00",
       "su": "https://icrss.se/masstider-2/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Kungssätravägen 16, 127 37 Skärholmen, Sweden"
     },
     {
       "u": "ICKSP-STG-083",
       "cc": "ES",
       "l": "Madrid",
       "n": "Iglesia Nuestra Señora de la Paz",
-      "vt": "other",
+      "vt": "church",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1037,7 +1142,7 @@
       "cc": "ES",
       "l": "Alcalá de Henares",
       "n": "Iglesia de las Carmelitas Descalzas de la Purísima Concepción",
-      "vt": "other",
+      "vt": "church",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1050,7 +1155,7 @@
       "cc": "ES",
       "l": "Alcalá de Henares",
       "n": "Iglesia de las Concepcionistas Franciscanas",
-      "vt": "other",
+      "vt": "church",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1063,7 +1168,7 @@
       "cc": "ES",
       "l": "El Puerto de Santa María",
       "n": "Convento de las Concepcionistas",
-      "vt": "other",
+      "vt": "convent",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1076,7 +1181,7 @@
       "cc": "ES",
       "l": "El Puerto de Santa María",
       "n": "Oratorio de la Inmaculada Concepción",
-      "vt": "other",
+      "vt": "oratory",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1089,7 +1194,7 @@
       "cc": "ES",
       "l": "Cádiz",
       "n": "Oratorio de San Felipe Neri",
-      "vt": "other",
+      "vt": "oratory",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1102,7 +1207,7 @@
       "cc": "ES",
       "l": "Getafe",
       "n": "Convento del Sagrado Corazón y Nuestra Señora de los Ángeles",
-      "vt": "other",
+      "vt": "convent",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1115,7 +1220,7 @@
       "cc": "ES",
       "l": "Segovia",
       "n": "Iglesia de San Sebastián",
-      "vt": "other",
+      "vt": "church",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1128,7 +1233,7 @@
       "cc": "ES",
       "l": "Valladolid",
       "n": "Convento de las Dominicas de Porta Coeli",
-      "vt": "other",
+      "vt": "convent",
       "sr": "PUBLIC_MASS_CONFIRMED",
       "su": "https://icrss.es/santa-misa-horarios/",
       "st": "COMMUNITY_OFFICIAL",
@@ -1141,65 +1246,70 @@
       "cc": "MU",
       "l": "Curepipe",
       "n": "Chapelle du Collège Saint-Joseph",
-      "vt": "other",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "vt": "chapel",
+      "sr": "SUNDAY_09:45",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "19 Commerford Street, Curepipe, Mauritius"
     },
     {
       "u": "ICKSP-STG-093",
       "cc": "MU",
       "l": "Curepipe",
       "n": "Église Sainte-Thérèse",
-      "vt": "other",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "vt": "church",
+      "sr": "TUESDAY_WEDNESDAY_THURSDAY_08:30",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Route Royale, Curepipe, Mauritius"
     },
     {
       "u": "ICKSP-STG-094",
       "cc": "MU",
       "l": "Curepipe",
       "n": "Chapelle de la Maison Bienheureux-Père-Laval",
-      "vt": "other",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "vt": "chapel",
+      "sr": "MONDAY_FRIDAY_18:00; SATURDAY_09:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Impasse Ambroisine, Curepipe, Mauritius"
     },
     {
       "u": "ICKSP-STG-095",
       "cc": "MU",
       "l": "Port-Louis",
       "n": "Sanctuaire Marie-Reine-de-la-Paix",
-      "vt": "other",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "vt": "shrine",
+      "sr": "FIRST_SATURDAY_08:30; CONFIRM_CURRENT_MONTH_WITH_CANON",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Sanctuaire Marie-Reine-de-la-Paix, Port-Louis, Mauritius"
     },
     {
       "u": "ICKSP-STG-096",
       "cc": "MU",
       "l": "Port-Louis",
       "n": "Chapelle Saint-Jean-de-Dieu, Hôpital Jeetoo",
-      "vt": "other",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "vt": "chapel",
+      "sr": "LAST_SUNDAY_08:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Hôpital Jeetoo, Volcy Pougnet Street, Port-Louis, Mauritius"
     },
     {
       "u": "ICKSP-STG-097",
@@ -1207,12 +1317,13 @@
       "l": "Bruxelles",
       "n": "Maison Saint-Joseph",
       "vt": "residence",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "TUESDAY_WEDNESDAY_THURSDAY_08:45_11:00; THIRD_FRIDAY_18:30",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Avenue de l’Uruguay 23, 1000 Bruxelles, Belgium"
     },
     {
       "u": "ICKSP-STG-098",
@@ -1220,12 +1331,13 @@
       "l": "Bruxelles",
       "n": "Église du couvent Sainte-Anne",
       "vt": "church",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_FEAST_10:30_18:00_OUTSIDE_SCHOOL_HOLIDAYS; MON_FRI_18:00; SATURDAY_12:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Avenue Léopold Weiner 28, 1170 Bruxelles, Belgium"
     },
     {
       "u": "ICKSP-STG-099",
@@ -1247,12 +1359,13 @@
       "l": "Havré",
       "n": "Chapelle Notre-Dame-de-Bon-Vouloir",
       "vt": "chapel",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_11:00; JUL_AUG_17:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Rue Édouard-Dewez 99, 7021 Havré, Belgium"
     },
     {
       "u": "ICKSP-STG-101",
@@ -1260,12 +1373,13 @@
       "l": "Brasménil",
       "n": "Chapelle Notre-Dame-de-l'Espérance",
       "vt": "chapel",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_08:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Rue de la Savatte 10, 7604 Brasménil, Belgium"
     },
     {
       "u": "ICKSP-STG-102",
@@ -1287,12 +1401,13 @@
       "l": "Libreville",
       "n": "Église du Christ-Roi / Paroisse Notre-Dame-de-Lourdes",
       "vt": "church",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_08:00_10:00_18:00; MON_FRI_17:00; SATURDAY_11:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "BP 5074, Libreville, Gabon"
     },
     {
       "u": "ICKSP-STG-104",
@@ -1356,7 +1471,7 @@
       "l": "Mouila",
       "n": "Chapelle Notre-Dame-du-Sacré-Cœur",
       "vt": "chapel",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_FEAST_10:00; SATURDAY_16:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
@@ -1369,7 +1484,7 @@
       "l": "Mouila",
       "n": "Chapelle Sainte-Thérèse-de-l’Enfant-Jésus",
       "vt": "chapel",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_17:00; MON_FRI_17:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
@@ -1396,7 +1511,7 @@
       "l": "Mouila",
       "n": "Chapelle de l’École Saint-François-de-Sales",
       "vt": "school_chapel",
-      "sr": "WEEKDAY_MASS_CONFIRMED",
+      "sr": "MON_FRI_09:00",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
@@ -1409,12 +1524,13 @@
       "l": "Altötting",
       "n": "Friedhofskirche St. Michael",
       "vt": "church",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_FEAST_17:00; FIRST_SATURDAY_12:00",
       "su": "https://institut-christus-koenig.de/altoetting/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Neuöttinger Str. 24, 84503 Altötting, Germany"
     },
     {
       "u": "ICKSP-STG-113",
@@ -1436,12 +1552,13 @@
       "l": "Bad Reichenhall",
       "n": "Kirche St. Ägidi",
       "vt": "church",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_FEAST_10:15; MONDAY_THURSDAY_18:30; SATURDAY_08:30; FIRST_FRIDAY_18:30",
       "su": "https://institut-christus-koenig.de/bad-reichenhall/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Poststr. 18, 83435 Bad Reichenhall, Germany"
     },
     {
       "u": "ICKSP-STG-115",
@@ -1449,12 +1566,13 @@
       "l": "Traunstein",
       "n": "Salinenkapelle St. Rupert und Maximilian",
       "vt": "chapel",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_FEAST_08:00",
       "su": "https://institut-christus-koenig.de/traustein/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Karl-Theodor-Platz, 83278 Traunstein, Germany"
     },
     {
       "u": "ICKSP-STG-116",
@@ -1467,20 +1585,22 @@
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Flaumbachtal 4, 56253 Treis-Karden, Germany"
     },
     {
       "u": "ICKSP-STG-117",
       "cc": "DE",
       "l": "Koblenz",
       "n": "Kloster Bethlehem",
-      "vt": "other",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "vt": "monastery",
+      "sr": "SUNDAY_FEAST_09:30",
       "su": "https://institut-christus-koenig.de/koblenz/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Hermannstraße 29, 56076 Koblenz, Germany"
     },
     {
       "u": "ICKSP-STG-118",
@@ -1488,12 +1608,13 @@
       "l": "Köllerbach",
       "n": "Katholische Kirche St. Martin",
       "vt": "church",
-      "sr": "PUBLIC_DAILY_MASS_CONFIRMED",
+      "sr": "MON_THU_08:15; FRIDAY_18:00; SATURDAY_09:00; SUNDAY_08:00_09:45_16:00",
       "su": "https://institut-christus-koenig.de/koellerbach/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Riegelsberger Str. 170, 66346 Köllerbach, Germany"
     },
     {
       "u": "ICKSP-STG-119",
@@ -1501,12 +1622,13 @@
       "l": "Trier",
       "n": "St. Martin",
       "vt": "church",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_FEAST_11:30",
       "su": "https://institut-christus-koenig.de/trier/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Maarstraße 72, 54292 Trier, Germany"
     },
     {
       "u": "ICKSP-STG-120",
@@ -1514,12 +1636,13 @@
       "l": "Basel",
       "n": "Kirche St. Joseph",
       "vt": "church",
-      "sr": "PUBLIC_MASS_CONFIRMED",
+      "sr": "SUNDAY_FEAST_17:00; FIRST_FRIDAY_17:00",
       "su": "https://institut-christus-koenig.de/diozese-basel/apostolate/basel-stjoseph/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Amerbachstrasse / Klybeckstrasse, 4057 Basel, Switzerland"
     },
     {
       "u": "ICKSP-STG-121",
@@ -1527,12 +1650,13 @@
       "l": "Le Noirmont",
       "n": "Haus vom Eucharistischen Herzen Jesu",
       "vt": "residence",
-      "sr": "PUBLIC_DAILY_MASS_CONFIRMED",
+      "sr": "SUNDAY_10:00; MONDAY_18:00; TUE_FRI_08:00; SATURDAY_18:00",
       "su": "https://institut-christus-koenig.de/diozese-basel/apostolate/le-noirmont/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "MASS",
       "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "gs": "SOURCE_LOCATION_ONLY",
+      "a": "Les Côtes, 2340 Le Noirmont, Switzerland"
     },
     {
       "u": "ICKSP-STG-122",
@@ -1593,6 +1717,82 @@
       "gs": "SOURCE_LOCATION_ONLY",
       "a": "St Mary's Road, Galway, H91 H7F8, Ireland",
       "vv": "2026-10-07"
+    },
+    {
+      "u": "ICKSP-IT-2026-ALESSANDRIA",
+      "cc": "IT",
+      "l": "Alessandria",
+      "n": "Chiesa di San Giovannino",
+      "vt": "church",
+      "a": "Corso Roma 101, 15121 Alessandria, Italy",
+      "sr": "SECOND_SUNDAY_11:00",
+      "su": "https://www.icrss.it/",
+      "st": "COMMUNITY_OFFICIAL",
+      "svc": "MASS",
+      "pr": "ICKSP_POST_V13_OFFICIAL_CURRENT_MASS",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
+    },
+    {
+      "u": "ICKSP-IT-2026-LUCCA",
+      "cc": "IT",
+      "l": "Lucca",
+      "n": "Chiesa di Santa Maria della Rosa",
+      "vt": "church",
+      "a": "Via della Rosa 25, 55100 Lucca, Italy",
+      "sr": "SUNDAY_FEAST_09:30; SATURDAY_08:00; FIRST_FRIDAY_17:30",
+      "su": "https://www.icrss.it/",
+      "st": "COMMUNITY_OFFICIAL",
+      "svc": "MASS",
+      "pr": "ICKSP_POST_V13_OFFICIAL_CURRENT_MASS",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
+    },
+    {
+      "u": "ICKSP-IT-2026-ORVIETO",
+      "cc": "IT",
+      "l": "Orvieto",
+      "n": "Chiesa Santa Maria dei Servi",
+      "vt": "church",
+      "a": "Via Belisario, 05018 Orvieto, Italy",
+      "sr": "SECOND_FOURTH_SUNDAY_17:30",
+      "su": "https://www.icrss.it/",
+      "st": "COMMUNITY_OFFICIAL",
+      "svc": "MASS",
+      "pr": "ICKSP_POST_V13_OFFICIAL_CURRENT_MASS",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
+    },
+    {
+      "u": "ICKSP-IT-2026-BIENTINA",
+      "cc": "IT",
+      "l": "Bientina",
+      "n": "Chiesa di San Domenico",
+      "vt": "church",
+      "a": "Via 20 Settembre, 56031 Bientina PI, Italy",
+      "sr": "SATURDAY_18:30",
+      "su": "https://www.icrss.it/",
+      "st": "COMMUNITY_OFFICIAL",
+      "svc": "MASS",
+      "pr": "ICKSP_POST_V13_OFFICIAL_CURRENT_MASS",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
+    },
+    {
+      "u": "ICKSP-IT-2026-PISTOIA",
+      "cc": "IT",
+      "l": "Pistoia",
+      "n": "Chiesa di San Vitale",
+      "vt": "church",
+      "a": "Via della Madonna, 51100 Pistoia, Italy",
+      "sr": "SUNDAY_FEAST_18:00",
+      "su": "https://www.icrss.it/",
+      "st": "COMMUNITY_OFFICIAL",
+      "svc": "MASS",
+      "pr": "ICKSP_POST_V13_OFFICIAL_CURRENT_MASS",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     }
-  ]
+  ],
+  "scope_note": "Frozen v1.3 federation plus current first-party additions and physical-venue normalization. Post-v1.3 additions are explicitly tagged and do not rewrite the historic v1.3 denominator."
 }
