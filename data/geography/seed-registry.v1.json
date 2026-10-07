@@ -297,6 +297,58 @@
       "codes": {
         "iso_alpha2": "UG"
       }
+    },
+    {
+      "geo_area_id": "geo:country:MX",
+      "name": {
+        "official": "Mexico",
+        "aliases": [
+          "México"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MX"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:BR",
+      "name": {
+        "official": "Brazil",
+        "aliases": [
+          "Brasil"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BR"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CO",
+      "name": {
+        "official": "Colombia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CO"
+      }
     }
   ],
   "places": [
@@ -1484,6 +1536,205 @@
       },
       "source_ids": [
         "SHR-MUNYONYO-OFFICIAL"
+      ]
+    },
+    {
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "name": {
+        "official": "Insigne y Nacional Basílica de Santa María de Guadalupe",
+        "aliases": [
+          "Basílica de Guadalupe",
+          "Basilica of Our Lady of Guadalupe"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:MX"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Fray Juan de Zumárraga No. 2",
+        "line2": "Villa Gustavo A. Madero",
+        "postal_code": "07050",
+        "city": "Ciudad de México",
+        "region": "CDMX",
+        "country_code": "MX",
+        "country": "Mexico",
+        "formatted": "Fray Juan de Zumárraga No. 2, Villa Gustavo A. Madero, 07050 Ciudad de México, Mexico"
+      },
+      "source_ids": [
+        "SHR-GUADALUPE-MX-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:MX:basilica-zapopan",
+      "name": {
+        "official": "Basílica de Nuestra Señora de Zapopan",
+        "aliases": [
+          "Basílica de Zapopan",
+          "Basilica of Our Lady of Zapopan"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:MX"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Eva Briseño 152",
+        "line2": "Centro",
+        "postal_code": "45100",
+        "city": "Zapopan",
+        "region": "Jalisco",
+        "country_code": "MX",
+        "country": "Mexico",
+        "formatted": "Eva Briseño 152, Centro, 45100 Zapopan, Jalisco, Mexico"
+      },
+      "source_ids": [
+        "SHR-ZAPOPAN-IDENTITY"
+      ]
+    },
+    {
+      "place_id": "place:BR:aparecida-national-shrine",
+      "name": {
+        "official": "Santuário Nacional de Nossa Senhora Aparecida",
+        "aliases": [
+          "Santuário Nacional de Aparecida",
+          "National Shrine of Our Lady of Aparecida"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:BR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Av. Dr. Júlio Prestes, s/n",
+        "line2": "Ponte Alta",
+        "postal_code": "12570-000",
+        "city": "Aparecida",
+        "region": "São Paulo",
+        "country_code": "BR",
+        "country": "Brazil",
+        "formatted": "Av. Dr. Júlio Prestes, s/n, Ponte Alta, Aparecida - SP, 12570-000, Brazil"
+      },
+      "source_ids": [
+        "SHR-APARECIDA-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:BR:nazare-belem",
+      "name": {
+        "official": "Basílica Santuário de Nossa Senhora de Nazaré do Desterro",
+        "aliases": [
+          "Basílica de Nazaré",
+          "Basilica Sanctuary of Our Lady of Nazareth"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:BR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Av. Nossa Senhora de Nazaré, 1300",
+        "line2": "Nazaré",
+        "postal_code": "66035-145",
+        "city": "Belém",
+        "region": "Pará",
+        "country_code": "BR",
+        "country": "Brazil",
+        "formatted": "Av. Nossa Senhora de Nazaré, 1300, Nazaré, Belém - PA, 66035-145, Brazil"
+      },
+      "source_ids": [
+        "SHR-NAZARE-BELEM-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:CO:las-lajas-ipiales",
+      "name": {
+        "official": "Santuario de Nuestra Señora del Rosario de Las Lajas",
+        "aliases": [
+          "Santuario de Las Lajas",
+          "Las Lajas Sanctuary"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CO"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 0.8055,
+        "lng": -77.586,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://narino.gov.co/recorrido-virtual-templo-de-narino/",
+        "source_ref": "NARINO-GOV:las-lajas-coordinates",
+        "attribution": "Gobernación de Nariño",
+        "matched_country_code": "CO",
+        "verified_at": "2026-10-07"
+      },
+      "address": {
+        "line1": "Santuario de Las Lajas",
+        "line2": null,
+        "postal_code": null,
+        "city": "Ipiales",
+        "region": "Nariño",
+        "country_code": "CO",
+        "country": "Colombia",
+        "formatted": "Santuario de Las Lajas, Ipiales, Nariño, Colombia"
+      },
+      "source_ids": [
+        "SHR-LAS-LAJAS-OFFICIAL"
+      ]
+    },
+    {
+      "place_id": "place:CO:chiquinquira-basilica",
+      "name": {
+        "official": "Basílica de Nuestra Señora del Rosario de Chiquinquirá",
+        "aliases": [
+          "Basílica de Chiquinquirá",
+          "Basilica of Our Lady of the Rosary of Chiquinquirá"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CO"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Calle 16 No. 10-50",
+        "line2": null,
+        "postal_code": null,
+        "city": "Chiquinquirá",
+        "region": "Boyacá",
+        "country_code": "CO",
+        "country": "Colombia",
+        "formatted": "Calle 16 No. 10-50, Chiquinquirá, Boyacá, Colombia"
+      },
+      "source_ids": [
+        "SHR-CHIQUINQUIRA-DIOCESE"
       ]
     }
   ],

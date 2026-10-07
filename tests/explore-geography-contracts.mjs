@@ -28,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -84,6 +84,12 @@ assert.deepEqual(
     "place:NG:nne-enyemaka-umuaka",
     "place:UG:namugongo-martyrs",
     "place:UG:munyonyo-martyrs",
+    "place:MX:basilica-guadalupe-mexico-city",
+    "place:MX:basilica-zapopan",
+    "place:BR:aparecida-national-shrine",
+    "place:BR:nazare-belem",
+    "place:CO:las-lajas-ipiales",
+    "place:CO:chiquinquira-basilica",
   ].sort(),
 );
 
@@ -141,8 +147,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 17,
-  places: 37,
+  geoAreas: 20,
+  places: 43,
   directoryPlaceLinks: 1,
 });
 

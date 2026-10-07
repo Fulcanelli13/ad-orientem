@@ -784,6 +784,102 @@
       "evidence_note": "Munyonyo is a current Uganda Martyrs shrine within the wider pilgrimage/devotional cycle.",
       "map_policy": "PLACE",
       "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:GUADALUPE-MX",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:MX",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "National Marian pilgrimage feast → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "GUADALUPE-MX-FEAST-CUSTOM"
+      ],
+      "evidence_note": "The Basilica documents the annual 12 December Guadalupan pilgrimage and liturgies.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:ZAPOPAN-ROMERIA",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:MX",
+      "place_id": "place:MX:basilica-zapopan",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual Romería → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "ZAPOPAN-ROMERIA-CUSTOM"
+      ],
+      "evidence_note": "The Archdiocese documents the annual 12 October return Romería of Our Lady of Zapopan.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:APARECIDA",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:BR",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "National patronal pilgrimage cycle → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "APARECIDA-FEAST-CUSTOM"
+      ],
+      "evidence_note": "The National Shrine documents the 3–12 October novena and 12 October feast/procession of Our Lady Aparecida.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:CIRIO-NAZARE",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:BR",
+      "place_id": "place:BR:nazare-belem",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual Círio pilgrimage cycle → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "NAZARE-CIRIO-CUSTOM"
+      ],
+      "evidence_note": "The official Círio programme documents the annual Belém pilgrimage cycle and principal procession.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:LAS-LAJAS",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:CO",
+      "place_id": "place:CO:las-lajas-ipiales",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "September patronal pilgrimage tradition → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "LAS-LAJAS-SEPTEMBER-CUSTOM"
+      ],
+      "evidence_note": "The shrine documents the 15 September central pilgrimage date and continuing September patronal celebrations.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:CHIQUINQUIRA",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:CO",
+      "place_id": "place:CO:chiquinquira-basilica",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual national Marian observance → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "CHIQUINQUIRA-JULY9-CUSTOM"
+      ],
+      "evidence_note": "The Diocese documents the annual 9 July shrine observance of Our Lady of Chiquinquirá.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
     }
   ]
 }
