@@ -1208,6 +1208,8 @@ export const AO_PRAY_ROUTE_ASSET_IDS=Object.freeze({
   "pray.mental_prayer":"ao-rich-mental-prayer",
   "pray.sacred_heart":"ao-rich-sacred-heart",
   "pray.communion_treasury":"ao-rich-eucharistic-life",
+  "pray.good_death":"ao-rich-st-joseph",
+  "pray.dying_companion":"ao-rich-holy-souls",
   "pray.immaculate_heart":"ao-rich-immaculate-heart",
   "pray.st_joseph":"ao-rich-st-joseph",
   "pray.holy_spirit":"ao-rich-holy-spirit",
