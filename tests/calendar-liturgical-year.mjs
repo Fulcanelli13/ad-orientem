@@ -144,6 +144,14 @@ assert.match(browser, /height:66px!important/, "Calendar liturgical month lost i
 assert.match(browser, /grid-template-columns:repeat\(3,1fr\)/, "Calendar top navigation did not collapse to Day · Month · Liturgical Year");
 assert.match(browser, /observedCycle\(r,id\)/, "Month Temporale\/Sanctorale classification is missing");
 assert.match(browser, /majorForDate\(id\)/, "Month classification stopped using resolved major-day metadata");
+assert.match(browser, /function principalSaintContext\(r,id\)/, "Calendar Day lost saint\/feast discovery");
+assert.match(browser, /data-cal-saint-date/, "Calendar lost its shared saint-detail entry points");
+assert.match(browser, /AO_MODULES\?\.open\?\.\("today\.saint"/, "Calendar stopped delegating saint detail to the existing shared engine");
+
+const learnPresentation = fs.readFileSync(new URL("../src/learn/presentation.js", import.meta.url), "utf8");
+const learnBrowser = fs.readFileSync(new URL("../src/learn/browser-entry.js", import.meta.url), "utf8");
+assert.doesNotMatch(learnPresentation, /id:"today\.saint"/, "Saint of the Day remained a visible Learn card");
+assert.match(learnBrowser, /new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint"\]\)/, "hidden today.saint compatibility alias was removed from Learn owner");
 
 const bodySource = browser.match(/function bodyMarkup\(\)\{[\s\S]*?\n\}\nfunction css/)?.[0] || "";
 assert.doesNotMatch(bodySource, /yearWheel\(selected,r\)/, "day surface must not restore the old decorative year ring");
