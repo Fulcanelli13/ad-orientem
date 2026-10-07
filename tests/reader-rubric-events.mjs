@@ -5,10 +5,12 @@ import {
   validateReaderRubricEvents,
 } from "../src/mass/reader-rubric-events.js";
 import { iconKeysForReaderState } from "../src/mass/reader-icons.js";
+import { createReaderGestureMatrixController, validateReaderGestureMatrix } from "../src/mass/reader-gesture-matrix.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data=load("../data/presentation/reader-rubric-events.v1.json");
 const frozenActions=load("../data/presentation/reader-priest-actions.v1.json");
+const gestureMatrix=load("../data/mass/gesture-matrix.v1.json");
 
 const audit=validateReaderRubricEvents(data);
 assert.equal(audit.schema,"ao-reader-rubric-events-v1");
@@ -76,8 +78,36 @@ assert.equal(frozenActions.source.sha256,
   "2f091b2f099387cbd709cadd78aff5c25ca1d4152ad0af18083edf301609891f",
   "frozen donor source hash changed");
 
+const matrixAudit=validateReaderGestureMatrix(gestureMatrix);
+assert.equal(matrixAudit.schema,"ao-mass-gesture-matrix-v1");
+assert.equal(matrixAudit.itemCount,99);
+assert.equal(matrixAudit.priestCount,40);
+assert.equal(matrixAudit.faithfulCount,59);
+assert.equal(matrixAudit.campionBackedCount,60);
+assert.ok(matrixAudit.primaryPriestCueCount>=30);
+assert.equal(gestureMatrix.invariants.primaryRubricalAuthority,"ROMAN_MISSAL_1962");
+assert.equal(gestureMatrix.invariants.campionRole,"DISCOVERY_CORROBORATION_AND_EXPLANATORY_PROVENANCE");
+assert.equal(gestureMatrix.invariants.iconBindingRequired,false);
+assert.equal(gestureMatrix.invariants.runtimeMustNotInferBySubstring,true);
+assert.equal(gestureMatrix.items.every(x=>x.iconKey===null),true,"gesture matrix unexpectedly hard-bound icons before icon pass");
+
+const matrixController=createReaderGestureMatrixController({data:gestureMatrix});
+const perIpsum=matrixController.project("AO.SM.C0202");
+assert.equal(perIpsum.primaryPriestAction.label,"THREE CROSSES WITH HOST OVER CHALICE");
+assert.equal(perIpsum.primaryPriestAction.owner,"GESTURE_MATRIX_SOT");
+assert.equal(perIpsum.primaryPriestAction.iconKey,null);
+assert.ok(perIpsum.primaryPriestAction.campionPages.includes(69));
+assert.ok(perIpsum.primaryPriestAction.campionPages.includes(70));
+const gospel=matrixController.project("AO.SM.C0084");
+assert.ok(gospel.faithful.some(x=>x.gesture==="GOSPEL_SMALL_CROSSES"));
+assert.ok(gospel.faithful.some(x=>x.campionPages.includes(30)));
+const elevation=matrixController.project("AO.SM.C0174");
+assert.ok(elevation.priest.some(x=>x.gesture==="ELEVATE_HOST"));
+assert.ok(elevation.faithful.some(x=>x.gesture==="ELEVATION_ADORATION"));
+assert.equal(matrixController.project("AO.SM.C9999").priest.length,0);
+
 const noData=createReaderRubricEventController();
 assert.equal(noData.supported,false);
 assert.equal(noData.project("AO.SM.C0174").primaryPriestAction,null);
 
-console.log("reader rubric events: PASS — multi-action 1962 overlay enriches priest cues without mutating frozen donor/card authority.");
+console.log("reader rubric events + gesture matrix: PASS — Campion-backed gesture SOT integrates exact-cue priest/faithful gestures without mutating frozen donor/card authority.");
