@@ -11,7 +11,7 @@ const massV180=JSON.parse(readFileSync("data/presentation/mass-v180-donor-parity
 const massStepReconciliation=JSON.parse(readFileSync("data/presentation/mass-v180-v183-step-reconciliation.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.25.0");
+assert.equal(app.version,"1.26.0");
 assert.equal(app.status,"PRESENTATION_PARITY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -28,7 +28,7 @@ assert.equal(app.massSubsystem?.singlePresentationOwner,"R17_NATIVE_PRODUCTION")
 assert.equal(app.massSubsystem?.definitiveConvergenceLedger,"data/presentation/mass-definitive-convergence.v1.json");
 assert.equal(app.massSubsystem?.v180DonorParityLedger,"data/presentation/mass-v180-donor-parity.v1.json");
 
-const allowed=new Set(["PASS","REGRESSION","STALE_SURFACE","MISSING_INTEGRATION","CRASH"]);
+const allowed=new Set(["PASS","REGRESSION","STALE_SURFACE","MISSING_INTEGRATION","MISSING_PRIMARY_EVIDENCE","CRASH"]);
 const findings=Array.isArray(app.findings)?app.findings:[];
 assert.ok(findings.length>0,"app gate has no findings");
 for(const finding of findings){
@@ -55,16 +55,22 @@ assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json")
 assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
 assert.equal(app.exactDonorParityLedger,"data/presentation/exact-donor-parity.v1.json");
 const exactFinding=findings.find(x=>x.id==="EXACT_NON_MASS_DONOR_PARITY");
-assert.equal(exactFinding?.classification,"MISSING_INTEGRATION");
+assert.equal(exactFinding?.classification,"MISSING_PRIMARY_EVIDENCE");
 assert.equal(exactFinding?.status,"OPEN");
 assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
 assert.equal(exactDonor.status,"OPEN");
-assert.equal(exactDonor.version,"1.8.0");
+assert.equal(exactDonor.version,"1.9.0");
 assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
 assert.equal(exactDonor.openBlockers?.[0],"FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED");
 assert.equal(exactDonor.openBlockers?.length,3,"exact donor gate must retain exactly the composition blocker plus two missing-primary blockers");
 assert.match(exactDonor.openBlockers?.[1]??"",/^MISSING_PRIMARY_DONOR: Ad_Orientem_v3_4_14\.html\b/);
 assert.match(exactDonor.openBlockers?.[2]??"",/^MISSING_PRIMARY_DONOR: Ad_Orientem_NON_MASS_HEAD_v3_22_NOVENA_FREEZE_CALENDAR_DASHBOARD_C2\.html\b/);
+for(const id of ["SETTINGS_V43596_DONOR_PARITY","CINEMATIC_V4312_RUNTIME_PARITY","ADORATION_FINAL_COMPOSITION_PARITY","BENEDICTION_BLESSING_ASSET_PARITY"]){
+  const f=exactDonor.findings.find(x=>x.id===id);
+  assert.equal(f?.classification,"PASS",id+" must be recorded as repaired");
+  assert.equal(f?.status,"CLOSED",id+" must be closed");
+}
+assert.match(exactDonor.findings.find(x=>x.id==="FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED")?.validation??"",/PRIMARY_DONOR_EVIDENCE_ONLY_REMAINS/);
 assert.match(exactDonor.rule,/conceptual equivalence.*do not satisfy|conceptual equivalence.*insufficient|conceptual feature/i);
 const fxFinding=findings.find(x=>x.id==="PRESENTATION_FX_PARITY");
 assert.equal(fxFinding?.classification,"PASS");

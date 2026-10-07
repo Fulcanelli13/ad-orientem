@@ -1,6 +1,6 @@
 {
   "schema": "ao-exact-donor-presentation-parity-v1",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "status": "OPEN",
   "releaseBlocker": "EXACT_NON_MASS_DONOR_PARITY",
   "rule": "FINAL_APP_READY requires exact recovery of the approved non-Mass donor presentation system. Functional or conceptual equivalence, generic cinematics, generic route labels, simplified rails, or newly designed substitutes do not satisfy this gate.",
@@ -162,10 +162,77 @@
       "validation": "RECOVERED_AND_REGRESSION_LOCKED"
     },
     {
+      "id": "SETTINGS_V43596_DONOR_PARITY",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "The full v43.59.6 Settings route hierarchy and preference/state model are restored under AO_SETTINGS_APP_V1, including General, Display & Accessibility, Language & Text, Mass, Local Church & Customs, Prayer & Devotions, Privacy & Data, and Sources/About. The modular shell retains navigation ownership, and live-Mass stacking is explicitly Mass < Settings overlay < global ribbon.",
+      "expected": "Preserve the v43.59.6 Settings information architecture and controls without reducing them to a substitute page, while keeping current modular-shell and live-session ownership.",
+      "evidence": [
+        "src/settings/browser-entry.js",
+        "src/settings/donor-state.js",
+        "src/settings/presentation.js",
+        "tests/settings-owner.mjs",
+        "tests/settings-e2e.mjs",
+        "PR #254",
+        "App convergence workflow 37576353184",
+        "Visual acceptance workflow 37576353174"
+      ],
+      "validation": "RECOVERED_AND_PHONE_VISUAL_CERTIFIED"
+    },
+    {
+      "id": "CINEMATIC_V4312_RUNTIME_PARITY",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "The actual v43.12 cinematic runtime now exists in production rather than only an adapter: boot, semantic transition and workload-loader owners are installed, reduced-motion aware, and exercised by modular callers without reviving generic destination-name transitions.",
+      "expected": "The modular presentation bridge must call a real recovered v43.12 cinematic owner for approved semantic transitions and workload loading states.",
+      "evidence": [
+        "src/app/cinematic-runtime.js",
+        "src/app/browser-entry.js",
+        "src/app/presentation-fx.js",
+        "tests/presentation-fx.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "PR #254",
+        "Visual acceptance workflow 37576353174"
+      ],
+      "validation": "RECOVERED_AND_REGRESSION_LOCKED"
+    },
+    {
+      "id": "ADORATION_FINAL_COMPOSITION_PARITY",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "Adoration once again exposes the final five-entry composition: Visit to the Blessed Sacrament (5–15 min), open-ended Adoration, Holy Hour, Four Ends, and Eucharistic Treasury. Benediction remains a public-rite handoff inside Adoration rather than replacing Holy Hour/Four Ends on the landing surface.",
+      "expected": "Retain the later approved Eucharistic family composition rather than the reduced four-card modular substitute.",
+      "evidence": [
+        "src/pray/presentation-runtime.js",
+        "tests/pray-presentation.mjs",
+        "tests/app-visual-acceptance.mjs",
+        "Ad_Orientem_NON_MASS_HEAD_v1_NOVENAS_N3_GUIDED.html · SHA-256 105f765d0227b937c58781416cf461c7b950b50427704b81478b4deaeeaadf10",
+        "PR #254",
+        "Visual acceptance workflow 37576353174"
+      ],
+      "validation": "RECOVERED_AND_VISUAL_CERTIFIED"
+    },
+    {
+      "id": "BENEDICTION_BLESSING_ASSET_PARITY",
+      "classification": "PASS",
+      "status": "CLOSED",
+      "current": "The omitted frozen-V4 Eucharistic blessing silhouette has been recovered into a browser-loadable production asset and is protected by registry/provenance/checksum tests.",
+      "expected": "Benediction blessing uses the frozen V4 ao-live-blessing asset rather than a missing-image or generic substitute.",
+      "evidence": [
+        "assets/recovered/ao-live-blessing.svg",
+        "src/assets/asset-registry.js",
+        "tests/asset-bank-contract.mjs",
+        "tests/nonmass-asset-consumers.mjs",
+        "PR #254",
+        "Visual acceptance workflow 37576353174"
+      ],
+      "validation": "RECOVERED_AND_CHECKSUM_GUARDED"
+    },
+    {
       "id": "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
       "classification": "MISSING_PRIMARY_EVIDENCE",
       "status": "OPEN",
-      "current": "The current 390x844 regression matrix remains complete and green across the recovered non-Mass surfaces. Exact user-supplied v3.4.16 successor bytes are now recovered (SHA-256 f34ab3281ac16f8125e13cb3e9e1173efe1f0e10185f163b6604bdae30d0bc86; 54,403,486 bytes) and embed the v3.4.14→v3.4.15→v3.4.16 certification chain, with v3.4.15 explicitly preserving the v3.4.14 Rosary dedicated rail. This is strong successor provenance but not exact v3.4.14 primary evidence: v3.4.15/16 repaired visible cross-marker/cue content, and the first 54,354,041 bytes of v3.4.16 hash to 75a66058e5fdb7576baa3fa64c6a79ced4535caa13cd954eac953e36a713e593 rather than the frozen v3.4.10 hash 952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283, disproving a byte-preserved append-only slice. The N3 donor upload was also revalidated exactly against its recorded hash. v3.22 primary/successor bytes remain unavailable.",
+      "current": "The recovered non-Mass implementation is now green across the full current 390x844 matrix, including the repaired v43.59.6 Settings owner, real v43.12 cinematic runtime, final five-entry Adoration composition, recovered Benediction blessing asset, Rosary cleanup, semantic rails, Novenas, Traditional PRAY/Learn and Calendar/v38.4. No known current implementation divergence remains open against the donor evidence that is actually available. Certification is nevertheless withheld because immutable primary evidence for the final v3.4.14 Rosary donor and the v3.22 final non-Mass head is still unavailable. Exact v3.4.16 successor provenance proves lineage but not byte identity for v3.4.14; v3.22/v3.23 bytes still do not survive.",
       "expected": "Keep the full current capture matrix green and obtain immutable primary evidence for the final v3.4.14 Rosary donor and v3.22 final non-Mass head before closing exact parity. Exact external v3.4.10/N3 hashes may support provenance but do not become CI donor renders unless their exact bytes are made repository-addressable or an immutable render is frozen directly from those bytes.",
       "evidence": [
         "tests/nonmass-donor-reference-e2e.mjs",
@@ -184,7 +251,7 @@
         "Ad_Orientem_v3_4_16.html · SHA-256 f34ab3281ac16f8125e13cb3e9e1173efe1f0e10185f163b6604bdae30d0bc86 · 54,403,486 bytes · embedded v3.4.14/v3.4.15/v3.4.16 certification chain",
         "v3.4.16 first-54,354,041-byte SHA-256 75a66058e5fdb7576baa3fa64c6a79ced4535caa13cd954eac953e36a713e593 ≠ frozen v3.4.10 SHA-256 952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283"
       ],
-      "validation": "CURRENT_MATRIX_COMPLETE_SUCCESSOR_PROVENANCE_RECOVERED_PRIMARY_DONOR_BYTES_STILL_MISSING"
+      "validation": "CURRENT_IMPLEMENTATION_MATRIX_GREEN_PRIMARY_DONOR_EVIDENCE_ONLY_REMAINS"
     }
   ],
   "preservationRules": [
