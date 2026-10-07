@@ -31,6 +31,9 @@ export const TRADITIONAL_LEARN_SOURCES_V381=Object.freeze({
   scapular:"https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
   ritualPermission:"https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html",
   viaticum:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/v_viaticum%2C_the_last_sacrament_of_the_christian.html",
+  campion1954:"https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+  romanRitualCommunion1952:"https://collegiumcaronensis.org/wp-content/uploads/2019/12/rituale-romano-1952-comunione.pdf",
+  oconnell1962:"https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
 });
 
 export const LOW_MASS_RESPONSES_V381=Object.freeze([
