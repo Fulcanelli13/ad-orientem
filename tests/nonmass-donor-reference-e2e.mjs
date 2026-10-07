@@ -10,6 +10,13 @@ import { chromium } from "@playwright/test";
 const DONOR_COMMIT="7a613721d5caee0500588c759c90864e4041e7a2";
 const DONOR_LABEL="v43.59.30 verbatim extraction snapshot";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const primarySources=JSON.parse(await readFile(resolve(root,"data/presentation/nonmass-primary-donor-sources.v1.json"),"utf8"));
+const sourceById=Object.fromEntries(primarySources.sources.map(x=>[x.id,x]));
+assert.equal(sourceById.PRAY_UNIFIED_READER_CLOSURE.repositoryCommit,DONOR_COMMIT,"frozen Git donor commit drifted from primary-source manifest");
+assert.equal(sourceById.V3_4_10_PRESENTATION_AND_TRADITION.sha256,"952b34432ec73f2b0ec111f6b64b22f648160b99bf1aead246c6b3abf3e5d283");
+assert.equal(sourceById.N3_GUIDED_NOVENAS.sha256,"105f765d0227b937c58781416cf461c7b950b50427704b81478b4deaeeaadf10");
+assert.equal(sourceById.V3_4_14_ROSARY_FINAL.availability,"APPROVED_PRIMARY_BYTES_MISSING");
+assert.equal(sourceById.NON_MASS_HEAD_V3_22.availability,"APPROVED_PRIMARY_BYTES_MISSING");
 const out=resolve(root,"artifacts/visual-acceptance/donor-current-v435930");
 await mkdir(out,{recursive:true});
 const donorRoot=await mkdtemp(resolve(os.tmpdir(),"ao-donor-v435930-"));
@@ -92,6 +99,9 @@ try{
     currentCommit:currentHead,
     viewport:{width:390,height:844,deviceScaleFactor:2,isMobile:true,hasTouch:true},
     pairs:[],
+    primarySources:primarySources.sources,
+    currentCaptureCoverage:primarySources.currentCaptureCoverage,
+    certification:primarySources.certification,
   };
 
   async function geometry(page,kind){
@@ -174,7 +184,26 @@ try{
 
   await writeFile(resolve(out,"comparison-manifest.json"),JSON.stringify(manifest,null,2)+"\n");
   const cards=manifest.pairs.map(p=>`<section><h2>${p.id}</h2><div class="pair"><figure><figcaption>${DONOR_LABEL} · ${DONOR_COMMIT.slice(0,8)}</figcaption><img src="${p.donor}"></figure><figure><figcaption>Current · ${currentHead.slice(0,8)}</figcaption><img src="${p.current}"></figure></div><details><summary>Measured geometry</summary><pre>${JSON.stringify({donor:p.donorGeometry,current:p.currentGeometry},null,2).replace(/&/g,"&amp;").replace(/</g,"&lt;")}</pre></details></section>`).join("");
-  await writeFile(resolve(out,"comparison.html"),`<!doctype html><meta charset="utf-8"><title>Ad Orientem donor/current visual comparison</title><style>body{margin:0;background:#0a0d12;color:#eee;font:14px system-ui;padding:24px}section{max-width:900px;margin:0 auto 40px;padding-bottom:28px;border-bottom:1px solid #333}h1,h2{font-family:Georgia,serif}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0}figcaption{margin:0 0 8px;color:#c9b47d}img{display:block;width:100%;max-width:390px;border:1px solid #333;background:#000}pre{white-space:pre-wrap;color:#bbb}@media(max-width:700px){.pair{grid-template-columns:1fr}}</style><h1>Frozen donor vs current · 390×844</h1><p>Donor authority: ${DONOR_LABEL} at <code>${DONOR_COMMIT}</code>. Current: <code>${currentHead}</code>.</p>${cards}`);
+  const later=[
+    ["06-rosary-final","V3_4_14_ROSARY_FINAL","../03d-pray-rosary-live-rail.png","../03c-pray-rosary-mystery-cinematic.png"],
+    ["07-adoration","V3_4_10_PRESENTATION_AND_TRADITION","../03e-pray-adoration-arrival.png","../03f-pray-adoration-silence.png"],
+    ["08-benediction","V3_4_10_PRESENTATION_AND_TRADITION","../03g-pray-benediction-blessing.png",null],
+    ["09-confession","V3_4_10_PRESENTATION_AND_TRADITION","../03h-pray-confession-in-confessional.png",null],
+    ["10-novenas","N3_GUIDED_NOVENAS","../03f-pray-novenas.png",null],
+    ["11-morning-evening","V3_4_10_PRESENTATION_AND_TRADITION","../03g-pray-morning-evening.png",null],
+    ["12-sacred-hymns","V3_4_10_PRESENTATION_AND_TRADITION","../03h-pray-sacred-hymns.png",null],
+    ["13-holy-name","V3_4_10_PRESENTATION_AND_TRADITION","../03i-pray-holy-name.png",null],
+    ["14-learn","NON_MASS_HEAD_V3_22","../04-learn.png","../04a-learn-serious-illness.png"],
+    ["15-calendar-v384","NON_MASS_HEAD_V3_22","../04f2-calendar-v384-christ-king-october.png","../04h-calendar-v384-discipline-1962.png"],
+    ["16-settings","NON_MASS_HEAD_V3_22","../05-settings.png","../05b-settings-sources.png"],
+  ];
+  const evidenceCards=later.map(([id,sourceId,currentImage,secondary])=>{
+    const s=sourceById[sourceId]||{};
+    const hash=s.sha256?`<code>${s.sha256}</code>`:"<em>primary bytes unavailable</em>";
+    const second=secondary?`<img src="${secondary}">`:"";
+    return `<section><h2>${id}</h2><div class="pair"><figure class="evidence"><figcaption>Primary authority · ${sourceId}</figcaption><div class="missing"><strong>${s.filename||sourceId}</strong><p>Status: <code>${s.availability||"UNKNOWN"}</code></p><p>${hash}</p><p>${s.note||""}</p></div></figure><figure><figcaption>Current regression capture · ${currentHead.slice(0,8)}</figcaption><img src="${currentImage}">${second}</figure></div></section>`;
+  }).join("");
+  await writeFile(resolve(out,"comparison.html"),`<!doctype html><meta charset="utf-8"><title>Ad Orientem donor/current visual comparison</title><style>body{margin:0;background:#0a0d12;color:#eee;font:14px system-ui;padding:24px}section{max-width:900px;margin:0 auto 40px;padding-bottom:28px;border-bottom:1px solid #333}h1,h2{font-family:Georgia,serif}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0}figcaption{margin:0 0 8px;color:#c9b47d}img{display:block;width:100%;max-width:390px;border:1px solid #333;background:#000}pre{white-space:pre-wrap;color:#bbb}.missing{min-height:420px;border:1px dashed #665f4d;padding:18px;background:#11161e;color:#c8c2b4}.missing strong{display:block;color:#e8dcc0;font-family:Georgia,serif;font-size:18px}.missing code{overflow-wrap:anywhere}.evidence{max-width:390px}@media(max-width:700px){.pair{grid-template-columns:1fr}}</style><h1>Frozen donor vs current · 390×844</h1><p>Donor authority: ${DONOR_LABEL} at <code>${DONOR_COMMIT}</code>. Current: <code>${currentHead}</code>.</p>${cards}${evidenceCards}`);
   console.log("PASS direct frozen-donor/current capture generated at",out);
 } finally {
   await browser?.close().catch(()=>{});
