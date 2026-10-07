@@ -643,6 +643,7 @@ export function createReaderDomAdapter({
   let scholaFallbackTimer=0;
   let scholaTickerIdentity=null;
   let suppressNavClickUntil=0;
+  let suppressModeClickUntil=0;
 
   function setMode(next){
     const requested=normalizePresentationMode(next);
@@ -1051,13 +1052,21 @@ export function createReaderDomAdapter({
         else if(navButton.dataset.readerNav==="next")onNext?.(current,prepared);
       });
     }
-    // v1.80 Mass-preferences mode controls own their touch/click lifecycle directly.
-    // This avoids delegated-click ambiguity inside the floating preferences sheet
-    // and guarantees that a real phone tap commits the presentation switch.
+    // v1.80 Mass-preferences mode controls own touch on pointerdown for the
+    // same reason as the edge arrows: a physical tap must commit the switch
+    // even while the reader rebuilds beneath the preferences sheet.
     for(const modeButton of root.querySelectorAll?.("[data-reader-mode]") ?? []){
+      modeButton.addEventListener?.("pointerdown",event=>{
+        if(event.pointerType!=="touch")return;
+        event.preventDefault?.();
+        event.stopPropagation?.();
+        suppressModeClickUntil=Date.now()+650;
+        setMode(modeButton.dataset.readerMode);
+      });
       modeButton.addEventListener?.("click",event=>{
         event.preventDefault?.();
         event.stopPropagation?.();
+        if(Date.now()<suppressModeClickUntil)return;
         setMode(modeButton.dataset.readerMode);
       });
     }
