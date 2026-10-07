@@ -12,12 +12,11 @@ assert.equal(parseDisplayDate("7-10-2026"),"2026-10-07");
 assert.equal(parseDisplayDate("31/02/2026"),null);
 
 const read=path=>readFile(new URL("../"+path,import.meta.url),"utf8");
-const [app,home,enrichers,calendar,traditionalYear,learn,pray,novenas]=await Promise.all([
+const [app,home,enrichers,calendar,learn,pray,novenas]=await Promise.all([
   read("src/app/browser-entry.js"),
   read("src/home/presentation.js"),
   read("src/home/enrichers.js"),
   read("src/calendar/browser-entry.js"),
-  read("src/calendar/traditional-year-v384.js"),
   read("src/learn/presentation.js"),
   read("src/pray/presentation-runtime.js"),
   read("src/pray/novena-runtime.js"),
@@ -30,7 +29,6 @@ assert.match(enrichers,/formatDisplayDate\(best\.d\)/);
 assert.match(calendar,/const longDate=id=>displayDate\(id\)/);
 assert.match(calendar,/const shortDate=id=>displayDate\(id\)/);
 assert.match(calendar,/Date in DD\/MM\/YYYY format/);
-assert.match(traditionalYear,/formatDisplayDate\(selected\)/);
 assert.match(learn,/rawDate\?formatDisplayDate\(rawDate\)/);
 assert.match(pray,/formatDisplayDate\(d\)/);
 assert.match(pray,/placeholder="DD\/MM\/YYYY"/);
