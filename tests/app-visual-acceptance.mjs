@@ -632,6 +632,13 @@ try{
     artBackdrop:document.querySelector("#aoPrayerBookRoot .aoRosaryRitualCenter")?.classList?.contains("r24-has-mystery-art")??false,
     artValue:document.querySelector("#aoPrayerBookRoot .aoRosaryRitualCenter")?.style?.getPropertyValue("--r24-mystery-art")??"",
     contemplation:document.querySelectorAll("#aoPrayerBookRoot .lab-contemplation,#aoPrayerBookRoot .r23-contemplation").length,
+    headerTitle:document.querySelector("#aoPrayerBookRoot .lab-view-head h1")?.textContent?.trim()??"",
+    contemplationTitle:document.querySelector("#aoPrayerBookRoot .lab-contemplation h2,#aoPrayerBookRoot .r23-contemplation h2")?.textContent?.trim()??"",
+    artTitleVisible:(()=>{
+      const x=document.querySelector("#aoPrayerBookRoot .aoV401RosaryHero figcaption span:first-child,#aoPrayerBookRoot .aoRosaryArtHero figcaption span:first-child");
+      return Boolean(x&&getComputedStyle(x).display!=="none"&&!x.hidden&&x.getClientRects().length);
+    })(),
+    helperTextVisible:[...document.querySelectorAll("#aoPrayerBookRoot .lab-option-bar .lab-step-count")].some(x=>!x.hidden&&getComputedStyle(x).display!=="none"&&x.getClientRects().length>0),
     cinematicTitle:document.querySelector("#ao-cinema-transition [data-ao-cinema-transition-title]")?.textContent?.trim()??"",
     cinematicKicker:document.querySelector("#ao-cinema-transition [data-ao-cinema-transition-kicker]")?.textContent?.trim()??"",
     reduced:globalThis.AO_CINEMATIC_V4312?.isReducedMotion?.()??null,
@@ -640,6 +647,10 @@ try{
   assert.equal(rosaryMysteryFx.artBackdrop,true,"Rosary Mystery I lost the donor sacred-art backdrop");
   assert.ok(rosaryMysteryFx.artValue.includes("url("),"Rosary mystery backdrop has no resolved artwork");
   assert.ok(rosaryMysteryFx.contemplation>=1,"Rosary Mystery I lost the donor contemplation sheet");
+  assert.match(rosaryMysteryFx.headerTitle,/Glorious Mysteries|Mystères glorieux/i,"Rosary header repeats the active mystery instead of identifying the mystery set");
+  assert.match(rosaryMysteryFx.contemplationTitle,/Resurrection|Résurrection/i,"Rosary contemplation lost the active mystery title");
+  assert.equal(rosaryMysteryFx.artTitleVisible,false,"Rosary sacred-art caption repeats the active mystery title");
+  assert.equal(rosaryMysteryFx.helperTextVisible,false,"Rosary keeps obsolete explanatory helper text in the live reader");
   assert.ok(rosaryMysteryFx.cinematicTitle.length>0,"Rosary mystery cinematic has no title");
   assert.match(rosaryMysteryFx.cinematicKicker,/HOLY ROSARY|SAINT ROSAIRE/,"Rosary mystery cinematic lost devotional identity");
   assert.equal(rosaryMysteryFx.reduced,false,"visual acceptance unexpectedly entered reduced-motion mode");
