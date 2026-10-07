@@ -134,9 +134,9 @@ function monthIndexList(monthId,selected,view){
       :L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.");
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
-    ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
+    ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" ${view==="sanctorale"?`data-cal-saint-date="${x.date}"`:""} class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
       <time>${esc(displayDate(x.date))}</time>
-      <span class="aoCalMonthIndexText"><strong>${esc(x.title)}</strong><small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small></span>
+      <span class="aoCalMonthIndexText"><strong>${esc(x.title)}</strong><small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small>${view==="sanctorale"?`<em>${esc(L("Life & sources","Vie & sources"))} →</em>`:""}</span>
       <i aria-hidden="true"></i>
     </button>`).join("")}</div>`:`<div class="aoCalMonthEmpty">${esc(L("No resolved observances in this category for the month.","Aucune célébration résolue dans cette catégorie pour ce mois."))}</div>`}
   </section>`;
