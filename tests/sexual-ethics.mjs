@@ -119,7 +119,7 @@ assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Ever
 assert.equal(CSE_QUALITY_AUDIT_VERSION,"CSE_QUALITY_V4");
 assert.equal(CSE_QUALITY_AUDIT.length,150);
 assert.equal(CSE_QUALITY_SUMMARY.records,150);
-assert.deepEqual(CSE_QUALITY_SUMMARY.dispositions,{KEEP:3,TIGHTEN:40,REWRITE:24,SOURCE_REPAIR:83});
+assert.deepEqual(CSE_QUALITY_SUMMARY.dispositions,{KEEP:3,TIGHTEN:41,REWRITE:24,SOURCE_REPAIR:82});
 assert.equal(CSE_QUALITY_SUMMARY.allReviewed,true);
 assert.equal(CSE_QUALITY_SUMMARY.allClickable,true);
 assert.equal(CSE_QUALITY_SUMMARY.allAuthoritativelyGrounded,true);
