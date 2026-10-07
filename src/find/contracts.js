@@ -1,3 +1,4 @@
+import { auditDirectoryGeo } from "./geo-provenance.js";
 export const DIRECTORY_SCHEMA = "DIRECTORY_SOT_V1";
 
 export const COMMUNION_VALUES = Object.freeze([
@@ -120,6 +121,9 @@ export function auditVenue(venue, path = "venue") {
 
   if (!hasGeo && !hasAddress) {
     issues.push(issue("MISSING_LOCATION", path, "Venue requires usable coordinates or a usable address."));
+  }
+  if (hasGeo) {
+    issues.push(...auditDirectoryGeo(venue.geo,{countryCode:venue?.address?.country_code,path:path+".geo"}));
   }
   return issues;
 }
