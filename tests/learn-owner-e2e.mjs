@@ -107,7 +107,8 @@ try{
   assert.equal(learned.owner,"modular-learn-v1");
   assert.equal(learned.presentationOwner,"modular-learn-presentation-v1");
   assert.equal(learned.routeOwner,"modular-learn-v1");
-  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel","today.saint"]);
+  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"]);
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module=\'today.saint\']").count(),0,"Saint of the Day remained visible in Learn");
   assert.equal(learned.donorVisible,false,"historical V37 Learn donor remained visible underneath modular Learn");
   assert.equal(learned.donorNavCount,0,"historical V37 navigation leaked into modular Learn");
   assert.equal(learned.sourcesUtilityCount,0,"top-level Sources leaked back into Learn");
