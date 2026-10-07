@@ -88,6 +88,20 @@ function observedCycle(r,id){
   const generic=/^(?:liturgical day|jour liturgique|calendar unavailable|calendrier indisponible)$/;
   return generic.test(title.trim())?"unknown":"sanctorale";
 }
+function principalSaintContext(r,id){
+  if(observedCycle(r,id)!=="sanctorale")return null;
+  const title=titleOf(r);
+  const marian=/\b(?:our lady|blessed virgin|virgin mary|immaculate|assumption|purification|annunciation|rosary|notre[- ]dame|sainte vierge|bienheureuse vierge|immacul[eé]e|assomption|purification|annonciation|rosaire)\b/i.test(title);
+  return {date:id,title,marian,label:marian?L("Marian feast","Fête mariale"):L("Saint / feast","Saint / fête")};
+}
+async function openSaintDetail(id){
+  const target=String(id||state()?.selectedDate||"");if(!target)return false;
+  const ok=await select(target,{closeAfter:false});if(!ok)return false;
+  try{
+    const result=await Promise.resolve(globalThis.AO_MODULES?.open?.("today.saint",{returnContext:{surface:"calendar",view:"day",date:target}}));
+    return result?.ok===true||result===true||Boolean(globalThis.AO_NAV_V25?.getState?.()?.panel==="saint");
+  }catch(error){console.error("Calendar saint detail failed",error);return false}
+}
 function monthEntry(id){
   const raw=weekCache.get(id),r=raw?.status!=="failed"&&raw?.day?raw:null;
   if(!r)return null;
