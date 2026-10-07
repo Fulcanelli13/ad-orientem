@@ -24,6 +24,7 @@ assert.deepEqual(AO_APP_SURFACE_ASSET_IDS,{
 });
 assert.deepEqual(AO_LEARN_ROUTE_ASSET_IDS,{
   "learn.catechism.daily":"ao-refined-study",
+  "learn.latin":"ao-refined-study",
   "learn.mass":"ao-rich-guides",
   "learn.catechism":"ao-module-catechism",
   "today.gospel":"ao-refined-scripture",
