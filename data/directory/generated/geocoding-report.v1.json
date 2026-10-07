@@ -1,22 +1,22 @@
 {
   "schema": "AO_DIRECTORY_GEOCODING_REPORT_V1",
-  "generated_at": "2026-10-07T11:07:11.377Z",
+  "generated_at": "2026-10-07T11:45:46.695Z",
   "provider": "OSM_NOMINATIM",
   "endpoint": "https://nominatim.openstreetmap.org/search",
   "providers": {
     "fssp": {
       "total": 404,
-      "mapped": 285,
-      "accepted": 271,
-      "primary_accepted": 0,
-      "fallback_accepted": 271,
-      "existing_valid": 14,
-      "unresolved": 119,
+      "mapped": 286,
+      "accepted": 280,
+      "primary_accepted": 13,
+      "fallback_accepted": 267,
+      "existing_valid": 6,
+      "unresolved": 118,
       "existing_invalid": 0,
       "validation_issue_count": 0,
       "by_precision": {
-        "building": 135,
-        "address": 81,
+        "building": 130,
+        "address": 87,
         "street": 62,
         "locality": 7,
         "region": 0,
@@ -26,10 +26,10 @@
     "icksp": {
       "total": 27,
       "mapped": 22,
-      "accepted": 19,
-      "primary_accepted": 0,
+      "accepted": 22,
+      "primary_accepted": 3,
       "fallback_accepted": 19,
-      "existing_valid": 3,
+      "existing_valid": 0,
       "unresolved": 5,
       "existing_invalid": 0,
       "validation_issue_count": 0,
@@ -45,10 +45,10 @@
     "ibp": {
       "total": 34,
       "mapped": 25,
-      "accepted": 10,
-      "primary_accepted": 0,
+      "accepted": 25,
+      "primary_accepted": 15,
       "fallback_accepted": 10,
-      "existing_valid": 15,
+      "existing_valid": 0,
       "unresolved": 9,
       "existing_invalid": 0,
       "validation_issue_count": 0,
@@ -62,7 +62,7 @@
       }
     }
   },
-  "network_requests": 397,
-  "offline": false,
+  "network_requests": 0,
+  "offline": true,
   "cache_records": 861
 }
