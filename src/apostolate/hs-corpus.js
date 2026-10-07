@@ -32,7 +32,7 @@ export const APOSTOLATE_HS_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF02","APF03","APF05","APF08","APF09"]),
     sourceIds:Object.freeze(["CIC83-916","ST-PIUS-X-CATECHISM-FR"]),
     handoffs:Object.freeze([
-      formation("HS01","learn.catholic_life","Use Formation for a structured return to Catholic practice."),
+      formation("HS01","learn.mass","Use Formation to regain orientation to the Mass itself."),
       owned("pray","pray.confession","Confession preparation remains owned by PRAY."),
       owned("mass","mass.prepare","Mass preparation remains owned by the Mass surface."),
       owned("find","find","Use Explore/Find to locate a traditional Mass or priest."),
@@ -59,7 +59,7 @@ export const APOSTOLATE_HS_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF02","APF03","APF05","APF08","APF09"]),
     sourceIds:Object.freeze(["CIC83-987-989","ST-PIUS-X-CATECHISM-FR"]),
     handoffs:Object.freeze([
-      formation("HS02","learn.catholic_life","Use Formation for the doctrine and habits surrounding Penance."),
+      formation("HS02","learn.catechism","Use Catechism for the doctrine of Penance; PRAY owns sacramental preparation."),
       owned("pray","pray.confession","The actual preparation workflow belongs to PRAY."),
     ]),
   }),
@@ -84,7 +84,7 @@ export const APOSTOLATE_HS_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF02","APF03","APF04","APF07","APF08","APF09"]),
     sourceIds:Object.freeze(["CIC83-865","ST-PIUS-X-CATECHISM-FR"]),
     handoffs:Object.freeze([
-      formation("HS03","learn.catholic_life","Formation supplies the structured Catholic-life curriculum."),
+      formation("HS03","learn.catechism","Use Catechism for structured doctrinal formation while a priest determines the person’s actual reception path."),
       owned("find","find","Find/Explore can help locate a priest or traditional Catholic community."),
     ]),
   }),
@@ -109,7 +109,6 @@ export const APOSTOLATE_HS_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF02","APF03","APF04","APF05","APF09"]),
     sourceIds:Object.freeze(["COMPENDIUM-OUR-FATHER","ST-PIUS-X-CATECHISM-FR"]),
     handoffs:Object.freeze([
-      formation("HS04","learn.catholic_life","Formation can explain the place of prayer in Catholic life."),
       owned("pray","pray.morning_evening","Use the existing morning/evening prayer owner for a simple routine."),
       owned("pray","pray.rosary","Rosary remains an owned devotional module rather than being rebuilt here."),
     ]),
@@ -135,7 +134,7 @@ export const APOSTOLATE_HS_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF02","APF03","APF05","APF07","APF09"]),
     sourceIds:Object.freeze(["TRENT-XXV-SAINTS-PURGATORY","MR62-REQUIEM","ST-PIUS-X-CATECHISM-FR"]),
     handoffs:Object.freeze([
-      formation("HS05","learn.catholic_life","Formation can deepen Catholic teaching on death, judgment and suffrage."),
+      formation("HS05","learn.catechism","Use Catechism for Catholic teaching on death, judgment, Purgatory and suffrage."),
       owned("pray","pray.holy_souls","Prayer for the dead belongs to the Holy Souls owner."),
       owned("pray","pray.good_death","Good Death remains the ordinary preparation treasury, not a bereavement substitute."),
     ]),
@@ -188,7 +187,7 @@ export const APOSTOLATE_HS_SCENARIOS=Object.freeze([
     apfSkills:Object.freeze(["APF01","APF02","APF03","APF05","APF07","APF08"]),
     sourceIds:Object.freeze(["PIUS-XII-MYSTICI-CORPORIS","ST-PIUS-X-CATECHISM-FR"]),
     handoffs:Object.freeze([
-      formation("HS07","learn.catholic_life","Formation can deepen the distinction between the Church’s holiness and the sins of her members."),
+      formation("HS07","learn.catechism","Use Catechism for the Church’s nature and holiness while Apostolate handles the pastoral difficulty."),
       owned("find","find","Find/Explore can help identify another priest or community when trust has broken down locally."),
     ]),
   }),
