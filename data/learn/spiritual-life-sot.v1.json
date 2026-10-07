@@ -976,12 +976,13 @@
     "french_parity_ready": true,
     "ui_runtime_ready": false,
     "prayer_owner_handoffs_mapped": true,
-    "final_content_audit_ready": false
+    "final_content_audit_ready": true
   },
   "next_passes": [
-    "Run a harsh content/UX audit of the 14 bilingual lessons against the 75-claim SOT.",
-    "Build a restrained Formation runtime with source drawers and explicit owner handoffs; do not reuse Catholic Life's reveal-card pedagogy.",
-    "Design lesson progress as navigation/completion only, never a spiritual-performance score.",
-    "Publish learn.spiritual_life only after final content audit and phone acceptance pass."
+    "Build the Spiritual Life Formation runtime against the frozen bilingual course.",
+    "Provide a source drawer resolving lesson claim IDs to original source records and links.",
+    "Implement explicit canonical owner handoffs without duplicating PRAY/Mass/Catechism/Apostolate content.",
+    "Run phone acceptance and visual/interaction audit.",
+    "Only then set ui_runtime_ready=true and publish learn.spiritual_life."
   ]
 }
