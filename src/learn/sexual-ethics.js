@@ -8,7 +8,7 @@ import {
   SEXUAL_ETHICS_ROUTE,
   SEXUAL_ETHICS_VERSION,
 } from "./sexual-ethics-data/index.js";
-import { CSE_RELATED_TARGETS, relatedTargetsFor } from "./sexual-ethics-data/sot.js";
+import { CSE_RELATED_TARGETS, CSE_SOT_MATRIX, relatedTargetsFor } from "./sexual-ethics-data/sot.js";
 
 export const SEXUAL_ETHICS_ROOT_ID="ao-sexual-ethics-root";
 
@@ -24,6 +24,8 @@ const DEPTH_LABELS=Object.freeze({
   EXPANDED:["Expanded","Approfondie"],
   DEBATE:["Debate","Débat"],
 });
+const CSE_SOT_BY_ID=Object.freeze(Object.fromEntries(CSE_SOT_MATRIX.map(record=>[record.id,record])));
+
 const LAYER_LABELS=Object.freeze({
   PERENNIAL:["Perennial doctrine","Doctrine pérenne"],
   LATER_APPLICATION:["Later application","Application ultérieure"],
@@ -168,6 +170,23 @@ export function createSexualEthicsRuntime(win=globalThis){
     }
     return false;
   }
+  function handoffToApostolate(questionId=state.questionId){
+    const record=CSE_SOT_BY_ID[questionId];
+    const targetId=record?.apostolateHandoff;
+    if(!targetId)return Object.freeze({ok:false,reason:"NO_APOSTOLATE_HANDOFF",questionId});
+    const api=win?.AO_APOSTOLATE_APP_V1;
+    if(typeof api?.receiveHandoff!=="function")return Object.freeze({ok:false,reason:"APOSTOLATE_UNAVAILABLE",questionId,targetId});
+    try{
+      return api.receiveHandoff({
+        direction:"FORMATION_TO_APOSTOLATE",
+        fromId:questionId,
+        targetId,
+        reason:"Practise answering this Catholic Sexual Ethics objection with charity, clarity and a fair statement of the objection.",
+      });
+    }catch(error){
+      return Object.freeze({ok:false,reason:String(error?.message??error),questionId,targetId});
+    }
+  }
   function back(){
     if(state.view==="question"){state.questionId=null;state.reveal=false;state.view=state.returnView==="sections"?"sections":"section";render();return true;}
     if(state.view==="section"){state.view="sections";state.sectionId=null;render();return true;}
@@ -175,7 +194,7 @@ export function createSexualEthicsRuntime(win=globalThis){
   }
   function close(returnToLearn=false){const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoSexualEthicsOpen");state.view="sections";state.sectionId=null;state.questionId=null;state.query="";state.reveal=false;if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());return true;}
   function status(){return Object.freeze({version:SEXUAL_ETHICS_VERSION,installed:true,open:Boolean(root()),route:SEXUAL_ETHICS_ROUTE,view:state.view,sectionId:state.sectionId,questionId:state.questionId,questions:CSE_QUESTIONS.length,sections:CSE_SECTIONS.length,validation:CSE_VALIDATION});}
-  return Object.freeze({version:SEXUAL_ETHICS_VERSION,open,openSection,openQuestion,close,back,render,status});
+  return Object.freeze({version:SEXUAL_ETHICS_VERSION,open,openSection,openQuestion,handoffToApostolate,close,back,render,status});
 }
 
 export function ensureSexualEthicsRegistry(win=globalThis){
