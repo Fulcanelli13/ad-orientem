@@ -1,9 +1,11 @@
 name: Promote clean directory snapshot once
 
 on:
-  push:
+  pull_request:
     branches:
-      - snapshot/directory-clean-2026-10-07
+      - main
+    paths:
+      - ".github/workflows/directory-snapshot-promotion-once.yml"
 
 permissions:
   contents: write
