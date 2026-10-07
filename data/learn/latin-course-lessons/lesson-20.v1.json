@@ -982,7 +982,12 @@
         "fr": {
           "prompt": "Identifiez les trois ouvertures répétées de propositions relatives dans le passage principal du Credo.",
           "hint": "Le passage répète la même famille relative.",
-          "explanation": "Les propositions répétées en qui structurent la section du Credo sur le Saint-Esprit."
+          "explanation": "Les propositions répétées en qui structurent la section du Credo sur le Saint-Esprit.",
+          "answerGuide": [
+            "qui",
+            "Qui",
+            "qui"
+          ]
         }
       }
     },
@@ -1380,6 +1385,12 @@
             "relative pronoun": "qui tollis",
             "demonstrative": "Hoc est Corpus meum",
             "deponent": "miserere nobis"
+          },
+          "matchKeys": {
+            "perfect passive": "parfait passif",
+            "relative pronoun": "pronom relatif",
+            "demonstrative": "démonstratif",
+            "deponent": "déponent"
           }
         }
       }
