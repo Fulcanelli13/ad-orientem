@@ -14,8 +14,32 @@ const TRANSLATIONS=F({
   ...NOVENA_FRENCH_BODY_V1_DEVOTIONAL,
 });
 
+export const NOVENA_START_KIND=F({
+  TRADITIONAL:"TRADITIONAL_START",
+  SUGGESTED:"SUGGESTED_START",
+});
+
+const START_KIND_BY_ID=F({
+  holy_ghost:NOVENA_START_KIND.TRADITIONAL,
+  christmas:NOVENA_START_KIND.TRADITIONAL,
+  corpus_christi:NOVENA_START_KIND.TRADITIONAL,
+  sacred_heart:NOVENA_START_KIND.TRADITIONAL,
+  immaculate_conception:NOVENA_START_KIND.TRADITIONAL,
+  annunciation:NOVENA_START_KIND.SUGGESTED,
+  assumption:NOVENA_START_KIND.SUGGESTED,
+  seven_sorrows:NOVENA_START_KIND.SUGGESTED,
+  st_joseph:NOVENA_START_KIND.SUGGESTED,
+  holy_souls:NOVENA_START_KIND.SUGGESTED,
+  perpetual_help:NOVENA_START_KIND.SUGGESTED,
+  st_therese:NOVENA_START_KIND.SUGGESTED,
+});
+
 function translatedSourceBody(n,t){
-  const out={...n,frenchTextStatus:t?.status||"MISSING_FRENCH_BODY"};
+  const out={
+    ...n,
+    startKind:START_KIND_BY_ID[n.id]??NOVENA_START_KIND.SUGGESTED,
+    frenchTextStatus:t?.status||"MISSING_FRENCH_BODY"
+  };
   for(const key of ["repeatText","opening","churchPrayer","ejaculation","sharedClosingText"]){
     if(n[key])out[key]=bi(n[key],t?.[key]);
   }
@@ -38,7 +62,11 @@ const CHRIST_KING=F({
   feast:F({en:"Christ the King",fr:"Christ-Roi"}),
   form:"REPEAT_FORM",
   calendar:F({type:"LAST_SUNDAY_RELATIVE",month:10,startOffset:-9,endOffset:-1,feastOffset:0,precision:"1962_LAST_SUNDAY_OCTOBER_PREP"}),
-  traditionalStart:F({en:"Nine days before the last Sunday of October",fr:"Neuf jours avant le dernier dimanche d’octobre"}),
+  startKind:NOVENA_START_KIND.TRADITIONAL,
+  traditionalStart:F({
+    en:"Nine days immediately preceding the last Sunday of October — attested pre-conciliar feast preparation",
+    fr:"Neuf jours précédant immédiatement le dernier dimanche d’octobre — préparation à la fête attestée avant le Concile"
+  }),
   history:F({
     en:"Pius XI instituted the feast of Christ the King in 1925. Pre-conciliar indulgence collections also encouraged nine- or three-day prayer to Christ the King without imposing one unique novena text. This form uses the indulgenced Prayer to Christ the King associated with the 1923 rescript and preserved in the 1938 Preces et Pia Opera tradition.",
     fr:"Pie XI institua la fête du Christ-Roi en 1925. Les recueils d’indulgences antérieurs au Concile encourageaient aussi une prière de neuf ou de trois jours au Christ-Roi sans imposer un texte unique de neuvaine. Cette forme emploie la prière indulgenciée au Christ-Roi liée au rescrit de 1923 et conservée dans la tradition des Preces et Pia Opera de 1938."
@@ -61,7 +89,8 @@ const CHRIST_KING=F({
     adaptation:"The French prayer is retained from the traditional witness; English is aligned editorially to the same prayer. Historical indulgence language is not asserted as current law."
   }),
   historySources:A([
-    F({label:"Thésaurisons pour le Ciel · Christ-Roi",url:"https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf"})
+    F({label:"Thésaurisons pour le Ciel · Christ-Roi",url:"https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf"}),
+    F({label:"Family Liturgy and Religious Practices · Christ the King novena/triduum · 1955",url:"https://www.ewtn.com/catholicism/library/how-to-make-your-house-a-home-family-liturgy-and-religious-practices-10449"})
   ]),
   frenchTextStatus:"SOURCE_LOCKED_TRADITIONAL_FRENCH",
   repeatText:bi(
@@ -83,7 +112,11 @@ const IMMACULATE_HEART=F({
   feast:F({en:"Immaculate Heart of Mary",fr:"Cœur Immaculé de Marie"}),
   form:"REPEAT_FORM",
   calendar:F({type:"FIXED",startMonth:8,startDay:13,endMonth:8,endDay:21,feastMonth:8,feastDay:22,precision:"1962_FEAST_PREP"}),
-  traditionalStart:F({en:"13 August · nine-day preparation for the 22 August feast",fr:"13 août · préparation de neuf jours à la fête du 22 août"}),
+  startKind:NOVENA_START_KIND.SUGGESTED,
+  traditionalStart:F({
+    en:"Suggested feast preparation: 13–21 August before the 22 August feast; the historical nine-day practice was not restricted to these dates",
+    fr:"Préparation suggérée à la fête : du 13 au 21 août avant la fête du 22 août ; la pratique historique de neuf jours n’était pas limitée à ces dates"
+  }),
   history:F({
     en:"Pre-conciliar devotion did not require one unique day-by-day novena body. A 1933 grant of Pius XI concerned approved prayers in honour of the Immaculate Heart for nine consecutive days. This form therefore uses the older Raccolta Prayer to the Immaculate Heart of Mary as a repeated approved prayer.",
     fr:"La dévotion antérieure au Concile n’exigeait pas un texte quotidien unique. Une concession de Pie XI en 1933 concernait des prières approuvées en l’honneur du Cœur Immaculé pendant neuf jours consécutifs. Cette forme emploie donc, comme prière répétée, l’ancienne prière de la Raccolta au Cœur Immaculé de Marie."
@@ -130,7 +163,11 @@ const ST_MICHAEL=F({
   feast:F({en:"Dedication of St Michael the Archangel",fr:"Dédicace de saint Michel Archange"}),
   form:"REPEAT_FORM",
   calendar:F({type:"FIXED",startMonth:9,startDay:20,endMonth:9,endDay:28,feastMonth:9,feastDay:29,precision:"1962_MICHAELMAS_PREP"}),
-  traditionalStart:F({en:"20 September · nine-day preparation for Michaelmas",fr:"20 septembre · préparation de neuf jours à la Saint-Michel"}),
+  startKind:NOVENA_START_KIND.SUGGESTED,
+  traditionalStart:F({
+    en:"Suggested feast preparation: 20–28 September before Michaelmas; the Raccolta allowed the novena at any time of year",
+    fr:"Préparation suggérée à la fête : du 20 au 28 septembre avant la Saint-Michel ; la Raccolta permettait la neuvaine à tout moment de l’année"
+  }),
   history:F({
     en:"Pre-conciliar indulgence discipline allowed novenas in honour of the Archangels to be made with prayers chosen for nine consecutive days. This form uses the Leonine Prayer to St Michael, a firmly attested traditional prayer in both English and French Catholic use.",
     fr:"La discipline des indulgences antérieure au Concile permettait de faire des neuvaines en l’honneur des Archanges avec des prières choisies pendant neuf jours consécutifs. Cette forme emploie la prière léonine à saint Michel, solidement attestée dans l’usage catholique traditionnel en français comme en anglais."
@@ -154,6 +191,7 @@ const ST_MICHAEL=F({
   }),
   historySources:A([
     F({label:"La Porte Latine · Prières à Saint Michel",url:"https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel"}),
+    F({label:"The Raccolta · Novena of St Michael · 1910, no. 290",url:"https://www.saintsbooks.net/books/The%20Raccolta%20-%201910.pdf"}),
     F({label:"Pius XII · French witness to the Leonine prayer · 1940",url:"https://laportelatine.org/formation/magistere/archange-saint-michel-discours-jeunes-epoux-1940"})
   ]),
   frenchTextStatus:"SOURCE_LOCKED_TRADITIONAL_FRENCH",
@@ -176,7 +214,11 @@ const ST_ANTHONY=F({
   feast:F({en:"St Anthony of Padua",fr:"Saint Antoine de Padoue"}),
   form:"REPEAT_FORM",
   calendar:F({type:"NINE_TUESDAYS_BEFORE_FIXED_FEAST",feastMonth:6,feastDay:13,precision:"TRADITIONAL_WEEKLY_TUESDAY_CADENCE"}),
-  traditionalStart:F({en:"Nine consecutive Tuesdays leading to the 13 June feast",fr:"Neuf mardis consécutifs conduisant à la fête du 13 juin"}),
+  startKind:NOVENA_START_KIND.SUGGESTED,
+  traditionalStart:F({
+    en:"Suggested feast preparation: nine consecutive Tuesdays leading toward 13 June; the traditional devotion itself may be made as nine consecutive Tuesdays at other times",
+    fr:"Préparation suggérée à la fête : neuf mardis consécutifs conduisant vers le 13 juin ; la dévotion traditionnelle elle-même peut être accomplie pendant neuf mardis consécutifs à d’autres moments"
+  }),
   history:F({
     en:"The Tuesday devotion developed from the tradition that St Anthony died on a Tuesday. French traditional sources attest the pious exercises of nine or thirteen Tuesdays, while older devotional manuals note that no single prayer text was prescribed. This form retains the commonly used prayers and preserves the weekly cadence instead of converting the devotion into nine consecutive days.",
     fr:"La dévotion du mardi s’est développée à partir de la tradition selon laquelle saint Antoine mourut un mardi. Les sources traditionnelles françaises attestent les pieux exercices de neuf ou treize mardis, tandis que les anciens manuels de dévotion précisent qu’aucun texte de prière unique n’était prescrit. Cette forme conserve les prières couramment employées et respecte le rythme hebdomadaire au lieu de transformer la dévotion en neuf jours consécutifs."
