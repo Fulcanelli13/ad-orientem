@@ -1192,6 +1192,7 @@ export const AO_LEARN_ROUTE_ASSET_IDS=Object.freeze({
   "learn.catechism.daily":"ao-refined-study",
   "learn.latin":"ao-refined-study",
   "learn.mass":"ao-rich-guides",
+  "learn.spiritual_life":"ao-refined-spiritual-life",
   "learn.catechism":"ao-module-catechism",
   "today.gospel":"ao-refined-scripture",
   "today.saint":"ao-refined-saint-of-day",
