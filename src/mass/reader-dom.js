@@ -229,7 +229,7 @@ const SHELL_STYLE = `
 .ao-rail .ao-icon-mask{width:36px;height:36px}
 
 .ao-schola-dock{
-  position:absolute;z-index:11;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
+  position:absolute;z-index:9;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
   width:min(940px,calc(100% - 170px));height:var(--ao-schola-height);min-height:100px;max-height:180px;
   display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(42px,auto) auto;
   align-items:center;gap:6px 10px;padding:11px 16px 13px;
@@ -346,6 +346,8 @@ button.ao-schola-control{cursor:pointer}
   .ao-reader-nav button{top:auto;bottom:10px;width:44px;height:44px;border-radius:50%;font-size:20px;opacity:.34;background:transparent}
   .ao-reader-nav button::before{inset:5px;background:rgba(11,16,13,.38)}
   .ao-reader-nav button[data-reader-nav="previous"]{left:62px}.ao-reader-nav button[data-reader-nav="next"]{right:62px}
+  .ao-reader-shell[data-schola-visible="true"] .ao-reader-nav button[data-reader-nav="previous"]{left:8px}
+  .ao-reader-shell[data-schola-visible="true"] .ao-reader-nav button[data-reader-nav="next"]{right:8px}
   .ao-guide-popover{width:100%;max-height:89vh;border-radius:16px 16px 0 0;padding:15px 14px 28px}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{width:min(48vw,190px)}
 }
