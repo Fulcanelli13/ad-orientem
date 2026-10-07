@@ -14,6 +14,56 @@ const keyOf=value=>{
 const L=(fr,en,frText)=>fr?frText:en;
 const diffDays=(a,b)=>Math.round((dateFromIso(a)-dateFromIso(b))/86400000);
 
+const DISCIPLINE_SOURCES=Object.freeze({
+  canonFast:Object.freeze({label:"Code of Canon Law · can. 919",url:"https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html"}),
+  canonPenance:Object.freeze({label:"Code of Canon Law · cann. 1249–1253",url:"https://press.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html"}),
+  fast1957:Object.freeze({label:"Pius XII · Sacram Communionem (1957)",url:"https://www.vatican.va/archive/aas/documents/AAS-49-1957-ocr.pdf"}),
+  fast1953:Object.freeze({label:"Pius XII · Christus Dominus (1953)",url:"https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19530106_christus-dominus.html"}),
+  popularPiety:Object.freeze({label:"Directory on Popular Piety · Rogation observance",url:"https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"}),
+  septemberEmber:Object.freeze({label:"1962 September Ember reckoning · Romanitas Press",url:"https://www.romanitaspress.com/reckoning-sept-ember-days"}),
+});
+
+export function calendarDisciplineForDate(value,{fr=false}={}){
+  const date=keyOf(value),d=dateFromIso(date),x=v384Dates(d.getFullYear());
+  const todayKey=date===x.ash||date===x.goodFriday?"fast-abstinence":d.getDay()===5?"friday":"none";
+  const todayLabel=todayKey==="fast-abstinence"
+    ?L(fr,"Today: universal fast and abstinence.","Aujourd’hui : jeûne et abstinence universels.")
+    :todayKey==="friday"
+      ?L(fr,"Today is Friday, a universal penitential day; the concrete observance is subject to the Code and the competent bishops’ conference.","Aujourd’hui est vendredi, jour universel de pénitence ; l’observance concrète relève du Code et de la conférence épiscopale compétente.")
+      :L(fr,"No additional universal fast or abstinence is identified for this selected date.","Aucun jeûne ou abstinence universel supplémentaire n’est identifié pour cette date.");
+  const current=Object.freeze({
+    id:"current",label:L(fr,"Current law","Droit actuel"),
+    items:Object.freeze([
+      Object.freeze({id:"eucharistic-fast",title:L(fr,"Eucharistic fast","Jeûne eucharistique"),status:L(fr,"CURRENT","ACTUEL"),summary:L(fr,"At least one hour before Holy Communion from food and drink, except water and medicine.","Au moins une heure avant la Sainte Communion sans nourriture ni boisson, sauf eau et médicaments.")}),
+      Object.freeze({id:"fridays-lent",title:L(fr,"Fridays & Lent","Vendredis & Carême"),status:L(fr,"CURRENT","ACTUEL"),summary:L(fr,"Every Friday and Lent are penitential times. Ash Wednesday and Good Friday carry universal fast and abstinence; episcopal conferences can determine the concrete observance permitted by canon law.","Chaque vendredi et le Carême sont des temps pénitentiels. Le Mercredi des Cendres et le Vendredi saint comportent le jeûne et l’abstinence universels ; les conférences épiscopales peuvent déterminer l’observance concrète permise par le droit canonique."),today:todayLabel}),
+    ]),
+    sources:Object.freeze([DISCIPLINE_SOURCES.canonFast,DISCIPLINE_SOURCES.canonPenance]),
+  });
+  const era1962=Object.freeze({
+    id:"1962",label:L(fr,"1962-era discipline","Discipline de l’époque 1962"),
+    items:Object.freeze([
+      Object.freeze({id:"eucharistic-fast-1962",title:L(fr,"Eucharistic fast","Jeûne eucharistique"),status:"1962",summary:L(fr,"The Pius XII discipline in force for the 1962 period required three hours from solid food and alcoholic drink, one hour from non-alcoholic drink; water did not break the fast.","La discipline de Pie XII en vigueur à l’époque de 1962 exigeait trois heures pour les aliments solides et les boissons alcoolisées, une heure pour les boissons non alcoolisées ; l’eau ne rompait pas le jeûne.")}),
+      Object.freeze({id:"ember-rogation",title:L(fr,"Ember & Rogation observance","Quatre-Temps & Rogations"),status:L(fr,"HISTORICAL DISCIPLINE","DISCIPLINE HISTORIQUE"),summary:L(fr,"The 1962 calendar retains Ember and Rogation liturgies. Older fasting obligations are not current universal law and may be kept only as voluntary traditional observance unless another present rule applies.","Le calendrier de 1962 conserve les liturgies des Quatre-Temps et des Rogations. Les anciennes obligations de jeûne ne sont pas le droit universel actuel et ne peuvent être gardées que comme observance traditionnelle volontaire, sauf autre règle actuelle applicable.")}),
+      Object.freeze({id:"source-sensitive",title:L(fr,"Exact old fasting tables","Tableaux exacts des anciens jeûnes"),status:L(fr,"SOURCE-SENSITIVE","DÉPEND DES SOURCES"),summary:L(fr,"Rules varied by period and jurisdiction. Ad Orientem therefore does not present one generic “1962 fasting calendar” as universally binding; dated and jurisdiction-specific witnesses are required.","Les règles variaient selon l’époque et la juridiction. Ad Orientem ne présente donc pas un « calendrier de jeûne 1962 » générique comme universellement obligatoire ; des témoins datés et propres à la juridiction sont nécessaires.")}),
+    ]),
+    sources:Object.freeze([DISCIPLINE_SOURCES.fast1957,DISCIPLINE_SOURCES.popularPiety,DISCIPLINE_SOURCES.septemberEmber]),
+  });
+  const earlier=Object.freeze({
+    id:"older",label:L(fr,"Earlier practice","Pratique antérieure"),
+    items:Object.freeze([
+      Object.freeze({id:"pre-pius-xii-fast",title:L(fr,"Before the Pius XII mitigations","Avant les mitigations de Pie XII"),status:L(fr,"OLDER PRACTICE","PRATIQUE ANTÉRIEURE"),summary:L(fr,"Eucharistic fasting discipline was substantially stricter. Pius XII’s 1953 constitution explicitly presented its concessions as relaxations made for changing circumstances while reaffirming the venerable tradition of receiving the Eucharist fasting.","La discipline du jeûne eucharistique était sensiblement plus stricte. La constitution de Pie XII de 1953 présente explicitement ses concessions comme des mitigations dues aux circonstances nouvelles, tout en réaffirmant la vénérable tradition de recevoir l’Eucharistie à jeun.")}),
+      Object.freeze({id:"older-fasts",title:L(fr,"Vigils, Ember Days and other fasts","Vigiles, Quatre-Temps et autres jeûnes"),status:L(fr,"HISTORICAL","HISTORIQUE"),summary:L(fr,"Earlier Catholic discipline contained a broader network of fasts, abstinences and vigils. These are worth documenting and may inspire voluntary penance, but the app will not convert them into present obligations without an exact dated and jurisdictional source.","La discipline catholique antérieure comportait un réseau plus large de jeûnes, abstinences et vigiles. Ils méritent d’être documentés et peuvent inspirer une pénitence volontaire, mais l’application ne les transforme pas en obligations actuelles sans source exacte, datée et juridictionnelle.")}),
+    ]),
+    sources:Object.freeze([DISCIPLINE_SOURCES.fast1953]),
+  });
+  return Object.freeze({
+    date,
+    intro:L(fr,"Older Catholic discipline is preserved as historical knowledge and voluntary practice, while current obligations remain clearly separate.","L’ancienne discipline catholique est conservée comme connaissance historique et pratique volontaire, tandis que les obligations actuelles restent clairement séparées."),
+    today:Object.freeze({key:todayKey,label:todayLabel}),
+    eras:Object.freeze({current,1962:era1962,older:earlier}),
+  });
+}
+
 export function isFirstWeekday(value,weekday){
   const id=keyOf(value),d=dateFromIso(id);
   return d.getDay()===Number(weekday)&&d.getDate()<=7;
@@ -148,9 +198,10 @@ export function calendarIntelligenceForDate(value,{fr=false,properTitle="",inclu
   const date=keyOf(value);
   const practices=calendarPracticeEvents(date,{fr,properTitle});
   const novenas=calendarNovenaEvents(date,{fr,upcomingDays:includeUpcomingNovenas});
+  const discipline=calendarDisciplineForDate(date,{fr});
   return Object.freeze({
     schema:CALENDAR_INTELLIGENCE_VERSION,date,
-    practices,novenas,
+    practices,novenas,discipline,
     events:Object.freeze([...practices,...novenas].sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id))),
   });
 }
