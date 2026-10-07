@@ -20,6 +20,7 @@ export const LEARN_LAYOUT=Object.freeze({
       Object.freeze({id:"learn.catechism",type:"module",featured:false,title:Object.freeze(["Traditional Catechism","Catéchisme traditionnel"]),description:Object.freeze(["The complete Catechism of St Pius X: browse, search and study.","Le Catéchisme complet de saint Pie X : parcourir, rechercher et étudier."])})
     ])}),
     Object.freeze({title:Object.freeze(["Traditional Catholic life","Vie catholique traditionnelle"]),items:Object.freeze([
+      Object.freeze({id:"learn.catholic_life",type:"module",featured:true,assetId:"ao-refined-catholic-world",title:Object.freeze(["Catholic Life","Vie catholique"]),description:Object.freeze(["79 source-backed stages on church behaviour, sacramental life, sacramentals, the Catholic year and vocations.","79 étapes sourcées sur la conduite à l’église, la vie sacramentelle, les sacramentaux, l’année catholique et les vocations."])}),
       Object.freeze({id:"learn.rites.sick",type:"module",featured:false,title:Object.freeze(["Serious Illness & Dying","Maladie grave & fin de vie"]),description:Object.freeze(["Prepare · pray · understand Anointing & Viaticum.","Se préparer · prier · comprendre l’Onction & le Viatique."])}),
       Object.freeze({id:"learn.rites.baptism",type:"module",featured:false,title:Object.freeze(["Baptism · Parents & Godparents","Baptême · Parents & parrains"]),description:Object.freeze(["Traditional order, godparents, emergency boundary and lifelong responsibility.","Ordre traditionnel, parrains, urgence et responsabilité durable."])}),
       Object.freeze({id:"learn.rites.first_communion",type:"module",featured:false,title:Object.freeze(["First Holy Communion · Child & Family","Première Communion · Enfant & famille"]),description:Object.freeze(["Readiness, First Confession, preparation, thanksgiving and continued Eucharistic life.","Préparation, première Confession, action de grâces et vie eucharistique continue."])}),
@@ -61,7 +62,7 @@ function typeLabel(item,state){
 }
 
 function iconMarkup(item,win){
-  const assetId=canonicalAssetIdForLearnRoute(item?.id);
+  const assetId=item?.assetId||canonicalAssetIdForLearnRoute(item?.id);
   const asset=assetId?getCanonicalAsset(assetId):null;
   if(!asset)return "";
   const embedded=win?.document?.getElementById?.(assetId)??null;
