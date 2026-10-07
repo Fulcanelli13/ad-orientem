@@ -62,7 +62,8 @@ export function expandResearchProviderSnapshot(snapshot={}){
     const scheduleId="ao-schedule-"+base;
     const scheduleSourceId="src-research-"+base+"-schedule";
     const authorizationSourceId=row.au?"src-research-"+base+"-authorization":null;
-    const sourceIds=[scheduleSourceId,...(authorizationSourceId?[authorizationSourceId]:[])];
+    const editionSourceId=row.eu?"src-research-"+base+"-edition":null;
+    const sourceIds=[scheduleSourceId,...(authorizationSourceId?[authorizationSourceId]:[]),...(editionSourceId?[editionSourceId]:[])];
     const formatted=text(row.a)||[row.l,row.r,row.cc].map(text).filter(Boolean).join(", ");
     const scheduleRaw=text(row.sr);
     const sunday=/\bsunday\b|\bdimanche\b|\bdomingo\b|\bdomenica\b|\bsonntag\b|\bsun\.?\b/i.test(scheduleRaw);
@@ -105,7 +106,7 @@ export function expandResearchProviderSnapshot(snapshot={}){
         family:text(row.f)||"ROMAN",
         books:text(row.b)||"UNKNOWN",
         mass_form:text(row.mf)||"TRADITIONAL_LATIN",
-        evidence_source_ids:[scheduleSourceId],
+        evidence_source_ids:[editionSourceId??scheduleSourceId],
       },
       authorization:{
         status:row.az??null,
@@ -142,6 +143,19 @@ export function expandResearchProviderSnapshot(snapshot={}){
       authority:"PRIMARY",
       fields_supported:["venue","venue.contact","schedule","liturgical_usage"],
     });
+    if(editionSourceId){
+      out.sources.push({
+        source_id:editionSourceId,
+        registry_source_id:null,
+        source_type:text(row.et)||text(row.st)||"COMMUNITY_OFFICIAL",
+        publisher:text(row.j)||text(row.c)||provider,
+        title:text(row.n)+" — liturgical edition",
+        url:text(row.eu),
+        retrieved_at:generatedAt,
+        authority:"PRIMARY",
+        fields_supported:["liturgical_usage"],
+      });
+    }
     if(authorizationSourceId){
       out.sources.push({
         source_id:authorizationSourceId,
@@ -197,7 +211,12 @@ export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sourc
   });
 }
 export function publishableDirectoryRecords(records){
-  return safeArray(records).filter(record=>auditVenue(record?.venue).length===0);
+  return safeArray(records).filter(record=>{
+    if(auditVenue(record?.venue).length!==0)return false;
+    const icksp=safeArray(record?.ministries).filter(m=>m?.community_id==="ICKSP");
+    if(icksp.length&&!icksp.some(m=>safeArray(m?.schedules).some(schedule=>schedule?.service_type==="MASS")))return false;
+    return true;
+  });
 }
 export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PROVIDERS,researchProviders=RESEARCH_PROVIDERS}={}){
   const [statusData,communityData]=await Promise.all([
