@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:34,
-  pilgrimages:45,
-  routes:12,
-  temporalLinks:35,
-  sources:80,
+  shrines:40,
+  pilgrimages:53,
+  routes:14,
+  temporalLinks:41,
+  sources:92,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -88,6 +88,12 @@ const requiredPlaces=new Set([
   "place:NG:nne-enyemaka-umuaka",
   "place:UG:namugongo-martyrs",
   "place:UG:munyonyo-martyrs",
+  "place:MX:basilica-guadalupe-mexico-city",
+  "place:MX:basilica-zapopan",
+  "place:BR:aparecida-national-shrine",
+  "place:BR:nazare-belem",
+  "place:CO:las-lajas-ipiales",
+  "place:CO:chiquinquira-basilica",
 ]);
 for(const shrine of corpus.shrines){
   assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
@@ -108,6 +114,10 @@ assert.equal(calendarDateForSemanticKey("observance.holywell_saint_winefride",20
 assert.equal(calendarDateForSemanticKey("feast.saint_peter_chanel",2026),"2026-04-28");
 assert.equal(calendarDateForSemanticKey("feast.our_lady_perpetual_help",2026),"2026-06-27");
 assert.equal(calendarDateForSemanticKey("feast.uganda_martyrs",2026),"2026-06-03");
+assert.equal(calendarDateForSemanticKey("observance.zapopan_romeria",2026),"2026-10-12");
+assert.equal(calendarDateForSemanticKey("observance.our_lady_aparecida",2026),"2026-10-12");
+assert.equal(calendarDateForSemanticKey("observance.las_lajas",2026),"2026-09-15");
+assert.equal(calendarDateForSemanticKey("observance.chiquinquira_july9",2026),"2026-07-09");
 
 const kevelaerSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:kevelaer:pilgrimage-season");
 assert.equal(kevelaerSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -133,6 +143,17 @@ for(const id of ["temporal:penrose:fatima-day","temporal:marian-valley:monthly-d
   assert.ok(link,id+" missing");
   assert.equal(link.binding_state,"NO_FIXED_CALENDAR_BINDING");
 }
+
+const cirio=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:nazare:cirio");
+assert.ok(cirio);
+assert.equal(cirio.binding_state,"NO_FIXED_CALENDAR_BINDING");
+
+const zapopanRoute=corpus.routes.find(item=>item.route_id==="route:MX:guadalajara-zapopan-romeria");
+assert.equal(zapopanRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(zapopanRoute.destination_place_id,"place:MX:basilica-zapopan");
+const cirioRoute=corpus.routes.find(item=>item.route_id==="route:BR:belem-cathedral-nazare");
+assert.equal(cirioRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(cirioRoute.destination_place_id,"place:BR:nazare-belem");
 
 const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
 assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
