@@ -1439,7 +1439,14 @@
         "fr": {
           "prompt": "Que devez-vous marquer avant de traduire l’oraison de façon continue ?",
           "hint": "Commencez par l’architecture rhétorique.",
-          "explanation": "Les mouvements de l’oraison organisent sa syntaxe."
+          "explanation": "Les mouvements de l’oraison organisent sa syntaxe.",
+          "answerGuide": [
+            "invocation",
+            "motif relatif",
+            "demande",
+            "proposition en ut",
+            "conclusion"
+          ]
         }
       }
     },
