@@ -101,6 +101,12 @@ function parseLocalitySegment(segment,countryCode,postal){
       state=stateMatch[1].toUpperCase();
       value=value.slice(0,stateMatch.index).replace(/[,;\s-]+$/g,"").trim();
     }
+  }else if(cc==="BR"){
+    const stateMatch=value.match(/\/([A-Z]{2})\s*$/);
+    if(stateMatch){
+      state=stateMatch[1].toUpperCase();
+      value=value.slice(0,stateMatch.index).replace(/[,;\s-]+$/g,"").trim();
+    }
   }
   return {city:value||null,state};
 }
@@ -121,7 +127,15 @@ export function extractDirectoryAddressComponents(venue){
     const containing=[...segments].reverse().find(s=>s.includes(postalcode));
     if(containing)localitySegment=containing;
   }
-  const {city,state}=parseLocalitySegment(localitySegment,countryCode,postalcode);
+  let {city,state}=parseLocalitySegment(localitySegment,countryCode,postalcode);
+  if(!city&&postalcode){
+    const index=segments.findIndex(s=>s===localitySegment);
+    if(index>0){
+      const previous=parseLocalitySegment(segments[index-1],countryCode,null);
+      city=previous.city;
+      state=previous.state??state;
+    }
+  }
   let street=segments[0]??null;
   if(street===localitySegment&&segments.length>1)street=segments[segments.length-2];
   if(street&&city&&normalizedComparable(street)===normalizedComparable(city))street=null;
