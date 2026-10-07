@@ -105,6 +105,7 @@ const SEMANTIC_RAIL_CSS=`/* Exact-donor devotional rail recovery — thin fixed 
  #aoPray435930 .aoP435930SemanticRailChip{width:38px;gap:0}
  #aoPray435930 .aoP435930SemanticRailCard{width:38px;min-height:42px;padding:6px 4px;border-radius:11px;background:color-mix(in srgb,var(--bg,#080c12) 89%,transparent)}
  #aoPray435930 .aoP435930SemanticRailIcon{width:26px!important;height:26px!important}
+ #aoPray435930 [data-ao-pray-rail-asset="ao-live-blessing"] .aoP435930SemanticRailIcon{width:32px!important;height:32px!important}
  #aoPray435930 .aoP435930SemanticRailLabel,#aoPray435930 .aoP435930SemanticRailChip small{display:none}
 }
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoP435930SemanticRailChip.transient.cue-enter .aoP435930SemanticRailCard{animation:none!important}}
