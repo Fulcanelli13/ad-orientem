@@ -84,7 +84,7 @@
     "test:nonmass-convergence": "node tests/nonmass-d3-d6-convergence.mjs",
     "test:nonmass-convergence-e2e": "node tests/nonmass-d3-d6-e2e.mjs",
     "test:asset-bank-contract": "node tests/asset-bank-contract.mjs",
-    "test:learn-owner": "node tests/learn-owner.mjs && node tests/learn-traditional-life.mjs && node tests/sacramental-formation-sot.mjs && npm run test:catholic-life-retirement && npm run test:sexual-ethics",
+    "test:learn-owner": "node tests/learn-owner.mjs && node tests/learn-traditional-life.mjs && node tests/sacramental-formation-sot.mjs && npm run test:catholic-life-retirement && npm run test:formation-gap-ownership && npm run test:sexual-ethics",
     "test:learn-owner-e2e": "node tests/learn-owner-e2e.mjs",
     "test:nonmass-assets": "node tests/nonmass-asset-consumers.mjs",
     "test:settings-owner": "node tests/settings-owner.mjs",
@@ -124,6 +124,7 @@
     "test:explore-place-profiles": "node tests/explore-place-profiles.mjs",
     "test:directory-official-geo": "node tests/directory-official-geo.mjs",
     "test:catholic-life-retirement": "node tests/catholic-life-retirement.mjs",
+    "test:formation-gap-ownership": "node tests/formation-gap-ownership.mjs",
     "test:apostolate": "node tests/apostolate-contract.mjs",
     "test:sexual-ethics": "node tests/sexual-ethics.mjs",
     "test:reader-rubric-events": "node tests/reader-rubric-events.mjs"
