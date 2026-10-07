@@ -1,6 +1,6 @@
 {
   "schema": "AO_DIRECTORY_ICKSP_RECONCILIATION_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "verified_on": "2026-10-07",
   "research_unique_candidates": 125,
   "live_runtime_records": 27,
@@ -56,12 +56,12 @@
   "publication_gate": {
     "live_runtime_records": 27,
     "live_current_mass_records": 26,
-    "federated_supplement_records": 98,
-    "federated_current_mass_candidate_records": 85,
-    "federated_physical_projection_records": 110,
-    "federated_physical_current_mass_venues": 95,
-    "publishable_current_mass_candidates_total": 111,
-    "publishable_physical_mass_venues_total": 121,
+    "federated_supplement_records": 103,
+    "federated_current_mass_candidate_records": 90,
+    "federated_physical_projection_records": 120,
+    "federated_physical_current_mass_venues": 104,
+    "publishable_current_mass_candidates_total": 116,
+    "publishable_physical_mass_venues_total": 130,
     "nonpublishable_candidate_total": 14,
     "provider_presence_only_total": 5,
     "public_mass_suspended_total": 1,
@@ -159,9 +159,19 @@
     "verified_on": "2026-10-07",
     "scope": [
       "FR_PROVINCE",
-      "IRELAND_NORTHERN_IRELAND"
+      "IRELAND_NORTHERN_IRELAND",
+      "ITALY",
+      "GREAT_BRITAIN",
+      "SWEDEN",
+      "SPAIN",
+      "MAURITIUS",
+      "BELGIUM",
+      "GABON",
+      "GERMANY_SWITZERLAND"
     ],
-    "candidate_records_preserved": 98,
+    "frozen_v13_federated_candidates": 98,
+    "post_v13_official_additions": 5,
+    "canonical_federated_candidates": 103,
     "multi_venue_candidate_ids": [
       "ICKSP-STG-001",
       "ICKSP-STG-007",
@@ -171,11 +181,19 @@
       "ICKSP-STG-023",
       "ICKSP-STG-025",
       "ICKSP-STG-027",
-      "ICKSP-STG-029"
+      "ICKSP-STG-029",
+      "ICKSP-STG-068",
+      "ICKSP-STG-070",
+      "ICKSP-STG-072",
+      "ICKSP-STG-080"
     ],
-    "additional_physical_records": 12,
-    "additional_publishable_mass_venues": 10,
-    "rule": "The research candidate count remains stable. Candidate rows may project to multiple physical venues when a current first-party source lists distinct churches, chapels or houses with separate Mass schedules. Non-public or schedule-by-contact subvenues remain SOURCE_ASSERTION and do not enter Find."
+    "fanout_additional_physical_records": 17,
+    "total_physical_records": 120,
+    "candidate_level_current_mass_records": 90,
+    "physical_current_mass_venues": 104,
+    "additional_publishable_mass_venues_from_fanout": 14,
+    "physical_source_assertions": 16,
+    "rule": "The historic research candidate denominator remains auditable, but Find projects physical venues. A candidate may fan out to distinct churches, chapels or houses when current first-party sources identify separate locations and schedules. Source-assertion subvenues remain outside Find."
   },
   "ireland_northern_ireland_audit": {
     "verified_on": "2026-10-07",
@@ -239,5 +257,111 @@
   },
   "resolved_since_bulk_eligibility_pass": [
     "ICKSP-STG-124"
-  ]
+  ],
+  "research_unique_candidates_v13": 125,
+  "federated_missing_candidates_v13": 98,
+  "post_v13_official_additions": 5,
+  "canonical_current_candidates": 130,
+  "post_v13_official_addition_ids": [
+    "ICKSP-IT-2026-ALESSANDRIA",
+    "ICKSP-IT-2026-LUCCA",
+    "ICKSP-IT-2026-ORVIETO",
+    "ICKSP-IT-2026-BIENTINA",
+    "ICKSP-IT-2026-PISTOIA"
+  ],
+  "post_v13_official_addition_source": "https://www.icrss.it/",
+  "historical_denominator_note": "research_unique_candidates=125 and missing_candidate_count=98 are retained as frozen v1.3 reconciliation values. The current canonical corpus adds five first-party Italian Mass locations discovered after that freeze.",
+  "remaining_country_normalization": {
+    "verified_on": "2026-10-07",
+    "fanout_candidate_ids": [
+      "ICKSP-STG-068",
+      "ICKSP-STG-070",
+      "ICKSP-STG-072",
+      "ICKSP-STG-080"
+    ],
+    "normalized_single_site_candidate_ids": [
+      "ICKSP-STG-073",
+      "ICKSP-STG-076",
+      "ICKSP-STG-077",
+      "ICKSP-STG-078",
+      "ICKSP-STG-079",
+      "ICKSP-STG-082",
+      "ICKSP-STG-083",
+      "ICKSP-STG-084",
+      "ICKSP-STG-085",
+      "ICKSP-STG-086",
+      "ICKSP-STG-087",
+      "ICKSP-STG-088",
+      "ICKSP-STG-089",
+      "ICKSP-STG-090",
+      "ICKSP-STG-091",
+      "ICKSP-STG-092",
+      "ICKSP-STG-093",
+      "ICKSP-STG-094",
+      "ICKSP-STG-095",
+      "ICKSP-STG-096",
+      "ICKSP-STG-097",
+      "ICKSP-STG-098",
+      "ICKSP-STG-100",
+      "ICKSP-STG-101",
+      "ICKSP-STG-103",
+      "ICKSP-STG-108",
+      "ICKSP-STG-109",
+      "ICKSP-STG-111",
+      "ICKSP-STG-112",
+      "ICKSP-STG-114",
+      "ICKSP-STG-115",
+      "ICKSP-STG-116",
+      "ICKSP-STG-117",
+      "ICKSP-STG-118",
+      "ICKSP-STG-119",
+      "ICKSP-STG-120",
+      "ICKSP-STG-121"
+    ],
+    "italy_missing_from_v13": [
+      {
+        "id": "ICKSP-IT-2026-ALESSANDRIA",
+        "venue": "Chiesa di San Giovannino",
+        "schedule": "SECOND_SUNDAY_11:00"
+      },
+      {
+        "id": "ICKSP-IT-2026-LUCCA",
+        "venue": "Chiesa di Santa Maria della Rosa",
+        "schedule": "SUNDAY_FEAST_09:30; SATURDAY_08:00; FIRST_FRIDAY_17:30"
+      },
+      {
+        "id": "ICKSP-IT-2026-ORVIETO",
+        "venue": "Chiesa Santa Maria dei Servi",
+        "schedule": "SECOND_FOURTH_SUNDAY_17:30"
+      },
+      {
+        "id": "ICKSP-IT-2026-BIENTINA",
+        "venue": "Chiesa di San Domenico",
+        "schedule": "SATURDAY_18:30"
+      },
+      {
+        "id": "ICKSP-IT-2026-PISTOIA",
+        "venue": "Chiesa di San Vitale",
+        "schedule": "SUNDAY_FEAST_18:00"
+      }
+    ],
+    "naples_unscheduled_physical_venue": {
+      "id": "ICKSP-STG-072-SANTANNA",
+      "venue": "Chiesa di Sant’Anna alle Paludi",
+      "disposition": "SOURCE_ASSERTION_NO_PUBLISHED_CURRENT_MASS_TIME"
+    },
+    "great_britain_split": {
+      "parent": "ICKSP-STG-080",
+      "venues": [
+        {
+          "id": "ICKSP-STG-080-HOLYANGELS",
+          "venue": "Holy Angels Church, Torquay"
+        },
+        {
+          "id": "ICKSP-STG-080-STEDWARD",
+          "venue": "St Edward the Confessor Church, Plymouth"
+        }
+      ]
+    }
+  }
 }
