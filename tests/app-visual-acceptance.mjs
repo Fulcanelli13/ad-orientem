@@ -634,6 +634,16 @@ try{
     assert.equal(await page.locator("#aoPray435930 [data-tp381-close]").count(),1,route+" lost the donor Close control");
     assert.equal(await page.locator("#aoPray435930 .aoTP381Hero").count(),0,route+" regained a non-donor hero card");
     assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,route+" lost its v38.1 donor introduction");
+    if(route==="pray.morning_evening"){
+      const rowGeometry=await page.evaluate(()=>{
+        const row=document.querySelector("#aoPray435930 .aoTP381PrayerList button");
+        const title=row?.querySelector("b")?.getBoundingClientRect();
+        const note=row?.querySelector("small")?.getBoundingClientRect();
+        return title&&note?{titleBottom:title.bottom,noteTop:note.top,titleRight:title.right,noteLeft:note.left}:null;
+      });
+      assert.ok(rowGeometry&&rowGeometry.noteTop>=rowGeometry.titleBottom+2,
+        "Morning/Evening prayer-row subtitle overlaps the title instead of occupying its donor second line");
+    }
     await shot(name);
   }
 
