@@ -101,6 +101,39 @@
         ]
       },
       "statusAssertions": []
+    },
+    {
+      "communityId": "CMRI",
+      "communionProfile": {
+        "recognises_current_pontiff": "NO",
+        "pope_named_in_canon": "UNKNOWN",
+        "ordinary_named_in_canon": "UNKNOWN",
+        "position_family": "SEDEVACANTIST",
+        "certainty": "OFFICIAL_CURRENT_SELF_DESCRIPTION",
+        "effective_from": "2026-10-07",
+        "effective_until": null,
+        "evidence_source_ids": [
+          "SRC-CMRI-THEOL-20261007"
+        ]
+      },
+      "statusAssertions": []
+    },
+    {
+      "communityId": "RCI",
+      "communionProfile": {
+        "recognises_current_pontiff": "UNKNOWN",
+        "pope_named_in_canon": "NO",
+        "ordinary_named_in_canon": "NO",
+        "position_family": "OTHER_POSITION",
+        "certainty": "OFFICIAL_POLICY",
+        "effective_from": "2026-10-07",
+        "effective_until": null,
+        "evidence_source_ids": [
+          "SRC-RCI-THEOL-20261007",
+          "SRC-RCI-PASTORAL-20261007"
+        ]
+      },
+      "statusAssertions": []
     }
   ]
 }
