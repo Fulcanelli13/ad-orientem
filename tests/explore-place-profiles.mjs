@@ -76,7 +76,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,3,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,8,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -100,6 +100,37 @@ assert.ok(laghet.calendar.some(row=>row.semantic_key==="liturgical.pentecost_mon
 const paray=explorePlaceProfile(profiles,"place:FR:sanctuaire-sacre-coeur-paray");
 assert.ok(paray);
 assert.ok(paray.calendar.some(row=>row.semantic_key==="feast.sacred_heart"&&row.date==="2027-06-04"));
+
+const chartres=explorePlaceProfile(profiles,"place:FR:chartres-notre-dame");
+assert.ok(chartres);
+assert.equal(chartres.counts.shrines,1);
+assert.equal(chartres.counts.pilgrimages,1);
+assert.equal(chartres.map_publishable,false);
+assert.ok(chartres.calendar.some(row=>row.semantic_key==="liturgical.pentecost_monday"&&row.date==="2027-05-17"));
+
+const sainteAnne=explorePlaceProfile(profiles,"place:FR:sainte-anne-d-auray");
+assert.ok(sainteAnne);
+assert.equal(sainteAnne.counts.pilgrimages,2);
+assert.ok(sainteAnne.counts.traditions>=1);
+assert.ok(sainteAnne.calendar.some(row=>row.semantic_key==="feast.saint_anne"&&row.date==="2027-07-26"));
+
+const knock=explorePlaceProfile(profiles,"place:IE:knock-shrine");
+assert.ok(knock);
+assert.equal(knock.counts.pilgrimages,2);
+assert.ok(knock.saints.includes("Saint Joseph"));
+assert.ok(knock.calendar.some(row=>row.semantic_key==="observance.knock_apparition_anniversary"&&row.date==="2027-08-21"));
+
+const loughDerg=explorePlaceProfile(profiles,"place:IE:lough-derg-station-island");
+assert.ok(loughDerg);
+assert.equal(loughDerg.counts.pilgrimages,1);
+assert.equal(loughDerg.calendar.length,0,"seasonal Lough Derg pilgrimage was incorrectly reduced to a single Calendar date");
+
+const pereLaval=explorePlaceProfile(profiles,"place:MU:pere-laval-sainte-croix");
+assert.ok(pereLaval);
+assert.equal(pereLaval.counts.pilgrimages,1);
+assert.ok(pereLaval.saints.includes("Blessed Jacques-Désiré Laval"));
+assert.ok(pereLaval.calendar.some(row=>row.semantic_key==="feast.blessed_jacques_desire_laval"&&row.date==="2027-09-09"));
+assert.equal(pereLaval.counts.tlm,0,"Mauritius shrine inferred a TLM link without a bridge");
 
 const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"})[0];
 assert.equal(placeIdForExploreItem(lourdesShrine),lourdes.place_id);
