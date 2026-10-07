@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:8,
-  traditions:36,
-  pilgrimages:11,
+  shrines:14,
+  traditions:39,
+  pilgrimages:19,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -194,6 +194,38 @@ assert.ok(loughDerg[0].sections.some(section=>section.label==="Calendar relation
 const pereLaval=filterExploreItems(projection.byLens.pilgrimages,{query:"Père Laval"});
 assert.equal(pereLaval.length,1);
 assert.equal(pereLaval[0].map_publishable,false);
+
+const altoetting=filterExploreItems(projection.byLens.shrines,{query:"Altötting"});
+assert.equal(altoetting.length,1);
+assert.equal(altoetting[0].map_publishable,false);
+const altoettingExVoto=filterExploreItems(projection.byLens.traditions,{query:"votive tablets"});
+assert.ok(altoettingExVoto.some(item=>item.source_id==="att:DEV-009:ALTOETTING"));
+
+const kevelaer=filterExploreItems(projection.byLens.pilgrimages,{query:"Kevelaer"});
+assert.equal(kevelaer.length,1);
+assert.equal(kevelaer[0].map_publishable,false);
+assert.ok(kevelaer[0].sections.some(section=>/pilgrimage season/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const mariazell=filterExploreItems(projection.byLens.pilgrimages,{query:"Mariazell"});
+assert.equal(mariazell.length,1);
+assert.equal(mariazell[0].map_state,"DESTINATION_ADDRESS_ONLY");
+assert.ok(mariazell[0].sections.some(section=>/pilgrimage season/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+const mariazellCandle=filterExploreItems(projection.byLens.traditions,{query:"votive candle"});
+assert.ok(mariazellCandle.some(item=>item.source_id==="att:DEV-010:MARIAZELL"));
+
+const mariaTaferl=filterExploreItems(projection.byLens.shrines,{query:"Maria Taferl"});
+assert.equal(mariaTaferl.length,1);
+assert.equal(mariaTaferl[0].map_publishable,false);
+
+const engelweihe=filterExploreItems(projection.byLens.pilgrimages,{query:"Engelweihe"});
+assert.equal(engelweihe.length,1);
+assert.ok(engelweihe[0].sections.some(section=>/Engelweihe/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+const einsiedelnCustom=filterExploreItems(projection.byLens.traditions,{query:"Engelweihe"});
+assert.ok(einsiedelnCustom.some(item=>item.source_id==="att:DEV-007:EINSIEDELN-ENGELWEIHE"));
+
+const mariastein=filterExploreItems(projection.byLens.pilgrimages,{query:"Mariastein"});
+assert.equal(mariastein.length,1);
+assert.ok(mariastein[0].sections.some(section=>/first Wednesday/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
