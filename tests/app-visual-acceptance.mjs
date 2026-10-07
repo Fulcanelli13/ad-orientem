@@ -1137,7 +1137,7 @@ try{
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
   assert.deepEqual(learnParity.sectionTitles,["Daily formation","Courses & study","Traditional Catholic life","Today in context"],"Learn section hierarchy diverged from v43.59.30 plus v38.4 Holy Orders formation");
-  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],"Formation visible launcher order diverged from the canonical layout");
+  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.glossary","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],"Formation visible launcher order diverged from the canonical layout");
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module='today.saint']").count(),0,"Saint of the Day remained duplicated in Learn");
   assert.deepEqual(learnParity.featured,["learn.catechism.daily","learn.mass"],"Learn featured-card hierarchy diverged from the canonical Formation layout");
   assert.equal(learnParity.donorNav,0,"historical V37 navigation leaked into modular Learn");
