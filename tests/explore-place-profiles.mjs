@@ -288,7 +288,7 @@ assert.ok(oswego);
 assert.equal(oswego.counts.shrines,1);
 assert.equal(oswego.counts.pilgrimages,1);
 assert.equal(oswego.counts.tlm,1,"confirmed Oswego ICKSP bridge did not resolve the live traditional Mass venue");
-assert.equal(oswego.exact_tlm_link_state,"CONFIRMED");
+assert.equal(oswego.exact_tlm_link_state,"VERIFIED");
 assert.equal(oswego.map_publishable,false);
 
 const auriesville=explorePlaceProfile(profiles,"place:US:auriesville-martyrs");
