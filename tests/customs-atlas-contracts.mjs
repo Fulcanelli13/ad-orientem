@@ -35,7 +35,7 @@ for (const entry of negative.entries) {
 }
 
 assert.equal(atlas.customs.length, 13);
-assert.equal(atlas.attestations.length, 15);
+assert.equal(atlas.attestations.length, 17);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -49,23 +49,23 @@ const result = assertCustomsAtlasRegistry({
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
   customs: 13,
-  attestations: 15,
+  attestations: 17,
   sources: 21,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
   [...result.mapCandidates].sort(),
-  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES"],
+  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY"].sort(),
 );
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
-assert.equal(laghet.map_policy, "PLACE_PENDING");
-assert.equal(laghet.place_id, null);
-assert.equal(laghet.place_name_hint, "Sanctuaire Notre-Dame de Laghet");
+assert.equal(laghet.map_policy, "PLACE");
+assert.equal(laghet.place_id, "place:FR:sanctuaire-notre-dame-de-laghet");
+assert.equal(laghet.place_name_hint, null);
 
 const lourdes = atlas.attestations.find(item => item.attestation_id === "att:DEV-010:LOURDES");
-assert.equal(lourdes.map_policy, "PLACE_PENDING");
-assert.equal(lourdes.place_id, null);
+assert.equal(lourdes.map_policy, "PLACE");
+assert.equal(lourdes.place_id, "place:FR:sanctuaire-notre-dame-de-lourdes");
 
 const universalPilgrimage = atlas.attestations.find(item => item.attestation_id === "att:DEV-006:WORLD");
 assert.equal(universalPilgrimage.map_policy, "NOT_MAPPED");
@@ -81,6 +81,8 @@ activeRejected.decision = "REJECT — test";
 assert.ok(auditCustom(activeRejected).some(item => item.code === "NEGATIVE_FINDING_IN_ACTIVE_CUSTOMS"));
 
 const badPending = structuredClone(laghet);
+badPending.map_policy = "PLACE_PENDING";
+badPending.place_id = null;
 badPending.place_name_hint = null;
 assert.ok(auditAttestation(badPending).some(item => item.code === "PLACE_PENDING_REQUIRES_HINT"));
 

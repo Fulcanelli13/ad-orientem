@@ -1,0 +1,97 @@
+{
+  "schema": "SHRINES_PILGRIMAGES_SOT_V1",
+  "version": "1.0.0",
+  "frozenAt": "2026-10-07",
+  "purpose": "Canonical shrine, pilgrimage, route and temporal-association layer for Explore, reusing shared Place identities and Calendar-owned temporal semantics.",
+  "entityOrder": [
+    "shrine",
+    "pilgrimage",
+    "pilgrimage_route",
+    "temporal_link",
+    "source"
+  ],
+  "invariants": [
+    "Shared Place owns physical location, address and map identity; Shrine owns devotional and historical identity.",
+    "A shrine is not a TLM venue and a nearby traditional community is not associated with a shrine without an explicit evidence-backed bridge.",
+    "A pilgrimage is a devotional journey identity, not a calendar event, Mass schedule or route geometry.",
+    "A pilgrimage route may remain documented but unmapped until source-backed geometry or canonical waypoints exist.",
+    "Calendar is the sole owner of recurring liturgical dates and moveable-date calculation.",
+    "Temporal links use semantic Calendar keys and must not duplicate month/day or Easter-offset calculations in this corpus.",
+    "An observed source event may support a temporal association but does not become the recurrence engine.",
+    "Customs Atlas attestations may point to a canonical Place only after that Place exists in the shared Geography registry.",
+    "Shrine history, apparition/prodigy narratives and devotional associations must remain source-attributed and must not be promoted into doctrinal or canonical claims beyond the evidence.",
+    "Stable shrine, pilgrimage and route ids survive source refreshes and current-event changes."
+  ],
+  "enums": {
+    "shrineKind": [
+      "MARIAN",
+      "CHRISTOLOGICAL",
+      "SAINT",
+      "OTHER"
+    ],
+    "recognitionClass": [
+      "OFFICIAL_SANCTUARY",
+      "OTHER_OFFICIAL",
+      "UNKNOWN"
+    ],
+    "pilgrimageKind": [
+      "DESTINATION_PILGRIMAGE",
+      "ANNUAL_PILGRIMAGE",
+      "PILGRIM_PATH",
+      "PROCESSIONAL_PILGRIMAGE",
+      "OTHER"
+    ],
+    "routeType": [
+      "WALKING",
+      "ON_SITE_PATH",
+      "PROCESSION",
+      "MIXED",
+      "UNKNOWN"
+    ],
+    "routeState": [
+      "NO_ROUTE",
+      "DOCUMENTED_UNMAPPED",
+      "MAPPED"
+    ],
+    "temporalRelation": [
+      "SHRINE_FEAST",
+      "PATRONAL_FEAST",
+      "LITURGICAL_DAY",
+      "SEASONAL",
+      "SOURCE_EVENT",
+      "NONE"
+    ],
+    "temporalBindingState": [
+      "NO_FIXED_CALENDAR_BINDING",
+      "PENDING_CALENDAR_BINDING",
+      "BOUND_TO_CALENDAR"
+    ],
+    "confidence": [
+      "HIGH",
+      "MEDIUM_HIGH",
+      "MEDIUM",
+      "LOW"
+    ],
+    "sourceDirectness": [
+      "OFFICIAL_SHRINE",
+      "OFFICIAL_DIOCESAN",
+      "OFFICIAL_CHURCH",
+      "PRIMARY_HISTORICAL",
+      "SECONDARY"
+    ]
+  },
+  "stableIdPatterns": {
+    "shrine": "shrine:<country>:<stable-slug>",
+    "pilgrimage": "pilgrimage:<country>:<stable-slug>",
+    "route": "route:<country>:<stable-slug>",
+    "temporalLink": "temporal:<subject>:<stable-slug>"
+  },
+  "releaseGates": {
+    "placeIdentity": "Every shrine requires a canonical place_id present in EXPLORE_GEOGRAPHY_SOT_V1.",
+    "provenance": "Every shrine, pilgrimage, route and temporal link requires source provenance.",
+    "routeSafety": "MAPPED routes require source-backed geometry or canonical waypoint ids; documented text alone remains DOCUMENTED_UNMAPPED.",
+    "calendarOwnership": "PENDING/BOUND Calendar links require a semantic calendar key and may not contain date, month, day, Easter-offset or private recurrence fields.",
+    "associationSafety": "No Directory venue/community relationship may be inferred from distance or shared locality.",
+    "customPromotion": "A Customs Atlas PLACE_PENDING record may be promoted to PLACE only after its canonical shared Place exists."
+  }
+}
