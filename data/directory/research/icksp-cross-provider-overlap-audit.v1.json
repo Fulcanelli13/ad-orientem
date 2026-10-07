@@ -1,0 +1,47 @@
+{
+  "schema": "AO_DIRECTORY_ICKSP_CROSS_PROVIDER_OVERLAP_AUDIT_V1",
+  "version": "1.0.0",
+  "generated_at": "2026-10-07T22:15:00Z",
+  "base_commit": "aad697d59bdccfa1078f6a3bcc923c8bfe9580be",
+  "scope": {
+    "icksp_federated_physical_venues": 120,
+    "compared_against": {
+      "ICKSP_LIVE": 27,
+      "FSSP": 404,
+      "IBP": 34,
+      "DIOCESAN": 46,
+      "CANONS_ST_JOHN_CANTIUS": 4
+    }
+  },
+  "method": {
+    "exact_checks": [
+      "normalized full address equality",
+      "normalized name + locality equality"
+    ],
+    "fuzzy_review": [
+      "same country + same postal code + name token similarity",
+      "same locality + name token similarity"
+    ],
+    "note": "This audit is an identity-resolution review, not a claim that no future shared-use venue can ever exist. New or changed provider records must be re-audited."
+  },
+  "result": {
+    "credible_same_physical_place_duplicates": 0,
+    "exact_collisions": 0,
+    "fuzzy_candidates_reviewed": 1,
+    "unresolved_overlap_candidates": 0
+  },
+  "reviewed_false_positives": [
+    {
+      "left_provider": "ICKSP",
+      "left_id": "ICKSP-STG-097",
+      "left_name": "Maison Saint-Joseph",
+      "left_address": "Avenue de l’Uruguay 23, 1000 Bruxelles, Belgium",
+      "right_provider": "FSSP",
+      "right_id": "ao-fssp-maison-saint-paul-rue-des-minimes-27-boite-8-b-1000-bruxelles-belgique",
+      "right_name": "Maison Saint-Paul",
+      "right_address": "Rue des Minimes 27 boîte 8 - B-1000 Bruxelles - Belgique",
+      "disposition": "DISTINCT_VENUES_SAME_POSTAL_CODE",
+      "rationale": "Different venue names and different street addresses; postal-code overlap alone is not a physical duplicate."
+    }
+  ]
+}
