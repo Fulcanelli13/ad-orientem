@@ -62,8 +62,10 @@ assert.match(dom,/\.ao-reader-nav button\[data-reader-nav="previous"\]\{left:51p
   "phone previous arrow drifted from the recovered donor geometry");
 assert.match(dom,/\.ao-reader-nav button\[data-reader-nav="next"\]\{right:51px\}/,
   "phone next arrow drifted from the recovered donor geometry");
-assert.match(dom,/\.ao-schola-toggle\{position:absolute;top:3px;left:50%;transform:translateX\(-50%\)/,
-  "mobile Schola toggle no longer clears the donor edge arrows");
+assert.match(dom,/\.ao-schola-resize\{left:25%;right:45%\}/,
+  "mobile Schola resize handle no longer owns an isolated touch lane");
+assert.match(dom,/\.ao-schola-toggle\{position:absolute;top:3px;left:70%;transform:translateX\(-50%\)/,
+  "mobile Schola toggle no longer clears both resize handle and donor edge arrows");
 assert.match(dom,/ao-ritual-trigger-live/);
 assert.match(dom,/current\.gesture\?\.anchorLat/);
 assert.match(dom,/exactCueIds\.includes\(gestureCueId\)/);
