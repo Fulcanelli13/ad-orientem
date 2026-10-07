@@ -205,6 +205,30 @@ function adorationPresence(){try{return sessionStorage.getItem(ADORATION_SESSION
 function setAdorationPresence(value){const next=value==='exposed'?'exposed':'reserved';try{sessionStorage.setItem(ADORATION_SESSION_KEY,next)}catch{};S.adoration.presence='reserved';save();return next}
 function save(){try{const out=JSON.parse(JSON.stringify(S));if(out.adoration)delete out.adoration.presence;localStorage.setItem(STORE_KEY,JSON.stringify(out))}catch{}}
 function setRecitationMode(mode){S.rosary.recitation=mode==='group'?'group':'individual';save();try{localStorage.setItem('ao-prayer-recitation-mode',S.rosary.recitation)}catch{};return S.rosary.recitation}
+function applySettingsPreferences(raw={}){
+ const prayer=raw&&typeof raw==='object'?raw:{};
+ const recitation=prayer.recitationMode==='group'?'group':prayer.recitationMode==='individual'?'individual':null;
+ if(recitation)S.rosary.recitation=recitation;
+ const stations=prayer.stations&&typeof prayer.stations==='object'?prayer.stations:{};
+ if(stations.mode==='simple'||stations.mode==='guided')S.stations.mode=stations.mode;
+ if(typeof stations.stabatMater==='boolean')S.stations.stabat=stations.stabatMater;
+ const angelus=prayer.angelus&&typeof prayer.angelus==='object'?prayer.angelus:{};
+ if(angelus.seasonalForm==='angelus')S.angelusMode='angelus';
+ else if(angelus.seasonalForm==='regina_caeli')S.angelusMode='regina';
+ else if(angelus.seasonalForm==='auto')S.angelusMode='auto';
+ if(typeof angelus.traditionalConclusion==='boolean')S.angelusHistoricalConclusion=angelus.traditionalConclusion;
+ save();
+ if(recitation){try{localStorage.setItem('ao-prayer-recitation-mode',recitation)}catch{}}
+ try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(S.rosary.recitation)}catch{}
+ if(document.getElementById(ROOT_ID)?.classList?.contains('open')){
+  if(view==='stations'||view==='angelus')render();
+ }
+ return {
+  recitationMode:S.rosary.recitation,
+  stations:{mode:S.stations.mode,stabatMater:S.stations.stabat},
+  angelus:{seasonalForm:S.angelusMode==='regina'?'regina_caeli':S.angelusMode,traditionalConclusion:!!S.angelusHistoricalConclusion}
+ };
+}
 function shell(){
   let r=document.getElementById(ROOT_ID);if(r)return r;
   r=document.createElement('div');r.id=ROOT_ID;r.className='aoP435930Backdrop';r.setAttribute('aria-hidden','true');
@@ -1169,7 +1193,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={version:VERSION,open,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={version:VERSION,open,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
