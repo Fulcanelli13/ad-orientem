@@ -6,11 +6,17 @@ import {
   SEXUAL_ETHICS_ROUTE,
   SEXUAL_ETHICS_RESEARCH_LEAD,
   CSE_QUESTIONS,
+  CSE_QUESTION_MAP,
   CSE_SECTIONS,
   CSE_SOURCES,
   CSE_SOURCE_MAP,
   CSE_VALIDATION,
 } from "../src/learn/sexual-ethics-data/index.js";
+import {
+  CSE_DEBATE_FIELDS,
+  CSE_DEBATE_IDS,
+  CSE_DEBATE_VALIDATION,
+} from "../src/learn/sexual-ethics-data/debates.js";
 import {
   CSE_SOT_VERSION,
   CSE_SOT_MATRIX,
@@ -24,13 +30,13 @@ import {
   CSE_QUALITY_SUMMARY,
 } from "../src/learn/sexual-ethics-data/quality-audit.js";
 
-assert.equal(SEXUAL_ETHICS_VERSION,"1.2.0");
+assert.equal(SEXUAL_ETHICS_VERSION,"1.3.0");
 assert.equal(SEXUAL_ETHICS_ROUTE,"learn.sexual_ethics");
 assert.equal(SEXUAL_ETHICS_RESEARCH_LEAD,"LBM");
 assert.equal(CSE_QUESTIONS.length,150);
 assert.equal(CSE_SECTIONS.length,15);
 assert.equal(CSE_VALIDATION.ok,true,CSE_VALIDATION.errors.join("\n"));
-assert.deepEqual(CSE_VALIDATION.depthCounts,{STANDARD:100,EXPANDED:25,DEBATE:25});
+assert.deepEqual(CSE_VALIDATION.depthCounts,{STANDARD:70,EXPANDED:25,DEBATE:55});
 
 const ids=new Set();
 for(const [index,item] of CSE_QUESTIONS.entries()){
@@ -41,7 +47,13 @@ for(const [index,item] of CSE_QUESTIONS.entries()){
   ids.add(id);
   assert.ok(item.q[0]&&item.q[1],`${id}: bilingual question`);
   assert.ok(item.a[0]&&item.a[1],`${id}: bilingual answer`);
-  if(item.depth!=="STANDARD")assert.ok(item.d?.[0]&&item.d?.[1],`${id}: deeper explanation`);
+  if(item.depth==="EXPANDED")assert.ok(item.d?.[0]&&item.d?.[1],`${id}: expanded explanation`);
+  if(item.depth==="DEBATE"){
+    assert.ok(item.debate,`${id}: structured debate`);
+    for(const field of CSE_DEBATE_FIELDS){
+      assert.ok(item.debate[field]?.[0]&&item.debate[field]?.[1],`${id}: debate field ${field}`);
+    }
+  }
   assert.ok(item.refs.length>0,`${id}: sources`);
   for(const [sourceId,locator] of item.refs){
     assert.ok(CSE_SOURCE_MAP[sourceId],`${id}: ${sourceId}`);
@@ -52,12 +64,12 @@ assert.equal(ids.size,150);
 assert.equal(CSE_SOURCES.some(source=>source.id==="LBM"&&source.role==="argument_lead"),true);
 assert.equal(CSE_SECTIONS.every(section=>CSE_QUESTIONS.filter(item=>item.section===section.id).length===10),true);
 
-assert.equal(CSE_SOT_VERSION,"CSE_SOT_V2");
+assert.equal(CSE_SOT_VERSION,"CSE_SOT_V3");
 assert.equal(CSE_SOT_MATRIX.length,150);
 assert.equal(CSE_SOT_AUDIT.records,150);
 assert.equal(CSE_SOT_AUDIT.bilingual,true);
 assert.equal(CSE_SOT_AUDIT.allHaveNonArgumentLeadAuthority,true);
-assert.equal(CSE_SOT_AUDIT.debateHandoffs,25);
+assert.equal(CSE_SOT_AUDIT.debateHandoffs,55);
 assert.ok(APOSTOLATE_SKILLS.some(skill=>skill.id==="APF06"),"CSE Debate handoff target APF06 must exist");
 assert.ok(CSE_SOT_AUDIT.recordsWithCrossLinks>0);
 assert.ok(CSE_SOT_AUDIT.recordsWithNarrowCitation>0);
@@ -72,10 +84,10 @@ assert.ok(unilateralContraception.refs.some(([sourceId,locator])=>sourceId==="CA
 assert.ok(unilateralContraception.cross.includes("pray.confession"));
 assert.ok(unilateralContraception.cross.includes("learn.rites.matrimony"));
 
-const adultery=CSE_QUESTIONS.find(item=>item.id==="CSE056");
-assert.match(adultery.q[0],/open marriage/i);
-assert.equal(/sexual sacrilege/i.test(adultery.q[0]),false);
-assert.ok(adultery.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator==="§§72–73"));
+const thirdPartySex=CSE_QUESTIONS.find(item=>item.id==="CSE056");
+assert.match(thirdPartySex.q[0],/threesomes|third person/i);
+assert.equal(/sexual sacrilege/i.test(thirdPartySex.q[0]),false);
+assert.ok(thirdPartySex.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator.includes("72–73")));
 const impairedConsent=CSE_QUESTIONS.find(item=>item.id==="CSE117");
 assert.match(impairedConsent.q[0],/intoxicated|incapacitated/i);
 assert.equal(impairedConsent.layer,"PASTORAL_CASE");
@@ -85,6 +97,7 @@ assert.ok(communion.refs.some(([sourceId,locator])=>sourceId==="CIC_EUCHARIST"&&
 
 assert.ok(CSE_GAP_AUDIT.some(item=>item.topic==="Adultery / consensual non-monogamy"&&item.status==="COVERED"));
 assert.ok(CSE_GAP_AUDIT.some(item=>item.topic==="Sexual sacrilege as a distinct species"&&item.status==="EXCLUDED_LOW_USER_VALUE"));
+assert.ok(CSE_GAP_AUDIT.some(item=>item.topic==="Abortion and difficult pregnancy cases"&&item.status==="COVERED"));
 assert.ok(relatedTargetsFor(CSE_QUESTIONS.find(item=>item.id==="CSE049")).some(target=>target.id==="learn.rites.matrimony"));
 assert.ok(relatedTargetsFor(CSE_QUESTIONS.find(item=>item.id==="CSE137")).some(target=>target.id==="pray.confession"));
 
@@ -103,15 +116,15 @@ assert.doesNotMatch(publicQuestionFiles,/Ad Orientem/);
 assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Every displayed citation source must have a hyperlink destination");
 
 
-assert.equal(CSE_QUALITY_AUDIT_VERSION,"CSE_QUALITY_V3");
+assert.equal(CSE_QUALITY_AUDIT_VERSION,"CSE_QUALITY_V4");
 assert.equal(CSE_QUALITY_AUDIT.length,150);
 assert.equal(CSE_QUALITY_SUMMARY.records,150);
-assert.deepEqual(CSE_QUALITY_SUMMARY.dispositions,{KEEP:3,TIGHTEN:41,REWRITE:15,SOURCE_REPAIR:91});
+assert.deepEqual(CSE_QUALITY_SUMMARY.dispositions,{KEEP:3,TIGHTEN:40,REWRITE:24,SOURCE_REPAIR:83});
 assert.equal(CSE_QUALITY_SUMMARY.allReviewed,true);
 assert.equal(CSE_QUALITY_SUMMARY.allClickable,true);
 assert.equal(CSE_QUALITY_SUMMARY.allAuthoritativelyGrounded,true);
-assert.equal(CSE_QUALITY_SUMMARY.debateRecords,25);
-assert.equal(CSE_QUALITY_SUMMARY.debateWithNarrowSource,25);
+assert.equal(CSE_QUALITY_SUMMARY.debateRecords,55);
+assert.equal(CSE_QUALITY_SUMMARY.debateWithNarrowSource,55);
 
 const q013=CSE_QUESTIONS.find(item=>item.id==="CSE013");
 assert.match(q013.a[0],/1 Corinthians 6/);
@@ -148,6 +161,57 @@ assert.match(q143.a[0],/guilt and shame are not the same thing/i);
 const q149=CSE_QUESTIONS.find(item=>item.id==="CSE149");
 assert.match(q149.a[0],/false factual premise must be corrected/i);
 
+
+assert.equal(CSE_DEBATE_VALIDATION.count,55);
+assert.equal(CSE_DEBATE_VALIDATION.complete,true);
+assert.equal(CSE_DEBATE_IDS.length,55);
+assert.equal(CSE_DEBATE_FIELDS.length,8);
+
+const q038=CSE_QUESTIONS.find(item=>item.id==="CSE038");
+assert.match(q038.q[0],/looking at attractive/i);
+assert.ok(q038.aliases.includes("checking out girls"));
+assert.equal(q038.depth,"DEBATE");
+
+const q039=CSE_QUESTIONS.find(item=>item.id==="CSE039");
+assert.match(q039.q[0],/flirting/i);
+assert.ok(q039.aliases.includes("emotional cheating"));
+
+const q040=CSE_QUESTIONS.find(item=>item.id==="CSE040");
+assert.match(q040.q[0],/oral sex, manual stimulation/i);
+assert.ok(q040.aliases.includes("handjob before marriage"));
+assert.equal(q040.depth,"DEBATE");
+
+const q055=CSE_QUESTIONS.find(item=>item.id==="CSE055");
+assert.match(q055.q[0],/sex toys/i);
+assert.ok(q055.refs.some(([sourceId,locator])=>sourceId==="MCHUGH"&&locator==="§1624"));
+assert.equal(q055.depth,"DEBATE");
+
+const q058=CSE_QUESTIONS.find(item=>item.id==="CSE058");
+assert.match(q058.q[0],/anal sex/i);
+assert.match(q058.a[0],/not compatible|not be presented as clearly permitted/i);
+assert.equal(q058.depth,"DEBATE");
+
+const q123=CSE_QUESTIONS.find(item=>item.id==="CSE123");
+const q124=CSE_QUESTIONS.find(item=>item.id==="CSE124");
+const q125=CSE_QUESTIONS.find(item=>item.id==="CSE125");
+assert.match(q123.q[0],/abortion/i);
+assert.ok(q123.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator==="§§63–66"));
+assert.match(q124.q[0],/rape or incest/i);
+assert.equal(q124.layer,"PASTORAL_CASE");
+assert.match(q125.q[0],/mother’s life|mother's life/i);
+assert.ok(q125.refs.some(([sourceId,locator])=>sourceId==="ABORTCLAR"));
+assert.equal(q125.layer,"PASTORAL_CASE");
+
+for(const id of ["CSE038","CSE039","CSE040","CSE055","CSE058","CSE112","CSE117","CSE123","CSE124","CSE125","CSE141","CSE142","CSE143","CSE145","CSE149"]){
+  const item=CSE_QUESTION_MAP?.[id]||CSE_QUESTIONS.find(row=>row.id===id);
+  assert.equal(item.depth,"DEBATE",`${id}: expected debate`);
+  assert.ok(item.debate?.opposition?.[0]&&item.debate?.response?.[0]&&item.debate?.bottom?.[0],`${id}: debate payload`);
+}
+
+assert.ok(CSE_SOURCES.some(source=>source.id==="ABORT74"&&source.canonical_url));
+assert.ok(CSE_SOURCES.some(source=>source.id==="ABORTCLAR"&&source.canonical_url));
+assert.ok(CSE_SOURCES.some(source=>source.id==="MCHUGH"&&source.canonical_url));
+
 const presentation=readFileSync("src/learn/presentation.js","utf8");
 const owner=readFileSync("src/learn/browser-entry.js","utf8");
 const runtime=readFileSync("src/learn/sexual-ethics.js","utf8");
@@ -164,6 +228,12 @@ assert.match(runtime,/data-ao-cse-related/);
 assert.match(runtime,/<a href="\$\{esc\(url\)\}" target="_blank" rel="noopener"><strong>\$\{esc\(citation\)\}<\/strong> ↗<\/a>/);
 assert.match(runtime,/handoffToApostolate/);
 assert.match(runtime,/FORMATION_TO_APOSTOLATE/);
+assert.match(runtime,/The strongest objection/);
+assert.match(runtime,/Where the argument breaks/);
+assert.match(runtime,/The strongest comeback/);
+assert.match(runtime,/Examine the argument/);
+assert.match(runtime,/item\.aliases/);
+assert.match(runtime,/Object\.values\(item\.debate\)/);
 
 console.log(JSON.stringify({
   version:SEXUAL_ETHICS_VERSION,
