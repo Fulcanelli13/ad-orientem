@@ -59,10 +59,10 @@ const browser=readFileSync("src/learn/browser-entry.js","utf8");
 const presentation=readFileSync("src/learn/presentation.js","utf8");
 const assets=readFileSync("src/assets/asset-registry.js","utf8");
 const sickStart=runtime.indexOf("function sick(win){");
-const sickEnd=runtime.indexOf("\\nfunction ",sickStart+20);
+const sickEnd=runtime.indexOf("\nfunction ",sickStart+20);
 const sickSection=runtime.slice(sickStart,sickEnd);
 const matrimonyStart=runtime.indexOf("function matrimony(win){");
-const matrimonyEnd=runtime.indexOf("\\nfunction ",matrimonyStart+20);
+const matrimonyEnd=runtime.indexOf("\nfunction ",matrimonyStart+20);
 const matrimonySection=runtime.slice(matrimonyStart,matrimonyEnd);
 
 assert.match(runtime,/priestCeremonialExposed:false/,"lay-only scope guard disappeared");
