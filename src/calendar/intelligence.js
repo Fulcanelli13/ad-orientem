@@ -1,5 +1,5 @@
 import { formatDisplayDate } from "../app/date-format.js";
-import { NOVENA_CORPUS_V4 } from "../pray/novena-corpus-v4.js";
+import { NOVENA_CORPUS_V4, NOVENA_START_KIND } from "../pray/novena-corpus-v4.js";
 import { addDaysIso, dateFromIso, isoDate } from "./liturgical-year.js";
 import { v384Events, v384Dates } from "./traditional-year-v384.js";
 import { CALENDAR_DEVOTIONAL_REGISTRY_VERSION, DEVOTIONAL_PRACTICE_REGISTRY, NOVENA_TARGET_IDS, NOVENA_SOURCE_HOLDS, devotionalPracticeDefinition } from "./devotional-registry.js";
@@ -14,6 +14,10 @@ const keyOf=value=>{
 };
 const L=(fr,en,frText)=>fr?frText:en;
 const diffDays=(a,b)=>Math.round((dateFromIso(a)-dateFromIso(b))/86400000);
+const novenaStartKind=n=>n?.startKind===NOVENA_START_KIND.TRADITIONAL?NOVENA_START_KIND.TRADITIONAL:NOVENA_START_KIND.SUGGESTED;
+const novenaStartPrefix=(n,fr)=>novenaStartKind(n)===NOVENA_START_KIND.TRADITIONAL
+  ?L(fr,"Traditional start","Début traditionnel")
+  :L(fr,"Suggested start","Début suggéré");
 
 const DISCIPLINE_SOURCES=Object.freeze({
   canonFast:Object.freeze({label:"Code of Canon Law · can. 919",url:"https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html"}),
@@ -120,7 +124,7 @@ export function novenaStatusFor(novena,value,{fr=false}={}){
     const exact=w.occurrences.indexOf(id);
     if(exact>=0){
       return Object.freeze({
-        kind:"active",day:exact+1,window:w,next:id,
+        kind:"active",day:exact+1,window:w,next:id,startKind:novenaStartKind(n),
         label:L(fr,`Tuesday ${exact+1} of 9 · feast ${formatDisplayDate(w.feast)}`,`Mardi ${exact+1} sur 9 · fête le ${formatDisplayDate(w.feast)}`)
       });
     }
@@ -129,34 +133,34 @@ export function novenaStatusFor(novena,value,{fr=false}={}){
       const next=w.occurrences[nextIndex],until=diffDays(next,id);
       if(until>=0&&until<=90){
         return Object.freeze({
-          kind:"upcoming",day:nextIndex+1,window:w,next,
+          kind:"upcoming",day:nextIndex+1,window:w,next,startKind:novenaStartKind(n),
           label:L(fr,`Next: Tuesday ${nextIndex+1} of 9 · ${formatDisplayDate(next)}`,`Prochain : mardi ${nextIndex+1} sur 9 · ${formatDisplayDate(next)}`)
         });
       }
     }
     return Object.freeze({
-      kind:"ordinary",day:9,window:w,next:null,
-      label:L(fr,`Nine Tuesdays · feast ${formatDisplayDate(w.feast)}`,`Neuf mardis · fête le ${formatDisplayDate(w.feast)}`)
+      kind:"ordinary",day:9,window:w,next:null,startKind:novenaStartKind(n),
+      label:L(fr,`${novenaStartPrefix(n,false)} · nine Tuesdays · feast ${formatDisplayDate(w.feast)}`,`${novenaStartPrefix(n,true)} · neuf mardis · fête le ${formatDisplayDate(w.feast)}`)
     });
   }
 
   const delta=diffDays(id,w.start);
   if(delta>=0&&delta<=8){
     return Object.freeze({
-      kind:"active",day:delta+1,window:w,next:id,
+      kind:"active",day:delta+1,window:w,next:id,startKind:novenaStartKind(n),
       label:L(fr,`Day ${delta+1} of 9 · feast ${formatDisplayDate(w.feast)}`,`Jour ${delta+1} sur 9 · fête le ${formatDisplayDate(w.feast)}`)
     });
   }
   const until=diffDays(w.start,id);
   if(until>=0&&until<=90){
     return Object.freeze({
-      kind:"upcoming",day:1,window:w,next:w.start,
-      label:L(fr,`Begins ${formatDisplayDate(w.start)} · ${until} day${until===1?"":"s"} away`,`Commence le ${formatDisplayDate(w.start)} · dans ${until} jour${until===1?"":"s"}`)
+      kind:"upcoming",day:1,window:w,next:w.start,startKind:novenaStartKind(n),
+      label:L(fr,`${novenaStartPrefix(n,false)} ${formatDisplayDate(w.start)} · ${until} day${until===1?"":"s"} away`,`${novenaStartPrefix(n,true)} le ${formatDisplayDate(w.start)} · dans ${until} jour${until===1?"":"s"}`)
     });
   }
   return Object.freeze({
-    kind:"ordinary",day:1,window:w,next:null,
-    label:L(fr,`Traditional start ${formatDisplayDate(w.start)} · feast ${formatDisplayDate(w.feast)}`,`Début traditionnel le ${formatDisplayDate(w.start)} · fête le ${formatDisplayDate(w.feast)}`)
+    kind:"ordinary",day:1,window:w,next:null,startKind:novenaStartKind(n),
+    label:L(fr,`${novenaStartPrefix(n,false)} ${formatDisplayDate(w.start)} · feast ${formatDisplayDate(w.feast)}`,`${novenaStartPrefix(n,true)} le ${formatDisplayDate(w.start)} · fête le ${formatDisplayDate(w.feast)}`)
   });
 }
 
