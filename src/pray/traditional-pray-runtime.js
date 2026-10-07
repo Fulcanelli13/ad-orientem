@@ -229,7 +229,7 @@ function open(route,opts={}){
 }
 function back(){
   if(S.screen==="prayer"){S.screen="module";S.prayerId=null;return render()}
-  BASE_OPEN("pray.hub",OPEN_OPTS);queueMicrotask(injectHome);return true;
+  BASE_OPEN("pray.hub",OPEN_OPTS);if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);return true;
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
@@ -262,23 +262,6 @@ function handleClick(e){
     const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return;
   }
 }
-function injectHome(){
-  const m=mount();if(!m||m.dataset.aoPrayView!=="home"||m.querySelector(".aoTP381InsertedSection"))return false;
-  const sections=[...m.querySelectorAll(".aoP435930ModuleSection")],before=sections.find(s=>/Devotional programmes|Programmes dévotionnels/i.test(s.querySelector("h3")?.textContent||""));
-  const sec=document.createElement("section");sec.className="aoP435930ModuleSection aoTP381InsertedSection";
-  const cards=[
-    ["pray.morning_evening",L("Morning & Evening Prayer","Prières du matin & du soir"),L("Historical lay prayer-book sequence","Séquence historique de livre de prières laïc")],
-    ["pray.sacred_hymns",L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"),"Te Deum · Veni Creator · Ave Maris Stella"],
-    ["pray.holy_name_litany",L("Litany of the Holy Name","Litanies du Saint Nom"),L("Traditional Roman form · available offline","Forme romaine traditionnelle · disponible hors ligne")],
-    ["pray.sacred_heart",L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"),L("Litany · reparation · Christ-the-King consecration","Litanies · réparation · consécration du Christ-Roi")],
-    ["pray.communion_treasury",L("Traditional Communion Prayers","Prières traditionnelles de Communion"),L("St Thomas · St Ambrose · St Bonaventure · En ego","Saint Thomas · saint Ambroise · saint Bonaventure · En ego")],
-    ["pray.good_death",L("Preparation for a Good Death","Préparation à une bonne mort"),L("St Joseph · perseverance · Jesus, Mary, Joseph","Saint Joseph · persévérance · Jésus, Marie, Joseph")],
-    ["pray.dying_companion",L("Dying Companion","Accompagnement du mourant"),L("Priest · Viaticum · bedside prayer · commendation","Prêtre · Viatique · prière au chevet · recommandation")],
-    ["pray.meal_prayers",L("Grace at Meals","Prières des repas"),L("Before and after meals","Avant et après les repas")],
-  ];
-  sec.innerHTML=`<div class="aoP435930ModuleSectionHead"><h3>${esc(L("Daily & traditional prayer","Prière quotidienne & traditionnelle"))}</h3><p>${esc(L("Source-led lay sequences and traditional texts recovered from the approved donor.","Séquences laïques guidées par les sources et textes traditionnels récupérés du donneur approuvé."))}</p></div><div class="aoP435930ModuleGrid">${cards.map(([route,title,desc])=>`<button type="button" class="aoP435930ModuleCard" data-tp381-open="${esc(route)}">${assetMarkup(route)}<small class="aoP435930ModuleKind">${esc(L("TRADITIONAL","TRADITIONNEL"))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(desc)}</span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
-  (before||sections.at(-1))?.insertAdjacentElement(before?"beforebegin":"afterend",sec);return true;
-}
 function extendRegistry(){
   const MOD=window.AO_MODULES;if(!MOD||MOD.__aoTraditionalPrayV381)return;
   const prior=MOD;
@@ -296,9 +279,8 @@ function mountRuntime(){
   const PR=window.AO_PRAY_V435930;if(!PR?.open||!PR?.close)return false;
   BASE_OPEN=PR.open.bind(PR);BASE_CLOSE=PR.close.bind(PR);
   const oldOpen=PR.open.bind(PR);
-  PR.open=function(id,opts={}){if(ROUTES[id])return open(id,opts);const out=oldOpen(id,opts);if(id==="pray.hub"||id==="pray"||id==="home")queueMicrotask(injectHome);return out};
+  PR.open=function(id,opts={}){if(ROUTES[id])return open(id,opts);return oldOpen(id,opts)};
   document.addEventListener("click",handleClick,true);
-  const mo=new MutationObserver(()=>queueMicrotask(injectHome));if(document.body)mo.observe(document.body,{subtree:true,childList:true});
   extendRegistry();
   window.AO_TRADITIONAL_PRAY_V381=Object.freeze({
     version:VERSION,
@@ -309,7 +291,6 @@ function mountRuntime(){
     state:()=>({...S}),
     qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",sacredHeartPolicy:"SOURCE_LOCKED_TRADITIONAL",communionTreasuryPolicy:"FRENCH_WORLD_SOURCE_LOCKED",goodDeathPolicy:"ROMAN_ST_JOSEPH_SOURCE_LOCKED",dyingCompanionPolicy:"PASTORAL_NOT_SACRAMENT_SIMULATION",seriousIllnessBridge:"learn.rites.sick",legacyTraditionOwner:false})
   });
-  queueMicrotask(injectHome);
   return window.AO_TRADITIONAL_PRAY_V381;
 }
 export function installTraditionalPrayRuntime({pollMs=40,maxPolls=150}={}){
