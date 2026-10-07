@@ -372,6 +372,7 @@ try{
   assert.equal(gloriaBow.postureActive,"true");
   assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
   assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
@@ -380,6 +381,7 @@ try{
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
 
   const agnus=await focusCanonicalCue("AO.SM.C0222");
@@ -388,6 +390,7 @@ try{
   assert.equal(agnus.leftRail,"true");
   assert.equal(agnus.gestureIconHidden,false,"Agnus Dei breast strike lost its canonical icon");
   assert.equal(agnus.targetActive,"true");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"11-mass-agnus-dei.png"),fullPage:false});
 
   const lastGospelGenuflect=await focusCanonicalCue("AO.SM.C0273");
@@ -396,6 +399,7 @@ try{
   assert.equal(lastGospelGenuflect.leftRail,"true");
   assert.equal(lastGospelGenuflect.gestureIconHidden,false,"Last Gospel genuflect lost its canonical icon");
   assert.equal(lastGospelGenuflect.targetActive,"true");
+  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"12-mass-last-gospel-genuflect.png"),fullPage:false});
 
   const lastGospelRise=await focusCanonicalCue("AO.SM.C0274");
