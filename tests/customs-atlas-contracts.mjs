@@ -50,7 +50,7 @@ assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
   customs: 13,
   attestations: 15,
-  sources: 20,
+  sources: 21,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
