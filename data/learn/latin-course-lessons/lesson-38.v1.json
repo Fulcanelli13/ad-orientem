@@ -93,7 +93,33 @@
       "in",
       "tu",
       "is/ea/id",
-      "omnipotens"
+      "omnipotens",
+      "confiteor",
+      "mundus",
+      "angelus",
+      "benedico",
+      "patior",
+      "scribo",
+      "timor",
+      "regnum",
+      "do",
+      "domus",
+      "caelum",
+      "virtus",
+      "salus",
+      "anima",
+      "tribuo",
+      "corpus",
+      "honor",
+      "sequor",
+      "grex",
+      "autem",
+      "nolo",
+      "pater",
+      "ubi",
+      "enim",
+      "sum",
+      "ego"
     ]
   },
   "passiveReadingLexicon": [
@@ -124,38 +150,354 @@
       "status": "liturgical-title"
     },
     {
+      "lemma": "Christus",
+      "forms": [
+        "Christum",
+        "Christo"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesu"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "palma",
+      "forms": [
+        "palma"
+      ],
+      "gloss": {
+        "en": "palm tree",
+        "fr": "palmier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cedrus",
+      "forms": [
+        "cedrus"
+      ],
+      "gloss": {
+        "en": "cedar",
+        "fr": "cèdre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "atrium",
+      "forms": [
+        "atriis"
+      ],
+      "gloss": {
+        "en": "court / atrium",
+        "fr": "parvis / cour"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "psallo",
+      "forms": [
+        "psallere"
+      ],
+      "gloss": {
+        "en": "sing psalms / praise",
+        "fr": "psalmodier / chanter"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Altissimus",
+      "forms": [
+        "Altissime"
+      ],
+      "gloss": {
+        "en": "Most High",
+        "fr": "Très-Haut"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "spectaculum",
+      "forms": [
+        "Spectaculum"
+      ],
+      "gloss": {
+        "en": "spectacle / public show",
+        "fr": "spectacle"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "prudens",
+      "forms": [
+        "prudentes"
+      ],
+      "gloss": {
+        "en": "prudent / wise",
+        "fr": "prudent / sage"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "infirmus",
+      "forms": [
+        "infirmi"
+      ],
+      "gloss": {
+        "en": "weak",
+        "fr": "faible"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "fortis",
+      "forms": [
+        "fortes"
+      ],
+      "gloss": {
+        "en": "strong",
+        "fr": "fort"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "laboro",
+      "forms": [
+        "laboramus"
+      ],
+      "gloss": {
+        "en": "labour / work",
+        "fr": "travailler"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "persecutio",
+      "forms": [
+        "persecutionem"
+      ],
+      "gloss": {
+        "en": "persecution",
+        "fr": "persécution"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
       "lemma": "Alleluia",
       "forms": [
         "Alleluia"
       ],
       "gloss": {
         "en": "Alleluia",
-        "fr": "Alleluia"
+        "fr": "Alléluia"
       },
       "trackedLesson": null,
       "status": "liturgical-formula"
     },
     {
-      "lemma": "Amen",
+      "lemma": "pusillus",
       "forms": [
-        "amen"
+        "pusillus"
       ],
       "gloss": {
-        "en": "amen",
-        "fr": "amen"
+        "en": "little / small",
+        "fr": "petit"
       },
       "trackedLesson": null,
-      "status": "formula-excluded"
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "complaceo",
+      "forms": [
+        "complacuit"
+      ],
+      "gloss": {
+        "en": "be pleased",
+        "fr": "se complaire"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "eleemosyna",
+      "forms": [
+        "eleemosynam"
+      ],
+      "gloss": {
+        "en": "alms",
+        "fr": "aumône"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "thesaurus",
+      "forms": [
+        "thesaurum"
+      ],
+      "gloss": {
+        "en": "treasure",
+        "fr": "trésor"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "tinea",
+      "forms": [
+        "tinea"
+      ],
+      "gloss": {
+        "en": "moth",
+        "fr": "teigne / mite"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "desiderium",
+      "forms": [
+        "desiderium"
+      ],
+      "gloss": {
+        "en": "desire",
+        "fr": "désir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "oblatio",
+      "forms": [
+        "oblatio"
+      ],
+      "gloss": {
+        "en": "offering",
+        "fr": "oblation"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "humilitas",
+      "forms": [
+        "humilitatis"
+      ],
+      "gloss": {
+        "en": "humility",
+        "fr": "humilité"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "purifico",
+      "forms": [
+        "purificet"
+      ],
+      "gloss": {
+        "en": "purify",
+        "fr": "purifier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "relinquo",
+      "forms": [
+        "reliquistis"
+      ],
+      "gloss": {
+        "en": "leave / abandon",
+        "fr": "laisser / abandonner"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "centuplum",
+      "forms": [
+        "centuplum"
+      ],
+      "gloss": {
+        "en": "a hundredfold",
+        "fr": "le centuple"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "alimentum",
+      "forms": [
+        "alimenta"
+      ],
+      "gloss": {
+        "en": "nourishment",
+        "fr": "nourriture"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vir",
+      "forms": [
+        "vir"
+      ],
+      "gloss": {
+        "en": "man",
+        "fr": "homme"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "munio",
+      "forms": [
+        "muniamur"
+      ],
+      "gloss": {
+        "en": "fortify / protect",
+        "fr": "fortifier / protéger"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
     }
   ],
   "sources": [
     {
       "id": "stbruno-introit-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Introit",
-      "sourceLatin": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium: lex Dei ejus in corde ipsius. Noli aemulari in malignantibus: neque zelaveris facientes iniquitatem.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Introit — C5-1",
+      "sourceLatin": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur: plantatus in domo Domini: in atriis domus Dei nostri. Bonum est confiteri Domino: et psallere nomini tuo, Altissime.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -163,10 +505,13 @@
     {
       "id": "stbruno-collect-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Collect",
+      "work": "Missale Romanum (1962) — S. Bruno Confessor",
+      "section": "Proper Collect — Sancti/10-06",
       "sourceLatin": "Sancti Brunonis Confessoris tui, quaesumus, Domine, intercessionibus adjuvemur: ut, qui majestatem tuam graviter delinquendo offendimus, ejus meritis et precibus, nostrorum delictorum veniam consequamur. Per Dominum nostrum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "provenanceNote": "Proper text in Sancti/10-06. The feast rule inherits the Confessor non-pontiff common; orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Sancti/10-06.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -174,10 +519,13 @@
     {
       "id": "stbruno-epistle-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Epistle - Ecclesiasticus 31:8-11",
-      "sourceLatin": "Beatus vir, qui inventus est sine macula, et qui post aurum non abiit, nec speravit in pecunia et thesauris. Quis est hic, et laudabimus eum? fecit enim mirabilia in vita sua. Qui probatus est in illo, et perfectus est, erit illi gloria aeterna: qui potuit transgredi, et non est transgressus: facere mala, et non fecit: ideo stabilita sunt bona illius in Domino, et eleemosynas illius enarrabit omnis ecclesia sanctorum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Epistle — 1 Corinthians 4:9-14",
+      "sourceLatin": "Fratres: Spectaculum facti sumus mundo et Angelis et hominibus. Nos stulti propter Christum, vos autem prudentes in Christo: nos infirmi, vos autem fortes: vos nobiles, nos autem ignobiles. Usque in hanc horam et esurimus, et sitimus, et nudi sumus, et colaphis caedimur, et instabiles sumus, et laboramus operantes manibus nostris: maledicimur, et benedicimus: persecutionem patimur, et sustinemus: blasphemamur, et obsecramus: tamquam purgamenta hujus mundi facti sumus, omnium peripsema usque adhuc. Non ut confundant vos, haec scribo, sed ut filios meos carissimos moneo: in Christo Jesu, Domino nostro.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -185,10 +533,13 @@
     {
       "id": "stbruno-gradual-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Gradual and Alleluia",
-      "sourceLatin": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur in domo Domini. Ad annuntiandum mane misericordiam tuam, et veritatem tuam per noctem. Alleluia, alleluia. Beatus vir, qui suffert tentationem: quoniam, cum probatus fuerit, accipiet coronam vitae. Alleluia.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Gradual and Alleluia — Ps 36:30-31; Ps 111:1",
+      "sourceLatin": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium. Lex Dei ejus in corde ipsius: et non supplantabuntur gressus ejus. Alleluia, alleluia. Beatus vir, qui timet Dominum: in mandatis ejus cupit nimis. Alleluia.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -196,10 +547,13 @@
     {
       "id": "stbruno-gospel-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Gospel - Luke 12:35-40",
-      "sourceLatin": "Sint lumbi vestri praecincti, et lucernae ardentes in manibus vestris, et vos similes hominibus exspectantibus dominum suum, quando revertatur a nuptiis: ut, cum venerit et pulsaverit, confestim aperiant ei. Beati servi illi, quos, cum venerit dominus, invenerit vigilantes: amen, dico vobis, quod praecinget se, et faciet illos discumbere, et transiens ministrabit illis. Et si venerit in secunda vigilia, et si in tertia vigilia venerit, et ita invenerit, beati sunt servi illi. Hoc autem scitote, quoniam, si sciret paterfamilias, qua hora fur veniret, vigilaret utique, et non sineret perfodi domum suam. Et vos estote parati, quia, qua hora non putatis, Filius hominis veniet.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Gospel — Luke 12:32-34",
+      "sourceLatin": "In illo tempore: Dixit Jesus discipulis suis: Nolite timere, pusillus grex, quia complacuit Patri vestro dare vobis regnum. Vendite quae possidetis, et date eleemosynam. Facite vobis sacculos, qui non veterascunt, thesaurum non deficientem in caelis: quo fur non appropiat, neque tinea corrumpit. Ubi enim thesaurus vester est, ibi et cor vestrum erit.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -207,10 +561,13 @@
     {
       "id": "stbruno-offertory-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Offertory",
-      "sourceLatin": "Veritas mea et misericordia mea cum ipso: et in nomine meo exaltabitur cornu ejus.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Offertory — Ps 20:2-3",
+      "sourceLatin": "In virtute tua, Domine, laetabitur justus, et super salutare tuum exsultabit vehementer: desiderium animae ejus tribuisti ei.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -218,10 +575,13 @@
     {
       "id": "stbruno-secret-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Secret",
-      "sourceLatin": "Laudis tibi, Domine, hostias immolamus in tuorum commemoratione Sanctorum: quibus nos et praesentibus exui malis confidimus et futuris. Per Dominum nostrum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Secret — C5-1",
+      "sourceLatin": "Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis oblatio et pro tuorum tibi grata sit honore Sanctorum, et nos corpore pariter et mente purificet. Per Dominum nostrum.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -229,10 +589,13 @@
     {
       "id": "stbruno-communion-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Communion",
-      "sourceLatin": "Beatus servus, quem, cum venerit dominus, invenerit vigilantem: amen, dico vobis, super omnia bona sua constituet eum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Communion — Matthew 19:28-29",
+      "sourceLatin": "Amen, dico vobis: quod vos, qui reliquistis omnia et secuti estis me, centuplum accipietis, et vitam aeternam possidebitis.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -240,10 +603,13 @@
     {
       "id": "stbruno-postcommunion-l38",
       "sourceType": "primary-liturgical",
-      "work": "Missale Romanum (1962) - St Bruno",
-      "section": "Postcommunion",
+      "work": "Missale Romanum (1962) — S. Bruno / Commune Confessoris non pontificis (Justus)",
+      "section": "Inherited Postcommunion — C5-1 with Bruno substitution",
       "sourceLatin": "Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedente beato Brunone Confessore tuo, per haec contra omnia adversa muniamur. Per Dominum nostrum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "provenanceNote": "Inherited through the St Bruno feast rule `vide C5`; current pinned common is C5-1 `[Missa] Justus`. Orthography normalized only.",
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/horas/Latin/Commune/C5-1.txt",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
       ]
@@ -335,8 +701,8 @@
       "title": "Introit and chants",
       "sourceId": "stbruno-introit-l38",
       "learnerCopy": {
-        "en": "Expect Psalmic compression and parallelism.",
-        "fr": "Attendez une syntaxe psalmique condensée et parallèle."
+        "en": "Expect Psalmic compression and parallelism. St Bruno inherits the Confessor non-pontiff common here: the Introit opens Justus ut palma, while the Gradual later uses Os justi.",
+        "fr": "Attendez une syntaxe psalmique condensée et parallèle. Saint Bruno hérite ici du Commun des confesseurs non pontifes : l'Introït commence par Justus ut palma, tandis que le Graduel emploie ensuite Os justi."
       },
       "referenceIds": [
         "stbruno-introit-l38",
@@ -369,8 +735,8 @@
       "title": "Epistle and Gospel",
       "sourceId": "stbruno-gospel-l38",
       "learnerCopy": {
-        "en": "Track finite verbs, connectors and pronouns to preserve the narrative thread.",
-        "fr": "Suivez verbes conjugués, connecteurs et pronoms pour conserver le fil du récit."
+        "en": "The inherited Epistle is 1 Corinthians 4:9–14 and the Gospel is Luke 12:32–34. Track finite verbs, contrasts and pronouns rather than assuming the older Confessor-common readings.",
+        "fr": "L'Épître héritée est 1 Corinthiens 4, 9–14 et l'Évangile Luc 12, 32–34. Suivez les verbes conjugués, les contrastes et les pronoms au lieu de supposer les anciennes lectures du Commun."
       },
       "referenceIds": [
         "stbruno-gospel-l38",
@@ -415,20 +781,24 @@
     {
       "id": "l38-p1",
       "sourceId": "stbruno-introit-l38",
-      "sourceLatin": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium: lex Dei ejus in corde ipsius. Noli aemulari in malignantibus: neque zelaveris facientes iniquitatem.",
-      "instructionalDisplay": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium: lex Dei ejus in corde ipsius. Noli aemulari in malignantibus: neque zelaveris facientes iniquitatem.",
+      "sourceLatin": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur: plantatus in domo Domini: in atriis domus Dei nostri. Bonum est confiteri Domino: et psallere nomini tuo, Altissime.",
+      "instructionalDisplay": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur: plantatus in domo Domini: in atriis domus Dei nostri. Bonum est confiteri Domino: et psallere nomini tuo, Altissime.",
       "targetLemmas": [
         "iustus",
-        "sapientia",
-        "lingua",
-        "iudicium",
-        "lex",
-        "Deus",
-        "cor",
-        "neque",
-        "iniquitas"
+        "domus",
+        "Dominus",
+        "bonus",
+        "confiteor",
+        "nomen",
+        "tuus"
       ],
-      "supportLemmas": []
+      "supportLemmas": [
+        "palma",
+        "cedrus",
+        "atrium",
+        "psallo",
+        "Altissimus"
+      ]
     },
     {
       "id": "l38-p2",
@@ -453,144 +823,154 @@
     {
       "id": "l38-p3",
       "sourceId": "stbruno-epistle-l38",
-      "sourceLatin": "Beatus vir, qui inventus est sine macula, et qui post aurum non abiit, nec speravit in pecunia et thesauris. Quis est hic, et laudabimus eum? fecit enim mirabilia in vita sua. Qui probatus est in illo, et perfectus est, erit illi gloria aeterna: qui potuit transgredi, et non est transgressus: facere mala, et non fecit: ideo stabilita sunt bona illius in Domino, et eleemosynas illius enarrabit omnis ecclesia sanctorum.",
-      "instructionalDisplay": "Beatus vir, qui inventus est sine macula, et qui post aurum non abiit, nec speravit in pecunia et thesauris. Quis est hic, et laudabimus eum? fecit enim mirabilia in vita sua. Qui probatus est in illo, et perfectus est, erit illi gloria aeterna: qui potuit transgredi, et non est transgressus: facere mala, et non fecit: ideo stabilita sunt bona illius in Domino, et eleemosynas illius enarrabit omnis ecclesia sanctorum.",
+      "sourceLatin": "Fratres: Spectaculum facti sumus mundo et Angelis et hominibus. Nos stulti propter Christum, vos autem prudentes in Christo: nos infirmi, vos autem fortes: vos nobiles, nos autem ignobiles. Usque in hanc horam et esurimus, et sitimus, et nudi sumus, et colaphis caedimur, et instabiles sumus, et laboramus operantes manibus nostris: maledicimur, et benedicimus: persecutionem patimur, et sustinemus: blasphemamur, et obsecramus: tamquam purgamenta hujus mundi facti sumus, omnium peripsema usque adhuc. Non ut confundant vos, haec scribo, sed ut filios meos carissimos moneo: in Christo Jesu, Domino nostro.",
+      "instructionalDisplay": "Fratres: Spectaculum facti sumus mundo et Angelis et hominibus. Nos stulti propter Christum, vos autem prudentes in Christo: nos infirmi, vos autem fortes: vos nobiles, nos autem ignobiles. Usque in hanc horam et esurimus, et sitimus, et nudi sumus, et colaphis caedimur, et instabiles sumus, et laboramus operantes manibus nostris: maledicimur, et benedicimus: persecutionem patimur, et sustinemus: blasphemamur, et obsecramus: tamquam purgamenta hujus mundi facti sumus, omnium peripsema usque adhuc. Non ut confundant vos, haec scribo, sed ut filios meos carissimos moneo: in Christo Jesu, Domino nostro.",
       "targetLemmas": [
-        "beatus",
-        "qui/quae/quod",
-        "sine",
-        "non",
-        "nec",
-        "spero",
-        "quis/quid",
-        "hic/haec/hoc",
-        "laudo",
-        "facio",
-        "vita",
-        "gloria",
-        "aeternus",
-        "malus",
-        "ideo",
-        "bonus",
-        "Dominus",
-        "omnis",
-        "ecclesia",
-        "sanctus"
+        "nos",
+        "mundus",
+        "angelus",
+        "homo",
+        "vos",
+        "autem",
+        "patior",
+        "benedico",
+        "scribo",
+        "filius",
+        "meus",
+        "Dominus"
       ],
-      "supportLemmas": []
+      "supportLemmas": [
+        "Christus",
+        "Iesus",
+        "spectaculum",
+        "prudens",
+        "infirmus",
+        "fortis",
+        "laboro",
+        "persecutio"
+      ]
     },
     {
       "id": "l38-p4",
       "sourceId": "stbruno-gradual-l38",
-      "sourceLatin": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur in domo Domini. Ad annuntiandum mane misericordiam tuam, et veritatem tuam per noctem. Alleluia, alleluia. Beatus vir, qui suffert tentationem: quoniam, cum probatus fuerit, accipiet coronam vitae. Alleluia.",
-      "instructionalDisplay": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur in domo Domini. Ad annuntiandum mane misericordiam tuam, et veritatem tuam per noctem. Alleluia, alleluia. Beatus vir, qui suffert tentationem: quoniam, cum probatus fuerit, accipiet coronam vitae. Alleluia.",
+      "sourceLatin": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium. Lex Dei ejus in corde ipsius: et non supplantabuntur gressus ejus. Alleluia, alleluia. Beatus vir, qui timet Dominum: in mandatis ejus cupit nimis. Alleluia.",
+      "instructionalDisplay": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium. Lex Dei ejus in corde ipsius: et non supplantabuntur gressus ejus. Alleluia, alleluia. Beatus vir, qui timet Dominum: in mandatis ejus cupit nimis. Alleluia.",
       "targetLemmas": [
         "iustus",
-        "Dominus",
-        "misericordia",
-        "tuus",
-        "et",
-        "veritas",
-        "per",
-        "nox",
+        "sapientia",
+        "lingua",
+        "iudicium",
+        "lex",
+        "Deus",
+        "cor",
+        "ipse",
+        "non",
         "beatus",
-        "quoniam",
-        "cum",
-        "accipio",
-        "corona",
-        "vita"
+        "timor",
+        "Dominus"
       ],
       "supportLemmas": [
-        "Alleluia"
+        "Alleluia",
+        "vir"
       ]
     },
     {
       "id": "l38-p5",
       "sourceId": "stbruno-gospel-l38",
-      "sourceLatin": "Sint lumbi vestri praecincti, et lucernae ardentes in manibus vestris, et vos similes hominibus exspectantibus dominum suum, quando revertatur a nuptiis: ut, cum venerit et pulsaverit, confestim aperiant ei. Beati servi illi, quos, cum venerit dominus, invenerit vigilantes: amen, dico vobis, quod praecinget se, et faciet illos discumbere, et transiens ministrabit illis. Et si venerit in secunda vigilia, et si in tertia vigilia venerit, et ita invenerit, beati sunt servi illi. Hoc autem scitote, quoniam, si sciret paterfamilias, qua hora fur veniret, vigilaret utique, et non sineret perfodi domum suam. Et vos estote parati, quia, qua hora non putatis, Filius hominis veniet.",
-      "instructionalDisplay": "Sint lumbi vestri praecincti, et lucernae ardentes in manibus vestris, et vos similes hominibus exspectantibus dominum suum, quando revertatur a nuptiis: ut, cum venerit et pulsaverit, confestim aperiant ei. Beati servi illi, quos, cum venerit dominus, invenerit vigilantes: amen, dico vobis, quod praecinget se, et faciet illos discumbere, et transiens ministrabit illis. Et si venerit in secunda vigilia, et si in tertia vigilia venerit, et ita invenerit, beati sunt servi illi. Hoc autem scitote, quoniam, si sciret paterfamilias, qua hora fur veniret, vigilaret utique, et non sineret perfodi domum suam. Et vos estote parati, quia, qua hora non putatis, Filius hominis veniet.",
+      "sourceLatin": "In illo tempore: Dixit Jesus discipulis suis: Nolite timere, pusillus grex, quia complacuit Patri vestro dare vobis regnum. Vendite quae possidetis, et date eleemosynam. Facite vobis sacculos, qui non veterascunt, thesaurum non deficientem in caelis: quo fur non appropiat, neque tinea corrumpit. Ubi enim thesaurus vester est, ibi et cor vestrum erit.",
+      "instructionalDisplay": "In illo tempore: Dixit Jesus discipulis suis: Nolite timere, pusillus grex, quia complacuit Patri vestro dare vobis regnum. Vendite quae possidetis, et date eleemosynam. Facite vobis sacculos, qui non veterascunt, thesaurum non deficientem in caelis: quo fur non appropiat, neque tinea corrumpit. Ubi enim thesaurus vester est, ibi et cor vestrum erit.",
       "targetLemmas": [
-        "et",
-        "vos",
-        "homo",
-        "Dominus",
-        "quando",
-        "ut",
-        "cum",
-        "venio",
-        "beatus",
-        "servus",
         "dico",
-        "se",
+        "nolo",
+        "timor",
+        "grex",
+        "pater",
+        "vos",
+        "do",
+        "regnum",
         "facio",
-        "si",
-        "hic/haec/hoc",
-        "quoniam",
-        "non",
-        "filius"
+        "caelum",
+        "ubi",
+        "enim",
+        "cor",
+        "sum"
       ],
       "supportLemmas": [
-        "Amen"
+        "Iesus",
+        "pusillus",
+        "complaceo",
+        "eleemosyna",
+        "thesaurus",
+        "tinea"
       ]
     },
     {
       "id": "l38-p6",
       "sourceId": "stbruno-offertory-l38",
-      "sourceLatin": "Veritas mea et misericordia mea cum ipso: et in nomine meo exaltabitur cornu ejus.",
-      "instructionalDisplay": "Veritas mea et misericordia mea cum ipso: et in nomine meo exaltabitur cornu ejus.",
+      "sourceLatin": "In virtute tua, Domine, laetabitur justus, et super salutare tuum exsultabit vehementer: desiderium animae ejus tribuisti ei.",
+      "instructionalDisplay": "In virtute tua, Domine, laetabitur justus, et super salutare tuum exsultabit vehementer: desiderium animae ejus tribuisti ei.",
       "targetLemmas": [
-        "veritas",
-        "meus",
-        "et",
-        "misericordia",
-        "cum",
-        "ipse",
         "in",
-        "nomen"
+        "virtus",
+        "tuus",
+        "Dominus",
+        "iustus",
+        "et",
+        "super",
+        "salus",
+        "anima",
+        "is/ea/id",
+        "tribuo"
       ],
-      "supportLemmas": []
+      "supportLemmas": [
+        "desiderium"
+      ]
     },
     {
       "id": "l38-p7",
       "sourceId": "stbruno-secret-l38",
-      "sourceLatin": "Laudis tibi, Domine, hostias immolamus in tuorum commemoratione Sanctorum: quibus nos et praesentibus exui malis confidimus et futuris. Per Dominum nostrum.",
-      "instructionalDisplay": "Laudis tibi, Domine, hostias immolamus in tuorum commemoratione Sanctorum: quibus nos et praesentibus exui malis confidimus et futuris. Per Dominum nostrum.",
+      "sourceLatin": "Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis oblatio et pro tuorum tibi grata sit honore Sanctorum, et nos corpore pariter et mente purificet. Per Dominum nostrum.",
+      "instructionalDisplay": "Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis oblatio et pro tuorum tibi grata sit honore Sanctorum, et nos corpore pariter et mente purificet. Per Dominum nostrum.",
       "targetLemmas": [
-        "tu",
-        "Dominus",
-        "hostia",
-        "in",
-        "memoria",
-        "sanctus",
         "nos",
+        "quaeso",
+        "omnipotens",
+        "Deus",
+        "ut",
+        "tuus",
+        "tu",
+        "sanctus",
+        "corpus",
         "et",
-        "malus",
-        "per"
+        "honor",
+        "Dominus"
       ],
-      "supportLemmas": []
+      "supportLemmas": [
+        "humilitas",
+        "oblatio",
+        "purifico"
+      ]
     },
     {
       "id": "l38-p8",
       "sourceId": "stbruno-communion-l38",
-      "sourceLatin": "Beatus servus, quem, cum venerit dominus, invenerit vigilantem: amen, dico vobis, super omnia bona sua constituet eum.",
-      "instructionalDisplay": "Beatus servus, quem, cum venerit dominus, invenerit vigilantem: amen, dico vobis, super omnia bona sua constituet eum.",
+      "sourceLatin": "Amen, dico vobis: quod vos, qui reliquistis omnia et secuti estis me, centuplum accipietis, et vitam aeternam possidebitis.",
+      "instructionalDisplay": "Amen, dico vobis: quod vos, qui reliquistis omnia et secuti estis me, centuplum accipietis, et vitam aeternam possidebitis.",
       "targetLemmas": [
-        "beatus",
-        "servus",
-        "qui/quae/quod",
-        "cum",
-        "venio",
-        "Dominus",
         "dico",
         "vos",
-        "super",
+        "qui/quae/quod",
         "omnis",
-        "bonus",
-        "suus",
-        "is/ea/id"
+        "et",
+        "sequor",
+        "ego",
+        "accipio",
+        "vita",
+        "aeternus"
       ],
       "supportLemmas": [
-        "Amen"
+        "relinquo",
+        "centuplum"
       ]
     },
     {
@@ -613,8 +993,10 @@
         "Dominus"
       ],
       "supportLemmas": [
+        "alimentum",
         "Bruno",
-        "Confessor"
+        "Confessor",
+        "munio"
       ]
     }
   ],
@@ -741,27 +1123,27 @@
     {
       "id": "l38-e5",
       "exerciseType": "multiple_choice",
-      "prompt": "Which text contains hostias immolamus?",
+      "prompt": "Which inherited text begins Spectaculum facti sumus mundo et Angelis et hominibus?",
       "stimulus": null,
       "options": [
+        "Epistle",
         "Secret",
-        "Collect",
         "Communion",
+        "Introit"
+      ],
+      "expectedAnswer": "Epistle",
+      "acceptedVariants": [
         "Epistle"
       ],
-      "expectedAnswer": "Secret",
-      "acceptedVariants": [
-        "Secret"
-      ],
       "hint": "Use the liturgical part and clause structure first.",
-      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "explanation": "The pinned C5-1 common supplies 1 Corinthians 4:9–14 as the Epistle.",
       "difficulty": 1,
-      "sourceId": "stbruno-secret-l38",
+      "sourceId": "stbruno-epistle-l38",
       "skills": [
         "proper:navigation"
       ],
       "referenceIds": [
-        "stbruno-secret-l38",
+        "stbruno-epistle-l38",
         "grammar-nunn-1922",
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
@@ -771,20 +1153,20 @@
     {
       "id": "l38-e6",
       "exerciseType": "multiple_choice",
-      "prompt": "Which text contains coronam vitae?",
+      "prompt": "Which inherited text begins Os justi meditabitur sapientiam?",
       "stimulus": null,
       "options": [
         "Gradual/Alleluia",
+        "Introit",
         "Offertory",
-        "Postcommunion",
-        "Introit"
+        "Postcommunion"
       ],
       "expectedAnswer": "Gradual/Alleluia",
       "acceptedVariants": [
         "Gradual/Alleluia"
       ],
       "hint": "Use the liturgical part and clause structure first.",
-      "explanation": "This checks unseen Proper navigation rather than new vocabulary.",
+      "explanation": "In the pinned C5-1 common, Os justi is the Gradual; the Introit is Justus ut palma.",
       "difficulty": 1,
       "sourceId": "stbruno-gradual-l38",
       "skills": [
@@ -958,7 +1340,15 @@
     "exerciseCount": 10,
     "sourceIdsResolved": true,
     "answersResolved": true,
-    "explanationReferencesResolved": true
+    "explanationReferencesResolved": true,
+    "liturgicalSourcePin": {
+      "repository": "DivinumOfficium/divinum-officium",
+      "commit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "feastPath": "web/www/missa/Latin/Sancti/10-06.txt",
+      "inheritedCommonPath": "web/www/horas/Latin/Commune/C5-1.txt",
+      "inheritance": "Sancti/10-06 `vide C5`; pinned current common `[Missa] Justus` in C5-1",
+      "accuracyStatus": "PINNED_SOURCE_ALIGNED"
+    }
   },
   "referencePolicy": {
     "registryPath": "data/learn/latin-course-reference-registry.v1.json",
