@@ -417,7 +417,8 @@ try{
   const earlyPracticeText=await page.locator("#ao-calendar-modular-root .aoCalPracticeContext").innerText();
   assert.match(earlyPracticeText,/Kingship of Christ/,"Calendar Day practice context lost Christ the King");
   assert.match(earlyPracticeText,/Month of the Holy Rosary/,"Calendar Day practice context lost the concurrent October Rosary observance");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalPracticeCard").count(),2,"Christ the King date should expose two non-redundant practice cards");
+  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalPracticeCard").count()>=2,"Christ the King date lost concurrent date-bound practice cards");
+  assert.match(earlyPracticeText,/Novena for the Holy Souls|Neuvaine pour les Saintes Âmes/,"Calendar Day did not project the active Holy Souls novena alongside the feast and October devotion");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion").count(),0,"retired duplicate Traditional Liturgical Year companion returned");
   await shot("02h-calendar-day-practices");
 
