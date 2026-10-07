@@ -1088,6 +1088,102 @@
       "evidence_note": "The National Shrine Grotto documents an annual Novena of Masses from 2–11 February culminating on its Our Lady of Lourdes feast day.",
       "map_policy": "PLACE",
       "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-006:BERMONT-GREUX",
+      "custom_id": "DEV-006",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:bermont-greux",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Documented late-medieval pilgrimage practice; shrine remains active",
+      "strength": "STRONG",
+      "source_ids": [
+        "BERMONT-PILGRIMAGE-CUSTOM"
+      ],
+      "evidence_note": "The shrine’s own history records Saint Joan of Arc repeatedly going to Bermont in pilgrimage to pray and offer candles and flowers.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:PONTMAIN-JAN17",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:pontmain",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual 17 January apparition anniversary → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "PONTMAIN-ANNIVERSARY-CUSTOM"
+      ],
+      "evidence_note": "Pontmain’s official shrine programme documents the annual 17 January anniversary observance as a major pilgrimage day.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-010:PONTMAIN-CANDLE",
+      "custom_id": "DEV-010",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:pontmain",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Current shrine practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "PONTMAIN-CANDLE-CUSTOM"
+      ],
+      "evidence_note": "The official Pontmain shrine provides a current devotional practice for offering a candle to Our Lady.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-006:PELLEVOISIN-ANNUAL",
+      "custom_id": "DEV-006",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:pellevoisin",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Grand annual pilgrimage — last weekend of August → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "PELLEVOISIN-ANNUAL-CUSTOM"
+      ],
+      "evidence_note": "Pellevoisin’s official shrine programme describes the continuing grand annual pilgrimage with procession, Rosary, scapular imposition and Mass.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEAD-003:MONTLIGEON",
+      "custom_id": "DEAD-003",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:montligeon",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual November Pèlerinages du Ciel → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "MONTLIGEON-DEAD-CUSTOM"
+      ],
+      "evidence_note": "Montligeon’s recurring November pilgrimages explicitly centre prayer for the dead around All Saints, All Souls and subsequent Sundays.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-006:RUE-DU-BAC",
+      "custom_id": "DEV-006",
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:rue-du-bac",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "International organized pilgrimage practice → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "RUE-DU-BAC-PILGRIMAGE-CUSTOM"
+      ],
+      "evidence_note": "The Miraculous Medal Chapel operates a current reservation system specifically for organized pilgrimages to the rue du Bac.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
     }
   ]
 }
