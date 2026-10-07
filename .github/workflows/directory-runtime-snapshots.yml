@@ -45,6 +45,7 @@ jobs:
         run: |
           npm run test:directory
           node tests/find-surface.mjs
+          node tools/directory/validate-runtime-snapshots.mjs
       - name: Publish changed snapshots
         shell: bash
         run: |
