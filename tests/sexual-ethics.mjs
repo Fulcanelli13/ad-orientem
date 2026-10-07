@@ -115,18 +115,21 @@ const publicQuestionFiles=[
 assert.doesNotMatch(publicQuestionFiles,/Ad Orientem/);
 assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Every displayed citation source must have a hyperlink destination");
 
-const META_COMMENTARY_EN=/(?:the strongest objection|the serious objection|the classic objection|the traditional reply|the Catholic reply|the Catholic answer|this question should|this remains a case-analysis question|this is a case-analysis question|this is a prudential case question|this module|the module|the reusable method)/i;
-const META_COMMENTARY_FR=/(?:l’objection la plus forte|l’objection sérieuse|l’objection classique|la réponse traditionnelle|la réponse catholique|cette question doit|cela reste une question d’analyse|c’est une question d’analyse|c’est une question prudentielle de cas|ce module|la méthode réutilisable)/i;
+const META_COMMENTARY_EN=/(?:the strongest objection|the serious objection|the classic objection|the objection\b|the traditional reply|the traditional response|the Catholic reply|the Catholic answer|the Catholic argument|the Catholic case|the argument (?:assumes|starts|concerns|depends|confuses|correctly|recognizes|sees)|this question should|this remains a case-analysis question|this is a case-analysis question|this is a prudential case question|this module|the module|the reusable method|the point is|the point here)/i;
+const META_COMMENTARY_FR=/(?:l’objection la plus forte|l’objection sérieuse|l’objection classique|l’objection\b|la réponse traditionnelle|la réponse catholique|l’argument catholique|l’argument (?:suppose|part|concerne|dépend|confond|reconnaît|voit)|cette question doit|cela reste une question d’analyse|c’est une question d’analyse|c’est une question prudentielle de cas|ce module|la méthode réutilisable)/i;
+const ANALYTICAL_DEBATE_FIELDS=["appeal","concession","breakpoint","catholicCase","response","bottom"];
 for(const item of CSE_QUESTIONS){
   for(const [label,text] of [
     ["detail-en",item.d?.[0]],
     ["detail-fr",item.d?.[1]],
-    ["catholic-case-en",item.debate?.catholicCase?.[0]],
-    ["catholic-case-fr",item.debate?.catholicCase?.[1]],
+    ...ANALYTICAL_DEBATE_FIELDS.flatMap(field=>[
+      [`${field}-en`,item.debate?.[field]?.[0]],
+      [`${field}-fr`,item.debate?.[field]?.[1]],
+    ]),
   ]){
     if(!text)continue;
-    assert.doesNotMatch(text,META_COMMENTARY_EN,`${item.id} ${label}: user-facing commentary must state the argument, not narrate the editorial debate`);
-    assert.doesNotMatch(text,META_COMMENTARY_FR,`${item.id} ${label}: le commentaire doit exposer l’argument, non commenter sa propre rédaction`);
+    assert.doesNotMatch(text,META_COMMENTARY_EN,`${item.id} ${label}: user-facing analysis must state the substance directly, not narrate the objection or editorial debate`);
+    assert.doesNotMatch(text,META_COMMENTARY_FR,`${item.id} ${label}: l’analyse doit exposer directement le fond, non commenter l’objection ou sa propre rédaction`);
   }
 }
 
