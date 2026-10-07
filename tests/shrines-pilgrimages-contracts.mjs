@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:26,
-  pilgrimages:37,
-  routes:10,
-  temporalLinks:28,
-  sources:66,
+  shrines:34,
+  pilgrimages:45,
+  routes:12,
+  temporalLinks:35,
+  sources:80,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -80,6 +80,14 @@ const requiredPlaces=new Set([
   "place:PL:kalwaria-zebrzydowska",
   "place:GB:walsingham-catholic-shrine",
   "place:GB:holywell-st-winefride",
+  "place:AU:penrose-park",
+  "place:AU:marian-valley",
+  "place:NZ:st-peter-chanel-russell",
+  "place:NZ:pukekaraka-otaki",
+  "place:NG:ugwogo-nike-national-marian-shrine",
+  "place:NG:nne-enyemaka-umuaka",
+  "place:UG:namugongo-martyrs",
+  "place:UG:munyonyo-martyrs",
 ]);
 for(const shrine of corpus.shrines){
   assert.ok(requiredPlaces.has(shrine.place_id),`${shrine.shrine_id} did not use frozen shared place identity`);
@@ -97,6 +105,9 @@ assert.equal(calendarDateForSemanticKey("observance.pompeii_supplica_may_8",2026
 assert.equal(calendarDateForSemanticKey("observance.jasna_gora_czestochowa",2026),"2026-08-26");
 assert.equal(calendarDateForSemanticKey("observance.walsingham_our_lady",2026),"2026-09-24");
 assert.equal(calendarDateForSemanticKey("observance.holywell_saint_winefride",2026),"2026-11-03");
+assert.equal(calendarDateForSemanticKey("feast.saint_peter_chanel",2026),"2026-04-28");
+assert.equal(calendarDateForSemanticKey("feast.our_lady_perpetual_help",2026),"2026-06-27");
+assert.equal(calendarDateForSemanticKey("feast.uganda_martyrs",2026),"2026-06-03");
 
 const kevelaerSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:kevelaer:pilgrimage-season");
 assert.equal(kevelaerSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -116,6 +127,12 @@ const walsinghamWalk=corpus.temporalLinks.find(item=>item.temporal_link_id==="te
 assert.equal(walsinghamWalk.binding_state,"NO_FIXED_CALENDAR_BINDING");
 const holywellWalk=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:holywell:lms-pilgrimage");
 assert.equal(holywellWalk.binding_state,"NO_FIXED_CALENDAR_BINDING");
+
+for(const id of ["temporal:penrose:fatima-day","temporal:marian-valley:monthly-devotions","temporal:nne-enyemaka:rosary-season"]){
+  const link=corpus.temporalLinks.find(item=>item.temporal_link_id===id);
+  assert.ok(link,id+" missing");
+  assert.equal(link.binding_state,"NO_FIXED_CALENDAR_BINDING");
+}
 
 const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
 assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
@@ -143,6 +160,13 @@ assert.equal(walsinghamRoute.destination_place_id,"place:GB:walsingham-catholic-
 const holywellRoute=corpus.routes.find(item=>item.route_id==="route:GB:holywell-church-to-well");
 assert.equal(holywellRoute.route_state,"DOCUMENTED_UNMAPPED");
 assert.equal(holywellRoute.destination_place_id,"place:GB:holywell-st-winefride");
+
+const ngaTapuwae=corpus.routes.find(item=>item.route_id==="route:NZ:nga-tapuwae-russell");
+assert.equal(ngaTapuwae.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(ngaTapuwae.destination_place_id,"place:NZ:st-peter-chanel-russell");
+const umuakaRosary=corpus.routes.find(item=>item.route_id==="route:NG:nne-enyemaka-rosary-procession");
+assert.equal(umuakaRosary.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(umuakaRosary.destination_place_id,"place:NG:nne-enyemaka-umuaka");
 
 const laghetRoute=corpus.routes.find(item=>item.route_id==="route:FR:laghet-paillon-old-road");
 assert.equal(laghetRoute.route_state,"DOCUMENTED_UNMAPPED");

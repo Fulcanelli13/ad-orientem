@@ -36,6 +36,19 @@ assert.equal(calendarDateForSemanticKey("observance.pompeii_supplica_may_8",2026
 assert.equal(calendarDateForSemanticKey("observance.jasna_gora_czestochowa",2026),"2026-08-26");
 assert.equal(calendarDateForSemanticKey("observance.walsingham_our_lady",2026),"2026-09-24");
 assert.equal(calendarDateForSemanticKey("observance.holywell_saint_winefride",2026),"2026-11-03");
+assert.equal(calendarDateForSemanticKey("feast.saint_peter_chanel",2026),"2026-04-28");
+assert.equal(calendarDateForSemanticKey("feast.our_lady_perpetual_help",2026),"2026-06-27");
+assert.equal(calendarDateForSemanticKey("feast.uganda_martyrs",2026),"2026-06-03");
+const peterChanel=calendarSemanticEventsForDate("2026-04-28").find(x=>x.id==="feast.saint_peter_chanel");
+assert.ok(peterChanel);
+assert.ok(peterChanel.tags.includes("LOCAL_LITURGICAL_OBSERVANCE"));
+const perpetualHelp=calendarSemanticEventsForDate("2026-06-27").find(x=>x.id==="feast.our_lady_perpetual_help");
+assert.ok(perpetualHelp);
+assert.ok(perpetualHelp.tags.includes("LOCAL_SHRINE_OBSERVANCE"));
+const ugandaMartyrs=calendarSemanticEventsForDate("2026-06-03").find(x=>x.id==="feast.uganda_martyrs");
+assert.ok(ugandaMartyrs);
+assert.ok(ugandaMartyrs.tags.includes("LOCAL_LITURGICAL_OBSERVANCE"));
+
 assert.equal(calendarDateForSemanticKey("unknown.key",2026),null);
 assert.ok(calendarSemanticEventsForDate("2026-02-11").some(x=>x.id==="feast.our_lady_of_lourdes"));
 assert.ok(calendarSemanticEventsForDate("2026-05-25").some(x=>x.id==="liturgical.pentecost_monday"));

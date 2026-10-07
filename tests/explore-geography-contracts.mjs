@@ -28,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -76,6 +76,14 @@ assert.deepEqual(
     "place:GB:walsingham-catholic-shrine",
     "place:GB:holywell-st-winefride",
     "place:GB:holywell-st-winefride-church",
+    "place:AU:penrose-park",
+    "place:AU:marian-valley",
+    "place:NZ:st-peter-chanel-russell",
+    "place:NZ:pukekaraka-otaki",
+    "place:NG:ugwogo-nike-national-marian-shrine",
+    "place:NG:nne-enyemaka-umuaka",
+    "place:UG:namugongo-martyrs",
+    "place:UG:munyonyo-martyrs",
   ].sort(),
 );
 
@@ -133,8 +141,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 13,
-  places: 29,
+  geoAreas: 17,
+  places: 37,
   directoryPlaceLinks: 1,
 });
 
@@ -166,6 +174,13 @@ assert.equal(holywellCandidate.place_id,"place:GB:holywell-st-winefride-church")
 assert.deepEqual(holywellCandidate.generated_provider_scan.exact_or_text_matches,[]);
 assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:GB:holywell-st-winefride-church"),false,"unresolved Holywell parish candidate leaked into canonical Directory→Place links");
 assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:GB:holywell-st-winefride"),false,"parish-church TLM evidence was incorrectly attached to the Well shrine");
+
+const umuakaLink=seed.directoryPlaceLinks.find(link=>link.link_id==="link:directory-place:NG:nne-enyemaka-umuaka");
+assert.ok(umuakaLink,"production Umuaka Directory→Place link missing");
+assert.equal(umuakaLink.relationship,"LOCATED_AT");
+assert.equal(umuakaLink.confidence,"CONFIRMED");
+assert.equal(umuakaLink.venue_id,"ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria");
+assert.equal(seed.directoryPlaceLinks.some(link=>link.venue_id==="ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-474123-umuaka-imo-state-nigeria"),false,"duplicate upstream Umuaka row was linked as a second exact-place venue");
 
 const badParent = structuredClone(registry);
 badParent.geoAreas.push({

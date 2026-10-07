@@ -421,6 +421,132 @@
         "PIL-HOLYWELL-LMS"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:AU:penrose-our-lady-mercy",
+      "place_id": "place:AU:penrose-park",
+      "name": "Shrine of Our Lady of Mercy — Penrose Park",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Mercy / Our Lady of Jasna Góra",
+      "origin_summary": "Diocesan Marian shrine in the Southern Highlands of New South Wales, established by the Pauline Fathers and centered on a replica of the Jasna Góra icon.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PENROSE-IDENTITY",
+        "SHR-PENROSE-FINDUS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:AU:marian-valley-help-christians",
+      "place_id": "place:AU:marian-valley",
+      "name": "Marian Valley — Shrine of Our Lady Help of Christians",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady Help of Christians",
+      "origin_summary": "Brisbane Archdiocesan Marian shrine entrusted to the Pauline Fathers, with chapels, Stations of the Cross and a continuing pilgrimage/devotional programme.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-MARIAN-VALLEY-CONTACT",
+        "PIL-MARIAN-VALLEY-PROGRAMME"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "name": "National Catholic Shrine of St Peter Chanel",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Peter Chanel",
+      "origin_summary": "National Catholic shrine in Russell holding a relic of Saint Peter Chanel, first martyr and patron saint of Oceania, and forming part of the Ngā Tapuwae Catholic pilgrimage route.",
+      "associated_saints": [
+        "Saint Peter Chanel"
+      ],
+      "source_ids": [
+        "SHR-ST-PETER-CHANEL-NZ",
+        "PIL-NGA-TAPUWAE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:NZ:pukekaraka-mary",
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "name": "Hāto Mere / St Mary's Pukekaraka",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Blessed Virgin Mary",
+      "origin_summary": "Historic Catholic mission and Marian pilgrimage place at Ōtaki, recognized by the Archdiocese of Wellington as a significant sacred site and pilgrimage destination.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PUKEKARAKA-WELLINGTON"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:NG:ugwogo-perpetual-help",
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "name": "National Shrine of Our Mother of Perpetual Help, Ugwogo Nike",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Mother of Perpetual Help",
+      "origin_summary": "National Marian pilgrimage centre in Enugu established by the Redemptorists for prayer, Eucharistic worship, retreats and Marian devotion.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-UGWOGO-NATIONAL-MARIAN"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:NG:nne-enyemaka-umuaka",
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "name": "Nne Enyemaka Shrine, Umuaka",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Perpetual Help",
+      "origin_summary": "Marian shrine and FSSP-administered personal parish in the Diocese of Orlu, with the Traditional Latin Mass established at the shrine and recurring long-distance Rosary processions.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-NNE-ENYEMAKA-FSSP",
+        "PIL-NNE-ENYEMAKA-ROSARY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:UG:namugongo-martyrs",
+      "place_id": "place:UG:namugongo-martyrs",
+      "name": "Uganda Martyrs Catholic Shrine, Namugongo",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Uganda Martyrs",
+      "origin_summary": "Major Catholic pilgrimage shrine in Kampala Archdiocese dedicated to the Uganda Martyrs and the annual national Martyrs Day pilgrimage on 3 June.",
+      "associated_saints": [
+        "Saint Charles Lwanga",
+        "Uganda Martyrs"
+      ],
+      "source_ids": [
+        "SHR-NAMUGONGO-OFFICIAL",
+        "PIL-NAMUGONGO-MARTYRS-DAY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:UG:munyonyo-martyrs",
+      "place_id": "place:UG:munyonyo-martyrs",
+      "name": "Munyonyo Martyrs Shrine",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Uganda Martyrs",
+      "origin_summary": "Uganda Martyrs shrine at Munyonyo, one of the principal Kampala-area sites associated with the martyrdom cycle and pilgrimage devotion to the Uganda Martyrs.",
+      "associated_saints": [
+        "Saint Andrew Kaggwa",
+        "Saint Kizito",
+        "Uganda Martyrs"
+      ],
+      "source_ids": [
+        "SHR-MUNYONYO-OFFICIAL"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -1004,6 +1130,133 @@
         "SHR-HOLYWELL-CONTACT"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:AU:penrose-destination",
+      "name": "Pilgrimage to Penrose Park",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:AU:penrose-our-lady-mercy",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:penrose:fatima-day"
+      ],
+      "scope_note": "Open Marian pilgrimage destination with a recurring monthly Fatima Day and continuing shrine devotions.",
+      "source_ids": [
+        "SHR-PENROSE-IDENTITY",
+        "PIL-PENROSE-FATIMA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:AU:marian-valley-destination",
+      "name": "Pilgrimage to Marian Valley",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:AU:marian-valley-help-christians",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:marian-valley:monthly-devotions"
+      ],
+      "scope_note": "Open Archdiocesan Marian pilgrimage destination with First Saturday and monthly Fatima Day Eucharistic processions and devotions.",
+      "source_ids": [
+        "SHR-MARIAN-VALLEY-CONTACT",
+        "PIL-MARIAN-VALLEY-PROGRAMME"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:NZ:st-peter-chanel-destination",
+      "name": "Pilgrimage to the National Shrine of St Peter Chanel",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:NZ:st-peter-chanel-russell",
+      "route_ids": [
+        "route:NZ:nga-tapuwae-russell"
+      ],
+      "temporal_link_ids": [
+        "temporal:st-peter-chanel:feast"
+      ],
+      "scope_note": "National saint-shrine destination and a principal stop on the Ngā Tapuwae Sacred Footsteps pilgrimage through the Catholic history of Northland.",
+      "source_ids": [
+        "SHR-ST-PETER-CHANEL-NZ",
+        "PIL-NGA-TAPUWAE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:NZ:pukekaraka-destination",
+      "name": "Pilgrimage to Pukekaraka, Ōtaki",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:NZ:pukekaraka-mary",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historic Marian and mission pilgrimage destination at Ōtaki, used for archdiocesan pilgrimages and Catholic-Māori devotional gatherings.",
+      "source_ids": [
+        "SHR-PUKEKARAKA-WELLINGTON"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:NG:ugwogo-destination",
+      "name": "Pilgrimage to the National Shrine of Our Mother of Perpetual Help",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:NG:ugwogo-perpetual-help",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:ugwogo:perpetual-help-feast"
+      ],
+      "scope_note": "National Marian pilgrimage destination in Enugu centered on devotion to Our Mother of Perpetual Help.",
+      "source_ids": [
+        "SHR-UGWOGO-NATIONAL-MARIAN"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:NG:nne-enyemaka-destination",
+      "name": "Pilgrimage to Nne Enyemaka Shrine, Umuaka",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:NG:nne-enyemaka-umuaka",
+      "route_ids": [
+        "route:NG:nne-enyemaka-rosary-procession"
+      ],
+      "temporal_link_ids": [
+        "temporal:nne-enyemaka:rosary-season"
+      ],
+      "scope_note": "Traditional Catholic Marian shrine and pilgrimage destination with Sunday Traditional Latin Mass and recurring 30 km Rosary processions from May through October.",
+      "source_ids": [
+        "SHR-NNE-ENYEMAKA-FSSP",
+        "PIL-NNE-ENYEMAKA-ROSARY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:UG:namugongo-martyrs-day",
+      "name": "Uganda Martyrs Day pilgrimage to Namugongo",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:UG:namugongo-martyrs",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:uganda-martyrs:namugongo"
+      ],
+      "scope_note": "Annual national and international pilgrimage to Namugongo on 3 June for the feast of the Uganda Martyrs.",
+      "source_ids": [
+        "PIL-NAMUGONGO-MARTYRS-DAY",
+        "SHR-NAMUGONGO-OFFICIAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:UG:munyonyo-destination",
+      "name": "Pilgrimage to Munyonyo Martyrs Shrine",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:UG:munyonyo-martyrs",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:uganda-martyrs:munyonyo"
+      ],
+      "scope_note": "Uganda Martyrs pilgrimage destination at Munyonyo, participating in the wider annual devotion and pilgrimage cycle surrounding the martyrs.",
+      "source_ids": [
+        "SHR-MUNYONYO-OFFICIAL"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -1154,6 +1407,36 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "PIL-HOLYWELL-LMS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:NZ:nga-tapuwae-russell",
+      "name": "Ngā Tapuwae Sacred Footsteps — Northland to Russell",
+      "route_type": "OTHER",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Hokianga / Northland Catholic heritage sites",
+      "destination_place_id": "place:NZ:st-peter-chanel-russell",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-NGA-TAPUWAE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:NG:nne-enyemaka-rosary-procession",
+      "name": "Nne Enyemaka 30 km Rosary procession",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Nne Enyemaka Shrine, Umuaka",
+      "destination_place_id": "place:NG:nne-enyemaka-umuaka",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-NNE-ENYEMAKA-ROSARY"
       ],
       "confidence": "HIGH"
     }
@@ -1541,6 +1824,101 @@
         "PIL-HOLYWELL-LMS"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:penrose:fatima-day",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:AU:penrose-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Monthly Fatima Day at Penrose Park",
+      "source_ids": [
+        "PIL-PENROSE-FATIMA"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:marian-valley:monthly-devotions",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:AU:marian-valley-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "First Saturday and monthly Fatima Day at Marian Valley",
+      "source_ids": [
+        "PIL-MARIAN-VALLEY-PROGRAMME"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:st-peter-chanel:feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:NZ:st-peter-chanel-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.saint_peter_chanel",
+      "source_event_label": "Feast of Saint Peter Chanel",
+      "source_ids": [
+        "SHR-ST-PETER-CHANEL-NZ"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:ugwogo:perpetual-help-feast",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:NG:ugwogo-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.our_lady_perpetual_help",
+      "source_event_label": "Feast of Our Mother of Perpetual Help",
+      "source_ids": [
+        "SHR-UGWOGO-NATIONAL-MARIAN"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:nne-enyemaka:rosary-season",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:NG:nne-enyemaka-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Monthly 13th-day Rosary processions, May through October",
+      "source_ids": [
+        "PIL-NNE-ENYEMAKA-ROSARY"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:uganda-martyrs:namugongo",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:UG:namugongo-martyrs-day",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.uganda_martyrs",
+      "source_event_label": "Uganda Martyrs Day",
+      "source_ids": [
+        "PIL-NAMUGONGO-MARTYRS-DAY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:uganda-martyrs:munyonyo",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:UG:munyonyo-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.uganda_martyrs",
+      "source_event_label": "Uganda Martyrs feast and pilgrimage cycle",
+      "source_ids": [
+        "SHR-MUNYONYO-OFFICIAL"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
     }
   ]
 }

@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:26,
-  traditions:49,
-  pilgrimages:37,
+  shrines:34,
+  traditions:53,
+  pilgrimages:45,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -169,7 +169,7 @@ const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   filters:{},
 }));
 assert.match(shrineMapHtml,/Loading source-backed map points/i);
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,3,"only provenance-locked shrine Places should publish map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,6,"only provenance-locked shrine Places should publish map points");
 
 const chartresShrine=filterExploreItems(projection.byLens.shrines,{query:"Chartres"});
 assert.equal(chartresShrine.length,1);
@@ -292,7 +292,30 @@ assert.ok(holywell.every(item=>item.map_publishable===false));
 assert.ok(holywell.some(item=>item.sections.some(section=>/Saint Winefride/.test(section.title)&&/Resolved by Calendar/.test(section.body))));
 assert.ok(holywell.some(item=>item.sections.some(section=>/first Sunday of July/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body))));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,3,"tranche 4 address-only shrines unexpectedly published map points");
+const penrose=filterExploreItems(projection.byLens.shrines,{query:"Penrose Park"});
+assert.equal(penrose.length,1);
+assert.equal(penrose[0].map_publishable,true);
+const marianValley=filterExploreItems(projection.byLens.shrines,{query:"Marian Valley"});
+assert.equal(marianValley.length,1);
+assert.equal(marianValley[0].map_publishable,true);
+const peterChanel=filterExploreItems(projection.byLens.pilgrimages,{query:"Peter Chanel"});
+assert.equal(peterChanel.length,1);
+assert.equal(peterChanel[0].map_publishable,false);
+assert.ok(peterChanel[0].sections.some(section=>/Saint Peter Chanel/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+const ugwogo=filterExploreItems(projection.byLens.pilgrimages,{query:"Ugwogo"});
+assert.equal(ugwogo.length,1);
+assert.equal(ugwogo[0].map_publishable,false);
+assert.ok(ugwogo[0].sections.some(section=>/Perpetual Help/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+const umuaka=filterExploreItems(projection.byLens.shrines,{query:"Nne Enyemaka"});
+assert.equal(umuaka.length,1);
+assert.equal(umuaka[0].map_publishable,true);
+const namugongo=filterExploreItems(projection.byLens.pilgrimages,{query:"Namugongo"});
+assert.equal(namugongo.length,1);
+assert.ok(namugongo[0].sections.some(section=>/Uganda Martyrs Day/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+const munyonyo=filterExploreItems(projection.byLens.pilgrimages,{query:"Munyonyo"});
+assert.equal(munyonyo.length,1);
+assert.ok(munyonyo[0].sections.some(section=>/Uganda Martyrs/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,6,"Australasia/Africa mapped shrine count drifted");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);

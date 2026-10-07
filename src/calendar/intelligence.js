@@ -176,6 +176,36 @@ export const CALENDAR_SEMANTIC_REGISTRY=Object.freeze({
     tags:Object.freeze(["LOCAL_LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
     sourceIds:Object.freeze(["PIL-HOLYWELL-FEAST"]),
   }),
+  "feast.saint_peter_chanel":Object.freeze({
+    key:"feast.saint_peter_chanel",
+    title:Object.freeze({en:"Saint Peter Chanel",fr:"Saint Pierre Chanel"}),
+    schedule:Object.freeze({type:"FIXED",month:4,day:28}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:68,
+    tags:Object.freeze(["LOCAL_LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["SHR-ST-PETER-CHANEL-NZ"]),
+  }),
+  "feast.our_lady_perpetual_help":Object.freeze({
+    key:"feast.our_lady_perpetual_help",
+    title:Object.freeze({en:"Our Mother of Perpetual Help",fr:"Notre-Dame du Perpétuel Secours"}),
+    schedule:Object.freeze({type:"FIXED",month:6,day:27}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:67,
+    tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["SHR-UGWOGO-NATIONAL-MARIAN"]),
+  }),
+  "feast.uganda_martyrs":Object.freeze({
+    key:"feast.uganda_martyrs",
+    title:Object.freeze({en:"Uganda Martyrs",fr:"Martyrs de l’Ouganda"}),
+    schedule:Object.freeze({type:"FIXED",month:6,day:3}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:70,
+    tags:Object.freeze(["LOCAL_LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["PIL-NAMUGONGO-MARTYRS-DAY","SHR-MUNYONYO-OFFICIAL"]),
+  }),
 });
 
 function semanticDateForDefinition(def,year){
