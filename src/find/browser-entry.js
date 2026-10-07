@@ -136,6 +136,7 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    if(typeof options?.query==="string")state.query=options.query;
     openState=true;
     const node=ensureRoot(win);if(node)node.dataset.open="true";
     await paint();
