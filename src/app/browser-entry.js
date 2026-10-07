@@ -11,6 +11,7 @@ import { installLiveSessionGuards } from "./live-session-guards.js";
 import { createPresentationFxBridge } from "./presentation-fx.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
+import "../find/browser-entry.js";
 import {
   APP_SURFACES,
   NON_MASS_DONOR_CONTRACT,
@@ -51,7 +52,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   let ribbonClickBound = false;
   const cleanups = [];
 
-  const isolatedNonMass=new Set(["calendar","pray","learn","settings"]);
+  const isolatedNonMass=new Set(["calendar","pray","learn","settings","find"]);
 
   function ensureSurfaceIsolationStyle(){
     if(doc.getElementById?.("ao-app-surface-isolation"))return;
