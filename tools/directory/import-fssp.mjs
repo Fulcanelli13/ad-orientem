@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { countryCodeFromText } from "./lib/country-codes.mjs";
@@ -65,14 +66,75 @@ export function parseFsspDirectoryHtml(html,{pageUrl=FSSP_DIRECTORY_URL}={}){
   return extractTableRows(html).map((row,index)=>rowRecord(row,pageUrl,index)).filter(Boolean);
 }
 
-async function enrichDetail(record,{fetchImpl=fetch}={}){
+function normalizedHost(url){
+  try{return new URL(url).hostname.toLowerCase().replace(/^www\./,"");}catch{return null}
+}
+function likelyGeoLink(anchor,detailUrl){
+  const baseHost=normalizedHost(detailUrl),linkHost=normalizedHost(anchor?.url);
+  if(!baseHost||!linkHost||baseHost!==linkHost)return false;
+  const signal=(String(anchor?.text??"")+" "+String(anchor?.url??"")).toLowerCase();
+  return /(contact|kontakt|contatt|contacto|directions|direction|location|where|visit|access|find|map|nous-contacter|pour-nous-contacter|horaires|schedule|mass-times|mass-schedule|parish|church)/i.test(signal)
+    && !/\.(?:pdf|jpe?g|png|gif|webp|svg)(?:$|[?#])/i.test(anchor.url);
+}
+function canonicalVenueIdForRecord(record){
+  const key=slugify(`${record.title}-${record.address}`)||`row-${record.index}`;
+  return `ao-fssp-${key}`;
+}
+async function loadPreviouslyUnresolved(out){
+  try{
+    const raw=await fs.readFile(path.join(path.resolve(out),"geocode-report.v1.json"),"utf8");
+    const report=JSON.parse(raw);
+    return new Set((report?.unresolved_records??[]).map(x=>x?.venue_id).filter(Boolean));
+  }catch{return new Set();}
+}
+function coherentGeoList(geos){
+  if(geos.length<=1)return true;
+  const first=geos[0];
+  return geos.every(g=>Math.abs(Number(g.lat)-Number(first.lat))<=0.00035&&Math.abs(Number(g.lng)-Number(first.lng))<=0.00035);
+}
+async function recoverLinkedOfficialGeo(record,anchors,{fetchImpl=fetch,maxPages=2}={}){
+  const pages=anchors.filter(a=>likelyGeoLink(a,record.detailUrl)).map(a=>a.url);
+  const unique=[...new Set(pages)].filter(url=>url!==record.detailUrl).slice(0,maxPages);
+  const recovered=[],rejected=[];let attempted=0;
+  for(const url of unique){
+    attempted+=1;
+    try{
+      const html=await fetchText(url,{fetchImpl});
+      const result=selectOfficialGeoFromHtml(html,{pageUrl:url,expectedText:[record.title,record.address].filter(Boolean).join(" ")});
+      if(result.geo)recovered.push(result.geo);
+      rejected.push(...(result.rejectedCandidates??[]));
+    }catch{}
+  }
+  if(!recovered.length)return {geo:null,attempted,ambiguous:false,rejected};
+  if(!coherentGeoList(recovered))return {geo:null,attempted,ambiguous:true,rejected};
+  return {geo:recovered[0],attempted,ambiguous:false,rejected};
+}
+
+async function enrichDetail(record,{fetchImpl=fetch,linkedGeoRecovery=false}={}){
   if(!record.detailUrl)return {...record,detailText:null,emails:[],phones:[],externalLinks:[]};
   try{
     const html=await fetchText(record.detailUrl,{fetchImpl});
     const text=stripTags(html);
-    const links=extractAnchors(html,record.detailUrl).map(x=>x.url);
+    const anchors=extractAnchors(html,record.detailUrl);
+    const links=anchors.map(x=>x.url);
     const officialGeo=selectOfficialGeoFromHtml(html,{pageUrl:record.detailUrl,expectedText:[record.title,record.address].filter(Boolean).join(" ")});
-    return {...record,detailText:text,emails:emailAddresses(text),phones:phoneCandidates(text),externalLinks:[...new Set(links)],officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0};
+    let linked={geo:null,attempted:0,ambiguous:false,rejected:[]};
+    if(linkedGeoRecovery&&!officialGeo.geo&&!officialGeo.ambiguous){
+      linked=await recoverLinkedOfficialGeo(record,anchors,{fetchImpl});
+    }
+    return {
+      ...record,
+      detailText:text,
+      emails:emailAddresses(text),
+      phones:phoneCandidates(text),
+      externalLinks:[...new Set(links)],
+      officialGeo:officialGeo.geo??linked.geo,
+      officialGeoAmbiguous:officialGeo.ambiguous||linked.ambiguous,
+      officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0||linked.rejected.length>0,
+      linkedGeoPagesAttempted:linked.attempted,
+      linkedGeoRecovered:Boolean(linked.geo),
+      linkedGeoAmbiguous:linked.ambiguous
+    };
   }catch(error){
     return {...record,detailText:null,emails:[],phones:[],externalLinks:[],detailWarning:String(error?.message??error)};
   }
@@ -151,7 +213,11 @@ export async function runFsspImport({out="data/directory/generated/fssp",concurr
   if(base.length < 100) {
     throw new Error(`FSSP import coverage guard: expected at least 100 official directory rows, received ${base.length}.`);
   }
-  const records=await concurrentMap(base,concurrency,record=>enrichDetail(record,{fetchImpl}));
+  const previouslyUnresolved=await loadPreviouslyUnresolved(out);
+  const records=await concurrentMap(base,concurrency,record=>enrichDetail(record,{
+    fetchImpl,
+    linkedGeoRecovery:previouslyUnresolved.has(canonicalVenueIdForRecord(record))
+  }));
   const retrievedAt=new Date().toISOString();
   const dataset=buildFsspDataset(records,{retrievedAt});
   const countryKnown=dataset.venues.filter(v=>v.address.country_code).length;
@@ -166,7 +232,11 @@ export async function runFsspImport({out="data/directory/generated/fssp",concurr
       country_code_unknown:dataset.venues.length-countryKnown,
       official_geo_recovered:records.filter(r=>r.officialGeo).length,
       official_geo_ambiguous:records.filter(r=>r.officialGeoAmbiguous).length,
-      official_geo_rejected_conflict:records.filter(r=>r.officialGeoRejected).length
+      official_geo_rejected_conflict:records.filter(r=>r.officialGeoRejected).length,
+      linked_geo_targeted:records.filter(r=>previouslyUnresolved.has(canonicalVenueIdForRecord(r))).length,
+      linked_geo_pages_attempted:records.reduce((sum,r)=>sum+(r.linkedGeoPagesAttempted??0),0),
+      linked_geo_recovered:records.filter(r=>r.linkedGeoRecovered).length,
+      linked_geo_ambiguous:records.filter(r=>r.linkedGeoAmbiguous).length
     }
   });
   return result.report;
