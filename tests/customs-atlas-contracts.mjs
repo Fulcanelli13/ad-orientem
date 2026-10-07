@@ -35,7 +35,7 @@ for (const entry of negative.entries) {
 }
 
 assert.equal(atlas.customs.length, 13);
-assert.equal(atlas.attestations.length, 31);
+assert.equal(atlas.attestations.length, 35);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -49,13 +49,13 @@ const result = assertCustomsAtlasRegistry({
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
   customs: 13,
-  attestations: 31,
-  sources: 35,
+  attestations: 35,
+  sources: 39,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
   [...result.mapCandidates].sort(),
-  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY", "att:DEV-009:ALTOETTING", "att:DEV-010:MARIAZELL", "att:DEV-007:EINSIEDELN-ENGELWEIHE", "att:DEV-007:CHAMPION", "att:DEV-010:GUADALUPE-LA-CROSSE", "att:DEV-007:SAINTE-ANNE-BEAUPRE", "att:DEV-010:NOTRE-DAME-DU-CAP", "att:DEV-007:LORETO-VENUTA", "att:DEV-007:POMPEI-SUPPLICA", "att:DEV-007:JASNA-GORA", "att:DEV-007:KALWARIA-ASSUMPTION", "att:DEV-007:WALSINGHAM", "att:DEV-007:HOLYWELL-ST-WINEFRIDE"].sort(),
+  ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY", "att:DEV-009:ALTOETTING", "att:DEV-010:MARIAZELL", "att:DEV-007:EINSIEDELN-ENGELWEIHE", "att:DEV-007:CHAMPION", "att:DEV-010:GUADALUPE-LA-CROSSE", "att:DEV-007:SAINTE-ANNE-BEAUPRE", "att:DEV-010:NOTRE-DAME-DU-CAP", "att:DEV-007:LORETO-VENUTA", "att:DEV-007:POMPEI-SUPPLICA", "att:DEV-007:JASNA-GORA", "att:DEV-007:KALWARIA-ASSUMPTION", "att:DEV-007:WALSINGHAM", "att:DEV-007:HOLYWELL-ST-WINEFRIDE", "att:DEV-007:ST-PETER-CHANEL-NZ", "att:DEV-007:UGWOGO-PERPETUAL-HELP", "att:DEV-007:NAMUGONGO-MARTYRS-DAY", "att:DEV-007:MUNYONYO-MARTYRS"].sort(),
 );
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
@@ -94,6 +94,17 @@ for(const [id,place] of [
   ["att:DEV-007:KALWARIA-ASSUMPTION","place:PL:kalwaria-zebrzydowska"],
   ["att:DEV-007:WALSINGHAM","place:GB:walsingham-catholic-shrine"],
   ["att:DEV-007:HOLYWELL-ST-WINEFRIDE","place:GB:holywell-st-winefride"],
+]){
+  const att=atlas.attestations.find(item=>item.attestation_id===id);
+  assert.ok(att,id+" missing");
+  assert.equal(att.place_id,place,id);
+}
+
+for(const [id,place] of [
+  ["att:DEV-007:ST-PETER-CHANEL-NZ","place:NZ:st-peter-chanel-russell"],
+  ["att:DEV-007:UGWOGO-PERPETUAL-HELP","place:NG:ugwogo-nike-national-marian-shrine"],
+  ["att:DEV-007:NAMUGONGO-MARTYRS-DAY","place:UG:namugongo-martyrs"],
+  ["att:DEV-007:MUNYONYO-MARTYRS","place:UG:munyonyo-martyrs"],
 ]){
   const att=atlas.attestations.find(item=>item.attestation_id===id);
   assert.ok(att,id+" missing");
