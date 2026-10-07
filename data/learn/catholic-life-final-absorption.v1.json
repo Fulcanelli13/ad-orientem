@@ -1,0 +1,253 @@
+{
+  "version": "CATHOLIC_LIFE_FINAL_ABSORPTION_V1",
+  "status": "COMPLETE",
+  "created_at": "2026-10-07",
+  "source_salvage": "data/learn/focused-formation-gaps-catholic-life-salvage.v1.json",
+  "scope": {
+    "funeral_requiem_claims": 15,
+    "catholic_home_family_claims": 3,
+    "total_claims": 18,
+    "previously_unsourced_claims": 8,
+    "unsourced_claims_after_absorption": 0
+  },
+  "owner_decisions": {
+    "funeral_requiem": "Absorbed into learn.rites.sick with Mass and PRAY handoffs; no standalone route.",
+    "catholic_home_family": "Absorbed into learn.rites.matrimony aftercare plus existing Apostolate Family Help / PRAY owners; no standalone route.",
+    "religious_life": "Intentionally parked as research-only; not an unfinished publication task.",
+    "vocations": "Intentionally parked as research-only; not an unfinished publication task."
+  },
+  "regression_repair": "Removed two Matrimony preparation cards that had accidentally been rendered inside Serious Illness & Dying, and restored them to learn.rites.matrimony.",
+  "resolutions": [
+    {
+      "claim_id": "CL07-S05-Q004",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CCC-1030-1032"
+      ],
+      "outcome": "ABSORBED_WHEN_DEATH_OCCURS"
+    },
+    {
+      "claim_id": "CL07-S05-Q005",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CIC83-1176",
+        "CCC-1684-1690"
+      ],
+      "outcome": "ABSORBED_WHEN_DEATH_OCCURS"
+    },
+    {
+      "claim_id": "CL07-S06-Q002",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CIC83-1176"
+      ],
+      "outcome": "ABSORBED_FUNERAL_REQUIEM"
+    },
+    {
+      "claim_id": "CL07-S06-Q003",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CCC-1684-1690"
+      ],
+      "outcome": "ABSORBED_FUNERAL_REQUIEM"
+    },
+    {
+      "claim_id": "CL07-S06-Q005",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CCC-1684-1690",
+        "RR1952-EXSEQUIIS"
+      ],
+      "outcome": "ABSORBED_FUNERAL_REQUIEM"
+    },
+    {
+      "claim_id": "CL07-S07-Q001",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "MR62-REQUIEM"
+      ],
+      "outcome": "ABSORBED_FUNERAL_REQUIEM"
+    },
+    {
+      "claim_id": "CL07-S07-Q002",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "MR62-REQUIEM"
+      ],
+      "outcome": "ABSORBED_FUNERAL_REQUIEM"
+    },
+    {
+      "claim_id": "CL07-S07-Q003",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "MR62-REQUIEM"
+      ],
+      "outcome": "ABSORBED_FUNERAL_REQUIEM"
+    },
+    {
+      "claim_id": "CL07-S07-Q004",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "MR62-REQUIEM",
+        "RR1952-EXSEQUIIS",
+        "CCC-1684-1690"
+      ],
+      "outcome": "ABSORBED_FUNERAL_REQUIEM"
+    },
+    {
+      "claim_id": "CL07-S07-Q005",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CE-CATAFALQUE",
+        "RR1952-EXSEQUIIS"
+      ],
+      "outcome": "ABSORBED_FUNERAL_REQUIEM"
+    },
+    {
+      "claim_id": "CL07-S08-Q001",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CIC17-1203"
+      ],
+      "outcome": "ABSORBED_BURIAL_CREMATION_ASHES"
+    },
+    {
+      "claim_id": "CL07-S08-Q002",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CDF-AD-RESURGENDUM-2016"
+      ],
+      "outcome": "ABSORBED_BURIAL_CREMATION_ASHES"
+    },
+    {
+      "claim_id": "CL07-S08-Q003",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CIC83-1176"
+      ],
+      "outcome": "ABSORBED_BURIAL_CREMATION_ASHES"
+    },
+    {
+      "claim_id": "CL07-S08-Q004",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "CDF-AD-RESURGENDUM-2016"
+      ],
+      "outcome": "ABSORBED_BURIAL_CREMATION_ASHES"
+    },
+    {
+      "claim_id": "CL07-S08-Q005",
+      "owner": "learn.rites.sick",
+      "source_ids": [
+        "DDF-ASHES-2023"
+      ],
+      "outcome": "ABSORBED_BURIAL_CREMATION_ASHES"
+    },
+    {
+      "claim_id": "CL06-S07-Q002",
+      "owner": "learn.rites.matrimony",
+      "source_ids": [
+        "PIUS-XII-INGRUENTIUM-MALORUM",
+        "FAMILIARIS-CONSORTIO-59-61"
+      ],
+      "outcome": "ABSORBED_LIVING_THE_MARRIAGE"
+    },
+    {
+      "claim_id": "CL06-S07-Q004",
+      "owner": "learn.rites.matrimony",
+      "source_ids": [
+        "LEO-XIII-ANNUM-SACRUM",
+        "DIRECTORY-POPULAR-PIETY-SH",
+        "CCC-MATRIMONIAL-CONSENT"
+      ],
+      "outcome": "ABSORBED_LIVING_THE_MARRIAGE"
+    },
+    {
+      "claim_id": "CL06-S07-Q005",
+      "owner": "learn.rites.matrimony",
+      "source_ids": [
+        "USCCB-MARRIAGE-ANNIVERSARY",
+        "CCC-MATRIMONIAL-CONSENT"
+      ],
+      "outcome": "ABSORBED_LIVING_THE_MARRIAGE"
+    }
+  ],
+  "sources": {
+    "CCC-1030-1032": {
+      "authority": "CATECHISM",
+      "title": "Catechism of the Catholic Church · Final purification / prayer for the dead",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/iii_the_final_purification%2C_or_purgatory.html"
+    },
+    "CIC83-1176": {
+      "authority": "UNIVERSAL_CANON_LAW",
+      "title": "Code of Canon Law · Ecclesiastical funerals",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1166-1190_en.html"
+    },
+    "CCC-1684-1690": {
+      "authority": "CATECHISM",
+      "title": "Catechism of the Catholic Church · Celebration of funerals",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_2/ii_the_celebration_of_funerals.html"
+    },
+    "MR62-REQUIEM": {
+      "authority": "LITURGICAL_BOOK",
+      "title": "Missale Romanum · Editio typica 1962 · Masses of the Dead",
+      "url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    "RR1952-EXSEQUIIS": {
+      "authority": "LITURGICAL_BOOK",
+      "title": "Rituale Romanum · 1952 · De Exsequiis",
+      "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910"
+    },
+    "CE-CATAFALQUE": {
+      "authority": "APPROVED_HISTORICAL_REFERENCE",
+      "title": "Catholic Encyclopedia · Catafalque",
+      "url": "https://www.newadvent.org/cathen/03427a.htm"
+    },
+    "CIC17-1203": {
+      "authority": "HISTORICAL_CANON_LAW",
+      "title": "Codex Iuris Canonici · 1917 · can. 1203",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    "CDF-AD-RESURGENDUM-2016": {
+      "authority": "DICASTERY_INSTRUCTION",
+      "title": "Ad resurgendum cum Christo",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20160815_ad-resurgendum-cum-christo_en.html"
+    },
+    "DDF-ASHES-2023": {
+      "authority": "DICASTERY_RESPONSE",
+      "title": "Reply regarding preservation of ashes",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20231209_risposta-card-zuppi-ceneri_en.html"
+    },
+    "PIUS-XII-INGRUENTIUM-MALORUM": {
+      "authority": "PAPAL_MAGISTERIUM",
+      "title": "Pius XII · Ingruentium Malorum",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15091951_ingruentium-malorum.html"
+    },
+    "FAMILIARIS-CONSORTIO-59-61": {
+      "authority": "PAPAL_APOSTOLIC_EXHORTATION",
+      "title": "St John Paul II · Familiaris Consortio · family prayer",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_19811122_familiaris-consortio.html"
+    },
+    "LEO-XIII-ANNUM-SACRUM": {
+      "authority": "PAPAL_MAGISTERIUM",
+      "title": "Leo XIII · Annum Sacrum",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_25051899_annum-sacrum.html"
+    },
+    "DIRECTORY-POPULAR-PIETY-SH": {
+      "authority": "DICASTERY_DIRECTORY",
+      "title": "Directory on Popular Piety · Sacred Heart family consecration",
+      "url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+    },
+    "CCC-MATRIMONIAL-CONSENT": {
+      "authority": "CATECHISM",
+      "title": "Catechism · Matrimonial Consent",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_7/iii_matrimonial_consent.html"
+    },
+    "USCCB-MARRIAGE-ANNIVERSARY": {
+      "authority": "EPISCOPAL_CONFERENCE_PRAYER",
+      "title": "Prayer of a Couple on the Anniversary of Marriage",
+      "url": "https://www.usccb.org/prayers/prayer-couple-anniversary-marriage"
+    }
+  },
+  "final_state": "No publishable Catholic Life residual remains without a canonical owner. Religious Life and Vocations remain deliberate research-only exclusions."
+}

@@ -13,6 +13,10 @@ assert.equal(LEARN_MODULE_IDS.includes("learn.spiritual_life"),true,"published S
 
 assert.equal(sot.decisions.catholic_home_and_family.decision,"NO_STANDALONE_FORMATION_SURFACE");
 assert.equal(sot.decisions.funeral_and_requiem.decision,"NO_STANDALONE_FORMATION_SURFACE");
+assert.equal(sot.decisions.funeral_and_requiem.absorption_state,"COMPLETE");
+assert.equal(sot.decisions.catholic_home_and_family.absorption_state,"COMPLETE");
+assert.equal(sot.closure.catholic_life_absorption,"COMPLETE");
+assert.equal(sot.closure.publishable_residual_claims_without_owner,0);
 assert.equal(sot.decisions.religious_life.decision,"RESEARCH_ONLY_NO_SURFACE");
 assert.equal(sot.decisions.vocations.decision,"RESEARCH_ONLY_NO_SURFACE");
 
@@ -33,8 +37,8 @@ assert.equal(retirement.domains["FORMATION.CATHOLIC_HOME_AND_FAMILY"].claim_coun
 
 console.log(JSON.stringify({
   spiritualLife:"PUBLISHED_FOCUSED_STRAND",
-  catholicHome:"NO_STANDALONE_SURFACE",
-  funeralRequiem:"ABSORB_EXISTING_OWNERS",
+  catholicHome:"ABSORBED_NO_STANDALONE_SURFACE",
+  funeralRequiem:"ABSORBED_EXISTING_OWNERS",
   religiousLife:"RESEARCH_ONLY",
   vocations:"RESEARCH_ONLY",
 },null,2));

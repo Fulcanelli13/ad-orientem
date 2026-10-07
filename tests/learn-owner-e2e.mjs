@@ -233,7 +233,7 @@ try{
       donorVisible:Boolean(document.getElementById("aoV38Traditions")?.classList?.contains("open")),
       priestCeremonialExposed:globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().priestCeremonialExposed,
     }});
-    assert.equal(child.owner,"38.4-holy-orders-formation",id+": wrong child owner");
+    assert.equal(child.owner,"38.5-after-death-family-absorption",id+": wrong child owner");
     assert.ok(child.width>300,id+": child collapsed on phone");
     assert.ok(child.overflow<=1,id+": child has horizontal overflow");
     assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
