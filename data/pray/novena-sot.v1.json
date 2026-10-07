@@ -16,6 +16,7 @@
     "French provenance must distinguish traditional/source-locked French witnesses from editorial translations aligned to a historical source.",
     "Calendar Intelligence is the sole date/window owner; PRAY must not implement a private Easter or novena calendar calculator.",
     "St Anthony's Nine Tuesdays remains a weekly Tuesday devotion and must never be normalized to nine consecutive days.",
+    "Every calendar-aligned novena start is classified explicitly as TRADITIONAL_START or SUGGESTED_START; a convenient feast preparation must never be retroactively presented as a source-mandated historical start.",
     "Guided and Simple modes use the same underlying prayer corpus.",
     "No streaks, completion scores, intention storage, or devotional-history tracking.",
     "Canonical Our Father, Hail Mary, Glory Be and 1962 Loreto are reused rather than copied.",
@@ -29,7 +30,8 @@
       "form": "DAY_SPECIFIC",
       "calendar_type": "EASTER_OFFSET",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "TRADITIONAL_START"
     },
     {
       "id": "christmas",
@@ -38,7 +40,8 @@
       "form": "DAY_SPECIFIC",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "TRADITIONAL_START"
     },
     {
       "id": "corpus_christi",
@@ -47,7 +50,8 @@
       "form": "REPEAT_FORM",
       "calendar_type": "EASTER_OFFSET",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "TRADITIONAL_START"
     },
     {
       "id": "sacred_heart",
@@ -56,7 +60,8 @@
       "form": "REPEAT_FORM",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "TRADITIONAL_START"
     },
     {
       "id": "immaculate_conception",
@@ -65,7 +70,8 @@
       "form": "DAY_SPECIFIC",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "TRADITIONAL_START"
     },
     {
       "id": "annunciation",
@@ -74,7 +80,8 @@
       "form": "DAY_SPECIFIC",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "assumption",
@@ -83,7 +90,8 @@
       "form": "DAY_SPECIFIC",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "seven_sorrows",
@@ -92,7 +100,8 @@
       "form": "DAY_SPECIFIC",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "st_joseph",
@@ -101,7 +110,8 @@
       "form": "DAY_SPECIFIC",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "holy_souls",
@@ -110,7 +120,8 @@
       "form": "DAY_SPECIFIC",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "perpetual_help",
@@ -119,7 +130,8 @@
       "form": "REPEAT_FORM",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "st_therese",
@@ -128,7 +140,8 @@
       "form": "REPEAT_FORM",
       "calendar_type": "FIXED",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "st_anthony_nine_tuesdays",
@@ -137,7 +150,8 @@
       "form": "REPEAT_FORM",
       "calendar_type": "NINE_TUESDAYS_BEFORE_FIXED_FEAST",
       "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_TRADITIONAL_ENGLISH_SOURCE",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "christ_the_king",
@@ -146,7 +160,8 @@
       "form": "REPEAT_FORM",
       "calendar_type": "LAST_SUNDAY_RELATIVE",
       "french_text_status": "SOURCE_LOCKED_TRADITIONAL_FRENCH",
-      "playable": true
+      "playable": true,
+      "start_kind": "TRADITIONAL_START"
     },
     {
       "id": "immaculate_heart",
@@ -155,7 +170,8 @@
       "form": "REPEAT_FORM",
       "calendar_type": "FIXED",
       "french_text_status": "TRADITIONAL_FRENCH_WITNESS_ALIGNED",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     },
     {
       "id": "st_michael",
@@ -164,27 +180,35 @@
       "form": "REPEAT_FORM",
       "calendar_type": "FIXED",
       "french_text_status": "SOURCE_LOCKED_TRADITIONAL_FRENCH",
-      "playable": true
+      "playable": true,
+      "start_kind": "SUGGESTED_START"
     }
   ],
   "recovered_targets": {
     "st_anthony_nine_tuesdays": {
-      "cadence": "nine weekly Tuesdays before 13 June",
+      "cadence": "Suggested feast preparation: nine weekly Tuesdays leading toward 13 June; the traditional devotion itself is nine consecutive Tuesdays and is not restricted to this feast-aligned window.",
       "source": "https://www.pamphlets.info/Australia/acts1014/",
-      "french_world_witness": "https://laportelatine.org/spiritualite/vies-de-saints/13-juin-saint-antoine-de-padoue"
+      "french_world_witness": "https://laportelatine.org/spiritualite/vies-de-saints/13-juin-saint-antoine-de-padoue",
+      "start_kind": "SUGGESTED_START"
     },
     "christ_the_king": {
-      "cadence": "nine days before the last Sunday of October",
-      "source": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf"
+      "cadence": "Nine days immediately preceding the last Sunday of October.",
+      "source": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf",
+      "start_kind": "TRADITIONAL_START",
+      "cadence_source": "https://www.ewtn.com/catholicism/library/how-to-make-your-house-a-home-family-liturgy-and-religious-practices-10449"
     },
     "immaculate_heart": {
-      "cadence": "13–21 August before the 22 August feast",
+      "cadence": "Suggested feast preparation: 13–21 August before the 22 August feast; the historical grant covered nine consecutive days without restricting them to these dates.",
       "source": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer_to_the_Immaculate_Heart_of_Mary",
-      "french_world_witness": "https://montfortajpm.blogspot.com/2016/09/prieres-aux-Sacres-Coeurs-de-Jesus-et-de-Marie.html"
+      "french_world_witness": "https://montfortajpm.blogspot.com/2016/09/prieres-aux-Sacres-Coeurs-de-Jesus-et-de-Marie.html",
+      "start_kind": "SUGGESTED_START",
+      "nine_day_practice_source": "https://www.distantreader.org/stacks/pamphlets/pdf/003376644.pdf"
     },
     "st_michael": {
-      "cadence": "20–28 September before 29 September",
-      "source": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel"
+      "cadence": "Suggested feast preparation: 20–28 September before 29 September; the historical Raccolta allowed the novena at any time of year with approved prayers.",
+      "source": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel",
+      "start_kind": "SUGGESTED_START",
+      "novena_authority_source": "https://www.saintsbooks.net/books/The%20Raccolta%20-%201910.pdf"
     }
   },
   "prayer_body_units": 91

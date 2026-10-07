@@ -116,7 +116,7 @@ assert.match(FIND_MAP_RUNTIME.style,/openfreemap/);
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/AO_FIND_APP_V1/);
 assert.match(browserSource,/data-find-query/);
-assert.match(browserSource,/mountFindMap/);
+assert.match(browserSource,/mountExploreMap/);
 assert.match(browserSource,/navigate\?\.\("home"\)/);
 assert.doesNotMatch(browserSource,/Église Saint-Test|Sydney Apostolate/,"Find browser owner hardcodes fixture locations");
 

@@ -65,4 +65,58 @@ export async function mountFindMap(container,records,{win=globalThis,onSelect=()
   });
   return Object.freeze({map,destroy(){try{map.remove()}catch{}}});
 }
+
+export function exploreMapFeatures(items){
+  const out=[];
+  for(const item of Array.isArray(items)?items:[]){
+    const g=item?.geo??{},lat=Number(g.lat),lng=Number(g.lng);
+    if(!item?.map_publishable||!Number.isFinite(lat)||lat<-90||lat>90||!Number.isFinite(lng)||lng<-180||lng>180)continue;
+    out.push({
+      type:"Feature",
+      geometry:{type:"Point",coordinates:[lng,lat]},
+      properties:{
+        item_id:String(item.item_id??""),
+        lens:String(item.lens??""),
+        name:String(item.title??""),
+        precision:String(g.precision??"unknown"),
+        approximate:Boolean(g.approximate),
+      },
+    });
+  }
+  return out;
+}
+
+export async function mountExploreMap(container,items,{win=globalThis,onSelect=()=>{}}={}){
+  const features=exploreMapFeatures(items);
+  if(!container||!features.length||!win?.document)return null;
+  ensureCss(win.document);
+  const maplibre=await loadMapLibre(win);
+  container.innerHTML="";
+  const map=new maplibre.Map({
+    container,
+    style:win.AO_EXPLORE_MAP_STYLE_URL||win.AO_DIRECTORY_MAP_STYLE_URL||DEFAULT_STYLE,
+    center:[0,20],
+    zoom:1.2,
+    attributionControl:true,
+  });
+  map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
+  map.on("load",()=>{
+    map.addSource("ao-explore-items",{type:"geojson",data:{type:"FeatureCollection",features},cluster:true,clusterMaxZoom:10,clusterRadius:48});
+    map.addLayer({id:"ao-explore-clusters",type:"circle",source:"ao-explore-items",filter:["has","point_count"],paint:{"circle-radius":["step",["get","point_count"],18,25,24,100,30],"circle-color":"#a98b55","circle-opacity":0.82}});
+    map.addLayer({id:"ao-explore-cluster-count",type:"symbol",source:"ao-explore-items",filter:["has","point_count"],layout:{"text-field":["get","point_count_abbreviated"],"text-size":12},"paint":{"text-color":"#080c12"}});
+    map.addLayer({id:"ao-explore-points",type:"circle",source:"ao-explore-items",filter:["!",["has","point_count"]],paint:{"circle-radius":["case",["get","approximate"],6,7],"circle-color":"#d9c59a","circle-opacity":["case",["get","approximate"],0.5,0.9],"circle-stroke-width":1,"circle-stroke-color":"#080c12"}});
+    map.on("click","ao-explore-points",event=>{
+      const id=event.features?.[0]?.properties?.item_id;
+      if(id)onSelect(id);
+    });
+    map.on("click","ao-explore-clusters",async event=>{
+      const feature=event.features?.[0],clusterId=feature?.properties?.cluster_id,source=map.getSource("ao-explore-items");
+      if(clusterId===undefined||!source?.getClusterExpansionZoom)return;
+      const zoom=await source.getClusterExpansionZoom(clusterId);
+      map.easeTo({center:feature.geometry.coordinates,zoom});
+    });
+  });
+  return Object.freeze({map,destroy(){try{map.remove()}catch{}}});
+}
+
 export const FIND_MAP_RUNTIME=Object.freeze({module:MAPLIBRE_MODULE,style:DEFAULT_STYLE});
