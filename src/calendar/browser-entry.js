@@ -24,7 +24,8 @@ const addDays=(id,n)=>{const d=dateOf(id);d.setDate(d.getDate()+Number(n||0));re
 
 const weekCache=new Map(),weekLoads=new Map(),weekStatus=new Map();
 let foregroundWeek="",navEpoch=0;
-let calendarView="day",calendarIndexFilter="all",pickerMonthId="";
+const CALENDAR_VIEWS=new Set(["day","year","index","picker"]);
+let calendarView="day",calendarIndexFilter="all",pickerMonthId="",requestedView=null;
 function weekStart(id){const d=dateOf(id);d.setDate(d.getDate()-d.getDay());return iso(d)}
 function weekIds(id){const s=weekStart(id);return Array.from({length:7},(_,i)=>addDays(s,i))}
 function weekReady(id){return weekIds(id).every(x=>weekCache.has(x))}
@@ -391,9 +392,18 @@ async function select(id,{closeAfter=false}={}){
     return ok;
   }catch(error){console.error("Modular Calendar date navigation failed",error);return false}
 }
+function setView(view){
+  const next=String(view||"").toLowerCase();
+  if(!CALENDAR_VIEWS.has(next))return false;
+  if(!root()){requestedView=next;return true}
+  calendarView=next;
+  if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
+  paint();
+  return true;
+}
 function bind(r){
   r.addEventListener("click",event=>{
-    const viewButton=event.target.closest?.("[data-cal-view]");if(viewButton){event.preventDefault();calendarView=viewButton.dataset.calView||"day";if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);paint();return}
+    const viewButton=event.target.closest?.("[data-cal-view]");if(viewButton){event.preventDefault();setView(viewButton.dataset.calView||"day");return}
     const filterButton=event.target.closest?.("[data-cal-filter]");if(filterButton){event.preventDefault();calendarIndexFilter=filterButton.dataset.calFilter||"all";paint();return}
     const dayShift=event.target.closest?.("[data-cal-day-shift]");if(dayShift){event.preventDefault();void select(addDays(state()?.selectedDate||iso(new Date()),Number(dayShift.dataset.calDayShift||0)));return}
     const monthShift=event.target.closest?.("[data-cal-month-shift]");if(monthShift){event.preventDefault();const base=pickerMonthId||String(state()?.selectedDate||iso(new Date())).slice(0,7),parts=base.split("-").map(Number),d=new Date(parts[0],parts[1]-1+Number(monthShift.dataset.calMonthShift||0),1,12);pickerMonthId=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");paint();return}
@@ -410,10 +420,12 @@ function bind(r){
 }
 function open(){
   const doc=globalThis.document;if(!doc?.body||!runtime()?.store||!runtime()?.resolver)return false;
+  calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";requestedView=null;
+  if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
   const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><span aria-hidden="true"></span></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();
   const selected=state()?.selectedDate||iso(new Date());void revealDate(selected,{forceLoader:!weekReady(selected),prefetch:true});return true;
 }
-function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
-export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,close,paint,status,select});win.AO_CALENDAR_APP_V1=api;return api}
+function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,view:calendarView,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
+export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,close,paint,status,select,setView});win.AO_CALENDAR_APP_V1=api;return api}
 if(typeof window!=="undefined"&&typeof document!=="undefined"){installWeekCacheApi();installCalendarBrowserOwner(window);}
