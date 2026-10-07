@@ -18,8 +18,13 @@ import {
   CSE_GAP_AUDIT,
   relatedTargetsFor,
 } from "../src/learn/sexual-ethics-data/sot.js";
+import {
+  CSE_QUALITY_AUDIT_VERSION,
+  CSE_QUALITY_AUDIT,
+  CSE_QUALITY_SUMMARY,
+} from "../src/learn/sexual-ethics-data/quality-audit.js";
 
-assert.equal(SEXUAL_ETHICS_VERSION,"1.1.1");
+assert.equal(SEXUAL_ETHICS_VERSION,"1.2.0");
 assert.equal(SEXUAL_ETHICS_ROUTE,"learn.sexual_ethics");
 assert.equal(SEXUAL_ETHICS_RESEARCH_LEAD,"LBM");
 assert.equal(CSE_QUESTIONS.length,150);
@@ -97,6 +102,52 @@ const publicQuestionFiles=[
 assert.doesNotMatch(publicQuestionFiles,/Ad Orientem/);
 assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Every displayed citation source must have a hyperlink destination");
 
+
+assert.equal(CSE_QUALITY_AUDIT_VERSION,"CSE_QUALITY_V3");
+assert.equal(CSE_QUALITY_AUDIT.length,150);
+assert.equal(CSE_QUALITY_SUMMARY.records,150);
+assert.deepEqual(CSE_QUALITY_SUMMARY.dispositions,{KEEP:3,TIGHTEN:41,REWRITE:15,SOURCE_REPAIR:91});
+assert.equal(CSE_QUALITY_SUMMARY.allReviewed,true);
+assert.equal(CSE_QUALITY_SUMMARY.allClickable,true);
+assert.equal(CSE_QUALITY_SUMMARY.allAuthoritativelyGrounded,true);
+assert.equal(CSE_QUALITY_SUMMARY.debateRecords,25);
+assert.equal(CSE_QUALITY_SUMMARY.debateWithNarrowSource,25);
+
+const q013=CSE_QUESTIONS.find(item=>item.id==="CSE013");
+assert.match(q013.a[0],/1 Corinthians 6/);
+assert.match(q013.a[0],/Romans 1/);
+const q018=CSE_QUESTIONS.find(item=>item.id==="CSE018");
+assert.match(q018.a[0],/what authority the disputed teaching has/i);
+const q029=CSE_QUESTIONS.find(item=>item.id==="CSE029");
+assert.match(q029.a[0],/not by definition/i);
+assert.match(q029.a[0],/sexual activity is a psychological necessity/i);
+const q035=CSE_QUESTIONS.find(item=>item.id==="CSE035");
+assert.equal(q035.layer,"PASTORAL_CASE");
+assert.match(q035.a[0],/not itself fornication/i);
+const q051=CSE_QUESTIONS.find(item=>item.id==="CSE051");
+assert.ok(q051.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator==="§§19–20"));
+const q057=CSE_QUESTIONS.find(item=>item.id==="CSE057");
+assert.match(q057.a[0],/integrated into the marital act/i);
+const q076=CSE_QUESTIONS.find(item=>item.id==="CSE076");
+assert.equal(q076.layer,"PASTORAL_CASE");
+assert.match(q076.a[0],/Church has not issued a specific ruling/i);
+const q089=CSE_QUESTIONS.find(item=>item.id==="CSE089");
+assert.ok(q089.refs.some(([sourceId,locator])=>sourceId==="CDF2003"&&locator==="§§2–4, 6–8"));
+const q100=CSE_QUESTIONS.find(item=>item.id==="CSE100");
+assert.match(q100.a[0],/find out what the child actually means/i);
+const q108=CSE_QUESTIONS.find(item=>item.id==="CSE108");
+assert.match(q108.a[0],/does not make every collection method legitimate/i);
+const q128=CSE_QUESTIONS.find(item=>item.id==="CSE128");
+assert.equal(q128.layer,"PASTORAL_CASE");
+const q139=CSE_QUESTIONS.find(item=>item.id==="CSE139");
+assert.match(q139.a[0],/Canon 916 gives a narrow exception/i);
+const q141=CSE_QUESTIONS.find(item=>item.id==="CSE141");
+assert.match(q141.a[0],/It should not be/i);
+const q143=CSE_QUESTIONS.find(item=>item.id==="CSE143");
+assert.match(q143.a[0],/guilt and shame are not the same thing/i);
+const q149=CSE_QUESTIONS.find(item=>item.id==="CSE149");
+assert.match(q149.a[0],/false factual premise must be corrected/i);
+
 const presentation=readFileSync("src/learn/presentation.js","utf8");
 const owner=readFileSync("src/learn/browser-entry.js","utf8");
 const runtime=readFileSync("src/learn/sexual-ethics.js","utf8");
@@ -124,5 +175,7 @@ console.log(JSON.stringify({
   bilingual:true,
   sot:CSE_SOT_VERSION,
   sotCrossLinks:CSE_SOT_AUDIT.recordsWithCrossLinks,
+  qualityAudit:CSE_QUALITY_AUDIT_VERSION,
+  qualityDispositions:CSE_QUALITY_SUMMARY.dispositions,
   validation:"PASS",
 },null,2));
