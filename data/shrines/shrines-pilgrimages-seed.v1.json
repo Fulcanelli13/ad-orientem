@@ -961,6 +961,100 @@
         "OBS-RUE-DU-BAC-NOV27"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:wigratzbad-maria-vom-sieg",
+      "place_id": "place:DE:wigratzbad-maria-vom-sieg",
+      "name": "Gebetsstätte Maria vom Sieg Wigratzbad",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Maria vom Sieg",
+      "origin_summary": "Diocesan Marian prayer site of the Diocese of Augsburg, centred on the Gnadenkapelle and the Herz Jesu und Mariä Sühnekirche, with active pilgrimage, confession and Eucharistic adoration.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-WIGRATZBAD",
+        "PIL-WIGRATZBAD-SUEHNE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:mariahilf-amberg",
+      "place_id": "place:DE:mariahilf-amberg",
+      "name": "Wallfahrtskirche Maria Hilf Amberg",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Maria Hilf",
+      "origin_summary": "Major Upper Palatinate Marian pilgrimage church whose pilgrimage arose from the 1634 plague vow and centres on the Mariahilf image and annual Bergfest.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-MARIAHILF-AMBERG",
+        "PIL-MARIAHILF-AMBERG-BERGFEST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:st-leonhard-nussdorf",
+      "place_id": "place:DE:st-leonhard-nussdorf",
+      "name": "Kirche St. Leonhard Nußdorf am Inn",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Leonard",
+      "origin_summary": "Historic pilgrimage church at Nußdorf associated with a long-standing Scapular confraternity and the revived Leonhardiritt.",
+      "associated_saints": [
+        "Saint Leonard of Noblac"
+      ],
+      "source_ids": [
+        "SHR-ST-LEONHARD-NUSSDORF",
+        "PIL-ST-LEONHARD-NUSSDORF"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+      "place_id": "place:DE:st-apollinaris-frielingsdorf",
+      "name": "St. Apollinaris Frielingsdorf",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Apollinaris",
+      "origin_summary": "Frielingsdorf pilgrimage church dedicated to Saint Apollinaris with a continuing annual July octave around his feast.",
+      "associated_saints": [
+        "Saint Apollinaris"
+      ],
+      "source_ids": [
+        "SHR-ST-APOLLINARIS-FRIELINGSDORF",
+        "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:bettbrunn-st-salvator",
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "name": "Wallfahrtskirche St. Salvator Bettbrunn",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Salvator Mundi",
+      "origin_summary": "Bettbrunn is presented by the Diocese of Regensburg as the oldest attested Hostienwallfahrt in Bavaria; after the medieval host was lost, the surviving Salvator image became the focus of pilgrimage.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-BETTBRUNN-ST-SALVATOR",
+        "PIL-BETTBRUNN-PREITH"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:DE:maria-vesperbild",
+      "place_id": "place:DE:maria-vesperbild",
+      "name": "Wallfahrtskirche Maria Vesperbild",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Our Lady of Sorrows",
+      "origin_summary": "Active Swabian Marian pilgrimage site of the Diocese of Augsburg, presenting itself as the 'Schwäbische Hauptstadt Mariens' and sustaining regular pilgrimage Masses and Fatima pilgrimage days.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-MARIA-VESPERBILD",
+        "PIL-MARIA-VESPERBILD-FATIMA"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -2184,6 +2278,168 @@
         "OBS-RUE-DU-BAC-NOV27"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:wigratzbad-destination",
+      "name": "Pilgrimage to Maria vom Sieg Wigratzbad",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:wigratzbad-maria-vom-sieg",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:wigratzbad:suehnesamstag"
+      ],
+      "scope_note": "Diocesan Marian pilgrimage destination with confession, Eucharistic adoration and recurring Sühnesamstag devotional observances.",
+      "source_ids": [
+        "SHR-WIGRATZBAD",
+        "PIL-WIGRATZBAD-SUEHNE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:mariahilf-amberg-destination",
+      "name": "Pilgrimage to Maria Hilf Amberg",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:mariahilf-amberg",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Year-round pilgrimage destination on the Mariahilfberg in Amberg.",
+      "source_ids": [
+        "SHR-MARIAHILF-AMBERG"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:mariahilf-amberg-bergfest",
+      "name": "Maria Hilf Bergfest Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:mariahilf-amberg",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:mariahilf-amberg:july2"
+      ],
+      "scope_note": "Annual Bergfest pilgrimage cycle around the shrine's principal feast of the Visitation on 2 July, drawing foot pilgrims from the region.",
+      "source_ids": [
+        "PIL-MARIAHILF-AMBERG-BERGFEST"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:st-leonhard-nussdorf-destination",
+      "name": "Pilgrimage to St. Leonhard Nußdorf",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:st-leonhard-nussdorf",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historic saint pilgrimage church at Nußdorf with continuing local devotional customs.",
+      "source_ids": [
+        "PIL-ST-LEONHARD-NUSSDORF"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:st-leonhard-nussdorf-ritt",
+      "name": "Nußdorf Leonhardiritt",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:st-leonhard-nussdorf",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:nussdorf:leonhardiritt"
+      ],
+      "scope_note": "Revived annual Leonhardiritt on 6 November with field Mass and blessing of horses.",
+      "source_ids": [
+        "PIL-ST-LEONHARD-NUSSDORF"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:st-apollinaris-frielingsdorf-destination",
+      "name": "Pilgrimage to St. Apollinaris Frielingsdorf",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Pilgrimage destination dedicated to Saint Apollinaris in Frielingsdorf.",
+      "source_ids": [
+        "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:st-apollinaris-frielingsdorf-octave",
+      "name": "St. Apollinaris Octave at Frielingsdorf",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:frielingsdorf:apollinaris"
+      ],
+      "scope_note": "Annual July octave at St. Apollinaris Frielingsdorf, centred on the 23 July feast.",
+      "source_ids": [
+        "SHR-ST-APOLLINARIS-FRIELINGSDORF",
+        "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:bettbrunn-destination",
+      "name": "Pilgrimage to St. Salvator Bettbrunn",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:bettbrunn-st-salvator",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historic Hostienwallfahrt and Salvator pilgrimage destination receiving numerous parish and pilgrimage groups each year.",
+      "source_ids": [
+        "SHR-BETTBRUNN-ST-SALVATOR"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:bettbrunn-preith",
+      "name": "Preith Foot Pilgrimage to Bettbrunn",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:bettbrunn-st-salvator",
+      "route_ids": [
+        "route:DE:preith-bettbrunn"
+      ],
+      "temporal_link_ids": [
+        "temporal:bettbrunn:preith"
+      ],
+      "scope_note": "Two-day annual foot pilgrimage from Preith to Bettbrunn on the weekend after Ascension, documented as continuing since 1578.",
+      "source_ids": [
+        "PIL-BETTBRUNN-PREITH"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:bettbrunn-men",
+      "name": "Bettbrunn Men's Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:bettbrunn-st-salvator",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:bettbrunn:men-october"
+      ],
+      "scope_note": "Major annual men's pilgrimage at Bettbrunn on the second Sunday of October.",
+      "source_ids": [
+        "SHR-BETTBRUNN-ST-SALVATOR"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:DE:maria-vesperbild-destination",
+      "name": "Pilgrimage to Maria Vesperbild",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:DE:maria-vesperbild",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:maria-vesperbild:fatima-day"
+      ],
+      "scope_note": "Active Marian pilgrimage destination with Sunday pilgrim Mass and a Fatima pilgrimage day on the 13th of every month.",
+      "source_ids": [
+        "SHR-MARIA-VESPERBILD",
+        "PIL-MARIA-VESPERBILD-FATIMA"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -2439,6 +2695,21 @@
       "waypoint_place_ids": [],
       "source_ids": [
         "PIL-CZESTOCHOWA-US-WALK"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "route_id": "route:DE:preith-bettbrunn",
+      "name": "Preith to Bettbrunn St. Salvator",
+      "route_type": "WALKING",
+      "route_state": "DOCUMENTED_UNMAPPED",
+      "origin_label": "Pfarrkirche St. Brigida, Preith",
+      "destination_place_id": "place:DE:bettbrunn-st-salvator",
+      "stage_count": null,
+      "geometry_ref": null,
+      "waypoint_place_ids": [],
+      "source_ids": [
+        "PIL-BETTBRUNN-PREITH"
       ],
       "confidence": "HIGH"
     }
@@ -3233,6 +3504,100 @@
       ],
       "confidence": "HIGH",
       "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:wigratzbad:suehnesamstag",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:wigratzbad-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Recurring Sühnesamstag observances at Wigratzbad",
+      "source_ids": [
+        "PIL-WIGRATZBAD-SUEHNE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:mariahilf-amberg:july2",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:mariahilf-amberg-bergfest",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.mariahilf_amberg_july2",
+      "source_event_label": "Maria Hilf principal feast / Bergfest centre — 2 July",
+      "source_ids": [
+        "PIL-MARIAHILF-AMBERG-BERGFEST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:nussdorf:leonhardiritt",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:st-leonhard-nussdorf-ritt",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.nussdorf_leonhardiritt",
+      "source_event_label": "Nußdorf Leonhardiritt — 6 November",
+      "source_ids": [
+        "PIL-ST-LEONHARD-NUSSDORF"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:frielingsdorf:apollinaris",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:st-apollinaris-frielingsdorf-octave",
+      "relation": "FEAST_PILGRIMAGE",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.saint_apollinaris",
+      "source_event_label": "Saint Apollinaris feast within the annual Frielingsdorf octave — 23 July",
+      "source_ids": [
+        "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:bettbrunn:preith",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:bettbrunn-preith",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Preith two-day foot pilgrimage — weekend after Ascension",
+      "source_ids": [
+        "PIL-BETTBRUNN-PREITH"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:bettbrunn:men-october",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:bettbrunn-men",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Bettbrunn men's pilgrimage — second Sunday of October",
+      "source_ids": [
+        "SHR-BETTBRUNN-ST-SALVATOR"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:maria-vesperbild:fatima-day",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:DE:maria-vesperbild-destination",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Fatima pilgrimage day — 13th of every month",
+      "source_ids": [
+        "PIL-MARIA-VESPERBILD-FATIMA"
+      ],
+      "confidence": "HIGH"
     }
   ]
 }

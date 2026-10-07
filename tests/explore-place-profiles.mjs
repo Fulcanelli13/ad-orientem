@@ -99,7 +99,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,62,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,68,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -220,6 +220,47 @@ assert.ok(kevelaerKerzen);
 assert.equal(kevelaerKerzen.counts.shrines,0);
 assert.equal(kevelaerKerzen.counts.pilgrimages,0);
 assert.equal(kevelaerKerzen.counts.tlm,0,"unresolved 1962-Mass candidate leaked into exact-place TLM projection");
+
+const wigratzbad=explorePlaceProfile(profiles,"place:DE:wigratzbad-maria-vom-sieg");
+assert.ok(wigratzbad);
+assert.equal(wigratzbad.counts.shrines,1);
+assert.equal(wigratzbad.counts.pilgrimages,1);
+assert.ok(wigratzbad.counts.traditions>=1);
+assert.equal(wigratzbad.map_publishable,false);
+assert.equal(wigratzbad.calendar.length,0);
+
+const mariahilfAmberg=explorePlaceProfile(profiles,"place:DE:mariahilf-amberg");
+assert.ok(mariahilfAmberg);
+assert.equal(mariahilfAmberg.counts.shrines,1);
+assert.equal(mariahilfAmberg.counts.pilgrimages,2);
+assert.ok(mariahilfAmberg.counts.traditions>=1);
+assert.ok(mariahilfAmberg.calendar.some(row=>row.semantic_key==="observance.mariahilf_amberg_july2"&&row.date==="2027-07-02"));
+
+const leonhardNussdorf=explorePlaceProfile(profiles,"place:DE:st-leonhard-nussdorf");
+assert.ok(leonhardNussdorf);
+assert.equal(leonhardNussdorf.counts.shrines,1);
+assert.equal(leonhardNussdorf.counts.pilgrimages,2);
+assert.ok(leonhardNussdorf.calendar.some(row=>row.semantic_key==="observance.nussdorf_leonhardiritt"&&row.date==="2026-11-06"));
+
+const apollinarisFrielingsdorf=explorePlaceProfile(profiles,"place:DE:st-apollinaris-frielingsdorf");
+assert.ok(apollinarisFrielingsdorf);
+assert.equal(apollinarisFrielingsdorf.counts.shrines,1);
+assert.equal(apollinarisFrielingsdorf.counts.pilgrimages,2);
+assert.ok(apollinarisFrielingsdorf.calendar.some(row=>row.semantic_key==="feast.saint_apollinaris"&&row.date==="2027-07-23"));
+
+const bettbrunn=explorePlaceProfile(profiles,"place:DE:bettbrunn-st-salvator");
+assert.ok(bettbrunn);
+assert.equal(bettbrunn.counts.shrines,1);
+assert.equal(bettbrunn.counts.pilgrimages,3);
+assert.ok(bettbrunn.counts.traditions>=2);
+assert.equal(bettbrunn.calendar.length,0);
+
+const mariaVesperbild=explorePlaceProfile(profiles,"place:DE:maria-vesperbild");
+assert.ok(mariaVesperbild);
+assert.equal(mariaVesperbild.counts.shrines,1);
+assert.equal(mariaVesperbild.counts.pilgrimages,1);
+assert.ok(mariaVesperbild.counts.traditions>=1);
+assert.equal(mariaVesperbild.calendar.length,0);
 
 const mariazell=explorePlaceProfile(profiles,"place:AT:mariazell-basilica");
 assert.ok(mariazell);
