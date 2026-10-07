@@ -184,7 +184,7 @@ try{
     collections:document.querySelectorAll("#ao-glossary-root [data-gloss-collection]").length,
   }));
   assert.equal(latinHub.lexemes,350,"Glossary runtime lost the 350-lemma Core Latin registry");
-  assert.equal(latinHub.phrases,60,"Glossary runtime lost the initial phrasebook");
+  assert.equal(latinHub.phrases,80,"Glossary runtime lost the 80-phrase Latin phrasebook");
   assert.equal(latinHub.collections,2,"Latin & Rubrics should expose lexicon and phrasebook collections");
 
   await page.locator('#ao-glossary-root [data-gloss-collection="lexemes"]').tap();
