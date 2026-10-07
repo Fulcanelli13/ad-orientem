@@ -18,7 +18,7 @@ This decision follows the retirement of `learn.catholic_life`. Its purpose is to
 
 ## 1. Spiritual Life — published focused Formation strand
 
-This is the only residual area that passes the test for an independent Formation owner.
+Spiritual Life was the only residual area that passed the test for an independent Formation owner and is now published.
 
 The project already has substantial prior research on mental prayer, particular/general examen, spiritual reading, presence of God, sanctification of ordinary duties and a flexible rule/plan of life. The research base includes work with Tanquerey, Chautard, St Francis de Sales and Saint-Sulpice-style mental-prayer material, but it is not yet normalized into a single source-controlled corpus.
 
@@ -51,7 +51,7 @@ The current product already has the correct distributed architecture:
 - Baptism, First Communion, Confirmation and Matrimony own sacramental family formation;
 - Calendar/Customary own temporal and inherited domestic practices.
 
-The three residual Catholic Life claims are too small to justify a route and should be absorbed into Matrimony aftercare / Family Help where useful.
+The three residual Catholic Life claims are now sourced and absorbed into Matrimony aftercare / the existing Family Help and PRAY owner network. No `learn.catholic_home` route was created.
 
 ## 3. Funeral & Requiem — no module
 
@@ -63,7 +63,7 @@ Ownership is already distributed correctly:
 - Mass — Requiem and funeral Absolution;
 - PRAY — Dying Companion, Good Death, Holy Souls and suffrages.
 
-The remaining sourced material on funeral forms, the Requiem, burial, cremation and ashes should become a sourced **after-death/funeral section inside Serious Illness & Dying**, with explicit handoffs to the existing Mass and PRAY owners.
+The remaining material on death, funerals, the traditional Requiem, burial, cremation and ashes is now a sourced **after-death/funeral section inside Serious Illness & Dying**, with explicit handoffs to Mass and PRAY. The previously unsourced pastoral claims were source-repaired before publication.
 
 ## 4. Religious Life — research-only
 
@@ -86,3 +86,16 @@ If future research warrants it, Religious Life and Vocations may converge into a
 `one concern -> one canonical owner -> explicit handoffs`
 
 The purpose of Formation is to teach coherent bodies of knowledge and practice. It is not required to contain a card for every dimension of Catholic existence.
+
+
+## Closure
+
+The Catholic Life dismantling/re-homing pipeline is complete.
+
+- Funeral/Requiem residuals: **15/15 absorbed and sourced**.
+- Catholic Home & Family residuals: **3/3 absorbed and sourced**.
+- Previously unsourced residuals repaired in this final pass: **8**.
+- Publishable residual claims without a canonical owner: **0**.
+- Religious Life and Vocations remain deliberate research-only exclusions, not unfinished launch work.
+
+Canonical closure ledger: `data/learn/catholic-life-final-absorption.v1.json`.
