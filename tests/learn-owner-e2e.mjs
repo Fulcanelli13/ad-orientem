@@ -107,7 +107,7 @@ try{
   assert.equal(learned.owner,"modular-learn-v1");
   assert.equal(learned.presentationOwner,"modular-learn-presentation-v1");
   assert.equal(learned.routeOwner,"modular-learn-v1");
-  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","learn.seasonal_rites","today.gospel","today.saint"]);
+  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel","today.saint"]);
   assert.equal(learned.donorVisible,false,"historical V37 Learn donor remained visible underneath modular Learn");
   assert.equal(learned.donorNavCount,0,"historical V37 navigation leaked into modular Learn");
   assert.equal(learned.sourcesUtilityCount,0,"top-level Sources leaked back into Learn");
@@ -126,7 +126,6 @@ try{
     "learn.rites.matrimony",
     "learn.serve_mass.responses",
     "learn.scapular",
-    "learn.seasonal_rites",
   ];
   for(const id of recoveredTraditional){
     await page.locator(`#ao-learn-modular-root [data-ao-learn-module="${id}"]`).tap();
@@ -157,6 +156,19 @@ try{
     );
     await assertFocusSafe(id+" return");
   }
+
+  assert.equal(await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.seasonal_rites"]').count(),0,
+    "final v38.4 donor dedupe requires no duplicate Seasonal Catholic Practice launcher");
+  const seasonal=await page.evaluate(()=>globalThis.AO_MODULES?.open?.("learn.seasonal_rites",{returnContext:{surface:"learn"}}));
+  assert.equal(seasonal?.ok,true,"seasonal compatibility alias failed");
+  await page.waitForFunction(()=>
+    globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
+    globalThis.AO_CALENDAR_APP_V1?.status?.().open===true,
+    null,{timeout:10000}
+  );
+  await assertNoMass("Seasonal alias -> Calendar");
+  await assertFocusSafe("Seasonal alias -> Calendar");
+  await openLearn();
 
   await page.locator("#ao-learn-modular-root [data-ao-learn-home]").tap();
   await page.waitForFunction(()=>
