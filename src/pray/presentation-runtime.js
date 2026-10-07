@@ -415,6 +415,24 @@ function returnFromRosaryDonor(e,root,snapshot){
  reopenResume(snapshot);
  return true;
 }
+function setRosaryPrayerLanguage(host,face='vernacular'){
+ if(!host)return false;
+ const latin=host.querySelector?.('[data-pb-latin]'),vern=host.querySelector?.('[data-pb-vern]');
+ if(!latin||!vern)return false;
+ const showLatin=face==='latin';
+ host.dataset.face=showLatin?'latin':'vernacular';
+ host.dataset.aoRosaryLanguageDefault='vernacular';
+ latin.hidden=!showLatin;
+ vern.hidden=showLatin;
+ host.setAttribute?.('aria-pressed',showLatin?'true':'false');
+ host.setAttribute?.('aria-label',showLatin?L('Show vernacular','Afficher la langue vernaculaire'):L('Show Latin','Afficher le latin'));
+ if(!host.matches?.('button,a,[role="button"]'))host.setAttribute?.('role','button');
+ if(!host.matches?.('button,a')&&host.tabIndex<0)host.tabIndex=0;
+ return true;
+}
+function toggleRosaryPrayerLanguage(host){
+ return setRosaryPrayerLanguage(host,host?.dataset?.face==='latin'?'vernacular':'latin');
+}
 function bindRosaryDonorBack(root){
  const back=root?.querySelector?.('.lab-back[data-pb-back],.lab-back');
  if(back)back.dataset.aoRosaryReturnBound='1';
@@ -424,10 +442,16 @@ function bindRosaryDonorBack(root){
    const path=typeof e.composedPath==='function'?e.composedPath():[],
     back=path.find(node=>node?.classList?.contains?.('lab-back'))||e.target?.closest?.('.lab-back'),
     nav=path.find(node=>node?.matches?.('[data-lab-rosary-next],[data-lab-rosary-prev]'))||e.target?.closest?.('[data-lab-rosary-next],[data-lab-rosary-prev]'),
-    hit=back||nav,
+    flip=path.find(node=>node?.matches?.('.lab-prayer-flip[data-pb-flip]'))||e.target?.closest?.('.lab-prayer-flip[data-pb-flip]'),
+    hit=back||nav||flip,
     donorRoot=path.find(node=>node?.id==='aoPrayerBookRoot')||hit?.closest?.('#aoPrayerBookRoot')||rosaryDonorRoot();
    if(!donorRoot||!hit||!donorRoot.contains(hit))return;
    if(donorRoot.querySelector?.('.pbShell')?.dataset?.aoRosaryExactDonor!=='v3.4.14')return;
+   if(flip&&donorRoot.dataset?.aoRosaryActiveRoot==='true'){
+    e.preventDefault();e.stopImmediatePropagation();
+    toggleRosaryPrayerLanguage(flip);
+    return;
+   }
    if(nav&&donorRoot.dataset?.aoRosaryActiveRoot==='true'){
     const api=window.AO_ROSARY_V381,st=api?.state?.(),steps=api?.steps?.()||[];
     if(typeof api?.setStep==='function'&&steps.length){
@@ -727,13 +751,7 @@ function declutterRosaryDonor(r){
  });
  r.querySelectorAll('.lab-prayer-flip[data-pb-flip]').forEach(host=>{
    if(host.dataset.aoRosaryLanguageDefault==='vernacular')return;
-   const latin=host.querySelector('[data-pb-latin]'),vern=host.querySelector('[data-pb-vern]');
-   if(!latin||!vern)return;
-   host.dataset.aoRosaryLanguageDefault='vernacular';
-   host.dataset.face='vernacular';
-   latin.hidden=true;vern.hidden=false;
-   host.setAttribute('aria-pressed','false');
-   host.setAttribute('aria-label',L('Show Latin','Afficher le latin'));
+   setRosaryPrayerLanguage(host,'vernacular');
  });
 }
 function decorateRosary(){
@@ -1142,7 +1160,15 @@ document.addEventListener('click',e=>{
  if(el.dataset.ao354Launch){const m={'first-friday':'programme.first_friday','first-saturday':'programme.first_saturday'};id=m[el.dataset.ao354Launch]||id}
  if(!TARGET[id])return;e.preventDefault();e.stopImmediatePropagation();open(id,{trigger:el,returnContext:PRAY_CTX});
 },true);
-document.addEventListener('keydown',e=>{const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return;if(e.key==='Escape'){e.preventDefault();close();return}if(e.key==='Tab'){const f=focusables();if(!f.length){e.preventDefault();return}const first=f[0],last=f[f.length-1],a=document.activeElement;if(e.shiftKey&&(a===first||!r.contains(a))){e.preventDefault();last.focus()}else if(!e.shiftKey&&(a===last||!r.contains(a))){e.preventDefault();first.focus()}}});
+document.addEventListener('keydown',e=>{
+ const flip=e.target?.closest?.("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] .lab-prayer-flip[data-pb-flip]");
+ if(flip&&(e.key==='Enter'||e.key===' ')){
+  e.preventDefault();e.stopImmediatePropagation();toggleRosaryPrayerLanguage(flip);return;
+ }
+ const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return;
+ if(e.key==='Escape'){e.preventDefault();close();return}
+ if(e.key==='Tab'){const f=focusables();if(!f.length){e.preventDefault();return}const first=f[0],last=f[f.length-1],a=document.activeElement;if(e.shiftKey&&(a===first||!r.contains(a))){e.preventDefault();last.focus()}else if(!e.shiftKey&&(a===last||!r.contains(a))){e.preventDefault();first.focus()}}
+});
 const TARGET={
  'pray.hub':{id:'pray.hub',type:'module',domain:'pray',category:'hub',title:'Pray'},
  'pray.rosary':{id:'pray.rosary',type:'module',domain:'pray',category:'marian',title:'Holy Rosary'},
