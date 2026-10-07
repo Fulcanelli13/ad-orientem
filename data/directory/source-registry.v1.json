@@ -54,6 +54,138 @@
       "fieldsSupported": [
         "community.SSPX.status_assertions"
       ]
+    },
+    {
+      "id": "SRC_FSSP_WORLD_DIRECTORY",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Priestly Fraternity of Saint Peter",
+      "title": "Where are we?",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "authority": "PRIMARY",
+      "retrieval": "automated",
+      "fieldsSupported": [
+        "venue",
+        "venue.diocese",
+        "schedule",
+        "venue.contact"
+      ]
+    },
+    {
+      "id": "SRC_FSSP_CONSTITUTIONS",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Priestly Fraternity of Saint Peter",
+      "title": "Excerpt of the Constitutions",
+      "url": "https://www.fssp.org/en/excerpt-of-the-constitutions-of-the-priestly-fraternity-of-saint-peter/",
+      "authority": "PRIMARY_FOR_SELF_DESCRIPTION",
+      "fieldsSupported": [
+        "community.FSSP.communion_profile.recognises_current_pontiff",
+        "community.FSSP.status_assertions"
+      ]
+    },
+    {
+      "id": "SRC_FSSP_LEO_XIV_2026",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Priestly Fraternity of Saint Peter",
+      "title": "Audience with Pope Leo XIV",
+      "url": "https://www.fssp.org/en/audience-with-pope-leo-xiv/",
+      "authority": "PRIMARY_FOR_CURRENT_SELF_DESCRIPTION",
+      "publishedAt": "2026-01-20",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.FSSP.communion_profile.recognises_current_pontiff"
+      ]
+    },
+    {
+      "id": "SRC_ICKSP_OFFICIAL_LOCATIONS",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Institute of Christ the King Sovereign Priest",
+      "title": "Official US and international locations",
+      "url": "https://www.institute-christ-king.org/",
+      "authority": "PRIMARY",
+      "retrieval": "automated",
+      "fieldsSupported": [
+        "venue",
+        "venue.contact",
+        "schedule"
+      ]
+    },
+    {
+      "id": "SRC_ICKSP_INTERNATIONAL_LOCATIONS",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Institute of Christ the King Sovereign Priest",
+      "title": "International Mass Times & Locations",
+      "url": "https://institute-christ-king.org/international-home",
+      "authority": "PRIMARY",
+      "retrieval": "automated",
+      "fieldsSupported": [
+        "venue",
+        "venue.contact",
+        "schedule",
+        "discovery"
+      ]
+    },
+    {
+      "id": "SRC_ICKSP_PONTIFICAL_RIGHT",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Institute of Christ the King Sovereign Priest",
+      "title": "Droit Pontifical",
+      "url": "https://www.icrsp.org/Pages/droit-pontifical.html",
+      "authority": "PRIMARY_FOR_SELF_DESCRIPTION",
+      "fieldsSupported": [
+        "community.ICKSP.status_assertions"
+      ]
+    },
+    {
+      "id": "SRC_ICKSP_CALENDAR_2026",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Institute of Christ the King Sovereign Priest",
+      "title": "Calendrier 2026",
+      "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
+      "authority": "PRIMARY_FOR_CURRENT_SELF_DESCRIPTION",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.ICKSP.communion_profile.recognises_current_pontiff"
+      ]
+    },
+    {
+      "id": "SRC_IBP_WORLD_DIRECTORY",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Institute of the Good Shepherd",
+      "title": "Lieux d’apostolat dans le Monde",
+      "url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/",
+      "authority": "PRIMARY",
+      "retrieval": "automated",
+      "fieldsSupported": [
+        "venue",
+        "venue.diocese",
+        "venue.contact",
+        "schedule"
+      ]
+    },
+    {
+      "id": "SRC_IBP_LITURGICAL_CHARISM",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Institute of the Good Shepherd",
+      "title": "Le charisme liturgique de l’Institut du Bon Pasteur dans le droit de l’Eglise",
+      "url": "https://www.institutdubonpasteur.org/my-blog/articles-et-etudes/le-charisme-liturgique-de-linstitut-du-bon-pasteur-dans-le-droit-de-leglise/",
+      "authority": "PRIMARY_FOR_SELF_DESCRIPTION",
+      "fieldsSupported": [
+        "community.IBP.liturgical_usage",
+        "community.IBP.status_assertions"
+      ]
+    },
+    {
+      "id": "SRC_IBP_LEO_XIV_2025",
+      "sourceType": "COMMUNITY_OFFICIAL",
+      "publisher": "Institute of the Good Shepherd",
+      "title": "Message à l’occasion de l’élection du Souverain Pontife Léon XIV",
+      "url": "https://www.institutdubonpasteur.org/2025/05/10/message-a-loccasion-de-lelection-du-souverain-pontife-leon-xiv/",
+      "authority": "PRIMARY_FOR_CURRENT_SELF_DESCRIPTION",
+      "publishedAt": "2025-05-10",
+      "retrievedAt": "2026-10-07",
+      "fieldsSupported": [
+        "community.IBP.communion_profile.recognises_current_pontiff"
+      ]
     }
   ]
 }

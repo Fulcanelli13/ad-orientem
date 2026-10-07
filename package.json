@@ -107,9 +107,12 @@
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
     "test:date-format": "node tests/date-format-coherence.mjs",
-    "test:directory": "node tests/directory-contracts.mjs",
+    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs",
     "directory:import:sspx": "node tools/directory/import-sspx.mjs",
-    "test:sacramental-sot": "node tests/sacramental-formation-sot.mjs"
+    "test:sacramental-sot": "node tests/sacramental-formation-sot.mjs",
+    "directory:import:fssp": "node tools/directory/import-fssp.mjs",
+    "directory:import:icksp": "node tools/directory/import-icksp.mjs",
+    "directory:import:ibp": "node tools/directory/import-ibp.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"

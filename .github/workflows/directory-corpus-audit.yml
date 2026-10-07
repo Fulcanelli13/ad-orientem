@@ -1,0 +1,39 @@
+name: Directory corpus audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "tools/directory/**"
+      - "data/directory/**"
+      - ".github/workflows/directory-corpus-audit.yml"
+      - "package.json"
+
+jobs:
+  live-source-corpus:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [fssp, icksp, ibp]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install browser scraper dependency
+        if: matrix.source == 'fssp'
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium for browser-backed official sources
+        if: matrix.source == 'fssp'
+        run: npx playwright install --with-deps chromium
+      - name: Import official source corpus
+        run: npm run directory:import:${{ matrix.source }}
+      - name: Print import report
+        run: cat data/directory/generated/${{ matrix.source }}/import-report.v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: directory-${{ matrix.source }}-live-audit
+          path: data/directory/generated/${{ matrix.source }}/
+          if-no-files-found: error
+          retention-days: 14
