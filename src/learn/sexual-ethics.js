@@ -62,7 +62,7 @@ function layerLabel(win,layer){const pair=LAYER_LABELS[layer]||LAYER_LABELS.PERE
 function relatedDetails(win,item){
   const targets=relatedTargetsFor(item);
   if(!targets.length)return "";
-  return `<div class="aoCSERelated"><small>${esc(L(win,"Related in Ad Orientem","À voir aussi dans Ad Orientem"))}</small><div class="aoCSERelatedButtons">${targets.map(target=>`<button type="button" class="aoCSEBtn" data-ao-cse-related="${esc(target.id)}">${esc(pick(win,target.label))} →</button>`).join("")}</div></div>`;
+  return `<div class="aoCSERelated"><small>${esc(L(win,"Related topics","Sujets connexes"))}</small><div class="aoCSERelatedButtons">${targets.map(target=>`<button type="button" class="aoCSEBtn" data-ao-cse-related="${esc(target.id)}">${esc(pick(win,target.label))} →</button>`).join("")}</div></div>`;
 }
 
 function sourceDetails(win,item){
@@ -72,7 +72,8 @@ function sourceDetails(win,item){
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
     const url=isFr(win)?(source.canonical_url_fr||source.canonical_url):source.canonical_url;
     const authority=source.authority_type?String(source.authority_type).replaceAll("_"," "):"";
-    return `<div class="aoCSESource"><strong>${esc(source.title)}</strong>${locator?` · ${esc(locator)}`:""}<br><em>${esc(authority)}${source.role==="argument_lead"?` · ${esc(L(win,"research / argument lead","guide de recherche / argumentation"))}`:""}</em>${url?` · <a href="${esc(url)}" target="_blank" rel="noopener">${esc(L(win,"Open","Ouvrir"))} ↗</a>`:""}</div>`;
+    const citation=`${source.title}${locator?` · ${locator}`:""}`;
+    return `<div class="aoCSESource">${url?`<a href="${esc(url)}" target="_blank" rel="noopener"><strong>${esc(citation)}</strong> ↗</a>`:`<strong>${esc(citation)}</strong>`}<br><em>${esc(authority)}${source.role==="argument_lead"?` · ${esc(L(win,"research / argument lead","guide de recherche / argumentation"))}`:""}</em></div>`;
   }).join("")}</details>`;
 }
 
