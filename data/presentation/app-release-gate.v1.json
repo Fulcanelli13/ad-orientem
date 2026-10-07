@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.22.0",
+  "version": "1.23.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -247,9 +247,11 @@
         "tests/pray-novenas.mjs",
         "tests/pray-traditional-life.mjs",
         "tests/learn-traditional-life.mjs",
-        "tests/app-visual-acceptance.mjs"
+        "tests/app-visual-acceptance.mjs",
+        "tests/nonmass-donor-reference-e2e.mjs",
+        ".github/workflows/visual-acceptance.yml"
       ],
-      "detail": "Exact-donor recovery has materially converged: semantic devotional rails are recovered, the final v3.4.14 Rosary presentation is restored, v3.4.10 Angelus/Stations scroll-focus geometry is restored, Guided Novenas N3 is modular, and the v38.1 Traditional Catholic Life modules are extracted into modular PRAY/Learn. The remaining blocker is direct donor-to-current visual/compositional acceptance at 390x844 across the full non-Mass surface/state matrix; current visual tests still certify the implementation rather than the final donor head."
+      "detail": "Exact-donor recovery has materially converged and a direct frozen-donor/current 390x844 capture lane is now installed. Semantic rails, final Rosary, v3.4.10 Angelus/Stations focus, Guided Novenas N3 and v38.1 Traditional Catholic Life are recovered. Release remains blocked until the generated donor/current comparison artifact is reviewed across the required non-Mass surface/state matrix."
     }
   ],
   "openBlockers": [
@@ -285,7 +287,8 @@
       "tests/nonmass-d3-d6-e2e.mjs",
       "tests/learn-owner-e2e.mjs",
       "tests/settings-e2e.mjs",
-      "tests/field-current-week-e2e.mjs"
+      "tests/field-current-week-e2e.mjs",
+      "tests/nonmass-donor-reference-e2e.mjs"
     ]
   },
   "productParityLedger": "data/presentation/product-parity.v1.json",
