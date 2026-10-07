@@ -1076,11 +1076,11 @@ try{
   assert.equal(prayReader.legacyOpen,false,"legacy Prayer Book reopened inside prayer reading");
   await shot("03b-pray-library-prayer");
 
-  // Later approved donor surfaces: N3 Novenas plus the v38.1 traditional PRAY modules.
+  // Later approved donor surfaces: completed bilingual V4 Novenas plus the v38.1 traditional PRAY modules.
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.novenas",{returnContext:null}));
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="novenas",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 [data-n1-close]").count(),1,"Novenas lost the donor Close control");
-  assert.ok(await page.locator("#aoPray435930 .aoN1Card").count()>=12,"Novenas overview lost its curated N3 corpus");
+  assert.equal(await page.locator("#aoPray435930 .aoN1Card").count(),16,"Novenas overview must expose the frozen 16-target bilingual corpus");
   await shot("03f-pray-novenas");
 
   for(const [route,name] of [

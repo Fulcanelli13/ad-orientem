@@ -1,0 +1,191 @@
+{
+  "version": "NOVENA_SOT_V1",
+  "status": "FROZEN",
+  "frozen_at": "2026-10-07",
+  "corpus_version": "bilingual-16-target-v1",
+  "owner": "PRAY · pray.novenas",
+  "calendar_owner": "Calendar Intelligence",
+  "target_count": 16,
+  "playable_count": 16,
+  "french_body_parity": "16/16",
+  "source_holds": 0,
+  "donor_policy": "NOVENA_CORPUS_V3 remains the immutable 12-target English donor. V4 overlays bilingual bodies and adds the four recovered targets.",
+  "global_rules": [
+    "Exactly sixteen curated novena targets are frozen in v1; additions require NOVENA_SOT_V2.",
+    "Every novena-specific prayer body must have English and French text.",
+    "French provenance must distinguish traditional/source-locked French witnesses from editorial translations aligned to a historical source.",
+    "Calendar Intelligence is the sole date/window owner; PRAY must not implement a private Easter or novena calendar calculator.",
+    "St Anthony's Nine Tuesdays remains a weekly Tuesday devotion and must never be normalized to nine consecutive days.",
+    "Guided and Simple modes use the same underlying prayer corpus.",
+    "No streaks, completion scores, intention storage, or devotional-history tracking.",
+    "Canonical Our Father, Hail Mary, Glory Be and 1962 Loreto are reused rather than copied.",
+    "Historical indulgence notes are never asserted as current law unless a current authority explicitly supports them."
+  ],
+  "novenas": [
+    {
+      "id": "holy_ghost",
+      "title_en": "Novena to the Holy Ghost",
+      "title_fr": "Neuvaine au Saint-Esprit",
+      "form": "DAY_SPECIFIC",
+      "calendar_type": "EASTER_OFFSET",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "christmas",
+      "title_en": "Christmas Novena",
+      "title_fr": "Neuvaine de Noël",
+      "form": "DAY_SPECIFIC",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "corpus_christi",
+      "title_en": "Corpus Christi Novena",
+      "title_fr": "Neuvaine de la Fête-Dieu",
+      "form": "REPEAT_FORM",
+      "calendar_type": "EASTER_OFFSET",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "sacred_heart",
+      "title_en": "Novena to the Sacred Heart",
+      "title_fr": "Neuvaine au Sacré-Cœur",
+      "form": "REPEAT_FORM",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "immaculate_conception",
+      "title_en": "Novena to the Immaculate Conception",
+      "title_fr": "Neuvaine à l’Immaculée Conception",
+      "form": "DAY_SPECIFIC",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "annunciation",
+      "title_en": "Novena for the Annunciation",
+      "title_fr": "Neuvaine de l’Annonciation",
+      "form": "DAY_SPECIFIC",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "assumption",
+      "title_en": "Novena for the Assumption",
+      "title_fr": "Neuvaine de l’Assomption",
+      "form": "DAY_SPECIFIC",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "seven_sorrows",
+      "title_en": "Novena of the Seven Sorrows",
+      "title_fr": "Neuvaine des Sept Douleurs",
+      "form": "DAY_SPECIFIC",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "st_joseph",
+      "title_en": "Novena to St Joseph",
+      "title_fr": "Neuvaine à saint Joseph",
+      "form": "DAY_SPECIFIC",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "holy_souls",
+      "title_en": "Novena for the Holy Souls",
+      "title_fr": "Neuvaine pour les âmes du Purgatoire",
+      "form": "DAY_SPECIFIC",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "perpetual_help",
+      "title_en": "Our Lady of Perpetual Help Novena",
+      "title_fr": "Neuvaine à Notre-Dame du Perpétuel Secours",
+      "form": "REPEAT_FORM",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "st_therese",
+      "title_en": "St Thérèse · Twenty-Four Glory Bes Novena",
+      "title_fr": "Sainte Thérèse · Neuvaine des vingt-quatre Gloria",
+      "form": "REPEAT_FORM",
+      "calendar_type": "FIXED",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "st_anthony_nine_tuesdays",
+      "title_en": "St Anthony’s Nine Tuesdays",
+      "title_fr": "Les neuf mardis de saint Antoine",
+      "form": "REPEAT_FORM",
+      "calendar_type": "NINE_TUESDAYS_BEFORE_FIXED_FEAST",
+      "french_text_status": "EDITORIAL_TRANSLATION_ALIGNED_TO_TRADITIONAL_ENGLISH_SOURCE",
+      "playable": true
+    },
+    {
+      "id": "christ_the_king",
+      "title_en": "Novena to Christ the King",
+      "title_fr": "Neuvaine au Christ-Roi",
+      "form": "REPEAT_FORM",
+      "calendar_type": "LAST_SUNDAY_RELATIVE",
+      "french_text_status": "SOURCE_LOCKED_TRADITIONAL_FRENCH",
+      "playable": true
+    },
+    {
+      "id": "immaculate_heart",
+      "title_en": "Novena to the Immaculate Heart of Mary",
+      "title_fr": "Neuvaine au Cœur Immaculé de Marie",
+      "form": "REPEAT_FORM",
+      "calendar_type": "FIXED",
+      "french_text_status": "TRADITIONAL_FRENCH_WITNESS_ALIGNED",
+      "playable": true
+    },
+    {
+      "id": "st_michael",
+      "title_en": "Novena to St Michael the Archangel",
+      "title_fr": "Neuvaine à saint Michel Archange",
+      "form": "REPEAT_FORM",
+      "calendar_type": "FIXED",
+      "french_text_status": "SOURCE_LOCKED_TRADITIONAL_FRENCH",
+      "playable": true
+    }
+  ],
+  "recovered_targets": {
+    "st_anthony_nine_tuesdays": {
+      "cadence": "nine weekly Tuesdays before 13 June",
+      "source": "https://www.pamphlets.info/Australia/acts1014/",
+      "french_world_witness": "https://laportelatine.org/spiritualite/vies-de-saints/13-juin-saint-antoine-de-padoue"
+    },
+    "christ_the_king": {
+      "cadence": "nine days before the last Sunday of October",
+      "source": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf"
+    },
+    "immaculate_heart": {
+      "cadence": "13–21 August before the 22 August feast",
+      "source": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer_to_the_Immaculate_Heart_of_Mary",
+      "french_world_witness": "https://montfortajpm.blogspot.com/2016/09/prieres-aux-Sacres-Coeurs-de-Jesus-et-de-Marie.html"
+    },
+    "st_michael": {
+      "cadence": "20–28 September before 29 September",
+      "source": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel"
+    }
+  },
+  "prayer_body_units": 91
+}
