@@ -1,0 +1,909 @@
+{
+  "version": "CATHOLIC_LIFE_RETIREMENT_RESOLUTION_BATCH1",
+  "status": "COMPLETE",
+  "created_at": "2026-10-07",
+  "scope": "Mature sacramental Formation owners plus Confession",
+  "source_audit": "data/learn/catholic-life-retirement-audit.v1.json",
+  "claims_resolved": 126,
+  "claims_remaining_from_409": 283,
+  "owners": {
+    "learn.rites.baptism": 25,
+    "learn.rites.first_communion": 11,
+    "learn.rites.matrimony": 31,
+    "learn.rites.holy_orders": 13,
+    "learn.rites.sick": 18,
+    "pray.confession": 28
+  },
+  "implementation": [
+    "Expanded the dedicated Baptism owner with doctrine/effects, infant timing, Christian-name guidance and current/1917 sponsor distinctions.",
+    "Expanded First Communion with explicit traditional/current reception distinctions and the distinction between assisting at Mass and receiving Communion.",
+    "Expanded Matrimony with discernment/engagement, canonical preparation, mixed-marriage/disparity distinctions, older seasonal discipline and difficult-marriage distinctions.",
+    "Expanded Holy Orders with title/vesture cautions and the historical minor-Exorcist/current-major-exorcism distinction.",
+    "Expanded Serious Illness with 1917/current Anointing thresholds, medical-care boundary, optional room preparation, Viaticum/Last-Rites distinctions and private Host-transport boundary.",
+    "Preserved detailed Confession claims under the PRAY owner; child-specific readiness resolves through First Communion before the Confession handoff."
+  ],
+  "resolutions": [
+    {
+      "claim_id": "CL03-S01-Q002",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S01-Q003",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S04-Q001",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S04-Q002",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S04-Q003",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S04-Q004",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S04-Q005",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S08-Q001",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S08-Q002",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S08-Q003",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S08-Q004",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL03-S08-Q005",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S01-Q001",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S01-Q002",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S01-Q003",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S01-Q004",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S02-Q001",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S02-Q002",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S02-Q003",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S02-Q004",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S02-Q005",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S03-Q001",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S03-Q002",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S03-Q003",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S03-Q004",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S03-Q005",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S04-Q001",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S04-Q002",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S04-Q004",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S05-Q001",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S05-Q002",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S05-Q003",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S05-Q004",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S05-Q005",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S06-Q002",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S06-Q003",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S06-Q004",
+      "original_destination": "learn.rites.baptism",
+      "final_destination": "learn.rites.baptism",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S08-Q002",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S08-Q003",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S08-Q004",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S08-Q005",
+      "original_destination": "learn.rites.first_communion",
+      "final_destination": "learn.rites.first_communion",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S01-Q001",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S01-Q002",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S01-Q003",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S01-Q004",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S02-Q001",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S02-Q002",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S02-Q003",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S02-Q004",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S02-Q005",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S03-Q001",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S03-Q002",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S03-Q003",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S03-Q004",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S04-Q001",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S04-Q002",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S04-Q003",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S04-Q005",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S05-Q001",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S05-Q002",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S05-Q003",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S05-Q004",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S05-Q005",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S06-Q001",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S06-Q004",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S06-Q005",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S08-Q001",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S08-Q002",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S08-Q003",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S08-Q004",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S08-Q005",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL06-S08-Q006",
+      "original_destination": "learn.rites.matrimony",
+      "final_destination": "learn.rites.matrimony",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S01-Q001",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S01-Q002",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S01-Q003",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S01-Q004",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S02-Q001",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S02-Q002",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S02-Q003",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S02-Q004",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S02-Q005",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S03-Q001",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S03-Q002",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S03-Q004",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL07-S03-Q005",
+      "original_destination": "learn.rites.sick",
+      "final_destination": "learn.rites.sick",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S04-Q001",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S04-Q002",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S04-Q003",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S04-Q004",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S04-Q006",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S04-Q007",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S06-Q001",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S06-Q002",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S06-Q003",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S06-Q004",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S06-Q005",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S06-Q006",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL10-S06-Q007",
+      "original_destination": "learn.rites.holy_orders",
+      "final_destination": "learn.rites.holy_orders",
+      "outcome": "REHOMED_OWNER_DATA_AND_UI",
+      "owner_annex": "data/learn/sacramental-formation-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S01-Q002",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S01-Q003",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S01-Q004",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S02-Q001",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S02-Q002",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S02-Q003",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S03-Q001",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S03-Q002",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S03-Q003",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S04-Q001",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S04-Q002",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S04-Q003",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S04-Q004",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S05-Q001",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S05-Q002",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S05-Q003",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S05-Q004",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S05-Q005",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S06-Q001",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S06-Q002",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S06-Q004",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S07-Q001",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S07-Q002",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL04-S07-Q003",
+      "original_destination": "pray.confession",
+      "final_destination": "pray.confession",
+      "outcome": "DEDUPED_EXISTING_OWNER_AND_REHOMED_OWNER_DATA",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S07-Q001",
+      "original_destination": "pray.confession",
+      "final_destination": "learn.rites.first_communion -> pray.confession",
+      "outcome": "REHOMED_VIA_FIRST_COMMUNION_HANDOFF",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S07-Q002",
+      "original_destination": "pray.confession",
+      "final_destination": "learn.rites.first_communion -> pray.confession",
+      "outcome": "REHOMED_VIA_FIRST_COMMUNION_HANDOFF",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S07-Q003",
+      "original_destination": "pray.confession",
+      "final_destination": "learn.rites.first_communion -> pray.confession",
+      "outcome": "REHOMED_VIA_FIRST_COMMUNION_HANDOFF",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    },
+    {
+      "claim_id": "CL05-S07-Q004",
+      "original_destination": "pray.confession",
+      "final_destination": "learn.rites.first_communion -> pray.confession",
+      "outcome": "REHOMED_VIA_FIRST_COMMUNION_HANDOFF",
+      "owner_annex": "data/pray/confession-catholic-life-salvage.v1.json"
+    }
+  ]
+}
