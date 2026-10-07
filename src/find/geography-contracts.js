@@ -41,6 +41,21 @@ export const PLACE_TYPES = Object.freeze([
   "other",
 ]);
 
+export const PLACE_GEO_PRECISIONS = Object.freeze([
+  "site",
+  "complex_anchor",
+  "address",
+  "street",
+  "locality",
+]);
+
+export const PLACE_GEO_SOURCES = Object.freeze([
+  "OFFICIAL_SOURCE",
+  "OSM",
+  "MANUAL",
+  "OTHER",
+]);
+
 export const DIRECTORY_PLACE_RELATIONSHIPS = Object.freeze([
   "LOCATED_AT",
   "COLOCATED_WITH",
@@ -58,6 +73,8 @@ export const LINK_CONFIDENCE = Object.freeze([
 const areaSystemSet = new Set(AREA_SYSTEMS);
 const areaTypeSet = new Set(AREA_TYPES);
 const placeTypeSet = new Set(PLACE_TYPES);
+const placeGeoPrecisionSet = new Set(PLACE_GEO_PRECISIONS);
+const placeGeoSourceSet = new Set(PLACE_GEO_SOURCES);
 const relationshipSet = new Set(DIRECTORY_PLACE_RELATIONSHIPS);
 const confidenceSet = new Set(LINK_CONFIDENCE);
 
@@ -139,6 +156,39 @@ export function auditGeoArea(area, path = "geo_area") {
   return issues;
 }
 
+export function auditPlaceGeo(geo, { countryCode = null, path = "place.geo" } = {}) {
+  const issues = [];
+  if (!geo || typeof geo !== "object") {
+    return [issue("PLACE_GEO_REQUIRED", path, "Place geo assertion must be an object.")];
+  }
+  if (!validLatLng(geo)) {
+    issues.push(issue("INVALID_PLACE_GEO_COORDINATES", path, "Publishable Place geo requires valid latitude and longitude."));
+    return issues;
+  }
+  if (!placeGeoPrecisionSet.has(geo.precision)) {
+    issues.push(issue("INVALID_PLACE_GEO_PRECISION", `${path}.precision`, `Unsupported Place geo precision: ${geo.precision}`));
+  }
+  if (!placeGeoSourceSet.has(geo.geocoding_source)) {
+    issues.push(issue("INVALID_PLACE_GEO_SOURCE", `${path}.geocoding_source`, `Unsupported Place geo source: ${geo.geocoding_source}`));
+  }
+  for (const field of ["source_url", "source_ref", "matched_country_code", "verified_at"]) {
+    if (!nonEmpty(geo[field])) {
+      issues.push(issue("MISSING_PLACE_GEO_PROVENANCE", `${path}.${field}`, `${field} is required for publishable Place coordinates.`));
+    }
+  }
+  if (nonEmpty(countryCode) && nonEmpty(geo.matched_country_code) && geo.matched_country_code !== countryCode) {
+    issues.push(issue("PLACE_GEO_COUNTRY_MISMATCH", `${path}.matched_country_code`, "Place geo country must match the canonical Place address country."));
+  }
+  if (geo.geocoding_source === "OSM" && !nonEmpty(geo.attribution)) {
+    issues.push(issue("MISSING_OSM_ATTRIBUTION", `${path}.attribution`, "OSM-derived Place coordinates require attribution."));
+  }
+  return issues;
+}
+
+export function isMapPublishablePlaceGeo(geo, countryCode = null) {
+  return auditPlaceGeo(geo, { countryCode }).length === 0;
+}
+
 export function auditPlace(place, path = "place") {
   const issues = [];
   if (!place || typeof place !== "object") {
@@ -163,6 +213,9 @@ export function auditPlace(place, path = "place") {
   const mappable = place.mappable !== false;
   if (mappable && !validLatLng(place.geo) && !hasUsableAddress(place.address)) {
     issues.push(issue("MISSING_PLACE_LOCATION", path, "Mappable place requires usable coordinates or a usable address."));
+  }
+  if (validLatLng(place.geo)) {
+    issues.push(...auditPlaceGeo(place.geo, { countryCode: place?.address?.country_code ?? null, path: path + ".geo" }));
   }
 
   return issues;
