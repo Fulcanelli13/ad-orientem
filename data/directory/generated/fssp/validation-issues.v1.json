@@ -1,56 +1,5 @@
 {
   "schema": "AO_DIRECTORY_VALIDATION_ISSUES_V1",
-  "generated_at": "2026-10-07T09:53:26.705Z",
-  "issues": [
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-move-left.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-move-right.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-move-up.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-move-down.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-zoom-in.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-zoom-out.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-home-jump-left-by-75.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-end-jump-right-by-75.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-page-up-jump-up-by-75.address.country_code",
-      "message": "Country code is required."
-    },
-    {
-      "code": "MISSING_COUNTRY",
-      "path": "venue:ao-fssp-page-down-jump-down-by-75.address.country_code",
-      "message": "Country code is required."
-    }
-  ]
+  "generated_at": "2026-10-07T10:10:44.071Z",
+  "issues": []
 }
