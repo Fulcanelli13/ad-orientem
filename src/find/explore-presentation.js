@@ -5,7 +5,7 @@ const arr=value=>Array.isArray(value)?value:[];
 const L=(language,en,fr)=>language==="fr"?fr:en;
 
 const LENS_LABELS=Object.freeze({
-  tlm:["TLM","TLM"],
+  tlm:["Masses","Messes"],
   shrines:["Shrines","Sanctuaires"],
   traditions:["Traditions","Traditions"],
   pilgrimages:["Pilgrimages","Pèlerinages"],
@@ -116,11 +116,15 @@ function placeSheet(vm){
 }
 
 function itemCard(item,vm){
-  return '<button type="button" class="aoFindCard aoExploreCard" data-explore-item="'+esc(item.item_id)+'" data-explore-lens="'+esc(item.lens)+'">'
-    +'<span class="aoFindCardTop"><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><i class="aoFindStatus" data-state="'+esc(item.map_publishable?"YES":"UNKNOWN")+'">'+esc(item.status||"")+'</i></span>'
+  const isMass=item.lens==="tlm";
+  const topLabel=isMass?L(vm.language,"TRADITIONAL MASS","MESSE TRADITIONNELLE"):(item.eyebrow||lensLabel(vm.language,item.lens));
+  const status=isMass?L(vm.language,"SOURCE-BACKED","SOURCÉ"):(item.status||"");
+  return '<button type="button" class="aoFindCard aoExploreCard '+(isMass?"aoExploreMassCard":"")+'" data-explore-item="'+esc(item.item_id)+'" data-explore-lens="'+esc(item.lens)+'">'
+    +'<span class="aoFindCardTop"><small>'+esc(topLabel)+'</small><i class="aoFindStatus" data-state="'+esc(item.map_publishable?"YES":"UNKNOWN")+'">'+esc(status)+'</i></span>'
     +'<strong>'+esc(item.title||"")+'</strong>'
-    +(item.subtitle?'<span>'+esc(item.subtitle)+'</span>':"")
-    +(item.summary?'<p>'+esc(String(item.summary).slice(0,240))+'</p>':"")
+    +(item.subtitle?'<span class="aoFindLocation">'+esc(item.subtitle)+'</span>':"")
+    +(item.summary?'<p class="'+(isMass?"aoFindScheduleLead":"")+'">'+esc(String(item.summary).slice(0,240))+'</p>':"")
+    +(isMass&&item.eyebrow?'<span class="aoFindCommunity">'+esc(item.eyebrow)+'</span>':"")
     +'</button>';
 }
 function detailSheet(vm){
@@ -189,10 +193,10 @@ function emptyState(vm){
 }
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
-  let html='<div class="aoFindFilters aoExploreTlmFilters"><div>'+pill("day","ANY",L(vm.language,"Any day","Tous les jours"),f.day||"ANY")+pill("day","TODAY",L(vm.language,"Today","Aujourd’hui"),f.day||"ANY")+pill("day","SUNDAY",L(vm.language,"Sunday","Dimanche"),f.day||"ANY")+'</div>';
-  html+='<div class="aoFindAffiliations">';
+  let html='<div class="aoFindFilters aoExploreTlmFilters"><div class="aoFindQuickFilters">'+pill("day","ANY",L(vm.language,"Any day","Tous les jours"),f.day||"ANY")+pill("day","TODAY",L(vm.language,"Today","Aujourd’hui"),f.day||"ANY")+pill("day","SUNDAY",L(vm.language,"Sunday","Dimanche"),f.day||"ANY")+'</div>';
+  html+='<details class="aoFindAdvanced"><summary>'+esc(L(vm.language,"Advanced filters","Filtres avancés"))+'</summary><p>'+esc(L(vm.language,"Use these only when you need a specific community, liturgical use or Mass type.","Utilisez-les seulement si vous recherchez une communauté, un usage liturgique ou un type de Messe précis."))+'</p><div class="aoFindAffiliations">';
   for(const id of ["DIOCESAN","FSSP","ICKSP","SSPX","IBP","OTHER"])html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+id+'</button>';
-  html+='</div><details><summary>'+esc(L(vm.language,"Advanced TLM filters","Filtres TLM avancés"))+'</summary><div>';
+  html+='</div><div>';
   html+=pill("unaCum","ANY",L(vm.language,"Any communion status","Tout statut"),f.unaCum||"ANY")+pill("unaCum","YES","Una cum",f.unaCum||"ANY")+pill("unaCum","NO","Non-una cum",f.unaCum||"ANY")+pill("unaCum","UNKNOWN",L(vm.language,"Unknown","Inconnu"),f.unaCum||"ANY");
   html+='</div><div>'+pill("liturgy","ANY",L(vm.language,"Any liturgy","Toute liturgie"),f.liturgy||"ANY")+pill("liturgy","1962","1962",f.liturgy||"ANY")+pill("liturgy","PRE_1955","Pre-1955",f.liturgy||"ANY")+pill("liturgy","DOMINICAN","Dominican",f.liturgy||"ANY")+'</div><div>';
   for(const id of ["ANY","LOW","SUNG","SOLEMN"])html+=pill("massType",id,id==="ANY"?L(vm.language,"Any Mass type","Tout type de messe"):id,f.massType||"ANY");
@@ -234,9 +238,17 @@ export function buildExploreViewModel({
 }
 
 export function renderExploreToString(vm){
-  const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.counts?.[vm.lens]??vm.items.length);
+  const f=vm.filters??{};
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
-  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
+  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button></header>';
+  html+='<section class="aoExploreIntro"><h2>'+esc(L(vm.language,"Find a Mass, shrine, tradition or pilgrimage","Trouver une Messe, un sanctuaire, une tradition ou un pèlerinage"))+'</h2><p>'+esc(L(vm.language,"Search by place or name first. Use the specialist filters only when you actually need them.","Cherchez d’abord par lieu ou par nom. N’utilisez les filtres spécialisés que lorsque vous en avez réellement besoin."))+'</p></section>';
+
+  html+='<div class="aoFindSearch"><input type="search" data-find-query value="'+esc(f.query||"")+'" placeholder="'+esc(
+    vm.lens==="tlm"?L(vm.language,"City, church, diocese or country","Ville, église, diocèse ou pays"):
+    vm.lens==="shrines"?L(vm.language,"Shrine, saint or place","Sanctuaire, saint ou lieu"):
+    vm.lens==="traditions"?L(vm.language,"Custom, region, period or place","Coutume, région, période ou lieu"):
+    L(vm.language,"Pilgrimage, shrine, route or place","Pèlerinage, sanctuaire, itinéraire ou lieu")
+  )+'"></div>';
 
   html+='<nav class="aoExploreLensTabs">';
   for(const lens of ["tlm","shrines","traditions","pilgrimages"]){
@@ -246,20 +258,11 @@ export function renderExploreToString(vm){
   }
   html+='</nav>';
 
-  html+='<div class="aoFindSearch"><input type="search" data-find-query value="'+esc(f.query||"")+'" placeholder="'+esc(
-    vm.lens==="tlm"?L(vm.language,"City, church, diocese or country","Ville, église, diocèse ou pays"):
-    vm.lens==="shrines"?L(vm.language,"Shrine, saint or place","Sanctuaire, saint ou lieu"):
-    vm.lens==="traditions"?L(vm.language,"Custom, region, period or place","Coutume, région, période ou lieu"):
-    L(vm.language,"Pilgrimage, shrine, route or place","Pèlerinage, sanctuaire, itinéraire ou lieu")
-  )+'"></div>';
-
   html+='<nav class="aoFindViewTabs">'+pill("view","list",L(vm.language,"List","Liste"),vm.view)+pill("view","map",L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
 
   const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="traditions"?L(vm.language,"attestations","attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
-  if(vm.mapped)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
-  if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
   html+='</div>';
 
   html+='<div class="aoFindBody" data-find-view="'+esc(vm.view)+'" data-explore-lens="'+esc(vm.lens)+'">';
