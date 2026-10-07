@@ -1,10 +1,10 @@
 import { formatDisplayDate } from "../app/date-format.js";
-import { NOVENA_CORPUS_V3 } from "../pray/novena-corpus.js";
+import { NOVENA_CORPUS_V4 } from "../pray/novena-corpus-v4.js";
 import { addDaysIso, dateFromIso, isoDate } from "./liturgical-year.js";
 import { v384Events, v384Dates } from "./traditional-year-v384.js";
 import { CALENDAR_DEVOTIONAL_REGISTRY_VERSION, DEVOTIONAL_PRACTICE_REGISTRY, NOVENA_TARGET_IDS, NOVENA_SOURCE_HOLDS, devotionalPracticeDefinition } from "./devotional-registry.js";
 
-export const CALENDAR_INTELLIGENCE_VERSION="calendar-intelligence-v1";
+export const CALENDAR_INTELLIGENCE_VERSION="calendar-intelligence-v2-complete-novenas";
 
 const validIso=value=>/^\d{4}-\d{2}-\d{2}$/.test(String(value||""));
 const keyOf=value=>{
@@ -71,10 +71,9 @@ export function isFirstWeekday(value,weekday){
 }
 
 export function novenaWindowFor(novena,year){
-  const n=typeof novena==="string"?NOVENA_CORPUS_V3[novena]:novena;
+  const n=typeof novena==="string"?NOVENA_CORPUS_V4[novena]:novena;
   if(!n?.calendar)throw new Error("Unknown novena calendar definition");
-  const y=Number(year);
-  const c=n.calendar;
+  const y=Number(year),c=n.calendar;
   if(c.type==="EASTER_OFFSET"){
     const easter=v384Dates(y).easter;
     return Object.freeze({
@@ -83,36 +82,81 @@ export function novenaWindowFor(novena,year){
       feast:addDaysIso(easter,c.feastOffset),
     });
   }
-  return Object.freeze({
-    start:`${y}-${String(c.startMonth).padStart(2,"0")}-${String(c.startDay).padStart(2,"0")}`,
-    end:`${y}-${String(c.endMonth).padStart(2,"0")}-${String(c.endDay).padStart(2,"0")}`,
-    feast:`${y}-${String(c.feastMonth).padStart(2,"0")}-${String(c.feastDay).padStart(2,"0")}`,
-  });
+  if(c.type==="LAST_SUNDAY_RELATIVE"){
+    const feast=v384Dates(y).christKing;
+    return Object.freeze({
+      start:addDaysIso(feast,Number(c.startOffset)),
+      end:addDaysIso(feast,Number(c.endOffset)),
+      feast:addDaysIso(feast,Number(c.feastOffset||0)),
+    });
+  }
+  if(c.type==="NINE_TUESDAYS_BEFORE_FIXED_FEAST"){
+    const feast=`${y}-${String(c.feastMonth).padStart(2,"0")}-${String(c.feastDay).padStart(2,"0")}`;
+    const fd=dateFromIso(feast),daysBack=(fd.getDay()-2+7)%7;
+    const lastTuesday=addDaysIso(feast,-daysBack);
+    const occurrences=Object.freeze(Array.from({length:9},(_,i)=>addDaysIso(lastTuesday,-7*(8-i))));
+    return Object.freeze({
+      start:occurrences[0],end:occurrences[8],feast,occurrences,cadence:"WEEKLY_TUESDAY"
+    });
+  }
+  if(c.type==="FIXED"){
+    return Object.freeze({
+      start:`${y}-${String(c.startMonth).padStart(2,"0")}-${String(c.startDay).padStart(2,"0")}`,
+      end:`${y}-${String(c.endMonth).padStart(2,"0")}-${String(c.endDay).padStart(2,"0")}`,
+      feast:`${y}-${String(c.feastMonth).padStart(2,"0")}-${String(c.feastDay).padStart(2,"0")}`,
+    });
+  }
+  throw new Error(`Unsupported novena calendar type: ${c.type}`);
 }
 
 export function novenaStatusFor(novena,value,{fr=false}={}){
-  const n=typeof novena==="string"?NOVENA_CORPUS_V3[novena]:novena;
+  const n=typeof novena==="string"?NOVENA_CORPUS_V4[novena]:novena;
   if(!n)return null;
   const id=keyOf(value),year=dateFromIso(id).getFullYear();
   let w=novenaWindowFor(n,year);
   if(id>w.feast&&diffDays(id,w.feast)>20)w=novenaWindowFor(n,year+1);
+
+  if(Array.isArray(w.occurrences)){
+    const exact=w.occurrences.indexOf(id);
+    if(exact>=0){
+      return Object.freeze({
+        kind:"active",day:exact+1,window:w,next:id,
+        label:L(fr,`Tuesday ${exact+1} of 9 · feast ${formatDisplayDate(w.feast)}`,`Mardi ${exact+1} sur 9 · fête le ${formatDisplayDate(w.feast)}`)
+      });
+    }
+    const nextIndex=w.occurrences.findIndex(x=>x>id);
+    if(nextIndex>=0){
+      const next=w.occurrences[nextIndex],until=diffDays(next,id);
+      if(until>=0&&until<=90){
+        return Object.freeze({
+          kind:"upcoming",day:nextIndex+1,window:w,next,
+          label:L(fr,`Next: Tuesday ${nextIndex+1} of 9 · ${formatDisplayDate(next)}`,`Prochain : mardi ${nextIndex+1} sur 9 · ${formatDisplayDate(next)}`)
+        });
+      }
+    }
+    return Object.freeze({
+      kind:"ordinary",day:9,window:w,next:null,
+      label:L(fr,`Nine Tuesdays · feast ${formatDisplayDate(w.feast)}`,`Neuf mardis · fête le ${formatDisplayDate(w.feast)}`)
+    });
+  }
+
   const delta=diffDays(id,w.start);
   if(delta>=0&&delta<=8){
     return Object.freeze({
-      kind:"active",day:delta+1,window:w,
-      label:L(fr,`Day ${delta+1} of 9 · feast ${formatDisplayDate(w.feast)}`,`Jour ${delta+1} sur 9 · fête le ${formatDisplayDate(w.feast)}`),
+      kind:"active",day:delta+1,window:w,next:id,
+      label:L(fr,`Day ${delta+1} of 9 · feast ${formatDisplayDate(w.feast)}`,`Jour ${delta+1} sur 9 · fête le ${formatDisplayDate(w.feast)}`)
     });
   }
   const until=diffDays(w.start,id);
   if(until>=0&&until<=90){
     return Object.freeze({
-      kind:"upcoming",day:1,window:w,
-      label:L(fr,`Begins ${formatDisplayDate(w.start)} · ${until} day${until===1?"":"s"} away`,`Commence le ${formatDisplayDate(w.start)} · dans ${until} jour${until===1?"":"s"}`),
+      kind:"upcoming",day:1,window:w,next:w.start,
+      label:L(fr,`Begins ${formatDisplayDate(w.start)} · ${until} day${until===1?"":"s"} away`,`Commence le ${formatDisplayDate(w.start)} · dans ${until} jour${until===1?"":"s"}`)
     });
   }
   return Object.freeze({
-    kind:"ordinary",day:1,window:w,
-    label:L(fr,`Traditional start ${formatDisplayDate(w.start)} · feast ${formatDisplayDate(w.feast)}`,`Début traditionnel le ${formatDisplayDate(w.start)} · fête le ${formatDisplayDate(w.feast)}`),
+    kind:"ordinary",day:1,window:w,next:null,
+    label:L(fr,`Traditional start ${formatDisplayDate(w.start)} · feast ${formatDisplayDate(w.feast)}`,`Début traditionnel le ${formatDisplayDate(w.start)} · fête le ${formatDisplayDate(w.feast)}`)
   });
 }
 
@@ -232,7 +276,7 @@ export function novenaTargetRegistryStatus(){
   return Object.freeze({
     registryVersion:CALENDAR_DEVOTIONAL_REGISTRY_VERSION,
     targetCount:NOVENA_TARGET_IDS.length,
-    playableCount:Object.keys(NOVENA_CORPUS_V3).length,
+    playableCount:Object.keys(NOVENA_CORPUS_V4).length,
     heldCount:Object.keys(NOVENA_SOURCE_HOLDS).length,
     targetIds:NOVENA_TARGET_IDS,
     heldIds:Object.freeze(Object.keys(NOVENA_SOURCE_HOLDS)),
@@ -241,17 +285,17 @@ export function novenaTargetRegistryStatus(){
 
 export function calendarNovenaEvents(value,{fr=false,upcomingDays=0}={}){
   const date=keyOf(value),rows=[];
-  for(const novena of Object.values(NOVENA_CORPUS_V3)){
+  for(const novena of Object.values(NOVENA_CORPUS_V4)){
     const status=novenaStatusFor(novena,date,{fr});
     if(!status)continue;
-    const startsIn=diffDays(status.window.start,date);
+    const startsIn=diffDays(status.next||status.window.start,date);
     if(status.kind!=="active"&&!(upcomingDays>0&&status.kind==="upcoming"&&startsIn>=0&&startsIn<=upcomingDays))continue;
     rows.push(Object.freeze({
       id:`novena.${novena.id}`,date,key:novena.id,kind:"novena",
       title:(fr?novena.title?.fr:novena.title?.en)||novena.title?.en||novena.title?.fr||novena.id,
       summary:status.label,priority:status.kind==="active"?72:58,route:"pray.novenas",
       tags:Object.freeze(["TRADITIONAL_DEVOTIONAL_PRACTICE","NOVENA"]),
-      novenaId:novena.id,status,source:"novena-corpus-v3",
+      novenaId:novena.id,status,source:"novena-corpus-v4",
     }));
   }
   return Object.freeze(rows.sort((a,b)=>b.priority-a.priority||a.title.localeCompare(b.title)));

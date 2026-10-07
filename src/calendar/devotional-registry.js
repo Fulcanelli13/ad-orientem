@@ -1,6 +1,6 @@
-import { NOVENA_CORPUS_V3 } from "../pray/novena-corpus.js";
+import { NOVENA_CORPUS_V4 } from "../pray/novena-corpus-v4.js";
 
-export const CALENDAR_DEVOTIONAL_REGISTRY_VERSION="calendar-devotional-registry-v1";
+export const CALENDAR_DEVOTIONAL_REGISTRY_VERSION="calendar-devotional-registry-v2-bilingual-novena-freeze";
 
 const F=x=>Object.freeze(x);
 const A=x=>Object.freeze([...x]);
@@ -237,64 +237,23 @@ export const DEVOTIONAL_PRACTICE_REGISTRY=F({
   })
 });
 
-export const PLAYABLE_NOVENA_IDS=A(Object.keys(NOVENA_CORPUS_V3));
+export const PLAYABLE_NOVENA_IDS=A(Object.keys(NOVENA_CORPUS_V4));
 
-export const NOVENA_SOURCE_HOLDS=F({
-  st_anthony_nine_tuesdays:F({
-    id:"st_anthony_nine_tuesdays",
-    title:F({en:"St Anthony’s Nine Tuesdays",fr:"Les neuf mardis de saint Antoine"}),
-    family:F({en:"St Anthony of Padua",fr:"Saint Antoine de Padoue"}),
-    availability:"CALENDAR_METADATA_ONLY_SOURCE_HOLD",
-    playable:false,
-    feast:F({type:"FIXED",month:6,day:13}),
-    schedule:F({type:"NINE_TUESDAYS_BEFORE_FEAST",status:"HOLD_EXACT_DONOR_SCHEDULE_AND_PRAYER_BODY"}),
-    sourceStatus:"EXACT_LATER_DONOR_PRAYER_BODY_MISSING"
-  }),
-  christ_the_king:F({
-    id:"christ_the_king",
-    title:F({en:"Novena to Christ the King",fr:"Neuvaine au Christ-Roi"}),
-    family:F({en:"Christ the King",fr:"Christ-Roi"}),
-    availability:"CALENDAR_METADATA_ONLY_SOURCE_HOLD",
-    playable:false,
-    feast:F({type:"LAST_SUNDAY",month:10}),
-    schedule:F({type:"FEAST_RELATIVE",status:"HOLD_EXACT_DONOR_START_AND_PRAYER_BODY"}),
-    sourceStatus:"EXACT_LATER_DONOR_PRAYER_BODY_MISSING"
-  }),
-  immaculate_heart:F({
-    id:"immaculate_heart",
-    title:F({en:"Novena to the Immaculate Heart",fr:"Neuvaine au Cœur Immaculé"}),
-    family:F({en:"Immaculate Heart of Mary",fr:"Cœur Immaculé de Marie"}),
-    availability:"CALENDAR_METADATA_ONLY_SOURCE_HOLD",
-    playable:false,
-    feast:F({type:"FIXED",month:8,day:22}),
-    schedule:F({type:"FEAST_RELATIVE",status:"HOLD_EXACT_DONOR_START_AND_PRAYER_BODY"}),
-    sourceStatus:"EXACT_LATER_DONOR_PRAYER_BODY_MISSING"
-  }),
-  st_michael:F({
-    id:"st_michael",
-    title:F({en:"Novena to St Michael",fr:"Neuvaine à saint Michel"}),
-    family:F({en:"St Michael the Archangel",fr:"Saint Michel Archange"}),
-    availability:"CALENDAR_METADATA_ONLY_SOURCE_HOLD",
-    playable:false,
-    feast:F({type:"FIXED",month:9,day:29}),
-    schedule:F({type:"FEAST_RELATIVE",status:"HOLD_EXACT_DONOR_START_AND_PRAYER_BODY"}),
-    sourceStatus:"EXACT_LATER_DONOR_PRAYER_BODY_MISSING"
-  })
-});
+export const NOVENA_SOURCE_HOLDS=F({});
 
-export const NOVENA_TARGET_REGISTRY_V1=F(Object.fromEntries([
-  ...Object.entries(NOVENA_CORPUS_V3).map(([id,n])=>[id,F({
+export const NOVENA_TARGET_REGISTRY_V1=F(Object.fromEntries(
+  Object.entries(NOVENA_CORPUS_V4).map(([id,n])=>[id,F({
     id,
     title:n.title,
     family:n.family,
-    availability:"PLAYABLE_SOURCE_LOCKED",
+    availability:"PLAYABLE_BILINGUAL_SOURCE_LOCKED",
     playable:true,
     calendar:n.calendar,
     traditionalStart:n.traditionalStart,
-    sourceStatus:n.source?.status??"SOURCE_LOCKED"
-  })]),
-  ...Object.entries(NOVENA_SOURCE_HOLDS)
-]));
+    sourceStatus:n.source?.status??"SOURCE_LOCKED",
+    frenchTextStatus:n.frenchTextStatus??"MISSING_FRENCH_BODY"
+  })])
+));
 
 export const NOVENA_TARGET_IDS=A(Object.keys(NOVENA_TARGET_REGISTRY_V1));
 
