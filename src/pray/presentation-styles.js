@@ -363,7 +363,14 @@ const ROSARY_DECLUTTER_CSS=`
  border-radius:8px!important;
 }
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] [data-r23-overview-open],
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] #r23-overview-sheet{display:none!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] #r23-overview-sheet,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .aoModuleHome,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .lab-lang{display:none!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] [hidden]{display:none!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"] .aoRitualValue{display:none!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryFaithfulRail .aoRitualSlot[data-channel="gesture"]{
+ grid-template-columns:28px!important;padding-inline:8px!important;
+}
 @media(max-width:560px){
  #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .pbShell[data-ao-rosary-exact-donor="v3.4.14"]{
   width:100%!important;
@@ -379,8 +386,8 @@ const ROSARY_DECLUTTER_CSS=`
  }
  #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head>.lab-back{order:initial!important;grid-column:1!important}
  #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head>:has(h1){order:initial!important;grid-column:2!important;min-width:0!important}
- #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head>:has(.r29-head-recitation){
-  order:initial!important;grid-column:3!important;display:flex!important;min-width:0!important;justify-content:flex-end!important;
+ #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head>.r29-head-recitation{
+  order:initial!important;grid-column:3!important;display:flex!important;min-width:0!important;justify-self:end!important;
  }
  #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .r29-head-recitation{
   min-width:136px!important;max-width:168px!important;height:36px!important;margin:0!important;
