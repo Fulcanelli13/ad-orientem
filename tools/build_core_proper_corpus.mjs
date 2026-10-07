@@ -408,7 +408,8 @@ try {
   const recoverySources = await loadRecoverySources();
   await page.evaluate(({sources,pin,donors}) => {
     const upstreamFetch = globalThis.fetch.bind(globalThis);
-    const RECOVERY_DONORS_BROWSER = donors;\n    const langKey = value => /^French$/i.test(value) ? "Francais" : value;
+    const RECOVERY_DONORS_BROWSER = donors;
+    const langKey = value => /^French$/i.test(value) ? "Francais" : value;
     const responseFor = (text, donor, requested) => {
       globalThis.__AO_CORPUS_SOURCE_RECOVERIES ??= [];
       globalThis.__AO_CORPUS_SOURCE_RECOVERIES.push({
