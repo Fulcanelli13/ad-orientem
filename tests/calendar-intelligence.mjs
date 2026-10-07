@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   CALENDAR_INTELLIGENCE_VERSION,
   calendarIntelligenceForDate,
@@ -59,5 +60,19 @@ assert.equal(intelligence.schema,CALENDAR_INTELLIGENCE_VERSION);
 assert.equal(intelligence.date,"2026-10-02");
 assert.ok(intelligence.events.some(x=>x.id==="programme.first_friday"));
 assert.ok(intelligence.events.every(x=>x.date==="2026-10-02"));
+
+const home=readFileSync("src/home/enrichers.js","utf8");
+const homeBrowser=readFileSync("src/home/browser-entry.js","utf8");
+const prayRuntime=readFileSync("src/pray/presentation-runtime.js","utf8");
+const novenaRuntime=readFileSync("src/pray/novena-runtime.js","utf8");
+
+assert.match(home,/calendarIntelligenceForDate/,"Home stopped consuming Calendar intelligence");
+assert.doesNotMatch(home,/function weeklyEvent\(/,"Home reintroduced duplicate First Friday\/Saturday date rules");
+assert.doesNotMatch(home,/AO_LITURGICAL_YEAR_V384/,"Home still depends on the historical global year surface instead of the shared Calendar service");
+assert.match(homeBrowser,/id==="today\.calendar"\|\|id==="calendar".*navigate\?\.\("calendar"\)/s,"Home Calendar intelligence does not route to the Calendar surface");
+assert.match(prayRuntime,/calendarIsFirstWeekday/,"PRAY programmes stopped sharing First Friday\/Saturday recurrence");
+assert.doesNotMatch(prayRuntime,/d\.getDay\(\)===weekday&&d\.getDate\(\)<=7/,"PRAY reintroduced private First Friday\/Saturday recurrence");
+assert.match(novenaRuntime,/novenaStatusFor/,"Novena runtime stopped consuming shared Calendar date semantics");
+assert.doesNotMatch(novenaRuntime,/function easter\(/,"Novena runtime reintroduced a private Easter calculator");
 
 console.log("PASS shared Calendar intelligence: practices, programmes and novena date semantics");
