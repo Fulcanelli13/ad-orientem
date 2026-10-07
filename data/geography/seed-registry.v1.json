@@ -349,6 +349,78 @@
       "codes": {
         "iso_alpha2": "CO"
       }
+    },
+    {
+      "geo_area_id": "geo:country:BE",
+      "name": {
+        "official": "Belgium",
+        "aliases": [
+          "Belgique",
+          "België"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BE"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CZ",
+      "name": {
+        "official": "Czechia",
+        "aliases": [
+          "Czech Republic",
+          "Česko"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:NL",
+      "name": {
+        "official": "Netherlands",
+        "aliases": [
+          "Nederland"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "NL"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PT",
+      "name": {
+        "official": "Portugal",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PT"
+      }
     }
   ],
   "places": [
@@ -1735,6 +1807,262 @@
       },
       "source_ids": [
         "SHR-CHIQUINQUIRA-DIOCESE"
+      ]
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "name": {
+        "official": "Sanctuaire de la Vierge des Pauvres — Banneux",
+        "aliases": [
+          "Banneux Notre-Dame",
+          "Sanctuary of the Virgin of the Poor"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:BE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Rue de l'Esplanade 57",
+        "line2": null,
+        "postal_code": "4141",
+        "city": "Banneux",
+        "region": "Liège",
+        "country_code": "BE",
+        "country": "Belgium",
+        "formatted": "Rue de l'Esplanade 57, 4141 Banneux, Belgium"
+      },
+      "source_ids": [
+        "SHR-BANNEUX-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:BE:beauraing",
+      "name": {
+        "official": "Sanctuaire Notre-Dame de Beauraing",
+        "aliases": [
+          "Sanctuary of Our Lady of Beauraing",
+          "Notre-Dame au Cœur d'Or"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:BE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Rue de l'Aubépine 6",
+        "line2": null,
+        "postal_code": "5570",
+        "city": "Beauraing",
+        "region": "Namur",
+        "country_code": "BE",
+        "country": "Belgium",
+        "formatted": "Rue de l'Aubépine 6, 5570 Beauraing, Belgium"
+      },
+      "source_ids": [
+        "SHR-BEAURAING-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:CZ:svata-hora-pribram",
+      "name": {
+        "official": "Svatá Hora",
+        "aliases": [
+          "Holy Mountain Příbram",
+          "Basilica of the Assumption at Svatá Hora"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Svatá Hora 591",
+        "line2": null,
+        "postal_code": "261 01",
+        "city": "Příbram II",
+        "region": "Central Bohemian",
+        "country_code": "CZ",
+        "country": "Czechia",
+        "formatted": "Svatá Hora 591, 261 01 Příbram II, Czechia"
+      },
+      "source_ids": [
+        "SHR-SVATA-HORA-OFFICIAL"
+      ]
+    },
+    {
+      "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "name": {
+        "official": "Bazilika svatého Václava — Stará Boleslav",
+        "aliases": [
+          "Basilica of Saint Wenceslas, Stará Boleslav",
+          "St Wenceslas Basilica"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Bazilika svatého Václava",
+        "line2": null,
+        "postal_code": null,
+        "city": "Brandýs nad Labem-Stará Boleslav",
+        "region": "Central Bohemian",
+        "country_code": "CZ",
+        "country": "Czechia",
+        "formatted": "Bazilika svatého Václava, Stará Boleslav, Czechia"
+      },
+      "source_ids": [
+        "SHR-STARA-BOLESLAV-OFFICIAL"
+      ]
+    },
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "name": {
+        "official": "Heiligdom Onze Lieve Vrouw ter Nood",
+        "aliases": [
+          "Onze Lieve Vrouw ter Nood Heiloo",
+          "Our Lady in Need Shrine, Heiloo"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:NL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Kapellaan 144",
+        "line2": null,
+        "postal_code": "1851 PE",
+        "city": "Heiloo",
+        "region": "North Holland",
+        "country_code": "NL",
+        "country": "Netherlands",
+        "formatted": "Kapellaan 144, 1851 PE Heiloo, Netherlands"
+      },
+      "source_ids": [
+        "SHR-HEILOO-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:NL:maastricht-sterre-der-zee",
+      "name": {
+        "official": "Basiliek Onze Lieve Vrouw — Sterre der Zee",
+        "aliases": [
+          "Onze-Lieve-Vrouwebasiliek Maastricht",
+          "Basilica of Our Lady Star of the Sea"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:NL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Onze Lieve Vrouweplein 7",
+        "line2": null,
+        "postal_code": "6211 HD",
+        "city": "Maastricht",
+        "region": "Limburg",
+        "country_code": "NL",
+        "country": "Netherlands",
+        "formatted": "Onze Lieve Vrouweplein 7, 6211 HD Maastricht, Netherlands"
+      },
+      "source_ids": [
+        "SHR-MAASTRICHT-STERRE-DER-ZEE"
+      ]
+    },
+    {
+      "place_id": "place:PT:fatima-sanctuary",
+      "name": {
+        "official": "Santuário de Nossa Senhora do Rosário de Fátima",
+        "aliases": [
+          "Santuário de Fátima",
+          "Shrine of Our Lady of the Rosary of Fatima"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Rua de Santa Isabel 360",
+        "line2": null,
+        "postal_code": "2495-424",
+        "city": "Fátima",
+        "region": "Santarém",
+        "country_code": "PT",
+        "country": "Portugal",
+        "formatted": "Rua de Santa Isabel 360, 2495-424 Fátima, Portugal"
+      },
+      "source_ids": [
+        "SHR-FATIMA-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:PT:sameiro-braga",
+      "name": {
+        "official": "Santuário de Nossa Senhora do Sameiro",
+        "aliases": [
+          "Santuário do Sameiro",
+          "Sanctuary of Our Lady of Sameiro"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Av. de N. Senhora do Sameiro 44",
+        "line2": null,
+        "postal_code": "4715-616",
+        "city": "Braga",
+        "region": "Braga",
+        "country_code": "PT",
+        "country": "Portugal",
+        "formatted": "Av. de N. Senhora do Sameiro 44, 4715-616 Braga, Portugal"
+      },
+      "source_ids": [
+        "SHR-SAMEIRO-CONTACT"
       ]
     }
   ],
