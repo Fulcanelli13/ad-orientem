@@ -52,9 +52,10 @@ assert.match(presentation,/id:"learn\.glossary"/,"Glossary launcher is missing f
 assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
 assert.match(presentation,/id:"learn\.spiritual_life"/,"Spiritual Life launcher is missing from Formation");
 assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
-assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint",SPIRITUAL_LIFE_ROUTE_ID\]\)/,"Learn module set lost Saint compatibility or Spiritual Life");
+assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint","today\.gospel",SPIRITUAL_LIFE_ROUTE_ID\]\)/,"Learn module set lost hidden Today compatibility routes or Spiritual Life");
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
 assert.doesNotMatch(presentation,/id:"today\.gospel"/,"Today’s Gospel returned as a Formation launcher");
+assert.match(owner,/"today\.gospel"/,"Today’s Gospel compatibility route was removed rather than hidden");
 assert.match(presentation,/Spiritual & Moral Life/);
 assert.match(presentation,/Sacraments & Life Events/);
 assert.match(presentation,/type:"practice".*learn\.serve_mass\.responses|id:"learn\.serve_mass\.responses",type:"practice"/s,"Serve Low Mass is not classified as practice");
