@@ -7,6 +7,7 @@ const core200 = readJson("data/learn/core-latin-200.v0.2.json");
 const core350 = readJson("data/learn/core-latin-201-350.v1.json");
 const referenceRegistry = readJson("data/learn/latin-course-reference-registry.v1.json");
 const textualAudit = readJson("data/learn/latin-course-textual-audit.v1.json");
+const frParityAudit = readJson("data/learn/latin-course-fr-parity-audit.v1.json");
 const pinnedLiturgicalSourceCommit = "126a07f91ede04664108abb6fb20ace3f4de14b9";
 const globalReferenceIds = new Set(referenceRegistry.references.map(x => x.id));
 assert(referenceRegistry.references.length === globalReferenceIds.size, "reference registry contains duplicate IDs");
@@ -112,6 +113,8 @@ const allAuthoredIntroduced = [];
 const stageSummaries = [];
 let referencedLearningBlocks = 0;
 let referencedExercises = 0;
+let bilingualLearningBlocks = 0;
+let bilingualVocabularyEntries = 0;
 
 function expectedActiveCases(lessonNumber) {
   if (lessonNumber < 2) return [];
@@ -139,6 +142,11 @@ for (const lesson of authored) {
   assert(new Set(introduced).size === introduced.length, `duplicate introduced lemma in Lesson ${n}`);
   for (const item of lesson.coreVocabulary.introduced) {
     assert(item.frozenLesson === n, `frozenLesson metadata drift for ${item.lemma} in Lesson ${n}`);
+    assert(typeof item.gloss?.en === "string" && item.gloss.en.length > 0,
+      `Lesson ${n} introduced lemma ${item.lemma} missing English gloss`);
+    assert(typeof item.gloss?.fr === "string" && item.gloss.fr.length > 0,
+      `Lesson ${n} introduced lemma ${item.lemma} missing French gloss`);
+    bilingualVocabularyEntries++;
   }
 
   const recycled = lesson.coreVocabulary?.recycled || [];
@@ -151,6 +159,11 @@ for (const lesson of authored) {
   const passive = new Map();
   for (const item of lesson.passiveReadingLexicon || []) {
     assert(item.lemma && !passive.has(item.lemma), `duplicate passive lemma in Lesson ${n}: ${item.lemma}`);
+    assert(typeof item.gloss?.en === "string" && item.gloss.en.length > 0,
+      `Lesson ${n} passive lemma ${item.lemma} missing English gloss`);
+    assert(typeof item.gloss?.fr === "string" && item.gloss.fr.length > 0,
+      `Lesson ${n} passive lemma ${item.lemma} missing French gloss`);
+    bilingualVocabularyEntries++;
     passive.set(item.lemma, item);
     assert(!introduced.includes(item.lemma), `Lesson ${n} silently duplicates introduced lemma in passive lexicon: ${item.lemma}`);
     assert(!recycled.includes(item.lemma), `Lesson ${n} silently duplicates recycled lemma in passive lexicon: ${item.lemma}`);
@@ -228,6 +241,7 @@ for (const lesson of authored) {
         `Lesson ${n} block ${block.id} missing English learner copy`);
       assert(typeof block.learnerCopy.fr === "string" && block.learnerCopy.fr.length > 0,
         `Lesson ${n} block ${block.id} missing French learner copy`);
+      bilingualLearningBlocks++;
     }
     if (block.sourceId) {
       assert(sourceIds.has(block.sourceId), `Lesson ${n} block ${block.id} references unknown source ${block.sourceId}`);
@@ -542,6 +556,14 @@ if (authored.length >= 40) {
   }
 }
 
+// French parity baseline locks.
+assert(frParityAudit.status === "PARTIAL_PARITY_GAP_IDENTIFIED",
+  "French parity audit must preserve the known partial-parity state until localized exercise/UI fields are completed");
+assert(frParityAudit.complete?.learnerCopy?.presentEnFr === 245,
+  "French parity audit learnerCopy baseline must remain 245/245");
+assert(frParityAudit.complete?.vocabularyGlosses?.presentEnFr === 835,
+  "French parity audit vocabulary baseline must remain 835/835");
+
 // High-risk textual/liturgical source locks.
 assert(textualAudit.status === "HIGH_RISK_PASS_COMPLETE", "textual audit baseline must be complete");
 assert(textualAudit.sourceOfTruth?.commit === pinnedLiturgicalSourceCommit,
@@ -633,9 +655,14 @@ console.log(JSON.stringify({
   authoredStagesValidated: stageSummaries,
   referenceRegistryVersion: referenceRegistry.version,
   textualAuditVersion: textualAudit.version,
+  frParityAuditVersion: frParityAudit.version,
   globalReferenceCount: referenceRegistry.references.length,
   explanationReferenceCoverage: {
     learningBlocks: referencedLearningBlocks,
     exercises: referencedExercises
+  },
+  bilingualBaselineCoverage: {
+    learnerCopyBlocks: bilingualLearningBlocks,
+    vocabularyAndSupportGlosses: bilingualVocabularyEntries
   }
 }, null, 2));

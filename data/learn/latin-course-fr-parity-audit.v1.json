@@ -1,0 +1,71 @@
+{
+  "version": "latin-course-fr-parity-audit-v1.0",
+  "status": "PARTIAL_PARITY_GAP_IDENTIFIED",
+  "audited": "2026-10-07",
+  "scope": "All authored Latin course lessons 1-40",
+  "totals": {
+    "lessons": 40,
+    "learningBlocks": 245,
+    "vocabularyAndSupportEntries": 835,
+    "exercises": 431
+  },
+  "complete": {
+    "learnerCopy": {
+      "presentEnFr": 245,
+      "total": 245,
+      "coverage": 1
+    },
+    "vocabularyGlosses": {
+      "presentEnFr": 835,
+      "total": 835,
+      "coverage": 1
+    }
+  },
+  "missing": {
+    "lessonTitles": {
+      "localizedFr": 0,
+      "total": 40
+    },
+    "blockTitles": {
+      "localizedFr": 0,
+      "total": 245
+    },
+    "exercisePrompts": {
+      "localizedFr": 0,
+      "total": 431
+    },
+    "exerciseHints": {
+      "localizedFr": 0,
+      "total": 431
+    },
+    "exerciseExplanations": {
+      "localizedFr": 0,
+      "total": 431
+    },
+    "exerciseOptionLabels": "English/canonical only where options are textual; requires localized display labels without changing canonical grading values.",
+    "lessonObjectives": "English-only arrays; require localized learner-facing copy.",
+    "grammarFocusAndReadingOutcome": "English-only top-level learner-facing summaries."
+  },
+  "schemaRecommendation": {
+    "backwardsCompatibility": "Keep existing English/canonical fields for grading and current UI.",
+    "lesson": "Add localization.fr.title, localization.fr.grammarFocus, localization.fr.readingOutcome and localization.fr.objectives.",
+    "block": "Add localization.fr.title; keep existing learnerCopy.en/fr.",
+    "exercise": "Add localization.fr.prompt, hint, explanation, options where applicable, plus localized accepted-answer overrides only when the answer itself is language-dependent.",
+    "gradingRule": "Never translate the canonical grading value blindly. Multiple-choice localization maps French labels by option index/value; free-text exercises receive explicit French accepted variants when required."
+  },
+  "repairBatching": [
+    "Lessons 1-5",
+    "Lessons 6-10",
+    "Lessons 11-15",
+    "Lessons 16-20",
+    "Lessons 21-25",
+    "Lessons 26-30",
+    "Lessons 31-35",
+    "Lessons 36-40"
+  ],
+  "validationPolicy": [
+    "Existing 245 learnerCopy blocks must remain bilingual.",
+    "Existing 835 vocabulary/support glosses must remain bilingual.",
+    "Future parity completion should become a hard CI gate stage by stage, not a one-shot flag."
+  ]
+}
