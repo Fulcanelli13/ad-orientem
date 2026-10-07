@@ -338,14 +338,42 @@ try{
 
   await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']").click();
   await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:3000});
-  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1,"Calendar Date Picker lost direct date entry");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42,"Calendar Date Picker lost its six-week month grid");
-  const calendarPickerGeometry=await page.evaluate(()=>{const root=document.getElementById("ao-calendar-modular-root"),grid=document.querySelector(".aoCalV2MonthGrid"),last=grid?.querySelector?.("[data-cal-pick-date]:nth-child(7)");return {rootOverflow:(root?.scrollWidth??Infinity)-(root?.clientWidth??0),gridOverflow:(grid?.scrollWidth??Infinity)-(grid?.clientWidth??0),lastRight:last?.getBoundingClientRect?.().right??Infinity,rootRight:root?.getBoundingClientRect?.().right??0,rootScrollTop:root?.scrollTop??Infinity}});
-  assert.ok(calendarPickerGeometry.rootOverflow<=1,"Calendar Date Picker causes horizontal root overflow");
-  assert.ok(calendarPickerGeometry.gridOverflow<=1,"Calendar month grid overflows horizontally");
-  assert.ok(calendarPickerGeometry.lastRight<=calendarPickerGeometry.rootRight+1,"Calendar Saturday column is clipped off-screen");
-  assert.ok(calendarPickerGeometry.rootScrollTop<=2,"Calendar Date Picker opened below the top of its surface");
-  await shot("02d-calendar-picker");
+  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1,"Calendar Liturgical Month lost direct date entry");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42,"Calendar Liturgical Month lost its six-week grid");
+  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:30000});
+  const calendarMonth=await page.evaluate(()=>{
+    const root=document.getElementById("ao-calendar-modular-root"),grid=document.querySelector(".aoCalV2MonthGrid"),last=grid?.querySelector?.("[data-cal-pick-date]:nth-child(7)");
+    return {
+      rootOverflow:(root?.scrollWidth??Infinity)-(root?.clientWidth??0),
+      gridOverflow:(grid?.scrollWidth??Infinity)-(grid?.clientWidth??0),
+      lastRight:last?.getBoundingClientRect?.().right??Infinity,
+      rootRight:root?.getBoundingClientRect?.().right??0,
+      rootScrollTop:root?.scrollTop??Infinity,
+      cells:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").length,
+      markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
+      cached:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-ready='1']").length,
+      sundays:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid .sunday").length,
+      named:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid .major").length,
+      selected:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid .selected").length,
+      ranked:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='1'],#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='2'],#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='3']").length,
+      readyState:grid?.dataset?.monthReady??null,
+      apiCached:globalThis.AO_CALENDAR_APP_V1?.status?.().monthCachedDays??0,
+    };
+  });
+  assert.equal(calendarMonth.cells,42,"Calendar Liturgical Month changed its 42-cell geometry");
+  assert.equal(calendarMonth.markers,42,"Calendar Liturgical Month lost semantic colour/rank markers");
+  assert.equal(calendarMonth.cached,42,"Calendar Liturgical Month did not finish its bounded 42-day preload");
+  assert.equal(calendarMonth.apiCached,42,"Calendar month cache status does not match the visible grid");
+  assert.equal(calendarMonth.readyState,"true","Calendar Liturgical Month did not expose a ready state after preload");
+  assert.ok(calendarMonth.sundays>=6,"Calendar Liturgical Month lost Sunday distinction");
+  assert.ok(calendarMonth.named>=6,"Calendar Liturgical Month is not surfacing major observances selectively");
+  assert.ok(calendarMonth.ranked>=6,"Calendar Liturgical Month lost rank salience");
+  assert.equal(calendarMonth.selected,1,"Calendar Liturgical Month does not uniquely identify the selected date");
+  assert.ok(calendarMonth.rootOverflow<=1,"Calendar Liturgical Month causes horizontal root overflow");
+  assert.ok(calendarMonth.gridOverflow<=1,"Calendar Liturgical Month grid overflows horizontally");
+  assert.ok(calendarMonth.lastRight<=calendarMonth.rootRight+1,"Calendar Liturgical Month Saturday column is clipped off-screen");
+  assert.ok(calendarMonth.rootScrollTop<=2,"Calendar Liturgical Month opened below the top of its surface");
+  await shot("02d-calendar-month");
 
   await page.locator("[data-ao-app-surface='pray']").click();
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
