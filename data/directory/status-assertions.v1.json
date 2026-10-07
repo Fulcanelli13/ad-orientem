@@ -1,0 +1,35 @@
+{
+  "schema": "AO_DIRECTORY_STATUS_ASSERTIONS_V1",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-07",
+  "communityProfiles": [
+    {
+      "communityId": "SSPX",
+      "communionProfile": {
+        "recognises_current_pontiff": "YES",
+        "pope_named_in_canon": "YES",
+        "ordinary_named_in_canon": "YES",
+        "position_family": "ROMAN_PONTIFF_RECOGNISED",
+        "certainty": "OFFICIAL_POLICY",
+        "effective_from": "2025-05-08",
+        "effective_until": null,
+        "evidence_source_ids": [
+          "SRC_SSPX_UNA_CUM_POLICY",
+          "SRC_SSPX_UNA_CUM_2026"
+        ]
+      },
+      "statusAssertions": [
+        {
+          "assertionId": "SSPX_DDF_2026_07_02",
+          "authority": "Dicastery for the Doctrine of the Faith",
+          "authorityType": "HOLY_SEE",
+          "statusCode": "SCHISM_DECLARED",
+          "summary": "The DDF explanatory note of 2 July 2026 states that SSPX sacred ministers are in schism and subject to the canonical consequences described there following the 1 July 2026 episcopal consecrations.",
+          "effectiveDate": "2026-07-02",
+          "endDate": null,
+          "sourceId": "SRC_DDF_SSPX_2026_07_02"
+        }
+      ]
+    }
+  ]
+}

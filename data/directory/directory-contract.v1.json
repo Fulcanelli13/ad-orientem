@@ -1,0 +1,134 @@
+{
+  "schema": "DIRECTORY_SOT_V1",
+  "version": "1.0.0",
+  "frozenAt": "2026-10-07",
+  "purpose": "Canonical worldwide directory of public traditional Latin Catholic liturgies with provenance-aware venue, ministry, liturgy, communion, schedule, source, and verification records.",
+  "entityOrder": [
+    "venue",
+    "ministry",
+    "liturgical_usage",
+    "communion_profile",
+    "schedule",
+    "source",
+    "verification",
+    "status_assertion"
+  ],
+  "invariants": [
+    "A physical venue is not an ecclesial affiliation.",
+    "Communion and una-cum attributes attach to a ministry or celebration, never blindly to a venue.",
+    "Canonical/ecclesial status is represented by dated source assertions, not one timeless scalar.",
+    "UNKNOWN and VARIES are valid values; uncertain facts must not be forced to YES or NO.",
+    "Contentious communion or ecclesial classifications require explicit evidence source ids.",
+    "Schedules require provenance and a last-verified or upstream-updated timestamp when available.",
+    "Importers must preserve upstream identifiers and relationship classifications before canonical normalization.",
+    "Entity resolution may propose merges; it must not merge distinct houses, churches, chapels, or missions merely because they share clergy, community, city, telephone, or property."
+  ],
+  "enums": {
+    "venueType": [
+      "church",
+      "chapel",
+      "oratory",
+      "mission",
+      "monastery",
+      "convent",
+      "priory",
+      "seminary",
+      "school_chapel",
+      "private_chapel",
+      "temporary_location",
+      "hotel_or_hired_room",
+      "residence",
+      "retreat_house",
+      "other"
+    ],
+    "ministryRelationship": [
+      "operated_by",
+      "served_by",
+      "hosted_by",
+      "occasional_visit",
+      "shared_use",
+      "unknown"
+    ],
+    "communionValue": [
+      "YES",
+      "NO",
+      "VARIES_BY_CELEBRANT",
+      "VARIES_BY_OCCASION",
+      "DISPUTED",
+      "UNKNOWN"
+    ],
+    "positionFamily": [
+      "ROMAN_PONTIFF_RECOGNISED",
+      "SEDEVACANTIST",
+      "SEDEPRIVATIONIST",
+      "OTHER_POSITION",
+      "UNKNOWN"
+    ],
+    "verificationState": [
+      "OFFICIAL_LIVE",
+      "OFFICIAL_VERIFIED",
+      "RECENTLY_VERIFIED",
+      "NEEDS_RECHECK",
+      "CONFLICT",
+      "UNVERIFIED",
+      "CLOSED_OR_SUSPENDED",
+      "ARCHIVED"
+    ],
+    "sourceType": [
+      "HOLY_SEE_OFFICIAL",
+      "DIOCESE_OFFICIAL",
+      "COMMUNITY_OFFICIAL",
+      "PARISH_OFFICIAL",
+      "OFFICIAL_BULLETIN",
+      "NATIONAL_ASSOCIATION",
+      "SECONDARY_DIRECTORY",
+      "USER_SUBMISSION"
+    ],
+    "liturgyFamily": [
+      "ROMAN",
+      "DOMINICAN",
+      "CARMELITE",
+      "PREMONSTRATENSIAN",
+      "OTHER_LATIN_USAGE"
+    ],
+    "romanBooks": [
+      "1962",
+      "1960",
+      "PRE_1955",
+      "1955_REFORMED",
+      "MIXED_OR_LOCAL",
+      "UNKNOWN"
+    ],
+    "massType": [
+      "LOW",
+      "SUNG",
+      "SOLEMN",
+      "PONTIFICAL",
+      "UNKNOWN"
+    ]
+  },
+  "requiredEvidence": {
+    "communionFields": [
+      "recognises_current_pontiff",
+      "pope_named_in_canon",
+      "ordinary_named_in_canon",
+      "position_family"
+    ],
+    "statusAssertionFields": [
+      "authority",
+      "status_code",
+      "effective_date",
+      "source_id"
+    ],
+    "scheduleFields": [
+      "source_ids"
+    ]
+  },
+  "releaseGates": {
+    "venueIdentity": "Every published venue needs a stable id, country, and either usable coordinates or a usable address.",
+    "provenance": "Every schedule and contentious classification needs source provenance.",
+    "uniqueness": "Upstream source identifiers may not map silently to multiple canonical venues.",
+    "safeMerging": "Importers may not silently merge probable duplicates.",
+    "uncertainty": "UNKNOWN and VARIES must survive normalization."
+  }
+}

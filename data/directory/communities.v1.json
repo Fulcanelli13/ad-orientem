@@ -1,0 +1,139 @@
+{
+  "schema": "AO_DIRECTORY_COMMUNITIES_V1",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-07",
+  "communities": [
+    {
+      "id": "DIOCESAN",
+      "name": "Diocesan clergy",
+      "abbreviation": null,
+      "category": "diocesan",
+      "officialWebsite": null
+    },
+    {
+      "id": "FSSP",
+      "name": "Priestly Fraternity of Saint Peter",
+      "abbreviation": "FSSP",
+      "category": "institute",
+      "officialWebsite": "https://www.fssp.org/"
+    },
+    {
+      "id": "ICKSP",
+      "name": "Institute of Christ the King Sovereign Priest",
+      "abbreviation": "ICKSP",
+      "category": "institute",
+      "officialWebsite": "https://www.icrsp.org/"
+    },
+    {
+      "id": "IBP",
+      "name": "Institute of the Good Shepherd",
+      "abbreviation": "IBP",
+      "category": "institute",
+      "officialWebsite": "https://www.institutdubonpasteur.org/"
+    },
+    {
+      "id": "SSPX",
+      "name": "Society of Saint Pius X",
+      "abbreviation": "SSPX",
+      "category": "society",
+      "officialWebsite": "https://fsspx.org/"
+    },
+    {
+      "id": "FSVF",
+      "name": "Fraternity of Saint Vincent Ferrer",
+      "abbreviation": "FSVF",
+      "category": "institute",
+      "officialWebsite": "https://www.chemere.org/"
+    },
+    {
+      "id": "CMRI",
+      "name": "Congregation of Mary Immaculate Queen",
+      "abbreviation": "CMRI",
+      "category": "community",
+      "officialWebsite": "https://cmri.org/"
+    },
+    {
+      "id": "SSPV",
+      "name": "Society of Saint Pius V",
+      "abbreviation": "SSPV",
+      "category": "community",
+      "officialWebsite": "https://sspv.org/"
+    },
+    {
+      "id": "CSPV",
+      "name": "Congregation of Saint Pius V",
+      "abbreviation": "CSPV",
+      "category": "community",
+      "officialWebsite": "https://stpiusvchapel.org/"
+    },
+    {
+      "id": "BENEDICTINE",
+      "name": "Benedictine",
+      "abbreviation": null,
+      "category": "religious_order",
+      "officialWebsite": null
+    },
+    {
+      "id": "ORATORIAN",
+      "name": "Oratorian",
+      "abbreviation": null,
+      "category": "religious_order",
+      "officialWebsite": null
+    },
+    {
+      "id": "DOMINICAN",
+      "name": "Dominican",
+      "abbreviation": null,
+      "category": "religious_order",
+      "officialWebsite": null
+    },
+    {
+      "id": "NORBERTINE",
+      "name": "Premonstratensian / Norbertine",
+      "abbreviation": null,
+      "category": "religious_order",
+      "officialWebsite": null
+    },
+    {
+      "id": "INDEPENDENT",
+      "name": "Independent clergy/community",
+      "abbreviation": null,
+      "category": "independent",
+      "officialWebsite": null
+    },
+    {
+      "id": "OTHER",
+      "name": "Other",
+      "abbreviation": null,
+      "category": "other",
+      "officialWebsite": null
+    },
+    {
+      "id": "UNKNOWN",
+      "name": "Unknown",
+      "abbreviation": null,
+      "category": "unknown",
+      "officialWebsite": null
+    }
+  ],
+  "upstreamRelationshipPolicy": {
+    "sspx": {
+      "fsspx": {
+        "defaultCommunityId": "SSPX",
+        "canonicalConfidence": "DIRECT"
+      },
+      "affiliated": {
+        "defaultCommunityId": "OTHER",
+        "canonicalConfidence": "REVIEW"
+      },
+      "friend": {
+        "defaultCommunityId": "OTHER",
+        "canonicalConfidence": "REVIEW"
+      },
+      "ecclesia_dei": {
+        "defaultCommunityId": "OTHER",
+        "canonicalConfidence": "REVIEW"
+      }
+    }
+  }
+}
