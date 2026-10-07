@@ -346,7 +346,8 @@ button.ao-schola-control{cursor:pointer}
   .ao-reader-nav button{top:auto;bottom:10px;width:44px;height:44px;border-radius:50%;font-size:20px;opacity:.34;background:transparent}
   .ao-reader-nav button::before{inset:5px;background:rgba(11,16,13,.38)}
   .ao-reader-nav button[data-reader-nav="previous"]{left:51px}.ao-reader-nav button[data-reader-nav="next"]{right:51px}
-  .ao-schola-toggle{position:absolute;top:3px;left:50%;transform:translateX(-50%);grid-column:auto;grid-row:auto}
+  .ao-schola-resize{left:25%;right:45%}
+  .ao-schola-toggle{position:absolute;top:3px;left:70%;transform:translateX(-50%);grid-column:auto;grid-row:auto}
   .ao-guide-popover{width:100%;max-height:89vh;border-radius:16px 16px 0 0;padding:15px 14px 28px}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{width:min(48vw,190px)}
 }
