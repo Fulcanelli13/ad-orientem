@@ -30,6 +30,15 @@ assert.match(runtime,/data-tp381-hymn-lang/,"Hymn language control disappeared")
 assert.match(runtime,/data-tp381-prayer/,"Canonical prayer reuse disappeared");
 assert.match(styles,/aoTP381Reader/);
 assert.match(styles,/aoTP381PrayerList/);
+assert.match(runtime,/These are source-led lay sequences derived from the Baltimore Manual’s “another form”/,"Morning\/Evening donor introduction drifted");
+assert.match(runtime,/A deliberately small source-locked collection/,"Sacred Hymns donor introduction drifted");
+assert.match(runtime,/Historical approved form\. The full wording is loaded directly from the public-domain source witness/,"Holy Name donor introduction drifted");
+assert.doesNotMatch(runtime,/aoTP381Hero/,"v38.1 traditional PRAY regained non-donor hero cards");
+assert.doesNotMatch(styles,/aoTP381Hero/,"v38.1 traditional PRAY regained non-donor hero styling");
+assert.match(styles,/aoTP381Intro/,"v38.1 donor intro geometry is absent");
+assert.match(styles,/aoTP381Lang/,"v38.1 donor hymn-language row is absent");
+assert.match(styles,/background:transparent/,"v38.1 flat donor surface hierarchy disappeared");
+assert.match(styles,/border-bottom:1px solid/,"v38.1 flat prayer-row separators disappeared");
 assert.match(browser,/import "\.\/traditional-pray-runtime\.js";/,"PRAY browser owner no longer installs v38.1 extracted modules");
 assert.match(assets,/"pray\.morning_evening"\s*:\s*"ao-rich-begin-end-day"/);
 assert.match(assets,/"pray\.sacred_hymns"\s*:\s*"ao-refined-devotions"/);

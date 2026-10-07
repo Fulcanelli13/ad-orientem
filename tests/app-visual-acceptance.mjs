@@ -614,6 +614,39 @@ try{
   assert.equal(prayReader.legacyOpen,false,"legacy Prayer Book reopened inside prayer reading");
   await shot("03b-pray-library-prayer");
 
+  // Later approved donor surfaces: N3 Novenas plus the v38.1 traditional PRAY modules.
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.novenas",{returnContext:null}));
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="novenas",null,{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 [data-n1-close]").count(),1,"Novenas lost the donor Close control");
+  assert.ok(await page.locator("#aoPray435930 .aoN1Card").count()>=12,"Novenas overview lost its curated N3 corpus");
+  await shot("03f-pray-novenas");
+
+  for(const [route,name] of [
+    ["pray.morning_evening","03g-pray-morning-evening"],
+    ["pray.sacred_hymns","03h-pray-sacred-hymns"],
+    ["pray.holy_name_litany","03i-pray-holy-name"],
+  ]){
+    await page.evaluate(route=>globalThis.AO_PRAY_V435930?.open?.(route,{returnContext:null}),route);
+    await page.waitForFunction(route=>{
+      const m=document.querySelector("#aoPray435930 .aoP435930Mount");
+      return m?.dataset?.aoPrayView==="traditional-pray"&&m?.dataset?.aoTraditionalPrayRoute===route;
+    },route,{timeout:5000});
+    assert.equal(await page.locator("#aoPray435930 [data-tp381-close]").count(),1,route+" lost the donor Close control");
+    assert.equal(await page.locator("#aoPray435930 .aoTP381Hero").count(),0,route+" regained a non-donor hero card");
+    assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,route+" lost its v38.1 donor introduction");
+    if(route==="pray.morning_evening"){
+      const rowGeometry=await page.evaluate(()=>{
+        const row=document.querySelector("#aoPray435930 .aoTP381PrayerList button");
+        const title=row?.querySelector("b")?.getBoundingClientRect();
+        const note=row?.querySelector("small")?.getBoundingClientRect();
+        return title&&note?{titleBottom:title.bottom,noteTop:note.top,titleRight:title.right,noteLeft:note.left}:null;
+      });
+      assert.ok(rowGeometry&&rowGeometry.noteTop>=rowGeometry.titleBottom+2,
+        "Morning/Evening prayer-row subtitle overlaps the title instead of occupying its donor second line");
+    }
+    await shot(name);
+  }
+
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
   await waitForFxSettled();
@@ -637,13 +670,13 @@ try{
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
   assert.deepEqual(learnParity.sectionTitles,["Daily formation","Courses & study","Traditional Catholic life","Today in context"],"Learn section hierarchy diverged from v43.59.30 plus recovered v38.1 traditional-life donor");
-  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","learn.seasonal_rites","today.gospel","today.saint"],"Learn launcher order diverged from recovered donor composition");
+  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel","today.saint"],"Learn launcher order diverged from final donor composition after v38.4 seasonal dedupe");
   assert.deepEqual(learnParity.featured,["learn.catechism.daily","learn.mass"],"Learn featured-card hierarchy diverged from locked v43.59.30");
   assert.equal(learnParity.donorNav,0,"historical V37 navigation leaked into modular Learn");
   assert.equal(learnParity.sourcesUtility,0,"Sources incorrectly resurfaced as a Learn launcher");
   assert.equal(learnParity.calendarDashboard,0,"Calendar dashboard duplicated inside Learn");
   assert.ok(learnParity.overflow<=1,"Learn has horizontal overflow on 390px phone geometry");
-  assert.equal(learnParity.cards.length,11,"Learn lost one of its eleven certified launchers");
+  assert.equal(learnParity.cards.length,10,"Learn launcher count diverged from the final donor after v38.4 seasonal dedupe");
   for(const card of learnParity.cards){assert.ok(card.w>300,"Learn card collapsed below phone-readable width");assert.ok(card.h>=90,"Learn card collapsed below approved touch/readability height");}
   const catechismIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.catechism'] .aoLearnModIcon[data-ao-asset-id='ao-module-catechism']");
   assert.equal(await catechismIcon.count(),1,"Traditional Catechism is missing its canonical icon");
@@ -657,6 +690,35 @@ try{
   assert.match(learnFx.hero,/modular-presentation-fx-v3/,"Learn formation hero did not receive recovered entry choreography");
   assert.equal(learnFx.rootScan,"legacy-v4312","Learn modular root bypassed the approved v43.12 art loader");
   await shot("04-learn");
+
+  for(const [route,name] of [
+    ["learn.rites.sick","04a-learn-serious-illness"],
+    ["learn.rites.baptism","04b-learn-baptism"],
+    ["learn.rites.matrimony","04c-learn-matrimony"],
+    ["learn.serve_mass.responses","04d-learn-low-mass-responses"],
+    ["learn.scapular","04e-learn-scapular"],
+  ]){
+    const opened=await page.evaluate(route=>globalThis.AO_LEARN_APP_V1?.openModule?.(route),route);
+    assert.equal(opened,true,route+" could not be opened from modular Learn");
+    await page.waitForFunction(route=>globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().open===true&&globalThis.AO_TRADITIONAL_LEARN_V381?.status?.().route===route,route,{timeout:5000});
+    assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").count(),1,route+" lost donor Back");
+    assert.equal(await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").count(),1,route+" lost donor Close");
+    assert.equal((await page.locator("#ao-learn-traditional-root .aoLearnTradTop small").textContent())?.trim(),"Lay Companion",route+" lost the v38.1 donor shell identity");
+    await shot(name);
+    await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-close]").click();
+    await page.waitForFunction(()=>!document.getElementById("ao-learn-traditional-root")&&globalThis.AO_LEARN_APP_V1?.status?.().child===null,null,{timeout:5000});
+    await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
+  }
+
+  // Final v38.4 donor deduplicates Seasonal Catholic Practice and keeps it only as a compatibility route.
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module='learn.seasonal_rites']").count(),0,"duplicate Seasonal Catholic Practice launcher returned");
+  const seasonalAlias=await page.evaluate(()=>globalThis.AO_MODULES?.open?.("learn.seasonal_rites",{returnContext:{surface:"learn"}}));
+  assert.equal(seasonalAlias?.ok,true,"Seasonal compatibility route failed");
+  await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:5000});
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearWheel").count(),1,"Seasonal compatibility route did not reach the richer liturgical-year Calendar");
+  await shot("04f-seasonal-year-alias");
+  await page.locator("[data-ao-app-surface='learn']").click();
+  await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
 
   await page.locator("[data-ao-app-surface='settings']").click();
   await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
