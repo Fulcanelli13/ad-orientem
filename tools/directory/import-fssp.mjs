@@ -49,7 +49,7 @@ function rowRecord(row,pageUrl,index){
     address=nonEmpty[1]?.text??null;
     description=nonEmpty.slice(2).map(x=>x.text).join(" ");
   }
-  if(!title||/^title$/i.test(title)||/^address$/i.test(address??""))return null;
+  if(!title||/^(image|title|address|description|link)$/i.test(title)||/^(image|title|address|description|link)$/i.test(address??""))return null;
   const countryCode=countryCodeFromText(address)??countryCodeFromText(description);
   const detailUrl=rowLink(row,pageUrl);
   return {index,title,address,description,countryCode,detailUrl,diocese:dioceseFromText(description),massRaw:massText(description)};
