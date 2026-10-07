@@ -471,7 +471,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le latin s’entend d’abord comme un son"
+        }
+      }
     },
     {
       "id": "l1-b2",
@@ -485,7 +490,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une petite carte des sons"
+        }
+      }
     },
     {
       "id": "l1-b3",
@@ -499,7 +509,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Entendre la syllabe accentuée"
+        }
+      }
     },
     {
       "id": "l1-b4",
@@ -513,7 +528,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Votre premier mot suivi : et"
+        }
+      }
     },
     {
       "id": "l1-b5",
@@ -529,7 +549,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une réponse que vous entendez déjà"
+        }
+      }
     },
     {
       "id": "l1-b6",
@@ -545,7 +570,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Repérer le mot charnière"
+        }
+      }
     },
     {
       "id": "l1-b7",
@@ -561,7 +591,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Reconnaître avant d’analyser"
+        }
+      }
     },
     {
       "id": "l1-b8",
@@ -575,7 +610,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ce que vous devez retenir"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -675,7 +715,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie et ?",
+          "hint": "Il relie un mot ou un groupe de mots à un autre.",
+          "explanation": "et est la conjonction invariable « et ».",
+          "options": [
+            "et",
+            "avec",
+            "de",
+            "saint"
+          ]
+        }
+      }
     },
     {
       "id": "l1-e2",
@@ -706,7 +759,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le mot du vocabulaire fondamental suivi dans cette réponse.",
+          "hint": "Un seul mot appartient au vocabulaire actif de la leçon 1.",
+          "explanation": "Et est le mot du vocabulaire fondamental de la leçon 1. cum, spiritu et tuo sont volontairement fournis comme aide de lecture et seront enseignés plus tard."
+        }
+      }
     },
     {
       "id": "l1-e3",
@@ -737,7 +797,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Choisissez le sens fourni de la réponse complète.",
+          "hint": "et = et ; les autres mots sont fournis comme aide à la lecture.",
+          "explanation": "La réponse fixe signifie « Et avec votre esprit. » L’exercice vérifie la reconnaissance de l’unité entendue dans son ensemble sans prétendre que les mots ultérieurs ont déjà été appris.",
+          "options": [
+            "Et avec votre esprit.",
+            "Gloire à Dieu.",
+            "Seigneur, ayez pitié.",
+            "Nous rendons grâce à Dieu."
+          ]
+        }
+      }
     },
     {
       "id": "l1-e4",
@@ -766,7 +839,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Comment se prononce le c de cum en latin ecclésiastique romain ?",
+          "hint": "Le c n’est pas devant e, ae, oe, i ou y.",
+          "explanation": "Devant u, c reste dur : cum commence par un son k.",
+          "options": [
+            "k",
+            "ch",
+            "s",
+            "ts"
+          ]
+        }
+      }
     },
     {
       "id": "l1-e5",
@@ -796,7 +882,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Comment se prononce le c de caelum ?",
+          "hint": "c devant ae suit la règle du c doux.",
+          "explanation": "caelum commence approximativement par « TCHÉ- ». Le mot ne sert ici que d’aide à la prononciation ; sa leçon de vocabulaire fondamental reste la leçon 3.",
+          "options": [
+            "ch",
+            "k",
+            "s",
+            "g"
+          ]
+        }
+      }
     },
     {
       "id": "l1-e6",
@@ -826,7 +925,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel guide correspond le mieux à gn dans Agnus ?",
+          "hint": "Pensez au son « gn » de « agneau ».",
+          "explanation": "En prononciation ecclésiastique romaine, gn correspond approximativement au son palatal « gn ».",
+          "options": [
+            "gn",
+            "g dur + n",
+            "j",
+            "ch"
+          ]
+        }
+      }
     },
     {
       "id": "l1-e7",
@@ -856,7 +968,19 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle syllabe porte l’accent tonique indiqué ?",
+          "hint": "L’accent aigu est un signe pédagogique d’accentuation.",
+          "explanation": "Le cours écrit spíritu au début de l’apprentissage afin que l’élève entende l’accent avant d’apprendre toutes les règles d’accentuation.",
+          "options": [
+            "spí",
+            "ri",
+            "tu"
+          ]
+        }
+      }
     },
     {
       "id": "l1-e8",
@@ -890,7 +1014,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez chaque occurrence de et dans cette proposition authentique du Credo.",
+          "hint": "Il y en a deux : l’une ouvre la proposition et l’autre suit les deux-points.",
+          "explanation": "Vous pouvez déjà reconnaître deux fois la conjonction sans analyser la morphologie avancée qui l’entoure."
+        }
+      }
     },
     {
       "id": "l1-e9",
@@ -922,7 +1053,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Lisez la réponse à haute voix, puis comparez-vous au guide-modèle.",
+          "hint": "Gardez les voyelles nettes ; n’avalez pas spiritu en syllabes à l’anglaise.",
+          "explanation": "Ceci est un exercice d’auto-évaluation. Le guide-modèle fournit une cible vérifiable même avant l’ajout d’un enregistrement audio."
+        }
+      }
     },
     {
       "id": "l1-e10",
@@ -946,7 +1084,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sans revenir en arrière : quel unique lemme du vocabulaire fondamental a été formellement introduit à la leçon 1 ?",
+          "hint": "C’est la conjonction repérée dans les trois passages authentiques.",
+          "explanation": "La leçon 1 n’introduit volontairement que et. Tous les autres mots latins de la leçon sont des aides et ne sont pas ajoutés implicitement au vocabulaire."
+        }
+      }
     }
   ],
   "checkpoint": {
@@ -1003,5 +1148,19 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Entendre le latin de l’Église",
+      "grammarFocus": "Prononciation ecclésiastique ; accent tonique ; écoute et reconnaissance",
+      "readingOutcome": "Entendre et prononcer des expressions liturgiques authentiques.",
+      "objectives": [
+        "Entendre le latin comme un système phonétique régulier, et non comme de l’anglais lu avec une orthographe latine.",
+        "Utiliser l’accent tonique indiqué par le cours pour prononcer des mots liturgiques inconnus.",
+        "Reconnaître et comprendre et comme la conjonction « et ».",
+        "Lire Et cum spiritu tuo à haute voix avec un accompagnement explicite.",
+        "Repérer et dans des textes authentiques de l’Ordinaire sans devoir analyser le vocabulaire ultérieur qui l’entoure."
+      ]
+    }
+  }
 }

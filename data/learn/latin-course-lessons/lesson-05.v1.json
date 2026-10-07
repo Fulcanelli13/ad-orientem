@@ -359,7 +359,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La terminaison verbale indique qui agit"
+        }
+      }
     },
     {
       "id": "l5-b2",
@@ -373,7 +378,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lire la personne et le nombre"
+        }
+      }
     },
     {
       "id": "l5-b3",
@@ -389,7 +399,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Quatre verbes, un même schéma de terminaison"
+        }
+      }
     },
     {
       "id": "l5-b4",
@@ -405,7 +420,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Credo"
+        }
+      }
     },
     {
       "id": "l5-b5",
@@ -419,7 +439,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Appliquer le même système à de nouveaux verbes"
+        }
+      }
     },
     {
       "id": "l5-b6",
@@ -433,7 +458,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Jalon de lecture de l’étape 1"
+        }
+      }
     },
     {
       "id": "l5-b7",
@@ -447,7 +477,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Du groupe de mots à la phrase"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -538,7 +573,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle personne et quel nombre pour Laudamus ?",
+          "hint": "La terminaison -mus est l’indice.",
+          "explanation": "Laudamus signifie « nous louons ».",
+          "options": [
+            "première personne du pluriel",
+            "première personne du singulier",
+            "troisième personne du pluriel",
+            "deuxième personne du singulier"
+          ]
+        }
+      }
     },
     {
       "id": "l5-e2",
@@ -569,7 +617,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle personne et quel nombre pour Credo ?",
+          "hint": "Comparez -o et -mus.",
+          "explanation": "Credo signifie « je crois ».",
+          "options": [
+            "première personne du singulier",
+            "première personne du pluriel",
+            "troisième personne du singulier",
+            "deuxième personne du pluriel"
+          ]
+        }
+      }
     },
     {
       "id": "l5-e3",
@@ -602,7 +663,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les quatre verbes au présent.",
+          "hint": "Ignorez te ; il est fourni comme aide.",
+          "explanation": "Les quatre formes en -mus sont des verbes actifs de la leçon 5."
+        }
+      }
     },
     {
       "id": "l5-e4",
@@ -632,7 +700,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le lemme verbal à son sens.",
+          "hint": "Ce sont tous de nouveaux verbes de la leçon 5.",
+          "explanation": "Ceci vérifie le vocabulaire actif.",
+          "matches": {
+            "audio": "entendre",
+            "venio": "venir",
+            "habeo": "avoir",
+            "amo": "aimer"
+          }
+        }
+      }
     },
     {
       "id": "l5-e5",
@@ -662,7 +743,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le lemme verbal à son sens.",
+          "hint": "Tous appartiennent à la même leçon.",
+          "explanation": "Ceci élargit la récupération lexicale contrôlée.",
+          "matches": {
+            "video": "voir",
+            "voco": "appeler",
+            "mitto": "envoyer",
+            "maneo": "demeurer"
+          }
+        }
+      }
     },
     {
       "id": "l5-e6",
@@ -694,7 +788,21 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le lemme verbal restant à son sens.",
+          "hint": "Utilisez les gloses de la leçon.",
+          "explanation": "Ce sont les familles verbales actives restantes.",
+          "matches": {
+            "aperio": "ouvrir",
+            "pono": "poser / placer",
+            "sto": "se tenir debout",
+            "timeo": "craindre",
+            "servio": "servir"
+          }
+        }
+      }
     },
     {
       "id": "l5-e7",
@@ -722,7 +830,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle conjonction introduite à la leçon 5 signifie « mais » ?",
+          "hint": "Elle oppose deux propositions.",
+          "explanation": "sed = mais.",
+          "options": [
+            "sed",
+            "et",
+            "non",
+            "via"
+          ]
+        }
+      }
     },
     {
       "id": "l5-e8",
@@ -752,7 +873,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Dans le groupe Gloria tua, que montre tua ?",
+          "hint": "Rappelez-vous la leçon 4.",
+          "explanation": "tua s’accorde avec gloria.",
+          "options": [
+            "accord de l’adjectif",
+            "personne du verbe",
+            "un nouveau nom",
+            "seulement l’ordre des mots"
+          ]
+        }
+      }
     },
     {
       "id": "l5-e9",
@@ -781,7 +915,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme appartient au lemme sum ?",
+          "hint": "Rappelez-vous la leçon 3.",
+          "explanation": "sunt est une forme du présent de sum.",
+          "options": [
+            "sunt",
+            "terra",
+            "sanctus",
+            "credo"
+          ]
+        }
+      }
     },
     {
       "id": "l5-e10",
@@ -810,7 +957,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelles deux fonctions casuelles sont actives à la fin de l’étape 1 ?",
+          "hint": "Les quatre autres restent visibles comme aperçus.",
+          "explanation": "L’étape 1 active uniquement le nominatif et le vocatif.",
+          "options": [
+            "nominatif et vocatif",
+            "génitif et datif",
+            "accusatif et ablatif",
+            "les six de manière égale"
+          ]
+        }
+      }
     },
     {
       "id": "l5-e11",
@@ -838,7 +998,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les mots dont les lemmes sont déjà actifs à la fin de l’étape 1.",
+          "hint": "vobiscum reste une aide pour plus tard.",
+          "explanation": "Cela évite que l’élève confonde exposition fréquente et introduction formelle."
+        }
+      }
     },
     {
       "id": "l5-e12",
@@ -868,7 +1035,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les mots actifs dans l’ouverture du Credo.",
+          "hint": "Deum est une forme fléchie de Deus ; les autres mots sont fournis comme aide pour plus tard.",
+          "explanation": "Le jalon accepte comme lecture active les formes fléchies de lemmes appris."
+        }
+      }
     },
     {
       "id": "l5-e13",
@@ -893,7 +1067,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le lemme correspondant à Deum ?",
+          "hint": "Distinguez la forme rencontrée du lemme.",
+          "explanation": "Deum appartient à Deus, appris à la leçon 3."
+        }
+      }
     },
     {
       "id": "l5-e14",
@@ -922,7 +1103,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui marque ici la progression atteinte à l’étape 1 ?",
+          "hint": "C’est le premier des quatre niveaux de progression du cours.",
+          "explanation": "La leçon 5 est le premier jalon cumulatif de lecture de phrase.",
+          "options": [
+            "groupe de mots → phrase",
+            "phrase → passage",
+            "passage → lecture autonome",
+            "liste de vocabulaire → dictionnaire"
+          ]
+        }
+      }
     }
   ],
   "durationMinutes": 45,
@@ -1134,5 +1328,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Nous louons, bénissons, adorons",
+      "grammarFocus": "Verbes actifs au présent",
+      "readingOutcome": "Analyser la personne et le nombre tout en conservant la reconnaissance des cas nominaux.",
+      "objectives": [
+        "Lire les formes du présent à la première personne du singulier et du pluriel.",
+        "Apprendre les dix-neuf lemmes figés de la leçon 5.",
+        "Conserver la reconnaissance des cas et de l’accord pendant la lecture des verbes.",
+        "Franchir le premier jalon groupe de mots → phrase au moyen d’un texte authentique de l’Ordinaire."
+      ]
+    }
+  }
 }

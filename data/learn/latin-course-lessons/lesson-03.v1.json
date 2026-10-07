@@ -345,7 +345,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une deuxième famille de désinences"
+        }
+      }
     },
     {
       "id": "l3-b2",
@@ -359,7 +364,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le nominatif et le vocatif restent actifs"
+        }
+      }
     },
     {
       "id": "l3-b3",
@@ -373,7 +383,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le verbe esse"
+        }
+      }
     },
     {
       "id": "l3-b4",
@@ -387,7 +402,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "possum se construit sur sum"
+        }
+      }
     },
     {
       "id": "l3-b5",
@@ -403,7 +423,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Hoc est"
+        }
+      }
     },
     {
       "id": "l3-b6",
@@ -419,7 +444,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Puer natus est nobis"
+        }
+      }
     },
     {
       "id": "l3-b7",
@@ -433,7 +463,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une seule carte cumulative"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -523,7 +558,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est un présent de sum ?",
+          "hint": "Pensez à « est ».",
+          "explanation": "est appartient au lemme sum.",
+          "options": [
+            "est",
+            "terra",
+            "gloria",
+            "via"
+          ]
+        }
+      }
     },
     {
       "id": "l3-e2",
@@ -553,7 +601,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez les noms de la deuxième déclinaison à leur sens.",
+          "hint": "Tous sont de nouveaux lemmes de la leçon 3.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale.",
+          "matches": {
+            "Dominus": "Seigneur",
+            "filius": "fils",
+            "regnum": "royaume",
+            "verbum": "parole"
+          }
+        }
+      }
     },
     {
       "id": "l3-e3",
@@ -582,7 +643,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nom est neutre dans l’ensemble de la leçon 3 ?",
+          "hint": "Les noms neutres de la deuxième déclinaison se présentent souvent en -um.",
+          "explanation": "templum est neutre.",
+          "options": [
+            "templum",
+            "servus",
+            "puer",
+            "magister"
+          ]
+        }
+      }
     },
     {
       "id": "l3-e4",
@@ -610,7 +684,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le nom de la leçon 3 dans la salutation.",
+          "hint": "Le reste est fourni comme aide jusqu’aux leçons ultérieures.",
+          "explanation": "Dominus appartient au vocabulaire fondamental actif."
+        }
+      }
     },
     {
       "id": "l3-e5",
@@ -638,7 +719,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez la forme de sum.",
+          "hint": "Cherchez « est ».",
+          "explanation": "est est la troisième personne du singulier du présent de sum."
+        }
+      }
     },
     {
       "id": "l3-e6",
@@ -667,7 +755,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme du présent signifie « nous sommes » ?",
+          "hint": "Cherchez la première personne du pluriel.",
+          "explanation": "sumus signifie « nous sommes ».",
+          "options": [
+            "sum",
+            "es",
+            "sumus",
+            "sunt"
+          ]
+        }
+      }
     },
     {
       "id": "l3-e7",
@@ -696,7 +797,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme du présent de possum signifie « il/elle peut » ?",
+          "hint": "Troisième personne du singulier.",
+          "explanation": "potest est la troisième personne du singulier.",
+          "options": [
+            "possum",
+            "potes",
+            "potest",
+            "possunt"
+          ]
+        }
+      }
     },
     {
       "id": "l3-e8",
@@ -732,7 +846,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez tous les mots déjà appris ou appris actuellement dans l’ouverture de l’Introït de Noël.",
+          "hint": "Ne sélectionnez pas les mots d’aide natus, nobis, datus.",
+          "explanation": "Cela montre une lecture cumulative sans enseigner implicitement les mots d’aide."
+        }
+      }
     },
     {
       "id": "l3-e9",
@@ -761,7 +882,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle fonction casuelle reste active pour l’adresse directe ?",
+          "hint": "La carte des cas se poursuit depuis la leçon 2.",
+          "explanation": "Le vocatif reste actif ; les cas ultérieurs ne sont encore que prévisualisés.",
+          "options": [
+            "vocatif",
+            "génitif",
+            "ablatif",
+            "accusatif"
+          ]
+        }
+      }
     },
     {
       "id": "l3-e10",
@@ -784,7 +918,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le lemme latin pour « parole ».",
+          "hint": "C’est un nom neutre de la deuxième déclinaison.",
+          "explanation": "verbum est un nom fondamental de la leçon 3."
+        }
+      }
     }
   ],
   "durationMinutes": 40,
@@ -983,5 +1124,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Dominus Deus",
+      "grammarFocus": "Deuxième déclinaison ; esse",
+      "readingOutcome": "Étendre la reconnaissance des formes casuelles aux noms masculins et neutres de la deuxième déclinaison.",
+      "objectives": [
+        "Ajouter les formes masculines et neutres de la deuxième déclinaison à la carte persistante des cas.",
+        "Reconnaître les formes du présent de sum et de possum.",
+        "Apprendre les dix-sept lemmes figés de la leçon 3.",
+        "Lire est comme une forme de sum dans des propositions liturgiques authentiques."
+      ]
+    }
+  }
 }

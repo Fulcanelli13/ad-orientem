@@ -115,6 +115,11 @@ let referencedLearningBlocks = 0;
 let referencedExercises = 0;
 let bilingualLearningBlocks = 0;
 let bilingualVocabularyEntries = 0;
+let localizedFrLessonTitles = 0;
+let localizedFrBlockTitles = 0;
+let localizedFrExercisePrompts = 0;
+let localizedFrExerciseHints = 0;
+let localizedFrExerciseExplanations = 0;
 
 function expectedActiveCases(lessonNumber) {
   if (lessonNumber < 2) return [];
@@ -209,6 +214,20 @@ for (const lesson of authored) {
   assert(lesson.validation?.explanationReferencesResolved === true,
     `Lesson ${n} must declare explanationReferencesResolved=true`);
 
+  if (n <= 5) {
+    const fr = lesson.localization?.fr;
+    assert(typeof fr?.title === "string" && fr.title.trim().length > 0,
+      `Lesson ${n} missing French lesson title`);
+    assert(typeof fr?.grammarFocus === "string" && fr.grammarFocus.trim().length > 0,
+      `Lesson ${n} missing French grammarFocus`);
+    assert(typeof fr?.readingOutcome === "string" && fr.readingOutcome.trim().length > 0,
+      `Lesson ${n} missing French readingOutcome`);
+    assert(Array.isArray(fr?.objectives) && fr.objectives.length === lesson.objectives.length &&
+      fr.objectives.every(x => typeof x === "string" && x.trim().length > 0),
+      `Lesson ${n} French objectives must match canonical objective cardinality`);
+    localizedFrLessonTitles++;
+  }
+
   for (const source of lesson.sources || []) {
     for (const ref of source.corpusReferenceIds || []) {
       assert(globalReferenceIds.has(ref), `Lesson ${n} source ${source.id} has unresolved corpus reference: ${ref}`);
@@ -243,6 +262,11 @@ for (const lesson of authored) {
         `Lesson ${n} block ${block.id} missing French learner copy`);
       bilingualLearningBlocks++;
     }
+    if (n <= 5) {
+      assert(typeof block.localization?.fr?.title === "string" && block.localization.fr.title.trim().length > 0,
+        `Lesson ${n} block ${block.id} missing French title`);
+      localizedFrBlockTitles++;
+    }
     if (block.sourceId) {
       assert(sourceIds.has(block.sourceId), `Lesson ${n} block ${block.id} references unknown source ${block.sourceId}`);
     }
@@ -264,6 +288,33 @@ for (const lesson of authored) {
     assert(Array.isArray(exercise.acceptedVariants), `Lesson ${n} exercise ${exercise.id} acceptedVariants must be an array`);
     assert(typeof exercise.hint === "string" && exercise.hint.length > 0, `Lesson ${n} exercise ${exercise.id} missing hint`);
     assert(typeof exercise.explanation === "string" && exercise.explanation.length > 0, `Lesson ${n} exercise ${exercise.id} missing explanation`);
+    if (n <= 5) {
+      const fr = exercise.localization?.fr;
+      assert(typeof fr?.prompt === "string" && fr.prompt.trim().length > 0,
+        `Lesson ${n} exercise ${exercise.id} missing French prompt`);
+      assert(typeof fr?.hint === "string" && fr.hint.trim().length > 0,
+        `Lesson ${n} exercise ${exercise.id} missing French hint`);
+      assert(typeof fr?.explanation === "string" && fr.explanation.trim().length > 0,
+        `Lesson ${n} exercise ${exercise.id} missing French explanation`);
+      assert(!Object.prototype.hasOwnProperty.call(fr, "expectedAnswer") &&
+        !Object.prototype.hasOwnProperty.call(fr, "acceptedVariants"),
+        `Lesson ${n} exercise ${exercise.id} French localization must not override canonical grading values`);
+      if (Array.isArray(exercise.options)) {
+        assert(Array.isArray(fr.options) && fr.options.length === exercise.options.length &&
+          fr.options.every(x => typeof x === "string" && x.trim().length > 0),
+          `Lesson ${n} exercise ${exercise.id} French options must align 1:1 with canonical options`);
+      }
+      if (exercise.exerciseType === "matching") {
+        const canonicalKeys = Object.keys(exercise.expectedAnswer || {}).sort();
+        const localizedKeys = Object.keys(fr.matches || {}).sort();
+        assert(JSON.stringify(localizedKeys) === JSON.stringify(canonicalKeys) &&
+          localizedKeys.every(k => typeof fr.matches[k] === "string" && fr.matches[k].trim().length > 0),
+          `Lesson ${n} matching exercise ${exercise.id} French labels must preserve canonical key mapping`);
+      }
+      localizedFrExercisePrompts++;
+      localizedFrExerciseHints++;
+      localizedFrExerciseExplanations++;
+    }
     assert(Number.isInteger(exercise.difficulty) && exercise.difficulty >= 1 && exercise.difficulty <= 5,
       `Lesson ${n} exercise ${exercise.id} difficulty must be 1-5`);
     if (exercise.sourceId !== null) {
@@ -557,12 +608,20 @@ if (authored.length >= 40) {
 }
 
 // French parity baseline locks.
-assert(frParityAudit.status === "PARTIAL_PARITY_GAP_IDENTIFIED",
-  "French parity audit must preserve the known partial-parity state until localized exercise/UI fields are completed");
+assert(frParityAudit.status === "PARTIAL_PARITY_STAGE1_COMPLETE",
+  "French parity audit must record Stage 1 completion before later batches proceed");
 assert(frParityAudit.complete?.learnerCopy?.presentEnFr === 245,
   "French parity audit learnerCopy baseline must remain 245/245");
 assert(frParityAudit.complete?.vocabularyGlosses?.presentEnFr === 835,
   "French parity audit vocabulary baseline must remain 835/835");
+assert(localizedFrLessonTitles === 5,
+  `Stage 1 French lesson-title gate expected 5, got ${localizedFrLessonTitles}`);
+assert(localizedFrBlockTitles === 35,
+  `Stage 1 French block-title gate expected 35, got ${localizedFrBlockTitles}`);
+assert(localizedFrExercisePrompts === 54 && localizedFrExerciseHints === 54 && localizedFrExerciseExplanations === 54,
+  `Stage 1 French exercise-text gate expected 54/54/54, got ${localizedFrExercisePrompts}/${localizedFrExerciseHints}/${localizedFrExerciseExplanations}`);
+assert(frParityAudit.complete?.stage1?.gradingValuesChanged === 0,
+  "Stage 1 French parity audit must record zero canonical grading changes");
 
 // High-risk textual/liturgical source locks.
 assert(textualAudit.status === "HIGH_RISK_PASS_COMPLETE", "textual audit baseline must be complete");
@@ -664,5 +723,13 @@ console.log(JSON.stringify({
   bilingualBaselineCoverage: {
     learnerCopyBlocks: bilingualLearningBlocks,
     vocabularyAndSupportGlosses: bilingualVocabularyEntries
+  },
+  frenchParityStage1: {
+    lessonTitles: localizedFrLessonTitles,
+    blockTitles: localizedFrBlockTitles,
+    exercisePrompts: localizedFrExercisePrompts,
+    exerciseHints: localizedFrExerciseHints,
+    exerciseExplanations: localizedFrExerciseExplanations,
+    canonicalGradingOverrides: 0
   }
 }, null, 2));

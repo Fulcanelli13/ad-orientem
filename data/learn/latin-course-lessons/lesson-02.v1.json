@@ -334,7 +334,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les désinences portent de l’information"
+        }
+      }
     },
     {
       "id": "l2-b2",
@@ -348,7 +353,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La carte des six cas"
+        }
+      }
     },
     {
       "id": "l2-b3",
@@ -362,7 +372,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La forme de la première déclinaison"
+        }
+      }
     },
     {
       "id": "l2-b4",
@@ -378,7 +393,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Mea culpa"
+        }
+      }
     },
     {
       "id": "l2-b5",
@@ -394,7 +414,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Même lemme, désinence différente"
+        }
+      }
     },
     {
       "id": "l2-b6",
@@ -408,7 +433,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ce qui reste actif"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -500,7 +530,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas est actuellement actif pour nommer le sujet ?",
+          "hint": "Pensez : nommer.",
+          "explanation": "Le nominatif est le cas actif de nomination ou du sujet dans la leçon 2.",
+          "options": [
+            "nominatif",
+            "vocatif",
+            "génitif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l2-e2",
@@ -528,7 +571,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas est actuellement actif pour l’adresse directe ?",
+          "hint": "Pensez : appeler quelqu’un.",
+          "explanation": "Le vocatif s’emploie pour l’adresse directe.",
+          "options": [
+            "nominatif",
+            "vocatif",
+            "datif",
+            "accusatif"
+          ]
+        }
+      }
     },
     {
       "id": "l2-e3",
@@ -560,7 +616,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le nom de la leçon 2 dans cette phrase du Confiteor.",
+          "hint": "Repérez le nom répété, et non les adjectifs fournis.",
+          "explanation": "culpa appartient au vocabulaire fondamental actif ; mea et maxima sont des aides."
+        }
+      }
     },
     {
       "id": "l2-e4",
@@ -590,7 +653,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme de dictionnaire est enseignée pour « vie » ?",
+          "hint": "Le cours mémorise le lemme, pas chaque forme fléchie.",
+          "explanation": "vita est le lemme suivi ; vitam dans le Credo est une forme fléchie.",
+          "options": [
+            "vita",
+            "vitam",
+            "vitae",
+            "vitas"
+          ]
+        }
+      }
     },
     {
       "id": "l2-e5",
@@ -618,7 +694,18 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "vitam compte-t-il comme un deuxième élément de vocabulaire après vita ?",
+          "hint": "Un changement de désinence relève de la morphologie, pas d’un nouveau lemme.",
+          "explanation": "vita et vitam appartiennent à la même famille de lemme.",
+          "options": [
+            "oui",
+            "non"
+          ]
+        }
+      }
     },
     {
       "id": "l2-e6",
@@ -648,7 +735,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom latin à son sens.",
+          "hint": "Les quatre sont de nouveaux lemmes fondamentaux de première déclinaison.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale sans introduire de grammaire supplémentaire.",
+          "matches": {
+            "aqua": "eau",
+            "via": "voie",
+            "ecclesia": "Église",
+            "anima": "âme"
+          }
+        }
+      }
     },
     {
       "id": "l2-e7",
@@ -679,7 +779,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle désinence visible de première déclinaison peut servir à la fois de nominatif et de vocatif singulier ?",
+          "hint": "Seuls les deux cas actifs importent ici.",
+          "explanation": "Le nominatif et le vocatif singuliers de la première déclinaison sont tous deux présentés en -a.",
+          "options": [
+            "-a",
+            "-am",
+            "-ae",
+            "-is"
+          ]
+        }
+      }
     },
     {
       "id": "l2-e8",
@@ -712,7 +825,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les deux noms de la leçon 2 dans cette ouverture du Gloria.",
+          "hint": "Ignorez le vocabulaire ultérieur fourni comme aide.",
+          "explanation": "gloria et terra sont des noms actifs de la leçon 2."
+        }
+      }
     },
     {
       "id": "l2-e9",
@@ -735,7 +855,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le lemme latin pour « justice / droiture ».",
+          "hint": "Il se termine par -a.",
+          "explanation": "iustitia est l’un des noms fondamentaux de la leçon 2."
+        }
+      }
     },
     {
       "id": "l2-e10",
@@ -763,7 +890,19 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que devez-vous faire des génitif, datif, accusatif et ablatif dans la leçon 2 ?",
+          "hint": "Le panneau des cas reste affiché.",
+          "explanation": "Les cas ultérieurs restent visibles mais leurs fonctions ne sont pas encore actives.",
+          "options": [
+            "les garder visibles comme aperçu",
+            "maîtriser maintenant toutes leurs fonctions",
+            "les masquer jusqu’à la leçon 9"
+          ]
+        }
+      }
     }
   ],
   "durationMinutes": 35,
@@ -901,5 +1040,19 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Mea culpa",
+      "grammarFocus": "Désinences, système des cas, première déclinaison",
+      "readingOutcome": "Voir la carte complète des six cas ; identifier activement le nominatif et le vocatif ; reconnaître les désinences de la première déclinaison.",
+      "objectives": [
+        "Voir les six noms de cas dès le début de l’étude nominale.",
+        "Identifier activement le nominatif et le vocatif comme premiers cas fonctionnels.",
+        "Reconnaître les principales désinences de la première déclinaison sans traiter chaque forme comme un mot nouveau.",
+        "Apprendre les douze lemmes figés de la leçon 2.",
+        "Reconnaître vita/vitam comme un même lemme à travers des formes différentes."
+      ]
+    }
+  }
 }

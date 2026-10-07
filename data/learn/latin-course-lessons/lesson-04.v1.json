@@ -339,7 +339,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’accord montre quels mots vont ensemble"
+        }
+      }
     },
     {
       "id": "l4-b2",
@@ -353,7 +358,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La carte des cas reste affichée"
+        }
+      }
     },
     {
       "id": "l4-b3",
@@ -367,7 +377,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Adjectifs de première et deuxième déclinaisons"
+        }
+      }
     },
     {
       "id": "l4-b4",
@@ -383,7 +398,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Pleni sunt caeli"
+        }
+      }
     },
     {
       "id": "l4-b5",
@@ -399,7 +419,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Spiritui Sancto"
+        }
+      }
     },
     {
       "id": "l4-b6",
@@ -415,7 +440,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "meus change lui aussi"
+        }
+      }
     },
     {
       "id": "l4-b7",
@@ -429,7 +459,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’accord est un outil de lecture"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -530,7 +565,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel adjectif signifie « saint » ?",
+          "hint": "Il apparaît trois fois au début du Sanctus.",
+          "explanation": "sanctus est l’adjectif « saint » de la leçon 4.",
+          "options": [
+            "sanctus",
+            "terra",
+            "verbum",
+            "possum"
+          ]
+        }
+      }
     },
     {
       "id": "l4-e2",
@@ -560,7 +608,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’adjectif à son sens.",
+          "hint": "Tous appartiennent au vocabulaire actif de la leçon 4.",
+          "explanation": "Ceci vérifie le nouvel ensemble d’adjectifs.",
+          "matches": {
+            "magnus": "grand",
+            "iustus": "juste",
+            "novus": "nouveau",
+            "fidelis": "fidèle"
+          }
+        }
+      }
     },
     {
       "id": "l4-e3",
@@ -588,7 +649,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez l’adjectif qui s’accorde avec gloria.",
+          "hint": "Cherchez l’adjectif possessif signifiant « votre ».",
+          "explanation": "tua est une forme de tuus et s’accorde avec gloria."
+        }
+      }
     },
     {
       "id": "l4-e4",
@@ -617,7 +685,18 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sancto dans Spiritui Sancto constitue-t-il un nouveau lemme distinct de sanctus ?",
+          "hint": "Pensez au lemme par opposition à la forme fléchie.",
+          "explanation": "Sancto est une forme fléchie de sanctus.",
+          "options": [
+            "oui",
+            "non"
+          ]
+        }
+      }
     },
     {
       "id": "l4-e5",
@@ -645,7 +724,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez la forme de l’adjectif possessif.",
+          "hint": "Elle vient de meus.",
+          "explanation": "meum est la forme de meus qui s’accorde ici."
+        }
+      }
     },
     {
       "id": "l4-e6",
@@ -674,7 +760,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle paire est explicitement liée par l’accord dans la ligne du Sanctus ?",
+          "hint": "Un nom et un adjectif possessif.",
+          "explanation": "gloria tua forme une paire liée par l’accord.",
+          "options": [
+            "gloria tua",
+            "gloria pleni",
+            "terra tuae",
+            "Deus tua"
+          ]
+        }
+      }
     },
     {
       "id": "l4-e7",
@@ -703,7 +802,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel adjectif de la leçon 4 signifie « plein » ?",
+          "hint": "Pensez à Pleni sunt caeli.",
+          "explanation": "plenus signifie « plein ».",
+          "options": [
+            "plenus",
+            "primus",
+            "salvus",
+            "similis"
+          ]
+        }
+      }
     },
     {
       "id": "l4-e8",
@@ -731,7 +843,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Avec quelles informations l’adjectif doit-il s’accorder avec son nom ?",
+          "hint": "L’accord est morphologique.",
+          "explanation": "Les adjectifs latins s’accordent en genre, nombre et cas.",
+          "options": [
+            "genre, nombre et cas",
+            "seulement l’ordre des mots",
+            "seulement le sens",
+            "temps et personne"
+          ]
+        }
+      }
     },
     {
       "id": "l4-e9",
@@ -776,7 +901,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez tous les mots déjà appris à la fin de la leçon 4.",
+          "hint": "Chaque mot ici appartient à un lemme fondamental actuel ou antérieur.",
+          "explanation": "La ligne montre maintenant à quelle vitesse la couverture cumulative augmente."
+        }
+      }
     },
     {
       "id": "l4-e10",
@@ -800,7 +932,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le lemme correspondant à la forme tua.",
+          "hint": "La forme de dictionnaire, pas la forme rencontrée.",
+          "explanation": "tua appartient au lemme adjectival tuus."
+        }
+      }
     }
   ],
   "durationMinutes": 40,
@@ -975,5 +1114,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Saint, bienheureux, tout-puissant",
+      "grammarFocus": "Accord de l’adjectif",
+      "readingOutcome": "Faire correspondre les désinences adjectivales avec le cas, le nombre et le genre.",
+      "objectives": [
+        "Lire l’accord adjectival comme un signal structurel.",
+        "Apprendre les dix-sept adjectifs figés de la leçon 4.",
+        "Reconnaître les formes adjectivales modifiées comme appartenant à une même famille de lemme.",
+        "Garder la carte cumulative des cas visible lors de la lecture de groupes nom-adjectif."
+      ]
+    }
+  }
 }

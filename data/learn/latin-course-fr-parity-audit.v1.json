@@ -1,6 +1,6 @@
 {
-  "version": "latin-course-fr-parity-audit-v1.0",
-  "status": "PARTIAL_PARITY_GAP_IDENTIFIED",
+  "version": "latin-course-fr-parity-audit-v1.1",
+  "status": "PARTIAL_PARITY_STAGE1_COMPLETE",
   "audited": "2026-10-07",
   "scope": "All authored Latin course lessons 1-40",
   "totals": {
@@ -19,39 +19,54 @@
       "presentEnFr": 835,
       "total": 835,
       "coverage": 1
+    },
+    "stage1": {
+      "lessons": "5/5",
+      "lessonTitles": "5/5",
+      "lessonGrammarFocus": "5/5",
+      "lessonReadingOutcome": "5/5",
+      "lessonObjectives": "5/5",
+      "blockTitles": "35/35",
+      "exercisePrompts": "54/54",
+      "exerciseHints": "54/54",
+      "exerciseExplanations": "54/54",
+      "localizedOptionSets": "all applicable",
+      "localizedMatchingLabels": "all applicable",
+      "gradingValuesChanged": 0
     }
   },
   "missing": {
     "lessonTitles": {
-      "localizedFr": 0,
+      "localizedFr": 5,
       "total": 40
     },
     "blockTitles": {
-      "localizedFr": 0,
+      "localizedFr": 35,
       "total": 245
     },
     "exercisePrompts": {
-      "localizedFr": 0,
+      "localizedFr": 54,
       "total": 431
     },
     "exerciseHints": {
-      "localizedFr": 0,
+      "localizedFr": 54,
       "total": 431
     },
     "exerciseExplanations": {
-      "localizedFr": 0,
+      "localizedFr": 54,
       "total": 431
     },
-    "exerciseOptionLabels": "English/canonical only where options are textual; requires localized display labels without changing canonical grading values.",
-    "lessonObjectives": "English-only arrays; require localized learner-facing copy.",
-    "grammarFocusAndReadingOutcome": "English-only top-level learner-facing summaries."
+    "exerciseOptionLabels": "Lessons 1-5 complete; Lessons 6-40 pending.",
+    "lessonObjectives": "Lessons 1-5 complete; Lessons 6-40 pending.",
+    "grammarFocusAndReadingOutcome": "Lessons 1-5 complete; Lessons 6-40 pending."
   },
   "schemaRecommendation": {
     "backwardsCompatibility": "Keep existing English/canonical fields for grading and current UI.",
     "lesson": "Add localization.fr.title, localization.fr.grammarFocus, localization.fr.readingOutcome and localization.fr.objectives.",
     "block": "Add localization.fr.title; keep existing learnerCopy.en/fr.",
     "exercise": "Add localization.fr.prompt, hint, explanation, options where applicable, plus localized accepted-answer overrides only when the answer itself is language-dependent.",
-    "gradingRule": "Never translate the canonical grading value blindly. Multiple-choice localization maps French labels by option index/value; free-text exercises receive explicit French accepted variants when required."
+    "gradingRule": "Never translate the canonical grading value blindly. Multiple-choice localization maps French labels by option index/value; free-text exercises receive explicit French accepted variants when required.",
+    "implementedStage1": "Lessons 1-5 now use localization.fr for lesson metadata, block titles, exercise text, aligned option labels and matching labels while canonical grading fields remain untouched."
   },
   "repairBatching": [
     "Lessons 1-5",
@@ -66,6 +81,12 @@
   "validationPolicy": [
     "Existing 245 learnerCopy blocks must remain bilingual.",
     "Existing 835 vocabulary/support glosses must remain bilingual.",
-    "Future parity completion should become a hard CI gate stage by stage, not a one-shot flag."
-  ]
+    "Future parity completion should become a hard CI gate stage by stage, not a one-shot flag.",
+    "Lessons 1-5 are a hard French-parity CI gate: localized lesson metadata, block titles, exercise prompt/hint/explanation, option-label cardinality and matching-label key parity are required.",
+    "French localization objects must not define expectedAnswer or acceptedVariants; grading remains canonical."
+  ],
+  "completedBatches": [
+    "Lessons 1-5"
+  ],
+  "nextBatch": "Lessons 6-10"
 }
