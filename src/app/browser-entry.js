@@ -388,6 +388,7 @@ export function installAppShellBridge({
         apostolatePublishedCount: win?.AO_APOSTOLATE_APP_V1?.status?.()?.publishedCount ?? null,
         apostolateResearchOnlyCount: win?.AO_APOSTOLATE_APP_V1?.status?.()?.researchOnlyCount ?? null,
         apostolateReadyFamilies: win?.AO_APOSTOLATE_APP_V1?.status?.()?.readyFamilies ?? null,
+        apostolateTeachFaithReady: win?.AO_APOSTOLATE_APP_V1?.status?.()?.readyFamilies?.includes?.("TF") === true,
         calendarOwner: win?.AO_CALENDAR_APP_V1?.status?.()?.installed === true,
         calendarOpen: win?.AO_CALENDAR_APP_V1?.status?.()?.open === true,
         massOwner: Boolean(win?.AO_R17_BROWSER_ENTRY),
