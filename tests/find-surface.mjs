@@ -114,10 +114,15 @@ assert.match(FIND_MAP_RUNTIME.module,/maplibre-gl/);
 assert.match(FIND_MAP_RUNTIME.style,/openfreemap/);
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
+const explorePresentation=readFileSync("src/find/explore-presentation.js","utf8");
 assert.match(browserSource,/AO_FIND_APP_V1/);
 assert.match(browserSource,/data-find-query/);
 assert.match(browserSource,/mountExploreMap/);
 assert.match(browserSource,/navigate\?\.\("home"\)/);
 assert.doesNotMatch(browserSource,/Église Saint-Test|Sydney Apostolate/,"Find browser owner hardcodes fixture locations");
+assert.match(browserSource,/var\(--ao-z-surface,2147481800\)/,"Explore root is not on the shared elevation vocabulary");
+assert.match(explorePresentation,/ao-ui-back/,"Explore Back control is not using the canonical utility icon");
+assert.match(explorePresentation,/ao-ui-close/,"Explore Close control is not using the canonical utility icon");
+assert.doesNotMatch(explorePresentation,/>×<\/button>|>←<\/button>/,"Explore shell regained raw Unicode navigation controls");
 
 console.log("PASS Find a Mass modular surface");
