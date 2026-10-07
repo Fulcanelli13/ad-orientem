@@ -141,7 +141,7 @@ export function expandResearchProviderSnapshot(snapshot={}){
       url:text(row.su),
       retrieved_at:generatedAt,
       authority:"PRIMARY",
-      fields_supported:["venue","venue.contact","schedule","liturgical_usage"],
+      fields_supported:editionSourceId?["venue","venue.contact","schedule"]:["venue","venue.contact","schedule","liturgical_usage"],
     });
     if(editionSourceId){
       out.sources.push({
