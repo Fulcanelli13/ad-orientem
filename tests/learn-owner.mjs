@@ -23,8 +23,8 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel","today.saint"],
-  "Learn launcher order changed after final v38.4 seasonal dedupe",
+  ["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
+  "Learn visible launcher order changed after Saint of the Day moved into Calendar",
 );
 assert.deepEqual(
   LEARN_LAYOUT.sections.flatMap(section=>section.items.filter(item=>item.featured).map(item=>item.id)),
@@ -44,6 +44,8 @@ assert.match(owner,/aoLearnOwner/);
 assert.match(owner,/ao-v37-root/,"modular Learn no longer explicitly retires its historical donor root");
 assert.doesNotMatch(presentation,/utility\.sources|data-v37-domain|aoV37DomainDock/,"obsolete donor navigation leaked into modular Learn presentation");
 assert.doesNotMatch(presentation,/id:"learn\.seasonal_rites"/,"final v38.4 duplicate seasonal discovery card returned");
+assert.doesNotMatch(presentation,/id:"today\.saint"/,"Saint of the Day returned as a visible Learn launcher");
+assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint"\]\)/,"hidden Saint of the Day compatibility alias was removed");
 assert.doesNotMatch(owner,/openDomain\?\.\("learn"\)|openDomain\("learn"\)/,"modular Learn revives the historical Learn domain");
 assert.match(appEntry,/import "\.\.\/learn\/browser-entry\.js";/);
 assert.match(host,/domain === "learn"[\s\S]*AO_LEARN_APP_V1/);
