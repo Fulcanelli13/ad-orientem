@@ -17,6 +17,7 @@ import {
 import { createApostolateScenarioEngine } from "../src/apostolate/engine.js";
 import { createApostolateOwner, installApostolateOwner } from "../src/apostolate/browser-entry.js";
 import { APOSTOLATE_AQ_CORPUS_VERSION, APOSTOLATE_AQ_SCENARIOS } from "../src/apostolate/corpus.js";
+import { APOSTOLATE_HS_CORPUS_VERSION, APOSTOLATE_HS_SCENARIOS } from "../src/apostolate/hs-corpus.js";
 import {
   APOSTOLATE_SOURCE_REGISTRY_VERSION,
   APOSTOLATE_SOURCES,
@@ -80,6 +81,47 @@ assert.equal(engine.help.resolve("AQ01").reason,"WRONG_ENGINE");
 assert.equal(engine.resolve("AQ02").reason,"RESEARCH_ONLY");
 assert.equal(engine.resolve("ZZ99").reason,"UNKNOWN_SCENARIO");
 assert.deepEqual(engine.status(),{scenarioCount:36,registeredCount:1,publishedCount:1,researchOnlyCount:35});
+
+assert.equal(APOSTOLATE_HS_CORPUS_VERSION,"APOSTOLATE_HS_CORPUS_V1");
+assert.equal(APOSTOLATE_HS_SCENARIOS.length,7);
+assert.deepEqual(APOSTOLATE_HS_SCENARIOS.map(x=>x.id),["HS01","HS02","HS03","HS04","HS05","HS06","HS07"]);
+assert.deepEqual(APOSTOLATE_HS_SCENARIOS.map(x=>x.publication),Array(7).fill("READY"));
+
+const expectedHsTitles=[
+  "I want to come back to Mass. Where do I start?",
+  "I haven’t been to Confession in years. What do I do?",
+  "I think I want to become Catholic. What should I do?",
+  "I don’t really know how to pray.",
+  "Someone has died. What can I do?",
+  "Someone is seriously ill or dying. What should I do?",
+  "Bad Catholics or bad clergy have made me distrust the Church.",
+];
+assert.deepEqual(APOSTOLATE_HS_SCENARIOS.map(x=>x.title.en),expectedHsTitles);
+
+for(const scenario of APOSTOLATE_HS_SCENARIOS){
+  const normalized=makeApostolateScenario(scenario);
+  assert.equal(normalized.publication,"READY",scenario.id+" failed READY normalization");
+  assert.ok(normalized.title.en&&normalized.title.fr,scenario.id+" lost bilingual title");
+  assert.ok(normalized.text.en&&normalized.text.fr,scenario.id+" lost bilingual short answer");
+  assert.ok(normalized.explanation.en&&normalized.explanation.fr,scenario.id+" lost bilingual explanation");
+  assert.ok(normalized.avoid.en.length&&normalized.avoid.fr.length,scenario.id+" lost bilingual avoidances");
+  assert.ok(normalized.apfSkills.length,scenario.id+" has no APF skill mapping");
+  assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],scenario.id+" contains unresolved source IDs");
+  assert.ok(normalized.handoffs.some(h=>h.targetId?.startsWith("learn.")),scenario.id+" lacks canonical Formation handoff");
+}
+assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS01").text.en,/do not have to receive Communion/i);
+assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS02").avoid.en.join(" "),/type out grave sins/i);
+assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS03").avoid.en.join(" "),/pseudo-catechumenate/i);
+assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS04").text.en,/Our Father/i);
+assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS05").avoid.en.join(" "),/certainly in Heaven/i);
+assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS06").text.en,/contact a priest immediately/i);
+assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS06").avoid.en.join(" "),/medical diagnosis/i);
+assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS07").avoid.en.join(" "),/denying or minimizing actual wrongdoing/i);
+
+const hsEngine=createApostolateScenarioEngine(APOSTOLATE_HS_SCENARIOS);
+assert.deepEqual(hsEngine.status(),{scenarioCount:36,registeredCount:7,publishedCount:7,researchOnlyCount:29});
+for(const id of ["HS01","HS02","HS03","HS04","HS05","HS06","HS07"])assert.equal(hsEngine.help.resolve(id).ok,true,id+" is not internally publishable");
+assert.equal(hsEngine.resolve("FH01").reason,"RESEARCH_ONLY","A5 accidentally promoted family-help content");
 
 assert.equal(APOSTOLATE_AQ_CORPUS_VERSION,"APOSTOLATE_AQ_CORPUS_V1");
 assert.equal(APOSTOLATE_SOURCE_REGISTRY_VERSION,"APOSTOLATE_SOURCE_REGISTRY_V1");
@@ -166,18 +208,20 @@ const doc={
   },
 };
 const win={document:doc};
-const owner=createApostolateOwner(win,{scenarios:APOSTOLATE_AQ_SCENARIOS});
+const owner=createApostolateOwner(win,{scenarios:[...APOSTOLATE_AQ_SCENARIOS,...APOSTOLATE_HS_SCENARIOS]});
 assert.equal(owner.owner,"AO_APOSTOLATE_APP_V1");
 assert.equal(owner.status().installed,true);
 assert.equal(owner.status().hidden,true);
 assert.equal(owner.status().visible,false);
 assert.equal(owner.status().mounted,false);
 assert.equal(owner.status().ribbonExposed,false);
-assert.equal(owner.status().publishedCount,8);
-assert.equal(owner.status().researchOnlyCount,28);
+assert.equal(owner.status().publishedCount,15);
+assert.equal(owner.status().researchOnlyCount,21);
 assert.equal(owner.engines.answer.resolve("AQ01").ok,true);
 assert.equal(owner.engines.answer.resolve("AQ08").ok,true);
-assert.equal(owner.engines.help.resolve("HS01").reason,"RESEARCH_ONLY");
+assert.equal(owner.engines.help.resolve("HS01").ok,true);
+assert.equal(owner.engines.help.resolve("HS07").ok,true);
+assert.equal(owner.engines.help.resolve("FH01").reason,"RESEARCH_ONLY");
 assert.equal(owner.receiveHandoff(toApostolate).ok,true);
 assert.equal(owner.handoffToFormation({fromId:"AQ01",targetRoute:"learn.catechism",reason:"Study"}).targetSurface,"learn");
 
@@ -189,8 +233,9 @@ assert.doesNotMatch(readFileSync("src/learn/presentation.js","utf8"),/data-ao-ap
 
 const installedWin={document:{documentElement:{dataset:{}},querySelector:()=>null}};
 const installed=installApostolateOwner(installedWin);
-assert.equal(installed.status().publishedCount,8,"production hidden owner did not load AQ corpus");
+assert.equal(installed.status().publishedCount,15,"production hidden owner did not load AQ + HS corpora");
+assert.equal(installed.status().researchOnlyCount,21);
 assert.equal(installed.status().visible,false);
 assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"hidden");
 
-console.log("PASS hidden Apostolate A4: AQ01-AQ08 sourced bilingual corpus is internally READY; 28 unrecovered scenarios remain fail-closed; no visible surface.");
+console.log("PASS hidden Apostolate A5: AQ01-AQ08 + HS01-HS07 are sourced bilingual READY; 21 unrecovered scenarios remain fail-closed; no visible surface.");
