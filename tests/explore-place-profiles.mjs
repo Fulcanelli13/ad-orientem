@@ -30,6 +30,20 @@ const records=joinDirectoryRecords({
     contact:{phone:[],email:[],website:["https://example.org"],schedule_url:["https://example.org/mass"]},
     source_ids:["src-fssp-paris"]
   },{
+    venue_id:"ao-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14",
+    name:{official:"St. Mary of the Assumption Parish and Shrine",alternate:[]},
+    venue_type:"church",
+    address:{formatted:"103 West 7th Street, Oswego, NY 13126, USA",city:"Oswego",country_code:"US"},
+    geo:{
+      lat:43.455,lng:-76.512,precision:"building",geocoding_source:"OSM_NOMINATIM",
+      source_url:"https://nominatim.openstreetmap.org/",source_ref:"osm:fixture:oswego",
+      matched_country_code:"US",geocoded_at:"2026-10-07T11:45:39.289Z",
+      attribution:"© OpenStreetMap contributors, ODbL 1.0",match_score:0.9,query_fingerprint:"oswego-fixture"
+    },
+    diocese:{name:"Syracuse"},
+    contact:{phone:[],email:[],website:["https://institute-christ-king.org/oswego-home"],schedule_url:["https://institute-christ-king.org/oswego-home"]},
+    source_ids:["src-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14"]
+  },{
     venue_id:"ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",
     name:{official:"Nne Enyemaka Shrine Umuaka",alternate:[]},
     venue_type:"other",
@@ -48,6 +62,9 @@ const records=joinDirectoryRecords({
     ministry_id:"m-fssp",venue_id:"ao-fssp-paris",community_id:"FSSP",relationship:"served_by",
     liturgical_usage:{family:"ROMAN",books:"1962"},source_ids:["src-fssp-paris"]
   },{
+    ministry_id:"m-icksp-oswego",venue_id:"ao-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14",community_id:"ICKSP",relationship:"served_by",
+    liturgical_usage:{family:"ROMAN",books:"1962"},source_ids:["src-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14"]
+  },{
     ministry_id:"m-fssp-umuaka",venue_id:"ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",community_id:"FSSP",relationship:"served_by",
     liturgical_usage:{family:"ROMAN",books:"1962"},source_ids:["src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria"]
   }],
@@ -55,22 +72,26 @@ const records=joinDirectoryRecords({
     schedule_id:"s-fssp",ministry_id:"m-fssp",service_type:"MASS",mass_type:"SUNG",
     payload:{raw:"Sunday 10:30 Sung Mass"},source_ids:["src-fssp-paris"]
   },{
+    schedule_id:"s-icksp-oswego",ministry_id:"m-icksp-oswego",service_type:"MASS",mass_type:"SUNG",
+    payload:{raw:"Sunday 11:00 High Mass"},source_ids:["src-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14"]
+  },{
     schedule_id:"s-fssp-umuaka",ministry_id:"m-fssp-umuaka",service_type:"MASS",mass_type:"LOW",
     payload:{raw:"Sunday 07:00 Traditional Latin Mass"},source_ids:["src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria"]
   }],
   sources:[
     {source_id:"src-fssp-paris",url:"https://example.org/mass",source_type:"COMMUNITY_OFFICIAL"},
+    {source_id:"src-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14",url:"https://institute-christ-king.org/oswego-home",source_type:"COMMUNITY_OFFICIAL"},
     {source_id:"src-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria",url:"https://fsspnigeria.org/",source_type:"COMMUNITY_OFFICIAL"}
   ],
-  communityProfiles:[{communityId:"FSSP",communionProfile:{pope_named_in_canon:"YES"}}]
+  communityProfiles:[{communityId:"FSSP",communionProfile:{pope_named_in_canon:"YES"}},{communityId:"ICKSP",communionProfile:{pope_named_in_canon:"YES"}}]
 });
 
 function buildDataset(directoryPlaceLinks=geography.directoryPlaceLinks){
   return {
     directory:{
       records,
-      communities:[{id:"FSSP",abbreviation:"FSSP",name:"Priestly Fraternity of Saint Peter"}],
-      loadedProviders:["fssp"],
+      communities:[{id:"FSSP",abbreviation:"FSSP",name:"Priestly Fraternity of Saint Peter"},{id:"ICKSP",abbreviation:"ICKSP",name:"Institute of Christ the King Sovereign Priest"}],
+      loadedProviders:["fssp","icksp"],
       unavailableProviders:[]
     },
     geography:{
@@ -99,7 +120,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,68,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,74,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -261,6 +282,53 @@ assert.equal(mariaVesperbild.counts.shrines,1);
 assert.equal(mariaVesperbild.counts.pilgrimages,1);
 assert.ok(mariaVesperbild.counts.traditions>=1);
 assert.equal(mariaVesperbild.calendar.length,0);
+
+const oswego=explorePlaceProfile(profiles,"place:US:st-mary-assumption-oswego");
+assert.ok(oswego);
+assert.equal(oswego.counts.shrines,1);
+assert.equal(oswego.counts.pilgrimages,1);
+assert.equal(oswego.counts.tlm,1,"confirmed Oswego ICKSP bridge did not resolve the live traditional Mass venue");
+assert.equal(oswego.exact_tlm_link_state,"CONFIRMED");
+assert.equal(oswego.map_publishable,false);
+
+const auriesville=explorePlaceProfile(profiles,"place:US:auriesville-martyrs");
+assert.ok(auriesville);
+assert.equal(auriesville.counts.shrines,1);
+assert.equal(auriesville.counts.pilgrimages,3);
+assert.ok(auriesville.counts.traditions>=1);
+assert.equal(auriesville.counts.tlm,0);
+assert.equal(auriesville.calendar.length,0);
+assert.equal(auriesville.map_publishable,false);
+
+const stockbridge=explorePlaceProfile(profiles,"place:US:divine-mercy-stockbridge");
+assert.ok(stockbridge);
+assert.equal(stockbridge.counts.shrines,1);
+assert.equal(stockbridge.counts.pilgrimages,2);
+assert.ok(stockbridge.counts.traditions>=1);
+assert.equal(stockbridge.counts.tlm,0);
+assert.ok(stockbridge.calendar.some(row=>row.semantic_key==="observance.divine_mercy_sunday_current"&&row.date==="2027-04-04"));
+
+const laSalette=explorePlaceProfile(profiles,"place:US:la-salette-attleboro");
+assert.ok(laSalette);
+assert.equal(laSalette.counts.shrines,1);
+assert.equal(laSalette.counts.pilgrimages,1);
+assert.equal(laSalette.counts.tlm,0);
+assert.equal(laSalette.calendar.length,0);
+
+const litchfield=explorePlaceProfile(profiles,"place:US:lourdes-litchfield");
+assert.ok(litchfield);
+assert.equal(litchfield.counts.shrines,1);
+assert.equal(litchfield.counts.pilgrimages,1);
+assert.ok(litchfield.counts.traditions>=1);
+assert.equal(litchfield.counts.tlm,0);
+
+const fiskdale=explorePlaceProfile(profiles,"place:US:st-anne-fiskdale");
+assert.ok(fiskdale);
+assert.equal(fiskdale.counts.shrines,1);
+assert.equal(fiskdale.counts.pilgrimages,2);
+assert.ok(fiskdale.counts.traditions>=1);
+assert.equal(fiskdale.counts.tlm,0);
+assert.ok(fiskdale.calendar.some(row=>row.semantic_key==="feast.saint_anne"&&row.date==="2027-07-26"));
 
 const mariazell=explorePlaceProfile(profiles,"place:AT:mariazell-basilica");
 assert.ok(mariazell);

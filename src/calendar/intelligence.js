@@ -32,6 +32,16 @@ const DISCIPLINE_SOURCES=Object.freeze({
 export const CALENDAR_SEMANTIC_REGISTRY_VERSION="calendar-semantic-registry-v1";
 
 export const CALENDAR_SEMANTIC_REGISTRY=Object.freeze({
+  "observance.divine_mercy_sunday_current":Object.freeze({
+    key:"observance.divine_mercy_sunday_current",
+    title:Object.freeze({en:"Divine Mercy Sunday",fr:"Dimanche de la Divine Miséricorde"}),
+    schedule:Object.freeze({type:"EASTER_OFFSET",offset:7}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:64,
+    tags:Object.freeze(["CURRENT_CALENDAR_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["PIL-DIVINE-MERCY-SUNDAY"]),
+  }),
   "feast.our_lady_of_lourdes":Object.freeze({
     key:"feast.our_lady_of_lourdes",
     title:Object.freeze({en:"Our Lady of Lourdes",fr:"Notre-Dame de Lourdes"}),
