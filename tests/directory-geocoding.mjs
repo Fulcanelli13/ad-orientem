@@ -72,7 +72,7 @@ const localityVenue={
 };
 const localityCandidate={
   lat:"41.893",lon:"12.483",display_name:"Roma, Roma Capitale, Lazio, Italia",
-  name:"Roma",addresstype:"city",type:"city",category:"place",osm_type:"relation",osm_id:1,
+  name:"Roma",namedetails:{"name:en":"Rome","name":"Roma"},addresstype:"city",type:"city",category:"place",osm_type:"relation",osm_id:1,
   address:{city:"Roma",country_code:"it"},
 };
 const loc=selectNominatimCandidate(localityVenue,[localityCandidate]);
