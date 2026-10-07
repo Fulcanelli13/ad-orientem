@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.24.0",
+  "version": "1.25.0",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -9,10 +9,11 @@
     "requiredReaderStatus": "FINAL_NATIVE_READY",
     "productionDefault": "R17_NATIVE",
     "legacyPolicy": "NO_ALTERNATE_RENDERER",
-    "presentationStatus": "RECOVERY_REQUIRED",
+    "presentationStatus": "CERTIFIED",
     "singlePresentationOwner": "R17_NATIVE_PRODUCTION",
     "definitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json",
-    "v180DonorParityLedger": "data/presentation/mass-v180-donor-parity.v1.json"
+    "v180DonorParityLedger": "data/presentation/mass-v180-donor-parity.v1.json",
+    "presentationCertification": "data/presentation/mass-v180-donor-parity.v1.json"
   },
   "topLevelContract": [
     "home",
@@ -190,8 +191,8 @@
     },
     {
       "id": "MASS_DEFINITIVE_DONOR_PARITY",
-      "classification": "REGRESSION",
-      "status": "OPEN",
+      "classification": "PASS",
+      "status": "CLOSED",
       "evidence": [
         "data/presentation/mass-definitive-convergence.v1.json",
         "data/presentation/mass-v180-donor-parity.v1.json",
@@ -204,14 +205,21 @@
         "tests/mass-visual-acceptance.mjs",
         "tests/reader-phone-acceptance.mjs"
       ],
-      "detail": "Mass liturgical/runtime authority remains certified, but the visible production reader is being converged against the approved v1.80 executable donor on one native renderer. Implementation is donor-complete; the blocker remains open until the rebased static, phone and visual gates are green.",
+      "detail": "The definitive Mass presentation is certified against the executable v1.80 donor on the single native renderer. Static R17, real-touch Mass phone, app-shell phone and donor-derived visual acceptance all passed after current-main integration. The 48-step product remains explicitly non-historical with respect to unrecovered v1.83 card identities.",
       "progress": {
         "runtimeAuthority": "CERTIFIED",
-        "singleRenderer": "IMPLEMENTED_NATIVE_ONLY",
-        "donorPresentation": "IMPLEMENTATION_COMPLETE_AWAITING_CI",
-        "stepReconciliation": "RECONCILED_NONHISTORICAL_38_TO_48",
-        "visualAcceptance": "REQUIRED_GREEN",
-        "phoneAcceptance": "REQUIRED_GREEN"
+        "singleRenderer": "CERTIFIED_NATIVE_ONLY",
+        "donorPresentation": "CERTIFIED_V1_80",
+        "stepReconciliation": "CERTIFIED_NONHISTORICAL_38_TO_48",
+        "visualAcceptance": "PASS",
+        "phoneAcceptance": "PASS",
+        "appShellPhone": "PASS"
+      },
+      "certification": {
+        "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
+        "r17MassConvergenceRun": 37563706320,
+        "appConvergenceRun": 37563706129,
+        "visualAcceptanceRun": 37563706157
       }
     },
     {
@@ -262,7 +270,6 @@
     }
   ],
   "openBlockers": [
-    "MASS_DEFINITIVE_DONOR_PARITY",
     "EXACT_NON_MASS_DONOR_PARITY"
   ],
   "regressionGates": {
