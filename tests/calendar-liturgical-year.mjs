@@ -144,6 +144,10 @@ assert.match(browser, /height:66px!important/, "Calendar liturgical month lost i
 assert.match(browser, /grid-template-columns:repeat\(3,1fr\)/, "Calendar top navigation did not collapse to Day · Month · Liturgical Year");
 assert.match(browser, /observedCycle\(r,id\)/, "Month Temporale\/Sanctorale classification is missing");
 assert.match(browser, /majorForDate\(id\)/, "Month classification stopped using resolved major-day metadata");
+assert.match(browser, /function principalSaintContext\(r,id\)/, "Calendar Day lost principal saint\/feast classification");
+assert.match(browser, /data-cal-saint-date/, "Calendar lost the shared saint-detail entry point");
+assert.match(browser, /AO_MODULES\?\.open\?\.\("today\.saint"/, "Calendar no longer reuses the shared saint-detail engine");
+assert.match(browser, /view==="sanctorale".*data-cal-saint-date/s, "Month Sanctorale no longer opens the shared saint detail");
 
 const bodySource = browser.match(/function bodyMarkup\(\)\{[\s\S]*?\n\}\nfunction css/)?.[0] || "";
 assert.doesNotMatch(bodySource, /yearWheel\(selected,r\)/, "day surface must not restore the old decorative year ring");
