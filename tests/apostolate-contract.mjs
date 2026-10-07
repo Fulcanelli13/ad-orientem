@@ -119,7 +119,7 @@ for(const scenario of APOSTOLATE_HS_SCENARIOS){
   assert.ok(normalized.avoid.en.length&&normalized.avoid.fr.length,scenario.id+" lost bilingual avoidances");
   assert.ok(normalized.apfSkills.length,scenario.id+" has no APF skill mapping");
   assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],scenario.id+" contains unresolved source IDs");
-  assert.ok(normalized.handoffs.some(h=>h.targetId?.startsWith("learn.")),scenario.id+" lacks canonical Formation handoff");
+  assert.ok(normalized.handoffs.length>0,scenario.id+" lacks a canonical owner handoff");
 }
 assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS01").text.en,/do not have to receive Communion/i);
 assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS02").avoid.en.join(" "),/type out grave sins/i);
@@ -161,7 +161,7 @@ for(const scenario of APOSTOLATE_FH_SCENARIOS){
   assert.ok(normalized.avoid.en.length&&normalized.avoid.fr.length,scenario.id+" lost bilingual avoidances");
   assert.ok(normalized.apfSkills.length,scenario.id+" has no APF skill mapping");
   assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],scenario.id+" contains unresolved source IDs");
-  assert.ok(normalized.handoffs.some(h=>h.targetId?.startsWith("learn.")),scenario.id+" lacks canonical Formation handoff");
+  assert.ok(normalized.handoffs.length>0,scenario.id+" lacks a canonical owner handoff");
 }
 assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH01").explanation.en,/Pius XII/i);
 assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH02").text.en,/traditional grace before meals/i);
@@ -171,6 +171,9 @@ assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH05").avoid.en.join(" "),/
 assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH06").text.en,/not merely an honorary guest/i);
 assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH07").text.en,/witness of Christ/i);
 assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH08").avoid.en.join(" "),/private enthronement ceremony/i);
+assert.equal(APOSTOLATE_FH_SCENARIOS.filter(x=>x.handoffs.some(h=>h.targetId==="learn.catholic_life")).length,0,"Family Help still points to retired Catholic Life");
+for(const id of ["FH01","FH02","FH03","FH04","FH08"])assert.equal(APOSTOLATE_FH_SCENARIOS.find(x=>x.id===id).handoffs.some(h=>h.targetId?.startsWith("learn.")),false,id+" regained a duplicate Formation owner");
+for(const id of ["FH05","FH06","FH07"])assert.equal(APOSTOLATE_FH_SCENARIOS.find(x=>x.id===id).handoffs.some(h=>h.targetId?.startsWith("learn.")),true,id+" lost its dedicated sacramental Formation handoff");
 
 const fhEngine=createApostolateScenarioEngine(APOSTOLATE_FH_SCENARIOS);
 assert.deepEqual(fhEngine.status(),{scenarioCount:36,registeredCount:8,publishedCount:8,researchOnlyCount:28});
@@ -207,6 +210,10 @@ assert.match(APOSTOLATE_TF_SCENARIOS.find(x=>x.id==="TF03").avoid.en.join(" "),/
 assert.match(APOSTOLATE_TF_SCENARIOS.find(x=>x.id==="TF04").handoffs[0].targetId,/pray\.rosary/);
 assert.match(APOSTOLATE_TF_SCENARIOS.find(x=>x.id==="TF05").handoffs.map(x=>x.targetId).join(" "),/learn\.mass/);
 assert.match(APOSTOLATE_TF_SCENARIOS.find(x=>x.id==="TF05").handoffs.map(x=>x.targetId).join(" "),/mass/);
+for(const scenario of [...APOSTOLATE_HS_SCENARIOS,...APOSTOLATE_FH_SCENARIOS,...APOSTOLATE_TF_SCENARIOS]){
+  assert.equal(scenario.handoffs.some(h=>h.targetId==="learn.catholic_life"),false,scenario.id+" still points to retired Catholic Life");
+  assert.equal((scenario.doctrineRefs||[]).includes("learn.catholic_life"),false,scenario.id+" still cites retired Catholic Life as a doctrine owner");
+}
 
 const tfEngine=createApostolateScenarioEngine(APOSTOLATE_TF_SCENARIOS);
 assert.deepEqual(tfEngine.status(),{scenarioCount:36,registeredCount:5,publishedCount:5,researchOnlyCount:31});
