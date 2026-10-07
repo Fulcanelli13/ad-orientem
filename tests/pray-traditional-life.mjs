@@ -61,6 +61,13 @@ assert.doesNotMatch(runtime,/ensureHolyName|en\.wikisource\.org\/w\/api\.php/,"H
 assert.match(runtime,/data-tp381-daypart/,"Morning/Evening daypart control disappeared");
 assert.match(runtime,/data-tp381-hymn-lang/,"Hymn language control disappeared");
 assert.match(runtime,/data-tp381-prayer/,"Canonical prayer reuse disappeared");
+assert.match(runtime,/data-tp381-glossary/,"Traditional PRAY lost contextual glossary action");
+assert.match(runtime,/function glossaryTermsForState\(\)/,"Traditional PRAY lost route-to-glossary mapping");
+assert.match(runtime,/openTerms\(glossaryTermsForState\(\),\{origin:"pray"\}\)/,"Traditional PRAY glossary no longer opens contextually");
+for(const id of ["G326","G328","G096","G331","G031","G037","G038"]){
+  assert.match(runtime,new RegExp('"'+id+'"'),"Traditional PRAY glossary mapping lost "+id);
+}
+assert.match(styles,/aoTP381Glossary/,"Traditional PRAY glossary action lost restrained styling");
 assert.match(styles,/aoTP381Reader/);
 assert.match(styles,/aoTP381PrayerList/);
 assert.match(runtime,/Foundational prayers may recur later in the Rosary or another devotion/,"Morning\/Evening repetition guide disappeared");
