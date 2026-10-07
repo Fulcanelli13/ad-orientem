@@ -90,7 +90,8 @@ assert.match(sickSection,/current final commendation and the traditional funeral
 assert.match(sickSection,/A catafalque is a ceremonial representation used when the body is not present/,"Requiem formation lost catafalque explanation");
 assert.match(sickSection,/1917 law governing the 1962 context prohibited voluntary cremation/,"burial formation lost historical discipline");
 assert.match(sickSection,/does not create a general right to divide or distribute ashes freely/,"ashes formation lost 2023 narrow-exception boundary");
-assert.match(sickSection,/data-ao-tradlearn-mass/,"after-death formation lost its explicit Mass handoff");
+assert.match(sickSection,/mass:true/,"after-death formation lost its explicit Mass handoff intent");
+assert.match(runtime,/data-ao-tradlearn-mass/,"traditional Learn runtime lost Mass handoff rendering");
 assert.match(sickSection,/route:"pray\.holy_souls"/,"after-death formation lost Holy Souls handoff");
 assert.match(sickSection,/dead_eternal_rest_singular/,"Serious Illness after-death section lost singular Eternal Rest");
 
