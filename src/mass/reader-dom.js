@@ -640,7 +640,7 @@ function stripRubricBrackets(text){
   const raw=String(text??"").trim();
   return /^\[[\s\S]*\]$/.test(raw) ? raw.slice(1,-1).trim() : raw;
 }
-function rubricIsStateDuplicate(text){
+export function rubricIsStateDuplicate(text){
   const t=stripRubricBrackets(text).replace(/\s+/g," ").trim();
   return /^(?:stand|sit|kneel|rise|genuflect|bow(?: the head)?|remain standing|remain seated|remain kneeling)[.!]?$/i.test(t);
 }
