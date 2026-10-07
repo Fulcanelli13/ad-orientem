@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   CALENDAR_INTELLIGENCE_VERSION,
+  calendarDisciplineForDate,
   calendarIntelligenceForDate,
   calendarNovenaEvents,
   calendarPracticeEvents,
@@ -34,6 +35,9 @@ const christKing=calendarPracticeEvents("2026-10-25",{fr:false});
 assert.ok(christKing.some(x=>x.id==="practice.christ-king"),"Christ the King traditional context disappeared");
 assert.ok(christKing.some(x=>x.id==="programme.sunday-mass"),"Sunday obligation projection disappeared on Christ the King");
 
+const christKingIntelligence=calendarIntelligenceForDate("2026-10-25",{fr:false});
+assert.ok(christKingIntelligence.novenas.some(x=>x.novenaId==="holy_souls"),"Active Holy Souls novena was not projected alongside Christ the King and October Rosary");
+
 const ash=calendarPracticeEvents("2026-02-18",{fr:false}).find(x=>x.id==="practice.ash");
 assert.ok(ash?.tags.includes("CURRENT_UNIVERSAL_DISCIPLINE"),"Ash Wednesday current discipline classification disappeared");
 
@@ -60,6 +64,20 @@ assert.equal(intelligence.schema,CALENDAR_INTELLIGENCE_VERSION);
 assert.equal(intelligence.date,"2026-10-02");
 assert.ok(intelligence.events.some(x=>x.id==="programme.first_friday"));
 assert.ok(intelligence.events.every(x=>x.date==="2026-10-02"));
+
+const fridayDiscipline=calendarDisciplineForDate("2026-10-09",{fr:false});
+assert.equal(fridayDiscipline.today.key,"friday");
+assert.match(fridayDiscipline.today.label,/universal penitential day/);
+assert.match(fridayDiscipline.eras.current.items[0].summary,/At least one hour before Holy Communion/);
+assert.match(fridayDiscipline.eras["1962"].items[0].summary,/three hours from solid food and alcoholic drink/);
+assert.equal(fridayDiscipline.eras["1962"].items[2].status,"SOURCE-SENSITIVE");
+assert.match(fridayDiscipline.eras.older.items[0].summary,/substantially stricter/);
+assert.match(fridayDiscipline.eras.current.sources[0].label,/can\. 919/);
+
+const ashDiscipline=calendarDisciplineForDate("2026-02-18",{fr:false});
+assert.equal(ashDiscipline.today.key,"fast-abstinence");
+assert.match(ashDiscipline.today.label,/universal fast and abstinence/);
+assert.equal(calendarIntelligenceForDate("2026-10-09").discipline.today.key,"friday","Calendar intelligence stopped carrying discipline context");
 
 const home=readFileSync("src/home/enrichers.js","utf8");
 const homeBrowser=readFileSync("src/home/browser-entry.js","utf8");
