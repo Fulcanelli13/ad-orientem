@@ -1,0 +1,729 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_GEOCODE_REPORT_V1",
+  "provider": "ICKSP_FEDERATED_V13",
+  "generated_at": "2026-10-07T23:03:42.716Z",
+  "total": 120,
+  "existing_valid": 0,
+  "accepted": 98,
+  "primary_accepted": 20,
+  "fallback_accepted": 76,
+  "structured_accepted": 2,
+  "unresolved": 22,
+  "invalid_existing": 0,
+  "by_precision": {
+    "building": 36,
+    "address": 13,
+    "street": 28,
+    "locality": 21,
+    "region": 0,
+    "unknown": 0
+  },
+  "unresolved_records": [
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-004",
+      "name": "Maison Notre-Dame-de-Rocamadour",
+      "address": "Lagarrigue Haute, 46600 Baladou, France",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Maison Notre-Dame-de-Rocamadour, Lagarrigue Haute, 46600 Baladou, France",
+          "key": "b2e34dd58e285f848ebf0d39cfc45eb3cfef4eba34076a263cff893851d6d52b",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Lagarrigue Haute, 46600 Baladou, France",
+          "key": "be34eb99a89c882e8895a42c553cf0259131146946733287aeeceb32d42e4b1e",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Baladou&postalcode=46600&street=Lagarrigue Haute",
+          "key": "f45b12e1dddc10071da780a80dd4acecd00a9aefcc4126534e7208b3a073c15b",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Maison Notre-Dame-de-Rocamadour&city=Baladou&postalcode=46600",
+          "key": "51e2b0b4554afeb7da8743dc0f04fa50c667a90b6ff3b0fd3704707e0fdbb449",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-012-pontlabbe",
+      "name": "Maison Saint-Louis-Marie-Grignion-de-Montfort",
+      "address": "Chantemerle, 17250 Pont-l'Abbé-d'Arnoult, France",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Maison Saint-Louis-Marie-Grignion-de-Montfort, Chantemerle, 17250 Pont-l'Abbé-d'Arnoult, France",
+          "key": "1ce1da96bc9f47471b85182d78050ab531fb2dd1b4292cb8b874c2e47e04990c",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Chantemerle, 17250 Pont-l'Abbé-d'Arnoult, France",
+          "key": "a5a253195f4b4eb7171c83c5295a4875b4e79cfe69400f7b0d0c61199ba4857c",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Pont-l'Abbé-d'Arnoult&postalcode=17250&street=Chantemerle",
+          "key": "c16e86bd6896bcf34f12a3783ef5c142c3cb1d556714654a4713629ac4ea52e8",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Maison Saint-Louis-Marie-Grignion-de-Montfort&city=Pont-l'Abbé-d'Arnoult&postalcode=17250",
+          "key": "ca3ac1311dc1cb5dd80b086b57d20f6055346b1c456d105a3cd41731449c84ca",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-015",
+      "name": "Chapelle du Foyer de l’Espérance",
+      "address": "Rue Adolphe Trillard, 97200 Fort-de-France, Martinique",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle du Foyer de l’Espérance, Rue Adolphe Trillard, 97200 Fort-de-France, Martinique",
+          "key": "6fb795354bac279ad27498f53f67f31965439a16a61cdacb5a02712ee9221b14",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Rue Adolphe Trillard, 97200 Fort-de-France, Martinique",
+          "key": "fbb4abc9656ae44e76b910fcea678f0f268873b791e8788abf40e9f8c2a1ae1a",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Fort-de-France&postalcode=97200&street=Rue Adolphe Trillard",
+          "key": "fff40e7561fafd1ded4420a4e0402cda1f3e431430ec057181b1d224c21b2ced",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle du Foyer de l’Espérance&city=Fort-de-France&postalcode=97200",
+          "key": "9b7c132f9c431d1e0b8d6789fd2750fb4b1f9637adf724a2b808f055c1da863b",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-023-villa",
+      "name": "Maison Monseigneur-Bessieux – Villa Sainte-Christine",
+      "address": "336, rue du Pioch-de-Boutonnet, 34090 Montpellier, France",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Maison Monseigneur-Bessieux – Villa Sainte-Christine, 336, rue du Pioch-de-Boutonnet, 34090 Montpellier, France",
+          "key": "56d9a9634bb89124b6a0437e11c54783d23a095094fb3816b6247a1472b910a6",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "336, rue du Pioch-de-Boutonnet, 34090 Montpellier, France",
+          "key": "986f0ad8a586344350c521cc5892ff7b2930f33ee27ca901cd769ab6cafdca89",
+          "candidate_count": 4
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Montpellier&postalcode=34090&street=336",
+          "key": "34fa2b5dbb68f14222da205f1f530cc06cbe35a148c8c0c7e50713390290444a",
+          "candidate_count": 5
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Maison Monseigneur-Bessieux – Villa Sainte-Christine&city=Montpellier&postalcode=34090",
+          "key": "1b82ccf0548550c36d60f7f227fb07c189066768927784b0d0d5fa7d7ca47f7f",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-025-saintsuaire",
+      "name": "Chapelle du Saint-Suaire (Pénitents Rouges)",
+      "address": "Place Charles-Félix, 06300 Nice, France",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle du Saint-Suaire (Pénitents Rouges), Place Charles-Félix, 06300 Nice, France",
+          "key": "88877061e4f94c9b3bb38ccb319756a0a136f91eca4482a747d2f1c86bf1210d",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Place Charles-Félix, 06300 Nice, France",
+          "key": "89840822696fd812b14d2aab8452966c7678851de08e5cab4647fcbb1d3faba9",
+          "candidate_count": 1
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Nice&postalcode=06300&street=Place Charles-Félix",
+          "key": "e60b55fb7b89bfc83d448f775d2c22d23bb9f5295149bab8c2f4a50efde6c943",
+          "candidate_count": 1
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle du Saint-Suaire (Pénitents Rouges)&city=Nice&postalcode=06300",
+          "key": "83cd2e32b20c0a804ed7bc2710a45c57a29c503b2b8d0faa6f44eeabfb063d33",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-039",
+      "name": "Chapelle de l'Immaculée Conception",
+      "address": "Biel de Val 1, 2824 Vicques, Switzerland",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle de l'Immaculée Conception, Biel de Val 1, 2824 Vicques, Switzerland",
+          "key": "227abda487f4907a62c0dab953c0503f9da5f32a01aeb0315fa536f812e1b9ac",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Biel de Val 1, 2824 Vicques, Switzerland",
+          "key": "7b5116369f8d9f0a02d08c50b12e39a6e7990ab349ad29bff5057d34c4581de3",
+          "candidate_count": 1
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Vicques&postalcode=2824&street=Biel de Val 1",
+          "key": "f2b0628795792eff197256021a82242f0c97584d89ba402ef73ba372c069ce9c",
+          "candidate_count": 1
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle de l'Immaculée Conception&city=Vicques&postalcode=2824",
+          "key": "750e502e332cb6311c7d97aea97e199630b8a2fb5315e81d99be4dea0e3b6ae5",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-068-acireale",
+      "name": "Rettoria Santa Maria dell’Odigitria",
+      "address": "Piazza Odigitria, 95024 Acireale CT, Italy",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Rettoria Santa Maria dell’Odigitria, Piazza Odigitria, 95024 Acireale CT, Italy",
+          "key": "0ed821cf3d7e9a7ff59d38a0be079dde474ad6db07fb46c986c2fbc5384d973b",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Piazza Odigitria, 95024 Acireale CT, Italy",
+          "key": "dad3aa5fbb946bc9c45eb005e32b1b33127f4be16a3dc52a78fa4f7748b3329b",
+          "candidate_count": 1
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Acireale CT&postalcode=95024&street=Piazza Odigitria",
+          "key": "fbd28ef629a8e66a7aec4d98f5d398e9d8be696afe365c1fc1006dddf8cf0f23",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Rettoria Santa Maria dell’Odigitria&city=Acireale CT&postalcode=95024",
+          "key": "a96101ca8c18883e2eb1cafda6babba4feb6b9f83ba30696cd6fa2490849ebfd",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-068-randazzo",
+      "name": "Rettoria Santa Maria della Volta",
+      "address": "Piazza San Nicolò, 95036 Randazzo CT, Italy",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Rettoria Santa Maria della Volta, Piazza San Nicolò, 95036 Randazzo CT, Italy",
+          "key": "2152ef5939b4b2989fc6d3eb84b803a40c54073ea55a7fe955c5e9c2b89f1c0c",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Piazza San Nicolò, 95036 Randazzo CT, Italy",
+          "key": "ed49c0e163bc9d826bd5a3feb0f1d30130233aa72336dd8bb0e906c89df7b6d3",
+          "candidate_count": 1
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Randazzo CT&postalcode=95036&street=Piazza San Nicolò",
+          "key": "678f4fb58a32bb14182a16801504e225b8865ba9fcf49fd19f1bb9d622e3d652",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Rettoria Santa Maria della Volta&city=Randazzo CT&postalcode=95036",
+          "key": "2dff5259a6456eb10bb9f562161d48a9f20636309c6a8bc4d37073346256cfd0",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-072-barra",
+      "name": "Chiesa Santa Maria della Sanità a Barra",
+      "address": "Corso Sirena 68, 80147 Napoli, Italy",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chiesa Santa Maria della Sanità a Barra, Corso Sirena 68, 80147 Napoli, Italy",
+          "key": "7bb6daecf3086b3722a8ffa31ac41a8bdc5bfa2d0407a150bf9fea43fc3a5c43",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Corso Sirena 68, 80147 Napoli, Italy",
+          "key": "54d1c22d0c9f5e309475b4e363dd24876b42dd229623de9350bfbd42a2873fa3",
+          "candidate_count": 3
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Napoli&postalcode=80147&street=Corso Sirena 68",
+          "key": "17448611636dbb567f0b57f0acf0f64339eff3a5b93684a6f4edebe7c5e893b8",
+          "candidate_count": 3
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chiesa Santa Maria della Sanità a Barra&city=Napoli&postalcode=80147",
+          "key": "98b4f710b2d8c336013eef5943029d1959ebac94bcfded30d56afe80e3ba0721",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-076",
+      "name": "Catholic Shrine Church of Ss Peter & Paul and St Philomena",
+      "address": "7 Atherton Street, Wallasey, New Brighton, CH45 9LT, United Kingdom",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Catholic Shrine Church of Ss Peter & Paul and St Philomena, 7 Atherton Street, Wallasey, New Brighton, CH45 9LT, United Kingdom",
+          "key": "126fad5482ac6bb408c6eed15198d5f6bfca40730cd5a750ebcf357d44803a54",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "7 Atherton Street, Wallasey, New Brighton, CH45 9LT, United Kingdom",
+          "key": "e259491ddb60672ed8a5d5a71315d9517ccbec9072327c73a6b44942ab8c73cf",
+          "candidate_count": 3
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=New Brighton&postalcode=CH45 9LT&street=7 Atherton Street",
+          "key": "12063f55977055ea1259fc902d9e3e10005ae0e904fc04aee9855ece286f0dbd",
+          "candidate_count": 3
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Catholic Shrine Church of Ss Peter & Paul and St Philomena&city=New Brighton&postalcode=CH45 9LT",
+          "key": "18eb0067ec0dbccf54d0d8dd327695d516abf47c1794a32790a9f1523ab84803",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-079",
+      "name": "Lanherne Convent Chapel",
+      "address": "Lanherne Convent, St Mawgan, Newquay TR8 4ER, United Kingdom",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Lanherne Convent Chapel, Lanherne Convent, St Mawgan, Newquay TR8 4ER, United Kingdom",
+          "key": "2ede8eff32c931bd627d4c42bd8bd4fef621954a9b79f76a145979a05b977325",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Lanherne Convent, St Mawgan, Newquay TR8 4ER, United Kingdom",
+          "key": "1625193a5e0d5a3f7ef2aba6af0f96d77f3b8fb0b91be9e5b9721a8a2d77e0a8",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Newquay&postalcode=TR8 4ER&street=St Mawgan",
+          "key": "7f67311cbb4c2df9c98ed9b6112a3863931fc6531df329632309ef7ee69b0524",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Lanherne Convent Chapel&city=Newquay&postalcode=TR8 4ER",
+          "key": "faccc3aef24b5237f41b361ee7e2eeb730de4fa54af0d97df8e212ee88650054",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-092",
+      "name": "Chapelle du Collège Saint-Joseph",
+      "address": "19 Commerford Street, Curepipe, Mauritius",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle du Collège Saint-Joseph, 19 Commerford Street, Curepipe, Mauritius",
+          "key": "5d859d276820ddc7a54ff60fe76a634a803916da484d7be7df3de417b7af9670",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "19 Commerford Street, Curepipe, Mauritius",
+          "key": "62347cac0a8a197be4cfbc83cf9ba937494d9ccfeb6879514f104cbf60360959",
+          "candidate_count": 1
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Mauritius&street=19 Commerford Street",
+          "key": "d687c0783d1c073c48ef69b8b50eca4effc31e7ea87af7d005ebea72d9cd6464",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle du Collège Saint-Joseph&city=Mauritius",
+          "key": "dff6a91cf5b99acd312b3fab8596c6ee87f2821d2eaa905fc4da60cc69c7c17a",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-094",
+      "name": "Chapelle de la Maison Bienheureux-Père-Laval",
+      "address": "Impasse Ambroisine, Curepipe, Mauritius",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle de la Maison Bienheureux-Père-Laval, Impasse Ambroisine, Curepipe, Mauritius",
+          "key": "bc8808ab5b7f3667ba5f7a5f12209858b899c1b7e54663d92a49895024ca3e52",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Impasse Ambroisine, Curepipe, Mauritius",
+          "key": "f8226841fff05f40a38db1ceaf4e3e3d8fa19de79c7e404f5d1b57a6acadebe7",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Mauritius&street=Impasse Ambroisine",
+          "key": "e5f03cc66d093070d7a56385f54a6d11649e750f369805d36f04924da20f70f5",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle de la Maison Bienheureux-Père-Laval&city=Mauritius",
+          "key": "4db98fd9ba73d006bc7b6233131deeb468adedfb56fec30346091813573a78cc",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-095",
+      "name": "Sanctuaire Marie-Reine-de-la-Paix",
+      "address": "Sanctuaire Marie-Reine-de-la-Paix, Port-Louis, Mauritius",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Sanctuaire Marie-Reine-de-la-Paix, Sanctuaire Marie-Reine-de-la-Paix, Port-Louis, Mauritius",
+          "key": "e525fbe21c31ad2415f31d651dc67315c95ef43ecf0d62fb403551519568e381",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Sanctuaire Marie-Reine-de-la-Paix, Port-Louis, Mauritius",
+          "key": "60f77972762267356b6e5724d2a6f9a0d0e83bda21ace87417eb294389be9838",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Mauritius&street=Port-Louis",
+          "key": "1c35b88b85341d45ad1e5b66779bb4d0debd2c1705456233f8108c04946e3ea2",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Sanctuaire Marie-Reine-de-la-Paix&city=Mauritius",
+          "key": "e18c7077494408b5a79ac16af89e97ed0bebe2f1e336ebf239d78ea878282518",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-098",
+      "name": "Église du couvent Sainte-Anne",
+      "address": "Avenue Léopold Weiner 28, 1170 Bruxelles, Belgium",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Église du couvent Sainte-Anne, Avenue Léopold Weiner 28, 1170 Bruxelles, Belgium",
+          "key": "534e85d9c90a4ed4f0deb69296dc491e332882a5d002cc93440bdd28aa5dbe41",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Avenue Léopold Weiner 28, 1170 Bruxelles, Belgium",
+          "key": "71fe0aab2c447d1f01aeb20e2ad8b7e75475d75c305d53d74d54272ceae96607",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Bruxelles&postalcode=1170&street=Avenue Léopold Weiner 28",
+          "key": "a4c0a2b6cdd1e2a37d155783b29e6ee1032b2d28a627831fb6427056d4ccbe87",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Église du couvent Sainte-Anne&city=Bruxelles&postalcode=1170",
+          "key": "15620c118f8f0c51af91ac14d7cd4132efaa5b1c317745d8487fe2bb2b46dc33",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-100",
+      "name": "Chapelle Notre-Dame-de-Bon-Vouloir",
+      "address": "Rue Édouard-Dewez 99, 7021 Havré, Belgium",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle Notre-Dame-de-Bon-Vouloir, Rue Édouard-Dewez 99, 7021 Havré, Belgium",
+          "key": "237396551d1d23d6fc956c1ccfc781d9bcbe182d17172d13ac9d22fb0afe38aa",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Rue Édouard-Dewez 99, 7021 Havré, Belgium",
+          "key": "4b49bd62c87de2061331fcac706496e9eb8edfc495c8a84d08c80593bec96bce",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Havré&postalcode=7021&street=Rue Édouard-Dewez 99",
+          "key": "96f029aa97b9829079b69be8b270ce87fb339f22fbd7342e8ed4a143b27f1f7d",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle Notre-Dame-de-Bon-Vouloir&city=Havré&postalcode=7021",
+          "key": "28201b38290e043ec17e72eb32571d27336dac3e354e2163134d95804208b7a4",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-102",
+      "name": "Chapelle Notre-Dame-de-Rocamadour",
+      "address": "Nyoni, GA",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle Notre-Dame-de-Rocamadour, Nyoni, GA",
+          "key": "2b2d5af47a5cc0b57e5118e15c7454ad4b03093c35541c0b7d7a6b82688d651e",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Nyoni, GA",
+          "key": "f63f13300788e5ded815aa910d24d4b454309b47c4051f32cc50ee5001f93d58",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=GA&street=Nyoni",
+          "key": "1a238d3dd7b84ae1f019ca22a426294d8126b08d42df221d34e4bda4cee81900",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle Notre-Dame-de-Rocamadour&city=GA",
+          "key": "5d4f5eff87f7b051e1610b15a3666df267f66871be527f95474d88fa5407eaa9",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-103",
+      "name": "Église du Christ-Roi / Paroisse Notre-Dame-de-Lourdes",
+      "address": "BP 5074, Libreville, Gabon",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Église du Christ-Roi / Paroisse Notre-Dame-de-Lourdes, BP 5074, Libreville, Gabon",
+          "key": "90039394a94e140983f04d86b91f3cda3f7a03487772d7c2dff8074883a3ac72",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "BP 5074, Libreville, Gabon",
+          "key": "a0f7cc43bf87b8e76ce6d31dad65a4c67ee803dbfac5dfa906b2a7dc4b4977b6",
+          "candidate_count": 1
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=BP&postalcode=5074&street=Libreville",
+          "key": "a4f0cabc07593628e079b47090051c4177030f279a74ca7a650b7ef1afeb7513",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Église du Christ-Roi / Paroisse Notre-Dame-de-Lourdes&city=BP&postalcode=5074",
+          "key": "0a5c8e14ecda0fe993029f975089b51985c83ce7a38271267e5808aef831130c",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-105",
+      "name": "Chapelle Notre-Dame-de-Bonne-Délivrance",
+      "address": "La Pointe Denis, GA",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle Notre-Dame-de-Bonne-Délivrance, La Pointe Denis, GA",
+          "key": "fbfb41a3d6cafbb46df87a4f4659539d5211dd051bc9d9fde4d8360d12e77193",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "La Pointe Denis, GA",
+          "key": "d051a1e5e30e77aecb58149f34464a0396729bc85f13853b58ebc302698eb49d",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=GA&street=La Pointe Denis",
+          "key": "53ca49d137ee55a1aaf22cd2f39ad878a23d9e295eb1b29422058f58e89f204d",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle Notre-Dame-de-Bonne-Délivrance&city=GA",
+          "key": "a7bcc55673b0f161f280b09ae068fc1271a444a252eb6e8c2cb3343e20b71aea",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-107",
+      "name": "Chapelle Notre-Dame-du-Sacré-Cœur",
+      "address": "Meteck-Mavi, GA",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Chapelle Notre-Dame-du-Sacré-Cœur, Meteck-Mavi, GA",
+          "key": "cca852aa61fef9d9339f3dffd9ca5b5c173d0413bafd0ede6b9fe8a624971692",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Meteck-Mavi, GA",
+          "key": "659f6bc80eac0716b8df94ba95da7282903805371770fbee0254894ca137e5bc",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=GA&street=Meteck-Mavi",
+          "key": "05c104aa779780393f64cd8f2659a7d23b01aa60453fbfa87203396b6a5a54bc",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Chapelle Notre-Dame-du-Sacré-Cœur&city=GA",
+          "key": "d3799c488f954f083bc90283236fc392382ce2e13e1209823bf4bfbeb3c4b87f",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-120",
+      "name": "Kirche St. Joseph",
+      "address": "Amerbachstrasse / Klybeckstrasse, 4057 Basel, Switzerland",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "Kirche St. Joseph, Amerbachstrasse / Klybeckstrasse, 4057 Basel, Switzerland",
+          "key": "1e6968d1b8efac7386b0e15b0fc0ee6b1a79ec5412ce8df51032261d677a572c",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Amerbachstrasse / Klybeckstrasse, 4057 Basel, Switzerland",
+          "key": "26a38c5694505c7b6a9eb5a6864ada4a5c115ccd07ede7d926fe19c4267762d9",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Basel&postalcode=4057&street=Amerbachstrasse / Klybeckstrasse",
+          "key": "a42c34be7c8dadb6970f470c13ae562a7d4b656073a5028ff04a9bd7b9563169",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=Kirche St. Joseph&city=Basel&postalcode=4057",
+          "key": "d07051f1742e5f464c108b413138a2a9497526a244db1ef01f001ce14d6e1879",
+          "candidate_count": 0
+        }
+      ]
+    },
+    {
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-124",
+      "name": "House of Our Lady of the Most Holy Rosary",
+      "address": "Hale Street, Moorehall Rise, Townparks, Ardee, Co. Louth, A92 F8FP, Ireland",
+      "reason": "NO_TRUSTWORTHY_MATCH",
+      "attempts": [
+        {
+          "kind": "PRIMARY_NAME_ADDRESS",
+          "query": "House of Our Lady of the Most Holy Rosary, Hale Street, Moorehall Rise, Townparks, Ardee, Co. Louth, A92 F8FP, Ireland",
+          "key": "775c4220b786b34ec2dd14cfbde1af0a03e634bc7f4afe40f910e71c20e9daaf",
+          "candidate_count": 0
+        },
+        {
+          "kind": "FALLBACK_ADDRESS_ONLY",
+          "query": "Hale Street, Moorehall Rise, Townparks, Ardee, Co. Louth, A92 F8FP, Ireland",
+          "key": "3e56fb52cadc6c1ef83e7ca39983febebe4960185264606f730a0cc0ed3d8e87",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_STREET",
+          "query": "structured:city=Ireland&street=Hale Street",
+          "key": "6d71d910650887c5e636437a6ffea42eeab21ed76aa5237b3a513637a72dfc38",
+          "candidate_count": 0
+        },
+        {
+          "kind": "STRUCTURED_AMENITY",
+          "query": "structured:amenity=House of Our Lady of the Most Holy Rosary&city=Ireland",
+          "key": "a90252f700cc5d92d80ea61ce0db1a20fcc02958bbbdfbad4fc8d360cc830d66",
+          "candidate_count": 0
+        }
+      ]
+    }
+  ],
+  "mapped": 98,
+  "network_requests": 263
+}
