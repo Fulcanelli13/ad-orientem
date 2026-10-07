@@ -124,6 +124,12 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         void win?.AO_APP_SHELL_V1?.navigate?.("home");
         return;
       }
+      const apostolate=event.target?.closest?.("[data-ao-learn-apostolate]");
+      if(apostolate){
+        event.preventDefault?.();
+        void win?.AO_APP_SHELL_V1?.navigate?.("apostolate");
+        return;
+      }
       const launch=event.target?.closest?.("[data-ao-learn-module]");
       if(launch){
         event.preventDefault?.();
