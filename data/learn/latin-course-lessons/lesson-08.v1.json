@@ -315,7 +315,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Deux cas supplémentaires deviennent fonctionnels"
+        }
+      }
     },
     {
       "id": "l8-b2",
@@ -329,7 +334,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Génitif : de qui ? de quoi ?"
+        }
+      }
     },
     {
       "id": "l8-b3",
@@ -343,7 +353,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Datif : à qui ? pour qui ?"
+        }
+      }
     },
     {
       "id": "l8-b4",
@@ -359,7 +374,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Agnus Dei"
+        }
+      }
     },
     {
       "id": "l8-b5",
@@ -375,7 +395,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Deo gratias"
+        }
+      }
     },
     {
       "id": "l8-b6",
@@ -391,7 +416,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Gloria Patri"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -481,7 +511,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est Dei dans Agnus Dei ?",
+          "hint": "Traduisez la relation par « de Dieu ».",
+          "explanation": "Dei est ici le génitif de Deus.",
+          "options": [
+            "génitif",
+            "datif",
+            "nominatif",
+            "vocatif"
+          ]
+        }
+      }
     },
     {
       "id": "l8-e2",
@@ -510,7 +553,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est Deo dans Deo gratias ?",
+          "hint": "Pensez : « grâces à Dieu ».",
+          "explanation": "Deo est au datif.",
+          "options": [
+            "datif",
+            "génitif",
+            "accusatif",
+            "vocatif"
+          ]
+        }
+      }
     },
     {
       "id": "l8-e3",
@@ -538,7 +594,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le génitif signifiant « du monde ».",
+          "hint": "Il vient de mundus.",
+          "explanation": "mundi est le génitif singulier de mundus."
+        }
+      }
     },
     {
       "id": "l8-e4",
@@ -570,7 +633,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les trois datifs coordonnés.",
+          "hint": "Ils répondent à la question « à qui ? ».",
+          "explanation": "Patri, Filio et Spiritui sont trois datifs parallèles."
+        }
+      }
     },
     {
       "id": "l8-e5",
@@ -598,7 +668,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle fonction est désormais active pour le génitif ?",
+          "hint": "Pensez à Agnus Dei.",
+          "explanation": "Le génitif marque couramment une relation ou une possession.",
+          "options": [
+            "relation / possession",
+            "complément d’objet direct",
+            "mouvement vers",
+            "instrument seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l8-e6",
@@ -626,7 +709,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle fonction est désormais active pour le datif ?",
+          "hint": "Pensez à Deo gratias.",
+          "explanation": "Le datif marque couramment le destinataire ou la référence.",
+          "options": [
+            "destinataire / référence",
+            "complément d’objet direct",
+            "lieu d’où l’on vient",
+            "adresse directe"
+          ]
+        }
+      }
     },
     {
       "id": "l8-e7",
@@ -656,7 +752,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le vocabulaire de la leçon 8 à son sens.",
+          "hint": "Les quatre sont de nouveaux mots du vocabulaire fondamental.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale.",
+          "matches": {
+            "spes": "espérance",
+            "mens": "esprit",
+            "opus": "œuvre",
+            "domus": "maison / demeure"
+          }
+        }
+      }
     },
     {
       "id": "l8-e8",
@@ -686,7 +795,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le vocabulaire de la leçon 8 à son sens.",
+          "hint": "Tous appartiennent à la leçon 8.",
+          "explanation": "Ceci vérifie le reste de l’ensemble nominal.",
+          "matches": {
+            "saeculum": "siècle / monde",
+            "voluntas": "volonté",
+            "angelus": "ange",
+            "civitas": "cité / communauté"
+          }
+        }
+      }
     },
     {
       "id": "l8-e9",
@@ -714,7 +836,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quels deux cas restent encore des aperçus après la leçon 8 ?",
+          "hint": "Ils deviennent actifs à la leçon 9.",
+          "explanation": "L’accusatif et l’ablatif sont les dernières fonctions casuelles encore en attente.",
+          "options": [
+            "accusatif et ablatif",
+            "génitif et datif",
+            "nominatif et vocatif",
+            "les six cas sont actifs"
+          ]
+        }
+      }
     },
     {
       "id": "l8-e10",
@@ -739,7 +874,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le lemme latin correspondant à mundi.",
+          "hint": "La forme en -i est un génitif singulier.",
+          "explanation": "mundi appartient à mundus."
+        }
+      }
     }
   ],
   "objectives": [
@@ -810,5 +952,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Agnus Dei / Deo gratias",
+      "grammarFocus": "Génitif et datif",
+      "readingOutcome": "Activer les fonctions de relation/possession du génitif et de destinataire/référence du datif.",
+      "objectives": [
+        "Activer la relation ou la possession exprimée par le génitif.",
+        "Activer le destinataire ou la référence exprimés par le datif.",
+        "Apprendre les treize lemmes figés de la leçon 8.",
+        "Lire des formes authentiques au génitif et au datif sans traiter les flexions comme de nouveaux mots."
+      ]
+    }
+  }
 }

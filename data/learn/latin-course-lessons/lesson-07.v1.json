@@ -202,7 +202,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Qui accomplit l’action ?"
+        }
+      }
     },
     {
       "id": "l7-b2",
@@ -216,7 +221,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lire les désinences passives comme des signaux"
+        }
+      }
     },
     {
       "id": "l7-b3",
@@ -232,7 +242,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "sanctificetur"
+        }
+      }
     },
     {
       "id": "l7-b4",
@@ -246,7 +261,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Laudamus face à sanctificetur"
+        }
+      }
     },
     {
       "id": "l7-b5",
@@ -262,7 +282,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Toute forme d’apparence passive n’est pas un verbe fini au passif"
+        }
+      }
     },
     {
       "id": "l7-b6",
@@ -276,7 +301,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La grammaire progresse tandis que le vocabulaire reste maîtrisé"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -365,7 +395,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle terminaison de sanctificetur signale la voix passive ?",
+          "hint": "Regardez la syllabe finale.",
+          "explanation": "-tur est un signal de troisième personne du singulier au passif.",
+          "options": [
+            "-tur",
+            "-mus",
+            "-o",
+            "-nt"
+          ]
+        }
+      }
     },
     {
       "id": "l7-e2",
@@ -395,7 +438,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est active ?",
+          "hint": "Le sujet accomplit l’action de louer.",
+          "explanation": "Laudamus est la première personne du pluriel à l’actif.",
+          "options": [
+            "Laudamus",
+            "sanctificetur",
+            "les deux",
+            "aucune des deux"
+          ]
+        }
+      }
     },
     {
       "id": "l7-e3",
@@ -423,7 +479,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Dans une proposition passive, qu’arrive-t-il au sujet grammatical ?",
+          "hint": "Opposez le passif à l’actif.",
+          "explanation": "La voix passive présente le sujet comme recevant l’action.",
+          "options": [
+            "il reçoit l’action",
+            "il doit disparaître",
+            "il devient une préposition",
+            "il doit être au pluriel"
+          ]
+        }
+      }
     },
     {
       "id": "l7-e4",
@@ -451,7 +520,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le verbe fini au passif.",
+          "hint": "Cherchez -tur.",
+          "explanation": "sanctificetur est la forme verbale finie au passif."
+        }
+      }
     },
     {
       "id": "l7-e5",
@@ -479,7 +555,18 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Benedictus est-il ici un verbe fini au présent passif ?",
+          "hint": "Il signifie « béni » et fonctionne comme adjectif.",
+          "explanation": "Benedictus est ici participial/adjectival.",
+          "options": [
+            "oui",
+            "non"
+          ]
+        }
+      }
     },
     {
       "id": "l7-e6",
@@ -510,7 +597,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la forme active à son sens.",
+          "hint": "Ces formes reprennent la leçon 5.",
+          "explanation": "Les formes actives déjà connues fournissent le contraste.",
+          "matches": {
+            "Laudamus": "nous louons",
+            "Benedicimus": "nous bénissons",
+            "Adoramus": "nous adorons",
+            "Glorificamus": "nous glorifions"
+          }
+        }
+      }
     },
     {
       "id": "l7-e7",
@@ -540,7 +640,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière sanctificetur ?",
+          "hint": "Mémorisez la famille verbale sous son lemme de dictionnaire.",
+          "explanation": "sanctificetur est une forme fléchie de sanctifico.",
+          "options": [
+            "sanctifico",
+            "sanctus",
+            "nomen",
+            "sanctificetur"
+          ]
+        }
+      }
     },
     {
       "id": "l7-e8",
@@ -568,7 +681,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quels cas restent actifs dans la leçon 7 ?",
+          "hint": "Le prochain déverrouillage intervient à la leçon 8.",
+          "explanation": "Le génitif et le datif sont encore des aperçus.",
+          "options": [
+            "nominatif et vocatif",
+            "génitif et datif",
+            "accusatif et ablatif",
+            "les six cas"
+          ]
+        }
+      }
     },
     {
       "id": "l7-e9",
@@ -591,7 +717,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le lemme latin signifiant « sanctifier / rendre saint ».",
+          "hint": "C’est l’unique nouveau lemme fondamental de cette leçon.",
+          "explanation": "sanctifico est le verbe fondamental de la leçon 7."
+        }
+      }
     },
     {
       "id": "l7-e10",
@@ -620,7 +753,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui est volontairement reporté lorsque vous lisez sanctificetur ?",
+          "hint": "Cette leçon vise la voix.",
+          "explanation": "La voix est lue maintenant ; le mode relève d’une syntaxe ultérieure.",
+          "options": [
+            "son mode subjonctif",
+            "sa voix passive",
+            "son lemme",
+            "le nom nomen"
+          ]
+        }
+      }
     }
   ],
   "objectives": [
@@ -680,5 +826,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Il est offert / Il est loué",
+      "grammarFocus": "Présent passif",
+      "readingOutcome": "Opposer les désinences verbales actives et passives dans des propositions liturgiques.",
+      "objectives": [
+        "Opposer la voix active et la voix passive dans la lecture du système du présent.",
+        "Reconnaître les principales désinences passives.",
+        "Apprendre sanctifico sans expansion lexicale inutile.",
+        "Éviter de classer à tort les participes comme des verbes finis au présent passif."
+      ]
+    }
+  }
 }

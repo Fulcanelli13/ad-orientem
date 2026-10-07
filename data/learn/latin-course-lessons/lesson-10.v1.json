@@ -348,7 +348,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les pronoms entrent dans le même système de cas"
+        }
+      }
     },
     {
       "id": "l10-b2",
@@ -362,7 +367,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "ego, tu, nos, vos"
+        }
+      }
     },
     {
       "id": "l10-b3",
@@ -378,7 +388,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Dominus vobiscum"
+        }
+      }
     },
     {
       "id": "l10-b4",
@@ -392,7 +407,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "is, ea, id fournit les formes casuelles de la troisième personne"
+        }
+      }
     },
     {
       "id": "l10-b5",
@@ -406,7 +426,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "se est réfléchi"
+        }
+      }
     },
     {
       "id": "l10-b6",
@@ -420,7 +445,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Étape 2 : lire l’Ordinaire comme une structure"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -525,7 +555,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme pronominal se trouve derrière vobis dans vobiscum ?",
+          "hint": "vobis est une forme de pronom personnel au pluriel.",
+          "explanation": "vobis appartient à vos.",
+          "options": [
+            "vos",
+            "nos",
+            "tu",
+            "is/ea/id"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e2",
@@ -555,7 +598,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est vobis dans vobiscum ?",
+          "hint": "cum régit l’ablatif.",
+          "explanation": "vobis est ici à l’ablatif pluriel.",
+          "options": [
+            "ablatif",
+            "datif",
+            "accusatif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e3",
@@ -585,7 +641,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nos dans Et ne nos inducas... ?",
+          "hint": "C’est le complément d’objet de l’action d’introduire.",
+          "explanation": "nos est ici à l’accusatif.",
+          "options": [
+            "accusatif",
+            "nominatif",
+            "datif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e4",
@@ -615,7 +684,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nobis dans Miserere nobis ?",
+          "hint": "La miséricorde est dirigée vers nous.",
+          "explanation": "nobis est au datif dans cette formule.",
+          "options": [
+            "datif",
+            "accusatif",
+            "nominatif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e5",
@@ -647,7 +729,21 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la forme avec cum à son pronom.",
+          "hint": "cum suit la forme pronominale.",
+          "explanation": "Ce sont les formes conventionnelles soudées à cum.",
+          "matches": {
+            "mecum": "ego",
+            "tecum": "tu",
+            "nobiscum": "nos",
+            "vobiscum": "vos",
+            "secum": "se"
+          }
+        }
+      }
     },
     {
       "id": "l10-e6",
@@ -676,7 +772,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est le génitif singulier de is/ea/id ?",
+          "hint": "Une seule forme sert aux trois genres au génitif singulier.",
+          "explanation": "eius est le génitif singulier.",
+          "options": [
+            "eius",
+            "ei",
+            "eum",
+            "eo"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e7",
@@ -705,7 +814,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est le datif singulier de is/ea/id ?",
+          "hint": "C’est une courte forme de deux lettres.",
+          "explanation": "ei est le datif singulier.",
+          "options": [
+            "ei",
+            "eius",
+            "eum",
+            "ea"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e8",
@@ -733,7 +855,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle affirmation au sujet de se est correcte ?",
+          "hint": "Les pronoms réfléchis renvoient au sujet.",
+          "explanation": "se n’a pas de forme au nominatif.",
+          "options": [
+            "il n’a pas de nominatif et renvoie au sujet",
+            "il est toujours au nominatif",
+            "il signifie uniquement « ils »",
+            "il ne change jamais de cas"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e9",
@@ -763,7 +898,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la formule de l’Ordinaire à la fonction casuelle évaluée.",
+          "hint": "Ces quatre formules résument les leçons 8–9.",
+          "explanation": "Le jalon de l’étape 2 réactive les quatre fonctions casuelles nouvellement activées.",
+          "matches": {
+            "Agnus Dei": "génitif",
+            "Deo gratias": "datif",
+            "ad altare": "accusatif",
+            "in nomine": "ablatif"
+          }
+        }
+      }
     },
     {
       "id": "l10-e10",
@@ -791,7 +939,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel couple de dictionnaire aide le mieux à retrouver le radical de pax ?",
+          "hint": "Rappelez-vous la leçon 6.",
+          "explanation": "Le génitif pacis révèle pac-.",
+          "options": [
+            "pax, pacis",
+            "pax, pax",
+            "pacis, pax",
+            "pax, paci"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e11",
@@ -820,7 +981,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme exprime la voix passive ?",
+          "hint": "Rappelez-vous le signal -tur.",
+          "explanation": "sanctificetur est le repère passif de l’étape 2.",
+          "options": [
+            "sanctificetur",
+            "Laudamus",
+            "Credo",
+            "venio"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e12",
@@ -853,7 +1027,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les informations de pronom et de préposition déjà apprises.",
+          "hint": "sed et malus appartiennent au vocabulaire antérieur ; nos et a/ab sont maintenant actifs eux aussi.",
+          "explanation": "La phrase peut désormais être lue à travers la conjonction, le pronom, la préposition et la forme adjectivale/nominale."
+        }
+      }
     },
     {
       "id": "l10-e13",
@@ -881,7 +1062,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui commence à la leçon 10 ?",
+          "hint": "Les pronoms réapparaîtront régulièrement dans les leçons suivantes.",
+          "explanation": "La leçon 10 marque le début formel de la progression en spirale des pronoms.",
+          "options": [
+            "la progression en spirale des pronoms",
+            "le système de la première déclinaison",
+            "le système de prononciation",
+            "le couronnement du cours"
+          ]
+        }
+      }
     },
     {
       "id": "l10-e14",
@@ -909,7 +1103,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est l’objectif de lecture de l’étape 2 ?",
+          "hint": "C’est le jalon de la leçon 10.",
+          "explanation": "L’étape 2 consolide la lecture de phrases de l’Ordinaire.",
+          "options": [
+            "des phrases complètes de type Ordinaire avec reconnaissance des cas et des pronoms",
+            "du vocabulaire isolé seulement",
+            "des passages inconnus de la Semaine sainte",
+            "la syntaxe périodique du Canon"
+          ]
+        }
+      }
     }
   ],
   "objectives": [
@@ -991,5 +1198,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Dominus vobiscum",
+      "grammarFocus": "Pronoms personnels et réfléchis ; cum",
+      "readingOutcome": "Lire les formes des pronoms personnels, réfléchis et de troisième personne dans leur contexte casuel.",
+      "objectives": [
+        "Inscrire les pronoms personnels et réfléchis dans le système complet des cas.",
+        "Apprendre les formes conventionnelles avec cum : mecum/tecum/nobiscum/vobiscum/secum.",
+        "Commencer la reconnaissance casuelle de is/ea/id.",
+        "Franchir le jalon de l’étape 2 portant sur la troisième déclinaison, la voix, les six cas, les prépositions et les pronoms."
+      ]
+    }
+  }
 }

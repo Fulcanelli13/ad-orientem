@@ -488,7 +488,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le nominatif peut masquer le radical"
+        }
+      }
     },
     {
       "id": "l6-b2",
@@ -502,7 +507,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une seule carte permanente des cas"
+        }
+      }
     },
     {
       "id": "l6-b3",
@@ -516,7 +526,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Trouver le radical à partir du génitif"
+        }
+      }
     },
     {
       "id": "l6-b4",
@@ -530,7 +545,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Attention aux neutres"
+        }
+      }
     },
     {
       "id": "l6-b5",
@@ -546,7 +566,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Pater noster"
+        }
+      }
     },
     {
       "id": "l6-b6",
@@ -560,7 +585,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Pax et caro en contexte"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -655,7 +685,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel couple de formes de dictionnaire donne correctement « père » ?",
+          "hint": "Le génitif révèle patr-.",
+          "explanation": "pater, patris est le couple correct de la troisième déclinaison.",
+          "options": [
+            "pater, patris",
+            "pater, pateris",
+            "patris, pater",
+            "pater, patri"
+          ]
+        }
+      }
     },
     {
       "id": "l6-e2",
@@ -686,7 +729,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel radical pacis révèle-t-il ?",
+          "hint": "Retirez la terminaison génitive -is.",
+          "explanation": "pax, pacis a pour radical pac-.",
+          "options": [
+            "pac-",
+            "pax-",
+            "paci-",
+            "pa-"
+          ]
+        }
+      }
     },
     {
       "id": "l6-e3",
@@ -714,7 +770,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nom de la leçon 6 est neutre ?",
+          "hint": "Son génitif est corporis.",
+          "explanation": "corpus est neutre.",
+          "options": [
+            "corpus",
+            "pater",
+            "virgo",
+            "pax"
+          ]
+        }
+      }
     },
     {
       "id": "l6-e4",
@@ -745,7 +814,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom à son génitif.",
+          "hint": "Utilisez les couples de dictionnaire.",
+          "explanation": "Le génitif révèle chaque radical.",
+          "matches": {
+            "homo": "hominis",
+            "lumen": "luminis",
+            "mater": "matris",
+            "nox": "noctis"
+          }
+        }
+      }
     },
     {
       "id": "l6-e5",
@@ -774,7 +856,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les deux nouveaux noms de la troisième déclinaison.",
+          "hint": "Ignorez la grammaire ultérieure fournie comme aide.",
+          "explanation": "Pater et nomen sont des noms de la leçon 6."
+        }
+      }
     },
     {
       "id": "l6-e6",
@@ -801,7 +890,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le nouveau nom de la troisième déclinaison.",
+          "hint": "Verbum et est sont du vocabulaire réemployé.",
+          "explanation": "caro, carnis est le nouveau nom."
+        }
+      }
     },
     {
       "id": "l6-e7",
@@ -831,7 +927,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom à son sens.",
+          "hint": "Tous appartiennent au vocabulaire fondamental de la leçon 6.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale.",
+          "matches": {
+            "sanguis": "sang",
+            "calix": "calice / coupe",
+            "veritas": "vérité",
+            "panis": "pain"
+          }
+        }
+      }
     },
     {
       "id": "l6-e8",
@@ -861,7 +970,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom à son sens.",
+          "hint": "Tous appartiennent au vocabulaire fondamental de la leçon 6.",
+          "explanation": "Ceci vérifie les nouveaux noms du groupe 201–350.",
+          "matches": {
+            "gens": "peuple / nation",
+            "lex": "loi",
+            "vox": "voix",
+            "mons": "montagne"
+          }
+        }
+      }
     },
     {
       "id": "l6-e9",
@@ -890,7 +1012,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi le génitif est-il mémorisé avec un nom de la troisième déclinaison ?",
+          "hint": "Le nominatif peut masquer le radical.",
+          "explanation": "Le génitif est le moyen fiable de retrouver le radical.",
+          "options": [
+            "pour révéler le radical",
+            "pour indiquer le temps du verbe",
+            "pour montrer l’ordre des mots",
+            "pour traduire le nom"
+          ]
+        }
+      }
     },
     {
       "id": "l6-e10",
@@ -914,7 +1049,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le génitif de corpus.",
+          "hint": "Le radical est corpor-.",
+          "explanation": "corpus, corporis est le couple de dictionnaire."
+        }
+      }
     }
   ],
   "objectives": [
@@ -997,5 +1139,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Pater, corpus, pax",
+      "grammarFocus": "Troisième déclinaison",
+      "readingOutcome": "Utiliser les formes de dictionnaire au nominatif et au génitif pour retrouver les radicaux de la troisième déclinaison.",
+      "objectives": [
+        "Utiliser le nominatif et le génitif pour retrouver les radicaux de la troisième déclinaison.",
+        "Reconnaître les noms neutres de la troisième déclinaison.",
+        "Apprendre les vingt-cinq lemmes figés de la leçon 6.",
+        "Lire les repères de la troisième déclinaison dans des textes authentiques de l’Ordinaire."
+      ]
+    }
+  }
 }

@@ -571,7 +571,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les deux dernières fonctions casuelles deviennent actives"
+        }
+      }
     },
     {
       "id": "l9-b2",
@@ -585,7 +590,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Accusatif : objet et direction"
+        }
+      }
     },
     {
       "id": "l9-b3",
@@ -599,7 +609,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’ablatif avec les prépositions"
+        }
+      }
     },
     {
       "id": "l9-b4",
@@ -615,7 +630,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "In nomine"
+        }
+      }
     },
     {
       "id": "l9-b5",
@@ -631,7 +651,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Per Dominum nostrum"
+        }
+      }
     },
     {
       "id": "l9-b6",
@@ -645,7 +670,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le système complet des cas est actif"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -755,7 +785,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas ad régit-il ici ?",
+          "hint": "ad marque un mouvement vers.",
+          "explanation": "ad régit l’accusatif.",
+          "options": [
+            "accusatif",
+            "ablatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
     },
     {
       "id": "l9-e2",
@@ -785,7 +828,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas in régit-il dans in nomine ?",
+          "hint": "Il s’agit d’un lieu ou état, non d’un mouvement vers l’intérieur.",
+          "explanation": "in prend l’ablatif pour le lieu ou l’état.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "vocatif"
+          ]
+        }
+      }
     },
     {
       "id": "l9-e3",
@@ -815,7 +871,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas per régit-il ?",
+          "hint": "per est une préposition construite avec l’accusatif.",
+          "explanation": "Per Dominum est à l’accusatif.",
+          "options": [
+            "accusatif",
+            "ablatif",
+            "datif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l9-e4",
@@ -845,7 +914,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas cum régit-il ?",
+          "hint": "cum signifie « avec ».",
+          "explanation": "cum régit l’ablatif.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "nominatif"
+          ]
+        }
+      }
     },
     {
       "id": "l9-e5",
@@ -875,7 +957,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la préposition construite avec l’ablatif à son sens.",
+          "hint": "Dans le schéma fondamental, ces prépositions régissent l’ablatif.",
+          "explanation": "Le cas et le sens s’apprennent ensemble.",
+          "matches": {
+            "pro": "pour / en faveur de",
+            "sine": "sans",
+            "coram": "devant / en présence de",
+            "de": "de / au sujet de"
+          }
+        }
+      }
     },
     {
       "id": "l9-e6",
@@ -905,7 +1000,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la préposition construite avec l’accusatif à son sens.",
+          "hint": "Ces prépositions régissent l’accusatif.",
+          "explanation": "Le cas et le sens s’apprennent ensemble.",
+          "matches": {
+            "apud": "chez / auprès de / parmi",
+            "inter": "entre / parmi",
+            "contra": "contre",
+            "secundum": "selon"
+          }
+        }
+      }
     },
     {
       "id": "l9-e7",
@@ -934,7 +1042,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle préposition peut prendre l’accusatif pour le mouvement et l’ablatif pour le lieu ?",
+          "hint": "Comparez « dans, vers l’intérieur » avec « dans » au sens de lieu.",
+          "explanation": "in change de cas selon qu’il exprime un mouvement ou un lieu/état.",
+          "options": [
+            "in",
+            "cum",
+            "sine",
+            "per"
+          ]
+        }
+      }
     },
     {
       "id": "l9-e8",
@@ -962,7 +1083,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle affirmation est désormais vraie du panneau des cas ?",
+          "hint": "C’est le dernier déverrouillage des fonctions casuelles.",
+          "explanation": "La leçon 9 rend tout le système opérationnel.",
+          "options": [
+            "les six cas sont actifs",
+            "seuls le nominatif et le vocatif sont actifs",
+            "le génitif et le datif sont des aperçus",
+            "l’accusatif et l’ablatif sont des aperçus"
+          ]
+        }
+      }
     },
     {
       "id": "l9-e9",
@@ -991,7 +1125,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez la préposition et le nom principal qu’elle régit.",
+          "hint": "Repérez la préposition puis le nom principal.",
+          "explanation": "per régit Dominum à l’accusatif."
+        }
+      }
     },
     {
       "id": "l9-e10",
@@ -1021,7 +1162,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la préposition à son cas fondamental habituel.",
+          "hint": "Deux régissent l’accusatif ; deux régissent l’ablatif.",
+          "explanation": "Le régime fait partie de la connaissance lexicale.",
+          "matches": {
+            "ad": "accusatif",
+            "propter": "accusatif",
+            "sine": "ablatif",
+            "coram": "ablatif"
+          }
+        }
+      }
     },
     {
       "id": "l9-e11",
@@ -1049,7 +1203,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel schéma fréquent est enseigné pour usque ?",
+          "hint": "Pensez : « jusqu’à ».",
+          "explanation": "Le cours enseigne usque ad + accusatif comme schéma fondamental.",
+          "options": [
+            "usque ad + accusatif",
+            "usque cum + ablatif",
+            "usque de + ablatif",
+            "usque per + datif"
+          ]
+        }
+      }
     },
     {
       "id": "l9-e12",
@@ -1072,7 +1239,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez la préposition latine signifiant « selon ».",
+          "hint": "Elle régit l’accusatif.",
+          "explanation": "secundum signifie « selon »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1156,5 +1330,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Ad altare Dei",
+      "grammarFocus": "Accusatif, ablatif et prépositions",
+      "readingOutcome": "Activer les fonctions de l’accusatif et de l’ablatif ; apprendre le régime casuel des prépositions fondamentales.",
+      "objectives": [
+        "Activer les fonctions de l’accusatif et de l’ablatif.",
+        "Apprendre le régime casuel de l’ensemble figé des prépositions.",
+        "Garder les six cas visibles en permanence comme système opérationnel.",
+        "Lire des groupes prépositionnels dans des formules authentiques de l’Ordinaire et des oraisons."
+      ]
+    }
+  }
 }
