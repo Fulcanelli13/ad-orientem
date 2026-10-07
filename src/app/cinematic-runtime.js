@@ -40,7 +40,12 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
 
   const runtime=()=>win?.AO_RUNTIME_V8;
   const state=()=>runtime()?.store?.getState?.()||null;
-  const reduced=()=>Boolean(win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches||state()?.settings?.reducedMotion);
+  const reduced=()=>Boolean(
+    win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ||
+    state()?.settings?.reducedMotion ||
+    d?.documentElement?.dataset?.aoMotionV1==="reduced" ||
+    d?.documentElement?.dataset?.reducedMotion==="true"
+  );
   const fr=()=>state()?.language==="fr";
   const L=(en,frText)=>fr()?frText:en;
   const q=(sel,root=d)=>root?.querySelector?.(sel)||null;
