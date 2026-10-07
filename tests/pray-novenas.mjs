@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { NOVENA_CORPUS_V3 } from "../src/pray/novena-corpus.js";
+import { NOVENA_SOURCE_HOLDS, NOVENA_TARGET_IDS, NOVENA_TARGET_REGISTRY_V1 } from "../src/calendar/devotional-registry.js";
 
 const expected=[
   "holy_ghost","christmas","corpus_christi","sacred_heart",
@@ -8,6 +9,12 @@ const expected=[
   "st_joseph","holy_souls","perpetual_help","st_therese"
 ];
 assert.deepEqual(Object.keys(NOVENA_CORPUS_V3),expected,"N3 corpus identity/order changed");
+assert.equal(NOVENA_TARGET_IDS.length,16,"later target registry must remain 16 items");
+assert.equal(Object.keys(NOVENA_TARGET_REGISTRY_V1).length,16);
+assert.deepEqual(Object.keys(NOVENA_SOURCE_HOLDS),["st_anthony_nine_tuesdays","christ_the_king","immaculate_heart","st_michael"]);
+assert.ok(Object.values(NOVENA_SOURCE_HOLDS).every(x=>x.playable===false&&x.sourceStatus==="EXACT_LATER_DONOR_PRAYER_BODY_MISSING"),"held later donor entries must fail closed instead of manufacturing prayers");
+assert.ok(Object.keys(NOVENA_SOURCE_HOLDS).every(id=>NOVENA_CORPUS_V3[id]===undefined),"source-held target entries leaked into playable N3 corpus");
+
 for(const id of expected){
   const n=NOVENA_CORPUS_V3[id];
   assert.equal(n.id,id,id+" identity changed");
