@@ -113,7 +113,7 @@ assert.ok(christmasContext.some(item=>item.kind==="NOVENA_CONTEXT"&&/Corsica/i.t
 const christKingContext=filterExploreItems(projection.byLens.traditions,{query:"Christ the King"});
 assert.ok(christKingContext.some(item=>item.kind==="NOVENA_CONTEXT"&&item.map_state==="NOT_MAPPED"),"Christ the King textual French-world context was incorrectly forced onto a map");
 
-const lourdesPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Pilgrimage to Lourdes"});
+const lourdesPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Sanctuaire Notre-Dame de Lourdes"});
 assert.equal(lourdesPilgrimage.length,1);
 assert.equal(lourdesPilgrimage[0].map_publishable,true);
 assert.equal(lourdesPilgrimage[0].map_state,"DESTINATION_MAPPED");
