@@ -137,6 +137,34 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
     return true;
   }
 
+  function forceCanonicalSurfaceLabel(button,surface){
+    if(!button||surface!=="learn")return false;
+    button.setAttribute?.("aria-label","Formation");
+    const legacyLabel=/^\s*(?:Learn(?:\s*\/\s*Apprendre)?|Apprendre)\s*$/i;
+    const preferred=button.querySelectorAll?.("[data-ao-ribbon-label],.aoGlobalRibbonLabel,.aoRibbonLabel,.label")??[];
+    for(const node of preferred){
+      if(legacyLabel.test(node?.textContent??"")){
+        node.textContent="Formation";
+        return true;
+      }
+    }
+    for(const node of button.childNodes??[]){
+      if(node?.nodeType===3&&legacyLabel.test(node.textContent??"")){
+        node.textContent="Formation";
+        return true;
+      }
+    }
+    const descendants=button.querySelectorAll?.("span,strong,small")??[];
+    for(const node of descendants){
+      if(node?.querySelector?.("[data-ao-asset-id],.aoGlobalRibbonIcon"))continue;
+      if(legacyLabel.test(node?.textContent??"")){
+        node.textContent="Formation";
+        return true;
+      }
+    }
+    return false;
+  }
+
   function bindRibbonClick() {
     if (ribbonClickBound || !nav?.addEventListener) return;
     nav.addEventListener("click", onRibbonClick);
@@ -168,6 +196,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
         button.dataset.aoAssetId=assetId;
         applyCanonicalRibbonIcon(button,assetId);
       }
+      forceCanonicalSurfaceLabel(button,surface);
       button.removeAttribute?.("data-ao-ribbon");
       adopted += 1;
     }
