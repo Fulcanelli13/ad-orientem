@@ -106,7 +106,7 @@ try{
     homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     homeDisplay:getComputedStyle(document.querySelector(".homeScreen")).display,
   }));
-  assert.equal(calendarOwnership.owner,"modular-calendar-v1","Calendar did not mount the modular presentation owner");
+  assert.equal(calendarOwnership.owner,"modular-calendar-v2-liturgical-year","Calendar did not mount the modular presentation owner");
   assert.notEqual(calendarOwnership.donorPanel,"calendar","Calendar still opened the donor v25 panel");
   assert.equal(calendarOwnership.shell,true,"app shell did not report the modular Calendar owner");
   assert.equal(calendarOwnership.homeSuppressed,"true","Calendar did not isolate Home");
