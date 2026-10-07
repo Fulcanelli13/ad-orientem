@@ -865,6 +865,102 @@
         "PIL-GROTTO-LOURDES-FEAST"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:bermont-greux",
+      "place_id": "place:FR:bermont-greux",
+      "name": "Chapelle Notre-Dame de Bermont",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Notre-Dame de Bermont",
+      "origin_summary": "Ancient Marian sanctuary near Domrémy where Saint Joan of Arc is documented as having gone on pilgrimage to pray and offer candles and flowers.",
+      "associated_saints": [
+        "Saint Joan of Arc"
+      ],
+      "source_ids": [
+        "SHR-BERMONT-GREUX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:arcachon-marins",
+      "place_id": "place:FR:notre-dame-des-marins-arcachon",
+      "name": "Sanctuaire Notre-Dame des Marins — Basilique Notre-Dame d’Arcachon",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Notre-Dame des Marins",
+      "origin_summary": "Marian sanctuary of Arcachon associated with sailors since 1519; the Virgin was crowned in 1870 and the church was raised to a minor basilica in 1953.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-ARCACHON-MARINS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:pontmain",
+      "place_id": "place:FR:pontmain",
+      "name": "Sanctuaire Notre-Dame de Pontmain",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Notre-Dame de Pontmain, Reine de la Paix",
+      "origin_summary": "Marian sanctuary at Pontmain centred on the apparition of 17 January 1871 and an active national and diocesan pilgrimage life.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PONTMAIN",
+        "PIL-PONTMAIN-JAN17",
+        "PIL-PONTMAIN-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:pellevoisin",
+      "place_id": "place:FR:pellevoisin",
+      "name": "Sanctuaire Notre-Dame de Miséricorde de Pellevoisin",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Notre-Dame de Miséricorde",
+      "origin_summary": "Marian shrine at Pellevoisin preserving the apparition chapel and a living devotional tradition including the Scapular of the Sacred Heart and annual pilgrimage.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-PELLEVOISIN",
+        "PIL-PELLEVOISIN-ANNUAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:montligeon",
+      "place_id": "place:FR:montligeon",
+      "name": "Sanctuaire Notre-Dame de Montligeon",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Notre-Dame Libératrice",
+      "origin_summary": "Sanctuary in the diocese of Séez dedicated in a distinctive way to prayer for the dead and receiving pilgrims throughout the year.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-MONTLIGEON",
+        "PIL-MONTLIGEON-CIEL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:rue-du-bac",
+      "place_id": "place:FR:rue-du-bac",
+      "name": "Chapelle Notre-Dame de la Médaille Miraculeuse",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Notre-Dame de la Médaille Miraculeuse",
+      "origin_summary": "Paris chapel of the 1830 apparitions to Saint Catherine Labouré, now a major international Marian pilgrimage destination associated with the Miraculous Medal.",
+      "associated_saints": [
+        "Saint Catherine Labouré",
+        "Saint Louise de Marillac",
+        "Saint Vincent de Paul"
+      ],
+      "source_ids": [
+        "SHR-RUE-DU-BAC",
+        "PIL-RUE-DU-BAC",
+        "OBS-RUE-DU-BAC-NOV27"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -1947,6 +2043,147 @@
         "PIL-GROTTO-LOURDES-FEAST"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:bermont-destination",
+      "name": "Pilgrimage to Notre-Dame de Bermont",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:bermont-greux",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historic Marian pilgrimage destination near Domrémy, directly associated with Saint Joan of Arc’s documented devotional visits.",
+      "source_ids": [
+        "SHR-BERMONT-GREUX"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:arcachon-marins-destination",
+      "name": "Pilgrimage to Notre-Dame des Marins at Arcachon",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:arcachon-marins",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Maritime Marian sanctuary and minor basilica at Arcachon with a long local pilgrimage and sailors’ devotional identity.",
+      "source_ids": [
+        "SHR-ARCACHON-MARINS"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:pontmain-destination",
+      "name": "Pilgrimage to Notre-Dame de Pontmain",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:pontmain",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Year-round pilgrimage destination at the site of the 1871 apparition.",
+      "source_ids": [
+        "SHR-PONTMAIN"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:pontmain-jan17",
+      "name": "Pontmain Apparition Anniversary Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:pontmain",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:pontmain:jan17"
+      ],
+      "scope_note": "Annual 17 January pilgrimage observance marking the anniversary of the apparition at Pontmain.",
+      "source_ids": [
+        "PIL-PONTMAIN-JAN17"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:pontmain-assumption",
+      "name": "Pontmain Assumption Pilgrimage",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:pontmain",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:pontmain:assumption"
+      ],
+      "scope_note": "Annual Assumption pilgrimage gathering at Pontmain with vigil, solemn Mass and Marian processions.",
+      "source_ids": [
+        "PIL-PONTMAIN-ASSUMPTION"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:pellevoisin-destination",
+      "name": "Pilgrimage to Notre-Dame de Pellevoisin",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:pellevoisin",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Year-round Marian pilgrimage destination at the apparition chapel of Pellevoisin.",
+      "source_ids": [
+        "SHR-PELLEVOISIN"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:pellevoisin-annual",
+      "name": "Grand Annual Pilgrimage to Pellevoisin",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:pellevoisin",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:pellevoisin:annual"
+      ],
+      "scope_note": "Grand annual pilgrimage on the last weekend of August, including procession, Rosary, scapular imposition and Mass.",
+      "source_ids": [
+        "PIL-PELLEVOISIN-ANNUAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:montligeon-destination",
+      "name": "Pilgrimage to Notre-Dame de Montligeon",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:montligeon",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Year-round pilgrimage destination dedicated to prayer for the dead and consolation of the bereaved.",
+      "source_ids": [
+        "SHR-MONTLIGEON"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:montligeon-ciel",
+      "name": "Pèlerinages du Ciel at Montligeon",
+      "kind": "ANNUAL_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:montligeon",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:montligeon:ciel"
+      ],
+      "scope_note": "Recurring November pilgrimage cycle for prayer for the dead; specific dates vary by year and remain owned by the shrine’s current programme.",
+      "source_ids": [
+        "PIL-MONTLIGEON-CIEL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:rue-du-bac-destination",
+      "name": "Pilgrimage to the Miraculous Medal Chapel, Rue du Bac",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:rue-du-bac",
+      "route_ids": [],
+      "temporal_link_ids": [
+        "temporal:rue-du-bac:nov27"
+      ],
+      "scope_note": "International Marian pilgrimage destination at the 1830 apparition chapel, with an established 27 November observance of Our Lady of the Miraculous Medal.",
+      "source_ids": [
+        "PIL-RUE-DU-BAC",
+        "OBS-RUE-DU-BAC-NOV27"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
@@ -2925,6 +3162,74 @@
       "source_event_label": "National Shrine Grotto feast day of Our Lady of Lourdes",
       "source_ids": [
         "PIL-GROTTO-LOURDES-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:pontmain:jan17",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:FR:pontmain-jan17",
+      "relation": "SHRINE_ANNIVERSARY",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.pontmain_apparition_anniversary",
+      "source_event_label": "Anniversary of the apparition at Pontmain — 17 January",
+      "source_ids": [
+        "PIL-PONTMAIN-JAN17"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:pontmain:assumption",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:FR:pontmain-assumption",
+      "relation": "FEAST_PILGRIMAGE",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "feast.assumption_of_mary",
+      "source_event_label": "Annual Assumption pilgrimage at Pontmain",
+      "source_ids": [
+        "PIL-PONTMAIN-ASSUMPTION"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
+    },
+    {
+      "temporal_link_id": "temporal:pellevoisin:annual",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:FR:pellevoisin-annual",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Grand annual pilgrimage — last weekend of August",
+      "source_ids": [
+        "PIL-PELLEVOISIN-ANNUAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:montligeon:ciel",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:FR:montligeon-ciel",
+      "relation": "SEASONAL",
+      "binding_state": "NO_FIXED_CALENDAR_BINDING",
+      "calendar_semantic_key": null,
+      "source_event_label": "Pèlerinages du Ciel — recurring November cycle with year-specific dates",
+      "source_ids": [
+        "PIL-MONTLIGEON-CIEL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "temporal_link_id": "temporal:rue-du-bac:nov27",
+      "subject_type": "PILGRIMAGE",
+      "subject_id": "pilgrimage:FR:rue-du-bac-destination",
+      "relation": "SHRINE_FEAST",
+      "binding_state": "BOUND_TO_CALENDAR",
+      "calendar_semantic_key": "observance.miraculous_medal_nov27",
+      "source_event_label": "Notre-Dame de la Médaille Miraculeuse — 27 November",
+      "source_ids": [
+        "OBS-RUE-DU-BAC-NOV27"
       ],
       "confidence": "HIGH",
       "calendar_registry_version": "calendar-semantic-registry-v1"
