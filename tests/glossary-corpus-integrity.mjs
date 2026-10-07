@@ -44,6 +44,19 @@ assert.ok(lex.items.every(x=>x.lemma&&x.status==="FROZEN_CORE"));
 
 assert.equal(sourceRegistry.schema,"GLOSSARY_SOURCE_REGISTRY_V1");
 assert.equal(new Set(sourceRegistry.sources.map(x=>x.id)).size,sourceRegistry.sources.length);
+const genericPatterns=[
+  /newadvent\.org\/cathen\/$/,
+  /archive\.org\/search\?/,
+  /vatican\.va\/$/,
+  /papalencyclicals\.net\/councils\/trent\.htm$/,
+  /newadvent\.org\/summa\/$/,
+  /glossary-navigation-sot/
+];
+for(const source of sourceRegistry.sources){
+  const isGeneric=genericPatterns.some(rx=>rx.test(source.canonical_url));
+  assert.ok(!isGeneric||source.allow_corpus_index===true,source.id+" regressed to a generic source landing/search page");
+  for(const url of source.alternate_urls||[])assert.ok(/^https:\/\//.test(url),source.id+" has invalid alternate URL "+url);
+}
 for(const e of concepts){
   for(const sourceId of e.source_ids){
     const source=sourceMap.get(sourceId);
