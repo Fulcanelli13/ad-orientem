@@ -64,7 +64,7 @@ try{
   const massDefaults=await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.().preferences.mass);
   assert.equal(massDefaults.defaultExperience,"missal");
   assert.equal(massDefaults.defaultForm,"low");
-  assert.equal(document.querySelector("#ao-settings-modular-root")?.innerText.includes("sessions futures")||document.querySelector("#ao-settings-modular-root")?.innerText.includes("session"),true);
+  assert.match(await page.locator("#ao-settings-modular-root").innerText(),/Future sessions only|sessions futures/i);
   await page.locator("[data-settings-back]").click();
 
   await page.locator('[data-settings-route="/settings/prayer"]').click();
