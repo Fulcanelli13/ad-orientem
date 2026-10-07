@@ -40,8 +40,7 @@ export const APOSTOLATE_WC_SCENARIOS=Object.freeze([
     }),
     sourceIds:Object.freeze(["LEO-XIII-SAPIENTIAE","DR-1PET3","PIUS-X-ACERBO-NIMIS"]),
     handoffs:Object.freeze([
-      formation("WC01","learn.catechism","Formation owns the canonical doctrinal content behind the answer."),
-      owned("apostolate","AQ","Use the matching AQ scenario when the question corresponds to a frozen apologetic objection."),
+      formation("WC01","learn.catechism","Formation owns the canonical doctrinal content behind the answer; use the matching AQ scenario when a frozen objection applies."),
     ]),
   }),
   Object.freeze({
@@ -72,8 +71,7 @@ export const APOSTOLATE_WC_SCENARIOS=Object.freeze([
     }),
     sourceIds:Object.freeze(["LEO-XIII-SAPIENTIAE","DR-2TIM2","DR-1PET3"]),
     handoffs:Object.freeze([
-      formation("WC02","learn.catechism","Formation owns doctrinal depth when a sincere objection remains."),
-      owned("apostolate","AQ","Use the matching AQ scenario only when there is a genuine objection to answer."),
+      formation("WC02","learn.catechism","Formation owns doctrinal depth when a sincere objection remains; use the matching AQ scenario only for a genuine objection."),
     ]),
   }),
   Object.freeze({
