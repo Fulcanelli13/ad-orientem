@@ -7,9 +7,11 @@ const parity=JSON.parse(readFileSync("data/presentation/product-parity.v1.json",
 const presentationFx=JSON.parse(readFileSync("data/presentation/presentation-fx-parity.v1.json","utf8"));
 const exactDonor=JSON.parse(readFileSync("data/presentation/exact-donor-parity.v1.json","utf8"));
 const massDefinitive=JSON.parse(readFileSync("data/presentation/mass-definitive-convergence.v1.json","utf8"));
+const massV180=JSON.parse(readFileSync("data/presentation/mass-v180-donor-parity.v1.json","utf8"));
+const massStepReconciliation=JSON.parse(readFileSync("data/presentation/mass-v180-v183-step-reconciliation.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.22.0");
+assert.equal(app.version,"1.24.0");
 assert.equal(app.status,"PRESENTATION_PARITY_REQUIRED");
 assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
 
@@ -21,9 +23,10 @@ assert.equal(app.massSubsystem?.authority,"data/presentation/reader-release-gate
 assert.equal(app.massSubsystem?.requiredReaderStatus,reader.status);
 assert.equal(app.massSubsystem?.productionDefault,reader.productionDefault);
 assert.equal(app.massSubsystem?.legacyPolicy,"NO_ALTERNATE_RENDERER");
-assert.equal(app.massSubsystem?.singlePresentationOwner,"R17_NATIVE_PRODUCTION");
 assert.equal(app.massSubsystem?.presentationStatus,"RECOVERY_REQUIRED");
+assert.equal(app.massSubsystem?.singlePresentationOwner,"R17_NATIVE_PRODUCTION");
 assert.equal(app.massSubsystem?.definitiveConvergenceLedger,"data/presentation/mass-definitive-convergence.v1.json");
+assert.equal(app.massSubsystem?.v180DonorParityLedger,"data/presentation/mass-v180-donor-parity.v1.json");
 
 const allowed=new Set(["PASS","REGRESSION","STALE_SURFACE","MISSING_INTEGRATION","CRASH"]);
 const findings=Array.isArray(app.findings)?app.findings:[];
@@ -44,19 +47,18 @@ assert.equal(fieldRuntime?.status,"CLOSED");
 const massParity=findings.find(x=>x.id==="MASS_DEFINITIVE_DONOR_PARITY");
 assert.equal(massParity?.classification,"REGRESSION");
 assert.equal(massParity?.status,"OPEN");
-assert.equal(massParity?.progress?.singleRenderer,"LANDED_ON_CONVERGENCE_BRANCH");
+assert.equal(massParity?.progress?.singleRenderer,"IMPLEMENTED_NATIVE_ONLY");
 assert.equal(app.productParityLedger,"data/presentation/product-parity.v1.json");
 assert.equal(app.presentationFxLedger,"data/presentation/presentation-fx-parity.v1.json");
 assert.equal(app.exactDonorParityLedger,"data/presentation/exact-donor-parity.v1.json");
 const exactFinding=findings.find(x=>x.id==="EXACT_NON_MASS_DONOR_PARITY");
-assert.equal(exactFinding?.classification,"REGRESSION");
+assert.equal(exactFinding?.classification,"MISSING_INTEGRATION");
 assert.equal(exactFinding?.status,"OPEN");
 assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
 assert.equal(exactDonor.status,"OPEN");
+assert.equal(exactDonor.version,"1.5.0");
 assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
 assert.deepEqual(exactDonor.openBlockers,[
-  "SEMANTIC_RAILS_SIMPLIFIED",
-  "ROSARY_PRESENTATION_NOT_EXACT_DONOR_PARITY",
   "FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED",
 ]);
 assert.match(exactDonor.rule,/conceptual equivalence.*do not satisfy|conceptual equivalence.*insufficient|conceptual feature/i);
@@ -80,12 +82,13 @@ assert.ok(Object.entries(parity.surfaces).filter(([name])=>name!=="mass").every(
 assert.equal(parity.status,"RECOVERY_REQUIRED");
 assert.equal(parity.releaseBlocker,"MASS_DEFINITIVE_DONOR_PARITY");
 assert.equal(massDefinitive.schema,"ao-mass-definitive-convergence-v1");
-assert.equal(massDefinitive.status,"IN_PROGRESS");
-assert.equal(massDefinitive.releaseBlocker,"MASS_DEFINITIVE_DONOR_PARITY");
-assert.deepEqual(massDefinitive.singleOwnerContract.selectableReaderModes,["NATIVE"]);
 assert.equal(massDefinitive.singleOwnerContract.legacyStartLiveAllowed,false);
 assert.equal(massDefinitive.singleOwnerContract.shadowRendererAllowed,false);
-assert.equal(massDefinitive.singleOwnerContract.alternateRendererFallback,false);
+assert.equal(massV180.status,"IMPLEMENTATION_COMPLETE_AWAITING_CI");
+assert.deepEqual(massV180.open,[]);
+assert.equal(massStepReconciliation.status,"RECONCILED_FOR_PRODUCT_NONHISTORICAL");
+assert.equal(massStepReconciliation.authorities.productionPresentation.steps,48);
+assert.equal(massStepReconciliation.historicalGap.exactBoundaryRecovered,false);
 assert.equal(findings.find(x=>x.id==="MASS_SUBSYSTEM_CERTIFIED")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="SPECIAL_STRUCTURES_REAL_SHELL")?.classification,"PASS");
 assert.equal(findings.find(x=>x.id==="ARIA_FOCUS_GUARD")?.classification,"PASS");
@@ -135,5 +138,6 @@ assert.ok(app.regressionGates?.phone?.includes("tests/settings-e2e.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/source-transport-compat.mjs"));
 assert.ok(app.regressionGates?.static?.includes("tests/reader-mode-switch.mjs"));
 assert.ok(app.regressionGates?.phone?.includes("tests/field-current-week-e2e.mjs"));
+assert.ok(app.regressionGates?.phone?.includes("tests/nonmass-donor-reference-e2e.mjs"));
 
-console.log("PASS app release gate: Mass runtime is single-owner/native-only; Mass and non-Mass donor presentation parity remain explicitly reopened.");
+console.log("PASS app release gate: Mass runtime stays certified/native-only while Mass v1.80 and exact non-Mass presentation gates remain explicitly open.");
