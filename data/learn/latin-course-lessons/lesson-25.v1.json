@@ -1708,7 +1708,10 @@
         "fr": {
           "prompt": "Que devez-vous marquer en premier dans un long passage de l’étape 5 ?",
           "hint": "Ne commencez pas par la traduction mot à mot.",
-          "explanation": "L’architecture des propositions est la première stratégie de lecture."
+          "explanation": "L’architecture des propositions est la première stratégie de lecture.",
+          "answerGuide": [
+            "limites des propositions principales et subordonnées"
+          ]
         }
       }
     }
