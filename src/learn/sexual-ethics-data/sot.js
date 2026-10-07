@@ -119,6 +119,7 @@ export const CSE_SOT_MATRIX=Object.freeze(CSE_QUESTIONS.map(item=>{
     question:Object.freeze([...item.q]),
     proposition:Object.freeze([...item.a]),
     deeperArgument:item.d?Object.freeze([...item.d]):null,
+    debateStructure:item.debate||null,
     doctrinalLayer:item.layer,
     confidence:confidenceFor(item),
     evidenceDomains:SECTION_EVIDENCE[item.section]||Object.freeze(["MORAL_THEOLOGY"]),
