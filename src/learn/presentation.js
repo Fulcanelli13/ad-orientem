@@ -6,10 +6,10 @@ export const LEARN_DONOR_RELEASE="43.59.30";
 
 export const LEARN_LAYOUT=Object.freeze({
   kicker:Object.freeze(["FORMATION","FORMATION"]),
-  title:Object.freeze(["Learn","Apprendre"]),
+  title:Object.freeze(["Formation","Formation"]),
   intro:Object.freeze([
-    "Formation is gathered here: daily recall, systematic Catechism study and understanding the Roman Mass.",
-    "La formation est rassemblée ici : rappel quotidien, étude systématique du Catéchisme et compréhension de la Messe romaine."
+    "Grow in the Faith through daily Catechism, structured study of the Roman Mass and practical formation for traditional Catholic life.",
+    "Grandir dans la foi par le Catéchisme quotidien, l’étude structurée de la Messe romaine et une formation pratique à la vie catholique traditionnelle."
   ]),
   sections:Object.freeze([
     Object.freeze({title:Object.freeze(["Daily formation","Formation quotidienne"]),items:Object.freeze([
