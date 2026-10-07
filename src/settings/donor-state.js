@@ -9,9 +9,17 @@ export function createSettingsDonorState(win=globalThis){
   const isObj=v=>Boolean(v&&typeof v==="object"&&!Array.isArray(v));
   const pick=(v,a,d)=>a.includes(v)?v:d;
   const bool=(v,d)=>typeof v==="boolean"?v:d;
-  const readJson=(k)=>{try{return JSON.parse(win.localStorage?.getItem?.(k)||"null");}catch{return null;}};
-  const writeJson=(k,v)=>{try{win.localStorage?.setItem?.(k,JSON.stringify(v));return true;}catch{return false;}};
-  const remove=(k)=>{try{win.localStorage?.removeItem?.(k);}catch{}};
+  const volatileStorage=new Map();
+  let volatileStorageUsed=false;
+  const safeStorage={
+    getItem(k){try{const v=win.localStorage?.getItem?.(k);if(v!==null&&v!==undefined)return v;}catch{}return volatileStorage.has(k)?volatileStorage.get(k):null;},
+    setItem(k,v){const value=String(v);try{win.localStorage?.setItem?.(k,value);if(win.localStorage?.getItem?.(k)===value){volatileStorage.delete(k);return true;}}catch{}volatileStorage.set(k,value);volatileStorageUsed=true;try{win.document.documentElement.dataset.aoSettingsPersistence="volatile";}catch{}return true;},
+    removeItem(k){try{win.localStorage?.removeItem?.(k);}catch{}volatileStorage.delete(k);return true;},
+    keys(){const out=new Set(volatileStorage.keys());try{for(let i=0;i<(win.localStorage?.length||0);i++){const k=win.localStorage?.key?.(i);if(k)out.add(k);}}catch{}return [...out];}
+  };
+  const readJson=(k)=>{try{return JSON.parse(safeStorage.getItem(k)||"null");}catch{return null;}};
+  const writeJson=(k,v)=>safeStorage.setItem(k,JSON.stringify(v));
+  const remove=(k)=>safeStorage.removeItem(k);
   const core=()=>win?.AO_RUNTIME_V8?.store?.getState?.()||{};
   const dispatch=a=>{try{win?.AO_RUNTIME_V8?.store?.dispatch?.(a);return true;}catch{return false;}};
 
@@ -59,6 +67,25 @@ export function createSettingsDonorState(win=globalThis){
     return arr.map(sanitizeProfile).filter(Boolean);
   }
   let preferences=initialPreferences(),profiles=initialProfiles();
+  const capabilities=Object.freeze({
+    haptics:Boolean(win?.navigator?.vibrate||win?.Capacitor?.Plugins?.Haptics||win?.webkit?.messageHandlers?.haptics||win?.Android?.hapticFeedback||win?.AO_HAPTICS_V4319),
+    wakeLock:Boolean(win?.navigator?.wakeLock?.request)
+  });
+  let wakeLock=null;
+  async function syncWakeLock(){
+    const guided=["live","prepare","thanksgiving"].includes(core()?.route);
+    const want=Boolean(preferences.general.keepAwakeDuringGuidedUse&&capabilities.wakeLock&&guided);
+    if(want&&!wakeLock){
+      try{wakeLock=await win.navigator.wakeLock.request("screen");wakeLock?.addEventListener?.("release",()=>{wakeLock=null;});}catch{wakeLock=null;}
+    }else if(!want&&wakeLock){
+      try{await wakeLock.release?.();}catch{}wakeLock=null;
+    }
+  }
+  async function clearCaches(){
+    try{if(win?.caches){for(const name of await win.caches.keys())if(/^ad-orientem|^ao-/i.test(name))await win.caches.delete(name);}}catch{}
+    for(const k of safeStorage.keys())if(/^ao-r-depth-v1:|^ao-cache:|^ao2:cache:/.test(k))safeStorage.removeItem(k);
+    return true;
+  }
 
   function syncEffects(){
     const p=preferences,html=win?.document?.documentElement;
@@ -76,6 +103,8 @@ export function createSettingsDonorState(win=globalThis){
       else win?.AO_HAPTICS_V4319?.setEnabled?.(Boolean(p.general.hapticsEnabled));
     }catch{}
     try{win?.AO_PRAY_V435930?.applySettingsPreferences?.(p.prayer);}catch{}
+    try{win?.document?.documentElement?.classList?.toggle?.("aoRecitationGroup",p.prayer.recitationMode==="group");}catch{}
+    void syncWakeLock();
     return true;
   }
   function persist(){
@@ -122,9 +151,10 @@ export function createSettingsDonorState(win=globalThis){
     else if(action==="clear-prayer"){[SETTINGS_KEYS.preparation,SETTINGS_KEYS.thanksgiving,SETTINGS_KEYS.prayerSession,"ao2:prepare:v2","ao2:thanksgiving:v2"].forEach(remove);}
     else if(action==="clear-progress")remove(SETTINGS_KEYS.progress);
     else if(action==="clear-bookmarks")remove(SETTINGS_KEYS.bookmarks);
+    else if(action==="clear-cache"){void clearCaches();}
     else if(action==="reset-preferences")return resetPreferences();
     else if(action==="reset-profiles")return resetProfiles();
-    else if(action==="reset-all"){[SETTINGS_KEYS.massSession,SETTINGS_KEYS.preparation,SETTINGS_KEYS.thanksgiving,SETTINGS_KEYS.prayerSession,SETTINGS_KEYS.notifications,SETTINGS_KEYS.progress,SETTINGS_KEYS.bookmarks].forEach(remove);preferences=clone(DEFAULT_PREFERENCES);profiles=[];return persist();}
+    else if(action==="reset-all"){[SETTINGS_KEYS.massSession,SETTINGS_KEYS.preparation,SETTINGS_KEYS.thanksgiving,SETTINGS_KEYS.prayerSession,SETTINGS_KEYS.notifications,SETTINGS_KEYS.progress,SETTINGS_KEYS.bookmarks].forEach(remove);void clearCaches();preferences=clone(DEFAULT_PREFERENCES);profiles=[];return persist();}
     return snapshot();
   }
   let lastRoute=core()?.route||null;
@@ -132,9 +162,10 @@ export function createSettingsDonorState(win=globalThis){
     win?.AO_RUNTIME_V8?.store?.subscribe?.(()=>{
       const nextRoute=core()?.route||null;
       if(lastRoute==="live"&&nextRoute!=="live")syncEffects();
+      if(nextRoute!==lastRoute)void syncWakeLock();
       lastRoute=nextRoute;
     });
   }catch{}
   syncEffects();
-  return Object.freeze({version:"43.59.6",snapshot,setPath,togglePath,createProfile,renameProfile,updateProfile,deleteProfile,resetPreferences,resetProfiles,clearData,syncEffects});
+  return Object.freeze({version:"43.59.6",snapshot,setPath,togglePath,createProfile,renameProfile,updateProfile,deleteProfile,resetPreferences,resetProfiles,clearData,clearCaches,syncEffects,capabilities,persistence:()=>volatileStorageUsed?"volatile":"local"});
 }
