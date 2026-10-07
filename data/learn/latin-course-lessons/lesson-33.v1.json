@@ -474,7 +474,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La Vulgate a élargi le sens de mots latins familiers"
+        }
+      }
     },
     {
       "id": "l33-b2",
@@ -491,7 +496,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "grex et ovis deviennent un langage ecclésial"
+        }
+      }
     },
     {
       "id": "l33-b3",
@@ -508,7 +518,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Semen est verbum Dei"
+        }
+      }
     },
     {
       "id": "l33-b4",
@@ -525,7 +540,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "timor Domini est une expression, pas un accident de dictionnaire"
+        }
+      }
     },
     {
       "id": "l33-b5",
@@ -540,7 +560,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La répétition est souvent structurelle, non maladroite"
+        }
+      }
     },
     {
       "id": "l33-b6",
@@ -555,7 +580,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ces sens bibliques passent ensuite dans la liturgie"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -792,7 +822,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle est la principale leçon de lecture concernant le vocabulaire sémantique biblique ?",
+          "hint": "Sens littéral + champ hérité.",
+          "explanation": "La répétition biblique stabilise des sens chrétiens.",
+          "options": [
+            "apprendre le contexte scripturaire récurrent de l’expression, pas seulement une glose de dictionnaire de base",
+            "remplacer chaque mot par une paraphrase théologique",
+            "ignorer le sens littéral",
+            "supposer que chaque nom est symbolique"
+          ]
+        }
+      }
     },
     {
       "id": "l33-e2",
@@ -825,7 +868,21 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom biblique à son sens.",
+          "hint": "Première moitié du vocabulaire de la leçon 33.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "ovis": "brebis",
+            "grex": "troupeau",
+            "semen": "semence",
+            "timor": "crainte",
+            "mandatum": "commandement"
+          }
+        }
+      }
     },
     {
       "id": "l33-e3",
@@ -858,7 +915,21 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom biblique à son sens.",
+          "hint": "Seconde moitié du vocabulaire de la leçon 33.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "generatio": "génération / naissance",
+            "sermo": "parole / discours",
+            "inimicus": "ennemi",
+            "corona": "couronne",
+            "lapis": "pierre"
+          }
+        }
+      }
     },
     {
       "id": "l33-e4",
@@ -888,7 +959,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que montre Semen est verbum Dei ?",
+          "hint": "La semence = la parole dans la parabole.",
+          "explanation": "La phrase attribue à semen un référent scripturaire.",
+          "options": [
+            "une identification métaphorique directe dans le discours biblique",
+            "un ablatif absolu",
+            "un adjectif verbal",
+            "un discours indirect"
+          ]
+        }
+      }
     },
     {
       "id": "l33-e5",
@@ -918,7 +1002,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi faut-il apprendre timor Domini comme une expression ?",
+          "hint": "Le contexte phrastique compte.",
+          "explanation": "Les collocations scripturaires stables façonnent le latin de l’Église.",
+          "options": [
+            "son sens biblique et dévotionnel stable dépasse une simple glose émotionnelle moderne",
+            "elle n’a pas de grammaire latine",
+            "timor signifie joie",
+            "Domini est au vocatif"
+          ]
+        }
+      }
     },
     {
       "id": "l33-e6",
@@ -949,7 +1046,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie littéralement corona vitae ?",
+          "hint": "Génitif vitae.",
+          "explanation": "La métaphore biblique reste grammaticalement littérale.",
+          "options": [
+            "couronne de vie",
+            "pierre de vie",
+            "commandement de vie",
+            "troupeau de vie"
+          ]
+        }
+      }
     },
     {
       "id": "l33-e7",
@@ -980,7 +1090,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est Lapidem dans le Psaume 117,22 ?",
+          "hint": "Il est repris par quem.",
+          "explanation": "Lapidem est l’accusatif singulier de lapis.",
+          "options": [
+            "accusatif",
+            "nominatif",
+            "datif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l33-e8",
@@ -1009,7 +1132,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que doit faire le lecteur avec la répétition biblique ?",
+          "hint": "La rhétorique compte.",
+          "explanation": "La répétition est souvent délibérée et structurelle.",
+          "options": [
+            "la conserver pendant l’analyse car elle porte souvent la structure",
+            "la supprimer comme mauvais style",
+            "traduire seulement la première occurrence",
+            "supposer une erreur de copie"
+          ]
+        }
+      }
     },
     {
       "id": "l33-e9",
@@ -1034,7 +1170,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « troupeau ».",
+          "hint": "Le petit troupeau.",
+          "explanation": "grex signifie « troupeau »."
+        }
+      }
     },
     {
       "id": "l33-e10",
@@ -1059,7 +1202,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « commandement ».",
+          "hint": "Mandatum novum.",
+          "explanation": "mandatum signifie « commandement »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1130,5 +1280,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Comment la Bible a transformé le latin",
+      "grammarFocus": "Latin biblique ; influence de l’hébreu et du grec",
+      "readingOutcome": "Lire la coordination, la répétition et les emplois sémantiques façonnés par la Vulgate.",
+      "objectives": [
+        "Reconnaître les extensions sémantiques bibliques dans le latin de l’Église.",
+        "Lire la coordination et la répétition comme rhétorique plutôt que comme erreur.",
+        "Apprendre les dix lemmes figés de la leçon 33.",
+        "Transférer le vocabulaire de la Vulgate vers la lecture liturgique ultérieure."
+      ]
+    }
+  }
 }
