@@ -425,6 +425,23 @@ try{
   await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Benediction blessing retained an unrelated left cue");
+  const benBlessing=await page.evaluate(async()=>{
+    const icon=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-live-blessing'] .aoP435930SemanticRailIcon");
+    const cs=icon?getComputedStyle(icon):null;
+    const mask=cs?.webkitMaskImage||cs?.maskImage||"";
+    const match=mask.match(/url\\(["']?(.*?)["']?\\)/);
+    const url=match?.[1]??"";
+    let status=0,bytes=0;
+    if(url){
+      try{const response=await fetch(url);status=response.status;bytes=(await response.arrayBuffer()).byteLength}catch{}
+    }
+    const rect=icon?.getBoundingClientRect?.();
+    return {mask,url,status,bytes,width:rect?.width??0,height:rect?.height??0};
+  });
+  assert.match(benBlessing.mask,/assets\\/recovered\\/ao-live-blessing\\.svg/,"Benediction blessing did not resolve through the recovered frozen-V4 silhouette");
+  assert.equal(benBlessing.status,200,"Benediction blessing runtime asset does not load");
+  assert.ok(benBlessing.bytes>1000,"Benediction blessing runtime asset is unexpectedly empty");
+  assert.ok(benBlessing.width>=30&&benBlessing.height>=30,"Benediction blessing icon collapsed below visible rail geometry");
   await shot("03g-pray-benediction-blessing");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
