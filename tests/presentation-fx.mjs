@@ -96,10 +96,17 @@ assert.match(fxSource,/function scheduleInitialScan\(\)/,"initial Home presentat
 assert.match(fxSource,/initialScanAttempts >= 16/,"initial Home presentation scan is no longer bounded");
 assert.match(fxSource,/scheduleInitialScan\(\);\s*\n\s*return Object\.freeze/,"initial Home surface no longer receives presentation FX scan");
 
-const index=readFileSync("index.html","utf8");
+const appEntrySource=readFileSync("src/app/browser-entry.js","utf8");
+assert.match(appEntrySource,/cinematic-runtime\.js/,"production shell does not load the recovered v43.12 cinematic owner");
+const cinemaSource=readFileSync("src/app/cinematic-runtime.js","utf8");
 for(const id of ["ao-cinema-boot","ao-cinema-transition","ao-cinema-loader"]){
-  assert.match(index,new RegExp(`id=["']${id}["']`),`legacy cinematic surface ${id} disappeared before modular extraction`);
+  assert.ok(cinemaSource.includes(id),"recovered cinematic runtime lost "+id);
 }
-assert.match(index,/AO_CINEMATIC_V4312/,"v43.12 cinematic owner disappeared before modular extraction");
+assert.match(cinemaSource,/AO_CINEMATIC_V4312/,"recovered v43.12 cinematic API is not exported to production");
+assert.match(cinemaSource,/220/,"v43.12 workload-loader delay changed");
+assert.match(cinemaSource,/enter-prepare/,"Preparation semantic transition missing");
+assert.match(cinemaSource,/enter-thanksgiving/,"Thanksgiving semantic transition missing");
+assert.match(cinemaSource,/scripture-open/,"Scripture semantic transition missing");
+assert.doesNotMatch(cinemaSource,/surface.*calendar.*title/i,"cinematic runtime must not synthesize generic destination-name transitions");
 
 console.log("PASS modular presentation FX bridge");
