@@ -27,6 +27,10 @@ const CSS=`
   --ao-section-gap:18px;
   --ao-topbar-blur:16px;
 }
+.homeScreen{
+  width:min(var(--ao-content-max),100%);
+  margin-inline:auto;
+}
 .homeScreen,
 #ao-calendar-modular-root,
 #ao-learn-modular-root,
