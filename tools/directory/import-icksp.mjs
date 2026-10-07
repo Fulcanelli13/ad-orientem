@@ -46,6 +46,17 @@ function addressFromLines(lines){
   if(zipIndex>=0)return lines.slice(Math.max(0,zipIndex-1),zipIndex+1).join(", ");
   return null;
 }
+function phonesFromLines(lines){
+  const candidates=[];
+  for(let i=0;i<lines.length;i+=1){
+    if(!/^(?:Emergency\s+Phone|Phone)\s*:/i.test(lines[i]))continue;
+    const remainder=lines[i].replace(/^(?:Emergency\s+Phone|Phone)\s*:\s*/i,"").replace(/^\|\s*/,"").trim();
+    if(remainder)candidates.push(remainder);
+    const next=String(lines[i+1]??"").replace(/^\|\s*/,"").trim();
+    if(next&&!/^(?:Fax|Email|Website|Address|Emergency\s+Phone|Phone)\s*:/i.test(next))candidates.push(next);
+  }
+  return phoneCandidates(candidates.join("\n"));
+}
 function scheduleLines(lines){
   return lines.filter(line=>/\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sundays|Weekdays?|Feast Days?)\b/i.test(line)&&/\bMass\b/i.test(line));
 }
@@ -82,7 +93,7 @@ export function parseIckspUsDetail(html,candidate){
   const rawSchedule=scheduleBlock(lines);
   return {
     title,address,countryCode:"US",diocese:null,detailUrl:candidate.url,
-    emails:emailAddresses(text),phones:phoneCandidates(lines.filter(line=>/^(?:Emergency\s+Phone|Phone)\s*:/i.test(line)).join("\n")),massRaw:rawSchedule,
+    emails:emailAddresses(text),phones:phonesFromLines(lines),massRaw:rawSchedule,
     detailText:text
   };
 }
