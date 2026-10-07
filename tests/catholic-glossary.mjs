@@ -8,9 +8,12 @@ import {
 
 const salvage=JSON.parse(readFileSync("data/reference/catholic-glossary-catholic-life-salvage.v1.json","utf8"));
 const campion=JSON.parse(readFileSync("data/reference/catholic-glossary-campion.v1.json","utf8"));
+const salvageFr=JSON.parse(readFileSync("data/reference/catholic-glossary-salvage-fr.v1.json","utf8"));
 assert.equal(salvage.status,"CANONICAL_REFERENCE_ANNEX");
 assert.equal(campion.schema,"ao-catholic-glossary-campion-v1");
 assert.equal(campion.status,"CANONICAL_REFERENCE_EXTENSION");
+assert.equal(salvageFr.schema,"ao-catholic-glossary-salvage-fr-v1");
+assert.equal(Object.keys(salvageFr.translations).length,33);
 assert.equal(campion.entries.length,24);
 assert.equal(CATHOLIC_GLOSSARY_ROUTE,"learn.glossary");
 assert.equal(CATHOLIC_GLOSSARY_VERSION,"catholic-glossary-v1");
@@ -32,6 +35,8 @@ const salvageClaims=Object.values(salvage.domains??{}).flat();
 assert.ok(salvageClaims.length>=33,"Catholic Life reference salvage unexpectedly shrank");
 for(const claim of salvageClaims){
   for(const sourceId of claim.source_ids??[])assert.ok(salvageSources.has(sourceId),claim.claim_id+" -> "+sourceId);
+  assert.ok(salvageFr.translations[claim.claim_id]?.title,claim.claim_id+" missing French title");
+  assert.ok(salvageFr.translations[claim.claim_id]?.text,claim.claim_id+" missing French definition");
 }
 assert.ok(campion.entries.some(e=>e.id==="amice"));
 assert.ok(campion.entries.some(e=>e.id==="altar-stone"));
