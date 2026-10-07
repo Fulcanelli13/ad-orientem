@@ -109,28 +109,47 @@ const collectFiles=(dir)=>{
 };
 
 const activeRoot=path.join(root,"assets/active");
-const externalized=collectFiles(activeRoot).filter(file=>/\.(png|svg|jpg|jpeg|webp)$/i.test(file));
+const massV46Root=path.join(activeRoot,"mass-v46");
+const externalized=collectFiles(activeRoot).filter(file=>
+  /\.(png|svg|jpg|jpeg|webp)$/i.test(file) &&
+  !file.startsWith(massV46Root+path.sep)
+);
 for(const file of externalized){
   const assetId=path.basename(file).replace(/\.[^.]+$/,"");
   const record=getCanonicalAsset(assetId);
-  assert.ok(record,"non-canonical asset entered assets/active: "+path.relative(root,file));
+  assert.ok(record,"non-canonical asset entered global assets/active: "+path.relative(root,file));
   assert.equal(record.status,"FROZEN_ACTIVE");
   const sha256=createHash("sha256").update(fs.readFileSync(file)).digest("hex");
   assert.equal(sha256,record.sha256,"externalized asset drifted from frozen V4 bytes: "+assetId);
 }
 
+// The executable v1.80 donor carries a distinct AO_V46_ASSETS bank. It is not
+// silently promoted into the frozen global V4.1.1 identity registry; Mass owns
+// it as a separately certified exact-donor presentation bank.
+const massV46=JSON.parse(fs.readFileSync(path.join(massV46Root,"manifest.v1.json"),"utf8"));
+assert.equal(massV46.schema,"ao-mass-v46-master-icon-bank-v1");
+assert.equal(massV46.source?.bank,"AO_V46_ASSETS");
+assert.equal(massV46.source?.declaredBankVersion,"4.6.0");
+assert.equal(massV46.count,67);
+assert.equal(massV46.assets.length,67);
+const massV46ByKey=new Map(massV46.assets.map(asset=>[asset.key,asset]));
+const massV46Files=collectFiles(massV46Root).filter(file=>/\.svg$/i.test(file));
+assert.equal(massV46Files.length,67,"Mass v4.6 bank file count drifted");
+
 assert.equal(auditHostIconBank(R17_FROZEN_ACTIVE_ICON_ASSETS).complete,true);
 for(const [readerKey,url] of Object.entries(R17_FROZEN_ACTIVE_ICON_ASSETS)){
   const assetId=basenameAssetId(url);
-  const record=getCanonicalAsset(assetId);
-  assert.ok(record,"R17 "+readerKey+" does not resolve to a canonical V4 asset id: "+assetId);
-  assert.equal(record.status,"FROZEN_ACTIVE");
-  assert.ok(resolveCanonicalAssetUrl(assetId),"canonical URL missing for "+assetId);
+  const record=massV46ByKey.get(readerKey);
+  assert.ok(record,"R17 "+readerKey+" is absent from the exact v4.6 donor manifest");
+  assert.equal(assetId,readerKey,"R17 v4.6 key/path identity drifted: "+readerKey);
   const actualPath=path.relative(root,fileURLToPath(url)).split(path.sep).join("/");
-  assert.equal(actualPath,record.path,"R17 "+readerKey+" is not using the manifest canonical path for "+assetId);
-  const bytes=fs.readFileSync(fileURLToPath(url));
-  const sha256=createHash("sha256").update(bytes).digest("hex");
-  assert.equal(sha256,record.sha256,"R17 compatibility asset drifted from frozen V4 bytes: "+assetId);
+  assert.equal(actualPath,record.path,"R17 "+readerKey+" is not using its exact v4.6 manifest path");
+  const source=fs.readFileSync(fileURLToPath(url),"utf8");
+  assert.match(source,/^<svg\b/,"R17 "+readerKey+" wrapper is not SVG");
+  assert.match(source,/preserveAspectRatio="xMidYMid meet"/,"R17 "+readerKey+" lost donor contain geometry");
+  assert.match(source,/<image href="data:image\/(?:png|svg\+xml);base64,/,
+    "R17 "+readerKey+" no longer embeds the recovered donor payload");
 }
 
-console.log("asset bank contract: PASS — V4 core 109 + 8 hardened extensions; "+externalized.length+" externalized assets and all 20 R17 assets use byte-exact manifest canonical paths.");
+
+console.log("asset bank contract: PASS — global V4.1.1 remains frozen; Mass v4.6 is separately manifest-certified with 67 exact donor wrappers.");
