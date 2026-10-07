@@ -393,7 +393,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le système nominal est désormais assez complet pour la lecture ordinaire"
+        }
+      }
     },
     {
       "id": "l14-b2",
@@ -408,7 +413,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Quatrième déclinaison : spiritus, manus, fructus"
+        }
+      }
     },
     {
       "id": "l14-b3",
@@ -423,7 +433,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "spiritu / Spiritui / spiritum"
+        }
+      }
     },
     {
       "id": "l14-b4",
@@ -438,7 +453,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Cinquième déclinaison : dies, res, fides, facies"
+        }
+      }
     },
     {
       "id": "l14-b5",
@@ -455,7 +475,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Haec dies"
+        }
+      }
     },
     {
       "id": "l14-b6",
@@ -470,7 +495,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Cesser de penser en cinq chapitres de déclinaisons isolés"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -607,7 +637,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est spiritu dans Et cum spiritu tuo ?",
+          "hint": "cum régit l’ablatif.",
+          "explanation": "spiritu est l’ablatif singulier de spiritus.",
+          "options": [
+            "ablatif",
+            "datif",
+            "accusatif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l14-e2",
@@ -638,7 +681,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est Spiritui dans Spiritui Sancto ?",
+          "hint": "La terminaison -ui est un indice fort de la quatrième déclinaison.",
+          "explanation": "Spiritui est au datif singulier.",
+          "options": [
+            "datif",
+            "ablatif",
+            "génitif",
+            "accusatif"
+          ]
+        }
+      }
     },
     {
       "id": "l14-e3",
@@ -669,7 +725,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est spiritum dans le Psaume 50 ?",
+          "hint": "La terminaison -um est ici celle de l’accusatif singulier de la quatrième déclinaison.",
+          "explanation": "spiritum est à l’accusatif singulier.",
+          "options": [
+            "accusatif",
+            "nominatif",
+            "datif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l14-e4",
@@ -700,7 +769,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le lemme de quatrième ou cinquième déclinaison à son sens.",
+          "hint": "Ce sont des noms fondamentaux de la leçon 14.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale.",
+          "matches": {
+            "manus": "main",
+            "dies": "jour",
+            "res": "chose / réalité",
+            "fides": "foi"
+          }
+        }
+      }
     },
     {
       "id": "l14-e5",
@@ -731,7 +813,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le lemme de la leçon 14 à son sens.",
+          "hint": "Tous appartiennent au nouveau vocabulaire fondamental.",
+          "explanation": "Ceci achève la récupération lexicale.",
+          "matches": {
+            "laus": "louange",
+            "fructus": "fruit",
+            "facies": "face / visage",
+            "conspectus": "vue / présence"
+          }
+        }
+      }
     },
     {
       "id": "l14-e6",
@@ -761,7 +856,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nom appartient à la cinquième déclinaison ?",
+          "hint": "Cherchez la famille en -es.",
+          "explanation": "dies appartient à la cinquième déclinaison.",
+          "options": [
+            "dies",
+            "spiritus",
+            "manus",
+            "fructus"
+          ]
+        }
+      }
     },
     {
       "id": "l14-e7",
@@ -790,7 +898,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle affirmation décrit le mieux le but de la leçon 14 ?",
+          "hint": "Les six cas étaient déjà actifs.",
+          "explanation": "La leçon 14 ajoute des familles de déclinaisons, et non de nouvelles fonctions casuelles.",
+          "options": [
+            "compléter l’inventaire principal des déclinaisons pour la lecture",
+            "introduire de nouvelles fonctions casuelles",
+            "commencer les pronoms",
+            "enseigner uniquement du vocabulaire"
+          ]
+        }
+      }
     },
     {
       "id": "l14-e8",
@@ -821,7 +942,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas in régit-il dans in conspectu tuo ?",
+          "hint": "Il s’agit d’un lieu ou d’un état.",
+          "explanation": "conspectu est à l’ablatif après in statique.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "datif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l14-e9",
@@ -845,7 +979,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin de cinquième déclinaison signifiant « chose / réalité ».",
+          "hint": "C’est l’un des noms de cinquième déclinaison les plus fréquents.",
+          "explanation": "res signifie « chose / réalité »."
+        }
+      }
     },
     {
       "id": "l14-e10",
@@ -869,7 +1010,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « foi ».",
+          "hint": "Il appartient à l’ensemble de la cinquième déclinaison.",
+          "explanation": "fides signifie « foi »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -939,5 +1087,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Spiritus / dies",
+      "grammarFocus": "Quatrième et cinquième déclinaisons",
+      "readingOutcome": "Achever le système nominal des déclinaisons et consolider la reconnaissance des cas.",
+      "objectives": [
+        "Reconnaître les principales formes de la quatrième déclinaison.",
+        "Reconnaître les principales formes de la cinquième déclinaison.",
+        "Apprendre les neuf lemmes figés de la leçon 14.",
+        "Consolider toutes les familles nominales sur une seule carte permanente des six cas."
+      ]
+    }
+  }
 }

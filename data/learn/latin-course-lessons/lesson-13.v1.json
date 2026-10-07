@@ -379,7 +379,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les formes du futur font avancer la proposition"
+        }
+      }
     },
     {
       "id": "l13-b2",
@@ -394,7 +399,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "erit sert de repère pour le futur de sum"
+        }
+      }
     },
     {
       "id": "l13-b3",
@@ -409,7 +419,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Deux grands schémas du futur"
+        }
+      }
     },
     {
       "id": "l13-b4",
@@ -426,7 +441,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Cuius regni non erit finis"
+        }
+      }
     },
     {
       "id": "l13-b5",
@@ -443,7 +463,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Introibo"
+        }
+      }
     },
     {
       "id": "l13-b6",
@@ -458,7 +483,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "semper, donec, hora"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -609,7 +639,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel temps est erit ?",
+          "hint": "Il appartient à ero, eris, erit.",
+          "explanation": "erit est la troisième personne du singulier du futur de sum.",
+          "options": [
+            "futur",
+            "présent",
+            "imparfait",
+            "parfait"
+          ]
+        }
+      }
     },
     {
       "id": "l13-e2",
@@ -639,7 +682,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie finis ?",
+          "hint": "Il achève la proposition du Credo.",
+          "explanation": "finis signifie « fin ».",
+          "options": [
+            "fin",
+            "heure",
+            "salut",
+            "loi"
+          ]
+        }
+      }
     },
     {
       "id": "l13-e3",
@@ -670,7 +726,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel temps / quelle valeur a Introibo ?",
+          "hint": "La forme en -bo est l’indice.",
+          "explanation": "Introibo est le futur de introeo.",
+          "options": [
+            "futur : j’entrerai",
+            "imparfait : j’entrais",
+            "impératif : entre !",
+            "parfait : je suis entré"
+          ]
+        }
+      }
     },
     {
       "id": "l13-e4",
@@ -702,7 +771,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la forme future de sum à son sens.",
+          "hint": "Rappelez-vous le paradigme irrégulier du futur.",
+          "explanation": "Ce sont des formes futures de sum.",
+          "matches": {
+            "ero": "je serai",
+            "eris": "tu seras",
+            "erit": "il/elle sera",
+            "erimus": "nous serons"
+          }
+        }
+      }
     },
     {
       "id": "l13-e5",
@@ -733,7 +815,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le mot de la leçon 13 à son sens.",
+          "hint": "Ce sont les principaux repères temporels et sémantiques de la leçon.",
+          "explanation": "Ceci vérifie la récupération lexicale.",
+          "matches": {
+            "semper": "toujours",
+            "donec": "jusqu’à / aussi longtemps que",
+            "hora": "heure",
+            "salus": "salut / santé"
+          }
+        }
+      }
     },
     {
       "id": "l13-e6",
@@ -764,7 +859,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme est introduit par iudicare ?",
+          "hint": "C’est l’infinitif « juger ».",
+          "explanation": "iudicare appartient à iudico.",
+          "options": [
+            "iudico",
+            "iubeo",
+            "dico",
+            "facio"
+          ]
+        }
+      }
     },
     {
       "id": "l13-e7",
@@ -794,7 +902,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les mots temporels explicites déjà appris à la fin de la leçon 13.",
+          "hint": "Tous deux situent la proposition dans le temps.",
+          "explanation": "nunc et semper appartiennent au vocabulaire temporel actif."
+        }
+      }
     },
     {
       "id": "l13-e8",
@@ -825,7 +940,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fournit donec ?",
+          "hint": "Traduisez « jusqu’à ».",
+          "explanation": "donec relie les propositions par une limite ou une durée temporelle.",
+          "options": [
+            "une limite / durée temporelle",
+            "une adresse directe",
+            "la possession",
+            "un sujet passif"
+          ]
+        }
+      }
     },
     {
       "id": "l13-e9",
@@ -855,7 +983,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel schéma du futur est typique de nombreux verbes des première et deuxième conjugaisons ?",
+          "hint": "Comparez Introibo.",
+          "explanation": "-bo / -bis / -bit est un grand schéma du futur.",
+          "options": [
+            "-bo / -bis / -bit",
+            "-bam / -bas / -bat",
+            "-i / -isti / -it",
+            "-tur / -ntur"
+          ]
+        }
+      }
     },
     {
       "id": "l13-e10",
@@ -879,7 +1020,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez l’adjectif latin signifiant « éternel ».",
+          "hint": "Il appartient à la leçon 13.",
+          "explanation": "aeternus signifie « éternel »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -946,5 +1094,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Cuius regni non erit finis",
+      "grammarFocus": "Futur",
+      "readingOutcome": "Lire les formes du futur et les expressions temporelles.",
+      "objectives": [
+        "Reconnaître les formes futures de sum et les principaux schémas réguliers du futur.",
+        "Lire la valeur future dans le Credo et les formules de l’autel.",
+        "Apprendre les sept lemmes figés de la leçon 13.",
+        "Utiliser semper, donec et hora comme repères temporels de lecture."
+      ]
+    }
+  }
 }

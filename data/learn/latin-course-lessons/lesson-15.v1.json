@@ -474,7 +474,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le parfait exprime un événement achevé"
+        }
+      }
     },
     {
       "id": "l15-b2",
@@ -489,7 +494,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Reconnaître les terminaisons du parfait"
+        }
+      }
     },
     {
       "id": "l15-b3",
@@ -506,7 +516,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "resurrexit / ascendit / sedet"
+        }
+      }
     },
     {
       "id": "l15-b4",
@@ -523,7 +538,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Surrexit, non est hic"
+        }
+      }
     },
     {
       "id": "l15-b5",
@@ -540,7 +560,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les pronoms dans les actions achevées"
+        }
+      }
     },
     {
       "id": "l15-b6",
@@ -555,7 +580,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Étape 3 : des exercices de temps au récit"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -743,7 +773,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel temps est resurrexit ?",
+          "hint": "Il présente un événement achevé du Credo.",
+          "explanation": "resurrexit est le parfait actif de resurgo.",
+          "options": [
+            "parfait",
+            "imparfait",
+            "futur",
+            "présent passif"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e2",
@@ -774,7 +817,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel verbe reste au présent dans la séquence du Credo ?",
+          "hint": "Deux formes sont des événements achevés ; l’une exprime un état actuel.",
+          "explanation": "sedet est au présent, tandis que resurrexit et ascendit sont au parfait.",
+          "options": [
+            "sedet",
+            "resurrexit",
+            "ascendit",
+            "les trois sont au parfait"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e3",
@@ -804,7 +860,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière Surrexit ?",
+          "hint": "Ne confondez pas surgo et resurgo.",
+          "explanation": "Surrexit est le parfait de surgo.",
+          "options": [
+            "surgo",
+            "resurgo",
+            "sedeo",
+            "ascendo"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e4",
@@ -834,7 +903,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière resurrexit ?",
+          "hint": "Le préfixe re- compte.",
+          "explanation": "resurrexit appartient à resurgo.",
+          "options": [
+            "resurgo",
+            "surgo",
+            "ascendo",
+            "cado"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e5",
@@ -866,7 +948,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quelle personne et à quel nombre est invenerunt ?",
+          "hint": "La terminaison -erunt est un indice fort du parfait.",
+          "explanation": "invenerunt signifie « ils trouvèrent / ils ont trouvé ».",
+          "options": [
+            "troisième personne du pluriel",
+            "première personne du pluriel",
+            "troisième personne du singulier",
+            "deuxième personne du pluriel"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e6",
@@ -897,7 +992,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quelle famille pronominale ejus appartient-il ?",
+          "hint": "Rappelez-vous la progression en spirale des pronoms.",
+          "explanation": "ejus est le génitif singulier de is/ea/id.",
+          "options": [
+            "is/ea/id",
+            "ego",
+            "nos",
+            "se"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e7",
@@ -928,7 +1036,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est eum dans adoraverunt eum ?",
+          "hint": "C’est le complément d’objet de adoraverunt.",
+          "explanation": "eum est à l’accusatif masculin singulier.",
+          "options": [
+            "accusatif",
+            "génitif",
+            "datif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e8",
@@ -960,7 +1081,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme au parfait vient de cado ?",
+          "hint": "Le radical du parfait change fortement.",
+          "explanation": "ceciderunt est le parfait pluriel de cado.",
+          "options": [
+            "Ceciderunt",
+            "accesserunt",
+            "invenerunt",
+            "descendit"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e9",
@@ -991,7 +1125,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de la leçon 15 à son sens.",
+          "hint": "Tous sont des verbes d’action de l’étape 3.",
+          "explanation": "Ceci vérifie la récupération lexicale.",
+          "matches": {
+            "ascendo": "monter",
+            "descendo": "descendre",
+            "accedo": "s’approcher",
+            "invenio": "trouver"
+          }
+        }
+      }
     },
     {
       "id": "l15-e10",
@@ -1020,7 +1167,19 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le temps à sa valeur narrative.",
+          "hint": "Comparez les leçons 11, 13 et 15.",
+          "explanation": "L’étape 3 forme un système des temps, et non trois chapitres isolés.",
+          "matches": {
+            "imperfect": "passé en cours / arrière-plan",
+            "future": "non encore accompli / à venir",
+            "perfect": "événement achevé"
+          }
+        }
+      }
     },
     {
       "id": "l15-e11",
@@ -1052,7 +1211,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les verbes d’action achevée.",
+          "hint": "Les trois font avancer le récit.",
+          "explanation": "La proposition est une chaîne d’actions au parfait."
+        }
+      }
     },
     {
       "id": "l15-e12",
@@ -1083,7 +1249,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est faciem dans in faciem suam ?",
+          "hint": "Ici in exprime un mouvement ou un résultat vers une position.",
+          "explanation": "faciem est à l’accusatif après in directionnel.",
+          "options": [
+            "accusatif",
+            "ablatif",
+            "datif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e13",
@@ -1112,7 +1291,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 3 ?",
+          "hint": "C’est l’objectif figé de la leçon 15.",
+          "explanation": "L’étape 3 s’achève sur la lecture de courtes propositions narratives.",
+          "options": [
+            "Courtes propositions narratives de Psaume ou d’Évangile.",
+            "périodes inconnues du Canon",
+            "prononciation uniquement",
+            "tous les pronoms maîtrisés"
+          ]
+        }
+      }
     },
     {
       "id": "l15-e14",
@@ -1141,7 +1333,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle leçon poursuit volontairement ici la progression en spirale des pronoms ?",
+          "hint": "Le programme impose une récupération répétée des pronoms.",
+          "explanation": "La leçon 15 réemploie les pronoms de troisième personne à l’intérieur du récit.",
+          "options": [
+            "la leçon 15 avec ejus/eum",
+            "la leçon 15 n’introduit aucun pronom",
+            "seule la leçon 10 emploie des pronoms",
+            "les pronoms reprennent à la leçon 31"
+          ]
+        }
+      }
     }
   ],
   "objectives": [
@@ -1227,5 +1432,19 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Resurrexit",
+      "grammarFocus": "Parfait actif",
+      "readingOutcome": "Lire les actions passées achevées dans le Credo et le récit évangélique.",
+      "objectives": [
+        "Reconnaître le parfait actif comme temps d’un événement achevé.",
+        "Distinguer surgo/resurgo et les radicaux forts du parfait.",
+        "Lire de courtes séquences narratives du Credo et de l’Évangile.",
+        "Poursuivre la progression en spirale des pronoms avec ejus/eum.",
+        "Franchir le jalon narratif Psaume/Évangile de l’étape 3."
+      ]
+    }
+  }
 }

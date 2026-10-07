@@ -1,6 +1,6 @@
 {
-  "version": "latin-course-fr-parity-audit-v1.2",
-  "status": "PARTIAL_PARITY_STAGE2_COMPLETE",
+  "version": "latin-course-fr-parity-audit-v1.3",
+  "status": "PARTIAL_PARITY_STAGE3_COMPLETE",
   "audited": "2026-10-07",
   "scope": "All authored Latin course lessons 1-40",
   "totals": {
@@ -47,32 +47,46 @@
       "localizedOptionSets": "all applicable",
       "localizedMatchingLabels": "all applicable",
       "gradingValuesChanged": 0
+    },
+    "stage3": {
+      "lessons": "5/5",
+      "lessonTitles": "5/5",
+      "lessonGrammarFocus": "5/5",
+      "lessonReadingOutcome": "5/5",
+      "lessonObjectives": "5/5",
+      "blockTitles": "30/30",
+      "exercisePrompts": "54/54",
+      "exerciseHints": "54/54",
+      "exerciseExplanations": "54/54",
+      "localizedOptionSets": "all applicable",
+      "localizedMatchingLabels": "all applicable",
+      "gradingValuesChanged": 0
     }
   },
   "missing": {
     "lessonTitles": {
-      "localizedFr": 10,
+      "localizedFr": 15,
       "total": 40
     },
     "blockTitles": {
-      "localizedFr": 65,
+      "localizedFr": 95,
       "total": 245
     },
     "exercisePrompts": {
-      "localizedFr": 110,
+      "localizedFr": 164,
       "total": 431
     },
     "exerciseHints": {
-      "localizedFr": 110,
+      "localizedFr": 164,
       "total": 431
     },
     "exerciseExplanations": {
-      "localizedFr": 110,
+      "localizedFr": 164,
       "total": 431
     },
-    "exerciseOptionLabels": "Lessons 1-10 complete; Lessons 11-40 pending.",
-    "lessonObjectives": "Lessons 1-10 complete; Lessons 11-40 pending.",
-    "grammarFocusAndReadingOutcome": "Lessons 1-10 complete; Lessons 11-40 pending."
+    "exerciseOptionLabels": "Lessons 1-15 complete; Lessons 16-40 pending.",
+    "lessonObjectives": "Lessons 1-15 complete; Lessons 16-40 pending.",
+    "grammarFocusAndReadingOutcome": "Lessons 1-15 complete; Lessons 16-40 pending."
   },
   "schemaRecommendation": {
     "backwardsCompatibility": "Keep existing English/canonical fields for grading and current UI.",
@@ -81,7 +95,8 @@
     "exercise": "Add localization.fr.prompt, hint, explanation, options where applicable, plus localized accepted-answer overrides only when the answer itself is language-dependent.",
     "gradingRule": "Never translate the canonical grading value blindly. Multiple-choice localization maps French labels by option index/value; free-text exercises receive explicit French accepted variants when required.",
     "implementedStage1": "Lessons 1-5 now use localization.fr for lesson metadata, block titles, exercise text, aligned option labels and matching labels while canonical grading fields remain untouched.",
-    "implementedStage2": "Lessons 6-10 now use the same localization.fr contract as Stage 1; canonical expectedAnswer and acceptedVariants remain untouched."
+    "implementedStage2": "Lessons 6-10 now use the same localization.fr contract as Stage 1; canonical expectedAnswer and acceptedVariants remain untouched.",
+    "implementedStage3": "Lessons 11-15 now use the same localization.fr contract; all canonical grading, source and provenance fields remain unchanged."
   },
   "repairBatching": [
     "Lessons 1-5",
@@ -99,11 +114,13 @@
     "Future parity completion should become a hard CI gate stage by stage, not a one-shot flag.",
     "Lessons 1-5 are a hard French-parity CI gate: localized lesson metadata, block titles, exercise prompt/hint/explanation, option-label cardinality and matching-label key parity are required.",
     "French localization objects must not define expectedAnswer or acceptedVariants; grading remains canonical.",
-    "Lessons 6-10 are a hard French-parity CI gate under the same 1:1 display-label mapping and canonical-grading preservation rules."
+    "Lessons 6-10 are a hard French-parity CI gate under the same 1:1 display-label mapping and canonical-grading preservation rules.",
+    "Lessons 11-15 are a hard French-parity CI gate under the same aligned-display and canonical-grading preservation rules."
   ],
   "completedBatches": [
     "Lessons 1-5",
-    "Lessons 6-10"
+    "Lessons 6-10",
+    "Lessons 11-15"
   ],
-  "nextBatch": "Lessons 11-15"
+  "nextBatch": "Lessons 16-20"
 }

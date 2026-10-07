@@ -363,7 +363,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’imparfait fournit l’arrière-plan"
+        }
+      }
     },
     {
       "id": "l11-b2",
@@ -378,7 +383,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "erat est votre premier repère"
+        }
+      }
     },
     {
       "id": "l11-b3",
@@ -393,7 +403,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Reconnaître la famille en -ba-"
+        }
+      }
     },
     {
       "id": "l11-b4",
@@ -410,7 +425,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "In principio erat Verbum"
+        }
+      }
     },
     {
       "id": "l11-b5",
@@ -427,7 +447,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Stabant autem"
+        }
+      }
     },
     {
       "id": "l11-b6",
@@ -442,7 +467,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les adverbes narratifs orientent le lecteur"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -561,7 +591,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel temps est erat ?",
+          "hint": "C’est une forme passée de sum employée pour l’arrière-plan.",
+          "explanation": "erat est la troisième personne du singulier de l’imparfait de sum.",
+          "options": [
+            "imparfait",
+            "présent",
+            "futur",
+            "parfait"
+          ]
+        }
+      }
     },
     {
       "id": "l11-e2",
@@ -591,7 +634,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fournit généralement l’imparfait dans un récit ?",
+          "hint": "Pensez à « était en train de » ou « avait l’habitude de ».",
+          "explanation": "L’imparfait présente une action ou un état passé en cours, répété ou d’arrière-plan.",
+          "options": [
+            "passé en cours / arrière-plan",
+            "uniquement un événement ponctuel achevé",
+            "intention future",
+            "ordre direct"
+          ]
+        }
+      }
     },
     {
       "id": "l11-e3",
@@ -624,7 +680,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez toutes les formes de sum à l’imparfait.",
+          "hint": "La même forme apparaît trois fois.",
+          "explanation": "Les trois occurrences de erat sont à l’imparfait."
+        }
+      }
     },
     {
       "id": "l11-e4",
@@ -655,7 +718,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie stabant dans le contexte ?",
+          "hint": "Le schéma -bant marque l’imparfait pluriel.",
+          "explanation": "stabant est la troisième personne du pluriel de l’imparfait de sto.",
+          "options": [
+            "ils se tenaient debout",
+            "ils se tiendront debout",
+            "tenez-vous debout !",
+            "ils se sont tenus debout"
+          ]
+        }
+      }
     },
     {
       "id": "l11-e5",
@@ -686,7 +762,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’adverbe narratif à son sens.",
+          "hint": "Ces mots orientent le temps et le lieu dans le récit.",
+          "explanation": "Les adverbes narratifs aident à segmenter les propositions de l’Évangile.",
+          "matches": {
+            "tunc": "alors",
+            "ibi": "là",
+            "adhuc": "encore / toujours",
+            "statim": "aussitôt"
+          }
+        }
+      }
     },
     {
       "id": "l11-e6",
@@ -717,7 +806,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le connecteur ou l’adverbe à son sens.",
+          "hint": "Ce sont des mots structurels plutôt que des noms de contenu.",
+          "explanation": "Les connecteurs révèlent les relations entre les propositions.",
+          "matches": {
+            "quoque": "aussi",
+            "enim": "car / en effet",
+            "ergo": "donc",
+            "autem": "mais / cependant"
+          }
+        }
+      }
     },
     {
       "id": "l11-e7",
@@ -747,7 +849,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est la première personne du singulier de l’imparfait de sum ?",
+          "hint": "Le paradigme commence par eram, eras, erat.",
+          "explanation": "eram signifie « j’étais ».",
+          "options": [
+            "eram",
+            "erat",
+            "erant",
+            "sum"
+          ]
+        }
+      }
     },
     {
       "id": "l11-e8",
@@ -776,7 +891,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau verbe de la leçon 11 signifie « espérer » ?",
+          "hint": "Il est à l’origine, indirectement, de mots français en « espér- ».",
+          "explanation": "spero signifie « espérer ».",
+          "options": [
+            "spero",
+            "eruo",
+            "introeo",
+            "laetifico"
+          ]
+        }
+      }
     },
     {
       "id": "l11-e9",
@@ -805,7 +933,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel mot signifie « ensemble / en même temps » ?",
+          "hint": "Pensez à la simultanéité.",
+          "explanation": "simul signifie « ensemble / en même temps ».",
+          "options": [
+            "simul",
+            "iam",
+            "ibi",
+            "tunc"
+          ]
+        }
+      }
     },
     {
       "id": "l11-e10",
@@ -829,7 +970,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez l’adverbe latin signifiant « déjà / maintenant ».",
+          "hint": "C’est un petit mot temporel fréquent dans le récit.",
+          "explanation": "iam signifie « déjà / maintenant »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -904,5 +1052,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Sicut erat in principio",
+      "grammarFocus": "Imparfait",
+      "readingOutcome": "Reconnaître l’action passée en cours ou d’arrière-plan ainsi que les adverbes narratifs.",
+      "objectives": [
+        "Reconnaître l’imparfait comme temps d’une action passée en cours ou d’arrière-plan.",
+        "Lire erat et les schémas réguliers de l’imparfait en -ba-.",
+        "Apprendre les quatorze lemmes figés de la leçon 11.",
+        "Utiliser les adverbes et connecteurs narratifs pour s’orienter dans une proposition évangélique liturgique."
+      ]
+    }
+  }
 }

@@ -355,7 +355,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les ordres expriment des actions verbales directes"
+        }
+      }
     },
     {
       "id": "l12-b2",
@@ -370,7 +375,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le vocatif est désormais employé délibérément"
+        }
+      }
     },
     {
       "id": "l12-b3",
@@ -387,7 +397,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Orate, fratres"
+        }
+      }
     },
     {
       "id": "l12-b4",
@@ -404,7 +419,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "accipe … vade"
+        }
+      }
     },
     {
       "id": "l12-b5",
@@ -421,7 +441,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les ordres continuent de régir des cas"
+        }
+      }
     },
     {
       "id": "l12-b6",
@@ -436,7 +461,12 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Reconnaître l’ordre avant de traduire chaque mot"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -560,7 +590,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel mode / quelle fonction Orate a-t-il ici ?",
+          "hint": "Il ordonne aux frères d’agir.",
+          "explanation": "Orate est un impératif à la deuxième personne du pluriel.",
+          "options": [
+            "ordre à l’impératif",
+            "arrière-plan à l’imparfait",
+            "prédiction future",
+            "description passive"
+          ]
+        }
+      }
     },
     {
       "id": "l12-e2",
@@ -590,7 +633,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est fratres dans Orate, fratres ?",
+          "hint": "Ils sont directement interpellés.",
+          "explanation": "fratres est au vocatif pluriel.",
+          "options": [
+            "vocatif",
+            "nominatif",
+            "datif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l12-e3",
@@ -621,7 +677,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les deux ordres de la leçon 12 dans cette proposition, en dehors de Surge fourni comme aide.",
+          "hint": "Tous deux sont des ordres au singulier.",
+          "explanation": "accipe vient de accipio ; vade vient de vado."
+        }
+      }
     },
     {
       "id": "l12-e4",
@@ -651,7 +714,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière fac ?",
+          "hint": "fac est une forme d’impératif d’apparence irrégulière.",
+          "explanation": "fac est l’impératif singulier de facio.",
+          "options": [
+            "facio",
+            "dico",
+            "do",
+            "vado"
+          ]
+        }
+      }
     },
     {
       "id": "l12-e5",
@@ -682,7 +758,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est vobis dans Amen dico vobis ?",
+          "hint": "Traduisez : « je vous dis », littéralement « je dis à vous ».",
+          "explanation": "vobis est au datif pluriel.",
+          "options": [
+            "datif",
+            "ablatif",
+            "accusatif",
+            "génitif"
+          ]
+        }
+      }
     },
     {
       "id": "l12-e6",
@@ -713,7 +802,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quelle famille pronominale ejus appartient-il ?",
+          "hint": "C’est la forme de troisième personne au génitif singulier.",
+          "explanation": "ejus appartient à is/ea/id.",
+          "options": [
+            "is/ea/id",
+            "ego",
+            "nos",
+            "se"
+          ]
+        }
+      }
     },
     {
       "id": "l12-e7",
@@ -744,7 +846,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de la leçon 12 à son sens.",
+          "hint": "Tous sont de nouveaux verbes du vocabulaire fondamental.",
+          "explanation": "Ceci vérifie l’ensemble verbal.",
+          "matches": {
+            "oro": "prier",
+            "accipio": "recevoir / prendre",
+            "respondeo": "répondre",
+            "clamo": "crier / appeler"
+          }
+        }
+      }
     },
     {
       "id": "l12-e8",
@@ -775,7 +890,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 12 à son sens.",
+          "hint": "Mélangez volontairement particules et verbes.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale rapide.",
+          "matches": {
+            "nunc": "maintenant",
+            "ecce": "voici",
+            "vado": "aller",
+            "do": "donner"
+          }
+        }
+      }
     },
     {
       "id": "l12-e9",
@@ -805,7 +933,20 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle affirmation distingue le mieux le vocatif du nominatif ?",
+          "hint": "Rappelez-vous la carte permanente des cas.",
+          "explanation": "Le vocatif sert à l’adresse directe ; le nominatif nomme couramment le sujet.",
+          "options": [
+            "le vocatif interpelle ; le nominatif nomme le sujet",
+            "le vocatif est toujours pluriel",
+            "le nominatif suit cum",
+            "ils ont toujours la même fonction"
+          ]
+        }
+      }
     },
     {
       "id": "l12-e10",
@@ -830,7 +971,14 @@
         "grammar-nunn-1922",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez la particule latine signifiant « voici ».",
+          "hint": "Elle ouvre Ecce Agnus Dei.",
+          "explanation": "ecce signifie « voici »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -902,5 +1050,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Orate, fratres",
+      "grammarFocus": "Impératif et vocatif",
+      "readingOutcome": "Employer les ordres, l’adresse directe et les formes du vocatif.",
+      "objectives": [
+        "Reconnaître les ordres au singulier et au pluriel.",
+        "Employer le vocatif comme cas actif de l’adresse directe.",
+        "Apprendre les onze lemmes figés de la leçon 12.",
+        "Poursuivre la progression en spirale des pronoms avec ejus et vobis dans des propositions authentiques."
+      ]
+    }
+  }
 }
