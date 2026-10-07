@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:40,
-  traditions:59,
-  pilgrimages:53,
+  shrines:48,
+  traditions:67,
+  pilgrimages:61,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -348,6 +348,48 @@ assert.equal(chiquinquira[0].map_publishable,false);
 assert.ok(chiquinquira[0].sections.some(section=>/Chiquinquirá/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
 assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"Latin America shrine pin count drifted");
+
+const banneux=filterExploreItems(projection.byLens.pilgrimages,{query:"Banneux"});
+assert.equal(banneux.length,1);
+assert.equal(banneux[0].map_publishable,false);
+assert.ok(banneux[0].sections.some(section=>/first apparition at Banneux/i.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const beauraing=filterExploreItems(projection.byLens.pilgrimages,{query:"Beauraing"});
+assert.equal(beauraing.length,1);
+assert.equal(beauraing[0].map_publishable,false);
+
+const svataHora=filterExploreItems(projection.byLens.pilgrimages,{query:"Svatá Hora"});
+assert.equal(svataHora.length,1);
+assert.equal(svataHora[0].map_publishable,false);
+assert.ok(svataHora[0].sections.some(section=>/Assumption season/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const wenceslas=filterExploreItems(projection.byLens.pilgrimages,{query:"Wenceslas"});
+assert.equal(wenceslas.length,1);
+assert.equal(wenceslas[0].map_publishable,false);
+assert.ok(wenceslas[0].sections.some(section=>/National St Wenceslas Pilgrimage/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const heiloo=filterExploreItems(projection.byLens.pilgrimages,{query:"Heiloo"});
+assert.equal(heiloo.length,1);
+assert.equal(heiloo[0].map_publishable,false);
+assert.ok(heiloo[0].sections.some(section=>/First Saturday pilgrimage at Heiloo/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const maastricht=filterExploreItems(projection.byLens.pilgrimages,{query:"Sterre der Zee"});
+assert.equal(maastricht.length,1);
+assert.equal(maastricht[0].map_publishable,false);
+assert.ok(maastricht[0].sections.some(section=>/Sterre der Zee diocesan-feast walking pilgrimage/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+
+const fatima=filterExploreItems(projection.byLens.pilgrimages,{query:"Fátima"});
+assert.equal(fatima.length,1);
+assert.equal(fatima[0].map_publishable,false);
+assert.ok(fatima[0].sections.some(section=>/13 May anniversary pilgrimage at Fátima/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+const sameiro=filterExploreItems(projection.byLens.pilgrimages,{query:"Sameiro"});
+assert.equal(sameiro.length,1);
+assert.equal(sameiro[0].map_publishable,false);
+assert.ok(sameiro[0].sections.some(section=>/Archdiocesan pilgrimage to Sameiro/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
+assert.ok(sameiro[0].sections.some(section=>/Feast of Our Lady of Sameiro/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
+
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,7,"tranche 7 address-only shrines unexpectedly published map points");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);

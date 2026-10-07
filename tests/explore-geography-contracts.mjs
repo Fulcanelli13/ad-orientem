@@ -28,7 +28,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -90,6 +90,14 @@ assert.deepEqual(
     "place:BR:nazare-belem",
     "place:CO:las-lajas-ipiales",
     "place:CO:chiquinquira-basilica",
+    "place:BE:banneux",
+    "place:BE:beauraing",
+    "place:CZ:svata-hora-pribram",
+    "place:CZ:stara-boleslav-st-wenceslas",
+    "place:NL:heiloo-olv-ter-nood",
+    "place:NL:maastricht-sterre-der-zee",
+    "place:PT:fatima-sanctuary",
+    "place:PT:sameiro-braga",
   ].sort(),
 );
 
@@ -147,8 +155,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 20,
-  places: 43,
+  geoAreas: 24,
+  places: 51,
   directoryPlaceLinks: 1,
 });
 
@@ -187,6 +195,9 @@ assert.equal(umuakaLink.relationship,"LOCATED_AT");
 assert.equal(umuakaLink.confidence,"CONFIRMED");
 assert.equal(umuakaLink.venue_id,"ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-umuaka-imo-state-nigeria");
 assert.equal(seed.directoryPlaceLinks.some(link=>link.venue_id==="ao-fssp-nne-enyemaka-shrine-umuaka-p-o-box-605-474123-umuaka-imo-state-nigeria"),false,"duplicate upstream Umuaka row was linked as a second exact-place venue");
+
+assert.equal(seed.directoryPlaceLinks.some(link=>link.place_id==="place:PT:fatima-sanctuary"),false,"FSSP presence in Fátima city was incorrectly collapsed into the sanctuary");
+assert.equal(candidates.candidates.some(item=>item.place_id==="place:PT:fatima-sanctuary"),false,"city-level FSSP presence created an unresolved sanctuary candidate without identity evidence");
 
 const badParent = structuredClone(registry);
 badParent.geoAreas.push({

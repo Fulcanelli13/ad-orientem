@@ -99,7 +99,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,42,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,50,"every seeded canonical Place should have one Place profile");
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -388,6 +388,64 @@ assert.equal(chiquinquira.counts.pilgrimages,1);
 assert.ok(chiquinquira.counts.traditions>=1);
 assert.equal(chiquinquira.map_publishable,false);
 assert.ok(chiquinquira.calendar.some(row=>row.semantic_key==="observance.chiquinquira_july9"&&row.date==="2027-07-09"));
+
+const banneux=explorePlaceProfile(profiles,"place:BE:banneux");
+assert.ok(banneux);
+assert.equal(banneux.counts.shrines,1);
+assert.equal(banneux.counts.pilgrimages,1);
+assert.ok(banneux.counts.traditions>=1);
+assert.equal(banneux.map_publishable,false);
+assert.ok(banneux.calendar.some(row=>row.semantic_key==="observance.banneux_first_apparition"&&row.date==="2027-01-15"));
+
+const beauraing=explorePlaceProfile(profiles,"place:BE:beauraing");
+assert.ok(beauraing);
+assert.equal(beauraing.counts.shrines,1);
+assert.equal(beauraing.counts.pilgrimages,1);
+assert.ok(beauraing.counts.traditions>=1);
+assert.equal(beauraing.calendar.length,0);
+
+const svataHora=explorePlaceProfile(profiles,"place:CZ:svata-hora-pribram");
+assert.ok(svataHora);
+assert.equal(svataHora.counts.shrines,1);
+assert.equal(svataHora.counts.pilgrimages,1);
+assert.ok(svataHora.counts.traditions>=1);
+assert.equal(svataHora.calendar.length,0,"Svatá Hora seasonal pilgrimage was incorrectly reduced to one date");
+
+const staraBoleslav=explorePlaceProfile(profiles,"place:CZ:stara-boleslav-st-wenceslas");
+assert.ok(staraBoleslav);
+assert.equal(staraBoleslav.counts.shrines,1);
+assert.equal(staraBoleslav.counts.pilgrimages,1);
+assert.ok(staraBoleslav.counts.traditions>=1);
+assert.ok(staraBoleslav.calendar.some(row=>row.semantic_key==="feast.saint_wenceslas"&&row.date==="2027-09-28"));
+
+const heiloo=explorePlaceProfile(profiles,"place:NL:heiloo-olv-ter-nood");
+assert.ok(heiloo);
+assert.equal(heiloo.counts.shrines,1);
+assert.equal(heiloo.counts.pilgrimages,1);
+assert.ok(heiloo.counts.traditions>=1);
+assert.equal(heiloo.calendar.length,0);
+
+const maastricht=explorePlaceProfile(profiles,"place:NL:maastricht-sterre-der-zee");
+assert.ok(maastricht);
+assert.equal(maastricht.counts.shrines,1);
+assert.equal(maastricht.counts.pilgrimages,1);
+assert.ok(maastricht.counts.traditions>=1);
+assert.equal(maastricht.calendar.length,0);
+
+const fatima=explorePlaceProfile(profiles,"place:PT:fatima-sanctuary");
+assert.ok(fatima);
+assert.equal(fatima.counts.shrines,1);
+assert.equal(fatima.counts.pilgrimages,1);
+assert.ok(fatima.counts.traditions>=1);
+assert.equal(fatima.counts.tlm,0,"FSSP presence elsewhere in Fátima was incorrectly attached to the Sanctuary");
+assert.ok(fatima.calendar.some(row=>row.semantic_key==="observance.fatima_may13"&&row.date==="2027-05-13"));
+
+const sameiro=explorePlaceProfile(profiles,"place:PT:sameiro-braga");
+assert.ok(sameiro);
+assert.equal(sameiro.counts.shrines,1);
+assert.equal(sameiro.counts.pilgrimages,1);
+assert.ok(sameiro.counts.traditions>=1);
+assert.ok(sameiro.calendar.some(row=>row.semantic_key==="observance.sameiro_june12"&&row.date==="2027-06-12"));
 
 const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"})[0];
 assert.equal(placeIdForExploreItem(lourdesShrine),lourdes.place_id);
