@@ -214,7 +214,7 @@ for (const lesson of authored) {
   assert(lesson.validation?.explanationReferencesResolved === true,
     `Lesson ${n} must declare explanationReferencesResolved=true`);
 
-  if (n <= 25) {
+  if (n <= 30) {
     const fr = lesson.localization?.fr;
     assert(typeof fr?.title === "string" && fr.title.trim().length > 0,
       `Lesson ${n} missing French lesson title`);
@@ -262,7 +262,7 @@ for (const lesson of authored) {
         `Lesson ${n} block ${block.id} missing French learner copy`);
       bilingualLearningBlocks++;
     }
-    if (n <= 25) {
+    if (n <= 30) {
       assert(typeof block.localization?.fr?.title === "string" && block.localization.fr.title.trim().length > 0,
         `Lesson ${n} block ${block.id} missing French title`);
       localizedFrBlockTitles++;
@@ -288,7 +288,7 @@ for (const lesson of authored) {
     assert(Array.isArray(exercise.acceptedVariants), `Lesson ${n} exercise ${exercise.id} acceptedVariants must be an array`);
     assert(typeof exercise.hint === "string" && exercise.hint.length > 0, `Lesson ${n} exercise ${exercise.id} missing hint`);
     assert(typeof exercise.explanation === "string" && exercise.explanation.length > 0, `Lesson ${n} exercise ${exercise.id} missing explanation`);
-    if (n <= 25) {
+    if (n <= 30) {
       const fr = exercise.localization?.fr;
       assert(typeof fr?.prompt === "string" && fr.prompt.trim().length > 0,
         `Lesson ${n} exercise ${exercise.id} missing French prompt`);
@@ -608,18 +608,18 @@ if (authored.length >= 40) {
 }
 
 // French parity baseline locks.
-assert(frParityAudit.status === "PARTIAL_PARITY_STAGE5_COMPLETE",
-  "French parity audit must record Stage 5 completion before later batches proceed");
+assert(frParityAudit.status === "PARTIAL_PARITY_STAGE6_COMPLETE",
+  "French parity audit must record Stage 6 completion before later batches proceed");
 assert(frParityAudit.complete?.learnerCopy?.presentEnFr === 245,
   "French parity audit learnerCopy baseline must remain 245/245");
 assert(frParityAudit.complete?.vocabularyGlosses?.presentEnFr === 835,
   "French parity audit vocabulary baseline must remain 835/835");
-assert(localizedFrLessonTitles === 25,
-  `French parity through Stage 5 expected 25 lesson titles, got ${localizedFrLessonTitles}`);
-assert(localizedFrBlockTitles === 155,
-  `French parity through Stage 5 expected 155 block titles, got ${localizedFrBlockTitles}`);
-assert(localizedFrExercisePrompts === 273 && localizedFrExerciseHints === 273 && localizedFrExerciseExplanations === 273,
-  `French parity through Stage 5 expected 273/273/273 exercise texts, got ${localizedFrExercisePrompts}/${localizedFrExerciseHints}/${localizedFrExerciseExplanations}`);
+assert(localizedFrLessonTitles === 30,
+  `French parity through Stage 6 expected 30 lesson titles, got ${localizedFrLessonTitles}`);
+assert(localizedFrBlockTitles === 185,
+  `French parity through Stage 6 expected 185 block titles, got ${localizedFrBlockTitles}`);
+assert(localizedFrExercisePrompts === 326 && localizedFrExerciseHints === 326 && localizedFrExerciseExplanations === 326,
+  `French parity through Stage 6 expected 326/326/326 exercise texts, got ${localizedFrExercisePrompts}/${localizedFrExerciseHints}/${localizedFrExerciseExplanations}`);
 assert(frParityAudit.complete?.stage1?.gradingValuesChanged === 0,
   "Stage 1 French parity audit must record zero canonical grading changes");
 assert(frParityAudit.complete?.stage2?.gradingValuesChanged === 0,
@@ -630,6 +630,8 @@ assert(frParityAudit.complete?.stage4?.gradingValuesChanged === 0,
   "Stage 4 French parity audit must record zero canonical grading changes");
 assert(frParityAudit.complete?.stage5?.gradingValuesChanged === 0,
   "Stage 5 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.stage6?.gradingValuesChanged === 0,
+  "Stage 6 French parity audit must record zero canonical grading changes");
 
 // High-risk textual/liturgical source locks.
 assert(textualAudit.status === "HIGH_RISK_PASS_COMPLETE", "textual audit baseline must be complete");
@@ -732,7 +734,7 @@ console.log(JSON.stringify({
     learnerCopyBlocks: bilingualLearningBlocks,
     vocabularyAndSupportGlosses: bilingualVocabularyEntries
   },
-  frenchParityThroughStage5: {
+  frenchParityThroughStage6: {
     lessonTitles: localizedFrLessonTitles,
     blockTitles: localizedFrBlockTitles,
     exercisePrompts: localizedFrExercisePrompts,
