@@ -114,8 +114,12 @@ function sourceRecords(item){
 export const CSE_SOT_MATRIX=Object.freeze(CSE_QUESTIONS.map(item=>{
   const sources=sourceRecords(item);
   const crossLinks=relatedTargetsFor(item);
-  const completeEn=Boolean(item.q?.[0]&&item.a?.[0]&&(item.depth==="STANDARD"||item.d?.[0]));
-  const completeFr=Boolean(item.q?.[1]&&item.a?.[1]&&(item.depth==="STANDARD"||item.d?.[1]));
+  const debateEn=item.depth!=="DEBATE"||Boolean(item.debate&&Object.values(item.debate).every(pair=>pair?.[0]));
+  const debateFr=item.depth!=="DEBATE"||Boolean(item.debate&&Object.values(item.debate).every(pair=>pair?.[1]));
+  const depthEn=item.depth==="STANDARD"||item.depth==="DEBATE"?debateEn:Boolean(item.d?.[0]);
+  const depthFr=item.depth==="STANDARD"||item.depth==="DEBATE"?debateFr:Boolean(item.d?.[1]);
+  const completeEn=Boolean(item.q?.[0]&&item.a?.[0]&&depthEn);
+  const completeFr=Boolean(item.q?.[1]&&item.a?.[1]&&depthFr);
   const nonArgumentLead=sources.filter(source=>source.role!=="argument_lead");
   return Object.freeze({
     id:item.id,
