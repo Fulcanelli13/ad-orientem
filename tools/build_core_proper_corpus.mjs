@@ -64,8 +64,13 @@ function sha256(text) {
 }
 function normalizedTokens(text) {
   return String(text || "")
-    .normalize("NFC")
     .toLocaleLowerCase("la")
+    .normalize("NFD")
+    .replace(/\p{M}+/gu, "")
+    .replaceAll("æ", "ae")
+    .replaceAll("œ", "oe")
+    .replaceAll("j", "i")
+    .normalize("NFC")
     .replace(/[0-9]+/gu, " ")
     .match(/[\p{L}]+(?:['’][\p{L}]+)?/gu) ?? [];
 }
@@ -494,6 +499,7 @@ try {
       encounter:"One complete liturgical-year window; every production-resolved formulary occurrence contributes encounter frequency.",
       specialRites:["good_friday_1962","holy_thursday_1962","easter_vigil_1962","palm_sunday_1962","candlemas_1962","ash_wednesday_1962","requiem_mass_1962"],
       sourceRecovery:"Two pinned-source anomalies are recovered only inside this research harness: Tempora/Nat1-1 is date-mapped to Nat29/Nat30/Nat31 on 29-31 December; obsolete Mass Commune/C10t is served from its pinned obsolete/missa donor before source-transport compatibility can redirect it to a non-existent Hours file.",
+      orthography:"Vocabulary analysis folds liturgical stress accents, æ→ae, œ→oe and legacy j→i before counting. Display/source text remains untouched.",
       note:"Raw Divinum Officium filenames are never counted directly. Reference resolution, 1960 section selection, commemorations, inherited Propers, and production calendar substitutions are inherited from Ad Orientem runtime.",
     },
     summary:{
