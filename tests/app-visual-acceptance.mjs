@@ -1151,41 +1151,43 @@ try{
     await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
   }
 
-  // Final v38.4 donor deduplicates Seasonal Catholic Practice and keeps it only as a compatibility route.
+  // Seasonal Catholic Practice remains a compatibility route into the single Liturgical Year surface.
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module='learn.seasonal_rites']").count(),0,"duplicate Seasonal Catholic Practice launcher returned");
   const seasonalAlias=await page.evaluate(()=>globalThis.AO_MODULES?.open?.("learn.seasonal_rites",{returnContext:{surface:"learn"}}));
   assert.equal(seasonalAlias?.ok,true,"Seasonal compatibility route failed");
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:5000});
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Ring").count(),1,"Seasonal compatibility route did not reach the Liturgical Year surface");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion").count(),1,"v38.4 Traditional Liturgical Year companion is missing");
-  assert.equal(await page.locator("#ao-calendar-modular-root .v384DateLead").count(),1,"v38.4 contextual date lead is missing");
-  assert.equal(await page.locator("#ao-calendar-modular-root .v384SectionLabel").count(),1,"v38.4 full traditional-year index is missing");
-  assert.equal(await page.locator("#ao-calendar-modular-root .v384Practice").count()>=12,true,"v38.4 traditional-year rows are incomplete");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion").count(),0,"retired duplicate Traditional Liturgical Year companion returned");
+  assert.equal(await page.locator("#ao-calendar-modular-root .v384SectionLabel").count(),0,"retired v38.4 full-year index leaked into the active Calendar");
   await shot("04f-seasonal-year-alias");
 
-  // Exact v38.4 concurrent-practice composition: Christ the King occurs inside October.
+  // Concurrent practices are now projected on the selected Calendar Day, not in a second year dashboard.
   const christKingSelected=await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.select?.("2026-10-25"));
-  assert.equal(christKingSelected,true,"Calendar could not select Christ the King for v38.4 parity capture");
+  assert.equal(christKingSelected,true,"Calendar could not select Christ the King for practice-context capture");
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate==="2026-10-25",null,{timeout:10000});
-  globalThis.AO_CALENDAR_APP_V1?.setView?.("year");
-  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view==="year",null,{timeout:5000});
-  const v384Concurrent=await page.locator("#ao-calendar-modular-root .aoCalV384Companion .v384Rows").first().innerText();
-  assert.match(v384Concurrent,/Kingship of Christ/,"v38.4 selected-date practices lost Christ the King");
-  assert.match(v384Concurrent,/Month of the Holy Rosary/,"v38.4 selected-date practices collapsed the concurrent October Rosary observance");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion .v384Rows").first().locator(".v384Practice").count(),2,
-    "v38.4 selected-date donor composition must expose both concurrent practices");
-  await shot("04f2-calendar-v384-christ-king-october");
+  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("day"));
+  await page.waitForSelector("#ao-calendar-modular-root .aoCalPracticeContext",{state:"visible",timeout:5000});
+  const practiceContextText=await page.locator("#ao-calendar-modular-root .aoCalPracticeContext").innerText();
+  assert.match(practiceContextText,/Kingship of Christ/,"Calendar Day practice context lost Christ the King");
+  assert.match(practiceContextText,/Month of the Holy Rosary/,"Calendar Day practice context collapsed the concurrent October Rosary observance");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalPracticeCard").count(),2,
+    "Christ the King date should expose exactly the two non-redundant date-bound practice cards");
+  await shot("04f2-calendar-practices-christ-king-october");
 
-  await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-panel='discipline']").click();
-  assert.equal(await page.locator("#ao-calendar-modular-root .v384EraTabs [data-ao-cal-v384-era]").count(),3,"v38.4 discipline era switch is incomplete");
-  assert.match((await page.locator("#ao-calendar-modular-root .aoCalV384Companion").innerText()),/Older Catholic discipline is preserved here as historical knowledge/);
-  await shot("04g-calendar-v384-discipline-current");
-  await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-era='1962']").click();
-  const discipline1962Text=await page.locator("#ao-calendar-modular-root .aoCalV384Companion").innerText();
-  assert.match(discipline1962Text,/HISTORICAL DISCIPLINE/);
-  assert.match(discipline1962Text,/SOURCE-SENSITIVE/);
-  assert.match(discipline1962Text,/three hours from solid food and alcoholic drink/);
-  await shot("04h-calendar-v384-discipline-1962");
+  // Discipline is contextual, structured and collapsed on the Day surface.
+  const fridaySelected=await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.select?.("2026-10-09"));
+  assert.equal(fridaySelected,true,"Calendar could not select Friday discipline reference date");
+  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate==="2026-10-09",null,{timeout:10000});
+  await page.waitForSelector("#ao-calendar-modular-root .aoCalPracticeDiscipline",{state:"visible",timeout:5000});
+  assert.equal(await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-era]").count(),0,"retired discipline-era tab dashboard returned");
+  await page.locator("#ao-calendar-modular-root .aoCalPracticeDiscipline > summary").click();
+  const disciplineText=await page.locator("#ao-calendar-modular-root .aoCalPracticeDiscipline").innerText();
+  assert.match(disciplineText,/At least one hour before Holy Communion/);
+  assert.match(disciplineText,/three hours from solid food and alcoholic drink/);
+  assert.match(disciplineText,/SOURCE-SENSITIVE/);
+  assert.match(disciplineText,/historical knowledge and voluntary practice/);
+  await shot("04g-calendar-contextual-discipline");
+
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
 
