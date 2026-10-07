@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { expandResearchProviderSnapshot } from "../../src/find/data-service.js";
 import { auditDirectoryGeo, isMapPublishableGeo } from "../../src/find/geo-provenance.js";
 import {
+  addressLooksLocalityOnly,
   buildDirectoryAddressOnlyQuery,
   buildDirectoryGeocodeQuery,
   buildDirectoryStructuredAttempts,
@@ -37,6 +38,29 @@ async function writeJson(file,value){
   await fs.writeFile(file,JSON.stringify(value,null,2)+"\n","utf8");
 }
 function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
+function norm(value){
+  return String(value??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase()
+    .replace(/[^a-z0-9]+/g," ").replace(/\s+/g," ").trim();
+}
+function strongVenueNameMatch(venue,candidate){
+  const wanted=norm(venue?.name?.official);
+  const actual=[
+    candidate?.name,
+    ...Object.values(candidate?.namedetails??{}),
+    candidate?.display_name?.split(",")[0],
+  ].map(norm).filter(Boolean);
+  if(!wanted||!actual.length)return false;
+  if(actual.some(value=>value===wanted||value.includes(wanted)||wanted.includes(value)))return true;
+  const wantedTokens=new Set(wanted.split(" ").filter(token=>token.length>=3));
+  if(!wantedTokens.size)return false;
+  for(const value of actual){
+    const tokens=new Set(value.split(" ").filter(token=>token.length>=3));
+    let match=0;
+    for(const token of wantedTokens)if(tokens.has(token))match+=1;
+    if(match/wantedTokens.size>=0.75)return true;
+  }
+  return false;
+}
 function slimCandidate(candidate){
   return {
     lat:candidate?.lat??null,lon:candidate?.lon??null,display_name:candidate?.display_name??null,
@@ -142,6 +166,18 @@ for(const original of expanded.venues){
     continue;
   }
   const geo=nominatimGeoFromSelection(chosen.selection,{geocodedAt:runStarted,cacheKey:chosen.key});
+  if(addressLooksLocalityOnly(venue)&&["building","address","street"].includes(geo?.precision)&&!strongVenueNameMatch(venue,chosen.selection.candidate)){
+    report.unresolved+=1;
+    report.unresolved_records.push({
+      venue_id:venue.venue_id,
+      name:venue?.name?.official,
+      address:venue?.address?.formatted,
+      reason:"LOCALITY_ONLY_SOURCE_WITHOUT_STRONG_VENUE_NAME_MATCH",
+      selected_precision:geo?.precision??null,
+      selected_score:chosen.selection?.score??null,
+    });
+    continue;
+  }
   const issues=auditDirectoryGeo(geo,{countryCode,path:"geo"});
   if(issues.length){
     report.unresolved+=1;
