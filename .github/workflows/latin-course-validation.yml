@@ -14,6 +14,8 @@ on:
       - "data/learn/latin-course-fr-parity-audit.v1.json"
       - "data/learn/latin-course-v2-assessment-policy.v1.json"
       - "data/learn/latin-course-scanlon-coverage.v1.json"
+      - "data/learn/latin-course-40-v2-blueprint.v1.json"
+      - "data/learn/latin-course-v2-vocabulary-policy.v1.json"
       - "data/learn/latin-course-lessons/**"
       - "src/assets/asset-registry.js"
       - "src/learn/latin-course.js"
@@ -24,6 +26,7 @@ on:
       - "tests/learn-latin-core-freeze.mjs"
       - "tests/learn-latin-runtime.mjs"
       - "tests/learn-latin-scanlon-coverage.mjs"
+      - "tests/learn-latin-v2-curriculum.mjs"
       - "tests/learn-owner.mjs"
       - "tools/validate_latin_course.mjs"
       - ".github/workflows/latin-course-validation.yml"
@@ -46,3 +49,5 @@ jobs:
         run: node tests/learn-owner.mjs
       - name: Validate Scanlon completeness control
         run: node tests/learn-latin-scanlon-coverage.mjs
+      - name: Validate Latin v2 curriculum blueprint
+        run: node tests/learn-latin-v2-curriculum.mjs

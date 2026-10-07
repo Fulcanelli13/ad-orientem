@@ -1,0 +1,2277 @@
+{
+  "version": "latin-course-40-v2-blueprint-v1",
+  "status": "V2_CURRICULUM_BLUEPRINT",
+  "basedOn": "latin-course-40-core350-v1.0",
+  "architecture": {
+    "macroLessons": 40,
+    "stages": 8,
+    "lessonsPerStage": 5,
+    "microUnitsPerLesson": [
+      2,
+      3
+    ],
+    "principle": "Keep the 40-lesson product contract while using micro-units to restore grammatical completeness and connected reading.",
+    "textualSOT": "Pinned Ad Orientem 1962 Missal/Vulgate corpora remain textual source of truth; Scanlon is a pedagogical completeness benchmark."
+  },
+  "stageDefinitions": [
+    {
+      "stage": 1,
+      "title": {
+        "en": "Foundations: Hear and See Latin",
+        "fr": "Fondations : entendre et voir le latin"
+      },
+      "lessons": [
+        1,
+        5
+      ],
+      "readingGate": {
+        "lesson": 5,
+        "type": "controlled-connected-reading",
+        "target": "Short Ordinary phrases joined into a continuous first reading."
+      }
+    },
+    {
+      "stage": 2,
+      "title": {
+        "en": "The Ordinary: Core Morphology",
+        "fr": "L’Ordinaire : morphologie fondamentale"
+      },
+      "lessons": [
+        6,
+        10
+      ],
+      "readingGate": {
+        "lesson": 10,
+        "type": "connected-reading",
+        "target": "Continuous Ordinary-style reading with cases, voice and pronouns."
+      }
+    },
+    {
+      "stage": 3,
+      "title": {
+        "en": "The Verb System",
+        "fr": "Le système verbal"
+      },
+      "lessons": [
+        11,
+        15
+      ],
+      "readingGate": {
+        "lesson": 15,
+        "type": "connected-reading",
+        "target": "Unseen Gospel-style narrative using time and perfect-system contrasts."
+      }
+    },
+    {
+      "stage": 4,
+      "title": {
+        "en": "Complex Forms and Pronouns",
+        "fr": "Formes complexes et pronoms"
+      },
+      "lessons": [
+        16,
+        20
+      ],
+      "readingGate": {
+        "lesson": 20,
+        "type": "connected-reading",
+        "target": "Continuous Credo reading with mixed pronoun and verbal morphology."
+      }
+    },
+    {
+      "stage": 5,
+      "title": {
+        "en": "Subjunctive and Clauses",
+        "fr": "Subjonctif et propositions"
+      },
+      "lessons": [
+        21,
+        25
+      ],
+      "readingGate": {
+        "lesson": 25,
+        "type": "connected-reading",
+        "target": "Unseen prayer/narrative passage with subordinate-clause diagnosis."
+      }
+    },
+    {
+      "stage": 6,
+      "title": {
+        "en": "Extended Syntax and Prayer",
+        "fr": "Syntaxe étendue et prière"
+      },
+      "lessons": [
+        26,
+        30
+      ],
+      "readingGate": {
+        "lesson": 30,
+        "type": "complete-prayer-reading",
+        "target": "Complete Roman Collect parsed and reread continuously."
+      }
+    },
+    {
+      "stage": 7,
+      "title": {
+        "en": "The Ecclesiastical Reader",
+        "fr": "Le lecteur du latin ecclésiastique"
+      },
+      "lessons": [
+        31,
+        35
+      ],
+      "readingGate": {
+        "lesson": 35,
+        "type": "long-period-reading",
+        "target": "Long Canon period with syntax and sacrificial rhetoric preserved."
+      }
+    },
+    {
+      "stage": 8,
+      "title": {
+        "en": "Read the Missal",
+        "fr": "Lire le Missel"
+      },
+      "lessons": [
+        36,
+        40
+      ],
+      "readingGate": {
+        "lesson": 40,
+        "type": "unseen-capstone",
+        "target": "Unseen authentic Missal selection with minimal support."
+      }
+    }
+  ],
+  "permanentTools": {
+    "caseMap": {
+      "visibleFromLesson": 2,
+      "policy": "All six cases remain visible; functions and forms expand cumulatively."
+    },
+    "verbMap": {
+      "visibleFromLesson": 5,
+      "dimensions": [
+        "person",
+        "number",
+        "tense",
+        "mood",
+        "voice",
+        "non-finite form"
+      ],
+      "principalParts": true
+    },
+    "pronunciation": {
+      "startsLesson": 1,
+      "recurs": [
+        1,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        36,
+        40
+      ]
+    },
+    "sourceDrawer": {
+      "required": true,
+      "claimTypes": [
+        "primary text",
+        "grammar",
+        "curriculum design"
+      ]
+    }
+  },
+  "vocabularyPolicyRef": "data/learn/latin-course-v2-vocabulary-policy.v1.json",
+  "scanlonCoverageRef": "data/learn/latin-course-scanlon-coverage.v1.json",
+  "scanlonRemediation": {
+    "pronunciation-stress": {
+      "lessons": [
+        1,
+        36
+      ],
+      "treatment": "recurring-strand",
+      "assessment": [
+        "syllable/stress recognition",
+        "read-aloud self-check"
+      ]
+    },
+    "regular-present-conjugations": {
+      "lessons": [
+        5,
+        7
+      ],
+      "treatment": "micro-unit+permanent-verb-map",
+      "assessment": [
+        "unprompted parse",
+        "form transformation",
+        "unseen clause"
+      ]
+    },
+    "esse-posse-ire": {
+      "lessons": [
+        3,
+        11,
+        13,
+        15,
+        33
+      ],
+      "treatment": "spiral+irregular-reference",
+      "assessment": [
+        "mixed tense recognition",
+        "short production"
+      ]
+    },
+    "imperfect-active-passive": {
+      "lessons": [
+        11
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "active/passive parse",
+        "narrative transfer"
+      ]
+    },
+    "imperative": {
+      "lessons": [
+        12
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "form recognition",
+        "command transformation"
+      ]
+    },
+    "future-active-passive": {
+      "lessons": [
+        13
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "active/passive parse",
+        "unseen future clause"
+      ]
+    },
+    "participles-gerundive": {
+      "lessons": [
+        14,
+        16,
+        27,
+        28
+      ],
+      "treatment": "spiral",
+      "assessment": [
+        "agreement parse",
+        "gerund/gerundive discrimination",
+        "participial transfer"
+      ]
+    },
+    "perfect-system": {
+      "lessons": [
+        15,
+        16
+      ],
+      "treatment": "two-lesson-system",
+      "assessment": [
+        "principal-parts recovery",
+        "perfect/pluperfect/future-perfect contrast",
+        "unseen narrative"
+      ]
+    },
+    "present-subjunctive": {
+      "lessons": [
+        21
+      ],
+      "treatment": "full-mood-map",
+      "assessment": [
+        "active/passive parse",
+        "prayer transfer"
+      ]
+    },
+    "purpose-clauses": {
+      "lessons": [
+        22
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "clause diagnosis",
+        "alternative-purpose discrimination"
+      ]
+    },
+    "imperfect-subjunctive": {
+      "lessons": [
+        24,
+        25
+      ],
+      "treatment": "spiral",
+      "assessment": [
+        "active/passive parse",
+        "subordinate-clause transfer"
+      ]
+    },
+    "indirect-questions": {
+      "lessons": [
+        24
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "question-to-indirect-question diagnosis",
+        "unseen clause"
+      ]
+    },
+    "cum-clauses": {
+      "lessons": [
+        25
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "temporal/causal/concessive diagnosis"
+      ]
+    },
+    "conditional-sentences": {
+      "lessons": [
+        25
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "condition classification",
+        "contrary-to-fact transfer"
+      ]
+    },
+    "third-io-verbs": {
+      "lessons": [
+        12
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "present/imperative recognition"
+      ]
+    },
+    "semideponents": {
+      "lessons": [
+        19
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "deponent/semideponent discrimination"
+      ]
+    },
+    "ferre": {
+      "lessons": [
+        33
+      ],
+      "treatment": "irregular-reference",
+      "assessment": [
+        "high-frequency form recognition"
+      ]
+    },
+    "fieri": {
+      "lessons": [
+        19,
+        33
+      ],
+      "treatment": "spiral+irregular-reference",
+      "assessment": [
+        "fiat/fieri/fio form recognition"
+      ]
+    },
+    "impersonal-verbs": {
+      "lessons": [
+        29,
+        33
+      ],
+      "treatment": "micro-unit+reference",
+      "assessment": [
+        "impersonal syntax diagnosis"
+      ]
+    },
+    "special-pronominal-adjectives": {
+      "lessons": [
+        18
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "genitive/dative pattern recognition"
+      ]
+    },
+    "dative-uses": {
+      "lessons": [
+        8,
+        27,
+        29
+      ],
+      "treatment": "spiral",
+      "assessment": [
+        "function diagnosis in context"
+      ]
+    },
+    "comparison": {
+      "lessons": [
+        32
+      ],
+      "treatment": "full-macro-focus",
+      "assessment": [
+        "form production",
+        "syntax diagnosis",
+        "unseen transfer"
+      ]
+    },
+    "velle-nolle": {
+      "lessons": [
+        33
+      ],
+      "treatment": "irregular-reference",
+      "assessment": [
+        "noli/nolite command recognition",
+        "mixed irregular forms"
+      ]
+    },
+    "ablative-uses": {
+      "lessons": [
+        9,
+        28,
+        29
+      ],
+      "treatment": "spiral",
+      "assessment": [
+        "function diagnosis in context"
+      ]
+    },
+    "question-particles": {
+      "lessons": [
+        31
+      ],
+      "treatment": "micro-unit",
+      "assessment": [
+        "direct/double-question recognition"
+      ]
+    },
+    "defective-verbs": {
+      "lessons": [
+        33
+      ],
+      "treatment": "reference-plus-high-frequency-forms",
+      "assessment": [
+        "recognition only where corpus-relevant"
+      ]
+    },
+    "accusative-extended": {
+      "lessons": [
+        29
+      ],
+      "treatment": "reference+micro-unit",
+      "assessment": [
+        "duration/extent recognition where attested"
+      ]
+    },
+    "irregular-declensions-numerals": {
+      "lessons": [
+        33
+      ],
+      "treatment": "digital-reference",
+      "assessment": [
+        "reference-guided recognition"
+      ]
+    },
+    "connected-reading": {
+      "lessons": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40
+      ],
+      "treatment": "stage-gate",
+      "assessment": [
+        "connected text every stage",
+        "cold read before support",
+        "continuous reread"
+      ]
+    },
+    "vocabulary-scale": {
+      "lessons": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "treatment": "three-tier-lexicon",
+      "assessment": [
+        "mastery retrieval only for Tier A",
+        "recognition inference for Tier B",
+        "support use tracked for Tier C"
+      ]
+    }
+  },
+  "lessons": [
+    {
+      "lesson": 1,
+      "stage": 1,
+      "title": "Hear the Latin of the Church",
+      "grammar": "Ecclesiastical pronunciation, stress and listening",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Vowels, consonants and ecclesiastical sound rules"
+        },
+        {
+          "unit": 2,
+          "title": "Syllables and stress"
+        },
+        {
+          "unit": 3,
+          "title": "Hear → repeat → read an authentic phrase"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "et"
+        ],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 2,
+      "stage": 1,
+      "title": "Mea culpa",
+      "grammar": "Six-case map and first declension",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "The permanent six-case map"
+        },
+        {
+          "unit": 2,
+          "title": "First-declension forms"
+        },
+        {
+          "unit": 3,
+          "title": "Nominative and vocative in authentic prayer"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "culpa",
+          "gratia",
+          "anima",
+          "vita",
+          "terra",
+          "gloria",
+          "ecclesia",
+          "via"
+        ],
+        "recognition": [
+          "iustitia",
+          "aqua",
+          "familia",
+          "ira"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 3,
+      "stage": 1,
+      "title": "Dominus Deus",
+      "grammar": "Second declension; esse and posse",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Masculine and neuter second declension"
+        },
+        {
+          "unit": 2,
+          "title": "Present esse and posse"
+        },
+        {
+          "unit": 3,
+          "title": "Predicate and identity sentences"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "Deus",
+          "Dominus",
+          "filius",
+          "regnum",
+          "caelum",
+          "sum",
+          "possum",
+          "non"
+        ],
+        "recognition": [
+          "principium",
+          "apostolus",
+          "verbum",
+          "locus",
+          "templum",
+          "oculus",
+          "servus",
+          "magister",
+          "puer"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 4,
+      "stage": 1,
+      "title": "Holy, Blessed, Almighty",
+      "grammar": "Adjective agreement",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "First/second-declension adjective agreement"
+        },
+        {
+          "unit": 2,
+          "title": "Third-declension adjective recognition"
+        },
+        {
+          "unit": 3,
+          "title": "Possessive adjectives in liturgical phrases"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "sanctus",
+          "beatus",
+          "bonus",
+          "meus",
+          "tuus",
+          "noster",
+          "suus",
+          "omnis"
+        ],
+        "recognition": [
+          "fidelis",
+          "magnus",
+          "iustus",
+          "malus",
+          "salvus",
+          "novus",
+          "plenus",
+          "similis",
+          "primus"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 5,
+      "stage": 1,
+      "title": "We praise, bless, adore",
+      "grammar": "Verb Map I: regular present active and principal parts",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Four-conjugation present-active map"
+        },
+        {
+          "unit": 2,
+          "title": "Why principal parts matter for reading"
+        },
+        {
+          "unit": 3,
+          "title": "Stage 1 connected reading"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "laudo",
+          "benedico",
+          "adoro",
+          "glorifico",
+          "credo",
+          "audio",
+          "venio",
+          "sed"
+        ],
+        "recognition": [
+          "servio",
+          "habeo",
+          "amo",
+          "video",
+          "voco",
+          "mitto",
+          "maneo",
+          "aperio",
+          "pono",
+          "sto"
+        ],
+        "curriculumSupport": [
+          "timeo"
+        ],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": {
+        "lesson": 5,
+        "type": "controlled-connected-reading",
+        "target": "Short Ordinary phrases joined into a continuous first reading."
+      },
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 6,
+      "stage": 2,
+      "title": "Pater, corpus, pax",
+      "grammar": "Third declension and stem recovery",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Recover the stem from the genitive"
+        },
+        {
+          "unit": 2,
+          "title": "Neuter and i-stem reading rules"
+        },
+        {
+          "unit": 3,
+          "title": "Read dense liturgical noun groups"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "pater",
+          "corpus",
+          "sanguis",
+          "pax",
+          "homo",
+          "virgo",
+          "nomen",
+          "panis"
+        ],
+        "recognition": [
+          "cor",
+          "calix",
+          "lux",
+          "veritas",
+          "lumen",
+          "caro",
+          "honor",
+          "tempus",
+          "gens",
+          "lex"
+        ],
+        "curriculumSupport": [
+          "os",
+          "vox",
+          "mater",
+          "pastor",
+          "nox",
+          "mons",
+          "virtus"
+        ],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 7,
+      "stage": 2,
+      "title": "It is offered / He is praised",
+      "grammar": "Present passive across the conjugations",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Four-conjugation present passive"
+        },
+        {
+          "unit": 2,
+          "title": "Active ↔ passive contrast"
+        },
+        {
+          "unit": 3,
+          "title": "Agent and passive reading preview"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "sanctifico"
+        ],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 8,
+      "stage": 2,
+      "title": "Agnus Dei / Deo gratias",
+      "grammar": "Genitive and dative",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Genitive relationship and possession"
+        },
+        {
+          "unit": 2,
+          "title": "Dative recipient/reference"
+        },
+        {
+          "unit": 3,
+          "title": "Case function inside Mass formulas"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "agnus",
+          "saeculum",
+          "mundus",
+          "voluntas",
+          "spes",
+          "mens",
+          "sicut",
+          "quia"
+        ],
+        "recognition": [
+          "testimonium",
+          "opus",
+          "domus",
+          "angelus",
+          "civitas"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 9,
+      "stage": 2,
+      "title": "Ad altare Dei",
+      "grammar": "Accusative, ablative and preposition government",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Accusative object and motion"
+        },
+        {
+          "unit": 2,
+          "title": "Ablative with core prepositions"
+        },
+        {
+          "unit": 3,
+          "title": "Preposition-government map"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "in",
+          "ad",
+          "per",
+          "pro",
+          "cum",
+          "de",
+          "a/ab",
+          "propter"
+        ],
+        "recognition": [
+          "e/ex",
+          "sub",
+          "super",
+          "sine",
+          "ante",
+          "post",
+          "usque",
+          "apud",
+          "coram",
+          "inter"
+        ],
+        "curriculumSupport": [
+          "contra",
+          "adversus",
+          "iuxta",
+          "ultra",
+          "secundum"
+        ],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 10,
+      "stage": 2,
+      "title": "Dominus vobiscum",
+      "grammar": "Personal, reflexive and third-person pronouns",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "ego/tu/nos/vos in the case map"
+        },
+        {
+          "unit": 2,
+          "title": "is/ea/id and se"
+        },
+        {
+          "unit": 3,
+          "title": "Stage 2 Ordinary reading"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "ego",
+          "tu",
+          "nos",
+          "vos",
+          "is/ea/id",
+          "se"
+        ],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": {
+        "lesson": 10,
+        "type": "connected-reading",
+        "target": "Continuous Ordinary-style reading with cases, voice and pronouns."
+      },
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 11,
+      "stage": 3,
+      "title": "Sicut erat in principio",
+      "grammar": "Imperfect active and passive",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Imperfect active patterns"
+        },
+        {
+          "unit": 2,
+          "title": "Imperfect passive patterns"
+        },
+        {
+          "unit": 3,
+          "title": "Background action in narrative"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "laetifico",
+          "eruo",
+          "spero",
+          "introeo",
+          "quoque",
+          "enim",
+          "ergo",
+          "autem"
+        ],
+        "recognition": [
+          "tunc",
+          "ibi",
+          "adhuc",
+          "iam",
+          "statim",
+          "simul"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 12,
+      "stage": 3,
+      "title": "Orate, fratres",
+      "grammar": "Imperatives and third-conjugation -io",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Regular and high-frequency irregular imperatives"
+        },
+        {
+          "unit": 2,
+          "title": "Third-conjugation -io recognition"
+        },
+        {
+          "unit": 3,
+          "title": "Commands in Gospel and liturgical clauses"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "oro",
+          "accipio",
+          "facio",
+          "dico",
+          "do",
+          "frater"
+        ],
+        "recognition": [
+          "nunc",
+          "ecce",
+          "respondeo",
+          "clamo",
+          "vado"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 13,
+      "stage": 3,
+      "title": "Cuius regni non erit finis",
+      "grammar": "Future active and passive",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Future active by conjugation"
+        },
+        {
+          "unit": 2,
+          "title": "Future passive by conjugation"
+        },
+        {
+          "unit": 3,
+          "title": "Time expressions and future reading"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "finis",
+          "iudico",
+          "aeternus",
+          "salus"
+        ],
+        "recognition": [
+          "semper",
+          "donec",
+          "hora"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 14,
+      "stage": 3,
+      "title": "Spiritus / dies",
+      "grammar": "Fourth/fifth declensions and participles",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Fourth and fifth declensions"
+        },
+        {
+          "unit": 2,
+          "title": "Present and future participles"
+        },
+        {
+          "unit": 3,
+          "title": "Participial agreement"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "spiritus",
+          "manus",
+          "dies",
+          "res",
+          "fides",
+          "laus",
+          "fructus"
+        ],
+        "recognition": [
+          "facies",
+          "conspectus"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 15,
+      "stage": 3,
+      "title": "Resurrexit",
+      "grammar": "Principal parts and the perfect system",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Perfect stems and principal parts"
+        },
+        {
+          "unit": 2,
+          "title": "Perfect, pluperfect and future-perfect active recognition"
+        },
+        {
+          "unit": 3,
+          "title": "Stage 3 Gospel reading"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "resurgo",
+          "ascendo",
+          "ago",
+          "sedeo"
+        ],
+        "recognition": [
+          "invenio",
+          "surgo",
+          "descendo",
+          "accedo",
+          "cado"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": {
+        "lesson": 15,
+        "type": "connected-reading",
+        "target": "Unseen Gospel-style narrative using time and perfect-system contrasts."
+      },
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 16,
+      "stage": 4,
+      "title": "Incarnatus est",
+      "grammar": "Perfect passive and participial tense contrasts",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Perfect passive participle + sum"
+        },
+        {
+          "unit": 2,
+          "title": "Perfect/pluperfect/future-perfect passive recognition"
+        },
+        {
+          "unit": 3,
+          "title": "Participial agreement in Creed and Gospel"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "incarno",
+          "crucifigo",
+          "patior",
+          "sepelio",
+          "nascor",
+          "morior"
+        ],
+        "recognition": [
+          "eligo",
+          "trado",
+          "annuntio",
+          "signum"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 17,
+      "stage": 4,
+      "title": "Qui tollis",
+      "grammar": "Relative pronouns",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "qui/quae/quod paradigm"
+        },
+        {
+          "unit": 2,
+          "title": "Antecedent gender/number versus clause case"
+        },
+        {
+          "unit": 3,
+          "title": "Unseen relative-clause transfer"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "qui/quae/quod",
+          "tollo",
+          "peccatum",
+          "dextera"
+        ],
+        "recognition": [
+          "quicumque",
+          "unde",
+          "quisque"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 18,
+      "stage": 4,
+      "title": "Hoc est Corpus meum",
+      "grammar": "Demonstratives, intensive pronouns and pronominal adjectives",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "hic/ille/iste"
+        },
+        {
+          "unit": 2,
+          "title": "ipse/idem and is/ea/id contrast"
+        },
+        {
+          "unit": 3,
+          "title": "unus/solus/totus/alius patterns"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "hic/haec/hoc",
+          "ille",
+          "iste",
+          "ipse",
+          "idem",
+          "sacramentum"
+        ],
+        "recognition": [
+          "quidam",
+          "alius",
+          "multus",
+          "totus",
+          "solus",
+          "unus",
+          "duo"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 19,
+      "stage": 4,
+      "title": "Miserere nobis",
+      "grammar": "Deponents, semideponents and fio/fieri",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Deponent system"
+        },
+        {
+          "unit": 2,
+          "title": "Semideponent recognition"
+        },
+        {
+          "unit": 3,
+          "title": "fio/fieri high-frequency forms"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "misereor",
+          "confiteor",
+          "veneror",
+          "precor",
+          "dignor"
+        ],
+        "recognition": [
+          "loquor",
+          "sequor"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 20,
+      "stage": 4,
+      "title": "Read the Credo",
+      "grammar": "Stage 4 integrated reading",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Cold first read of the Credo selection"
+        },
+        {
+          "unit": 2,
+          "title": "Mixed morphology and pronoun resolution"
+        },
+        {
+          "unit": 3,
+          "title": "Continuous reread and Stage 4 gate"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "remissio",
+          "mors",
+          "testamentum",
+          "caritas",
+          "communio",
+          "catholicus"
+        ],
+        "recognition": [
+          "propheta",
+          "iudicium",
+          "cunctus",
+          "universus"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": {
+        "lesson": 20,
+        "type": "connected-reading",
+        "target": "Continuous Credo reading with mixed pronoun and verbal morphology."
+      },
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 21,
+      "stage": 5,
+      "title": "Sanctificetur nomen tuum",
+      "grammar": "Present subjunctive active and passive",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Present-subjunctive conjugation map"
+        },
+        {
+          "unit": 2,
+          "title": "Active/passive recognition"
+        },
+        {
+          "unit": 3,
+          "title": "Jussive and optative prayer force"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "fio",
+          "advenio",
+          "regno",
+          "vivo"
+        ],
+        "recognition": [
+          "ita",
+          "sic"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 22,
+      "stage": 5,
+      "title": "Ut… ne…",
+      "grammar": "Purpose and alternative purpose constructions",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "ut/ne purpose clauses"
+        },
+        {
+          "unit": 2,
+          "title": "Relative purpose"
+        },
+        {
+          "unit": 3,
+          "title": "ad + gerundive, causa and infinitive alternatives"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "exaudio",
+          "libero",
+          "parco",
+          "perduco",
+          "custodio",
+          "ostendo"
+        ],
+        "recognition": [
+          "ambulo"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 23,
+      "stage": 5,
+      "title": "Ut digni efficiamur",
+      "grammar": "Result and substantive prayer clauses",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Result clauses and correlatives"
+        },
+        {
+          "unit": 2,
+          "title": "Request/content clauses after prayer verbs"
+        },
+        {
+          "unit": 3,
+          "title": "Purpose versus result versus requested outcome"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "ut",
+          "ne",
+          "concedo",
+          "praesto",
+          "tribuo",
+          "quaeso"
+        ],
+        "recognition": [
+          "ideo",
+          "itaque"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 24,
+      "stage": 5,
+      "title": "Quid quaeris? / quid esset?",
+      "grammar": "Imperfect subjunctive and indirect questions",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Imperfect subjunctive active/passive"
+        },
+        {
+          "unit": 2,
+          "title": "Indirect-question syntax"
+        },
+        {
+          "unit": 3,
+          "title": "Sequence-of-tense reading cue"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "efficio",
+          "promissio",
+          "dignus",
+          "mereor"
+        ],
+        "recognition": [
+          "magis",
+          "tantum",
+          "plus",
+          "nimis"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 25,
+      "stage": 5,
+      "title": "Cum… esset / si…",
+      "grammar": "cum clauses and conditional sentences",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Temporal, causal and concessive cum"
+        },
+        {
+          "unit": 2,
+          "title": "Conditions of doubt and contrary-to-fact"
+        },
+        {
+          "unit": 3,
+          "title": "Pluperfect-subjunctive recognition and Stage 5 reading"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "quando",
+          "dum",
+          "ubi",
+          "si",
+          "nisi",
+          "quoniam",
+          "atque/ac"
+        ],
+        "recognition": [
+          "quasi",
+          "nam",
+          "vero",
+          "etiam",
+          "quidem"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": {
+        "lesson": 25,
+        "type": "connected-reading",
+        "target": "Unseen prayer/narrative passage with subordinate-clause diagnosis."
+      },
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 26,
+      "stage": 6,
+      "title": "Scimus quia… / dicit esse…",
+      "grammar": "Infinitives and indirect discourse",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Complementary infinitives"
+        },
+        {
+          "unit": 2,
+          "title": "Accusative + infinitive and time relations"
+        },
+        {
+          "unit": 3,
+          "title": "quia/quod + finite reported content in Church Latin"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "scio",
+          "cognosco",
+          "sentio"
+        ],
+        "recognition": [
+          "scribo"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 27,
+      "stage": 6,
+      "title": "Ad laudandum / agendae gratiae",
+      "grammar": "Gerund, gerundive and passive periphrastic",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Gerund as verbal noun"
+        },
+        {
+          "unit": 2,
+          "title": "Gerundive as verbal adjective"
+        },
+        {
+          "unit": 3,
+          "title": "Passive periphrastic and dative of agent"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "causa",
+          "donum",
+          "munus"
+        ],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 28,
+      "stage": 6,
+      "title": "Herode rege / multis convocatis",
+      "grammar": "Ablative absolute and participial compression",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Ablative-absolute diagnostics"
+        },
+        {
+          "unit": 2,
+          "title": "Participial compression"
+        },
+        {
+          "unit": 3,
+          "title": "Narrative transfer passage"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "rex",
+          "populus"
+        ],
+        "recognition": [
+          "princeps",
+          "discipulus",
+          "mulier",
+          "turba"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 29,
+      "stage": 6,
+      "title": "Nobis… gratia Dei…",
+      "grammar": "Impersonal verbs and extended case functions",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "High-frequency impersonal verbs"
+        },
+        {
+          "unit": 2,
+          "title": "Extended dative functions"
+        },
+        {
+          "unit": 3,
+          "title": "Extended ablative and accusative functions"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "auxilium",
+          "misericordia",
+          "maiestas",
+          "unitas",
+          "famulus"
+        ],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 30,
+      "stage": 6,
+      "title": "Read a Collect",
+      "grammar": "Complete Roman Collect",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Collect architecture"
+        },
+        {
+          "unit": 2,
+          "title": "Full syntactic parse with support only for blockers"
+        },
+        {
+          "unit": 3,
+          "title": "Continuous reread and Stage 6 gate"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "omnipotens",
+          "sempiternus",
+          "clemens",
+          "misericors",
+          "divinus",
+          "oratio",
+          "supplex"
+        ],
+        "recognition": [
+          "gaudium",
+          "laetitia",
+          "sapientia",
+          "iniquitas",
+          "tribulatio",
+          "salutaris"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": {
+        "lesson": 30,
+        "type": "complete-prayer-reading",
+        "target": "Complete Roman Collect parsed and reread continuously."
+      },
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 31,
+      "stage": 7,
+      "title": "The Reader’s Toolkit",
+      "grammar": "Questions, interrogatives and indefinites",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "-ne, nonne, num/numquid"
+        },
+        {
+          "unit": 2,
+          "title": "Double questions"
+        },
+        {
+          "unit": 3,
+          "title": "Interrogative and indefinite pronoun families"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "fero",
+          "volo",
+          "nolo",
+          "nihil",
+          "iubeo"
+        ],
+        "recognition": [
+          "quis/quid",
+          "aliquis/aliquid",
+          "nemo",
+          "numquid",
+          "nonne",
+          "quomodo",
+          "quaero",
+          "interrogo"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 32,
+      "stage": 7,
+      "title": "Magis, plus, maximus",
+      "grammar": "Comparison of adjectives and adverbs",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Regular comparative/superlative morphology"
+        },
+        {
+          "unit": 2,
+          "title": "Irregular comparison and adverbs"
+        },
+        {
+          "unit": 3,
+          "title": "Comparison syntax and degree of difference"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [],
+        "recognition": [
+          "neque",
+          "nec",
+          "aut",
+          "vel",
+          "sive",
+          "at"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 33,
+      "stage": 7,
+      "title": "Fero, volo, fio",
+      "grammar": "Irregular, impersonal and defective forms",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "fero, volo/nolo, eo and fio/fieri"
+        },
+        {
+          "unit": 2,
+          "title": "High-frequency impersonal and defective forms"
+        },
+        {
+          "unit": 3,
+          "title": "Numerals and irregular declensions as reference tools"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [],
+        "recognition": [
+          "ovis",
+          "grex",
+          "semen",
+          "timor",
+          "mandatum",
+          "generatio",
+          "sermo",
+          "inimicus",
+          "corona",
+          "lapis"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 34,
+      "stage": 7,
+      "title": "Church and Biblical Latin",
+      "grammar": "Ecclesiastical usage, Biblical semantics and word families",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Church-Latin versus classical preference"
+        },
+        {
+          "unit": 2,
+          "title": "Vulgate coordination and semantic extensions"
+        },
+        {
+          "unit": 3,
+          "title": "Cognates, derivatives and compounds as recognition vocabulary"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 35,
+      "stage": 7,
+      "title": "The Language of the Canon",
+      "grammar": "Canon register and long periodic syntax",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Sacrificial vocabulary and formulae"
+        },
+        {
+          "unit": 2,
+          "title": "Map the long syntactic period"
+        },
+        {
+          "unit": 3,
+          "title": "Stage 7 Canon reading"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "hostia",
+          "sacrificium",
+          "offero",
+          "suscipio",
+          "memoria"
+        ],
+        "recognition": [
+          "sacerdos",
+          "vinum"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": {
+        "lesson": 35,
+        "type": "long-period-reading",
+        "target": "Long Canon period with syntax and sacrificial rhetoric preserved."
+      },
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 36,
+      "stage": 8,
+      "title": "Psalms, Hymns and Antiphons",
+      "grammar": "Poetic and Biblical register",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Parallelism and ellipsis"
+        },
+        {
+          "unit": 2,
+          "title": "Hyperbaton and poetic order"
+        },
+        {
+          "unit": 3,
+          "title": "Pronunciation/stress retrieval in liturgical poetry"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [],
+        "recognition": [
+          "lingua",
+          "auris",
+          "pes",
+          "caput",
+          "ignis",
+          "mare",
+          "sol",
+          "pauper"
+        ],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "mixed",
+        "recognitionOnlyNotSufficient": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 37,
+      "stage": 8,
+      "title": "Read the Ordinary",
+      "grammar": "Continuous Ordinary reading",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "First uninterrupted read"
+        },
+        {
+          "unit": 2,
+          "title": "Selective diagnostic support"
+        },
+        {
+          "unit": 3,
+          "title": "Connected-reading assessment"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "connected-reading",
+        "metadataQuizForbidden": true,
+        "unseenTransferRequired": false
+      }
+    },
+    {
+      "lesson": 38,
+      "stage": 8,
+      "title": "Read the Propers",
+      "grammar": "Complete Proper reading",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Predict register from liturgical part"
+        },
+        {
+          "unit": 2,
+          "title": "Read a complete unseen normal Proper"
+        },
+        {
+          "unit": 3,
+          "title": "Clause mapping, minimal support and reread"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "connected-reading",
+        "metadataQuizForbidden": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 39,
+      "stage": 8,
+      "title": "Requiem and Holy Week",
+      "grammar": "Specialized liturgical registers",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Requiem vocabulary and syntax"
+        },
+        {
+          "unit": 2,
+          "title": "Holy Week dialogue and poetic register"
+        },
+        {
+          "unit": 3,
+          "title": "Specialized-frequency partition"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [
+          "crux",
+          "requies",
+          "defunctus"
+        ],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": null,
+      "assessmentContract": {
+        "mode": "connected-reading",
+        "metadataQuizForbidden": true,
+        "unseenTransferRequired": true
+      }
+    },
+    {
+      "lesson": 40,
+      "stage": 8,
+      "title": "Read the Missal",
+      "grammar": "Unseen authentic Missal capstone",
+      "microUnits": [
+        {
+          "unit": 1,
+          "title": "Cold read without glosses"
+        },
+        {
+          "unit": 2,
+          "title": "Minimal support only for genuine blockers"
+        },
+        {
+          "unit": 3,
+          "title": "Explain recovery, reread continuously and certify outcome"
+        }
+      ],
+      "vocabulary": {
+        "mastery": [],
+        "recognition": [],
+        "curriculumSupport": [],
+        "passiveSupport": "lesson.passiveReadingLexicon"
+      },
+      "readingGate": {
+        "lesson": 40,
+        "type": "unseen-capstone",
+        "target": "Unseen authentic Missal selection with minimal support."
+      },
+      "assessmentContract": {
+        "mode": "connected-reading",
+        "metadataQuizForbidden": true,
+        "unseenTransferRequired": true
+      }
+    }
+  ]
+}

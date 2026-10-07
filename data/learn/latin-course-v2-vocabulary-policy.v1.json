@@ -1,0 +1,96 @@
+{
+  "version": "latin-course-v2-vocabulary-policy-v1",
+  "status": "V2_THREE_TIER_POLICY",
+  "immutableInputs": [
+    "data/learn/core-latin-200.v0.2.json",
+    "data/learn/core-latin-201-350.v1.json"
+  ],
+  "principle": "Frozen corpus ranks remain unchanged; v2 changes pedagogical burden, not corpus priority.",
+  "tiers": {
+    "mastery": {
+      "id": "A",
+      "meaning": "Recall without gloss; actively retrieved and checkpointed.",
+      "initialSource": "Selected Core 1-200 items at original lesson context.",
+      "newPerMacroLessonMax": 8,
+      "count": 180
+    },
+    "recognition": {
+      "id": "B",
+      "meaning": "Recognize or infer in context; lower drill burden; may later promote through spaced retrieval.",
+      "source": "Core 1-200 overflow plus high-priority Core 201-350 items at their existing pedagogical placement.",
+      "newPerMacroLessonMax": 10,
+      "count": 157
+    },
+    "support": {
+      "id": "C",
+      "meaning": "Tap/gloss support permitted; not treated as memorized vocabulary.",
+      "source": "Remaining frozen-core candidates plus each lesson passiveReadingLexicon.",
+      "frozenCoreCount": 13
+    }
+  },
+  "overloadedLessonOverrides": {
+    "3": [
+      "Deus",
+      "Dominus",
+      "filius",
+      "regnum",
+      "caelum",
+      "sum",
+      "possum",
+      "non"
+    ],
+    "4": [
+      "sanctus",
+      "beatus",
+      "bonus",
+      "meus",
+      "tuus",
+      "noster",
+      "suus",
+      "omnis"
+    ],
+    "5": [
+      "laudo",
+      "benedico",
+      "adoro",
+      "glorifico",
+      "credo",
+      "audio",
+      "venio",
+      "sed"
+    ],
+    "6": [
+      "pater",
+      "corpus",
+      "sanguis",
+      "pax",
+      "homo",
+      "virgo",
+      "nomen",
+      "panis"
+    ],
+    "9": [
+      "in",
+      "ad",
+      "per",
+      "pro",
+      "cum",
+      "de",
+      "a/ab",
+      "propter"
+    ]
+  },
+  "safeguards": [
+    "No frozen rank file is rewritten.",
+    "No lesson introduces more than 8 new Tier-A mastery lemmas.",
+    "Tier-B recognition does not count as mastery merely because it appeared in a passage.",
+    "Tier-C support remains visible to the learner and support use may later feed mastery diagnostics.",
+    "A later corpus audit may promote additional Tier-B items; promotions require retrieval evidence and do not alter frozen rank."
+  ],
+  "totals": {
+    "frozenCoreAllocated": 350,
+    "mastery": 180,
+    "recognition": 157,
+    "support": 13
+  }
+}
