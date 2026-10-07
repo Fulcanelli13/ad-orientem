@@ -85,18 +85,19 @@ assert.match(tlm.note,/Check the official schedule/);
 
 const lourdesShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes"});
 assert.equal(lourdesShrine.length,1);
-assert.equal(lourdesShrine[0].map_publishable,false);
-assert.equal(lourdesShrine[0].map_state,"ADDRESS_ONLY");
-assert.equal(exploreMapFeatures(lourdesShrine).length,0,"address-only shrine must not silently become a map pin");
+assert.equal(lourdesShrine[0].map_publishable,true);
+assert.equal(lourdesShrine[0].map_state,"MAPPED");
+assert.equal(exploreMapFeatures(lourdesShrine).length,1,"provenance-locked Lourdes shrine must publish one map pin");
 assert.match(lourdesShrine[0].subtitle,/Lourdes/);
 
 const lourdesTradition=filterExploreItems(projection.byLens.traditions,{query:"Lourdes"});
 assert.ok(lourdesTradition.some(item=>item.source_id==="att:DEV-010:LOURDES"));
-assert.ok(lourdesTradition.every(item=>item.map_publishable===false));
+assert.ok(lourdesTradition.some(item=>item.map_publishable===true),"place-backed Lourdes tradition did not inherit the canonical Place pin");
 
 const lourdesPilgrimage=filterExploreItems(projection.byLens.pilgrimages,{query:"Lourdes"});
 assert.equal(lourdesPilgrimage.length,1);
-assert.equal(lourdesPilgrimage[0].map_publishable,false);
+assert.equal(lourdesPilgrimage[0].map_publishable,true);
+assert.equal(lourdesPilgrimage[0].map_state,"DESTINATION_MAPPED");
 assert.ok(lourdesPilgrimage[0].sections.some(section=>section.label==="Calendar relationship"));
 
 const shrineVm=buildExploreViewModel({
@@ -145,7 +146,8 @@ const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   view:"map",
   filters:{},
 }));
-assert.match(shrineMapHtml,/canonical addresses, but no publishable coordinates yet/i);
+assert.match(shrineMapHtml,/Loading source-backed map points/i);
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,3,"all three seeded shrines should map through canonical Place coordinates");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
