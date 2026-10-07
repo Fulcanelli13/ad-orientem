@@ -95,12 +95,12 @@ const publicQuestionFiles=[
   readFileSync("src/learn/sexual-ethics-data/questions-101-150.js","utf8"),
 ].join("\n");
 assert.doesNotMatch(publicQuestionFiles,/Ad Orientem/);
-assert.doesNotMatch(runtime,/Related in Ad Orientem|À voir aussi dans Ad Orientem/);
 assert.equal(CSE_SOURCES.every(source=>Boolean(source.canonical_url)),true,"Every displayed citation source must have a hyperlink destination");
 
 const presentation=readFileSync("src/learn/presentation.js","utf8");
 const owner=readFileSync("src/learn/browser-entry.js","utf8");
 const runtime=readFileSync("src/learn/sexual-ethics.js","utf8");
+assert.doesNotMatch(runtime,/Related in Ad Orientem|À voir aussi dans Ad Orientem/);
 assert.match(presentation,/id:"learn\.sexual_ethics"/);
 assert.match(owner,/installSexualEthicsModule/);
 assert.match(owner,/ensureSexualEthicsRegistry/);
