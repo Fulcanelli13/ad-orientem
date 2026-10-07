@@ -1071,6 +1071,17 @@ export const AO_CANONICAL_EXTENSION_ASSETS=Object.freeze({
   }
 });
 
+export const AO_RUNTIME_ASSET_RECOVERIES=Object.freeze({
+  "ao-live-blessing": Object.freeze({
+    "assetId": "ao-live-blessing",
+    "path": "assets/recovered/ao-live-blessing.svg",
+    "sourcePath": "assets/active/live-actions/ao-live-blessing.png",
+    "sourceSha256": "620d70d4c40ba75deec8985f043683df6dae0e6bfe72490744eae7c83190417c",
+    "recoverySha256": "2c3cd65b33e2b88f5a832756218e7636d352482b0a50b8ea6b154ff5c79a7e12",
+    "derivation": "silhouette vector recovery from the byte-exact frozen V4 PNG; runtime-only because the canonical V4 binary was omitted from the repository"
+  })
+});
+
 export const AO_REMOVED_ASSET_IDS=Object.freeze([
   "ao-nav-mass",
   "ao-nav-im-lost",
@@ -1237,7 +1248,10 @@ export function isCanonicalAssetId(assetId){
 }
 
 export function resolveCanonicalAssetUrl(assetId,baseUrl=import.meta.url){
-  const record=AO_CANONICAL_CORE_ASSETS[String(assetId??"").trim()];
-  if(!record?.path)return null;
-  return new URL("../../"+record.path,baseUrl).href;
+  const id=String(assetId??"").trim();
+  const record=AO_CANONICAL_CORE_ASSETS[id];
+  const recovery=AO_RUNTIME_ASSET_RECOVERIES[id];
+  const runtimePath=recovery?.path??record?.path;
+  if(!runtimePath)return null;
+  return new URL("../../"+runtimePath,baseUrl).href;
 }
