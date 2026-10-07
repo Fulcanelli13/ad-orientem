@@ -1,0 +1,1296 @@
+{
+  "version": "SACRAMENTAL_FORMATION_CATHOLIC_LIFE_SALVAGE_V1",
+  "status": "CANONICAL_OWNER_ANNEX",
+  "created_at": "2026-10-07",
+  "parent_sot": "data/learn/sacramental-formation-sot.v1.json",
+  "source_audit": "data/learn/catholic-life-retirement-audit.v1.json",
+  "purpose": "Re-home detailed source-backed Catholic Life research under the dedicated sacramental formation owners without recreating Catholic Life as a curriculum.",
+  "ui_policy": [
+    "The owner UI remains concise and practical; this annex preserves detailed legal/historical distinctions and provenance underneath it.",
+    "Traditional and current discipline remain explicitly distinct.",
+    "No claim in this annex creates a second ritual player or duplicates the Mass reader.",
+    "Where a claim is more detailed than the owner UI needs, it remains available to future explanations, glossary cards, source drawers and audits."
+  ],
+  "owners": {
+    "learn.rites.baptism": {
+      "claim_count": 25,
+      "claims": [
+        {
+          "claim_id": "CL05-S01-Q001",
+          "stage_id": "CL05-S01",
+          "stage_title": "What Baptism Does",
+          "layer": "CURRENT",
+          "text": "Baptism uses true water with the proper form.",
+          "source_ids": [
+            "SRC-CIC83-849"
+          ]
+        },
+        {
+          "claim_id": "CL05-S01-Q002",
+          "stage_id": "CL05-S01",
+          "stage_title": "What Baptism Does",
+          "layer": "CURRENT",
+          "text": "Baptism forgives sins, regenerates and incorporates the baptised into the Church.",
+          "source_ids": [
+            "SRC-CIC83-849"
+          ]
+        },
+        {
+          "claim_id": "CL05-S01-Q003",
+          "stage_id": "CL05-S01",
+          "stage_title": "What Baptism Does",
+          "layer": "CURRENT",
+          "text": "Baptism imprints an indelible sacramental character.",
+          "source_ids": [
+            "SRC-CIC83-845",
+            "SRC-CIC83-849"
+          ]
+        },
+        {
+          "claim_id": "CL05-S01-Q004",
+          "stage_id": "CL05-S01",
+          "stage_title": "What Baptism Does",
+          "layer": "CURRENT",
+          "text": "A valid Baptism cannot be repeated.",
+          "source_ids": [
+            "SRC-CIC83-845"
+          ]
+        },
+        {
+          "claim_id": "CL05-S02-Q001",
+          "stage_id": "CL05-S02",
+          "stage_title": "Preparing an Infant",
+          "layer": "PROFILE_1962",
+          "text": "Under the 1917 discipline governing the 1962 context, infants were to be baptised as soon as possible.",
+          "source_ids": [
+            "SRC-CIC17-770"
+          ]
+        },
+        {
+          "claim_id": "CL05-S02-Q002",
+          "stage_id": "CL05-S02",
+          "stage_title": "Preparing an Infant",
+          "layer": "CURRENT",
+          "text": "Current law says parents are to see that infants are baptised within the first weeks.",
+          "source_ids": [
+            "SRC-CIC83-867"
+          ]
+        },
+        {
+          "claim_id": "CL05-S02-Q003",
+          "stage_id": "CL05-S02",
+          "stage_title": "Preparing an Infant",
+          "layer": "CURRENT",
+          "text": "In danger of death, infant Baptism is not to be delayed.",
+          "source_ids": [
+            "SRC-CIC83-867"
+          ]
+        },
+        {
+          "claim_id": "CL05-S02-Q004",
+          "stage_id": "CL05-S02",
+          "stage_title": "Preparing an Infant",
+          "layer": "CURRENT",
+          "text": "Current law requires care that the chosen name is not foreign to Christian sentiment.",
+          "source_ids": [
+            "SRC-CIC83-855"
+          ]
+        },
+        {
+          "claim_id": "CL05-S02-Q005",
+          "stage_id": "CL05-S02",
+          "stage_title": "Preparing an Infant",
+          "layer": "PASTORAL",
+          "text": "Parents should contact the parish early rather than postponing preparation unnecessarily.",
+          "source_ids": [
+            "SRC-CIC83-867"
+          ]
+        },
+        {
+          "claim_id": "CL05-S03-Q001",
+          "stage_id": "CL05-S03",
+          "stage_title": "Godparents",
+          "layer": "CURRENT",
+          "text": "A baptismal sponsor assists the baptised person in living the Christian life.",
+          "source_ids": [
+            "SRC-CIC83-872-874"
+          ]
+        },
+        {
+          "claim_id": "CL05-S03-Q002",
+          "stage_id": "CL05-S03",
+          "stage_title": "Godparents",
+          "layer": "CURRENT",
+          "text": "Current law permits one godfather, one godmother, or one of each.",
+          "source_ids": [
+            "SRC-CIC83-872-874"
+          ]
+        },
+        {
+          "claim_id": "CL05-S03-Q003",
+          "stage_id": "CL05-S03",
+          "stage_title": "Godparents",
+          "layer": "CURRENT",
+          "text": "Current sponsor eligibility is governed by cann. 872–874.",
+          "source_ids": [
+            "SRC-CIC83-872-874"
+          ]
+        },
+        {
+          "claim_id": "CL05-S03-Q004",
+          "stage_id": "CL05-S03",
+          "stage_title": "Godparents",
+          "layer": "CURRENT",
+          "text": "Under current law, a baptised non-Catholic Christian may participate only together with a Catholic sponsor as a Christian witness.",
+          "source_ids": [
+            "SRC-CIC83-872-874"
+          ]
+        },
+        {
+          "claim_id": "CL05-S03-Q005",
+          "stage_id": "CL05-S03",
+          "stage_title": "Godparents",
+          "layer": "PROFILE_1962",
+          "text": "The 1917 sponsor regime and its spiritual relationship provisions differ from current sponsor law.",
+          "source_ids": [
+            "SRC-CIC17-764-769"
+          ]
+        },
+        {
+          "claim_id": "CL05-S04-Q001",
+          "stage_id": "CL05-S04",
+          "stage_title": "Signs of Baptism",
+          "layer": "CURRENT",
+          "text": "True water is essential to Baptism.",
+          "source_ids": [
+            "SRC-CIC83-849"
+          ]
+        },
+        {
+          "claim_id": "CL05-S04-Q002",
+          "stage_id": "CL05-S04",
+          "stage_title": "Signs of Baptism",
+          "layer": "PASTORAL",
+          "text": "The Sign of the Cross is a liturgical sign surrounding Baptism and is distinct from the essential water-and-form action.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL05-S04-Q004",
+          "stage_id": "CL05-S04",
+          "stage_title": "Signs of Baptism",
+          "layer": "PASTORAL",
+          "text": "The white garment and baptismal candle are important ritual signs but are not what makes Baptism valid.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL05-S05-Q001",
+          "stage_id": "CL05-S05",
+          "stage_title": "Emergency Baptism",
+          "layer": "CURRENT",
+          "text": "In necessity, any person with the required intention can baptise.",
+          "source_ids": [
+            "SRC-CIC83-861"
+          ]
+        },
+        {
+          "claim_id": "CL05-S05-Q002",
+          "stage_id": "CL05-S05",
+          "stage_title": "Emergency Baptism",
+          "layer": "CURRENT",
+          "text": "Emergency Baptism requires true water and the proper Trinitarian form.",
+          "source_ids": [
+            "SRC-CIC83-849",
+            "SRC-CIC83-850"
+          ]
+        },
+        {
+          "claim_id": "CL05-S05-Q003",
+          "stage_id": "CL05-S05",
+          "stage_title": "Emergency Baptism",
+          "layer": "PROFILE_1962",
+          "text": "The traditional Roman formula is 'Ego te baptizo in nomine Patris, et Filii, et Spiritus Sancti'.",
+          "source_ids": [
+            "SRC-ROMRIT-BAPTISM-EMERGENCY"
+          ]
+        },
+        {
+          "claim_id": "CL05-S05-Q004",
+          "stage_id": "CL05-S05",
+          "stage_title": "Emergency Baptism",
+          "layer": "CURRENT",
+          "text": "A valid Baptism cannot be repeated.",
+          "source_ids": [
+            "SRC-CIC83-845"
+          ]
+        },
+        {
+          "claim_id": "CL05-S05-Q005",
+          "stage_id": "CL05-S05",
+          "stage_title": "Emergency Baptism",
+          "layer": "CURRENT",
+          "text": "A Baptism administered outside the pastor's presence must be reported so that it can be recorded.",
+          "source_ids": [
+            "SRC-CIC83-878"
+          ]
+        },
+        {
+          "claim_id": "CL05-S06-Q002",
+          "stage_id": "CL05-S06",
+          "stage_title": "Living Your Baptism",
+          "layer": "PASTORAL",
+          "text": "Parents retain responsibility for Christian upbringing after the Baptism.",
+          "source_ids": [
+            "SRC-CIC83-872-874"
+          ]
+        },
+        {
+          "claim_id": "CL05-S06-Q003",
+          "stage_id": "CL05-S06",
+          "stage_title": "Living Your Baptism",
+          "layer": "SHARED",
+          "text": "The sponsor's role is not limited to attendance at the baptismal ceremony.",
+          "source_ids": [
+            "SRC-CIC83-872-874",
+            "SRC-CIC17-764-769"
+          ]
+        },
+        {
+          "claim_id": "CL05-S06-Q004",
+          "stage_id": "CL05-S06",
+          "stage_title": "Living Your Baptism",
+          "layer": "PASTORAL",
+          "text": "Celebrating a baptismal anniversary is a devotional practice rather than a universal precept.",
+          "source_ids": []
+        }
+      ]
+    },
+    "learn.rites.first_communion": {
+      "claim_count": 11,
+      "claims": [
+        {
+          "claim_id": "CL03-S01-Q002",
+          "stage_id": "CL03-S01",
+          "stage_title": "Holy Communion in Catholic Life",
+          "layer": "SHARED",
+          "text": "Approaching Holy Communion entails observing the applicable sacramental discipline.",
+          "source_ids": [
+            "SRC-CIC83-916",
+            "SRC-CIC83-919",
+            "SRC-PIUSXII-SACRAM-COMMUNIONEM-1957"
+          ]
+        },
+        {
+          "claim_id": "CL03-S01-Q003",
+          "stage_id": "CL03-S01",
+          "stage_title": "Holy Communion in Catholic Life",
+          "layer": "PASTORAL",
+          "text": "Assisting at Mass and receiving Holy Communion are distinct acts; not receiving does not mean one has not assisted at Mass.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL03-S04-Q001",
+          "stage_id": "CL03-S04",
+          "stage_title": "Receiving Holy Communion",
+          "layer": "PROFILE_1962",
+          "text": "In the 1962 Communion rite, the priest's formula includes Amen.",
+          "source_ids": [
+            "SRC-MR62-COMMUNION"
+          ]
+        },
+        {
+          "claim_id": "CL03-S04-Q002",
+          "stage_id": "CL03-S04",
+          "stage_title": "Receiving Holy Communion",
+          "layer": "PROFILE_1962",
+          "text": "The traditional Roman manner is reception while kneeling and on the tongue, subject to legitimate physical necessity.",
+          "source_ids": [
+            "SRC-ROMRIT-COMMUNION",
+            "SRC-MR62-COMMUNION"
+          ]
+        },
+        {
+          "claim_id": "CL03-S04-Q003",
+          "stage_id": "CL03-S04",
+          "stage_title": "Receiving Holy Communion",
+          "layer": "CURRENT",
+          "text": "Current discipline preserves the faithful's right to receive Holy Communion on the tongue.",
+          "source_ids": [
+            "SRC-RS-90-92"
+          ]
+        },
+        {
+          "claim_id": "CL03-S04-Q004",
+          "stage_id": "CL03-S04",
+          "stage_title": "Receiving Holy Communion",
+          "layer": "CURRENT",
+          "text": "Communion in the hand is available where it is lawfully authorised.",
+          "source_ids": [
+            "SRC-RS-90-92"
+          ]
+        },
+        {
+          "claim_id": "CL03-S04-Q005",
+          "stage_id": "CL03-S04",
+          "stage_title": "Receiving Holy Communion",
+          "layer": "CURRENT",
+          "text": "Current posture follows applicable competent norms, and Communion may not be refused merely because the communicant kneels.",
+          "source_ids": [
+            "SRC-RS-90-92"
+          ]
+        },
+        {
+          "claim_id": "CL05-S08-Q002",
+          "stage_id": "CL05-S08",
+          "stage_title": "First Communion",
+          "layer": "HISTORICAL",
+          "text": "Quam singulari rejected unnecessarily advanced intellectual requirements for a child's First Communion.",
+          "source_ids": [
+            "SRC-QUAM-SINGULARI"
+          ]
+        },
+        {
+          "claim_id": "CL05-S08-Q003",
+          "stage_id": "CL05-S08",
+          "stage_title": "First Communion",
+          "layer": "HISTORICAL",
+          "text": "The discipline associated with Quam singulari places first Confession before First Communion.",
+          "source_ids": [
+            "SRC-QUAM-SINGULARI"
+          ]
+        },
+        {
+          "claim_id": "CL05-S08-Q004",
+          "stage_id": "CL05-S08",
+          "stage_title": "First Communion",
+          "layer": "PASTORAL",
+          "text": "Preparation should cultivate genuine Eucharistic faith without demanding adult theological sophistication.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL05-S08-Q005",
+          "stage_id": "CL05-S08",
+          "stage_title": "First Communion",
+          "layer": "PASTORAL",
+          "text": "Dress, family celebration and local ceremonial customs are secondary to sacramental preparation.",
+          "source_ids": []
+        }
+      ]
+    },
+    "learn.rites.matrimony": {
+      "claim_count": 31,
+      "claims": [
+        {
+          "claim_id": "CL06-S01-Q001",
+          "stage_id": "CL06-S01",
+          "stage_title": "Discernment & Courtship",
+          "layer": "SHARED",
+          "text": "Marriage requires genuinely free matrimonial consent.",
+          "source_ids": [
+            "SRC-CIC83-1055-1057"
+          ]
+        },
+        {
+          "claim_id": "CL06-S01-Q002",
+          "stage_id": "CL06-S01",
+          "stage_title": "Discernment & Courtship",
+          "layer": "PASTORAL",
+          "text": "Courtship is a period of discernment and does not itself create the marriage bond.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL06-S01-Q003",
+          "stage_id": "CL06-S01",
+          "stage_title": "Discernment & Courtship",
+          "layer": "PASTORAL",
+          "text": "Prayer, prudent counsel and honest knowledge of the other person are appropriate parts of discernment.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL06-S01-Q004",
+          "stage_id": "CL06-S01",
+          "stage_title": "Discernment & Courtship",
+          "layer": "PASTORAL",
+          "text": "Courtship remains subject to the Christian moral life rather than creating a private exemption from it.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL06-S02-Q001",
+          "stage_id": "CL06-S02",
+          "stage_title": "Engagement",
+          "layer": "CURRENT",
+          "text": "A promise of marriage is distinct from marriage itself.",
+          "source_ids": [
+            "SRC-CIC83-1062"
+          ]
+        },
+        {
+          "claim_id": "CL06-S02-Q002",
+          "stage_id": "CL06-S02",
+          "stage_title": "Engagement",
+          "layer": "PROFILE_1962",
+          "text": "The 1917 Code gave formal canonical requirements to a valid promise of marriage.",
+          "source_ids": [
+            "SRC-CIC17-1017"
+          ]
+        },
+        {
+          "claim_id": "CL06-S02-Q003",
+          "stage_id": "CL06-S02",
+          "stage_title": "Engagement",
+          "layer": "CURRENT",
+          "text": "Current law does not reproduce the same universal sponsalia structure and leaves the promise of marriage to competent particular law and custom.",
+          "source_ids": [
+            "SRC-CIC83-1062"
+          ]
+        },
+        {
+          "claim_id": "CL06-S02-Q004",
+          "stage_id": "CL06-S02",
+          "stage_title": "Engagement",
+          "layer": "PASTORAL",
+          "text": "An engagement ring or blessing may be meaningful but does not create marriage.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL06-S02-Q005",
+          "stage_id": "CL06-S02",
+          "stage_title": "Engagement",
+          "layer": "CURRENT",
+          "text": "Current canon law does not allow an action compelling the celebration of marriage merely because of a promise to marry.",
+          "source_ids": [
+            "SRC-CIC83-1062"
+          ]
+        },
+        {
+          "claim_id": "CL06-S03-Q001",
+          "stage_id": "CL06-S03",
+          "stage_title": "What Makes a Marriage?",
+          "layer": "SHARED",
+          "text": "Valid matrimonial consent of capable parties, lawfully manifested, makes the marriage.",
+          "source_ids": [
+            "SRC-CIC83-1055-1057",
+            "SRC-CIC17-1094"
+          ]
+        },
+        {
+          "claim_id": "CL06-S03-Q002",
+          "stage_id": "CL06-S03",
+          "stage_title": "What Makes a Marriage?",
+          "layer": "CURRENT",
+          "text": "Under current canonical form the assisting minister asks for and receives the parties' consent in the name of the Church; he does not replace it.",
+          "source_ids": [
+            "SRC-CIC83-1108"
+          ]
+        },
+        {
+          "claim_id": "CL06-S03-Q003",
+          "stage_id": "CL06-S03",
+          "stage_title": "What Makes a Marriage?",
+          "layer": "SHARED",
+          "text": "Wedding rings do not themselves make the marriage.",
+          "source_ids": [
+            "SRC-CIC83-1055-1057"
+          ]
+        },
+        {
+          "claim_id": "CL06-S03-Q004",
+          "stage_id": "CL06-S03",
+          "stage_title": "What Makes a Marriage?",
+          "layer": "SHARED",
+          "text": "The Nuptial Blessing is distinct from the matrimonial consent that establishes the bond.",
+          "source_ids": [
+            "SRC-CIC83-1055-1057"
+          ]
+        },
+        {
+          "claim_id": "CL06-S04-Q001",
+          "stage_id": "CL06-S04",
+          "stage_title": "Preparing to Marry",
+          "layer": "CURRENT",
+          "text": "Before marriage it must be established that nothing obstructs valid and licit celebration.",
+          "source_ids": [
+            "SRC-CIC83-1066-1067"
+          ]
+        },
+        {
+          "claim_id": "CL06-S04-Q002",
+          "stage_id": "CL06-S04",
+          "stage_title": "Preparing to Marry",
+          "layer": "CURRENT",
+          "text": "Current law leaves detailed norms for examination, banns or equivalent means to the competent episcopal conference.",
+          "source_ids": [
+            "SRC-CIC83-1066-1067"
+          ]
+        },
+        {
+          "claim_id": "CL06-S04-Q003",
+          "stage_id": "CL06-S04",
+          "stage_title": "Preparing to Marry",
+          "layer": "PROFILE_1962",
+          "text": "The 1917 Code prescribed three publications under its banns scheme, subject to its provisions and dispensations.",
+          "source_ids": [
+            "SRC-CIC17-1024"
+          ]
+        },
+        {
+          "claim_id": "CL06-S04-Q005",
+          "stage_id": "CL06-S04",
+          "stage_title": "Preparing to Marry",
+          "layer": "PASTORAL",
+          "text": "Couples should contact the parish or competent authority early enough for proper marriage preparation and investigation.",
+          "source_ids": [
+            "SRC-CIC83-1066-1067"
+          ]
+        },
+        {
+          "claim_id": "CL06-S05-Q001",
+          "stage_id": "CL06-S05",
+          "stage_title": "Different Marriage Situations",
+          "layer": "CURRENT",
+          "text": "In current law, mixed marriage concerns a Catholic marrying another baptised Christian not in full communion with the Catholic Church.",
+          "source_ids": [
+            "SRC-CIC83-1124-1125"
+          ]
+        },
+        {
+          "claim_id": "CL06-S05-Q002",
+          "stage_id": "CL06-S05",
+          "stage_title": "Different Marriage Situations",
+          "layer": "CURRENT",
+          "text": "In current law, disparity of cult concerns a Catholic marrying an unbaptised person and is a diriment impediment without dispensation.",
+          "source_ids": [
+            "SRC-CIC83-1086"
+          ]
+        },
+        {
+          "claim_id": "CL06-S05-Q003",
+          "stage_id": "CL06-S05",
+          "stage_title": "Different Marriage Situations",
+          "layer": "CURRENT",
+          "text": "A valid marriage between two baptised persons is sacramental.",
+          "source_ids": [
+            "SRC-CIC83-1055-1057"
+          ]
+        },
+        {
+          "claim_id": "CL06-S05-Q004",
+          "stage_id": "CL06-S05",
+          "stage_title": "Different Marriage Situations",
+          "layer": "CURRENT",
+          "text": "Current mixed-marriage discipline requires the applicable permission and conditions established by the law.",
+          "source_ids": [
+            "SRC-CIC83-1124-1125"
+          ]
+        },
+        {
+          "claim_id": "CL06-S05-Q005",
+          "stage_id": "CL06-S05",
+          "stage_title": "Different Marriage Situations",
+          "layer": "PROFILE_1962",
+          "text": "The 1917 discipline governing the 1962 context treated mixed marriage more restrictively than current law.",
+          "source_ids": [
+            "SRC-CIC17-1060",
+            "SRC-CIC17-1102"
+          ]
+        },
+        {
+          "claim_id": "CL06-S06-Q001",
+          "stage_id": "CL06-S06",
+          "stage_title": "The Wedding Liturgy",
+          "layer": "SHARED",
+          "text": "Matrimonial consent remains central whether or not the marriage is celebrated within Mass.",
+          "source_ids": [
+            "SRC-CIC83-1055-1057"
+          ]
+        },
+        {
+          "claim_id": "CL06-S06-Q004",
+          "stage_id": "CL06-S06",
+          "stage_title": "The Wedding Liturgy",
+          "layer": "SHARED",
+          "text": "The Nuptial Blessing is distinct from the matrimonial consent itself.",
+          "source_ids": [
+            "SRC-CIC83-1055-1057"
+          ]
+        },
+        {
+          "claim_id": "CL06-S06-Q005",
+          "stage_id": "CL06-S06",
+          "stage_title": "The Wedding Liturgy",
+          "layer": "PROFILE_1962",
+          "text": "Under the 1917 discipline, restrictions in specified Advent and Lenten periods concerned the solemn Nuptial Blessing and solemnity, not the validity of contracting marriage itself.",
+          "source_ids": [
+            "SRC-CIC17-1108"
+          ]
+        },
+        {
+          "claim_id": "CL06-S08-Q001",
+          "stage_id": "CL06-S08",
+          "stage_title": "When Marriage Is in Difficulty",
+          "layer": "PASTORAL",
+          "text": "Serious marital difficulty does not by itself prove that a marriage was invalid from the beginning.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL06-S08-Q002",
+          "stage_id": "CL06-S08",
+          "stage_title": "When Marriage Is in Difficulty",
+          "layer": "CURRENT",
+          "text": "Current canon law recognises legitimate causes for separation while the marriage bond remains.",
+          "source_ids": [
+            "SRC-CIC83-1151-1155"
+          ]
+        },
+        {
+          "claim_id": "CL06-S08-Q003",
+          "stage_id": "CL06-S08",
+          "stage_title": "When Marriage Is in Difficulty",
+          "layer": "PASTORAL",
+          "text": "Civil divorce and a canonical declaration of nullity answer different legal questions.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL06-S08-Q004",
+          "stage_id": "CL06-S08",
+          "stage_title": "When Marriage Is in Difficulty",
+          "layer": "PASTORAL",
+          "text": "A declaration of nullity is not the Catholic equivalent of dissolving a valid marriage by divorce.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL06-S08-Q005",
+          "stage_id": "CL06-S08",
+          "stage_title": "When Marriage Is in Difficulty",
+          "layer": "CURRENT",
+          "text": "Simple convalidation and radical sanation are distinct canonical remedies; sanation can validate without a new act of consent under the law's conditions.",
+          "source_ids": [
+            "SRC-CIC83-1156-1165"
+          ]
+        },
+        {
+          "claim_id": "CL06-S08-Q006",
+          "stage_id": "CL06-S08",
+          "stage_title": "When Marriage Is in Difficulty",
+          "layer": "CURRENT",
+          "text": "Current law recognises serious mental or physical danger to a spouse or children as legitimate cause for separation.",
+          "source_ids": [
+            "SRC-CIC83-1151-1155"
+          ]
+        }
+      ]
+    },
+    "learn.rites.holy_orders": {
+      "claim_count": 13,
+      "claims": [
+        {
+          "claim_id": "CL10-S04-Q001",
+          "stage_id": "CL10-S04",
+          "stage_title": "Bishop, Priest & Deacon",
+          "layer": "CURRENT",
+          "text": "The sacrament of Holy Orders has three degrees: episcopate, presbyterate and diaconate.",
+          "source_ids": [
+            "SRC-CIC83-1009"
+          ]
+        },
+        {
+          "claim_id": "CL10-S04-Q002",
+          "stage_id": "CL10-S04",
+          "stage_title": "Bishop, Priest & Deacon",
+          "layer": "PASTORAL",
+          "text": "A bishop is not simply a priest with an honorific title; episcopate is a sacramental degree of Holy Orders.",
+          "source_ids": [
+            "SRC-CIC83-1009"
+          ]
+        },
+        {
+          "claim_id": "CL10-S04-Q003",
+          "stage_id": "CL10-S04",
+          "stage_title": "Bishop, Priest & Deacon",
+          "layer": "PASTORAL",
+          "text": "Priesthood is a sacramental degree distinct from both episcopate and diaconate.",
+          "source_ids": [
+            "SRC-CIC83-1009"
+          ]
+        },
+        {
+          "claim_id": "CL10-S04-Q004",
+          "stage_id": "CL10-S04",
+          "stage_title": "Bishop, Priest & Deacon",
+          "layer": "CURRENT",
+          "text": "The diaconate is a sacramental degree of Holy Orders distinct from the priesthood.",
+          "source_ids": [
+            "SRC-CIC83-1009"
+          ]
+        },
+        {
+          "claim_id": "CL10-S04-Q006",
+          "stage_id": "CL10-S04",
+          "stage_title": "Bishop, Priest & Deacon",
+          "layer": "PASTORAL",
+          "text": "Titles such as Monsignor, canon, rector or chaplain are not additional sacramental degrees of Holy Orders.",
+          "source_ids": [
+            "SRC-CIC83-1009"
+          ]
+        },
+        {
+          "claim_id": "CL10-S04-Q007",
+          "stage_id": "CL10-S04",
+          "stage_title": "Bishop, Priest & Deacon",
+          "layer": "PASTORAL",
+          "text": "Liturgical clothing can suggest a role but does not by itself establish a person's complete canonical status.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL10-S06-Q001",
+          "stage_id": "CL10-S06",
+          "stage_title": "Traditional Clerical Orders",
+          "layer": "PROFILE_1962",
+          "text": "The traditional Latin clerical cursus contained more stages than the three sacramental degrees of Holy Orders.",
+          "source_ids": [
+            "SRC-CIC17-949",
+            "SRC-CIC83-1009"
+          ]
+        },
+        {
+          "claim_id": "CL10-S06-Q002",
+          "stage_id": "CL10-S06",
+          "stage_title": "Traditional Clerical Orders",
+          "layer": "PROFILE_1962",
+          "text": "Under the old Latin discipline, first tonsure marked entry into the clerical state but was not itself Holy Order.",
+          "source_ids": [
+            "SRC-CIC17-CLERICAL-CURSUS"
+          ]
+        },
+        {
+          "claim_id": "CL10-S06-Q003",
+          "stage_id": "CL10-S06",
+          "stage_title": "Traditional Clerical Orders",
+          "layer": "PROFILE_1962",
+          "text": "The four traditional Latin minor orders were Porter, Lector, Exorcist and Acolyte.",
+          "source_ids": [
+            "SRC-CIC17-949"
+          ]
+        },
+        {
+          "claim_id": "CL10-S06-Q004",
+          "stage_id": "CL10-S06",
+          "stage_title": "Traditional Clerical Orders",
+          "layer": "CURRENT",
+          "text": "The traditional minor order of Exorcist is distinct from the current ministry of a priest specially authorised by the local Ordinary for major exorcism.",
+          "source_ids": [
+            "SRC-CIC17-949",
+            "SRC-CIC83-1172"
+          ]
+        },
+        {
+          "claim_id": "CL10-S06-Q005",
+          "stage_id": "CL10-S06",
+          "stage_title": "Traditional Clerical Orders",
+          "layer": "PROFILE_1962",
+          "text": "The traditional subdiaconate belonged to the old major-order cursus but is not a fourth sacramental degree of Holy Orders.",
+          "source_ids": [
+            "SRC-CIC17-949",
+            "SRC-CIC83-1009"
+          ]
+        },
+        {
+          "claim_id": "CL10-S06-Q006",
+          "stage_id": "CL10-S06",
+          "stage_title": "Traditional Clerical Orders",
+          "layer": "PROFILE_1962",
+          "text": "The traditional Latin cursus proceeded through tonsure, Porter, Lector, Exorcist, Acolyte, Subdeacon, Deacon and Priest.",
+          "source_ids": [
+            "SRC-CIC17-949",
+            "SRC-CIC17-CLERICAL-CURSUS"
+          ]
+        },
+        {
+          "claim_id": "CL10-S06-Q007",
+          "stage_id": "CL10-S06",
+          "stage_title": "Traditional Clerical Orders",
+          "layer": "CURRENT",
+          "text": "The current instituted ministries of lector and acolyte are not simply canonically identical to the former minor orders.",
+          "source_ids": [
+            "SRC-MINISTERIA-QUAEDAM-1972"
+          ]
+        }
+      ]
+    },
+    "learn.rites.sick": {
+      "claim_count": 18,
+      "claims": [
+        {
+          "claim_id": "CL03-S08-Q001",
+          "stage_id": "CL03-S08",
+          "stage_title": "Communion Outside Mass & Viaticum",
+          "layer": "CURRENT",
+          "text": "Current law allows Communion outside Mass for a just cause with the proper rites.",
+          "source_ids": [
+            "SRC-CIC83-918"
+          ]
+        },
+        {
+          "claim_id": "CL03-S08-Q002",
+          "stage_id": "CL03-S08",
+          "stage_title": "Communion Outside Mass & Viaticum",
+          "layer": "CURRENT",
+          "text": "Current law strongly recommends reception of Communion during the Eucharistic celebration itself.",
+          "source_ids": [
+            "SRC-CIC83-918"
+          ]
+        },
+        {
+          "claim_id": "CL03-S08-Q003",
+          "stage_id": "CL03-S08",
+          "stage_title": "Communion Outside Mass & Viaticum",
+          "layer": "PASTORAL",
+          "text": "Holy Communion may be brought lawfully to the sick according to the Church's discipline.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL03-S08-Q004",
+          "stage_id": "CL03-S08",
+          "stage_title": "Communion Outside Mass & Viaticum",
+          "layer": "CURRENT",
+          "text": "Viaticum is Holy Communion given to a person in danger of death.",
+          "source_ids": [
+            "SRC-CIC83-921-922"
+          ]
+        },
+        {
+          "claim_id": "CL03-S08-Q005",
+          "stage_id": "CL03-S08",
+          "stage_title": "Communion Outside Mass & Viaticum",
+          "layer": "PASTORAL",
+          "text": "The faithful should not remove consecrated Hosts for private transport on their own initiative.",
+          "source_ids": [
+            "SRC-CIC83-938-940"
+          ]
+        },
+        {
+          "claim_id": "CL07-S01-Q001",
+          "stage_id": "CL07-S01",
+          "stage_title": "Serious Illness",
+          "layer": "PASTORAL",
+          "text": "Call the priest early rather than deliberately waiting until the final moments of serious illness.",
+          "source_ids": [
+            "SRC-CIC83-1001-1004",
+            "SRC-CIC17-940-944"
+          ]
+        },
+        {
+          "claim_id": "CL07-S01-Q002",
+          "stage_id": "CL07-S01",
+          "stage_title": "Serious Illness",
+          "layer": "PASTORAL",
+          "text": "Sacramental care does not replace appropriate medical care.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL07-S01-Q003",
+          "stage_id": "CL07-S01",
+          "stage_title": "Serious Illness",
+          "layer": "PASTORAL",
+          "text": "A priest visiting someone who is sick does not automatically mean the Sacrament of Anointing is being administered.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL07-S01-Q004",
+          "stage_id": "CL07-S01",
+          "stage_title": "Serious Illness",
+          "layer": "PASTORAL",
+          "text": "Traditional room preparation can assist prayer but is not itself a prerequisite for sacramental validity.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL07-S02-Q001",
+          "stage_id": "CL07-S02",
+          "stage_title": "Anointing / Extreme Unction",
+          "layer": "PASTORAL",
+          "text": "Extreme Unction and Anointing of the Sick refer to the same sacrament, though the discipline and ritual context differ.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL07-S02-Q002",
+          "stage_id": "CL07-S02",
+          "stage_title": "Anointing / Extreme Unction",
+          "layer": "PROFILE_1962",
+          "text": "Under the 1917 law governing the 1962 context, Extreme Unction was for a faithful person who had reached the use of reason and was in danger of death through illness or old age.",
+          "source_ids": [
+            "SRC-CIC17-940-944"
+          ]
+        },
+        {
+          "claim_id": "CL07-S02-Q003",
+          "stage_id": "CL07-S02",
+          "stage_title": "Anointing / Extreme Unction",
+          "layer": "CURRENT",
+          "text": "Current law permits Anointing when a member of the faithful who has reached the use of reason begins to be in danger due to sickness or old age.",
+          "source_ids": [
+            "SRC-CIC83-1001-1004"
+          ]
+        },
+        {
+          "claim_id": "CL07-S02-Q004",
+          "stage_id": "CL07-S02",
+          "stage_title": "Anointing / Extreme Unction",
+          "layer": "PASTORAL",
+          "text": "The sacrament should not be deliberately delayed until the person is unconscious or at the final instant.",
+          "source_ids": [
+            "SRC-CIC83-1001-1004",
+            "SRC-CIC17-940-944"
+          ]
+        },
+        {
+          "claim_id": "CL07-S02-Q005",
+          "stage_id": "CL07-S02",
+          "stage_title": "Anointing / Extreme Unction",
+          "layer": "SHARED",
+          "text": "Anointing of the Sick and Viaticum are distinct; Viaticum is Eucharistic Communion.",
+          "source_ids": [
+            "SRC-CIC83-921-922"
+          ]
+        },
+        {
+          "claim_id": "CL07-S03-Q001",
+          "stage_id": "CL07-S03",
+          "stage_title": "Viaticum & Last Rites",
+          "layer": "CURRENT",
+          "text": "Viaticum is Holy Communion given to a person in danger of death.",
+          "source_ids": [
+            "SRC-CIC83-921-922"
+          ]
+        },
+        {
+          "claim_id": "CL07-S03-Q002",
+          "stage_id": "CL07-S03",
+          "stage_title": "Viaticum & Last Rites",
+          "layer": "PROFILE_1962",
+          "text": "Where possible in the traditional Roman arrangement, Penance and Holy Communion precede Extreme Unction.",
+          "source_ids": [
+            "SRC-ROMRIT-LAST-RITES"
+          ]
+        },
+        {
+          "claim_id": "CL07-S03-Q004",
+          "stage_id": "CL07-S03",
+          "stage_title": "Viaticum & Last Rites",
+          "layer": "PASTORAL",
+          "text": "The Apostolic Blessing or Pardon is distinct from Anointing and Viaticum.",
+          "source_ids": []
+        },
+        {
+          "claim_id": "CL07-S03-Q005",
+          "stage_id": "CL07-S03",
+          "stage_title": "Viaticum & Last Rites",
+          "layer": "PASTORAL",
+          "text": "'Last Rites' is a practical umbrella expression rather than the name of one single sacrament.",
+          "source_ids": []
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "source_id": "SRC-CIC17-1017",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-1024",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-1060",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-1094",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-1102",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-1108",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-764-769",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-770",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-940-944",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-949",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC17-CLERICAL-CURSUS",
+      "title": "Codex Iuris Canonici (1917)",
+      "authority_type": "HISTORICAL_CANON_LAW",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-CIC83-1001-1004",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1009",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1055-1057",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1062",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1066-1067",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1086",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1108",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1124-1125",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1151-1155",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1156-1165",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-1172",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-845",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-849",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-850",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-855",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-861",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-867",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-872-874",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-878",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-916",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-918",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-919",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-921-922",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-CIC83-938-940",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-MINISTERIA-QUAEDAM-1972",
+      "title": "Ministeria quaedam",
+      "authority_type": "PAPAL_LEGISLATION",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/content/paul-vi/la/motu_proprio/documents/hf_p-vi_motu-proprio_19720815_ministeria-quaedam.html"
+    },
+    {
+      "source_id": "SRC-MR62-COMMUNION",
+      "title": "Missale Romanum — Editio typica 1962",
+      "authority_type": "LITURGICAL_BOOK",
+      "status": "PINNED_PRIMARY_SCAN",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica"
+    },
+    {
+      "source_id": "SRC-PIUSXII-SACRAM-COMMUNIONEM-1957",
+      "title": "Sacram Communionem",
+      "authority_type": "PAPAL_DISCIPLINARY_NORM",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-49-1957-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-QUAM-SINGULARI",
+      "title": "Quam singulari — De aetate admittendorum ad primam Communionem eucharisticam",
+      "authority_type": "DICASTERY_DECREE",
+      "status": "PINNED_OFFICIAL_AAS",
+      "canonical_url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf"
+    },
+    {
+      "source_id": "SRC-ROMRIT-BAPTISM-EMERGENCY",
+      "title": "Rituale Romanum Pauli V Pontificis Maximi jussu editum aliorumque Pontificum cura recognitum atque ad normam Codicis Juris Canonici accommodatum SS.mi D.N. Pii Papae XII auctoritate ordinatum et auctum, Editio typica, 1952 — Baptism",
+      "authority_type": "APPROVED_RITUAL",
+      "status": "PINNED_JUXTA_TYPICAM_SCAN",
+      "canonical_url": "https://collegiumcaronensis.org/wp-content/uploads/2019/12/rituale-romano-1952-battesimo.pdf"
+    },
+    {
+      "source_id": "SRC-ROMRIT-COMMUNION",
+      "title": "Rituale Romanum Pauli V Pontificis Maximi jussu editum aliorumque Pontificum cura recognitum atque ad normam Codicis Juris Canonici accommodatum SS.mi D.N. Pii Papae XII auctoritate ordinatum et auctum, Editio typica, 1952 — Holy Communion",
+      "authority_type": "APPROVED_RITUAL",
+      "status": "PINNED_JUXTA_TYPICAM_SCAN",
+      "canonical_url": "https://collegiumcaronensis.org/wp-content/uploads/2019/12/rituale-romano-1952-comunione.pdf"
+    },
+    {
+      "source_id": "SRC-ROMRIT-LAST-RITES",
+      "title": "Rituale Romanum Pauli V Pontificis Maximi jussu editum aliorumque Pontificum cura recognitum atque ad normam Codicis Juris Canonici accommodatum SS.mi D.N. Pii Papae XII auctoritate ordinatum et auctum, Editio typica, 1952 — Extreme Unction and Prayers for the Dying",
+      "authority_type": "APPROVED_RITUAL",
+      "status": "PINNED_1952_RITUAL_TRANSLATION",
+      "canonical_url": "https://www.ewtn.com/catholicism/library/roman-ritual-part-i-11882"
+    },
+    {
+      "source_id": "SRC-RS-90-92",
+      "title": "Redemptionis Sacramentum",
+      "authority_type": "DICASTERY_INSTRUCTION",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20040423_redemptionis-sacramentum_en.html"
+    }
+  ]
+}
