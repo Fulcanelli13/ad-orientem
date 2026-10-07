@@ -269,6 +269,7 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").count(),3,"Calendar top navigation must be Day · Month · Liturgical Year");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").count(),0,"redundant Year Index returned to top-level Calendar navigation");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Hero").count(),1,"Calendar Day lost its single selected-feast hero");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").count(),1,"Calendar Day did not surface the principal saint/feast reference");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [data-cal-date]").count(),7,"Calendar Day lost its seven-day context strip");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [aria-current='date']").count(),1,"Calendar selected date is not uniquely identified");
   const calendarDay=await page.evaluate(()=>({
@@ -392,6 +393,7 @@ try{
   const sanctoraleCount=await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] [data-cal-month-index-date]").count();
   assert.ok(sanctoraleCount>=4,"Month Sanctorale index is missing resolved sanctoral observances");
   assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale']").getByText(/Rosary|Rosaire/).count()>=1,"Month Sanctorale classification lost Our Lady of the Rosary");
+  assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] [data-cal-saint-date]").count()>=4,"Month Sanctorale is not wired to the shared saint-detail entry point");
   await shot("02g-calendar-month-sanctorale");
 
   const legacyIndexRedirect=await page.evaluate(()=>{globalThis.AO_CALENDAR_APP_V1?.setView?.("index");return globalThis.AO_CALENDAR_APP_V1?.status?.()});
@@ -908,13 +910,14 @@ try{
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
   assert.deepEqual(learnParity.sectionTitles,["Daily formation","Courses & study","Traditional Catholic life","Today in context"],"Learn section hierarchy diverged from v43.59.30 plus recovered v38.1 traditional-life donor");
-  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel","today.saint"],"Learn launcher order diverged from final donor composition after v38.4 seasonal dedupe");
+  assert.deepEqual(learnParity.modules,["learn.catechism.daily","learn.mass","learn.catechism","learn.rites.sick","learn.rites.baptism","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],"Learn visible launcher order diverged after moving Saint of the Day into Calendar");
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module='today.saint']").count(),0,"Saint of the Day remained duplicated in Learn");
   assert.deepEqual(learnParity.featured,["learn.catechism.daily","learn.mass"],"Learn featured-card hierarchy diverged from locked v43.59.30");
   assert.equal(learnParity.donorNav,0,"historical V37 navigation leaked into modular Learn");
   assert.equal(learnParity.sourcesUtility,0,"Sources incorrectly resurfaced as a Learn launcher");
   assert.equal(learnParity.calendarDashboard,0,"Calendar dashboard duplicated inside Learn");
   assert.ok(learnParity.overflow<=1,"Learn has horizontal overflow on 390px phone geometry");
-  assert.equal(learnParity.cards.length,10,"Learn launcher count diverged from the final donor after v38.4 seasonal dedupe");
+  assert.equal(learnParity.cards.length,9,"Learn launcher count should drop by one after moving Saint of the Day into Calendar");
   for(const card of learnParity.cards){assert.ok(card.w>300,"Learn card collapsed below phone-readable width");assert.ok(card.h>=90,"Learn card collapsed below approved touch/readability height");}
   const catechismIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.catechism'] .aoLearnModIcon[data-ao-asset-id='ao-module-catechism']");
   assert.equal(await catechismIcon.count(),1,"Traditional Catechism is missing its canonical icon");
@@ -942,6 +945,14 @@ try{
   assert.equal(Math.round(learnDesign.topControl.h),44,"Learn top control height diverged");
   assert.equal(learnDesign.topControl.r,"999px","Learn top control lost canonical circular geometry");
   await shot("04-learn");
+
+  const hiddenSaintAlias=await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.openModule?.("today.saint"));
+  assert.equal(hiddenSaintAlias,true,"Hidden today.saint compatibility route could not be opened from Learn owner");
+  await page.waitForFunction(()=>globalThis.AO_NAV_V25?.getState?.()?.panel==="saint",null,{timeout:5000});
+  assert.equal(await page.locator("#ao-v25-panel").count(),1,"Saint detail engine did not open through the preserved compatibility route");
+  await page.evaluate(()=>globalThis.AO_NAV_V25?.closePanel?.());
+  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().child===null,null,{timeout:5000});
+  await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});
 
   for(const [route,name] of [
     ["learn.rites.sick","04a-learn-serious-illness"],
