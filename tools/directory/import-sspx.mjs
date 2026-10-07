@@ -348,6 +348,31 @@ async function fetchJson(url, { fetchImpl = fetch } = {}) {
   return response.json();
 }
 
+async function createSspxBrowserFetch(){
+  const { chromium }=await import("@playwright/test");
+  const browser=await chromium.launch({headless:true});
+  const context=await browser.newContext({
+    locale:"en-US",
+    userAgent:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155 Safari/537.36"
+  });
+  const page=await context.newPage();
+  await page.goto("https://map.fsspx.org/en/api",{waitUntil:"domcontentloaded",timeout:60000});
+  await page.waitForTimeout(2500);
+  const fetchImpl=async url=>{
+    const result=await page.evaluate(async target=>{
+      const response=await fetch(target,{headers:{accept:"application/json,text/plain,*/*"},credentials:"include"});
+      return {ok:response.ok,status:response.status,body:await response.text()};
+    },String(url));
+    return {
+      ok:result.ok,
+      status:result.status,
+      async json(){return JSON.parse(result.body);},
+      async text(){return result.body;}
+    };
+  };
+  return {fetchImpl,close:()=>browser.close()};
+}
+
 export async function fetchAllSspxPlaceSummaries({
   lang = "en",
   pageSize = 1000,
@@ -428,15 +453,26 @@ async function writeJson(file, value) {
 }
 
 export async function runSspxImport(options = {}) {
-  const summaries = await fetchAllSspxPlaceSummaries(options);
-  if (summaries.length < 100) {
-    throw new Error(`SSPX import coverage guard: expected a substantial official corpus, received ${summaries.length} place summaries.`);
+  let browserSession=null;
+  let effectiveOptions=options;
+  let summaries;
+  try{
+    summaries=await fetchAllSspxPlaceSummaries(effectiveOptions);
+  }catch(error){
+    if(!/SSPX API 403/.test(String(error?.message??error)))throw error;
+    browserSession=await createSspxBrowserFetch();
+    effectiveOptions={...options,fetchImpl:browserSession.fetchImpl};
+    summaries=await fetchAllSspxPlaceSummaries(effectiveOptions);
   }
-  const places = options.details === false
-    ? summaries
-    : await fetchSspxPlaceDetails(summaries, options);
+  try{
+    if (summaries.length < 100) {
+      throw new Error(`SSPX import coverage guard: expected a substantial official corpus, received ${summaries.length} place summaries.`);
+    }
+    const places = options.details === false
+      ? summaries
+      : await fetchSspxPlaceDetails(summaries, effectiveOptions);
 
-  const retrievedAt = new Date().toISOString();
+    const retrievedAt = new Date().toISOString();
   const dataset = buildCanonicalSspxDataset(places, { retrievedAt });
   const outDir = path.resolve(options.out ?? "data/directory/generated/sspx");
   await fs.mkdir(outDir, { recursive: true });
@@ -479,7 +515,10 @@ export async function runSspxImport(options = {}) {
     throw new Error(`SSPX import blocked: ${dataset.duplicateUpstreamIds.length} duplicated upstream identifiers.`);
   }
 
-  return dataset.report;
+    return dataset.report;
+  }finally{
+    await browserSession?.close?.();
+  }
 }
 
 const invokedDirectly = process.argv[1]
