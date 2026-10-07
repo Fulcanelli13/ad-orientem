@@ -1,0 +1,67 @@
+name: Directory ICKSP research geocode promotion
+
+on:
+  push:
+    branches:
+      - "directory/icksp-quality-*"
+    paths:
+      - "data/directory/.icksp-research-geocode-request"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: directory-icksp-research-geocode-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  geocode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Geocode federated ICKSP physical venues
+        env:
+          AO_PUBLIC_NOMINATIM_ACK: "1"
+          AO_GEOCODER_MAX_REQUESTS: "500"
+          AO_GEOCODER_DELAY_MS: "1100"
+        run: npm run directory:geocode:icksp-research
+      - name: Validate geo overlay
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+          import { auditDirectoryGeo } from "./src/find/geo-provenance.js";
+          const overlay=JSON.parse(fs.readFileSync("data/directory/generated/v19/icksp-federated.geo.v1.json","utf8"));
+          const report=JSON.parse(fs.readFileSync("data/directory/generated/v19/icksp-federated-geocode-report.v1.json","utf8"));
+          const errors=[];
+          for(const row of overlay.records??[]){
+            errors.push(...auditDirectoryGeo(row.geo,{path:"geo:"+row.venue_id}));
+          }
+          if(errors.length)throw new Error("ICKSP research geo validation failed: "+JSON.stringify(errors.slice(0,20)));
+          if(Number(report.mapped)!==(overlay.records??[]).length)throw new Error("ICKSP research geo report count mismatch");
+          if(!(overlay.records??[]).length)throw new Error("ICKSP research geocoder produced no map-safe coordinates");
+          console.log("ICKSP research geo overlay:",overlay.records.length,"mapped of",report.total);
+          NODE
+      - name: Commit reviewed geocode output to branch
+        shell: bash
+        run: |
+          git config user.name "ad-orientem-directory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          rm -f data/directory/.icksp-research-geocode-request
+          git add data/directory/generated/v19/icksp-federated.geo.v1.json
+          git add data/directory/generated/v19/icksp-federated.geojson
+          git add data/directory/generated/v19/icksp-federated-geocode-report.v1.json
+          git add data/directory/geocoding-cache.v1.json
+          git add -u data/directory/.icksp-research-geocode-request
+          if git diff --cached --quiet; then
+            echo "No research geocode changes to promote."
+            exit 0
+          fi
+          git commit -m "Directory: promote ICKSP research coordinates [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
