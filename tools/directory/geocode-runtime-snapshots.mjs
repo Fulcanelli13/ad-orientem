@@ -138,6 +138,17 @@ for(const provider of PROVIDERS){
   const venueDoc=await readJson(venueFile);
   const ministryDoc=await readJson(ministryFile);
   const importReport=await readJson(reportFile);
+  const previousGeocodeReport=await readJson(geocodeReportFile,{unresolved_records:[]});
+  const previousPrimaryQueryByVenue=new Map(
+    safeArray(previousGeocodeReport?.unresolved_records)
+      .map(record=>{
+        const previousPrimary=record?.query
+          ?? safeArray(record?.attempts).find(attempt=>attempt?.kind==="PRIMARY_NAME_ADDRESS")?.query
+          ?? null;
+        return [record?.venue_id,previousPrimary];
+      })
+      .filter(([venueId,query])=>venueId&&query)
+  );
   if(!venueDoc?.records)throw new Error("Missing venue corpus for "+provider);
 
   const venues=venueDoc.records;
@@ -168,7 +179,9 @@ for(const provider of PROVIDERS){
       report.unresolved_records.push({venue_id:venue.venue_id,reason:"EXISTING_COORDINATE_PROVENANCE_INVALID",issues:auditDirectoryGeo(venue.geo,{countryCode})});
       continue;
     }
-    const primaryQuery=buildDirectoryGeocodeQuery(venue);
+    const currentPrimaryQuery=buildDirectoryGeocodeQuery(venue);
+    const previousPrimaryQuery=previousPrimaryQueryByVenue.get(venue.venue_id)??null;
+    const primaryQuery=previousPrimaryQuery??currentPrimaryQuery;
     const fallbackQuery=buildDirectoryAddressOnlyQuery(venue);
     if(!primaryQuery||!countryCode){
       report.unresolved+=1;
