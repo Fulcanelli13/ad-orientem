@@ -1,0 +1,73 @@
+{
+  "version": "EXPLORE_CATHOLIC_LIFE_SHRINE_PILGRIMAGE_SALVAGE_V1",
+  "status": "OWNER_ANNEX",
+  "created_at": "2026-10-07",
+  "purpose": "Preserve pilgrimage/shrine distinction research under the Explore/Places/Shrines/Pilgrimages corpus rather than a generic Formation lesson.",
+  "claims": [
+    {
+      "claim_id": "CL10-S03-Q001",
+      "stage_id": "CL10-S03",
+      "stage_title": "Pilgrimage & Shrines",
+      "layer": "CURRENT",
+      "text": "Catholic pilgrimage is a religious journey oriented toward a sacred destination and prayerful purpose.",
+      "source_ids": [
+        "SRC-DIRECTORY-POPULAR-PIETY-2002"
+      ],
+      "original_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES"
+    },
+    {
+      "claim_id": "CL10-S03-Q002",
+      "stage_id": "CL10-S03",
+      "stage_title": "Pilgrimage & Shrines",
+      "layer": "PASTORAL",
+      "text": "The same sacred place can be visited as tourism or pilgrimage; the physical journey alone does not reveal another visitor's intention.",
+      "source_ids": [],
+      "original_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES"
+    },
+    {
+      "claim_id": "CL10-S03-Q003",
+      "stage_id": "CL10-S03",
+      "stage_title": "Pilgrimage & Shrines",
+      "layer": "CURRENT",
+      "text": "Current canon law requires ecclesiastical approval for a place to have canonical shrine status.",
+      "source_ids": [
+        "SRC-CIC83-1230-1234"
+      ],
+      "original_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES"
+    },
+    {
+      "claim_id": "CL10-S03-Q004",
+      "stage_id": "CL10-S03",
+      "stage_title": "Pilgrimage & Shrines",
+      "layer": "PASTORAL",
+      "text": "Mass, Confession, Rosary, procession, veneration and silent prayer can accompany pilgrimage, but no single set is universal to every pilgrimage.",
+      "source_ids": [],
+      "original_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES"
+    },
+    {
+      "claim_id": "CL10-S03-Q006",
+      "stage_id": "CL10-S03",
+      "stage_title": "Pilgrimage & Shrines",
+      "layer": "PASTORAL",
+      "text": "A pilgrimage carries an indulgence only when the Church has attached one under the applicable conditions; pilgrimage itself is not automatically plenarily indulgenced.",
+      "source_ids": [],
+      "original_destination": "EXPLORE.SHRINES_AND_PILGRIMAGES"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-CIC83-1230-1234",
+      "title": "Code of Canon Law (1983)",
+      "authority_type": "UNIVERSAL_CANON_LAW",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html"
+    },
+    {
+      "source_id": "SRC-DIRECTORY-POPULAR-PIETY-2002",
+      "title": "Directory on Popular Piety and the Liturgy",
+      "authority_type": "DICASTERY_DIRECTORY",
+      "status": "NORMALIZED_OFFICIAL",
+      "canonical_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+    }
+  ]
+}
