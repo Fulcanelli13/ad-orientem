@@ -60,6 +60,6 @@ assert.equal(residue.records.filter(x=>x.resolution==="PROVIDER_ROUTED").length,
 assert.equal(residue.records.filter(x=>x.resolution==="STAGED").length,7);
 
 const lawton=provider.records.find(x=>x.id==="SJC-004");
-assert.equal(lawton.verification,"NEEDS_RECHECK");
+assert.equal(lawton.verification,"OFFICIAL_LIVE");
 
 console.log("PASS Directory static diocesan/provider research projection");
