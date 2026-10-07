@@ -1,4 +1,5 @@
 import { auditVenue } from "./contracts.js";
+import { isMapPublishableGeo } from "./geo-provenance.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 
 function safeArray(value){return Array.isArray(value)?value:[]}
@@ -156,8 +157,7 @@ export function directoryStats(records){
   const list=safeArray(records),countries=new Set(),communities=new Map();let geocoded=0;
   for(const record of list){
     const cc=record?.venue?.address?.country_code;if(cc)countries.add(cc);
-    const g=record?.venue?.geo;
-    if(g?.lat!==null&&g?.lat!==undefined&&g?.lng!==null&&g?.lng!==undefined&&Number.isFinite(Number(g.lat))&&Number.isFinite(Number(g.lng)))geocoded++;
+    if(isMapPublishableGeo(record?.venue?.geo,record?.venue?.address?.country_code))geocoded++;
     for(const m of safeArray(record?.ministries))communities.set(m.community_id,(communities.get(m.community_id)??0)+1);
   }
   return Object.freeze({venues:list.length,countries:countries.size,geocoded,communities:Object.fromEntries(communities)});
