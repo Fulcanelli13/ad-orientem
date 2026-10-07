@@ -10,7 +10,7 @@ const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"rci",file:"rci.v1.json"}),
   Object.freeze({key:"cspv",file:"cspv.v1.json"}),
   Object.freeze({key:"smmd",file:"smmd.v1.json"}),
-  Object.freeze({key:"icksp",file:"icksp-federated.v1.json"}),
+  Object.freeze({key:"icksp",file:"icksp-federated.v1.json",geoFile:"icksp-federated.geo.v1.json"}),
 ]);
 
 function safeArray(value){return Array.isArray(value)?value:[]}
@@ -66,10 +66,11 @@ export function directoryProviderUrls(provider){
 function compactResearchRow(defaults,row,provider){
   return Object.freeze({...defaults,...row,p:provider});
 }
-export function expandResearchProviderSnapshot(snapshot={}){
+export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
   const provider=text(snapshot?.provider);
   const defaults=snapshot?.defaults&&typeof snapshot.defaults==="object"?snapshot.defaults:{};
   const generatedAt=text(snapshot?.generated_at)||null;
+  const geoByVenueId=new Map(safeArray(geoRecords).map(item=>[item?.venue_id,item?.geo]).filter(([id,geo])=>id&&geo));
   const out={venues:[],ministries:[],schedules:[],sources:[]};
   for(const raw of safeArray(snapshot?.records)){
     const parent=compactResearchRow(defaults,raw,provider);
@@ -116,7 +117,7 @@ export function expandResearchProviderSnapshot(snapshot={}){
         city:text(row.l)||null,region:text(row.r)||null,country_code:text(row.cc),country:null,
         formatted:formatted||null,
       },
-      geo:{lat:null,lng:null,precision:"unknown",geocoding_source:null},
+      geo:geoByVenueId.get(venueId)??{lat:null,lng:null,precision:"unknown",geocoding_source:null},
       diocese:{diocese_id:null,name:text(row.j)||null,type:"diocese"},
       contact:{
         phone:[],email:[],website:[text(row.su)].filter(Boolean),
@@ -280,9 +281,12 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     merged.sources.push(...safeArray(sources?.records));
   }
   for(const descriptor of safeArray(researchProviders)){
-    const snapshot=await fetchJson(researchProviderUrl(descriptor.file),{fetchImpl,optional:true});
+    const [snapshot,geoOverlay]=await Promise.all([
+      fetchJson(researchProviderUrl(descriptor.file),{fetchImpl,optional:true}),
+      descriptor.geoFile?fetchJson(researchProviderUrl(descriptor.geoFile),{fetchImpl,optional:true}):Promise.resolve(null),
+    ]);
     if(!snapshot?.records){unavailable.push(descriptor.key);continue}
-    const expanded=expandResearchProviderSnapshot(snapshot);
+    const expanded=expandResearchProviderSnapshot(snapshot,{geoRecords:safeArray(geoOverlay?.records)});
     if(!loaded.includes(descriptor.key))loaded.push(descriptor.key);
     merged.venues.push(...expanded.venues);
     merged.ministries.push(...expanded.ministries);
