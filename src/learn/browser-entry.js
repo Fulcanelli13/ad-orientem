@@ -101,7 +101,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     node.dataset.aoAssetId=canonicalAssetIdForSurface("learn")||"";
     node.dataset.aoLearnDonorRelease=LEARN_DONOR_RELEASE;
     node.setAttribute("role","region");
-    node.setAttribute("aria-label",L(win,"Learn","Apprendre"));
+    node.setAttribute("aria-label","Formation");
     node.addEventListener("click",event=>{
       const home=event.target?.closest?.("[data-ao-learn-home]");
       if(home){
