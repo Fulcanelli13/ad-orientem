@@ -113,10 +113,15 @@ try{
   for(const page of [donor,current])await page.evaluate(()=>globalThis.AO_PRAY_V435930?.close?.({silent:true}));
   await Promise.all([
     donor.evaluate(async()=>{
-      const api=[globalThis.AO_SETTINGS_V4359,globalThis.AO_SETTINGS_V4358,globalThis.AO_SETTINGS_V4356].find(x=>typeof x?.open==="function");
-      if(api)return await api.open("/settings");
-      if(typeof globalThis.AO_V37_SHELL?.openModule==="function")return await globalThis.AO_V37_SHELL.openModule("utility.settings");
-      const button=document.querySelector('[data-ao-ribbon="settings"],[data-v37-open="utility.settings"],[data-home-open-settings]');
+      const ribbon=document.querySelector('[data-ao-ribbon="settings"]');
+      if(ribbon){ribbon.click();return true;}
+      const api=[globalThis.AO_SETTINGS_V4359,globalThis.AO_SETTINGS_V4358,globalThis.AO_SETTINGS_V4357,globalThis.AO_SETTINGS_V4356].find(x=>typeof x?.open==="function");
+      if(api){await api.open("/settings");return true;}
+      if(typeof globalThis.AO_V37_SHELL?.openModule==="function"){
+        const opened=await globalThis.AO_V37_SHELL.openModule("utility.settings");
+        if(opened!==false)return true;
+      }
+      const button=document.querySelector('[data-v37-open="utility.settings"],[data-home-open-settings]');
       button?.click?.();return Boolean(button);
     }),
     current.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.open?.("/settings")),
