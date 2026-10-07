@@ -390,7 +390,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La poésie déplace les mots, pas la grammaire"
+        }
+      }
     },
     {
       "id": "l36-b2",
@@ -407,7 +412,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Pange, lingua"
+        }
+      }
     },
     {
       "id": "l36-b3",
@@ -424,7 +434,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Qui plantavit aurem, non audiet?"
+        }
+      }
     },
     {
       "id": "l36-b4",
@@ -439,7 +454,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Retrouver les relations grammaticales"
+        }
+      }
     },
     {
       "id": "l36-b5",
@@ -454,7 +474,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les noms concrets deviennent des images liturgiques"
+        }
+      }
     },
     {
       "id": "l36-b6",
@@ -469,7 +494,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’assistance diminue désormais"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -626,7 +656,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est lingua dans Pange, lingua ?",
+          "hint": "L’hymne s’adresse à la langue.",
+          "explanation": "lingua est une adresse directe.",
+          "options": [
+            "vocatif",
+            "accusatif",
+            "génitif",
+            "ablatif"
+          ]
+        }
+      }
     },
     {
       "id": "l36-e2",
@@ -656,7 +699,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel procédé poétique domine dans Qui plantavit aurem, non audiet ?",
+          "hint": "La réponse est implicite.",
+          "explanation": "La rhétorique psalmique peut omettre la réponse explicite.",
+          "options": [
+            "question rhétorique",
+            "discours indirect",
+            "ablatif absolu",
+            "obligation au gérondif verbal"
+          ]
+        }
+      }
     },
     {
       "id": "l36-e3",
@@ -687,7 +743,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom du corps ou de l’image à son sens.",
+          "hint": "Les quatre premiers des derniers lemmes fondamentaux.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "lingua": "langue / langage",
+            "auris": "oreille",
+            "pes": "pied",
+            "caput": "tête"
+          }
+        }
+      }
     },
     {
       "id": "l36-e4",
@@ -718,7 +787,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom cosmique ou social à son sens.",
+          "hint": "Les quatre seconds des derniers lemmes fondamentaux.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "ignis": "feu",
+            "mare": "mer",
+            "sol": "soleil",
+            "pauper": "pauvre / personne pauvre"
+          }
+        }
+      }
     },
     {
       "id": "l36-e5",
@@ -749,7 +831,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est pedum ?",
+          "hint": "De pes.",
+          "explanation": "pedum signifie « des pieds ».",
+          "options": [
+            "génitif pluriel",
+            "accusatif singulier",
+            "datif pluriel",
+            "nominatif pluriel"
+          ]
+        }
+      }
     },
     {
       "id": "l36-e6",
@@ -780,7 +875,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est solis dans a solis ortu ?",
+          "hint": "Il détermine ortu : le lever du soleil.",
+          "explanation": "solis est le génitif singulier de sol.",
+          "options": [
+            "génitif singulier",
+            "nominatif pluriel",
+            "accusatif pluriel",
+            "ablatif pluriel"
+          ]
+        }
+      }
     },
     {
       "id": "l36-e7",
@@ -809,7 +917,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que faut-il reconstruire en premier dans un ordre poétique des mots ?",
+          "hint": "Les cas survivent au déplacement poétique.",
+          "explanation": "La syntaxe avant l’ordre de prose.",
+          "options": [
+            "les relations grammaticales signalées par les terminaisons",
+            "une traduction moderne en prose",
+            "le commentaire historique",
+            "le rythme seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l36-e8",
@@ -838,7 +959,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi un Psaume peut-il omettre un verbe fini ordinaire ?",
+          "hint": "Compression poétique.",
+          "explanation": "L’ellipse peut être rétablie à partir de la structure et du contexte.",
+          "options": [
+            "le parallélisme ou l’ellipse permettent de le restituer",
+            "la poésie latine n’a pas de verbes",
+            "tous les verbes omis sont sum",
+            "les copistes les ont supprimés"
+          ]
+        }
+      }
     },
     {
       "id": "l36-e9",
@@ -867,7 +1001,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 8 à la leçon 36 ?",
+          "hint": "Jalon figé.",
+          "explanation": "La leçon 36 ouvre la lecture liturgique autonome par les registres poétiques.",
+          "options": [
+            "Registre psaume / hymne / antienne.",
+            "Ordinaire complet.",
+            "Propres ordinaires inconnus.",
+            "Couronnement sur un texte authentique inconnu du Missel."
+          ]
+        }
+      }
     },
     {
       "id": "l36-e10",
@@ -892,7 +1039,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « mer ».",
+          "hint": "Psaume 106.",
+          "explanation": "mare signifie « mer »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -962,5 +1116,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Psaumes, hymnes et antiennes",
+      "grammarFocus": "Psautier, antiennes mariales, hymnes ; registre poétique et biblique",
+      "readingOutcome": "Lire le parallélisme, l’ellipse et l’ordre poétique des mots.",
+      "objectives": [
+        "Lire l’ordre poétique et biblique sans perdre la syntaxe.",
+        "Reconnaître le parallélisme, l’ellipse et les questions rhétoriques.",
+        "Apprendre les huit derniers lemmes fondamentaux ordinaires.",
+        "Commencer l’étape 8 avec une assistance réduite."
+      ]
+    }
+  }
 }
