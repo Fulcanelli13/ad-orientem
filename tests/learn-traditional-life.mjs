@@ -34,6 +34,9 @@ assert.match(TRADITIONAL_LEARN_SOURCES_V381.quamSingulariAAS,/vatican\.va\/archi
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.quamSingulariFrench,/laportelatine\.org/,"First Communion lost its French-world Quam singulari witness");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentEucharistCanons,/vatican\.va/,"First Communion lost current canon-law authority");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.firstCommunionVatican,/vatican\.va/,"First Communion lost Holy See first-penance/communion authority");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.campion1954,/ccwatershed\.org/,"First Communion lost Campion practical guidance source");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.romanRitualCommunion1952,/rituale-romano-1952-comunione\.pdf/,"First Communion lost 1952 Roman Ritual Communion source");
+assert.match(TRADITIONAL_LEARN_SOURCES_V381.oconnell1962,/Celebration%20of%20Mass/,"First Communion lost O’Connell 1962 ceremonial source");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.pontifical1962Orders,/alcuinus\.org/,"Holy Orders lost the 1961–1962 Pontifical source");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentHolyOrders,/vatican\.va/,"Holy Orders lost current Catechism authority");
 assert.match(TRADITIONAL_LEARN_SOURCES_V381.currentHolyOrdersCanons,/vatican\.va/,"Holy Orders lost current canon-law authority");
@@ -90,6 +93,11 @@ assert.match(runtime,/route:"pray\.communion_treasury"/,"First Communion stopped
 assert.match(runtime,/one hour from food and drink, except water and medicine/,"First Communion lost the current Eucharistic fast");
 assert.match(runtime,/midnight or three-hour fasts belong to historical discipline/,"First Communion lost historical/current fasting distinction");
 assert.match(runtime,/does not create a second Communion ritual/,"First Communion began duplicating the Mass Communion ritual");
+assert.match(runtime,/1962 PRACTICAL REHEARSAL/,"First Communion lost the practical 1962 reception guide");
+assert.match(runtime,/priest’s Communion formula already contains Amen/,"1962 practical guide lost the no-separate-Amen rule");
+assert.match(runtime,/keep the head upright and still/,"Campion practical reception guidance lost head-position instruction");
+assert.match(runtime,/open the mouth and extend the tongue sufficiently/,"Campion practical reception guidance lost tongue instruction");
+assert.match(runtime,/not a new set of universal rubrics/,"practical guidance was promoted into a false universal rubric");
 assert.match(runtime,/FIRST COMMUNION IS A BEGINNING/,"First Communion lost continued catechesis/frequent Communion formation");
 assert.doesNotMatch(runtime,/firstCommunion[\s\S]{0,9000}Since my last Confession/,"First Communion duplicated the Confession examination workflow");
 
