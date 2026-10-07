@@ -1,0 +1,42 @@
+name: Promote clean directory snapshot once
+
+on:
+  push:
+    branches:
+      - snapshot/directory-clean-2026-10-07
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: snapshot/directory-clean-2026-10-07
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Generate clean official-source snapshots
+        run: |
+          npm run directory:import:fssp
+          npm run directory:import:icksp
+          npm run directory:import:ibp
+      - name: Validate clean snapshot
+        run: |
+          npm run test:directory
+          npm run test:find
+          node tools/directory/validate-runtime-snapshots.mjs
+      - name: Commit reviewed snapshot payload
+        shell: bash
+        run: |
+          git config user.name "ad-orientem-directory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/directory/generated/fssp data/directory/generated/icksp data/directory/generated/ibp
+          git rm .github/workflows/directory-snapshot-promotion-once.yml
+          git commit -m "Directory: promote clean reviewed institute snapshot"
+          git push origin HEAD:snapshot/directory-clean-2026-10-07
