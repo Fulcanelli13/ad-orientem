@@ -20,3 +20,12 @@ Before replacing any legacy owner:
 - [ ] Adoration & Benediction remains one top-level Eucharistic module.
 - [ ] Sacred-art mappings and provenance are unchanged unless explicitly reviewed.
 - [ ] Prayer/liturgical text has not been editorially rewritten.
+## Current tracked release blockers
+
+As of 07/10/2026, the application release gate is tracked through GitHub issues rather than hidden PR descriptions:
+
+- **#271 — EXACT_NON_MASS_DONOR_PARITY:** recover exact primary bytes or immutable renders for the missing v3.4.14 Rosary donor and v3.22 final non-Mass head. Current implementation tests are already green; this is a primary-evidence blocker.
+- **#267 — Calendar/devotional corpus:** complete the canonical devotional-practice registry and 16-novena reconciliation. This is tracked separately from the release-evidence blocker and must not recreate a second Calendar/date engine.
+
+A green implementation suite does not by itself close #271; follow the closure rule in that issue and `data/presentation/exact-donor-parity.v1.json`.
+
