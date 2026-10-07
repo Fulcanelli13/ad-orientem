@@ -2,10 +2,10 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { loadReaderPresentationData, READER_PRESENTATION_FILES } from "../src/mass/reader-data.js";
 
-const files=Object.fromEntries(Object.values(READER_PRESENTATION_FILES).map(file=>[
-  file,
-  JSON.parse(readFileSync(new URL("../data/presentation/"+file,import.meta.url),"utf8"))
-]));
+const files=Object.fromEntries(Object.values(READER_PRESENTATION_FILES).map(file=>{
+  const normalized=file.startsWith("../mass/") ? "../data/mass/"+file.slice("../mass/".length) : "../data/presentation/"+file;
+  return [file.split("/").pop(),JSON.parse(readFileSync(new URL(normalized,import.meta.url),"utf8"))];
+}));
 const requested=[];
 const fetchImpl=async url=>{
   const file=String(url).split("/").pop();
@@ -24,7 +24,9 @@ assert.equal(data.sungCorpus.form,"SUNG");
 assert.equal(data.canonSourceMap.status,"CERTIFIED_SOURCE_FIRST");
 assert.equal(data.rubricEvents.schema,"ao-reader-rubric-events-v1");
 assert.equal(data.rubricEvents.status,"SOURCE_BACKED_OVERLAY");
-assert.deepEqual(new Set(requested),new Set(Object.values(READER_PRESENTATION_FILES)));
+assert.equal(data.gestureMatrix.schema,"ao-mass-gesture-matrix-v1");
+assert.equal(data.gestureMatrix.status,"CANONICAL_GESTURE_SOT");
+assert.deepEqual(new Set(requested),new Set(Object.values(READER_PRESENTATION_FILES).map(file=>file.split("/").pop())));
 assert.ok(data.urls.lowCorpus.endsWith("/data/presentation/reader-text-low.v1.json"));
 
 let failed=false;
@@ -36,4 +38,4 @@ try{
 }catch(error){failed=/Unable to load/.test(String(error.message))}
 assert.equal(failed,true,"missing reader data did not fail closed");
 
-console.log("reader presentation data loader: PASS — section/text/Canon/rubric sources load together and fail closed.");
+console.log("reader presentation data loader: PASS — section/text/Canon/rubric/gesture-matrix sources load together and fail closed.");
