@@ -782,8 +782,10 @@ export async function mountNativeReaderPreview({
       sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
 
+    const priestAction=cueProjection?.priestAction??null;
     const iconKeys=iconKeysForReaderState({
-      priestPosition,posture,gesture,response,priestVoice,schola:scholaProjection.schola
+      priestPosition,posture,gesture,response,bell,priestVoice,
+      schola:scholaProjection.schola,priestAction
     });
     return Object.freeze({
       priestPosition,
@@ -794,7 +796,7 @@ export async function mountNativeReaderPreview({
       cinematic,
       priestVoice,
       schola:scholaProjection.schola,
-      priestAction:cueProjection?.priestAction??null,
+      priestAction,
       sacredMinister:cueProjection?.sacredMinister??null,
       sacredMinisterAdvisory:cueProjection?.sacredMinisterAdvisory??null,
       sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),
