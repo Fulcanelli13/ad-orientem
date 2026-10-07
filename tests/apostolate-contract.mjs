@@ -4,11 +4,13 @@ import {
   APOSTOLATE_CLAIM_CLASSES,
   APOSTOLATE_ENGINES,
   APOSTOLATE_HANDOFF_DIRECTIONS,
+  APOSTOLATE_FORMATION_TARGETS,
   APOSTOLATE_OWNER,
   APOSTOLATE_OWNERSHIP_BOUNDARIES,
   APOSTOLATE_SCENARIO_FAMILIES,
   APOSTOLATE_SCENARIO_IDS,
   APOSTOLATE_SKILLS,
+  APOSTOLATE_SKILL_IDS,
   APOSTOLATE_SOT_VERSION,
   APOSTOLATE_SOURCE_STRENGTHS,
   APOSTOLATE_TEACHING_STEPS,
@@ -17,6 +19,7 @@ import {
   engineForScenarioId,
   makeApostolateHandoff,
   makeApostolateScenario,
+  makeApostolateSkill,
 } from "../src/apostolate/contracts.js";
 import { createApostolateScenarioEngine } from "../src/apostolate/engine.js";
 import { createApostolateOwner, installApostolateOwner } from "../src/apostolate/browser-entry.js";
@@ -26,6 +29,7 @@ import { APOSTOLATE_FH_CORPUS_VERSION, APOSTOLATE_FH_SCENARIOS } from "../src/ap
 import { APOSTOLATE_TF_CORPUS_VERSION, APOSTOLATE_TF_SCENARIOS } from "../src/apostolate/tf-corpus.js";
 import { APOSTOLATE_DV_CORPUS_VERSION, APOSTOLATE_DV_SCENARIOS } from "../src/apostolate/dv-corpus.js";
 import { APOSTOLATE_WC_CORPUS_VERSION, APOSTOLATE_WC_SCENARIOS } from "../src/apostolate/wc-corpus.js";
+import { APOSTOLATE_SKILL_CORPUS_VERSION, APOSTOLATE_SKILL_CORPUS } from "../src/apostolate/skill-corpus.js";
 import {
   APOSTOLATE_SOURCE_REGISTRY_VERSION,
   APOSTOLATE_SOURCES,
@@ -48,7 +52,11 @@ assert.equal(new Set(APOSTOLATE_SCENARIO_IDS).size,36);
 assert.deepEqual(APOSTOLATE_SCENARIO_IDS.slice(0,8),["AQ01","AQ02","AQ03","AQ04","AQ05","AQ06","AQ07","AQ08"]);
 assert.deepEqual(APOSTOLATE_SCENARIO_IDS.slice(-3),["WC01","WC02","WC03"]);
 assert.equal(APOSTOLATE_SKILLS.length,9);
-assert.deepEqual(APOSTOLATE_SKILLS.map(x=>x.id),["APF01","APF02","APF03","APF04","APF05","APF06","APF07","APF08","APF09"]);
+assert.deepEqual(APOSTOLATE_SKILL_IDS,["APF01","APF02","APF03","APF04","APF05","APF06","APF07","APF08","APF09"]);
+assert.deepEqual(APOSTOLATE_SKILLS.map(x=>x.id),APOSTOLATE_SKILL_IDS);
+assert.equal(APOSTOLATE_FORMATION_TARGETS.includes("learn.catholic_life"),false,"retiring Catholic Life route must never be a permitted Apostolate handoff target");
+assert.ok(APOSTOLATE_FORMATION_TARGETS.includes("learn.catechism"));
+assert.ok(APOSTOLATE_FORMATION_TARGETS.includes("learn.mass"));
 assert.deepEqual(APOSTOLATE_CLAIM_CLASSES,["D","N","T","H","S","P","C"]);
 assert.deepEqual(APOSTOLATE_SOURCE_STRENGTHS,["PRIMARY","PRIMARY_PLUS_CATECHETICAL","MIXED_VERIFIED"]);
 assert.deepEqual(APOSTOLATE_TEACHING_STEPS,["understand","minimum","prepare","launch","followUp"]);
@@ -62,6 +70,38 @@ assert.equal(engineForScenarioId("TF05"),APOSTOLATE_ENGINES.INTRODUCE);
 assert.equal(engineForScenarioId("DV02"),APOSTOLATE_ENGINES.INTRODUCE);
 assert.equal(engineForScenarioId("WC03"),APOSTOLATE_ENGINES.INTRODUCE);
 assert.equal(engineForScenarioId("NOPE"),null);
+
+assert.equal(APOSTOLATE_SKILL_CORPUS_VERSION,"APOSTOLATE_SKILL_CORPUS_V1");
+assert.equal(APOSTOLATE_SKILL_CORPUS.length,9);
+assert.deepEqual(APOSTOLATE_SKILL_CORPUS.map(x=>x.id),APOSTOLATE_SKILL_IDS);
+for(const skill of APOSTOLATE_SKILL_CORPUS){
+  const normalized=makeApostolateSkill(skill);
+  assert.equal(normalized.publication,"READY",skill.id+" failed READY normalization");
+  assert.ok(normalized.title.en&&normalized.title.fr,skill.id+" lost bilingual title");
+  assert.ok(normalized.summary.en&&normalized.summary.fr,skill.id+" lost bilingual summary");
+  assert.ok(normalized.explanation.en&&normalized.explanation.fr,skill.id+" lost bilingual explanation");
+  assert.ok(normalized.practice.en.length&&normalized.practice.fr.length,skill.id+" lost bilingual practice");
+  assert.ok(normalized.avoid.en.length&&normalized.avoid.fr.length,skill.id+" lost bilingual avoidances");
+  assert.ok(APOSTOLATE_SOURCE_STRENGTHS.includes(normalized.sourceStrength),skill.id+" has invalid source strength");
+  assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],skill.id+" contains unresolved source IDs");
+  assert.ok(normalized.scenarioRefs.length,skill.id+" has no scenario references");
+}
+const baseSkill={
+  id:"APF01",publication:"READY",
+  title:{en:"Skill",fr:"Compétence"},
+  summary:{en:"Summary",fr:"Résumé"},
+  explanation:{en:"Explanation",fr:"Explication"},
+  practice:{en:["Practise"],fr:["Pratiquer"]},
+  avoid:{en:["Avoid"],fr:["Éviter"]},
+  sourceStrength:"PRIMARY",
+  sourceIds:["SRC-1"],
+  scenarioRefs:["AQ01"],
+};
+assert.throws(()=>makeApostolateSkill({...baseSkill,title:{en:"Skill"}}),/titles/);
+assert.throws(()=>makeApostolateSkill({...baseSkill,practice:{en:["Practise"],fr:[]}}),/practice steps/);
+assert.throws(()=>makeApostolateSkill({...baseSkill,sourceStrength:"WEAK"}),/sourceStrength/);
+assert.throws(()=>makeApostolateSkill({...baseSkill,sourceIds:[]}),/source IDs/);
+assert.throws(()=>makeApostolateSkill({...baseSkill,scenarioRefs:["ZZ99"]}),/scenarioRefs/);
 
 const baseReady={
   id:"AQ01",
@@ -119,7 +159,7 @@ for(const scenario of APOSTOLATE_HS_SCENARIOS){
   assert.ok(normalized.avoid.en.length&&normalized.avoid.fr.length,scenario.id+" lost bilingual avoidances");
   assert.ok(normalized.apfSkills.length,scenario.id+" has no APF skill mapping");
   assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],scenario.id+" contains unresolved source IDs");
-  assert.ok(normalized.handoffs.some(h=>h.targetId?.startsWith("learn.")),scenario.id+" lacks canonical Formation handoff");
+  assert.ok(normalized.handoffs.length,scenario.id+" lost all canonical handoffs");
 }
 assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS01").text.en,/do not have to receive Communion/i);
 assert.match(APOSTOLATE_HS_SCENARIOS.find(x=>x.id==="HS02").avoid.en.join(" "),/type out grave sins/i);
@@ -161,7 +201,7 @@ for(const scenario of APOSTOLATE_FH_SCENARIOS){
   assert.ok(normalized.avoid.en.length&&normalized.avoid.fr.length,scenario.id+" lost bilingual avoidances");
   assert.ok(normalized.apfSkills.length,scenario.id+" has no APF skill mapping");
   assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],scenario.id+" contains unresolved source IDs");
-  assert.ok(normalized.handoffs.some(h=>h.targetId?.startsWith("learn.")),scenario.id+" lacks canonical Formation handoff");
+  assert.ok(normalized.handoffs.length,scenario.id+" lost all canonical handoffs");
 }
 assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH01").explanation.en,/Pius XII/i);
 assert.match(APOSTOLATE_FH_SCENARIOS.find(x=>x.id==="FH02").text.en,/traditional grace before meals/i);
@@ -298,6 +338,24 @@ const wcBase={...baseReady,id:"WC01",sourceStrength:"PRIMARY",workSocial:{
 assert.throws(()=>makeApostolateScenario({...wcBase,sourceStrength:"WEAK"}),/sourceStrength/);
 assert.throws(()=>makeApostolateScenario({...wcBase,workSocial:{...wcBase.workSocial,respond:{en:"r"}}}),/bilingual work-social steps/);
 
+const completeScenarioCorpus=[
+  ...APOSTOLATE_AQ_SCENARIOS,
+  ...APOSTOLATE_HS_SCENARIOS,
+  ...APOSTOLATE_FH_SCENARIOS,
+  ...APOSTOLATE_TF_SCENARIOS,
+  ...APOSTOLATE_DV_SCENARIOS,
+  ...APOSTOLATE_WC_SCENARIOS,
+];
+for(const scenario of completeScenarioCorpus){
+  assert.notEqual(scenario.handoffs?.some(h=>h.targetId==="learn.catholic_life"),true,scenario.id+" still hands off to retiring Catholic Life");
+  assert.notEqual(scenario.doctrineRefs?.includes?.("learn.catholic_life"),true,scenario.id+" still references retiring Catholic Life");
+  for(const handoff of scenario.handoffs??[]){
+    if(handoff.targetId?.startsWith?.("learn.")){
+      assert.ok(APOSTOLATE_FORMATION_TARGETS.includes(handoff.targetId),scenario.id+" points to non-canonical Formation route "+handoff.targetId);
+    }
+  }
+}
+
 assert.equal(APOSTOLATE_AQ_CORPUS_VERSION,"APOSTOLATE_AQ_CORPUS_V1");
 assert.equal(APOSTOLATE_SOURCE_REGISTRY_VERSION,"APOSTOLATE_SOURCE_REGISTRY_V1");
 assert.equal(APOSTOLATE_AQ_SCENARIOS.length,8);
@@ -353,7 +411,11 @@ assert.equal(toFormation.targetSurface,"learn");
 assert.throws(()=>makeApostolateHandoff({
   direction:APOSTOLATE_HANDOFF_DIRECTIONS.APOSTOLATE_TO_FORMATION,
   fromId:"AQ01",targetId:"formation.catechism",reason:"bad namespace",
-}),/learn\.\*/);
+}),/surviving canonical Formation route/);
+assert.throws(()=>makeApostolateHandoff({
+  direction:APOSTOLATE_HANDOFF_DIRECTIONS.APOSTOLATE_TO_FORMATION,
+  fromId:"HS01",targetId:"learn.catholic_life",reason:"retired route",
+}),/surviving canonical Formation route/);
 
 const toApostolate=makeApostolateHandoff({
   direction:APOSTOLATE_HANDOFF_DIRECTIONS.FORMATION_TO_APOSTOLATE,
@@ -363,6 +425,13 @@ const toApostolate=makeApostolateHandoff({
 });
 assert.equal(toApostolate.sourceSurface,"learn");
 assert.equal(toApostolate.targetSurface,"apostolate");
+
+const toApostolateSkill=makeApostolateHandoff({
+  direction:APOSTOLATE_HANDOFF_DIRECTIONS.FORMATION_TO_APOSTOLATE,
+  fromId:"learn.catechism",
+  targetId:"APF04",
+  reason:"Practise explaining clearly",
+});
 
 assert.deepEqual(APOSTOLATE_OWNERSHIP_BOUNDARIES.CONFESSION,{owner:"pray",target:"pray.confession"});
 assert.deepEqual(APOSTOLATE_OWNERSHIP_BOUNDARIES.ANOINTING_VIATICUM,{owner:"formation",target:"learn.rites.sick"});
@@ -383,7 +452,10 @@ const doc={
   },
 };
 const win={document:doc};
-const owner=createApostolateOwner(win,{scenarios:[...APOSTOLATE_AQ_SCENARIOS,...APOSTOLATE_HS_SCENARIOS,...APOSTOLATE_FH_SCENARIOS,...APOSTOLATE_TF_SCENARIOS,...APOSTOLATE_DV_SCENARIOS,...APOSTOLATE_WC_SCENARIOS]});
+const owner=createApostolateOwner(win,{
+  scenarios:[...APOSTOLATE_AQ_SCENARIOS,...APOSTOLATE_HS_SCENARIOS,...APOSTOLATE_FH_SCENARIOS,...APOSTOLATE_TF_SCENARIOS,...APOSTOLATE_DV_SCENARIOS,...APOSTOLATE_WC_SCENARIOS],
+  skills:APOSTOLATE_SKILL_CORPUS,
+});
 assert.equal(owner.owner,"AO_APOSTOLATE_APP_V1");
 assert.equal(owner.status().installed,true);
 assert.equal(owner.status().hidden,true);
@@ -393,6 +465,13 @@ assert.equal(owner.status().ribbonExposed,false);
 assert.equal(owner.status().publishedCount,36);
 assert.equal(owner.status().researchOnlyCount,0);
 assert.deepEqual(owner.status().readyFamilies,["AQ","HS","FH","TF","DV","WC"]);
+assert.equal(owner.status().skillCount,9);
+assert.equal(owner.status().publishedSkillCount,9);
+assert.equal(owner.status().researchOnlySkillCount,0);
+assert.equal(owner.status().skillsReady,true);
+assert.equal(owner.status().objectCount,45);
+assert.equal(owner.status().publishedObjectCount,45);
+assert.equal(owner.resolveSkill("APF08").id,"APF08");
 assert.equal(owner.engines.answer.resolve("AQ01").ok,true);
 assert.equal(owner.engines.answer.resolve("AQ08").ok,true);
 assert.equal(owner.engines.help.resolve("HS01").ok,true);
@@ -406,6 +485,8 @@ assert.equal(owner.engines.introduce.resolve("DV05").ok,true);
 assert.equal(owner.engines.introduce.resolve("WC01").ok,true);
 assert.equal(owner.engines.introduce.resolve("WC03").ok,true);
 assert.equal(owner.receiveHandoff(toApostolate).ok,true);
+assert.equal(owner.receiveHandoff(toApostolateSkill).ok,true);
+assert.equal(owner.receiveHandoff(toApostolateSkill).skill.id,"APF04");
 assert.equal(owner.handoffToFormation({fromId:"AQ01",targetRoute:"learn.catechism",reason:"Study"}).targetSurface,"learn");
 
 const appSource=readFileSync("src/app/browser-entry.js","utf8");
@@ -419,7 +500,10 @@ const installed=installApostolateOwner(installedWin);
 assert.equal(installed.status().publishedCount,36,"production hidden owner did not load the complete 36-scenario corpus");
 assert.equal(installed.status().researchOnlyCount,0);
 assert.deepEqual(installed.status().readyFamilies,["AQ","HS","FH","TF","DV","WC"]);
+assert.equal(installed.status().publishedSkillCount,9);
+assert.equal(installed.status().skillsReady,true);
+assert.equal(installed.status().publishedObjectCount,45);
 assert.equal(installed.status().visible,false);
 assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"hidden");
 
-console.log("PASS hidden Apostolate A9: all 36 frozen scenarios are sourced bilingual READY; no visible Apostolate surface.");
+console.log("PASS hidden Apostolate A10: 36 scenarios + 9 APF skills are sourced bilingual READY; retired Catholic Life handoffs are eliminated; no visible Apostolate surface.");
