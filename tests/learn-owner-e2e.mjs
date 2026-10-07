@@ -116,7 +116,7 @@ try{
   assert.equal(learned.owner,"modular-learn-v1");
   assert.equal(learned.presentationOwner,"modular-learn-presentation-v1");
   assert.equal(learned.routeOwner,"modular-learn-v1");
-  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"]);
+  assert.deepEqual(learned.modules,["learn.catechism.daily","learn.latin","learn.mass","learn.spiritual_life","learn.catechism","learn.glossary","learn.sexual_ethics","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"]);
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module=\'today.saint\']").count(),0,"Saint of the Day remained visible in Learn");
   assert.equal(learned.donorVisible,false,"historical V37 Learn donor remained visible underneath modular Learn");
   assert.equal(learned.donorNavCount,0,"historical V37 navigation leaked into modular Learn");
@@ -129,6 +129,55 @@ try{
   for(const target of learned.geometry.tapTargets)assert.ok(target.w>=44&&target.h>=44,"Learn touch target fell below 44px");
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
+
+  // Glossary: category-first navigation, multilingual search and sourced term drawer.
+  await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.glossary"]').tap();
+  await page.waitForFunction(()=>
+    globalThis.AO_GLOSSARY_V1?.status?.().open===true &&
+    globalThis.AO_GLOSSARY_V1?.status?.().loaded===true &&
+    globalThis.AO_GLOSSARY_V1?.status?.().entries===450 &&
+    Boolean(document.getElementById("ao-glossary-root")),
+    null,{timeout:10000}
+  );
+  const glossaryLanding=await page.evaluate(()=>{
+    const root=document.getElementById("ao-glossary-root");
+    return {
+      categories:root?.querySelectorAll("[data-gloss-category]").length??0,
+      renderedTerms:root?.querySelectorAll("[data-gloss-entry]").length??0,
+      width:root?.getBoundingClientRect()?.width??0,
+      overflow:root?(root.scrollWidth-root.clientWidth):Infinity,
+      status:globalThis.AO_GLOSSARY_V1?.status?.()??null,
+    };
+  });
+  assert.equal(glossaryLanding.categories,13,"Glossary landing lost its 13 category homes");
+  assert.equal(glossaryLanding.renderedTerms,0,"Glossary landing regressed to a flat term list");
+  assert.equal(glossaryLanding.status?.entries,450,"Glossary runtime lost canonical inventory");
+  assert.ok(glossaryLanding.width>300,"Glossary phone surface collapsed");
+  assert.ok(glossaryLanding.overflow<=1,"Glossary has horizontal overflow on phone");
+
+  const glossSearch=page.locator("#ao-glossary-root [data-gloss-search]");
+  await glossSearch.fill("transubstantiation");
+  await page.waitForFunction(()=>Boolean(document.querySelector('#ao-glossary-root [data-gloss-entry="G033"]')),null,{timeout:5000});
+  await page.locator('#ao-glossary-root [data-gloss-entry="G033"]').tap();
+  await page.waitForSelector("#ao-glossary-root .aoGlossDetailCard",{state:"visible",timeout:5000});
+  const glossaryDetail=await page.evaluate(()=>({
+    title:document.querySelector("#ao-glossary-root .aoGlossDetailHead h2")?.textContent?.trim()??"",
+    latin:document.querySelector("#ao-glossary-root .aoGlossLatin")?.textContent?.trim()??"",
+    sourceLinks:document.querySelectorAll("#ao-glossary-root .aoGlossSources a[href]").length,
+  }));
+  assert.equal(glossaryDetail.title,"Transubstantiation");
+  assert.equal(glossaryDetail.latin,"transsubstantiatio");
+  assert.ok(glossaryDetail.sourceLinks>=1,"Glossary term drawer has no clickable source");
+  await page.locator("#ao-glossary-root [data-gloss-close]").tap();
+  await page.locator("#ao-glossary-root [data-gloss-back]").tap();
+  await page.waitForFunction(()=>
+    !document.getElementById("ao-glossary-root") &&
+    !document.getElementById("ao-learn-modular-root")?.hidden &&
+    globalThis.AO_LEARN_APP_V1?.status?.().child==null,
+    null,{timeout:10000}
+  );
+  await assertNoMass("Glossary -> Formation");
+  await assertFocusSafe("Glossary -> Formation");
 
   // Spiritual Life: published 14-lesson phone journey, readable and explicitly non-scored.
   await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.spiritual_life"]').tap();
