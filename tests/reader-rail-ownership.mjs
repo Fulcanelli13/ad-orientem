@@ -9,6 +9,7 @@ const registries=Object.freeze({
   postures:load("../data/presentation/reader-postures.v1.json"),
   positions:load("../data/presentation/reader-priest-positions.v1.json"),
   voices:load("../data/presentation/reader-priest-voices.v1.json"),
+  actions:load("../data/presentation/reader-priest-actions.v1.json"),
 });
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const prepared={
@@ -25,7 +26,7 @@ assert.equal(new Set(cues).size,279);
 for(const cueId of cues){
   const state=ctrl.project(cueId);
   assert.equal(state.supported,true,cueId+" lost cue-state support");
-  for(const channel of ["gesture","response","priestVoice","priestPosition"]){
+  for(const channel of ["gesture","response","priestVoice","priestPosition","priestAction"]){
     const owner=String(state.ownership[channel]??"");
     assert.ok(!owner.includes("LEGACY"),cueId+" "+channel+" regressed to legacy ownership: "+owner);
   }
@@ -58,4 +59,4 @@ for(const dataset of [
 }
 
 assert.match(nativeSource,/R17_NATIVE_INDEPENDENT_SCHOLA_CLOCK/,"native Schola ownership marker missing");
-console.log("reader rail ownership: PASS — Missa Cantata gesture/response/voice/position/Schola are native-owned; only FOLLOW_CONGREGATION posture remains observational.");
+console.log("reader rail ownership: PASS — Missa Cantata gesture/response/voice/position/action/Schola are native-owned; only FOLLOW_CONGREGATION posture remains observational.");
