@@ -1,8 +1,8 @@
 // Runtime projection of NOVENA_CONTEXT_SOT_V1.
 // Prayer text/history/how-to remain owned by novena-corpus-v4.js.
-// Cross-domain links are validated against data/customs/novena-context-links.v1.json.
+// Cross-domain links mirror data/customs/novena-context-links.v1.json.
 export const NOVENA_CONTEXT_V1={
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sourceRegistry": [
     {
       "id": "EI4-22",
@@ -109,10 +109,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French traditional-liturgy attestation: a Corsican diocesan extraordinary-form programme explicitly begins the Holy Ghost novena on Ascension.",
+          "fr": "Attestation française liée à la liturgie traditionnelle : un programme diocésain corse en forme extraordinaire fait explicitement commencer la neuvaine au Saint-Esprit à l’Ascension."
+        },
+        "links": [
+          {
+            "link_id": "novena-area:holy_ghost:corsica-traditional",
+            "relationship": "FRENCH_TRADITIONAL_RITE_ATTESTATION",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Corsica",
+            "shrine_id": null,
+            "map_policy": "AREA_CONTEXT",
+            "confidence": "HIGH",
+            "note": "The Corsican diocesan extraordinary-form programme explicitly begins a Holy Ghost novena on Ascension. This attests the traditional timing in the French world without claiming identity with AO's exact prayer text.",
+            "source_ids": [
+              "CORSE-HOLY-GHOST-2026"
+            ]
+          }
+        ]
       }
     },
     "christmas": {
@@ -151,10 +169,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French form attestation: a Corsican diocesan Christmas novena is structured around the Great O Antiphons.",
+          "fr": "Attestation française de la forme : une neuvaine de Noël diocésaine en Corse est structurée autour des grandes antiennes Ô."
+        },
+        "links": [
+          {
+            "link_id": "novena-area:christmas:corsica-o-antiphons",
+            "relationship": "EXACT_FORM_FRENCH_ATTESTATION",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Corsica",
+            "shrine_id": null,
+            "map_policy": "AREA_CONTEXT",
+            "confidence": "HIGH",
+            "note": "A Corsican diocesan source explicitly presents a Christmas novena built from the Great O Antiphons, directly matching AO's devotional family and textual architecture.",
+            "source_ids": [
+              "CORSE-CHRISTMAS-O"
+            ]
+          }
+        ]
       }
     },
     "corpus_christi": {
@@ -206,10 +242,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "Devotional origin context: Liège and St Julienne of Cornillon are directly associated with the birth of the Fête-Dieu.",
+          "fr": "Contexte d’origine dévotionnelle : Liège et sainte Julienne de Cornillon sont directement liés à la naissance de la Fête-Dieu."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:corpus_christi:liege",
+            "relationship": "DEVOTIONAL_ORIGIN_PLACE_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:world",
+            "place_id": null,
+            "place_name_hint": "Sanctuaire de sainte Julienne de Cornillon, Liège, Belgium",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "HIGH",
+            "note": "Liège is the documented birthplace of the Fête-Dieu under St Julienne of Cornillon. This is feast/devotional origin context, not proof that AO's exact frozen novena was used there.",
+            "source_ids": [
+              "LIEGE-CORPUS-ORIGIN"
+            ]
+          }
+        ]
       }
     },
     "sacred_heart": {
@@ -261,10 +315,45 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "French-world links: the canonical Sacred Heart shrine at Paray-le-Monial; family consecration to the Sacred Heart; home enthronement. These are related customs, not required parts of the frozen novena.",
-          "fr": "Liens dans le monde catholique français : le sanctuaire canonique du Sacré-Cœur à Paray-le-Monial ; consécration familiale au Sacré-Cœur ; intronisation au foyer. Ce sont des coutumes associées, non des éléments obligatoires de la neuvaine figée."
-        }
+          "en": "French-world context: the canonical Sacred Heart shrine at Paray-le-Monial, family consecration, and home enthronement.",
+          "fr": "Contexte du monde catholique français : sanctuaire canonique du Sacré-Cœur à Paray-le-Monial, consécration familiale et intronisation au foyer."
+        },
+        "links": [
+          {
+            "link_id": "novena-custom:sacred_heart:DOM-006",
+            "relationship": "DEVOTIONAL_FAMILY_CUSTOM",
+            "custom_id": "DOM-006",
+            "geo_area_id": "geo:country:FR",
+            "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+            "place_name_hint": null,
+            "shrine_id": "shrine:FR:paray-sacred-heart",
+            "map_policy": "PLACE",
+            "confidence": "HIGH",
+            "note": "The Sacred Heart novena belongs to the same devotional family as family consecration; the exact frozen AO prayer form is not claimed to be the Paray form. Promoted to the canonical shared Paray place/shrine after SHRINES_PILGRIMAGES_SOT_V1.",
+            "source_ids": [
+              "PARAY-CONSECRATION",
+              "PARAY-NOVENA"
+            ]
+          },
+          {
+            "link_id": "novena-custom:sacred_heart:DOM-007",
+            "relationship": "OPTIONAL_PREPARATORY_CUSTOM",
+            "custom_id": "DOM-007",
+            "geo_area_id": "geo:country:FR",
+            "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+            "place_name_hint": null,
+            "shrine_id": "shrine:FR:paray-sacred-heart",
+            "map_policy": "PLACE",
+            "confidence": "HIGH",
+            "note": "Paray explicitly recommends a Sacred Heart novena as possible preparation for home enthronement; enthronement remains a distinct custom. Promoted to the canonical shared Paray place/shrine after SHRINES_PILGRIMAGES_SOT_V1.",
+            "source_ids": [
+              "PARAY-INTRONISATION",
+              "PARAY-NOVENA"
+            ]
+          }
+        ]
       }
     },
     "immaculate_conception": {
@@ -316,10 +405,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "Shrine context: Lourdes directly publishes and celebrates an Immaculate Conception novena.",
+          "fr": "Contexte de sanctuaire : Lourdes publie et célèbre directement une neuvaine à l’Immaculée Conception."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:immaculate_conception:lourdes",
+            "relationship": "PUBLIC_NOVENA_SHRINE_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+            "place_name_hint": null,
+            "shrine_id": "shrine:FR:lourdes-our-lady",
+            "map_policy": "PLACE",
+            "confidence": "HIGH",
+            "note": "Lourdes directly publishes and celebrates an Immaculate Conception novena. Its current Lourdes text is not claimed to be AO's historical donor form.",
+            "source_ids": [
+              "LOURDES-IMMACULATE-NOVENA"
+            ]
+          }
+        ]
       }
     },
     "annunciation": {
@@ -371,10 +478,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French shrine context: Notre-Dame du Puy is explicitly tied to the mystery of the Annunciation and its Grand Pardon.",
+          "fr": "Contexte de sanctuaire français : Notre-Dame du Puy est explicitement liée au mystère de l’Annonciation et à son Grand Pardon."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:annunciation:le-puy",
+            "relationship": "FEAST_JUBILEE_SHRINE_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Cathédrale Notre-Dame du Puy, Le Puy-en-Velay",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "HIGH",
+            "note": "Notre-Dame du Puy is explicitly dedicated to the mystery of the Annunciation and celebrates the Grand Pardon when 25 March coincides with Good Friday. The Jubilee is a separate local custom, not part of the novena.",
+            "source_ids": [
+              "LEPUY-ANNUNCIATION-JUBILEE"
+            ]
+          }
+        ]
       }
     },
     "assumption": {
@@ -426,10 +551,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French customary context: Notre-Dame de Paris preserves the Vœu de Louis XIII and the Marian procession of 15 August.",
+          "fr": "Contexte coutumier français : Notre-Dame de Paris conserve la mémoire du Vœu de Louis XIII et de la procession mariale du 15 août."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:assumption:notre-dame-paris",
+            "relationship": "FRENCH_NATIONAL_FEAST_CUSTOM_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Cathédrale Notre-Dame de Paris",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "HIGH",
+            "note": "Notre-Dame de Paris preserves the memory of the Vœu de Louis XIII and the 15 August Marian procession. This is French Assumption custom context, not an asserted source for AO's exact novena.",
+            "source_ids": [
+              "NDP-ASSUMPTION-VOW"
+            ]
+          }
+        ]
       }
     },
     "seven_sorrows": {
@@ -475,10 +618,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French Marian-shrine context: Notre-Dame des Victoires publicly observes Notre-Dame des Douleurs.",
+          "fr": "Contexte de sanctuaire marial français : Notre-Dame des Victoires célèbre publiquement Notre-Dame des Douleurs."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:seven_sorrows:notre-dame-victoires",
+            "relationship": "DEVOTIONAL_FAMILY_PLACE_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Basilique Notre-Dame des Victoires, Paris",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "MEDIUM_HIGH",
+            "note": "Notre-Dame des Victoires publicly observes Notre-Dame des Douleurs. This links the devotional family to a French Marian sanctuary without claiming AO's exact Seven Sorrows novena form.",
+            "source_ids": [
+              "NDV-SORROWS"
+            ]
+          }
+        ]
       }
     },
     "st_joseph": {
@@ -530,10 +691,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "French geographical context: several St Joseph sanctuaries are officially documented in France. This is devotional-family context, not proof that each uses the frozen Moran novena.",
-          "fr": "Contexte géographique français : plusieurs sanctuaires de saint Joseph sont officiellement documentés en France. Il s’agit du contexte de la famille dévotionnelle, non de la preuve que chacun emploie la neuvaine de Moran figée."
-        }
+          "en": "French geographical context: official Catholic sources document several sanctuaries and monasteries dedicated to St Joseph in France.",
+          "fr": "Contexte géographique français : des sources catholiques officielles documentent plusieurs sanctuaires et monastères dédiés à saint Joseph en France."
+        },
+        "links": [
+          {
+            "link_id": "novena-area:st_joseph:france",
+            "relationship": "DEVOTIONAL_FAMILY_AREA_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": null,
+            "shrine_id": null,
+            "map_policy": "AREA_CONTEXT",
+            "confidence": "MEDIUM_HIGH",
+            "note": "French episcopal evidence attests multiple St Joseph sanctuaries and feast devotion; it does not establish the exact Moran novena at each place.",
+            "source_ids": [
+              "ECF-ST-JOSEPH-SHRINES"
+            ]
+          }
+        ]
       }
     },
     "holy_souls": {
@@ -585,10 +764,44 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Related customs: prayerful cemetery visit and prayer for the faithful departed on 2 November. The cemetery visit is not required to pray the novena.",
-          "fr": "Coutumes associées : visite priante du cimetière et prière pour les fidèles défunts le 2 novembre. La visite du cimetière n’est pas nécessaire pour prier la neuvaine."
-        }
+          "en": "French customary context: prayerful cemetery visitation and prayer for the faithful departed on 2 November.",
+          "fr": "Contexte coutumier français : visite priante du cimetière et prière pour les fidèles défunts le 2 novembre."
+        },
+        "links": [
+          {
+            "link_id": "novena-custom:holy_souls:DEAD-001",
+            "relationship": "RELATED_DEVOTIONAL_CUSTOM",
+            "custom_id": "DEAD-001",
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": null,
+            "shrine_id": null,
+            "map_policy": "AREA_CONTEXT",
+            "confidence": "HIGH",
+            "note": "Prayerful cemetery visitation is related to prayer for the faithful departed but is not required by the novena.",
+            "source_ids": [
+              "ECF-DEAD"
+            ]
+          },
+          {
+            "link_id": "novena-custom:holy_souls:DEAD-003",
+            "relationship": "TEMPORAL_CUSTOM_CONTEXT",
+            "custom_id": "DEAD-003",
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": null,
+            "shrine_id": null,
+            "map_policy": "AREA_CONTEXT",
+            "confidence": "HIGH",
+            "note": "2 November prayer for the dead is a privileged contextual observance; the novena itself may be prayed at other times.",
+            "source_ids": [
+              "ECF-DEAD",
+              "DPP-2001"
+            ]
+          }
+        ]
       }
     },
     "perpetual_help": {
@@ -634,10 +847,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French public-novena context: the Diocese of Paris documents a nine-day novena at the Basilica of Our Lady of Perpetual Help.",
+          "fr": "Contexte français de neuvaine publique : le diocèse de Paris documente une neuvaine de neuf jours à la basilique Notre-Dame du Perpétuel-Secours."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:perpetual_help:paris",
+            "relationship": "PUBLIC_NOVENA_PLACE_ATTESTATION",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Basilique Notre-Dame du Perpétuel-Secours, Paris",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "HIGH",
+            "note": "The Diocese of Paris directly documents a nine-day public novena at the Basilica of Our Lady of Perpetual Help, including prayer before the icon. The exact daily meditations are not identified with AO's frozen text.",
+            "source_ids": [
+              "DIOCESE-PARIS-PERPETUAL-NOVENA"
+            ]
+          }
+        ]
       }
     },
     "st_therese": {
@@ -683,10 +914,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "Geographical context: the Sanctuary of St Thérèse at Lisieux directly attests a St Thérèse novena. This does not prove use of Ad Orientem’s exact Twenty-Four Glory Bes form.",
-          "fr": "Contexte géographique : le Sanctuaire Sainte-Thérèse de Lisieux atteste directement une neuvaine à sainte Thérèse. Cela ne prouve pas l’usage exact de la forme des vingt-quatre Gloria d’Ad Orientem."
-        }
+          "en": "Shrine context: the Sanctuary of St Thérèse at Lisieux directly attests a St Thérèse novena.",
+          "fr": "Contexte de sanctuaire : le Sanctuaire Sainte-Thérèse de Lisieux atteste directement une neuvaine à sainte Thérèse."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:st_therese:lisieux",
+            "relationship": "DEVOTIONAL_FAMILY_SHRINE_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Sanctuaire Sainte-Thérèse de Lisieux",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "HIGH",
+            "note": "Official Lisieux material attests a St Thérèse novena and the shrine context. It does not prove that the sanctuary uses AO's exact Twenty-Four Glory Bes form.",
+            "source_ids": [
+              "LISIEUX-NOVENA"
+            ]
+          }
+        ]
       }
     },
     "st_anthony_nine_tuesdays": {
@@ -732,10 +981,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French Tuesday-devotion context: the Franciscan shrine at Brive preserves a regular Tuesday pilgrimage Mass associated with St Anthony.",
+          "fr": "Contexte français de la dévotion du mardi : le sanctuaire franciscain de Brive conserve une messe régulière du pèlerinage le mardi, liée à saint Antoine."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:st_anthony:brive",
+            "relationship": "WEEKLY_TUESDAY_SHRINE_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Sanctuaire des Grottes de Saint Antoine, Brive",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "HIGH",
+            "note": "The Franciscan shrine at Brive has a regular Tuesday pilgrimage Mass, strongly supporting the Tuesday devotional association in France. It does not by itself prove AO's exact nine-Tuesdays prayer body.",
+            "source_ids": [
+              "FRANCISCANS-BRIVE-ANTHONY"
+            ]
+          }
+        ]
       }
     },
     "christ_the_king": {
@@ -781,10 +1048,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French traditional textual attestation: the prayer used by Ad Orientem is preserved in a traditional French devotional witness. No artificial shrine pin is inferred.",
+          "fr": "Attestation textuelle française traditionnelle : la prière employée par Ad Orientem est conservée dans un témoin dévotionnel français traditionnel. Aucun sanctuaire artificiel n’en est déduit."
+        },
+        "links": [
+          {
+            "link_id": "novena-area:christ_the_king:french-world",
+            "relationship": "FRENCH_WORLD_HISTORICAL_DEVOTIONAL_ATTESTATION",
+            "custom_id": null,
+            "geo_area_id": "geo:culture:french-catholic-world",
+            "place_id": null,
+            "place_name_hint": null,
+            "shrine_id": null,
+            "map_policy": "NOT_MAPPED",
+            "confidence": "HIGH",
+            "note": "A traditional French devotional witness preserves the Christ-the-King prayer used by AO. No stable geographic shrine association is inferred from that textual witness.",
+            "source_ids": [
+              "LIBERIUS-CHRIST-KING-FR"
+            ]
+          }
+        ]
       }
     },
     "immaculate_heart": {
@@ -830,10 +1115,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French historical devotional centre: Notre-Dame des Victoires is the historic home of the Archconfraternity of the Immaculate Heart of Mary.",
+          "fr": "Centre historique français de la dévotion : Notre-Dame des Victoires est le foyer historique de l’Archiconfrérie du Cœur Immaculé de Marie."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:immaculate_heart:notre-dame-victoires",
+            "relationship": "HISTORICAL_DEVOTIONAL_CENTER_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Basilique Notre-Dame des Victoires, Paris",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "HIGH",
+            "note": "Notre-Dame des Victoires is the historic home of the Archconfraternity of the Immaculate Heart of Mary for the conversion of sinners, founded from the 1836 parish consecration. This is strong devotional-family context, not proof of AO's exact novena.",
+            "source_ids": [
+              "NDV-IMMACULATE-HEART"
+            ]
+          }
+        ]
       }
     },
     "st_michael": {
@@ -879,10 +1182,28 @@ export const NOVENA_CONTEXT_V1={
         "customs_policy": "EVIDENCE_BACKED_BRIDGE_ONLY",
         "geography_policy": "NO_ASSOCIATION_FROM_PROXIMITY",
         "bridge_file": "data/customs/novena-context-links.v1.json",
+        "researchStatus": "COMPLETE_16_TARGET_CLASSIFICATION",
         "display": {
-          "en": "No evidence-backed geography/custom bridge is published for this novena yet. Ad Orientem does not infer one from shrine or TLM-venue proximity.",
-          "fr": "Aucun lien géographique ou coutumier étayé par des preuves n’est encore publié pour cette neuvaine. Ad Orientem n’en déduit aucun de la proximité d’un sanctuaire ou d’un lieu de messe traditionnelle."
-        }
+          "en": "French shrine and pilgrimage context: the diocesan sanctuary at Mont-Saint-Michel preserves a centuries-old St Michael pilgrimage tradition.",
+          "fr": "Contexte français de sanctuaire et de pèlerinage : le sanctuaire diocésain du Mont-Saint-Michel conserve une tradition séculaire de pèlerinage à saint Michel."
+        },
+        "links": [
+          {
+            "link_id": "novena-place:st_michael:mont-saint-michel",
+            "relationship": "DEVOTIONAL_FAMILY_SHRINE_PILGRIMAGE_CONTEXT",
+            "custom_id": null,
+            "geo_area_id": "geo:country:FR",
+            "place_id": null,
+            "place_name_hint": "Sanctuaire du Mont-Saint-Michel",
+            "shrine_id": null,
+            "map_policy": "PLACE_PENDING",
+            "confidence": "HIGH",
+            "note": "The diocesan sanctuary at Mont-Saint-Michel has received pilgrims devoted to St Michael for roughly thirteen centuries and explicitly frames the site around St Michael, spiritual combat and pilgrimage. This does not prove AO's exact novena text.",
+            "source_ids": [
+              "MONT-ST-MICHEL-SHRINE"
+            ]
+          }
+        ]
       }
     }
   }

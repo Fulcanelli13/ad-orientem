@@ -134,12 +134,49 @@ export function projectDirectoryItems(records,{communities=[]}={}){
   }));
 }
 
-export function projectShrineItems({shrines=[],places=[],sources=[]}={}){
+function novenaRecordMap(records=[]){return new Map(arr(records).map(row=>[row?.id,row]).filter(([id])=>id));}
+function novenaTitle(row){return text(row?.title_en)||text(row?.title_fr)||text(row?.id)||"Novena";}
+function novenaLinksForShrine(shrine,links=[]){
+  return arr(links).filter(link=>link?.shrine_id===shrine?.shrine_id||(!link?.shrine_id&&link?.place_id&&link.place_id===shrine?.place_id));
+}
+function novenaLinksForAttestation(attestation,links=[]){
+  return arr(links).filter(link=>{
+    if(!link?.custom_id||link.custom_id!==attestation?.custom_id)return false;
+    if(link.place_id)return link.place_id===attestation?.place_id;
+    if(link.geo_area_id)return link.geo_area_id===attestation?.geo_area_id;
+    return true;
+  });
+}
+function novenaSections(links,recordMap){
+  const grouped=new Map();
+  for(const link of arr(links)){
+    const id=link?.novena_id;if(!id)continue;
+    const current=grouped.get(id)??[];
+    if(link?.note&&!current.includes(link.note))current.push(link.note);
+    grouped.set(id,current);
+  }
+  return [...grouped.entries()].map(([id,notes])=>Object.freeze({
+    label:"Related novena",title:novenaTitle(recordMap.get(id)),body:notes.join(" ")
+  }));
+}
+function novenaActions(links,recordMap){
+  const seen=new Set(),out=[];
+  for(const link of arr(links)){
+    const id=link?.novena_id;if(!id||seen.has(id))continue;
+    seen.add(id);
+    out.push(Object.freeze({label:"Open novena",novena_id:id,title:novenaTitle(recordMap.get(id))}));
+  }
+  return Object.freeze(out);
+}
+
+export function projectShrineItems({shrines=[],places=[],sources=[],novenaLinks=[],novenas=[]}={}){
   const placeMap=new Map(arr(places).map(place=>[place?.place_id,place]).filter(([id])=>id));
   const sourceMap=new Map(arr(sources).map(source=>[source?.id,source]).filter(([id])=>id));
+  const novenaMap=novenaRecordMap(novenas);
   return Object.freeze(arr(shrines).map(shrine=>{
     const place=placeMap.get(shrine?.place_id)??null;
     const address=place?.address??null;
+    const relatedNovenas=novenaLinksForShrine(shrine,novenaLinks);
     const facts=[
       {label:"Dedication",value:shrine?.dedication},
       {label:"Type",value:String(shrine?.shrine_kind??"").replaceAll("_"," ")},
@@ -161,24 +198,32 @@ export function projectShrineItems({shrines=[],places=[],sources=[]}={}){
       map_publishable:false,
       map_state:"ADDRESS_ONLY",
       facts:freezeList(facts),
-      sections:freezeList(saints.length?[{label:"Associated saints",title:saints.join(" · "),body:""}]:[]),
+      sections:freezeList([
+        ...(saints.length?[{label:"Associated saints",title:saints.join(" · "),body:""}]:[]),
+        ...novenaSections(relatedNovenas,novenaMap),
+      ]),
       source_links:sourceLinks(shrine?.source_ids,sourceMap),
-      actions:freezeList(placeMapsUrl(place)?[{label:"Directions",url:placeMapsUrl(place)}]:[]),
+      actions:freezeList([
+        ...(placeMapsUrl(place)?[{label:"Directions",url:placeMapsUrl(place)}]:[]),
+        ...novenaActions(relatedNovenas,novenaMap),
+      ]),
       note:"Canonical shrine identity. Map pin withheld until shared Place coordinates have their own provenance lock.",
-      search_text:itemSearch([shrine?.name,shrine?.dedication,shrine?.origin_summary,saints,addressLabel(address)]),
+      search_text:itemSearch([shrine?.name,shrine?.dedication,shrine?.origin_summary,saints,addressLabel(address),relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id)))]),
       raw:Object.freeze({shrine,place}),
     });
   }));
 }
 
-export function projectTraditionItems({customs=[],attestations=[],places=[],geoAreas=[],sources=[]}={}){
+export function projectTraditionItems({customs=[],attestations=[],places=[],geoAreas=[],sources=[],novenaLinks=[],novenas=[]}={}){
   const customMap=new Map(arr(customs).map(custom=>[custom?.custom_id,custom]).filter(([id])=>id));
   const placeMap=new Map(arr(places).map(place=>[place?.place_id,place]).filter(([id])=>id));
   const areaMap=new Map(arr(geoAreas).map(area=>[area?.geo_area_id,area]).filter(([id])=>id));
   const sourceMap=new Map(arr(sources).map(source=>[source?.id,source]).filter(([id])=>id));
+  const novenaMap=novenaRecordMap(novenas);
   return Object.freeze(arr(attestations).map(attestation=>{
     const custom=customMap.get(attestation?.custom_id)??{},place=placeMap.get(attestation?.place_id)??null,area=areaMap.get(attestation?.geo_area_id)??null;
     const placeLabel=place?.name?.official??attestation?.place_name_hint??area?.name?.official??"";
+    const relatedNovenas=novenaLinksForAttestation(attestation,novenaLinks);
     const facts=[
       {label:"Class",value:String(custom?.custom_class??"").replaceAll("_"," ")},
       {label:"Period",value:attestation?.period_label??custom?.period_label},
@@ -203,12 +248,57 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
       sections:freezeList([
         attestation?.evidence_note?{label:"Attestation",title:placeLabel,body:attestation.evidence_note}:null,
         custom?.guardrail?{label:"How Ad Orientem presents it",title:"",body:custom.guardrail}:null,
+        ...novenaSections(relatedNovenas,novenaMap),
       ].filter(Boolean)),
       source_links:sourceLinks(attestation?.source_ids,sourceMap),
-      actions:freezeList(placeMapsUrl(place)?[{label:"Directions",url:placeMapsUrl(place)}]:[]),
+      actions:freezeList([
+        ...(placeMapsUrl(place)?[{label:"Directions",url:placeMapsUrl(place)}]:[]),
+        ...novenaActions(relatedNovenas,novenaMap),
+      ]),
       note:"Geographic attestation only. It does not imply that every parish, shrine or TLM community in this area observes the custom.",
-      search_text:itemSearch([custom?.name,custom?.canonical_statement,custom?.family,placeLabel,addressLabel(place?.address),attestation?.evidence_note]),
+      search_text:itemSearch([custom?.name,custom?.canonical_statement,custom?.family,placeLabel,addressLabel(place?.address),attestation?.evidence_note,relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id)))]),
       raw:Object.freeze({custom,attestation,place,area}),
+    });
+  }));
+}
+
+export function projectNovenaContextItems({links=[],novenas=[],places=[],geoAreas=[],sources=[]}={}){
+  const novenaMap=novenaRecordMap(novenas);
+  const placeMap=new Map(arr(places).map(place=>[place?.place_id,place]).filter(([id])=>id));
+  const areaMap=new Map(arr(geoAreas).map(area=>[area?.geo_area_id,area]).filter(([id])=>id));
+  const sourceMap=new Map(arr(sources).map(source=>[source?.id,source]).filter(([id])=>id));
+  return Object.freeze(arr(links).map(link=>{
+    const novena=novenaMap.get(link?.novena_id)??{},place=placeMap.get(link?.place_id)??null,area=areaMap.get(link?.geo_area_id)??null;
+    const placeLabel=place?.name?.official??link?.place_name_hint??area?.name?.official??"";
+    const facts=[
+      {label:"Class",value:String(link?.relationship??"").replaceAll("_"," ")},
+      {label:"Evidence",value:link?.confidence},
+    ].filter(item=>text(item.value));
+    const mapState=place?"ADDRESS_ONLY":link?.map_policy==="AREA_CONTEXT"?"AREA_CONTEXT":link?.map_policy==="PLACE_PENDING"?"PLACE_PENDING":"NOT_MAPPED";
+    return Object.freeze({
+      item_id:"tradition:novena:"+link.link_id,
+      source_id:link.link_id,
+      lens:"traditions",
+      kind:"NOVENA_CONTEXT",
+      eyebrow:"NOVENA CONTEXT · "+String(link?.geographic_precision??link?.map_policy??"").replaceAll("_"," "),
+      status:"SOURCE-BACKED",
+      title:novenaTitle(novena),
+      subtitle:placeLabel,
+      summary:link?.note??"",
+      address:place?.address??null,
+      geo:null,
+      map_publishable:false,
+      map_state:mapState,
+      facts:freezeList(facts),
+      sections:freezeList([{label:"Relationship",title:placeLabel,body:link?.note??""}]),
+      source_links:sourceLinks(link?.source_ids,sourceMap),
+      actions:freezeList([
+        ...(placeMapsUrl(place)?[{label:"Directions",url:placeMapsUrl(place)}]:[]),
+        {label:"Open novena",novena_id:link?.novena_id,title:novenaTitle(novena)},
+      ]),
+      note:"Evidence-backed novena context. The linked place, custom or shrine is not automatically part of the novena's required form.",
+      search_text:itemSearch([novenaTitle(novena),novena?.title_fr,placeLabel,link?.relationship,link?.note]),
+      raw:Object.freeze({link,novena,place,area}),
     });
   }));
 }
@@ -269,11 +359,19 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
 }
 
 export function projectExploreDataset(dataset={}){
-  const geography=dataset?.geography??{},customs=dataset?.customs??{},shrines=dataset?.shrines??{},directory=dataset?.directory??{};
+  const geography=dataset?.geography??{},customs=dataset?.customs??{},shrines=dataset?.shrines??{},directory=dataset?.directory??{},novenas=dataset?.novenas??{};
+  const novenaSources=[...arr(customs?.sources),...arr(shrines?.sources),...arr(novenas?.sources)];
+  const customTraditions=projectTraditionItems({
+    customs:customs?.customs,attestations:customs?.attestations,places:geography?.places,geoAreas:geography?.geoAreas,sources:customs?.sources,
+    novenaLinks:novenas?.links,novenas:novenas?.records,
+  });
+  const novenaTraditions=projectNovenaContextItems({
+    links:novenas?.links,novenas:novenas?.records,places:geography?.places,geoAreas:geography?.geoAreas,sources:novenaSources,
+  });
   const byLens=Object.freeze({
     tlm:projectDirectoryItems(directory?.records,{communities:directory?.communities}),
-    shrines:projectShrineItems({shrines:shrines?.shrines,places:geography?.places,sources:shrines?.sources}),
-    traditions:projectTraditionItems({customs:customs?.customs,attestations:customs?.attestations,places:geography?.places,geoAreas:geography?.geoAreas,sources:customs?.sources}),
+    shrines:projectShrineItems({shrines:shrines?.shrines,places:geography?.places,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records}),
+    traditions:Object.freeze([...customTraditions,...novenaTraditions]),
     pilgrimages:projectPilgrimageItems({pilgrimages:shrines?.pilgrimages,shrines:shrines?.shrines,routes:shrines?.routes,temporalLinks:shrines?.temporalLinks,places:geography?.places,sources:shrines?.sources}),
   });
   return Object.freeze({

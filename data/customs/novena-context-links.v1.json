@@ -1,6 +1,6 @@
 {
   "schema": "NOVENA_CUSTOMS_GEOGRAPHY_BRIDGE_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "created_at": "2026-10-07",
   "purpose": "Evidence-backed links from frozen novena identities to Customs Atlas customs and shared geography context. No proximity-based association.",
   "invariants": [
@@ -26,6 +26,78 @@
       "id": "ECF-ST-JOSEPH-SHRINES",
       "title": "Église catholique en France · seven sanctuaries and monasteries dedicated to St Joseph",
       "url": "https://eglise.catholique.fr/guide-eglise-catholique-france/eveques-dioceses-france/liste-des-dioceses/a-decouverte-dioceses-de-france/focus-sur-les-sanctuaires-de-france/570113-sept-sanctuaires-et-monasteres-saint-joseph/",
+      "directness": "OFFICIAL_CURRENT"
+    },
+    {
+      "id": "CORSE-HOLY-GHOST-2026",
+      "title": "Église catholique en Corse · forme extraordinaire · début de la neuvaine au Saint-Esprit à l’Ascension",
+      "url": "https://www.corse.catholique.fr/forme-extraordinaire-du-rite/programme-mai-2026/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "CORSE-CHRISTMAS-O",
+      "title": "Église catholique en Corse · Neuvaine de Noël · Grandes Antiennes O",
+      "url": "https://www.corse.catholique.fr/wp-content/uploads/sites/17/2016/12/Les-Antiennes-O-de-la-Neuvaine-de-Noel.pdf",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "LIEGE-CORPUS-ORIGIN",
+      "title": "ÉgliseInfo Belgique · Fête-Dieu née à Liège · Sainte Julienne de Cornillon",
+      "url": "https://blog.egliseinfo.be/fetes/fetes-liturgiques/la-fete-dieu-une-fete-nee-en-belgique/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "LOURDES-IMMACULATE-NOVENA",
+      "title": "Sanctuaire Notre-Dame de Lourdes · Neuvaine à l’Immaculée Conception",
+      "url": "https://www.lourdes-france.com/immaculee-conception-a-lourdes/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "LEPUY-ANNUNCIATION-JUBILEE",
+      "title": "Diocèse du Puy-en-Velay · Sanctuaire-cathédrale Notre-Dame du Puy · Jubilé de l’Annonciation",
+      "url": "https://www.catholique-lepuy.fr/sanctuaires/le-sanctuaire-cathedrale-de-notre-dame-du-puy/",
+      "directness": "OFFICIAL_CURRENT"
+    },
+    {
+      "id": "NDP-ASSUMPTION-VOW",
+      "title": "Notre-Dame de Paris · Assomption · Vœu de Louis XIII et procession du 15 août",
+      "url": "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "NDV-SORROWS",
+      "title": "Basilique Notre-Dame des Victoires · Notre-Dame des Douleurs",
+      "url": "https://www.notredamedesvictoires.com/evenement/notre-dame-des-douleurs/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "DIOCESE-PARIS-PERPETUAL-NOVENA",
+      "title": "Diocèse de Paris · Neuf jours de prière avec Notre-Dame du Perpétuel-Secours",
+      "url": "https://dioceseparis.fr/neuf-jours-de-priere-avec-notre.html",
+      "directness": "OFFICIAL_CURRENT"
+    },
+    {
+      "id": "FRANCISCANS-BRIVE-ANTHONY",
+      "title": "Franciscains de France · Sanctuaire des Grottes de Saint Antoine de Brive · mardi du pèlerinage",
+      "url": "https://franciscains.fr/nos-fraternites/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "LIBERIUS-CHRIST-KING-FR",
+      "title": "Thésaurisons pour le Ciel · prière française traditionnelle au Christ-Roi",
+      "url": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf",
+      "directness": "PRIMARY_HISTORICAL"
+    },
+    {
+      "id": "NDV-IMMACULATE-HEART",
+      "title": "Notre-Dame des Victoires · Archiconfrérie du Cœur Immaculé de Marie",
+      "url": "https://www.notredamedesvictoires.com/archiconfrerie/",
+      "directness": "DIRECT_INSTITUTIONAL"
+    },
+    {
+      "id": "MONT-ST-MICHEL-SHRINE",
+      "title": "Diocèse de Coutances et Avranches · Sanctuaire du Mont-Saint-Michel",
+      "url": "https://don.diocese50.fr/sanctuaire-msm/",
       "directness": "OFFICIAL_CURRENT"
     }
   ],
@@ -126,27 +198,208 @@
       ],
       "confidence": "MEDIUM_HIGH",
       "note": "French episcopal evidence attests multiple St Joseph sanctuaries and feast devotion; it does not establish the exact Moran novena at each place."
-    }
-  ],
-  "negative_knowledge": [
+    },
     {
-      "novena_ids": [
-        "holy_ghost",
-        "christmas",
-        "corpus_christi",
-        "immaculate_conception",
-        "annunciation",
-        "assumption",
-        "seven_sorrows",
-        "perpetual_help",
-        "st_anthony_nine_tuesdays",
-        "christ_the_king",
-        "immaculate_heart",
-        "st_michael"
+      "link_id": "novena-area:holy_ghost:corsica-traditional",
+      "novena_id": "holy_ghost",
+      "relationship": "FRENCH_TRADITIONAL_RITE_ATTESTATION",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Corsica",
+      "geographic_precision": "REGION",
+      "map_policy": "AREA_CONTEXT",
+      "source_ids": [
+        "CORSE-HOLY-GHOST-2026"
       ],
-      "decision": "NO_PUBLISHED_GEO_CUSTOM_BRIDGE_YET",
-      "reason": "No row-level evidence-backed Customs/Geography bridge has yet been established for the exact novena or a sufficiently relevant devotional-family context. Do not infer one from nearby shrines or TLM venues."
+      "confidence": "HIGH",
+      "note": "The Corsican diocesan extraordinary-form programme explicitly begins a Holy Ghost novena on Ascension. This attests the traditional timing in the French world without claiming identity with AO's exact prayer text."
+    },
+    {
+      "link_id": "novena-area:christmas:corsica-o-antiphons",
+      "novena_id": "christmas",
+      "relationship": "EXACT_FORM_FRENCH_ATTESTATION",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Corsica",
+      "geographic_precision": "REGION",
+      "map_policy": "AREA_CONTEXT",
+      "source_ids": [
+        "CORSE-CHRISTMAS-O"
+      ],
+      "confidence": "HIGH",
+      "note": "A Corsican diocesan source explicitly presents a Christmas novena built from the Great O Antiphons, directly matching AO's devotional family and textual architecture."
+    },
+    {
+      "link_id": "novena-place:corpus_christi:liege",
+      "novena_id": "corpus_christi",
+      "relationship": "DEVOTIONAL_ORIGIN_PLACE_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": "Sanctuaire de sainte Julienne de Cornillon, Liège, Belgium",
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "LIEGE-CORPUS-ORIGIN"
+      ],
+      "confidence": "HIGH",
+      "note": "Liège is the documented birthplace of the Fête-Dieu under St Julienne of Cornillon. This is feast/devotional origin context, not proof that AO's exact frozen novena was used there."
+    },
+    {
+      "link_id": "novena-place:immaculate_conception:lourdes",
+      "novena_id": "immaculate_conception",
+      "relationship": "PUBLIC_NOVENA_SHRINE_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE",
+      "shrine_id": "shrine:FR:lourdes-our-lady",
+      "source_ids": [
+        "LOURDES-IMMACULATE-NOVENA"
+      ],
+      "confidence": "HIGH",
+      "note": "Lourdes directly publishes and celebrates an Immaculate Conception novena. Its current Lourdes text is not claimed to be AO's historical donor form."
+    },
+    {
+      "link_id": "novena-place:annunciation:le-puy",
+      "novena_id": "annunciation",
+      "relationship": "FEAST_JUBILEE_SHRINE_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Cathédrale Notre-Dame du Puy, Le Puy-en-Velay",
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "LEPUY-ANNUNCIATION-JUBILEE"
+      ],
+      "confidence": "HIGH",
+      "note": "Notre-Dame du Puy is explicitly dedicated to the mystery of the Annunciation and celebrates the Grand Pardon when 25 March coincides with Good Friday. The Jubilee is a separate local custom, not part of the novena."
+    },
+    {
+      "link_id": "novena-place:assumption:notre-dame-paris",
+      "novena_id": "assumption",
+      "relationship": "FRENCH_NATIONAL_FEAST_CUSTOM_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Cathédrale Notre-Dame de Paris",
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "NDP-ASSUMPTION-VOW"
+      ],
+      "confidence": "HIGH",
+      "note": "Notre-Dame de Paris preserves the memory of the Vœu de Louis XIII and the 15 August Marian procession. This is French Assumption custom context, not an asserted source for AO's exact novena."
+    },
+    {
+      "link_id": "novena-place:seven_sorrows:notre-dame-victoires",
+      "novena_id": "seven_sorrows",
+      "relationship": "DEVOTIONAL_FAMILY_PLACE_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Basilique Notre-Dame des Victoires, Paris",
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "NDV-SORROWS"
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "note": "Notre-Dame des Victoires publicly observes Notre-Dame des Douleurs. This links the devotional family to a French Marian sanctuary without claiming AO's exact Seven Sorrows novena form."
+    },
+    {
+      "link_id": "novena-place:perpetual_help:paris",
+      "novena_id": "perpetual_help",
+      "relationship": "PUBLIC_NOVENA_PLACE_ATTESTATION",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Basilique Notre-Dame du Perpétuel-Secours, Paris",
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "DIOCESE-PARIS-PERPETUAL-NOVENA"
+      ],
+      "confidence": "HIGH",
+      "note": "The Diocese of Paris directly documents a nine-day public novena at the Basilica of Our Lady of Perpetual Help, including prayer before the icon. The exact daily meditations are not identified with AO's frozen text."
+    },
+    {
+      "link_id": "novena-place:st_anthony:brive",
+      "novena_id": "st_anthony_nine_tuesdays",
+      "relationship": "WEEKLY_TUESDAY_SHRINE_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Sanctuaire des Grottes de Saint Antoine, Brive",
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "FRANCISCANS-BRIVE-ANTHONY"
+      ],
+      "confidence": "HIGH",
+      "note": "The Franciscan shrine at Brive has a regular Tuesday pilgrimage Mass, strongly supporting the Tuesday devotional association in France. It does not by itself prove AO's exact nine-Tuesdays prayer body."
+    },
+    {
+      "link_id": "novena-area:christ_the_king:french-world",
+      "novena_id": "christ_the_king",
+      "relationship": "FRENCH_WORLD_HISTORICAL_DEVOTIONAL_ATTESTATION",
+      "custom_id": null,
+      "geo_area_id": "geo:culture:french-catholic-world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "CULTURAL_SPHERE",
+      "map_policy": "NOT_MAPPED",
+      "source_ids": [
+        "LIBERIUS-CHRIST-KING-FR"
+      ],
+      "confidence": "HIGH",
+      "note": "A traditional French devotional witness preserves the Christ-the-King prayer used by AO. No stable geographic shrine association is inferred from that textual witness."
+    },
+    {
+      "link_id": "novena-place:immaculate_heart:notre-dame-victoires",
+      "novena_id": "immaculate_heart",
+      "relationship": "HISTORICAL_DEVOTIONAL_CENTER_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Basilique Notre-Dame des Victoires, Paris",
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "NDV-IMMACULATE-HEART"
+      ],
+      "confidence": "HIGH",
+      "note": "Notre-Dame des Victoires is the historic home of the Archconfraternity of the Immaculate Heart of Mary for the conversion of sinners, founded from the 1836 parish consecration. This is strong devotional-family context, not proof of AO's exact novena."
+    },
+    {
+      "link_id": "novena-place:st_michael:mont-saint-michel",
+      "novena_id": "st_michael",
+      "relationship": "DEVOTIONAL_FAMILY_SHRINE_PILGRIMAGE_CONTEXT",
+      "custom_id": null,
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": "Sanctuaire du Mont-Saint-Michel",
+      "geographic_precision": "PLACE",
+      "map_policy": "PLACE_PENDING",
+      "source_ids": [
+        "MONT-ST-MICHEL-SHRINE"
+      ],
+      "confidence": "HIGH",
+      "note": "The diocesan sanctuary at Mont-Saint-Michel has received pilgrims devoted to St Michael for roughly thirteen centuries and explicitly frames the site around St Michael, spiritual combat and pilgrimage. This does not prove AO's exact novena text."
     }
   ],
-  "shrines_dependency": "SHRINES_PILGRIMAGES_SOT_V1"
+  "negative_knowledge": [],
+  "shrines_dependency": "SHRINES_PILGRIMAGES_SOT_V1",
+  "research_status": "COMPLETE_16_TARGET_CROSS_DOMAIN_CLASSIFICATION",
+  "research_summary": {
+    "target_count": 16,
+    "targets_with_bridge": 16,
+    "unresolved_target_count": 0,
+    "rule": "Every target has either a place/shrine, regional/custom, cultural-sphere, or deliberately non-mapped evidence-backed context classification."
+  }
 }

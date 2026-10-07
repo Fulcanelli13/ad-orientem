@@ -45,8 +45,36 @@ Where a related practice really has material/ceremonial content—Sacred Heart e
 
 A saint, shrine or TLM venue being nearby does not prove that a novena is practiced there.
 
-Published links require row-level evidence. At v1 the evidence-backed bridges are deliberately limited to Sacred Heart/Paray, Holy Souls/French cemetery customs, St Thérèse/Lisieux shrine context, and St Joseph/French sanctuary context. The remaining targets carry explicit negative knowledge rather than speculative map pins.
+Published links require row-level evidence. Cross-domain research is now complete for all sixteen targets. The bridge distinguishes exact-form attestations, shrine/devotional-family context, regional/custom context, cultural-sphere evidence, and deliberately non-mapped textual evidence. A place or shrine is never inferred merely from proximity.
 
 ## Next research rule
 
 New geographical or customary attestations may be added to the bridge without changing the frozen prayer corpus. New gestures, indulgence claims or place links must carry explicit sources and pass the bridge/context regression test.
+
+
+## Completed cross-domain research — 16/16
+
+| Novena | Evidence-backed context | Mapping decision |
+|---|---|---|
+| Holy Ghost | Corsican diocesan extraordinary-form programme explicitly begins the Holy Ghost novena at Ascension | France · regional context |
+| Christmas | Corsican diocesan Christmas novena built from the Great O Antiphons | France · regional context · exact-form family attestation |
+| Corpus Christi | Liège / St Julienne of Cornillon as documented birthplace of the Fête-Dieu | Place pending · origin context |
+| Sacred Heart | Paray-le-Monial; family consecration; home enthronement | Canonical Paray place + shrine |
+| Immaculate Conception | Lourdes publicly celebrates an Immaculate Conception novena | Canonical Lourdes place + shrine |
+| Annunciation | Notre-Dame du Puy; sanctuary identity and Grand Pardon tied to the Annunciation | Place pending |
+| Assumption | Notre-Dame de Paris; Vœu de Louis XIII and 15 August procession | Place pending |
+| Seven Sorrows | Notre-Dame des Victoires public Notre-Dame des Douleurs observance | Place pending |
+| St Joseph | Officially documented St Joseph sanctuary network in France | France area context |
+| Holy Souls | French cemetery visitation and 2 November prayer customs | France area/custom context |
+| Perpetual Help | Diocese of Paris documents a public nine-day novena at Notre-Dame du Perpétuel-Secours | Place pending |
+| St Thérèse | Lisieux sanctuary explicitly attests a St Thérèse novena | Place pending |
+| St Anthony · Nine Tuesdays | Franciscan shrine at Brive preserves a strong Tuesday pilgrimage association | Place pending |
+| Christ the King | Traditional French prayer witness | French Catholic cultural sphere · deliberately not mapped |
+| Immaculate Heart | Notre-Dame des Victoires, historic home of the Archconfraternity of the Immaculate Heart | Place pending |
+| St Michael | Mont-Saint-Michel diocesan shrine and longstanding St Michael pilgrimage context | Place pending |
+
+### Reverse integration
+
+Explore now consumes the bridge directly. A shrine, custom or tradition record can show its related novena and provide an **Open novena** action. The action returns to the canonical PRAY owner and opens the correct novena detail; Explore never copies the prayer body.
+
+The Traditions lens also projects every bridge row as a source-backed Novena Context record, so the geographical/custom research is discoverable from either direction.

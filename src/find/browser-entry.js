@@ -58,7 +58,7 @@ function installStyle(win){
     ".aoExploreLead{color:#d2c7b2;line-height:1.5}.aoFindFacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:18px 0}.aoFindFacts>div{background:#101923;border-radius:12px;padding:12px}.aoFindFacts strong{display:block;margin-top:5px;font-size:13px}",
     ".aoFindSchedules article{border-top:1px solid rgba(217,197,154,.12);padding:10px 0}.aoFindSchedules article small{display:block;margin-bottom:4px}.aoFindSchedules p{white-space:pre-line;color:#c0b6a3;font-size:13px}",
     ".aoExploreAddress{margin:15px 0;padding:12px;border:1px solid rgba(217,197,154,.1);border-radius:12px}.aoExploreAddress p{margin:5px 0 0;color:#c5baa6}",
-    ".aoFindActions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.aoFindActions a,.aoFindSources a{border:1px solid rgba(217,197,154,.2);border-radius:999px;padding:9px 12px;color:#e7d8b8;text-decoration:none;font:600 11px sans-serif}",
+    ".aoFindActions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.aoFindActions a,.aoFindActions button,.aoFindSources a{border:1px solid rgba(217,197,154,.2);border-radius:999px;padding:9px 12px;color:#e7d8b8;text-decoration:none;font:600 11px sans-serif;background:transparent;cursor:pointer}",
     ".aoFindSources{margin:15px 0}.aoFindSources>div{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.aoFindSheet footer{color:#8f846e;font-size:11px;margin-top:14px}.aoFindGeoAttribution{display:block;margin-top:6px;opacity:.82}",
     "@media(min-width:800px){.aoFindSurface{max-width:980px;margin:auto;border-left:1px solid rgba(217,197,154,.08);border-right:1px solid rgba(217,197,154,.08)}.aoFindList{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindSheet{max-width:720px;margin:0 auto}.aoFindSheetBackdrop{justify-content:center}}",
     "@media(max-width:520px){.aoExploreLensTabs{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindMap{height:calc(100vh - 320px);min-height:360px}}"
@@ -136,6 +136,7 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    if(typeof options?.query==="string")state.query=options.query;
     openState=true;
     const node=ensureRoot(win);if(node)node.dataset.open="true";
     await paint();
@@ -161,6 +162,15 @@ export function createFindOwner(win=globalThis){
     const target=event?.target;
     if(target?.closest?.("[data-find-close]")){event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(target?.closest?.("[data-find-close-detail]")){state.selectedId=null;void paint();return}
+    const novena=target?.closest?.("[data-explore-open-novena]");
+    if(novena){
+      event.preventDefault?.();event.stopPropagation?.();
+      const novenaId=novena.dataset.exploreOpenNovena;
+      close();
+      try{win?.AO_PRAY_V435930?.open?.("pray.novenas",{novenaId,returnContext:{surface:"find"}});}catch{}
+      try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
+      return;
+    }
     const item=target?.closest?.("[data-explore-item]");if(item){state.selectedId=item.dataset.exploreItem;void paint();return}
     const aff=target?.closest?.("[data-find-affiliation]");
     if(aff&&state.lens==="tlm"){
