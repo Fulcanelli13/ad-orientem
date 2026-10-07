@@ -1,8 +1,8 @@
 {
   "schema": "ao-mass-v180-donor-parity-v1",
-  "version": "1.1.0",
-  "status": "IMPLEMENTATION_COMPLETE_AWAITING_CI",
-  "releaseBlocker": "MASS_DEFINITIVE_DONOR_PARITY",
+  "version": "1.2.0",
+  "status": "CERTIFIED",
+  "releaseBlocker": null,
   "donor": {
     "name": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.80_EUCHARISTIC_CARD_ARCHITECTURE.html",
     "sha256": "4e8dc4a0148590aee95d6fd36d8c915a1c1d35097c1d235e96a17791cb7d5543",
@@ -70,5 +70,17 @@
     "claiming current 48-step projection is the recovered historical v1.83 C01-C48 map"
   ],
   "reconciliationLedger": "data/presentation/mass-v180-v183-step-reconciliation.v1.json",
-  "releaseRule": "MASS_DEFINITIVE_DONOR_PARITY remains a release blocker until static, phone and visual CI certify this implementation. Historical v1.83 identity recovery is not required unless the product claims those historical IDs/boundaries."
+  "releaseRule": "Certified on the definitive native reader after static, real-touch phone, app-shell phone and donor-derived visual acceptance all passed on the same implementation line. Historical v1.83 card identity remains explicitly unclaimed.",
+  "certification": {
+    "certifiedHead": "f746e4711698600b3acb05241765cf3ec19b00a2",
+    "r17MassConvergenceRun": 37563706320,
+    "appConvergenceRun": 37563706129,
+    "visualAcceptanceRun": 37563706157,
+    "gates": {
+      "static": "PASS",
+      "massPhone": "PASS",
+      "appShellPhone": "PASS",
+      "visualPhoneAndWide": "PASS"
+    }
+  }
 }
