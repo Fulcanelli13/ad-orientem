@@ -19,6 +19,7 @@ import { createNativeScholaController } from "./reader-schola.js";
 import { iconKeysForReaderState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
+import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
@@ -316,6 +317,7 @@ export async function prepareNativeReaderPreview({
   const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
   const transientState=createReaderTransientController({events,prepared});
   const rubricState=createReaderRubricEventController({data:data?.rubricEvents??null});
+  const gestureMatrixState=createReaderGestureMatrixController({data:data?.gestureMatrix??null});
   const aspergesController=hasAsperges
     ? createAspergesReaderController({
         graph:loadedAsperges?.graph,
@@ -355,7 +357,7 @@ export async function prepareNativeReaderPreview({
     : null;
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
-    prepared,data,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,formState,
+    prepared,data,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
   });
@@ -744,6 +746,7 @@ export async function mountNativeReaderPreview({
     const cueNative=owned.cueNative;
     const transientProjection=activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null);
     const rubricProjection=activeCueId ? ready.rubricState.project(activeCueId) : ready.rubricState.project(null);
+    const gestureMatrixProjection=activeCueId ? ready.gestureMatrixState.project(activeCueId) : ready.gestureMatrixState.project(null);
     const transient=transientGuard.filter({
       gesture:owned.gesture,
       response:owned.response,
@@ -789,13 +792,15 @@ export async function mountNativeReaderPreview({
       schola:scholaProjection.ownership,
       priestAction:cueProjection?.priestAction
         ? cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED"
-        : rubricProjection?.primaryPriestAction
-          ? "R17_RUBRIC_EVENT_OVERLAY"
-          : "R18_CUE_WAITING_FAIL_CLOSED",
+        : gestureMatrixProjection?.primaryPriestAction
+          ? "GESTURE_MATRIX_SOT"
+          : rubricProjection?.primaryPriestAction
+            ? "R17_RUBRIC_EVENT_OVERLAY"
+            : "R18_CUE_WAITING_FAIL_CLOSED",
       sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
 
-    const priestAction=cueProjection?.priestAction??rubricProjection?.primaryPriestAction??null;
+    const priestAction=cueProjection?.priestAction??gestureMatrixProjection?.primaryPriestAction??rubricProjection?.primaryPriestAction??null;
     const iconKeys=iconKeysForReaderState({
       priestPosition,posture,gesture,response,priestVoice,
       priestAction,bell,schola:scholaProjection.schola
@@ -814,6 +819,8 @@ export async function mountNativeReaderPreview({
       sacredMinisterAdvisory:cueProjection?.sacredMinisterAdvisory??null,
       rubricEvents:rubricProjection?.events??Object.freeze([]),
       rubricStates:rubricProjection?.activeStates??Object.freeze({}),
+      gestureMatrixPriest:gestureMatrixProjection?.priest??Object.freeze([]),
+      gestureMatrixFaithful:gestureMatrixProjection?.faithful??Object.freeze([]),
       sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),
       ...iconKeys,
       nativeEventId:eventState?.canonicalEventId??null,
