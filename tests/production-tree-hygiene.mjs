@@ -18,13 +18,26 @@ for(const path of forbiddenPaths){
 
 const workflowDir=".github/workflows";
 const workflows=readdirSync(workflowDir).filter(name=>/\.ya?ml$/i.test(name));
+const reviewBranchMutationWorkflows=new Set(["directory-snapshot-promotion.yml"]);
 for(const name of workflows){
   const path=join(workflowDir,name);
   const source=readFileSync(path,"utf8");
-  assert.doesNotMatch(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
-    name+" regained contents: write");
-  assert.doesNotMatch(source,/git\s+push\b/i,
-    name+" can push repository mutations");
+
+  if(reviewBranchMutationWorkflows.has(name)){
+    assert.match(source,/branches:\s*\n\s*-\s*["']snapshot\/directory-\*["']/i,
+      name+" must remain scoped to snapshot/directory-* review branches");
+    assert.doesNotMatch(source,/branches:\s*[\s\S]{0,160}?[-"'\s]main\b/i,
+      name+" must never target main");
+    assert.match(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
+      name+" review-branch promotion requires explicit contents: write");
+    assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
+      name+" must push only back to the triggering review branch");
+  }else{
+    assert.doesNotMatch(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
+      name+" regained contents: write");
+    assert.doesNotMatch(source,/git\s+push\b/i,
+      name+" can push repository mutations");
+  }
   assert.doesNotMatch(source,/cp\s+legacy\/.*\s+index\.html/i,
     name+" can replace production index.html from legacy baseline");
   assert.doesNotMatch(source,/apply_emergency_stable|apply-r17-browser-entry/i,
@@ -66,4 +79,4 @@ assert.match(readme,/archive\/2026-10-04-pre-hygiene/,
 assert.doesNotMatch(readme,/retained under `field\/2026-10-04\/`/,
   "README still claims the field snapshot lives in production main");
 
-console.log("production tree hygiene: PASS — one native Mass renderer, no legacy/shadow execution path, no emergency runtime, no duplicate Mass entry.");
+console.log("production tree hygiene: PASS — one native Mass renderer, no legacy/shadow execution path, no emergency runtime, and repository mutation limited to the guarded Directory review-branch promotion workflow.");
