@@ -271,7 +271,7 @@ try{
   await waitForFxSettled();
   await assertHomeHidden("PRAY");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-back]").count(),1,"PRAY root lost its Home return control");
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),0,"PRAY root exposes duplicate Back + Close exits");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-close]").count(),1,"PRAY root lost the donor Close exit");
   const prayHub=await page.evaluate(()=>({
     owner:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
     cards:document.querySelectorAll("#aoPray435930 .aoP435930ModuleCard").length,

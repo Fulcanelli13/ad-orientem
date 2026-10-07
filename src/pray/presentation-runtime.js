@@ -249,9 +249,7 @@ function close({silent=false}={}){
   try{returnFocus?.focus?.()}catch{} returnFocus=null;
 }
 function head(title,sub=''){
- const trailing=view==='home'
-  ?'<span class="aoP435930HeadSpacer" aria-hidden="true"></span>'
-  :`<button type="button" class="aoP435930Close" data-p435930-close aria-label="${esc(L('Close','Fermer'))}">${assetIcon('ao-ui-close')}</button>`;
+ const trailing=`<button type="button" class="aoP435930Close" data-p435930-close aria-label="${esc(L('Close','Fermer'))}">${assetIcon('ao-ui-close')}</button>`;
  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>`;
 }
 function nav(title,items,active){return `<div class="aoP435930Seg" role="group" aria-label="${esc(title)}">${items.map(x=>`<button type="button" class="${x[0]===active?'active':''}" aria-pressed="${x[0]===active?'true':'false'}" data-p435930-seg="${esc(x[0])}">${esc(L(x[1],x[2]))}</button>`).join('')}</div>`}
