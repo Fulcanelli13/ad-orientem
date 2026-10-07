@@ -16,7 +16,12 @@ const home=readFileSync("src/home/enrichers.js","utf8");
 
 assert.equal(sot.schema,"NOVENA_CONTEXT_SOT_V1");
 assert.equal(sot.status,"ACTIVE_CONTEXT_LAYER");
+assert.equal(sot.version,"1.1.0");
+assert.equal(sot.research_status,"COMPLETE_16_TARGET_CONTEXT_AND_CROSS_DOMAIN_V1");
+assert.equal(sot.bridge_dependency,"NOVENA_CUSTOMS_GEOGRAPHY_BRIDGE_V1@1.1.0");
 assert.equal(sot.coverage.targets,16);
+assert.equal(sot.coverage.cross_domain_evidence,16);
+assert.equal(sot.coverage.cross_domain_unresolved,0);
 for(const key of ["history","guide","practice","current_indulgence","temporal","cross_domain_policy"]){
   assert.equal(sot.coverage[key],16,"context coverage lost: "+key);
 }
@@ -41,7 +46,10 @@ for(const row of sot.novenas){
   assert.equal(row.temporal.home_now_next,"LIVE_VIA_CALENDAR_INTELLIGENCE",row.id+" lost Now/Next integration");
   assert.equal(row.cross_domain.customs_policy,"EVIDENCE_BACKED_BRIDGE_ONLY",row.id+" weakened Customs evidence rule");
   assert.equal(row.cross_domain.geography_policy,"NO_ASSOCIATION_FROM_PROXIMITY",row.id+" weakened Geography association rule");
-  assert.ok(novenaContext(row.id),row.id+" missing runtime context projection");
+  const runtimeContext=novenaContext(row.id);
+  assert.ok(runtimeContext,row.id+" missing runtime context projection");
+  assert.equal(runtimeContext.crossDomain?.researchStatus,"COMPLETE_16_TARGET_CLASSIFICATION",row.id+" runtime cross-domain research is not complete");
+  assert.ok((runtimeContext.crossDomain?.links||[]).length>=1,row.id+" runtime lost its researched cross-domain links");
 }
 
 assert.match(runtime,/Practice & gestures/);
@@ -132,5 +140,7 @@ assert.match(exploreProjection,/projectNovenaContextItems/,"Explore no longer pr
 assert.match(exploreProjection,/Related novena/,"Explore shrine/custom records lost reverse Novena relationships");
 assert.match(explorePresentation,/data-explore-open-novena/,"Explore presentation lost Novena deep link");
 assert.match(exploreBrowser,/AO_PRAY_V435930\?\.open\?\.\("pray\.novenas"/,"Explore browser stopped routing related records into PRAY");
+assert.match(runtime,/data-n1-explore/,"Novena detail lost the reverse Explore link");
+assert.match(runtime,/AO_FIND_APP_V1\?\.open\?\.\(\{lens:'traditions',query:/,"Novena detail no longer prefilters Explore by its own identity");
 
 console.log("PASS Novena context v1: 16/16 history-guide-practice-indulgence-temporal and cross-domain coverage with bidirectional Explore links");
