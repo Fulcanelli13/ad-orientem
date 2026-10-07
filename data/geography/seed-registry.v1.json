@@ -1113,6 +1113,37 @@
       "source_ids": [
         "SHR-HOLYWELL-CONTACT"
       ]
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride-church",
+      "name": {
+        "official": "St Winefride's RC Church, Holywell",
+        "aliases": [
+          "Church of St Winefride, Holywell"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:GB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "15 Well Street",
+        "line2": null,
+        "postal_code": "CH8 7PL",
+        "city": "Holywell",
+        "region": "Flintshire",
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "formatted": "15 Well Street, Holywell, Flintshire CH8 7PL, United Kingdom"
+      },
+      "source_ids": [
+        "SHR-HOLYWELL-PARISH"
+      ]
     }
   ],
   "directoryPlaceLinks": []
