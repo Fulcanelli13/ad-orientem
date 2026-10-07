@@ -155,8 +155,8 @@ function skillDetailMarkup(skill,state,sources){
 
 function homeMarkup(state){
   const cards=[
-    ["answer","ao-refined-help",L(state,"Answer a question","Répondre à une question"),L(state,"Concise Catholic answers to common objections and questions.","Réponses catholiques concises aux questions et objections courantes.")],
-    ["help","ao-rich-guides",L(state,"Help someone","Aider quelqu’un"),L(state,"Pastoral, family and practical situations where the next step matters as much as the explanation.","Situations pastorales, familiales et pratiques où la prochaine étape compte autant que l’explication.")],
+    ["answer","ao-ui-search",L(state,"Answer a question","Répondre à une question"),L(state,"Concise Catholic answers to common objections and questions.","Réponses catholiques concises aux questions et objections courantes.")],
+    ["help","ao-refined-help",L(state,"Help someone","Aider quelqu’un"),L(state,"Pastoral, family and practical situations where the next step matters as much as the explanation.","Situations pastorales, familiales et pratiques où la prochaine étape compte autant que l’explication.")],
     ["practice","ao-refined-study",L(state,"Practise","S’exercer"),L(state,"Draft a real answer, then compare it with the sourced model and apostolic skills.","Rédigez une réponse réelle, puis comparez-la au modèle sourcé et aux compétences apostoliques.")],
   ];
   return `<section class="aoApostolateHero"><div class="aoApostolateEyebrow">APOSTOLATE</div><h1>${esc(L(state,"Help with clarity and charity","Aider avec clarté et charité"))}</h1><p>${esc(L(state,"Answer honestly, help the person in front of you, and know when to hand the question to Formation, Prayer, Explore or a priest.","Répondez honnêtement, aidez la personne devant vous et sachez quand orienter vers la Formation, la Prière, Explorer ou un prêtre."))}</p></section><div class="aoApostolateHomeGrid">${cards.map(([id,asset,title,desc])=>`<button type="button" class="aoApostolateHomeCard" data-ao-ap-mode="${id}">${icon(asset)}<span><strong>${esc(title)}</strong><small>${esc(desc)}</small></span>${icon("ao-ui-next")}</button>`).join("")}</div>`;
