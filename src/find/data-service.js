@@ -1,5 +1,6 @@
 import { auditVenue } from "./contracts.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
+import { loadStaticDirectoryResearch } from "./static-directory-research.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 
 function safeArray(value){return Array.isArray(value)?value:[]}
@@ -85,8 +86,21 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     merged.schedules.push(...safeArray(schedules?.records));
     merged.sources.push(...safeArray(sources?.records));
   }
+  const staticResearch=await loadStaticDirectoryResearch({fetchImpl});
+  merged.venues.push(...safeArray(staticResearch.venues));
+  merged.ministries.push(...safeArray(staticResearch.ministries));
+  merged.schedules.push(...safeArray(staticResearch.schedules));
+  merged.sources.push(...safeArray(staticResearch.sources));
+  loaded.push(...safeArray(staticResearch.loadedBundles));
+  unavailable.push(...safeArray(staticResearch.unavailableBundles));
+
   const joined=joinDirectoryRecords({...merged,communityProfiles});
-  const records=publishableDirectoryRecords(joined);
+  const seen=new Set();
+  const records=publishableDirectoryRecords(joined).filter(record=>{
+    const id=record?.venue?.venue_id;
+    if(!id||seen.has(id))return false;
+    seen.add(id);return true;
+  });
   return Object.freeze({
     records,
     skippedInvalidRecords:joined.length-records.length,
@@ -94,6 +108,7 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     communityProfiles,
     loadedProviders:loaded,
     unavailableProviders:unavailable,
+    staticResearchIssues:safeArray(staticResearch.issues),
     complete:unavailable.length===0,
   });
 }
