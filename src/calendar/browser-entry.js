@@ -62,6 +62,71 @@ function monthCellData(id){
   const aria=[displayDate(id),name,rank,colour].filter(Boolean).join(" · ");
   return {r,major,sunday,tier,name,accent,rank,colour,aria,ready:weekCache.has(id)};
 }
+
+function monthDateIds(monthId){
+  return monthGridIds(monthId).filter(id=>id.slice(0,7)===String(monthId||""));
+}
+function sourceHints(r){
+  const p=properOf(r),d=r?.day?.main??{};
+  return [
+    p?.calendarKind,p?.calendarType,p?.category,p?.kind,p?.type,p?.source,p?.sourceType,p?.file,p?.path,
+    d?.calendarKind,d?.calendarType,d?.category,d?.kind,d?.type,d?.source,d?.sourceType,d?.file,d?.path,
+  ].map(x=>String(x??"").toLowerCase()).filter(Boolean).join(" ");
+}
+function observedCycle(r,id){
+  if(!r||r.status==="failed"||!r.day)return "unknown";
+  const major=majorForDate(id);
+  if(major?.kind==="sanctorale")return "sanctorale";
+  if(major?.kind==="temporale"||major?.kind==="sunday")return "temporale";
+  const hints=sourceHints(r);
+  if(/\b(?:sanct|sanctor|fixed[-_ ]?feast|saint)\b/.test(hints))return "sanctorale";
+  if(/\b(?:temp|tempor|season|feria|sunday)\b/.test(hints))return "temporale";
+  if(dateOf(id).getDay()===0)return "temporale";
+  const title=String(titleOf(r)||"").toLowerCase();
+  const temporal=/\b(?:feria|sunday|dimanche|f[eé]rie|ember|quatre[- ]temps|rogation|ash wednesday|mercredi des cendres|septuagesima|septuag[eé]sime|sexagesima|sexag[eé]sime|quinquagesima|quinquag[eé]sime|lent|car[eê]me|passion sunday|dimanche de la passion|palm sunday|rameaux|holy monday|lundi saint|holy tuesday|mardi saint|holy wednesday|mercredi saint|holy thursday|jeudi saint|good friday|vendredi saint|holy saturday|samedi saint|easter|p[aâ]ques|ascension|pentecost|pentec[oô]te|trinity|trinit[eé]|corpus christi|f[eê]te[- ]dieu|sacred heart|sacr[eé][ -]c[oœ]ur|christ the king|christ[- ]roi|advent|avent|nativity of our lord|nativit[eé] de notre[- ]seigneur|epiphany of our lord|[eé]piphanie de notre[- ]seigneur|circumcision of our lord|circoncision de notre[- ]seigneur)\b/;
+  if(temporal.test(title))return "temporale";
+  const generic=/^(?:liturgical day|jour liturgique|calendar unavailable|calendrier indisponible)$/;
+  return generic.test(title.trim())?"unknown":"sanctorale";
+}
+function monthEntry(id){
+  const raw=weekCache.get(id),r=raw?.status!=="failed"&&raw?.day?raw:null;
+  if(!r)return null;
+  const title=titleOf(r),rank=rankOf(r),colour=colourOf(r),cycle=observedCycle(r,id),tier=rankTier(r,id),major=majorForDate(id),sunday=dateOf(id).getDay()===0;
+  return {date:id,r,title,rank,colour,cycle,tier,major,sunday,commemorations:commemorations(r),accent:liturgicalAccent(r)};
+}
+function monthIndexEntries(monthId,view){
+  const entries=monthDateIds(monthId).map(monthEntry).filter(Boolean);
+  if(view==="major")return entries.filter(x=>x.sunday||x.tier<=2||Boolean(x.major));
+  if(view==="temporale")return entries.filter(x=>x.cycle==="temporale");
+  if(view==="sanctorale")return entries.filter(x=>x.cycle==="sanctorale");
+  return entries;
+}
+function monthIndexTabs(){
+  const tabs=[
+    ["calendar",L("Calendar","Calendrier")],
+    ["major",L("Major","Jours majeurs")],
+    ["temporale",L("Temporale","Temporal")],
+    ["sanctorale",L("Sanctorale","Sanctoral")],
+  ];
+  return `<nav class="aoCalMonthTabs" aria-label="${esc(L("Month views","Vues du mois"))}">${tabs.map(([id,label])=>`<button type="button" data-cal-month-view="${id}" class="${calendarMonthView===id?"active":""}" ${calendarMonthView===id?'aria-current="page"':""}>${esc(label)}</button>`).join("")}</nav>`;
+}
+function monthIndexList(monthId,selected,view){
+  const rows=monthIndexEntries(monthId,view);
+  const label=view==="major"?L("Major days","Jours majeurs"):view==="temporale"?L("Temporale","Temporal"):L("Sanctorale","Sanctoral");
+  const explanation=view==="major"
+    ?L("Sundays, I–II class observances and other principal days in this month.","Dimanches, célébrations de I–II classe et autres jours principaux de ce mois.")
+    :view==="temporale"
+      ?L("Observed days belonging to the temporal cycle and movable season.","Jours observés appartenant au cycle temporal et aux temps mobiles.")
+      :L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.");
+  return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
+    <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
+    ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<button type="button" data-cal-month-index-date="${x.date}" class="${x.date===selected?"selected":""}" style="--month-accent:${esc(x.accent)}">
+      <time>${esc(displayDate(x.date))}</time>
+      <span class="aoCalMonthIndexText"><strong>${esc(x.title)}</strong><small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small></span>
+      <i aria-hidden="true"></i>
+    </button>`).join("")}</div>`:`<div class="aoCalMonthEmpty">${esc(L("No resolved observances in this category for the month.","Aucune célébration résolue dans cette catégorie pour ce mois."))}</div>`}
+  </section>`;
+}
 function updateMonthStatusDom(monthId){
   if(calendarView!=="picker"||pickerMonthId!==monthId)return;
   const el=root()?.querySelector?.("[data-cal-month-status]");if(!el)return;
