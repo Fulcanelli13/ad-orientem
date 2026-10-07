@@ -201,6 +201,166 @@
       "source_ids": [
         "SHR-PARAY-CONTACT"
       ]
+    },
+    {
+      "place_id": "place:FR:chartres-notre-dame",
+      "name": {
+        "official": "Cathédrale Notre-Dame de Chartres",
+        "aliases": [
+          "Chartres Cathedral",
+          "Notre-Dame de Chartres"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "16 Cloître Notre-Dame",
+        "line2": null,
+        "postal_code": "28000",
+        "city": "Chartres",
+        "region": "Centre-Val de Loire",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "16 Cloître Notre-Dame, 28000 Chartres, France"
+      },
+      "source_ids": [
+        "SHR-CHARTRES-CATHEDRAL"
+      ]
+    },
+    {
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "name": {
+        "official": "Sanctuaire de Sainte-Anne-d'Auray",
+        "aliases": [
+          "Basilique Sainte-Anne-d'Auray",
+          "Sainte-Anne-d'Auray Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "9 rue de Vannes",
+        "line2": null,
+        "postal_code": "56400",
+        "city": "Sainte-Anne-d'Auray",
+        "region": "Bretagne",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "9 rue de Vannes, 56400 Sainte-Anne-d'Auray, France"
+      },
+      "source_ids": [
+        "SHR-SAINTE-ANNE-IDENTITY"
+      ]
+    },
+    {
+      "place_id": "place:IE:knock-shrine",
+      "name": {
+        "official": "Knock Shrine",
+        "aliases": [
+          "Sanctuary of Our Lady of Knock",
+          "Ireland's International Eucharistic and Marian Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Knock Shrine",
+        "line2": null,
+        "postal_code": "F12 Y226",
+        "city": "Knock",
+        "region": "County Mayo",
+        "country_code": "IE",
+        "country": "Ireland",
+        "formatted": "Knock, Claremorris, Co. Mayo, F12 Y226, Ireland"
+      },
+      "source_ids": [
+        "SHR-KNOCK-IDENTITY"
+      ]
+    },
+    {
+      "place_id": "place:IE:lough-derg-station-island",
+      "name": {
+        "official": "Lough Derg — Sanctuary of Saint Patrick",
+        "aliases": [
+          "St Patrick's Purgatory",
+          "Station Island, Lough Derg"
+        ]
+      },
+      "place_type": "pilgrimage_destination",
+      "geo_area_ids": [
+        "geo:country:IE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Sanctuary of Saint Patrick, Station Island",
+        "line2": "Lough Derg",
+        "postal_code": "F94 PC60",
+        "city": "Pettigo",
+        "region": "County Donegal",
+        "country_code": "IE",
+        "country": "Ireland",
+        "formatted": "Lough Derg, Sanctuary of Saint Patrick, Station Island, Pettigo, County Donegal, F94 PC60, Ireland"
+      },
+      "source_ids": [
+        "SHR-LOUGH-DERG-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "name": {
+        "official": "Centre Père Laval",
+        "aliases": [
+          "Caveau du Bienheureux Père Laval",
+          "Père Laval Shrine, Sainte-Croix"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:MU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Centre Père Laval, Sainte-Croix",
+        "line2": null,
+        "postal_code": null,
+        "city": "Port-Louis",
+        "region": null,
+        "country_code": "MU",
+        "country": "Mauritius",
+        "formatted": "Centre Père Laval, Sainte-Croix, Port-Louis, Mauritius"
+      },
+      "source_ids": [
+        "SHR-PERE-LAVAL-CENTRE"
+      ]
     }
   ],
   "directoryPlaceLinks": []
