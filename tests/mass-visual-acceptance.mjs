@@ -177,13 +177,15 @@ try{
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"true","Schola hide control did not collapse the dock");
-  const scholaStack=await page.evaluate(()=>{
-    const dock=document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock");
-    const nav=document.querySelector("#ao-r17-native-reader-preview .ao-reader-nav");
-    return {dock:Number.parseInt(getComputedStyle(dock).zIndex,10),nav:Number.parseInt(getComputedStyle(nav).zIndex,10)};
+  const scholaHitGeometry=await page.evaluate(()=>{
+    const toggle=document.querySelector("#ao-r17-native-reader-preview [data-schola-toggle]")?.getBoundingClientRect();
+    const next=document.querySelector("#ao-r17-native-reader-preview [data-reader-nav='next']")?.getBoundingClientRect();
+    const overlap=toggle&&next ? !(next.right<=toggle.left||next.left>=toggle.right||next.bottom<=toggle.top||next.top>=toggle.bottom) : null;
+    return {toggle:toggle?{left:toggle.left,right:toggle.right,top:toggle.top,bottom:toggle.bottom}:null,
+      next:next?{left:next.left,right:next.right,top:next.top,bottom:next.bottom}:null,overlap};
   });
-  assert.ok(scholaStack.dock>scholaStack.nav,
-    "collapsed Schola controls must remain above edge navigation: "+JSON.stringify(scholaStack));
+  assert.equal(scholaHitGeometry.overlap,false,
+    "collapsed Schola SHOW control overlaps the Next edge target: "+JSON.stringify(scholaHitGeometry));
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"false","Schola show control did not restore the dock");
   const scholaBefore=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
