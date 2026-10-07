@@ -85,7 +85,7 @@ assert.match(christKingYear,/Pray the Rosary/);
 const holyThursdayEvents=v384Events(traditional.holyThursday,{fr:false});
 assert.deepEqual(holyThursdayEvents[0]?.actions?.map(x=>x[0]),["pray.adoration","today.calendar"],"Holy Thursday donor actions were simplified");
 const holySoulsEvents=v384Events("2026-11-02",{fr:false});
-assert.deepEqual(holySoulsEvents[0]?.actions?.map(x=>x[0]),["pray.penitential_psalms","mass.intentions"],"Holy Souls donor actions were simplified");
+assert.deepEqual(holySoulsEvents[0]?.actions?.map(x=>x[0]),["pray.de_profundis","pray.eternal_rest"],"Holy Souls must open the actual prayers for the dead");
 const transferredEmber=v384Events("2026-09-24",{fr:false,properTitle:"Ember Thursday"});
 assert.equal(transferredEmber[0]?.key,"ember-calendar","resolved-calendar Ember fallback disappeared");
 assert.deepEqual(transferredEmber[0]?.actions?.map(x=>x[0]),["today.calendar","learn.discipline"]);
