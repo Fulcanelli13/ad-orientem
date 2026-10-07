@@ -107,6 +107,25 @@ export const CALENDAR_SEMANTIC_REGISTRY=Object.freeze({
     tags:Object.freeze(["LOCAL_LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
     sourceIds:Object.freeze(["SHR-EINSIEDELN-ENGELWEIHE"]),
   }),
+  "observance.our_lady_of_champion":Object.freeze({
+    key:"observance.our_lady_of_champion",
+    title:Object.freeze({en:"Our Lady of Champion",fr:"Notre-Dame de Champion"}),
+    schedule:Object.freeze({type:"FIXED",month:10,day:9}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:67,
+    tags:Object.freeze(["LOCAL_SHRINE_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:Object.freeze(["PIL-CHAMPION-SOLEMNITY"]),
+  }),
+  "feast.our_lady_of_guadalupe":Object.freeze({
+    key:"feast.our_lady_of_guadalupe",
+    title:Object.freeze({en:"Our Lady of Guadalupe",fr:"Notre-Dame de Guadalupe"}),
+    schedule:Object.freeze({type:"FIXED",month:12,day:12}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:70,
+    sourceIds:Object.freeze(["PIL-GUADALUPE-SOLEMNITY"]),
+  }),
 });
 
 function semanticDateForDefinition(def,year){
