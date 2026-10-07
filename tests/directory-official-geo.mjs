@@ -44,6 +44,17 @@ const data=selectOfficialGeoFromHtml(dataHtml,{pageUrl:"https://official.example
 assert.ok(data.geo);
 assert.equal(data.geo.upstream_carrier,"DATA_ATTRIBUTES");
 
+const conflictingOfficialMap=`
+<a href="https://www.google.com/maps/place/Via+del+Banco+di+Santo+Spirito,+5,+00186+Roma+RM,+Italy/@41.9008642,12.4644233,813m/data=!3m2!1e3!4b1">Map & Directions</a>`;
+const conflict=selectOfficialGeoFromHtml(conflictingOfficialMap,{
+  pageUrl:"https://institute-christ-king.org/international-home",
+  expectedText:"Chiesa di San Sebastiano Piazza Ilio Barontini Livorno",
+});
+assert.equal(conflict.geo,null,"conflicting official map link was accepted");
+assert.equal(conflict.ambiguous,false);
+assert.equal(conflict.rejectedCandidates.length,1);
+assert.equal(conflict.rejectedCandidates[0].rejection,"MAP_PLACE_TEXT_CONFLICT");
+
 const ambiguousHtml=`
 <a href="https://www.openstreetmap.org/?mlat=48.8566&mlon=2.3522">First map</a>
 <a href="https://www.openstreetmap.org/?mlat=43.2965&mlon=5.3698">Second map</a>`;
@@ -51,6 +62,16 @@ const ambiguous=selectOfficialGeoFromHtml(ambiguousHtml,{pageUrl:"https://offici
 assert.equal(ambiguous.geo,null);
 assert.equal(ambiguous.ambiguous,true);
 assert.equal(extractOfficialGeoCandidates(ambiguousHtml,{pageUrl:"https://official.example/multi"}).length,2);
+
+const badInternational=`
+<h2>Livorno, Italy</h2>
+<h4>Chiesa di San Sebastiano</h4>
+<p>Piazza Ilio Barontini</p><p>Livorno</p>
+<a href="https://www.google.com/maps/place/Via+del+Banco+di+Santo+Spirito,+5,+00186+Roma+RM,+Italy/@41.9008642,12.4644233,813m/data=!3m2!1e3!4b1">Map & Directions</a>`;
+const parsedBadInternational=(await import("../tools/directory/import-icksp.mjs")).parseIckspInternationalHtml(badInternational);
+assert.equal(parsedBadInternational.length,1);
+assert.equal(parsedBadInternational[0].officialGeo,null,"ICKSP international parser accepted wrong-city map link");
+assert.equal(parsedBadInternational[0].officialGeoRejected,true);
 
 const ickspHtml=`
 <h6>St. Josaphat Oratory</h6>
