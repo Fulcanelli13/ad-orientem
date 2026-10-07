@@ -21,9 +21,8 @@ assert.match(latinRuntimeSource,/ao-ui-close/,"Latin Close control is not canoni
 assert.doesNotMatch(latinRuntimeSource,/>←<\/button>|>×<\/button>/,"Latin shell regained raw Unicode navigation controls");
 assert.match(latinRuntimeSource,/var\(--ao-z-surface,2147481800\)/,"Latin child root is not on the shared elevation vocabulary");
 assert.match(latinRuntimeSource,/lessonPhase:"learn"/,"Latin lessons do not default to the Learn phase");
-for(const phase of ["learn","read","practice","review"]){
-  assert.match(latinRuntimeSource,new RegExp('data-l2-phase="'+phase+'"'),"Latin lesson phase missing: "+phase);
-}
+assert.match(latinRuntimeSource,/\["learn","read","practice","review"\]/,"Latin lesson phase registry changed");
+assert.match(latinRuntimeSource,/data-l2-phase="\$\{id\}"/,"Latin phase controls are not generated from the canonical phase registry");
 assert.match(latinRuntimeSource,/if\(phase==="learn"\)/);
 assert.match(latinRuntimeSource,/else if\(phase==="read"\)/);
 assert.match(latinRuntimeSource,/else if\(phase==="practice"\)/);
