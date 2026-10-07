@@ -675,6 +675,18 @@ function declutterRosaryDonor(r){
  const info=rosaryLiveInfo(),setHeading=rosarySetHeading(info?.set);
  const headerTitle=r.querySelector('.lab-view-head h1');
  if(headerTitle&&setHeading)headerTitle.textContent=setHeading;
+ const mysteryKicker=r.querySelector('.lab-contemplation .kicker,.r23-contemplation .kicker');
+ if(mysteryKicker){mysteryKicker.hidden=true;mysteryKicker.setAttribute('aria-hidden','true');mysteryKicker.dataset.aoRosaryRedundant='true';}
+ const prayerCount=r.querySelector('.lab-prayer-count');
+ if(prayerCount){prayerCount.hidden=true;prayerCount.setAttribute('aria-hidden','true');prayerCount.dataset.aoRosaryRedundant='true';}
+ const prayerRubric=r.querySelector('.lab-prayer-sheet>.rubric');
+ if(prayerRubric&&info?.step?.phase!=='opening'){
+   prayerRubric.hidden=true;prayerRubric.setAttribute('aria-hidden','true');prayerRubric.dataset.aoRosaryRedundant='true';
+ }
+ const beadStage=r.querySelector('.lab-bead-stage');
+ if(beadStage&&info?.step?.kind==='mystery'){
+   beadStage.hidden=true;beadStage.setAttribute('aria-hidden','true');beadStage.dataset.aoRosaryDeferred='true';
+ }
  r.querySelectorAll('.lab-option-bar .lab-step-count').forEach(node=>{
    node.hidden=true;node.setAttribute('aria-hidden','true');node.dataset.aoRosaryRedundant='true';
  });
