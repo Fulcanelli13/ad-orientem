@@ -53,6 +53,7 @@ export function createAppHostAdapter(win = globalThis) {
       try { win?.AO_PRAY_APP_V1?.close?.(); } catch {}
       try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
+      try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const modular = win?.AO_HOME_APP_V1;
       if (typeof modular?.open === "function") {
         const opened = modular.open();
@@ -65,7 +66,7 @@ export function createAppHostAdapter(win = globalThis) {
     },
 
     openDomain(domain) {
-      if (!new Set(["mass", "pray", "learn", "find"]).has(domain)) return false;
+      if (!new Set(["mass", "pray", "learn", "find", "apostolate"]).has(domain)) return false;
       if (domain === "mass") {
         const mass = win?.AO_R17_BROWSER_ENTRY;
         if (typeof mass?.hasResumable === "function" && mass.hasResumable()) {
@@ -87,6 +88,11 @@ export function createAppHostAdapter(win = globalThis) {
       }
       if (domain === "find") {
         const modular = win?.AO_FIND_APP_V1;
+        if (typeof modular?.open !== "function") return false;
+        return Promise.resolve(modular.open()).then((opened) => opened !== false);
+      }
+      if (domain === "apostolate") {
+        const modular = win?.AO_APOSTOLATE_APP_V1;
         if (typeof modular?.open !== "function") return false;
         return Promise.resolve(modular.open()).then((opened) => opened !== false);
       }
@@ -123,6 +129,7 @@ export function createAppHostAdapter(win = globalThis) {
       // Settings overlay so only one non-Mass state owns the visible surface.
       try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
+      try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const api = settingsApi(win);
       if (typeof api?.open !== "function") return false;
       return api.open() !== false;
