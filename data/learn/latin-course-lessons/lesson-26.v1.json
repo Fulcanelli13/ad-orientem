@@ -1,0 +1,647 @@
+{
+  "version": "latin-course-lesson-26-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 26,
+  "stage": {
+    "number": 6,
+    "title": "Canon"
+  },
+  "title": "Scimus quia… / dicit esse…",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "passage",
+  "grammarFocus": "Infinitives and indirect statement",
+  "readingOutcome": "Recognize infinitive constructions and reported thought/speech.",
+  "authoringPolicy": {
+    "method": "concept → authentic example → recognition → manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only frozen Lesson 26 vocabulary is introduced; proper names and later lemmas remain explicit support.",
+    "authenticTextPolicy": "Indirect statement is anchored in Vulgate speech/reporting clauses and linked back to Canon reading habits.",
+    "copyrightPolicy": "Original pedagogical synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "scio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "know",
+          "fr": "savoir"
+        },
+        "frozenLesson": 26
+      },
+      {
+        "lemma": "cognosco",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "know / recognize",
+          "fr": "connaître / reconnaître"
+        },
+        "frozenLesson": 26
+      },
+      {
+        "lemma": "sentio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "perceive / think / feel",
+          "fr": "percevoir / penser / sentir"
+        },
+        "frozenLesson": 26
+      },
+      {
+        "lemma": "scribo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "write",
+          "fr": "écrire"
+        },
+        "frozenLesson": 26
+      }
+    ],
+    "recycled": [
+      "dico",
+      "homo",
+      "sum",
+      "filius",
+      "ego",
+      "Deus",
+      "qui/quae/quod",
+      "et",
+      "verbum",
+      "vita",
+      "enim",
+      "propter",
+      "nos",
+      "credo",
+      "tu",
+      "vos",
+      "in",
+      "aeternus",
+      "habeo"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesum"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christum"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "minister",
+      "forms": [
+        "ministrum"
+      ],
+      "gloss": {
+        "en": "minister / servant",
+        "fr": "ministre / serviteur"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "circumcisio",
+      "forms": [
+        "circumcisionis"
+      ],
+      "gloss": {
+        "en": "circumcision",
+        "fr": "circoncision"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "puto",
+      "forms": [
+        "putatis"
+      ],
+      "gloss": {
+        "en": "think / suppose",
+        "fr": "penser / supposer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "esse",
+      "forms": [
+        "esse",
+        "fuisse"
+      ],
+      "gloss": {
+        "en": "to be / to have been",
+        "fr": "être / avoir été"
+      },
+      "trackedLesson": null,
+      "status": "grammar-support"
+    }
+  ],
+  "sources": [
+    {
+      "id": "vulg-mt16-13-l26",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 16:13",
+      "sourceLatin": "Quem dicunt homines esse Filium hominis?",
+      "provenanceNote": "Accusative + infinitive after a verb of saying."
+    },
+    {
+      "id": "vulg-rom15-8-l26",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Romani 15:8",
+      "sourceLatin": "Dico enim Christum Jesum ministrum fuisse circumcisionis propter veritatem Dei.",
+      "provenanceNote": "Accusative subject plus perfect infinitive fuisse in indirect statement."
+    },
+    {
+      "id": "vulg-jn6-69-l26",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 6:69",
+      "sourceLatin": "Et nos credidimus, et cognovimus quia tu es Christus Filius Dei.",
+      "provenanceNote": "quia-clause gives an ecclesiastical alternative to classical accusative-infinitive reporting."
+    },
+    {
+      "id": "vulg-jn5-39-l26",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 5:39",
+      "sourceLatin": "Scrutamini Scripturas, quia vos putatis in ipsis vitam aeternam habere.",
+      "provenanceNote": "habere is infinitive dependent on putatis, inside a quia explanatory clause."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; accusative subjects of infinitives are distinguished from ordinary direct objects.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "infinitiveFramework": {
+    "patterns": [
+      {
+        "type": "complementary infinitive",
+        "rule": "Infinitive completes another verb's meaning."
+      },
+      {
+        "type": "accusative + infinitive",
+        "rule": "After saying/thinking/perceiving, an accusative can function as the subject of the infinitive."
+      },
+      {
+        "type": "quia + finite clause",
+        "rule": "Ecclesiastical/Vulgate Latin also frequently reports content with quia + finite verb."
+      }
+    ],
+    "timeRelations": [
+      "present infinitive = generally simultaneous",
+      "perfect infinitive = generally prior"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l26-b1",
+      "type": "concept",
+      "title": "An infinitive can carry its own subject",
+      "learnerCopy": {
+        "en": "In reported speech or thought, Latin can place the reported subject in the accusative and the reported verb in the infinitive. Do not automatically call every accusative a direct object.",
+        "fr": "Dans le discours ou la pensée rapportés, le latin peut mettre le sujet rapporté à l'accusatif et le verbe rapporté à l'infinitif. Tout accusatif n'est donc pas automatiquement un complément d'objet."
+      }
+    },
+    {
+      "id": "l26-b2",
+      "type": "authentic-example",
+      "title": "Quem dicunt homines esse…",
+      "sourceId": "vulg-mt16-13-l26",
+      "learnerCopy": {
+        "en": "The question reports what people say someone is. esse carries a predicate; the reported subject is understood through the accusative relative form.",
+        "fr": "La question rapporte ce que les hommes disent qu'est quelqu'un. esse porte le prédicat ; le sujet rapporté se lit à travers la forme relative à l'accusatif."
+      }
+    },
+    {
+      "id": "l26-b3",
+      "type": "authentic-example",
+      "title": "Christum Jesum… fuisse",
+      "sourceId": "vulg-rom15-8-l26",
+      "learnerCopy": {
+        "en": "Christum Jesum is accusative because it is the subject of fuisse inside the reported statement. The perfect infinitive places the reported state before the reporting verb.",
+        "fr": "Christum Jesum est à l'accusatif parce qu'il est sujet de fuisse dans l'énoncé rapporté. L'infinitif parfait situe l'état rapporté avant le verbe introducteur."
+      }
+    },
+    {
+      "id": "l26-b4",
+      "type": "contrast",
+      "title": "quia also reports content",
+      "sourceId": "vulg-jn6-69-l26",
+      "learnerCopy": {
+        "en": "Ecclesiastical and biblical Latin often uses quia + a finite clause where more classical prose might prefer accusative + infinitive. Learn both as reading patterns.",
+        "fr": "Le latin ecclésiastique et biblique emploie souvent quia + verbe conjugué là où une prose plus classique préférerait l'accusatif + infinitif. Il faut savoir lire les deux."
+      }
+    },
+    {
+      "id": "l26-b5",
+      "type": "retrieval",
+      "title": "Find the reporting verb first",
+      "learnerCopy": {
+        "en": "When a sentence contains dico, scio, cognosco, sentio or similar verbs, mark the reporting verb, then ask whether the reported content is an infinitive construction or a finite quia-clause.",
+        "fr": "Quand une phrase contient dico, scio, cognosco, sentio ou un verbe analogue, repérez d'abord le verbe introducteur, puis demandez si le contenu rapporté est un infinitif ou une proposition en quia."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l26-p1",
+      "sourceId": "vulg-mt16-13-l26",
+      "sourceLatin": "Quem dicunt homines esse Filium hominis?",
+      "instructionalDisplay": "Quem dicunt homines esse Filium hominis?",
+      "translation": {
+        "en": "Whom do men say the Son of man is?",
+        "fr": "Qui les hommes disent-ils qu'est le Fils de l'homme ?"
+      },
+      "targetLemmas": [
+        "qui/quae/quod",
+        "dico",
+        "homo",
+        "filius"
+      ],
+      "supportLemmas": [
+        "esse"
+      ]
+    },
+    {
+      "id": "l26-p2",
+      "sourceId": "vulg-rom15-8-l26",
+      "sourceLatin": "Dico enim Christum Jesum ministrum fuisse circumcisionis propter veritatem Dei.",
+      "instructionalDisplay": "Dico enim Christum Jesum ministrum fuisse circumcisionis propter veritatem Dei.",
+      "translation": {
+        "en": "For I say that Christ Jesus was minister of the circumcision for the truth of God.",
+        "fr": "Je dis en effet que le Christ Jésus a été ministre de la circoncision pour la vérité de Dieu."
+      },
+      "targetLemmas": [
+        "dico",
+        "enim",
+        "propter",
+        "Deus"
+      ],
+      "supportLemmas": [
+        "Christus",
+        "Iesus",
+        "minister",
+        "circumcisio",
+        "esse"
+      ]
+    },
+    {
+      "id": "l26-p3",
+      "sourceId": "vulg-jn6-69-l26",
+      "sourceLatin": "Et nos credidimus, et cognovimus quia tu es Christus Filius Dei.",
+      "instructionalDisplay": "Et nos credidimus, et cognovimus quia tu es Christus Filius Dei.",
+      "translation": {
+        "en": "And we have believed and have known that Thou art the Christ, the Son of God.",
+        "fr": "Et nous avons cru et nous avons connu que vous êtes le Christ, le Fils de Dieu."
+      },
+      "targetLemmas": [
+        "et",
+        "nos",
+        "credo",
+        "cognosco",
+        "tu",
+        "sum",
+        "filius",
+        "Deus"
+      ],
+      "supportLemmas": [
+        "Christus"
+      ]
+    },
+    {
+      "id": "l26-p4",
+      "sourceId": "vulg-jn5-39-l26",
+      "sourceLatin": "Scrutamini Scripturas, quia vos putatis in ipsis vitam aeternam habere.",
+      "instructionalDisplay": "Scrutamini Scripturas, quia vos putatis in ipsis vitam aeternam habere.",
+      "translation": {
+        "en": "Search the Scriptures, for you think in them to have life everlasting.",
+        "fr": "Scrutez les Écritures, car vous pensez avoir en elles la vie éternelle."
+      },
+      "targetLemmas": [
+        "vos",
+        "in",
+        "vita",
+        "aeternus",
+        "habeo"
+      ],
+      "supportLemmas": [
+        "puto"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l26-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "In an accusative + infinitive construction, what can the accusative be?",
+      "stimulus": "Christum ... fuisse",
+      "options": [
+        "the subject of the infinitive",
+        "always only a direct object",
+        "a vocative",
+        "an ablative absolute"
+      ],
+      "expectedAnswer": "the subject of the infinitive",
+      "acceptedVariants": [
+        "the subject of the infinitive"
+      ],
+      "hint": "Reported speech changes the subject's case.",
+      "explanation": "The reported subject is accusative.",
+      "difficulty": 1,
+      "sourceId": "vulg-rom15-8-l26",
+      "skills": [
+        "syntax:indirect-statement"
+      ]
+    },
+    {
+      "id": "l26-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does a perfect infinitive such as fuisse normally signal relative to the reporting verb?",
+      "stimulus": null,
+      "options": [
+        "prior time",
+        "future time only",
+        "simultaneous time only",
+        "a command"
+      ],
+      "expectedAnswer": "prior time",
+      "acceptedVariants": [
+        "prior time"
+      ],
+      "hint": "Perfect infinitive points backward.",
+      "explanation": "It normally reports an earlier state/action.",
+      "difficulty": 2,
+      "sourceId": "vulg-rom15-8-l26",
+      "skills": [
+        "infinitive:time"
+      ]
+    },
+    {
+      "id": "l26-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which pattern also reports content in ecclesiastical/Vulgate Latin?",
+      "stimulus": "cognovimus quia...",
+      "options": [
+        "quia + finite clause",
+        "vocative + imperative",
+        "ablative absolute only",
+        "gerundive only"
+      ],
+      "expectedAnswer": "quia + finite clause",
+      "acceptedVariants": [
+        "quia + finite clause"
+      ],
+      "hint": "See John 6:69.",
+      "explanation": "quia + finite verb is common reporting syntax.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn6-69-l26",
+      "skills": [
+        "syntax:quia"
+      ]
+    },
+    {
+      "id": "l26-e4",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 26 verb to meaning.",
+      "stimulus": [
+        "scio",
+        "cognosco",
+        "sentio",
+        "scribo"
+      ],
+      "expectedAnswer": {
+        "scio": "know",
+        "cognosco": "know / recognize",
+        "sentio": "perceive / think / feel",
+        "scribo": "write"
+      },
+      "acceptedVariants": [],
+      "hint": "These are the full frozen allocation.",
+      "explanation": "This checks lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l26"
+      ]
+    },
+    {
+      "id": "l26-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the safest first step when reading reported speech?",
+      "stimulus": null,
+      "options": [
+        "find the reporting verb",
+        "translate every accusative as object",
+        "ignore infinitives",
+        "look only at word order"
+      ],
+      "expectedAnswer": "find the reporting verb",
+      "acceptedVariants": [
+        "find the reporting verb"
+      ],
+      "hint": "Structure first.",
+      "explanation": "The reporting verb frames the content construction.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:structure"
+      ]
+    },
+    {
+      "id": "l26-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What form is esse?",
+      "stimulus": "esse",
+      "options": [
+        "present infinitive of sum",
+        "perfect indicative",
+        "imperative",
+        "gerund"
+      ],
+      "expectedAnswer": "present infinitive of sum",
+      "acceptedVariants": [
+        "present infinitive of sum"
+      ],
+      "hint": "It is the dictionary infinitive.",
+      "explanation": "esse is the present infinitive.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt16-13-l26",
+      "skills": [
+        "infinitive:sum"
+      ]
+    },
+    {
+      "id": "l26-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which new verb appears directly as cognovimus?",
+      "stimulus": "cognovimus",
+      "options": [
+        "cognosco",
+        "scio",
+        "sentio",
+        "scribo"
+      ],
+      "expectedAnswer": "cognosco",
+      "acceptedVariants": [
+        "cognosco"
+      ],
+      "hint": "Recognize the perfect stem.",
+      "explanation": "cognovimus belongs to cognosco.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn6-69-l26",
+      "skills": [
+        "vocabulary:cognosco"
+      ]
+    },
+    {
+      "id": "l26-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Can quia-reporting and accusative-infinitive both occur in Church Latin?",
+      "stimulus": null,
+      "options": [
+        "yes",
+        "no"
+      ],
+      "expectedAnswer": "yes",
+      "acceptedVariants": [
+        "yes",
+        "Yes"
+      ],
+      "hint": "The lesson shows both.",
+      "explanation": "Both are genuine reading patterns.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "syntax:church-latin"
+      ]
+    },
+    {
+      "id": "l26-e9",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin verb meaning 'write'.",
+      "stimulus": null,
+      "expectedAnswer": "scribo",
+      "acceptedVariants": [
+        "scribo",
+        "Scribo"
+      ],
+      "hint": "It is Lesson 26 Core.",
+      "explanation": "scribo means write.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:scribo"
+      ]
+    },
+    {
+      "id": "l26-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin verb meaning 'know / recognize'.",
+      "stimulus": null,
+      "expectedAnswer": "cognosco",
+      "acceptedVariants": [
+        "cognosco",
+        "Cognosco"
+      ],
+      "hint": "It appears as cognovimus.",
+      "explanation": "cognosco is the lemma.",
+      "difficulty": 1,
+      "sourceId": "vulg-jn6-69-l26",
+      "skills": [
+        "vocabulary:cognosco"
+      ]
+    }
+  ],
+  "objectives": [
+    "Recognize accusative + infinitive indirect statement.",
+    "Distinguish present and perfect infinitive time relationships.",
+    "Recognize quia + finite-clause reporting in ecclesiastical Latin.",
+    "Learn all four frozen Lesson 26 lemmas."
+  ],
+  "checkpoint": {
+    "id": "l26-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l26-e1",
+        "l26-e2",
+        "l26-e3",
+        "l26-e4",
+        "l26-e5",
+        "l26-e6",
+        "l26-e7",
+        "l26-e8",
+        "l26-e9",
+        "l26-e10"
+      ]
+    },
+    "mustKnow": [
+      "accusative subject of infinitive",
+      "present vs perfect infinitive",
+      "quia-reporting alternative"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "scio",
+      "cognosco",
+      "sentio",
+      "scribo"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 4,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}
