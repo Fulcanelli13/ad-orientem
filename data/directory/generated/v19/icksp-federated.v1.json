@@ -272,12 +272,13 @@
       "l": "Ver-sur-Launette",
       "n": "Loisy",
       "vt": "retreat_house",
-      "sr": "DETAIL_SCHEDULE_NOT_AUDITED",
-      "su": "https://icrspfrance.fr/?page=apostolates",
+      "sr": "MASS_RESTRICTED_TO_SISTERS_AND_RETREATANTS; NOT_PUBLIC",
+      "su": "https://icrspfrance.fr/?org=20",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_RESTRICTED_NONPUBLIC",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-020",
@@ -285,12 +286,13 @@
       "l": "Montagny-Sainte-Félicité",
       "n": "Maison provinciale Saint-Joseph",
       "vt": "residence",
-      "sr": "DETAIL_SCHEDULE_NOT_AUDITED",
-      "su": "https://icrspfrance.fr/?page=apostolates",
+      "sr": "PROVINCIAL_HOUSE; NO_PUBLIC_MASS_SCHEDULE_PUBLISHED",
+      "su": "https://icrspfrance.fr/?org=7697",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_PROVIDER_HOUSE_NO_PUBLIC_SCHEDULE",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-021",
@@ -396,12 +398,13 @@
       "l": "Paris",
       "n": "Paris",
       "vt": "other",
-      "sr": "DETAIL_SCHEDULE_NOT_AUDITED",
-      "su": "https://icrspfrance.fr/?page=apostolates",
+      "sr": "CURRENT_APOSTOLATE_PAGE; NO_MASS_VENUE_OR_SCHEDULE_PUBLISHED",
+      "su": "https://icrspfrance.fr/?org=28",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_APOSTOLATE_NO_PUBLISHED_SCHEDULE",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-029",
@@ -619,12 +622,13 @@
       "l": "Acceglio",
       "n": "Casa alpina San Giovanni Bosco",
       "vt": "residence",
-      "sr": "SEASONAL_TRADITIONAL_MASS_CONFIRMED",
-      "su": "https://www.icrss.it/",
+      "sr": "SUMMER_2026_DAILY_TRADITIONAL_MASS; SEASON_ENDED_2026-09-04",
+      "su": "https://www.icrss.it/vacanze-in-montagna-con-icrss-estate2026/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_SEASONAL_ONLY_NOT_CURRENT",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-068",
@@ -758,12 +762,13 @@
       "l": "Preston",
       "n": "Sisters Adorers of the Royal Heart of Jesus",
       "vt": "residence",
-      "sr": "CURRENT_LOCATION_PAGE_NOT_SCHEDULE_AUDITED",
-      "su": "https://icksp.org.uk/events/locations/",
+      "sr": "SISTERS_ADORERS_HOUSE; NO_SEPARATE_PUBLIC_MASS_SCHEDULE",
+      "su": "https://icksp.org.uk/staugustinepresbytery/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_RELIGIOUS_HOUSE_NO_SEPARATE_PUBLIC_MASS",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-082",
@@ -992,12 +997,13 @@
       "l": "Bruxelles",
       "n": "Brussels International Catholic School - chapelle",
       "vt": "school_chapel",
-      "sr": "SCHOOL_CHAPEL_MASS_SOURCE",
+      "sr": "SCHOOL_CHAPEL_MASS_SOURCE; PUBLIC_ACCESS_NOT_ESTABLISHED",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_SCHOOL_CHAPEL_SPECIAL_ACCESS_UNCLEAR",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-100",
@@ -1031,12 +1037,13 @@
       "l": "Nyoni",
       "n": "Chapelle Notre-Dame-de-Rocamadour",
       "vt": "chapel",
-      "sr": "OCCASIONAL_PASSAGE_MASS",
+      "sr": "OCCASIONAL_PASSAGE_MASS; NO_RECURRING_PUBLIC_SCHEDULE",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_OCCASIONAL_PASSAGE_MASS_NOT_RECURRING",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-103",
@@ -1061,8 +1068,9 @@
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_NON_MASS_PROVIDER_SITE",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-105",
@@ -1070,12 +1078,13 @@
       "l": "La Pointe Denis",
       "n": "Chapelle Notre-Dame-de-Bonne-Délivrance",
       "vt": "chapel",
-      "sr": "OCCASIONAL_PASSAGE_MASS",
+      "sr": "OCCASIONAL_PASSAGE_MASS; NO_RECURRING_PUBLIC_SCHEDULE",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_OCCASIONAL_PASSAGE_MASS_NOT_RECURRING",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-106",
@@ -1083,12 +1092,13 @@
       "l": "Bissobilam",
       "n": "Chapelle du Cœur-Immaculé-de-Marie",
       "vt": "chapel",
-      "sr": "OCCASIONAL_PASSAGE_MASS",
+      "sr": "OCCASIONAL_PASSAGE_MASS; NO_RECURRING_PUBLIC_SCHEDULE",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_OCCASIONAL_PASSAGE_MASS_NOT_RECURRING",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-107",
@@ -1096,12 +1106,13 @@
       "l": "Meteck-Mavi",
       "n": "Chapelle Notre-Dame-du-Sacré-Cœur",
       "vt": "chapel",
-      "sr": "OCCASIONAL_PASSAGE_MASS",
+      "sr": "OCCASIONAL_PASSAGE_MASS; NO_RECURRING_PUBLIC_SCHEDULE",
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_OCCASIONAL_PASSAGE_MASS_NOT_RECURRING",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-108",
@@ -1139,8 +1150,9 @@
       "su": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_NON_MASS_PROVIDER_SITE",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-111",
@@ -1174,12 +1186,13 @@
       "l": "Bayerisch Gmain",
       "n": "Haus Herz Jesu",
       "vt": "residence",
-      "sr": "HOUSE_CONTACT_ONLY_USE_BAD_REICHENHALL_FOR_MASS",
+      "sr": "HOUSE_CONTACT_ONLY; USE_BAD_REICHENHALL_FOR_PUBLIC_MASS",
       "su": "https://institut-christus-koenig.de/bayerisch-gmain/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_PROVIDER_HOUSE_USE_OTHER_MASS_VENUE",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-114",
@@ -1317,12 +1330,13 @@
       "l": "Ardee, Co. Louth",
       "n": "House of Our Lady of the Most Holy Rosary",
       "vt": "residence",
-      "sr": "MASS_SCHEDULE_CONTACT_CONVENT",
+      "sr": "MASS_PAGE_PRESENT_BUT_TIMES_NOT_YET_PUBLISHED",
       "su": "https://ardee.icksp.ie/",
       "st": "COMMUNITY_OFFICIAL",
       "svc": "SOURCE_ASSERTION",
-      "pr": "ICKSP_FEDERATED_OFFICIAL_SOURCE",
-      "gs": "SOURCE_LOCATION_ONLY"
+      "pr": "ICKSP_CONVENT_MASS_TIMES_UNPUBLISHED",
+      "gs": "SOURCE_LOCATION_ONLY",
+      "vv": "2026-10-07"
     },
     {
       "u": "ICKSP-STG-125",
