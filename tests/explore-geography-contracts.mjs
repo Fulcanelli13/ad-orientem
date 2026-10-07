@@ -28,15 +28,8 @@ assert.deepEqual(
   ["FR", "IE", "MU"],
 );
 
-const culturalScope = {
-  geo_area_id: "geo:culture:french-catholic-world",
-  name: { official: "French Catholic world", aliases: [] },
-  area_system: "CULTURAL",
-  area_type: "cultural_region",
-  parent_geo_area_ids: ["geo:world"],
-  mappable: false,
-  codes: {},
-};
+const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
+assert.ok(culturalScope);
 assert.equal(auditGeoArea(culturalScope).length, 0);
 
 const chartres = {
@@ -73,7 +66,7 @@ const noSourceLink = { ...confirmedLink, source_ids: [] };
 assert.ok(auditDirectoryPlaceLink(noSourceLink).some(item => item.code === "MISSING_LINK_PROVENANCE"));
 
 const registry = {
-  geoAreas: [...seed.geoAreas, culturalScope],
+  geoAreas: seed.geoAreas,
   places: [chartres],
   directoryPlaceLinks: [confirmedLink],
 };
