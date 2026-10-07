@@ -52,10 +52,10 @@ for(const token of [
   'data-schola-faster',
   'data-schola-pause'
 ]) expect(html.includes(token),"reader shell missing "+token);
-expect(html.includes('data-ao-asset-id="ao-nav-home" data-ao-asset-renderer="mask"'),"reader Home control is not canonical-mask owned");
-expect(html.includes('data-reader-preferences data-ao-asset-id="ao-nav-settings" data-ao-asset-renderer="mask"'),"reader Mass-preferences control is not canonical-mask owned");
-expect(html.includes("ao-nav-home.png"),"reader Home mask did not resolve to externalized PNG");
-expect(html.includes("ao-nav-settings.png"),"reader Parameters mask did not resolve to externalized PNG");
+expect(html.includes('data-ao-donor-icon="home"'),"reader Home control lost exact v1.80 donor ownership");
+expect(html.includes("M3.5 10.7 12 3.8l8.5 6.9v9.1h-5.4v-5.7H8.9v5.7H3.5z"),"reader Home glyph drifted from v1.80 donor");
+expect(html.includes('data-ao-donor-icon="preferences"'),"reader Mass-preferences control lost exact v1.80 donor ownership");
+expect(html.includes("M4 7h10M18 7h2M4 17h2M10 17h10M4 12h5M13 12h7"),"reader Mass-preferences glyph drifted from v1.80 donor");
 expect(!html.includes("pending-externalization"),"reader top ribbon still advertises pending asset externalization");
 expect(html.includes(".ao-reader-stage{min-height:0;position:relative"),"reader stage lost donor-derived geometry");
 expect(html.includes(".ao-rail{\n  position:absolute"),"ritual rails are no longer overlay surfaces");
