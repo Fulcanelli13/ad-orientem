@@ -2,6 +2,9 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   CALENDAR_INTELLIGENCE_VERSION,
+  CALENDAR_SEMANTIC_REGISTRY_VERSION,
+  calendarDateForSemanticKey,
+  calendarSemanticEventsForDate,
   calendarDisciplineForDate,
   calendarIntelligenceForDate,
   calendarNovenaEvents,
@@ -16,6 +19,15 @@ import { CALENDAR_DEVOTIONAL_REGISTRY_VERSION, DEVOTIONAL_PRACTICE_REGISTRY, NOV
 import { NOVENA_START_KIND } from "../src/pray/novena-corpus-v4.js";
 
 assert.equal(CALENDAR_INTELLIGENCE_VERSION,"calendar-intelligence-v2-complete-novenas");
+assert.equal(CALENDAR_SEMANTIC_REGISTRY_VERSION,"calendar-semantic-registry-v1");
+assert.equal(calendarDateForSemanticKey("feast.our_lady_of_lourdes",2026),"2026-02-11");
+assert.equal(calendarDateForSemanticKey("liturgical.pentecost_monday",2026),"2026-05-25");
+assert.equal(calendarDateForSemanticKey("feast.sacred_heart",2026),"2026-06-12");
+assert.equal(calendarDateForSemanticKey("feast.sacred_heart",2027),"2027-06-04");
+assert.equal(calendarDateForSemanticKey("unknown.key",2026),null);
+assert.ok(calendarSemanticEventsForDate("2026-02-11").some(x=>x.id==="feast.our_lady_of_lourdes"));
+assert.ok(calendarSemanticEventsForDate("2026-05-25").some(x=>x.id==="liturgical.pentecost_monday"));
+assert.ok(calendarSemanticEventsForDate("2026-06-12").some(x=>x.id==="feast.sacred_heart"));
 assert.equal(CALENDAR_DEVOTIONAL_REGISTRY_VERSION,"calendar-devotional-registry-v2-bilingual-novena-freeze");
 assert.equal(NOVENA_TARGET_IDS.length,16,"frozen target registry must contain 16 devotional programmes");
 assert.deepEqual(Object.keys(NOVENA_SOURCE_HOLDS),[],"completed corpus must have no source holds");
@@ -146,6 +158,12 @@ assert.equal(intelligence.date,"2026-10-02");
 assert.ok(intelligence.events.some(x=>x.id==="programme.first_friday"));
 assert.ok(intelligence.events.every(x=>x.date==="2026-10-02"));
 assert.equal(intelligence.registryVersion,CALENDAR_DEVOTIONAL_REGISTRY_VERSION);
+assert.equal(intelligence.semanticRegistryVersion,CALENDAR_SEMANTIC_REGISTRY_VERSION);
+
+const lourdesIntelligence=calendarIntelligenceForDate("2026-02-11",{fr:false});
+assert.ok(lourdesIntelligence.events.some(x=>x.id==="feast.our_lady_of_lourdes"));
+assert.equal(lourdesIntelligence.events.find(x=>x.id==="feast.our_lady_of_lourdes")?.route,"find");
+assert.equal(lourdesIntelligence.events.find(x=>x.id==="feast.our_lady_of_lourdes")?.exploreLens,"pilgrimages");
 
 const octoberPractices=calendarPracticeMonthEntries("2026-10",{fr:false});
 assert.ok(octoberPractices.some(x=>x.id==="practice.october"),"Month Practices lost October Rosary");
