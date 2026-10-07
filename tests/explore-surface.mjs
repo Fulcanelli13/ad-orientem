@@ -189,7 +189,7 @@ assert.ok(knockPilgrimage[0].sections.some(section=>/Anniversary of the Knock Ap
 const loughDerg=filterExploreItems(projection.byLens.pilgrimages,{query:"Lough Derg Three Day"});
 assert.equal(loughDerg.length,1);
 assert.equal(loughDerg[0].map_state,"DESTINATION_ADDRESS_ONLY");
-assert.ok(loughDerg[0].sections.some(section=>section.label==="Calendar relationship"&&/Traditional Three Day Pilgrimage season/.test(section.title)));
+assert.ok(loughDerg[0].sections.some(section=>section.label==="Calendar relationship"&&/Traditional Three Day Pilgrimage season/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
 const pereLaval=filterExploreItems(projection.byLens.pilgrimages,{query:"Père Laval"});
 assert.equal(pereLaval.length,1);
