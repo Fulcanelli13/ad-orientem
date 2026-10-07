@@ -1,0 +1,93 @@
+{
+  "version": "latin-course-textual-audit-v1.0",
+  "status": "HIGH_RISK_PASS_COMPLETE",
+  "audited": "2026-10-07",
+  "sourceOfTruth": {
+    "repository": "DivinumOfficium/divinum-officium",
+    "commit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+    "policy": "Pinned corpus governs 1962 liturgical attribution and wording; pedagogical orthography may normalize accents, ligatures and i/j only when the underlying text is unchanged."
+  },
+  "scope": {
+    "highRiskLessons": [
+      35,
+      38,
+      39,
+      40
+    ],
+    "rationale": [
+      "Roman Canon and Offertory formulae",
+      "normal feast Proper/Common inheritance",
+      "Requiem and 1955/1962 Good Friday special structures",
+      "final unseen 1962 Missal capstone"
+    ]
+  },
+  "findings": [
+    {
+      "id": "TXT-38-COMMON",
+      "severity": "substantive",
+      "lesson": 38,
+      "finding": "St Bruno was initially represented with an older Confessor Common. The pinned corpus points Sancti/10-06 to the C5/C5-1 Confessor non-pontiff common.",
+      "resolution": "FIXED",
+      "resolutionCommit": "311541d39562b51f7f63c61d77612c60e1c4d171",
+      "correctedRoute": [
+        "Introit: Justus ut palma",
+        "Proper Collect: Sancti Brunonis Confessoris tui",
+        "Epistle: 1 Corinthians 4:9-14",
+        "Gradual/Alleluia: Os justi / Beatus vir",
+        "Gospel: Luke 12:32-34",
+        "Offertory: In virtute tua",
+        "Secret: Praesta nobis",
+        "Communion: Amen, dico vobis",
+        "Postcommunion: Quaesumus, omnipotens Deus"
+      ]
+    },
+    {
+      "id": "TXT-40-ORTHOGRAPHY",
+      "severity": "minor-textual",
+      "lesson": 40,
+      "finding": "Three capstone spellings drifted from the pinned Rosary feast transcription.",
+      "resolution": "FIXED_IN_THIS_AUDIT",
+      "corrections": [
+        "solemnitate → sollemnitate",
+        "Solemnitas → Sollemnitas",
+        "quotidie → cotidie"
+      ]
+    },
+    {
+      "id": "TXT-39-EXCERPTS",
+      "severity": "provenance-precision",
+      "lesson": 39,
+      "finding": "Requiem Introit and Offertory sourceLatin records intentionally omit repeated refrain material but were labeled generically as full sections.",
+      "resolution": "FIXED_IN_THIS_AUDIT",
+      "correction": "Relabel as excerpts and state exactly which repeated material is omitted."
+    },
+    {
+      "id": "TXT-35-CANON",
+      "severity": "none",
+      "lesson": 35,
+      "finding": "Canon/Offertory prayer wording matches the pinned 1962 Ordo after removal of embedded rubrics and normalization of accents, ligatures, i/j spelling and placeholders.",
+      "resolution": "VERIFIED"
+    },
+    {
+      "id": "TXT-39-GOOD-FRIDAY",
+      "severity": "none",
+      "lesson": 39,
+      "finding": "Ecce lignum Crucis, Popule meus and Crucem tuam match the pinned 1955/1962 Good Friday action after accent/orthography normalization.",
+      "resolution": "VERIFIED"
+    },
+    {
+      "id": "TXT-40-ROSARY",
+      "severity": "none-after-fix",
+      "lesson": 40,
+      "finding": "Rosary feast Introit, Epistle, Gradual/Alleluia, Gospel, Offertory and Communion resolve to the pinned 1962 feast data; Gospel inheritance chain is documented.",
+      "resolution": "VERIFIED_AFTER_ORTHOGRAPHY_FIX"
+    }
+  ],
+  "remainingAuditLayers": [
+    "broader low-risk source spot-check across Lessons 1-34",
+    "EN/FR parity and translation accuracy",
+    "exercise answer/accepted-variant audit",
+    "repetition and difficulty-curve audit",
+    "app/UI integration"
+  ]
+}

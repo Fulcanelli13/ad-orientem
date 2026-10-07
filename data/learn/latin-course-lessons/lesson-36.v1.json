@@ -1,0 +1,1133 @@
+{
+  "version": "latin-course-lesson-36-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 36,
+  "stage": {
+    "number": 8,
+    "title": "Read the Missal"
+  },
+  "title": "Psalms, Hymns and Antiphons",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 50,
+  "progressionStep": "independent-liturgical-reading",
+  "grammarFocus": "Psalter, Marian antiphons, hymns; poetic/biblical register",
+  "readingOutcome": "Read parallelism, ellipsis and poetic word order.",
+  "authoringPolicy": {
+    "method": "poetic feature → authentic text → structural reading → reduced assistance",
+    "vocabularyPolicy": "Only the final eight normal Core lemmas are introduced; all later specialized vocabulary remains locked for Lesson 39.",
+    "authenticTextPolicy": "Sources are Psalter, hymn and antiphon texts used in Catholic liturgical/devotional tradition.",
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "lingua",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "tongue / language",
+          "fr": "langue"
+        },
+        "frozenLesson": 36
+      },
+      {
+        "lemma": "auris",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "ear",
+          "fr": "oreille"
+        },
+        "frozenLesson": 36
+      },
+      {
+        "lemma": "pes",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "foot",
+          "fr": "pied"
+        },
+        "frozenLesson": 36
+      },
+      {
+        "lemma": "caput",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "head",
+          "fr": "tête / chef"
+        },
+        "frozenLesson": 36
+      },
+      {
+        "lemma": "ignis",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "fire",
+          "fr": "feu"
+        },
+        "frozenLesson": 36
+      },
+      {
+        "lemma": "mare",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sea",
+          "fr": "mer"
+        },
+        "frozenLesson": 36
+      },
+      {
+        "lemma": "sol",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sun",
+          "fr": "soleil"
+        },
+        "frozenLesson": 36
+      },
+      {
+        "lemma": "pauper",
+        "partOfSpeech": "adjective/noun",
+        "gloss": {
+          "en": "poor / poor person",
+          "fr": "pauvre"
+        },
+        "frozenLesson": 36
+      }
+    ],
+    "recycled": [
+      "Deus",
+      "Dominus",
+      "qui/quae/quod",
+      "do",
+      "gloria",
+      "tuus",
+      "nomen",
+      "et",
+      "in",
+      "omnis",
+      "bonus",
+      "sanctus",
+      "ad",
+      "usque",
+      "meus",
+      "terra",
+      "facio",
+      "sum",
+      "laudo",
+      "misericordia",
+      "vita",
+      "aeternus",
+      "audio",
+      "descendo",
+      "corpus",
+      "non",
+      "adoro",
+      "is/ea/id",
+      "quoniam",
+      "lapis",
+      "hic/haec/hoc",
+      "ante",
+      "ipse",
+      "a/ab"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "planto",
+      "forms": [
+        "plantavit"
+      ],
+      "gloss": {
+        "en": "plant",
+        "fr": "planter"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "scabellum",
+      "forms": [
+        "scabellum"
+      ],
+      "gloss": {
+        "en": "footstool",
+        "fr": "marchepied"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "praecedo",
+      "forms": [
+        "praecedet"
+      ],
+      "gloss": {
+        "en": "go before",
+        "fr": "précéder"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "navis",
+      "forms": [
+        "navibus"
+      ],
+      "gloss": {
+        "en": "ship",
+        "fr": "navire"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "ortus",
+      "forms": [
+        "ortu"
+      ],
+      "gloss": {
+        "en": "rising",
+        "fr": "lever"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "occasus",
+      "forms": [
+        "occasum"
+      ],
+      "gloss": {
+        "en": "setting",
+        "fr": "coucher"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "inops",
+      "forms": [
+        "inops"
+      ],
+      "gloss": {
+        "en": "needy",
+        "fr": "indigent"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "mysterium",
+      "forms": [
+        "mysterium"
+      ],
+      "gloss": {
+        "en": "mystery",
+        "fr": "mystère"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pange-lingua-l36",
+      "sourceType": "primary-liturgical-hymn",
+      "work": "Pange lingua gloriosi Corporis mysterium",
+      "section": "Opening",
+      "sourceLatin": "Pange, lingua, gloriosi Corporis mysterium.",
+      "provenanceNote": "Poetic apostrophe and compressed word order; lingua is introduced directly."
+    },
+    {
+      "id": "vulg-ps93-9-l36",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 93:9",
+      "sourceLatin": "Qui plantavit aurem, non audiet?",
+      "provenanceNote": "Rhetorical parallelism; auris appears as aurem.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps98-5-l36",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 98:5",
+      "sourceLatin": "Adorate scabellum pedum ejus: quoniam sanctum est.",
+      "provenanceNote": "pes appears in genitive plural pedum.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps117-22-l36",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 117:22",
+      "sourceLatin": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
+      "provenanceNote": "caput is introduced inside a familiar typological Psalm verse.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps96-3-l36",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 96:3",
+      "sourceLatin": "Ignis ante ipsum praecedet.",
+      "provenanceNote": "Compact poetic inversion and personification.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps106-23-l36",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 106:23",
+      "sourceLatin": "Qui descendunt mare in navibus.",
+      "provenanceNote": "mare appears as the destination of motion without an explicit preposition in biblical-poetic usage.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps112-3-l36",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 112:3",
+      "sourceLatin": "A solis ortu usque ad occasum, laudabile nomen Domini.",
+      "provenanceNote": "Parallel span from sunrise to sunset; sol appears in genitive solis.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps73-21-l36",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 73:21",
+      "sourceLatin": "Pauper et inops laudabunt nomen tuum.",
+      "provenanceNote": "pauper is read substantivally alongside inops.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; poetic order may separate agreeing or governing words.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "poeticRegisterFramework": {
+    "features": [
+      "parallelism and repeated syntax",
+      "ellipsis of verbs or connectives recoverable from context",
+      "hyperbaton: words belonging together may be separated",
+      "rhetorical questions and apostrophe",
+      "concrete biblical imagery carrying devotional meaning"
+    ],
+    "readingRule": "Reconstruct grammatical relationships before restoring normal prose order; do not assume poetic order changes case government.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l36-b1",
+      "type": "concept",
+      "title": "Poetry moves words, not grammar",
+      "learnerCopy": {
+        "en": "Hymns, Psalms and antiphons often separate words that belong together or omit elements recoverable from parallel lines. The case endings still carry the syntax.",
+        "fr": "Hymnes, psaumes et antiennes séparent souvent des mots qui vont ensemble ou omettent des éléments récupérables grâce au parallélisme. Les désinences continuent de porter la syntaxe."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "La poésie déplace les mots, pas la grammaire"
+        }
+      }
+    },
+    {
+      "id": "l36-b2",
+      "type": "hymn",
+      "title": "Pange, lingua",
+      "sourceId": "pange-lingua-l36",
+      "learnerCopy": {
+        "en": "The hymn addresses the tongue directly. Pange is the command; lingua is vocative; Corporis mysterium is the object phrase despite the compressed poetic order.",
+        "fr": "L'hymne s'adresse directement à la langue. Pange est l'ordre ; lingua est au vocatif ; Corporis mysterium est le groupe objet malgré l'ordre poétique condensé."
+      },
+      "referenceIds": [
+        "pange-lingua-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Pange, lingua"
+        }
+      }
+    },
+    {
+      "id": "l36-b3",
+      "type": "psalm",
+      "title": "Qui plantavit aurem, non audiet?",
+      "sourceId": "vulg-ps93-9-l36",
+      "learnerCopy": {
+        "en": "The Psalm uses a rhetorical question whose answer is obvious. Biblical poetry often teaches through balanced questions rather than explicit propositions.",
+        "fr": "Le psaume emploie une question rhétorique dont la réponse est évidente. La poésie biblique enseigne souvent par questions équilibrées plutôt que par affirmations explicites."
+      },
+      "referenceIds": [
+        "vulg-ps93-9-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Qui plantavit aurem, non audiet?"
+        }
+      }
+    },
+    {
+      "id": "l36-b4",
+      "type": "poetry",
+      "title": "Recover the relationships",
+      "learnerCopy": {
+        "en": "In A solis ortu usque ad occasum, the prepositions and cases create the full span even though the clause has no ordinary finite verb. Supply only what the syntax and parallel sense require.",
+        "fr": "Dans A solis ortu usque ad occasum, les prépositions et les cas créent l'étendue complète bien que la proposition n'ait pas de verbe conjugué ordinaire. Ne suppléez que ce que syntaxe et parallélisme exigent."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Retrouver les relations grammaticales"
+        }
+      }
+    },
+    {
+      "id": "l36-b5",
+      "type": "imagery",
+      "title": "Concrete nouns become liturgical images",
+      "learnerCopy": {
+        "en": "fire, sea, sun, stone, foot and tongue remain concrete nouns, yet Scripture and hymnody give them recurring spiritual or typological associations. Read literal syntax before interpreting imagery.",
+        "fr": "feu, mer, soleil, pierre, pied et langue restent des noms concrets, mais l'Écriture et l'hymnographie leur donnent des associations spirituelles ou typologiques récurrentes. Lisez d'abord la syntaxe littérale."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les noms concrets deviennent des images liturgiques"
+        }
+      }
+    },
+    {
+      "id": "l36-b6",
+      "type": "independence",
+      "title": "Assistance now recedes",
+      "learnerCopy": {
+        "en": "At Stage 8, glosses should rescue genuinely unknown words, not replace parsing. Mark endings, recover omitted structure, and only then consult support.",
+        "fr": "À l'étape 8, les gloses doivent seulement secourir les mots réellement inconnus, non remplacer l'analyse. Repérez les désinences, reconstruisez la structure omise, puis consultez l'aide."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’assistance diminue désormais"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l36-p1",
+      "sourceId": "pange-lingua-l36",
+      "sourceLatin": "Pange, lingua, gloriosi Corporis mysterium.",
+      "instructionalDisplay": "Pange, lingua, gloriosi Corporis mysterium.",
+      "targetLemmas": [
+        "lingua",
+        "corpus"
+      ],
+      "supportLemmas": [
+        "mysterium"
+      ]
+    },
+    {
+      "id": "l36-p2",
+      "sourceId": "vulg-ps93-9-l36",
+      "sourceLatin": "Qui plantavit aurem, non audiet?",
+      "instructionalDisplay": "Qui plantavit aurem, non audiet?",
+      "targetLemmas": [
+        "qui/quae/quod",
+        "auris",
+        "non",
+        "audio"
+      ],
+      "supportLemmas": [
+        "planto"
+      ]
+    },
+    {
+      "id": "l36-p3",
+      "sourceId": "vulg-ps98-5-l36",
+      "sourceLatin": "Adorate scabellum pedum ejus: quoniam sanctum est.",
+      "instructionalDisplay": "Adorate scabellum pedum ejus: quoniam sanctum est.",
+      "targetLemmas": [
+        "adoro",
+        "pes",
+        "is/ea/id",
+        "quoniam",
+        "sanctus",
+        "sum"
+      ],
+      "supportLemmas": [
+        "scabellum"
+      ]
+    },
+    {
+      "id": "l36-p4",
+      "sourceId": "vulg-ps117-22-l36",
+      "sourceLatin": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
+      "instructionalDisplay": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
+      "targetLemmas": [
+        "lapis",
+        "qui/quae/quod",
+        "hic/haec/hoc",
+        "facio",
+        "in",
+        "caput"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l36-p5",
+      "sourceId": "vulg-ps96-3-l36",
+      "sourceLatin": "Ignis ante ipsum praecedet.",
+      "instructionalDisplay": "Ignis ante ipsum praecedet.",
+      "targetLemmas": [
+        "ignis",
+        "ante",
+        "ipse"
+      ],
+      "supportLemmas": [
+        "praecedo"
+      ]
+    },
+    {
+      "id": "l36-p6",
+      "sourceId": "vulg-ps106-23-l36",
+      "sourceLatin": "Qui descendunt mare in navibus.",
+      "instructionalDisplay": "Qui descendunt mare in navibus.",
+      "targetLemmas": [
+        "qui/quae/quod",
+        "mare",
+        "in",
+        "descendo"
+      ],
+      "supportLemmas": [
+        "navis"
+      ]
+    },
+    {
+      "id": "l36-p7",
+      "sourceId": "vulg-ps112-3-l36",
+      "sourceLatin": "A solis ortu usque ad occasum, laudabile nomen Domini.",
+      "instructionalDisplay": "A solis ortu usque ad occasum, laudabile nomen Domini.",
+      "targetLemmas": [
+        "a/ab",
+        "sol",
+        "usque",
+        "ad",
+        "nomen",
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "ortus",
+        "occasus"
+      ]
+    },
+    {
+      "id": "l36-p8",
+      "sourceId": "vulg-ps73-21-l36",
+      "sourceLatin": "Pauper et inops laudabunt nomen tuum.",
+      "instructionalDisplay": "Pauper et inops laudabunt nomen tuum.",
+      "targetLemmas": [
+        "pauper",
+        "et",
+        "laudo",
+        "nomen",
+        "tuus"
+      ],
+      "supportLemmas": [
+        "inops"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l36-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is lingua in Pange, lingua?",
+      "stimulus": "lingua",
+      "options": [
+        "vocative",
+        "accusative",
+        "genitive",
+        "ablative"
+      ],
+      "expectedAnswer": "vocative",
+      "acceptedVariants": [
+        "vocative"
+      ],
+      "hint": "The hymn addresses the tongue.",
+      "explanation": "lingua is direct address.",
+      "difficulty": 1,
+      "sourceId": "pange-lingua-l36",
+      "skills": [
+        "case:vocative"
+      ],
+      "referenceIds": [
+        "pange-lingua-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est lingua dans Pange, lingua ?",
+          "hint": "L’hymne s’adresse à la langue.",
+          "explanation": "lingua est une adresse directe.",
+          "options": [
+            "vocatif",
+            "accusatif",
+            "génitif",
+            "ablatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l36-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What poetic device is strongest in Qui plantavit aurem, non audiet?",
+      "stimulus": null,
+      "options": [
+        "rhetorical question",
+        "indirect statement",
+        "ablative absolute",
+        "gerundive obligation"
+      ],
+      "expectedAnswer": "rhetorical question",
+      "acceptedVariants": [
+        "rhetorical question"
+      ],
+      "hint": "The answer is implied.",
+      "explanation": "Psalmic rhetoric can omit the explicit answer.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps93-9-l36",
+      "skills": [
+        "poetry:rhetoric"
+      ],
+      "referenceIds": [
+        "vulg-ps93-9-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel procédé poétique domine dans Qui plantavit aurem, non audiet ?",
+          "hint": "La réponse est implicite.",
+          "explanation": "La rhétorique psalmique peut omettre la réponse explicite.",
+          "options": [
+            "question rhétorique",
+            "discours indirect",
+            "ablatif absolu",
+            "obligation au gérondif verbal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l36-e3",
+      "exerciseType": "matching",
+      "prompt": "Match body/image noun to meaning.",
+      "stimulus": [
+        "lingua",
+        "auris",
+        "pes",
+        "caput"
+      ],
+      "expectedAnswer": {
+        "lingua": "tongue / language",
+        "auris": "ear",
+        "pes": "foot",
+        "caput": "head"
+      },
+      "acceptedVariants": [],
+      "hint": "First four final Core lemmas.",
+      "explanation": "Vocabulary retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l36"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom du corps ou de l’image à son sens.",
+          "hint": "Les quatre premiers des derniers lemmes fondamentaux.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "lingua": "langue / langage",
+            "auris": "oreille",
+            "pes": "pied",
+            "caput": "tête"
+          }
+        }
+      }
+    },
+    {
+      "id": "l36-e4",
+      "exerciseType": "matching",
+      "prompt": "Match cosmic/social noun to meaning.",
+      "stimulus": [
+        "ignis",
+        "mare",
+        "sol",
+        "pauper"
+      ],
+      "expectedAnswer": {
+        "ignis": "fire",
+        "mare": "sea",
+        "sol": "sun",
+        "pauper": "poor / poor person"
+      },
+      "acceptedVariants": [],
+      "hint": "Second four final Core lemmas.",
+      "explanation": "Vocabulary retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l36"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom cosmique ou social à son sens.",
+          "hint": "Les quatre seconds des derniers lemmes fondamentaux.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "ignis": "feu",
+            "mare": "mer",
+            "sol": "soleil",
+            "pauper": "pauvre / personne pauvre"
+          }
+        }
+      }
+    },
+    {
+      "id": "l36-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is pedum?",
+      "stimulus": "pedum",
+      "options": [
+        "genitive plural",
+        "accusative singular",
+        "dative plural",
+        "nominative plural"
+      ],
+      "expectedAnswer": "genitive plural",
+      "acceptedVariants": [
+        "genitive plural"
+      ],
+      "hint": "From pes.",
+      "explanation": "pedum means 'of the feet'.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps98-5-l36",
+      "skills": [
+        "vocabulary:pes",
+        "case:genitive"
+      ],
+      "referenceIds": [
+        "vulg-ps98-5-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est pedum ?",
+          "hint": "De pes.",
+          "explanation": "pedum signifie « des pieds ».",
+          "options": [
+            "génitif pluriel",
+            "accusatif singulier",
+            "datif pluriel",
+            "nominatif pluriel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l36-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What form is solis in a solis ortu?",
+      "stimulus": "solis",
+      "options": [
+        "genitive singular",
+        "nominative plural",
+        "accusative plural",
+        "ablative plural"
+      ],
+      "expectedAnswer": "genitive singular",
+      "acceptedVariants": [
+        "genitive singular"
+      ],
+      "hint": "It modifies ortu: rising of the sun.",
+      "explanation": "solis is genitive singular of sol.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps112-3-l36",
+      "skills": [
+        "vocabulary:sol",
+        "case:genitive"
+      ],
+      "referenceIds": [
+        "vulg-ps112-3-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est solis dans a solis ortu ?",
+          "hint": "Il détermine ortu : le lever du soleil.",
+          "explanation": "solis est le génitif singulier de sol.",
+          "options": [
+            "génitif singulier",
+            "nominatif pluriel",
+            "accusatif pluriel",
+            "ablatif pluriel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l36-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should you reconstruct first in poetic word order?",
+      "stimulus": null,
+      "options": [
+        "grammatical relationships signaled by endings",
+        "a modern prose translation",
+        "historical commentary",
+        "rhythm only"
+      ],
+      "expectedAnswer": "grammatical relationships signaled by endings",
+      "acceptedVariants": [
+        "grammatical relationships signaled by endings"
+      ],
+      "hint": "Cases survive poetic rearrangement.",
+      "explanation": "Syntax before prose order.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:poetry"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que faut-il reconstruire en premier dans un ordre poétique des mots ?",
+          "hint": "Les cas survivent au déplacement poétique.",
+          "explanation": "La syntaxe avant l’ordre de prose.",
+          "options": [
+            "les relations grammaticales signalées par les terminaisons",
+            "une traduction moderne en prose",
+            "le commentaire historique",
+            "le rythme seulement"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l36-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why can a Psalm omit an ordinary finite verb?",
+      "stimulus": null,
+      "options": [
+        "parallelism or ellipsis can make it recoverable",
+        "Latin poetry has no verbs",
+        "all omitted verbs are sum",
+        "copyists removed them"
+      ],
+      "expectedAnswer": "parallelism or ellipsis can make it recoverable",
+      "acceptedVariants": [
+        "parallelism or ellipsis can make it recoverable"
+      ],
+      "hint": "Poetic compression.",
+      "explanation": "Ellipsis is recoverable from structure/context.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "poetry:ellipsis"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi un Psaume peut-il omettre un verbe fini ordinaire ?",
+          "hint": "Compression poétique.",
+          "explanation": "L’ellipse peut être rétablie à partir de la structure et du contexte.",
+          "options": [
+            "le parallélisme ou l’ellipse permettent de le restituer",
+            "la poésie latine n’a pas de verbes",
+            "tous les verbes omis sont sum",
+            "les copistes les ont supprimés"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l36-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the Stage 8 milestone at Lesson 36?",
+      "stimulus": null,
+      "options": [
+        "Psalm/hymn/antiphon register.",
+        "Complete Ordinary.",
+        "Unseen normal Propers.",
+        "Unseen authentic Missal capstone."
+      ],
+      "expectedAnswer": "Psalm/hymn/antiphon register.",
+      "acceptedVariants": [
+        "Psalm/hymn/antiphon register."
+      ],
+      "hint": "Frozen milestone.",
+      "explanation": "Lesson 36 opens independent liturgical reading through poetic registers.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 8 à la leçon 36 ?",
+          "hint": "Jalon figé.",
+          "explanation": "La leçon 36 ouvre la lecture liturgique autonome par les registres poétiques.",
+          "options": [
+            "Registre psaume / hymne / antienne.",
+            "Ordinaire complet.",
+            "Propres ordinaires inconnus.",
+            "Couronnement sur un texte authentique inconnu du Missel."
+          ]
+        }
+      }
+    },
+    {
+      "id": "l36-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'sea'.",
+      "stimulus": null,
+      "expectedAnswer": "mare",
+      "acceptedVariants": [
+        "mare",
+        "Mare"
+      ],
+      "hint": "Psalm 106.",
+      "explanation": "mare means sea.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps106-23-l36",
+      "skills": [
+        "vocabulary:mare"
+      ],
+      "referenceIds": [
+        "vulg-ps106-23-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « mer ».",
+          "hint": "Psaume 106.",
+          "explanation": "mare signifie « mer »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Read poetic/biblical order without losing syntax.",
+    "Recognize parallelism, ellipsis and rhetorical questions.",
+    "Learn the final eight normal Core lemmas.",
+    "Begin Stage 8 with reduced assistance."
+  ],
+  "checkpoint": {
+    "id": "l36-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l36-e1",
+        "l36-e2",
+        "l36-e3",
+        "l36-e4",
+        "l36-e5",
+        "l36-e6",
+        "l36-e7",
+        "l36-e8",
+        "l36-e9",
+        "l36-e10"
+      ]
+    },
+    "mustKnow": [
+      "poetic order",
+      "parallelism",
+      "ellipsis",
+      "all eight Lesson 36 lemmas"
+    ],
+    "progressionGate": "Psalm/hymn/antiphon register.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "lingua",
+      "auris",
+      "pes",
+      "caput",
+      "ignis",
+      "mare",
+      "sol",
+      "pauper"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 8,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Psaumes, hymnes et antiennes",
+      "grammarFocus": "Psautier, antiennes mariales, hymnes ; registre poétique et biblique",
+      "readingOutcome": "Lire le parallélisme, l’ellipse et l’ordre poétique des mots.",
+      "objectives": [
+        "Lire l’ordre poétique et biblique sans perdre la syntaxe.",
+        "Reconnaître le parallélisme, l’ellipse et les questions rhétoriques.",
+        "Apprendre les huit derniers lemmes fondamentaux ordinaires.",
+        "Commencer l’étape 8 avec une assistance réduite."
+      ]
+    }
+  }
+}

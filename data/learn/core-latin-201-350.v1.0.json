@@ -1,0 +1,848 @@
+{
+  "version": "core-latin-201-350-v1.0",
+  "status": "FROZEN",
+  "frozenOn": "2026-10-07",
+  "dependsOn": "core-latin-200-v0.2",
+  "corpusEvidence": {
+    "adOrientemResolver": "AO_RUNTIME_V8.resolver.resolveDay",
+    "divinumOfficiumPin": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+    "discoveryWindow": "2000-01-01/2027-12-31",
+    "encounterWindow": "2025-11-30/2026-11-28",
+    "resolvedEncounters": 10343,
+    "canonicalResolvedDocuments": 983,
+    "normalProperDocuments": 975,
+    "specialRiteDocuments": 8,
+    "failedDiscoveryRows": 0,
+    "failedEncounterRows": 0,
+    "denominators": [
+      "NORMAL_PROPERS",
+      "SPECIAL_RITES"
+    ],
+    "orthographicNormalization": [
+      "liturgical stress accents folded",
+      "æ→ae",
+      "œ→oe",
+      "legacy j→i"
+    ],
+    "corpusOnlySourceRecoveries": [
+      {
+        "requested": "Tempora/Nat1-1",
+        "donors": [
+          "Tempora/Nat29",
+          "Tempora/Nat30",
+          "Tempora/Nat31"
+        ],
+        "rule": "29/30/31 December respectively"
+      },
+      {
+        "requested": "Commune/C10t",
+        "donor": "obsolete/missa/{language}/Commune/C10t.txt",
+        "rule": "serve pinned Mass Common before transport compatibility redirects it to a non-existent Hours file"
+      }
+    ]
+  },
+  "selectionPolicy": {
+    "unit": "lemma_family",
+    "properNamesExcluded": true,
+    "structuralAndRubricTokensExcluded": true,
+    "fixedFormulaInflationDownweighted": true,
+    "core200FamiliesExcluded": true,
+    "specialRitesExcludedFromNormalProperRanking": true,
+    "collectHeavyTheologicalVocabularyGenerallyDeferredTo": "351-500",
+    "lessonPlacementStatus": "PROVISIONAL_UNTIL_40_LESSON_INTEGRATION_PASS",
+    "pronounPolicy": "Spiral retrieval from Lesson 10 onward; repeated contextual recognition required by Lesson 20.",
+    "casePolicy": "Case framework visible from Lesson 2 and progressively unlocked; vocabulary placement must not alter the frozen grammatical sequence."
+  },
+  "revisionFromDraft": {
+    "combinedFamilies": [
+      "neque + nec → neque/nec"
+    ],
+    "addedAfterCertifiedSweep": [
+      "invicem",
+      "iterum",
+      "nimis",
+      "adversus",
+      "iudicium",
+      "conspectus",
+      "vir",
+      "aio",
+      "abeo",
+      "respicio",
+      "mirabilis"
+    ],
+    "deferredToLaterCore": [
+      "ager",
+      "porta",
+      "vinum",
+      "ira",
+      "lapis",
+      "familia",
+      "filia",
+      "corona",
+      "sol",
+      "caelestis"
+    ],
+    "rationale": "Certified dispersion and orthographic normalization moved high-utility Gospel/Proper vocabulary above lower-dispersion concrete or Collect-heavy vocabulary. invicem also replaces the duplicate slot recovered by combining neque/nec."
+  },
+  "items": [
+    {
+      "rank": 201,
+      "lemma": "secundum",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 202,
+      "lemma": "semper",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 203,
+      "lemma": "nunc",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 204,
+      "lemma": "ecce",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 205,
+      "lemma": "neque/nec",
+      "category": "particle_connector",
+      "note": "One conjunction family; nec is the contracted variant of neque."
+    },
+    {
+      "rank": 206,
+      "lemma": "aut",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 207,
+      "lemma": "vel",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 208,
+      "lemma": "sive",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 209,
+      "lemma": "vero",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 210,
+      "lemma": "at",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 211,
+      "lemma": "usque",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 212,
+      "lemma": "ita",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 213,
+      "lemma": "tunc",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 214,
+      "lemma": "quasi",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 215,
+      "lemma": "sic",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 216,
+      "lemma": "apud",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 217,
+      "lemma": "coram",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 218,
+      "lemma": "inter",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 219,
+      "lemma": "adversus",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 220,
+      "lemma": "etiam",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 221,
+      "lemma": "ibi",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 222,
+      "lemma": "adhuc",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 223,
+      "lemma": "iterum",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 224,
+      "lemma": "donec",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 225,
+      "lemma": "nam",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 226,
+      "lemma": "contra",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 227,
+      "lemma": "simul",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 228,
+      "lemma": "magis",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 229,
+      "lemma": "nimis",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 230,
+      "lemma": "ideo",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 231,
+      "lemma": "itaque",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 232,
+      "lemma": "unde",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 233,
+      "lemma": "invicem",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 234,
+      "lemma": "numquid",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 235,
+      "lemma": "nonne",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 236,
+      "lemma": "quomodo",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 237,
+      "lemma": "quidem",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 238,
+      "lemma": "iam",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 239,
+      "lemma": "ultra",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 240,
+      "lemma": "iuxta",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 241,
+      "lemma": "statim",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 242,
+      "lemma": "tantum",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 243,
+      "lemma": "plus",
+      "category": "particle_connector"
+    },
+    {
+      "rank": 244,
+      "lemma": "quis/quid",
+      "category": "pronoun_determiner",
+      "note": "Interrogative/indefinite pronoun family taught through case recognition, not isolated forms."
+    },
+    {
+      "rank": 245,
+      "lemma": "quidam",
+      "category": "pronoun_determiner"
+    },
+    {
+      "rank": 246,
+      "lemma": "aliquis/aliquid",
+      "category": "pronoun_determiner",
+      "note": "Indefinite pronoun family."
+    },
+    {
+      "rank": 247,
+      "lemma": "quicumque",
+      "category": "pronoun_determiner"
+    },
+    {
+      "rank": 248,
+      "lemma": "quisque",
+      "category": "pronoun_determiner"
+    },
+    {
+      "rank": 249,
+      "lemma": "alius",
+      "category": "pronoun_determiner"
+    },
+    {
+      "rank": 250,
+      "lemma": "solus",
+      "category": "pronoun_determiner"
+    },
+    {
+      "rank": 251,
+      "lemma": "nemo",
+      "category": "pronoun_determiner"
+    },
+    {
+      "rank": 252,
+      "lemma": "unus",
+      "category": "pronoun_determiner"
+    },
+    {
+      "rank": 253,
+      "lemma": "duo",
+      "category": "pronoun_determiner"
+    },
+    {
+      "rank": 254,
+      "lemma": "multus",
+      "category": "quantifier_adjective"
+    },
+    {
+      "rank": 255,
+      "lemma": "totus",
+      "category": "quantifier_adjective"
+    },
+    {
+      "rank": 256,
+      "lemma": "primus",
+      "category": "quantifier_adjective"
+    },
+    {
+      "rank": 257,
+      "lemma": "cunctus",
+      "category": "quantifier_adjective"
+    },
+    {
+      "rank": 258,
+      "lemma": "universus",
+      "category": "quantifier_adjective"
+    },
+    {
+      "rank": 259,
+      "lemma": "tempus",
+      "category": "noun"
+    },
+    {
+      "rank": 260,
+      "lemma": "gens",
+      "category": "noun"
+    },
+    {
+      "rank": 261,
+      "lemma": "propheta",
+      "category": "noun"
+    },
+    {
+      "rank": 262,
+      "lemma": "lex",
+      "category": "noun"
+    },
+    {
+      "rank": 263,
+      "lemma": "iustitia",
+      "category": "noun"
+    },
+    {
+      "rank": 264,
+      "lemma": "iudicium",
+      "category": "noun"
+    },
+    {
+      "rank": 265,
+      "lemma": "testimonium",
+      "category": "noun"
+    },
+    {
+      "rank": 266,
+      "lemma": "conspectus",
+      "category": "noun",
+      "note": "Especially frequent in in conspectu / ante conspectum constructions."
+    },
+    {
+      "rank": 267,
+      "lemma": "vir",
+      "category": "noun"
+    },
+    {
+      "rank": 268,
+      "lemma": "opus",
+      "category": "noun"
+    },
+    {
+      "rank": 269,
+      "lemma": "locus",
+      "category": "noun"
+    },
+    {
+      "rank": 270,
+      "lemma": "templum",
+      "category": "noun"
+    },
+    {
+      "rank": 271,
+      "lemma": "civitas",
+      "category": "noun"
+    },
+    {
+      "rank": 272,
+      "lemma": "oculus",
+      "category": "noun"
+    },
+    {
+      "rank": 273,
+      "lemma": "os",
+      "category": "noun",
+      "note": "os, oris — mouth/face-of-speech sense; do not merge with os, ossis (bone)."
+    },
+    {
+      "rank": 274,
+      "lemma": "lingua",
+      "category": "noun"
+    },
+    {
+      "rank": 275,
+      "lemma": "vox",
+      "category": "noun"
+    },
+    {
+      "rank": 276,
+      "lemma": "facies",
+      "category": "noun"
+    },
+    {
+      "rank": 277,
+      "lemma": "auris",
+      "category": "noun"
+    },
+    {
+      "rank": 278,
+      "lemma": "pes",
+      "category": "noun"
+    },
+    {
+      "rank": 279,
+      "lemma": "caput",
+      "category": "noun"
+    },
+    {
+      "rank": 280,
+      "lemma": "domus",
+      "category": "noun"
+    },
+    {
+      "rank": 281,
+      "lemma": "mater",
+      "category": "noun"
+    },
+    {
+      "rank": 282,
+      "lemma": "angelus",
+      "category": "noun"
+    },
+    {
+      "rank": 283,
+      "lemma": "servus",
+      "category": "noun"
+    },
+    {
+      "rank": 284,
+      "lemma": "magister",
+      "category": "noun"
+    },
+    {
+      "rank": 285,
+      "lemma": "pastor",
+      "category": "noun"
+    },
+    {
+      "rank": 286,
+      "lemma": "ovis",
+      "category": "noun"
+    },
+    {
+      "rank": 287,
+      "lemma": "grex",
+      "category": "noun"
+    },
+    {
+      "rank": 288,
+      "lemma": "inimicus",
+      "category": "noun"
+    },
+    {
+      "rank": 289,
+      "lemma": "princeps",
+      "category": "noun"
+    },
+    {
+      "rank": 290,
+      "lemma": "semen",
+      "category": "noun"
+    },
+    {
+      "rank": 291,
+      "lemma": "ignis",
+      "category": "noun"
+    },
+    {
+      "rank": 292,
+      "lemma": "aqua",
+      "category": "noun"
+    },
+    {
+      "rank": 293,
+      "lemma": "mare",
+      "category": "noun"
+    },
+    {
+      "rank": 294,
+      "lemma": "nox",
+      "category": "noun"
+    },
+    {
+      "rank": 295,
+      "lemma": "mons",
+      "category": "noun"
+    },
+    {
+      "rank": 296,
+      "lemma": "hora",
+      "category": "noun"
+    },
+    {
+      "rank": 297,
+      "lemma": "gaudium",
+      "category": "noun"
+    },
+    {
+      "rank": 298,
+      "lemma": "laetitia",
+      "category": "noun"
+    },
+    {
+      "rank": 299,
+      "lemma": "timor",
+      "category": "noun"
+    },
+    {
+      "rank": 300,
+      "lemma": "sapientia",
+      "category": "noun"
+    },
+    {
+      "rank": 301,
+      "lemma": "virtus",
+      "category": "noun"
+    },
+    {
+      "rank": 302,
+      "lemma": "mandatum",
+      "category": "noun"
+    },
+    {
+      "rank": 303,
+      "lemma": "iniquitas",
+      "category": "noun"
+    },
+    {
+      "rank": 304,
+      "lemma": "tribulatio",
+      "category": "noun"
+    },
+    {
+      "rank": 305,
+      "lemma": "generatio",
+      "category": "noun"
+    },
+    {
+      "rank": 306,
+      "lemma": "sermo",
+      "category": "noun"
+    },
+    {
+      "rank": 307,
+      "lemma": "signum",
+      "category": "noun"
+    },
+    {
+      "rank": 308,
+      "lemma": "puer",
+      "category": "noun"
+    },
+    {
+      "rank": 309,
+      "lemma": "sacerdos",
+      "category": "noun"
+    },
+    {
+      "rank": 310,
+      "lemma": "discipulus",
+      "category": "noun"
+    },
+    {
+      "rank": 311,
+      "lemma": "mulier",
+      "category": "noun"
+    },
+    {
+      "rank": 312,
+      "lemma": "turba",
+      "category": "noun"
+    },
+    {
+      "rank": 313,
+      "lemma": "aio",
+      "category": "verb",
+      "note": "Irregular defective speech verb; ait is a very high-dispersion Gospel form."
+    },
+    {
+      "rank": 314,
+      "lemma": "respondeo",
+      "category": "verb"
+    },
+    {
+      "rank": 315,
+      "lemma": "video",
+      "category": "verb"
+    },
+    {
+      "rank": 316,
+      "lemma": "voco",
+      "category": "verb"
+    },
+    {
+      "rank": 317,
+      "lemma": "mitto",
+      "category": "verb"
+    },
+    {
+      "rank": 318,
+      "lemma": "maneo",
+      "category": "verb"
+    },
+    {
+      "rank": 319,
+      "lemma": "invenio",
+      "category": "verb"
+    },
+    {
+      "rank": 320,
+      "lemma": "loquor",
+      "category": "verb"
+    },
+    {
+      "rank": 321,
+      "lemma": "surgo",
+      "category": "verb"
+    },
+    {
+      "rank": 322,
+      "lemma": "abeo",
+      "category": "verb",
+      "note": "Narrative verb; abiit is the dominant high-dispersion form."
+    },
+    {
+      "rank": 323,
+      "lemma": "aperio",
+      "category": "verb"
+    },
+    {
+      "rank": 324,
+      "lemma": "pono",
+      "category": "verb"
+    },
+    {
+      "rank": 325,
+      "lemma": "descendo",
+      "category": "verb"
+    },
+    {
+      "rank": 326,
+      "lemma": "ambulo",
+      "category": "verb"
+    },
+    {
+      "rank": 327,
+      "lemma": "accedo",
+      "category": "verb"
+    },
+    {
+      "rank": 328,
+      "lemma": "sto",
+      "category": "verb"
+    },
+    {
+      "rank": 329,
+      "lemma": "timeo",
+      "category": "verb"
+    },
+    {
+      "rank": 330,
+      "lemma": "clamo",
+      "category": "verb"
+    },
+    {
+      "rank": 331,
+      "lemma": "sequor",
+      "category": "verb"
+    },
+    {
+      "rank": 332,
+      "lemma": "scribo",
+      "category": "verb"
+    },
+    {
+      "rank": 333,
+      "lemma": "vado",
+      "category": "verb"
+    },
+    {
+      "rank": 334,
+      "lemma": "eligo",
+      "category": "verb"
+    },
+    {
+      "rank": 335,
+      "lemma": "trado",
+      "category": "verb"
+    },
+    {
+      "rank": 336,
+      "lemma": "quaero",
+      "category": "verb"
+    },
+    {
+      "rank": 337,
+      "lemma": "interrogo",
+      "category": "verb"
+    },
+    {
+      "rank": 338,
+      "lemma": "annuntio",
+      "category": "verb"
+    },
+    {
+      "rank": 339,
+      "lemma": "respicio",
+      "category": "verb",
+      "note": "Frequent Psalm/Proper imperative and finite forms."
+    },
+    {
+      "rank": 340,
+      "lemma": "cado",
+      "category": "verb"
+    },
+    {
+      "rank": 341,
+      "lemma": "magnus",
+      "category": "adjective"
+    },
+    {
+      "rank": 342,
+      "lemma": "iustus",
+      "category": "adjective"
+    },
+    {
+      "rank": 343,
+      "lemma": "malus",
+      "category": "adjective"
+    },
+    {
+      "rank": 344,
+      "lemma": "salvus",
+      "category": "adjective"
+    },
+    {
+      "rank": 345,
+      "lemma": "salutaris",
+      "category": "adjective"
+    },
+    {
+      "rank": 346,
+      "lemma": "similis",
+      "category": "adjective"
+    },
+    {
+      "rank": 347,
+      "lemma": "novus",
+      "category": "adjective"
+    },
+    {
+      "rank": 348,
+      "lemma": "plenus",
+      "category": "adjective"
+    },
+    {
+      "rank": 349,
+      "lemma": "pauper",
+      "category": "adjective"
+    },
+    {
+      "rank": 350,
+      "lemma": "mirabilis",
+      "category": "adjective",
+      "note": "Includes substantive/plural mirabilia where context requires."
+    }
+  ]
+}

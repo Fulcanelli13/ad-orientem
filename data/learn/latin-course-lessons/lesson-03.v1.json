@@ -1,0 +1,1141 @@
+{
+  "version": "latin-course-lesson-03-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 3,
+  "stage": {
+    "number": 1,
+    "title": "Hear the Latin of the Church"
+  },
+  "title": "Dominus Deus",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "progressionStep": "phrase",
+  "grammarFocus": "Second declension; esse",
+  "readingOutcome": "Extend case-form recognition across masculine and neuter second-declension nouns.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen lesson allocation is introduced; earlier Core may be recycled and later Core may appear only as explicit support.",
+    "authenticTextPolicy": "Primary text and instructional markup are stored separately.",
+    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "Deus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "God",
+          "fr": "Dieu"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "Dominus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "Lord",
+          "fr": "Seigneur"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "filius",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "son",
+          "fr": "fils"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "regnum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "kingdom",
+          "fr": "royaume"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "caelum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "heaven / sky",
+          "fr": "ciel"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "principium",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "beginning / principle",
+          "fr": "commencement"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "sum",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "be",
+          "fr": "être"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "possum",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "be able / can",
+          "fr": "pouvoir"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "apostolus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "apostle",
+          "fr": "apôtre"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "verbum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "word",
+          "fr": "verbe / parole"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "non",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "not",
+          "fr": "ne…pas"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "locus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "place",
+          "fr": "lieu"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "templum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "temple",
+          "fr": "temple"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "oculus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "eye",
+          "fr": "œil"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "servus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "servant",
+          "fr": "serviteur"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "magister",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "master / teacher",
+          "fr": "maître"
+        },
+        "frozenLesson": 3
+      },
+      {
+        "lemma": "puer",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "boy / child",
+          "fr": "enfant / garçon"
+        },
+        "frozenLesson": 3
+      }
+    ],
+    "recycled": [
+      "et",
+      "gloria",
+      "terra"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "vos",
+      "forms": [
+        "vobis"
+      ],
+      "gloss": {
+        "en": "you (plural)",
+        "fr": "vous"
+      },
+      "trackedLesson": 10,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "cum",
+      "forms": [
+        "cum"
+      ],
+      "gloss": {
+        "en": "with",
+        "fr": "avec"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "hic/haec/hoc",
+      "forms": [
+        "Hoc"
+      ],
+      "gloss": {
+        "en": "this",
+        "fr": "ceci"
+      },
+      "trackedLesson": 18,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "enim",
+      "forms": [
+        "enim"
+      ],
+      "gloss": {
+        "en": "for / indeed",
+        "fr": "car / en effet"
+      },
+      "trackedLesson": 11,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "corpus",
+      "forms": [
+        "Corpus"
+      ],
+      "gloss": {
+        "en": "body",
+        "fr": "corps"
+      },
+      "trackedLesson": 6,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "meus",
+      "forms": [
+        "meum"
+      ],
+      "gloss": {
+        "en": "my",
+        "fr": "mon"
+      },
+      "trackedLesson": 4,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "nascor",
+      "forms": [
+        "natus"
+      ],
+      "gloss": {
+        "en": "be born",
+        "fr": "naître"
+      },
+      "trackedLesson": 16,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "nos",
+      "forms": [
+        "nobis"
+      ],
+      "gloss": {
+        "en": "we / us",
+        "fr": "nous"
+      },
+      "trackedLesson": 10,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "do",
+      "forms": [
+        "datus"
+      ],
+      "gloss": {
+        "en": "give",
+        "fr": "donner"
+      },
+      "trackedLesson": 12,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-dominus-vobiscum-l3",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — salutation",
+      "sourceLatin": "Dominus vobiscum.",
+      "provenanceNote": "Authentic salutation; Dominus is target vocabulary while vobiscum is supplied support.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-consecration-hoc-est",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Consecration",
+      "sourceLatin": "Hoc est enim Corpus meum.",
+      "provenanceNote": "Authentic consecration clause; est is the target form of sum.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-christmas-introit-puer",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "In Nativitate Domini — Introit",
+      "sourceLatin": "Puer natus est nobis, et Filius datus est nobis.",
+      "provenanceNote": "Authentic Christmas Introit opening; target nouns and est are read with participles/pronouns supplied.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "learningBlocks": [
+    {
+      "id": "l3-b1",
+      "type": "concept",
+      "title": "A second family of endings",
+      "learnerCopy": {
+        "en": "Lesson 3 adds second-declension masculine and neuter forms to the same six-case map. The map does not reset: first-declension forms remain visible beside the new system.",
+        "fr": "La leçon 3 ajoute les formes masculines et neutres de la deuxième déclinaison à la même carte des six cas. La carte ne repart pas à zéro : la première déclinaison reste visible."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une deuxième famille de désinences"
+        }
+      }
+    },
+    {
+      "id": "l3-b2",
+      "type": "case-panel",
+      "title": "Nominative and vocative stay active",
+      "learnerCopy": {
+        "en": "You still use only nominative and vocative as active case functions. Notice Dominus, Deus, filius, puer and servus as masculine nominative forms, and regnum, caelum, principium, verbum and templum as neuters.",
+        "fr": "Le nominatif et le vocatif restent les seuls cas activement employés. Repérez Dominus, Deus, filius, puer et servus comme formes masculines, puis regnum, caelum, principium, verbum et templum comme neutres."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le nominatif et le vocatif restent actifs"
+        }
+      }
+    },
+    {
+      "id": "l3-b3",
+      "type": "verb",
+      "title": "The verb esse",
+      "learnerCopy": {
+        "en": "sum means 'I am / to be' as a lemma family. Its present forms are sum, es, est, sumus, estis, sunt. Do not confuse the lemma with only one surface form.",
+        "fr": "sum représente le verbe « être ». Ses formes du présent sont sum, es, est, sumus, estis, sunt. Le lemme ne se réduit donc pas à une seule forme."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le verbe esse"
+        }
+      }
+    },
+    {
+      "id": "l3-b4",
+      "type": "verb",
+      "title": "possum is built on sum",
+      "learnerCopy": {
+        "en": "possum means 'I can / be able'. Learn the family possum, potes, potest, possumus, potestis, possunt as a high-frequency irregular pattern related to sum.",
+        "fr": "possum signifie « pouvoir ». Apprenez la famille possum, potes, potest, possumus, potestis, possunt comme un modèle irrégulier fréquent apparenté à sum."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "possum se construit sur sum"
+        }
+      }
+    },
+    {
+      "id": "l3-b5",
+      "type": "authentic-example",
+      "title": "Hoc est",
+      "sourceId": "mr1962-consecration-hoc-est",
+      "learnerCopy": {
+        "en": "In Hoc est enim Corpus meum, est is simply a form of sum. You can identify the verb before you are able to parse every noun and adjective around it.",
+        "fr": "Dans Hoc est enim Corpus meum, est est simplement une forme de sum. Vous pouvez reconnaître le verbe avant de savoir analyser tout le reste."
+      },
+      "referenceIds": [
+        "mr1962-consecration-hoc-est",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Hoc est"
+        }
+      }
+    },
+    {
+      "id": "l3-b6",
+      "type": "liturgical-reading",
+      "title": "Puer natus est nobis",
+      "sourceId": "mr1962-christmas-introit-puer",
+      "learnerCopy": {
+        "en": "Read only what Stage 1 has earned: puer and Filius are nouns you can recognize; est belongs to sum; et is already known. natus, nobis and datus remain supplied.",
+        "fr": "Ne lisez activement que ce qui a déjà été acquis : puer et Filius sont reconnaissables, est appartient à sum et et est déjà connu. natus, nobis et datus restent fournis."
+      },
+      "referenceIds": [
+        "mr1962-christmas-introit-puer",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Puer natus est nobis"
+        }
+      }
+    },
+    {
+      "id": "l3-b7",
+      "type": "retrieval",
+      "title": "One cumulative map",
+      "learnerCopy": {
+        "en": "By now the learner should see first- and second-declension shapes together, not as disconnected chapters. The point is rapid recognition inside Church Latin.",
+        "fr": "À ce stade, les formes des première et deuxième déclinaisons doivent apparaître sur une seule carte cumulative, non comme des chapitres isolés. Le but est la reconnaissance rapide dans le latin de l'Église."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Une seule carte cumulative"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l3-p1",
+      "sourceId": "mr1962-dominus-vobiscum-l3",
+      "sourceLatin": "Dominus vobiscum.",
+      "instructionalDisplay": "Dóminus vobíscum.",
+      "translation": {
+        "en": "The Lord be with you.",
+        "fr": "Le Seigneur soit avec vous."
+      },
+      "targetLemmas": [
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "vos",
+        "cum"
+      ]
+    },
+    {
+      "id": "l3-p2",
+      "sourceId": "mr1962-consecration-hoc-est",
+      "sourceLatin": "Hoc est enim Corpus meum.",
+      "instructionalDisplay": "Hoc est enim Corpus meum.",
+      "translation": {
+        "en": "For this is My Body.",
+        "fr": "Car ceci est mon Corps."
+      },
+      "targetLemmas": [
+        "sum"
+      ],
+      "supportLemmas": [
+        "hic/haec/hoc",
+        "enim",
+        "corpus",
+        "meus"
+      ]
+    },
+    {
+      "id": "l3-p3",
+      "sourceId": "mr1962-christmas-introit-puer",
+      "sourceLatin": "Puer natus est nobis, et Filius datus est nobis.",
+      "instructionalDisplay": "Puer natus est nobis, et Fílius datus est nobis.",
+      "translation": {
+        "en": "A Child is born to us, and a Son is given to us.",
+        "fr": "Un Enfant nous est né, et un Fils nous est donné."
+      },
+      "targetLemmas": [
+        "puer",
+        "sum",
+        "et",
+        "filius"
+      ],
+      "supportLemmas": [
+        "nascor",
+        "nos",
+        "do"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l3-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form is a present form of sum?",
+      "stimulus": null,
+      "expectedAnswer": "est",
+      "acceptedVariants": [
+        "est"
+      ],
+      "hint": "Think of 'is'.",
+      "explanation": "est belongs to the lemma sum.",
+      "difficulty": 1,
+      "sourceId": "mr1962-consecration-hoc-est",
+      "skills": [
+        "verb:sum"
+      ],
+      "options": [
+        "est",
+        "terra",
+        "gloria",
+        "via"
+      ],
+      "referenceIds": [
+        "mr1962-consecration-hoc-est",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est un présent de sum ?",
+          "hint": "Pensez à « est ».",
+          "explanation": "est appartient au lemme sum.",
+          "options": [
+            "est",
+            "terra",
+            "gloria",
+            "via"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l3-e2",
+      "exerciseType": "matching",
+      "prompt": "Match the second-declension nouns to meanings.",
+      "stimulus": [
+        "Dominus",
+        "filius",
+        "regnum",
+        "verbum"
+      ],
+      "expectedAnswer": {
+        "Dominus": "Lord",
+        "filius": "son",
+        "regnum": "kingdom",
+        "verbum": "word"
+      },
+      "acceptedVariants": [],
+      "hint": "All are new Lesson 3 lemmas.",
+      "explanation": "This checks lexical recognition.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l3"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez les noms de la deuxième déclinaison à leur sens.",
+          "hint": "Tous sont de nouveaux lemmes de la leçon 3.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale.",
+          "matches": {
+            "Dominus": "Seigneur",
+            "filius": "fils",
+            "regnum": "royaume",
+            "verbum": "parole"
+          }
+        }
+      }
+    },
+    {
+      "id": "l3-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which noun is neuter in the Lesson 3 set?",
+      "stimulus": null,
+      "expectedAnswer": "templum",
+      "acceptedVariants": [
+        "templum"
+      ],
+      "hint": "Neuter second-declension nouns commonly appear in -um.",
+      "explanation": "templum is neuter.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "declension:second",
+        "gender:neuter"
+      ],
+      "options": [
+        "templum",
+        "servus",
+        "puer",
+        "magister"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nom est neutre dans l’ensemble de la leçon 3 ?",
+          "hint": "Les noms neutres de la deuxième déclinaison se présentent souvent en -um.",
+          "explanation": "templum est neutre.",
+          "options": [
+            "templum",
+            "servus",
+            "puer",
+            "magister"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l3-e4",
+      "exerciseType": "token_select",
+      "prompt": "Select the Lesson 3 noun in the salutation.",
+      "stimulus": "Dominus vobiscum.",
+      "expectedAnswer": [
+        "Dominus"
+      ],
+      "acceptedVariants": [
+        [
+          "Dominus"
+        ]
+      ],
+      "hint": "The rest is support until later lessons.",
+      "explanation": "Dominus is active Core vocabulary.",
+      "difficulty": 1,
+      "sourceId": "mr1962-dominus-vobiscum-l3",
+      "skills": [
+        "vocabulary:Dominus",
+        "reading:recognition"
+      ],
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l3",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le nom de la leçon 3 dans la salutation.",
+          "hint": "Le reste est fourni comme aide jusqu’aux leçons ultérieures.",
+          "explanation": "Dominus appartient au vocabulaire fondamental actif."
+        }
+      }
+    },
+    {
+      "id": "l3-e5",
+      "exerciseType": "token_select",
+      "prompt": "Select the form of sum.",
+      "stimulus": "Hoc est enim Corpus meum.",
+      "expectedAnswer": [
+        "est"
+      ],
+      "acceptedVariants": [
+        [
+          "est"
+        ]
+      ],
+      "hint": "Look for 'is'.",
+      "explanation": "est is the third-person singular present of sum.",
+      "difficulty": 1,
+      "sourceId": "mr1962-consecration-hoc-est",
+      "skills": [
+        "verb:sum",
+        "reading:recognition"
+      ],
+      "referenceIds": [
+        "mr1962-consecration-hoc-est",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez la forme de sum.",
+          "hint": "Cherchez « est ».",
+          "explanation": "est est la troisième personne du singulier du présent de sum."
+        }
+      }
+    },
+    {
+      "id": "l3-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which present form means 'we are'?",
+      "stimulus": null,
+      "expectedAnswer": "sumus",
+      "acceptedVariants": [
+        "sumus"
+      ],
+      "hint": "Look for first-person plural.",
+      "explanation": "sumus means 'we are'.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "verb:sum",
+        "person:number"
+      ],
+      "options": [
+        "sum",
+        "es",
+        "sumus",
+        "sunt"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme du présent signifie « nous sommes » ?",
+          "hint": "Cherchez la première personne du pluriel.",
+          "explanation": "sumus signifie « nous sommes ».",
+          "options": [
+            "sum",
+            "es",
+            "sumus",
+            "sunt"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l3-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which present form of possum means 'he/she/it can'?",
+      "stimulus": null,
+      "expectedAnswer": "potest",
+      "acceptedVariants": [
+        "potest"
+      ],
+      "hint": "Third-person singular.",
+      "explanation": "potest is third-person singular.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "verb:possum",
+        "person:number"
+      ],
+      "options": [
+        "possum",
+        "potes",
+        "potest",
+        "possunt"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme du présent de possum signifie « il/elle peut » ?",
+          "hint": "Troisième personne du singulier.",
+          "explanation": "potest est la troisième personne du singulier.",
+          "options": [
+            "possum",
+            "potes",
+            "potest",
+            "possunt"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l3-e8",
+      "exerciseType": "token_select",
+      "prompt": "Select all previously or currently learned words in the Christmas Introit opening.",
+      "stimulus": "Puer natus est nobis, et Filius datus est nobis.",
+      "expectedAnswer": [
+        "Puer",
+        "est",
+        "et",
+        "Filius",
+        "est"
+      ],
+      "acceptedVariants": [
+        [
+          "Puer",
+          "est",
+          "et",
+          "Filius",
+          "est"
+        ]
+      ],
+      "hint": "Do not select supplied natus, nobis, datus.",
+      "explanation": "This demonstrates cumulative reading without silently teaching the support words.",
+      "difficulty": 2,
+      "sourceId": "mr1962-christmas-introit-puer",
+      "skills": [
+        "reading:cumulative",
+        "curriculum:support-boundary"
+      ],
+      "referenceIds": [
+        "mr1962-christmas-introit-puer",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez tous les mots déjà appris ou appris actuellement dans l’ouverture de l’Introït de Noël.",
+          "hint": "Ne sélectionnez pas les mots d’aide natus, nobis, datus.",
+          "explanation": "Cela montre une lecture cumulative sans enseigner implicitement les mots d’aide."
+        }
+      }
+    },
+    {
+      "id": "l3-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which case function remains active for direct address?",
+      "stimulus": null,
+      "expectedAnswer": "vocative",
+      "acceptedVariants": [
+        "vocative"
+      ],
+      "hint": "The case map persists from Lesson 2.",
+      "explanation": "Vocative remains active; later cases are still preview.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:vocative",
+        "case:framework"
+      ],
+      "options": [
+        "vocative",
+        "genitive",
+        "ablative",
+        "accusative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle fonction casuelle reste active pour l’adresse directe ?",
+          "hint": "La carte des cas se poursuit depuis la leçon 2.",
+          "explanation": "Le vocatif reste actif ; les cas ultérieurs ne sont encore que prévisualisés.",
+          "options": [
+            "vocatif",
+            "génitif",
+            "ablatif",
+            "accusatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l3-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin lemma for 'word'.",
+      "stimulus": null,
+      "expectedAnswer": "verbum",
+      "acceptedVariants": [
+        "verbum",
+        "Verbum"
+      ],
+      "hint": "It is a neuter second-declension noun.",
+      "explanation": "verbum is a Lesson 3 Core noun.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:verbum"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le lemme latin pour « parole ».",
+          "hint": "C’est un nom neutre de la deuxième déclinaison.",
+          "explanation": "verbum est un nom fondamental de la leçon 3."
+        }
+      }
+    }
+  ],
+  "durationMinutes": 40,
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases stay visible from here onward. Only nominative and vocative are active functions in Stage 1; the remaining cases are previewed until their later unlocks.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active",
+        "question": "who/what is named as the subject or identity?",
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-ae"
+        },
+        "secondDeclension": {
+          "masculineSingular": "-us / -er",
+          "masculinePlural": "-i",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "vocative",
+        "status": "active",
+        "question": "who/what is directly addressed?",
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-ae"
+        },
+        "secondDeclension": {
+          "masculineSingular": "usually -e; -er often unchanged",
+          "masculinePlural": "-i",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "accusative",
+        "status": "preview",
+        "unlockLesson": 9,
+        "firstDeclension": {
+          "singular": "-am",
+          "plural": "-as"
+        },
+        "secondDeclension": {
+          "masculineSingular": "-um",
+          "masculinePlural": "-os",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "genitive",
+        "status": "preview",
+        "unlockLesson": 8,
+        "firstDeclension": {
+          "singular": "-ae",
+          "plural": "-arum"
+        },
+        "secondDeclension": {
+          "singular": "-i",
+          "plural": "-orum"
+        }
+      },
+      {
+        "case": "dative",
+        "status": "preview",
+        "unlockLesson": 8,
+        "firstDeclension": {
+          "singular": "-ae",
+          "plural": "-is"
+        },
+        "secondDeclension": {
+          "singular": "-o",
+          "plural": "-is"
+        }
+      },
+      {
+        "case": "ablative",
+        "status": "preview",
+        "unlockLesson": 9,
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-is"
+        },
+        "secondDeclension": {
+          "singular": "-o",
+          "plural": "-is"
+        }
+      }
+    ],
+    "notes": [
+      "Deus commonly keeps Deus in direct address; filius has the familiar vocative fili. These are learned as liturgical forms rather than forced into a simplistic rule."
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "verbSystems": [
+    {
+      "lemma": "sum",
+      "present": [
+        "sum",
+        "es",
+        "est",
+        "sumus",
+        "estis",
+        "sunt"
+      ]
+    },
+    {
+      "lemma": "possum",
+      "present": [
+        "possum",
+        "potes",
+        "potest",
+        "possumus",
+        "potestis",
+        "possunt"
+      ]
+    }
+  ],
+  "objectives": [
+    "Add second-declension masculine and neuter forms to the persistent case map.",
+    "Recognize the present forms of sum and possum.",
+    "Learn all seventeen frozen Lesson 3 lemmas.",
+    "Read est as a form of sum inside authentic liturgical clauses."
+  ],
+  "checkpoint": {
+    "id": "l3-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l3-e1",
+        "l3-e2",
+        "l3-e3",
+        "l3-e4",
+        "l3-e5",
+        "l3-e6",
+        "l3-e7",
+        "l3-e8",
+        "l3-e9",
+        "l3-e10"
+      ]
+    },
+    "mustKnow": [
+      "first and second declensions coexist on one case map",
+      "nominative/vocative remain active",
+      "sum present forms",
+      "possum present forms"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "Deus",
+      "Dominus",
+      "filius",
+      "regnum",
+      "caelum",
+      "principium",
+      "sum",
+      "possum",
+      "apostolus",
+      "verbum",
+      "non",
+      "locus",
+      "templum",
+      "oculus",
+      "servus",
+      "magister",
+      "puer"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 3,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Dominus Deus",
+      "grammarFocus": "Deuxième déclinaison ; esse",
+      "readingOutcome": "Étendre la reconnaissance des formes casuelles aux noms masculins et neutres de la deuxième déclinaison.",
+      "objectives": [
+        "Ajouter les formes masculines et neutres de la deuxième déclinaison à la carte persistante des cas.",
+        "Reconnaître les formes du présent de sum et de possum.",
+        "Apprendre les dix-sept lemmes figés de la leçon 3.",
+        "Lire est comme une forme de sum dans des propositions liturgiques authentiques."
+      ]
+    }
+  }
+}

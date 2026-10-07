@@ -1,0 +1,1220 @@
+{
+  "version": "latin-course-lesson-18-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 18,
+  "stage": {
+    "number": 4,
+    "title": "Structure"
+  },
+  "title": "Hoc est Corpus meum",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "sentence",
+  "grammarFocus": "Demonstratives and ipse",
+  "readingOutcome": "Distinguish demonstrative, intensive and identity pronouns in context.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen Lesson 18 allocation is introduced; later clause vocabulary remains declared support.",
+    "authenticTextPolicy": "Demonstratives are anchored in Consecration, Last Gospel and scriptural-liturgical clauses.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "hic/haec/hoc",
+        "partOfSpeech": "pronoun/adjective",
+        "gloss": {
+          "en": "this",
+          "fr": "ce / cette / ceci"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "ille",
+        "partOfSpeech": "pronoun/adjective",
+        "gloss": {
+          "en": "that / he",
+          "fr": "ce...là / celui-là"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "iste",
+        "partOfSpeech": "pronoun/adjective",
+        "gloss": {
+          "en": "that (near you) / that one",
+          "fr": "ce...là / celui-là"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "ipse",
+        "partOfSpeech": "pronoun/adjective",
+        "gloss": {
+          "en": "self / himself / very",
+          "fr": "même / lui-même"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "idem",
+        "partOfSpeech": "pronoun/adjective",
+        "gloss": {
+          "en": "same",
+          "fr": "même"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "sacramentum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sacrament / mystery",
+          "fr": "sacrement / mystère"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "quidam",
+        "partOfSpeech": "pronoun/adjective",
+        "gloss": {
+          "en": "a certain / someone",
+          "fr": "un certain / quelqu'un"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "alius",
+        "partOfSpeech": "pronoun/adjective",
+        "gloss": {
+          "en": "other / another",
+          "fr": "autre"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "multus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "much / many",
+          "fr": "beaucoup / nombreux"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "totus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "whole / entire",
+          "fr": "tout entier"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "solus",
+        "partOfSpeech": "adjective",
+        "gloss": {
+          "en": "alone / only",
+          "fr": "seul"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "unus",
+        "partOfSpeech": "numeral/adjective",
+        "gloss": {
+          "en": "one",
+          "fr": "un"
+        },
+        "frozenLesson": 18
+      },
+      {
+        "lemma": "duo",
+        "partOfSpeech": "numeral",
+        "gloss": {
+          "en": "two",
+          "fr": "deux"
+        },
+        "frozenLesson": 18
+      }
+    ],
+    "recycled": [
+      "sum",
+      "enim",
+      "corpus",
+      "meus",
+      "in",
+      "vita",
+      "et",
+      "saeculum",
+      "non",
+      "lux",
+      "sed",
+      "testimonium",
+      "de",
+      "lumen",
+      "filius",
+      "Deus",
+      "nomen",
+      "Dominus",
+      "fides",
+      "homo",
+      "ibi",
+      "is/ea/id",
+      "magnus"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "illuminat",
+      "forms": [
+        "illuminat"
+      ],
+      "gloss": {
+        "en": "enlightens",
+        "fr": "éclaire"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "perhibeo",
+      "forms": [
+        "perhiberet"
+      ],
+      "gloss": {
+        "en": "bear / give testimony",
+        "fr": "rendre témoignage"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vere",
+      "forms": [
+        "Vere"
+      ],
+      "gloss": {
+        "en": "truly",
+        "fr": "vraiment"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "tres",
+      "forms": [
+        "tres"
+      ],
+      "gloss": {
+        "en": "three",
+        "fr": "trois"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "congrego",
+      "forms": [
+        "congregati"
+      ],
+      "gloss": {
+        "en": "gather",
+        "fr": "rassembler"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "medius",
+      "forms": [
+        "medio"
+      ],
+      "gloss": {
+        "en": "middle / midst",
+        "fr": "milieu"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "baptisma",
+      "forms": [
+        "baptisma"
+      ],
+      "gloss": {
+        "en": "baptism",
+        "fr": "baptême"
+      },
+      "trackedLesson": null,
+      "status": "already-taught-alias"
+    },
+    {
+      "lemma": "ut",
+      "forms": [
+        "ut"
+      ],
+      "gloss": {
+        "en": "that / so that",
+        "fr": "que / afin que"
+      },
+      "trackedLesson": 23,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-consecration-hoc-l18",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Consecration",
+      "sourceLatin": "Hoc est enim Corpus meum.",
+      "provenanceNote": "Hoc is neuter nominative singular and identifies Corpus.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-last-gospel-ipso-l18",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Last Gospel",
+      "sourceLatin": "In ipso vita erat, et vita erat lux hominum.",
+      "provenanceNote": "ipso is ablative singular after in and functions intensively/pronominally.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "vulg-jn1-8-l18",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ioannes 1:8",
+      "sourceLatin": "Non erat ille lux, sed ut testimonium perhiberet de lumine.",
+      "provenanceNote": "ille supplies a third-person demonstrative contrasted with the predicate lux.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-mt27-54-l18",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 27:54",
+      "sourceLatin": "Vere Filius Dei erat iste.",
+      "provenanceNote": "iste is used predicatively for direct identification.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-eph4-5-l18",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ephesios 4:5",
+      "sourceLatin": "Unus Dominus, una fides, unum baptisma.",
+      "provenanceNote": "unus appears across three genders and reinforces agreement.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-mt18-20-l18",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 18:20",
+      "sourceLatin": "Ubi enim sunt duo vel tres congregati in nomine meo, ibi sum in medio eorum.",
+      "provenanceNote": "duo is introduced in a familiar ecclesial saying; later words remain support.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-eph5-32-l18",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Ephesios 5:32",
+      "sourceLatin": "Sacramentum hoc magnum est.",
+      "provenanceNote": "sacramentum and hoc appear together; magnum is recycled adjective agreement.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active. Demonstratives and intensive pronouns are parsed on the same case map as other pronouns.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "demonstrativeFramework": {
+    "contrasts": [
+      {
+        "family": "hic/haec/hoc",
+        "value": "this; points to something near or immediately present"
+      },
+      {
+        "family": "ille",
+        "value": "that / he; often points away or resumes a known referent"
+      },
+      {
+        "family": "iste",
+        "value": "that one near you / that one; context controls tone"
+      },
+      {
+        "family": "ipse",
+        "value": "self / very; intensive identity"
+      },
+      {
+        "family": "idem",
+        "value": "same; identity across references"
+      },
+      {
+        "family": "is/ea/id",
+        "value": "lighter third-person/anaphoric reference; recycled from Lesson 10"
+      }
+    ],
+    "pronominalAdjectiveNote": "unus, solus, totus, alius and several similar words show pronominal genitive singular -ius and dative singular -i patterns.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "pronounSpiral": {
+    "lesson": 18,
+    "focus": "hic/ille/iste/ipse/idem contrasted with is/ea/id.",
+    "retrievalFamilies": [
+      "ego/tu/nos/vos",
+      "is/ea/id",
+      "qui/quae/quod",
+      "hic/ille/iste/ipse/idem"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l18-b1",
+      "type": "concept",
+      "title": "Not every 'he/this/that' does the same job",
+      "learnerCopy": {
+        "en": "Latin has several pronoun families for pointing, identifying and intensifying. hic points to 'this'; ille and iste point to 'that'; ipse intensifies identity; idem means 'the same'. is/ea/id remains the lighter anaphoric third-person family.",
+        "fr": "Le latin possède plusieurs familles pour montrer, identifier et renforcer. hic désigne « ceci » ; ille et iste « cela » ; ipse renforce l'identité ; idem signifie « le même ». is/ea/id reste la famille anaphorique plus légère."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Tous les « il / ceci / cela » n’ont pas la même fonction"
+        }
+      }
+    },
+    {
+      "id": "l18-b2",
+      "type": "authentic-example",
+      "title": "Hoc est enim Corpus meum",
+      "sourceId": "mr1962-consecration-hoc-l18",
+      "learnerCopy": {
+        "en": "Hoc is neuter because it identifies Corpus, a neuter noun. The demonstrative does not merely translate 'this'; its form reveals gender, number and case.",
+        "fr": "Hoc est neutre parce qu'il identifie Corpus, nom neutre. Le démonstratif ne se contente pas de traduire « ceci » : sa forme révèle genre, nombre et cas."
+      },
+      "referenceIds": [
+        "mr1962-consecration-hoc-l18",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Hoc est enim Corpus meum"
+        }
+      }
+    },
+    {
+      "id": "l18-b3",
+      "type": "authentic-example",
+      "title": "In ipso vita erat",
+      "sourceId": "mr1962-last-gospel-ipso-l18",
+      "learnerCopy": {
+        "en": "ipso is ablative after in. ipse adds intensive identity: 'in Him / in that very one'. Case government and pronoun nuance work together.",
+        "fr": "ipso est à l'ablatif après in. ipse ajoute une valeur intensive d'identité : « en lui / en celui-là même ». Régime de cas et nuance pronominale fonctionnent ensemble."
+      },
+      "referenceIds": [
+        "mr1962-last-gospel-ipso-l18",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "In ipso vita erat"
+        }
+      }
+    },
+    {
+      "id": "l18-b4",
+      "type": "contrast",
+      "title": "ille and iste",
+      "learnerCopy": {
+        "en": "Non erat ille lux uses ille to point back to a person already in discourse. Vere Filius Dei erat iste uses iste for direct identification. Context matters more than forcing one rigid English equivalent.",
+        "fr": "Non erat ille lux emploie ille pour reprendre une personne déjà présente dans le discours. Vere Filius Dei erat iste emploie iste pour une identification directe. Le contexte compte plus qu'une traduction anglaise ou française unique."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "ille et iste"
+        }
+      }
+    },
+    {
+      "id": "l18-b5",
+      "type": "morphology",
+      "title": "unus and the pronominal-adjective pattern",
+      "sourceId": "vulg-eph4-5-l18",
+      "learnerCopy": {
+        "en": "unus, una, unum agrees like an adjective, but its genitive/dative singular forms follow a pronominal pattern. solus, totus and alius belong to the same useful morphological family.",
+        "fr": "unus, una, unum s'accorde comme un adjectif, mais son génitif et son datif singuliers suivent un modèle pronominal. solus, totus et alius appartiennent à la même famille morphologique utile."
+      },
+      "referenceIds": [
+        "vulg-eph4-5-l18",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "unus et le modèle de l’adjectif pronominal"
+        }
+      }
+    },
+    {
+      "id": "l18-b6",
+      "type": "pronoun",
+      "title": "The spiral now requires family selection",
+      "learnerCopy": {
+        "en": "By Lesson 18 you must decide not only case, but pronoun family: personal, reflexive, anaphoric is/ea/id, relative qui/quae/quod, demonstrative hic/ille/iste, intensive ipse, or identity idem.",
+        "fr": "À la leçon 18, il faut choisir non seulement le cas mais aussi la famille : personnel, réfléchi, anaphorique is/ea/id, relatif qui/quae/quod, démonstratif hic/ille/iste, intensif ipse ou identité idem."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "La progression en spirale exige désormais de choisir la bonne famille"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l18-p1",
+      "sourceId": "mr1962-consecration-hoc-l18",
+      "sourceLatin": "Hoc est enim Corpus meum.",
+      "instructionalDisplay": "Hoc est enim Corpus meum.",
+      "translation": {
+        "en": "For this is My Body.",
+        "fr": "Car ceci est mon Corps."
+      },
+      "targetLemmas": [
+        "hic/haec/hoc",
+        "sum",
+        "enim",
+        "corpus",
+        "meus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l18-p2",
+      "sourceId": "mr1962-last-gospel-ipso-l18",
+      "sourceLatin": "In ipso vita erat, et vita erat lux hominum.",
+      "instructionalDisplay": "In ipso vita erat, et vita erat lux hominum.",
+      "translation": {
+        "en": "In Him was life, and the life was the light of men.",
+        "fr": "En lui était la vie, et la vie était la lumière des hommes."
+      },
+      "targetLemmas": [
+        "in",
+        "ipse",
+        "vita",
+        "sum",
+        "et",
+        "lux",
+        "homo"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l18-p3",
+      "sourceId": "vulg-jn1-8-l18",
+      "sourceLatin": "Non erat ille lux, sed ut testimonium perhiberet de lumine.",
+      "instructionalDisplay": "Non erat ille lux, sed ut testimonium perhiberet de lumine.",
+      "translation": {
+        "en": "He was not the light, but was to give testimony of the light.",
+        "fr": "Il n'était pas la lumière, mais il devait rendre témoignage à la lumière."
+      },
+      "targetLemmas": [
+        "non",
+        "sum",
+        "ille",
+        "lux",
+        "sed",
+        "testimonium",
+        "de",
+        "lumen"
+      ],
+      "supportLemmas": [
+        "perhibeo",
+        "ut"
+      ]
+    },
+    {
+      "id": "l18-p4",
+      "sourceId": "vulg-mt27-54-l18",
+      "sourceLatin": "Vere Filius Dei erat iste.",
+      "instructionalDisplay": "Vere Filius Dei erat iste.",
+      "translation": {
+        "en": "Indeed this was the Son of God.",
+        "fr": "Vraiment, celui-ci était le Fils de Dieu."
+      },
+      "targetLemmas": [
+        "filius",
+        "Deus",
+        "sum",
+        "iste"
+      ],
+      "supportLemmas": [
+        "vere"
+      ]
+    },
+    {
+      "id": "l18-p5",
+      "sourceId": "vulg-eph4-5-l18",
+      "sourceLatin": "Unus Dominus, una fides, unum baptisma.",
+      "instructionalDisplay": "Unus Dominus, una fides, unum baptisma.",
+      "translation": {
+        "en": "One Lord, one faith, one baptism.",
+        "fr": "Un seul Seigneur, une seule foi, un seul baptême."
+      },
+      "targetLemmas": [
+        "unus",
+        "Dominus",
+        "fides"
+      ],
+      "supportLemmas": [
+        "baptisma"
+      ]
+    },
+    {
+      "id": "l18-p6",
+      "sourceId": "vulg-mt18-20-l18",
+      "sourceLatin": "Ubi enim sunt duo vel tres congregati in nomine meo, ibi sum in medio eorum.",
+      "instructionalDisplay": "Ubi enim sunt duo vel tres congregati in nomine meo, ibi sum in medio eorum.",
+      "translation": {
+        "en": "For where there are two or three gathered together in My name, there am I in the midst of them.",
+        "fr": "Car là où deux ou trois sont réunis en mon nom, je suis au milieu d'eux."
+      },
+      "targetLemmas": [
+        "enim",
+        "sum",
+        "duo",
+        "in",
+        "nomen",
+        "meus",
+        "ibi",
+        "is/ea/id"
+      ],
+      "supportLemmas": [
+        "tres",
+        "congrego",
+        "medius"
+      ]
+    },
+    {
+      "id": "l18-p7",
+      "sourceId": "vulg-eph5-32-l18",
+      "sourceLatin": "Sacramentum hoc magnum est.",
+      "instructionalDisplay": "Sacramentum hoc magnum est.",
+      "translation": {
+        "en": "This is a great sacrament / mystery.",
+        "fr": "C'est un grand sacrement / mystère."
+      },
+      "targetLemmas": [
+        "sacramentum",
+        "hic/haec/hoc",
+        "magnus",
+        "sum"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l18-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why is Hoc neuter in Hoc est Corpus meum?",
+      "stimulus": "Hoc",
+      "options": [
+        "because it identifies neuter Corpus",
+        "because all demonstratives are neuter",
+        "because est requires neuter",
+        "because meum is a verb"
+      ],
+      "expectedAnswer": "because it identifies neuter Corpus",
+      "acceptedVariants": [
+        "because it identifies neuter Corpus"
+      ],
+      "hint": "Match the demonstrative to Corpus.",
+      "explanation": "Hoc agrees with the neuter noun Corpus.",
+      "difficulty": 1,
+      "sourceId": "mr1962-consecration-hoc-l18",
+      "skills": [
+        "pronoun:demonstrative",
+        "agreement"
+      ],
+      "referenceIds": [
+        "mr1962-consecration-hoc-l18",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi Hoc est-il neutre dans Hoc est Corpus meum ?",
+          "hint": "Faites correspondre le démonstratif à Corpus.",
+          "explanation": "Hoc s’accorde avec le nom neutre Corpus.",
+          "options": [
+            "parce qu’il identifie le neutre Corpus",
+            "parce que tous les démonstratifs sont neutres",
+            "parce que est exige le neutre",
+            "parce que meum est un verbe"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l18-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is ipso in In ipso vita erat?",
+      "stimulus": "ipso",
+      "options": [
+        "ablative",
+        "accusative",
+        "genitive",
+        "dative"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "Static in governs the ablative.",
+      "explanation": "ipso is ablative singular.",
+      "difficulty": 1,
+      "sourceId": "mr1962-last-gospel-ipso-l18",
+      "skills": [
+        "pronoun:ipse",
+        "case:ablative"
+      ],
+      "referenceIds": [
+        "mr1962-last-gospel-ipso-l18",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est ipso dans In ipso vita erat ?",
+          "hint": "in statique régit l’ablatif.",
+          "explanation": "ipso est à l’ablatif singulier.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l18-e3",
+      "exerciseType": "matching",
+      "prompt": "Match pronoun family to core value.",
+      "stimulus": [
+        "hic/haec/hoc",
+        "ille",
+        "ipse",
+        "idem"
+      ],
+      "expectedAnswer": {
+        "hic/haec/hoc": "this",
+        "ille": "that / he",
+        "ipse": "self / very",
+        "idem": "same"
+      },
+      "acceptedVariants": [],
+      "hint": "Distinguish pointing from intensive identity.",
+      "explanation": "These families have related but different discourse functions.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronoun:demonstratives"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la famille pronominale à sa valeur principale.",
+          "hint": "Distinguez l’indication démonstrative de l’identité intensive.",
+          "explanation": "Ces familles ont des fonctions discursives proches mais distinctes.",
+          "matches": {
+            "hic/haec/hoc": "ceci / celui-ci",
+            "ille": "cela / celui-là / il",
+            "ipse": "lui-même / précisément",
+            "idem": "le même"
+          }
+        }
+      }
+    },
+    {
+      "id": "l18-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which family is the lighter anaphoric third-person pronoun already learned in Lesson 10?",
+      "stimulus": null,
+      "options": [
+        "is/ea/id",
+        "hic/haec/hoc",
+        "ipse",
+        "idem"
+      ],
+      "expectedAnswer": "is/ea/id",
+      "acceptedVariants": [
+        "is/ea/id"
+      ],
+      "hint": "It often means he/she/it without strong pointing.",
+      "explanation": "is/ea/id is the lighter anaphoric family.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronoun:spiral"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle famille est le pronom anaphorique léger de troisième personne déjà appris à la leçon 10 ?",
+          "hint": "Il signifie souvent il/elle/cela sans forte valeur démonstrative.",
+          "explanation": "is/ea/id est la famille anaphorique légère.",
+          "options": [
+            "is/ea/id",
+            "hic/haec/hoc",
+            "ipse",
+            "idem"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l18-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does unus demonstrate in Unus Dominus, una fides, unum baptisma?",
+      "stimulus": "unus/una/unum",
+      "options": [
+        "gender agreement across masculine, feminine and neuter",
+        "future tense",
+        "relative-pronoun case",
+        "passive voice"
+      ],
+      "expectedAnswer": "gender agreement across masculine, feminine and neuter",
+      "acceptedVariants": [
+        "gender agreement across masculine, feminine and neuter"
+      ],
+      "hint": "The three forms modify three different-gender nouns.",
+      "explanation": "unus changes to match its noun.",
+      "difficulty": 2,
+      "sourceId": "vulg-eph4-5-l18",
+      "skills": [
+        "agreement",
+        "vocabulary:unus"
+      ],
+      "referenceIds": [
+        "vulg-eph4-5-l18",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que montre unus dans Unus Dominus, una fides, unum baptisma ?",
+          "hint": "Les trois formes modifient des noms de genres différents.",
+          "explanation": "unus change de forme pour s’accorder avec son nom.",
+          "options": [
+            "l’accord de genre au masculin, au féminin et au neutre",
+            "le futur",
+            "le cas du pronom relatif",
+            "la voix passive"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l18-e6",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 18 word to meaning.",
+      "stimulus": [
+        "alius",
+        "multus",
+        "totus",
+        "solus"
+      ],
+      "expectedAnswer": {
+        "alius": "other / another",
+        "multus": "much / many",
+        "totus": "whole / entire",
+        "solus": "alone / only"
+      },
+      "acceptedVariants": [],
+      "hint": "These accompany the demonstrative/pronominal system.",
+      "explanation": "This checks the pronominal-adjective vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l18"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le mot de la leçon 18 à son sens.",
+          "hint": "Ces mots accompagnent le système démonstratif et pronominal.",
+          "explanation": "Ceci vérifie le vocabulaire des adjectifs pronominaux.",
+          "matches": {
+            "alius": "autre / un autre",
+            "multus": "beaucoup / nombreux",
+            "totus": "tout entier / entier",
+            "solus": "seul / seulement"
+          }
+        }
+      }
+    },
+    {
+      "id": "l18-e7",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 18 item to meaning.",
+      "stimulus": [
+        "quidam",
+        "unus",
+        "duo",
+        "sacramentum"
+      ],
+      "expectedAnswer": {
+        "quidam": "a certain / someone",
+        "unus": "one",
+        "duo": "two",
+        "sacramentum": "sacrament / mystery"
+      },
+      "acceptedVariants": [],
+      "hint": "All are frozen Lesson 18 vocabulary.",
+      "explanation": "This completes lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l18"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’élément de la leçon 18 à son sens.",
+          "hint": "Tous appartiennent au vocabulaire figé de la leçon 18.",
+          "explanation": "Ceci achève la récupération lexicale.",
+          "matches": {
+            "quidam": "un certain / quelqu’un",
+            "unus": "un",
+            "duo": "deux",
+            "sacramentum": "sacrement / mystère"
+          }
+        }
+      }
+    },
+    {
+      "id": "l18-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which pronoun is intensive rather than simply demonstrative?",
+      "stimulus": null,
+      "options": [
+        "ipse",
+        "hic",
+        "ille",
+        "iste"
+      ],
+      "expectedAnswer": "ipse",
+      "acceptedVariants": [
+        "ipse"
+      ],
+      "hint": "It means 'self / very'.",
+      "explanation": "ipse intensifies identity.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronoun:ipse"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel pronom est intensif plutôt que simplement démonstratif ?",
+          "hint": "Il signifie « lui-même / précisément ».",
+          "explanation": "ipse intensifie l’identité.",
+          "options": [
+            "ipse",
+            "hic",
+            "ille",
+            "iste"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l18-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does idem mean?",
+      "stimulus": null,
+      "options": [
+        "same",
+        "other",
+        "whoever",
+        "each"
+      ],
+      "expectedAnswer": "same",
+      "acceptedVariants": [
+        "same"
+      ],
+      "hint": "It marks identity across references.",
+      "explanation": "idem means the same.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:idem"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie idem ?",
+          "hint": "Il marque l’identité entre plusieurs références.",
+          "explanation": "idem signifie « le même ».",
+          "options": [
+            "le même",
+            "autre",
+            "quiconque",
+            "chacun"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l18-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'sacrament / mystery'.",
+      "stimulus": null,
+      "expectedAnswer": "sacramentum",
+      "acceptedVariants": [
+        "sacramentum",
+        "Sacramentum"
+      ],
+      "hint": "It appears with hoc in Ephesians 5:32.",
+      "explanation": "sacramentum is the Lesson 18 noun.",
+      "difficulty": 1,
+      "sourceId": "vulg-eph5-32-l18",
+      "skills": [
+        "vocabulary:sacramentum"
+      ],
+      "referenceIds": [
+        "vulg-eph5-32-l18",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « sacrement / mystère ».",
+          "hint": "Il apparaît avec hoc dans Éphésiens 5,32.",
+          "explanation": "sacramentum est le nom de la leçon 18."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Distinguish demonstrative, intensive and identity pronoun families.",
+    "Parse demonstratives on the existing case map.",
+    "Relate unus/solus/totus/alius to pronominal morphology.",
+    "Continue the pronoun spiral by contrasting new families with is/ea/id."
+  ],
+  "checkpoint": {
+    "id": "l18-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l18-e1",
+        "l18-e2",
+        "l18-e3",
+        "l18-e4",
+        "l18-e5",
+        "l18-e6",
+        "l18-e7",
+        "l18-e8",
+        "l18-e9",
+        "l18-e10"
+      ]
+    },
+    "mustKnow": [
+      "hoc agrees with Corpus",
+      "ipse intensive identity",
+      "is/ea/id versus demonstratives",
+      "unus family agreement/pronominal behavior"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "hic/haec/hoc",
+      "ille",
+      "iste",
+      "ipse",
+      "idem",
+      "sacramentum",
+      "quidam",
+      "alius",
+      "multus",
+      "totus",
+      "solus",
+      "unus",
+      "duo"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 7,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Hoc est Corpus meum",
+      "grammarFocus": "Démonstratifs et ipse",
+      "readingOutcome": "Distinguer en contexte les pronoms démonstratifs, intensifs et d’identité.",
+      "objectives": [
+        "Distinguer les familles démonstratives, intensives et d’identité.",
+        "Analyser les démonstratifs sur la carte de cas déjà connue.",
+        "Relier unus/solus/totus/alius à la morphologie pronominale.",
+        "Poursuivre la progression en spirale des pronoms en opposant les nouvelles familles à is/ea/id."
+      ]
+    }
+  }
+}

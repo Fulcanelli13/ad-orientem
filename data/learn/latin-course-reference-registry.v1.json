@@ -1,0 +1,140 @@
+{
+  "version": "latin-course-reference-registry-v1.0",
+  "status": "FROZEN_PROVENANCE_BASELINE",
+  "created": "2026-10-07",
+  "policy": {
+    "purpose": "Resolve every explanatory claim in the 40-lesson Latin course to explicit primary, grammatical, or curriculum authority.",
+    "resolution": "A referenceIds entry may resolve to a lesson-local source.id or to a global reference.id in this registry.",
+    "precision": "Do not invent page numbers. Work-level citations are used where the exact page/section has not been independently checked.",
+    "primaryText": "Liturgical/scriptural quotations continue to resolve to the lesson-local source record, which preserves work, section and sourceLatin.",
+    "pedagogy": "Editorial sequencing/checkpoint claims resolve to the frozen curriculum reference; grammatical or historical language claims additionally resolve to an external grammar/reference work."
+  },
+  "references": [
+    {
+      "id": "curriculum-latin-course-40-v1",
+      "type": "internal-curriculum",
+      "title": "Ad Orientem Latin Course — 40 Lesson Core 350 Frozen Crosswalk",
+      "repositoryPath": "data/learn/latin-course-40-core350.v1.json",
+      "scope": [
+        "lesson sequencing",
+        "tracked-vocabulary placement",
+        "stage milestones",
+        "case unlocks",
+        "pronoun spiral",
+        "independent-reading progression"
+      ]
+    },
+    {
+      "id": "grammar-scanlon-1944",
+      "type": "grammar-pedagogy",
+      "authors": [
+        "Cora Carroll Scanlon",
+        "Charles Lester Scanlon"
+      ],
+      "title": "Latin Grammar: Grammar, Vocabularies, and Exercises in Preparation for the Reading of the Missal and Breviary",
+      "publisher": "B. Herder Book Company",
+      "publicationPlace": "St. Louis, Missouri",
+      "year": 1944,
+      "pages": 334,
+      "scope": [
+        "ecclesiastical pronunciation and accent",
+        "morphology",
+        "core syntax",
+        "Missal/Breviary reading pedagogy",
+        "liturgical vocabulary sequencing"
+      ],
+      "verificationLevel": "bibliographic-and-scope",
+      "catalogUrl": "https://books.google.com/books?id=m1akCuhCNOwC"
+    },
+    {
+      "id": "grammar-nunn-1922",
+      "type": "ecclesiastical-syntax",
+      "author": "H. P. V. Nunn",
+      "title": "An Introduction to Ecclesiastical Latin",
+      "publisher": "Cambridge University Press",
+      "year": 1922,
+      "pages": 162,
+      "scope": [
+        "ecclesiastical syntax",
+        "subordinate clauses",
+        "pronouns",
+        "Late/Ecclesiastical versus Classical usage",
+        "Vulgate and patristic reading"
+      ],
+      "verificationLevel": "bibliographic-and-scope",
+      "catalogUrl": "https://openlibrary.org/books/OL7139864M/An_introduction_to_ecclesiastical_Latin"
+    },
+    {
+      "id": "grammar-plater-white-1926",
+      "type": "vulgate-latinity",
+      "authors": [
+        "W. E. Plater",
+        "H. J. White"
+      ],
+      "title": "A Grammar of the Vulgate: Being an Introduction to the Study of the Latinity of the Vulgate Bible",
+      "publisher": "Clarendon Press",
+      "publicationPlace": "Oxford",
+      "year": 1926,
+      "pages": 166,
+      "scope": [
+        "Vulgate syntax",
+        "Hebrew and Greek influence",
+        "lexical peculiarities",
+        "biblical coordination and semantic usage",
+        "postclassical inflection and syntax"
+      ],
+      "verificationLevel": "bibliographic-and-scope",
+      "catalogUrl": "https://play.google.com/store/books/details?id=wt4GAQAAIAAJ"
+    },
+    {
+      "id": "grammar-petitmangin-1930",
+      "type": "classical-grammar-french",
+      "author": "Henri Petitmangin",
+      "title": "Grammaire latine complète",
+      "edition": "14e édition",
+      "publisher": "J. de Gigord",
+      "year": 1930,
+      "scope": [
+        "morphology",
+        "case functions",
+        "verb system",
+        "subordinate clauses",
+        "French-language grammatical cross-check",
+        "prosody and accentuation"
+      ],
+      "verificationLevel": "bibliographic-and-scope",
+      "catalogUrl": "https://neoclassica.co/2021/01/05/henri-petitmangin-1874-1937/"
+    },
+    {
+      "id": "corpus-missale-romanum-1962",
+      "type": "primary-liturgical-corpus",
+      "title": "Missale Romanum ex Decreto SS. Concilii Tridentini restitutum, Summorum Pontificum cura recognitum",
+      "edition": "Editio typica 1962",
+      "publisher": "Typis Polyglottis Vaticanis",
+      "year": 1962,
+      "scope": [
+        "Ordo Missae",
+        "Temporal",
+        "Sanctoral",
+        "Commons",
+        "Requiem",
+        "Holy Week",
+        "Collects and other Mass propers"
+      ],
+      "verificationLevel": "edition-bibliographic",
+      "catalogUrl": "https://www.sarto.de/missale-romanum-editio-typica-1962"
+    },
+    {
+      "id": "corpus-vulgata-clementina-1592",
+      "type": "primary-scriptural-corpus",
+      "title": "Biblia Sacra Vulgatae Editionis — Vulgata Clementina",
+      "edition": "Vatican edition",
+      "year": 1592,
+      "scope": [
+        "Vulgate scriptural Latin used in liturgical readings, psalmody and biblical examples"
+      ],
+      "verificationLevel": "edition-bibliographic",
+      "catalogUrl": "https://la.wikisource.org/wiki/Vulgata_Clementina/Praefatio_ad_lectorem_officialis"
+    }
+  ]
+}

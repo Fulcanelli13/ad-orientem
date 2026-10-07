@@ -1,0 +1,1832 @@
+{
+  "version": "latin-course-lesson-35-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 35,
+  "stage": {
+    "number": 7,
+    "title": "Church Latin"
+  },
+  "title": "The Language of the Canon",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 65,
+  "progressionStep": "passage",
+  "grammarFocus": "Canon syntax and sacrificial register",
+  "readingOutcome": "Read long periodic prayer syntax and stable Canon vocabulary.",
+  "authoringPolicy": {
+    "method": "period map → sacrificial vocabulary → clause dependencies → continuous Canon reading",
+    "vocabularyPolicy": "Only frozen Lesson 35 vocabulary is introduced; names/titles and non-Core Canon words remain support.",
+    "authenticTextPolicy": "The checkpoint is built from the 1962 Roman Canon and traditional Offertory texts without syntactic simplification.",
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "hostia",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sacrificial victim / host",
+          "fr": "hostie / victime sacrificielle"
+        },
+        "frozenLesson": 35
+      },
+      {
+        "lemma": "sacrificium",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "sacrifice",
+          "fr": "sacrifice"
+        },
+        "frozenLesson": 35
+      },
+      {
+        "lemma": "offero",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "offer",
+          "fr": "offrir"
+        },
+        "frozenLesson": 35
+      },
+      {
+        "lemma": "suscipio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "receive / accept",
+          "fr": "recevoir / agréer"
+        },
+        "frozenLesson": 35
+      },
+      {
+        "lemma": "memoria",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "memory / memorial",
+          "fr": "mémoire / mémorial"
+        },
+        "frozenLesson": 35
+      },
+      {
+        "lemma": "sacerdos",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "priest",
+          "fr": "prêtre"
+        },
+        "frozenLesson": 35
+      },
+      {
+        "lemma": "vinum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "wine",
+          "fr": "vin"
+        },
+        "frozenLesson": 35
+      }
+    ],
+    "recycled": [
+      "tu",
+      "clemens",
+      "pater",
+      "per",
+      "filius",
+      "tuus",
+      "Dominus",
+      "noster",
+      "supplex",
+      "oro",
+      "ut",
+      "accipio",
+      "habeo",
+      "et",
+      "benedico",
+      "hic/haec/hoc",
+      "donum",
+      "munus",
+      "sanctus",
+      "in",
+      "primus",
+      "qui/quae/quod",
+      "pro",
+      "ecclesia",
+      "catholicus",
+      "custodio",
+      "dignor",
+      "totus",
+      "terra",
+      "cum",
+      "famulus",
+      "omnis",
+      "fides",
+      "autem",
+      "nos",
+      "servus",
+      "sed",
+      "nec",
+      "a/ab",
+      "caelum",
+      "maiestas",
+      "de",
+      "panis",
+      "vita",
+      "aeternus",
+      "calix",
+      "salus",
+      "super",
+      "puer",
+      "iustus",
+      "Deus",
+      "aqua",
+      "divinus",
+      "facio",
+      "atque/ac",
+      "omnipotens",
+      "do",
+      "is/ea/id",
+      "sum",
+      "ego"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Iesum"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "acceptus",
+      "forms": [
+        "accepta"
+      ],
+      "gloss": {
+        "en": "accepted / acceptable",
+        "fr": "agréé"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "illibatus",
+      "forms": [
+        "illibata"
+      ],
+      "gloss": {
+        "en": "unblemished",
+        "fr": "sans tache"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pacifico",
+      "forms": [
+        "pacificare"
+      ],
+      "gloss": {
+        "en": "give peace to",
+        "fr": "pacifier"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "aduno",
+      "forms": [
+        "adunare"
+      ],
+      "gloss": {
+        "en": "unite",
+        "fr": "unir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "rego",
+      "forms": [
+        "regere"
+      ],
+      "gloss": {
+        "en": "govern",
+        "fr": "gouverner"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Papa",
+      "forms": [
+        "Papa"
+      ],
+      "gloss": {
+        "en": "Pope",
+        "fr": "Pape"
+      },
+      "trackedLesson": null,
+      "status": "title-excluded"
+    },
+    {
+      "lemma": "Antistes",
+      "forms": [
+        "Antistite"
+      ],
+      "gloss": {
+        "en": "bishop / prelate",
+        "fr": "évêque / prélat"
+      },
+      "trackedLesson": null,
+      "status": "title-excluded"
+    },
+    {
+      "lemma": "orthodoxus",
+      "forms": [
+        "orthodoxis"
+      ],
+      "gloss": {
+        "en": "right-believing / orthodox",
+        "fr": "orthodoxe / fidèle à la vraie foi"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "cultor",
+      "forms": [
+        "cultoribus"
+      ],
+      "gloss": {
+        "en": "worshipper / adherent",
+        "fr": "fidèle / pratiquant"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "memor",
+      "forms": [
+        "memores"
+      ],
+      "gloss": {
+        "en": "mindful",
+        "fr": "se souvenant"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "plebs",
+      "forms": [
+        "plebs"
+      ],
+      "gloss": {
+        "en": "people / congregation",
+        "fr": "peuple"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "inferi",
+      "forms": [
+        "inferis"
+      ],
+      "gloss": {
+        "en": "the lower regions / hell",
+        "fr": "enfers"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "ascensio",
+      "forms": [
+        "ascensionis"
+      ],
+      "gloss": {
+        "en": "ascension",
+        "fr": "ascension"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "praeclarus",
+      "forms": [
+        "praeclarae"
+      ],
+      "gloss": {
+        "en": "excellent / glorious",
+        "fr": "glorieux"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "datus",
+      "forms": [
+        "datis"
+      ],
+      "gloss": {
+        "en": "things given / grants",
+        "fr": "dons / bienfaits"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "purus",
+      "forms": [
+        "puram"
+      ],
+      "gloss": {
+        "en": "pure",
+        "fr": "pur"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "immaculatus",
+      "forms": [
+        "immaculatam"
+      ],
+      "gloss": {
+        "en": "immaculate / spotless",
+        "fr": "immaculé"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "perpetuus",
+      "forms": [
+        "perpetuae"
+      ],
+      "gloss": {
+        "en": "perpetual",
+        "fr": "perpétuel"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "propitius",
+      "forms": [
+        "propitio"
+      ],
+      "gloss": {
+        "en": "favourable / propitious",
+        "fr": "propice"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "serenus",
+      "forms": [
+        "sereno"
+      ],
+      "gloss": {
+        "en": "serene / gracious",
+        "fr": "serein / favorable"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "vultus",
+      "forms": [
+        "vultu"
+      ],
+      "gloss": {
+        "en": "countenance",
+        "fr": "visage / regard"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "respicio",
+      "forms": [
+        "respicere"
+      ],
+      "gloss": {
+        "en": "look upon",
+        "fr": "regarder"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Abel",
+      "forms": [
+        "Abel"
+      ],
+      "gloss": {
+        "en": "Abel",
+        "fr": "Abel"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Abraham",
+      "forms": [
+        "Abrahae"
+      ],
+      "gloss": {
+        "en": "Abraham",
+        "fr": "Abraham"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Melchisedech",
+      "forms": [
+        "Melchisedech"
+      ],
+      "gloss": {
+        "en": "Melchisedech",
+        "fr": "Melchisédech"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "humanus",
+      "forms": [
+        "humanae"
+      ],
+      "gloss": {
+        "en": "human",
+        "fr": "humain"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "substantia",
+      "forms": [
+        "substantiae"
+      ],
+      "gloss": {
+        "en": "substance / nature",
+        "fr": "substance / nature"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "dignitas",
+      "forms": [
+        "dignitatem"
+      ],
+      "gloss": {
+        "en": "dignity",
+        "fr": "dignité"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "condo",
+      "forms": [
+        "condidisti"
+      ],
+      "gloss": {
+        "en": "create / establish",
+        "fr": "créer / établir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "reformo",
+      "forms": [
+        "reformasti"
+      ],
+      "gloss": {
+        "en": "restore / reform",
+        "fr": "restaurer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "consors",
+      "forms": [
+        "consortes"
+      ],
+      "gloss": {
+        "en": "sharer / participant",
+        "fr": "participant"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "quotiescumque",
+      "forms": [
+        "quotiescumque"
+      ],
+      "gloss": {
+        "en": "whenever",
+        "fr": "chaque fois que"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "igitur",
+      "forms": [
+        "igitur"
+      ],
+      "gloss": {
+        "en": "therefore",
+        "fr": "donc"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "peto",
+      "forms": [
+        "petimus"
+      ],
+      "gloss": {
+        "en": "ask / seek",
+        "fr": "demander"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "orbis",
+      "forms": [
+        "orbe"
+      ],
+      "gloss": {
+        "en": "world / circle",
+        "fr": "monde"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christi"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "passio",
+      "forms": [
+        "passionis"
+      ],
+      "gloss": {
+        "en": "Passion / suffering",
+        "fr": "Passion / souffrance"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "resurrectio",
+      "forms": [
+        "resurrectionis"
+      ],
+      "gloss": {
+        "en": "resurrection",
+        "fr": "résurrection"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sicuti",
+      "forms": [
+        "sicuti"
+      ],
+      "gloss": {
+        "en": "just as / as",
+        "fr": "comme / de même que"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "mysterium",
+      "forms": [
+        "mysterium"
+      ],
+      "gloss": {
+        "en": "mystery",
+        "fr": "mystère"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "canon-te-igitur-l35",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Te igitur",
+      "sourceLatin": "Te igitur, clementissime Pater, per Iesum Christum, Filium tuum, Dominum nostrum, supplices rogamus, ac petimus, uti accepta habeas, et benedicas haec dona, haec munera, haec sancta sacrificia illibata, in primis, quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare, et regere digneris toto orbe terrarum: una cum famulo tuo Papa nostro N. et Antistite nostro N. et omnibus orthodoxis atque catholicae et apostolicae fidei cultoribus.",
+      "provenanceNote": "Long periodic Canon syntax with sacrificial nouns, relative expansion and coordinated infinitives.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Ordo/Ordo.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Prayer text checked against pinned 1962 Ordo; rubrics, accent marks, ligatures, i/j spelling and placeholders are editorially normalized. Partial sourceLatin records are explicit excerpts."
+      }
+    },
+    {
+      "id": "canon-unde-l35",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Unde et memores",
+      "sourceLatin": "Unde et memores, Domine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Filii tui, Domini nostri, tam beatae passionis, nec non et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis: offerimus praeclarae maiestati tuae de tuis donis ac datis, hostiam puram, hostiam sanctam, hostiam immaculatam: Panem sanctum vitae aeternae: et Calicem salutis perpetuae.",
+      "provenanceNote": "Sacrificial register: offerimus, hostiam, donis, Calicem.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Ordo/Ordo.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Prayer text checked against pinned 1962 Ordo; rubrics, accent marks, ligatures, i/j spelling and placeholders are editorially normalized. Partial sourceLatin records are explicit excerpts."
+      }
+    },
+    {
+      "id": "canon-supra-l35",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Supra quae",
+      "sourceLatin": "Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium Patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam hostiam.",
+      "provenanceNote": "sacrificium, sacerdos, hostia and nested comparison clauses.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Ordo/Ordo.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Prayer text checked against pinned 1962 Ordo; rubrics, accent marks, ligatures, i/j spelling and placeholders are editorially normalized. Partial sourceLatin records are explicit excerpts."
+      }
+    },
+    {
+      "id": "offertory-suscipe-l35",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Offertorium — Suscipe sancte Pater",
+      "sourceLatin": "Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam.",
+      "provenanceNote": "suscipio is introduced through the Offertory imperative Suscipe.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Ordo/Ordo.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Prayer text checked against pinned 1962 Ordo; rubrics, accent marks, ligatures, i/j spelling and placeholders are editorially normalized. Partial sourceLatin records are explicit excerpts."
+      }
+    },
+    {
+      "id": "offertory-vinum-l35",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Offertorium — mixing of water and wine",
+      "sourceLatin": "Deus, qui humanae substantiae dignitatem mirabiliter condidisti, et mirabilius reformasti: da nobis per huius aquae et vini mysterium, eius divinitatis esse consortes.",
+      "provenanceNote": "vinum is introduced in the traditional water-and-wine prayer.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Ordo/Ordo.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Prayer text checked against pinned 1962 Ordo; rubrics, accent marks, ligatures, i/j spelling and placeholders are editorially normalized. Partial sourceLatin records are explicit excerpts."
+      }
+    },
+    {
+      "id": "canon-memoria-l35",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Words following the Consecration",
+      "sourceLatin": "Haec quotiescumque feceritis, in mei memoriam facietis.",
+      "provenanceNote": "memoria is introduced in the memorial command.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Ordo/Ordo.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Prayer text checked against pinned 1962 Ordo; rubrics, accent marks, ligatures, i/j spelling and placeholders are editorially normalized. Partial sourceLatin records are explicit excerpts."
+      }
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; Lesson 35 requires simultaneous case, clause and rhetorical tracking across long periodic prayer syntax.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "canonLanguageFramework": {
+    "register": [
+      "dona / munera / sacrificia / hostia",
+      "offero / suscipio",
+      "memoria",
+      "sacerdos",
+      "vinum"
+    ],
+    "periodStrategy": [
+      "locate main petition verbs",
+      "mark coordinated infinitives/subjunctives",
+      "attach relative clauses to antecedents",
+      "group sacrificial noun series",
+      "defer elegant translation until the period map is complete"
+    ],
+    "readingRule": "The Canon is not a sequence of independent short sentences. Preserve the long syntactic period and its sacrificial rhetoric.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l35-b1",
+      "type": "concept",
+      "title": "The Canon is periodic prayer prose",
+      "learnerCopy": {
+        "en": "The Roman Canon often delays completion while adding invocations, relative clauses, coordinated requests and lists of sacrificial nouns. The reader must keep the governing petition alive across the whole period.",
+        "fr": "Le Canon romain retarde souvent l'achèvement de la phrase en ajoutant invocations, relatives, demandes coordonnées et séries de noms sacrificiels. Le lecteur doit maintenir le verbe régissant actif pendant toute la période."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le Canon est une prose de prière périodique"
+        }
+      }
+    },
+    {
+      "id": "l35-b2",
+      "type": "canon",
+      "title": "Te igitur: find the governing request",
+      "sourceId": "canon-te-igitur-l35",
+      "learnerCopy": {
+        "en": "The period begins with Te... supplices rogamus ac petimus. Everything that follows—uti accepta habeas, benedicas, quam pacificare...digneris—hangs from this act of supplication.",
+        "fr": "La période commence par Te... supplices rogamus ac petimus. Tout ce qui suit — uti accepta habeas, benedicas, quam pacificare...digneris — dépend de cet acte de supplication."
+      },
+      "referenceIds": [
+        "canon-te-igitur-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Te igitur : repérer la demande qui gouverne"
+        }
+      }
+    },
+    {
+      "id": "l35-b3",
+      "type": "register",
+      "title": "dona, munera, sacrificia, hostia",
+      "learnerCopy": {
+        "en": "The Canon deliberately accumulates sacrificial terms. Do not flatten them into one generic 'gift': recognize the lexical field and the rhetorical intensification.",
+        "fr": "Le Canon accumule délibérément les termes sacrificiels. Ne les réduisez pas tous à un vague « don » : reconnaissez le champ lexical et l'intensification rhétorique."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "dona, munera, sacrificia, hostia"
+        }
+      }
+    },
+    {
+      "id": "l35-b4",
+      "type": "canon",
+      "title": "Unde et memores: memory becomes offering",
+      "sourceId": "canon-unde-l35",
+      "learnerCopy": {
+        "en": "The prayer moves from being mindful of Passion, Resurrection and Ascension to offerimus. The participial memores establishes the memorial frame; the main action is the offering.",
+        "fr": "La prière passe du souvenir de la Passion, de la Résurrection et de l'Ascension à offerimus. Le participe memores établit le cadre mémoriel ; l'action principale est l'offrande."
+      },
+      "referenceIds": [
+        "canon-unde-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Unde et memores : la mémoire devient offrande"
+        }
+      }
+    },
+    {
+      "id": "l35-b5",
+      "type": "canon",
+      "title": "Supra quae: comparison inside the period",
+      "sourceId": "canon-supra-l35",
+      "learnerCopy": {
+        "en": "The prayer asks God to look favourably on the offerings, then compares them with Abel, Abraham and Melchisedech. sacerdos and sacrificium belong to the Canon's sacrificial register, not an isolated vocabulary list.",
+        "fr": "La prière demande à Dieu de regarder favorablement les offrandes, puis les compare à celles d'Abel, d'Abraham et de Melchisédech. sacerdos et sacrificium appartiennent au registre sacrificiel du Canon, non à une liste isolée."
+      },
+      "referenceIds": [
+        "canon-supra-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Supra quae : la comparaison à l’intérieur de la période"
+        }
+      }
+    },
+    {
+      "id": "l35-b6",
+      "type": "stage-checkpoint",
+      "title": "Hold the whole period",
+      "learnerCopy": {
+        "en": "The Stage 7 gate is successful only if you can mark a long Canon passage, identify its governing verbs and subordinate structures, and then reread it continuously without fragmenting it into unrelated clauses.",
+        "fr": "Le contrôle de l'étape 7 n'est réussi que si vous pouvez cartographier un long passage du Canon, identifier verbes régissants et structures subordonnées, puis le relire sans le fragmenter en propositions indépendantes."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Tenir toute la période"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l35-p1",
+      "sourceId": "canon-te-igitur-l35",
+      "sourceLatin": "Te igitur, clementissime Pater, per Iesum Christum, Filium tuum, Dominum nostrum, supplices rogamus, ac petimus, uti accepta habeas, et benedicas haec dona, haec munera, haec sancta sacrificia illibata, in primis, quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare, et regere digneris toto orbe terrarum: una cum famulo tuo Papa nostro N. et Antistite nostro N. et omnibus orthodoxis atque catholicae et apostolicae fidei cultoribus.",
+      "instructionalDisplay": "Te igitur, clementissime Pater, per Iesum Christum, Filium tuum, Dominum nostrum, supplices rogamus, ac petimus, uti accepta habeas, et benedicas haec dona, haec munera, haec sancta sacrificia illibata, in primis, quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare, et regere digneris toto orbe terrarum: una cum famulo tuo Papa nostro N. et Antistite nostro N. et omnibus orthodoxis atque catholicae et apostolicae fidei cultoribus.",
+      "translation": {
+        "en": "Thee, therefore, most merciful Father, through Jesus Christ Thy Son our Lord, we humbly pray and beseech that Thou accept and bless these gifts, these presents, these holy unspotted sacrifices, which in the first place we offer Thee for Thy holy Catholic Church, which Thou mayest vouchsafe to pacify, guard, unite and govern throughout the world, together with Thy servant our Pope N., our Bishop N., and all orthodox upholders of the Catholic and Apostolic faith.",
+        "fr": "C'est donc vous, Père très clément, que, par Jésus-Christ votre Fils Notre-Seigneur, nous prions et supplions humblement d'agréer et de bénir ces dons, ces présents, ces saints sacrifices sans tache, que nous vous offrons d'abord pour votre sainte Église catholique ; daignez lui donner la paix, la garder, l'unir et la gouverner dans le monde entier, avec votre serviteur notre Pape N., notre évêque N. et tous les fidèles gardiens de la foi catholique et apostolique."
+      },
+      "targetLemmas": [
+        "tu",
+        "clemens",
+        "pater",
+        "per",
+        "filius",
+        "tuus",
+        "Dominus",
+        "noster",
+        "supplex",
+        "oro",
+        "atque/ac",
+        "ut",
+        "accipio",
+        "habeo",
+        "et",
+        "benedico",
+        "hic/haec/hoc",
+        "donum",
+        "munus",
+        "sanctus",
+        "sacrificium",
+        "in",
+        "primus",
+        "qui/quae/quod",
+        "offero",
+        "pro",
+        "ecclesia",
+        "catholicus",
+        "custodio",
+        "dignor",
+        "totus",
+        "terra",
+        "cum",
+        "famulus",
+        "omnis",
+        "fides"
+      ],
+      "supportLemmas": [
+        "Iesus",
+        "acceptus",
+        "illibatus",
+        "pacifico",
+        "aduno",
+        "rego",
+        "Papa",
+        "Antistes",
+        "orthodoxus",
+        "cultor",
+        "igitur",
+        "peto",
+        "orbis"
+      ]
+    },
+    {
+      "id": "l35-p2",
+      "sourceId": "canon-unde-l35",
+      "sourceLatin": "Unde et memores, Domine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Filii tui, Domini nostri, tam beatae passionis, nec non et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis: offerimus praeclarae maiestati tuae de tuis donis ac datis, hostiam puram, hostiam sanctam, hostiam immaculatam: Panem sanctum vitae aeternae: et Calicem salutis perpetuae.",
+      "instructionalDisplay": "Unde et memores, Domine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Filii tui, Domini nostri, tam beatae passionis, nec non et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis: offerimus praeclarae maiestati tuae de tuis donis ac datis, hostiam puram, hostiam sanctam, hostiam immaculatam: Panem sanctum vitae aeternae: et Calicem salutis perpetuae.",
+      "translation": {
+        "en": "Wherefore, O Lord, we Thy servants, as also Thy holy people, calling to mind the blessed Passion of the same Christ Thy Son our Lord, His Resurrection from the dead and glorious Ascension into heaven, offer unto Thy excellent Majesty of Thy gifts and grants a pure Victim, a holy Victim, an immaculate Victim, the holy Bread of eternal life and the Chalice of everlasting salvation.",
+        "fr": "C'est pourquoi, Seigneur, nous vos serviteurs et votre peuple saint, faisant mémoire de la bienheureuse Passion du même Christ votre Fils Notre-Seigneur, de sa Résurrection des enfers et de sa glorieuse Ascension dans les cieux, nous offrons à votre glorieuse Majesté, de vos dons et bienfaits, une Hostie pure, une Hostie sainte, une Hostie immaculée, le Pain saint de la vie éternelle et le Calice du salut perpétuel."
+      },
+      "targetLemmas": [
+        "et",
+        "Dominus",
+        "nos",
+        "servus",
+        "tuus",
+        "sed",
+        "sanctus",
+        "filius",
+        "nec",
+        "a/ab",
+        "in",
+        "caelum",
+        "offero",
+        "maiestas",
+        "de",
+        "donum",
+        "hostia",
+        "panis",
+        "vita",
+        "aeternus",
+        "calix",
+        "salus"
+      ],
+      "supportLemmas": [
+        "memor",
+        "plebs",
+        "Christus",
+        "inferi",
+        "ascensio",
+        "praeclarus",
+        "datus",
+        "purus",
+        "immaculatus",
+        "perpetuus",
+        "passio",
+        "resurrectio"
+      ]
+    },
+    {
+      "id": "l35-p3",
+      "sourceId": "canon-supra-l35",
+      "sourceLatin": "Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium Patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam hostiam.",
+      "instructionalDisplay": "Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium Patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam hostiam.",
+      "translation": {
+        "en": "Upon which vouchsafe to look with a propitious and serene countenance, and to accept them, as Thou didst vouchsafe to accept the gifts of Thy just servant Abel, and the sacrifice of our patriarch Abraham, and that which Thy high priest Melchisedech offered unto Thee: a holy sacrifice, an immaculate victim.",
+        "fr": "Sur ces offrandes, daignez jeter un regard favorable et serein et les agréer, comme vous avez daigné agréer les présents de votre juste serviteur Abel, le sacrifice de notre patriarche Abraham, et celui que vous offrit votre grand prêtre Melchisédech : sacrifice saint, hostie immaculée."
+      },
+      "targetLemmas": [
+        "super",
+        "atque/ac",
+        "dignor",
+        "et",
+        "accipio",
+        "habeo",
+        "munus",
+        "puer",
+        "tuus",
+        "iustus",
+        "sacrificium",
+        "noster",
+        "offero",
+        "sacerdos",
+        "sanctus",
+        "hostia"
+      ],
+      "supportLemmas": [
+        "propitius",
+        "serenus",
+        "vultus",
+        "respicio",
+        "Abel",
+        "Abraham",
+        "Melchisedech",
+        "immaculatus",
+        "sicuti"
+      ]
+    },
+    {
+      "id": "l35-p4",
+      "sourceId": "offertory-suscipe-l35",
+      "sourceLatin": "Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam.",
+      "instructionalDisplay": "Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam.",
+      "translation": {
+        "en": "Receive, O holy Father, almighty eternal God, this immaculate host.",
+        "fr": "Recevez, Père saint, Dieu tout-puissant et éternel, cette hostie immaculée."
+      },
+      "targetLemmas": [
+        "suscipio",
+        "sanctus",
+        "pater",
+        "omnipotens",
+        "aeternus",
+        "Deus",
+        "hic/haec/hoc",
+        "hostia"
+      ],
+      "supportLemmas": [
+        "immaculatus"
+      ]
+    },
+    {
+      "id": "l35-p5",
+      "sourceId": "offertory-vinum-l35",
+      "sourceLatin": "Deus, qui humanae substantiae dignitatem mirabiliter condidisti, et mirabilius reformasti: da nobis per huius aquae et vini mysterium, eius divinitatis esse consortes.",
+      "instructionalDisplay": "Deus, qui humanae substantiae dignitatem mirabiliter condidisti, et mirabilius reformasti: da nobis per huius aquae et vini mysterium, eius divinitatis esse consortes.",
+      "translation": {
+        "en": "O God, who wonderfully created the dignity of human nature and still more wonderfully restored it: grant us through the mystery of this water and wine to become partakers of His divinity.",
+        "fr": "Ô Dieu, qui avez admirablement créé la dignité de la nature humaine et l'avez plus admirablement encore restaurée : donnez-nous, par le mystère de cette eau et de ce vin, de participer à sa divinité."
+      },
+      "targetLemmas": [
+        "Deus",
+        "qui/quae/quod",
+        "et",
+        "do",
+        "nos",
+        "per",
+        "hic/haec/hoc",
+        "aqua",
+        "vinum",
+        "is/ea/id",
+        "divinus",
+        "sum"
+      ],
+      "supportLemmas": [
+        "humanus",
+        "substantia",
+        "dignitas",
+        "condo",
+        "reformo",
+        "consors",
+        "mysterium"
+      ]
+    },
+    {
+      "id": "l35-p6",
+      "sourceId": "canon-memoria-l35",
+      "sourceLatin": "Haec quotiescumque feceritis, in mei memoriam facietis.",
+      "instructionalDisplay": "Haec quotiescumque feceritis, in mei memoriam facietis.",
+      "translation": {
+        "en": "As often as you shall do these things, you shall do them in memory of Me.",
+        "fr": "Chaque fois que vous ferez ces choses, vous les ferez en mémoire de moi."
+      },
+      "targetLemmas": [
+        "hic/haec/hoc",
+        "facio",
+        "in",
+        "ego",
+        "memoria"
+      ],
+      "supportLemmas": [
+        "quotiescumque"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l35-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What governs the long Te igitur period?",
+      "stimulus": null,
+      "options": [
+        "supplices rogamus ac petimus",
+        "haec dona",
+        "Ecclesia",
+        "Papa"
+      ],
+      "expectedAnswer": "supplices rogamus ac petimus",
+      "acceptedVariants": [
+        "supplices rogamus ac petimus"
+      ],
+      "hint": "Find the principal petition.",
+      "explanation": "The later clauses depend on the main supplication.",
+      "difficulty": 1,
+      "sourceId": "canon-te-igitur-l35",
+      "skills": [
+        "canon:period"
+      ],
+      "referenceIds": [
+        "canon-te-igitur-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui gouverne la longue période de Te igitur ?",
+          "hint": "Repérez la demande principale.",
+          "explanation": "Les propositions suivantes dépendent de la supplication principale.",
+          "options": [
+            "supplices rogamus ac petimus",
+            "haec dona",
+            "Ecclesia",
+            "Papa"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What semantic field do dona, munera, sacrificia and hostia form?",
+      "stimulus": null,
+      "options": [
+        "sacrificial/offering vocabulary",
+        "question particles",
+        "temporal conjunctions",
+        "pronoun families"
+      ],
+      "expectedAnswer": "sacrificial/offering vocabulary",
+      "acceptedVariants": [
+        "sacrificial/offering vocabulary"
+      ],
+      "hint": "Canon register.",
+      "explanation": "These terms intensify the offering language.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "canon:register"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel champ sémantique forment dona, munera, sacrificia et hostia ?",
+          "hint": "Registre du Canon.",
+          "explanation": "Ces termes intensifient le langage de l’offrande.",
+          "options": [
+            "vocabulaire sacrificiel / de l’offrande",
+            "particules interrogatives",
+            "conjonctions temporelles",
+            "familles pronominales"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e3",
+      "exerciseType": "matching",
+      "prompt": "Match Stage 7 Canon word to meaning.",
+      "stimulus": [
+        "hostia",
+        "sacrificium",
+        "offero",
+        "suscipio"
+      ],
+      "expectedAnswer": {
+        "hostia": "sacrificial victim / host",
+        "sacrificium": "sacrifice",
+        "offero": "offer",
+        "suscipio": "receive / accept"
+      },
+      "acceptedVariants": [],
+      "hint": "Core sacrificial vocabulary.",
+      "explanation": "Lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l35"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le mot du Canon de l’étape 7 à son sens.",
+          "hint": "Vocabulaire sacrificiel fondamental.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "hostia": "victime sacrificielle / hostie",
+            "sacrificium": "sacrifice",
+            "offero": "offrir",
+            "suscipio": "recevoir / agréer"
+          }
+        }
+      }
+    },
+    {
+      "id": "l35-e4",
+      "exerciseType": "matching",
+      "prompt": "Match remaining Lesson 35 word to meaning.",
+      "stimulus": [
+        "memoria",
+        "sacerdos",
+        "vinum"
+      ],
+      "expectedAnswer": {
+        "memoria": "memory / memorial",
+        "sacerdos": "priest",
+        "vinum": "wine"
+      },
+      "acceptedVariants": [],
+      "hint": "The remaining Core set.",
+      "explanation": "Lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l35"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le mot restant de la leçon 35 à son sens.",
+          "hint": "Le reste de l’ensemble fondamental.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "memoria": "mémoire / mémorial",
+            "sacerdos": "prêtre",
+            "vinum": "vin"
+          }
+        }
+      }
+    },
+    {
+      "id": "l35-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the main finite action in Unde et memores after the memorial framing?",
+      "stimulus": null,
+      "options": [
+        "offerimus",
+        "memores",
+        "passionis",
+        "resurrectionis"
+      ],
+      "expectedAnswer": "offerimus",
+      "acceptedVariants": [
+        "offerimus"
+      ],
+      "hint": "The prayer remembers, then offers.",
+      "explanation": "offerimus governs the sacrificial list.",
+      "difficulty": 1,
+      "sourceId": "canon-unde-l35",
+      "skills": [
+        "canon:structure"
+      ],
+      "referenceIds": [
+        "canon-unde-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle est l’action finie principale dans Unde et memores après l’encadrement mémoriel ?",
+          "hint": "La prière se souvient, puis offre.",
+          "explanation": "offerimus gouverne la liste sacrificielle.",
+          "options": [
+            "offerimus",
+            "memores",
+            "passionis",
+            "resurrectionis"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why repeat hostiam three times in Unde et memores?",
+      "stimulus": null,
+      "options": [
+        "rhetorical intensification with successive adjectives",
+        "scribal error",
+        "to change case each time",
+        "to make three separate prayers"
+      ],
+      "expectedAnswer": "rhetorical intensification with successive adjectives",
+      "acceptedVariants": [
+        "rhetorical intensification with successive adjectives"
+      ],
+      "hint": "Do not flatten repetition.",
+      "explanation": "The repeated noun builds sacrificial rhetoric.",
+      "difficulty": 1,
+      "sourceId": "canon-unde-l35",
+      "skills": [
+        "canon:rhetoric"
+      ],
+      "referenceIds": [
+        "canon-unde-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi hostiam est-il répété trois fois dans Unde et memores ?",
+          "hint": "Ne pas aplatir la répétition.",
+          "explanation": "Le nom répété construit la rhétorique sacrificielle.",
+          "options": [
+            "intensification rhétorique par adjectifs successifs",
+            "erreur de copiste",
+            "pour changer de cas à chaque fois",
+            "pour former trois prières distinctes"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does sacerdos mean in summus sacerdos tuus Melchisedech?",
+      "stimulus": null,
+      "options": [
+        "priest",
+        "king",
+        "disciple",
+        "servant"
+      ],
+      "expectedAnswer": "priest",
+      "acceptedVariants": [
+        "priest"
+      ],
+      "hint": "Lesson 35 Core.",
+      "explanation": "sacerdos means priest.",
+      "difficulty": 1,
+      "sourceId": "canon-supra-l35",
+      "skills": [
+        "vocabulary:sacerdos"
+      ],
+      "referenceIds": [
+        "canon-supra-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie sacerdos dans summus sacerdos tuus Melchisedech ?",
+          "hint": "Vocabulaire fondamental de la leçon 35.",
+          "explanation": "sacerdos signifie « prêtre ».",
+          "options": [
+            "prêtre",
+            "roi",
+            "disciple",
+            "serviteur"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What form introduces suscipio in the Offertory?",
+      "stimulus": null,
+      "options": [
+        "Suscipe",
+        "Sumpsit",
+        "Suscipiam",
+        "Suscipitur"
+      ],
+      "expectedAnswer": "Suscipe",
+      "acceptedVariants": [
+        "Suscipe"
+      ],
+      "hint": "Imperative.",
+      "explanation": "Suscipe is the imperative of suscipio.",
+      "difficulty": 1,
+      "sourceId": "offertory-suscipe-l35",
+      "skills": [
+        "vocabulary:suscipio"
+      ],
+      "referenceIds": [
+        "offertory-suscipe-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme introduit suscipio dans l’Offertoire ?",
+          "hint": "Impératif.",
+          "explanation": "Suscipe est l’impératif de suscipio.",
+          "options": [
+            "Suscipe",
+            "Sumpsit",
+            "Suscipiam",
+            "Suscipitur"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Where is vinum introduced?",
+      "stimulus": null,
+      "options": [
+        "in the water-and-wine Offertory prayer",
+        "in the Pater noster",
+        "in the Gloria",
+        "in the Confiteor"
+      ],
+      "expectedAnswer": "in the water-and-wine Offertory prayer",
+      "acceptedVariants": [
+        "in the water-and-wine Offertory prayer"
+      ],
+      "hint": "aqua et vini.",
+      "explanation": "The source anchors vinum liturgically.",
+      "difficulty": 1,
+      "sourceId": "offertory-vinum-l35",
+      "skills": [
+        "vocabulary:vinum"
+      ],
+      "referenceIds": [
+        "offertory-vinum-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Où vinum est-il introduit ?",
+          "hint": "aqua et vini.",
+          "explanation": "La source ancre liturgiquement vinum.",
+          "options": [
+            "dans la prière de l’Offertoire pour l’eau et le vin",
+            "dans le Pater noster",
+            "dans le Gloria",
+            "dans le Confiteor"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does memoria do in in mei memoriam?",
+      "stimulus": null,
+      "options": [
+        "forms the memorial phrase 'in memory of me'",
+        "marks a future tense",
+        "creates an ablative absolute",
+        "means sacrifice"
+      ],
+      "expectedAnswer": "forms the memorial phrase 'in memory of me'",
+      "acceptedVariants": [
+        "forms the memorial phrase 'in memory of me'"
+      ],
+      "hint": "Prepositional phrase.",
+      "explanation": "memoria is introduced in the memorial command.",
+      "difficulty": 1,
+      "sourceId": "canon-memoria-l35",
+      "skills": [
+        "vocabulary:memoria"
+      ],
+      "referenceIds": [
+        "canon-memoria-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait memoria dans in mei memoriam ?",
+          "hint": "Groupe prépositionnel.",
+          "explanation": "memoria est introduit dans le commandement mémoriel.",
+          "options": [
+            "forme l’expression mémorielle « en mémoire de moi »",
+            "marque un futur",
+            "crée un ablatif absolu",
+            "signifie sacrifice"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e11",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should a reader preserve when parsing the Canon?",
+      "stimulus": null,
+      "options": [
+        "the long governing period and its subordinate dependencies",
+        "only local two-word phrases",
+        "English word order",
+        "one clause at a time with no return"
+      ],
+      "expectedAnswer": "the long governing period and its subordinate dependencies",
+      "acceptedVariants": [
+        "the long governing period and its subordinate dependencies"
+      ],
+      "hint": "Do not fragment the prayer.",
+      "explanation": "Periodic structure is the Stage 7 target.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "canon:reading"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que doit préserver le lecteur lorsqu’il analyse le Canon ?",
+          "hint": "Ne fragmentez pas la prière.",
+          "explanation": "La structure périodique est la cible de l’étape 7.",
+          "options": [
+            "la longue période qui gouverne et ses dépendances subordonnées",
+            "seulement des groupes locaux de deux mots",
+            "l’ordre des mots français",
+            "une proposition à la fois sans retour"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e12",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the Stage 7 milestone?",
+      "stimulus": null,
+      "options": [
+        "Canon passage with long periodic syntax.",
+        "Complete Roman Collect.",
+        "Complete Ordinary.",
+        "Unseen normal Propers."
+      ],
+      "expectedAnswer": "Canon passage with long periodic syntax.",
+      "acceptedVariants": [
+        "Canon passage with long periodic syntax."
+      ],
+      "hint": "Frozen milestone.",
+      "explanation": "Lesson 35 closes Church Latin with Canon periodic prose.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 7 ?",
+          "hint": "Jalon figé.",
+          "explanation": "La leçon 35 clôt le latin de l’Église par la prose périodique du Canon.",
+          "options": [
+            "Passage du Canon à longue syntaxe périodique.",
+            "Oraison romaine complète.",
+            "Ordinaire complet.",
+            "Propres ordinaires inconnus."
+          ]
+        }
+      }
+    },
+    {
+      "id": "l35-e13",
+      "exerciseType": "passage_analysis",
+      "prompt": "What four things should be marked before translating a long Canon period?",
+      "stimulus": null,
+      "expectedAnswer": [
+        "governing verbs",
+        "subordinate clauses",
+        "relative antecedents",
+        "sacrificial noun groups"
+      ],
+      "acceptedVariants": [
+        [
+          "governing verbs",
+          "subordinate clauses",
+          "relative antecedents",
+          "sacrificial noun groups"
+        ]
+      ],
+      "hint": "Map the period first.",
+      "explanation": "These features reveal the Canon's architecture.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "canon:period-map"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelles quatre choses faut-il marquer avant de traduire une longue période du Canon ?",
+          "hint": "Cartographiez d’abord la période.",
+          "explanation": "Ces éléments révèlent l’architecture du Canon.",
+          "answerGuide": [
+            "verbes qui gouvernent",
+            "propositions subordonnées",
+            "antécédents des relatifs",
+            "groupes nominaux sacrificiels"
+          ]
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Read long periodic Canon syntax without fragmenting it.",
+    "Recognize the sacrificial register as a coherent lexical field.",
+    "Learn all seven frozen Lesson 35 lemmas.",
+    "Pass the Stage 7 long-Canon checkpoint."
+  ],
+  "checkpoint": {
+    "id": "stage7-checkpoint",
+    "stage": 7,
+    "scopeLessons": [
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "progressionGate": "Canon passage with long periodic syntax.",
+    "readingTransition": "complete Collect → long periodic Canon passage",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 10,
+      "autoGradedExerciseIds": [
+        "l35-e1",
+        "l35-e2",
+        "l35-e3",
+        "l35-e4",
+        "l35-e5",
+        "l35-e6",
+        "l35-e7",
+        "l35-e8",
+        "l35-e9",
+        "l35-e10",
+        "l35-e11",
+        "l35-e12",
+        "l35-e13"
+      ]
+    },
+    "mustKnow": [
+      "reader toolkit pronouns/questions",
+      "Church-Latin usage",
+      "biblical semantic/rhetorical habits",
+      "Collect architecture",
+      "Canon periodic syntax",
+      "sacrificial register"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "hostia",
+      "sacrificium",
+      "offero",
+      "suscipio",
+      "memoria",
+      "sacerdos",
+      "vinum"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 6,
+    "exerciseCount": 13,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Le langage du Canon",
+      "grammarFocus": "Syntaxe du Canon et registre sacrificiel",
+      "readingOutcome": "Lire la longue syntaxe périodique de la prière et le vocabulaire stable du Canon.",
+      "objectives": [
+        "Lire la longue syntaxe périodique du Canon sans la fragmenter.",
+        "Reconnaître le registre sacrificiel comme un champ lexical cohérent.",
+        "Apprendre les sept lemmes figés de la leçon 35.",
+        "Franchir le jalon de l’étape 7 sur la longue syntaxe du Canon."
+      ]
+    }
+  }
+}

@@ -1,0 +1,1215 @@
+{
+  "version": "latin-course-lesson-10-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 10,
+  "stage": {
+    "number": 2,
+    "title": "The Ordinary"
+  },
+  "title": "Dominus vobiscum",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 50,
+  "progressionStep": "sentence",
+  "grammarFocus": "Personal/reflexive pronouns; cum",
+  "readingOutcome": "Read personal, reflexive and third-person pronoun forms in case context.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the six frozen pronoun lemmas are introduced; future clause vocabulary is explicitly glossed.",
+    "authenticTextPolicy": "Pronoun forms are read in authentic Ordinary/Pater noster clauses.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "ego",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "I",
+          "fr": "je"
+        },
+        "frozenLesson": 10
+      },
+      {
+        "lemma": "tu",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "you (singular)",
+          "fr": "tu / vous"
+        },
+        "frozenLesson": 10
+      },
+      {
+        "lemma": "nos",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "we / us",
+          "fr": "nous"
+        },
+        "frozenLesson": 10
+      },
+      {
+        "lemma": "vos",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "you (plural)",
+          "fr": "vous"
+        },
+        "frozenLesson": 10
+      },
+      {
+        "lemma": "is/ea/id",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "he / she / it; that person or thing",
+          "fr": "il / elle / cela"
+        },
+        "frozenLesson": 10
+      },
+      {
+        "lemma": "se",
+        "partOfSpeech": "pronoun",
+        "gloss": {
+          "en": "himself / herself / itself / themselves",
+          "fr": "soi / se"
+        },
+        "frozenLesson": 10
+      }
+    ],
+    "recycled": [
+      "Dominus",
+      "cum",
+      "et",
+      "in",
+      "sed",
+      "a/ab",
+      "malus"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "ne",
+      "forms": [
+        "ne"
+      ],
+      "gloss": {
+        "en": "not / lest",
+        "fr": "ne…pas / de peur que"
+      },
+      "trackedLesson": 23,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "induco",
+      "forms": [
+        "inducas"
+      ],
+      "gloss": {
+        "en": "lead / bring in",
+        "fr": "conduire / faire entrer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "tentatio",
+      "forms": [
+        "tentationem"
+      ],
+      "gloss": {
+        "en": "temptation",
+        "fr": "tentation"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "libero",
+      "forms": [
+        "libera"
+      ],
+      "gloss": {
+        "en": "deliver / free",
+        "fr": "délivrer / libérer"
+      },
+      "trackedLesson": 22,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "misereor",
+      "forms": [
+        "Miserere"
+      ],
+      "gloss": {
+        "en": "have mercy",
+        "fr": "avoir pitié"
+      },
+      "trackedLesson": 19,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-dominus-vobiscum-l10",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — salutation",
+      "sourceLatin": "Dominus vobiscum.",
+      "provenanceNote": "vobiscum is the canonical liturgical entry point to vos + cum and ablative pronoun forms.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-pater-ne-nos-l10",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pater noster",
+      "sourceLatin": "Et ne nos inducas in tentationem.",
+      "provenanceNote": "nos is accusative; in + accusative reinforces movement/direction into temptation.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-pater-libera-nos-l10",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pater noster",
+      "sourceLatin": "Sed libera nos a malo.",
+      "provenanceNote": "nos is accusative and a malo demonstrates a/ab + ablative.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-agnus-miserere-nobis-l10",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Agnus Dei",
+      "sourceLatin": "Miserere nobis.",
+      "provenanceNote": "nobis gives a compact dative form of nos in an already familiar formula.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active. Pronouns are now mapped into the same case system rather than taught as a separate list.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "pronounParadigms": {
+    "ego": {
+      "nominative": "ego",
+      "genitive": "mei",
+      "dative": "mihi",
+      "accusative": "me",
+      "ablative": "me",
+      "cumForm": "mecum"
+    },
+    "tu": {
+      "nominative": "tu",
+      "genitive": "tui",
+      "dative": "tibi",
+      "accusative": "te",
+      "ablative": "te",
+      "cumForm": "tecum"
+    },
+    "nos": {
+      "nominative": "nos",
+      "genitive": [
+        "nostri",
+        "nostrum"
+      ],
+      "dative": "nobis",
+      "accusative": "nos",
+      "ablative": "nobis",
+      "cumForm": "nobiscum"
+    },
+    "vos": {
+      "nominative": "vos",
+      "genitive": [
+        "vestri",
+        "vestrum"
+      ],
+      "dative": "vobis",
+      "accusative": "vos",
+      "ablative": "vobis",
+      "cumForm": "vobiscum"
+    },
+    "is/ea/id": {
+      "singular": {
+        "nominative": [
+          "is",
+          "ea",
+          "id"
+        ],
+        "genitive": "eius",
+        "dative": "ei",
+        "accusative": [
+          "eum",
+          "eam",
+          "id"
+        ],
+        "ablative": [
+          "eo",
+          "ea",
+          "eo"
+        ]
+      },
+      "plural": {
+        "nominative": [
+          "ei",
+          "eae",
+          "ea"
+        ],
+        "genitive": [
+          "eorum",
+          "earum",
+          "eorum"
+        ],
+        "dative": "eis",
+        "accusative": [
+          "eos",
+          "eas",
+          "ea"
+        ],
+        "ablative": "eis"
+      }
+    },
+    "se": {
+      "nominative": null,
+      "genitive": "sui",
+      "dative": "sibi",
+      "accusative": "se",
+      "ablative": "se",
+      "cumForm": "secum",
+      "note": "Reflexive se has no nominative; it refers back to the clause subject."
+    }
+  },
+  "cumPronounRule": {
+    "forms": [
+      "mecum",
+      "tecum",
+      "nobiscum",
+      "vobiscum",
+      "secum"
+    ],
+    "explanation": "With personal/reflexive pronouns, cum is conventionally attached after the ablative pronoun form."
+  },
+  "learningBlocks": [
+    {
+      "id": "l10-b1",
+      "type": "concept",
+      "title": "Pronouns enter the same case system",
+      "learnerCopy": {
+        "en": "Pronouns are not a separate grammar universe. The same case functions apply: nos can be nominative or accusative; nobis can be dative or ablative; context and governing words decide.",
+        "fr": "Les pronoms n'appartiennent pas à un autre univers grammatical. Les mêmes fonctions de cas s'appliquent : nos peut être nominatif ou accusatif ; nobis, datif ou ablatif ; le contexte et les mots régissants décident."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les pronoms entrent dans le même système de cas"
+        }
+      }
+    },
+    {
+      "id": "l10-b2",
+      "type": "paradigm",
+      "title": "ego, tu, nos, vos",
+      "learnerCopy": {
+        "en": "Learn these as case families, not as translation pairs. ego/me/mihi and tu/te/tibi show how the same person changes form as grammatical role changes.",
+        "fr": "Apprenez-les comme familles de cas, non comme simples paires de traduction. ego/me/mihi et tu/te/tibi montrent comment une même personne change de forme selon son rôle grammatical."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "ego, tu, nos, vos"
+        }
+      }
+    },
+    {
+      "id": "l10-b3",
+      "type": "authentic-example",
+      "title": "Dominus vobiscum",
+      "sourceId": "mr1962-dominus-vobiscum-l10",
+      "learnerCopy": {
+        "en": "vobiscum contains vobis, the ablative plural form of vos, plus cum. Latin convention places cum after these pronouns: mecum, tecum, nobiscum, vobiscum, secum.",
+        "fr": "vobiscum contient vobis, forme ablative plurielle de vos, plus cum. Avec ces pronoms, le latin place traditionnellement cum après : mecum, tecum, nobiscum, vobiscum, secum."
+      },
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Dominus vobiscum"
+        }
+      }
+    },
+    {
+      "id": "l10-b4",
+      "type": "pronoun",
+      "title": "is, ea, id supplies third-person case forms",
+      "learnerCopy": {
+        "en": "is/ea/id is a high-frequency third-person demonstrative/pronominal family. Learn eius for genitive, ei for dative, eum/eam/id for accusative, and eo/ea for ablative before trying to memorize every plural form.",
+        "fr": "is/ea/id est une famille pronominale très fréquente. Fixez d'abord eius au génitif, ei au datif, eum/eam/id à l'accusatif et eo/ea à l'ablatif avant de mémoriser tous les pluriels."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "is, ea, id fournit les formes casuelles de la troisième personne"
+        }
+      }
+    },
+    {
+      "id": "l10-b5",
+      "type": "pronoun",
+      "title": "se is reflexive",
+      "learnerCopy": {
+        "en": "se refers back to the subject and therefore has no nominative form. Its family is sui, sibi, se, se; with cum it becomes secum.",
+        "fr": "se renvoie au sujet et n'a donc pas de nominatif. Sa famille est sui, sibi, se, se ; avec cum, on obtient secum."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "se est réfléchi"
+        }
+      }
+    },
+    {
+      "id": "l10-b6",
+      "type": "stage-checkpoint",
+      "title": "Stage 2: read the Ordinary as structure",
+      "learnerCopy": {
+        "en": "The Stage 2 gate combines third-declension stems, active/passive voice, all six case functions, preposition government and pronoun forms. The target is a complete Ordinary-style sentence with several grammatical anchors, not isolated parsing drills.",
+        "fr": "Le contrôle de l'étape 2 combine les radicaux de troisième déclinaison, actif/passif, les six cas, le régime des prépositions et les pronoms. La cible est une phrase complète de type Ordinaire avec plusieurs points d'appui grammaticaux, non des analyses isolées."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Étape 2 : lire l’Ordinaire comme une structure"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l10-p1",
+      "sourceId": "mr1962-dominus-vobiscum-l10",
+      "sourceLatin": "Dominus vobiscum.",
+      "instructionalDisplay": "Dominus vobiscum.",
+      "translation": {
+        "en": "The Lord be with you.",
+        "fr": "Le Seigneur soit avec vous."
+      },
+      "targetLemmas": [
+        "Dominus",
+        "vos",
+        "cum"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l10-p2",
+      "sourceId": "mr1962-pater-ne-nos-l10",
+      "sourceLatin": "Et ne nos inducas in tentationem.",
+      "instructionalDisplay": "Et ne nos inducas in tentationem.",
+      "translation": {
+        "en": "And lead us not into temptation.",
+        "fr": "Et ne nous laissez pas succomber à la tentation."
+      },
+      "targetLemmas": [
+        "et",
+        "nos",
+        "in"
+      ],
+      "supportLemmas": [
+        "ne",
+        "induco",
+        "tentatio"
+      ]
+    },
+    {
+      "id": "l10-p3",
+      "sourceId": "mr1962-pater-libera-nos-l10",
+      "sourceLatin": "Sed libera nos a malo.",
+      "instructionalDisplay": "Sed libera nos a malo.",
+      "translation": {
+        "en": "But deliver us from evil.",
+        "fr": "Mais délivrez-nous du mal."
+      },
+      "targetLemmas": [
+        "sed",
+        "nos",
+        "a/ab",
+        "malus"
+      ],
+      "supportLemmas": [
+        "libero"
+      ]
+    },
+    {
+      "id": "l10-p4",
+      "sourceId": "mr1962-agnus-miserere-nobis-l10",
+      "sourceLatin": "Miserere nobis.",
+      "instructionalDisplay": "Miserere nobis.",
+      "translation": {
+        "en": "Have mercy on us.",
+        "fr": "Ayez pitié de nous."
+      },
+      "targetLemmas": [
+        "nos"
+      ],
+      "supportLemmas": [
+        "misereor"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l10-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What pronoun lemma lies behind vobis in vobiscum?",
+      "stimulus": "vobiscum",
+      "options": [
+        "vos",
+        "nos",
+        "tu",
+        "is/ea/id"
+      ],
+      "expectedAnswer": "vos",
+      "acceptedVariants": [
+        "vos",
+        "Vos"
+      ],
+      "hint": "vobis is a plural personal-pronoun form.",
+      "explanation": "vobis belongs to vos.",
+      "difficulty": 1,
+      "sourceId": "mr1962-dominus-vobiscum-l10",
+      "skills": [
+        "pronoun:vos"
+      ],
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme pronominal se trouve derrière vobis dans vobiscum ?",
+          "hint": "vobis est une forme de pronom personnel au pluriel.",
+          "explanation": "vobis appartient à vos.",
+          "options": [
+            "vos",
+            "nos",
+            "tu",
+            "is/ea/id"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is vobis inside vobiscum?",
+      "stimulus": "vobiscum",
+      "options": [
+        "ablative",
+        "dative",
+        "accusative",
+        "genitive"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "cum governs the ablative.",
+      "explanation": "vobis is ablative plural here.",
+      "difficulty": 1,
+      "sourceId": "mr1962-dominus-vobiscum-l10",
+      "skills": [
+        "case:ablative",
+        "pronoun:vos"
+      ],
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est vobis dans vobiscum ?",
+          "hint": "cum régit l’ablatif.",
+          "explanation": "vobis est ici à l’ablatif pluriel.",
+          "options": [
+            "ablatif",
+            "datif",
+            "accusatif",
+            "génitif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is nos in Et ne nos inducas...?",
+      "stimulus": "Et ne nos inducas in tentationem.",
+      "options": [
+        "accusative",
+        "nominative",
+        "dative",
+        "genitive"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "It is the object being led.",
+      "explanation": "nos is accusative here.",
+      "difficulty": 1,
+      "sourceId": "mr1962-pater-ne-nos-l10",
+      "skills": [
+        "case:accusative",
+        "pronoun:nos"
+      ],
+      "referenceIds": [
+        "mr1962-pater-ne-nos-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nos dans Et ne nos inducas... ?",
+          "hint": "C’est le complément d’objet de l’action d’introduire.",
+          "explanation": "nos est ici à l’accusatif.",
+          "options": [
+            "accusatif",
+            "nominatif",
+            "datif",
+            "génitif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is nobis in Miserere nobis?",
+      "stimulus": "Miserere nobis.",
+      "options": [
+        "dative",
+        "accusative",
+        "nominative",
+        "genitive"
+      ],
+      "expectedAnswer": "dative",
+      "acceptedVariants": [
+        "dative"
+      ],
+      "hint": "The mercy is directed toward us.",
+      "explanation": "nobis is dative in this formula.",
+      "difficulty": 1,
+      "sourceId": "mr1962-agnus-miserere-nobis-l10",
+      "skills": [
+        "case:dative",
+        "pronoun:nos"
+      ],
+      "referenceIds": [
+        "mr1962-agnus-miserere-nobis-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nobis dans Miserere nobis ?",
+          "hint": "La miséricorde est dirigée vers nous.",
+          "explanation": "nobis est au datif dans cette formule.",
+          "options": [
+            "datif",
+            "accusatif",
+            "nominatif",
+            "génitif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e5",
+      "exerciseType": "matching",
+      "prompt": "Match the cum-form to its pronoun.",
+      "stimulus": [
+        "mecum",
+        "tecum",
+        "nobiscum",
+        "vobiscum",
+        "secum"
+      ],
+      "expectedAnswer": {
+        "mecum": "ego",
+        "tecum": "tu",
+        "nobiscum": "nos",
+        "vobiscum": "vos",
+        "secum": "se"
+      },
+      "acceptedVariants": [],
+      "hint": "cum follows the pronoun form.",
+      "explanation": "These are the conventional attached cum forms.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "pronoun:cum"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la forme avec cum à son pronom.",
+          "hint": "cum suit la forme pronominale.",
+          "explanation": "Ce sont les formes conventionnelles soudées à cum.",
+          "matches": {
+            "mecum": "ego",
+            "tecum": "tu",
+            "nobiscum": "nos",
+            "vobiscum": "vos",
+            "secum": "se"
+          }
+        }
+      }
+    },
+    {
+      "id": "l10-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form is the genitive singular of is/ea/id?",
+      "stimulus": null,
+      "options": [
+        "eius",
+        "ei",
+        "eum",
+        "eo"
+      ],
+      "expectedAnswer": "eius",
+      "acceptedVariants": [
+        "eius"
+      ],
+      "hint": "One form serves all three genders in the genitive singular.",
+      "explanation": "eius is genitive singular.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "pronoun:is-ea-id",
+        "case:genitive"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est le génitif singulier de is/ea/id ?",
+          "hint": "Une seule forme sert aux trois genres au génitif singulier.",
+          "explanation": "eius est le génitif singulier.",
+          "options": [
+            "eius",
+            "ei",
+            "eum",
+            "eo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form is the dative singular of is/ea/id?",
+      "stimulus": null,
+      "options": [
+        "ei",
+        "eius",
+        "eum",
+        "ea"
+      ],
+      "expectedAnswer": "ei",
+      "acceptedVariants": [
+        "ei"
+      ],
+      "hint": "It is a short two-letter form.",
+      "explanation": "ei is dative singular.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "pronoun:is-ea-id",
+        "case:dative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est le datif singulier de is/ea/id ?",
+          "hint": "C’est une courte forme de deux lettres.",
+          "explanation": "ei est le datif singulier.",
+          "options": [
+            "ei",
+            "eius",
+            "eum",
+            "ea"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which statement about se is correct?",
+      "stimulus": null,
+      "options": [
+        "it has no nominative and refers back to the subject",
+        "it is always nominative",
+        "it means only 'they'",
+        "it never changes case"
+      ],
+      "expectedAnswer": "it has no nominative and refers back to the subject",
+      "acceptedVariants": [
+        "it has no nominative and refers back to the subject"
+      ],
+      "hint": "Reflexive pronouns point back to the subject.",
+      "explanation": "se has no nominative form.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "pronoun:reflexive"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle affirmation au sujet de se est correcte ?",
+          "hint": "Les pronoms réfléchis renvoient au sujet.",
+          "explanation": "se n’a pas de forme au nominatif.",
+          "options": [
+            "il n’a pas de nominatif et renvoie au sujet",
+            "il est toujours au nominatif",
+            "il signifie uniquement « ils »",
+            "il ne change jamais de cas"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e9",
+      "exerciseType": "matching",
+      "prompt": "Match the Ordinary phrase to the case function being tested.",
+      "stimulus": [
+        "Agnus Dei",
+        "Deo gratias",
+        "ad altare",
+        "in nomine"
+      ],
+      "expectedAnswer": {
+        "Agnus Dei": "genitive",
+        "Deo gratias": "dative",
+        "ad altare": "accusative",
+        "in nomine": "ablative"
+      },
+      "acceptedVariants": [],
+      "hint": "These four phrases summarize Lessons 8–9.",
+      "explanation": "The Stage 2 checkpoint retrieves all four newly activated case functions.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "case:cumulative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez la formule de l’Ordinaire à la fonction casuelle évaluée.",
+          "hint": "Ces quatre formules résument les leçons 8–9.",
+          "explanation": "Le jalon de l’étape 2 réactive les quatre fonctions casuelles nouvellement activées.",
+          "matches": {
+            "Agnus Dei": "génitif",
+            "Deo gratias": "datif",
+            "ad altare": "accusatif",
+            "in nomine": "ablatif"
+          }
+        }
+      }
+    },
+    {
+      "id": "l10-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which dictionary pair best helps recover the stem of pax?",
+      "stimulus": null,
+      "options": [
+        "pax, pacis",
+        "pax, pax",
+        "pacis, pax",
+        "pax, paci"
+      ],
+      "expectedAnswer": "pax, pacis",
+      "acceptedVariants": [
+        "pax, pacis"
+      ],
+      "hint": "Recall Lesson 6.",
+      "explanation": "The genitive pacis reveals pac-.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "retrieval:lesson6"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel couple de dictionnaire aide le mieux à retrouver le radical de pax ?",
+          "hint": "Rappelez-vous la leçon 6.",
+          "explanation": "Le génitif pacis révèle pac-.",
+          "options": [
+            "pax, pacis",
+            "pax, pax",
+            "pacis, pax",
+            "pax, paci"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e11",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form shows passive voice?",
+      "stimulus": null,
+      "options": [
+        "sanctificetur",
+        "Laudamus",
+        "Credo",
+        "venio"
+      ],
+      "expectedAnswer": "sanctificetur",
+      "acceptedVariants": [
+        "sanctificetur"
+      ],
+      "hint": "Recall the -tur signal.",
+      "explanation": "sanctificetur is the Stage 2 passive anchor.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "retrieval:lesson7",
+        "voice:passive"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme exprime la voix passive ?",
+          "hint": "Rappelez-vous le signal -tur.",
+          "explanation": "sanctificetur est le repère passif de l’étape 2.",
+          "options": [
+            "sanctificetur",
+            "Laudamus",
+            "Credo",
+            "venio"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e12",
+      "exerciseType": "token_select",
+      "prompt": "Select the pronoun and preposition information already learned.",
+      "stimulus": "Sed libera nos a malo.",
+      "expectedAnswer": [
+        "Sed",
+        "nos",
+        "a",
+        "malo"
+      ],
+      "acceptedVariants": [
+        [
+          "Sed",
+          "nos",
+          "a",
+          "malo"
+        ]
+      ],
+      "hint": "sed and malus are earlier Core; nos and a/ab are now active too.",
+      "explanation": "The sentence can now be read through conjunction, pronoun, preposition and adjective/noun form.",
+      "difficulty": 3,
+      "sourceId": "mr1962-pater-libera-nos-l10",
+      "skills": [
+        "reading:cumulative"
+      ],
+      "referenceIds": [
+        "mr1962-pater-libera-nos-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les informations de pronom et de préposition déjà apprises.",
+          "hint": "sed et malus appartiennent au vocabulaire antérieur ; nos et a/ab sont maintenant actifs eux aussi.",
+          "explanation": "La phrase peut désormais être lue à travers la conjonction, le pronom, la préposition et la forme adjectivale/nominale."
+        }
+      }
+    },
+    {
+      "id": "l10-e13",
+      "exerciseType": "multiple_choice",
+      "prompt": "What begins in Lesson 10?",
+      "stimulus": null,
+      "options": [
+        "the pronoun spiral",
+        "the first-declension system",
+        "the pronunciation system",
+        "the capstone"
+      ],
+      "expectedAnswer": "the pronoun spiral",
+      "acceptedVariants": [
+        "the pronoun spiral"
+      ],
+      "hint": "Pronouns will recur repeatedly through later lessons.",
+      "explanation": "Lesson 10 is the formal start of the course's pronoun spiral.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:pronoun-spiral"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui commence à la leçon 10 ?",
+          "hint": "Les pronoms réapparaîtront régulièrement dans les leçons suivantes.",
+          "explanation": "La leçon 10 marque le début formel de la progression en spirale des pronoms.",
+          "options": [
+            "la progression en spirale des pronoms",
+            "le système de la première déclinaison",
+            "le système de prononciation",
+            "le couronnement du cours"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l10-e14",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the Stage 2 reading target?",
+      "stimulus": null,
+      "options": [
+        "complete Ordinary-style sentences with case and pronoun recognition",
+        "isolated vocabulary only",
+        "unseen Holy Week passages",
+        "Canon periodic syntax"
+      ],
+      "expectedAnswer": "complete Ordinary-style sentences with case and pronoun recognition",
+      "acceptedVariants": [
+        "complete Ordinary-style sentences with case and pronoun recognition"
+      ],
+      "hint": "This is the Lesson 10 milestone.",
+      "explanation": "Stage 2 consolidates sentence-level Ordinary reading.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est l’objectif de lecture de l’étape 2 ?",
+          "hint": "C’est le jalon de la leçon 10.",
+          "explanation": "L’étape 2 consolide la lecture de phrases de l’Ordinaire.",
+          "options": [
+            "des phrases complètes de type Ordinaire avec reconnaissance des cas et des pronoms",
+            "du vocabulaire isolé seulement",
+            "des passages inconnus de la Semaine sainte",
+            "la syntaxe périodique du Canon"
+          ]
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Map personal/reflexive pronouns into the full case system.",
+    "Learn the conventional cum forms mecum/tecum/nobiscum/vobiscum/secum.",
+    "Begin is/ea/id case recognition.",
+    "Pass the Stage 2 checkpoint across third declension, voice, all six cases, prepositions and pronouns."
+  ],
+  "checkpoint": {
+    "id": "stage2-checkpoint",
+    "stage": 2,
+    "scopeLessons": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "progressionGate": "complete Ordinary-style sentence reading",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 11,
+      "autoGradedExerciseIds": [
+        "l10-e1",
+        "l10-e2",
+        "l10-e3",
+        "l10-e4",
+        "l10-e5",
+        "l10-e6",
+        "l10-e7",
+        "l10-e8",
+        "l10-e9",
+        "l10-e10",
+        "l10-e11",
+        "l10-e12",
+        "l10-e13",
+        "l10-e14"
+      ]
+    },
+    "mustKnow": [
+      "third-declension stem recovery",
+      "active/passive recognition",
+      "all six cases active",
+      "preposition government",
+      "ego/tu/nos/vos case families",
+      "is/ea/id core forms",
+      "se reflexive and no nominative",
+      "cum attached forms"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "ego",
+      "tu",
+      "nos",
+      "vos",
+      "is/ea/id",
+      "se"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 4,
+    "exerciseCount": 14,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Dominus vobiscum",
+      "grammarFocus": "Pronoms personnels et réfléchis ; cum",
+      "readingOutcome": "Lire les formes des pronoms personnels, réfléchis et de troisième personne dans leur contexte casuel.",
+      "objectives": [
+        "Inscrire les pronoms personnels et réfléchis dans le système complet des cas.",
+        "Apprendre les formes conventionnelles avec cum : mecum/tecum/nobiscum/vobiscum/secum.",
+        "Commencer la reconnaissance casuelle de is/ea/id.",
+        "Franchir le jalon de l’étape 2 portant sur la troisième déclinaison, la voix, les six cas, les prépositions et les pronoms."
+      ]
+    }
+  }
+}

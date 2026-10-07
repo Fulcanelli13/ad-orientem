@@ -1,0 +1,1345 @@
+{
+  "version": "latin-course-lesson-05-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 5,
+  "stage": {
+    "number": 1,
+    "title": "Hear the Latin of the Church"
+  },
+  "title": "We praise, bless, adore",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "progressionStep": "sentence",
+  "grammarFocus": "Present active verbs",
+  "readingOutcome": "Parse person/number while retaining noun-case recognition.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen lesson allocation is introduced; earlier Core may be recycled and later Core may appear only as explicit support.",
+    "authenticTextPolicy": "Primary text and instructional markup are stored separately.",
+    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "laudo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "praise",
+          "fr": "louer"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "benedico",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "bless",
+          "fr": "bénir"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "adoro",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "adore",
+          "fr": "adorer"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "glorifico",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "glorify",
+          "fr": "glorifier"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "credo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "believe",
+          "fr": "croire"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "audio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "hear",
+          "fr": "entendre"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "servio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "serve",
+          "fr": "servir"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "venio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "come",
+          "fr": "venir"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "habeo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "have",
+          "fr": "avoir"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "amo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "love",
+          "fr": "aimer"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "sed",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "but",
+          "fr": "mais"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "video",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "see",
+          "fr": "voir"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "voco",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "call",
+          "fr": "appeler"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "mitto",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "send",
+          "fr": "envoyer"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "maneo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "remain",
+          "fr": "demeurer"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "aperio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "open",
+          "fr": "ouvrir"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "pono",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "put / place",
+          "fr": "poser"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "sto",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "stand",
+          "fr": "se tenir debout"
+        },
+        "frozenLesson": 5
+      },
+      {
+        "lemma": "timeo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "fear",
+          "fr": "craindre"
+        },
+        "frozenLesson": 5
+      }
+    ],
+    "recycled": [
+      "et",
+      "gloria",
+      "terra",
+      "Deus",
+      "Dominus",
+      "filius",
+      "caelum",
+      "sum",
+      "non",
+      "sanctus",
+      "tuus",
+      "plenus"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "te",
+      "forms": [
+        "te"
+      ],
+      "gloss": {
+        "en": "you (object)",
+        "fr": "vous / te"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-pronominal-form"
+    },
+    {
+      "lemma": "in",
+      "forms": [
+        "in"
+      ],
+      "gloss": {
+        "en": "in",
+        "fr": "en / dans"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "unus",
+      "forms": [
+        "unum"
+      ],
+      "gloss": {
+        "en": "one",
+        "fr": "un"
+      },
+      "trackedLesson": 18,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "pater",
+      "forms": [
+        "Patrem"
+      ],
+      "gloss": {
+        "en": "Father",
+        "fr": "Père"
+      },
+      "trackedLesson": 6,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "omnipotens",
+      "forms": [
+        "omnipotentem"
+      ],
+      "gloss": {
+        "en": "almighty",
+        "fr": "tout-puissant"
+      },
+      "trackedLesson": 30,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "vos",
+      "forms": [
+        "vobis"
+      ],
+      "gloss": {
+        "en": "you (plural)",
+        "fr": "vous"
+      },
+      "trackedLesson": 10,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "cum",
+      "forms": [
+        "cum"
+      ],
+      "gloss": {
+        "en": "with",
+        "fr": "avec"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-gloria-verbs-l5",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Gloria",
+      "sourceLatin": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
+      "provenanceNote": "Authentic Gloria sequence; four first-person-plural present verbs are the primary pattern.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-credo-opening-l5",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Credo in unum Deum, Patrem omnipotentem.",
+      "provenanceNote": "Authentic Credo opening; Credo supplies first-person-singular present.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-dominus-vobiscum-l5",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — salutation",
+      "sourceLatin": "Dominus vobiscum.",
+      "provenanceNote": "Recycled Stage 1 reading source used at the checkpoint to ensure earlier noun recognition persists.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-sanctus-pleni",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Sanctus",
+      "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua.",
+      "provenanceNote": "Recycled Stage 1 source used in the checkpoint for adjective-agreement retrieval.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "learningBlocks": [
+    {
+      "id": "l5-b1",
+      "type": "concept",
+      "title": "The verb ending tells you who acts",
+      "learnerCopy": {
+        "en": "Present active verbs now add person and number to the information you can read from endings. The central contrast is Credo = I believe versus Laudamus/Benedicimus/Adoramus/Glorificamus = we praise/bless/adore/glorify.",
+        "fr": "Les verbes actifs au présent ajoutent maintenant la personne et le nombre aux informations données par les terminaisons. Le contraste central est Credo = je crois et Laudamus/Benedicimus/Adoramus/Glorificamus = nous louons/bénissons/adorons/glorifions."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "La terminaison verbale indique qui agit"
+        }
+      }
+    },
+    {
+      "id": "l5-b2",
+      "type": "verb-system",
+      "title": "Read person and number",
+      "learnerCopy": {
+        "en": "Use the ending before translating mechanically: -o often signals first-person singular; -mus signals first-person plural. Other present endings become familiar through the assigned verbs and later lessons.",
+        "fr": "Lisez d'abord la terminaison : -o signale souvent la première personne du singulier; -mus la première personne du pluriel. Les autres terminaisons du présent se fixeront avec les verbes du cours."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lire la personne et le nombre"
+        }
+      }
+    },
+    {
+      "id": "l5-b3",
+      "type": "authentic-example",
+      "title": "Four verbs, one ending pattern",
+      "sourceId": "mr1962-gloria-verbs-l5",
+      "learnerCopy": {
+        "en": "The Gloria gives four consecutive -mus forms. That repetition is pedagogically ideal: the vocabulary changes, but the grammatical person and number stay constant.",
+        "fr": "Le Gloria donne quatre formes successives en -mus. La répétition est idéale : le vocabulaire change, mais la personne et le nombre restent identiques."
+      },
+      "referenceIds": [
+        "mr1962-gloria-verbs-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Quatre verbes, un même schéma de terminaison"
+        }
+      }
+    },
+    {
+      "id": "l5-b4",
+      "type": "authentic-example",
+      "title": "Credo",
+      "sourceId": "mr1962-credo-opening-l5",
+      "learnerCopy": {
+        "en": "Credo is first-person singular: 'I believe'. Compare that single speaker with the congregation's plural Laudamus, Benedicimus, Adoramus, Glorificamus.",
+        "fr": "Credo est à la première personne du singulier : « je crois ». Comparez ce sujet singulier au pluriel de Laudamus, Benedicimus, Adoramus, Glorificamus."
+      },
+      "referenceIds": [
+        "mr1962-credo-opening-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Credo"
+        }
+      }
+    },
+    {
+      "id": "l5-b5",
+      "type": "controlled-practice",
+      "title": "Apply the same system to new verbs",
+      "learnerCopy": {
+        "en": "audio, servio, venio, habeo, amo, video, voco, mitto, maneo, aperio, pono, sto and timeo are learned as verb families. Controlled exercises use their present forms so the learner sees person/number rather than memorizing disconnected translations.",
+        "fr": "audio, servio, venio, habeo, amo, video, voco, mitto, maneo, aperio, pono, sto et timeo sont appris comme familles verbales. Les exercices emploient leurs formes du présent pour faire lire la personne et le nombre."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Appliquer le même système à de nouveaux verbes"
+        }
+      }
+    },
+    {
+      "id": "l5-b6",
+      "type": "stage-checkpoint",
+      "title": "Stage 1 reading checkpoint",
+      "learnerCopy": {
+        "en": "The checkpoint mixes everything earned in Lessons 1–5: sound/stress, the permanent case map, first/second declensions, sum, adjective agreement, and present active person/number. Later grammar remains glossed rather than silently tested.",
+        "fr": "Le contrôle de fin d'étape mélange tout ce qui a été acquis dans les leçons 1 à 5 : prononciation, carte des cas, première/deuxième déclinaisons, sum, accord de l'adjectif et personne/nombre du présent actif. La grammaire ultérieure reste explicitement fournie."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Jalon de lecture de l’étape 1"
+        }
+      }
+    },
+    {
+      "id": "l5-b7",
+      "type": "retrieval",
+      "title": "From phrase to sentence",
+      "learnerCopy": {
+        "en": "Stage 1 ends when the learner can move through a short authentic sentence and identify several grammatical anchors without translating every word. That is the first phrase → sentence transition.",
+        "fr": "L'étape 1 est achevée lorsque l'apprenant peut parcourir une courte phrase authentique et y repérer plusieurs points d'appui grammaticaux sans traduire chaque mot. C'est le premier passage de la formule à la phrase."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Du groupe de mots à la phrase"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l5-p1",
+      "sourceId": "mr1962-gloria-verbs-l5",
+      "sourceLatin": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
+      "instructionalDisplay": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
+      "translation": {
+        "en": "We praise Thee. We bless Thee. We adore Thee. We glorify Thee.",
+        "fr": "Nous vous louons. Nous vous bénissons. Nous vous adorons. Nous vous glorifions."
+      },
+      "targetLemmas": [
+        "laudo",
+        "benedico",
+        "adoro",
+        "glorifico"
+      ],
+      "supportLemmas": [
+        "te"
+      ]
+    },
+    {
+      "id": "l5-p2",
+      "sourceId": "mr1962-credo-opening-l5",
+      "sourceLatin": "Credo in unum Deum, Patrem omnipotentem.",
+      "instructionalDisplay": "Credo in unum Deum, Patrem omnipotentem.",
+      "translation": {
+        "en": "I believe in one God, the Father almighty.",
+        "fr": "Je crois en un seul Dieu, le Père tout-puissant."
+      },
+      "targetLemmas": [
+        "credo",
+        "Deus"
+      ],
+      "supportLemmas": [
+        "in",
+        "unus",
+        "pater",
+        "omnipotens"
+      ]
+    },
+    {
+      "id": "l5-p3",
+      "sourceId": "mr1962-dominus-vobiscum-l5",
+      "sourceLatin": "Dominus vobiscum.",
+      "instructionalDisplay": "Dominus vobiscum.",
+      "translation": {
+        "en": "The Lord be with you.",
+        "fr": "Le Seigneur soit avec vous."
+      },
+      "targetLemmas": [
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "vos",
+        "cum"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l5-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What person/number is Laudamus?",
+      "stimulus": null,
+      "expectedAnswer": "first-person plural",
+      "acceptedVariants": [
+        "first-person plural",
+        "1st person plural"
+      ],
+      "hint": "The -mus ending is the clue.",
+      "explanation": "Laudamus means 'we praise'.",
+      "difficulty": 1,
+      "sourceId": "mr1962-gloria-verbs-l5",
+      "skills": [
+        "verb:person-number",
+        "vocabulary:laudo"
+      ],
+      "options": [
+        "first-person plural",
+        "first-person singular",
+        "third-person plural",
+        "second-person singular"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-verbs-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle personne et quel nombre pour Laudamus ?",
+          "hint": "La terminaison -mus est l’indice.",
+          "explanation": "Laudamus signifie « nous louons ».",
+          "options": [
+            "première personne du pluriel",
+            "première personne du singulier",
+            "troisième personne du pluriel",
+            "deuxième personne du singulier"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l5-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What person/number is Credo?",
+      "stimulus": null,
+      "expectedAnswer": "first-person singular",
+      "acceptedVariants": [
+        "first-person singular",
+        "1st person singular"
+      ],
+      "hint": "Compare -o with -mus.",
+      "explanation": "Credo means 'I believe'.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-opening-l5",
+      "skills": [
+        "verb:person-number",
+        "vocabulary:credo"
+      ],
+      "options": [
+        "first-person singular",
+        "first-person plural",
+        "third-person singular",
+        "second-person plural"
+      ],
+      "referenceIds": [
+        "mr1962-credo-opening-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle personne et quel nombre pour Credo ?",
+          "hint": "Comparez -o et -mus.",
+          "explanation": "Credo signifie « je crois ».",
+          "options": [
+            "première personne du singulier",
+            "première personne du pluriel",
+            "troisième personne du singulier",
+            "deuxième personne du pluriel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l5-e3",
+      "exerciseType": "token_select",
+      "prompt": "Select all four present verbs.",
+      "stimulus": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
+      "expectedAnswer": [
+        "Laudamus",
+        "Benedicimus",
+        "Adoramus",
+        "Glorificamus"
+      ],
+      "acceptedVariants": [
+        [
+          "Laudamus",
+          "Benedicimus",
+          "Adoramus",
+          "Glorificamus"
+        ]
+      ],
+      "hint": "Ignore te; it is supplied support.",
+      "explanation": "All four -mus forms are active Lesson 5 verbs.",
+      "difficulty": 1,
+      "sourceId": "mr1962-gloria-verbs-l5",
+      "skills": [
+        "reading:verb-recognition"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-verbs-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les quatre verbes au présent.",
+          "hint": "Ignorez te ; il est fourni comme aide.",
+          "explanation": "Les quatre formes en -mus sont des verbes actifs de la leçon 5."
+        }
+      }
+    },
+    {
+      "id": "l5-e4",
+      "exerciseType": "matching",
+      "prompt": "Match the verb lemma to its meaning.",
+      "stimulus": [
+        "audio",
+        "venio",
+        "habeo",
+        "amo"
+      ],
+      "expectedAnswer": {
+        "audio": "hear",
+        "venio": "come",
+        "habeo": "have",
+        "amo": "love"
+      },
+      "acceptedVariants": [],
+      "hint": "These are all new Lesson 5 verbs.",
+      "explanation": "This checks active vocabulary.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l5"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le lemme verbal à son sens.",
+          "hint": "Ce sont tous de nouveaux verbes de la leçon 5.",
+          "explanation": "Ceci vérifie le vocabulaire actif.",
+          "matches": {
+            "audio": "entendre",
+            "venio": "venir",
+            "habeo": "avoir",
+            "amo": "aimer"
+          }
+        }
+      }
+    },
+    {
+      "id": "l5-e5",
+      "exerciseType": "matching",
+      "prompt": "Match the verb lemma to its meaning.",
+      "stimulus": [
+        "video",
+        "voco",
+        "mitto",
+        "maneo"
+      ],
+      "expectedAnswer": {
+        "video": "see",
+        "voco": "call",
+        "mitto": "send",
+        "maneo": "remain"
+      },
+      "acceptedVariants": [],
+      "hint": "All belong to the same lesson.",
+      "explanation": "This expands controlled lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l5"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le lemme verbal à son sens.",
+          "hint": "Tous appartiennent à la même leçon.",
+          "explanation": "Ceci élargit la récupération lexicale contrôlée.",
+          "matches": {
+            "video": "voir",
+            "voco": "appeler",
+            "mitto": "envoyer",
+            "maneo": "demeurer"
+          }
+        }
+      }
+    },
+    {
+      "id": "l5-e6",
+      "exerciseType": "matching",
+      "prompt": "Match the remaining verb lemma to its meaning.",
+      "stimulus": [
+        "aperio",
+        "pono",
+        "sto",
+        "timeo",
+        "servio"
+      ],
+      "expectedAnswer": {
+        "aperio": "open",
+        "pono": "put / place",
+        "sto": "stand",
+        "timeo": "fear",
+        "servio": "serve"
+      },
+      "acceptedVariants": [],
+      "hint": "Use the glosses from the lesson.",
+      "explanation": "These are the remaining active verb families.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l5"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le lemme verbal restant à son sens.",
+          "hint": "Utilisez les gloses de la leçon.",
+          "explanation": "Ce sont les familles verbales actives restantes.",
+          "matches": {
+            "aperio": "ouvrir",
+            "pono": "poser / placer",
+            "sto": "se tenir debout",
+            "timeo": "craindre",
+            "servio": "servir"
+          }
+        }
+      }
+    },
+    {
+      "id": "l5-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which conjunction introduced in Lesson 5 means 'but'?",
+      "stimulus": null,
+      "expectedAnswer": "sed",
+      "acceptedVariants": [
+        "sed"
+      ],
+      "hint": "It contrasts two clauses.",
+      "explanation": "sed = but.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:sed"
+      ],
+      "options": [
+        "sed",
+        "et",
+        "non",
+        "via"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle conjonction introduite à la leçon 5 signifie « mais » ?",
+          "hint": "Elle oppose deux propositions.",
+          "explanation": "sed = mais.",
+          "options": [
+            "sed",
+            "et",
+            "non",
+            "via"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l5-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "In the phrase Gloria tua, what does tua demonstrate?",
+      "stimulus": null,
+      "expectedAnswer": "adjective agreement",
+      "acceptedVariants": [
+        "adjective agreement"
+      ],
+      "hint": "Recall Lesson 4.",
+      "explanation": "tua agrees with gloria.",
+      "difficulty": 2,
+      "sourceId": "mr1962-sanctus-pleni",
+      "skills": [
+        "retrieval:lesson4",
+        "agreement"
+      ],
+      "options": [
+        "adjective agreement",
+        "verb person",
+        "a new noun",
+        "word order only"
+      ],
+      "referenceIds": [
+        "mr1962-sanctus-pleni",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Dans le groupe Gloria tua, que montre tua ?",
+          "hint": "Rappelez-vous la leçon 4.",
+          "explanation": "tua s’accorde avec gloria.",
+          "options": [
+            "accord de l’adjectif",
+            "personne du verbe",
+            "un nouveau nom",
+            "seulement l’ordre des mots"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l5-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form belongs to the lemma sum?",
+      "stimulus": null,
+      "expectedAnswer": "sunt",
+      "acceptedVariants": [
+        "sunt"
+      ],
+      "hint": "Recall Lesson 3.",
+      "explanation": "sunt is a present form of sum.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "retrieval:lesson3",
+        "verb:sum"
+      ],
+      "options": [
+        "sunt",
+        "terra",
+        "sanctus",
+        "credo"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme appartient au lemme sum ?",
+          "hint": "Rappelez-vous la leçon 3.",
+          "explanation": "sunt est une forme du présent de sum.",
+          "options": [
+            "sunt",
+            "terra",
+            "sanctus",
+            "credo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l5-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which two case functions are active at the end of Stage 1?",
+      "stimulus": null,
+      "expectedAnswer": "nominative and vocative",
+      "acceptedVariants": [
+        "nominative and vocative"
+      ],
+      "hint": "The other four remain visible previews.",
+      "explanation": "Stage 1 activates nominative and vocative only.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "retrieval:lesson2",
+        "case:framework"
+      ],
+      "options": [
+        "nominative and vocative",
+        "genitive and dative",
+        "accusative and ablative",
+        "all six equally"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelles deux fonctions casuelles sont actives à la fin de l’étape 1 ?",
+          "hint": "Les quatre autres restent visibles comme aperçus.",
+          "explanation": "L’étape 1 active uniquement le nominatif et le vocatif.",
+          "options": [
+            "nominatif et vocatif",
+            "génitif et datif",
+            "accusatif et ablatif",
+            "les six de manière égale"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l5-e11",
+      "exerciseType": "token_select",
+      "prompt": "Select the words whose lemmas are already active by the end of Stage 1.",
+      "stimulus": "Dominus vobiscum.",
+      "expectedAnswer": [
+        "Dominus"
+      ],
+      "acceptedVariants": [
+        [
+          "Dominus"
+        ]
+      ],
+      "hint": "vobiscum remains later support.",
+      "explanation": "This ensures the learner does not confuse frequent exposure with formal introduction.",
+      "difficulty": 2,
+      "sourceId": "mr1962-dominus-vobiscum-l5",
+      "skills": [
+        "reading:support-boundary",
+        "retrieval:lesson3"
+      ],
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les mots dont les lemmes sont déjà actifs à la fin de l’étape 1.",
+          "hint": "vobiscum reste une aide pour plus tard.",
+          "explanation": "Cela évite que l’élève confonde exposition fréquente et introduction formelle."
+        }
+      }
+    },
+    {
+      "id": "l5-e12",
+      "exerciseType": "token_select",
+      "prompt": "Select the active words in the Credo opening.",
+      "stimulus": "Credo in unum Deum, Patrem omnipotentem.",
+      "expectedAnswer": [
+        "Credo",
+        "Deum"
+      ],
+      "acceptedVariants": [
+        [
+          "Credo",
+          "Deum"
+        ]
+      ],
+      "hint": "Deum is an inflected form of Deus; the remaining words are later support.",
+      "explanation": "The checkpoint accepts inflected forms of learned lemmas as active reading.",
+      "difficulty": 2,
+      "sourceId": "mr1962-credo-opening-l5",
+      "skills": [
+        "reading:cumulative",
+        "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "mr1962-credo-opening-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les mots actifs dans l’ouverture du Credo.",
+          "hint": "Deum est une forme fléchie de Deus ; les autres mots sont fournis comme aide pour plus tard.",
+          "explanation": "Le jalon accepte comme lecture active les formes fléchies de lemmes appris."
+        }
+      }
+    },
+    {
+      "id": "l5-e13",
+      "exerciseType": "short_answer",
+      "prompt": "What is the lemma behind Deum?",
+      "stimulus": null,
+      "expectedAnswer": "Deus",
+      "acceptedVariants": [
+        "Deus",
+        "deus"
+      ],
+      "hint": "Surface form versus lemma.",
+      "explanation": "Deum belongs to Deus, learned in Lesson 3.",
+      "difficulty": 2,
+      "sourceId": "mr1962-credo-opening-l5",
+      "skills": [
+        "retrieval:lesson3",
+        "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "mr1962-credo-opening-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le lemme correspondant à Deum ?",
+          "hint": "Distinguez la forme rencontrée du lemme.",
+          "explanation": "Deum appartient à Deus, appris à la leçon 3."
+        }
+      }
+    },
+    {
+      "id": "l5-e14",
+      "exerciseType": "multiple_choice",
+      "prompt": "What marks the Stage 1 progression achieved here?",
+      "stimulus": null,
+      "expectedAnswer": "phrase → sentence",
+      "acceptedVariants": [
+        "phrase → sentence",
+        "phrase to sentence"
+      ],
+      "hint": "This is the first of the course's four progression levels.",
+      "explanation": "Lesson 5 is the first cumulative sentence-reading gate.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "options": [
+        "phrase → sentence",
+        "sentence → passage",
+        "passage → independent reading",
+        "vocabulary list → dictionary"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’est-ce qui marque ici la progression atteinte à l’étape 1 ?",
+          "hint": "C’est le premier des quatre niveaux de progression du cours.",
+          "explanation": "La leçon 5 est le premier jalon cumulatif de lecture de phrase.",
+          "options": [
+            "groupe de mots → phrase",
+            "phrase → passage",
+            "passage → lecture autonome",
+            "liste de vocabulaire → dictionnaire"
+          ]
+        }
+      }
+    }
+  ],
+  "durationMinutes": 45,
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases stay visible from here onward. Only nominative and vocative are active functions in Stage 1; the remaining cases are previewed until their later unlocks.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active",
+        "question": "who/what is named as the subject or identity?",
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-ae"
+        },
+        "secondDeclension": {
+          "masculineSingular": "-us / -er",
+          "masculinePlural": "-i",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "vocative",
+        "status": "active",
+        "question": "who/what is directly addressed?",
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-ae"
+        },
+        "secondDeclension": {
+          "masculineSingular": "usually -e; -er often unchanged",
+          "masculinePlural": "-i",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "accusative",
+        "status": "preview",
+        "unlockLesson": 9,
+        "firstDeclension": {
+          "singular": "-am",
+          "plural": "-as"
+        },
+        "secondDeclension": {
+          "masculineSingular": "-um",
+          "masculinePlural": "-os",
+          "neuterSingular": "-um",
+          "neuterPlural": "-a"
+        }
+      },
+      {
+        "case": "genitive",
+        "status": "preview",
+        "unlockLesson": 8,
+        "firstDeclension": {
+          "singular": "-ae",
+          "plural": "-arum"
+        },
+        "secondDeclension": {
+          "singular": "-i",
+          "plural": "-orum"
+        }
+      },
+      {
+        "case": "dative",
+        "status": "preview",
+        "unlockLesson": 8,
+        "firstDeclension": {
+          "singular": "-ae",
+          "plural": "-is"
+        },
+        "secondDeclension": {
+          "singular": "-o",
+          "plural": "-is"
+        }
+      },
+      {
+        "case": "ablative",
+        "status": "preview",
+        "unlockLesson": 9,
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-is"
+        },
+        "secondDeclension": {
+          "singular": "-o",
+          "plural": "-is"
+        }
+      }
+    ],
+    "notes": [
+      "Deus commonly keeps Deus in direct address; filius has the familiar vocative fili. These are learned as liturgical forms rather than forced into a simplistic rule."
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "presentActiveFramework": {
+    "principle": "Read person/number from the ending before translating.",
+    "anchorEndings": [
+      {
+        "ending": "-o",
+        "value": "often 1st person singular"
+      },
+      {
+        "ending": "-mus",
+        "value": "1st person plural"
+      }
+    ],
+    "note": "Full conjugational patterning expands later; Lesson 5 establishes person/number recognition with the frozen verb set.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "objectives": [
+    "Read first-person singular versus plural present forms.",
+    "Learn all nineteen frozen Lesson 5 lemmas.",
+    "Retain case and agreement recognition while reading verbs.",
+    "Pass the first phrase → sentence checkpoint using authentic Ordinary material."
+  ],
+  "checkpoint": {
+    "id": "stage1-checkpoint",
+    "stage": 1,
+    "scopeLessons": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "progressionGate": "phrase → sentence",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 11,
+      "autoGradedExerciseIds": [
+        "l5-e1",
+        "l5-e2",
+        "l5-e3",
+        "l5-e4",
+        "l5-e5",
+        "l5-e6",
+        "l5-e7",
+        "l5-e8",
+        "l5-e9",
+        "l5-e10",
+        "l5-e11",
+        "l5-e12",
+        "l5-e13",
+        "l5-e14"
+      ]
+    },
+    "mustKnow": [
+      "et as the first tracked conjunction",
+      "all six case names visible; nominative/vocative active",
+      "first and second declension recognition",
+      "sum/possum present families",
+      "adjective agreement",
+      "present active person/number anchors",
+      "later words in passages remain explicit support"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "laudo",
+      "benedico",
+      "adoro",
+      "glorifico",
+      "credo",
+      "audio",
+      "servio",
+      "venio",
+      "habeo",
+      "amo",
+      "sed",
+      "video",
+      "voco",
+      "mitto",
+      "maneo",
+      "aperio",
+      "pono",
+      "sto",
+      "timeo"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 4,
+    "exerciseCount": 14,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Nous louons, bénissons, adorons",
+      "grammarFocus": "Verbes actifs au présent",
+      "readingOutcome": "Analyser la personne et le nombre tout en conservant la reconnaissance des cas nominaux.",
+      "objectives": [
+        "Lire les formes du présent à la première personne du singulier et du pluriel.",
+        "Apprendre les dix-neuf lemmes figés de la leçon 5.",
+        "Conserver la reconnaissance des cas et de l’accord pendant la lecture des verbes.",
+        "Franchir le premier jalon groupe de mots → phrase au moyen d’un texte authentique de l’Ordinaire."
+      ]
+    }
+  }
+}

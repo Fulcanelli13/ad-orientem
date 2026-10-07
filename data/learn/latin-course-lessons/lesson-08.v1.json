@@ -1,0 +1,969 @@
+{
+  "version": "latin-course-lesson-08-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 8,
+  "stage": {
+    "number": 2,
+    "title": "The Ordinary"
+  },
+  "title": "Agnus Dei / Deo gratias",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "sentence",
+  "grammarFocus": "Genitive and dative",
+  "readingOutcome": "Unlock genitive possession/relationship and dative recipient/reference functions.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 8 vocabulary only; future pronouns and relative/deponent forms remain support.",
+    "authenticTextPolicy": "Case functions are read from authentic Ordinary formulas.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "agnus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "lamb",
+          "fr": "agneau"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "saeculum",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "age / world",
+          "fr": "siècle"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "mundus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "world",
+          "fr": "monde"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "voluntas",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "will",
+          "fr": "volonté"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "spes",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "hope",
+          "fr": "espérance"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "mens",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "mind",
+          "fr": "esprit"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "sicut",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "as / just as",
+          "fr": "comme"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "quia",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "because / that",
+          "fr": "parce que / que"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "testimonium",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "testimony / witness",
+          "fr": "témoignage"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "opus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "work",
+          "fr": "œuvre"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "domus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "house / home",
+          "fr": "maison"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "angelus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "angel",
+          "fr": "ange"
+        },
+        "frozenLesson": 8
+      },
+      {
+        "lemma": "civitas",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "city / commonwealth",
+          "fr": "cité"
+        },
+        "frozenLesson": 8
+      }
+    ],
+    "recycled": [
+      "Deus",
+      "gratia",
+      "gloria",
+      "pater",
+      "filius",
+      "sanctus",
+      "et"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "qui/quae/quod",
+      "forms": [
+        "qui"
+      ],
+      "gloss": {
+        "en": "who",
+        "fr": "qui"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "tollo",
+      "forms": [
+        "tollis"
+      ],
+      "gloss": {
+        "en": "take away",
+        "fr": "enlever"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "peccatum",
+      "forms": [
+        "peccata"
+      ],
+      "gloss": {
+        "en": "sin",
+        "fr": "péché"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "misereor",
+      "forms": [
+        "miserere"
+      ],
+      "gloss": {
+        "en": "have mercy",
+        "fr": "avoir pitié"
+      },
+      "trackedLesson": 19,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "nos",
+      "forms": [
+        "nobis"
+      ],
+      "gloss": {
+        "en": "we / us",
+        "fr": "nous"
+      },
+      "trackedLesson": 10,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "spiritus",
+      "forms": [
+        "Spiritui"
+      ],
+      "gloss": {
+        "en": "Spirit",
+        "fr": "Esprit"
+      },
+      "trackedLesson": 14,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-agnus-dei-l8",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Agnus Dei",
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "provenanceNote": "Dei and mundi provide authentic genitive anchors; nobis previews a future pronoun form.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-deo-gratias-l8",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — response",
+      "sourceLatin": "Deo gratias.",
+      "provenanceNote": "Fixed liturgical response; Deo is the canonical dative anchor.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-gloria-patri-l8",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Doxology",
+      "sourceLatin": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "provenanceNote": "Patri, Filio and Spiritui are coordinated datives; Sancto agrees with Spiritui.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "Genitive and dative now become active alongside nominative and vocative. Accusative and ablative stay visible previews until Lesson 9.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "preview",
+        "unlockLesson": 9
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "preview",
+        "unlockLesson": 9
+      }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l8-b1",
+      "type": "concept",
+      "title": "Two more cases become functional",
+      "learnerCopy": {
+        "en": "The genitive and dative have been visible since Lesson 2. Now they become active reading tools. Genitive commonly marks relationship or possession; dative commonly marks recipient or reference.",
+        "fr": "Le génitif et le datif sont visibles depuis la leçon 2. Ils deviennent maintenant des outils actifs de lecture. Le génitif marque souvent la relation ou la possession ; le datif, le destinataire ou la référence."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Deux cas supplémentaires deviennent fonctionnels"
+        }
+      }
+    },
+    {
+      "id": "l8-b2",
+      "type": "case-panel",
+      "title": "Genitive: of whom? of what?",
+      "learnerCopy": {
+        "en": "In Agnus Dei, Dei means 'of God'. In peccata mundi, mundi means 'of the world'. Read the relationship before trying to translate every word.",
+        "fr": "Dans Agnus Dei, Dei signifie « de Dieu ». Dans peccata mundi, mundi signifie « du monde ». Lisez d'abord la relation avant de traduire chaque mot."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Génitif : de qui ? de quoi ?"
+        }
+      }
+    },
+    {
+      "id": "l8-b3",
+      "type": "case-panel",
+      "title": "Dative: to whom? for whom?",
+      "learnerCopy": {
+        "en": "In Deo gratias, Deo is the dative recipient/reference: thanks to God. The same pattern appears in Patri, Filio and Spiritui Sancto.",
+        "fr": "Dans Deo gratias, Deo est le datif du destinataire ou de la référence : grâce à Dieu. Le même schéma apparaît dans Patri, Filio et Spiritui Sancto."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Datif : à qui ? pour qui ?"
+        }
+      }
+    },
+    {
+      "id": "l8-b4",
+      "type": "authentic-example",
+      "title": "Agnus Dei",
+      "sourceId": "mr1962-agnus-dei-l8",
+      "learnerCopy": {
+        "en": "Agnus is the head noun; Dei tells whose Lamb, and mundi tells whose sins. One short formula already contains two genitive relationships.",
+        "fr": "Agnus est le nom principal ; Dei indique de qui est l'Agneau, et mundi à quel monde appartiennent les péchés. Une seule formule contient déjà deux relations au génitif."
+      },
+      "referenceIds": [
+        "mr1962-agnus-dei-l8",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Agnus Dei"
+        }
+      }
+    },
+    {
+      "id": "l8-b5",
+      "type": "authentic-example",
+      "title": "Deo gratias",
+      "sourceId": "mr1962-deo-gratias-l8",
+      "learnerCopy": {
+        "en": "The fixed response is useful precisely because it is so short: Deo cannot be read as a new vocabulary word. It is Deus in the dative.",
+        "fr": "Cette réponse fixe est utile parce qu'elle est très courte : Deo n'est pas un nouveau mot de vocabulaire, mais Deus au datif."
+      },
+      "referenceIds": [
+        "mr1962-deo-gratias-l8",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Deo gratias"
+        }
+      }
+    },
+    {
+      "id": "l8-b6",
+      "type": "liturgical-reading",
+      "title": "Gloria Patri",
+      "sourceId": "mr1962-gloria-patri-l8",
+      "learnerCopy": {
+        "en": "Patri, Filio and Spiritui are parallel datives. Once you see the case relationship, the sentence becomes structurally transparent even before every declension is automatic.",
+        "fr": "Patri, Filio et Spiritui sont des datifs parallèles. Une fois la relation de cas reconnue, la structure devient claire avant même que toutes les déclinaisons soient automatiques."
+      },
+      "referenceIds": [
+        "mr1962-gloria-patri-l8",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Gloria Patri"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l8-p1",
+      "sourceId": "mr1962-agnus-dei-l8",
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "instructionalDisplay": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
+      "translation": {
+        "en": "Lamb of God, who takest away the sins of the world: have mercy on us.",
+        "fr": "Agneau de Dieu, qui enlevez les péchés du monde : ayez pitié de nous."
+      },
+      "targetLemmas": [
+        "agnus",
+        "mundus",
+        "Deus"
+      ],
+      "supportLemmas": [
+        "qui/quae/quod",
+        "tollo",
+        "peccatum",
+        "misereor",
+        "nos"
+      ]
+    },
+    {
+      "id": "l8-p2",
+      "sourceId": "mr1962-deo-gratias-l8",
+      "sourceLatin": "Deo gratias.",
+      "instructionalDisplay": "Deo gratias.",
+      "translation": {
+        "en": "Thanks be to God.",
+        "fr": "Nous rendons grâce à Dieu."
+      },
+      "targetLemmas": [
+        "Deus",
+        "gratia"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l8-p3",
+      "sourceId": "mr1962-gloria-patri-l8",
+      "sourceLatin": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "instructionalDisplay": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "translation": {
+        "en": "Glory be to the Father, and to the Son, and to the Holy Ghost.",
+        "fr": "Gloire au Père, et au Fils, et au Saint-Esprit."
+      },
+      "targetLemmas": [
+        "gloria",
+        "pater",
+        "et",
+        "filius",
+        "sanctus"
+      ],
+      "supportLemmas": [
+        "spiritus"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l8-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is Dei in Agnus Dei?",
+      "stimulus": "Agnus Dei",
+      "options": [
+        "genitive",
+        "dative",
+        "nominative",
+        "vocative"
+      ],
+      "expectedAnswer": "genitive",
+      "acceptedVariants": [
+        "genitive"
+      ],
+      "hint": "Translate the relationship as 'of God'.",
+      "explanation": "Dei is the genitive of Deus here.",
+      "difficulty": 1,
+      "sourceId": "mr1962-agnus-dei-l8",
+      "skills": [
+        "case:genitive"
+      ],
+      "referenceIds": [
+        "mr1962-agnus-dei-l8",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est Dei dans Agnus Dei ?",
+          "hint": "Traduisez la relation par « de Dieu ».",
+          "explanation": "Dei est ici le génitif de Deus.",
+          "options": [
+            "génitif",
+            "datif",
+            "nominatif",
+            "vocatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l8-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is Deo in Deo gratias?",
+      "stimulus": "Deo gratias",
+      "options": [
+        "dative",
+        "genitive",
+        "accusative",
+        "vocative"
+      ],
+      "expectedAnswer": "dative",
+      "acceptedVariants": [
+        "dative"
+      ],
+      "hint": "Think 'thanks to God'.",
+      "explanation": "Deo is dative.",
+      "difficulty": 1,
+      "sourceId": "mr1962-deo-gratias-l8",
+      "skills": [
+        "case:dative"
+      ],
+      "referenceIds": [
+        "mr1962-deo-gratias-l8",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est Deo dans Deo gratias ?",
+          "hint": "Pensez : « grâces à Dieu ».",
+          "explanation": "Deo est au datif.",
+          "options": [
+            "datif",
+            "génitif",
+            "accusatif",
+            "vocatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l8-e3",
+      "exerciseType": "token_select",
+      "prompt": "Select the genitive meaning 'of the world'.",
+      "stimulus": "Agnus Dei, qui tollis peccata mundi.",
+      "expectedAnswer": [
+        "mundi"
+      ],
+      "acceptedVariants": [
+        [
+          "mundi"
+        ]
+      ],
+      "hint": "It comes from mundus.",
+      "explanation": "mundi is genitive singular of mundus.",
+      "difficulty": 1,
+      "sourceId": "mr1962-agnus-dei-l8",
+      "skills": [
+        "case:genitive",
+        "vocabulary:mundus"
+      ],
+      "referenceIds": [
+        "mr1962-agnus-dei-l8",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le génitif signifiant « du monde ».",
+          "hint": "Il vient de mundus.",
+          "explanation": "mundi est le génitif singulier de mundus."
+        }
+      }
+    },
+    {
+      "id": "l8-e4",
+      "exerciseType": "token_select",
+      "prompt": "Select the three coordinated datives.",
+      "stimulus": "Gloria Patri, et Filio, et Spiritui Sancto.",
+      "expectedAnswer": [
+        "Patri",
+        "Filio",
+        "Spiritui"
+      ],
+      "acceptedVariants": [
+        [
+          "Patri",
+          "Filio",
+          "Spiritui"
+        ]
+      ],
+      "hint": "They answer 'to whom?'.",
+      "explanation": "Patri, Filio and Spiritui are parallel datives.",
+      "difficulty": 2,
+      "sourceId": "mr1962-gloria-patri-l8",
+      "skills": [
+        "case:dative",
+        "reading:parallelism"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-patri-l8",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les trois datifs coordonnés.",
+          "hint": "Ils répondent à la question « à qui ? ».",
+          "explanation": "Patri, Filio et Spiritui sont trois datifs parallèles."
+        }
+      }
+    },
+    {
+      "id": "l8-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which function is now active for the genitive?",
+      "stimulus": null,
+      "options": [
+        "relationship / possession",
+        "direct object",
+        "motion toward",
+        "instrument only"
+      ],
+      "expectedAnswer": "relationship / possession",
+      "acceptedVariants": [
+        "relationship / possession"
+      ],
+      "hint": "Think Agnus Dei.",
+      "explanation": "The genitive commonly marks relationship or possession.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:genitive"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle fonction est désormais active pour le génitif ?",
+          "hint": "Pensez à Agnus Dei.",
+          "explanation": "Le génitif marque couramment une relation ou une possession.",
+          "options": [
+            "relation / possession",
+            "complément d’objet direct",
+            "mouvement vers",
+            "instrument seulement"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l8-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which function is now active for the dative?",
+      "stimulus": null,
+      "options": [
+        "recipient / reference",
+        "direct object",
+        "place from which",
+        "direct address"
+      ],
+      "expectedAnswer": "recipient / reference",
+      "acceptedVariants": [
+        "recipient / reference"
+      ],
+      "hint": "Think Deo gratias.",
+      "explanation": "The dative commonly marks recipient or reference.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:dative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle fonction est désormais active pour le datif ?",
+          "hint": "Pensez à Deo gratias.",
+          "explanation": "Le datif marque couramment le destinataire ou la référence.",
+          "options": [
+            "destinataire / référence",
+            "complément d’objet direct",
+            "lieu d’où l’on vient",
+            "adresse directe"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l8-e7",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 8 vocabulary to meaning.",
+      "stimulus": [
+        "spes",
+        "mens",
+        "opus",
+        "domus"
+      ],
+      "expectedAnswer": {
+        "spes": "hope",
+        "mens": "mind",
+        "opus": "work",
+        "domus": "house / home"
+      },
+      "acceptedVariants": [],
+      "hint": "All four are new Core.",
+      "explanation": "This checks lexical recognition.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l8"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le vocabulaire de la leçon 8 à son sens.",
+          "hint": "Les quatre sont de nouveaux mots du vocabulaire fondamental.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale.",
+          "matches": {
+            "spes": "espérance",
+            "mens": "esprit",
+            "opus": "œuvre",
+            "domus": "maison / demeure"
+          }
+        }
+      }
+    },
+    {
+      "id": "l8-e8",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 8 vocabulary to meaning.",
+      "stimulus": [
+        "saeculum",
+        "voluntas",
+        "angelus",
+        "civitas"
+      ],
+      "expectedAnswer": {
+        "saeculum": "age / world",
+        "voluntas": "will",
+        "angelus": "angel",
+        "civitas": "city / commonwealth"
+      },
+      "acceptedVariants": [],
+      "hint": "All belong to Lesson 8.",
+      "explanation": "This checks the remaining noun set.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l8"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le vocabulaire de la leçon 8 à son sens.",
+          "hint": "Tous appartiennent à la leçon 8.",
+          "explanation": "Ceci vérifie le reste de l’ensemble nominal.",
+          "matches": {
+            "saeculum": "siècle / monde",
+            "voluntas": "volonté",
+            "angelus": "ange",
+            "civitas": "cité / communauté"
+          }
+        }
+      }
+    },
+    {
+      "id": "l8-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which two cases are still previews after Lesson 8?",
+      "stimulus": null,
+      "options": [
+        "accusative and ablative",
+        "genitive and dative",
+        "nominative and vocative",
+        "all six are active"
+      ],
+      "expectedAnswer": "accusative and ablative",
+      "acceptedVariants": [
+        "accusative and ablative"
+      ],
+      "hint": "They unlock in Lesson 9.",
+      "explanation": "Accusative and ablative are the last case functions still waiting.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:framework"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quels deux cas restent encore des aperçus après la leçon 8 ?",
+          "hint": "Ils deviennent actifs à la leçon 9.",
+          "explanation": "L’accusatif et l’ablatif sont les dernières fonctions casuelles encore en attente.",
+          "options": [
+            "accusatif et ablatif",
+            "génitif et datif",
+            "nominatif et vocatif",
+            "les six cas sont actifs"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l8-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin lemma behind mundi.",
+      "stimulus": "mundi",
+      "expectedAnswer": "mundus",
+      "acceptedVariants": [
+        "mundus",
+        "Mundus"
+      ],
+      "hint": "The -i form is genitive singular.",
+      "explanation": "mundi belongs to mundus.",
+      "difficulty": 2,
+      "sourceId": "mr1962-agnus-dei-l8",
+      "skills": [
+        "morphology:lemma-form",
+        "vocabulary:mundus"
+      ],
+      "referenceIds": [
+        "mr1962-agnus-dei-l8",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le lemme latin correspondant à mundi.",
+          "hint": "La forme en -i est un génitif singulier.",
+          "explanation": "mundi appartient à mundus."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Activate genitive relationship/possession.",
+    "Activate dative recipient/reference.",
+    "Learn all thirteen frozen Lesson 8 lemmas.",
+    "Read authentic genitive and dative forms without treating inflections as new vocabulary."
+  ],
+  "checkpoint": {
+    "id": "l8-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l8-e1",
+        "l8-e2",
+        "l8-e3",
+        "l8-e4",
+        "l8-e5",
+        "l8-e6",
+        "l8-e7",
+        "l8-e8",
+        "l8-e9",
+        "l8-e10"
+      ]
+    },
+    "mustKnow": [
+      "Dei/mundi as genitives",
+      "Deo/Patri/Filio/Spiritui as datives",
+      "accusative and ablative remain previews"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "agnus",
+      "saeculum",
+      "mundus",
+      "voluntas",
+      "spes",
+      "mens",
+      "sicut",
+      "quia",
+      "testimonium",
+      "opus",
+      "domus",
+      "angelus",
+      "civitas"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 3,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Agnus Dei / Deo gratias",
+      "grammarFocus": "Génitif et datif",
+      "readingOutcome": "Activer les fonctions de relation/possession du génitif et de destinataire/référence du datif.",
+      "objectives": [
+        "Activer la relation ou la possession exprimée par le génitif.",
+        "Activer le destinataire ou la référence exprimés par le datif.",
+        "Apprendre les treize lemmes figés de la leçon 8.",
+        "Lire des formes authentiques au génitif et au datif sans traiter les flexions comme de nouveaux mots."
+      ]
+    }
+  }
+}

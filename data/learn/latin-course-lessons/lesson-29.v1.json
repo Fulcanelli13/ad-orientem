@@ -1,0 +1,1214 @@
+{
+  "version": "latin-course-lesson-29-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 29,
+  "stage": {
+    "number": 6,
+    "title": "Canon"
+  },
+  "title": "Nobis… gratia Dei…",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "passage",
+  "grammarFocus": "Advanced dative and ablative functions",
+  "readingOutcome": "Consolidate non-basic case uses in liturgical prose.",
+  "authoringPolicy": {
+    "method": "concept → authentic Canon example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 29 vocabulary only; named saints and later Canon terms are support.",
+    "authenticTextPolicy": "Case functions are anchored directly in the Roman Canon and Psalmic prayer formulas.",
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "auxilium",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "help / aid",
+          "fr": "secours / aide"
+        },
+        "frozenLesson": 29
+      },
+      {
+        "lemma": "misericordia",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "mercy",
+          "fr": "miséricorde"
+        },
+        "frozenLesson": 29
+      },
+      {
+        "lemma": "maiestas",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "majesty",
+          "fr": "majesté"
+        },
+        "frozenLesson": 29
+      },
+      {
+        "lemma": "unitas",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "unity",
+          "fr": "unité"
+        },
+        "frozenLesson": 29
+      },
+      {
+        "lemma": "famulus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "servant",
+          "fr": "serviteur"
+        },
+        "frozenLesson": 29
+      }
+    ],
+    "recycled": [
+      "nos",
+      "quoque",
+      "peccatum",
+      "tuus",
+      "de",
+      "multus",
+      "spero",
+      "do",
+      "dignor",
+      "cum",
+      "sanctus",
+      "omnis",
+      "Dominus",
+      "in",
+      "conspectus",
+      "gratia",
+      "pater",
+      "filius",
+      "spiritus",
+      "aeternus",
+      "saeculum",
+      "Deus",
+      "per",
+      "manus",
+      "angelus",
+      "ut",
+      "corpus",
+      "sanguis",
+      "et",
+      "meus",
+      "a/ab",
+      "qui/quae/quod",
+      "facio",
+      "caelum",
+      "terra",
+      "plenus",
+      "sum"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "miseratio",
+      "forms": [
+        "miserationum"
+      ],
+      "gloss": {
+        "en": "mercy / compassion",
+        "fr": "miséricorde / compassion"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "societas",
+      "forms": [
+        "societatem"
+      ],
+      "gloss": {
+        "en": "fellowship",
+        "fr": "société / communion"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "apostolus",
+      "forms": [
+        "Apostolis"
+      ],
+      "gloss": {
+        "en": "apostle",
+        "fr": "apôtre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "martyr",
+      "forms": [
+        "Martyribus"
+      ],
+      "gloss": {
+        "en": "martyr",
+        "fr": "martyr"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "altare",
+      "forms": [
+        "altaris"
+      ],
+      "gloss": {
+        "en": "altar",
+        "fr": "autel"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "participatio",
+      "forms": [
+        "participatione"
+      ],
+      "gloss": {
+        "en": "participation",
+        "fr": "participation"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "repleo",
+      "forms": [
+        "repleamur"
+      ],
+      "gloss": {
+        "en": "fill",
+        "fr": "remplir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "divinus",
+      "forms": [
+        "divinae"
+      ],
+      "gloss": {
+        "en": "divine",
+        "fr": "divin"
+      },
+      "trackedLesson": 30,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "omnipotens",
+      "forms": [
+        "omnipotens"
+      ],
+      "gloss": {
+        "en": "almighty",
+        "fr": "tout-puissant"
+      },
+      "trackedLesson": 30,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "supplex",
+      "forms": [
+        "Supplices"
+      ],
+      "gloss": {
+        "en": "suppliant / humble",
+        "fr": "suppliant / humble"
+      },
+      "trackedLesson": 30,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "benedictio",
+      "forms": [
+        "benedictione"
+      ],
+      "gloss": {
+        "en": "blessing",
+        "fr": "bénédiction"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "caelestis",
+      "forms": [
+        "caelesti"
+      ],
+      "gloss": {
+        "en": "heavenly",
+        "fr": "céleste"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "iubeo",
+      "forms": [
+        "iube"
+      ],
+      "gloss": {
+        "en": "command",
+        "fr": "ordonner"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "perfero",
+      "forms": [
+        "perferri"
+      ],
+      "gloss": {
+        "en": "carry / bear",
+        "fr": "porter"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sublimis",
+      "forms": [
+        "sublime"
+      ],
+      "gloss": {
+        "en": "high / lofty",
+        "fr": "élevé"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "quotquot",
+      "forms": [
+        "quotquot"
+      ],
+      "gloss": {
+        "en": "as many as",
+        "fr": "tous ceux qui"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sacrosanctus",
+      "forms": [
+        "sacrosanctum"
+      ],
+      "gloss": {
+        "en": "most sacred",
+        "fr": "très saint"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "sumo",
+      "forms": [
+        "sumpserimus"
+      ],
+      "gloss": {
+        "en": "receive / take",
+        "fr": "recevoir / prendre"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "canon-nobis-quoque-l29",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Nobis quoque peccatoribus",
+      "sourceLatin": "Nobis quoque peccatoribus, famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis sanctis Apostolis et Martyribus.",
+      "provenanceNote": "Nobis and famulis show dative/reference syntax; de multitudine supplies a prepositional ablative.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "canon-supplices-l29",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Canon Missae — Supplices te rogamus",
+      "sourceLatin": "Supplices te rogamus, omnipotens Deus: iube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae maiestatis tuae: ut, quotquot ex hac altaris participatione sacrosanctum Filii tui Corpus et Sanguinem sumpserimus, omni benedictione caelesti et gratia repleamur.",
+      "provenanceNote": "in conspectu gives ablative after in; omni benedictione caelesti et gratia illustrates ablative of means/content with repleamur.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mass-conclusion-unitate-l29",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Collect conclusion",
+      "sourceLatin": "in unitate Spiritus Sancti Deus, per omnia saecula saeculorum.",
+      "provenanceNote": "unitate is ablative after in in the standard conclusion.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "vulg-ps120-2-l29",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 120:2",
+      "sourceLatin": "Auxilium meum a Domino, qui fecit caelum et terram.",
+      "provenanceNote": "auxilium is introduced in a compact Psalmic prayer statement.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-ps32-5-l29",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Psalmus 32:5",
+      "sourceLatin": "Misericordia Domini plena est terra.",
+      "provenanceNote": "misericordia is introduced in Psalmic liturgical language.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; Lesson 29 focuses on functions that cannot be recovered from a one-word English case label.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "advancedCaseFramework": {
+    "dative": [
+      "recipient/reference: nobis, famulis",
+      "person affected or addressed indirectly"
+    ],
+    "ablative": [
+      "prepositional: de multitudine, in conspectu, in unitate",
+      "means/content: omni benedictione caelesti et gratia repleamur"
+    ],
+    "rule": "Name the function only after identifying morphology, governing word, and clause meaning.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l29-b1",
+      "type": "concept",
+      "title": "Case labels are not enough",
+      "learnerCopy": {
+        "en": "By now you know the six cases. Advanced reading asks what a particular dative or ablative is doing in this clause: recipient, reference, prepositional complement, means, content or circumstance.",
+        "fr": "Vous connaissez désormais les six cas. La lecture avancée demande ce qu'un datif ou un ablatif précis fait dans la proposition : destinataire, référence, complément prépositionnel, moyen, contenu ou circonstance."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les étiquettes de cas ne suffisent pas"
+        }
+      }
+    },
+    {
+      "id": "l29-b2",
+      "type": "canon",
+      "title": "Nobis quoque peccatoribus",
+      "sourceId": "canon-nobis-quoque-l29",
+      "learnerCopy": {
+        "en": "Nobis and famulis refer to the people for whom the granting is requested. de multitudine is ablative because de governs the ablative. Keep morphology and function separate.",
+        "fr": "Nobis et famulis désignent ceux en faveur de qui le don est demandé. de multitudine est à l'ablatif parce que de régit l'ablatif. Gardez distincts morphologie et fonction."
+      },
+      "referenceIds": [
+        "canon-nobis-quoque-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Nobis quoque peccatoribus"
+        }
+      }
+    },
+    {
+      "id": "l29-b3",
+      "type": "canon",
+      "title": "in conspectu divinae maiestatis tuae",
+      "sourceId": "canon-supplices-l29",
+      "learnerCopy": {
+        "en": "conspectu is ablative after static in; maiestatis is genitive depending on conspectu. A short phrase can therefore contain two different case relationships nested together.",
+        "fr": "conspectu est à l'ablatif après in statique ; maiestatis est un génitif dépendant de conspectu. Un groupe court peut donc contenir deux relations de cas imbriquées."
+      },
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "in conspectu divinae maiestatis tuae"
+        }
+      }
+    },
+    {
+      "id": "l29-b4",
+      "type": "canon",
+      "title": "omni benedictione caelesti et gratia repleamur",
+      "sourceId": "canon-supplices-l29",
+      "learnerCopy": {
+        "en": "The ablatives describe that with which the recipients are filled. Translate the sense naturally, but keep the Latin case function visible.",
+        "fr": "Les ablatifs indiquent ce dont les bénéficiaires sont comblés. Traduisez naturellement, tout en gardant visible la fonction latine."
+      },
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "omni benedictione caelesti et gratia repleamur"
+        }
+      }
+    },
+    {
+      "id": "l29-b5",
+      "type": "retrieval",
+      "title": "Governing word before label",
+      "learnerCopy": {
+        "en": "For every difficult dative/ablative, ask: is there a preposition or governing verb? What relationship does the clause express? Only then choose the conventional case-function label.",
+        "fr": "Pour chaque datif ou ablatif difficile, demandez : y a-t-il une préposition ou un verbe régissant ? Quelle relation exprime la proposition ? Choisissez ensuite l'étiquette traditionnelle de fonction."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le mot régissant avant l’étiquette"
+        }
+      }
+    },
+    {
+      "id": "l29-b6",
+      "type": "application",
+      "title": "Case function emerges from the whole phrase",
+      "learnerCopy": {
+        "en": "Do not translate nobis, gratia or unitate in isolation. Read the governing verb or preposition, then the entire phrase, and only afterward choose the conventional dative/ablative function label.",
+        "fr": "Ne traduisez pas nobis, gratia ou unitate isolément. Lisez d'abord le verbe ou la préposition régissante, puis le groupe entier, et choisissez seulement ensuite l'étiquette fonctionnelle du datif ou de l'ablatif."
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "La fonction casuelle ressort du groupe entier"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l29-p1",
+      "sourceId": "canon-nobis-quoque-l29",
+      "sourceLatin": "Nobis quoque peccatoribus, famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis sanctis Apostolis et Martyribus.",
+      "instructionalDisplay": "Nobis quoque peccatoribus, famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis sanctis Apostolis et Martyribus.",
+      "translation": {
+        "en": "To us also, Thy sinful servants, who hope in the multitude of Thy mercies, vouchsafe to grant some part and fellowship with Thy holy Apostles and Martyrs.",
+        "fr": "À nous aussi, pécheurs, vos serviteurs, qui espérons en l'abondance de vos miséricordes, daignez accorder part et société avec vos saints Apôtres et Martyrs."
+      },
+      "targetLemmas": [
+        "nos",
+        "quoque",
+        "peccatum",
+        "famulus",
+        "tuus",
+        "de",
+        "multus",
+        "spero",
+        "do",
+        "dignor",
+        "cum",
+        "sanctus"
+      ],
+      "supportLemmas": [
+        "miseratio",
+        "societas",
+        "apostolus",
+        "martyr"
+      ]
+    },
+    {
+      "id": "l29-p2",
+      "sourceId": "canon-supplices-l29",
+      "sourceLatin": "Supplices te rogamus, omnipotens Deus: iube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae maiestatis tuae: ut, quotquot ex hac altaris participatione sacrosanctum Filii tui Corpus et Sanguinem sumpserimus, omni benedictione caelesti et gratia repleamur.",
+      "instructionalDisplay": "Supplices te rogamus, omnipotens Deus: iube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae maiestatis tuae: ut, quotquot ex hac altaris participatione sacrosanctum Filii tui Corpus et Sanguinem sumpserimus, omni benedictione caelesti et gratia repleamur.",
+      "translation": {
+        "en": "We humbly beseech Thee, Almighty God: command these to be borne by the hands of Thy holy Angel to Thine altar on high, in the presence of Thy divine Majesty: that as many of us as shall receive the most sacred Body and Blood of Thy Son may be filled with every heavenly blessing and grace.",
+        "fr": "Nous vous supplions humblement, Dieu tout-puissant : ordonnez que ces offrandes soient portées par les mains de votre saint Ange à votre autel céleste, en présence de votre divine Majesté, afin que nous soyons comblés de toute bénédiction céleste et de grâce."
+      },
+      "targetLemmas": [
+        "Deus",
+        "per",
+        "manus",
+        "sanctus",
+        "angelus",
+        "tuus",
+        "in",
+        "conspectus",
+        "maiestas",
+        "ut",
+        "filius",
+        "corpus",
+        "sanguis",
+        "omnis",
+        "et",
+        "gratia"
+      ],
+      "supportLemmas": [
+        "altare",
+        "participatio",
+        "repleo",
+        "supplex",
+        "omnipotens",
+        "iubeo",
+        "perfero",
+        "sublimis",
+        "divinus",
+        "quotquot",
+        "sacrosanctus",
+        "sumo",
+        "benedictio",
+        "caelestis"
+      ]
+    },
+    {
+      "id": "l29-p3",
+      "sourceId": "mass-conclusion-unitate-l29",
+      "sourceLatin": "in unitate Spiritus Sancti Deus, per omnia saecula saeculorum.",
+      "instructionalDisplay": "in unitate Spiritus Sancti Deus, per omnia saecula saeculorum.",
+      "translation": {
+        "en": "in the unity of the Holy Ghost, God, for ever and ever.",
+        "fr": "dans l'unité du Saint-Esprit, Dieu, pour les siècles des siècles."
+      },
+      "targetLemmas": [
+        "in",
+        "unitas",
+        "spiritus",
+        "sanctus",
+        "Deus",
+        "per",
+        "omnis",
+        "saeculum"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l29-p4",
+      "sourceId": "vulg-ps120-2-l29",
+      "sourceLatin": "Auxilium meum a Domino, qui fecit caelum et terram.",
+      "instructionalDisplay": "Auxilium meum a Domino, qui fecit caelum et terram.",
+      "translation": {
+        "en": "My help is from the Lord, who made heaven and earth.",
+        "fr": "Mon secours vient du Seigneur, qui a fait le ciel et la terre."
+      },
+      "targetLemmas": [
+        "auxilium",
+        "meus",
+        "a/ab",
+        "Dominus",
+        "qui/quae/quod",
+        "facio",
+        "caelum",
+        "et",
+        "terra"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l29-p5",
+      "sourceId": "vulg-ps32-5-l29",
+      "sourceLatin": "Misericordia Domini plena est terra.",
+      "instructionalDisplay": "Misericordia Domini plena est terra.",
+      "translation": {
+        "en": "The earth is full of the mercy of the Lord.",
+        "fr": "La terre est pleine de la miséricorde du Seigneur."
+      },
+      "targetLemmas": [
+        "misericordia",
+        "Dominus",
+        "plenus",
+        "sum",
+        "terra"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l29-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is nobis in Nobis quoque peccatoribus?",
+      "stimulus": "nobis",
+      "options": [
+        "dative",
+        "accusative",
+        "genitive",
+        "nominative"
+      ],
+      "expectedAnswer": "dative",
+      "acceptedVariants": [
+        "dative"
+      ],
+      "hint": "The granting is requested for/to us.",
+      "explanation": "nobis is dative plural.",
+      "difficulty": 1,
+      "sourceId": "canon-nobis-quoque-l29",
+      "skills": [
+        "case:dative"
+      ],
+      "referenceIds": [
+        "canon-nobis-quoque-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nobis dans Nobis quoque peccatoribus ?",
+          "hint": "L’octroi est demandé pour nous / à nous.",
+          "explanation": "nobis est au datif pluriel.",
+          "options": [
+            "datif",
+            "accusatif",
+            "génitif",
+            "nominatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l29-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why is multitudine ablative?",
+      "stimulus": "de multitudine",
+      "options": [
+        "de governs the ablative",
+        "it is a direct object",
+        "it is vocative",
+        "it agrees with nobis"
+      ],
+      "expectedAnswer": "de governs the ablative",
+      "acceptedVariants": [
+        "de governs the ablative"
+      ],
+      "hint": "Find the preposition.",
+      "explanation": "This is prepositional ablative.",
+      "difficulty": 1,
+      "sourceId": "canon-nobis-quoque-l29",
+      "skills": [
+        "case:ablative"
+      ],
+      "referenceIds": [
+        "canon-nobis-quoque-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi multitudine est-il à l’ablatif ?",
+          "hint": "Repérez la préposition.",
+          "explanation": "Il s’agit d’un ablatif régi par une préposition.",
+          "options": [
+            "de régit l’ablatif",
+            "c’est un complément d’objet direct",
+            "c’est un vocatif",
+            "il s’accorde avec nobis"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l29-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is conspectu in in conspectu...?",
+      "stimulus": "conspectu",
+      "options": [
+        "ablative",
+        "accusative",
+        "genitive",
+        "dative"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "Static in.",
+      "explanation": "conspectu is ablative after in.",
+      "difficulty": 1,
+      "sourceId": "canon-supplices-l29",
+      "skills": [
+        "case:ablative"
+      ],
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est conspectu dans in conspectu... ?",
+          "hint": "in statique.",
+          "explanation": "conspectu est à l’ablatif après in.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l29-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is maiestatis?",
+      "stimulus": "divinae maiestatis tuae",
+      "options": [
+        "genitive",
+        "ablative",
+        "dative",
+        "accusative"
+      ],
+      "expectedAnswer": "genitive",
+      "acceptedVariants": [
+        "genitive"
+      ],
+      "hint": "It depends on conspectu.",
+      "explanation": "maiestatis is genitive: presence of the divine Majesty.",
+      "difficulty": 1,
+      "sourceId": "canon-supplices-l29",
+      "skills": [
+        "case:genitive",
+        "vocabulary:maiestas"
+      ],
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est maiestatis ?",
+          "hint": "Il dépend de conspectu.",
+          "explanation": "maiestatis est au génitif : en présence de la divine Majesté.",
+          "options": [
+            "génitif",
+            "ablatif",
+            "datif",
+            "accusatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l29-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What do omni benedictione caelesti et gratia express with repleamur?",
+      "stimulus": "omni benedictione caelesti et gratia",
+      "options": [
+        "that with which we are filled",
+        "the subject",
+        "direct address",
+        "possession"
+      ],
+      "expectedAnswer": "that with which we are filled",
+      "acceptedVariants": [
+        "that with which we are filled"
+      ],
+      "hint": "Read the governing verb.",
+      "explanation": "These ablatives express content/means with 'be filled'.",
+      "difficulty": 2,
+      "sourceId": "canon-supplices-l29",
+      "skills": [
+        "case:ablative-advanced"
+      ],
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’expriment omni benedictione caelesti et gratia avec repleamur ?",
+          "hint": "Lisez le verbe qui les régit.",
+          "explanation": "Ces ablatifs expriment le contenu ou le moyen avec « être remplis ».",
+          "options": [
+            "ce dont nous sommes remplis",
+            "le sujet",
+            "l’adresse directe",
+            "la possession"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l29-e6",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 29 noun to meaning.",
+      "stimulus": [
+        "auxilium",
+        "misericordia",
+        "maiestas",
+        "unitas",
+        "famulus"
+      ],
+      "expectedAnswer": {
+        "auxilium": "help / aid",
+        "misericordia": "mercy",
+        "maiestas": "majesty",
+        "unitas": "unity",
+        "famulus": "servant"
+      },
+      "acceptedVariants": [],
+      "hint": "All five are frozen vocabulary.",
+      "explanation": "Lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l29"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 29 à son sens.",
+          "hint": "Tous les cinq appartiennent au vocabulaire figé.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "auxilium": "aide / secours",
+            "misericordia": "miséricorde",
+            "maiestas": "majesté",
+            "unitas": "unité",
+            "famulus": "serviteur"
+          }
+        }
+      }
+    },
+    {
+      "id": "l29-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is unitate after in?",
+      "stimulus": "in unitate",
+      "options": [
+        "ablative",
+        "accusative",
+        "genitive",
+        "dative"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "This is state/relationship, not motion.",
+      "explanation": "unitate is ablative.",
+      "difficulty": 1,
+      "sourceId": "mass-conclusion-unitate-l29",
+      "skills": [
+        "case:ablative",
+        "vocabulary:unitas"
+      ],
+      "referenceIds": [
+        "mass-conclusion-unitate-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est unitate après in ?",
+          "hint": "Il s’agit d’un état ou d’une relation, non d’un mouvement.",
+          "explanation": "unitate est à l’ablatif.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l29-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does auxilium mean?",
+      "stimulus": "Auxilium meum",
+      "options": [
+        "help",
+        "mercy",
+        "unity",
+        "majesty"
+      ],
+      "expectedAnswer": "help",
+      "acceptedVariants": [
+        "help"
+      ],
+      "hint": "Psalm 120.",
+      "explanation": "auxilium means help / aid.",
+      "difficulty": 1,
+      "sourceId": "vulg-ps120-2-l29",
+      "skills": [
+        "vocabulary:auxilium"
+      ],
+      "referenceIds": [
+        "vulg-ps120-2-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie auxilium ?",
+          "hint": "Psaume 120.",
+          "explanation": "auxilium signifie « aide / secours ».",
+          "options": [
+            "aide",
+            "miséricorde",
+            "unité",
+            "majesté"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l29-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "What reading rule should precede naming an advanced case function?",
+      "stimulus": null,
+      "options": [
+        "identify morphology and governing word first",
+        "translate freely first",
+        "ignore prepositions",
+        "use word order"
+      ],
+      "expectedAnswer": "identify morphology and governing word first",
+      "acceptedVariants": [
+        "identify morphology and governing word first"
+      ],
+      "hint": "Structure before label.",
+      "explanation": "Advanced labels come after syntax.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "reading:case"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle règle de lecture doit précéder l’attribution d’une fonction casuelle avancée ?",
+          "hint": "La structure avant l’étiquette.",
+          "explanation": "Les étiquettes avancées viennent après l’analyse syntaxique.",
+          "options": [
+            "identifier d’abord la morphologie et le mot régissant",
+            "traduire librement d’abord",
+            "ignorer les prépositions",
+            "utiliser l’ordre des mots"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l29-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin noun meaning 'servant'.",
+      "stimulus": null,
+      "expectedAnswer": "famulus",
+      "acceptedVariants": [
+        "famulus",
+        "Famulus"
+      ],
+      "hint": "It appears as famulis.",
+      "explanation": "famulus means servant.",
+      "difficulty": 1,
+      "sourceId": "canon-nobis-quoque-l29",
+      "skills": [
+        "vocabulary:famulus"
+      ],
+      "referenceIds": [
+        "canon-nobis-quoque-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « serviteur ».",
+          "hint": "Il apparaît sous la forme famulis.",
+          "explanation": "famulus signifie « serviteur »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Consolidate advanced dative/reference uses.",
+    "Read prepositional and content/means ablatives in the Canon.",
+    "Track nested case relationships such as conspectu + genitive maiestatis.",
+    "Learn all five frozen Lesson 29 lemmas."
+  ],
+  "checkpoint": {
+    "id": "l29-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l29-e1",
+        "l29-e2",
+        "l29-e3",
+        "l29-e4",
+        "l29-e5",
+        "l29-e6",
+        "l29-e7",
+        "l29-e8",
+        "l29-e9",
+        "l29-e10"
+      ]
+    },
+    "mustKnow": [
+      "nobis/famulis dative",
+      "de/in + ablative",
+      "ablative with repleamur",
+      "nested ablative + genitive"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "auxilium",
+      "misericordia",
+      "maiestas",
+      "unitas",
+      "famulus"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 5,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Nobis… gratia Dei…",
+      "grammarFocus": "Fonctions avancées du datif et de l’ablatif",
+      "readingOutcome": "Consolider les emplois non élémentaires des cas dans la prose liturgique.",
+      "objectives": [
+        "Consolider les emplois avancés du datif de référence.",
+        "Lire dans le Canon les ablatifs prépositionnels et les ablatifs de contenu ou de moyen.",
+        "Suivre des relations casuelles imbriquées telles que conspectu + génitif maiestatis.",
+        "Apprendre les cinq lemmes figés de la leçon 29."
+      ]
+    }
+  }
+}

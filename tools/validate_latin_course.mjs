@@ -1,0 +1,778 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
+const course = readJson("data/learn/latin-course-40-core350.v1.json");
+const core200 = readJson("data/learn/core-latin-200.v0.2.json");
+const core350 = readJson("data/learn/core-latin-201-350.v1.json");
+const referenceRegistry = readJson("data/learn/latin-course-reference-registry.v1.json");
+const textualAudit = readJson("data/learn/latin-course-textual-audit.v1.json");
+const frParityAudit = readJson("data/learn/latin-course-fr-parity-audit.v1.json");
+const pinnedLiturgicalSourceCommit = "126a07f91ede04664108abb6fb20ace3f4de14b9";
+const globalReferenceIds = new Set(referenceRegistry.references.map(x => x.id));
+assert(referenceRegistry.references.length === globalReferenceIds.size, "reference registry contains duplicate IDs");
+for (const required of [
+  "curriculum-latin-course-40-v1",
+  "grammar-scanlon-1944",
+  "grammar-nunn-1922",
+  "grammar-plater-white-1926",
+  "grammar-petitmangin-1930",
+  "corpus-missale-romanum-1962",
+  "corpus-vulgata-clementina-1592"
+]) {
+  assert(globalReferenceIds.has(required), `reference registry missing required ID: ${required}`);
+}
+
+function assert(cond, msg) {
+  if (!cond) throw new Error(msg);
+}
+
+function assertReferenceIds(refs, allowed, label) {
+  assert(Array.isArray(refs) && refs.length > 0, `${label} must carry non-empty referenceIds`);
+  assert(new Set(refs).size === refs.length, `${label} contains duplicate referenceIds`);
+  for (const ref of refs) {
+    assert(allowed.has(ref), `${label} references unresolved ID: ${ref}`);
+  }
+}
+
+// Frozen 40-lesson curriculum contract.
+assert(course.lessons.length === 40, "course must contain 40 lessons");
+assert(course.stages.length === 8, "course must contain 8 stages");
+for (let i = 0; i < 40; i++) {
+  assert(course.lessons[i].lesson === i + 1, `lesson sequence breaks at ${i + 1}`);
+}
+for (const stage of course.stages) {
+  assert(stage.lessons[1] - stage.lessons[0] === 4, `stage ${stage.stage} must span five lessons`);
+}
+
+assert(course.casesFramework.visibleFromLesson === 2, "case framework must be visible from Lesson 2");
+assert(new Set(course.casesFramework.cases).size === 6, "case framework must expose six cases");
+for (const required of ["nominative","vocative","accusative","genitive","dative","ablative"]) {
+  assert(course.casesFramework.cases.includes(required), `missing case: ${required}`);
+}
+assert(course.pronounSpiral.startsAt === 10, "pronoun spiral must start at Lesson 10");
+assert(course.pronounSpiral.cumulativeCheckpoint === 20, "pronoun cumulative checkpoint must be Lesson 20");
+for (const n of [10,12,15,17,18,19,20]) {
+  assert(course.pronounSpiral.sequence.some(x => x.lesson === n), `pronoun spiral missing Lesson ${n}`);
+}
+
+const courseCore200 = [];
+const courseCore350 = [];
+const lessonByLemma = new Map();
+for (const lesson of course.lessons) {
+  for (const lemma of lesson.core1_200Introduced) {
+    courseCore200.push({ lemma, lesson: lesson.lesson });
+    lessonByLemma.set(lemma, lesson.lesson);
+  }
+  for (const lemma of lesson.core201_350Introduced) {
+    courseCore350.push({ lemma, lesson: lesson.lesson });
+    lessonByLemma.set(lemma, lesson.lesson);
+  }
+}
+
+assert(courseCore200.length === core200.count, `Core 1-200 count mismatch: ${courseCore200.length}`);
+const core200Pairs = new Map(core200.items.map(x => [x.lemma, x.lesson]));
+assert(new Set(courseCore200.map(x => x.lemma)).size === core200.count, "Core 1-200 duplicates in course");
+for (const row of courseCore200) {
+  assert(core200Pairs.has(row.lemma), `unknown Core 1-200 lemma: ${row.lemma}`);
+  assert(core200Pairs.get(row.lemma) === row.lesson, `Core 1-200 lesson drift for ${row.lemma}`);
+}
+
+assert(courseCore350.length === 150, `Core 201-350 must place exactly 150 lemmas, got ${courseCore350.length}`);
+assert(new Set(courseCore350.map(x => x.lemma)).size === 150, "Core 201-350 duplicates in course");
+const frozen350 = new Set(core350.items.map(x => x.lemma));
+for (const row of courseCore350) {
+  assert(frozen350.has(row.lemma), `unknown Core 201-350 lemma: ${row.lemma}`);
+}
+for (const lemma of frozen350) {
+  assert(courseCore350.some(x => x.lemma === lemma), `unplaced Core 201-350 lemma: ${lemma}`);
+}
+
+for (const n of [37,38,39,40]) {
+  const lesson = course.lessons.find(x => x.lesson === n);
+  assert(lesson.core201_350Introduced.length === 0, `integration Lesson ${n} must introduce no new Core 201-350 vocabulary`);
+}
+assert(course.lessons.find(x => x.lesson === 40).totalTrackedIntroduced === 0, "capstone must introduce no new tracked vocabulary");
+
+// Authored production lessons: authored strictly in five-lesson stage batches.
+const lessonDir = "data/learn/latin-course-lessons";
+const authoredFiles = fs.readdirSync(lessonDir)
+  .filter(name => /^lesson-\d{2}\.v1\.json$/.test(name))
+  .sort();
+
+assert(authoredFiles.length > 0, "at least one authored lesson must exist");
+assert(authoredFiles.length % 5 === 0, "authored lessons must land as complete five-lesson stages");
+
+const authored = authoredFiles.map(name => readJson(path.join(lessonDir, name)));
+for (let i = 0; i < authored.length; i++) {
+  assert(authored[i].lesson === i + 1, `authored lesson sequence must be contiguous from 1; break at ${i + 1}`);
+}
+
+const priorIntroduced = new Set();
+const allAuthoredIntroduced = [];
+const stageSummaries = [];
+let referencedLearningBlocks = 0;
+let referencedExercises = 0;
+let bilingualLearningBlocks = 0;
+let bilingualVocabularyEntries = 0;
+let localizedFrLessonTitles = 0;
+let localizedFrBlockTitles = 0;
+let localizedFrExercisePrompts = 0;
+let localizedFrExerciseHints = 0;
+let localizedFrExerciseExplanations = 0;
+
+function expectedActiveCases(lessonNumber) {
+  if (lessonNumber < 2) return [];
+  if (lessonNumber < 8) return ["nominative","vocative"];
+  if (lessonNumber === 8) return ["dative","genitive","nominative","vocative"].sort();
+  return ["ablative","accusative","dative","genitive","nominative","vocative"].sort();
+}
+
+for (const lesson of authored) {
+  const n = lesson.lesson;
+  const frozen = course.lessons[n - 1];
+  assert(frozen, `authored lesson ${n} has no frozen curriculum row`);
+  assert(lesson.stage?.number === frozen.stage.number, `stage drift in Lesson ${n}`);
+  assert(lesson.curriculumRef?.version === course.version, `curriculum version drift in Lesson ${n}`);
+  assert(lesson.title === frozen.title, `title drift in Lesson ${n}`);
+  assert(lesson.grammarFocus === frozen.grammar, `grammar focus drift in Lesson ${n}`);
+  assert(lesson.readingOutcome === frozen.readingOutcome, `reading outcome drift in Lesson ${n}`);
+
+  const introduced = lesson.coreVocabulary?.introduced?.map(x => x.lemma) || [];
+  const expected = [...frozen.core1_200Introduced, ...frozen.core201_350Introduced];
+  assert(
+    JSON.stringify([...introduced].sort()) === JSON.stringify([...expected].sort()),
+    `introduced vocabulary drift in Lesson ${n}: expected [${expected.join(", ")}], got [${introduced.join(", ")}]`
+  );
+  assert(new Set(introduced).size === introduced.length, `duplicate introduced lemma in Lesson ${n}`);
+  for (const item of lesson.coreVocabulary.introduced) {
+    assert(item.frozenLesson === n, `frozenLesson metadata drift for ${item.lemma} in Lesson ${n}`);
+    assert(typeof item.gloss?.en === "string" && item.gloss.en.length > 0,
+      `Lesson ${n} introduced lemma ${item.lemma} missing English gloss`);
+    assert(typeof item.gloss?.fr === "string" && item.gloss.fr.length > 0,
+      `Lesson ${n} introduced lemma ${item.lemma} missing French gloss`);
+    bilingualVocabularyEntries++;
+  }
+
+  const recycled = lesson.coreVocabulary?.recycled || [];
+  assert(new Set(recycled).size === recycled.length, `duplicate recycled lemma in Lesson ${n}`);
+  for (const lemma of recycled) {
+    assert(priorIntroduced.has(lemma), `Lesson ${n} recycles lemma before it is taught: ${lemma}`);
+    assert(!introduced.includes(lemma), `Lesson ${n} both introduces and recycles ${lemma}`);
+  }
+
+  const passive = new Map();
+  for (const item of lesson.passiveReadingLexicon || []) {
+    assert(item.lemma && !passive.has(item.lemma), `duplicate passive lemma in Lesson ${n}: ${item.lemma}`);
+    assert(typeof item.gloss?.en === "string" && item.gloss.en.length > 0,
+      `Lesson ${n} passive lemma ${item.lemma} missing English gloss`);
+    assert(typeof item.gloss?.fr === "string" && item.gloss.fr.length > 0,
+      `Lesson ${n} passive lemma ${item.lemma} missing French gloss`);
+    bilingualVocabularyEntries++;
+    passive.set(item.lemma, item);
+    assert(!introduced.includes(item.lemma), `Lesson ${n} silently duplicates introduced lemma in passive lexicon: ${item.lemma}`);
+    assert(!recycled.includes(item.lemma), `Lesson ${n} silently duplicates recycled lemma in passive lexicon: ${item.lemma}`);
+    if (item.trackedLesson !== null) {
+      assert(lessonByLemma.has(item.lemma), `Lesson ${n} passive item claims tracked status but is absent from Core: ${item.lemma}`);
+      assert(lessonByLemma.get(item.lemma) === item.trackedLesson,
+        `passive tracked-lesson drift for ${item.lemma} in Lesson ${n}: expected ${lessonByLemma.get(item.lemma)}, got ${item.trackedLesson}`);
+      assert(item.trackedLesson > n, `Lesson ${n} passive Core item is not future vocabulary: ${item.lemma}`);
+    }
+  }
+
+  assert(Array.isArray(lesson.validation?.silentIntroductions), `Lesson ${n} must declare silentIntroductions`);
+  assert(lesson.validation.silentIntroductions.length === 0, `Lesson ${n} must declare zero silent introductions`);
+
+  const sourceIds = new Set();
+  for (const source of lesson.sources || []) {
+    assert(source.id && !sourceIds.has(source.id), `duplicate or empty source id in Lesson ${n}: ${source.id}`);
+    sourceIds.add(source.id);
+    assert(source.sourceLatin && source.sourceLatin.trim(), `source ${source.id} in Lesson ${n} must preserve sourceLatin`);
+    assert(source.work && source.section, `source ${source.id} in Lesson ${n} lacks provenance metadata`);
+  }
+  assert(sourceIds.size >= 3, `Lesson ${n} must carry at least three source records`);
+  const allowedReferenceIds = new Set([...globalReferenceIds, ...sourceIds]);
+  assert(lesson.referencePolicy?.registryPath === "data/learn/latin-course-reference-registry.v1.json",
+    `Lesson ${n} referencePolicy must point to the frozen registry`);
+  assertReferenceIds(lesson.referencePolicy?.referenceIds, allowedReferenceIds, `Lesson ${n} referencePolicy`);
+  assertReferenceIds(lesson.authoringPolicy?.referenceIds, allowedReferenceIds, `Lesson ${n} authoringPolicy`);
+  assertReferenceIds(lesson.objectivesReferenceIds, allowedReferenceIds, `Lesson ${n} objectives`);
+  if (lesson.casePanel) {
+    assertReferenceIds(lesson.casePanel.referenceIds, allowedReferenceIds, `Lesson ${n} casePanel`);
+  }
+  for (const [key, value] of Object.entries(lesson)) {
+    if (key.endsWith("Framework") && value && typeof value === "object") {
+      assertReferenceIds(value.referenceIds, allowedReferenceIds, `Lesson ${n} ${key}`);
+    }
+  }
+  if (lesson.pronounSpiral && typeof lesson.pronounSpiral === "object") {
+    assertReferenceIds(lesson.pronounSpiral.referenceIds, allowedReferenceIds, `Lesson ${n} pronounSpiral`);
+  }
+  if (lesson.checkpoint) {
+    assertReferenceIds(lesson.checkpoint.referenceIds, allowedReferenceIds, `Lesson ${n} checkpoint`);
+  }
+  assert(lesson.validation?.explanationReferencesResolved === true,
+    `Lesson ${n} must declare explanationReferencesResolved=true`);
+
+  if (n <= 40) {
+    const fr = lesson.localization?.fr;
+    assert(typeof fr?.title === "string" && fr.title.trim().length > 0,
+      `Lesson ${n} missing French lesson title`);
+    assert(typeof fr?.grammarFocus === "string" && fr.grammarFocus.trim().length > 0,
+      `Lesson ${n} missing French grammarFocus`);
+    assert(typeof fr?.readingOutcome === "string" && fr.readingOutcome.trim().length > 0,
+      `Lesson ${n} missing French readingOutcome`);
+    assert(Array.isArray(fr?.objectives) && fr.objectives.length === lesson.objectives.length &&
+      fr.objectives.every(x => typeof x === "string" && x.trim().length > 0),
+      `Lesson ${n} French objectives must match canonical objective cardinality`);
+    localizedFrLessonTitles++;
+  }
+
+  for (const source of lesson.sources || []) {
+    for (const ref of source.corpusReferenceIds || []) {
+      assert(globalReferenceIds.has(ref), `Lesson ${n} source ${source.id} has unresolved corpus reference: ${ref}`);
+    }
+  }
+
+  for (const passage of lesson.authenticPassages || []) {
+    assert(sourceIds.has(passage.sourceId), `Lesson ${n} passage ${passage.id} references unknown source ${passage.sourceId}`);
+    const source = lesson.sources.find(x => x.id === passage.sourceId);
+    assert(passage.sourceLatin === source.sourceLatin, `Lesson ${n} passage ${passage.id} sourceLatin drift`);
+    assert(Array.isArray(passage.targetLemmas) && passage.targetLemmas.length > 0, `Lesson ${n} passage ${passage.id} needs target lemmas`);
+    for (const lemma of passage.targetLemmas) {
+      assert(introduced.includes(lemma) || recycled.includes(lemma),
+        `Lesson ${n} passage ${passage.id} silently targets untaught lemma ${lemma}`);
+    }
+    for (const lemma of passage.supportLemmas || []) {
+      assert(passive.has(lemma), `Lesson ${n} passage ${passage.id} support lemma missing passive declaration: ${lemma}`);
+    }
+  }
+
+  for (const block of lesson.learningBlocks || []) {
+    assertReferenceIds(block.referenceIds, allowedReferenceIds, `Lesson ${n} block ${block.id}`);
+    if (block.sourceId) {
+      assert(block.referenceIds.includes(block.sourceId),
+        `Lesson ${n} block ${block.id} must include its primary sourceId in referenceIds`);
+    }
+    referencedLearningBlocks++;
+    if (block.learnerCopy) {
+      assert(typeof block.learnerCopy.en === "string" && block.learnerCopy.en.length > 0,
+        `Lesson ${n} block ${block.id} missing English learner copy`);
+      assert(typeof block.learnerCopy.fr === "string" && block.learnerCopy.fr.length > 0,
+        `Lesson ${n} block ${block.id} missing French learner copy`);
+      bilingualLearningBlocks++;
+    }
+    if (n <= 40) {
+      assert(typeof block.localization?.fr?.title === "string" && block.localization.fr.title.trim().length > 0,
+        `Lesson ${n} block ${block.id} missing French title`);
+      localizedFrBlockTitles++;
+    }
+    if (block.sourceId) {
+      assert(sourceIds.has(block.sourceId), `Lesson ${n} block ${block.id} references unknown source ${block.sourceId}`);
+    }
+  }
+  assert((lesson.learningBlocks || []).length >= 6, `Lesson ${n} needs at least six learning blocks`);
+
+  const exerciseIds = new Set();
+  for (const exercise of lesson.exercises || []) {
+    assertReferenceIds(exercise.referenceIds, allowedReferenceIds, `Lesson ${n} exercise ${exercise.id}`);
+    if (exercise.sourceId) {
+      assert(exercise.referenceIds.includes(exercise.sourceId),
+        `Lesson ${n} exercise ${exercise.id} must include its primary sourceId in referenceIds`);
+    }
+    referencedExercises++;
+    assert(exercise.id && !exerciseIds.has(exercise.id), `duplicate or empty exercise id in Lesson ${n}: ${exercise.id}`);
+    exerciseIds.add(exercise.id);
+    assert(exercise.exerciseType, `Lesson ${n} exercise ${exercise.id} missing exerciseType`);
+    assert(Object.prototype.hasOwnProperty.call(exercise, "expectedAnswer"), `Lesson ${n} exercise ${exercise.id} missing expectedAnswer`);
+    assert(Array.isArray(exercise.acceptedVariants), `Lesson ${n} exercise ${exercise.id} acceptedVariants must be an array`);
+    assert(typeof exercise.hint === "string" && exercise.hint.length > 0, `Lesson ${n} exercise ${exercise.id} missing hint`);
+    assert(typeof exercise.explanation === "string" && exercise.explanation.length > 0, `Lesson ${n} exercise ${exercise.id} missing explanation`);
+    if (n <= 40) {
+      const fr = exercise.localization?.fr;
+      assert(typeof fr?.prompt === "string" && fr.prompt.trim().length > 0,
+        `Lesson ${n} exercise ${exercise.id} missing French prompt`);
+      assert(typeof fr?.hint === "string" && fr.hint.trim().length > 0,
+        `Lesson ${n} exercise ${exercise.id} missing French hint`);
+      assert(typeof fr?.explanation === "string" && fr.explanation.trim().length > 0,
+        `Lesson ${n} exercise ${exercise.id} missing French explanation`);
+      assert(!Object.prototype.hasOwnProperty.call(fr, "expectedAnswer") &&
+        !Object.prototype.hasOwnProperty.call(fr, "acceptedVariants"),
+        `Lesson ${n} exercise ${exercise.id} French localization must not override canonical grading values`);
+      if (Array.isArray(exercise.options)) {
+        assert(Array.isArray(fr.options) && fr.options.length === exercise.options.length &&
+          fr.options.every(x => typeof x === "string" && x.trim().length > 0),
+          `Lesson ${n} exercise ${exercise.id} French options must align 1:1 with canonical options`);
+      }
+      if (exercise.exerciseType === "matching") {
+        const canonicalKeys = Object.keys(exercise.expectedAnswer || {}).sort();
+        const localizedKeys = Object.keys(fr.matches || {}).sort();
+        assert(JSON.stringify(localizedKeys) === JSON.stringify(canonicalKeys) &&
+          localizedKeys.every(k => typeof fr.matches[k] === "string" && fr.matches[k].trim().length > 0),
+          `Lesson ${n} matching exercise ${exercise.id} French labels must preserve canonical key mapping`);
+        if (["l15-e10","l20-e10","l34-e2"].includes(exercise.id)) {
+          const localizedPromptKeys = Object.keys(fr.matchKeys || {}).sort();
+          assert(JSON.stringify(localizedPromptKeys) === JSON.stringify(canonicalKeys) &&
+            localizedPromptKeys.every(k => typeof fr.matchKeys[k] === "string" && fr.matchKeys[k].trim().length > 0),
+            `Lesson ${n} matching exercise ${exercise.id} must localize English-side matching keys`);
+        }
+      }
+      if (exercise.exerciseType === "passage_analysis") {
+        assert(Array.isArray(fr.answerGuide) && fr.answerGuide.length > 0 &&
+          fr.answerGuide.every(x => typeof x === "string" && x.trim().length > 0),
+          `Lesson ${n} passage-analysis exercise ${exercise.id} missing French answer guide`);
+      }
+      if (exercise.exerciseType === "read_aloud_model") {
+        assert(typeof fr.modelGuide === "string" && fr.modelGuide.trim().length > 0,
+          `Lesson ${n} read-aloud exercise ${exercise.id} missing French model guide`);
+        const canonicalChecks = exercise.expectedAnswer?.requiredChecks || [];
+        assert(Array.isArray(fr.requiredChecks) && fr.requiredChecks.length === canonicalChecks.length &&
+          fr.requiredChecks.every(x => typeof x === "string" && x.trim().length > 0),
+          `Lesson ${n} read-aloud exercise ${exercise.id} French checklist must align with canonical model`);
+      }
+      localizedFrExercisePrompts++;
+      localizedFrExerciseHints++;
+      localizedFrExerciseExplanations++;
+    }
+    assert(Number.isInteger(exercise.difficulty) && exercise.difficulty >= 1 && exercise.difficulty <= 5,
+      `Lesson ${n} exercise ${exercise.id} difficulty must be 1-5`);
+    if (exercise.sourceId !== null) {
+      assert(sourceIds.has(exercise.sourceId), `Lesson ${n} exercise ${exercise.id} references unknown source ${exercise.sourceId}`);
+    }
+    if (exercise.exerciseType === "multiple_choice") {
+      assert(Array.isArray(exercise.options) && exercise.options.length >= 2,
+        `Lesson ${n} multiple-choice exercise ${exercise.id} needs options`);
+      assert(exercise.options.includes(exercise.expectedAnswer),
+        `Lesson ${n} multiple-choice answer is absent from options in ${exercise.id}`);
+    }
+  }
+  const minExercises = n % 5 === 0 ? 12 : 10;
+  assert((lesson.exercises || []).length >= minExercises,
+    `Lesson ${n} needs at least ${minExercises} exercises`);
+
+  if (n >= 2) {
+    assert(lesson.casePanel?.visible === true, `Lesson ${n} must retain the visible case panel`);
+    assert(lesson.casePanel.cases?.length === 6, `Lesson ${n} case panel must contain all six cases`);
+    const actualActive = lesson.casePanel.cases.filter(x => x.status === "active").map(x => x.case).sort();
+    const expectedActive = expectedActiveCases(n);
+    assert(JSON.stringify(actualActive) === JSON.stringify(expectedActive),
+      `Lesson ${n} active-case drift: expected [${expectedActive.join(", ")}], got [${actualActive.join(", ")}]`);
+  }
+
+  if (lesson.checkpoint?.passingRule?.autoGradedExerciseIds) {
+    for (const id of lesson.checkpoint.passingRule.autoGradedExerciseIds) {
+      assert(exerciseIds.has(id), `Lesson ${n} checkpoint references unknown exercise ${id}`);
+    }
+  }
+  if (lesson.checkpoint?.passingRule?.selfCheckRequired) {
+    for (const id of lesson.checkpoint.passingRule.selfCheckRequired) {
+      assert(exerciseIds.has(id), `Lesson ${n} checkpoint references unknown self-check exercise ${id}`);
+    }
+  }
+
+  introduced.forEach(lemma => {
+    priorIntroduced.add(lemma);
+    allAuthoredIntroduced.push({ lemma, lesson: n });
+  });
+}
+
+// Every complete five-lesson batch must end in a stage checkpoint.
+for (let end = 5; end <= authored.length; end += 5) {
+  const stageNumber = end / 5;
+  const stageLessons = authored.slice(end - 5, end);
+  const checkpointLesson = stageLessons[4];
+  assert(checkpointLesson.checkpoint?.stage === stageNumber,
+    `Lesson ${end} must be the Stage ${stageNumber} checkpoint`);
+  assert(
+    JSON.stringify(checkpointLesson.checkpoint.scopeLessons) === JSON.stringify([end - 4, end - 3, end - 2, end - 1, end]),
+    `Stage ${stageNumber} checkpoint scope must cover its five lessons`
+  );
+  stageSummaries.push({
+    stage: stageNumber,
+    lessons: [end - 4, end],
+    introduced: stageLessons.reduce((sum, x) => sum + x.coreVocabulary.introduced.length, 0),
+    exercises: stageLessons.reduce((sum, x) => sum + x.exercises.length, 0)
+  });
+}
+
+// Stage 1 pedagogical lock.
+if (authored.length >= 5) {
+  assert(authored[0].progressionStep === "phrase", "Lesson 1 must begin at phrase level");
+  for (const n of [2,3,4]) assert(authored[n - 1].progressionStep === "phrase", `Lesson ${n} must remain phrase-level`);
+  assert(authored[4].progressionStep === "sentence", "Lesson 5 must transition to sentence level");
+  assert(authored[4].checkpoint.progressionGate === "phrase → sentence", "Lesson 5 must lock the phrase → sentence gate");
+  const stage1Introduced = authored.slice(0,5).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage1Introduced.length === 66, `Stage 1 must introduce 66 tracked lemmas, got ${stage1Introduced.length}`);
+  assert(new Set(stage1Introduced).size === 66, "Stage 1 contains duplicate introduced lemmas");
+}
+
+
+// Stage 2/3 authored progression locks.
+if (authored.length >= 10) {
+  assert(authored[9].pronounParadigms, "Lesson 10 must establish the personal/reflexive pronoun paradigms");
+  assert(authored[9].cumPronounRule?.forms?.includes("vobiscum"), "Lesson 10 must teach attached cum-pronoun forms");
+}
+if (authored.length >= 12) {
+  assert(authored[11].pronounSpiral?.lesson === 12, "Lesson 12 must continue the pronoun spiral");
+}
+if (authored.length >= 15) {
+  const frozenL15Milestone = course.milestones?.find(x => x.lesson === 15)?.target;
+  assert(authored[14].pronounSpiral?.lesson === 15, "Lesson 15 must continue the pronoun spiral");
+  assert(authored[14].checkpoint?.progressionGate === frozenL15Milestone,
+    `Lesson 15 progression gate must match frozen milestone: ${frozenL15Milestone}`);
+  assert(authored[14].checkpoint?.stage === 3, "Lesson 15 must be the Stage 3 checkpoint");
+  assert(JSON.stringify(authored[14].checkpoint?.scopeLessons) === JSON.stringify([11,12,13,14,15]),
+    "Stage 3 checkpoint must cover Lessons 11-15");
+}
+
+
+// Stage 4 structure and pronoun checkpoint locks.
+if (authored.length >= 16) {
+  assert(authored[15].perfectPassiveFramework, "Lesson 16 must establish perfect passive + participial agreement");
+  assert(authored[15].progressionStep === "sentence", "Lesson 16 must remain sentence-level");
+}
+if (authored.length >= 17) {
+  assert(authored[16].relativePronounFramework, "Lesson 17 must establish relative-pronoun parsing");
+  assert(authored[16].pronounSpiral?.lesson === 17, "Lesson 17 must continue the pronoun spiral");
+  assert(authored[16].progressionStep === "sentence", "Lesson 17 must remain sentence-level");
+}
+if (authored.length >= 18) {
+  assert(authored[17].demonstrativeFramework, "Lesson 18 must establish demonstrative/intensive pronouns");
+  assert(authored[17].pronounSpiral?.lesson === 18, "Lesson 18 must continue the pronoun spiral");
+  assert(authored[17].progressionStep === "sentence", "Lesson 18 must remain sentence-level");
+}
+if (authored.length >= 19) {
+  assert(authored[18].deponentFramework, "Lesson 19 must establish deponent reading");
+  assert(authored[18].pronounSpiral?.lesson === 19, "Lesson 19 must continue the pronoun spiral");
+  assert(authored[18].progressionStep === "sentence", "Lesson 19 must remain sentence-level");
+}
+if (authored.length >= 20) {
+  const frozenL20Milestone = course.milestones?.find(x => x.lesson === 20)?.target;
+  assert(authored[19].integratedReadingFramework, "Lesson 20 must contain integrated passage-reading architecture");
+  assert(authored[19].pronounSpiral?.lesson === 20, "Lesson 20 must complete the compulsory pronoun checkpoint");
+  assert(authored[19].progressionStep === "passage", "Lesson 20 must transition to passage-level reading");
+  assert(authored[19].checkpoint?.readingTransition === "sentence → passage",
+    "Lesson 20 must lock the sentence → passage transition");
+  assert(authored[19].checkpoint?.progressionGate === frozenL20Milestone,
+    `Lesson 20 progression gate must match frozen milestone: ${frozenL20Milestone}`);
+  assert(authored[19].checkpoint?.stage === 4, "Lesson 20 must be the Stage 4 checkpoint");
+  assert(JSON.stringify(authored[19].checkpoint?.scopeLessons) === JSON.stringify([16,17,18,19,20]),
+    "Stage 4 checkpoint must cover Lessons 16-20");
+  for (const family of ["personal","reflexive","is/ea/id","relative","demonstrative","intensive/identity retrieval"]) {
+    assert(authored[19].checkpoint?.compulsoryPronounFamilies?.includes(family),
+      `Lesson 20 compulsory pronoun checkpoint missing family: ${family}`);
+  }
+  const stage4Introduced = authored.slice(15,20).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage4Introduced.length === 47, `Stage 4 must introduce 47 tracked lemmas, got ${stage4Introduced.length}`);
+  assert(new Set(stage4Introduced).size === 47, "Stage 4 contains duplicate introduced lemmas");
+}
+
+
+// Stage 5 prayer-language and multi-clause syntax locks.
+if (authored.length >= 21) {
+  assert(authored[20].subjunctiveFramework, "Lesson 21 must establish present-subjunctive prayer reading");
+  assert(authored[20].progressionStep === "passage", "Lesson 21 must remain passage-level");
+}
+if (authored.length >= 22) {
+  assert(authored[21].jussiveOptativeFramework, "Lesson 22 must distinguish jussive/optative uses");
+  assert(authored[21].progressionStep === "passage", "Lesson 22 must remain passage-level");
+}
+if (authored.length >= 23) {
+  assert(authored[22].purposeFramework, "Lesson 23 must establish purpose-clause reading");
+  assert(authored[22].progressionStep === "passage", "Lesson 23 must remain passage-level");
+}
+if (authored.length >= 24) {
+  assert(authored[23].purposeResultFramework, "Lesson 24 must distinguish result from purpose");
+  assert(authored[23].progressionStep === "passage", "Lesson 24 must remain passage-level");
+}
+if (authored.length >= 25) {
+  const frozenL25Milestone = course.milestones?.find(x => x.lesson === 25)?.target;
+  assert(authored[24].cumClauseFramework, "Lesson 25 must establish circumstantial/temporal cum-clause reading");
+  assert(authored[24].progressionStep === "passage", "Lesson 25 must remain passage-level");
+  assert(authored[24].checkpoint?.progressionGate === frozenL25Milestone,
+    `Lesson 25 progression gate must match frozen milestone: ${frozenL25Milestone}`);
+  assert(authored[24].checkpoint?.stage === 5, "Lesson 25 must be the Stage 5 checkpoint");
+  assert(JSON.stringify(authored[24].checkpoint?.scopeLessons) === JSON.stringify([21,22,23,24,25]),
+    "Stage 5 checkpoint must cover Lessons 21-25");
+  assert(authored[24].checkpoint?.readingTransition === "passage → multi-clause passage",
+    "Lesson 25 must lock the multi-clause passage transition");
+  const stage5Introduced = authored.slice(20,25).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage5Introduced.length === 41, `Stage 5 must introduce 41 tracked lemmas, got ${stage5Introduced.length}`);
+  assert(new Set(stage5Introduced).size === 41, "Stage 5 contains duplicate introduced lemmas");
+}
+
+
+// Stage 6 Canon and complete-Collect locks.
+if (authored.length >= 26) {
+  assert(authored[25].infinitiveFramework, "Lesson 26 must establish infinitive/indirect-statement reading");
+  assert(authored[25].progressionStep === "passage", "Lesson 26 must remain passage-level");
+}
+if (authored.length >= 27) {
+  assert(authored[26].gerundFramework, "Lesson 27 must establish gerund/gerundive reading");
+  assert(authored[26].progressionStep === "passage", "Lesson 27 must remain passage-level");
+}
+if (authored.length >= 28) {
+  assert(authored[27].ablativeAbsoluteFramework, "Lesson 28 must establish ablative-absolute reading");
+  assert(authored[27].progressionStep === "passage", "Lesson 28 must remain passage-level");
+}
+if (authored.length >= 29) {
+  assert(authored[28].advancedCaseFramework, "Lesson 29 must consolidate advanced dative/ablative functions");
+  assert(authored[28].progressionStep === "passage", "Lesson 29 must remain passage-level");
+}
+if (authored.length >= 30) {
+  const frozenL30Milestone = course.milestones?.find(x => x.lesson === 30)?.target;
+  assert(authored[29].collectFramework, "Lesson 30 must contain complete-Collect architecture");
+  assert(authored[29].progressionStep === "passage", "Lesson 30 must remain passage-level");
+  assert(authored[29].checkpoint?.progressionGate === frozenL30Milestone,
+    `Lesson 30 progression gate must match frozen milestone: ${frozenL30Milestone}`);
+  assert(authored[29].checkpoint?.stage === 6, "Lesson 30 must be the Stage 6 checkpoint");
+  assert(JSON.stringify(authored[29].checkpoint?.scopeLessons) === JSON.stringify([26,27,28,29,30]),
+    "Stage 6 checkpoint must cover Lessons 26-30");
+  assert(authored[29].checkpoint?.readingTransition === "multi-clause passage → complete Roman Collect",
+    "Lesson 30 must lock the complete-Roman-Collect transition");
+  const stage6Introduced = authored.slice(25,30).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage6Introduced.length === 31, `Stage 6 must introduce 31 tracked lemmas, got ${stage6Introduced.length}`);
+  assert(new Set(stage6Introduced).size === 31, "Stage 6 contains duplicate introduced lemmas");
+}
+
+
+// Stage 7 Church-Latin and long-Canon locks.
+if (authored.length >= 31) {
+  assert(authored[30].readerToolkitFramework, "Lesson 31 must establish the reader toolkit");
+  assert(authored[30].pronounSpiral?.lesson === 31, "Lesson 31 must complete the interrogative/indefinite pronoun spiral");
+  assert(authored[30].progressionStep === "passage", "Lesson 31 must remain passage-level");
+}
+if (authored.length >= 32) {
+  assert(authored[31].churchLatinFramework, "Lesson 32 must establish ecclesiastical-versus-classical usage");
+  assert(authored[31].progressionStep === "passage", "Lesson 32 must remain passage-level");
+}
+if (authored.length >= 33) {
+  assert(authored[32].biblicalLatinFramework, "Lesson 33 must establish biblical-Latin semantic/rhetorical reading");
+  assert(authored[32].progressionStep === "passage", "Lesson 33 must remain passage-level");
+}
+if (authored.length >= 34) {
+  assert(authored[33].collectArchitectureFramework, "Lesson 34 must consolidate Roman Collect architecture");
+  assert(authored[33].coreVocabulary.introduced.length === 0, "Lesson 34 must remain vocabulary-neutral");
+  assert(authored[33].progressionStep === "passage", "Lesson 34 must remain passage-level");
+}
+if (authored.length >= 35) {
+  const frozenL35Milestone = course.milestones?.find(x => x.lesson === 35)?.target;
+  assert(authored[34].canonLanguageFramework, "Lesson 35 must establish Canon periodic syntax and sacrificial register");
+  assert(authored[34].progressionStep === "passage", "Lesson 35 must remain passage-level");
+  assert(authored[34].checkpoint?.progressionGate === frozenL35Milestone,
+    `Lesson 35 progression gate must match frozen milestone: ${frozenL35Milestone}`);
+  assert(authored[34].checkpoint?.stage === 7, "Lesson 35 must be the Stage 7 checkpoint");
+  assert(JSON.stringify(authored[34].checkpoint?.scopeLessons) === JSON.stringify([31,32,33,34,35]),
+    "Stage 7 checkpoint must cover Lessons 31-35");
+  assert(authored[34].checkpoint?.readingTransition === "complete Collect → long periodic Canon passage",
+    "Lesson 35 must lock the long-periodic-Canon transition");
+  const stage7Introduced = authored.slice(30,35).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage7Introduced.length === 36, `Stage 7 must introduce 36 tracked lemmas, got ${stage7Introduced.length}`);
+  assert(new Set(stage7Introduced).size === 36, "Stage 7 contains duplicate introduced lemmas");
+}
+
+
+// Stage 8 independent-Missal-reading locks.
+if (authored.length >= 36) {
+  const frozenL36Milestone = course.milestones?.find(x => x.lesson === 36)?.target;
+  assert(authored[35].poeticRegisterFramework, "Lesson 36 must establish Psalm/hymn/antiphon reading");
+  assert(authored[35].progressionStep === "independent-liturgical-reading", "Lesson 36 must enter independent liturgical reading");
+  assert(authored[35].checkpoint?.progressionGate === frozenL36Milestone,
+    `Lesson 36 progression gate must match frozen milestone: ${frozenL36Milestone}`);
+}
+if (authored.length >= 37) {
+  const frozenL37Milestone = course.milestones?.find(x => x.lesson === 37)?.target;
+  assert(authored[36].ordinaryReadingFramework, "Lesson 37 must contain complete-Ordinary reading architecture");
+  assert(authored[36].coreVocabulary.introduced.length === 0, "Lesson 37 must remain tracked-vocabulary neutral");
+  assert(authored[36].checkpoint?.progressionGate === frozenL37Milestone,
+    `Lesson 37 progression gate must match frozen milestone: ${frozenL37Milestone}`);
+}
+if (authored.length >= 38) {
+  const frozenL38Milestone = course.milestones?.find(x => x.lesson === 38)?.target;
+  assert(authored[37].properReadingFramework, "Lesson 38 must establish unseen normal-Proper reading");
+  assert(authored[37].coreVocabulary.introduced.length === 0, "Lesson 38 must remain tracked-vocabulary neutral");
+  assert(authored[37].checkpoint?.progressionGate === frozenL38Milestone,
+    `Lesson 38 progression gate must match frozen milestone: ${frozenL38Milestone}`);
+}
+if (authored.length >= 39) {
+  const frozenL39Milestone = course.milestones?.find(x => x.lesson === 39)?.target;
+  assert(authored[38].specializedRegisterFramework, "Lesson 39 must separate Requiem/Holy Week specialized registers");
+  assert(authored[38].coreVocabulary.introduced.map(x => x.lemma).sort().join(",") === ["crux","defunctus","requies"].sort().join(","),
+    "Lesson 39 must introduce only crux, requies and defunctus");
+  assert(authored[38].checkpoint?.progressionGate === frozenL39Milestone,
+    `Lesson 39 progression gate must match frozen milestone: ${frozenL39Milestone}`);
+}
+if (authored.length >= 40) {
+  const frozenL40Milestone = course.milestones?.find(x => x.lesson === 40)?.target;
+  assert(authored[39].capstoneFramework, "Lesson 40 must contain independent capstone architecture");
+  assert(authored[39].coreVocabulary.introduced.length === 0, "Lesson 40 must introduce zero tracked vocabulary");
+  assert(authored[39].checkpoint?.progressionGate === frozenL40Milestone,
+    `Lesson 40 progression gate must match frozen milestone: ${frozenL40Milestone}`);
+  assert(authored[39].checkpoint?.stage === 8, "Lesson 40 must be the Stage 8 checkpoint");
+  assert(JSON.stringify(authored[39].checkpoint?.scopeLessons) === JSON.stringify([36,37,38,39,40]),
+    "Stage 8 checkpoint must cover Lessons 36-40");
+  assert(authored[39].checkpoint?.readingTransition === "guided liturgical reading -> independent Missal reading",
+    "Lesson 40 must lock the transition to independent Missal reading");
+  const stage8Introduced = authored.slice(35,40).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
+  assert(stage8Introduced.length === 11, `Stage 8 must introduce 11 tracked lemmas, got ${stage8Introduced.length}`);
+  assert(new Set(stage8Introduced).size === 11, "Stage 8 contains duplicate introduced lemmas");
+  assert(allAuthoredIntroduced.length === 350,
+    `Complete authored course must introduce exactly 350 tracked lemmas, got ${allAuthoredIntroduced.length}`);
+  assert(new Set(allAuthoredIntroduced.map(x => x.lemma)).size === 350,
+    "Complete authored course must contain 350 unique tracked lemmas");
+  for (const n of [37,38,40]) {
+    assert(authored[n-1].coreVocabulary.introduced.length === 0,
+      `Lesson ${n} must remain tracked-vocabulary neutral`);
+  }
+}
+
+// French parity baseline locks.
+assert(frParityAudit.status === "FULL_PARITY_COMPLETE",
+  "French parity audit must record full-course completion");
+assert(frParityAudit.complete?.learnerCopy?.presentEnFr === 245,
+  "French parity audit learnerCopy baseline must remain 245/245");
+assert(frParityAudit.complete?.vocabularyGlosses?.presentEnFr === 835,
+  "French parity audit vocabulary baseline must remain 835/835");
+assert(localizedFrLessonTitles === 40,
+  `Full-course French parity expected 40 lesson titles, got ${localizedFrLessonTitles}`);
+assert(localizedFrBlockTitles === 245,
+  `Full-course French parity expected 245 block titles, got ${localizedFrBlockTitles}`);
+assert(localizedFrExercisePrompts === 431 && localizedFrExerciseHints === 431 && localizedFrExerciseExplanations === 431,
+  `Full-course French parity expected 431/431/431 exercise texts, got ${localizedFrExercisePrompts}/${localizedFrExerciseHints}/${localizedFrExerciseExplanations}`);
+assert(frParityAudit.complete?.stage1?.gradingValuesChanged === 0,
+  "Stage 1 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.stage2?.gradingValuesChanged === 0,
+  "Stage 2 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.stage3?.gradingValuesChanged === 0,
+  "Stage 3 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.stage4?.gradingValuesChanged === 0,
+  "Stage 4 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.stage5?.gradingValuesChanged === 0,
+  "Stage 5 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.stage6?.gradingValuesChanged === 0,
+  "Stage 6 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.stage7?.gradingValuesChanged === 0,
+  "Stage 7 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.stage8?.gradingValuesChanged === 0,
+  "Stage 8 French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.fullCourse?.gradingValuesChanged === 0,
+  "Full-course French parity audit must record zero canonical grading changes");
+assert(frParityAudit.complete?.fullCourse?.lessonTitles === "40/40",
+  "Full-course French parity audit must record 40/40 lesson titles");
+assert(frParityAudit.complete?.fullCourse?.learningBlockTitles === "245/245",
+  "Full-course French parity audit must record 245/245 block titles");
+assert(frParityAudit.complete?.fullCourse?.exercisePrompts === "431/431" &&
+  frParityAudit.complete?.fullCourse?.exerciseHints === "431/431" &&
+  frParityAudit.complete?.fullCourse?.exerciseExplanations === "431/431",
+  "Full-course French parity audit must record 431/431 exercise text sets");
+
+// High-risk textual/liturgical source locks.
+assert(textualAudit.status === "HIGH_RISK_PASS_COMPLETE", "textual audit baseline must be complete");
+assert(textualAudit.sourceOfTruth?.commit === pinnedLiturgicalSourceCommit,
+  "textual audit must remain pinned to the frozen Divinum Officium source commit");
+
+if (authored.length >= 35) {
+  for (const source of authored[34].sources || []) {
+    assert(source.sourceRepository === "DivinumOfficium/divinum-officium",
+      `Lesson 35 source ${source.id} must resolve to Divinum Officium`);
+    assert(source.sourceCommit === pinnedLiturgicalSourceCommit,
+      `Lesson 35 source ${source.id} must remain pinned to the frozen source commit`);
+    assert(source.sourcePath === "web/www/missa/Latin/Ordo/Ordo.txt",
+      `Lesson 35 source ${source.id} must resolve to the 1962 Ordo source path`);
+    assert(/^VERIFIED/.test(source.textAudit?.status || ""),
+      `Lesson 35 source ${source.id} must carry a verified textAudit status`);
+  }
+}
+
+if (authored.length >= 38) {
+  const l38 = authored[37];
+  const stBrunoCollect = l38.sources.find(x => x.id === "stbruno-collect-l38");
+  assert(stBrunoCollect?.sourcePath === "web/www/missa/Latin/Sancti/10-06.txt",
+    "Lesson 38 St Bruno Collect must resolve to Sancti/10-06");
+  assert(stBrunoCollect?.sourceCommit === pinnedLiturgicalSourceCommit,
+    "Lesson 38 St Bruno Collect must remain pinned");
+  for (const source of l38.sources.filter(x => x.id !== "stbruno-collect-l38")) {
+    assert(source.sourcePath === "web/www/horas/Latin/Commune/C5-1.txt",
+      `Lesson 38 inherited source ${source.id} must resolve to C5-1`);
+    assert(source.sourceCommit === pinnedLiturgicalSourceCommit,
+      `Lesson 38 inherited source ${source.id} must remain pinned`);
+  }
+  assert(l38.sources.find(x => x.id === "stbruno-introit-l38")?.sourceLatin.startsWith("Justus ut palma florebit"),
+    "Lesson 38 must retain the pinned C5-1 Justus introit");
+  assert(l38.sources.find(x => x.id === "stbruno-gospel-l38")?.sourceLatin.includes("Nolite timere, pusillus grex"),
+    "Lesson 38 must retain Luke 12:32-34 from the pinned common");
+}
+
+if (authored.length >= 39) {
+  const l39 = authored[38];
+  for (const source of l39.sources || []) {
+    assert(source.sourceCommit === pinnedLiturgicalSourceCommit,
+      `Lesson 39 source ${source.id} must remain pinned`);
+    assert(/^VERIFIED/.test(source.textAudit?.status || ""),
+      `Lesson 39 source ${source.id} must carry a verified textAudit status`);
+  }
+  assert(l39.sources.find(x => x.id === "requiem-introit-l39")?.section.includes("excerpt"),
+    "Lesson 39 Requiem Introit must be explicitly labeled as an excerpt");
+  assert(l39.sources.find(x => x.id === "requiem-offertory-l39")?.section.includes("excerpt"),
+    "Lesson 39 Requiem Offertory must be explicitly labeled as an excerpt");
+  for (const id of ["goodfriday-ecce-l39","goodfriday-popule-l39","goodfriday-crucem-l39"]) {
+    assert(l39.sources.find(x => x.id === id)?.sourcePath === "web/www/missa/Latin/Tempora/Quad6-5r.txt",
+      `Lesson 39 ${id} must resolve to the pinned reformed Good Friday source`);
+  }
+}
+
+if (authored.length >= 40) {
+  const l40 = authored[39];
+  for (const source of l40.sources || []) {
+    assert(source.sourceCommit === pinnedLiturgicalSourceCommit,
+      `Lesson 40 source ${source.id} must remain pinned`);
+    assert(source.sourcePath === "web/www/missa/Latin/Sancti/10-07.txt",
+      `Lesson 40 source ${source.id} must resolve to the Rosary feast source`);
+    assert(/^VERIFIED/.test(source.textAudit?.status || ""),
+      `Lesson 40 source ${source.id} must carry a verified textAudit status`);
+  }
+  const rosaryIntroit = l40.sources.find(x => x.id === "rosary-introit-l40")?.sourceLatin || "";
+  const rosaryEpistle = l40.sources.find(x => x.id === "rosary-epistle-l40")?.sourceLatin || "";
+  const rosaryGradual = l40.sources.find(x => x.id === "rosary-gradual-l40")?.sourceLatin || "";
+  assert(rosaryIntroit.includes("sollemnitate") && !rosaryIntroit.includes("solemnitate"),
+    "Lesson 40 Rosary Introit must retain pinned sollemnitate spelling");
+  assert(rosaryEpistle.includes("cotidie") && !rosaryEpistle.includes("quotidie"),
+    "Lesson 40 Rosary Epistle must retain pinned cotidie spelling");
+  assert(rosaryGradual.includes("Sollemnitas") && !rosaryGradual.includes("Solemnitas"),
+    "Lesson 40 Rosary Gradual must retain pinned Sollemnitas spelling");
+  assert(Array.isArray(l40.sources.find(x => x.id === "rosary-gospel-l40")?.sourceResolution),
+    "Lesson 40 Rosary Gospel must preserve its source inheritance chain");
+}
+
+console.log(JSON.stringify({
+  status: "PASS",
+  lessons: course.lessons.length,
+  stages: course.stages.length,
+  core1_200Placed: courseCore200.length,
+  core201_350Placed: courseCore350.length,
+  casesVisibleFrom: course.casesFramework.visibleFromLesson,
+  pronounCheckpoint: course.pronounSpiral.cumulativeCheckpoint,
+  vocabularyNeutralIntegrationLessons: [37,38,39,40],
+  authoredLessonsValidated: authored.map(x => x.lesson),
+  authoredStagesValidated: stageSummaries,
+  referenceRegistryVersion: referenceRegistry.version,
+  textualAuditVersion: textualAudit.version,
+  frParityAuditVersion: frParityAudit.version,
+  globalReferenceCount: referenceRegistry.references.length,
+  explanationReferenceCoverage: {
+    learningBlocks: referencedLearningBlocks,
+    exercises: referencedExercises
+  },
+  bilingualBaselineCoverage: {
+    learnerCopyBlocks: bilingualLearningBlocks,
+    vocabularyAndSupportGlosses: bilingualVocabularyEntries
+  },
+  frenchParityFullCourse: {
+    lessonTitles: localizedFrLessonTitles,
+    blockTitles: localizedFrBlockTitles,
+    exercisePrompts: localizedFrExercisePrompts,
+    exerciseHints: localizedFrExerciseHints,
+    exerciseExplanations: localizedFrExerciseExplanations,
+    canonicalGradingOverrides: 0
+  }
+}, null, 2));

@@ -1190,6 +1190,7 @@ export const AO_APP_SURFACE_ASSET_IDS=Object.freeze({
 
 export const AO_LEARN_ROUTE_ASSET_IDS=Object.freeze({
   "learn.catechism.daily":"ao-refined-study",
+  "learn.latin":"ao-refined-study",
   "learn.mass":"ao-rich-guides",
   "learn.catechism":"ao-module-catechism",
   "today.gospel":"ao-refined-scripture",

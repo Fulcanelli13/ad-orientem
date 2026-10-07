@@ -1,0 +1,1058 @@
+{
+  "version": "latin-course-lesson-02-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 2,
+  "stage": {
+    "number": 1,
+    "title": "Hear the Latin of the Church"
+  },
+  "title": "Mea culpa",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "progressionStep": "phrase",
+  "grammarFocus": "Endings, the case system, first declension",
+  "readingOutcome": "See the full six-case map; actively identify nominative and vocative; recognize first-declension endings.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only the frozen lesson allocation is introduced; earlier Core may be recycled and later Core may appear only as explicit support.",
+    "authenticTextPolicy": "Primary text and instructional markup are stored separately.",
+    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "culpa",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "fault / fault, guilt",
+          "fr": "faute"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "gratia",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "grace / thanks",
+          "fr": "grâce"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "anima",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "soul",
+          "fr": "âme"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "vita",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "life",
+          "fr": "vie"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "terra",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "earth / land",
+          "fr": "terre"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "gloria",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "glory",
+          "fr": "gloire"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "ecclesia",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "Church / assembly",
+          "fr": "Église"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "via",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "way / road",
+          "fr": "voie"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "iustitia",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "justice / righteousness",
+          "fr": "justice"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "aqua",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "water",
+          "fr": "eau"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "familia",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "household / family",
+          "fr": "famille"
+        },
+        "frozenLesson": 2
+      },
+      {
+        "lemma": "ira",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "anger / wrath",
+          "fr": "colère"
+        },
+        "frozenLesson": 2
+      }
+    ],
+    "recycled": [
+      "et"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "meus",
+      "forms": [
+        "mea"
+      ],
+      "gloss": {
+        "en": "my",
+        "fr": "ma"
+      },
+      "trackedLesson": 4,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "maximus",
+      "forms": [
+        "maxima"
+      ],
+      "gloss": {
+        "en": "greatest",
+        "fr": "très grande"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "in",
+      "forms": [
+        "in"
+      ],
+      "gloss": {
+        "en": "in / on",
+        "fr": "dans / sur"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "excelsus",
+      "forms": [
+        "excelsis"
+      ],
+      "gloss": {
+        "en": "highest",
+        "fr": "très haut"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Deus",
+      "forms": [
+        "Deo"
+      ],
+      "gloss": {
+        "en": "God",
+        "fr": "Dieu"
+      },
+      "trackedLesson": 3,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "pax",
+      "forms": [
+        "pax"
+      ],
+      "gloss": {
+        "en": "peace",
+        "fr": "paix"
+      },
+      "trackedLesson": 6,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "homo",
+      "forms": [
+        "hominibus"
+      ],
+      "gloss": {
+        "en": "human being / man",
+        "fr": "homme"
+      },
+      "trackedLesson": 6,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "bonus",
+      "forms": [
+        "bonae"
+      ],
+      "gloss": {
+        "en": "good",
+        "fr": "bon"
+      },
+      "trackedLesson": 4,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "voluntas",
+      "forms": [
+        "voluntatis"
+      ],
+      "gloss": {
+        "en": "will",
+        "fr": "volonté"
+      },
+      "trackedLesson": 8,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "venturus",
+      "forms": [
+        "venturi"
+      ],
+      "gloss": {
+        "en": "to come / coming",
+        "fr": "à venir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "saeculum",
+      "forms": [
+        "saeculi"
+      ],
+      "gloss": {
+        "en": "age / world",
+        "fr": "siècle"
+      },
+      "trackedLesson": 8,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-confiteor-mea-culpa",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Confiteor",
+      "sourceLatin": "mea culpa, mea culpa, mea maxima culpa.",
+      "provenanceNote": "Authentic Confiteor phrase; case lesson uses it for visible endings, not adjective mastery.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-gloria-opening-l2",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Gloria",
+      "sourceLatin": "Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis.",
+      "provenanceNote": "Authentic Gloria opening; terra and gloria are target nouns, later words remain supported.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-credo-vitam",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Et vitam venturi saeculi. Amen.",
+      "provenanceNote": "Authentic Credo ending; vitam demonstrates that a learned lemma can appear with a changed ending.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "learningBlocks": [
+    {
+      "id": "l2-b1",
+      "type": "concept",
+      "title": "Endings carry information",
+      "learnerCopy": {
+        "en": "Latin does not rely on word order as heavily as English. A noun ending helps show what that noun is doing. From this lesson onward, all six cases remain visible, but you actively use only nominative and vocative for now.",
+        "fr": "Le latin dépend moins de l'ordre des mots que le français. La terminaison d'un nom aide à montrer son rôle. À partir de cette leçon, les six cas restent visibles, mais seuls le nominatif et le vocatif sont actifs pour l'instant."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les désinences portent de l’information"
+        }
+      }
+    },
+    {
+      "id": "l2-b2",
+      "type": "case-panel",
+      "title": "The six-case map",
+      "learnerCopy": {
+        "en": "Nominative names the subject or identifies something. Vocative addresses someone directly. Accusative, genitive, dative and ablative stay on screen as landmarks; their functions unlock later.",
+        "fr": "Le nominatif nomme le sujet ou identifie quelque chose. Le vocatif sert à l'adresse directe. Accusatif, génitif, datif et ablatif restent visibles comme repères; leurs fonctions seront activées plus tard."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "La carte des six cas"
+        }
+      }
+    },
+    {
+      "id": "l2-b3",
+      "type": "morphology",
+      "title": "First-declension shape",
+      "learnerCopy": {
+        "en": "Many first-declension nouns have nominative singular -a: culpa, gratia, anima, vita, terra, gloria, ecclesia, via, iustitia, aqua, familia, ira. Do not memorize six isolated tables; learn to notice the recurring endings on the permanent case map.",
+        "fr": "De nombreux noms de la première déclinaison ont un nominatif singulier en -a : culpa, gratia, anima, vita, terra, gloria, ecclesia, via, iustitia, aqua, familia, ira. Il faut surtout reconnaître les terminaisons récurrentes sur la carte permanente des cas."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "La forme de la première déclinaison"
+        }
+      }
+    },
+    {
+      "id": "l2-b4",
+      "type": "authentic-example",
+      "title": "Mea culpa",
+      "sourceId": "mr1962-confiteor-mea-culpa",
+      "learnerCopy": {
+        "en": "culpa is the noun you are learning. mea and maxima are supplied for now. Hear how the repeated -a forms belong together; Lesson 4 will explain their agreement.",
+        "fr": "culpa est le nom à apprendre. mea et maxima sont fournis pour l'instant. Entendez comment les formes en -a vont ensemble; la leçon 4 expliquera leur accord."
+      },
+      "referenceIds": [
+        "mr1962-confiteor-mea-culpa",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Mea culpa"
+        }
+      }
+    },
+    {
+      "id": "l2-b5",
+      "type": "guided-recognition",
+      "title": "Same lemma, changed ending",
+      "sourceId": "mr1962-credo-vitam",
+      "learnerCopy": {
+        "en": "You learn vita as the dictionary lemma, but the Credo gives vitam. The changed ending is not a new vocabulary word. It is the same noun in a different case. You are not asked to name that case yet.",
+        "fr": "Vous apprenez vita comme lemme, mais le Credo donne vitam. Cette terminaison différente ne crée pas un nouveau mot : c'est le même nom dans un autre cas. Il n'est pas encore demandé de nommer ce cas."
+      },
+      "referenceIds": [
+        "mr1962-credo-vitam",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Même lemme, désinence différente"
+        }
+      }
+    },
+    {
+      "id": "l2-b6",
+      "type": "retrieval",
+      "title": "What remains active",
+      "learnerCopy": {
+        "en": "By the end of Lesson 2, recognize the twelve new first-declension lemmas, identify obvious nominative/vocative -a forms, and keep the full six-case map visible without pretending the later functions are already mastered.",
+        "fr": "À la fin de la leçon 2, reconnaissez les douze nouveaux lemmes de la première déclinaison, identifiez les formes évidentes du nominatif/vocatif en -a et gardez visibles les six cas sans prétendre maîtriser déjà leurs fonctions ultérieures."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Ce qui reste actif"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l2-p1",
+      "sourceId": "mr1962-confiteor-mea-culpa",
+      "sourceLatin": "mea culpa, mea culpa, mea maxima culpa.",
+      "instructionalDisplay": "mea culpa, mea culpa, mea máxima culpa.",
+      "translation": {
+        "en": "through my fault, through my fault, through my most grievous fault.",
+        "fr": "par ma faute, par ma faute, par ma très grande faute."
+      },
+      "targetLemmas": [
+        "culpa"
+      ],
+      "supportLemmas": [
+        "meus",
+        "maximus"
+      ]
+    },
+    {
+      "id": "l2-p2",
+      "sourceId": "mr1962-gloria-opening-l2",
+      "sourceLatin": "Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis.",
+      "instructionalDisplay": "Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis.",
+      "translation": {
+        "en": "Glory to God in the highest, and on earth peace to men of good will.",
+        "fr": "Gloire à Dieu au plus haut des cieux, et paix sur la terre aux hommes de bonne volonté."
+      },
+      "targetLemmas": [
+        "gloria",
+        "terra",
+        "et"
+      ],
+      "supportLemmas": [
+        "in",
+        "excelsus",
+        "Deus",
+        "pax",
+        "homo",
+        "bonus",
+        "voluntas"
+      ]
+    },
+    {
+      "id": "l2-p3",
+      "sourceId": "mr1962-credo-vitam",
+      "sourceLatin": "Et vitam venturi saeculi. Amen.",
+      "instructionalDisplay": "Et vitam venturi saeculi. Amen.",
+      "translation": {
+        "en": "And the life of the world to come. Amen.",
+        "fr": "Et la vie du siècle à venir. Amen."
+      },
+      "targetLemmas": [
+        "vita",
+        "et"
+      ],
+      "supportLemmas": [
+        "venturus",
+        "saeculum",
+        "Amen"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l2-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which case is currently active for naming the subject?",
+      "stimulus": null,
+      "expectedAnswer": "nominative",
+      "acceptedVariants": [
+        "nominative"
+      ],
+      "hint": "Think: naming.",
+      "explanation": "The nominative is the active naming/subject case in Lesson 2.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:nominative"
+      ],
+      "options": [
+        "nominative",
+        "vocative",
+        "genitive",
+        "ablative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas est actuellement actif pour nommer le sujet ?",
+          "hint": "Pensez : nommer.",
+          "explanation": "Le nominatif est le cas actif de nomination ou du sujet dans la leçon 2.",
+          "options": [
+            "nominatif",
+            "vocatif",
+            "génitif",
+            "ablatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l2-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which case is currently active for direct address?",
+      "stimulus": null,
+      "expectedAnswer": "vocative",
+      "acceptedVariants": [
+        "vocative"
+      ],
+      "hint": "Think: calling to someone.",
+      "explanation": "The vocative is used for direct address.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:vocative"
+      ],
+      "options": [
+        "nominative",
+        "vocative",
+        "dative",
+        "accusative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel cas est actuellement actif pour l’adresse directe ?",
+          "hint": "Pensez : appeler quelqu’un.",
+          "explanation": "Le vocatif s’emploie pour l’adresse directe.",
+          "options": [
+            "nominatif",
+            "vocatif",
+            "datif",
+            "accusatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l2-e3",
+      "exerciseType": "token_select",
+      "prompt": "Select the Lesson 2 noun in the Confiteor phrase.",
+      "stimulus": "mea culpa, mea culpa, mea maxima culpa.",
+      "expectedAnswer": [
+        "culpa",
+        "culpa",
+        "culpa"
+      ],
+      "acceptedVariants": [
+        [
+          "culpa",
+          "culpa",
+          "culpa"
+        ]
+      ],
+      "hint": "Look for the repeated noun, not the supplied adjectives.",
+      "explanation": "culpa is active Core vocabulary; mea and maxima are support.",
+      "difficulty": 1,
+      "sourceId": "mr1962-confiteor-mea-culpa",
+      "skills": [
+        "vocabulary:culpa",
+        "reading:recognition"
+      ],
+      "referenceIds": [
+        "mr1962-confiteor-mea-culpa",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez le nom de la leçon 2 dans cette phrase du Confiteor.",
+          "hint": "Repérez le nom répété, et non les adjectifs fournis.",
+          "explanation": "culpa appartient au vocabulaire fondamental actif ; mea et maxima sont des aides."
+        }
+      }
+    },
+    {
+      "id": "l2-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which is the dictionary form taught for 'life'?",
+      "stimulus": null,
+      "expectedAnswer": "vita",
+      "acceptedVariants": [
+        "vita"
+      ],
+      "hint": "The course stores the lemma, not every inflected form.",
+      "explanation": "vita is the tracked lemma; vitam in the Credo is an inflected form.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-vitam",
+      "skills": [
+        "vocabulary:vita",
+        "morphology:lemma-form"
+      ],
+      "options": [
+        "vita",
+        "vitam",
+        "vitae",
+        "vitas"
+      ],
+      "referenceIds": [
+        "mr1962-credo-vitam",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme de dictionnaire est enseignée pour « vie » ?",
+          "hint": "Le cours mémorise le lemme, pas chaque forme fléchie.",
+          "explanation": "vita est le lemme suivi ; vitam dans le Credo est une forme fléchie.",
+          "options": [
+            "vita",
+            "vitam",
+            "vitae",
+            "vitas"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l2-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "Does vitam count as a second vocabulary item after vita?",
+      "stimulus": null,
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "An ending change is morphology, not a new lemma.",
+      "explanation": "vita and vitam belong to the same lemma family.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-vitam",
+      "skills": [
+        "curriculum:lemma-family"
+      ],
+      "options": [
+        "yes",
+        "no"
+      ],
+      "referenceIds": [
+        "mr1962-credo-vitam",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "vitam compte-t-il comme un deuxième élément de vocabulaire après vita ?",
+          "hint": "Un changement de désinence relève de la morphologie, pas d’un nouveau lemme.",
+          "explanation": "vita et vitam appartiennent à la même famille de lemme.",
+          "options": [
+            "oui",
+            "non"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l2-e6",
+      "exerciseType": "matching",
+      "prompt": "Match the Latin noun to its meaning.",
+      "stimulus": [
+        "aqua",
+        "via",
+        "ecclesia",
+        "anima"
+      ],
+      "expectedAnswer": {
+        "aqua": "water",
+        "via": "way",
+        "ecclesia": "Church",
+        "anima": "soul"
+      },
+      "acceptedVariants": [],
+      "hint": "All four are new first-declension Core lemmas.",
+      "explanation": "This checks lexical recognition without introducing extra grammar.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l2"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom latin à son sens.",
+          "hint": "Les quatre sont de nouveaux lemmes fondamentaux de première déclinaison.",
+          "explanation": "Ceci vérifie la reconnaissance lexicale sans introduire de grammaire supplémentaire.",
+          "matches": {
+            "aqua": "eau",
+            "via": "voie",
+            "ecclesia": "Église",
+            "anima": "âme"
+          }
+        }
+      }
+    },
+    {
+      "id": "l2-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which visible first-declension ending can serve both nominative and vocative singular?",
+      "stimulus": null,
+      "expectedAnswer": "-a",
+      "acceptedVariants": [
+        "-a",
+        "a"
+      ],
+      "hint": "Only the two active cases matter here.",
+      "explanation": "First-declension nominative and vocative singular are both shown as -a.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "case:nominative",
+        "case:vocative",
+        "declension:first"
+      ],
+      "options": [
+        "-a",
+        "-am",
+        "-ae",
+        "-is"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle désinence visible de première déclinaison peut servir à la fois de nominatif et de vocatif singulier ?",
+          "hint": "Seuls les deux cas actifs importent ici.",
+          "explanation": "Le nominatif et le vocatif singuliers de la première déclinaison sont tous deux présentés en -a.",
+          "options": [
+            "-a",
+            "-am",
+            "-ae",
+            "-is"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l2-e8",
+      "exerciseType": "token_select",
+      "prompt": "Select the two Lesson 2 nouns in this Gloria opening.",
+      "stimulus": "Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis.",
+      "expectedAnswer": [
+        "Gloria",
+        "terra"
+      ],
+      "acceptedVariants": [
+        [
+          "Gloria",
+          "terra"
+        ],
+        [
+          "gloria",
+          "terra"
+        ]
+      ],
+      "hint": "Ignore supported later vocabulary.",
+      "explanation": "gloria and terra are active Lesson 2 nouns.",
+      "difficulty": 2,
+      "sourceId": "mr1962-gloria-opening-l2",
+      "skills": [
+        "reading:target-recognition"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-opening-l2",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les deux noms de la leçon 2 dans cette ouverture du Gloria.",
+          "hint": "Ignorez le vocabulaire ultérieur fourni comme aide.",
+          "explanation": "gloria et terra sont des noms actifs de la leçon 2."
+        }
+      }
+    },
+    {
+      "id": "l2-e9",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin lemma for 'justice / righteousness'.",
+      "stimulus": null,
+      "expectedAnswer": "iustitia",
+      "acceptedVariants": [
+        "iustitia",
+        "Iustitia"
+      ],
+      "hint": "It ends in -a.",
+      "explanation": "iustitia is one of the Lesson 2 Core nouns.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:iustitia"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le lemme latin pour « justice / droiture ».",
+          "hint": "Il se termine par -a.",
+          "explanation": "iustitia est l’un des noms fondamentaux de la leçon 2."
+        }
+      }
+    },
+    {
+      "id": "l2-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "What should you do with genitive, dative, accusative and ablative in Lesson 2?",
+      "stimulus": null,
+      "expectedAnswer": "keep them visible as previews",
+      "acceptedVariants": [
+        "keep them visible as previews"
+      ],
+      "hint": "The case panel is persistent.",
+      "explanation": "The later cases stay visible but are not yet active functions.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:framework",
+        "metacognition"
+      ],
+      "options": [
+        "keep them visible as previews",
+        "master all their functions now",
+        "hide them until Lesson 9"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que devez-vous faire des génitif, datif, accusatif et ablatif dans la leçon 2 ?",
+          "hint": "Le panneau des cas reste affiché.",
+          "explanation": "Les cas ultérieurs restent visibles mais leurs fonctions ne sont pas encore actives.",
+          "options": [
+            "les garder visibles comme aperçu",
+            "maîtriser maintenant toutes leurs fonctions",
+            "les masquer jusqu’à la leçon 9"
+          ]
+        }
+      }
+    }
+  ],
+  "durationMinutes": 35,
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases stay visible from here onward. Only nominative and vocative are active functions in Stage 1; the remaining cases are previewed until their later unlocks.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active",
+        "question": "who/what is named as the subject or identity?",
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-ae"
+        }
+      },
+      {
+        "case": "vocative",
+        "status": "active",
+        "question": "who/what is directly addressed?",
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-ae"
+        }
+      },
+      {
+        "case": "accusative",
+        "status": "preview",
+        "unlockLesson": 9,
+        "firstDeclension": {
+          "singular": "-am",
+          "plural": "-as"
+        }
+      },
+      {
+        "case": "genitive",
+        "status": "preview",
+        "unlockLesson": 8,
+        "firstDeclension": {
+          "singular": "-ae",
+          "plural": "-arum"
+        }
+      },
+      {
+        "case": "dative",
+        "status": "preview",
+        "unlockLesson": 8,
+        "firstDeclension": {
+          "singular": "-ae",
+          "plural": "-is"
+        }
+      },
+      {
+        "case": "ablative",
+        "status": "preview",
+        "unlockLesson": 9,
+        "firstDeclension": {
+          "singular": "-a",
+          "plural": "-is"
+        }
+      }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "objectives": [
+    "See all six case names from the beginning of nominal study.",
+    "Actively identify nominative and vocative as the first functional cases.",
+    "Recognize the principal first-declension endings without treating every form as a new word.",
+    "Learn the twelve frozen Lesson 2 lemmas.",
+    "Recognize vita/vitam as one lemma across forms."
+  ],
+  "checkpoint": {
+    "id": "l2-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l2-e1",
+        "l2-e2",
+        "l2-e3",
+        "l2-e4",
+        "l2-e5",
+        "l2-e6",
+        "l2-e7",
+        "l2-e8",
+        "l2-e9",
+        "l2-e10"
+      ]
+    },
+    "mustKnow": [
+      "all six case names remain visible",
+      "nominative and vocative are active",
+      "first-declension nominative/vocative singular -a",
+      "inflected forms remain one lemma family"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "culpa",
+      "gratia",
+      "anima",
+      "vita",
+      "terra",
+      "gloria",
+      "ecclesia",
+      "via",
+      "iustitia",
+      "aqua",
+      "familia",
+      "ira"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 3,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Mea culpa",
+      "grammarFocus": "Désinences, système des cas, première déclinaison",
+      "readingOutcome": "Voir la carte complète des six cas ; identifier activement le nominatif et le vocatif ; reconnaître les désinences de la première déclinaison.",
+      "objectives": [
+        "Voir les six noms de cas dès le début de l’étude nominale.",
+        "Identifier activement le nominatif et le vocatif comme premiers cas fonctionnels.",
+        "Reconnaître les principales désinences de la première déclinaison sans traiter chaque forme comme un mot nouveau.",
+        "Apprendre les douze lemmes figés de la leçon 2.",
+        "Reconnaître vita/vitam comme un même lemme à travers des formes différentes."
+      ]
+    }
+  }
+}

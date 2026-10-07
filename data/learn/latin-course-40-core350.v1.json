@@ -1,0 +1,1189 @@
+{
+  "version": "latin-course-40-core350-v1.0",
+  "status": "FROZEN_CURRICULUM_CROSSWALK",
+  "frozenAt": "2026-10-07",
+  "vocabularySources": {
+    "core1_200": "data/learn/core-latin-200.v0.2.json",
+    "core201_350": "data/learn/core-latin-201-350.v1.json",
+    "rule": "Vocabulary rank is corpus priority; lesson placement is pedagogical first-active-use. The frozen ranking files are not rewritten by curriculum changes."
+  },
+  "sourceArchitecture": [
+    {
+      "source": "Scanlon & Scanlon",
+      "role": "Missal-first progressive grammar and reading comparator; synthesize rather than reproduce copyrighted TAN text."
+    },
+    {
+      "source": "Baumeister",
+      "role": "Accessible ecclesiastical-Latin grammar and exercise sequencing."
+    },
+    {
+      "source": "Scarre / Flad",
+      "role": "Authentic liturgical text and Missal-vocabulary orientation."
+    },
+    {
+      "source": "Nunn",
+      "role": "Ecclesiastical and biblical syntax support."
+    },
+    {
+      "source": "Plater & White",
+      "role": "Catholic liturgical Latin and translation/reading support."
+    },
+    {
+      "source": "Petitmangin",
+      "role": "French grammar/reference and advanced syntax cross-check."
+    }
+  ],
+  "progression": [
+    "phrase",
+    "sentence",
+    "passage",
+    "independent liturgical reading"
+  ],
+  "casesFramework": {
+    "visibleFromLesson": 2,
+    "cases": [
+      "nominative",
+      "vocative",
+      "accusative",
+      "genitive",
+      "dative",
+      "ablative"
+    ],
+    "policy": "All six case names remain visible from Lesson 2; functions unlock progressively while forms recur continuously.",
+    "unlocks": [
+      {
+        "lesson": 2,
+        "cases": [
+          "nominative",
+          "vocative"
+        ],
+        "mode": "active function; full first-declension paradigm visible"
+      },
+      {
+        "lesson": 3,
+        "cases": [],
+        "mode": "second-declension forms added to the same case map"
+      },
+      {
+        "lesson": 6,
+        "cases": [],
+        "mode": "third-declension stem logic added"
+      },
+      {
+        "lesson": 8,
+        "cases": [
+          "genitive",
+          "dative"
+        ],
+        "mode": "active functions unlocked"
+      },
+      {
+        "lesson": 9,
+        "cases": [
+          "accusative",
+          "ablative"
+        ],
+        "mode": "active functions unlocked; core case system now fully operational"
+      },
+      {
+        "lesson": 14,
+        "cases": [],
+        "mode": "fourth/fifth declensions complete nominal-system coverage"
+      },
+      {
+        "lesson": 29,
+        "cases": [],
+        "mode": "advanced dative/ablative functions consolidated"
+      }
+    ]
+  },
+  "pronounSpiral": {
+    "startsAt": 10,
+    "cumulativeCheckpoint": 20,
+    "sequence": [
+      {
+        "lesson": 10,
+        "focus": "Personal/reflexive and is/ea/id; identify case from form and clause role."
+      },
+      {
+        "lesson": 12,
+        "focus": "Pronoun object/dative forms inside commands and responses."
+      },
+      {
+        "lesson": 15,
+        "focus": "Pronoun forms in Gospel-style past narrative."
+      },
+      {
+        "lesson": 17,
+        "focus": "Relative qui/quae/quod; antecedent versus pronoun case."
+      },
+      {
+        "lesson": 18,
+        "focus": "hic/ille/iste/ipse/idem contrasted with is/ea/id."
+      },
+      {
+        "lesson": 19,
+        "focus": "Pronouns with deponents and non-English case government."
+      },
+      {
+        "lesson": 20,
+        "focus": "Compulsory mixed retrieval across personal, reflexive, relative and demonstrative families in authentic Credo/liturgical clauses."
+      },
+      {
+        "lesson": 31,
+        "focus": "Extension to quis/quid, aliquis, quidam, quisque, quicumque and interrogative/indefinite reading."
+      }
+    ]
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "title": "Hear the Latin of the Church",
+      "lessons": [
+        1,
+        5
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "The Ordinary",
+      "lessons": [
+        6,
+        10
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "Actions and Time",
+      "lessons": [
+        11,
+        15
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "Structure",
+      "lessons": [
+        16,
+        20
+      ]
+    },
+    {
+      "stage": 5,
+      "title": "Prayer Language",
+      "lessons": [
+        21,
+        25
+      ]
+    },
+    {
+      "stage": 6,
+      "title": "Canon",
+      "lessons": [
+        26,
+        30
+      ]
+    },
+    {
+      "stage": 7,
+      "title": "Church Latin",
+      "lessons": [
+        31,
+        35
+      ]
+    },
+    {
+      "stage": 8,
+      "title": "Read the Missal",
+      "lessons": [
+        36,
+        40
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "lesson": 5,
+      "target": "Short liturgical phrases with noun/adjective/verb agreement."
+    },
+    {
+      "lesson": 10,
+      "target": "Complete Ordinary-style sentences with case and pronoun recognition."
+    },
+    {
+      "lesson": 15,
+      "target": "Short Psalm/Gospel narrative clauses."
+    },
+    {
+      "lesson": 20,
+      "target": "Credo integrated reading checkpoint."
+    },
+    {
+      "lesson": 25,
+      "target": "Multi-clause prayer and narrative syntax."
+    },
+    {
+      "lesson": 30,
+      "target": "Complete Roman Collect."
+    },
+    {
+      "lesson": 35,
+      "target": "Canon passage with long periodic syntax."
+    },
+    {
+      "lesson": 36,
+      "target": "Psalm/hymn/antiphon register."
+    },
+    {
+      "lesson": 37,
+      "target": "Complete Ordinary."
+    },
+    {
+      "lesson": 38,
+      "target": "Unseen normal Propers."
+    },
+    {
+      "lesson": 39,
+      "target": "Requiem and Holy Week specialized registers."
+    },
+    {
+      "lesson": 40,
+      "target": "Unseen authentic Missal capstone."
+    }
+  ],
+  "lessons": [
+    {
+      "lesson": 1,
+      "stage": {
+        "number": 1,
+        "title": "Hear the Latin of the Church"
+      },
+      "title": "Hear the Latin of the Church",
+      "grammar": "Ecclesiastical pronunciation; stress; listening and recognition",
+      "readingOutcome": "Hear and pronounce authentic liturgical phrases.",
+      "core1_200Introduced": [
+        "et"
+      ],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 1
+    },
+    {
+      "lesson": 2,
+      "stage": {
+        "number": 1,
+        "title": "Hear the Latin of the Church"
+      },
+      "title": "Mea culpa",
+      "grammar": "Endings, the case system, first declension",
+      "readingOutcome": "See the full six-case map; actively identify nominative and vocative; recognize first-declension endings.",
+      "core1_200Introduced": [
+        "culpa",
+        "gratia",
+        "anima",
+        "vita",
+        "terra",
+        "gloria",
+        "ecclesia",
+        "via"
+      ],
+      "core201_350Introduced": [
+        "iustitia",
+        "aqua",
+        "familia",
+        "ira"
+      ],
+      "totalTrackedIntroduced": 12
+    },
+    {
+      "lesson": 3,
+      "stage": {
+        "number": 1,
+        "title": "Hear the Latin of the Church"
+      },
+      "title": "Dominus Deus",
+      "grammar": "Second declension; esse",
+      "readingOutcome": "Extend case-form recognition across masculine and neuter second-declension nouns.",
+      "core1_200Introduced": [
+        "Deus",
+        "Dominus",
+        "filius",
+        "regnum",
+        "caelum",
+        "principium",
+        "sum",
+        "possum",
+        "apostolus",
+        "verbum",
+        "non"
+      ],
+      "core201_350Introduced": [
+        "locus",
+        "templum",
+        "oculus",
+        "servus",
+        "magister",
+        "puer"
+      ],
+      "totalTrackedIntroduced": 17
+    },
+    {
+      "lesson": 4,
+      "stage": {
+        "number": 1,
+        "title": "Hear the Latin of the Church"
+      },
+      "title": "Holy, Blessed, Almighty",
+      "grammar": "Adjective agreement",
+      "readingOutcome": "Match adjective endings to case, number and gender.",
+      "core1_200Introduced": [
+        "sanctus",
+        "beatus",
+        "bonus",
+        "meus",
+        "tuus",
+        "noster",
+        "suus",
+        "omnis",
+        "fidelis"
+      ],
+      "core201_350Introduced": [
+        "magnus",
+        "iustus",
+        "malus",
+        "salvus",
+        "novus",
+        "plenus",
+        "similis",
+        "primus"
+      ],
+      "totalTrackedIntroduced": 17
+    },
+    {
+      "lesson": 5,
+      "stage": {
+        "number": 1,
+        "title": "Hear the Latin of the Church"
+      },
+      "title": "We praise, bless, adore",
+      "grammar": "Present active verbs",
+      "readingOutcome": "Parse person/number while retaining noun-case recognition.",
+      "core1_200Introduced": [
+        "laudo",
+        "benedico",
+        "adoro",
+        "glorifico",
+        "credo",
+        "audio",
+        "servio",
+        "venio",
+        "habeo",
+        "amo",
+        "sed"
+      ],
+      "core201_350Introduced": [
+        "video",
+        "voco",
+        "mitto",
+        "maneo",
+        "aperio",
+        "pono",
+        "sto",
+        "timeo"
+      ],
+      "totalTrackedIntroduced": 19
+    },
+    {
+      "lesson": 6,
+      "stage": {
+        "number": 2,
+        "title": "The Ordinary"
+      },
+      "title": "Pater, corpus, pax",
+      "grammar": "Third declension",
+      "readingOutcome": "Use nominative + genitive dictionary forms to predict third-declension stems.",
+      "core1_200Introduced": [
+        "pater",
+        "corpus",
+        "sanguis",
+        "pax",
+        "homo",
+        "virgo",
+        "nomen",
+        "cor",
+        "calix",
+        "lux",
+        "veritas",
+        "panis",
+        "lumen",
+        "caro",
+        "honor"
+      ],
+      "core201_350Introduced": [
+        "tempus",
+        "gens",
+        "lex",
+        "os",
+        "vox",
+        "mater",
+        "pastor",
+        "nox",
+        "mons",
+        "virtus"
+      ],
+      "totalTrackedIntroduced": 25
+    },
+    {
+      "lesson": 7,
+      "stage": {
+        "number": 2,
+        "title": "The Ordinary"
+      },
+      "title": "It is offered / He is praised",
+      "grammar": "Present passive",
+      "readingOutcome": "Contrast active and passive verbal endings in liturgical clauses.",
+      "core1_200Introduced": [
+        "sanctifico"
+      ],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 1
+    },
+    {
+      "lesson": 8,
+      "stage": {
+        "number": 2,
+        "title": "The Ordinary"
+      },
+      "title": "Agnus Dei / Deo gratias",
+      "grammar": "Genitive and dative",
+      "readingOutcome": "Unlock genitive possession/relationship and dative recipient/reference functions.",
+      "core1_200Introduced": [
+        "agnus",
+        "saeculum",
+        "mundus",
+        "voluntas",
+        "spes",
+        "mens",
+        "sicut",
+        "quia"
+      ],
+      "core201_350Introduced": [
+        "testimonium",
+        "opus",
+        "domus",
+        "angelus",
+        "civitas"
+      ],
+      "totalTrackedIntroduced": 13
+    },
+    {
+      "lesson": 9,
+      "stage": {
+        "number": 2,
+        "title": "The Ordinary"
+      },
+      "title": "Ad altare Dei",
+      "grammar": "Accusative, ablative and prepositions",
+      "readingOutcome": "Unlock accusative and ablative functions; learn case government of core prepositions.",
+      "core1_200Introduced": [
+        "in",
+        "ad",
+        "per",
+        "pro",
+        "cum",
+        "de",
+        "e/ex",
+        "a/ab",
+        "sub",
+        "super",
+        "sine",
+        "propter",
+        "ante",
+        "post"
+      ],
+      "core201_350Introduced": [
+        "usque",
+        "apud",
+        "coram",
+        "inter",
+        "contra",
+        "adversus",
+        "iuxta",
+        "ultra",
+        "secundum"
+      ],
+      "totalTrackedIntroduced": 23
+    },
+    {
+      "lesson": 10,
+      "stage": {
+        "number": 2,
+        "title": "The Ordinary"
+      },
+      "title": "Dominus vobiscum",
+      "grammar": "Personal/reflexive pronouns; cum",
+      "readingOutcome": "Read personal, reflexive and third-person pronoun forms in case context.",
+      "core1_200Introduced": [
+        "ego",
+        "tu",
+        "nos",
+        "vos",
+        "is/ea/id",
+        "se"
+      ],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 6
+    },
+    {
+      "lesson": 11,
+      "stage": {
+        "number": 3,
+        "title": "Actions and Time"
+      },
+      "title": "Sicut erat in principio",
+      "grammar": "Imperfect tense",
+      "readingOutcome": "Recognize ongoing/background past action and narrative adverbs.",
+      "core1_200Introduced": [
+        "laetifico",
+        "eruo",
+        "spero",
+        "introeo",
+        "quoque",
+        "enim",
+        "ergo",
+        "autem"
+      ],
+      "core201_350Introduced": [
+        "tunc",
+        "ibi",
+        "adhuc",
+        "iam",
+        "statim",
+        "simul"
+      ],
+      "totalTrackedIntroduced": 14
+    },
+    {
+      "lesson": 12,
+      "stage": {
+        "number": 3,
+        "title": "Actions and Time"
+      },
+      "title": "Orate, fratres",
+      "grammar": "Imperative and vocative",
+      "readingOutcome": "Use commands, direct address and vocative forms.",
+      "core1_200Introduced": [
+        "oro",
+        "accipio",
+        "facio",
+        "dico",
+        "do",
+        "frater"
+      ],
+      "core201_350Introduced": [
+        "nunc",
+        "ecce",
+        "respondeo",
+        "clamo",
+        "vado"
+      ],
+      "totalTrackedIntroduced": 11
+    },
+    {
+      "lesson": 13,
+      "stage": {
+        "number": 3,
+        "title": "Actions and Time"
+      },
+      "title": "Cuius regni non erit finis",
+      "grammar": "Future tense",
+      "readingOutcome": "Read future forms and time expressions.",
+      "core1_200Introduced": [
+        "finis",
+        "iudico",
+        "aeternus",
+        "salus"
+      ],
+      "core201_350Introduced": [
+        "semper",
+        "donec",
+        "hora"
+      ],
+      "totalTrackedIntroduced": 7
+    },
+    {
+      "lesson": 14,
+      "stage": {
+        "number": 3,
+        "title": "Actions and Time"
+      },
+      "title": "Spiritus / dies",
+      "grammar": "Fourth and fifth declensions",
+      "readingOutcome": "Complete the nominal declension system; consolidate case recognition.",
+      "core1_200Introduced": [
+        "spiritus",
+        "manus",
+        "dies",
+        "res",
+        "fides",
+        "laus",
+        "fructus"
+      ],
+      "core201_350Introduced": [
+        "facies",
+        "conspectus"
+      ],
+      "totalTrackedIntroduced": 9
+    },
+    {
+      "lesson": 15,
+      "stage": {
+        "number": 3,
+        "title": "Actions and Time"
+      },
+      "title": "Resurrexit",
+      "grammar": "Perfect active",
+      "readingOutcome": "Read completed past actions in Creed and Gospel narrative.",
+      "core1_200Introduced": [
+        "resurgo",
+        "ascendo",
+        "ago",
+        "sedeo"
+      ],
+      "core201_350Introduced": [
+        "invenio",
+        "surgo",
+        "descendo",
+        "accedo",
+        "cado"
+      ],
+      "totalTrackedIntroduced": 9
+    },
+    {
+      "lesson": 16,
+      "stage": {
+        "number": 4,
+        "title": "Structure"
+      },
+      "title": "Incarnatus est",
+      "grammar": "Perfect passive; participle",
+      "readingOutcome": "Parse perfect passive constructions and participial agreement.",
+      "core1_200Introduced": [
+        "incarno",
+        "crucifigo",
+        "patior",
+        "sepelio",
+        "nascor",
+        "morior"
+      ],
+      "core201_350Introduced": [
+        "eligo",
+        "trado",
+        "annuntio",
+        "signum"
+      ],
+      "totalTrackedIntroduced": 10
+    },
+    {
+      "lesson": 17,
+      "stage": {
+        "number": 4,
+        "title": "Structure"
+      },
+      "title": "Qui tollis",
+      "grammar": "Relative pronouns",
+      "readingOutcome": "Resolve antecedent, case and function of relative pronouns.",
+      "core1_200Introduced": [
+        "qui/quae/quod",
+        "tollo",
+        "peccatum",
+        "dextera"
+      ],
+      "core201_350Introduced": [
+        "quicumque",
+        "unde",
+        "quisque"
+      ],
+      "totalTrackedIntroduced": 7
+    },
+    {
+      "lesson": 18,
+      "stage": {
+        "number": 4,
+        "title": "Structure"
+      },
+      "title": "Hoc est Corpus meum",
+      "grammar": "Demonstratives and ipse",
+      "readingOutcome": "Distinguish demonstrative, intensive and identity pronouns in context.",
+      "core1_200Introduced": [
+        "hic/haec/hoc",
+        "ille",
+        "iste",
+        "ipse",
+        "idem",
+        "sacramentum"
+      ],
+      "core201_350Introduced": [
+        "quidam",
+        "alius",
+        "multus",
+        "totus",
+        "solus",
+        "unus",
+        "duo"
+      ],
+      "totalTrackedIntroduced": 13
+    },
+    {
+      "lesson": 19,
+      "stage": {
+        "number": 4,
+        "title": "Structure"
+      },
+      "title": "Miserere nobis",
+      "grammar": "Deponent verbs",
+      "readingOutcome": "Read passive-form verbs with active meaning.",
+      "core1_200Introduced": [
+        "misereor",
+        "confiteor",
+        "veneror",
+        "precor",
+        "dignor"
+      ],
+      "core201_350Introduced": [
+        "loquor",
+        "sequor"
+      ],
+      "totalTrackedIntroduced": 7
+    },
+    {
+      "lesson": 20,
+      "stage": {
+        "number": 4,
+        "title": "Structure"
+      },
+      "title": "Read the Credo",
+      "grammar": "Integrated morphology and syntax checkpoint",
+      "readingOutcome": "Read the Credo with cumulative cases, tenses and pronoun resolution.",
+      "core1_200Introduced": [
+        "remissio",
+        "mors",
+        "testamentum",
+        "caritas",
+        "communio",
+        "catholicus"
+      ],
+      "core201_350Introduced": [
+        "propheta",
+        "iudicium",
+        "cunctus",
+        "universus"
+      ],
+      "totalTrackedIntroduced": 10
+    },
+    {
+      "lesson": 21,
+      "stage": {
+        "number": 5,
+        "title": "Prayer Language"
+      },
+      "title": "Sanctificetur nomen tuum",
+      "grammar": "Present subjunctive",
+      "readingOutcome": "Recognize present-subjunctive forms in prayer language.",
+      "core1_200Introduced": [
+        "fio",
+        "advenio",
+        "regno",
+        "vivo"
+      ],
+      "core201_350Introduced": [
+        "ita",
+        "sic"
+      ],
+      "totalTrackedIntroduced": 6
+    },
+    {
+      "lesson": 22,
+      "stage": {
+        "number": 5,
+        "title": "Prayer Language"
+      },
+      "title": "Adveniat. Fiat. Oremus.",
+      "grammar": "Jussive and optative uses",
+      "readingOutcome": "Read commands, wishes and liturgical exhortation in the subjunctive.",
+      "core1_200Introduced": [
+        "exaudio",
+        "libero",
+        "parco",
+        "perduco",
+        "custodio",
+        "ostendo"
+      ],
+      "core201_350Introduced": [
+        "ambulo"
+      ],
+      "totalTrackedIntroduced": 7
+    },
+    {
+      "lesson": 23,
+      "stage": {
+        "number": 5,
+        "title": "Prayer Language"
+      },
+      "title": "Ut… ne…",
+      "grammar": "Purpose clauses",
+      "readingOutcome": "Identify purpose by conjunction, mood and clause relationship.",
+      "core1_200Introduced": [
+        "ut",
+        "ne",
+        "concedo",
+        "praesto",
+        "tribuo",
+        "quaeso"
+      ],
+      "core201_350Introduced": [
+        "ideo",
+        "itaque"
+      ],
+      "totalTrackedIntroduced": 8
+    },
+    {
+      "lesson": 24,
+      "stage": {
+        "number": 5,
+        "title": "Prayer Language"
+      },
+      "title": "Ut digni efficiamur",
+      "grammar": "Result and purpose",
+      "readingOutcome": "Distinguish result from purpose in authentic prayer clauses.",
+      "core1_200Introduced": [
+        "efficio",
+        "promissio",
+        "dignus",
+        "mereor"
+      ],
+      "core201_350Introduced": [
+        "magis",
+        "tantum",
+        "plus",
+        "nimis"
+      ],
+      "totalTrackedIntroduced": 8
+    },
+    {
+      "lesson": 25,
+      "stage": {
+        "number": 5,
+        "title": "Prayer Language"
+      },
+      "title": "Cum… esset",
+      "grammar": "Imperfect subjunctive; cum clauses",
+      "readingOutcome": "Read circumstantial/temporal cum and longer subordinate clauses.",
+      "core1_200Introduced": [
+        "quando",
+        "dum",
+        "ubi",
+        "si",
+        "nisi",
+        "quoniam",
+        "atque/ac"
+      ],
+      "core201_350Introduced": [
+        "quasi",
+        "nam",
+        "vero",
+        "etiam",
+        "quidem"
+      ],
+      "totalTrackedIntroduced": 12
+    },
+    {
+      "lesson": 26,
+      "stage": {
+        "number": 6,
+        "title": "Canon"
+      },
+      "title": "Scimus quia… / dicit esse…",
+      "grammar": "Infinitives and indirect statement",
+      "readingOutcome": "Recognize infinitive constructions and reported thought/speech.",
+      "core1_200Introduced": [
+        "scio",
+        "cognosco",
+        "sentio"
+      ],
+      "core201_350Introduced": [
+        "scribo"
+      ],
+      "totalTrackedIntroduced": 4
+    },
+    {
+      "lesson": 27,
+      "stage": {
+        "number": 6,
+        "title": "Canon"
+      },
+      "title": "Ad laudandum / agendae gratiae",
+      "grammar": "Gerund and gerundive",
+      "readingOutcome": "Read verbal nouns/adjectives and obligation/purpose constructions.",
+      "core1_200Introduced": [
+        "causa",
+        "donum",
+        "munus"
+      ],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 3
+    },
+    {
+      "lesson": 28,
+      "stage": {
+        "number": 6,
+        "title": "Canon"
+      },
+      "title": "Herode rege / multis convocatis",
+      "grammar": "Ablative absolute",
+      "readingOutcome": "Recognize compressed circumstantial clauses.",
+      "core1_200Introduced": [
+        "rex",
+        "populus"
+      ],
+      "core201_350Introduced": [
+        "princeps",
+        "discipulus",
+        "mulier",
+        "turba"
+      ],
+      "totalTrackedIntroduced": 6
+    },
+    {
+      "lesson": 29,
+      "stage": {
+        "number": 6,
+        "title": "Canon"
+      },
+      "title": "Nobis… gratia Dei…",
+      "grammar": "Advanced dative and ablative functions",
+      "readingOutcome": "Consolidate non-basic case uses in liturgical prose.",
+      "core1_200Introduced": [
+        "auxilium",
+        "misericordia",
+        "maiestas",
+        "unitas",
+        "famulus"
+      ],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 5
+    },
+    {
+      "lesson": 30,
+      "stage": {
+        "number": 6,
+        "title": "Canon"
+      },
+      "title": "Read a Collect",
+      "grammar": "Integrated prayer-syntax checkpoint",
+      "readingOutcome": "Parse a complete Roman Collect from invocation through conclusion.",
+      "core1_200Introduced": [
+        "omnipotens",
+        "sempiternus",
+        "clemens",
+        "misericors",
+        "divinus",
+        "oratio",
+        "supplex"
+      ],
+      "core201_350Introduced": [
+        "gaudium",
+        "laetitia",
+        "sapientia",
+        "iniquitas",
+        "tribulatio",
+        "salutaris"
+      ],
+      "totalTrackedIntroduced": 13
+    },
+    {
+      "lesson": 31,
+      "stage": {
+        "number": 7,
+        "title": "Church Latin"
+      },
+      "title": "The Reader’s Toolkit",
+      "grammar": "Questions, indefinites, impersonal and defective forms",
+      "readingOutcome": "Handle interrogatives, indefinites and high-frequency irregular reading problems.",
+      "core1_200Introduced": [
+        "fero",
+        "volo",
+        "nolo",
+        "nihil",
+        "iubeo"
+      ],
+      "core201_350Introduced": [
+        "quis/quid",
+        "aliquis/aliquid",
+        "nemo",
+        "numquid",
+        "nonne",
+        "quomodo",
+        "quaero",
+        "interrogo"
+      ],
+      "totalTrackedIntroduced": 13
+    },
+    {
+      "lesson": 32,
+      "stage": {
+        "number": 7,
+        "title": "Church Latin"
+      },
+      "title": "Church Latin is not School Latin",
+      "grammar": "Ecclesiastical versus classical usage",
+      "readingOutcome": "Recognize characteristic Church-Latin vocabulary and syntactic preferences without forcing classical norms.",
+      "core1_200Introduced": [],
+      "core201_350Introduced": [
+        "neque",
+        "nec",
+        "aut",
+        "vel",
+        "sive",
+        "at"
+      ],
+      "totalTrackedIntroduced": 6
+    },
+    {
+      "lesson": 33,
+      "stage": {
+        "number": 7,
+        "title": "Church Latin"
+      },
+      "title": "How the Bible Changed Latin",
+      "grammar": "Biblical Latin; Hebrew and Greek influence",
+      "readingOutcome": "Read Vulgate-shaped coordination, repetition and semantic usage.",
+      "core1_200Introduced": [],
+      "core201_350Introduced": [
+        "ovis",
+        "grex",
+        "semen",
+        "timor",
+        "mandatum",
+        "generatio",
+        "sermo",
+        "inimicus",
+        "corona",
+        "lapis"
+      ],
+      "totalTrackedIntroduced": 10
+    },
+    {
+      "lesson": 34,
+      "stage": {
+        "number": 7,
+        "title": "Church Latin"
+      },
+      "title": "How a Roman Collect Works",
+      "grammar": "Collect architecture and compressed syntax",
+      "readingOutcome": "Identify address, relative/participial expansion, petition, purpose/result and conclusion.",
+      "core1_200Introduced": [],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 0
+    },
+    {
+      "lesson": 35,
+      "stage": {
+        "number": 7,
+        "title": "Church Latin"
+      },
+      "title": "The Language of the Canon",
+      "grammar": "Canon syntax and sacrificial register",
+      "readingOutcome": "Read long periodic prayer syntax and stable Canon vocabulary.",
+      "core1_200Introduced": [
+        "hostia",
+        "sacrificium",
+        "offero",
+        "suscipio",
+        "memoria"
+      ],
+      "core201_350Introduced": [
+        "sacerdos",
+        "vinum"
+      ],
+      "totalTrackedIntroduced": 7
+    },
+    {
+      "lesson": 36,
+      "stage": {
+        "number": 8,
+        "title": "Read the Missal"
+      },
+      "title": "Psalms, Hymns and Antiphons",
+      "grammar": "Psalter, Marian antiphons, hymns; poetic/biblical register",
+      "readingOutcome": "Read parallelism, ellipsis and poetic word order.",
+      "core1_200Introduced": [],
+      "core201_350Introduced": [
+        "lingua",
+        "auris",
+        "pes",
+        "caput",
+        "ignis",
+        "mare",
+        "sol",
+        "pauper"
+      ],
+      "totalTrackedIntroduced": 8
+    },
+    {
+      "lesson": 37,
+      "stage": {
+        "number": 8,
+        "title": "Read the Missal"
+      },
+      "title": "Read the Ordinary",
+      "grammar": "Continuous Ordinary of Mass",
+      "readingOutcome": "Read the complete Ordinary with progressively reduced assistance.",
+      "core1_200Introduced": [],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 0
+    },
+    {
+      "lesson": 38,
+      "stage": {
+        "number": 8,
+        "title": "Read the Missal"
+      },
+      "title": "Read the Propers",
+      "grammar": "Temporal, Sanctoral and Commons",
+      "readingOutcome": "Read unseen Introit, Collect, Epistle, chants, Gospel, Offertory, Secret, Communion and Postcommunion.",
+      "core1_200Introduced": [],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 0
+    },
+    {
+      "lesson": 39,
+      "stage": {
+        "number": 8,
+        "title": "Read the Missal"
+      },
+      "title": "Requiem and Holy Week",
+      "grammar": "Specialized liturgical registers",
+      "readingOutcome": "Read Requiem and Holy Week texts without treating special-rite vocabulary as normal-Proper frequency.",
+      "core1_200Introduced": [
+        "crux",
+        "requies",
+        "defunctus"
+      ],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 3
+    },
+    {
+      "lesson": 40,
+      "stage": {
+        "number": 8,
+        "title": "Read the Missal"
+      },
+      "title": "Read the Missal",
+      "grammar": "Independent liturgical-reading capstone",
+      "readingOutcome": "Read an unseen authentic Missal selection with minimal assistance.",
+      "core1_200Introduced": [],
+      "core201_350Introduced": [],
+      "totalTrackedIntroduced": 0
+    }
+  ]
+}

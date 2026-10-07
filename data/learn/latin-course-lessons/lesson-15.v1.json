@@ -1,0 +1,1455 @@
+{
+  "version": "latin-course-lesson-15-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 15,
+  "stage": {
+    "number": 3,
+    "title": "Actions and Time"
+  },
+  "title": "Resurrexit",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 50,
+  "progressionStep": "sentence",
+  "grammarFocus": "Perfect active",
+  "readingOutcome": "Read completed past actions in Creed and Gospel narrative.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 15 vocabulary only; narrative support vocabulary is declared explicitly.",
+    "authenticTextPolicy": "Perfect forms are read in Creed and Gospel narrative clauses rather than synthetic prose.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "resurgo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "rise again / resurrect",
+          "fr": "ressusciter"
+        },
+        "frozenLesson": 15
+      },
+      {
+        "lemma": "ascendo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "ascend / go up",
+          "fr": "monter"
+        },
+        "frozenLesson": 15
+      },
+      {
+        "lemma": "ago",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "do / drive / give (thanks)",
+          "fr": "faire / rendre"
+        },
+        "frozenLesson": 15
+      },
+      {
+        "lemma": "sedeo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "sit",
+          "fr": "s'asseoir / siéger"
+        },
+        "frozenLesson": 15
+      },
+      {
+        "lemma": "invenio",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "find",
+          "fr": "trouver"
+        },
+        "frozenLesson": 15
+      },
+      {
+        "lemma": "surgo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "rise / get up",
+          "fr": "se lever"
+        },
+        "frozenLesson": 15
+      },
+      {
+        "lemma": "descendo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "descend / come down",
+          "fr": "descendre"
+        },
+        "frozenLesson": 15
+      },
+      {
+        "lemma": "accedo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "approach / come near",
+          "fr": "s'approcher"
+        },
+        "frozenLesson": 15
+      },
+      {
+        "lemma": "cado",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "fall",
+          "fr": "tomber"
+        },
+        "frozenLesson": 15
+      }
+    ],
+    "recycled": [
+      "et",
+      "non",
+      "sum",
+      "ecce",
+      "locus",
+      "in",
+      "a/ab",
+      "ad",
+      "pater",
+      "secundum",
+      "caelum",
+      "propter",
+      "nos",
+      "homo",
+      "noster",
+      "salus",
+      "de",
+      "facies",
+      "suus",
+      "adoro",
+      "is/ea/id",
+      "dico",
+      "gratia",
+      "Dominus",
+      "Deus",
+      "dies",
+      "pono",
+      "timeo"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "tertius",
+      "forms": [
+        "tertia"
+      ],
+      "gloss": {
+        "en": "third",
+        "fr": "troisième"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "scriptura",
+      "forms": [
+        "Scripturas"
+      ],
+      "gloss": {
+        "en": "Scriptures",
+        "fr": "Écritures"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "dextera",
+      "forms": [
+        "dexteram"
+      ],
+      "gloss": {
+        "en": "right hand / right side",
+        "fr": "droite"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "monumentum",
+      "forms": [
+        "monumento"
+      ],
+      "gloss": {
+        "en": "tomb / monument",
+        "fr": "tombeau"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "lapis",
+      "forms": [
+        "lapidem"
+      ],
+      "gloss": {
+        "en": "stone",
+        "fr": "pierre"
+      },
+      "trackedLesson": 33,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "revolvo",
+      "forms": [
+        "revolutum"
+      ],
+      "gloss": {
+        "en": "roll back",
+        "fr": "rouler / déplacer"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesus"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "teneo",
+      "forms": [
+        "tenuerunt"
+      ],
+      "gloss": {
+        "en": "hold",
+        "fr": "tenir"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "pes",
+      "forms": [
+        "pedes"
+      ],
+      "gloss": {
+        "en": "foot",
+        "fr": "pied"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "prosterno",
+      "forms": [
+        "procidentes"
+      ],
+      "gloss": {
+        "en": "fall down / prostrate oneself",
+        "fr": "se prosterner"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "qui/quae/quod",
+      "forms": [
+        "Qui"
+      ],
+      "gloss": {
+        "en": "who / which",
+        "fr": "qui / lequel"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "ubi",
+      "forms": [
+        "ubi"
+      ],
+      "gloss": {
+        "en": "where",
+        "fr": "où"
+      },
+      "trackedLesson": 25,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "hic-locative",
+      "forms": [
+        "hic"
+      ],
+      "gloss": {
+        "en": "here",
+        "fr": "ici"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "valde",
+      "forms": [
+        "valde"
+      ],
+      "gloss": {
+        "en": "greatly / very much",
+        "fr": "beaucoup / vivement"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-credo-resurrexit-l15",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris.",
+      "provenanceNote": "resurrexit and ascendit are completed actions; sedet contrasts with present state.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "vulg-mk16-6-l15",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Marcus 16:6",
+      "sourceLatin": "Surrexit, non est hic: ecce locus ubi posuerunt eum.",
+      "provenanceNote": "Surrexit gives a compact perfect narrative anchor; later clause material is mostly recycled or supplied.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-lk24-2-l15",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Lucas 24:2",
+      "sourceLatin": "Et invenerunt lapidem revolutum a monumento.",
+      "provenanceNote": "invenerunt gives third-person plural perfect in Easter narrative.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "mr1962-credo-descendit-l15",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Credo",
+      "sourceLatin": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "provenanceNote": "descendit is read as the completed Creed action 'came down'.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "vulg-mt28-9-l15",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 28:9",
+      "sourceLatin": "Et accesserunt, et tenuerunt pedes ejus, et adoraverunt eum.",
+      "provenanceNote": "accesserunt introduces perfect accedo and recycles ejus/eum pronoun forms.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "vulg-mt17-6-l15",
+      "sourceType": "primary-scriptural-liturgical",
+      "work": "Vulgata Clementina",
+      "section": "Matthaeus 17:6",
+      "sourceLatin": "Ceciderunt in faciem suam, et timuerunt valde.",
+      "provenanceNote": "ceciderunt is perfect of cado and reuses facies/suus; timuerunt is left as supplied support by meaning.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
+    },
+    {
+      "id": "mr1962-gratias-agamus-l15",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Praefatio — dialogue",
+      "sourceLatin": "Gratias agamus Domino Deo nostro.",
+      "provenanceNote": "ago is introduced through the fixed liturgical phrase gratias agamus.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active. Narrative tense recognition now operates alongside case, pronoun and preposition reading.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "perfectFramework": {
+    "commonSignals": [
+      "-i",
+      "-isti",
+      "-it",
+      "-imus",
+      "-istis",
+      "-erunt"
+    ],
+    "caution": "Perfect stems can change substantially: resurgo → resurrexit, surgo → surrexit, invenio → invenerunt, cado → ceciderunt.",
+    "readingValue": "completed event or action viewed as a whole",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "pronounSpiral": {
+    "lesson": 15,
+    "focus": "Resolve third-person pronoun forms inside completed Gospel actions.",
+    "forms": [
+      "ejus",
+      "eum"
+    ],
+    "rule": "Use case and antecedent/context together; do not translate a pronoun in isolation.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l15-b1",
+      "type": "concept",
+      "title": "Perfect means completed event",
+      "learnerCopy": {
+        "en": "The perfect presents an event as completed or viewed as a whole. This makes it central to Creed and Gospel narrative: He rose, ascended, came down; they found, approached, fell.",
+        "fr": "Le parfait présente un événement comme accompli ou envisagé dans son ensemble. Il est donc central dans le Credo et le récit évangélique : il ressuscita, monta, descendit ; ils trouvèrent, s'approchèrent, tombèrent."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le parfait exprime un événement achevé"
+        }
+      }
+    },
+    {
+      "id": "l15-b2",
+      "type": "morphology",
+      "title": "Recognize the perfect endings",
+      "learnerCopy": {
+        "en": "A common perfect active family is -i, -isti, -it, -imus, -istis, -erunt. But the stem often changes, so recognition must combine ending and lemma: resurrexit belongs to resurgo; ceciderunt belongs to cado.",
+        "fr": "Une famille fréquente de terminaisons du parfait actif est -i, -isti, -it, -imus, -istis, -erunt. Mais le radical change souvent : resurrexit appartient à resurgo ; ceciderunt à cado."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Reconnaître les terminaisons du parfait"
+        }
+      }
+    },
+    {
+      "id": "l15-b3",
+      "type": "authentic-example",
+      "title": "resurrexit / ascendit / sedet",
+      "sourceId": "mr1962-credo-resurrexit-l15",
+      "learnerCopy": {
+        "en": "The Creed puts two completed actions beside a present state: resurrexit, ascendit, then sedet. Tense contrast helps the reader see the sequence rather than merely decode endings.",
+        "fr": "Le Credo place deux actions accomplies à côté d'un état présent : resurrexit, ascendit, puis sedet. Le contraste des temps aide à voir la séquence, au-delà des seules terminaisons."
+      },
+      "referenceIds": [
+        "mr1962-credo-resurrexit-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "resurrexit / ascendit / sedet"
+        }
+      }
+    },
+    {
+      "id": "l15-b4",
+      "type": "authentic-example",
+      "title": "Surrexit, non est hic",
+      "sourceId": "vulg-mk16-6-l15",
+      "learnerCopy": {
+        "en": "surgo and resurgo are distinct lemmas. Surrexit means 'he rose'; resurrexit means 'he rose again'. Do not collapse them because their perfect forms look related.",
+        "fr": "surgo et resurgo sont deux lemmes distincts. Surrexit signifie « il se leva » ; resurrexit « il ressuscita / se releva de nouveau ». Il ne faut pas les confondre."
+      },
+      "referenceIds": [
+        "vulg-mk16-6-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Surrexit, non est hic"
+        }
+      }
+    },
+    {
+      "id": "l15-b5",
+      "type": "pronoun",
+      "title": "Pronouns inside completed actions",
+      "sourceId": "vulg-mt28-9-l15",
+      "learnerCopy": {
+        "en": "ejus is genitive singular of is/ea/id; eum is accusative masculine singular. The perfect verbs tell what happened; the pronouns tell whose feet and whom they adored.",
+        "fr": "ejus est le génitif singulier de is/ea/id ; eum l'accusatif masculin singulier. Les verbes au parfait disent ce qui s'est passé ; les pronoms indiquent à qui appartiennent les pieds et qui fut adoré."
+      },
+      "referenceIds": [
+        "vulg-mt28-9-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les pronoms dans les actions achevées"
+        }
+      }
+    },
+    {
+      "id": "l15-b6",
+      "type": "stage-checkpoint",
+      "title": "Stage 3: from tense drills to narrative",
+      "learnerCopy": {
+        "en": "The Stage 3 gate asks you to read short Psalm/Gospel narrative clauses by combining tense, case, pronoun and connector recognition. The milestone is not full translation without support; it is reliable structural reading of authentic narrative.",
+        "fr": "Le contrôle de l'étape 3 demande de lire de courtes propositions narratives de psaume ou d'Évangile en combinant temps, cas, pronoms et connecteurs. L'objectif n'est pas encore une traduction totalement autonome, mais une lecture structurelle fiable du récit authentique."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Étape 3 : des exercices de temps au récit"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l15-p1",
+      "sourceId": "mr1962-credo-resurrexit-l15",
+      "sourceLatin": "Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris.",
+      "instructionalDisplay": "Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris.",
+      "translation": {
+        "en": "And He rose again the third day according to the Scriptures. And He ascended into heaven: He sitteth at the right hand of the Father.",
+        "fr": "Et il ressuscita le troisième jour, conformément aux Écritures. Et il monta au ciel : il siège à la droite du Père."
+      },
+      "targetLemmas": [
+        "et",
+        "resurgo",
+        "dies",
+        "secundum",
+        "ascendo",
+        "in",
+        "caelum",
+        "sedeo",
+        "ad",
+        "pater"
+      ],
+      "supportLemmas": [
+        "tertius",
+        "scriptura",
+        "dextera"
+      ]
+    },
+    {
+      "id": "l15-p2",
+      "sourceId": "vulg-mk16-6-l15",
+      "sourceLatin": "Surrexit, non est hic: ecce locus ubi posuerunt eum.",
+      "instructionalDisplay": "Surrexit, non est hic: ecce locus ubi posuerunt eum.",
+      "translation": {
+        "en": "He is risen; He is not here: behold the place where they laid Him.",
+        "fr": "Il est ressuscité ; il n'est pas ici : voici le lieu où ils l'ont déposé."
+      },
+      "targetLemmas": [
+        "surgo",
+        "non",
+        "sum",
+        "ecce",
+        "locus",
+        "pono",
+        "is/ea/id"
+      ],
+      "supportLemmas": [
+        "hic-locative",
+        "ubi"
+      ]
+    },
+    {
+      "id": "l15-p3",
+      "sourceId": "vulg-lk24-2-l15",
+      "sourceLatin": "Et invenerunt lapidem revolutum a monumento.",
+      "instructionalDisplay": "Et invenerunt lapidem revolutum a monumento.",
+      "translation": {
+        "en": "And they found the stone rolled back from the tomb.",
+        "fr": "Et elles trouvèrent la pierre roulée loin du tombeau."
+      },
+      "targetLemmas": [
+        "et",
+        "invenio",
+        "a/ab"
+      ],
+      "supportLemmas": [
+        "lapis",
+        "revolvo",
+        "monumentum"
+      ]
+    },
+    {
+      "id": "l15-p4",
+      "sourceId": "mr1962-credo-descendit-l15",
+      "sourceLatin": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "instructionalDisplay": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
+      "translation": {
+        "en": "Who for us men and for our salvation came down from heaven.",
+        "fr": "Qui, pour nous les hommes et pour notre salut, descendit des cieux."
+      },
+      "targetLemmas": [
+        "propter",
+        "nos",
+        "homo",
+        "et",
+        "noster",
+        "salus",
+        "descendo",
+        "de",
+        "caelum"
+      ],
+      "supportLemmas": [
+        "qui/quae/quod"
+      ]
+    },
+    {
+      "id": "l15-p5",
+      "sourceId": "vulg-mt28-9-l15",
+      "sourceLatin": "Et accesserunt, et tenuerunt pedes ejus, et adoraverunt eum.",
+      "instructionalDisplay": "Et accesserunt, et tenuerunt pedes ejus, et adoraverunt eum.",
+      "translation": {
+        "en": "And they came up, and took hold of His feet, and adored Him.",
+        "fr": "Elles s'approchèrent, saisirent ses pieds et l'adorèrent."
+      },
+      "targetLemmas": [
+        "et",
+        "accedo",
+        "is/ea/id",
+        "adoro"
+      ],
+      "supportLemmas": [
+        "teneo",
+        "pes"
+      ]
+    },
+    {
+      "id": "l15-p6",
+      "sourceId": "vulg-mt17-6-l15",
+      "sourceLatin": "Ceciderunt in faciem suam, et timuerunt valde.",
+      "instructionalDisplay": "Ceciderunt in faciem suam, et timuerunt valde.",
+      "translation": {
+        "en": "They fell upon their face, and were very much afraid.",
+        "fr": "Ils tombèrent face contre terre et eurent une grande crainte."
+      },
+      "targetLemmas": [
+        "cado",
+        "in",
+        "facies",
+        "suus",
+        "et",
+        "timeo"
+      ],
+      "supportLemmas": [
+        "valde"
+      ]
+    },
+    {
+      "id": "l15-p7",
+      "sourceId": "mr1962-gratias-agamus-l15",
+      "sourceLatin": "Gratias agamus Domino Deo nostro.",
+      "instructionalDisplay": "Gratias agamus Domino Deo nostro.",
+      "translation": {
+        "en": "Let us give thanks to the Lord our God.",
+        "fr": "Rendons grâce au Seigneur notre Dieu."
+      },
+      "targetLemmas": [
+        "gratia",
+        "ago",
+        "Dominus",
+        "Deus",
+        "noster"
+      ],
+      "supportLemmas": []
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l15-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What tense is resurrexit?",
+      "stimulus": "resurrexit",
+      "options": [
+        "perfect",
+        "imperfect",
+        "future",
+        "present passive"
+      ],
+      "expectedAnswer": "perfect",
+      "acceptedVariants": [
+        "perfect"
+      ],
+      "hint": "It presents a completed Creed event.",
+      "explanation": "resurrexit is perfect active of resurgo.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-resurrexit-l15",
+      "skills": [
+        "tense:perfect",
+        "vocabulary:resurgo"
+      ],
+      "referenceIds": [
+        "mr1962-credo-resurrexit-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel temps est resurrexit ?",
+          "hint": "Il présente un événement achevé du Credo.",
+          "explanation": "resurrexit est le parfait actif de resurgo.",
+          "options": [
+            "parfait",
+            "imparfait",
+            "futur",
+            "présent passif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which verb remains present in the Credo sequence?",
+      "stimulus": "resurrexit ... ascendit ... sedet",
+      "options": [
+        "sedet",
+        "resurrexit",
+        "ascendit",
+        "all three are perfect"
+      ],
+      "expectedAnswer": "sedet",
+      "acceptedVariants": [
+        "sedet"
+      ],
+      "hint": "Two are completed events; one is a current state.",
+      "explanation": "sedet is present while resurrexit and ascendit are perfect.",
+      "difficulty": 2,
+      "sourceId": "mr1962-credo-resurrexit-l15",
+      "skills": [
+        "tense:contrast",
+        "vocabulary:sedeo"
+      ],
+      "referenceIds": [
+        "mr1962-credo-resurrexit-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel verbe reste au présent dans la séquence du Credo ?",
+          "hint": "Deux formes sont des événements achevés ; l’une exprime un état actuel.",
+          "explanation": "sedet est au présent, tandis que resurrexit et ascendit sont au parfait.",
+          "options": [
+            "sedet",
+            "resurrexit",
+            "ascendit",
+            "les trois sont au parfait"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which lemma lies behind Surrexit?",
+      "stimulus": "Surrexit",
+      "options": [
+        "surgo",
+        "resurgo",
+        "sedeo",
+        "ascendo"
+      ],
+      "expectedAnswer": "surgo",
+      "acceptedVariants": [
+        "surgo"
+      ],
+      "hint": "Do not confuse surgo with resurgo.",
+      "explanation": "Surrexit is perfect of surgo.",
+      "difficulty": 1,
+      "sourceId": "vulg-mk16-6-l15",
+      "skills": [
+        "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "vulg-mk16-6-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière Surrexit ?",
+          "hint": "Ne confondez pas surgo et resurgo.",
+          "explanation": "Surrexit est le parfait de surgo.",
+          "options": [
+            "surgo",
+            "resurgo",
+            "sedeo",
+            "ascendo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which lemma lies behind resurrexit?",
+      "stimulus": "resurrexit",
+      "options": [
+        "resurgo",
+        "surgo",
+        "ascendo",
+        "cado"
+      ],
+      "expectedAnswer": "resurgo",
+      "acceptedVariants": [
+        "resurgo"
+      ],
+      "hint": "The re- prefix matters.",
+      "explanation": "resurrexit belongs to resurgo.",
+      "difficulty": 1,
+      "sourceId": "mr1962-credo-resurrexit-l15",
+      "skills": [
+        "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "mr1962-credo-resurrexit-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel lemme se trouve derrière resurrexit ?",
+          "hint": "Le préfixe re- compte.",
+          "explanation": "resurrexit appartient à resurgo.",
+          "options": [
+            "resurgo",
+            "surgo",
+            "ascendo",
+            "cado"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "What person/number is invenerunt?",
+      "stimulus": "invenerunt",
+      "options": [
+        "third-person plural",
+        "first-person plural",
+        "third-person singular",
+        "second-person plural"
+      ],
+      "expectedAnswer": "third-person plural",
+      "acceptedVariants": [
+        "third-person plural",
+        "3rd person plural"
+      ],
+      "hint": "The -erunt ending is a strong perfect clue.",
+      "explanation": "invenerunt means 'they found'.",
+      "difficulty": 1,
+      "sourceId": "vulg-lk24-2-l15",
+      "skills": [
+        "tense:perfect",
+        "person:number"
+      ],
+      "referenceIds": [
+        "vulg-lk24-2-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quelle personne et à quel nombre est invenerunt ?",
+          "hint": "La terminaison -erunt est un indice fort du parfait.",
+          "explanation": "invenerunt signifie « ils trouvèrent / ils ont trouvé ».",
+          "options": [
+            "troisième personne du pluriel",
+            "première personne du pluriel",
+            "troisième personne du singulier",
+            "deuxième personne du pluriel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e6",
+      "exerciseType": "multiple_choice",
+      "prompt": "What pronoun family does ejus belong to?",
+      "stimulus": "ejus",
+      "options": [
+        "is/ea/id",
+        "ego",
+        "nos",
+        "se"
+      ],
+      "expectedAnswer": "is/ea/id",
+      "acceptedVariants": [
+        "is/ea/id"
+      ],
+      "hint": "Recall the pronoun spiral.",
+      "explanation": "ejus is genitive singular of is/ea/id.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt28-9-l15",
+      "skills": [
+        "pronoun:is-ea-id",
+        "case:genitive"
+      ],
+      "referenceIds": [
+        "vulg-mt28-9-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quelle famille pronominale ejus appartient-il ?",
+          "hint": "Rappelez-vous la progression en spirale des pronoms.",
+          "explanation": "ejus est le génitif singulier de is/ea/id.",
+          "options": [
+            "is/ea/id",
+            "ego",
+            "nos",
+            "se"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is eum in adoraverunt eum?",
+      "stimulus": "eum",
+      "options": [
+        "accusative",
+        "genitive",
+        "dative",
+        "ablative"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "It is the object of adoraverunt.",
+      "explanation": "eum is accusative masculine singular.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt28-9-l15",
+      "skills": [
+        "pronoun:is-ea-id",
+        "case:accusative"
+      ],
+      "referenceIds": [
+        "vulg-mt28-9-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est eum dans adoraverunt eum ?",
+          "hint": "C’est le complément d’objet de adoraverunt.",
+          "explanation": "eum est à l’accusatif masculin singulier.",
+          "options": [
+            "accusatif",
+            "génitif",
+            "datif",
+            "ablatif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which perfect form comes from cado?",
+      "stimulus": "Ceciderunt",
+      "options": [
+        "Ceciderunt",
+        "accesserunt",
+        "invenerunt",
+        "descendit"
+      ],
+      "expectedAnswer": "Ceciderunt",
+      "acceptedVariants": [
+        "Ceciderunt",
+        "ceciderunt"
+      ],
+      "hint": "The perfect stem changes strongly.",
+      "explanation": "ceciderunt is perfect plural of cado.",
+      "difficulty": 1,
+      "sourceId": "vulg-mt17-6-l15",
+      "skills": [
+        "vocabulary:cado",
+        "tense:perfect"
+      ],
+      "referenceIds": [
+        "vulg-mt17-6-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme au parfait vient de cado ?",
+          "hint": "Le radical du parfait change fortement.",
+          "explanation": "ceciderunt est le parfait pluriel de cado.",
+          "options": [
+            "Ceciderunt",
+            "accesserunt",
+            "invenerunt",
+            "descendit"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e9",
+      "exerciseType": "matching",
+      "prompt": "Match Lesson 15 verb to meaning.",
+      "stimulus": [
+        "ascendo",
+        "descendo",
+        "accedo",
+        "invenio"
+      ],
+      "expectedAnswer": {
+        "ascendo": "ascend / go up",
+        "descendo": "descend / come down",
+        "accedo": "approach / come near",
+        "invenio": "find"
+      },
+      "acceptedVariants": [],
+      "hint": "All are Stage 3 action verbs.",
+      "explanation": "This checks lexical retrieval.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l15"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le verbe de la leçon 15 à son sens.",
+          "hint": "Tous sont des verbes d’action de l’étape 3.",
+          "explanation": "Ceci vérifie la récupération lexicale.",
+          "matches": {
+            "ascendo": "monter",
+            "descendo": "descendre",
+            "accedo": "s’approcher",
+            "invenio": "trouver"
+          }
+        }
+      }
+    },
+    {
+      "id": "l15-e10",
+      "exerciseType": "matching",
+      "prompt": "Match tense to narrative value.",
+      "stimulus": [
+        "imperfect",
+        "future",
+        "perfect"
+      ],
+      "expectedAnswer": {
+        "imperfect": "ongoing/background past",
+        "future": "not yet completed / forthcoming",
+        "perfect": "completed event"
+      },
+      "acceptedVariants": [],
+      "hint": "Compare Lessons 11, 13 and 15.",
+      "explanation": "Stage 3 is a tense system, not three isolated chapters.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "tense:cumulative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le temps à sa valeur narrative.",
+          "hint": "Comparez les leçons 11, 13 et 15.",
+          "explanation": "L’étape 3 forme un système des temps, et non trois chapitres isolés.",
+          "matches": {
+            "imperfect": "passé en cours / arrière-plan",
+            "future": "non encore accompli / à venir",
+            "perfect": "événement achevé"
+          },
+          "matchKeys": {
+            "imperfect": "imparfait",
+            "future": "futur",
+            "perfect": "parfait"
+          }
+        }
+      }
+    },
+    {
+      "id": "l15-e11",
+      "exerciseType": "token_select",
+      "prompt": "Select the completed-action verbs.",
+      "stimulus": "Et accesserunt, et tenuerunt pedes ejus, et adoraverunt eum.",
+      "expectedAnswer": [
+        "accesserunt",
+        "tenuerunt",
+        "adoraverunt"
+      ],
+      "acceptedVariants": [
+        [
+          "accesserunt",
+          "tenuerunt",
+          "adoraverunt"
+        ]
+      ],
+      "hint": "All three advance the narrative.",
+      "explanation": "The clause is a chain of perfect actions.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt28-9-l15",
+      "skills": [
+        "reading:narrative"
+      ],
+      "referenceIds": [
+        "vulg-mt28-9-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez les verbes d’action achevée.",
+          "hint": "Les trois font avancer le récit.",
+          "explanation": "La proposition est une chaîne d’actions au parfait."
+        }
+      }
+    },
+    {
+      "id": "l15-e12",
+      "exerciseType": "multiple_choice",
+      "prompt": "What case is faciem in in faciem suam?",
+      "stimulus": "in faciem suam",
+      "options": [
+        "accusative",
+        "ablative",
+        "dative",
+        "genitive"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "Here in expresses motion/result toward a position.",
+      "explanation": "faciem is accusative after directional in.",
+      "difficulty": 2,
+      "sourceId": "vulg-mt17-6-l15",
+      "skills": [
+        "case:accusative",
+        "preposition:in"
+      ],
+      "referenceIds": [
+        "vulg-mt17-6-l15",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est faciem dans in faciem suam ?",
+          "hint": "Ici in exprime un mouvement ou un résultat vers une position.",
+          "explanation": "faciem est à l’accusatif après in directionnel.",
+          "options": [
+            "accusatif",
+            "ablatif",
+            "datif",
+            "génitif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e13",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is the Stage 3 milestone?",
+      "stimulus": null,
+      "options": [
+        "Short Psalm/Gospel narrative clauses.",
+        "unseen Canon periods",
+        "pronunciation only",
+        "all pronouns completed"
+      ],
+      "expectedAnswer": "Short Psalm/Gospel narrative clauses.",
+      "acceptedVariants": [
+        "Short Psalm/Gospel narrative clauses."
+      ],
+      "hint": "This is the frozen Lesson 15 target.",
+      "explanation": "Stage 3 ends at short narrative-clause reading.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le jalon de l’étape 3 ?",
+          "hint": "C’est l’objectif figé de la leçon 15.",
+          "explanation": "L’étape 3 s’achève sur la lecture de courtes propositions narratives.",
+          "options": [
+            "Courtes propositions narratives de Psaume ou d’Évangile.",
+            "périodes inconnues du Canon",
+            "prononciation uniquement",
+            "tous les pronoms maîtrisés"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l15-e14",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which lesson intentionally continues the pronoun spiral here?",
+      "stimulus": null,
+      "options": [
+        "Lesson 15 through ejus/eum",
+        "Lesson 15 introduces no pronouns",
+        "only Lesson 10 ever uses pronouns",
+        "pronouns resume at Lesson 31"
+      ],
+      "expectedAnswer": "Lesson 15 through ejus/eum",
+      "acceptedVariants": [
+        "Lesson 15 through ejus/eum"
+      ],
+      "hint": "The curriculum requires repeated pronoun retrieval.",
+      "explanation": "Lesson 15 reuses third-person pronouns inside narrative.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "curriculum:pronoun-spiral"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle leçon poursuit volontairement ici la progression en spirale des pronoms ?",
+          "hint": "Le programme impose une récupération répétée des pronoms.",
+          "explanation": "La leçon 15 réemploie les pronoms de troisième personne à l’intérieur du récit.",
+          "options": [
+            "la leçon 15 avec ejus/eum",
+            "la leçon 15 n’introduit aucun pronom",
+            "seule la leçon 10 emploie des pronoms",
+            "les pronoms reprennent à la leçon 31"
+          ]
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Recognize perfect active as completed event.",
+    "Distinguish surgo/resurgo and strong perfect stems.",
+    "Read short Creed/Gospel narrative sequences.",
+    "Continue the pronoun spiral through ejus/eum.",
+    "Pass the Stage 3 Psalm/Gospel narrative checkpoint."
+  ],
+  "checkpoint": {
+    "id": "stage3-checkpoint",
+    "stage": 3,
+    "scopeLessons": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "progressionGate": "Short Psalm/Gospel narrative clauses.",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 11,
+      "autoGradedExerciseIds": [
+        "l15-e1",
+        "l15-e2",
+        "l15-e3",
+        "l15-e4",
+        "l15-e5",
+        "l15-e6",
+        "l15-e7",
+        "l15-e8",
+        "l15-e9",
+        "l15-e10",
+        "l15-e11",
+        "l15-e12",
+        "l15-e13",
+        "l15-e14"
+      ]
+    },
+    "mustKnow": [
+      "imperfect background past",
+      "imperative/vocative commands",
+      "future forms/time words",
+      "fourth/fifth declension recognition",
+      "perfect completed action",
+      "pronoun resolution in narrative"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "resurgo",
+      "ascendo",
+      "ago",
+      "sedeo",
+      "invenio",
+      "surgo",
+      "descendo",
+      "accedo",
+      "cado"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 7,
+    "exerciseCount": 14,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Resurrexit",
+      "grammarFocus": "Parfait actif",
+      "readingOutcome": "Lire les actions passées achevées dans le Credo et le récit évangélique.",
+      "objectives": [
+        "Reconnaître le parfait actif comme temps d’un événement achevé.",
+        "Distinguer surgo/resurgo et les radicaux forts du parfait.",
+        "Lire de courtes séquences narratives du Credo et de l’Évangile.",
+        "Poursuivre la progression en spirale des pronoms avec ejus/eum.",
+        "Franchir le jalon narratif Psaume/Évangile de l’étape 3."
+      ]
+    }
+  }
+}

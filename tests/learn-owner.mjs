@@ -23,7 +23,7 @@ assert.deepEqual(
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.mass","learn.catechism","learn.catholic_life","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
+  ["learn.catechism.daily","learn.latin","learn.mass","learn.catechism","learn.catholic_life","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.serve_mass.responses","learn.scapular","today.gospel"],
   "Formation rename changed the canonical Learn launcher IDs",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
@@ -39,6 +39,9 @@ const appEntry=readFileSync("src/app/browser-entry.js","utf8");
 const host=readFileSync("src/app/host-adapter.js","utf8");
 
 assert.match(owner,/AO_LEARN_APP_V1/);
+assert.match(owner,/installLatinCourseModule/,"Latin course is not installed by the Formation owner");
+assert.match(owner,/ensureLatinCourseRegistry/,"Latin course registry is not composed into Formation");
+assert.match(presentation,/id:"learn\.latin"/,"Latin course launcher is missing from Formation");
 assert.match(owner,/node\.setAttribute\("aria-label","Formation"\)/,"Formation owner lost its visible/ARIA label");
 assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint"\]\)/,"hidden Saint of the Day compatibility alias was removed");
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");

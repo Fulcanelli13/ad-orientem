@@ -1,0 +1,1069 @@
+{
+  "version": "latin-course-lesson-11-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 11,
+  "stage": {
+    "number": 3,
+    "title": "Actions and Time"
+  },
+  "title": "Sicut erat in principio",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "sentence",
+  "grammarFocus": "Imperfect tense",
+  "readingOutcome": "Recognize ongoing/background past action and narrative adverbs.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Frozen Lesson 11 vocabulary only; later time words appearing in the doxology remain declared support.",
+    "authenticTextPolicy": "Imperfect is anchored in authentic doxology, Last Gospel and Passion clauses.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "laetifico",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "gladden / give joy",
+          "fr": "réjouir"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "eruo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "rescue / deliver",
+          "fr": "arracher / délivrer"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "spero",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "hope",
+          "fr": "espérer"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "introeo",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "enter / go in",
+          "fr": "entrer"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "quoque",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "also / too",
+          "fr": "aussi"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "enim",
+        "partOfSpeech": "conjunction",
+        "gloss": {
+          "en": "for / indeed",
+          "fr": "car / en effet"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "ergo",
+        "partOfSpeech": "conjunction/adverb",
+        "gloss": {
+          "en": "therefore",
+          "fr": "donc"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "autem",
+        "partOfSpeech": "conjunction/adverb",
+        "gloss": {
+          "en": "but / however / moreover",
+          "fr": "mais / cependant"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "tunc",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "then",
+          "fr": "alors"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "ibi",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "there",
+          "fr": "là"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "adhuc",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "still / yet",
+          "fr": "encore"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "iam",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "now / already",
+          "fr": "déjà / maintenant"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "statim",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "immediately",
+          "fr": "aussitôt"
+        },
+        "frozenLesson": 11
+      },
+      {
+        "lemma": "simul",
+        "partOfSpeech": "adverb",
+        "gloss": {
+          "en": "together / at the same time",
+          "fr": "ensemble / en même temps"
+        },
+        "frozenLesson": 11
+      }
+    ],
+    "recycled": [
+      "sicut",
+      "et",
+      "saeculum",
+      "in",
+      "principium",
+      "verbum",
+      "apud",
+      "Deus",
+      "vita",
+      "lux",
+      "homo",
+      "sto",
+      "iuxta",
+      "mater",
+      "is/ea/id",
+      "sum"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "nunc",
+      "forms": [
+        "nunc"
+      ],
+      "gloss": {
+        "en": "now",
+        "fr": "maintenant"
+      },
+      "trackedLesson": 12,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "semper",
+      "forms": [
+        "semper"
+      ],
+      "gloss": {
+        "en": "always",
+        "fr": "toujours"
+      },
+      "trackedLesson": 13,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Amen",
+      "forms": [
+        "Amen"
+      ],
+      "gloss": {
+        "en": "Amen",
+        "fr": "Amen"
+      },
+      "trackedLesson": null,
+      "status": "formula-excluded"
+    },
+    {
+      "lemma": "ipse",
+      "forms": [
+        "ipso"
+      ],
+      "gloss": {
+        "en": "himself / itself",
+        "fr": "lui-même / même"
+      },
+      "trackedLesson": 18,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "crux",
+      "forms": [
+        "crucem"
+      ],
+      "gloss": {
+        "en": "cross",
+        "fr": "croix"
+      },
+      "trackedLesson": 39,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesu"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "doxology-sicut-erat-l11",
+      "sourceType": "primary-liturgical",
+      "work": "Traditional Roman doxology",
+      "section": "Gloria Patri — conclusion",
+      "sourceLatin": "Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen.",
+      "provenanceNote": "erat provides the principal imperfect anchor; later nunc/semper remain support until their frozen lessons."
+    },
+    {
+      "id": "mr1962-last-gospel-erat-verbum-l11",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Last Gospel",
+      "sourceLatin": "In principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.",
+      "provenanceNote": "Repeated erat makes imperfect background description explicit in an authentic sentence.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-last-gospel-in-ipso-vita-l11",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Last Gospel",
+      "sourceLatin": "In ipso vita erat, et vita erat lux hominum.",
+      "provenanceNote": "Authentic Last Gospel clause contrasting repeated imperfect erat with known nominal vocabulary.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    },
+    {
+      "id": "mr1962-good-friday-stabant-l11",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Feria VI in Parasceve — Passio secundum Ioannem",
+      "sourceLatin": "Stabant autem juxta crucem Jesu mater ejus.",
+      "provenanceNote": "stabant supplies a regular imperfect form; autem is new Lesson 11 connective vocabulary.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain active; tense work does not replace case retrieval.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "imperfectFramework": {
+    "sum": [
+      "eram",
+      "eras",
+      "erat",
+      "eramus",
+      "eratis",
+      "erant"
+    ],
+    "regularRecognition": [
+      "-bam / -bas / -bat / -bamus / -batis / -bant",
+      "third/fourth-conjugation forms often show -ebam / -iebam patterns"
+    ],
+    "readingValue": "ongoing, repeated or background past action/state",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "learningBlocks": [
+    {
+      "id": "l11-b1",
+      "type": "concept",
+      "title": "The imperfect gives background",
+      "learnerCopy": {
+        "en": "The imperfect presents an action or state as ongoing, repeated or background in the past. It is the tense of 'was', 'was doing', 'used to do' and similar narrative setting.",
+        "fr": "L'imparfait présente une action ou un état comme continu, répété ou en arrière-plan dans le passé. C'est le temps de « était », « faisait », « avait l'habitude de » et de la mise en scène narrative."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’imparfait fournit l’arrière-plan"
+        }
+      }
+    },
+    {
+      "id": "l11-b2",
+      "type": "verb-system",
+      "title": "erat is your first anchor",
+      "learnerCopy": {
+        "en": "The imperfect of sum is eram, eras, erat, eramus, eratis, erant. In Sicut erat in principio and the Last Gospel, erat is background description: 'was'.",
+        "fr": "L'imparfait de sum est eram, eras, erat, eramus, eratis, erant. Dans Sicut erat in principio et le dernier Évangile, erat décrit l'arrière-plan : « était »."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "erat est votre premier repère"
+        }
+      }
+    },
+    {
+      "id": "l11-b3",
+      "type": "morphology",
+      "title": "Recognize the -ba- family",
+      "learnerCopy": {
+        "en": "Regular imperfects are highly visible: -bam, -bas, -bat, -bamus, -batis, -bant, with predictable variations such as -ebam and -iebam. Read the tense signal before translating the entire clause.",
+        "fr": "Les imparfaits réguliers sont très visibles : -bam, -bas, -bat, -bamus, -batis, -bant, avec des variantes prévisibles comme -ebam et -iebam. Repérez d'abord le signal temporel."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Reconnaître la famille en -ba-"
+        }
+      }
+    },
+    {
+      "id": "l11-b4",
+      "type": "authentic-example",
+      "title": "In principio erat Verbum",
+      "sourceId": "mr1962-last-gospel-erat-verbum-l11",
+      "learnerCopy": {
+        "en": "Three occurrences of erat describe a state rather than a completed event. This is exactly the narrative function the imperfect is meant to signal.",
+        "fr": "Trois occurrences de erat décrivent un état plutôt qu'un événement achevé. C'est précisément la fonction narrative signalée par l'imparfait."
+      },
+      "referenceIds": [
+        "mr1962-last-gospel-erat-verbum-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "In principio erat Verbum"
+        }
+      }
+    },
+    {
+      "id": "l11-b5",
+      "type": "authentic-example",
+      "title": "Stabant autem",
+      "sourceId": "mr1962-good-friday-stabant-l11",
+      "learnerCopy": {
+        "en": "stabant is the imperfect of sto: 'they were standing'. autem connects the scene. The verb supplies background while the later narrative can move on to completed events.",
+        "fr": "stabant est l'imparfait de sto : « ils se tenaient debout ». autem relie la scène. Le verbe pose l'arrière-plan avant les événements achevés."
+      },
+      "referenceIds": [
+        "mr1962-good-friday-stabant-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Stabant autem"
+        }
+      }
+    },
+    {
+      "id": "l11-b6",
+      "type": "time-words",
+      "title": "Narrative adverbs orient the reader",
+      "learnerCopy": {
+        "en": "tunc, ibi, adhuc, iam, statim and simul tell you when or how events relate. Treat them as navigation words: then, there, still, already/now, immediately, together.",
+        "fr": "tunc, ibi, adhuc, iam, statim et simul orientent le récit : alors, là, encore, déjà/maintenant, aussitôt, ensemble."
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les adverbes narratifs orientent le lecteur"
+        }
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l11-p1",
+      "sourceId": "doxology-sicut-erat-l11",
+      "sourceLatin": "Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen.",
+      "instructionalDisplay": "Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen.",
+      "translation": {
+        "en": "As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+        "fr": "Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Amen."
+      },
+      "targetLemmas": [
+        "sicut",
+        "sum",
+        "in",
+        "principium",
+        "et",
+        "saeculum"
+      ],
+      "supportLemmas": [
+        "nunc",
+        "semper",
+        "Amen"
+      ]
+    },
+    {
+      "id": "l11-p2",
+      "sourceId": "mr1962-last-gospel-erat-verbum-l11",
+      "sourceLatin": "In principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.",
+      "instructionalDisplay": "In principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.",
+      "translation": {
+        "en": "In the beginning was the Word, and the Word was with God, and the Word was God.",
+        "fr": "Au commencement était le Verbe, et le Verbe était auprès de Dieu, et le Verbe était Dieu."
+      },
+      "targetLemmas": [
+        "in",
+        "principium",
+        "sum",
+        "verbum",
+        "et",
+        "apud",
+        "Deus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l11-p3",
+      "sourceId": "mr1962-last-gospel-in-ipso-vita-l11",
+      "sourceLatin": "In ipso vita erat, et vita erat lux hominum.",
+      "instructionalDisplay": "In ipso vita erat, et vita erat lux hominum.",
+      "translation": {
+        "en": "In Him was life, and the life was the light of men.",
+        "fr": "En lui était la vie, et la vie était la lumière des hommes."
+      },
+      "targetLemmas": [
+        "in",
+        "vita",
+        "sum",
+        "et",
+        "lux",
+        "homo"
+      ],
+      "supportLemmas": [
+        "ipse"
+      ]
+    },
+    {
+      "id": "l11-p4",
+      "sourceId": "mr1962-good-friday-stabant-l11",
+      "sourceLatin": "Stabant autem juxta crucem Jesu mater ejus.",
+      "instructionalDisplay": "Stabant autem juxta crucem Jesu mater ejus.",
+      "translation": {
+        "en": "Now there stood by the cross of Jesus His mother.",
+        "fr": "Près de la croix de Jésus se tenait sa mère."
+      },
+      "targetLemmas": [
+        "sto",
+        "autem",
+        "iuxta",
+        "mater",
+        "is/ea/id"
+      ],
+      "supportLemmas": [
+        "crux",
+        "Iesus"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l11-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "What tense is erat?",
+      "stimulus": "erat",
+      "options": [
+        "imperfect",
+        "present",
+        "future",
+        "perfect"
+      ],
+      "expectedAnswer": "imperfect",
+      "acceptedVariants": [
+        "imperfect"
+      ],
+      "hint": "It is the past of sum used for background.",
+      "explanation": "erat is third-person singular imperfect of sum.",
+      "difficulty": 1,
+      "sourceId": "doxology-sicut-erat-l11",
+      "skills": [
+        "tense:imperfect"
+      ],
+      "referenceIds": [
+        "doxology-sicut-erat-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel temps est erat ?",
+          "hint": "C’est une forme passée de sum employée pour l’arrière-plan.",
+          "explanation": "erat est la troisième personne du singulier de l’imparfait de sum.",
+          "options": [
+            "imparfait",
+            "présent",
+            "futur",
+            "parfait"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l11-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does the imperfect usually contribute to a narrative?",
+      "stimulus": null,
+      "options": [
+        "ongoing/background past",
+        "completed single event only",
+        "future intention",
+        "direct command"
+      ],
+      "expectedAnswer": "ongoing/background past",
+      "acceptedVariants": [
+        "ongoing/background past"
+      ],
+      "hint": "Think 'was doing' or 'used to'.",
+      "explanation": "The imperfect frames ongoing, repeated or background past action/state.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "tense:imperfect",
+        "narrative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fournit généralement l’imparfait dans un récit ?",
+          "hint": "Pensez à « était en train de » ou « avait l’habitude de ».",
+          "explanation": "L’imparfait présente une action ou un état passé en cours, répété ou d’arrière-plan.",
+          "options": [
+            "passé en cours / arrière-plan",
+            "uniquement un événement ponctuel achevé",
+            "intention future",
+            "ordre direct"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l11-e3",
+      "exerciseType": "token_select",
+      "prompt": "Select every imperfect form of sum.",
+      "stimulus": "In principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.",
+      "expectedAnswer": [
+        "erat",
+        "erat",
+        "erat"
+      ],
+      "acceptedVariants": [
+        [
+          "erat",
+          "erat",
+          "erat"
+        ]
+      ],
+      "hint": "The same form occurs three times.",
+      "explanation": "All three erat forms are imperfect.",
+      "difficulty": 1,
+      "sourceId": "mr1962-last-gospel-erat-verbum-l11",
+      "skills": [
+        "tense:imperfect",
+        "verb:sum"
+      ],
+      "referenceIds": [
+        "mr1962-last-gospel-erat-verbum-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Sélectionnez toutes les formes de sum à l’imparfait.",
+          "hint": "La même forme apparaît trois fois.",
+          "explanation": "Les trois occurrences de erat sont à l’imparfait."
+        }
+      }
+    },
+    {
+      "id": "l11-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "What does stabant mean in context?",
+      "stimulus": "Stabant autem juxta crucem Jesu mater ejus.",
+      "options": [
+        "they were standing",
+        "they will stand",
+        "stand!",
+        "they have stood"
+      ],
+      "expectedAnswer": "they were standing",
+      "acceptedVariants": [
+        "they were standing"
+      ],
+      "hint": "The -bant pattern marks imperfect plural.",
+      "explanation": "stabant is third-person plural imperfect of sto.",
+      "difficulty": 2,
+      "sourceId": "mr1962-good-friday-stabant-l11",
+      "skills": [
+        "tense:imperfect",
+        "verb:sto"
+      ],
+      "referenceIds": [
+        "mr1962-good-friday-stabant-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie stabant dans le contexte ?",
+          "hint": "Le schéma -bant marque l’imparfait pluriel.",
+          "explanation": "stabant est la troisième personne du pluriel de l’imparfait de sto.",
+          "options": [
+            "ils se tenaient debout",
+            "ils se tiendront debout",
+            "tenez-vous debout !",
+            "ils se sont tenus debout"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l11-e5",
+      "exerciseType": "matching",
+      "prompt": "Match the narrative adverb to its meaning.",
+      "stimulus": [
+        "tunc",
+        "ibi",
+        "adhuc",
+        "statim"
+      ],
+      "expectedAnswer": {
+        "tunc": "then",
+        "ibi": "there",
+        "adhuc": "still / yet",
+        "statim": "immediately"
+      },
+      "acceptedVariants": [],
+      "hint": "These orient time and place in narrative.",
+      "explanation": "Narrative adverbs help segment Gospel clauses.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l11"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez l’adverbe narratif à son sens.",
+          "hint": "Ces mots orientent le temps et le lieu dans le récit.",
+          "explanation": "Les adverbes narratifs aident à segmenter les propositions de l’Évangile.",
+          "matches": {
+            "tunc": "alors",
+            "ibi": "là",
+            "adhuc": "encore / toujours",
+            "statim": "aussitôt"
+          }
+        }
+      }
+    },
+    {
+      "id": "l11-e6",
+      "exerciseType": "matching",
+      "prompt": "Match the connector/adverb to its meaning.",
+      "stimulus": [
+        "quoque",
+        "enim",
+        "ergo",
+        "autem"
+      ],
+      "expectedAnswer": {
+        "quoque": "also / too",
+        "enim": "for / indeed",
+        "ergo": "therefore",
+        "autem": "but / however"
+      },
+      "acceptedVariants": [],
+      "hint": "These are structural words rather than content nouns.",
+      "explanation": "Connectors reveal clause relationships.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l11"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le connecteur ou l’adverbe à son sens.",
+          "hint": "Ce sont des mots structurels plutôt que des noms de contenu.",
+          "explanation": "Les connecteurs révèlent les relations entre les propositions.",
+          "matches": {
+            "quoque": "aussi",
+            "enim": "car / en effet",
+            "ergo": "donc",
+            "autem": "mais / cependant"
+          }
+        }
+      }
+    },
+    {
+      "id": "l11-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form is first-person singular imperfect of sum?",
+      "stimulus": null,
+      "options": [
+        "eram",
+        "erat",
+        "erant",
+        "sum"
+      ],
+      "expectedAnswer": "eram",
+      "acceptedVariants": [
+        "eram"
+      ],
+      "hint": "The paradigm begins eram, eras, erat.",
+      "explanation": "eram means 'I was'.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "verb:sum",
+        "tense:imperfect"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle forme est la première personne du singulier de l’imparfait de sum ?",
+          "hint": "Le paradigme commence par eram, eras, erat.",
+          "explanation": "eram signifie « j’étais ».",
+          "options": [
+            "eram",
+            "erat",
+            "erant",
+            "sum"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l11-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which new Lesson 11 verb means 'hope'?",
+      "stimulus": null,
+      "options": [
+        "spero",
+        "eruo",
+        "introeo",
+        "laetifico"
+      ],
+      "expectedAnswer": "spero",
+      "acceptedVariants": [
+        "spero"
+      ],
+      "hint": "It gives English 'sper-' words only indirectly.",
+      "explanation": "spero means hope.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:spero"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel nouveau verbe de la leçon 11 signifie « espérer » ?",
+          "hint": "Il est à l’origine, indirectement, de mots français en « espér- ».",
+          "explanation": "spero signifie « espérer ».",
+          "options": [
+            "spero",
+            "eruo",
+            "introeo",
+            "laetifico"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l11-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which word means 'together / at the same time'?",
+      "stimulus": null,
+      "options": [
+        "simul",
+        "iam",
+        "ibi",
+        "tunc"
+      ],
+      "expectedAnswer": "simul",
+      "acceptedVariants": [
+        "simul"
+      ],
+      "hint": "Think simultaneous.",
+      "explanation": "simul means together / at the same time.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:simul"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel mot signifie « ensemble / en même temps » ?",
+          "hint": "Pensez à la simultanéité.",
+          "explanation": "simul signifie « ensemble / en même temps ».",
+          "options": [
+            "simul",
+            "iam",
+            "ibi",
+            "tunc"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l11-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin adverb meaning 'already / now'.",
+      "stimulus": null,
+      "expectedAnswer": "iam",
+      "acceptedVariants": [
+        "iam",
+        "Iam"
+      ],
+      "hint": "It is a short narrative time word.",
+      "explanation": "iam means already / now.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:iam"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez l’adverbe latin signifiant « déjà / maintenant ».",
+          "hint": "C’est un petit mot temporel fréquent dans le récit.",
+          "explanation": "iam signifie « déjà / maintenant »."
+        }
+      }
+    }
+  ],
+  "objectives": [
+    "Recognize the imperfect as ongoing/background past.",
+    "Read erat and regular -ba- imperfect patterns.",
+    "Learn the fourteen frozen Lesson 11 lemmas.",
+    "Use narrative adverbs/connectors to orient a liturgical Gospel clause."
+  ],
+  "checkpoint": {
+    "id": "l11-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l11-e1",
+        "l11-e2",
+        "l11-e3",
+        "l11-e4",
+        "l11-e5",
+        "l11-e6",
+        "l11-e7",
+        "l11-e8",
+        "l11-e9",
+        "l11-e10"
+      ]
+    },
+    "mustKnow": [
+      "imperfect background value",
+      "erat paradigm anchor",
+      "regular -ba- recognition",
+      "narrative adverbs"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "laetifico",
+      "eruo",
+      "spero",
+      "introeo",
+      "quoque",
+      "enim",
+      "ergo",
+      "autem",
+      "tunc",
+      "ibi",
+      "adhuc",
+      "iam",
+      "statim",
+      "simul"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 4,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ],
+  "localization": {
+    "fr": {
+      "title": "Sicut erat in principio",
+      "grammarFocus": "Imparfait",
+      "readingOutcome": "Reconnaître l’action passée en cours ou d’arrière-plan ainsi que les adverbes narratifs.",
+      "objectives": [
+        "Reconnaître l’imparfait comme temps d’une action passée en cours ou d’arrière-plan.",
+        "Lire erat et les schémas réguliers de l’imparfait en -ba-.",
+        "Apprendre les quatorze lemmes figés de la leçon 11.",
+        "Utiliser les adverbes et connecteurs narratifs pour s’orienter dans une proposition évangélique liturgique."
+      ]
+    }
+  }
+}
