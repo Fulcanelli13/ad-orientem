@@ -123,6 +123,32 @@ assert.equal(mapped.schedules.length, 1);
 assert.equal(mapped.schedules[0].payload.sections[0].role, "sunday");
 assert.equal(auditVenue(mapped.venue).length, 0);
 
+const noLocation = structuredClone(mapped.venue);
+noLocation.venue_id = "ao-test-no-location";
+noLocation.geo = { lat: null, lng: null };
+noLocation.address = {
+  line1: null,
+  line2: null,
+  postal_code: null,
+  city: null,
+  region: null,
+  country_code: "FR",
+  country: "France",
+  formatted: null,
+};
+assert.ok(auditVenue(noLocation).some(item => item.code === "MISSING_LOCATION"));
+
+const nullGeoFixture = {
+  ...sspxFixture,
+  crmId: "OPE-009997",
+  slug: "no-geo-chapel",
+  lat: null,
+  lng: null,
+};
+const nullGeoMapped = mapSspxPlace(nullGeoFixture);
+assert.equal(nullGeoMapped.venue.geo.lat, null);
+assert.equal(nullGeoMapped.venue.geo.lng, null);
+
 const friendFixture = {
   ...sspxFixture,
   crmId: "OPE-009998",
