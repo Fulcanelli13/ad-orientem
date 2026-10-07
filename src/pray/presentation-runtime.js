@@ -222,7 +222,10 @@ function open(id,opts={}){
   navStack=[];
   if(id==='pray.hub')view='home';
   else if(id==='pray.angelus'||id==='pray.angelus_regina')view='angelus';
-  else if(id==='pray.rosary')view='rosary';
+  else if(id==='pray.rosary'){
+    view='home';navStack=[];
+    return launchRosaryPlayer({view:'home',navStack:[],prayerReturnView:null,prayerId:null});
+  }
   else if(id==='pray.confession')view='confession';
   else if(id==='pray.benediction')view='benediction';
   else if(id==='pray.adoration')view='adoration';
@@ -451,7 +454,20 @@ function restoreRosaryLaunchPrefs(raw,attempt=0){
  return prefs
 }
 function renderRosary(){
- const rs=window.AO_ROSARY_V381?.state?.()||{};return `${head(L('Holy Rosary','Saint Rosaire'),L('One engine · four presentation choices','Un seul moteur · quatre choix de présentation'))}<main class="aoP435930Body"><section class="aoP435930Hero"><small>${esc(L('ROSARY','ROSAIRE'))}</small><h2>${esc(S.rosary.form==='devotional'?L('Devotional Rosary','Rosaire dévotionnel'):L('Standard Rosary','Rosaire standard'))}</h2><p>${esc(S.rosary.form==='devotional'?L('Versicles · five decades · Salve · Sub tuum · Loreto · intentions','Versets · cinq dizaines · Salve · Sub tuum · Lorette · intentions'):L('Creed · introductory beads · five decades','Credo · grains d’introduction · cinq dizaines'))}</p></section><section class="aoP435930Choice"><h3>${esc(L('Form','Forme'))}</h3>${nav('',[['standard','Standard','Standard'],['devotional','Devotional','Dévotionnel']],S.rosary.form)}</section><section class="aoP435930Choice"><h3>${esc(L('Depth','Profondeur'))}</h3>${nav('',[['simple','Simple','Simple'],['guided','Guided','Guidé']],S.rosary.mode)}<p>${esc(S.rosary.mode==='simple'?L('Mystery, prayers and bead progress. Per-bead Scripture and commentary are hidden.','Mystère, prières et progression des grains. L’Écriture par grain et le commentaire sont masqués.'):L('Principal Scripture, locked cues, sourced commentary and deliberate silence remain available.','Écriture principale, repères verrouillés, commentaire sourcé et silence délibéré restent disponibles.'))}</p></section><section class="aoP435930Choice"><h3>${esc(L('Recitation','Récitation'))}</h3>${nav('',[['individual','Individual','Individuel'],['group','Group','Groupe']],S.rosary.recitation)}</section>${rs.set?callout(`<b>${esc(L('Resume preserved','Reprise conservée'))}</b> · ${esc(String(rs.set))} · ${esc(L('step','étape'))} ${Number(rs.step||0)+1}`,'good'):''}<button type="button" class="aoP435930Primary" data-p435930-launch-rosary>${esc(rs.set?L('Continue Rosary','Continuer le Rosaire'):L('Choose mysteries and begin','Choisir les mystères et commencer'))}</button><p class="aoP435930Fine">${esc(L('Standard and Devotional are distinct forms of the same Rosary module. Group mode highlights the parts spoken together.','Les formes Standard et Dévotionnelle appartiennent au même module du Rosaire. Le mode Groupe met en évidence les parties récitées ensemble.'))}</p></main>`;
+ const rs=window.AO_ROSARY_V381?.state?.()||{};
+ return `${head(L('Holy Rosary','Saint Rosaire'))}<main class="aoP435930Body aoP435930RosaryFallback"><button type="button" class="aoP435930Primary" data-p435930-launch-rosary>${esc(rs.set?L('Continue Rosary','Continuer le Rosaire'):L('Begin Rosary','Commencer le Rosaire'))}</button></main>`;
+}
+function launchRosaryPlayer(resume=captureResume()){
+ const prefs=syncRosaryPrefs({...S.rosary});
+ externalResume=resume;rosaryDonorReturnSnapshot=resume;lastRosaryFxMystery='';
+ close({silent:true});
+ const opened=window.AOTraditionalPrayerBook?.openModule?.('rosary',{returnContext:PRAY_CTX});
+ if(opened===false){
+   reopenResume(resume);view='rosary';render();return false;
+ }
+ storeRosaryDonorReturn(resume);
+ restoreRosaryLaunchPrefs(prefs);
+ return true;
 }
 let lastRosaryRitualKey='',lastRosaryFxMystery='';
 function rosaryLiveInfo(){
@@ -593,7 +609,9 @@ function normalizeRosaryExactStructure(shell){
   }
   legacyGrid.remove();
  }
- shell?.classList?.add('aoRosaryRitualGrid','aoRosaryRitualCenter');
+ shell?.classList?.remove('aoRosaryRitualGrid');
+ shell?.classList?.add('aoRosaryRitualCenter','aoRosarySingleColumn');
+ if(shell?.dataset)shell.dataset.aoRosaryLayout='single-column';
  return shell;
 }
 function ownRosaryDonorRoots(active){
@@ -637,22 +655,72 @@ function decorateRosaryExact(r){
  shell.dataset.aoRosaryBead=String(Number(info.step?.bead||0));
  shell.dataset.aoRosaryCue=info.step?.cue?'true':'false';
  shell.dataset.aoRosaryFinalCross=info.step?.finalCross?'true':'false';
- ensureRosaryDonorProgress(r,info);
+ r.querySelectorAll('.rosary-decade-bar-v15[data-ao-exact-donor-progress]').forEach(node=>node.remove());
  ensureRosaryDonorRecitation(r);
- ensureRosaryDonorOverview(r,info);
+ r.querySelectorAll('[data-r23-overview-open],#r23-overview-sheet').forEach(node=>node.remove());
  rosaryDonorArt(r,info);
  rosaryDonorMysteryFx(r,info);
  lastRosaryRitualKey=st.key;
  return true;
 }
+function rosarySetHeading(set){
+ const labels={
+  joyful:L('Joyful Mysteries','Mystères joyeux'),
+  sorrowful:L('Sorrowful Mysteries','Mystères douloureux'),
+  glorious:L('Glorious Mysteries','Mystères glorieux'),
+  luminous:L('Luminous Mysteries','Mystères lumineux')
+ };
+ return labels[String(set||'')]||'';
+}
+function declutterRosaryDonor(r){
+ const info=rosaryLiveInfo(),setHeading=rosarySetHeading(info?.set);
+ const headerTitle=r.querySelector('.lab-view-head h1');
+ if(headerTitle&&setHeading)headerTitle.textContent=setHeading;
+ const mysteryKicker=r.querySelector('.lab-contemplation .kicker,.r23-contemplation .kicker');
+ if(mysteryKicker){mysteryKicker.hidden=true;mysteryKicker.setAttribute('aria-hidden','true');mysteryKicker.dataset.aoRosaryRedundant='true';}
+ const prayerCount=r.querySelector('.lab-prayer-count');
+ if(prayerCount){prayerCount.hidden=true;prayerCount.setAttribute('aria-hidden','true');prayerCount.dataset.aoRosaryRedundant='true';}
+ const prayerRubric=r.querySelector('.lab-prayer-sheet>.rubric');
+ if(prayerRubric&&info?.step?.phase!=='opening'){
+   prayerRubric.hidden=true;prayerRubric.setAttribute('aria-hidden','true');prayerRubric.dataset.aoRosaryRedundant='true';
+ }
+ const beadStage=r.querySelector('.lab-bead-stage');
+ if(beadStage&&info?.step?.kind==='mystery'){
+   beadStage.hidden=true;beadStage.setAttribute('aria-hidden','true');beadStage.dataset.aoRosaryDeferred='true';
+ }
+ r.querySelectorAll('.lab-option-bar .lab-step-count').forEach(node=>{
+   node.hidden=true;node.setAttribute('aria-hidden','true');node.dataset.aoRosaryRedundant='true';
+ });
+ r.querySelectorAll('button').forEach(button=>{
+   const label=String(button.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
+   if(['guide','preferences','préférences'].includes(label)){
+     button.hidden=true;button.setAttribute('aria-hidden','true');button.dataset.aoRosaryRedundant='true';
+   }
+ });
+ r.querySelectorAll('[data-r23-overview-open],#r23-overview-sheet').forEach(node=>node.remove());
+ r.querySelectorAll('.lab-view-head .aoModuleHome,.lab-view-head .lab-lang').forEach(node=>{
+   node.hidden=true;node.setAttribute('aria-hidden','true');node.dataset.aoRosaryRedundant='true';
+ });
+ r.querySelectorAll('.lab-prayer-flip[data-pb-flip]').forEach(host=>{
+   if(host.dataset.aoRosaryLanguageDefault==='vernacular')return;
+   const latin=host.querySelector('[data-pb-latin]'),vern=host.querySelector('[data-pb-vern]');
+   if(!latin||!vern)return;
+   host.dataset.aoRosaryLanguageDefault='vernacular';
+   host.dataset.face='vernacular';
+   latin.hidden=true;vern.hidden=false;
+   host.setAttribute('aria-pressed','false');
+   host.setAttribute('aria-label',L('Show Latin','Afficher le latin'));
+ });
+}
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  r.querySelectorAll('.flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]').forEach(n=>{n.hidden=true;n.setAttribute('aria-hidden','true')});
  r.classList.toggle('aoP435930RosarySimple',S.rosary.mode==='simple');r.classList.toggle('aoP435930RosaryGuided',S.rosary.mode==='guided');
- let bar=r.querySelector('.aoP435930RosaryBar');if(!bar){bar=document.createElement('div');bar.className='aoP435930RosaryBar';const h=r.querySelector('.lab-view-head,.pbTop,.pbHead,header');h?.insertAdjacentElement('afterend',bar)}
- if(bar)bar.innerHTML=`<button type="button" data-p435930-rosary-depth="simple" class="${S.rosary.mode==='simple'?'active':''}">${esc(L('Simple','Simple'))}</button><button type="button" data-p435930-rosary-depth="guided" class="${S.rosary.mode==='guided'?'active':''}">${esc(L('Guided','Guidé'))}</button>`;
+ let bar=r.querySelector('.aoP435930RosaryBar');if(!bar){bar=document.createElement('div');bar.className='aoP435930RosaryBar';bar.setAttribute('aria-label',L('Rosary reading depth','Profondeur du Rosaire'));const h=r.querySelector('.lab-view-head,.pbTop,.pbHead,header');h?.insertAdjacentElement('afterend',bar)}
+ if(bar)bar.innerHTML=`<button type="button" data-p435930-rosary-depth="simple" class="${S.rosary.mode==='simple'?'active':''}" aria-pressed="${S.rosary.mode==='simple'}">${esc(L('Simple','Simple'))}</button><button type="button" data-p435930-rosary-depth="guided" class="${S.rosary.mode==='guided'?'active':''}" aria-pressed="${S.rosary.mode==='guided'}">${esc(L('Guided','Guidé'))}</button>`;
  if(S.rosary.mode==='guided'&&!r.querySelector('.aoP435930SilencePrompt')){const target=r.querySelector('.lab-contemplation');if(target){const n=document.createElement('div');n.className='aoP435930SilencePrompt';n.textContent=L('Silence · remain with the mystery before moving on.','Silence · demeurez avec le mystère avant de poursuivre.');target.appendChild(n)}}
  decorateRosaryExact(r);
+ declutterRosaryDonor(r);
 }
 function renderConfession(){
  const stages=[L('Doctrine','Doctrine'),L('Prepare','Préparer'),L('Examination','Examen'),L('In Confessional','Au confessionnal'),L('After','Après')];
@@ -923,7 +991,7 @@ function renderFortyHours(){
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
 function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;ADOR.timer=setInterval(()=>{if(Date.now()>=ADOR.timerEnd){stopTimer();render()}else render()},30000);render()}
-function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.rosary'?'rosary':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';if(view==='stations')lastStationsFxStep=null;render()}
+function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';if(view==='stations')lastStationsFxStep=null;render()}
 function openPrayerOnly(id){prayerReturnView=view;prayerId=id;view='prayerOnly';render()}
 function onClick(e){
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
@@ -932,7 +1000,7 @@ function onClick(e){
  if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
  if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){S.angelusMode=seg;save()}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;save()}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
- if(b.matches('[data-p435930-launch-rosary]')){lastRosaryFxMystery='';const prefs=syncRosaryPrefs({...S.rosary}),resume=captureResume();externalResume=resume;rosaryDonorReturnSnapshot=resume;close({silent:true});window.AOTraditionalPrayerBook?.openModule?.('rosary',{returnContext:PRAY_CTX});storeRosaryDonorReturn(resume);restoreRosaryLaunchPrefs(prefs);return}
+ if(b.matches('[data-p435930-launch-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930ConfStage!=null){CONF.stage=+b.dataset.p435930ConfStage;return render()}
  if(b.matches('[data-p435930-conf-prev]')){CONF.stage=Math.max(0,CONF.stage-1);return render()}
  if(b.matches('[data-p435930-conf-next]')){if(CONF.stage>=4){CONF={stage:0,marked:new Set(),since:'',graveReviewed:false,contrition:false};view='home';return render()}CONF.stage++;return render()}
@@ -955,7 +1023,7 @@ function onClick(e){
  if(b.matches('[data-p435930-holy-next]')){if(ADOR.holyStep>=holySteps().length-1){ADOR.holyStep=0;ADOR.mode='home'}else ADOR.holyStep++;return render()}
  if(b.matches('[data-p435930-four-prev]')){ADOR.fourStep=Math.max(0,ADOR.fourStep-1);return render()}
  if(b.matches('[data-p435930-four-next]')){if(ADOR.fourStep>=fourSteps().length-1){ADOR.fourStep=0;ADOR.mode='open'}else ADOR.fourStep++;return render()}
- if(b.matches('[data-p435930-go-rosary]')){pushView();view='rosary';return render()}
+ if(b.matches('[data-p435930-go-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930OpenPrayer)return openPrayerOnly(b.dataset.p435930OpenPrayer);
  if(b.matches('[data-p435930-prayer-return]')){view=prayerReturnView||'library';return render()}
  if(b.dataset.p435930StationStep!=null){STATIONS.step=Math.max(0,Math.min(13,+b.dataset.p435930StationStep));return render()}
@@ -981,9 +1049,9 @@ function onClick(e){
  if(b.matches('[data-p435930-forty-next]')){FORTY.step=Math.min(FORTY_STAGES.length-1,FORTY.step+1);return render()}
  if(b.matches('[data-p435930-forty-done]')){FORTY.step=0;popView('home');return render()}
  if(b.matches('[data-p435930-forty-ben]')){pushView();view='benediction';BEN.step=0;return render()}
- if(b.dataset.p435930FortyOwn){pushView();const id=b.dataset.p435930FortyOwn;if(id==='pray.adoration'){view='adoration';ADOR.mode=b.dataset.p435930FortyAdor||'open'}else if(id==='pray.litany_saints'){view='litany';LIT.step=0}else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=b.dataset.p435930FortyPsalm!=null?+b.dataset.p435930FortyPsalm:0}else if(id==='pray.rosary')view='rosary';return render()}
+ if(b.dataset.p435930FortyOwn){const id=b.dataset.p435930FortyOwn;if(id==='pray.rosary'){launchRosaryPlayer(captureResume());return}pushView();if(id==='pray.adoration'){view='adoration';ADOR.mode=b.dataset.p435930FortyAdor||'open'}else if(id==='pray.litany_saints'){view='litany';LIT.step=0}else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=b.dataset.p435930FortyPsalm!=null?+b.dataset.p435930FortyPsalm:0};return render()}
  if(b.dataset.p435930Handoff)return handoff(b.dataset.p435930Handoff);
- if(b.dataset.p435930Own){pushView();routeOwn(b.dataset.p435930Own);return}
+ if(b.dataset.p435930Own){if(b.dataset.p435930Own==='pray.rosary'){launchRosaryPlayer(captureResume());return}pushView();routeOwn(b.dataset.p435930Own);return}
  if(b.matches('[data-p435930-ador-mode-direct]')){view='adoration';ADOR.mode=b.dataset.p435930AdorModeDirect;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;return render()}
  if(b.dataset.p435930FfStage!=null){FF.step=Math.max(0,Math.min(FF_STAGES.length-1,+b.dataset.p435930FfStage));return render()}
  if(b.matches('[data-p435930-ff-prev]')){FF.step=Math.max(0,FF.step-1);return render()}
