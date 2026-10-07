@@ -44,6 +44,7 @@ html[data-ao-sacred-art-v1="subtle"] .aoSacredArt,html[data-ao-sacred-art-v1="su
 #${rootId} .aoSetBadge{display:inline-block;padding:3px 7px;border:1px solid var(--border,rgba(255,255,255,.1));border-radius:999px;color:var(--muted,#b8c0c7);font-size:.61rem}#${rootId} .aoSetBadge.active{border-color:var(--liturgical-border,var(--liturgical,#c6a66b));color:var(--liturgical,#c6a66b)}
 #${rootId} .aoSetEmpty{padding:18px 13px;color:var(--muted,#b8c0c7);font-size:.78rem;line-height:1.45}#${rootId} .aoSetAction{min-height:40px;padding:9px 12px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:11px;background:var(--surface-2,#10151a);color:inherit;font:700 .74rem/1.1 var(--font-display,system-ui)}
 #${rootId} .aoSetInlineIcon{display:inline-block;width:1em;height:1em;background:currentColor;vertical-align:-.12em}
+#${rootId} .aoSetSource{padding:12px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09))}#${rootId} .aoSetSource:last-child{border-bottom:0}#${rootId} .aoSetSource summary{cursor:pointer;font-weight:650}#${rootId} .aoSetSource p{margin:8px 0 0;color:var(--muted,#b3bac0);font-size:.72rem;line-height:1.45}#${rootId} .aoSetSourceKey{padding:10px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09));color:var(--muted,#b3bac0);font-size:.74rem}#${rootId} .aoSetSourceKey:last-child{border-bottom:0}
 @media(max-width:430px){#${rootId} .aoSetWrap{padding-left:10px;padding-right:10px}#${rootId} .aoSetRow{padding:11px}#${rootId} .aoSetSegments{max-width:54vw}#${rootId} .aoSetSelect{max-width:52vw}#${rootId} .aoSetRowText b{font-size:.86rem}}
 @media(max-width:350px){#${rootId} .aoSetWrap{padding-left:7px;padding-right:7px}#${rootId} .aoSetRow{grid-template-columns:minmax(0,1fr);gap:8px}#${rootId} .aoSetSegments{max-width:none;justify-content:flex-start}#${rootId} .aoSetSelect{max-width:100%;width:100%}#${rootId} .aoSetSwitch{justify-self:start}}
 `;
@@ -76,7 +77,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         routeRow(L("Local Church & Customs","Église locale & usages"),L("Save the usual practices at a particular church","Enregistrer les usages habituels d’une église"),"/settings/local-customs")+
         routeRow(L("Prayer & Devotions","Prière & dévotions"),L("Choose how the Rosary, Stations and Angelus behave","Choisir le comportement du Rosaire, du Chemin de Croix et de l’Angélus"),"/settings/prayer"))+
       section(L("DATA","DONNÉES"),routeRow(L("Privacy & Data","Confidentialité & données"),L("Clear saved progress or restore defaults","Effacer la progression ou rétablir les réglages"),"/settings/privacy-data"))+
-      section(L("ABOUT","À PROPOS"),routeRow(L("About & Sources","À propos & sources"),L("Where the app’s texts, Scripture and artwork come from","Origine des textes, de l’Écriture et des œuvres"),"/settings/about-sources")),true);
+      section(L("ABOUT","À PROPOS"),row(L("About & Sources","À propos & sources"),L("Where the app’s texts, Scripture and artwork come from","Origine des textes, de l’Écriture et des œuvres"),icon("ao-ui-next"),'data-settings-route="/settings/about-sources" data-settings-sources')),true);
   }
   if(vm.route==="/settings/general"){
     return shell(L("General","Général"),
@@ -177,16 +178,43 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       note(`<strong>${esc(L("Privacy","Confidentialité"))}</strong><br>${esc(L("Selections made during an examination of conscience are temporary and are not stored as a persistent list of sins.","Les sélections faites pendant un examen de conscience sont temporaires et ne sont pas enregistrées comme liste persistante de péchés."))}`));
   }
   if(vm.route==="/settings/about-sources"||vm.route==="about-sources"){
+    const sourceFamilies=fr?[
+      ["Livres liturgiques et base 1962","Missel romain de 1962, Rubriques générales de 1960 et sources normatives applicables."],
+      ["Calendrier et Propre","L’autorité liturgique est distinguée du fournisseur numérique des données."],
+      ["Écriture","Les éditions et la provenance sont indiquées par langue dans le lecteur biblique."],
+      ["Commentaire","Les commentaires patristiques ou traditionnels restent attribués à leurs auteurs et éditions."],
+      ["Doctrine et catéchisme","Les textes doctrinaux gardent leur corpus et leur niveau d’autorité propres."],
+      ["Prières et méthodes dévotionnelles","Les témoins historiques et manuels traditionnels ne sont pas présentés comme loi liturgique."],
+      ["Autorités des programmes","Premier vendredi et premier samedi distinguent l’autorité du programme des sources de leurs composants."],
+      ["Art sacré","Artiste, œuvre, collection et droits sont conservés lorsqu’ils sont connus."]
+    ]:[
+      ["Liturgical books & 1962 basis","The 1962 Roman Missal, 1960 General Rubrics and applicable normative sources control liturgical claims."],
+      ["Calendar & Proper data","Liturgical authority is kept distinct from the digital provider supplying data."],
+      ["Scripture","Edition and provenance are identified by language in the Scripture reader."],
+      ["Commentary","Patristic and traditional commentary remains attributed to its author and edition."],
+      ["Doctrine & Catechism","Doctrinal texts retain their own corpus and authority level."],
+      ["Prayer & devotional methods","Historical witnesses and traditional manuals are not presented as liturgical law."],
+      ["Programme authorities","First Friday and First Saturday keep programme authority distinct from component sources."],
+      ["Sacred art","Artist, work, collection and rights are retained where known."]
+    ];
+    const provenance=fr?
+      ["Source officielle / normative","Source liturgique de 1962","Témoin historique","Méthode dévotionnelle traditionnelle","Guide éditorial Ad Orientem","Traduction / adaptation"]:
+      ["Official / governing source","1962 liturgical source","Historical witness","Traditional devotional source","Ad Orientem editorial guidance","Translation / adaptation"];
+    const sourceDetails=sourceFamilies.map(([title,body])=>`<details class="aoSetSource"><summary>${esc(title)}</summary><p>${esc(body)}</p></details>`).join("");
+    const provenanceRows=provenance.map(value=>`<div class="aoSetSourceKey">${esc(value)}</div>`).join("");
     return shell(L("About & Sources","À propos & sources"),
+      `<div class="aoSetIntro">${esc(L("Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.","Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."))}</div>`+
+      section(L("SOURCES","SOURCES"),sourceDetails)+
+      section(L("PROVENANCE","PROVENANCE"),provenanceRows)+
       section(L("ABOUT","À PROPOS"),
-        row(L("1962 Roman Mass","Messe romaine de 1962"),L("The 1962 Mass remains distinct from local church practices and private prayers.","La Messe de 1962 reste distincte des usages locaux et des prières privées."),icon("ao-ui-sources"))+
-        row(L("Local church practices","Usages de l’église locale"),L("Saved profiles describe what usually happens in a particular place; they do not alter the Mass.","Les profils décrivent ce qui se fait habituellement dans un lieu précis ; ils ne changent pas la Messe."),icon("ao-ui-info"))+
-        row(L("Prayer sources","Sources des prières"),L("Prayer texts keep source information where available.","Les textes de prière conservent leur source lorsqu’elle est disponible."),icon("ao-ui-sources"))+
-        row(L("Scripture editions","Éditions de l’Écriture"),L("English uses the Douay-Rheims tradition; French support includes Crampon 1923 where integrated; Latin liturgical Scripture follows the app’s source corpus.","L’anglais suit Douay-Rheims ; le français comprend Crampon 1923 là où il est intégré."),icon("ao-ui-sources"))+
-        row(L("Artwork sources & rights","Sources & droits des œuvres"),L("Artwork retains provenance and rights information.","Les œuvres conservent leur provenance et leurs droits."),icon("ao-ui-info"))+
-        row(L("Acknowledgements & licences","Remerciements & licences"),L("Third-party texts and artworks retain their individual notices.","Les textes et œuvres tiers conservent leurs notices propres."),icon("ao-ui-info"))+
-        row(L("Version","Version"),"",`<span class="aoSetBadge">${esc(vm.version)}</span>`)+
-        row(L("Privacy","Confidentialité"),L("Settings and progress are stored on this device unless a feature clearly states otherwise.","Les réglages et la progression sont enregistrés sur cet appareil sauf indication claire."),icon("ao-ui-info"))));
+        row(L("1962 Roman Mass","Messe romaine de 1962"),L("The app keeps the 1962 Mass itself separate from local church practices and private prayers.","L’application garde la Messe de 1962 elle-même distincte des usages locaux et des prières privées."),icon("ao-ui-sources"))+
+        row(L("Local church practices","Usages de l’église locale"),L("Saved churches help the app reflect what usually happens in a particular place. They do not change the Mass.","Les églises enregistrées aident l’application à refléter ce qui se fait habituellement dans un lieu précis. Elles ne changent pas la Messe."),icon("ao-ui-info"))+
+        row(L("Prayer sources","Sources des prières"),L("Prayer texts keep their source information where it is available.","Les textes de prière conservent leurs informations de source lorsqu’elles sont disponibles."),icon("ao-ui-sources"))+
+        row(L("Scripture editions","Éditions de l’Écriture"),L("English uses the Douay-Rheims tradition; French support includes Crampon 1923 where integrated; Latin liturgical Scripture follows the app’s source corpus.","L’anglais suit la tradition Douay-Rheims ; le français comprend Crampon 1923 là où il est intégré ; le latin liturgique suit le corpus de sources de l’application."),icon("ao-ui-sources"))+
+        row(L("Artwork sources & rights","Sources & droits des œuvres"),L("Artwork keeps a record of where it came from and how it may be used.","Les œuvres gardent une indication de leur origine et de leurs conditions d’utilisation."),icon("ao-ui-info"))+
+        row(L("Acknowledgements & licences","Remerciements & licences"),L("Third-party texts and artworks retain their individual source/licence notices.","Les textes et œuvres tiers conservent leurs notices de source/licence propres."),icon("ao-ui-info"))+
+        row(L("Version","Version"),"",`<span class="aoSetBadge" data-settings-app-version>${esc(vm.version)}</span>`)+
+        row(L("Privacy","Confidentialité"),L("Your settings and progress are stored on this device unless a feature clearly tells you otherwise.","Vos réglages et votre progression sont enregistrés sur cet appareil sauf indication claire d’une fonctionnalité."),icon("ao-ui-info"))));
   }
   return renderSettingsToString(win,{route:"/settings",live});
 }
