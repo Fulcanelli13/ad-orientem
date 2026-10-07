@@ -15,6 +15,11 @@ import {
 
 assert.equal(LATIN_COURSE_ROUTE_ID,"learn.latin");
 assert.equal(LATIN_COURSE_VERSION,"latin-course-runtime-v2");
+const latinRuntimeSource=readFileSync("src/learn/latin-course-v2.js","utf8");
+assert.match(latinRuntimeSource,/ao-ui-back/,"Latin Back control is not canonical");
+assert.match(latinRuntimeSource,/ao-ui-close/,"Latin Close control is not canonical");
+assert.doesNotMatch(latinRuntimeSource,/>←<\/button>|>×<\/button>/,"Latin shell regained raw Unicode navigation controls");
+assert.match(latinRuntimeSource,/var\(--ao-z-surface,2147481800\)/,"Latin child root is not on the shared elevation vocabulary");
 
 const lesson=n=>JSON.parse(readFileSync(`data/learn/latin-course-lessons/lesson-${String(n).padStart(2,"0")}.v1.json`,"utf8"));
 
