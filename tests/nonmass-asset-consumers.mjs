@@ -32,6 +32,7 @@ assert.deepEqual(AO_LEARN_ROUTE_ASSET_IDS,{
   "learn.rites.baptism":"ao-rich-guides",
   "learn.rites.first_communion":"ao-rich-eucharistic-life",
   "learn.rites.confirmation":"ao-rich-guides",
+  "learn.rites.holy_orders":"ao-rich-guides",
   "learn.rites.matrimony":"ao-rich-guides",
   "learn.serve_mass.responses":"ao-refined-study",
   "learn.scapular":"ao-rich-our-lady-marian-devotions",
