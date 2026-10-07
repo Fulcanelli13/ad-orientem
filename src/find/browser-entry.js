@@ -46,7 +46,7 @@ function installStyle(win){
     ".aoFindSheet header{display:grid;grid-template-columns:1fr 40px;gap:12px}.aoFindSheet h2{margin:4px 0 5px;font-size:24px}.aoFindSheet header p{margin:0;color:#a99e89}.aoFindSheet header button{border:0;background:transparent;color:#eee;font-size:28px}",
     ".aoFindFacts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.aoFindFacts>div{background:#101923;border-radius:12px;padding:12px}.aoFindFacts strong{display:block;margin-top:5px;font-size:13px}",
     ".aoFindSchedules article{border-top:1px solid rgba(217,197,154,.12);padding:10px 0}.aoFindSchedules p{white-space:pre-line;color:#c0b6a3;font-size:13px}",
-    ".aoFindActions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.aoFindActions a{border:1px solid rgba(217,197,154,.2);border-radius:999px;padding:9px 12px;color:#e7d8b8;text-decoration:none;font:600 11px sans-serif}.aoFindSheet footer{color:#8f846e;font-size:11px}",
+    ".aoFindActions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.aoFindActions a{border:1px solid rgba(217,197,154,.2);border-radius:999px;padding:9px 12px;color:#e7d8b8;text-decoration:none;font:600 11px sans-serif}.aoFindSheet footer{color:#8f846e;font-size:11px}.aoFindGeoAttribution{display:block;margin-top:6px;opacity:.82}",
     "@media(min-width:800px){.aoFindSurface{max-width:980px;margin:auto;border-left:1px solid rgba(217,197,154,.08);border-right:1px solid rgba(217,197,154,.08)}.aoFindList{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindSheet{max-width:720px;margin:0 auto}.aoFindSheetBackdrop{justify-content:center}}"
   ].join("");
   win.document.head?.append?.(style);
