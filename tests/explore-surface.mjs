@@ -74,9 +74,9 @@ const projection=projectExploreDataset(dataset);
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:48,
-  traditions:67,
-  pilgrimages:61,
+  shrines:54,
+  traditions:72,
+  pilgrimages:69,
 });
 
 for(const lens of EXPLORE_LENSES){
