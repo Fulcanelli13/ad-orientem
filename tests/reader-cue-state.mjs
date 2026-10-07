@@ -18,6 +18,7 @@ const registries=Object.freeze({
   actions:load("../data/presentation/reader-priest-actions.v1.json"),
 });
 const sung=load("../data/presentation/reader-text-sung.v1.json");
+const gestureMatrix=load("../data/mass/gesture-matrix.v1.json");
 
 const audit=validateReaderCueRegistries(registries,sung);
 assert.deepEqual(
@@ -34,9 +35,10 @@ const prepared={
   session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",provenance:{conditions:[]}}},
   readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"},
 };
-const ctrl=createReaderCueStateController({registries,sungCorpus:sung,prepared});
+const ctrl=createReaderCueStateController({registries,sungCorpus:sung,prepared,gestureMatrix});
 assert.equal(ctrl.supported,true);
 assert.equal(ctrl.unresolvedPostureAnchors.length,5);
+assert.equal(ctrl.audit.gestureAuthority,"GESTURE_MATRIX_SOT");
 
 assert.deepEqual([...sungPresentationBaselineConditions(prepared)],[...V180_ORDINARY_SUNG_PRESENTATION_FLAGS],
   "ordinary Sung presentation baseline drifted from the executable v1.80 donor");
@@ -47,6 +49,9 @@ let state=ctrl.project("AO.SM.C0001");
 assert.equal(state.priestPosition.station,"FOOT_CENTER");
 assert.equal(state.priestVoice.voice ?? state.priestVoice.value,"LOW / QUIET");
 assert.match(state.gesture.action,/Sign of the Cross/i);
+assert.equal(state.gesture.owner,"GESTURE_MATRIX_SOT");
+assert.equal(state.gesture.sourceGestureId,"GM.F.C0001.01");
+assert.equal(state.ownership.gesture,"GESTURE_MATRIX_SOT");
 assert.equal(state.posture?.value,"STAND","v1.80 ordinary Sung opening posture is not visible");
 
 state=ctrl.project("AO.SM.C0041");
@@ -101,7 +106,8 @@ assert.match(state.gesture.action,/Genuflect/i);
 state=ctrl.project("AO.SM.C0096");
 assert.equal(state.gesture,null,"conditional Incarnatus source row was hard-coded universally");
 assert.ok(state.gestureAdvisory);
-assert.equal(state.ownership.gesture,"R17_SOURCE_ADVISORY_FAIL_CLOSED");
+assert.equal(state.ownership.gesture,"GESTURE_MATRIX_SOT_ADVISORY_FAIL_CLOSED");
+assert.equal(state.gestureAdvisory.owner,"GESTURE_MATRIX_SOT_ADVISORY");
 
 state=ctrl.project("AO.SM.C0071");
 assert.equal(state.response.text,"Et cum spíritu tuo.");
@@ -131,7 +137,7 @@ const provenancePrepared={
   }},
   readerPreferences:{mode:"LIVE",postureProfile:"TRADITIONAL_WALSH",gestureProfile:"TRADITIONAL"},
 };
-const provenanceCtrl=createReaderCueStateController({registries,sungCorpus:sung,prepared:provenancePrepared});
+const provenanceCtrl=createReaderCueStateController({registries,sungCorpus:sung,prepared:provenancePrepared,gestureMatrix});
 state=provenanceCtrl.project("AO.SM.C0061");
 assert.equal(state.posture?.value,"STAND","canonical provenance condition did not preserve Gloria standing posture");
 state=provenanceCtrl.project("AO.SM.C0222");
