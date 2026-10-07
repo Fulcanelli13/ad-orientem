@@ -104,7 +104,8 @@ export function scoreNominatimCandidate(venue,candidate){
   const postalBonus=wantedPostals.some(token=>actualPostcode.includes(token))?0.18:0;
   const precision=classifyNominatimPrecision(candidate);
   const precisionBonus={building:0.18,address:0.13,street:0.06,locality:0.01,region:0,unknown:0}[precision]??0;
-  return Math.max(0,Math.min(1,0.53*addressOverlap+0.24*nameOverlap+postalBonus+precisionBonus));
+  const localityAliasBonus=precision==="locality"&&addressLooksLocalityOnly(venue)&&nameOverlap>=0.75?0.30:0;
+  return Math.max(0,Math.min(1,0.53*addressOverlap+0.24*nameOverlap+postalBonus+precisionBonus+localityAliasBonus));
 }
 export function addressLooksLocalityOnly(venue){
   const cleaned=cleanDirectoryAddress(venue?.address?.formatted??venue?.address?.city??"");
