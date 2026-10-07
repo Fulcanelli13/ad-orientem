@@ -1,0 +1,89 @@
+{
+  "schema": "EXPLORE_GEOGRAPHY_SOT_V1",
+  "version": "1.0.0",
+  "frozenAt": "2026-10-07",
+  "purpose": "Shared geography and place identity layer for Directory, Customs Atlas, Shrines/Pilgrimages and Calendar cross-links without collapsing those domains into one database.",
+  "entityOrder": [
+    "geo_area",
+    "place",
+    "directory_place_link",
+    "source_assertion"
+  ],
+  "invariants": [
+    "A geo area is a scope or territory; it is not a venue, shrine, custom, pilgrimage or community.",
+    "A place is a stable physical or named geographic identity; operational Directory venue records remain separately owned by DIRECTORY_SOT_V1.",
+    "Civil, ecclesiastical, cultural and historical area hierarchies must not be treated as interchangeable.",
+    "Containment across hierarchy systems must be explicit rather than inferred from matching names.",
+    "Aliases support discovery only; aliases do not create identity equality by themselves.",
+    "A cultural or historical scope may be non-mappable and still valid for evidence classification.",
+    "Directory venue-to-place links require explicit provenance and may remain REVIEW or UNKNOWN.",
+    "A nearby custom, shrine or traditional community must never be inferred to be associated with another entity solely from geographic proximity.",
+    "Coordinates are locators, not identity keys.",
+    "Stable ids must survive source refreshes and importer changes."
+  ],
+  "enums": {
+    "areaSystem": [
+      "GLOBAL",
+      "CIVIL",
+      "ECCLESIASTICAL",
+      "CULTURAL",
+      "HISTORICAL"
+    ],
+    "areaType": [
+      "world",
+      "country",
+      "admin1",
+      "admin2",
+      "locality",
+      "archdiocese",
+      "diocese",
+      "apostolic_vicariate",
+      "ordinariate",
+      "parish_territory",
+      "cultural_region",
+      "historic_region",
+      "other"
+    ],
+    "placeType": [
+      "church",
+      "chapel",
+      "oratory",
+      "cathedral",
+      "basilica",
+      "shrine",
+      "monastery",
+      "convent",
+      "priory",
+      "cemetery",
+      "pilgrimage_destination",
+      "route_waypoint",
+      "city",
+      "other"
+    ],
+    "linkRelationship": [
+      "LOCATED_AT",
+      "COLOCATED_WITH",
+      "SAME_COMPLEX",
+      "UNCERTAIN"
+    ],
+    "linkConfidence": [
+      "CONFIRMED",
+      "PROBABLE",
+      "REVIEW",
+      "UNKNOWN"
+    ]
+  },
+  "stableIdPatterns": {
+    "geoArea": "geo:<system-or-kind>:<stable-code>",
+    "place": "place:<country-or-scope>:<stable-slug>",
+    "directoryPlaceLink": "link:directory-place:<stable-suffix>"
+  },
+  "releaseGates": {
+    "identity": "Every published area/place must have a stable id and canonical name.",
+    "hierarchy": "Parent relationships must reference explicit geo area ids; no hierarchy may be inferred from display text alone.",
+    "location": "Every mappable place requires usable coordinates or a usable address.",
+    "provenance": "Directory-to-place bridges require source ids.",
+    "separation": "Directory venues remain operational records; places remain shared geographic identities.",
+    "associationSafety": "No cross-domain association may be inferred solely from distance."
+  }
+}
