@@ -39,12 +39,6 @@ const win={
     liturgicalContext(){return {isEastertide:false,isLent:false};},
     staticItems(){return [{id:"rosary",en:"Rosary",fr:"Rosaire"}];},
   },
-  AO_LITURGICAL_YEAR_V384:{
-    eventsFor(key){
-      if(key===today)return [{key:"christ-king",priority:90,title:"Christ the King",actions:[["learn.liturgical_year"]]}];
-      return [];
-    },
-  },
   document:{
     getElementById(id){
       return ["ao-rich-angelus","ao-rich-rosary","ao-refined-calendar-upcoming"].includes(id)?{id}:null;
@@ -62,7 +56,7 @@ assert.equal(model.visible,true);
 assert.equal(model.comingUp.rows.length,3);
 assert.equal(model.comingUp.rows[0].id,"angelus.noon");
 assert.equal(model.comingUp.rows[1].id,"rosary");
-assert.equal(model.comingUp.rows[2].id,"christ-king");
+assert.equal(model.comingUp.rows[2].id,"october");
 assert.equal(model.dailyCatechism.badge,"2/10 completed");
 assert.equal(model.dailyCatechism.meta,"1 due for review");
 
@@ -70,7 +64,7 @@ const html=renderHomeEnrichersToString(model,state,win);
 assert.match(html,new RegExp(`data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}"`));
 assert.match(html,/data-home-cu-route="pray\.angelus_regina"/,"future Angelus item should route through the canonical prayer module");
 assert.match(html,/data-home-cu-static="rosary"/);
-assert.match(html,/data-home-cu-route="learn\.liturgical_year"/);
+assert.match(html,/data-home-cu-route="pray\.rosary"/,"October Rosary context should come from shared Calendar intelligence");
 assert.match(html,/data-home-daily-catechism/);
 assert.match(html,/data-ao-asset-id="ao-rich-rosary"/);
 assert.match(html,/<use href="#ao-rich-angelus"><\/use>/);
@@ -87,6 +81,18 @@ assert.match(sundayHtml,/data-ao-asset-renderer="mask"/,"Sunday Mass did not ren
 assert.match(sundayHtml,/ao-brand-emblem\.png/,"Sunday Mass emblem did not resolve to the frozen navigation PNG");
 assert.doesNotMatch(sundayHtml,/data-ao-icon-missing="true"/,"externalized Sunday Mass artwork still fails text-only");
 assert.doesNotMatch(sundayHtml,/✠/,"Mass emblem regressed to a fake Unicode cross icon");
+
+const firstFridayNow=new Date(2026,9,2,9,0,0);
+const firstFridayState={...state,selectedDate:"2026-10-02"};
+const firstFridayModel=buildHomeEnrichers(firstFridayState,win,{now:firstFridayNow});
+assert.equal(firstFridayModel.comingUp.rows[2].id,"first-friday","Home did not consume shared First Friday recurrence");
+assert.equal(firstFridayModel.comingUp.rows[2].route,"programme.first_friday","Home First Friday still bypasses the canonical PRAY programme");
+
+const firstSaturdayNow=new Date(2026,9,3,9,0,0);
+const firstSaturdayState={...state,selectedDate:"2026-10-03"};
+const firstSaturdayModel=buildHomeEnrichers(firstSaturdayState,win,{now:firstSaturdayNow});
+assert.equal(firstSaturdayModel.comingUp.rows[2].id,"first-saturday","Home did not consume shared First Saturday recurrence");
+assert.equal(firstSaturdayModel.comingUp.rows[2].route,"programme.first_saturday","Home First Saturday still bypasses the canonical PRAY programme");
 assert.match(html,/data-ao-asset-id="ao-ui-next"/);
 assert.doesNotMatch(html,/\\$\\{esc\\(url\\)\\}/,"canonical UI asset URL interpolation leaked into rendered markup");
 assert.match(html,/aoComingUpV4323[^{]*aoDailyCateHome[^{]*\{display:none!important\}/,"retired donor Home cards lost suppression");
