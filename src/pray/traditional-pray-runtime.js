@@ -4,6 +4,7 @@ import {
   MORNING_PRAYER_SEQUENCE_V381,
   EVENING_PRAYER_SEQUENCE_V381,
   HOLY_NAME_LITANY_V381,
+  SACRED_HEART_DEVOTIONS_V382,
   TRADITIONAL_PRAY_SOURCES_V381,
 } from "./traditional-pray-data.js";
 import {
@@ -12,13 +13,14 @@ import {
   resolveCanonicalAssetUrl,
 } from "../assets/asset-registry.js";
 
-const VERSION="38.1-modular-pray-extraction";
+const VERSION="38.2-sacred-heart-convergence";
 const ROUTES=Object.freeze({
   "pray.morning_evening":Object.freeze({id:"pray.morning_evening",type:"module",domain:"pray",category:"daily-prayer",title:"Morning & Evening Prayer"}),
   "pray.sacred_hymns":Object.freeze({id:"pray.sacred_hymns",type:"module",domain:"pray",category:"traditional-devotion",title:"Sacred Hymns & Canticles"}),
   "pray.holy_name_litany":Object.freeze({id:"pray.holy_name_litany",type:"module",domain:"pray",category:"traditional-devotion",title:"Litany of the Holy Name"}),
   "pray.nightly_examen":Object.freeze({id:"pray.nightly_examen",type:"module",domain:"pray",category:"daily-prayer",title:"Nightly Examination"}),
   "pray.meal_prayers":Object.freeze({id:"pray.meal_prayers",type:"module",domain:"pray",category:"daily-prayer",title:"Grace at Meals"}),
+  "pray.sacred_heart":Object.freeze({id:"pray.sacred_heart",type:"module",domain:"pray",category:"sacred-heart",title:"Sacred Heart of Jesus"}),
 });
 
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -68,7 +70,7 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={};
-let S={route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:"en",prayerId:null};
+let S={route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:"en",prayerId:null,sacredHeart:"litany"};
 
 function renderMorningEvening(){
   const rows=S.daypart==="evening"?EVENING_PRAYER_SEQUENCE_V381:MORNING_PRAYER_SEQUENCE_V381;
@@ -93,6 +95,24 @@ function renderNightlyExamen(){
 function renderMealPrayers(){
   return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("The ordinary Catholic table prayers already present in the canonical prayer corpus, surfaced here for daily use.","Les prières catholiques ordinaires des repas déjà présentes dans le corpus canonique, présentées ici pour l’usage quotidien."))}</p>${prayerCard("foundations_grace_before_meals")}${prayerCard("foundations_grace_after_meals")}</main>`;
 }
+function sourcedPrayerCard(item,label){
+  const vern=isFr()?(item?.fr||item?.en||item?.la):(item?.en||item?.fr||item?.la),latin=item?.la||"",both=!!(vern&&latin);
+  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}</article>`;
+}
+function renderSacredHeart(){
+  const d=SACRED_HEART_DEVOTIONS_V382,tab=S.sacredHeart||"litany";
+  let body="";
+  if(tab==="reparation"){
+    body=`${prayerCard("sacred_heart_short_prayer")}${source("Pius XI · Miserentissimus Redemptor · 1928","https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html")}`;
+  }else if(tab==="consecration"){
+    const c=d.humanRaceConsecration;
+    body=`${sourcedPrayerCard(c,L(c.title,c.titleFr))}<p class="aoTP381Intro">${esc(L("This is the traditional Pius XI-era form associated with Christ the King and preserved in pre-conciliar missals. The current Enchiridion prints an abbreviated form; Ad Orientem keeps the historical form here because this is the traditional devotional corpus.","Il s’agit de la forme traditionnelle de l’époque de Pie XI, associée au Christ-Roi et conservée dans les missels préconciliaires. L’Enchiridion actuel imprime une forme abrégée ; Ad Orientem conserve ici la forme historique parce qu’il s’agit du corpus dévotionnel traditionnel."))}</p>${source("Acta Apostolicae Sedis · 1927 · Latin",c.sources.latin)}${source("La Porte Latine · traditional French form",c.sources.french)}`;
+  }else{
+    const l=d.litany;
+    body=`${sourcedPrayerCard(l,L(l.title,l.titleFr))}${source("La Porte Latine · French & Latin traditional form",l.sources.frenchLatin)}`;
+  }
+  return `${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"),L("Litany · reparation · consecration","Litanies · réparation · consécration"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A compact traditional Sacred Heart treasury. The Litany and Christ-the-King consecration are source-locked historical forms; the Act of Reparation reuses the app’s existing Pius XI canonical prayer rather than duplicating it.","Un petit trésor traditionnel du Sacré-Cœur. Les Litanies et la consécration du Christ-Roi sont des formes historiques verrouillées sur leurs sources ; l’Acte de réparation réutilise la prière canonique de Pie XI déjà présente dans l’application au lieu de la dupliquer."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-heart="litany" class="${tab==="litany"?"active":""}">${esc(L("Litany","Litanies"))}</button><button type="button" data-tp381-heart="reparation" class="${tab==="reparation"?"active":""}">${esc(L("Reparation","Réparation"))}</button><button type="button" data-tp381-heart="consecration" class="${tab==="consecration"?"active":""}">${esc(L("Consecration","Consécration"))}</button></div>${body}</main>`;
+}
 function renderPrayer(){
   const p=data().prayers?.[S.prayerId];
   return `${head(prayerTitle(p,S.prayerId),L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body">${prayerCard(S.prayerId)}</main>`;
@@ -101,7 +121,7 @@ function render(){
   const m=mount();if(!m)return false;
   m.dataset.aoPrayView="traditional-pray";
   m.dataset.aoTraditionalPrayRoute=S.route;
-  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():renderMorningEvening();
+  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():renderMorningEvening();
   m.scrollTop=0;
   queueMicrotask(()=>m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());
   return true;
@@ -118,7 +138,7 @@ function back(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-close],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-flip]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-close],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-flip]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-close]"))return BASE_CLOSE();
@@ -126,6 +146,7 @@ function handleClick(e){
   if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";return render()}
   if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=b.dataset.tp381HymnLang==="la"?"la":"en";return render()}
+  if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
   if(b.dataset.tp381Prayer){S.prayerId=b.dataset.tp381Prayer;S.screen="prayer";return render()}
   if(b.dataset.tp381Route){
     if(ROUTES[b.dataset.tp381Route])return open(b.dataset.tp381Route,{trigger:b});
@@ -143,6 +164,7 @@ function injectHome(){
     ["pray.morning_evening",L("Morning & Evening Prayer","Prières du matin & du soir"),L("Historical lay prayer-book sequence","Séquence historique de livre de prières laïc")],
     ["pray.sacred_hymns",L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"),"Te Deum · Veni Creator · Ave Maris Stella"],
     ["pray.holy_name_litany",L("Litany of the Holy Name","Litanies du Saint Nom"),L("Traditional Roman form · available offline","Forme romaine traditionnelle · disponible hors ligne")],
+    ["pray.sacred_heart",L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"),L("Litany · reparation · Christ-the-King consecration","Litanies · réparation · consécration du Christ-Roi")],
     ["pray.meal_prayers",L("Grace at Meals","Prières des repas"),L("Before and after meals","Avant et après les repas")],
   ];
   sec.innerHTML=`<div class="aoP435930ModuleSectionHead"><h3>${esc(L("Daily & traditional prayer","Prière quotidienne & traditionnelle"))}</h3><p>${esc(L("Source-led lay sequences and traditional texts recovered from the approved donor.","Séquences laïques guidées par les sources et textes traditionnels récupérés du donneur approuvé."))}</p></div><div class="aoP435930ModuleGrid">${cards.map(([route,title,desc])=>`<button type="button" class="aoP435930ModuleCard" data-tp381-open="${esc(route)}">${assetMarkup(route)}<small class="aoP435930ModuleKind">${esc(L("TRADITIONAL","TRADITIONNEL"))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(desc)}</span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
@@ -176,7 +198,7 @@ function mountRuntime(){
     open,
     close:BASE_CLOSE,
     state:()=>({...S}),
-    qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",legacyTraditionOwner:false})
+    qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",sacredHeartPolicy:"SOURCE_LOCKED_TRADITIONAL",legacyTraditionOwner:false})
   });
   queueMicrotask(injectHome);
   return window.AO_TRADITIONAL_PRAY_V381;
