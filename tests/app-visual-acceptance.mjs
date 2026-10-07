@@ -768,6 +768,20 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root .v384SectionLabel").count(),1,"v38.4 full traditional-year index is missing");
   assert.equal(await page.locator("#ao-calendar-modular-root .v384Practice").count()>=12,true,"v38.4 traditional-year rows are incomplete");
   await shot("04f-seasonal-year-alias");
+
+  // Exact v38.4 concurrent-practice composition: Christ the King occurs inside October.
+  const christKingSelected=await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.select?.("2026-10-25"));
+  assert.equal(christKingSelected,true,"Calendar could not select Christ the King for v38.4 parity capture");
+  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate==="2026-10-25",null,{timeout:10000});
+  globalThis.AO_CALENDAR_APP_V1?.setView?.("year");
+  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view==="year",null,{timeout:5000});
+  const v384Concurrent=await page.locator("#ao-calendar-modular-root .aoCalV384Companion .v384Rows").first().innerText();
+  assert.match(v384Concurrent,/Kingship of Christ/,"v38.4 selected-date practices lost Christ the King");
+  assert.match(v384Concurrent,/Month of the Holy Rosary/,"v38.4 selected-date practices collapsed the concurrent October Rosary observance");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion .v384Rows").first().locator(".v384Practice").count(),2,
+    "v38.4 selected-date donor composition must expose both concurrent practices");
+  await shot("04f2-calendar-v384-christ-king-october");
+
   await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-panel='discipline']").click();
   assert.equal(await page.locator("#ao-calendar-modular-root .v384EraTabs [data-ao-cal-v384-era]").count(),3,"v38.4 discipline era switch is incomplete");
   assert.match((await page.locator("#ao-calendar-modular-root .aoCalV384Companion").innerText()),/Older Catholic discipline is preserved here as historical knowledge/);
