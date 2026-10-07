@@ -92,7 +92,7 @@ export function createCatholicLifeRuntime(win=globalThis){
     node.setAttribute("role","region");node.setAttribute("aria-label",L(win,"Catholic Life","Vie catholique"));
     node.addEventListener("click",event=>{
       const target=event.target?.closest?.("button,a");if(!target)return;
-      if(target.matches("[data-ao-cl-close]")){event.preventDefault?.();close();return;}
+      if(target.matches("[data-ao-cl-close]")){event.preventDefault?.();close(true);return;}
       if(target.matches("[data-ao-cl-back]")){event.preventDefault?.();back();return;}
       if(target.dataset.aoClCourse){event.preventDefault?.();openCourse(target.dataset.aoClCourse);return;}
       if(target.dataset.aoClStage){event.preventDefault?.();openStage(target.dataset.aoClStage);return;}
@@ -117,7 +117,7 @@ export function createCatholicLifeRuntime(win=globalThis){
   function openCourse(id){if(!CATHOLIC_LIFE_COURSE_MAP[id])return false;state.courseId=id;state.stageId=null;state.view="course";state.reveal=false;render();root()?.scrollTo?.(0,0);return true;}
   function openStage(id){const stage=CATHOLIC_LIFE_STAGE_MAP[id];if(!stage)return false;state.stageId=id;state.courseId=CATHOLIC_LIFE_COURSES.find(c=>c.stages.some(s=>s.id===id))?.id||state.courseId;state.view="stage";state.reveal=false;render();root()?.scrollTo?.(0,0);return true;}
   function back(){if(state.view==="stage"&&state.courseId)return openCourse(state.courseId);if(state.view==="course"){state.view="courses";state.courseId=null;render();return true;}return close();}
-  function close(){const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoCatholicLifeOpen");state.view="courses";state.courseId=null;state.stageId=null;state.reveal=false;return true;}
+  function close(){const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoCatholicLifeOpen");state.view="courses";state.courseId=null;state.stageId=null;state.reveal=false;if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());return true;}
   function status(){return Object.freeze({version:CATHOLIC_LIFE_VERSION,installed:true,open:Boolean(root()),route:CATHOLIC_LIFE_ROUTE,view:state.view,courseId:state.courseId,stageId:state.stageId,courses:CATHOLIC_LIFE_COURSES.length,stages:Object.keys(CATHOLIC_LIFE_STAGE_MAP).length,validation:CATHOLIC_LIFE_VALIDATION});}
   return Object.freeze({version:CATHOLIC_LIFE_VERSION,open,openCourse,openStage,close,back,render,status});
 }
