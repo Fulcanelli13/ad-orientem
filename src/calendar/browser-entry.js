@@ -119,8 +119,8 @@ async function prepareWeek(id,{foreground=false,concurrency=3,skipSeed=false}={}
 async function prepareMonth(monthId,{concurrency=3,token=monthEpoch}={}){
   const key=String(monthId||""),ids=monthGridIds(key);if(ids.length!==42)return [];
   if(monthReady(key)){monthStatus.set(key,{done:42,total:42,errors:ids.filter(x=>weekCache.get(x)?.status==="failed").length});updateMonthStatusDom(key);return ids.map(x=>weekCache.get(x))}
-  const existing=monthLoads.get(key);if(existing)return existing;
-  const status={done:ids.filter(x=>weekCache.has(x)).length,total:42,errors:ids.filter(x=>weekCache.get(x)?.status==="failed").length};monthStatus.set(key,status);updateMonthStatusDom(key);
+  const existing=monthLoads.get(key);if(existing){if(monthStatus.get(key)?.token===token)return existing;await existing;if(token!==monthEpoch)return ids.map(x=>weekCache.get(x))}
+  const status={done:ids.filter(x=>weekCache.has(x)).length,total:42,errors:ids.filter(x=>weekCache.get(x)?.status==="failed").length,token};monthStatus.set(key,status);updateMonthStatusDom(key);
   const missing=ids.filter(x=>!weekCache.has(x));let cursor=0;
   const worker=async()=>{while(cursor<missing.length&&token===monthEpoch){const day=missing[cursor++],r=await resolveOne(day);status.done++;if(r?.status==="failed"||!r?.day)status.errors++;monthStatus.set(key,{...status});hydrateMonthCell(day);updateMonthStatusDom(key)}};
   const p=Promise.all(Array.from({length:Math.min(Math.max(1,concurrency),Math.max(1,missing.length))},worker))
@@ -133,6 +133,7 @@ async function prepareMonth(monthId,{concurrency=3,token=monthEpoch}={}){
 }
 function requestPickerMonth(){
   if(calendarView!=="picker"||!pickerMonthId)return false;
+  if(monthLoads.has(pickerMonthId)&&monthStatus.get(pickerMonthId)?.token===monthEpoch)return true;
   const token=++monthEpoch;void prepareMonth(pickerMonthId,{concurrency:3,token});return true;
 }
 function applyCached(id){
