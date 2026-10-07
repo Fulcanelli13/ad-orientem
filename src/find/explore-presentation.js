@@ -87,6 +87,10 @@ function detailSheet(vm){
   if(arr(item.actions).length){
     html+='<section class="aoFindActions">';
     for(const action of item.actions){
+      if(action?.novena_id){
+        html+='<button type="button" data-explore-open-novena="'+esc(action.novena_id)+'">'+esc(L(vm.language,"Open novena","Ouvrir la neuvaine"))+'</button>';
+        continue;
+      }
       html+='<a href="'+esc(action.url)+'" target="_blank" rel="noopener">'+esc(
         action.label==="Directions"?L(vm.language,"Directions","Itinéraire"):
         action.label==="Destination"?L(vm.language,"Destination","Destination"):

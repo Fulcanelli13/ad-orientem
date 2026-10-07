@@ -16,7 +16,12 @@ const home=readFileSync("src/home/enrichers.js","utf8");
 
 assert.equal(sot.schema,"NOVENA_CONTEXT_SOT_V1");
 assert.equal(sot.status,"ACTIVE_CONTEXT_LAYER");
+assert.equal(sot.version,"1.1.0");
+assert.equal(sot.research_status,"COMPLETE_16_TARGET_CONTEXT_AND_CROSS_DOMAIN_V1");
+assert.equal(sot.bridge_dependency,"NOVENA_CUSTOMS_GEOGRAPHY_BRIDGE_V1@1.1.0");
 assert.equal(sot.coverage.targets,16);
+assert.equal(sot.coverage.cross_domain_evidence,16);
+assert.equal(sot.coverage.cross_domain_unresolved,0);
 for(const key of ["history","guide","practice","current_indulgence","temporal","cross_domain_policy"]){
   assert.equal(sot.coverage[key],16,"context coverage lost: "+key);
 }
@@ -41,7 +46,10 @@ for(const row of sot.novenas){
   assert.equal(row.temporal.home_now_next,"LIVE_VIA_CALENDAR_INTELLIGENCE",row.id+" lost Now/Next integration");
   assert.equal(row.cross_domain.customs_policy,"EVIDENCE_BACKED_BRIDGE_ONLY",row.id+" weakened Customs evidence rule");
   assert.equal(row.cross_domain.geography_policy,"NO_ASSOCIATION_FROM_PROXIMITY",row.id+" weakened Geography association rule");
-  assert.ok(novenaContext(row.id),row.id+" missing runtime context projection");
+  const runtimeContext=novenaContext(row.id);
+  assert.ok(runtimeContext,row.id+" missing runtime context projection");
+  assert.equal(runtimeContext.crossDomain?.researchStatus,"COMPLETE_16_TARGET_CLASSIFICATION",row.id+" runtime cross-domain research is not complete");
+  assert.ok((runtimeContext.crossDomain?.links||[]).length>=1,row.id+" runtime lost its researched cross-domain links");
 }
 
 assert.match(runtime,/Practice & gestures/);
@@ -60,9 +68,17 @@ assert.ok(pentecostComing.some(x=>x.novenaId==="holy_ghost"&&x.status.kind==="up
 
 const customIds=new Set(customs.customs.map(x=>x.custom_id));
 const geoIds=new Set(geography.geoAreas.map(x=>x.geo_area_id));
+assert.equal(bridge.version,"1.1.0");
+assert.equal(bridge.research_status,"COMPLETE_16_TARGET_CROSS_DOMAIN_CLASSIFICATION");
+assert.equal(bridge.research_summary?.target_count,16);
+assert.equal(bridge.research_summary?.targets_with_bridge,16);
+assert.equal(bridge.research_summary?.unresolved_target_count,0);
+assert.deepEqual(bridge.negative_knowledge,[],"Completed Novena bridge regained unresolved targets");
+
 const customsSourceIds=new Set(customSources.sources.map(x=>x.id));
 const bridgeSourceIds=new Set(bridge.sources.map(x=>x.id));
 const shrineIds=new Set(shrines.shrines.map(x=>x.shrine_id));
+const placeIds=new Set(geography.places.map(x=>x.place_id));
 const bridgeNovenaIds=new Set();
 for(const link of bridge.links){
   assert.ok(NOVENA_CORPUS_V4_IDS.includes(link.novena_id),"bridge has unknown novena "+link.novena_id);
@@ -70,7 +86,10 @@ for(const link of bridge.links){
   if(link.custom_id)assert.ok(customIds.has(link.custom_id),"bridge has unknown custom "+link.custom_id);
   if(link.geo_area_id)assert.ok(geoIds.has(link.geo_area_id),"bridge has unknown geography "+link.geo_area_id);
   if(link.shrine_id)assert.ok(shrineIds.has(link.shrine_id),"bridge has unknown shrine "+link.shrine_id);
-  if(link.map_policy==="PLACE"){assert.ok(link.place_id,"PLACE novena bridge lost canonical place");}
+  if(link.map_policy==="PLACE"){
+    assert.ok(link.place_id,"PLACE novena bridge lost canonical place");
+    assert.ok(placeIds.has(link.place_id),"PLACE novena bridge references unknown canonical place "+link.place_id);
+  }
   if(link.map_policy==="PLACE_PENDING"){
     assert.ok(link.place_name_hint,"PLACE_PENDING novena bridge lost its place hint");
     assert.equal(link.place_id,null,"PLACE_PENDING novena bridge must not masquerade as canonical place");
@@ -85,9 +104,43 @@ assert.ok(bridgeNovenaIds.has("holy_souls"),"Holy Souls lost cemetery/customs br
 assert.ok(bridgeNovenaIds.has("st_therese"),"St Therese lost Lisieux geography context");
 assert.ok(bridgeNovenaIds.has("st_joseph"),"St Joseph lost French geography context");
 
-const noBridge=new Set(bridge.negative_knowledge.flatMap(x=>x.novena_ids||[]));
-for(const id of NOVENA_CORPUS_V4_IDS){
-  assert.ok(bridgeNovenaIds.has(id)||noBridge.has(id),id+" has neither evidence-backed bridge nor explicit negative knowledge");
+assert.deepEqual([...bridgeNovenaIds].sort(),[...NOVENA_CORPUS_V4_IDS].sort(),"Novena bridge is not complete 16/16");
+
+const exactChristmas=bridge.links.find(x=>x.novena_id==="christmas");
+assert.equal(exactChristmas.relationship,"EXACT_FORM_FRENCH_ATTESTATION");
+assert.match(exactChristmas.place_name_hint,/Corsica/);
+
+const corpusOrigin=bridge.links.find(x=>x.novena_id==="corpus_christi");
+assert.equal(corpusOrigin.map_policy,"PLACE_PENDING");
+assert.match(corpusOrigin.place_name_hint,/Liège/);
+
+const immaculateLourdes=bridge.links.find(x=>x.novena_id==="immaculate_conception");
+assert.equal(immaculateLourdes.place_id,"place:FR:sanctuaire-notre-dame-de-lourdes");
+assert.equal(immaculateLourdes.shrine_id,"shrine:FR:lourdes-our-lady");
+
+const christKing=bridge.links.find(x=>x.novena_id==="christ_the_king");
+assert.equal(christKing.map_policy,"NOT_MAPPED","French textual Christ-the-King evidence must not invent a geographic pin");
+assert.equal(christKing.geo_area_id,"geo:culture:french-catholic-world");
+
+const stMichael=bridge.links.find(x=>x.novena_id==="st_michael");
+assert.equal(stMichael.map_policy,"PLACE_PENDING");
+assert.match(stMichael.place_name_hint,/Mont-Saint-Michel/);
+
+for(const id of ["holy_ghost","annunciation","assumption","seven_sorrows","perpetual_help","st_anthony_nine_tuesdays","immaculate_heart"]){
+  assert.ok(bridgeNovenaIds.has(id),id+" lost its researched French-world bridge");
 }
 
-console.log("PASS Novena context v1: 16/16 history-guide-practice-indulgence-temporal coverage with evidence-backed Customs/Geography bridges");
+const exploreData=readFileSync("src/find/explore-data-service.js","utf8");
+const exploreProjection=readFileSync("src/find/explore-projection.js","utf8");
+const explorePresentation=readFileSync("src/find/explore-presentation.js","utf8");
+const exploreBrowser=readFileSync("src/find/browser-entry.js","utf8");
+assert.match(exploreData,/novenaBridge/,"Explore no longer loads the Novena bridge");
+assert.match(exploreData,/novenaSot/,"Explore no longer loads Novena identities");
+assert.match(exploreProjection,/projectNovenaContextItems/,"Explore no longer projects Novena context records");
+assert.match(exploreProjection,/Related novena/,"Explore shrine/custom records lost reverse Novena relationships");
+assert.match(explorePresentation,/data-explore-open-novena/,"Explore presentation lost Novena deep link");
+assert.match(exploreBrowser,/AO_PRAY_V435930\?\.open\?\.\("pray\.novenas"/,"Explore browser stopped routing related records into PRAY");
+assert.match(runtime,/data-n1-explore/,"Novena detail lost the reverse Explore link");
+assert.match(runtime,/AO_FIND_APP_V1\?\.open\?\.\(\{lens:'traditions',query:/,"Novena detail no longer prefilters Explore by its own identity");
+
+console.log("PASS Novena context v1: 16/16 history-guide-practice-indulgence-temporal and cross-domain coverage with bidirectional Explore links");

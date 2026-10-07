@@ -22,16 +22,20 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   customSources:moduleUrl("../../data/customs/source-registry.v1.json"),
   shrines:moduleUrl("../../data/shrines/shrines-pilgrimages-seed.v1.json"),
   shrineSources:moduleUrl("../../data/shrines/source-registry.v1.json"),
+  novenaBridge:moduleUrl("../../data/customs/novena-context-links.v1.json"),
+  novenaSot:moduleUrl("../../data/pray/novena-sot.v1.json"),
 });
 
 export async function loadExploreDataset({fetchImpl=fetch}={}){
-  const [directory,geography,customs,customSources,shrines,shrineSources]=await Promise.all([
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customSources,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.shrines,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.shrineSources,{fetchImpl}),
+    fetchJson(EXPLORE_DATA_URLS.novenaBridge,{fetchImpl}),
+    fetchJson(EXPLORE_DATA_URLS.novenaSot,{fetchImpl}),
   ]);
   return Object.freeze({
     directory,
@@ -50,6 +54,12 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
       routes:safeArray(shrines?.routes),
       temporalLinks:safeArray(shrines?.temporalLinks),
       sources:safeArray(shrineSources?.sources),
+    }),
+    novenas:Object.freeze({
+      records:safeArray(novenaSot?.novenas),
+      links:safeArray(novenaBridge?.links),
+      sources:safeArray(novenaBridge?.sources),
+      researchStatus:novenaBridge?.research_status??null,
     }),
   });
 }

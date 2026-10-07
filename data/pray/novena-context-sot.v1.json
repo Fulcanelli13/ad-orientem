@@ -1,6 +1,6 @@
 {
   "schema": "NOVENA_CONTEXT_SOT_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "ACTIVE_CONTEXT_LAYER",
   "created_at": "2026-10-07",
   "corpus_dependency": "NOVENA_SOT_V1",
@@ -20,7 +20,8 @@
     "No bodily posture, gesture, object, shrine or local custom is made obligatory unless a source explicitly supports it.",
     "Calendar Intelligence remains the sole date/window owner.",
     "Custom and geography links require explicit evidence; proximity never creates an association.",
-    "Historical indulgence amounts or conditions are not carried into current law without current authority."
+    "Historical indulgence amounts or conditions are not carried into current law without current authority.",
+    "Every frozen novena has an evidence-backed cross-domain classification; a classification may be deliberately non-mapped when geography would be artificial."
   ],
   "source_registry": [
     {
@@ -992,6 +993,10 @@
     "practice": 16,
     "current_indulgence": 16,
     "temporal": 16,
-    "cross_domain_policy": 16
-  }
+    "cross_domain_policy": 16,
+    "cross_domain_evidence": 16,
+    "cross_domain_unresolved": 0
+  },
+  "research_status": "COMPLETE_16_TARGET_CONTEXT_AND_CROSS_DOMAIN_V1",
+  "bridge_dependency": "NOVENA_CUSTOMS_GEOGRAPHY_BRIDGE_V1@1.1.0"
 }
