@@ -12,6 +12,19 @@ const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
 const coherence=readFileSync("src/pray/presentation-coherence.js","utf8");
 const styles=readFileSync("src/pray/presentation-styles.js","utf8");
 assert.match(runtime,/43\.59\.30-pray-acceptance/);
+assert.match(runtime,/function prayFamilies\(\)/,"PRAY six-door family registry is missing");
+for(const id of ["daily","eucharistic","penance","passion","devotions","library"]){
+  assert.match(runtime,new RegExp(id+":Object\\.freeze\\("),"PRAY family missing: "+id);
+}
+for(const label of ["Daily Prayer","Eucharistic Prayer","Confession & Penance","Passion & Stations","Devotions & Novenas","Prayer Library"]){
+  assert.ok(runtime.includes(label),"PRAY top-level door missing: "+label);
+}
+assert.match(runtime,/aoP435930FamilyDoor/,"PRAY family-door presentation marker is missing");
+assert.match(runtime,/data-p435930-family/,"PRAY family navigation is not explicit");
+assert.match(runtime,/data-p435930-external/,"PRAY family routes cannot hand off to extracted modules");
+assert.match(runtime,/openFamily,close,state:/,"PRAY public owner does not expose family-return navigation");
+assert.doesNotMatch(runtime,/Daily & Marian|Penance, Passion & Intercession|Devotional programmes|Around Mass/,"retired corpus-wall section taxonomy returned");
+
 assert.match(runtime,/AO_PRAY_V435930/);
 assert.match(coherence,/aoPrayerBookRoot/);
 assert.match(coherence,/aoPray435930/);
