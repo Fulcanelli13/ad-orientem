@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:48,
-  pilgrimages:61,
-  routes:16,
-  temporalLinks:49,
-  sources:107,
+  shrines:54,
+  pilgrimages:69,
+  routes:17,
+  temporalLinks:53,
+  sources:118,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -71,6 +71,12 @@ const requiredPlaces=new Set([
   "place:US:champion-shrine",
   "place:US:guadalupe-shrine-la-crosse",
   "place:US:holy-hill",
+  "place:US:st-alphonsus-baltimore",
+  "place:US:st-john-neumann-philadelphia",
+  "place:US:miraculous-medal-philadelphia",
+  "place:US:czestochowa-doylestown",
+  "place:US:seton-emmitsburg",
+  "place:US:lourdes-grotto-emmitsburg",
   "place:CA:sainte-anne-de-beaupre",
   "place:CA:notre-dame-du-cap",
   "place:CA:martyrs-shrine-midland",
@@ -184,6 +190,23 @@ assert.equal(maastrichtRoute.destination_place_id,"place:NL:maastricht-sterre-de
 const sameiroRoute=corpus.routes.find(item=>item.route_id==="route:PT:braga-cathedral-sameiro");
 assert.equal(sameiroRoute.route_state,"DOCUMENTED_UNMAPPED");
 assert.equal(sameiroRoute.destination_place_id,"place:PT:sameiro-braga");
+
+for(const id of [
+  "temporal:miraculous-medal:monday-novena",
+  "temporal:czestochowa-us:walking-pilgrimage",
+  "temporal:seton:sea-services",
+]){
+  const link=corpus.temporalLinks.find(item=>item.temporal_link_id===id);
+  assert.ok(link,id+" missing");
+  assert.equal(link.binding_state,"NO_FIXED_CALENDAR_BINDING");
+}
+const grottoLourdes=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:grotto-lourdes:feb11");
+assert.equal(grottoLourdes.binding_state,"BOUND_TO_CALENDAR");
+assert.equal(grottoLourdes.calendar_semantic_key,"feast.our_lady_of_lourdes");
+assert.equal(calendarDateForSemanticKey(grottoLourdes.calendar_semantic_key,2026),"2026-02-11");
+const czestochowaUsRoute=corpus.routes.find(item=>item.route_id==="route:US:great-meadows-doylestown-czestochowa");
+assert.equal(czestochowaUsRoute.route_state,"DOCUMENTED_UNMAPPED");
+assert.equal(czestochowaUsRoute.destination_place_id,"place:US:czestochowa-doylestown");
 
 const loughSeason=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lough-derg:three-day-season");
 assert.equal(loughSeason.binding_state,"NO_FIXED_CALENDAR_BINDING");
