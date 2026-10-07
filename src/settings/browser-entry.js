@@ -154,7 +154,7 @@ export function createSettingsOwner(win=globalThis){
     const r=root();
     return Object.freeze({
       version:"modular-settings-v4359.6",installed:true,open:Boolean(r?.isConnected),owner:r?.dataset?.aoSettingsOwner||"AO_SETTINGS_APP_V1",
-      presentationOwner:r?.dataset?.aoSettingsPresentationOwner||SETTINGS_PRESENTATION_VERSION,route,returnSurface,
+      presentationOwner:r?.dataset?.aoSettingsPresentationOwner||SETTINGS_PRESENTATION_VERSION,route:route==="/settings/about-sources"?"about-sources":route,path:route,returnSurface,
       liveSessionGuarded:isLive(),structuralLocked:false,historicalSettingsVisible:historicalVisible(),
       donorVersion:donor.version,profileCount:donor.snapshot().profiles.length
     });
