@@ -199,21 +199,35 @@
       "id": "requiem-introit-l39",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Missa pro Defunctis",
-      "section": "Introit",
+      "section": "Introit excerpt — antiphon and psalm verse; repeated antiphon omitted",
       "sourceLatin": "Requiem aeternam dona eis, Domine: et lux perpetua luceat eis. Te decet hymnus, Deus, in Sion: et tibi reddetur votum in Jerusalem: exaudi orationem meam, ad te omnis caro veniet.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "obsolete/missa/Latin/Commune/C9.txt",
+      "textAudit": {
+        "status": "VERIFIED_EXCERPT",
+        "note": "Checked against pinned Requiem Mass corpus. Repeated antiphon/refrain material not needed for the reading exercise is omitted from sourceLatin."
+      }
     },
     {
       "id": "requiem-offertory-l39",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Missa pro Defunctis",
-      "section": "Offertory",
+      "section": "Offertory excerpt — final repeated Quam olim refrain omitted",
       "sourceLatin": "Domine Iesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni et de profundo lacu: libera eas de ore leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer sanctus Michael repraesentet eas in lucem sanctam: quam olim Abrahae promisisti et semini ejus. Hostias et preces tibi, Domine, laudis offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus: fac eas, Domine, de morte transire ad vitam.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "obsolete/missa/Latin/Commune/C9.txt",
+      "textAudit": {
+        "status": "VERIFIED_EXCERPT",
+        "note": "Checked against pinned Requiem Mass corpus. Repeated antiphon/refrain material not needed for the reading exercise is omitted from sourceLatin."
+      }
     },
     {
       "id": "goodfriday-ecce-l39",
@@ -223,7 +237,14 @@
       "sourceLatin": "Ecce lignum Crucis, in quo salus mundi pependit. Venite, adoremus.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Tempora/Quad6-5r.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1955/1962 reformed Good Friday action; accents and orthography normalized only."
+      }
     },
     {
       "id": "goodfriday-popule-l39",
@@ -233,7 +254,14 @@
       "sourceLatin": "Popule meus, quid feci tibi? aut in quo contristavi te? responde mihi.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Tempora/Quad6-5r.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1955/1962 reformed Good Friday action; accents and orthography normalized only."
+      }
     },
     {
       "id": "goodfriday-crucem-l39",
@@ -243,7 +271,14 @@
       "sourceLatin": "Crucem tuam adoramus, Domine: et sanctam resurrectionem tuam laudamus et glorificamus: ecce enim propter lignum venit gaudium in universo mundo.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Tempora/Quad6-5r.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1955/1962 reformed Good Friday action; accents and orthography normalized only."
+      }
     }
   ],
   "casePanel": {

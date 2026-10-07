@@ -6,6 +6,8 @@ const course = readJson("data/learn/latin-course-40-core350.v1.json");
 const core200 = readJson("data/learn/core-latin-200.v0.2.json");
 const core350 = readJson("data/learn/core-latin-201-350.v1.json");
 const referenceRegistry = readJson("data/learn/latin-course-reference-registry.v1.json");
+const textualAudit = readJson("data/learn/latin-course-textual-audit.v1.json");
+const pinnedLiturgicalSourceCommit = "126a07f91ede04664108abb6fb20ace3f4de14b9";
 const globalReferenceIds = new Set(referenceRegistry.references.map(x => x.id));
 assert(referenceRegistry.references.length === globalReferenceIds.size, "reference registry contains duplicate IDs");
 for (const required of [
@@ -540,6 +542,84 @@ if (authored.length >= 40) {
   }
 }
 
+// High-risk textual/liturgical source locks.
+assert(textualAudit.status === "HIGH_RISK_PASS_COMPLETE", "textual audit baseline must be complete");
+assert(textualAudit.sourceOfTruth?.commit === pinnedLiturgicalSourceCommit,
+  "textual audit must remain pinned to the frozen Divinum Officium source commit");
+
+if (authored.length >= 35) {
+  for (const source of authored[34].sources || []) {
+    assert(source.sourceRepository === "DivinumOfficium/divinum-officium",
+      `Lesson 35 source ${source.id} must resolve to Divinum Officium`);
+    assert(source.sourceCommit === pinnedLiturgicalSourceCommit,
+      `Lesson 35 source ${source.id} must remain pinned to the frozen source commit`);
+    assert(source.sourcePath === "web/www/missa/Latin/Ordo/Ordo.txt",
+      `Lesson 35 source ${source.id} must resolve to the 1962 Ordo source path`);
+    assert(/^VERIFIED/.test(source.textAudit?.status || ""),
+      `Lesson 35 source ${source.id} must carry a verified textAudit status`);
+  }
+}
+
+if (authored.length >= 38) {
+  const l38 = authored[37];
+  const stBrunoCollect = l38.sources.find(x => x.id === "stbruno-collect-l38");
+  assert(stBrunoCollect?.sourcePath === "web/www/missa/Latin/Sancti/10-06.txt",
+    "Lesson 38 St Bruno Collect must resolve to Sancti/10-06");
+  assert(stBrunoCollect?.sourceCommit === pinnedLiturgicalSourceCommit,
+    "Lesson 38 St Bruno Collect must remain pinned");
+  for (const source of l38.sources.filter(x => x.id !== "stbruno-collect-l38")) {
+    assert(source.sourcePath === "web/www/horas/Latin/Commune/C5-1.txt",
+      `Lesson 38 inherited source ${source.id} must resolve to C5-1`);
+    assert(source.sourceCommit === pinnedLiturgicalSourceCommit,
+      `Lesson 38 inherited source ${source.id} must remain pinned`);
+  }
+  assert(l38.sources.find(x => x.id === "stbruno-introit-l38")?.sourceLatin.startsWith("Justus ut palma florebit"),
+    "Lesson 38 must retain the pinned C5-1 Justus introit");
+  assert(l38.sources.find(x => x.id === "stbruno-gospel-l38")?.sourceLatin.includes("Nolite timere, pusillus grex"),
+    "Lesson 38 must retain Luke 12:32-34 from the pinned common");
+}
+
+if (authored.length >= 39) {
+  const l39 = authored[38];
+  for (const source of l39.sources || []) {
+    assert(source.sourceCommit === pinnedLiturgicalSourceCommit,
+      `Lesson 39 source ${source.id} must remain pinned`);
+    assert(/^VERIFIED/.test(source.textAudit?.status || ""),
+      `Lesson 39 source ${source.id} must carry a verified textAudit status`);
+  }
+  assert(l39.sources.find(x => x.id === "requiem-introit-l39")?.section.includes("excerpt"),
+    "Lesson 39 Requiem Introit must be explicitly labeled as an excerpt");
+  assert(l39.sources.find(x => x.id === "requiem-offertory-l39")?.section.includes("excerpt"),
+    "Lesson 39 Requiem Offertory must be explicitly labeled as an excerpt");
+  for (const id of ["goodfriday-ecce-l39","goodfriday-popule-l39","goodfriday-crucem-l39"]) {
+    assert(l39.sources.find(x => x.id === id)?.sourcePath === "web/www/missa/Latin/Tempora/Quad6-5r.txt",
+      `Lesson 39 ${id} must resolve to the pinned reformed Good Friday source`);
+  }
+}
+
+if (authored.length >= 40) {
+  const l40 = authored[39];
+  for (const source of l40.sources || []) {
+    assert(source.sourceCommit === pinnedLiturgicalSourceCommit,
+      `Lesson 40 source ${source.id} must remain pinned`);
+    assert(source.sourcePath === "web/www/missa/Latin/Sancti/10-07.txt",
+      `Lesson 40 source ${source.id} must resolve to the Rosary feast source`);
+    assert(/^VERIFIED/.test(source.textAudit?.status || ""),
+      `Lesson 40 source ${source.id} must carry a verified textAudit status`);
+  }
+  const rosaryIntroit = l40.sources.find(x => x.id === "rosary-introit-l40")?.sourceLatin || "";
+  const rosaryEpistle = l40.sources.find(x => x.id === "rosary-epistle-l40")?.sourceLatin || "";
+  const rosaryGradual = l40.sources.find(x => x.id === "rosary-gradual-l40")?.sourceLatin || "";
+  assert(rosaryIntroit.includes("sollemnitate") && !rosaryIntroit.includes("solemnitate"),
+    "Lesson 40 Rosary Introit must retain pinned sollemnitate spelling");
+  assert(rosaryEpistle.includes("cotidie") && !rosaryEpistle.includes("quotidie"),
+    "Lesson 40 Rosary Epistle must retain pinned cotidie spelling");
+  assert(rosaryGradual.includes("Sollemnitas") && !rosaryGradual.includes("Solemnitas"),
+    "Lesson 40 Rosary Gradual must retain pinned Sollemnitas spelling");
+  assert(Array.isArray(l40.sources.find(x => x.id === "rosary-gospel-l40")?.sourceResolution),
+    "Lesson 40 Rosary Gospel must preserve its source inheritance chain");
+}
+
 console.log(JSON.stringify({
   status: "PASS",
   lessons: course.lessons.length,
@@ -552,6 +632,7 @@ console.log(JSON.stringify({
   authoredLessonsValidated: authored.map(x => x.lesson),
   authoredStagesValidated: stageSummaries,
   referenceRegistryVersion: referenceRegistry.version,
+  textualAuditVersion: textualAudit.version,
   globalReferenceCount: referenceRegistry.references.length,
   explanationReferenceCoverage: {
     learningBlocks: referencedLearningBlocks,

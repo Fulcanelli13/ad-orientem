@@ -324,34 +324,55 @@
       "id": "rosary-introit-l40",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
-      "section": "Introit - Ps 44:2",
-      "sourceLatin": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus solemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
+      "section": "Introit excerpt — antiphon + Ps 44:2 verse; Gloria/repeated antiphon omitted",
+      "sourceLatin": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus sollemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
       "provenanceNote": "Normalized Latin; verified against 1962 Rosary feast propers.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Sancti/10-07.txt",
+      "textAudit": {
+        "status": "VERIFIED_EXCERPT",
+        "note": "Checked against pinned 1962 Rosary feast source. Accent marks and typographic ligatures normalized; source inheritance documented where applicable."
+      }
     },
     {
       "id": "rosary-epistle-l40",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
       "section": "Epistle - Proverbs 8:22-24,32-35",
-      "sourceLatin": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas quotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
+      "sourceLatin": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas cotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
       "provenanceNote": "Unseen capstone reading.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Sancti/10-07.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1962 Rosary feast source. Accent marks and typographic ligatures normalized; source inheritance documented where applicable."
+      }
     },
     {
       "id": "rosary-gradual-l40",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
       "section": "Gradual and Alleluia",
-      "sourceLatin": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Solemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
+      "sourceLatin": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Sollemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
       "provenanceNote": "Unseen chant selection.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Sancti/10-07.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1962 Rosary feast source. Accent marks and typographic ligatures normalized; source inheritance documented where applicable."
+      }
     },
     {
       "id": "rosary-gospel-l40",
@@ -362,7 +383,19 @@
       "provenanceNote": "Annunciation Gospel used as capstone narrative.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Sancti/10-07.txt",
+      "sourceResolution": [
+        "web/www/missa/Latin/Sancti/10-07.txt → @Sancti/09-12:Evangelium",
+        "web/www/missa/Latin/Sancti/09-12.txt → @Commune/C10a",
+        "resolved Latin Gospel: Luke 1:26-38"
+      ],
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1962 Rosary feast source. Accent marks and typographic ligatures normalized; source inheritance documented where applicable."
+      }
     },
     {
       "id": "rosary-offertory-l40",
@@ -373,7 +406,14 @@
       "provenanceNote": "Poetic/sapiential Offertory.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Sancti/10-07.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1962 Rosary feast source. Accent marks and typographic ligatures normalized; source inheritance documented where applicable."
+      }
     },
     {
       "id": "rosary-communion-l40",
@@ -384,7 +424,14 @@
       "provenanceNote": "Poetic Communion text.",
       "corpusReferenceIds": [
         "corpus-missale-romanum-1962"
-      ]
+      ],
+      "sourceRepository": "DivinumOfficium/divinum-officium",
+      "sourceCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "sourcePath": "web/www/missa/Latin/Sancti/10-07.txt",
+      "textAudit": {
+        "status": "VERIFIED_NORMALIZED",
+        "note": "Checked against pinned 1962 Rosary feast source. Accent marks and typographic ligatures normalized; source inheritance documented where applicable."
+      }
     }
   ],
   "casePanel": {
@@ -547,8 +594,8 @@
     {
       "id": "l40-p1",
       "sourceId": "rosary-introit-l40",
-      "sourceLatin": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus solemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
-      "instructionalDisplay": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus solemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
+      "sourceLatin": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus sollemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
+      "instructionalDisplay": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus sollemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
       "targetLemmas": [
         "gaudium",
         "omnis",
@@ -580,8 +627,8 @@
     {
       "id": "l40-p2",
       "sourceId": "rosary-epistle-l40",
-      "sourceLatin": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas quotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
-      "instructionalDisplay": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas quotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
+      "sourceLatin": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas cotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
+      "instructionalDisplay": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas cotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
       "targetLemmas": [
         "Dominus",
         "in",
@@ -614,8 +661,8 @@
     {
       "id": "l40-p3",
       "sourceId": "rosary-gradual-l40",
-      "sourceLatin": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Solemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
-      "instructionalDisplay": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Solemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
+      "sourceLatin": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Sollemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
+      "instructionalDisplay": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Sollemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
       "targetLemmas": [
         "propter",
         "veritas",
