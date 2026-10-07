@@ -7,9 +7,9 @@
     {
       "id": "USB-EX-001",
       "candidate": "Holy Innocents Church — Neptune, NJ",
-      "decision": "STAGE_YEAR_EDITION",
-      "reason": "Current monthly Traditional Latin Mass remains edition-ambiguous on the official parish source.",
-      "source": "https://holyinnocentschurch.net/mass-schedule/"
+      "decision": "PROMOTED_DIOCESAN_1962",
+      "reason": "Current parish series publishes the recurring third-Sunday Traditional Latin Mass through February 2027; diocesan implementation explicitly authorizes Holy Innocents Parish for the 1962 Roman Missal.",
+      "source": "https://holyinnocentschurch.net/series/traditional-latin-mass-with-gregorian-chant-2/"
     },
     {
       "id": "USB-EX-002",
@@ -91,15 +91,15 @@
     {
       "id": "USB-EX-013",
       "candidate": "Shrine & Parish Church of the Holy Innocents — New York, NY",
-      "decision": "STAGE_YEAR_EDITION",
-      "reason": "Current official material confirms recurring Traditional Latin Masses but the frozen current official source does not itself state the 1962 edition.",
-      "source": null
+      "decision": "PROMOTED_DIOCESAN_1962",
+      "reason": "Current parish Mass page publishes recurring Tridentine Masses and the parish's current About page explicitly identifies the form as the 1962 edition.",
+      "source": "https://shrineofholyinnocents.org/mass-times"
     }
   ],
   "final_counts": {
-    "promoted_from_residue": 2,
+    "promoted_from_residue": 4,
     "provider_routes": 4,
-    "staged_or_held": 7,
-    "diocesan_total": 44
+    "staged_or_held": 5,
+    "diocesan_total": 46
   }
 }
