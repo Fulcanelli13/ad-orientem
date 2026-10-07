@@ -173,6 +173,57 @@ try{
   assert.ok(glossaryDetail.explanation.length>80,"Glossary term drawer did not render the sourced explanation");
   assert.ok(glossaryDetail.sourceLinks>=1,"Glossary term drawer has no clickable source");
   await page.locator("#ao-glossary-root [data-gloss-close]").tap();
+
+  await glossSearch.fill("");
+  await page.waitForFunction(()=>Boolean(document.querySelector('#ao-glossary-root [data-gloss-category="latin_rubrics"]')),null,{timeout:5000});
+  await page.locator('#ao-glossary-root [data-gloss-category="latin_rubrics"]').tap();
+  await page.waitForSelector('#ao-glossary-root [data-gloss-collection="lexemes"]',{state:"visible",timeout:5000});
+  const latinHub=await page.evaluate(()=>({
+    lexemes:globalThis.AO_GLOSSARY_V1?.status?.().lexemes??0,
+    phrases:globalThis.AO_GLOSSARY_V1?.status?.().phrases??0,
+    collections:document.querySelectorAll("#ao-glossary-root [data-gloss-collection]").length,
+  }));
+  assert.equal(latinHub.lexemes,350,"Glossary runtime lost the 350-lemma Core Latin registry");
+  assert.equal(latinHub.phrases,60,"Glossary runtime lost the initial phrasebook");
+  assert.equal(latinHub.collections,2,"Latin & Rubrics should expose lexicon and phrasebook collections");
+
+  await page.locator('#ao-glossary-root [data-gloss-collection="lexemes"]').tap();
+  await page.waitForSelector('#ao-glossary-root [data-gloss-stage="1"]',{state:"visible",timeout:5000});
+  await page.locator('#ao-glossary-root [data-gloss-stage="1"]').tap();
+  await page.waitForSelector("#ao-glossary-root [data-gloss-lexeme]",{state:"visible",timeout:5000});
+  const firstLexeme=page.locator("#ao-glossary-root [data-gloss-lexeme]").first();
+  await firstLexeme.tap();
+  await page.waitForSelector("#ao-glossary-root .aoGlossDetailCard",{state:"visible",timeout:5000});
+  const lexemeDetail=await page.evaluate(()=>({
+    type:globalThis.AO_GLOSSARY_V1?.status?.().detailType??"",
+    title:document.querySelector("#ao-glossary-root .aoGlossDetailHead h2")?.textContent?.trim()??"",
+    definition:document.querySelector("#ao-glossary-root .aoGlossDefinition")?.textContent?.trim()??"",
+    sources:document.querySelectorAll("#ao-glossary-root .aoGlossSources a[href]").length,
+  }));
+  assert.equal(lexemeDetail.type,"lexeme","Latin lexeme drawer did not switch detail type");
+  assert.ok(lexemeDetail.title.length>0,"Latin lexeme drawer has no lemma");
+  assert.ok(lexemeDetail.definition.length>0,"Latin lexeme drawer has no EN/FR gloss");
+  assert.ok(lexemeDetail.sources>=1,"Latin lexeme drawer has no source link");
+  await page.locator("#ao-glossary-root [data-gloss-close]").tap();
+  await page.locator("#ao-glossary-root [data-gloss-back]").tap();
+  await page.locator("#ao-glossary-root [data-gloss-back]").tap();
+
+  await page.locator('#ao-glossary-root [data-gloss-collection="phrases"]').tap();
+  await page.waitForSelector('#ao-glossary-root [data-gloss-phrase="P013"]',{state:"visible",timeout:5000});
+  await page.locator('#ao-glossary-root [data-gloss-phrase="P013"]').tap();
+  await page.waitForSelector("#ao-glossary-root .aoGlossDetailCard",{state:"visible",timeout:5000});
+  const phraseDetail=await page.evaluate(()=>({
+    type:globalThis.AO_GLOSSARY_V1?.status?.().detailType??"",
+    title:document.querySelector("#ao-glossary-root .aoGlossDetailHead h2")?.textContent?.trim()??"",
+    translation:document.querySelector("#ao-glossary-root .aoGlossDefinition")?.textContent?.trim()??"",
+    sources:document.querySelectorAll("#ao-glossary-root .aoGlossSources a[href]").length,
+  }));
+  assert.equal(phraseDetail.type,"phrase","Phrasebook drawer did not switch detail type");
+  assert.equal(phraseDetail.title,"Dominus vobiscum.");
+  assert.match(phraseDetail.translation,/Lord be with you/i);
+  assert.ok(phraseDetail.sources>=1,"Phrasebook drawer has no source link");
+  await page.locator("#ao-glossary-root [data-gloss-close]").tap();
+  await page.locator("#ao-glossary-root [data-gloss-back]").tap();
   await page.locator("#ao-glossary-root [data-gloss-back]").tap();
   await page.waitForFunction(()=>
     !document.getElementById("ao-glossary-root") &&
