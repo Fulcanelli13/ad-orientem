@@ -385,15 +385,50 @@ const ROSARY_DECLUTTER_CSS=`
  touch-action:manipulation!important;
 }
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip[data-pb-flip]>[data-pb-latin],
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip[data-pb-flip]>[data-pb-vern]{
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip[data-pb-flip]>[data-pb-vern],
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerProse,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoCustomarySplit,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerDialogueLine,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerDialogueBody,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerWords{
+ box-sizing:border-box!important;
  width:100%!important;
+ inline-size:100%!important;
  max-width:100%!important;
+ max-inline-size:100%!important;
  min-width:0!important;
+ min-inline-size:0!important;
  writing-mode:horizontal-tb!important;
  text-orientation:mixed!important;
  white-space:normal!important;
  word-break:normal!important;
- overflow-wrap:normal!important;
+ overflow-wrap:break-word!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip .aoPrayerDialogueLine{
+ display:grid!important;
+ grid-template-columns:1.55rem minmax(0,1fr)!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .aoCustomaryLeader,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .aoCustomaryResponse,
+html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoCustomaryLeader,
+html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoCustomaryResponse{
+ display:block!important;
+ grid-template-columns:none!important;
+ width:100%!important;
+ inline-size:100%!important;
+ min-width:0!important;
+ max-width:100%!important;
+ writing-mode:horizontal-tb!important;
+ white-space:normal!important;
+ word-break:normal!important;
+ overflow-wrap:break-word!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .aoCustomaryLeader>.aoPrayerRole,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"].aoRecitationGroup .aoCustomaryResponse>.aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoCustomaryLeader>.aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoCustomaryResponse>.aoPrayerRole{
+ display:inline!important;
+ margin-right:.34em!important;
 }
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip>[data-pb-latin][hidden],
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-flip>[data-pb-vern][hidden]{
