@@ -457,7 +457,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les étiquettes de cas ne suffisent pas"
+        }
+      }
     },
     {
       "id": "l29-b2",
@@ -474,7 +479,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Nobis quoque peccatoribus"
+        }
+      }
     },
     {
       "id": "l29-b3",
@@ -491,7 +501,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "in conspectu divinae maiestatis tuae"
+        }
+      }
     },
     {
       "id": "l29-b4",
@@ -508,7 +523,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "omni benedictione caelesti et gratia repleamur"
+        }
+      }
     },
     {
       "id": "l29-b5",
@@ -523,7 +543,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Le mot régissant avant l’étiquette"
+        }
+      }
     },
     {
       "id": "l29-b6",
@@ -538,7 +563,12 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La fonction casuelle ressort du groupe entier"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -707,7 +737,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est nobis dans Nobis quoque peccatoribus ?",
+          "hint": "L’octroi est demandé pour nous / à nous.",
+          "explanation": "nobis est au datif pluriel.",
+          "options": [
+            "datif",
+            "accusatif",
+            "génitif",
+            "nominatif"
+          ]
+        }
+      }
     },
     {
       "id": "l29-e2",
@@ -737,7 +780,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi multitudine est-il à l’ablatif ?",
+          "hint": "Repérez la préposition.",
+          "explanation": "Il s’agit d’un ablatif régi par une préposition.",
+          "options": [
+            "de régit l’ablatif",
+            "c’est un complément d’objet direct",
+            "c’est un vocatif",
+            "il s’accorde avec nobis"
+          ]
+        }
+      }
     },
     {
       "id": "l29-e3",
@@ -767,7 +823,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est conspectu dans in conspectu... ?",
+          "hint": "in statique.",
+          "explanation": "conspectu est à l’ablatif après in.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
     },
     {
       "id": "l29-e4",
@@ -798,7 +867,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est maiestatis ?",
+          "hint": "Il dépend de conspectu.",
+          "explanation": "maiestatis est au génitif : en présence de la divine Majesté.",
+          "options": [
+            "génitif",
+            "ablatif",
+            "datif",
+            "accusatif"
+          ]
+        }
+      }
     },
     {
       "id": "l29-e5",
@@ -828,7 +910,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’expriment omni benedictione caelesti et gratia avec repleamur ?",
+          "hint": "Lisez le verbe qui les régit.",
+          "explanation": "Ces ablatifs expriment le contenu ou le moyen avec « être remplis ».",
+          "options": [
+            "ce dont nous sommes remplis",
+            "le sujet",
+            "l’adresse directe",
+            "la possession"
+          ]
+        }
+      }
     },
     {
       "id": "l29-e6",
@@ -861,7 +956,21 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le nom de la leçon 29 à son sens.",
+          "hint": "Tous les cinq appartiennent au vocabulaire figé.",
+          "explanation": "Récupération lexicale.",
+          "matches": {
+            "auxilium": "aide / secours",
+            "misericordia": "miséricorde",
+            "maiestas": "majesté",
+            "unitas": "unité",
+            "famulus": "serviteur"
+          }
+        }
+      }
     },
     {
       "id": "l29-e7",
@@ -892,7 +1001,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "À quel cas est unitate après in ?",
+          "hint": "Il s’agit d’un état ou d’une relation, non d’un mouvement.",
+          "explanation": "unitate est à l’ablatif.",
+          "options": [
+            "ablatif",
+            "accusatif",
+            "génitif",
+            "datif"
+          ]
+        }
+      }
     },
     {
       "id": "l29-e8",
@@ -922,7 +1044,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que signifie auxilium ?",
+          "hint": "Psaume 120.",
+          "explanation": "auxilium signifie « aide / secours ».",
+          "options": [
+            "aide",
+            "miséricorde",
+            "unité",
+            "majesté"
+          ]
+        }
+      }
     },
     {
       "id": "l29-e9",
@@ -951,7 +1086,20 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle règle de lecture doit précéder l’attribution d’une fonction casuelle avancée ?",
+          "hint": "La structure avant l’étiquette.",
+          "explanation": "Les étiquettes avancées viennent après l’analyse syntaxique.",
+          "options": [
+            "identifier d’abord la morphologie et le mot régissant",
+            "traduire librement d’abord",
+            "ignorer les prépositions",
+            "utiliser l’ordre des mots"
+          ]
+        }
+      }
     },
     {
       "id": "l29-e10",
@@ -976,7 +1124,14 @@
         "grammar-scanlon-1944",
         "grammar-petitmangin-1930",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le nom latin signifiant « serviteur ».",
+          "hint": "Il apparaît sous la forme famulis.",
+          "explanation": "famulus signifie « serviteur »."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1042,5 +1197,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Nobis… gratia Dei…",
+      "grammarFocus": "Fonctions avancées du datif et de l’ablatif",
+      "readingOutcome": "Consolider les emplois non élémentaires des cas dans la prose liturgique.",
+      "objectives": [
+        "Consolider les emplois avancés du datif de référence.",
+        "Lire dans le Canon les ablatifs prépositionnels et les ablatifs de contenu ou de moyen.",
+        "Suivre des relations casuelles imbriquées telles que conspectu + génitif maiestatis.",
+        "Apprendre les cinq lemmes figés de la leçon 29."
+      ]
+    }
+  }
 }
