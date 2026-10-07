@@ -1,0 +1,62 @@
+{
+  "schema": "AO_DIRECTORY_GEOCODING_REPORT_V1",
+  "generated_at": "2026-10-07T10:29:50.310Z",
+  "provider": "OSM_NOMINATIM",
+  "endpoint": "https://nominatim.openstreetmap.org/search",
+  "providers": {
+    "fssp": {
+      "total": 406,
+      "mapped": 14,
+      "accepted": 14,
+      "existing_valid": 0,
+      "unresolved": 392,
+      "existing_invalid": 0,
+      "validation_issue_count": 0,
+      "by_precision": {
+        "building": 14,
+        "address": 0,
+        "street": 0,
+        "locality": 0,
+        "region": 0,
+        "unknown": 0
+      }
+    },
+    "icksp": {
+      "total": 27,
+      "mapped": 3,
+      "accepted": 3,
+      "existing_valid": 0,
+      "unresolved": 24,
+      "existing_invalid": 0,
+      "validation_issue_count": 0,
+      "by_precision": {
+        "building": 3,
+        "address": 0,
+        "street": 0,
+        "locality": 0,
+        "region": 0,
+        "unknown": 0
+      }
+    },
+    "ibp": {
+      "total": 34,
+      "mapped": 15,
+      "accepted": 15,
+      "existing_valid": 0,
+      "unresolved": 19,
+      "existing_invalid": 0,
+      "validation_issue_count": 0,
+      "by_precision": {
+        "building": 1,
+        "address": 0,
+        "street": 1,
+        "locality": 13,
+        "region": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "network_requests": 464,
+  "offline": false,
+  "cache_records": 464
+}

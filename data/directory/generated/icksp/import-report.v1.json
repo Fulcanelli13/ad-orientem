@@ -6,7 +6,7 @@
   "ministry_count": 27,
   "schedule_assertion_count": 25,
   "source_count": 27,
-  "geo_feature_count": 0,
+  "geo_feature_count": 3,
   "validation_issue_count": 0,
   "duplicate_candidate_count": 0,
   "auto_merge_safe_count": 0,
@@ -17,5 +17,13 @@
     "central_international_records": 4,
     "international_country_sites": 8,
     "international_scope": "PARTIAL_CENTRAL_PLUS_COUNTRY_DISCOVERY"
+  },
+  "geocoded_at": "2026-10-07T10:37:49.617Z",
+  "geocoding": {
+    "provider": "OSM_NOMINATIM",
+    "accepted": 3,
+    "existing_valid": 0,
+    "unresolved": 24,
+    "existing_invalid": 0
   }
 }
