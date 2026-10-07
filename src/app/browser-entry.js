@@ -1,4 +1,5 @@
 import "./source-transport-compat.js";
+import "./cinematic-runtime.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
