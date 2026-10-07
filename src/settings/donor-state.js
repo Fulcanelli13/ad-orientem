@@ -127,6 +127,14 @@ export function createSettingsDonorState(win=globalThis){
     else if(action==="reset-all"){[SETTINGS_KEYS.massSession,SETTINGS_KEYS.preparation,SETTINGS_KEYS.thanksgiving,SETTINGS_KEYS.prayerSession,SETTINGS_KEYS.notifications,SETTINGS_KEYS.progress,SETTINGS_KEYS.bookmarks].forEach(remove);preferences=clone(DEFAULT_PREFERENCES);profiles=[];return persist();}
     return snapshot();
   }
+  let lastRoute=core()?.route||null;
+  try{
+    win?.AO_RUNTIME_V8?.store?.subscribe?.(()=>{
+      const nextRoute=core()?.route||null;
+      if(lastRoute==="live"&&nextRoute!=="live")syncEffects();
+      lastRoute=nextRoute;
+    });
+  }catch{}
   syncEffects();
   return Object.freeze({version:"43.59.6",snapshot,setPath,togglePath,createProfile,renameProfile,updateProfile,deleteProfile,resetPreferences,resetProfiles,clearData,syncEffects});
 }
