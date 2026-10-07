@@ -1,12 +1,12 @@
 {
   "schema": "AO_DIRECTORY_SOURCE_IMPORT_REPORT_V1",
   "provider": "FSSP",
-  "retrieved_at": "2026-10-07T11:04:34.508Z",
+  "retrieved_at": "2026-10-07T11:40:07.941Z",
   "venue_count": 404,
   "ministry_count": 404,
   "schedule_assertion_count": 196,
   "source_count": 404,
-  "geo_feature_count": 285,
+  "geo_feature_count": 286,
   "validation_issue_count": 0,
   "duplicate_candidate_count": 0,
   "auto_merge_safe_count": 0,
@@ -17,16 +17,19 @@
     "exact_duplicate_rows": 2,
     "detail_pages_attempted": 163,
     "country_code_known": 404,
-    "country_code_unknown": 0
+    "country_code_unknown": 0,
+    "official_geo_recovered": 6,
+    "official_geo_ambiguous": 1,
+    "official_geo_rejected_conflict": 2
   },
-  "geocoded_at": "2026-10-07T11:13:43.694Z",
+  "geocoded_at": "2026-10-07T11:40:19.176Z",
   "geocoding": {
     "provider": "OSM_NOMINATIM",
-    "accepted": 271,
-    "primary_accepted": 0,
-    "fallback_accepted": 271,
-    "existing_valid": 14,
-    "unresolved": 119,
+    "accepted": 280,
+    "primary_accepted": 13,
+    "fallback_accepted": 267,
+    "existing_valid": 6,
+    "unresolved": 118,
     "existing_invalid": 0
   }
 }
