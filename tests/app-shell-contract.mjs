@@ -6,6 +6,7 @@ import {
   NON_MASS_DONOR_CONTRACT,
   createAppHostAdapter,
   createAppShellController,
+  normalizeAppSurface,
 } from "../src/app/index.js";
 import { installAppShellBridge } from "../src/app/browser-entry.js";
 
@@ -13,6 +14,9 @@ assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "se
 assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "calendar", "settings", "find"]);
 assert.equal(APP_SURFACES.includes("find"), false, "Find unexpectedly became a seventh permanent ribbon surface");
 assert.equal(APP_SURFACES.includes("sources"), false);
+assert.equal(APP_SURFACES.includes("formation"), false, "Formation became a second canonical surface");
+assert.equal(normalizeAppSurface("learn"), "learn");
+assert.equal(normalizeAppSurface("formation"), "learn");
 assert.equal(NON_MASS_DONOR_CONTRACT.release, "43.59.30");
 assert.equal(NON_MASS_DONOR_CONTRACT.prayerOwner, "AO_PRAY_V435930");
 assert.equal(NON_MASS_DONOR_CONTRACT.settingsOwner, "AO_SETTINGS_APP_V1");
@@ -268,12 +272,21 @@ function host({ route = "home", confirm = true } = {}) {
   let ribbonHandler=null;
   const observerCallbacks=[];
   const buttons=[];
-  const makeButton=(surface)=>({
-    dataset:{aoRibbon:surface},
-    classList:{toggle(){}},
-    setAttribute(){},
-    removeAttribute(name){ if(name==="data-ao-ribbon")delete this.dataset.aoRibbon; },
-  });
+  const makeButton=(surface)=>{
+    const label={textContent:surface==="learn"?"Learn / Apprendre":surface};
+    return {
+      dataset:{aoRibbon:surface},
+      attributes:{},
+      _label:label,
+      classList:{toggle(){}},
+      setAttribute(name,value){this.attributes[name]=value;},
+      removeAttribute(name){ if(name==="data-ao-ribbon")delete this.dataset.aoRibbon; },
+      querySelectorAll(selector){
+        if(selector==="[data-ao-ribbon-label],.aoGlobalRibbonLabel,.aoRibbonLabel,.label")return [label];
+        return [];
+      },
+    };
+  };
   const nav={
     dataset:{},
     querySelectorAll(selector){
@@ -313,6 +326,10 @@ function host({ route = "home", confirm = true } = {}) {
   }
   for(const fn of observerCallbacks)fn?.();
   assert.equal(win.AO_APP_SHELL_V1.status().visibleOwner,true,"late donor ribbon was not adopted");
+  const learnButton=buttons.find(x=>x.dataset.aoAppSurface==="learn");
+  assert.equal(learnButton?._label?.textContent,"Formation","adopted phone ribbon still displays Learn / Apprendre");
+  assert.equal(learnButton?.attributes?.["aria-label"],"Formation","adopted Learn ribbon ARIA label is not Formation");
+  assert.equal(learnButton?.dataset?.aoAppSurface,"learn","Formation ribbon label changed the canonical surface");
   let prevented=false;
   ribbonHandler({
     target:{closest:()=>buttons.find(x=>x.dataset.aoAppSurface==="learn")},
