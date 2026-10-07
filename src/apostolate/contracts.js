@@ -39,6 +39,7 @@ export const APOSTOLATE_PUBLICATION_STATES=Object.freeze(["RESEARCH_ONLY","READY
 export const APOSTOLATE_SOURCE_STRENGTHS=Object.freeze(["PRIMARY","PRIMARY_PLUS_CATECHETICAL","MIXED_VERIFIED"]);
 export const APOSTOLATE_TEACHING_STEPS=Object.freeze(["understand","minimum","prepare","launch","followUp"]);
 export const APOSTOLATE_ONRAMP_STEPS=Object.freeze(["minimum","anxiety","boundary","handoff"]);
+export const APOSTOLATE_WORK_SOCIAL_STEPS=Object.freeze(["discern","respond","boundary","handoff"]);
 
 export const APOSTOLATE_OWNERSHIP_BOUNDARIES=Object.freeze({
   MASS:Object.freeze({owner:"mass",target:"mass"}),
@@ -90,6 +91,7 @@ export function makeApostolateScenario(input={}){
     sourceStrength:nonEmpty(input.sourceStrength)?input.sourceStrength:null,
     teaching:input.teaching&&typeof input.teaching==="object"?input.teaching:{},
     onRamp:input.onRamp&&typeof input.onRamp==="object"?input.onRamp:{},
+    workSocial:input.workSocial&&typeof input.workSocial==="object"?input.workSocial:{},
     sourceIds:Array.isArray(input.sourceIds)?input.sourceIds.filter(nonEmpty):[],
     handoffs:Array.isArray(input.handoffs)?input.handoffs:[],
   };
@@ -114,6 +116,11 @@ export function makeApostolateScenario(input={}){
       const incomplete=APOSTOLATE_ONRAMP_STEPS.filter(step=>!nonEmpty(record.onRamp?.[step]?.en)||!nonEmpty(record.onRamp?.[step]?.fr));
       if(incomplete.length)throw new Error("READY DV scenario requires bilingual on-ramp steps: "+id+" ("+incomplete.join(",")+")");
     }
+    if(id.startsWith("WC")){
+      if(!APOSTOLATE_SOURCE_STRENGTHS.includes(record.sourceStrength))throw new Error("READY WC scenario requires a valid sourceStrength: "+id);
+      const incomplete=APOSTOLATE_WORK_SOCIAL_STEPS.filter(step=>!nonEmpty(record.workSocial?.[step]?.en)||!nonEmpty(record.workSocial?.[step]?.fr));
+      if(incomplete.length)throw new Error("READY WC scenario requires bilingual work-social steps: "+id+" ("+incomplete.join(",")+")");
+    }
   }
 
   return Object.freeze({
@@ -132,6 +139,9 @@ export function makeApostolateScenario(input={}){
     )),
     onRamp:Object.freeze(Object.fromEntries(
       Object.entries(record.onRamp).map(([key,value])=>[key,Object.freeze({...value})])
+    )),
+    workSocial:Object.freeze(Object.fromEntries(
+      Object.entries(record.workSocial).map(([key,value])=>[key,Object.freeze({...value})])
     )),
     sourceIds:Object.freeze([...record.sourceIds]),
     handoffs:Object.freeze([...record.handoffs]),

@@ -13,6 +13,7 @@ import {
   APOSTOLATE_SOURCE_STRENGTHS,
   APOSTOLATE_TEACHING_STEPS,
   APOSTOLATE_ONRAMP_STEPS,
+  APOSTOLATE_WORK_SOCIAL_STEPS,
   engineForScenarioId,
   makeApostolateHandoff,
   makeApostolateScenario,
@@ -24,6 +25,7 @@ import { APOSTOLATE_HS_CORPUS_VERSION, APOSTOLATE_HS_SCENARIOS } from "../src/ap
 import { APOSTOLATE_FH_CORPUS_VERSION, APOSTOLATE_FH_SCENARIOS } from "../src/apostolate/fh-corpus.js";
 import { APOSTOLATE_TF_CORPUS_VERSION, APOSTOLATE_TF_SCENARIOS } from "../src/apostolate/tf-corpus.js";
 import { APOSTOLATE_DV_CORPUS_VERSION, APOSTOLATE_DV_SCENARIOS } from "../src/apostolate/dv-corpus.js";
+import { APOSTOLATE_WC_CORPUS_VERSION, APOSTOLATE_WC_SCENARIOS } from "../src/apostolate/wc-corpus.js";
 import {
   APOSTOLATE_SOURCE_REGISTRY_VERSION,
   APOSTOLATE_SOURCES,
@@ -51,6 +53,7 @@ assert.deepEqual(APOSTOLATE_CLAIM_CLASSES,["D","N","T","H","S","P","C"]);
 assert.deepEqual(APOSTOLATE_SOURCE_STRENGTHS,["PRIMARY","PRIMARY_PLUS_CATECHETICAL","MIXED_VERIFIED"]);
 assert.deepEqual(APOSTOLATE_TEACHING_STEPS,["understand","minimum","prepare","launch","followUp"]);
 assert.deepEqual(APOSTOLATE_ONRAMP_STEPS,["minimum","anxiety","boundary","handoff"]);
+assert.deepEqual(APOSTOLATE_WORK_SOCIAL_STEPS,["discern","respond","boundary","handoff"]);
 
 assert.equal(engineForScenarioId("AQ03"),APOSTOLATE_ENGINES.ANSWER);
 assert.equal(engineForScenarioId("HS01"),APOSTOLATE_ENGINES.HELP);
@@ -257,6 +260,44 @@ const dvBase={...baseReady,id:"DV01",sourceStrength:"PRIMARY",onRamp:{
 assert.throws(()=>makeApostolateScenario({...dvBase,sourceStrength:"WEAK"}),/sourceStrength/);
 assert.throws(()=>makeApostolateScenario({...dvBase,onRamp:{...dvBase.onRamp,boundary:{en:"b"}}}),/bilingual on-ramp steps/);
 
+assert.equal(APOSTOLATE_WC_CORPUS_VERSION,"APOSTOLATE_WC_CORPUS_V1");
+assert.equal(APOSTOLATE_WC_SCENARIOS.length,3);
+assert.deepEqual(APOSTOLATE_WC_SCENARIOS.map(x=>x.id),["WC01","WC02","WC03"]);
+assert.deepEqual(APOSTOLATE_WC_SCENARIOS.map(x=>x.publication),Array(3).fill("READY"));
+
+const expectedWcTitles=[
+  "A colleague asks me a serious religious question",
+  "Someone mocks or attacks the Faith",
+  "How do I invite someone to Mass?",
+];
+assert.deepEqual(APOSTOLATE_WC_SCENARIOS.map(x=>x.title.en),expectedWcTitles);
+
+for(const scenario of APOSTOLATE_WC_SCENARIOS){
+  const normalized=makeApostolateScenario(scenario);
+  assert.equal(normalized.publication,"READY",scenario.id+" failed READY normalization");
+  assert.ok(APOSTOLATE_SOURCE_STRENGTHS.includes(normalized.sourceStrength),scenario.id+" has invalid sourceStrength");
+  for(const step of APOSTOLATE_WORK_SOCIAL_STEPS){
+    assert.ok(normalized.workSocial[step]?.en&&normalized.workSocial[step]?.fr,scenario.id+" lost bilingual work-social step "+step);
+  }
+  assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],scenario.id+" contains unresolved source IDs");
+}
+assert.match(APOSTOLATE_WC_SCENARIOS.find(x=>x.id==="WC01").avoid.en.join(" "),/Do not bluff/i);
+assert.match(APOSTOLATE_WC_SCENARIOS.find(x=>x.id==="WC02").workSocial.discern.en,/sincere objection/i);
+assert.match(APOSTOLATE_WC_SCENARIOS.find(x=>x.id==="WC02").workSocial.boundary.en,/End the exchange/i);
+assert.match(APOSTOLATE_WC_SCENARIOS.find(x=>x.id==="WC03").avoid.en.join(" "),/prospect/i);
+assert.match(APOSTOLATE_WC_SCENARIOS.find(x=>x.id==="WC03").handoffs.map(x=>x.targetId).join(" "),/DV01/);
+assert.match(APOSTOLATE_WC_SCENARIOS.find(x=>x.id==="WC03").handoffs.map(x=>x.targetId).join(" "),/find/);
+
+const wcEngine=createApostolateScenarioEngine(APOSTOLATE_WC_SCENARIOS);
+assert.deepEqual(wcEngine.status(),{scenarioCount:36,registeredCount:3,publishedCount:3,researchOnlyCount:33});
+for(const id of ["WC01","WC02","WC03"])assert.equal(wcEngine.introduce.resolve(id).ok,true,id+" is not internally publishable");
+
+const wcBase={...baseReady,id:"WC01",sourceStrength:"PRIMARY",workSocial:{
+  discern:{en:"d",fr:"d"},respond:{en:"r",fr:"r"},boundary:{en:"b",fr:"b"},handoff:{en:"h",fr:"h"}
+}};
+assert.throws(()=>makeApostolateScenario({...wcBase,sourceStrength:"WEAK"}),/sourceStrength/);
+assert.throws(()=>makeApostolateScenario({...wcBase,workSocial:{...wcBase.workSocial,respond:{en:"r"}}}),/bilingual work-social steps/);
+
 assert.equal(APOSTOLATE_AQ_CORPUS_VERSION,"APOSTOLATE_AQ_CORPUS_V1");
 assert.equal(APOSTOLATE_SOURCE_REGISTRY_VERSION,"APOSTOLATE_SOURCE_REGISTRY_V1");
 assert.equal(APOSTOLATE_AQ_SCENARIOS.length,8);
@@ -342,16 +383,16 @@ const doc={
   },
 };
 const win={document:doc};
-const owner=createApostolateOwner(win,{scenarios:[...APOSTOLATE_AQ_SCENARIOS,...APOSTOLATE_HS_SCENARIOS,...APOSTOLATE_FH_SCENARIOS,...APOSTOLATE_TF_SCENARIOS,...APOSTOLATE_DV_SCENARIOS]});
+const owner=createApostolateOwner(win,{scenarios:[...APOSTOLATE_AQ_SCENARIOS,...APOSTOLATE_HS_SCENARIOS,...APOSTOLATE_FH_SCENARIOS,...APOSTOLATE_TF_SCENARIOS,...APOSTOLATE_DV_SCENARIOS,...APOSTOLATE_WC_SCENARIOS]});
 assert.equal(owner.owner,"AO_APOSTOLATE_APP_V1");
 assert.equal(owner.status().installed,true);
 assert.equal(owner.status().hidden,true);
 assert.equal(owner.status().visible,false);
 assert.equal(owner.status().mounted,false);
 assert.equal(owner.status().ribbonExposed,false);
-assert.equal(owner.status().publishedCount,33);
-assert.equal(owner.status().researchOnlyCount,3);
-assert.deepEqual(owner.status().readyFamilies,["AQ","HS","FH","TF","DV"]);
+assert.equal(owner.status().publishedCount,36);
+assert.equal(owner.status().researchOnlyCount,0);
+assert.deepEqual(owner.status().readyFamilies,["AQ","HS","FH","TF","DV","WC"]);
 assert.equal(owner.engines.answer.resolve("AQ01").ok,true);
 assert.equal(owner.engines.answer.resolve("AQ08").ok,true);
 assert.equal(owner.engines.help.resolve("HS01").ok,true);
@@ -362,7 +403,8 @@ assert.equal(owner.engines.introduce.resolve("TF01").ok,true);
 assert.equal(owner.engines.introduce.resolve("TF05").ok,true);
 assert.equal(owner.engines.introduce.resolve("DV01").ok,true);
 assert.equal(owner.engines.introduce.resolve("DV05").ok,true);
-assert.equal(owner.engines.introduce.resolve("WC01").reason,"RESEARCH_ONLY");
+assert.equal(owner.engines.introduce.resolve("WC01").ok,true);
+assert.equal(owner.engines.introduce.resolve("WC03").ok,true);
 assert.equal(owner.receiveHandoff(toApostolate).ok,true);
 assert.equal(owner.handoffToFormation({fromId:"AQ01",targetRoute:"learn.catechism",reason:"Study"}).targetSurface,"learn");
 
@@ -374,10 +416,10 @@ assert.doesNotMatch(readFileSync("src/learn/presentation.js","utf8"),/data-ao-ap
 
 const installedWin={document:{documentElement:{dataset:{}},querySelector:()=>null}};
 const installed=installApostolateOwner(installedWin);
-assert.equal(installed.status().publishedCount,33,"production hidden owner did not load AQ + HS + FH + TF + DV corpora");
-assert.equal(installed.status().researchOnlyCount,3);
-assert.deepEqual(installed.status().readyFamilies,["AQ","HS","FH","TF","DV"]);
+assert.equal(installed.status().publishedCount,36,"production hidden owner did not load the complete 36-scenario corpus");
+assert.equal(installed.status().researchOnlyCount,0);
+assert.deepEqual(installed.status().readyFamilies,["AQ","HS","FH","TF","DV","WC"]);
 assert.equal(installed.status().visible,false);
 assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"hidden");
 
-console.log("PASS hidden Apostolate A8: AQ + HS + FH + TF + DV are sourced bilingual READY; only WC remains fail-closed; no visible surface.");
+console.log("PASS hidden Apostolate A9: all 36 frozen scenarios are sourced bilingual READY; no visible Apostolate surface.");
