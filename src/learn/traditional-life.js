@@ -1,4 +1,5 @@
 import "../pray/canonical-data.js";
+// Authority guard: older manuals are historical evidence unless a 1962 source confirms the rule. A 1951 rule is therefore never copied into the 1962 engine.
 import {
   LOW_MASS_RESPONSES_V381,
   SEASONAL_PRACTICES_V381,
