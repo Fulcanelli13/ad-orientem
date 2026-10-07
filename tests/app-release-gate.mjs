@@ -59,7 +59,7 @@ assert.equal(exactFinding?.classification,"MISSING_INTEGRATION");
 assert.equal(exactFinding?.status,"OPEN");
 assert.equal(exactDonor.schema,"ao-exact-donor-presentation-parity-v1");
 assert.equal(exactDonor.status,"OPEN");
-assert.equal(exactDonor.version,"1.7.0");
+assert.equal(exactDonor.version,"1.8.0");
 assert.equal(exactDonor.releaseBlocker,"EXACT_NON_MASS_DONOR_PARITY");
 assert.equal(exactDonor.openBlockers?.[0],"FINAL_NON_MASS_COMPOSITION_NOT_CERTIFIED");
 assert.equal(exactDonor.openBlockers?.length,3,"exact donor gate must retain exactly the composition blocker plus two missing-primary blockers");
