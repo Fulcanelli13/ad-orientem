@@ -1,16 +1,28 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { expandStaticDirectoryBundle } from "../src/find/static-directory-research.js";
+import { publishableDirectoryRecords } from "../src/find/data-service.js";
 import { auditVenue } from "../src/find/contracts.js";
 
 const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
 const diocesan=readJson("data/directory/static/diocesan.v1.json");
 const provider=readJson("data/directory/static/provider-research.v1.json");
+const ickspConfirmed=readJson("data/directory/static/icksp-confirmed-mass.v1.json");
+const ickspLedger=readJson("data/directory/static/icksp-candidate-ledger.v1.json");
 const residue=readJson("data/directory/static/us-residue.v1.json");
 const providerCoverage=readJson("data/directory/provider-coverage.v1.json");
 
 assert.equal(diocesan.records.length,46);
 assert.equal(provider.records.length,204);
+assert.equal(ickspConfirmed.records.length,35);
+assert.deepEqual(ickspLedger.summary,{
+  total_candidates:125,
+  publishable_current_mass:60,
+  provider_presence_only:5,
+  mass_eligibility_pending:60,
+  live_import_mass_rows:25,
+  static_promotions:35,
+});
 assert.deepEqual(provider.distribution,{
   AASJMV:6,
   FSVF:1,
@@ -22,7 +34,12 @@ assert.deepEqual(provider.distribution,{
 });
 assert.deepEqual(residue.summary,{total:13,promoted:4,provider_routed:4,rejected_current:1,staged:4});
 const ickspCoverage=providerCoverage.providers.find(x=>x.provider_id==="ICKSP");
-assert.equal(ickspCoverage.runtime_published_venues,27);
+assert.equal(ickspCoverage.generated_runtime_venues,27);
+assert.equal(ickspCoverage.live_import_mass_venues,25);
+assert.equal(ickspCoverage.static_confirmed_mass_venues,35);
+assert.equal(ickspCoverage.app_publishable_mass_venues,60);
+assert.equal(ickspCoverage.provider_presence_only,5);
+assert.equal(ickspCoverage.mass_eligibility_pending,60);
 assert.equal(ickspCoverage.official_source_records,127);
 assert.equal(ickspCoverage.unique_current_candidates,125);
 assert.equal(ickspCoverage.blocks_complete,true);
@@ -32,20 +49,25 @@ assert.equal(sspxCoverage.blocks_complete,true);
 
 const expandedDiocesan=expandStaticDirectoryBundle(diocesan);
 const expandedProvider=expandStaticDirectoryBundle(provider);
+const expandedIcksp=expandStaticDirectoryBundle(ickspConfirmed);
 assert.equal(expandedDiocesan.issues.length,0);
 assert.equal(expandedProvider.issues.length,0);
-assert.equal(expandedDiocesan.venues.length+expandedProvider.venues.length,250);
+assert.equal(expandedIcksp.issues.length,0);
+assert.equal(expandedDiocesan.venues.length+expandedProvider.venues.length+expandedIcksp.venues.length,285);
 
-for(const venue of [...expandedDiocesan.venues,...expandedProvider.venues]){
+for(const venue of [...expandedDiocesan.venues,...expandedProvider.venues,...expandedIcksp.venues]){
   assert.deepEqual(auditVenue(venue),[],venue.venue_id+" failed canonical venue audit");
   assert.ok(venue.address.country_code,venue.venue_id+" lost country code");
 }
-for(const schedule of [...expandedDiocesan.schedules,...expandedProvider.schedules]){
+for(const schedule of [...expandedDiocesan.schedules,...expandedProvider.schedules,...expandedIcksp.schedules]){
   assert.ok(schedule.source_ids.length>0,schedule.schedule_id+" lost source provenance");
 }
 assert.ok(expandedDiocesan.ministries.every(m=>m.community_id==="DIOCESAN"));
 assert.ok(expandedDiocesan.ministries.every(m=>m.liturgical_usage.family==="ROMAN"&&m.liturgical_usage.books==="1962"));
 assert.equal(expandedDiocesan.ministries.some(m=>["FSSP","ICKSP","CANONS_ST_JOHN_CANTIUS"].includes(m.community_id)),false);
+assert.ok(expandedIcksp.ministries.every(m=>m.community_id==="ICKSP"));
+assert.ok(expandedIcksp.ministries.every(m=>m.liturgical_usage.family==="ROMAN"&&m.liturgical_usage.books==="1962"));
+assert.ok(expandedIcksp.schedules.every(s=>s.source_ids.length>0));
 
 const byCommunity=id=>expandedProvider.ministries.filter(m=>m.community_id===id);
 assert.ok(byCommunity("RCI").every(m=>m.liturgical_usage.books==="PRE_1955"));
@@ -75,6 +97,17 @@ assert.equal(neptune.books,"1962");
 assert.ok(neptune.sources.some(x=>x.role==="schedule"&&/holyinnocentschurch\.net/.test(x.url)));
 assert.ok(neptune.sources.some(x=>x.role==="authorization"&&/trentonmonitor\.com/.test(x.url)));
 
+
+const ickspNoScheduleRecord={
+  venue:expandedIcksp.venues[0],
+  ministries:[{community_id:"ICKSP",schedules:[]}],
+};
+assert.equal(publishableDirectoryRecords([ickspNoScheduleRecord]).length,0,"icksp-no-schedule-test");
+const ickspWithScheduleRecord={
+  venue:expandedIcksp.venues[0],
+  ministries:[{community_id:"ICKSP",schedules:[expandedIcksp.schedules[0]]}],
+};
+assert.equal(publishableDirectoryRecords([ickspWithScheduleRecord]).length,1,"icksp-schedule-publish-test");
 
 const lawton=provider.records.find(x=>x.id==="SJC-004");
 assert.equal(lawton.verification,"OFFICIAL_LIVE");
