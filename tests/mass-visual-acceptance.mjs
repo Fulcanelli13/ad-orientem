@@ -177,6 +177,13 @@ try{
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"true","Schola hide control did not collapse the dock");
+  const scholaStack=await page.evaluate(()=>{
+    const dock=document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock");
+    const nav=document.querySelector("#ao-r17-native-reader-preview .ao-reader-nav");
+    return {dock:Number.parseInt(getComputedStyle(dock).zIndex,10),nav:Number.parseInt(getComputedStyle(nav).zIndex,10)};
+  });
+  assert.ok(scholaStack.dock>scholaStack.nav,
+    "collapsed Schola controls must remain above edge navigation: "+JSON.stringify(scholaStack));
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"false","Schola show control did not restore the dock");
   const scholaBefore=await scholaDock.evaluate(el=>el.getBoundingClientRect().height);
