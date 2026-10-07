@@ -84,6 +84,12 @@ const transferredEmber=v384Events("2026-09-24",{fr:false,properTitle:"Ember Thur
 assert.equal(transferredEmber[0]?.key,"ember-calendar","resolved-calendar Ember fallback disappeared");
 assert.deepEqual(transferredEmber[0]?.actions?.map(x=>x[0]),["today.calendar","learn.discipline"]);
 
+const traditionalSource = fs.readFileSync(new URL("../src/calendar/traditional-year-v384.js", import.meta.url), "utf8");
+assert.doesNotMatch(traditionalSource,/v384YearHTML|v384DisciplineHTML|V384_CSS/,"retired v38.4 presentation exports remain in production");
+assert.doesNotMatch(traditionalSource,/v384DateLead|v384EraTabs|data-ao-cal-v384/,"retired v38.4 presentation markup remains in the data donor");
+assert.match(traditionalSource,/export function v384Events/,"v38.4 event donor data was removed with its retired presentation");
+assert.match(traditionalSource,/export function v384Dates/,"v38.4 date donor data was removed with its retired presentation");
+
 const browser = fs.readFileSync(new URL("../src/calendar/browser-entry.js", import.meta.url), "utf8");
 assert.match(browser, /modular-calendar-v2-liturgical-year/);
 assert.match(browser, /calendarView==="year"\?yearSurface/);
