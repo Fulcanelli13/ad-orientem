@@ -1144,7 +1144,7 @@ try{
   assert.equal(learnParity.sourcesUtility,0,"Sources incorrectly resurfaced as a Learn launcher");
   assert.equal(learnParity.calendarDashboard,0,"Calendar dashboard duplicated inside Learn");
   assert.ok(learnParity.overflow<=1,"Learn has horizontal overflow on 390px phone geometry");
-  assert.equal(learnParity.cards.length,13,"Learn launcher count should include Catholic Life, First Communion, Confirmation and Holy Orders while Saint of the Day remains owned by Calendar");
+  assert.equal(learnParity.cards.length,14,"Formation launcher count should include Latin, Catholic Life and the sacramental modules while Saint of the Day remains owned by Calendar");
   for(const card of learnParity.cards){assert.ok(card.w>300,"Learn card collapsed below phone-readable width");assert.ok(card.h>=90,"Learn card collapsed below approved touch/readability height");}
   const catechismIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.catechism'] .aoLearnModIcon[data-ao-asset-id='ao-module-catechism']");
   assert.equal(await catechismIcon.count(),1,"Traditional Catechism is missing its canonical icon");
