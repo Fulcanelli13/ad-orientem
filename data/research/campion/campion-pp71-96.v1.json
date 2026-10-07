@@ -1,0 +1,298 @@
+{
+  "schema": "AO_CAMPION_EXTRACTION_V1",
+  "version": "1.0.0",
+  "status": "RESEARCH_FREEZE_WITH_VERIFICATION_QUEUE",
+  "scope": {
+    "work": "Fr. Demetrius Manousos, O.F.M. Cap. — Know Your Mass / Saint Edmund Campion Children's Missal",
+    "original_year": 1954,
+    "pages": "71–96",
+    "authority_policy": "Campion is catechetical/discovery evidence only. The 1962 Missale Romanum and competent 1962 ceremonial sources remain normative for rubrics, gestures and liturgical sequence.",
+    "extraction_note": "The oversized PDF could not be rendered by the web PDF viewer. This freeze records page text/visuals exposed by indexed mirrors plus already integrated product deltas; unexposed pages are not invented or claimed line-by-line."
+  },
+  "sources": [
+    {
+      "id": "CAMPION-1954",
+      "title": "Know Your Mass / Saint Edmund Campion Children's Missal",
+      "url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+      "role": "EXPLANATORY_DISCOVERY"
+    },
+    {
+      "id": "CAMPION-FISHEATERS-INDEX",
+      "title": "Know Your Mass — indexed PDF mirror",
+      "url": "https://www.fisheaters.com/srpdf/knowyourmass.pdf",
+      "role": "INDEXED_PAGE_EVIDENCE"
+    },
+    {
+      "id": "CAMPION-ANYFLIP-51-100",
+      "title": "Know Your Mass — pages 51–100 indexed mirror",
+      "url": "https://anyflip.com/iwnc/atsv/basic/51-100",
+      "role": "INDEXED_PAGE_EVIDENCE"
+    },
+    {
+      "id": "MR62",
+      "title": "Missale Romanum — Editio typica 1962",
+      "url": "https://archive.org/details/sp07mr62-editio-typica",
+      "role": "NORMATIVE_1962"
+    },
+    {
+      "id": "MEDIATOR-DEI",
+      "title": "Pius XII — Mediator Dei",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "role": "DOCTRINAL_PRIMARY"
+    },
+    {
+      "id": "OCONNELL-1962",
+      "title": "J. B. O'Connell — The Celebration of Mass (1962)",
+      "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
+      "role": "CEREMONIAL_REFERENCE"
+    }
+  ],
+  "chapter_map": [
+    {
+      "pages": "71–83",
+      "chapter": "IX",
+      "title": "Our Banquet"
+    },
+    {
+      "pages": "84–85",
+      "chapter": "X",
+      "title": "Holy Communion"
+    },
+    {
+      "pages": "86–91",
+      "chapter": "XI",
+      "title": "Giving Thanks"
+    },
+    {
+      "pages": "92–95",
+      "chapter": "XII",
+      "title": "Last-Minute Orders"
+    },
+    {
+      "pages": "96",
+      "chapter": "XII / close",
+      "title": "Last Gospel / final instruction"
+    }
+  ],
+  "findings": [
+    {
+      "id": "CMP-D-071-01",
+      "pages": [
+        71
+      ],
+      "class": [
+        "MASS_STRUCTURE",
+        "FORMATION"
+      ],
+      "claim": "Campion diagrams the post-Canon movement as Pater noster and Libera; fraction; Agnus Dei; three prayers before Communion; Communion of priest and people; two ablutions; Communion prayer; Postcommunion; Ite missa est; Last Blessing; Last Gospel.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-FISHEATERS-INDEX"
+      ],
+      "disposition": "MERGE_EXISTING",
+      "owner": "learn.mass",
+      "product_note": "The canonical Mass formation course already teaches the sacrificial movement through Communion. Keep this page as explanatory provenance rather than create another stage."
+    },
+    {
+      "id": "CMP-D-071-02",
+      "pages": [
+        71
+      ],
+      "class": [
+        "THEOLOGY",
+        "MASS_STRUCTURE"
+      ],
+      "claim": "Campion presents Offertory, Consecration and Communion as the three essential parts of Mass and explicitly marks the priest's Communion as essential.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-FISHEATERS-INDEX",
+        "MEDIATOR-DEI"
+      ],
+      "disposition": "IMPLEMENTED",
+      "owner": "learn.mass",
+      "implementation_ref": "MF07",
+      "product_note": "MF07 already states, with Pius XII as the doctrinal authority, that the celebrant's Communion belongs to the integrity of the Mass while Communion of the faithful is strongly encouraged but does not constitute the sacrifice."
+    },
+    {
+      "id": "CMP-D-082-01",
+      "pages": [
+        82
+      ],
+      "class": [
+        "DEVOTION",
+        "FORMATION"
+      ],
+      "claim": "Campion's catechetical application at Communion is reciprocal self-offering: Christ gives Himself, therefore the communicant should give himself to Christ.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-ANYFLIP-51-100",
+        "MEDIATOR-DEI"
+      ],
+      "disposition": "MERGE_EXISTING",
+      "owner": "learn.mass",
+      "product_note": "Use only as a concise devotional application under interior participation/self-offering; do not turn it into a new ritual action."
+    },
+    {
+      "id": "CMP-D-082-02",
+      "pages": [
+        82
+      ],
+      "class": [
+        "LITURGICAL_TEXT",
+        "FORMATION"
+      ],
+      "claim": "Campion notes that the priest prays for the Eucharist to preserve him unto life everlasting when receiving under both species, and that the Communion formula for the faithful likewise asks that the Body of Christ preserve the soul unto everlasting life.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-ANYFLIP-51-100",
+        "MR62"
+      ],
+      "disposition": "REFERENCE_ONLY",
+      "owner": "learn.mass",
+      "verification": "Textual wording must continue to come from the 1962 Missal, not from Campion."
+    },
+    {
+      "id": "CMP-D-082-03",
+      "pages": [
+        82,
+        83
+      ],
+      "class": [
+        "PRIEST_ACTION",
+        "SACRED_PARTICLES"
+      ],
+      "claim": "Campion depicts the priest moving the paten over the corporal to gather any particles remaining from the Sacred Host.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-ANYFLIP-51-100"
+      ],
+      "disposition": "VERIFY_NORMATIVE_BEFORE_RUNTIME",
+      "owner": "mass",
+      "verification": "Confirm exact 1962 ceremonial action and card/word boundary in MR62/O'Connell before adding any live priest-action cue."
+    },
+    {
+      "id": "CMP-D-086-01",
+      "pages": [
+        86
+      ],
+      "class": [
+        "FAITHFUL_GESTURE",
+        "COMMUNION"
+      ],
+      "claim": "Campion instructs the faithful to make the Sign of the Cross when the priest makes the cross during the pre-Communion absolution.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-FISHEATERS-INDEX"
+      ],
+      "disposition": "CUSTOM_VERIFICATION_QUEUE",
+      "owner": "mass",
+      "verification": "Do not promote as a universal congregational rubric. Cross-check 1962 lay missals/manuals and French-world custom before any user cue."
+    },
+    {
+      "id": "CMP-D-086-02",
+      "pages": [
+        86
+      ],
+      "class": [
+        "DEVOTION",
+        "COMMUNION"
+      ],
+      "claim": "At Ecce Agnus Dei, Campion directs the communicant's attention to Our Lord in the Host.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-FISHEATERS-INDEX"
+      ],
+      "disposition": "OPTIONAL_DEVOTIONAL_CUE",
+      "owner": "mass",
+      "verification": "This is catechetical/devotional guidance, not a rubric."
+    },
+    {
+      "id": "CMP-D-086-03",
+      "pages": [
+        86
+      ],
+      "class": [
+        "DEVOTION",
+        "COMMUNION"
+      ],
+      "claim": "During the three Domine non sum dignus, Campion encourages an interior act of desire for Christ to come to the communicant.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-FISHEATERS-INDEX"
+      ],
+      "disposition": "MERGE_EXISTING",
+      "owner": "learn.rites.first_communion",
+      "product_note": "Keep as interior preparation, not as an extra required spoken text."
+    },
+    {
+      "id": "CMP-D-086-04",
+      "pages": [
+        86
+      ],
+      "class": [
+        "PRACTICAL_COMMUNION",
+        "FORMATION"
+      ],
+      "claim": "Campion's practical reception instructions say to open the mouth, extend the tongue, keep the head upright and still, kneel still at the rail, keep hands away from the chin, keep the eyes down, and close the mouth only after the Host has been placed on the tongue.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-FISHEATERS-INDEX"
+      ],
+      "disposition": "IMPLEMENTED_WITH_QUALIFICATION",
+      "owner": "learn.rites.first_communion",
+      "implementation_ref": "PR #387",
+      "product_note": "Already absorbed as 1962 practical rehearsal, explicitly labelled practical guidance rather than universal rubrics and subject to local arrangement and physical necessity."
+    },
+    {
+      "id": "CMP-D-096-01",
+      "pages": [
+        96
+      ],
+      "class": [
+        "FORMATION",
+        "MISSION",
+        "LAST_GOSPEL"
+      ],
+      "claim": "Campion treats the Last Gospel not merely as a final text but as a catechetical sending: the faithful leave remembering that the world belongs to God and that the Son of God became man for us.",
+      "source_ids": [
+        "CAMPION-1954",
+        "CAMPION-FISHEATERS-INDEX"
+      ],
+      "disposition": "IMPLEMENTED",
+      "owner": "learn.mass",
+      "implementation_ref": "MF08",
+      "product_note": "MF08 already owns the post-Mass thanksgiving/Christian-duty synthesis. Keep Campion as explanatory provenance."
+    }
+  ],
+  "verification_queue": [
+    {
+      "id": "CMP-D-V01",
+      "topic": "Sign of the Cross at the pre-Communion absolution",
+      "candidate": "CMP-D-086-01",
+      "required_sources": [
+        "MR62 or 1962 ceremonial manual for celebrant action",
+        "French-world lay missal/manual for congregational custom"
+      ],
+      "gate": "NO_USER_CUE_UNTIL_CUSTOM_AND_AUTHORITY_LAYER_ARE_DISTINGUISHED"
+    },
+    {
+      "id": "CMP-D-V02",
+      "topic": "Paten-over-corporal particle collection",
+      "candidate": "CMP-D-082-03",
+      "required_sources": [
+        "MR62",
+        "OCONNELL-1962"
+      ],
+      "gate": "NO_LIVE_PRIEST_ACTION_UNTIL_EXACT_SEQUENCE_BOUNDARY_IS_VERIFIED"
+    }
+  ],
+  "closure": {
+    "accepted_findings": 10,
+    "implemented_or_merged": 7,
+    "reference_only": 1,
+    "verification_queue": 2,
+    "duplicate_new_modules": 0,
+    "user_facing_unsourced_claims": 0,
+    "status": "BATCH_D_PRODUCT_DELTA_CLOSED"
+  }
+}
