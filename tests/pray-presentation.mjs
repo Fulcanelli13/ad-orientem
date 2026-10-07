@@ -133,7 +133,11 @@ assert.match(runtime,/aoRosaryLayout='single-column'/,"Rosary single-column read
 assert.match(runtime,/function declutterRosaryDonor\(r\)/,"Rosary duplicate-control cleanup owner is absent");
 assert.match(runtime,/\['guide','preferences','préférences'\]/,"Rosary no longer suppresses redundant Guide / Preferences controls");
 assert.match(runtime,/\.lab-view-head \.aoModuleHome,\.lab-view-head \.lab-lang/,"Rosary no longer suppresses redundant Home / language header chrome");
-assert.match(runtime,/host\.dataset\.face='vernacular'/,"Rosary no longer defaults prayer text to the vernacular face");
+assert.match(runtime,/function setRosaryPrayerLanguage\(host,face='vernacular'\)/,"Rosary translation owner is absent");
+assert.match(runtime,/function toggleRosaryPrayerLanguage\(host\)/,"Rosary tap-to-replace toggle owner is absent");
+assert.match(runtime,/toggleRosaryPrayerLanguage\(flip\)/,"Rosary preserved-player click path no longer owns translation toggling");
+assert.match(runtime,/e\.key==='Enter'\|\|e\.key===' '/,"Rosary translation is no longer keyboard operable");
+assert.match(runtime,/setRosaryPrayerLanguage\(host,'vernacular'\)/,"Rosary no longer defaults prayer text to the vernacular face");
 assert.match(runtime,/function rosarySetHeading\(set\)/,"Rosary set-heading owner is absent");
 assert.match(runtime,/headerTitle&&setHeading\)headerTitle\.textContent=setHeading/,"Rosary live header still repeats the active mystery title");
 assert.match(runtime,/\.lab-option-bar \.lab-step-count/,"Rosary no longer suppresses redundant helper copy");
@@ -157,6 +161,7 @@ assert.match(runtime,/isReducedMotion\?\.\(\)/,"Rosary mystery cinematic no long
 assert.match(styles,/ROSARY_EXACT_DONOR_CSS/,"Rosary exact donor style block is absent");
 assert.match(styles,/ROSARY_DECLUTTER_CSS/,"Rosary declutter style owner is absent");
 assert.match(styles,/grid-template-columns:none!important/,"Rosary single-column style guard is absent");
+assert.match(styles,/\.lab-prayer-flip\[data-pb-flip\]\{[\s\S]*display:block!important;[\s\S]*width:100%!important;[\s\S]*writing-mode:horizontal-tb!important/,"Rosary prayer flip lost its horizontal full-width text guard");
 assert.match(styles,/rosary-decade-bar-v15 i\.current/,"Rosary donor progress current-state geometry is absent");
 assert.match(styles,/r29-head-recitation/,"Rosary donor recitation strip styling is absent");
 assert.match(styles,/r24-has-mystery-art::before/,"Rosary donor sacred-art backdrop styling is absent");
