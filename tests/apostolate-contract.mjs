@@ -15,7 +15,13 @@ import {
   makeApostolateScenario,
 } from "../src/apostolate/contracts.js";
 import { createApostolateScenarioEngine } from "../src/apostolate/engine.js";
-import { createApostolateOwner } from "../src/apostolate/browser-entry.js";
+import { createApostolateOwner, installApostolateOwner } from "../src/apostolate/browser-entry.js";
+import { APOSTOLATE_AQ_CORPUS_VERSION, APOSTOLATE_AQ_SCENARIOS } from "../src/apostolate/corpus.js";
+import {
+  APOSTOLATE_SOURCE_REGISTRY_VERSION,
+  APOSTOLATE_SOURCES,
+  unresolvedApostolateSourceIds,
+} from "../src/apostolate/source-registry.js";
 import { APP_SURFACES, APP_ROUTE_SURFACES, normalizeAppSurface } from "../src/app/contracts.js";
 
 assert.equal(APOSTOLATE_SOT_VERSION,"APOSTOLATE_SOT_V1");
@@ -44,24 +50,28 @@ assert.equal(engineForScenarioId("DV02"),APOSTOLATE_ENGINES.INTRODUCE);
 assert.equal(engineForScenarioId("WC03"),APOSTOLATE_ENGINES.INTRODUCE);
 assert.equal(engineForScenarioId("NOPE"),null);
 
-assert.throws(()=>makeApostolateScenario({
-  id:"AQ01",publication:"READY",claimClass:"D",sourceIds:[],text:{en:"x",fr:"y"},handoffs:[{}],
-}),/source IDs/);
-assert.throws(()=>makeApostolateScenario({
-  id:"AQ01",publication:"READY",claimClass:"D",sourceIds:["SRC-1"],text:{en:"x"},handoffs:[{}],
-}),/English and French/);
-assert.throws(()=>makeApostolateScenario({
-  id:"AQ01",publication:"READY",claimClass:"D",sourceIds:["SRC-1"],text:{en:"x",fr:"y"},handoffs:[],
-}),/handoff/);
-
-const ready=makeApostolateScenario({
+const baseReady={
   id:"AQ01",
   publication:"READY",
   claimClass:"D",
-  sourceIds:["SRC-1"],
+  title:{en:"Title",fr:"Titre"},
   text:{en:"English",fr:"Français"},
+  explanation:{en:"Explanation",fr:"Explication"},
+  avoid:{en:["Avoid"],fr:["Éviter"]},
+  apfSkills:["APF04"],
+  sourceIds:["SRC-1"],
   handoffs:[{targetId:"learn.catechism"}],
-});
+};
+
+assert.throws(()=>makeApostolateScenario({...baseReady,sourceIds:[]}),/source IDs/);
+assert.throws(()=>makeApostolateScenario({...baseReady,title:{en:"Title"}}),/titles/);
+assert.throws(()=>makeApostolateScenario({...baseReady,text:{en:"English"}}),/English and French text/);
+assert.throws(()=>makeApostolateScenario({...baseReady,explanation:{en:"Explanation"}}),/explanations/);
+assert.throws(()=>makeApostolateScenario({...baseReady,avoid:{en:["Avoid"],fr:[]}}),/avoidances/);
+assert.throws(()=>makeApostolateScenario({...baseReady,apfSkills:["APF99"]}),/APF skills/);
+assert.throws(()=>makeApostolateScenario({...baseReady,handoffs:[]}),/handoff/);
+
+const ready=makeApostolateScenario(baseReady);
 assert.equal(ready.engine,APOSTOLATE_ENGINES.ANSWER);
 
 const engine=createApostolateScenarioEngine([ready]);
@@ -70,6 +80,50 @@ assert.equal(engine.help.resolve("AQ01").reason,"WRONG_ENGINE");
 assert.equal(engine.resolve("AQ02").reason,"RESEARCH_ONLY");
 assert.equal(engine.resolve("ZZ99").reason,"UNKNOWN_SCENARIO");
 assert.deepEqual(engine.status(),{scenarioCount:36,registeredCount:1,publishedCount:1,researchOnlyCount:35});
+
+assert.equal(APOSTOLATE_AQ_CORPUS_VERSION,"APOSTOLATE_AQ_CORPUS_V1");
+assert.equal(APOSTOLATE_SOURCE_REGISTRY_VERSION,"APOSTOLATE_SOURCE_REGISTRY_V1");
+assert.equal(APOSTOLATE_AQ_SCENARIOS.length,8);
+assert.deepEqual(APOSTOLATE_AQ_SCENARIOS.map(x=>x.id),["AQ01","AQ02","AQ03","AQ04","AQ05","AQ06","AQ07","AQ08"]);
+assert.deepEqual(APOSTOLATE_AQ_SCENARIOS.map(x=>x.publication),Array(8).fill("READY"));
+assert.deepEqual(APOSTOLATE_AQ_SCENARIOS.map(x=>x.engine),Array(8).fill(undefined),"raw corpus must not duplicate derived engine ownership");
+
+const expectedTitles=[
+  "Why do Catholics pray to Mary and the saints?",
+  "Why confess sins to a priest? Why not just tell God?",
+  "Why do Catholics obey the Pope? Is he infallible about everything?",
+  "Doesn’t the Mass sacrifice Jesus again?",
+  "How can Catholics believe bread really becomes Jesus?",
+  "Why Latin? And why the traditional Mass?",
+  "Why Purgatory? Didn’t Jesus already pay for our sins?",
+  "Why isn’t the Bible alone enough?",
+];
+assert.deepEqual(APOSTOLATE_AQ_SCENARIOS.map(x=>x.title.en),expectedTitles);
+
+for(const scenario of APOSTOLATE_AQ_SCENARIOS){
+  const normalized=makeApostolateScenario(scenario);
+  assert.equal(normalized.publication,"READY",scenario.id+" failed READY normalization");
+  assert.ok(normalized.title.en&&normalized.title.fr,scenario.id+" lost bilingual title");
+  assert.ok(normalized.text.en&&normalized.text.fr,scenario.id+" lost bilingual short answer");
+  assert.ok(normalized.explanation.en&&normalized.explanation.fr,scenario.id+" lost bilingual explanation");
+  assert.ok(normalized.avoid.en.length&&normalized.avoid.fr.length,scenario.id+" lost bilingual avoidances");
+  assert.ok(normalized.apfSkills.length,scenario.id+" has no APF skill mapping");
+  assert.ok(normalized.sourceIds.length,scenario.id+" has no source references");
+  assert.deepEqual(unresolvedApostolateSourceIds(normalized.sourceIds),[],scenario.id+" contains unresolved source IDs");
+  assert.ok(normalized.handoffs.some(h=>h.targetId?.startsWith("learn.")),scenario.id+" lacks canonical Formation deepening handoff");
+}
+assert.ok(Object.keys(APOSTOLATE_SOURCES).length>=10,"A4 source registry unexpectedly collapsed");
+for(const source of Object.values(APOSTOLATE_SOURCES)){
+  assert.equal(source.id.length>0,true);
+  assert.match(source.url,/^https:\/\//,source.id+" source URL is not absolute HTTPS");
+  assert.ok(source.locator?.length>0,source.id+" lacks a precise locator");
+  assert.ok(source.authority?.length>0,source.id+" lacks authority classification");
+}
+
+const aqEngine=createApostolateScenarioEngine(APOSTOLATE_AQ_SCENARIOS);
+assert.deepEqual(aqEngine.status(),{scenarioCount:36,registeredCount:8,publishedCount:8,researchOnlyCount:28});
+for(const id of ["AQ01","AQ02","AQ03","AQ04","AQ05","AQ06","AQ07","AQ08"])assert.equal(aqEngine.answer.resolve(id).ok,true,id+" is not internally publishable");
+assert.equal(aqEngine.resolve("HS01").reason,"RESEARCH_ONLY","A4 accidentally promoted unrecovered accompaniment content");
 
 const toFormation=makeApostolateHandoff({
   direction:APOSTOLATE_HANDOFF_DIRECTIONS.APOSTOLATE_TO_FORMATION,
@@ -112,14 +166,18 @@ const doc={
   },
 };
 const win={document:doc};
-const owner=createApostolateOwner(win,{scenarios:[ready]});
+const owner=createApostolateOwner(win,{scenarios:APOSTOLATE_AQ_SCENARIOS});
 assert.equal(owner.owner,"AO_APOSTOLATE_APP_V1");
 assert.equal(owner.status().installed,true);
 assert.equal(owner.status().hidden,true);
 assert.equal(owner.status().visible,false);
 assert.equal(owner.status().mounted,false);
 assert.equal(owner.status().ribbonExposed,false);
+assert.equal(owner.status().publishedCount,8);
+assert.equal(owner.status().researchOnlyCount,28);
 assert.equal(owner.engines.answer.resolve("AQ01").ok,true);
+assert.equal(owner.engines.answer.resolve("AQ08").ok,true);
+assert.equal(owner.engines.help.resolve("HS01").reason,"RESEARCH_ONLY");
 assert.equal(owner.receiveHandoff(toApostolate).ok,true);
 assert.equal(owner.handoffToFormation({fromId:"AQ01",targetRoute:"learn.catechism",reason:"Study"}).targetSurface,"learn");
 
@@ -129,4 +187,10 @@ assert.doesNotMatch(appSource,/data-ao-app-surface=["']apostolate["']/,"Apostola
 assert.doesNotMatch(readFileSync("src/home/presentation.js","utf8"),/apostolate/i,"Apostolate leaked into Home presentation");
 assert.doesNotMatch(readFileSync("src/learn/presentation.js","utf8"),/data-ao-app-surface=["']apostolate["']/i,"Apostolate leaked into Formation presentation");
 
-console.log("PASS hidden Apostolate A3 contracts: 36 scenarios, 9 APF skills, gated engines, canonical handoffs, no visible surface.");
+const installedWin={document:{documentElement:{dataset:{}},querySelector:()=>null}};
+const installed=installApostolateOwner(installedWin);
+assert.equal(installed.status().publishedCount,8,"production hidden owner did not load AQ corpus");
+assert.equal(installed.status().visible,false);
+assert.equal(installedWin.document.documentElement.dataset.aoApostolateVisibility,"hidden");
+
+console.log("PASS hidden Apostolate A4: AQ01-AQ08 sourced bilingual corpus is internally READY; 28 unrecovered scenarios remain fail-closed; no visible surface.");
