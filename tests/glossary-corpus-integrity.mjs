@@ -9,6 +9,8 @@ const parts=[
 ];
 const lex=JSON.parse(readFileSync("data/glossary/lexemes.v1.json","utf8"));
 const phr=JSON.parse(readFileSync("data/glossary/phrases.v1.json","utf8"));
+const sourceRegistry=JSON.parse(readFileSync("data/glossary/source-registry.v1.json","utf8"));
+const sourceMap=new Map(sourceRegistry.sources.map(x=>[x.id,x]));
 const concepts=parts.flatMap(x=>x.entries);
 const navById=new Map(nav.entry_index.map(x=>[x.id,x]));
 const allowedLayers=new Set(nav.facet_dimensions.find(x=>x.id==="temporal_layer").values);
@@ -39,6 +41,16 @@ assert.equal(lex.items.length,350);
 assert.equal(new Set(lex.items.map(x=>x.id)).size,350);
 assert.deepEqual(lex.items.map(x=>x.core_rank),Array.from({length:350},(_,i)=>i+1));
 assert.ok(lex.items.every(x=>x.lemma&&x.status==="FROZEN_CORE"));
+
+assert.equal(sourceRegistry.schema,"GLOSSARY_SOURCE_REGISTRY_V1");
+assert.equal(new Set(sourceRegistry.sources.map(x=>x.id)).size,sourceRegistry.sources.length);
+for(const e of concepts){
+  for(const sourceId of e.source_ids){
+    const source=sourceMap.get(sourceId);
+    assert.ok(source,e.id+" unresolved source "+sourceId);
+    assert.ok(/^https:\/\//.test(source.canonical_url),sourceId+" has no clickable source URL");
+  }
+}
 
 assert.equal(phr.schema,"GLOSSARY_LATIN_PHRASES_V1");
 assert.equal(phr.items.length,60);
