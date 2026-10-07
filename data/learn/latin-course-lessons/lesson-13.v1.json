@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Frozen Lesson 13 vocabulary only; later forms remain explicit support.",
     "authenticTextPolicy": "Future meaning is anchored in Credo, altar prayer, doxology and liturgical Scripture.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -224,7 +230,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Cuius regni non erit finis.",
-      "provenanceNote": "erit is future of sum; finis is the target noun."
+      "provenanceNote": "erit is future of sum; finis is the target noun.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-credo-iudicare-l13",
@@ -232,7 +241,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Et iterum venturus est cum gloria, iudicare vivos et mortuos.",
-      "provenanceNote": "Future meaning is explicit; advanced participial detail remains support."
+      "provenanceNote": "Future meaning is explicit; advanced participial detail remains support.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-introibo-l13",
@@ -240,7 +252,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Prayers at the Foot of the Altar",
       "sourceLatin": "Introibo ad altare Dei.",
-      "provenanceNote": "Introibo is the familiar future form of introeo."
+      "provenanceNote": "Introibo is the familiar future form of introeo.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "doxology-nunc-semper-l13",
@@ -256,7 +271,10 @@
       "work": "Vulgata Clementina",
       "section": "Romani 13:11",
       "sourceLatin": "Hora est jam nos de somno surgere.",
-      "provenanceNote": "hora is introduced with iam; surgere remains Lesson 15 support."
+      "provenanceNote": "hora is introduced with iam; surgere remains Lesson 15 support.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-1cor11-26-l13",
@@ -264,7 +282,10 @@
       "work": "Vulgata Clementina",
       "section": "I ad Corinthios 11:26",
       "sourceLatin": "Mortem Domini annuntiabitis, donec veniat.",
-      "provenanceNote": "donec is introduced in an authentic temporal clause; annuntio belongs to Lesson 16."
+      "provenanceNote": "donec is introduced in an authentic temporal clause; annuntio belongs to Lesson 16.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -296,6 +317,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "futureFramework": {
@@ -331,7 +357,13 @@
         ]
       }
     ],
-    "caution": "Identify the verb family as well as the ending."
+    "caution": "Identify the verb family as well as the ending.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -341,7 +373,13 @@
       "learnerCopy": {
         "en": "The future presents an action or state as not yet complete. Time words such as semper, donec and hora help orient the clause.",
         "fr": "Le futur présente une action ou un état comme non encore accompli. Des mots comme semper, donec et hora aident à situer la phrase dans le temps."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l13-b2",
@@ -350,7 +388,13 @@
       "learnerCopy": {
         "en": "The future of sum is ero, eris, erit, erimus, eritis, erunt. In Cuius regni non erit finis, erit gives the future state.",
         "fr": "Le futur de sum est ero, eris, erit, erimus, eritis, erunt. Dans Cuius regni non erit finis, erit exprime l'état futur."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l13-b3",
@@ -359,7 +403,13 @@
       "learnerCopy": {
         "en": "First/second-conjugation verbs commonly show -bo/-bis/-bit; third/fourth conjugations commonly show -am/-es/-et. Read the ending together with the verb family.",
         "fr": "Les verbes des première/deuxième conjugaisons montrent souvent -bo/-bis/-bit ; ceux des troisième/quatrième, -am/-es/-et. Lisez la terminaison avec la famille verbale."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l13-b4",
@@ -369,7 +419,14 @@
       "learnerCopy": {
         "en": "Once erit is recognized, the structure is clear: there will be no end. finis is new; cuius remains a later relative-pronoun form.",
         "fr": "Dès que erit est reconnu, la structure devient claire : il n'y aura pas de fin. finis est nouveau ; cuius reste une forme relative étudiée plus tard."
-      }
+      },
+      "referenceIds": [
+        "mr1962-credo-finis-l13",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l13-b5",
@@ -379,7 +436,14 @@
       "learnerCopy": {
         "en": "Introibo is future: 'I will go in'. The phrase was already familiar; Lesson 13 makes its time value explicit.",
         "fr": "Introibo est au futur : « j'irai ». La formule était déjà familière ; la leçon 13 rend explicite sa valeur temporelle."
-      }
+      },
+      "referenceIds": [
+        "mr1962-introibo-l13",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l13-b6",
@@ -388,7 +452,13 @@
       "learnerCopy": {
         "en": "semper marks continuity, donec sets a temporal boundary, and hora locates an event in time. These become essential narrative scaffolding.",
         "fr": "semper marque la continuité, donec fixe une limite temporelle, et hora situe un événement dans le temps. Ce sont des repères essentiels du récit."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -532,6 +602,13 @@
       "skills": [
         "tense:future",
         "verb:sum"
+      ],
+      "referenceIds": [
+        "mr1962-credo-finis-l13",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -555,6 +632,13 @@
       "sourceId": "mr1962-credo-finis-l13",
       "skills": [
         "vocabulary:finis"
+      ],
+      "referenceIds": [
+        "mr1962-credo-finis-l13",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -579,6 +663,13 @@
       "skills": [
         "tense:future",
         "vocabulary:introeo"
+      ],
+      "referenceIds": [
+        "mr1962-introibo-l13",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -605,6 +696,12 @@
       "skills": [
         "verb:sum",
         "tense:future"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -630,6 +727,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l13"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -654,6 +757,13 @@
       "skills": [
         "vocabulary:iudico",
         "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "mr1962-credo-iudicare-l13",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -677,6 +787,13 @@
       "sourceId": "doxology-nunc-semper-l13",
       "skills": [
         "reading:time-words"
+      ],
+      "referenceIds": [
+        "doxology-nunc-semper-l13",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -701,6 +818,13 @@
       "skills": [
         "syntax:time",
         "vocabulary:donec"
+      ],
+      "referenceIds": [
+        "vulg-1cor11-26-l13",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -725,6 +849,12 @@
       "skills": [
         "tense:future",
         "morphology"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -743,6 +873,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:aeternus"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -773,6 +909,12 @@
       "erit future of sum",
       "major future ending families",
       "semper/donec/hora time functions"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -789,6 +931,20 @@
     "authenticSourceCount": 6,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

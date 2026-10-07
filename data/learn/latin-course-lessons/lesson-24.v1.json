@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only the frozen Lesson 24 allocation is introduced; comparison and result vocabulary is grounded in authentic prayer/scriptural examples.",
     "authenticTextPolicy": "Purpose/result contrast is anchored in Marian versicle, Vulgate and traditional hymn texts.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -292,7 +298,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 3:16",
       "sourceLatin": "Sic enim Deus dilexit mundum, ut Filium suum unigenitum daret: ut omnis qui credit in eum, non pereat, sed habeat vitam aeternam.",
-      "provenanceNote": "sic ... ut provides a classic result/consequence frame, followed by a further goal clause."
+      "provenanceNote": "sic ... ut provides a classic result/consequence frame, followed by a further goal clause.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "tantum-ergo-l24",
@@ -308,7 +317,10 @@
       "work": "Vulgata Clementina",
       "section": "Actus Apostolorum 20:35",
       "sourceLatin": "Beatius est magis dare quam accipere.",
-      "provenanceNote": "magis introduces comparison in a compact authentic sentence."
+      "provenanceNote": "magis introduces comparison in a compact authentic sentence.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-jn21-15-l24",
@@ -316,7 +328,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 21:15",
       "sourceLatin": "Simon Joannis, diligis me plus his?",
-      "provenanceNote": "plus introduces comparison/degree in a Gospel question."
+      "provenanceNote": "plus introduces comparison/degree in a Gospel question.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps138-17-l24",
@@ -324,7 +339,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 138:17",
       "sourceLatin": "Mihi autem nimis honorati sunt amici tui, Deus: nimis confortatus est principatus eorum.",
-      "provenanceNote": "nimis gives an intensifying degree adverb in Psalmic language."
+      "provenanceNote": "nimis gives an intensifying degree adverb in Psalmic language.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -356,6 +374,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "purposeResultFramework": {
@@ -367,7 +390,13 @@
       "ita ... ut",
       "tantus/tantum ... ut"
     ],
-    "caution": "Do not label every ut-clause 'purpose'. Read the semantic relationship between clauses."
+    "caution": "Do not label every ut-clause 'purpose'. Read the semantic relationship between clauses.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -377,7 +406,13 @@
       "learnerCopy": {
         "en": "An ut-clause can express purpose, result, desired outcome or other subordinate relationships. Lesson 24 asks what the main clause makes the ut-clause mean.",
         "fr": "Une proposition en ut peut exprimer le but, le résultat, un résultat désiré ou d'autres relations. La leçon 24 demande ce que la principale fait signifier à la subordonnée en ut."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l24-b2",
@@ -387,7 +422,14 @@
       "learnerCopy": {
         "en": "Ora pro nobis ... ut digni efficiamur gives the desired outcome of the prayer: pray for us so that we may be made worthy. digni agrees with the understood 'we'; efficiamur is subjunctive of efficio.",
         "fr": "Ora pro nobis ... ut digni efficiamur exprime le résultat désiré de la prière : priez pour nous afin que nous soyons rendus dignes. digni s'accorde avec le « nous » sous-entendu ; efficiamur est le subjonctif de efficio."
-      }
+      },
+      "referenceIds": [
+        "marian-versicle-digni-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l24-b3",
@@ -397,7 +439,14 @@
       "learnerCopy": {
         "en": "Sic enim Deus dilexit mundum, ut Filium... daret links degree/manner in the main clause to its consequence: God so loved the world that He gave His Son. This is not the same relation as a simple command done for a purpose.",
         "fr": "Sic enim Deus dilexit mundum, ut Filium... daret relie le degré de la principale à sa conséquence : Dieu a tant aimé le monde qu'il a donné son Fils. Ce rapport n'est pas celui d'un simple acte accompli dans un but."
-      }
+      },
+      "referenceIds": [
+        "vulg-jn3-16-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l24-b4",
@@ -406,7 +455,13 @@
       "learnerCopy": {
         "en": "magis and plus both express 'more', but they appear in different constructions. Beatius est magis dare... compares actions; diligis me plus his? expresses degree/comparison.",
         "fr": "magis et plus expriment tous deux « davantage », mais dans des constructions différentes. Beatius est magis dare... compare des actions ; diligis me plus his? exprime un degré ou une comparaison."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l24-b5",
@@ -415,7 +470,13 @@
       "learnerCopy": {
         "en": "tantum can mean so much/so great or only depending on context; nimis intensifies strongly. These degree words are useful because result clauses often depend on an expressed degree.",
         "fr": "tantum peut signifier « tant / si grand » ou « seulement » selon le contexte ; nimis intensifie fortement. Ces mots de degré sont utiles car les propositions de résultat dépendent souvent d'un degré exprimé."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l24-b6",
@@ -424,7 +485,13 @@
       "learnerCopy": {
         "en": "For each ut-clause ask: intended goal, actual/logical result, or desired prayer outcome? Then verify subjunctive morphology and any degree-correlative words.",
         "fr": "Pour chaque proposition en ut, demandez : but voulu, résultat logique/réel ou résultat désiré de la prière ? Vérifiez ensuite le subjonctif et les mots corrélatifs de degré."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -591,6 +658,13 @@
       "sourceId": "marian-versicle-digni-l24",
       "skills": [
         "syntax:result-purpose"
+      ],
+      "referenceIds": [
+        "marian-versicle-digni-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -615,6 +689,13 @@
       "skills": [
         "vocabulary:efficio",
         "mood:subjunctive"
+      ],
+      "referenceIds": [
+        "marian-versicle-digni-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -638,6 +719,13 @@
       "sourceId": "vulg-jn3-16-l24",
       "skills": [
         "syntax:result"
+      ],
+      "referenceIds": [
+        "vulg-jn3-16-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -661,6 +749,12 @@
       "sourceId": null,
       "skills": [
         "syntax:ut"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -686,6 +780,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l24"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -709,6 +809,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l24"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -732,6 +838,13 @@
       "sourceId": "vulg-acts20-35-l24",
       "skills": [
         "comparison:magis"
+      ],
+      "referenceIds": [
+        "vulg-acts20-35-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -755,6 +868,13 @@
       "sourceId": "vulg-jn21-15-l24",
       "skills": [
         "comparison:plus"
+      ],
+      "referenceIds": [
+        "vulg-jn21-15-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -778,6 +898,13 @@
       "sourceId": "vulg-ps138-17-l24",
       "skills": [
         "degree:nimis"
+      ],
+      "referenceIds": [
+        "vulg-ps138-17-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -796,6 +923,13 @@
       "sourceId": "marian-versicle-digni-l24",
       "skills": [
         "vocabulary:dignus"
+      ],
+      "referenceIds": [
+        "marian-versicle-digni-l24",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -827,6 +961,12 @@
       "ut digni efficiamur desired outcome",
       "sic...ut result",
       "magis/plus/nimis/tantum degree language"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -844,6 +984,20 @@
     "authenticSourceCount": 6,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

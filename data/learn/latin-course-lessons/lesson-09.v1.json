@@ -19,7 +19,12 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Lesson 9 introduces the frozen preposition set; earlier Core is recycled and later words are explicit support.",
     "authenticTextPolicy": "Preposition government is tied to authentic liturgical phrases.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -313,7 +318,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Prayers at the Foot of the Altar",
       "sourceLatin": "Introibo ad altare Dei.",
-      "provenanceNote": "ad + accusative gives the primary motion-toward anchor."
+      "provenanceNote": "ad + accusative gives the primary motion-toward anchor.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-in-nomine-l9",
@@ -321,7 +329,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Sign of the Cross",
       "sourceLatin": "In nomine Patris, et Filii, et Spiritus Sancti.",
-      "provenanceNote": "in + ablative marks location/state; following genitives recycle Lesson 8 relationships."
+      "provenanceNote": "in + ablative marks location/state; following genitives recycle Lesson 8 relationships.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-per-dominum-l9",
@@ -329,7 +340,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Common Collect conclusion",
       "sourceLatin": "Per Dominum nostrum Jesum Christum.",
-      "provenanceNote": "per + accusative gives a high-frequency Collect ending pattern."
+      "provenanceNote": "per + accusative gives a high-frequency Collect ending pattern.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-et-cum-spiritu-l9",
@@ -337,7 +351,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — response",
       "sourceLatin": "Et cum spiritu tuo.",
-      "provenanceNote": "cum + ablative provides the principal accompaniment pattern."
+      "provenanceNote": "cum + ablative provides the principal accompaniment pattern.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -369,6 +386,10 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "prepositionGovernment": [
@@ -545,7 +566,12 @@
       "learnerCopy": {
         "en": "Accusative and ablative now become active. From this point the full six-case system is operational. Prepositions make these cases especially readable because many govern a predictable case.",
         "fr": "L'accusatif et l'ablatif deviennent maintenant actifs. À partir d'ici, les six cas sont opérationnels. Les prépositions rendent ces cas particulièrement lisibles parce qu'elles régissent souvent un cas prévisible."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l9-b2",
@@ -554,7 +580,12 @@
       "learnerCopy": {
         "en": "The accusative commonly marks the direct object and motion toward a goal. In Introibo ad altare Dei, ad requires an accusative goal.",
         "fr": "L'accusatif marque souvent le complément d'objet direct et le mouvement vers un but. Dans Introibo ad altare Dei, ad exige un accusatif."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l9-b3",
@@ -563,7 +594,12 @@
       "learnerCopy": {
         "en": "At this stage, read the ablative first through frequent prepositions: cum, pro, de, ex, ab, sine and coram, plus static in.",
         "fr": "À ce stade, lisez l'ablatif d'abord à travers les prépositions fréquentes : cum, pro, de, ex, ab, sine, coram, ainsi que in statique."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l9-b4",
@@ -573,7 +609,13 @@
       "learnerCopy": {
         "en": "in nomine uses the ablative for location/state. Patris, Filii and Spiritus then add genitive relationships. One familiar formula now combines several case functions.",
         "fr": "in nomine emploie l'ablatif pour la situation. Patris, Filii et Spiritus ajoutent ensuite des relations au génitif. Une formule familière combine ainsi plusieurs cas."
-      }
+      },
+      "referenceIds": [
+        "mr1962-in-nomine-l9",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l9-b5",
@@ -583,7 +625,13 @@
       "learnerCopy": {
         "en": "per governs the accusative: Dominum nostrum Jesum Christum. The forms change together; this is morphology, not new vocabulary.",
         "fr": "per régit l'accusatif : Dominum nostrum Jesum Christum. Les formes changent ensemble ; c'est de la morphologie, non du nouveau vocabulaire."
-      }
+      },
+      "referenceIds": [
+        "mr1962-per-dominum-l9",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l9-b6",
@@ -592,7 +640,12 @@
       "learnerCopy": {
         "en": "After Lesson 9, no case label is merely a preview. Identify the preposition, predict its case, then verify the ending and function.",
         "fr": "Après la leçon 9, aucun cas n'est plus seulement aperçu. Repérez la préposition, prévoyez son cas, puis vérifiez la terminaison et la fonction."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -696,6 +749,12 @@
       "skills": [
         "case:accusative",
         "preposition:ad"
+      ],
+      "referenceIds": [
+        "mr1962-introibo-ad-altare-l9",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -720,6 +779,12 @@
       "skills": [
         "case:ablative",
         "preposition:in"
+      ],
+      "referenceIds": [
+        "mr1962-in-nomine-l9",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -744,6 +809,12 @@
       "skills": [
         "case:accusative",
         "preposition:per"
+      ],
+      "referenceIds": [
+        "mr1962-per-dominum-l9",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -768,6 +839,12 @@
       "skills": [
         "case:ablative",
         "preposition:cum"
+      ],
+      "referenceIds": [
+        "mr1962-et-cum-spiritu-l9",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -793,6 +870,11 @@
       "sourceId": null,
       "skills": [
         "prepositions:ablative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -818,6 +900,11 @@
       "sourceId": null,
       "skills": [
         "prepositions:accusative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -842,6 +929,11 @@
       "skills": [
         "preposition:in",
         "case:contrast"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -865,6 +957,11 @@
       "sourceId": null,
       "skills": [
         "case:framework"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -888,6 +985,12 @@
       "sourceId": "mr1962-per-dominum-l9",
       "skills": [
         "reading:government"
+      ],
+      "referenceIds": [
+        "mr1962-per-dominum-l9",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -913,6 +1016,11 @@
       "sourceId": null,
       "skills": [
         "prepositions:government"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -936,6 +1044,11 @@
       "sourceId": null,
       "skills": [
         "preposition:usque"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -954,6 +1067,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:secundum"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -987,6 +1105,11 @@
       "ad/per + accusative",
       "cum/pro/de/ex/ab/sine/coram + ablative",
       "in/sub/super depend on motion versus location"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -1019,6 +1142,19 @@
     "authenticSourceCount": 4,
     "exerciseCount": 12,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

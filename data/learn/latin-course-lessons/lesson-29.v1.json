@@ -19,7 +19,13 @@
     "method": "concept → authentic Canon example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Frozen Lesson 29 vocabulary only; named saints and later Canon terms are support.",
     "authenticTextPolicy": "Case functions are anchored directly in the Roman Canon and Psalmic prayer formulas.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -334,7 +340,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Nobis quoque peccatoribus",
       "sourceLatin": "Nobis quoque peccatoribus, famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis sanctis Apostolis et Martyribus.",
-      "provenanceNote": "Nobis and famulis show dative/reference syntax; de multitudine supplies a prepositional ablative."
+      "provenanceNote": "Nobis and famulis show dative/reference syntax; de multitudine supplies a prepositional ablative.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "canon-supplices-l29",
@@ -342,7 +351,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Supplices te rogamus",
       "sourceLatin": "Supplices te rogamus, omnipotens Deus: iube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae maiestatis tuae: ut, quotquot ex hac altaris participatione sacrosanctum Filii tui Corpus et Sanguinem sumpserimus, omni benedictione caelesti et gratia repleamur.",
-      "provenanceNote": "in conspectu gives ablative after in; omni benedictione caelesti et gratia illustrates ablative of means/content with repleamur."
+      "provenanceNote": "in conspectu gives ablative after in; omni benedictione caelesti et gratia illustrates ablative of means/content with repleamur.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mass-conclusion-unitate-l29",
@@ -350,7 +362,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Collect conclusion",
       "sourceLatin": "in unitate Spiritus Sancti Deus, per omnia saecula saeculorum.",
-      "provenanceNote": "unitate is ablative after in in the standard conclusion."
+      "provenanceNote": "unitate is ablative after in in the standard conclusion.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "vulg-ps120-2-l29",
@@ -358,7 +373,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 120:2",
       "sourceLatin": "Auxilium meum a Domino, qui fecit caelum et terram.",
-      "provenanceNote": "auxilium is introduced in a compact Psalmic prayer statement."
+      "provenanceNote": "auxilium is introduced in a compact Psalmic prayer statement.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps32-5-l29",
@@ -366,7 +384,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 32:5",
       "sourceLatin": "Misericordia Domini plena est terra.",
-      "provenanceNote": "misericordia is introduced in Psalmic liturgical language."
+      "provenanceNote": "misericordia is introduced in Psalmic liturgical language.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -398,6 +419,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "advancedCaseFramework": {
@@ -409,7 +435,13 @@
       "prepositional: de multitudine, in conspectu, in unitate",
       "means/content: omni benedictione caelesti et gratia repleamur"
     ],
-    "rule": "Name the function only after identifying morphology, governing word, and clause meaning."
+    "rule": "Name the function only after identifying morphology, governing word, and clause meaning.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -419,7 +451,13 @@
       "learnerCopy": {
         "en": "By now you know the six cases. Advanced reading asks what a particular dative or ablative is doing in this clause: recipient, reference, prepositional complement, means, content or circumstance.",
         "fr": "Vous connaissez désormais les six cas. La lecture avancée demande ce qu'un datif ou un ablatif précis fait dans la proposition : destinataire, référence, complément prépositionnel, moyen, contenu ou circonstance."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l29-b2",
@@ -429,7 +467,14 @@
       "learnerCopy": {
         "en": "Nobis and famulis refer to the people for whom the granting is requested. de multitudine is ablative because de governs the ablative. Keep morphology and function separate.",
         "fr": "Nobis et famulis désignent ceux en faveur de qui le don est demandé. de multitudine est à l'ablatif parce que de régit l'ablatif. Gardez distincts morphologie et fonction."
-      }
+      },
+      "referenceIds": [
+        "canon-nobis-quoque-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l29-b3",
@@ -439,7 +484,14 @@
       "learnerCopy": {
         "en": "conspectu is ablative after static in; maiestatis is genitive depending on conspectu. A short phrase can therefore contain two different case relationships nested together.",
         "fr": "conspectu est à l'ablatif après in statique ; maiestatis est un génitif dépendant de conspectu. Un groupe court peut donc contenir deux relations de cas imbriquées."
-      }
+      },
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l29-b4",
@@ -449,7 +501,14 @@
       "learnerCopy": {
         "en": "The ablatives describe that with which the recipients are filled. Translate the sense naturally, but keep the Latin case function visible.",
         "fr": "Les ablatifs indiquent ce dont les bénéficiaires sont comblés. Traduisez naturellement, tout en gardant visible la fonction latine."
-      }
+      },
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l29-b5",
@@ -458,7 +517,13 @@
       "learnerCopy": {
         "en": "For every difficult dative/ablative, ask: is there a preposition or governing verb? What relationship does the clause express? Only then choose the conventional case-function label.",
         "fr": "Pour chaque datif ou ablatif difficile, demandez : y a-t-il une préposition ou un verbe régissant ? Quelle relation exprime la proposition ? Choisissez ensuite l'étiquette traditionnelle de fonction."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l29-b6",
@@ -467,7 +532,13 @@
       "learnerCopy": {
         "en": "Do not translate nobis, gratia or unitate in isolation. Read the governing verb or preposition, then the entire phrase, and only afterward choose the conventional dative/ablative function label.",
         "fr": "Ne traduisez pas nobis, gratia ou unitate isolément. Lisez d'abord le verbe ou la préposition régissante, puis le groupe entier, et choisissez seulement ensuite l'étiquette fonctionnelle du datif ou de l'ablatif."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -629,6 +700,13 @@
       "sourceId": "canon-nobis-quoque-l29",
       "skills": [
         "case:dative"
+      ],
+      "referenceIds": [
+        "canon-nobis-quoque-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -652,6 +730,13 @@
       "sourceId": "canon-nobis-quoque-l29",
       "skills": [
         "case:ablative"
+      ],
+      "referenceIds": [
+        "canon-nobis-quoque-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -675,6 +760,13 @@
       "sourceId": "canon-supplices-l29",
       "skills": [
         "case:ablative"
+      ],
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -699,6 +791,13 @@
       "skills": [
         "case:genitive",
         "vocabulary:maiestas"
+      ],
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -722,6 +821,13 @@
       "sourceId": "canon-supplices-l29",
       "skills": [
         "case:ablative-advanced"
+      ],
+      "referenceIds": [
+        "canon-supplices-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -749,6 +855,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l29"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -773,6 +885,13 @@
       "skills": [
         "case:ablative",
         "vocabulary:unitas"
+      ],
+      "referenceIds": [
+        "mass-conclusion-unitate-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -796,6 +915,13 @@
       "sourceId": "vulg-ps120-2-l29",
       "skills": [
         "vocabulary:auxilium"
+      ],
+      "referenceIds": [
+        "vulg-ps120-2-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -819,6 +945,12 @@
       "sourceId": null,
       "skills": [
         "reading:case"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -837,6 +969,13 @@
       "sourceId": "canon-nobis-quoque-l29",
       "skills": [
         "vocabulary:famulus"
+      ],
+      "referenceIds": [
+        "canon-nobis-quoque-l29",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -868,6 +1007,12 @@
       "de/in + ablative",
       "ablative with repleamur",
       "nested ablative + genitive"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -882,6 +1027,20 @@
     "authenticSourceCount": 5,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

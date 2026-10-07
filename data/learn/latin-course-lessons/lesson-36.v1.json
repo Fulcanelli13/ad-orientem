@@ -19,7 +19,13 @@
     "method": "poetic feature → authentic text → structural reading → reduced assistance",
     "vocabularyPolicy": "Only the final eight normal Core lemmas are introduced; all later specialized vocabulary remains locked for Lesson 39.",
     "authenticTextPolicy": "Sources are Psalter, hymn and antiphon texts used in Catholic liturgical/devotional tradition.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -246,7 +252,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 93:9",
       "sourceLatin": "Qui plantavit aurem, non audiet?",
-      "provenanceNote": "Rhetorical parallelism; auris appears as aurem."
+      "provenanceNote": "Rhetorical parallelism; auris appears as aurem.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps98-5-l36",
@@ -254,7 +263,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 98:5",
       "sourceLatin": "Adorate scabellum pedum ejus: quoniam sanctum est.",
-      "provenanceNote": "pes appears in genitive plural pedum."
+      "provenanceNote": "pes appears in genitive plural pedum.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps117-22-l36",
@@ -262,7 +274,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 117:22",
       "sourceLatin": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
-      "provenanceNote": "caput is introduced inside a familiar typological Psalm verse."
+      "provenanceNote": "caput is introduced inside a familiar typological Psalm verse.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps96-3-l36",
@@ -270,7 +285,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 96:3",
       "sourceLatin": "Ignis ante ipsum praecedet.",
-      "provenanceNote": "Compact poetic inversion and personification."
+      "provenanceNote": "Compact poetic inversion and personification.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps106-23-l36",
@@ -278,7 +296,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 106:23",
       "sourceLatin": "Qui descendunt mare in navibus.",
-      "provenanceNote": "mare appears as the destination of motion without an explicit preposition in biblical-poetic usage."
+      "provenanceNote": "mare appears as the destination of motion without an explicit preposition in biblical-poetic usage.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps112-3-l36",
@@ -286,7 +307,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 112:3",
       "sourceLatin": "A solis ortu usque ad occasum, laudabile nomen Domini.",
-      "provenanceNote": "Parallel span from sunrise to sunset; sol appears in genitive solis."
+      "provenanceNote": "Parallel span from sunrise to sunset; sol appears in genitive solis.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps73-21-l36",
@@ -294,7 +318,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 73:21",
       "sourceLatin": "Pauper et inops laudabunt nomen tuum.",
-      "provenanceNote": "pauper is read substantivally alongside inops."
+      "provenanceNote": "pauper is read substantivally alongside inops.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -326,6 +353,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "poeticRegisterFramework": {
@@ -336,7 +368,13 @@
       "rhetorical questions and apostrophe",
       "concrete biblical imagery carrying devotional meaning"
     ],
-    "readingRule": "Reconstruct grammatical relationships before restoring normal prose order; do not assume poetic order changes case government."
+    "readingRule": "Reconstruct grammatical relationships before restoring normal prose order; do not assume poetic order changes case government.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "learningBlocks": [
     {
@@ -346,7 +384,13 @@
       "learnerCopy": {
         "en": "Hymns, Psalms and antiphons often separate words that belong together or omit elements recoverable from parallel lines. The case endings still carry the syntax.",
         "fr": "Hymnes, psaumes et antiennes séparent souvent des mots qui vont ensemble ou omettent des éléments récupérables grâce au parallélisme. Les désinences continuent de porter la syntaxe."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l36-b2",
@@ -356,7 +400,14 @@
       "learnerCopy": {
         "en": "The hymn addresses the tongue directly. Pange is the command; lingua is vocative; Corporis mysterium is the object phrase despite the compressed poetic order.",
         "fr": "L'hymne s'adresse directement à la langue. Pange est l'ordre ; lingua est au vocatif ; Corporis mysterium est le groupe objet malgré l'ordre poétique condensé."
-      }
+      },
+      "referenceIds": [
+        "pange-lingua-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l36-b3",
@@ -366,7 +417,14 @@
       "learnerCopy": {
         "en": "The Psalm uses a rhetorical question whose answer is obvious. Biblical poetry often teaches through balanced questions rather than explicit propositions.",
         "fr": "Le psaume emploie une question rhétorique dont la réponse est évidente. La poésie biblique enseigne souvent par questions équilibrées plutôt que par affirmations explicites."
-      }
+      },
+      "referenceIds": [
+        "vulg-ps93-9-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l36-b4",
@@ -375,7 +433,13 @@
       "learnerCopy": {
         "en": "In A solis ortu usque ad occasum, the prepositions and cases create the full span even though the clause has no ordinary finite verb. Supply only what the syntax and parallel sense require.",
         "fr": "Dans A solis ortu usque ad occasum, les prépositions et les cas créent l'étendue complète bien que la proposition n'ait pas de verbe conjugué ordinaire. Ne suppléez que ce que syntaxe et parallélisme exigent."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l36-b5",
@@ -384,7 +448,13 @@
       "learnerCopy": {
         "en": "fire, sea, sun, stone, foot and tongue remain concrete nouns, yet Scripture and hymnody give them recurring spiritual or typological associations. Read literal syntax before interpreting imagery.",
         "fr": "feu, mer, soleil, pierre, pied et langue restent des noms concrets, mais l'Écriture et l'hymnographie leur donnent des associations spirituelles ou typologiques récurrentes. Lisez d'abord la syntaxe littérale."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l36-b6",
@@ -393,7 +463,13 @@
       "learnerCopy": {
         "en": "At Stage 8, glosses should rescue genuinely unknown words, not replace parsing. Mark endings, recover omitted structure, and only then consult support.",
         "fr": "À l'étape 8, les gloses doivent seulement secourir les mots réellement inconnus, non remplacer l'analyse. Repérez les désinences, reconstruisez la structure omise, puis consultez l'aide."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -543,6 +619,13 @@
       "sourceId": "pange-lingua-l36",
       "skills": [
         "case:vocative"
+      ],
+      "referenceIds": [
+        "pange-lingua-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -566,6 +649,13 @@
       "sourceId": "vulg-ps93-9-l36",
       "skills": [
         "poetry:rhetoric"
+      ],
+      "referenceIds": [
+        "vulg-ps93-9-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -591,6 +681,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l36"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -616,6 +712,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l36"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -640,6 +742,13 @@
       "skills": [
         "vocabulary:pes",
         "case:genitive"
+      ],
+      "referenceIds": [
+        "vulg-ps98-5-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -664,6 +773,13 @@
       "skills": [
         "vocabulary:sol",
         "case:genitive"
+      ],
+      "referenceIds": [
+        "vulg-ps112-3-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -687,6 +803,12 @@
       "sourceId": null,
       "skills": [
         "reading:poetry"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -710,6 +832,12 @@
       "sourceId": null,
       "skills": [
         "poetry:ellipsis"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -733,6 +861,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -751,6 +885,13 @@
       "sourceId": "vulg-ps106-23-l36",
       "skills": [
         "vocabulary:mare"
+      ],
+      "referenceIds": [
+        "vulg-ps106-23-l36",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -783,7 +924,13 @@
       "ellipsis",
       "all eight Lesson 36 lemmas"
     ],
-    "progressionGate": "Psalm/hymn/antiphon register."
+    "progressionGate": "Psalm/hymn/antiphon register.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "validation": {
     "trackedVocabularyIntroduced": [
@@ -800,6 +947,20 @@
     "authenticSourceCount": 8,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

@@ -1,0 +1,31 @@
+{
+  "version": "latin-course-source-audit-v1.0",
+  "branch": "research/core-201-350-resolved-propers",
+  "baselineCommit": "7a63ce0e8acc0764ba5b8253b58b10bed0b80e28",
+  "audited": "2026-10-07",
+  "scope": "Lessons 1-40",
+  "before": {
+    "primarySourceRecords": 213,
+    "learningBlocks": 245,
+    "learningBlocksWithDirectSourceId": 101,
+    "learningBlocksWithoutDirectSourceId": 144,
+    "exercises": 431,
+    "exercisesWithDirectSourceId": 241,
+    "exercisesWithoutDirectSourceId": 190
+  },
+  "finding": "Primary quotation provenance is broadly present, but the explanatory/grammar layer is under-referenced. A local sourceId often proves the quoted text but does not by itself prove the grammatical or historical explanation.",
+  "remediation": [
+    "Create a global grammar/curriculum reference registry.",
+    "Add referenceIds to every learning block and every exercise explanation.",
+    "Add referenceIds to lesson-level grammar/framework objects, casePanel, authoringPolicy and checkpoints.",
+    "Allow referenceIds to resolve to either lesson-local primary sources or global registry references.",
+    "Reject unresolved or empty explanation references in CI.",
+    "Do not add unverified page numbers."
+  ],
+  "verificationClasses": {
+    "primaryText": "lesson-local source.id",
+    "grammarSyntax": "global grammar reference",
+    "churchBiblicalUsage": "Nunn and/or Plater-White plus primary example",
+    "curriculumPedagogy": "frozen curriculum reference"
+  }
+}

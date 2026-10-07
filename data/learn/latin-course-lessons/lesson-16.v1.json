@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only the frozen Lesson 16 allocation is introduced; later clause vocabulary is explicit support.",
     "authenticTextPolicy": "Perfect passive is anchored in the Credo and scriptural clauses used in the Roman liturgy.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -305,7 +311,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est.",
-      "provenanceNote": "incarnatus est is the principal perfect-passive construction; factus est is recycled as a parallel."
+      "provenanceNote": "incarnatus est is the principal perfect-passive construction; factus est is recycled as a parallel.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-credo-crucifixus-l16",
@@ -313,7 +322,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Crucifixus etiam pro nobis: sub Pontio Pilato passus, et sepultus est.",
-      "provenanceNote": "Crucifixus/passus/sepultus provide coordinated participial predicates with passive/perfect meaning."
+      "provenanceNote": "Crucifixus/passus/sepultus provide coordinated participial predicates with passive/perfect meaning.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "vulg-rom4-25-l16",
@@ -321,7 +333,10 @@
       "work": "Vulgata Clementina",
       "section": "Romani 4:25",
       "sourceLatin": "Qui traditus est propter delicta nostra, et resurrexit propter justificationem nostram.",
-      "provenanceNote": "traditus est gives perfect passive trado beside active perfect resurrexit."
+      "provenanceNote": "traditus est gives perfect passive trado beside active perfect resurrexit.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt22-14-l16",
@@ -329,7 +344,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 22:14",
       "sourceLatin": "Multi enim sunt vocati, pauci vero electi.",
-      "provenanceNote": "electi gives a plural perfect-passive participle and agreement anchor."
+      "provenanceNote": "electi gives a plural perfect-passive participle and agreement anchor.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-lk2-12-l16",
@@ -337,7 +355,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 2:12",
       "sourceLatin": "Et hoc vobis signum: invenietis infantem pannis involutum, et positum in praesepio.",
-      "provenanceNote": "signum is introduced in a Nativity clause; participles are reading support, not silently taught grammar beyond the lesson target."
+      "provenanceNote": "signum is introduced in a Nativity clause; participles are reading support, not silently taught grammar beyond the lesson target.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -369,6 +390,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "perfectPassiveFramework": {
@@ -396,7 +422,13 @@
         "value": "was handed over"
       }
     ],
-    "deponentPreview": "nascor and morior form perfects with participles + sum but have active meaning; the general deponent system is deferred to Lesson 19."
+    "deponentPreview": "nascor and morior form perfects with participles + sum but have active meaning; the general deponent system is deferred to Lesson 19.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -406,7 +438,13 @@
       "learnerCopy": {
         "en": "Latin often forms the perfect passive with a perfect passive participle plus a present form of sum: incarnatus est, crucifixus est, sepultus est. Read the participle as an agreeing adjective that also carries verbal meaning.",
         "fr": "Le latin forme souvent le parfait passif avec un participe parfait passif et une forme présente de sum : incarnatus est, crucifixus est, sepultus est. Lisez le participe comme un adjectif accordé qui porte aussi un sens verbal."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l16-b2",
@@ -415,7 +453,13 @@
       "learnerCopy": {
         "en": "incarnatus and crucifixus are masculine singular because their understood subject is Christ. electi is masculine plural because it refers to the 'few' who are chosen. Agreement is therefore part of parsing the verb construction.",
         "fr": "incarnatus et crucifixus sont masculins singuliers parce que leur sujet sous-entendu est le Christ. electi est masculin pluriel parce qu'il se rapporte aux « peu nombreux » qui sont choisis. L'accord fait donc partie de l'analyse verbale."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l16-b3",
@@ -425,7 +469,14 @@
       "learnerCopy": {
         "en": "incarnatus est is completed passive meaning. In the same sentence, factus est gives a second participle + sum construction already partly familiar from earlier reading.",
         "fr": "incarnatus est exprime un accompli passif. Dans la même phrase, factus est fournit une seconde construction participe + sum, déjà partiellement familière."
-      }
+      },
+      "referenceIds": [
+        "mr1962-credo-incarnatus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l16-b4",
@@ -435,7 +486,14 @@
       "learnerCopy": {
         "en": "The Creed compresses three actions. Crucifixus and sepultus are passive in meaning; passus belongs to the deponent patior and has active meaning 'suffered'. This contrast prepares Lesson 19 without teaching the whole deponent system early.",
         "fr": "Le Credo condense trois actions. Crucifixus et sepultus ont un sens passif ; passus appartient au déponent patior et signifie activement « souffrit ». Ce contraste prépare la leçon 19 sans anticiper tout le système des déponents."
-      }
+      },
+      "referenceIds": [
+        "mr1962-credo-crucifixus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l16-b5",
@@ -445,7 +503,14 @@
       "learnerCopy": {
         "en": "traditus est is perfect passive: he was handed over. resurrexit is perfect active: he rose again. The two completed actions have different voices, and the morphology tells you which.",
         "fr": "traditus est est un parfait passif : il fut livré. resurrexit est un parfait actif : il ressuscita. Les deux actions sont accomplies, mais leur voix diffère."
-      }
+      },
+      "referenceIds": [
+        "vulg-rom4-25-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l16-b6",
@@ -454,7 +519,13 @@
       "learnerCopy": {
         "en": "nascor, morior and patior remind you that some verbs have passive-looking forms but active meaning. For now, recognize these named exceptions; Lesson 19 will generalize the deponent system.",
         "fr": "nascor, morior et patior rappellent que certains verbes ont des formes d'apparence passive mais un sens actif. Pour l'instant, reconnaissez ces exceptions nommées ; la leçon 19 généralisera le système."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -597,6 +668,13 @@
       "skills": [
         "voice:passive",
         "tense:perfect"
+      ],
+      "referenceIds": [
+        "mr1962-credo-incarnatus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -620,6 +698,12 @@
       "sourceId": null,
       "skills": [
         "participle:agreement"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -646,6 +730,13 @@
       "skills": [
         "voice:passive",
         "deponent:preview"
+      ],
+      "referenceIds": [
+        "mr1962-credo-crucifixus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -670,6 +761,13 @@
       "skills": [
         "deponent:preview",
         "vocabulary:patior"
+      ],
+      "referenceIds": [
+        "mr1962-credo-crucifixus-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -691,6 +789,13 @@
       "sourceId": "vulg-rom4-25-l16",
       "skills": [
         "voice:contrast"
+      ],
+      "referenceIds": [
+        "vulg-rom4-25-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -715,6 +820,13 @@
       "skills": [
         "vocabulary:eligo",
         "participle"
+      ],
+      "referenceIds": [
+        "vulg-mt22-14-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -740,6 +852,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l16"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -765,6 +883,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l16"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -788,6 +912,13 @@
       "sourceId": "vulg-mt22-14-l16",
       "skills": [
         "participle:agreement"
+      ],
+      "referenceIds": [
+        "vulg-mt22-14-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -806,6 +937,13 @@
       "sourceId": "vulg-lk2-12-l16",
       "skills": [
         "vocabulary:signum"
+      ],
+      "referenceIds": [
+        "vulg-lk2-12-l16",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -838,6 +976,12 @@
       "participial agreement",
       "traditus est vs resurrexit",
       "patior/nascor/morior preview active meaning"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -857,6 +1001,20 @@
     "authenticSourceCount": 5,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

@@ -19,7 +19,13 @@
     "method": "identify part -> first read -> clause skeleton -> selective support -> reread",
     "vocabularyPolicy": "Zero new tracked vocabulary.",
     "authenticTextPolicy": "One coherent normal Proper set is used.",
-    "copyrightPolicy": "Liturgical Latin source text; original pedagogy."
+    "copyrightPolicy": "Liturgical Latin source text; original pedagogy.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [],
@@ -149,7 +155,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Introit",
       "sourceLatin": "Os justi meditabitur sapientiam, et lingua ejus loquetur judicium: lex Dei ejus in corde ipsius. Noli aemulari in malignantibus: neque zelaveris facientes iniquitatem.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "stbruno-collect-l38",
@@ -157,7 +166,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Collect",
       "sourceLatin": "Sancti Brunonis Confessoris tui, quaesumus, Domine, intercessionibus adjuvemur: ut, qui majestatem tuam graviter delinquendo offendimus, ejus meritis et precibus, nostrorum delictorum veniam consequamur. Per Dominum nostrum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "stbruno-epistle-l38",
@@ -165,7 +177,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Epistle - Ecclesiasticus 31:8-11",
       "sourceLatin": "Beatus vir, qui inventus est sine macula, et qui post aurum non abiit, nec speravit in pecunia et thesauris. Quis est hic, et laudabimus eum? fecit enim mirabilia in vita sua. Qui probatus est in illo, et perfectus est, erit illi gloria aeterna: qui potuit transgredi, et non est transgressus: facere mala, et non fecit: ideo stabilita sunt bona illius in Domino, et eleemosynas illius enarrabit omnis ecclesia sanctorum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "stbruno-gradual-l38",
@@ -173,7 +188,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Gradual and Alleluia",
       "sourceLatin": "Justus ut palma florebit: sicut cedrus Libani multiplicabitur in domo Domini. Ad annuntiandum mane misericordiam tuam, et veritatem tuam per noctem. Alleluia, alleluia. Beatus vir, qui suffert tentationem: quoniam, cum probatus fuerit, accipiet coronam vitae. Alleluia.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "stbruno-gospel-l38",
@@ -181,7 +199,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Gospel - Luke 12:35-40",
       "sourceLatin": "Sint lumbi vestri praecincti, et lucernae ardentes in manibus vestris, et vos similes hominibus exspectantibus dominum suum, quando revertatur a nuptiis: ut, cum venerit et pulsaverit, confestim aperiant ei. Beati servi illi, quos, cum venerit dominus, invenerit vigilantes: amen, dico vobis, quod praecinget se, et faciet illos discumbere, et transiens ministrabit illis. Et si venerit in secunda vigilia, et si in tertia vigilia venerit, et ita invenerit, beati sunt servi illi. Hoc autem scitote, quoniam, si sciret paterfamilias, qua hora fur veniret, vigilaret utique, et non sineret perfodi domum suam. Et vos estote parati, quia, qua hora non putatis, Filius hominis veniet.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "stbruno-offertory-l38",
@@ -189,7 +210,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Offertory",
       "sourceLatin": "Veritas mea et misericordia mea cum ipso: et in nomine meo exaltabitur cornu ejus.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "stbruno-secret-l38",
@@ -197,7 +221,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Secret",
       "sourceLatin": "Laudis tibi, Domine, hostias immolamus in tuorum commemoratione Sanctorum: quibus nos et praesentibus exui malis confidimus et futuris. Per Dominum nostrum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "stbruno-communion-l38",
@@ -205,7 +232,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Communion",
       "sourceLatin": "Beatus servus, quem, cum venerit dominus, invenerit vigilantem: amen, dico vobis, super omnia bona sua constituet eum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "stbruno-postcommunion-l38",
@@ -213,7 +243,10 @@
       "work": "Missale Romanum (1962) - St Bruno",
       "section": "Postcommunion",
       "sourceLatin": "Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedente beato Brunone Confessore tuo, per haec contra omnia adversa muniamur. Per Dominum nostrum.",
-      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription."
+      "provenanceNote": "Normalized Latin; cross-checked against a 1962 Missal propers transcription.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -245,6 +278,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "properReadingFramework": {
@@ -267,7 +305,13 @@
       "Communion",
       "Postcommunion"
     ],
-    "rule": "Liturgical function supplies expectations before lexical detail."
+    "rule": "Liturgical function supplies expectations before lexical detail.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "learningBlocks": [
     {
@@ -277,7 +321,13 @@
       "learnerCopy": {
         "en": "An Introit, Collect, Epistle and Secret have different expected shapes; liturgical position is reading information.",
         "fr": "Introït, collecte, épître et secrète ont des formes attendues différentes ; la position liturgique est une information de lecture."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l38-b2",
@@ -287,7 +337,14 @@
       "learnerCopy": {
         "en": "Expect Psalmic compression and parallelism.",
         "fr": "Attendez une syntaxe psalmique condensée et parallèle."
-      }
+      },
+      "referenceIds": [
+        "stbruno-introit-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l38-b3",
@@ -297,7 +354,14 @@
       "learnerCopy": {
         "en": "Reuse the prayer architecture already learned.",
         "fr": "Réutilisez l'architecture de prière déjà apprise."
-      }
+      },
+      "referenceIds": [
+        "stbruno-collect-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l38-b4",
@@ -307,7 +371,14 @@
       "learnerCopy": {
         "en": "Track finite verbs, connectors and pronouns to preserve the narrative thread.",
         "fr": "Suivez verbes conjugués, connecteurs et pronoms pour conserver le fil du récit."
-      }
+      },
+      "referenceIds": [
+        "stbruno-gospel-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l38-b5",
@@ -316,7 +387,13 @@
       "learnerCopy": {
         "en": "Unknown words should first be tested against morphology and context.",
         "fr": "Les mots inconnus doivent d'abord être testés par la morphologie et le contexte."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l38-b6",
@@ -325,7 +402,13 @@
       "learnerCopy": {
         "en": "The goal is one continuous normal-Proper reading route.",
         "fr": "Le but est une lecture continue du propre normal, de l'Introït à la Postcommunion."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -557,6 +640,13 @@
       "sourceId": "stbruno-introit-l38",
       "skills": [
         "proper:genre"
+      ],
+      "referenceIds": [
+        "stbruno-introit-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -580,6 +670,13 @@
       "sourceId": "stbruno-collect-l38",
       "skills": [
         "proper:prayer"
+      ],
+      "referenceIds": [
+        "stbruno-collect-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -603,6 +700,13 @@
       "sourceId": "stbruno-gospel-l38",
       "skills": [
         "proper:gospel"
+      ],
+      "referenceIds": [
+        "stbruno-gospel-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -626,6 +730,12 @@
       "sourceId": null,
       "skills": [
         "reading:independence"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -649,6 +759,13 @@
       "sourceId": "stbruno-secret-l38",
       "skills": [
         "proper:navigation"
+      ],
+      "referenceIds": [
+        "stbruno-secret-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -672,6 +789,13 @@
       "sourceId": "stbruno-gradual-l38",
       "skills": [
         "proper:navigation"
+      ],
+      "referenceIds": [
+        "stbruno-gradual-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -695,6 +819,13 @@
       "sourceId": "stbruno-postcommunion-l38",
       "skills": [
         "proper:navigation"
+      ],
+      "referenceIds": [
+        "stbruno-postcommunion-l38",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -718,6 +849,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -739,6 +876,12 @@
       "sourceId": null,
       "skills": [
         "curriculum:vocabulary-neutral"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -762,6 +905,12 @@
       "sourceId": null,
       "skills": [
         "reading:genre"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -794,7 +943,13 @@
       "narrative tracking",
       "full Proper navigation"
     ],
-    "progressionGate": "Unseen normal Propers."
+    "progressionGate": "Unseen normal Propers.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "validation": {
     "trackedVocabularyIntroduced": [],
@@ -802,6 +957,20 @@
     "authenticSourceCount": 9,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

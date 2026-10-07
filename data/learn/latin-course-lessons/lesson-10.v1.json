@@ -19,7 +19,12 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only the six frozen pronoun lemmas are introduced; future clause vocabulary is explicitly glossed.",
     "authenticTextPolicy": "Pronoun forms are read in authentic Ordinary/Pater noster clauses.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -157,7 +162,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — salutation",
       "sourceLatin": "Dominus vobiscum.",
-      "provenanceNote": "vobiscum is the canonical liturgical entry point to vos + cum and ablative pronoun forms."
+      "provenanceNote": "vobiscum is the canonical liturgical entry point to vos + cum and ablative pronoun forms.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-pater-ne-nos-l10",
@@ -165,7 +173,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Pater noster",
       "sourceLatin": "Et ne nos inducas in tentationem.",
-      "provenanceNote": "nos is accusative; in + accusative reinforces movement/direction into temptation."
+      "provenanceNote": "nos is accusative; in + accusative reinforces movement/direction into temptation.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-pater-libera-nos-l10",
@@ -173,7 +184,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Pater noster",
       "sourceLatin": "Sed libera nos a malo.",
-      "provenanceNote": "nos is accusative and a malo demonstrates a/ab + ablative."
+      "provenanceNote": "nos is accusative and a malo demonstrates a/ab + ablative.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-agnus-miserere-nobis-l10",
@@ -181,7 +195,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Agnus Dei",
       "sourceLatin": "Miserere nobis.",
-      "provenanceNote": "nobis gives a compact dative form of nos in an already familiar formula."
+      "provenanceNote": "nobis gives a compact dative form of nos in an already familiar formula.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -213,6 +230,10 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "pronounParadigms": {
@@ -322,7 +343,12 @@
       "learnerCopy": {
         "en": "Pronouns are not a separate grammar universe. The same case functions apply: nos can be nominative or accusative; nobis can be dative or ablative; context and governing words decide.",
         "fr": "Les pronoms n'appartiennent pas à un autre univers grammatical. Les mêmes fonctions de cas s'appliquent : nos peut être nominatif ou accusatif ; nobis, datif ou ablatif ; le contexte et les mots régissants décident."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l10-b2",
@@ -331,7 +357,12 @@
       "learnerCopy": {
         "en": "Learn these as case families, not as translation pairs. ego/me/mihi and tu/te/tibi show how the same person changes form as grammatical role changes.",
         "fr": "Apprenez-les comme familles de cas, non comme simples paires de traduction. ego/me/mihi et tu/te/tibi montrent comment une même personne change de forme selon son rôle grammatical."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l10-b3",
@@ -341,7 +372,13 @@
       "learnerCopy": {
         "en": "vobiscum contains vobis, the ablative plural form of vos, plus cum. Latin convention places cum after these pronouns: mecum, tecum, nobiscum, vobiscum, secum.",
         "fr": "vobiscum contient vobis, forme ablative plurielle de vos, plus cum. Avec ces pronoms, le latin place traditionnellement cum après : mecum, tecum, nobiscum, vobiscum, secum."
-      }
+      },
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l10-b4",
@@ -350,7 +387,12 @@
       "learnerCopy": {
         "en": "is/ea/id is a high-frequency third-person demonstrative/pronominal family. Learn eius for genitive, ei for dative, eum/eam/id for accusative, and eo/ea for ablative before trying to memorize every plural form.",
         "fr": "is/ea/id est une famille pronominale très fréquente. Fixez d'abord eius au génitif, ei au datif, eum/eam/id à l'accusatif et eo/ea à l'ablatif avant de mémoriser tous les pluriels."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l10-b5",
@@ -359,7 +401,12 @@
       "learnerCopy": {
         "en": "se refers back to the subject and therefore has no nominative form. Its family is sui, sibi, se, se; with cum it becomes secum.",
         "fr": "se renvoie au sujet et n'a donc pas de nominatif. Sa famille est sui, sibi, se, se ; avec cum, on obtient secum."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l10-b6",
@@ -368,7 +415,12 @@
       "learnerCopy": {
         "en": "The Stage 2 gate combines third-declension stems, active/passive voice, all six case functions, preposition government and pronoun forms. The target is a complete Ordinary-style sentence with several grammatical anchors, not isolated parsing drills.",
         "fr": "Le contrôle de l'étape 2 combine les radicaux de troisième déclinaison, actif/passif, les six cas, le régime des prépositions et les pronoms. La cible est une phrase complète de type Ordinaire avec plusieurs points d'appui grammaticaux, non des analyses isolées."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -467,6 +519,12 @@
       "sourceId": "mr1962-dominus-vobiscum-l10",
       "skills": [
         "pronoun:vos"
+      ],
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -491,6 +549,12 @@
       "skills": [
         "case:ablative",
         "pronoun:vos"
+      ],
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -515,6 +579,12 @@
       "skills": [
         "case:accusative",
         "pronoun:nos"
+      ],
+      "referenceIds": [
+        "mr1962-pater-ne-nos-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -539,6 +609,12 @@
       "skills": [
         "case:dative",
         "pronoun:nos"
+      ],
+      "referenceIds": [
+        "mr1962-agnus-miserere-nobis-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -566,6 +642,11 @@
       "sourceId": null,
       "skills": [
         "pronoun:cum"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -590,6 +671,11 @@
       "skills": [
         "pronoun:is-ea-id",
         "case:genitive"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -614,6 +700,11 @@
       "skills": [
         "pronoun:is-ea-id",
         "case:dative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -637,6 +728,11 @@
       "sourceId": null,
       "skills": [
         "pronoun:reflexive"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -662,6 +758,11 @@
       "sourceId": null,
       "skills": [
         "case:cumulative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -685,6 +786,11 @@
       "sourceId": null,
       "skills": [
         "retrieval:lesson6"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -709,6 +815,11 @@
       "skills": [
         "retrieval:lesson7",
         "voice:passive"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -736,6 +847,12 @@
       "sourceId": "mr1962-pater-libera-nos-l10",
       "skills": [
         "reading:cumulative"
+      ],
+      "referenceIds": [
+        "mr1962-pater-libera-nos-l10",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -759,6 +876,11 @@
       "sourceId": null,
       "skills": [
         "curriculum:pronoun-spiral"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -782,6 +904,11 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -830,6 +957,11 @@
       "is/ea/id core forms",
       "se reflexive and no nominative",
       "cum attached forms"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -845,6 +977,19 @@
     "authenticSourceCount": 4,
     "exerciseCount": 14,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

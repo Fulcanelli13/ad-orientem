@@ -19,7 +19,13 @@
     "method": "concept → authentic example → recognition → manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only frozen Lesson 26 vocabulary is introduced; proper names and later lemmas remain explicit support.",
     "authenticTextPolicy": "Indirect statement is anchored in Vulgate speech/reporting clauses and linked back to Canon reading habits.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -164,7 +170,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 16:13",
       "sourceLatin": "Quem dicunt homines esse Filium hominis?",
-      "provenanceNote": "Accusative + infinitive after a verb of saying."
+      "provenanceNote": "Accusative + infinitive after a verb of saying.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-rom15-8-l26",
@@ -172,7 +181,10 @@
       "work": "Vulgata Clementina",
       "section": "Romani 15:8",
       "sourceLatin": "Dico enim Christum Jesum ministrum fuisse circumcisionis propter veritatem Dei.",
-      "provenanceNote": "Accusative subject plus perfect infinitive fuisse in indirect statement."
+      "provenanceNote": "Accusative subject plus perfect infinitive fuisse in indirect statement.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-jn6-69-l26",
@@ -180,7 +192,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 6:69",
       "sourceLatin": "Et nos credidimus, et cognovimus quia tu es Christus Filius Dei.",
-      "provenanceNote": "quia-clause gives an ecclesiastical alternative to classical accusative-infinitive reporting."
+      "provenanceNote": "quia-clause gives an ecclesiastical alternative to classical accusative-infinitive reporting.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-jn5-39-l26",
@@ -188,7 +203,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 5:39",
       "sourceLatin": "Scrutamini Scripturas, quia vos putatis in ipsis vitam aeternam habere.",
-      "provenanceNote": "habere is infinitive dependent on putatis, inside a quia explanatory clause."
+      "provenanceNote": "habere is infinitive dependent on putatis, inside a quia explanatory clause.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -220,6 +238,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "infinitiveFramework": {
@@ -240,6 +263,12 @@
     "timeRelations": [
       "present infinitive = generally simultaneous",
       "perfect infinitive = generally prior"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "learningBlocks": [
@@ -250,7 +279,13 @@
       "learnerCopy": {
         "en": "In reported speech or thought, Latin can place the reported subject in the accusative and the reported verb in the infinitive. Do not automatically call every accusative a direct object.",
         "fr": "Dans le discours ou la pensée rapportés, le latin peut mettre le sujet rapporté à l'accusatif et le verbe rapporté à l'infinitif. Tout accusatif n'est donc pas automatiquement un complément d'objet."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l26-b2",
@@ -260,7 +295,14 @@
       "learnerCopy": {
         "en": "The question reports what people say someone is. esse carries a predicate; the reported subject is understood through the accusative relative form.",
         "fr": "La question rapporte ce que les hommes disent qu'est quelqu'un. esse porte le prédicat ; le sujet rapporté se lit à travers la forme relative à l'accusatif."
-      }
+      },
+      "referenceIds": [
+        "vulg-mt16-13-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l26-b3",
@@ -270,7 +312,14 @@
       "learnerCopy": {
         "en": "Christum Jesum is accusative because it is the subject of fuisse inside the reported statement. The perfect infinitive places the reported state before the reporting verb.",
         "fr": "Christum Jesum est à l'accusatif parce qu'il est sujet de fuisse dans l'énoncé rapporté. L'infinitif parfait situe l'état rapporté avant le verbe introducteur."
-      }
+      },
+      "referenceIds": [
+        "vulg-rom15-8-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l26-b4",
@@ -280,7 +329,14 @@
       "learnerCopy": {
         "en": "Ecclesiastical and biblical Latin often uses quia + a finite clause where more classical prose might prefer accusative + infinitive. Learn both as reading patterns.",
         "fr": "Le latin ecclésiastique et biblique emploie souvent quia + verbe conjugué là où une prose plus classique préférerait l'accusatif + infinitif. Il faut savoir lire les deux."
-      }
+      },
+      "referenceIds": [
+        "vulg-jn6-69-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l26-b5",
@@ -289,7 +345,13 @@
       "learnerCopy": {
         "en": "When a sentence contains dico, scio, cognosco, sentio or similar verbs, mark the reporting verb, then ask whether the reported content is an infinitive construction or a finite quia-clause.",
         "fr": "Quand une phrase contient dico, scio, cognosco, sentio ou un verbe analogue, repérez d'abord le verbe introducteur, puis demandez si le contenu rapporté est un infinitif ou une proposition en quia."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l26-b6",
@@ -298,7 +360,13 @@
       "learnerCopy": {
         "en": "In indirect statement, an accusative can be the subject of an infinitive. Before assigning 'direct object', check whether an infinitive construction is present and whether the accusative supplies its subject.",
         "fr": "Dans le discours indirect, un accusatif peut être le sujet d'un infinitif. Avant de conclure « complément d'objet », vérifiez s'il existe une construction infinitive et si l'accusatif en fournit le sujet."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -410,6 +478,13 @@
       "sourceId": "vulg-rom15-8-l26",
       "skills": [
         "syntax:indirect-statement"
+      ],
+      "referenceIds": [
+        "vulg-rom15-8-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -433,6 +508,13 @@
       "sourceId": "vulg-rom15-8-l26",
       "skills": [
         "infinitive:time"
+      ],
+      "referenceIds": [
+        "vulg-rom15-8-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -456,6 +538,13 @@
       "sourceId": "vulg-jn6-69-l26",
       "skills": [
         "syntax:quia"
+      ],
+      "referenceIds": [
+        "vulg-jn6-69-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -481,6 +570,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l26"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -504,6 +599,12 @@
       "sourceId": null,
       "skills": [
         "reading:structure"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -527,6 +628,13 @@
       "sourceId": "vulg-mt16-13-l26",
       "skills": [
         "infinitive:sum"
+      ],
+      "referenceIds": [
+        "vulg-mt16-13-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -550,6 +658,13 @@
       "sourceId": "vulg-jn6-69-l26",
       "skills": [
         "vocabulary:cognosco"
+      ],
+      "referenceIds": [
+        "vulg-jn6-69-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -572,6 +687,12 @@
       "sourceId": null,
       "skills": [
         "syntax:church-latin"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -590,6 +711,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:scribo"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -608,6 +735,13 @@
       "sourceId": "vulg-jn6-69-l26",
       "skills": [
         "vocabulary:cognosco"
+      ],
+      "referenceIds": [
+        "vulg-jn6-69-l26",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -638,6 +772,12 @@
       "accusative subject of infinitive",
       "present vs perfect infinitive",
       "quia-reporting alternative"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -651,6 +791,20 @@
     "authenticSourceCount": 4,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

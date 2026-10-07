@@ -19,7 +19,13 @@
     "method": "identify special register -> read structure -> isolate specialized lexicon -> preserve normal-frequency model",
     "vocabularyPolicy": "Only crux, requies and defunctus are introduced.",
     "authenticTextPolicy": "Requiem and Good Friday texts remain in their specialized rites.",
-    "copyrightPolicy": "Liturgical Latin source text; original pedagogy."
+    "copyrightPolicy": "Liturgical Latin source text; original pedagogy.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -194,35 +200,50 @@
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Missa pro Defunctis",
       "section": "Introit",
-      "sourceLatin": "Requiem aeternam dona eis, Domine: et lux perpetua luceat eis. Te decet hymnus, Deus, in Sion: et tibi reddetur votum in Jerusalem: exaudi orationem meam, ad te omnis caro veniet."
+      "sourceLatin": "Requiem aeternam dona eis, Domine: et lux perpetua luceat eis. Te decet hymnus, Deus, in Sion: et tibi reddetur votum in Jerusalem: exaudi orationem meam, ad te omnis caro veniet.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "requiem-offertory-l39",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Missa pro Defunctis",
       "section": "Offertory",
-      "sourceLatin": "Domine Iesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni et de profundo lacu: libera eas de ore leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer sanctus Michael repraesentet eas in lucem sanctam: quam olim Abrahae promisisti et semini ejus. Hostias et preces tibi, Domine, laudis offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus: fac eas, Domine, de morte transire ad vitam."
+      "sourceLatin": "Domine Iesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni et de profundo lacu: libera eas de ore leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer sanctus Michael repraesentet eas in lucem sanctam: quam olim Abrahae promisisti et semini ejus. Hostias et preces tibi, Domine, laudis offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus: fac eas, Domine, de morte transire ad vitam.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "goodfriday-ecce-l39",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Feria VI in Parasceve",
       "section": "Adoration of the Cross",
-      "sourceLatin": "Ecce lignum Crucis, in quo salus mundi pependit. Venite, adoremus."
+      "sourceLatin": "Ecce lignum Crucis, in quo salus mundi pependit. Venite, adoremus.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "goodfriday-popule-l39",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Feria VI in Parasceve",
       "section": "Improperia",
-      "sourceLatin": "Popule meus, quid feci tibi? aut in quo contristavi te? responde mihi."
+      "sourceLatin": "Popule meus, quid feci tibi? aut in quo contristavi te? responde mihi.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "goodfriday-crucem-l39",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962) - Feria VI in Parasceve",
       "section": "Adoration chant",
-      "sourceLatin": "Crucem tuam adoramus, Domine: et sanctam resurrectionem tuam laudamus et glorificamus: ecce enim propter lignum venit gaudium in universo mundo."
+      "sourceLatin": "Crucem tuam adoramus, Domine: et sanctam resurrectionem tuam laudamus et glorificamus: ecce enim propter lignum venit gaudium in universo mundo.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -254,6 +275,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "specializedRegisterFramework": {
@@ -273,7 +299,13 @@
       ],
       "warning": "Good Friday is a specialized liturgical action."
     },
-    "rule": "Read accurately while keeping specialized frequency partitioned."
+    "rule": "Read accurately while keeping specialized frequency partitioned.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "learningBlocks": [
     {
@@ -283,7 +315,13 @@
       "learnerCopy": {
         "en": "Requiem and Holy Week contain crucial vocabulary that is comparatively rare in normal Propers.",
         "fr": "Le Requiem et la Semaine sainte contiennent un vocabulaire crucial mais relativement rare dans les propres ordinaires."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l39-b2",
@@ -293,7 +331,14 @@
       "learnerCopy": {
         "en": "requies is the semantic center of the Introit; the surrounding syntax is already familiar.",
         "fr": "requies est le centre semantique de l'Introit ; la syntaxe environnante est deja familiere."
-      }
+      },
+      "referenceIds": [
+        "requiem-introit-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l39-b3",
@@ -303,7 +348,14 @@
       "learnerCopy": {
         "en": "defunctorum is genitive plural: of the faithful departed.",
         "fr": "defunctorum est un genitif pluriel : des fideles defunts."
-      }
+      },
+      "referenceIds": [
+        "requiem-offertory-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l39-b4",
@@ -313,7 +365,14 @@
       "learnerCopy": {
         "en": "Crucis is genitive singular of crux: the wood of the Cross.",
         "fr": "Crucis est le genitif singulier de crux : le bois de la Croix."
-      }
+      },
+      "referenceIds": [
+        "goodfriday-ecce-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l39-b5",
@@ -323,7 +382,14 @@
       "learnerCopy": {
         "en": "The Reproaches use direct address and rhetorical questions.",
         "fr": "Les Improperes emploient l'adresse directe et les questions rhetoriques."
-      }
+      },
+      "referenceIds": [
+        "goodfriday-popule-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l39-b6",
@@ -332,7 +398,13 @@
       "learnerCopy": {
         "en": "Understand the specialized text while preserving the distinction between special-rite and ordinary vocabulary.",
         "fr": "Comprenez le texte specialise tout en gardant la distinction entre vocabulaire special et vocabulaire ordinaire."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -485,6 +557,13 @@
       "sourceId": "requiem-introit-l39",
       "skills": [
         "vocabulary:requies"
+      ],
+      "referenceIds": [
+        "requiem-introit-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -508,6 +587,13 @@
       "sourceId": "requiem-offertory-l39",
       "skills": [
         "vocabulary:defunctus"
+      ],
+      "referenceIds": [
+        "requiem-offertory-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -531,6 +617,13 @@
       "sourceId": "goodfriday-ecce-l39",
       "skills": [
         "vocabulary:crux"
+      ],
+      "referenceIds": [
+        "goodfriday-ecce-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -554,6 +647,13 @@
       "sourceId": "requiem-offertory-l39",
       "skills": [
         "register:requiem"
+      ],
+      "referenceIds": [
+        "requiem-offertory-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -577,6 +677,13 @@
       "sourceId": "goodfriday-popule-l39",
       "skills": [
         "register:holy-week"
+      ],
+      "referenceIds": [
+        "goodfriday-popule-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -598,6 +705,13 @@
       "sourceId": "goodfriday-ecce-l39",
       "skills": [
         "register:holy-week"
+      ],
+      "referenceIds": [
+        "goodfriday-ecce-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -621,6 +735,13 @@
       "sourceId": "requiem-offertory-l39",
       "skills": [
         "vocabulary:defunctus"
+      ],
+      "referenceIds": [
+        "requiem-offertory-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -644,6 +765,13 @@
       "sourceId": "goodfriday-ecce-l39",
       "skills": [
         "vocabulary:crux"
+      ],
+      "referenceIds": [
+        "goodfriday-ecce-l39",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -667,6 +795,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -690,6 +824,12 @@
       "sourceId": null,
       "skills": [
         "register:frequency"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -724,7 +864,13 @@
       "Good Friday register",
       "frequency partition"
     ],
-    "progressionGate": "Requiem and Holy Week specialized registers."
+    "progressionGate": "Requiem and Holy Week specialized registers.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "validation": {
     "trackedVocabularyIntroduced": [
@@ -736,6 +882,20 @@
     "authenticSourceCount": 5,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

@@ -19,7 +19,13 @@
     "method": "whole prayer → rhetorical segmentation → syntax inside each move → continuous reread",
     "vocabularyPolicy": "Lesson 34 introduces no new tracked vocabulary; all unfamiliar words are support only.",
     "authenticTextPolicy": "Three traditional Roman/Catholic Collect forms are compared without simplifying their syntax.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [],
@@ -367,7 +373,10 @@
       "work": "Missale Romanum — Dominica Sanctissimae Trinitatis",
       "section": "Oratio",
       "sourceLatin": "Omnipotens sempiterne Deus, qui dedisti famulis tuis in confessione verae fidei, aeternae Trinitatis gloriam agnoscere, et in potentia maiestatis adorare unitatem: quaesumus; ut, eiusdem fidei firmitate, ab omnibus semper muniamur adversis. Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
-      "provenanceNote": "Complete Collect used to identify canonical Roman Collect architecture."
+      "provenanceNote": "Complete Collect used to identify canonical Roman Collect architecture.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "corpus-collect-l34",
@@ -375,7 +384,10 @@
       "work": "Missale Romanum — Corpus Christi",
       "section": "Oratio",
       "sourceLatin": "Deus, qui nobis sub Sacramento mirabili passionis tuae memoriam reliquisti: tribue, quaesumus, ita nos Corporis et Sanguinis tui sacra mysteria venerari; ut redemptionis tuae fructum in nobis iugiter sentiamus. Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
-      "provenanceNote": "Collect with relative clause, petition, ita...ut desired result and full conclusion."
+      "provenanceNote": "Collect with relative clause, petition, ita...ut desired result and full conclusion.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "holy-spirit-collect-l34",
@@ -415,6 +427,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "collectArchitectureFramework": {
@@ -432,7 +449,13 @@
       "subjunctive ut-clauses",
       "nested genitives/prepositional phrases"
     ],
-    "readingRule": "Mark the prayer's rhetorical moves first. Parse internal morphology second. Then reread the prayer as one sentence."
+    "readingRule": "Mark the prayer's rhetorical moves first. Parse internal morphology second. Then reread the prayer as one sentence.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "learningBlocks": [
     {
@@ -442,7 +465,13 @@
       "learnerCopy": {
         "en": "A Roman Collect often feels difficult because several grammatical layers are packed into one sentence. The solution is not more vocabulary first; it is recognizing the recurring rhetorical architecture.",
         "fr": "Une collecte romaine paraît souvent difficile parce que plusieurs niveaux grammaticaux sont condensés dans une seule phrase. La solution n'est pas d'abord plus de vocabulaire, mais la reconnaissance de l'architecture rhétorique récurrente."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l34-b2",
@@ -451,7 +480,13 @@
       "learnerCopy": {
         "en": "The opening address may contain several adjectives and nouns before any finite verb appears. Treat Omnipotens sempiterne Deus as the invocation block rather than searching prematurely for a predicate.",
         "fr": "L'adresse initiale peut contenir plusieurs adjectifs et noms avant tout verbe conjugué. Lisez Omnipotens sempiterne Deus comme bloc d'invocation au lieu de chercher trop tôt un prédicat."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l34-b3",
@@ -461,7 +496,14 @@
       "learnerCopy": {
         "en": "Deus, qui nobis... memoriam reliquisti names God and recalls a divine gift before the petition tribue. This relative expansion is not decoration; it supplies the theological ground of the request.",
         "fr": "Deus, qui nobis... memoriam reliquisti nomme Dieu et rappelle un don divin avant la demande tribue. Cette relative n'est pas décorative : elle fonde théologiquement la requête."
-      }
+      },
+      "referenceIds": [
+        "corpus-collect-l34",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l34-b4",
@@ -470,7 +512,13 @@
       "learnerCopy": {
         "en": "quaesumus, tribue, da and similar verbs are structural beacons. Once found, they tell you where the petition proper begins and what later infinitive or ut-clause depends on it.",
         "fr": "quaesumus, tribue, da et les verbes analogues sont des balises structurelles. Une fois repérés, ils indiquent où commence la demande proprement dite et de quoi dépendent les infinitifs ou propositions en ut qui suivent."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l34-b5",
@@ -480,7 +528,14 @@
       "learnerCopy": {
         "en": "The Holy Ghost prayer is shorter, but the same pattern remains: address, qui-clause, da petition, dependent infinitives, conclusion. Recognizing form makes unfamiliar vocabulary less threatening.",
         "fr": "La prière au Saint-Esprit est plus courte, mais le même schéma demeure : adresse, relative en qui, demande da, infinitifs dépendants, conclusion. Reconnaître la forme rend le vocabulaire inconnu moins intimidant."
-      }
+      },
+      "referenceIds": [
+        "holy-spirit-collect-l34",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l34-b6",
@@ -489,7 +544,13 @@
       "learnerCopy": {
         "en": "First pass: mark architecture and clause boundaries. Second pass: resolve cases, verbs and modifiers. Third movement is not a new parse but a continuous rereading of the prayer as prayer.",
         "fr": "Premier passage : marquez l'architecture et les limites de propositions. Deuxième passage : résolvez cas, verbes et déterminants. Le troisième mouvement n'est pas une nouvelle analyse, mais une relecture continue de la prière comme prière."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -655,6 +716,12 @@
       "sourceId": null,
       "skills": [
         "collect:method"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -682,6 +749,12 @@
       "sourceId": null,
       "skills": [
         "collect:architecture"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -705,6 +778,13 @@
       "sourceId": "corpus-collect-l34",
       "skills": [
         "collect:relative"
+      ],
+      "referenceIds": [
+        "corpus-collect-l34",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -728,6 +808,13 @@
       "sourceId": "corpus-collect-l34",
       "skills": [
         "collect:petition"
+      ],
+      "referenceIds": [
+        "corpus-collect-l34",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -751,6 +838,13 @@
       "sourceId": "corpus-collect-l34",
       "skills": [
         "collect:ut"
+      ],
+      "referenceIds": [
+        "corpus-collect-l34",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -774,6 +868,12 @@
       "sourceId": null,
       "skills": [
         "curriculum:consolidation"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -797,6 +897,12 @@
       "sourceId": null,
       "skills": [
         "collect:conclusion"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -820,6 +926,12 @@
       "sourceId": null,
       "skills": [
         "reading:workflow"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -842,6 +954,12 @@
       "sourceId": null,
       "skills": [
         "reading:support"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -860,6 +978,13 @@
       "sourceId": "trinity-collect-l34",
       "skills": [
         "collect:petition"
+      ],
+      "referenceIds": [
+        "trinity-collect-l34",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -893,6 +1018,12 @@
       "desired outcome",
       "conclusion",
       "architecture-first workflow"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "validation": {
@@ -901,6 +1032,20 @@
     "authenticSourceCount": 3,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

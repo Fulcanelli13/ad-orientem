@@ -19,7 +19,13 @@
     "method": "usage contrast → authentic ecclesiastical example → reading rule → retrieval",
     "vocabularyPolicy": "Frozen Lesson 32 connective vocabulary only.",
     "authenticTextPolicy": "Examples are Vulgate/liturgical Latin illustrating genuine ecclesiastical usage, not reconstructed Ciceronian substitutes.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -262,7 +268,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 1:13",
       "sourceLatin": "Qui non ex sanguinibus, neque ex voluntate carnis, neque ex voluntate viri, sed ex Deo nati sunt.",
-      "provenanceNote": "neque coordination and biblical semantic usage."
+      "provenanceNote": "neque coordination and biblical semantic usage.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt6-24-aut-l32",
@@ -270,7 +279,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 6:24",
       "sourceLatin": "Aut enim unum odio habebit, et alterum diliget: aut unum sustinebit, et alterum contemnet.",
-      "provenanceNote": "aut...aut gives explicit alternatives."
+      "provenanceNote": "aut...aut gives explicit alternatives.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt18-20-vel-l32",
@@ -278,7 +290,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 18:20",
       "sourceLatin": "Ubi enim sunt duo vel tres congregati in nomine meo, ibi sum in medio eorum.",
-      "provenanceNote": "vel supplies ordinary ecclesiastical disjunction."
+      "provenanceNote": "vel supplies ordinary ecclesiastical disjunction.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-1cor10-31-sive-l32",
@@ -286,7 +301,10 @@
       "work": "Vulgata Clementina",
       "section": "I ad Corinthios 10:31",
       "sourceLatin": "Sive ergo manducatis, sive bibitis, sive aliud quid facitis: omnia in gloriam Dei facite.",
-      "provenanceNote": "sive...sive coordinates alternatives in exhortation."
+      "provenanceNote": "sive...sive coordinates alternatives in exhortation.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt5-37-nec-l32",
@@ -294,7 +312,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 5:37",
       "sourceLatin": "Sit autem sermo vester: Est, est: Non, non.",
-      "provenanceNote": "Included as a Church-Latin punctuation/coordination contrast; nec itself is taught through controlled retrieval."
+      "provenanceNote": "Included as a Church-Latin punctuation/coordination contrast; nec itself is taught through controlled retrieval.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -326,6 +347,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "churchLatinFramework": {
@@ -350,7 +376,13 @@
         "autem",
         "vero"
       ]
-    }
+    },
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "learningBlocks": [
     {
@@ -360,7 +392,13 @@
       "learnerCopy": {
         "en": "Liturgical Latin inherits classical grammar but also biblical, patristic and medieval usage. A reader should recognize these developments rather than silently rewriting them into a preferred classical idiom.",
         "fr": "Le latin liturgique hérite de la grammaire classique, mais aussi d'usages bibliques, patristiques et médiévaux. Le lecteur doit reconnaître ces développements au lieu de les réécrire silencieusement selon un idéal classique."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l32-b2",
@@ -370,7 +408,14 @@
       "learnerCopy": {
         "en": "Biblical Latin often coordinates through repeated particles. neque...neque can carry a chain of exclusions; do not compress it until you have seen the whole structure.",
         "fr": "Le latin biblique coordonne souvent par répétition de particules. neque...neque peut porter une chaîne d'exclusions ; ne la condensez qu'après avoir vu toute la structure."
-      }
+      },
+      "referenceIds": [
+        "vulg-jn1-13-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l32-b3",
@@ -379,7 +424,13 @@
       "learnerCopy": {
         "en": "aut often marks a sharper alternative; vel can be looser or inclusive; sive can frame 'whether...or'. Church usage is context-driven, so avoid forcing a rigid one-word English/French equivalent.",
         "fr": "aut marque souvent une alternative plus nette ; vel peut être plus souple ou inclusif ; sive peut encadrer « soit...soit ». L'usage ecclésiastique dépend du contexte : évitez une équivalence rigide mot à mot."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l32-b4",
@@ -389,7 +440,14 @@
       "learnerCopy": {
         "en": "The repeated conjunction is part of the rhetoric. Preserve the coordination long enough to see that every alternative is subordinated to the final command: do all to the glory of God.",
         "fr": "La répétition de la conjonction appartient à la rhétorique. Conservez la coordination assez longtemps pour voir que chaque alternative dépend du commandement final : faites tout pour la gloire de Dieu."
-      }
+      },
+      "referenceIds": [
+        "vulg-1cor10-31-sive-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l32-b5",
@@ -398,7 +456,13 @@
       "learnerCopy": {
         "en": "First describe what the text actually does. Only afterward, if useful, note that a classical author might have preferred another construction. The app must teach the Latin Catholics actually meet.",
         "fr": "Décrivez d'abord ce que le texte fait réellement. Ensuite seulement, si c'est utile, notez qu'un auteur classique aurait pu préférer une autre construction. L'application doit enseigner le latin réellement rencontré par les catholiques."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l32-b6",
@@ -407,7 +471,13 @@
       "learnerCopy": {
         "en": "neque, nec, aut, vel, sive and at are tiny, but they define logical architecture. In long prayers, marking them is often more useful than immediately translating every noun.",
         "fr": "neque, nec, aut, vel, sive et at sont minuscules, mais ils structurent la logique. Dans les longues prières, les repérer est souvent plus utile que de traduire immédiatement chaque nom."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -536,6 +606,12 @@
       "sourceId": null,
       "skills": [
         "church-latin:method"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -565,6 +641,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l32"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -588,6 +670,13 @@
       "sourceId": "vulg-jn1-13-l32",
       "skills": [
         "coordination:negative"
+      ],
+      "referenceIds": [
+        "vulg-jn1-13-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -611,6 +700,13 @@
       "sourceId": "vulg-mt6-24-aut-l32",
       "skills": [
         "coordination:alternative"
+      ],
+      "referenceIds": [
+        "vulg-mt6-24-aut-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -634,6 +730,13 @@
       "sourceId": "vulg-mt18-20-vel-l32",
       "skills": [
         "coordination:vel"
+      ],
+      "referenceIds": [
+        "vulg-mt18-20-vel-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -657,6 +760,13 @@
       "sourceId": "vulg-1cor10-31-sive-l32",
       "skills": [
         "coordination:sive"
+      ],
+      "referenceIds": [
+        "vulg-1cor10-31-sive-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -679,6 +789,12 @@
       "sourceId": null,
       "skills": [
         "church-latin:usage"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -702,6 +818,12 @@
       "sourceId": null,
       "skills": [
         "reading:structure"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -720,6 +842,13 @@
       "sourceId": "vulg-1cor10-31-sive-l32",
       "skills": [
         "vocabulary:sive"
+      ],
+      "referenceIds": [
+        "vulg-1cor10-31-sive-l32",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -738,6 +867,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:nec"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -769,6 +904,12 @@
       "aut/vel/sive",
       "Church Latin as historical usage",
       "connector-first structural reading"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "validation": {
@@ -784,6 +925,20 @@
     "authenticSourceCount": 5,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

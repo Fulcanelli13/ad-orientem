@@ -19,7 +19,13 @@
     "method": "biblical usage → authentic example → semantic/rhetorical observation → liturgical transfer",
     "vocabularyPolicy": "Only frozen Lesson 33 vocabulary is introduced.",
     "authenticTextPolicy": "Examples are Vulgate passages whose diction and repetitions entered Catholic liturgical language.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -298,7 +304,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 10:11",
       "sourceLatin": "Ego sum pastor bonus. Bonus pastor animam suam dat pro ovibus suis.",
-      "provenanceNote": "Shepherd/sheep semantics become central Christian and liturgical vocabulary."
+      "provenanceNote": "Shepherd/sheep semantics become central Christian and liturgical vocabulary.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-lk12-32-l33",
@@ -306,7 +315,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 12:32",
       "sourceLatin": "Nolite timere pusillus grex, quia complacuit Patri vestro dare vobis regnum.",
-      "provenanceNote": "grex and timor appear in a compact ecclesial image."
+      "provenanceNote": "grex and timor appear in a compact ecclesial image.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-lk8-11-l33",
@@ -314,7 +326,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 8:11",
       "sourceLatin": "Semen est verbum Dei.",
-      "provenanceNote": "A direct Semitic/biblical semantic identification: seed = word of God."
+      "provenanceNote": "A direct Semitic/biblical semantic identification: seed = word of God.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps110-10-l33",
@@ -322,7 +337,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 110:10",
       "sourceLatin": "Initium sapientiae timor Domini.",
-      "provenanceNote": "timor Domini is a stable biblical semantic phrase."
+      "provenanceNote": "timor Domini is a stable biblical semantic phrase.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-jn13-34-l33",
@@ -330,7 +348,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 13:34",
       "sourceLatin": "Mandatum novum do vobis: ut diligatis invicem, sicut dilexi vos.",
-      "provenanceNote": "mandatum develops strong Christian semantic value in Gospel Latin."
+      "provenanceNote": "mandatum develops strong Christian semantic value in Gospel Latin.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt1-18-generatio-l33",
@@ -338,7 +359,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 1:18",
       "sourceLatin": "Christi autem generatio sic erat.",
-      "provenanceNote": "generatio is read in its biblical genealogy/birth context."
+      "provenanceNote": "generatio is read in its biblical genealogy/birth context.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "wis18-sermo-l33",
@@ -346,7 +370,10 @@
       "work": "Vulgata Clementina",
       "section": "Sapientia 18:15",
       "sourceLatin": "omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit.",
-      "provenanceNote": "sermo carries the biblical sense of word/speech in sacred prose."
+      "provenanceNote": "sermo carries the biblical sense of word/speech in sacred prose.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt13-28-l33",
@@ -354,7 +381,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 13:28",
       "sourceLatin": "Inimicus homo hoc fecit.",
-      "provenanceNote": "inimicus appears as a substantivized adjective/noun: enemy."
+      "provenanceNote": "inimicus appears as a substantivized adjective/noun: enemy.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-apoc2-10-l33",
@@ -362,7 +392,10 @@
       "work": "Vulgata Clementina",
       "section": "Apocalypsis 2:10",
       "sourceLatin": "Esto fidelis usque ad mortem, et dabo tibi coronam vitae.",
-      "provenanceNote": "corona vitae shows a biblical metaphor that passes into Christian prayer and hagiography."
+      "provenanceNote": "corona vitae shows a biblical metaphor that passes into Christian prayer and hagiography.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps117-22-l33",
@@ -370,7 +403,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 117:22",
       "sourceLatin": "Lapidem quem reprobaverunt aedificantes: hic factus est in caput anguli.",
-      "provenanceNote": "lapis and repeated demonstrative/relative structure entered Christian typological reading."
+      "provenanceNote": "lapis and repeated demonstrative/relative structure entered Christian typological reading.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -402,6 +438,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "biblicalLatinFramework": {
@@ -411,7 +452,13 @@
       "Concrete biblical images become theological/liturgical vocabulary without ceasing to be ordinary Latin nouns.",
       "Meaning must be learned from recurrent scriptural context, not only from a classical dictionary gloss."
     ],
-    "readingRule": "When a familiar-looking word seems semantically stronger or more theological than its basic gloss, inspect the biblical phrase in which Church usage learned it."
+    "readingRule": "When a familiar-looking word seems semantically stronger or more theological than its basic gloss, inspect the biblical phrase in which Church usage learned it.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "learningBlocks": [
     {
@@ -421,7 +468,13 @@
       "learnerCopy": {
         "en": "Church Latin does not merely borrow biblical quotations. Repeated scriptural use gives ordinary words stable Christian associations: flock, seed, fear of the Lord, commandment, crown, stone.",
         "fr": "Le latin de l'Église ne se contente pas de citer la Bible. L'usage scripturaire répété donne à des mots ordinaires des associations chrétiennes stables : troupeau, semence, crainte du Seigneur, commandement, couronne, pierre."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l33-b2",
@@ -431,7 +484,14 @@
       "learnerCopy": {
         "en": "A flock is still literally a flock, but biblical repetition makes grex/oves natural language for the faithful and the Church. Read the literal image first, then the inherited theological resonance.",
         "fr": "Un troupeau reste littéralement un troupeau, mais la répétition biblique fait de grex/oves un langage naturel pour les fidèles et l'Église. Lisez d'abord l'image littérale, puis sa résonance théologique héritée."
-      }
+      },
+      "referenceIds": [
+        "vulg-lk12-32-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l33-b3",
@@ -441,7 +501,14 @@
       "learnerCopy": {
         "en": "Biblical Latin frequently states metaphoric identity directly. semen remains 'seed', but in this sentence the parable assigns it a scriptural referent: the word of God.",
         "fr": "Le latin biblique énonce souvent directement une identité métaphorique. semen reste « semence », mais la parabole lui attribue ici un référent scripturaire : la parole de Dieu."
-      }
+      },
+      "referenceIds": [
+        "vulg-lk8-11-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l33-b4",
@@ -451,7 +518,14 @@
       "learnerCopy": {
         "en": "timor can mean fear, but timor Domini is a stable biblical phrase whose devotional meaning must be learned from Scripture and tradition, not flattened into modern emotional vocabulary.",
         "fr": "timor peut signifier crainte, mais timor Domini est une expression biblique stable dont le sens dévotionnel s'apprend par l'Écriture et la tradition, non en la réduisant au vocabulaire émotionnel moderne."
-      }
+      },
+      "referenceIds": [
+        "vulg-ps110-10-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l33-b5",
@@ -460,7 +534,13 @@
       "learnerCopy": {
         "en": "Biblical Latin may repeat nouns, conjunctions and parallel formulas more than polished classical prose. Preserve the repetition while parsing because it often carries theological or rhetorical structure.",
         "fr": "Le latin biblique répète parfois noms, conjonctions et formules parallèles davantage qu'une prose classique polie. Conservez cette répétition pendant l'analyse : elle porte souvent la structure théologique ou rhétorique."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l33-b6",
@@ -469,7 +549,13 @@
       "learnerCopy": {
         "en": "Once you know the scriptural range of corona, lapis, grex, mandatum or inimicus, later antiphons, propers, saints' texts and devotional prayers become easier because they reuse an inherited semantic world.",
         "fr": "Une fois connu le champ scripturaire de corona, lapis, grex, mandatum ou inimicus, les antiennes, propres, textes des saints et prières dévotionnelles deviennent plus lisibles parce qu'ils réemploient le même univers sémantique."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -700,6 +786,12 @@
       "sourceId": null,
       "skills": [
         "biblical-latin:semantics"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -727,6 +819,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l33"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -754,6 +852,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l33"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -777,6 +881,13 @@
       "sourceId": "vulg-lk8-11-l33",
       "skills": [
         "biblical-latin:semantics"
+      ],
+      "referenceIds": [
+        "vulg-lk8-11-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -800,6 +911,13 @@
       "sourceId": "vulg-ps110-10-l33",
       "skills": [
         "biblical-latin:phrase"
+      ],
+      "referenceIds": [
+        "vulg-ps110-10-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -824,6 +942,13 @@
       "skills": [
         "vocabulary:corona",
         "case:genitive"
+      ],
+      "referenceIds": [
+        "vulg-apoc2-10-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -848,6 +973,13 @@
       "skills": [
         "vocabulary:lapis",
         "case:accusative"
+      ],
+      "referenceIds": [
+        "vulg-ps117-22-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -871,6 +1003,12 @@
       "sourceId": null,
       "skills": [
         "biblical-latin:rhetoric"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -889,6 +1027,13 @@
       "sourceId": "vulg-lk12-32-l33",
       "skills": [
         "vocabulary:grex"
+      ],
+      "referenceIds": [
+        "vulg-lk12-32-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -907,6 +1052,13 @@
       "sourceId": "vulg-jn13-34-l33",
       "skills": [
         "vocabulary:mandatum"
+      ],
+      "referenceIds": [
+        "vulg-jn13-34-l33",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -938,6 +1090,12 @@
       "repetition as structure",
       "core biblical nouns",
       "literal image plus theological resonance"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "validation": {
@@ -957,6 +1115,20 @@
     "authenticSourceCount": 10,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

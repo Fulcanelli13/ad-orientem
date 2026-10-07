@@ -5,9 +5,31 @@ const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const course = readJson("data/learn/latin-course-40-core350.v1.json");
 const core200 = readJson("data/learn/core-latin-200.v0.2.json");
 const core350 = readJson("data/learn/core-latin-201-350.v1.json");
+const referenceRegistry = readJson("data/learn/latin-course-reference-registry.v1.json");
+const globalReferenceIds = new Set(referenceRegistry.references.map(x => x.id));
+assert(referenceRegistry.references.length === globalReferenceIds.size, "reference registry contains duplicate IDs");
+for (const required of [
+  "curriculum-latin-course-40-v1",
+  "grammar-scanlon-1944",
+  "grammar-nunn-1922",
+  "grammar-plater-white-1926",
+  "grammar-petitmangin-1930",
+  "corpus-missale-romanum-1962",
+  "corpus-vulgata-clementina-1592"
+]) {
+  assert(globalReferenceIds.has(required), `reference registry missing required ID: ${required}`);
+}
 
 function assert(cond, msg) {
   if (!cond) throw new Error(msg);
+}
+
+function assertReferenceIds(refs, allowed, label) {
+  assert(Array.isArray(refs) && refs.length > 0, `${label} must carry non-empty referenceIds`);
+  assert(new Set(refs).size === refs.length, `${label} contains duplicate referenceIds`);
+  for (const ref of refs) {
+    assert(allowed.has(ref), `${label} references unresolved ID: ${ref}`);
+  }
 }
 
 // Frozen 40-lesson curriculum contract.
@@ -86,6 +108,8 @@ for (let i = 0; i < authored.length; i++) {
 const priorIntroduced = new Set();
 const allAuthoredIntroduced = [];
 const stageSummaries = [];
+let referencedLearningBlocks = 0;
+let referencedExercises = 0;
 
 function expectedActiveCases(lessonNumber) {
   if (lessonNumber < 2) return [];
@@ -147,6 +171,34 @@ for (const lesson of authored) {
     assert(source.work && source.section, `source ${source.id} in Lesson ${n} lacks provenance metadata`);
   }
   assert(sourceIds.size >= 3, `Lesson ${n} must carry at least three source records`);
+  const allowedReferenceIds = new Set([...globalReferenceIds, ...sourceIds]);
+  assert(lesson.referencePolicy?.registryPath === "data/learn/latin-course-reference-registry.v1.json",
+    `Lesson ${n} referencePolicy must point to the frozen registry`);
+  assertReferenceIds(lesson.referencePolicy?.referenceIds, allowedReferenceIds, `Lesson ${n} referencePolicy`);
+  assertReferenceIds(lesson.authoringPolicy?.referenceIds, allowedReferenceIds, `Lesson ${n} authoringPolicy`);
+  assertReferenceIds(lesson.objectivesReferenceIds, allowedReferenceIds, `Lesson ${n} objectives`);
+  if (lesson.casePanel) {
+    assertReferenceIds(lesson.casePanel.referenceIds, allowedReferenceIds, `Lesson ${n} casePanel`);
+  }
+  for (const [key, value] of Object.entries(lesson)) {
+    if (key.endsWith("Framework") && value && typeof value === "object") {
+      assertReferenceIds(value.referenceIds, allowedReferenceIds, `Lesson ${n} ${key}`);
+    }
+  }
+  if (lesson.pronounSpiral && typeof lesson.pronounSpiral === "object") {
+    assertReferenceIds(lesson.pronounSpiral.referenceIds, allowedReferenceIds, `Lesson ${n} pronounSpiral`);
+  }
+  if (lesson.checkpoint) {
+    assertReferenceIds(lesson.checkpoint.referenceIds, allowedReferenceIds, `Lesson ${n} checkpoint`);
+  }
+  assert(lesson.validation?.explanationReferencesResolved === true,
+    `Lesson ${n} must declare explanationReferencesResolved=true`);
+
+  for (const source of lesson.sources || []) {
+    for (const ref of source.corpusReferenceIds || []) {
+      assert(globalReferenceIds.has(ref), `Lesson ${n} source ${source.id} has unresolved corpus reference: ${ref}`);
+    }
+  }
 
   for (const passage of lesson.authenticPassages || []) {
     assert(sourceIds.has(passage.sourceId), `Lesson ${n} passage ${passage.id} references unknown source ${passage.sourceId}`);
@@ -163,6 +215,12 @@ for (const lesson of authored) {
   }
 
   for (const block of lesson.learningBlocks || []) {
+    assertReferenceIds(block.referenceIds, allowedReferenceIds, `Lesson ${n} block ${block.id}`);
+    if (block.sourceId) {
+      assert(block.referenceIds.includes(block.sourceId),
+        `Lesson ${n} block ${block.id} must include its primary sourceId in referenceIds`);
+    }
+    referencedLearningBlocks++;
     if (block.learnerCopy) {
       assert(typeof block.learnerCopy.en === "string" && block.learnerCopy.en.length > 0,
         `Lesson ${n} block ${block.id} missing English learner copy`);
@@ -177,6 +235,12 @@ for (const lesson of authored) {
 
   const exerciseIds = new Set();
   for (const exercise of lesson.exercises || []) {
+    assertReferenceIds(exercise.referenceIds, allowedReferenceIds, `Lesson ${n} exercise ${exercise.id}`);
+    if (exercise.sourceId) {
+      assert(exercise.referenceIds.includes(exercise.sourceId),
+        `Lesson ${n} exercise ${exercise.id} must include its primary sourceId in referenceIds`);
+    }
+    referencedExercises++;
     assert(exercise.id && !exerciseIds.has(exercise.id), `duplicate or empty exercise id in Lesson ${n}: ${exercise.id}`);
     exerciseIds.add(exercise.id);
     assert(exercise.exerciseType, `Lesson ${n} exercise ${exercise.id} missing exerciseType`);
@@ -486,5 +550,11 @@ console.log(JSON.stringify({
   pronounCheckpoint: course.pronounSpiral.cumulativeCheckpoint,
   vocabularyNeutralIntegrationLessons: [37,38,39,40],
   authoredLessonsValidated: authored.map(x => x.lesson),
-  authoredStagesValidated: stageSummaries
+  authoredStagesValidated: stageSummaries,
+  referenceRegistryVersion: referenceRegistry.version,
+  globalReferenceCount: referenceRegistry.references.length,
+  explanationReferenceCoverage: {
+    learningBlocks: referencedLearningBlocks,
+    exercises: referencedExercises
+  }
 }, null, 2));

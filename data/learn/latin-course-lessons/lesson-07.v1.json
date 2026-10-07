@@ -19,7 +19,12 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only sanctifico is new Core; known verbs carry the active/passive contrast.",
     "authenticTextPolicy": "Authentic liturgical clauses are used without pretending deferred mood/participle syntax is already mastered.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -101,7 +106,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Pater noster",
       "sourceLatin": "sanctificetur nomen tuum.",
-      "provenanceNote": "Authentic present-system passive form of sanctifico; mood is deferred while voice is read now."
+      "provenanceNote": "Authentic present-system passive form of sanctifico; mood is deferred while voice is read now.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-gloria-active-l7",
@@ -109,7 +117,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Gloria",
       "sourceLatin": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
-      "provenanceNote": "Authentic active forms recycled from Lesson 5 for direct voice contrast."
+      "provenanceNote": "Authentic active forms recycled from Lesson 5 for direct voice contrast.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-sanctus-benedictus-l7",
@@ -117,7 +128,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Sanctus",
       "sourceLatin": "Benedictus qui venit in nomine Domini.",
-      "provenanceNote": "Authentic participial/adjectival form used to prevent overgeneralising passive morphology."
+      "provenanceNote": "Authentic participial/adjectival form used to prevent overgeneralising passive morphology.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -153,6 +167,10 @@
         "status": "preview",
         "unlockLesson": 9
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "passiveFramework": {
@@ -164,7 +182,12 @@
       "-mini",
       "-ntur"
     ],
-    "scope": "voice recognition first; mood and advanced participles later"
+    "scope": "voice recognition first; mood and advanced participles later",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -174,7 +197,12 @@
       "learnerCopy": {
         "en": "Active voice presents the subject as performing the action. Passive voice presents the subject as receiving it. Lesson 7 adds that contrast without adding a large new vocabulary burden.",
         "fr": "À l'actif, le sujet accomplit l'action ; au passif, il la reçoit. La leçon 7 ajoute ce contraste sans alourdir fortement le vocabulaire."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l7-b2",
@@ -183,7 +211,12 @@
       "learnerCopy": {
         "en": "High-yield present passive endings include -r, -ris, -tur, -mur, -mini and -ntur. First learn to recognize them in context; full production can come later.",
         "fr": "Les terminaisons passives importantes comprennent -r, -ris, -tur, -mur, -mini et -ntur. Il faut d'abord les reconnaître en contexte ; la production complète viendra ensuite."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l7-b3",
@@ -193,7 +226,13 @@
       "learnerCopy": {
         "en": "sanctificetur contains the passive signal -tur: the name receives the action of sanctifying. Its subjunctive mood is deliberately deferred; the reading target here is voice.",
         "fr": "sanctificetur contient le signal passif -tur : le nom reçoit l'action de sanctifier. Le subjonctif est volontairement reporté ; ici, la cible est la voix."
-      }
+      },
+      "referenceIds": [
+        "mr1962-pater-sanctificetur-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l7-b4",
@@ -202,7 +241,12 @@
       "learnerCopy": {
         "en": "Laudamus means that 'we' perform the praising; sanctificetur means that the subject is to be sanctified. Read the direction of the action before translating mechanically.",
         "fr": "Laudamus signifie que « nous » accomplissons l'action de louer ; sanctificetur signifie que le sujet reçoit l'action de sanctifier. Lisez d'abord le sens de l'action."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l7-b5",
@@ -212,7 +256,13 @@
       "learnerCopy": {
         "en": "Benedictus is passive in origin but functions here as a participial adjective, 'blessed'. Context prevents a false rule that every -tus form is a present passive verb.",
         "fr": "Benedictus est d'origine passive mais fonctionne ici comme adjectif participial, « béni ». Le contexte empêche de croire que toute forme en -tus est un verbe passif au présent."
-      }
+      },
+      "referenceIds": [
+        "mr1962-sanctus-benedictus-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l7-b6",
@@ -221,7 +271,12 @@
       "learnerCopy": {
         "en": "Only sanctifico is new tracked vocabulary. The real work is to reread known verbs and nouns through the active/passive distinction while keeping the permanent case map alive.",
         "fr": "Seul sanctifico est nouveau dans le vocabulaire suivi. Le vrai travail consiste à relire les verbes et noms déjà connus à travers l'opposition actif/passif tout en conservant la carte des cas."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -304,6 +359,12 @@
       "sourceId": "mr1962-pater-sanctificetur-l7",
       "skills": [
         "voice:passive"
+      ],
+      "referenceIds": [
+        "mr1962-pater-sanctificetur-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -328,6 +389,12 @@
       "sourceId": "mr1962-gloria-active-l7",
       "skills": [
         "voice:active"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-active-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -351,6 +418,11 @@
       "sourceId": null,
       "skills": [
         "voice:principle"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -373,6 +445,12 @@
       "skills": [
         "voice:passive",
         "vocabulary:sanctifico"
+      ],
+      "referenceIds": [
+        "mr1962-pater-sanctificetur-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -395,6 +473,12 @@
       "sourceId": "mr1962-sanctus-benedictus-l7",
       "skills": [
         "morphology:boundary"
+      ],
+      "referenceIds": [
+        "mr1962-sanctus-benedictus-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -420,6 +504,12 @@
       "sourceId": "mr1962-gloria-active-l7",
       "skills": [
         "retrieval:lesson5"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-active-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -444,6 +534,12 @@
       "sourceId": "mr1962-pater-sanctificetur-l7",
       "skills": [
         "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "mr1962-pater-sanctificetur-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -467,6 +563,11 @@
       "sourceId": null,
       "skills": [
         "case:framework"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -485,6 +586,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:sanctifico"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -508,6 +614,12 @@
       "sourceId": "mr1962-pater-sanctificetur-l7",
       "skills": [
         "scope:grammar"
+      ],
+      "referenceIds": [
+        "mr1962-pater-sanctificetur-l7",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -539,6 +651,11 @@
       "passive subject receives action",
       "-tur passive recognition",
       "genitive/dative remain preview until Lesson 8"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -549,6 +666,19 @@
     "authenticSourceCount": 3,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

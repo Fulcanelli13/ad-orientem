@@ -19,7 +19,13 @@
     "method": "invocation → relative rationale → petition → ut-clause → conclusion → full reread",
     "vocabularyPolicy": "Frozen Lesson 30 vocabulary only; proper names and non-Core collect vocabulary are explicit support.",
     "authenticTextPolicy": "Checkpoint uses the traditional Collect for Trinity Sunday in full form with Roman conclusion.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -455,7 +461,10 @@
       "work": "Missale Romanum — Dominica Sanctissimae Trinitatis",
       "section": "Oratio",
       "sourceLatin": "Omnipotens sempiterne Deus, qui dedisti famulis tuis in confessione verae fidei, aeternae Trinitatis gloriam agnoscere, et in potentia maiestatis adorare unitatem: quaesumus; ut, eiusdem fidei firmitate, ab omnibus semper muniamur adversis. Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.",
-      "provenanceNote": "Complete Roman Collect checkpoint: invocation, relative clause, petition, ut-clause and conclusion."
+      "provenanceNote": "Complete Roman Collect checkpoint: invocation, relative clause, petition, ut-clause and conclusion.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "canon-supplices-short-l30",
@@ -463,7 +472,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Supplices te rogamus",
       "sourceLatin": "Supplices te rogamus, omnipotens Deus.",
-      "provenanceNote": "supplex and omnipotens are anchored directly in the Canon."
+      "provenanceNote": "supplex and omnipotens are anchored directly in the Canon.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "versicle-oratio-l30",
@@ -487,7 +499,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 2:10",
       "sourceLatin": "Evangelizo vobis gaudium magnum.",
-      "provenanceNote": "gaudium appears in the angelic proclamation."
+      "provenanceNote": "gaudium appears in the angelic proclamation.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "rom11-sapientia-l30",
@@ -495,7 +510,10 @@
       "work": "Vulgata Clementina",
       "section": "Romani 11:33",
       "sourceLatin": "O altitudo divitiarum sapientiae et scientiae Dei!",
-      "provenanceNote": "sapientia appears in the Epistle of Trinity Sunday."
+      "provenanceNote": "sapientia appears in the Epistle of Trinity Sunday.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "ps50-iniquitas-l30",
@@ -503,7 +521,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 50:4",
       "sourceLatin": "Amplius lava me ab iniquitate mea.",
-      "provenanceNote": "iniquitas is anchored in the Miserere."
+      "provenanceNote": "iniquitas is anchored in the Miserere.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "ps45-tribulatio-l30",
@@ -511,7 +532,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 45:2",
       "sourceLatin": "Deus noster refugium et virtus: adiutor in tribulationibus.",
-      "provenanceNote": "tribulatio appears in Psalmic prayer language."
+      "provenanceNote": "tribulatio appears in Psalmic prayer language.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -543,6 +567,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "collectFramework": {
@@ -568,7 +597,13 @@
         "example": "Per Dominum nostrum ... per omnia saecula saeculorum"
       }
     ],
-    "readingRule": "Parse rhetorical moves first, then resolve morphology inside each move, then reread the Collect continuously."
+    "readingRule": "Parse rhetorical moves first, then resolve morphology inside each move, then reread the Collect continuously.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -578,7 +613,13 @@
       "learnerCopy": {
         "en": "Roman Collects are compact but highly organized. Find the invocation, any relative clause explaining God's attribute/action, the petition, the requested outcome, and the Christological conclusion.",
         "fr": "Les collectes romaines sont brèves mais fortement structurées. Repérez l'invocation, la relative qui expose l'attribut ou l'action divine, la demande, le résultat demandé et la conclusion christologique."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l30-b2",
@@ -588,7 +629,14 @@
       "learnerCopy": {
         "en": "Omnipotens sempiterne Deus gives three coordinated identifying words before the sentence expands. Do not search for a finite verb too early.",
         "fr": "Omnipotens sempiterne Deus donne trois mots d'identification coordonnés avant que la phrase ne s'étende. Ne cherchez pas trop tôt un verbe conjugué."
-      }
+      },
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l30-b3",
@@ -598,7 +646,14 @@
       "learnerCopy": {
         "en": "qui dedisti famulis tuis... explains what God has granted. The infinitives agnoscere and adorare depend on dedisti and carry their own complements.",
         "fr": "qui dedisti famulis tuis... explique ce que Dieu a accordé. Les infinitifs agnoscere et adorare dépendent de dedisti et portent leurs propres compléments."
-      }
+      },
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l30-b4",
@@ -608,7 +663,14 @@
       "learnerCopy": {
         "en": "quaesumus marks the petition; ut ... muniamur gives the requested result. Earlier purpose/result/subjunctive work now becomes part of one real Collect.",
         "fr": "quaesumus marque la demande ; ut ... muniamur donne le résultat demandé. Le travail antérieur sur ut, le résultat et le subjonctif s'intègre maintenant dans une vraie collecte."
-      }
+      },
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l30-b5",
@@ -618,7 +680,14 @@
       "learnerCopy": {
         "en": "The conclusion identifies Christ and the Trinitarian relation before the final per omnia saecula saeculorum. Treat it as a familiar reusable syntax block.",
         "fr": "La conclusion identifie le Christ et la relation trinitaire avant le per omnia saecula saeculorum final. Lisez-la comme un bloc syntaxique familier et réutilisable."
-      }
+      },
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l30-b6",
@@ -627,7 +696,13 @@
       "learnerCopy": {
         "en": "The Stage 6 gate is continuous reading. You may mark clause boundaries, but you must preserve the prayer's rhetorical movement from invocation to conclusion.",
         "fr": "Le contrôle de l'étape 6 exige une lecture continue. Vous pouvez marquer les limites des propositions, mais vous devez conserver le mouvement rhétorique de l'invocation à la conclusion."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -841,6 +916,13 @@
       "sourceId": "trinity-collect-l30",
       "skills": [
         "collect:architecture"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -864,6 +946,13 @@
       "sourceId": "trinity-collect-l30",
       "skills": [
         "collect:relative"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -887,6 +976,13 @@
       "sourceId": "trinity-collect-l30",
       "skills": [
         "collect:petition"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -910,6 +1006,13 @@
       "sourceId": "trinity-collect-l30",
       "skills": [
         "collect:ut-clause"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -933,6 +1036,13 @@
       "sourceId": "trinity-collect-l30",
       "skills": [
         "collect:conclusion"
+      ],
+      "referenceIds": [
+        "trinity-collect-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -962,6 +1072,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l30"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -987,6 +1103,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l30"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1008,6 +1130,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l30"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1032,6 +1160,13 @@
       "skills": [
         "vocabulary:supplex",
         "agreement"
+      ],
+      "referenceIds": [
+        "canon-supplices-short-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1055,6 +1190,13 @@
       "sourceId": "ps45-tribulatio-l30",
       "skills": [
         "case:ablative"
+      ],
+      "referenceIds": [
+        "ps45-tribulatio-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1078,6 +1220,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1107,6 +1255,12 @@
       "sourceId": null,
       "skills": [
         "reading:collect"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1125,6 +1279,13 @@
       "sourceId": "rom11-sapientia-l30",
       "skills": [
         "vocabulary:sapientia"
+      ],
+      "referenceIds": [
+        "rom11-sapientia-l30",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -1171,6 +1332,12 @@
       "advanced dative/ablative",
       "Collect architecture",
       "complete continuous reading"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -1193,6 +1360,20 @@
     "authenticSourceCount": 8,
     "exerciseCount": 13,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

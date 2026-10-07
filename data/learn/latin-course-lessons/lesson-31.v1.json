@@ -19,7 +19,13 @@
     "method": "reader problem → authentic example → contrast → retrieval → passage reading",
     "vocabularyPolicy": "Only frozen Lesson 31 vocabulary is introduced; earlier pronoun families are deliberately recycled.",
     "authenticTextPolicy": "Question particles and irregular verbs are anchored in Gospel/Vulgate clauses.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -294,7 +300,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 24:5",
       "sourceLatin": "Quid quaeritis viventem cum mortuis?",
-      "provenanceNote": "quid and quaeritis anchor interrogative reading."
+      "provenanceNote": "quid and quaeritis anchor interrogative reading.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-lk1-34-l31",
@@ -302,7 +311,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 1:34",
       "sourceLatin": "Quomodo fiet istud, quoniam virum non cognosco?",
-      "provenanceNote": "quomodo introduces a direct question; the clause recycles cognosco."
+      "provenanceNote": "quomodo introduces a direct question; the clause recycles cognosco.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-jn6-68-l31",
@@ -310,7 +322,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 6:68",
       "sourceLatin": "Numquid et vos vultis abire?",
-      "provenanceNote": "numquid marks a question whose pragmatic expectation matters more than a rigid English particle."
+      "provenanceNote": "numquid marks a question whose pragmatic expectation matters more than a rigid English particle.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-lk24-32-l31",
@@ -318,7 +333,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 24:32",
       "sourceLatin": "Nonne cor nostrum ardens erat in nobis, dum loqueretur in via?",
-      "provenanceNote": "nonne expects confirmation and contrasts with numquid."
+      "provenanceNote": "nonne expects confirmation and contrasts with numquid.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt6-24-l31",
@@ -326,7 +344,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 6:24",
       "sourceLatin": "Nemo potest duobus dominis servire.",
-      "provenanceNote": "nemo is an indefinite negative pronoun."
+      "provenanceNote": "nemo is an indefinite negative pronoun.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt16-24-l31",
@@ -334,7 +355,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 16:24",
       "sourceLatin": "Si quis vult post me venire, abneget semetipsum, et tollat crucem suam, et sequatur me.",
-      "provenanceNote": "quis and vult combine indefinite and irregular-verb reading."
+      "provenanceNote": "quis and vult combine indefinite and irregular-verb reading.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "canon-iube-l31",
@@ -342,7 +366,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Supplices te rogamus",
       "sourceLatin": "iube haec perferri per manus sancti Angeli tui",
-      "provenanceNote": "iube gives the high-frequency imperative of iubeo in the Canon."
+      "provenanceNote": "iube gives the high-frequency imperative of iubeo in the Canon.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -374,6 +401,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "readerToolkitFramework": {
@@ -408,7 +440,13 @@
       "nolo",
       "iubeo"
     ],
-    "rule": "Resolve form, case and clause function before choosing an idiomatic question or indefinite translation."
+    "rule": "Resolve form, case and clause function before choosing an idiomatic question or indefinite translation.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "pronounSpiral": {
     "lesson": 31,
@@ -420,6 +458,12 @@
       "relative",
       "demonstrative/intensive",
       "interrogative/indefinite"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "learningBlocks": [
@@ -430,7 +474,13 @@
       "learnerCopy": {
         "en": "By Lesson 31, the difficulty is rarely basic case recognition. The problem is identifying what kind of word you are seeing: interrogative quis/quid, indefinite aliquis, negative nemo, or a question particle such as numquid or nonne.",
         "fr": "À la leçon 31, la difficulté n'est plus le simple repérage des cas. Il faut identifier la nature du mot : interrogatif quis/quid, indéfini aliquis, négatif nemo, ou particule interrogative comme numquid ou nonne."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l31-b2",
@@ -440,7 +490,14 @@
       "learnerCopy": {
         "en": "Question particles carry pragmatic expectation. numquid can suggest doubt or an expected negative; nonne normally invites confirmation. Translate the question naturally after reading its force.",
         "fr": "Les particules interrogatives portent une attente pragmatique. numquid peut suggérer le doute ou une réponse négative ; nonne appelle normalement la confirmation. Traduisez naturellement après avoir reconnu cette force."
-      }
+      },
+      "referenceIds": [
+        "vulg-jn6-68-l31",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l31-b3",
@@ -450,7 +507,14 @@
       "learnerCopy": {
         "en": "quid is not merely a dictionary word 'what': its form and clause role matter. Here it functions inside the direct question governed by quaeritis.",
         "fr": "quid n'est pas seulement le mot de dictionnaire « quoi » : sa forme et sa fonction comptent. Ici il appartient à la question directe régie par quaeritis."
-      }
+      },
+      "referenceIds": [
+        "vulg-lk24-5-l31",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l31-b4",
@@ -460,7 +524,14 @@
       "learnerCopy": {
         "en": "After si, quis commonly has indefinite force: 'if anyone'. This is why a reader must recognize context, not mechanically translate every quis as a direct question.",
         "fr": "Après si, quis prend couramment une valeur indéfinie : « si quelqu'un ». Il faut donc lire le contexte, non traduire mécaniquement tout quis comme une question directe."
-      }
+      },
+      "referenceIds": [
+        "vulg-mt16-24-l31",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l31-b5",
@@ -469,7 +540,13 @@
       "learnerCopy": {
         "en": "volo, nolo, fero and iubeo occur too often to parse as exceptions from scratch. Learn their common forms as reader vocabulary and then analyze tense/person normally.",
         "fr": "volo, nolo, fero et iubeo sont trop fréquents pour être redécouverts comme exceptions à chaque occurrence. Apprenez leurs formes courantes comme vocabulaire de lecteur, puis analysez normalement temps et personne."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l31-b6",
@@ -478,7 +555,13 @@
       "learnerCopy": {
         "en": "The pronoun system is now complete enough for ordinary Church-Latin reading. The task is family selection plus case/function—not memorizing another isolated table.",
         "fr": "Le système pronominal est désormais assez complet pour la lecture ordinaire du latin ecclésiastique. Le travail consiste à choisir la famille puis le cas et la fonction, non à mémoriser encore un tableau isolé."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -651,6 +734,12 @@
       "sourceId": null,
       "skills": [
         "pronoun:interrogative"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -674,6 +763,13 @@
       "sourceId": "vulg-mt16-24-l31",
       "skills": [
         "pronoun:indefinite"
+      ],
+      "referenceIds": [
+        "vulg-mt16-24-l31",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -697,6 +793,12 @@
       "sourceId": null,
       "skills": [
         "question:particle"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -720,6 +822,13 @@
       "sourceId": "vulg-jn6-68-l31",
       "skills": [
         "question:particle"
+      ],
+      "referenceIds": [
+        "vulg-jn6-68-l31",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -745,6 +854,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l31"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -770,6 +885,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l31"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -793,6 +914,13 @@
       "sourceId": "vulg-mt16-24-l31",
       "skills": [
         "vocabulary:volo"
+      ],
+      "referenceIds": [
+        "vulg-mt16-24-l31",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -816,6 +944,13 @@
       "sourceId": "canon-iube-l31",
       "skills": [
         "vocabulary:iubeo"
+      ],
+      "referenceIds": [
+        "canon-iube-l31",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -839,6 +974,12 @@
       "sourceId": null,
       "skills": [
         "pronoun:spiral"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -857,6 +998,13 @@
       "sourceId": "vulg-mt6-24-l31",
       "skills": [
         "vocabulary:nemo"
+      ],
+      "referenceIds": [
+        "vulg-mt6-24-l31",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -888,6 +1036,12 @@
       "nonne/numquid",
       "nemo/nihil",
       "volo/nolo/fero/iubeo"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "validation": {
@@ -910,6 +1064,20 @@
     "authenticSourceCount": 7,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

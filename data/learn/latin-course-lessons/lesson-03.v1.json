@@ -18,7 +18,12 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only the frozen lesson allocation is introduced; earlier Core may be recycled and later Core may appear only as explicit support.",
     "authenticTextPolicy": "Primary text and instructional markup are stored separately.",
-    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -299,7 +304,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — salutation",
       "sourceLatin": "Dominus vobiscum.",
-      "provenanceNote": "Authentic salutation; Dominus is target vocabulary while vobiscum is supplied support."
+      "provenanceNote": "Authentic salutation; Dominus is target vocabulary while vobiscum is supplied support.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-consecration-hoc-est",
@@ -307,7 +315,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Consecration",
       "sourceLatin": "Hoc est enim Corpus meum.",
-      "provenanceNote": "Authentic consecration clause; est is the target form of sum."
+      "provenanceNote": "Authentic consecration clause; est is the target form of sum.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-christmas-introit-puer",
@@ -315,7 +326,10 @@
       "work": "Missale Romanum (1962)",
       "section": "In Nativitate Domini — Introit",
       "sourceLatin": "Puer natus est nobis, et Filius datus est nobis.",
-      "provenanceNote": "Authentic Christmas Introit opening; target nouns and est are read with participles/pronouns supplied."
+      "provenanceNote": "Authentic Christmas Introit opening; target nouns and est are read with participles/pronouns supplied.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "learningBlocks": [
@@ -326,7 +340,12 @@
       "learnerCopy": {
         "en": "Lesson 3 adds second-declension masculine and neuter forms to the same six-case map. The map does not reset: first-declension forms remain visible beside the new system.",
         "fr": "La leçon 3 ajoute les formes masculines et neutres de la deuxième déclinaison à la même carte des six cas. La carte ne repart pas à zéro : la première déclinaison reste visible."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l3-b2",
@@ -335,7 +354,12 @@
       "learnerCopy": {
         "en": "You still use only nominative and vocative as active case functions. Notice Dominus, Deus, filius, puer and servus as masculine nominative forms, and regnum, caelum, principium, verbum and templum as neuters.",
         "fr": "Le nominatif et le vocatif restent les seuls cas activement employés. Repérez Dominus, Deus, filius, puer et servus comme formes masculines, puis regnum, caelum, principium, verbum et templum comme neutres."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l3-b3",
@@ -344,7 +368,12 @@
       "learnerCopy": {
         "en": "sum means 'I am / to be' as a lemma family. Its present forms are sum, es, est, sumus, estis, sunt. Do not confuse the lemma with only one surface form.",
         "fr": "sum représente le verbe « être ». Ses formes du présent sont sum, es, est, sumus, estis, sunt. Le lemme ne se réduit donc pas à une seule forme."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l3-b4",
@@ -353,7 +382,12 @@
       "learnerCopy": {
         "en": "possum means 'I can / be able'. Learn the family possum, potes, potest, possumus, potestis, possunt as a high-frequency irregular pattern related to sum.",
         "fr": "possum signifie « pouvoir ». Apprenez la famille possum, potes, potest, possumus, potestis, possunt comme un modèle irrégulier fréquent apparenté à sum."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l3-b5",
@@ -363,7 +397,13 @@
       "learnerCopy": {
         "en": "In Hoc est enim Corpus meum, est is simply a form of sum. You can identify the verb before you are able to parse every noun and adjective around it.",
         "fr": "Dans Hoc est enim Corpus meum, est est simplement une forme de sum. Vous pouvez reconnaître le verbe avant de savoir analyser tout le reste."
-      }
+      },
+      "referenceIds": [
+        "mr1962-consecration-hoc-est",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l3-b6",
@@ -373,7 +413,13 @@
       "learnerCopy": {
         "en": "Read only what Stage 1 has earned: puer and Filius are nouns you can recognize; est belongs to sum; et is already known. natus, nobis and datus remain supplied.",
         "fr": "Ne lisez activement que ce qui a déjà été acquis : puer et Filius sont reconnaissables, est appartient à sum et et est déjà connu. natus, nobis et datus restent fournis."
-      }
+      },
+      "referenceIds": [
+        "mr1962-christmas-introit-puer",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l3-b7",
@@ -382,7 +428,12 @@
       "learnerCopy": {
         "en": "By now the learner should see first- and second-declension shapes together, not as disconnected chapters. The point is rapid recognition inside Church Latin.",
         "fr": "À ce stade, les formes des première et deuxième déclinaisons doivent apparaître sur une seule carte cumulative, non comme des chapitres isolés. Le but est la reconnaissance rapide dans le latin de l'Église."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -466,6 +517,12 @@
         "terra",
         "gloria",
         "via"
+      ],
+      "referenceIds": [
+        "mr1962-consecration-hoc-est",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -491,6 +548,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l3"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -515,6 +577,11 @@
         "servus",
         "puer",
         "magister"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -537,6 +604,12 @@
       "skills": [
         "vocabulary:Dominus",
         "reading:recognition"
+      ],
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l3",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -559,6 +632,12 @@
       "skills": [
         "verb:sum",
         "reading:recognition"
+      ],
+      "referenceIds": [
+        "mr1962-consecration-hoc-est",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -583,6 +662,11 @@
         "es",
         "sumus",
         "sunt"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -607,6 +691,11 @@
         "potes",
         "potest",
         "possunt"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -637,6 +726,12 @@
       "skills": [
         "reading:cumulative",
         "curriculum:support-boundary"
+      ],
+      "referenceIds": [
+        "mr1962-christmas-introit-puer",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -661,6 +756,11 @@
         "genitive",
         "ablative",
         "accusative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -679,6 +779,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:verbum"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -775,6 +880,10 @@
     ],
     "notes": [
       "Deus commonly keeps Deus in direct address; filius has the familiar vocative fili. These are learned as liturgical forms rather than forced into a simplistic rule."
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "verbSystems": [
@@ -829,6 +938,11 @@
       "nominative/vocative remain active",
       "sum present forms",
       "possum present forms"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -855,6 +969,19 @@
     "authenticSourceCount": 3,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

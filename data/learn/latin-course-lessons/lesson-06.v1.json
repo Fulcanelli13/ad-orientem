@@ -19,7 +19,12 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only frozen Lesson 6 Core is introduced; earlier Core is recycled and later Core is explicit support.",
     "authenticTextPolicy": "Primary text remains distinct from instructional explanation.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -402,7 +407,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Pater noster",
       "sourceLatin": "Pater noster, qui es in caelis: sanctificetur nomen tuum.",
-      "provenanceNote": "Authentic Pater noster opening; later relative/passive syntax is supplied."
+      "provenanceNote": "Authentic Pater noster opening; later relative/passive syntax is supplied.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-pax-domini-l6",
@@ -410,7 +418,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Pax Domini",
       "sourceLatin": "Pax Domini sit semper vobiscum.",
-      "provenanceNote": "Authentic Ordinary formula; pax is the third-declension anchor."
+      "provenanceNote": "Authentic Ordinary formula; pax is the third-declension anchor.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-last-gospel-verbum-caro-l6",
@@ -418,7 +429,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Last Gospel",
       "sourceLatin": "Et Verbum caro factum est.",
-      "provenanceNote": "Authentic Last Gospel clause; caro is the new third-declension anchor."
+      "provenanceNote": "Authentic Last Gospel clause; caro is the new third-declension anchor.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -455,7 +469,11 @@
         "unlockLesson": 9
       }
     ],
-    "thirdDeclensionRule": "Learn nominative + genitive. Remove genitive -is to expose the stem used by most other cases."
+    "thirdDeclensionRule": "Learn nominative + genitive. Remove genitive -is to expose the stem used by most other cases.",
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -465,7 +483,12 @@
       "learnerCopy": {
         "en": "Third-declension nouns must be learned with the genitive: pater, patris; corpus, corporis; pax, pacis; homo, hominis. The genitive reveals the stem used by most other forms.",
         "fr": "Les noms de la troisième déclinaison s'apprennent avec leur génitif : pater, patris ; corpus, corporis ; pax, pacis ; homo, hominis. Le génitif révèle le radical employé dans la plupart des autres formes."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l6-b2",
@@ -474,7 +497,12 @@
       "learnerCopy": {
         "en": "The six cases do not restart with a new declension. Nominative and vocative remain active; genitive, dative, accusative and ablative stay visible until their functional unlocks.",
         "fr": "Les six cas ne recommencent pas avec chaque déclinaison. Nominatif et vocatif restent actifs ; génitif, datif, accusatif et ablatif restent visibles jusqu'à leur activation."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l6-b3",
@@ -483,7 +511,12 @@
       "learnerCopy": {
         "en": "pacis gives pac-, corporis gives corpor-, hominis gives homin-, noctis gives noct-. Do not guess the stem from the nominative.",
         "fr": "pacis donne pac-, corporis donne corpor-, hominis donne homin-, noctis donne noct-. Ne devinez pas le radical à partir du nominatif."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l6-b4",
@@ -492,7 +525,12 @@
       "learnerCopy": {
         "en": "corpus, nomen, cor, lumen, tempus and os are neuter. Keep the neuter principle in view: nominative and accusative match, and neuter plural commonly ends in -a. Accusative becomes active in Lesson 9.",
         "fr": "corpus, nomen, cor, lumen, tempus et os sont neutres. Gardez en vue la règle du neutre : nominatif et accusatif coïncident, et le pluriel neutre finit souvent en -a. L'accusatif sera activé à la leçon 9."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l6-b5",
@@ -502,7 +540,13 @@
       "learnerCopy": {
         "en": "Pater and nomen are both third-declension nouns despite very different nominatives. Their genitives patris and nominis make the stems visible.",
         "fr": "Pater et nomen appartiennent tous deux à la troisième déclinaison malgré des nominatif très différents. Leurs génitifs patris et nominis rendent leurs radicaux visibles."
-      }
+      },
+      "referenceIds": [
+        "mr1962-pater-noster-opening-l6",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l6-b6",
@@ -511,7 +555,12 @@
       "learnerCopy": {
         "en": "Read Pax Domini and Et Verbum caro factum est as cumulative Latin. The aim is to add the new noun system without losing the earlier vocabulary and verb recognition.",
         "fr": "Lisez Pax Domini et Et Verbum caro factum est comme un latin cumulatif. Il faut ajouter le nouveau système nominal sans perdre les acquis antérieurs."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -601,6 +650,11 @@
       "skills": [
         "declension:third",
         "vocabulary:pater"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -626,6 +680,12 @@
       "skills": [
         "declension:third",
         "stem"
+      ],
+      "referenceIds": [
+        "mr1962-pax-domini-l6",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -649,6 +709,11 @@
       "sourceId": null,
       "skills": [
         "gender:neuter"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -675,6 +740,11 @@
       "skills": [
         "declension:third",
         "stem"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -698,6 +768,12 @@
       "sourceId": "mr1962-pater-noster-opening-l6",
       "skills": [
         "reading:target-recognition"
+      ],
+      "referenceIds": [
+        "mr1962-pater-noster-opening-l6",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -719,6 +795,12 @@
       "sourceId": "mr1962-last-gospel-verbum-caro-l6",
       "skills": [
         "reading:cumulative"
+      ],
+      "referenceIds": [
+        "mr1962-last-gospel-verbum-caro-l6",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -744,6 +826,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l6"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -769,6 +856,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l6"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -793,6 +885,11 @@
       "skills": [
         "declension:third",
         "metacognition"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -812,6 +909,11 @@
       "skills": [
         "vocabulary:corpus",
         "declension:third"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -842,6 +944,11 @@
       "genitive reveals third-declension stem",
       "neuter nominative=accusative principle",
       "nominative/vocative remain active"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -876,6 +983,19 @@
     "authenticSourceCount": 3,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

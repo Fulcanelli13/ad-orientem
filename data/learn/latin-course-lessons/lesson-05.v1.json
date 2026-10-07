@@ -18,7 +18,12 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only the frozen lesson allocation is introduced; earlier Core may be recycled and later Core may appear only as explicit support.",
     "authenticTextPolicy": "Primary text and instructional markup are stored separately.",
-    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -302,7 +307,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Gloria",
       "sourceLatin": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
-      "provenanceNote": "Authentic Gloria sequence; four first-person-plural present verbs are the primary pattern."
+      "provenanceNote": "Authentic Gloria sequence; four first-person-plural present verbs are the primary pattern.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-credo-opening-l5",
@@ -310,7 +318,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Credo in unum Deum, Patrem omnipotentem.",
-      "provenanceNote": "Authentic Credo opening; Credo supplies first-person-singular present."
+      "provenanceNote": "Authentic Credo opening; Credo supplies first-person-singular present.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-dominus-vobiscum-l5",
@@ -318,7 +329,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — salutation",
       "sourceLatin": "Dominus vobiscum.",
-      "provenanceNote": "Recycled Stage 1 reading source used at the checkpoint to ensure earlier noun recognition persists."
+      "provenanceNote": "Recycled Stage 1 reading source used at the checkpoint to ensure earlier noun recognition persists.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-sanctus-pleni",
@@ -326,7 +340,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Sanctus",
       "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua.",
-      "provenanceNote": "Recycled Stage 1 source used in the checkpoint for adjective-agreement retrieval."
+      "provenanceNote": "Recycled Stage 1 source used in the checkpoint for adjective-agreement retrieval.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "learningBlocks": [
@@ -337,7 +354,12 @@
       "learnerCopy": {
         "en": "Present active verbs now add person and number to the information you can read from endings. The central contrast is Credo = I believe versus Laudamus/Benedicimus/Adoramus/Glorificamus = we praise/bless/adore/glorify.",
         "fr": "Les verbes actifs au présent ajoutent maintenant la personne et le nombre aux informations données par les terminaisons. Le contraste central est Credo = je crois et Laudamus/Benedicimus/Adoramus/Glorificamus = nous louons/bénissons/adorons/glorifions."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l5-b2",
@@ -346,7 +368,12 @@
       "learnerCopy": {
         "en": "Use the ending before translating mechanically: -o often signals first-person singular; -mus signals first-person plural. Other present endings become familiar through the assigned verbs and later lessons.",
         "fr": "Lisez d'abord la terminaison : -o signale souvent la première personne du singulier; -mus la première personne du pluriel. Les autres terminaisons du présent se fixeront avec les verbes du cours."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l5-b3",
@@ -356,7 +383,13 @@
       "learnerCopy": {
         "en": "The Gloria gives four consecutive -mus forms. That repetition is pedagogically ideal: the vocabulary changes, but the grammatical person and number stay constant.",
         "fr": "Le Gloria donne quatre formes successives en -mus. La répétition est idéale : le vocabulaire change, mais la personne et le nombre restent identiques."
-      }
+      },
+      "referenceIds": [
+        "mr1962-gloria-verbs-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l5-b4",
@@ -366,7 +399,13 @@
       "learnerCopy": {
         "en": "Credo is first-person singular: 'I believe'. Compare that single speaker with the congregation's plural Laudamus, Benedicimus, Adoramus, Glorificamus.",
         "fr": "Credo est à la première personne du singulier : « je crois ». Comparez ce sujet singulier au pluriel de Laudamus, Benedicimus, Adoramus, Glorificamus."
-      }
+      },
+      "referenceIds": [
+        "mr1962-credo-opening-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l5-b5",
@@ -375,7 +414,12 @@
       "learnerCopy": {
         "en": "audio, servio, venio, habeo, amo, video, voco, mitto, maneo, aperio, pono, sto and timeo are learned as verb families. Controlled exercises use their present forms so the learner sees person/number rather than memorizing disconnected translations.",
         "fr": "audio, servio, venio, habeo, amo, video, voco, mitto, maneo, aperio, pono, sto et timeo sont appris comme familles verbales. Les exercices emploient leurs formes du présent pour faire lire la personne et le nombre."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l5-b6",
@@ -384,7 +428,12 @@
       "learnerCopy": {
         "en": "The checkpoint mixes everything earned in Lessons 1–5: sound/stress, the permanent case map, first/second declensions, sum, adjective agreement, and present active person/number. Later grammar remains glossed rather than silently tested.",
         "fr": "Le contrôle de fin d'étape mélange tout ce qui a été acquis dans les leçons 1 à 5 : prononciation, carte des cas, première/deuxième déclinaisons, sum, accord de l'adjectif et personne/nombre du présent actif. La grammaire ultérieure reste explicitement fournie."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l5-b7",
@@ -393,7 +442,12 @@
       "learnerCopy": {
         "en": "Stage 1 ends when the learner can move through a short authentic sentence and identify several grammatical anchors without translating every word. That is the first phrase → sentence transition.",
         "fr": "L'étape 1 est achevée lorsque l'apprenant peut parcourir une courte phrase authentique et y repérer plusieurs points d'appui grammaticaux sans traduire chaque mot. C'est le premier passage de la formule à la phrase."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -478,6 +532,12 @@
         "first-person singular",
         "third-person plural",
         "second-person singular"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-verbs-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -503,6 +563,12 @@
         "first-person plural",
         "third-person singular",
         "second-person plural"
+      ],
+      "referenceIds": [
+        "mr1962-credo-opening-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -530,6 +596,12 @@
       "sourceId": "mr1962-gloria-verbs-l5",
       "skills": [
         "reading:verb-recognition"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-verbs-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -555,6 +627,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l5"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -580,6 +657,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l5"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -607,6 +689,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l5"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -630,6 +717,11 @@
         "et",
         "non",
         "via"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -654,6 +746,12 @@
         "verb person",
         "a new noun",
         "word order only"
+      ],
+      "referenceIds": [
+        "mr1962-sanctus-pleni",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -678,6 +776,11 @@
         "terra",
         "sanctus",
         "credo"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -702,6 +805,11 @@
         "genitive and dative",
         "accusative and ablative",
         "all six equally"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -724,6 +832,12 @@
       "skills": [
         "reading:support-boundary",
         "retrieval:lesson3"
+      ],
+      "referenceIds": [
+        "mr1962-dominus-vobiscum-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -748,6 +862,12 @@
       "skills": [
         "reading:cumulative",
         "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "mr1962-credo-opening-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -767,6 +887,12 @@
       "skills": [
         "retrieval:lesson3",
         "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "mr1962-credo-opening-l5",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -791,6 +917,11 @@
         "sentence → passage",
         "passage → independent reading",
         "vocabulary list → dictionary"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -887,6 +1018,10 @@
     ],
     "notes": [
       "Deus commonly keeps Deus in direct address; filius has the familiar vocative fili. These are learned as liturgical forms rather than forced into a simplistic rule."
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "presentActiveFramework": {
@@ -901,7 +1036,12 @@
         "value": "1st person plural"
       }
     ],
-    "note": "Full conjugational patterning expands later; Lesson 5 establishes person/number recognition with the frozen verb set."
+    "note": "Full conjugational patterning expands later; Lesson 5 establishes person/number recognition with the frozen verb set.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "objectives": [
     "Read first-person singular versus plural present forms.",
@@ -947,6 +1087,11 @@
       "adjective agreement",
       "present active person/number anchors",
       "later words in passages remain explicit support"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -975,6 +1120,19 @@
     "authenticSourceCount": 4,
     "exerciseCount": 14,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

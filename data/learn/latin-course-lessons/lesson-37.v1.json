@@ -19,7 +19,13 @@
     "method": "whole Ordinary unit -> self-segmentation -> selective checking -> continuous reread",
     "vocabularyPolicy": "No new tracked vocabulary.",
     "authenticTextPolicy": "Five principal Ordinary texts preserved in full.",
-    "copyrightPolicy": "Liturgical Latin source text; original pedagogy."
+    "copyrightPolicy": "Liturgical Latin source text; original pedagogy.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [],
@@ -255,35 +261,50 @@
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962)",
       "section": "Ordinarium Missae - Kyrie",
-      "sourceLatin": "Kyrie, eleison. Kyrie, eleison. Kyrie, eleison. Christe, eleison. Christe, eleison. Christe, eleison. Kyrie, eleison. Kyrie, eleison. Kyrie, eleison."
+      "sourceLatin": "Kyrie, eleison. Kyrie, eleison. Kyrie, eleison. Christe, eleison. Christe, eleison. Christe, eleison. Kyrie, eleison. Kyrie, eleison. Kyrie, eleison.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "ordinary-gloria-l37",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962)",
       "section": "Ordinarium Missae - Gloria",
-      "sourceLatin": "Gloria in excelsis Deo. Et in terra pax hominibus bonae voluntatis. Laudamus te. Benedicimus te. Adoramus te. Glorificamus te. Gratias agimus tibi propter magnam gloriam tuam. Domine Deus, Rex caelestis, Deus Pater omnipotens. Domine Fili unigenite, Iesu Christe. Domine Deus, Agnus Dei, Filius Patris. Qui tollis peccata mundi, miserere nobis. Qui tollis peccata mundi, suscipe deprecationem nostram. Qui sedes ad dexteram Patris, miserere nobis. Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Iesu Christe. Cum Sancto Spiritu in gloria Dei Patris. Amen."
+      "sourceLatin": "Gloria in excelsis Deo. Et in terra pax hominibus bonae voluntatis. Laudamus te. Benedicimus te. Adoramus te. Glorificamus te. Gratias agimus tibi propter magnam gloriam tuam. Domine Deus, Rex caelestis, Deus Pater omnipotens. Domine Fili unigenite, Iesu Christe. Domine Deus, Agnus Dei, Filius Patris. Qui tollis peccata mundi, miserere nobis. Qui tollis peccata mundi, suscipe deprecationem nostram. Qui sedes ad dexteram Patris, miserere nobis. Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Iesu Christe. Cum Sancto Spiritu in gloria Dei Patris. Amen.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "ordinary-credo-l37",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962)",
       "section": "Ordinarium Missae - Credo",
-      "sourceLatin": "Credo in unum Deum, Patrem omnipotentem, factorem caeli et terrae, visibilium omnium et invisibilium. Et in unum Dominum Iesum Christum, Filium Dei unigenitum. Et ex Patre natum ante omnia saecula. Deum de Deo, lumen de lumine, Deum verum de Deo vero. Genitum, non factum, consubstantialem Patri: per quem omnia facta sunt. Qui propter nos homines et propter nostram salutem descendit de caelis. Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est. Crucifixus etiam pro nobis: sub Pontio Pilato passus et sepultus est. Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris. Et iterum venturus est cum gloria iudicare vivos et mortuos: cuius regni non erit finis. Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen."
+      "sourceLatin": "Credo in unum Deum, Patrem omnipotentem, factorem caeli et terrae, visibilium omnium et invisibilium. Et in unum Dominum Iesum Christum, Filium Dei unigenitum. Et ex Patre natum ante omnia saecula. Deum de Deo, lumen de lumine, Deum verum de Deo vero. Genitum, non factum, consubstantialem Patri: per quem omnia facta sunt. Qui propter nos homines et propter nostram salutem descendit de caelis. Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est. Crucifixus etiam pro nobis: sub Pontio Pilato passus et sepultus est. Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris. Et iterum venturus est cum gloria iudicare vivos et mortuos: cuius regni non erit finis. Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "ordinary-sanctus-l37",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962)",
       "section": "Ordinarium Missae - Sanctus/Benedictus",
-      "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua. Hosanna in excelsis. Benedictus qui venit in nomine Domini. Hosanna in excelsis."
+      "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua. Hosanna in excelsis. Benedictus qui venit in nomine Domini. Hosanna in excelsis.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "ordinary-agnus-l37",
       "sourceType": "primary-liturgical",
       "work": "Missale Romanum (1962)",
       "section": "Ordinarium Missae - Agnus Dei",
-      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: dona nobis pacem."
+      "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: miserere nobis. Agnus Dei, qui tollis peccata mundi: dona nobis pacem.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -315,6 +336,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "ordinaryReadingFramework": {
@@ -331,7 +357,13 @@
       "unsegmented",
       "continuous reading"
     ],
-    "rule": "Diagnose only the point that actually blocks comprehension."
+    "rule": "Diagnose only the point that actually blocks comprehension.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "learningBlocks": [
     {
@@ -341,7 +373,13 @@
       "learnerCopy": {
         "en": "Read each Ordinary unit whole before stopping to analyze.",
         "fr": "Lisez chaque partie de l'Ordinaire en entier avant de vous arreter pour analyser."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l37-b2",
@@ -351,7 +389,14 @@
       "learnerCopy": {
         "en": "Treat the Greek Kyrie as a fixed liturgical formula.",
         "fr": "Traitez le Kyrie grec comme une formule liturgique fixe."
-      }
+      },
+      "referenceIds": [
+        "ordinary-kyrie-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l37-b3",
@@ -361,7 +406,14 @@
       "learnerCopy": {
         "en": "Track proclamation, praise, titles, petitions and final acclamation.",
         "fr": "Suivez proclamation, louange, titres, demandes et acclamation finale."
-      }
+      },
+      "referenceIds": [
+        "ordinary-gloria-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l37-b4",
@@ -371,7 +423,14 @@
       "learnerCopy": {
         "en": "Keep Credo as the governing act while the confession expands through many clauses.",
         "fr": "Gardez Credo comme acte regissant pendant que la confession se developpe en nombreuses propositions."
-      }
+      },
+      "referenceIds": [
+        "ordinary-credo-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l37-b5",
@@ -381,7 +440,14 @@
       "learnerCopy": {
         "en": "Use parallel repetition to predict structure, then verify the actual forms.",
         "fr": "Utilisez la repetition parallele pour prevoir la structure, puis verifiez les formes."
-      }
+      },
+      "referenceIds": [
+        "ordinary-sanctus-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l37-b6",
@@ -390,7 +456,13 @@
       "learnerCopy": {
         "en": "The goal is sustained comprehension with selective checking, not perfect word-by-word translation.",
         "fr": "Le but est une comprehension soutenue avec verification selective, non une traduction parfaite mot a mot."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -554,6 +626,13 @@
       "sourceId": "ordinary-credo-l37",
       "skills": [
         "ordinary:credo"
+      ],
+      "referenceIds": [
+        "ordinary-credo-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -577,6 +656,13 @@
       "sourceId": "ordinary-kyrie-l37",
       "skills": [
         "ordinary:kyrie"
+      ],
+      "referenceIds": [
+        "ordinary-kyrie-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -600,6 +686,13 @@
       "sourceId": "ordinary-credo-l37",
       "skills": [
         "ordinary:navigation"
+      ],
+      "referenceIds": [
+        "ordinary-credo-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -623,6 +716,13 @@
       "sourceId": "ordinary-agnus-l37",
       "skills": [
         "ordinary:navigation"
+      ],
+      "referenceIds": [
+        "ordinary-agnus-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -646,6 +746,13 @@
       "sourceId": "ordinary-gloria-l37",
       "skills": [
         "ordinary:navigation"
+      ],
+      "referenceIds": [
+        "ordinary-gloria-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -669,6 +776,13 @@
       "sourceId": "ordinary-sanctus-l37",
       "skills": [
         "ordinary:parallelism"
+      ],
+      "referenceIds": [
+        "ordinary-sanctus-l37",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -692,6 +806,12 @@
       "sourceId": null,
       "skills": [
         "reading:independence"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -715,6 +835,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -736,6 +862,12 @@
       "sourceId": null,
       "skills": [
         "curriculum:vocabulary-neutral"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -758,6 +890,12 @@
       "sourceId": null,
       "skills": [
         "reading:independence"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -791,7 +929,13 @@
       "Sanctus/Agnus parallelism",
       "continuous reading recovery"
     ],
-    "progressionGate": "Complete Ordinary."
+    "progressionGate": "Complete Ordinary.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "validation": {
     "trackedVocabularyIntroduced": [],
@@ -799,6 +943,20 @@
     "authenticSourceCount": 5,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

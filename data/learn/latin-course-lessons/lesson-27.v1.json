@@ -19,7 +19,13 @@
     "method": "concept → authentic example → recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Frozen Lesson 27 vocabulary only; gerund/gerundive morphology is taught from authentic scriptural/liturgical phrases.",
     "authenticTextPolicy": "Gerund is anchored in Psalmic ad + gerund; gerundive/periphrastic meaning in Gospel language.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -166,7 +172,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 91:2-3",
       "sourceLatin": "Bonum est confiteri Domino, et psallere nomini tuo, Altissime: ad annuntiandum mane misericordiam tuam.",
-      "provenanceNote": "ad + gerund annuntiandum expresses purpose."
+      "provenanceNote": "ad + gerund annuntiandum expresses purpose.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt17-gerundive-l27",
@@ -174,7 +183,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 17:22",
       "sourceLatin": "Filius hominis tradendus est in manus hominum.",
-      "provenanceNote": "Gerundive + sum expresses necessity/fated action."
+      "provenanceNote": "Gerundive + sum expresses necessity/fated action.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "roman-canon-unde-donis-l27",
@@ -182,7 +194,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Unde et memores",
       "sourceLatin": "offerimus praeclarae maiestati tuae de tuis donis ac datis",
-      "provenanceNote": "donum is introduced inside authentic Canon gift/offering language."
+      "provenanceNote": "donum is introduced inside authentic Canon gift/offering language.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "roman-canon-supra-munera-l27",
@@ -190,7 +205,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Supra quae",
       "sourceLatin": "munera pueri tui iusti Abel",
-      "provenanceNote": "munus appears as munera in the Canon's comparison with Abel's offering."
+      "provenanceNote": "munus appears as munera in the Canon's comparison with Abel's offering.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -222,12 +240,23 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "gerundFramework": {
     "gerund": "Verbal noun; commonly appears in oblique cases, especially ad + accusative for purpose.",
     "gerundive": "Verbal adjective agreeing with a noun; with sum it can express necessity/obligation.",
-    "readingRule": "First decide noun-like versus adjective-like behavior: does the form stand alone, or agree with a noun?"
+    "readingRule": "First decide noun-like versus adjective-like behavior: does the form stand alone, or agree with a noun?",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -237,7 +266,13 @@
       "learnerCopy": {
         "en": "The gerund is a verbal noun; the gerundive is a verbal adjective. Their similar shapes make syntax—not translation—the safest way to distinguish them.",
         "fr": "Le gérondif est un nom verbal ; l'adjectif verbal est un adjectif verbal. Leurs formes proches rendent la syntaxe plus sûre que la traduction pour les distinguer."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l27-b2",
@@ -247,7 +282,14 @@
       "learnerCopy": {
         "en": "ad annuntiandum means 'for proclaiming / to proclaim'. The gerund follows ad in the accusative and functions as a purpose expression.",
         "fr": "ad annuntiandum signifie « pour annoncer ». Le gérondif suit ad à l'accusatif et exprime le but."
-      }
+      },
+      "referenceIds": [
+        "vulg-ps91-gerund-l27",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l27-b3",
@@ -257,7 +299,14 @@
       "learnerCopy": {
         "en": "tradendus agrees with Filius. With est it means 'is to be handed over / must be handed over'. Agreement shows that this is gerundive, not gerund.",
         "fr": "tradendus s'accorde avec Filius. Avec est, il signifie « doit être livré ». L'accord montre qu'il s'agit d'un adjectif verbal, non d'un gérondif."
-      }
+      },
+      "referenceIds": [
+        "vulg-mt17-gerundive-l27",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l27-b4",
@@ -266,7 +315,13 @@
       "learnerCopy": {
         "en": "The Canon's gift/offering vocabulary matters semantically even when it is not itself gerundive: donum and munus recur in sacrificial language and prepare later Canon reading.",
         "fr": "Le vocabulaire du don et de l'offrande dans le Canon reste essentiel, même lorsqu'il n'est pas lui-même gérondival : donum et munus reviennent dans le langage sacrificiel."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l27-b5",
@@ -275,7 +330,13 @@
       "learnerCopy": {
         "en": "If a verbal -nd- form agrees with a noun, treat it as gerundive. If it stands as a verbal noun in a case such as ad + accusative, treat it as gerund.",
         "fr": "Si une forme verbale en -nd- s'accorde avec un nom, lisez-la comme adjectif verbal. Si elle fonctionne comme nom verbal dans un cas tel que ad + accusatif, lisez-la comme gérondif."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l27-b6",
@@ -284,7 +345,13 @@
       "learnerCopy": {
         "en": "English and French may translate both with an infinitive or purpose phrase. Keep the Latin distinction structural: gerund = verbal noun; gerundive = agreeing verbal adjective.",
         "fr": "L'anglais et le français peuvent traduire les deux par un infinitif ou une tournure de but. Gardez la distinction latine structurelle : gérondif = nom verbal ; adjectif verbal = adjectif verbal accordé."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -396,6 +463,13 @@
       "sourceId": "vulg-ps91-gerund-l27",
       "skills": [
         "gerund:purpose"
+      ],
+      "referenceIds": [
+        "vulg-ps91-gerund-l27",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -419,6 +493,13 @@
       "sourceId": "vulg-mt17-gerundive-l27",
       "skills": [
         "gerundive:agreement"
+      ],
+      "referenceIds": [
+        "vulg-mt17-gerundive-l27",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -442,6 +523,13 @@
       "sourceId": "vulg-mt17-gerundive-l27",
       "skills": [
         "gerundive:obligation"
+      ],
+      "referenceIds": [
+        "vulg-mt17-gerundive-l27",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -465,6 +553,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l27"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -488,6 +582,12 @@
       "sourceId": null,
       "skills": [
         "gerund:contrast"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -511,6 +611,13 @@
       "sourceId": "roman-canon-unde-donis-l27",
       "skills": [
         "vocabulary:donum"
+      ],
+      "referenceIds": [
+        "roman-canon-unde-donis-l27",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -534,6 +641,13 @@
       "sourceId": "roman-canon-supra-munera-l27",
       "skills": [
         "vocabulary:munus"
+      ],
+      "referenceIds": [
+        "roman-canon-supra-munera-l27",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -557,6 +671,12 @@
       "sourceId": null,
       "skills": [
         "gerund:purpose"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -575,6 +695,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:causa"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -593,6 +719,13 @@
       "sourceId": "roman-canon-supra-munera-l27",
       "skills": [
         "vocabulary:munus"
+      ],
+      "referenceIds": [
+        "roman-canon-supra-munera-l27",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -624,6 +757,12 @@
       "gerundive agreement",
       "gerundive + sum necessity",
       "ad + gerund purpose"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -636,6 +775,20 @@
     "authenticSourceCount": 4,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

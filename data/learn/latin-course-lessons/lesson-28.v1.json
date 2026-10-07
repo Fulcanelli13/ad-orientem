@@ -19,7 +19,13 @@
     "method": "concept → authentic example → recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only frozen Lesson 28 vocabulary is introduced; proper names and later terms remain support.",
     "authenticTextPolicy": "Ablative absolutes are anchored in Vulgate narrative clauses.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -212,7 +218,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 2:19",
       "sourceLatin": "Defuncto autem Herode, ecce angelus Domini apparuit in somnis Joseph in Aegypto.",
-      "provenanceNote": "Defuncto Herode is a classic ablative absolute giving background circumstance."
+      "provenanceNote": "Defuncto Herode is a classic ablative absolute giving background circumstance.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-lk9-1-l28",
@@ -220,7 +229,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 9:1",
       "sourceLatin": "Convocatis autem duodecim Apostolis, dedit illis virtutem et potestatem super omnia daemonia.",
-      "provenanceNote": "Convocatis Apostolis is an ablative absolute preceding the main action."
+      "provenanceNote": "Convocatis Apostolis is an ablative absolute preceding the main action.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-lk9-11-l28",
@@ -228,7 +240,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 9:11",
       "sourceLatin": "Quod cum cognovissent turbae, secutae sunt illum: et excepit eos, et loquebatur illis de regno Dei.",
-      "provenanceNote": "turbae is introduced inside a multi-clause narrative immediately adjacent to the ablative-absolute lesson."
+      "provenanceNote": "turbae is introduced inside a multi-clause narrative immediately adjacent to the ablative-absolute lesson.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-lk9-12-l28",
@@ -236,7 +251,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 9:12",
       "sourceLatin": "Accedentes autem duodecim dixerunt illi: Dimitte turbas.",
-      "provenanceNote": "turba recurs in narrative syntax; participial compression is contrasted with ablative absolute."
+      "provenanceNote": "turba recurs in narrative syntax; participial compression is contrasted with ablative absolute.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -268,12 +286,23 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "ablativeAbsoluteFramework": {
     "form": "Usually noun/pronoun + participle, both ablative; sometimes noun + noun/adjective.",
     "function": "Compressed background circumstance: when, after, since, although, with... depending on context.",
-    "diagnostic": "The ablative phrase is grammatically independent of the main clause; its noun is not an argument of the main verb."
+    "diagnostic": "The ablative phrase is grammatically independent of the main clause; its noun is not an argument of the main verb.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -283,7 +312,13 @@
       "learnerCopy": {
         "en": "An ablative absolute compresses circumstance into an ablative noun/pronoun plus participle. Translate the relation from context: when, after, since, although, with.",
         "fr": "L'ablatif absolu condense une circonstance en nom/pronom à l'ablatif + participe. Le lien se traduit selon le contexte : lorsque, après que, puisque, bien que, avec."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l28-b2",
@@ -293,7 +328,14 @@
       "learnerCopy": {
         "en": "Defuncto Herode means 'when/after Herod had died'. Herode does not perform a role in apparuit; the phrase supplies independent background.",
         "fr": "Defuncto Herode signifie « après la mort d'Hérode / Hérode étant mort ». Herode n'exerce aucune fonction dans apparuit ; le groupe fournit l'arrière-plan."
-      }
+      },
+      "referenceIds": [
+        "vulg-mt2-19-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l28-b3",
@@ -303,7 +345,14 @@
       "learnerCopy": {
         "en": "Convocatis Apostolis means 'having called the Apostles together / when the Apostles had been called'. Both words are ablative plural and form one compressed circumstance.",
         "fr": "Convocatis Apostolis signifie « les Apôtres ayant été convoqués ». Les deux mots sont à l'ablatif pluriel et forment une seule circonstance condensée."
-      }
+      },
+      "referenceIds": [
+        "vulg-lk9-1-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l28-b4",
@@ -313,7 +362,14 @@
       "learnerCopy": {
         "en": "Accedentes duodecim is nominative and belongs directly to the main clause subject. Case agreement distinguishes it from an ablative absolute.",
         "fr": "Accedentes duodecim est au nominatif et appartient directement au sujet de la principale. L'accord de cas le distingue d'un ablatif absolu."
-      }
+      },
+      "referenceIds": [
+        "vulg-lk9-12-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l28-b5",
@@ -322,7 +378,13 @@
       "learnerCopy": {
         "en": "Do not identify an ablative absolute merely because a comma appears. Verify ablative agreement and confirm that the phrase's noun is syntactically independent of the main verb.",
         "fr": "N'identifiez pas un ablatif absolu à cause d'une virgule. Vérifiez l'accord à l'ablatif et l'indépendance syntaxique du nom par rapport au verbe principal."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l28-b6",
@@ -331,7 +393,13 @@
       "learnerCopy": {
         "en": "A useful check is to expand the ablative absolute into a full subordinate clause: Defuncto Herode → 'when Herod had died'. If the expansion preserves the main clause independently, the analysis is probably sound.",
         "fr": "Un bon contrôle consiste à développer l'ablatif absolu en proposition complète : Defuncto Herode → « lorsque Hérode fut mort ». Si la principale reste indépendante, l'analyse est probablement correcte."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -447,6 +515,13 @@
       "sourceId": "vulg-mt2-19-l28",
       "skills": [
         "ablative:absolute"
+      ],
+      "referenceIds": [
+        "vulg-mt2-19-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -470,6 +545,13 @@
       "sourceId": "vulg-mt2-19-l28",
       "skills": [
         "syntax:circumstance"
+      ],
+      "referenceIds": [
+        "vulg-mt2-19-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -493,6 +575,13 @@
       "sourceId": "vulg-lk9-1-l28",
       "skills": [
         "agreement:ablative"
+      ],
+      "referenceIds": [
+        "vulg-lk9-1-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -516,6 +605,13 @@
       "sourceId": "vulg-lk9-12-l28",
       "skills": [
         "ablative:absolute-contrast"
+      ],
+      "referenceIds": [
+        "vulg-lk9-12-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -541,6 +637,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l28"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -562,6 +664,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l28"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -585,6 +693,12 @@
       "sourceId": null,
       "skills": [
         "ablative:absolute"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -608,6 +722,13 @@
       "sourceId": "vulg-lk9-11-l28",
       "skills": [
         "vocabulary:turba"
+      ],
+      "referenceIds": [
+        "vulg-lk9-11-l28",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -626,6 +747,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:rex"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -644,6 +771,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:discipulus"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -675,6 +808,12 @@
       "syntactic independence",
       "contextual translation",
       "participle contrast"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -690,6 +829,20 @@
     "authenticSourceCount": 4,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

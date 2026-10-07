@@ -19,7 +19,13 @@
     "method": "cold read -> liturgical-function identification -> clause map -> selective support -> second independent read -> self-explanation",
     "vocabularyPolicy": "Zero new tracked vocabulary. Any unfamiliar non-Core word remains optional support.",
     "authenticTextPolicy": "Capstone uses authentic 1962 Roman Missal texts for Our Lady of the Rosary, not previously taught as a Proper set.",
-    "copyrightPolicy": "Latin liturgical/scriptural source text; original pedagogy."
+    "copyrightPolicy": "Latin liturgical/scriptural source text; original pedagogy.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [],
@@ -320,7 +326,10 @@
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
       "section": "Introit - Ps 44:2",
       "sourceLatin": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus solemnitate gaudent Angeli et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi.",
-      "provenanceNote": "Normalized Latin; verified against 1962 Rosary feast propers."
+      "provenanceNote": "Normalized Latin; verified against 1962 Rosary feast propers.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "rosary-epistle-l40",
@@ -328,7 +337,10 @@
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
       "section": "Epistle - Proverbs 8:22-24,32-35",
       "sourceLatin": "Dominus possedit me in initio viarum suarum, antequam quidquam faceret a principio. Ab aeterno ordinata sum et ex antiquis, antequam terra fieret. Nondum erant abyssi, et ego jam concepta eram. Nunc ergo, filii, audite me: Beati, qui custodiunt vias meas. Audite disciplinam, et estote sapientes, et nolite abjicere eam. Beatus homo, qui audit me et qui vigilat ad fores meas quotidie, et observat ad postes ostii mei. Qui me invenerit, inveniet vitam et hauriet salutem a Domino.",
-      "provenanceNote": "Unseen capstone reading."
+      "provenanceNote": "Unseen capstone reading.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "rosary-gradual-l40",
@@ -336,7 +348,10 @@
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
       "section": "Gradual and Alleluia",
       "sourceLatin": "Propter veritatem et mansuetudinem et justitiam, et deducet te mirabiliter dextera tua. Audi, filia, et vide, et inclina aurem tuam: quia concupivit Rex speciem tuam. Alleluia, alleluia. Solemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.",
-      "provenanceNote": "Unseen chant selection."
+      "provenanceNote": "Unseen chant selection.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "rosary-gospel-l40",
@@ -344,7 +359,10 @@
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
       "section": "Gospel - Luke 1:26-38",
       "sourceLatin": "In illo tempore: Missus est Angelus Gabriel a Deo in civitatem Galilaeae, cui nomen Nazareth, ad Virginem desponsatam viro, cui nomen erat Joseph, de domo David, et nomen Virginis Maria. Et ingressus Angelus ad eam, dixit: Ave, gratia plena; Dominus tecum: benedicta tu in mulieribus. Quae cum audisset, turbata est in sermone ejus: et cogitabat, qualis esset ista salutatio. Et ait Angelus ei: Ne timeas, Maria, invenisti enim gratiam apud Deum: ecce, concipies in utero, et paries filium, et vocabis nomen ejus Jesum. Hic erit magnus, et Filius Altissimi vocabitur, et dabit illi Dominus Deus sedem David, patris ejus: et regnabit in domo Jacob in aeternum, et regni ejus non erit finis. Dixit autem Maria ad Angelum: Quomodo fiet istud, quoniam virum non cognosco? Et respondens Angelus, dixit ei: Spiritus Sanctus superveniet in te, et virtus Altissimi obumbrabit tibi. Ideoque et quod nascetur ex te Sanctum, vocabitur Filius Dei. Et ecce, Elisabeth, cognata tua, et ipsa concepit filium in senectute sua: et hic mensis sextus est illi, quae vocatur sterilis: quia non erit impossibile apud Deum omne verbum. Dixit autem Maria: Ecce ancilla Domini, fiat mihi secundum verbum tuum.",
-      "provenanceNote": "Annunciation Gospel used as capstone narrative."
+      "provenanceNote": "Annunciation Gospel used as capstone narrative.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "rosary-offertory-l40",
@@ -352,7 +370,10 @@
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
       "section": "Offertory - Ecclesiasticus 24:25;39:17",
       "sourceLatin": "In me gratia omnis viae et veritatis, in me omnis spes vitae et virtutis: ego quasi rosa plantata super rivos aquarum fructificavi.",
-      "provenanceNote": "Poetic/sapiential Offertory."
+      "provenanceNote": "Poetic/sapiential Offertory.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "rosary-communion-l40",
@@ -360,7 +381,10 @@
       "work": "Missale Romanum (1962) - Beatae Mariae Virginis a Rosario",
       "section": "Communion - Ecclesiasticus 39:19",
       "sourceLatin": "Florete, flores, quasi lilium, et date odorem, et frondete in gratiam, collaudate canticum, et benedicite Dominum in operibus suis.",
-      "provenanceNote": "Poetic Communion text."
+      "provenanceNote": "Poetic Communion text.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -392,6 +416,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "capstoneFramework": {
@@ -408,6 +437,12 @@
       "no new tracked vocabulary",
       "no grammar label announced before the text",
       "no line-by-line translation supplied before attempt"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "learningBlocks": [
@@ -418,7 +453,13 @@
       "learnerCopy": {
         "en": "Begin without glosses. Identify the liturgical part, finite verbs, connectors and any immediately visible case relationships.",
         "fr": "Commencez sans gloses. Identifiez la partie liturgique, les verbes conjugués, les connecteurs et les relations de cas immédiatement visibles."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l40-b2",
@@ -428,7 +469,14 @@
       "learnerCopy": {
         "en": "There is no announced construction to find. Use the full toolkit and let the text tell you which grammar matters.",
         "fr": "Aucune construction n'est annoncée. Utilisez toute la boîte à outils et laissez le texte indiquer quelle grammaire compte."
-      }
+      },
+      "referenceIds": [
+        "rosary-epistle-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l40-b3",
@@ -438,7 +486,14 @@
       "learnerCopy": {
         "en": "Knowing that this is a Gospel predicts narrative and dialogue, but it does not parse the clauses for you. Track speakers, verbs and pronouns independently.",
         "fr": "Savoir qu'il s'agit d'un Évangile annonce récit et dialogue, mais n'analyse pas les propositions à votre place. Suivez indépendamment locuteurs, verbes et pronoms."
-      }
+      },
+      "referenceIds": [
+        "rosary-gospel-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l40-b4",
@@ -448,7 +503,14 @@
       "learnerCopy": {
         "en": "The Offertory and Communion return to poetic/biblical compression. Recover grammar from endings and parallelism before seeking prose order.",
         "fr": "Offertoire et Communion reviennent à la condensation poétique et biblique. Reconstruisez la grammaire par les désinences et le parallélisme avant de chercher l'ordre de prose."
-      }
+      },
+      "referenceIds": [
+        "rosary-offertory-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l40-b5",
@@ -457,7 +519,13 @@
       "learnerCopy": {
         "en": "A proper name or rare noun may be glossed. A familiar case ending, pronoun or connective should not. Use help only where it changes comprehension.",
         "fr": "Un nom propre ou un nom rare peut être glosé. Une désinence, un pronom ou un connecteur familier ne doit pas l'être. Utilisez l'aide seulement lorsqu'elle change la compréhension."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l40-b6",
@@ -466,7 +534,13 @@
       "learnerCopy": {
         "en": "The course ends when you can approach an unseen authentic selection, recover its structure, tolerate some unknown vocabulary and still understand the prayer or reading as a whole.",
         "fr": "Le cours s'achève lorsque vous pouvez aborder un texte authentique inédit, reconstruire sa structure, tolérer un peu de vocabulaire inconnu et comprendre néanmoins l'ensemble de la prière ou de la lecture."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -689,6 +763,12 @@
       "sourceId": null,
       "skills": [
         "capstone:method"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -712,6 +792,13 @@
       "sourceId": "rosary-gospel-l40",
       "skills": [
         "capstone:genre"
+      ],
+      "referenceIds": [
+        "rosary-gospel-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -735,6 +822,13 @@
       "sourceId": "rosary-offertory-l40",
       "skills": [
         "capstone:poetry"
+      ],
+      "referenceIds": [
+        "rosary-offertory-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -756,6 +850,13 @@
       "sourceId": "rosary-gospel-l40",
       "skills": [
         "capstone:support"
+      ],
+      "referenceIds": [
+        "rosary-gospel-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -779,6 +880,13 @@
       "sourceId": "rosary-gospel-l40",
       "skills": [
         "capstone:pronoun-toolkit"
+      ],
+      "referenceIds": [
+        "rosary-gospel-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -802,6 +910,13 @@
       "sourceId": "rosary-gospel-l40",
       "skills": [
         "capstone:biblical-latin"
+      ],
+      "referenceIds": [
+        "rosary-gospel-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -823,6 +938,12 @@
       "sourceId": null,
       "skills": [
         "curriculum:capstone-neutral"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -846,6 +967,12 @@
       "sourceId": null,
       "skills": [
         "capstone:success"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -869,6 +996,13 @@
       "sourceId": "rosary-epistle-l40",
       "skills": [
         "capstone:navigation"
+      ],
+      "referenceIds": [
+        "rosary-epistle-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -892,6 +1026,13 @@
       "sourceId": "rosary-introit-l40",
       "skills": [
         "capstone:navigation"
+      ],
+      "referenceIds": [
+        "rosary-introit-l40",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -915,6 +1056,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -946,6 +1093,12 @@
       "sourceId": null,
       "skills": [
         "capstone:workflow"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -990,6 +1143,12 @@
       "unseen normal Proper",
       "specialized Requiem/Holy Week register",
       "independent unseen Missal recovery"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "validation": {
@@ -998,6 +1157,20 @@
     "authenticSourceCount": 6,
     "exerciseCount": 12,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

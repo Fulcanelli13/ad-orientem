@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Frozen Lesson 20 vocabulary only; every later or untracked word in the checkpoint passage is explicitly supported.",
     "authenticTextPolicy": "The primary gate is a sustained Roman Credo passage, supplemented only where necessary to force personal/reflexive/demonstrative pronoun retrieval.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -403,7 +409,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo, final section",
       "sourceLatin": "Et in Spiritum Sanctum, Dominum et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam, sanctam, catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum, et vitam venturi saeculi. Amen.",
-      "provenanceNote": "Sustained passage-level checkpoint with relative clauses, deponent locutus est, cases, agreement, and new Lesson 20 vocabulary."
+      "provenanceNote": "Sustained passage-level checkpoint with relative clauses, deponent locutus est, cases, agreement, and new Lesson 20 vocabulary.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-consecration-calix-l20",
@@ -411,7 +420,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Consecration of the Chalice",
       "sourceLatin": "Hic est enim Calix Sanguinis mei, novi et aeterni testamenti: Mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum.",
-      "provenanceNote": "Hic/mei/vobis and relative qui force demonstrative/personal/relative pronoun retrieval while introducing testamentum and reinforcing remissio."
+      "provenanceNote": "Hic/mei/vobis and relative qui force demonstrative/personal/relative pronoun retrieval while introducing testamentum and reinforcing remissio.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "vulg-1cor11-26-l20",
@@ -419,7 +431,10 @@
       "work": "Vulgata Clementina",
       "section": "I ad Corinthios 11:26",
       "sourceLatin": "Mortem Domini annuntiabitis, donec veniat.",
-      "provenanceNote": "Mortem introduces mors in a previously familiar temporal clause."
+      "provenanceNote": "Mortem introduces mors in a previously familiar temporal clause.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-1cor13-4-l20",
@@ -427,7 +442,10 @@
       "work": "Vulgata Clementina",
       "section": "I ad Corinthios 13:4",
       "sourceLatin": "Caritas patiens est, benigna est.",
-      "provenanceNote": "caritas is introduced in a concise liturgical-scriptural clause."
+      "provenanceNote": "caritas is introduced in a concise liturgical-scriptural clause.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "symbolum-apostolorum-communio-l20",
@@ -443,7 +461,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 5:22",
       "sourceLatin": "Neque enim Pater iudicat quemquam, sed omne iudicium dedit Filio.",
-      "provenanceNote": "iudicium appears in an authentic judgment clause."
+      "provenanceNote": "iudicium appears in an authentic judgment clause.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "mr1962-credo-qui-propter-l20",
@@ -451,7 +472,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
-      "provenanceNote": "Relative + personal-pronoun retrieval inside the Credo."
+      "provenanceNote": "Relative + personal-pronoun retrieval inside the Credo.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "vulg-lk14-11-l20",
@@ -459,7 +483,10 @@
       "work": "Vulgata Clementina",
       "section": "Lucas 14:11",
       "sourceLatin": "Omnis enim qui se exaltat, humiliabitur.",
-      "provenanceNote": "Relative qui plus reflexive se makes the reflexive family compulsory in the checkpoint."
+      "provenanceNote": "Relative qui plus reflexive se makes the reflexive family compulsory in the checkpoint.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt28-9-l20",
@@ -467,7 +494,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 28:9",
       "sourceLatin": "Et accesserunt, et tenuerunt pedes ejus, et adoraverunt eum.",
-      "provenanceNote": "ejus/eum retrieve the is/ea/id family in completed narrative."
+      "provenanceNote": "ejus/eum retrieve the is/ea/id family in completed narrative.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -499,6 +529,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "integratedReadingFramework": {
@@ -518,6 +553,12 @@
       "relative qui/quae/quod",
       "demonstrative hic/ille/iste",
       "intensive ipse/idem"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "pronounSpiral": {
@@ -545,7 +586,13 @@
       "intensiveIdentity": [
         "ipse/idem recognition in cumulative items"
       ]
-    }
+    },
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -555,7 +602,13 @@
       "learnerCopy": {
         "en": "Lesson 20 is the first passage-level gate. The task is to keep several connected clauses in view: verbs, pronouns, case relationships, agreement and connectors must be resolved as a structure before full translation.",
         "fr": "La leçon 20 est le premier contrôle au niveau du passage. Il faut garder plusieurs propositions liées en vue : verbes, pronoms, relations de cas, accords et connecteurs doivent être résolus comme une structure avant la traduction complète."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l20-b2",
@@ -565,7 +618,14 @@
       "learnerCopy": {
         "en": "Begin by finding the repeated qui clauses, then the coordinated Et clauses. Notice locutus est as deponent-perfect meaning, catholicam agreeing with Ecclesiam, and remissionem governed by in.",
         "fr": "Commencez par repérer les relatives répétées en qui, puis les propositions coordonnées par Et. Notez locutus est comme parfait déponent actif, catholicam accordé avec Ecclesiam, et remissionem régi par in."
-      }
+      },
+      "referenceIds": [
+        "mr1962-credo-stage4-passage-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l20-b3",
@@ -574,7 +634,13 @@
       "learnerCopy": {
         "en": "You must now distinguish Hic from qui, nos from se, ejus/eum from demonstratives, and attached personal forms such as vobis. Case and pronoun family must both be correct.",
         "fr": "Il faut désormais distinguer Hic de qui, nos de se, ejus/eum des démonstratifs, et les formes personnelles comme vobis. Le cas et la famille pronominale doivent tous deux être corrects."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l20-b4",
@@ -584,7 +650,14 @@
       "learnerCopy": {
         "en": "Hic is demonstrative, mei is genitive personal/possessive reference, vobis is dative/ablative-form personal pronoun governed here by pro, and qui begins a relative clause. Four earlier systems meet in one liturgical sentence.",
         "fr": "Hic est démonstratif, mei est une référence personnelle/possessive au génitif, vobis est une forme pronominale personnelle régie ici par pro, et qui ouvre une relative. Quatre systèmes antérieurs se rencontrent dans une seule phrase liturgique."
-      }
+      },
+      "referenceIds": [
+        "mr1962-consecration-calix-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l20-b5",
@@ -594,7 +667,14 @@
       "learnerCopy": {
         "en": "qui is relative and se is reflexive. The relative points to an antecedent; se points back to the subject of its own clause. Similar-looking pronoun work therefore requires different resolution rules.",
         "fr": "qui est relatif et se est réfléchi. Le relatif renvoie à un antécédent ; se renvoie au sujet de sa propre proposition. Des pronoms proches en apparence exigent donc des règles de résolution différentes."
-      }
+      },
+      "referenceIds": [
+        "vulg-lk14-11-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l20-b6",
@@ -603,7 +683,13 @@
       "learnerCopy": {
         "en": "Pass this stage only if you can sustain structural reading across a Credo passage: identify clause architecture, resolve pronouns, keep all six cases active, distinguish active/passive/deponent voice, and track tense/agreement without resetting at every sentence.",
         "fr": "Cette étape n'est franchie que si vous pouvez maintenir une lecture structurelle sur un passage du Credo : architecture des propositions, résolution des pronoms, six cas, distinction actif/passif/déponent, temps et accords, sans recommencer à zéro à chaque phrase."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -854,6 +940,13 @@
       "skills": [
         "reading:passage",
         "pronoun:relative"
+      ],
+      "referenceIds": [
+        "mr1962-credo-stage4-passage-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -879,6 +972,13 @@
       "skills": [
         "agreement",
         "vocabulary:catholicus"
+      ],
+      "referenceIds": [
+        "mr1962-credo-stage4-passage-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -903,6 +1003,13 @@
       "skills": [
         "case:accusative",
         "vocabulary:remissio"
+      ],
+      "referenceIds": [
+        "mr1962-credo-stage4-passage-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -926,6 +1033,13 @@
       "sourceId": "mr1962-consecration-calix-l20",
       "skills": [
         "pronoun:demonstrative"
+      ],
+      "referenceIds": [
+        "mr1962-consecration-calix-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -950,6 +1064,13 @@
       "skills": [
         "pronoun:personal",
         "case:genitive"
+      ],
+      "referenceIds": [
+        "mr1962-consecration-calix-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -973,6 +1094,13 @@
       "sourceId": "vulg-lk14-11-l20",
       "skills": [
         "pronoun:reflexive"
+      ],
+      "referenceIds": [
+        "vulg-lk14-11-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1000,6 +1128,12 @@
       "sourceId": null,
       "skills": [
         "pronoun:mixed"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1024,6 +1158,13 @@
       "skills": [
         "pronoun:is-ea-id",
         "case:genitive"
+      ],
+      "referenceIds": [
+        "vulg-mt28-9-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1048,6 +1189,13 @@
       "skills": [
         "pronoun:is-ea-id",
         "case:accusative"
+      ],
+      "referenceIds": [
+        "vulg-mt28-9-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1073,6 +1221,12 @@
       "sourceId": null,
       "skills": [
         "stage4:cumulative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1097,6 +1251,13 @@
       "skills": [
         "deponent:loquor",
         "tense:perfect"
+      ],
+      "referenceIds": [
+        "mr1962-credo-stage4-passage-l20",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1122,6 +1283,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l20"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1149,6 +1316,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l20"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1172,6 +1345,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1195,6 +1374,12 @@
       "sourceId": null,
       "skills": [
         "reading:progression"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -1253,6 +1438,12 @@
       "all six cases",
       "mixed pronoun-family resolution",
       "sustained Credo passage architecture"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -1272,6 +1463,20 @@
     "authenticSourceCount": 9,
     "exerciseCount": 15,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

@@ -19,7 +19,13 @@
     "method": "period map → sacrificial vocabulary → clause dependencies → continuous Canon reading",
     "vocabularyPolicy": "Only frozen Lesson 35 vocabulary is introduced; names/titles and non-Core Canon words remain support.",
     "authenticTextPolicy": "The checkpoint is built from the 1962 Roman Canon and traditional Offertory texts without syntactic simplification.",
-    "copyrightPolicy": "Original pedagogical synthesis."
+    "copyrightPolicy": "Original pedagogical synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -651,7 +657,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Te igitur",
       "sourceLatin": "Te igitur, clementissime Pater, per Iesum Christum, Filium tuum, Dominum nostrum, supplices rogamus, ac petimus, uti accepta habeas, et benedicas haec dona, haec munera, haec sancta sacrificia illibata, in primis, quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare, et regere digneris toto orbe terrarum: una cum famulo tuo Papa nostro N. et Antistite nostro N. et omnibus orthodoxis atque catholicae et apostolicae fidei cultoribus.",
-      "provenanceNote": "Long periodic Canon syntax with sacrificial nouns, relative expansion and coordinated infinitives."
+      "provenanceNote": "Long periodic Canon syntax with sacrificial nouns, relative expansion and coordinated infinitives.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "canon-unde-l35",
@@ -659,7 +668,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Unde et memores",
       "sourceLatin": "Unde et memores, Domine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Filii tui, Domini nostri, tam beatae passionis, nec non et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis: offerimus praeclarae maiestati tuae de tuis donis ac datis, hostiam puram, hostiam sanctam, hostiam immaculatam: Panem sanctum vitae aeternae: et Calicem salutis perpetuae.",
-      "provenanceNote": "Sacrificial register: offerimus, hostiam, donis, Calicem."
+      "provenanceNote": "Sacrificial register: offerimus, hostiam, donis, Calicem.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "canon-supra-l35",
@@ -667,7 +679,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Supra quae",
       "sourceLatin": "Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium Patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam hostiam.",
-      "provenanceNote": "sacrificium, sacerdos, hostia and nested comparison clauses."
+      "provenanceNote": "sacrificium, sacerdos, hostia and nested comparison clauses.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "offertory-suscipe-l35",
@@ -675,7 +690,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Offertorium — Suscipe sancte Pater",
       "sourceLatin": "Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam.",
-      "provenanceNote": "suscipio is introduced through the Offertory imperative Suscipe."
+      "provenanceNote": "suscipio is introduced through the Offertory imperative Suscipe.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "offertory-vinum-l35",
@@ -683,7 +701,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Offertorium — mixing of water and wine",
       "sourceLatin": "Deus, qui humanae substantiae dignitatem mirabiliter condidisti, et mirabilius reformasti: da nobis per huius aquae et vini mysterium, eius divinitatis esse consortes.",
-      "provenanceNote": "vinum is introduced in the traditional water-and-wine prayer."
+      "provenanceNote": "vinum is introduced in the traditional water-and-wine prayer.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "canon-memoria-l35",
@@ -691,7 +712,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Canon Missae — Words following the Consecration",
       "sourceLatin": "Haec quotiescumque feceritis, in mei memoriam facietis.",
-      "provenanceNote": "memoria is introduced in the memorial command."
+      "provenanceNote": "memoria is introduced in the memorial command.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -723,6 +747,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "canonLanguageFramework": {
@@ -740,7 +769,13 @@
       "group sacrificial noun series",
       "defer elegant translation until the period map is complete"
     ],
-    "readingRule": "The Canon is not a sequence of independent short sentences. Preserve the long syntactic period and its sacrificial rhetoric."
+    "readingRule": "The Canon is not a sequence of independent short sentences. Preserve the long syntactic period and its sacrificial rhetoric.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ]
   },
   "learningBlocks": [
     {
@@ -750,7 +785,13 @@
       "learnerCopy": {
         "en": "The Roman Canon often delays completion while adding invocations, relative clauses, coordinated requests and lists of sacrificial nouns. The reader must keep the governing petition alive across the whole period.",
         "fr": "Le Canon romain retarde souvent l'achèvement de la phrase en ajoutant invocations, relatives, demandes coordonnées et séries de noms sacrificiels. Le lecteur doit maintenir le verbe régissant actif pendant toute la période."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l35-b2",
@@ -760,7 +801,14 @@
       "learnerCopy": {
         "en": "The period begins with Te... supplices rogamus ac petimus. Everything that follows—uti accepta habeas, benedicas, quam pacificare...digneris—hangs from this act of supplication.",
         "fr": "La période commence par Te... supplices rogamus ac petimus. Tout ce qui suit — uti accepta habeas, benedicas, quam pacificare...digneris — dépend de cet acte de supplication."
-      }
+      },
+      "referenceIds": [
+        "canon-te-igitur-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l35-b3",
@@ -769,7 +817,13 @@
       "learnerCopy": {
         "en": "The Canon deliberately accumulates sacrificial terms. Do not flatten them into one generic 'gift': recognize the lexical field and the rhetorical intensification.",
         "fr": "Le Canon accumule délibérément les termes sacrificiels. Ne les réduisez pas tous à un vague « don » : reconnaissez le champ lexical et l'intensification rhétorique."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l35-b4",
@@ -779,7 +833,14 @@
       "learnerCopy": {
         "en": "The prayer moves from being mindful of Passion, Resurrection and Ascension to offerimus. The participial memores establishes the memorial frame; the main action is the offering.",
         "fr": "La prière passe du souvenir de la Passion, de la Résurrection et de l'Ascension à offerimus. Le participe memores établit le cadre mémoriel ; l'action principale est l'offrande."
-      }
+      },
+      "referenceIds": [
+        "canon-unde-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l35-b5",
@@ -789,7 +850,14 @@
       "learnerCopy": {
         "en": "The prayer asks God to look favourably on the offerings, then compares them with Abel, Abraham and Melchisedech. sacerdos and sacrificium belong to the Canon's sacrificial register, not an isolated vocabulary list.",
         "fr": "La prière demande à Dieu de regarder favorablement les offrandes, puis les compare à celles d'Abel, d'Abraham et de Melchisédech. sacerdos et sacrificium appartiennent au registre sacrificiel du Canon, non à une liste isolée."
-      }
+      },
+      "referenceIds": [
+        "canon-supra-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l35-b6",
@@ -798,7 +866,13 @@
       "learnerCopy": {
         "en": "The Stage 7 gate is successful only if you can mark a long Canon passage, identify its governing verbs and subordinate structures, and then reread it continuously without fragmenting it into unrelated clauses.",
         "fr": "Le contrôle de l'étape 7 n'est réussi que si vous pouvez cartographier un long passage du Canon, identifier verbes régissants et structures subordonnées, puis le relire sans le fragmenter en propositions indépendantes."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -1051,6 +1125,13 @@
       "sourceId": "canon-te-igitur-l35",
       "skills": [
         "canon:period"
+      ],
+      "referenceIds": [
+        "canon-te-igitur-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1074,6 +1155,12 @@
       "sourceId": null,
       "skills": [
         "canon:register"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1099,6 +1186,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l35"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1122,6 +1215,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l35"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1145,6 +1244,13 @@
       "sourceId": "canon-unde-l35",
       "skills": [
         "canon:structure"
+      ],
+      "referenceIds": [
+        "canon-unde-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1168,6 +1274,13 @@
       "sourceId": "canon-unde-l35",
       "skills": [
         "canon:rhetoric"
+      ],
+      "referenceIds": [
+        "canon-unde-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1191,6 +1304,13 @@
       "sourceId": "canon-supra-l35",
       "skills": [
         "vocabulary:sacerdos"
+      ],
+      "referenceIds": [
+        "canon-supra-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1214,6 +1334,13 @@
       "sourceId": "offertory-suscipe-l35",
       "skills": [
         "vocabulary:suscipio"
+      ],
+      "referenceIds": [
+        "offertory-suscipe-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1237,6 +1364,13 @@
       "sourceId": "offertory-vinum-l35",
       "skills": [
         "vocabulary:vinum"
+      ],
+      "referenceIds": [
+        "offertory-vinum-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1260,6 +1394,13 @@
       "sourceId": "canon-memoria-l35",
       "skills": [
         "vocabulary:memoria"
+      ],
+      "referenceIds": [
+        "canon-memoria-l35",
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1283,6 +1424,12 @@
       "sourceId": null,
       "skills": [
         "canon:reading"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1306,6 +1453,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1333,6 +1486,12 @@
       "sourceId": null,
       "skills": [
         "canon:period-map"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-plater-white-1926",
+        "grammar-scanlon-1944",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -1379,6 +1538,12 @@
       "Collect architecture",
       "Canon periodic syntax",
       "sacrificial register"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
     ]
   },
   "validation": {
@@ -1395,6 +1560,20 @@
     "authenticSourceCount": 6,
     "exerciseCount": 13,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-plater-white-1926",
+      "grammar-scanlon-1944"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

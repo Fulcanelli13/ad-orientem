@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only the frozen Lesson 17 allocation is introduced; later verbs in relative clauses are explicit support.",
     "authenticTextPolicy": "Relative-pronoun parsing is anchored in the Ordinary and Vulgate clauses.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -224,7 +230,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Agnus Dei",
       "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
-      "provenanceNote": "qui has antecedent Agnus and functions as subject of tollis."
+      "provenanceNote": "qui has antecedent Agnus and functions as subject of tollis.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-gloria-qui-sedes-l17",
@@ -232,7 +241,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Gloria",
       "sourceLatin": "Qui sedes ad dexteram Patris, miserere nobis.",
-      "provenanceNote": "qui is nominative subject; dexteram introduces the lesson noun dextera in a familiar clause."
+      "provenanceNote": "qui is nominative subject; dexteram introduces the lesson noun dextera in a familiar clause.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-credo-qui-propter-l17",
@@ -240,7 +252,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Qui propter nos homines et propter nostram salutem descendit de caelis.",
-      "provenanceNote": "qui takes its gender/number from the antecedent while its nominative case comes from being subject of descendit."
+      "provenanceNote": "qui takes its gender/number from the antecedent while its nominative case comes from being subject of descendit.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-credo-cuius-l17",
@@ -248,7 +263,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Cuius regni non erit finis.",
-      "provenanceNote": "cuius is genitive singular of qui/quae/quod; the pronoun case comes from its role inside the relative clause."
+      "provenanceNote": "cuius is genitive singular of qui/quae/quod; the pronoun case comes from its role inside the relative clause.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "vulg-rom10-13-l17",
@@ -256,7 +274,10 @@
       "work": "Vulgata Clementina",
       "section": "Romani 10:13",
       "sourceLatin": "Omnis enim quicumque invocaverit nomen Domini, salvus erit.",
-      "provenanceNote": "quicumque gives the indefinite relative 'whoever' in an authentic soteriological clause."
+      "provenanceNote": "quicumque gives the indefinite relative 'whoever' in an authentic soteriological clause.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "mr1962-credo-qui-cum-patre-l17",
@@ -264,7 +285,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Credo",
       "sourceLatin": "Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas.",
-      "provenanceNote": "Two relative clauses allow repeated antecedent/case resolution; later deponent locutus est remains support until Lesson 19."
+      "provenanceNote": "Two relative clauses allow repeated antecedent/case resolution; later deponent locutus est remains support until Lesson 19.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -296,6 +320,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "relativePronounFramework": {
@@ -326,6 +355,12 @@
     "indefiniteRelatives": [
       "quicumque",
       "quisque"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "pronounSpiral": {
@@ -335,6 +370,12 @@
       "is/ea/id",
       "personal pronouns",
       "qui/quae/quod"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "learningBlocks": [
@@ -345,7 +386,13 @@
       "learnerCopy": {
         "en": "qui/quae/quod points back to an antecedent and also performs a grammatical role inside its own clause. Its gender and number come from the antecedent; its case comes from what it is doing in the relative clause.",
         "fr": "qui/quae/quod renvoie à un antécédent tout en remplissant une fonction grammaticale dans sa propre proposition. Son genre et son nombre viennent de l'antécédent ; son cas dépend de sa fonction dans la relative."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l17-b2",
@@ -355,7 +402,14 @@
       "learnerCopy": {
         "en": "qui refers to Agnus and is nominative because it is the subject of tollis. The antecedent does not force the relative pronoun to copy its case.",
         "fr": "qui renvoie à Agnus et est au nominatif parce qu'il est sujet de tollis. L'antécédent n'impose pas au relatif de copier son cas."
-      }
+      },
+      "referenceIds": [
+        "mr1962-agnus-dei-relative-l17",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l17-b3",
@@ -365,7 +419,14 @@
       "learnerCopy": {
         "en": "cuius is genitive: 'whose / of which'. The form is the same across masculine, feminine and neuter singular. This makes it a useful anchor for separating antecedent agreement from clause function.",
         "fr": "cuius est au génitif : « dont / duquel ». La forme est la même aux trois genres du singulier, ce qui aide à distinguer accord avec l'antécédent et fonction dans la proposition."
-      }
+      },
+      "referenceIds": [
+        "mr1962-credo-cuius-l17",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l17-b4",
@@ -374,7 +435,13 @@
       "learnerCopy": {
         "en": "When you meet a relative pronoun, ask in order: What is the antecedent? What gender/number must the pronoun have? What role does it perform inside its own clause? Only then translate.",
         "fr": "Devant un relatif, demandez successivement : quel est l'antécédent ? quel genre et quel nombre le pronom doit-il avoir ? quelle fonction exerce-t-il dans sa proposition ? Traduisez ensuite."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l17-b5",
@@ -384,7 +451,14 @@
       "learnerCopy": {
         "en": "quicumque means 'whoever'. It behaves like a relative form with an indefinite force. The clause remains structurally readable because nomen Domini and salvus erit are already largely familiar.",
         "fr": "quicumque signifie « quiconque ». Il se comporte comme un relatif à valeur indéfinie. La phrase reste lisible grâce à des éléments déjà largement connus comme nomen Domini et salvus erit."
-      }
+      },
+      "referenceIds": [
+        "vulg-rom10-13-l17",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l17-b6",
@@ -393,7 +467,13 @@
       "learnerCopy": {
         "en": "By Lesson 17, personal pronouns, is/ea/id and relative qui/quae/quod all live on the same case map. The course will now require you to choose the correct family as well as the correct case.",
         "fr": "À la leçon 17, les pronoms personnels, is/ea/id et le relatif qui/quae/quod vivent tous sur la même carte des cas. Il faut désormais choisir la bonne famille autant que le bon cas."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -551,6 +631,12 @@
       "sourceId": null,
       "skills": [
         "pronoun:relative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -575,6 +661,12 @@
       "skills": [
         "pronoun:relative",
         "case:syntax"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -599,6 +691,13 @@
       "skills": [
         "pronoun:relative",
         "case:nominative"
+      ],
+      "referenceIds": [
+        "mr1962-agnus-dei-relative-l17",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -623,6 +722,13 @@
       "skills": [
         "pronoun:relative",
         "case:genitive"
+      ],
+      "referenceIds": [
+        "mr1962-credo-cuius-l17",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -646,6 +752,13 @@
       "sourceId": "mr1962-gloria-qui-sedes-l17",
       "skills": [
         "pronoun:antecedent"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-qui-sedes-l17",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -674,6 +787,12 @@
       "skills": [
         "pronoun:relative",
         "case:paradigm"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -697,6 +816,13 @@
       "sourceId": "vulg-rom10-13-l17",
       "skills": [
         "vocabulary:quicumque"
+      ],
+      "referenceIds": [
+        "vulg-rom10-13-l17",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -724,6 +850,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l17"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -747,6 +879,12 @@
       "sourceId": null,
       "skills": [
         "curriculum:pronoun-spiral"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -765,6 +903,13 @@
       "sourceId": "mr1962-agnus-dei-relative-l17",
       "skills": [
         "vocabulary:peccatum"
+      ],
+      "referenceIds": [
+        "mr1962-agnus-dei-relative-l17",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -796,6 +941,12 @@
       "relative-clause role gives case",
       "qui/cuius/cui/quem/quo recognition",
       "relative family joins pronoun spiral"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -812,6 +963,20 @@
     "authenticSourceCount": 6,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

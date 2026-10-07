@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Frozen Lesson 25 connective vocabulary only; complex narrative nouns/proper names are explicit support.",
     "authenticTextPolicy": "Longer syntax is anchored in Vulgate narrative, Gloria, hymn and traditional liturgical texts.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -556,7 +562,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 1:18",
       "sourceLatin": "Christi autem generatio sic erat. Cum esset desponsata mater ejus Maria Joseph, antequam convenirent, inventa est in utero habens de Spiritu Sancto.",
-      "provenanceNote": "cum esset gives the principal imperfect-subjunctive circumstantial frame."
+      "provenanceNote": "cum esset gives the principal imperfect-subjunctive circumstantial frame.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt2-1-l25",
@@ -564,7 +573,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 2:1",
       "sourceLatin": "Cum ergo natus esset Jesus in Bethlehem Juda in diebus Herodis regis, ecce Magi ab oriente venerunt Jerosolymam.",
-      "provenanceNote": "cum + pluperfect/imperfect-subjunctive narrative frame is read as background circumstance; exact tense formation beyond the lesson is supplied."
+      "provenanceNote": "cum + pluperfect/imperfect-subjunctive narrative frame is read as background circumstance; exact tense formation beyond the lesson is supplied.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-rom8-31-l25",
@@ -572,7 +584,10 @@
       "work": "Vulgata Clementina",
       "section": "Romani 8:31",
       "sourceLatin": "Si Deus pro nobis, quis contra nos?",
-      "provenanceNote": "si introduces a compact condition and retrieves pronoun/preposition syntax."
+      "provenanceNote": "si introduces a compact condition and retrieves pronoun/preposition syntax.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-jn3-5-l25",
@@ -580,7 +595,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 3:5",
       "sourceLatin": "Nisi quis renatus fuerit ex aqua et Spiritu Sancto, non potest introire in regnum Dei.",
-      "provenanceNote": "nisi introduces an exceptive/negative condition in a doctrinal sentence."
+      "provenanceNote": "nisi introduces an exceptive/negative condition in a doctrinal sentence.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "mr1962-gloria-quoniam-l25",
@@ -588,7 +606,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Gloria",
       "sourceLatin": "Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Jesu Christe.",
-      "provenanceNote": "quoniam introduces the explanatory/causal conclusion of the Gloria."
+      "provenanceNote": "quoniam introduces the explanatory/causal conclusion of the Gloria.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "ubi-caritas-l25",
@@ -612,7 +633,10 @@
       "work": "Vulgata Clementina / Roman Introit tradition",
       "section": "Sapientia 18:14-15",
       "sourceLatin": "Dum medium silentium tenerent omnia, et nox in suo cursu medium iter haberet, omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit.",
-      "provenanceNote": "dum introduces a sustained temporal background with imperfect-subjunctive/indicative narrative texture in liturgical Scripture."
+      "provenanceNote": "dum introduces a sustained temporal background with imperfect-subjunctive/indicative narrative texture in liturgical Scripture.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps22-4-l25",
@@ -620,7 +644,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 22:4",
       "sourceLatin": "Nam, etsi ambulavero in medio umbrae mortis, non timebo mala: quoniam tu mecum es.",
-      "provenanceNote": "nam, etsi and quoniam show layered discourse and conditional/causal relations."
+      "provenanceNote": "nam, etsi and quoniam show layered discourse and conditional/causal relations.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "quasimodo-introit-l25",
@@ -628,7 +655,10 @@
       "work": "Roman Missal / I Petri 2:2",
       "section": "Dominica in Albis — Introit",
       "sourceLatin": "Quasi modo geniti infantes.",
-      "provenanceNote": "quasi is introduced from the traditional Quasimodo Introit opening."
+      "provenanceNote": "quasi is introduced from the traditional Quasimodo Introit opening.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -660,6 +690,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "cumClauseFramework": {
@@ -687,7 +722,13 @@
         "etiam",
         "quidem"
       ]
-    }
+    },
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -697,7 +738,13 @@
       "learnerCopy": {
         "en": "You already know cum + ablative as 'with'. Before a finite verb, cum can instead introduce a subordinate clause. With the imperfect or pluperfect subjunctive it often supplies narrative background: when, while, since or although.",
         "fr": "Vous connaissez déjà cum + ablatif au sens de « avec ». Devant un verbe conjugué, cum peut introduire une proposition subordonnée. Avec l'imparfait ou le plus-que-parfait du subjonctif, il fournit souvent l'arrière-plan narratif : lorsque, tandis que, puisque ou bien que."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l25-b2",
@@ -706,7 +753,13 @@
       "learnerCopy": {
         "en": "The imperfect subjunctive is highly recognizable because it is built on the present infinitive: esse → esset, amare → amaret, venire → veniret. In cum esset, the infinitive-shaped stem is the clue.",
         "fr": "L'imparfait du subjonctif est très reconnaissable car il se construit sur l'infinitif présent : esse → esset, amare → amaret, venire → veniret. Dans cum esset, la base d'infinitif est le signal."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l25-b3",
@@ -716,7 +769,14 @@
       "learnerCopy": {
         "en": "The cum-clause establishes the circumstance before the main event inventa est. Do not translate word by word first; mark the subordinate boundary and find the main verb.",
         "fr": "La proposition en cum établit la circonstance avant l'événement principal inventa est. Ne traduisez pas d'abord mot à mot : marquez la limite de la subordonnée et trouvez le verbe principal."
-      }
+      },
+      "referenceIds": [
+        "vulg-mt1-18-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l25-b4",
@@ -725,7 +785,13 @@
       "learnerCopy": {
         "en": "si introduces an open condition; nisi normally means 'unless / if not'. These clauses may use different moods depending on meaning, so the conjunction identifies the relation, not a fixed mood by itself.",
         "fr": "si introduit une condition ; nisi signifie normalement « à moins que / si... ne ». Ces propositions peuvent employer différents modes selon le sens : la conjonction indique la relation, non un mode fixe à elle seule."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l25-b5",
@@ -734,7 +800,13 @@
       "learnerCopy": {
         "en": "quando, dum and ubi locate events; quoniam and nam explain; atque/ac, vero, etiam and quidem connect or shade discourse. These small words are what make long prayer and narrative passages navigable.",
         "fr": "quando, dum et ubi situent les événements ; quoniam et nam expliquent ; atque/ac, vero, etiam et quidem relient ou nuancent le discours. Ces petits mots rendent les longs passages de prière et de récit navigables."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l25-b6",
@@ -743,7 +815,13 @@
       "learnerCopy": {
         "en": "The Stage 5 gate requires multi-clause reading: identify main and subordinate clauses, recognize subjunctive mood, distinguish purpose/result/condition/time/cause, and keep case/pronoun resolution active across the whole passage.",
         "fr": "Le contrôle de l'étape 5 exige une lecture à plusieurs propositions : distinguer principale et subordonnées, reconnaître le subjonctif, différencier but/résultat/condition/temps/cause et maintenir l'analyse des cas et pronoms sur tout le passage."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -1022,6 +1100,13 @@
       "sourceId": "vulg-mt1-18-l25",
       "skills": [
         "syntax:cum"
+      ],
+      "referenceIds": [
+        "vulg-mt1-18-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1046,6 +1131,13 @@
       "skills": [
         "mood:subjunctive",
         "tense:imperfect"
+      ],
+      "referenceIds": [
+        "vulg-mt1-18-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1069,6 +1161,13 @@
       "sourceId": "vulg-mt1-18-l25",
       "skills": [
         "reading:narrative"
+      ],
+      "referenceIds": [
+        "vulg-mt1-18-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1096,6 +1195,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l25"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1123,6 +1228,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l25"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1146,6 +1257,13 @@
       "sourceId": "vulg-jn3-5-l25",
       "skills": [
         "syntax:condition"
+      ],
+      "referenceIds": [
+        "vulg-jn3-5-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1169,6 +1287,13 @@
       "sourceId": "mr1962-gloria-quoniam-l25",
       "skills": [
         "syntax:cause"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-quoniam-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1192,6 +1317,13 @@
       "sourceId": "stabat-quando-l25",
       "skills": [
         "syntax:time"
+      ],
+      "referenceIds": [
+        "stabat-quando-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1216,6 +1348,13 @@
       "skills": [
         "syntax:time",
         "reading:passage"
+      ],
+      "referenceIds": [
+        "wis18-dum-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1239,6 +1378,13 @@
       "sourceId": "vulg-ps22-4-l25",
       "skills": [
         "discourse:nam"
+      ],
+      "referenceIds": [
+        "vulg-ps22-4-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1262,6 +1408,13 @@
       "sourceId": "quasimodo-introit-l25",
       "skills": [
         "vocabulary:quasi"
+      ],
+      "referenceIds": [
+        "quasimodo-introit-l25",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1286,6 +1439,12 @@
       "skills": [
         "syntax:cum",
         "case:ablative"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1309,6 +1468,12 @@
       "sourceId": null,
       "skills": [
         "stage:milestone"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -1331,6 +1496,12 @@
       "sourceId": null,
       "skills": [
         "reading:passage"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -1380,6 +1551,12 @@
       "cum clause background",
       "conditional/temporal/causal connectors",
       "multi-clause passage architecture"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -1401,6 +1578,20 @@
     "authenticSourceCount": 10,
     "exerciseCount": 14,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

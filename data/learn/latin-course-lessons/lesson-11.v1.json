@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Frozen Lesson 11 vocabulary only; later time words appearing in the doxology remain declared support.",
     "authenticTextPolicy": "Imperfect is anchored in authentic doxology, Last Gospel and Passion clauses.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -258,7 +264,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Last Gospel",
       "sourceLatin": "In principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.",
-      "provenanceNote": "Repeated erat makes imperfect background description explicit in an authentic sentence."
+      "provenanceNote": "Repeated erat makes imperfect background description explicit in an authentic sentence.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-last-gospel-in-ipso-vita-l11",
@@ -266,7 +275,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Last Gospel",
       "sourceLatin": "In ipso vita erat, et vita erat lux hominum.",
-      "provenanceNote": "Authentic Last Gospel clause contrasting repeated imperfect erat with known nominal vocabulary."
+      "provenanceNote": "Authentic Last Gospel clause contrasting repeated imperfect erat with known nominal vocabulary.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-good-friday-stabant-l11",
@@ -274,7 +286,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Feria VI in Parasceve — Passio secundum Ioannem",
       "sourceLatin": "Stabant autem juxta crucem Jesu mater ejus.",
-      "provenanceNote": "stabant supplies a regular imperfect form; autem is new Lesson 11 connective vocabulary."
+      "provenanceNote": "stabant supplies a regular imperfect form; autem is new Lesson 11 connective vocabulary.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "casePanel": {
@@ -306,6 +321,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "imperfectFramework": {
@@ -321,7 +341,13 @@
       "-bam / -bas / -bat / -bamus / -batis / -bant",
       "third/fourth-conjugation forms often show -ebam / -iebam patterns"
     ],
-    "readingValue": "ongoing, repeated or background past action/state"
+    "readingValue": "ongoing, repeated or background past action/state",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -331,7 +357,13 @@
       "learnerCopy": {
         "en": "The imperfect presents an action or state as ongoing, repeated or background in the past. It is the tense of 'was', 'was doing', 'used to do' and similar narrative setting.",
         "fr": "L'imparfait présente une action ou un état comme continu, répété ou en arrière-plan dans le passé. C'est le temps de « était », « faisait », « avait l'habitude de » et de la mise en scène narrative."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l11-b2",
@@ -340,7 +372,13 @@
       "learnerCopy": {
         "en": "The imperfect of sum is eram, eras, erat, eramus, eratis, erant. In Sicut erat in principio and the Last Gospel, erat is background description: 'was'.",
         "fr": "L'imparfait de sum est eram, eras, erat, eramus, eratis, erant. Dans Sicut erat in principio et le dernier Évangile, erat décrit l'arrière-plan : « était »."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l11-b3",
@@ -349,7 +387,13 @@
       "learnerCopy": {
         "en": "Regular imperfects are highly visible: -bam, -bas, -bat, -bamus, -batis, -bant, with predictable variations such as -ebam and -iebam. Read the tense signal before translating the entire clause.",
         "fr": "Les imparfaits réguliers sont très visibles : -bam, -bas, -bat, -bamus, -batis, -bant, avec des variantes prévisibles comme -ebam et -iebam. Repérez d'abord le signal temporel."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l11-b4",
@@ -359,7 +403,14 @@
       "learnerCopy": {
         "en": "Three occurrences of erat describe a state rather than a completed event. This is exactly the narrative function the imperfect is meant to signal.",
         "fr": "Trois occurrences de erat décrivent un état plutôt qu'un événement achevé. C'est précisément la fonction narrative signalée par l'imparfait."
-      }
+      },
+      "referenceIds": [
+        "mr1962-last-gospel-erat-verbum-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l11-b5",
@@ -369,7 +420,14 @@
       "learnerCopy": {
         "en": "stabant is the imperfect of sto: 'they were standing'. autem connects the scene. The verb supplies background while the later narrative can move on to completed events.",
         "fr": "stabant est l'imparfait de sto : « ils se tenaient debout ». autem relie la scène. Le verbe pose l'arrière-plan avant les événements achevés."
-      }
+      },
+      "referenceIds": [
+        "mr1962-good-friday-stabant-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l11-b6",
@@ -378,7 +436,13 @@
       "learnerCopy": {
         "en": "tunc, ibi, adhuc, iam, statim and simul tell you when or how events relate. Treat them as navigation words: then, there, still, already/now, immediately, together.",
         "fr": "tunc, ibi, adhuc, iam, statim et simul orientent le récit : alors, là, encore, déjà/maintenant, aussitôt, ensemble."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -490,6 +554,13 @@
       "sourceId": "doxology-sicut-erat-l11",
       "skills": [
         "tense:imperfect"
+      ],
+      "referenceIds": [
+        "doxology-sicut-erat-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -514,6 +585,12 @@
       "skills": [
         "tense:imperfect",
         "narrative"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -540,6 +617,13 @@
       "skills": [
         "tense:imperfect",
         "verb:sum"
+      ],
+      "referenceIds": [
+        "mr1962-last-gospel-erat-verbum-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -564,6 +648,13 @@
       "skills": [
         "tense:imperfect",
         "verb:sto"
+      ],
+      "referenceIds": [
+        "mr1962-good-friday-stabant-l11",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -589,6 +680,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l11"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -614,6 +711,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l11"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -638,6 +741,12 @@
       "skills": [
         "verb:sum",
         "tense:imperfect"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -661,6 +770,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:spero"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -684,6 +799,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:simul"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -702,6 +823,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:iam"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -733,6 +860,12 @@
       "erat paradigm anchor",
       "regular -ba- recognition",
       "narrative adverbs"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -756,6 +889,20 @@
     "authenticSourceCount": 4,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

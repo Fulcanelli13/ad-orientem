@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Frozen Lesson 23 vocabulary only; authentic prayer clauses carry the syntax while remaining vocabulary is taught through controlled retrieval.",
     "authenticTextPolicy": "Purpose clauses are anchored in traditional prayer and Vulgate clauses, with explicit attention to ecclesiastical ut non usage.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -329,7 +335,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 26:41",
       "sourceLatin": "Vigilate, et orate, ut non intretis in tentationem.",
-      "provenanceNote": "A clear purpose clause using ecclesiastical/Vulgate ut non rather than a simplified ne-only rule."
+      "provenanceNote": "A clear purpose clause using ecclesiastical/Vulgate ut non rather than a simplified ne-only rule.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "pater-ne-nos-l23",
@@ -337,7 +346,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Pater noster",
       "sourceLatin": "Et ne nos inducas in tentationem.",
-      "provenanceNote": "ne marks a negative prayer clause here; this is deliberately distinguished from a dependent purpose clause."
+      "provenanceNote": "ne marks a negative prayer clause here; this is deliberately distinguished from a dependent purpose clause.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "vulg-mt7-6-l23",
@@ -345,7 +357,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 7:6",
       "sourceLatin": "Nolite dare sanctum canibus, neque mittatis margaritas vestras ante porcos: ne forte conculcent eas pedibus suis, et conversi dirumpant vos.",
-      "provenanceNote": "ne forte introduces prevention/negative-purpose sense in a dependent clause."
+      "provenanceNote": "ne forte introduces prevention/negative-purpose sense in a dependent clause.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-mt5-16-purpose-l23",
@@ -353,7 +368,10 @@
       "work": "Vulgata Clementina",
       "section": "Matthaeus 5:16",
       "sourceLatin": "Sic luceat lux vestra coram hominibus, ut videant opera vestra bona, et glorificent Patrem vestrum.",
-      "provenanceNote": "ut links the shining light to its intended/expected consequence; Lesson 24 will refine purpose versus result."
+      "provenanceNote": "ut links the shining light to its intended/expected consequence; Lesson 24 will refine purpose versus result.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -385,13 +403,24 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "purposeFramework": {
     "positive": "ut + subjunctive commonly introduces intended purpose or desired end.",
     "negative": "ne + subjunctive can introduce negative purpose/prevention; ecclesiastical/Vulgate Latin also commonly uses ut non.",
     "caution": "Do not decide purpose from conjunction alone. Check the main-clause meaning, subordinate mood, and logical relationship.",
-    "prayerPattern": "request/grant verb + ut-clause often expresses the content or desired outcome of prayer and overlaps semantically with purpose."
+    "prayerPattern": "request/grant verb + ut-clause often expresses the content or desired outcome of prayer and overlaps semantically with purpose.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -401,7 +430,13 @@
       "learnerCopy": {
         "en": "A purpose clause tells what an action is for. ut often introduces positive purpose; ne can introduce negative purpose or prevention. But conjunction alone is not enough: read the governing clause and the subjunctive relationship.",
         "fr": "Une proposition finale indique le but d'une action. ut introduit souvent un but positif ; ne peut introduire un but négatif ou une prévention. Mais la conjonction seule ne suffit pas : lisez la proposition principale et le rapport au subjonctif."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l23-b2",
@@ -411,7 +446,14 @@
       "learnerCopy": {
         "en": "The Angelus collect opens with a request and then an ut-clause describing the desired end: that those who have known the Incarnation may be brought through Passion and Cross to Resurrection glory.",
         "fr": "La collecte de l'Angélus s'ouvre par une demande puis une proposition en ut décrivant le terme désiré : que ceux qui ont connu l'Incarnation soient conduits, par la Passion et la Croix, à la gloire de la Résurrection."
-      }
+      },
+      "referenceIds": [
+        "angelus-collect-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l23-b3",
@@ -421,7 +463,14 @@
       "learnerCopy": {
         "en": "Vigilate et orate, ut non intretis... shows that ecclesiastical/Vulgate Latin can express negative purpose with ut non. Do not learn the false equation 'negative purpose always equals ne'.",
         "fr": "Vigilate et orate, ut non intretis... montre que le latin ecclésiastique/Vulgate peut exprimer un but négatif par ut non. N'apprenez pas la fausse équation « but négatif = toujours ne »."
-      }
+      },
+      "referenceIds": [
+        "vulg-mt26-41-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l23-b4",
@@ -431,7 +480,14 @@
       "learnerCopy": {
         "en": "In the Pater, ne nos inducas is an independent negative petition, not a subordinate purpose clause. The same conjunction can serve different syntax; clause relationship decides.",
         "fr": "Dans le Pater, ne nos inducas est une demande négative indépendante, non une proposition finale subordonnée. Une même conjonction peut servir plusieurs structures ; c'est le rapport entre propositions qui décide."
-      }
+      },
+      "referenceIds": [
+        "pater-ne-nos-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l23-b5",
@@ -440,7 +496,13 @@
       "learnerCopy": {
         "en": "concedo, praesto, tribuo and quaeso frequently lead into prayer clauses expressing what is being granted or requested. Recognize the governing verb before entering the subordinate clause.",
         "fr": "concedo, praesto, tribuo et quaeso introduisent souvent des propositions de prière exprimant ce qui est accordé ou demandé. Repérez le verbe régissant avant d'entrer dans la subordonnée."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l23-b6",
@@ -449,7 +511,13 @@
       "learnerCopy": {
         "en": "To identify purpose, combine: conjunction, subjunctive mood, and logical dependence on the main clause. This three-part test prevents mechanical parsing.",
         "fr": "Pour identifier le but, combinez trois signaux : conjonction, subjonctif et dépendance logique par rapport à la principale. Ce test évite une analyse mécanique."
-      }
+      },
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -601,6 +669,12 @@
       "sourceId": null,
       "skills": [
         "syntax:purpose"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -624,6 +698,13 @@
       "sourceId": "angelus-collect-l23",
       "skills": [
         "syntax:purpose"
+      ],
+      "referenceIds": [
+        "angelus-collect-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -648,6 +729,13 @@
       "sourceId": "vulg-mt26-41-l23",
       "skills": [
         "syntax:negative-purpose"
+      ],
+      "referenceIds": [
+        "vulg-mt26-41-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -670,6 +758,13 @@
       "sourceId": "pater-ne-nos-l23",
       "skills": [
         "syntax:boundary"
+      ],
+      "referenceIds": [
+        "pater-ne-nos-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -695,6 +790,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l23"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -716,6 +817,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l23"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -740,6 +847,13 @@
       "skills": [
         "syntax:purpose",
         "mood:subjunctive"
+      ],
+      "referenceIds": [
+        "vulg-mt26-41-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -763,6 +877,13 @@
       "sourceId": "vulg-mt7-6-l23",
       "skills": [
         "syntax:negative-purpose"
+      ],
+      "referenceIds": [
+        "vulg-mt7-6-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -786,6 +907,13 @@
       "sourceId": "angelus-collect-l23",
       "skills": [
         "vocabulary:quaeso"
+      ],
+      "referenceIds": [
+        "angelus-collect-l23",
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -804,6 +932,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:ne"
+      ],
+      "referenceIds": [
+        "grammar-nunn-1922",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -835,6 +969,12 @@
       "ne prevention/negative use",
       "ut non ecclesiastical/Vulgate usage",
       "clause relationship over mechanical conjunction parsing"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -852,6 +992,20 @@
     "authenticSourceCount": 5,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-nunn-1922",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

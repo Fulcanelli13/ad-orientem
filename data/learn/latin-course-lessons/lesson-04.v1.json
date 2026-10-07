@@ -18,7 +18,12 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only the frozen lesson allocation is introduced; earlier Core may be recycled and later Core may appear only as explicit support.",
     "authenticTextPolicy": "Primary text and instructional markup are stored separately.",
-    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical copy and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -293,7 +298,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Sanctus",
       "sourceLatin": "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua.",
-      "provenanceNote": "Authentic Sanctus opening; adjective agreement is the target."
+      "provenanceNote": "Authentic Sanctus opening; adjective agreement is the target.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-gloria-patri-l4",
@@ -301,7 +309,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Doxology",
       "sourceLatin": "Gloria Patri, et Filio, et Spiritui Sancto.",
-      "provenanceNote": "Traditional liturgical doxology; Sancto shows adjective agreement while later nouns are supplied."
+      "provenanceNote": "Traditional liturgical doxology; Sancto shows adjective agreement while later nouns are supplied.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-domine-non-sum-dignus-l4",
@@ -309,7 +320,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Communion",
       "sourceLatin": "Domine, non sum dignus, ut intres sub tectum meum.",
-      "provenanceNote": "Authentic Communion formula; meum is the target possessive adjective form."
+      "provenanceNote": "Authentic Communion formula; meum is the target possessive adjective form.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     }
   ],
   "learningBlocks": [
@@ -320,7 +334,12 @@
       "learnerCopy": {
         "en": "Adjectives change their endings to agree with the noun they describe in gender, number and case. The important reading skill is not 'same ending at all costs' but recognizing matched grammatical information.",
         "fr": "Les adjectifs changent de terminaison pour s'accorder avec le nom en genre, nombre et cas. Le but n'est pas de chercher mécaniquement la même terminaison, mais de reconnaître des informations grammaticales concordantes."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l4-b2",
@@ -329,7 +348,12 @@
       "learnerCopy": {
         "en": "Nominative and vocative are still the active case functions. Now the adjective must be read on the same map as its noun.",
         "fr": "Le nominatif et le vocatif restent les fonctions actives. Désormais, l'adjectif doit être lu sur la même carte que le nom qu'il qualifie."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l4-b3",
@@ -338,7 +362,12 @@
       "learnerCopy": {
         "en": "sanctus, bonus, meus, tuus, noster, suus, magnus, iustus, malus, salvus, novus, plenus and primus use familiar first/second-declension adjective patterns. omnis, fidelis and similis belong to a different adjective pattern but still agree by grammatical features.",
         "fr": "sanctus, bonus, meus, tuus, noster, suus, magnus, iustus, malus, salvus, novus, plenus et primus suivent les formes familières des adjectifs de première/deuxième déclinaison. omnis, fidelis et similis ont un autre modèle mais s'accordent selon les mêmes catégories."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l4-b4",
@@ -348,7 +377,13 @@
       "learnerCopy": {
         "en": "Pleni points to caeli as a plural pair; tua points to gloria. You do not need the later case functions to see that the words are grammatically linked.",
         "fr": "Pleni s'accorde avec caeli au pluriel; tua se rattache à gloria. Il n'est pas nécessaire de maîtriser encore les fonctions des autres cas pour voir ces liens."
-      }
+      },
+      "referenceIds": [
+        "mr1962-sanctus-pleni",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l4-b5",
@@ -358,7 +393,13 @@
       "learnerCopy": {
         "en": "Sancto is not a different adjective from sanctus. It is the same lemma taking the form required by Spiritui. This is exactly why the course tracks lemmas rather than surface forms.",
         "fr": "Sancto n'est pas un adjectif différent de sanctus. C'est le même lemme sous la forme exigée par Spiritui. C'est précisément pourquoi le cours suit les lemmes et non chaque forme séparément."
-      }
+      },
+      "referenceIds": [
+        "mr1962-gloria-patri-l4",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l4-b6",
@@ -368,7 +409,13 @@
       "learnerCopy": {
         "en": "meus is learned as the lemma, but the Communion formula has meum because it agrees with tectum. Recognize the relationship without needing to analyse every later word in the sentence.",
         "fr": "meus est le lemme appris, mais la formule de Communion donne meum parce qu'il s'accorde avec tectum. Reconnaissez cette relation sans devoir analyser tous les mots plus avancés."
-      }
+      },
+      "referenceIds": [
+        "mr1962-domine-non-sum-dignus-l4",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l4-b7",
@@ -377,7 +424,12 @@
       "learnerCopy": {
         "en": "When two words agree, treat them as a grammatical unit even if Latin separates them. This becomes essential later when liturgical sentences grow longer.",
         "fr": "Lorsque deux mots s'accordent, lisez-les comme une unité grammaticale même si le latin les sépare. Cela deviendra essentiel dans les longues phrases liturgiques."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -472,6 +524,12 @@
         "terra",
         "verbum",
         "possum"
+      ],
+      "referenceIds": [
+        "mr1962-sanctus-pleni",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -497,6 +555,11 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l4"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -519,6 +582,12 @@
       "skills": [
         "agreement:adjective-noun",
         "vocabulary:tuus"
+      ],
+      "referenceIds": [
+        "mr1962-sanctus-pleni",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -542,6 +611,12 @@
       "options": [
         "yes",
         "no"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-patri-l4",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -564,6 +639,12 @@
       "skills": [
         "vocabulary:meus",
         "agreement"
+      ],
+      "referenceIds": [
+        "mr1962-domine-non-sum-dignus-l4",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -587,6 +668,12 @@
         "gloria pleni",
         "terra tuae",
         "Deus tua"
+      ],
+      "referenceIds": [
+        "mr1962-sanctus-pleni",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -610,6 +697,12 @@
         "primus",
         "salvus",
         "similis"
+      ],
+      "referenceIds": [
+        "mr1962-sanctus-pleni",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -633,6 +726,11 @@
         "only word order",
         "only meaning",
         "tense and person"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -672,6 +770,12 @@
       "sourceId": "mr1962-sanctus-pleni",
       "skills": [
         "reading:cumulative"
+      ],
+      "referenceIds": [
+        "mr1962-sanctus-pleni",
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -691,6 +795,11 @@
       "skills": [
         "vocabulary:tuus",
         "morphology:lemma-form"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -787,6 +896,10 @@
     ],
     "notes": [
       "Deus commonly keeps Deus in direct address; filius has the familiar vocative fili. These are learned as liturgical forms rather than forced into a simplistic rule."
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "objectives": [
@@ -817,6 +930,11 @@
       "sanctus/Sancto is one lemma",
       "meus/meum is one lemma",
       "case map remains cumulative"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -843,6 +961,19 @@
     "authenticSourceCount": 3,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

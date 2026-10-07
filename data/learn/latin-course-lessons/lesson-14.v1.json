@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Frozen Lesson 14 vocabulary only; earlier cases stay active and later clause words remain support.",
     "authenticTextPolicy": "Fourth/fifth declension forms are anchored in Ordinary, Psalms and Collect-style clauses.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -257,7 +263,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — response",
       "sourceLatin": "Et cum spiritu tuo.",
-      "provenanceNote": "spiritu is ablative singular of fourth-declension spiritus."
+      "provenanceNote": "spiritu is ablative singular of fourth-declension spiritus.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-gloria-patri-spiritui-l14",
@@ -265,7 +274,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Doxology",
       "sourceLatin": "Gloria Patri, et Filio, et Spiritui Sancto.",
-      "provenanceNote": "Spiritui is dative singular of fourth-declension spiritus."
+      "provenanceNote": "Spiritui is dative singular of fourth-declension spiritus.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "vulg-ps117-haec-dies-l14",
@@ -273,7 +285,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 117:24",
       "sourceLatin": "Haec dies, quam fecit Dominus: exsultemus et laetemur in ea.",
-      "provenanceNote": "dies is a high-frequency fifth-declension noun; later pronoun/subjunctive detail remains support."
+      "provenanceNote": "dies is a high-frequency fifth-declension noun; later pronoun/subjunctive detail remains support.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-ps50-cor-mundum-l14",
@@ -281,7 +296,10 @@
       "work": "Vulgata Clementina",
       "section": "Psalmus 50:12",
       "sourceLatin": "Cor mundum crea in me, Deus: et spiritum rectum innova in visceribus meis.",
-      "provenanceNote": "spiritum shows fourth-declension accusative singular in a familiar penitential Psalm."
+      "provenanceNote": "spiritum shows fourth-declension accusative singular in a familiar penitential Psalm.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "collect-conspectus-l14",
@@ -321,6 +339,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "declensionFramework": {
@@ -348,7 +371,13 @@
         "fides",
         "facies"
       ]
-    }
+    },
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "learningBlocks": [
     {
@@ -358,7 +387,13 @@
       "learnerCopy": {
         "en": "Lessons 2–9 built case functions; Lesson 14 completes the main declension inventory with fourth and fifth declensions. The goal is recognition inside real text, not isolated table recitation.",
         "fr": "Les leçons 2 à 9 ont construit les fonctions des cas ; la leçon 14 complète l'inventaire principal avec les quatrième et cinquième déclinaisons. Le but est la reconnaissance dans le texte réel, non la récitation de tableaux isolés."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l14-b2",
@@ -367,7 +402,13 @@
       "learnerCopy": {
         "en": "Fourth-declension masculine nouns often show -us in both nominative and genitive singular, -ui in the dative, -um in the accusative and -u in the ablative. Context and the permanent case map matter.",
         "fr": "Les noms masculins de quatrième déclinaison présentent souvent -us au nominatif et au génitif singuliers, -ui au datif, -um à l'accusatif et -u à l'ablatif. Le contexte et la carte permanente des cas restent essentiels."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l14-b3",
@@ -376,7 +417,13 @@
       "learnerCopy": {
         "en": "Et cum spiritu tuo gives ablative spiritu; Gloria Patri … Spiritui Sancto gives dative Spiritui; Psalm 50 gives accusative spiritum. One lemma now appears across three active cases.",
         "fr": "Et cum spiritu tuo donne l'ablatif spiritu ; Gloria Patri … Spiritui Sancto donne le datif Spiritui ; le psaume 50 donne l'accusatif spiritum. Un seul lemme apparaît ainsi dans trois cas actifs."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l14-b4",
@@ -385,7 +432,13 @@
       "learnerCopy": {
         "en": "Fifth-declension nouns often show nominative -es and genitive/dative -ei. dies and res are especially frequent; fides and facies belong to the same broad family.",
         "fr": "Les noms de cinquième déclinaison présentent souvent un nominatif en -es et un génitif/datf en -ei. dies et res sont particulièrement fréquents ; fides et facies appartiennent à la même grande famille."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l14-b5",
@@ -395,7 +448,14 @@
       "learnerCopy": {
         "en": "dies is fifth declension. You do not need to master the later demonstrative and subjunctive in the Psalm clause to recognize the noun and its role.",
         "fr": "dies appartient à la cinquième déclinaison. Il n'est pas nécessaire de maîtriser encore le démonstratif et le subjonctif de la phrase pour reconnaître le nom et son rôle."
-      }
+      },
+      "referenceIds": [
+        "vulg-ps117-haec-dies-l14",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l14-b6",
@@ -404,7 +464,13 @@
       "learnerCopy": {
         "en": "From now on, every noun belongs on one combined case map. The reading question is: what case/function is this form, and what lemma family does it belong to?",
         "fr": "Désormais, tous les noms appartiennent à une seule carte des cas. La question de lecture est : quel est le cas et la fonction de cette forme, et à quelle famille de lemme appartient-elle ?"
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -534,6 +600,13 @@
       "skills": [
         "declension:fourth",
         "case:ablative"
+      ],
+      "referenceIds": [
+        "mr1962-et-cum-spiritu-l14",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -558,6 +631,13 @@
       "skills": [
         "declension:fourth",
         "case:dative"
+      ],
+      "referenceIds": [
+        "mr1962-gloria-patri-spiritui-l14",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -582,6 +662,13 @@
       "skills": [
         "declension:fourth",
         "case:accusative"
+      ],
+      "referenceIds": [
+        "vulg-ps50-cor-mundum-l14",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -607,6 +694,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l14"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -632,6 +725,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l14"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -655,6 +754,13 @@
       "sourceId": "vulg-ps117-haec-dies-l14",
       "skills": [
         "declension:fifth"
+      ],
+      "referenceIds": [
+        "vulg-ps117-haec-dies-l14",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -678,6 +784,12 @@
       "sourceId": null,
       "skills": [
         "curriculum:declensions"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -702,6 +814,13 @@
       "skills": [
         "case:ablative",
         "declension:fourth"
+      ],
+      "referenceIds": [
+        "collect-conspectus-l14",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -720,6 +839,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:res"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -738,6 +863,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:fides"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -769,6 +900,12 @@
       "Spiritui dative",
       "spiritum accusative",
       "dies/res/fides fifth-declension recognition"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -787,6 +924,20 @@
     "authenticSourceCount": 5,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }

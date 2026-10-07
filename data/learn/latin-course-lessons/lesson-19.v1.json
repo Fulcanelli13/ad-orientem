@@ -19,7 +19,13 @@
     "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
     "vocabularyPolicy": "Only frozen Lesson 19 vocabulary is introduced; mood/infinitive details beyond the deponent target remain support.",
     "authenticTextPolicy": "Deponents are anchored in Ordinary, hymn, Office and Gospel clauses.",
-    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "coreVocabulary": {
     "introduced": [
@@ -223,7 +229,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Agnus Dei",
       "sourceLatin": "Agnus Dei, qui tollis peccata mundi: miserere nobis.",
-      "provenanceNote": "miserere is a deponent imperative: passive-looking form, active meaning 'have mercy'."
+      "provenanceNote": "miserere is a deponent imperative: passive-looking form, active meaning 'have mercy'.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "mr1962-confiteor-opening-l19",
@@ -231,7 +240,10 @@
       "work": "Missale Romanum (1962)",
       "section": "Ordo Missae — Confiteor",
       "sourceLatin": "Confiteor Deo omnipotenti, beatae Mariae semper Virgini.",
-      "provenanceNote": "confiteor is first-person singular deponent with active meaning 'I confess'."
+      "provenanceNote": "confiteor is first-person singular deponent with active meaning 'I confess'.",
+      "corpusReferenceIds": [
+        "corpus-missale-romanum-1962"
+      ]
     },
     {
       "id": "tantum-ergo-veneremur-l19",
@@ -255,7 +267,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 8:12",
       "sourceLatin": "Qui sequitur me, non ambulat in tenebris: sed habebit lumen vitae.",
-      "provenanceNote": "sequitur is present deponent with active meaning 'follows' and governs accusative me."
+      "provenanceNote": "sequitur is present deponent with active meaning 'follows' and governs accusative me.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     },
     {
       "id": "vulg-jn4-26-l19",
@@ -263,7 +278,10 @@
       "work": "Vulgata Clementina",
       "section": "Ioannes 4:26",
       "sourceLatin": "Ego sum, qui loquor tecum.",
-      "provenanceNote": "loquor is first-person singular deponent; tecum recycles the attached cum-pronoun form."
+      "provenanceNote": "loquor is first-person singular deponent; tecum recycles the attached cum-pronoun form.",
+      "corpusReferenceIds": [
+        "corpus-vulgata-clementina-1592"
+      ]
     }
   ],
   "casePanel": {
@@ -295,6 +313,11 @@
         "case": "ablative",
         "status": "active"
       }
+    ],
+    "referenceIds": [
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "deponentFramework": {
@@ -331,7 +354,13 @@
         "meaning": "he/she follows"
       }
     ],
-    "perfectConnection": "Earlier nascor, morior and patior showed perfect forms built with participles + sum but active meaning. Lesson 19 generalizes the deponent system."
+    "perfectConnection": "Earlier nascor, morior and patior showed perfect forms built with participles + sum but active meaning. Lesson 19 generalizes the deponent system.",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ]
   },
   "pronounSpiral": {
     "lesson": 19,
@@ -355,6 +384,12 @@
         "case": "ablative inside tecum",
         "note": "cum attached after pronoun"
       }
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "learningBlocks": [
@@ -365,7 +400,13 @@
       "learnerCopy": {
         "en": "Deponent verbs use passive-looking morphology but normally have active meaning. This is a lexical property of the verb: sequitur means 'he follows', not 'he is followed'.",
         "fr": "Les verbes déponents utilisent une morphologie d'apparence passive mais ont normalement un sens actif. C'est une propriété lexicale du verbe : sequitur signifie « il suit », non « il est suivi »."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l19-b2",
@@ -374,7 +415,13 @@
       "learnerCopy": {
         "en": "patior, nascor and morior already showed that participial/passive-looking forms can have active meaning. Lesson 19 turns that preview into a general reading category.",
         "fr": "patior, nascor et morior ont déjà montré que des formes d'apparence passive peuvent avoir un sens actif. La leçon 19 transforme cet aperçu en catégorie générale de lecture."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l19-b3",
@@ -384,7 +431,14 @@
       "learnerCopy": {
         "en": "miserere is a command: 'have mercy'. Its form resembles passive morphology, but its meaning is active. nobis remains the pronoun/case anchor.",
         "fr": "miserere est un ordre : « ayez pitié ». Sa forme ressemble au passif, mais son sens est actif. nobis reste le repère pronominal et casuel."
-      }
+      },
+      "referenceIds": [
+        "mr1962-agnus-miserere-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l19-b4",
@@ -394,7 +448,14 @@
       "learnerCopy": {
         "en": "confiteor means 'I confess / acknowledge'. The first-person ending -or looks passive, but the lexical meaning is active. Deo marks the person to whom the confession is made.",
         "fr": "confiteor signifie « je confesse / reconnais ». La terminaison -or ressemble au passif, mais le sens lexical est actif. Deo marque celui à qui la confession est faite."
-      }
+      },
+      "referenceIds": [
+        "mr1962-confiteor-opening-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l19-b5",
@@ -404,7 +465,14 @@
       "learnerCopy": {
         "en": "sequitur me takes accusative me. loquor tecum uses the ablative pronoun inside tecum. Do not assume a deponent needs a 'passive' case pattern; learn its syntax like any other verb.",
         "fr": "sequitur me prend l'accusatif me. loquor tecum emploie le pronom à l'ablatif dans tecum. Un déponent ne crée pas un régime « passif » : sa syntaxe s'apprend comme celle de tout autre verbe."
-      }
+      },
+      "referenceIds": [
+        "vulg-jn8-12-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     },
     {
       "id": "l19-b6",
@@ -413,7 +481,13 @@
       "learnerCopy": {
         "en": "When a form looks passive, first identify the lemma. If the lemma is deponent, read active meaning; if not, continue with the passive analysis learned earlier. This prevents both over- and under-calling passives.",
         "fr": "Lorsqu'une forme paraît passive, identifiez d'abord le lemme. Si le lemme est déponent, lisez un sens actif ; sinon, poursuivez l'analyse passive déjà apprise. Cela évite les deux types d'erreur."
-      }
+      },
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
+      ]
     }
   ],
   "authenticPassages": [
@@ -566,6 +640,12 @@
       "sourceId": null,
       "skills": [
         "deponent:principle"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -589,6 +669,13 @@
       "sourceId": "mr1962-agnus-miserere-l19",
       "skills": [
         "deponent:misereor"
+      ],
+      "referenceIds": [
+        "mr1962-agnus-miserere-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -612,6 +699,13 @@
       "sourceId": "mr1962-confiteor-opening-l19",
       "skills": [
         "deponent:confiteor"
+      ],
+      "referenceIds": [
+        "mr1962-confiteor-opening-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -637,6 +731,13 @@
         "pronoun:ego",
         "case:accusative",
         "deponent:government"
+      ],
+      "referenceIds": [
+        "vulg-jn8-12-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -661,6 +762,13 @@
       "skills": [
         "pronoun:tu",
         "case:ablative"
+      ],
+      "referenceIds": [
+        "vulg-jn4-26-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -686,6 +794,12 @@
       "sourceId": null,
       "skills": [
         "vocabulary:l19"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -709,6 +823,12 @@
       "sourceId": null,
       "skills": [
         "deponent:spiral"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -734,6 +854,12 @@
       "skills": [
         "deponent:government",
         "case:framework"
+      ],
+      "referenceIds": [
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -757,6 +883,13 @@
       "sourceId": "vulg-jn8-12-l19",
       "skills": [
         "reading:deponent-pronoun"
+      ],
+      "referenceIds": [
+        "vulg-jn8-12-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     },
     {
@@ -775,6 +908,13 @@
       "sourceId": "vulg-jn4-26-l19",
       "skills": [
         "vocabulary:loquor"
+      ],
+      "referenceIds": [
+        "vulg-jn4-26-l19",
+        "grammar-scanlon-1944",
+        "grammar-nunn-1922",
+        "grammar-petitmangin-1930",
+        "curriculum-latin-course-40-v1"
       ]
     }
   ],
@@ -806,6 +946,12 @@
       "miserere/confiteor/sequitur/loquor recognition",
       "pronoun case remains syntactically governed",
       "patior/nascor/morior connection"
+    ],
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
     ]
   },
   "validation": {
@@ -822,6 +968,20 @@
     "authenticSourceCount": 6,
     "exerciseCount": 10,
     "sourceIdsResolved": true,
-    "answersResolved": true
-  }
+    "answersResolved": true,
+    "explanationReferencesResolved": true
+  },
+  "referencePolicy": {
+    "registryPath": "data/learn/latin-course-reference-registry.v1.json",
+    "referenceIds": [
+      "curriculum-latin-course-40-v1",
+      "grammar-scanlon-1944",
+      "grammar-nunn-1922",
+      "grammar-petitmangin-1930"
+    ],
+    "claimRule": "Every learner/exercise explanation resolves to explicit referenceIds; lesson-local source IDs may be used alongside global references."
+  },
+  "objectivesReferenceIds": [
+    "curriculum-latin-course-40-v1"
+  ]
 }
