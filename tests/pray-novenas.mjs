@@ -50,7 +50,7 @@ for(const id of completeExpected){
     assert.doesNotMatch(body.fr,/French source text is not yet source-locked|texte source français n’est pas encore verrouillé/i,id+" "+path+" retained placeholder French");
   }
 }
-assert.equal(bodyCount,79,"Expected 75 recovered N3 source bodies plus four completed target prayers");
+assert.equal(bodyCount,91,"Frozen V4 corpus source-body unit count changed");
 
 assert.equal(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.calendar.type,"NINE_TUESDAYS_BEFORE_FIXED_FEAST");
 assert.equal(NOVENA_CORPUS_V4.christ_the_king.calendar.type,"LAST_SUNDAY_RELATIVE");
