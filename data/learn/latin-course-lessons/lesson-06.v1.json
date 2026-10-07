@@ -1,0 +1,881 @@
+{
+  "version": "latin-course-lesson-06-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 6,
+  "stage": {
+    "number": 2,
+    "title": "The Ordinary"
+  },
+  "title": "Pater, corpus, pax",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 40,
+  "progressionStep": "sentence",
+  "grammarFocus": "Third declension",
+  "readingOutcome": "Use nominative + genitive dictionary forms to predict third-declension stems.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only frozen Lesson 6 Core is introduced; earlier Core is recycled and later Core is explicit support.",
+    "authenticTextPolicy": "Primary text remains distinct from instructional explanation.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "pater",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "father",
+          "fr": "père"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "pater, patris",
+        "gender": "m"
+      },
+      {
+        "lemma": "corpus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "body",
+          "fr": "corps"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "corpus, corporis",
+        "gender": "n"
+      },
+      {
+        "lemma": "sanguis",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "blood",
+          "fr": "sang"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "sanguis, sanguinis",
+        "gender": "m"
+      },
+      {
+        "lemma": "pax",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "peace",
+          "fr": "paix"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "pax, pacis",
+        "gender": "f"
+      },
+      {
+        "lemma": "homo",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "human being / man",
+          "fr": "homme"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "homo, hominis",
+        "gender": "m"
+      },
+      {
+        "lemma": "virgo",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "virgin",
+          "fr": "vierge"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "virgo, virginis",
+        "gender": "f"
+      },
+      {
+        "lemma": "nomen",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "name",
+          "fr": "nom"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "nomen, nominis",
+        "gender": "n"
+      },
+      {
+        "lemma": "cor",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "heart",
+          "fr": "cœur"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "cor, cordis",
+        "gender": "n"
+      },
+      {
+        "lemma": "calix",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "chalice / cup",
+          "fr": "calice"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "calix, calicis",
+        "gender": "m"
+      },
+      {
+        "lemma": "lux",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "light",
+          "fr": "lumière"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "lux, lucis",
+        "gender": "f"
+      },
+      {
+        "lemma": "veritas",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "truth",
+          "fr": "vérité"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "veritas, veritatis",
+        "gender": "f"
+      },
+      {
+        "lemma": "panis",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "bread",
+          "fr": "pain"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "panis, panis",
+        "gender": "m"
+      },
+      {
+        "lemma": "lumen",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "light",
+          "fr": "lumière"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "lumen, luminis",
+        "gender": "n"
+      },
+      {
+        "lemma": "caro",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "flesh",
+          "fr": "chair"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "caro, carnis",
+        "gender": "f"
+      },
+      {
+        "lemma": "honor",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "honour",
+          "fr": "honneur"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "honor, honoris",
+        "gender": "m"
+      },
+      {
+        "lemma": "tempus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "time",
+          "fr": "temps"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "tempus, temporis",
+        "gender": "n"
+      },
+      {
+        "lemma": "gens",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "people / nation",
+          "fr": "peuple / nation"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "gens, gentis",
+        "gender": "f"
+      },
+      {
+        "lemma": "lex",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "law",
+          "fr": "loi"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "lex, legis",
+        "gender": "f"
+      },
+      {
+        "lemma": "os",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "mouth",
+          "fr": "bouche"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "os, oris",
+        "gender": "n"
+      },
+      {
+        "lemma": "vox",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "voice",
+          "fr": "voix"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "vox, vocis",
+        "gender": "f"
+      },
+      {
+        "lemma": "mater",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "mother",
+          "fr": "mère"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "mater, matris",
+        "gender": "f"
+      },
+      {
+        "lemma": "pastor",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "shepherd",
+          "fr": "pasteur"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "pastor, pastoris",
+        "gender": "m"
+      },
+      {
+        "lemma": "nox",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "night",
+          "fr": "nuit"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "nox, noctis",
+        "gender": "f"
+      },
+      {
+        "lemma": "mons",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "mountain",
+          "fr": "montagne"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "mons, montis",
+        "gender": "m"
+      },
+      {
+        "lemma": "virtus",
+        "partOfSpeech": "noun",
+        "gloss": {
+          "en": "virtue / power",
+          "fr": "vertu / puissance"
+        },
+        "frozenLesson": 6,
+        "dictionaryForm": "virtus, virtutis",
+        "gender": "f"
+      }
+    ],
+    "recycled": [
+      "et",
+      "verbum",
+      "sum",
+      "noster",
+      "tuus",
+      "Dominus",
+      "caelum"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "qui/quae/quod",
+      "forms": [
+        "qui"
+      ],
+      "gloss": {
+        "en": "who / which",
+        "fr": "qui / lequel"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "in",
+      "forms": [
+        "in"
+      ],
+      "gloss": {
+        "en": "in",
+        "fr": "dans"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "sanctifico",
+      "forms": [
+        "sanctificetur"
+      ],
+      "gloss": {
+        "en": "be sanctified / be hallowed",
+        "fr": "être sanctifié"
+      },
+      "trackedLesson": 7,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "semper",
+      "forms": [
+        "semper"
+      ],
+      "gloss": {
+        "en": "always",
+        "fr": "toujours"
+      },
+      "trackedLesson": 13,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "vos",
+      "forms": [
+        "vobiscum"
+      ],
+      "gloss": {
+        "en": "you (plural)",
+        "fr": "vous"
+      },
+      "trackedLesson": 10,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "cum",
+      "forms": [
+        "vobiscum"
+      ],
+      "gloss": {
+        "en": "with",
+        "fr": "avec"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "facio",
+      "forms": [
+        "factum"
+      ],
+      "gloss": {
+        "en": "make / become",
+        "fr": "faire / devenir"
+      },
+      "trackedLesson": 12,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-pater-noster-opening-l6",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pater noster",
+      "sourceLatin": "Pater noster, qui es in caelis: sanctificetur nomen tuum.",
+      "provenanceNote": "Authentic Pater noster opening; later relative/passive syntax is supplied."
+    },
+    {
+      "id": "mr1962-pax-domini-l6",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pax Domini",
+      "sourceLatin": "Pax Domini sit semper vobiscum.",
+      "provenanceNote": "Authentic Ordinary formula; pax is the third-declension anchor."
+    },
+    {
+      "id": "mr1962-last-gospel-verbum-caro-l6",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Last Gospel",
+      "sourceLatin": "Et Verbum caro factum est.",
+      "provenanceNote": "Authentic Last Gospel clause; caro is the new third-declension anchor."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain visible. Nominative and vocative are still the active functions; third-declension stem logic is added to the same map.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "preview",
+        "unlockLesson": 9
+      },
+      {
+        "case": "genitive",
+        "status": "preview",
+        "unlockLesson": 8
+      },
+      {
+        "case": "dative",
+        "status": "preview",
+        "unlockLesson": 8
+      },
+      {
+        "case": "ablative",
+        "status": "preview",
+        "unlockLesson": 9
+      }
+    ],
+    "thirdDeclensionRule": "Learn nominative + genitive. Remove genitive -is to expose the stem used by most other cases."
+  },
+  "learningBlocks": [
+    {
+      "id": "l6-b1",
+      "type": "concept",
+      "title": "The nominative may hide the stem",
+      "learnerCopy": {
+        "en": "Third-declension nouns must be learned with the genitive: pater, patris; corpus, corporis; pax, pacis; homo, hominis. The genitive reveals the stem used by most other forms.",
+        "fr": "Les noms de la troisième déclinaison s'apprennent avec leur génitif : pater, patris ; corpus, corporis ; pax, pacis ; homo, hominis. Le génitif révèle le radical employé dans la plupart des autres formes."
+      }
+    },
+    {
+      "id": "l6-b2",
+      "type": "case-panel",
+      "title": "One permanent case map",
+      "learnerCopy": {
+        "en": "The six cases do not restart with a new declension. Nominative and vocative remain active; genitive, dative, accusative and ablative stay visible until their functional unlocks.",
+        "fr": "Les six cas ne recommencent pas avec chaque déclinaison. Nominatif et vocatif restent actifs ; génitif, datif, accusatif et ablatif restent visibles jusqu'à leur activation."
+      }
+    },
+    {
+      "id": "l6-b3",
+      "type": "morphology",
+      "title": "Find the stem from the genitive",
+      "learnerCopy": {
+        "en": "pacis gives pac-, corporis gives corpor-, hominis gives homin-, noctis gives noct-. Do not guess the stem from the nominative.",
+        "fr": "pacis donne pac-, corporis donne corpor-, hominis donne homin-, noctis donne noct-. Ne devinez pas le radical à partir du nominatif."
+      }
+    },
+    {
+      "id": "l6-b4",
+      "type": "morphology",
+      "title": "Watch the neuters",
+      "learnerCopy": {
+        "en": "corpus, nomen, cor, lumen, tempus and os are neuter. Keep the neuter principle in view: nominative and accusative match, and neuter plural commonly ends in -a. Accusative becomes active in Lesson 9.",
+        "fr": "corpus, nomen, cor, lumen, tempus et os sont neutres. Gardez en vue la règle du neutre : nominatif et accusatif coïncident, et le pluriel neutre finit souvent en -a. L'accusatif sera activé à la leçon 9."
+      }
+    },
+    {
+      "id": "l6-b5",
+      "type": "authentic-example",
+      "title": "Pater noster",
+      "sourceId": "mr1962-pater-noster-opening-l6",
+      "learnerCopy": {
+        "en": "Pater and nomen are both third-declension nouns despite very different nominatives. Their genitives patris and nominis make the stems visible.",
+        "fr": "Pater et nomen appartiennent tous deux à la troisième déclinaison malgré des nominatif très différents. Leurs génitifs patris et nominis rendent leurs radicaux visibles."
+      }
+    },
+    {
+      "id": "l6-b6",
+      "type": "liturgical-reading",
+      "title": "Pax and caro in context",
+      "learnerCopy": {
+        "en": "Read Pax Domini and Et Verbum caro factum est as cumulative Latin. The aim is to add the new noun system without losing the earlier vocabulary and verb recognition.",
+        "fr": "Lisez Pax Domini et Et Verbum caro factum est comme un latin cumulatif. Il faut ajouter le nouveau système nominal sans perdre les acquis antérieurs."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l6-p1",
+      "sourceId": "mr1962-pater-noster-opening-l6",
+      "sourceLatin": "Pater noster, qui es in caelis: sanctificetur nomen tuum.",
+      "instructionalDisplay": "Pater noster, qui es in caelis: sanctificetur nomen tuum.",
+      "translation": {
+        "en": "Our Father, who art in heaven: hallowed be Thy name.",
+        "fr": "Notre Père, qui êtes aux cieux : que votre nom soit sanctifié."
+      },
+      "targetLemmas": [
+        "pater",
+        "nomen",
+        "noster",
+        "sum",
+        "caelum",
+        "tuus"
+      ],
+      "supportLemmas": [
+        "qui/quae/quod",
+        "in",
+        "sanctifico"
+      ]
+    },
+    {
+      "id": "l6-p2",
+      "sourceId": "mr1962-pax-domini-l6",
+      "sourceLatin": "Pax Domini sit semper vobiscum.",
+      "instructionalDisplay": "Pax Domini sit semper vobiscum.",
+      "translation": {
+        "en": "May the peace of the Lord be always with you.",
+        "fr": "Que la paix du Seigneur soit toujours avec vous."
+      },
+      "targetLemmas": [
+        "pax",
+        "Dominus",
+        "sum"
+      ],
+      "supportLemmas": [
+        "semper",
+        "vos",
+        "cum"
+      ]
+    },
+    {
+      "id": "l6-p3",
+      "sourceId": "mr1962-last-gospel-verbum-caro-l6",
+      "sourceLatin": "Et Verbum caro factum est.",
+      "instructionalDisplay": "Et Verbum caro factum est.",
+      "translation": {
+        "en": "And the Word was made flesh.",
+        "fr": "Et le Verbe s'est fait chair."
+      },
+      "targetLemmas": [
+        "et",
+        "verbum",
+        "caro",
+        "sum"
+      ],
+      "supportLemmas": [
+        "facio"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l6-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which dictionary pair correctly gives 'father'?",
+      "stimulus": null,
+      "options": [
+        "pater, patris",
+        "pater, pateris",
+        "patris, pater",
+        "pater, patri"
+      ],
+      "expectedAnswer": "pater, patris",
+      "acceptedVariants": [
+        "pater, patris"
+      ],
+      "hint": "The genitive reveals patr-.",
+      "explanation": "pater, patris is the correct third-declension pair.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "declension:third",
+        "vocabulary:pater"
+      ]
+    },
+    {
+      "id": "l6-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "What stem does pacis reveal?",
+      "stimulus": "pax, pacis",
+      "options": [
+        "pac-",
+        "pax-",
+        "paci-",
+        "pa-"
+      ],
+      "expectedAnswer": "pac-",
+      "acceptedVariants": [
+        "pac-",
+        "pac"
+      ],
+      "hint": "Remove genitive -is.",
+      "explanation": "pax, pacis has stem pac-.",
+      "difficulty": 1,
+      "sourceId": "mr1962-pax-domini-l6",
+      "skills": [
+        "declension:third",
+        "stem"
+      ]
+    },
+    {
+      "id": "l6-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which Lesson 6 noun is neuter?",
+      "stimulus": null,
+      "options": [
+        "corpus",
+        "pater",
+        "virgo",
+        "pax"
+      ],
+      "expectedAnswer": "corpus",
+      "acceptedVariants": [
+        "corpus"
+      ],
+      "hint": "Its genitive is corporis.",
+      "explanation": "corpus is neuter.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "gender:neuter"
+      ]
+    },
+    {
+      "id": "l6-e4",
+      "exerciseType": "matching",
+      "prompt": "Match noun to genitive.",
+      "stimulus": [
+        "homo",
+        "lumen",
+        "mater",
+        "nox"
+      ],
+      "expectedAnswer": {
+        "homo": "hominis",
+        "lumen": "luminis",
+        "mater": "matris",
+        "nox": "noctis"
+      },
+      "acceptedVariants": [],
+      "hint": "Use the dictionary pairs.",
+      "explanation": "The genitive exposes each stem.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "declension:third",
+        "stem"
+      ]
+    },
+    {
+      "id": "l6-e5",
+      "exerciseType": "token_select",
+      "prompt": "Select the two new third-declension nouns.",
+      "stimulus": "Pater noster, qui es in caelis: sanctificetur nomen tuum.",
+      "expectedAnswer": [
+        "Pater",
+        "nomen"
+      ],
+      "acceptedVariants": [
+        [
+          "Pater",
+          "nomen"
+        ]
+      ],
+      "hint": "Ignore later support grammar.",
+      "explanation": "Pater and nomen are Lesson 6 nouns.",
+      "difficulty": 2,
+      "sourceId": "mr1962-pater-noster-opening-l6",
+      "skills": [
+        "reading:target-recognition"
+      ]
+    },
+    {
+      "id": "l6-e6",
+      "exerciseType": "token_select",
+      "prompt": "Select the new third-declension noun.",
+      "stimulus": "Et Verbum caro factum est.",
+      "expectedAnswer": [
+        "caro"
+      ],
+      "acceptedVariants": [
+        [
+          "caro"
+        ]
+      ],
+      "hint": "Verbum and est are recycled.",
+      "explanation": "caro, carnis is the new noun.",
+      "difficulty": 1,
+      "sourceId": "mr1962-last-gospel-verbum-caro-l6",
+      "skills": [
+        "reading:cumulative"
+      ]
+    },
+    {
+      "id": "l6-e7",
+      "exerciseType": "matching",
+      "prompt": "Match the noun to its meaning.",
+      "stimulus": [
+        "sanguis",
+        "calix",
+        "veritas",
+        "panis"
+      ],
+      "expectedAnswer": {
+        "sanguis": "blood",
+        "calix": "chalice / cup",
+        "veritas": "truth",
+        "panis": "bread"
+      },
+      "acceptedVariants": [],
+      "hint": "All are Lesson 6 Core.",
+      "explanation": "This checks lexical recognition.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l6"
+      ]
+    },
+    {
+      "id": "l6-e8",
+      "exerciseType": "matching",
+      "prompt": "Match the noun to its meaning.",
+      "stimulus": [
+        "gens",
+        "lex",
+        "vox",
+        "mons"
+      ],
+      "expectedAnswer": {
+        "gens": "people / nation",
+        "lex": "law",
+        "vox": "voice",
+        "mons": "mountain"
+      },
+      "acceptedVariants": [],
+      "hint": "All are Lesson 6 Core.",
+      "explanation": "This checks the new 201–350 nouns.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:l6"
+      ]
+    },
+    {
+      "id": "l6-e9",
+      "exerciseType": "multiple_choice",
+      "prompt": "Why is the genitive stored with a third-declension noun?",
+      "stimulus": null,
+      "options": [
+        "to reveal the stem",
+        "to mark verb tense",
+        "to show word order",
+        "to translate the noun"
+      ],
+      "expectedAnswer": "to reveal the stem",
+      "acceptedVariants": [
+        "to reveal the stem"
+      ],
+      "hint": "The nominative may disguise it.",
+      "explanation": "The genitive is the reliable route to the stem.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "declension:third",
+        "metacognition"
+      ]
+    },
+    {
+      "id": "l6-e10",
+      "exerciseType": "short_answer",
+      "prompt": "Give the genitive of corpus.",
+      "stimulus": null,
+      "expectedAnswer": "corporis",
+      "acceptedVariants": [
+        "corporis",
+        "Corporis"
+      ],
+      "hint": "The stem is corpor-.",
+      "explanation": "corpus, corporis is the dictionary pair.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:corpus",
+        "declension:third"
+      ]
+    }
+  ],
+  "objectives": [
+    "Use nominative + genitive to recover third-declension stems.",
+    "Recognize neuter third-declension nouns.",
+    "Learn all twenty-five frozen Lesson 6 lemmas.",
+    "Read third-declension anchors inside authentic Ordinary material."
+  ],
+  "checkpoint": {
+    "id": "l6-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l6-e1",
+        "l6-e2",
+        "l6-e3",
+        "l6-e4",
+        "l6-e5",
+        "l6-e6",
+        "l6-e7",
+        "l6-e8",
+        "l6-e9",
+        "l6-e10"
+      ]
+    },
+    "mustKnow": [
+      "genitive reveals third-declension stem",
+      "neuter nominative=accusative principle",
+      "nominative/vocative remain active"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "pater",
+      "corpus",
+      "sanguis",
+      "pax",
+      "homo",
+      "virgo",
+      "nomen",
+      "cor",
+      "calix",
+      "lux",
+      "veritas",
+      "panis",
+      "lumen",
+      "caro",
+      "honor",
+      "tempus",
+      "gens",
+      "lex",
+      "os",
+      "vox",
+      "mater",
+      "pastor",
+      "nox",
+      "mons",
+      "virtus"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 3,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

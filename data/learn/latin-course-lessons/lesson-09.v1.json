@@ -1,0 +1,1024 @@
+{
+  "version": "latin-course-lesson-09-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 9,
+  "stage": {
+    "number": 2,
+    "title": "The Ordinary"
+  },
+  "title": "Ad altare Dei",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 45,
+  "progressionStep": "sentence",
+  "grammarFocus": "Accusative, ablative and prepositions",
+  "readingOutcome": "Unlock accusative and ablative functions; learn case government of core prepositions.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Lesson 9 introduces the frozen preposition set; earlier Core is recycled and later words are explicit support.",
+    "authenticTextPolicy": "Preposition government is tied to authentic liturgical phrases.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "in",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "in / into",
+          "fr": "dans / en"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "ad",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "to / toward",
+          "fr": "vers / à"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "per",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "through / by",
+          "fr": "par / à travers"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "pro",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "for / on behalf of",
+          "fr": "pour"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "cum",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "with",
+          "fr": "avec"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "de",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "from / concerning",
+          "fr": "de / au sujet de"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "e/ex",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "out of / from",
+          "fr": "hors de / de"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "a/ab",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "from / by",
+          "fr": "de / par"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "sub",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "under",
+          "fr": "sous"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "super",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "over / upon",
+          "fr": "sur"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "sine",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "without",
+          "fr": "sans"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "propter",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "because of",
+          "fr": "à cause de"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "ante",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "before",
+          "fr": "avant"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "post",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "after / behind",
+          "fr": "après"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "usque",
+        "partOfSpeech": "preposition/adverb",
+        "gloss": {
+          "en": "as far as / until",
+          "fr": "jusqu'à"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "apud",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "at / with / among",
+          "fr": "chez / auprès de"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "coram",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "before / in the presence of",
+          "fr": "devant"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "inter",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "between / among",
+          "fr": "entre"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "contra",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "against",
+          "fr": "contre"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "adversus",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "against / toward",
+          "fr": "contre / envers"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "iuxta",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "beside / according to",
+          "fr": "près de / selon"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "ultra",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "beyond",
+          "fr": "au-delà de"
+        },
+        "frozenLesson": 9
+      },
+      {
+        "lemma": "secundum",
+        "partOfSpeech": "preposition",
+        "gloss": {
+          "en": "according to",
+          "fr": "selon"
+        },
+        "frozenLesson": 9
+      }
+    ],
+    "recycled": [
+      "Deus",
+      "nomen",
+      "pater",
+      "filius",
+      "sanctus",
+      "Dominus",
+      "noster",
+      "tuus",
+      "et"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "introeo",
+      "forms": [
+        "Introibo"
+      ],
+      "gloss": {
+        "en": "go in / enter",
+        "fr": "entrer"
+      },
+      "trackedLesson": 11,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "altare",
+      "forms": [
+        "altare"
+      ],
+      "gloss": {
+        "en": "altar",
+        "fr": "autel"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-untracked"
+    },
+    {
+      "lemma": "spiritus",
+      "forms": [
+        "Spiritus",
+        "spiritu"
+      ],
+      "gloss": {
+        "en": "Spirit / spirit",
+        "fr": "Esprit / esprit"
+      },
+      "trackedLesson": 14,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "Iesus",
+      "forms": [
+        "Jesum"
+      ],
+      "gloss": {
+        "en": "Jesus",
+        "fr": "Jésus"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    },
+    {
+      "lemma": "Christus",
+      "forms": [
+        "Christum"
+      ],
+      "gloss": {
+        "en": "Christ",
+        "fr": "Christ"
+      },
+      "trackedLesson": null,
+      "status": "proper-name-excluded"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-introibo-ad-altare-l9",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Prayers at the Foot of the Altar",
+      "sourceLatin": "Introibo ad altare Dei.",
+      "provenanceNote": "ad + accusative gives the primary motion-toward anchor."
+    },
+    {
+      "id": "mr1962-in-nomine-l9",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Sign of the Cross",
+      "sourceLatin": "In nomine Patris, et Filii, et Spiritus Sancti.",
+      "provenanceNote": "in + ablative marks location/state; following genitives recycle Lesson 8 relationships."
+    },
+    {
+      "id": "mr1962-per-dominum-l9",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Common Collect conclusion",
+      "sourceLatin": "Per Dominum nostrum Jesum Christum.",
+      "provenanceNote": "per + accusative gives a high-frequency Collect ending pattern."
+    },
+    {
+      "id": "mr1962-et-cum-spiritu-l9",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — response",
+      "sourceLatin": "Et cum spiritu tuo.",
+      "provenanceNote": "cum + ablative provides the principal accompaniment pattern."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases are now active. The case panel remains permanent for retrieval rather than disappearing after the unlock.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "active"
+      },
+      {
+        "case": "genitive",
+        "status": "active"
+      },
+      {
+        "case": "dative",
+        "status": "active"
+      },
+      {
+        "case": "ablative",
+        "status": "active"
+      }
+    ]
+  },
+  "prepositionGovernment": [
+    {
+      "lemma": "in",
+      "cases": [
+        "accusative",
+        "ablative"
+      ],
+      "rule": "accusative for motion into/toward; ablative for location/state"
+    },
+    {
+      "lemma": "ad",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "toward / to"
+    },
+    {
+      "lemma": "per",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "through / by"
+    },
+    {
+      "lemma": "pro",
+      "cases": [
+        "ablative"
+      ],
+      "rule": "for / on behalf of"
+    },
+    {
+      "lemma": "cum",
+      "cases": [
+        "ablative"
+      ],
+      "rule": "with"
+    },
+    {
+      "lemma": "de",
+      "cases": [
+        "ablative"
+      ],
+      "rule": "from / concerning"
+    },
+    {
+      "lemma": "e/ex",
+      "cases": [
+        "ablative"
+      ],
+      "rule": "out of / from"
+    },
+    {
+      "lemma": "a/ab",
+      "cases": [
+        "ablative"
+      ],
+      "rule": "from / by"
+    },
+    {
+      "lemma": "sub",
+      "cases": [
+        "accusative",
+        "ablative"
+      ],
+      "rule": "motion under versus position under"
+    },
+    {
+      "lemma": "super",
+      "cases": [
+        "accusative",
+        "ablative"
+      ],
+      "rule": "motion/extension over versus position upon"
+    },
+    {
+      "lemma": "sine",
+      "cases": [
+        "ablative"
+      ],
+      "rule": "without"
+    },
+    {
+      "lemma": "propter",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "because of"
+    },
+    {
+      "lemma": "ante",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "before"
+    },
+    {
+      "lemma": "post",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "after / behind"
+    },
+    {
+      "lemma": "usque",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "high-frequency pattern usque ad + accusative"
+    },
+    {
+      "lemma": "apud",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "at / among / with"
+    },
+    {
+      "lemma": "coram",
+      "cases": [
+        "ablative"
+      ],
+      "rule": "before / in the presence of"
+    },
+    {
+      "lemma": "inter",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "between / among"
+    },
+    {
+      "lemma": "contra",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "against"
+    },
+    {
+      "lemma": "adversus",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "against / toward"
+    },
+    {
+      "lemma": "iuxta",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "beside / according to"
+    },
+    {
+      "lemma": "ultra",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "beyond"
+    },
+    {
+      "lemma": "secundum",
+      "cases": [
+        "accusative"
+      ],
+      "rule": "according to"
+    }
+  ],
+  "learningBlocks": [
+    {
+      "id": "l9-b1",
+      "type": "concept",
+      "title": "The last two case functions unlock",
+      "learnerCopy": {
+        "en": "Accusative and ablative now become active. From this point the full six-case system is operational. Prepositions make these cases especially readable because many govern a predictable case.",
+        "fr": "L'accusatif et l'ablatif deviennent maintenant actifs. À partir d'ici, les six cas sont opérationnels. Les prépositions rendent ces cas particulièrement lisibles parce qu'elles régissent souvent un cas prévisible."
+      }
+    },
+    {
+      "id": "l9-b2",
+      "type": "case-panel",
+      "title": "Accusative: object and direction",
+      "learnerCopy": {
+        "en": "The accusative commonly marks the direct object and motion toward a goal. In Introibo ad altare Dei, ad requires an accusative goal.",
+        "fr": "L'accusatif marque souvent le complément d'objet direct et le mouvement vers un but. Dans Introibo ad altare Dei, ad exige un accusatif."
+      }
+    },
+    {
+      "id": "l9-b3",
+      "type": "case-panel",
+      "title": "Ablative through prepositions",
+      "learnerCopy": {
+        "en": "At this stage, read the ablative first through frequent prepositions: cum, pro, de, ex, ab, sine and coram, plus static in.",
+        "fr": "À ce stade, lisez l'ablatif d'abord à travers les prépositions fréquentes : cum, pro, de, ex, ab, sine, coram, ainsi que in statique."
+      }
+    },
+    {
+      "id": "l9-b4",
+      "type": "authentic-example",
+      "title": "In nomine",
+      "sourceId": "mr1962-in-nomine-l9",
+      "learnerCopy": {
+        "en": "in nomine uses the ablative for location/state. Patris, Filii and Spiritus then add genitive relationships. One familiar formula now combines several case functions.",
+        "fr": "in nomine emploie l'ablatif pour la situation. Patris, Filii et Spiritus ajoutent ensuite des relations au génitif. Une formule familière combine ainsi plusieurs cas."
+      }
+    },
+    {
+      "id": "l9-b5",
+      "type": "authentic-example",
+      "title": "Per Dominum nostrum",
+      "sourceId": "mr1962-per-dominum-l9",
+      "learnerCopy": {
+        "en": "per governs the accusative: Dominum nostrum Jesum Christum. The forms change together; this is morphology, not new vocabulary.",
+        "fr": "per régit l'accusatif : Dominum nostrum Jesum Christum. Les formes changent ensemble ; c'est de la morphologie, non du nouveau vocabulaire."
+      }
+    },
+    {
+      "id": "l9-b6",
+      "type": "liturgical-reading",
+      "title": "The full case system is live",
+      "learnerCopy": {
+        "en": "After Lesson 9, no case label is merely a preview. Identify the preposition, predict its case, then verify the ending and function.",
+        "fr": "Après la leçon 9, aucun cas n'est plus seulement aperçu. Repérez la préposition, prévoyez son cas, puis vérifiez la terminaison et la fonction."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l9-p1",
+      "sourceId": "mr1962-introibo-ad-altare-l9",
+      "sourceLatin": "Introibo ad altare Dei.",
+      "instructionalDisplay": "Introibo ad altare Dei.",
+      "translation": {
+        "en": "I will go in unto the altar of God.",
+        "fr": "J'irai à l'autel de Dieu."
+      },
+      "targetLemmas": [
+        "ad",
+        "Deus"
+      ],
+      "supportLemmas": [
+        "introeo",
+        "altare"
+      ]
+    },
+    {
+      "id": "l9-p2",
+      "sourceId": "mr1962-in-nomine-l9",
+      "sourceLatin": "In nomine Patris, et Filii, et Spiritus Sancti.",
+      "instructionalDisplay": "In nomine Patris, et Filii, et Spiritus Sancti.",
+      "translation": {
+        "en": "In the name of the Father, and of the Son, and of the Holy Ghost.",
+        "fr": "Au nom du Père, et du Fils, et du Saint-Esprit."
+      },
+      "targetLemmas": [
+        "in",
+        "nomen",
+        "pater",
+        "et",
+        "filius",
+        "sanctus"
+      ],
+      "supportLemmas": [
+        "spiritus"
+      ]
+    },
+    {
+      "id": "l9-p3",
+      "sourceId": "mr1962-per-dominum-l9",
+      "sourceLatin": "Per Dominum nostrum Jesum Christum.",
+      "instructionalDisplay": "Per Dominum nostrum Jesum Christum.",
+      "translation": {
+        "en": "Through our Lord Jesus Christ.",
+        "fr": "Par notre Seigneur Jésus-Christ."
+      },
+      "targetLemmas": [
+        "per",
+        "Dominus",
+        "noster"
+      ],
+      "supportLemmas": [
+        "Iesus",
+        "Christus"
+      ]
+    },
+    {
+      "id": "l9-p4",
+      "sourceId": "mr1962-et-cum-spiritu-l9",
+      "sourceLatin": "Et cum spiritu tuo.",
+      "instructionalDisplay": "Et cum spiritu tuo.",
+      "translation": {
+        "en": "And with thy spirit.",
+        "fr": "Et avec votre esprit."
+      },
+      "targetLemmas": [
+        "et",
+        "cum",
+        "tuus"
+      ],
+      "supportLemmas": [
+        "spiritus"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l9-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which case does ad govern here?",
+      "stimulus": "ad altare",
+      "options": [
+        "accusative",
+        "ablative",
+        "genitive",
+        "dative"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "ad marks motion toward.",
+      "explanation": "ad governs the accusative.",
+      "difficulty": 1,
+      "sourceId": "mr1962-introibo-ad-altare-l9",
+      "skills": [
+        "case:accusative",
+        "preposition:ad"
+      ]
+    },
+    {
+      "id": "l9-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which case does in govern in in nomine?",
+      "stimulus": "in nomine",
+      "options": [
+        "ablative",
+        "accusative",
+        "genitive",
+        "vocative"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "This is location/state, not motion into.",
+      "explanation": "in takes the ablative for location/state.",
+      "difficulty": 1,
+      "sourceId": "mr1962-in-nomine-l9",
+      "skills": [
+        "case:ablative",
+        "preposition:in"
+      ]
+    },
+    {
+      "id": "l9-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which case does per govern?",
+      "stimulus": "Per Dominum nostrum Jesum Christum.",
+      "options": [
+        "accusative",
+        "ablative",
+        "dative",
+        "genitive"
+      ],
+      "expectedAnswer": "accusative",
+      "acceptedVariants": [
+        "accusative"
+      ],
+      "hint": "per is an accusative preposition.",
+      "explanation": "Per Dominum is accusative.",
+      "difficulty": 1,
+      "sourceId": "mr1962-per-dominum-l9",
+      "skills": [
+        "case:accusative",
+        "preposition:per"
+      ]
+    },
+    {
+      "id": "l9-e4",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which case does cum govern?",
+      "stimulus": "cum spiritu tuo",
+      "options": [
+        "ablative",
+        "accusative",
+        "genitive",
+        "nominative"
+      ],
+      "expectedAnswer": "ablative",
+      "acceptedVariants": [
+        "ablative"
+      ],
+      "hint": "cum means 'with'.",
+      "explanation": "cum governs the ablative.",
+      "difficulty": 1,
+      "sourceId": "mr1962-et-cum-spiritu-l9",
+      "skills": [
+        "case:ablative",
+        "preposition:cum"
+      ]
+    },
+    {
+      "id": "l9-e5",
+      "exerciseType": "matching",
+      "prompt": "Match the ablative preposition to its meaning.",
+      "stimulus": [
+        "pro",
+        "sine",
+        "coram",
+        "de"
+      ],
+      "expectedAnswer": {
+        "pro": "for / on behalf of",
+        "sine": "without",
+        "coram": "before / in the presence of",
+        "de": "from / concerning"
+      },
+      "acceptedVariants": [],
+      "hint": "These govern the ablative in the core pattern.",
+      "explanation": "The case and meaning are learned together.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "prepositions:ablative"
+      ]
+    },
+    {
+      "id": "l9-e6",
+      "exerciseType": "matching",
+      "prompt": "Match the accusative preposition to its meaning.",
+      "stimulus": [
+        "apud",
+        "inter",
+        "contra",
+        "secundum"
+      ],
+      "expectedAnswer": {
+        "apud": "at / with / among",
+        "inter": "between / among",
+        "contra": "against",
+        "secundum": "according to"
+      },
+      "acceptedVariants": [],
+      "hint": "These govern the accusative.",
+      "explanation": "The case and meaning are learned together.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "prepositions:accusative"
+      ]
+    },
+    {
+      "id": "l9-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which preposition can take accusative for motion and ablative for location?",
+      "stimulus": null,
+      "options": [
+        "in",
+        "cum",
+        "sine",
+        "per"
+      ],
+      "expectedAnswer": "in",
+      "acceptedVariants": [
+        "in"
+      ],
+      "hint": "Compare 'into' with 'in'.",
+      "explanation": "in changes case according to motion versus location/state.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "preposition:in",
+        "case:contrast"
+      ]
+    },
+    {
+      "id": "l9-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which statement is now true of the case panel?",
+      "stimulus": null,
+      "options": [
+        "all six cases are active",
+        "only nominative/vocative are active",
+        "genitive/dative are previews",
+        "accusative/ablative are previews"
+      ],
+      "expectedAnswer": "all six cases are active",
+      "acceptedVariants": [
+        "all six cases are active"
+      ],
+      "hint": "This is the final case-function unlock.",
+      "explanation": "Lesson 9 makes the full system operational.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:framework"
+      ]
+    },
+    {
+      "id": "l9-e9",
+      "exerciseType": "token_select",
+      "prompt": "Select the preposition and its governed head noun.",
+      "stimulus": "Per Dominum nostrum Jesum Christum.",
+      "expectedAnswer": [
+        "Per",
+        "Dominum"
+      ],
+      "acceptedVariants": [
+        [
+          "Per",
+          "Dominum"
+        ]
+      ],
+      "hint": "Find the preposition and the head noun.",
+      "explanation": "per governs accusative Dominum.",
+      "difficulty": 2,
+      "sourceId": "mr1962-per-dominum-l9",
+      "skills": [
+        "reading:government"
+      ]
+    },
+    {
+      "id": "l9-e10",
+      "exerciseType": "matching",
+      "prompt": "Match the preposition to its normal core case.",
+      "stimulus": [
+        "ad",
+        "propter",
+        "sine",
+        "coram"
+      ],
+      "expectedAnswer": {
+        "ad": "accusative",
+        "propter": "accusative",
+        "sine": "ablative",
+        "coram": "ablative"
+      },
+      "acceptedVariants": [],
+      "hint": "Two take accusative; two take ablative.",
+      "explanation": "Government is part of lexical knowledge.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "prepositions:government"
+      ]
+    },
+    {
+      "id": "l9-e11",
+      "exerciseType": "multiple_choice",
+      "prompt": "What high-frequency pattern is taught for usque?",
+      "stimulus": "usque",
+      "options": [
+        "usque ad + accusative",
+        "usque cum + ablative",
+        "usque de + ablative",
+        "usque per + dative"
+      ],
+      "expectedAnswer": "usque ad + accusative",
+      "acceptedVariants": [
+        "usque ad + accusative"
+      ],
+      "hint": "Think 'as far as / until'.",
+      "explanation": "The course teaches usque ad + accusative as the core pattern.",
+      "difficulty": 2,
+      "sourceId": null,
+      "skills": [
+        "preposition:usque"
+      ]
+    },
+    {
+      "id": "l9-e12",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin preposition meaning 'according to'.",
+      "stimulus": null,
+      "expectedAnswer": "secundum",
+      "acceptedVariants": [
+        "secundum",
+        "Secundum"
+      ],
+      "hint": "It governs the accusative.",
+      "explanation": "secundum means 'according to'.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:secundum"
+      ]
+    }
+  ],
+  "objectives": [
+    "Activate accusative and ablative functions.",
+    "Learn the government of the frozen preposition set.",
+    "Keep all six cases permanently visible as an operational system.",
+    "Read prepositional phrases inside authentic Ordinary and Collect formulas."
+  ],
+  "checkpoint": {
+    "id": "l9-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 9,
+      "autoGradedExerciseIds": [
+        "l9-e1",
+        "l9-e2",
+        "l9-e3",
+        "l9-e4",
+        "l9-e5",
+        "l9-e6",
+        "l9-e7",
+        "l9-e8",
+        "l9-e9",
+        "l9-e10",
+        "l9-e11",
+        "l9-e12"
+      ]
+    },
+    "mustKnow": [
+      "all six cases active",
+      "ad/per + accusative",
+      "cum/pro/de/ex/ab/sine/coram + ablative",
+      "in/sub/super depend on motion versus location"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "in",
+      "ad",
+      "per",
+      "pro",
+      "cum",
+      "de",
+      "e/ex",
+      "a/ab",
+      "sub",
+      "super",
+      "sine",
+      "propter",
+      "ante",
+      "post",
+      "usque",
+      "apud",
+      "coram",
+      "inter",
+      "contra",
+      "adversus",
+      "iuxta",
+      "ultra",
+      "secundum"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 4,
+    "exerciseCount": 12,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}

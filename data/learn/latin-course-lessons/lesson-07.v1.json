@@ -1,0 +1,554 @@
+{
+  "version": "latin-course-lesson-07-v1.0",
+  "status": "PRODUCTION_DRAFT_VALIDATED",
+  "lesson": 7,
+  "stage": {
+    "number": 2,
+    "title": "The Ordinary"
+  },
+  "title": "It is offered / He is praised",
+  "curriculumRef": {
+    "file": "data/learn/latin-course-40-core350.v1.json",
+    "version": "latin-course-40-core350-v1.0"
+  },
+  "durationMinutes": 35,
+  "progressionStep": "sentence",
+  "grammarFocus": "Present passive",
+  "readingOutcome": "Contrast active and passive verbal endings in liturgical clauses.",
+  "authoringPolicy": {
+    "method": "short concept introduction → authentic example → guided recognition → controlled manipulation → liturgical reading → retrieval",
+    "vocabularyPolicy": "Only sanctifico is new Core; known verbs carry the active/passive contrast.",
+    "authenticTextPolicy": "Authentic liturgical clauses are used without pretending deferred mood/participle syntax is already mastered.",
+    "copyrightPolicy": "Pedagogical prose and exercises are original synthesis."
+  },
+  "coreVocabulary": {
+    "introduced": [
+      {
+        "lemma": "sanctifico",
+        "partOfSpeech": "verb",
+        "gloss": {
+          "en": "sanctify / make holy",
+          "fr": "sanctifier"
+        },
+        "frozenLesson": 7
+      }
+    ],
+    "recycled": [
+      "nomen",
+      "tuus",
+      "laudo",
+      "benedico",
+      "adoro",
+      "glorifico",
+      "venio",
+      "Dominus"
+    ]
+  },
+  "passiveReadingLexicon": [
+    {
+      "lemma": "te",
+      "forms": [
+        "te"
+      ],
+      "gloss": {
+        "en": "you (object)",
+        "fr": "vous / te"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-pronominal-form"
+    },
+    {
+      "lemma": "benedictus",
+      "forms": [
+        "Benedictus"
+      ],
+      "gloss": {
+        "en": "blessed",
+        "fr": "béni"
+      },
+      "trackedLesson": null,
+      "status": "reading-support-participle"
+    },
+    {
+      "lemma": "qui/quae/quod",
+      "forms": [
+        "qui"
+      ],
+      "gloss": {
+        "en": "who",
+        "fr": "qui"
+      },
+      "trackedLesson": 17,
+      "status": "gloss-only-not-introduced"
+    },
+    {
+      "lemma": "in",
+      "forms": [
+        "in"
+      ],
+      "gloss": {
+        "en": "in",
+        "fr": "dans"
+      },
+      "trackedLesson": 9,
+      "status": "gloss-only-not-introduced"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mr1962-pater-sanctificetur-l7",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Pater noster",
+      "sourceLatin": "sanctificetur nomen tuum.",
+      "provenanceNote": "Authentic present-system passive form of sanctifico; mood is deferred while voice is read now."
+    },
+    {
+      "id": "mr1962-gloria-active-l7",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Gloria",
+      "sourceLatin": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
+      "provenanceNote": "Authentic active forms recycled from Lesson 5 for direct voice contrast."
+    },
+    {
+      "id": "mr1962-sanctus-benedictus-l7",
+      "sourceType": "primary-liturgical",
+      "work": "Missale Romanum (1962)",
+      "section": "Ordo Missae — Sanctus",
+      "sourceLatin": "Benedictus qui venit in nomine Domini.",
+      "provenanceNote": "Authentic participial/adjectival form used to prevent overgeneralising passive morphology."
+    }
+  ],
+  "casePanel": {
+    "visible": true,
+    "firstVisibleLesson": 2,
+    "policy": "All six cases remain visible; nominative and vocative are still active. Genitive/dative unlock next.",
+    "cases": [
+      {
+        "case": "nominative",
+        "status": "active"
+      },
+      {
+        "case": "vocative",
+        "status": "active"
+      },
+      {
+        "case": "accusative",
+        "status": "preview",
+        "unlockLesson": 9
+      },
+      {
+        "case": "genitive",
+        "status": "preview",
+        "unlockLesson": 8
+      },
+      {
+        "case": "dative",
+        "status": "preview",
+        "unlockLesson": 8
+      },
+      {
+        "case": "ablative",
+        "status": "preview",
+        "unlockLesson": 9
+      }
+    ]
+  },
+  "passiveFramework": {
+    "recognitionSignals": [
+      "-r",
+      "-ris",
+      "-tur",
+      "-mur",
+      "-mini",
+      "-ntur"
+    ],
+    "scope": "voice recognition first; mood and advanced participles later"
+  },
+  "learningBlocks": [
+    {
+      "id": "l7-b1",
+      "type": "concept",
+      "title": "Who does the action?",
+      "learnerCopy": {
+        "en": "Active voice presents the subject as performing the action. Passive voice presents the subject as receiving it. Lesson 7 adds that contrast without adding a large new vocabulary burden.",
+        "fr": "À l'actif, le sujet accomplit l'action ; au passif, il la reçoit. La leçon 7 ajoute ce contraste sans alourdir fortement le vocabulaire."
+      }
+    },
+    {
+      "id": "l7-b2",
+      "type": "morphology",
+      "title": "Read passive endings as signals",
+      "learnerCopy": {
+        "en": "High-yield present passive endings include -r, -ris, -tur, -mur, -mini and -ntur. First learn to recognize them in context; full production can come later.",
+        "fr": "Les terminaisons passives importantes comprennent -r, -ris, -tur, -mur, -mini et -ntur. Il faut d'abord les reconnaître en contexte ; la production complète viendra ensuite."
+      }
+    },
+    {
+      "id": "l7-b3",
+      "type": "authentic-example",
+      "title": "sanctificetur",
+      "sourceId": "mr1962-pater-sanctificetur-l7",
+      "learnerCopy": {
+        "en": "sanctificetur contains the passive signal -tur: the name receives the action of sanctifying. Its subjunctive mood is deliberately deferred; the reading target here is voice.",
+        "fr": "sanctificetur contient le signal passif -tur : le nom reçoit l'action de sanctifier. Le subjonctif est volontairement reporté ; ici, la cible est la voix."
+      }
+    },
+    {
+      "id": "l7-b4",
+      "type": "contrast",
+      "title": "Laudamus versus sanctificetur",
+      "learnerCopy": {
+        "en": "Laudamus means that 'we' perform the praising; sanctificetur means that the subject is to be sanctified. Read the direction of the action before translating mechanically.",
+        "fr": "Laudamus signifie que « nous » accomplissons l'action de louer ; sanctificetur signifie que le sujet reçoit l'action de sanctifier. Lisez d'abord le sens de l'action."
+      }
+    },
+    {
+      "id": "l7-b5",
+      "type": "boundary",
+      "title": "Not every passive-looking form is a finite passive",
+      "sourceId": "mr1962-sanctus-benedictus-l7",
+      "learnerCopy": {
+        "en": "Benedictus is passive in origin but functions here as a participial adjective, 'blessed'. Context prevents a false rule that every -tus form is a present passive verb.",
+        "fr": "Benedictus est d'origine passive mais fonctionne ici comme adjectif participial, « béni ». Le contexte empêche de croire que toute forme en -tus est un verbe passif au présent."
+      }
+    },
+    {
+      "id": "l7-b6",
+      "type": "retrieval",
+      "title": "Grammar grows while vocabulary stays controlled",
+      "learnerCopy": {
+        "en": "Only sanctifico is new tracked vocabulary. The real work is to reread known verbs and nouns through the active/passive distinction while keeping the permanent case map alive.",
+        "fr": "Seul sanctifico est nouveau dans le vocabulaire suivi. Le vrai travail consiste à relire les verbes et noms déjà connus à travers l'opposition actif/passif tout en conservant la carte des cas."
+      }
+    }
+  ],
+  "authenticPassages": [
+    {
+      "id": "l7-p1",
+      "sourceId": "mr1962-pater-sanctificetur-l7",
+      "sourceLatin": "sanctificetur nomen tuum.",
+      "instructionalDisplay": "sanctificetur nomen tuum.",
+      "translation": {
+        "en": "Hallowed be Thy name.",
+        "fr": "Que votre nom soit sanctifié."
+      },
+      "targetLemmas": [
+        "sanctifico",
+        "nomen",
+        "tuus"
+      ],
+      "supportLemmas": []
+    },
+    {
+      "id": "l7-p2",
+      "sourceId": "mr1962-gloria-active-l7",
+      "sourceLatin": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
+      "instructionalDisplay": "Laudamus te. Benedicimus te. Adoramus te. Glorificamus te.",
+      "translation": {
+        "en": "We praise Thee. We bless Thee. We adore Thee. We glorify Thee.",
+        "fr": "Nous vous louons. Nous vous bénissons. Nous vous adorons. Nous vous glorifions."
+      },
+      "targetLemmas": [
+        "laudo",
+        "benedico",
+        "adoro",
+        "glorifico"
+      ],
+      "supportLemmas": [
+        "te"
+      ]
+    },
+    {
+      "id": "l7-p3",
+      "sourceId": "mr1962-sanctus-benedictus-l7",
+      "sourceLatin": "Benedictus qui venit in nomine Domini.",
+      "instructionalDisplay": "Benedictus qui venit in nomine Domini.",
+      "translation": {
+        "en": "Blessed is He that cometh in the name of the Lord.",
+        "fr": "Béni soit celui qui vient au nom du Seigneur."
+      },
+      "targetLemmas": [
+        "venio",
+        "nomen",
+        "Dominus"
+      ],
+      "supportLemmas": [
+        "benedictus",
+        "qui/quae/quod",
+        "in"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "l7-e1",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which ending in sanctificetur signals passive voice?",
+      "stimulus": "sanctificetur",
+      "options": [
+        "-tur",
+        "-mus",
+        "-o",
+        "-nt"
+      ],
+      "expectedAnswer": "-tur",
+      "acceptedVariants": [
+        "-tur",
+        "tur"
+      ],
+      "hint": "Look at the final syllable.",
+      "explanation": "-tur is a third-person singular passive signal.",
+      "difficulty": 1,
+      "sourceId": "mr1962-pater-sanctificetur-l7",
+      "skills": [
+        "voice:passive"
+      ]
+    },
+    {
+      "id": "l7-e2",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which form is active?",
+      "stimulus": null,
+      "options": [
+        "Laudamus",
+        "sanctificetur",
+        "both",
+        "neither"
+      ],
+      "expectedAnswer": "Laudamus",
+      "acceptedVariants": [
+        "Laudamus",
+        "laudamus"
+      ],
+      "hint": "The subject performs the praising.",
+      "explanation": "Laudamus is first-person plural active.",
+      "difficulty": 1,
+      "sourceId": "mr1962-gloria-active-l7",
+      "skills": [
+        "voice:active"
+      ]
+    },
+    {
+      "id": "l7-e3",
+      "exerciseType": "multiple_choice",
+      "prompt": "In a passive clause, what happens to the grammatical subject?",
+      "stimulus": null,
+      "options": [
+        "it receives the action",
+        "it must disappear",
+        "it becomes a preposition",
+        "it must be plural"
+      ],
+      "expectedAnswer": "it receives the action",
+      "acceptedVariants": [
+        "it receives the action"
+      ],
+      "hint": "Contrast passive with active.",
+      "explanation": "Passive voice presents the subject as receiving the action.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "voice:principle"
+      ]
+    },
+    {
+      "id": "l7-e4",
+      "exerciseType": "token_select",
+      "prompt": "Select the passive finite verb.",
+      "stimulus": "sanctificetur nomen tuum.",
+      "expectedAnswer": [
+        "sanctificetur"
+      ],
+      "acceptedVariants": [
+        [
+          "sanctificetur"
+        ]
+      ],
+      "hint": "Look for -tur.",
+      "explanation": "sanctificetur is the finite passive form.",
+      "difficulty": 1,
+      "sourceId": "mr1962-pater-sanctificetur-l7",
+      "skills": [
+        "voice:passive",
+        "vocabulary:sanctifico"
+      ]
+    },
+    {
+      "id": "l7-e5",
+      "exerciseType": "multiple_choice",
+      "prompt": "Is Benedictus here a present passive finite verb?",
+      "stimulus": "Benedictus qui venit in nomine Domini.",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "expectedAnswer": "no",
+      "acceptedVariants": [
+        "no",
+        "No"
+      ],
+      "hint": "It means 'blessed' and functions adjectivally.",
+      "explanation": "Benedictus is participial/adjectival here.",
+      "difficulty": 2,
+      "sourceId": "mr1962-sanctus-benedictus-l7",
+      "skills": [
+        "morphology:boundary"
+      ]
+    },
+    {
+      "id": "l7-e6",
+      "exerciseType": "matching",
+      "prompt": "Match active form to meaning.",
+      "stimulus": [
+        "Laudamus",
+        "Benedicimus",
+        "Adoramus",
+        "Glorificamus"
+      ],
+      "expectedAnswer": {
+        "Laudamus": "we praise",
+        "Benedicimus": "we bless",
+        "Adoramus": "we adore",
+        "Glorificamus": "we glorify"
+      },
+      "acceptedVariants": [],
+      "hint": "These recycle Lesson 5.",
+      "explanation": "Known active forms provide the contrast.",
+      "difficulty": 1,
+      "sourceId": "mr1962-gloria-active-l7",
+      "skills": [
+        "retrieval:lesson5"
+      ]
+    },
+    {
+      "id": "l7-e7",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which lemma lies behind sanctificetur?",
+      "stimulus": "sanctificetur",
+      "options": [
+        "sanctifico",
+        "sanctus",
+        "nomen",
+        "sanctificetur"
+      ],
+      "expectedAnswer": "sanctifico",
+      "acceptedVariants": [
+        "sanctifico",
+        "Sanctifico"
+      ],
+      "hint": "Store the verb family under its dictionary lemma.",
+      "explanation": "sanctificetur is an inflected form of sanctifico.",
+      "difficulty": 1,
+      "sourceId": "mr1962-pater-sanctificetur-l7",
+      "skills": [
+        "morphology:lemma-form"
+      ]
+    },
+    {
+      "id": "l7-e8",
+      "exerciseType": "multiple_choice",
+      "prompt": "Which cases remain active in Lesson 7?",
+      "stimulus": null,
+      "options": [
+        "nominative and vocative",
+        "genitive and dative",
+        "accusative and ablative",
+        "all six"
+      ],
+      "expectedAnswer": "nominative and vocative",
+      "acceptedVariants": [
+        "nominative and vocative"
+      ],
+      "hint": "The next unlock is Lesson 8.",
+      "explanation": "Genitive and dative are still previews.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "case:framework"
+      ]
+    },
+    {
+      "id": "l7-e9",
+      "exerciseType": "short_answer",
+      "prompt": "Give the Latin lemma meaning 'sanctify / make holy'.",
+      "stimulus": null,
+      "expectedAnswer": "sanctifico",
+      "acceptedVariants": [
+        "sanctifico",
+        "Sanctifico"
+      ],
+      "hint": "It is the only new Core lemma in this lesson.",
+      "explanation": "sanctifico is the Lesson 7 Core verb.",
+      "difficulty": 1,
+      "sourceId": null,
+      "skills": [
+        "vocabulary:sanctifico"
+      ]
+    },
+    {
+      "id": "l7-e10",
+      "exerciseType": "multiple_choice",
+      "prompt": "What is deliberately deferred when reading sanctificetur?",
+      "stimulus": "sanctificetur",
+      "options": [
+        "its subjunctive mood",
+        "its passive voice",
+        "its lemma",
+        "the noun nomen"
+      ],
+      "expectedAnswer": "its subjunctive mood",
+      "acceptedVariants": [
+        "its subjunctive mood"
+      ],
+      "hint": "This lesson targets voice.",
+      "explanation": "Voice is read now; mood belongs to later syntax.",
+      "difficulty": 2,
+      "sourceId": "mr1962-pater-sanctificetur-l7",
+      "skills": [
+        "scope:grammar"
+      ]
+    }
+  ],
+  "objectives": [
+    "Contrast active and passive voice in present-system reading.",
+    "Recognize high-yield passive endings.",
+    "Learn sanctifico without unnecessary lexical expansion.",
+    "Avoid misclassifying participles as finite present passive verbs."
+  ],
+  "checkpoint": {
+    "id": "l7-checkpoint",
+    "passingRule": {
+      "autoGradedMinimumCorrect": 8,
+      "autoGradedExerciseIds": [
+        "l7-e1",
+        "l7-e2",
+        "l7-e3",
+        "l7-e4",
+        "l7-e5",
+        "l7-e6",
+        "l7-e7",
+        "l7-e8",
+        "l7-e9",
+        "l7-e10"
+      ]
+    },
+    "mustKnow": [
+      "active subject performs action",
+      "passive subject receives action",
+      "-tur passive recognition",
+      "genitive/dative remain preview until Lesson 8"
+    ]
+  },
+  "validation": {
+    "trackedVocabularyIntroduced": [
+      "sanctifico"
+    ],
+    "silentIntroductions": [],
+    "authenticSourceCount": 3,
+    "exerciseCount": 10,
+    "sourceIdsResolved": true,
+    "answersResolved": true
+  }
+}
