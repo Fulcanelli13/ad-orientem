@@ -471,7 +471,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Les oraisons condensent la théologie dans un seul arc syntaxique"
+        }
+      }
     },
     {
       "id": "l34-b2",
@@ -486,7 +491,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "L’adresse avant la chasse aux verbes"
+        }
+      }
     },
     {
       "id": "l34-b3",
@@ -503,7 +513,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "La proposition relative explique pourquoi la demande est appropriée"
+        }
+      }
     },
     {
       "id": "l34-b4",
@@ -518,7 +533,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Repérer le verbe de demande qui gouverne"
+        }
+      }
     },
     {
       "id": "l34-b5",
@@ -535,7 +555,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Des oraisons différentes, une même architecture"
+        }
+      }
     },
     {
       "id": "l34-b6",
@@ -550,7 +575,12 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "title": "Lire la phrase deux fois"
+        }
+      }
     }
   ],
   "authenticPassages": [
@@ -722,7 +752,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que faut-il identifier en premier dans une oraison difficile ?",
+          "hint": "Les mouvements avant les détails.",
+          "explanation": "L’architecture réduit la charge syntaxique.",
+          "options": [
+            "son architecture rhétorique",
+            "chaque glose de dictionnaire",
+            "les parallèles de prose classique",
+            "la prononciation seulement"
+          ]
+        }
+      }
     },
     {
       "id": "l34-e2",
@@ -755,7 +798,21 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Associez le mouvement de l’oraison à son exemple.",
+          "hint": "Structure romaine récurrente.",
+          "explanation": "Ceci vérifie la reconnaissance architecturale.",
+          "matches": {
+            "invocation": "Omnipotens sempiterne Deus",
+            "relative expansion": "qui nobis sub Sacramento mirabili...",
+            "petition": "tribue, quaesumus",
+            "desired outcome": "ut ... sentiamus",
+            "conclusion": "Per Dominum / Qui vivis et regnas"
+          }
+        }
+      }
     },
     {
       "id": "l34-e3",
@@ -785,7 +842,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Que fait habituellement la proposition en qui après l’invocation ?",
+          "hint": "Pourquoi la demande est-elle appropriée ?",
+          "explanation": "La proposition relative fonde la demande.",
+          "options": [
+            "elle développe l’attribut ou l’action divine pertinent pour la demande",
+            "elle termine la prière",
+            "elle crée un vocatif",
+            "elle remplace la demande"
+          ]
+        }
+      }
     },
     {
       "id": "l34-e4",
@@ -815,7 +885,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel rôle structurel tribue joue-t-il dans l’oraison de la Fête-Dieu ?",
+          "hint": "Repérez la demande.",
+          "explanation": "tribue ouvre la demande proprement dite.",
+          "options": [
+            "verbe de demande qui gouverne",
+            "pronom relatif",
+            "marqueur de conclusion",
+            "ablatif absolu"
+          ]
+        }
+      }
     },
     {
       "id": "l34-e5",
@@ -845,7 +928,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Qu’exprime ut ... sentiamus ?",
+          "hint": "La syntaxe de l’étape 5 est réutilisée.",
+          "explanation": "La proposition en ut énonce le résultat demandé.",
+          "options": [
+            "résultat / effet désiré",
+            "invocation",
+            "adresse directe",
+            "récit au passé"
+          ]
+        }
+      }
     },
     {
       "id": "l34-e6",
@@ -874,7 +970,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Pourquoi la leçon 34 n’introduit-elle pas de nouveau vocabulaire ?",
+          "hint": "C’est une leçon de consolidation.",
+          "explanation": "L’élève pratique l’architecture plutôt que l’acquisition.",
+          "options": [
+            "pour imposer une lecture structurelle avec le vocabulaire fondamental déjà appris",
+            "parce que les oraisons ne contiennent aucun vocabulaire",
+            "parce que la syntaxe est terminée",
+            "parce que la traduction est interdite"
+          ]
+        }
+      }
     },
     {
       "id": "l34-e7",
@@ -903,7 +1012,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quel est le rôle du bloc de conclusion ?",
+          "hint": "Bloc syntaxique réutilisable.",
+          "explanation": "Les conclusions romaines sont formulaires et structurellement prévisibles.",
+          "options": [
+            "clore la demande par le Christ dans une formule liturgique stable",
+            "introduire un nouveau sujet sans rapport avec la prière",
+            "créer une question",
+            "énumérer du vocabulaire"
+          ]
+        }
+      }
     },
     {
       "id": "l34-e8",
@@ -932,7 +1054,20 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Quelle seconde lecture est recommandée après avoir marqué l’architecture ?",
+          "hint": "Architecture d’abord, morphologie ensuite.",
+          "explanation": "C’est le flux de lecture attendu.",
+          "options": [
+            "résoudre les cas, verbes et modificateurs à l’intérieur de chaque mouvement",
+            "recommencer sans structure",
+            "traduire seulement les noms",
+            "ignorer les subordonnées"
+          ]
+        }
+      }
     },
     {
       "id": "l34-e9",
@@ -960,7 +1095,18 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Un mot d’appui inconnu invalide-t-il la stratégie de lecture de l’oraison ?",
+          "hint": "La structure peut rester claire malgré un mot glosé.",
+          "explanation": "L’architecture guide le lecteur malgré le vocabulaire inconnu.",
+          "options": [
+            "non",
+            "oui"
+          ]
+        }
+      }
     },
     {
       "id": "l34-e10",
@@ -985,7 +1131,14 @@
         "grammar-plater-white-1926",
         "grammar-scanlon-1944",
         "curriculum-latin-course-40-v1"
-      ]
+      ],
+      "localization": {
+        "fr": {
+          "prompt": "Donnez le marqueur latin courant de la demande signifiant « nous vous en supplions ».",
+          "hint": "Il revient dans les oraisons.",
+          "explanation": "quaesumus marque la demande."
+        }
+      }
     }
   ],
   "objectives": [
@@ -1047,5 +1200,18 @@
   },
   "objectivesReferenceIds": [
     "curriculum-latin-course-40-v1"
-  ]
+  ],
+  "localization": {
+    "fr": {
+      "title": "Comment fonctionne une oraison romaine",
+      "grammarFocus": "Architecture de l’oraison et syntaxe condensée",
+      "readingOutcome": "Identifier l’adresse, l’expansion relative ou participiale, la demande, le but ou le résultat et la conclusion.",
+      "objectives": [
+        "Identifier l’architecture de l’oraison romaine dans plusieurs prières.",
+        "Lire une syntaxe relative, infinitive et subjonctive condensée sans nouveau vocabulaire fondamental.",
+        "Transférer les acquis de l’étape 6 sur l’oraison vers des oraisons inconnues.",
+        "Se préparer à la syntaxe périodique plus longue du Canon."
+      ]
+    }
+  }
 }
