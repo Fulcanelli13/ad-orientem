@@ -246,7 +246,7 @@ export function createGlossaryRuntime(win=globalThis){
     let body;
     if(state.loading)body=top()+'<main class="aoGlossWrap"><div class="aoGlossEmpty">'+esc(L(win,"Loading glossary…","Chargement du glossaire…"))+'</div></main>';
     else if(state.error)body=top()+'<main class="aoGlossWrap"><div class="aoGlossEmpty">'+esc(state.error)+'</div></main>';
-    else body=state.view==="context"?contextView():state.view==="section"?sectionView():state.view==="category"?categoryView():categoriesView();
+    else body=state.view==="context"?contextView():state.view==="lexemeStage"?lexemeStageView():state.view==="lexemes"?lexemeStagesView():state.view==="phrases"?phrasesView():state.view==="section"?sectionView():state.view==="category"?categoryView():categoriesView();
     n.innerHTML="<style>"+css()+"</style>"+body+(state.detailId?detail():"");
     n.hidden=false;n.removeAttribute("aria-hidden");return true;
   }
@@ -262,8 +262,12 @@ export function createGlossaryRuntime(win=globalThis){
     const t=e.target?.closest?.("button");if(!t)return;
     if(t.dataset.glossCategory){state.categoryId=t.dataset.glossCategory;state.view="category";state.query="";render();root(win)?.scrollTo?.(0,0);return}
     if(t.dataset.glossSection){state.sectionId=t.dataset.glossSection;state.view="section";state.query="";render();root(win)?.scrollTo?.(0,0);return}
-    if(t.dataset.glossEntry){state.detailId=t.dataset.glossEntry;render();return}
-    if(t.matches("[data-gloss-close]")){state.detailId=null;render();return}
+    if(t.dataset.glossCollection){state.categoryId="latin_rubrics";state.view=t.dataset.glossCollection;state.query="";state.latinStage=null;render();root(win)?.scrollTo?.(0,0);return}
+    if(t.dataset.glossStage!==undefined){state.view="lexemeStage";state.latinStage=Number(t.dataset.glossStage);state.query="";render();root(win)?.scrollTo?.(0,0);return}
+    if(t.dataset.glossEntry){state.detailType="concept";state.detailId=t.dataset.glossEntry;render();return}
+    if(t.dataset.glossLexeme){state.detailType="lexeme";state.detailId=t.dataset.glossLexeme;render();return}
+    if(t.dataset.glossPhrase){state.detailType="phrase";state.detailId=t.dataset.glossPhrase;render();return}
+    if(t.matches("[data-gloss-close]")){state.detailId=null;state.detailType="concept";render();return}
     if(t.matches("[data-gloss-back]")){back();return}
   }
 
@@ -271,6 +275,8 @@ export function createGlossaryRuntime(win=globalThis){
 
   function back(){
     if(state.view==="context"){close(false);return true}
+    if(state.view==="lexemeStage"){state.view="lexemes";state.latinStage=null;state.query="";render();return true}
+    if(state.view==="lexemes"||state.view==="phrases"){state.view="category";state.categoryId="latin_rubrics";state.query="";render();return true}
     if(state.view==="section"){state.view="category";state.sectionId=null;state.query="";render();return true}
     if(state.view==="category"){state.view="categories";state.categoryId=null;state.query="";render();return true}
     close(state.origin==="learn");return true;
@@ -281,11 +287,15 @@ export function createGlossaryRuntime(win=globalThis){
     ensureRoot();attach();state.loading=!state.loaded;render();
     await load();state.loading=false;
     if(opts.categoryId&&categoryById(state.data,opts.categoryId)){state.categoryId=opts.categoryId;state.view="category"}
-    if(opts.entryId&&state.data?.byId?.has(opts.entryId))state.detailId=opts.entryId;
+    if(opts.entryId&&state.data?.byId?.has(opts.entryId)){state.detailType="concept";state.detailId=opts.entryId}
+    if(opts.lexemeId&&state.data?.lexemeById?.has(opts.lexemeId)){state.detailType="lexeme";state.detailId=opts.lexemeId;state.categoryId="latin_rubrics";state.view="lexemes"}
+    if(opts.phraseId&&state.data?.phraseById?.has(opts.phraseId)){state.detailType="phrase";state.detailId=opts.phraseId;state.categoryId="latin_rubrics";state.view="phrases"}
     render();return true;
   }
 
   async function openEntry(id){return open({entryId:String(id||"")})}
+  async function openLexeme(id){return open({lexemeId:String(id||"")})}
+  async function openPhrase(id){return open({phraseId:String(id||"")})}
   async function openTerms(ids=[],opts={}){
     await open({...opts,origin:"context"});
     const rows=[...new Set(ids.map(String))].map(id=>state.data.byId.get(id)).filter(Boolean);
@@ -296,18 +306,21 @@ export function createGlossaryRuntime(win=globalThis){
 
   function search(q){
     const z=norm(q);if(!state.loaded||!z)return [];
-    return state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la,e.short_definition?.en,e.short_definition?.fr,e.explanation?.en,e.explanation?.fr].join(" ")).includes(z));
+    const concepts=state.data.entries.filter(e=>norm([e.id,e.labels.en,e.labels.fr,e.labels.la,e.short_definition?.en,e.short_definition?.fr,e.explanation?.en,e.explanation?.fr].join(" ")).includes(z));
+    const lexemes=state.data.lexemes.filter(x=>norm([x.id,x.lemma,x.gloss_en,x.gloss_fr,x.part_of_speech].join(" ")).includes(z));
+    const phrases=state.data.phrases.filter(p=>norm([p.id,p.latin,p.translations?.en,p.translations?.fr].join(" ")).includes(z));
+    return [...concepts,...lexemes,...phrases];
   }
 
   function close(returnToLearn=false){
     const n=root(win);try{n?.querySelector?.(":focus")?.blur?.()}catch{}n?.remove?.();
-    state.open=false;state.detailId=null;state.query="";state.contextIds=[];
+    state.open=false;state.detailId=null;state.detailType="concept";state.query="";state.contextIds=[];state.latinStage=null;
     if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     return true;
   }
 
   function status(){return Object.freeze({version:VERSION,installed:true,open:Boolean(state.open&&root(win)),loaded:state.loaded,entries:state.data?.entries?.length||0,lexemes:state.data?.lexemes?.length||0,phrases:state.data?.phrases?.length||0,categories:state.data?.nav?.categories?.length||0,view:state.view,detailId:state.detailId,detailType:state.detailType})}
-  return Object.freeze({version:VERSION,open,openEntry,openTerms,search,close,back,render,status});
+  return Object.freeze({version:VERSION,open,openEntry,openLexeme,openPhrase,openTerms,search,close,back,render,status});
 }
 
 export function ensureGlossaryRegistry(win=globalThis){
