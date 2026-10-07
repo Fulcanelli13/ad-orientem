@@ -3,6 +3,7 @@ import { auditVenue } from "./contracts.js";
 const STATIC_BUNDLES=Object.freeze([
   Object.freeze({id:"static:diocesan",path:"../../data/directory/static/diocesan.v1.json"}),
   Object.freeze({id:"static:provider-research",path:"../../data/directory/static/provider-research.v1.json"}),
+  Object.freeze({id:"static:icksp-confirmed-mass",path:"../../data/directory/static/icksp-confirmed-mass.v1.json"}),
 ]);
 
 function safeArray(value){return Array.isArray(value)?value:[]}
