@@ -6,6 +6,7 @@ export const CATHOLIC_GLOSSARY_ROOT_ID="ao-catholic-glossary-root";
 
 const SALVAGE_URL=new URL("../../data/reference/catholic-glossary-catholic-life-salvage.v1.json",import.meta.url);
 const CAMPION_URL=new URL("../../data/reference/catholic-glossary-campion.v1.json",import.meta.url);
+const SALVAGE_FR_URL=new URL("../../data/reference/catholic-glossary-salvage-fr.v1.json",import.meta.url);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const stateOf=win=>win?.AO_RUNTIME_V8?.store?.getState?.()??{};
 const isFr=win=>stateOf(win)?.language==="fr"||String(win?.document?.documentElement?.lang||"").toLowerCase().startsWith("fr");
@@ -27,12 +28,13 @@ async function readJson(fetchImpl,url,label){
 }
 async function loadData(fetchImpl=globalThis.fetch){
   if(typeof fetchImpl!=="function")throw new TypeError("fetch implementation required");
-  const [salvage,campion]=await Promise.all([
+  const [salvage,campion,salvageFr]=await Promise.all([
     readJson(fetchImpl,SALVAGE_URL,"glossary salvage"),
-    readJson(fetchImpl,CAMPION_URL,"Campion glossary")
+    readJson(fetchImpl,CAMPION_URL,"Campion glossary"),
+    readJson(fetchImpl,SALVAGE_FR_URL,"glossary French parity")
   ]);
-  if(salvage?.status!=="CANONICAL_REFERENCE_ANNEX"||campion?.schema!=="ao-catholic-glossary-campion-v1")throw new Error("Invalid Catholic glossary data");
-  return {salvage,campion};
+  if(salvage?.status!=="CANONICAL_REFERENCE_ANNEX"||campion?.schema!=="ao-catholic-glossary-campion-v1"||salvageFr?.schema!=="ao-catholic-glossary-salvage-fr-v1")throw new Error("Invalid Catholic glossary data");
+  return {salvage,campion,salvageFr};
 }
 function sourceMap(data){
   const all=[...(data?.salvage?.sources??[]),...(data?.campion?.sources??[])];
@@ -48,11 +50,12 @@ function entries(data){
     sourceIds:e.sources??[],
     campionPages:e.campion_pages??[]
   }));
+  const fr=data?.salvageFr?.translations??{};
   const salvage=Object.entries(data?.salvage?.domains??{}).flatMap(([domain,claims])=>(claims??[]).map(claim=>({
     id:"SALVAGE:"+claim.claim_id,
     category:domain.replace("REFERENCE.CATHOLIC_GLOSSARY.","").replaceAll("_"," "),
-    term:{en:claim.stage_title,fr:claim.stage_title},
-    definition:{en:claim.text,fr:claim.text},
+    term:{en:claim.stage_title,fr:fr[claim.claim_id]?.title??claim.stage_title},
+    definition:{en:claim.text,fr:fr[claim.claim_id]?.text??claim.text},
     latin:"",
     sourceIds:claim.source_ids??[],
     campionPages:[]
