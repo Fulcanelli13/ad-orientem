@@ -50,7 +50,7 @@ function source(win,label,url){
   return `<details class="aoLearnTradSource"><summary>${esc(L(win,"Source","Source"))} · ${esc(label)}</summary><p><a href="${esc(url)}" target="_blank" rel="noopener">${esc(L(win,"Open source","Ouvrir la source"))} ↗</a></p></details>`;
 }
 function card(win,title,text,extra=""){
-  return `<article class="aoLearnTradCard"><h3>${esc(title)}</h3><p>${esc(text)}</p>${extra}</article>`;
+  return `<details class="aoLearnTradCard"><summary><span class="aoLearnTradCardTitle">${esc(title)}</span></summary><div class="aoLearnTradCardBody"><p>${esc(text)}</p>${extra}</div></details>`;
 }
 function actions(items){
   return `<div class="aoLearnTradActions">${items.map(item=>`<button type="button" class="${item.primary?"primary":""}" ${item.route?`data-ao-tradlearn-route="${esc(item.route)}"`:""} ${item.prayer?`data-ao-tradlearn-prayer="${esc(item.prayer)}"`:""} ${item.mass?"data-ao-tradlearn-mass":""} ${item.nuptial?"data-ao-tradlearn-nuptial":""}>${esc(item.label)}</button>`).join("")}</div>`;
@@ -59,7 +59,8 @@ function top(win,title){
   return `<style data-ao-traditional-learn-style>${css()}</style><header class="aoLearnTradTop"><button type="button" data-ao-tradlearn-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L(win,"Formation","Formation"))}</small><strong>${esc(title)}</strong></div><button type="button" data-ao-tradlearn-close aria-label="${esc(L(win,"Close","Fermer"))}">${uiIcon("ao-ui-close")}</button></header>`;
 }
 function shell(win,title,intro,status,body){
-  return `${top(win,title)}<main class="aoLearnTradWrap"><p class="aoLearnTradIntro">${esc(intro)}</p><span class="aoLearnTradStatus">${esc(status)}</span>${body}</main>`;
+  const progressive=String(body||"").replace('<details class="aoLearnTradCard">','<details class="aoLearnTradCard" open>');
+  return `${top(win,title)}<main class="aoLearnTradWrap"><p class="aoLearnTradIntro">${esc(intro)}</p><span class="aoLearnTradStatus">${esc(status)}</span><p class="aoLearnTradGuideHint">${esc(L(win,"Start with the open section; expand only what you need next.","Commencez par la section ouverte ; développez seulement ce dont vous avez besoin ensuite."))}</p>${progressive}</main>`;
 }
 function prayerTitle(win,p,id){return isFr(win)?(p?.titleFr||p?.title||id):(p?.title||id)}
 function prayerView(win,id){
