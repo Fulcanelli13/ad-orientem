@@ -114,7 +114,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         routeRow(L("Usual church","Église habituelle"),church,"/settings/local-customs")+
         seg(L("Preparation length","Durée de la préparation"),"mass.preparationDepth",[["quick","Quick","Rapide"],["standard","Standard","Standard"],["full","Full","Complète"]])+
         seg(L("Thanksgiving length","Durée de l’action de grâces"),"mass.thanksgivingDepth",[["quick","Quick","Rapide"],["standard","Standard","Standard"],["full","Full","Complète"]]))+
-      note(`<strong>${esc(L("Future sessions only","Pour les sessions futures seulement"))}</strong><br>${esc(L("These choices are used when you start a new Mass. They do not change a Mass already in progress.","Ces choix sont utilisés lorsque vous commencez une nouvelle Messe. Ils ne modifient pas une Messe déjà en cours."))}`));
+      note(`<strong>${esc(L("Future sessions only","Pour les sessions futures seulement"))}</strong><br>${esc(L("These choices are used when you start a new Mass. They will not change a Mass already in progress.","Ces choix sont utilisés lorsque vous commencez une nouvelle Messe. Ils ne modifient pas une Messe déjà en cours."))}`));
   }
   if(vm.route==="/settings/prayer"){
     return shell(L("Prayer & Devotions","Prière & dévotions"),
@@ -172,6 +172,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         dataRow("Delete saved churches","Supprimer les églises enregistrées","reset-profiles")+
         dataRow("Clear learning progress","Effacer la progression d’apprentissage","clear-progress")+
         dataRow("Clear bookmarks","Effacer les favoris","clear-bookmarks")+
+        dataRow("Clear temporary downloaded files","Effacer les fichiers temporaires téléchargés","clear-cache")+
         dataRow("Reset the whole app","Réinitialiser toute l’application","reset-all",true))+
       note(`<strong>${esc(L("Privacy","Confidentialité"))}</strong><br>${esc(L("Selections made during an examination of conscience are temporary and are not stored as a persistent list of sins.","Les sélections faites pendant un examen de conscience sont temporaires et ne sont pas enregistrées comme liste persistante de péchés."))}`));
   }
@@ -181,7 +182,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         row(L("1962 Roman Mass","Messe romaine de 1962"),L("The 1962 Mass remains distinct from local church practices and private prayers.","La Messe de 1962 reste distincte des usages locaux et des prières privées."),icon("ao-ui-sources"))+
         row(L("Local church practices","Usages de l’église locale"),L("Saved profiles describe what usually happens in a particular place; they do not alter the Mass.","Les profils décrivent ce qui se fait habituellement dans un lieu précis ; ils ne changent pas la Messe."),icon("ao-ui-info"))+
         row(L("Prayer sources","Sources des prières"),L("Prayer texts keep source information where available.","Les textes de prière conservent leur source lorsqu’elle est disponible."),icon("ao-ui-sources"))+
-        row(L("Scripture editions","Éditions de l’Écriture"),L("English uses the Douay-Rheims tradition; French support includes Crampon 1923 where integrated.","L’anglais suit Douay-Rheims ; le français comprend Crampon 1923 là où il est intégré."),icon("ao-ui-sources"))+
+        row(L("Scripture editions","Éditions de l’Écriture"),L("English uses the Douay-Rheims tradition; French support includes Crampon 1923 where integrated; Latin liturgical Scripture follows the app’s source corpus.","L’anglais suit Douay-Rheims ; le français comprend Crampon 1923 là où il est intégré."),icon("ao-ui-sources"))+
         row(L("Artwork sources & rights","Sources & droits des œuvres"),L("Artwork retains provenance and rights information.","Les œuvres conservent leur provenance et leurs droits."),icon("ao-ui-info"))+
         row(L("Acknowledgements & licences","Remerciements & licences"),L("Third-party texts and artworks retain their individual notices.","Les textes et œuvres tiers conservent leurs notices propres."),icon("ao-ui-info"))+
         row(L("Version","Version"),"",`<span class="aoSetBadge">${esc(vm.version)}</span>`)+
