@@ -578,6 +578,8 @@ try{
   await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Benediction blessing retained an unrelated left cue");
+  // Measure the stable rail geometry after the transient cue-enter scale animation.
+  await page.waitForTimeout(500);
   const benBlessing=await page.evaluate(async()=>{
     const icon=document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-live-blessing'] .aoP435930SemanticRailIcon");
     const cs=icon?getComputedStyle(icon):null;
