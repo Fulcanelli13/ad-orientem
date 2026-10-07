@@ -7,7 +7,8 @@ import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { chromium } from "@playwright/test";
 
-const DONOR_COMMIT="d0d05c5f21527308299a1408dc215e28c676703d";
+const DONOR_COMMIT="7a613721d5caee0500588c759c90864e4041e7a2";
+const DONOR_LABEL="v43.59.30 verbatim extraction snapshot";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/visual-acceptance/donor-current-v435930");
 await mkdir(out,{recursive:true});
@@ -76,7 +77,7 @@ try{
   ]);
   await current.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner===true,null,{timeout:30000});
   await current.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
-  await donor.waitForFunction(()=>typeof globalThis.AO_V37_SHELL?.openDomain==="function",null,{timeout:30000});
+  await donor.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
   await donor.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
   await Promise.all([
     donor.waitForTimeout(1600),
@@ -87,6 +88,7 @@ try{
   const manifest={
     schema:"ao-direct-donor-current-capture-v1",
     donorCommit:DONOR_COMMIT,
+    donorLabel:DONOR_LABEL,
     currentCommit:currentHead,
     viewport:{width:390,height:844,deviceScaleFactor:2,isMobile:true,hasTouch:true},
     pairs:[],
@@ -132,11 +134,7 @@ try{
 
   await capturePair("01-home","home");
 
-  await donor.evaluate(async()=>{
-    await globalThis.AO_V37_SHELL.openDomain("pray");
-    await globalThis.AO_V37_SHELL.openModule("pray.hub",{});
-  });
-  await donor.waitForFunction(()=>document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:15000});
+  await donor.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
   await current.locator("[data-ao-app-surface='pray']").click();
   await Promise.all([
     donor.waitForSelector("#aoPray435930.open .aoP435930Home",{timeout:10000}),
@@ -175,8 +173,8 @@ try{
   assert.equal(currentErrors.length,0,"Current app threw errors during donor/current capture: "+currentErrors.join(" | "));
 
   await writeFile(resolve(out,"comparison-manifest.json"),JSON.stringify(manifest,null,2)+"\n");
-  const cards=manifest.pairs.map(p=>`<section><h2>${p.id}</h2><div class="pair"><figure><figcaption>Frozen donor · ${DONOR_COMMIT.slice(0,8)}</figcaption><img src="${p.donor}"></figure><figure><figcaption>Current · ${currentHead.slice(0,8)}</figcaption><img src="${p.current}"></figure></div><details><summary>Measured geometry</summary><pre>${JSON.stringify({donor:p.donorGeometry,current:p.currentGeometry},null,2).replace(/&/g,"&amp;").replace(/</g,"&lt;")}</pre></details></section>`).join("");
-  await writeFile(resolve(out,"comparison.html"),`<!doctype html><meta charset="utf-8"><title>Ad Orientem donor/current visual comparison</title><style>body{margin:0;background:#0a0d12;color:#eee;font:14px system-ui;padding:24px}section{max-width:900px;margin:0 auto 40px;padding-bottom:28px;border-bottom:1px solid #333}h1,h2{font-family:Georgia,serif}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0}figcaption{margin:0 0 8px;color:#c9b47d}img{display:block;width:100%;max-width:390px;border:1px solid #333;background:#000}pre{white-space:pre-wrap;color:#bbb}@media(max-width:700px){.pair{grid-template-columns:1fr}}</style><h1>Frozen donor vs current · 390×844</h1><p>Donor authority: historical v43.59.30 production tree at <code>${DONOR_COMMIT}</code>. Current: <code>${currentHead}</code>.</p>${cards}`);
+  const cards=manifest.pairs.map(p=>`<section><h2>${p.id}</h2><div class="pair"><figure><figcaption>${DONOR_LABEL} · ${DONOR_COMMIT.slice(0,8)}</figcaption><img src="${p.donor}"></figure><figure><figcaption>Current · ${currentHead.slice(0,8)}</figcaption><img src="${p.current}"></figure></div><details><summary>Measured geometry</summary><pre>${JSON.stringify({donor:p.donorGeometry,current:p.currentGeometry},null,2).replace(/&/g,"&amp;").replace(/</g,"&lt;")}</pre></details></section>`).join("");
+  await writeFile(resolve(out,"comparison.html"),`<!doctype html><meta charset="utf-8"><title>Ad Orientem donor/current visual comparison</title><style>body{margin:0;background:#0a0d12;color:#eee;font:14px system-ui;padding:24px}section{max-width:900px;margin:0 auto 40px;padding-bottom:28px;border-bottom:1px solid #333}h1,h2{font-family:Georgia,serif}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0}figcaption{margin:0 0 8px;color:#c9b47d}img{display:block;width:100%;max-width:390px;border:1px solid #333;background:#000}pre{white-space:pre-wrap;color:#bbb}@media(max-width:700px){.pair{grid-template-columns:1fr}}</style><h1>Frozen donor vs current · 390×844</h1><p>Donor authority: ${DONOR_LABEL} at <code>${DONOR_COMMIT}</code>. Current: <code>${currentHead}</code>.</p>${cards}`);
   console.log("PASS direct frozen-donor/current capture generated at",out);
 } finally {
   await browser?.close().catch(()=>{});
