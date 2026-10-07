@@ -30,6 +30,14 @@ const fsspDataset=buildFsspDataset([{...fssp[0],emails:["office@example.org"],ph
 assert.equal(fsspDataset.venues[0].address.country_code,"AU");
 assert.equal(fsspDataset.ministries[0].community_id,"FSSP");
 assert.equal(fsspDataset.ministries[0].liturgical_usage.books,"1962");
+const duplicateFsspDataset=buildFsspDataset([
+  {...fssp[0],index:10,emails:[],phones:[],externalLinks:[]},
+  {...fssp[0],index:11,emails:[],phones:[],externalLinks:[]},
+],{retrievedAt:"2026-10-07T09:00:00Z"});
+assert.equal(duplicateFsspDataset.venues.length,1,"exact repeated FSSP rows created duplicate canonical venues");
+assert.equal(duplicateFsspDataset.exactDuplicateRows.length,1);
+assert.equal(duplicateFsspDataset.exactDuplicateRows[0].first_row_index,10);
+assert.equal(duplicateFsspDataset.exactDuplicateRows[0].duplicate_row_index,11);
 const fsspControlHtml=`
 <table><tr><td>←</td><td>Move left</td><td></td></tr>
 <tr><td>Home</td><td>Jump left by 75%</td><td></td></tr></table>`;
