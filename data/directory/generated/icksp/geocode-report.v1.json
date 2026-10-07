@@ -1,17 +1,17 @@
 {
   "schema": "AO_DIRECTORY_PROVIDER_GEOCODE_REPORT_V1",
   "provider": "ICKSP",
-  "generated_at": "2026-10-07T12:47:35.021Z",
+  "generated_at": "2026-10-07T12:52:28.551Z",
   "total": 27,
-  "existing_valid": 0,
-  "accepted": 22,
-  "primary_accepted": 3,
-  "fallback_accepted": 19,
-  "structured_accepted": 0,
-  "unresolved": 5,
+  "existing_valid": 22,
+  "accepted": 1,
+  "primary_accepted": 0,
+  "fallback_accepted": 0,
+  "structured_accepted": 1,
+  "unresolved": 4,
   "existing_invalid": 0,
   "by_precision": {
-    "building": 13,
+    "building": 14,
     "address": 6,
     "street": 3,
     "locality": 0,
@@ -91,50 +91,6 @@
             "postalcode": null
           },
           "key": "770cbc7325805beb3532b960cd3b923710a8a3eee23770035125c747f0ea13af",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-icksp-shrine-of-christ-the-king-sovereign-priest-institute-of-christ-the-king-6415-south-woodlawn-avenue-chicago-illinois-60637-3817-5",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Shrine of Christ the King Sovereign Priest, Institute of Christ the King, 6415 South Woodlawn Avenue, Chicago, Illinois 60637-3817",
-          "params": null,
-          "key": "6d1e11cc9de24282d5908f84d54f57f0d3c78092417d9d031e2428b21f208376",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Institute of Christ the King, 6415 South Woodlawn Avenue, Chicago, Illinois 60637-3817",
-          "params": null,
-          "key": "8ae08bc8ae2c70db82d7f2454308330df7af3ce91ce0c9512303518962e13d63",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_STREET",
-          "query": "structured:city=Illinois&postalcode=60637-3817&street=Institute of Christ the King",
-          "params": {
-            "street": "Institute of Christ the King",
-            "city": "Illinois",
-            "state": null,
-            "postalcode": "60637-3817"
-          },
-          "key": "a006cec23efae6cdc19676f6e21d75020dd02a55f312a2a81b3aaf0f92f94b99",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_AMENITY",
-          "query": "structured:amenity=Shrine of Christ the King Sovereign Priest&city=Illinois&postalcode=60637-3817",
-          "params": {
-            "amenity": "Shrine of Christ the King Sovereign Priest",
-            "city": "Illinois",
-            "state": null,
-            "postalcode": "60637-3817"
-          },
-          "key": "8549aed86630ff7683d257955f53073bdad910634760dfde14985223e0535fd0",
           "candidates": []
         }
       ]

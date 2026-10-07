@@ -1,19 +1,19 @@
 {
   "schema": "AO_DIRECTORY_PROVIDER_GEOCODE_REPORT_V1",
   "provider": "IBP",
-  "generated_at": "2026-10-07T12:47:35.032Z",
+  "generated_at": "2026-10-07T12:52:37.343Z",
   "total": 34,
-  "existing_valid": 0,
-  "accepted": 25,
-  "primary_accepted": 15,
-  "fallback_accepted": 10,
-  "structured_accepted": 0,
-  "unresolved": 9,
+  "existing_valid": 25,
+  "accepted": 5,
+  "primary_accepted": 0,
+  "fallback_accepted": 0,
+  "structured_accepted": 5,
+  "unresolved": 4,
   "existing_invalid": 0,
   "by_precision": {
-    "building": 2,
-    "address": 3,
-    "street": 7,
+    "building": 5,
+    "address": 4,
+    "street": 8,
     "locality": 13,
     "region": 0,
     "unknown": 0
@@ -64,50 +64,6 @@
       ]
     },
     {
-      "venue_id": "ao-ibp-courtalain-20-place-alexandre-rillie-28290-courtalain-pretres-recteur-abbe-gian-strapazzon-econome-abbe-maximilian-eynaud-pretres-abbe-philippe-laguerie-abbe-dominique-pillet-abbe-serge-christian-vallet-abbe-eryc-dos-santos-abbe-sebastian-crawford-abbe-jan-andrzejewski-abbe-jean-cuchet-3",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Courtalain, 20, Place Alexandre Rillié, 28290 Courtalain",
-          "params": null,
-          "key": "f390d0bfcdbedf9528e35210c7ab2d8a476b7615b497c36880dd3154fa7c5888",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "20, Place Alexandre Rillié, 28290 Courtalain",
-          "params": null,
-          "key": "9f5a13753721d872e4368c2e52dfe1fcde233be5c4febb71f5c76c3a0a6b1c69",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_STREET",
-          "query": "structured:city=Courtalain&postalcode=28290&street=20",
-          "params": {
-            "street": "20",
-            "city": "Courtalain",
-            "state": null,
-            "postalcode": "28290"
-          },
-          "key": "65041fe1246c102b8fea4e84fdead056a84793adba076f537211b2c112f9d086",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_AMENITY",
-          "query": "structured:amenity=Courtalain&city=Courtalain&postalcode=28290",
-          "params": {
-            "amenity": "Courtalain",
-            "city": "Courtalain",
-            "state": null,
-            "postalcode": "28290"
-          },
-          "key": "d50ca8af8bff543ad7af10426f1baf16a6c3f2582f4565f0d51b109b4a78f30c",
-          "candidates": []
-        }
-      ]
-    },
-    {
       "venue_id": "ao-ibp-ascoli-piceno-iglesia-di-santo-christoforo-ascoli-piceno-10",
       "reason": "NO_TRUSTWORTHY_MATCH",
       "attempts": [
@@ -147,150 +103,13 @@
             "postalcode": null
           },
           "key": "61a8e1cf5f03d6319550ea428940eaa8c85d4e1a19bf536f359022a74ce2dc5b",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-tolentino-iglesia-di-sacro-cuore-dei-sacconi-tolentino-11",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Tolentino, Iglesia di Sacro Cuore dei Sacconi, Tolentino",
-          "params": null,
-          "key": "52b009f2c6f309006e6226a130a6e0782601546bb9fc421cfbba579189442e23",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Iglesia di Sacro Cuore dei Sacconi, Tolentino",
-          "params": null,
-          "key": "a80d9bd620895bdde1812a930d5e6b9cd8d5d5189e3a7bf5c9749aabcd788b36",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_STREET",
-          "query": "structured:city=Tolentino&street=Iglesia di Sacro Cuore dei Sacconi",
-          "params": {
-            "street": "Iglesia di Sacro Cuore dei Sacconi",
-            "city": "Tolentino",
-            "state": null,
-            "postalcode": null
-          },
-          "key": "4d45ded9917c0a45e7e99572fb5740bd72a76ffd13315b28eaeb52fb663934aa",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_AMENITY",
-          "query": "structured:amenity=Tolentino&city=Tolentino",
-          "params": {
-            "amenity": "Tolentino",
-            "city": "Tolentino",
-            "state": null,
-            "postalcode": null
-          },
-          "key": "4f84016a00b5e97654ea037559d41202d3dbb1e629f6f636975295224c344aea",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-bia-ystok-ul-szkolna-2a-15-640-bia-ystok-polska-12",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Białystok, ul. Szkolna 2a, 15-640 Białystok, Polska",
-          "params": null,
-          "key": "82f83501975d675cbf5333ae87b0ec99771882cb8d471fb8030be11d53f9b5c7",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "ul. Szkolna 2a, 15-640 Białystok, Polska",
-          "params": null,
-          "key": "ecadd4d6f85177efcee9d4845674d31eb4395e8df7e6eec082dece240f88ba0b",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_STREET",
-          "query": "structured:city=Białystok&postalcode=15-640&street=ul. Szkolna 2a",
-          "params": {
-            "street": "ul. Szkolna 2a",
-            "city": "Białystok",
-            "state": null,
-            "postalcode": "15-640"
-          },
-          "key": "f05afc5859046fbc6914914208f150e6519a8142b90ba8e5158295a571b03ebc",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_AMENITY",
-          "query": "structured:amenity=Białystok&city=Białystok&postalcode=15-640",
-          "params": {
-            "amenity": "Białystok",
-            "city": "Białystok",
-            "state": null,
-            "postalcode": "15-640"
-          },
-          "key": "c0d0f1992f5cc95ce4de4f61f87e223719334783739218b4471a64b3f03c42c7",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-warszawa-pl-teatralny-18-00-077-warszawa-polska-14",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Warszawa, pl. Teatralny 18, 00-077 Warszawa, Polska",
-          "params": null,
-          "key": "e278b9ac3371c0b7c7703dc2402ebce5bbeda3a4e694e8aede14a41d3904020b",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "pl. Teatralny 18, 00-077 Warszawa, Polska",
-          "params": null,
-          "key": "f59b83c8e18e8e293f809cf141bf97055dae000da3d302bd498cd9568f1666f2",
           "candidates": [
             {
-              "display_name": "Plac Teatralny, Staromiejskie, Śródmieście Północne, Midtown, Warsaw, Masovian Voivodeship, 00-923, Poland",
-              "type": "road",
-              "country_code": "pl"
-            },
-            {
-              "display_name": "Plac Teatralny, Staromiejskie, Śródmieście Północne, Midtown, Warsaw, Masovian Voivodeship, Poland",
-              "type": "square",
-              "country_code": "pl"
+              "display_name": "Ascoli Piceno, Piazzale della Stazione, Porta Maggiore, Ascoli Piceno, Marche, 63100, Italy",
+              "type": "railway",
+              "country_code": "it"
             }
           ]
-        },
-        {
-          "kind": "STRUCTURED_STREET",
-          "query": "structured:city=Warszawa&postalcode=00-077&street=pl. Teatralny 18",
-          "params": {
-            "street": "pl. Teatralny 18",
-            "city": "Warszawa",
-            "state": null,
-            "postalcode": "00-077"
-          },
-          "key": "3dc3c89493bcbfd167145eb7d0d806b92ed7d0195fdbc398c8091208cbeacd74",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_AMENITY",
-          "query": "structured:amenity=Warszawa&city=Warszawa&postalcode=00-077",
-          "params": {
-            "amenity": "Warszawa",
-            "city": "Warszawa",
-            "state": null,
-            "postalcode": "00-077"
-          },
-          "key": "a9bc38bbd2cd2c15892d21a2881ee85465a635ebd9a7541b224bc2fdcf8d20d3",
-          "candidates": []
         }
       ]
     },
@@ -378,50 +197,6 @@
             "postalcode": null
           },
           "key": "648bdd1ffccc4c2b4cca8a43bdf88974d614b8334b308cc5a71e85e97c36acf8",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-bogota-capilla-nuestra-senora-del-perpetuo-socorro-transversal-28a-n-36-47-barrio-la-soledad-bogota-dc-maison-canonique-transversal-28a-n-36-47-barrio-la-soledad-bogota-dc-27",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Bogotá, Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC., Maison canonique : TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC",
-          "params": null,
-          "key": "0e95d40f2ce34301724b60c29d28049b985b62d70fe0cea25ca59eff9a248408",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC.",
-          "params": null,
-          "key": "09e0a17cdc136d282ad74ac2ccb2154e57e74f0530f4cb118e6cfb84e4f048f8",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_STREET",
-          "query": "structured:city=BOGOTA/DC.&street=Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A",
-          "params": {
-            "street": "Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A",
-            "city": "BOGOTA/DC.",
-            "state": null,
-            "postalcode": null
-          },
-          "key": "d9d24419f6476e97693577388d64675365f111c792ffa19b18649290ab12f74f",
-          "candidates": []
-        },
-        {
-          "kind": "STRUCTURED_AMENITY",
-          "query": "structured:amenity=Bogotá&city=BOGOTA/DC.",
-          "params": {
-            "amenity": "Bogotá",
-            "city": "BOGOTA/DC.",
-            "state": null,
-            "postalcode": null
-          },
-          "key": "4a59a667b2e5efe696bb22878309fa8b59767995986e22f3c4964af0a482da33",
           "candidates": []
         }
       ]

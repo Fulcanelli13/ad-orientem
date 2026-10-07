@@ -321,10 +321,17 @@
         "formatted": "Institute of Christ the King, 6415 South Woodlawn Avenue, Chicago, Illinois 60637-3817"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 41.7781622,
+        "lng": -87.5958579,
+        "precision": "building",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:way:211213098",
+        "matched_country_code": "US",
+        "geocoded_at": "2026-10-07T12:52:33.211Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 1,
+        "query_fingerprint": "a006cec23efae6cdc19676f6e21d75020dd02a55f312a2a81b3aaf0f92f94b99"
       },
       "diocese": {
         "diocese_id": null,
@@ -1627,5 +1634,5 @@
       "upstream_updated_at": null
     }
   ],
-  "geocoded_at": "2026-10-07T12:47:35.028Z"
+  "geocoded_at": "2026-10-07T12:52:37.337Z"
 }

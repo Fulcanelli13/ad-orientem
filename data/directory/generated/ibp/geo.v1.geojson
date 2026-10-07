@@ -48,6 +48,27 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          1.3240331,
+          48.0666874
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-courtalain-20-place-alexandre-rillie-28290-courtalain-pretres-recteur-abbe-gian-strapazzon-econome-abbe-maximilian-eynaud-pretres-abbe-philippe-laguerie-abbe-dominique-pillet-abbe-serge-christian-vallet-abbe-eryc-dos-santos-abbe-sebastian-crawford-abbe-jan-andrzejewski-abbe-jean-cuchet-3",
+        "name": "Courtalain",
+        "venue_type": "other",
+        "country_code": "FR",
+        "city": "Courtalain",
+        "community_id": "IBP",
+        "precision": "address",
+        "approximate": false,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.9809819,
           48.5213524
         ]
@@ -174,6 +195,48 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          13.2906008,
+          43.2144888
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-tolentino-iglesia-di-sacro-cuore-dei-sacconi-tolentino-11",
+        "name": "Tolentino",
+        "venue_type": "other",
+        "country_code": "IT",
+        "city": "Tolentino",
+        "community_id": "IBP",
+        "precision": "building",
+        "approximate": false,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.1354375,
+          53.1336211
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-bia-ystok-ul-szkolna-2a-15-640-bia-ystok-polska-12",
+        "name": "Białystok",
+        "venue_type": "other",
+        "country_code": "PL",
+        "city": "Białystok",
+        "community_id": "IBP",
+        "precision": "street",
+        "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           19.109134,
           50.8127402
         ]
@@ -184,6 +247,27 @@
         "venue_type": "other",
         "country_code": "PL",
         "city": "Częstochowa",
+        "community_id": "IBP",
+        "precision": "building",
+        "approximate": false,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.0210451,
+          52.2150311
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-warszawa-pl-teatralny-18-00-077-warszawa-polska-14",
+        "name": "Warszawa",
+        "venue_type": "other",
+        "country_code": "PL",
+        "city": "Warszawa",
         "community_id": "IBP",
         "precision": "building",
         "approximate": false,
@@ -397,6 +481,27 @@
         "community_id": "IBP",
         "precision": "locality",
         "approximate": true,
+        "geocoding_source": "OSM_NOMINATIM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0673108,
+          4.607911
+        ]
+      },
+      "properties": {
+        "venue_id": "ao-ibp-bogota-capilla-nuestra-senora-del-perpetuo-socorro-transversal-28a-n-36-47-barrio-la-soledad-bogota-dc-maison-canonique-transversal-28a-n-36-47-barrio-la-soledad-bogota-dc-27",
+        "name": "Bogotá",
+        "venue_type": "other",
+        "country_code": "CO",
+        "city": "Bogotá",
+        "community_id": "IBP",
+        "precision": "building",
+        "approximate": false,
         "geocoding_source": "OSM_NOMINATIM"
       }
     },

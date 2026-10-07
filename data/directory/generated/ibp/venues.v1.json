@@ -199,10 +199,17 @@
         "formatted": "20 , Place Alexandre Rillié, 28290 Courtalain, Prêtres :, Recteur : abbé Gian Strapazzon, Econome : abbé Maximilian Eynaud, Prêtres :, Abbé Philippe Laguérie, Abbé Dominique Pillet, Abbé Serge-Christian Vallet, Abbé Eryc dos Santos, Abbé Sebastian Crawford, Abbé Jan Andrzejewski, Abbé Jean Cuchet"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 48.0666874,
+        "lng": 1.3240331,
+        "precision": "address",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:node:8503425501",
+        "matched_country_code": "FR",
+        "geocoded_at": "2026-10-07T12:52:40.625Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 0.5467,
+        "query_fingerprint": "65041fe1246c102b8fea4e84fdead056a84793adba076f537211b2c112f9d086"
       },
       "diocese": {
         "diocese_id": null,
@@ -669,10 +676,17 @@
         "formatted": "Iglesia di Sacro Cuore dei Sacconi, Tolentino"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 43.2144888,
+        "lng": 13.2906008,
+        "precision": "building",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:way:304164809",
+        "matched_country_code": "IT",
+        "geocoded_at": "2026-10-07T12:52:44.932Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 0.5083,
+        "query_fingerprint": "4f84016a00b5e97654ea037559d41202d3dbb1e629f6f636975295224c344aea"
       },
       "diocese": {
         "diocese_id": null,
@@ -724,10 +738,17 @@
         "formatted": "ul. Szkolna 2a, 15-640 Białystok, Polska"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 53.1336211,
+        "lng": 23.1354375,
+        "precision": "street",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:node:3298971170",
+        "matched_country_code": "PL",
+        "geocoded_at": "2026-10-07T12:52:47.271Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 0.565,
+        "query_fingerprint": "c0d0f1992f5cc95ce4de4f61f87e223719334783739218b4471a64b3f03c42c7"
       },
       "diocese": {
         "diocese_id": null,
@@ -837,10 +858,17 @@
         "formatted": "pl. Teatralny 18, 00-077 Warszawa, Polska"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 52.2150311,
+        "lng": 21.0210451,
+        "precision": "building",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:node:316120170",
+        "matched_country_code": "PL",
+        "geocoded_at": "2026-10-07T12:52:49.357Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 0.5967,
+        "query_fingerprint": "a9bc38bbd2cd2c15892d21a2881ee85465a635ebd9a7541b224bc2fdcf8d20d3"
       },
       "diocese": {
         "diocese_id": null,
@@ -1599,10 +1627,17 @@
         "formatted": "Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC., Maison canonique : TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC"
       },
       "geo": {
-        "lat": null,
-        "lng": null,
-        "precision": "unknown",
-        "geocoding_source": null
+        "lat": 4.607911,
+        "lng": -74.0673108,
+        "precision": "building",
+        "geocoding_source": "OSM_NOMINATIM",
+        "source_url": "https://nominatim.openstreetmap.org/",
+        "source_ref": "osm:way:1312343755",
+        "matched_country_code": "CO",
+        "geocoded_at": "2026-10-07T12:52:56.413Z",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "match_score": 0.4608,
+        "query_fingerprint": "4a59a667b2e5efe696bb22878309fa8b59767995986e22f3c4964af0a482da33"
       },
       "diocese": {
         "diocese_id": null,
@@ -1987,5 +2022,5 @@
       "upstream_updated_at": null
     }
   ],
-  "geocoded_at": "2026-10-07T12:47:35.042Z"
+  "geocoded_at": "2026-10-07T12:52:56.413Z"
 }

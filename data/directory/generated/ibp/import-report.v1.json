@@ -6,7 +6,7 @@
   "ministry_count": 34,
   "schedule_assertion_count": 22,
   "source_count": 34,
-  "geo_feature_count": 25,
+  "geo_feature_count": 30,
   "validation_issue_count": 0,
   "duplicate_candidate_count": 0,
   "auto_merge_safe_count": 0,
@@ -25,15 +25,15 @@
     "official_geo_rejected_conflict": 0,
     "source_count_discrepancy": "The official page states 33 apostolate locations while its visible country/diocese enumeration contains 34 named entries. Preserve all enumerated entries pending upstream clarification."
   },
-  "geocoded_at": "2026-10-07T12:47:35.042Z",
+  "geocoded_at": "2026-10-07T12:52:56.413Z",
   "geocoding": {
     "provider": "OSM_NOMINATIM",
-    "accepted": 25,
-    "primary_accepted": 15,
-    "fallback_accepted": 10,
-    "structured_accepted": 0,
-    "existing_valid": 0,
-    "unresolved": 9,
+    "accepted": 5,
+    "primary_accepted": 0,
+    "fallback_accepted": 0,
+    "structured_accepted": 5,
+    "existing_valid": 25,
+    "unresolved": 4,
     "existing_invalid": 0
   }
 }
