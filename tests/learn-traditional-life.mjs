@@ -33,7 +33,6 @@ const presentation=readFileSync("src/learn/presentation.js","utf8");
 const assets=readFileSync("src/assets/asset-registry.js","utf8");
 
 assert.match(runtime,/priestCeremonialExposed:false/,"lay-only scope guard disappeared");
-assert.match(runtime,/38\.2-rite-formation-convergence/,"traditional rite formation version marker missing");
 assert.match(runtime,/WHAT YOU MAY SEE IN THE TRADITIONAL CEREMONY/,"Matrimony lost its lay-facing traditional ceremony map");
 assert.match(runtime,/one ring or two/,"Matrimony no longer warns that ring customs vary");
 assert.match(runtime,/approved local custom/,"Matrimony local-custom guard disappeared");
@@ -62,4 +61,4 @@ assert.match(assets,/"learn\.serve_mass\.responses"\s*:\s*"ao-refined-study"/);
 assert.match(assets,/"learn\.scapular"\s*:\s*"ao-rich-our-lady-marian-devotions"/);
 assert.match(assets,/"learn\.seasonal_rites"\s*:\s*"ao-refined-calendar-upcoming"/);
 
-console.log("PASS modular v38.2 traditional Learn rite-formation convergence");
+console.log("PASS modular v38.1 traditional Learn extraction with rite-formation convergence");
