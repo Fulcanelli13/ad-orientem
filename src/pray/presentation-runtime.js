@@ -662,7 +662,22 @@ function decorateRosaryExact(r){
  lastRosaryRitualKey=st.key;
  return true;
 }
+function rosarySetHeading(set){
+ const labels={
+  joyful:L('Joyful Mysteries','Mystères joyeux'),
+  sorrowful:L('Sorrowful Mysteries','Mystères douloureux'),
+  glorious:L('Glorious Mysteries','Mystères glorieux'),
+  luminous:L('Luminous Mysteries','Mystères lumineux')
+ };
+ return labels[String(set||'')]||'';
+}
 function declutterRosaryDonor(r){
+ const info=rosaryLiveInfo(),setHeading=rosarySetHeading(info?.set);
+ const headerTitle=r.querySelector('.lab-view-head h1');
+ if(headerTitle&&setHeading)headerTitle.textContent=setHeading;
+ r.querySelectorAll('.lab-option-bar .lab-step-count').forEach(node=>{
+   node.hidden=true;node.setAttribute('aria-hidden','true');node.dataset.aoRosaryRedundant='true';
+ });
  r.querySelectorAll('button').forEach(button=>{
    const label=String(button.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
    if(['guide','preferences','préférences'].includes(label)){
