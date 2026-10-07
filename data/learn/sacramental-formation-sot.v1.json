@@ -1,0 +1,431 @@
+{
+  "version": "SACRAMENTAL_FORMATION_SOT_V1",
+  "status": "FROZEN",
+  "frozen_at": "2026-10-07",
+  "source_commit": "4f31b6907b4eefdcb3d9b3976bfb4d8f5ee0eadc",
+  "scope": "Lay-facing sacramental formation, preparation, handoffs and source ownership for the seven sacraments in Ad Orientem.",
+  "global_rules": [
+    "One concern has one canonical owner. Supporting modules hand off rather than copy the owner's workflow.",
+    "Lay formation may explain what the faithful see and do; priest-only, episcopal and ministerial ceremonial is not reproduced.",
+    "Where traditional and current discipline differ, the distinction is explicit and older rubrics are not silently promoted to current universal law.",
+    "The live Mass reader owns sacramental moments that occur inside Mass; Learn does not create a second Mass sequence.",
+    "PRAY owns mature guided prayer and sacramental-preparation workflows such as Confession; Learn does not duplicate them merely to make every sacrament look structurally identical.",
+    "French-world traditional witnesses are preferred for historical custom and pastoral framing when available.",
+    "This registry is the freeze boundary. New routes or duplicate owners require an explicit SOT version change."
+  ],
+  "normalized_lifecycle_dimensions": [
+    "doctrine_and_meaning",
+    "preparation",
+    "lay_participation_or_what_you_may_see",
+    "traditional_current_boundary",
+    "prayer_handoff",
+    "live_ritual_owner",
+    "aftercare_or_continuing_life",
+    "source_authority"
+  ],
+  "audit_summary": {
+    "sacramental_families": 7,
+    "formation_coverage_complete": true,
+    "missing_primary_owners": 0,
+    "duplicate_primary_owners": 0,
+    "intentional_cross_surface_exception": "Penance is canonically owned by PRAY (pray.confession), not duplicated as a Learn route.",
+    "intentional_multi_owner_lifecycle": "Holy Eucharist / First Communion spans Learn formation, Confession, Before Mass, the Mass reader, Communion treasury and After Mass; each concern retains one owner.",
+    "runtime_rewrite_required": false,
+    "content_rewrite_required": false
+  },
+  "sacraments": [
+    {
+      "number": 1,
+      "sacrament": "Baptism",
+      "family_key": "baptism",
+      "primary_formation_owner": "learn.rites.baptism",
+      "primary_surface": "LEARN",
+      "supporting_owners": [
+        "foundations_apostles_creed",
+        "foundations_our_father"
+      ],
+      "live_ritual_owner": "Actual parish/minister; Ad Orientem provides formation only.",
+      "aftercare_owner": "learn.rites.baptism · GODPARENTS AFTER THE CEREMONY",
+      "handoffs": [],
+      "coverage": {
+        "doctrine_and_meaning": "covered",
+        "preparation": "covered",
+        "lay_participation_or_what_you_may_see": "covered",
+        "traditional_current_boundary": "covered",
+        "prayer_handoff": "covered",
+        "live_ritual_owner": "external-by-design",
+        "aftercare_or_continuing_life": "covered",
+        "source_authority": "covered"
+      },
+      "traditional_sources": [
+        {
+          "label": "Rituale Romanum · 1952",
+          "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910"
+        }
+      ],
+      "current_sources": [
+        {
+          "label": "Catechism of the Catholic Church · Baptism",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/iii_how_is_the_sacrament_of_baptism_celebrated.html"
+        },
+        {
+          "label": "Compendium · minister in necessity",
+          "url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
+        },
+        {
+          "label": "Code of Canon Law · Baptism / sponsors",
+          "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann849-878_en.html"
+        }
+      ],
+      "french_world_sources": [],
+      "freeze_rules": [
+        "Do not create a second baptism ritual player.",
+        "Do not expose minister-only ritual directions.",
+        "Emergency Baptism remains a necessity-only exception, not the default formation path."
+      ]
+    },
+    {
+      "number": 2,
+      "sacrament": "Confirmation",
+      "family_key": "confirmation",
+      "primary_formation_owner": "learn.rites.confirmation",
+      "primary_surface": "LEARN",
+      "supporting_owners": [
+        "pray.confession",
+        "sacrament_come_holy_spirit"
+      ],
+      "live_ritual_owner": "Actual authorized Confirmation rite; no app ceremonial engine.",
+      "aftercare_owner": "learn.rites.confirmation · witness/Christian-life formation",
+      "handoffs": [
+        "pray.confession",
+        "sacrament_come_holy_spirit"
+      ],
+      "coverage": {
+        "doctrine_and_meaning": "covered",
+        "preparation": "covered",
+        "lay_participation_or_what_you_may_see": "covered",
+        "traditional_current_boundary": "covered",
+        "prayer_handoff": "covered",
+        "live_ritual_owner": "external-by-design",
+        "aftercare_or_continuing_life": "covered",
+        "source_authority": "covered"
+      },
+      "traditional_sources": [
+        {
+          "label": "Pontificale Romanum · 1962 · De Confirmandis",
+          "url": "https://books.google.com/books/about/Pontificale_Romanum.html?id=l2PZAAAAMAAJ"
+        },
+        {
+          "label": "French traditional catechetical witness · St Pius X",
+          "url": "https://www.amicidilazzaro.it/fr/foi-et-spiritualite/petit-catechisme-de-saint-pie-x/"
+        }
+      ],
+      "current_sources": [
+        {
+          "label": "Catechism of the Catholic Church · Confirmation",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_2/ii_the_signs_and_the_rite_of_confirmation.html"
+        },
+        {
+          "label": "Code of Canon Law · Confirmation / sponsor",
+          "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html"
+        }
+      ],
+      "french_world_sources": [
+        {
+          "label": "St Pius X catechetical witness in French",
+          "url": "https://www.amicidilazzaro.it/fr/foi-et-spiritualite/petit-catechisme-de-saint-pie-x/"
+        }
+      ],
+      "freeze_rules": [
+        "Do not reproduce the bishop's sacramental formula as a lay script.",
+        "Historical fasting, forehead bands and older sponsor rubrics remain historical unless current authority says otherwise."
+      ]
+    },
+    {
+      "number": 3,
+      "sacrament": "Holy Eucharist / First Holy Communion",
+      "family_key": "eucharist_first_communion",
+      "primary_formation_owner": "learn.rites.first_communion",
+      "primary_surface": "LEARN",
+      "supporting_owners": [
+        "pray.confession",
+        "mass.prepare",
+        "Mass reader",
+        "pray.communion_treasury",
+        "mass.thanksgiving",
+        "learn.catechism",
+        "learn.mass"
+      ],
+      "live_ritual_owner": "Mass reader",
+      "aftercare_owner": "mass.thanksgiving + pray.communion_treasury + continued catechesis",
+      "handoffs": [
+        "pray.confession",
+        "mass.prepare",
+        "pray.communion_treasury",
+        "mass.thanksgiving",
+        "learn.catechism"
+      ],
+      "coverage": {
+        "doctrine_and_meaning": "covered",
+        "preparation": "covered-by-handoff",
+        "lay_participation_or_what_you_may_see": "covered-by-Mass-owner",
+        "traditional_current_boundary": "covered",
+        "prayer_handoff": "covered",
+        "live_ritual_owner": "Mass reader",
+        "aftercare_or_continuing_life": "covered",
+        "source_authority": "covered"
+      },
+      "traditional_sources": [
+        {
+          "label": "Quam singulari · AAS II · 1910",
+          "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf"
+        },
+        {
+          "label": "Quam singulari · French traditional witness",
+          "url": "https://laportelatine.org/?p=3559"
+        }
+      ],
+      "current_sources": [
+        {
+          "label": "Holy See · First Penance / First Communion",
+          "url": "https://www.vatican.va/roman_curia/congregations/cclergy/documents/rc_con_cclergy_doc_19770331_penance-communion_en.html"
+        },
+        {
+          "label": "Code of Canon Law · Eucharist · canons 913–919",
+          "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html"
+        }
+      ],
+      "french_world_sources": [
+        {
+          "label": "Quam singulari · French",
+          "url": "https://laportelatine.org/?p=3559"
+        }
+      ],
+      "freeze_rules": [
+        "Do not duplicate Confession inside First Communion.",
+        "Do not duplicate Before Mass, Communion ritual, Communion treasury or After Mass.",
+        "The app does not certify a child as ready.",
+        "Older midnight/three-hour fasts remain historical discipline unless legitimately instructed for a particular celebration."
+      ]
+    },
+    {
+      "number": 4,
+      "sacrament": "Penance / Reconciliation",
+      "family_key": "penance",
+      "primary_formation_owner": "pray.confession",
+      "primary_surface": "PRAY",
+      "supporting_owners": [
+        "sacrament_come_holy_spirit",
+        "sacrament_act_of_contrition"
+      ],
+      "live_ritual_owner": "Priest and penitent; app explicitly tells the user to put the phone away in the confessional.",
+      "aftercare_owner": "pray.confession · After stage",
+      "handoffs": [],
+      "coverage": {
+        "doctrine_and_meaning": "covered",
+        "preparation": "covered",
+        "lay_participation_or_what_you_may_see": "covered",
+        "traditional_current_boundary": "not-required-for-primary-flow",
+        "prayer_handoff": "covered",
+        "live_ritual_owner": "external-by-design",
+        "aftercare_or_continuing_life": "covered",
+        "source_authority": "covered-in-SOT"
+      },
+      "traditional_sources": [
+        {
+          "label": "Rituale Romanum · 1952",
+          "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910"
+        },
+        {
+          "label": "Grand Catéchisme de saint Pie X · Pénitence",
+          "url": "https://laportelatine.org/wp-content/uploads/2020/06/idx-catechisme-saint-pie-x.pdf"
+        }
+      ],
+      "current_sources": [
+        {
+          "label": "Catechism · Sacrament of Penance and Reconciliation",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vi_the_sacrament_of_penance_and_reconciliation.html"
+        },
+        {
+          "label": "Code of Canon Law · Penance · canons 959–997",
+          "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html"
+        }
+      ],
+      "french_world_sources": [
+        {
+          "label": "Grand Catéchisme de saint Pie X · Pénitence",
+          "url": "https://laportelatine.org/wp-content/uploads/2020/06/idx-catechisme-saint-pie-x.pdf"
+        }
+      ],
+      "freeze_rules": [
+        "Do not create learn.rites.penance merely for symmetry.",
+        "Do not record, score, classify or persist a user's sins.",
+        "Do not simulate absolution.",
+        "PRAY remains the canonical owner of Doctrine → Prepare → Examination → In Confessional → After."
+      ]
+    },
+    {
+      "number": 5,
+      "sacrament": "Anointing of the Sick / Extreme Unction formation",
+      "family_key": "anointing_sick",
+      "primary_formation_owner": "learn.rites.sick",
+      "primary_surface": "LEARN",
+      "supporting_owners": [
+        "pray.confession",
+        "pray.rosary",
+        "pray.dying_companion",
+        "dead_eternal_rest_singular",
+        "dead_de_profundis"
+      ],
+      "live_ritual_owner": "Priest; app does not simulate sacramental anointing.",
+      "aftercare_owner": "pray.dying_companion before death; suffrages + funeral/Requiem formation after death",
+      "handoffs": [
+        "pray.confession",
+        "pray.rosary",
+        "pray.dying_companion"
+      ],
+      "coverage": {
+        "doctrine_and_meaning": "covered",
+        "preparation": "covered",
+        "lay_participation_or_what_you_may_see": "covered",
+        "traditional_current_boundary": "covered",
+        "prayer_handoff": "covered",
+        "live_ritual_owner": "external-by-design",
+        "aftercare_or_continuing_life": "covered-statefully",
+        "source_authority": "covered"
+      },
+      "traditional_sources": [
+        {
+          "label": "Rituale Romanum · 1952",
+          "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910"
+        }
+      ],
+      "current_sources": [
+        {
+          "label": "Paul VI · Sacram Unctionem Infirmorum · 1972",
+          "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19721130_sacram-unctionem.html"
+        },
+        {
+          "label": "Catechism · Viaticum",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/v_viaticum%2C_the_last_sacrament_of_the_christian.html"
+        }
+      ],
+      "french_world_sources": [],
+      "freeze_rules": [
+        "Serious Illness remains formation/context; Dying Companion remains imminent-death bedside prayer/action.",
+        "After death, switch to suffrage; do not keep using prayers addressed to the dying person.",
+        "Do not simulate priestly absolution, anointing, Viaticum administration or Apostolic Blessing."
+      ]
+    },
+    {
+      "number": 6,
+      "sacrament": "Holy Orders",
+      "family_key": "holy_orders",
+      "primary_formation_owner": "learn.rites.holy_orders",
+      "primary_surface": "LEARN",
+      "supporting_owners": [
+        "pray.litany_saints",
+        "sacrament_come_holy_spirit",
+        "Mass Ember/ordination context"
+      ],
+      "live_ritual_owner": "Actual Pontifical ordination rite / Mass engine only where Mass context is relevant.",
+      "aftercare_owner": "No app vocation decision; ongoing discernment belongs to priest/spiritual director and Church authority.",
+      "handoffs": [
+        "pray.litany_saints",
+        "sacrament_come_holy_spirit"
+      ],
+      "coverage": {
+        "doctrine_and_meaning": "covered",
+        "preparation": "covered-as-discernment-boundary",
+        "lay_participation_or_what_you_may_see": "covered",
+        "traditional_current_boundary": "covered",
+        "prayer_handoff": "covered",
+        "live_ritual_owner": "external-plus-Mass-context",
+        "aftercare_or_continuing_life": "covered-as-boundary",
+        "source_authority": "covered"
+      },
+      "traditional_sources": [
+        {
+          "label": "Pontificale Romanum · Editio typica 1961–1962 · De Ordinibus conferendis",
+          "url": "https://www.alcuinus.org/index.php?action=show_item&display=tools&id=74915"
+        },
+        {
+          "label": "ICKSP Lille · Ordre / vocation guidance",
+          "url": "https://icrsp-lille.fr/les-sacrements/lordre/"
+        }
+      ],
+      "current_sources": [
+        {
+          "label": "Catechism · Holy Orders",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_6.html"
+        },
+        {
+          "label": "Code of Canon Law · Orders · canons 1008–1054",
+          "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html"
+        },
+        {
+          "label": "Paul VI · Ministeria quaedam · 1972",
+          "url": "https://www.vatican.va/content/paul-vi/la/motu_proprio/documents/hf_p-vi_motu-proprio_19720815_ministeria-quaedam.html"
+        }
+      ],
+      "french_world_sources": [
+        {
+          "label": "ICKSP Lille · Ordre / vocation guidance",
+          "url": "https://icrsp-lille.fr/les-sacrements/lordre/"
+        }
+      ],
+      "freeze_rules": [
+        "Do not turn the module into a bishop/MC/ordinand script.",
+        "Do not treat tonsure, minor orders or subdiaconate as additional current sacramental degrees.",
+        "Do not let the app diagnose or certify a vocation."
+      ]
+    },
+    {
+      "number": 7,
+      "sacrament": "Matrimony",
+      "family_key": "matrimony",
+      "primary_formation_owner": "learn.rites.matrimony",
+      "primary_surface": "LEARN",
+      "supporting_owners": [
+        "Certified 1962 Nuptial Mass reader"
+      ],
+      "live_ritual_owner": "Actual marriage rite + certified 1962 Nuptial Mass reader when a Nuptial Mass is celebrated.",
+      "aftercare_owner": "Outside current sacramental-formation scope; marriage formation may be a separate future project, not silently added here.",
+      "handoffs": [
+        "Nuptial Mass reader"
+      ],
+      "coverage": {
+        "doctrine_and_meaning": "covered",
+        "preparation": "covered",
+        "lay_participation_or_what_you_may_see": "covered",
+        "traditional_current_boundary": "covered",
+        "prayer_handoff": "not-required",
+        "live_ritual_owner": "Nuptial Mass reader",
+        "aftercare_or_continuing_life": "out-of-scope-by-design",
+        "source_authority": "covered"
+      },
+      "traditional_sources": [
+        {
+          "label": "Rituale Romanum · traditional Matrimony",
+          "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910"
+        }
+      ],
+      "current_sources": [
+        {
+          "label": "Catechism · Celebration of Marriage",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_7/ii_the_celebration_of_marriage.html"
+        },
+        {
+          "label": "Catechism · Matrimonial Consent",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_7/iii_matrimonial_consent.html"
+        }
+      ],
+      "french_world_sources": [],
+      "freeze_rules": [
+        "Do not duplicate the certified Nuptial Mass sequence in Learn.",
+        "One-ring/two-ring and other local customs remain local unless sourced for the actual rite.",
+        "Older hand-missal rules do not overwrite the certified 1962 Mass engine."
+      ]
+    }
+  ]
+}
