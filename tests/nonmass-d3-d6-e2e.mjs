@@ -66,15 +66,17 @@ try{
   await page.waitForSelector("#aoPray435930.open [data-p435930-ador-mode='visit']",{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='visit']").count(),1);
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='open']").count(),1);
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-go-ben]").count(),1);
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='holy']").count(),1,"Final donor Holy Hour entry is missing from Adoration");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='four']").count(),1,"Final donor Four Ends entry is missing from Adoration");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='treasury']").count(),1);
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='holy']").count(),0,"Holy Hour leaked into D3 top level");
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='four']").count(),0,"Four Ends leaked into D3 top level");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-go-ben]").count(),0,"Benediction leaked into the private Adoration landing surface");
 
   await page.locator("#aoPray435930 [data-p435930-ador-mode='open']").click();
-  await page.waitForSelector("#aoPray435930 [data-p435930-ador-mode='holy']",{timeout:5000});
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-four]").count(),1,"Four Ends is not nested under Adoration");
+  await page.waitForSelector("#aoPray435930 [data-p435930-ador-four]",{timeout:5000});
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='holy']").count(),1,"Guided Holy Hour is not available from open Adoration");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-four]").count(),1,"Four Ends is not available from open Adoration");
   await page.locator("#aoPray435930 [data-p435930-seg='exposed']").click();
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-go-ben]").count(),1,"Exposed Adoration did not surface the public Benediction handoff");
   const presence=await page.evaluate(()=>{
     const saved=JSON.parse(localStorage.getItem("ao.pray.v435930")||"{}");
     return {session:sessionStorage.getItem("ao.app.adoration.presence.v1"),persistent:saved?.adoration?.presence??null,state:globalThis.AO_PRAY_V435930.state().adorationPresence};
