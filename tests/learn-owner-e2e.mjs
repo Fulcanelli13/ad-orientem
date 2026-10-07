@@ -130,6 +130,70 @@ try{
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
 
+  // Catholic Life: real phone journey through the new source-backed Formation reader.
+  await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.catholic_life"]').tap();
+  await page.waitForFunction(()=>
+    globalThis.AO_CATHOLIC_LIFE_V1?.status?.().open===true &&
+    document.getElementById("ao-catholic-life-root"),
+    null,{timeout:10000}
+  );
+  const catholicLanding=await page.evaluate(()=>{
+    const root=document.getElementById("ao-catholic-life-root"),r=root?.getBoundingClientRect();
+    const controls=[...root.querySelectorAll("button")].map(node=>{const b=node.getBoundingClientRect();return {w:b.width,h:b.height}});
+    return {
+      status:globalThis.AO_CATHOLIC_LIFE_V1?.status?.()??null,
+      width:r?.width??0,
+      overflow:root?(root.scrollWidth-root.clientWidth):Infinity,
+      courses:root?.querySelectorAll("[data-ao-cl-course]").length??0,
+      controls,
+    };
+  });
+  assert.equal(catholicLanding.status?.courses,10,"Catholic Life lost its 10-course registry");
+  assert.equal(catholicLanding.status?.stages,79,"Catholic Life lost its 79-stage registry");
+  assert.equal(catholicLanding.courses,10,"Catholic Life landing did not render all 10 courses");
+  assert.ok(catholicLanding.width>300,"Catholic Life landing collapsed on phone");
+  assert.ok(catholicLanding.overflow<=1,"Catholic Life landing has horizontal overflow");
+  for(const target of catholicLanding.controls)assert.ok(target.w>=44&&target.h>=44,"Catholic Life touch target fell below 44px");
+
+  await page.locator('#ao-catholic-life-root [data-ao-cl-course="CL01"]').tap();
+  await page.waitForFunction(()=>globalThis.AO_CATHOLIC_LIFE_V1?.status?.().courseId==="CL01",null,{timeout:5000});
+  assert.equal(await page.locator("#ao-catholic-life-root [data-ao-cl-stage]").count(),7,"CL01 lost its 7 frozen stages");
+
+  await page.locator('#ao-catholic-life-root [data-ao-cl-stage="CL01-S01"]').tap();
+  await page.waitForFunction(()=>globalThis.AO_CATHOLIC_LIFE_V1?.status?.().stageId==="CL01-S01",null,{timeout:5000});
+  const catholicStage=await page.evaluate(()=>{
+    const root=document.getElementById("ao-catholic-life-root");
+    return {
+      cards:root?.querySelectorAll(".aoCLCard").length??0,
+      claims:root?.querySelectorAll(".aoCLClaim").length??0,
+      sources:root?.querySelectorAll(".aoCLSources").length??0,
+      sourceLinks:root?.querySelectorAll(".aoCLSource a[href]").length??0,
+      overflow:root?(root.scrollWidth-root.clientWidth):Infinity,
+    };
+  });
+  assert.ok(catholicStage.cards>=4,"Catholic Life stage rendered too few formation cards");
+  assert.ok(catholicStage.claims>=4,"Catholic Life stage lost atomic claims");
+  assert.ok(catholicStage.sources>=1,"Catholic Life stage lost claim-level source disclosure");
+  assert.ok(catholicStage.sourceLinks>=1,"Catholic Life sources lost navigable source transports");
+  assert.ok(catholicStage.overflow<=1,"Catholic Life stage has horizontal overflow");
+
+  await page.locator("#ao-catholic-life-root [data-ao-cl-reveal]").tap();
+  assert.equal(await page.locator("#ao-catholic-life-root .aoCLAnswer").count(),1,"Catholic Life scenario answer did not reveal");
+
+  // Stage -> course -> course index -> Formation hub.
+  await page.locator("#ao-catholic-life-root [data-ao-cl-back]").tap();
+  await page.waitForFunction(()=>globalThis.AO_CATHOLIC_LIFE_V1?.status?.().view==="course",null,{timeout:5000});
+  await page.locator("#ao-catholic-life-root [data-ao-cl-back]").tap();
+  await page.waitForFunction(()=>globalThis.AO_CATHOLIC_LIFE_V1?.status?.().view==="courses",null,{timeout:5000});
+  await page.locator("#ao-catholic-life-root [data-ao-cl-back]").tap();
+  await page.waitForFunction(()=>
+    !document.getElementById("ao-catholic-life-root") &&
+    !document.getElementById("ao-learn-modular-root")?.hidden &&
+    globalThis.AO_LEARN_APP_V1?.status?.().child==null,
+    null,{timeout:10000}
+  );
+  await assertFocusSafe("Catholic Life -> Formation");
+
   const recoveredTraditional=[
     "learn.rites.sick",
     "learn.rites.baptism",
