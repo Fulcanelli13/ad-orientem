@@ -1,0 +1,4098 @@
+{
+  "schema": "GLOSSARY_NAVIGATION_SOT_V1",
+  "version": "1.0.0",
+  "status": "FROZEN_NAVIGATION_BASELINE",
+  "frozen_at": "2026-10-07",
+  "scope": {
+    "conceptual_inventory": 450,
+    "core_latin_lemma_families": 350,
+    "initial_phrase_seed": 60,
+    "rule": "Every glossary inventory item has exactly one primary browse home. Secondary discovery is via facets, aliases, context links and search; never duplicate canonical objects to make them appear in several categories."
+  },
+  "navigation_policy": {
+    "default_surface": "CATEGORY_CARDS",
+    "prohibited_default": "FLAT_450_ITEM_SCROLL",
+    "category_count": 13,
+    "category_page": "SECTIONED",
+    "sections_default_state": "COLLAPSED_EXCEPT_FIRST",
+    "initial_items_per_section": 8,
+    "alphabetical_view": "SECONDARY_ONLY",
+    "search": "GLOBAL_EN_FR_LA_ALIASES_INFLECTED_FORMS",
+    "contextual_surface": "TERMS_USED_HERE",
+    "contextual_rule": "Mass, Formation, PRAY, Calendar, Directory and Latin surfaces may project relevant canonical glossary objects without changing their primary category.",
+    "deep_link": "glossary://entry/{canonical_id}",
+    "language_behavior": "Search all EN/FR/LA labels and aliases regardless of current UI language."
+  },
+  "facet_dimensions": [
+    {
+      "id": "temporal_layer",
+      "values": [
+        "TIMELESS",
+        "PROFILE_1962",
+        "CURRENT",
+        "HISTORICAL",
+        "MULTI_LAYER"
+      ]
+    },
+    {
+      "id": "authority",
+      "values": [
+        "DOGMA_DOCTRINE",
+        "CANON_LAW",
+        "LITURGICAL_BOOK",
+        "RITUAL",
+        "DEVOTIONAL",
+        "HISTORICAL_REFERENCE",
+        "PROJECT_SEMANTIC"
+      ]
+    },
+    {
+      "id": "surface",
+      "values": [
+        "MASS",
+        "FORMATION",
+        "APOSTOLATE",
+        "PRAY",
+        "CALENDAR",
+        "DIRECTORY",
+        "LATIN",
+        "CUSTOMS",
+        "PILGRIMAGE"
+      ]
+    },
+    {
+      "id": "content_type",
+      "values": [
+        "CONCEPT",
+        "LATIN_LEXEME",
+        "LATIN_PHRASE",
+        "RUBRIC",
+        "OBJECT",
+        "OFFICE",
+        "PLACE_TYPE",
+        "DIRECTORY_CLASSIFICATION"
+      ]
+    },
+    {
+      "id": "user_need",
+      "values": [
+        "UNDERSTAND",
+        "WHAT_TO_DO",
+        "APOLOGETICS",
+        "TRANSLATE_LATIN",
+        "IDENTIFY_AT_MASS",
+        "CURRENT_VS_1962",
+        "CANONICAL_MEANING"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "faith_doctrine",
+      "label": {
+        "en": "Faith & Doctrine",
+        "fr": "Foi et doctrine"
+      },
+      "sections": [
+        {
+          "id": "grace_salvation",
+          "label": {
+            "en": "Grace, salvation & supernatural life",
+            "fr": "Grâce, salut et vie surnaturelle"
+          },
+          "entry_numbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "id": "worship_church_marks",
+          "label": {
+            "en": "Worship, the Church & doctrinal development",
+            "fr": "Culte, Église et développement doctrinal"
+          },
+          "entry_numbers": [
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moral_spiritual",
+      "label": {
+        "en": "Moral Life & Virtue",
+        "fr": "Vie morale et vertus"
+      },
+      "sections": [
+        {
+          "id": "sin_conscience",
+          "label": {
+            "en": "Sin, conscience & responsibility",
+            "fr": "Péché, conscience et responsabilité"
+          },
+          "entry_numbers": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ]
+        },
+        {
+          "id": "virtues_asceticism",
+          "label": {
+            "en": "Virtues, penance & ascetical life",
+            "fr": "Vertus, pénitence et vie ascétique"
+          },
+          "entry_numbers": [
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sacraments",
+      "label": {
+        "en": "Sacraments",
+        "fr": "Sacrements"
+      },
+      "sections": [
+        {
+          "id": "sacramental_life",
+          "label": {
+            "en": "Sacraments & sacramental life",
+            "fr": "Sacrements et vie sacramentelle"
+          },
+          "entry_numbers": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mass_liturgy",
+      "label": {
+        "en": "Mass & Liturgy",
+        "fr": "Messe et liturgie"
+      },
+      "sections": [
+        {
+          "id": "mass_structure",
+          "label": {
+            "en": "Parts, actions & orientation of the Mass",
+            "fr": "Parties, actions et orientation de la Messe"
+          },
+          "entry_numbers": [
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78
+          ]
+        },
+        {
+          "id": "ministers_chant",
+          "label": {
+            "en": "Ministers, chant & ceremonial",
+            "fr": "Ministres, chant et cérémonial"
+          },
+          "entry_numbers": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260
+          ]
+        },
+        {
+          "id": "pontifical",
+          "label": {
+            "en": "Pontifical celebration",
+            "fr": "Célébration pontificale"
+          },
+          "entry_numbers": [
+            446
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prayer_devotions",
+      "label": {
+        "en": "Prayer & Devotions",
+        "fr": "Prière et dévotions"
+      },
+      "sections": [
+        {
+          "id": "classic_devotions",
+          "label": {
+            "en": "Classic devotions",
+            "fr": "Dévotions classiques"
+          },
+          "entry_numbers": [
+            95,
+            96,
+            97,
+            98
+          ]
+        },
+        {
+          "id": "eucharistic_devotion",
+          "label": {
+            "en": "Eucharistic devotion & Benediction",
+            "fr": "Dévotion eucharistique et Salut"
+          },
+          "entry_numbers": [
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            308,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320
+          ]
+        },
+        {
+          "id": "spiritual_practice",
+          "label": {
+            "en": "Prayer, meditation & devotional practice",
+            "fr": "Prière, méditation et pratiques dévotionnelles"
+          },
+          "entry_numbers": [
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333
+          ]
+        },
+        {
+          "id": "stations",
+          "label": {
+            "en": "Stations of the Cross",
+            "fr": "Chemin de Croix"
+          },
+          "entry_numbers": [
+            419
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liturgical_year",
+      "label": {
+        "en": "Liturgical Year & Calendar",
+        "fr": "Année liturgique et calendrier"
+      },
+      "sections": [
+        {
+          "id": "year_seasons",
+          "label": {
+            "en": "Calendar, seasons & traditional observances",
+            "fr": "Calendrier, temps et observances traditionnelles"
+          },
+          "entry_numbers": [
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94
+          ]
+        },
+        {
+          "id": "rank_precedence",
+          "label": {
+            "en": "Ranks, Mass classes & calendar mechanics",
+            "fr": "Classes, préséance et mécanique du calendrier"
+          },
+          "entry_numbers": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280
+          ]
+        }
+      ]
+    },
+    {
+      "id": "church_authority",
+      "label": {
+        "en": "Church & Authority",
+        "fr": "Église et autorité"
+      },
+      "sections": [
+        {
+          "id": "revelation_magisterium",
+          "label": {
+            "en": "Pope, Magisterium, Revelation & Church",
+            "fr": "Pape, Magistère, Révélation et Église"
+          },
+          "entry_numbers": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117
+          ]
+        },
+        {
+          "id": "governance_law",
+          "label": {
+            "en": "Governance, law & ecclesial offences",
+            "fr": "Gouvernement, droit et délits ecclésiaux"
+          },
+          "entry_numbers": [
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sacred_places_objects",
+      "label": {
+        "en": "Sacred Places, Objects & Vestments",
+        "fr": "Lieux sacrés, objets et ornements"
+      },
+      "sections": [
+        {
+          "id": "altar_tabernacle",
+          "label": {
+            "en": "Altar, tabernacle & vestments",
+            "fr": "Autel, tabernacle et ornements"
+          },
+          "entry_numbers": [
+            79,
+            80,
+            81
+          ]
+        },
+        {
+          "id": "sanctuary_objects",
+          "label": {
+            "en": "Sanctuary, vessels, furnishings & vestments",
+            "fr": "Sanctuaire, vases, mobilier et ornements"
+          },
+          "entry_numbers": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220
+          ]
+        },
+        {
+          "id": "church_architecture",
+          "label": {
+            "en": "Church architecture",
+            "fr": "Architecture des églises"
+          },
+          "entry_numbers": [
+            401,
+            402,
+            403,
+            404,
+            405,
+            406,
+            407,
+            408,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            416,
+            417,
+            418,
+            420
+          ]
+        },
+        {
+          "id": "venue_types",
+          "label": {
+            "en": "Chapel, oratory & mission",
+            "fr": "Chapelle, oratoire et mission"
+          },
+          "entry_numbers": [
+            436,
+            437,
+            438
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clergy_religious_vocations",
+      "label": {
+        "en": "Clergy, Religious Life & Vocations",
+        "fr": "Clergé, vie religieuse et vocations"
+      },
+      "sections": [
+        {
+          "id": "orders_vocation",
+          "label": {
+            "en": "Vocation, clerical orders & states",
+            "fr": "Vocation, ordres et états cléricaux"
+          },
+          "entry_numbers": [
+            100,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128
+          ]
+        },
+        {
+          "id": "offices_formation",
+          "label": {
+            "en": "Church offices, formation & religious life",
+            "fr": "Offices, formation et vie religieuse"
+          },
+          "entry_numbers": [
+            341,
+            342,
+            343,
+            344,
+            345,
+            346,
+            347,
+            348,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            356,
+            357,
+            358,
+            359,
+            360
+          ]
+        },
+        {
+          "id": "religious_houses",
+          "label": {
+            "en": "Religious houses & profession",
+            "fr": "Maisons religieuses et profession"
+          },
+          "entry_numbers": [
+            439,
+            440,
+            441,
+            442,
+            443,
+            444,
+            445
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marriage_family",
+      "label": {
+        "en": "Marriage & Family",
+        "fr": "Mariage et famille"
+      },
+      "sections": [
+        {
+          "id": "marriage_canon_law",
+          "label": {
+            "en": "Marriage, consent, impediments & remedies",
+            "fr": "Mariage, consentement, empêchements et remèdes"
+          },
+          "entry_numbers": [
+            421,
+            422,
+            423,
+            424,
+            425,
+            426,
+            427,
+            428,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pilgrimage_customs_apostolate",
+      "label": {
+        "en": "Pilgrimage, Customs & Apostolate",
+        "fr": "Pèlerinages, coutumes et apostolat"
+      },
+      "sections": [
+        {
+          "id": "apostolate",
+          "label": {
+            "en": "Apostolate",
+            "fr": "Apostolat"
+          },
+          "entry_numbers": [
+            99
+          ]
+        },
+        {
+          "id": "pilgrimage_custom",
+          "label": {
+            "en": "Pilgrimage, shrines & devotional associations",
+            "fr": "Pèlerinages, sanctuaires et associations dévotionnelles"
+          },
+          "entry_numbers": [
+            334,
+            335,
+            336,
+            337,
+            338,
+            339,
+            340
+          ]
+        }
+      ]
+    },
+    {
+      "id": "latin_rubrics",
+      "label": {
+        "en": "Latin & Rubrics",
+        "fr": "Latin et rubriques"
+      },
+      "sections": [
+        {
+          "id": "rubric_language",
+          "label": {
+            "en": "Rubrical symbols, verbs & phrases",
+            "fr": "Symboles, verbes et expressions rubricales"
+          },
+          "entry_numbers": [
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300
+          ]
+        },
+        {
+          "id": "core_lexemes",
+          "label": {
+            "en": "High-frequency Missal Latin",
+            "fr": "Latin fréquent du Missel"
+          },
+          "entry_numbers": [
+            361,
+            362,
+            363,
+            364,
+            365,
+            366,
+            367,
+            368,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            376,
+            377,
+            378,
+            379,
+            380
+          ]
+        },
+        {
+          "id": "prayer_verbs",
+          "label": {
+            "en": "Prayer verbs & liturgical formulae",
+            "fr": "Verbes de prière et formules liturgiques"
+          },
+          "entry_numbers": [
+            381,
+            382,
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            396,
+            397,
+            398,
+            399,
+            400
+          ]
+        }
+      ]
+    },
+    {
+      "id": "directory_ecclesial_status",
+      "label": {
+        "en": "Directory & Ecclesial Status",
+        "fr": "Annuaire et statut ecclésial"
+      },
+      "sections": [
+        {
+          "id": "status_terms",
+          "label": {
+            "en": "Canonical/ecclesial status concepts",
+            "fr": "Notions de statut canonique/ecclésial"
+          },
+          "entry_numbers": [
+            135,
+            149,
+            150
+          ]
+        },
+        {
+          "id": "directory_classification",
+          "label": {
+            "en": "Directory position & communion classifications",
+            "fr": "Classifications de position et de communion de l’annuaire"
+          },
+          "entry_numbers": [
+            447,
+            448,
+            449,
+            450
+          ]
+        }
+      ]
+    }
+  ],
+  "entry_index": [
+    {
+      "number": 1,
+      "id": "G001",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 2,
+      "id": "G002",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 3,
+      "id": "G003",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 4,
+      "id": "G004",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 5,
+      "id": "G005",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 6,
+      "id": "G006",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 7,
+      "id": "G007",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 8,
+      "id": "G008",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 9,
+      "id": "G009",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 10,
+      "id": "G010",
+      "primary_category": "faith_doctrine",
+      "browse_section": "grace_salvation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 11,
+      "id": "G011",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 12,
+      "id": "G012",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 13,
+      "id": "G013",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 14,
+      "id": "G014",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 15,
+      "id": "G015",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 16,
+      "id": "G016",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 17,
+      "id": "G017",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 18,
+      "id": "G018",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 19,
+      "id": "G019",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 20,
+      "id": "G020",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 21,
+      "id": "G021",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 22,
+      "id": "G022",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 23,
+      "id": "G023",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 24,
+      "id": "G024",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 25,
+      "id": "G025",
+      "primary_category": "moral_spiritual",
+      "browse_section": "sin_conscience",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 26,
+      "id": "G026",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 27,
+      "id": "G027",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 28,
+      "id": "G028",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 29,
+      "id": "G029",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 30,
+      "id": "G030",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 31,
+      "id": "G031",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 32,
+      "id": "G032",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 33,
+      "id": "G033",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 34,
+      "id": "G034",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 35,
+      "id": "G035",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 36,
+      "id": "G036",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 37,
+      "id": "G037",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 38,
+      "id": "G038",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 39,
+      "id": "G039",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 40,
+      "id": "G040",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 41,
+      "id": "G041",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 42,
+      "id": "G042",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 43,
+      "id": "G043",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 44,
+      "id": "G044",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 45,
+      "id": "G045",
+      "primary_category": "sacraments",
+      "browse_section": "sacramental_life",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 46,
+      "id": "G046",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 47,
+      "id": "G047",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 48,
+      "id": "G048",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 49,
+      "id": "G049",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 50,
+      "id": "G050",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 51,
+      "id": "G051",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 52,
+      "id": "G052",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 53,
+      "id": "G053",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 54,
+      "id": "G054",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 55,
+      "id": "G055",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 56,
+      "id": "G056",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 57,
+      "id": "G057",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 58,
+      "id": "G058",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 59,
+      "id": "G059",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 60,
+      "id": "G060",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 61,
+      "id": "G061",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 62,
+      "id": "G062",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 63,
+      "id": "G063",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 64,
+      "id": "G064",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 65,
+      "id": "G065",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 66,
+      "id": "G066",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 67,
+      "id": "G067",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 68,
+      "id": "G068",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 69,
+      "id": "G069",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 70,
+      "id": "G070",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 71,
+      "id": "G071",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 72,
+      "id": "G072",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 73,
+      "id": "G073",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 74,
+      "id": "G074",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 75,
+      "id": "G075",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 76,
+      "id": "G076",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 77,
+      "id": "G077",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 78,
+      "id": "G078",
+      "primary_category": "mass_liturgy",
+      "browse_section": "mass_structure",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 79,
+      "id": "G079",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "altar_tabernacle",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 80,
+      "id": "G080",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "altar_tabernacle",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 81,
+      "id": "G081",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "altar_tabernacle",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 82,
+      "id": "G082",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 83,
+      "id": "G083",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 84,
+      "id": "G084",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 85,
+      "id": "G085",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 86,
+      "id": "G086",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 87,
+      "id": "G087",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 88,
+      "id": "G088",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 89,
+      "id": "G089",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 90,
+      "id": "G090",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 91,
+      "id": "G091",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 92,
+      "id": "G092",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 93,
+      "id": "G093",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 94,
+      "id": "G094",
+      "primary_category": "liturgical_year",
+      "browse_section": "year_seasons",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 95,
+      "id": "G095",
+      "primary_category": "prayer_devotions",
+      "browse_section": "classic_devotions",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 96,
+      "id": "G096",
+      "primary_category": "prayer_devotions",
+      "browse_section": "classic_devotions",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 97,
+      "id": "G097",
+      "primary_category": "prayer_devotions",
+      "browse_section": "classic_devotions",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 98,
+      "id": "G098",
+      "primary_category": "prayer_devotions",
+      "browse_section": "classic_devotions",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 99,
+      "id": "G099",
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "apostolate",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 100,
+      "id": "G100",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 101,
+      "id": "G101",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 102,
+      "id": "G102",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 103,
+      "id": "G103",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 104,
+      "id": "G104",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 105,
+      "id": "G105",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 106,
+      "id": "G106",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 107,
+      "id": "G107",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 108,
+      "id": "G108",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 109,
+      "id": "G109",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 110,
+      "id": "G110",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 111,
+      "id": "G111",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 112,
+      "id": "G112",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 113,
+      "id": "G113",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 114,
+      "id": "G114",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 115,
+      "id": "G115",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 116,
+      "id": "G116",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 117,
+      "id": "G117",
+      "primary_category": "church_authority",
+      "browse_section": "revelation_magisterium",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 118,
+      "id": "G118",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 119,
+      "id": "G119",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 120,
+      "id": "G120",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 121,
+      "id": "G121",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 122,
+      "id": "G122",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 123,
+      "id": "G123",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 124,
+      "id": "G124",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 125,
+      "id": "G125",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 126,
+      "id": "G126",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 127,
+      "id": "G127",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 128,
+      "id": "G128",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "orders_vocation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 129,
+      "id": "G129",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 130,
+      "id": "G130",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 131,
+      "id": "G131",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 132,
+      "id": "G132",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 133,
+      "id": "G133",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 134,
+      "id": "G134",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 135,
+      "id": "G135",
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "status_terms",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 136,
+      "id": "G136",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 137,
+      "id": "G137",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 138,
+      "id": "G138",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 139,
+      "id": "G139",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 140,
+      "id": "G140",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 141,
+      "id": "G141",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 142,
+      "id": "G142",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 143,
+      "id": "G143",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 144,
+      "id": "G144",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 145,
+      "id": "G145",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 146,
+      "id": "G146",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 147,
+      "id": "G147",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 148,
+      "id": "G148",
+      "primary_category": "church_authority",
+      "browse_section": "governance_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 149,
+      "id": "G149",
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "status_terms",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 150,
+      "id": "G150",
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "status_terms",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 151,
+      "id": "G151",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 152,
+      "id": "G152",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 153,
+      "id": "G153",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 154,
+      "id": "G154",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 155,
+      "id": "G155",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 156,
+      "id": "G156",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 157,
+      "id": "G157",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 158,
+      "id": "G158",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 159,
+      "id": "G159",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 160,
+      "id": "G160",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 161,
+      "id": "G161",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 162,
+      "id": "G162",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 163,
+      "id": "G163",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 164,
+      "id": "G164",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 165,
+      "id": "G165",
+      "primary_category": "faith_doctrine",
+      "browse_section": "worship_church_marks",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 166,
+      "id": "G166",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 167,
+      "id": "G167",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 168,
+      "id": "G168",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 169,
+      "id": "G169",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 170,
+      "id": "G170",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 171,
+      "id": "G171",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 172,
+      "id": "G172",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 173,
+      "id": "G173",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 174,
+      "id": "G174",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 175,
+      "id": "G175",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 176,
+      "id": "G176",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 177,
+      "id": "G177",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 178,
+      "id": "G178",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 179,
+      "id": "G179",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 180,
+      "id": "G180",
+      "primary_category": "moral_spiritual",
+      "browse_section": "virtues_asceticism",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 181,
+      "id": "G181",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 182,
+      "id": "G182",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 183,
+      "id": "G183",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 184,
+      "id": "G184",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 185,
+      "id": "G185",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 186,
+      "id": "G186",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 187,
+      "id": "G187",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 188,
+      "id": "G188",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 189,
+      "id": "G189",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 190,
+      "id": "G190",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 191,
+      "id": "G191",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 192,
+      "id": "G192",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 193,
+      "id": "G193",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 194,
+      "id": "G194",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 195,
+      "id": "G195",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 196,
+      "id": "G196",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 197,
+      "id": "G197",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 198,
+      "id": "G198",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 199,
+      "id": "G199",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 200,
+      "id": "G200",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 201,
+      "id": "G201",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 202,
+      "id": "G202",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 203,
+      "id": "G203",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 204,
+      "id": "G204",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 205,
+      "id": "G205",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 206,
+      "id": "G206",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 207,
+      "id": "G207",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 208,
+      "id": "G208",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 209,
+      "id": "G209",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 210,
+      "id": "G210",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 211,
+      "id": "G211",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 212,
+      "id": "G212",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 213,
+      "id": "G213",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 214,
+      "id": "G214",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 215,
+      "id": "G215",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 216,
+      "id": "G216",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 217,
+      "id": "G217",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 218,
+      "id": "G218",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 219,
+      "id": "G219",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 220,
+      "id": "G220",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "sanctuary_objects",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 221,
+      "id": "G221",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 222,
+      "id": "G222",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 223,
+      "id": "G223",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 224,
+      "id": "G224",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 225,
+      "id": "G225",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 226,
+      "id": "G226",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 227,
+      "id": "G227",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 228,
+      "id": "G228",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 229,
+      "id": "G229",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 230,
+      "id": "G230",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 231,
+      "id": "G231",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 232,
+      "id": "G232",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 233,
+      "id": "G233",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 234,
+      "id": "G234",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 235,
+      "id": "G235",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 236,
+      "id": "G236",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 237,
+      "id": "G237",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 238,
+      "id": "G238",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 239,
+      "id": "G239",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 240,
+      "id": "G240",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 241,
+      "id": "G241",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 242,
+      "id": "G242",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 243,
+      "id": "G243",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 244,
+      "id": "G244",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 245,
+      "id": "G245",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 246,
+      "id": "G246",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 247,
+      "id": "G247",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 248,
+      "id": "G248",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 249,
+      "id": "G249",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 250,
+      "id": "G250",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 251,
+      "id": "G251",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 252,
+      "id": "G252",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 253,
+      "id": "G253",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 254,
+      "id": "G254",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 255,
+      "id": "G255",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 256,
+      "id": "G256",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 257,
+      "id": "G257",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 258,
+      "id": "G258",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 259,
+      "id": "G259",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 260,
+      "id": "G260",
+      "primary_category": "mass_liturgy",
+      "browse_section": "ministers_chant",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 261,
+      "id": "G261",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 262,
+      "id": "G262",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 263,
+      "id": "G263",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 264,
+      "id": "G264",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 265,
+      "id": "G265",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 266,
+      "id": "G266",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 267,
+      "id": "G267",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 268,
+      "id": "G268",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 269,
+      "id": "G269",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 270,
+      "id": "G270",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 271,
+      "id": "G271",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 272,
+      "id": "G272",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 273,
+      "id": "G273",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 274,
+      "id": "G274",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 275,
+      "id": "G275",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 276,
+      "id": "G276",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 277,
+      "id": "G277",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 278,
+      "id": "G278",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 279,
+      "id": "G279",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 280,
+      "id": "G280",
+      "primary_category": "liturgical_year",
+      "browse_section": "rank_precedence",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 281,
+      "id": "G281",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 282,
+      "id": "G282",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 283,
+      "id": "G283",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 284,
+      "id": "G284",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 285,
+      "id": "G285",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 286,
+      "id": "G286",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 287,
+      "id": "G287",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 288,
+      "id": "G288",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 289,
+      "id": "G289",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 290,
+      "id": "G290",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 291,
+      "id": "G291",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 292,
+      "id": "G292",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 293,
+      "id": "G293",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 294,
+      "id": "G294",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 295,
+      "id": "G295",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 296,
+      "id": "G296",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 297,
+      "id": "G297",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 298,
+      "id": "G298",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 299,
+      "id": "G299",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 300,
+      "id": "G300",
+      "primary_category": "latin_rubrics",
+      "browse_section": "rubric_language",
+      "kind": "RUBRIC_OR_PHRASE"
+    },
+    {
+      "number": 301,
+      "id": "G301",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 302,
+      "id": "G302",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 303,
+      "id": "G303",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 304,
+      "id": "G304",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 305,
+      "id": "G305",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 306,
+      "id": "G306",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 307,
+      "id": "G307",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 308,
+      "id": "G308",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 309,
+      "id": "G309",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 310,
+      "id": "G310",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 311,
+      "id": "G311",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 312,
+      "id": "G312",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 313,
+      "id": "G313",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 314,
+      "id": "G314",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 315,
+      "id": "G315",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 316,
+      "id": "G316",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 317,
+      "id": "G317",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 318,
+      "id": "G318",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 319,
+      "id": "G319",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 320,
+      "id": "G320",
+      "primary_category": "prayer_devotions",
+      "browse_section": "eucharistic_devotion",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 321,
+      "id": "G321",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 322,
+      "id": "G322",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 323,
+      "id": "G323",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 324,
+      "id": "G324",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 325,
+      "id": "G325",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 326,
+      "id": "G326",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 327,
+      "id": "G327",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 328,
+      "id": "G328",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 329,
+      "id": "G329",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 330,
+      "id": "G330",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 331,
+      "id": "G331",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 332,
+      "id": "G332",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 333,
+      "id": "G333",
+      "primary_category": "prayer_devotions",
+      "browse_section": "spiritual_practice",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 334,
+      "id": "G334",
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 335,
+      "id": "G335",
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 336,
+      "id": "G336",
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 337,
+      "id": "G337",
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 338,
+      "id": "G338",
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 339,
+      "id": "G339",
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 340,
+      "id": "G340",
+      "primary_category": "pilgrimage_customs_apostolate",
+      "browse_section": "pilgrimage_custom",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 341,
+      "id": "G341",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 342,
+      "id": "G342",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 343,
+      "id": "G343",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 344,
+      "id": "G344",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 345,
+      "id": "G345",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 346,
+      "id": "G346",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 347,
+      "id": "G347",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 348,
+      "id": "G348",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 349,
+      "id": "G349",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 350,
+      "id": "G350",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 351,
+      "id": "G351",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 352,
+      "id": "G352",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 353,
+      "id": "G353",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 354,
+      "id": "G354",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 355,
+      "id": "G355",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 356,
+      "id": "G356",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 357,
+      "id": "G357",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 358,
+      "id": "G358",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 359,
+      "id": "G359",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 360,
+      "id": "G360",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "offices_formation",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 361,
+      "id": "G361",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 362,
+      "id": "G362",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 363,
+      "id": "G363",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 364,
+      "id": "G364",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 365,
+      "id": "G365",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 366,
+      "id": "G366",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 367,
+      "id": "G367",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 368,
+      "id": "G368",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 369,
+      "id": "G369",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 370,
+      "id": "G370",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 371,
+      "id": "G371",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 372,
+      "id": "G372",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 373,
+      "id": "G373",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 374,
+      "id": "G374",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 375,
+      "id": "G375",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 376,
+      "id": "G376",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 377,
+      "id": "G377",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 378,
+      "id": "G378",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 379,
+      "id": "G379",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 380,
+      "id": "G380",
+      "primary_category": "latin_rubrics",
+      "browse_section": "core_lexemes",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 381,
+      "id": "G381",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 382,
+      "id": "G382",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 383,
+      "id": "G383",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 384,
+      "id": "G384",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 385,
+      "id": "G385",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 386,
+      "id": "G386",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 387,
+      "id": "G387",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 388,
+      "id": "G388",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 389,
+      "id": "G389",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 390,
+      "id": "G390",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 391,
+      "id": "G391",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 392,
+      "id": "G392",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 393,
+      "id": "G393",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 394,
+      "id": "G394",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 395,
+      "id": "G395",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 396,
+      "id": "G396",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 397,
+      "id": "G397",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 398,
+      "id": "G398",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 399,
+      "id": "G399",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_LEXEME"
+    },
+    {
+      "number": 400,
+      "id": "G400",
+      "primary_category": "latin_rubrics",
+      "browse_section": "prayer_verbs",
+      "kind": "LATIN_PHRASE"
+    },
+    {
+      "number": 401,
+      "id": "G401",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 402,
+      "id": "G402",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 403,
+      "id": "G403",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 404,
+      "id": "G404",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 405,
+      "id": "G405",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 406,
+      "id": "G406",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 407,
+      "id": "G407",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 408,
+      "id": "G408",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 409,
+      "id": "G409",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 410,
+      "id": "G410",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 411,
+      "id": "G411",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 412,
+      "id": "G412",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 413,
+      "id": "G413",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 414,
+      "id": "G414",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 415,
+      "id": "G415",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 416,
+      "id": "G416",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 417,
+      "id": "G417",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 418,
+      "id": "G418",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 419,
+      "id": "G419",
+      "primary_category": "prayer_devotions",
+      "browse_section": "stations",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 420,
+      "id": "G420",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "church_architecture",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 421,
+      "id": "G421",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 422,
+      "id": "G422",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 423,
+      "id": "G423",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 424,
+      "id": "G424",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 425,
+      "id": "G425",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 426,
+      "id": "G426",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 427,
+      "id": "G427",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 428,
+      "id": "G428",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 429,
+      "id": "G429",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 430,
+      "id": "G430",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 431,
+      "id": "G431",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 432,
+      "id": "G432",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 433,
+      "id": "G433",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 434,
+      "id": "G434",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 435,
+      "id": "G435",
+      "primary_category": "marriage_family",
+      "browse_section": "marriage_canon_law",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 436,
+      "id": "G436",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "venue_types",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 437,
+      "id": "G437",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "venue_types",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 438,
+      "id": "G438",
+      "primary_category": "sacred_places_objects",
+      "browse_section": "venue_types",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 439,
+      "id": "G439",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 440,
+      "id": "G440",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 441,
+      "id": "G441",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 442,
+      "id": "G442",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 443,
+      "id": "G443",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 444,
+      "id": "G444",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 445,
+      "id": "G445",
+      "primary_category": "clergy_religious_vocations",
+      "browse_section": "religious_houses",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 446,
+      "id": "G446",
+      "primary_category": "mass_liturgy",
+      "browse_section": "pontifical",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 447,
+      "id": "G447",
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "directory_classification",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 448,
+      "id": "G448",
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "directory_classification",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 449,
+      "id": "G449",
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "directory_classification",
+      "kind": "GLOSSARY_CONCEPT"
+    },
+    {
+      "number": 450,
+      "id": "G450",
+      "primary_category": "directory_ecclesial_status",
+      "browse_section": "directory_classification",
+      "kind": "GLOSSARY_CONCEPT"
+    }
+  ],
+  "integrity_rules": [
+    "Exactly 450 numbered inventory items are assigned.",
+    "Every numbered inventory item has exactly one primary category and one browse section.",
+    "Canonical entries may have many facets and contextual projections but only one canonical id.",
+    "Homonyms are separate canonical senses; aliases never merge different senses.",
+    "LATIN_LEXEME and LATIN_PHRASE objects link to concepts rather than duplicating concept definitions.",
+    "Directory classifications never infer canonical status from venue, community name, una-cum usage or liturgical usage alone.",
+    "Historical and PROFILE_1962 terminology must not be presented as current universal discipline."
+  ]
+}
