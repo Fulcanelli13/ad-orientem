@@ -1,7 +1,7 @@
 {
   "schema": "AO_DIRECTORY_PROVIDER_GEOCODE_REPORT_V1",
   "provider": "ICKSP",
-  "generated_at": "2026-10-07T11:45:46.801Z",
+  "generated_at": "2026-10-07T22:10:00Z",
   "total": 27,
   "existing_valid": 0,
   "accepted": 22,
@@ -20,39 +20,13 @@
   "unresolved_records": [
     {
       "venue_id": "ao-icksp-institute-of-christ-the-king-bay-area-most-holy-rosary-chapel-st-vincent-s-school-for-boys-1-st-vincent-s-drive-0",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Institute of Christ the King - Bay Area, Most Holy Rosary Chapel, St. Vincent's School for Boys, 1 St. Vincent's Drive",
-          "key": "e96b4f942748217b80198f70f2569641e534081174bfcf6706e0b85fafc6ec29",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Most Holy Rosary Chapel, St. Vincent's School for Boys, 1 St. Vincent's Drive",
-          "key": "c4949421968a0fca2263d1443356f79dd7ae7f657e352787d6ce37a0525f99ff",
-          "candidates": []
-        }
-      ]
+      "reason": "ADDRESS_CORRECTED_PENDING_REGEOCODE",
+      "attempts": []
     },
     {
       "venue_id": "ao-icksp-immaculate-heart-of-mary-oratory-temporary-chapel-address-immaculate-heart-of-mary-oratory-1101-s-winchester-boulevard-1",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Immaculate Heart of Mary Oratory, Immaculate Heart of Mary Oratory, 1101 S. Winchester Boulevard",
-          "key": "f5ec81acdff664cb250183859562a0795475c7d52a67e059546029ad359b8dc0",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Immaculate Heart of Mary Oratory, 1101 S. Winchester Boulevard",
-          "key": "91b678cadba7275c8e22927b69270bcfbe583a7423bb69fd9fbd7192bbf8d053",
-          "candidates": []
-        }
-      ]
+      "reason": "ADDRESS_CORRECTED_PENDING_REGEOCODE",
+      "attempts": []
     },
     {
       "venue_id": "ao-icksp-shrine-of-christ-the-king-sovereign-priest-institute-of-christ-the-king-6415-south-woodlawn-avenue-chicago-illinois-60637-3817-5",
@@ -74,45 +48,14 @@
     },
     {
       "venue_id": "ao-icksp-st-joseph-oratory-st-joseph-oratory-at-our-lady-of-czestochowa-shrine-5755-pennsylvania-street-7",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "St. Joseph Oratory, St. Joseph Oratory, (at Our Lady of Częstochowa Shrine), 5755 Pennsylvania Street",
-          "key": "663a551c791d9698d8b345bcf789f426968bb54d54e6c6581b8016ecf9b31b60",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "St. Joseph Oratory, (at Our Lady of Częstochowa Shrine), 5755 Pennsylvania Street",
-          "key": "17b0aea672149d1129e729f0d4e0ae42ce7a954b506fa1ea927040643de0f724",
-          "candidates": []
-        }
-      ]
+      "reason": "ADDRESS_CORRECTED_PENDING_REGEOCODE",
+      "attempts": []
     },
     {
       "venue_id": "ao-icksp-basilica-dei-santi-celso-e-giuliano-via-del-banco-di-santo-spirito-5-23",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Basilica dei Santi Celso e Giuliano, Via del Banco di Santo Spirito, 5",
-          "key": "551ff2015aa211a2d380951a38ae9a6a3062277dba25655ca40bf3592c5ae2e8",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Via del Banco di Santo Spirito, 5",
-          "key": "fd2b2b2865fb76a09e3afbd3b71f48b379a4db6813040c99b8361b43c39d6b9e",
-          "candidates": [
-            {
-              "display_name": "Via del Banco di Santo Spirito, Ponte, Municipio Roma I, Rome, Roma Capitale, Lazio, 00120, Italy",
-              "type": "road",
-              "country_code": "it"
-            }
-          ]
-        }
-      ]
+      "reason": "ADDRESS_CORRECTED_PENDING_REGEOCODE",
+      "attempts": []
     }
-  ]
+  ],
+  "note": "Four current-Mass ICKSP venue addresses were corrected from current first-party sources after the previous geocode run. Coordinates remain null until the audited geocoder reruns; Chicago remains a separate unresolved suspended-public-Mass record."
 }

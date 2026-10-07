@@ -184,6 +184,19 @@ assert.equal(publishableDirectoryRecords([{
   venue:expandedIcksp.venues[massIndex],
   ministries:[{...expandedIcksp.ministries[massIndex],schedules:[]}],
 }]).length,0,"ICKSP provider-presence row without a Mass schedule leaked into Find");
+const generatedIckspVenues=readJson("../data/directory/generated/icksp/venues.v1.json");
+const liveBayArea=generatedIckspVenues.records.find(v=>/bay-area/.test(v.venue_id));
+const liveSanJose=generatedIckspVenues.records.find(v=>/immaculate-heart-of-mary-oratory/.test(v.venue_id));
+const liveMerrillville=generatedIckspVenues.records.find(v=>/st-joseph-oratory/.test(v.venue_id));
+const liveRome=generatedIckspVenues.records.find(v=>/basilica-dei-santi-celso-e-giuliano/.test(v.venue_id));
+assert.equal(liveBayArea.address.city,"San Rafael","Bay Area live ICKSP locality regressed");
+assert.equal(liveBayArea.address.postal_code,"94903");
+assert.equal(liveSanJose.address.city,"San José","San Jose live ICKSP locality regressed");
+assert.equal(liveSanJose.address.postal_code,"95128");
+assert.equal(liveMerrillville.address.city,"Merrillville","Merrillville live ICKSP locality regressed");
+assert.equal(liveMerrillville.address.postal_code,"46410");
+assert.equal(liveRome.address.city,"Rome","Rome live ICKSP locality regressed");
+
 const generatedIckspSchedules=readJson("../data/directory/generated/icksp/schedules.v1.json");
 assert.equal(generatedIckspSchedules.records.length,26,"ICKSP live schedule count drifted");
 assert.ok(generatedIckspSchedules.records.some(schedule=>/reno-nv-89502/.test(schedule.schedule_id)),"Reno current Mass schedule missing");
