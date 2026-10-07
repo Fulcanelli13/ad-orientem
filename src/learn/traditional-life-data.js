@@ -34,6 +34,8 @@ export const TRADITIONAL_LEARN_SOURCES_V381=Object.freeze({
   currentAshes2023:"https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20231209_risposta-card-zuppi-ceneri_en.html",
   catafalque:"https://www.newadvent.org/cathen/03427a.htm",
   familyPrayer:"https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_19811122_familiaris-consortio.html",
+  piusXiiFamilyRosary:"https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15091951_ingruentium-malorum.html",
+  leoXiiiSacredHeart:"https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_25051899_annum-sacrum.html",
   sacredHeartFamily:"https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
   marriageAnniversary:"https://www.usccb.org/prayers/prayer-couple-anniversary-marriage",
   redemptionisSacramentum:"https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20040423_redemptionis-sacramentum_en.html",
