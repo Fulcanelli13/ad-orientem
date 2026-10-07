@@ -35,6 +35,8 @@ assert.match(runtime,/AO_GLOSSARY_V1/);
 assert.match(runtime,/source-registry\.v1\.json/);
 assert.match(runtime,/aoGlossDefinition/);
 assert.match(runtime,/aoGlossExplanation/);
+assert.match(runtime,/z-index:2147483600/,"Glossary root no longer clears app-surface elevation");
+assert.match(runtime,/z-index:2147483640/,"Glossary detail drawer no longer clears Mass/Explore overlays");
 assert.match(runtime,/concepts-001-150\.v1\.json/);
 assert.doesNotMatch(runtime,/FLAT_450_ITEM_SCROLL/);
 

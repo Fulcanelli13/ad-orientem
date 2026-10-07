@@ -221,11 +221,31 @@ function renderPrayer(){
   const parent=S.route==="pray.communion_treasury"?L("Traditional Communion Prayers","Prières traditionnelles de Communion"):S.route==="pray.good_death"?L("Preparation for a Good Death","Préparation à une bonne mort"):S.route==="pray.dying_companion"?L("Dying Companion","Accompagnement du mourant"):L("Morning & Evening Prayer","Prières du matin & du soir");
   return `${head(prayerTitle(p,S.prayerId),parent)}<main class="aoP435930Body">${prayerCard(S.prayerId)}</main>`;
 }
+function glossaryTermsForState(){
+  if(S.screen==="prayer")return ["G326"];
+  if(S.route==="pray.sacred_hymns")return ["G326","G321"];
+  if(S.route==="pray.holy_name_litany")return ["G096","G154","G326"];
+  if(S.route==="pray.nightly_examen")return ["G328","G019","G011","G012"];
+  if(S.route==="pray.meal_prayers")return ["G326","G237"];
+  if(S.route==="pray.sacred_heart")return ["G321","G331","G330"];
+  if(S.route==="pray.communion_treasury")return ["G031","G030","G326"];
+  if(S.route==="pray.good_death")return ["G156","G037","G326"];
+  if(S.route==="pray.dying_companion")return ["G037","G038","G156"];
+  return ["G326","G324"];
+}
+function injectGlossaryAction(){
+  const m=mount();const body=m?.querySelector?.(".aoP435930Body");if(!body||body.querySelector("[data-tp381-glossary]"))return false;
+  const button=document.createElement("button");
+  button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
+  button.textContent=L("Terms & explanations","Termes & explications");
+  body.insertAdjacentElement("afterbegin",button);return true;
+}
 function render(){
   const m=mount();if(!m)return false;
   m.dataset.aoPrayView="traditional-pray";
   m.dataset.aoTraditionalPrayRoute=S.route;
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  injectGlossaryAction();
   m.scrollTop=0;
   queueMicrotask(()=>m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());
   return true;
@@ -242,10 +262,11 @@ function back(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-close],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-flip]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-close],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-flip],[data-tp381-glossary]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-close]"))return BASE_CLOSE();
+  if(b.matches("[data-tp381-glossary]")){const g=window?.AO_GLOSSARY_V1;if(typeof g?.openTerms==="function")void g.openTerms(glossaryTermsForState(),{origin:"pray"});return;}
   if(b.dataset.tp381Open)return open(b.dataset.tp381Open,{trigger:b});
   if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";return render()}
   if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
