@@ -80,7 +80,14 @@ export function emailAddresses(text){
 }
 
 export function phoneCandidates(text){
-  return [...new Set((String(text??"").match(/(?:\+?\d[\d .()\/-]{6,}\d)/g)??[]).map(x=>x.trim()))];
+  const matches=(String(text??"").match(/(?:\+?\d[\d .()\/-]{6,}\d)/g)??[]).map(x=>x.trim());
+  return [...new Set(matches.filter(value=>{
+    const compact=value.replace(/\s+/g,"");
+    if(/^\d{1,2}[\/-]\d{1,2}[\/-]\d{4}$/.test(compact))return false;
+    if(/^\d{4}[\/-]\d{1,2}[\/-]\d{1,2}$/.test(compact))return false;
+    const digits=value.replace(/\D/g,"");
+    return digits.length>=7&&digits.length<=15;
+  }))];
 }
 
 export function textLines(html){
