@@ -79,6 +79,8 @@ assert.match(en,/data-home-mass-entry/,"Home Follow Mass is not owned by modular
 assert.doesNotMatch(en,/data-action="follow"/,"Home Follow Mass still depends on the historical Home click controller");
 assert.match(en,/Holy Gospel/);
 assert.match(en,/Today’s Mass/);
+assert.match(en,/data-home-find/,"Home does not expose the Find a Mass entry");
+assert.match(en,/Worldwide traditional Mass directory/,"Home Find card lost directory explanation");
 assert.match(en,/Settings · preparation · thanksgiving/);
 assert.doesNotMatch(en,/next migration stage/i,"Home still exposes migration-era placeholder copy");
 
@@ -86,6 +88,7 @@ const fr=renderHomeToString({...base,language:"fr"},r17Win);
 assert.match(fr,/Saint Rosaire/);
 assert.match(fr,/Autour de la Messe/);
 assert.match(fr,/Saint Évangile/);
+assert.match(fr,/TROUVER UNE MESSE/,"French Home does not expose the Find entry");
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
 assert.match(fr,/Réglages · préparation · action de grâces/);

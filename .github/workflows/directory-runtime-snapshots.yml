@@ -1,0 +1,59 @@
+name: Directory runtime snapshots
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+  push:
+    branches:
+      - main
+      - feature/find-a-mass-surface-v1
+    paths:
+      - ".github/workflows/directory-runtime-snapshots.yml"
+      - "tools/directory/**"
+      - "data/directory/source-registry.v1.json"
+      - "data/directory/status-assertions.v1.json"
+      - "data/directory/source-witnesses/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: directory-runtime-snapshots-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    if: github.event_name != 'schedule' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Generate official-source snapshots
+        run: |
+          npm run directory:import:fssp
+          npm run directory:import:icksp
+          npm run directory:import:ibp
+      - name: Validate generated corpus
+        run: |
+          npm run test:directory
+          node tests/find-surface.mjs
+      - name: Publish changed snapshots
+        shell: bash
+        run: |
+          git config user.name "ad-orientem-directory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/directory/generated/fssp data/directory/generated/icksp data/directory/generated/ibp
+          if git diff --cached --quiet; then
+            echo "No directory snapshot changes."
+            exit 0
+          fi
+          git commit -m "Directory: refresh runtime institute snapshots [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

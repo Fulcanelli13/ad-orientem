@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   APP_SURFACES,
+  APP_ROUTE_SURFACES,
   NON_MASS_DONOR_CONTRACT,
   createAppHostAdapter,
   createAppShellController,
@@ -9,6 +10,8 @@ import {
 import { installAppShellBridge } from "../src/app/browser-entry.js";
 
 assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "settings"]);
+assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "calendar", "settings", "find"]);
+assert.equal(APP_SURFACES.includes("find"), false, "Find unexpectedly became a seventh permanent ribbon surface");
 assert.equal(APP_SURFACES.includes("sources"), false);
 assert.equal(NON_MASS_DONOR_CONTRACT.release, "43.59.30");
 assert.equal(NON_MASS_DONOR_CONTRACT.prayerOwner, "AO_PRAY_V435930");
@@ -55,6 +58,14 @@ function host({ route = "home", confirm = true } = {}) {
   assert.equal((await shell.go("pray")).ok, true);
   assert.equal(shell.getActive(), "pray");
   assert.deepEqual(h.calls, ["dismiss-settings", "home", "defer", "domain:pray"]);
+}
+
+{
+  const h = host();
+  const shell = createAppShellController({ host: h });
+  assert.equal((await shell.go("find")).ok, true);
+  assert.equal(shell.getActive(), "find");
+  assert.deepEqual(h.calls, ["dismiss-settings", "home", "defer", "domain:find"]);
 }
 
 {

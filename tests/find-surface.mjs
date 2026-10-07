@@ -1,0 +1,120 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import {
+  communionValue,
+  directoryStats,
+  filterDirectoryRecords,
+  joinDirectoryRecords,
+} from "../src/find/data-service.js";
+import { buildFindViewModel, renderFindToString } from "../src/find/presentation.js";
+import { FIND_MAP_RUNTIME } from "../src/find/map-runtime.js";
+
+const venues=[
+  {
+    venue_id:"ao-fssp-paris",
+    name:{official:"Église Saint-Test",alternate:["Saint Test"]},
+    venue_type:"church",
+    address:{formatted:"10 rue Exemple, Paris, France",city:"Paris",country_code:"FR"},
+    geo:{lat:48.8566,lng:2.3522},
+    diocese:{name:"Archidiocèse de Paris"},
+    contact:{phone:["+33 1 00 00 00 00"],email:["office@example.org"],website:["https://example.org"],schedule_url:["https://example.org/mass"]},
+    source_ids:["src-fssp-paris"],
+  },
+  {
+    venue_id:"ao-ibp-sydney",
+    name:{official:"Sydney Apostolate",alternate:[]},
+    venue_type:"chapel",
+    address:{formatted:"Sydney, Australia",city:"Sydney",country_code:"AU"},
+    geo:{lat:null,lng:null},
+    diocese:{name:"Archdiocese of Sydney"},
+    contact:{phone:[],email:[],website:[],schedule_url:[]},
+    source_ids:["src-ibp-sydney"],
+  },
+];
+const ministries=[
+  {
+    ministry_id:"m-fssp",venue_id:"ao-fssp-paris",community_id:"FSSP",relationship:"served_by",
+    liturgical_usage:{family:"ROMAN",books:"1962"},
+    source_ids:["src-fssp-paris"],
+  },
+  {
+    ministry_id:"m-ibp",venue_id:"ao-ibp-sydney",community_id:"IBP",relationship:"served_by",
+    liturgical_usage:{family:"ROMAN",books:"1962"},
+    source_ids:["src-ibp-sydney"],
+  },
+];
+const schedules=[
+  {
+    schedule_id:"s-fssp",ministry_id:"m-fssp",service_type:"MASS",mass_type:"SUNG",
+    payload:{raw:"Sunday 10:30 Sung Mass"},source_ids:["src-fssp-paris"],
+  },
+  {
+    schedule_id:"s-ibp",ministry_id:"m-ibp",service_type:"MASS",mass_type:"LOW",
+    payload:{raw:"Saturday 18:00 Low Mass"},source_ids:["src-ibp-sydney"],
+  },
+];
+const sources=[
+  {source_id:"src-fssp-paris",url:"https://example.org/mass",source_type:"COMMUNITY_OFFICIAL"},
+  {source_id:"src-ibp-sydney",url:"https://example.org/ibp",source_type:"COMMUNITY_OFFICIAL"},
+];
+const communityProfiles=[
+  {communityId:"FSSP",communionProfile:{pope_named_in_canon:"YES"}},
+  {communityId:"IBP",communionProfile:{pope_named_in_canon:"UNKNOWN"}},
+];
+const communities=[
+  {id:"FSSP",abbreviation:"FSSP",name:"Priestly Fraternity of Saint Peter"},
+  {id:"IBP",abbreviation:"IBP",name:"Institute of the Good Shepherd"},
+];
+
+const records=joinDirectoryRecords({venues,ministries,schedules,sources,communityProfiles});
+assert.equal(records.length,2);
+assert.equal(records[0].ministries[0].schedules.length,1);
+assert.equal(communionValue(records[0]),"YES");
+assert.equal(communionValue(records[1]),"UNKNOWN");
+
+assert.equal(filterDirectoryRecords(records,{query:"Paris"}).length,1);
+assert.equal(filterDirectoryRecords(records,{affiliations:["FSSP"]}).length,1);
+assert.equal(filterDirectoryRecords(records,{unaCum:"YES"}).length,1);
+assert.equal(filterDirectoryRecords(records,{liturgy:"1962"}).length,2);
+assert.equal(filterDirectoryRecords(records,{massType:"SUNG"}).length,1);
+assert.equal(filterDirectoryRecords(records,{day:"SUNDAY"}).length,1);
+
+const stats=directoryStats(records);
+assert.equal(stats.venues,2);
+assert.equal(stats.countries,2);
+assert.equal(stats.geocoded,1);
+
+const vm=buildFindViewModel({
+  language:"en",records,communities,loadedProviders:["fssp","ibp"],unavailableProviders:["sspx"],view:"list",
+  filters:{query:"",day:"ANY",affiliations:[],unaCum:"ANY",liturgy:"ANY",massType:"ANY"},
+  selectedId:"ao-fssp-paris",
+});
+const html=renderFindToString(vm);
+assert.match(html,/Find a Mass/);
+assert.match(html,/Église Saint-Test/);
+assert.match(html,/UNA CUM/);
+assert.match(html,/Roman · 1962/);
+assert.match(html,/Archidiocèse de Paris/);
+assert.match(html,/Official source/);
+assert.match(html,/Directions/);
+assert.match(html,/data-find-filter="unaCum"/);
+assert.match(html,/data-find-affiliation="SSPX"/);
+
+const empty=renderFindToString(buildFindViewModel({
+  language:"en",records:[],communities,loadedProviders:[],unavailableProviders:["fssp","icksp","ibp","sspx"],view:"list",
+  filters:{},
+}));
+assert.match(empty,/Directory snapshot not published yet/);
+assert.match(empty,/No locations are being invented/);
+
+assert.match(FIND_MAP_RUNTIME.module,/maplibre-gl/);
+assert.match(FIND_MAP_RUNTIME.style,/openfreemap/);
+
+const browserSource=readFileSync("src/find/browser-entry.js","utf8");
+assert.match(browserSource,/AO_FIND_APP_V1/);
+assert.match(browserSource,/data-find-query/);
+assert.match(browserSource,/mountFindMap/);
+assert.match(browserSource,/navigate\?\.\("home"\)/);
+assert.doesNotMatch(browserSource,/Église Saint-Test|Sydney Apostolate/,"Find browser owner hardcodes fixture locations");
+
+console.log("PASS Find a Mass modular surface");

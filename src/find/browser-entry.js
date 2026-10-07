@@ -1,0 +1,133 @@
+import { filterDirectoryRecords, loadDirectoryDataset } from "./data-service.js";
+import { buildFindViewModel, renderFindToString } from "./presentation.js";
+import { mountFindMap } from "./map-runtime.js";
+
+const VERSION="find-a-mass-v1";
+const ROOT_ID="ao-find-modular-root";
+const language=win=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"?"fr":"en";
+const getRoot=win=>win?.document?.getElementById?.(ROOT_ID)??null;
+
+function ensureRoot(win){
+  let node=getRoot(win);
+  if(node)return node;
+  node=win?.document?.createElement?.("div");
+  if(!node)return null;
+  node.id=ROOT_ID;
+  node.dataset.aoFindRoot=VERSION;
+  win.document.body?.append?.(node);
+  return node;
+}
+function installStyle(win){
+  if(win?.document?.getElementById?.("ao-find-style-v1"))return;
+  const style=win?.document?.createElement?.("style");
+  if(!style)return;
+  style.id="ao-find-style-v1";
+  style.textContent=[
+    "#"+ROOT_ID+"{position:fixed;inset:0;z-index:2147481800;display:none;background:#080c12;color:#efe7d4;font-family:var(--ao-font-body,Georgia,serif)}",
+    "#"+ROOT_ID+"[data-open=true]{display:block}",
+    ".aoFindSurface{height:100%;overflow:auto;background:linear-gradient(180deg,#0d131c,#080c12 38%);padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}",
+    ".aoFindHeader{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:14px 16px;background:rgba(8,12,18,.94);border-bottom:1px solid rgba(217,197,154,.15);backdrop-filter:blur(14px)}",
+    ".aoFindHeader button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(217,197,154,.22);background:transparent;color:inherit;font-size:22px}",
+    ".aoFindHeader small,.aoFindCard small,.aoFindFacts small,.aoFindSchedules>small{font:600 10px/1.2 sans-serif;letter-spacing:.12em;color:#b7a57d}",
+    ".aoFindHeader h1{margin:2px 0 0;font:600 24px/1.05 var(--ao-font-display,Georgia,serif)}",
+    ".aoFindHeader>span{font:600 9px/1.2 sans-serif;letter-spacing:.09em;color:#8f846e}",
+    ".aoFindSearch{padding:16px}.aoFindSearch input{width:100%;box-sizing:border-box;padding:14px 15px;border-radius:12px;border:1px solid rgba(217,197,154,.18);background:#111923;color:#fff;font:16px/1.2 inherit}",
+    ".aoFindViewTabs{display:flex;gap:6px;padding:0 16px 10px}",
+    ".aoFindViewTabs button,.aoFindFilters button{border:1px solid rgba(217,197,154,.16);background:#0e151e;color:#c9bea8;border-radius:999px;padding:9px 12px;font:600 11px/1 sans-serif}",
+    ".aoFindViewTabs button.active,.aoFindFilters button.active{background:#d9c59a;color:#080c12;border-color:#d9c59a}",
+    ".aoFindFilters{padding:0 16px 12px}.aoFindFilters>div,.aoFindFilters details>div{display:flex;gap:7px;overflow:auto;padding:5px 0}.aoFindFilters summary{cursor:pointer;color:#b7a57d;font:600 11px sans-serif;margin:6px 0}",
+    ".aoFindResultMeta{padding:8px 16px 12px;color:#978c77;font:12px sans-serif}.aoFindResultMeta strong{color:#efe7d4;font-size:18px;margin-right:6px}",
+    ".aoFindList{display:grid;gap:10px;padding:0 16px 40px}.aoFindCard{text-align:left;border:1px solid rgba(217,197,154,.14);background:#0d141d;color:inherit;border-radius:16px;padding:15px}",
+    ".aoFindCardTop{display:flex;justify-content:space-between;gap:10px}.aoFindCard strong{display:block;font-size:18px;margin:8px 0 4px}.aoFindCard>span:not(.aoFindCardTop),.aoFindCard em{display:block;color:#9f9582;font-style:normal;font-size:13px}.aoFindCard p{margin:10px 0 0;color:#c8bda8;font-size:13px;line-height:1.4}",
+    ".aoFindStatus{font:600 9px sans-serif;letter-spacing:.05em;color:#8f846e}.aoFindStatus[data-state=YES]{color:#c8b27f}",
+    ".aoFindEmpty{margin:16px;border:1px solid rgba(217,197,154,.15);border-radius:16px;padding:22px;background:#0d141d}.aoFindEmpty strong{font-size:19px}.aoFindEmpty p{color:#aaa08d;line-height:1.5}",
+    ".aoFindMap{height:calc(100vh - 250px);min-height:420px;margin:0 12px 24px;border-radius:16px;overflow:hidden;border:1px solid rgba(217,197,154,.15);background:#0d141d}.aoFindMapFallback{height:100%;display:grid;place-content:center;text-align:center;gap:8px;color:#a99e89}.aoFindMapFallback strong{color:#efe7d4;font-size:24px}",
+    ".aoFindSheetBackdrop{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.68);display:flex;align-items:flex-end}.aoFindSheet{max-height:82vh;overflow:auto;width:100%;box-sizing:border-box;background:#0d141d;border-top:1px solid rgba(217,197,154,.25);border-radius:22px 22px 0 0;padding:20px}",
+    ".aoFindSheet header{display:grid;grid-template-columns:1fr 40px;gap:12px}.aoFindSheet h2{margin:4px 0 5px;font-size:24px}.aoFindSheet header p{margin:0;color:#a99e89}.aoFindSheet header button{border:0;background:transparent;color:#eee;font-size:28px}",
+    ".aoFindFacts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.aoFindFacts>div{background:#101923;border-radius:12px;padding:12px}.aoFindFacts strong{display:block;margin-top:5px;font-size:13px}",
+    ".aoFindSchedules article{border-top:1px solid rgba(217,197,154,.12);padding:10px 0}.aoFindSchedules p{white-space:pre-line;color:#c0b6a3;font-size:13px}",
+    ".aoFindActions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.aoFindActions a{border:1px solid rgba(217,197,154,.2);border-radius:999px;padding:9px 12px;color:#e7d8b8;text-decoration:none;font:600 11px sans-serif}.aoFindSheet footer{color:#8f846e;font-size:11px}",
+    "@media(min-width:800px){.aoFindSurface{max-width:980px;margin:auto;border-left:1px solid rgba(217,197,154,.08);border-right:1px solid rgba(217,197,154,.08)}.aoFindList{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindSheet{max-width:720px;margin:0 auto}.aoFindSheetBackdrop{justify-content:center}}"
+  ].join("");
+  win.document.head?.append?.(style);
+}
+export function createFindOwner(win=globalThis){
+  let openState=false,dataset=null,mapHandle=null,loading=null;
+  const state={view:"list",query:"",day:"ANY",affiliations:[],unaCum:"ANY",liturgy:"ANY",massType:"ANY",selectedId:null};
+  async function ensureData(){
+    if(dataset)return dataset;
+    if(!loading)loading=loadDirectoryDataset({fetchImpl:win?.fetch?.bind?.(win)??fetch}).then(value=>{dataset=value;return value}).finally(()=>{loading=null});
+    return loading;
+  }
+  function filtered(){return filterDirectoryRecords(dataset?.records??[],state)}
+  async function paint(){
+    const node=ensureRoot(win);if(!node)return false;
+    installStyle(win);
+    const data=await ensureData(),records=filtered();
+    const vm=buildFindViewModel({language:language(win),records,communities:data.communities,loadedProviders:data.loadedProviders,unavailableProviders:data.unavailableProviders,view:state.view,filters:state,selectedId:state.selectedId});
+    node.innerHTML=renderFindToString(vm);node.dataset.open=openState?"true":"false";
+    mapHandle?.destroy?.();mapHandle=null;
+    if(openState&&state.view==="map"){
+      const mapNode=node.querySelector?.("[data-find-map]");
+      try{mapHandle=await mountFindMap(mapNode,records,{win,onSelect:id=>{state.selectedId=id;void paint()}})}
+      catch(error){
+        const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
+        if(fallback)fallback.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
+        console.error("Find map failed",error);
+      }
+    }
+    return true;
+  }
+  async function open(){
+    try{win?.AO_LEARN_APP_V1?.close?.()}catch{}
+    try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
+    try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
+    openState=true;
+    const node=ensureRoot(win);if(node)node.dataset.open="true";
+    await paint();
+    try{win?.AO_APP_SHELL_V1?.syncSurface?.("find")}catch{}
+    return true;
+  }
+  function close(){
+    openState=false;state.selectedId=null;mapHandle?.destroy?.();mapHandle=null;
+    const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
+    return true;
+  }
+  function setFilter(key,value){
+    if(key==="view")state.view=value==="map"?"map":"list";
+    else if(Object.hasOwn(state,key))state[key]=value;
+    state.selectedId=null;void paint();
+  }
+  function onClick(event){
+    if(!openState)return;
+    const target=event?.target;
+    if(target?.closest?.("[data-find-close]")){event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
+    if(target?.closest?.("[data-find-close-detail]")){state.selectedId=null;void paint();return}
+    const venue=target?.closest?.("[data-find-venue]");if(venue){state.selectedId=venue.dataset.findVenue;void paint();return}
+    const aff=target?.closest?.("[data-find-affiliation]");
+    if(aff){
+      const id=aff.dataset.findAffiliation,index=state.affiliations.indexOf(id);
+      if(index>=0)state.affiliations.splice(index,1);else state.affiliations.push(id);
+      state.selectedId=null;void paint();return;
+    }
+    const filter=target?.closest?.("[data-find-filter]");if(filter){setFilter(filter.dataset.findFilter,filter.dataset.findFilterValue);return}
+  }
+  function onInput(event){
+    if(!openState)return;
+    const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
+    state.query=input.value??"";state.selectedId=null;void paint();
+  }
+  win?.document?.addEventListener?.("click",onClick,true);
+  win?.document?.addEventListener?.("input",onInput,true);
+  installStyle(win);ensureRoot(win);
+  return Object.freeze({
+    version:VERSION,open,close,paint,
+    status:()=>Object.freeze({installed:true,open:openState,loadedProviders:dataset?.loadedProviders??[],unavailableProviders:dataset?.unavailableProviders??[],records:dataset?.records?.length??0,view:state.view}),
+    dispose(){close();win?.document?.removeEventListener?.("click",onClick,true);win?.document?.removeEventListener?.("input",onInput,true);getRoot(win)?.remove?.()}
+  });
+}
+export function installFindBrowserOwner(win=globalThis){
+  if(win?.AO_FIND_APP_V1)return win.AO_FIND_APP_V1;
+  const api=createFindOwner(win);win.AO_FIND_APP_V1=api;return api;
+}
+if(typeof window!=="undefined"&&typeof document!=="undefined")installFindBrowserOwner(window);
