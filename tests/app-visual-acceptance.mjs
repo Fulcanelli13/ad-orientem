@@ -592,6 +592,8 @@ try{
       text:(card?.innerText??"").replace(/\s+/g," ").trim(),
       latinHidden:latin?.hidden??null,
       vernHidden:vern?.hidden??null,
+      latinVisible:Boolean(latin&&getComputedStyle(latin).display!=="none"&&getComputedStyle(latin).visibility!=="hidden"&&latin.getClientRects().length),
+      vernVisible:Boolean(vern&&getComputedStyle(vern).display!=="none"&&getComputedStyle(vern).visibility!=="hidden"&&vern.getClientRects().length),
       face:flip?.dataset?.face??null,
     };
   });
@@ -600,8 +602,10 @@ try{
   assert.ok(rosaryPrayerGeometry.scrollWidth-rosaryPrayerGeometry.clientWidth<=1,"Rosary prayer card has horizontal overflow");
   assert.match(rosaryPrayerGeometry.text,/Our Father/i,"Visible Rosary Next did not advance to the Our Father");
   assert.equal(rosaryPrayerGeometry.face,"vernacular","Rosary prayer text does not default to vernacular");
-  assert.equal(rosaryPrayerGeometry.latinHidden,true,"Rosary shows Latin simultaneously with the vernacular");
-  assert.equal(rosaryPrayerGeometry.vernHidden,false,"Rosary vernacular face is hidden by default");
+  assert.equal(rosaryPrayerGeometry.latinHidden,true,"Rosary Latin face is not marked hidden");
+  assert.equal(rosaryPrayerGeometry.vernHidden,false,"Rosary vernacular face is marked hidden by default");
+  assert.equal(rosaryPrayerGeometry.latinVisible,false,"Rosary visually renders Latin simultaneously with the vernacular");
+  assert.equal(rosaryPrayerGeometry.vernVisible,true,"Rosary vernacular face is not actually visible");
 
   // Advance through the actual prayer sequence to Mystery I. The permanent
   // Overview control was removed because it duplicated navigation and crowded the header.
