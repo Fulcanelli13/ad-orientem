@@ -115,6 +115,10 @@ const assets=readFileSync("src/assets/asset-registry.js","utf8");
 assert.match(runtime,/44\.0-bilingual-novenas-v1/);
 assert.match(runtime,/NOVENA_CORPUS_V4 as CORPUS/,"Novenas runtime is not consuming completed V4 corpus");
 assert.match(runtime,/pray\.novenas/,"Novenas route is not registered");
+assert.doesNotMatch(runtime,/function injectHome|aoN1InsertedSection|MutationObserver/,"Novenas regained DOM-based PRAY hub injection");
+assert.match(runtime,/OPEN_OPTS\.returnFamily/,"Novenas no longer return to their owning PRAY family");
+assert.match(runtime,/openFamily\?\.\(OPEN_OPTS\.returnFamily\)/,"Novenas family return is not delegated to the canonical PRAY owner");
+
 assert.match(runtime,/data-n1-mode/,"Guided\/Simple control disappeared");
 assert.match(runtime,/class="aoP435930Back" data-n1-back/,"Novena header lost donor Back control");
 assert.match(runtime,/class="aoP435930Close" data-n1-close/,"Novena header lost donor Close control");
