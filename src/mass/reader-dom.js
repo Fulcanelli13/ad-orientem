@@ -596,15 +596,35 @@ function syncRailVisibility(root){
   stage.dataset.rightRail=String(live);
 }
 
+const FROZEN_SYMBOL_MASK_KEYS=Object.freeze(new Set(["stand","kneel","genuflect"]));
+
 function applyIcon(root, slot, key, iconResolver){
   const el=root.querySelector(`[data-icon-slot="${slot}"]`);
   if(!el) return;
   const src = key && typeof iconResolver === "function" ? iconResolver(key) : null;
-  if(!src){el.hidden=true;el.style.maskImage="";el.style.webkitMaskImage="";return;}
+  if(!src){
+    el.hidden=true;
+    el.style.maskImage="";
+    el.style.webkitMaskImage="";
+    el.style.maskSize="";
+    el.style.webkitMaskSize="";
+    el.style.maskPosition="";
+    el.style.webkitMaskPosition="";
+    return;
+  }
   el.hidden=false;
   const css=`url("${String(src).replace(/"/g,'\\\"')}")`;
   el.style.maskImage=css;
   el.style.webkitMaskImage=css;
+  // Three frozen posture symbols intentionally preserve the original lowercase
+  // SVG "viewbox" spelling. Browsers therefore expose a 300x150 replaced-image
+  // canvas when used as an external CSS mask. Compensate at render time only:
+  // scale the 128x128 drawing region to the icon box and crop the unused canvas.
+  const frozenSymbol=FROZEN_SYMBOL_MASK_KEYS.has(String(key??""));
+  el.style.maskSize=frozenSymbol ? "234.375% 117.1875%" : "contain";
+  el.style.webkitMaskSize=frozenSymbol ? "234.375% 117.1875%" : "contain";
+  el.style.maskPosition=frozenSymbol ? "left top" : "center";
+  el.style.webkitMaskPosition=frozenSymbol ? "left top" : "center";
 }
 
 export function createReaderDomAdapter({
