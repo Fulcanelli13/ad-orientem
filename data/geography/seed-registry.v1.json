@@ -175,6 +175,61 @@
       "codes": {
         "iso_alpha2": "CA"
       }
+    },
+    {
+      "geo_area_id": "geo:country:IT",
+      "name": {
+        "official": "Italy",
+        "aliases": [
+          "Italia"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "IT"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PL",
+      "name": {
+        "official": "Poland",
+        "aliases": [
+          "Polska"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PL"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GB",
+      "name": {
+        "official": "United Kingdom",
+        "aliases": [
+          "Great Britain",
+          "United Kingdom of Great Britain and Northern Ireland"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GB"
+      }
     }
   ],
   "places": [
@@ -865,6 +920,229 @@
       },
       "source_ids": [
         "SHR-MARTYRS-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:IT:loreto-santa-casa",
+      "name": {
+        "official": "Santuario Pontificio della Santa Casa di Loreto",
+        "aliases": [
+          "Basilica della Santa Casa",
+          "Holy House of Loreto"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Piazza della Madonna 1",
+        "line2": null,
+        "postal_code": "60025",
+        "city": "Loreto",
+        "region": "Marche",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza della Madonna 1, 60025 Loreto (AN), Italy"
+      },
+      "source_ids": [
+        "SHR-LORETO-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "name": {
+        "official": "Pontificio Santuario della Beata Maria Vergine del Santo Rosario di Pompei",
+        "aliases": [
+          "Pontifical Shrine of Our Lady of the Rosary of Pompeii",
+          "Pompeii Rosary Shrine"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Piazza Bartolo Longo 1",
+        "line2": null,
+        "postal_code": "80045",
+        "city": "Pompei",
+        "region": "Campania",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza Bartolo Longo 1, 80045 Pompei (NA), Italy"
+      },
+      "source_ids": [
+        "SHR-POMPEI-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:PL:jasna-gora",
+      "name": {
+        "official": "Jasna Góra",
+        "aliases": [
+          "Jasna Góra Monastery",
+          "Sanctuary of Our Lady of Częstochowa"
+        ]
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "ul. o. A. Kordeckiego 2",
+        "line2": null,
+        "postal_code": "42-200",
+        "city": "Częstochowa",
+        "region": "Silesian",
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "ul. o. A. Kordeckiego 2, 42-200 Częstochowa, Poland"
+      },
+      "source_ids": [
+        "SHR-JASNA-GORA-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "name": {
+        "official": "Sanktuarium Pasyjno-Maryjne w Kalwarii Zebrzydowskiej",
+        "aliases": [
+          "Kalwaria Zebrzydowska Sanctuary",
+          "Bernardine Monastery of Kalwaria Zebrzydowska"
+        ]
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "ul. Bernardyńska 46",
+        "line2": null,
+        "postal_code": "34-130",
+        "city": "Kalwaria Zebrzydowska",
+        "region": "Lesser Poland",
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "ul. Bernardyńska 46, 34-130 Kalwaria Zebrzydowska, Poland"
+      },
+      "source_ids": [
+        "SHR-KALWARIA-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "name": {
+        "official": "Catholic National Shrine and Basilica of Our Lady, Walsingham",
+        "aliases": [
+          "Catholic National Shrine of Our Lady of Walsingham",
+          "Slipper Chapel Shrine"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:GB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "RC National Shrine",
+        "line2": "Houghton St Giles",
+        "postal_code": "NR22 6AL",
+        "city": "Walsingham",
+        "region": "Norfolk",
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "formatted": "RC National Shrine, Houghton St Giles, Walsingham, Norfolk NR22 6AL, United Kingdom"
+      },
+      "source_ids": [
+        "SHR-WALSINGHAM-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride",
+      "name": {
+        "official": "St Winefride's Shrine & Well",
+        "aliases": [
+          "St Winefride's Well",
+          "Holywell Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:GB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "Greenfield Street",
+        "line2": null,
+        "postal_code": "CH8 7PN",
+        "city": "Holywell",
+        "region": "Flintshire",
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "formatted": "St Winefride's Shrine & Well, Greenfield Street, Holywell, Flintshire CH8 7PN, United Kingdom"
+      },
+      "source_ids": [
+        "SHR-HOLYWELL-CONTACT"
+      ]
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride-church",
+      "name": {
+        "official": "St Winefride's RC Church, Holywell",
+        "aliases": [
+          "Church of St Winefride, Holywell"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:GB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": null,
+        "lng": null
+      },
+      "address": {
+        "line1": "15 Well Street",
+        "line2": null,
+        "postal_code": "CH8 7PL",
+        "city": "Holywell",
+        "region": "Flintshire",
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "formatted": "15 Well Street, Holywell, Flintshire CH8 7PL, United Kingdom"
+      },
+      "source_ids": [
+        "SHR-HOLYWELL-PARISH"
       ]
     }
   ],

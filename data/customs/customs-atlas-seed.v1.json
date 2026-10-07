@@ -624,6 +624,102 @@
       "evidence_note": "Notre-Dame-du-Cap offers a novena candle lit at the shrine for intentions during the Assumption novena.",
       "map_policy": "PLACE",
       "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:LORETO-VENUTA",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:IT",
+      "place_id": "place:IT:loreto-santa-casa",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Longstanding annual shrine observance → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "LORETO-VENUTA-CUSTOM"
+      ],
+      "evidence_note": "The Pontifical Shrine documents the annual Venuta and feast of Our Lady of Loreto on 9–10 December.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:POMPEI-SUPPLICA",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:IT",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual shrine observance → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "POMPEI-SUPPLICA-CUSTOM"
+      ],
+      "evidence_note": "The Pontifical Shrine documents the recurring 8 May Supplica as a major annual Marian observance.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:JASNA-GORA",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:PL",
+      "place_id": "place:PL:jasna-gora",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Longstanding annual shrine feast → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "JASNA-GORA-FEAST-CUSTOM"
+      ],
+      "evidence_note": "Jasna Góra documents the 26 August feast of Our Lady of Częstochowa and the convergence of large walking pilgrimages.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:KALWARIA-ASSUMPTION",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:PL",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Annual Assumption pilgrimage cycle → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "KALWARIA-ASSUMPTION-CUSTOM"
+      ],
+      "evidence_note": "Kalwaria Zebrzydowska documents the 9–16 August Assumption pilgrimage cycle with multiple traditional processions.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:WALSINGHAM",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:GB",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Restored national shrine feast → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "WALSINGHAM-FEAST-CUSTOM"
+      ],
+      "evidence_note": "The Catholic National Shrine documents the annual 24 September feast of Our Lady of Walsingham.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEV-007:HOLYWELL-ST-WINEFRIDE",
+      "custom_id": "DEV-007",
+      "geo_area_id": "geo:country:GB",
+      "place_id": "place:GB:holywell-st-winefride",
+      "place_name_hint": null,
+      "geographic_precision": "PLACE",
+      "period_label": "Ancient local feast and pilgrimage tradition → present",
+      "strength": "STRONG",
+      "source_ids": [
+        "HOLYWELL-FEAST-CUSTOM"
+      ],
+      "evidence_note": "St Winefride's Shrine documents the 3 November feast with Mass, litany and relic veneration.",
+      "map_policy": "PLACE",
+      "confidence": "HIGH"
     }
   ]
 }
