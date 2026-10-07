@@ -1,38 +1,42 @@
 {
   "schema": "AO_DIRECTORY_GEOCODING_REPORT_V1",
-  "generated_at": "2026-10-07T10:29:50.310Z",
+  "generated_at": "2026-10-07T11:07:11.377Z",
   "provider": "OSM_NOMINATIM",
   "endpoint": "https://nominatim.openstreetmap.org/search",
   "providers": {
     "fssp": {
-      "total": 406,
-      "mapped": 14,
-      "accepted": 14,
-      "existing_valid": 0,
-      "unresolved": 392,
+      "total": 404,
+      "mapped": 285,
+      "accepted": 271,
+      "primary_accepted": 0,
+      "fallback_accepted": 271,
+      "existing_valid": 14,
+      "unresolved": 119,
       "existing_invalid": 0,
       "validation_issue_count": 0,
       "by_precision": {
-        "building": 14,
-        "address": 0,
-        "street": 0,
-        "locality": 0,
+        "building": 135,
+        "address": 81,
+        "street": 62,
+        "locality": 7,
         "region": 0,
         "unknown": 0
       }
     },
     "icksp": {
       "total": 27,
-      "mapped": 3,
-      "accepted": 3,
-      "existing_valid": 0,
-      "unresolved": 24,
+      "mapped": 22,
+      "accepted": 19,
+      "primary_accepted": 0,
+      "fallback_accepted": 19,
+      "existing_valid": 3,
+      "unresolved": 5,
       "existing_invalid": 0,
       "validation_issue_count": 0,
       "by_precision": {
-        "building": 3,
-        "address": 0,
-        "street": 0,
+        "building": 13,
+        "address": 6,
+        "street": 3,
         "locality": 0,
         "region": 0,
         "unknown": 0
@@ -40,23 +44,25 @@
     },
     "ibp": {
       "total": 34,
-      "mapped": 15,
-      "accepted": 15,
-      "existing_valid": 0,
-      "unresolved": 19,
+      "mapped": 25,
+      "accepted": 10,
+      "primary_accepted": 0,
+      "fallback_accepted": 10,
+      "existing_valid": 15,
+      "unresolved": 9,
       "existing_invalid": 0,
       "validation_issue_count": 0,
       "by_precision": {
-        "building": 1,
-        "address": 0,
-        "street": 1,
+        "building": 2,
+        "address": 3,
+        "street": 7,
         "locality": 13,
         "region": 0,
         "unknown": 0
       }
     }
   },
-  "network_requests": 464,
+  "network_requests": 397,
   "offline": false,
-  "cache_records": 464
+  "cache_records": 861
 }

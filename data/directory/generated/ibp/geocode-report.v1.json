@@ -1,18 +1,18 @@
 {
   "schema": "AO_DIRECTORY_PROVIDER_GEOCODE_REPORT_V1",
   "provider": "IBP",
-  "generated_at": "2026-10-07T11:04:48.501Z",
+  "generated_at": "2026-10-07T11:14:10.485Z",
   "total": 34,
-  "existing_valid": 0,
-  "accepted": 15,
-  "primary_accepted": 15,
-  "fallback_accepted": 0,
-  "unresolved": 19,
+  "existing_valid": 15,
+  "accepted": 10,
+  "primary_accepted": 0,
+  "fallback_accepted": 10,
+  "unresolved": 9,
   "existing_invalid": 0,
   "by_precision": {
-    "building": 1,
-    "address": 0,
-    "street": 1,
+    "building": 2,
+    "address": 3,
+    "street": 7,
     "locality": 13,
     "region": 0,
     "unknown": 0
@@ -37,42 +37,6 @@
       ]
     },
     {
-      "venue_id": "ao-ibp-bordeaux-1-rue-saint-eloi-33000-bordeaux-cure-m-l-abbe-gregory-lutz-wiest-vicaire-m-l-abbe-yvain-cartier-collaborateur-m-l-abbe-vilhelm-torbiorn-contact-curesainteloi-glw-fr-07-86-07-28-00-1",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Bordeaux, 1 rue Saint-Eloi, 33000 Bordeaux",
-          "key": "d4235b99ec92ac99b026e4f4c74e15816f7e10b1c1f0f39cbed6bfa8570c5f74",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "1 rue Saint-Eloi, 33000 Bordeaux",
-          "key": "e95c2db25e2cf03634926a7434837db7c98b9a89512ab3c30e171bdfd8637e22",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-marseille-1-rue-du-bon-jesus-13002-marseille-2",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Marseille, 1, rue du Bon-Jésus, 13002 Marseille",
-          "key": "0524d39981b7e8232eb3fb8b37a05b2af5a06e0206ae4aefc0ff0dfb4ac91bbe",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "1, rue du Bon-Jésus, 13002 Marseille",
-          "key": "f48580c22a8312fcfac7c2b027e1313da058d67b4b89d7797dfec8b66d498345",
-          "candidates": []
-        }
-      ]
-    },
-    {
       "venue_id": "ao-ibp-courtalain-20-place-alexandre-rillie-28290-courtalain-pretres-recteur-abbe-gian-strapazzon-econome-abbe-maximilian-eynaud-pretres-abbe-philippe-laguerie-abbe-dominique-pillet-abbe-serge-christian-vallet-abbe-eryc-dos-santos-abbe-sebastian-crawford-abbe-jan-andrzejewski-abbe-jean-cuchet-3",
       "reason": "NO_TRUSTWORTHY_MATCH",
       "attempts": [
@@ -86,78 +50,6 @@
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "20, Place Alexandre Rillié, 28290 Courtalain",
           "key": "9f5a13753721d872e4368c2e52dfe1fcde233be5c4febb71f5c76c3a0a6b1c69",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-manou-1-rue-du-chateau-28240-manou-chapelain-m-l-abbe-maximilian-eynaud-contact-0-7-62-72-34-72-autres-lieux-d-apostolat-en-france-paris-bordeaux-marseille-courtalain-montmirail-les-chapelles-bourbon-retour-a-la-liste-de-nos-implantations-2026-institut-du-bon-pasteur-tous-droits-reserves-contactez-nous-mentions-legales-shopping-basket-nous-utilisons-des-cookies-dans-le-respect-de-votre-vie-privee-pour-ameliorer-votre-experience-de-navigation-et-analyser-notre-trafic-en-cliquant-sur-accepter-vous-consentez-a-notre-utilisation-des-cookies-accepter-et-fermer-continuer-sans-accepter-revoquer-les-cookies-4",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Manou, 1 Rue du Château, 28240 Manou .",
-          "key": "ed988a4515fde64b476fed23a2f6c093a372021ab2ebd80587c7c2bf0dc0d3bd",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "1 Rue du Château, 28240 Manou .",
-          "key": "40d31b91dc6d775d82bfd33f71dc4de30e960144dbb2ce99f5d3cda20a3b3f76",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-montmirail-place-de-l-eglise-72320-montmirail-chapelain-m-l-abbe-eryc-dos-santos-autres-lieux-d-apostolat-en-france-paris-bordeaux-marseille-courtalain-manou-les-chapelles-bourbon-retour-a-la-liste-de-nos-implantations-2026-institut-du-bon-pasteur-tous-droits-reserves-contactez-nous-mentions-legales-shopping-basket-nous-utilisons-des-cookies-dans-le-respect-de-votre-vie-privee-pour-ameliorer-votre-experience-de-navigation-et-analyser-notre-trafic-en-cliquant-sur-accepter-vous-consentez-a-notre-utilisation-des-cookies-accepter-et-fermer-continuer-sans-accepter-revoquer-les-cookies-5",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Montmirail, Place de l’Église, 72320 Montmirail .",
-          "key": "e500b58532b14a9a9d80b07ba2b2594e44d67e01267a288f3b9af3e7c8559d42",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Place de l’Église, 72320 Montmirail .",
-          "key": "7ae9d2a9bf039f328d2eecce8d5edf7b74b6dda018e19a716283b2934a749675",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-neufmoutiers-en-brie-1-rue-de-l-eglise-77610-neufmoutiers-en-brie-chapelain-m-l-abbe-marin-cottard-contact-07-70-18-62-77-marin-cottard-yahoo-fr-autres-lieux-d-apostolat-en-france-paris-bordeaux-marseille-courtalain-manou-montmirail-retour-a-la-liste-de-nos-implantations-2026-institut-du-bon-pasteur-tous-droits-reserves-contactez-nous-mentions-legales-shopping-basket-nous-utilisons-des-cookies-dans-le-respect-de-votre-vie-privee-pour-ameliorer-votre-experience-de-navigation-et-analyser-notre-trafic-en-cliquant-sur-accepter-vous-consentez-a-notre-utilisation-des-cookies-accepter-et-fermer-continuer-sans-accepter-revoquer-les-cookies-6",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Neufmoutiers-en-Brie, 1 rue de l’Église, 77610 Neufmoutiers-en-Brie",
-          "key": "572077cde89baf7bf09677be6174be113e4749f893dec6ecdb3dd643d2e987f7",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "1 rue de l’Église, 77610 Neufmoutiers-en-Brie",
-          "key": "d8852cb9ce4da1f75586ed4da95747e2d5a058419ec5dac97b891d3f55f0646a",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-acy-rue-du-chauffour-02200-acy-chapelain-m-l-abbe-cristian-nivia-0-7-48-14-16-19-autres-lieux-d-apostolat-en-france-paris-bordeaux-marseille-courtalain-manou-les-chapelles-bourbon-retour-a-la-liste-de-nos-implantations-2026-institut-du-bon-pasteur-tous-droits-reserves-contactez-nous-mentions-legales-shopping-basket-nous-utilisons-des-cookies-dans-le-respect-de-votre-vie-privee-pour-ameliorer-votre-experience-de-navigation-et-analyser-notre-trafic-en-cliquant-sur-accepter-vous-consentez-a-notre-utilisation-des-cookies-accepter-et-fermer-continuer-sans-accepter-revoquer-les-cookies-8",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Acy, Rue du chauffour, 02200 Acy",
-          "key": "e41641395a17c347d3cddd2f2ddd4facb221b527b6f4f1e5b614b9f26074c462",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Rue du chauffour, 02200 Acy",
-          "key": "689dfb5bbe27589eae5093cb86cb9eb1c2b441911767608485e453f24d6e3590",
           "candidates": []
         }
       ]
@@ -217,24 +109,6 @@
       ]
     },
     {
-      "venue_id": "ao-ibp-czestochowa-al-najswietszej-maryi-panny-56-42-200-czestochowa-polska-13",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Częstochowa, al. Najświętszej Maryi Panny 56, 42-200 Częstochowa, Polska",
-          "key": "47e7dbc54338ce49822c4b91a8b626a77ac31bae2bf03da771c3f4751c983a12",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "al. Najświętszej Maryi Panny 56, 42-200 Częstochowa, Polska",
-          "key": "00aa052bf173c3ccc3519524d72c876b2d16aa5b7a07cc32ecd9466c6496a404",
-          "candidates": []
-        }
-      ]
-    },
-    {
       "venue_id": "ao-ibp-warszawa-pl-teatralny-18-00-077-warszawa-polska-14",
       "reason": "NO_TRUSTWORTHY_MATCH",
       "attempts": [
@@ -248,25 +122,18 @@
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "pl. Teatralny 18, 00-077 Warszawa, Polska",
           "key": "f59b83c8e18e8e293f809cf141bf97055dae000da3d302bd498cd9568f1666f2",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-lisbonne-rua-da-alfandega-108-1100-585-lisboa-maison-canonique-casa-de-santo-antonio-rua-de-santo-antonio-a-belem-16-1-o-1400-338-lisboa-18",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Lisbonne, Rua da Alfândega 108, 1100-585 Lisboa, Maison canonique :, Casa de Santo António, Rua de Santo António a Belém, 16 – 1.º, 1400-338 Lisboa",
-          "key": "2a8f419f388ecedd4951a2380e151c51880abdf9db8f5a43b6bd4d840cff2f83",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Rua da Alfândega 108, 1100-585 Lisboa",
-          "key": "04aae5d3baeb18894dc887c1aac70257ca9b6988c3f54b718ec204be91809466",
-          "candidates": []
+          "candidates": [
+            {
+              "display_name": "Plac Teatralny, Staromiejskie, Śródmieście Północne, Midtown, Warsaw, Masovian Voivodeship, 00-923, Poland",
+              "type": "road",
+              "country_code": "pl"
+            },
+            {
+              "display_name": "Plac Teatralny, Staromiejskie, Śródmieście Północne, Midtown, Warsaw, Masovian Voivodeship, Poland",
+              "type": "square",
+              "country_code": "pl"
+            }
+          ]
         }
       ]
     },
@@ -284,24 +151,6 @@
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Capela Nossa Senhora das Dores. Jardim Botânico III, Av. das Paineiras, Entrequadra 9/10, Brasília/DF, 71681-505.",
           "key": "138d46b0d8cc1921bdd828fec237f095bf4b2c0b0d9b9a88eac8ba48bb7b5004",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-curitiba-rua-lamenha-lins-2115-reboucas-curitiba-pr-maison-canonique-rua-nunes-machado-2040-curitiba-pr-22",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Curitiba, Rua Lamenha Lins, 2115, Rebouças, Curitiba/PR, Maison canonique : Rua Nunes Machado, 2040, Curitiba/PR.",
-          "key": "77f7ec8f3049837e92f9244f3d7357be867ddb1e946f87f5f5c9f962b6d2c612",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "Rua Lamenha Lins, 2115, Rebouças, Curitiba/PR",
-          "key": "6797231f6b59b981046b7326b732bd37016a84a5d69f51c9a89f9c81229da024",
           "candidates": []
         }
       ]
@@ -338,24 +187,6 @@
           "kind": "FALLBACK_ADDRESS_ONLY",
           "query": "Capilla Nuestra Señora del Perpetuo Socorro. TRANSVERSAL 28A, N. 36-47 – Barrio La Soledad, BOGOTA/DC.",
           "key": "09e0a17cdc136d282ad74ac2ccb2154e57e74f0530f4cb118e6cfb84e4f048f8",
-          "candidates": []
-        }
-      ]
-    },
-    {
-      "venue_id": "ao-ibp-winchester-80-richmond-rd-winchester-nh-03470-pretre-responsable-m-l-abbe-hugues-beaugrand-29",
-      "reason": "NO_TRUSTWORTHY_MATCH",
-      "attempts": [
-        {
-          "kind": "PRIMARY_NAME_ADDRESS",
-          "query": "Winchester, 80 Richmond Rd, Winchester, NH 03470, Prêtre responsable : M. l’Abbé Hugues Beaugrand",
-          "key": "5a1ac00d49d78581c1a9053ea500aa8722d4df08856fc3d28dc6975878e51700",
-          "candidates": []
-        },
-        {
-          "kind": "FALLBACK_ADDRESS_ONLY",
-          "query": "80 Richmond Rd, Winchester, NH 03470",
-          "key": "de9def47f469f13c4df85fb2f8653625d161cf7f8ecfb6e734e622877347a8c4",
           "candidates": []
         }
       ]
