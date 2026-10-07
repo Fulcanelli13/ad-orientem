@@ -1,0 +1,532 @@
+{
+  "schema": "ao-catholic-glossary-campion-v1",
+  "version": "1.0.0",
+  "status": "CANONICAL_REFERENCE_EXTENSION",
+  "purpose": "Campion-derived liturgical terms rehomed as reference material; 1962 rubrical claims remain governed by primary sources.",
+  "sources": [
+    {
+      "id": "SRC-CAMPION-1954",
+      "title": "Know Your Mass / Saint Edmund Campion Children's Missal (1954)",
+      "canonical_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+      "authority_type": "IMPRIMATUR_CATECHETICAL_MISSAL"
+    },
+    {
+      "id": "SRC-MR62",
+      "title": "Missale Romanum — Editio typica 1962",
+      "canonical_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "authority_type": "LITURGICAL_BOOK"
+    },
+    {
+      "id": "SRC-OCONNELL-1962",
+      "title": "J. B. O'Connell — The Celebration of Mass (1962)",
+      "canonical_url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
+      "authority_type": "CONTEMPORARY_CEREMONIAL_MANUAL"
+    }
+  ],
+  "entries": [
+    {
+      "id": "amice",
+      "category": "Vestments",
+      "term": {
+        "en": "Amice",
+        "fr": "Amict",
+        "latin": "Amictus"
+      },
+      "definition": {
+        "en": "A rectangular linen vestment placed around the shoulders beneath the alb; its vesting prayer traditionally evokes the helmet of salvation.",
+        "fr": "Pièce de lin rectangulaire portée autour des épaules sous l’aube ; sa prière de vêture évoque traditionnellement le casque du salut."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        7,
+        9
+      ]
+    },
+    {
+      "id": "alb",
+      "category": "Vestments",
+      "term": {
+        "en": "Alb",
+        "fr": "Aube",
+        "latin": "Alba"
+      },
+      "definition": {
+        "en": "The long white linen vestment worn over the amice and beneath the cincture and outer vestments.",
+        "fr": "Long vêtement blanc de lin porté sur l’amict et sous le cordon et les ornements extérieurs."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        7,
+        9
+      ]
+    },
+    {
+      "id": "cincture",
+      "category": "Vestments",
+      "term": {
+        "en": "Cincture",
+        "fr": "Cordon",
+        "latin": "Cingulum"
+      },
+      "definition": {
+        "en": "The cord tied around the alb at the waist; its traditional vesting prayer links it with purity and continence.",
+        "fr": "Cordon noué autour de l’aube à la taille ; sa prière traditionnelle de vêture l’associe à la pureté et à la continence."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "maniple",
+      "category": "Vestments",
+      "term": {
+        "en": "Maniple",
+        "fr": "Manipule",
+        "latin": "Manipulus"
+      },
+      "definition": {
+        "en": "A narrow vestment formerly worn on the left forearm at Mass; it remained part of the 1962 Roman vesture.",
+        "fr": "Ornement étroit autrefois porté à l’avant-bras gauche à la Messe ; il faisait encore partie de la vêture romaine de 1962."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "stole",
+      "category": "Vestments",
+      "term": {
+        "en": "Stole",
+        "fr": "Étole",
+        "latin": "Stola"
+      },
+      "definition": {
+        "en": "A narrow vestment worn by ordained ministers in forms proper to their order; the priest wears it under the chasuble at Mass.",
+        "fr": "Ornement étroit porté par les ministres ordonnés selon la forme propre à leur ordre ; le prêtre le porte sous la chasuble à la Messe."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "chasuble",
+      "category": "Vestments",
+      "term": {
+        "en": "Chasuble",
+        "fr": "Chasuble",
+        "latin": "Casula"
+      },
+      "definition": {
+        "en": "The principal outer Mass vestment of the priest, worn over the alb and stole. The traditional name casula is associated with the idea of a small house or covering.",
+        "fr": "Principal vêtement extérieur du prêtre à la Messe, porté sur l’aube et l’étole. Le nom traditionnel casula est associé à l’idée d’une petite maison ou enveloppe."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "biretta",
+      "category": "Vestments",
+      "term": {
+        "en": "Biretta",
+        "fr": "Barrette",
+        "latin": "Biretum"
+      },
+      "definition": {
+        "en": "The stiff clerical cap traditionally used in Roman ceremonial in contexts prescribed by the rite or custom.",
+        "fr": "Coiffe cléricale rigide traditionnellement employée dans le cérémonial romain dans les contextes prévus par le rite ou la coutume."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        11
+      ]
+    },
+    {
+      "id": "chalice",
+      "category": "Sacred vessels",
+      "term": {
+        "en": "Chalice",
+        "fr": "Calice",
+        "latin": "Calix"
+      },
+      "definition": {
+        "en": "The sacred cup in which wine is consecrated as the Precious Blood.",
+        "fr": "Vase sacré dans lequel le vin est consacré comme Précieux Sang."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        10,
+        40
+      ]
+    },
+    {
+      "id": "paten",
+      "category": "Sacred vessels",
+      "term": {
+        "en": "Paten",
+        "fr": "Patène",
+        "latin": "Patena"
+      },
+      "definition": {
+        "en": "The sacred plate associated with the Host and used by the celebrant in the Roman Mass.",
+        "fr": "Plateau sacré associé à l’Hostie et utilisé par le célébrant dans la Messe romaine."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        10,
+        37,
+        38
+      ]
+    },
+    {
+      "id": "purificator",
+      "category": "Sacred linens",
+      "term": {
+        "en": "Purificator",
+        "fr": "Purificatoire",
+        "latin": "Purificatorium"
+      },
+      "definition": {
+        "en": "A small linen cloth used in the purification and drying of the chalice and the celebrant’s fingers.",
+        "fr": "Petit linge de lin utilisé pour purifier et essuyer le calice et les doigts du célébrant."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        10,
+        87,
+        88
+      ]
+    },
+    {
+      "id": "pall",
+      "category": "Sacred linens",
+      "term": {
+        "en": "Pall",
+        "fr": "Pale",
+        "latin": "Palla"
+      },
+      "definition": {
+        "en": "A stiff square covered with linen and placed over the chalice during parts of Mass.",
+        "fr": "Carré rigide recouvert de lin et placé sur le calice pendant certaines parties de la Messe."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        11,
+        40
+      ]
+    },
+    {
+      "id": "corporal",
+      "category": "Sacred linens",
+      "term": {
+        "en": "Corporal",
+        "fr": "Corporal",
+        "latin": "Corporale"
+      },
+      "definition": {
+        "en": "A square linen cloth unfolded on the altar for the sacred vessels and Eucharistic species.",
+        "fr": "Linge carré de lin déployé sur l’autel pour les vases sacrés et les espèces eucharistiques."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        11,
+        16
+      ]
+    },
+    {
+      "id": "burse",
+      "category": "Sacred linens",
+      "term": {
+        "en": "Burse",
+        "fr": "Bourse",
+        "latin": "Bursa"
+      },
+      "definition": {
+        "en": "The stiff case traditionally used to carry the folded corporal to and from the altar.",
+        "fr": "Étui rigide traditionnellement employé pour porter le corporal plié vers l’autel et depuis celui-ci."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        11,
+        16
+      ]
+    },
+    {
+      "id": "cruets",
+      "category": "Sanctuary objects",
+      "term": {
+        "en": "Cruets",
+        "fr": "Burettes",
+        "latin": "Ampullae"
+      },
+      "definition": {
+        "en": "Small vessels holding the wine and water used at Mass.",
+        "fr": "Petits récipients contenant le vin et l’eau utilisés à la Messe."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        12,
+        38,
+        39
+      ]
+    },
+    {
+      "id": "credence",
+      "category": "Sanctuary objects",
+      "term": {
+        "en": "Credence table",
+        "fr": "Crédence",
+        "latin": "Credentia"
+      },
+      "definition": {
+        "en": "A side table in the sanctuary for vessels and other items required during the liturgy.",
+        "fr": "Table latérale du sanctuaire destinée aux vases et autres objets nécessaires à la liturgie."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        12
+      ]
+    },
+    {
+      "id": "altar-cards",
+      "category": "Sanctuary objects",
+      "term": {
+        "en": "Altar cards",
+        "fr": "Canons d’autel",
+        "latin": "Tabellae altaribus"
+      },
+      "definition": {
+        "en": "Printed cards placed on the altar containing texts the celebrant needs during Mass.",
+        "fr": "Cartons imprimés placés sur l’autel contenant des textes nécessaires au célébrant pendant la Messe."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        12
+      ]
+    },
+    {
+      "id": "altar-stone",
+      "category": "Sanctuary objects",
+      "term": {
+        "en": "Altar stone",
+        "fr": "Pierre d’autel",
+        "latin": "Petra sacra"
+      },
+      "definition": {
+        "en": "A consecrated portable altar stone traditionally set into or placed upon an altar and containing relics according to the discipline governing it.",
+        "fr": "Pierre d’autel consacrée, traditionnellement insérée ou posée sur un autel et contenant des reliques selon la discipline qui la régit."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62",
+        "SRC-OCONNELL-1962"
+      ],
+      "campion_pages": [
+        12,
+        23
+      ]
+    },
+    {
+      "id": "introit",
+      "category": "Mass terms",
+      "term": {
+        "en": "Introit",
+        "fr": "Introït",
+        "latin": "Introitus"
+      },
+      "definition": {
+        "en": "The Proper chant/text at the entrance of the Mass; in the 1962 rite the celebrant reads it and it is sung in sung forms.",
+        "fr": "Chant/texte propre de l’entrée de la Messe ; dans le rite de 1962 le célébrant le lit et il est chanté dans les formes chantées."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62"
+      ],
+      "campion_pages": [
+        24
+      ]
+    },
+    {
+      "id": "proper",
+      "category": "Mass terms",
+      "term": {
+        "en": "Proper",
+        "fr": "Propre",
+        "latin": "Proprium"
+      },
+      "definition": {
+        "en": "Texts that vary according to the day or Mass, as distinct from the more stable Ordinary.",
+        "fr": "Textes qui varient selon le jour ou la Messe, par opposition aux parties plus stables de l’Ordinaire."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62"
+      ],
+      "campion_pages": [
+        24,
+        27
+      ]
+    },
+    {
+      "id": "preface",
+      "category": "Mass terms",
+      "term": {
+        "en": "Preface",
+        "fr": "Préface",
+        "latin": "Praefatio"
+      },
+      "definition": {
+        "en": "The variable or seasonal thanksgiving prayer immediately before the Sanctus and Canon.",
+        "fr": "Prière d’action de grâces variable ou saisonnière immédiatement avant le Sanctus et le Canon."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62"
+      ],
+      "campion_pages": [
+        45
+      ]
+    },
+    {
+      "id": "canon",
+      "category": "Mass terms",
+      "term": {
+        "en": "Roman Canon",
+        "fr": "Canon romain",
+        "latin": "Canon Missae"
+      },
+      "definition": {
+        "en": "The central Eucharistic prayer of the traditional Roman Mass, extending from Te igitur through the concluding doxology before the Pater noster.",
+        "fr": "Prière eucharistique centrale de la Messe romaine traditionnelle, allant du Te igitur jusqu’à la doxologie finale avant le Pater noster."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62"
+      ],
+      "campion_pages": [
+        46,
+        49,
+        70
+      ]
+    },
+    {
+      "id": "secret",
+      "category": "Mass terms",
+      "term": {
+        "en": "Secret",
+        "fr": "Secrète",
+        "latin": "Secreta"
+      },
+      "definition": {
+        "en": "The prayer over the offerings recited quietly after Orate, fratres and before the Preface; it varies with the Mass.",
+        "fr": "Prière sur les offrandes récitée à voix basse après l’Orate, fratres et avant la Préface ; elle varie selon la Messe."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62"
+      ],
+      "campion_pages": [
+        44
+      ]
+    },
+    {
+      "id": "mass-catechumens",
+      "category": "Mass terms",
+      "term": {
+        "en": "Mass of the Catechumens",
+        "fr": "Messe des catéchumènes",
+        "latin": "Missa catechumenorum"
+      },
+      "definition": {
+        "en": "A traditional historical and catechetical name for the first major part of Mass, especially the preparatory and instructional rites before the Offertory.",
+        "fr": "Nom historique et catéchétique traditionnel de la première grande partie de la Messe, surtout les rites préparatoires et d’instruction avant l’Offertoire."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62"
+      ],
+      "campion_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "mass-faithful",
+      "category": "Mass terms",
+      "term": {
+        "en": "Mass of the Faithful",
+        "fr": "Messe des fidèles",
+        "latin": "Missa fidelium"
+      },
+      "definition": {
+        "en": "A traditional historical and catechetical name for the sacrificial part of Mass beginning with the Offertory.",
+        "fr": "Nom historique et catéchétique traditionnel de la partie sacrificielle de la Messe commençant avec l’Offertoire."
+      },
+      "sources": [
+        "SRC-CAMPION-1954",
+        "SRC-MR62"
+      ],
+      "campion_pages": [
+        13,
+        14
+      ]
+    }
+  ]
+}
