@@ -1,5 +1,6 @@
 import { communionValue } from "./data-service.js";
 import { directoryGeoLabel, isMapPublishableGeo } from "./geo-provenance.js";
+import { isMapPublishablePlaceGeo } from "./geography-contracts.js";
 
 export const EXPLORE_LENSES=Object.freeze(["tlm","shrines","traditions","pilgrimages"]);
 
@@ -84,7 +85,7 @@ function rawSchedules(record){
 function normalizeGeo(geo){
   const lat=Number(geo?.lat),lng=Number(geo?.lng);
   return Number.isFinite(lat)&&lat>=-90&&lat<=90&&Number.isFinite(lng)&&lng>=-180&&lng<=180
-    ?Object.freeze({lat,lng,precision:text(geo?.precision)||"unknown",approximate:["street","locality"].includes(text(geo?.precision)),attribution:text(geo?.attribution)})
+    ?Object.freeze({lat,lng,precision:text(geo?.precision)||"unknown",approximate:["complex_anchor","address","street","locality"].includes(text(geo?.precision)),attribution:text(geo?.attribution)})
     :null;
 }
 function itemSearch(parts){return parts.flatMap(value=>Array.isArray(value)?value:[value]).map(text).filter(Boolean).join(" ").toLowerCase();}
@@ -176,6 +177,8 @@ export function projectShrineItems({shrines=[],places=[],sources=[],novenaLinks=
   return Object.freeze(arr(shrines).map(shrine=>{
     const place=placeMap.get(shrine?.place_id)??null;
     const address=place?.address??null;
+    const mapped=isMapPublishablePlaceGeo(place?.geo,place?.address?.country_code);
+    const geo=mapped?normalizeGeo(place.geo):null;
     const relatedNovenas=novenaLinksForShrine(shrine,novenaLinks);
     const facts=[
       {label:"Dedication",value:shrine?.dedication},
@@ -194,9 +197,9 @@ export function projectShrineItems({shrines=[],places=[],sources=[],novenaLinks=
       subtitle:addressLabel(address),
       summary:shrine?.origin_summary??"",
       address,
-      geo:null,
-      map_publishable:false,
-      map_state:"ADDRESS_ONLY",
+      geo,
+      map_publishable:Boolean(mapped&&geo),
+      map_state:mapped?"MAPPED":"ADDRESS_ONLY",
       facts:freezeList(facts),
       sections:freezeList([
         ...(saints.length?[{label:"Associated saints",title:saints.join(" · "),body:""}]:[]),
@@ -207,7 +210,7 @@ export function projectShrineItems({shrines=[],places=[],sources=[],novenaLinks=
         ...(placeMapsUrl(place)?[{label:"Directions",url:placeMapsUrl(place)}]:[]),
         ...novenaActions(relatedNovenas,novenaMap),
       ]),
-      note:"Canonical shrine identity. Map pin withheld until shared Place coordinates have their own provenance lock.",
+      note:mapped?"Canonical shrine identity with provenance-locked shared Place coordinates.":"Canonical shrine identity. Map pin withheld until shared Place coordinates have their own provenance lock.",
       search_text:itemSearch([shrine?.name,shrine?.dedication,shrine?.origin_summary,saints,addressLabel(address),relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id)))]),
       raw:Object.freeze({shrine,place}),
     });
@@ -223,6 +226,8 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
   return Object.freeze(arr(attestations).map(attestation=>{
     const custom=customMap.get(attestation?.custom_id)??{},place=placeMap.get(attestation?.place_id)??null,area=areaMap.get(attestation?.geo_area_id)??null;
     const placeLabel=place?.name?.official??attestation?.place_name_hint??area?.name?.official??"";
+    const mapped=attestation?.map_policy==="PLACE"&&isMapPublishablePlaceGeo(place?.geo,place?.address?.country_code);
+    const geo=mapped?normalizeGeo(place.geo):null;
     const relatedNovenas=novenaLinksForAttestation(attestation,novenaLinks);
     const facts=[
       {label:"Class",value:String(custom?.custom_class??"").replaceAll("_"," ")},
@@ -241,9 +246,9 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
       subtitle:placeLabel,
       summary:custom?.canonical_statement??"",
       address:place?.address??null,
-      geo:null,
-      map_publishable:false,
-      map_state:place?"ADDRESS_ONLY":attestation?.map_policy==="AREA_CONTEXT"?"AREA_CONTEXT":"NOT_MAPPED",
+      geo,
+      map_publishable:Boolean(mapped&&geo),
+      map_state:mapped?"MAPPED":place?"ADDRESS_ONLY":attestation?.map_policy==="AREA_CONTEXT"?"AREA_CONTEXT":"NOT_MAPPED",
       facts:freezeList(facts),
       sections:freezeList([
         attestation?.evidence_note?{label:"Attestation",title:placeLabel,body:attestation.evidence_note}:null,
@@ -270,11 +275,13 @@ export function projectNovenaContextItems({links=[],novenas=[],places=[],geoArea
   return Object.freeze(arr(links).map(link=>{
     const novena=novenaMap.get(link?.novena_id)??{},place=placeMap.get(link?.place_id)??null,area=areaMap.get(link?.geo_area_id)??null;
     const placeLabel=place?.name?.official??link?.place_name_hint??area?.name?.official??"";
+    const mapped=link?.map_policy==="PLACE"&&isMapPublishablePlaceGeo(place?.geo,place?.address?.country_code);
+    const geo=mapped?normalizeGeo(place.geo):null;
     const facts=[
       {label:"Class",value:String(link?.relationship??"").replaceAll("_"," ")},
       {label:"Evidence",value:link?.confidence},
     ].filter(item=>text(item.value));
-    const mapState=place?"ADDRESS_ONLY":link?.map_policy==="AREA_CONTEXT"?"AREA_CONTEXT":link?.map_policy==="PLACE_PENDING"?"PLACE_PENDING":"NOT_MAPPED";
+    const mapState=mapped?"MAPPED":place?"ADDRESS_ONLY":link?.map_policy==="AREA_CONTEXT"?"AREA_CONTEXT":link?.map_policy==="PLACE_PENDING"?"PLACE_PENDING":"NOT_MAPPED";
     return Object.freeze({
       item_id:"tradition:novena:"+link.link_id,
       source_id:link.link_id,
@@ -286,8 +293,8 @@ export function projectNovenaContextItems({links=[],novenas=[],places=[],geoArea
       subtitle:placeLabel,
       summary:link?.note??"",
       address:place?.address??null,
-      geo:null,
-      map_publishable:false,
+      geo,
+      map_publishable:Boolean(mapped&&geo),
       map_state:mapState,
       facts:freezeList(facts),
       sections:freezeList([{label:"Relationship",title:placeLabel,body:link?.note??""}]),
@@ -311,6 +318,8 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
   const sourceMap=new Map(arr(sources).map(source=>[source?.id,source]).filter(([id])=>id));
   return Object.freeze(arr(pilgrimages).map(pilgrimage=>{
     const shrine=shrineMap.get(pilgrimage?.destination_shrine_id)??{},place=placeMap.get(shrine?.place_id)??null;
+    const mapped=isMapPublishablePlaceGeo(place?.geo,place?.address?.country_code);
+    const geo=mapped?normalizeGeo(place.geo):null;
     const linkedRoutes=arr(pilgrimage?.route_ids).map(id=>routeMap.get(id)).filter(Boolean);
     const linkedTemporal=arr(pilgrimage?.temporal_link_ids).map(id=>temporalMap.get(id)).filter(Boolean);
     const facts=[
@@ -344,14 +353,14 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
       subtitle:shrine?.name||addressLabel(place?.address),
       summary:pilgrimage?.scope_note??"",
       address:place?.address??null,
-      geo:null,
-      map_publishable:false,
-      map_state:"DESTINATION_ADDRESS_ONLY",
+      geo,
+      map_publishable:Boolean(mapped&&geo),
+      map_state:mapped?"DESTINATION_MAPPED":"DESTINATION_ADDRESS_ONLY",
       facts:freezeList(facts),
       sections:freezeList(sections),
       source_links:sourceLinks(pilgrimage?.source_ids,sourceMap),
       actions:freezeList(placeMapsUrl(place)?[{label:"Destination",url:placeMapsUrl(place)}]:[]),
-      note:"Pilgrimage identity and associations are source-backed. Recurring dates remain owned by Calendar; route geometry is shown only when independently locked.",
+      note:"Pilgrimage identity and associations are source-backed. Destination pins use provenance-locked shared Place coordinates; recurring dates remain owned by Calendar and route geometry is shown only when independently locked.",
       search_text:itemSearch([pilgrimage?.name,pilgrimage?.scope_note,shrine?.name,addressLabel(place?.address),linkedRoutes.map(route=>route.name),linkedTemporal.map(link=>link.source_event_label)]),
       raw:Object.freeze({pilgrimage,shrine,place,routes:linkedRoutes,temporalLinks:linkedTemporal}),
     });

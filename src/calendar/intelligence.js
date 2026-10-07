@@ -28,6 +28,86 @@ const DISCIPLINE_SOURCES=Object.freeze({
   septemberEmber:Object.freeze({label:"1962 September Ember reckoning · Romanitas Press",url:"https://www.romanitaspress.com/reckoning-sept-ember-days"}),
 });
 
+
+export const CALENDAR_SEMANTIC_REGISTRY_VERSION="calendar-semantic-registry-v1";
+
+export const CALENDAR_SEMANTIC_REGISTRY=Object.freeze({
+  "feast.our_lady_of_lourdes":Object.freeze({
+    key:"feast.our_lady_of_lourdes",
+    title:Object.freeze({en:"Our Lady of Lourdes",fr:"Notre-Dame de Lourdes"}),
+    schedule:Object.freeze({type:"FIXED",month:2,day:11}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:68,
+    sourceIds:Object.freeze(["SHR-LOURDES-FEAST"]),
+  }),
+  "liturgical.pentecost_monday":Object.freeze({
+    key:"liturgical.pentecost_monday",
+    title:Object.freeze({en:"Pentecost Monday",fr:"Lundi de Pentecôte"}),
+    schedule:Object.freeze({type:"EASTER_OFFSET",offset:50}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:70,
+    sourceIds:Object.freeze(["SHR-LAGHET-DEANERY"]),
+  }),
+  "feast.sacred_heart":Object.freeze({
+    key:"feast.sacred_heart",
+    title:Object.freeze({en:"Sacred Heart of Jesus",fr:"Sacré-Cœur de Jésus"}),
+    schedule:Object.freeze({type:"EASTER_OFFSET",offset:68}),
+    route:"find",
+    exploreLens:"pilgrimages",
+    priority:72,
+    sourceIds:Object.freeze(["SHR-PARAY-SACRED-HEART"]),
+  }),
+});
+
+function semanticDateForDefinition(def,year){
+  const y=Number(year),schedule=def?.schedule;
+  if(!Number.isInteger(y)||y<1||!schedule)return null;
+  if(schedule.type==="FIXED"){
+    return `${y}-${String(schedule.month).padStart(2,"0")}-${String(schedule.day).padStart(2,"0")}`;
+  }
+  if(schedule.type==="EASTER_OFFSET"){
+    return addDaysIso(v384Dates(y).easter,Number(schedule.offset));
+  }
+  return null;
+}
+
+export function calendarDateForSemanticKey(key,year){
+  const def=CALENDAR_SEMANTIC_REGISTRY[String(key||"")];
+  return def?semanticDateForDefinition(def,year):null;
+}
+
+export function calendarSemanticEvent(key,year,{fr=false}={}){
+  const def=CALENDAR_SEMANTIC_REGISTRY[String(key||"")];
+  if(!def)return null;
+  const date=semanticDateForDefinition(def,year);
+  if(!date)return null;
+  return Object.freeze({
+    id:def.key,
+    key:def.key,
+    date,
+    kind:"semantic",
+    title:fr?def.title.fr:def.title.en,
+    summary:"",
+    priority:def.priority,
+    route:def.route,
+    exploreLens:def.exploreLens,
+    tags:Object.freeze(["LITURGICAL_OBSERVANCE","EXPLORE_TEMPORAL_LINK"]),
+    sourceIds:def.sourceIds,
+    source:"calendar-semantic-registry",
+  });
+}
+
+export function calendarSemanticEventsForDate(value,{fr=false}={}){
+  const date=keyOf(value),year=dateFromIso(date).getFullYear(),out=[];
+  for(const def of Object.values(CALENDAR_SEMANTIC_REGISTRY)){
+    if(semanticDateForDefinition(def,year)!==date)continue;
+    out.push(calendarSemanticEvent(def.key,year,{fr}));
+  }
+  return Object.freeze(out.sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id)));
+}
+
 export function calendarDisciplineForDate(value,{fr=false}={}){
   const date=keyOf(value),d=dateFromIso(date),x=v384Dates(d.getFullYear());
   const todayKey=date===x.ash||date===x.goodFriday?"fast-abstinence":d.getDay()===5?"friday":"none";
@@ -309,11 +389,13 @@ export function calendarIntelligenceForDate(value,{fr=false,properTitle="",inclu
   const date=keyOf(value);
   const practices=calendarPracticeEvents(date,{fr,properTitle});
   const novenas=calendarNovenaEvents(date,{fr,upcomingDays:includeUpcomingNovenas});
+  const semantic=calendarSemanticEventsForDate(date,{fr});
   const discipline=calendarDisciplineForDate(date,{fr});
   return Object.freeze({
-    schema:CALENDAR_INTELLIGENCE_VERSION,registryVersion:CALENDAR_DEVOTIONAL_REGISTRY_VERSION,date,
-    practices,novenas,discipline,
-    events:Object.freeze([...practices,...novenas].sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id))),
+    schema:CALENDAR_INTELLIGENCE_VERSION,registryVersion:CALENDAR_DEVOTIONAL_REGISTRY_VERSION,
+    semanticRegistryVersion:CALENDAR_SEMANTIC_REGISTRY_VERSION,date,
+    practices,novenas,semantic,discipline,
+    events:Object.freeze([...practices,...novenas,...semantic].sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id))),
   });
 }
 

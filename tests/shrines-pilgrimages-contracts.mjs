@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import assert from "node:assert/strict";
+import { calendarDateForSemanticKey, CALENDAR_SEMANTIC_REGISTRY_VERSION } from "../src/calendar/intelligence.js";
 import {
   SHRINES_PILGRIMAGES_SCHEMA,
   auditRoute,
@@ -40,11 +41,12 @@ assert.deepEqual(result.counts,{
   temporalLinks:3,
   sources:10,
 });
-assert.deepEqual([...result.unresolvedCalendarBindings].sort(),[
-  "temporal:laghet:paillon-pentecost-monday",
-  "temporal:lourdes:our-lady-feast",
-  "temporal:paray:sacred-heart-feast",
-]);
+assert.deepEqual([...result.unresolvedCalendarBindings],[]);
+for(const link of corpus.temporalLinks){
+  assert.equal(link.binding_state,"BOUND_TO_CALENDAR",link.temporal_link_id);
+  assert.equal(link.calendar_registry_version,CALENDAR_SEMANTIC_REGISTRY_VERSION,link.temporal_link_id);
+  assert.ok(calendarDateForSemanticKey(link.calendar_semantic_key,2026),link.calendar_semantic_key+" is not owned by Calendar");
+}
 
 const requiredPlaces=new Set([
   "place:FR:sanctuaire-notre-dame-de-lourdes",
@@ -65,6 +67,11 @@ assert.ok(auditRoute(illegallyMapped).some(item=>item.code==="MAPPED_ROUTE_LACKS
 const lourdesTemporal=corpus.temporalLinks.find(item=>item.temporal_link_id==="temporal:lourdes:our-lady-feast");
 assert.equal(lourdesTemporal.calendar_semantic_key,"feast.our_lady_of_lourdes");
 assert.equal(Object.hasOwn(lourdesTemporal,"date"),false);
+assert.equal(calendarDateForSemanticKey(lourdesTemporal.calendar_semantic_key,2026),"2026-02-11");
+
+const missingRegistry={...lourdesTemporal};
+delete missingRegistry.calendar_registry_version;
+assert.ok(auditTemporalLink(missingRegistry).some(item=>item.code==="MISSING_CALENDAR_REGISTRY_VERSION"));
 
 const leakedDate={...lourdesTemporal,date:"2027-02-11"};
 assert.ok(auditTemporalLink(leakedDate).some(item=>item.code==="TEMPORAL_DATE_LOGIC_OUTSIDE_CALENDAR"));

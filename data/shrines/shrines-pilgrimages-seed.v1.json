@@ -10,8 +10,13 @@
       "recognition_class": "OFFICIAL_SANCTUARY",
       "dedication": "Our Lady of Lourdes / Immaculate Conception",
       "origin_summary": "Pilgrimage sanctuary associated with the apparitions to Saint Bernadette Soubirous at Massabielle in 1858.",
-      "associated_saints": ["Saint Bernadette Soubirous"],
-      "source_ids": ["SHR-LOURDES-CONTACT", "SHR-LOURDES-PILGRIMAGE"],
+      "associated_saints": [
+        "Saint Bernadette Soubirous"
+      ],
+      "source_ids": [
+        "SHR-LOURDES-CONTACT",
+        "SHR-LOURDES-PILGRIMAGE"
+      ],
       "confidence": "HIGH"
     },
     {
@@ -23,7 +28,10 @@
       "dedication": "Notre-Dame de Laghet",
       "origin_summary": "Marian sanctuary whose documented prodigies and ex-voto tradition date from 1652 and generated a continuing pilgrimage tradition.",
       "associated_saints": [],
-      "source_ids": ["SHR-LAGHET-CONTACT", "SHR-LAGHET-EXVOTO"],
+      "source_ids": [
+        "SHR-LAGHET-CONTACT",
+        "SHR-LAGHET-EXVOTO"
+      ],
       "confidence": "HIGH"
     },
     {
@@ -34,8 +42,14 @@
       "recognition_class": "OFFICIAL_SANCTUARY",
       "dedication": "Sacred Heart of Jesus",
       "origin_summary": "Sacred Heart sanctuary associated with the revelations received by Saint Margaret Mary Alacoque at Paray-le-Monial in 1673–1675.",
-      "associated_saints": ["Saint Margaret Mary Alacoque", "Saint Claude La Colombière"],
-      "source_ids": ["SHR-PARAY-CONTACT", "SHR-PARAY-MARGUERITE"],
+      "associated_saints": [
+        "Saint Margaret Mary Alacoque",
+        "Saint Claude La Colombière"
+      ],
+      "source_ids": [
+        "SHR-PARAY-CONTACT",
+        "SHR-PARAY-MARGUERITE"
+      ],
       "confidence": "HIGH"
     }
   ],
@@ -46,9 +60,14 @@
       "kind": "DESTINATION_PILGRIMAGE",
       "destination_shrine_id": "shrine:FR:lourdes-our-lady",
       "route_ids": [],
-      "temporal_link_ids": ["temporal:lourdes:our-lady-feast"],
+      "temporal_link_ids": [
+        "temporal:lourdes:our-lady-feast"
+      ],
       "scope_note": "Open destination pilgrimage; individual and organized pilgrimages occur throughout the year.",
-      "source_ids": ["SHR-LOURDES-PILGRIMAGE", "SHR-LOURDES-FEAST"],
+      "source_ids": [
+        "SHR-LOURDES-PILGRIMAGE",
+        "SHR-LOURDES-FEAST"
+      ],
       "confidence": "HIGH"
     },
     {
@@ -59,7 +78,10 @@
       "route_ids": [],
       "temporal_link_ids": [],
       "scope_note": "Open shrine pilgrimage destination with longstanding regional pilgrimage continuity.",
-      "source_ids": ["SHR-LAGHET-CONTACT", "SHR-LAGHET-EXVOTO"],
+      "source_ids": [
+        "SHR-LAGHET-CONTACT",
+        "SHR-LAGHET-EXVOTO"
+      ],
       "confidence": "HIGH"
     },
     {
@@ -67,10 +89,16 @@
       "name": "Paillon Pays de Nice deanery pilgrimage to Laghet",
       "kind": "ANNUAL_PILGRIMAGE",
       "destination_shrine_id": "shrine:FR:laghet-our-lady",
-      "route_ids": ["route:FR:laghet-paillon-old-road"],
-      "temporal_link_ids": ["temporal:laghet:paillon-pentecost-monday"],
+      "route_ids": [
+        "route:FR:laghet-paillon-old-road"
+      ],
+      "temporal_link_ids": [
+        "temporal:laghet:paillon-pentecost-monday"
+      ],
       "scope_note": "Documented annual deanery pilgrimage with a walking group departing La Trinité.",
-      "source_ids": ["SHR-LAGHET-DEANERY"],
+      "source_ids": [
+        "SHR-LAGHET-DEANERY"
+      ],
       "confidence": "HIGH"
     },
     {
@@ -78,10 +106,17 @@
       "name": "Sacred Heart pilgrimage at Paray-le-Monial",
       "kind": "DESTINATION_PILGRIMAGE",
       "destination_shrine_id": "shrine:FR:paray-sacred-heart",
-      "route_ids": ["route:FR:paray-pilgrim-path"],
-      "temporal_link_ids": ["temporal:paray:sacred-heart-feast"],
+      "route_ids": [
+        "route:FR:paray-pilgrim-path"
+      ],
+      "temporal_link_ids": [
+        "temporal:paray:sacred-heart-feast"
+      ],
       "scope_note": "Destination pilgrimage with an official four-stage on-site pilgrim path.",
-      "source_ids": ["SHR-PARAY-PILGRIM-PATH", "SHR-PARAY-SACRED-HEART"],
+      "source_ids": [
+        "SHR-PARAY-PILGRIM-PATH",
+        "SHR-PARAY-SACRED-HEART"
+      ],
       "confidence": "HIGH"
     }
   ],
@@ -96,7 +131,9 @@
       "stage_count": null,
       "geometry_ref": null,
       "waypoint_place_ids": [],
-      "source_ids": ["SHR-LAGHET-DEANERY"],
+      "source_ids": [
+        "SHR-LAGHET-DEANERY"
+      ],
       "confidence": "HIGH"
     },
     {
@@ -109,7 +146,9 @@
       "stage_count": 4,
       "geometry_ref": null,
       "waypoint_place_ids": [],
-      "source_ids": ["SHR-PARAY-PILGRIM-PATH"],
+      "source_ids": [
+        "SHR-PARAY-PILGRIM-PATH"
+      ],
       "confidence": "HIGH"
     }
   ],
@@ -119,33 +158,42 @@
       "subject_type": "PILGRIMAGE",
       "subject_id": "pilgrimage:FR:lourdes-destination",
       "relation": "SHRINE_FEAST",
-      "binding_state": "PENDING_CALENDAR_BINDING",
+      "binding_state": "BOUND_TO_CALENDAR",
       "calendar_semantic_key": "feast.our_lady_of_lourdes",
       "source_event_label": "Feast of Our Lady of Lourdes",
-      "source_ids": ["SHR-LOURDES-FEAST"],
-      "confidence": "HIGH"
+      "source_ids": [
+        "SHR-LOURDES-FEAST"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
     },
     {
       "temporal_link_id": "temporal:laghet:paillon-pentecost-monday",
       "subject_type": "PILGRIMAGE",
       "subject_id": "pilgrimage:FR:laghet-paillon-deanery",
       "relation": "LITURGICAL_DAY",
-      "binding_state": "PENDING_CALENDAR_BINDING",
+      "binding_state": "BOUND_TO_CALENDAR",
       "calendar_semantic_key": "liturgical.pentecost_monday",
       "source_event_label": "Annual deanery pilgrimage on Pentecost Monday",
-      "source_ids": ["SHR-LAGHET-DEANERY"],
-      "confidence": "HIGH"
+      "source_ids": [
+        "SHR-LAGHET-DEANERY"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
     },
     {
       "temporal_link_id": "temporal:paray:sacred-heart-feast",
       "subject_type": "PILGRIMAGE",
       "subject_id": "pilgrimage:FR:paray-sacred-heart",
       "relation": "SHRINE_FEAST",
-      "binding_state": "PENDING_CALENDAR_BINDING",
+      "binding_state": "BOUND_TO_CALENDAR",
       "calendar_semantic_key": "feast.sacred_heart",
       "source_event_label": "Fêtes du Sacré-Cœur",
-      "source_ids": ["SHR-PARAY-SACRED-HEART"],
-      "confidence": "HIGH"
+      "source_ids": [
+        "SHR-PARAY-SACRED-HEART"
+      ],
+      "confidence": "HIGH",
+      "calendar_registry_version": "calendar-semantic-registry-v1"
     }
   ]
 }
