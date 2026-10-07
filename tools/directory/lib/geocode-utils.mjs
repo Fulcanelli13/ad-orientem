@@ -91,7 +91,12 @@ export function scoreNominatimCandidate(venue,candidate){
   const addressTokens=significantTokens(cleaned);
   const nameTokens=significantTokens(venue?.name?.official??"");
   const displayTokens=significantTokens(candidate?.display_name??"");
-  const candidateNameTokens=significantTokens(candidate?.name??candidate?.namedetails?.name??candidate?.display_name?.split(",")[0]??"");
+  const candidateNameSource=[
+    candidate?.name,
+    ...Object.values(candidate?.namedetails??{}),
+    candidate?.display_name?.split(",")[0],
+  ].filter(Boolean).join(" ");
+  const candidateNameTokens=significantTokens(candidateNameSource);
   const addressOverlap=overlapRatio(addressTokens,displayTokens);
   const nameOverlap=overlapRatio(nameTokens,[...candidateNameTokens,...displayTokens]);
   const wantedPostals=postalTokens(cleaned);
