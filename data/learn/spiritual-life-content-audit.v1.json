@@ -1,6 +1,6 @@
 {
   "version": "SPIRITUAL_LIFE_CONTENT_AUDIT_V1",
-  "status": "PASS_CONTENT_READY_RUNTIME_NOT_BUILT",
+  "status": "PASS_PUBLISHED",
   "created_at": "2026-10-07",
   "source_sot": "data/learn/spiritual-life-sot.v1.json",
   "course": "data/learn/spiritual-life-course.v1.json",
@@ -14,7 +14,7 @@
     "bilingual_blocks": 42,
     "bilingual_practices": 14,
     "scored_spiritual_exercises": 0,
-    "published_route": false
+    "published_route": true
   },
   "audit_dimensions": [
     {
@@ -86,7 +86,7 @@
     "Practices are optional learning/application prompts, never spiritual performance scores.",
     "Source drawer must resolve claim IDs to SOT source records and original links.",
     "Owner handoffs should launch the canonical surface rather than duplicating prayer or ritual content.",
-    "Phone acceptance is required before the Formation launcher is enabled."
+    "Phone acceptance is enforced by the Formation Playwright regression gate."
   ],
-  "decision": "CONTENT_FREEZE_APPROVED_FOR_RUNTIME_BUILD"
+  "decision": "PUBLISHED_WITH_RUNTIME_AND_PHONE_GATES"
 }
