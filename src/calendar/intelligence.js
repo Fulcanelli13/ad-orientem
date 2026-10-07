@@ -218,7 +218,7 @@ export function calendarPracticeMonthEntries(monthId,{fr=false}={}){
     ];
     for(const event of events){
       if(["friday","saturday"].includes(event.key))continue;
-      if(event.kind!=="novena"&&event.priority<55&&!event.tags?.includes("CURRENT_INDULGED_WORK_CONDITIONAL"))continue;
+      if(event.kind!=="novena"&&event.priority<55&&!event.tags?.includes("CURRENT_INDULGED_WORK_CONDITIONAL")&&!["october","sacred-heart-month","precious-blood-month"].includes(event.key))continue;
       if(!byId.has(event.id))byId.set(event.id,Object.freeze({
         id:event.id,date,eventKind:event.kind,title:event.title,summary:event.summary,route:event.route,
         priority:event.priority,tags:event.tags,classification:event.classification??null,source:event.source,
